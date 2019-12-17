@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ButtonGroup from 'terra-button-group';
-import List from 'terra-list';
 import Menu from './_CollapsibleMenu';
 import styles from './CollapsibleMenuView.module.scss';
 
@@ -78,11 +77,9 @@ class CollapsibleMenuViewItemGroup extends React.Component {
       );
     } if (isCollapsibleMenuItem) {
       return (
-        <li role="none">
-          <List {...customProps} role="listbox">
-            {children}
-          </List>
-        </li>
+        <div {...customProps}>
+          { children }
+        </div>
       );
     }
 

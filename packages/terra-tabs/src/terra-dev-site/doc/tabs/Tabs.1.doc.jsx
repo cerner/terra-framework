@@ -14,6 +14,7 @@ import TabsWithFilledContent from '../example/TabsWithFilledContent';
 import TabsWithFilledContentSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TabsWithFilledContent';
 import IconOnlyTabs from '../example/IconOnlyTabs';
 import IconOnlyTabsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/IconOnlyTabs';
+import ResponsiveTabsVariant from '../example/ResponsiveTabsVariant';
 
 const DocPage = () => (
   <DocTemplate
@@ -40,6 +41,10 @@ const DocPage = () => (
         title: 'Fill Parent Container',
         example: <TabsWithFilledContent fill />,
         source: TabsWithFilledContentSrc,
+      },
+      {
+        title: 'Toggle responsiveTo Variants',
+        example: <ResponsiveTabsVariant />,
       },
     ]}
     propsTables={[
