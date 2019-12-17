@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added clinical-lowlight-theme and generated the respective reference wdio screenshots.
 
 4.24.0 - (December 16, 2019)
 ------------------
@@ -12,7 +14,6 @@ Unreleased
 4.23.0 - (December 10, 2019)
 ------------------
 ### Added
-* Added clinical-lowlight-theme and generated the respective reference wdio screenshots.
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 * Added `aria-disabled` in react-datepicker
 
