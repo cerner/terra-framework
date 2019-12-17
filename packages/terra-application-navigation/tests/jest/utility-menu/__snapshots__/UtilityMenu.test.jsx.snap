@@ -457,6 +457,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       </div>
                       <div
                         className="text"
+                        role="link"
                       >
                         test-text-2
                       </div>
@@ -538,6 +539,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       </div>
                       <div
                         className="text"
+                        role="link"
                       >
                         Terra.applicationNavigation.utilityMenu.settings
                       </div>
@@ -615,6 +617,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       </div>
                       <div
                         className="text"
+                        role="link"
                       >
                         Terra.applicationNavigation.utilityMenu.help
                       </div>

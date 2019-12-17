@@ -17,8 +17,8 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the paren
         variant="structural"
       >
         <TabPane
-          aria-selected={true}
           className="is-active"
+          isActive={true}
           isDisabled={false}
           isIconOnly={false}
           label="Default"
@@ -79,8 +79,8 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the windo
         variant="structural"
       >
         <TabPane
-          aria-selected={true}
           className="is-active"
+          isActive={true}
           isDisabled={false}
           isIconOnly={false}
           label="Default"
@@ -137,8 +137,8 @@ exports[`Tabs Responsiveness should render tabs that do not completely collapse 
       variant="structural"
     >
       <TabPane
-        aria-selected={true}
         className="is-active"
+        isActive={true}
         isDisabled={false}
         isIconOnly={false}
         label="Default"
@@ -198,8 +198,8 @@ exports[`Tabs Variants should render modular-centered tabs 1`] = `
         variant="structural"
       >
         <TabPane
-          aria-selected={true}
           className="is-active"
+          isActive={true}
           isDisabled={false}
           isIconOnly={false}
           label="Default"
@@ -258,8 +258,8 @@ exports[`Tabs Variants should render modular-left-aligned tabs 1`] = `
         onTruncationChange={[Function]}
       >
         <TabPane
-          aria-selected={true}
           className="is-active"
+          isActive={true}
           isDisabled={false}
           isIconOnly={false}
           label="Default"
@@ -318,8 +318,8 @@ exports[`Tabs Variants should render structural tabs 1`] = `
         onTruncationChange={[Function]}
       >
         <TabPane
-          aria-selected={true}
           className="is-active"
+          isActive={true}
           isDisabled={false}
           isIconOnly={false}
           label="Default"
@@ -381,8 +381,8 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
         variant="structural"
       >
         <TabPane
-          aria-selected={true}
           className="is-active"
+          isActive={true}
           isDisabled={false}
           isIconOnly={false}
           label="Default"
@@ -443,8 +443,8 @@ exports[`Tabs should render a default component 1`] = `
         variant="structural"
       >
         <TabPane
-          aria-selected={true}
           className="is-active"
+          isActive={true}
           isDisabled={false}
           isIconOnly={false}
           label="Default"
@@ -503,8 +503,8 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
         onTruncationChange={[Function]}
       >
         <TabPane
-          aria-selected={true}
           className="is-active"
+          isActive={true}
           isDisabled={false}
           isIconOnly={false}
           label="Default"
@@ -562,8 +562,8 @@ exports[`Tabs should render with content filled when indicated 1`] = `
         onTruncationChange={[Function]}
       >
         <TabPane
-          aria-selected={true}
           className="is-active"
+          isActive={true}
           isDisabled={false}
           isIconOnly={false}
           label="Default"
@@ -621,8 +621,8 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
         onTruncationChange={[Function]}
       >
         <TabPane
-          aria-selected={true}
           className="is-active"
+          isActive={true}
           isDisabled={false}
           isIconOnly={false}
           label="Default"
@@ -681,8 +681,8 @@ exports[`Tabs should set custom props 1`] = `
         onTruncationChange={[Function]}
       >
         <TabPane
-          aria-selected={true}
           className="is-active"
+          isActive={true}
           isDisabled={false}
           isIconOnly={false}
           label="Default"
@@ -740,8 +740,8 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
         onTruncationChange={[Function]}
       >
         <TabPane
-          aria-selected={true}
           className="is-active customClass"
+          isActive={true}
           isDisabled={false}
           isIconOnly={false}
           label="Default"
