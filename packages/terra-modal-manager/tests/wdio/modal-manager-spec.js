@@ -473,7 +473,7 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
     });
   });
 
-  describe.only('Disclosure Container', () => {
+  describe('Disclosure Container', () => {
     before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/with-disclosure-container').refresh());
     it('opens the modal', () => {
       browser.click('#root-component .disclose-large');
