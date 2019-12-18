@@ -84,7 +84,7 @@ class Tabs extends React.Component {
     this.state = {
       activeKey: this.getInitialState(),
       isLabelTruncated: false,
-      showCollapsedTabs: undefined,
+      showCollapsedTabs: false,
     };
   }
 
