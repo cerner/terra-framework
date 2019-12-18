@@ -17,6 +17,7 @@ const TabContentTemplate = ({ isLabelHidden, label, children }) => (
     {children || (
       <div>
         Content for
+        {' '}
         <i>{label}</i>
       </div>
     )}
