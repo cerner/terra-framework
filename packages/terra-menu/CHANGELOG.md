@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed fixedHeight logic from Menu.
+* menuContent is now smart and calculates its height.
 
 6.21.0 - (December 10, 2019)
 ------------------

@@ -50,6 +50,18 @@ class SubMenu extends React.Component {
             className="TestNestedMenu"
             subMenuItems={[
               <Menu.Item text="Default 2.1" key="2.1" className="TestNestedMenuContent" />,
+              <Menu.Item text="Default 2.2" key="2.2" className="TestNestedMenuContent" />,
+              <Menu.Item text="Default 2.3" key="2.3" className="TestNestedMenuContent" />,
+              <Menu.Item text="Default 2.4" key="2.4" className="TestNestedMenuContent" />,
+              <Menu.Item text="Default 2.5" key="2.5" className="TestNestedMenuContent" />,
+              <Menu.Item text="Default 2.6" key="2.6" className="TestNestedMenuContent" />,
+              <Menu.Item text="Default 2.7" key="2.7" className="TestNestedMenuContent" />,
+              <Menu.Item text="Default 2.8" key="2.8" className="TestNestedMenuContent" />,
+              <Menu.Item text="Default 2.9" key="2.9" className="TestNestedMenuContent" />,
+              <Menu.Item text="Default 3.0" key="3.0" className="TestNestedMenuContent" />,
+              <Menu.Item text="Default 3.1" key="3.1" className="TestNestedMenuContent" />,
+              <Menu.Item text="Default 3.2" key="3.2" className="TestNestedMenuContent" />,
+              <Menu.Item text="Default 3.1" key="3.3" className="TestNestedMenuContent" />,
             ]}
           />
           <Menu.Item text="Default 3" key="3" />

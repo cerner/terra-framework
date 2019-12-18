@@ -79,18 +79,10 @@ class Menu extends React.Component {
 
   setPageDimensions(node) {
     if (node) {
-      const listItems = node.getElementsByTagName('li');
-      // let pageHeight = 0;
-      let listItemHeight = 0;
-      listItems.forEach(listItem => {
-        listItemHeight = parseInt(window.getComputedStyle(listItem)["height"], 10);
-      });
-      this.setState({ pageHeight: (listItemHeight * listItems.length) + 33 });
       if (this.props.contentWidth === 'auto') {
         this.pageWidth = node.clientWidth;
       }
     } else {
-      this.pageHeight = undefined;
       this.pageWidth = undefined;
     }
   }
@@ -143,7 +135,6 @@ class Menu extends React.Component {
         onRequestBack={this.pop}
         onRequestClose={this.props.onRequestClose}
         isHidden={index !== visiblePage}
-        fixedHeight={this.state.pageHeight}
         fixedWidth={this.pageWidth}
         contentWidth={Popup.Opts.widths[contentWidth]}
         refCallback={this.setPageDimensions}

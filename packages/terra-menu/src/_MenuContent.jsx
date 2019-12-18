@@ -60,10 +60,6 @@ const propTypes = {
    */
   isWidthBounded: PropTypes.bool,
   /**
-   * Fixed height for content.
-   */
-  fixedHeight: PropTypes.number,
-  /**
    * Fixed width for content.
    */
   fixedWidth: PropTypes.number,
@@ -123,6 +119,7 @@ class MenuContent extends React.Component {
     }
 
     this.validateFocus(this.contentNode);
+    this.setPageHeight(this.contentNode);
   }
 
   onKeyDown(event) {
@@ -143,6 +140,13 @@ class MenuContent extends React.Component {
     if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
       event.preventDefault();
       this.props.onRequestBack();
+    }
+  }
+
+  setPageHeight(node) {
+    if (node) {
+      const headerHeight = node.querySelector('[data-menu-header]') ? node.querySelector('[data-menu-header]').clientHeight : null;
+      this.pageHeight = node.getElementsByTagName('ul')[0].offsetHeight + headerHeight;
     }
   }
 
@@ -275,6 +279,7 @@ class MenuContent extends React.Component {
         fitEnd={closeButton}
         fill={backButton}
         align="center"
+        data-menu-header
       />
     );
   }
@@ -297,7 +302,7 @@ class MenuContent extends React.Component {
           onKeyDown,
           isActive,
         });
-      // If the child has children then it is an item group, so iterate through it's children
+        // If the child has children then it is an item group, so iterate through it's children
       } else if (item.props.children) {
         const children = item.props.children ? [] : undefined;
         React.Children.forEach(item.props.children, (child) => {
@@ -336,7 +341,7 @@ class MenuContent extends React.Component {
     if (isFullScreen || isSubMenu) {
       header = this.buildHeader(isFullScreen);
     }
-    const contentHeight = this.props.isHeightBounded ? '100%' : this.props.fixedHeight;
+    const contentHeight = this.props.isHeightBounded ? '100%' : this.pageHeight;
     const contentPosition = this.props.isHeightBounded ? 'relative' : 'static';
     const contentWidth = this.props.isWidthBounded ? undefined : this.props.fixedWidth;
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, react/forbid-dom-props */
