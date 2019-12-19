@@ -54,7 +54,8 @@ const propTypes = {
    */
   isArrowDisplayed: PropTypes.bool,
   /**
-   * Header Title for menu if menu contains drill-in sub-menus
+   * Header Title for menu.
+   * Header Title will only be visible if the menu contains at least one sub-menu.
    */
   headerTitle: PropTypes.string,
 };
