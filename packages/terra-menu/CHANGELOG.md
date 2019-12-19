@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Added new `headertTitle` prop for menus which have drill-in submenus
 
+6.22.0 - (December 16, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
 6.21.0 - (December 10, 2019)
 ------------------
 ### Added
