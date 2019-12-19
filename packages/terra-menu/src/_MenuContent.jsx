@@ -119,7 +119,6 @@ class MenuContent extends React.Component {
     }
 
     this.validateFocus(this.contentNode);
-    this.setPageHeight(this.contentNode);
   }
 
   onKeyDown(event) {
@@ -140,13 +139,6 @@ class MenuContent extends React.Component {
     if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
       event.preventDefault();
       this.props.onRequestBack();
-    }
-  }
-
-  setPageHeight(node) {
-    if (node) {
-      const headerHeight = node.querySelector('[data-menu-header]') ? node.querySelector('[data-menu-header]').clientHeight : null;
-      this.pageHeight = node.getElementsByTagName('ul')[0].offsetHeight + headerHeight;
     }
   }
 
@@ -279,7 +271,6 @@ class MenuContent extends React.Component {
         fitEnd={closeButton}
         fill={backButton}
         align="center"
-        data-menu-header
       />
     );
   }
@@ -341,7 +332,7 @@ class MenuContent extends React.Component {
     if (isFullScreen || isSubMenu) {
       header = this.buildHeader(isFullScreen);
     }
-    const contentHeight = this.props.isHeightBounded ? '100%' : this.pageHeight;
+    const contentHeight = this.props.isHeightBounded && '100%';
     const contentPosition = this.props.isHeightBounded ? 'relative' : 'static';
     const contentWidth = this.props.isWidthBounded ? undefined : this.props.fixedWidth;
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, react/forbid-dom-props */
@@ -355,7 +346,7 @@ class MenuContent extends React.Component {
         role="dialog"
         onKeyDown={this.onKeyDown}
       >
-        <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
+        <ContentContainer header={header} fill={this.props.isHeightBounded}>
           <List className={cx('list')} role="menu">
             {items}
           </List>
