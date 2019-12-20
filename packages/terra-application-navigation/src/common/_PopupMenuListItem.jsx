@@ -86,7 +86,6 @@ const PopupMenuListItem = ({
 
   const ariaSpread = {};
   if (parentRole === 'list') {
-    ariaSpread.role = 'link';
     ariaSpread['aria-current'] = showSelections && isSelected;
   } else if (parentRole === 'listbox') {
     ariaSpread.role = 'option';
@@ -116,7 +115,7 @@ const PopupMenuListItem = ({
           </div>
         ) : null}
       {icon ? <div className={cx('icon')}>{icon}</div> : null}
-      <div className={cx('text')}>{text}</div>
+      <div role="link" className={cx('text')}>{text}</div>
       {<PopupCount isHidden={!notificationCount} value={notificationCount || 0} isInline className={cx('extension-row-count')} />}
     </li>
   );

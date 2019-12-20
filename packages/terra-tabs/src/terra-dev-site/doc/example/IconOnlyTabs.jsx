@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
@@ -8,9 +9,11 @@ import Tabs from 'terra-tabs';
 import TabContent from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
 import styles from './common/TabExample.module.scss';
 
+const propTypes = { responsiveTo: PropTypes.string };
+
 const cx = classNames.bind(styles);
 
-const IconOnlyTabs = () => {
+const IconOnlyTabs = (props) => {
   const searchTab = (
     <Tabs.Pane label="Search" icon={<IconSearch />} isIconOnly key="Search">
       <TabContent label="Search" />
@@ -37,7 +40,7 @@ const IconOnlyTabs = () => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs>
+      <Tabs responsiveTo={props.responsiveTo}>
         {searchTab}
         {briefcaseTab}
         {bookmarkTab}
@@ -46,5 +49,7 @@ const IconOnlyTabs = () => {
     </div>
   );
 };
+
+IconOnlyTabs.propTypes = propTypes;
 
 export default IconOnlyTabs;

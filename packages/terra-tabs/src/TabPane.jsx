@@ -35,11 +35,16 @@ const propTypes = {
    * Indicates if the pane label should only display the icon. When tab collapses into menu the label text will be used.
    */
   isIconOnly: PropTypes.bool,
+  /**
+   * If enabled, this prop will apply the `aria-selected` style to the pane.
+   */
+  isActive: PropTypes.bool,
 };
 
 const defaultProps = {
   isDisabled: false,
   isIconOnly: false,
+  isActive: false,
 };
 
 const TabPane = ({
@@ -49,6 +54,7 @@ const TabPane = ({
   children,
   isDisabled,
   isIconOnly,
+  isActive,
   ...customProps
 }) => {
   const attributes = { ...customProps };
@@ -63,6 +69,7 @@ const TabPane = ({
   if (isIconOnly) {
     attributes['aria-label'] = label;
   }
+  attributes['aria-selected'] = isActive;
 
   return (
     <div {...attributes} role="tab" className={paneClassNames}>
