@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added new WDIO screenshots
 
 4.17.0 - (December 10, 2019)
 ------------------
