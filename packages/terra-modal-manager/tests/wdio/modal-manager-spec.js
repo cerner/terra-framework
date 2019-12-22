@@ -475,6 +475,14 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
 
   describe('Disclosure Container', () => {
     before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/with-disclosure-container').refresh());
+    // Skip color contrast check for elements behind a slide-shadow
+    const ignoredA11y = {
+      'color-contrast': {
+        enabled: false,
+        selector: '[class*="slide-shadow"]',
+      },
+    };
+
     it('opens the modal', () => {
       browser.click('#root-component .disclose-large');
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
@@ -482,7 +490,7 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
 
     it('renders the panel in an disclosure container', () => {
       expect(browser.isExisting('[data-disclosure-container="true"]')).to.be.true;
-      Terra.validates.element({ selector });
+      Terra.validates.element({ selector, axeRules: ignoredA11y });
     });
 
     it('opens a nested slide-panel', () => {
@@ -492,7 +500,7 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
 
     it('renders each disclosed component in a disclosure container', () => {
       expect(browser.isExisting('[data-disclosure-container="true"]')).to.be.true;
-      Terra.validates.element('nested disclosure', { selector });
+      Terra.validates.element('nested disclosure', { selector, axeRules: ignoredA11y });
       browser.click('[class*="slide-group"] #DemoContainer-2 .close-disclosure');
     });
   });
