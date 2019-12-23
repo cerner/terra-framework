@@ -202,7 +202,7 @@ class Day extends React.Component {
     const dayClassName = (this.props.dayClassName ? this.props.dayClassName(date) : undefined)
     return ['react-datepicker-day', dayClassName, 'react-datepicker-day--' + getDayOfWeekCode(this.props.day), {
       'react-datepicker-day--disabled': this.isDisabled(),
-      'react-datepicker-day--selected': this.isSameDay(this.props.selected),
+      'react-datepicker-day--selected': this.isSameDay(this.props.selected) && !this.isOutsideMonth(),
       'react-datepicker-day--keyboard-selected': this.isKeyboardSelected(),
       'react-datepicker-day--range-start': this.isRangeStart(),
       'react-datepicker-day--range-end': this.isRangeEnd(),

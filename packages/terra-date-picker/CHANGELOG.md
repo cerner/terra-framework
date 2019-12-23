@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Fixed issue due to two dates getting selected simultaneously.
 
 4.24.0 - (December 16, 2019)
 ------------------
