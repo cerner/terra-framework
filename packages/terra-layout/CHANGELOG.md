@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Added
 * Added clinical-lowlight-theme and generated the respective reference wdio screenshots.
+* Added new WDIO screenshots
 
 4.17.0 - (December 10, 2019)
 ------------------
