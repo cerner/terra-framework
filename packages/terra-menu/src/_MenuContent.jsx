@@ -293,6 +293,7 @@ class MenuContent extends React.Component {
   render() {
     let index = -1;
     let hasSubMenuItems;
+    const hasHeaderTitle = this.props.headerTitle.length > 0;
     const items = this.props.children ? [] : undefined;
     React.Children.map(this.props.children, (item) => {
       const onClick = this.wrapOnClick(item);
@@ -310,7 +311,7 @@ class MenuContent extends React.Component {
           isActive,
         });
 
-        if (item.props.subMenuItems.length > 0) {
+        if (hasHeaderTitle && item.props.subMenuItems && item.props.subMenuItems.length > 0) {
           hasSubMenuItems = true;
         }
         // If the child has children then it is an item group, so iterate through it's children

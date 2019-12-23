@@ -54,8 +54,8 @@ const propTypes = {
    */
   isArrowDisplayed: PropTypes.bool,
   /**
-   * Header Title for menu.
-   * Header Title will only be visible if the menu contains at least one sub-menu.
+   * Header Title for main-menu(first-tier).
+   * Header Title will only be visible if the main-menu contains at least one sub-menu.
    */
   headerTitle: PropTypes.string,
 };
