@@ -91,7 +91,7 @@
   }
 
   .collapsed-tabs-container .tab-menu {
-    justify-content: var(--terra-tabs-menu-collapsed-justify-content, flex-start);
+    justify-content: var(--terra-tabs-menu-collapsed-justify-content, center);
 
     /* stylelint-disable-next-line selector-max-compound-selectors */
     span {

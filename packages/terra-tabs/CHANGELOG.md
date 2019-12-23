@@ -6,8 +6,21 @@ Unreleased
 ### Fixed
 * Overflow issue with icon-only tabs.
 
+
+6.22.0 - (December 16, 2019)
+------------------
+### Changed
+* Fixed axe violation for missing roles.
+
+6.21.0 - (December 10, 2019)
+------------------
 ### Added
+* Added `responsiveTo` prop to provide ability to consumers to decide whether or not tabs need to completely
+collapse into a menu on smaller viewports.
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
+### Changed
+* Center-align text label in the single dropdown tab when all tabs completely collapse into a menu.
 
 6.19.0 - (November 20, 2019)
 ------------------
