@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Added
 * Added new `headertTitle` prop for menus which have drill-in submenus
+* Added new WDIO screenshots
 
 6.22.0 - (December 16, 2019)
 ------------------
