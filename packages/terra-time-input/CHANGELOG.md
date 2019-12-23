@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added new WDIO screenshots
 
 4.18.0 - (December 10, 2019)
 ------------------
