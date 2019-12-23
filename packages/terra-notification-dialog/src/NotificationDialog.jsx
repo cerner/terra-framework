@@ -29,7 +29,7 @@ const propTypes = {
    */
   title: PropTypes.string,
   /**
-   * Deprecated, Message of the notification-dialog. Resolves to startMessage
+   * **Deprecated**, Message of the notification-dialog. Resolves to `startMessage`.
    */
   message: PropTypes.string,
   /**
@@ -45,7 +45,7 @@ const propTypes = {
    */
   content: PropTypes.node,
   /**
-   * Deprecated, The Action of the primary button. Resolves to acceptAction
+   * **Deprecated**, The Action of the primary button. Resolves to `acceptAction`
    */
   primaryAction: PropTypes.shape({
     text: PropTypes.string,
@@ -59,7 +59,7 @@ const propTypes = {
     onClick: PropTypes.func,
   }),
   /**
-   * Deprecated The Action of the secondary button. Resolves to rejectAction
+   * **Deprecated**, The Action of the secondary button. Resolves to `rejectAction`.
    */
   secondaryAction: PropTypes.shape({
     text: PropTypes.string,
@@ -74,7 +74,7 @@ const propTypes = {
   }),
   /**
    * The variant of notification to be rendered.
-   * Use one of alert, error, warning, info, success, custom.
+   * Use one of `alert`, `error`, `warning`, `info`, `success`, `custom`.
    */
   variant: PropTypes.oneOf([
     variants.ALERT,
@@ -94,6 +94,7 @@ const propTypes = {
   isOpen: PropTypes.bool.isRequired,
   /**
    * Determines the order of notification action buttons.
+   * Use one of `acceptFirst`, `rejectFirst`.
    */
   buttonOrder: PropTypes.oneOf([
     'acceptFirst',
@@ -101,6 +102,7 @@ const propTypes = {
   ]),
   /**
    * Determines whether acceptAction, rejectAction or neither is emphasizedAction
+   * Use one of `none`, `accept` or `reject`.
    */
   emphasizedAction: PropTypes.oneOf([
     'none',
