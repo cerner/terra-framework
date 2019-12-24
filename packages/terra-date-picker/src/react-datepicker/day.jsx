@@ -84,7 +84,11 @@ class Day extends React.Component {
     /**
      * Difference between utc and local time.
      */
-    utcOffset: PropTypes.number
+    utcOffset: PropTypes.number,
+    /**
+     * Whether or not to apply keyboard selected styles.
+     */
+   disableKeyboardSelected: PropTypes.bool,
   }
 
   handleClick = (event) => {
@@ -101,8 +105,9 @@ class Day extends React.Component {
 
   isSameDay = (other) => isSameDay(this.props.day, other)
 
-  isKeyboardSelected = () =>
-    !this.props.inline && !this.isSameDay(this.props.selected) && this.isSameDay(this.props.preSelection)
+  isKeyboardSelected () {
+   return (!this.props.inline && !this.isSameDay(this.props.selected) && this.isSameDay(this.props.preSelection) && !this.props.disableKeyboardSelected);
+  }
 
   isDisabled = () => isDayDisabled(this.props.day, this.props)
 
@@ -202,7 +207,7 @@ class Day extends React.Component {
     const dayClassName = (this.props.dayClassName ? this.props.dayClassName(date) : undefined)
     return ['react-datepicker-day', dayClassName, 'react-datepicker-day--' + getDayOfWeekCode(this.props.day), {
       'react-datepicker-day--disabled': this.isDisabled(),
-      'react-datepicker-day--selected': this.isSameDay(this.props.selected) && !this.isOutsideMonth(),
+      'react-datepicker-day--selected': this.isSameDay(this.props.selected),
       'react-datepicker-day--keyboard-selected': this.isKeyboardSelected(),
       'react-datepicker-day--range-start': this.isRangeStart(),
       'react-datepicker-day--range-end': this.isRangeEnd(),
