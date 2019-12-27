@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Added
 * Added new WDIO screenshots
+* Fixed background color issue of time components in incomplete `time-input` in Fusion theme.
 
 4.18.0 - (December 10, 2019)
 ------------------
@@ -13,7 +14,6 @@ Unreleased
 
 ### Fixed
 * Fixed background color issue of time components in incomplete `time-input`.
-* Fixed background color issue of time components in incomplete `time-input` in Fusion theme.
 
 4.17.0 - (November 26, 2019)
 ------------------
