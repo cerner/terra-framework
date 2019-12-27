@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Reenabled some wdio tests
+* Changed Axe contrast check on wdio test to improve reliability
 
 6.22.0 - (December 16, 2019)
 ------------------
