@@ -85,10 +85,6 @@ class Day extends React.Component {
      * Difference between utc and local time.
      */
     utcOffset: PropTypes.number,
-    /**
-     * Whether or not to apply keyboard selected styles.
-     */
-   disableKeyboardSelected: PropTypes.bool,
   }
 
   handleClick = (event) => {
@@ -105,9 +101,8 @@ class Day extends React.Component {
 
   isSameDay = (other) => isSameDay(this.props.day, other)
 
-  isKeyboardSelected () {
-   return (!this.props.inline && !this.isSameDay(this.props.selected) && this.isSameDay(this.props.preSelection) && !this.props.disableKeyboardSelected);
-  }
+  isKeyboardSelected = () =>
+    !this.props.inline && !this.isSameDay(this.props.selected) && this.isSameDay(this.props.preSelection)
 
   isDisabled = () => isDayDisabled(this.props.day, this.props)
 

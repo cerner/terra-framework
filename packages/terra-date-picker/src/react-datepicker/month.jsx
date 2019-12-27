@@ -126,10 +126,6 @@ export default class Month extends React.Component {
      * Difference between utc and local time.
      */
     utcOffset: PropTypes.number,
-    /**
-     * Whether or not to apply keyboard selected styles.
-     */
-    disableKeyboardSelected: PropTypes.bool,
   }
 
   handleDayClick = (day, event) => {
@@ -194,8 +190,7 @@ export default class Month extends React.Component {
         startDate={this.props.startDate}
         endDate={this.props.endDate}
         dayClassName={this.props.dayClassName}
-        utcOffset={this.props.utcOffset}
-        disableKeyboardSelected={this.props.disableKeyboardSelected} />)
+        utcOffset={this.props.utcOffset}/>)
 
       if (breakAfterNextPush) break
 

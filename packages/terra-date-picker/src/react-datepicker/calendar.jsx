@@ -241,7 +241,6 @@ export default class Calendar extends React.Component {
       date: this.localizeDate(this.getDateInView()),
       selectingDate: null,
       calendarIsKeyboardFocused: false,
-      disableKeyboardSelected: false,
     }
 
     this.todayBtnRef = React.createRef();
@@ -365,7 +364,6 @@ export default class Calendar extends React.Component {
   increaseMonth = () => {
     this.setState({
       date: addMonths(cloneDate(this.state.date), 1),
-      disableKeyboardSelected: true,
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(addMonths(cloneDate(this.state.date), 1));
   }
@@ -373,7 +371,6 @@ export default class Calendar extends React.Component {
   decreaseMonth = () => {
     this.setState({
       date: subtractMonths(cloneDate(this.state.date), 1),
-      disableKeyboardSelected: true
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(subtractMonths(cloneDate(this.state.date), 1));
   }
@@ -401,7 +398,6 @@ export default class Calendar extends React.Component {
   changeYear = (year) => {
     this.setState({
       date: setYear(cloneDate(this.state.date), year),
-      disableKeyboardSelected: true
     })
     this.props.setPreSelection(setYear(cloneDate(this.state.date), year));
   }
@@ -409,7 +405,6 @@ export default class Calendar extends React.Component {
   changeMonth = (month) => {
     this.setState({
       date: setMonth(cloneDate(this.state.date), month),
-      disableKeyboardSelected: true,
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(setMonth(cloneDate(this.state.date), month));
   }
@@ -606,8 +601,7 @@ export default class Calendar extends React.Component {
             utcOffset={this.props.utcOffset}
             handleCalendarKeyDown={this.props.handleCalendarKeyDown}
             locale={this.props.locale}
-            intl={this.props.intl}
-            disableKeyboardSelected={this.state.disableKeyboardSelected} />
+            intl={this.props.intl}/>
           <div className={cx('react-datepicker-header')}>
             {this.renderCurrentMonth(monthDate)}
             <div className={cx('react-datepicker-header-controls')}>

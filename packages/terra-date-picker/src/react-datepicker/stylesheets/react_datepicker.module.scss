@@ -193,7 +193,7 @@
     &--selected,
     &--in-selecting-range,
     &--in-range {
-      background-color: $datepicker-selected-color;
+      background-color: darken($datepicker-selected-color, 10%);
       border-radius: $datepicker-border-radius;
       color: #fff;
 

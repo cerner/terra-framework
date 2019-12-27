@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated wdio screenshots due to changes in react-datepicker colors.
 
 4.24.0 - (December 16, 2019)
 ------------------
