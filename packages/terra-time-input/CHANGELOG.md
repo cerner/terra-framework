@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added new WDIO screenshots
 
+### Removed
+* Removed yarn reference in docs
+
 4.18.0 - (December 10, 2019)
 ------------------
 ### Added
