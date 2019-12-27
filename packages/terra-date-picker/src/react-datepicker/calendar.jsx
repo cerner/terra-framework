@@ -363,14 +363,14 @@ export default class Calendar extends React.Component {
 
   increaseMonth = () => {
     this.setState({
-      date: addMonths(cloneDate(this.state.date), 1),
+      date: addMonths(cloneDate(this.state.date), 1)
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(addMonths(cloneDate(this.state.date), 1));
   }
 
   decreaseMonth = () => {
     this.setState({
-      date: subtractMonths(cloneDate(this.state.date), 1),
+      date: subtractMonths(cloneDate(this.state.date), 1)
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(subtractMonths(cloneDate(this.state.date), 1));
   }
@@ -397,14 +397,14 @@ export default class Calendar extends React.Component {
 
   changeYear = (year) => {
     this.setState({
-      date: setYear(cloneDate(this.state.date), year),
+      date: setYear(cloneDate(this.state.date), year)
     })
     this.props.setPreSelection(setYear(cloneDate(this.state.date), year));
   }
 
   changeMonth = (month) => {
     this.setState({
-      date: setMonth(cloneDate(this.state.date), month),
+      date: setMonth(cloneDate(this.state.date), month)
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(setMonth(cloneDate(this.state.date), month));
   }
@@ -601,7 +601,7 @@ export default class Calendar extends React.Component {
             utcOffset={this.props.utcOffset}
             handleCalendarKeyDown={this.props.handleCalendarKeyDown}
             locale={this.props.locale}
-            intl={this.props.intl}/>
+            intl={this.props.intl} />
           <div className={cx('react-datepicker-header')}>
             {this.renderCurrentMonth(monthDate)}
             <div className={cx('react-datepicker-header-controls')}>

@@ -84,7 +84,7 @@ class Day extends React.Component {
     /**
      * Difference between utc and local time.
      */
-    utcOffset: PropTypes.number,
+    utcOffset: PropTypes.number
   }
 
   handleClick = (event) => {

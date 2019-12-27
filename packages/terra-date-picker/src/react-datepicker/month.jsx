@@ -125,7 +125,7 @@ export default class Month extends React.Component {
     /**
      * Difference between utc and local time.
      */
-    utcOffset: PropTypes.number,
+    utcOffset: PropTypes.number
   }
 
   handleDayClick = (day, event) => {
@@ -190,7 +190,7 @@ export default class Month extends React.Component {
         startDate={this.props.startDate}
         endDate={this.props.endDate}
         dayClassName={this.props.dayClassName}
-        utcOffset={this.props.utcOffset}/>)
+        utcOffset={this.props.utcOffset} />)
 
       if (breakAfterNextPush) break
 

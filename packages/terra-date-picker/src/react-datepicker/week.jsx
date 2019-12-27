@@ -101,7 +101,7 @@ export default class Week extends React.Component {
     /**
      * Difference between utc and local time.
      */
-    utcOffset: PropTypes.number,
+    utcOffset: PropTypes.number
   }
 
   handleDayClick = (day, event) => {
