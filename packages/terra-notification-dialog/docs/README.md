@@ -1,7 +1,7 @@
 # Terra NotificationDialog
 
 `terra-notification-dialog` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 9001. It is a common component to be used for confirmation/acceptance criteria style dialogs.
-<br />**Note:** Use at least one of `acceptAction`, `rejectAction`, `primaryAction` or `secondaryAction` props to avoid getting a warning.
+<br />**Note:** Use at least one of `acceptAction`, `rejectAction`, `primaryAction` or `secondaryAction` props for proper functioning of the `Notification Dialog` and avoid getting a warning.
 `primaryAction` and `secondaryAction` are **deprecated** and will be removed in the next MVB.
 
 ## Getting Started
