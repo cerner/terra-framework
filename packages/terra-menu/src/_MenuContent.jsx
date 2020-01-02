@@ -252,8 +252,7 @@ class MenuContent extends React.Component {
     }
 
     const backIcon = <IconLeft />;
-    const subMenuHeader = this.props.index > 0 ? (
-      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    const subMenuHeader = (
       <div
         role="button"
         onClick={this.props.onRequestBack}
@@ -271,20 +270,26 @@ class MenuContent extends React.Component {
           fill={<h1 className={cx('header-title')}>{this.props.title}</h1>}
         />
       </div>
-    ) : <div />;
+    );
 
-    const defaultHeader = this.props.headerTitle.length > 0 ? (
-      <Arrange
-        align="center"
-        fill={<h1 className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>}
-      />
-    ) : undefined;
+    let header = <div />;
+
+    if (this.props.index > 0) {
+      header = subMenuHeader;
+    } else if (this.props.headerTitle.length > 0) {
+      header = (
+        <Arrange
+          align="center"
+          fill={<h1 className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>}
+        />
+      );
+    }
 
     return (
       <Arrange
         className={cx('header')}
         fitEnd={closeButton}
-        fill={this.props.index > 0 ? subMenuHeader : defaultHeader}
+        fill={header}
         align="center"
       />
     );
