@@ -252,30 +252,28 @@ class MenuContent extends React.Component {
     }
 
     const backIcon = <IconLeft />;
-    const subMenuHeader = (
-      <div
-        role="button"
-        onClick={this.props.onRequestBack}
-        onKeyDown={this.onKeyDownBackButton}
-        tabIndex="0"
-        aria-label={backBtnText}
-      >
-        <Arrange
-          align="center"
-          fitStart={(
-            <div className={cx('header-button')}>
-              {backIcon}
-            </div>
-          )}
-          fill={<h1 className={cx('header-title')}>{this.props.title}</h1>}
-        />
-      </div>
-    );
-
     let header = <div />;
 
     if (this.props.index > 0) {
-      header = subMenuHeader;
+      header = (
+        <div
+          role="button"
+          onClick={this.props.onRequestBack}
+          onKeyDown={this.onKeyDownBackButton}
+          tabIndex="0"
+          aria-label={backBtnText}
+        >
+          <Arrange
+            align="center"
+            fitStart={(
+              <div className={cx('header-button')}>
+                {backIcon}
+              </div>
+            )}
+            fill={<h1 className={cx('header-title')}>{this.props.title}</h1>}
+          />
+        </div>
+      );
     } else if (this.props.headerTitle.length > 0) {
       header = (
         <Arrange
