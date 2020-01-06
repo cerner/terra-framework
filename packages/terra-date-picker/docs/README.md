@@ -18,7 +18,6 @@ In a controlled date picker, the consumer is responsible for managing the state 
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-date-picker`
-  - `yarn add terra-date-picker`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
 ## Peer Dependencies
