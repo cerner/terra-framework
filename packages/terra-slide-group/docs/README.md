@@ -12,7 +12,6 @@ As a utility component, any component utilizing the SlideGroup will need to hand
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-slide-group`
-  - `yarn add terra-slide-group`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
 ## Peer Dependencies
