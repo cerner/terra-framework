@@ -8,7 +8,6 @@ Our recommendation for HOC is the [terra-modal-manager][1], as it provides sizin
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-abstract-modal`
-  - `yarn add terra-abstract-modal`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
 ## Peer Dependencies
