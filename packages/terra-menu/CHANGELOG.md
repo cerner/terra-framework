@@ -5,7 +5,8 @@ Unreleased
 ----------
 ### Changed
 * Removed fixedHeight logic from Menu.
-* menuContent now calculates its height.
+### Added
+* Added new WDIO screenshots
 
 6.22.0 - (December 16, 2019)
 ------------------

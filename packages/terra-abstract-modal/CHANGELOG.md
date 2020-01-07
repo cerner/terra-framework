@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update screenshots
+
+### Removed
+* Removed yarn reference in docs
 
 3.18.0 - (December 16, 2019)
 ------------------
