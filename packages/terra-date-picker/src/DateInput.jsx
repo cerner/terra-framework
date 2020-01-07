@@ -168,8 +168,8 @@ class DatePickerInput extends React.Component {
     const additionalInputProps = { ...customProps, ...inputAttributes };
 
     const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
-    const inputClasses = cx([
-      'input',
+    const dateInputClasses = cx([
+      'date-input',
       { 'is-invalid': isInvalid },
       { 'is-incomplete': isIncomplete && required && !isInvalid },
     ]);
@@ -180,27 +180,66 @@ class DatePickerInput extends React.Component {
     const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
 
     return (
-      <div className={cx('custom-input')}>
-        <input
-          // Create a hidden input for storing the name and value attributes to use when submitting the form.
-          // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
-          data-terra-date-input-hidden
-          type="hidden"
-          name={name}
-          value={dateValue}
-        />
-        <Input
-          {...additionalInputProps}
-          className={inputClasses}
-          type="text"
-          name={'terra-date-'.concat(name)}
-          value={value}
-          onChange={this.handleOnChange}
-          placeholder={placeholder}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
-        />
+      <div
+        {...customProps}
+        className={cx('date-input-container')}
+      >
+        <div className={dateInputClasses}>
+          <input
+            // Create a hidden input for storing the name and value attributes to use when submitting the form.
+            // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
+            type="hidden"
+            name={name}
+            value={dateValue}
+          />
+          <Input
+            {...additionalInputProps}
+            className={cx('date-input-month')}
+            type="text"
+            name={'terra-date-'.concat(name)}
+            value={value}
+            onChange={this.handleOnChange}
+            placeholder="MM"
+            onFocus={onFocus}
+            onBlur={onBlur}
+            maxLength="2"
+            size="2"
+            pattern="\d*"
+            aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
+          />
+          <span className={cx('date-spacer')}>/</span>
+          <Input
+            {...additionalInputProps}
+            className={cx('date-input-day')}
+            type="text"
+            name={'terra-date-'.concat(name)}
+            value={value}
+            onChange={this.handleOnChange}
+            placeholder="DD"
+            onFocus={onFocus}
+            onBlur={onBlur}
+            maxLength="2"
+            size="2"
+            pattern="\d*"
+            aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
+          />
+          <span className={cx('date-spacer')}>/</span>
+          <Input
+            {...additionalInputProps}
+            className={cx('date-input-year')}
+            type="text"
+            name={'terra-date-'.concat(name)}
+            value={value}
+            onChange={this.handleOnChange}
+            placeholder="YYYY"
+            onFocus={onFocus}
+            onBlur={onBlur}
+            maxLength="4"
+            size="2"
+            pattern="\d*"
+            aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
+          />
+        </div>
         <Button
           className={buttonClasses}
           text={buttonText}

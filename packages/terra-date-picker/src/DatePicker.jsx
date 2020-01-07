@@ -429,7 +429,7 @@ class DatePicker extends React.Component {
         dateFormat={dateFormat}
         fixedHeight
         locale={intl.locale}
-        placeholderText={placeholderText}
+        //placeholderText={placeholderText}
         dropdownMode="select"
         showMonthDropdown
         showYearDropdown
