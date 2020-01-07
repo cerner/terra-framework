@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed `isRequired` for `acceptAction` and added custom validation for it.
 
 3.22.0 - (December 16, 2019)
 ------------------
