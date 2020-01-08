@@ -209,6 +209,12 @@ class DateUtil {
   }
 }
 
+DateUtil.inputType = {
+  MONTH: 0,
+  DAY: 1,
+  YEAR: 2,
+};
+
 DateUtil.ISO_EXTENDED_DATE_FORMAT = 'YYYY-MM-DD';
 
 export default DateUtil;
