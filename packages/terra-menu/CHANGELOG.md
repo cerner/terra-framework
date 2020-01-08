@@ -5,6 +5,9 @@ Unreleased
 ----------
 ### Changed
 * Removed fixedHeight logic from Menu.
+
+6.23.0 - (January 7, 2020)
+------------------
 ### Added
 * Added new WDIO screenshots
 
