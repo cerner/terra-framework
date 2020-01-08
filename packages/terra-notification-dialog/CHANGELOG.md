@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update copyright to include 2020
 
 3.23.0 - (January 7, 2020)
 ------------------
