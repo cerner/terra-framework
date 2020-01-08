@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+6.23.0 - (January 7, 2020)
+------------------
 ### Changed
 * Reenabled some wdio tests
 * Changed Axe contrast check on wdio test to improve reliability
@@ -11,6 +14,9 @@ Unreleased
 ------------------
 ### Changed
 * Minor dependency version bump
+
+### Added
+* Added themeable background-color property to ModalManager's modal.
 
 6.21.0 - (December 10, 2019)
 ------------------
