@@ -3,6 +3,23 @@ Changelog
 
 Unreleased
 ----------
+
+6.23.0 - (January 7, 2020)
+------------------
+### Changed
+* Reenabled some wdio tests
+* Changed Axe contrast check on wdio test to improve reliability
+
+6.22.0 - (December 16, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
+### Added
+* Added themeable background-color property to ModalManager's modal.
+
+6.21.0 - (December 10, 2019)
+------------------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 

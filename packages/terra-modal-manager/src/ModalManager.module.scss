@@ -4,6 +4,7 @@
   }
 
   .modal-manager {
+    background-color: var(--terra-modal-manager-background-color, #fff);
     border: var(--terra-modal-manager-border);
     border-radius: var(--terra-modal-manager-border-radius, 5px);
     box-shadow: var(--terra-modal-manager-box-shadow, 0 3px 7px rgba(0, 0, 0, 0.3));

@@ -3,6 +3,22 @@ Changelog
 
 Unreleased
 ----------
+
+1.16.0 - (January 7, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+1.15.0 - (December 16, 2019)
+------------------
+### Changed
+* Updated Jest snapshots.
+
+### Changed
+* Fixed axe issue for wrong aria-roles
+
+1.14.0 - (December 10, 2019)
+------------------
 ### Added
 * Added reference wdio screenshots for "orion-fusion-theme".
 

@@ -3,6 +3,19 @@ Changelog
 
 Unreleased
 ----------
+
+3.23.0 - (January 7, 2020)
+------------------
+### Changed
+* Removed `isRequired` for `acceptAction` and added custom validation for it.
+
+3.22.0 - (December 16, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
+3.21.0 - (December 10, 2019)
+------------------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 

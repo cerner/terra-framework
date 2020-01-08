@@ -3,6 +3,19 @@ Changelog
 
 Unreleased
 ----------
+
+6.23.0 - (January 7, 2020)
+------------------
+### Added
+* Added new WDIO screenshots
+
+6.22.0 - (December 16, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
+6.21.0 - (December 10, 2019)
+------------------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
