@@ -3,8 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+4.19.0 - (January 7, 2020)
+------------------
 ### Added
 * Added new WDIO screenshots
+
+### Removed
+* Removed yarn reference in docs
 
 4.18.0 - (December 10, 2019)
 ------------------

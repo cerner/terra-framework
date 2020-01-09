@@ -14,7 +14,6 @@ If a 12 hour clock is chosen, the hour will be displayed between 01 and 12 inclu
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-time-input`
-  - `yarn add terra-time-input`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
 ## Peer Dependencies
