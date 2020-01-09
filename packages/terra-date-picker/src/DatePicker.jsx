@@ -258,7 +258,7 @@ class DatePicker extends React.Component {
     }
   }
 
-  handleChange(event, date) {
+  handleChange(date, event) {
     if (event.type === 'change') {
       this.dateValue = event.target.value;
     }

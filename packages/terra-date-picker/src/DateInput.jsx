@@ -111,11 +111,13 @@ class DatePickerInput extends React.Component {
     this.handleDayChange = this.handleDayChange.bind(this);
     this.handleYearChange = this.handleYearChange.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
 
     this.state = {
       day: value.slice(3, 5),
       month: value.slice(0, 2),
       year: value.slice(6, 10),
+      date: '01/01/2000',
     };
   }
 
@@ -133,29 +135,14 @@ class DatePickerInput extends React.Component {
     }
   }
 
-  handleDateChange(event, type, dateValue, moveFocusOnChange) {
-    if (type === DateUtil.inputType.MONTH) {
-      this.setState({
-        month: dateValue,
-      }, moveFocusOnChange);
-    } else if (type === DateUtil.inputType.DAY) {
-      this.setState({
-        day: dateValue,
-      }, moveFocusOnChange);
-    } else {
-      this.setState({
-        year: dateValue,
-      }, moveFocusOnChange);
-    }
-
-    // Input values of length 1 indicate incomplete time, which means we cannot get a
-    // reliable time so onChange isn't triggered.
-    if (this.props.onChange && type === DateUtil.inputType.YEAR && !(dateValue.length < 4)) {
-      const month = type === DateUtil.inputType.MONTH ? dateValue : this.state.month;
-      const day = type === DateUtil.inputType.DAY ? dateValue : this.state.day;
-      const year = type === DateUtil.inputType.YEAR ? dateValue : this.state.year;
-
-      this.props.onChange(event, '12/14/1932');
+  handleDateChange(event) {
+    // if (!DateUtil.validDateInput(event.target.value)) {
+    //   return;
+    // }
+    console.log(event);
+    if (this.props.onChange) {
+      console.log(event.target.value);
+      this.props.onChange(event);
     }
   }
 
@@ -178,6 +165,10 @@ class DatePickerInput extends React.Component {
   handleYearChange(event) {
     const inputValue = event.target.value;
     this.setState({ year: inputValue });
+
+    if (inputValue.length === 4) {
+      this.setState({ date: this.monthInput.value.concat('/', this.dayInput.value).concat('/', this.yearInput.value) });
+    }
   }
 
   handleOnKeyDown(event) {
@@ -213,7 +204,12 @@ class DatePickerInput extends React.Component {
     delete customProps.shouldShowPicker;
 
     const additionalInputProps = { ...customProps, ...inputAttributes };
-    const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
+    //const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
+
+    //const dateValue = '01/01/2000';
+    // if (this.state.month && this.state.day && this.state.year) {
+    //   dateValue = this.state.month.concat('/', this.state.day).concat('/', this.state.year);
+    // }
 
     const dateInputClasses = cx([
       'date-input',
@@ -225,20 +221,22 @@ class DatePickerInput extends React.Component {
       { 'is-invalid': isInvalid },
     ]);
     const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
-    console.log(dateValue);
+
     return (
       <div
         {...customProps}
         className={cx('date-input-container')}
       >
         <div className={dateInputClasses}>
-          <input
+          <Input
             // Create a hidden input for storing the name and value attributes to use when submitting the form.
             // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
             data-terra-date-input-hidden
+            refCallback={(inputRef) => { this.dateInput = inputRef; }}
+            onChange={this.handleDateChange}
             type="hidden"
             name={name}
-            value={dateValue}
+            value={this.state.date}
           />
           <Input
             {...additionalInputProps}
@@ -286,7 +284,7 @@ class DatePickerInput extends React.Component {
             onFocus={onFocus}
             onBlur={onBlur}
             maxLength="4"
-            size="2"
+            size="4"
             pattern="\d*"
             aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
           />
