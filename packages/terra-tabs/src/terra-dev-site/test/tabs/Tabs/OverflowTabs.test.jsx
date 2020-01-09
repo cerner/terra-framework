@@ -15,7 +15,7 @@ const createTabPanes = () => {
 };
 
 const IconOnlyTabs = () => (
-  <Tabs id="iconOnlyTabs">
+  <Tabs>
     {createTabPanes()}
   </Tabs>
 );
