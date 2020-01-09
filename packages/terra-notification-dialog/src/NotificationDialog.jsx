@@ -29,7 +29,7 @@ const propTypes = {
    */
   title: PropTypes.string,
   /**
-   * Deprecated, Message of the notification-dialog. Resolves to startMessage
+   * **Deprecated**, Message of the notification-dialog. Resolves to `startMessage`.
    */
   message: PropTypes.string,
   /**
@@ -45,7 +45,7 @@ const propTypes = {
    */
   content: PropTypes.node,
   /**
-   * Deprecated, The Action of the primary button. Resolves to acceptAction
+   * **Deprecated**, The Action of the primary button. Resolves to `acceptAction`
    */
   primaryAction: PropTypes.shape({
     text: PropTypes.string,
@@ -57,9 +57,9 @@ const propTypes = {
   acceptAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
-  }).isRequired,
+  }),
   /**
-   * Deprecated The Action of the secondary button. Resolves to rejectAction
+   * **Deprecated**, The Action of the secondary button. Resolves to `rejectAction`.
    */
   secondaryAction: PropTypes.shape({
     text: PropTypes.string,
@@ -74,7 +74,7 @@ const propTypes = {
   }),
   /**
    * The variant of notification to be rendered.
-   * Use one of alert, error, warning, info, success, custom.
+   * Use one of `alert`, `error`, `warning`, `info`, `success`, `custom`.
    */
   variant: PropTypes.oneOf([
     variants.ALERT,
@@ -94,6 +94,7 @@ const propTypes = {
   isOpen: PropTypes.bool.isRequired,
   /**
    * Determines the order of notification action buttons.
+   * Use one of `acceptFirst`, `rejectFirst`.
    */
   buttonOrder: PropTypes.oneOf([
     'acceptFirst',
@@ -101,6 +102,7 @@ const propTypes = {
   ]),
   /**
    * Determines whether acceptAction, rejectAction or neither is emphasizedAction
+   * Use one of `none`, `accept` or `reject`.
    */
   emphasizedAction: PropTypes.oneOf([
     'none',
@@ -223,6 +225,10 @@ class NotificationDialog extends React.Component {
       message,
       ...customProps
     } = this.props;
+    if (process.env.NODE_ENV !== 'production' && acceptAction === undefined && primaryAction === undefined && rejectAction === undefined && secondaryAction === undefined) {
+      // eslint-disable-next-line no-console
+      console.warn('At least one of `acceptAction`,`primaryAction`,`rejectAction`,`secondaryAction` props must be provided for Notification dialog');
+    }
 
     const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
     const notificationDialogClassNames = cx('notification-dialog', customProps.className);

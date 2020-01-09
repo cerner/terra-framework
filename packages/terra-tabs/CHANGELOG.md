@@ -7,6 +7,11 @@ Unreleased
 * Overflow issue with icon-only tabs.
 
 
+6.23.0 - (January 7, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 6.22.0 - (December 16, 2019)
 ------------------
 ### Changed
