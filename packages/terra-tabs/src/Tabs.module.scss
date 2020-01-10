@@ -58,7 +58,7 @@
     &.is-icon-only {
       flex: 0 0 auto;
       min-width: 2.571rem;
-      padding: var(--terra-tabs-icon-only-padding, 0.5rem 0.688rem);
+      padding: 0.5rem 0;
     }
 
     &.is-text-only {
