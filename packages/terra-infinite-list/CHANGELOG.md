@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added `ariaLabel` as a required prop.
 
 3.23.0 - (December 10, 2019)
 ------------------

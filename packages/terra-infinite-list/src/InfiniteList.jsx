@@ -12,6 +12,10 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * String that labels the modal for screen readers.
+   */
+  ariaLabel: PropTypes.string.isRequired,
+  /**
    * The child list items, of type InfiniteList Item, to be placed within the infinite list.
    * For further documentation of InfiniteList Item see terra-list's ListItem.
    */
@@ -451,6 +455,7 @@ class InfiniteList extends React.Component {
 
   render() {
     const {
+      ariaLabel,
       children,
       dividerStyle,
       initialLoadingIndicator,
@@ -522,7 +527,7 @@ class InfiniteList extends React.Component {
         <div {...customProps} className={cx(['infinite-list', customProps.className])} ref={this.setContentNode}>
           {initialSpinner}
           {topSpacer}
-          <List {...attrSpread} refCallback={refCallback}>
+          <List {...attrSpread} aria-label={ariaLabel} refCallback={refCallback}>
             {visibleChildren}
           </List>
           {bottomSpacer}

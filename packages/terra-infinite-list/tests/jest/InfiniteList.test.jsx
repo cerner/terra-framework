@@ -6,7 +6,7 @@ import styles from './InfiniteList.test.module.scss';
 
 describe('InfiniteList', () => {
   it('should render a default component', () => {
-    const wrapper = shallowWithIntl(<InfiniteList />);
+    const wrapper = shallowWithIntl(<InfiniteList ariaLabel="Infinite List" />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -17,7 +17,7 @@ describe('InfiniteList', () => {
       progressiveLoadingIndicator: <div className={styles.progressiveLoadingIndicator} />,
     };
 
-    const component = <InfiniteList {...infiniteProps} />;
+    const component = <InfiniteList ariaLabel="Infinite List" {...infiniteProps} />;
     const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
@@ -26,6 +26,7 @@ describe('InfiniteList', () => {
     const component = (
       <InfiniteList
         isFinishedLoading
+        ariaLabel="Infinite List"
       >
         <Item key={`item-${1}`}>
           <div className={styles.item}>item 1</div>
@@ -53,6 +54,7 @@ describe('InfiniteList', () => {
         paddingStyle="standard"
         role="listbox"
         progressiveLoadingMessage="Loading allergies..."
+        ariaLabel="Infinite List"
       >
         <Item isSelectable key={`item-${1}`}>
           <div className={styles.item}>item 1</div>
@@ -79,6 +81,7 @@ describe('InfiniteList', () => {
         dividerStyle="standard"
         paddingStyle="standard"
         role="listbox"
+        ariaLabel="Infinite List"
       >
         <Item isSelectable className={styles.item1} key={`item-${1}`}>
           <div className={styles.item}>item 1</div>
