@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Overflow issue with icon-only tabs.
+
 
 ### Changed
 * Replaced uncontrolled `<ResponsiveElement>` with controlled `<ResponsiveElement>`.
