@@ -104,21 +104,18 @@ class DatePickerInput extends React.Component {
   constructor(props) {
     super(props);
 
-    const { value } = this.props;
+    this.state = {
+      day: this.props.value.slice(3, 5),
+      month: this.props.value.slice(0, 2),
+      year: this.props.value.slice(6, 10),
+    };
 
     this.handleOnButtonClick = this.handleOnButtonClick.bind(this);
-    this.handleMonthChange = this.handleMonthChange.bind(this);
-    this.handleDayChange = this.handleDayChange.bind(this);
-    this.handleYearChange = this.handleYearChange.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
-    this.handleDateChange = this.handleDateChange.bind(this);
-
-    this.state = {
-      day: value.slice(3, 5),
-      month: value.slice(0, 2),
-      year: value.slice(6, 10),
-      date: '01/01/2000',
-    };
+    this.handleDayChange = this.handleDayChange.bind(this);
+    this.handleMonthChange = this.handleMonthChange.bind(this);
+    this.handleYearChange = this.handleYearChange.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -135,45 +132,58 @@ class DatePickerInput extends React.Component {
     }
   }
 
-  handleDateChange(event) {
-    // if (!DateUtil.validDateInput(event.target.value)) {
-    //   return;
-    // }
-    console.log(event);
+  handleOnChange(event) {
+    if (!DateUtil.validDateInput(event.target.value)) {
+      return;
+    }
+
     if (this.props.onChange) {
-      console.log(event.target.value);
       this.props.onChange(event);
-    }
-  }
-
-  handleMonthChange(event) {
-    const inputValue = event.target.value;
-    if (inputValue.length === 2) {
-      this.dayInput.focus();
-    }
-    this.setState({ month: inputValue });
-  }
-
-  handleDayChange(event) {
-    const inputValue = event.target.value;
-    if (inputValue.length === 2) {
-      this.yearInput.focus();
-    }
-    this.setState({ day: inputValue });
-  }
-
-  handleYearChange(event) {
-    const inputValue = event.target.value;
-    this.setState({ year: inputValue });
-
-    if (inputValue.length === 4) {
-      this.setState({ date: this.monthInput.value.concat('/', this.dayInput.value).concat('/', this.yearInput.value) });
     }
   }
 
   handleOnKeyDown(event) {
     if (this.props.onKeyDown) {
       this.props.onKeyDown(event);
+    }
+  }
+
+  handleDayChange(event) {
+    this.handleDateChange(event, DateUtil.inputType.DAY, event.target.value);
+  }
+
+  handleMonthChange(event) {
+    this.handleDateChange(event, DateUtil.inputType.MONTH, event.target.value);
+  }
+
+  handleYearChange(event) {
+    this.handleDateChange(event, DateUtil.inputType.YEAR, event.target.value);
+  }
+
+  handleDateChange(event, type, value) {
+    if (type === DateUtil.inputType.DAY) {
+      this.setState({
+        day: value,
+      });
+    } else if (type === DateUtil.inputType.MONTH) {
+      this.setState({
+        month: value,
+      });
+    } else {
+      this.setState({
+        year: value,
+      });
+    }
+
+    const day = type === DateUtil.inputType.DAY ? value : this.state.day;
+    const month = type === DateUtil.inputType.MONTH ? value : this.state.month;
+    const year = type === DateUtil.inputType.YEAR ? value : this.state.year;
+
+    if (day === '' && month === '' && year === '') {
+      this.props.onChange(event, '');
+    } else if (year.length === 4) {
+      event.target.value = year.concat('-', month).concat('-', day); // eslint-disable-line no-param-reassign
+      this.props.onChange(event, event.target.value);
     }
   }
 
@@ -204,12 +214,7 @@ class DatePickerInput extends React.Component {
     delete customProps.shouldShowPicker;
 
     const additionalInputProps = { ...customProps, ...inputAttributes };
-    //const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
-
-    //const dateValue = '01/01/2000';
-    // if (this.state.month && this.state.day && this.state.year) {
-    //   dateValue = this.state.month.concat('/', this.state.day).concat('/', this.state.year);
-    // }
+    const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
 
     const dateInputClasses = cx([
       'date-input',
@@ -228,15 +233,13 @@ class DatePickerInput extends React.Component {
         className={cx('date-input-container')}
       >
         <div className={dateInputClasses}>
-          <Input
+          <input
             // Create a hidden input for storing the name and value attributes to use when submitting the form.
             // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
             data-terra-date-input-hidden
-            refCallback={(inputRef) => { this.dateInput = inputRef; }}
-            onChange={this.handleDateChange}
             type="hidden"
             name={name}
-            value={this.state.date}
+            value={dateValue}
           />
           <Input
             {...additionalInputProps}

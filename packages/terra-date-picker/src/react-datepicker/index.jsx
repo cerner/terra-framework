@@ -482,7 +482,7 @@ class DatePicker extends React.Component {
 
   handleChange = (event) => {
     if (this.props.onChangeRaw) {
-      this.props.onChangeRaw(event)
+      this.props.onChangeRaw(event, event.target.value)
       if (event.isDefaultPrevented()) {
         return
       }
@@ -768,7 +768,6 @@ class DatePicker extends React.Component {
       onClick: this.onInputClick,
       onFocus: this.handleFocus,
       onKeyDown: this.onInputKeyDown,
-      id: this.props.id,
       name: this.props.name,
       autoFocus: this.props.autoFocus,
       placeholder: this.props.placeholderText,
@@ -829,8 +828,8 @@ class DatePicker extends React.Component {
     return (
       <React.Fragment>
         <div
-         ref={this.datePickerContainer}
-         className={cx('react-datepicker-input-container')}
+          ref={this.datePickerContainer}
+          className={cx('react-datepicker-input-container')}
         >
           {this.renderDateInput()}
           {this.renderClearButton()}

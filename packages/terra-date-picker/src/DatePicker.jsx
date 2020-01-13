@@ -266,17 +266,17 @@ class DatePicker extends React.Component {
     this.setState({
       selectedDate: date,
     });
-
     if (this.props.onChange) {
       this.props.onChange(event, date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '');
     }
   }
 
-  handleChangeRaw(event) {
+  handleChangeRaw(event, date) {
+    this.handleChange(DateUtil.createSafeDate(date), event);
     this.dateValue = event.target.value;
 
     if (this.props.onChangeRaw) {
-      this.props.onChangeRaw(event, event.target.value);
+      this.props.onChangeRaw(event);
     }
   }
 
@@ -429,7 +429,7 @@ class DatePicker extends React.Component {
         dateFormat={dateFormat}
         fixedHeight
         locale={intl.locale}
-        //placeholderText={placeholderText}
+        placeholderText={placeholderText}
         dropdownMode="select"
         showMonthDropdown
         showYearDropdown
@@ -472,7 +472,7 @@ class DatePicker extends React.Component {
         dateFormat={dateFormat}
         fixedHeight
         locale={intl.locale}
-        placeholderText={placeholderText}
+        //placeholderText={placeholderText}
         dropdownMode="select"
         showMonthDropdown
         showYearDropdown
