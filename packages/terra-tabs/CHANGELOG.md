@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Overflow issue with icon-only tabs.
+
 
 6.23.0 - (January 7, 2020)
 ------------------

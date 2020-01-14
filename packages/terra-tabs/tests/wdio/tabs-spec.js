@@ -23,6 +23,13 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
       Terra.validates.element();
     });
   });
+
+  describe('Icon Only Tabs - No Overflow', () => {
+    it('Icon Only Tabs - No Overflow', () => {
+      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/overflow-tabs');
+      Terra.validates.element();
+    });
+  });
 });
 
 // Only test viewports that have collapsed tabs
