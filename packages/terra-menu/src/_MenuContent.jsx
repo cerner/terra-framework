@@ -80,7 +80,8 @@ const propTypes = {
    */
   refCallback: PropTypes.func,
   /**
-   * Header Title for menu if menu contains drill-in sub-menus
+   * Header Title for main-menu(first-tier).
+   * Header Title will only be visible if the main-menu contains at least one sub-menu.
    */
   headerTitle: PropTypes.string,
 };
@@ -91,6 +92,7 @@ const defaultProps = {
   isWidthBounded: false,
   isHeightBounded: false,
   isHidden: false,
+  headerTitle: '',
 };
 
 const childContextTypes = {
