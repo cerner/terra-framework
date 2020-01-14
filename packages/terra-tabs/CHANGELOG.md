@@ -7,6 +7,9 @@ Unreleased
 * Overflow issue with icon-only tabs.
 
 
+### Changed
+* Replaced uncontrolled `<ResponsiveElement>` with controlled `<ResponsiveElement>`.
+
 6.23.0 - (January 7, 2020)
 ------------------
 ### Changed
@@ -45,7 +48,7 @@ collapse into a menu on smaller viewports.
 6.16.0 - (October 21, 2019)
 ------------------
 ### Changed
-* Minor dependency updatess
+* Minor dependency updates
 
 6.15.0 - (October 16, 2019)
 ------------------
