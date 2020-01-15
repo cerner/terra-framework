@@ -8,7 +8,6 @@ import classNames from 'classnames/bind';
 
 import DateUtil from './DateUtil';
 import styles from './DatePicker.module.scss';
-import { _ } from 'core-js';
 
 const cx = classNames.bind(styles);
 
