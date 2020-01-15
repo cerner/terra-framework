@@ -480,9 +480,9 @@ class DatePicker extends React.Component {
     if (this.props.withPortal) { event.preventDefault() }
   }
 
-  handleChange = (event) => {
+  handleChange = (event, dateValue) => {
     if (this.props.onChangeRaw) {
-      this.props.onChangeRaw(event, event.target.value)
+      this.props.onChangeRaw(event, dateValue)
       if (event.isDefaultPrevented()) {
         return
       }
@@ -755,10 +755,10 @@ class DatePicker extends React.Component {
 
     const customInput = this.props.customInput || <input type="text" />
     const customInputRef = this.props.customInputRef || 'ref'
-    const inputValue =
+    let inputValue =
       typeof this.props.value === 'string' ? this.props.value
         : typeof this.state.inputValue === 'string' ? this.state.inputValue
-          : safeDateFormat(this.props.selected, this.props)
+          : safeDateFormat(this.props.selected, 'MM-DD-YYYY').substr(0, 10)
 
     return React.cloneElement(customInput, {
       [customInputRef]: (input) => { this.input = input },

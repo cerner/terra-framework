@@ -8,6 +8,7 @@ import classNames from 'classnames/bind';
 
 import DateUtil from './DateUtil';
 import styles from './DatePicker.module.scss';
+import { _ } from 'core-js';
 
 const cx = classNames.bind(styles);
 
@@ -105,14 +106,15 @@ class DatePickerInput extends React.Component {
     super(props);
 
     this.state = {
-      day: this.props.value.slice(3, 5),
-      month: this.props.value.slice(0, 2),
-      year: this.props.value.slice(6, 10),
+      day: this.props.value.slice(8, 10),
+      month: this.props.value.slice(5, 7),
+      year: this.props.value.slice(0, 4),
     };
 
     this.handleOnButtonClick = this.handleOnButtonClick.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
     this.handleDayChange = this.handleDayChange.bind(this);
     this.handleMonthChange = this.handleMonthChange.bind(this);
     this.handleYearChange = this.handleYearChange.bind(this);
@@ -122,6 +124,19 @@ class DatePickerInput extends React.Component {
     if (this.shouldShowPicker && !prevProps.shouldShowPicker && this.props.onClick) {
       this.props.onClick();
     }
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    const tempDate = DateUtil.createSafeDate(props.value);
+    if (tempDate && props.value !== state.prevDate) {
+      return {
+        day: props.value.slice(8, 10),
+        month: props.value.slice(5, 7),
+        year: props.value.slice(0, 4),
+        prevDate: props.value,
+      };
+    }
+    return null;
   }
 
   handleOnButtonClick(event) {
@@ -149,27 +164,42 @@ class DatePickerInput extends React.Component {
   }
 
   handleDayChange(event) {
-    this.handleDateChange(event, DateUtil.inputType.DAY, event.target.value);
+    const inputValue = event.target.value.replace(/\D/gm, '');
+    const moveFocusOnChange = () => {
+      // Move focus to second if second is shown and minute input has a valid and complete entry
+      if (inputValue.length === 2) {
+        this.yearInput.focus();
+      }
+    };
+    this.handleDateChange(event, DateUtil.inputType.DAY, inputValue, moveFocusOnChange);
   }
 
   handleMonthChange(event) {
-    this.handleDateChange(event, DateUtil.inputType.MONTH, event.target.value);
+    const inputValue = event.target.value.replace(/\D/gm, '');
+    const moveFocusOnChange = () => {
+      // Move focus to second if second is shown and minute input has a valid and complete entry
+      if (inputValue.length === 2) {
+        this.dayInput.focus();
+      }
+    };
+    this.handleDateChange(event, DateUtil.inputType.MONTH, inputValue, moveFocusOnChange);
   }
 
   handleYearChange(event) {
-    this.handleDateChange(event, DateUtil.inputType.YEAR, event.target.value);
+    const inputValue = event.target.value.replace(/\D/gm, '');
+    this.handleDateChange(event, DateUtil.inputType.YEAR, inputValue);
   }
 
-  handleDateChange(event, type, value) {
+  handleDateChange(event, type, value, moveFocusOnChange) {
     if (type === DateUtil.inputType.DAY) {
       this.setState({
         day: value,
-      });
+      }, moveFocusOnChange);
     } else if (type === DateUtil.inputType.MONTH) {
       this.setState({
         month: value,
-      });
-    } else {
+      }, moveFocusOnChange);
+    } else if (type === DateUtil.inputType.YEAR) {
       this.setState({
         year: value,
       });
@@ -182,8 +212,8 @@ class DatePickerInput extends React.Component {
     if (day === '' && month === '' && year === '') {
       this.props.onChange(event, '');
     } else if (year.length === 4) {
-      event.target.value = year.concat('-', month).concat('-', day); // eslint-disable-line no-param-reassign
-      this.props.onChange(event, event.target.value);
+      const tempDate = year.concat('-', month).concat('-', day);
+      this.props.onChange(event, tempDate);
     }
   }
 
@@ -243,7 +273,6 @@ class DatePickerInput extends React.Component {
           />
           <Input
             {...additionalInputProps}
-            refCallback={(inputRef) => { this.monthInput = inputRef; }}
             className={cx('date-input-month')}
             type="text"
             name={'terra-date-month'.concat(name)}
@@ -255,7 +284,8 @@ class DatePickerInput extends React.Component {
             maxLength="2"
             size="2"
             pattern="\d*"
-            aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
+            aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
+            tabIndex={0}
           />
           <span className={cx('date-spacer')}>/</span>
           <Input
@@ -272,7 +302,8 @@ class DatePickerInput extends React.Component {
             maxLength="2"
             size="2"
             pattern="\d*"
-            aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
+            aria-label={intl.formatMessage({ id: 'Terra.datePicker.today' })}
+            tabIndex={0}
           />
           <span className={cx('date-spacer')}>/</span>
           <Input
@@ -289,7 +320,8 @@ class DatePickerInput extends React.Component {
             maxLength="4"
             size="4"
             pattern="\d*"
-            aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
+            aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
+            tabIndex={0}
           />
         </div>
         <Button

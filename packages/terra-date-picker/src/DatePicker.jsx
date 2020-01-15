@@ -272,7 +272,9 @@ class DatePicker extends React.Component {
   }
 
   handleChangeRaw(event, date) {
-    this.handleChange(DateUtil.createSafeDate(date), event);
+    if (date) {
+      this.handleChange(DateUtil.createSafeDate(date), event);
+    }
     this.dateValue = event.target.value;
 
     if (this.props.onChangeRaw) {
