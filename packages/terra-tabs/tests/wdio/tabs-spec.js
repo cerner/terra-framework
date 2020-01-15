@@ -83,6 +83,20 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
       Terra.validates.element();
     });
   });
+
+  describe('Additional Tabs after mount', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/additional-tabs');
+    });
+
+    Terra.it.matchesScreenshot('before', { selector: '#tabsWrapper-5' });
+
+    it('Additional Tabs', () => {
+      browser.click('button');
+      browser.waitForVisible('#tabsWrapper-20');
+      Terra.validates.element('after', { selector: '#tabsWrapper-20' });
+    });
+  });
 });
 
 // Verify tabs do not _completely_ collapse.

@@ -5,7 +5,7 @@ Unreleased
 ----------
 ### Fixed
 * Overflow issue with icon-only tabs.
-
+* Reset cache and handle visibility of tabs added/removed post initial mount.
 
 ### Changed
 * Replaced uncontrolled `<ResponsiveElement>` with controlled `<ResponsiveElement>`.
