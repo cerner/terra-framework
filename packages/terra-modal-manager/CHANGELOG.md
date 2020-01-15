@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+6.23.0 - (January 7, 2020)
+------------------
 ### Changed
 * Reenabled some wdio tests
 * Changed Axe contrast check on wdio test to improve reliability
