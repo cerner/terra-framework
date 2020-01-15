@@ -231,22 +231,21 @@ class DatePicker extends React.Component {
     // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
     // IE 11 sets document.activeElement to the next focused element before the blur event is called.
     const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
-
     // Handle blur only if focus has moved out of the entire date picker component.
     if (!this.datePickerContainer.current.contains(activeTarget)) {
       if (this.props.onBlur) {
         const format = DateUtil.getFormatByLocale(this.props.intl.locale);
-        const isCompleteDate = DateUtil.isValidDate(this.dateValue, format);
-        const iSOString = isCompleteDate ? DateUtil.convertToISO8601(this.dateValue, format) : '';
+        const isCompleteDate = DateUtil.isValidDate(this.state.selectedDate, format);
+        const iSOString = isCompleteDate ? DateUtil.convertToISO8601(this.state.selectedDate, format) : '';
         let isValidDate = false;
 
-        if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString)))) {
+        if ((isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString)))) {
           isValidDate = true;
         }
 
         const options = {
           iSO: iSOString,
-          inputValue: this.dateValue,
+          inputValue: iSOString,
           isCompleteValue: isCompleteDate,
           isValidValue: isValidDate,
         };
@@ -474,7 +473,7 @@ class DatePicker extends React.Component {
         dateFormat={dateFormat}
         fixedHeight
         locale={intl.locale}
-        //placeholderText={placeholderText}
+        placeholderText={placeholderText}
         dropdownMode="select"
         showMonthDropdown
         showYearDropdown

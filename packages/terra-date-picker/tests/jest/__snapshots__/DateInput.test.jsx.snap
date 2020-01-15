@@ -77,33 +77,121 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
   required={false}
 >
   <div
-    className="custom-input"
+    className="date-input-container"
   >
-    <input
-      data-terra-date-input-hidden={true}
-      type="hidden"
-    />
-    <Input
-      aria-label="Terra.datePicker.date"
-      className="input"
-      disabled={false}
-      isIncomplete={false}
-      isInvalid={false}
-      name="terra-date-undefined"
-      onChange={[Function]}
-      required={false}
-      type="text"
+    <div
+      className="date-input"
     >
       <input
-        aria-label="Terra.datePicker.date"
-        className="form-input input"
-        disabled={false}
-        name="terra-date-undefined"
-        onChange={[Function]}
-        required={false}
-        type="text"
+        data-terra-date-input-hidden={true}
+        type="hidden"
       />
-    </Input>
+      <Input
+        aria-label="Terra.datePicker.monthLabel"
+        className="date-input-month"
+        disabled={false}
+        isIncomplete={false}
+        isInvalid={false}
+        maxLength="2"
+        name="terra-date-month-undefined"
+        onChange={[Function]}
+        pattern="\\\\d*"
+        placeholder="MM"
+        required={false}
+        size="2"
+        tabIndex={0}
+        type="text"
+      >
+        <input
+          aria-label="Terra.datePicker.monthLabel"
+          className="form-input date-input-month"
+          disabled={false}
+          maxLength="2"
+          name="terra-date-month-undefined"
+          onChange={[Function]}
+          pattern="\\\\d*"
+          placeholder="MM"
+          required={false}
+          size="2"
+          tabIndex={0}
+          type="text"
+        />
+      </Input>
+      <span
+        className="date-spacer"
+      >
+        /
+      </span>
+      <Input
+        aria-label="Terra.datePicker.today"
+        className="date-input-day"
+        disabled={false}
+        isIncomplete={false}
+        isInvalid={false}
+        maxLength="2"
+        name="terra-date-day-undefined"
+        onChange={[Function]}
+        pattern="\\\\d*"
+        placeholder="DD/YY"
+        refCallback={[Function]}
+        required={false}
+        size="2"
+        tabIndex={0}
+        type="text"
+      >
+        <input
+          aria-label="Terra.datePicker.today"
+          className="form-input date-input-day"
+          disabled={false}
+          maxLength="2"
+          name="terra-date-day-undefined"
+          onChange={[Function]}
+          pattern="\\\\d*"
+          placeholder="DD/YY"
+          required={false}
+          size="2"
+          tabIndex={0}
+          type="text"
+        />
+      </Input>
+      <span
+        className="date-spacer"
+      >
+        /
+      </span>
+      <Input
+        aria-label="Terra.datePicker.yearLabel"
+        className="date-input-year"
+        disabled={false}
+        isIncomplete={false}
+        isInvalid={false}
+        maxLength="4"
+        name="terra-date-year-undefined"
+        onChange={[Function]}
+        pattern="\\\\d*"
+        placeholder="YYYY"
+        refCallback={[Function]}
+        required={false}
+        size="4"
+        tabIndex={0}
+        type="text"
+      >
+        <input
+          aria-label="Terra.datePicker.yearLabel"
+          className="form-input date-input-year"
+          disabled={false}
+          maxLength="4"
+          name="terra-date-year-undefined"
+          onChange={[Function]}
+          pattern="\\\\d*"
+          placeholder="YYYY"
+          required={false}
+          size="4"
+          tabIndex={0}
+          type="text"
+        />
+      </Input>
+    </div>
     <Button
       className="button"
       icon={
@@ -227,18 +315,59 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
 
 exports[`should render a default date input 1`] = `
 <div
-  class="custom-input"
+  class="date-input-container"
 >
-  <input
-    data-terra-date-input-hidden="true"
-    type="hidden"
-  />
-  <input
-    aria-label="Terra.datePicker.date"
-    class="form-input input"
-    name="terra-date-undefined"
-    type="text"
-  />
+  <div
+    class="date-input"
+  >
+    <input
+      data-terra-date-input-hidden="true"
+      type="hidden"
+    />
+    <input
+      aria-label="Terra.datePicker.monthLabel"
+      class="form-input date-input-month"
+      maxlength="2"
+      name="terra-date-month-undefined"
+      pattern="\\\\d*"
+      placeholder="MM"
+      size="2"
+      tabindex="0"
+      type="text"
+    />
+    <span
+      class="date-spacer"
+    >
+      /
+    </span>
+    <input
+      aria-label="Terra.datePicker.today"
+      class="form-input date-input-day"
+      maxlength="2"
+      name="terra-date-day-undefined"
+      pattern="\\\\d*"
+      placeholder="DD"
+      size="2"
+      tabindex="0"
+      type="text"
+    />
+    <span
+      class="date-spacer"
+    >
+      /
+    </span>
+    <input
+      aria-label="Terra.datePicker.yearLabel"
+      class="form-input date-input-year"
+      maxlength="4"
+      name="terra-date-year-undefined"
+      pattern="\\\\d*"
+      placeholder="YYYY"
+      size="4"
+      tabindex="0"
+      type="text"
+    />
+  </div>
   <button
     aria-disabled="false"
     aria-label="Terra.datePicker.openCalendar"
@@ -273,23 +402,67 @@ exports[`should render a default date input 1`] = `
 
 exports[`should render a default date input with all props 1`] = `
 <div
-  class="custom-input"
+  class="date-input-container"
 >
-  <input
-    data-terra-date-input-hidden="true"
-    name="date-input"
-    type="hidden"
-    value="2017-01-01"
-  />
-  <input
-    aria-label="Terra.datePicker.date"
-    class="form-input input"
-    id="terra-date-input"
-    name="terra-date-date-input"
-    placeholder="MM/DD/YYYY"
-    type="text"
-    value="01/01/2017"
-  />
+  <div
+    class="date-input"
+  >
+    <input
+      data-terra-date-input-hidden="true"
+      name="date-input"
+      type="hidden"
+      value="2017-01-01"
+    />
+    <input
+      aria-label="Terra.datePicker.monthLabel"
+      class="form-input date-input-month"
+      id="terra-date-input"
+      maxlength="2"
+      name="terra-date-month-date-input"
+      pattern="\\\\d*"
+      placeholder="MM"
+      size="2"
+      tabindex="0"
+      type="text"
+      value="01"
+    />
+    <span
+      class="date-spacer"
+    >
+      /
+    </span>
+    <input
+      aria-label="Terra.datePicker.today"
+      class="form-input date-input-day"
+      id="terra-date-input"
+      maxlength="2"
+      name="terra-date-day-date-input"
+      pattern="\\\\d*"
+      placeholder="DD/YY"
+      size="2"
+      tabindex="0"
+      type="text"
+      value="01"
+    />
+    <span
+      class="date-spacer"
+    >
+      /
+    </span>
+    <input
+      aria-label="Terra.datePicker.yearLabel"
+      class="form-input date-input-year"
+      id="terra-date-input"
+      maxlength="4"
+      name="terra-date-year-date-input"
+      pattern="\\\\d*"
+      placeholder="YYYY"
+      size="4"
+      tabindex="0"
+      type="text"
+      value="2017"
+    />
+  </div>
   <button
     aria-disabled="false"
     aria-label="Terra.datePicker.openCalendar"

@@ -12,6 +12,10 @@
     display: inline-block;
   }
 
+  .date-input-container-focus {
+    border-color: var(--terra-date-picker-input-container-focus-border-color, #26a2e5);
+  }
+
   .date-input {
     background-color: var(--terra-date-input-background-color, #fff);
     background-image: var(--terra-date-input-background-image, none);

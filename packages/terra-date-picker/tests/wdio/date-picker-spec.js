@@ -8,7 +8,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     it('sets the date', () => {
-      browser.setValue('input[name="terra-date-date-input"]', '06/01/2017');
+      browser.setValue('input[name="terra-date-month-date-input"]', '06');
+      browser.setValue('input[name="terra-date-day-date-input"]', '01');
+      browser.setValue('input[name="terra-date-year-date-input"]', '2020');
       browser.keys('Enter');
       browser.click('[class*="button"]');
     });
@@ -34,7 +36,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
       Terra.it.matchesScreenshot('default date displayed');
       it('clears the default date and time after focusing on input box', () => {
-        browser.click('input[name="terra-date-date-input"]');
+        browser.click('input[name="terra-date-month-date-input"]');
         // Ensures the mouse pointer doesn't appear in the screenshot
         browser.click('h3');
       });
@@ -59,7 +61,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
       Terra.it.matchesScreenshot('default date displayed');
       it('clears the default date and time after focusing on input box', () => {
-        browser.click('input[name="terra-date-date-input"]');
+        browser.click('input[name="terra-date-month-date-input"]');
         // Ensures the mouse pointer doesn't appear in the screenshot
         browser.click('h3');
       });
@@ -71,7 +73,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
       Terra.it.matchesScreenshot('default date displayed');
       it('clears the default date when focus is on the input', () => {
-        browser.click('input[name="terra-date-date-input"]');
+        browser.click('input[name="terra-date-month-date-input"]');
         // Ensures the mouse pointer doesn't appear in the screenshot
         browser.click('h3');
       });
@@ -92,7 +94,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
   describe('Filter Dates', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-filter-dates');
-      browser.setValue('input[name="terra-date-date-input"]', '06/01/2017');
+      browser.setValue('input[name="terra-date-month-date-input"]', '06');
+      browser.setValue('input[name="terra-date-day-date-input"]', '01');
+      browser.setValue('input[name="terra-date-year-date-input"]', '2020');
       browser.keys('Enter');
       browser.click('[class*="button"]');
     });
@@ -118,7 +122,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     Terra.it.isAccessible();
 
     it('should not accept keyboard input', () => {
-      expect(browser.setValue.bind(browser, 'input[name="terra-date-date-input"]', '06/01/2017')).to.throw(Error);
+      expect(browser.setValue.bind(browser, 'input[name="terra-date-month-date-input"]', '06')).to.throw(Error);
     });
 
     it('should not accept mouse interaction', () => {
@@ -136,7 +140,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     Terra.it.isAccessible();
 
     it('should not accept keyboard input', () => {
-      expect(browser.setValue.bind(browser, 'input[name="terra-date-date-input"]', '06/01/2017')).to.throw(Error);
+      expect(browser.setValue.bind(browser, 'input[name="terra-date-month-date-input"]', '06')).to.throw(Error);
     });
 
     it('should not open the date picker', () => {
@@ -160,9 +164,11 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-focus-blur'));
 
     it('puts focus on the input', () => {
-      browser.click('input[name="terra-date-date-input-onblur"]');
+      browser.click('input[name="terra-date-month-date-input-onblur"]');
 
-      browser.keys('05/01/2019');
+      browser.keys('05');
+      browser.keys('01');
+      browser.keys('2019');
       expect(browser.getText('#blur-count')).to.equal('0');
       expect(browser.getText('#focus-count')).to.equal('1');
       expect(browser.getText('#iso')).to.equal('');
@@ -186,7 +192,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       expect(browser.getText('#blur-count')).to.equal('1');
       expect(browser.getText('#focus-count')).to.equal('1');
       expect(browser.getText('#iso')).to.equal('2019-05-01');
-      expect(browser.getText('#input-value')).to.equal('05/01/2019');
+      expect(browser.getText('#input-value')).to.equal('2019-05-01');
       expect(browser.getText('#complete-date')).to.equal('Yes');
       expect(browser.getText('#valid-date')).to.equal('Yes');
     });
@@ -196,7 +202,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-on-change'));
 
     it('sets the date', () => {
-      browser.setValue('input[name="terra-date-date-input-onchange"]', '06/01/2017');
+      browser.setValue('input[name="terra-date-month-date-input-onchange"]', '06');
+      browser.setValue('input[name="terra-date-day-date-input-onchange"]', '01');
+      browser.setValue('input[name="terra-date-year-date-input-onchange"]', '2020');
       browser.keys('Enter');
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
@@ -204,16 +212,26 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     Terra.it.matchesScreenshot('date set');
 
     it('clears the date', () => {
-      browser.click('input[name="terra-date-date-input-onchange"]');
+      browser.click('input[name="terra-date-month-date-input-onchange"]');
       // Manually clear the date input -- clearValue command successfully clears the input value,
       // however chromedriver does not trigger the change event.
-      for (let i = 0; i < 8; i += 1) {
+      for (let i = 0; i < 5; i += 1) {
+        browser.keys('Delete');
         browser.keys('Backspace');
       }
-      // The date extends past the center of the element so the cursor must be repositioned to remove everything
-      browser.click('input[name="terra-date-date-input-onchange"]');
-      browser.keys('Backspace');
-      browser.keys('Backspace');
+
+      browser.click('input[name="terra-date-day-date-input-onchange"]');
+      for (let i = 0; i < 5; i += 1) {
+        browser.keys('Delete');
+        browser.keys('Backspace');
+      }
+
+      browser.click('input[name="terra-date-year-date-input-onchange"]');
+      for (let i = 0; i < 5; i += 1) {
+        browser.keys('Delete');
+        browser.keys('Backspace');
+      }
+
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
     });
@@ -225,14 +243,15 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-on-change-raw'));
 
     it('partially sets the date', () => {
-      browser.setValue('input[name="terra-date-date-input-onchangeraw"]', '06/01');
+      browser.setValue('input[name="terra-date-month-date-input-onchangeraw"]', '06');
+      browser.setValue('input[name="terra-date-day-date-input-onchangeraw"]', '01');
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
     });
     Terra.it.matchesScreenshot('date set to 06-01');
 
     it('finishes setting the date', () => {
-      browser.addValue('input[name="terra-date-date-input-onchangeraw"]', '/2017');
+      browser.addValue('input[name="terra-date-year-date-input-onchangeraw"]', '2017');
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
     });
@@ -258,13 +277,6 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-on-select');
     });
-
-    it('enters a date through input', () => {
-      browser.setValue('input[name="terra-date-date-input-onselect"]', '06/01/2017');
-      // Ensures the mouse pointer doesn't appear in the screenshot
-      browser.click('h3');
-    });
-    Terra.it.matchesScreenshot('Selected date not displayed');
 
     it('selects a date through date picker', () => {
       browser.click('[class*="button"]');
@@ -302,7 +314,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     it('sets the date', () => {
-      browser.setValue('input[name="terra-date-date-input"]', '0');
+      browser.setValue('input[name="terra-date-month-date-input"]', '0');
       browser.keys('a1.b2/;3');
     });
 
@@ -372,7 +384,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     it('Enters date value', () => {
-      browser.setValue('input[name="terra-date-controlled-date-picker"]', '03/07/2019');
+      browser.setValue('input[name="terra-date-month-controlled-date-picker"]', '06');
+      browser.setValue('input[name="terra-date-day-controlled-date-picker"]', '01');
+      browser.setValue('input[name="terra-date-year-controlled-date-picker"]', '2020');
     });
 
     Terra.it.matchesScreenshot('date input manually updated');
