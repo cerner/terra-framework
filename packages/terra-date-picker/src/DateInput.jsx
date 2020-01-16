@@ -5,7 +5,6 @@ import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
 import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
-
 import DateUtil from './DateUtil';
 import styles from './DatePicker.module.scss';
 
@@ -13,20 +12,10 @@ const cx = classNames.bind(styles);
 
 const Icon = <IconCalendar />;
 
-const dateFormats = [
-  'س‌س‌س‌س/ي‌ي/ش‌ش',
-  'TT.MM.JJJJ',
-  'DD/MM/YYYY',
-  'DD/MM/AAAA',
-  'DD.MM.YYYY',
-  'JJ/MM/AAAA',
-  'DD/MM/JJJJ',
-  'DD/MM/ÅÅÅÅ',
-];
-
 let dateDay;
 let dateMonth;
 let dateYear;
+let dateDelimiter;
 
 const propTypes = {
   /**
@@ -139,6 +128,7 @@ class DatePickerInput extends React.Component {
     this.handleYearChange = this.handleYearChange.bind(this);
     this.handleOnFocus = this.handleOnFocus.bind(this);
     this.handleOnBlur = this.handleOnBlur.bind(this);
+    this.moveFocusOnChange = this.moveFocusOnChange.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -158,6 +148,31 @@ class DatePickerInput extends React.Component {
       };
     }
     return null;
+  }
+
+  moveFocusOnChange(inputValue, type, dateVariant) {
+    // Move focus based on input selected and date variant.
+    if (inputValue.length === 2) {
+      if (dateVariant === 'MM/DD/YYYY') {
+        if (type === DateUtil.inputType.MONTH) {
+          this.dayInput.focus();
+        } else {
+          this.yearInput.focus();
+        }
+      } else if (dateVariant === 'DD/MM/YYYY') {
+        if (type === DateUtil.inputType.MONTH) {
+          this.yearInput.focus();
+        } else {
+          this.monthInput.focus();
+        }
+      }
+    } else if (dateVariant === 'YYYY/MM/DD') {
+      if (inputValue.length === 4) {
+        this.monthInput.focus();
+      } else if (type === DateUtil.inputType.MONTH) {
+        this.dayInput.focus();
+      }
+    }
   }
 
   handleOnButtonClick(event) {
@@ -186,24 +201,12 @@ class DatePickerInput extends React.Component {
 
   handleDayChange(event) {
     const inputValue = event.target.value.replace(/\D/gm, '');
-    const moveFocusOnChange = () => {
-      // Move focus to second if second is shown and minute input has a valid and complete entry
-      if (inputValue.length === 2) {
-        this.yearInput.focus();
-      }
-    };
-    this.handleDateChange(event, DateUtil.inputType.DAY, inputValue, moveFocusOnChange);
+    this.handleDateChange(event, DateUtil.inputType.DAY, inputValue);
   }
 
   handleMonthChange(event) {
     const inputValue = event.target.value.replace(/\D/gm, '');
-    const moveFocusOnChange = () => {
-      // Move focus to second if second is shown and minute input has a valid and complete entry
-      if (inputValue.length === 2) {
-        this.dayInput.focus();
-      }
-    };
-    this.handleDateChange(event, DateUtil.inputType.MONTH, inputValue, moveFocusOnChange);
+    this.handleDateChange(event, DateUtil.inputType.MONTH, inputValue);
   }
 
   handleYearChange(event) {
@@ -225,19 +228,19 @@ class DatePickerInput extends React.Component {
     }
   }
 
-  handleDateChange(event, type, value, moveFocusOnChange) {
+  handleDateChange(event, type, value) {
     if (type === DateUtil.inputType.DAY) {
       this.setState({
         day: value,
-      }, moveFocusOnChange);
+      }, this.moveFocusOnChange(value, type, this.variant));
     } else if (type === DateUtil.inputType.MONTH) {
       this.setState({
         month: value,
-      }, moveFocusOnChange);
+      }, this.moveFocusOnChange(value, type, this.variant));
     } else if (type === DateUtil.inputType.YEAR) {
       this.setState({
         year: value,
-      });
+      }, this.moveFocusOnChange(value, type, this.variant));
     }
 
     const day = type === DateUtil.inputType.DAY ? value : this.state.day;
@@ -246,7 +249,7 @@ class DatePickerInput extends React.Component {
 
     if (day === '' && month === '' && year === '') {
       this.props.onChange(event, '');
-    } else if (year && year.length === 4) {
+    } else if (month && day && year) {
       const tempDate = year.concat('-', month).concat('-', day);
       this.props.onChange(event, tempDate);
     }
@@ -275,6 +278,8 @@ class DatePickerInput extends React.Component {
     this.onCalendarButtonClick = customProps.onCalendarButtonClick;
     this.shouldShowPicker = customProps.shouldShowPicker;
 
+    this.variant = undefined;
+
     delete customProps.onCalendarButtonClick;
     delete customProps.shouldShowPicker;
 
@@ -286,15 +291,23 @@ class DatePickerInput extends React.Component {
         dateMonth = placeholder.substr(0, 2);
         dateDay = placeholder.substr(3, 5);
         dateYear = placeholder.substr(6, 10);
+        this.variant = placeholder;
       } else if (placeholder === 'YYYY-MM-DD') {
         dateMonth = placeholder.substr(5, 7);
         dateDay = placeholder.substr(8, 10);
         dateYear = placeholder.substr(0, 4);
-      } else if (dateFormats.indexOf(placeholder) !== 0) {
+        dateDelimiter = '-';
+        this.variant = 'YYYY/MM/DD';
+      } else {
         dateMonth = placeholder.substr(3, 5);
         dateDay = placeholder.substr(0, 2);
         dateYear = placeholder.substr(6, 10);
+        this.variant = 'DD/MM/YYYY';
       }
+    }
+
+    if (!dateDelimiter) {
+      dateDelimiter = '/';
     }
 
     const dateInputContainerClasses = cx([
@@ -312,23 +325,14 @@ class DatePickerInput extends React.Component {
       { 'is-invalid': isInvalid },
     ]);
     const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
+    let dateInputFormat;
 
-    return (
-      <div
-        {...customProps}
-        className={dateInputContainerClasses}
-      >
-        <div className={dateInputClasses}>
-          <input
-            // Create a hidden input for storing the name and value attributes to use when submitting the form.
-            // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
-            data-terra-date-input-hidden
-            type="hidden"
-            name={name}
-            value={dateValue}
-          />
+    if (this.variant === 'MM/DD/YYYY') {
+      dateInputFormat = (
+        <>
           <Input
             {...additionalInputProps}
+            refCallback={(inputRef) => { this.monthInput = inputRef; }}
             className={cx('date-input-month')}
             type="text"
             name={'terra-date-month-'.concat(name)}
@@ -342,7 +346,7 @@ class DatePickerInput extends React.Component {
             pattern="\d*"
             aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
           />
-          <span className={cx('date-spacer')}>/</span>
+          <span className={cx('date-spacer')}>{dateDelimiter}</span>
           <Input
             {...additionalInputProps}
             refCallback={(inputRef) => { this.dayInput = inputRef; }}
@@ -359,7 +363,7 @@ class DatePickerInput extends React.Component {
             pattern="\d*"
             aria-label={intl.formatMessage({ id: 'Terra.datePicker.today' })}
           />
-          <span className={cx('date-spacer')}>/</span>
+          <span className={cx('date-spacer')}>{dateDelimiter}</span>
           <Input
             {...additionalInputProps}
             refCallback={(inputRef) => { this.yearInput = inputRef; }}
@@ -376,6 +380,135 @@ class DatePickerInput extends React.Component {
             pattern="\d*"
             aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
           />
+        </>
+      );
+    } else if (this.variant === 'DD/MM/YYYY') {
+      dateInputFormat = (
+        <>
+          <Input
+            {...additionalInputProps}
+            refCallback={(inputRef) => { this.dayInput = inputRef; }}
+            className={cx('date-input-day')}
+            type="text"
+            name={'terra-date-day-'.concat(name)}
+            value={this.state.day}
+            onChange={this.handleDayChange}
+            placeholder={dateDay || 'DD'}
+            onFocus={this.handleOnFocus}
+            onBlur={this.handleOnBlur}
+            maxLength="2"
+            size="2"
+            pattern="\d*"
+            aria-label={intl.formatMessage({ id: 'Terra.datePicker.today' })}
+          />
+          <span className={cx('date-spacer')}>{dateDelimiter}</span>
+          <Input
+            {...additionalInputProps}
+            refCallback={(inputRef) => { this.monthInput = inputRef; }}
+            className={cx('date-input-month')}
+            type="text"
+            name={'terra-date-month-'.concat(name)}
+            value={this.state.month}
+            onChange={this.handleMonthChange}
+            placeholder={dateMonth || 'MM'}
+            onFocus={this.handleOnFocus}
+            onBlur={this.handleOnBlur}
+            maxLength="2"
+            size="2"
+            pattern="\d*"
+            aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
+          />
+          <span className={cx('date-spacer')}>{dateDelimiter}</span>
+          <Input
+            {...additionalInputProps}
+            refCallback={(inputRef) => { this.yearInput = inputRef; }}
+            className={cx('date-input-year')}
+            type="text"
+            name={'terra-date-year-'.concat(name)}
+            value={this.state.year}
+            onChange={this.handleYearChange}
+            placeholder={dateYear || 'YYYY'}
+            onFocus={this.handleOnFocus}
+            onBlur={this.handleOnBlur}
+            maxLength="4"
+            size="4"
+            pattern="\d*"
+            aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
+          />
+        </>
+      );
+    } else {
+      dateInputFormat = (
+        <>
+          <Input
+            {...additionalInputProps}
+            refCallback={(inputRef) => { this.yearInput = inputRef; }}
+            className={cx('date-input-year')}
+            type="text"
+            name={'terra-date-year-'.concat(name)}
+            value={this.state.year}
+            onChange={this.handleYearChange}
+            placeholder={dateYear || 'YYYY'}
+            onFocus={this.handleOnFocus}
+            onBlur={this.handleOnBlur}
+            maxLength="4"
+            size="4"
+            pattern="\d*"
+            aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
+          />
+          <span className={cx('date-spacer')}>{dateDelimiter}</span>
+          <Input
+            {...additionalInputProps}
+            refCallback={(inputRef) => { this.monthInput = inputRef; }}
+            className={cx('date-input-month')}
+            type="text"
+            name={'terra-date-month-'.concat(name)}
+            value={this.state.month}
+            onChange={this.handleMonthChange}
+            placeholder={dateMonth || 'MM'}
+            onFocus={this.handleOnFocus}
+            onBlur={this.handleOnBlur}
+            maxLength="2"
+            size="2"
+            pattern="\d*"
+            aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
+          />
+          <span className={cx('date-spacer')}>{dateDelimiter}</span>
+          <Input
+            {...additionalInputProps}
+            refCallback={(inputRef) => { this.dayInput = inputRef; }}
+            className={cx('date-input-day')}
+            type="text"
+            name={'terra-date-day-'.concat(name)}
+            value={this.state.day}
+            onChange={this.handleDayChange}
+            placeholder={dateDay || 'DD'}
+            onFocus={this.handleOnFocus}
+            onBlur={this.handleOnBlur}
+            maxLength="2"
+            size="2"
+            pattern="\d*"
+            aria-label={intl.formatMessage({ id: 'Terra.datePicker.today' })}
+          />
+        </>
+      );
+    }
+
+    return (
+      <div
+        {...customProps}
+        className={dateInputContainerClasses}
+      >
+        <div className={dateInputClasses}>
+          <input
+            // Create a hidden input for storing the name and value attributes to use when submitting the form.
+            // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
+            data-terra-date-input-hidden
+            type="hidden"
+            name={name}
+            value={dateValue}
+          />
+          {dateInputFormat}
         </div>
         <Button
           className={buttonClasses}
