@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed date-time-picker issue of updating default value programmatically
 
 4.25.0 - (January 7, 2020)
 ------------------
