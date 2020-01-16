@@ -77,11 +77,10 @@ it('should render a disabled date time picker', () => {
 
 it('Should not throw any errors while date value is outside of the Min, Max range and new time value is being entered ', () => {
   const datePicker = mountWithIntl((
-    <DateTimePicker name="date-time-input" maxDate="2017-04-01T10:30" minDate="2017-04-10T10:30" />
+    <DateTimePicker name="date-time-input" maxDate="2017-04-01T10:30" minDate="2017-04-10T10:30" value="2017-04-17" />
   ));
-
-  const dateInput = datePicker.find({ name: 'terra-date-input', type: 'text' }).at(0);
-  dateInput.simulate('change', { target: { value: '04/12/2017' } });
+  const dateInput = datePicker.find({ name: 'terra-date-month-input', type: 'text' }).at(0);
+  dateInput.simulate('change', { target: { value: '04' } });
   expect(() => {
     const hourInput = datePicker.find({ name: 'terra-time-hour-input' }).at(0);
     hourInput.simulate('change', { target: { value: '21' } });

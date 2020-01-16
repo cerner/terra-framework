@@ -1,10 +1,13 @@
-/* stylelint-disable selector-max-compound-selectors, max-nesting-depth */
+// stylelint-disable selector-max-compound-selectors, max-nesting-depth
+// stylelint-disable declaration-property-value-blacklist scss/at-mixin-pattern
+// stylelint-disable scss/at-mixin-pattern
+
 :local {
   @mixin focus-styles {
-    border-color: var(--terra-date-input-focus-border-color, #4cb2e9);
-    border-style: var(--terra-date-input-focus-border-style, solid);
-    border-width: var(--terra-date-input-focus-border-width, 1px);
-    opacity: var(--terra-date-input-focus-opacity, 1);
+    border-color: var(--terra-date-picker-focus-border-color, #26a2e5);
+    border-style: var(--terra-date-picker-focus-border-style, solid);
+    border-width: var(--terra-date-picker-focus-border-width, 1px);
+    opacity: var(--terra-date-picker-focus-opacity, 1);
     outline: none;
   }
 
@@ -12,78 +15,75 @@
     display: inline-block;
   }
 
-  .date-input-container-focus {
-    border-color: var(--terra-date-picker-input-container-focus-border-color, #26a2e5);
-  }
-
   .date-input {
-    background-color: var(--terra-date-input-background-color, #fff);
-    background-image: var(--terra-date-input-background-image, none);
+    background-color: var(--terra-date-picker-background-color, #fff);
+    background-image: var(--terra-date-picker-background-image, none);
     background-position: 0 100%;
     background-repeat: no-repeat;
-    background-size: var(--terra-date-input-background-size, 0 0);
+    background-size: var(--terra-date-picker-background-size, 0 0);
     border-bottom-right-radius: 0;
-    border-color: var(--terra-date-input-border-color, #dedfe0);
-    border-radius: var(--terra-date-input-border-radius, 3px);
-    border-style: var(--terra-date-input-border-style, solid);
+    border-color: var(--terra-date-picker-border-color, #dedfe0);
+    border-radius: var(--terra-date-picker-border-radius, 3px);
+    border-style: var(--terra-date-picker-border-style, solid);
     border-top-right-radius: 0;
-    border-width: var(--terra-date-input-border-width, 1px);
+    border-width: var(--terra-date-picker-border-width, 1px);
     box-sizing: content-box;
-    color: var(--terra-date-input-color, #1c1f21);
+    color: var(--terra-date-picker-color, #1c1f21);
     direction: ltr;
     display: inline-block;
-    font-size: var(--terra-date-input-font-size, 1.14286rem);
-    line-height: var(--terra-date-input-line-height, 1.375);
+    font-size: var(--terra-date-picker-font-size, 1.14286rem);
+    line-height: var(--terra-date-picker-line-height, 1.375);
     margin: 0 0.5rem 0.5rem 0;
-    padding-bottom: var(--terra-date-input-padding-bottom, 0.2142857143rem);
-    padding-left: var(--terra-date-input-padding-left, 0.2142857143rem);
-    padding-right: var(--terra-date-input-padding-right, 0.2142857143rem);
-    padding-top: var(--terra-date-input-padding-top, 0.2142857143rem);
-    transition-duration: var(--terra-date-input-transition-duration, 0.2s);
+    padding-bottom: var(--terra-date-picker-padding-bottom, 0.2142857143rem);
+    padding-left: var(--terra-date-picker-padding-left, 0.2142857143rem);
+    padding-right: var(--terra-date-picker-padding-right, 0.2142857143rem);
+    padding-top: var(--terra-date-picker-padding-top, 0.2142857143rem);
+    transition-duration: var(--terra-date-picker-transition-duration, 0.2s);
     transition-property: background-size;
-    transition-timing-function: var(--terra-date-input-transition-timing-function, ease);
+    transition-timing-function: var(--terra-date-picker-transition-timing-function, ease);
+    vertical-align: middle;
     white-space: nowrap;
-    vertical-align: top;
+    width: 8em;
 
     &:hover {
-      background-color: var(--terra-date-input-hover-background-color, #fff);
-      border: var(--terra-date-input-hover-border, 1px solid #dedfe0);
-      color: var(--terra-date-input-hover-color, #1c1f21);
+      background-color: var(--terra-date-picker-hover-background-color, #fff);
+      border: var(--terra-date-picker-hover-border, 1px solid #dedfe0);
+      color: var(--terra-date-picker-hover-color, #1c1f21);
 
       .date-input-month,
       .date-input-day,
       .date-input-year {
-        color: var(--terra-date-input-date-component-hover-color, #1c1f21);
+        color: var(--terra-date-picker-date-component-hover-color, #1c1f21);
       }
     }
 
     &.is-focused {
       @include focus-styles;
-      background-color: var(--terra-date-input-focus-background-color, #fff);
-      background-size: var(--terra-date-input-focus-background-size, 0 0);
-      color: var(--terra-date-input-focus-color, #1c1f21);
+      background-color: var(--terra-date-picker-focus-background-color, #fff);
+      background-size: var(--terra-date-picker-focus-background-size, 0 0);
+      color: var(--terra-date-picker-focus-color, #1c1f21);
 
       [dir=ltr] & {
-        box-shadow: var(--terra-date-input-focus-ltr-box-shadow, 0 0 8px #a6d9f4);
+        box-shadow: var(--terra-date-picker-focus-ltr-box-shadow, 0 0 8px #a6d9f4);
       }
 
       [dir=rtl] & {
-        box-shadow: var(--terra-date-input-focus-rtl-box-shadow, 0 0 8px #a6d9f4);
+        box-shadow: var(--terra-date-picker-focus-rtl-box-shadow, 0 0 8px #a6d9f4);
       }
 
       .date-input-month,
       .date-input-day,
       .date-input-year {
-        color: var(--terra-date-input-date-component-focus-color, #1c1f21);
+        color: var(--terra-date-picker-date-component-focus-color, #1c1f21);
       }
     }
 
-    &.disabled {
-      background-color: var(--terra-date-input-disabled-background-color, rgba(111, 116, 119, 0.2));
-      border: var(--terra-date-input-disabled-border, 1px solid #868a8c);
-      color: var(--terra-date-input-disabled-color, #1c1f21);
+    &[disabled] {
+      background-color: var(--terra-date-picker-disabled-background-color, rgba(111, 116, 119, 0.2));
+      border: var(--terra-date-picker-disabled-border, 1px solid #868a8c);
+      color: var(--terra-date-picker-disabled-color, #1c1f21);
       cursor: default;
-      opacity: var(--terra-date-input-disabled-opacity, 0.25);
+      opacity: var(--terra-date-picker-disabled-opacity, 0.25);
       pointer-events: none;
     }
 
@@ -96,46 +96,42 @@
     }
 
     &.is-invalid {
-      background-color: var(--terra-date-input-invalid-background-color, #fff);
-      border: var(--terra-date-input-invalid-border, 1px solid #e50000);
-      box-shadow: var(--terra-date-input-invalid-box-shadow, 0 0 0 1px #e50000);
+      background-color: var(--terra-date-picker-invalid-background-color, #fff);
+      border: var(--terra-date-picker-invalid-border, 1px solid #e50000);
+      box-shadow: var(--terra-date-picker-invalid-box-shadow, 0 0 0 1px #e50000);
 
       &:hover {
-        border: var(--terra-date-input-invalid-hover-border, 1px solid #e50000);
+        border: var(--terra-date-picker-invalid-hover-border, 1px solid #e50000);
       }
 
       &:focus {
-        border: var(--terra-date-input-invalid-focus-border, 1px solid #e50000);
+        border: var(--terra-date-picker-invalid-focus-border, 1px solid #e50000);
       }
 
       &.disabled {
-        background-color: var(--terra-date-input-invalid-disabled-background-color, rgba(111, 116, 119, 0.2));
-        border: var(--terra-date-input-invalid-disabled-border, 1px solid #e50000);
-        color: var(--terra-date-input-invalid-disabled-color, #1c1f21);
-        opacity: var(--terra-date-input-invalid-disabled-opacity, 0.25);
+        background-color: var(--terra-date-picker-invalid-disabled-background-color, rgba(111, 116, 119, 0.2));
+        border: var(--terra-date-picker-invalid-disabled-border, 1px solid #e50000);
+        color: var(--terra-date-picker-invalid-disabled-color, #1c1f21);
+        opacity: var(--terra-date-picker-invalid-disabled-opacity, 0.25);
       }
     }
 
     &.is-incomplete {
-      background-color: var(--terra-date-input-incomplete-background-color, #ffc);
+      background-color: var(--terra-date-picker-incomplete-background-color, #ffc);
 
       &:hover {
-        background-color: var(--terra-date-input-incomplete-hover-background-color, #ffc);
+        background-color: var(--terra-date-picker-incomplete-hover-background-color, #ffc);
       }
 
       &:focus {
-        background-color: var(--terra-date-input-incomplete-focus-background-color, #ffc);
+        background-color: var(--terra-date-picker-incomplete-focus-background-color, #ffc);
       }
 
-      .initial-focus {
-        background-color: var(--terra-date-input-incomplete-focused-input-background-color, rgb(185, 215, 233));
-      }
-
-      &.disabled {
-        background-color: var(--terra-date-input-incomplete-disabled-background-color, #ffc);
-        border: var(--terra-date-input-incomplete-disabled-border, 1px solid #868a8c);
-        color: var(--terra-date-input-incomplete-disabled-color, #1c1f21);
-        opacity: var(--terra-date-input-incomplete-disabled-opacity, 0.25);
+      &[disabled] {
+        background-color: var(--terra-date-picker-incomplete-disabled-background-color, #ffc);
+        border: var(--terra-date-picker-incomplete-disabled-border, 1px solid #868a8c);
+        color: var(--terra-date-picker-incomplete-disabled-color, #1c1f21);
+        opacity: var(--terra-date-picker-incomplete-disabled-opacity, 0.25);
       }
     }
   }
@@ -143,62 +139,54 @@
   .date-input-month,
   .date-input-day,
   .date-input-year {
-    background-color: var(--terra-date-input-date-component-background-color, transparent);
-    background-image: var(--terra-date-input-date-component-background-image, none);
+    background-color: var(--terra-date-picker-date-component-background-color, transparent);
+    background-image: var(--terra-date-picker-date-component-background-image, none);
     background-position: 0 100%;
     background-repeat: no-repeat;
-    background-size: var(--terra-date-input-date-component-background-size, 0 0);
-    border-color: var(--terra-date-input-date-component-border-color, transparent);
-    border-radius: var(--terra-date-input-date-component-border-radius, 2px);
-    border-style: var(--terra-date-input-date-component-border-style, none);
-    border-width: var(--terra-date-input-date-component-border-width, 0);
+    background-size: var(--terra-date-picker-date-component-background-size, 0 0);
+    border-color: var(--terra-date-picker-date-component-border-color, transparent);
+    border-radius: var(--terra-date-picker-date-component-border-radius, 2px);
+    border-style: var(--terra-date-picker-date-component-border-style, none);
+    border-width: var(--terra-date-picker-date-component-border-width, 0);
     box-sizing: border-box;
-    caret-color: var(--terra-date-input-date-component-caret-color, #1c1f21);
-    color: var(--terra-date-input-date-component-color, #1c1f21);
+    caret-color: var(--terra-date-picker-date-component-caret-color, #1c1f21);
+    color: var(--terra-date-picker-date-component-color, #1c1f21);
     display: inline-block;
-    height: var(--terra-date-input-date-component-height, 1.5714285714rem);
-    line-height: var(--terra-date-input-date-component-line-height, 1.375);
-    min-width: var(--terra-date-input-date-component-min-width, 4rem);
-    padding-bottom: var(--terra-date-input-date-component-padding-bottom, 0);
-    padding-left: var(--terra-date-input-date-component-padding-left, 0);
-    padding-right: var(--terra-date-input-date-component-padding-right, 0);
-    padding-top: var(--terra-date-input-date-component-padding-top, 0);
-    transition-duration: var(--terra-date-input-date-component-transition-duration, 0.2s);
+    height: var(--terra-date-picker-date-component-height, 1.5714285714rem);
+    line-height: var(--terra-date-picker-date-component-line-height, 1.375);
+    min-width: var(--terra-date-picker-date-component-min-width, 4rem);
+    padding-bottom: var(--terra-date-picker-date-component-padding-bottom, 0);
+    padding-left: var(--terra-date-picker-date-component-padding-left, 0);
+    padding-right: var(--terra-date-picker-date-component-padding-right, 0);
+    padding-top: var(--terra-date-picker-date-component-padding-top, 0);
+    transition-duration: var(--terra-date-picker-date-component-transition-duration, 0.2s);
     transition-property: background-size;
-    transition-timing-function: var(--terra-date-input-date-component-transition-timing-function, ease);
+    transition-timing-function: var(--terra-date-picker-date-component-transition-timing-function, ease);
     width: 100%;
 
     &:hover {
-      background-color: var(--terra-date-input-date-component-hover-background-color, transparent);
-      border: var(--terra-date-input-date-component-hover-border, 0 none transparent);
-      color: var(--terra-date-input-date-component-hover-color, #1c1f21);
+      background-color: var(--terra-date-picker-date-component-hover-background-color, transparent);
+      border: var(--terra-date-picker-date-component-hover-border, 0 none transparent);
+      color: var(--terra-date-picker-date-component-hover-color, #1c1f21);
     }
 
     &:focus {
       @include focus-styles;
-      background-color: var(--terra-date-input-date-component-focus-background-color, transparent);
-      background-size: var(--terra-date-input-date-component-focus-background-size, 0 0);
+      background-color: var(--terra-date-picker-date-component-focus-background-color, transparent);
+      background-size: var(--terra-date-picker-date-component-focus-background-size, 0 0);
       border: 0;
 
       [dir=ltr] & {
-        box-shadow: var(--terra-date-input-date-component-focus-ltr-box-shadow, none);
+        box-shadow: var(--terra-date-picker-date-component-focus-ltr-box-shadow, none);
       }
 
       [dir=rtl] & {
-        box-shadow: var(--terra-date-input-date-component-focus-rtl-box-shadow, none);
+        box-shadow: var(--terra-date-picker-date-component-focus-rtl-box-shadow, none);
       }
     }
 
     &::selection {
       background-color: transparent;
-    }
-
-    &.initial-focus {
-      background-color: var(--terra-date-input-date-component-focused-input-background-color, rgba(139, 194, 249, 0.3));
-      background-size: 0 0;
-      border: 0;
-      box-shadow: none;
-      color: var(--terra-date-input-date-component-focus-color, #1c1f21);
     }
   }
 
@@ -221,11 +209,11 @@
   }
 
   .date-spacer {
-    line-height: var(--terra-date-input-date-spacer-line-height, 1.375);
-    margin-bottom: var(--terra-date-input-date-spacer-margin-bottom, 0.3571428571rem);
-    margin-left: var(--terra-date-input-date-spacer-margin-left, 0.14285714rem);
-    margin-right: var(--terra-date-input-date-spacer-margin-right, 0.14285714rem);
-    margin-top: var(--terra-date-input-date-spacer-margin-top, 0.3571428571rem);
+    line-height: var(--terra-date-picker-date-spacer-line-height, 1.375);
+    margin-bottom: var(--terra-date-picker-date-spacer-margin-bottom, 0.3571428571rem);
+    margin-left: var(--terra-date-picker-date-spacer-margin-left, 0.14285714rem);
+    margin-right: var(--terra-date-picker-date-spacer-margin-right, 0.14285714rem);
+    margin-top: var(--terra-date-picker-date-spacer-margin-top, 0.3571428571rem);
   }
 
   .button {
@@ -240,6 +228,7 @@
     margin-bottom: 0;
     margin-left: -0.5em;
     margin-top: 0;
+    vertical-align: top;
 
     &:focus {
       border-color: var(--terra-date-picker-button-focus-border-color, #26a2e5);

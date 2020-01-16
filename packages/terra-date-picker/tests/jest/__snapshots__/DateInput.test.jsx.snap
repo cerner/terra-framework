@@ -94,12 +94,13 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         isInvalid={false}
         maxLength="2"
         name="terra-date-month-undefined"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         pattern="\\\\d*"
         placeholder="MM"
         required={false}
         size="2"
-        tabIndex={0}
         type="text"
       >
         <input
@@ -108,12 +109,13 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           disabled={false}
           maxLength="2"
           name="terra-date-month-undefined"
+          onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           pattern="\\\\d*"
           placeholder="MM"
           required={false}
           size="2"
-          tabIndex={0}
           type="text"
         />
       </Input>
@@ -130,13 +132,14 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         isInvalid={false}
         maxLength="2"
         name="terra-date-day-undefined"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         pattern="\\\\d*"
         placeholder="DD/YY"
         refCallback={[Function]}
         required={false}
         size="2"
-        tabIndex={0}
         type="text"
       >
         <input
@@ -145,12 +148,13 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           disabled={false}
           maxLength="2"
           name="terra-date-day-undefined"
+          onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           pattern="\\\\d*"
           placeholder="DD/YY"
           required={false}
           size="2"
-          tabIndex={0}
           type="text"
         />
       </Input>
@@ -167,13 +171,14 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         isInvalid={false}
         maxLength="4"
         name="terra-date-year-undefined"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         pattern="\\\\d*"
         placeholder="YYYY"
         refCallback={[Function]}
         required={false}
         size="4"
-        tabIndex={0}
         type="text"
       >
         <input
@@ -182,12 +187,13 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           disabled={false}
           maxLength="4"
           name="terra-date-year-undefined"
+          onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           pattern="\\\\d*"
           placeholder="YYYY"
           required={false}
           size="4"
-          tabIndex={0}
           type="text"
         />
       </Input>
@@ -332,7 +338,6 @@ exports[`should render a default date input 1`] = `
       pattern="\\\\d*"
       placeholder="MM"
       size="2"
-      tabindex="0"
       type="text"
     />
     <span
@@ -348,7 +353,6 @@ exports[`should render a default date input 1`] = `
       pattern="\\\\d*"
       placeholder="DD"
       size="2"
-      tabindex="0"
       type="text"
     />
     <span
@@ -364,7 +368,6 @@ exports[`should render a default date input 1`] = `
       pattern="\\\\d*"
       placeholder="YYYY"
       size="4"
-      tabindex="0"
       type="text"
     />
   </div>
@@ -422,7 +425,6 @@ exports[`should render a default date input with all props 1`] = `
       pattern="\\\\d*"
       placeholder="MM"
       size="2"
-      tabindex="0"
       type="text"
       value="01"
     />
@@ -440,7 +442,6 @@ exports[`should render a default date input with all props 1`] = `
       pattern="\\\\d*"
       placeholder="DD/YY"
       size="2"
-      tabindex="0"
       type="text"
       value="01"
     />
@@ -458,7 +459,6 @@ exports[`should render a default date input with all props 1`] = `
       pattern="\\\\d*"
       placeholder="YYYY"
       size="4"
-      tabindex="0"
       type="text"
       value="2017"
     />

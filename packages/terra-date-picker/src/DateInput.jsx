@@ -297,11 +297,8 @@ class DatePickerInput extends React.Component {
       }
     }
 
-    const containerFocusStyle = this.state.isFocused ? 'date-input-container-focus' : undefined;
-
     const dateInputContainerClasses = cx([
       'date-input-container',
-      containerFocusStyle,
     ]);
 
     const dateInputClasses = cx([
