@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* DateInput split into 3 distinct inputs
 
 4.25.0 - (January 7, 2020)
 ------------------

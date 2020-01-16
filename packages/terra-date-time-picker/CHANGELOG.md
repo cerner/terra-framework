@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Tests updated to reflect input splitting in `terra-date-picker`
 
 4.25.0 - (January 7, 2020)
 ------------------
