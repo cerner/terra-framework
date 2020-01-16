@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * String that labels the modal for screen readers.
+   * String that labels the list for screen readers.
    */
   ariaLabel: PropTypes.string,
   /**
