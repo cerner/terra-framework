@@ -73,10 +73,13 @@ class CollapsibleTabs extends React.Component {
     this.handleSelectionAnimation();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     if (this.isCalculating) {
       this.isCalculating = false;
       this.handleResize(this.contentWidth);
+    } else if (React.Children.count(this.props.children) !== React.Children.count(prevProps.children)) {
+      this.resetCache();
+      this.forceUpdate();
     } else {
       this.handleSelectionAnimation();
     }

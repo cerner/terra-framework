@@ -81,9 +81,11 @@ class Tabs extends React.Component {
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleTruncationChange = this.handleTruncationChange.bind(this);
     this.wrapPaneOnClick = this.wrapPaneOnClick.bind(this);
+    this.setTabs = this.setTabs.bind(this);
     this.state = {
       activeKey: this.getInitialState(),
       isLabelTruncated: false,
+      showCollapsedTabs: false,
     };
   }
 
@@ -92,6 +94,13 @@ class Tabs extends React.Component {
       return null;
     }
     return TabUtils.initialSelectedTabKey(this.props.children, this.props.defaultActiveKey);
+  }
+
+  setTabs(event) {
+    const showCollapsedTabs = event === 'tiny';
+    if (this.state.showCollapsedTabs !== showCollapsedTabs) {
+      this.setState({ showCollapsedTabs });
+    }
   }
 
   getActiveTabIndex() {
@@ -199,10 +208,11 @@ class Tabs extends React.Component {
 
         return (
           <ResponsiveElement
-            tiny={collapsedTabs}
-            small={collapsibleTabs}
+            onChange={this.setTabs}
             responsiveTo={responsiveTo}
-          />
+          >
+            { this.state.showCollapsedTabs ? collapsedTabs : collapsibleTabs}
+          </ResponsiveElement>
         );
       }
 
