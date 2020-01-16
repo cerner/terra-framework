@@ -14,7 +14,7 @@ const propTypes = {
   /**
    * String that labels the modal for screen readers.
    */
-  ariaLabel: PropTypes.string.isRequired,
+  ariaLabel: PropTypes.string,
   /**
    * The child list items, of type InfiniteList Item, to be placed within the infinite list.
    * For further documentation of InfiniteList Item see terra-list's ListItem.
