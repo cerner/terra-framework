@@ -108,9 +108,11 @@ class DatePickerInput extends React.Component {
   constructor(props) {
     super(props);
 
+    const tempDate = DateUtil.strictFormatISODate(props.value, props.placeholder);
+
     this.state = {};
 
-    if (this.props.value) {
+    if (tempDate) {
       this.state = {
         day: this.props.value.substr(3, 2),
         month: this.props.value.substr(0, 2),
@@ -138,12 +140,13 @@ class DatePickerInput extends React.Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    const tempDate = DateUtil.createSafeDate(props.value);
+    const tempDate = DateUtil.strictFormatISODate(props.value, props.placeholder);
+
     if (tempDate && props.value !== state.prevDate) {
       return {
-        day: props.value.substr(8, 2),
-        month: props.value.substr(5, 2),
-        year: props.value.substr(0, 4),
+        day: props.value.substr(3, 2),
+        month: props.value.substr(0, 2),
+        year: props.value.substr(6, 4),
         prevDate: props.value,
       };
     }
@@ -246,12 +249,15 @@ class DatePickerInput extends React.Component {
     const day = type === DateUtil.inputType.DAY ? value : this.state.day;
     const month = type === DateUtil.inputType.MONTH ? value : this.state.month;
     const year = type === DateUtil.inputType.YEAR ? value : this.state.year;
+    const dateFormat = DateUtil.getFormatByLocale(this.props.intl.locale);
 
     if (day === '' && month === '' && year === '') {
       this.props.onChange(event, '');
     } else if (month && day && year) {
       const tempDate = year.concat('-', month).concat('-', day);
-      this.props.onChange(event, tempDate);
+      const formattedDate = DateUtil.strictFormatISODate(tempDate, dateFormat);
+      event.target.value = formattedDate; // eslint-disable-line no-param-reassign
+      this.props.onChange(event, formattedDate);
     }
   }
 
@@ -327,169 +333,93 @@ class DatePickerInput extends React.Component {
     const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
     let dateInputFormat;
 
+    const dateMonthInput = (
+      <Input
+        {...additionalInputProps}
+        refCallback={(inputRef) => { this.monthInput = inputRef; }}
+        className={cx('date-input-month')}
+        type="text"
+        name={'terra-date-month-'.concat(name)}
+        value={this.state.month}
+        onChange={this.handleMonthChange}
+        placeholder={dateMonth || 'MM'}
+        onFocus={this.handleOnFocus}
+        onBlur={this.handleOnBlur}
+        maxLength="2"
+        size="2"
+        pattern="\d*"
+        aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
+      />
+    );
+
+    const dateDayInput = (
+      <Input
+        {...additionalInputProps}
+        refCallback={(inputRef) => { this.dayInput = inputRef; }}
+        className={cx('date-input-day')}
+        type="text"
+        name={'terra-date-day-'.concat(name)}
+        value={this.state.day}
+        onChange={this.handleDayChange}
+        placeholder={dateDay || 'DD'}
+        onFocus={this.handleOnFocus}
+        onBlur={this.handleOnBlur}
+        maxLength="2"
+        size="2"
+        pattern="\d*"
+        aria-label={intl.formatMessage({ id: 'Terra.datePicker.today' })}
+      />
+    );
+
+    const dateYearInput = (
+      <Input
+        {...additionalInputProps}
+        refCallback={(inputRef) => { this.yearInput = inputRef; }}
+        className={cx('date-input-year')}
+        type="text"
+        name={'terra-date-year-'.concat(name)}
+        value={this.state.year}
+        onChange={this.handleYearChange}
+        placeholder={dateYear || 'YYYY'}
+        onFocus={this.handleOnFocus}
+        onBlur={this.handleOnBlur}
+        maxLength="4"
+        size="4"
+        pattern="\d*"
+        aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
+      />
+    );
+
+    const dateSpacer = <span className={cx('date-spacer')}>{dateDelimiter}</span>;
+
     if (this.variant === 'MM/DD/YYYY') {
       dateInputFormat = (
         <>
-          <Input
-            {...additionalInputProps}
-            refCallback={(inputRef) => { this.monthInput = inputRef; }}
-            className={cx('date-input-month')}
-            type="text"
-            name={'terra-date-month-'.concat(name)}
-            value={this.state.month}
-            onChange={this.handleMonthChange}
-            placeholder={dateMonth || 'MM'}
-            onFocus={this.handleOnFocus}
-            onBlur={this.handleOnBlur}
-            maxLength="2"
-            size="2"
-            pattern="\d*"
-            aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
-          />
-          <span className={cx('date-spacer')}>{dateDelimiter}</span>
-          <Input
-            {...additionalInputProps}
-            refCallback={(inputRef) => { this.dayInput = inputRef; }}
-            className={cx('date-input-day')}
-            type="text"
-            name={'terra-date-day-'.concat(name)}
-            value={this.state.day}
-            onChange={this.handleDayChange}
-            placeholder={dateDay || 'DD'}
-            onFocus={this.handleOnFocus}
-            onBlur={this.handleOnBlur}
-            maxLength="2"
-            size="2"
-            pattern="\d*"
-            aria-label={intl.formatMessage({ id: 'Terra.datePicker.today' })}
-          />
-          <span className={cx('date-spacer')}>{dateDelimiter}</span>
-          <Input
-            {...additionalInputProps}
-            refCallback={(inputRef) => { this.yearInput = inputRef; }}
-            className={cx('date-input-year')}
-            type="text"
-            name={'terra-date-year-'.concat(name)}
-            value={this.state.year}
-            onChange={this.handleYearChange}
-            placeholder={dateYear || 'YYYY'}
-            onFocus={this.handleOnFocus}
-            onBlur={this.handleOnBlur}
-            maxLength="4"
-            size="4"
-            pattern="\d*"
-            aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
-          />
+          {dateMonthInput}
+          {dateSpacer}
+          {dateDayInput}
+          {dateSpacer}
+          {dateYearInput}
         </>
       );
     } else if (this.variant === 'DD/MM/YYYY') {
       dateInputFormat = (
         <>
-          <Input
-            {...additionalInputProps}
-            refCallback={(inputRef) => { this.dayInput = inputRef; }}
-            className={cx('date-input-day')}
-            type="text"
-            name={'terra-date-day-'.concat(name)}
-            value={this.state.day}
-            onChange={this.handleDayChange}
-            placeholder={dateDay || 'DD'}
-            onFocus={this.handleOnFocus}
-            onBlur={this.handleOnBlur}
-            maxLength="2"
-            size="2"
-            pattern="\d*"
-            aria-label={intl.formatMessage({ id: 'Terra.datePicker.today' })}
-          />
-          <span className={cx('date-spacer')}>{dateDelimiter}</span>
-          <Input
-            {...additionalInputProps}
-            refCallback={(inputRef) => { this.monthInput = inputRef; }}
-            className={cx('date-input-month')}
-            type="text"
-            name={'terra-date-month-'.concat(name)}
-            value={this.state.month}
-            onChange={this.handleMonthChange}
-            placeholder={dateMonth || 'MM'}
-            onFocus={this.handleOnFocus}
-            onBlur={this.handleOnBlur}
-            maxLength="2"
-            size="2"
-            pattern="\d*"
-            aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
-          />
-          <span className={cx('date-spacer')}>{dateDelimiter}</span>
-          <Input
-            {...additionalInputProps}
-            refCallback={(inputRef) => { this.yearInput = inputRef; }}
-            className={cx('date-input-year')}
-            type="text"
-            name={'terra-date-year-'.concat(name)}
-            value={this.state.year}
-            onChange={this.handleYearChange}
-            placeholder={dateYear || 'YYYY'}
-            onFocus={this.handleOnFocus}
-            onBlur={this.handleOnBlur}
-            maxLength="4"
-            size="4"
-            pattern="\d*"
-            aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
-          />
+          {dateDayInput}
+          {dateSpacer}
+          {dateMonthInput}
+          {dateSpacer}
+          {dateYearInput}
         </>
       );
     } else {
       dateInputFormat = (
         <>
-          <Input
-            {...additionalInputProps}
-            refCallback={(inputRef) => { this.yearInput = inputRef; }}
-            className={cx('date-input-year')}
-            type="text"
-            name={'terra-date-year-'.concat(name)}
-            value={this.state.year}
-            onChange={this.handleYearChange}
-            placeholder={dateYear || 'YYYY'}
-            onFocus={this.handleOnFocus}
-            onBlur={this.handleOnBlur}
-            maxLength="4"
-            size="4"
-            pattern="\d*"
-            aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
-          />
-          <span className={cx('date-spacer')}>{dateDelimiter}</span>
-          <Input
-            {...additionalInputProps}
-            refCallback={(inputRef) => { this.monthInput = inputRef; }}
-            className={cx('date-input-month')}
-            type="text"
-            name={'terra-date-month-'.concat(name)}
-            value={this.state.month}
-            onChange={this.handleMonthChange}
-            placeholder={dateMonth || 'MM'}
-            onFocus={this.handleOnFocus}
-            onBlur={this.handleOnBlur}
-            maxLength="2"
-            size="2"
-            pattern="\d*"
-            aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
-          />
-          <span className={cx('date-spacer')}>{dateDelimiter}</span>
-          <Input
-            {...additionalInputProps}
-            refCallback={(inputRef) => { this.dayInput = inputRef; }}
-            className={cx('date-input-day')}
-            type="text"
-            name={'terra-date-day-'.concat(name)}
-            value={this.state.day}
-            onChange={this.handleDayChange}
-            placeholder={dateDay || 'DD'}
-            onFocus={this.handleOnFocus}
-            onBlur={this.handleOnBlur}
-            maxLength="2"
-            size="2"
-            pattern="\d*"
-            aria-label={intl.formatMessage({ id: 'Terra.datePicker.today' })}
-          />
+          {dateYearInput}
+          {dateSpacer}
+          {dateMonthInput}
+          {dateSpacer}
+          {dateDayInput}
         </>
       );
     }

@@ -87,6 +87,45 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         type="hidden"
       />
       <Input
+        aria-label="Terra.datePicker.yearLabel"
+        className="date-input-year"
+        disabled={false}
+        isIncomplete={false}
+        isInvalid={false}
+        maxLength="4"
+        name="terra-date-year-undefined"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        pattern="\\\\d*"
+        placeholder="YYYY"
+        refCallback={[Function]}
+        required={false}
+        size="4"
+        type="text"
+      >
+        <input
+          aria-label="Terra.datePicker.yearLabel"
+          className="form-input date-input-year"
+          disabled={false}
+          maxLength="4"
+          name="terra-date-year-undefined"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          pattern="\\\\d*"
+          placeholder="YYYY"
+          required={false}
+          size="4"
+          type="text"
+        />
+      </Input>
+      <span
+        className="date-spacer"
+      >
+        /
+      </span>
+      <Input
         aria-label="Terra.datePicker.monthLabel"
         className="date-input-month"
         disabled={false}
@@ -99,6 +138,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         onFocus={[Function]}
         pattern="\\\\d*"
         placeholder="MM"
+        refCallback={[Function]}
         required={false}
         size="2"
         type="text"
@@ -155,45 +195,6 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           placeholder="DD/YY"
           required={false}
           size="2"
-          type="text"
-        />
-      </Input>
-      <span
-        className="date-spacer"
-      >
-        /
-      </span>
-      <Input
-        aria-label="Terra.datePicker.yearLabel"
-        className="date-input-year"
-        disabled={false}
-        isIncomplete={false}
-        isInvalid={false}
-        maxLength="4"
-        name="terra-date-year-undefined"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        pattern="\\\\d*"
-        placeholder="YYYY"
-        refCallback={[Function]}
-        required={false}
-        size="4"
-        type="text"
-      >
-        <input
-          aria-label="Terra.datePicker.yearLabel"
-          className="form-input date-input-year"
-          disabled={false}
-          maxLength="4"
-          name="terra-date-year-undefined"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          pattern="\\\\d*"
-          placeholder="YYYY"
-          required={false}
-          size="4"
           type="text"
         />
       </Input>
@@ -331,6 +332,21 @@ exports[`should render a default date input 1`] = `
       type="hidden"
     />
     <input
+      aria-label="Terra.datePicker.yearLabel"
+      class="form-input date-input-year"
+      maxlength="4"
+      name="terra-date-year-undefined"
+      pattern="\\\\d*"
+      placeholder="YYYY"
+      size="4"
+      type="text"
+    />
+    <span
+      class="date-spacer"
+    >
+      /
+    </span>
+    <input
       aria-label="Terra.datePicker.monthLabel"
       class="form-input date-input-month"
       maxlength="2"
@@ -353,21 +369,6 @@ exports[`should render a default date input 1`] = `
       pattern="\\\\d*"
       placeholder="DD"
       size="2"
-      type="text"
-    />
-    <span
-      class="date-spacer"
-    >
-      /
-    </span>
-    <input
-      aria-label="Terra.datePicker.yearLabel"
-      class="form-input date-input-year"
-      maxlength="4"
-      name="terra-date-year-undefined"
-      pattern="\\\\d*"
-      placeholder="YYYY"
-      size="4"
       type="text"
     />
   </div>

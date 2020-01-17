@@ -9,6 +9,7 @@ import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PopupContainer from './PopupContainer';
+import DateUtil from '../DateUtil';
 import {
   newDate,
   now,
@@ -753,12 +754,13 @@ class DatePicker extends React.Component {
       [outsideClickIgnoreClass]: this.state.open
     })
 
+    //const dateFormat = DateUtil.getFormatByLocale(this.props.intl.locale);
     const customInput = this.props.customInput || <input type="text" />
     const customInputRef = this.props.customInputRef || 'ref'
     let inputValue =
       typeof this.props.value === 'string' ? this.props.value
         : typeof this.state.inputValue === 'string' ? this.state.inputValue
-          : safeDateFormat(this.props.selected, 'MM-DD-YYYY').substr(0, 10)
+          : safeDateFormat(this.props.selected, this.props)
 
     return React.cloneElement(customInput, {
       [customInputRef]: (input) => { this.input = input },

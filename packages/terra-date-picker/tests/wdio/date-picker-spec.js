@@ -192,7 +192,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       expect(browser.getText('#blur-count')).to.equal('1');
       expect(browser.getText('#focus-count')).to.equal('1');
       expect(browser.getText('#iso')).to.equal('2019-05-01');
-      expect(browser.getText('#input-value')).to.equal('2019-05-01');
+      expect(browser.getText('#input-value')).to.equal('05/01/2019');
       expect(browser.getText('#complete-date')).to.equal('Yes');
       expect(browser.getText('#valid-date')).to.equal('Yes');
     });

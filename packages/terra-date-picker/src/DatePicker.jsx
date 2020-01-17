@@ -235,17 +235,17 @@ class DatePicker extends React.Component {
     if (!this.datePickerContainer.current.contains(activeTarget)) {
       if (this.props.onBlur) {
         const format = DateUtil.getFormatByLocale(this.props.intl.locale);
-        const isCompleteDate = DateUtil.isValidDate(this.state.selectedDate, format);
-        const iSOString = isCompleteDate ? DateUtil.convertToISO8601(this.state.selectedDate, format) : '';
+        const isCompleteDate = DateUtil.isValidDate(this.dateValue, format);
+        const iSOString = isCompleteDate ? DateUtil.convertToISO8601(this.dateValue, format) : '';
         let isValidDate = false;
 
-        if ((isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString)))) {
+        if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString)))) {
           isValidDate = true;
         }
 
         const options = {
           iSO: iSOString,
-          inputValue: iSOString,
+          inputValue: this.dateValue,
           isCompleteValue: isCompleteDate,
           isValidValue: isValidDate,
         };
@@ -379,7 +379,6 @@ class DatePicker extends React.Component {
     }
 
     let selectedDateInPicker;
-
     // If using this as a controlled component.
     if (value !== undefined) {
       // If value is empty, let selectedDateInPicker be undefined as in clearing the value.

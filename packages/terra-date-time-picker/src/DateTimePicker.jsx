@@ -275,7 +275,7 @@ class DateTimePicker extends React.Component {
 
   handleBlur(event, momentDateTime) {
     if (this.props.onBlur) {
-      const isCompleteDateTime = DateTimeUtils.isValidDateTime(momentDateTime, this.timeValue, this.state.dateFormat, this.props.showSeconds);
+      const isCompleteDateTime = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
       let value = '';
       if (this.dateValue) {
         value = this.dateValue.concat(' ');
@@ -311,10 +311,9 @@ class DateTimePicker extends React.Component {
         isValid = true;
       }
 
-      const inputDateTime = `${iSOString.substr(0, 10)} ${this.timeValue}`;
       const options = {
         iSO: iSOString,
-        inputValue: inputDateTime,
+        inputValue: value,
         isCompleteValue: isCompleteDateTime,
         isValidValue: isValid,
       };
