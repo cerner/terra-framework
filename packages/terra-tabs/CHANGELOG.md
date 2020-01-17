@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.24.0 - (January 17, 2020)
+------------------
 ### Fixed
 * Overflow issue with icon-only tabs.
 * Reset cache and handle visibility of tabs added/removed post initial mount.
