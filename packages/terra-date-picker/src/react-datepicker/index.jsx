@@ -9,7 +9,6 @@ import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PopupContainer from './PopupContainer';
-import DateUtil from '../DateUtil';
 import {
   newDate,
   now,

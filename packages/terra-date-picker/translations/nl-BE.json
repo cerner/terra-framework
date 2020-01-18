@@ -9,5 +9,6 @@
   "Terra.datePicker.date": "Datum",
   "Terra.datePicker.nextMonth": "Volgende maand",
   "Terra.datePicker.previousMonth": "Vorige maand",
-  "Terra.datePicker.calendarInstructions": "Gebruik de pijltoetsen om de selectie te wijzigen. Druk op Enter om een datum te selecteren. Druk op Esc om de datumkiezer te sluiten."
+  "Terra.datePicker.calendarInstructions": "Gebruik de pijltoetsen om de selectie te wijzigen. Druk op Enter om een datum te selecteren. Druk op Esc om de datumkiezer te sluiten.",
+  "Terra.datePicker.dateFormatOrder": "2"
 }

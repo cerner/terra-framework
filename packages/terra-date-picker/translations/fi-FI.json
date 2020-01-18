@@ -6,5 +6,6 @@
   "Terra.datePicker.today": "Tänään",
   "Terra.datePicker.monthLabel": "Kuukausi",
   "Terra.datePicker.yearLabel": "Vuosi",
-  "Terra.datePicker.date": "Ðâté"
+  "Terra.datePicker.date": "Ðâté",
+  "Terra.datePicker.dateFormatOrder": "2"
 }

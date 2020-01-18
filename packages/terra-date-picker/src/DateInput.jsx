@@ -12,11 +12,6 @@ const cx = classNames.bind(styles);
 
 const Icon = <IconCalendar />;
 
-let dateDay;
-let dateMonth;
-let dateYear;
-let dateDelimiter;
-
 const propTypes = {
   /**
    * Callback ref to pass into the calendar button dom element.
@@ -108,21 +103,21 @@ class DatePickerInput extends React.Component {
   constructor(props) {
     super(props);
 
-    const tempDate = DateUtil.strictFormatISODate(props.value, props.placeholder);
+    const format = DateUtil.getDateFormat(props.intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' }));
+    const tempDate = DateUtil.convertToISO8601(props.value, format);
 
     this.state = {};
 
     if (tempDate) {
       this.state = {
-        day: this.props.value.substr(3, 2),
-        month: this.props.value.substr(0, 2),
-        year: this.props.value.substr(6, 4),
+        day: tempDate.substr(8, 2),
+        month: tempDate.substr(5, 2),
+        year: tempDate.substr(0, 4),
         isFocused: false,
       };
     }
 
     this.handleOnButtonClick = this.handleOnButtonClick.bind(this);
-    this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleDayChange = this.handleDayChange.bind(this);
@@ -140,13 +135,14 @@ class DatePickerInput extends React.Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    const tempDate = DateUtil.strictFormatISODate(props.value, props.placeholder);
+    const format = DateUtil.getDateFormat(props.intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' }));
+    const tempDate = DateUtil.convertToISO8601(props.value, format);
 
     if (tempDate && props.value !== state.prevDate) {
       return {
-        day: props.value.substr(3, 2),
-        month: props.value.substr(0, 2),
-        year: props.value.substr(6, 4),
+        day: tempDate.substr(8, 2),
+        month: tempDate.substr(5, 2),
+        year: tempDate.substr(0, 4),
         prevDate: props.value,
       };
     }
@@ -155,25 +151,27 @@ class DatePickerInput extends React.Component {
 
   moveFocusOnChange(inputValue, type, dateVariant) {
     // Move focus based on input selected and date variant.
-    if (inputValue.length === 2) {
-      if (dateVariant === 'MM/DD/YYYY') {
+    if (dateVariant === 'MM-DD-YYYY') {
+      if (inputValue.length === 2) {
         if (type === DateUtil.inputType.MONTH) {
           this.dayInput.focus();
         } else {
           this.yearInput.focus();
         }
-      } else if (dateVariant === 'DD/MM/YYYY') {
+      }
+    } else if (dateVariant === 'DD-MM-YYYY') {
+      if (inputValue.length === 2) {
         if (type === DateUtil.inputType.MONTH) {
           this.yearInput.focus();
-        } else {
+        } else if (type === DateUtil.inputType.DAY) {
           this.monthInput.focus();
         }
       }
-    } else if (dateVariant === 'YYYY/MM/DD') {
-      if (inputValue.length === 4) {
-        this.monthInput.focus();
-      } else if (type === DateUtil.inputType.MONTH) {
+    } else if (dateVariant === 'YYYY-MM-DD') {
+      if (inputValue.length > 1 && type === DateUtil.inputType.MONTH) {
         this.dayInput.focus();
+      } else if (inputValue.length === 4) {
+        this.monthInput.focus();
       }
     }
   }
@@ -183,16 +181,6 @@ class DatePickerInput extends React.Component {
 
     if (!attributes.readOnly && this.onCalendarButtonClick && this.props.onClick) {
       this.onCalendarButtonClick(event, this.props.onClick);
-    }
-  }
-
-  handleOnChange(event) {
-    if (!DateUtil.validDateInput(event.target.value)) {
-      return;
-    }
-
-    if (this.props.onChange) {
-      this.props.onChange(event);
     }
   }
 
@@ -251,11 +239,24 @@ class DatePickerInput extends React.Component {
     const year = type === DateUtil.inputType.YEAR ? value : this.state.year;
     const dateFormat = DateUtil.getFormatByLocale(this.props.intl.locale);
 
+    let tempDate;
+    let formattedDate;
+
+    if (this.variant === 'YYYY-MM-DD') {
+      if (month && day && year && day.length === 2) {
+        tempDate = DateUtil.formatISODate(year.concat('-', month).concat('-', day), 'YYYY-MM-DD');
+        formattedDate = DateUtil.strictFormatISODate(tempDate, dateFormat);
+      }
+    } else if (month && day && year && year.length === 4) {
+      tempDate = DateUtil.formatISODate(year.concat('-', month).concat('-', day), 'YYYY-MM-DD');
+      formattedDate = DateUtil.strictFormatISODate(tempDate, dateFormat);
+    }
+
     if (day === '' && month === '' && year === '') {
       this.props.onChange(event, '');
-    } else if (month && day && year) {
-      const tempDate = year.concat('-', month).concat('-', day);
-      const formattedDate = DateUtil.strictFormatISODate(tempDate, dateFormat);
+    }
+
+    if (DateUtil.isValidDate(formattedDate, dateFormat)) {
       event.target.value = formattedDate; // eslint-disable-line no-param-reassign
       this.props.onChange(event, formattedDate);
     }
@@ -284,7 +285,8 @@ class DatePickerInput extends React.Component {
     this.onCalendarButtonClick = customProps.onCalendarButtonClick;
     this.shouldShowPicker = customProps.shouldShowPicker;
 
-    this.variant = undefined;
+    const localeFormat = intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' });
+    this.variant = DateUtil.getDateFormat(localeFormat);
 
     delete customProps.onCalendarButtonClick;
     delete customProps.shouldShowPicker;
@@ -292,29 +294,7 @@ class DatePickerInput extends React.Component {
     const additionalInputProps = { ...customProps, ...inputAttributes };
     const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
 
-    if (placeholder) {
-      if (placeholder === 'MM/DD/YYYY') {
-        dateMonth = placeholder.substr(0, 2);
-        dateDay = placeholder.substr(3, 5);
-        dateYear = placeholder.substr(6, 10);
-        this.variant = placeholder;
-      } else if (placeholder === 'YYYY-MM-DD') {
-        dateMonth = placeholder.substr(5, 7);
-        dateDay = placeholder.substr(8, 10);
-        dateYear = placeholder.substr(0, 4);
-        dateDelimiter = '-';
-        this.variant = 'YYYY/MM/DD';
-      } else {
-        dateMonth = placeholder.substr(3, 5);
-        dateDay = placeholder.substr(0, 2);
-        dateYear = placeholder.substr(6, 10);
-        this.variant = 'DD/MM/YYYY';
-      }
-    }
-
-    if (!dateDelimiter) {
-      dateDelimiter = '/';
-    }
+    const placeholderValues = DateUtil.getPlaceholderValues(this.variant, placeholder);
 
     const dateInputContainerClasses = cx([
       'date-input-container',
@@ -331,7 +311,6 @@ class DatePickerInput extends React.Component {
       { 'is-invalid': isInvalid },
     ]);
     const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
-    let dateInputFormat;
 
     const dateMonthInput = (
       <Input
@@ -342,7 +321,7 @@ class DatePickerInput extends React.Component {
         name={'terra-date-month-'.concat(name)}
         value={this.state.month}
         onChange={this.handleMonthChange}
-        placeholder={dateMonth || 'MM'}
+        placeholder={placeholderValues.month || 'MM'}
         onFocus={this.handleOnFocus}
         onBlur={this.handleOnBlur}
         maxLength="2"
@@ -361,7 +340,7 @@ class DatePickerInput extends React.Component {
         name={'terra-date-day-'.concat(name)}
         value={this.state.day}
         onChange={this.handleDayChange}
-        placeholder={dateDay || 'DD'}
+        placeholder={placeholderValues.day || 'DD'}
         onFocus={this.handleOnFocus}
         onBlur={this.handleOnBlur}
         maxLength="2"
@@ -380,7 +359,7 @@ class DatePickerInput extends React.Component {
         name={'terra-date-year-'.concat(name)}
         value={this.state.year}
         onChange={this.handleYearChange}
-        placeholder={dateYear || 'YYYY'}
+        placeholder={placeholderValues.year || 'YYYY'}
         onFocus={this.handleOnFocus}
         onBlur={this.handleOnBlur}
         maxLength="4"
@@ -390,39 +369,15 @@ class DatePickerInput extends React.Component {
       />
     );
 
-    const dateSpacer = <span className={cx('date-spacer')}>{dateDelimiter}</span>;
+    const dateSpacer = <span className={cx('date-spacer')}>{placeholderValues.delimiter}</span>;
 
-    if (this.variant === 'MM/DD/YYYY') {
-      dateInputFormat = (
-        <>
-          {dateMonthInput}
-          {dateSpacer}
-          {dateDayInput}
-          {dateSpacer}
-          {dateYearInput}
-        </>
-      );
-    } else if (this.variant === 'DD/MM/YYYY') {
-      dateInputFormat = (
-        <>
-          {dateDayInput}
-          {dateSpacer}
-          {dateMonthInput}
-          {dateSpacer}
-          {dateYearInput}
-        </>
-      );
-    } else {
-      dateInputFormat = (
-        <>
-          {dateYearInput}
-          {dateSpacer}
-          {dateMonthInput}
-          {dateSpacer}
-          {dateDayInput}
-        </>
-      );
-    }
+    const dateInputFormat = DateUtil.getInputLayout(
+      this.variant,
+      dateSpacer,
+      dateMonthInput,
+      dateDayInput,
+      dateYearInput,
+    );
 
     return (
       <div

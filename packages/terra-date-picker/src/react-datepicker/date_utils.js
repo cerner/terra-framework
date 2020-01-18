@@ -1,5 +1,7 @@
 import moment from 'moment'
 
+moment.suppressDeprecationWarnings = true;
+
 const dayOfWeekCodes = {
   1: 'mon',
   2: 'tue',

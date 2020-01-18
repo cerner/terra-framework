@@ -1,4 +1,5 @@
 /* eslint-disable no-underscore-dangle */
+import React from 'react';
 import moment from 'moment';
 
 class DateUtil {
@@ -120,7 +121,7 @@ class DateUtil {
    */
   static convertToISO8601(date, format) {
     if (date && format) {
-      const momentDate = moment(date, format, true);
+      const momentDate = moment(date, format);
       return momentDate.isValid() ? momentDate.format('YYYY-MM-DD') : date;
     }
 
@@ -140,6 +141,95 @@ class DateUtil {
     }
 
     return undefined;
+  }
+
+  static getDateFormat(locale) {
+    let dateVariant;
+
+    if (locale === '0') {
+      dateVariant = 'MM-DD-YYYY';
+    } else if (locale === '1') {
+      dateVariant = 'YYYY-MM-DD';
+    } else {
+      dateVariant = 'DD-MM-YYYY';
+    }
+
+    return dateVariant;
+  }
+
+  static getPlaceholderValues(variant, placeholder) {
+    let dateMonth;
+    let dateDay;
+    let dateYear;
+    let dateDelimiter;
+    let ph = placeholder;
+
+    if (!ph) {
+      ph = 'MM-DD-YYYY';
+    }
+
+    if (variant === 'MM-DD-YYYY') {
+      dateMonth = ph.substr(0, 2);
+      dateDay = ph.substr(3, 2);
+      dateYear = ph.substr(6, 4);
+    } else if (variant === 'YYYY-MM-DD') {
+      dateMonth = ph.substr(5, 2);
+      dateDay = ph.substr(8, 2);
+      dateYear = ph.substr(0, 4);
+      dateDelimiter = '-';
+    } else {
+      dateMonth = ph.substr(3, 2);
+      dateDay = ph.substr(0, 2);
+      dateYear = ph.substr(6, 4);
+    }
+
+    if (!dateDelimiter) {
+      dateDelimiter = '/';
+    }
+
+    return {
+      month: dateMonth,
+      day: dateDay,
+      year: dateYear,
+      delimiter: dateDelimiter,
+    };
+  }
+
+  static getInputLayout(order, spacer, month, day, year) {
+    let formatOrder;
+    if (order === 'MM-DD-YYYY') {
+      formatOrder = (
+        <>
+          {month}
+          {spacer}
+          {day}
+          {spacer}
+          {year}
+        </>
+      );
+    } else if (order === 'YYYY-MM-DD') {
+      formatOrder = (
+        <>
+          {year}
+          {spacer}
+          {month}
+          {spacer}
+          {day}
+        </>
+      );
+    } else {
+      formatOrder = (
+        <>
+          {day}
+          {spacer}
+          {month}
+          {spacer}
+          {year}
+        </>
+      );
+    }
+
+    return formatOrder;
   }
 
   /**

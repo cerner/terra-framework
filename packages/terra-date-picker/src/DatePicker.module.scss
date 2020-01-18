@@ -153,8 +153,6 @@
     color: var(--terra-date-picker-date-component-color, #1c1f21);
     display: inline-block;
     height: var(--terra-date-picker-date-component-height, 1.5714285714rem);
-    line-height: var(--terra-date-picker-date-component-line-height, 1.375);
-    min-width: var(--terra-date-picker-date-component-min-width, 4rem);
     padding-bottom: var(--terra-date-picker-date-component-padding-bottom, 0);
     padding-left: var(--terra-date-picker-date-component-padding-left, 0);
     padding-right: var(--terra-date-picker-date-component-padding-right, 0);
@@ -162,7 +160,6 @@
     transition-duration: var(--terra-date-picker-date-component-transition-duration, 0.2s);
     transition-property: background-size;
     transition-timing-function: var(--terra-date-picker-date-component-transition-timing-function, ease);
-    width: 100%;
 
     &:hover {
       background-color: var(--terra-date-picker-date-component-hover-background-color, transparent);
@@ -191,21 +188,21 @@
   }
 
   .date-input-month {
-    min-width: 1.8em;
-    text-align: right;
-    width: 1.8em;
+    min-width: 2rem;
+    text-align: center;
+    width: 2rem;
   }
 
   .date-input-day {
-    min-width: 1.4em;
+    min-width: 1.6rem;
     text-align: center;
-    width: 1.4em;
+    width: 1.6rem;
   }
 
   .date-input-year {
-    min-width: 2.6em;
-    text-align: left;
-    width: 2.6em;
+    min-width: 3rem;
+    text-align: center;
+    width: 3rem;
   }
 
   .date-spacer {
