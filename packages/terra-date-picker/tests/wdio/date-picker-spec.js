@@ -381,11 +381,13 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
   describe('Controlled DatePicker', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-controlled');
+      Terra.hideInputCaret('input[name="terra-date-year-controlled-date-picker"]');
     });
 
     it('Enters date value', () => {
       browser.setValue('input[name="terra-date-month-controlled-date-picker"]', '06');
       browser.setValue('input[name="terra-date-day-controlled-date-picker"]', '01');
+      browser.click('input[name="terra-date-year-controlled-date-picker"]');
       browser.setValue('input[name="terra-date-year-controlled-date-picker"]', '2020');
     });
 
