@@ -488,7 +488,7 @@ class DatePicker extends React.Component {
       }
     }
     this.setState({ inputValue: event.target.value })
-    const date = parseDate(event.target.value, this.props)
+    const date = parseDate(dateValue, this.props)
     if (date || !event.target.value) {
       this.setSelected(date, event, true)
     }
@@ -753,7 +753,6 @@ class DatePicker extends React.Component {
       [outsideClickIgnoreClass]: this.state.open
     })
 
-    //const dateFormat = DateUtil.getFormatByLocale(this.props.intl.locale);
     const customInput = this.props.customInput || <input type="text" />
     const customInputRef = this.props.customInputRef || 'ref'
     let inputValue =

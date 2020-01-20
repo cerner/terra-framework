@@ -98,24 +98,11 @@ const defaultProps = {
   value: undefined,
 };
 
-// eslint-disable-next-line react/prefer-stateless-function
 class DatePickerInput extends React.Component {
   constructor(props) {
     super(props);
 
-    const format = DateUtil.getDateFormat(props.intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' }));
-    const tempDate = DateUtil.convertToISO8601(props.value, format);
-
     this.state = {};
-
-    if (tempDate) {
-      this.state = {
-        day: tempDate.substr(8, 2),
-        month: tempDate.substr(5, 2),
-        year: tempDate.substr(0, 4),
-        isFocused: false,
-      };
-    }
 
     this.handleOnButtonClick = this.handleOnButtonClick.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
@@ -135,22 +122,28 @@ class DatePickerInput extends React.Component {
   }
 
   static getDerivedStateFromProps(props, state) {
+    // Formats the selected date into a consistent value and sets input state.
     const format = DateUtil.getDateFormat(props.intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' }));
-    const tempDate = DateUtil.convertToISO8601(props.value, format);
-
-    if (tempDate && props.value !== state.prevDate) {
+    if (props.value !== state.prevDate) {
+      const tempDate = DateUtil.convertToISO8601(props.value, format);
       return {
-        day: tempDate.substr(8, 2),
-        month: tempDate.substr(5, 2),
-        year: tempDate.substr(0, 4),
+        day: tempDate.substring(8, 10),
+        month: tempDate.substring(5, 7),
+        year: tempDate.substring(0, 4),
         prevDate: props.value,
       };
     }
     return null;
   }
 
+  /**
+   * Moves focus to the correct input depending on date ordering.
+   * @param {string} inputValue - The value from the current input.
+   * @param {int} type - The input type, based on DateUtil.inputType.
+   * @param {string} dateVariant - Date variant based on the currently supported date
+   *                      orders: 'MM-DD-YYYY', 'DD-MM-YYYY', or 'YYYY-MM-DD'.
+   */
   moveFocusOnChange(inputValue, type, dateVariant) {
-    // Move focus based on input selected and date variant.
     if (dateVariant === 'MM-DD-YYYY') {
       if (inputValue.length === 2) {
         if (type === DateUtil.inputType.MONTH) {
@@ -223,17 +216,23 @@ class DatePickerInput extends React.Component {
     if (type === DateUtil.inputType.DAY) {
       this.setState({
         day: value,
-      }, this.moveFocusOnChange(value, type, this.variant));
+      });
     } else if (type === DateUtil.inputType.MONTH) {
       this.setState({
         month: value,
-      }, this.moveFocusOnChange(value, type, this.variant));
+      });
     } else if (type === DateUtil.inputType.YEAR) {
       this.setState({
         year: value,
-      }, this.moveFocusOnChange(value, type, this.variant));
+      });
     }
 
+    this.moveFocusOnChange(value, type, this.variant)
+
+    /**
+     * Sets the day, month and year based on input values, formats them
+     * based on the date format variant, and passes the formatted date to onChange.
+     */
     const day = type === DateUtil.inputType.DAY ? value : this.state.day;
     const month = type === DateUtil.inputType.MONTH ? value : this.state.month;
     const year = type === DateUtil.inputType.YEAR ? value : this.state.year;
@@ -242,22 +241,26 @@ class DatePickerInput extends React.Component {
     let tempDate;
     let formattedDate;
 
-    if (this.variant === 'YYYY-MM-DD') {
-      if (month && day && year && day.length === 2) {
-        tempDate = DateUtil.formatISODate(year.concat('-', month).concat('-', day), 'YYYY-MM-DD');
+    if (day && month && year) {
+      if (this.variant === 'YYYY-MM-DD') {
+        if (day.length === 2) {
+          tempDate = DateUtil.formatISODate(year.concat('-', month)
+            .concat('-', day), 'YYYY-MM-DD');
+          formattedDate = DateUtil.strictFormatISODate(tempDate, dateFormat);
+        }
+      } else if (year.length === 4) {
+        tempDate = DateUtil.formatISODate(year.concat('-', month)
+          .concat('-', day), 'YYYY-MM-DD');
         formattedDate = DateUtil.strictFormatISODate(tempDate, dateFormat);
       }
-    } else if (month && day && year && year.length === 4) {
-      tempDate = DateUtil.formatISODate(year.concat('-', month).concat('-', day), 'YYYY-MM-DD');
-      formattedDate = DateUtil.strictFormatISODate(tempDate, dateFormat);
     }
 
+    // Allows easy deletion of input values.
     if (day === '' && month === '' && year === '') {
       this.props.onChange(event, '');
     }
 
     if (DateUtil.isValidDate(formattedDate, dateFormat)) {
-      event.target.value = formattedDate; // eslint-disable-line no-param-reassign
       this.props.onChange(event, formattedDate);
     }
   }
@@ -293,7 +296,6 @@ class DatePickerInput extends React.Component {
 
     const additionalInputProps = { ...customProps, ...inputAttributes };
     const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
-
     const placeholderValues = DateUtil.getPlaceholderValues(this.variant, placeholder);
 
     const dateInputContainerClasses = cx([

@@ -153,10 +153,7 @@
     color: var(--terra-date-picker-date-component-color, #1c1f21);
     display: inline-block;
     height: var(--terra-date-picker-date-component-height, 1.5714285714rem);
-    padding-bottom: var(--terra-date-picker-date-component-padding-bottom, 0);
-    padding-left: var(--terra-date-picker-date-component-padding-left, 0);
-    padding-right: var(--terra-date-picker-date-component-padding-right, 0);
-    padding-top: var(--terra-date-picker-date-component-padding-top, 0);
+    padding: var(--terra-date-picker-date-component-padding, 0);
     transition-duration: var(--terra-date-picker-date-component-transition-duration, 0.2s);
     transition-property: background-size;
     transition-timing-function: var(--terra-date-picker-date-component-transition-timing-function, ease);
@@ -172,6 +169,7 @@
       background-color: var(--terra-date-picker-date-component-focus-background-color, transparent);
       background-size: var(--terra-date-picker-date-component-focus-background-size, 0 0);
       border: 0;
+      z-index: 1;
 
       [dir=ltr] & {
         box-shadow: var(--terra-date-picker-date-component-focus-ltr-box-shadow, none);
@@ -180,10 +178,6 @@
       [dir=rtl] & {
         box-shadow: var(--terra-date-picker-date-component-focus-rtl-box-shadow, none);
       }
-    }
-
-    &::selection {
-      background-color: transparent;
     }
   }
 

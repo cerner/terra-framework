@@ -270,14 +270,11 @@ class DatePicker extends React.Component {
     }
   }
 
-  handleChangeRaw(event, date) {
-    if (date) {
-      this.handleChange(DateUtil.createSafeDate(date), event);
-    }
+  handleChangeRaw(event) {
     this.dateValue = event.target.value;
 
     if (this.props.onChangeRaw) {
-      this.props.onChangeRaw(event);
+      this.props.onChangeRaw(event, event.target.value);
     }
   }
 
@@ -376,6 +373,10 @@ class DatePicker extends React.Component {
 
     if (!formattedValue) {
       formattedValue = value;
+    }
+
+    if (this.state.selectedDate) {
+      formattedValue = DateUtil.formatMomentDate(this.state.selectedDate, dateFormat);
     }
 
     let selectedDateInPicker;

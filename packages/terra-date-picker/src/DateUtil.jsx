@@ -143,6 +143,10 @@ class DateUtil {
     return undefined;
   }
 
+  /**
+   * Returns an easily parsable date format string.
+   * @param {string} locale - The locale variant from dateFormatOrder.
+   */
   static getDateFormat(locale) {
     let dateVariant;
 
@@ -157,6 +161,12 @@ class DateUtil {
     return dateVariant;
   }
 
+  /**
+   * Returns an object consisting of placeholder strings and a delimiter,
+   * based on the date format.
+   * @param {string} variant - Variant string obtained from getDateFormat.
+   * @param {string} placeholder - Passed on placeholder prop string.
+   */
   static getPlaceholderValues(variant, placeholder) {
     let dateMonth;
     let dateDay;
@@ -195,6 +205,14 @@ class DateUtil {
     };
   }
 
+  /**
+   * Returns a component layout based on locale format.
+   * @param {string} order - Layout order, based on the locale date order variant.
+   * @param {object} spacer - The spacer component with the locale appropriate delimiter.
+   * @param {object} month - The date month component.
+   * @param {object} day - The date day component.
+   * @param {object} year - The date year component.
+   */
   static getInputLayout(order, spacer, month, day, year) {
     let formatOrder;
     if (order === 'MM-DD-YYYY') {
@@ -245,7 +263,7 @@ class DateUtil {
 
   /**
    * Converts an ISO string to the given format.
-   * @param {string} iSODate - The ISO string to convert.
+   * @param {T[]} iSODate - The ISO string to convert.
    * @param {string} format - The desired date format for the conversion
    * @return {string} - The formatted date string.
    */
