@@ -353,6 +353,11 @@ class DateTimePicker extends React.Component {
     let updatedDateTime;
     const formattedDate = DateUtil.formatISODate(date, 'YYYY-MM-DD');
     const isDateValid = DateUtil.isValidDate(formattedDate, 'YYYY-MM-DD');
+
+    if (isDateValid) {
+      this.dateValue = DateUtil.formatISODate(date, this.state.dateFormat);
+    }
+
     const isTimeValid = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
 
     if (isDateValid) {

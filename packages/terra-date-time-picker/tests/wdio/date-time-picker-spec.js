@@ -196,7 +196,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     });
 
     it('enter a complete date to move focus to the hour input and onBlur is not triggered', () => {
-      browser.keys('05012019');
+      browser.setValue('input[name="terra-date-month-input"]', '05');
+      browser.setValue('input[name="terra-date-day-input"]', '01');
+      browser.setValue('input[name="terra-date-year-input"]', '2019');
       expect(browser.getText('#blur-count')).to.equal('0');
       expect(browser.getText('#focus-count')).to.equal('1');
       expect(browser.getText('#iso')).to.equal('');
