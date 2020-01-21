@@ -38,6 +38,7 @@ class InfiniteListSameCount extends React.Component {
           <InfiniteList
             id="test-infinite-list"
             isFinishedLoading
+            ariaLabel="Same Count"
           >
             {this.state.useItemOne ? items1 : items2}
           </InfiniteList>
