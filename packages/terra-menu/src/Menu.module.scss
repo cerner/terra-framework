@@ -40,14 +40,13 @@
       margin: var(--terra-menu-submenu-header-title-margin, 7px 0 7px 0);
       min-width: 0;
       overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      white-space: normal;
       word-break: normal;
-      word-wrap: normal;
+      word-wrap: break-word;
     }
 
     .main-header-title {
-      margin-left: var(--terra-menu-header-title-margin-left, 10px);
+      margin-left: var(--terra-menu-header-title-margin-left, 10px);      
     }
 
     .header-button {
