@@ -30,11 +30,10 @@
   --terra-time-input-invalid-disabled-color: #b2b5b6;
   --terra-time-input-invalid-disabled-opacity: 0.3;
 
-
-  --terra-time-input-incomplete-focused-input-background-color: #464232;
   --terra-time-input-incomplete-background-color: #464232;
   --terra-time-input-incomplete-hover-background-color: #464232;
   --terra-time-input-incomplete-focus-background-color: #464232;
+  --terra-time-input-incomplete-focused-input-background-color: #1e3a49;
 
   --terra-time-input-incomplete-disabled-background-color: #464232;
   --terra-time-input-incomplete-disabled-border: 1px solid #181b1d;  // copied from disabled below
@@ -54,6 +53,9 @@
   --terra-time-input-time-component-hover-background-color: #1e3a49;
   --terra-time-input-time-component-hover-border: 0 none transparent;
   --terra-time-input-time-component-hover-color: #b2b5b6;
+
+  // -- Removed in v4.18.0 --
+  --terra-time-input-desktop-incomplete-focused-input-background-color: #464232;
 
   // -- Removed in v4.15.0 --
   --terra-time-input-mobile-label-color: #6f7477;
