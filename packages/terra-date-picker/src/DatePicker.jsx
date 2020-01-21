@@ -231,6 +231,7 @@ class DatePicker extends React.Component {
     // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
     // IE 11 sets document.activeElement to the next focused element before the blur event is called.
     const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
+
     // Handle blur only if focus has moved out of the entire date picker component.
     if (!this.datePickerContainer.current.contains(activeTarget)) {
       if (this.props.onBlur) {
@@ -262,6 +263,11 @@ class DatePicker extends React.Component {
       this.dateValue = event.target.value;
     }
 
+    if (date && date.isValid()) {
+      const format = DateUtil.getFormatByLocale(this.props.intl.locale);
+      this.dateValue = DateUtil.formatMomentDate(date, format);
+    }
+
     this.setState({
       selectedDate: date,
     });
@@ -270,11 +276,15 @@ class DatePicker extends React.Component {
     }
   }
 
-  handleChangeRaw(event) {
+  handleChangeRaw(event, date) {
     this.dateValue = event.target.value;
 
     if (this.props.onChangeRaw) {
-      this.props.onChangeRaw(event, event.target.value);
+      if (date) {
+        this.props.onChangeRaw(event, date);
+      } else {
+        this.props.onChangeRaw(event, event.target.value);
+      }
     }
   }
 

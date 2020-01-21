@@ -166,9 +166,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     it('puts focus on the input', () => {
       browser.click('input[name="terra-date-month-date-input-onblur"]');
 
-      browser.keys('05');
-      browser.keys('01');
-      browser.keys('2019');
+      browser.setValue('input[name="terra-date-month-date-input-onblur"]', '06');
+      browser.setValue('input[name="terra-date-day-date-input-onblur"]', '01');
+      browser.setValue('input[name="terra-date-year-date-input-onblur"]', '2020');
       expect(browser.getText('#blur-count')).to.equal('0');
       expect(browser.getText('#focus-count')).to.equal('1');
       expect(browser.getText('#iso')).to.equal('');
@@ -191,8 +191,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.keys('Tab');
       expect(browser.getText('#blur-count')).to.equal('1');
       expect(browser.getText('#focus-count')).to.equal('1');
-      expect(browser.getText('#iso')).to.equal('2019-05-01');
-      expect(browser.getText('#input-value')).to.equal('05/01/2019');
+      expect(browser.getText('#iso')).to.equal('2020-06-01');
+      expect(browser.getText('#input-value')).to.equal('06/01/2020');
       expect(browser.getText('#complete-date')).to.equal('Yes');
       expect(browser.getText('#valid-date')).to.equal('Yes');
     });
@@ -251,6 +251,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     Terra.it.matchesScreenshot('date set to 06-01');
 
     it('finishes setting the date', () => {
+      browser.addValue('input[name="terra-date-month-date-input-onchangeraw"]', '06');
+      browser.addValue('input[name="terra-date-day-date-input-onchangeraw"]', '01');
       browser.addValue('input[name="terra-date-year-date-input-onchangeraw"]', '2017');
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');

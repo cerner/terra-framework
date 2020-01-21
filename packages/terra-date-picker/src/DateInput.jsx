@@ -207,6 +207,7 @@ class DatePickerInput extends React.Component {
 
   handleOnBlur(event) {
     this.setState({ isFocused: false });
+
     if (this.props.onBlur) {
       this.props.onBlur(event);
     }
