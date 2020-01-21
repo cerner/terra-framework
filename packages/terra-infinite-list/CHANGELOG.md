@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.24.0 - (January 21, 2020)
+------------------
 ### Added
 * Added `ariaLabel` prop.
 
