@@ -543,7 +543,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
   describe('Should not allow user to change date programmatically', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-changing-default-value-programmatically'); 
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-changing-default-value-programmatically');
     });
 
     Terra.it.matchesScreenshot('date-time before button click', { selector: '#root' });
