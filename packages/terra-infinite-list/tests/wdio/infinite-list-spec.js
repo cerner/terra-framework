@@ -29,6 +29,16 @@ Terra.describeViewports('InfiniteList', ['small'], () => {
     Terra.it.matchesScreenshot({ selector });
   });
 
+  describe('Displays an infinite list with role as listbox', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-listbox');
+      browser.waitForVisible('#test-infinite-list');
+      browser.moveToObject('#root', 0, 900);
+    });
+
+    Terra.it.validatesElement({ selector });
+  });
+
   describe('Displays an infinite list with virtual dom from top', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-virtual');
