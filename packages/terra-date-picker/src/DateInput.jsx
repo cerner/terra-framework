@@ -227,7 +227,7 @@ class DatePickerInput extends React.Component {
       });
     }
 
-    this.moveFocusOnChange(value, type, this.variant)
+    this.moveFocusOnChange(value, type, this.variant);
 
     /**
      * Sets the day, month and year based on input values, formats them
