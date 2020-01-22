@@ -44,6 +44,7 @@ const InfiniteListSection = () => (
     <InfiniteList
       dividerStyle="standard"
       isFinishedLoading
+      ariaLabel="Subsection"
     >
       {createSections(mockData)}
     </InfiniteList>

@@ -33,6 +33,7 @@ const InfiniteListSection = () => (
     <InfiniteList
       dividerStyle="standard"
       isFinishedLoading
+      ariaLabel="Section"
     >
       {createSections(mockData)}
     </InfiniteList>

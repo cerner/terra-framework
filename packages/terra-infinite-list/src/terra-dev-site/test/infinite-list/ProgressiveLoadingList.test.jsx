@@ -48,6 +48,7 @@ class ProgressiveLoadingList extends React.Component {
           initialLoadingIndicator={<MyInitialLoadingIndicator />}
           progressiveLoadingIndicator={<MyProgressiveLoadingIndicator />}
           progressiveLoadingMessage="Loading allergies..."
+          ariaLabel="Progressive Loading List"
         >
           {this.createItems()}
         </InfiniteList>
