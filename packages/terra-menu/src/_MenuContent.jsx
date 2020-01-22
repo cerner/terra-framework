@@ -297,8 +297,7 @@ class MenuContent extends React.Component {
 
   render() {
     let index = -1;
-    let hasSubMenuItems;
-    const hasHeaderTitle = this.props.headerTitle.length > 0;
+    let isMainMenuHeader;
     const items = this.props.children ? [] : undefined;
     React.Children.map(this.props.children, (item) => {
       const onClick = this.wrapOnClick(item);
@@ -315,9 +314,8 @@ class MenuContent extends React.Component {
           onKeyDown,
           isActive,
         });
-
-        if (hasHeaderTitle && item.props.subMenuItems && item.props.subMenuItems.length > 0) {
-          hasSubMenuItems = true;
+        if (this.props.headerTitle.length > 0 && item.props.subMenuItems && item.props.subMenuItems.length > 0) {
+          isMainMenuHeader = true;
         }
         // If the child has children then it is an item group, so iterate through it's children
       } else if (item.props.children) {
@@ -355,7 +353,7 @@ class MenuContent extends React.Component {
     ]);
 
     let header;
-    if (isFullScreen || isSubMenu || hasSubMenuItems) {
+    if (isFullScreen || isSubMenu || isMainMenuHeader) {
       header = this.buildHeader(isFullScreen);
     }
     const contentHeight = this.props.isHeightBounded ? '100%' : this.props.fixedHeight;
