@@ -1,3 +1,14 @@
+import { Badge } from '../../../../package.json?dev-site-package';
+
+import AbstractModalIsOpened from '../example/AbstractModalIsOpened?dev-site-example';
+import AbstractModalCloseOnOutsideClick from '../example/AbstractModalCloseOnOutsideClick?dev-site-example';
+import AbstractModalIsFullscreen from '../example/AbstractModalIsFullscreen?dev-site-example';
+import AbstractModalAlertDialog from '../example/AbstractModalAlertDialog?dev-site-example';
+
+import ModalPropsTable from '../../../../src/AbstractModal?dev-site-props-table';
+
+<Badge />
+
 # Terra Abstract Modal
 
 The abstract modal is a structural component that provides the ability to display portal'd content in a layer above the app. It consists of an overlay and an unstyled absolute positioned div in which content can be placed. The abstract modal is not intended to be consumed directly, but rather wrapped in a higher order component. Higher order components can provide the abstract modal with sizing, visual styles, and content (e.g; header, body, and actionable buttons). The abstract modals maximum size is constrained by the viewport size, so the content placed inside the modal needs to be responsive.
@@ -22,9 +33,19 @@ This component requires the following peer dependencies be installed in your app
 
 <!-- AUTO-GENERATED-CONTENT:END -->
 
-[1]: https://github.com/cerner/terra-framework/tree/master/packages/terra-modal-manager/docs
+[1]: https://github.com/cerner/terra-framework/tree/master/packages/terra-modal-manager/src/terra-dev-site/doc/modal-manager/About.1.doc.mdx
 
 ## Component Features
 * [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
 * [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
 * [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
+
+## Examples
+<AbstractModalIsOpened title='Default Modal'/>
+<AbstractModalCloseOnOutsideClick title='
+Disable closing the modal when clicking on the overlay' />
+<AbstractModalIsFullscreen title='Fullscreen Modal' />
+<AbstractModalAlertDialog title='Alert Dialog Modal' />
+
+## Abstract Modal Props
+<ModalPropsTable />
