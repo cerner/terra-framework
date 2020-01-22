@@ -10,6 +10,7 @@ const InfiniteListUpdating = () => (
   <InfiniteList
     id="test-infinite-list"
     isFinishedLoading={false}
+    ariaLabel="Updating"
     progressiveLoadingIndicator={(
       <div className={cx('progressive-loading-indicator')}>
         Progressive Loading

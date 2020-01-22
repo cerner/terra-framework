@@ -13,6 +13,7 @@ const ProgressiveLoadingExample = () => (
   <MyExampleContainer>
     <InfiniteList
       dividerStyle="standard"
+      ariaLabel="Progressive Loading"
       progressiveLoadingIndicator={<MyProgressiveLoadingIndicator />}
     >
       <Item key="item-1">
