@@ -130,6 +130,7 @@ const MyComponent = () => {
           preferredType: 'modal',
           content: {
             key: 'MY-MODAL-DISCLOSURE',
+            title: 'My Modal Disclosure',
             component: <MyDisclosureComponent />,
           }
         });
@@ -176,6 +177,7 @@ const MyComponent = withDisclosureManager({ disclosureManager }) => (
         preferredType: 'modal',
         content: {
           key: 'MY-MODAL-DISCLOSURE',
+          title: 'My Modal Disclosure',
           component: <MyDisclosureComponent />,
         }
       });
@@ -243,6 +245,7 @@ disclosureManager.disclose({
   size: 'large',
   content: {
     key: 'my-disclosed-content',
+    title: 'My disclosed-content',
     component: <DisclosedContent />,
   }
 }).then({ dismissDisclosure, afterDismiss } => {
@@ -279,6 +282,7 @@ disclosureManager.disclose({
 |Key|Is Required|Value|
 |---|---|---|
 |`key`|**required**|A String key identifying the component to the DisclosureManager. This key must be unique amongst the set of all actively disclosed component keys.|
+|`title`|optional|A string to render as the header's title.|
 |`component`|**required**|A React element that will be disclosed.|
 
 #### Disclosure Content
