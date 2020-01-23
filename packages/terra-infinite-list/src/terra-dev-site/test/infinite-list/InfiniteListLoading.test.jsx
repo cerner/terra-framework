@@ -10,6 +10,7 @@ const InfiniteListLoading = () => (
   <InfiniteList
     id="test-infinite-list"
     isFinishedLoading={false}
+    ariaLabel="Loading"
     initialLoadingIndicator={(
       <div className={cx('content-wrapper')}>
         Loading

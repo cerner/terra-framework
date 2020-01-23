@@ -2,6 +2,7 @@
 
 exports[`InfiniteList should render a default component 1`] = `
 <InfiniteList
+  ariaLabel="Infinite List"
   dividerStyle="none"
   intl={
     Object {
@@ -38,6 +39,7 @@ exports[`InfiniteList should render a default component 1`] = `
 
 exports[`InfiniteList should render with initial children 1`] = `
 <InfiniteList
+  ariaLabel="Infinite List"
   dividerStyle="none"
   intl={
     Object {
@@ -123,6 +125,7 @@ exports[`InfiniteList should render with initial children 1`] = `
 
 exports[`InfiniteList should render with list props 1`] = `
 <InfiniteList
+  ariaLabel="Infinite List"
   dividerStyle="standard"
   intl={
     Object {
@@ -209,6 +212,7 @@ exports[`InfiniteList should render with list props 1`] = `
 
 exports[`InfiniteList should render with list with style props 1`] = `
 <InfiniteList
+  ariaLabel="Infinite List"
   dividerStyle="standard"
   intl={
     Object {
@@ -298,6 +302,7 @@ exports[`InfiniteList should render with list with style props 1`] = `
 
 exports[`InfiniteList should render with no children and loading 1`] = `
 <InfiniteList
+  ariaLabel="Infinite List"
   dividerStyle="none"
   initialLoadingIndicator={
     <div

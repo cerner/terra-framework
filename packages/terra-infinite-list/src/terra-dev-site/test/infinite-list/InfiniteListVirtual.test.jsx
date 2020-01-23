@@ -14,6 +14,7 @@ const InfiniteListUpdating = () => (
         id="test-infinite-list"
         dividerStyle="standard"
         isFinishedLoading
+        ariaLabel="Virtual"
       >
         <Item key="item-0"><div className={cx('item-content')}>Item 0</div></Item>
         <Item key="item-1"><div className={cx('item-content')}>Item 1</div></Item>
