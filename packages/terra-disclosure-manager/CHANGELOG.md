@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Add `title` options to the `disclose` API provided to disclosed content.
 
 4.28.0 - (December 10, 2019)
 ------------------
