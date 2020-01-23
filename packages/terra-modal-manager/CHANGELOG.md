@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update link to docs for Disclosure Manager's API 
 
 6.23.0 - (January 7, 2020)
 ------------------
