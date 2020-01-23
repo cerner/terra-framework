@@ -73,15 +73,17 @@ describe('DisclosureManager', () => {
     expect(childDisclosureManager2.disclose).toBeDefined();
   };
 
-  const triggerChildDisclose = wrapper => (
+  const triggerChildDisclose = (wrapper, disclosureOptions = { content: {} }) => (
     new Promise((resolve, reject) => {
       const childDisclosureManager1 = wrapper.find('#child1').getElements()[1].props.disclosureManager;
       childDisclosureManager1.disclose({
         preferredType: 'test',
         size: 'large',
+        ...disclosureOptions,
         content: {
           key: 'DISCLOSE_KEY',
           component: <TestChild id="disclosure-component" />,
+          ...disclosureOptions.content,
         },
       }).then(resolve).catch(reject);
     })
@@ -153,6 +155,19 @@ describe('DisclosureManager', () => {
 
     return triggerChildDisclose(wrapper).then(() => {
       expect(wrapper.exists('#disclosure-container')).toBe(true);
+    });
+  });
+
+  it('renders disclosed content with headerAdapter API', () => {
+    const wrapper = mountDisclosureManager(['test'], manager => (
+      <div id="wrapper">
+        {manager.children.components}
+        {manager.disclosure.components}
+      </div>
+    ));
+
+    return triggerChildDisclose(wrapper, { content: { title: 'test title' } }).then(() => {
+      expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.headerAdapterData).toHaveProperty('title', 'test title');
     });
   });
 
