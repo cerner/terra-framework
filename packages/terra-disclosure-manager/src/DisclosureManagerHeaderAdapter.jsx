@@ -20,9 +20,7 @@ const DisclosureManagerHeaderAdapter = ({ title, collapsibleMenuView }) => {
   const adapterContext = useContext(DisclosureManagerHeaderAdapterContext);
 
   useLayoutEffect(() => {
-    setTimeout(() => {
-      adapterContext.register({ title, collapsibleMenuView });
-    }, 2000);
+    adapterContext.register({ title, collapsibleMenuView });
   }, [title, collapsibleMenuView, adapterContext]);
 
   return null;
