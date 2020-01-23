@@ -22,6 +22,7 @@ const VirtualizedExample = () => (
     <InfiniteList
       dividerStyle="standard"
       isFinishedLoading
+      ariaLabel="Virtualized"
     >
       {createItems(mockData)}
     </InfiniteList>
