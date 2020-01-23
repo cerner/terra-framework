@@ -54,6 +54,11 @@
     }
   }
 
+  .overlay-layout {
+    height: 100%;
+    width: 100%;
+  }
+
   [dir=ltr] .content-layout.drawer-menu-is-open {
     transform: translate3d(var(--terra-application-navigation-content-layout-default-width, calc(100% - 3.571rem)), 0, 0);
 

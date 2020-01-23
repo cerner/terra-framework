@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+Drawer menu not closing in Internet Explorer on clicking outside of drawer menu.
 
 1.16.0 - (January 7, 2020)
 ------------------

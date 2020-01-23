@@ -4,6 +4,7 @@ import React, {
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Overlay from 'terra-overlay';
+import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
 import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
 import FocusTrap from 'focus-trap-react';
 import Popup from 'terra-popup';
@@ -403,6 +404,16 @@ const ApplicationNavigation = ({
     updateDrawerIsOpen(false);
   };
 
+  const addOverlay = () => (
+    <Overlay
+      isOpen={drawerMenuIsOpen}
+      isRelativeToContainer
+      backgroundStyle="dark"
+      zIndex="6000"
+      onRequestClose={generateFocusToggle(handleRequestClose)}
+    />
+  );
+
   return (
     <div className={cx('application-navigation')}>
       <div
@@ -417,24 +428,19 @@ const ApplicationNavigation = ({
         ref={contentLayoutRef}
         className={cx('content-layout', { 'drawer-menu-is-open': drawerMenuIsOpen })}
       >
-        {shouldRenderCompactNavigation(activeBreakpoint) ? renderCompactHeader() : renderHeader()}
-        <main
-          ref={mainContainerRef}
-          tabIndex="-1"
-          role="main"
-          className={cx('main-container')}
-          aria-labelledby={hiddenMainTitle ? 'main-inner-title' : null}
-        >
-          {hiddenMainTitle}
-          {children}
-        </main>
-        <Overlay
-          isOpen={drawerMenuIsOpen}
-          isRelativeToContainer
-          backgroundStyle="clear"
-          zIndex="6000"
-          onRequestClose={generateFocusToggle(handleRequestClose)}
-        />
+        <OverlayContainer className={cx('overlay-layout')} overlay={addOverlay()}>
+          {shouldRenderCompactNavigation(activeBreakpoint) ? renderCompactHeader() : renderHeader()}
+          <main
+            ref={mainContainerRef}
+            tabIndex="-1"
+            role="main"
+            className={cx('main-container')}
+            aria-labelledby={hiddenMainTitle ? 'main-inner-title' : null}
+          >
+            {hiddenMainTitle}
+            {children}
+          </main>
+        </OverlayContainer>
       </div>
       {renderPopupMenu()}
     </div>
