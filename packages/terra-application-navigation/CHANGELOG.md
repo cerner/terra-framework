@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Pop-up blockers triggered upon selecting items to open new window fixed in Firefox/Safari/IE/Edge.
 
 1.16.0 - (January 7, 2020)
 ------------------

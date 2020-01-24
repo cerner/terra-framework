@@ -1,5 +1,5 @@
 import React, {
-  useEffect, useLayoutEffect, useState, useRef,
+  useLayoutEffect, useState, useRef,
 } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -138,7 +138,6 @@ const ApplicationNavigation = ({
   const drawerMenuIsVisibleRef = useRef(false);
   // FocusTrap captures the initial value of the onDeactivate callback, so need a persistent ref to the isOpen value.
   const drawerMenuIsOpenRef = useRef(false);
-  const closeMenuCallbackRef = useRef();
 
   const [drawerMenuIsOpen, setDrawerMenuIsOpen] = useState(false);
   const [popupMenuIsOpen, setPopupMenuIsOpen] = useState(false);
@@ -165,7 +164,8 @@ const ApplicationNavigation = ({
         return;
       }
 
-      closeMenuCallbackRef.current = () => { wrappedFunction(...args); };
+      wrappedFunction(...args);
+
       updateDrawerIsOpen(false);
       setPopupMenuIsOpen(false);
     };
@@ -312,22 +312,6 @@ const ApplicationNavigation = ({
       />
     );
   }
-
-  /**
-   * This effect is used to execute callbacks from the drawer and popup
-   * menus after they are closed. This is similar to executing the callbacks
-   * in a setState callback for the menu state, but setState callbacks do not
-   * exist for the useState hook.
-   *
-   * The closeMenuCallbackRef value is set by the functions returned by
-   * generateMenuClosingCallback.
-   */
-  useEffect(() => {
-    if (closeMenuCallbackRef.current) {
-      closeMenuCallbackRef.current();
-      closeMenuCallbackRef.current = undefined;
-    }
-  });
 
   /**
    * This layout effect is used to manage the visibility of the drawer menu during
