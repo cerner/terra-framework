@@ -168,7 +168,7 @@ const DrawerMenu = ({
           <DrawerMenuListItem
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' })}
             icon={<IconQuestionOutline />}
-            onSelect={onSelectSettings}
+            onSelect={onSelectHelp}
           />
         ) : null}
       </ul>

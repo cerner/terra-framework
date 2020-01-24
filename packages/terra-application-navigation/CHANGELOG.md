@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed `settings` api called when `help` clicked in drawer menu.
 
 1.16.0 - (January 7, 2020)
 ------------------
