@@ -33,7 +33,6 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "terra-doc-template": "^2.2.0",
     "terra-responsive-element": "^5.0.0"
   },
   "scripts": {
