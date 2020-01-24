@@ -298,7 +298,7 @@ class DisclosureManager extends React.Component {
           name: data.content.name,
           props: data.content.props,
           component: data.content.component,
-          ...(data.content.title) && { headerAdapterData: { title: data.content.title } },
+          ...(data.content.title !== undefined) && { headerAdapterData: { title: data.content.title } },
           headerAdapterContextValue: this.generateHeaderContextValue(data.content.key),
         },
       },
@@ -318,7 +318,7 @@ class DisclosureManager extends React.Component {
       name: data.content.name,
       props: data.content.props,
       component: data.content.component,
-      ...(data.content.title) && { headerAdapterData: { title: data.content.title } },
+      ...(data.content.title !== undefined) && { headerAdapterData: { title: data.content.title } },
       headerAdapterContextValue: this.generateHeaderContextValue(data.content.key),
     };
     newState.disclosureComponentDelegates = newState.disclosureComponentDelegates.concat(this.generateDisclosureComponentDelegate(data.content.key, newState));
