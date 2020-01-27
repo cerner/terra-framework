@@ -1,7 +1,4 @@
 :global {
-
-  // ---------------------- Shared ----------------------- //
-
   --terra-tabs-keyboard-focus-ltr-box-shadow: 0 0 1px 3px #4a90e2, 0 0 7px 4px #4a90e2;
   --terra-tabs-keyboard-focus-rtl-box-shadow: 0 0 1px 3px #4a90e2, 0 0 7px 4px #4a90e2;
 
@@ -40,8 +37,6 @@
   --terra-tabs-structural-hover-background-image: linear-gradient(to bottom, #111212, #111212);
   --terra-tabs-structural-hover-color: #b2b5b6;
 
-  // -------------------- Version 4.x -------------------- //
-
   --terra-tabs-active-focus-ltr-box-shadow: 0 0 1px 3px #4a90e2, 0 0 7px 4px #4a90e2;
   --terra-tabs-active-focus-rtl-box-shadow: 0 0 1px 3px #4a90e2, 0 0 7px 4px #4a90e2;
 
@@ -67,18 +62,5 @@
   --terra-tabs-structural-focus-background-image: linear-gradient(to bottom, #141719, #141719);
   --terra-tabs-structural-tab-bar-border-bottom-color: #181b1d;
 
-  // -------------------- Version 3.x -------------------- //
-
-  --terra-tabs-collapsed-modular-tab-bar-border-color: #dddedf;
-
   --terra-tabs-modular-active-focus-background-color: #fff;
-  --terra-tabs-modular-disabled-color: #c8cacb;
-  --terra-tabs-modular-selection-bar-color: #fff;
-  --terra-tabs-modular-tab-bar-border-color: #dddedf;
-
-  --terra-tabs-structural-collapsed-menu-bar-border-color: #181b1d;
-  --terra-tabs-structural-disabled-background-color: #222a2e;
-  --terra-tabs-structural-disabled-color: #404344;
-  --terra-tabs-structural-disabled-opacity: 1;
-  --terra-tabs-structural-tab-bar-border-color: #181b1d;
 }

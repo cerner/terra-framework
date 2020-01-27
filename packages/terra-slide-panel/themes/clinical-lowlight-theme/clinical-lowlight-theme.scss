@@ -1,8 +1,6 @@
 :global {
   --terra-slide-panel-panel-background-color: #222a2e;
 
-  // -------------------- Version 3.x -------------------- //
-
   --terra-slide-panel-main-background-color: #222a2e;
   --terra-slide-panel-panel-overlay-position-start-box-shadow: 1px 0 5px #181b1d;
   --terra-slide-panel-panel-overlay-position-end-box-shadow: -1px 0 5px #181b1d;
@@ -12,10 +10,5 @@
   --terra-slide-panel-panel-squish-border-right-color: #181b1d;
   --terra-slide-panel-panel-squish-border-left-color: #181b1d;
 
-  // -------------------- Version 2.x -------------------- //
-
-  --terra-slide-panel-panel-border-color: #181b1d;
-  --terra-slide-panel-panel-width-small: 320px;
   --terra-slide-panel-panel-width-large-scalar: 0.6;
-  --terra-slide-panel-shadow-color: #181b1d;
 }

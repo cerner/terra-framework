@@ -1,5 +1,4 @@
 :global {
-  // ------------------- Shared Version 3.x & 4.x ------------------- //
   --terra-date-picker-button-border: 1px solid #000;
   --terra-date-picker-button-box-shadow: none;
   --terra-date-picker-button-color: #b2b5b6;
@@ -8,7 +7,6 @@
 
   --terra-date-picker-input-focus-border-color: #000;
 
-  // -------------------- Version 4.x -------------------- //
   --terra-date-picker-button-invalid-border-color: #fb4c4c;
   --terra-date-picker-button-invalid-box-shadow: 0 0 0 1px #fb4c4c;
   --terra-date-picker-button-invalid-focus-border-color: #fb4c4c;
@@ -28,7 +26,6 @@
   --terra-date-picker-input-incomplete-disabled-color: #464232;
   --terra-date-picker-input-incomplete-disabled-opacity: 0.3;
 
-
   // The following variables will not be styled, because they display in the date-picker popup, which is default styling.
   // By using the default values for these variables, styling should remain appropriate if/when default style changes.
   // --terra-date-picker-month-focus-outline
@@ -38,7 +35,4 @@
   // --terra-date-picker-next-month-background-image
   // --terra-date-picker-next-month-focus-background-image
   // --terra-date-picker-next-month-hover-background-image
-
-  // -------------------- Version 2.x -------------------- //
-  // there are no version specific variables for this version
 }
