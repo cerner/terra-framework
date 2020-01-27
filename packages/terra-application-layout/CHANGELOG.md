@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update docs to use MDX syntax
 
 5.24.0 - (January 7, 2020)
 ------------------

@@ -330,10 +330,12 @@ ExampleApplication.propTypes = {
 const WrappedApplication = withRouter(injectIntl((ExampleApplication)));
 
 const AppRouter = () => (
-  <div className={cx('app-router')}>
-    <MemoryRouter>
-      <WrappedApplication />
-    </MemoryRouter>
+  <div className={cx('height-tag')}>
+    <div className={cx('app-router')}>
+      <MemoryRouter>
+        <WrappedApplication />
+      </MemoryRouter>
+    </div>
   </div>
 );
 
