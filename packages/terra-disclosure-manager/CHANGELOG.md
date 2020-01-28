@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Update copyright to include 2020
 
+### Changed
+* Removed dismiss check registration chaining to parent disclosure managers
+
 4.28.0 - (December 10, 2019)
 ------------------
 ### Changed
