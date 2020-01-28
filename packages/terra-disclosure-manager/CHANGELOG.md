@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update copyright to include 2020
 
 ### Changed
 * Removed dismiss check registration chaining to parent disclosure managers
