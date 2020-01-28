@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added generated-themes to .npmignore
 
 4.28.0 - (December 10, 2019)
 ------------------
