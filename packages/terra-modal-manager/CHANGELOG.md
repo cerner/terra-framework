@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Update docs to use MDX syntax
 * Update copyright to include 2020
 
 6.23.0 - (January 7, 2020)
