@@ -4,6 +4,9 @@ ChangeLog
 Unreleased
 ----------
 
+### Changed
+* Removed dismiss check registration chaining to parent disclosure managers
+
 4.28.0 - (December 10, 2019)
 ------------------
 ### Changed
