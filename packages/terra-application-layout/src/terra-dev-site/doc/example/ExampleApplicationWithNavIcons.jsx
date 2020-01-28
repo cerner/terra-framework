@@ -344,7 +344,7 @@ ExampleApplication.propTypes = {
 const WrappedApplication = withRouter(injectIntl((ExampleApplication)));
 
 const AppRouter = () => (
-  <div className={cx('height-for-docs-only')}>
+  <div className={cx('height-tag')}>
     <div className={cx('app-router')}>
       <MemoryRouter>
         <WrappedApplication />
