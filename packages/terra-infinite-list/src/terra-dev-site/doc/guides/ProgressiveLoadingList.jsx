@@ -45,6 +45,7 @@ class ProgressiveLoadingList extends React.Component {
           dividerStyle="standard"
           isFinishedLoading={this.state.isFinishedLoading}
           onRequestItems={this.requestData}
+          ariaLabel="Progressive Loading"
           initialLoadingIndicator={<MyInitialLoadingIndicator />}
           progressiveLoadingIndicator={<MyProgressiveLoadingIndicator />}
         >
