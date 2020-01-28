@@ -794,4 +794,34 @@ describe('DisclosureManager', () => {
 
     expect(wrapper.state().disclosureIsOpen).toBeFalsy();
   });
+
+  it('should provide registerDismissCheck to disclosed contents', async () => {
+    const wrapper = mount((
+      <DisclosureManager.WrappedComponent
+        render={manager => (
+          <div id="wrapper">
+            {manager.children.components}
+            {manager.disclosure.components}
+          </div>
+        )}
+        supportedDisclosureTypes={['test']}
+        trapNestedDisclosureRequests
+      >
+        <TestChild id="child1" />
+        <TestChild id="child2" />
+      </DisclosureManager.WrappedComponent>
+    ));
+
+    await triggerChildDisclose(wrapper);
+    wrapper.update();
+
+    const disclosedContentManager = wrapper.find('#disclosure-component').getElements()[1].props.disclosureManager;
+    expect(disclosedContentManager.registerDismissCheck).toBeDefined();
+
+    const testDismissCheck = jest.fn();
+
+    await disclosedContentManager.registerDismissCheck(testDismissCheck);
+
+    expect(wrapper.instance().dismissChecks.DISCLOSE_KEY).toEqual(testDismissCheck);
+  });
 });
