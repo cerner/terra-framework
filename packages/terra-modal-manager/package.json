@@ -35,7 +35,6 @@
   },
   "devDependencies": {
     "terra-collapsible-menu-view": "^6.23.0",
-    "terra-doc-template": "^2.2.0",
     "terra-form-select": "^5.0.0"
   },
   "scripts": {
