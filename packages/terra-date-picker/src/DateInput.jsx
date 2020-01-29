@@ -349,7 +349,7 @@ class DatePickerInput extends React.Component {
         maxLength="2"
         size="2"
         pattern="\d*"
-        aria-label={intl.formatMessage({ id: 'Terra.datePicker.today' })}
+        aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
       />
     );
 
