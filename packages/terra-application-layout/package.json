@@ -48,7 +48,6 @@
     "terra-avatar": "^2.0.0",
     "terra-button": "^3.3.0",
     "terra-content-container": "^3.0.0",
-    "terra-doc-template": "^2.2.0",
     "terra-image": "^3.0.0"
   },
   "scripts": {
