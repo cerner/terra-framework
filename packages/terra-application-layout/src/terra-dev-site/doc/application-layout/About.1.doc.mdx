@@ -1,3 +1,45 @@
+import { Badge } from 'terra-application-layout/package.json?dev-site-package';
+
+<Badge />
+
+# Terra Application Layout
+
+The Terra Application Layout is a responsive, themeable layout for building applications.
+
+The Terra Application Layout provides:
+- A themeable, responsive application header, capable of rendering application-specific branding (provided by `terra-application-name`), tabular navigation (provided by `terra-application-links`), and user-centric utility controls (provided by `terra-utility`)
+- Responsive menu and content areas (provided by `terra-layout`)
+- `react-router`-based navigation and configuration (provided by `terra-navigation-layout`)
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-application-layout`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+| terra-disclosure-manager | ^4.9.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Component Features
+
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+* [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+
+[View component source code](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-layout)
+
 ## Prerequisites
 
 - Like all Terra components, the ApplicationLayout requires the presence of a `Base` component (provided by `terra-base`) in its parent hierarchy.
@@ -9,25 +51,11 @@ import { HashRouter } from 'react-router-dom'; // BrowserRouter (with additional
 import Base from 'terra-base';
 import ApplicationLayout from 'terra-application-layout';
 
-const MyApp = () => (
-  <HashRouter>
-    <Base locale="en-US">
-      <ApplicationLayout
-        nameConfig={nameConfig}
-        utilityConfig={utilityConfig}
-        routingConfig={routingConfig}
-        navigationItems={navigationItems}
-        extensions={<ApplicationExtensions />}
-        indexPath={indexPath}
-      />
-    </Base>
-  </HashRouter>
-);
 ```
 
 ## Props
 
-### `extensions`
+### extensions
 #### Is Required: `false`
 
 The `extensions` prop allows consumers to render an element within the ApplicationLayout's extensions region. The `extensions` content will be rendered in various ways depending on the current breakpoint. The `extensions` element will receive `app` and `layoutConfig` props from the ApplicationLayout, allowing it to interact with and respond to changes within the ApplicationLayout.
@@ -48,12 +76,12 @@ const MyExtensions = ({ app, layoutConfig }) => {
 };
 ```
 
-### `indexPath`
+### indexPath
 #### Is Required: `true`
 
 The `indexPath` prop allows consumers to set the default path of the ApplicationLayout. The ApplicationLayout will redirect to this path should users of the consuming application attempt to route to a component not detailed in the `routingConfig` prop. Accordingly, the `indexPath` value must have an associated entry within the `routingConfig` specification.
 
-### `nameConfig`
+### nameConfig
 #### Is Required: `false`
 
 The `nameConfig` prop allows consuming applications to add their own branding to the ApplicationLayout. The ApplicationLayout will render this content in different ways based on the active responsive breakpoint.
@@ -70,7 +98,7 @@ const myNameConfig = {
 }
 ```
 
-### `navigationItems`
+### navigationItems
 #### Is Required: `false`
 
 The `navigationItems` prop allows consumers to render high-level, primary navigation controls directly within the ApplicationLayout. The ApplicationLayout will render this content in different ways based on the active responsive breakpoint. If `navigationItems` are omitted, no primary navigation controls will be rendered.
@@ -94,7 +122,7 @@ const navigationItems = [{
 }];
 ```
 
-### `routingConfig`
+### routingConfig
 #### Is Required: `true`
 
 The `routingConfig` prop allows consuming applications to render components within the ApplicationLayout's `content` and `menu` regions based upon the router location.
@@ -191,7 +219,7 @@ const routingConfig = {
 };
 ```
 
-### `utilityConfig`
+### utilityConfig
 #### Is Required: `false`
 
 The `utilityConfig` prop allows consuming applications to present an application-level menu directly from the ApplicationLayout. The ApplicationLayout will render this content in different ways based on the active responsive breakpoint.
