@@ -54,7 +54,7 @@ const propTypes = {
 };
 
 const PopupMenuListItem = ({
-  icon, text, notificationCount, onSelect, showSelections, isSelected, loopFocus, parentRole,
+  icon, text, notificationCount, onSelect, showSelections, isSelected, loopFocus, parentRole, ...customProps
 }) => {
   const itemRef = useRef();
 
@@ -107,6 +107,7 @@ const PopupMenuListItem = ({
       onMouseDown={disableFocusStyles}
       data-focus-styles-enabled
       ref={itemRef}
+      {...customProps}
     >
       {showSelections
         ? (

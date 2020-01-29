@@ -110,6 +110,7 @@ const DrawerMenu = ({
       <DrawerMenuFooterButton
         onClick={onSelectLogout}
         text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
+        data-navigation-drawer-item-logout
       />
     </div>
   ) : undefined;
@@ -162,6 +163,7 @@ const DrawerMenu = ({
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' })}
             icon={<IconSettings />}
             onSelect={onSelectSettings}
+            data-navigation-drawer-item-settings
           />
         ) : null}
         {onSelectHelp ? (
@@ -169,6 +171,7 @@ const DrawerMenu = ({
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' })}
             icon={<IconQuestionOutline />}
             onSelect={onSelectHelp}
+            data-navigation-drawer-item-help
           />
         ) : null}
       </ul>

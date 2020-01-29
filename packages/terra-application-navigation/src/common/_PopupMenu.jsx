@@ -165,6 +165,7 @@ const PopupMenu = ({
         onClick={onSelectFooterItem}
         onKeyDown={handleButtonKeyDown}
         refCallback={setButtonRef}
+        data-navigation-utility-item-logout
       />
     );
   }
@@ -197,6 +198,7 @@ const PopupMenu = ({
               isSelected={item.isActive}
               loopFocus={loopFocus}
               parentRole={role}
+              {...item.dataAttrs}
             />
           ))}
         </ul>
