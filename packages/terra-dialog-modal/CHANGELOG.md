@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added clinical-lowlight-theme theming files
 
 3.26.0 - (January 28, 2020)
 ------------------
@@ -12,7 +14,6 @@ Unreleased
 3.25.0 - (January 7, 2020)
 ------------------
 ### Added
-* Added clinical-lowlight-theme and generated the respective reference wdio screenshots.
 * Added new WDIO screenshots
 
 3.24.0 - (December 16, 2019)
