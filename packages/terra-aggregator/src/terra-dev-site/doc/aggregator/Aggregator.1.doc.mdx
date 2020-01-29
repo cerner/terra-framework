@@ -1,3 +1,15 @@
+import { Badge } from 'terra-aggregator/package.json?dev-site-package';
+
+import StandaloneAggregatorExample from '../example/StandaloneAggregatorExample?dev-site-example';
+import CustomRenderAggregatorExample from '../example/CustomRenderAggregatorExample?dev-site-example';
+import AggregatorInModalExample from '../example/AggregatorInModalExample?dev-site-example';
+import CombinedDisclosureExample from '../example/CombinedDisclosureExample?dev-site-example';
+import DisclosureBypassExample from '../example/DisclosureBypassExample?dev-site-example';
+
+import AggregatorPropsTable from 'terra-aggregator/src/Aggregator.jsx?dev-site-props-table';
+
+<Badge />
+
 # Terra Aggregator
 
 The Aggregator provides focus-based mechanisms for managing actions across disparate components.
@@ -71,74 +83,22 @@ By default, the components will be rendered by the Aggregator in the order given
 ### Example
 
 ```jsx
-import React from 'react';
-import Base from 'terra-base';
-import Button from 'terra-button';
-import Aggregator from '../../src/Aggregator';
-import SlidePanelManager, { disclosureType } from 'terra-slide-panel-manager';
-import { withDisclosureManager } from 'terra-disclosure-manager';
-
-const DisclosureComponent = withDisclosureManager({ disclosureManager }) => (
-  <div>
-    <Button text="Dismiss" onClick={() => { disclosureManager.dismiss(); }} />
-  </div>
-);
-
-const Section = ({ aggregatorDelegate }) => (
-  <div>
-    {aggregatorDelegate.hasFocus ? <p>Section has focus</p> : null}
-    <Button
-      text={aggregatorDelegate.hasFocus ? 'Release Focus' : 'Request Focus'}
-      onClick={() => {
-        if (aggregatorDelegate.hasFocus) {
-          aggregatorDelegate.releaseFocus();
-        } else {
-          aggregatorDelegate.requestFocus({})
-            .then(({ disclose }) => {
-              disclose({
-                preferredType: disclosureType,
-                size: 'small',
-                content: {
-                  key: 'my-disclosure-component',
-                  component: <DisclosureComponent />,
-                },
-              });
-            });
-        }
-      }}
-    />
-  </div>
-);
-
-const aggregatorItems = [{
-  key: 'Section 1',
-  component: <Section />,
-}, {
-  key: 'Section 2',
-  component: <Section />,
-}, {
-  key: 'Section 3',
-  component: <Section />,
-}];
-
-const MyAggregator = withDisclosureManager(({ disclosureManager }) => (
-  <Aggregator
-    items={aggregatorItems}
-    disclose={disclosureManager.disclose}
-  />
-));
-
-const MyApp = () => (
-  <Base>
-    <SlidePanelManager>
-      <MyAggregator />
-    </SlidePanelManager>
-  </Base>
-);
-
+import Aggregator from 'terra-aggregator';
 ```
 
 ## Component Features
-* [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
-* [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
-* [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+
+[View component source code](https://github.com/cerner/terra-framework/tree/master/packages/terra-aggregator)
+
+## Examples
+<StandaloneAggregatorExample title='Standalone Aggregator' />
+<CustomRenderAggregatorExample title='Custom Render Aggregator' />
+<CombinedDisclosureExample title='Combined Discloure Aggregator' />
+<DisclosureBypassExample title='Disclosure Bypass Aggregator' />
+<AggregatorInModalExample title='Aggregator In Modal' />
+
+## Aggregator Props table
+<AggregatorPropsTable />
