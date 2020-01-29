@@ -548,4 +548,17 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     Terra.it.matchesScreenshot('after offset change', { selector: '#root' });
   });
+
+  describe('Should not allow user to change date programmatically', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-changing-default-value-programmatically');
+    });
+
+    Terra.it.matchesScreenshot('date-time before button click', { selector: '#root' });
+    it('updating date and time value programmatically on button click', () => {
+      browser.click('#button1');
+    });
+
+    Terra.it.matchesScreenshot('date-time remains unchanged after button click', { selector: '#root' });
+  });
 });

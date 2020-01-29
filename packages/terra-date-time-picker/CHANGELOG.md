@@ -5,6 +5,13 @@ Unreleased
 ----------
 ### Changed
 * Tests updated to reflect input splitting in `terra-date-picker`
+### Fixed
+* Fixed date-time-picker issue of updating default value programmatically
+
+4.26.0 - (January 28, 2020)
+------------------
+### Changed
+* Update copyright to include 2020
 
 4.25.0 - (January 7, 2020)
 ------------------
