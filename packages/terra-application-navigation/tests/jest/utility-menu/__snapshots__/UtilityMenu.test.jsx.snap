@@ -209,6 +209,9 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
           "text": "test-text-2",
         },
         Object {
+          "dataAttrs": Object {
+            "data-navigation-utility-item-settings": "true",
+          },
           "icon": <IconSettings
             data-name="Layer 1"
             viewBox="0 0 48 48"
@@ -218,6 +221,9 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
           "text": "Terra.applicationNavigation.utilityMenu.settings",
         },
         Object {
+          "dataAttrs": Object {
+            "data-navigation-utility-item-help": "true",
+          },
           "icon": <IconQuestionOutline
             viewBox="0 0 48 48"
             xmlns="http://www.w3.org/2000/svg"
@@ -248,6 +254,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
         <ActionFooter
           end={
             <Button
+              data-navigation-utility-item-logout={true}
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -477,6 +484,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     </li>
                   </PopupMenuListItem>
                   <PopupMenuListItem
+                    data-navigation-utility-item-settings="true"
                     icon={
                       <IconSettings
                         data-name="Layer 1"
@@ -494,6 +502,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     <li
                       className="item"
                       data-focus-styles-enabled={true}
+                      data-navigation-utility-item-settings="true"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -559,6 +568,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     </li>
                   </PopupMenuListItem>
                   <PopupMenuListItem
+                    data-navigation-utility-item-help="true"
                     icon={
                       <IconQuestionOutline
                         viewBox="0 0 48 48"
@@ -575,6 +585,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     <li
                       className="item"
                       data-focus-styles-enabled={true}
+                      data-navigation-utility-item-help="true"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -647,6 +658,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
           <ActionFooter
             end={
               <Button
+                data-navigation-utility-item-logout={true}
                 isBlock={false}
                 isCompact={false}
                 isDisabled={false}
@@ -671,6 +683,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                   className="end-actions"
                 >
                   <Button
+                    data-navigation-utility-item-logout={true}
                     isBlock={false}
                     isCompact={false}
                     isDisabled={false}
@@ -686,6 +699,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     <button
                       aria-disabled={false}
                       className="button neutral"
+                      data-navigation-utility-item-logout={true}
                       disabled={false}
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -766,6 +780,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
         <ActionFooter
           end={
             <Button
+              data-navigation-utility-item-logout={true}
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -857,6 +872,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
           <ActionFooter
             end={
               <Button
+                data-navigation-utility-item-logout={true}
                 isBlock={false}
                 isCompact={false}
                 isDisabled={false}
@@ -881,6 +897,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                   className="end-actions"
                 >
                   <Button
+                    data-navigation-utility-item-logout={true}
                     isBlock={false}
                     isCompact={false}
                     isDisabled={false}
@@ -896,6 +913,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                     <button
                       aria-disabled={false}
                       className="button neutral"
+                      data-navigation-utility-item-logout={true}
                       disabled={false}
                       onBlur={[Function]}
                       onClick={[Function]}
