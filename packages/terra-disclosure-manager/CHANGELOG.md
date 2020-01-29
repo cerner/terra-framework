@@ -6,6 +6,14 @@ Unreleased
 ### Added
 * Added generated-themes to .npmignore
 
+4.29.0 - (January 28, 2020)
+------------------
+### Changed
+* Update copyright to include 2020
+
+### Changed
+* Removed dismiss check registration chaining to parent disclosure managers
+
 4.28.0 - (December 10, 2019)
 ------------------
 ### Changed
