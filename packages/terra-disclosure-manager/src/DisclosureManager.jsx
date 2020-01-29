@@ -240,16 +240,7 @@ class DisclosureManager extends React.Component {
      * Allows a component to register a function with the DisclosureManager that will be called before the component is dismissed for any reason.
      */
     delegate.registerDismissCheck = (checkFunc) => {
-      const { disclosureManager } = this.props;
-
       this.dismissChecks[componentData.key] = checkFunc;
-
-      if (disclosureManager && disclosureManager.registerDismissCheck) {
-        // The combination of all managed dismiss checks is registered to the parent app delegate to ensure
-        // that all are accounted for by the parent.
-        // eslint-disable-next-line compat/compat
-        return disclosureManager.registerDismissCheck(() => Promise.all(Object.values(this.dismissChecks)));
-      }
 
       return Promise.resolve();
     };
