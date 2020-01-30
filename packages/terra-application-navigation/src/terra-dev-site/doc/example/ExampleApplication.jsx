@@ -10,6 +10,7 @@ import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
 import IconLightbulb from 'terra-icon/lib/icon/IconLightbulb';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
 import ApplicationNavigation from '../../../ApplicationNavigation';
+import ExampleWrapper from './ExampleWrapper';
 
 
 const titleConfig = {
@@ -141,6 +142,7 @@ const ExampleApplication = ({ onAction }) => {
   const [activeKey, setActiveKey] = useState(navigationItems[0].key);
 
   return (
+    <ExampleWrapper>
     <ApplicationBase locale="en-US">
       <ApplicationNavigation
         titleConfig={titleConfig}
@@ -159,6 +161,7 @@ const ExampleApplication = ({ onAction }) => {
         <Placeholder title={activeKey} />
       </ApplicationNavigation>
     </ApplicationBase>
+    </ExampleWrapper>
   );
 };
 

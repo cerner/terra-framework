@@ -8,7 +8,7 @@ import styles from './ExampleWrapper.module.scss';
 
 const cx = classNames.bind(styles);
 
-const ExampleApplication = ({ children }) => {
+const ExampleWrapper = ({ children }) => {
   const [lastActionKey, setLastActionKey] = useState(null);
 
   function handleOnAction(key) {
@@ -25,4 +25,4 @@ const ExampleApplication = ({ children }) => {
   );
 };
 
-export default ExampleApplication;
+export default ExampleWrapper;
