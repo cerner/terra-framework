@@ -13,6 +13,7 @@ Unreleased
 ------------------
 ### Added
 * Added new WDIO screenshots
+* Fixed background color issue of time components in incomplete `time-input` in Fusion theme.
 
 ### Removed
 * Removed yarn reference in docs
