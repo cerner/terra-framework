@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added clinical-lowlight-theme theming files
 
+### Fixed
+* Fixed date-time-picker issue of updating default value programmatically
+
 4.26.0 - (January 28, 2020)
 ------------------
 ### Changed
