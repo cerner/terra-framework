@@ -1,3 +1,7 @@
+import { Badge } from 'terra-application-layout/package.json?dev-site-package';
+
+<Badge />
+
 # Terra Application Layout
 
 In addition to the ApplicationLayout component, the package exports an `Utils` object that contains a variety of helper functions and prop type declarations. Included are:
@@ -6,18 +10,18 @@ In addition to the ApplicationLayout component, the package exports an `Utils` o
 - `helpers` - An object containing helper functions to aid in the creation of ApplicationLayout content.
 - `utilityHelpers` - An object containing helper functions specifically for the creation of Utility menu configuration.
 
-## `propTypes`
+## propTypes
 
 - `layoutConifgPropType` - Shape for the `layoutConfig` prop provided to components within the ApplicationLayout.
 - `nameConfigPropType` - Shape for ApplicationLayout's `nameConfig` prop.
 - `navigationItemsPropType` - Shape for ApplicationLayout's `navigationItems` prop.
 - `utilityConfigPropType` - Shape for ApplicationLayout's `utilityConfig` prop.
 
-## `helpers`
+## helpers
 
 - `isSizeCompact` - A function that determines whether or not the given size is considered `compact` or not. This can be used to synchronize component rendering with responsive changes to the ApplicationLayout.
 
-### `utilityHelpers`
+### utilityHelpers
 
 - `getDefaultUtilityItems`
 
