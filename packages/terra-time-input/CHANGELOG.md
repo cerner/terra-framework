@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Added
 * Added clinical-lowlight-theme theming files
+* Fixed background color issue of time components in incomplete `time-input` in Fusion theme.
 
 4.20.0 - (January 28, 2020)
 ------------------
