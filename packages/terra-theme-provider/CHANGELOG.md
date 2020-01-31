@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Changed default behavior to always apply theme globally
+
+### Removed
+* Removed `isGlobalTheme` prop
 
 3.18.0 - (January 28, 2020)
 ------------------
