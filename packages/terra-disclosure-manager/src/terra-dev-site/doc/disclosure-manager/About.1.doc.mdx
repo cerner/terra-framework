@@ -1,3 +1,9 @@
+import { Badge } from 'terra-date-picker/package.json?dev-site-package';
+
+import DisclosureManagerPropsTable from 'terra-disclosure-manager/src/DisclosureManager.jsx?dev-site-props-table';
+
+<Badge />
+
 # Terra Disclosure Manager
 
 The DisclosureManager is a stateful component used to manage disclosure presentation.
@@ -299,11 +305,11 @@ In addition to a `disclose` function, a number of other functions are exposed to
 
 Each of these functions returns a Promise that can be used for chaining, if necessary.
 
-##### A Note on `registerDismissCheck`
+##### A Note on registerDismissCheck
 
 The function given to registerDismissCheck must return a resolved or rejected Promise. If the Promise is resolved, the component is guaranteed to be dismissed. If cleanup logic needs to execute before the component is dismissed, it is a good idea to execute before returning the resolved Promise. If a rejected Promise is returned, the component will not be dismissed. Components can render a prompt or confirmation window to give users control over the dismissal, if desired.
 
-Example:
+__Example:__
 ```jsx
 // MyDisclosedComponent.jsx
 
@@ -367,6 +373,9 @@ import CustomDisclosure from './my/custom/disclosure';
 
 ## Component Features
 
-- [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
-- [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
-- [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
+- [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+- [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+- [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+
+## Disclosure Manager Props Table
+<DisclosureManagerPropsTable />

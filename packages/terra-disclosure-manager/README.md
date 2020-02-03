@@ -6,7 +6,7 @@
 The DisclosureManager is a stateful component used to manage disclosure presentation.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-disclosure-manager/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-disclosure-manager/disclosure-manager/about)
 - [LICENSE](#license)
 
 ## Getting Started

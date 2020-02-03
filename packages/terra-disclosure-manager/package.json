@@ -28,9 +28,6 @@
   "dependencies": {
     "prop-types": "^15.5.8"
   },
-  "devDependencies": {
-    "terra-doc-template": "^2.2.0"
-  },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
