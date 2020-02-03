@@ -44,34 +44,3 @@ const DisclosedComponent = () => {
 ```
 
 This will register the header information on mount.
-
-## Providing a Title on Disclose
-It has been observed that there can be a 'pop-in' affect with the header render in slow domains and using the `DisclosureManagerHeaderAdapter`. An option to 
-ensure the header is rendered immediately is to provide a `title` parameter to the disclose function that will render the disclosed content.
-
-```jsx
-import { DisclosureManagerContext } from 'terra-disclosure-manager';
-import Button from 'terra-button';
-
-const DisclosingComponent = () => {
-  const disclosureManager = React.useContext(DisclosureManagerContext);
-
-  return (
-    <Button
-      text="Launch Modal"
-      onClick={() => {
-        disclosureManager.disclose({
-          preferredType: 'modal',
-          content: {
-            key: 'MY-MODAL-DISCLOSURE',
-            title: 'MY-MODAL-DISCLOSURE',
-            component: <MyDisclosureComponent />,
-          }
-        });
-      }}
-    />
-  );
-};
-```
-
-It is possible to use both the title parameter and `DisclosureManagerHeaderAdapter` to provide the header information.
