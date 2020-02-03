@@ -8,6 +8,7 @@ const InitialLoadingExample = () => (
   <MyExampleContainer>
     <InfiniteList
       dividerStyle="standard"
+      ariaLabel="Initial Loading"
       initialLoadingIndicator={<MyInitialLoadingIndicator />}
     />
   </MyExampleContainer>

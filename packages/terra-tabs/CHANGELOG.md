@@ -3,9 +3,20 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.25.0 - (January 28, 2020)
+------------------
+### Changed
+* Update copyright to include 2020
+
+6.24.0 - (January 17, 2020)
+------------------
 ### Fixed
 * Overflow issue with icon-only tabs.
+* Reset cache and handle visibility of tabs added/removed post initial mount.
 
+### Changed
+* Replaced uncontrolled `<ResponsiveElement>` with controlled `<ResponsiveElement>`.
 
 6.23.0 - (January 7, 2020)
 ------------------
@@ -45,7 +56,7 @@ collapse into a menu on smaller viewports.
 6.16.0 - (October 21, 2019)
 ------------------
 ### Changed
-* Minor dependency updatess
+* Minor dependency updates
 
 6.15.0 - (October 16, 2019)
 ------------------
