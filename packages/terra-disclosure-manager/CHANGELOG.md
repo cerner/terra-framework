@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+4.30.0 - (February 4, 2020)
+------------------
 ### Changed
 * Organize documentation and convert to mdx
 
