@@ -21,13 +21,13 @@ const propTypes = {
 
 const DrawerMenuFooterButton = ({ text, onClick, ...customProps }) => (
   <button
+    {...customProps}
     className={cx('drawer-menu-footer-button')}
     type="button"
     onClick={onClick}
     onBlur={enableFocusStyles}
     onMouseDown={disableFocusStyles}
     data-focus-styles-enabled
-    {...customProps}
   >
     {text}
   </button>

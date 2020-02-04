@@ -99,6 +99,7 @@ const PopupMenuListItem = ({
   return (
     <li
       {...ariaSpread}
+      {...customProps}
       tabIndex="0"
       className={cx('item')}
       onClick={onSelect}
@@ -107,7 +108,6 @@ const PopupMenuListItem = ({
       onMouseDown={disableFocusStyles}
       data-focus-styles-enabled
       ref={itemRef}
-      {...customProps}
     >
       {showSelections
         ? (

@@ -36,6 +36,7 @@ const DrawerMenuListItem = ({
   icon, text, notificationCount, isSelected, onSelect, ...customProps
 }) => (
   <li
+    {...customProps}
     role="option"
     aria-selected={isSelected}
     tabIndex="0"
@@ -45,7 +46,6 @@ const DrawerMenuListItem = ({
     onBlur={enableFocusStyles}
     onMouseDown={disableFocusStyles}
     data-focus-styles-enabled
-    {...customProps}
   >
     {icon ? <div className={cx('icon')}>{icon}</div> : null}
     <div className={cx('text')}>{text}</div>
