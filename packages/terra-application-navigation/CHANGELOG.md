@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated `content-layout` background color.
+
 1.18.0 - (February 4, 2020)
 ------------------
 ### Changed
