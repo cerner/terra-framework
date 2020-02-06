@@ -3,6 +3,15 @@ Changelog
 
 Unreleased
 ----------
+5.24.0 - (February 4, 2020)
+------------------
+### Changed
+* Update link to docs for Disclosure Manager's API 
+
+5.23.0 - (January 28, 2020)
+------------------
+### Changed
+* Update copyright to include 2020
 
 5.22.0 - (January 7, 2020)
 ------------------

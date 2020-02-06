@@ -6,6 +6,19 @@ Unreleased
 ### Fixed
 Drawer menu not closing in Internet Explorer on clicking outside of drawer menu.
 
+### Changed
+* Updated `content-layout` background color.
+
+1.18.0 - (February 4, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+1.17.0 - (January 28, 2020)
+------------------
+### Changed
+* Update copyright to include 2020
+
 1.16.0 - (January 7, 2020)
 ------------------
 ### Changed

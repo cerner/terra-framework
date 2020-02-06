@@ -1,0 +1,46 @@
+import { Badge } from 'terra-disclosure-manager/package.json?dev-site-package';
+
+<Badge />
+
+# Disclosing Content With a Header
+Implementations of the DisclosureManager must render a header containing controls for the various disclosure management actions (close, back, maximize/minimize, etc.). 
+
+The `DisclosureManagerHeaderAdapter` can be used to register header information to the disclosing manager. This can be usd to register a title and a collapsibleMenuView.
+
+## DisclosureManagerHeaderAdapter
+
+The DisclosureManagerHeaderAdapter can be rendered by the disclosed content to inject their own component-specific contents into that header.
+
+`DisclosureManagerHeaderAdapter` Props:
+
+|Prop|Is Required|Description|
+|---|---|---|
+|`title`|optional|A string to render as the header's title.|
+|`collapsibleMenuView`|optional|A CollapsibleMenuView component to render within the header.|
+
+```jsx
+import { DisclosureManagerContext, DisclosureManagerHeaderAdapter } from 'terra-disclosure-manager';
+import Button from 'terra-button';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
+
+const DisclosedComponent = () => {
+  const disclosureManager = React.useContext(DisclosureManagerContext);
+
+  return (
+    <React.Fragment>
+     <DisclosureManagerHeaderAdapter
+       title="My Disclosure Component"
+       collapsibleMenuView={<CollapsibleMenuView />}
+     />
+      <Button
+        text="Close Modal"
+        onClick={() => {
+          disclosureManager.closeDisclosure();
+        }}
+      />
+    </React.Fragment>
+  );
+};
+```
+
+This will register the header information on mount.
