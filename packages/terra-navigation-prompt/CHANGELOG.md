@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Updated wdio config to search for "tests" directory only
 
+1.24.0 - (February 4, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 1.23.0 - (January 28, 2020)
 ------------------
 ### Changed
