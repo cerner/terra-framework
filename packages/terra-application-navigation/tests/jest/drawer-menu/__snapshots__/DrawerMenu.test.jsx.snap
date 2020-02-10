@@ -98,6 +98,7 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
           text="test-text-2"
         />
         <DrawerMenuListItem
+          data-navigation-drawer-item-settings={true}
           icon={
             <IconSettings
               data-name="Layer 1"
@@ -109,6 +110,7 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
           text="Terra.applicationNavigation.utilityMenu.settings"
         />
         <DrawerMenuListItem
+          data-navigation-drawer-item-help={true}
           icon={
             <IconQuestionOutline
               viewBox="0 0 48 48"
@@ -124,6 +126,7 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
       className="footer"
     >
       <DrawerMenuFooterButton
+        data-navigation-drawer-item-logout={true}
         onClick={[MockFunction]}
         text="Terra.applicationNavigation.utilityMenu.logout"
       />
