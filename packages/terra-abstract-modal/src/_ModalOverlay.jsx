@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import styles from './ModalOverlay.module.scss';
+import styles from './_ModalOverlay.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -12,10 +12,6 @@ const propTypes = {
    * Z-Index layer to apply to the ModalContent and ModalOverlay.
    */
   zIndex: PropTypes.oneOf(zIndexes),
-};
-
-const defaultProps = {
-  zIndex: '6000',
 };
 
 class ModalOverlay extends React.Component {
@@ -32,15 +28,11 @@ class ModalOverlay extends React.Component {
 
   render() {
     const { zIndex, ...customProps } = this.props;
-    let zIndexLayer = '6000';
-    if (zIndexes.indexOf(zIndex) >= 0) {
-      zIndexLayer = zIndex;
-    }
-    return <div {...customProps} className={cx(['overlay', `layer-${zIndexLayer}`, customProps.className])} />;
+
+    return <div {...customProps} className={cx(['overlay', `layer-${zIndex}`, customProps.className])} />;
   }
 }
 
 ModalOverlay.propTypes = propTypes;
-ModalOverlay.defaultProps = defaultProps;
 
 export default ModalOverlay;

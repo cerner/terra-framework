@@ -120,6 +120,7 @@ exports[`should mount an open modal 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            hideModalDomUpdates={[Function]}
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -151,6 +152,7 @@ exports[`should mount an open modal 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
+            showModalDomUpdates={[Function]}
             zIndex="6000"
           >
             <ModalOverlay
@@ -376,6 +378,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            hideModalDomUpdates={[Function]}
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -407,6 +410,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
+            showModalDomUpdates={[Function]}
             zIndex="7000"
           >
             <ModalOverlay
@@ -632,6 +636,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            hideModalDomUpdates={[Function]}
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -663,6 +668,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
+            showModalDomUpdates={[Function]}
             zIndex="8000"
           >
             <ModalOverlay
@@ -888,6 +894,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            hideModalDomUpdates={[Function]}
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -919,6 +926,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
+            showModalDomUpdates={[Function]}
             zIndex="9000"
           >
             <ModalOverlay
@@ -1144,6 +1152,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            hideModalDomUpdates={[Function]}
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -1175,6 +1184,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
+            showModalDomUpdates={[Function]}
             zIndex="6000"
           >
             <ModalOverlay
@@ -1402,6 +1412,7 @@ exports[`should mount an open modal with custom props 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            hideModalDomUpdates={[Function]}
             id="custom-props"
             intl={
               Object {
@@ -1434,6 +1445,7 @@ exports[`should mount an open modal with custom props 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
+            showModalDomUpdates={[Function]}
             zIndex="6000"
           >
             <ModalOverlay
@@ -1660,6 +1672,7 @@ exports[`should mount an open modal with modal class name 1`] = `
             classNameModal="modal-custom-class"
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            hideModalDomUpdates={[Function]}
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -1691,6 +1704,7 @@ exports[`should mount an open modal with modal class name 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
+            showModalDomUpdates={[Function]}
             zIndex="6000"
           >
             <ModalOverlay
@@ -1916,6 +1930,7 @@ exports[`should mount an open modal with overlay class name 1`] = `
             classNameModal={null}
             classNameOverlay="overlay-custom-class"
             closeOnOutsideClick={true}
+            hideModalDomUpdates={[Function]}
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -1947,6 +1962,7 @@ exports[`should mount an open modal with overlay class name 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
+            showModalDomUpdates={[Function]}
             zIndex="6000"
           >
             <ModalOverlay
@@ -2172,6 +2188,7 @@ exports[`should mount an open modal with role 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            hideModalDomUpdates={[Function]}
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -2203,6 +2220,7 @@ exports[`should mount an open modal with role 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="alertdialog"
+            showModalDomUpdates={[Function]}
             zIndex="6000"
           >
             <ModalOverlay
@@ -2427,6 +2445,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            hideModalDomUpdates={[Function]}
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -2458,6 +2477,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
+            showModalDomUpdates={[Function]}
             zIndex="6000"
           >
             <ModalOverlay
@@ -2682,6 +2702,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            hideModalDomUpdates={[Function]}
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -2713,6 +2734,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
+            showModalDomUpdates={[Function]}
             zIndex="6000"
           >
             <ModalOverlay
@@ -2937,6 +2959,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            hideModalDomUpdates={[Function]}
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -2968,6 +2991,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
+            showModalDomUpdates={[Function]}
             zIndex="6000"
           >
             <ModalOverlay

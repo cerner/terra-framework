@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
-import * as KeyCode from 'keycode-js';
+import { KEY_ESCAPE } from 'keycode-js';
 import 'mutationobserver-shim';
 import './_contains-polyfill';
 import './_matches-polyfill';
@@ -74,13 +74,11 @@ const defaultProps = {
 class AbstractModal extends React.Component {
   constructor() {
     super();
-    this.state = {
-      modalTrigger: undefined,
-    };
     this.handleKeydown = this.handleKeydown.bind(this);
     this.showModalDomUpdates = this.showModalDomUpdates.bind(this);
     this.hideModalDomUpdates = this.hideModalDomUpdates.bind(this);
     this.modalElement = React.createRef();
+    this.modalTrigger = undefined;
   }
 
   componentDidMount() {
@@ -90,50 +88,38 @@ class AbstractModal extends React.Component {
       // eslint-disable-next-line global-require
       require('wicg-inert/dist/inert');
     }
+
     document.addEventListener('keydown', this.handleKeydown);
-
-    if (this.props.isOpen) {
-      this.showModalDomUpdates();
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.isOpen) {
-      if (!prevProps.isOpen) {
-        this.showModalDomUpdates();
-      }
-    } else if (prevProps.isOpen) {
-      this.hideModalDomUpdates();
-    }
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeydown);
-    this.hideModalDomUpdates();
   }
 
   showModalDomUpdates() {
-    const mainDocumentElement = document.querySelector(this.props.rootSelector);
     // Store element that was last focused prior to modal opening
-    this.setState({ modalTrigger: document.activeElement });
+    this.modalTrigger = document.activeElement;
 
+    const mainDocumentElement = document.querySelector(this.props.rootSelector);
     if (mainDocumentElement) {
-      const inert = +mainDocumentElement.getAttribute('data-overlay-count');
+      const dataOverlayCount = +mainDocumentElement.getAttribute('data-abstract-modal-overlay-count');
 
-      if (!mainDocumentElement.hasAttribute('data-overlay-count')) {
-        mainDocumentElement.setAttribute('data-overlay-count', '1');
-        mainDocumentElement.setAttribute('inert', '');
-      } else if (mainDocumentElement && mainDocumentElement.hasAttribute('data-overlay-count')) {
-        mainDocumentElement.setAttribute('data-overlay-count', `${inert + 1}`);
+      if (dataOverlayCount < 1) {
+        mainDocumentElement.setAttribute('inert', 'true');
       }
 
+      mainDocumentElement.setAttribute('data-abstract-modal-overlay-count', `${dataOverlayCount + 1}`);
+
+      // Allows inert processing to finish before focusing to the modal
+      Promise.resolve().then(() => {
       // Handle focus shift for VoiceOver on iOS
-      if ('ontouchstart' in window) {
-        this.modalElement.current.querySelector('[data-terra-abstract-modal-begin]').focus();
-      } else {
-        // Shift focus to modal dialog
-        this.modalElement.current.focus();
-      }
+        if ('ontouchstart' in window) {
+          this.modalElement.current.querySelector('[data-terra-abstract-modal-begin]').focus();
+        } else {
+          // Shift focus to modal dialog
+          this.modalElement.current.focus();
+        }
+      });
     }
   }
 
@@ -141,35 +127,34 @@ class AbstractModal extends React.Component {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
 
     if (mainDocumentElement) {
-      const inert = +mainDocumentElement.getAttribute('data-overlay-count');
+      const dataOverlayCount = +mainDocumentElement.getAttribute('data-abstract-modal-overlay-count');
 
-      if (inert === 1) {
-        mainDocumentElement.removeAttribute('data-overlay-count');
+      if (dataOverlayCount === 1) {
+        mainDocumentElement.removeAttribute('data-abstract-modal-overlay-count');
         mainDocumentElement.removeAttribute('inert');
-        // Ensures aria-hidden is properly cleaned up
-        setTimeout(() => mainDocumentElement.removeAttribute('aria-hidden'), 0);
-      } else if (inert && inert > 1) {
-        mainDocumentElement.setAttribute('data-overlay-count', `${inert - 1}`);
+      } else if (dataOverlayCount && dataOverlayCount > 1) {
+        mainDocumentElement.setAttribute('data-abstract-modal-overlay-count', `${dataOverlayCount - 1}`);
       }
     }
 
-    setTimeout(() => {
-      if (this.state.modalTrigger && this.state.modalTrigger.focus) {
+    // Allows inert processing to finish or focus will not shift back
+    Promise.resolve().then(() => {
+      if (this.modalTrigger && this.modalTrigger.focus) {
         // Shift focus back to element that was last focused prior to opening the modal
-        this.state.modalTrigger.focus();
+        this.modalTrigger.focus();
       } else {
         // In some cases on IE, when the focus cannot be restored on the element (SVG element, for instance)
         // that was last focused prior to opening the modal, place the focus on the HTML body element to repro
         // the behavior noticed on other major browsers.
         document.querySelector('body').focus();
       }
-    }, 0); // Allows inert processing to finish before shifting focus back
+    });
   }
 
   handleKeydown(e) {
-    const body = document.querySelector('body');
-    if (e.keyCode === KeyCode.KEY_ESCAPE && this.props.isOpen && this.props.closeOnEsc) {
+    if (e.keyCode === KEY_ESCAPE && this.props.closeOnEsc && this.props.isOpen) {
       if (this.modalElement.current) {
+        const body = document.querySelector('body');
         if (e.target === this.modalElement.current || this.modalElement.current.contains(e.target) || e.target === body) {
           this.props.onRequestClose();
         }
@@ -210,6 +195,8 @@ class AbstractModal extends React.Component {
           classNameOverlay={classNameOverlay}
           role={role}
           isFullscreen={isFullscreen}
+          showModalDomUpdates={this.showModalDomUpdates}
+          hideModalDomUpdates={this.hideModalDomUpdates}
           onRequestClose={onRequestClose}
           zIndex={zIndex}
           aria-modal="true"

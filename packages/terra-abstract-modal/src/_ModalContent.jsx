@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames/bind';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ModalOverlay from './_ModalOverlay';
-import styles from './AbstractModal.module.scss';
+import styles from './_ModalContent.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -31,6 +31,16 @@ const propTypes = {
    * If set to true, the modal will close when a mouseclick is triggered outside the modal.
    */
   closeOnOutsideClick: PropTypes.bool,
+  /**
+   * Callback function to increment the data-abstract-modal-overlay-count. If the count is zero, the callback should add the inert attribute to the root element
+   * to ensure the content covered by the abstract modal's overlay is not tab-able or readable by assistive technology.
+   */
+  showModalDomUpdates: PropTypes.func.isRequired,
+  /**
+   * Callback function to decrement the data-abstract-modal-overlay-count. If the count is one, the callback should remove the inert attribute from the root element
+   * to ensure the content that was covered by the abstract modal's overlay is now tab-able and readable by assistive technology.
+   */
+  hideModalDomUpdates: PropTypes.func.isRequired,
   /**
    * Callback function indicating a close condition was met, should be combined with isOpen for state management.
    */
@@ -70,6 +80,8 @@ const ModalContent = React.forwardRef((props, ref) => {
     classNameModal,
     classNameOverlay,
     closeOnOutsideClick,
+    showModalDomUpdates,
+    hideModalDomUpdates,
     onRequestClose,
     role,
     isFullscreen,
@@ -77,26 +89,37 @@ const ModalContent = React.forwardRef((props, ref) => {
     zIndex,
     ...customProps
   } = props;
-  let zIndexLayer = '6000';
 
+  React.useEffect(() => {
+    showModalDomUpdates();
+
+    return hideModalDomUpdates;
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  let zIndexLayer = '6000';
   if (zIndexes.indexOf(zIndex) >= 0) {
     zIndexLayer = zIndex;
   }
 
-  const modalClassName = cx(['abstract-modal', {
-    'is-fullscreen': isFullscreen,
-  }, `layer-${zIndexLayer}`, classNameModal]); // Delete the closePortal prop that comes from react-portal.
+  const modalClassName = cx([
+    'abstract-modal',
+    { 'is-fullscreen': isFullscreen },
+    `layer-${zIndexLayer}`,
+    classNameModal,
+  ]);
 
+  // Delete the closePortal prop that comes from react-portal.
   delete customProps.closePortal;
   delete customProps.fallbackFocus;
 
   const platformIsiOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
   return (
     <React.Fragment>
       <ModalOverlay
         onClick={closeOnOutsideClick ? onRequestClose : null}
         className={classNameOverlay}
-        zIndex={zIndex}
+        zIndex={zIndexLayer}
       />
       {
         /*
