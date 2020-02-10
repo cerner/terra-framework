@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update jest snapshot
+
 6.25.0 - (February 4, 2020)
 ------------------
 ### Changed
