@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Changed default behavior to always apply theme globally
+* Changed default behavior to always apply theme on the 'html' element instead of the DIV element wrapping the children.
 
 ### Removed
 * Removed `isGlobalTheme` prop
