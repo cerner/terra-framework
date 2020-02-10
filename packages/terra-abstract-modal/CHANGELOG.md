@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changes
-* Updated `_ModalContent` to trigger the inhert dom updates when it is mounted and unmouted to remove the usage of the componentDidUpdate hook in the `AbstractModal`
+* Updated `_ModalContent` to trigger the inhert dom updates when it is mounted and unmouted to remove the updates from the componentDidUpdate hook in the `AbstractModal`
 * Updated the `AbstractModal` to stop storing the modalTrigger in state to prevent additional re-renders when `_ModalContent` is opened.
 
 3.20.0 - (January 28, 2020)
