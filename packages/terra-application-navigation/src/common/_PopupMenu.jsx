@@ -48,6 +48,10 @@ const propTypes = {
    */
   menuItems: PropTypes.arrayOf(PropTypes.shape({
     /**
+     * Data attributes to identify the rendered menuItem.
+     */
+    dataAttrs: PropTypes.object,
+    /**
      * Icon to be rendered
      */
     icon: PropTypes.element,
