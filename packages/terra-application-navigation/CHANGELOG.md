@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed `settings` api called when `help` clicked in drawer menu.
+
 ### Changed
 * Updated `content-layout` background color.
 
