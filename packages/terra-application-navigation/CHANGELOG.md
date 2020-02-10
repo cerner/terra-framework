@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Fixed
-Drawer menu not closing in Internet Explorer on clicking outside of drawer menu.
+* Fixed Drawer menu not closing in Internet Explorer on clicking outside of drawer menu.
 
 ### Changed
 * Updated `content-layout` background color.

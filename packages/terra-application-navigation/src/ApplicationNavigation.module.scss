@@ -54,9 +54,8 @@
     }
   }
 
-  .overlay-layout {
-    height: 100%;
-    width: 100%;
+  .overlay {
+    top: 0;
   }
 
   [dir=ltr] .content-layout.drawer-menu-is-open {
