@@ -48,6 +48,10 @@ const propTypes = {
    */
   menuItems: PropTypes.arrayOf(PropTypes.shape({
     /**
+     * Data attributes to identify the rendered menuItem.
+     */
+    dataAttrs: PropTypes.object,
+    /**
      * Icon to be rendered
      */
     icon: PropTypes.element,
@@ -165,6 +169,7 @@ const PopupMenu = ({
         onClick={onSelectFooterItem}
         onKeyDown={handleButtonKeyDown}
         refCallback={setButtonRef}
+        data-navigation-utility-item-logout
       />
     );
   }
@@ -197,6 +202,7 @@ const PopupMenu = ({
               isSelected={item.isActive}
               loopFocus={loopFocus}
               parentRole={role}
+              {...item.dataAttrs}
             />
           ))}
         </ul>

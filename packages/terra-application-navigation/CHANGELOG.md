@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed `settings` api called when `help` clicked in drawer menu.
+
 1.18.0 - (February 4, 2020)
 ------------------
 ### Changed
