@@ -5,8 +5,6 @@ Unreleased
 ----------
 ### Fixed
 * Fixed Drawer menu not closing in Internet Explorer on clicking outside of drawer menu.
-
-### Changed
 * Fixed `settings` api called when `help` clicked in drawer menu.
 
 1.18.0 - (February 4, 2020)
