@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+* Update date-picker to use the the controlled responsive-element
+
 4.27.0 - (February 4, 2020)
 ------------------
 ### Changed
