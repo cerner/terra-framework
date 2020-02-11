@@ -6,8 +6,8 @@ Unreleased
 ### Added
 * Added clinical-lowlight-theme theming files
 
-### Changed
-* Updated `content-layout` background color.
+### Fixed
+* Fixed `settings` api called when `help` clicked in drawer menu.
 
 1.18.0 - (February 4, 2020)
 ------------------
