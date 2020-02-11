@@ -83,6 +83,45 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
 
     Terra.it.validatesElement();
   });
+
+  describe('Utilities should display properly and onSelectSettings called on clicking Settings', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
+
+    it('launch popup', () => {
+      browser.click('[data-application-header-utility="true"]');
+      browser.waitForVisible('[data-terra-popup-content="true"]');
+      browser.click('[data-navigation-utility-item-settings="true"]');
+      browser.pause(50);
+    });
+
+    Terra.it.validatesElement();
+  });
+
+  describe('Utilities should display properly and onSelectHelp called on clicking Help', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
+
+    it('launch popup', () => {
+      browser.click('[data-application-header-utility="true"]');
+      browser.waitForVisible('[data-terra-popup-content="true"]');
+      browser.click('[data-navigation-utility-item-help="true"]');
+      browser.pause(50);
+    });
+
+    Terra.it.validatesElement();
+  });
+
+  describe('Utilities should display properly and onSelectLogout called on clicking Logout', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
+
+    it('launch popup', () => {
+      browser.click('[data-application-header-utility="true"]');
+      browser.waitForVisible('[data-terra-popup-content="true"]');
+      browser.click('[data-navigation-utility-item-logout="true"]');
+      browser.pause(50);
+    });
+
+    Terra.it.validatesElement();
+  });
 });
 
 Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
@@ -200,6 +239,45 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
     it('open nav drawer', () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
+      browser.pause(250);
+    });
+
+    Terra.it.validatesElement({ selector: '#root' });
+  });
+
+  describe('ApplicationNavigation displays the nav drawer and onSelectSettings triggered', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
+
+    it('open nav drawer', () => {
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.click('[data-navigation-drawer-item-settings="true"]');
+      browser.pause(250);
+    });
+
+    Terra.it.validatesElement({ selector: '#root' });
+  });
+
+  describe('ApplicationNavigation displays the nav drawer and onSelectHelp triggered', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
+
+    it('open nav drawer', () => {
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.click('[data-navigation-drawer-item-help="true"]');
+      browser.pause(250);
+    });
+
+    Terra.it.validatesElement({ selector: '#root' });
+  });
+
+  describe('ApplicationNavigation displays the nav drawer and onSelectLogout triggered', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
+
+    it('open nav drawer', () => {
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.click('[data-navigation-drawer-item-logout="true"]');
       browser.pause(250);
     });
 

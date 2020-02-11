@@ -54,7 +54,7 @@ const propTypes = {
 };
 
 const PopupMenuListItem = ({
-  icon, text, notificationCount, onSelect, showSelections, isSelected, loopFocus, parentRole,
+  icon, text, notificationCount, onSelect, showSelections, isSelected, loopFocus, parentRole, ...customProps
 }) => {
   const itemRef = useRef();
 
@@ -99,6 +99,7 @@ const PopupMenuListItem = ({
   return (
     <li
       {...ariaSpread}
+      {...customProps}
       tabIndex="0"
       className={cx('item')}
       onClick={onSelect}
