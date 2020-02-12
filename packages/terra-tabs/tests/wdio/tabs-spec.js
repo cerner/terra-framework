@@ -23,6 +23,13 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
       Terra.validates.element();
     });
   });
+
+  describe('Icon Only Tabs - No Overflow', () => {
+    it('Icon Only Tabs - No Overflow', () => {
+      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/overflow-tabs');
+      Terra.validates.element();
+    });
+  });
 });
 
 // Only test viewports that have collapsed tabs
@@ -74,6 +81,20 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/fill-parent-tabs');
       browser.moveToObject('[class*="tab-content"]');
       Terra.validates.element();
+    });
+  });
+
+  describe('Additional Tabs after mount', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/additional-tabs');
+    });
+
+    Terra.it.matchesScreenshot('before', { selector: '#tabsWrapper-5' });
+
+    it('Additional Tabs', () => {
+      browser.click('button');
+      browser.waitForVisible('#tabsWrapper-20');
+      Terra.validates.element('after', { selector: '#tabsWrapper-20' });
     });
   });
 });

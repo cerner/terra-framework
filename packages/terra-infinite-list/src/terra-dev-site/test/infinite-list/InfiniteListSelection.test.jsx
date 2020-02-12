@@ -10,6 +10,7 @@ const InfiniteListUpdating = () => (
   <InfiniteList
     id="test-infinite-list"
     isFinishedLoading
+    ariaLabel="Selection"
   >
     <Item isSelectable isSelected key="item-0"><div className={cx('item-content')}>Item 0</div></Item>
     <Item isSelectable key="item-1"><div className={cx('item-content')}>Item 1</div></Item>

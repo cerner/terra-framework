@@ -3,6 +3,19 @@ Changelog
 
 Unreleased
 ----------
+6.25.0 - (February 4, 2020)
+------------------
+### Changed
+* Update link to docs for Disclosure Manager's API 
+
+6.24.0 - (January 28, 2020)
+------------------
+### Changed
+* Update docs to use MDX syntax
+* Update copyright to include 2020
+
+6.23.0 - (January 7, 2020)
+------------------
 ### Changed
 * Reenabled some wdio tests
 * Changed Axe contrast check on wdio test to improve reliability
@@ -11,6 +24,9 @@ Unreleased
 ------------------
 ### Changed
 * Minor dependency version bump
+
+### Added
+* Added themeable background-color property to ModalManager's modal.
 
 6.21.0 - (December 10, 2019)
 ------------------

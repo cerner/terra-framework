@@ -4,6 +4,16 @@ Changelog
 Unreleased
 ----------
 
+3.25.0 - (January 28, 2020)
+------------------
+### Changed
+* Update copyright to include 2020
+
+3.24.0 - (January 21, 2020)
+------------------
+### Added
+* Added `ariaLabel` prop.
+
 3.23.0 - (December 10, 2019)
 ------------------
 ### Added

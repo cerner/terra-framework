@@ -6,6 +6,21 @@ Unreleased
 ### Changed
 * Fixed issue due to two dates getting selected simultaneously.
 
+4.27.0 - (February 4, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+4.26.0 - (January 28, 2020)
+------------------
+### Changed
+* Update copyright to include 2020
+
+4.25.0 - (January 7, 2020)
+------------------
+### Removed
+* Removed yarn reference in docs
+
 4.24.0 - (December 16, 2019)
 ------------------
 ### Changed
