@@ -167,7 +167,7 @@ class DateTimePicker extends React.Component {
     // It is used for date/time manipulation and used to calculate the missing/ambiguous hour.
     // The dateValue and timeValue are tracked outside of the react state to limit the number of renderings that occur.
     this.dateValue = DateUtil.formatMomentDate(this.state.dateTime, this.state.dateFormat) || '';
-    this.timeValue = DateTimeUtils.hasTime(this.props.value, this.props.timeZone) ? DateTimeUtils.getTime(this.props.value, this.props.showSeconds) : '';
+    this.timeValue = DateTimeUtils.hasTime(this.props.value) ? DateTimeUtils.getTime(this.props.value, this.props.showSeconds) : '';
     this.isDefaultDateTimeAcceptable = true;
     this.wasOffsetButtonClicked = false;
 
@@ -197,9 +197,8 @@ class DateTimePicker extends React.Component {
   componentDidUpdate() {
     // If the entered time (this.timeValue) is the missing hour during daylight savings,
     // it needs to be updated to the time in this.state.dateTime to reflect the change and force a render.
-    console.log("timezone", this.state.dateTime.tz());
     if (this.state.dateTime && DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds)) {
-      const displayedTime = DateTimeUtils.getTime(this.state.dateTime.format(), this.props.showSeconds);
+      const displayedTime = DateTimeUtils.getTime(this.state.dateTime, this.props.showSeconds);
 
       if (this.timeValue !== displayedTime) {
         this.timeValue = displayedTime;
@@ -223,8 +222,6 @@ class DateTimePicker extends React.Component {
   }
 
   handleOnDateBlur(event) {
-    // const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.props.timeZone));
-
     // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
     // IE 11 sets document.activeElement to the next focused element before the blur event is called.
     const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
@@ -245,8 +242,6 @@ class DateTimePicker extends React.Component {
   }
 
   handleOnTimeBlur(event) {
-    // const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.props.timeZone));
-
     // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
     // IE 11 sets document.activeElement to the next focused element before the blur event is called.
     const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
@@ -287,7 +282,7 @@ class DateTimePicker extends React.Component {
       let tempDateTime = momentDateTime ? momentDateTime.clone() : null;
 
       if (DateUtil.isValidDate(this.dateValue, this.state.dateFormat)) {
-        const enteredDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.props.timeZone);
+        const enteredDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
 
         // this.state.dateTime does not get updated if the entered date is outside the minDate/maxDate range or an excluded date.
         // In this case, we need to use the date that was entered instead of the this.state.dateTime.
@@ -353,7 +348,7 @@ class DateTimePicker extends React.Component {
     const isTimeValid = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
 
     if (isDateValid) {
-      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateTimeUtils.createSafeDate(formattedDate, this.props.timeZone);
+      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateTimeUtils.createSafeDate(formattedDate);
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue, this.props.showSeconds);
 
       if (isTimeValid) {
@@ -384,7 +379,7 @@ class DateTimePicker extends React.Component {
 
   handleTimeChange(event, time) {
     this.timeValue = time;
-    const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.props.timeZone));
+    const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds));
     const validTime = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
 
@@ -488,7 +483,7 @@ class DateTimePicker extends React.Component {
   isDateTimeAcceptable(newDateTime) {
     let isAcceptable = true;
 
-    if (DateUtil.isDateOutOfRange(newDateTime, DateTimeUtils.createSafeDate(this.props.minDate, this.props.timeZone), DateTimeUtils.createSafeDate(this.props.maxDate, this.props.timeZone))) {
+    if (DateUtil.isDateOutOfRange(newDateTime, DateTimeUtils.createSafeDate(this.props.minDate), DateTimeUtils.createSafeDate(this.props.maxDate))) {
       isAcceptable = false;
     }
 
@@ -567,7 +562,7 @@ class DateTimePicker extends React.Component {
   renderTimeClarification() {
     return (
       <TimeClarification
-        ambiguousDateTime={this.state.dateTime.format()}
+        ambiguousDateTime={this.state.dateTime}
         disabled={this.props.disabled}
         isOpen={this.state.isTimeClarificationOpen}
         isOffsetButtonHidden={!this.state.isAmbiguousTime}

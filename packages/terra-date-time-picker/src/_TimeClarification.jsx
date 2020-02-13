@@ -13,7 +13,7 @@ const propTypes = {
   /**
    * An ISO 8601 date time with the ambiguous hour.
    */
-  ambiguousDateTime: PropTypes.string,
+  ambiguousDateTime: PropTypes.object,
   /**
    * @private
    * intl object programmatically imported through injectIntl from react-intl.

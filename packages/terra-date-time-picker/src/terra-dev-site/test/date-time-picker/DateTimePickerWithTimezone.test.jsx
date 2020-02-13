@@ -12,7 +12,7 @@ const DateTimePickerExample = () => (
       timeZone="America/New_York"
     />
     <DateTimePickerExampleTemplate
-      value="2020-02-13T05:30:00"
+      value="2020-03-08T05:30:00"
       timeZone="America/New_York"
     />
     <DateTimePickerExampleTemplate

@@ -8,8 +8,8 @@ class DateTimeUtils {
    * @param {string} iSODate - The ISO string
    * @return {boolean} - True if the ISO string contains the time. False, otherwise.
    */
-  static hasTime(iSODate, timeZone) {
-    if (!DateTimeUtils.createSafeDate(iSODate, timeZone)) {
+  static hasTime(iSODate) {
+    if (!DateTimeUtils.createSafeDate(iSODate)) {
       return false;
     }
 
@@ -228,8 +228,8 @@ class DateTimeUtils {
    * @param {boolean} hasSeconds - If true seconds will be converted
    * @return {object} - The moment object representing the given date and time.
    */
-  static convertDateTimeStringToMomentObject(date, time, dateformat, hasSeconds, timeZone) {
-    return DateTimeUtils.updateTime(DateTimeUtils.createSafeDate(DateUtil.convertToISO8601(date, dateformat), timeZone), time, hasSeconds);
+  static convertDateTimeStringToMomentObject(date, time, dateformat, hasSeconds) {
+    return DateTimeUtils.updateTime(DateTimeUtils.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time, hasSeconds);
   }
 
   /**
