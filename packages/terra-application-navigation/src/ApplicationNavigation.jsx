@@ -429,6 +429,7 @@ const ApplicationNavigation = ({
           {children}
         </main>
         <Overlay
+          className={cx('overlay')}
           isOpen={drawerMenuIsOpen}
           isRelativeToContainer
           backgroundStyle="clear"
