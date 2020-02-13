@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames/bind';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ModalOverlay from './_ModalOverlay';
-import styles from './_ModalContent.module.scss';
+import styles from './ModalContent.module.scss';
 
 const cx = classNames.bind(styles);
 
