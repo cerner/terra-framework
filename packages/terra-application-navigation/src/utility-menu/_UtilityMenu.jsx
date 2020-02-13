@@ -72,6 +72,7 @@ const UtilityMenu = ({
       key: utilityMenuSettingsKey,
       text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' }),
       icon: <IconSettings />,
+      dataAttrs: { 'data-navigation-utility-item-settings': 'true' },
     });
   }
 
@@ -80,6 +81,7 @@ const UtilityMenu = ({
       key: utilityMenuHelpKey,
       text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' }),
       icon: <IconQuestionOutline />,
+      dataAttrs: { 'data-navigation-utility-item-help': 'true' },
     });
   }
 
