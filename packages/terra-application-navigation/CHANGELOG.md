@@ -4,6 +4,17 @@ Changelog
 Unreleased
 ----------
 
+1.19.0 - (February 11, 2020)
+------------------
+### Fixed
+* Fixed Drawer menu not closing in Internet Explorer on clicking outside of drawer menu.
+* Fixed `settings` api called when `help` clicked in drawer menu.
+
+1.18.0 - (February 4, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 1.17.0 - (January 28, 2020)
 ------------------
 ### Changed
