@@ -8,6 +8,9 @@ terra-date-time-picker has several callback events that are slightly different i
 * There are two paramters in the `onBlur` callback prop. The first parameter is the `event` object representing the blur event. The second parameter is the `options` object that contains the following attributes to describe the current state of the input values at the time when the component loses focus.
   * `iSO` - The date/time value in the ISO format. This attribute would be empty if the date/time value is either empty or is not a complete date time. That is, the ISO string is available only if the isCompleteValue attribute is true.
   * `inputValue` - The face up value in the date and time inputs. If both the date and time have a value, these values will be separated by an white space.
+  * `dateValue` - The face up value in the date input.
+  * `timeValue` - The face up value in the time input.
+  * `isAmbiguousHour` - A boolean to indicate whether or not both the date and time values correspond to an ambiguous hour. If this boolean is true, the date and time correspond to an ambiguous hour.
   * `isCompleteValue` - A boolean to indicate whether or not both the date and time values are filled out and conforms to the date/time format. If this boolean is false, the iSO attribute would be empty.
   * `isValidValue` - A boolean to indicate whether or not the complete date/time value is within the range of the minDate and maxDate props and is not an excluded date.
 
@@ -17,9 +20,25 @@ terra-date-time-picker has several callback events that are slightly different i
  - A date that is filtered by the `filterDate` prop.
  - Not an included date in the `includeDates` prop.
  - Not within the range of the `minDate` and `maxDate` props.
+* There are three parameters in the `onChange` callback prop. The first parameter is the `event` object. The second parameter is the `new date and time` value. The third parameter is the `options` object that contains the following attributes to describe the current state of the input values at the time when the `onChange` callback is triggered.
+  * `iSO` - The date/time value in the ISO format. This attribute would be empty if the date/time value is either empty or is not a complete date time. That is, the ISO string is available only if the isCompleteValue attribute is true.
+  * `inputValue` - The face up value in the date and time inputs. If both the date and time have a value, these values will be separated by an white space.
+  * `dateValue` - The face up value in the date input.
+  * `timeValue` - The face up value in the time input.
+  * `isAmbiguousHour` - A boolean to indicate whether or not both the date and time values correspond to an ambiguous hour. If this boolean is true, the date and time correspond to an ambiguous hour.
+  * `isCompleteValue` - A boolean to indicate whether or not both the date and time values are filled out and conforms to the date/time format. If this boolean is false, the iSO attribute would be empty.
+  * `isValidValue` - A boolean to indicate whether or not the complete date/time value is within the range of the minDate and maxDate props and is not an excluded date.
 
 ### onChangeRaw
 * The `onChangeRaw` callback prop is triggered whenever any key is entered in the date input. If the entered value happens to be a valid date and time, both the `onChangeRaw` and `onChange` events will be triggered. The `onChangeRaw` event would be triggered first followed by the `onChange` event.
+* There are three parameters in the `onChangeRaw` callback prop. The first parameter is the `event` object. The second parameter is `either the date or time` value, which ever was changed. The third parameter is the `options` object that contains the following attributes to describe the current state of the input values at the time when the `onChangeRaw` callback is triggered.
+  * `iSO` - The date/time value in the ISO format. This attribute would be empty if the date/time value is either empty or is not a complete date time. That is, the ISO string is available only if the isCompleteValue attribute is true.
+  * `inputValue` - The face up value in the date and time inputs. If both the date and time have a value, these values will be separated by an white space.
+  * `dateValue` - The face up value in the date input.
+  * `timeValue` - The face up value in the time input.
+  * `isAmbiguousHour` - A boolean to indicate whether or not both the date and time values correspond to an ambiguous hour. If this boolean is true, the date and time correspond to an ambiguous hour.
+  * `isCompleteValue` - A boolean to indicate whether or not both the date and time values are filled out and conforms to the date/time format. If this boolean is false, the iSO attribute would be empty.
+  * `isValidValue` - A boolean to indicate whether or not the complete date/time value is within the range of the minDate and maxDate props and is not an excluded date.
 
 ### onClickOutside
 * The `onClickOutside` callback prop is triggered when clicking anywhere outside of the date picker to dismiss it.
