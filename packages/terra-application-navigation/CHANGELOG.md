@@ -3,8 +3,11 @@ Changelog
 
 Unreleased
 ----------
-### Changed
-* Updated `content-layout` background color.
+
+1.19.0 - (February 11, 2020)
+------------------
+### Fixed
+* Fixed `settings` api called when `help` clicked in drawer menu.
 
 1.18.0 - (February 4, 2020)
 ------------------
