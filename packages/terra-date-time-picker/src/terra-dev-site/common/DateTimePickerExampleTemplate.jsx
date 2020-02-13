@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DateTimePicker from 'terra-date-time-picker/lib/DateTimePicker';
+import DateTimePicker from '../../DateTimePicker';
 import DateTimeUtils from '../../DateTimeUtils';
 
 const propTypes = {
@@ -8,6 +8,10 @@ const propTypes = {
    * The current entered date time. Use for the selected date message.
    */
   value: PropTypes.node,
+  /**
+   * Work in progress
+   */
+  timeZone: PropTypes.string,
 };
 
 const defaultProps = {
@@ -18,13 +22,15 @@ class DatePickerExample extends React.Component {
   constructor(props) {
     super(props);
     let dateTimeDisplay = props.value;
-    const dateTime = DateTimeUtils.createSafeDate(dateTimeDisplay);
+    let timeZone = props;
+    const dateTime = DateTimeUtils.createSafeDate(dateTimeDisplay, props.timeZone);
 
     if (dateTime && dateTime.isValid()) {
       dateTimeDisplay = dateTime.format();
+      timeZone = dateTime.tz() || 'Local Time Zone';
     }
 
-    this.state = { dateTime: dateTimeDisplay };
+    this.state = { dateTime: dateTimeDisplay, timeZone };
     this.handleDateTimeChange = this.handleDateTimeChange.bind(this);
   }
 
@@ -39,9 +45,12 @@ class DatePickerExample extends React.Component {
           Selected ISO Date Time:
           <span id="date-time-value">{this.state.dateTime}</span>
         </p>
+        <p>
+          Selected Time Zone:
+          <span id="date-time-timeZone">{this.state.timeZone}</span>
+        </p>
         <DateTimePicker
           name="date-time-picker-example"
-          onChange={this.handleDateTimeChange}
           {...this.props}
         />
       </div>
