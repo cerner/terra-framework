@@ -7,7 +7,7 @@
 A standard footer for application layout which provides content areas to display options such as branding, copyright information, logo and navigation to related pages.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-brand-footer/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-brand-footer/brand-footer/brand-footer)
 - [LICENSE](#license)
 
 ## Getting Started
