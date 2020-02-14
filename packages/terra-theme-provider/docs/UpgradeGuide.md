@@ -1,4 +1,12 @@
 # Terra Theme Provider Upgrade Guide
+## Changes from version 3 to version 4
+### Removed Props
+* Removed `isGlobalTheme`
+
+### Changes in functionality
+* With the removal `isGlobalTheme` prop, the theme is now applied to the `html` element instead of the wrapping `div` element.
+* The `div` element wrapping the children has been removed.
+
 ## Changes from version 2 to version 3
 ### Changes to CSS Custom Properties
 

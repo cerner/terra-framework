@@ -3,11 +3,9 @@ Changelog
 
 Unreleased
 ----------
-### Changed
-* Changed default behavior to always apply theme on the 'html' element instead of the DIV element wrapping the children.
-
-### Removed
+### Breaking Changes
 * Removed `isGlobalTheme` prop
+* Changed default behavior to always apply theme on the 'html' element instead of the DIV element wrapping the children.
 
 3.18.0 - (January 28, 2020)
 ------------------

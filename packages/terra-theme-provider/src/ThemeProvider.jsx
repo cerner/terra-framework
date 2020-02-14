@@ -1,8 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import className from 'classnames';
-
-const cx = className;
 
 const ThemeProviderThemes = {
   CONSUMER: 'cerner-consumer-theme',
@@ -46,10 +43,7 @@ class ThemeProvider extends React.Component {
   }
 
   render() {
-    const {
-      themeName, children, ...customProps
-    } = this.props;
-    return (<div {...customProps} className={cx(customProps.className)}>{children}</div>);
+    return this.props.children;
   }
 }
 
