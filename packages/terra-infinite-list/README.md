@@ -7,7 +7,7 @@
 The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-infinite-scroller/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-infinite-list/infinite-list/infinite-list)
 - [LICENSE](#license)
 
 ## Getting Started

@@ -1,3 +1,9 @@
+import { Badge } from 'terra-infinite-list/package.json?dev-site-package';
+
+import RefreshProgressive from '../../guides/RefreshProgressive';
+
+<Badge />
+
 # Terra InfiniteList - Progressive Loading
 
 To limit the impact of large data sets, progressive loading of list items is available through the InfiniteList. As the InfiniteList approaches the bottom of its scrollHeight the `onRequestItems` callback will execute, allowing the implementation to lazy load data into the list.
@@ -54,3 +60,6 @@ Finally we'll declare our infinite list looping. Providing the InfiniteList with
 ```
 
 Using these steps we get the following example:
+
+## Example 
+<RefreshProgressive title='Sections Header Infinite List' />
