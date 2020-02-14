@@ -204,24 +204,6 @@ class DateTimePicker extends React.Component {
   }
 
   getMetadata(momentDateTime) {
-    const isCompleteDateTime = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
-    let value = '';
-    let date = '';
-    let time = '';
-    if (this.dateValue) {
-      value = this.dateValue.concat(' ');
-      date = this.dateValue;
-    }
-
-    if (this.timeValue) {
-      value = value.concat(this.timeValue);
-      time = this.timeValue;
-    }
-
-    value = value.trim();
-    date = date.trim();
-    time = time.trim();
-
     let tempDateTime = (momentDateTime && momentDateTime.clone) ? momentDateTime.clone() : null;
 
     if (DateUtil.isValidDate(this.dateValue, this.state.dateFormat)) {
@@ -235,14 +217,16 @@ class DateTimePicker extends React.Component {
     }
 
     let iSOString = '';
+    const isCompleteDateTime = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
 
     if (isCompleteDateTime && tempDateTime) {
       iSOString = tempDateTime.format();
     }
 
     let isValid = false;
+    const inputValue = `${this.dateValue ? this.dateValue : ''} ${this.timeValue ? this.timeValue : ''}`.trim();
 
-    if (value === '' || (isCompleteDateTime && tempDateTime && this.isDateTimeAcceptable(tempDateTime))) {
+    if (inputValue === '' || (isCompleteDateTime && tempDateTime && this.isDateTimeAcceptable(tempDateTime))) {
       isValid = true;
     }
 
@@ -254,9 +238,9 @@ class DateTimePicker extends React.Component {
 
     const options = {
       iSO: iSOString,
-      inputValue: value,
-      dateValue: date,
-      timeValue: time,
+      inputValue,
+      dateValue: this.dateValue || '',
+      timeValue: this.timeValue || '',
       isAmbiguousHour: isAmbiguous,
       isCompleteValue: isCompleteDateTime,
       isValidValue: isValid,

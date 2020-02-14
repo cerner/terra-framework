@@ -90,12 +90,12 @@ class DateTimePickerOnBlur extends React.Component {
           <span id="ambiguous-date">{this.state.isAmbiguousHour}</span>
           <br />
           <br />
-          Is Date Complete?
+          Is Date-Time Complete?
           {' '}
           <span id="complete-date">{this.state.isCompleteValue}</span>
           <br />
           <br />
-          Is Date Valid?
+          Is Date-Time Valid?
           {' '}
           <span id="valid-date">{this.state.isValidValue}</span>
         </h3>

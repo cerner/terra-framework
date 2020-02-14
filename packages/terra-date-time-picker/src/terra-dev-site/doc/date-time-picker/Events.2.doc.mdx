@@ -26,7 +26,7 @@ terra-date-time-picker has several callback events that are slightly different i
  - A date that is filtered by the `filterDate` prop.
  - Not an included date in the `includeDates` prop.
  - Not within the range of the `minDate` and `maxDate` props.
-* There are three parameters in the `onChange` callback prop. The first parameter is the `event` object. The second parameter is the `new date and time` value. The third parameter is the `options` object that contains the following attributes to describe the current state of the input values at the time when the `onChange` callback is triggered.
+* There are three parameters in the `onChange` callback prop. The first parameter is the `event` object. The second parameter is the `date and time` value. The third parameter is the `options` object that contains the following attributes to describe the current state of the input values at the time when the `onChange` callback is triggered.
   * `iSO` - The date/time value in the ISO format. This attribute would be empty if the date/time value is either empty or is not a complete date time. That is, the ISO string is available only if the isCompleteValue attribute is true.
   * `inputValue` - The face up value in the date and time inputs. If both the date and time have a value, these values will be separated by an white space.
   * `dateValue` - The face up value in the date input.
