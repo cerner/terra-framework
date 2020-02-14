@@ -22,15 +22,15 @@ class DatePickerExample extends React.Component {
   constructor(props) {
     super(props);
     let dateTimeDisplay = props.value;
-    let timeZone = props;
+    let timeZoneDisplay = props.timeZone;
     const dateTime = DateTimeUtils.createSafeDate(dateTimeDisplay, props.timeZone);
 
     if (dateTime && dateTime.isValid()) {
       dateTimeDisplay = dateTime.format();
-      timeZone = dateTime.tz() || 'Local Time Zone';
+      timeZoneDisplay = dateTime.tz() || 'Local Time Zone';
     }
 
-    this.state = { dateTime: dateTimeDisplay, timeZone };
+    this.state = { dateTime: dateTimeDisplay, timeZone: timeZoneDisplay };
     this.handleDateTimeChange = this.handleDateTimeChange.bind(this);
   }
 
