@@ -134,6 +134,7 @@ const utilityItems = [
 // TODO: remove terra-application after it is incorporated into dev-site for themes or themes are co-located
 function ApplicationNavigationTest() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const [functionType, setFunctionType] = useState('');
 
   /* eslint-disable no-alert */
   const handleItemSelection = (key, metaData) => {
@@ -157,12 +158,13 @@ function ApplicationNavigationTest() {
         onSelectNavigationItem={handleItemSelection}
         utilityItems={utilityItems}
         onSelectUtilityItem={handleItemSelection}
-        onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
-        onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
-        onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
+        onSelectSettings={() => setFunctionType('onSelectSettings was called')}
+        onSelectHelp={() => setFunctionType('onSelectHelp was called')}
+        onSelectLogout={() => setFunctionType('onSelectLogout was called')}
         onDrawerMenuStateChange={handleOnDrawerMenuStateChange}
       >
         {isDrawerOpen ? <div> The drawer is open</div> : null}
+        <p>{functionType}</p>
       </ApplicationNavigation>
     </ApplicationBase>
   );

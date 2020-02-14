@@ -3,8 +3,13 @@ ChangeLog
 
 Unreleased
 ----------
+4.27.0 - (February 4, 2020)
+------------------
 ### Fixed
 * Fixed date-time-picker issue of updating default value programmatically
+
+### Changed
+* Update docs to use mdx syntax.
 
 4.26.0 - (January 28, 2020)
 ------------------
