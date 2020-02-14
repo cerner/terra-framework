@@ -20,7 +20,6 @@ describe('DrawerMenuListItem', () => {
         text="my text"
         isSelected
         icon={<span>test-icon</span>}
-        hasCount
         onSelect={jest.fn()}
       />,
     );
