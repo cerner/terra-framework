@@ -6,6 +6,7 @@ Unreleased
 ### Changed
 * Changed `onBlur` callback to also return the following metadata: dateValue, timeValue and isAmbiguousHour
 * Changed `onChange` and `onChangeRaw` callbacks to return the following metadata as part of the third parameter: iso, inputValue, dateValue, timeValue, isAmbiguousHour, isCompleteValue, isValidValue
+* Update docs to use mdx syntax.
 
 4.27.0 - (February 4, 2020)
 ------------------

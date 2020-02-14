@@ -283,6 +283,19 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
 
     Terra.it.validatesElement({ selector: '#root' });
   });
+
+  describe('ApplicationNavigation displays the nav drawer and clicking outside closes nav drawer ', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
+
+    it('open drawer', () => {
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.moveToObject('[class*="Overlay"]').leftClick();
+      browser.pause(250);
+    });
+
+    Terra.it.validatesElement({ selector: '#root' });
+  });
 });
 
 Terra.describeViewports('ApplicationNavigation Responsive', ['small', 'medium', 'large', 'huge', 'enormous'], () => {

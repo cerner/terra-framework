@@ -1,0 +1,75 @@
+import { Badge } from 'terra-date-picker/package.json?dev-site-package';
+
+import DatePickerPropsTable from 'terra-date-picker/src/DatePicker?dev-site-props-table';
+
+import DatePickerDefault from '../example/DatePickerDefault?dev-site-example';
+import DatePickerExcludeDates from '../example/DatePickerExcludeDates?dev-site-example';
+import DatePickerIncludeDates from '../example/DatePickerIncludeDates?dev-site-example';
+import DatePickerFilterDates from '../example/DatePickerFilterDates?dev-site-example';
+import DatePickerMinMax from '../example/DatePickerMinMax?dev-site-example';
+import DatePickerDefaultDate from '../example/DatePickerDefaultDate?dev-site-example';
+import DatePickerControlled from '../example/DatePickerControlled?dev-site-example';
+import DatePickerInvalid from '../example/DatePickerInvalid?dev-site-example';
+import DatePickerIncomplete from '../example/DatePickerIncomplete?dev-site-example';
+
+<Badge />
+
+# Terra Date Picker
+
+DatePicker is an input component that provides users a way to enter or select a date from the date picker. The date format used in the input is localized based on the locale. The display of the month and days of the week in the date picker is also localized based on the locale. DatePicker leverages the [momentjs](http://momentjs.com/docs/) library for date formatting and manipulations. A date can be expressed in many [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formats. To reduce confusion and complexity, the date props in terra-date-picker must be expressed in a specific format of the ISO 8601 representation of the date. That is, any date prop must conform to the `YYYY-MM-DD` format.
+
+## Controlled vs. Uncontrolled Date Picker
+
+Terra-date-picker can be composed either as a controlled or uncontrolled component. This allows you to decide the amount of control you need.
+
+### Uncontrolled Date Picker
+
+An uncontrolled date picker is the default mode. In the uncontrolled mode, a default date can be passed to the `selectedDate` prop to initially set as the default date. The date picker will manage all states internally. See the Default Date example below for implementation details.
+
+### Controlled Date Picker
+
+In a controlled date picker, the consumer is responsible for managing the state of the date value. The date picker does not manage any of state internally. This mode gives the consumer the flexibility to update the date value as needed. A controlled date picker can be composed by setting the `value` prop with an ISO date value. A handler is needed for both `onChange` and `onChangeRaw` to be notified when date selection or input change is made so the state can be updated. If both `value` and `selectedDate` are set, then `selectedDate` will have no effect. See the Controlled Component example below for implementation details.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-date-picker`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Implementation Notes:
+DatePicker is required to be composed inside the [Base](https://engineering.cerner.com/terra-core/components/terra-base/base/base) component with locale in order for it to load the correct date format and translation strings.
+
+## Component Features
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+* [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+
+[View component source code](https://github.com/cerner/terra-framework/tree/master/packages/terra-date-picker)
+
+## Examples
+<DatePickerDefault title='Default' />
+<DatePickerExcludeDates title='Exclude Dates' />
+<DatePickerFilterDates title='Filter Dates' />
+<DatePickerIncludeDates title='Include Dates' />
+<DatePickerMinMax title='Min Max Selection Options' />
+<DatePickerDefaultDate title='Default Date' />
+<DatePickerControlled title='Controlled Component' />
+<DatePickerInvalid title='Invalid' />
+<DatePickerIncomplete title='Incomplete' description='Applies theme-specific styling for incomplete. ***Note: Only use incomplete if given specific guidance, reserved for specific applications when no value has been provided. Not for general use.***' />
+
+## Date Picker props table
+<DatePickerPropsTable />
