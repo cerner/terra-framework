@@ -8,7 +8,7 @@ Terra-date-picker is a controlled input component that provides users a way to e
 This is a controlled component because it manages the state of the value in the input. Because this is a controlled input component, it cannot accept the defaultValue prop as it always uses the value prop. React does not allow having both the defaultValue and value props.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-date-picker/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-date-picker/date-picker/date-picker)
 - [LICENSE](#license)
 
 ## Getting Started

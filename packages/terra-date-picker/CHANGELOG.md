@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * DateInput split into 3 distinct inputs
+* Update docs to use mdx syntax.
 
 4.27.0 - (February 4, 2020)
 ------------------
