@@ -1,0 +1,48 @@
+import { Badge } from 'terra-date-input/package.json?dev-site-package';
+
+import DateInputPropsTable from 'terra-date-input/src/DateInput?dev-site-props-table';
+
+import DefaultDateInput from '../example/DefaultDateInput?dev-site-example';
+import MonthDayYearDateInput from '../example/MonthDayYearDateInput?dev-site-example';
+import DayMonthYearDateInput from '../example/DayMonthYearDateInput?dev-site-example';
+
+<Badge />
+
+# Terra Date Input
+
+The DateInput allows for easy data entry of known dates like birthdays, anniversaries, etc. The display of the DateInput is localized based on the locale but can be customized via the `displayFormat` prop. The DateInput uses the ISO 8601 format for date values (YYYY-MM-DD).
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-date-input`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Component Features
+
+ * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+ * [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+ * [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+ * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#ltr--rtl-support)
+
+[View component source code](https://github.com/cerner/terra-framework/tree/master/packages/terra-date-input)
+
+## Examples
+<DefaultDateInput title= 'Default DateInput' />
+<MonthDayYearDateInput title= 'Month Day Year Display Format DateInput' />
+<DayMonthYearDateInput title='Day Month Year Display Format DateInput' />
+
+## Date Input props table
+<DateInputPropsTable /> 
