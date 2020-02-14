@@ -143,24 +143,24 @@ const ExampleApplication = ({ onAction }) => {
 
   return (
     <ExampleWrapper>
-    <ApplicationBase locale="en-US">
-      <ApplicationNavigation
-        titleConfig={titleConfig}
-        userConfig={userConfig}
-        extensionItems={extensionItems}
-        onSelectExtensionItem={onAction}
-        navigationItems={navigationItems}
-        activeNavigationItemKey={activeKey}
-        onSelectNavigationItem={key => setActiveKey(key)}
-        utilityItems={utilityItems}
-        onSelectUtilityItem={onAction}
-        onSelectSettings={() => onAction('settings')} // eslint-disable-line no-alert
-        onSelectHelp={() => onAction('help')} // eslint-disable-line no-alert
-        onSelectLogout={() => onAction('logout')} // eslint-disable-line no-alert
-      >
-        <Placeholder title={activeKey} />
-      </ApplicationNavigation>
-    </ApplicationBase>
+      <ApplicationBase locale="en-US">
+        <ApplicationNavigation
+          titleConfig={titleConfig}
+          userConfig={userConfig}
+          extensionItems={extensionItems}
+          onSelectExtensionItem={onAction}
+          navigationItems={navigationItems}
+          activeNavigationItemKey={activeKey}
+          onSelectNavigationItem={key => setActiveKey(key)}
+          utilityItems={utilityItems}
+          onSelectUtilityItem={onAction}
+          onSelectSettings={() => onAction('settings')} // eslint-disable-line no-alert
+          onSelectHelp={() => onAction('help')} // eslint-disable-line no-alert
+          onSelectLogout={() => onAction('logout')} // eslint-disable-line no-alert
+          >
+          <Placeholder title={activeKey} />
+        </ApplicationNavigation>
+      </ApplicationBase>
     </ExampleWrapper>
   );
 };
