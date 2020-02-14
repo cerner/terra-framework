@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added clinical-lowlight-theme theming files
 
+### Changed
+* Update docs to use MDX syntax
+
 1.9.0 - (January 28, 2020)
 ------------------
 ### Changed

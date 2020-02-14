@@ -36,6 +36,7 @@ exports[`ApplicationNavigation should render default element 1`] = `
     />
     <Overlay
       backgroundStyle="clear"
+      className="overlay"
       isOpen={false}
       isRelativeToContainer={true}
       isScrollable={false}
@@ -172,6 +173,7 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
     </main>
     <Overlay
       backgroundStyle="clear"
+      className="overlay"
       isOpen={false}
       isRelativeToContainer={true}
       isScrollable={false}
@@ -396,6 +398,7 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
     </main>
     <Overlay
       backgroundStyle="clear"
+      className="overlay"
       isOpen={false}
       isRelativeToContainer={true}
       isScrollable={false}

@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added clinical-lowlight-theme theming files
 
+### Changed
+* Update dependency `wicg-inert` from `v2` to `v3`.
+
 3.20.0 - (January 28, 2020)
 ------------------
 ### Changed
