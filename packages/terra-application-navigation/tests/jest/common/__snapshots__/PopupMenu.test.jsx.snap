@@ -33,6 +33,7 @@ exports[`PopupMenu should render prop data 1`] = `
     <ActionFooter
       end={
         <Button
+          data-navigation-utility-item-logout={true}
           isBlock={false}
           isCompact={false}
           isDisabled={false}

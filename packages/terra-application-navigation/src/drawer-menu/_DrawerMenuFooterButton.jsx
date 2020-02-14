@@ -19,8 +19,9 @@ const propTypes = {
   onClick: PropTypes.func,
 };
 
-const DrawerMenuFooterButton = ({ text, onClick }) => (
+const DrawerMenuFooterButton = ({ text, onClick, ...customProps }) => (
   <button
+    {...customProps}
     className={cx('drawer-menu-footer-button')}
     type="button"
     onClick={onClick}
