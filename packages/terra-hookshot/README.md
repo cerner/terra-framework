@@ -7,7 +7,7 @@
 The Terra Hookshot component positions content according to a targeted attachment, ensuring they stay connected.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-hookshot/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-hookshot/hookshot/hookshot)
 - [LICENSE](#license)
 
 ## Getting Started
