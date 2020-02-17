@@ -3,7 +3,7 @@ Changelog
 
 Unreleased
 ----------
-### Changes
+### Changed
 * Update dependency `wicg-inert` from `v2` to `v3`.
 * Updated `_ModalContent` to trigger the inert dom updates when it is mounted and unmounted to remove the updates from the componentDidUpdate hook in the `AbstractModal`
 * Updated the `AbstractModal` to stop storing the modalTrigger in state to prevent additional re-renders when `_ModalContent` is opened.
