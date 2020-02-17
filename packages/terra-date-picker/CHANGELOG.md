@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added clinical-lowlight-theme theming files
+
 ### Changed
 * Update docs to use mdx syntax.
 
@@ -34,7 +37,6 @@ Unreleased
 
 ### Changed
 * Updated color for selected dates and removed ignore axe rules.
-* Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 4.22.0 - (November 26, 2019)
 --------

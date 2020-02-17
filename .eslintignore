@@ -4,3 +4,4 @@ coverage
 build
 **/aggregated-translations/*.*
 packages/terra-date-picker/src/react-datepicker/*.*
+generated-themes

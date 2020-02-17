@@ -92,5 +92,4 @@ function PopupDimensions() {
   );
 }
 
-
 export default PopupDimensions;
