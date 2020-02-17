@@ -265,23 +265,17 @@ class MenuContent extends React.Component {
           tabIndex="0"
           aria-label={backBtnText}
         >
-          <Arrange
-            align="center"
-            fitStart={(
-              <div className={cx('header-button')}>
-                {backIcon}
-              </div>
-            )}
-            fill={<h1 className={cx('header-title')}>{this.props.title}</h1>}
-          />
+          <div className={cx('header-container')}>
+            <div className={cx('header-button')}>
+              {backIcon}
+            </div>
+            <h1 className={cx('header-title')}>{this.props.title}</h1>
+          </div>
         </div>
       );
     } else if (this.props.headerTitle.length > 0) {
       header = (
-        <Arrange
-          align="center"
-          fill={<h1 className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>}
-        />
+        <h1 className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
       );
     }
 
