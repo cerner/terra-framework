@@ -129,7 +129,7 @@ class AbstractModal extends React.Component {
       if (dataOverlayCount === 1) {
         mainDocumentElement.removeAttribute('data-abstract-modal-overlay-count');
         mainDocumentElement.removeAttribute('inert');
-      } else if (dataOverlayCount && dataOverlayCount > 1) {
+      } else if (dataOverlayCount > 1) {
         mainDocumentElement.setAttribute('data-abstract-modal-overlay-count', `${dataOverlayCount - 1}`);
       }
     }
