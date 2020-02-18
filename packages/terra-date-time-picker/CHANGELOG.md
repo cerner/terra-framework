@@ -8,6 +8,9 @@ Unreleased
 * Changed `onChange` and `onChangeRaw` callbacks to return the following metadata as part of the third parameter: iso, inputValue, dateValue, timeValue, isAmbiguousHour, isCompleteValue, isValidValue
 * Update docs to use mdx syntax.
 
+### Added
+* Added clinical-lowlight-theme theming files
+
 4.27.0 - (February 4, 2020)
 ------------------
 ### Fixed
@@ -26,12 +29,15 @@ Unreleased
 4.24.0 - (December 16, 2019)
 ------------------
 ### Changed
-* Updated wdio screenshots due to changes in react-datepicker colors.
+* Minor dependency updates
 
 4.23.0 - (December 10, 2019)
 ------------------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
+### Changed
+* Updated wdio screenshots due to changes in react-datepicker colors.
 
 4.22.0 - (November 26, 2019)
 --------

@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added clinical-lowlight-theme theming files
+
 ### Fixed
 * Fixed Drawer menu not closing in Internet Explorer on clicking outside of drawer menu.
 
@@ -30,8 +33,6 @@ Unreleased
 ------------------
 ### Changed
 * Updated Jest snapshots.
-
-### Changed
 * Fixed axe issue for wrong aria-roles
 
 1.14.0 - (December 10, 2019)

@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added clinical-lowlight-theme theming files
+
 6.26.0 - (February 4, 2020)
 ------------------
 ### Changed
@@ -29,18 +32,18 @@ Unreleased
 
 6.22.0 - (December 16, 2019)
 ------------------
+### Added
+* Added `responsiveTo` prop to provide ability to consumers to decide whether or not tabs need to completely
+collapse into a menu on smaller viewports.
+
 ### Changed
 * Fixed axe violation for missing roles.
+* Center-align text label in the single dropdown tab when all tabs completely collapse into a menu.
 
 6.21.0 - (December 10, 2019)
 ------------------
 ### Added
-* Added `responsiveTo` prop to provide ability to consumers to decide whether or not tabs need to completely
-collapse into a menu on smaller viewports.
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
-
-### Changed
-* Center-align text label in the single dropdown tab when all tabs completely collapse into a menu.
 
 6.19.0 - (November 20, 2019)
 ------------------

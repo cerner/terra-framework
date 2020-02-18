@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added clinical-lowlight-theme theming files
+
 ### Changed
 * Changed `onChange` and `onChangeRaw` callbacks to return the following metadata as part of the third parameter: iso, inputValue, isCompleteValue, isValidValue
 * Update docs to use mdx syntax.
@@ -35,7 +38,6 @@ Unreleased
 
 ### Changed
 * Updated color for selected dates and removed ignore axe rules.
-* Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 4.22.0 - (November 26, 2019)
 --------
