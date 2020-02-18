@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.25.0 - (February 18, 2020)
+------------------
 ### Changed
 * Updated wdio config to search for "tests" directory only
 
