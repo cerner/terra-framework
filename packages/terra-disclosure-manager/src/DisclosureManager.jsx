@@ -119,14 +119,17 @@ class DisclosureManager extends React.Component {
     };
   }
 
-  generateHeaderContextValue(key) {
+  generateHeaderContextValue(key, initialTitle) {
     return {
       register: ({ title, collapsibleMenuView }) => {
         this.setState(state => ({
           disclosureComponentData: {
             ...state.disclosureComponentData,
             ...{
-              [key]: { ...state.disclosureComponentData[key], headerAdapterData: { title, collapsibleMenuView } },
+              [key]: {
+                ...state.disclosureComponentData[key],
+                headerAdapterData: { title: initialTitle || title, collapsibleMenuView },
+              },
             },
           },
         }));
@@ -290,7 +293,7 @@ class DisclosureManager extends React.Component {
           props: data.content.props,
           component: data.content.component,
           ...(data.content.title !== undefined) && { headerAdapterData: { title: data.content.title } },
-          headerAdapterContextValue: this.generateHeaderContextValue(data.content.key),
+          headerAdapterContextValue: this.generateHeaderContextValue(data.content.key, data.content.title),
         },
       },
     };
@@ -310,7 +313,7 @@ class DisclosureManager extends React.Component {
       props: data.content.props,
       component: data.content.component,
       ...(data.content.title !== undefined) && { headerAdapterData: { title: data.content.title } },
-      headerAdapterContextValue: this.generateHeaderContextValue(data.content.key),
+      headerAdapterContextValue: this.generateHeaderContextValue(data.content.key, data.content.title),
     };
     newState.disclosureComponentDelegates = newState.disclosureComponentDelegates.concat(this.generateDisclosureComponentDelegate(data.content.key, newState));
 

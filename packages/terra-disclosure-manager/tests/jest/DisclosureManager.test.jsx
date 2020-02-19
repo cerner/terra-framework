@@ -1,5 +1,5 @@
 import React from 'react';
-import DisclosureManager, { withDisclosureManager } from '../../src/DisclosureManager';
+import DisclosureManager, { withDisclosureManager, DisclosureManagerHeaderAdapter } from '../../src/DisclosureManager';
 
 const TestChild = withDisclosureManager(({ id }) => <div id={id} />);
 
@@ -158,16 +158,40 @@ describe('DisclosureManager', () => {
     });
   });
 
-  it('renders disclosed content with headerAdapter API', () => {
-    const wrapper = mountDisclosureManager(['test'], manager => (
-      <div id="wrapper">
-        {manager.children.components}
-        {manager.disclosure.components}
-      </div>
-    ));
+  describe('discloses content with header title', () => {
+    it('renders with title', () => {
+      const wrapper = mountDisclosureManager(['test'], manager => (
+        <div id="wrapper">
+          {manager.children.components}
+          {manager.disclosure.components}
+        </div>
+      ));
 
-    return triggerChildDisclose(wrapper, { content: { title: 'test title' } }).then(() => {
-      expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.headerAdapterData).toHaveProperty('title', 'test title');
+      return triggerChildDisclose(wrapper, { content: { title: 'test title' } }).then(() => {
+        expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.headerAdapterData).toHaveProperty('title', 'test title');
+      });
+    });
+
+    it('maintains disclosed title when title is registered with DisclosureManagerHeaderAdapter', () => {
+      const wrapper = mountDisclosureManager(['test'], manager => (
+        <div id="wrapper">
+          {manager.children.components}
+          {manager.disclosure.components}
+        </div>
+      ));
+
+      const ContentWithHeaderAdapter = withDisclosureManager(({ id }) => (
+        <div id={id}>
+          <DisclosureManagerHeaderAdapter title="DisclosureManagerTitle" collapsibleMenuView={<div id="dummy component" />} />
+        </div>
+      ));
+
+      const discloseParameters = { content: { title: 'test title', component: <ContentWithHeaderAdapter id="disclosure-component" /> } };
+      return triggerChildDisclose(wrapper, discloseParameters).then(() => {
+        expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.headerAdapterData).toHaveProperty('title', 'test title');
+        expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.headerAdapterData).toHaveProperty('collapsibleMenuView');
+        expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.headerAdapterData.collapsibleMenuView).toBeDefined();
+      });
     });
   });
 
