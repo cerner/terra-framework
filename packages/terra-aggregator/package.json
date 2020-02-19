@@ -1,7 +1,7 @@
 {
   "name": "terra-aggregator",
   "main": "lib/Aggregator.js",
-  "version": "4.39.0",
+  "version": "4.40.0",
   "description": "The Aggregator provides focus-based mechanisms for managing actions across disparate components.",
   "repository": {
     "type": "git",
@@ -34,12 +34,12 @@
     "terra-arrange": "^3.0.0",
     "terra-button": "^3.3.0",
     "terra-content-container": "^3.0.0",
-    "terra-disclosure-manager": "^4.30.0",
+    "terra-disclosure-manager": "^4.31.0",
     "terra-form-input": "^2.3.0",
     "terra-grid": "^6.0.0",
-    "terra-modal-manager": "^6.25.0",
+    "terra-modal-manager": "^6.26.0",
     "terra-section-header": "^2.0.0",
-    "terra-slide-panel-manager": "^5.24.0"
+    "terra-slide-panel-manager": "^5.25.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
