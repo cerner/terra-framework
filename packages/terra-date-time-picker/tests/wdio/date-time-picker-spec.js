@@ -293,6 +293,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.setValue('input[name="terra-time-hour-input"]', '02');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
       browser.keys('Tab');
+      browser.pause(50);
     });
 
     it('missing hour', () => {
@@ -379,6 +380,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       expect(browser.getText('#ambiguous-date')).to.equal('No');
       expect(browser.getText('#complete-date')).to.equal('Yes');
       expect(browser.getText('#valid-date')).to.equal('Yes');
+      browser.pause(50);
     });
 
     Terra.it.matchesScreenshot('missing hour');
@@ -451,6 +453,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       expect(browser.getText('#ambiguous-date')).to.equal('No');
       expect(browser.getText('#complete-date')).to.equal('Yes');
       expect(browser.getText('#valid-date')).to.equal('Yes');
+      browser.pause(50);
     });
 
     Terra.it.matchesScreenshot('missing hour');
