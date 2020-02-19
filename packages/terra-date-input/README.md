@@ -6,7 +6,7 @@
 The DateInput allows for easy data entry of known dates like birthdays, anniversaries, etc. The display of the DateInput is localized based on the locale but can be customized via the `displayFormat` prop. The DateInput uses the ISO 8601 format for date values (YYYY-MM-DD).
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-date-input/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-date-input/date-input/date-input)
 - [LICENSE](#license)
 
 ## Getting Started
@@ -28,7 +28,7 @@ This component requires the following peer dependencies be installed in your app
 
 ## LICENSE
 
-Copyright 2019 Cerner Innovation, Inc.
+Copyright 2019 - 2020 Cerner Innovation, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

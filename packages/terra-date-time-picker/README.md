@@ -7,7 +7,7 @@
 The DateTimePicker component has a date picker for selecting date and a time input for entering time. DateTimePicker supports the Spring and Fall daylight saving time changes. A date and time can be expressed in many [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formats. To reduce confusion and complexity, the date time props in DateTimePicker must be expressed in a specific format of the ISO 8601 representation of the date time. That is, any date time prop must conform to the `YYYY-MM-DDThh:mm:ss` format.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-date-time-picker/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-date-time-picker/date-time-picker/date-time-picker)
 - [LICENSE](#license)
 
 ## Getting Started
@@ -29,7 +29,7 @@ This component requires the following peer dependencies be installed in your app
 
 ## LICENSE
 
-Copyright 2017 - 2019 Cerner Innovation, Inc.
+Copyright 2017 - 2020 Cerner Innovation, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

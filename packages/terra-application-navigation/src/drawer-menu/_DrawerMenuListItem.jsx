@@ -33,9 +33,10 @@ const propTypes = {
 };
 
 const DrawerMenuListItem = ({
-  icon, text, notificationCount, isSelected, onSelect,
+  icon, text, notificationCount, isSelected, onSelect, ...customProps
 }) => (
   <li
+    {...customProps}
     role="option"
     aria-selected={isSelected}
     tabIndex="0"

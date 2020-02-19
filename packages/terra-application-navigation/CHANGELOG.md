@@ -4,6 +4,27 @@ Changelog
 Unreleased
 ----------
 
+1.20.0 - (February 18, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme theming files
+
+1.19.0 - (February 11, 2020)
+------------------
+### Fixed
+* Fixed Drawer menu not closing in Internet Explorer on clicking outside of drawer menu.
+* Fixed `settings` api called when `help` clicked in drawer menu.
+
+1.18.0 - (February 4, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+1.17.0 - (January 28, 2020)
+------------------
+### Changed
+* Update copyright to include 2020
+
 1.16.0 - (January 7, 2020)
 ------------------
 ### Changed
@@ -13,8 +34,6 @@ Unreleased
 ------------------
 ### Changed
 * Updated Jest snapshots.
-
-### Changed
 * Fixed axe issue for wrong aria-roles
 
 1.14.0 - (December 10, 2019)

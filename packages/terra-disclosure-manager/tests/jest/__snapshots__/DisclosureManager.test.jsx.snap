@@ -74,7 +74,11 @@ exports[`DisclosureManager renders disclosed content in the disclosure wrapper 1
 </DisclosureManager>
 `;
 
+<<<<<<< HEAD
 exports[`DisclosureManager renders disclosed content with headerAdapter API 1`] = `
+=======
+exports[`DisclosureManager should provide registerDismissCheck to disclosed contents 1`] = `
+>>>>>>> master
 <DisclosureManager
   render={[Function]}
   supportedDisclosureTypes={
@@ -82,6 +86,7 @@ exports[`DisclosureManager renders disclosed content with headerAdapter API 1`] 
       "test",
     ]
   }
+  trapNestedDisclosureRequests={true}
 >
   <div
     id="wrapper"

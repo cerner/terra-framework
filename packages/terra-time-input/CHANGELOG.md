@@ -4,6 +4,21 @@ Changelog
 Unreleased
 ----------
 
+4.22.0 - (February 18, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme theming files
+
+4.21.0 - (February 4, 2020)
+------------------
+### Added
+* Fixed background color issue of time components in incomplete `time-input` in Fusion theme.
+
+4.20.0 - (January 28, 2020)
+------------------
+### Changed
+* Update copyright to include 2020
+
 4.19.0 - (January 7, 2020)
 ------------------
 ### Added

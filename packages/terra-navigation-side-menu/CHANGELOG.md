@@ -4,6 +4,16 @@ Changelog
 Unreleased
 ----------
 
+2.26.0 - (February 18, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme theming files
+
+2.25.0 - (January 28, 2020)
+------------------
+### Changed
+* Update copyright to include 2020
+
 2.24.0 - (December 10, 2019)
 ------------------
 ### Added

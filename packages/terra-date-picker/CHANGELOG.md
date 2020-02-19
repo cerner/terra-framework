@@ -4,6 +4,24 @@ Changelog
 Unreleased
 ----------
 
+4.28.0 - (February 18, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme theming files
+
+### Changed
+* Update docs to use mdx syntax.
+
+4.27.0 - (February 4, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+4.26.0 - (January 28, 2020)
+------------------
+### Changed
+* Update copyright to include 2020
+
 4.25.0 - (January 7, 2020)
 ------------------
 ### Removed
@@ -22,7 +40,6 @@ Unreleased
 
 ### Changed
 * Updated color for selected dates and removed ignore axe rules.
-* Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 4.22.0 - (November 26, 2019)
 --------
