@@ -244,20 +244,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       expect(browser.getText('#complete-date')).to.equal('Yes');
       expect(browser.getText('#valid-date')).to.equal('Yes');
     });
-
-    it('missing hour', () => {
-      browser.setValue('input[name="terra-date-input"]', '03/10/2019');
-      browser.setValue('input[name="terra-time-hour-input"]', '02');
-      browser.setValue('input[name="terra-time-minute-input"]', '30');
-      browser.keys('Tab');
-      expect(browser.getText('#iso')).to.equal('2019-03-10T03:30:00-05:00');
-      expect(browser.getText('#input-value')).to.equal('03/10/2019 03:30');
-      expect(browser.getText('#date-value')).to.equal('03/10/2019');
-      expect(browser.getText('#time-value')).to.equal('03:30');
-      expect(browser.getText('#ambiguous-date')).to.equal('No');
-      expect(browser.getText('#complete-date')).to.equal('Yes');
-      expect(browser.getText('#valid-date')).to.equal('Yes');
-    });
   });
 
   describe('OnBlur with invalid date', () => {
@@ -296,6 +282,26 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       expect(browser.getText('#time-value')).to.equal('');
       expect(browser.getText('#ambiguous-date')).to.equal('No');
       expect(browser.getText('#complete-date')).to.equal('No');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
+    });
+  });
+
+  describe('OnBlur metadata', () => {
+    before(() => {
+      browser.refresh();
+      browser.setValue('input[name="terra-date-input"]', '03/10/2019');
+      browser.setValue('input[name="terra-time-hour-input"]', '02');
+      browser.setValue('input[name="terra-time-minute-input"]', '30');
+      browser.keys('Tab');
+    });
+
+    it('missing hour', () => {
+      expect(browser.getText('#iso')).to.equal('2019-03-10T03:30:00-05:00');
+      expect(browser.getText('#input-value')).to.equal('03/10/2019 03:30');
+      expect(browser.getText('#date-value')).to.equal('03/10/2019');
+      expect(browser.getText('#time-value')).to.equal('03:30');
+      expect(browser.getText('#ambiguous-date')).to.equal('No');
+      expect(browser.getText('#complete-date')).to.equal('Yes');
       expect(browser.getText('#valid-date')).to.equal('Yes');
     });
   });
