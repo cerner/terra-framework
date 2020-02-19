@@ -3,13 +3,16 @@ Changelog
 
 Unreleased
 ----------
+
+5.25.0 - (February 18, 2020)
+------------------
 ### Added
 * Added generated-themes to .npmignore
 
 5.24.0 - (February 4, 2020)
 ------------------
 ### Changed
-* Update link to docs for Disclosure Manager's API 
+* Update link to docs for Disclosure Manager's API
 
 5.23.0 - (January 28, 2020)
 ------------------
