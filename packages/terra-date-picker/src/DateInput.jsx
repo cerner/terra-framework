@@ -210,7 +210,7 @@ class DatePickerInput extends React.Component {
     }
   }
 
-  handleDateChange(event, type, value) {
+  handleDateChange(event, type) {
     const inputValue = event.target.value.replace(/\D/gm, '');
     if (type === DateUtil.inputType.DAY) {
       this.setState({
