@@ -46,7 +46,7 @@ const DisclosedComponent = () => {
 This will register the header information on mount.
 
 ## Providing a Title on Disclose
-It has been observed that there can be a 'pop-in' affect with the header render in slow domains and using the `DisclosureManagerHeaderAdapter`. It is recommended to provide a `title` parameter to the disclose function that will render the disclosed content to ensure the header is rendered immediately. This will render the header with the title, and then the `DisclosureManagerHeaderAdapter` can be used to add additional button content into the header.
+It has been observed that there can be a 'pop-in' affect with the header render in slow domains and using the `DisclosureManagerHeaderAdapter`. It is recommended to provide a `title` parameter to the disclose function that will render the disclosed content to ensure the header is rendered immediately. This will render the header with the title, and then the `DisclosureManagerHeaderAdapter` can be used to add additional button content into the header. While disclosing with a title parameter, the disclose title will have priority, even if a title value is provided through the `DisclosureManagerHeaderAdapter`.
 
 ```jsx
 import { DisclosureManagerContext } from 'terra-disclosure-manager';
