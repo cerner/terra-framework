@@ -223,10 +223,10 @@ class DateTimePicker extends React.Component {
       iSOString = tempDateTime.format();
     }
 
-    let timeValue = this.timeValue ? this.timeValue : '';
+    let timeValue = this.timeValue || '';
 
-    if (momentDateTime && !DateTimeUtils.isMomentObject(momentDateTime) && DateTimeUtils.isValidTime(momentDateTime, this.props.showSeconds)) {
-      timeValue = momentDateTime;
+    if (iSOString) {
+      timeValue = DateTimeUtils.getTime(iSOString, this.props.showSeconds);
     }
 
     let isValid = false;
