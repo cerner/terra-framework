@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.21.0 - (February 18, 2020)
+------------------
+### Added
+* Added generated-themes to .npmignore
+
 3.20.0 - (February 4, 2020)
 ------------------
 ### Changed

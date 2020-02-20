@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Added new `headerTitle` prop for menus which have drill-in submenus
 
+6.26.0 - (February 18, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme theming files
+
 6.25.0 - (February 4, 2020)
 ------------------
 ### Changed
