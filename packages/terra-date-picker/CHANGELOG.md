@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+4.28.0 - (February 18, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme theming files
+
 ### Changed
 * DateInput split into 3 distinct inputs
 * Update docs to use mdx syntax.
@@ -35,7 +41,6 @@ Unreleased
 
 ### Changed
 * Updated color for selected dates and removed ignore axe rules.
-* Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 4.22.0 - (November 26, 2019)
 --------
