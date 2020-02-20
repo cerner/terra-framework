@@ -489,7 +489,7 @@ class DatePicker extends React.Component {
     }
     this.setState({ inputValue: event.target.value })
     const date = parseDate(dateValue, this.props)
-    if (date || !event.target.value) {
+    if (date || !dateValue) {
       this.setSelected(date, event, true)
     }
   }
@@ -749,7 +749,7 @@ class DatePicker extends React.Component {
   }
 
   renderDateInput = () => {
-    var classNameList = cx(this.props.className, {
+    const classNameList = cx(this.props.className, {
       [outsideClickIgnoreClass]: this.state.open
     })
 
