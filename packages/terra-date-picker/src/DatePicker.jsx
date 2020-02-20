@@ -425,6 +425,7 @@ class DatePicker extends React.Component {
               <DateInput
                 onCalendarButtonClick={this.handleOnCalendarButtonClick}
                 inputAttributes={inputAttributes}
+                required={required}
                 isIncomplete={isIncomplete}
                 isInvalid={isInvalid}
                 shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
