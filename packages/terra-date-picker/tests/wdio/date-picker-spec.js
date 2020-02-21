@@ -1,4 +1,4 @@
-Terra.describeViewports('Date Picker', ['medium'], () => {
+Terra.describeViewports('Date Picker', ['tiny', 'small', 'medium'], () => {
   describe('Default', () => {
     before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default'));
 
@@ -15,10 +15,11 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
-    Terra.it.isAccessible();
+    Terra.it.validatesElement({ selector: '#root' });
   });
+});
 
+Terra.describeViewports('Date Picker', ['medium'], () => {
   describe('Default Date Excluded', () => {
     describe('Default Date Excluded - Clears input using calendar icon', () => {
       before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-excluded'));

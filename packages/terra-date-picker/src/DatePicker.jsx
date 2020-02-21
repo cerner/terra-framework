@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { activeBreakpointForSize } from 'terra-breakpoints';
 import ResponsiveElement from 'terra-responsive-element';
 import { injectIntl, intlShape } from 'react-intl';
 
@@ -137,8 +138,10 @@ class DatePicker extends React.Component {
   constructor(props) {
     super(props);
 
+    const activeBreakpointOnMount = activeBreakpointForSize(window.innerWidth);
     this.state = {
       selectedDate: DateUtil.defaultValue(props),
+      showPortalPicker: activeBreakpointOnMount === 'tiny' || activeBreakpointOnMount === 'small',
       prevPropsSelectedDate: props.value || props.selectedDate,
     };
 
@@ -146,6 +149,7 @@ class DatePicker extends React.Component {
     this.isDefaultDateAcceptable = false;
     this.containerHasFocus = false;
     this.handleBlur = this.handleBlur.bind(this);
+    this.handleBreakpointChange = this.handleBreakpointChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeRaw = this.handleChangeRaw.bind(this);
     this.handleFilterDate = this.handleFilterDate.bind(this);
@@ -186,6 +190,14 @@ class DatePicker extends React.Component {
   componentDidMount() {
     this.dateValue = DateUtil.formatMomentDate(this.state.selectedDate, DateUtil.getFormatByLocale(this.props.intl.locale)) || '';
     this.isDefaultDateAcceptable = this.validateDefaultDate();
+  }
+
+  handleBreakpointChange(activeBreakpoint) {
+    const showPortalPicker = activeBreakpoint === 'tiny' || activeBreakpoint === 'small';
+
+    if (this.state.showPortalPicker !== showPortalPicker) {
+      this.setState({ showPortalPicker });
+    }
   }
 
   handleFilterDate(date) {
@@ -371,13 +383,7 @@ class DatePicker extends React.Component {
 
     delete customProps.onCalendarButtonClick;
 
-    const todayString = intl.formatMessage({ id: 'Terra.datePicker.today' });
     const dateFormat = DateUtil.getFormatByLocale(intl.locale);
-    const placeholderText = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
-    const excludeMomentDates = DateUtil.filterInvalidDates(excludeDates);
-    const includeMomentDates = DateUtil.filterInvalidDates(includeDates);
-    const maxMomentDate = DateUtil.createSafeDate(maxDate);
-    const minMomentDate = DateUtil.createSafeDate(minDate);
 
     let formattedValue = DateUtil.strictFormatISODate(value, dateFormat);
 
@@ -405,104 +411,58 @@ class DatePicker extends React.Component {
       selectedDateInPicker = this.state.selectedDate;
     }
 
-    const portalPicker = (
-      <ReactDatePicker
-        {...customProps}
-        selected={selectedDateInPicker}
-        value={formattedValue}
-        onBlur={this.handleBlur}
-        onChange={this.handleChange}
-        onChangeRaw={this.handleChangeRaw}
-        onClickOutside={this.handleOnClickOutside}
-        onFocus={this.handleOnInputFocus}
-        onSelect={this.handleOnSelect}
-        required={required}
-        customInput={(
-          <DateInput
-            onCalendarButtonClick={this.handleOnCalendarButtonClick}
-            inputAttributes={inputAttributes}
-            isIncomplete={isIncomplete}
-            isInvalid={isInvalid}
-            required={required}
-            shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
-            onButtonFocus={this.handleFocus}
-            buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
-          />
-        )}
-        excludeDates={excludeMomentDates}
-        filterDate={this.handleFilterDate}
-        includeDates={includeMomentDates}
-        maxDate={maxMomentDate}
-        minDate={minMomentDate}
-        todayButton={todayString}
-        withPortal
-        dateFormatCalendar=" "
-        dateFormat={dateFormat}
-        fixedHeight
-        locale={intl.locale}
-        placeholderText={placeholderText}
-        dropdownMode="select"
-        showMonthDropdown
-        showYearDropdown
-        preventOpenOnFocus
-        name={name}
-        allowSameDay
-      />
-    );
-
-    const popupPicker = (
-      <ReactDatePicker
-        {...customProps}
-        selected={selectedDateInPicker}
-        value={formattedValue}
-        onBlur={this.handleBlur}
-        onChange={this.handleChange}
-        onChangeRaw={this.handleChangeRaw}
-        onClickOutside={this.handleOnClickOutside}
-        onFocus={this.handleOnInputFocus}
-        onSelect={this.handleOnSelect}
-        required={required}
-        customInput={(
-          <DateInput
-            onCalendarButtonClick={this.handleOnCalendarButtonClick}
-            inputAttributes={inputAttributes}
-            isIncomplete={isIncomplete}
-            isInvalid={isInvalid}
-            shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
-            onButtonFocus={this.handleFocus}
-            buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
-          />
-        )}
-        excludeDates={excludeMomentDates}
-        filterDate={this.handleFilterDate}
-        includeDates={includeMomentDates}
-        maxDate={maxMomentDate}
-        minDate={minMomentDate}
-        todayButton={todayString}
-        dateFormatCalendar=" "
-        dateFormat={dateFormat}
-        fixedHeight
-        locale={intl.locale}
-        placeholderText={placeholderText}
-        dropdownMode="select"
-        showMonthDropdown
-        showYearDropdown
-        preventOpenOnFocus
-        name={name}
-        allowSameDay
-      />
-    );
-
     return (
       <div
         className={cx('date-picker')}
         ref={this.datePickerContainer}
       >
         <ResponsiveElement
+          onChange={this.handleBreakpointChange}
           responsiveTo="window"
-          tiny={portalPicker}
-          medium={popupPicker}
-        />
+        >
+          <ReactDatePicker
+            {...customProps}
+            withPortal={this.state.showPortalPicker}
+            selected={selectedDateInPicker}
+            value={formattedValue}
+            onBlur={this.handleBlur}
+            onChange={this.handleChange}
+            onChangeRaw={this.handleChangeRaw}
+            onClickOutside={this.handleOnClickOutside}
+            onFocus={this.handleOnInputFocus}
+            onSelect={this.handleOnSelect}
+            required={required}
+            customInput={(
+              <DateInput
+                onCalendarButtonClick={this.handleOnCalendarButtonClick}
+                inputAttributes={inputAttributes}
+                required={required}
+                isIncomplete={isIncomplete}
+                isInvalid={isInvalid}
+                shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
+                onButtonFocus={this.handleFocus}
+                buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
+              />
+            )}
+            excludeDates={DateUtil.filterInvalidDates(excludeDates)}
+            filterDate={this.handleFilterDate}
+            includeDates={DateUtil.filterInvalidDates(includeDates)}
+            maxDate={DateUtil.createSafeDate(maxDate)}
+            minDate={DateUtil.createSafeDate(minDate)}
+            todayButton={intl.formatMessage({ id: 'Terra.datePicker.today' })}
+            dateFormatCalendar=" "
+            dateFormat={dateFormat}
+            fixedHeight
+            locale={intl.locale}
+            placeholderText={intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })}
+            dropdownMode="select"
+            showMonthDropdown
+            showYearDropdown
+            preventOpenOnFocus
+            name={name}
+            allowSameDay
+          />
+        </ResponsiveElement>
       </div>
     );
   }
