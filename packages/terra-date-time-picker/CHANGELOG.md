@@ -3,6 +3,15 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.28.0 - (February 18, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme theming files
+
+### Changed
+* Update docs to use mdx syntax.
+
 4.27.0 - (February 4, 2020)
 ------------------
 ### Fixed
@@ -21,12 +30,15 @@ Unreleased
 4.24.0 - (December 16, 2019)
 ------------------
 ### Changed
-* Updated wdio screenshots due to changes in react-datepicker colors.
+* Minor dependency updates
 
 4.23.0 - (December 10, 2019)
 ------------------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
+### Changed
+* Updated wdio screenshots due to changes in react-datepicker colors.
 
 4.22.0 - (November 26, 2019)
 --------

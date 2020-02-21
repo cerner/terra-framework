@@ -5,110 +5,60 @@ exports[`should render a controlled date picker 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        value="06/15/2019"
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        value="06/15/2019"
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      value="06/15/2019"
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -117,108 +67,59 @@ exports[`should render a date picker with disabled dates 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -227,108 +128,59 @@ exports[`should render a date picker with filtered dates 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -337,108 +189,59 @@ exports[`should render a date picker with included dates 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -447,108 +250,59 @@ exports[`should render a date picker with min and max dates 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -557,108 +311,59 @@ exports[`should render a date picker with onBlur 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -667,108 +372,59 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -777,108 +433,59 @@ exports[`should render a date picker with onChange 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -887,108 +494,59 @@ exports[`should render a date picker with onChangeRaw 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -997,108 +555,59 @@ exports[`should render a date picker with onFocus 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -1107,108 +616,59 @@ exports[`should render a date picker with onSelect 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -1217,108 +677,59 @@ exports[`should render a default date input and date picker 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -1327,118 +738,64 @@ exports[`should render a default date input with custom input attributes 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            inputAttributes={
-              Object {
-                "id": "terra-date-input",
-              }
-            }
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            inputAttributes={
-              Object {
-                "id": "terra-date-input",
-              }
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          inputAttributes={
+            Object {
+              "id": "terra-date-input",
             }
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+          }
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -1447,108 +804,59 @@ exports[`should render a disabled date picker 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={true}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={false}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={true}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={true}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
 
@@ -1557,107 +865,58 @@ exports[`should render a required date input and date picker 1`] = `
   className="date-picker"
 >
   <ResponsiveElement
-    medium={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={true}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-      />
-    }
+    onChange={[Function]}
     responsiveTo="window"
-    tiny={
-      <InjectIntl(DatePicker)
-        allowSameDay={true}
-        customInput={
-          <InjectIntl(DatePickerInput)
-            buttonRefCallback={[Function]}
-            isIncomplete={false}
-            isInvalid={false}
-            onButtonFocus={[Function]}
-            onCalendarButtonClick={[Function]}
-            required={true}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        filterDate={[Function]}
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        preventOpenOnFocus={true}
-        required={true}
-        selected={"2017-01-01T00:00:00.000Z"}
-        showMonthDropdown={true}
-        showYearDropdown={true}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-  />
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={true}
+          shouldShowPicker={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onSelect={[Function]}
+      placeholderText="Terra.datePicker.dateFormat"
+      preventOpenOnFocus={true}
+      required={true}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
 </div>
 `;
