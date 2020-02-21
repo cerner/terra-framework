@@ -137,34 +137,38 @@ class DatePickerInput extends React.Component {
   }
 
   /**
-   * Moves focus to the correct input depending on date ordering.
+   * Moves focus to the correct input depending on date ordering. Focus changing is
+   * disabled if a complete date has been entered in order to make single input
+   * corrections easier, and is re-enabled if the whole date is erased.
    * @param {string} inputValue - The value from the current input.
    * @param {int} type - The input type, based on DateUtil.inputType.
    * @param {string} dateVariant - Date variant based on the currently supported date
    *                      orders: 'MM-DD-YYYY', 'DD-MM-YYYY', or 'YYYY-MM-DD'.
    */
   moveFocusOnChange(inputValue, type, dateVariant) {
-    if (dateVariant === 'MM-DD-YYYY') {
-      if (inputValue.length === 2) {
-        if (type === DateUtil.inputType.MONTH) {
+    if (!this.state.prevDate) {
+      if (dateVariant === 'MM-DD-YYYY') {
+        if (inputValue.length === 2) {
+          if (type === DateUtil.inputType.MONTH) {
+            this.dayInput.focus();
+          } else {
+            this.yearInput.focus();
+          }
+        }
+      } else if (dateVariant === 'DD-MM-YYYY') {
+        if (inputValue.length === 2) {
+          if (type === DateUtil.inputType.DAY) {
+            this.monthInput.focus();
+          } else {
+            this.yearInput.focus();
+          }
+        }
+      } else if (dateVariant === 'YYYY-MM-DD') {
+        if (inputValue.length === 2 && type === DateUtil.inputType.MONTH) {
           this.dayInput.focus();
-        } else {
-          this.yearInput.focus();
-        }
-      }
-    } else if (dateVariant === 'DD-MM-YYYY') {
-      if (inputValue.length === 2) {
-        if (type === DateUtil.inputType.DAY) {
+        } else if (inputValue.length === 4) {
           this.monthInput.focus();
-        } else {
-          this.yearInput.focus();
         }
-      }
-    } else if (dateVariant === 'YYYY-MM-DD') {
-      if (inputValue.length === 2 && type === DateUtil.inputType.MONTH) {
-        this.dayInput.focus();
-      } else if (inputValue.length === 4) {
-        this.monthInput.focus();
       }
     }
   }
@@ -226,9 +230,7 @@ class DatePickerInput extends React.Component {
       });
     }
 
-    if (!this.state.year) {
-      this.moveFocusOnChange(inputValue, type, this.variant);
-    }
+    this.moveFocusOnChange(inputValue, type, this.variant);
 
     /**
      * Sets the day, month and year based on input values, formats them
