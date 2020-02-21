@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { forwardRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames/bind';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ModalOverlay from './_ModalOverlay';
+import { hideModalDomUpdates, showModalDomUpdates } from './inertHelpers';
 import styles from './ModalContent.module.scss';
 
 const cx = classNames.bind(styles);
@@ -32,16 +33,6 @@ const propTypes = {
    */
   closeOnOutsideClick: PropTypes.bool,
   /**
-   * Callback function to increment the data-abstract-modal-overlay-count. If the count is zero, the callback should add the inert attribute to the root element
-   * to ensure the content covered by the abstract modal's overlay is not tab-able or readable by assistive technology.
-   */
-  showModalDomUpdates: PropTypes.func.isRequired,
-  /**
-   * Callback function to decrement the data-abstract-modal-overlay-count. If the count is one, the callback should remove the inert attribute from the root element
-   * to ensure the content that was covered by the abstract modal's overlay is now tab-able and readable by assistive technology.
-   */
-  hideModalDomUpdates: PropTypes.func.isRequired,
-  /**
    * Callback function indicating a close condition was met, should be combined with isOpen for state management.
    */
   onRequestClose: PropTypes.func.isRequired,
@@ -58,6 +49,10 @@ const propTypes = {
    */
   role: PropTypes.string,
   /**
+   * Allows assigning of root element custom data attribute for easy selecting of document base component.
+   */
+  rootSelector: PropTypes.string,
+  /**
    * Z-Index layer to apply to the ModalContent and ModalOverlay.
    */
   zIndex: PropTypes.oneOf(zIndexes),
@@ -70,31 +65,35 @@ const defaultProps = {
   isFullscreen: false,
   isScrollable: false,
   role: 'dialog',
+  rootSelector: '#root',
   zIndex: '6000',
 };
 
-const ModalContent = React.forwardRef((props, ref) => {
+const ModalContent = forwardRef((props, ref) => {
   const {
     ariaLabel,
     children,
     classNameModal,
     classNameOverlay,
     closeOnOutsideClick,
-    showModalDomUpdates,
-    hideModalDomUpdates,
     onRequestClose,
     role,
     isFullscreen,
     isScrollable,
+    rootSelector,
     zIndex,
     ...customProps
   } = props;
 
-  React.useEffect(() => {
-    showModalDomUpdates();
+  useEffect(() => {
+    // Store element that was last focused prior to modal opening
+    const modalTrigger = document.activeElement;
+    showModalDomUpdates(ref.current, rootSelector);
 
-    return hideModalDomUpdates;
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    return () => {
+      hideModalDomUpdates(modalTrigger, rootSelector);
+    };
+  }, [ref, rootSelector]);
 
   let zIndexLayer = '6000';
   if (zIndexes.indexOf(zIndex) >= 0) {

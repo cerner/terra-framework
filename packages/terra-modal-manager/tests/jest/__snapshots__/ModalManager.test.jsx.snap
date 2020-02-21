@@ -180,12 +180,11 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                 classNameModal="modal-manager height-870 width-1280"
                 classNameOverlay={null}
                 closeOnOutsideClick={false}
-                hideModalDomUpdates={[Function]}
                 isFullscreen={false}
                 isScrollable={false}
                 onRequestClose={[Function]}
                 role="dialog"
-                showModalDomUpdates={[Function]}
+                rootSelector="#root"
                 zIndex="6000"
               >
                 <ModalOverlay
