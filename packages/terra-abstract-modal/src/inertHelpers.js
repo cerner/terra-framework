@@ -3,8 +3,8 @@
  * of inert requesting components. If the inert count is zero, it adds the inert attribute to the root dom
  * element. Additionally, it shifts the focus to the disclosing content for screen readers and keyboard navigation.
  *
- * @param {*} modalElement - the reference to the modal that is being opened.
- * @param {*} rootSelector - the root-level attribute to apply inert to.
+ * @param {HTMLElement} modalElement - the reference to the modal that is being opened.
+ * @param {string} rootSelector - the root-level attribute to apply inert to.
  */
 function showModalDomUpdates(modalElement, rootSelector) {
   const mainDocumentElement = document.querySelector(rootSelector);
@@ -32,8 +32,8 @@ function showModalDomUpdates(modalElement, rootSelector) {
  * requesting components. If the inert count is one, it removes inert from the root dom element. Additionally, it
  * shifts the focus back to the previously focused element for screen readers and keyboard navigation.
  *
- * @param {*} modalTriggerElement - reference to the element that requested that the abstract modal open.
- * @param {*} rootSelector - the root-level attribute to remove inert from.
+ * @param {HTMLElement} modalTriggerElement - reference to the element that requested that the abstract modal open.
+ * @param {string} rootSelector - the root-level attribute to remove inert from.
  */
 function hideModalDomUpdates(modalTriggerElement, rootSelector) {
   const mainDocumentElement = document.querySelector(rootSelector);
