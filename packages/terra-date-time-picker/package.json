@@ -1,7 +1,7 @@
 {
   "name": "terra-date-time-picker",
   "main": "lib/DateTimePicker.js",
-  "version": "4.27.0",
+  "version": "4.28.0",
   "description": "The DateTimePicker component has a date picker for selecting date and a time input for entering time",
   "repository": {
     "type": "git",
@@ -31,14 +31,14 @@
     "moment": "^2.21.0",
     "moment-timezone": "^0.5.13",
     "prop-types": "^15.5.8",
-    "terra-abstract-modal": "^3.20.0",
+    "terra-abstract-modal": "^3.21.0",
     "terra-button": "^3.3.0",
-    "terra-date-picker": "^4.27.0",
-    "terra-time-input": "^4.21.0"
+    "terra-date-picker": "^4.28.0",
+    "terra-time-input": "^4.22.0"
   },
   "devDependencies": {
     "terra-form-field": "^3.1.0",
-    "terra-modal-manager": "^6.25.0"
+    "terra-modal-manager": "^6.26.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
@@ -49,7 +49,8 @@
     "test": "npm run jest && npm run wdio",
     "jest": "jest --config ../../jestconfig.js",
     "wdio-default": "cd ../.. && npx wdio ./packages/$npm_package_name/wdio.conf.js",
+    "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio ./packages/$npm_package_name/clinical-lowlight-wdio.conf.js",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio ./packages/$npm_package_name/wdio.conf.js",
-    "wdio": "npm run wdio-default && npm run wdio-fusion"
+    "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   }
 }
