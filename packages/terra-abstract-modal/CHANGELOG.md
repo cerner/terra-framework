@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.21.0 - (February 18, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme theming files
+
 ### Changed
 * Update dependency `wicg-inert` from `v2` to `v3`.
 * Updated the `AbstractModal` to stop storing the modalTrigger in state to prevent additional re-renders when `_ModalContent` is opened.
