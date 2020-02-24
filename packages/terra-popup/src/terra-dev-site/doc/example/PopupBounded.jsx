@@ -12,7 +12,6 @@ function PopupBounded() {
   const parentElement = useRef();
   const [open, setOpen] = useState(false);
 
-
   const setParentNode = (node) => {
     parentElement.current = node;
   };
