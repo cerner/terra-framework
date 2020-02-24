@@ -1,0 +1,47 @@
+import { Badge } from 'terra-dialog-modal/package.json?dev-site-package';
+import DialogModalPropsTable from 'terra-dialog-modal/src/DialogModal?dev-site-props-table';
+
+import DefaultDialogModal from '../example/DefaultDialogModal?dev-site-example';
+import DialogModalWithLongText from '../example/DialogModalWithLongText?dev-site-example';
+import DialogModalWithCustomHeaderAndCustomFooter from '../example/DialogModalWithCustomHeaderAndCustomFooter?dev-site-example';
+
+<Badge />
+
+# Terra Dialog Modal
+
+The Dialog Modal allows for disclosing accessible modals with dynamic heights. The components is placed at an 7000 z-index. The dialog modal should not be disclosed from the terra-modal-manager component. If you need to display another modal while using the modal manager, use the modal stacking functionality provided in terra-modal-manager or the terra-notification-dialog.
+
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-dialog-modal`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Component Features
+
+ * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+ * [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+ * [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+ * [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+ * [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+ * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#ltr--rtl-support)
+
+## Examples
+<DefaultDialogModal title='Default Dialog Modal' />
+<DialogModalWithLongText title='Dialog Modal With Long Text' />
+<DialogModalWithCustomHeaderAndCustomFooter title='Dialog Modal With Custom Header and Custom Footer' />
+
+## Dialog Modal Props table
+<DialogModalPropsTable />
