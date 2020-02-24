@@ -36,4 +36,7 @@ const PopupContent = React.forwardRef((props, ref) => {
   );
 });
 
+PopupContent.propTypes = propTypes;
+PopupContent.defaultProps = defaultProps;
+
 export default PopupContent;
