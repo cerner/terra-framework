@@ -268,8 +268,8 @@ class DatePicker extends React.Component {
     // Handle blur only if focus has moved out of the entire date picker component.
     if (!this.datePickerContainer.current.contains(activeTarget)) {
       if (this.props.onBlur) {
-        const options = this.getMetadata();
-        this.props.onBlur(event, options);
+        const metadata = this.getMetadata();
+        this.props.onBlur(event, metadata);
       }
 
       this.containerHasFocus = false;
@@ -286,8 +286,8 @@ class DatePicker extends React.Component {
     });
 
     if (this.props.onChange) {
-      const options = this.getMetadata();
-      this.props.onChange(event, date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '', options);
+      const metadata = this.getMetadata();
+      this.props.onChange(event, date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '', metadata);
     }
   }
 
@@ -295,8 +295,8 @@ class DatePicker extends React.Component {
     this.dateValue = event.target.value;
 
     if (this.props.onChangeRaw) {
-      const options = this.getMetadata();
-      this.props.onChangeRaw(event, event.target.value, options);
+      const metadata = this.getMetadata();
+      this.props.onChangeRaw(event, event.target.value, metadata);
     }
   }
 
