@@ -203,14 +203,14 @@ class DatePicker extends React.Component {
       isValidDate = true;
     }
 
-    const options = {
+    const metadata = {
       iSO: iSOString,
       inputValue: this.dateValue,
       isCompleteValue: isCompleteDate,
       isValidValue: isValidDate,
     };
 
-    return options;
+    return metadata;
   }
 
   handleBreakpointChange(activeBreakpoint) {

@@ -242,7 +242,7 @@ class DateTimePicker extends React.Component {
       isAmbiguous = DateTimeUtils.checkAmbiguousTime(tempDateTime);
     }
 
-    const options = {
+    const metadata = {
       iSO: iSOString,
       inputValue,
       dateValue: this.dateValue || '',
@@ -252,7 +252,7 @@ class DateTimePicker extends React.Component {
       isValidValue: isValid,
     };
 
-    return options;
+    return metadata;
   }
 
   handleOnSelect(event, selectedDate) {
