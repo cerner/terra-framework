@@ -37,7 +37,6 @@
   "devDependencies": {
     "terra-application-header-layout": "^3.25.0",
     "terra-application-menu-layout": "^3.21.0",
-    "terra-doc-template": "^2.2.0",
     "terra-image": "^3.0.0"
   },
   "scripts": {

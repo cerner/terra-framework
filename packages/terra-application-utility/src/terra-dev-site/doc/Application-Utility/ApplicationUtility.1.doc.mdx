@@ -1,0 +1,109 @@
+import { Badge } from 'terra-application-utility/package.json?dev-site-package';
+
+import ApplicationHeaderUtilityPropsTable from 'terra-application-utility/src/ApplicationHeaderUtility.jsx?dev-site-props-table';
+import ApplicationHeaderUtilityExample from '../example/ApplicationHeaderUtilityExample?dev-site-example';
+import ApplicationMenuUtilityExample from '../example/ApplicationMenuUtilityExample?dev-site-example';
+import MenuUtilityMenuExample from '../example/MenuUtilityMenuExample?dev-site-example';
+
+<Badge />
+
+# Terra Application Utility
+
+The Utility is used to disclose a utility menu. There are two versions - a header version and menu version. These should be used with the corresponding `terra-application-header-layout` and `terra-application-menu-layout` components.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-application-utility`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Menu Items
+The menu items are generated from an array of menu item objects, which can contain up to eight attributes: `childKeys`, `content`, `contentLocation`, `isSelected`, `isSelectable`, `key`, `metaData`, and `title`.
+
+1. **childKeys** is an optional array of `keys` (strings). Enables a nested page to be rendered when this menu item is selected. For each menu item within the nested page, store it's `key` within this `childKeys` array.
+2. **content** is an optional object. Enables custom components to be rendered as *body* items. Avoid using `content` as a footer item - it will always render as a button.
+3. **contentLocation** is an optional string, one of `UtilityUtils.LOCATIONS.BODY` or `UtilityUtils.LOCATIONS.FOOTER`. Indicates if an item will render within the body or footer. Body items will render as list items, while footer items will render as buttons. Items will default to *body* if `contentLocation` is not provided.
+4. **isReadOnly** is an optional boolean. It removes interactivity and interactive styling from an item, and prevents menu closure when clicked directly.
+5. **isSelected** is an optional boolean. Enables a HOC to manage the selected states of each item.
+6. **isSelectable** is an optional boolean. Indicates if an item is selectable. A checkmark will toggle on item selection.
+7. **key** is **required**. Must be a unique value to differentiate itself from other items. `key` is returned, along with `metaData`, within the onChange.
+8. **metaData** is an optional object. Use this to store other data for this menu item, such as its parent `key` or another function. `metaData` is returned, along with `key`, within the onChange.
+9. **title** is an optional string. Sets the text to render for this item. If this menu item contains `childrenKeys`, `title` will be used as the header text for the nested page.
+
+Displayed below is the explicit structure of a menu item:
+
+```javascript
+PropTypes.shape({
+  /**
+   * Array containing the keys of each child item of this item.
+   */
+  childKeys: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * The component associated with this item.
+   */
+  content: PropTypes.object,
+  /**
+   * The location to place the item. One of UtilityUtils.LOCATIONS.BODY, UtilityUtils.LOCATIONS.FOOTER.
+   */
+  contentLocation: PropTypes.oneOf([LOCATIONS.BODY, LOCATIONS.FOOTER]),
+  /**
+   * Whether the item is read-only.
+   */
+  isReadOnly: PropTypes.bool,
+  /**
+   * Boolean indicating if the item is selected.
+   */
+  isSelected: PropTypes.bool,
+  /**
+   * Boolean indicating if the item is selectable.
+   */
+  isSelectable: PropTypes.bool,
+  /**
+   * The unique key associated with this item.
+   */
+  key: PropTypes.string.isRequired,
+  /**
+   * Optional meta data to be returned along with the item key within the onChange.
+   */
+  metaData: PropTypes.object,
+  /**
+   * The text associated with this item.
+   */
+  title: PropTypes.string,
+});
+```
+For reference, checkout the [sample menu item config](https://github.com/cerner/terra-framework/blob/master/packages/terra-application-utility/src/terra-dev-site/doc/common/MockConfig.js) used for the bottom `Utility Menu` example.
+
+## Component Features
+
+ * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+   * [babel-pollyfill](https://babeljs.io/docs/usage/polyfill) is needed needed to support usage of the Map object in IE.
+ * [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+ * [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+ * [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+ * [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+ * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#ltr--rtl-support)
+
+[View component source code](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-utility)
+
+## Examples
+<ApplicationHeaderUtilityExample title='Header: Utility' />
+<ApplicationMenuUtilityExample title='Menu: Utility' />
+<MenuUtilityMenuExample title='Utility Menu' />
+
+## Application Utility Props
+<ApplicationHeaderUtilityPropsTable />
+
+
