@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Update docs to use MDX syntax
 
+1.20.0 - (February 18, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme theming files
+
 1.19.0 - (February 11, 2020)
 ------------------
 ### Fixed
@@ -31,8 +36,6 @@ Unreleased
 ------------------
 ### Changed
 * Updated Jest snapshots.
-
-### Changed
 * Fixed axe issue for wrong aria-roles
 
 1.14.0 - (December 10, 2019)
