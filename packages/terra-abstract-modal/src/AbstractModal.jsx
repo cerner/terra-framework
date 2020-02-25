@@ -1,4 +1,4 @@
-import React, { createRef, useEffect } from 'react';
+import React, { createRef, useLayoutEffect, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import { KEY_ESCAPE } from 'keycode-js';
@@ -90,7 +90,7 @@ const AbstractModal = (props) => {
 
   const modalElementRef = createRef();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // eslint-disable-next-line no-prototype-builtins
     if (!Element.prototype.hasOwnProperty('inert')) {
       // IE10 throws an error if wicg-inert is imported too early, as wicg-inert tries to set an observer on document.body which may not exist on import
