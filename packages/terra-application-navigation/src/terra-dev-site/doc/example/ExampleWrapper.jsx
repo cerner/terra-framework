@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 
-/* eslint-disable */
 import React, {
   useState,
 } from 'react';
@@ -8,7 +8,7 @@ import styles from './ExampleWrapper.module.scss';
 
 const cx = classNames.bind(styles);
 
-const ExampleWrapper = ({ children }) => {
+const ExampleApplication = ({ children }) => {
   const [lastActionKey, setLastActionKey] = useState(null);
 
   function handleOnAction(key) {
@@ -25,4 +25,4 @@ const ExampleWrapper = ({ children }) => {
   );
 };
 
-export default ExampleWrapper;
+export default ExampleApplication;

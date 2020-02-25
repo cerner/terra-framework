@@ -1,17 +1,13 @@
-
-/* eslint-disable */
-import React, {
-  useState,
-} from 'react';
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
 import ApplicationBase from 'terra-application/lib/application-base';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
 import IconLightbulb from 'terra-icon/lib/icon/IconLightbulb';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
-import ApplicationNavigation from '../../../ApplicationNavigation';
 import ExampleWrapper from './ExampleWrapper';
-
+import ApplicationNavigation from '../../../ApplicationNavigation';
 
 const titleConfig = {
   title: 'Test Title',
@@ -142,27 +138,31 @@ const ExampleApplication = ({ onAction }) => {
   const [activeKey, setActiveKey] = useState(navigationItems[0].key);
 
   return (
-    <ExampleWrapper>
-      <ApplicationBase locale="en-US">
-        <ApplicationNavigation
-          titleConfig={titleConfig}
-          userConfig={userConfig}
-          extensionItems={extensionItems}
-          onSelectExtensionItem={onAction}
-          navigationItems={navigationItems}
-          activeNavigationItemKey={activeKey}
-          onSelectNavigationItem={key => setActiveKey(key)}
-          utilityItems={utilityItems}
-          onSelectUtilityItem={onAction}
-          onSelectSettings={() => onAction('settings')} // eslint-disable-line no-alert
-          onSelectHelp={() => onAction('help')} // eslint-disable-line no-alert
-          onSelectLogout={() => onAction('logout')} // eslint-disable-line no-alert
-          >
-          <Placeholder title={activeKey} />
-        </ApplicationNavigation>
-      </ApplicationBase>
-    </ExampleWrapper>
+    <ApplicationBase locale="en-US">
+      <ApplicationNavigation
+        titleConfig={titleConfig}
+        userConfig={userConfig}
+        extensionItems={extensionItems}
+        onSelectExtensionItem={onAction}
+        navigationItems={navigationItems}
+        activeNavigationItemKey={activeKey}
+        onSelectNavigationItem={key => setActiveKey(key)}
+        utilityItems={utilityItems}
+        onSelectUtilityItem={onAction}
+        onSelectSettings={() => onAction('settings')} // eslint-disable-line no-alert
+        onSelectHelp={() => onAction('help')} // eslint-disable-line no-alert
+        onSelectLogout={() => onAction('logout')} // eslint-disable-line no-alert
+      >
+        <Placeholder title={activeKey} />
+      </ApplicationNavigation>
+    </ApplicationBase>
   );
 };
 
-export default ExampleApplication;
+const ExampleNavigation = () => (
+  <ExampleWrapper>
+    <ExampleApplication />
+  </ExampleWrapper>
+);
+
+export default ExampleNavigation;
