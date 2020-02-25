@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const ThemeProviderThemes = {
@@ -17,35 +17,23 @@ const propTypes = {
   themeName: PropTypes.string,
 };
 
-class ThemeProvider extends React.Component {
-  componentDidMount() {
-    if (this.props.themeName) {
-      document.documentElement.classList.add(this.props.themeName);
+const ThemeProvider = ({
+  children,
+  themeName,
+}) => {
+  useEffect(() => {
+    if (themeName) {
+      document.documentElement.classList.add(themeName);
     }
-  }
+    return () => {
+      if (themeName) {
+        document.documentElement.classList.remove(themeName);
+      }
+    };
+  }, [themeName]);
 
-  componentDidUpdate(prevProps) {
-    if (this.props === prevProps) return;
-
-    if (prevProps.themeName) {
-      document.documentElement.classList.remove(prevProps.themeName);
-    }
-
-    if (this.props.themeName) {
-      document.documentElement.classList.add(this.props.themeName);
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.props.themeName) {
-      document.documentElement.classList.remove(this.props.themeName);
-    }
-  }
-
-  render() {
-    return this.props.children;
-  }
-}
+  return children;
+};
 
 ThemeProvider.propTypes = propTypes;
 ThemeProvider.Opts = {};

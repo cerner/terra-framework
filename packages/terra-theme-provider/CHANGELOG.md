@@ -5,7 +5,8 @@ Unreleased
 ----------
 ### Breaking Changes
 * Removed `isGlobalTheme` prop
-* Changed default behavior to always apply theme on the 'html' element instead of the DIV element wrapping the children.
+* Changed default behavior to always apply theme on the 'html' element instead of the DIV element wrapping the children
+* Converted "Theme Provider" into a functional component
 
 3.19.0 - (February 18, 2020)
 ------------------
