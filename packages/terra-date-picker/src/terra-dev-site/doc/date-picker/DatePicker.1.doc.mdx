@@ -30,6 +30,29 @@ An uncontrolled date picker is the default mode. In the uncontrolled mode, a def
 
 In a controlled date picker, the consumer is responsible for managing the state of the date value. The date picker does not manage any of state internally. This mode gives the consumer the flexibility to update the date value as needed. A controlled date picker can be composed by setting the `value` prop with an ISO date value. A handler is needed for both `onChange` and `onChangeRaw` to be notified when date selection or input change is made so the state can be updated. If both `value` and `selectedDate` are set, then `selectedDate` will have no effect. See the Controlled Component example below for implementation details.
 
+## Date Formats
+The date format used in the date-picker is determined by the locale. The following are the date format for the supported locales
+
+| Locale | Date Format |
+|-|-|
+| de | DD.MM.YYYY |
+| en | MM/DD/YYYY |
+| en-AU | DD/MM/YYYY |
+| en-CA | YYYY-MM-DD |
+| en-GB | DD/MM/YYYY |
+| en-US | MM/DD/YYYY |
+| es | DD/MM/YYYY |
+| es-ES | DD/MM/YYYY |
+| es-US | MM/DD/YYYY |
+| fr | DD/MM/YYYY |
+| fr-FR | DD/MM/YYYY |
+| nl | DD-MM-YYYY |
+| nl-BE | DD/MM/YYYY |
+| pt | DD/MM/YYYY |
+| pt-BR | DD/MM/YYYY |
+| sv | YYYY-MM-DD |
+| sv-SE | YYYY-MM-DD |
+
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
