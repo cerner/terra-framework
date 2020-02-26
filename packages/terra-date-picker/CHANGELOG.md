@@ -3,12 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Changed `onChange` and `onChangeRaw` callbacks to return the following metadata as part of the third parameter: iso, inputValue, isCompleteValue, isValidValue
 
 4.29.0 - (February 25, 2020)
 ------------------
 ### Changed
-* Changed `onChange` and `onChangeRaw` callbacks to return the following metadata as part of the third parameter: iso, inputValue, isCompleteValue, isValidValue
-* Update date-picker to use the the controlled responsive-element
+* Update date-picker to use the controlled responsive-element
 
 4.28.0 - (February 18, 2020)
 ------------------
