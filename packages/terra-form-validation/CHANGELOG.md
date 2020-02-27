@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Update docs to use mdx syntax.
 
+1.25.0 - (February 25, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 1.24.0 - (February 18, 2020)
 ------------------
 ### Added
