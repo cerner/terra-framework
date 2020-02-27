@@ -2,6 +2,8 @@ import { Badge } from 'terra-form-validation/package.json?dev-site-package';
 
 import ValidationAsynchronous from '../example/ValidationAsynchronous?dev-site-example';
 import ValidationParsing from '../example/ValidationParsing?dev-site-example';
+import NumericValidation from '../example/NumericValidation?dev-site-example';
+import TestFormValidation from '../example/MaxLengthInput?dev-site-example';
 
 <Badge />
 
@@ -13,9 +15,9 @@ import ValidationParsing from '../example/ValidationParsing?dev-site-example';
 
 There maybe times you need to do remote validations such as Unique Username checks. To best handle this scenario with wide browser support, an OnBlurValidation can be added to a component, where the function takes in two parameters: the value of the input, and a callback setError that sets the error status of the input.
 
-**Note**: If you need to run this in IE11, the [transform-async-to-generator](https://www.npmjs.com/package/babel-plugin-transform-async-to-generator) plugin needs to be added to your .babelrc file.
-
-**Note**: The promise can be any kind of promise, including calls with axios and other libraries.
+**Note**
+- If you need to run this in IE11, the [transform-async-to-generator](https://www.npmjs.com/package/babel-plugin-transform-async-to-generator) plugin needs to be added to your .babelrc file.
+- The promise can be any kind of promise, including calls with axios and other libraries.
 
 # Parsing
 
@@ -109,3 +111,5 @@ Checks given value for if it is a negative value. Returns true if it is nonnegat
 ## Examples 
 <ValidationAsynchronous title='Asynchronous Function' />
 <ValidationParsing title= 'Parsing Function' />
+<NumericValidation title='Numeric Validations' description="Making a Numeric Input With Minimum, Maximum, and Precision Validations"/>
+<TestFormValidation title='Max Length Input' description="Making an Input With a Maximum Length" />

@@ -1,10 +1,10 @@
 import { Badge } from 'terra-form-validation/package.json?dev-site-package';
 
 import DefaultFormValidation from '../example/DefaultFormValidation?dev-site-example';
-import FormSubmitRadioField from '../example/FormSubmitRadioField?dev-site-package-example';
-import FormSubmitCheckboxField from '../example/FormSubmitCheckboxField?dev-site-package-example';
-import FormSubmitDatePicker from '../example/FormSubmitDatePicker?dev-site-package-example';
-import FormSubmitDateInput from '../example/FormSubmitDateInput?dev-site-package-example';
+import FormSubmitRadioField from '../example/FormSubmitRadioField?dev-site-example';
+import FormSubmitCheckboxField from '../example/FormSubmitCheckboxField?dev-site-example';
+import FormSubmitDatePicker from '../example/FormSubmitDatePicker?dev-site-example';
+import FormSubmitDateInput from '../example/FormSubmitDateInput?dev-site-example';
 
 <Badge />
 
@@ -20,7 +20,8 @@ For CheckboxField and RadioField, it's recommended to use the field component pr
 
 In the Form render function, ensure that you have the errors prop set in the prop hash. Then set the error and isInvalid states based on the information from that hash.
 
-For each individual Radio or Checkbox, encapsulate that component inside of a react-final-form Field element, using the same name and validate function for each control you wish for the field to contain. **Note:** For having checkboxes that have multiple values, be sure to attach the [] to the name of the Field.
+For each individual Radio or Checkbox, encapsulate that component inside of a react-final-form Field element, using the same name and validate function for each control you wish for the field to contain.
+**Note:** For having checkboxes that have multiple values, be sure to attach the [] to the name of the Field.
 
 ## DatePicker
 
