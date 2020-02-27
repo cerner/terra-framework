@@ -8,7 +8,7 @@ The Terra Navigation Layout package includes a variety of components and utiliti
 This component renders secondary navigation items with react router.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-navigation-layout/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-navigation-layout/navigation-layout/navigation-layout)
 - [LICENSE](#license)
 
 ## Getting Started
