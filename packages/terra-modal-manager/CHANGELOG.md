@@ -5,8 +5,6 @@ Unreleased
 ----------
 ### Changed
 * Update jest snapshot & wdio screenshots
-* Updated the `AbstractModal` to stop storing the modalTrigger in state to prevent additional re-renders when `_ModalContent` is opened.
-* Updated implementation to use React hooks.
 
 6.27.0 - (February 25, 2020)
 ------------------
