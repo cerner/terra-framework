@@ -227,7 +227,7 @@ Unreleased
 * Major dependency version bump of terra-list
 
 ### Changed
-* Wrapped Collapsible Menu Items in <li>
+* Wrapped Collapsible Menu Items in `<li>`
 
 4.3.0 - (February 5, 2019)
 ------------------
