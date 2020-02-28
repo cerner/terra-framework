@@ -202,16 +202,6 @@
       }
     }
 
-    &--keyboard-selected {
-      background-color: $datepicker-selected-color;
-      border-radius: $datepicker-border-radius;
-      color: #fff;
-
-      &:hover {
-        background-color: $datepicker-selected-hover-color;
-      }
-    }
-
     &--in-selecting-range:not(&--in-range) {
       background-color: rgba($datepicker-selected-color, 0.5);
     }
@@ -487,8 +477,11 @@
     }
   }
 
-  .is-calendar-focused {
-    outline: var(--terra-date-picker-month-focus-outline, 2px dashed #000);
-    outline-offset: var(--terra-date-picker-month-focus-outline-offset, 0);
+  .is-calendar-focused,
+  .react-datepicker-day {
+    &--keyboard-focus {
+      outline: var(--terra-date-picker-day-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-date-picker-day-month-focus-outline-offset, 0);
+    }
   }
 }

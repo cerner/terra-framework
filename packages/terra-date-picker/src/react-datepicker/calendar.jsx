@@ -1,5 +1,6 @@
 import { FormattedMessage, intlShape } from 'react-intl';
 import Button from 'terra-button';
+import moment from 'moment';
 import * as KeyCode from 'keycode-js';
 import YearDropdown from './year_dropdown'
 import MonthDropdown from './month_dropdown'
@@ -224,14 +225,19 @@ export default class Calendar extends React.Component {
     /**
      * A callback function to execute when a date picker is open.
      */
-    setOpen: PropTypes.func
+    setOpen: PropTypes.func,
+    /**
+     * Whether or not calendar is opened via keyboard
+     */
+    calendarOpenedViaKeyboard: PropTypes.bool,
   }
 
   static get defaultProps () {
     return {
       onDropdownFocus: () => {},
       monthsShown: 1,
-      forceShowMonthNavigation: false
+      forceShowMonthNavigation: false,
+      calendarOpenedViaKeyboard: false
     }
   }
 
@@ -363,16 +369,16 @@ export default class Calendar extends React.Component {
 
   increaseMonth = () => {
     this.setState({
-      date: addMonths(cloneDate(this.state.date), 1)
+      date: addMonths(cloneDate(this.state.date), 1).startOf('month')
     }, () => this.handleMonthChange(this.state.date))
-    this.props.setPreSelection(addMonths(cloneDate(this.state.date), 1));
+    this.props.setPreSelection(addMonths(cloneDate(this.state.date), 1).startOf('month'));
   }
 
   decreaseMonth = () => {
     this.setState({
-      date: subtractMonths(cloneDate(this.state.date), 1)
+      date: subtractMonths(cloneDate(this.state.date), 1).startOf('month')
     }, () => this.handleMonthChange(this.state.date))
-    this.props.setPreSelection(subtractMonths(cloneDate(this.state.date), 1));
+    this.props.setPreSelection(subtractMonths(cloneDate(this.state.date), 1).startOf('month'));
   }
 
   handleDayClick = (day, event) => this.props.onSelect(day, event)
@@ -397,16 +403,16 @@ export default class Calendar extends React.Component {
 
   changeYear = (year) => {
     this.setState({
-      date: setYear(cloneDate(this.state.date), year)
+      date: setYear(cloneDate(this.state.date), year).startOf('month')
     })
-    this.props.setPreSelection(setYear(cloneDate(this.state.date), year));
+    this.props.setPreSelection(setYear(cloneDate(this.state.date), year).startOf('month'));
   }
 
   changeMonth = (month) => {
     this.setState({
-      date: setMonth(cloneDate(this.state.date), month)
+      date: setMonth(cloneDate(this.state.date), month).startOf('month')
     }, () => this.handleMonthChange(this.state.date))
-    this.props.setPreSelection(setMonth(cloneDate(this.state.date), month));
+    this.props.setPreSelection(setMonth(cloneDate(this.state.date), month).startOf('month'));
   }
 
   header = (date = this.state.date) => {
@@ -572,7 +578,7 @@ export default class Calendar extends React.Component {
         <div key={monthKey} onClick={this.handleOnClick} className={cx('react-datepicker-month-container')}>
           <Month
             day={monthDate}
-            isCalendarKeyboardFocused={this.state.calendarIsKeyboardFocused}
+            isCalendarKeyboardFocused={this.state.calendarIsKeyboardFocused || this.props.calendarOpenedViaKeyboard}
             dayClassName={this.props.dayClassName}
             onMonthBlur={this.handleMonthBlur}
             onDayClick={this.handleDayClick}

@@ -84,7 +84,11 @@ class Day extends React.Component {
     /**
      * Difference between utc and local time.
      */
-    utcOffset: PropTypes.number
+    utcOffset: PropTypes.number,
+    /**
+     * Whether or not calendar is opened via keyboard
+     */
+    isCalendarKeyboardFocused: PropTypes.bool,
   }
 
   handleClick = (event) => {
@@ -203,7 +207,6 @@ class Day extends React.Component {
     return ['react-datepicker-day', dayClassName, 'react-datepicker-day--' + getDayOfWeekCode(this.props.day), {
       'react-datepicker-day--disabled': this.isDisabled(),
       'react-datepicker-day--selected': this.isSameDay(this.props.selected),
-      'react-datepicker-day--keyboard-selected': this.isKeyboardSelected(),
       'react-datepicker-day--range-start': this.isRangeStart(),
       'react-datepicker-day--range-end': this.isRangeEnd(),
       'react-datepicker-day--in-range': this.isInRange(),
@@ -212,7 +215,8 @@ class Day extends React.Component {
       'react-datepicker-day--selecting-range-end': this.isSelectingRangeEnd(),
       'react-datepicker-day--today': this.isSameDay(now(this.props.utcOffset)),
       'react-datepicker-day--weekend': this.isWeekend(),
-      'react-datepicker-day--outside-month': this.isOutsideMonth()
+      'react-datepicker-day--outside-month': this.isOutsideMonth(),
+      'is-calendar-focused--keyboard-focus': this.props.isCalendarKeyboardFocused && this.isKeyboardSelected(),
     }, this.getHighLightedClass('react-datepicker-day--highlighted')]
   }
 

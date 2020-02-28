@@ -8,6 +8,7 @@ import Popup from 'terra-popup';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import moment from 'moment';
 import PopupContainer from './PopupContainer';
 import {
   newDate,
@@ -394,6 +395,7 @@ class DatePicker extends React.Component {
   }
 
   handleOnRequestClose() {
+    this.setState({ calendarOpenedViaKeyboard: false })
     this.setOpen(false);
   }
 
@@ -413,6 +415,7 @@ class DatePicker extends React.Component {
         : maxDate && isAfter(defaultPreSelection, maxDate) ? maxDate
           : defaultPreSelection
     return {
+      calendarOpenedViaKeyboard: false,
       open: this.props.startOpen || false,
       preventFocus: false,
       preSelection: this.props.selected ? newDate(this.props.selected) : boundedPreSelection,
@@ -547,7 +550,6 @@ class DatePicker extends React.Component {
       this.setState({
         preSelection: date
       })
-
       this.updateAriaLiveStatus(getLocalizedDateForScreenReader(date, this.props));
     }
   }
@@ -562,6 +564,12 @@ class DatePicker extends React.Component {
     }
   }
 
+  onInputKeyDown = (event) => {
+    if(event.key === 'Enter') {
+      this.setState({ calendarOpenedViaKeyboard: true })
+
+    }
+  }
   handleCalendarKeyDown = (event) => {
     const keyboardNavKeys = [
       'ArrowLeft',
@@ -690,6 +698,7 @@ class DatePicker extends React.Component {
         onRequestClose={this.handleOnRequestClose}
         handleCalendarKeyDown={this.handleCalendarKeyDown}
         setPreSelection={this.setPreSelection}
+        calendarOpenedViaKeyboard={this.state.calendarOpenedViaKeyboard}
       >
         {this.props.children}
         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" refCallback={(ref) => { this.visuallyHiddenText = ref; }} />
@@ -741,6 +750,7 @@ class DatePicker extends React.Component {
         onRequestClose={this.handleOnRequestClose}
         handleCalendarKeyDown={this.handleCalendarKeyDown}
         setPreSelection={this.setPreSelection}
+        calendarOpenedViaKeyboard={this.state.calendarOpenedViaKeyboard}
       >
         {this.props.children}
         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" refCallback={(ref) => { this.visuallyHiddenText = ref; }} />
