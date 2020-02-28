@@ -1,7 +1,7 @@
 {
   "name": "terra-application-navigation",
   "main": "lib/ApplicationNavigation.js",
-  "version": "1.19.0",
+  "version": "1.21.0",
   "description": "The Terra Application Navigation is a responsive, themeable layout for building applications. ApplicationNavigation is comprised of selectable navigation and utility elements with selection callbacks.",
   "repository": {
     "type": "git",
@@ -47,7 +47,7 @@
     "terra-icon": "^3.11.0",
     "terra-image": "^3.0.0",
     "terra-overlay": "^3.0.0",
-    "terra-popup": "^6.25.0",
+    "terra-popup": "^6.27.0",
     "terra-visually-hidden-text": "^2.0.0"
   },
   "scripts": {
@@ -58,6 +58,9 @@
     "precompile": "rm -rf lib",
     "test": "npm run jest && npm run wdio",
     "jest": "jest --config ../../jestconfig.js",
-    "wdio": "cd ../.. && npx wdio ./packages/$npm_package_name/wdio.conf.js"
+    "wdio-default": "cd ../.. && npx wdio ./packages/$npm_package_name/wdio.conf.js",
+    "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio ./packages/$npm_package_name/clinical-lowlight-wdio.conf.js",
+    "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio ./packages/$npm_package_name/wdio.conf.js",
+    "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   }
 }

@@ -3,6 +3,17 @@ Changelog
 
 Unreleased
 ----------
+
+4.29.0 - (February 25, 2020)
+------------------
+### Changed
+* Update date-picker to use the the controlled responsive-element
+
+4.28.0 - (February 18, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme theming files
+
 ### Changed
 * Fixed issue due to two dates getting selected simultaneously.
 * Update docs to use mdx syntax.
@@ -35,7 +46,6 @@ Unreleased
 
 ### Changed
 * Updated color for selected dates and removed ignore axe rules.
-* Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 4.22.0 - (November 26, 2019)
 --------
