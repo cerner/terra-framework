@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated the `AbstractModal` to stop storing the modalTrigger in state to prevent additional re-renders when `_ModalContent` is opened.
+* Updated implementation to use React hooks.
 
 3.21.0 - (February 18, 2020)
 ------------------
@@ -11,8 +14,6 @@ Unreleased
 
 ### Changed
 * Update dependency `wicg-inert` from `v2` to `v3`.
-* Updated the `AbstractModal` to stop storing the modalTrigger in state to prevent additional re-renders when `_ModalContent` is opened.
-* Updated implementation to use React hooks.
 
 3.20.0 - (January 28, 2020)
 ------------------
