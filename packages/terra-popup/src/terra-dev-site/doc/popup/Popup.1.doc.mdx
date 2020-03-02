@@ -1,3 +1,16 @@
+import { Badge } from 'terra-popup/package.json?dev-site-package';
+
+import PopupPropsTable from 'terra-popup/src/Popup?dev-site-props-table';
+
+import PopupStandard from '../example/PopupStandard?dev-site-example';
+import PopupBounded from '../example/PopupBounded?dev-site-example';
+import PopupNoHeader from '../example/PopupNoHeader?dev-site-example';
+import PopupWithArrow from '../example/PopupWithArrow?dev-site-example';
+import PopupDimensions from '../example/PopupDimensions?dev-site-example';
+import PopupInsideModal from '../example/PopupInsideModal?dev-site-example';
+import PopupAttachmentBehavior from '../example/PopupAttachmentBehavior?dev-site-example';
+import PopupAttachments from '../example/PopupAttachments?dev-site-example';
+
 # Terra Popup
 
 The Terra Popup is higher order component that launches [terra-hookshot][1] positioned content with the ability to display a dynamic arrow.
@@ -88,3 +101,18 @@ As stateless react elements do not return a ref, but may be desired targets for 
 When setting either the contentHeight or contentWidth to 'auto' the popup will layout to the size of the content. If the content is larger than the set bounding area it will be resized to fit the bounding area, and the content will be decorated with the props isHeightBounded/isWidthBounded in order to allow the content to respond to the resized state. Automatic sized popups will reposition if the inner content resizes, though animated size changes are heavily discouraged and not fully supported; as performance is severly impacted even in the best conditions with capable hardware.
 
 [1]: https://engineering.cerner.com/terra-ui/#/components/terra-hookshot/hookshot/hookshot
+
+[View Component Source Code](https://github.com/cerner/terra-framework/tree/master/packages/terra-popup)
+
+## Examples 
+<PopupStandard title='Popup Standard Implementation' />
+<PopupWithArrow title='Popup Display With Arrow'/>
+<PopupAttachmentBehavior title='Popup Attachment Behavior' />
+<PopupAttachments title='Popup Attachments' />
+<PopupDimensions title='Popup Size Variants' />
+<PopupBounded title='Popup Bounded' />
+<PopupNoHeader title='Popup Bounded With No Header' />
+<PopupInsideModal title='Popup Inside Modal' />
+
+## Popup Props Table 
+<PopupPropsTable />
