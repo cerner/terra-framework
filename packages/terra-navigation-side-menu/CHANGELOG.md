@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated wdio screenshots
 
 2.26.0 - (February 18, 2020)
 ------------------
