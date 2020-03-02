@@ -39,7 +39,6 @@
   "devDependencies": {
     "terra-breakpoints": "^2.19.0",
     "terra-disclosure-manager": "^4.32.0",
-    "terra-doc-template": "^2.2.0",
     "terra-icon": "^3.1.0",
     "terra-modal-manager": "^6.27.0",
     "terra-popup": "^6.27.0"
