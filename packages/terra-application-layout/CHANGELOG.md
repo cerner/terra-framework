@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated wdio screenshots
 
 5.28.0 - (February 25, 2020)
 ------------------
