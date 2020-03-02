@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated wdio screenshots
+
+3.29.0 - (February 25, 2020)
+------------------
+### Changed
+* Minor dependency version bump
 
 3.28.0 - (February 18, 2020)
 ------------------

@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated wdio screenshots
+
+6.27.0 - (February 25, 2020)
+------------------
+### Changed
+* Minor dependency version bump
 
 6.26.0 - (February 18, 2020)
 ------------------
