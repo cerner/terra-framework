@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Applied new border styles for keyboard navigation.
+* Changed pre-selected date to 1st of month when changing year/month.
 
 4.29.0 - (February 25, 2020)
 ------------------
@@ -15,7 +18,6 @@ Unreleased
 * Added clinical-lowlight-theme theming files
 
 ### Changed
-* Fixed issue due to two dates getting selected simultaneously.
 * Update docs to use mdx syntax.
 
 4.27.0 - (February 4, 2020)
