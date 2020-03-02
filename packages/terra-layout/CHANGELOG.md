@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update docs to use MDX syntax.
 
 4.20.0 - (February 18, 2020)
 ------------------
@@ -167,7 +169,7 @@ Unreleased
 2.22.0 - (January 2, 2019)
 ------------------
 ### Added
-* Shim for <main> tag IE compatibility added to _LayoutSlidePanel
+* Shim for `<main>` tag IE compatibility added to _LayoutSlidePanel
 
 2.21.0 - (December 5, 2018)
 ------------------
