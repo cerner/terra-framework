@@ -1,3 +1,9 @@
+import { Badge } from 'terra-navigation-prompt/package.json?dev-site-package';
+
+import ImplementationGuidePart1 from '../examples/ImplementationGuidePart1';
+
+<Badge />
+
 # Terra Navigation Prompt - Implementation Guide
 
 ## Part 1 - Implementing the NavigationPrompt and NavigationPromptCheckpoint
@@ -94,3 +100,6 @@ The FormSwitcher gets a ref to the NavigationPromptCheckpoint; this example uses
 The `resolvePrompts` function is an instance function of the NavigationPromptCheckpoint. When `resolvePrompts` is called, the NavigationPromptCheckpoint will render a NotificationDialog and return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises). The Promise will be resolved immediately if no NavigationPrompts have been rendered below the checkpoint, so we don't need to check for the presence of any NavigationPrompts before we call it. The Promise will also resolve if a user presses the NotificationDialog's accept action button. The Promise will reject if a user presses the NotificationDialog's reject action button. In our example, we only update the FormSwitcher's state when the Promise is resolved.
 
 With those changes in place, the FormSwitcher will prompt the user for confirmation when they attempt to switch away from Forms with unsaved data.
+
+## Example 
+<ImplementationGuidePart1 title='Part 1 - Implementing the NavigationPrompt and NavigationPromptCheckpoint' />
