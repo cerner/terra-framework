@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update docs to use MDX syntax.
 
 6.27.0 - (February 25, 2020)
 ------------------
@@ -230,7 +232,7 @@ Unreleased
 * Major dependency version bump of terra-list
 
 ### Changed
-* Wrapped Collapsible Menu Items in <li>
+* Wrapped Collapsible Menu Items in `<li>`
 
 4.3.0 - (February 5, 2019)
 ------------------
