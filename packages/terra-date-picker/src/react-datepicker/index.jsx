@@ -601,34 +601,42 @@ class DatePicker extends React.Component {
       let newSelection
       switch (eventKey) {
         case 'ArrowLeft':
+          this.setState({ calendarOpenedViaKeyboard: true })
           event.preventDefault()
           newSelection = subtractDays(copy, 1)
           break
         case 'ArrowRight':
+          this.setState({ calendarOpenedViaKeyboard: true })
           event.preventDefault()
           newSelection = addDays(copy, 1)
           break
         case 'ArrowUp':
+          this.setState({ calendarOpenedViaKeyboard: true })
           event.preventDefault()
           newSelection = subtractWeeks(copy, 1)
           break
         case 'ArrowDown':
+          this.setState({ calendarOpenedViaKeyboard: true })
           event.preventDefault()
           newSelection = addWeeks(copy, 1)
           break
         case 'PageUp':
+          this.setState({ calendarOpenedViaKeyboard: true })  
           event.preventDefault()
           newSelection = subtractMonths(copy, 1)
           break
         case 'PageDown':
+          this.setState({ calendarOpenedViaKeyboard: true })
           event.preventDefault()
           newSelection = addMonths(copy, 1)
           break
         case 'Home':
+          this.setState({ calendarOpenedViaKeyboard: true })
           event.preventDefault()
           newSelection = subtractYears(copy, 1)
           break
         case 'End':
+          this.setState({ calendarOpenedViaKeyboard: true })
           event.preventDefault()
           newSelection = addYears(copy, 1)
           break

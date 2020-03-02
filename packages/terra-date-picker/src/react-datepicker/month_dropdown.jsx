@@ -51,7 +51,7 @@ export default class MonthDropdown extends React.Component {
   renderSelectMode = monthNames => (
     <FormattedMessage id="Terra.datePicker.monthLabel">
       {label => (
-        <select aria-label={label} value={this.props.month} className={cx('react-datepicker-month-select"')} onChange={e => this.onChange(e.target.value)}>
+        <select aria-label={label} value={this.props.month} className={cx('react-datepicker-month-select')} onChange={e => this.onChange(e.target.value)}>
           {this.renderSelectOptions(monthNames)}
         </select>
       )}

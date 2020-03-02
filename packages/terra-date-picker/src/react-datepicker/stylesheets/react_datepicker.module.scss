@@ -358,7 +358,8 @@
 
     &:focus {
       background-color: #e4e4e4;
-      outline: none;
+      outline: 2px inset #000;
+      outline-offset: 0;
     }
   }
 
@@ -435,6 +436,11 @@
       height: 1.4285rem;
       width: 1.4285rem;
     }
+
+    &:focus {
+      outline: 2px dashed #000;
+      outline-offset: 0;
+    }
   }
 
   .prev-month-icon,
@@ -479,9 +485,18 @@
 
   .is-calendar-focused,
   .react-datepicker-day {
-    &--keyboard-focus {
+    &--keyboard-focus,
+    &--selected {
       outline: var(--terra-date-picker-day-focus-outline, 2px dashed #000);
       outline-offset: var(--terra-date-picker-day-month-focus-outline-offset, 0);
+    }
+  }
+
+  .react-datepicker-month-select,
+  .react-datepicker-year-select {
+    &:focus {
+      outline: 2px dashed #000;
+      outline-offset: 0;
     }
   }
 }
