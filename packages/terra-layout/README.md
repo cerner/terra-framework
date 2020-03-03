@@ -6,7 +6,7 @@ The Layout component provides a responsive starting point for the positioning of
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-layout/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-layout/layout/layout)
 - [LICENSE](#license)
 
 ## Getting Started
