@@ -79,6 +79,11 @@ const propTypes = {
    * Ref callback function to be applied to content container.
    */
   refCallback: PropTypes.func,
+  /**
+   * Header Title for main-menu(first-tier).
+   * Header Title will only be visible if the main-menu contains at least one sub-menu.
+   */
+  headerTitle: PropTypes.string,
 };
 
 const defaultProps = {
@@ -87,6 +92,7 @@ const defaultProps = {
   isWidthBounded: false,
   isHeightBounded: false,
   isHidden: false,
+  headerTitle: '',
 };
 
 const childContextTypes = {
@@ -248,32 +254,36 @@ class MenuContent extends React.Component {
     }
 
     const backIcon = <IconLeft />;
-    const backButton = this.props.index > 0 ? (
-      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-      <div
-        role="button"
-        onClick={this.props.onRequestBack}
-        onKeyDown={this.onKeyDownBackButton}
-        tabIndex="0"
-        aria-label={backBtnText}
-      >
-        <Arrange
-          align="center"
-          fitStart={(
+    let header = <div />;
+
+    if (this.props.index > 0) {
+      header = (
+        <div
+          role="button"
+          onClick={this.props.onRequestBack}
+          onKeyDown={this.onKeyDownBackButton}
+          tabIndex="0"
+          aria-label={backBtnText}
+        >
+          <div className={cx('header-container')}>
             <div className={cx('header-button')}>
               {backIcon}
             </div>
-          )}
-          fill={<h1 className={cx('header-title')}>{this.props.title}</h1>}
-        />
-      </div>
-    ) : <div />;
+            <h1 className={cx('header-title')}>{this.props.title}</h1>
+          </div>
+        </div>
+      );
+    } else if (this.props.headerTitle.length > 0) {
+      header = (
+        <h1 className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
+      );
+    }
 
     return (
       <Arrange
         className={cx('header')}
         fitEnd={closeButton}
-        fill={backButton}
+        fill={header}
         align="center"
       />
     );
@@ -281,6 +291,7 @@ class MenuContent extends React.Component {
 
   render() {
     let index = -1;
+    let shouldDisplayMainMenuHeader;
     const items = this.props.children ? [] : undefined;
     React.Children.map(this.props.children, (item) => {
       const onClick = this.wrapOnClick(item);
@@ -297,7 +308,12 @@ class MenuContent extends React.Component {
           onKeyDown,
           isActive,
         });
-      // If the child has children then it is an item group, so iterate through it's children
+        // If the menu is first-tier and is provided with `headerTitle` prop, terra-menu should render a header.
+        // Also the first-tier menu to have a header should possess at least one menu-item that drills-in to a sub-menu with sub-menu items.
+        if (this.props.headerTitle.length > 0 && item.props.subMenuItems && item.props.subMenuItems.length > 0) {
+          shouldDisplayMainMenuHeader = true;
+        }
+        // If the child has children then it is an item group, so iterate through it's children
       } else if (item.props.children) {
         const children = item.props.children ? [] : undefined;
         React.Children.forEach(item.props.children, (child) => {
@@ -333,7 +349,7 @@ class MenuContent extends React.Component {
     ]);
 
     let header;
-    if (isFullScreen || isSubMenu) {
+    if (isFullScreen || isSubMenu || shouldDisplayMainMenuHeader) {
       header = this.buildHeader(isFullScreen);
     }
     const contentHeight = this.props.isHeightBounded ? '100%' : this.props.fixedHeight;
