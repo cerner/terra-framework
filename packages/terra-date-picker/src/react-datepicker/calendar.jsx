@@ -227,9 +227,13 @@ export default class Calendar extends React.Component {
      */
     setOpen: PropTypes.func,
     /**
-     * Whether or not calendar is opened via keyboard
+     * Whether or not calendar is navigated by keyboard
      */
-    calendarOpenedViaKeyboard: PropTypes.bool,
+    isCalendarKeyboardFocused: PropTypes.bool,
+    /**
+     * Whether or not calendar is opened by keyboard
+     */
+    isCalendarOpenedViaKeyboard: PropTypes.bool,
   }
 
   static get defaultProps () {
@@ -237,16 +241,17 @@ export default class Calendar extends React.Component {
       onDropdownFocus: () => {},
       monthsShown: 1,
       forceShowMonthNavigation: false,
-      calendarOpenedViaKeyboard: false
+      isCalendarKeyboardFocused: false
     }
   }
 
   constructor (props) {
     super(props)
     this.state = {
+      isMonthChanged: false,
       date: this.localizeDate(this.getDateInView()),
       selectingDate: null,
-      calendarIsKeyboardFocused: false,
+      calendarIsKeyboardFocused: this.props.isCalendarKeyboardFocused,
     }
 
     this.todayBtnRef = React.createRef();
@@ -320,7 +325,13 @@ export default class Calendar extends React.Component {
   }
 
   handlePreviousMonthBtnKeyDown = (event) => {
-    if (event.shiftKey && event.keyCode === KeyCode.KEY_TAB) {
+    if (event.shiftKey && event.keyCode === KeyCode.KEY_TAB || event.keyCode === KeyCode.KEY_RETURN) {
+      this.setState({ calendarIsKeyboardFocused: true })
+    }
+  }
+
+  handleNextMonthBtnKeyDown = (event) => {
+    if (event.keyCode === KeyCode.KEY_RETURN) {
       this.setState({ calendarIsKeyboardFocused: true })
     }
   }
@@ -369,6 +380,7 @@ export default class Calendar extends React.Component {
 
   increaseMonth = () => {
     this.setState({
+      isMonthChanged: true,
       date: addMonths(cloneDate(this.state.date), 1).startOf('month')
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(addMonths(cloneDate(this.state.date), 1).startOf('month'));
@@ -376,6 +388,7 @@ export default class Calendar extends React.Component {
 
   decreaseMonth = () => {
     this.setState({
+      isMonthChanged: true,
       date: subtractMonths(cloneDate(this.state.date), 1).startOf('month')
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(subtractMonths(cloneDate(this.state.date), 1).startOf('month'));
@@ -403,6 +416,7 @@ export default class Calendar extends React.Component {
 
   changeYear = (year) => {
     this.setState({
+      isMonthChanged: true,
       date: setYear(cloneDate(this.state.date), year).startOf('month')
     })
     this.props.setPreSelection(setYear(cloneDate(this.state.date), year).startOf('month'));
@@ -410,6 +424,7 @@ export default class Calendar extends React.Component {
 
   changeMonth = (month) => {
     this.setState({
+      isMonthChanged: true,
       date: setMonth(cloneDate(this.state.date), month).startOf('month')
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(setMonth(cloneDate(this.state.date), month).startOf('month'));
@@ -475,6 +490,7 @@ export default class Calendar extends React.Component {
             className={cx('react-datepicker-navigation--next')}
             aria-label={text}
             onClick={this.increaseMonth}
+            onKeyDown={this.handleNextMonthBtnKeyDown}
             ref={this.nextMonthBtnRef}
           >
             <span className={cx('next-month-icon')} />
@@ -568,8 +584,14 @@ export default class Calendar extends React.Component {
       </FormattedMessage>
     )
   }
-
   renderMonths = () => {
+    let keyboardFocus= false;
+    if(this.props.isCalendarOpenedViaKeyboard || this.props.isCalendarKeyboardFocused) {
+      keyboardFocus=true;
+    }
+    if(this.state.isMonthChanged && !this.state.calendarIsKeyboardFocused) {
+      keyboardFocus= false;
+    }
     var monthList = []
     for (var i = 0; i < this.props.monthsShown; ++i) {
       var monthDate = addMonths(cloneDate(this.state.date), i)
@@ -578,7 +600,7 @@ export default class Calendar extends React.Component {
         <div key={monthKey} onClick={this.handleOnClick} className={cx('react-datepicker-month-container')}>
           <Month
             day={monthDate}
-            isCalendarKeyboardFocused={this.state.calendarIsKeyboardFocused || this.props.calendarOpenedViaKeyboard}
+            isCalendarKeyboardFocused={keyboardFocus}
             dayClassName={this.props.dayClassName}
             onMonthBlur={this.handleMonthBlur}
             onDayClick={this.handleDayClick}

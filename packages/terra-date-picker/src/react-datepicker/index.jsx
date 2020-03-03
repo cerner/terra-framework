@@ -395,7 +395,7 @@ class DatePicker extends React.Component {
   }
 
   handleOnRequestClose() {
-    this.setState({ calendarOpenedViaKeyboard: false })
+    this.setState({ isCalendarKeyboardFocused: false })
     this.setOpen(false);
   }
 
@@ -415,7 +415,8 @@ class DatePicker extends React.Component {
         : maxDate && isAfter(defaultPreSelection, maxDate) ? maxDate
           : defaultPreSelection
     return {
-      calendarOpenedViaKeyboard: false,
+      isCalendarOpenedViaKeyboard: false,
+      isCalendarKeyboardFocused: false,
       open: this.props.startOpen || false,
       preventFocus: false,
       preSelection: this.props.selected ? newDate(this.props.selected) : boundedPreSelection,
@@ -566,7 +567,7 @@ class DatePicker extends React.Component {
 
   onInputKeyDown = (event) => {
     if(event.key === 'Enter') {
-      this.setState({ calendarOpenedViaKeyboard: true })
+      this.setState({ isCalendarOpenedViaKeyboard: true })
 
     }
   }
@@ -601,42 +602,42 @@ class DatePicker extends React.Component {
       let newSelection
       switch (eventKey) {
         case 'ArrowLeft':
-          this.setState({ calendarOpenedViaKeyboard: true })
+          this.setState({ isCalendarKeyboardFocused: true })
           event.preventDefault()
           newSelection = subtractDays(copy, 1)
           break
         case 'ArrowRight':
-          this.setState({ calendarOpenedViaKeyboard: true })
+          this.setState({ isCalendarKeyboardFocused: true })
           event.preventDefault()
           newSelection = addDays(copy, 1)
           break
         case 'ArrowUp':
-          this.setState({ calendarOpenedViaKeyboard: true })
+          this.setState({ isCalendarKeyboardFocused: true })
           event.preventDefault()
           newSelection = subtractWeeks(copy, 1)
           break
         case 'ArrowDown':
-          this.setState({ calendarOpenedViaKeyboard: true })
+          this.setState({ isCalendarKeyboardFocused: true })
           event.preventDefault()
           newSelection = addWeeks(copy, 1)
           break
         case 'PageUp':
-          this.setState({ calendarOpenedViaKeyboard: true })  
+          this.setState({ isCalendarKeyboardFocused: true })  
           event.preventDefault()
           newSelection = subtractMonths(copy, 1)
           break
         case 'PageDown':
-          this.setState({ calendarOpenedViaKeyboard: true })
+          this.setState({ isCalendarKeyboardFocused: true })
           event.preventDefault()
           newSelection = addMonths(copy, 1)
           break
         case 'Home':
-          this.setState({ calendarOpenedViaKeyboard: true })
+          this.setState({ isCalendarKeyboardFocused: true })
           event.preventDefault()
           newSelection = subtractYears(copy, 1)
           break
         case 'End':
-          this.setState({ calendarOpenedViaKeyboard: true })
+          this.setState({ isCalendarKeyboardFocused: true })
           event.preventDefault()
           newSelection = addYears(copy, 1)
           break
@@ -706,7 +707,8 @@ class DatePicker extends React.Component {
         onRequestClose={this.handleOnRequestClose}
         handleCalendarKeyDown={this.handleCalendarKeyDown}
         setPreSelection={this.setPreSelection}
-        calendarOpenedViaKeyboard={this.state.calendarOpenedViaKeyboard}
+        isCalendarKeyboardFocused={this.state.isCalendarKeyboardFocused}
+        isCalendarOpenedViaKeyboard={this.state.isCalendarOpenedViaKeyboard}
       >
         {this.props.children}
         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" refCallback={(ref) => { this.visuallyHiddenText = ref; }} />
@@ -758,7 +760,8 @@ class DatePicker extends React.Component {
         onRequestClose={this.handleOnRequestClose}
         handleCalendarKeyDown={this.handleCalendarKeyDown}
         setPreSelection={this.setPreSelection}
-        calendarOpenedViaKeyboard={this.state.calendarOpenedViaKeyboard}
+        isCalendarKeyboardFocused={this.state.isCalendarKeyboardFocused}
+        isCalendarOpenedViaKeyboard={this.state.isCalendarOpenedViaKeyboard}
       >
         {this.props.children}
         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" refCallback={(ref) => { this.visuallyHiddenText = ref; }} />

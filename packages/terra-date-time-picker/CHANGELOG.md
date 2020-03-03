@@ -4,9 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
-* Updated wdio screenshots due to changes in react-datepicker colors.
-
-4.27.0 - (February 4, 2020)
+* Updated wdio screenshots due to focus style changes in react-datepicker.
 
 4.29.0 - (February 25, 2020)
 ------------------
