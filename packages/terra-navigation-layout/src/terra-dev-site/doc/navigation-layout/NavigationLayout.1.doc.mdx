@@ -1,3 +1,10 @@
+import { Badge } from 'terra-navigation-layout/package.json?dev-site-package';
+
+import NavigationLayoutPropsTable from 'terra-navigation-layout/src/NavigationLayout?dev-site-props-table';
+import NavigationLayoutStandard from '../example/NavigationLayoutStandard?dev-site-example';
+
+<Badge />
+
 # Terra Navigation Layout
 
 The `NavigationLayout` is a configuration-based, `react-router`-driven layout. It wraps the `Layout` component provided by `terra-layout` and injects routing-based components into its various component regions. If navigation is not desired, the `Layout` component can and should be used directly. However, the NavigationLayout does support very basic navigation workflows with minimal configuration required.
@@ -120,3 +127,17 @@ This component requires the following peer dependencies be installed in your app
 | react-router-dom | ^5.0.0 |
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+## Usage
+
+``` js
+import NavigationLayout from 'terra-navigation-layout'
+```
+
+[View Component Source Code](https://github.com/cerner/terra-framework/tree/master/packages/terra-navigation-layout)
+
+## Examples 
+<NavigationLayoutStandard title='Example Navigation Layout' />
+
+## Navigation Layout Props Table
+<NavigationLayoutPropsTable />

@@ -4,6 +4,7 @@ exports[`Menu should render a default component 1`] = `
 <div>
   <Menu
     contentWidth="240"
+    headerTitle=""
     isArrowDisplayed={false}
     isOpen={true}
     onRequestClose={[Function]}
