@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+6.28.0 - (March 3, 2020)
+------------------
 ### Changed
 * Update jest snapshot & wdio screenshots
 
