@@ -118,6 +118,20 @@ Terra.describeViewports('Menu', ['medium'], () => {
     });
   });
 
+  describe('Menu and submenu with long header title', () => {
+    it('Menu with submenu and long header title', () => {
+      browser.url('/#/raw/tests/terra-menu/menu/menu/sub-menu-long-title');
+      browser.click('#sub-menu-button');
+      browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
+      Terra.validates.element('main menu long header', { selector: '#root' });
+
+      browser.click('.TestNestedMenu');
+      browser.hasFocus('[role="button"][aria-label="Back"]');
+      Terra.validates.element('submenu long header', { selector: '#root' });
+      browser.keys('Escape');
+    });
+  });
+
   describe('Menu Keyboard Navigation-Arrow Keys', () => {
     it('Menu Keyboard Navigation-Arrow Keys', () => {
       browser.url('/#/raw/tests/terra-menu/menu/menu/sub-menu');

@@ -63,7 +63,7 @@ const propTypes = {
    * A string representation of the width in px, limited to:
    * 160, 240, 320, 640, 960, 1280, 1760, or auto
    */
-  menuWidth: PropTypes.oneOf(Object.keys(Menu.Opts.widths)),
+  menuWidth: PropTypes.oneOf(['160', '240', '320', '640', '960', '1280', '1760', 'auto']),
 };
 
 const contextTypes = {
