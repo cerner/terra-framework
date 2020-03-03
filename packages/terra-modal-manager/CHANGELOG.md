@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Updated wdio screenshots
+* Update jest snapshot & wdio screenshots
 
 6.27.0 - (February 25, 2020)
 ------------------
