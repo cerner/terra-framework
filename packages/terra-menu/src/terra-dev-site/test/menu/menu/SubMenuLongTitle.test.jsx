@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from '../../../../Menu';
 
-class SubMenu extends React.Component {
+class SubMenuLongTitle extends React.Component {
   constructor(props) {
     super(props);
     this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -35,18 +35,18 @@ class SubMenu extends React.Component {
     return (
       <div>
         <div>
-          This menu has a nested submenu. When the Nested Menu item is clicked as submenu should replace the initial menu.
+          This menu has a nested submenu with long Default and sub-menu title. When the Nested Menu item is clicked as submenu should replace the initial menu.
           There should be a header with a back button and a title of Nested Menu.
         </div>
         <Menu
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
-          headerTitle="Sample header"
+          headerTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         >
           <Menu.Item text="Default 1" key="1" className="TestInitialMenuContent" />
           <Menu.Item
-            text="Nested Menu"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             key="2"
             className="TestNestedMenu"
             subMenuItems={[
@@ -65,4 +65,4 @@ class SubMenu extends React.Component {
   }
 }
 
-export default SubMenu;
+export default SubMenuLongTitle;
