@@ -53,12 +53,18 @@ const propTypes = {
    * Otherwise, the menu will display without an arrow and right aligned.
    */
   isArrowDisplayed: PropTypes.bool,
+  /**
+   * Header Title for main-menu(first-tier).
+   * Header Title will only be visible if the main-menu contains at least one sub-menu.
+   */
+  headerTitle: PropTypes.string,
 };
 
 const defaultProps = {
   isArrowDisplayed: false,
   isOpen: false,
   contentWidth: '240',
+  headerTitle: '',
 };
 
 class Menu extends React.Component {
@@ -144,6 +150,7 @@ class Menu extends React.Component {
         index={index}
         boundingRef={boundingRef}
         isFocused={index === visiblePage}
+        headerTitle={this.props.headerTitle}
       >
         {item.props.children || item.props.subMenuItems}
       </MenuContent>
