@@ -3,6 +3,10 @@ Changelog
 
 Unreleased
 ----------
+6.28.0 - (March 3, 2020)
+------------------
+### Added
+* Added new `headerTitle` prop for menus which have drill-in submenus
 
 6.27.0 - (February 25, 2020)
 ------------------
