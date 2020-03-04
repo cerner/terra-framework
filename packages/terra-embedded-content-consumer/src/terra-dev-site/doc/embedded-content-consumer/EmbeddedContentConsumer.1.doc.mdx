@@ -1,3 +1,15 @@
+import { Badge } from 'terra-embedded-content-consumer/package.json?dev-site-package';
+
+import EmbeddedContentConsumerPropsTable from 'terra-embedded-content-consumer/src/EmbeddedContentConsumer?dev-site-props-table';
+
+import BasicConsumer from '../example/BasicConsumer?dev-site-example';
+import CustomEventConsumer from '../example/CustomEventConsumer?dev-site-example';
+import CustomEventsConsumer from '../example/CustomEventsConsumer?dev-site-example';
+import DataStatusConsumer from '../example/DataStatusConsumer?dev-site-example';
+import { Consumer } from 'xfc';
+
+<Badge />
+
 # Terra Embedded Content Consumer
 
 The Embedded Content Consumer is the managed application component which is embedding web content within an iframe. The Embedded Content Consumer is responsible for the communication between its embedded content to its framework, such that interaction with embedded content appears seemless.
@@ -29,13 +41,24 @@ This component requires the following peer dependencies be installed in your app
 
 <!-- AUTO-GENERATED-CONTENT:END -->
 
+## Usage
+
 ```jsx
 import { Consumer } from 'xfc';
-
+import EmbeddedContentConsumer from 'terra-embedded-content-consumer';
 Consumer.init();
 ```
 
 ## Component Features
-* [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
-* [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
-* [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+
+##Examples
+<BasicConsumer title='Basic Embedded Content Consumer' />
+<DataStatusConsumer title='Embedded Content Consumer Lifecycle Statuses' />
+<CustomEventConsumer title='Embedded Content Consumer that Listens for a Custom Event' />
+<CustomEventsConsumer title='Embedded Content Consumer with Seamless Communication' />
+
+## Embedded Content Consumer Props Table 
+<EmbeddedContentConsumerPropsTable />
