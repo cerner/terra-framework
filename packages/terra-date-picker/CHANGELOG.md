@@ -7,6 +7,11 @@ Unreleased
 * Applied new border styles for keyboard navigation.
 * Changed pre-selected date to 1st of month when changing year/month.
 
+4.30.0 - (March 3, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 4.29.0 - (February 25, 2020)
 ------------------
 ### Changed
