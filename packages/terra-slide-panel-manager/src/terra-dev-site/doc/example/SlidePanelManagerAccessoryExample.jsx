@@ -298,9 +298,9 @@ SlidePanelManagerExample.propTypes = {
   showAccessory: PropTypes.bool,
 };
 
-const OverlaySlideGroupManager = () => (
-  <SlidePanelManagerExample behavior="overlay-1" />
+const AccessorySlideGroupManager = () => (
+  <SlidePanelManagerExample behavior="squish-3" showAccessory />
 );
 
-export default OverlaySlideGroupManager;
+export default AccessorySlideGroupManager;
 /* eslint-disable max-classes-per-file */
