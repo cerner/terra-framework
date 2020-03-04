@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Changed `onChange` and `onChangeRaw` callbacks to return the following metadata as part of the third parameter: iso, inputValue, isCompleteValue, isValidValue
 
+4.30.0 - (March 3, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 4.29.0 - (February 25, 2020)
 ------------------
 ### Changed

@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+1.22.0 - (March 3, 2020)
+------------------
 ### Changed
 * Updated wdio screenshots
 
