@@ -6,6 +6,7 @@ Unreleased
 1.22.0 - (March 3, 2020)
 ------------------
 ### Changed
+* Update docs to use MDX syntax
 * Updated wdio screenshots
 
 1.21.0 - (February 25, 2020)

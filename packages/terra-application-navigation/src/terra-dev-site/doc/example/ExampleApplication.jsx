@@ -1,16 +1,13 @@
-
-/* eslint-disable */
-import React, {
-  useState,
-} from 'react';
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
 import ApplicationBase from 'terra-application/lib/application-base';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
 import IconLightbulb from 'terra-icon/lib/icon/IconLightbulb';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
+import ExampleWrapper from './ExampleWrapper';
 import ApplicationNavigation from '../../../ApplicationNavigation';
-
 
 const titleConfig = {
   title: 'Test Title',
@@ -162,4 +159,10 @@ const ExampleApplication = ({ onAction }) => {
   );
 };
 
-export default ExampleApplication;
+const ExampleNavigation = () => (
+  <ExampleWrapper>
+    <ExampleApplication />
+  </ExampleWrapper>
+);
+
+export default ExampleNavigation;
