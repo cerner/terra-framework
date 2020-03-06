@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+3.22.0 - (March 3, 2020)
+------------------
+### Changed
+* Updated the `AbstractModal` to stop storing the modalTrigger in state to prevent additional re-renders when `_ModalContent` is opened.
+* Updated implementation to use React hooks.
 
 3.21.0 - (February 18, 2020)
 ------------------
