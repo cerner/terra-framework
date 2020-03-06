@@ -1,3 +1,19 @@
+import { Badge } from 'terra-time-input/package.json?dev-site-package';
+
+import TimeInputPropsTable from 'terra-time-input/src/TimeInput?dev-site-props-table';
+
+import TimeInputDefaultTime from '../example/TimeInputDefaultTime?dev-site-example';
+import TimeInputDefaultTwelveHour from '../example/TimeInputDefaultTwelveHour?dev-site-example';
+import TimeInputNoDefaultTime from '../example/TimeInputNoDefaultTime?dev-site-example';
+import TimeInputNoDefaultTwelveHour from '../example/TimeInputNoDefaultTwelveHour?dev-site-example';
+import TimeInputSeconds from '../example/TimeInputSeconds?dev-site-example';
+import TimeInputSecondsWithDefault from '../example/TimeInputSecondsWithDefault?dev-site-example';
+import TimeInputSecondsTwelveHour from '../example/TimeInputSecondsTwelveHour?dev-site-example';
+import TimeInputSecondsInvalid from '../example/TimeInputSecondsInvalid?dev-site-example';
+import TimeInputSecondsIncomplete from '../example/TimeInputSecondsIncomplete?dev-site-example';
+
+<Badge />
+
 # Terra Time Input
 
 The terra-time-input component is a controlled input component for entering time. It is a controlled component because it manages the state of the value in the input. Because this is a controlled input component, it cannot accept the defaultValue prop as it always uses the value prop. React does not allow having both the defaultValue and value props.
@@ -31,17 +47,28 @@ This component requires the following peer dependencies be installed in your app
 ## Usage
 
 ```jsx
-import React from 'react';
 import TimeInput from 'terra-time-input';
-
-<TimeInput
-  name="admission-time"
-  value={'12:30'}
-  onChange={this.handleChange}
-/>
 ```
 
 ## Component Features
-* [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
-* [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
-* [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+
+[View Component Source Code](https://github.com/cerner/terra-framework/tree/master/packages/terra-time-input)
+
+## Examples 
+<TimeInputNoDefaultTime title='Without Default Time' />
+<TimeInputDefaultTime title='With Default Time' />
+<TimeInputNoDefaultTwelveHour title='Without Default Time - 12 Hour' />
+<TimeInputDefaultTwelveHour title='With Default Time - 12 Hour' />
+<TimeInputSeconds title='Seconds Displayed Without Default Time' />
+<TimeInputSecondsWithDefault title='Seconds Displayed With Default Time' />
+<TimeInputSecondsTwelveHour  title='Seconds Displayed Without Default Time - 12 Hour' />
+<TimeInputSecondsInvalid title='Invalid Time'/>
+<TimeInputSecondsIncomplete title='Incomplete Time' description= 'Applies theme-specific styling for incomplete. 
+Note: Only use incomplete if given specific guidance, reserved for specific applications when no value has been provided. 
+Not for general use.' />
+
+## Time Input Props Table 
+<TimeInputPropsTable />
