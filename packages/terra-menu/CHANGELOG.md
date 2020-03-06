@@ -5,6 +5,9 @@ Unreleased
 ----------
 ### Changed
 * Update docs to use MDX syntax
+
+6.28.0 - (March 3, 2020)
+------------------
 ### Added
 * Added new `headerTitle` prop for menus which have drill-in submenus
 
