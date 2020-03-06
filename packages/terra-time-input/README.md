@@ -8,7 +8,7 @@ The terra-time-input component is a controlled input component for entering time
 The currently supported time formats are (hh:mm) and (hh:mm:ss), in both 24-hour and 12-hour format. All present input fields are required to be filled in and the time input enforces that the entry matches the format. The hour input only accepts values between 00 and 23 for 24-hour format or 01 and 12 in the 12-hour format and the minute and second inputs only accepts values between 00 and 59. For example, a time of 25:65 cannot be entered. A 0 will automatically be prepended to the hour if the entered hour is greater than 2. Likewise, a 0 will automatically be prepended to the minute or second if the entered number is greater than 5.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-time-input/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-time-input/time-input/time-input)
 - [LICENSE](#license)
 
 ## Getting Started
