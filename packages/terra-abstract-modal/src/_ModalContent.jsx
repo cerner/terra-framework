@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { forwardRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames/bind';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ModalOverlay from './_ModalOverlay';
-import styles from './AbstractModal.module.scss';
+import { hideModalDomUpdates, showModalDomUpdates } from './inertHelpers';
+import styles from './ModalContent.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -48,6 +49,10 @@ const propTypes = {
    */
   role: PropTypes.string,
   /**
+   * Allows assigning of root element custom data attribute for easy selecting of document base component.
+   */
+  rootSelector: PropTypes.string,
+  /**
    * Z-Index layer to apply to the ModalContent and ModalOverlay.
    */
   zIndex: PropTypes.oneOf(zIndexes),
@@ -60,10 +65,11 @@ const defaultProps = {
   isFullscreen: false,
   isScrollable: false,
   role: 'dialog',
+  rootSelector: '#root',
   zIndex: '6000',
 };
 
-const ModalContent = React.forwardRef((props, ref) => {
+const ModalContent = forwardRef((props, ref) => {
   const {
     ariaLabel,
     children,
@@ -74,29 +80,45 @@ const ModalContent = React.forwardRef((props, ref) => {
     role,
     isFullscreen,
     isScrollable,
+    rootSelector,
     zIndex,
     ...customProps
   } = props;
-  let zIndexLayer = '6000';
 
+  useEffect(() => {
+    // Store element that was last focused prior to modal opening
+    const modalTrigger = document.activeElement;
+    showModalDomUpdates(ref.current, rootSelector);
+
+    return () => {
+      hideModalDomUpdates(modalTrigger, rootSelector);
+    };
+  }, [ref, rootSelector]);
+
+  let zIndexLayer = '6000';
   if (zIndexes.indexOf(zIndex) >= 0) {
     zIndexLayer = zIndex;
   }
 
-  const modalClassName = cx(['abstract-modal', {
-    'is-fullscreen': isFullscreen,
-  }, `layer-${zIndexLayer}`, classNameModal]); // Delete the closePortal prop that comes from react-portal.
+  const modalClassName = cx([
+    'abstract-modal',
+    { 'is-fullscreen': isFullscreen },
+    `layer-${zIndexLayer}`,
+    classNameModal,
+  ]);
 
+  // Delete the closePortal prop that comes from react-portal.
   delete customProps.closePortal;
   delete customProps.fallbackFocus;
 
   const platformIsiOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
   return (
     <React.Fragment>
       <ModalOverlay
         onClick={closeOnOutsideClick ? onRequestClose : null}
         className={classNameOverlay}
-        zIndex={zIndex}
+        zIndex={zIndexLayer}
       />
       {
         /*
