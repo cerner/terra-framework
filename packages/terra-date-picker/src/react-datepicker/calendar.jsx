@@ -261,6 +261,7 @@ export default class Calendar extends React.Component {
     this.monthRef;
     this.monthDropdownRef;
     this.yearDropdownRef;
+    this.handleDropdownClick = this.handleDropdownClick.bind(this);
   }
 
   componentDidUpdate (prevProps) {
@@ -272,6 +273,15 @@ export default class Calendar extends React.Component {
       this.setState({
         date: this.localizeDate(this.props.openToDate)
       })
+    }
+  }
+
+  handleDropdownClick(event){
+    if(event.keyCode === KeyCode.KEY_UP || event.keyCode === KeyCode.KEY_DOWN ) {
+      this.setState({ calendarIsKeyboardFocused : true});
+    }
+    else {
+      this.setState({ calendarIsKeyboardFocused : false});
     }
   }
 
@@ -378,20 +388,26 @@ export default class Calendar extends React.Component {
 
   localizeDate = date => localizeDate(date, this.props.locale)
 
-  increaseMonth = () => {
+  increaseMonth = (event) => {
     this.setState({
       isMonthChanged: true,
       date: addMonths(cloneDate(this.state.date), 1).startOf('month')
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(addMonths(cloneDate(this.state.date), 1).startOf('month'));
+    if(event.target.type === undefined) {
+      this.setState({ calendarIsKeyboardFocused : false});
+    }
   }
 
-  decreaseMonth = () => {
+  decreaseMonth = (event) => {
     this.setState({
       isMonthChanged: true,
       date: subtractMonths(cloneDate(this.state.date), 1).startOf('month')
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(subtractMonths(cloneDate(this.state.date), 1).startOf('month'));
+    if(event.target.type === undefined) {
+      this.setState({ calendarIsKeyboardFocused : false});
+    }
   }
 
   handleDayClick = (day, event) => this.props.onSelect(day, event)
@@ -533,7 +549,10 @@ export default class Calendar extends React.Component {
         refCallback={this.setYearDropdownRef}
         year={getYear(this.state.date)}
         scrollableYearDropdown={this.props.scrollableYearDropdown}
-        yearDropdownItemNumber={this.props.yearDropdownItemNumber} />
+        yearDropdownItemNumber={this.props.yearDropdownItemNumber}
+        onClick={this.handleDropdownClick}
+        onKeyDown={this.handleDropdownClick} />
+
     )
   }
 
@@ -548,7 +567,9 @@ export default class Calendar extends React.Component {
         dateFormat={this.props.dateFormat}
         onChange={this.changeMonth}
         month={getMonth(this.state.date)}
-        refCallback={this.setMonthDropdownRef} />
+        refCallback={this.setMonthDropdownRef}
+        onClick={this.handleDropdownClick}
+        onKeyDown={this.handleDropdownClick} />
     )
   }
 
@@ -589,8 +610,8 @@ export default class Calendar extends React.Component {
     if(this.props.isCalendarOpenedViaKeyboard || this.props.isCalendarKeyboardFocused) {
       keyboardFocus=true;
     }
-    if(this.state.isMonthChanged && !this.state.calendarIsKeyboardFocused) {
-      keyboardFocus= false;
+    if(this.state.isMonthChanged) {
+      keyboardFocus= this.state.calendarIsKeyboardFocused;
     }
     var monthList = []
     for (var i = 0; i < this.props.monthsShown; ++i) {

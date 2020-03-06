@@ -395,7 +395,7 @@ class DatePicker extends React.Component {
   }
 
   handleOnRequestClose() {
-    this.setState({ isCalendarKeyboardFocused: false })
+    this.setState({ isCalendarKeyboardFocused: false, isCalendarOpenedViaKeyboard: true });
     this.setOpen(false);
   }
 
