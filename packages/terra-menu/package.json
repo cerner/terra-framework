@@ -36,7 +36,6 @@
   },
   "devDependencies": {
     "terra-button": "^3.3.0",
-    "terra-doc-template": "^2.2.0",
     "terra-slide-group": "^4.17.0"
   },
   "scripts": {
