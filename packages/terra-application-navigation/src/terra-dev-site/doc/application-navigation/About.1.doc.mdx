@@ -1,3 +1,44 @@
+import { Badge } from 'terra-application-navigation/package.json?dev-site-package';
+
+<Badge />
+
+# Terra Application Navigation
+
+The Terra Application Navigation is a responsive, themeable layout for building applications.
+
+The Terra Application Navigation provides:
+- A themeable, responsive application header, capable of rendering application-specific branding, tabular navigation, and user-centric utility controls
+- Responsive menu and content areas
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-application-navigation`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.4.0 |
+| terra-application | ^1.0.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Component Features
+
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+* [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+
+[View component source code](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-navigation)
+
 ## Prerequisites
 
 - The ApplicationNavigation requires the presence of a `Application` component (provided by `terra-application`) in its parent hierarchy. This provides essential utilities around i18n, context, and breakpoints.
@@ -23,7 +64,7 @@ const MyApp = () => (
 ```
 ## Props
 
-### `extensionItems`
+### extensionItems
 #### Is Required: `false`
 
 The `extensionItems` prop allows consumers to render icons with an assocaited selection callback within the ApplicationNavigation's extensions region. The expectations for `extensionItems` is that they are to provide click actions and disclosures for the application level context. The `extensionItems` will rollup in various counts depending on the current breakpoint. If `extensionItems` are passed as props the associated `onSelectExtensionItem` function callback should be passed as well.
@@ -51,12 +92,12 @@ const extensionItems = [{
 }];
 ```
 
-### `onSelectExtensionItem`
+### onSelectExtensionItem
 #### Is Required: `false`
 
 The `onSelectExtensionItem` prop allows consumers to retrieve the information related to the extension that was clicked. The function callback will return the information in the format of `onSelectExtensionItem(key, metaData)`.
 
-### `navigationItems`
+### navigationItems
 #### Is Required: `false`
 
 The `navigationItems` prop allows consumers to render high-level, primary navigation controls directly within the ApplicationNavigation. The expectation of `navigationItems` is that items will not be added/removed, as this would be detrimental to the user experience. Once selected, a navigational item is no longer actionable and cannot be reselected. Navigation items at the application level should have equivalent context levels. Navigation from one tab to another should not be influenced by content, as each navigational item should be a sandboxed concept.
@@ -83,17 +124,17 @@ const navigationItems = [{
 }];
 ```
 
-### `onSelectNavigationItem`
+### onSelectNavigationItem
 #### Is Required: `false`
 
 The `onSelectNavigationItem` prop allows consumers to retrieve the information related to the navigation item that was clicked. The function callback will return the information in the format of `onSelectNavigationItem(key, metaData)`.
 
-### `activeNavigationItemKey`
+### activeNavigationItemKey
 #### Is Required: `false`
 
 The `activeNavigationItemKey` prop allows consumers to set the currently selected navigation item. Accordingly, the `activeNavigationItemKey` value must have an associated entry within the `navigationItems` specification.
 
-### `utilityItems`
+### utilityItems
 #### Is Required: `false`
 
 The `utilityItems` prop allows consuming applications to present an application-level custom utility items directly from the ApplicationNavigation. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint. If `utilityItems` are passed as props the associated `onSelectUtilityItem` function callback should be passed as well.
@@ -121,27 +162,27 @@ const utilityItems = [{
 }];
 ```
 
-### `onSelectUtilityItem`
+### onSelectUtilityItem
 #### Is Required: `false`
 
 The `onSelectUtilityItem` prop allows consumers to retrieve the information related to the navigation item that was clicked. The function callback will return the information in the format of `onSelectUtilityItem(key, metaData)`.
 
-### `onSelectSettings`
+### onSelectSettings
 #### Is Required: `false`
 
 The `onSelectSettings` prop allows consumers have first class support for a settings utility item. If the `onSelectSettings` prop is not set a settings utility item will not be displayed.
 
-### `onSelectHelp`
+### onSelectHelp
 #### Is Required: `false`
 
 The `onSelectHelp` prop allows consumers have first class support for a help utility item. If the `onSelectHelp` prop is not set a settings utility item will not be displayed.
 
-### `onSelectLogout`
+### onSelectLogout
 #### Is Required: `false`
 
 The `onSelectLogout` prop allows consumers have first class support for a logout utility button. If the `onSelectLogout` prop is not set a settings utility item will not be displayed.
 
-### `titleConfig`
+### titleConfig
 #### Is Required: `false`
 
 The `titleConfig` prop allows consuming applications to add their own branding to the ApplicationNavigation. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint.
@@ -162,7 +203,7 @@ const myTitleConfig = {
 }
 ```
 
-### `userConfig`
+### userConfig
 #### Is Required: `false`
 
 The `userConfig` prop allows consumers to set a user associated to the current application context. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint.
@@ -183,12 +224,12 @@ const myUserConfig = {
 }
 ```
 
-### `hero`
+### hero
 #### Is Required: `false`
 
 The `hero` prop allows consumers to add a hero element within the utility popup and/or navigation drawer. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint.
 
-### `notifications`
+### notifications
 #### Is Required: `false`
 
 The `notifications` prop allows consumers to display notification counts associated to navigationItems and extensionsItems. The props is made up of key/value pairs; the key is the associated entry within the `navigationItems` or `extensionItems` specification, and a numerical value. Depending on locations within the navigational structure and breakpoint the number of digits displayed may be limited.
@@ -200,7 +241,7 @@ const myNotifications = {
 }
 ```
 
-### `onDrawerMenuStateChange`
+### onDrawerMenuStateChange
 #### Is Required: `false`
 
 `onDrawerMenuStateChange` callback allows the consumer to know state changes in Drawer Menu.
@@ -219,3 +260,4 @@ The ApplicationNavigation has two rendering modes: `standard` and `compact`.
 |`utilityItems`|Content is rendered within ApplicationNavigation's utility popup (as provided by `terra-popup`).|Content is rendered within ApplicationNavigation's navigation drawer.|
 |`navigationItems`|Content is rendered within the ApplicationNavigation's header as tabs.|Content is rendered within ApplicationNavigation's navigation drawer.|
 |`extensionItems`|Content is rendered within ApplicationNavigation's header.|Same as `standard`.|
+

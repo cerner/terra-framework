@@ -6,6 +6,12 @@ Unreleased
 ### Changed
 * Tests updated to reflect input splitting in `terra-date-picker`
 
+=======
+4.30.0 - (March 3, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 4.29.0 - (February 25, 2020)
 ------------------
 ### Changed

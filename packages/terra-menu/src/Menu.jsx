@@ -47,7 +47,7 @@ const propTypes = {
    * A string representation of the width in px, limited to:
    * 160, 240, 320, 640, 960, 1280, 1760 or auto
    */
-  contentWidth: PropTypes.oneOf(Object.keys(Popup.Opts.widths)),
+  contentWidth: PropTypes.oneOf(['160', '240', '320', '640', '960', '1280', '1760', 'auto']),
   /**
    * Indicates if the menu should have an center aligned arrow displayed on dropdown.
    * Otherwise, the menu will display without an arrow and right aligned.
