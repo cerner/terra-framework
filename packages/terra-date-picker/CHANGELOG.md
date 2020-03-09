@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update the placeholder for the `es-US`, `nl`, `sv-SE`, and `sv` locales to match the actual date format.
+
+4.30.0 - (March 3, 2020)
+------------------
+### Changed
+* Minor dependency version bump
 
 4.29.0 - (February 25, 2020)
 ------------------

@@ -184,6 +184,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                 isScrollable={false}
                 onRequestClose={[Function]}
                 role="dialog"
+                rootSelector="#root"
                 zIndex="6000"
               >
                 <ModalOverlay

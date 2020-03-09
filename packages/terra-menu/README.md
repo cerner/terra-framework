@@ -8,7 +8,7 @@ The menu is a popup component that displays a list of items, item groups, and di
 The Menu will determine the height of the popup based on the number of items in the main menu.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-menu/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-menu/menu/menu)
 - [LICENSE](#license)
 
 ## Getting Started
