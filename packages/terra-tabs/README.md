@@ -9,7 +9,7 @@ Tabs are containers used to organize content. They allow for quick switching bet
 Tabs are meant for organizing content that doesn’t need to be compared or accessed simultaneously or if the user needs quick access through a group of contextually related content. Tabs are not intended for navigation.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-tabs/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-tabs/tabs/tabs)
 - [LICENSE](#license)
 
 ## Getting Started
