@@ -4,7 +4,7 @@
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-navigation-prompt/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-navigation-prompt/navigation-prompt/about)
 - [LICENSE](#license)
 
 ## Getting Started

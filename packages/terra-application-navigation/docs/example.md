@@ -1,1 +1,0 @@
-# Terra Application Navigation
