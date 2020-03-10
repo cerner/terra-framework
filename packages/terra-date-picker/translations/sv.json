@@ -1,5 +1,5 @@
 {
-  "Terra.datePicker.dateFormat": "DD/MM/ÅÅÅÅ",
+  "Terra.datePicker.dateFormat": "ÅÅÅÅ-MM-DD",
   "Terra.datePicker.disabled": "Inaktiverad",
   "Terra.datePicker.openCalendar": "Öppna kalender",
   "Terra.datePicker.closeCalendar": "Stäng",
