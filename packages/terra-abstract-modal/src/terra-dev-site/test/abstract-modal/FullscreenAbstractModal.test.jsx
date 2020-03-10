@@ -34,7 +34,6 @@ class ModalIsFullscreen extends React.Component {
         <AbstractModal
           ariaLabel="Terra Modal"
           isOpen={this.state.isOpen}
-          isFullscreen
           onRequestClose={this.handleCloseModal}
           classNameModal={cx(fixedArray)}
         >
