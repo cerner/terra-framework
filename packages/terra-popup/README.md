@@ -32,7 +32,7 @@ This component requires the following peer dependencies be installed in your app
 Documentation for this component is spilt into individual files.
 One file for the main component and one file for each component modifier.
 
-See the [documentation](docs/).
+See the [documentation](https://engineering.cerner.com/terra-framework/components/terra-popup/popup/popup).
 
 ## LICENSE
 
