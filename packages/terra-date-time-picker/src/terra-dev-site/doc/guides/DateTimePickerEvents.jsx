@@ -95,18 +95,6 @@ class DateTimePickerEvents extends React.Component {
           timeVariant={DateTimeUtils.FORMAT_12_HOUR}
           showSeconds
         />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
       </div>
     );
   }

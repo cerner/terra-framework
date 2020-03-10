@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Changed `onBlur` callback to also return the following metadata: dateValue, timeValue and isAmbiguousHour
+* Changed `onChange` and `onChangeRaw` callbacks to return the following metadata as part of the third parameter: iso, inputValue, dateValue, timeValue, isAmbiguousHour, isCompleteValue, isValidValue
+
 4.30.0 - (March 3, 2020)
 ------------------
 ### Changed
