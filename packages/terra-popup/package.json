@@ -37,7 +37,6 @@
   },
   "devDependencies": {
     "terra-disclosure-manager": "^4.32.0",
-    "terra-doc-template": "^2.2.0",
     "terra-modal-manager": "^6.28.0"
   },
   "scripts": {
