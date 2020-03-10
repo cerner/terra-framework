@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+4.31.0 - (March 10, 2020)
+------------------
 ### Changed
 * Changed `onChange` and `onChangeRaw` callbacks to return the following metadata as part of the third parameter: iso, inputValue, isCompleteValue, isValidValue
 * Update the placeholder for the `es-US`, `nl`, `sv-SE`, and `sv` locales to match the actual date format.
