@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Updated jest snapshot for terra-slide-panel change
+
 5.28.0 - (March 10, 2020)
 ------------------
 ### Changed
