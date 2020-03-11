@@ -10,7 +10,7 @@ const ButtonWrapper = () => {
 
   const increaseCount = () => {
     setCount(count + 1);
-  }
+  };
 
   return (
     <div id="panel-content" className={cx('panel-content')}>
@@ -24,12 +24,12 @@ class SlidePanelSideDemo extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { panelIsOpen: false };
+    this.state = { panelHasStartPostion: false };
     this.handlePanelToggle = this.handlePanelToggle.bind(this);
   }
 
   handlePanelToggle() {
-    this.setState(prevState => ({ panelIsOpen: !prevState.panelIsOpen }));
+    this.setState(prevState => ({ panelHasStartPostion: !prevState.panelHasStartPostion }));
   }
 
   render() {
@@ -43,7 +43,7 @@ class SlidePanelSideDemo extends React.Component {
           mainAriaLabel="Main content area"
           panelSize="small"
           panelBehavior="squish"
-          panelPosition={this.state.panelIsOpen ? 'start' : 'end'}
+          panelPosition={this.state.panelHasStartPostion ? 'start' : 'end'}
           isOpen
           fill
         />
