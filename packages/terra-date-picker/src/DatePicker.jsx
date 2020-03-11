@@ -192,6 +192,27 @@ class DatePicker extends React.Component {
     this.isDefaultDateAcceptable = this.validateDefaultDate();
   }
 
+  getMetadata() {
+    const format = DateUtil.getFormatByLocale(this.props.intl.locale);
+    const isCompleteDate = DateUtil.isValidDate(this.dateValue, format);
+    const iSOString = isCompleteDate ? DateUtil.convertToISO8601(this.dateValue, format) : '';
+
+    let isValidDate = false;
+
+    if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString)))) {
+      isValidDate = true;
+    }
+
+    const metadata = {
+      iSO: iSOString,
+      inputValue: this.dateValue,
+      isCompleteValue: isCompleteDate,
+      isValidValue: isValidDate,
+    };
+
+    return metadata;
+  }
+
   handleBreakpointChange(activeBreakpoint) {
     const showPortalPicker = activeBreakpoint === 'tiny' || activeBreakpoint === 'small';
 
@@ -247,23 +268,8 @@ class DatePicker extends React.Component {
     // Handle blur only if focus has moved out of the entire date picker component.
     if (!this.datePickerContainer.current.contains(activeTarget)) {
       if (this.props.onBlur) {
-        const format = DateUtil.getFormatByLocale(this.props.intl.locale);
-        const isCompleteDate = DateUtil.isValidDate(this.dateValue, format);
-        const iSOString = isCompleteDate ? DateUtil.convertToISO8601(this.dateValue, format) : '';
-        let isValidDate = false;
-
-        if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString)))) {
-          isValidDate = true;
-        }
-
-        const options = {
-          iSO: iSOString,
-          inputValue: this.dateValue,
-          isCompleteValue: isCompleteDate,
-          isValidValue: isValidDate,
-        };
-
-        this.props.onBlur(event, options);
+        const metadata = this.getMetadata();
+        this.props.onBlur(event, metadata);
       }
 
       this.containerHasFocus = false;
@@ -280,7 +286,8 @@ class DatePicker extends React.Component {
     });
 
     if (this.props.onChange) {
-      this.props.onChange(event, date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '');
+      const metadata = this.getMetadata();
+      this.props.onChange(event, date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '', metadata);
     }
   }
 
@@ -288,7 +295,8 @@ class DatePicker extends React.Component {
     this.dateValue = event.target.value;
 
     if (this.props.onChangeRaw) {
-      this.props.onChangeRaw(event, event.target.value);
+      const metadata = this.getMetadata();
+      this.props.onChangeRaw(event, event.target.value, metadata);
     }
   }
 
