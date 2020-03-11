@@ -103,4 +103,23 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       Terra.validates.screenshot({ selector: '#root' });
     });
   });
+
+  describe('Toggle the slide panel side', () => {
+    it('Switches panel side', () => {
+      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-side-toggle');
+      expect(browser.getText('#test-slide [aria-hidden="false"]')).to.equal('Increase Count 0');
+
+      browser.click('#focus-button');
+      browser.pause(150);
+      expect(browser.getText('#test-slide [aria-hidden="false"]')).to.equal('Increase Count 1');
+
+      browser.click('#test-toggle');
+      browser.waitForExist('#test-slide [aria-hidden="false"]');
+      browser.pause(150);
+
+      expect(browser.getText('#test-slide [aria-hidden="false"]')).to.equal('Increase Count 1');
+
+      Terra.validates.screenshot({ selector: '#root' });
+    });
+  });
 });

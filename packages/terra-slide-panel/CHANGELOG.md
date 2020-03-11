@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Gave main content and panel content keys to prevent unmounting when changing panel position
 
 3.23.0 - (February 18, 2020)
 ------------------
