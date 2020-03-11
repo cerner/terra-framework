@@ -1,32 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import SlidePanel from '../../../SlidePanel';
 import styles from './SlidePanelDocCommon.test.module.scss';
 
 const cx = classNames.bind(styles);
 
-class ButtonWrapper extends React.Component {
-  constructor(props) {
-    super(props);
+const ButtonWrapper = () => {
+  const [count, setCount] = useState(0);
 
-    this.state = { count: 0 };
-    this.increaseCount = this.increaseCount.bind(this);
+  const increaseCount = () => {
+    setCount(count + 1);
   }
 
-  increaseCount() {
-    this.setState(prevState => ({ count: prevState.count + 1 }));
-  }
-
-  render() {
-    return (
-      <div id="panel-content" className={cx('panel-content')}>
-        <button id="focus-button" type="button" className={cx('button')} onClick={this.increaseCount}>Increase Count </button>
-        {this.state.count}
-      </div>
-    );
-  }
+  return (
+    <div id="panel-content" className={cx('panel-content')}>
+      <button id="focus-button" type="button" className={cx('button')} onClick={increaseCount}>Increase Count </button>
+      {count}
+    </div>
+  );
 };
-
 
 class SlidePanelSideDemo extends React.Component {
   constructor(props) {
@@ -52,7 +44,7 @@ class SlidePanelSideDemo extends React.Component {
           panelSize="small"
           panelBehavior="squish"
           panelPosition={this.state.panelIsOpen ? 'start' : 'end'}
-          isOpen={true}
+          isOpen
           fill
         />
       </div>
