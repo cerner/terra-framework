@@ -3,7 +3,7 @@ import ThemeProvider from '../../src/ThemeProvider';
 
 describe('ThemeProvider', () => {
   const defaultRender = (
-    <ThemeProvider themeName={ThemeProvider.Opts.Themes.MOCK}>
+    <ThemeProvider themeName="cerner-mock-theme">
       <p>Child content</p>
     </ThemeProvider>
   );

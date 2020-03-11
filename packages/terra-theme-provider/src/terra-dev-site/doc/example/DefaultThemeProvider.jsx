@@ -32,7 +32,7 @@ class DefaultThemeProvider extends React.Component {
           <label htmlFor="theme"> Theme: </label>
           <select id="theme" value={this.state.theme} onChange={this.handleThemeChange}>
             <option value="">Default</option>
-            <option value={ThemeProvider.Opts.Themes.MOCK}>Mock Theme</option>
+            <option value="cerner-mock-theme">Mock Theme</option>
           </select>
         </div>
       );

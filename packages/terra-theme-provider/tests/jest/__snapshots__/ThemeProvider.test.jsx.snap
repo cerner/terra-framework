@@ -7,7 +7,9 @@ exports[`ThemeProvider should render a theme provider component 1`] = `
 `;
 
 exports[`ThemeProvider should shallow render a theme provider component 1`] = `
-<p>
-  Child content
-</p>
+<Fragment>
+  <p>
+    Child content
+  </p>
+</Fragment>
 `;

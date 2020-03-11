@@ -1,10 +1,5 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-
-const ThemeProviderThemes = {
-  CONSUMER: 'cerner-consumer-theme',
-  MOCK: 'cerner-mock-theme',
-};
 
 const propTypes = {
   /**
@@ -12,7 +7,7 @@ const propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * Name of class for specified theme. e.g `cerner-consumer-theme`
+   * Name of class for specified theme
    */
   themeName: PropTypes.string,
 };
@@ -32,11 +27,9 @@ const ThemeProvider = ({
     };
   }, [themeName]);
 
-  return children;
+  return <React.Fragment>{children}</React.Fragment>;
 };
 
 ThemeProvider.propTypes = propTypes;
-ThemeProvider.Opts = {};
-ThemeProvider.Opts.Themes = ThemeProviderThemes;
 
 export default ThemeProvider;
