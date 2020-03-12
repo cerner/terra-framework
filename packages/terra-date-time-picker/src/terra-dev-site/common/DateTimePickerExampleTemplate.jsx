@@ -27,7 +27,7 @@ class DatePickerExample extends React.Component {
 
     if (dateTime && dateTime.isValid()) {
       dateTimeDisplay = dateTime.format();
-      timeZoneDisplay = dateTime.tz() || 'Local Time Zone';
+      timeZoneDisplay = dateTime.tz();
     }
 
     this.state = { dateTime: dateTimeDisplay, timeZone: timeZoneDisplay };
