@@ -1,7 +1,7 @@
 Changelog
 =========
 ### Fixed
-* Fixes time-input resizing on modal when cached value is selected.
+* Fixed time-input resizing on modal when cached value is selected.
 
 Unreleased
 ----------
