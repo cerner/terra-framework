@@ -1,11 +1,6 @@
 import React from 'react';
-import TimeInput from 'terra-time-input';
-import classNames from 'classnames/bind';
 import AbstractModal from '../../../AbstractModal';
 import './AbstractModalTestStyles.module.scss';
-import styles from './temp.module.scss';
-
-const cx = classNames.bind(styles);
 
 class ModalIsFullscreen extends React.Component {
   constructor() {
@@ -28,14 +23,14 @@ class ModalIsFullscreen extends React.Component {
   }
 
   render() {
-    const fixedArray = ['modal-manager', 'height-690', 'width-1120'];
     return (
       <div>
         <AbstractModal
           ariaLabel="Terra Modal"
           isOpen={this.state.isOpen}
+          isFullscreen
           onRequestClose={this.handleCloseModal}
-          classNameModal={cx(fixedArray)}
+          classNameModal="test-background-class"
         >
           <div>
             <h1>Terra Modal</h1>
@@ -45,18 +40,8 @@ class ModalIsFullscreen extends React.Component {
             <p>{'Modal is assigned a role of \'document\' for accessibility.'}</p>
             <button type="button" id="modal-button" onClick={this.handleCloseModal}>Close Modal</button>
           </div>
-          <TimeInput
-            name="time-input-value"
-            onChange={this.handleTimeChange}
-            showSeconds
-          />
         </AbstractModal>
         <button type="button" id="modal-open-button" onClick={this.handleOpenModal}>Open isOpen modal</button>
-        <TimeInput
-          name="time-input-value"
-          onChange={this.handleTimeChange}
-          showSeconds
-        />
       </div>
     );
   }
