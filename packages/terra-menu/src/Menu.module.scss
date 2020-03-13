@@ -33,20 +33,26 @@
     width: 100%;
 
     .header-title {
+      align-self: center;
       color: var(--terra-menu-submenu-header-title-color, #1c1f21);
+      flex: 1; //Needed for IE 11
       font-size: var(--terra-menu-submenu-header-title-font-size, 12px);
       font-weight: var(--terra-menu-submenu-header-title-font-weight, normal);
       line-height: var(--terra-menu-submenu-header-title-line-height, 1.1667);
-      margin: var(--terra-menu-submenu-header-title-margin, 7px 0 7px 0);
+      margin: var(--terra-menu-submenu-header-title-margin, 7px 7px 7px 0);
       min-width: 0;
       overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      white-space: normal;
       word-break: normal;
-      word-wrap: normal;
+      word-wrap: break-word;
+    }
+
+    .main-header-title {
+      margin-left: var(--terra-menu-header-title-margin-left, 10px);
     }
 
     .header-button {
+      align-self: center;
       background-color: transparent;
       border: 0;
       color: var(--terra-menu-submenu-header-buttons-icon-color, #1c1f21);
@@ -104,5 +110,9 @@
 
   .hidden-page {
     display: none;
+  }
+
+  .header-container {
+    display: flex;
   }
 }

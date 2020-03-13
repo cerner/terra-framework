@@ -47,18 +47,24 @@ const propTypes = {
    * A string representation of the width in px, limited to:
    * 160, 240, 320, 640, 960, 1280, 1760 or auto
    */
-  contentWidth: PropTypes.oneOf(Object.keys(Popup.Opts.widths)),
+  contentWidth: PropTypes.oneOf(['160', '240', '320', '640', '960', '1280', '1760', 'auto']),
   /**
    * Indicates if the menu should have an center aligned arrow displayed on dropdown.
    * Otherwise, the menu will display without an arrow and right aligned.
    */
   isArrowDisplayed: PropTypes.bool,
+  /**
+   * Header Title for main-menu(first-tier).
+   * Header Title will only be visible if the main-menu contains at least one sub-menu.
+   */
+  headerTitle: PropTypes.string,
 };
 
 const defaultProps = {
   isArrowDisplayed: false,
   isOpen: false,
   contentWidth: '240',
+  headerTitle: '',
 };
 
 class Menu extends React.Component {
@@ -144,6 +150,7 @@ class Menu extends React.Component {
         index={index}
         boundingRef={boundingRef}
         isFocused={index === visiblePage}
+        headerTitle={this.props.headerTitle}
       >
         {item.props.children || item.props.subMenuItems}
       </MenuContent>
