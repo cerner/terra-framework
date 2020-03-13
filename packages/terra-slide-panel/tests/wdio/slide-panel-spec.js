@@ -110,15 +110,12 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       expect(browser.getText('#test-slide [aria-hidden="false"]')).to.equal('Increase Count 0');
 
       browser.click('#focus-button');
-      browser.pause(150);
       expect(browser.getText('#test-slide [aria-hidden="false"]')).to.equal('Increase Count 1');
 
       Terra.validates.screenshot('panel with end position', { selector: '#root' });
 
       browser.click('#test-toggle');
       browser.waitForExist('#test-slide [aria-hidden="false"]');
-      browser.pause(150);
-
       expect(browser.getText('#test-slide [aria-hidden="false"]')).to.equal('Increase Count 1');
 
       Terra.validates.screenshot('panel with start position', { selector: '#root' });
