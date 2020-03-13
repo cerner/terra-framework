@@ -1,5 +1,7 @@
 ChangeLog
 =========
+### Updated
+* Updated WDIO screenshots
 
 Unreleased
 ----------
