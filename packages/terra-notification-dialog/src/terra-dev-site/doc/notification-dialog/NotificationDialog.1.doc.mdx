@@ -1,0 +1,69 @@
+import { Badge } from 'terra-notification-dialog/package.json?dev-site-package';
+
+import NotificationDialogPropsTable from 'terra-notification-dialog/src/NotificationDialog?dev-site-props-table';
+
+import CompleteNotificationDialog from '../example/CompleteNotificationDialog?dev-site-example';
+import CompleteNotificationDialogWithLongMessage from '../example/CompleteNotificationDialogWithLongMessage?dev-site-example';
+import ContentNotificationDialog from '../example/ContentNotificationDialog?dev-site-example';
+import NoVariantNotificationDialog from '../example/NoVariantNotificationDialog?dev-site-example';
+import NotificationDialogWithLongText from '../example/NotificationDialogWithLongText?dev-site-example';
+import NotificationDialogOnModalManager from '../example/NotificationDialogOnModalManager?dev-site-example';
+import RejectFirstNotificationDialog from '../example/RejectFirstNotificationDialog?dev-site-example';
+import EmphasizedRejectNotificationDialog from '../example/EmphasizedRejectNotificationDialog?dev-site-example';
+
+<Badge />
+
+# Terra NotificationDialog
+
+`terra-notification-dialog` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 9001. It is a common component to be used for confirmation/acceptance criteria style dialogs.
+
+**Note** Use at least one of `acceptAction`, `rejectAction`, `primaryAction` or `secondaryAction` props for proper functioning of the `Notification Dialog` and avoid getting a warning.
+`primaryAction` and `secondaryAction` are **deprecated** and will be removed in the next MVB.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-notification-dialog`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Usage 
+``` jsx
+import NotificationDialog, { NotificationDialogVariants } from 'terra-notification-dialog';
+```
+
+## Component Features
+
+
+ * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+ * [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+ * [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+ * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#ltr--rtl-support)
+ * [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+ * [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+
+[View Component Source Code](https://github.com/cerner/terra-framework/tree/master/packages/terra-notification-dialog)
+
+## Examples 
+<CompleteNotificationDialog title='Complete Notification Dialog' />
+<CompleteNotificationDialogWithLongMessage title='Complete Notification Dialog With Long Message' />
+<NoVariantNotificationDialog title='No Variant Notification Dialog' />
+<NotificationDialogWithLongText title='Notification Dialog With Long Text' />
+<NotificationDialogOnModalManager title='Notification Dialog On Modal Manager' />
+<ContentNotificationDialog title='Notification Dialog with Content' />
+<RejectFirstNotificationDialog title='Notification Dialog with Reject action first' />
+<EmphasizedRejectNotificationDialog title='Notification Dialog with Reject Action emphasized' />
+
+## Notification Dialog Props Table 
+<NotificationDialogPropsTable />
