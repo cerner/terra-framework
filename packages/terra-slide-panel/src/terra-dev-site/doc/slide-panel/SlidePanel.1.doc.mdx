@@ -1,0 +1,64 @@
+import { Badge } from 'terra-slide-panel/package.json?dev-site-package';
+
+import SlidePanelPropsTable from 'terra-slide-panel/src/SlidePanel?dev-site-props-table';
+
+import DefaultSlidePanel from '../example/DefaultSlidePanel?dev-site-example';
+import SlidePanelOverlay from '../../test/slide-panel/SlidePanelOverlay.test?dev-site-example';
+import SlidePanelSquish from '../../test/slide-panel/SlidePanelSquish.test?dev-site-example';
+import SlidePanelStart from '../../test/slide-panel/SlidePanelStart.test?dev-site-example';
+import SlidePanelEnd from '../../test/slide-panel/SlidePanelEnd.test?dev-site-example';
+import SlidePanelSmall from '../../test/slide-panel/SlidePanelSmall.test?dev-site-example';
+import SlidePanelLarge from '../../test/slide-panel/SlidePanelLarge.test?dev-site-example';
+import SlidePanelFullscreen from '../../test/slide-panel/SlidePanelFullscreen.test?dev-site-example';
+import SlidePanelFill from '../../test/slide-panel/SlidePanelFill.test?dev-site-example';
+import SlidePanelNoFill from '../../test/slide-panel/SlidePanelNoFill.test?dev-site-example';
+
+<Badge />
+
+# Terra Slide Panel
+
+The Terra SlidePanel component is a progressive disclosure mechanism that allows additional content to be shown and hidden in a variety of ways.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-slide-panel`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Usage
+``` jsx
+import SlidePanel from 'terra-slide-panel';
+```
+
+## Component Features
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+
+[View Component Source Code](https://github.com/cerner/terra-framework/tree/master/packages/terra-slide-panel)
+
+## Examples 
+<DefaultSlidePanel  title='SlidePanel - Controlled Demo' />
+<SlidePanelOverlay title='SlidePanel - Behavior - Overlay' />
+<SlidePanelSquish title='SlidePanel - Behavior - Squish' />
+<SlidePanelStart title='SlidePanel - Position - Start' />
+<SlidePanelEnd title='SlidePanel - Position - End' />
+<SlidePanelSmall title='SlidePanel - Size - Small'/>
+<SlidePanelLarge title='SlidePanel - Size - Large' />
+<SlidePanelFullscreen title='SlidePanel - Fullscreen' />
+<SlidePanelFill title='SlidePanel - Fill' />
+<SlidePanelNoFill title='SlidePanel - Fill Off'/>
+
+## Slide Panel Props Table 
+<SlidePanelPropsTable />
