@@ -22,7 +22,7 @@ class SwitchThemes extends React.Component {
           <label htmlFor="theme">Theme Switcher</label>
           <select id="theme" name="themeName" value={this.state.themeName} onChange={this.handleSelectChange}>
             <option value="">Default Theme</option>
-            <option value={ThemeProvider.Opts.Themes.MOCK}>Mock Theme</option>
+            <option value="cerner-mock-theme">Mock Theme</option>
           </select>
         </form>
         <ThemeProvider id="themeProvider" themeName={this.state.themeName}>

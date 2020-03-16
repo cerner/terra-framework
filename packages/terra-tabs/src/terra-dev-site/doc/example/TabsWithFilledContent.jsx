@@ -50,5 +50,8 @@ const TabsWithFilledContent = () => {
     </div>
   );
 };
+const TabFill = () => (
+  <TabsWithFilledContent fill />
+);
 
-export default TabsWithFilledContent;
+export default TabFill;

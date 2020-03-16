@@ -10,6 +10,9 @@ class DateTimePickerOnBlur extends React.Component {
       focusTriggerCount: 0,
       iSO: '',
       inputValue: '',
+      dateValue: '',
+      timeValue: '',
+      isAmbiguousHour: 'No',
       isCompleteValue: 'No',
       isValidValue: 'Yes',
     };
@@ -26,6 +29,9 @@ class DateTimePickerOnBlur extends React.Component {
       blurTriggerCount: this.blurCount,
       iSO: options.iSO,
       inputValue: options.inputValue,
+      dateValue: options.dateValue,
+      timeValue: options.timeValue,
+      isAmbiguousHour: options.isAmbiguousHour ? 'Yes' : 'No',
       isCompleteValue: options.isCompleteValue ? 'Yes' : 'No',
       isValidValue: options.isValidValue ? 'Yes' : 'No',
     });
@@ -69,12 +75,27 @@ class DateTimePickerOnBlur extends React.Component {
           <span id="input-value">{this.state.inputValue}</span>
           <br />
           <br />
-          Is Date Complete?
+          Date Value:
+          {' '}
+          <span id="date-value">{this.state.dateValue}</span>
+          <br />
+          <br />
+          Time Value:
+          {' '}
+          <span id="time-value">{this.state.timeValue}</span>
+          <br />
+          <br />
+          Is Ambiguous?
+          {' '}
+          <span id="ambiguous-date">{this.state.isAmbiguousHour}</span>
+          <br />
+          <br />
+          Is Date-Time Complete?
           {' '}
           <span id="complete-date">{this.state.isCompleteValue}</span>
           <br />
           <br />
-          Is Date Valid?
+          Is Date-Time Valid?
           {' '}
           <span id="valid-date">{this.state.isValidValue}</span>
         </h3>
