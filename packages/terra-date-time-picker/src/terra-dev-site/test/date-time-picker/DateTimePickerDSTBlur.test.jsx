@@ -7,6 +7,7 @@ class DateTimePickerOnBlur extends React.Component {
     this.state = {
       blurTriggerCount: 0,
       iSO: '',
+      isAmbiguousHour: 'No',
     };
     this.handleBlur = this.handleBlur.bind(this);
     this.blurCount = 0;
@@ -17,6 +18,7 @@ class DateTimePickerOnBlur extends React.Component {
     this.setState({
       blurTriggerCount: this.blurCount,
       iSO: options.iSO,
+      isAmbiguousHour: options.isAmbiguousHour ? 'Yes' : 'No',
     });
   }
 
@@ -32,6 +34,11 @@ class DateTimePickerOnBlur extends React.Component {
           Selected ISO Date Time:
           {' '}
           <span id="iso">{this.state.iSO}</span>
+          <br />
+          <br />
+          Is Ambiguous?
+          {' '}
+          <span id="ambiguous-date">{this.state.isAmbiguousHour}</span>
           <br />
           <br />
         </h3>
