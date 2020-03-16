@@ -3,7 +3,10 @@ Changelog
 
 Unreleased
 ----------
+4.31.0 - (March 10, 2020)
+------------------
 ### Changed
+* Changed `onChange` and `onChangeRaw` callbacks to return the following metadata as part of the third parameter: iso, inputValue, isCompleteValue, isValidValue
 * Update the placeholder for the `es-US`, `nl`, `sv-SE`, and `sv` locales to match the actual date format.
 * Applied new border styles for keyboard navigation.
 * Changed pre-selected date to 1st of month when changing year/month.
@@ -16,7 +19,7 @@ Unreleased
 4.29.0 - (February 25, 2020)
 ------------------
 ### Changed
-* Update date-picker to use the the controlled responsive-element
+* Update date-picker to use the controlled responsive-element
 
 4.28.0 - (February 18, 2020)
 ------------------
