@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Update docs to use MDX syntax
 
+### Fixed
+* Added key to main content and panel content to prevent unmounting when changing panel position
+
 3.23.0 - (February 18, 2020)
 ------------------
 ### Added
