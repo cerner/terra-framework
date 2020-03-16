@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Update the placeholder for the `es-US`, `nl`, `sv-SE`, and `sv` locales to match the actual date format.
 * Applied new border styles for keyboard navigation.
 * Changed pre-selected date to 1st of month when changing year/month.
 
