@@ -6,7 +6,7 @@ The Terra Application Navigation is a responsive, themeable layout for building 
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-navigation/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-application-navigation/application-navigation/about)
 - [LICENSE](#license)
 
 ## Getting Started

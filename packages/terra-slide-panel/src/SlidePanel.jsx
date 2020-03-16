@@ -110,13 +110,13 @@ class SlidePanel extends React.Component {
     ]);
 
     const panelDiv = (
-      <div className={cx(['panel'])} tabIndex="-1" aria-label={panelAriaLabel} aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
+      <div className={cx(['panel'])} key="panel" tabIndex="-1" aria-label={panelAriaLabel} aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
         {panelContent}
       </div>
     );
 
     const mainDiv = (
-      <div className={cx('main')} tabIndex="-1" aria-label={mainAriaLabel} ref={this.mainNode}>
+      <div className={cx('main')} key="main" tabIndex="-1" aria-label={mainAriaLabel} ref={this.mainNode}>
         {mainContent}
       </div>
     );
