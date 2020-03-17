@@ -51,6 +51,7 @@ class DatePickerExample extends React.Component {
         </p>
         <DateTimePicker
           name="date-time-picker-example"
+          onChange={this.handleDateTimeChange}
           {...this.props}
         />
       </div>
