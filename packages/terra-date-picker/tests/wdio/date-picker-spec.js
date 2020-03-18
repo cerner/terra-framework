@@ -209,6 +209,10 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.keys('Enter');
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
+      expect(browser.getText('#iso')).to.equal('2017-06-01');
+      expect(browser.getText('#input-value')).to.equal('06/01/2017');
+      expect(browser.getText('#complete-date')).to.equal('Yes');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
     });
     Terra.it.matchesScreenshot('date set');
 
@@ -235,6 +239,10 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
+      expect(browser.getText('#iso')).to.equal('');
+      expect(browser.getText('#input-value')).to.equal('');
+      expect(browser.getText('#complete-date')).to.equal('No');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
     });
     Terra.it.matchesScreenshot('no date set');
     Terra.it.isAccessible();
@@ -243,11 +251,26 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
   describe('On Change Raw', () => {
     before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-on-change-raw'));
 
+    it('sets an invalid date', () => {
+      browser.setValue('input[name="terra-date-date-input-onchangeraw"]', '04/01/2019');
+      // Ensures the mouse pointer doesn't appear in the screenshot
+      browser.click('h3');
+      expect(browser.getText('#iso')).to.equal('2019-04-01');
+      expect(browser.getText('#input-value')).to.equal('04/01/2019');
+      expect(browser.getText('#complete-date')).to.equal('Yes');
+      expect(browser.getText('#valid-date')).to.equal('No');
+    });
+    Terra.it.matchesScreenshot('date set to invalid 04/01/2019');
+
     it('partially sets the date', () => {
       browser.setValue('input[name="terra-date-month-date-input-onchangeraw"]', '06');
       browser.setValue('input[name="terra-date-day-date-input-onchangeraw"]', '01');
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
+      expect(browser.getText('#iso')).to.equal('');
+      expect(browser.getText('#input-value')).to.equal('06/01');
+      expect(browser.getText('#complete-date')).to.equal('No');
+      expect(browser.getText('#valid-date')).to.equal('No');
     });
     Terra.it.matchesScreenshot('date set to 06-01');
 
@@ -255,6 +278,10 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.setValue('input[name="terra-date-year-date-input-onchangeraw"]', '2017');
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
+      expect(browser.getText('#iso')).to.equal('2017-06-01');
+      expect(browser.getText('#input-value')).to.equal('06/01/2017');
+      expect(browser.getText('#complete-date')).to.equal('Yes');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
     });
     Terra.it.matchesScreenshot('date set to 06-01-2017');
     Terra.it.isAccessible();

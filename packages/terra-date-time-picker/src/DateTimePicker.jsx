@@ -203,6 +203,58 @@ class DateTimePicker extends React.Component {
     }
   }
 
+  getMetadata(momentDateTime) {
+    let tempDateTime = (momentDateTime && DateTimeUtils.isMomentObject(momentDateTime)) ? momentDateTime.clone() : null;
+
+    if (DateUtil.isValidDate(this.dateValue, this.state.dateFormat)) {
+      const enteredDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
+
+      // this.state.dateTime does not get updated if the entered date is outside the minDate/maxDate range or an excluded date.
+      // In this case, we need to use the date that was entered instead of the this.state.dateTime.
+      if (enteredDateTime && !enteredDateTime.isSame(tempDateTime, 'day')) {
+        tempDateTime = enteredDateTime;
+      }
+    }
+
+    let iSOString = '';
+    const isCompleteDateTime = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
+
+    if (isCompleteDateTime && tempDateTime) {
+      iSOString = tempDateTime.format();
+    }
+
+    let timeValue = this.timeValue || '';
+
+    if (iSOString) {
+      timeValue = DateTimeUtils.getTime(iSOString, this.props.showSeconds);
+    }
+
+    let isValid = false;
+    const inputValue = `${this.dateValue ? this.dateValue : ''} ${timeValue}`.trim();
+
+    if (inputValue === '' || (isCompleteDateTime && tempDateTime && this.isDateTimeAcceptable(tempDateTime))) {
+      isValid = true;
+    }
+
+    let isAmbiguous = false;
+
+    if (isCompleteDateTime && tempDateTime) {
+      isAmbiguous = DateTimeUtils.checkAmbiguousTime(tempDateTime);
+    }
+
+    const metadata = {
+      iSO: iSOString,
+      inputValue,
+      dateValue: this.dateValue || '',
+      timeValue,
+      isAmbiguousHour: isAmbiguous,
+      isCompleteValue: isCompleteDateTime,
+      isValidValue: isValid,
+    };
+
+    return metadata;
+  }
+
   handleOnSelect(event, selectedDate) {
     this.dateValue = DateUtil.formatISODate(selectedDate, this.state.dateFormat);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
@@ -263,50 +315,8 @@ class DateTimePicker extends React.Component {
 
   handleBlur(event, momentDateTime) {
     if (this.props.onBlur) {
-      const isCompleteDateTime = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
-      let value = '';
-      if (this.dateValue) {
-        value = this.dateValue.concat(' ');
-      }
-
-      if (this.timeValue) {
-        value = value.concat(this.timeValue);
-      }
-
-      value = value.trim();
-
-      let tempDateTime = momentDateTime ? momentDateTime.clone() : null;
-
-      if (DateUtil.isValidDate(this.dateValue, this.state.dateFormat)) {
-        const enteredDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
-
-        // this.state.dateTime does not get updated if the entered date is outside the minDate/maxDate range or an excluded date.
-        // In this case, we need to use the date that was entered instead of the this.state.dateTime.
-        if (enteredDateTime && !enteredDateTime.isSame(tempDateTime, 'day')) {
-          tempDateTime = enteredDateTime;
-        }
-      }
-
-      let iSOString = '';
-
-      if (isCompleteDateTime && tempDateTime) {
-        iSOString = tempDateTime.format();
-      }
-
-      let isValid = false;
-
-      if (value === '' || (isCompleteDateTime && tempDateTime && this.isDateTimeAcceptable(tempDateTime))) {
-        isValid = true;
-      }
-
-      const options = {
-        iSO: iSOString,
-        inputValue: value,
-        isCompleteValue: isCompleteDateTime,
-        isValidValue: isValid,
-      };
-
-      this.props.onBlur(event, options);
+      const metadata = this.getMetadata(momentDateTime);
+      this.props.onBlur(event, metadata);
     }
 
     this.containerHasFocus = false;
@@ -428,13 +438,15 @@ class DateTimePicker extends React.Component {
     // If the new time is ambiguous and the old time is not, do not fire onChange.
     // This allows a user to use TimeClarification before onChange is fired.
     if (this.props.onChange && (this.state.isAmbiguousTime || !DateTimeUtils.checkAmbiguousTime(newDateTime))) {
-      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
+      const metadata = this.getMetadata(newDateTime);
+      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '', metadata);
     }
   }
 
   handleChangeRaw(event, value) {
     if (this.props.onChangeRaw) {
-      this.props.onChangeRaw(event, value);
+      const metadata = this.getMetadata(value);
+      this.props.onChangeRaw(event, value, metadata);
     }
   }
 
@@ -505,13 +517,15 @@ class DateTimePicker extends React.Component {
         dateTime: newDateTime,
       });
       if (this.props.onChange) {
-        this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
+        const metadata = this.getMetadata(newDateTime);
+        this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '', metadata);
       }
     } else if (this.props.onChange && !this.wasOffsetButtonClicked) {
       // This fires onChange if the TimeClarification dialog was launched without using the OffsetButton.
       // If the user clicks the OffsetButton, onChange should have already been fired and does not need to be fired
       // again (unless they change the DateTime).
-      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
+      const metadata = this.getMetadata(newDateTime);
+      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '', metadata);
     }
 
     // When the Time Clarification dialog was launched _without_ using the Offset button, 'blur' event
@@ -533,13 +547,15 @@ class DateTimePicker extends React.Component {
         dateTime: newDateTime,
       });
       if (this.props.onChange) {
-        this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
+        const metadata = this.getMetadata(newDateTime);
+        this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '', metadata);
       }
     } else if (this.props.onChange && !this.wasOffsetButtonClicked) {
       // This fires onChange if the TimeClarification dialog was launched without using the OffsetButton.
       // If the user clicks the OffsetButton, onChange should have already been fired and does not need to be fired
       // again (unless they change the DateTime).
-      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
+      const metadata = this.getMetadata(newDateTime);
+      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '', metadata);
     }
 
     // When the Time Clarification dialog was launched _without_ using the Offset button, 'blur' event
