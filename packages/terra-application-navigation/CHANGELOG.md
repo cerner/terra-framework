@@ -3,16 +3,33 @@ Changelog
 
 Unreleased
 ----------
+1.23.0 - (March 10, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+1.22.0 - (March 3, 2020)
+------------------
+### Changed
+* Update docs to use MDX syntax
+* Updated wdio screenshots
+
+1.21.0 - (February 25, 2020)
+------------------
+### Changed
+* Minor dependency version bump
 
 1.20.0 - (February 18, 2020)
 ------------------
 ### Added
 * Added clinical-lowlight-theme theming files
 
+### Fixed
+* Fixed Drawer menu not closing in Internet Explorer on clicking outside of drawer menu.
+
 1.19.0 - (February 11, 2020)
 ------------------
 ### Fixed
-* Fixed Drawer menu not closing in Internet Explorer on clicking outside of drawer menu.
 * Fixed `settings` api called when `help` clicked in drawer menu.
 
 1.18.0 - (February 4, 2020)

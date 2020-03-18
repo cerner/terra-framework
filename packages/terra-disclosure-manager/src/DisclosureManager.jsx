@@ -40,7 +40,7 @@ const propTypes = {
   render: PropTypes.func.isRequired,
   /**
    * An array of disclosure types that the DisclosureManager should support. If an unsupported disclosure request occurs, the DisclosureManager will
-   * utilize its 'app' prop and forward the request instead of handling the request itself.
+   * utilize its 'disclosureManager' prop and forward the request instead of handling the request itself.
    */
   supportedDisclosureTypes: PropTypes.array,
   /**
@@ -119,14 +119,17 @@ class DisclosureManager extends React.Component {
     };
   }
 
-  generateHeaderContextValue(key) {
+  generateHeaderContextValue(key, initialTitle) {
     return {
       register: ({ title, collapsibleMenuView }) => {
         this.setState(state => ({
           disclosureComponentData: {
             ...state.disclosureComponentData,
             ...{
-              [key]: { ...state.disclosureComponentData[key], headerAdapterData: { title, collapsibleMenuView } },
+              [key]: {
+                ...state.disclosureComponentData[key],
+                headerAdapterData: { title: initialTitle || title, collapsibleMenuView },
+              },
             },
           },
         }));
@@ -273,7 +276,7 @@ class DisclosureManager extends React.Component {
         // no valid size and no valid dimensions, set the default
         dimensions = defaultDimensions;
       }
-      // ensure size set for pacivity
+      // ensure size set for passivity
       size = defaultSize;
     }
 
@@ -289,10 +292,12 @@ class DisclosureManager extends React.Component {
           name: data.content.name,
           props: data.content.props,
           component: data.content.component,
-          headerAdapterContextValue: this.generateHeaderContextValue(data.content.key),
+          ...(data.content.title !== undefined) && { headerAdapterData: { title: data.content.title } },
+          headerAdapterContextValue: this.generateHeaderContextValue(data.content.key, data.content.title),
         },
       },
     };
+
     newState.disclosureComponentDelegates = [this.generateDisclosureComponentDelegate(data.content.key, newState)];
 
     this.setState(newState);
@@ -307,7 +312,8 @@ class DisclosureManager extends React.Component {
       name: data.content.name,
       props: data.content.props,
       component: data.content.component,
-      headerAdapterContextValue: this.generateHeaderContextValue(data.content.key),
+      ...(data.content.title !== undefined) && { headerAdapterData: { title: data.content.title } },
+      headerAdapterContextValue: this.generateHeaderContextValue(data.content.key, data.content.title),
     };
     newState.disclosureComponentDelegates = newState.disclosureComponentDelegates.concat(this.generateDisclosureComponentDelegate(data.content.key, newState));
 

@@ -4,6 +4,26 @@ Changelog
 Unreleased
 ----------
 
+5.29.0 - (March 17, 2020)
+------------------
+### Fixed
+* Updated jest snapshot for terra-slide-panel change
+
+5.28.0 - (March 10, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+5.27.0 - (March 3, 2020)
+------------------
+### Changed
+* Updated wdio screenshots
+
+5.26.0 - (February 25, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 5.25.0 - (February 18, 2020)
 ------------------
 ### Added

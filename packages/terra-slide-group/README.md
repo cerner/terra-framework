@@ -8,7 +8,7 @@ The SlideGroup is a component that utilizes the `react-transition-group` library
 animated fashion.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-slide-group/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-slide-group/slide-group/slide-group)
 - [LICENSE](#license)
 
 ## Getting Started

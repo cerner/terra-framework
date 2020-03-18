@@ -4,12 +4,12 @@
 [![NPM version](https://badgen.net/npm/v/terra-theme-provider)](https://www.npmjs.org/package/terra-theme-provider)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
-The theme provider component provides a theme to Terra UI components rendered within it via CSS custom properties a.k.a CSS variables. This is accomplished by setting a CSS class which contains defined CSS custom properties for the specified theme on the DOM element that wraps the children rendered by the theme provider.
+The theme provider component provides a theme to Terra UI components via CSS custom properties a.k.a CSS variables. This is accomplished by setting a CSS class, generated from the `themeName` prop, which contains defined CSS custom properties for the specified theme on the `html` element.
 
 *Note:* The CSS custom properties applied via the theme provider only work in browsers which have native support for CSS custom properties.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-theme-provider/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-theme-provider/theme-provider/theme-provider)
 - [LICENSE](#license)
 
 ## Getting Started
