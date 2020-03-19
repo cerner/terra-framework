@@ -384,7 +384,12 @@ class DateTimePicker extends React.Component {
   }
 
   handleDateChangeRaw(event, date) {
-    this.dateValue = event.target.value;
+    const format = DateUtil.getFormatByLocale(this.props.intl.locale);
+    if (DateUtil.isValidDate(date, format)) {
+      this.dateValue = date;
+    } else {
+      this.dateValue = event.target.value;
+    }
     this.handleChangeRaw(event, date);
   }
 
@@ -446,7 +451,7 @@ class DateTimePicker extends React.Component {
   handleChangeRaw(event, value) {
     if (this.props.onChangeRaw) {
       const metadata = this.getMetadata(value);
-      this.props.onChangeRaw(event, value, metadata);
+      this.props.onChangeRaw(event, this.dateValue, metadata);
     }
   }
 
