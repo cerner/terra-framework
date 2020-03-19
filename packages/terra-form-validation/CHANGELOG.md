@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.28.0 - (March 17, 2020)
+------------------
+### Changed
+* Update docs to use mdx syntax.
+
 1.27.0 - (March 10, 2020)
 ------------------
 ### Changed

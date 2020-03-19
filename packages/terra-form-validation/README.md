@@ -7,7 +7,7 @@
 Documentation on how to combine the form validation library [react-final-form](https://github.com/final-form/react-final-form) with UI Components that Terra provides.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-form-validation/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-form-validation/form-validation/form-validation)
 - [LICENSE](#license)
 
 ## Getting Started
