@@ -277,12 +277,13 @@ class DatePicker extends React.Component {
   }
 
   handleChange(date, event) {
+    const format = DateUtil.getFormatByLocale(this.props.intl.locale);
+    const validDate = DateUtil.isValidDate(date, format);
     if (event.type === 'change') {
       this.dateValue = event.target.value;
     }
 
-    if (date && date.isValid()) {
-      const format = DateUtil.getFormatByLocale(this.props.intl.locale);
+    if (date && validDate) {
       this.dateValue = DateUtil.formatMomentDate(date, format);
     }
 
@@ -291,16 +292,27 @@ class DatePicker extends React.Component {
     });
     if (this.props.onChange) {
       const metadata = this.getMetadata();
-      this.props.onChange(event, date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '', metadata);
+      this.props.onChange(event, date && validDate ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '', metadata);
     }
   }
 
   handleChangeRaw(event, date) {
-    this.dateValue = event.target.value;
+    let validDate;
+    if (date) {
+      validDate = DateUtil.isValidDate(date, DateUtil.getFormatByLocale(this.props.intl.locale));
+      if (validDate) {
+        this.dateValue = date;
+      } else {
+        this.dateValue = event.target.value;
+      }
+    }
 
     if (this.props.onChangeRaw) {
       const metadata = this.getMetadata();
-      this.props.onChangeRaw(event, event.target.value, metadata);
+      this.props.onChangeRaw(event, this.dateValue, metadata);
+      if (validDate) {
+        event.target.value = date; // eslint-disable-line no-param-reassign
+      }
     }
   }
 

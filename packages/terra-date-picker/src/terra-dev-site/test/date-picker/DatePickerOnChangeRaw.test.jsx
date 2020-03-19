@@ -13,7 +13,7 @@ class DatePickerOnChange extends React.Component {
       iSO: '',
       inputValue: '',
       isCompleteValue: 'No',
-      isValidValue: 'Yes',
+      isValidValue: 'No',
     };
     this.handleDateChangeRaw = this.handleDateChangeRaw.bind(this);
   }
