@@ -6,6 +6,8 @@ Unreleased
 ### Changed
 * Update docs to use MDX syntax
 
+5.29.0 - (March 17, 2020)
+------------------
 ### Fixed
 * Updated jest snapshot for terra-slide-panel change
 
