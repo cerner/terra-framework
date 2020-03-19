@@ -1,4 +1,5 @@
 /* eslint-disable max-classes-per-file */
+/* Slide Panel Manager example with panel behavior as "squish" */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
