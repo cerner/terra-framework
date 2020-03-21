@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Fix wdio test for clinical-theme
+
 4.31.0 - (March 10, 2020)
 ------------------
 ### Changed
