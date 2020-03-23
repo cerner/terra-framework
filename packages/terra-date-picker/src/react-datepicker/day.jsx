@@ -207,7 +207,7 @@ class Day extends React.Component {
     return ['react-datepicker-day', dayClassName, 'react-datepicker-day--' + getDayOfWeekCode(this.props.day), {
       'react-datepicker-day--disabled': this.isDisabled(),
       'react-datepicker-day--selected': this.isSameDay(this.props.selected),
-      'react-datepicker-day--selected-border': this.isSameDay(this.props.preSelection) && this.props.isCalendarKeyboardFocused,
+      'react-datepicker-day--selected-border': this.isSameDay(this.props.preSelection) && document.activeElement.tagName === 'DIV',
       'react-datepicker-day--range-start': this.isRangeStart(),
       'react-datepicker-day--range-end': this.isRangeEnd(),
       'react-datepicker-day--in-range': this.isInRange(),
@@ -217,7 +217,7 @@ class Day extends React.Component {
       'react-datepicker-day--today': this.isSameDay(now(this.props.utcOffset)),
       'react-datepicker-day--weekend': this.isWeekend(),
       'react-datepicker-day--outside-month': this.isOutsideMonth(),
-      'is-calendar-focused--keyboard-focus': this.props.isCalendarKeyboardFocused && this.isKeyboardSelected(),
+      'is-calendar-focused--keyboard-focus': this.props.isCalendarKeyboardFocused && this.isKeyboardSelected() && document.activeElement.tagName === 'DIV',
     }, this.getHighLightedClass('react-datepicker-day--highlighted')]
   }
 

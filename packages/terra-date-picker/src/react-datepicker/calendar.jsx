@@ -394,6 +394,7 @@ export default class Calendar extends React.Component {
       date: addMonths(cloneDate(this.state.date), 1).startOf('month')
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(addMonths(cloneDate(this.state.date), 1).startOf('month'));
+    // To check if button is pressed using mouse or keyboard
     if(event.target.type === undefined) {
       this.setState({ calendarIsKeyboardFocused : false});
     }
@@ -405,6 +406,7 @@ export default class Calendar extends React.Component {
       date: subtractMonths(cloneDate(this.state.date), 1).startOf('month')
     }, () => this.handleMonthChange(this.state.date))
     this.props.setPreSelection(subtractMonths(cloneDate(this.state.date), 1).startOf('month'));
+    // To check if button is pressed using mouse or keyboard
     if(event.target.type === undefined) {
       this.setState({ calendarIsKeyboardFocused : false});
     }
