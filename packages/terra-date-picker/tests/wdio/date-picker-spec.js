@@ -219,6 +219,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('input[name="terra-date-date-input-onchange"]');
       browser.keys('Backspace');
       browser.keys('Backspace');
+      browser.keys('Backspace');
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
       expect(browser.getText('#iso')).to.equal('');

@@ -5,6 +5,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated props documentation
+
 4.31.0 - (March 10, 2020)
 ------------------
 ### Changed
