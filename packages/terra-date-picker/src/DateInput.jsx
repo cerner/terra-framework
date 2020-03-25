@@ -311,7 +311,7 @@ class DatePickerInput extends React.Component {
         refCallback={(inputRef) => { this.monthInput = inputRef; }}
         className={cx('date-input-month')}
         type="text"
-        name={'terra-date-month-'.concat(name)}
+        name={`terra-date-month-${name}`}
         value={this.state.month}
         onChange={this.handleMonthChange}
         placeholder={placeholderValues.month || 'MM'}
@@ -330,7 +330,7 @@ class DatePickerInput extends React.Component {
         refCallback={(inputRef) => { this.dayInput = inputRef; }}
         className={cx('date-input-day')}
         type="text"
-        name={'terra-date-day-'.concat(name)}
+        name={`terra-date-day-${name}`}
         value={this.state.day}
         onChange={this.handleDayChange}
         placeholder={placeholderValues.day || 'DD'}
