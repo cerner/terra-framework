@@ -297,6 +297,7 @@ function DatePickerInput(props) {
     /* eslint-enable no-param-reassign */
   };
 
+<<<<<<< HEAD
   const handleOnFocus = (event) => {
     setFocused(true);
     if (onFocus) {
@@ -418,8 +419,6 @@ function DatePickerInput(props) {
           data-terra-date-input-hidden
           type="hidden"
           name={name}
-          value={dateValue}
-        />
         {dateInputFormat}
       </div>
       <Button
