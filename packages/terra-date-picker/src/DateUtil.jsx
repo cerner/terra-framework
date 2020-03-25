@@ -145,14 +145,14 @@ class DateUtil {
 
   /**
    * Returns an easily parsable date format string.
-   * @param {string} locale - The locale variant from dateFormatOrder.
+   * @param {string} formatOrder - The locale variant from dateFormatOrder.
    */
-  static getDateFormat(locale) {
+  static getDateFormatVariant(formatOrder) {
     let dateVariant;
 
-    if (locale === '0') {
+    if (formatOrder === '0') {
       dateVariant = 'MM-DD-YYYY';
-    } else if (locale === '1') {
+    } else if (formatOrder === '1') {
       dateVariant = 'YYYY-MM-DD';
     } else {
       dateVariant = 'DD-MM-YYYY';
@@ -191,6 +191,9 @@ class DateUtil {
       dateMonth = ph.substr(3, 2);
       dateDay = ph.substr(0, 2);
       dateYear = ph.substr(6, 4);
+      if (ph[2] === '.') {
+        dateDelimiter = '.';
+      }
     }
 
     if (!dateDelimiter) {
@@ -263,7 +266,7 @@ class DateUtil {
 
   /**
    * Converts an ISO string to the given format.
-   * @param {T[]} iSODate - The ISO string to convert.
+   * @param {string} iSODate - The ISO string to convert.
    * @param {string} format - The desired date format for the conversion
    * @return {string} - The formatted date string.
    */

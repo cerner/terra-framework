@@ -480,16 +480,16 @@ class DatePicker extends React.Component {
     if (this.props.withPortal) { event.preventDefault() }
   }
 
-  handleChange = (event, dateValue) => {
+  handleChange = (event) => {
     if (this.props.onChangeRaw) {
-      this.props.onChangeRaw(event, dateValue)
+      this.props.onChangeRaw(event)
       if (event.isDefaultPrevented()) {
         return
       }
     }
     this.setState({ inputValue: event.target.value })
-    const date = parseDate(dateValue, this.props)
-    if (date || !dateValue) {
+    const date = parseDate(event.target.value, this.props)
+    if (date || !event.target.value) {
       this.setSelected(date, event, true)
     }
   }

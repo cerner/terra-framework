@@ -277,42 +277,26 @@ class DatePicker extends React.Component {
   }
 
   handleChange(date, event) {
-    const format = DateUtil.getFormatByLocale(this.props.intl.locale);
-    const validDate = DateUtil.isValidDate(date, format);
     if (event.type === 'change') {
       this.dateValue = event.target.value;
-    }
-
-    if (date && validDate) {
-      this.dateValue = DateUtil.formatMomentDate(date, format);
     }
 
     this.setState({
       selectedDate: date,
     });
+
     if (this.props.onChange) {
       const metadata = this.getMetadata();
-      this.props.onChange(event, date && validDate ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '', metadata);
+      this.props.onChange(event, date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '', metadata);
     }
   }
 
-  handleChangeRaw(event, date) {
-    let validDate;
-    if (date) {
-      validDate = DateUtil.isValidDate(date, DateUtil.getFormatByLocale(this.props.intl.locale));
-      if (validDate) {
-        this.dateValue = date;
-      } else {
-        this.dateValue = event.target.value;
-      }
-    }
+  handleChangeRaw(event) {
+    this.dateValue = event.target.value;
 
     if (this.props.onChangeRaw) {
       const metadata = this.getMetadata();
-      this.props.onChangeRaw(event, this.dateValue, metadata);
-      if (validDate) {
-        event.target.value = date; // eslint-disable-line no-param-reassign
-      }
+      this.props.onChangeRaw(event, event.target.value, metadata);
     }
   }
 
@@ -407,11 +391,8 @@ class DatePicker extends React.Component {
       formattedValue = value;
     }
 
-    if (this.state.selectedDate) {
-      formattedValue = DateUtil.formatMomentDate(this.state.selectedDate, dateFormat);
-    }
-
     let selectedDateInPicker;
+
     // If using this as a controlled component.
     if (value !== undefined) {
       // If value is empty, let selectedDateInPicker be undefined as in clearing the value.
@@ -455,7 +436,7 @@ class DatePicker extends React.Component {
                 required={required}
                 isIncomplete={isIncomplete}
                 isInvalid={isInvalid}
-                shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
+                shouldShowPicker={true}
                 onButtonFocus={this.handleFocus}
                 buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
               />

@@ -1,4 +1,10 @@
-import React from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useReducer,
+  useRef,
+  useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import Button from 'terra-button';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
@@ -98,43 +104,106 @@ const defaultProps = {
   value: undefined,
 };
 
-class DatePickerInput extends React.Component {
-  constructor(props) {
-    super(props);
+const dateReducer = (state, inputValue) => ({
+  ...state,
+  ...inputValue,
+});
 
-    this.state = {};
+const tempDateParse = (dateVal) => ({
+  dayValue: dateVal.substring(8, 10),
+  monthValue: dateVal.substring(5, 7),
+  yearValue: dateVal.substring(0, 4),
+});
 
-    this.handleOnButtonClick = this.handleOnButtonClick.bind(this);
-    this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
-    this.handleDateChange = this.handleDateChange.bind(this);
-    this.handleDayChange = this.handleDayChange.bind(this);
-    this.handleMonthChange = this.handleMonthChange.bind(this);
-    this.handleYearChange = this.handleYearChange.bind(this);
-    this.handleOnFocus = this.handleOnFocus.bind(this);
-    this.handleOnBlur = this.handleOnBlur.bind(this);
-    this.moveFocusOnChange = this.moveFocusOnChange.bind(this);
-  }
+const dateState = { day: '', month: '', year: '' };
 
-  componentDidUpdate(prevProps) {
-    if (this.shouldShowPicker && !prevProps.shouldShowPicker && this.props.onClick) {
-      this.props.onClick();
+function DatePickerInput(props) {
+  const [date, dateDispatch] = useReducer(dateReducer, dateState);
+  const [isFocused, setFocused] = useState(false);
+  const [showPicker, setShowPicker] = useState(null);
+  const [dayFocus, setDayFocus] = useState(null);
+  const [monthFocus, setMonthFocus] = useState(null);
+  const [yearFocus, setYearFocus] = useState(null);
+
+  const setDayRef = useCallback(node => {
+    setDayFocus(node);
+  }, []);
+
+  const setMonthRef = useCallback(node => {
+    setMonthFocus(node);
+  }, []);
+
+  const setYearRef = useCallback(node => {
+    setYearFocus(node);
+  }, []);
+
+  const {
+    buttonRefCallback,
+    inputAttributes,
+    intl,
+    isIncomplete,
+    isInvalid,
+    name,
+    onBlur,
+    onChange,
+    onClick,
+    onFocus,
+    onButtonFocus,
+    onKeyDown,
+    placeholder,
+    required,
+    value,
+    ...customProps
+  } = props;
+
+  //const onCalendarButtonClick = customProps.onCalendarButtonClick;
+  //const shouldShowPicker = customProps.shouldShowPicker;
+  //delete customProps.onCalendarButtonClick;
+  //delete customProps.shouldShowPicker;
+  const additionalInputProps = { ...customProps, ...inputAttributes };
+
+  useEffect(() => {
+    //setShowPicker(shouldShowPicker);
+    if (showPicker && onClick) {
+      onClick();
+      setShowPicker(false);
     }
-  }
+  }, [onClick]);
 
-  static getDerivedStateFromProps(props, state) {
-    // Formats the selected date into a consistent value and sets input state.
-    if (props.value !== state.prevDate) {
-      const format = DateUtil.getDateFormat(props.intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' }));
-      const tempDate = DateUtil.convertToISO8601(props.value, format);
-      return {
-        day: tempDate.substring(8, 10),
-        month: tempDate.substring(5, 7),
-        year: tempDate.substring(0, 4),
-        prevDate: props.value,
-      };
-    }
-    return null;
+  const localeFormat = intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' });
+  const variant = DateUtil.getDateFormatVariant(localeFormat);
+  const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
+  let placeholderValues;
+  if (placeholder) {
+    placeholderValues = DateUtil.getPlaceholderValues(variant, placeholder);
   }
+  const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
+  const dateFormat = DateUtil.getFormatByLocale(intl.locale);
+
+  // Sets the date state based on the passed in value prop, or if it changes via a calendar click.
+  useEffect(() => {
+    const parseDate = tempDateParse(dateValue);
+
+    dateDispatch({
+      day: parseDate.dayValue,
+      month: parseDate.monthValue,
+      year: parseDate.yearValue,
+    });
+
+    let formatISO;
+    let formattedDate;
+
+    if (parseDate.yearValue) {
+      formatISO = DateUtil.formatISODate(
+        parseDate.yearValue.concat('-',
+          parseDate.monthValue).concat('-',
+          parseDate.dayValue),
+        DateUtil.ISO_EXTENDED_DATE_FORMAT,
+      );
+      formattedDate = DateUtil.strictFormatISODate(formatISO, dateFormat);
+      onChange({ target: { value: formattedDate }, isDefaultPrevented: () => {}, type: 'change' });
+    }
+  }, [dateFormat, onChange, dateValue, value]);
 
   /**
    * Moves focus to the correct input depending on date ordering. Focus changing is
@@ -145,265 +214,229 @@ class DatePickerInput extends React.Component {
    * @param {string} dateVariant - Date variant based on the currently supported date
    *                      orders: 'MM-DD-YYYY', 'DD-MM-YYYY', or 'YYYY-MM-DD'.
    */
-  moveFocusOnChange(inputValue, type, dateVariant) {
-    if (!this.state.prevDate) {
-      if (dateVariant === 'MM-DD-YYYY') {
-        if (inputValue.length === 2) {
-          if (type === DateUtil.inputType.MONTH) {
-            this.dayInput.focus();
-          } else {
-            this.yearInput.focus();
-          }
-        }
-      } else if (dateVariant === 'DD-MM-YYYY') {
-        if (inputValue.length === 2) {
-          if (type === DateUtil.inputType.DAY) {
-            this.monthInput.focus();
-          } else {
-            this.yearInput.focus();
-          }
-        }
-      } else if (dateVariant === 'YYYY-MM-DD') {
-        if (inputValue.length === 2 && type === DateUtil.inputType.MONTH) {
-          this.dayInput.focus();
-        } else if (inputValue.length === 4) {
-          this.monthInput.focus();
+  const moveFocusOnChange = (inputValue, type, dateVariant) => {
+    if (dateVariant === 'MM-DD-YYYY') {
+      if (inputValue.length === 2) {
+        if (type === DateUtil.inputType.MONTH) {
+          dayFocus.focus();
+        } else {
+          yearFocus.focus();
         }
       }
+    } else if (dateVariant === 'DD-MM-YYYY') {
+      if (inputValue.length === 2) {
+        if (type === DateUtil.inputType.DAY) {
+          monthFocus.focus();
+        } else {
+          yearFocus.focus();
+        }
+      }
+    } else if (dateVariant === 'YYYY-MM-DD') {
+      if (inputValue.length === 2 && type === DateUtil.inputType.MONTH) {
+        dayFocus.focus();
+      } else if (inputValue.length === 4) {
+        monthFocus.focus();
+      }
     }
-  }
+  };
 
-  handleOnButtonClick(event) {
-    const attributes = { ...this.props.inputAttributes };
-
-    if (!attributes.readOnly && this.onCalendarButtonClick && this.props.onClick) {
-      this.onCalendarButtonClick(event, this.props.onClick);
-    }
-  }
-
-  handleOnKeyDown(event) {
-    if (this.props.onKeyDown) {
-      this.props.onKeyDown(event);
-    }
-  }
-
-  handleDayChange(event) {
-    this.handleDateChange(event, DateUtil.inputType.DAY);
-  }
-
-  handleMonthChange(event) {
-    this.handleDateChange(event, DateUtil.inputType.MONTH);
-  }
-
-  handleYearChange(event) {
-    this.handleDateChange(event, DateUtil.inputType.YEAR);
-  }
-
-  handleOnFocus(event) {
-    this.setState({ isFocused: true });
-    if (this.props.onFocus) {
-      this.props.onFocus(event);
-    }
-  }
-
-  handleOnBlur(event) {
-    this.setState({ isFocused: false });
-
-    if (this.props.onBlur) {
-      this.props.onBlur(event);
-    }
-  }
-
-  handleDateChange(event, type) {
-    const inputValue = event.target.value.replace(/\D/gm, '');
+  /**
+   * Sets state for the day, month, and year.
+   * @param {string} inputValue - The input value to set in state.
+   * @param {int} type - The inputType (day, month, or year).
+   */
+  const setDate = (inputValue, type) => {
     if (type === DateUtil.inputType.DAY) {
-      this.setState({
-        day: inputValue,
-      });
+      dateDispatch({ day: inputValue });
     } else if (type === DateUtil.inputType.MONTH) {
-      this.setState({
-        month: inputValue,
-      });
-    } else if (type === DateUtil.inputType.YEAR) {
-      this.setState({
-        year: inputValue,
-      });
+      dateDispatch({ month: inputValue });
+    } else {
+      dateDispatch({ year: inputValue });
     }
+    moveFocusOnChange(inputValue, type, variant);
+  };
 
-    this.moveFocusOnChange(inputValue, type, this.variant);
+  const handleDateChange = (event, type) => {
+    const inputValue = event.target.value.replace(/\D/gm, '');
+    setDate(inputValue, type);
 
     /**
      * Sets the day, month and year based on input values, formats them
      * based on the date format variant, and passes the formatted date to onChange.
+     * Variable assignment allows the updated state to be used immediately.
      */
-    const day = type === DateUtil.inputType.DAY ? inputValue : this.state.day;
-    const month = type === DateUtil.inputType.MONTH ? inputValue : this.state.month;
-    const year = type === DateUtil.inputType.YEAR ? inputValue : this.state.year;
-    const dateFormat = DateUtil.getFormatByLocale(this.props.intl.locale);
-
-    let tempDate;
+    const day = type === DateUtil.inputType.DAY ? inputValue : date.day;
+    const month = type === DateUtil.inputType.MONTH ? inputValue : date.month;
+    const year = type === DateUtil.inputType.YEAR ? inputValue : date.year;
+    let inputDate;
     let formattedDate;
 
     if (day.length === 2 && month.length === 2 && year.length === 4) {
-      tempDate = DateUtil.formatISODate(year.concat('-', month).concat('-', day), 'YYYY-MM-DD');
-      formattedDate = DateUtil.strictFormatISODate(tempDate, dateFormat);
+      inputDate = DateUtil.formatISODate(`${year}-${month}-${day}`, 'YYYY-MM-DD');
+      formattedDate = DateUtil.strictFormatISODate(inputDate, dateFormat);
     }
 
+    /* eslint-disable no-param-reassign */
     if (DateUtil.isValidDate(formattedDate, dateFormat)) {
-      this.props.onChange(event, formattedDate);
+      event.target.value = formattedDate;
+      onChange(event);
     } else if (day === '' && month === '' && year === '') {
-      this.props.onChange(event, '');
+      onChange(event);
+    } else if (day.length <= 2 || month.length <= 2 || year.length <= 4) {
+      // Handles raw input change updates by combining inputs.
+      event.preventDefault();
+      if (variant === 'MM-DD-YYYY') {
+        event.target.value = month + day + year;
+      } else if (variant === 'DD-MM-YYYY') {
+        event.target.value = day + month + year;
+      } else {
+        event.target.value = year + month + day;
+      }
+      onChange(event);
     }
-  }
+    /* eslint-enable no-param-reassign */
+  };
 
-  render() {
-    const {
-      buttonRefCallback,
-      inputAttributes,
-      intl,
-      isIncomplete,
-      isInvalid,
-      name,
-      onBlur,
-      onChange,
-      onClick,
-      onFocus,
-      onButtonFocus,
-      onKeyDown,
-      placeholder,
-      required,
-      value,
-      ...customProps
-    } = this.props;
+  const handleOnFocus = (event) => {
+    setFocused(true);
+    if (onFocus) {
+      onFocus(event);
+    }
+  };
 
-    this.onCalendarButtonClick = customProps.onCalendarButtonClick;
-    this.shouldShowPicker = customProps.shouldShowPicker;
+  const handleOnBlur = (event) => {
+    setFocused(false);
+    if (onBlur) {
+      onBlur(event);
+    }
+  };
 
-    const localeFormat = intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' });
-    this.variant = DateUtil.getDateFormat(localeFormat);
+  const handleOnButtonClick = (event) => {
+    const attributes = { ...inputAttributes };
+    if (!attributes.readOnly && onCalendarButtonClick && onClick) {
+      onCalendarButtonClick(event, onClick);
+    }
+  };
 
-    delete customProps.onCalendarButtonClick;
-    delete customProps.shouldShowPicker;
+  const handleOnKeyDown = (event) => {
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+  };
 
-    const additionalInputProps = { ...customProps, ...inputAttributes };
-    const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
-    const placeholderValues = DateUtil.getPlaceholderValues(this.variant, placeholder);
+  const dateInputContainerClasses = cx([
+    'date-input-container',
+  ]);
 
-    const dateInputContainerClasses = cx([
-      'date-input-container',
-    ]);
+  const dateInputClasses = cx([
+    'date-input',
+    { 'is-focused': isFocused },
+    { 'is-invalid': isInvalid },
+    { 'is-incomplete': isIncomplete && required && !isInvalid },
+  ]);
 
-    const dateInputClasses = cx([
-      'date-input',
-      { 'is-focused': this.state.isFocused },
-      { 'is-invalid': isInvalid },
-      { 'is-incomplete': isIncomplete && required && !isInvalid },
-    ]);
-    const buttonClasses = cx([
-      'button',
-      { 'is-invalid': isInvalid },
-    ]);
-    const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
+  const buttonClasses = cx([
+    'button',
+    { 'is-invalid': isInvalid },
+  ]);
 
-    const dateMonthInput = (
-      <Input
-        {...additionalInputProps}
-        refCallback={(inputRef) => { this.monthInput = inputRef; }}
-        className={cx('date-input-month')}
-        type="text"
-        name={'terra-date-month-'.concat(name)}
-        value={this.state.month}
-        onChange={this.handleMonthChange}
-        placeholder={placeholderValues.month || 'MM'}
-        onFocus={this.handleOnFocus}
-        onBlur={this.handleOnBlur}
-        maxLength="2"
-        size="2"
-        pattern="\d*"
-        aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
-      />
-    );
+  const dateMonthInput = (
+    <Input
+      {...additionalInputProps}
+      refCallback={setMonthRef}
+      className={cx('date-input-month')}
+      type="text"
+      name={'terra-date-month-'.concat(name)}
+      value={date.month}
+      onChange={(e) => handleDateChange(e, DateUtil.inputType.MONTH)}
+      placeholder={placeholderValues.month}
+      onFocus={handleOnFocus}
+      onBlur={handleOnBlur}
+      maxLength="2"
+      size="2"
+      pattern="\d*"
+      aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
+    />
+  );
 
-    const dateDayInput = (
-      <Input
-        {...additionalInputProps}
-        refCallback={(inputRef) => { this.dayInput = inputRef; }}
-        className={cx('date-input-day')}
-        type="text"
-        name={'terra-date-day-'.concat(name)}
-        value={this.state.day}
-        onChange={this.handleDayChange}
-        placeholder={placeholderValues.day || 'DD'}
-        onFocus={this.handleOnFocus}
-        onBlur={this.handleOnBlur}
-        maxLength="2"
-        size="2"
-        pattern="\d*"
-        aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
-      />
-    );
+  const dateDayInput = (
+    <Input
+      {...additionalInputProps}
+      refCallback={setDayRef}
+      className={cx('date-input-day')}
+      type="text"
+      name={'terra-date-day-'.concat(name)}
+      value={date.day}
+      onChange={(e) => handleDateChange(e, DateUtil.inputType.DAY)}
+      placeholder={placeholderValues.day}
+      onFocus={handleOnFocus}
+      onBlur={handleOnBlur}
+      maxLength="2"
+      size="2"
+      pattern="\d*"
+      aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
+    />
+  );
 
-    const dateYearInput = (
-      <Input
-        {...additionalInputProps}
-        refCallback={(inputRef) => { this.yearInput = inputRef; }}
-        className={cx('date-input-year')}
-        type="text"
-        name={'terra-date-year-'.concat(name)}
-        value={this.state.year}
-        onChange={this.handleYearChange}
-        placeholder={placeholderValues.year || 'YYYY'}
-        onFocus={this.handleOnFocus}
-        onBlur={this.handleOnBlur}
-        maxLength="4"
-        size="4"
-        pattern="\d*"
-        aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
-      />
-    );
+  const dateYearInput = (
+    <Input
+      {...additionalInputProps}
+      refCallback={setYearRef}
+      className={cx('date-input-year')}
+      type="text"
+      name={'terra-date-year-'.concat(name)}
+      value={date.year}
+      onChange={(e) => handleDateChange(e, DateUtil.inputType.YEAR)}
+      placeholder={placeholderValues.year}
+      onFocus={handleOnFocus}
+      onBlur={handleOnBlur}
+      maxLength="4"
+      size="4"
+      pattern="\d*"
+      aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
+    />
+  );
 
-    const dateSpacer = <span className={cx('date-spacer')}>{placeholderValues.delimiter}</span>;
+  const dateSpacer = <span className={cx('date-spacer')}>{placeholderValues.delimiter}</span>;
 
-    const dateInputFormat = DateUtil.getInputLayout(
-      this.variant,
-      dateSpacer,
-      dateMonthInput,
-      dateDayInput,
-      dateYearInput,
-    );
+  const dateInputFormat = DateUtil.getInputLayout(
+    variant,
+    dateSpacer,
+    dateMonthInput,
+    dateDayInput,
+    dateYearInput,
+  );
 
-    return (
-      <div
-        {...customProps}
-        className={dateInputContainerClasses}
-      >
-        <div className={dateInputClasses}>
-          <input
-            // Create a hidden input for storing the name and value attributes to use when submitting the form.
-            // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
-            data-terra-date-input-hidden
-            type="hidden"
-            name={name}
-            value={dateValue}
-          />
-          {dateInputFormat}
-        </div>
-        <Button
-          className={buttonClasses}
-          text={buttonText}
-          onClick={this.handleOnButtonClick}
-          onKeyDown={this.handleOnKeyDown}
-          icon={Icon}
-          isIconOnly
-          isCompact
-          isDisabled={additionalInputProps.disabled}
-          onBlur={onBlur}
-          onFocus={onButtonFocus}
-          refCallback={buttonRefCallback}
+  return (
+    <div
+      className={dateInputContainerClasses}
+    >
+      <div className={dateInputClasses}>
+        <input
+          // Create a hidden input for storing the name and value attributes to use when submitting the form.
+          // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
+          data-terra-date-input-hidden
+          type="hidden"
+          name={name}
+          value={dateValue}
         />
+        {dateInputFormat}
       </div>
-    );
-  }
+      <Button
+        className={buttonClasses}
+        text={buttonText}
+        onClick={handleOnButtonClick}
+        onKeyDown={handleOnKeyDown}
+        icon={Icon}
+        isIconOnly
+        isCompact
+        isDisabled={additionalInputProps.disabled}
+        onBlur={onBlur}
+        onFocus={onButtonFocus}
+        refCallback={buttonRefCallback}
+      />
+    </div>
+  );
 }
 
 DatePickerInput.propTypes = propTypes;

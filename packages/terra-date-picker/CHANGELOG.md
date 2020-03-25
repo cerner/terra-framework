@@ -4,6 +4,12 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* DateInput split into 3 distinct inputs that mask the previous single input
+
+4.32.0 - (March 24, 2020)
+------------------
+### Changed
+* Updated props documentation
 * Fix wdio test for clinical-theme
 
 4.31.0 - (March 10, 2020)
@@ -28,7 +34,6 @@ Unreleased
 * Added clinical-lowlight-theme theming files
 
 ### Changed
-* DateInput split into 3 distinct inputs
 * Update docs to use mdx syntax.
 
 4.27.0 - (February 4, 2020)

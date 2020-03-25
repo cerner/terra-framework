@@ -4,11 +4,11 @@
 
 :local {
   @mixin focus-styles {
-    border-color: var(--terra-date-picker-focus-border-color, #26a2e5);
-    border-style: var(--terra-date-picker-focus-border-style, solid);
-    border-width: var(--terra-date-picker-focus-border-width, 1px);
-    opacity: var(--terra-date-picker-focus-opacity, 1);
-    outline: none;
+    border-color: var(--terra-date-picker-input-focus-border-color, #26a2e5);
+    border-style: var(--terra-date-picker-input-focus-border-style, solid);
+    border-width: var(--terra-date-picker-input-focus-border-width, 1px);
+    opacity: var(--terra-date-picker-input-focus-opacity, 1);
+    outline: var(--terra-date-picker-input-focus-outline, none);
   }
 
   .date-input-container {

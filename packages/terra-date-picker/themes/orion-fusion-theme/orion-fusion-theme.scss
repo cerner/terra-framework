@@ -10,6 +10,10 @@
   --terra-date-picker-input-focus-border-color: #4cb2e9;
   --terra-date-picker-button-focus-border-color: #26a2e5;
   --terra-date-picker-button-focus-box-shadow: inset 0 3rem 1.5rem -2rem #f4f4f4, 0 0 1px 1px rgba(255, 255, 255, 0.65), 0 0 2px 3px rgba(76, 178, 233, 0.5), 0 0 6px 4px rgba(76, 178, 233, 0.3);
+  --terra-date-picker-input-focus-border-style: solid;
+  --terra-date-picker-input-focus-border-width: 1px;
+  --terra-date-picker-input-focus-opacity: 1;
+  --terra-date-picker-input-focus-outline: none;
 
   // Invalid
   --terra-date-picker-input-invalid-border-color: #dedfe0;
@@ -22,12 +26,12 @@
   --terra-date-picker-input-invalid-focus-box-shadow: 0 0 8px #a6d9f4;
   --terra-date-picker-button-invalid-focus-border-color: #4cb2e9;
   --terra-date-picker-button-invalid-focus-box-shadow: inset 0 3rem 1.5rem -2rem #f4f4f4, 0 0 1px 1px rgba(255, 255, 255, 0.65), 0 0 2px 3px rgba(76, 178, 233, 0.5), 0 0 6px 4px rgba(76, 178, 233, 0.3);
-  
-  // Incomplete 
+
+  // Incomplete
   --terra-date-picker-input-incomplete-background-color: #fefd9a;
   --terra-date-picker-input-incomplete-hover-background-color: #fefd9a;
   --terra-date-picker-input-incomplete-focus-background-color: #fefd9a;
-  
+
   // Incomplete - Disabled
   --terra-date-picker-input-incomplete-disabled-background-color: #f4f4f4;
   --terra-date-picker-input-incomplete-disabled-border: 1px solid #b2b5b6;
