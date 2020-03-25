@@ -156,14 +156,14 @@ function DatePickerInput(props) {
     ...customProps
   } = props;
 
-  //const onCalendarButtonClick = customProps.onCalendarButtonClick;
-  //const shouldShowPicker = customProps.shouldShowPicker;
-  //delete customProps.onCalendarButtonClick;
-  //delete customProps.shouldShowPicker;
+  const onCalendarButtonClick = customProps.onCalendarButtonClick;
+  const shouldShowPicker = customProps.shouldShowPicker;
+  delete customProps.onCalendarButtonClick;
+  delete customProps.shouldShowPicker;
   const additionalInputProps = { ...customProps, ...inputAttributes };
 
   useEffect(() => {
-    //setShowPicker(shouldShowPicker);
+    setShowPicker(shouldShowPicker);
     if (showPicker && onClick) {
       onClick();
       setShowPicker(false);
@@ -297,7 +297,6 @@ function DatePickerInput(props) {
     /* eslint-enable no-param-reassign */
   };
 
-<<<<<<< HEAD
   const handleOnFocus = (event) => {
     setFocused(true);
     if (onFocus) {
@@ -419,6 +418,8 @@ function DatePickerInput(props) {
           data-terra-date-input-hidden
           type="hidden"
           name={name}
+          value={dateValue}
+        />
         {dateInputFormat}
       </div>
       <Button
