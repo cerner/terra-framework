@@ -74,9 +74,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.refresh();
       Terra.hideInputCaret('input[name="terra-time-minute-input"]');
       browser.click('input[name="terra-date-month-input"]');
-      browser.keys('03');
-      browser.keys('11');
-      browser.keys('2018');
+      browser.setValue('input[name="terra-date-month-input"]', '03');
+      browser.setValue('input[name="terra-date-day-input"]', '11');
+      browser.setValue('input[name="terra-date-year-input"]', '2018');
       browser.setValue('input[name="terra-time-hour-input"]', '02');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
     });
@@ -91,9 +91,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.refresh();
       Terra.hideInputCaret('input[name="terra-time-minute-input"]');
       browser.click('input[name="terra-date-month-input"]');
-      browser.keys('03');
-      browser.keys('11');
-      browser.keys('2018');
+      browser.setValue('input[name="terra-date-month-input"]', '03');
+      browser.setValue('input[name="terra-date-day-input"]', '11');
+      browser.setValue('input[name="terra-date-year-input"]', '2018');
       browser.setValue('input[name="terra-time-hour-input"]', '02');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
       browser.clearElement('input[name="terra-time-hour-input"]');
@@ -202,9 +202,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     it('enter a complete date to move focus to the hour input and onBlur is not triggered', () => {
       browser.click('input[name="terra-date-month-input"]');
-      browser.keys('05');
-      browser.keys('01');
-      browser.keys('2019');
+      browser.setValue('input[name="terra-date-month-input"]', '05');
+      browser.setValue('input[name="terra-date-day-input"]', '01');
+      browser.setValue('input[name="terra-date-year-input"]', '2019');
       expect(browser.getText('#blur-count')).to.equal('0');
       expect(browser.getText('#focus-count')).to.equal('1');
       expect(browser.getText('#iso')).to.equal('');
@@ -262,9 +262,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     it('iso string is updated upon entering an invalid date', () => {
       browser.click('input[name="terra-date-month-input"]');
-      browser.keys('04');
-      browser.keys('01');
-      browser.keys('2019');
+      browser.setValue('input[name="terra-date-month-input"]', '04');
+      browser.setValue('input[name="terra-date-day-input"]', '01');
+      browser.setValue('input[name="terra-date-year-input"]', '2019');
       browser.setValue('input[name="terra-time-hour-input"]', '10');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
       browser.keys('Tab');
@@ -302,9 +302,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     before(() => {
       browser.refresh();
       browser.click('input[name="terra-date-month-input"]');
-      browser.keys('03');
-      browser.keys('10');
-      browser.keys('2019');
+      browser.setValue('input[name="terra-date-month-input"]', '03');
+      browser.setValue('input[name="terra-date-day-input"]', '10');
+      browser.setValue('input[name="terra-date-year-input"]', '2019');
       browser.setValue('input[name="terra-time-hour-input"]', '02');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
       browser.keys('Tab');
@@ -325,9 +325,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     before(() => {
       browser.refresh();
       browser.click('input[name="terra-date-month-input"]');
-      browser.keys('05');
-      browser.keys('01');
-      browser.keys('2019');
+      browser.setValue('input[name="terra-date-month-input"]', '05');
+      browser.setValue('input[name="terra-date-day-input"]', '01');
+      browser.setValue('input[name="terra-date-year-input"]', '2019');
       browser.click('input[name="terra-time-minute-input"]');
       browser.keys('Tab');
       expect(browser.getText('#iso')).to.equal('');
@@ -378,9 +378,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     it('is triggered', () => {
       browser.click('input[name="terra-date-month-input"]');
-      browser.keys('07');
-      browser.keys('12');
-      browser.keys('2017');
+      browser.setValue('input[name="terra-date-month-input"]', '07');
+      browser.setValue('input[name="terra-date-day-input"]', '12');
+      browser.setValue('input[name="terra-date-year-input"]', '2017');
       browser.setValue('input[name="terra-time-hour-input"]', '10');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
       expect(browser.getText('#iso')).to.equal('2017-07-12T10:30:00-05:00');
@@ -397,9 +397,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     it('missing hour', () => {
       browser.refresh();
       browser.click('input[name="terra-date-month-input"]');
-      browser.keys('03');
-      browser.keys('10');
-      browser.keys('2019');
+      browser.setValue('input[name="terra-date-month-input"]', '03');
+      browser.setValue('input[name="terra-date-day-input"]', '10');
+      browser.setValue('input[name="terra-date-year-input"]', '2019');
       browser.setValue('input[name="terra-time-hour-input"]', '');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
 
@@ -419,7 +419,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     before(() => {
       browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
-      Terra.hideInputCaret('input[name="terra-date-month-input"]');
       Terra.hideInputCaret('input[name="terra-date-day-input"]');
       Terra.hideInputCaret('input[name="terra-date-year-input"]');
       Terra.hideInputCaret('input[name="terra-time-minute-input"]');
@@ -467,9 +466,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     it('is triggered', () => {
       browser.click('input[name="terra-date-month-input"]');
-      browser.keys('07');
-      browser.keys('12');
-      browser.keys('2017');
+      browser.setValue('input[name="terra-date-month-input"]', '07');
+      browser.setValue('input[name="terra-date-day-input"]', '12');
+      browser.setValue('input[name="terra-date-year-input"]', '2017');
       browser.setValue('input[name="terra-time-hour-input"]', '10');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
 
@@ -487,9 +486,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     it('missing hour', () => {
       browser.refresh();
       browser.click('input[name="terra-date-month-input"]');
-      browser.keys('03');
-      browser.keys('10');
-      browser.keys('2019');
+      browser.setValue('input[name="terra-date-month-input"]', '03');
+      browser.setValue('input[name="terra-date-day-input"]', '10');
+      browser.setValue('input[name="terra-date-year-input"]', '2019');
 
       browser.setValue('input[name="terra-time-hour-input"]', '');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
@@ -572,7 +571,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-excluded');
       browser.refresh();
-      Terra.hideInputCaret('input[name="terra-date-month-input"]');
       browser.click('input[name="terra-date-month-input"]');
     });
 
@@ -607,7 +605,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-out-of-range');
       browser.refresh();
-      Terra.hideInputCaret('input[name="terra-date-month-input"]');
       browser.click('input[name="terra-date-month-input"]');
     });
 
