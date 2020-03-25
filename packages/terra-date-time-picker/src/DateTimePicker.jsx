@@ -70,16 +70,17 @@ const propTypes = {
   /**
    * A callback function triggered when the entire date time picker component loses focus.
    * This event does not get triggered when the focus is moved from the date input to the time input because the focus is still within the main date time picker component.
+   * The first parameter is the event. The second parameter is the metadata to describe the current state of the input value at the time when the onBlur callback is triggered.
    */
   onBlur: PropTypes.func,
   /**
    * A callback function to execute when a valid date is selected or entered.
-   * The first parameter is the event. The second parameter is the changed input value.
+   * The first parameter is the event. The second parameter is the changed input value. The third parameter is the metadata to describe the current state of the input value at the time when the onChange callback is triggered.
    */
   onChange: PropTypes.func,
   /**
    * A callback function to execute when a change is made in the date or time input.
-   * The first parameter is the event. The second parameter is the changed input value.
+   * The first parameter is the event. The second parameter is the changed input value. The third parameter is the metadata to describe the current state of the input value at the time when the onChangeRaw callback is triggered
    */
   onChangeRaw: PropTypes.func,
   /**
