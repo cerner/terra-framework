@@ -361,6 +361,11 @@
       outline: 2px dashed #000;
       outline-offset: -3px;
     }
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }   
   }
 
   .react-datepicker-close-button {
@@ -441,6 +446,11 @@
       outline: 2px dashed #000;
       outline-offset: 0;
     }
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }   
   }
 
   .prev-month-icon,
@@ -503,5 +513,10 @@
       outline: 2px dashed #000;
       outline-offset: 0;
     }
+    
+    &::-moz-focus-inner {
+      border: 0 !important;
+      padding: 0 !important;
+    }   
   }
 }

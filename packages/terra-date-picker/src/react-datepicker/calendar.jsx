@@ -1,6 +1,5 @@
 import { FormattedMessage, intlShape } from 'react-intl';
 import Button from 'terra-button';
-import moment from 'moment';
 import * as KeyCode from 'keycode-js';
 import YearDropdown from './year_dropdown'
 import MonthDropdown from './month_dropdown'
@@ -28,7 +27,7 @@ import {
   getLocaleData,
   getWeekdayShortInLocale,
   getWeekdayMinInLocale,
-
+  getStartOfMonth,
   isSameDay,
   allDaysDisabledBefore,
   allDaysDisabledAfter,
@@ -336,7 +335,7 @@ export default class Calendar extends React.Component {
 
   handlePreviousMonthBtnKeyDown = (event) => {
     if (event.shiftKey && event.keyCode === KeyCode.KEY_TAB || event.keyCode === KeyCode.KEY_RETURN) {
-      this.setState({ calendarIsKeyboardFocused: true })
+      this.setState({ calendarIsKeyboardFocused: true })  
     }
   }
 
@@ -389,11 +388,12 @@ export default class Calendar extends React.Component {
   localizeDate = date => localizeDate(date, this.props.locale)
 
   increaseMonth = (event) => {
+    this.nextMonthBtnRef.current.focus(); // To apply focus style in firefox
     this.setState({
       isMonthChanged: true,
-      date: addMonths(cloneDate(this.state.date), 1).startOf('month')
+      date: getStartOfMonth(addMonths(cloneDate(this.state.date), 1)),
     }, () => this.handleMonthChange(this.state.date))
-    this.props.setPreSelection(addMonths(cloneDate(this.state.date), 1).startOf('month'));
+    this.props.setPreSelection(getStartOfMonth(addMonths(cloneDate(this.state.date), 1)));
     // To check if button is pressed using mouse or keyboard
     if(event.target.type === undefined) {
       this.setState({ calendarIsKeyboardFocused : false});
@@ -401,11 +401,12 @@ export default class Calendar extends React.Component {
   }
 
   decreaseMonth = (event) => {
+    this.previousMonthBtnRef.current.focus(); // To apply focus style in firefox
     this.setState({
       isMonthChanged: true,
-      date: subtractMonths(cloneDate(this.state.date), 1).startOf('month')
+      date: getStartOfMonth(subtractMonths(cloneDate(this.state.date), 1))
     }, () => this.handleMonthChange(this.state.date))
-    this.props.setPreSelection(subtractMonths(cloneDate(this.state.date), 1).startOf('month'));
+    this.props.setPreSelection(getStartOfMonth(subtractMonths(cloneDate(this.state.date), 1)));
     // To check if button is pressed using mouse or keyboard
     if(event.target.type === undefined) {
       this.setState({ calendarIsKeyboardFocused : false});
@@ -435,17 +436,17 @@ export default class Calendar extends React.Component {
   changeYear = (year) => {
     this.setState({
       isMonthChanged: true,
-      date: setYear(cloneDate(this.state.date), year).startOf('month')
+      date: getStartOfMonth(setYear(cloneDate(this.state.date), year))
     })
-    this.props.setPreSelection(setYear(cloneDate(this.state.date), year).startOf('month'));
+    this.props.setPreSelection(getStartOfMonth(setYear(cloneDate(this.state.date), year)));
   }
 
   changeMonth = (month) => {
     this.setState({
       isMonthChanged: true,
-      date: setMonth(cloneDate(this.state.date), month).startOf('month')
+      date: getStartOfMonth(setMonth(cloneDate(this.state.date), month))
     }, () => this.handleMonthChange(this.state.date))
-    this.props.setPreSelection(setMonth(cloneDate(this.state.date), month).startOf('month'));
+    this.props.setPreSelection(getStartOfMonth(setMonth(cloneDate(this.state.date), month)));
   }
 
   header = (date = this.state.date) => {
@@ -610,10 +611,13 @@ export default class Calendar extends React.Component {
   renderMonths = () => {
     let keyboardFocus= false;
     if(this.props.isCalendarOpenedViaKeyboard || this.props.isCalendarKeyboardFocused) {
-      keyboardFocus=true;
+      keyboardFocus = true;
     }
     if(this.state.isMonthChanged) {
       keyboardFocus= this.state.calendarIsKeyboardFocused;
+    }
+    if(!keyboardFocus && this.state.calendarIsKeyboardFocused) {
+      keyboardFocus = true;
     }
     var monthList = []
     for (var i = 0; i < this.props.monthsShown; ++i) {
