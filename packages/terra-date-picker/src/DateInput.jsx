@@ -109,12 +109,6 @@ const dateReducer = (state, inputValue) => ({
   ...inputValue,
 });
 
-const tempDateParse = (dateVal) => ({
-  dayValue: dateVal.substring(8, 10),
-  monthValue: dateVal.substring(5, 7),
-  yearValue: dateVal.substring(0, 4),
-});
-
 const dateState = { day: '', month: '', year: '' };
 
 function DatePickerInput(props) {
@@ -161,6 +155,7 @@ function DatePickerInput(props) {
   delete customProps.onCalendarButtonClick;
   delete customProps.shouldShowPicker;
   const additionalInputProps = { ...customProps, ...inputAttributes };
+  let buttonRef;
 
   useEffect(() => {
     setShowPicker(shouldShowPicker);
@@ -168,17 +163,25 @@ function DatePickerInput(props) {
       onClick();
       setShowPicker(false);
     }
-  }, [onClick]);
+    buttonRef = buttonRefCallback;
+  }, [buttonRefCallback, onClick]);
 
   const localeFormat = intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' });
   const variant = DateUtil.getDateFormatVariant(localeFormat);
   const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
-  let placeholderValues;
-  if (placeholder) {
-    placeholderValues = DateUtil.getPlaceholderValues(variant, placeholder);
-  }
+  const placeholderValues = DateUtil.getPlaceholderValues(variant, placeholder);
   const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
   const dateFormat = DateUtil.getFormatByLocale(intl.locale);
+
+  const tempDateParse = (dateVal) => {
+    if (dateVal) {
+      return {
+        dayValue: dateVal.substr(8, 10),
+        monthValue: dateVal.substr(5, 7),
+        yearValue: dateVal.substr(0, 4),
+      }
+    }
+  };
 
   // Sets the date state based on the passed in value prop, or if it changes via a calendar click.
   useEffect(() => {
@@ -346,7 +349,7 @@ function DatePickerInput(props) {
       refCallback={setMonthRef}
       className={cx('date-input-month')}
       type="text"
-      name={'terra-date-month-'.concat(name)}
+      name={`terra-date-month-${name}`}
       value={date.month}
       onChange={(e) => handleDateChange(e, DateUtil.inputType.MONTH)}
       placeholder={placeholderValues.month}
@@ -365,7 +368,7 @@ function DatePickerInput(props) {
       refCallback={setDayRef}
       className={cx('date-input-day')}
       type="text"
-      name={'terra-date-day-'.concat(name)}
+      name={`terra-date-day-${name}`}
       value={date.day}
       onChange={(e) => handleDateChange(e, DateUtil.inputType.DAY)}
       placeholder={placeholderValues.day}
@@ -384,7 +387,7 @@ function DatePickerInput(props) {
       refCallback={setYearRef}
       className={cx('date-input-year')}
       type="text"
-      name={'terra-date-year-'.concat(name)}
+      name={`terra-date-year-${name}`}
       value={date.year}
       onChange={(e) => handleDateChange(e, DateUtil.inputType.YEAR)}
       placeholder={placeholderValues.year}
