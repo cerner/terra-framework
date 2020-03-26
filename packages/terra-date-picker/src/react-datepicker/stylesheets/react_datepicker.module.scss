@@ -358,8 +358,9 @@
 
     &:focus {
       background-color: #e4e4e4;
-      outline: 2px dashed #000;
-      outline-offset: -3px;
+      border: 2px dashed #000;
+      box-sizing: border-box;
+      outline: 0;
     }
 
     &::-moz-focus-inner {
@@ -512,11 +513,6 @@
     &:focus {
       outline: 2px dashed #000;
       outline-offset: 0;
-    }
-    
-    &::-moz-focus-inner {
-      border: 0 !important;
-      padding: 0 !important;
-    }   
+    } 
   }
 }
