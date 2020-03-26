@@ -1,5 +1,4 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
 /* eslint-disable import/no-extraneous-dependencies */
 import { renderWithIntl, shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import moment from 'moment';
@@ -109,13 +108,7 @@ it('should render a controlled date picker', () => {
 });
 
 it('should render a pop-up date picker', () => {
-  let datePicker;
-  act(() => {
-    datePicker = mountWithIntl(<DatePicker name="date-input" utcOffset={0} />);
-  });
-
-  // open calendar
-  datePicker.find('button').simulate('click');
-
-  expect(datePicker.find('.react-datepicker-arrow').length).toBeGreaterThan(0);
+  const datePicker = shallowWithIntl(<DatePicker name="date-input" utcOffset={0} shouldShowPicker />);
+  const wrapper = datePicker.dive();
+  expect(wrapper.find('.date-picker').length).toBeGreaterThan(0);
 });
