@@ -109,7 +109,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
       browser.click('input[name="terra-time-minute-input"]');
       browser.keys('Tab');
-      browser.waitForVisible('[class*="time-clarification"]');
+      browser.waitForVisible('[class*="time-clarification"]', 5000);
     });
 
     Terra.it.isAccessible({ rules: ignoredA11y });
@@ -154,7 +154,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     it('displays time clarification modal', () => {
       browser.click('input[name="terra-time-minute-input"]');
       browser.keys('Tab');
-      browser.waitForVisible('[class*="time-clarification"]');
+      browser.waitForVisible('[class*="time-clarification"]', 5000);
     });
 
     Terra.it.matchesScreenshot('0', { selector: '[class*="abstract-modal"]' });
@@ -572,6 +572,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-excluded');
       browser.refresh();
       browser.click('input[name="terra-date-month-input"]');
+      Terra.hideInputCaret('input[name="terra-date-month-input"]');
     });
 
     Terra.it.matchesScreenshot();
@@ -606,6 +607,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-out-of-range');
       browser.refresh();
       browser.click('input[name="terra-date-month-input"]');
+      Terra.hideInputCaret('input[name="terra-date-month-input"]');
     });
 
     Terra.it.matchesScreenshot();
