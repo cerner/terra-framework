@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { renderWithIntl, shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl } from 'terra-enzyme-intl';
 import moment from 'moment';
 import DatePicker from '../../lib/DatePicker';
 import DateUtil from '../../lib/DateUtil';

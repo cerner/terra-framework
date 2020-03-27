@@ -432,6 +432,7 @@ class DatePicker extends React.Component {
             required={required}
             customInput={(
               <DateInput
+                selectedDate={selectedDateInPicker}
                 onCalendarButtonClick={this.handleOnCalendarButtonClick}
                 inputAttributes={inputAttributes}
                 required={required}

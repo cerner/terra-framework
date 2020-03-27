@@ -2,7 +2,6 @@ import React, {
   useCallback,
   useEffect,
   useReducer,
-  useRef,
   useState,
 } from 'react';
 import PropTypes from 'prop-types';
@@ -78,6 +77,10 @@ const propTypes = {
    */
   required: PropTypes.bool,
   /**
+   * @private Internal prop for checking selected date.
+   */
+  selectedDate: PropTypes.object,
+  /**
    * @private Internal prop for showing date picker.
    */
   shouldShowPicker: PropTypes.bool,
@@ -114,7 +117,6 @@ const dateState = { day: '', month: '', year: '' };
 function DatePickerInput(props) {
   const [date, dateDispatch] = useReducer(dateReducer, dateState);
   const [isFocused, setFocused] = useState(false);
-  const [showPicker, setShowPicker] = useState(null);
   const [dayFocus, setDayFocus] = useState(null);
   const [monthFocus, setMonthFocus] = useState(null);
   const [yearFocus, setYearFocus] = useState(null);
@@ -146,67 +148,59 @@ function DatePickerInput(props) {
     onKeyDown,
     placeholder,
     required,
+    selectedDate,
     value,
     ...customProps
   } = props;
 
-  const onCalendarButtonClick = customProps.onCalendarButtonClick;
-  const shouldShowPicker = customProps.shouldShowPicker;
+  const { onCalendarButtonClick, shouldShowPicker } = customProps;
   delete customProps.onCalendarButtonClick;
   delete customProps.shouldShowPicker;
   const additionalInputProps = { ...customProps, ...inputAttributes };
-  let buttonRef;
-
-  useEffect(() => {
-    setShowPicker(shouldShowPicker);
-    if (showPicker && onClick) {
-      onClick();
-      setShowPicker(false);
-    }
-    buttonRef = buttonRefCallback;
-  }, [buttonRefCallback, onClick]);
-
   const localeFormat = intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' });
   const variant = DateUtil.getDateFormatVariant(localeFormat);
   const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
-  const placeholderValues = DateUtil.getPlaceholderValues(variant, placeholder);
   const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
   const dateFormat = DateUtil.getFormatByLocale(intl.locale);
+  const placeholderValues = DateUtil.getPlaceholderValues(variant, placeholder);
 
-  const tempDateParse = (dateVal) => {
-    if (dateVal) {
-      return {
-        dayValue: dateVal.substr(8, 10),
-        monthValue: dateVal.substr(5, 7),
-        yearValue: dateVal.substr(0, 4),
-      }
+  useEffect(() => {
+    if (shouldShowPicker && onClick) {
+      onClick();
     }
-  };
+
+    // Clears the inputs when appropriate (e.g. excluded, out of range)
+    if (!selectedDate) {
+      dateDispatch({ day: '', month: '', year: '' });
+    }
+  }, [selectedDate, shouldShowPicker, onClick]);
 
   // Sets the date state based on the passed in value prop, or if it changes via a calendar click.
   useEffect(() => {
-    const parseDate = tempDateParse(dateValue);
+    if (DateUtil.isValidDate(value, dateFormat)) {
+      const parseDate = {
+        dayValue: dateValue.substring(8, 10),
+        monthValue: dateValue.substring(5, 7),
+        yearValue: dateValue.substring(0, 4),
+      };
 
-    dateDispatch({
-      day: parseDate.dayValue,
-      month: parseDate.monthValue,
-      year: parseDate.yearValue,
-    });
-
-    let formatISO;
-    let formattedDate;
-
-    if (parseDate.yearValue) {
-      formatISO = DateUtil.formatISODate(
-        parseDate.yearValue.concat('-',
-          parseDate.monthValue).concat('-',
-          parseDate.dayValue),
-        DateUtil.ISO_EXTENDED_DATE_FORMAT,
-      );
-      formattedDate = DateUtil.strictFormatISODate(formatISO, dateFormat);
-      onChange({ target: { value: formattedDate }, isDefaultPrevented: () => {}, type: 'change' });
+      if (parseDate.yearValue && Object.values(parseDate).join('').length === 8) {
+        const formatISO = DateUtil.formatISODate(
+          parseDate.yearValue.concat('-',
+            parseDate.monthValue).concat('-',
+            parseDate.dayValue),
+          DateUtil.ISO_EXTENDED_DATE_FORMAT,
+        );
+        const formattedDate = DateUtil.strictFormatISODate(formatISO, dateFormat);
+        onChange({ target: { value: formattedDate }, isDefaultPrevented: () => {}, type: 'change' });
+        dateDispatch({
+          day: parseDate.dayValue,
+          month: parseDate.monthValue,
+          year: parseDate.yearValue,
+        });
+      }
     }
-  }, [dateFormat, onChange, dateValue, value]);
+  }, [dateFormat, dateValue, onChange, value]);
 
   /**
    * Moves focus to the correct input depending on date ordering. Focus changing is
@@ -261,19 +255,16 @@ function DatePickerInput(props) {
 
   const handleDateChange = (event, type) => {
     const inputValue = event.target.value.replace(/\D/gm, '');
-    setDate(inputValue, type);
 
     /**
      * Sets the day, month and year based on input values, formats them
      * based on the date format variant, and passes the formatted date to onChange.
-     * Variable assignment allows the updated state to be used immediately.
      */
     const day = type === DateUtil.inputType.DAY ? inputValue : date.day;
     const month = type === DateUtil.inputType.MONTH ? inputValue : date.month;
     const year = type === DateUtil.inputType.YEAR ? inputValue : date.year;
     let inputDate;
     let formattedDate;
-
     if (day.length === 2 && month.length === 2 && year.length === 4) {
       inputDate = DateUtil.formatISODate(`${year}-${month}-${day}`, 'YYYY-MM-DD');
       formattedDate = DateUtil.strictFormatISODate(inputDate, dateFormat);
@@ -285,7 +276,7 @@ function DatePickerInput(props) {
       onChange(event);
     } else if (day === '' && month === '' && year === '') {
       onChange(event);
-    } else if (day.length <= 2 || month.length <= 2 || year.length <= 4) {
+    } else if (day.length < 2 || month.length < 2 || year.length < 4) {
       // Handles raw input change updates by combining inputs.
       event.preventDefault();
       if (variant === 'MM-DD-YYYY') {
@@ -298,6 +289,7 @@ function DatePickerInput(props) {
       onChange(event);
     }
     /* eslint-enable no-param-reassign */
+    setDate(inputValue, type);
   };
 
   const handleOnFocus = (event) => {

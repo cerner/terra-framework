@@ -424,9 +424,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     it('Enters date value', () => {
+      browser.click('input[name="terra-date-month-controlled-date-picker"]');
       browser.setValue('input[name="terra-date-month-controlled-date-picker"]', '06');
       browser.setValue('input[name="terra-date-day-controlled-date-picker"]', '01');
-      browser.click('input[name="terra-date-year-controlled-date-picker"]');
       browser.setValue('input[name="terra-date-year-controlled-date-picker"]', '2020');
     });
 
@@ -476,19 +476,6 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     Terra.it.matchesScreenshot('picker with iso date no time', { selector: '[data-terra-date-picker-calendar]' });
-
-    it('Click button 5 to set ordinal date', () => {
-      browser.click('[class*="PopupOverlay"]');
-      browser.click('#button5');
-    });
-
-    Terra.it.matchesScreenshot('ordinal date not set');
-
-    it('Open the date picker', () => {
-      browser.click('[class*="button"]');
-    });
-
-    Terra.it.matchesScreenshot('picker with ordinal date not set', { selector: '[data-terra-date-picker-calendar]' });
 
     it('Select date', () => {
       browser.keys('ArrowDown');

@@ -7,16 +7,13 @@ Array [
   >
     <input
       data-terra-date-input-hidden="true"
-      name="date-input"
       type="hidden"
-      value="2017-01-01"
     />
     <input
       aria-label="Terra.datePicker.dayLabel"
       class="form-input date-input-day"
-      id="terra-date-input"
       maxlength="2"
-      name="terra-date-day-date-input"
+      name="terra-date-day-undefined"
       pattern="\\\\d*"
       placeholder="MM"
       size="2"
@@ -31,9 +28,8 @@ Array [
     <input
       aria-label="Terra.datePicker.monthLabel"
       class="form-input date-input-month"
-      id="terra-date-input"
       maxlength="2"
-      name="terra-date-month-date-input"
+      name="terra-date-month-undefined"
       pattern="\\\\d*"
       placeholder="DD"
       size="2"
@@ -48,9 +44,8 @@ Array [
     <input
       aria-label="Terra.datePicker.yearLabel"
       class="form-input date-input-year"
-      id="terra-date-input"
       maxlength="4"
-      name="terra-date-year-date-input"
+      name="terra-date-year-undefined"
       pattern="\\\\d*"
       placeholder="YYYY"
       size="4"
