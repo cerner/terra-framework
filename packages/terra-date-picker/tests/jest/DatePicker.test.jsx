@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import moment from 'moment';
 import DatePicker from '../../lib/DatePicker';
 import DateUtil from '../../lib/DateUtil';
@@ -107,8 +107,41 @@ it('should render a controlled date picker', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+// it('should render a pop-up date picker', () => {
+//   const datePicker = shallowWithIntl(<DatePicker name="date-input" utcOffset={0} shouldShowPicker />);
+//   const wrapper = datePicker.dive();
+//   expect(wrapper.find('.date-picker').length).toBeGreaterThan(0);
+// });
+const triggerDomResize = (width) => {
+  global.innerWidth = width;
+  // Trigger the window resize event.
+  global.dispatchEvent(new Event('resize'));
+};
+
 it('should render a pop-up date picker', () => {
-  const datePicker = shallowWithIntl(<DatePicker name="date-input" utcOffset={0} shouldShowPicker />);
-  const wrapper = datePicker.dive();
-  expect(wrapper.find('.date-picker').length).toBeGreaterThan(0);
+  const defaultDomWidth = global.innerWidth;
+
+  triggerDomResize(1000);
+  const datePicker = mountWithIntl(<DatePicker name="date-input" utcOffset={0} />);
+
+  // open calendar
+  datePicker.find('button').simulate('click');
+
+  expect(datePicker.find('.react-datepicker-arrow').length).toBeGreaterThan(0);
+
+  triggerDomResize(defaultDomWidth);
+});
+
+it('should render a modal date picker', () => {
+  const defaultDomWidth = global.innerWidth;
+
+  triggerDomResize(500);
+  const datePicker = mountWithIntl(<DatePicker name="date-input" utcOffset={0} />);
+
+  // open calendar
+  datePicker.find('button').simulate('click');
+
+  expect(datePicker.find('.react-datepicker-portal')).toHaveLength(1);
+
+  triggerDomResize(defaultDomWidth);
 });
