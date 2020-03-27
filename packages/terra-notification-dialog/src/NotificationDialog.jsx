@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
 import FocusTrap from 'focus-trap-react';
-import * as KeyCode from 'keycode-js';
-import Button, { ButtonVariants } from 'terra-button';
-import classNames from 'classnames/bind';
+import { KEY_ESCAPE } from 'keycode-js';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
 import { FormattedMessage } from 'react-intl';
+
 import styles from './NotificationDialog.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const variants = {
   ALERT: 'alert',
@@ -174,114 +175,101 @@ const getIcon = (variant, customIcon = null) => {
   }
 };
 
-class NotificationDialog extends React.Component {
-  constructor(props) {
-    super(props);
+const NotificationDialog = (props) => {
+  useEffect(() => {
+    function handleKeydown(e) {
+      const notificationDialog = document.querySelector('[data-terra-notification-dialog]');
 
-    this.handleKeydown = this.handleKeydown.bind(this);
-    this.escapeKey = KeyCode.KEY_ESCAPE;
-  }
-
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleKeydown);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeydown);
-  }
-
-  handleKeydown(e) {
-    const notificationDialog = document.querySelector('[data-terra-notification-dialog]');
-
-    if (e.keyCode === this.escapeKey) {
-      if (notificationDialog) {
-        if (e.target === notificationDialog || notificationDialog.contains(e.target)) {
-          e.stopImmediatePropagation();
+      if (e.keyCode === KEY_ESCAPE) {
+        if (notificationDialog) {
+          if (e.target === notificationDialog || notificationDialog.contains(e.target)) {
+            e.stopImmediatePropagation();
+          }
         }
       }
     }
+
+    document.addEventListener('keydown', handleKeydown);
+
+    return (() => {
+      document.removeEventListener('keydown', handleKeydown);
+    });
+  });
+
+  const {
+    header,
+    title,
+    startMessage,
+    endMessage,
+    content,
+    acceptAction,
+    rejectAction,
+    variant,
+    customIcon,
+    isOpen,
+    buttonOrder,
+    emphasizedAction,
+    primaryAction,
+    secondaryAction,
+    message,
+    ...customProps
+  } = props;
+
+  if (process.env.NODE_ENV !== 'production' && acceptAction === undefined && primaryAction === undefined && rejectAction === undefined && secondaryAction === undefined) {
+    // eslint-disable-next-line no-console
+    console.warn('At least one of the props `acceptAction`,`primaryAction`,`rejectAction`, or `secondaryAction` must be provided to the Notification dialog');
   }
 
-  render() {
-    if (!this.props.isOpen) {
-      return null;
-    }
+  const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
 
-    const {
-      header,
-      title,
-      startMessage,
-      endMessage,
-      content,
-      acceptAction,
-      rejectAction,
-      variant,
-      customIcon,
-      isOpen,
-      buttonOrder,
-      emphasizedAction,
-      primaryAction,
-      secondaryAction,
-      message,
-      ...customProps
-    } = this.props;
-    if (process.env.NODE_ENV !== 'production' && acceptAction === undefined && primaryAction === undefined && rejectAction === undefined && secondaryAction === undefined) {
-      // eslint-disable-next-line no-console
-      console.warn('At least one of `acceptAction`,`primaryAction`,`rejectAction`,`secondaryAction` props must be provided for Notification dialog');
-    }
-
-    const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
-    const notificationDialogClassNames = cx('notification-dialog', customProps.className);
-
-    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-    return (
-      <AbstractModal
-        ariaLabel="Notification Dialog"
-        aria-labelledby="notification-dialog-header"
-        aria-describedby={title ? 'notification-dialog-title' : 'notification-dialog-header'}
-        role="alertdialog"
-        classNameModal={notificationDialogClassNames}
-        isOpen={this.props.isOpen}
-        onRequestClose={() => {}}
-        closeOnEsc={false}
-        closeOnOutsideClick={false}
-        zIndex="9000"
-        data-terra-notification-dialog
-      >
-        <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
-          <div className={cx('notification-dialog-inner-wrapper')}>
-            <div className={cx('notification-dialog-container')} tabIndex="0">
-              <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
-              <div className={cx('notification-dialog-body')}>
-                {variant
-                  && <div className={cx('icon-container')}>{getIcon(variant, customIcon)}</div>}
-                <div className={cx('text-wrapper')}>
-                  {title
-                    && <div id="notification-dialog-title" className={cx('title')}>{title}</div>}
-                  {(startMessage || message)
-                    && <div className={cx('message')}>{(startMessage || message)}</div>}
-                  {content
-                    && <div>{content}</div>}
-                  {endMessage
-                    && <div className={cx('message')}>{endMessage}</div>}
-                </div>
-              </div>
-              <div className={cx('footer-body')}>
-                {actionSection(
-                  acceptAction || primaryAction,
-                  rejectAction || secondaryAction,
-                  buttonOrder,
-                  emphasizedAction,
-                )}
+  /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+  return (
+    <AbstractModal
+      ariaLabel="Notification Dialog"
+      aria-labelledby="notification-dialog-header"
+      aria-describedby={title ? 'notification-dialog-title' : 'notification-dialog-header'}
+      role="alertdialog"
+      classNameModal={classNames(cx('notification-dialog'), customProps.className)}
+      isOpen={isOpen}
+      onRequestClose={() => {}}
+      closeOnEsc={false}
+      closeOnOutsideClick={false}
+      zIndex="9000"
+      data-terra-notification-dialog
+    >
+      <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
+        <div className={cx('notification-dialog-inner-wrapper')}>
+          <div className={cx('notification-dialog-container')} tabIndex="0">
+            <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
+            <div className={cx('notification-dialog-body')}>
+              {variant
+                && <div className={cx('icon-container')}>{getIcon(variant, customIcon)}</div>}
+              <div className={cx('text-wrapper')}>
+                {title
+                  && <div id="notification-dialog-title" className={cx('title')}>{title}</div>}
+                {(startMessage || message)
+                  && <div className={cx('message')}>{(startMessage || message)}</div>}
+                {content
+                  && <div>{content}</div>}
+                {endMessage
+                  && <div className={cx('message')}>{endMessage}</div>}
               </div>
             </div>
+            <div className={cx('footer-body')}>
+              {actionSection(
+                acceptAction || primaryAction,
+                rejectAction || secondaryAction,
+                buttonOrder,
+                emphasizedAction,
+              )}
+            </div>
           </div>
-        </FocusTrap>
-      </AbstractModal>
-    );
-    /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
-  }
-}
+        </div>
+      </FocusTrap>
+    </AbstractModal>
+  );
+  /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
+};
 
 NotificationDialog.propTypes = propTypes;
 NotificationDialog.defaultProps = defaultProps;
