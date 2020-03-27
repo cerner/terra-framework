@@ -334,7 +334,7 @@ export default class Calendar extends React.Component {
   }
 
   handlePreviousMonthBtnKeyDown = (event) => {
-    if (event.shiftKey && event.keyCode === KeyCode.KEY_TAB || event.keyCode === KeyCode.KEY_RETURN) {
+    if (event.shiftKey && event.keyCode === KeyCode.KEY_TAB) {
       this.setState({ calendarIsKeyboardFocused: true })  
     }
   }
