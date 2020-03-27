@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
 import FocusTrap from 'focus-trap-react';
 import { KEY_ESCAPE } from 'keycode-js';
+import Button, { ButtonVariants } from 'terra-button';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import { FormattedMessage } from 'react-intl';
