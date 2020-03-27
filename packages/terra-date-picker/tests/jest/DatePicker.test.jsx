@@ -107,11 +107,6 @@ it('should render a controlled date picker', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-// it('should render a pop-up date picker', () => {
-//   const datePicker = shallowWithIntl(<DatePicker name="date-input" utcOffset={0} shouldShowPicker />);
-//   const wrapper = datePicker.dive();
-//   expect(wrapper.find('.date-picker').length).toBeGreaterThan(0);
-// });
 const triggerDomResize = (width) => {
   global.innerWidth = width;
   // Trigger the window resize event.

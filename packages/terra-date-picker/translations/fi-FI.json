@@ -8,5 +8,5 @@
   "Terra.datePicker.dayLabel": "Päivä",
   "Terra.datePicker.yearLabel": "Vuosi",
   "Terra.datePicker.date": "Ðâté",
-  "Terra.datePicker.dateFormatOrder": "2"
+  "Terra.datePicker.dateFormatOrder": "DD-MM-YYYY"
 }

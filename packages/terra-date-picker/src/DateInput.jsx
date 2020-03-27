@@ -158,11 +158,10 @@ function DatePickerInput(props) {
   delete customProps.shouldShowPicker;
   const additionalInputProps = { ...customProps, ...inputAttributes };
   const localeFormat = intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' });
-  const variant = DateUtil.getDateFormatVariant(localeFormat);
   const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
   const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
   const dateFormat = DateUtil.getFormatByLocale(intl.locale);
-  const placeholderValues = DateUtil.getPlaceholderValues(variant, placeholder);
+  const placeholderValues = DateUtil.getPlaceholderValues(localeFormat, placeholder);
 
   useEffect(() => {
     if (shouldShowPicker && onClick) {
@@ -250,7 +249,7 @@ function DatePickerInput(props) {
     } else {
       dateDispatch({ year: inputValue });
     }
-    moveFocusOnChange(inputValue, type, variant);
+    moveFocusOnChange(inputValue, type, localeFormat);
   };
 
   const handleDateChange = (event, type) => {
@@ -279,9 +278,9 @@ function DatePickerInput(props) {
     } else if (day.length < 2 || month.length < 2 || year.length < 4) {
       // Handles raw input change updates by combining inputs.
       event.preventDefault();
-      if (variant === 'MM-DD-YYYY') {
+      if (localeFormat === 'MM-DD-YYYY') {
         event.target.value = month + day + year;
-      } else if (variant === 'DD-MM-YYYY') {
+      } else if (localeFormat === 'DD-MM-YYYY') {
         event.target.value = day + month + year;
       } else {
         event.target.value = year + month + day;
@@ -395,7 +394,7 @@ function DatePickerInput(props) {
   const dateSpacer = <span className={cx('date-spacer')}>{placeholderValues.delimiter}</span>;
 
   const dateInputFormat = DateUtil.getInputLayout(
-    variant,
+    localeFormat,
     dateSpacer,
     dateMonthInput,
     dateDayInput,
