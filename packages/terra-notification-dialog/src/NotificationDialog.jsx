@@ -123,21 +123,25 @@ const defaultProps = {
   emphasizedAction: 'none',
 };
 
+const shouldAddVariantClass = (variant) => Object.values(variants).indexOf(variant) >= 0;
+
 const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction) => {
   let acceptButton = null;
   let rejectButton = null;
+
   if (!acceptAction && !rejectAction) {
     return null;
   }
+
   if (acceptAction) {
-    acceptButton = (emphasizedAction === 'accept')
-      ? <Button text={acceptAction.text} variant={ButtonVariants.EMPHASIS} onClick={acceptAction.onClick} />
-      : <Button text={acceptAction.text} onClick={acceptAction.onClick} />;
+    const buttonVariant = emphasizedAction === 'accept' ? { variant: ButtonVariants.EMPHASIS } : {};
+
+    acceptButton = <Button {...buttonVariant} text={acceptAction.text} onClick={acceptAction.onClick} />;
   }
+
   if (rejectAction) {
-    rejectButton = (emphasizedAction === 'reject')
-      ? <Button text={rejectAction.text} variant={ButtonVariants.EMPHASIS} onClick={rejectAction.onClick} />
-      : <Button text={rejectAction.text} onClick={rejectAction.onClick} />;
+    const buttonVariant = emphasizedAction === 'reject' ? { variant: ButtonVariants.EMPHASIS } : {};
+    rejectButton = <Button {...buttonVariant} text={rejectAction.text} onClick={rejectAction.onClick} />;
   }
 
   if (buttonOrder === 'rejectFirst') {
@@ -158,22 +162,23 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
 };
 
 const getIcon = (variant, customIcon = null) => {
-  switch (variant) {
-    case variants.ALERT:
-      return (<span className={cx(['icon', 'alert'])} />);
-    case variants.ERROR:
-      return (<span className={cx(['icon', 'error'])} />);
-    case variants.WARNING:
-      return (<span className={cx(['icon', 'warning'])} />);
-    case variants.INFO:
-      return (<span className={cx(['icon', 'info'])} />);
-    case variants.SUCCESS:
-      return (<span className={cx(['icon', 'success'])} />);
-    case variants.CUSTOM:
-      return customIcon;
-    default:
-      return null;
+  let icon;
+
+  if (variants.CUSTOM === variant) {
+    icon = customIcon;
+  } else if (shouldAddVariantClass(variant)) {
+    icon = <span className={cx(['icon', `${variant}-icon`])} />;
   }
+
+  let iconContent;
+  if (icon) {
+    iconContent = (
+      <div className={cx('icon-container')}>
+        {icon}
+      </div>
+    );
+  }
+  return iconContent;
 };
 
 const NotificationDialog = (props) => {
@@ -222,6 +227,15 @@ const NotificationDialog = (props) => {
   }
 
   const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
+  let headerContent = null;
+  if (header || defaultHeader) {
+    headerContent = <div id="notification-dialog-header">{header || defaultHeader}</div>;
+  }
+
+  let titleContent = null;
+  if (title) {
+    titleContent = <div id="notification-dialog-title" className={cx('title')}>{title}</div>;
+  }
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
@@ -241,20 +255,22 @@ const NotificationDialog = (props) => {
       <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
         <div className={cx('notification-dialog-inner-wrapper')}>
           <div className={cx('notification-dialog-container')} tabIndex="0">
-            <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
-            <div className={cx('notification-dialog-body')}>
-              {variant
-                && <div className={cx('icon-container')}>{getIcon(variant, customIcon)}</div>}
-              <div className={cx('text-wrapper')}>
-                {title
-                  && <div id="notification-dialog-title" className={cx('title')}>{title}</div>}
-                {(startMessage || message)
-                  && <div className={cx('message')}>{(startMessage || message)}</div>}
-                {content
-                  && <div>{content}</div>}
-                {endMessage
-                  && <div className={cx('message')}>{endMessage}</div>}
+            <div className={cx(['header-container', { [`${variant}`]: shouldAddVariantClass(variant) }])}>
+              <div className={cx(['header-body'])}>
+                {getIcon(variant, customIcon)}
+                <div>
+                  {headerContent}
+                  {titleContent}
+                </div>
               </div>
+            </div>
+            <div className={cx('notification-dialog-body')}>
+              {(startMessage || message)
+                && <div className={cx('message')}>{(startMessage || message)}</div>}
+              {content
+                && <div>{content}</div>}
+              {endMessage
+                && <div className={cx('message')}>{endMessage}</div>}
             </div>
             <div className={cx('footer-body')}>
               {actionSection(
