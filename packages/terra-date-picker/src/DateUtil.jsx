@@ -144,24 +144,6 @@ class DateUtil {
   }
 
   /**
-   * Returns an easily parsable date format string.
-   * @param {string} formatOrder - The locale variant from dateFormatOrder.
-   */
-  static getDateFormatVariant(formatOrder) {
-    let dateVariant;
-
-    if (formatOrder === '0') {
-      dateVariant = 'MM-DD-YYYY';
-    } else if (formatOrder === '1') {
-      dateVariant = 'YYYY-MM-DD';
-    } else {
-      dateVariant = 'DD-MM-YYYY';
-    }
-
-    return dateVariant;
-  }
-
-  /**
    * Returns an object consisting of placeholder strings and a delimiter,
    * based on the date format.
    * @param {string} variant - Variant string obtained from getDateFormat.
