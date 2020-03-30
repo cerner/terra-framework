@@ -299,7 +299,7 @@ SlidePanelManagerExample.propTypes = {
 };
 
 const AccessorySlideGroupManager = () => (
-  <SlidePanelManagerExample behavior="squish-3" showAccessory />
+  <SlidePanelManagerExample behavior="squish" showAccessory />
 );
 
 export default AccessorySlideGroupManager;

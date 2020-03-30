@@ -299,7 +299,7 @@ SlidePanelManagerExample.propTypes = {
 };
 
 const OverlaySlideGroupManager = () => (
-  <SlidePanelManagerExample behavior="overlay-1" />
+  <SlidePanelManagerExample behavior="overlay" />
 );
 
 export default OverlaySlideGroupManager;

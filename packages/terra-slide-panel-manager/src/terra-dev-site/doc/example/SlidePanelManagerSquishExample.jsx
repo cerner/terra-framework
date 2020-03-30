@@ -300,7 +300,7 @@ SlidePanelManagerExample.propTypes = {
 };
 
 const SquishSlideGroupManager = () => (
-  <SlidePanelManagerExample behavior="squish-2" />
+  <SlidePanelManagerExample behavior="squish" />
 );
 
 export default SquishSlideGroupManager;
