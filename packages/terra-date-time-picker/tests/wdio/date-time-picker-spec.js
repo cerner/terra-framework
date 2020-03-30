@@ -109,7 +109,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
       browser.click('input[name="terra-time-minute-input"]');
       browser.keys('Tab');
-      browser.waitForVisible('[class*="time-clarification"]', 5000);
+      browser.waitForExist('[class*="time-clarification"]', 5000);
     });
 
     Terra.it.isAccessible({ rules: ignoredA11y });
@@ -129,13 +129,16 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Displays Offset button after clicking daylight button', () => {
     before(() => {
       browser.refresh();
-    });
-
-    it('displays time clarification modal', () => {
       browser.click('input[name="terra-time-minute-input"]');
       browser.keys('Tab');
-      browser.waitForVisible('[class*="time-clarification"]');
+      browser.waitForExist('[class*="time-clarification"]');
     });
+
+    // it('displays time clarification modal', () => {
+    //   browser.click('input[name="terra-time-minute-input"]');
+    //   browser.keys('Tab');
+    //   browser.waitForExist('[class*="time-clarification"]');
+    // });
 
     Terra.it.matchesScreenshot('0', { selector: '[class*="abstract-modal"]' });
 
@@ -149,13 +152,16 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Displays Offset button after clicking the standard time button', () => {
     before(() => {
       browser.refresh();
-    });
-
-    it('displays time clarification modal', () => {
       browser.click('input[name="terra-time-minute-input"]');
       browser.keys('Tab');
-      browser.waitForVisible('[class*="time-clarification"]', 5000);
+      browser.waitForExist('[class*="time-clarification"]', 5000);
     });
+
+    // it('displays time clarification modal', () => {
+    //   browser.click('input[name="terra-time-minute-input"]');
+    //   browser.keys('Tab');
+    //   browser.waitForExist('[class*="time-clarification"]', 5000);
+    // });
 
     Terra.it.matchesScreenshot('0', { selector: '[class*="abstract-modal"]' });
 
@@ -171,7 +177,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst-disabled');
       browser.click('input[name="terra-time-minute-input"]');
       browser.keys('Tab');
-      browser.waitForVisible('[class*="time-clarification"]');
+      browser.waitForExist('[class*="time-clarification"]');
       browser.click('[class*="button-daylight"]');
       browser.click('#date-time-picker-toggler');
       browser.moveToObject('#root', 0, 0);
