@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+
+4.32.0 - (March 24, 2020)
+------------------
+### Changed
+* Updated props documentation
+* Fix wdio test for clinical-theme
+
 4.31.0 - (March 10, 2020)
 ------------------
 ### Changed
