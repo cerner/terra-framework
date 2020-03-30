@@ -201,29 +201,26 @@
     min-width: 1.7em;
     text-align: right;
     width: 1.7em;
-  }
 
-  .time-input-minute.without-second {
-    min-width: 1.8em;
-    text-align: left;
-    width: 1.8em;
-  }
-
-  .time-input-minute.with-second {
-    min-width: 1.1em;
-    text-align: left;
-    width: 1.1em;
-
-    &[value=''] {
-      min-width: 1.8em;
-      text-align: left;
-      width: 1.8em;
+    &.with-second {
+      text-align: center;
     }
   }
 
-  .time-input-second {
+  .time-input-minute {
     min-width: 1.8em;
     text-align: left;
+    width: 1.8em;
+
+    &.with-second {
+      text-align: center;
+    }
+  }
+
+
+  .time-input-second {
+    min-width: 1.8em;
+    text-align: center;
     width: 1.8em;
   }
 

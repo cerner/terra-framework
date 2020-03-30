@@ -39,7 +39,7 @@ exports[`should ignore invalid times properly 1`] = `
     </span>
     <Input
       aria-label="Terra.timeInput.minutes"
-      className="time-input-minute without-second"
+      className="time-input-minute"
       disabled={false}
       isIncomplete={false}
       isInvalid={false}
@@ -75,7 +75,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
     />
     <Input
       aria-label="Terra.timeInput.hours"
-      className="time-input-hour"
+      className="time-input-hour with-second"
       disabled={false}
       isIncomplete={false}
       isInvalid={false}
@@ -180,7 +180,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
       </span>
       <input
         aria-label="Terra.timeInput.minutes"
-        class="form-input time-input-minute without-second"
+        class="form-input time-input-minute"
         maxlength="2"
         name="terra-time-minute-time-input"
         pattern="\\\\d*"
@@ -255,7 +255,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
       </span>
       <input
         aria-label="Terra.timeInput.minutes"
-        class="form-input time-input-minute without-second"
+        class="form-input time-input-minute"
         maxlength="2"
         name="terra-time-minute-time-input-2"
         pattern="\\\\d*"
@@ -330,7 +330,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
       </span>
       <input
         aria-label="Terra.timeInput.minutes"
-        class="form-input time-input-minute without-second"
+        class="form-input time-input-minute"
         maxlength="2"
         name="terra-time-minute-time-input-3"
         pattern="\\\\d*"
@@ -504,7 +504,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       </span>
       <Input
         aria-label="Terra.timeInput.minutes"
-        className="time-input-minute without-second"
+        className="time-input-minute"
         disabled={false}
         isIncomplete={false}
         isInvalid={false}
@@ -524,7 +524,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       >
         <input
           aria-label="Terra.timeInput.minutes"
-          className="form-input time-input-minute without-second"
+          className="form-input time-input-minute"
           disabled={false}
           maxLength="2"
           name="terra-time-minute-time-input"
@@ -559,7 +559,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
     />
     <Input
       aria-label="Terra.timeInput.hours"
-      className="time-input-hour"
+      className="time-input-hour with-second"
       disabled={false}
       isIncomplete={false}
       isInvalid={false}
@@ -672,7 +672,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
     />
     <input
       aria-label="Terra.timeInput.hours"
-      class="form-input time-input-hour"
+      class="form-input time-input-hour with-second"
       maxlength="2"
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
@@ -782,7 +782,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
     </span>
     <input
       aria-label="Terra.timeInput.minutes"
-      class="form-input time-input-minute without-second"
+      class="form-input time-input-minute"
       maxlength="2"
       name="terra-time-minute-time-input"
       pattern="\\\\d*"
@@ -860,7 +860,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
     </span>
     <input
       aria-label="Terra.timeInput.minutes"
-      class="form-input time-input-minute without-second"
+      class="form-input time-input-minute"
       maxlength="2"
       name="terra-time-minute-time-input"
       pattern="\\\\d*"
@@ -887,7 +887,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
     />
     <input
       aria-label="Terra.timeInput.hours"
-      class="form-input time-input-hour"
+      class="form-input time-input-hour with-second"
       maxlength="2"
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
@@ -971,7 +971,7 @@ exports[`should render a default time input 1`] = `
     </span>
     <Input
       aria-label="Terra.timeInput.minutes"
-      className="time-input-minute without-second"
+      className="time-input-minute"
       disabled={false}
       isIncomplete={false}
       isInvalid={false}
@@ -1032,7 +1032,7 @@ exports[`should render a disabled time input 1`] = `
     </span>
     <Input
       aria-label="Terra.timeInput.minutes"
-      className="time-input-minute without-second"
+      className="time-input-minute"
       disabled={true}
       isIncomplete={false}
       isInvalid={false}
@@ -1093,7 +1093,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     </span>
     <Input
       aria-label="Terra.timeInput.minutes"
-      className="time-input-minute without-second"
+      className="time-input-minute"
       disabled={false}
       isIncomplete={false}
       isInvalid={false}
@@ -1181,7 +1181,7 @@ exports[`should render a time input with a default time 1`] = `
     </span>
     <Input
       aria-label="Terra.timeInput.minutes"
-      className="time-input-minute without-second"
+      className="time-input-minute"
       disabled={false}
       isIncomplete={false}
       isInvalid={false}
@@ -1243,7 +1243,7 @@ exports[`should render a time input with custom attributes 1`] = `
     </span>
     <Input
       aria-label="Terra.timeInput.minutes"
-      className="time-input-minute without-second"
+      className="time-input-minute"
       disabled={false}
       id="terra-time-input"
       isIncomplete={false}
@@ -1305,7 +1305,7 @@ exports[`should render a time input with onBlur 1`] = `
     </span>
     <Input
       aria-label="Terra.timeInput.minutes"
-      className="time-input-minute without-second"
+      className="time-input-minute"
       disabled={false}
       isIncomplete={false}
       isInvalid={false}
@@ -1366,7 +1366,7 @@ exports[`should render a time input with onChange 1`] = `
     </span>
     <Input
       aria-label="Terra.timeInput.minutes"
-      className="time-input-minute without-second"
+      className="time-input-minute"
       disabled={false}
       isIncomplete={false}
       isInvalid={false}
@@ -1427,7 +1427,7 @@ exports[`should render a time input with onFocus 1`] = `
     </span>
     <Input
       aria-label="Terra.timeInput.minutes"
-      className="time-input-minute without-second"
+      className="time-input-minute"
       disabled={false}
       isIncomplete={false}
       isInvalid={false}
@@ -1463,7 +1463,7 @@ exports[`should render a time input with seconds input 1`] = `
     />
     <Input
       aria-label="Terra.timeInput.hours"
-      className="time-input-hour"
+      className="time-input-hour with-second"
       disabled={false}
       isIncomplete={false}
       isInvalid={false}
@@ -1549,7 +1549,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
     />
     <Input
       aria-label="Terra.timeInput.hours"
-      className="time-input-hour"
+      className="time-input-hour with-second"
       disabled={false}
       isIncomplete={false}
       isInvalid={false}
@@ -1635,7 +1635,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
     />
     <Input
       aria-label="Terra.timeInput.hours"
-      className="time-input-hour"
+      className="time-input-hour with-second"
       disabled={false}
       id="terra-time-input"
       isIncomplete={false}
@@ -1741,7 +1741,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
     </span>
     <input
       aria-label="Terra.timeInput.minutes"
-      class="form-input time-input-minute without-second"
+      class="form-input time-input-minute"
       id="id-1"
       maxlength="2"
       name="terra-time-minute-time-input"
@@ -1769,7 +1769,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
     />
     <input
       aria-label="Terra.timeInput.hours"
-      class="form-input time-input-hour"
+      class="form-input time-input-hour with-second"
       id="id-2"
       maxlength="2"
       name="terra-time-hour-time-input"
