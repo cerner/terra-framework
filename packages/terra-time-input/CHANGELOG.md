@@ -1,5 +1,7 @@
 Changelog
 =========
+### Fixed
+* Fixed time-input resizing on modal when cached value is selected.
 
 Unreleased
 ----------
