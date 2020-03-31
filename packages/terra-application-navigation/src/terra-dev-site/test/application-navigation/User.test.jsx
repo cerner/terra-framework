@@ -17,6 +17,7 @@ const userConfigDetail = {
 
 const userConfigSrc = {
   name: 'Test Name',
+  initials: 'TN',
   imageSrc: 'test-src',
 };
 
