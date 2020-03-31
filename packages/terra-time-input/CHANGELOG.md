@@ -1,10 +1,14 @@
 Changelog
 =========
-### Fixed
-* Fixed time-input resizing on modal when cached value is selected.
 
 Unreleased
 ----------
+
+4.25.0 - (March 31, 2020)
+------------------
+### Fixed
+* Fixed time-input resizing on modal when cached value is selected.
+
 ### Added
 * Added clinical-lowlight-theme wdio screenshots
 
