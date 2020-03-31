@@ -6,16 +6,13 @@ import FixedHeight from '../common/FixedHeight';
 
 const userConfig = {
   name: 'Test Name',
+  initials: 'TN',
 };
 
 const userConfigDetail = {
   name: 'Test Name',
-  detail: 'Test Detail',
-};
-
-const userConfigInitials = {
-  name: 'Test Name',
   initials: 'TN',
+  detail: 'Test Detail',
 };
 
 const userConfigSrc = {
@@ -28,7 +25,6 @@ const UserTest = () => (
   <ApplicationBase locale="en">
     <FixedHeight><ApplicationNavigation userConfig={userConfig} /></FixedHeight>
     <FixedHeight><ApplicationNavigation userConfig={userConfigDetail} /></FixedHeight>
-    <FixedHeight><ApplicationNavigation userConfig={userConfigInitials} /></FixedHeight>
     <FixedHeight><ApplicationNavigation userConfig={userConfigSrc} /></FixedHeight>
   </ApplicationBase>
 );
