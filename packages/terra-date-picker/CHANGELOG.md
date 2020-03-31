@@ -3,6 +3,10 @@ Changelog
 
 Unreleased
 ----------
+## Changed 
+* Applied new border styles for keyboard navigation.
+* Changed pre-selected date to 1st of month when changing year/month.
+* Changed `--terra-date-picker-month-focus-outline` and `--terra-date-picker-month-focus-outline-offset` to `--terra-date-picker-day-focus-outline` and `--terra-date-picker-day-focus-outline-offset` respectively.
 
 4.32.0 - (March 24, 2020)
 ------------------
@@ -15,8 +19,7 @@ Unreleased
 ### Changed
 * Changed `onChange` and `onChangeRaw` callbacks to return the following metadata as part of the third parameter: iso, inputValue, isCompleteValue, isValidValue
 * Update the placeholder for the `es-US`, `nl`, `sv-SE`, and `sv` locales to match the actual date format.
-* Applied new border styles for keyboard navigation.
-* Changed pre-selected date to 1st of month when changing year/month.
+
 
 4.30.0 - (March 3, 2020)
 ------------------
