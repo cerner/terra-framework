@@ -498,14 +498,14 @@
   .is-calendar-focused {
     &--keyboard-focus {
       outline: var(--terra-date-picker-day-focus-outline, 2px dashed #000);
-      outline-offset: var(--terra-date-picker-day-month-focus-outline-offset, 0);
+      outline-offset: var(--terra-date-picker-day-focus-outline-offset, 0);
     }
   }
 
   .react-datepicker-day {
     &--selected-border {
       outline: var(--terra-date-picker-day-focus-outline, 2px dashed #000);
-      outline-offset: var(--terra-date-picker-day-month-focus-outline-offset, 0);
+      outline-offset: var(--terra-date-picker-day-focus-outline-offset, 0);
     }
   }
 
