@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import Button from 'terra-button';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
-const clickConfirm = () => {
-  console.log('You clicked confirm'); // eslint-disable-line no-console
-};
-
 const ContentNotificationDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,17 +28,17 @@ const ContentNotificationDialog = () => {
         )}
         endMessage="The End Message is text used to provide more detail or define terminology at the end of the dialog body. Don’t repeat the title verbatim."
         acceptAction={{
-          text: 'Confirm',
-          onClick: clickConfirm,
+          text: 'accept',
+          onClick: handleCloseModal,
         }}
         rejectAction={{
-          text: 'Close',
+          text: 'reject',
           onClick: handleCloseModal,
         }}
         buttonOrder="acceptFirst"
         emphasizedAction="accept"
       />
-      <Button text="Trigger NotificationDialog" onClick={handleOpenModal} />
+      <Button text="Trigger Notification Dialog" onClick={handleOpenModal} />
     </>
   );
 };

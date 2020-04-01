@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
-import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
-
-const clickConfirm = () => {
-  console.log('You clicked confirm'); // eslint-disable-line no-console
-};
+import NotificationDialog from '../../../NotificationDialog';
 
 const ReversedActionNotificationDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,13 +16,13 @@ const ReversedActionNotificationDialog = () => {
   return (
     <>
       <NotificationDialog
-        variant={NotificationDialogVariants.ALERT}
+        variant="alert"
         isOpen={isOpen}
         title="Make sure that the title relates directly to the choices."
         startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
         acceptAction={{
           text: 'Confirm',
-          onClick: clickConfirm,
+          onClick: handleCloseModal,
         }}
         rejectAction={{
           text: 'Close',
@@ -35,7 +31,7 @@ const ReversedActionNotificationDialog = () => {
         buttonOrder="acceptFirst"
         emphasizedAction="reject"
       />
-      <Button text="Trigger NotificationDialog" onClick={handleOpenModal} />
+      <Button text="Trigger Notification Dialog" onClick={handleOpenModal} />
     </>
   );
 };

@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import Button from 'terra-button';
 import NotificationDialog from 'terra-notification-dialog';
 
-const clickConfirm = () => {
-  console.log('You clicked confirm'); // eslint-disable-line no-console
-};
-
 const NoVariantNotificationDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,27 +9,30 @@ const NoVariantNotificationDialog = () => {
     setIsOpen(true);
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (actionClicked) => {
+    alert(`You clicked the ${actionClicked} action.`); // eslint-disable-line no-alert
     setIsOpen(false);
   };
 
   return (
     <>
       <NotificationDialog
-        header="No Variant for this dialog"
+        header="Variant was not set for this dialog"
         isOpen={isOpen}
         title="Make sure that the title relates directly to the choices."
         startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
         acceptAction={{
-          text: 'Confirm',
-          onClick: clickConfirm,
+          text: 'accept',
+          onClick: () => {
+            handleCloseModal('Accept');
+          },
         }}
         rejectAction={{
-          text: 'Close',
-          onClick: handleCloseModal,
+          text: 'reject',
+          onClick: () => {
+            handleCloseModal('reject');
+          },
         }}
-        buttonOrder="acceptFirst"
-        emphasizedAction="accept"
       />
       <Button text="Trigger Notification Dialog" onClick={handleOpenModal} />
     </>

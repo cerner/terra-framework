@@ -2,23 +2,33 @@ import { Badge } from 'terra-notification-dialog/package.json?dev-site-package';
 
 import NotificationDialogPropsTable from 'terra-notification-dialog/src/NotificationDialog?dev-site-props-table';
 
-import CompleteNotificationDialog from '../example/CompleteNotificationDialog?dev-site-example';
-import CompleteNotificationDialogWithLongMessage from '../example/CompleteNotificationDialogWithLongMessage?dev-site-example';
+import DefaultNotificationDialog from '../example/DefaultNotificationDialog?dev-site-example';
+import VariantsExample from '../example/VariantsExample?dev-site-example';
 import ContentNotificationDialog from '../example/ContentNotificationDialog?dev-site-example';
-import NoVariantNotificationDialog from '../example/NoVariantNotificationDialog?dev-site-example';
-import NotificationDialogWithLongText from '../example/NotificationDialogWithLongText?dev-site-example';
-import NotificationDialogOnModalManager from '../example/NotificationDialogOnModalManager?dev-site-example';
-import RejectFirstNotificationDialog from '../example/RejectFirstNotificationDialog?dev-site-example';
+import ActionOrderExample from '../example/ActionOrderExample?dev-site-example';
 import EmphasizedRejectNotificationDialog from '../example/EmphasizedRejectNotificationDialog?dev-site-example';
+import NotificationDialogInModalManager from '../example/NotificationDialogInModalManager?dev-site-example';
+import NotificationDialogWithLongText from '../example/NotificationDialogWithLongText?dev-site-example';
 
 <Badge />
 
-# Terra NotificationDialog
+[Getting Started](#getting-started) | [Usage](#usage) | [Component Features](#component-features) | [Examples](#examples) | [Props](#notification-dialog-props-table )
 
-`terra-notification-dialog` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 9000. It is a common component to be used for confirmation/acceptance criteria style dialogs.
+# Terra Notification Dialog
 
-**Note** Use at least one of `acceptAction`, `rejectAction`, `primaryAction` or `secondaryAction` props for proper functioning of the `Notification Dialog` and avoid getting a warning.
-`primaryAction` and `secondaryAction` are **deprecated** and will be removed in the next MVB.
+The `terra-notification-dialog` component renders as a notification using the `terra-abstract-modal` to display a dialog over content. It is a common component that can be used to display a message to a user. When the user is presented with the dialog, it is paired with an acceptance and an optional rejection action to allow the user to correctly handle the notification.
+
+The dialog will have the highest z-index of 9000, so it will display over all other content, including over modals.
+
+There are five dialog variants build into `terra-notification-dialog`:
+
+1. `alert`
+2. `error`
+3. `warning`
+4. `success`
+5. `info`
+
+If one of these variants do not meet your needs, there is the option to customize the dialog and the icon it displays.
 
 ## Getting Started
 
@@ -55,14 +65,35 @@ import NotificationDialog, { NotificationDialogVariants } from 'terra-notificati
 [View Component Source Code](https://github.com/cerner/terra-framework/tree/master/packages/terra-notification-dialog)
 
 ## Examples 
-<CompleteNotificationDialog title='Complete Notification Dialog' />
-<CompleteNotificationDialogWithLongMessage title='Complete Notification Dialog With Long Message' />
-<NoVariantNotificationDialog title='No Variant Notification Dialog' />
-<NotificationDialogWithLongText title='Notification Dialog With Long Text' />
-<NotificationDialogOnModalManager title='Notification Dialog On Modal Manager' />
-<ContentNotificationDialog title='Notification Dialog with Content' />
-<RejectFirstNotificationDialog title='Notification Dialog with Reject action first' />
-<EmphasizedRejectNotificationDialog title='Notification Dialog with Reject Action emphasized' />
+<DefaultNotificationDialog />
+
+<VariantsExample
+  title="Notification Dialog Variants"
+/>
+
+<ContentNotificationDialog
+  title="Notification Dialog with Detailed Message"
+  description="This example demonstrates the use for the startMessage, content, and endMessage prop combination."
+/>
+
+<ActionOrderExample />
+
+<EmphasizedRejectNotificationDialog
+  title="Notification Dialog with Reject Action Emphasized"
+/>
+
+<NotificationDialogInModalManager
+  description="Notification Dialog has the highest z-index of 9000. Trigger the Notification Dialog in the modal to see it displays above the modal content."
+/>
+
+<NotificationDialogWithLongText
+  title="Notification Dialog with Long Text"
+  description="This example show the dialog correctly handles long messages with scrolling."
+/>
 
 ## Notification Dialog Props Table 
+
+###### Note
+The `primaryAction` and `secondaryAction` are **deprecated** and will be removed in the v4. These will be replaced with `acceptAction` and `rejectAction`. At the time, provided at least `acceptAction`, `rejectAction`, `primaryAction` or `secondaryAction` to proper render the `Notification Dialog` without a warning.
+
 <NotificationDialogPropsTable />

@@ -47,28 +47,28 @@ const propTypes = {
    */
   content: PropTypes.node,
   /**
-   * **Deprecated**, The Action of the primary button. Resolves to `acceptAction`
+   * **Deprecated** The button text and onclick values of the primary button. Will be replaced with `acceptAction` in v4.
    */
   primaryAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
   }),
   /**
-   * The Action of the accept button.
+   * The button text and onclick values of the accept button.
    */
   acceptAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
   }),
   /**
-   * **Deprecated**, The Action of the secondary button. Resolves to `rejectAction`.
+   * **Deprecated** The button text and onclick values of the secondary button. Will be replaced with `rejectAction` in v4.
    */
   secondaryAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
   }),
   /**
-   * The Action of the reject button.
+   * The button text and onclick values of the reject button.
    */
   rejectAction: PropTypes.shape({
     text: PropTypes.string,
@@ -76,7 +76,7 @@ const propTypes = {
   }),
   /**
    * The variant of notification to be rendered.
-   * Use one of `alert`, `error`, `warning`, `info`, `success`, `custom`.
+   * Use one of `alert`, `error`, `warning`, `info`, `success`, or `custom`.
    */
   variant: PropTypes.oneOf([
     variants.ALERT,
@@ -221,6 +221,23 @@ const NotificationDialog = (props) => {
     ...customProps
   } = props;
 
+  if (process.env.NODE_ENV !== 'production') {
+    if (acceptAction === undefined && primaryAction === undefined && rejectAction === undefined && secondaryAction === undefined) {
+      // eslint-disable-next-line no-console
+      console.warn('[terra-notification-dialog] At least one of the props `acceptAction`,`primaryAction`,`rejectAction`, or `secondaryAction` must be provided to the Notification dialog');
+    }
+
+    if (acceptAction === undefined && primaryAction !== undefined) {
+      // eslint-disable-next-line no-console
+      console.warn('[terra-notification-dialog] The `primaryAction` prop is deprecated and will be replaced with the `acceptAction` prop in v4. Consider updating your implementation to use `acceptAction`.');
+    }
+
+    if (rejectAction === undefined && secondaryAction !== undefined) {
+      // eslint-disable-next-line no-console
+      console.warn('[terra-notification-dialog] The `secondaryAction` prop is deprecated and will be replaced with the `rejectAction` prop in v4. Consider updating your implementation to use `acceptAction`.');
+    }
+  }
+
   if (process.env.NODE_ENV !== 'production' && acceptAction === undefined && primaryAction === undefined && rejectAction === undefined && secondaryAction === undefined) {
     // eslint-disable-next-line no-console
     console.warn('At least one of the props `acceptAction`,`primaryAction`,`rejectAction`, or `secondaryAction` must be provided to the Notification dialog');
@@ -256,7 +273,7 @@ const NotificationDialog = (props) => {
         <div className={cx('notification-dialog-inner-wrapper')}>
           <div className={cx('notification-dialog-container')} tabIndex="0">
             <div className={cx(['header-container', { [`${variant}`]: shouldAddVariantClass(variant) }])}>
-              <div className={cx(['header-body'])}>
+              <div className={cx(['header-content'])}>
                 {getIcon(variant, customIcon)}
                 <div>
                   {headerContent}

@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
-import NotificationDialog, { NotificationDialogVariants } from 'terra-notification-dialog';
-
-const clickConfirm = () => {
-  console.log('You clicked confirm'); // eslint-disable-line no-console
-};
+import NotificationDialog from 'terra-notification-dialog';
 
 const NotificationDialogWithLongText = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -100,16 +96,16 @@ const NotificationDialogWithLongText = () => {
   return (
     <>
       <NotificationDialog
-        variant={NotificationDialogVariants.WARNING}
+        variant="warning"
         isOpen={isOpen}
         title="Make sure that the title relates directly to the choices."
         startMessage={message}
         acceptAction={{
-          text: 'Confirm',
-          onClick: clickConfirm,
+          text: 'accept',
+          onClick: handleCloseModal,
         }}
         rejectAction={{
-          text: 'Close',
+          text: 'reject',
           onClick: handleCloseModal,
         }}
         buttonOrder="acceptFirst"
