@@ -38,7 +38,7 @@
 
   .react-datepicker-header {
     background-color: $datepicker-background-color;
-    border-bottom: 1px solid $datepicker-border-color;
+    border-bottom: 2px solid $datepicker-border-color;
     padding-top: 8px;
     position: relative;
     text-align: center;
@@ -517,6 +517,6 @@
     &:focus {
       outline: 2px dashed #000;
       outline-offset: 0;
-    } 
+    }
   }
 }
