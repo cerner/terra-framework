@@ -23,11 +23,12 @@ const variants = {
 
 const propTypes = {
   /**
-   * Header of the notification-dialog.
+   * The signal word to use in the notification-dialog. If this is not provided, the default signal word associated with the
+   * variant will be used.
    */
   header: PropTypes.string,
   /**
-   * Title of the notification-dialog.
+   * The title to describe the high-level overview of why the notification-dialog is being displayed to the user.
    */
   title: PropTypes.string,
   /**
@@ -35,15 +36,15 @@ const propTypes = {
    */
   message: PropTypes.string,
   /**
-   * Message to be displayed at the start of the notification dialog body.
+   * The text to provide more detail or defined terminology to be displayed at the start of the notification dialog body.
    */
   startMessage: PropTypes.string,
   /**
-   * Message to be displayed at the end of the notification dialog body.
+   * The text to provide more detail or defined terminology to be displayed at the end of the notification dialog body.
    */
   endMessage: PropTypes.string,
   /**
-   *  Non-plain text content to be inserted after `startMessage` and/or before `endMessage`
+   *  The content to be inserted after `startMessage` and/or before `endMessage` to provide more details to the user in the dialog body.
    */
   content: PropTypes.node,
   /**
@@ -75,7 +76,8 @@ const propTypes = {
     onClick: PropTypes.func,
   }),
   /**
-   * The variant of notification to be rendered.
+   * The variant of notification to be rendered. This renders the dialog with the corresponding header and icon to the
+   * variant concept.
    * Use one of `alert`, `error`, `warning`, `info`, `success`, or `custom`.
    */
   variant: PropTypes.oneOf([
@@ -87,11 +89,11 @@ const propTypes = {
     variants.CUSTOM,
   ]),
   /**
-   * The icon to be used for a notification of type custom. This will not be used for any other notification types.
+   * The icon to be used for a notification when `variant="custom"`.
    */
   customIcon: PropTypes.element,
   /**
-   * Toggle to show notification-dialog or not.
+   * Wether or not to show notification-dialog or not.
    */
   isOpen: PropTypes.bool.isRequired,
   /**
@@ -114,10 +116,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  title: null,
-  startMessage: null,
-  endMessage: null,
-  content: null,
   variant: variants.CUSTOM,
   buttonOrder: 'acceptFirst',
   emphasizedAction: 'none',
@@ -275,7 +273,7 @@ const NotificationDialog = (props) => {
             <div className={cx(['header-container', { [`${variant}`]: shouldAddVariantClass(variant) }])}>
               <div className={cx(['header-content'])}>
                 {getIcon(variant, customIcon)}
-                <div>
+                <div className={cx('title-container')}>
                   {headerContent}
                   {titleContent}
                 </div>
