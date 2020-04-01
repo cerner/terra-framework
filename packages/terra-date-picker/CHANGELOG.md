@@ -8,6 +8,11 @@ Unreleased
 * Changed pre-selected date to 1st of month when changing year/month.
 * Changed `--terra-date-picker-month-focus-outline` and `--terra-date-picker-month-focus-outline-offset` to `--terra-date-picker-day-focus-outline` and `--terra-date-picker-day-focus-outline-offset` respectively.
 
+4.33.0 - (March 31, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme wdio screenshots
+
 4.32.0 - (March 24, 2020)
 ------------------
 ### Changed
