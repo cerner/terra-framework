@@ -5,6 +5,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated wdio screenshots due to focus style changes in react-datepicker.
 
 4.33.0 - (March 31, 2020)
 ------------------

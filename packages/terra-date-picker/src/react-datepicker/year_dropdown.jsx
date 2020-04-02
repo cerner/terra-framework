@@ -60,7 +60,15 @@ export default class YearDropdown extends React.Component {
     /**
      * A callback function to execute when the year dropdown is open.
      */
-    setOpen: PropTypes.func
+    setOpen: PropTypes.func,
+    /**
+     * Callback to invoke when navigated using mouse.
+     */
+    onClick: PropTypes.func,
+    /**
+     * Callback to invoke when navigated using keyboard.
+     */
+    onKeyDown: PropTypes.func,
   }
 
   state = {
@@ -86,6 +94,8 @@ export default class YearDropdown extends React.Component {
     <FormattedMessage id="Terra.datePicker.yearLabel">
       {label => (
         <select
+          onClick={this.props.onClick}
+          onKeyDown={this.props.onKeyDown}
           aria-label={label}
           value={this.props.year}
           className={cx('react-datepicker-year-select')}

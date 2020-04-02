@@ -125,7 +125,11 @@ export default class Month extends React.Component {
     /**
      * Difference between utc and local time.
      */
-    utcOffset: PropTypes.number
+    utcOffset: PropTypes.number,
+    /**
+     * Whether or not calendar is opened via keyboard
+     */
+    isCalendarKeyboardFocused: PropTypes.bool,
   }
 
   handleDayClick = (day, event) => {
@@ -167,6 +171,7 @@ export default class Month extends React.Component {
 
     while (true) {
       weeks.push(<Week
+        isCalendarKeyboardFocused={this.props.isCalendarKeyboardFocused}
         key={i}
         day={currentWeekStart}
         month={utils.getMonth(this.props.day)}
@@ -219,7 +224,6 @@ export default class Month extends React.Component {
       'react-datepicker-month': true,
       'react-datepicker-body': true,
       'react-datepicker-month--selecting-range': this.props.selectingDate && (this.props.selectsStart || this.props.selectsEnd),
-      'is-calendar-focused': this.props.isCalendarKeyboardFocused
     });
     return (
       <FormattedMessage id="Terra.datePicker.calendarInstructions">
