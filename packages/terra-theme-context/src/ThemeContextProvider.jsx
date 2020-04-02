@@ -8,13 +8,19 @@ const propTypes = {
    */
   children: PropTypes.element.isRequired,
   /**
-   * The currently selected application theme to be provided via the ThemeContext.
+   * An object containing the className of the selected theme.
    */
-  theme: PropTypes.string,
+  theme: PropTypes.shape({
+    className: PropTypes.string,
+  }),
+};
+
+const defaultProps = {
+  theme: {},
 };
 
 const ThemeContextProvider = ({ theme, children }) => {
-  const contextValue = useMemo(() => ({ theme }), [theme]);
+  const contextValue = useMemo(() => ({ className: theme.className }), [theme.className]);
   return (
     <ThemeContext.Provider value={contextValue}>
       {children}
@@ -23,5 +29,6 @@ const ThemeContextProvider = ({ theme, children }) => {
 };
 
 ThemeContextProvider.propTypes = propTypes;
+ThemeContextProvider.defaultProps = defaultProps;
 
 export default ThemeContextProvider;

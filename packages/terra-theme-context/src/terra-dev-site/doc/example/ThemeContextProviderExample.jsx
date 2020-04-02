@@ -4,7 +4,7 @@ import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import ThemedComponent from './ThemedComponent';
 
 const ThemeContextProviderExample = () => (
-  <ThemeContextProvider theme="test-theme">
+  <ThemeContextProvider theme={{ className: 'test-theme' }}>
     <ThemedComponent />
   </ThemeContextProvider>
 );

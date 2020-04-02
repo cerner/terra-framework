@@ -7,9 +7,9 @@ import styles from './ThemedComponent.module.scss';
 const cx = classNames.bind(styles);
 
 const Themed = () => {
-  const { theme } = React.useContext(ThemeContext);
+  const theme = React.useContext(ThemeContext);
   return (
-    <div className={cx('themed', theme)}>
+    <div className={cx('themed', theme.className)}>
       <h1>
         Themed block
       </h1>
