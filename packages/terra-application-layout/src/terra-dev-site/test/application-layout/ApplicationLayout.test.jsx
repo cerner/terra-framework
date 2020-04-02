@@ -192,6 +192,7 @@ const indexPath = '/page_1';
 const userAvatar = (
   <Avatar
     alt="User, Test"
+    initials="TU"
     key="user_avatar"
   />
 );
