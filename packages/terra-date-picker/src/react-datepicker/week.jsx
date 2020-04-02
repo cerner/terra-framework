@@ -101,7 +101,11 @@ export default class Week extends React.Component {
     /**
      * Difference between utc and local time.
      */
-    utcOffset: PropTypes.number
+    utcOffset: PropTypes.number,
+    /**
+     * Whether or not calendar is opened via keyboard
+     */
+    isCalendarKeyboardFocused: PropTypes.bool,
   }
 
   handleDayClick = (day, event) => {
@@ -143,6 +147,7 @@ export default class Week extends React.Component {
       const day = utils.addDays(utils.cloneDate(startOfWeek), offset)
       return (
         <Day
+          isCalendarKeyboardFocused={this.props.isCalendarKeyboardFocused}
           key={offset}
           day={day}
           month={this.props.month}
