@@ -2,7 +2,7 @@
   "name": "terra-theme-context",
   "main": "lib/ThemeContext.js",
   "version": "0.0.0",
-  "description": "{insert description}",
+  "description": "A react context to provide the current theme.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"
