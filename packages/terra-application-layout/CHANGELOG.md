@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated test examples to provide `initials` for avatar
 
 5.31.0 - (March 31, 2020)
 ------------------

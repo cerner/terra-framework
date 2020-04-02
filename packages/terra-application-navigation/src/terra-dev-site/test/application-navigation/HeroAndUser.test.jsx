@@ -8,6 +8,7 @@ const hero = <Placeholder title="Test Hero" variant="light" />;
 
 const userConfig = {
   name: 'Test Name',
+  initials: 'TN',
   detail: 'Test Detail',
 };
 
