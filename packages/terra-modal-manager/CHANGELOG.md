@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update wdio screenshots
 
 6.30.0 - (March 31, 2020)
 ------------------
