@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeContextProvider Snapshots should render with custom props 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "theme": "test-theme",
+    }
+  }
+>
+  <div />
+</ContextProvider>
+`;
+
+exports[`ThemeContextProvider Snapshots should render with minimal props 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "theme": undefined,
+    }
+  }
+>
+  <div />
+</ContextProvider>
+`;

@@ -1,0 +1,44 @@
+import { Badge } from 'terra-theme-context/package.json?dev-site-package';
+
+// import PanePropsTable from 'terra-theme-context/src/TabPane?dev-site-props-table';
+
+import ThemeContextProviderExample from '../example/ThemeContextProviderExample?dev-site-example';
+import ThemedComponent from '../example/ThemedComponent?dev-site-example';
+
+<Badge />
+
+# Terra Theme Context
+A react context to provide the current theme. This context can be used to apply any theme related changes to a component.
+
+The most common use would be to apply a theme class to the root tag of the component to apply theme variables. See below for an example.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-theme-context`
+
+## Usage
+
+```jsx
+import ThemeContext from 'terra-theme-context';
+```
+
+## Component Features
+
+ * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+ * [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+ * [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+ * [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+ * [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+ * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#ltr--rtl-support)
+
+[View Component Source Code](https://github.com/cerner/terra-framework/tree/master/packages/terra-theme-context)
+
+## Examples
+<ThemedComponent title='A component using the theme context' />
+
+## Context Value
+
+|Key Name|Type|Is Required|Description|
+|---|---|---|---|
+|`theme`|String|optional|The current application theme.|
