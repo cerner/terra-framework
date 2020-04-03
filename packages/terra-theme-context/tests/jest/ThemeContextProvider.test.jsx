@@ -13,7 +13,7 @@ describe('ThemeContextProvider', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should render with custom props', () => {
+    it('should render with a theme', () => {
       const wrapper = shallow((
         <ThemeContextProvider theme={{ className: 'test-theme' }}>
           <div />
