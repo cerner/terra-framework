@@ -3,7 +3,10 @@ Changelog
 
 Unreleased
 ----------
-## Changed 
+
+4.34.0 - (April 6, 2020)
+------------------
+## Changed
 * Applied new border styles for keyboard navigation.
 * Changed pre-selected date to 1st of month when changing year/month.
 * Changed `--terra-date-picker-month-focus-outline` and `--terra-date-picker-month-focus-outline-offset` to `--terra-date-picker-day-focus-outline` and `--terra-date-picker-day-focus-outline-offset` respectively.
