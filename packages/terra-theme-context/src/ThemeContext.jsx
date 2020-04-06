@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const ThemeProviderContext = React.createContext({});
 
-const contextShape = PropTypes.shape({
+const themeContextShape = PropTypes.shape({
   /**
    * The current application theme className.
    * The default theme is indicated as undefined.
@@ -12,4 +12,4 @@ const contextShape = PropTypes.shape({
 });
 
 export default ThemeProviderContext;
-export { contextShape };
+export { themeContextShape };
