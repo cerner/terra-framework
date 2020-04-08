@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed error that occurs during remount when setting focus with a null reference to the hour input.
 
 4.34.0 - (April 6, 2020)
 ------------------
