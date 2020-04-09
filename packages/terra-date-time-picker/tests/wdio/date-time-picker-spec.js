@@ -682,4 +682,14 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     Terra.it.matchesScreenshot('date-time remains unchanged after button click', { selector: '#root' });
   });
+
+  describe('Remounts component', () => {
+    before(() => browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-remount'));
+
+    it('change date', () => {
+      browser.setValue('input[name="terra-date-input"]', '04/07/2020');
+    });
+
+    Terra.it.validatesElement();
+  });
 });
