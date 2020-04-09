@@ -477,7 +477,11 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-remount');
     });
 
-    it('selects a date from date picker', () => {
+    it('Opens the date picker', () => {
+      browser.click('[class*="button"]');
+    });
+
+    it('Selects a date from date picker', () => {
       browser.keys('ArrowDown');
       browser.keys('Enter');
     });
