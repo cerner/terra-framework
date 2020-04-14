@@ -177,7 +177,6 @@ class ContentComponent extends React.Component {
   }
 
   renderButton(size) {
-    const { disclosureType } = this.props;
     const disclosureManager = this.context;
 
     return (
@@ -185,11 +184,11 @@ class ContentComponent extends React.Component {
         type="button"
         onClick={() => {
           disclosureManager.disclose({
-            preferredType: disclosureType,
+            preferredType: 'panel',
             size,
             content: {
               key: `Content-Disclosure-${size}`,
-              component: <DisclosureComponent name="Disclosure Component" disclosureType={disclosureType} />,
+              component: <DisclosureComponent name="Disclosure Component" disclosureType="panel" />,
             },
           });
         }}
@@ -200,7 +199,6 @@ class ContentComponent extends React.Component {
   }
 
   renderFormButton() {
-    const { disclosureType } = this.props;
     const disclosureManager = this.context;
 
     const name = `Disclose (${this.state.disclosureHeight}) x (${this.state.disclosureWidth})`;
@@ -210,11 +208,11 @@ class ContentComponent extends React.Component {
         type="button"
         onClick={() => {
           disclosureManager.disclose({
-            preferredType: disclosureType,
+            preferredType: 'panel',
             dimensions: { height: this.state.disclosureHeight, width: this.state.disclosureWidth },
             content: {
               key: 'Content-Disclosure-Dimensions',
-              component: <DisclosureComponent name="Disclosure Component" disclosureType={disclosureType} />,
+              component: <DisclosureComponent name="Disclosure Component" disclosureType="panel" />,
             },
           });
         }}
@@ -227,14 +225,14 @@ class ContentComponent extends React.Component {
   renderForm() {
     return (
       <form>
-        <label htmlFor={this.getId(`disclosureHeight${this.props.panelBehavior}`)}>Pop Content Height</label>
-        <select id={this.getId(`disclosureHeight${this.props.panelBehavior}`)} name="disclosureHeight" value={this.state.disclosureHeight} onChange={this.handleSelectChange}>
+        <label htmlFor={this.getId('disclosureHeightSquish')}>Pop Content Height</label>
+        <select id={this.getId('disclosureHeightSquish')} name="disclosureHeight" value={this.state.disclosureHeight} onChange={this.handleSelectChange}>
           {generateDimensionOptions(HEIGHT_KEYS)}
         </select>
         <br />
         <br />
-        <label htmlFor={this.getId(`disclosureWidth${this.props.panelBehavior}`)}>Pop Content Width</label>
-        <select id={this.getId(`disclosureWidth${this.props.panelBehavior}`)} name="disclosureWidth" value={this.state.disclosureWidth} onChange={this.handleSelectChange}>
+        <label htmlFor={this.getId('disclosureWidthSquish')}>Pop Content Width</label>
+        <select id={this.getId('disclosureWidthSquish')} name="disclosureWidth" value={this.state.disclosureWidth} onChange={this.handleSelectChange}>
           {generateDimensionOptions(WIDTH_KEYS)}
         </select>
         <br />
@@ -274,34 +272,16 @@ class ContentComponent extends React.Component {
 }
 
 ContentComponent.contextType = DisclosureManagerContext;
-ContentComponent.propTypes = {
-  disclosureType: PropTypes.string,
-  panelBehavior: PropTypes.oneOf(['overlay', 'squish']),
-};
 
-const SlidePanelManagerExample = ({ behavior, showAccessory }) => (
+const SlidePanelManagerExample = () => (
   <div className={cx('example-wrapper')}>
     <SlidePanelManager
-      panelBehavior={behavior}
-      disclosureAccessory={showAccessory ? (
-        <div className={cx('disclosure-accessory')}>
-          Disclosure Accessory
-        </div>
-      ) : undefined}
+      panelBehavior="squish"
     >
-      <ContentComponent panelBehavior={behavior} disclosureType="panel" />
+      <ContentComponent />
     </SlidePanelManager>
   </div>
 );
 
-SlidePanelManagerExample.propTypes = {
-  behavior: PropTypes.string,
-  showAccessory: PropTypes.bool,
-};
-
-const SquishSlideGroupManager = () => (
-  <SlidePanelManagerExample behavior="squish" />
-);
-
-export default SquishSlideGroupManager;
+export default SlidePanelManagerExample;
 /* eslint-disable max-classes-per-file */
