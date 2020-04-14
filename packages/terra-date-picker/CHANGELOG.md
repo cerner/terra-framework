@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.35.0 - (April 14, 2020)
+------------------
 ### Fixed
 * Fixed error that occurs during remount when setting focus with a null reference to the calendar button.
 
