@@ -471,4 +471,21 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
     Terra.it.matchesScreenshot('date selected');
   });
+
+  describe('Remounts component', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-remount');
+    });
+
+    it('Opens the date picker', () => {
+      browser.click('[class*="button"]');
+    });
+
+    it('Selects a date from date picker', () => {
+      browser.keys('ArrowDown');
+      browser.keys('Enter');
+    });
+
+    Terra.it.validatesElement();
+  });
 });

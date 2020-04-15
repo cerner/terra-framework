@@ -250,7 +250,14 @@ class DatePicker extends React.Component {
     if (!this.props.disableButtonFocusOnClose) {
       // Allows time for focus-trap to release focus on the picker before returning focus to the calendar button.
       setTimeout(() => {
-        this.calendarButton.focus();
+        /*
+         * Make sure the reference to calendarButton still exists before calling focus because it is possible that it is now
+         * nullified after the 100 ms timeout due to a force remount of this component with a new `key` prop value.
+         * Reference https://github.com/cerner/terra-framework/issues/1086
+         */
+        if (this.calendarButton) {
+          this.calendarButton.focus();
+        }
       }, 100);
     }
   }

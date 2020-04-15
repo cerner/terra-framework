@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+1.25.0 - (April 6, 2020)
+------------------
+### Changed
+* Updated test examples to provide `initials` in userConfig
+
 1.24.0 - (March 31, 2020)
 ------------------
 ### Added

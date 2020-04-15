@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+5.32.0 - (April 6, 2020)
+------------------
+### Changed
+* Updated test examples to provide `initials` for avatar
+
 5.31.0 - (March 31, 2020)
 ------------------
 ### Added

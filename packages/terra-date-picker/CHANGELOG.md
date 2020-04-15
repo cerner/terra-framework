@@ -4,6 +4,18 @@ Changelog
 Unreleased
 ----------
 
+4.35.0 - (April 14, 2020)
+------------------
+### Fixed
+* Fixed error that occurs during remount when setting focus with a null reference to the calendar button.
+
+4.34.0 - (April 6, 2020)
+------------------
+## Changed
+* Applied new border styles for keyboard navigation.
+* Changed pre-selected date to 1st of month when changing year/month.
+* Changed `--terra-date-picker-month-focus-outline` and `--terra-date-picker-month-focus-outline-offset` to `--terra-date-picker-day-focus-outline` and `--terra-date-picker-day-focus-outline-offset` respectively.
+
 4.33.0 - (March 31, 2020)
 ------------------
 ### Added
@@ -20,6 +32,7 @@ Unreleased
 ### Changed
 * Changed `onChange` and `onChangeRaw` callbacks to return the following metadata as part of the third parameter: iso, inputValue, isCompleteValue, isValidValue
 * Update the placeholder for the `es-US`, `nl`, `sv-SE`, and `sv` locales to match the actual date format.
+
 
 4.30.0 - (March 3, 2020)
 ------------------

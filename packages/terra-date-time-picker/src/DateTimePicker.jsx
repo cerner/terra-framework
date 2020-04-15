@@ -374,7 +374,14 @@ class DateTimePicker extends React.Component {
     if (isDateValid) {
       // Allows time for focus-trap to release focus on the picker before shifting focus to the hour input.
       setTimeout(() => {
-        this.hourInput.focus();
+        /*
+         * Make sure the reference to hourInput still exists before calling focus because it is possible that it is now
+         * nullified after the 100 ms timeout due to a force remount of this component with a new `key` prop value.
+         * Reference https://github.com/cerner/terra-framework/issues/1086
+         */
+        if (this.hourInput) {
+          this.hourInput.focus();
+        }
       }, 100);
     }
   }
