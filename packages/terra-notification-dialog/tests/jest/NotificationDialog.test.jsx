@@ -1,6 +1,5 @@
+/* global shallowWithIntl, mountWithIntl */
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import CompleteNotificationDialog from '../../src/terra-dev-site/test/notification-dialog/CompleteNotificationDialog.test';
 import CompleteNotificationDialogWithLongMessage from '../../src/terra-dev-site/test/notification-dialog/CompleteNotificationDialogWithLongMessage.test';
 import NoVariantNotificationDialog from '../../src/terra-dev-site/test/notification-dialog/NoVariantNotificationDialog.test';

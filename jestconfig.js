@@ -3,6 +3,14 @@ module.exports = {
     'packages/**/src/*.js',
     'packages/**/src/*.jsx',
   ],
+  collectCoverage: true,
+  coverageDirectory: './tests/reports/coverage',
+  coverageReporters: [
+    'html',
+    'lcov',
+    'cobertura',
+    'text-summary',
+  ],
   globalSetup: './jestGlobalSetup.js',
   setupFiles: [
     'raf/polyfill',
