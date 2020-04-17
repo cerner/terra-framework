@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Update docs to use MDX syntax
+* Update wdio test configuration to use root wdio config
 
 5.30.0 - (March 31, 2020)
 ------------------
