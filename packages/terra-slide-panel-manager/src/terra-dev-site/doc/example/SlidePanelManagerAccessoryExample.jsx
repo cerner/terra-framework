@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-/* Slide Panel Manager example with panel behavior as "overlay" */
+/* Slide Panel Manager example with panel behavior as "squish" */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -225,14 +225,14 @@ class ContentComponent extends React.Component {
   renderForm() {
     return (
       <form>
-        <label htmlFor={this.getId('disclosureHeightOverlay')}>Pop Content Height</label>
-        <select id={this.getId('disclosureHeightOverlay')} name="disclosureHeight" value={this.state.disclosureHeight} onChange={this.handleSelectChange}>
+        <label htmlFor={this.getId('disclosureHeightSquish')}>Pop Content Height</label>
+        <select id={this.getId('disclosureHeightSquish')} name="disclosureHeight" value={this.state.disclosureHeight} onChange={this.handleSelectChange}>
           {generateDimensionOptions(HEIGHT_KEYS)}
         </select>
         <br />
         <br />
-        <label htmlFor={this.getId('disclosureWidthOverlay')}>Pop Content Width</label>
-        <select id={this.getId('disclosureWidthOverlay')} name="disclosureWidth" value={this.state.disclosureWidth} onChange={this.handleSelectChange}>
+        <label htmlFor={this.getId('disclosureWidthSquish')}>Pop Content Width</label>
+        <select id={this.getId('disclosureWidthSquish')} name="disclosureWidth" value={this.state.disclosureWidth} onChange={this.handleSelectChange}>
           {generateDimensionOptions(WIDTH_KEYS)}
         </select>
         <br />
@@ -276,7 +276,12 @@ ContentComponent.contextType = DisclosureManagerContext;
 const SlidePanelManagerExample = () => (
   <div className={cx('example-wrapper')}>
     <SlidePanelManager
-      panelBehavior="overlay"
+      panelBehavior="squish"
+      disclosureAccessory={(
+        <div className={cx('disclosure-accessory')}>
+          Disclosure Accessory
+        </div>
+)}
     >
       <ContentComponent />
     </SlidePanelManager>
