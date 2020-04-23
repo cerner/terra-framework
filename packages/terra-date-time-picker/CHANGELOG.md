@@ -4,6 +4,21 @@ ChangeLog
 Unreleased
 ----------
 
+4.35.0 - (April 14, 2020)
+------------------
+### Fixed
+* Fixed error that occurs during remount when setting focus with a null reference to the hour input.
+
+4.34.0 - (April 6, 2020)
+------------------
+### Changed
+* Updated wdio screenshots due to focus style changes in react-datepicker.
+
+4.33.0 - (March 31, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme wdio screenshots
+
 4.32.0 - (March 24, 2020)
 ------------------
 ### Changed

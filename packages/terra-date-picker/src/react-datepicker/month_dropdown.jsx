@@ -37,6 +37,14 @@ export default class MonthDropdown extends React.Component {
      * Callback ref to pass into the dom element.
      */
     refCallback: PropTypes.func,
+    /**
+     * Callback to invoke when navigated using mouse.
+     */
+    onClick: PropTypes.func,
+    /**
+     * Callback to invoke when navigated using keyboard.
+     */
+    onKeyDown: PropTypes.func,
   }
 
   state = {
@@ -51,7 +59,7 @@ export default class MonthDropdown extends React.Component {
   renderSelectMode = monthNames => (
     <FormattedMessage id="Terra.datePicker.monthLabel">
       {label => (
-        <select aria-label={label} value={this.props.month} className={cx('react-datepicker-month-select"')} onChange={e => this.onChange(e.target.value)}>
+        <select onKeyDown={this.props.onKeyDown} onClick={this.props.onClick} aria-label={label} value={this.props.month} className={cx('react-datepicker-month-select')} onChange={e => this.onChange(e.target.value)}>
           {this.renderSelectOptions(monthNames)}
         </select>
       )}
