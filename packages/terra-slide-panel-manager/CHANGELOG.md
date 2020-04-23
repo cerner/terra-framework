@@ -4,7 +4,17 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header.
+
+5.32.0 - (April 22, 2020)
+------------------
+### Changed
 * Update docs to use MDX syntax
+
+5.31.0 - (April 6, 2020)
+------------------
+### Changed
+* Minor dependency version bump
 
 5.30.0 - (March 31, 2020)
 ------------------

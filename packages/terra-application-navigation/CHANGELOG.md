@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added an interaction media query to apply `hover` styles only on non-touch devices.
 
+### Changed
+* Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header.
+
 1.25.0 - (April 6, 2020)
 ------------------
 ### Changed
