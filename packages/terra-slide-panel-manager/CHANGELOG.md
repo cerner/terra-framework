@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header.
 
 5.32.0 - (April 22, 2020)
 ------------------
