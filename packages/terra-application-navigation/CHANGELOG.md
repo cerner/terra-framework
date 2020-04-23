@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Update wdio test configuration to use root wdio config
+* Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header.
 
 1.25.0 - (April 6, 2020)
 ------------------
