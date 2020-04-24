@@ -3,11 +3,21 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header.
+* Update wdio test configuration to use root wdio config
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
 
 5.32.0 - (April 22, 2020)
 ------------------
 ### Changed
 * Update docs to use MDX syntax
+* Update wdio test configuration to use root wdio config
 
 5.31.0 - (April 6, 2020)
 ------------------

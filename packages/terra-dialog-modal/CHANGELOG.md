@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
+* Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header. 
 
 3.35.0 - (April 14, 2020)
 ------------------

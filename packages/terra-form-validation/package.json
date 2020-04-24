@@ -5,7 +5,8 @@
   "description": "Form Validation Examples for Terra",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-framework.git"
+    "url": "git+https://github.com/cerner/terra-framework.git",
+    "directory": "packages/terra-form-validation"
   },
   "keywords": [
     "Cerner",
