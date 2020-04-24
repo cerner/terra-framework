@@ -5,7 +5,8 @@
   "description": "A stateful component used to manage disclosure presentation.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-framework.git"
+    "url": "git+https://github.com/cerner/terra-framework.git",
+    "directory": "packages/terra-disclosure-manager"
   },
   "keywords": [
     "Cerner",

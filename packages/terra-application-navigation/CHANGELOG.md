@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
 ### Changed
 * Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header.
 
