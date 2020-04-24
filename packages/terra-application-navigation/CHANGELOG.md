@@ -6,11 +6,12 @@ Unreleased
 ### Added
 * Added `directory` as a sub attribute to the `repository` attribute in package.json
 
+### Changed
+* Update wdio test configuration to use root wdio config
+* Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header.
+
 ### Removed
 * Removed "View Component Source Code" from docs in favour of source code badge
-
-### Changed
-* Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header.
 
 1.25.0 - (April 6, 2020)
 ------------------
