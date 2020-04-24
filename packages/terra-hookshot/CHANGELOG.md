@@ -3,8 +3,14 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
 ### Changed
 * Update wdio test configuration to use root wdio config
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
 
 5.26.0 - (March 31, 2020)
 ------------------

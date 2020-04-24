@@ -5,7 +5,8 @@
   "description": "Provides a responsive starting point for the positioning of application components.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-framework.git"
+    "url": "git+https://github.com/cerner/terra-framework.git",
+    "directory": "packages/terra-layout"
   },
   "keywords": [
     "Cerner",

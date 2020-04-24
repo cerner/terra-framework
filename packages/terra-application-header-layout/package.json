@@ -5,7 +5,8 @@
   "description": "This component renders an application header layout. To be used with a layout.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-framework.git"
+    "url": "git+https://github.com/cerner/terra-framework.git",
+    "directory": "packages/terra-application-header-layout"
   },
   "keywords": [
     "Cerner",

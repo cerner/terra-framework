@@ -5,7 +5,8 @@
   "description": "A structual component for nesting navigational items within the content section of the terra-menu-layout.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-framework.git"
+    "url": "git+https://github.com/cerner/terra-framework.git",
+    "directory": "packages/terra-navigation-side-menu"
   },
   "keywords": [
     "Cerner",

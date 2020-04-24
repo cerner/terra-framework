@@ -5,7 +5,8 @@
   "description": "A standard footer for application layout which provides content areas to display options such as branding, copyright information, logo and navigation to related pages.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-framework.git"
+    "url": "git+https://github.com/cerner/terra-framework.git",
+    "directory": "packages/terra-brand-footer"
   },
   "keywords": [
     "Cerner",
