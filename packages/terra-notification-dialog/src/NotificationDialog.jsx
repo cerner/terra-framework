@@ -225,7 +225,7 @@ const NotificationDialog = (props) => {
   const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
   let headerContent = null;
   if (header || defaultHeader) {
-    headerContent = <div id="notification-dialog-header">{header || defaultHeader}</div>;
+    headerContent = <div id="notification-dialog-header" className={cx('signal-word')}>{header || signalWord}</div>;
   }
 
   let titleContent = null;

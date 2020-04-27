@@ -38,15 +38,10 @@
   }
 
   .header-content {
-    color: #1c1f21;
-    border-bottom: var(--terra-notification-dialog-header-border-bottom, 1px solid #dedfe0);
+    border-bottom: var(--terra-notification-dialog-header-border-bottom, 0.07142rem solid #dedfe0);
     display: flex;
     flex-direction: row;
-    font-size: var(--terra-notification-dialog-header-font-size, 1.42857rem);
-    font-weight: bold;  // theme?
-    // height: 5.78571rem;
     padding: var(--terra-notification-dialog-header-padding, 1.35714rem 0 0.5rem);
-    // padding: var(--terra-notification-dialog-header-padding, 0.8rem);
     text-align: left;
     width: 100%;
   }
@@ -56,12 +51,21 @@
     margin-left: 0.5rem;
   }
 
+  .signal-word {
+    color: #1c1f21;
+    font-size: var(--terra-notification-dialog-header-font-size, 1.42857rem);
+    font-weight: bold;  // theme?
+    line-height: 1.15;
+  }
+
   .title {
     color: var(--terra-notification-dialog-title-color, #262626);
     font-size: var(--terra-notification-dialog-title-font-size, 1.2857rem);
     font-weight: var(--terra-notification-dialog-title-font-weight, normal);
-    margin-top: var(--terra-notification-dialog-title-margin-top, 0.21428rem);
-    text-align: var(--terra-notification-dialog-title-text-align, left);
+    line-height: 1.16667;
+    // margin-top: var(--terra-notification-dialog-title-margin-top, 0.21428rem);
+    // text-align: var(--terra-notification-dialog-title-text-align, left);
+
     width: 100%;
     word-wrap: break-word;
   }
@@ -135,10 +139,11 @@
 
   .footer-body {
     background-color: var(--terra-notification-dialog-footer-background-color, #f9f9f9);
-    border-top: var(--terra-notification-dialog-footer-border-top, 0.0625rem solid #dedfe0);
+    border-top: var(--terra-notification-dialog-footer-border-top, 0.07142rem solid #dedfe0);
     flex: 0 0 auto;
     font-size: var(--terra-notification-dialog-footer-font-size, 0.8rem);
-    padding: var(--terra-notification-dialog-footer-padding, 0.28571rem 0.35714rem);
+    min-height: var(-terra-notification-dialog-footer-minimum-height, 0.71428rem);
+    // padding: var(--terra-notification-dialog-footer-padding, 0.35714rem);    
   }
 
   .actions {
@@ -148,10 +153,10 @@
 
     > button {
       flex: var(--terra-notification-dialog-actions-button-flex, 0 1 auto);
-      margin-bottom: var(--terra-notification-dialog-actions-button-margin-bottom, 0.4rem);
-      margin-left: var(--terra-notification-dialog-actions-button-margin-left, 0.4rem);
-      margin-right: var(--terra-notification-dialog-actions-button-margin-right, 0.4rem);
-      margin-top: var(--terra-notification-dialog-actions-button-margin-top, 0.4rem);
+      margin-bottom: var(--terra-notification-dialog-actions-button-margin-bottom, 0.35714rem);
+      margin-left: var(--terra-notification-dialog-actions-button-margin-left, 0.35714rem);
+      margin-right: var(--terra-notification-dialog-actions-button-margin-right, 0.35714rem);
+      margin-top: var(--terra-notification-dialog-actions-button-margin-top, 0.35714rem);
     }
   }
 }
