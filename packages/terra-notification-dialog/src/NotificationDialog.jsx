@@ -7,6 +7,7 @@ import Button, { ButtonVariants } from 'terra-button';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import { FormattedMessage } from 'react-intl';
+import NotificationIcon from './_NotificationIcon';
 
 import styles from './NotificationDialog.module.scss';
 
@@ -159,26 +160,6 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
   );
 };
 
-const getIcon = (variant, customIcon = null) => {
-  let icon;
-
-  if (variants.CUSTOM === variant) {
-    icon = customIcon;
-  } else if (shouldAddVariantClass(variant)) {
-    icon = <span className={cx(['icon', `${variant}-icon`])} />;
-  }
-
-  let iconContent;
-  if (icon) {
-    iconContent = (
-      <div className={cx('icon-container')}>
-        {icon}
-      </div>
-    );
-  }
-  return iconContent;
-};
-
 const NotificationDialog = (props) => {
   useEffect(() => {
     function handleKeydown(e) {
@@ -270,9 +251,10 @@ const NotificationDialog = (props) => {
       <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
         <div className={cx('notification-dialog-inner-wrapper')}>
           <div className={cx('notification-dialog-container')} tabIndex="0">
-            <div className={cx(['header-container', { [`${variant}`]: shouldAddVariantClass(variant) }])}>
+            <div className={cx(['floating-background', { [`${variant}`]: shouldAddVariantClass(variant) }])} />
+            <div className={cx(['header-container'])}>
               <div className={cx(['header-content'])}>
-                {getIcon(variant, customIcon)}
+                <NotificationIcon variant={variant} customIcon={customIcon} />
                 <div className={cx('title-container')}>
                   {headerContent}
                   {titleContent}
@@ -283,7 +265,7 @@ const NotificationDialog = (props) => {
               {(startMessage || message)
                 && <div className={cx('message')}>{(startMessage || message)}</div>}
               {content
-                && <div>{content}</div>}
+                && <div className={cx('message')}>{content}</div>}
               {endMessage
                 && <div className={cx('message')}>{endMessage}</div>}
             </div>
