@@ -7,6 +7,7 @@ import Button, { ButtonVariants } from 'terra-button';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import { FormattedMessage } from 'react-intl';
+import ThemeContext from 'terra-theme-context';
 import NotificationIcon from './_NotificationIcon';
 
 import styles from './NotificationDialog.module.scss';
@@ -161,6 +162,7 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
 };
 
 const NotificationDialog = (props) => {
+  const theme = React.useContext(ThemeContext);
   useEffect(() => {
     function handleKeydown(e) {
       const notificationDialog = document.querySelector('[data-terra-notification-dialog]');
@@ -240,7 +242,7 @@ const NotificationDialog = (props) => {
       aria-labelledby="notification-dialog-header"
       aria-describedby={title ? 'notification-dialog-title' : 'notification-dialog-header'}
       role="alertdialog"
-      classNameModal={classNames(cx('notification-dialog'), customProps.className)}
+      classNameModal={classNames(cx('notification-dialog', theme.className), customProps.className)}
       isOpen={isOpen}
       onRequestClose={() => {}}
       closeOnEsc={false}

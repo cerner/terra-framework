@@ -1,0 +1,48 @@
+:local {
+  .orion-fusion-theme {
+    --terra-notification-dialog-background: #fff;
+    --terra-notification-dialog-border-radius: 0;
+    --terra-notification-dialog-small-horizontal-inset: 17px;
+    --terra-notification-dialog-max-width: 500px;
+    --terra-notification-dialog-floating-background-height: 3rem;
+    --terra-notification-dialog-header-container-background-color: #fff;
+    --terra-notification-dialog-header-container-padding: 0 0.8333rem 0 1.66667rem;
+    --terra-notification-dialog-header-border-bottom: 0.07142rem solid #9b9fa1;
+    --terra-notification-dialog-title-container-padding: 0.75rem 0 0.8333rem;
+    // --terra-notification-dialog-header-content-padding: 0.75rem 0 0.8333rem;
+    --terra-notification-dialog-title-container-margin-left: 0.58333rem;
+    --terra-notification-dialog-header-font-size: 1rem;
+    --terra-notification-dialog-title-color: #2d3539;
+    --terra-notification-dialog-title-font-size: 1rem;
+    --terra-notification-dialog-title-font-weight: normal;
+    --terra-notification-dialog-title-margin-top: 0.08333rem;
+    --terra-notification-dialog-alert-background-image: linear-gradient(to bottom, #fce5e5, #fff);
+    --terra-notification-dialog-alert-border-top: 0.25rem solid #ea2f2f;
+    --terra-notification-dialog-error-background-image: linear-gradient(to bottom, #f6f6f6, #fff);
+    --terra-notification-dialog-error-border-top: 0.25rem solid #9b9fa1;
+    --terra-notification-dialog-warning-background-image: linear-gradient(to bottom, #fff2d0, #fff);
+    --terra-notification-dialog-warning-border-top: 0.25rem solid #ffc20a;
+    --terra-notification-dialog-info-background-image: linear-gradient(to bottom, #f6f6f6, #fff);
+    --terra-notification-dialog-info-border-top: 0.25rem solid #9b9fa1;
+    --terra-notification-dialog-custom-background-image: linear-gradient(to bottom, #e4e2e2, #fff);
+    --terra-notification-dialog-custom-border-top: 0.25rem solid #c8cacb;
+    --terra-notification-dialog-body-background-color: #fff;
+    --terra-notification-dialog-body-padding: 0.5833rem 1.64285rem 0.3333rem 1.64285rem;
+    --terra-notification-dialog-message-color: #262626;
+    --terra-notification-dialog-message-font-size: 1rem;
+    --terra-notification-dialog-body-min-height: 8.6666;
+    --terra-notification-dialog-message-padding: 0 0 0.5833rem;
+    --terra-notification-dialog-message-text-align: left;
+    --terra-notification-dialog-message-padding-top: 0.58333rem 1.66667rem;
+    --terra-notification-dialog-footer-background-color: #fff;
+    --terra-notification-dialog-footer-border-top: 0.07142rem solid #dedfe0;
+    --terra-notification-dialog-footer-font-size: 0.8rem;
+    --terra-notification-dialog-footer-minimum-height: 0.71428rem;
+    --terra-notification-dialog-actions-flex-direction: row;
+    --terra-notification-dialog-actions-button-flex: 0 1 auto;
+    --terra-notification-dialog-actions-button-margin-bottom: 0.35714rem;
+    --terra-notification-dialog-actions-button-margin-left: 0.35714rem;
+    --terra-notification-dialog-actions-button-margin-right: 0.35714rem;
+    --terra-notification-dialog-actions-button-margin-top: 0.35714rem;
+  }
+}

@@ -1,10 +1,14 @@
 @import '~terra-mixins/lib/Mixins';
 @import '~terra-breakpoints/lib/media-queries';
 
+// Themes
+@import './clinical-lowlight-theme-test/NotificationDialog.module';
+@import './orion-fusion-theme-test/NotificationDialog.module';
+
 :local {
   .notification-dialog {
     background: var(--terra-notification-dialog-background, #fff);
-    border-radius: var(--terra-notification-dialog-border-radius, 5px);
+    border-radius: var(--terra-notification-dialog-border-radius, 3px);
     position: fixed;
     // This will ensure that by default, the notification dialog sizes to the viewport (minus the insets).
     width: calc(100% - 2 * var(--terra-notification-dialog-small-horizontal-inset, 17px));
@@ -30,10 +34,17 @@
     width: 100%; // Needed for IE to wrap content correctly in flexbox
   }
   
+  .floating-background {
+    height: var(--terra-notification-dialog-floating-background-height, 5.78571rem);
+    position: absolute;
+    width: 100%;
+  }
+  
   // {NEW}
   .header-container {
+    background-color: var(--terra-notification-dialog-header-container-background-color, #fff);
     flex: 0 0 auto;
-    padding: var(--terra-notification-dialog-header-padding, 0 1.42857rem);
+    padding: var(--terra-notification-dialog-header-container-padding, 0 1.42857rem);
     z-index: 1;
   }
 
@@ -41,14 +52,14 @@
     border-bottom: var(--terra-notification-dialog-header-border-bottom, 0.07142rem solid #dedfe0);
     display: flex;
     flex-direction: row;
-    padding: var(--terra-notification-dialog-header-padding, 1.35714rem 0 0.5rem);
     text-align: left;
     width: 100%;
   }
 
   .title-container {
     flex-shrink: 1;
-    margin-left: 0.5rem;
+    margin-left: var(--terra-notification-dialog-title-container-margin-left, 0.5rem);
+    padding: var(--terra-notification-dialog-title-container-padding, 1.35714rem 0 0.5rem);
   }
 
   .signal-word {
@@ -63,17 +74,11 @@
     font-size: var(--terra-notification-dialog-title-font-size, 1.2857rem);
     font-weight: var(--terra-notification-dialog-title-font-weight, normal);
     line-height: 1.16667;
-    // margin-top: var(--terra-notification-dialog-title-margin-top, 0.21428rem);
+    margin-top: var(--terra-notification-dialog-title-margin-top, 0);
     // text-align: var(--terra-notification-dialog-title-text-align, left);
 
     width: 100%;
     word-wrap: break-word;
-  }
-
-  .floating-background {
-    height: 5.78571rem;
-    position: absolute;
-    width: 100%;
   }
 
   // {NEW}
@@ -92,14 +97,6 @@
   .warning {
     background-image: var(--terra-notification-dialog-warning-background-image, linear-gradient(to bottom, #fff3ce, #fff));
     border-top: var(--terra-notification-dialog-warning-border-top, 0.5rem solid #ffc20a);
-
-  }
-
-  // {NEW}
-  .success {
-    background-image: var(--terra-notification-dialog-success-background-image, none);
-    border-top: var(--terra-notification-dialog-success-border-top, 0);
-    // border-top: var(--terra-notification-dialog-success-border-top, 0.5rem solid rgba(0, 0, 0, 0));
   }
 
   // {NEW}
@@ -118,7 +115,7 @@
     background-color: var(--terra-notification-dialog-body-background-color, #fff);
     flex: 1 1 auto;
     height: 100%;
-    min-height: 6.42857rem;
+    min-height: var(--terra-notification-dialog-body-min-height, 6.42857rem);
     overflow: auto;
     padding: var(--terra-notification-dialog-body-padding, 0.85714rem 0);
     width: 100%;
@@ -127,15 +124,15 @@
   .message {
     color: var(--terra-notification-dialog-message-color, #383f42);
     font-size: var(--terra-notification-dialog-message-font-size, 1rem);
-    padding: var(--terra-notification-dialog-body-padding, 0.35714rem 1.64285rem);
+    padding: var(--terra-notification-dialog-message-padding, 0.35714rem 1.64285rem);
     text-align: var(--terra-notification-dialog-message-text-align, left);
     width: 100%;
     word-wrap: break-word;
   }
 
-  .title + .message {
-    padding-top: var(--terra-notification-dialog-message-padding-top, 1.07142rem);
-  }
+  // .title + .message {
+  //   padding-top: var(--terra-notification-dialog-message-padding-top, 1.07142rem);
+  // }
 
   .footer-body {
     background-color: var(--terra-notification-dialog-footer-background-color, #f9f9f9);
@@ -143,7 +140,6 @@
     flex: 0 0 auto;
     font-size: var(--terra-notification-dialog-footer-font-size, 0.8rem);
     min-height: var(-terra-notification-dialog-footer-minimum-height, 0.71428rem);
-    // padding: var(--terra-notification-dialog-footer-padding, 0.35714rem);    
   }
 
   .actions {

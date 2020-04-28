@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 
 import styles from './NotificationIcon.module.scss';
 
@@ -36,6 +37,7 @@ const propTypes = {
 const shouldAddVariantClass = (variant) => Object.values(variants).indexOf(variant) >= 0;
 
 const Icon = ({ variant, customIcon }) => {
+  const theme = React.useContext(ThemeContext);
   let icon;
 
   if (variants.CUSTOM === variant) {
@@ -45,7 +47,7 @@ const Icon = ({ variant, customIcon }) => {
   }
 
   return (
-    <div className={cx('icon-container')}>
+    <div className={cx('icon-container', theme.className)}>
       {icon}
     </div>
   );

@@ -1,10 +1,15 @@
 @import '~terra-mixins/lib/Mixins';
 @import '~terra-breakpoints/lib/media-queries';
 
+// Themes
+@import './clinical-lowlight-theme-test/NotificationIcon.module';
+@import './orion-fusion-theme-test/NotificationIcon.module';
+
 :local {
   .icon-container {
     flex-shrink: 0; // This will keep text-wrapper from overlapping icon-container in IE11
     height: var(--terra-notification-dialog-icon-container-height, 3em);
+    padding: var(--terra-notification-dialog-icon-container-padding, 1.42857rem 0 0.5rem);
     width: var(--terra-notification-dialog-icon-container-width, 3em);
 
     > .icon {
