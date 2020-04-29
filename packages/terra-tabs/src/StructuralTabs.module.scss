@@ -39,17 +39,17 @@
         }
       }
 
-      .tab-menu:focus {
-        outline: none;
-      }
+      // .tab-menu:focus {
+      //   outline: none;
+      // }
 
-      .tab-menu.is-active {
-        background-size: var(--terra-tabs-collapsed-tab-menu-active-background-size, 0 0);
-      }
+      // .tab-menu.is-active {
+      //   background-size: var(--terra-tabs-collapsed-tab-menu-active-background-size, 0 0);
+      // }
 
-      .tab-menu:hover {
-        background-size: var(--terra-tabs-collapsed-tab-menu-hover-background-size, 0 0);
-      }
+      // .tab-menu:hover {
+      //   background-size: var(--terra-tabs-collapsed-tab-menu-hover-background-size, 0 0);
+      // }
     }
 
     .collapsible-tabs-container {
@@ -88,25 +88,29 @@
     .tab,
     .tab-menu {
       background-color: var(--terra-tabs-structural-background-color, #fff);
-      background-image: var(--terra-tabs-structural-background-image, linear-gradient(to bottom, #006fc3, #006fc3));
+      // background-image: var(--terra-tabs-structural-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
       background-position: var(--terra-tabs-structural-background-position, 0 100%);
       background-repeat: no-repeat;
-      background-size: var(--terra-tabs-structural-background-size, 0 2px);
+      // background-size: var(--terra-tabs-structural-background-size, 0 2px);
       border-color: var(--terra-tabs-structural-border-color, #dedfe0);
       border-radius: var(--terra-tabs-structural-border-radius, 0);
       border-style: solid;
       border-width: var(--terra-tabs-structural-border-width, 0 1px 0 0);
       box-shadow: var(--terra-tabs-structural-box-shadow);
-      color: var(--terra-tabs-structural-color, #006fc3);
+      color: var(--terra-tabs-structural-color, #007ee0);
       margin-left: var(--terra-tabs-structural-between-tabs-margin-left, 0);
       transition-duration: var(--terra-tabs-structural-transition-duration, 0);
       transition-property: background-size;
       transition-timing-function: var(--terra-tabs-structural-transition-timing-function, ease);
 
+      &:hover {
+        background-color: var(--terra-tabs-structural-hover-background-color, #fff);
+        background-image: var(--terra-tabs-structural-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
+        background-size: var(--terra-tabs-structural-hover-background-size, 100% 2px);
+        color: var(--terra-tabs-structural-hover-color, #000);
+      }
+
       &.is-active {
-        background-color: var(--terra-tabs-structural-active-background-color, #fff);
-        background-image: var(--terra-tabs-structural-active-background-image, linear-gradient(to bottom, #006fc3, #006fc3));
-        background-size: var(--terra-tabs-structural-active-background-size, 100% 2px);
         box-shadow: var(--terra-tabs-structural-active-box-shadow, none);
         color: var(--terra-tabs-structural-active-color, #000);
         font-weight: var(--terra-tabs-structural-active-font-weight, normal);
@@ -125,10 +129,12 @@
         // Same as the selectors below, but due to the specificity, you can override the variables
         // scoped specifically to the active tab
         &:hover {
-          background-color: var(--terra-tabs-structural-active-hover-background-color, #fff);
-          background-image: var(--terra-tabs-structural-active-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
-          background-size: var(--terra-tabs-structural-active-hover-background-size, 100% 2px);
-          color: var(--terra-tabs-structural-active-hover-color, #000);
+          &:focus {
+            background-color: var(--terra-tabs-structural-active-hover-background-color, #fff);
+            background-image: var(--terra-tabs-structural-active-hover-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
+            background-size: var(--terra-tabs-structural-active-hover-background-size, 100% 2px);
+            color: var(--terra-tabs-structural-active-hover-color, #000);
+          }
         }
       }
 
@@ -146,13 +152,6 @@
         opacity: var(--terra-tabs-structural-disabled-label-opacity, 1);
       }
 
-      &:hover {
-        background-color: var(--terra-tabs-structural-hover-background-color, #fff);
-        background-image: var(--terra-tabs-structural-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
-        background-size: var(--terra-tabs-structural-hover-background-size, 100% 2px);
-        color: var(--terra-tabs-structural-hover-color, #000);
-      }
-
       &:first-child {
         margin-left: 0;
       }
@@ -162,12 +161,11 @@
       }
     }
 
-    .collapsible-tabs-container:focus .is-active,
-    .tab-menu:focus.is-active {
-      background-color: var(--terra-tabs-structural-active-focus-background-color, #fff);
-      background-image: var(--terra-tabs-structural-active-focus-background-image, linear-gradient(to bottom, #006fc3, #006fc3));
-      color: var(--terra-tabs-structural-active-focus-color, inherit);
-      position: relative;
+    .collapsible-tabs-container .tab:focus,
+    .collapsible-tabs-container .tab-menu:focus,
+    .collapsed-tabs-container .tab-menu:focus {
+      color: var(--terra-tabs-structural-focus-color, inherit);
+      outline: none;
       z-index: 1;
 
       [dir=rtl] & {
@@ -176,21 +174,6 @@
 
       [dir=ltr] & {
         box-shadow: var(--terra-tabs-keyboard-active-focus-ltr-box-shadow, 0 0 1px 2px #4a90e2);
-      }
-    }
-
-    .tab-menu:focus {
-      background-color: var(--terra-tabs-structural-focus-background-color, #fff);
-      background-image: var(--terra-tabs-structural-focus-background-image);
-      color: var(--terra-tabs-structural-focus-color, inherit);
-      outline: none;
-
-      [dir=rtl] & {
-        box-shadow: var(--terra-tabs-keyboard-focus-rtl-box-shadow, 0 0 1px 2px #4a90e2);
-      }
-
-      [dir=ltr] & {
-        box-shadow: var(--terra-tabs-keyboard-focus-ltr-box-shadow, 0 0 1px 2px #4a90e2);
       }
     }
 

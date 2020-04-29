@@ -1,13 +1,13 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import TabPane from '../../../../TabPane';
+import Tab from '../../../../Tab';
 import styles from './common/TabPane.test.module.scss';
 
 const cx = classNames.bind(styles);
 
 const TextOnlyTabPane = () => (
   <div role="tablist" className={cx('content-wrapper')}>
-    <TabPane
+    <Tab
       label="Text only tab pane"
       id="textOnly"
     />

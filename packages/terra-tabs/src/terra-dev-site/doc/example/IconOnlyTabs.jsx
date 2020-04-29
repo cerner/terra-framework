@@ -1,55 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import PropTypes from 'prop-types';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
-import Tabs from 'terra-tabs';
+/* eslint-disable import/no-unresolved, import/extensions */
+import Tabs, { Tab, TabBar } from 'terra-tabs/lib/index';
 import TabContent from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
+/* eslint-enable import/no-unresolved, import/extensions */
 import styles from './common/TabExample.module.scss';
-
-const propTypes = { responsiveTo: PropTypes.string };
 
 const cx = classNames.bind(styles);
 
-const IconOnlyTabs = (props) => {
-  const searchTab = (
-    <Tabs.Pane label="Search" icon={<IconSearch />} isIconOnly key="Search">
-      <TabContent label="Search" />
-    </Tabs.Pane>
-  );
+const IconOnlyTabs = () => {
+  const [currentTab, setCurrentTab] = useState('Search');
 
-  const briefcaseTab = (
-    <Tabs.Pane label="Briefcase" icon={<IconBriefcase />} isIconOnly key="Briefcase">
-      <TabContent label="Briefcase" />
-    </Tabs.Pane>
-  );
-
-  const bookmarkTab = (
-    <Tabs.Pane label="Bookmark" icon={<IconBookmark />} isIconOnly key="Bookmark">
-      <TabContent label="Bookmark" />
-    </Tabs.Pane>
-  );
-
-  const calendarTab = (
-    <Tabs.Pane label="Calendar" icon={<IconCalendar />} isIconOnly key="Calendar">
-      <TabContent label="Calendar" />
-    </Tabs.Pane>
-  );
+  function handleSelect(metaData) {
+    setCurrentTab(metaData.key);
+  }
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs responsiveTo={props.responsiveTo}>
-        {searchTab}
-        {briefcaseTab}
-        {bookmarkTab}
-        {calendarTab}
+      <Tabs
+        tabBar={(
+          <TabBar>
+            <Tab
+              label="Search"
+              onSelect={handleSelect}
+              metaData={{ key: 'Search' }}
+              icon={<IconSearch />}
+              isIconOnly
+              key="Search"
+              isSelected={currentTab === 'Search'}
+            />
+            <Tab
+              label="Briefcase"
+              onSelect={handleSelect}
+              metaData={{ key: 'Briefcase' }}
+              icon={<IconBriefcase />}
+              isIconOnly
+              key="Briefcase"
+              isSelected={currentTab === 'Briefcase'}
+            />
+            <Tab
+              label="Bookmark"
+              onSelect={handleSelect}
+              metaData={{ key: 'Bookmark' }}
+              icon={<IconBookmark />}
+              isIconOnly
+              key="Bookmark"
+              isSelected={currentTab === 'Bookmark'}
+            />
+            <Tab
+              label="Calendar"
+              onSelect={handleSelect}
+              metaData={{ key: 'Calendar' }}
+              icon={<IconCalendar />}
+              isIconOnly
+              key="Calendar"
+              isSelected={currentTab === 'Calendar'}
+            />
+          </TabBar>
+        )}
+      >
+        <TabContent label={currentTab} />
       </Tabs>
     </div>
   );
 };
-
-IconOnlyTabs.propTypes = propTypes;
 
 export default IconOnlyTabs;
