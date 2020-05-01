@@ -2,14 +2,13 @@
 @import '~terra-breakpoints/lib/media-queries';
 
 // Themes
-@import './clinical-lowlight-theme-test/NotificationIcon.module';
-@import './orion-fusion-theme-test/NotificationIcon.module';
+@import './clinical-lowlight-theme/NotificationIcon.module';
+@import './orion-fusion-theme/NotificationIcon.module';
 
 :local {
   .icon-container {
     flex-shrink: 0; // This will keep text-wrapper from overlapping icon-container in IE11
     height: var(--terra-notification-dialog-icon-container-height, 3em);
-    padding: var(--terra-notification-dialog-icon-container-padding, 1.42857rem 0 0.5rem);
     width: var(--terra-notification-dialog-icon-container-width, 3em);
 
     > .icon {
@@ -37,6 +36,12 @@
 
     > .error-icon {
       background: var(--terra-notification-dialog-error-icon-background, inline-svg("<svg viewBox='0 0 49 49' xmlns='http://www.w3.org/2000/svg'><path fill='#e50000' d='M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z'/><path fill='#fff' d='M7 21.5h34v5H7v-5z'/></svg>"));
+      height: var(--terra-notification-dialog-error-icon-height, 2.57143em);
+      margin: var(--terra-notification-dialog-error-icon-margin, 0.21428rem);
+      width: var(--terra-notification-dialog-error-icon-width, 2.57143em);
+    }
+
+    > .custom-icon {
       height: var(--terra-notification-dialog-error-icon-height, 2.57143em);
       margin: var(--terra-notification-dialog-error-icon-margin, 0.21428rem);
       width: var(--terra-notification-dialog-error-icon-width, 2.57143em);

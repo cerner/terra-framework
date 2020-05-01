@@ -2,8 +2,8 @@
 @import '~terra-breakpoints/lib/media-queries';
 
 // Themes
-@import './clinical-lowlight-theme-test/NotificationDialog.module';
-@import './orion-fusion-theme-test/NotificationDialog.module';
+@import './clinical-lowlight-theme/NotificationDialog.module';
+@import './orion-fusion-theme/NotificationDialog.module';
 
 :local {
   .notification-dialog {
@@ -34,53 +34,13 @@
     width: 100%; // Needed for IE to wrap content correctly in flexbox
   }
   
-  .floating-background {
+  .floating-header-background {
     height: var(--terra-notification-dialog-floating-background-height, 5.78571rem);
     position: absolute;
     width: 100%;
+    z-index: -1;
   }
   
-  // {NEW}
-  .header-container {
-    background-color: var(--terra-notification-dialog-header-container-background-color, #fff);
-    flex: 0 0 auto;
-    padding: var(--terra-notification-dialog-header-container-padding, 0 1.42857rem);
-    z-index: 1;
-  }
-
-  .header-content {
-    border-bottom: var(--terra-notification-dialog-header-border-bottom, 0.07142rem solid #dedfe0);
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    width: 100%;
-  }
-
-  .title-container {
-    flex-shrink: 1;
-    margin-left: var(--terra-notification-dialog-title-container-margin-left, 0.5rem);
-    padding: var(--terra-notification-dialog-title-container-padding, 1.35714rem 0 0.5rem);
-  }
-
-  .signal-word {
-    color: #1c1f21;
-    font-size: var(--terra-notification-dialog-header-font-size, 1.42857rem);
-    font-weight: bold;  // theme?
-    line-height: 1.15;
-  }
-
-  .title {
-    color: var(--terra-notification-dialog-title-color, #262626);
-    font-size: var(--terra-notification-dialog-title-font-size, 1.2857rem);
-    font-weight: var(--terra-notification-dialog-title-font-weight, normal);
-    line-height: 1.16667;
-    margin-top: var(--terra-notification-dialog-title-margin-top, 0);
-    // text-align: var(--terra-notification-dialog-title-text-align, left);
-
-    width: 100%;
-    word-wrap: break-word;
-  }
-
   // {NEW}
   .alert {
     background-image: var(--terra-notification-dialog-alert-background-image, linear-gradient(to bottom, #ffdad9, #fff));
@@ -111,30 +71,71 @@
     border-top: var(--terra-notification-dialog-custom-border-top, 0.5rem solid #c8cacb);
   }
 
-  .notification-dialog-body {
+  .header {
+    flex: 0 0 auto;
+    z-index: 1;
+    margin: var(--terra-notification-dialog-header-margin, 0.5rem); // offset border-top of floating
+    padding: var(--terra-notification-dialog-header-padding, 0 1.42857rem); // left and write padding
+
+  }
+  
+  .header-content {
+    border-bottom: var(--terra-notification-dialog-header-content-border-bottom, 1px solid #dedfe0);
+    display: flex;
+    flex-direction: row;
+    padding: var(--terra-notification-dialog-header-content-padding, 1.35714rem 0 0.5rem); // top and bottom padding to squish border bottom
+    text-align: left;
+    width: 100%;
+  }
+
+  .title-container {
+    flex-shrink: 1;
+    margin-left: var(--terra-notification-dialog-title-container-margin-left, 0.5rem);
+  }
+
+  .signal-word {
+    color: #1c1f21; // theme?
+    font-size: var(--terra-notification-dialog-header-font-size, 1.42857rem);
+    font-weight: bold;  // theme?
+    letter-spacing: -0.018rem; // theme?
+    line-height: 1.15; // theme?
+    min-height: 1.64285rem; // theme?
+  }
+
+  .title {
+    color: var(--terra-notification-dialog-title-color, #262626);
+    font-size: var(--terra-notification-dialog-title-font-size, 1.2857rem);
+    font-weight: var(--terra-notification-dialog-title-font-weight, normal);
+    letter-spacing: -0.018rem; // theme?
+    line-height: 1.16667; // theme?
+    margin-top: var(--terra-notification-dialog-title-margin-top, 0);
+    min-height: 1.5rem; // theme?
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+  .body {
     background-color: var(--terra-notification-dialog-body-background-color, #fff);
     flex: 1 1 auto;
     height: 100%;
     min-height: var(--terra-notification-dialog-body-min-height, 6.42857rem);
     overflow: auto;
-    padding: var(--terra-notification-dialog-body-padding, 0.85714rem 0);
+    padding: var(--terra-notification-dialog-body-padding, 0.85714rem 1.64285rem 1.07142rem);
     width: 100%;
   }
 
   .message {
     color: var(--terra-notification-dialog-message-color, #383f42);
     font-size: var(--terra-notification-dialog-message-font-size, 1rem);
-    padding: var(--terra-notification-dialog-message-padding, 0.35714rem 1.64285rem);
+    line-height: 1.42857; // theme?
+    letter-spacing: 0.007rem; // theme?
+    padding: var(--terra-notification-dialog-message-padding, 0.35714rem 0);
     text-align: var(--terra-notification-dialog-message-text-align, left);
     width: 100%;
     word-wrap: break-word;
   }
 
-  // .title + .message {
-  //   padding-top: var(--terra-notification-dialog-message-padding-top, 1.07142rem);
-  // }
-
-  .footer-body {
+  .footer {
     background-color: var(--terra-notification-dialog-footer-background-color, #f9f9f9);
     border-top: var(--terra-notification-dialog-footer-border-top, 0.07142rem solid #dedfe0);
     flex: 0 0 auto;

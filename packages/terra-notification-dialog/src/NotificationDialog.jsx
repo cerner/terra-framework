@@ -224,16 +224,7 @@ const NotificationDialog = (props) => {
     console.warn('At least one of the props `acceptAction`,`primaryAction`,`rejectAction`, or `secondaryAction` must be provided to the Notification dialog');
   }
 
-  const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
-  let headerContent = null;
-  if (header || defaultHeader) {
-    headerContent = <div id="notification-dialog-header" className={cx('signal-word')}>{header || signalWord}</div>;
-  }
-
-  let titleContent = null;
-  if (title) {
-    titleContent = <div id="notification-dialog-title" className={cx('title')}>{title}</div>;
-  }
+  const signalWord = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
@@ -253,17 +244,17 @@ const NotificationDialog = (props) => {
       <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
         <div className={cx('notification-dialog-inner-wrapper')}>
           <div className={cx('notification-dialog-container')} tabIndex="0">
-            <div className={cx(['floating-background', { [`${variant}`]: shouldAddVariantClass(variant) }])} />
-            <div className={cx(['header-container'])}>
+            <div className={cx(['floating-header-background', { [`${variant}`]: shouldAddVariantClass(variant) }])} />
+            <div className={cx(['header'])}>
               <div className={cx(['header-content'])}>
                 <NotificationIcon variant={variant} customIcon={customIcon} />
                 <div className={cx('title-container')}>
-                  {headerContent}
-                  {titleContent}
+                  <div id="notification-dialog-signal-word" className={cx('signal-word')}>{header || signalWord}</div>
+                  <div id="notification-dialog-title" className={cx('title')}>{title}</div>
                 </div>
               </div>
             </div>
-            <div className={cx('notification-dialog-body')}>
+            <div className={cx('body')}>
               {(startMessage || message)
                 && <div className={cx('message')}>{(startMessage || message)}</div>}
               {content
@@ -271,7 +262,7 @@ const NotificationDialog = (props) => {
               {endMessage
                 && <div className={cx('message')}>{endMessage}</div>}
             </div>
-            <div className={cx('footer-body')}>
+            <div className={cx('footer')}>
               {actionSection(
                 acceptAction || primaryAction,
                 rejectAction || secondaryAction,
