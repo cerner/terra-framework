@@ -11,7 +11,7 @@ const Themed = () => {
   return (
     <div className={cx('themed', theme.className)}>
       <h1>
-        Themed block
+        {`Theme Name: ${theme.name}`}
       </h1>
       <div className={cx('themed-block')} />
     </div>
