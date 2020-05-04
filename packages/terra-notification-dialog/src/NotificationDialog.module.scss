@@ -41,31 +41,26 @@
     z-index: -1;
   }
   
-  // {NEW}
   .alert {
     background-image: var(--terra-notification-dialog-alert-background-image, linear-gradient(to bottom, #ffdad9, #fff));
     border-top: var(--terra-notification-dialog-alert-border-top, 0.5rem solid #ea2f2f);
   }
 
-  // {NEW}
   .error {
     background-image: var(--terra-notification-dialog-error-background-image, linear-gradient(to bottom, #e4e2e2, #fff));
     border-top: var(--terra-notification-dialog-error-border-top, 0.5rem solid #c8cacb);
   }
 
-  // {NEW}
   .warning {
     background-image: var(--terra-notification-dialog-warning-background-image, linear-gradient(to bottom, #fff3ce, #fff));
     border-top: var(--terra-notification-dialog-warning-border-top, 0.5rem solid #ffc20a);
   }
 
-  // {NEW}
   .info {
     background-image: var(--terra-notification-dialog-info-background-image, linear-gradient(to bottom, #e4e2e2, #fff));
     border-top: var(--terra-notification-dialog-info-border-top, 0.5rem solid #c8cacb);
   }
 
-  // {NEW}
   .custom {
     background-image: var(--terra-notification-dialog-custom-background-image, linear-gradient(to bottom, #e4e2e2, #fff));
     border-top: var(--terra-notification-dialog-custom-border-top, 0.5rem solid #c8cacb);
@@ -74,9 +69,7 @@
   .header {
     flex: 0 0 auto;
     z-index: 1;
-    margin: var(--terra-notification-dialog-header-margin, 0.5rem); // offset border-top of floating
     padding: var(--terra-notification-dialog-header-padding, 0 1.42857rem); // left and write padding
-
   }
   
   .header-content {
@@ -88,9 +81,9 @@
     width: 100%;
   }
 
-  .title-container {
+  .header-container {
     flex-shrink: 1;
-    margin-left: var(--terra-notification-dialog-title-container-margin-left, 0.5rem);
+    margin-left: var(--terra-notification-dialog-header-container-margin-left, 0.5rem);
   }
 
   .signal-word {
@@ -99,7 +92,7 @@
     font-weight: bold;  // theme?
     letter-spacing: -0.018rem; // theme?
     line-height: 1.15; // theme?
-    min-height: 1.64285rem; // theme?
+    min-height: var(--terra-notification-dialog-signal-word-min-height, 1.64285rem);
   }
 
   .title {
@@ -109,7 +102,7 @@
     letter-spacing: -0.018rem; // theme?
     line-height: 1.16667; // theme?
     margin: var(--terra-notification-dialog-title-margin, 0);
-    min-height: 1.5rem; // theme?
+    min-height: var(--terra-notification-dialog-title-min-height, 1.5rem);
     width: 100%;
     word-wrap: break-word;
   }

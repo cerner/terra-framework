@@ -3,17 +3,18 @@
 :local {
   .orion-fusion-theme {
     --terra-notification-dialog-icon-container-height: 25px;
+    --terra-notification-dialog-icon-container-margin: 2px 0 2px 10px;
     --terra-notification-dialog-icon-container-width: 25px;
-    --terra-notification-dialog-alert-icon-height: 2.08333em;
-    --terra-notification-dialog-alert-icon-width: 2.08333em;
-    --terra-notification-dialog-warning-icon-height: 2.08333em;
-    --terra-notification-dialog-warning-icon-width: 2.08333em;
-    --terra-notification-dialog-info-icon-height: 2.08333em;
-    --terra-notification-dialog-info-icon-margin: 0.16667em;
-    --terra-notification-dialog-info-icon-width: 2.08333em;
-    --terra-notification-dialog-error-icon-height: 2.08333em;
-    --terra-notification-dialog-error-icon-margin: 0.16667em;
-    --terra-notification-dialog-error-icon-width: 2.08333em;
+    --terra-notification-dialog-alert-icon-height: 25px;
+    --terra-notification-dialog-alert-icon-width: 25px;
+    --terra-notification-dialog-warning-icon-height: 25px;
+    --terra-notification-dialog-warning-icon-width: 25px;
+    --terra-notification-dialog-info-icon-height: 23px;
+    --terra-notification-dialog-info-icon-margin: 2px;
+    --terra-notification-dialog-info-icon-width: 23px;
+    --terra-notification-dialog-error-icon-height: 23px;
+    --terra-notification-dialog-error-icon-margin: 2px;
+    --terra-notification-dialog-error-icon-width: 23px;
 
     @include terra-inline-svg-var('--terra-notification-dialog-alert-icon-background', "<svg viewBox='0 0 49 49' xmlns='http://www.w3.org/2000/svg'><path fill='#e50000' d='M1.2 45c-1.1 0-1.6-.8-1-1.7L23 3.7c.5-1 1.4-1 2 0l22.8 39.6c.5 1 .1 1.7-1 1.7H1.2z'/><path fill='#fff' d='M21.5 36.7h5V42h-5v-5.3zm0-22.7h5v17.3h-5V14z'/></svg>");
     @include terra-inline-svg-var('--terra-notification-dialog-warning-icon-background', "<svg viewBox='0 0 49 49' xmlns='http://www.w3.org/2000/svg'><path fill='#ffc20a' d='M1.2 45c-1.1 0-1.6-.8-1-1.7L23 3.7c.5-1 1.4-1 2 0l22.8 39.6c.5 1 .1 1.7-1 1.7H1.2z'/><path fill='#1c1f21' d='M47.7 43.3L25 3.7c-.3-.5-.6-.7-1-.7s-.7.2-1 .7L.2 43.3c-.5 1-.1 1.7 1 1.7h45.5c1.1 0 1.6-.8 1-1.7zm-45.9.2L24 5l22.2 38.5H1.8zm19.7-6.8h5V42h-5v-5.3zm0-22.7h5v17.3h-5V14z'/></svg>");
