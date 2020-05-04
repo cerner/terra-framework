@@ -94,8 +94,8 @@
   }
 
   .signal-word {
-    color: #1c1f21; // theme?
-    font-size: var(--terra-notification-dialog-header-font-size, 1.42857rem);
+    color: #1c1f21; // theme? // orion-fusion bold
+    font-size: var(--terra-notification-dialog-signal-word-font-size, 1.42857rem);
     font-weight: bold;  // theme?
     letter-spacing: -0.018rem; // theme?
     line-height: 1.15; // theme?
@@ -108,7 +108,7 @@
     font-weight: var(--terra-notification-dialog-title-font-weight, normal);
     letter-spacing: -0.018rem; // theme?
     line-height: 1.16667; // theme?
-    margin-top: var(--terra-notification-dialog-title-margin-top, 0);
+    margin: var(--terra-notification-dialog-title-margin, 0);
     min-height: 1.5rem; // theme?
     width: 100%;
     word-wrap: break-word;
