@@ -2,8 +2,8 @@ import React from 'react';
 import NotificationDialogVariant from './NotificationDialogVariant';
 import { NotificationDialogVariants } from '../../../NotificationDialog';
 
-const NotificationDialogSuccess = () => (
-  <NotificationDialogVariant variant={NotificationDialogVariants.SUCCESS} />
+const NotificationDialogError = () => (
+  <NotificationDialogVariant variant={NotificationDialogVariants.ALERT} />
 );
 
-export default NotificationDialogSuccess;
+export default NotificationDialogError;

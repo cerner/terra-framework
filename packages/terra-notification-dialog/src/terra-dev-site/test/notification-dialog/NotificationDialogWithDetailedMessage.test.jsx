@@ -6,7 +6,7 @@ const clickConfirm = () => {
   alert('You clicked confirm'); // eslint-disable-line no-alert
 };
 
-const CompleteNotificationDialogWithLongMessage = () => {
+const CompleteNotificationDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -22,14 +22,21 @@ const CompleteNotificationDialogWithLongMessage = () => {
       <NotificationDialog
         variant={NotificationDialogVariants.ALERT}
         isOpen={isOpen}
-        title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
-        startMessage="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
+        title="Make sure that the title relates directly to the choices."
+        startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+        content={(
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+          </ul>
+        )}
+        endMessage="The End Message is text used to provide any other additional info."
         acceptAction={{
-          text: 'Confirm',
+          text: 'accept',
           onClick: clickConfirm,
         }}
         rejectAction={{
-          text: 'Close',
+          text: 'reject',
           onClick: handleCloseModal,
         }}
         buttonOrder="acceptFirst"
@@ -40,4 +47,4 @@ const CompleteNotificationDialogWithLongMessage = () => {
   );
 };
 
-export default CompleteNotificationDialogWithLongMessage;
+export default CompleteNotificationDialog;

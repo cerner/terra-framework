@@ -12,7 +12,7 @@ const propTypes = {
 };
 
 const NotificationDialogVariant = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -22,14 +22,15 @@ const NotificationDialogVariant = (props) => {
     setIsOpen(false);
   };
 
-  const { variant } = props;
+  const { variant, ...customProps } = props;
 
   return (
     <>
       <NotificationDialog
+        {...customProps}
         variant={variant}
         isOpen={isOpen}
-        title="Make sure that the title relates directly to the choices."
+        title="The title relates directly to the choices."
         startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
         acceptAction={{
           text: 'Confirm',
