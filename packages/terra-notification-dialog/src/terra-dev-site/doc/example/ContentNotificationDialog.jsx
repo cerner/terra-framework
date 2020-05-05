@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
-import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
+import NotificationDialog from 'terra-notification-dialog';
+import classNamesBind from 'classnames/bind';
+
+import styles from './example-styles.module.scss';
+
+const cx = classNamesBind.bind(styles);
 
 const ContentNotificationDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,14 +21,14 @@ const ContentNotificationDialog = () => {
   return (
     <>
       <NotificationDialog
-        variant={NotificationDialogVariants.ALERT}
+        variant="warning"
         isOpen={isOpen}
-        title="Make sure that the title relates directly to the choices."
+        title="Use a title that relates directly to the choices"
         startMessage="The Start Message is text used to provide more detail or define terminology at the beginning of the dialog body. Don’t repeat the title verbatim."
         content={(
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
+          <ul className={cx('content-list')}>
+            <li className={cx('content-list-item')}>Item 1</li>
+            <li className={cx('content-list-item')}>Item 2</li>
           </ul>
         )}
         endMessage="The End Message is text used to provide more detail or define terminology at the end of the dialog body. Don’t repeat the title verbatim."

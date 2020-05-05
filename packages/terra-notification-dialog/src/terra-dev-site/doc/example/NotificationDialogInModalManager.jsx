@@ -34,7 +34,7 @@ const ModalContent = () => {
       <NotificationDialog
         variant="alert"
         isOpen={isOpen}
-        title="Make sure that the title relates directly to the choices."
+        title="Use a title that relates directly to the choices"
         startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
         acceptAction={{
           text: 'accept',
@@ -47,7 +47,7 @@ const ModalContent = () => {
         buttonOrder="acceptFirst"
         emphasizedAction="accept"
       />
-      <Button text="Trigger NotificationDialog" onClick={handleOpenModal} />
+      <Button text="Trigger Notification Dialog" onClick={handleOpenModal} />
     </>
   );
 };

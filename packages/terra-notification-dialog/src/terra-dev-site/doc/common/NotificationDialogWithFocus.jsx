@@ -63,7 +63,7 @@ class NotificationDialogWithFocus extends React.Component {
           buttonOrder="acceptFirst"
           emphasizedAction="accept"
         />
-        <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} id="trigger-notification-dialog" />
+        <Button text="Trigger Notification Dialog" onClick={this.handleOpenModal} id="trigger-notification-dialog" />
         <Button text="Dismiss" onClick={this.props.disclosureManager.dismiss} id="dismiss-modal" />
         <Popup
           isArrowDisplayed

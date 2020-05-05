@@ -2,17 +2,19 @@ import { Badge } from 'terra-notification-dialog/package.json?dev-site-package';
 
 import NotificationDialogPropsTable from 'terra-notification-dialog/src/NotificationDialog?dev-site-props-table';
 
-import DefaultNotificationDialog from '../example/DefaultNotificationDialog?dev-site-example';
-import VariantsExample from '../example/VariantsExample?dev-site-example';
+import AlertVariantExample from '../example/AlertVariantExample?dev-site-example';
+import ErrorVariantExample from '../example/ErrorVariantExample?dev-site-example';
+import WarningVariantExample from '../example/WarningVariantExample?dev-site-example';
+import InfoVariantExample from '../example/InfoVariantExample?dev-site-example';
+import CustomVariantExample from '../example/CustomVariantExample?dev-site-example';
+
 import ContentNotificationDialog from '../example/ContentNotificationDialog?dev-site-example';
 import ActionOrderExample from '../example/ActionOrderExample?dev-site-example';
-import EmphasizedRejectNotificationDialog from '../example/EmphasizedRejectNotificationDialog?dev-site-example';
+import EmphasizedRejectExample from '../example/EmphasizedRejectExample?dev-site-example';
 import NotificationDialogInModalManager from '../example/NotificationDialogInModalManager?dev-site-example';
 import NotificationDialogWithLongText from '../example/NotificationDialogWithLongText?dev-site-example';
 
 <Badge />
-
-[Getting Started](#getting-started) | [Usage](#usage) | [Component Features](#component-features) | [Examples](#examples) | [Props](#notification-dialog-props-table )
 
 # Terra Notification Dialog
 
@@ -25,10 +27,9 @@ There are five dialog variants build into `terra-notification-dialog`:
 1. `alert`
 2. `error`
 3. `warning`
-4. `success`
-5. `info`
+4. `info`
 
-If one of these variants do not meet your needs, there is the option to customize the dialog and the icon it displays.
+If one of these variants do not meet your needs, there is the option to customize the signal word and the icon that the dialog displays.
 
 ## Getting Started
 
@@ -63,11 +64,11 @@ import NotificationDialog, { NotificationDialogVariants } from 'terra-notificati
  * [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
 
 ## Examples 
-<DefaultNotificationDialog />
-
-<VariantsExample
-  title="Notification Dialog Variants"
-/>
+<AlertVariantExample />
+<ErrorVariantExample />
+<WarningVariantExample />
+<InfoVariantExample />
+<CustomVariantExample />
 
 <ContentNotificationDialog
   title="Notification Dialog with Detailed Message"
@@ -76,7 +77,7 @@ import NotificationDialog, { NotificationDialogVariants } from 'terra-notificati
 
 <ActionOrderExample />
 
-<EmphasizedRejectNotificationDialog
+<EmphasizedRejectExample
   title="Notification Dialog with Reject Action Emphasized"
 />
 
@@ -85,13 +86,9 @@ import NotificationDialog, { NotificationDialogVariants } from 'terra-notificati
 />
 
 <NotificationDialogWithLongText
-  title="Notification Dialog with Long Text"
   description="This example show the dialog correctly handles long messages with scrolling."
 />
 
 ## Notification Dialog Props Table 
-
-###### Note
-The `primaryAction` and `secondaryAction` are **deprecated** and will be removed in the v4. These will be replaced with `acceptAction` and `rejectAction`. At the time, provided at least `acceptAction`, `rejectAction`, `primaryAction` or `secondaryAction` to proper render the `Notification Dialog` without a warning.
 
 <NotificationDialogPropsTable />
