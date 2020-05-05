@@ -17,9 +17,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
       }
     }
     buttonOrder="acceptFirst"
-    content={null}
     emphasizedAction="none"
-    endMessage={null}
     isOpen={true}
     rejectAction={
       Object {
@@ -51,9 +49,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
       }
     }
     buttonOrder="acceptFirst"
-    content={null}
     emphasizedAction="accept"
-    endMessage={null}
     isOpen={true}
     rejectAction={
       Object {
@@ -85,9 +81,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
       }
     }
     buttonOrder="rejectFirst"
-    content={null}
     emphasizedAction="reject"
-    endMessage={null}
     isOpen={true}
     rejectAction={
       Object {
