@@ -2,7 +2,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Enzyme, { mount, render, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { mountWithIntl, renderWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -11,20 +10,15 @@ global.shallow = shallow;
 global.render = render;
 global.mount = mount;
 
-// Add i18n test helpers as global variables for use in jest suite
-global.shallowWithIntl = shallowWithIntl;
-global.renderWithIntl = renderWithIntl;
-global.mountWithIntl = mountWithIntl;
-
 // TODO: Test running jest with this removed and see if tests still work
 // More info: https://github.com/cerner/terra-react-svg-loader/pull/1#discussion_r100876464
 // Skip createElement warnings but fail tests on any other warning
 // eslint-disable-next-line no-console
-// console.error = (message) => {
-//   if (!/(React.createElement: type should not be null)/.test(message)) {
-//     throw new Error(message);
-//   }
-// };
+console.error = (message) => {
+  if (!/(React.createElement: type should not be null)/.test(message)) {
+    throw new Error(message);
+  }
+};
 
 window.matchMedia = () => ({ matches: true });
 

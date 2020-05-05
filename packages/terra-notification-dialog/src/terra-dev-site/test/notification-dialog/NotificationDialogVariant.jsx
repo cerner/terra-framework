@@ -12,7 +12,7 @@ const propTypes = {
 };
 
 const NotificationDialogVariant = (props) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenModal = () => {
     setIsOpen(true);

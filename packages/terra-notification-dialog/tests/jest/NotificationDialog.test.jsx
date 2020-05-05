@@ -1,4 +1,6 @@
 import React from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
+import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import { KEY_ESCAPE } from 'keycode-js';
 import NotificationDialog from '../../src/NotificationDialog';
 
