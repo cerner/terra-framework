@@ -45,13 +45,9 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
           <div
             className="header-content"
           >
-            <div
-              className="icon-container orion-fusion-theme"
-            >
-              <span
-                className="icon alert-icon"
-              />
-            </div>
+            <NotificationDialogIcon
+              variant="alert"
+            />
             <div
               className="header-container"
             >
@@ -231,13 +227,9 @@ exports[`Notification Dialog shallow enders an error notification-dialog 1`] = `
           <div
             className="header-content"
           >
-            <div
-              className="icon-container"
-            >
-              <span
-                className="icon error-icon"
-              />
-            </div>
+            <NotificationDialogIcon
+              variant="error"
+            />
             <div
               className="header-container"
             >
@@ -353,13 +345,9 @@ exports[`Notification Dialog shallow renders an alert notification-dialog 1`] = 
           <div
             className="header-content"
           >
-            <div
-              className="icon-container"
-            >
-              <span
-                className="icon alert-icon"
-              />
-            </div>
+            <NotificationDialogIcon
+              variant="alert"
+            />
             <div
               className="header-container"
             >
@@ -475,13 +463,10 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
           <div
             className="header-content"
           >
-            <div
-              className="icon-container"
-            >
-              <span
-                className="icon custom-icon custom-icon"
-              />
-            </div>
+            <NotificationDialogIcon
+              iconClassName="custom-icon"
+              variant="custom"
+            />
             <div
               className="header-container"
             >
@@ -594,13 +579,9 @@ exports[`Notification Dialog shallow renders an info notification-dialog 1`] = `
           <div
             className="header-content"
           >
-            <div
-              className="icon-container"
-            >
-              <span
-                className="icon info-icon"
-              />
-            </div>
+            <NotificationDialogIcon
+              variant="info"
+            />
             <div
               className="header-container"
             >
@@ -716,13 +697,9 @@ exports[`Notification Dialog shallow renders an warning notification-dialog 1`] 
           <div
             className="header-content"
           >
-            <div
-              className="icon-container"
-            >
-              <span
-                className="icon warning-icon"
-              />
-            </div>
+            <NotificationDialogIcon
+              variant="warning"
+            />
             <div
               className="header-container"
             >
@@ -838,13 +815,9 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
           <div
             className="header-content"
           >
-            <div
-              className="icon-container"
-            >
-              <span
-                className="icon alert-icon"
-              />
-            </div>
+            <NotificationDialogIcon
+              variant="alert"
+            />
             <div
               className="header-container"
             >
@@ -960,13 +933,9 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
           <div
             className="header-content"
           >
-            <div
-              className="icon-container"
-            >
-              <span
-                className="icon alert-icon"
-              />
-            </div>
+            <NotificationDialogIcon
+              variant="alert"
+            />
             <div
               className="header-container"
             >

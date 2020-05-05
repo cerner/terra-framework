@@ -19,24 +19,26 @@ const variants = {
   ERROR: 'error',
   WARNING: 'warning',
   INFO: 'info',
-  SUCCESS: 'success',
   CUSTOM: 'custom',
 };
 
 const propTypes = {
   /**
-   * The signal word to use in the notification-dialog. If this is not provided, the default signal word associated with the
-   * variant will be used.
+   * The variant of notification to be rendered. This renders the dialog with the corresponding header and icon to the
+   * variant concept.
+   * Use one of `alert`, `error`, `warning`, `info`, or `custom`.
    */
-  header: PropTypes.string,
+  variant: PropTypes.oneOf([
+    variants.ALERT,
+    variants.ERROR,
+    variants.WARNING,
+    variants.INFO,
+    variants.CUSTOM,
+  ]).isRequired,
   /**
    * The title to describe the high-level overview of why the notification-dialog is being displayed to the user.
    */
   title: PropTypes.string,
-  /**
-   * **Deprecated**, Message of the notification-dialog. Resolves to `startMessage`.
-   */
-  message: PropTypes.string,
   /**
    * The text to provide more detail or defined terminology to be displayed at the start of the notification dialog body.
    */
@@ -50,26 +52,12 @@ const propTypes = {
    */
   content: PropTypes.node,
   /**
-   * **Deprecated** The button text and onclick values of the primary button. Will be replaced with `acceptAction` in v4.
-   */
-  primaryAction: PropTypes.shape({
-    text: PropTypes.string,
-    onClick: PropTypes.func,
-  }),
-  /**
    * The button text and onclick values of the accept button.
    */
   acceptAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
-  }),
-  /**
-   * **Deprecated** The button text and onclick values of the secondary button. Will be replaced with `rejectAction` in v4.
-   */
-  secondaryAction: PropTypes.shape({
-    text: PropTypes.string,
-    onClick: PropTypes.func,
-  }),
+  }).isRequired,
   /**
    * The button text and onclick values of the reject button.
    */
@@ -78,26 +66,22 @@ const propTypes = {
     onClick: PropTypes.func,
   }),
   /**
-   * The variant of notification to be rendered. This renders the dialog with the corresponding header and icon to the
-   * variant concept.
-   * Use one of `alert`, `error`, `warning`, `info`, `success`, or `custom`.
+   * The pieces to populate a notification-dialog when `variant="custom"`.
    */
-  variant: PropTypes.oneOf([
-    variants.ALERT,
-    variants.ERROR,
-    variants.WARNING,
-    variants.INFO,
-    variants.SUCCESS,
-    variants.CUSTOM,
-  ]),
-  /**
-   * The icon to be used for a notification when `variant="custom"`.
-   */
-  customIcon: PropTypes.element,
+  custom: PropTypes.shape({
+    /**
+     * The signal word to use in the notification-dialog.
+     */
+    signalWord: PropTypes.string,
+    /**
+     * The class name used to set the icon as the background image to be used as the icon in the notification-dialog.
+     */
+    iconClassName: PropTypes.string,
+  }),
   /**
    * Wether or not to show notification-dialog or not.
    */
-  isOpen: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool,
   /**
    * Determines the order of notification action buttons.
    * Use one of `acceptFirst`, `rejectFirst`.
@@ -118,45 +102,33 @@ const propTypes = {
 };
 
 const defaultProps = {
-  variant: variants.CUSTOM,
+  isOpen: false,
   buttonOrder: 'acceptFirst',
   emphasizedAction: 'none',
 };
 
-const shouldAddVariantClass = (variant) => Object.values(variants).indexOf(variant) >= 0;
+const isValidVariant = (variant) => Object.values(variants).indexOf(variant) >= 0;
 
 const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction) => {
-  let acceptButton = null;
-  let rejectButton = null;
-
   if (!acceptAction && !rejectAction) {
     return null;
   }
 
+  const actionButtons = [];
+
   if (acceptAction) {
     const buttonVariant = emphasizedAction === 'accept' ? { variant: ButtonVariants.EMPHASIS } : {};
-
-    acceptButton = <Button {...buttonVariant} text={acceptAction.text} onClick={acceptAction.onClick} />;
+    actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="accept" key="accept" text={acceptAction.text} onClick={acceptAction.onClick} />);
   }
 
   if (rejectAction) {
     const buttonVariant = emphasizedAction === 'reject' ? { variant: ButtonVariants.EMPHASIS } : {};
-    rejectButton = <Button {...buttonVariant} text={rejectAction.text} onClick={rejectAction.onClick} />;
-  }
-
-  if (buttonOrder === 'rejectFirst') {
-    return (
-      <div className={cx('actions')}>
-        {rejectButton}
-        {acceptButton}
-      </div>
-    );
+    actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
   }
 
   return (
     <div className={cx('actions')}>
-      {acceptButton}
-      {rejectButton}
+      {buttonOrder === 'acceptFirst' ? actionButtons : actionButtons.reverse()}
     </div>
   );
 };
@@ -184,7 +156,6 @@ const NotificationDialog = (props) => {
   });
 
   const {
-    header,
     title,
     startMessage,
     endMessage,
@@ -192,39 +163,18 @@ const NotificationDialog = (props) => {
     acceptAction,
     rejectAction,
     variant,
-    customIcon,
     isOpen,
     buttonOrder,
     emphasizedAction,
-    primaryAction,
-    secondaryAction,
-    message,
+    custom,
     ...customProps
   } = props;
 
-  if (process.env.NODE_ENV !== 'production') {
-    if (acceptAction === undefined && primaryAction === undefined && rejectAction === undefined && secondaryAction === undefined) {
-      // eslint-disable-next-line no-console
-      console.warn('[terra-notification-dialog] At least one of the props `acceptAction`,`primaryAction`,`rejectAction`, or `secondaryAction` must be provided to the Notification dialog');
-    }
+  const signalWord = variant === variants.CUSTOM ? (custom || {}).signalWord : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
 
-    if (acceptAction === undefined && primaryAction !== undefined) {
-      // eslint-disable-next-line no-console
-      console.warn('[terra-notification-dialog] The `primaryAction` prop is deprecated and will be replaced with the `acceptAction` prop in v4. Consider updating your implementation to use `acceptAction`.');
-    }
-
-    if (rejectAction === undefined && secondaryAction !== undefined) {
-      // eslint-disable-next-line no-console
-      console.warn('[terra-notification-dialog] The `secondaryAction` prop is deprecated and will be replaced with the `rejectAction` prop in v4. Consider updating your implementation to use `acceptAction`.');
-    }
+  if (!isValidVariant(variant)) {
+    return null;
   }
-
-  if (process.env.NODE_ENV !== 'production' && acceptAction === undefined && primaryAction === undefined && rejectAction === undefined && secondaryAction === undefined) {
-    // eslint-disable-next-line no-console
-    console.warn('At least one of the props `acceptAction`,`primaryAction`,`rejectAction`, or `secondaryAction` must be provided to the Notification dialog');
-  }
-
-  const signalWord = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
@@ -244,19 +194,19 @@ const NotificationDialog = (props) => {
       <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
         <div className={cx('notification-dialog-inner-wrapper')}>
           <div className={cx('notification-dialog-container')} tabIndex="0">
-            <div className={cx(['floating-header-background', { [`${variant}`]: shouldAddVariantClass(variant) }])} />
+            <div className={cx(['floating-header-background', variant])} />
             <div className={cx(['header'])}>
               <div className={cx(['header-content'])}>
-                <NotificationIcon variant={variant} customIcon={customIcon} />
-                <div className={cx('title-container')}>
-                  <div id="notification-dialog-signal-word" className={cx('signal-word')}>{header || signalWord}</div>
+                <NotificationIcon variant={variant} iconClassName={(custom || {}).iconClassName} />
+                <div className={cx('header-container')}>
+                  <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
                   <div id="notification-dialog-title" className={cx('title')}>{title}</div>
                 </div>
               </div>
             </div>
             <div className={cx('body')}>
-              {(startMessage || message)
-                && <div className={cx('message')}>{(startMessage || message)}</div>}
+              {(startMessage)
+                && <div className={cx('message')}>{(startMessage)}</div>}
               {content
                 && <div className={cx('message')}>{content}</div>}
               {endMessage
@@ -264,8 +214,8 @@ const NotificationDialog = (props) => {
             </div>
             <div className={cx('footer')}>
               {actionSection(
-                acceptAction || primaryAction,
-                rejectAction || secondaryAction,
+                acceptAction,
+                rejectAction,
                 buttonOrder,
                 emphasizedAction,
               )}

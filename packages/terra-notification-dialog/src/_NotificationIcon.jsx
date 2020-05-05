@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 
@@ -12,7 +13,6 @@ const variants = {
   ERROR: 'error',
   WARNING: 'warning',
   INFO: 'info',
-  SUCCESS: 'success',
   CUSTOM: 'custom',
 };
 
@@ -29,30 +29,21 @@ const propTypes = {
     variants.CUSTOM,
   ]).isRequired,
   /**
-   * The icon to be used for a notification when `variant="custom"`.
+   * The class name for the custom icon to be used for a notification when `variant="custom"`.
    */
-  customIcon: PropTypes.element,
+  iconClassName: PropTypes.string,
 };
 
-const shouldAddVariantClass = (variant) => Object.values(variants).indexOf(variant) >= 0;
-
-const Icon = ({ variant, customIcon }) => {
+const NotificationDialogIcon = ({ variant, iconClassName }) => {
   const theme = React.useContext(ThemeContext);
-  let icon;
-
-  if (variants.CUSTOM === variant) {
-    icon = customIcon;
-  } else if (shouldAddVariantClass(variant)) {
-    icon = <span className={cx(['icon', `${variant}-icon`])} />;
-  }
 
   return (
     <div className={cx('icon-container', theme.className)}>
-      {icon}
+      <span className={classNames(cx(['icon', `${variant}-icon`], { [`${iconClassName}`]: variants.CUSTOM === variant }))} />
     </div>
   );
 };
 
-Icon.propTypes = propTypes;
+NotificationDialogIcon.propTypes = propTypes;
 
-export default Icon;
+export default NotificationDialogIcon;
