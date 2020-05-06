@@ -6,6 +6,53 @@ ChangeLog
 Unreleased
 ----------
 
+4.36.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+4.35.0 - (April 14, 2020)
+------------------
+### Fixed
+* Fixed error that occurs during remount when setting focus with a null reference to the hour input.
+
+4.34.0 - (April 6, 2020)
+------------------
+### Changed
+* Updated wdio screenshots due to focus style changes in react-datepicker.
+
+4.33.0 - (March 31, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme wdio screenshots
+
+4.32.0 - (March 24, 2020)
+------------------
+### Changed
+* Updated props documentation
+
+4.31.0 - (March 10, 2020)
+------------------
+### Changed
+* Changed `onBlur` callback to also return the following metadata: dateValue, timeValue and isAmbiguousHour
+* Changed `onChange` and `onChangeRaw` callbacks to return the following metadata as part of the third parameter: iso, inputValue, dateValue, timeValue, isAmbiguousHour, isCompleteValue, isValidValue
+
+4.30.0 - (March 3, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+4.29.0 - (February 25, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 4.28.0 - (February 18, 2020)
 ------------------
 ### Added

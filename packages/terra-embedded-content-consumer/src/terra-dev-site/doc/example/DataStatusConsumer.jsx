@@ -1,5 +1,8 @@
 import React from 'react';
 import EmbeddedContentConsumer from 'terra-embedded-content-consumer';
+import { Consumer } from 'xfc';
+
+Consumer.init();
 
 const createListItem = (itemName) => {
   const listItem = document.createElement('li');

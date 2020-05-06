@@ -1,0 +1,36 @@
+import { Badge } from 'terra-theme-context/package.json?dev-site-package';
+
+import ThemeContextProviderExample from '../example/ThemeContextProviderExample?dev-site-example';
+import ThemedComponent from '../example/ThemedComponent?dev-site-example';
+
+<Badge />
+
+# Terra Theme Context
+A React context to provide the current theme. This package is intended to be used by Terra components only. Any terra consumers or custom Terra components should consume the context from the `terra-application` package.
+
+This context can be used to apply any theme related changes to a component.
+
+The most common use would be to apply a theme class to the root tag of the component to apply theme variables. See below for an example.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-theme-context`
+
+## Usage
+
+```jsx
+import ThemeContext from 'terra-theme-context';
+```
+
+## Examples
+<ThemedComponent title="A component using the theme context" />
+
+## Context Value
+
+The ThemeContext provides an object with the following values:
+
+|Key Name|Type|Is Required|DefaultValue|Description|
+|---|---|---|---|---|
+|`name`|String|optional|undefined|The current application theme name. This field requires use of the terra-toolkit webpack config.|
+|`className`|String|optional|undefined|The current application theme className. The default theme is indicated as undefined or empty string.|

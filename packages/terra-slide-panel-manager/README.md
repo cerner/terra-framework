@@ -6,7 +6,7 @@
 The SlidePanelManager is a DisclosureManager implementation that presents disclosed content using a SlidePanel.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-slide-panel-manager/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager)
 - [LICENSE](#license)
 
 ## Getting Started

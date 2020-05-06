@@ -38,7 +38,7 @@
 
   .react-datepicker-header {
     background-color: $datepicker-background-color;
-    border-bottom: 1px solid $datepicker-border-color;
+    border-bottom: 2px solid $datepicker-border-color;
     padding-top: 8px;
     position: relative;
     text-align: center;
@@ -193,17 +193,7 @@
     &--selected,
     &--in-selecting-range,
     &--in-range {
-      background-color: $datepicker-selected-color;
-      border-radius: $datepicker-border-radius;
-      color: #fff;
-
-      &:hover {
-        background-color: $datepicker-selected-hover-color;
-      }
-    }
-
-    &--keyboard-selected {
-      background-color: $datepicker-selected-color;
+      background-color: darken($datepicker-selected-color, 10%);
       border-radius: $datepicker-border-radius;
       color: #fff;
 
@@ -356,8 +346,9 @@
 
   .react-datepicker-today-button {
     background: $datepicker-background-color;
-    border: 0;
-    border-top: 1px solid $datepicker-border-color;
+    border: 2px dashed transparent;
+    border-top: 2px solid $datepicker-border-color;
+    box-sizing: border-box;
     clear: left;
     cursor: pointer;
     flex: 1;
@@ -368,8 +359,15 @@
 
     &:focus {
       background-color: #e4e4e4;
-      outline: none;
+      border: 2px dashed #000;
+      box-sizing: border-box;
+      outline: 0;
     }
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }   
   }
 
   .react-datepicker-close-button {
@@ -434,7 +432,7 @@
   .react-datepicker-navigation--next {
     background-color: transparent;
     background-image: none;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     cursor: pointer;
     height: 1.571rem;
     padding: 0;
@@ -445,6 +443,16 @@
       height: 1.4285rem;
       width: 1.4285rem;
     }
+
+    &:focus {
+      outline: 2px dashed #000;
+      outline-offset: 0;
+    }
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }   
   }
 
   .prev-month-icon,
@@ -488,7 +496,27 @@
   }
 
   .is-calendar-focused {
-    outline: var(--terra-date-picker-month-focus-outline, 2px dashed #000);
-    outline-offset: var(--terra-date-picker-month-focus-outline-offset, 0);
+    &--keyboard-focus {
+      outline: var(--terra-date-picker-day-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-date-picker-day-focus-outline-offset, 0);
+    }
+  }
+
+  .react-datepicker-day {
+    &--selected-border {
+      outline: var(--terra-date-picker-day-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-date-picker-day-focus-outline-offset, 0);
+    }
+  }
+
+  .react-datepicker-month-select,
+  .react-datepicker-year-select {
+    outline: 2px dashed transparent;
+    outline-offset: 0;
+
+    &:focus {
+      outline: 2px dashed #000;
+      outline-offset: 0;
+    }
   }
 }

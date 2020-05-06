@@ -4,15 +4,55 @@ Changelog
 Unreleased
 ----------
 
+1.26.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
+* Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header.
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+1.25.0 - (April 6, 2020)
+------------------
+### Changed
+* Updated test examples to provide `initials` in userConfig
+
+1.24.0 - (March 31, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme wdio screenshots
+
+1.23.0 - (March 10, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+1.22.0 - (March 3, 2020)
+------------------
+### Changed
+* Update docs to use MDX syntax
+* Updated wdio screenshots
+
+1.21.0 - (February 25, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 1.20.0 - (February 18, 2020)
 ------------------
 ### Added
 * Added clinical-lowlight-theme theming files
 
+### Fixed
+* Fixed Drawer menu not closing in Internet Explorer on clicking outside of drawer menu.
+
 1.19.0 - (February 11, 2020)
 ------------------
 ### Fixed
-* Fixed Drawer menu not closing in Internet Explorer on clicking outside of drawer menu.
 * Fixed `settings` api called when `help` clicked in drawer menu.
 
 1.18.0 - (February 4, 2020)

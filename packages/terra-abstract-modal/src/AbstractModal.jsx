@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { createRef, useLayoutEffect, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
-import * as KeyCode from 'keycode-js';
+import { KEY_ESCAPE } from 'keycode-js';
 import 'mutationobserver-shim';
 import './_contains-polyfill';
 import './_matches-polyfill';
@@ -71,156 +71,80 @@ const defaultProps = {
   zIndex: '6000',
 };
 
-class AbstractModal extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      modalTrigger: undefined,
-    };
-    this.handleKeydown = this.handleKeydown.bind(this);
-    this.showModalDomUpdates = this.showModalDomUpdates.bind(this);
-    this.hideModalDomUpdates = this.hideModalDomUpdates.bind(this);
-    this.modalElement = React.createRef();
-  }
+const AbstractModal = (props) => {
+  const {
+    ariaLabel,
+    children,
+    classNameModal,
+    classNameOverlay,
+    closeOnEsc,
+    closeOnOutsideClick,
+    isFullscreen,
+    isOpen,
+    role,
+    rootSelector,
+    onRequestClose,
+    zIndex,
+    ...customProps
+  } = props;
 
-  componentDidMount() {
+  const modalElementRef = createRef();
+
+  useLayoutEffect(() => {
     // eslint-disable-next-line no-prototype-builtins
     if (!Element.prototype.hasOwnProperty('inert')) {
       // IE10 throws an error if wicg-inert is imported too early, as wicg-inert tries to set an observer on document.body which may not exist on import
       // eslint-disable-next-line global-require
       require('wicg-inert/dist/inert');
     }
-    document.addEventListener('keydown', this.handleKeydown);
+  }, []);
 
-    if (this.props.isOpen) {
-      this.showModalDomUpdates();
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.isOpen) {
-      if (!prevProps.isOpen) {
-        this.showModalDomUpdates();
-      }
-    } else if (prevProps.isOpen) {
-      this.hideModalDomUpdates();
-    }
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeydown);
-    this.hideModalDomUpdates();
-  }
-
-  showModalDomUpdates() {
-    const mainDocumentElement = document.querySelector(this.props.rootSelector);
-    // Store element that was last focused prior to modal opening
-    this.setState({ modalTrigger: document.activeElement });
-
-    if (mainDocumentElement) {
-      const inert = +mainDocumentElement.getAttribute('data-overlay-count');
-
-      if (!mainDocumentElement.hasAttribute('data-overlay-count')) {
-        mainDocumentElement.setAttribute('data-overlay-count', '1');
-        mainDocumentElement.setAttribute('inert', '');
-      } else if (mainDocumentElement && mainDocumentElement.hasAttribute('data-overlay-count')) {
-        mainDocumentElement.setAttribute('data-overlay-count', `${inert + 1}`);
-      }
-
-      // Handle focus shift for VoiceOver on iOS
-      if ('ontouchstart' in window) {
-        this.modalElement.current.querySelector('[data-terra-abstract-modal-begin]').focus();
-      } else {
-        // Shift focus to modal dialog
-        this.modalElement.current.focus();
-      }
-    }
-  }
-
-  hideModalDomUpdates() {
-    const mainDocumentElement = document.querySelector(this.props.rootSelector);
-
-    if (mainDocumentElement) {
-      const inert = +mainDocumentElement.getAttribute('data-overlay-count');
-
-      if (inert === 1) {
-        mainDocumentElement.removeAttribute('data-overlay-count');
-        mainDocumentElement.removeAttribute('inert');
-        // Ensures aria-hidden is properly cleaned up
-        setTimeout(() => mainDocumentElement.removeAttribute('aria-hidden'), 0);
-      } else if (inert && inert > 1) {
-        mainDocumentElement.setAttribute('data-overlay-count', `${inert - 1}`);
-      }
-    }
-
-    setTimeout(() => {
-      if (this.state.modalTrigger && this.state.modalTrigger.focus) {
-        // Shift focus back to element that was last focused prior to opening the modal
-        this.state.modalTrigger.focus();
-      } else {
-        // In some cases on IE, when the focus cannot be restored on the element (SVG element, for instance)
-        // that was last focused prior to opening the modal, place the focus on the HTML body element to repro
-        // the behavior noticed on other major browsers.
-        document.querySelector('body').focus();
-      }
-    }, 0); // Allows inert processing to finish before shifting focus back
-  }
-
-  handleKeydown(e) {
-    const body = document.querySelector('body');
-    if (e.keyCode === KeyCode.KEY_ESCAPE && this.props.isOpen && this.props.closeOnEsc) {
-      if (this.modalElement.current) {
-        if (e.target === this.modalElement.current || this.modalElement.current.contains(e.target) || e.target === body) {
-          this.props.onRequestClose();
+  useEffect(() => {
+    function handleKeydown(e) {
+      if (e.keyCode === KEY_ESCAPE && closeOnEsc && isOpen) {
+        if (modalElementRef.current) {
+          const body = document.querySelector('body');
+          if (e.target === modalElementRef.current || modalElementRef.current.contains(e.target) || e.target === body) {
+            onRequestClose();
+          }
         }
       }
     }
+
+    document.addEventListener('keydown', handleKeydown);
+
+    return (() => {
+      document.removeEventListener('keydown', handleKeydown);
+    });
+  }, [closeOnEsc, isOpen, onRequestClose, modalElementRef]);
+
+  if (!isOpen) {
+    return null;
   }
 
-  render() {
-    const {
-      ariaLabel,
-      children,
-      classNameModal,
-      classNameOverlay,
-      closeOnEsc,
-      closeOnOutsideClick,
-      isFullscreen,
-      isOpen,
-      role,
-      rootSelector,
-      onRequestClose,
-      zIndex,
-      ...customProps
-    } = this.props;
-
-    if (!isOpen) {
-      return null;
-    }
-
-    return (
-      <Portal
-        isOpened={isOpen}
+  return (
+    <Portal
+      isOpened={isOpen}
+    >
+      <ModalContent
+        {...customProps}
+        closeOnOutsideClick={closeOnOutsideClick}
+        ariaLabel={ariaLabel}
+        classNameModal={classNameModal}
+        classNameOverlay={classNameOverlay}
+        role={role}
+        isFullscreen={isFullscreen}
+        onRequestClose={onRequestClose}
+        rootSelector={rootSelector}
+        zIndex={zIndex}
+        aria-modal="true"
+        ref={modalElementRef}
       >
-        <ModalContent
-          {...customProps}
-          closeOnOutsideClick={closeOnOutsideClick}
-          ariaLabel={ariaLabel}
-          classNameModal={classNameModal}
-          classNameOverlay={classNameOverlay}
-          role={role}
-          isFullscreen={isFullscreen}
-          onRequestClose={onRequestClose}
-          zIndex={zIndex}
-          aria-modal="true"
-          ref={this.modalElement}
-        >
-          {children}
-        </ModalContent>
-      </Portal>
-    );
-  }
-}
+        {children}
+      </ModalContent>
+    </Portal>
+  );
+};
 
 AbstractModal.propTypes = propTypes;
 AbstractModal.defaultProps = defaultProps;

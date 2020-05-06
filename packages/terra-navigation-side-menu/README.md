@@ -7,7 +7,7 @@
 A structual component for nesting navigational items within the content section of the terra-menu-layout.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-navigation-side-menu/docs)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-navigation-side-menu/navigation-side-menu/navigation-side-menu)
 - [LICENSE](#license)
 
 ## Getting Started

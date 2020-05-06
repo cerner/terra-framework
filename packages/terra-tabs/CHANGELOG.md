@@ -4,6 +4,42 @@ ChangeLog
 Unreleased
 ----------
 
+6.33.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+6.32.0 - (April 6, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+6.31.0 - (March 31, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme wdio screenshots
+
+6.30.0 - (March 10, 2020)
+------------------
+### Changed
+* Update docs to use MDX syntax
+
+6.29.0 - (March 3, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+6.28.0 - (February 25, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 6.27.0 - (February 18, 2020)
 ------------------
 ### Added

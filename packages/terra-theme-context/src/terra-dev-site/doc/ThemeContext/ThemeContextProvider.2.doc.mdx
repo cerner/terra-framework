@@ -1,0 +1,36 @@
+import { Badge } from 'terra-theme-context/package.json?dev-site-package';
+
+import PropsTable from 'terra-theme-context/src/ThemeContextProvider?dev-site-props-table';
+
+import ThemeContextProviderExample from '../example/ThemeContextProviderExample?dev-site-example';
+
+<Badge />
+
+# Terra Theme Context
+A provider component for the terra theme context. This component is not intended for use outside of terra-application.
+
+## How does this relate to terra-theme-provider
+terra-theme-provider and terra-context/ThemeContextProvider work in concert to provide all aspects of terra themeing.
+
+The terra-theme-provider component is responsible for applying the theme class to the document element on the page. This will allow any non locally scoped theme classes to be applied throughout the application.
+
+This component sets the provided theme in react context so that react components can apply locally scoped theme classes to apply the theme variables directly.
+
+These components should be given the same theme name and will be orchestrated by terra-application.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-theme-context`
+
+## Usage
+
+```jsx
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
+```
+
+## Examples
+<ThemeContextProviderExample />
+
+## Props Table
+<PropsTable />

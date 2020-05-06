@@ -32,6 +32,7 @@ Cerner Corporation
 - Lokesh P [@lokesh-0813]
 - Saket Bajaj [@saket2403]
 - Phil Dodderidge [@pdodde]
+- Jordan Spoor [@Me999999999]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -65,3 +66,4 @@ Cerner Corporation
 [@lokesh-0813]: https://github.com/lokesh-0813
 [@saket2403]: https://github.com/saket2403
 [@pdodde]: https://github.com/pdodde
+[@Me999999999]: https://github.com/Me999999999

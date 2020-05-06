@@ -4,6 +4,50 @@ Changelog
 Unreleased
 ----------
 
+3.36.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
+* Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header. 
+
+3.35.0 - (April 14, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+3.34.0 - (April 6, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+3.33.0 - (March 31, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme wdio screenshots
+
+3.32.0 - (March 24, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+3.31.0 - (March 10, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+3.30.0 - (March 3, 2020)
+------------------
+### Changed
+* Updated wdio screenshots
+
+3.29.0 - (February 25, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 3.28.0 - (February 18, 2020)
 ------------------
 ### Added

@@ -247,6 +247,15 @@ class DateTimeUtils {
 
     return momentDate.isValid() ? momentDate : undefined;
   }
+
+  /**
+   * Checks whether the passed parameter is a moment object or not
+   * @param {string|object} value - Value to be checked
+   * @return {boolean} - Returns true if passed value is a moment object
+   */
+  static isMomentObject(value) {
+    return moment.isMoment(value);
+  }
 }
 
 DateTimeUtils.FORMAT_12_HOUR = TimeUtil.FORMAT_12_HOUR;

@@ -4,6 +4,27 @@ Changelog
 Unreleased
 ----------
 
+4.23.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+4.22.0 - (March 31, 2020)
+------------------
+### Added
+* Added clinical-lowlight-theme wdio screenshots
+
+4.21.0 - (March 3, 2020)
+------------------
+### Changed
+* Update docs to use MDX syntax.
+
 4.20.0 - (February 18, 2020)
 ------------------
 ### Added
@@ -167,7 +188,7 @@ Unreleased
 2.22.0 - (January 2, 2019)
 ------------------
 ### Added
-* Shim for <main> tag IE compatibility added to _LayoutSlidePanel
+* Shim for `<main>` tag IE compatibility added to _LayoutSlidePanel
 
 2.21.0 - (December 5, 2018)
 ------------------

@@ -9,14 +9,6 @@ Terra.describeViewports('Theme Provider', ['tiny', 'medium'], () => {
     Terra.it.matchesScreenshot({ selector });
   });
 
-  describe('Displays a globally themed component', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-theme-provider/theme-provider/global-theme-provider');
-    });
-
-    Terra.it.matchesScreenshot({ selector });
-  });
-
   describe('Displays an updated themed component', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-theme-provider/theme-provider/switch-themes');
@@ -28,23 +20,6 @@ Terra.describeViewports('Theme Provider', ['tiny', 'medium'], () => {
   describe('Displays an updated themed component - After Click', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-theme-provider/theme-provider/switch-themes');
-      browser.selectByAttribute('#theme', 'value', 'cerner-mock-theme');
-    });
-
-    Terra.it.matchesScreenshot({ selector });
-  });
-
-  describe('Displays an updated globally themed component', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-theme-provider/theme-provider/global-switch-themes');
-    });
-
-    Terra.it.matchesScreenshot({ selector });
-  });
-
-  describe('Displays an updated globally themed component -  After Click', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-theme-provider/theme-provider/global-switch-themes');
       browser.selectByAttribute('#theme', 'value', 'cerner-mock-theme');
     });
 

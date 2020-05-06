@@ -70,16 +70,17 @@ const propTypes = {
   /**
    * A callback function triggered when the date picker component loses focus.
    * This event does not get triggered when the focus is moved from the date input to the calendar button since the focus is still within the main date picker component.
+   * The first parameter is the event. The second parameter is the metadata to describe the current state of the input value at the time when the onBlur callback is triggered.
    */
   onBlur: PropTypes.func,
   /**
    * A callback function to execute when a valid date is selected or entered.
-   * The first parameter is the event. The second parameter is the changed date value.
+   * The first parameter is the event. The second parameter is the changed date value. The third parameter is the metadata to describe the current state of the input value at the time when the onChange callback is triggered.
    */
   onChange: PropTypes.func,
   /**
    * A callback function to execute when a change is made in the date input.
-   * The first parameter is the event. The second parameter is the changed date value.
+   * The first parameter is the event. The second parameter is the changed date value. The third parameter is the metadata to describe the current state of the input value at the time when the onChangeRaw callback is triggered.
    */
   onChangeRaw: PropTypes.func,
   /**
@@ -192,6 +193,27 @@ class DatePicker extends React.Component {
     this.isDefaultDateAcceptable = this.validateDefaultDate();
   }
 
+  getMetadata() {
+    const format = DateUtil.getFormatByLocale(this.props.intl.locale);
+    const isCompleteDate = DateUtil.isValidDate(this.dateValue, format);
+    const iSOString = isCompleteDate ? DateUtil.convertToISO8601(this.dateValue, format) : '';
+
+    let isValidDate = false;
+
+    if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString)))) {
+      isValidDate = true;
+    }
+
+    const metadata = {
+      iSO: iSOString,
+      inputValue: this.dateValue,
+      isCompleteValue: isCompleteDate,
+      isValidValue: isValidDate,
+    };
+
+    return metadata;
+  }
+
   handleBreakpointChange(activeBreakpoint) {
     const showPortalPicker = activeBreakpoint === 'tiny' || activeBreakpoint === 'small';
 
@@ -228,7 +250,14 @@ class DatePicker extends React.Component {
     if (!this.props.disableButtonFocusOnClose) {
       // Allows time for focus-trap to release focus on the picker before returning focus to the calendar button.
       setTimeout(() => {
-        this.calendarButton.focus();
+        /*
+         * Make sure the reference to calendarButton still exists before calling focus because it is possible that it is now
+         * nullified after the 100 ms timeout due to a force remount of this component with a new `key` prop value.
+         * Reference https://github.com/cerner/terra-framework/issues/1086
+         */
+        if (this.calendarButton) {
+          this.calendarButton.focus();
+        }
       }, 100);
     }
   }
@@ -247,23 +276,8 @@ class DatePicker extends React.Component {
     // Handle blur only if focus has moved out of the entire date picker component.
     if (!this.datePickerContainer.current.contains(activeTarget)) {
       if (this.props.onBlur) {
-        const format = DateUtil.getFormatByLocale(this.props.intl.locale);
-        const isCompleteDate = DateUtil.isValidDate(this.dateValue, format);
-        const iSOString = isCompleteDate ? DateUtil.convertToISO8601(this.dateValue, format) : '';
-        let isValidDate = false;
-
-        if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString)))) {
-          isValidDate = true;
-        }
-
-        const options = {
-          iSO: iSOString,
-          inputValue: this.dateValue,
-          isCompleteValue: isCompleteDate,
-          isValidValue: isValidDate,
-        };
-
-        this.props.onBlur(event, options);
+        const metadata = this.getMetadata();
+        this.props.onBlur(event, metadata);
       }
 
       this.containerHasFocus = false;
@@ -280,7 +294,8 @@ class DatePicker extends React.Component {
     });
 
     if (this.props.onChange) {
-      this.props.onChange(event, date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '');
+      const metadata = this.getMetadata();
+      this.props.onChange(event, date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '', metadata);
     }
   }
 
@@ -288,7 +303,8 @@ class DatePicker extends React.Component {
     this.dateValue = event.target.value;
 
     if (this.props.onChangeRaw) {
-      this.props.onChangeRaw(event, event.target.value);
+      const metadata = this.getMetadata();
+      this.props.onChangeRaw(event, event.target.value, metadata);
     }
   }
 
