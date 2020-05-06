@@ -180,7 +180,7 @@ const NotificationDialog = (props) => {
   if (!isValidVariant(variant)) {
     if (process.env.NODE_ENV !== 'production') {
       // eslint-disable-next-line no-console
-      console.warn('The `variant` must be provided to render the Notification dialog');
+      console.warn('The `variant` prop must be provided to render the Notification dialog');
     }
     return null;
   }
