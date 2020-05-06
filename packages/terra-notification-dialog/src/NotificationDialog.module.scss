@@ -68,8 +68,8 @@
 
   .header {
     flex: 0 0 auto;
-    z-index: 1;
     padding: var(--terra-notification-dialog-header-padding, 0 1.42857rem); // left and write padding
+    z-index: 1;
   }
   
   .header-content {
@@ -89,9 +89,9 @@
   .signal-word {
     color: var(--terra-notification-dialog-signal-word-color, #1c1f21);
     font-size: var(--terra-notification-dialog-signal-word-font-size, 1.42857rem);
-    font-weight: bold;  // theme?
-    letter-spacing: -0.018rem; // theme?
-    line-height: 1.15; // theme?
+    font-weight: bold;
+    letter-spacing: -0.018rem;
+    line-height: 1.15;
     min-height: var(--terra-notification-dialog-signal-word-min-height, 1.64285rem);
   }
 
@@ -99,8 +99,8 @@
     color: var(--terra-notification-dialog-title-color, #262626);
     font-size: var(--terra-notification-dialog-title-font-size, 1.2857rem);
     font-weight: var(--terra-notification-dialog-title-font-weight, normal);
-    letter-spacing: -0.018rem; // theme?
-    line-height: 1.16667; // theme?
+    letter-spacing: -0.018rem;
+    line-height: 1.16667;
     margin: var(--terra-notification-dialog-title-margin, 0);
     min-height: var(--terra-notification-dialog-title-min-height, 1.5rem);
     width: 100%;
@@ -120,8 +120,8 @@
   .message {
     color: var(--terra-notification-dialog-message-color, #383f42);
     font-size: var(--terra-notification-dialog-message-font-size, 1rem);
-    line-height: 1.42857; // theme?
-    letter-spacing: 0.007rem; // theme?
+    letter-spacing: 0.007rem;
+    line-height: 1.42857;
     padding: var(--terra-notification-dialog-message-padding, 0.35714rem 0);
     text-align: var(--terra-notification-dialog-message-text-align, left);
     width: 100%;
@@ -133,7 +133,7 @@
     border-top: var(--terra-notification-dialog-footer-border-top, 0.07142rem solid #dedfe0);
     flex: 0 0 auto;
     font-size: var(--terra-notification-dialog-footer-font-size, 0.8rem);
-    min-height: var(--terra-notification-dialog-footer-minimum-height, 0.71428rem);
+    min-height: var(--terra-notification-dialog-footer-min-height, 0.71428rem);
   }
 
   .actions {

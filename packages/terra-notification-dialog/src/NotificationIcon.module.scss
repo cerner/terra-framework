@@ -1,5 +1,4 @@
 @import '~terra-mixins/lib/Mixins';
-@import '~terra-breakpoints/lib/media-queries';
 
 // Themes
 @import './clinical-lowlight-theme/NotificationIcon.module';
@@ -42,7 +41,6 @@
       width: var(--terra-notification-dialog-error-icon-width, 2.57143em);
     }
 
-    // not sure how custom will work out
     > .custom-icon {
       height: var(--terra-notification-dialog-custom-icon-height, 2.57143em);
       margin: var(--terra-notification-dialog-custom-icon-margin, 0.21428rem);
