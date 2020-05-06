@@ -57,7 +57,7 @@ const propTypes = {
   acceptAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
-  }).isRequired,
+  }),
   /**
    * The button text and onclick values of the reject button.
    */
