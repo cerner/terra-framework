@@ -172,7 +172,16 @@ const NotificationDialog = (props) => {
 
   const signalWord = variant === variants.CUSTOM ? (custom || {}).signalWord : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
 
+  if (process.env.NODE_ENV !== 'production' && acceptAction === undefined && rejectAction === undefined) {
+    // eslint-disable-next-line no-console
+    console.warn('The `acceptAction` and/or `rejectAction` props must be provided to render the Notification dialog');
+  }
+
   if (!isValidVariant(variant)) {
+    if (process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
+      console.warn('The `variant` must be provided to render the Notification dialog');
+    }
     return null;
   }
 
