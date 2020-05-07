@@ -10,6 +10,14 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * The id of the tab to be used in mapping.
+   */
+  id: PropTypes.string.isRequired,
+  /**
+   * The id of the tab pane element associated to this tab.
+   */
+  associatedPaneId: PropTypes.string.isRequired,
+  /**
    * Icon to be displayed on the tab.
    */
   icon: PropTypes.element,
@@ -60,7 +68,7 @@ const Tab = ({
   metaData,
   ...customProps
 }) => {
-  const attributes = Object.assign({}, customProps);
+  const attributes = {};
   const paneClassNames = cx([
     'tab',
     { 'is-disabled': isDisabled },
@@ -96,7 +104,12 @@ const Tab = ({
   }
 
   return (
-    <div {...attributes} role="tab" className={paneClassNames}>
+    <div
+      {...customProps}
+      {...attributes}
+      role="tab"
+      className={paneClassNames}
+    >
       {customDisplay}
       {customDisplay ? null : icon}
       {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}

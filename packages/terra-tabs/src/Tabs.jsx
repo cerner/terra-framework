@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ContentContainer from 'terra-content-container';
+import TabPane from './TabPane';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -20,7 +21,7 @@ const propTypes = {
    */
   fill: PropTypes.bool,
   /**
-   * Currently active Tabs.Pane components to be displayed.
+   * Currently active Tabs.Pane content to be displayed.
    */
   children: PropTypes.node.isRequired,
   /**
@@ -69,15 +70,12 @@ const Tabs = ({
       fill={fill}
       header={React.cloneElement(tabBar, { onTruncationChange: value => setIsLabelTruncated(value), variant })}
     >
-      <div
-        role="tabpanel"
-        className={cx(['pane-content', { 'fill-parent': fill }])}
-        tabIndex="0"
+      <TabPane
+        id="panel id"
+        associatedTabId="active-tab-id"
       >
-        {React.Children.map(children, child => (
-          React.cloneElement(child, { isLabelHidden: isIconOnly || isLabelTruncated })
-        ))}
-      </div>
+        {children}
+      </TabPane>
     </ContentContainer>
   );
 };
