@@ -336,7 +336,8 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
       it('shifts focus after the modal', () => {
         browser.click('#root-component .disclose-small');
         browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
-        browser.execute(() => {
+        // eslint-disable-next-line prefer-arrow-callback
+        browser.execute(function() {
           document.querySelector('#DemoContainer-1 .maximize').focus();
         });
         browser.keys(['Shift']); // Release shift key
