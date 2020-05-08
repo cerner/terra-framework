@@ -337,7 +337,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         browser.click('#root-component .disclose-small');
         browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
         // eslint-disable-next-line prefer-arrow-callback
-        browser.execute(function() {
+        browser.execute(function dispatch() {
           document.querySelector('#DemoContainer-1 .maximize').focus();
         });
         browser.keys(['Shift']); // Release shift key

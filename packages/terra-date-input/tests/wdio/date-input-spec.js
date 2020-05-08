@@ -520,7 +520,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       browser.url('/#/raw/tests/terra-date-input/date-input/focus-blur-date-input');
       browser.click('select[name="terra-date-month-date-input"]');
       // eslint-disable-next-line prefer-arrow-callback
-      browser.execute(function() {
+      browser.execute(function dispatch() {
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
