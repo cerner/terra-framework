@@ -24,6 +24,7 @@ const propTypes = {
    * Currently active Tabs.Pane content to be displayed.
    */
   children: PropTypes.node.isRequired,
+  hasScroll: PropTypes.bool,
   /**
    * Tabs style. One of: `'modular-centered'`, `'modular-left-aligned'`, `'structural'`.
    * NOTE: This is being commented out until discussions have been resolved around if we want modular tabs.
@@ -34,6 +35,7 @@ const propTypes = {
 const defaultProps = {
   tabFill: false,
   fill: false,
+  hasScroll: false,
 };
 
 const Tabs = ({
@@ -41,6 +43,7 @@ const Tabs = ({
   fill,
   children,
   tabBar,
+  hasScroll,
   ...customProps
 }) => {
   const [isLabelTruncated, setIsLabelTruncated] = useState(false);
@@ -73,6 +76,8 @@ const Tabs = ({
       <TabPane
         id="panel id"
         associatedTabId="active-tab-id"
+        fill={fill}
+        hasScroll={hasScroll}
       >
         {children}
       </TabPane>

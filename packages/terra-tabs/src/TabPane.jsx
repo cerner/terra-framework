@@ -19,17 +19,25 @@ const propTypes = {
    * Currently active Tabs.Pane content to be displayed.
    */
   children: PropTypes.node,
+  /**
+   * Indicates if the pane content should fill to the height of the parent container.
+   */
+  fill: PropTypes.bool,
+  hasScroll: PropTypes.bool,
 };
 
 const Tab = ({
   id,
-  associatedPaneId,
+  associatedTabId,
   children,
+  fill,
+  hasScroll,
   ...customProps
 }) => {
   const paneClassNames = cx([
     'pane',
-    { fill }
+    { fill },
+    { scroll: hasScroll },
   ]);
 
   return (
