@@ -146,4 +146,13 @@ describe('ApplicationHeaderLayout', () => {
 
     expect(result).toMatchSnapshot();
   });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'clinical-lowlight-theme',
+      });
+    const wrapper = shallowWithIntl(<ApplicationHeaderLayout />);
+    expect(wrapper).toMatchSnapshot();
+  });
 });
