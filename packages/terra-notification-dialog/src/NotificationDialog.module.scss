@@ -43,27 +43,27 @@
   
   .alert {
     background-image: var(--terra-notification-dialog-alert-background-image, linear-gradient(to bottom, #ffdad9, #fff));
-    border-top: var(--terra-notification-dialog-alert-border-top, 0.5rem solid #ea2f2f);
+    border-top: var(--terra-notification-dialog-alert-border-top, 7px solid #ea2f2f);
   }
 
   .error {
     background-image: var(--terra-notification-dialog-error-background-image, linear-gradient(to bottom, #e4e2e2, #fff));
-    border-top: var(--terra-notification-dialog-error-border-top, 0.5rem solid #c8cacb);
+    border-top: var(--terra-notification-dialog-error-border-top, 7px solid #c8cacb);
   }
 
   .warning {
     background-image: var(--terra-notification-dialog-warning-background-image, linear-gradient(to bottom, #fff3ce, #fff));
-    border-top: var(--terra-notification-dialog-warning-border-top, 0.5rem solid #ffc20a);
+    border-top: var(--terra-notification-dialog-warning-border-top, 7px solid #ffc20a);
   }
 
   .info {
     background-image: var(--terra-notification-dialog-info-background-image, linear-gradient(to bottom, #e4e2e2, #fff));
-    border-top: var(--terra-notification-dialog-info-border-top, 0.5rem solid #c8cacb);
+    border-top: var(--terra-notification-dialog-info-border-top, 7px solid #c8cacb);
   }
 
   .custom {
     background-image: var(--terra-notification-dialog-custom-background-image, linear-gradient(to bottom, #e4e2e2, #fff));
-    border-top: var(--terra-notification-dialog-custom-border-top, 0.5rem solid #c8cacb);
+    border-top: var(--terra-notification-dialog-custom-border-top, 7px solid #c8cacb);
   }
 
   .header {
@@ -130,7 +130,7 @@
 
   .footer {
     background-color: var(--terra-notification-dialog-footer-background-color, #f9f9f9);
-    border-top: var(--terra-notification-dialog-footer-border-top, 0.07142rem solid #dedfe0);
+    border-top: var(--terra-notification-dialog-footer-border-top, 1px solid #dedfe0);
     flex: 0 0 auto;
     font-size: var(--terra-notification-dialog-footer-font-size, 0.8rem);
     min-height: var(--terra-notification-dialog-footer-min-height, 0.71428rem);

@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
 import NotificationDialog, { ContentLayoutAsList } from 'terra-notification-dialog';
-import classNamesBind from 'classnames/bind';
-
-import styles from './example-styles.module.scss';
-
-const cx = classNamesBind.bind(styles);
 
 const ContentNotificationDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
