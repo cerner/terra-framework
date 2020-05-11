@@ -27,7 +27,7 @@ describe('Notification Dialog', () => {
     expect(actions.children().at(1).props()).toHaveProperty('data-terra-notification-dialog-button', 'reject');
   });
 
-  it('shallow enders an error notification-dialog', () => {
+  it('shallow renders an error notification-dialog', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
         variant="error"
@@ -141,6 +141,24 @@ describe('Notification Dialog', () => {
     );
 
     expect(dialog).toMatchSnapshot();
+  });
+
+  it('throws error if variant is missing', () => {
+    expect(() => shallowWithIntl(
+      <NotificationDialog
+        isOpen
+        acceptAction={{ text: 'accept', onClick: acceptOnClick }}
+      />,
+    )).toThrowErrorMatchingSnapshot();
+  });
+
+  it('throws error if variant is missing', () => {
+    expect(() => shallowWithIntl(
+      <NotificationDialog
+        isOpen
+        variant="error"
+      />,
+    )).toThrowErrorMatchingSnapshot();
   });
 });
 

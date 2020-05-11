@@ -182,124 +182,6 @@ exports[`Notification Dialog functions as expected should open the dialog 1`] = 
 </Example>
 `;
 
-exports[`Notification Dialog shallow enders an error notification-dialog 1`] = `
-<AbstractModal
-  aria-describedby="notification-dialog-title"
-  aria-labelledby="notification-dialog-header"
-  ariaLabel="Notification Dialog"
-  classNameModal="notification-dialog"
-  classNameOverlay={null}
-  closeOnEsc={false}
-  closeOnOutsideClick={false}
-  data-terra-notification-dialog={true}
-  isFullscreen={false}
-  isOpen={true}
-  onRequestClose={[Function]}
-  role="alertdialog"
-  rootSelector="#root"
-  zIndex="9000"
->
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": false,
-        "escapeDeactivates": false,
-        "returnFocusOnDeactivate": true,
-      }
-    }
-    paused={false}
-  >
-    <div
-      className="notification-dialog-inner-wrapper"
-    >
-      <div
-        className="notification-dialog-container"
-        tabIndex="0"
-      >
-        <div
-          className="floating-header-background error"
-        />
-        <div
-          className="header"
-        >
-          <div
-            className="header-content"
-          >
-            <NotificationDialogIcon
-              variant="error"
-            />
-            <div
-              className="header-container"
-            >
-              <div
-                className="signal-word"
-                id="notification-dialog-signal-word"
-              >
-                <FormattedMessage
-                  id="Terra.notification.dialog.error"
-                  values={Object {}}
-                />
-              </div>
-              <div
-                className="title"
-                id="notification-dialog-title"
-              >
-                Test
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="body"
-        >
-          <div
-            className="message"
-          >
-            This text is used to provide more details.
-          </div>
-        </div>
-        <div
-          className="footer"
-        >
-          <div
-            className="actions"
-          >
-            <Button
-              data-terra-notification-dialog-button="accept"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="accept"
-              onClick={[Function]}
-              text="accept"
-              type="button"
-              variant="neutral"
-            />
-            <Button
-              data-terra-notification-dialog-button="reject"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="reject"
-              onClick={[Function]}
-              text="reject"
-              type="button"
-              variant="neutral"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </FocusTrap>
-</AbstractModal>
-`;
-
 exports[`Notification Dialog shallow renders an alert notification-dialog 1`] = `
 <AbstractModal
   aria-describedby="notification-dialog-title"
@@ -475,6 +357,124 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
                 id="notification-dialog-signal-word"
               >
                 Custom
+              </div>
+              <div
+                className="title"
+                id="notification-dialog-title"
+              >
+                Test
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="body"
+        >
+          <div
+            className="message"
+          >
+            This text is used to provide more details.
+          </div>
+        </div>
+        <div
+          className="footer"
+        >
+          <div
+            className="actions"
+          >
+            <Button
+              data-terra-notification-dialog-button="accept"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="accept"
+              onClick={[Function]}
+              text="accept"
+              type="button"
+              variant="neutral"
+            />
+            <Button
+              data-terra-notification-dialog-button="reject"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="reject"
+              onClick={[Function]}
+              text="reject"
+              type="button"
+              variant="neutral"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </FocusTrap>
+</AbstractModal>
+`;
+
+exports[`Notification Dialog shallow renders an error notification-dialog 1`] = `
+<AbstractModal
+  aria-describedby="notification-dialog-title"
+  aria-labelledby="notification-dialog-header"
+  ariaLabel="Notification Dialog"
+  classNameModal="notification-dialog"
+  classNameOverlay={null}
+  closeOnEsc={false}
+  closeOnOutsideClick={false}
+  data-terra-notification-dialog={true}
+  isFullscreen={false}
+  isOpen={true}
+  onRequestClose={[Function]}
+  role="alertdialog"
+  rootSelector="#root"
+  zIndex="9000"
+>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": false,
+        "escapeDeactivates": false,
+        "returnFocusOnDeactivate": true,
+      }
+    }
+    paused={false}
+  >
+    <div
+      className="notification-dialog-inner-wrapper"
+    >
+      <div
+        className="notification-dialog-container"
+        tabIndex="0"
+      >
+        <div
+          className="floating-header-background error"
+        />
+        <div
+          className="header"
+        >
+          <div
+            className="header-content"
+          >
+            <NotificationDialogIcon
+              variant="error"
+            />
+            <div
+              className="header-container"
+            >
+              <div
+                className="signal-word"
+                id="notification-dialog-signal-word"
+              >
+                <FormattedMessage
+                  id="Terra.notification.dialog.error"
+                  values={Object {}}
+                />
               </div>
               <div
                 className="title"
@@ -1012,3 +1012,10 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
   </FocusTrap>
 </AbstractModal>
 `;
+
+exports[`Notification Dialog throws error if variant is missing 1`] = `
+"Warning: Failed prop type: The prop \`variant\` is marked as required in \`NotificationDialog\`, but its value is \`undefined\`.
+    in NotificationDialog"
+`;
+
+exports[`Notification Dialog throws error if variant is missing 2`] = `"Unable to render the Notification dialog. Neither an \`acceptAction\` and/or \`rejectAction\` prop was provided which leaves the user without the ability to close the dialog."`;
