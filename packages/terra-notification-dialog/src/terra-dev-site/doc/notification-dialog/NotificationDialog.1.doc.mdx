@@ -1,6 +1,7 @@
 import { Badge } from 'terra-notification-dialog/package.json?dev-site-package';
 
 import NotificationDialogPropsTable from 'terra-notification-dialog/src/NotificationDialog?dev-site-props-table';
+import ContentLayoutAsListPropsTable from 'terra-notification-dialog/src/_ContentLayoutAsList?dev-site-props-table';
 
 import AlertVariantExample from '../example/AlertVariantExample?dev-site-example';
 import ErrorVariantExample from '../example/ErrorVariantExample?dev-site-example';
@@ -54,6 +55,15 @@ This component requires the following peer dependencies be installed in your app
 import NotificationDialog, { NotificationDialogVariants } from 'terra-notification-dialog';
 ```
 
+## Content Layouts
+The Notification Dialog provides the following layouts for the `content` prop:
+
+### ContentLayoutAsList
+The layout styles list of strings. Import like:
+``` jsx
+import { ContentLayoutAsList } from 'terra-notification-dialog';
+```
+
 ## Component Features
 
  * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
@@ -72,7 +82,7 @@ import NotificationDialog, { NotificationDialogVariants } from 'terra-notificati
 
 <ContentNotificationDialog
   title="Notification Dialog with Detailed Message"
-  description="This example demonstrates the use for the startMessage, content, and endMessage prop combination."
+  description="This example demonstrates the use for the startMessage, content, and endMessage prop combination. This example also leverages the ContentLayoutAsList component to correctly style the list provided to the content prop."
 />
 
 <ActionOrderExample />
@@ -92,3 +102,7 @@ import NotificationDialog, { NotificationDialogVariants } from 'terra-notificati
 ## Notification Dialog Props Table 
 
 <NotificationDialogPropsTable />
+
+## Content Layouts Props Table
+
+<ContentLayoutAsListPropsTable />

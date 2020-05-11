@@ -1,9 +1,8 @@
 @import '~terra-mixins/lib/Mixins';
 
 // Themes
-// @import './cerner-clinical-theme/NotificationDialogContentList.module';
-// @import './clinical-lowlight-theme/NotificationDialogContentList.module';
-// @import './orion-fusion-theme/NotificationDialogContentList.module';
+@import './clinical-lowlight-theme/ContentLayoutAsList.module';
+@import './orion-fusion-theme/ContentLayoutAsList.module';
 
 :local {
   ul {
@@ -18,6 +17,6 @@
   }
 
   li + li {
-    margin: var(--terra-notification-dialog-content-list-item-margin, 1rem 0 0 0);
+    margin: var(--terra-notification-dialog-content-list-item-margin, 0.35714rem 0 0 0);
   }
 }
