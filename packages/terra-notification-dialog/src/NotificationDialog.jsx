@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
 import FocusTrap from 'focus-trap-react';
-import { KEY_ESCAPE } from 'keycode-js';
 import Button, { ButtonVariants } from 'terra-button';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
@@ -137,25 +136,6 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
 
 const NotificationDialog = (props) => {
   const theme = React.useContext(ThemeContext);
-  useEffect(() => {
-    function handleKeydown(e) {
-      const notificationDialog = document.querySelector('[data-terra-notification-dialog]');
-
-      if (e.keyCode === KEY_ESCAPE) {
-        if (notificationDialog) {
-          if (e.target === notificationDialog || notificationDialog.contains(e.target)) {
-            e.stopImmediatePropagation();
-          }
-        }
-      }
-    }
-
-    document.addEventListener('keydown', handleKeydown);
-
-    return (() => {
-      document.removeEventListener('keydown', handleKeydown);
-    });
-  });
 
   const {
     title,
@@ -172,20 +152,15 @@ const NotificationDialog = (props) => {
     ...customProps
   } = props;
 
+  if (isOpen && acceptAction === undefined && rejectAction === undefined) {
+    throw new Error('Unable to render the Notification dialog. Neither an `acceptAction` and/or `rejectAction` prop was provided which leaves the user without the ability to close the dialog.');
+  }
+
+  if (isOpen && !isValidVariant(variant)) {
+    throw new Error('Unable to render the Notification dialog as the `variant` prop was not provided.');
+  }
+
   const signalWord = variant === variants.CUSTOM ? (custom || {}).signalWord : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
-
-  if (process.env.NODE_ENV !== 'production' && acceptAction === undefined && rejectAction === undefined) {
-    // eslint-disable-next-line no-console
-    console.warn('The `acceptAction` and/or `rejectAction` props must be provided to render the Notification dialog');
-  }
-
-  if (!isValidVariant(variant)) {
-    if (process.env.NODE_ENV !== 'production') {
-      // eslint-disable-next-line no-console
-      console.warn('The `variant` prop must be provided to render the Notification dialog');
-    }
-    return null;
-  }
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (

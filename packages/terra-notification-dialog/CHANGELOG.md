@@ -7,14 +7,14 @@ Unreleased
 See Updated Guide for more info: 
 
 * Updated `variant` prop to be required
-* Removed `variant="success"` / `variant={NotificationDialogVariants.SUCCESS} from variant options
+* Removed `variant="success"` / `variant={NotificationDialogVariants.SUCCESS}` from variant options
 * Relaxed `isOpen` prop to be optional
 * Added `custom` prop
 * Removed `header` prop
 * Removed `customIcon` prop
 * Removed deprecated `primaryAction` prop
 * Removed deprecated `secondaryAction` prop
-* Updated to use theme-context`
+* Updated to use `theme-context`
 * Updated & backfilled orion-fusion-theme and clinical-lowlight-theme
 
 3.32.0 - (April 28, 2020)
