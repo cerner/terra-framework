@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Changed Button-group version in package.json.
 
 4.27.0 - (April 28, 2020)
 ------------------
