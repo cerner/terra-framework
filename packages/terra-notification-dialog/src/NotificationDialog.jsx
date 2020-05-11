@@ -8,7 +8,9 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import { FormattedMessage } from 'react-intl';
 import ThemeContext from 'terra-theme-context';
+
 import NotificationIcon from './_NotificationIcon';
+import ContentLayoutAsList from './_ContentLayoutAsList';
 
 import styles from './NotificationDialog.module.scss';
 
@@ -240,5 +242,5 @@ const NotificationDialog = (props) => {
 NotificationDialog.propTypes = propTypes;
 NotificationDialog.defaultProps = defaultProps;
 
-export { variants as NotificationDialogVariants };
+export { variants as NotificationDialogVariants, ContentLayoutAsList };
 export default NotificationDialog;

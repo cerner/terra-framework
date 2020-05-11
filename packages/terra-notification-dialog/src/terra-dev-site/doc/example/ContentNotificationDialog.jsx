@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
-import NotificationDialog from 'terra-notification-dialog';
+import NotificationDialog, { ContentLayoutAsList } from 'terra-notification-dialog';
 import classNamesBind from 'classnames/bind';
 
 import styles from './example-styles.module.scss';
@@ -25,12 +25,7 @@ const ContentNotificationDialog = () => {
         isOpen={isOpen}
         title="Use a title that relates directly to the choices"
         startMessage="The Start Message is text used to provide more detail or define terminology at the beginning of the dialog body. Don’t repeat the title verbatim."
-        content={(
-          <ul className={cx('content-list')}>
-            <li className={cx('content-list-item')}>Item 1</li>
-            <li className={cx('content-list-item')}>Item 2</li>
-          </ul>
-        )}
+        content={<ContentLayoutAsList items={['item 1', 'item2 ']} />}
         endMessage="The End Message is text used to provide more detail or define terminology at the end of the dialog body. Don’t repeat the title verbatim."
         acceptAction={{
           text: 'accept',

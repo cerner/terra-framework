@@ -19,6 +19,11 @@ See Updated Guide for more info:
 
 3.32.0 - (April 28, 2020)
 ------------------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Updated terra-core dependencies
+
 ### Added
 * Added `directory` as a sub attribute to the `repository` attribute in package.json
 
