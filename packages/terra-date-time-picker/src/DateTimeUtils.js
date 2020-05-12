@@ -101,9 +101,10 @@ class DateTimeUtils {
    * @param {boolean} hasSeconds Whether or not seconds should be retrieved
    * @return {string} The time from the date and time string
    */
-  static getTime(time, hasSeconds) {
+  static getTime(time, hasSeconds, timeZone) {
     const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
-    return DateUtil.formatISODate(time, timeFormat);
+    const momentDate = (timeZone && moment.tz.zone(timeZone) ? moment.tz(time, timeZone) : moment(time));
+    return DateUtil.formatISODate(momentDate, timeFormat);
   }
 
   /**
@@ -243,7 +244,7 @@ class DateTimeUtils {
       return undefined;
     }
 
-    const momentDate = (timeZone && moment.tz.zone(timeZone) ? moment.tz(date, timeZone) : moment.tz(date, moment.tz.guess()));
+    const momentDate = (timeZone && moment.tz.zone(timeZone) ? moment.tz(date, timeZone) : moment(date));
 
     return momentDate.isValid() ? momentDate : undefined;
   }

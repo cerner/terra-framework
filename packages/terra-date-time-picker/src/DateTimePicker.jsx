@@ -168,7 +168,7 @@ class DateTimePicker extends React.Component {
     // It is used for date/time manipulation and used to calculate the missing/ambiguous hour.
     // The dateValue and timeValue are tracked outside of the react state to limit the number of renderings that occur.
     this.dateValue = DateUtil.formatMomentDate(this.state.dateTime, this.state.dateFormat) || '';
-    this.timeValue = DateTimeUtils.hasTime(this.props.value, this.props.timeZone) ? DateTimeUtils.getTime(this.props.value, this.props.showSeconds) : '';
+    this.timeValue = DateTimeUtils.hasTime(this.props.value, this.props.timeZone) ? DateTimeUtils.getTime(this.props.value, this.props.showSeconds, this.props.timeZone) : '';
     this.isDefaultDateTimeAcceptable = true;
     this.wasOffsetButtonClicked = false;
 
@@ -199,7 +199,7 @@ class DateTimePicker extends React.Component {
     // If the entered time (this.timeValue) is the missing hour during daylight savings,
     // it needs to be updated to the time in this.state.dateTime to reflect the change and force a render.
     if (this.state.dateTime && DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds)) {
-      const displayedTime = DateTimeUtils.getTime(this.state.dateTime, this.props.showSeconds);
+      const displayedTime = DateTimeUtils.getTime(this.state.dateTime.format(), this.props.showSeconds, this.props.timeZone);
 
       if (this.timeValue !== displayedTime) {
         this.timeValue = displayedTime;
@@ -231,7 +231,7 @@ class DateTimePicker extends React.Component {
     let timeValue = this.timeValue || '';
 
     if (iSOString) {
-      timeValue = DateTimeUtils.getTime(iSOString, this.props.showSeconds);
+      timeValue = DateTimeUtils.getTime(iSOString, this.props.showSeconds, this.props.timeZone);
     }
 
     let isValid = false;
@@ -364,7 +364,7 @@ class DateTimePicker extends React.Component {
 
       if (isTimeValid) {
         // Update the timeValue in case the updatedDateTime falls in the missing hour and needs to bump the hour up.
-        this.timeValue = DateTimeUtils.getTime(updatedDateTime.format(), this.props.showSeconds);
+        this.timeValue = DateTimeUtils.getTime(updatedDateTime.format(), this.props.showSeconds, this.props.timeZone);
       }
     }
 
@@ -416,7 +416,7 @@ class DateTimePicker extends React.Component {
       // If updatedDateTime is valid, update timeValue (value in the time input) to reflect updatedDateTime since
       // it could have subtracted an hour from above to account for the missing hour.
       if (updatedDateTime) {
-        displayedTimeValue = DateTimeUtils.getTime(updatedDateTime.format(), this.props.showSeconds);
+        displayedTimeValue = DateTimeUtils.getTime(updatedDateTime.format(), this.props.showSeconds, this.props.timeZone);
       }
 
       this.handleChangeRaw(event, displayedTimeValue);
