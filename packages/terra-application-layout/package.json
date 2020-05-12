@@ -42,7 +42,8 @@
     "terra-modal-manager": "^6.32.0",
     "terra-navigation-layout": "^5.23.0",
     "terra-navigation-side-menu": "^2.30.0",
-    "terra-popup": "^6.32.0"
+    "terra-popup": "^6.32.0",
+    "terra-theme-context": "^1.2.0"
   },
   "devDependencies": {
     "terra-action-header": "^2.0.0",

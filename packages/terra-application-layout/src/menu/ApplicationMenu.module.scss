@@ -1,3 +1,6 @@
+// Themes
+@import '../clinical-lowlight-theme/ApplicationLayout.module';
+
 :local {
   .application-menu {
     background-color: var(--terra-application-layout-menu-background-color, transparent);

@@ -1,5 +1,8 @@
 @import '~terra-breakpoints/lib/media-queries';
 
+// Themes
+@import '../clinical-lowlight-theme/ApplicationLayout.module';
+
 :local {
   .application-navbar {
     background-color: var(--terra-application-layout-navbar-background-color, #0079be);

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ApplicationMenuLayout from 'terra-application-menu-layout';
 import { ApplicationMenuName } from 'terra-application-name';
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
@@ -15,7 +17,7 @@ import UtilityMenuWrapper from './_UtilityMenuWrapper';
 
 import styles from './ApplicationMenu.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -90,7 +92,7 @@ class ApplicationMenu extends React.Component {
 
     if (isCompact && nameConfig && (nameConfig.accessory || nameConfig.title)) {
       return (
-        <div className={cx(['menu-header'])}>
+        <div className={classNames(cx(['menu-header']))}>
           <ApplicationMenuName accessory={nameConfig.accessory} title={nameConfig.title} />
         </div>
       );
@@ -141,10 +143,12 @@ class ApplicationMenu extends React.Component {
       ...customProps
     } = this.props;
 
-    const menuClassNames = cx([
+    const theme = this.context;
+    const menuClassNames = classNames(cx(
       'application-menu',
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
 
     const isCompact = Helpers.isSizeCompact(layoutConfig.size);
 
@@ -167,5 +171,6 @@ class ApplicationMenu extends React.Component {
 }
 
 ApplicationMenu.propTypes = propTypes;
+ApplicationMenu.contextType = ThemeContext;
 
 export default withDisclosureManager(ApplicationMenu);
