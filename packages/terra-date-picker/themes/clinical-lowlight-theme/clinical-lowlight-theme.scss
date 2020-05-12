@@ -26,6 +26,10 @@
   --terra-date-picker-input-incomplete-disabled-color: #464232;
   --terra-date-picker-input-incomplete-disabled-opacity: 0.3;
 
+  // Calendar-Filter
+  --terra-date-picker-calendar-filter-border: 1px solid #2d3539;
+  --terra-date-picker-calendar-filter-width: 16.140642rem;
+
   // The following variables will not be styled, because they display in the date-picker popup, which is default styling.
   // By using the default values for these variables, styling should remain appropriate if/when default style changes.
   // --terra-date-picker-day-focus-outline
@@ -36,4 +40,5 @@
   // --terra-date-picker-next-month-background-image
   // --terra-date-picker-next-month-focus-background-image
   // --terra-date-picker-next-month-hover-background-image
+  
 }

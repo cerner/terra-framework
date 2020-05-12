@@ -112,6 +112,11 @@ const propTypes = {
    * The value must be in the `YYYY-MM-DD` format or the all-numeric date format based on the locale.
    */
   value: PropTypes.string,
+  /**
+   * @private
+   * Whether or not to display portal version for date picker.
+   */
+  hidePortal: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -133,6 +138,7 @@ const defaultProps = {
   required: false,
   disableButtonFocusOnClose: false,
   selectedDate: undefined,
+  hidePortal: false,
 };
 
 class DatePicker extends React.Component {
@@ -384,6 +390,7 @@ class DatePicker extends React.Component {
       required,
       selectedDate,
       value,
+      hidePortal,
       ...customProps
     } = this.props;
 
@@ -427,7 +434,7 @@ class DatePicker extends React.Component {
         >
           <ReactDatePicker
             {...customProps}
-            withPortal={this.state.showPortalPicker}
+            withPortal={(hidePortal) ? false : this.state.showPortalPicker}
             selected={selectedDateInPicker}
             value={formattedValue}
             onBlur={this.handleBlur}

@@ -1,0 +1,65 @@
+import { Badge } from 'terra-date-picker/package.json?dev-site-package';
+
+import CalendarFilterPropsTable from 'terra-date-picker/src/CalendarFilter?dev-site-props-table';
+
+import CalendarFilterDefault from '../example/CalendarFilter/CalendarFilterDefault?dev-site-example';
+import CalendarFilterExcludeDates from '../example/CalendarFilter/CalendarFilterExcludeDates?dev-site-example';
+import CalendarFilterIncludeDates from '../example/CalendarFilter/CalendarFilterIncludeDates?dev-site-example';
+import CalendarFilterFilterDates from '../example/CalendarFilter/CalendarFilterFilterDates?dev-site-example';
+import CalendarFilterMinMax from '../example/CalendarFilter/CalendarFilterMinMax?dev-site-example';
+import CalendarFilterDefaultDate from '../example/CalendarFilter/CalendarFilterDefaultDate?dev-site-example';
+import CalendarFilterControlled from '../example/CalendarFilter/CalendarFilterControlled?dev-site-example';
+import CalendarFilterOnChange from '../example/CalendarFilter/CalendarFilterOnChange?dev-site-example';
+
+<Badge />
+
+# Calendar Filter
+
+CalendarFilter is an sub-component of [terra-date-picker](https://github.com/cerner/terra-framework/tree/master/packages/terra-date-picker) component which renders faceup calendar for users to select a date from the calendar filter.
+
+CalendarFilter will be useful in scenarios like when we need a simple calendar to be displayed instead of dropdown version of calendar, when date selection should happen within specfic range of date ( ex: user can make date selection in current month ) and etc.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-date-picker`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Implementation Notes:
+CalendarFilter is required to be composed inside the [Base](https://engineering.cerner.com/terra-core/components/terra-base/base/base) component with locale in order for it to load the correct date format and translation strings.
+
+## Usage
+```js
+import CalendarFilter from 'terra-date-picker/lib/CalendarFilter';
+```
+
+## Component Features
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+* [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+
+## Examples
+<CalendarFilterDefault title='Default' />
+<CalendarFilterDefaultDate title='Default Date' />
+<CalendarFilterExcludeDates title='Exclude Dates' />
+<CalendarFilterIncludeDates title='Include Dates' />
+<CalendarFilterFilterDates title='Filter Dates' />
+<CalendarFilterMinMax title='Min Max Selection Options' />
+<CalendarFilterOnChange title='With OnChange' />
+
+## Date Picker props table
+<CalendarFilterPropsTable />

@@ -489,7 +489,7 @@ export default class Calendar extends React.Component {
             onKeyDown={this.handlePreviousMonthBtnKeyDown}
             ref={this.previousMonthBtnRef}
           >
-            <span className={cx('prev-month-icon')} />
+            <span data-navigation-previous className={cx('prev-month-icon')} />
           </button>
         )}
       </FormattedMessage>
@@ -512,7 +512,7 @@ export default class Calendar extends React.Component {
             onKeyDown={this.handleNextMonthBtnKeyDown}
             ref={this.nextMonthBtnRef}
           >
-            <span className={cx('next-month-icon')} />
+            <span data-navigation-next className={cx('next-month-icon')} />
           </button>
         )}
       </FormattedMessage>
