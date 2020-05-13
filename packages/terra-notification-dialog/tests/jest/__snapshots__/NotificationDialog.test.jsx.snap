@@ -1013,10 +1013,3 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
   </FocusTrap>
 </AbstractModal>
 `;
-
-exports[`Notification Dialog throws error if variant is missing 1`] = `
-"Warning: Failed prop type: The prop \`variant\` is marked as required in \`NotificationDialog\`, but its value is \`undefined\`.
-    in NotificationDialog"
-`;
-
-exports[`Notification Dialog throws error if variant is missing 2`] = `"Unable to render the Notification dialog. Neither an \`acceptAction\` and/or \`rejectAction\` prop was provided which leaves the user without the ability to close the dialog."`;

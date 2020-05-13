@@ -142,24 +142,6 @@ describe('Notification Dialog', () => {
 
     expect(dialog).toMatchSnapshot();
   });
-
-  it('throws error if variant is missing', () => {
-    expect(() => shallowWithIntl(
-      <NotificationDialog
-        isOpen
-        acceptAction={{ text: 'accept', onClick: acceptOnClick }}
-      />,
-    )).toThrowErrorMatchingSnapshot();
-  });
-
-  it('throws error if variant is missing', () => {
-    expect(() => shallowWithIntl(
-      <NotificationDialog
-        isOpen
-        variant="error"
-      />,
-    )).toThrowErrorMatchingSnapshot();
-  });
 });
 
 describe('Notification Dialog functions as expected', () => {
