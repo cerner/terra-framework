@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
-import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
+import NotificationDialog from '../../../NotificationDialog';
 
 const clickConfirm = () => {
   alert('You clicked confirm'); // eslint-disable-line no-alert
 };
 
 const propTypes = {
-  variant: PropTypes.oneOf(Object.values(NotificationDialogVariants)), // eslint-disable-line compat/compat
+  variant: PropTypes.oneOf([
+    'alert',
+    'error',
+    'warning',
+    'info',
+    'custom',
+  ]),
 };
 
 const NotificationDialogVariant = (props) => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
-import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
+import NotificationDialog from '../../../NotificationDialog';
 
 const NotificationDialogNoTitle = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,7 @@ const NotificationDialogNoTitle = () => {
   return (
     <>
       <NotificationDialog
-        variant={NotificationDialogVariants.ERROR}
+        variant="error"
         isOpen={isOpen}
         startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
         acceptAction={{

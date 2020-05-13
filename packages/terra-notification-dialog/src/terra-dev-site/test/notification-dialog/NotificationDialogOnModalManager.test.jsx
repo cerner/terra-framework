@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-
 import Button from 'terra-button';
 import { DisclosureManagerContext } from 'terra-disclosure-manager';
 import ModalManager from 'terra-modal-manager';

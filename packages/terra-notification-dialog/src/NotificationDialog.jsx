@@ -15,13 +15,13 @@ import styles from './NotificationDialog.module.scss';
 
 const cx = classNamesBind.bind(styles);
 
-const variants = {
-  ALERT: 'alert',
-  ERROR: 'error',
-  WARNING: 'warning',
-  INFO: 'info',
-  CUSTOM: 'custom',
-};
+const variants = [
+  'alert',
+  'error',
+  'warning',
+  'info',
+  'custom',
+];
 
 const propTypes = {
   /**
@@ -29,13 +29,7 @@ const propTypes = {
    * variant concept.
    * Use one of `alert`, `error`, `warning`, `info`, or `custom`.
    */
-  variant: PropTypes.oneOf([
-    variants.ALERT,
-    variants.ERROR,
-    variants.WARNING,
-    variants.INFO,
-    variants.CUSTOM,
-  ]).isRequired,
+  variant: PropTypes.oneOf(variants).isRequired,
   /**
    * The title to describe the high-level overview of why the notification-dialog is being displayed to the user.
    */
@@ -71,7 +65,7 @@ const propTypes = {
    */
   custom: PropTypes.shape({
     /**
-     * The signal word to use in the notification-dialog.
+     * The keyword used to represent & emphasis the intention of dialog message that that is being shown to the user.
      */
     signalWord: PropTypes.string,
     /**
@@ -80,7 +74,7 @@ const propTypes = {
     iconClassName: PropTypes.string,
   }),
   /**
-   * Wether or not to show notification-dialog or not.
+   * Whether or not to show notification-dialog.
    */
   isOpen: PropTypes.bool,
   /**
@@ -106,9 +100,10 @@ const defaultProps = {
   isOpen: false,
   buttonOrder: 'acceptFirst',
   emphasizedAction: 'none',
+  custom: {},
 };
 
-const isValidVariant = (variant) => Object.values(variants).indexOf(variant) >= 0;
+const isValidVariant = (variant) => variants.indexOf(variant) >= 0;
 
 const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction) => {
   if (!acceptAction && !rejectAction) {
@@ -160,7 +155,7 @@ const NotificationDialog = (props) => {
     throw new Error('Unable to render the Notification dialog as the `variant` prop was not provided.');
   }
 
-  const signalWord = variant === variants.CUSTOM ? (custom || {}).signalWord : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
+  const signalWord = variant === 'custom' ? custom.signalWord : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
@@ -183,7 +178,7 @@ const NotificationDialog = (props) => {
             <div className={cx(['floating-header-background', variant])} />
             <div className={cx(['header'])}>
               <div className={cx(['header-content'])}>
-                <NotificationIcon variant={variant} iconClassName={(custom || {}).iconClassName} />
+                <NotificationIcon variant={variant} iconClassName={custom.iconClassName} />
                 <div className={cx('header-container')}>
                   <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
                   <div id="notification-dialog-title" className={cx('title')}>{title}</div>
@@ -217,5 +212,5 @@ const NotificationDialog = (props) => {
 NotificationDialog.propTypes = propTypes;
 NotificationDialog.defaultProps = defaultProps;
 
-export { variants as NotificationDialogVariants, ContentLayoutAsList };
+export { ContentLayoutAsList };
 export default NotificationDialog;

@@ -8,25 +8,17 @@ import styles from './NotificationIcon.module.scss';
 
 const cx = classNamesBind.bind(styles);
 
-const variants = {
-  ALERT: 'alert',
-  ERROR: 'error',
-  WARNING: 'warning',
-  INFO: 'info',
-  CUSTOM: 'custom',
-};
-
 const propTypes = {
   /**
    * The variant of notification to be rendered. This renders the icon corresponding to the variant concept.
    * Use one of `alert`, `error`, `warning`, `info`, or `custom`.
    */
   variant: PropTypes.oneOf([
-    variants.ALERT,
-    variants.ERROR,
-    variants.WARNING,
-    variants.INFO,
-    variants.CUSTOM,
+    'alert',
+    'error',
+    'warning',
+    'info',
+    'custom',
   ]).isRequired,
   /**
    * The class name for the custom icon to be used for a notification when `variant="custom"`.
@@ -39,7 +31,7 @@ const NotificationDialogIcon = ({ variant, iconClassName }) => {
 
   return (
     <div className={cx('icon-container', theme.className)}>
-      <span className={classNames(cx(['icon', `${variant}-icon`], { [`${iconClassName}`]: variants.CUSTOM === variant }))} />
+      <span className={classNames(cx(['icon', `${variant}-icon`], { [`${iconClassName}`]: variant === 'custom' }))} />
     </div>
   );
 };

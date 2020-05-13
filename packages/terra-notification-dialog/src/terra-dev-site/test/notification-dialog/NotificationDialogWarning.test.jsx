@@ -1,9 +1,8 @@
 import React from 'react';
 import NotificationDialogVariant from './NotificationDialogVariant';
-import { NotificationDialogVariants } from '../../../NotificationDialog';
 
 const NotificationDialogWarning = () => (
-  <NotificationDialogVariant variant={NotificationDialogVariants.WARNING} />
+  <NotificationDialogVariant variant="warning" />
 );
 
 export default NotificationDialogWarning;

@@ -14,18 +14,18 @@ const propTypes = {
   items: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-const NotificationDialogContentList = ({ items }) => {
+const ContentLayoutAsList = ({ items }) => {
   const theme = React.useContext(ThemeContext);
 
   /* eslint-disable react/no-array-index-key */
   return (
     <ul className={cx('list', theme.className)}>
-      {items.map((item, index) => (<li className={cx('list-item')} key={index}>{item}</li>))}
+      {items.map((item, index) => (<li className={cx('list-item')} key={`${item}-${index}`}>{item}</li>))}
     </ul>
   );
   /* eslint-enable react/no-array-index-key */
 };
 
-NotificationDialogContentList.propTypes = propTypes;
+ContentLayoutAsList.propTypes = propTypes;
 
-export default NotificationDialogContentList;
+export default ContentLayoutAsList;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
-import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
+import NotificationDialog from '../../../NotificationDialog';
 
 const NotificationDialogNoMessage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,7 @@ const NotificationDialogNoMessage = () => {
   return (
     <>
       <NotificationDialog
-        variant={NotificationDialogVariants.INFO}
+        variant="info"
         isOpen={isOpen}
         title="There is no message here."
         acceptAction={{

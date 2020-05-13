@@ -5,18 +5,18 @@
 @import './orion-fusion-theme/ContentLayoutAsList.module';
 
 :local {
-  ul {
+  .list {
     list-style: var(--terra-notification-dialog-content-list-style, outside disc);
     margin: 0;
     padding: var(--terra-notification-dialog-content-list-padding, 0 0 0 1.85714rem);
   }
 
-  li {
+  .list-item {
     margin: 0;
     padding: 0;
   }
 
-  li + li {
+  .list-item + .list-item {
     margin: var(--terra-notification-dialog-content-list-item-margin, 0.35714rem 0 0 0);
   }
 }
