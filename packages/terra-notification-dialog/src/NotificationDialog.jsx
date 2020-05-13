@@ -103,8 +103,6 @@ const defaultProps = {
   custom: {},
 };
 
-const isValidVariant = (variant) => variants.indexOf(variant) >= 0;
-
 const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction) => {
   if (!acceptAction && !rejectAction) {
     return null;
@@ -147,12 +145,9 @@ const NotificationDialog = (props) => {
     ...customProps
   } = props;
 
-  if (isOpen && acceptAction === undefined && rejectAction === undefined) {
-    throw new Error('Unable to render the Notification dialog. Neither an `acceptAction` and/or `rejectAction` prop was provided which leaves the user without the ability to close the dialog.');
-  }
-
-  if (isOpen && !isValidVariant(variant)) {
-    throw new Error('Unable to render the Notification dialog as the `variant` prop was not provided.');
+  if (process.env.NODE_ENV !== 'production' && acceptAction === undefined && rejectAction === undefined) {
+    // eslint-disable-next-line no-console
+    console.warn('Either the `acceptAction` or `rejectAction` props must be provided for Notification dialog');
   }
 
   const signalWord = variant === 'custom' ? custom.signalWord : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
