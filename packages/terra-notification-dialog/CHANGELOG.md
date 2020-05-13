@@ -14,6 +14,7 @@ See Updated Guide for more info:
 * Removed `customIcon` prop
 * Removed deprecated `primaryAction` prop
 * Removed deprecated `secondaryAction` prop
+* Removed deprecated `message` prop
 * Updated to use `theme-context`
 * Updated & backfilled orion-fusion-theme and clinical-lowlight-theme
 
