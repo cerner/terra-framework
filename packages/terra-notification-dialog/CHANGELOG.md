@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Breaking Changes
-See Updated Guide for more info: 
+See Upgrade Guide for more info: 
 
 * Updated `variant` prop to be required
 * Removed `variant="success"` / `variant={NotificationDialogVariants.SUCCESS}` from variant options
