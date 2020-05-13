@@ -142,6 +142,7 @@ exports[`Notification Dialog functions as expected should open the dialog 1`] = 
         }
       }
       buttonOrder="acceptFirst"
+      custom={Object {}}
       emphasizedAction="none"
       isOpen={false}
       rejectAction={

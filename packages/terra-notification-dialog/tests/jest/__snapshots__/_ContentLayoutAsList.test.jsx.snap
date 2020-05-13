@@ -6,13 +6,13 @@ exports[`Content Layout As List shallow renders layout with items 1`] = `
 >
   <li
     className="list-item"
-    key="0"
+    key="item 1-0"
   >
     item 1
   </li>
   <li
     className="list-item"
-    key="1"
+    key="item2-1"
   >
     item2
   </li>
