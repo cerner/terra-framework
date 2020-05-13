@@ -14,6 +14,7 @@
     display: inline-block;
   }
 
+  // Note: These styles can conflict with form input so care should be taken which changing specificity
   .time-input {
     background-color: var(--terra-time-input-background-color, #fff);
     background-image: var(--terra-time-input-background-image, none);
@@ -174,13 +175,17 @@
         background-size: var(--terra-time-input-time-component-focus-background-size, 0 0);
         border: 0;
 
+        /* stylelint-disable max-nesting-depth */
+        /* stylelint-disable-next-line selector-max-compound-selectors */
         [dir=ltr] & {
           box-shadow: var(--terra-time-input-time-component-focus-ltr-box-shadow, none);
         }
 
+        /* stylelint-disable-next-line selector-max-compound-selectors */
         [dir=rtl] & {
           box-shadow: var(--terra-time-input-time-component-focus-rtl-box-shadow, none);
         }
+        /* stylelint-enable max-nesting-depth */
       }
 
       &::selection {
