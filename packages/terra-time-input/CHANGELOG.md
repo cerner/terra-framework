@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Changed Button-group version in package.json.
+* Updated CSS specificity on the input fields to ensure that conflicts didn't arise with form input.
 
 4.27.0 - (April 28, 2020)
 ------------------
