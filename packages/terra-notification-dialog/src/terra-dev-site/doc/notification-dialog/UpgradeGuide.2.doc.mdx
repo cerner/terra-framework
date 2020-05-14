@@ -3,9 +3,147 @@ import { Badge } from 'terra-notification-dialog/package.json?dev-site-package';
 <Badge />
 
 # Terra Notification Dialog Upgrade Guide
-## Changes from version 3 to version 4
+## Upgrading from version 3 to version 4
+The latest Notification Dialog release has remove the flexibility to add customization on the pre-defined variant types.
 
+### Removed Props
+- Removed `title` - use `dialogTitle` prop instead
+- Removed `header` - create a custom notification dialog if a custom signal word is needed
+- Removed `customIcon` - use `custom.iconClassName` prop instead
+- Removed `primaryAction` - use `acceptAction` prop instead
+- Removed `secondaryAction` - use `acceptAction` prop instead
+- Removed `message` - use `startMessage` prop instead
 
+### New Props
+- Added `dialogTitle`
+- Added `custom` which accepts
+  - `signalWord`
+  - `iconClassName`
+
+### Changed Props
+- `variant` prop is now required
+- `variant` prop of type success is no long supported
+- `isOpen` prop is no longer required
+
+### Removed NotificationDialogVariants Export
+The NotificationDialogVariants export was removed. Use the variant string instead.
+```diff
+- import NotificationDialog, { NotificationDialogVariants } from 'terra-notification-dialog';
++ import NotificationDialog from 'terra-notification-dialog';
+
+const Dialog = () => {
+  <NotificationDialog
+-   variant={NotificationDialogVariants.INFO}
++    variant="Info"
+..
+```
+
+### Changes to Creating Custom Dialogs
+
+Use the prop `custom` to create a custom Notification Dialog and provided
+- a keyword to the `signalWord` prop - previously referenced as header prop
+- a icon as a background-image style via the `iconClassName` prop - previously provided as a React component using customIcon prop
+
+Not providing these pieces will render a Custom Notification dialog with space allocated for the missing pieces.
+
+**Note:** by choosing to create a custom Notification Dialog, you are responsible for providing an icon that is themed correctly in the terra-default-theme, orion-fusion-theme and in the clinical-lowlight-theme. See Terra's [Theme Strategy Guide](/guides/terra-application/theme-strategy) for more information.
+
+##### Component.jsx
+```diff
+  import NotificationDialog from 'terra-notification-dialog';
+- import MyIcon from './MyIcon';
++ import ThemeContext from 'terra-theme-context';
++ import classnamesBind from 'classnames/bind';
+
++ import styles from './Component.module.scss';
++ cx = classnamesBind.bind(styles);
+
+const Dialog = () => {
++ const theme = React.useContext(ThemeContext);
+
+  return (
+    <NotificationDialog
+      variant="custom"
+-     header="Horse Lovers"
+-     customIcon={<MyIcon />}
++     custom={{
++       signalWord: 'Horse Lovers',
++       iconClassName: cx('my-icon', theme.className)
++     }}
+      dialogTitle="Horses are the best"
+      startMessage="Horses are super cool"
+      acceptAction={{
+        text: 'Super Interesting!',
+        onClick: handleCloseModal,
+      }}
+    />
+  );
+ };
+```
+##### Component.module.scss
+
+```diff
++ @import '~terra-mixins/lib/Mixins';
+
+:local {
++  .my-icon { 
++    background: var(--example-custom-icon-background, inline-svg("..."));
++  }
+
++  .orion-fusion-theme {
++    @include terra-inline-svg-var('--example-custom-icon-background', "...");
++  }
+
++  .clinical-lowlight-theme {
++    @include terra-inline-svg-var('--example-custom-icon-background', "...");
++  }
+}
+```
+
+### Added Layout for Rendering Lists with content Prop
+The Notification Dialog provides has added the `ContentLayoutAsList` layout component to be used with the `content` prop. This layout renders a list of strings with styles that align with the Notification Dialog. Usage like:
+
+``` diff
+- import NotificationDialog from 'terra-notification-dialog';
++ import NotificationDialog, { ContentLayoutAsList } from 'terra-notification-dialog';
+
+const Dialog = () => (
+  <NotificationDialog
+    variant="Info"
+    dialogTitle="Did you know?"
+    startMessage="That that cows:"
+-   content={() => {
+-     <ul>
+-       <li key='info-1'>eat 40lbs of food a day</li>
+-       <li key='info-1'>have no upper front teeth</li>
+-     </ul>
+-   }}
++   content={(
++     <ContentLayoutAsList
++        items={['eat 40lbs of food a day', 'have no upper front teeth ']}
++     />
++   )}
+    endMessage="Interesting right?"
+    acceptAction={{
+      text: 'Super Interesting!',
+      onClick: handleCloseModal,
+    }}
+  />
+);
+```
+
+### New Data Attribute for Testing
+The `data-terra-notification-dialog-button` was added to assist with selecting the accept and reject buttons when writing browser tests:
+- use `data-terra-notification-dialog-button="accept"` to select the accept button
+- use `data-terra-notification-dialog-button="reject"` to select the reject button
+
+```diff
+  it('rejects the notification dialog', () => {
+-   browser.click('[class*="notification-dialog-inner-wrapper"] button:last-child');
++   browser.click('[data-terra-notification-dialog-button="reject"]');
+    Terra.validates.element('rejected');
+  })
+```
 
 ## Changes from version 1 to version 2
 ### Changes to CSS Custom Properties

@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Breaking Changes
-See Upgrade Guide for more info: link_to_guide
+See [Upgrade Guide](/components/terra-notification-dialog/notification-dialog/upgrade-guide#changes-from-version-3-to-version-4) for more information.
 
 * Variants
   * Updated `variant` prop to be required and set default value to undefined

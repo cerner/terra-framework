@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
 import FocusTrap from 'focus-trap-react';
-import Button, { ButtonVariants } from 'terra-button';
+import Button from 'terra-button';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import { FormattedMessage } from 'react-intl';
@@ -111,12 +111,12 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
   const actionButtons = [];
 
   if (acceptAction) {
-    const buttonVariant = emphasizedAction === 'accept' ? { variant: ButtonVariants.EMPHASIS } : {};
+    const buttonVariant = emphasizedAction === 'accept' ? { variant: 'emphasis' } : {};
     actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="accept" key="accept" text={acceptAction.text} onClick={acceptAction.onClick} />);
   }
 
   if (rejectAction) {
-    const buttonVariant = emphasizedAction === 'reject' ? { variant: ButtonVariants.EMPHASIS } : {};
+    const buttonVariant = emphasizedAction === 'reject' ? { variant: 'emphasis' } : {};
     actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
   }
 
@@ -156,8 +156,8 @@ const NotificationDialog = (props) => {
   return (
     <AbstractModal
       ariaLabel="Notification Dialog"
-      aria-labelledby="notification-dialog-header"
-      aria-describedby={dialogTitle ? 'notification-dialog-title' : 'notification-dialog-header'}
+      aria-labelledby="notification-dialog-signal-word"
+      aria-describedby={dialogTitle ? 'notification-dialog-title' : 'notification-dialog-signal-word'}
       role="alertdialog"
       classNameModal={classNames(cx('notification-dialog', theme.className), customProps.className)}
       isOpen={isOpen}
