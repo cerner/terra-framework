@@ -179,10 +179,8 @@
 
       &[disabled] {
         background-color: var(--terra-time-input-disabled-background-color, rgba(111, 116, 119, 0.2));
-        border: var(--terra-time-input-disabled-border, 1px solid #868a8c);
         color: var(--terra-time-input-disabled-color, #1c1f21);
         cursor: default;
-        opacity: var(--terra-time-input-disabled-opacity, 0.25);
         pointer-events: none;
       }
     }
