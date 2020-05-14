@@ -112,29 +112,6 @@
       }
     }
 
-    &.is-incomplete {
-      background-color: var(--terra-time-input-incomplete-background-color, #ffc);
-
-      &:hover {
-        background-color: var(--terra-time-input-incomplete-hover-background-color, #ffc);
-      }
-
-      &:focus {
-        background-color: var(--terra-time-input-incomplete-focus-background-color, #ffc);
-      }
-
-      .initial-focus {
-        background-color: var(--terra-time-input-incomplete-focused-input-background-color, rgb(185, 215, 233));
-      }
-
-      &.disabled {
-        background-color: var(--terra-time-input-incomplete-disabled-background-color, #ffc);
-        border: var(--terra-time-input-incomplete-disabled-border, 1px solid #868a8c);
-        color: var(--terra-time-input-incomplete-disabled-color, #1c1f21);
-        opacity: var(--terra-time-input-incomplete-disabled-opacity, 0.25);
-      }
-    }
-
     .time-input-hour,
     .time-input-minute,
     .time-input-second {
@@ -221,11 +198,33 @@
       }
     }
 
-
     .time-input-second {
       min-width: 1.8em;
       text-align: center;
       width: 1.8em;
+    }
+
+    &.is-incomplete {
+      background-color: var(--terra-time-input-incomplete-background-color, #ffc);
+
+      &:hover {
+        background-color: var(--terra-time-input-incomplete-hover-background-color, #ffc);
+      }
+
+      &:focus {
+        background-color: var(--terra-time-input-incomplete-focus-background-color, #ffc);
+      }
+
+      .initial-focus {
+        background-color: var(--terra-time-input-incomplete-focused-input-background-color, rgb(185, 215, 233));
+      }
+
+      &.disabled {
+        background-color: var(--terra-time-input-incomplete-disabled-background-color, #ffc);
+        border: var(--terra-time-input-incomplete-disabled-border, 1px solid #868a8c);
+        color: var(--terra-time-input-incomplete-disabled-color, #1c1f21);
+        opacity: var(--terra-time-input-incomplete-disabled-opacity, 0.25);
+      }
     }
   }
 
