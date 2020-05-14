@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
 import { withRouter } from 'react-router-dom';
 import Tab from './_Tab';
@@ -8,7 +10,7 @@ import TabMenu from './_TabMenu';
 import CollapsedTab from './_CollapsedTab';
 import styles from './ApplicationTabs.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -176,11 +178,18 @@ class ApplicationTabs extends React.Component {
         collapsedTabs.push(<CollapsedTab {...tabProps} />);
       }
     });
+    const theme = this.context;
+    const tabClass = classNames(cx(
+      'tabs-container',
+      { 'is-calculating': this.isCalculating },
+      alignment,
+      theme.className,
+    ));
 
     return (
-      <div {...customProps} className={cx(['tabs-wrapper'])}>
+      <div {...customProps} className={classNames(cx('tabs-wrapper', theme.className))}>
         <div
-          className={cx(['tabs-container', { 'is-calculating': this.isCalculating }, alignment])}
+          className={tabClass}
           role="tablist"
           ref={this.setContainerNode}
         >
@@ -188,7 +197,7 @@ class ApplicationTabs extends React.Component {
           <TabMenu location={location} isHidden={this.menuHidden} hasIcons={hasIcons}>
             {collapsedTabs}
           </TabMenu>
-          <div className={cx(['divider-after-last-tab'])} />
+          <div className={classNames(cx('divider-after-last-tab', theme.className))} />
         </div>
       </div>
     );
@@ -197,5 +206,6 @@ class ApplicationTabs extends React.Component {
 
 ApplicationTabs.propTypes = propTypes;
 ApplicationTabs.defaultProps = defaultProps;
+ApplicationTabs.contextType = ThemeContext;
 
 export default withRouter(ApplicationTabs);

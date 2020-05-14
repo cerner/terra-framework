@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import { matchPath } from 'react-router-dom';
 import * as KeyCode from 'keycode-js';
 import styles from './ApplicationTabs.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -123,20 +125,24 @@ class ApplicationTab extends Component {
     const hasIcon = !!icon;
     const isCurrent = this.isCurrentPath();
 
-    const tabClassNames = cx([
+    const theme = this.context;
+
+    const tabClassNames = classNames(cx(
       'tab',
       { 'tab-with-icon': hasIcon },
       { 'is-disabled': isCurrent && !isCollapsed },
       { 'is-active': active },
       { 'is-focused': focused },
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
     const tabAttr = { 'aria-current': isCurrent };
 
-    const childrenClassNames = cx([
+    const childrenClassNames = classNames(cx(
       'tab-inner',
       { 'tab-inner-with-icon': hasIcon },
-    ]);
+      theme.className,
+    ));
     const ChildElement = hasIcon ? 'div' : 'span';
 
     return (
@@ -153,8 +159,8 @@ class ApplicationTab extends Component {
         onBlur={this.handleOnBlur}
       >
         <ChildElement className={childrenClassNames}>
-          {hasIcon && <span className={cx(['tab-icon'])}>{icon}</span>}
-          <span className={cx(['tab-label'])}>{text}</span>
+          {hasIcon && <span className={classNames(cx('tab-icon', theme.className))}>{icon}</span>}
+          <span className={classNames(cx('tab-label', theme.className))}>{text}</span>
         </ChildElement>
       </button>
     );
@@ -162,5 +168,6 @@ class ApplicationTab extends Component {
 }
 
 ApplicationTab.propTypes = propTypes;
+ApplicationTab.contextType = ThemeContext;
 
 export default ApplicationTab;

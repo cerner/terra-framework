@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import { matchPath } from 'react-router-dom';
 import * as KeyCode from 'keycode-js';
 import styles from './ApplicationTabs.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -123,13 +125,16 @@ class CollapseTab extends Component {
 
     const hasIcon = !!icon;
 
-    const tabClassNames = cx([
+    const theme = this.context;
+
+    const tabClassNames = classNames(cx(
       'collapsed-tab',
       { 'collapsed-tab-with-icon': hasIcon },
       { 'is-active': active },
       { 'is-focused': focused },
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
     const tabAttr = { 'aria-current': isCurrent };
 
     return (
@@ -143,9 +148,9 @@ class CollapseTab extends Component {
         onKeyUp={this.handleKeyUp}
         onBlur={this.handleOnBlur}
       >
-        <div className={cx(['tab-inner'])}>
-          {icon && <span className={cx(['collapsed-tab-icon'])}>{icon}</span>}
-          <span className={cx(['tab-label'])}>{text}</span>
+        <div className={classNames(cx('tab-inner', theme.className))}>
+          {icon && <span className={classNames(cx('collapsed-tab-icon', theme.className))}>{icon}</span>}
+          <span className={classNames(cx('tab-label', theme.className))}>{text}</span>
         </div>
       </li>
     );
@@ -153,5 +158,6 @@ class CollapseTab extends Component {
 }
 
 CollapseTab.propTypes = propTypes;
+CollapseTab.contextType = ThemeContext;
 
 export default CollapseTab;

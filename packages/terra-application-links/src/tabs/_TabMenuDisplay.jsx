@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import * as KeyCode from 'keycode-js';
 import styles from './ApplicationTabs.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -101,19 +103,23 @@ class TabMenuDisplay extends React.Component {
 
     const hasIcon = !!icon;
 
-    const displayClassNames = cx([
+    const theme = this.context;
+
+    const displayClassNames = classNames(cx(
       'tab-menu-display',
       { 'is-hidden': isHidden },
       { 'is-active': this.state.active },
       { 'is-focused': this.state.focused },
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
     const attributes = { 'aria-current': isSelected };
 
-    const moreButtonClassNames = cx([
+    const moreButtonClassNames = classNames(cx(
       'tab-inner',
       { 'tab-inner-with-icon': hasIcon },
-    ]);
+      theme.className,
+    ));
 
     return (
       <div
@@ -128,8 +134,8 @@ class TabMenuDisplay extends React.Component {
         onBlur={this.handleOnBlur}
       >
         <div className={moreButtonClassNames}>
-          {hasIcon && <span className={cx(['tab-menu-display-icon'])}>{icon}</span>}
-          <div className={cx(['tab-menu-display-label'])}>
+          {hasIcon && <span className={classNames(cx('tab-menu-display-icon', theme.className))}>{icon}</span>}
+          <div className={classNames(cx('tab-menu-display-label', theme.className))}>
             <span>{text}</span>
             <IconCaretDown />
           </div>
@@ -142,5 +148,6 @@ class TabMenuDisplay extends React.Component {
 
 TabMenuDisplay.propTypes = propTypes;
 TabMenuDisplay.defaultProps = defaultProps;
+TabMenuDisplay.contextType = ThemeContext;
 
 export default TabMenuDisplay;
