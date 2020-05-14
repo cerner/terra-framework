@@ -54,31 +54,31 @@ const ApplicationHeaderLayout = ({
 
   let logoElement;
   if (logo) {
-    logoElement = <div className={classNames(cx(['fit', 'start', 'logo']))}>{logo}</div>;
+    logoElement = <div className={classNames(cx('fit', 'start', 'logo', theme.className))}>{logo}</div>;
   }
 
   let navigationElement;
   if (navigation) {
-    navigationElement = <nav role="navigation" className={classNames(cx('fill'))}>{navigation}</nav>;
+    navigationElement = <nav role="navigation" className={classNames(cx('fill', theme.className))}>{navigation}</nav>;
   }
 
   let extensionsElement;
   if (extensions) {
-    extensionsElement = <div className={classNames(cx(['fit', 'end', 'extensions']))}>{extensions}</div>;
+    extensionsElement = <div className={classNames(cx('fit', 'end', 'extensions', theme.className))}>{extensions}</div>;
   }
 
   let utilitiesElement;
   if (utilities) {
-    utilitiesElement = <div className={classNames(cx(['fit', 'end', 'utilities']))}>{utilities}</div>;
+    utilitiesElement = <div className={classNames(cx('fit', 'end', 'utilities', theme.className))}>{utilities}</div>;
   }
 
   let headerToggle;
   if (toggle) {
-    headerToggle = <div className={classNames(cx('fit'))}>{toggle}</div>;
+    headerToggle = <div className={classNames(cx('fit', theme.className))}>{toggle}</div>;
   }
 
   const headerInner = (
-    <div className={classNames(cx(['fill', 'header-inner']))}>
+    <div className={classNames(cx('fill', 'header-inner', theme.className))}>
       {navigationElement}
       {extensionsElement}
     </div>
@@ -103,7 +103,7 @@ const ApplicationHeaderLayout = ({
   let headerBody;
   if (headerInner || logoElement || utilitiesElement) {
     headerBody = (
-      <div className={classNames(cx(['fill', 'header-body']))}>
+      <div className={classNames(cx('fill', 'header-body', theme.className))}>
         {skipToContentButton}
         {logoElement}
         {headerInner}
