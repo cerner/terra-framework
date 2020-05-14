@@ -22,7 +22,7 @@ const CompleteNotificationDialog = () => {
       <NotificationDialog
         variant="alert"
         isOpen={isOpen}
-        title="Make sure that the title relates directly to the choices."
+        dialogTitle="Make sure that the title relates directly to the choices."
         startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
         content={(<ContentLayoutAsList items={['item1', 'item2']} />)}
         endMessage="The End Message is text used to provide any other additional info."

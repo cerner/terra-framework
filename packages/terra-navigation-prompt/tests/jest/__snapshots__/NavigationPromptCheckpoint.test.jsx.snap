@@ -17,6 +17,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
       }
     }
     buttonOrder="acceptFirst"
+    dialogTitle="Test Title"
     emphasizedAction="none"
     isOpen={true}
     rejectAction={
@@ -26,7 +27,6 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
       }
     }
     startMessage="Test Message"
-    title="Test Title"
     variant="warning"
   />
 </ContextProvider>
@@ -49,6 +49,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
       }
     }
     buttonOrder="acceptFirst"
+    dialogTitle="Test Title"
     emphasizedAction="accept"
     isOpen={true}
     rejectAction={
@@ -58,7 +59,6 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
       }
     }
     startMessage="Test Message"
-    title="Test Title"
     variant="warning"
   />
 </ContextProvider>
@@ -81,6 +81,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
       }
     }
     buttonOrder="rejectFirst"
+    dialogTitle="Test Title"
     emphasizedAction="reject"
     isOpen={true}
     rejectAction={
@@ -90,7 +91,6 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
       }
     }
     startMessage="Test Message"
-    title="Test Title"
     variant="warning"
   />
 </ContextProvider>

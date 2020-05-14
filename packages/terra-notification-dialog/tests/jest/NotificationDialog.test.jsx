@@ -13,7 +13,7 @@ describe('Notification Dialog', () => {
       <NotificationDialog
         variant="alert"
         isOpen
-        title="Test"
+        dialogTitle="Test"
         startMessage="This text is used to provide more details."
         acceptAction={{ text: 'accept', onClick: () => {} }}
         rejectAction={{ text: 'reject', onClick: () => {} }}
@@ -32,7 +32,7 @@ describe('Notification Dialog', () => {
       <NotificationDialog
         variant="error"
         isOpen
-        title="Test"
+        dialogTitle="Test"
         startMessage="This text is used to provide more details."
         acceptAction={{ text: 'accept', onClick: () => {} }}
         rejectAction={{ text: 'reject', onClick: () => {} }}
@@ -47,7 +47,7 @@ describe('Notification Dialog', () => {
       <NotificationDialog
         variant="warning"
         isOpen
-        title="Test"
+        dialogTitle="Test"
         startMessage="This text is used to provide more details."
         acceptAction={{ text: 'accept', onClick: () => {} }}
         rejectAction={{ text: 'reject', onClick: () => {} }}
@@ -62,7 +62,7 @@ describe('Notification Dialog', () => {
       <NotificationDialog
         variant="info"
         isOpen
-        title="Test"
+        dialogTitle="Test"
         startMessage="This text is used to provide more details."
         acceptAction={{ text: 'accept', onClick: () => {} }}
         rejectAction={{ text: 'reject', onClick: () => {} }}
@@ -77,7 +77,7 @@ describe('Notification Dialog', () => {
       <NotificationDialog
         variant="custom"
         isOpen
-        title="Test"
+        dialogTitle="Test"
         startMessage="This text is used to provide more details."
         acceptAction={{ text: 'accept', onClick: () => {} }}
         rejectAction={{ text: 'reject', onClick: () => {} }}
@@ -93,7 +93,7 @@ describe('Notification Dialog', () => {
       <NotificationDialog
         variant="alert"
         isOpen
-        title="Test"
+        dialogTitle="Test"
         startMessage="This text is used to provide more details."
         content={<div>Middle content</div>}
         endContent="end content before buttons"
@@ -110,7 +110,7 @@ describe('Notification Dialog', () => {
       <NotificationDialog
         variant="alert"
         isOpen
-        title="Test"
+        dialogTitle="Test"
         startMessage="This text is used to provide more details."
         buttonOrder="rejectFirst"
         acceptAction={{ text: 'accept', onClick: acceptOnClick }}
@@ -156,7 +156,7 @@ describe('Notification Dialog functions as expected', () => {
           <NotificationDialog
             variant="alert"
             isOpen={isOpen}
-            title="Test"
+            dialogTitle="Test"
             startMessage="This text is used to provide more details."
             acceptAction={{ text: 'accept', onClick: acceptOnClick.mockImplementation(() => { setIsOpen(false); }) }}
             rejectAction={{ text: 'reject', onClick: rejectOnClick.mockImplementation(() => { setIsOpen(false); }) }}

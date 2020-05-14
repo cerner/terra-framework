@@ -4,18 +4,21 @@ Changelog
 Unreleased
 ----------
 ### Breaking Changes
-See Upgrade Guide for more info: 
+See Upgrade Guide for more info: link_to_guide
 
-* Updated `variant` prop to be required
-* Removed `variant="success"` / `variant={NotificationDialogVariants.SUCCESS}` from variant options
-* Relaxed `isOpen` prop to be optional
-* Added `custom` prop
-* Removed `header` prop
-* Removed `customIcon` prop
-* Removed deprecated `primaryAction` prop
-* Removed deprecated `secondaryAction` prop
-* Removed deprecated `message` prop
-* Updated to use `theme-context`
+* Variants
+  * Updated `variant` prop to be required and set default value to undefined
+  * Removed `variant="success"` / `variant={NotificationDialogVariants.SUCCESS}` from variant options
+  * Removed NotificationDialogVariants
+* Relaxed `isOpen` prop to be optional and set default value of false
+* Added `dialogTitle` prop to replace `title` prop
+* Added `custom` prop to set custom variant pieces
+* Removed `title` prop`
+* Removed `header` prop - API no longer allows overriding default header (signal words)
+* Removed `customIcon` prop - set custom.iconClassName instead
+* Removed deprecated `primaryAction` prop - use `acceptAction` prop instead
+* Removed deprecated `secondaryAction` prop - use `rejectAction` prop instead
+* Removed deprecated `message` prop - use `startMessage` prop instead
 * Updated & backfilled orion-fusion-theme and clinical-lowlight-theme
 
 3.32.0 - (April 28, 2020)

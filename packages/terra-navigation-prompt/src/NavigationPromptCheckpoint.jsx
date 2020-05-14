@@ -180,7 +180,7 @@ class NavigationPromptCheckpoint extends React.Component {
     return (
       <NotificationDialog
         isOpen
-        title={title}
+        dialogTitle={title}
         startMessage={(startMessage || message)}
         endMessage={endMessage}
         content={content}

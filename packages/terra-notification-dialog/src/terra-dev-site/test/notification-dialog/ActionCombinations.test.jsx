@@ -58,7 +58,7 @@ const CompleteNotificationDialog = () => {
       <NotificationDialog
         variant="warning"
         isOpen={isOpen}
-        title="Action Options in Notification Dialog"
+        dialogTitle="Action Options in Notification Dialog"
         startMessage="The notification dialog can display one or two buttons to accept and/or reject the message and close the dialog."
         content="The buttonOrder prop can be used to flip which button is first when both buttons are rendered."
         endMessage="The emphasizedAction prop indicates whether acceptAction, rejectAction or neither action should be emphasized."

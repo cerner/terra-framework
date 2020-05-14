@@ -68,7 +68,7 @@
 
   .header {
     flex: 0 0 auto;
-    padding: var(--terra-notification-dialog-header-padding, 0 1.42857rem); // left and write padding
+    padding: var(--terra-notification-dialog-header-padding, 0 1.42857rem); // left and right padding
     z-index: 1;
   }
   

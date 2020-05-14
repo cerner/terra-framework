@@ -33,7 +33,7 @@ const propTypes = {
   /**
    * The title to describe the high-level overview of why the notification-dialog is being displayed to the user.
    */
-  title: PropTypes.string,
+  dialogTitle: PropTypes.string,
   /**
    * The text to provide more detail or defined terminology to be displayed at the start of the notification dialog body.
    */
@@ -131,7 +131,7 @@ const NotificationDialog = (props) => {
   const theme = React.useContext(ThemeContext);
 
   const {
-    title,
+    dialogTitle,
     startMessage,
     endMessage,
     content,
@@ -157,7 +157,7 @@ const NotificationDialog = (props) => {
     <AbstractModal
       ariaLabel="Notification Dialog"
       aria-labelledby="notification-dialog-header"
-      aria-describedby={title ? 'notification-dialog-title' : 'notification-dialog-header'}
+      aria-describedby={dialogTitle ? 'notification-dialog-title' : 'notification-dialog-header'}
       role="alertdialog"
       classNameModal={classNames(cx('notification-dialog', theme.className), customProps.className)}
       isOpen={isOpen}
@@ -176,7 +176,7 @@ const NotificationDialog = (props) => {
                 <NotificationIcon variant={variant} iconClassName={custom.iconClassName} />
                 <div className={cx('header-container')}>
                   <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
-                  <div id="notification-dialog-title" className={cx('title')}>{title}</div>
+                  <div id="notification-dialog-title" className={cx('title')}>{dialogTitle}</div>
                 </div>
               </div>
             </div>

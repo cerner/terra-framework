@@ -18,7 +18,7 @@ const NotificationDialogNoMessage = () => {
       <NotificationDialog
         variant="info"
         isOpen={isOpen}
-        title="There is no message here."
+        dialogTitle="There is no message here."
         acceptAction={{
           text: 'Close',
           onClick: handleCloseModal,

@@ -143,6 +143,7 @@ exports[`Notification Dialog functions as expected should open the dialog 1`] = 
       }
       buttonOrder="acceptFirst"
       custom={Object {}}
+      dialogTitle="Test"
       emphasizedAction="none"
       isOpen={false}
       rejectAction={
@@ -152,7 +153,6 @@ exports[`Notification Dialog functions as expected should open the dialog 1`] = 
         }
       }
       startMessage="This text is used to provide more details."
-      title="Test"
       variant="alert"
     >
       <AbstractModal

@@ -102,7 +102,7 @@ const CompleteNotificationDialogWithLongMessage = () => {
       <NotificationDialog
         variant="alert"
         isOpen={isOpen}
-        title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
+        dialogTitle="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
         startMessage={message}
         acceptAction={{
           text: 'accept',
