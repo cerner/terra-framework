@@ -83,14 +83,6 @@
       pointer-events: none;
     }
 
-    .time-input-hour[disabled],
-    .time-input-minute[disabled],
-    .time-input-second[disabled] {
-      background-color: transparent;
-      border: 0;
-      opacity: 1;
-    }
-
     &.is-invalid {
       background-color: var(--terra-time-input-invalid-background-color, #fff);
       border: var(--terra-time-input-invalid-border, 1px solid #e50000);
@@ -178,10 +170,10 @@
       }
 
       &[disabled] {
-        background-color: var(--terra-time-input-disabled-background-color, rgba(111, 116, 119, 0.2));
+        background-color: transparent;
+        border: 0;
         color: var(--terra-time-input-disabled-color, #1c1f21);
-        cursor: default;
-        pointer-events: none;
+        opacity: 1;
       }
     }
 
