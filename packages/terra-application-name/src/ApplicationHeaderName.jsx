@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 
 import styles from './ApplicationHeaderName.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -22,15 +24,17 @@ const ApplicationHeaderName = ({
   title,
   ...customProps
 }) => {
-  const ApplicationHeaderNameClassNames = cx([
+  const theme = React.useContext(ThemeContext);
+  const ApplicationHeaderNameClassNames = classNames(cx(
     'application-header-name',
-    customProps.className,
-  ]);
+    theme.className,
+  ),
+  customProps.className);
 
   return (
     <div {...customProps} className={ApplicationHeaderNameClassNames}>
-      {accessory && <div className={cx('accessory')}>{accessory}</div>}
-      {title && <div className={cx('title')}>{title}</div>}
+      {accessory && <div className={classNames(cx('accessory', theme.className))}>{accessory}</div>}
+      {title && <div className={classNames(cx('title', theme.className))}>{title}</div>}
     </div>
   );
 };

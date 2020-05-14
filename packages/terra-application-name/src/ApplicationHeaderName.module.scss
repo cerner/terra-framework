@@ -1,4 +1,7 @@
 /* stylelint-disable selector-class-pattern */
+// Themes
+@import './clinical-lowlight-theme/ApplicationName.module';
+
 :local {
   .application-header-name {
     align-items: var(--terra-application-name-header-align-items, center);
