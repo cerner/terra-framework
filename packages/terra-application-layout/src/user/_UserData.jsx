@@ -36,16 +36,16 @@ const UserData = ({
   let userInfo;
   if (userName || userDetail) {
     userInfo = (
-      <div className={classNames(cx('user-info'))}>
-        {!!userName && <div className={classNames(cx('name'))}>{userName}</div>}
-        {!!userDetail && <div className={classNames(cx('detail'))}>{userDetail}</div>}
+      <div className={classNames(cx('user-info', theme.className))}>
+        {!!userName && <div className={classNames(cx('name', theme.className))}>{userName}</div>}
+        {!!userDetail && <div className={classNames(cx('detail', theme.className))}>{userDetail}</div>}
       </div>
     );
   }
 
   return (
     <div {...customProps} className={userClassNames}>
-      {!!userPhoto && React.cloneElement(userPhoto, { className: cx('photo') })}
+      {!!userPhoto && React.cloneElement(userPhoto, { className: cx('photo', theme.className) })}
       {userInfo}
     </div>
   );

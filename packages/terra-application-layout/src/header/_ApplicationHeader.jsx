@@ -119,13 +119,14 @@ class ApplicationHeader extends React.Component {
 
   renderToggle() {
     const { layoutConfig, intl } = this.props;
+    const theme = this.context;
 
     if (layoutConfig.toggleMenu) {
       return (
-        <div className={classNames(cx('navbar-toggle'))}>
+        <div className={classNames(cx('navbar-toggle', theme.className))}>
           <button
             type="button"
-            className={classNames(cx('toggle-button'))}
+            className={classNames(cx('toggle-button', theme.className))}
             aria-label={intl.formatMessage({ id: 'Terra.applicationLayout.applicationHeader.menuToggleLabel' })}
             onClick={layoutConfig.toggleMenu}
             data-application-header-toggle
