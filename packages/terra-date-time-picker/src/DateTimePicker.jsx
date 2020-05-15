@@ -123,7 +123,7 @@ const propTypes = {
   timeVariant: PropTypes.oneOf([DateTimeUtils.FORMAT_12_HOUR, DateTimeUtils.FORMAT_24_HOUR]),
   /**
    * Timezone value to indicate in which timezone the date-time component is rendered.
-   * The value provided should be a valid timezone string, else will default to browser/local timezone.
+   * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
    */
   timeZone: PropTypes.string,
 };

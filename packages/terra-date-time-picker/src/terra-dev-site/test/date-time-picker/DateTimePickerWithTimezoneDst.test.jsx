@@ -1,9 +1,9 @@
 import React from 'react';
-import DateTimePickerExampleTemplateTimeZone from '../../common/DateTimePickerExampleTemplateTimeZone';
+import DateTimePickerTimezoneExampleTemplate from '../../common/DateTimePickerTimezoneExampleTemplate';
 
 const DateTimePickerExample = () => (
   <>
-    <DateTimePickerExampleTemplateTimeZone
+    <DateTimePickerTimezoneExampleTemplate
       value="2017-11-05T01:30:00"
       timeZone="America/New_York"
     />
