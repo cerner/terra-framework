@@ -14,7 +14,7 @@
     display: inline-block;
   }
 
-  // Note: These styles can conflict with form input so care should be taken which changing specificity
+  // Note: These styles can conflict with form input so care should be taken when changing specificity
   .time-input {
     background-color: var(--terra-time-input-background-color, #fff);
     background-image: var(--terra-time-input-background-image, none);
