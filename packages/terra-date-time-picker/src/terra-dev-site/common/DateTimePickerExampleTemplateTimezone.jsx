@@ -8,23 +8,30 @@ const propTypes = {
    * The current entered date time. Use for the selected date message.
    */
   value: PropTypes.node,
+  /**
+   * Timezone for the provided date time.
+   */
+  timeZone: PropTypes.string,
 };
 
 const defaultProps = {
   value: '',
+  timeZone: undefined,
 };
 
-class DatePickerExample extends React.Component {
+class DateTimePickerTimezoneTemplate extends React.Component {
   constructor(props) {
     super(props);
     let dateTimeDisplay = props.value;
-    const dateTime = DateTimeUtils.createSafeDate(dateTimeDisplay);
+    let timeZoneDisplay = props.timeZone;
+    const dateTime = DateTimeUtils.createSafeDate(dateTimeDisplay, props.timeZone);
 
     if (dateTime && dateTime.isValid()) {
       dateTimeDisplay = dateTime.format();
+      timeZoneDisplay = dateTime.tz();
     }
 
-    this.state = { dateTime: dateTimeDisplay };
+    this.state = { dateTime: dateTimeDisplay, timeZone: timeZoneDisplay };
     this.handleDateTimeChange = this.handleDateTimeChange.bind(this);
   }
 
@@ -39,6 +46,10 @@ class DatePickerExample extends React.Component {
           Selected ISO Date Time:
           <span id="date-time-value">{this.state.dateTime}</span>
         </p>
+        <p>
+          Selected Time Zone:
+          <span id="date-time-timeZone">{this.state.timeZone}</span>
+        </p>
         <DateTimePicker
           name="date-time-picker-example"
           onChange={this.handleDateTimeChange}
@@ -49,7 +60,7 @@ class DatePickerExample extends React.Component {
   }
 }
 
-DatePickerExample.propTypes = propTypes;
-DatePickerExample.defaultProps = defaultProps;
+DateTimePickerTimezoneTemplate.propTypes = propTypes;
+DateTimePickerTimezoneTemplate.defaultProps = defaultProps;
 
-export default DatePickerExample;
+export default DateTimePickerTimezoneTemplate;

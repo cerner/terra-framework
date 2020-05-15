@@ -87,12 +87,16 @@ class DateTimeUtils {
     const newDate = momentDate.clone();
     const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
     const date = moment(time, timeFormat, true);
+    const timeZone = momentDate.tz() || moment.tz.guess();
 
-    if (hasSeconds) {
-      return newDate.hour(date.get('hour')).minute(date.get('minute')).second(date.get('second'));
+    let dateTimeString;
+    if (date.isValid()) {
+      dateTimeString = newDate.format('YYYY-MM-DD').concat(' ').concat(date.format(timeFormat));
+    } else {
+      dateTimeString = newDate.format('YYYY-MM-DD');
     }
 
-    return newDate.hour(date.get('hour')).minute(date.get('minute'));
+    return moment.tz(dateTimeString, timeZone);
   }
 
   /**
@@ -244,8 +248,7 @@ class DateTimeUtils {
       return undefined;
     }
 
-    const momentDate = (timeZone && moment.tz.zone(timeZone) ? moment.tz(date, timeZone) : moment(date));
-
+    const momentDate = (timeZone && moment.tz.zone(timeZone) ? moment.tz(date, timeZone) : moment.tz(date, moment.tz.guess()));
     return momentDate.isValid() ? momentDate : undefined;
   }
 

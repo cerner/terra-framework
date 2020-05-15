@@ -1,27 +1,25 @@
 import React from 'react';
-import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTemplate';
+import DateTimePickerExampleTemplateTimezone from '../../common/DateTimePickerExampleTemplateTimezone';
 
 const DateTimePickerExample = () => (
-  <div>
-    <DateTimePickerExampleTemplate
+  <>
+    <DateTimePickerExampleTemplateTimezone
       value="2020-02-13T05:30:00"
       timeZone="Africa/Bangui"
     />
-    <DateTimePickerExampleTemplate
+    <DateTimePickerExampleTemplateTimezone
       value="2020-03-08T02:30:00"
       timeZone="America/New_York"
     />
-    <DateTimePickerExampleTemplate
+    <DateTimePickerExampleTemplateTimezone
+      value="2017-11-05T01:30:00"
       timeZone="America/New_York"
     />
-    <DateTimePickerExampleTemplate
+    <DateTimePickerExampleTemplateTimezone
       value="2017-11-05T01:30:00"
       timeZone="Asia/Dubai"
     />
-    <DateTimePickerExampleTemplate
-      value="2017-11-05T01:30:00"
-    />
-  </div>
+  </>
 );
 
 export default DateTimePickerExample;

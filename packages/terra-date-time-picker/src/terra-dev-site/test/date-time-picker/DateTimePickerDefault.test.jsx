@@ -2,7 +2,7 @@ import React from 'react';
 import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTemplate';
 
 const DateTimePickerExample = () => (
-  <DateTimePickerExampleTemplate timeZone="America/New_York" />
+  <DateTimePickerExampleTemplate />
 );
 
 export default DateTimePickerExample;
