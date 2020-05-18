@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Spacing typo in doc
 
 3.24.0 - (April 28, 2020)
 ------------------
