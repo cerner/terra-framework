@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Cleaned up screenshots
 
 2.33.0 - (April 28, 2020)
 ------------------
