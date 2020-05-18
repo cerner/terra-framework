@@ -93,7 +93,7 @@ class DateTimeUtils {
     if (date.isValid()) {
       dateTimeString = newDate.format('YYYY-MM-DD').concat(' ').concat(date.format(timeFormat));
     } else {
-      dateTimeString = newDate.format('YYYY-MM-DD');
+      return momentDate;
     }
 
     return moment.tz(dateTimeString, timeZone);
