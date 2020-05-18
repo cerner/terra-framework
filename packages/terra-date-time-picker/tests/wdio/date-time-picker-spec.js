@@ -720,6 +720,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.waitForVisible('[class*="time-clarification"]');
     });
 
-    Terra.it.matchesScreenshot('before DST resolution', { selector: '#root' });
+    Terra.it.matchesScreenshot({ selector: '#root' });
   });
 });
