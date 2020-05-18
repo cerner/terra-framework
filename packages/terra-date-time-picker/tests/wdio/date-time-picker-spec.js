@@ -692,4 +692,34 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     Terra.it.validatesElement();
   });
+
+  describe('With timezone', () => {
+    before(() => browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone'));
+
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('With timezone missing hour', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-missing-hour');
+      browser.refresh();
+      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
+      browser.setValue('input[name="terra-date-input"]', '03/11/2018');
+      browser.setValue('input[name="terra-time-hour-input"]', '02');
+      browser.setValue('input[name="terra-time-minute-input"]', '30');
+    });
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('With timezone DST', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
+      browser.refresh();
+      browser.click('input[name="terra-time-minute-input"]');
+      browser.keys('Tab');
+      browser.waitForVisible('[class*="time-clarification"]');
+    });
+
+    Terra.it.matchesScreenshot('before DST resolution', { selector: '#root' });
+  });
 });
