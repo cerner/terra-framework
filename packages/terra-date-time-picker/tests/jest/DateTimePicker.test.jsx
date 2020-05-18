@@ -101,9 +101,9 @@ it('should validate the hasTime helper', () => {
 });
 
 it('should validate the updateTime helper', () => {
-  const updatedHM = DateTimeUtils.updateTime(moment('2019-06-10T10:30:54'), '16:00', false);
+  const updatedHM = DateTimeUtils.updateTime(moment.tz('2019-06-10T10:30:54', moment.tz.guess()), '16:00', false);
   // Directly comparing the moment objects fails due to differences in the parsedDateParts property
-  expect(updatedHM.format()).toEqual(moment('2019-06-10T16:00:00').format());
+  expect(updatedHM.format()).toEqual(moment.tz('2019-06-10T16:00:00', moment.tz.guess()).format());
 
   const updatedHMS = DateTimeUtils.updateTime(moment('2019-06-10T10:30:54'), '16:00:01', true);
   // Directly comparing the moment objects fails due to differences in the parsedDateParts property
