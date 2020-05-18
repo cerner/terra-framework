@@ -96,3 +96,12 @@ it('should render the correct snapshot for iPods', () => {
   expect(modal).toMatchSnapshot();
   global.navigator.platform = null;
 });
+
+it('correctly applies the theme context className', () => {
+  jest.spyOn(React, 'useContext')
+    .mockReturnValue({
+      className: 'orion-fusion-theme',
+    });
+  const wrapper = mountWithIntl(<AbstractModalExample />);
+  expect(wrapper).toMatchSnapshot();
+});

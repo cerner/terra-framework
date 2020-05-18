@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import PropTypes from 'prop-types';
 import styles from './ModalOverlay.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const zIndexes = ['6000', '7000', '8000', '9000'];
 
@@ -27,8 +29,17 @@ const ModalOverlay = (props) => {
   }, []);
 
   const { zIndex, ...customProps } = props;
+  const theme = React.useContext(ThemeContext);
+  const overlayClassName = classNames(
+    cx(
+      'overlay',
+      `layer-${zIndex}`,
+      theme.className,
+    ),
+    customProps.className,
+  );
 
-  return <div {...customProps} className={cx(['overlay', `layer-${zIndex}`, customProps.className])} />;
+  return <div {...customProps} className={overlayClassName} />;
 };
 
 ModalOverlay.propTypes = propTypes;
