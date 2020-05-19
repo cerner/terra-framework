@@ -49,6 +49,7 @@ const Tab = ({
       id={id}
       aria-labelledby={associatedTabId}
     >
+      {currentTabTitle}
       {children}
     </div>
   );

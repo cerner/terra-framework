@@ -94,5 +94,21 @@ const TabsTemplate = (props) => {
   );
 };
 
+// const TabsTemplate = (props) => {
+//   return (
+//     <select>
+//       <optgroup label="text">
+//         <option value="waffle">Waffle</option>
+//       </optgroup>
+//       <optgroup label="text">
+//         <option value="waffle">Waffle</option>
+//       </optgroup>
+//       <optgroup label="text">
+//         <option value="waffle">Waffle</option>
+//       </optgroup>
+//     </select>
+//   );
+// };
+
 TabsTemplate.propTypes = propTypes;
 export default TabsTemplate;

@@ -2,82 +2,125 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ContentContainer from 'terra-content-container';
+import Tab from './Tab';
+import TabBar from './TabBar';
 import TabPane from './TabPane';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
 
+const tabPropType = PropTypes.shape({
+/**
+   * The id of the tab to be used in mapping.
+   */
+  id: PropTypes.string.isRequired,
+  /**
+   * The id of the tab pane element associated to this tab.
+   */
+  associatedPaneId: PropTypes.string.isRequired,
+  /**
+   * Icon to be displayed on the tab.
+   */
+  icon: PropTypes.element,
+  /**
+   * Text to be displayed on the tab.
+   */
+  label: PropTypes.string.isRequired,
+  /**
+   * A custom display for the tab. Component will fallback to label text when collapsed into the menu.
+   */
+  customDisplay: PropTypes.node,
+  /**
+   * Indicates if the pane should be disabled.
+   */
+  isDisabled: PropTypes.bool,
+  /**
+   * Indicates if the pane label should only display the icon. When tab collapses into menu the label text will be used.
+   */
+  isIconOnly: PropTypes.bool,
+  /**
+   * Indicates if the tab is currently selected.
+   */
+  isSelected: PropTypes.bool,
+  /**
+   * Callback function triggering on selection.
+   */
+  onSelect: PropTypes.func,
+  /**
+   * Object to be returned in the onSelect.
+   */
+  metaData: PropTypes.object,
+});
+
 const propTypes = {
   /**
-   * TabHeader element containing Tabs.
+   * Child content to display within the selected tabPane.
    */
-  tabBar: PropTypes.element.isRequired,
+  children: PropTypes.node,
   /**
-   * Indicates if tabs should fill the width available in the tab bar.
+   * Data object for building tabs.
    */
-  tabFill: PropTypes.bool,
-  /**
+  tabData: PropTypes.arrayOf(tabPropType),
+    /**
    * Indicates if the pane content should fill to the height of the parent container.
    */
   fill: PropTypes.bool,
   /**
-   * Currently active Tabs.Pane content to be displayed.
+   * Indicates if tabs should fill the width available in the tab bar.
    */
-  children: PropTypes.node.isRequired,
-  hasScroll: PropTypes.bool,
-  /**
-   * Tabs style. One of: `'modular-centered'`, `'modular-left-aligned'`, `'structural'`.
-   * NOTE: This is being commented out until discussions have been resolved around if we want modular tabs.
-   variant: PropTypes.oneOf(['modular-centered', 'modular-left-aligned', 'structural']),
-  */
+  tabFill: PropTypes.bool,
 };
 
 const defaultProps = {
   tabFill: false,
   fill: false,
-  hasScroll: false,
 };
 
 const Tabs = ({
   tabFill,
   fill,
-  children,
-  tabBar,
-  hasScroll,
+  tabData,
   ...customProps
 }) => {
   const [isLabelTruncated, setIsLabelTruncated] = useState(false);
 
-  // NOTE: Hard-coding variant to structural until discussions have resolved around if we want modular tabs.
-  const variant = 'structural';
   const tabsClassNames = cx([
     'tabs-container',
     { 'tab-fill': tabFill },
-    variant,
+    'structural',
     customProps.className,
   ]);
 
-  let isIconOnly = false;
-  const childArray = React.Children.toArray(tabBar.props.children);
-  for (let i = 0; i < childArray.length; i += 1) {
-    if (childArray[i].props.isIconOnly) {
-      isIconOnly = true;
-      break;
+  let currentTabId;
+  let currentPaneId;
+  const tabs = tabData.map(tab => {
+    if (tab.isSelected) {
+      currentTabId = tabData.id;
+      currentPaneId = tabData.associatedPaneId;
     }
-  }
+    return <Tab {...tabData} />;
+  });
+
+  const tabBar = (
+    <TabBar
+      onTruncationChange={value => setIsLabelTruncated(value)}
+    >
+      {tabs}
+    </TabBar>
+  );
 
   return (
     <ContentContainer
       {...customProps}
       className={tabsClassNames}
       fill={fill}
-      header={React.cloneElement(tabBar, { onTruncationChange: value => setIsLabelTruncated(value), variant })}
+      header={tabBar}
     >
       <TabPane
-        id="panel id"
-        associatedTabId="active-tab-id"
+        key={currentPaneId}
+        id={currentPaneId}
+        associatedTabId={currentTabId}
         fill={fill}
-        hasScroll={hasScroll}
       >
         {children}
       </TabPane>

@@ -13,10 +13,6 @@ const propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * Tabs style. One of: "modular-centered", "modular-left-aligned", or "structural".
-   */
-  variant: PropTypes.oneOf(['modular-centered', 'modular-left-aligned', 'structural']).isRequired,
-  /**
    * Callback function when label truncation state has changed.
    * Parameters: 1. Bool indicating if any of the tab labels have been truncated.
    */
