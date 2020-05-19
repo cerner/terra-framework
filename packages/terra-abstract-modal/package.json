@@ -34,7 +34,8 @@
     "prop-types": "^15.5.8",
     "react-portal": "^4.1.2",
     "terra-visually-hidden-text": "^2.0.0",
-    "wicg-inert": "^3.0.0"
+    "wicg-inert": "^3.0.0",
+    "terra-theme-context": "^1.0.0"
   },
   "devDependencies": {
     "terra-icon": "^3.1.0"
