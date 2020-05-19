@@ -139,6 +139,7 @@ const ApplicationNavigation = ({
   // FocusTrap captures the initial value of the onDeactivate callback, so need a persistent ref to the isOpen value.
   const drawerMenuIsOpenRef = useRef(false);
   const closeMenuCallbackRef = useRef();
+  const renderedNavItemKey = useRef(activeNavigationItemKey);
 
   const [drawerMenuIsOpen, setDrawerMenuIsOpen] = useState(false);
   const [popupMenuIsOpen, setPopupMenuIsOpen] = useState(false);
@@ -193,15 +194,6 @@ const ApplicationNavigation = ({
     };
   }
 
-  function generateFocusMain(wrappedFunction) {
-    return (...args) => {
-      wrappedFunction(...args);
-      window.requestAnimationFrame(() => {
-        focusMainContent();
-      });
-    };
-  }
-
   function renderDrawerMenu() {
     if (!shouldRenderCompactNavigation(activeBreakpoint)) {
       return null;
@@ -223,7 +215,7 @@ const ApplicationNavigation = ({
           hero={hero}
           navigationItems={navigationItems}
           activeNavigationItemKey={activeNavigationItemKey}
-          onSelectNavigationItem={onSelectNavigationItem ? generateFocusMain(generateMenuClosingCallback(onSelectNavigationItem)) : undefined}
+          onSelectNavigationItem={onSelectNavigationItem ? generateMenuClosingCallback(onSelectNavigationItem) : undefined}
           onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
           onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
           onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
@@ -279,7 +271,7 @@ const ApplicationNavigation = ({
         activeNavigationItemKey={activeNavigationItemKey}
         userConfig={userConfig}
         hero={hero}
-        onSelectNavigationItem={generateFocusMain(onSelectNavigationItem)}
+        onSelectNavigationItem={onSelectNavigationItem}
         onSelectUtilityItem={onSelectUtilityItem}
         onSelectSettings={onSelectSettings}
         onSelectHelp={onSelectHelp}
@@ -298,7 +290,7 @@ const ApplicationNavigation = ({
         navigationItems={navigationItems}
         navigationRenderFunction={navigationRenderFunction}
         activeNavigationItemKey={activeNavigationItemKey}
-        onSelectNavigationItem={generateFocusMain(onSelectNavigationItem)}
+        onSelectNavigationItem={onSelectNavigationItem}
         userConfig={userConfig}
         onSelectSkipToContent={focusMainContent}
         notifications={notifications}
@@ -328,6 +320,16 @@ const ApplicationNavigation = ({
       closeMenuCallbackRef.current = undefined;
     }
   });
+  
+  useLayoutEffect(() => {
+    if (activeNavigationItemKey !== renderedNavItemKey.current) {
+      setTimeout(() => {
+        focusMainContent();
+      }, 0);
+      
+      prevNavItemKey.current = activeNavItemKey;
+    }
+  }, [activeNavigationItemKey, focusMainContent]);
 
   /**
    * This layout effect is used to manage the visibility of the drawer menu during
