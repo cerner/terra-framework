@@ -181,7 +181,7 @@ class Tabs extends React.Component {
         isIconOnly = true;
       }
       clonedPanes.push(React.cloneElement(child, {
-        className: classNames(cx({ 'is-active': isActive }, theme.className), child.props.className),
+        className: cx({ 'is-active': isActive }, child.props.className),
         onClick: this.wrapPaneOnClick(child),
         isActive,
       }));
@@ -233,7 +233,7 @@ class Tabs extends React.Component {
       >
         <div
           role="tabpanel"
-          className={classNames(cx('pane-content', { 'fill-parent': fill }, theme.className))}
+          className={cx('pane-content', { 'fill-parent': fill })}
         >
           {content}
         </div>

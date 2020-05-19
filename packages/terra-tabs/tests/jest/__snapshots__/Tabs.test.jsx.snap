@@ -54,7 +54,7 @@ exports[`Tabs Responsiveness correctly applies the theme context className 1`] =
             onTruncationChange={[Function]}
           >
             <TabPane
-              className="is-active orion-fusion-theme"
+              className="is-active"
               isActive={true}
               isDisabled={false}
               isIconOnly={false}
@@ -178,7 +178,7 @@ exports[`Tabs Responsiveness correctly applies the theme context className 1`] =
               className="scroll normalizer"
             >
               <div
-                className="pane-content orion-fusion-theme"
+                className="pane-content"
                 role="tabpanel"
               />
             </div>

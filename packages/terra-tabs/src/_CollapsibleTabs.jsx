@@ -268,7 +268,7 @@ class CollapsibleTabs extends React.Component {
     );
 
     const selectionBar = this.props.variant === 'modular-centered' || this.props.variant === 'modular-left-aligned' ? (
-      <div className={classNames(cx('selection-bar', theme.className))} ref={(node) => { if (node) { this.selectionBar = node; } }} />
+      <div className={cx('selection-bar')} ref={(node) => { if (node) { this.selectionBar = node; } }} />
     ) : null;
 
     return (
