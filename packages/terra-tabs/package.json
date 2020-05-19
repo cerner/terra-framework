@@ -34,7 +34,8 @@
     "terra-content-container": "^3.0.0",
     "terra-icon": "^3.1.0",
     "terra-menu": "^6.32.0",
-    "terra-responsive-element": "^5.0.0"
+    "terra-responsive-element": "^5.0.0",
+    "terra-theme-context": "^1.0.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

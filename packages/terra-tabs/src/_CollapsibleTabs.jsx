@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
 import * as KeyCode from 'keycode-js';
 import Menu from './_TabMenu';
 import styles from './Tabs.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -257,6 +259,7 @@ class CollapsibleTabs extends React.Component {
         hiddenChildren.push(child);
       }
     });
+    const theme = this.context;
 
     const menu = this.menuHidden ? null : (
       <Menu onKeyDown={this.handleMenuOnKeyDown} refCallback={this.setMenuRef} activeKey={this.props.activeKey}>
@@ -265,13 +268,13 @@ class CollapsibleTabs extends React.Component {
     );
 
     const selectionBar = this.props.variant === 'modular-centered' || this.props.variant === 'modular-left-aligned' ? (
-      <div className={cx('selection-bar')} ref={(node) => { if (node) { this.selectionBar = node; } }} />
+      <div className={classNames(cx('selection-bar', theme.className))} ref={(node) => { if (node) { this.selectionBar = node; } }} />
     ) : null;
 
     return (
       <div>
         <div
-          className={cx(['collapsible-tabs-container', { 'is-calculating': this.isCalculating }])}
+          className={classNames(cx('collapsible-tabs-container', { 'is-calculating': this.isCalculating }, theme.className))}
           ref={this.setContainer}
           tabIndex="0"
           onKeyDown={this.handleOnKeyDown}
@@ -287,5 +290,6 @@ class CollapsibleTabs extends React.Component {
 }
 
 CollapsibleTabs.propTypes = propTypes;
+CollapsibleTabs.contextType = ThemeContext;
 
 export default CollapsibleTabs;

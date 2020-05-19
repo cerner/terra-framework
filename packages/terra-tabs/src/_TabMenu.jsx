@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import * as KeyCode from 'keycode-js';
 import { FormattedMessage } from 'react-intl';
 import styles from './Tabs.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -105,6 +107,7 @@ class TabMenu extends React.Component {
         />
       ));
     });
+    const theme = this.context;
 
     return (
       <div
@@ -113,7 +116,7 @@ class TabMenu extends React.Component {
         ref={this.setTargetRef}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
-        className={cx(['tab-menu', { 'is-active': menuActive }])}
+        className={classNames(cx('tab-menu', { 'is-active': menuActive }, theme.className))}
         data-terra-tabs-menu
       >
         <FormattedMessage id="Terra.tabs.more">
@@ -135,5 +138,6 @@ class TabMenu extends React.Component {
 }
 
 TabMenu.propTypes = propTypes;
+TabMenu.contextType = ThemeContext;
 
 export default TabMenu;

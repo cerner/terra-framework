@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ContentContainer from 'terra-content-container';
 import ResponsiveElement from 'terra-responsive-element';
 import TabPane from './TabPane';
@@ -9,7 +11,7 @@ import CollapsedTabs from './_CollapsedTabs';
 import TabUtils from './TabUtils';
 import styles from './Tabs.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 /**
 NOTE: This is being commented out until discussions have been resolved around if modular tabs should be removed.
@@ -153,14 +155,17 @@ class Tabs extends React.Component {
       ...customProps
     } = this.props;
 
+    const theme = this.context;
+
     // NOTE: Hardcoding variant to structural until discussions have resolved around if we want modular tabs.
     const variant = 'structural';
-    const tabsClassNames = cx([
+    const tabsClassNames = classNames(cx(
       'tabs-container',
       { 'tab-fill': tabFill },
       variant,
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
 
     let content = null;
     let isIconOnly = false;
@@ -176,7 +181,7 @@ class Tabs extends React.Component {
         isIconOnly = true;
       }
       clonedPanes.push(React.cloneElement(child, {
-        className: cx([{ 'is-active': isActive }, child.props.className]),
+        className: classNames(cx({ 'is-active': isActive }, theme.className), child.props.className),
         onClick: this.wrapPaneOnClick(child),
         isActive,
       }));
@@ -228,7 +233,7 @@ class Tabs extends React.Component {
       >
         <div
           role="tabpanel"
-          className={cx(['pane-content', { 'fill-parent': fill }])}
+          className={classNames(cx('pane-content', { 'fill-parent': fill }, theme.className))}
         >
           {content}
         </div>
@@ -241,6 +246,7 @@ Tabs.propTypes = propTypes;
 Tabs.defaultProps = defaultProps;
 Tabs.Pane = TabPane;
 Tabs.Utils = TabUtils;
+Tabs.contextType = ThemeContext;
 /**
 Note: This is being commented out until discussions have been resolved around if we want modular tabs.
 Tabs.Opts = {
