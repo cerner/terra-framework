@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from './BrandFooter.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -95,10 +97,13 @@ const defaultProps = {
 const BrandFooter = ({
   links, sections, isVertical, contentLeft, contentRight, contentBottom, ...customProps
 }) => {
-  const BrandFooterClassNames = cx([
+  const theme = React.useContext(ThemeContext);
+  const BrandFooterClassNames = classNames(cx(
     'brand-footer',
+    theme.className,
+  ),
     customProps.className,
-  ]);
+  );
 
   let processedSections;
   if (links.length > 0 && sections.length === 0) {
@@ -122,26 +127,26 @@ const BrandFooter = ({
   let navigation;
   if (processedSections.length > 0) {
     navigation = (
-      <nav className={cx(['nav', isVertical ? 'nav-vertical' : 'nav-horizontal'])}>
+      <nav className={classNames(cx('nav', isVertical ? 'nav-vertical' : 'nav-horizontal', theme.className))}>
         {processedSections.map(linkGroup => (
-          <section className={cx('navigation-section')} key={linkGroup.id}>
+          <section className={classNames(cx('navigation-section', theme.className))} key={linkGroup.id}>
             { // When displaying vertically if one column has a header all columns are aligned as if they have a header
               ((containsASectionHeader && isVertical) || linkGroup.headerText) && (
-                <h3 className={cx('list-header')} key={linkGroup.headerText}>
+                <h3 className={classNames(cx('list-header', theme.className))} key={linkGroup.headerText}>
                   { // Insert a zero width space to act as a placeholder section header that doesn't display but takes vertical space
                     linkGroup.headerText || '\u200B'
                   }
                 </h3>
               )
             }
-            <ul className={cx('menu')}>
+            <ul className={classNames(cx('menu', theme.className))}>
               {linkGroup.links && linkGroup.links.map((link, index) => {
                 const spreadTarget = link.target !== undefined ? { target: link.target } : {};
-                const separator = (!isVertical && index >= 1) ? <span className={cx('separator')} aria-hidden>/</span> : '';
+                const separator = (!isVertical && index >= 1) ? <span className={classNames(cx('separator', theme.className))} aria-hidden>/</span> : '';
                 return (
-                  <li className={cx('list-item')} key={link.text + link.href}>
+                  <li className={classNames(cx('list-item', theme.className))} key={link.text + link.href}>
                     {separator}
-                    <a className={cx('link')} href={link.href} {...spreadTarget}>
+                    <a className={classNames(cx('link', theme.className))} href={link.href} {...spreadTarget}>
                       {link.text}
                     </a>
                   </li>
@@ -157,12 +162,12 @@ const BrandFooter = ({
   return (
     <footer role="contentinfo" {...customProps} className={BrandFooterClassNames}>
       {navigation}
-      <div className={cx('footer-content')}>
-        <div className={cx('content-top')}>
+      <div className={classNames(cx('footer-content', theme.className))}>
+        <div className={classNames(cx('content-top', theme.className))}>
           {contentLeft}
           {contentRight}
         </div>
-        <div className={cx('content-bottom')}>
+        <div className={classNames(cx('content-bottom', theme.className))}>
           {contentBottom}
         </div>
       </div>

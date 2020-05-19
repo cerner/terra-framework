@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BrandFooter correctly applies the theme context className 1`] = `
+<footer
+  className="brand-footer orion-fusion-theme"
+  role="contentinfo"
+>
+  <div
+    className="footer-content orion-fusion-theme"
+  >
+    <div
+      className="content-top orion-fusion-theme"
+    />
+    <div
+      className="content-bottom orion-fusion-theme"
+    />
+  </div>
+</footer>
+`;
+
 exports[`BrandFooter should render a default component 1`] = `
 <footer
   className="brand-footer"

@@ -1,3 +1,6 @@
+// Themes
+@import './orion-fusion-theme/BrandFooter.module';
+
 :local {
   .brand-footer {
     margin-bottom: var(--terra-brand-footer-margin-bottom, 0);
