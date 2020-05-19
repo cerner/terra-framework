@@ -1,3 +1,7 @@
+// Themes
+@import './orion-fusion-theme/AbstractModal.module';
+@import './clinical-lowlight-theme/AbstractModal.module';
+
 :local {
   .overlay {
     background-color: var(--terra-abstract-modal-overlay-background-color, rgba(0, 0, 0, 0.4));
