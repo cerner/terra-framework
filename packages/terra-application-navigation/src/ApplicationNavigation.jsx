@@ -139,7 +139,7 @@ const ApplicationNavigation = ({
   // FocusTrap captures the initial value of the onDeactivate callback, so need a persistent ref to the isOpen value.
   const drawerMenuIsOpenRef = useRef(false);
   const closeMenuCallbackRef = useRef();
-  const renderedNavItemKey = useRef(activeNavigationItemKey);
+  const renderedNavItemKeyRef = useRef(activeNavigationItemKey);
 
   const [drawerMenuIsOpen, setDrawerMenuIsOpen] = useState(false);
   const [popupMenuIsOpen, setPopupMenuIsOpen] = useState(false);
@@ -322,12 +322,12 @@ const ApplicationNavigation = ({
   });
   
   useLayoutEffect(() => {
-    if (activeNavigationItemKey !== renderedNavItemKey.current) {
+    if (activeNavigationItemKey !== renderedNavItemKeyRef.current) {
       setTimeout(() => {
         focusMainContent();
       }, 0);
       
-      prevNavItemKey.current = activeNavItemKey;
+      renderedNavItemKeyRef.current = activeNavigationItemKey;
     }
   }, [activeNavigationItemKey, focusMainContent]);
 
