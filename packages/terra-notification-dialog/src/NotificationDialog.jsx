@@ -65,7 +65,7 @@ const propTypes = {
    */
   custom: PropTypes.shape({
     /**
-     * The keyword used to represent & emphasis the intention of dialog message that that is being shown to the user.
+     * The keyword used to represent & emphasis the intention of dialog message that is being shown to the user.
      */
     signalWord: PropTypes.string,
     /**
