@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed `browser.execute` in tests to not use an arrow function since those are not supported by IE
 
 1.12.0 - (April 28, 2020)
 ------------------
