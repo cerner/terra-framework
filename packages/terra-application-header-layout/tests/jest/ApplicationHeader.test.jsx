@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 
 import ApplicationHeaderLayout from '../../src/ApplicationHeaderLayout';
 
@@ -152,7 +152,7 @@ describe('ApplicationHeaderLayout', () => {
       .mockReturnValue({
         className: 'clinical-lowlight-theme',
       });
-    const wrapper = shallowWithIntl(<ApplicationHeaderLayout />);
+    const wrapper = mountWithIntl(<ApplicationHeaderLayout />);
     expect(wrapper).toMatchSnapshot();
   });
 });
