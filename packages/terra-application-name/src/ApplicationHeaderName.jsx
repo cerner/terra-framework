@@ -33,8 +33,8 @@ const ApplicationHeaderName = ({
 
   return (
     <div {...customProps} className={ApplicationHeaderNameClassNames}>
-      {accessory && <div className={classNames(cx('accessory', theme.className))}>{accessory}</div>}
-      {title && <div className={classNames(cx('title', theme.className))}>{title}</div>}
+      {accessory && <div className={cx('accessory')}>{accessory}</div>}
+      {title && <div className={cx('title')}>{title}</div>}
     </div>
   );
 };
