@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+6.33.0 - (May 19, 2020)
+------------------
 ### Fixed
 * Fixed `browser.execute` in tests to not use an arrow function since those are not supported by IE
 

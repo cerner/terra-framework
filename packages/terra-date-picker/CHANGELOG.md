@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.37.0 - (May 19, 2020)
+------------------
 ### Changed
 * Update screenshot due to change in button hover.
 

@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.28.0 - (May 19, 2020)
+------------------
 ### Changed
 * Updated CSS specificity on the input fields to ensure that conflicts didn't arise with form input.
 
