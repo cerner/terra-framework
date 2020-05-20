@@ -115,11 +115,10 @@ class TabMenuDisplay extends React.Component {
     customProps.className);
     const attributes = { 'aria-current': isSelected };
 
-    const moreButtonClassNames = classNames(cx(
+    const moreButtonClassNames = cx(
       'tab-inner',
       { 'tab-inner-with-icon': hasIcon },
-      theme.className,
-    ));
+    );
 
     return (
       <div
@@ -134,8 +133,8 @@ class TabMenuDisplay extends React.Component {
         onBlur={this.handleOnBlur}
       >
         <div className={moreButtonClassNames}>
-          {hasIcon && <span className={classNames(cx('tab-menu-display-icon', theme.className))}>{icon}</span>}
-          <div className={classNames(cx('tab-menu-display-label', theme.className))}>
+          {hasIcon && <span className={cx('tab-menu-display-icon')}>{icon}</span>}
+          <div className={cx('tab-menu-display-label')}>
             <span>{text}</span>
             <IconCaretDown />
           </div>

@@ -138,11 +138,10 @@ class ApplicationTab extends Component {
     customProps.className);
     const tabAttr = { 'aria-current': isCurrent };
 
-    const childrenClassNames = classNames(cx(
+    const childrenClassNames = cx(
       'tab-inner',
       { 'tab-inner-with-icon': hasIcon },
-      theme.className,
-    ));
+    );
     const ChildElement = hasIcon ? 'div' : 'span';
 
     return (
@@ -159,8 +158,8 @@ class ApplicationTab extends Component {
         onBlur={this.handleOnBlur}
       >
         <ChildElement className={childrenClassNames}>
-          {hasIcon && <span className={classNames(cx('tab-icon', theme.className))}>{icon}</span>}
-          <span className={classNames(cx('tab-label', theme.className))}>{text}</span>
+          {hasIcon && <span className={cx('tab-icon')}>{icon}</span>}
+          <span className={cx('tab-label')}>{text}</span>
         </ChildElement>
       </button>
     );

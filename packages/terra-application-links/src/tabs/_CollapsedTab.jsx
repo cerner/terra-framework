@@ -148,9 +148,9 @@ class CollapseTab extends Component {
         onKeyUp={this.handleKeyUp}
         onBlur={this.handleOnBlur}
       >
-        <div className={classNames(cx('tab-inner', theme.className))}>
-          {icon && <span className={classNames(cx('collapsed-tab-icon', theme.className))}>{icon}</span>}
-          <span className={classNames(cx('tab-label', theme.className))}>{text}</span>
+        <div className={cx('tab-inner')}>
+          {icon && <span className={cx('collapsed-tab-icon')}>{icon}</span>}
+          <span className={cx('tab-label')}>{text}</span>
         </div>
       </li>
     );

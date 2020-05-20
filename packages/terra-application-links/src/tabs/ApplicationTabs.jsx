@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
 import { withRouter } from 'react-router-dom';
 import Tab from './_Tab';
@@ -178,16 +176,14 @@ class ApplicationTabs extends React.Component {
         collapsedTabs.push(<CollapsedTab {...tabProps} />);
       }
     });
-    const theme = this.context;
-    const tabClass = classNames(cx(
+    const tabClass = cx(
       'tabs-container',
       { 'is-calculating': this.isCalculating },
       alignment,
-      theme.className,
-    ));
+    );
 
     return (
-      <div {...customProps} className={classNames(cx('tabs-wrapper', theme.className))}>
+      <div {...customProps} className={cx('tabs-wrapper')}>
         <div
           className={tabClass}
           role="tablist"
@@ -197,7 +193,7 @@ class ApplicationTabs extends React.Component {
           <TabMenu location={location} isHidden={this.menuHidden} hasIcons={hasIcons}>
             {collapsedTabs}
           </TabMenu>
-          <div className={classNames(cx('divider-after-last-tab', theme.className))} />
+          <div className={cx('divider-after-last-tab')} />
         </div>
       </div>
     );
@@ -206,6 +202,5 @@ class ApplicationTabs extends React.Component {
 
 ApplicationTabs.propTypes = propTypes;
 ApplicationTabs.defaultProps = defaultProps;
-ApplicationTabs.contextType = ThemeContext;
 
 export default withRouter(ApplicationTabs);
