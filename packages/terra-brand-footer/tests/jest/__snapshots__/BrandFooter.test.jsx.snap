@@ -6,13 +6,13 @@ exports[`BrandFooter correctly applies the theme context className 1`] = `
   role="contentinfo"
 >
   <div
-    className="footer-content orion-fusion-theme"
+    className="footer-content"
   >
     <div
-      className="content-top orion-fusion-theme"
+      className="content-top"
     />
     <div
-      className="content-bottom orion-fusion-theme"
+      className="content-bottom"
     />
   </div>
 </footer>

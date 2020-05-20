@@ -102,8 +102,7 @@ const BrandFooter = ({
     'brand-footer',
     theme.className,
   ),
-    customProps.className,
-  );
+  customProps.className);
 
   let processedSections;
   if (links.length > 0 && sections.length === 0) {
@@ -127,26 +126,26 @@ const BrandFooter = ({
   let navigation;
   if (processedSections.length > 0) {
     navigation = (
-      <nav className={classNames(cx('nav', isVertical ? 'nav-vertical' : 'nav-horizontal', theme.className))}>
+      <nav className={cx('nav', isVertical ? 'nav-vertical' : 'nav-horizontal')}>
         {processedSections.map(linkGroup => (
-          <section className={classNames(cx('navigation-section', theme.className))} key={linkGroup.id}>
+          <section className={cx('navigation-section')} key={linkGroup.id}>
             { // When displaying vertically if one column has a header all columns are aligned as if they have a header
               ((containsASectionHeader && isVertical) || linkGroup.headerText) && (
-                <h3 className={classNames(cx('list-header', theme.className))} key={linkGroup.headerText}>
+                <h3 className={cx('list-header')} key={linkGroup.headerText}>
                   { // Insert a zero width space to act as a placeholder section header that doesn't display but takes vertical space
                     linkGroup.headerText || '\u200B'
                   }
                 </h3>
               )
             }
-            <ul className={classNames(cx('menu', theme.className))}>
+            <ul className={cx('menu')}>
               {linkGroup.links && linkGroup.links.map((link, index) => {
                 const spreadTarget = link.target !== undefined ? { target: link.target } : {};
-                const separator = (!isVertical && index >= 1) ? <span className={classNames(cx('separator', theme.className))} aria-hidden>/</span> : '';
+                const separator = (!isVertical && index >= 1) ? <span className={cx('separator')} aria-hidden>/</span> : '';
                 return (
-                  <li className={classNames(cx('list-item', theme.className))} key={link.text + link.href}>
+                  <li className={cx('list-item')} key={link.text + link.href}>
                     {separator}
-                    <a className={classNames(cx('link', theme.className))} href={link.href} {...spreadTarget}>
+                    <a className={cx('link')} href={link.href} {...spreadTarget}>
                       {link.text}
                     </a>
                   </li>
@@ -162,12 +161,12 @@ const BrandFooter = ({
   return (
     <footer role="contentinfo" {...customProps} className={BrandFooterClassNames}>
       {navigation}
-      <div className={classNames(cx('footer-content', theme.className))}>
-        <div className={classNames(cx('content-top', theme.className))}>
+      <div className={cx('footer-content')}>
+        <div className={cx('content-top')}>
           {contentLeft}
           {contentRight}
         </div>
-        <div className={classNames(cx('content-bottom', theme.className))}>
+        <div className={cx('content-bottom')}>
           {contentBottom}
         </div>
       </div>
