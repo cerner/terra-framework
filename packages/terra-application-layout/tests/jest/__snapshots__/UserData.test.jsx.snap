@@ -14,20 +14,20 @@ exports[`UserData correctly applies the theme context className 1`] = `
     className="user-data orion-fusion-theme"
   >
     <div
-      className="photo orion-fusion-theme"
+      className="photo"
     >
       Test Photo
     </div>
     <div
-      className="user-info orion-fusion-theme"
+      className="user-info"
     >
       <div
-        className="name orion-fusion-theme"
+        className="name"
       >
         Test, Person
       </div>
       <div
-        className="detail orion-fusion-theme"
+        className="detail"
       >
         Detail For Test
       </div>

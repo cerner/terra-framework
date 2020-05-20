@@ -1,13 +1,13 @@
 :local {
-  .clinical-lowlight-theme {
-    --terra-application-layout-navbar-background-color: #004c76;
+  .orion-fusion-theme {
+    --terra-application-layout-navbar-background-color: #0079be;
     --terra-application-layout-navbar-background-image: none;
     --terra-application-layout-navbar-before-background-color: transparent;
     --terra-application-layout-navbar-before-background-image: none;
     --terra-application-layout-navbar-border: none;
     --terra-application-layout-navbar-box-shadow: none;
-    --terra-application-layout-navbar-toggle-border-right: 1px solid #0f699f;
-    --terra-application-layout-navbar-toggle-box-shadow: inset -1px 0 0 0 #022b46;
+    --terra-application-layout-navbar-toggle-border-right: 1px solid rgba(255, 255, 255, 0.17);
+    --terra-application-layout-navbar-toggle-box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0.17);
     --terra-application-layout-navbar-height: 3.5714285714rem;
     --terra-application-layout-navbar-padding-left: 0;
     --terra-application-layout-navbar-padding-right: 0;
@@ -15,15 +15,15 @@
     --terra-application-layout-navbar-with-icons-height: 5.142857143rem;
     --terra-application-layout-navbar-toggle-width: 3.6428571429rem;
 
-    --terra-application-layout-menu-background-color: #222a2e;
-    --terra-application-layout-menu-header-background-color: #034370;
+    --terra-application-layout-menu-background-color: transparent;
+    --terra-application-layout-menu-header-background-color: #0079be;
     --terra-application-layout-menu-header-background-image: none;
 
     --terra-application-layout-toggle-button-background-color: transparent;
     --terra-application-layout-toggle-button-border: 0;
     --terra-application-layout-toggle-button-border-radius: 0;
     --terra-application-layout-toggle-button-box-shadow: none;
-    --terra-application-layout-toggle-button-color: #b2b5b6;
+    --terra-application-layout-toggle-button-color: #fff;
     --terra-application-layout-toggle-button-left: 0;
     --terra-application-layout-toggle-button-icon-height: 1rem;
     --terra-application-layout-toggle-button-icon-width: 1rem;
@@ -32,17 +32,17 @@
     --terra-application-layout-toggle-button-width: 100%;
 
 
-    --terra-application-layout-toggle-button-hover-background-color: #034370;
+    --terra-application-layout-toggle-button-hover-background-color: rgba(0, 0, 0, 0.15);
     --terra-application-layout-toggle-button-hover-border-color: transparent;
     --terra-application-layout-toggle-button-hover-border-radius: 0;
     --terra-application-layout-toggle-button-hover-box-shadow: none;
-    --terra-application-layout-toggle-button-hover-color: #b2b5b6;
+    --terra-application-layout-toggle-button-hover-color: #fff;
 
-    --terra-application-layout-toggle-button-focus-background-color: #034370;
+    --terra-application-layout-toggle-button-focus-background-color: rgba(0, 0, 0, 0.15);
     --terra-application-layout-toggle-button-focus-border-color: transparent;
     --terra-application-layout-toggle-button-focus-border-radius: 0;
     --terra-application-layout-toggle-button-focus-box-shadow: none;
-    --terra-application-layout-toggle-button-focus-color: #b2b5b6;
+    --terra-application-layout-toggle-button-focus-color: #fff;
 
     --terra-application-layout-user-data-photo-height: 3.571rem;
     --terra-application-layout-user-data-photo-margin-right: 0.5714rem;
