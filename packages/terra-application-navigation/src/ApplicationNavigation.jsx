@@ -320,13 +320,13 @@ const ApplicationNavigation = ({
       closeMenuCallbackRef.current = undefined;
     }
   });
-  
+
   useLayoutEffect(() => {
     if (activeNavigationItemKey !== renderedNavItemKeyRef.current) {
       setTimeout(() => {
         focusMainContent();
       }, 0);
-      
+
       renderedNavItemKeyRef.current = activeNavigationItemKey;
     }
   }, [activeNavigationItemKey, focusMainContent]);
