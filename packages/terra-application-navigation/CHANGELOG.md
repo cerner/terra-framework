@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Focus should be returned to latest selected key when navigation prompt is dismissed.
+* Focus should be passed to `Content` when navigation prompt is accepted.
 
 1.27.0 - (May 19, 2020)
 ------------------
