@@ -172,6 +172,7 @@ const ApplicationNavigation = ({
     };
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function focusMainContent() {
     if (mainContainerRef.current) {
       mainContainerRef.current.focus();
@@ -320,13 +321,13 @@ const ApplicationNavigation = ({
       closeMenuCallbackRef.current = undefined;
     }
   });
-  
+
   useLayoutEffect(() => {
     if (activeNavigationItemKey !== renderedNavItemKeyRef.current) {
       setTimeout(() => {
         focusMainContent();
       }, 0);
-      
+
       renderedNavItemKeyRef.current = activeNavigationItemKey;
     }
   }, [activeNavigationItemKey, focusMainContent]);
