@@ -139,7 +139,7 @@ import React, {
   ];
   
   // TODO: remove terra-application after it is incorporated into dev-site for themes or themes are co-located
-  const StatedDemo = () => {
+  const ApplicationNavigationPromptFocus = () => {
     const [activeKey, setActiveKey] = useState(navigationItems[0].key);
      /* eslint-disable no-alert */
      function ManageItemSelection(key) {
@@ -176,5 +176,5 @@ import React, {
     );
   };
   
-  export default StatedDemo;
+  export default ApplicationNavigationPromptFocus;
   
