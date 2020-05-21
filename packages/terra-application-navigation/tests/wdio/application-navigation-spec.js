@@ -326,16 +326,23 @@ Terra.describeViewports('ApplicationNavigation', ['large', 'huge', 'enormous'], 
       browser.click('[aria-label="Management"]');
     });
 
+    it('Dismiss alert', () => {
+      browser.alertDismiss();
+    });
+
+    Terra.it.validatesElement('1. Alert is dismissed');
+
     it('Accept alert', () => {
+      browser.click('[aria-label="Management"]');
       browser.alertAccept();
     });
 
-    Terra.it.validatesElement();
+    Terra.it.validatesElement('2. Alert is accepted');
 
     it('should focus content after a tab', () => {
       browser.keys('Tab');
     });
 
-    Terra.it.validatesElement('focus should be on content');
+    Terra.it.validatesElement('3. Content should have focus');
   });
 });
