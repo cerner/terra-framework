@@ -6,6 +6,7 @@ Unreleased
 ### Fixed
 * Focus should be returned to `Tab` key clicked when `Navigation prompt` is dismissed.
 * Focus should be passed to `Content` when `Navigation prompt` is accepted.
+* Update code to be able to remove eslint issue by using a callback
 
 1.27.0 - (May 19, 2020)
 ------------------
