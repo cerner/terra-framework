@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNamesBind from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import { withRouter } from 'react-router-dom';
+import ThemeContext from 'terra-theme-context';
 import Tab from './_Tab';
 import TabMenu from './_TabMenu';
 import CollapsedTab from './_CollapsedTab';
@@ -181,9 +182,10 @@ class ApplicationTabs extends React.Component {
       { 'is-calculating': this.isCalculating },
       alignment,
     );
+    const theme = this.context;
 
     return (
-      <div {...customProps} className={cx('tabs-wrapper')}>
+      <div {...customProps} className={cx('tabs-wrapper', theme.className)}>
         <div
           className={tabClass}
           role="tablist"
@@ -202,5 +204,6 @@ class ApplicationTabs extends React.Component {
 
 ApplicationTabs.propTypes = propTypes;
 ApplicationTabs.defaultProps = defaultProps;
+ApplicationTabs.contextType = ThemeContext;
 
 export default withRouter(ApplicationTabs);

@@ -1,13 +1,15 @@
 import React, { forwardRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ModalOverlay from './_ModalOverlay';
 import { hideModalDomUpdates, showModalDomUpdates } from './inertHelpers';
 import styles from './ModalContent.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const zIndexes = ['6000', '7000', '8000', '9000'];
 
@@ -99,13 +101,14 @@ const ModalContent = forwardRef((props, ref) => {
   if (zIndexes.indexOf(zIndex) >= 0) {
     zIndexLayer = zIndex;
   }
-
-  const modalClassName = cx([
+  const theme = React.useContext(ThemeContext);
+  const modalClassName = classNames(cx(
     'abstract-modal',
     { 'is-fullscreen': isFullscreen },
     `layer-${zIndexLayer}`,
-    classNameModal,
-  ]);
+    theme.className,
+  ),
+  classNameModal);
 
   // Delete the closePortal prop that comes from react-portal.
   delete customProps.closePortal;
