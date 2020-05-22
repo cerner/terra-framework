@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Menu from 'terra-menu';
-import ThemeContext from 'terra-theme-context';
 import styles from './CollapsibleMenuView.module.scss';
 
 const cx = classNames.bind(styles);
@@ -108,10 +107,9 @@ class CollapsibleMenu extends React.Component {
     } = this.props;
 
     const clonedButton = React.cloneElement(button, { onClick: this.wrapButtonClick(button) });
-    const theme = this.context;
 
     return (
-      <div className={cx('face-up-item', theme.className)} ref={this.setButtonNode}>
+      <div className={cx('face-up-item')} ref={this.setButtonNode}>
         <Menu
           {...customProps}
           onRequestClose={this.handleRequestClose}
@@ -135,6 +133,5 @@ CollapsibleMenu.ItemGroup = Menu.ItemGroup;
 CollapsibleMenu.Opts = {
   widths: Menu.Opts.widths,
 };
-CollapsibleMenu.contextType = ThemeContext;
 
 export default CollapsibleMenu;

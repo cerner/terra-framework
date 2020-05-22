@@ -1,9 +1,7 @@
 import React from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import classNamesBind from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
+import classNames from 'classnames/bind';
 import { FormattedMessage } from 'react-intl';
 import CollapsibleMenuViewItem from './CollapsibleMenuViewItem';
 import CollapsibleMenuViewItemGroup from './CollapsibleMenuViewItemGroup';
@@ -11,7 +9,7 @@ import CollapsibleMenuViewToggle from './CollapsibleMenuViewToggle';
 import CollapsibleMenuViewDivider from './CollapsibleMenuViewDivider';
 import styles from './CollapsibleMenuView.module.scss';
 
-const cx = classNamesBind.bind(styles);
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -133,19 +131,16 @@ class CollapsibleMenuView extends React.Component {
     if (this.hiddenStartIndex >= 0) {
       hiddenChildren = visibleChildren.splice(this.hiddenStartIndex);
     }
-    const theme = this.context;
 
-    const collapsibleMenuViewClassName = classNames(cx(
+    const collapsibleMenuViewClassName = cx([
       'collapsible-menu-view',
       { 'is-calculating': this.isCalculating },
-      theme.className,
-    ),
-    customProps.className);
-    const menuButtonClassName = cx(
+      customProps.className,
+    ]);
+    const menuButtonClassName = cx([
       'menu-button',
       { hidden: this.menuHidden },
-      theme.className,
-    );
+    ]);
 
     return (
       <div {...customProps} className={collapsibleMenuViewClassName} ref={this.setContainer}>
@@ -177,6 +172,5 @@ CollapsibleMenuView.Toggle = CollapsibleMenuViewToggle;
 CollapsibleMenuView.Divider = CollapsibleMenuViewDivider;
 
 CollapsibleMenuView.propTypes = propTypes;
-CollapsibleMenuView.contextType = ThemeContext;
 
 export default CollapsibleMenuView;
