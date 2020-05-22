@@ -11,25 +11,6 @@
     --terra-tabs-menu-arrow-margin-left: 0.5rem;
     --terra-tabs-menu-collapsed-justify-content: center;
 
-
-    --terra-tabs-modular-active-color: #000;
-    --terra-tabs-modular-background-color: #fff;
-    --terra-tabs-modular-background-image: linear-gradient(to bottom, #007ee0, #007ee0);
-    --terra-tabs-modular-color: #007ee0;
-    --terra-tabs-modular-focus-background-color: #fff;
-    --terra-tabs-modular-hover-background-image: linear-gradient(to bottom, #c8cacb, #c8cacb);
-    --terra-tabs-modular-hover-color: #000;
-    --terra-tabs-modular-tab-bar-border-bottom-width: 1px;
-    --terra-tabs-modular-extended-flex: 0 1 auto;
-    --terra-tabs-modular-background-position: 0 100%;
-    --terra-tabs-modular-background-size: 0 2px;
-    --terra-tabs-modular-active-background-size: 100% 2px;
-    --terra-tabs-modular-hover-background-size: 100% 2px;
-    --terra-tabs-modular-focus-border-radius: 0;
-    --terra-tabs-modular-active-focus-border-radius: 0;
-    --terra-tabs-modular-selection-bar-height: 0;
-    --terra-tabs-modular-selection-bar-transition: none;
-
     --terra-tabs-structural-background-color: #222a2e;
     --terra-tabs-structural-background-image: linear-gradient(to bottom, #007ee0, #007ee0);
     --terra-tabs-structural-background-position: 0 100%;
@@ -77,16 +58,8 @@
     --terra-tabs-active-focus-ltr-box-shadow: 0 0 1px 3px #4a90e2, 0 0 7px 4px #4a90e2;
     --terra-tabs-active-focus-rtl-box-shadow: 0 0 1px 3px #4a90e2, 0 0 7px 4px #4a90e2;
 
-    --terra-tabs-collapsed-modular-tab-bar-border-bottom-color: #dddedf;
-    --terra-tabs-collapsed-modular-tab-bar-border-bottom-width: 1px;
-
     --terra-tabs-keyboard-active-focus-ltr-box-shadow: 0 0 1px 3px #4a90e2, 0 0 7px 4px #4a90e2;
     --terra-tabs-keyboard-active-focus-rtl-box-shadow: 0 0 1px 3px #4a90e2, 0 0 7px 4px #4a90e2;
-
-    --terra-tabs-modular-active-focus-background-image: linear-gradient(to bottom, #007ee0, #007ee0);
-    --terra-tabs-modular-disabled-hover-color: #c8cacb;
-    --terra-tabs-modular-selection-bar-background-color: #fff;
-    --terra-tabs-modular-tab-bar-border-bottom-color: #dddedf;
 
     --terra-tabs-structural-active-background-image: linear-gradient(to bottom, #007ee0, #007ee0);
     --terra-tabs-structural-active-focus-background-image: linear-gradient(to bottom, #007ee0, #007ee0);
@@ -111,6 +84,34 @@
     --terra-tabs-structural-transition-duration: 0;
     --terra-tabs-structural-transition-timing-function: ease;
 
+    /* NOTE: This is being commented out until discussions have been resolved around if modular tabs should be removed.
+
+    --terra-tabs-modular-active-color: #000;
+    --terra-tabs-modular-background-color: #fff;
+    --terra-tabs-modular-background-image: linear-gradient(to bottom, #007ee0, #007ee0);
+    --terra-tabs-modular-color: #007ee0;
+    --terra-tabs-modular-focus-background-color: #fff;
+    --terra-tabs-modular-hover-background-image: linear-gradient(to bottom, #c8cacb, #c8cacb);
+    --terra-tabs-modular-hover-color: #000;
+    --terra-tabs-modular-tab-bar-border-bottom-width: 1px;
+    --terra-tabs-modular-extended-flex: 0 1 auto;
+    --terra-tabs-modular-background-position: 0 100%;
+    --terra-tabs-modular-background-size: 0 2px;
+    --terra-tabs-modular-active-background-size: 100% 2px;
+    --terra-tabs-modular-hover-background-size: 100% 2px;
+    --terra-tabs-modular-focus-border-radius: 0;
+    --terra-tabs-modular-active-focus-border-radius: 0;
+    --terra-tabs-modular-selection-bar-height: 0;
+    --terra-tabs-modular-selection-bar-transition: none;
+    --terra-tabs-collapsed-modular-tab-bar-border-bottom-color: #dddedf;
+    --terra-tabs-collapsed-modular-tab-bar-border-bottom-width: 1px;
+    --terra-tabs-modular-active-focus-background-image: linear-gradient(to bottom, #007ee0, #007ee0);
+    --terra-tabs-modular-disabled-hover-color: #c8cacb;
+    --terra-tabs-modular-selection-bar-background-color: #fff;
+    --terra-tabs-modular-tab-bar-border-bottom-color: #dddedf;
     --terra-tabs-modular-active-focus-background-color: #fff;
+    
+    */
+
   }
 }

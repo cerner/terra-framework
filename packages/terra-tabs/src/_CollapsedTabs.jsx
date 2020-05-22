@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import classNamesBind from 'classnames/bind';
+import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import Menu from './_TabMenu';
 import styles from './Tabs.module.scss';
 
-const cx = classNamesBind.bind(styles);
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -30,7 +29,7 @@ const CollapsedTabs = (props) => {
   props.onTruncationChange(false);
   const theme = React.useContext(ThemeContext);
   return (
-    <div className={classNames(cx('collapsed-tabs-container', theme.className))}>
+    <div className={cx('collapsed-tabs-container', theme.className)}>
       <Menu activeKey={props.activeKey}>
         {props.children}
       </Menu>

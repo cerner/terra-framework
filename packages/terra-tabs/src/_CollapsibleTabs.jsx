@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import classNamesBind from 'classnames/bind';
+import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
 import * as KeyCode from 'keycode-js';
 import Menu from './_TabMenu';
 import styles from './Tabs.module.scss';
 
-const cx = classNamesBind.bind(styles);
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -274,7 +273,7 @@ class CollapsibleTabs extends React.Component {
     return (
       <div>
         <div
-          className={classNames(cx('collapsible-tabs-container', { 'is-calculating': this.isCalculating }, theme.className))}
+          className={cx('collapsible-tabs-container', { 'is-calculating': this.isCalculating }, theme.className)}
           ref={this.setContainer}
           tabIndex="0"
           onKeyDown={this.handleOnKeyDown}
