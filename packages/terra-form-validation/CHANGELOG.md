@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+1.35.0
+------------------
+### Changed
+* Bumped terra-form-checkbox from v3 to v4
+
 1.34.0 - (May 19, 2020)
 ------------------
 ### Changed
