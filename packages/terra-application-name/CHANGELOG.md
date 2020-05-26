@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+3.29.0 - (May 26, 2020)
+------------------
+### Changed
+* Minor dependency updates
+
 3.28.0 - (April 28, 2020)
 ------------------
 ### Added
