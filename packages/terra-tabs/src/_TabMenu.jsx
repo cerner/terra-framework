@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
@@ -112,6 +113,7 @@ class TabMenu extends React.Component {
         />
       ));
     });
+    const theme = this.context;
 
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -121,7 +123,7 @@ class TabMenu extends React.Component {
         ref={this.setTargetRef}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
-        className={cx(['tab-menu', { 'is-active': menuActive }])}
+        className={cx('tab-menu', { 'is-active': menuActive }, theme.className)}
         data-terra-tabs-menu
       >
         <span>{menuToggleText}</span>
@@ -141,5 +143,6 @@ class TabMenu extends React.Component {
 
 TabMenu.contextTypes = contextTypes;
 TabMenu.propTypes = propTypes;
+TabMenu.contextType = ThemeContext;
 
 export default TabMenu;

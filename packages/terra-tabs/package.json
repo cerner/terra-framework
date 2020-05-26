@@ -1,7 +1,7 @@
 {
   "name": "terra-tabs",
   "main": "lib/index.js",
-  "version": "6.33.0",
+  "version": "6.35.0",
   "description": "Tabs are containers used to organize content. They allow for quick switching between groups of contextually related content. Content is divided into different containers and each container is viewable one at a time. The user can switch between containers by selecting the corresponding tab control. Tabs are meant for organizing content that doesn’t need to be compared or accessed simultaneously or if the user needs quick access through a group of contextually related content. Tabs are not intended for navigation.",
   "repository": {
     "type": "git",
@@ -33,8 +33,9 @@
     "resize-observer-polyfill": "^1.4.1",
     "terra-content-container": "^3.0.0",
     "terra-icon": "^3.1.0",
-    "terra-menu": "^6.32.0",
-    "terra-responsive-element": "^5.0.0"
+    "terra-menu": "^6.33.0",
+    "terra-responsive-element": "^5.0.0",
+    "terra-theme-context": "^1.0.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

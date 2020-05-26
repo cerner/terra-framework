@@ -1,5 +1,5 @@
 import React, {
-  useEffect, useLayoutEffect, useState, useRef,
+  useEffect, useLayoutEffect, useState, useRef, useCallback,
 } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -139,6 +139,7 @@ const ApplicationNavigation = ({
   // FocusTrap captures the initial value of the onDeactivate callback, so need a persistent ref to the isOpen value.
   const drawerMenuIsOpenRef = useRef(false);
   const closeMenuCallbackRef = useRef();
+  const renderedNavItemKeyRef = useRef(activeNavigationItemKey);
 
   const [drawerMenuIsOpen, setDrawerMenuIsOpen] = useState(false);
   const [popupMenuIsOpen, setPopupMenuIsOpen] = useState(false);
@@ -171,11 +172,11 @@ const ApplicationNavigation = ({
     };
   }
 
-  function focusMainContent() {
+  const focusMainContentCallback = useCallback(() => {
     if (mainContainerRef.current) {
       mainContainerRef.current.focus();
     }
-  }
+  }, [mainContainerRef]);
 
   function focusToggle() {
     const toggle = document.querySelector('[data-compact-header-toggle="true"]');
@@ -189,15 +190,6 @@ const ApplicationNavigation = ({
       wrappedFunction(...args);
       window.requestAnimationFrame(() => {
         focusToggle();
-      });
-    };
-  }
-
-  function generateFocusMain(wrappedFunction) {
-    return (...args) => {
-      wrappedFunction(...args);
-      window.requestAnimationFrame(() => {
-        focusMainContent();
       });
     };
   }
@@ -223,7 +215,7 @@ const ApplicationNavigation = ({
           hero={hero}
           navigationItems={navigationItems}
           activeNavigationItemKey={activeNavigationItemKey}
-          onSelectNavigationItem={onSelectNavigationItem ? generateFocusMain(generateMenuClosingCallback(onSelectNavigationItem)) : undefined}
+          onSelectNavigationItem={onSelectNavigationItem ? generateMenuClosingCallback(onSelectNavigationItem) : undefined}
           onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
           onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
           onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
@@ -272,14 +264,14 @@ const ApplicationNavigation = ({
         onSelectExtensionItem={onSelectExtensionItem}
         navigationItems={navigationItems}
         onSelectMenuButton={() => updateDrawerIsOpen(true)}
-        onSelectSkipToContent={focusMainContent}
+        onSelectSkipToContent={focusMainContentCallback}
         notifications={notifications}
         isDrawerMenuOpen={drawerMenuIsOpen}
         utilityItems={utilityItems}
         activeNavigationItemKey={activeNavigationItemKey}
         userConfig={userConfig}
         hero={hero}
-        onSelectNavigationItem={generateFocusMain(onSelectNavigationItem)}
+        onSelectNavigationItem={onSelectNavigationItem}
         onSelectUtilityItem={onSelectUtilityItem}
         onSelectSettings={onSelectSettings}
         onSelectHelp={onSelectHelp}
@@ -298,9 +290,9 @@ const ApplicationNavigation = ({
         navigationItems={navigationItems}
         navigationRenderFunction={navigationRenderFunction}
         activeNavigationItemKey={activeNavigationItemKey}
-        onSelectNavigationItem={generateFocusMain(onSelectNavigationItem)}
+        onSelectNavigationItem={onSelectNavigationItem}
         userConfig={userConfig}
-        onSelectSkipToContent={focusMainContent}
+        onSelectSkipToContent={focusMainContentCallback}
         notifications={notifications}
         utilityButtonPopupAnchorRef={utilityButtonPopupAnchorRef}
         onSelectUtilityButton={() => setPopupMenuIsOpen(true)}
@@ -328,6 +320,18 @@ const ApplicationNavigation = ({
       closeMenuCallbackRef.current = undefined;
     }
   });
+
+  useLayoutEffect(() => {
+    if (activeNavigationItemKey !== renderedNavItemKeyRef.current) {
+      // The timeout is necessary due to the AbstractModal's similar focus logic.
+      // Without the timeout, this executes too quickly.
+      setTimeout(() => {
+        focusMainContentCallback();
+      }, 0);
+
+      renderedNavItemKeyRef.current = activeNavigationItemKey;
+    }
+  }, [activeNavigationItemKey, focusMainContentCallback]);
 
   /**
    * This layout effect is used to manage the visibility of the drawer menu during

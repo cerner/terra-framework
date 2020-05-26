@@ -15,7 +15,7 @@ describe('ThemeContextProvider', () => {
 
     it('should render with a theme', () => {
       const wrapper = shallow((
-        <ThemeContextProvider theme={{ className: 'test-theme' }}>
+        <ThemeContextProvider theme={{ name: 'test-theme', className: 'test-theme-class' }}>
           <div />
         </ThemeContextProvider>
       ));

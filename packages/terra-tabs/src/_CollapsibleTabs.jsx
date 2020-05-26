@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
 import Menu from './_TabMenu';
 import styles from './Tabs.module.scss';
@@ -155,6 +156,7 @@ class CollapsibleTabs extends React.Component {
         hiddenChildren.push(child);
       }
     });
+    const theme = this.context;
 
     const menu = this.menuHidden ? null : (
       <Menu onKeyDown={this.handleMenuOnKeyDown} refCallback={this.setMenuRef}>
@@ -169,7 +171,7 @@ class CollapsibleTabs extends React.Component {
     return (
       <div>
         <div
-          className={cx(['collapsible-tabs-container', { 'is-calculating': this.isCalculating }])}
+          className={cx('collapsible-tabs-container', { 'is-calculating': this.isCalculating }, theme.className)}
           ref={this.setContainer}
           role="tablist"
         >
@@ -183,5 +185,6 @@ class CollapsibleTabs extends React.Component {
 }
 
 CollapsibleTabs.propTypes = propTypes;
+CollapsibleTabs.contextType = ThemeContext;
 
 export default CollapsibleTabs;

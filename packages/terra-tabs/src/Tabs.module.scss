@@ -1,4 +1,7 @@
 @import './StructuralTabs.module';
+// Themes
+@import './clinical-lowlight-theme/Tabs.module';
+@import './orion-fusion-theme/Tabs.module';
 
 :local {
   .tabs-container {
