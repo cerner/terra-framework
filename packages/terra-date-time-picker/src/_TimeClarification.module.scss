@@ -1,4 +1,9 @@
 /* stylelint-disable selector-max-compound-selectors, max-nesting-depth */
+
+// Themes
+@import './clinical-lowlight-theme/DateTimePicker.module';
+@import './orion-fusion-theme/DateTimePicker.module';
+
 :local {
   .time-clarification {
     background-color: var(--terra-date-time-picker-clarification-modal-background-color, #fff);
