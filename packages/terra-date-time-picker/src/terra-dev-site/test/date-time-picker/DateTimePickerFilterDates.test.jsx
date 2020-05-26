@@ -5,7 +5,7 @@ import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTem
 const isWeekdayOrToday = (date) => {
   const momentDate = moment(date);
 
-  //Ensure if today is a weekend that the Today button doesn't get disabled and causes the screenshot to mismatch.
+  // Ensure if today is a weekend that the Today button doesn't get disabled and causes the screenshot to mismatch.
   if (momentDate.isSame(moment(), 'day')) {
     return true;
   }

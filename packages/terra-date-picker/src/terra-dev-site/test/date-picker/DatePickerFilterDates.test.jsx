@@ -7,10 +7,9 @@ import styles from './common/DatePicker.test.module.scss';
 const cx = classNames.bind(styles);
 
 const isWeekdayOrToday = (date) => {
-  debugger;
   const momentDate = moment(date);
-  
-  //Ensure if today is a weekend that the Today button doesn't get disabled and causes the screenshot to mismatch.
+
+  // Ensure if today is a weekend that the Today button doesn't get disabled and causes the screenshot to mismatch.
   if (momentDate.isSame(moment(), 'day')) {
     return true;
   }
