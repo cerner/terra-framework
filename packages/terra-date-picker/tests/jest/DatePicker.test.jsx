@@ -1,5 +1,6 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import moment from 'moment';
 import DatePicker from '../../lib/DatePicker';
@@ -139,4 +140,13 @@ it('should render a modal date picker', () => {
   expect(datePicker.find('.react-datepicker-portal')).toHaveLength(1);
 
   triggerDomResize(defaultDomWidth);
+});
+
+it('correctly applies the theme context className', () => {
+  const date = mountWithIntl(
+    <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+      <DatePicker name="date-input" utcOffset={0} />
+    </ThemeContextProvider>,
+  );
+  expect(date).toMatchSnapshot();
 });
