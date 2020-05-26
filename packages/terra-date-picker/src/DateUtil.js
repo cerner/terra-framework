@@ -207,8 +207,49 @@ class DateUtil {
     }
     return DateUtil.formatMomentDate(momentDate, format);
   }
+
+  /**
+   * Ensures the maxDate is before DateUtil.MAX_DATE.
+   * @param {String} maxDate The maxDate prop
+   * @return The maxDate prop if before DateUtil.MAX_DATE. Otherwise return DateUtil.MAX_DATE.
+   */
+  static getMaxDate(maxDate) {
+    if (DateUtil.isBetweenMinMaxDate(maxDate)) {
+      return maxDate;
+    }
+
+    return DateUtil.MAX_DATE;
+  }
+
+  /**
+   * Ensures the minDate is after the DateUtil.MIN_DATE.
+   * @param {String} minDate The minDate prop
+   * @return The minDate prop if after DateUtil.MIN_DATE. Otherwise return DateUtil.MIN_DATE.
+   */
+  static getMinDate(minDate) {
+    if (DateUtil.isBetweenMinMaxDate(minDate)) {
+      return minDate;
+    }
+
+    return DateUtil.MIN_DATE;
+  }
+
+  /**
+   * Check if the date is between DateUtil.MIN_DATE and DateUtil.MAX_DATE.
+   * @param {String} date The date to check. Must be in the 'YYYY-MM-DD' format.
+   * @return True if date is between DateUtil.MIN_DATE and DateUtil.MAX_DATE. Otherwise return false.
+   */
+  static isBetweenMinMaxDate(date) {
+    const momentDate = moment(date);
+    const minDate = moment(DateUtil.MIN_DATE);
+    const maxDate = moment(DateUtil.MAX_DATE);
+
+    return momentDate.isValid() && momentDate.isSameOrAfter(minDate) && momentDate.isSameOrBefore(maxDate);
+  }
 }
 
 DateUtil.ISO_EXTENDED_DATE_FORMAT = 'YYYY-MM-DD';
+DateUtil.MIN_DATE = '1900-01-01';
+DateUtil.MAX_DATE = '2100-12-31';
 
 export default DateUtil;

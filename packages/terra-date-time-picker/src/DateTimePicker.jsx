@@ -54,12 +54,12 @@ const propTypes = {
   */
   isInvalidMeridiem: PropTypes.bool,
   /**
-   * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format.
+   * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format. Must be before `12/31/2100`
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
   maxDate: PropTypes.string,
   /**
-   * An ISO 8601 string representation of the minimum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format.
+   * An ISO 8601 string representation of the minimum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format. Must be after `01/01/1900`
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
   minDate: PropTypes.string,
@@ -132,8 +132,8 @@ const defaultProps = {
   isIncomplete: false,
   isInvalid: false,
   isInvalidMeridiem: false,
-  maxDate: undefined,
-  minDate: undefined,
+  maxDate: '2100-12-31',
+  minDate: '1900-01-01',
   onBlur: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
@@ -499,7 +499,7 @@ class DateTimePicker extends React.Component {
   isDateTimeAcceptable(newDateTime) {
     let isAcceptable = true;
 
-    if (DateUtil.isDateOutOfRange(newDateTime, DateTimeUtils.createSafeDate(this.props.minDate), DateTimeUtils.createSafeDate(this.props.maxDate))) {
+    if (DateUtil.isDateOutOfRange(newDateTime, DateTimeUtils.createSafeDate(DateUtil.getMinDate(this.props.minDate)), DateTimeUtils.createSafeDate(DateUtil.getMaxDate(this.props.maxDate)))) {
       isAcceptable = false;
     }
 
@@ -654,8 +654,8 @@ class DateTimePicker extends React.Component {
             filterDate={filterDate}
             includeDates={includeDates}
             inputAttributes={dateInputAttributes}
-            maxDate={maxDate}
-            minDate={minDate}
+            maxDate={DateUtil.getMaxDate(maxDate)}
+            minDate={DateUtil.getMinDate(minDate)}
             selectedDate={dateValue}
             name="input"
             disabled={disabled}

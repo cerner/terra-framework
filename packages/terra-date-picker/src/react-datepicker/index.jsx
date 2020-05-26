@@ -484,6 +484,7 @@ class DatePicker extends React.Component {
   }
 
   handleChange = (event) => {
+    debugger;
     if (this.props.onChangeRaw) {
       this.props.onChangeRaw(event)
       if (event.isDefaultPrevented()) {

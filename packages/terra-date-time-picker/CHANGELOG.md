@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update test and screenshots to account for min/max changes in DatePicker.
 
 4.37.0 - (May 19, 2020)
 ------------------

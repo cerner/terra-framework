@@ -67,7 +67,13 @@ export function cloneDate (date) {
 
 export function parseDate (value, { dateFormat, locale }) {
   const m = moment(value, dateFormat, locale || moment.locale(), true)
-  return m.isValid() ? m : null
+
+  // Only support dates between 01/01/1900 and 12/31/2010 because the year dropdown only allows 1900 - 2100.
+  if (m.isValid() && m.isAfter('1900-01-01') && m.isBefore('2100-12-31')) {
+    return m;
+  }
+
+  return null;
 }
 
 // ** Date "Reflection" **

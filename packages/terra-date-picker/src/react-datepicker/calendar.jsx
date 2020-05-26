@@ -32,7 +32,8 @@ import {
   allDaysDisabledBefore,
   allDaysDisabledAfter,
   getEffectiveMinDate,
-  getEffectiveMaxDate
+  getEffectiveMaxDate,
+  isDayDisabled
 } from './date_utils'
 
 const cx = classNames.bind(styles);
@@ -580,12 +581,15 @@ export default class Calendar extends React.Component {
     if (!this.props.todayButton) {
       return
     }
+
+    const today = getStartOfDate(now(this.props.utcOffset));
     return (
       <button
         className={cx('react-datepicker-today-button')}
-        onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}
+        onClick={e => this.props.onSelect(today, e)}
         onKeyDown={this.handleTodayBtnKeyDown}
         ref={this.todayBtnRef}
+        disabled={isDayDisabled(today, this.props)}
       >
         {this.props.todayButton}
       </button>

@@ -124,6 +124,7 @@ class DatePickerInput extends React.Component {
   }
 
   handleOnChange(event) {
+    debugger;
     if (!DateUtil.validDateInput(event.target.value)) {
       return;
     }

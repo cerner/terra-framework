@@ -6,8 +6,14 @@ import styles from './common/DatePicker.test.module.scss';
 
 const cx = classNames.bind(styles);
 
-const isWeekday = (date) => {
+const isWeekdayOrToday = (date) => {
+  debugger;
   const momentDate = moment(date);
+  
+  //Ensure if today is a weekend that the Today button doesn't get disabled and causes the screenshot to mismatch.
+  if (momentDate.isSame(moment(), 'day')) {
+    return true;
+  }
 
   if (momentDate && momentDate.isValid()) {
     const day = momentDate.day();
@@ -21,7 +27,7 @@ const DatePickerFilterDates = () => (
   <div className={cx('content-wrapper')}>
     <DatePicker
       name="date-input"
-      filterDate={isWeekday}
+      filterDate={isWeekdayOrToday}
     />
   </div>
 );
