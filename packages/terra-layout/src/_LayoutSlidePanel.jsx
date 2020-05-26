@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import Overlay from 'terra-overlay';
 import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
 import tabbable from 'tabbable';
 import styles from './LayoutSlidePanel.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -135,21 +137,24 @@ class LayoutSlidePanel extends React.Component {
     const isOverlay = compactSize ? true : panelBehavior === 'overlay';
     const isOverlayOpen = isOpen && isOverlay;
     const overlayBackground = compactSize ? 'dark' : 'clear';
+    const theme = this.context;
 
-    const slidePanelClassNames = cx([
+    const slidePanelClassNames = classNames(cx(
       'layout-slide-panel',
       { 'is-open': isOpen },
       { 'is-overlay': isOverlay },
       { 'is-squish': !isOverlay },
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
 
-    const panelClasses = cx([
+    const panelClasses = cx(
       'panel',
       { 'is-tiny': isTiny },
       { 'is-small': isSmall },
       { 'is-animated': isAnimated && isOverlay && !!panelContent },
-    ]);
+      theme.className,
+    );
 
     return (
       <div
@@ -172,5 +177,6 @@ class LayoutSlidePanel extends React.Component {
 
 LayoutSlidePanel.propTypes = propTypes;
 LayoutSlidePanel.defaultProps = defaultProps;
+LayoutSlidePanel.contextType = ThemeContext;
 
 export default LayoutSlidePanel;
