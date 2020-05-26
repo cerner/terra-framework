@@ -1,5 +1,5 @@
 import React, {
-  useEffect, useLayoutEffect, useState, useRef,
+  useEffect, useLayoutEffect, useState, useRef, useCallback,
 } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -172,12 +172,11 @@ const ApplicationNavigation = ({
     };
   }
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  function focusMainContent() {
+  const focusMainContentCallback = useCallback(() => {
     if (mainContainerRef.current) {
       mainContainerRef.current.focus();
     }
-  }
+  }, [mainContainerRef]);
 
   function focusToggle() {
     const toggle = document.querySelector('[data-compact-header-toggle="true"]');
@@ -265,7 +264,7 @@ const ApplicationNavigation = ({
         onSelectExtensionItem={onSelectExtensionItem}
         navigationItems={navigationItems}
         onSelectMenuButton={() => updateDrawerIsOpen(true)}
-        onSelectSkipToContent={focusMainContent}
+        onSelectSkipToContent={focusMainContentCallback}
         notifications={notifications}
         isDrawerMenuOpen={drawerMenuIsOpen}
         utilityItems={utilityItems}
@@ -293,7 +292,7 @@ const ApplicationNavigation = ({
         activeNavigationItemKey={activeNavigationItemKey}
         onSelectNavigationItem={onSelectNavigationItem}
         userConfig={userConfig}
-        onSelectSkipToContent={focusMainContent}
+        onSelectSkipToContent={focusMainContentCallback}
         notifications={notifications}
         utilityButtonPopupAnchorRef={utilityButtonPopupAnchorRef}
         onSelectUtilityButton={() => setPopupMenuIsOpen(true)}
@@ -324,13 +323,15 @@ const ApplicationNavigation = ({
 
   useLayoutEffect(() => {
     if (activeNavigationItemKey !== renderedNavItemKeyRef.current) {
+      // The timeout is necessary due to the AbstractModal's similar focus logic.
+      // Without the timeout, this executes too quickly.
       setTimeout(() => {
-        focusMainContent();
+        focusMainContentCallback();
       }, 0);
 
       renderedNavItemKeyRef.current = activeNavigationItemKey;
     }
-  }, [activeNavigationItemKey, focusMainContent]);
+  }, [activeNavigationItemKey, focusMainContentCallback]);
 
   /**
    * This layout effect is used to manage the visibility of the drawer menu during
