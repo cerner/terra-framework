@@ -369,4 +369,13 @@ describe('BrandFooter', () => {
     const wrapper = shallow(defaultRender);
     expect(wrapper.prop('className')).toContain('brand-footer');
   });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'orion-fusion-theme',
+      });
+    const wrapper = shallow(<BrandFooter />);
+    expect(wrapper).toMatchSnapshot();
+  });
 });

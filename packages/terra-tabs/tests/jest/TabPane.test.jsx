@@ -31,4 +31,13 @@ describe('TabPane', () => {
     const wrapper = shallow(<Pane label="Default" className="customClass" />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'orion-fusion-theme',
+      });
+    const wrapper = shallow(<Pane label="Default" className="customClass" />);
+    expect(wrapper).toMatchSnapshot();
+  });
 });
