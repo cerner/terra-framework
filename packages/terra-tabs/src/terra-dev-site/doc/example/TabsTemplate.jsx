@@ -30,63 +30,71 @@ const TabsTemplate = (props) => {
     setCurrentTab(metaData.key);
   }
 
-  const tabBar = (
-    <TabBar>
-      <Tab
-        label="Tab with label"
-        key="LabelTab"
-        onSelect={handleSelect}
-        metaData={{ key: 'label' }}
-        isSelected={currentTab === 'label'}
-      />
-      <Tab
-        label="Tab with icon"
-        icon={<IconBriefcase />}
-        key="IconTab"
-        onSelect={handleSelect}
-        metaData={{ key: 'icon' }}
-        isSelected={currentTab === 'icon'}
-      />
-      <Tab
-        customDisplay={(
-          <div className={cx('custom-display')}>
-            Custom display
-          </div>
-        )}
-        label="Custom display"
-        key="CustomTab"
-        onSelect={handleSelect}
-        metaData={{ key: 'custom' }}
-        isSelected={currentTab === 'custom'}
-      />
-      <Tab
-        label="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        key="longLabel"
-        onSelect={handleSelect}
-        metaData={{ key: 'long' }}
-        isSelected={currentTab === 'long'}
-      />
-      <Tab
-        label="Last Tab"
-        key="lastTab"
-        onSelect={handleSelect}
-        metaData={{ key: 'last' }}
-        isSelected={currentTab === 'last'}
-      />
-      <Tab
-        label="Disabled Tab"
-        icon={<IconSearch />}
-        isDisabled
-        key="DisabledTab"
-      />
-    </TabBar>
-  );
-
   return (
     <div className={cx('content-wrapper')}>
       <Tabs
         tabFill={props.tabFill}
-        tabBar={tabBar}
+        tabData={[
+          {
+            id: 'tab-label',
+            associatedPaneId: 'tab-label-pane',
+            label: 'Tab with label',
+            key: 'LabelTab',
+            onSelect: handleSelect,
+            metaData: { key: 'label' },
+            isSelected: currentTab === 'label',
+          },
+          {
+            id: 'tab-icon',
+            associatedPaneId: 'tab-icon-pane',
+            label: 'Tab with icon',
+            icon: <IconBriefcase />,
+            key: 'IconTab',
+            onSelect: handleSelect,
+            metaData: { key: 'icon' },
+            isSelected: currentTab === 'icon',
+          },
+          {
+            id: 'tab-custom',
+            associatedPaneId: 'tab-custom-pane',
+            customDisplay: (
+              <div className={cx('custom-display')}>
+                Custom display
+              </div>
+            ),
+            label: 'Custom display',
+            key: 'CustomTab',
+            onSelect: handleSelect,
+            metaData: { key: 'custom' },
+            isSelected: currentTab === 'custom',
+          },
+          {
+            id: 'tab-lorem',
+            associatedPaneId: 'tab-lorem-pane',
+            label: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            key: 'longLabel',
+            onSelect: handleSelect,
+            metaData: { key: 'long' },
+            isSelected: currentTab === 'long',
+          },
+          {
+            id: 'tab-last',
+            associatedPaneId: 'tab-last-pane',
+            label: 'Last Tab',
+            key: 'lastTab',
+            onSelect: handleSelect,
+            metaData: { key: 'last' },
+            isSelected: currentTab === 'last',
+          },
+          {
+            id: 'tab-disabled',
+            associatedPaneId: 'tab-disabled-pane',
+            label: 'Disabled Tab',
+            icon: <IconSearch />,
+            isDisabled: true,
+            key: 'DisabledTab"',
+          },
+        ]}
       >
         <TabContentTemplate label={textMapping[currentTab]} />
       </Tabs>

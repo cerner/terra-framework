@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import { injectIntl, intlShape } from 'react-intl';
 import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
@@ -20,15 +21,11 @@ const propTypes = {
    * Ref callback for menu toggle.
    */
   refCallback: PropTypes.func,
-};
-
-const contextTypes = {
-  /* eslint-disable consistent-return */
-  intl: (context) => {
-    if (context.intl === undefined) {
-      return new Error('Component is internationalized, and must be wrapped in terra-base');
-    }
-  },
+  /**
+   * @private
+   * Object containing intl APIs.
+   */
+  intl: intlShape.isRequired,
 };
 
 class TabMenu extends React.Component {
@@ -88,18 +85,21 @@ class TabMenu extends React.Component {
   }
 
   render() {
-    const { intl } = this.context;
+    const {
+      intl,
+      children,
+    } = this.props;
     const menuItems = [];
     let menuToggleText = intl.formatMessage({ id: 'Terra.tabs.more' });
     let menuActive = false;
 
-    React.Children.forEach(this.props.children, (child) => {
+    React.Children.forEach(children, (child) => {
       const {
         label, customDisplay, icon, isIconOnly, isSelected, metaData, ...otherProps
       } = child.props;
 
       if (isSelected) {
-        menuToggleText = label;
+        // menuToggleText = label;
         menuActive = true;
       }
       menuItems.push((
@@ -141,8 +141,6 @@ class TabMenu extends React.Component {
   }
 }
 
-TabMenu.contextTypes = contextTypes;
 TabMenu.propTypes = propTypes;
-TabMenu.contextType = ThemeContext;
 
-export default TabMenu;
+export default injectIntl(TabMenu);

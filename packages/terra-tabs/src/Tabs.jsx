@@ -77,6 +77,7 @@ const defaultProps = {
 };
 
 const Tabs = ({
+  children,
   tabFill,
   fill,
   tabData,
@@ -95,10 +96,10 @@ const Tabs = ({
   let currentPaneId;
   const tabs = tabData.map(tab => {
     if (tab.isSelected) {
-      currentTabId = tabData.id;
-      currentPaneId = tabData.associatedPaneId;
+      currentTabId = tab.id;
+      currentPaneId = tab.associatedPaneId;
     }
-    return <Tab {...tabData} />;
+    return <Tab {...tab} />;
   });
 
   const tabBar = (

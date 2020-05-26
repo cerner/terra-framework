@@ -42,6 +42,10 @@ const propTypes = {
    */
   isSelected: PropTypes.bool,
   /**
+   * Indicates if the tab is hidden by the rollup.
+   */
+  isHidden: PropTypes.bool,
+  /**
    * Callback function triggering on selection.
    */
   onSelect: PropTypes.func,
@@ -55,15 +59,19 @@ const defaultProps = {
   isDisabled: false,
   isIconOnly: false,
   isSelected: false,
+  isHidden: false,
 };
 
 const Tab = ({
+  id,
+  associatedPaneId,
   icon,
   label,
   customDisplay,
   isDisabled,
   isIconOnly,
   isSelected,
+  isHidden,
   onSelect,
   metaData,
   ...customProps
@@ -75,6 +83,7 @@ const Tab = ({
     { 'is-icon-only': isIconOnly },
     { 'is-text-only': !icon },
     { 'is-active': isSelected },
+    { 'is-hidden': isHidden },
     attributes.className,
   ]);
 
@@ -107,6 +116,8 @@ const Tab = ({
     <div
       {...customProps}
       {...attributes}
+      id={id}
+      aria-controls={associatedPaneId}
       role="tab"
       className={paneClassNames}
     >

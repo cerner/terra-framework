@@ -68,6 +68,17 @@
       padding: var(--terra-tabs-text-only-padding, 0.643rem 1.071rem);
     }
 
+    &.is-hidden {
+      border: 0;
+      flex: 0 0 auto;
+      margin: -1px;
+      padding: 0;
+      min-width: 0;
+      width: 1px;
+      outline: none;
+      overflow: hidden;
+    }
+
     .label:nth-child(2) {
       margin-left: var(--terra-tabs-label-next-to-icon-margin-left, 0.357rem);
     }

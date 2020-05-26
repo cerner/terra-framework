@@ -22,46 +22,52 @@ const IconOnlyTabs = () => {
   return (
     <div className={cx('content-wrapper')}>
       <Tabs
-        tabBar={(
-          <TabBar>
-            <Tab
-              label="Search"
-              onSelect={handleSelect}
-              metaData={{ key: 'Search' }}
-              icon={<IconSearch />}
-              isIconOnly
-              key="Search"
-              isSelected={currentTab === 'Search'}
-            />
-            <Tab
-              label="Briefcase"
-              onSelect={handleSelect}
-              metaData={{ key: 'Briefcase' }}
-              icon={<IconBriefcase />}
-              isIconOnly
-              key="Briefcase"
-              isSelected={currentTab === 'Briefcase'}
-            />
-            <Tab
-              label="Bookmark"
-              onSelect={handleSelect}
-              metaData={{ key: 'Bookmark' }}
-              icon={<IconBookmark />}
-              isIconOnly
-              key="Bookmark"
-              isSelected={currentTab === 'Bookmark'}
-            />
-            <Tab
-              label="Calendar"
-              onSelect={handleSelect}
-              metaData={{ key: 'Calendar' }}
-              icon={<IconCalendar />}
-              isIconOnly
-              key="Calendar"
-              isSelected={currentTab === 'Calendar'}
-            />
-          </TabBar>
-        )}
+        tabData={[
+          {
+            id: 'tab-search',
+            associatedPaneId: 'tab-search-pane',
+            label: 'Search',
+            onSelect: handleSelect,
+            metaData: { key: 'Search' },
+            icon: <IconSearch />,
+            isIconOnly: true,
+            key: 'Search',
+            isSelected: currentTab === 'Search',
+          },
+          {
+            id: 'tab-briefcase',
+            associatedPaneId: 'tab-briefcase-pane',
+            label: 'Briefcase',
+            onSelect: handleSelect,
+            metaData: { key: 'Briefcase' },
+            icon: <IconBriefcase />,
+            isIconOnly: true,
+            key: 'Briefcase',
+            isSelected: currentTab === 'Briefcase',
+          },
+          {
+            id: 'tab-bookmark',
+            associatedPaneId: 'tab-bookmark-pane',
+            label: 'Bookmark',
+            onSelect: handleSelect,
+            metaData: { key: 'Bookmark' },
+            icon: <IconBookmark />,
+            isIconOnly: true,
+            key: 'Bookmark',
+            isSelected: currentTab === 'Bookmark',
+          },
+          {
+            id: 'tab-calendar',
+            associatedPaneId: 'tab-calendar-pane',
+            label: 'Calendar',
+            onSelect: handleSelect,
+            metaData: { key: 'Calendar' },
+            icon: <IconCalendar />,
+            isIconOnly: true,
+            key: 'Calendar',
+            isSelected: currentTab === 'Calendar',
+          },
+        ]}
       >
         <TabContent label={currentTab} />
       </Tabs>

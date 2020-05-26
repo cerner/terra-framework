@@ -153,14 +153,15 @@ class CollapsibleTabs extends React.Component {
       if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
         visibleChildren.push(child);
       } else {
-        hiddenChildren.push(child);
+        const hiddenChilden = React.cloneElement( child, { isHidden: true } );
+        hiddenChildren.push(hiddenChilden);
       }
     });
     const theme = this.context;
 
     const menu = this.menuHidden ? null : (
       <Menu onKeyDown={this.handleMenuOnKeyDown} refCallback={this.setMenuRef}>
-        {hiddenChildren}
+        {this.props.children}
       </Menu>
     );
 
@@ -176,6 +177,7 @@ class CollapsibleTabs extends React.Component {
           role="tablist"
         >
           {visibleChildren}
+          {hiddenChildren}
           {menu}
         </div>
         {selectionBar}
