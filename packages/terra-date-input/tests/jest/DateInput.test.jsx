@@ -1,6 +1,7 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl, renderWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, renderWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 
 import DateInput from '../../src/DateInput';
 import DateInputUtil from '../../lib/DateInputUtil';
@@ -238,6 +239,15 @@ describe('DateInput', () => {
     expect(DateInputUtil.computedDisplayFormat('', 'sv-SE')).toEqual('day-month-year');
     expect(DateInputUtil.computedDisplayFormat('', 'sv')).toEqual('day-month-year');
     expect(DateInputUtil.computedDisplayFormat('', 'ru_RU')).toEqual('day-month-year');
+  });
+
+  it('correctly applies the theme context className', () => {
+    const date = mountWithIntl(
+      <ThemeContextProvider theme={{ className: 'clinical-lowlight-theme' }}>
+        <DateInput name="date-input" value="2000-07-04" />
+      </ThemeContextProvider>,
+    );
+    expect(date).toMatchSnapshot();
   });
 
   // computedDisplayFormat

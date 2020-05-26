@@ -1,3 +1,7 @@
+// Themes
+@import './orion-fusion-theme/DateInput.module';
+@import './clinical-lowlight-theme/DateInput.module';
+
 :local {
   .date-input-field {
     border: 0;
