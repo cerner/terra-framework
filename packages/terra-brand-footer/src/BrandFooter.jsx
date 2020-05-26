@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from './BrandFooter.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -95,10 +97,12 @@ const defaultProps = {
 const BrandFooter = ({
   links, sections, isVertical, contentLeft, contentRight, contentBottom, ...customProps
 }) => {
-  const BrandFooterClassNames = cx([
+  const theme = React.useContext(ThemeContext);
+  const BrandFooterClassNames = classNames(cx(
     'brand-footer',
-    customProps.className,
-  ]);
+    theme.className,
+  ),
+  customProps.className);
 
   let processedSections;
   if (links.length > 0 && sections.length === 0) {
@@ -122,7 +126,7 @@ const BrandFooter = ({
   let navigation;
   if (processedSections.length > 0) {
     navigation = (
-      <nav className={cx(['nav', isVertical ? 'nav-vertical' : 'nav-horizontal'])}>
+      <nav className={cx('nav', isVertical ? 'nav-vertical' : 'nav-horizontal')}>
         {processedSections.map(linkGroup => (
           <section className={cx('navigation-section')} key={linkGroup.id}>
             { // When displaying vertically if one column has a header all columns are aligned as if they have a header
