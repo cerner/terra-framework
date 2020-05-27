@@ -236,7 +236,7 @@ class DateUtil {
 
   /**
    * Check if the date is between DateUtil.MIN_DATE and DateUtil.MAX_DATE.
-   * @param {String} date The date to check. Must be in the 'YYYY-MM-DD' format.
+   * @param {String} date - The date to check. Must be in the 'YYYY-MM-DD' format.
    * @return True if date is between DateUtil.MIN_DATE and DateUtil.MAX_DATE. Otherwise return false.
    */
   static isBetweenMinMaxDate(date) {
