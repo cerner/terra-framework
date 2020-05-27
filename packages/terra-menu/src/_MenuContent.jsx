@@ -9,6 +9,7 @@ import IconClose from 'terra-icon/lib/icon/IconClose';
 import Arrange from 'terra-arrange';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
+import ThemeContext from 'terra-theme-context';
 import MenuUtils from './_MenuUtils';
 import styles from './Menu.module.scss';
 
@@ -340,12 +341,14 @@ class MenuContent extends React.Component {
       boundingFrame,
       this.props.contentWidth,
     );
+    const theme = this.context;
     const isSubMenu = this.props.index > 0;
     const contentClass = cx([
       'content',
       { submenu: isSubMenu },
       { 'hidden-page': this.props.isHidden },
       { fullscreen: isFullScreen },
+      theme.className,
     ]);
 
     let header;
@@ -380,5 +383,6 @@ class MenuContent extends React.Component {
 MenuContent.propTypes = propTypes;
 MenuContent.defaultProps = defaultProps;
 MenuContent.childContextTypes = childContextTypes;
+MenuContent.contextType = ThemeContext;
 
 export default injectIntl(MenuContent);

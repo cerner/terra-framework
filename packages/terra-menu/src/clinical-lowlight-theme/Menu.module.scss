@@ -1,0 +1,78 @@
+:local {
+  .clinical-lowlight-theme {
+    --terra-menu-background-color: #222a2e;
+    --terra-menu-foreground-color: #b2b5b6;
+
+    --terra-menu-fullscreen-header-background-color: #222a2e;
+    --terra-menu-fullscreen-header-border-bottom: 1px solid #181b1d;
+    --terra-menu-fullscreen-header-title-color: #b2b5b6;
+
+    --terra-menu-submenu-background-color: #1c2326;
+    --terra-menu-submenu-foreground-color: #b2b5b6;
+
+    --terra-menu-submenu-header-background-color: #222a2e;
+    --terra-menu-submenu-header-border-bottom: 1px solid #181b1d;
+    --terra-menu-submenu-header-buttons-icon-color: #c5c5c6;
+    --terra-menu-submenu-header-buttons-hover-color: #b2b5b6;
+    --terra-menu-submenu-header-title-color: #b2b5b6;
+
+    --terra-menu-item-active-background-color: #1e3a49;
+    --terra-menu-item-active-text-color: #b2b5b6;
+    --terra-menu-item-chevron-icon-color: #9b9fa1;
+    --terra-menu-item-disabled-chevron-icon-color: #404344;
+    --terra-menu-item-disabled-start-icon-color: #404344;
+    --terra-menu-item-disabled-text-color: #404344;
+    --terra-menu-item-start-icon-color: #c5c5c6;
+    --terra-menu-item-text-color: #b2b5b6;
+
+    --terra-menu-item-checkmark-focus-icon-color: #c5c5c6;
+    --terra-menu-item-checkmark-hover-icon-color: #c5c5c6;
+    --terra-menu-item-chevron-focus-icon-color: #c5c5c6;
+    --terra-menu-item-chevron-hover-icon-color: #c5c5c6;
+    --terra-menu-item-focus-background-color: #1e3a49;
+    --terra-menu-item-focus-outline: #004c76;
+    --terra-menu-item-hover-background-color: #1e3a49;
+
+    --terra-menu-background-image: none;
+
+    --terra-menu-divider-after-border-color: #282d31;
+    --terra-menu-divider-border-color: #181b1d;
+
+    --terra-menu-submenu-arrow-after-border-top-color: #1c2326;
+    --terra-menu-submenu-background-image: none;
+    --terra-menu-submenu-divider-after-border-color: #282d31;
+
+    --terra-menu-divider-margin-top: 2px;
+    --terra-menu-divider-after-border-width: 3px 0 0;
+    --terra-menu-divider-after-margin-bottom: 4px;
+    --terra-menu-submenu-divider-after-border-width: 0;
+    --terra-menu-submenu-divider-after-margin-bottom: 0;
+    --terra-menu-submenu-header-height: auto;
+    --terra-menu-submenu-header-title-font-size: 12px;
+    --terra-menu-submenu-header-title-font-weight: normal;
+    --terra-menu-submenu-header-title-line-height: 1.1667;
+    --terra-menu-submenu-header-title-margin: 7px 7px 7px 0;
+    --terra-menu-header-title-margin-left: 10px;
+    --terra-menu-submenu-header-buttons-icon-font-size: 12px;
+    --terra-menu-submenu-header-buttons-margin: 0;
+    --terra-menu-submenu-header-buttons-padding: 8px;
+    --terra-menu-fullscreen-header-title-font-size: 1rem;
+    --terra-menu-fullscreen-header-title-line-height: 1.2;
+    --terra-menu-fullscreen-header-title-margin: 0.5714rem 0 0.5714rem 0.3571rem;
+    --terra-menu-fullscreen-header-buttons-icon-font-size: 1.45rem;
+    --terra-menu-fullscreen-header-buttons-margin: 0.3571rem 0;
+    --terra-menu-fullscreen-header-buttons-padding: 4px;
+
+    --terra-menu-item-margin: 0;
+    --terra-menu-item-padding: 0.286rem 0;
+    --terra-menu-item-text-font-size: 13px;
+    --terra-menu-item-text-font-weight: normal;
+    --terra-menu-item-text-margin-left: 10px;
+    --terra-menu-item-chevron-icon-font-size: 10px;
+    --terra-menu-item-chevron-icon-margin-left: 10px;
+    --terra-menu-item-chevron-icon-margin-right: 10px;
+    --terra-menu-item-start-icon-font-size: 0.85714rem;
+    --terra-menu-item-start-icon-margin-left: 0.71428rem;
+    --terra-menu-item-start-icon-margin-right: 0;
+  }
+}
