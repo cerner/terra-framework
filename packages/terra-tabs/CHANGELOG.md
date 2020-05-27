@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.35.0 - (May 26, 2020)
+------------------
 ### Changed
 * Fixed lowlight and clinical theme interference issue.
 
