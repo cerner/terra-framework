@@ -16,6 +16,7 @@ const isWeekday = (date) => {
 const CalendarFilterFilterDates = () => (
   <CalendarFilter
     filterDate={isWeekday}
+    selectedDate="2020-04-02"
   />
 );
 

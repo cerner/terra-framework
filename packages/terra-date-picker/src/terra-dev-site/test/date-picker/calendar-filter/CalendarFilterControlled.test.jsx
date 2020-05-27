@@ -7,7 +7,7 @@ import styles from '../common/DatePicker.test.module.scss';
 const cx = classNames.bind(styles);
 
 const CalendarFilterControlled = () => {
-  const [date, setDate] = useState('2020-06-06');
+  const [date, setDate] = useState('2020-04-04');
 
   const handleOnDateChange = useCallback((event, selectedDate) => {
     setDate(selectedDate);
@@ -19,7 +19,7 @@ const CalendarFilterControlled = () => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <h3> Default Selected date : 2020-06-06 </h3>
+      <h3> Default Selected date : 2020-04-04 </h3>
       <CalendarFilter
         value={date}
         onChange={handleOnDateChange}
