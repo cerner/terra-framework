@@ -244,7 +244,7 @@ class DateUtil {
     const minDate = moment(DateUtil.MIN_DATE);
     const maxDate = moment(DateUtil.MAX_DATE);
 
-    return momentDate.isValid() && momentDate.isSameOrAfter(minDate) && momentDate.isSameOrBefore(maxDate);
+    return momentDate.isValid() && momentDate.isSameOrAfter(minDate, 'day') && momentDate.isSameOrBefore(maxDate, 'day');
   }
 }
 

@@ -1,4 +1,5 @@
 import moment from 'moment'
+import DateUtil from '../DateUtil';
 
 const dayOfWeekCodes = {
   1: 'mon',
@@ -69,7 +70,7 @@ export function parseDate (value, { dateFormat, locale }) {
   const m = moment(value, dateFormat, locale || moment.locale(), true)
 
   // Only support dates between 01/01/1900 and 12/31/2010 because the year dropdown only allows 1900 - 2100.
-  if (m.isValid() && m.isAfter('1900-01-01') && m.isBefore('2100-12-31')) {
+  if (m.isValid() && DateUtil.isBetweenMinMaxDate(m.format('YYYY-MM-DD'))) {
     return m;
   }
 
