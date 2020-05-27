@@ -223,7 +223,7 @@ class DateUtil {
 
   /**
    * Ensures the minDate is after the DateUtil.MIN_DATE.
-   * @param {String} minDate The minDate prop
+   * @param {String} minDate - The minDate prop.
    * @return The minDate prop if after DateUtil.MIN_DATE. Otherwise return DateUtil.MIN_DATE.
    */
   static getMinDate(minDate) {
