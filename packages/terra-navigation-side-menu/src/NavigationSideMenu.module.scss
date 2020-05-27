@@ -1,3 +1,7 @@
+// Themes
+@import './clinical-lowlight-theme/navigationSideMenu.module';
+@import './orion-fusion-theme/NavigationSideMenu.module';
+
 :local {
   .side-menu-content-container {
     background-color: var(--terra-navigation-side-menu-content-container-background-color);
