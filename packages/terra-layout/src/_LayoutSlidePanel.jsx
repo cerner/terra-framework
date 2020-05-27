@@ -153,7 +153,6 @@ class LayoutSlidePanel extends React.Component {
       { 'is-tiny': isTiny },
       { 'is-small': isSmall },
       { 'is-animated': isAnimated && isOverlay && !!panelContent },
-      theme.className,
     );
 
     return (
