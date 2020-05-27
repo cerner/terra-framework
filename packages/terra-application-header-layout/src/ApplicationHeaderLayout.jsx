@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import { injectIntl, intlShape } from 'react-intl';
 import styles from './ApplicationHeaderLayout.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -42,15 +44,17 @@ const ApplicationHeaderLayout = ({
   utilities,
   ...customProps
 }) => {
-  const headerClassNames = cx([
+  const theme = React.useContext(ThemeContext);
+  const headerClassNames = classNames(cx(
     'header',
     'fill',
-    customProps.className,
-  ]);
+    theme.className,
+  ),
+  customProps.className);
 
   let logoElement;
   if (logo) {
-    logoElement = <div className={cx(['fit', 'start', 'logo'])}>{logo}</div>;
+    logoElement = <div className={cx('fit', 'start', 'logo')}>{logo}</div>;
   }
 
   let navigationElement;
@@ -60,12 +64,12 @@ const ApplicationHeaderLayout = ({
 
   let extensionsElement;
   if (extensions) {
-    extensionsElement = <div className={cx(['fit', 'end', 'extensions'])}>{extensions}</div>;
+    extensionsElement = <div className={cx('fit', 'end', 'extensions')}>{extensions}</div>;
   }
 
   let utilitiesElement;
   if (utilities) {
-    utilitiesElement = <div className={cx(['fit', 'end', 'utilities'])}>{utilities}</div>;
+    utilitiesElement = <div className={cx('fit', 'end', 'utilities')}>{utilities}</div>;
   }
 
   let headerToggle;
@@ -74,7 +78,7 @@ const ApplicationHeaderLayout = ({
   }
 
   const headerInner = (
-    <div className={cx(['fill', 'header-inner'])}>
+    <div className={cx('fill', 'header-inner')}>
       {navigationElement}
       {extensionsElement}
     </div>
@@ -99,7 +103,7 @@ const ApplicationHeaderLayout = ({
   let headerBody;
   if (headerInner || logoElement || utilitiesElement) {
     headerBody = (
-      <div className={cx(['fill', 'header-body'])}>
+      <div className={cx('fill', 'header-body')}>
         {skipToContentButton}
         {logoElement}
         {headerInner}
