@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added Calendar Filter sub-component.
 
 4.37.0 - (May 19, 2020)
 ------------------
