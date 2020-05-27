@@ -3,9 +3,13 @@ Changelog
 
 Unreleased
 ----------
+
+1.28.0 - (May 26, 2020)
+------------------
 ### Fixed
 * Focus should be returned to `Tab` key clicked when `Navigation prompt` is dismissed.
 * Focus should be passed to `Content` when `Navigation prompt` is accepted.
+* Updated the static focusMainContent method to use the useCallback hook to fix lint errors
 
 1.27.0 - (May 19, 2020)
 ------------------
