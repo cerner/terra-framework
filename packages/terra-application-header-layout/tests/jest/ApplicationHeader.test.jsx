@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 
 import ApplicationHeaderLayout from '../../src/ApplicationHeaderLayout';
 
@@ -145,5 +145,14 @@ describe('ApplicationHeaderLayout', () => {
     );
 
     expect(result).toMatchSnapshot();
+  });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'clinical-lowlight-theme',
+      });
+    const wrapper = mountWithIntl(<ApplicationHeaderLayout />);
+    expect(wrapper).toMatchSnapshot();
   });
 });
