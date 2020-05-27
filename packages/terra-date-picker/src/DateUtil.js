@@ -210,7 +210,7 @@ class DateUtil {
 
   /**
    * Ensures the maxDate is before DateUtil.MAX_DATE.
-   * @param {String} maxDate The maxDate prop
+   * @param {String} maxDate - The maxDate prop.
    * @return The maxDate prop if before DateUtil.MAX_DATE. Otherwise return DateUtil.MAX_DATE.
    */
   static getMaxDate(maxDate) {
