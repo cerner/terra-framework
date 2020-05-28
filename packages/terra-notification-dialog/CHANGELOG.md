@@ -21,6 +21,11 @@ See [Upgrade Guide](/components/terra-notification-dialog/notification-dialog/up
 * Removed deprecated `message` prop - use `startMessage` prop instead
 * Updated & backfilled orion-fusion-theme and clinical-lowlight-theme
 
+3.33.0 - (May 19, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 3.32.0 - (April 28, 2020)
 ------------------
 ### Added

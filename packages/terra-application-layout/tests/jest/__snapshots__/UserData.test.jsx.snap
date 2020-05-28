@@ -1,5 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`UserData correctly applies the theme context className 1`] = `
+<UserData
+  userDetail="Detail For Test"
+  userName="Test, Person"
+  userPhoto={
+    <div>
+      Test Photo
+    </div>
+  }
+>
+  <div
+    className="user-data orion-fusion-theme"
+  >
+    <div
+      className="photo"
+    >
+      Test Photo
+    </div>
+    <div
+      className="user-info"
+    >
+      <div
+        className="name"
+      >
+        Test, Person
+      </div>
+      <div
+        className="detail"
+      >
+        Detail For Test
+      </div>
+    </div>
+  </div>
+</UserData>
+`;
+
 exports[`UserData should render empty component 1`] = `
 <div
   className="user-data"
