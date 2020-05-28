@@ -1,8 +1,8 @@
 /* stylelint-disable selector-max-compound-selectors, max-nesting-depth */
 
 // Themes
-@import './clinical-lowlight-theme/_TimeClarification.module';
-@import './orion-fusion-theme/_TimeClarification.module';
+@import './clinical-lowlight-theme/TimeClarification.module';
+@import './orion-fusion-theme/TimeClarification.module';
 
 :local {
   .time-clarification {
