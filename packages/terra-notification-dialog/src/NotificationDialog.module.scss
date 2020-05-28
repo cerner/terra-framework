@@ -107,7 +107,7 @@
   }
 
   .body {
-    background-color: var(--terra-notification-dialog-body-background-color, #fff);
+    background-color: var(--terra-notification-dialog-body-background-color, transparent);
     flex: 1 1 auto;
     height: 100%;
     min-height: var(--terra-notification-dialog-body-min-height, 6.42857rem);
