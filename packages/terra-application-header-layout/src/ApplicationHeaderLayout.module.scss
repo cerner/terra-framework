@@ -1,4 +1,8 @@
 /* stylelint-disable selector-class-pattern */
+// Themes
+@import './clinical-lowlight-theme/ApplicationHeaderLayout.module';
+@import './orion-fusion-theme/ApplicationHeaderLayout.module';
+
 :local {
   .fit {
     flex: 0 0 auto;
