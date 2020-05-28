@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import Slide from './Slide';
 import transitions from './Slide.module.scss';
 
-const cx = classNames.bind(transitions);
+const cx = classNamesBind.bind(transitions);
 
 const propTypes = {
   /**
@@ -67,9 +69,15 @@ class SlideGroup extends React.Component {
       exit: transitions.exit,
       exitActive: transitions['exit-active'],
     };
+    const theme = this.context;
+    const SlideGroupClass = classNames(cx(
+      'slide-group',
+      theme.className,
+    ),
+    customProps.className);
 
     return (
-      <TransitionGroup {...customProps} ref={this.setContainer} className={cx(['slide-group', customProps.className])} key={transitionGroupKey}>
+      <TransitionGroup {...customProps} ref={this.setContainer} className={SlideGroupClass} key={transitionGroupKey}>
         {items.map((item, index) => (
           <CSSTransition
             classNames={transitionNames}
@@ -93,5 +101,6 @@ class SlideGroup extends React.Component {
 
 SlideGroup.propTypes = propTypes;
 SlideGroup.defaultProps = defaultProps;
+SlideGroup.contextType = ThemeContext;
 
 export default SlideGroup;
