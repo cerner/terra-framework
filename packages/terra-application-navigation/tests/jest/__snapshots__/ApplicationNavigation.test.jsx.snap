@@ -18,7 +18,6 @@ exports[`ApplicationNavigation should render default element 1`] = `
   >
     <InjectIntl(Header)
       notifications={Object {}}
-      onSelectNavigationItem={[Function]}
       onSelectSkipToContent={[Function]}
       onSelectUtilityButton={[Function]}
       utilityButtonPopupAnchorRef={
@@ -122,7 +121,7 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
       onSelectExtensionItem={[MockFunction]}
       onSelectHelp={[MockFunction]}
       onSelectLogout={[MockFunction]}
-      onSelectNavigationItem={[Function]}
+      onSelectNavigationItem={[MockFunction]}
       onSelectSettings={[MockFunction]}
       onSelectSkipToContent={[Function]}
       onSelectUtilityButton={[Function]}
@@ -352,7 +351,7 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
       onSelectHelp={[MockFunction]}
       onSelectLogout={[MockFunction]}
       onSelectMenuButton={[Function]}
-      onSelectNavigationItem={[Function]}
+      onSelectNavigationItem={[MockFunction]}
       onSelectSettings={[MockFunction]}
       onSelectSkipToContent={[Function]}
       onSelectUtilityItem={[MockFunction]}
