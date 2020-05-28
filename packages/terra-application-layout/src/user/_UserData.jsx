@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 
 import styles from './UserData.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -28,7 +30,8 @@ const UserData = ({
   userPhoto,
   ...customProps
 }) => {
-  const userClassNames = cx(['user-data', customProps.className]);
+  const theme = React.useContext(ThemeContext);
+  const userClassNames = classNames(cx('user-data', theme.className), customProps.className);
 
   let userInfo;
   if (userName || userDetail) {

@@ -3,6 +3,7 @@ import Icon from 'terra-icon/lib/icon/IconFeatured';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mockIntl } from 'terra-enzyme-intl';
 
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import ApplicationHeader from '../../src/header/_ApplicationHeader';
 import ExtensionsExample from '../../src/terra-dev-site/test/common/ExtensionsExample';
 
@@ -100,6 +101,18 @@ describe('ApplicationHeader', () => {
 
     it('should match the snapshot', () => {
       expect(wrapper).toMatchSnapshot();
+    });
+
+    it('correctly applies the theme context className', () => {
+      const testHeader = shallow(
+        <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+          <ApplicationHeader.WrappedComponent
+            intl={mockIntl}
+            layoutConfig={{ size: 'large' }}
+          />
+        </ThemeContextProvider>,
+      );
+      expect(testHeader).toMatchSnapshot();
     });
   });
 });
