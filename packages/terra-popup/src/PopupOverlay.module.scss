@@ -1,3 +1,7 @@
+// Themes
+@import './clinical-lowlight-theme/PopupOverlay.module';
+@import './orion-fusion-theme/PopupOverlay.module';
+
 :local {
   // These are relative to screen coordinates, so no bidi changes needed
   [dir=ltr],
