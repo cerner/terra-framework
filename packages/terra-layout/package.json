@@ -33,7 +33,8 @@
     "prop-types": "^15.5.8",
     "tabbable": "^4.0.0",
     "terra-content-container": "^3.0.0",
-    "terra-overlay": "^3.0.0"
+    "terra-overlay": "^3.0.0",
+    "terra-theme-context": "^1.0.0"
   },
   "devDependencies": {
     "react-router-dom": "^5.0.0",
