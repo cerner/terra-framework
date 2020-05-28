@@ -2,6 +2,7 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl } from 'terra-enzyme-intl';
 import { withDisclosureManager } from 'terra-disclosure-manager';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import ModalManager from '../../src/ModalManager';
 
 const TestContainer = withDisclosureManager(({ id }) => (
@@ -83,5 +84,16 @@ describe('ModalManager', () => {
         expect(wrapper.exists('#disclosure-container')).toBe(true);
         expect(wrapper.find('#disclosure-container')).toMatchSnapshot();
       });
+  });
+
+  it('correctly applies the theme context className', () => {
+    const modalManager = mount(
+      <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+        <ModalManager>
+          <TestContainer />
+        </ModalManager>
+      </ThemeContextProvider>,
+    );
+    expect(modalManager).toMatchSnapshot();
   });
 });
