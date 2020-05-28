@@ -9,7 +9,6 @@
   .notification-dialog {
     background: var(--terra-notification-dialog-background, #fff);
     border-radius: var(--terra-notification-dialog-border-radius, 3px);
-    position: fixed;
     // This will ensure that by default, the notification dialog sizes to the viewport (minus the insets).
     width: calc(100% - 2 * var(--terra-notification-dialog-small-horizontal-inset, 17px));
 
