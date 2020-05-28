@@ -33,6 +33,7 @@ Cerner Corporation
 - Saket Bajaj [@saket2403]
 - Phil Dodderidge [@pdodde]
 - Jordan Spoor [@Me999999999]
+- Eric McCullough [@EricM96]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -67,3 +68,4 @@ Cerner Corporation
 [@saket2403]: https://github.com/saket2403
 [@pdodde]: https://github.com/pdodde
 [@Me999999999]: https://github.com/Me999999999
+[@EricM96]: https://github.com/EricM96
