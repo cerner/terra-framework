@@ -98,7 +98,7 @@ const NotificationDialogWithLongText = () => {
       <NotificationDialog
         variant="warning"
         isOpen={isOpen}
-        dialogTitle="Use a title that relates directly to the choices. In this case this is a really long title."
+        dialogTitle="Use a Title That Relates Directly to The Choices. In this case this is a really long title."
         startMessage={message}
         acceptAction={{
           text: 'accept',
