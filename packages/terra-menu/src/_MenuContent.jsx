@@ -343,13 +343,13 @@ class MenuContent extends React.Component {
     );
     const theme = this.context;
     const isSubMenu = this.props.index > 0;
-    const contentClass = cx([
+    const contentClass = cx(
       'content',
       { submenu: isSubMenu },
       { 'hidden-page': this.props.isHidden },
       { fullscreen: isFullScreen },
       theme.className,
-    ]);
+    );
 
     let header;
     if (isFullScreen || isSubMenu || shouldDisplayMainMenuHeader) {
