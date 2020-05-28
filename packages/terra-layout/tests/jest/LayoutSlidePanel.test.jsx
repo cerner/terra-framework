@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import LayoutSlidePanel from '../../src/_LayoutSlidePanel';
 
 describe('LayoutSlidePanel', () => {
@@ -73,5 +74,16 @@ describe('LayoutSlidePanel', () => {
     ));
 
     expect(result).toMatchSnapshot();
+  });
+
+  it('correctly applies the theme context className', () => {
+    const layout = mount(
+      <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+        <LayoutSlidePanel
+          size="medium"
+        />
+      </ThemeContextProvider>,
+    );
+    expect(layout).toMatchSnapshot();
   });
 });
