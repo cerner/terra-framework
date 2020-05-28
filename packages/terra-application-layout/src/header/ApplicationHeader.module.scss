@@ -1,8 +1,8 @@
 @import '~terra-breakpoints/lib/media-queries';
 
 // Themes
-@import '../clinical-lowlight-theme/ApplicationLayout.module';
-@import '../orion-fusion-theme/ApplicationLayout.module';
+@import '../clinical-lowlight-theme/ApplicationHeader.module';
+@import '../orion-fusion-theme/ApplicationHeader.module';
 
 :local {
   .application-navbar {
