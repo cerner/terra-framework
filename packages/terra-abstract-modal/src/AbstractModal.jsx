@@ -1,4 +1,4 @@
-import React, { createRef, useLayoutEffect, useEffect } from 'react';
+import React, { createRef, useLayoutEffect, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import { KEY_ESCAPE } from 'keycode-js';
@@ -88,7 +88,7 @@ const AbstractModal = (props) => {
     ...customProps
   } = props;
 
-  const modalElementRef = createRef();
+  const modalElementRef = useRef();
 
   useLayoutEffect(() => {
     // eslint-disable-next-line no-prototype-builtins
