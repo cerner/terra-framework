@@ -1,0 +1,90 @@
+@import '~terra-mixins/lib/Mixins';
+
+:local {
+  .clinical-lowlight-theme {
+    // Month Select
+    --terra-date-input-month-background-color: #222a2e;
+    --terra-date-input-month-background-image: none;
+    --terra-date-input-month-select-border: 1px solid #181b1d;
+    --terra-date-input-month-select-color: #b2b5b6;
+    --terra-date-input-month-background-position: 0% 0%;
+    --terra-date-input-month-background-repeat: repeat;
+    --terra-date-input-month-background-size: auto;
+    --terra-date-input-month-border-radius: 3px;
+    --terra-date-input-month-transition-duration: 0s;
+    --terra-date-input-month-transition-timing-function: ease;
+    --terra-date-input-month-after-arrow-icon-height: 0.715rem;
+    --terra-date-input-month-after-arrow-icon-width: 1rem;
+    --terra-date-input-month-select-font-size: 1.1429rem;
+    --terra-date-input-month-select-height: 2.1429rem;
+    --terra-date-input-month-select-padding-bottom: 0;
+    --terra-date-input-month-select-padding-left: 0.3571rem;
+    --terra-date-input-month-select-padding-right: 0.3571rem;
+    --terra-date-input-month-select-padding-top: 0;
+    --terra-date-input-month-select-max-width: 24rem;
+    --terra-date-input-date-input-day-max-width: 2.5rem;
+    --terra-date-input-date-input-year-max-width: 3.8rem;
+    --terra-date-input-gutters-margin-left: 0.3571rem;
+
+
+    // Month Select Placeholder Text
+    --terra-date-input-month-select-placeholder-color: #6f7477;
+    --terra-date-input-month-select-placeholder-font-style: normal;
+
+    // Month Select Focus
+    --terra-date-input-month-focus-background-color: #222a2e;
+    --terra-date-input-month-focus-ltr-box-shadow: none;
+    --terra-date-input-month-focus-rtl-box-shadow: none;
+    --terra-date-input-month-select-focus-border: 1px solid #004c76;
+    --terra-date-input-month-select-focus-color: #b2b5b6;
+    --terra-date-input-month-focus-background-size: auto;
+
+    // Month Select Hover
+    --terra-date-input-month-hover-background-color: #222a2e;
+    --terra-date-input-month-select-hover-border: 1px solid #181b1d;
+    --terra-date-input-month-select-hover-color: #b2b5b6;
+
+    // Month Select Disabled
+    --terra-date-input-month-disabled-background-color: #1d2529;
+    --terra-date-input-month-disabled-opacity: 0.25;
+    --terra-date-input-month-select-disabled-border: 1px solid #242b2b;
+    --terra-date-input-month-select-disabled-color: #404344;
+    --terra-date-input-month-select-disabled-hover-color: #404344;
+    --terra-date-input-month-select-disabled-placeholder-color: #6f7477;
+    --terra-date-input-month-select-error-disabled-placeholder-color: #6f7477;
+
+    // Month Incomplete
+    --terra-date-input-month-incomplete-background-color: #464232;
+    --terra-date-input-month-incomplete-hover-background-color: #464232;
+    --terra-date-input-month-incomplete-focus-background-color: #464232;
+    --terra-date-input-month-incomplete-disabled-background-color: #464232;
+  
+    // Month Select Error
+    --terra-date-input-month-error-background-color: #222a2e;
+    --terra-date-input-month-error-background-image: none;
+    --terra-date-input-month-select-error-border: 1px solid #fb4c4c;
+    --terra-date-input-month-select-error-box-shadow: none;
+
+    // Month Select Error - Hover
+    --terra-date-input-month-error-hover-background-color: #222a2e;
+    --terra-date-input-month-select-error-hover-border: 1px solid #fb4c4c;
+
+    // Month Select Error - Focus
+    --terra-date-input-month-error-focus-background-color: #222a2e;
+    --terra-date-input-month-select-error-focus-border: 1px solid #004c76;
+    --terra-date-input-month-error-focus-background-size: auto;
+
+    // Month Select Error - Disabled
+    --terra-date-input-month-error-disabled-background-color: #1d2529;
+    --terra-date-input-month-error-disabled-opacity: 0.25;
+    --terra-date-input-month-select-error-disabled-border: 1px solid #fb4c4c;
+    --terra-date-input-month-select-error-disabled-color: #404344;
+       
+    // Icons
+    @include terra-inline-svg-var('--terra-date-input-month-after-arrow-icon-background-image', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path fill="#b2b5b6" d="M48 12L24 36 0 12h48z"/></svg>');
+    @include terra-inline-svg-var('--terra-date-input-month-after-disabled-arrow-icon-background-image', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path fill="#b2b5b6" d="M48 12L24 36 0 12h48z"/></svg>');
+    @include terra-inline-svg-var('--terra-date-input-month-after-error-arrow-icon-background-image', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path fill="#b2b5b6" d="M48 12L24 36 0 12h48z"/></svg>');
+    @include terra-inline-svg-var('--terra-date-input-month-after-error-disabled-arrow-icon-background-image', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path fill="#b2b5b6" d="M48 12L24 36 0 12h48z"/></svg>');
+  }
+}
+
