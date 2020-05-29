@@ -1,4 +1,8 @@
 /* stylelint-disable selector-class-pattern */
+// Themes
+@import './clinical-lowlight-theme/ApplicationMenuName.module';
+@import './orion-fusion-theme/ApplicationMenuName.module';
+
 :local {
   .application-menu-name {
     align-items: var(--terra-application-name-menu-align-items, center);
