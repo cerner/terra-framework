@@ -1,4 +1,4 @@
-import React, { createRef, useLayoutEffect, useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import { KEY_ESCAPE } from 'keycode-js';
