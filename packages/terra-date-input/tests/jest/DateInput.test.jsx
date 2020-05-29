@@ -4,6 +4,7 @@ import { shallowWithIntl, renderWithIntl, mountWithIntl } from 'terra-enzyme-int
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 
 import DateInput from '../../src/DateInput';
+import DateInputField from '../../src/DateInputField';
 import DateInputUtil from '../../lib/DateInputUtil';
 
 describe('DateInput', () => {
@@ -251,4 +252,19 @@ describe('DateInput', () => {
   });
 
   // computedDisplayFormat
+});
+
+describe('DateInputField', () => {
+  it('correctly applies the theme context className', () => {
+    const date = mountWithIntl(
+      <ThemeContextProvider theme={{ className: 'clinical-lowlight-theme' }}>
+        <DateInputField
+          legend="Legend text"
+          name="date-input-value"
+          value="2000-07-04"
+        />
+      </ThemeContextProvider>,
+    );
+    expect(date).toMatchSnapshot();
+  });
 });

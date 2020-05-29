@@ -1649,3 +1649,343 @@ exports[`DateInput should render a disabled time input 1`] = `
   />
 </div>
 `;
+
+exports[`DateInputField correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  theme={
+    Object {
+      "className": "clinical-lowlight-theme",
+    }
+  }
+>
+  <DateInputField
+    dayAttributes={Object {}}
+    disabled={false}
+    error={null}
+    help={null}
+    hideRequired={false}
+    isIncomplete={false}
+    isInline={false}
+    isInvalid={false}
+    isLegendHidden={false}
+    legend="Legend text"
+    legendAttributes={Object {}}
+    monthAttributes={Object {}}
+    name="date-input-value"
+    required={false}
+    showOptional={false}
+    value="2000-07-04"
+    yearAttributes={Object {}}
+  >
+    <fieldset
+      className="date-input-field clinical-lowlight-theme"
+    >
+      <legend
+        className="legend-group"
+      >
+        <div
+          className="legend clinical-lowlight-theme"
+        >
+          Legend text
+          <span
+            className="error-icon-hidden"
+          />
+        </div>
+      </legend>
+      <InjectIntl(DateInput)
+        dayAttributes={
+          Object {
+            "aria-describedby": "  ",
+          }
+        }
+        disabled={false}
+        isIncomplete={false}
+        isInvalid={false}
+        monthAttributes={
+          Object {
+            "aria-describedby": "  ",
+          }
+        }
+        name="date-input-value"
+        required={false}
+        value="2000-07-04"
+        yearAttributes={
+          Object {
+            "aria-describedby": "  ",
+          }
+        }
+      >
+        <DateInput
+          dayAttributes={
+            Object {
+              "aria-describedby": "  ",
+            }
+          }
+          disabled={false}
+          intl={
+            Object {
+              "defaultFormats": Object {},
+              "defaultLocale": "en",
+              "formatDate": [Function],
+              "formatHTMLMessage": [Function],
+              "formatMessage": [Function],
+              "formatNumber": [Function],
+              "formatPlural": [Function],
+              "formatRelative": [Function],
+              "formatTime": [Function],
+              "formats": Object {},
+              "formatters": Object {
+                "getDateTimeFormat": [Function],
+                "getMessageFormat": [Function],
+                "getNumberFormat": [Function],
+                "getPluralFormat": [Function],
+                "getRelativeFormat": [Function],
+              },
+              "locale": "en",
+              "messages": null,
+              "now": [Function],
+              "onError": [Function],
+              "textComponent": "span",
+              "timeZone": null,
+            }
+          }
+          isIncomplete={false}
+          isInvalid={false}
+          monthAttributes={
+            Object {
+              "aria-describedby": "  ",
+            }
+          }
+          name="date-input-value"
+          onBlur={null}
+          onChange={null}
+          required={false}
+          value="2000-07-04"
+          yearAttributes={
+            Object {
+              "aria-describedby": "  ",
+            }
+          }
+        >
+          <div
+            className="date-input clinical-lowlight-theme"
+          >
+            <input
+              name="date-input-value"
+              type="hidden"
+              value="2000-07-04"
+            />
+            <div
+              className="month-select-wrapper"
+            >
+              <select
+                aria-describedby="  "
+                aria-label="Terra.date.input.monthLabel"
+                className="month-select"
+                disabled={false}
+                name="terra-date-month-date-input-value"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                value="07"
+              >
+                <option
+                  hidden={true}
+                  value=""
+                >
+                  Terra.date.input.monthPlaceholder
+                </option>
+                <option
+                  key="Terra.date.input.january"
+                  value="01"
+                >
+                  Terra.date.input.january
+                </option>
+                <option
+                  key="Terra.date.input.february"
+                  value="02"
+                >
+                  Terra.date.input.february
+                </option>
+                <option
+                  key="Terra.date.input.march"
+                  value="03"
+                >
+                  Terra.date.input.march
+                </option>
+                <option
+                  key="Terra.date.input.april"
+                  value="04"
+                >
+                  Terra.date.input.april
+                </option>
+                <option
+                  key="Terra.date.input.may"
+                  value="05"
+                >
+                  Terra.date.input.may
+                </option>
+                <option
+                  key="Terra.date.input.june"
+                  value="06"
+                >
+                  Terra.date.input.june
+                </option>
+                <option
+                  key="Terra.date.input.july"
+                  value="07"
+                >
+                  Terra.date.input.july
+                </option>
+                <option
+                  key="Terra.date.input.august"
+                  value="08"
+                >
+                  Terra.date.input.august
+                </option>
+                <option
+                  key="Terra.date.input.september"
+                  value="09"
+                >
+                  Terra.date.input.september
+                </option>
+                <option
+                  key="Terra.date.input.october"
+                  value="10"
+                >
+                  Terra.date.input.october
+                </option>
+                <option
+                  key="Terra.date.input.november"
+                  value="11"
+                >
+                  Terra.date.input.november
+                </option>
+                <option
+                  key="Terra.date.input.december"
+                  value="12"
+                >
+                  Terra.date.input.december
+                </option>
+              </select>
+            </div>
+            <Input
+              aria-describedby="  "
+              aria-label="Terra.date.input.dayLabel"
+              autoComplete="off"
+              className="date-input-day"
+              disabled={false}
+              isIncomplete={false}
+              isInvalid={false}
+              maxLength="2"
+              name="terra-date-day-date-input-value"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              pattern="\\\\d*"
+              placeholder="Terra.date.input.dayPlaceholder"
+              refCallback={[Function]}
+              required={false}
+              size="2"
+              type="text"
+              value="04"
+            >
+              <input
+                aria-describedby="  "
+                aria-label="Terra.date.input.dayLabel"
+                autoComplete="off"
+                className="form-input date-input-day"
+                disabled={false}
+                maxLength="2"
+                name="terra-date-day-date-input-value"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                pattern="\\\\d*"
+                placeholder="Terra.date.input.dayPlaceholder"
+                required={false}
+                size="2"
+                type="text"
+                value="04"
+              />
+            </Input>
+            <Input
+              aria-describedby="  "
+              aria-label="Terra.date.input.yearLabel"
+              autoComplete="off"
+              className="date-input-year"
+              disabled={false}
+              isIncomplete={false}
+              isInvalid={false}
+              maxLength="4"
+              name="terra-date-year-date-input-value"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              pattern="\\\\d*"
+              placeholder="Terra.date.input.yearPlaceholder"
+              refCallback={[Function]}
+              required={false}
+              size="4"
+              type="text"
+              value="2000"
+            >
+              <input
+                aria-describedby="  "
+                aria-label="Terra.date.input.yearLabel"
+                autoComplete="off"
+                className="form-input date-input-year"
+                disabled={false}
+                maxLength="4"
+                name="terra-date-year-date-input-value"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                pattern="\\\\d*"
+                placeholder="Terra.date.input.yearPlaceholder"
+                required={false}
+                size="4"
+                type="text"
+                value="2000"
+              />
+            </Input>
+          </div>
+        </DateInput>
+      </InjectIntl(DateInput)>
+    </fieldset>
+  </DateInputField>
+</ThemeContextProvider>
+`;
