@@ -1,5 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ApplicationHeader correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <withDisclosureManager(ApplicationMenu)
+    layoutConfig={
+      Object {
+        "size": "small",
+      }
+    }
+    routingStackDelegate={Object {}}
+  >
+    <ApplicationMenu
+      layoutConfig={
+        Object {
+          "size": "small",
+        }
+      }
+      routingStackDelegate={Object {}}
+    >
+      <div
+        className="application-menu orion-fusion-theme"
+      >
+        <ApplicationMenuLayout
+          extensions={null}
+          footer={null}
+          header={null}
+        >
+          <div
+            className="menu fill"
+          >
+            <div
+              className="fill body"
+            />
+          </div>
+        </ApplicationMenuLayout>
+      </div>
+    </ApplicationMenu>
+  </withDisclosureManager(ApplicationMenu)>
+</ThemeContextProvider>
+`;
+
 exports[`ApplicationHeader should render default component 1`] = `
 <ContextConsumer>
   <Component />
