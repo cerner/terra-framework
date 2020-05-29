@@ -83,6 +83,40 @@ exports[`ApplicationHeader should render props 1`] = `
 </header>
 `;
 
+exports[`ApplicationHeader with icons correctly applies the theme context className 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "className": "orion-fusion-theme",
+      "name": undefined,
+    }
+  }
+>
+  <ApplicationHeader
+    applicationLinks={Object {}}
+    hasIcons={false}
+    intl={
+      Object {
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "now": [Function],
+      }
+    }
+    layoutConfig={
+      Object {
+        "size": "large",
+      }
+    }
+  />
+</ContextProvider>
+`;
+
 exports[`ApplicationHeader with icons should match the snapshot 1`] = `
 <header
   className="application-navbar"
