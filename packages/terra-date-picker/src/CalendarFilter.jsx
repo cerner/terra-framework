@@ -59,19 +59,17 @@ const defaultProps = {
   selectedDate: undefined,
 };
 
-const CalendarPicker = (props) => {
-  const {
-    excludeDates,
-    filterDate,
-    includeDates,
-    maxDate,
-    minDate,
-    onChange,
-    selectedDate,
-    value,
-    ...customProps
-  } = props;
-
+const CalendarFilter = ({
+  excludeDates,
+  filterDate,
+  includeDates,
+  maxDate,
+  minDate,
+  onChange,
+  selectedDate,
+  value,
+  ...customProps
+}) => {
   const shouldInitializeToCurrentDate = !((excludeDates || filterDate || includeDates || minDate || maxDate || value || selectedDate));
   const handleOnChange = useCallback((event, date, metaData) => {
     const { inputValue: formattedDateValue } = metaData;
@@ -97,7 +95,7 @@ const CalendarPicker = (props) => {
   );
 };
 
-CalendarPicker.propTypes = propTypes;
-CalendarPicker.defaultProps = defaultProps;
+CalendarFilter.propTypes = propTypes;
+CalendarFilter.defaultProps = defaultProps;
 
-export default CalendarPicker;
+export default CalendarFilter;

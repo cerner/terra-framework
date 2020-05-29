@@ -18,8 +18,10 @@ const defaultProps = {
   value: undefined,
 };
 
-const CalendarFilterExample = (props) => {
-  const [date, setDate] = useState(props.value);
+const CalendarFilterExample = ({
+  value,
+}) => {
+  const [date, setDate] = useState(value);
 
   const handleOnDateSelect = (event, selectedDate) => {
     setDate(selectedDate);

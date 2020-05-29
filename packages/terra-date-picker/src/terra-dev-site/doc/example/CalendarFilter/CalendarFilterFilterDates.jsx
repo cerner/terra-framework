@@ -18,15 +18,17 @@ const defaultProps = {
   selectedDate: '',
 };
 
-const CalendarFilterFilterDates = (props) => {
-  const [date, setDate] = useState(props.selectedDate);
+const CalendarFilterFilterDates = ({
+  selectedDate,
+}) => {
+  const [date, setDate] = useState(selectedDate);
 
-  const handleOnDateChange = (event, selectedDate) => {
-    setDate(selectedDate);
+  const handleOnDateChange = (event, dateValue) => {
+    setDate(dateValue);
   };
 
-  const isWeekday = (selectedDate) => {
-    const momentDate = moment(selectedDate);
+  const isWeekday = (dateValue) => {
+    const momentDate = moment(dateValue);
 
     if (momentDate && momentDate.isValid()) {
       const day = momentDate.day();

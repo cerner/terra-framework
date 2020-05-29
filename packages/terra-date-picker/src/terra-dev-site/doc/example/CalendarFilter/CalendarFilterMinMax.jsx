@@ -18,11 +18,13 @@ const defaultProps = {
   selectedDate: '',
 };
 
-const CalendarFilterMinMax = (props) => {
-  const [date, setSelectedDate] = useState(props.selectedDate);
+const CalendarFilterMinMax = ({
+  selectedDate,
+}) => {
+  const [date, setSelectedDate] = useState(selectedDate);
 
-  const handleOnDateChange = (event, selectedDate) => {
-    setSelectedDate(selectedDate);
+  const handleOnDateChange = (event, dateValue) => {
+    setSelectedDate(dateValue);
   };
 
   return (
