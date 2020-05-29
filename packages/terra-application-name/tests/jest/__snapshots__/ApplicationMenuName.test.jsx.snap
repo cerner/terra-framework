@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ApplicationMenuName correctly applies the theme context className 1`] = `
+<div
+  className="application-menu-name clinical-lowlight-theme"
+>
+  <div
+    className="accessory"
+  >
+    <img
+      alt="this is the accessory"
+    />
+  </div>
+  <div
+    className="title"
+  >
+    title
+  </div>
+</div>
+`;
+
 exports[`ApplicationMenuName should render a default component 1`] = `
 <div
   className="application-menu-name"
