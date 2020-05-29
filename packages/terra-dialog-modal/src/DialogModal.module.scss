@@ -1,3 +1,7 @@
+// Themes
+@import './clinical-lowlight-theme/DialogModal.module';
+@import './orion-fusion-theme/DialogModal.module';
+
 :local {
   .dialog-modal-wrapper {
     background-color: var(--terra-dialog-modal-background-color, #fff);
