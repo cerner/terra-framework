@@ -1,5 +1,4 @@
 import { FormattedMessage, intlShape } from 'react-intl';
-import Button from 'terra-button';
 import * as KeyCode from 'keycode-js';
 import YearDropdown from './year_dropdown'
 import MonthDropdown from './month_dropdown'
