@@ -1,5 +1,66 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`correctly applies the theme context className 1`] = `
+<DialogModalExample>
+  <div>
+    <DialogModal
+      ariaLabel="Dialog Modal Example"
+      closeOnOutsideClick={false}
+      footer={
+        <ActionFooter
+          start="Footer Goes here"
+        />
+      }
+      header={
+        <ActionHeader
+          level={1}
+          onClose={[Function]}
+          title="Action Header used here"
+        />
+      }
+      isOpen={false}
+      onRequestClose={[Function]}
+      rootSelector="#root"
+      width="1120"
+    />
+    <Button
+      isBlock={false}
+      isCompact={false}
+      isDisabled={false}
+      isIconOnly={false}
+      isReversed={false}
+      onClick={[Function]}
+      text="Trigger Dialog Modal"
+      type="button"
+      variant="neutral"
+    >
+      <button
+        aria-disabled={false}
+        className="button neutral"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        type="button"
+      >
+        <span
+          className="button-label text-only"
+        >
+          <span
+            className=""
+          >
+            Trigger Dialog Modal
+          </span>
+        </span>
+      </button>
+    </Button>
+  </div>
+</DialogModalExample>
+`;
+
 exports[`should mount an open dialogModal 1`] = `
 <DialogModalExample>
   <div>

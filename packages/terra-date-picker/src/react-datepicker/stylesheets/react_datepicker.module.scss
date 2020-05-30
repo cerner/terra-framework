@@ -2,6 +2,9 @@
 @import '~terra-breakpoints/lib/media-queries';
 @import 'variables';
 @import 'mixins';
+// Themes
+@import '../../clinical-lowlight-theme/react_datepicker.module';
+@import '../../orion-fusion-theme/react_datepicker.module';
 
 :local {
   .react-datepicker {
