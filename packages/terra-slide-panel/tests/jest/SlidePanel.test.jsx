@@ -1,4 +1,5 @@
 import React from 'react';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import SlidePanel from '../../src/SlidePanel';
 
 it('should render a default SlidePanel with no props', () => {
@@ -116,4 +117,13 @@ it('should override user provided attributes that aren\'t className', () => {
   const wrapper = render(slidePanel);
 
   expect(wrapper).toMatchSnapshot();
+});
+
+it('correctly applies the theme context className', () => {
+  const tabs = mount(
+    <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+      <SlidePanel />
+    </ThemeContextProvider>,
+  );
+  expect(tabs).toMatchSnapshot();
 });
