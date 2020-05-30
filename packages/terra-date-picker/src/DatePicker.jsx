@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import { activeBreakpointForSize } from 'terra-breakpoints';
 import ResponsiveElement from 'terra-responsive-element';
 import { injectIntl, intlShape } from 'react-intl';
@@ -416,9 +417,11 @@ class DatePicker extends React.Component {
       selectedDateInPicker = this.state.selectedDate;
     }
 
+    const theme = this.context;
+
     return (
       <div
-        className={cx('date-picker')}
+        className={cx('date-picker', theme.className)}
         ref={this.datePickerContainer}
       >
         <ResponsiveElement
@@ -475,5 +478,6 @@ class DatePicker extends React.Component {
 
 DatePicker.propTypes = propTypes;
 DatePicker.defaultProps = defaultProps;
+DatePicker.contextType = ThemeContext;
 
 export default injectIntl(DatePicker);
