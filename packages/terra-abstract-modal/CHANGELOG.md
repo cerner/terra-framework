@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Replaced createRef api with useRef hook.
 
 3.25.0 - (May 19, 2020)
 ------------------
