@@ -5,6 +5,7 @@ import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
 import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 
 import DateUtil from './DateUtil';
 import styles from './DatePicker.module.scss';
@@ -178,9 +179,10 @@ class DatePickerInput extends React.Component {
       { 'is-invalid': isInvalid },
     ]);
     const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
+    const theme = this.context;
 
     return (
-      <div className={cx('custom-input')}>
+      <div className={cx('custom-input', theme.className)}>
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
@@ -221,5 +223,6 @@ class DatePickerInput extends React.Component {
 
 DatePickerInput.propTypes = propTypes;
 DatePickerInput.defaultProps = defaultProps;
+DatePickerInput.contextType = ThemeContext;
 
 export default injectIntl(DatePickerInput);

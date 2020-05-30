@@ -1,10 +1,12 @@
 import React from 'react';
 import AbstractModal from 'terra-abstract-modal';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from './DialogModal.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const widthFromSize = {
   320: 320,
@@ -77,12 +79,12 @@ const DialogModal = (props) => {
     rootSelector,
     ...customProps
   } = props;
+  const theme = React.useContext(ThemeContext);
 
   if (!isOpen) {
     return null;
   }
-
-  const classArray = ['dialog-modal-wrapper'];
+  const classArray = ['dialog-modal-wrapper', theme.className];
 
   if (width in widthFromSize) {
     classArray.push(`width-${widthFromSize[width]}`);
@@ -92,7 +94,7 @@ const DialogModal = (props) => {
 
   return (
     <AbstractModal ariaLabel={ariaLabel} role="dialog" classNameModal={cx(classArray)} isOpen={isOpen} onRequestClose={onRequestClose} zIndex="7000" closeOnOutsideClick={closeOnOutsideClick} rootSelector={rootSelector}>
-      <div {...customProps} className={cx('dialog-modal-inner-wrapper', customProps.className)}>
+      <div {...customProps} className={classNames(cx('dialog-modal-inner-wrapper'), customProps.className)}>
         <div className={cx('dialog-modal-container')}>
           <div>{header}</div>
           <div className={cx('dialog-modal-body')}>{children}</div>
