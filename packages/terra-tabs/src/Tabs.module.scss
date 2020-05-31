@@ -6,6 +6,7 @@
 :local {
   .tabs-container {
     width: 100%;
+    position: relative;
   }
 
   .collapsible-tabs-container,
@@ -14,7 +15,7 @@
     flex: 1 1 auto;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    position: relative;
+    // position: relative;
     width: 100%;
 
     &:focus {
@@ -66,17 +67,6 @@
     &.is-text-only {
       min-width: 7.143rem;
       padding: var(--terra-tabs-text-only-padding, 0.643rem 1.071rem);
-    }
-
-    &.is-hidden {
-      border: 0;
-      flex: 0 0 auto;
-      margin: -1px;
-      padding: 0;
-      min-width: 0;
-      width: 1px;
-      outline: none;
-      overflow: hidden;
     }
 
     .label:nth-child(2) {

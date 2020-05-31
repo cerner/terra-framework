@@ -23,7 +23,6 @@ const propTypes = {
    * Indicates if the pane content should fill to the height of the parent container.
    */
   fill: PropTypes.bool,
-  hasScroll: PropTypes.bool,
 };
 
 const Tab = ({
@@ -31,13 +30,11 @@ const Tab = ({
   associatedTabId,
   children,
   fill,
-  hasScroll,
   ...customProps
 }) => {
   const paneClassNames = cx([
     'pane',
     { fill },
-    { scroll: hasScroll },
   ]);
 
   return (
@@ -48,6 +45,7 @@ const Tab = ({
       tabIndex="0"
       id={id}
       aria-labelledby={associatedTabId}
+      aria-expanded="true"
     >
       {children}
     </div>

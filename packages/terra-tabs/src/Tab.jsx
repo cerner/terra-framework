@@ -74,6 +74,8 @@ const Tab = ({
   isHidden,
   onSelect,
   metaData,
+  onBlur,
+  onFocus,
   ...customProps
 }) => {
   const attributes = {};
@@ -110,6 +112,11 @@ const Tab = ({
 
   if (isDisabled) {
     attributes['aria-disabled'] = true;
+  }
+
+  if (isHidden) {
+    attributes.onBlur = onBlur;
+    attributes.onFocus = onFocus;
   }
 
   return (

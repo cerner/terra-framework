@@ -58,14 +58,16 @@ class TabMenu extends React.Component {
     this.setState({ isOpen: false });
   }
 
-  handleOnClick() {
-    this.setState({ isOpen: true });
+  handleOnClick(event) {
+    // this.setState({ isOpen: true });
+    this.props.onSelect(event);
   }
 
   handleOnKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       event.preventDefault();
-      this.setState({ isOpen: true });
+      // this.setState({ isOpen: true });
+      this.props.onSelect(event);
     } else {
       handleArrows(event);
     }
@@ -93,33 +95,33 @@ class TabMenu extends React.Component {
     let menuToggleText = intl.formatMessage({ id: 'Terra.tabs.more' });
     let menuActive = false;
 
-    React.Children.forEach(children, (child) => {
-      const {
-        label, customDisplay, icon, isIconOnly, isSelected, metaData, ...otherProps
-      } = child.props;
+    // React.Children.forEach(children, (child) => {
+    //   const {
+    //     label, customDisplay, icon, isIconOnly, isSelected, metaData, isHidden, ...otherProps
+    //   } = child.props;
 
-      if (isSelected) {
-        // menuToggleText = label;
-        menuActive = true;
-      }
-      menuItems.push((
-        <Menu.Item
-          {...otherProps}
-          text={label}
-          onClick={this.wrapOnClick(child, metaData)}
-          isSelected={isSelected}
-          isSelectable
-          key={child.key}
-        />
-      ));
-    });
+    //   if (isSelected && isHidden) {
+    //     // menuToggleText = label;
+    //     menuActive = true;
+    //   }
+    //   menuItems.push((
+    //     <Menu.Item
+    //       {...otherProps}
+    //       text={label}
+    //       onClick={this.wrapOnClick(child, metaData)}
+    //       isSelected={isSelected}
+    //       isSelectable
+    //       key={child.key}
+    //     />
+    //   ));
+    // });
     const theme = this.context;
 
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
         role="button"
-        tabIndex={menuActive ? '0' : '-1'}
+        tabIndex="0"
         ref={this.setTargetRef}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
@@ -128,13 +130,6 @@ class TabMenu extends React.Component {
       >
         <span>{menuToggleText}</span>
         <IconCaretDown />
-        <Menu
-          onRequestClose={this.handleOnRequestClose}
-          targetRef={this.getTargetRef}
-          isOpen={this.state.isOpen}
-        >
-          {menuItems}
-        </Menu>
       </div>
       /* eslint-enable jsx-ally/no-static-element-interactions */
     );

@@ -1,0 +1,26 @@
+:local {
+  .drop-down {
+    height: 1px;
+    margin: -1px;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    z-index: 10;
+  }
+
+  .is-open {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: auto;
+    margin: 0;
+    opacity: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+  }
+}

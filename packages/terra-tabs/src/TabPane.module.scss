@@ -11,11 +11,8 @@
 
   .fill {
     height: 100%;
-    position: relative;
-  }
-
-  .scroll {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    position: relative;
   }
 }

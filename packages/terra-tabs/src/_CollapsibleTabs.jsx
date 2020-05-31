@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
-import Menu from './_TabMenu';
+import MenuButton from './_TabMenu';
+import TabDropDown from './TabDropDown';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -28,7 +29,10 @@ class CollapsibleTabs extends React.Component {
     this.resetCache = this.resetCache.bind(this);
     this.handleResize = this.handleResize.bind(this);
     this.handleSelectionAnimation = this.handleSelectionAnimation.bind(this);
+    this.handleHiddenBlur = this.handleHiddenBlur.bind(this);
+    this.handleHiddenFocus = this.handleHiddenFocus.bind(this);
     this.resetCache();
+    this.state = { isOpen : false };
   }
 
   componentDidMount() {
@@ -145,24 +149,37 @@ class CollapsibleTabs extends React.Component {
     }
   }
 
+  handleHiddenFocus() {
+    this.setState({ isOpen: true });
+  }
+
+  handleHiddenBlur() {
+    this.setState({ isOpen: false });
+  }
+
   render() {
     const visibleChildren = [];
     const hiddenChildren = [];
+    const hiddenChildIds = [];
 
     React.Children.forEach(this.props.children, (child, index) => {
       if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
         visibleChildren.push(child);
       } else {
-        const hiddenChilden = React.cloneElement( child, { isHidden: true } );
-        hiddenChildren.push(hiddenChilden);
+        const hiddenChild = React.cloneElement(child, { isHidden: true, onFocus: this.handleHiddenFocus, onBlur: this.handleHiddenBlur } );
+        hiddenChildren.push(hiddenChild);
+        hiddenChildIds.push(child.id);
       }
     });
     const theme = this.context;
 
-    const menu = this.menuHidden ? null : (
-      <Menu onKeyDown={this.handleMenuOnKeyDown} refCallback={this.setMenuRef}>
-        {this.props.children}
-      </Menu>
+    const menuButton = this.menuHidden ? null : (
+      <MenuButton
+        isActive={false} // fix this
+        onKeyDown={this.handleMenuOnKeyDown}
+        onSelect={this.handleHiddenFocus}
+        refCallback={this.setMenuRef}
+      />
     );
 
     const selectionBar = this.props.variant === 'modular-centered' || this.props.variant === 'modular-left-aligned' ? (
@@ -175,10 +192,15 @@ class CollapsibleTabs extends React.Component {
           className={cx('collapsible-tabs-container', { 'is-calculating': this.isCalculating }, theme.className)}
           ref={this.setContainer}
           role="tablist"
+          aria-owns={hiddenChildIds.join(' ')}
         >
           {visibleChildren}
-          {hiddenChildren}
-          {menu}
+          <TabDropDown
+            isOpen={this.state.isOpen}
+          >
+            {hiddenChildren}
+          </TabDropDown>
+          {menuButton}
         </div>
         {selectionBar}
       </div>

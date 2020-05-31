@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ContentContainer from 'terra-content-container';
-import Tab from './Tab';
+// import Tab from './Tab';
 import TabBar from './TabBar';
 import TabPane from './TabPane';
 import styles from './Tabs.module.scss';
@@ -84,6 +84,7 @@ const Tabs = ({
   ...customProps
 }) => {
   const [isLabelTruncated, setIsLabelTruncated] = useState(false);
+  const selectedTab = tabData.find(tab => tab.isSelected);
 
   const tabsClassNames = cx([
     'tabs-container',
@@ -92,22 +93,11 @@ const Tabs = ({
     customProps.className,
   ]);
 
-  let currentTabId;
-  let currentPaneId;
-  const tabs = tabData.map(tab => {
-    if (tab.isSelected) {
-      currentTabId = tab.id;
-      currentPaneId = tab.associatedPaneId;
-    }
-    return <Tab {...tab} />;
-  });
-
   const tabBar = (
     <TabBar
       onTruncationChange={value => setIsLabelTruncated(value)}
-    >
-      {tabs}
-    </TabBar>
+      tabData={tabData}
+    />
   );
 
   return (
@@ -118,9 +108,9 @@ const Tabs = ({
       header={tabBar}
     >
       <TabPane
-        key={currentPaneId}
-        id={currentPaneId}
-        associatedTabId={currentTabId}
+        key={selectedTab.associatedPaneId}
+        id={selectedTab.associatedPaneId}
+        associatedTabId={selectedTab.id}
         fill={fill}
       >
         {children}
