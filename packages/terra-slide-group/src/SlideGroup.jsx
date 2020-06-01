@@ -70,14 +70,14 @@ class SlideGroup extends React.Component {
       exitActive: transitions['exit-active'],
     };
     const theme = this.context;
-    const SlideGroupClass = classNames(cx(
+    const slideGroupClass = classNames(cx(
       'slide-group',
       theme.className,
     ),
     customProps.className);
 
     return (
-      <TransitionGroup {...customProps} ref={this.setContainer} className={SlideGroupClass} key={transitionGroupKey}>
+      <TransitionGroup {...customProps} ref={this.setContainer} className={slideGroupClass} key={transitionGroupKey}>
         {items.map((item, index) => (
           <CSSTransition
             classNames={transitionNames}
