@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Apply themes by context and directly include packaged themes.
+* Update jest due to popup changes.
 
 6.33.0 - (May 19, 2020)
 ------------------
