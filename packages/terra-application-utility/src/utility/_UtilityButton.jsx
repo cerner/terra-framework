@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import { injectIntl, intlShape } from 'react-intl';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
@@ -8,7 +10,7 @@ import UtilityMenu from './_UtilityMenu';
 import Utils from '../Utils';
 import styles from './_UtilityButton.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -100,11 +102,14 @@ class UtilityButton extends React.Component {
     delete customProps.onClick;
     delete customProps.menuRole;
 
-    const utilityClassNames = cx([
+    const theme = this.context;
+
+    const utilityClassNames = classNames(cx(
       { 'header-utility-button': variant === Utils.VARIANTS.HEADER },
       { 'menu-utility-button': variant === Utils.VARIANTS.MENU },
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
     const iconClassNames = cx('icon');
 
     let cloneAccessory = null;
@@ -142,5 +147,6 @@ class UtilityButton extends React.Component {
 
 UtilityButton.propTypes = propTypes;
 UtilityButton.defaultProps = defaultProps;
+UtilityButton.contextType = ThemeContext;
 
 export default injectIntl(UtilityButton);
