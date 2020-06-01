@@ -1,6 +1,7 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { mountWithIntl, renderWithIntl } from 'terra-enzyme-intl';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import DateInput from '../../lib/DateInput';
 
 it('should render a default date input', () => {
@@ -31,4 +32,13 @@ it('should pass in refCallback as the ref prop of the calendar button', () => {
   const testComponent = dateInput.children();
   expect(refCallback).toBeCalled();
   expect(testComponent).toMatchSnapshot();
+});
+
+it('correctly applies the theme context className', () => {
+  const date = mountWithIntl(
+    <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+      <DateInput />
+    </ThemeContextProvider>,
+  );
+  expect(date).toMatchSnapshot();
 });

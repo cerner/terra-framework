@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import { injectIntl, intlShape } from 'react-intl';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import ApplicationHeaderLayout from 'terra-application-header-layout';
@@ -16,7 +18,7 @@ import Helpers from '../utils/helpers';
 
 import styles from './ApplicationHeader.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -238,12 +240,13 @@ class ApplicationHeader extends React.Component {
       hasIcons,
       ...customProps
     } = this.props;
-
-    const headerClassNames = cx([
+    const theme = this.context;
+    const headerClassNames = classNames(cx(
       'application-navbar',
       { 'application-navbar-with-icons': hasIcons },
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
 
     const isCompact = Helpers.isSizeCompact(layoutConfig.size);
 
@@ -264,5 +267,6 @@ class ApplicationHeader extends React.Component {
 
 ApplicationHeader.propTypes = propTypes;
 ApplicationHeader.defaultProps = defaultProps;
+ApplicationHeader.contextType = ThemeContext;
 
 export default injectIntl(withDisclosureManager(ApplicationHeader));

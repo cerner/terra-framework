@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from './ApplicationTabs.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -30,17 +32,26 @@ const TabMenuList = ({
   isWidthBounded,
   refCallback,
   ...customProps
-}) => (
-  <ul
-    {...customProps}
-    data-application-tab-menu-content
-    className={cx(['tab-menu-list', { 'height-bounded': isHeightBounded }, { 'width-bounded': isWidthBounded }])}
-    role="menu"
-    ref={refCallback}
-  >
-    {children}
-  </ul>
-);
+}) => {
+  const theme = React.useContext(ThemeContext);
+  const listClass = classNames(cx(
+    'tab-menu-list',
+    { 'height-bounded': isHeightBounded },
+    { 'width-bounded': isWidthBounded },
+    theme.className,
+  ));
+  return (
+    <ul
+      {...customProps}
+      data-application-tab-menu-content
+      className={listClass}
+      role="menu"
+      ref={refCallback}
+    >
+      {children}
+    </ul>
+  );
+};
 
 TabMenuList.propTypes = propTypes;
 
