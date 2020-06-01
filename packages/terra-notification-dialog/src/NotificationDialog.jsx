@@ -233,7 +233,7 @@ class NotificationDialog extends React.Component {
     }
 
     const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
-    const theme = this.context;
+    const theme = React.useContext(ThemeContext);
     const notificationDialogClassNames = classNames(cx(
       'notification-dialog',
       theme.className,
@@ -292,7 +292,6 @@ class NotificationDialog extends React.Component {
 
 NotificationDialog.propTypes = propTypes;
 NotificationDialog.defaultProps = defaultProps;
-NotificationDialog.contextType = ThemeContext;
 
 export { variants as NotificationDialogVariants };
 export default NotificationDialog;
