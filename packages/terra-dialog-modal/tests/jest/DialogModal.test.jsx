@@ -60,3 +60,12 @@ it('should set the rootSelector', () => {
   const dialogModal = mount(<DialogModalExample rootSelector="#myroot" />);
   expect(dialogModal).toMatchSnapshot();
 });
+
+it('correctly applies the theme context className', () => {
+  jest.spyOn(React, 'useContext')
+    .mockReturnValue({
+      className: 'orion-fusion-theme',
+    });
+  const wrapper = mount(<DialogModalExample />);
+  expect(wrapper).toMatchSnapshot();
+});
