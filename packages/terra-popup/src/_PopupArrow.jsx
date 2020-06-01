@@ -28,15 +28,15 @@ const PopupArrow = (props) => {
     ...customProps
   } = props;
   const theme = React.useContext(ThemeContext);
-  const arrowClass = classNames(cx(
-    'popup-arrow',
-    theme.className,
-  ),
-  customProps.className);
-
-  return (
-    <div {...customProps} className={arrowClass} ref={refCallback} />
+  const arrowClass = classNames(
+    cx(
+      'popup-arrow',
+      theme.className,
+    ),
+    customProps.className,
   );
+
+  return <div {...customProps} className={arrowClass} ref={refCallback} />;
 };
 
 PopupArrow.propTypes = propTypes;
