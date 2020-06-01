@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Apply themes by context and directly include packaged themes.
+* Updated wdio screenshots
 
 6.33.0 - (May 19, 2020)
 ------------------

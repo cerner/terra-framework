@@ -32,7 +32,8 @@
     "terra-abstract-modal": "^3.25.0",
     "terra-action-header": "^2.0.0",
     "terra-content-container": "^3.0.0",
-    "terra-slide-group": "^4.20.0"
+    "terra-slide-group": "^4.20.0",  
+    "terra-theme-context": "^1.0.0"
   },
   "devDependencies": {
     "terra-collapsible-menu-view": "^6.33.0",
