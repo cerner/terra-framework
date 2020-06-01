@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from './SlidePanel.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const SlidePanelPositions = {
   START: 'start',
@@ -101,13 +103,17 @@ class SlidePanel extends React.Component {
       fill,
       ...customProps
     } = this.props;
-    const slidePanelClassNames = cx([
+
+    const theme = this.context;
+
+    const slidePanelClassNames = classNames(cx(
       'slide-panel',
       { 'is-open': isOpen },
       { 'is-fullscreen': isFullscreen },
       { fill },
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
 
     const panelDiv = (
       <div className={cx(['panel'])} key="panel" tabIndex="-1" aria-label={panelAriaLabel} aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
@@ -149,6 +155,7 @@ class SlidePanel extends React.Component {
 
 SlidePanel.propTypes = propTypes;
 SlidePanel.defaultProps = defaultProps;
+SlidePanel.contextType = ThemeContext;
 
 export default SlidePanel;
 export { SlidePanelPositions };

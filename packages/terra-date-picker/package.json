@@ -41,7 +41,8 @@
     "terra-icon": "^3.1.0",
     "terra-popup": "^6.33.0",
     "terra-responsive-element": "^5.0.0",
-    "terra-visually-hidden-text": "^2.0.0"
+    "terra-visually-hidden-text": "^2.0.0",
+    "terra-theme-context": "^1.0.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

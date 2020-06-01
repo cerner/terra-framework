@@ -1,3 +1,7 @@
+// Themes
+@import './clinical-lowlight-theme/Slide.module';
+@import './orion-fusion-theme/Slide.module';
+
 :local {
   .slide {
     background-color: var(--terra-slide-group-slide-background-color, #fff);

@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`correctly applies the theme context className 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "className": "orion-fusion-theme",
+      "name": undefined,
+    }
+  }
+>
+  <InjectIntl(DateTimePicker)
+    name="date-time-input"
+    utcOffset={0}
+  />
+</ContextProvider>
+`;
+
 exports[`should render a date time picker with a default date and time 1`] = `
 <DateTimePicker
   disabled={false}

@@ -18,3 +18,16 @@ it('should render a hidden Slide', () => {
   ));
   expect(wrapper).toMatchSnapshot();
 });
+
+it('correctly applies the theme context className', () => {
+  jest.spyOn(React, 'useContext')
+    .mockReturnValue({
+      className: 'orion-fusion-theme',
+    });
+  const wrapper = shallow(
+    <Slide>
+      <div>Slide Content</div>
+    </Slide>,
+  );
+  expect(wrapper).toMatchSnapshot();
+});

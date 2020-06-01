@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import { injectIntl, intlShape } from 'react-intl';
 import Input from 'terra-form-input';
 import * as KeyCode from 'keycode-js';
@@ -8,7 +10,7 @@ import * as KeyCode from 'keycode-js';
 import DateInputUtil from './DateInputUtil';
 import styles from './DateInput.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -642,12 +644,15 @@ class DateInput extends React.Component {
       year,
     } = this.state;
 
-    const dateInputClassNames = cx([
+    const theme = this.context;
+
+    const dateInputClassNames = classNames(cx(
       { disabled },
       'date-input',
       { 'is-focused': this.state.isFocused },
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
 
     // Using the state of month, day, and year to create a formatted date value
     let dateValue = '';
@@ -677,5 +682,6 @@ class DateInput extends React.Component {
 
 DateInput.propTypes = propTypes;
 DateInput.defaultProps = defaultProps;
+DateInput.contextType = ThemeContext;
 
 export default injectIntl(DateInput);

@@ -2,6 +2,7 @@ import React from 'react';
 import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import DatePicker from 'terra-date-picker';
 import TimeInput from 'terra-time-input';
 import * as KeyCode from 'keycode-js';
@@ -625,11 +626,12 @@ class DateTimePicker extends React.Component {
 
     const dateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
     const dateValue = DateUtil.formatMomentDate(dateTime, 'YYYY-MM-DD');
+    const theme = this.context;
 
     return (
       <div
         {...customProps}
-        className={cx('date-time-picker')}
+        className={cx('date-time-picker', theme.className)}
         ref={this.dateTimePickerContainer}
       >
         <input
@@ -692,5 +694,6 @@ class DateTimePicker extends React.Component {
 
 DateTimePicker.propTypes = propTypes;
 DateTimePicker.defaultProps = defaultProps;
+DateTimePicker.contextType = ThemeContext;
 
 export default injectIntl(DateTimePicker);
