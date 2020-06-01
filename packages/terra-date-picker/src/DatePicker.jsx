@@ -57,11 +57,11 @@ const propTypes = {
   */
   isInvalid: PropTypes.bool,
   /**
-   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format.
+   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be before `12/31/2100`
    */
   maxDate: PropTypes.string,
   /**
-   * An ISO 8601 string representation of the minimum date that can be selected. The value must be in the `YYYY-MM-DD` format.
+   * An ISO 8601 string representation of the minimum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be after `01/01/1900`
    */
   minDate: PropTypes.string,
   /**
@@ -123,8 +123,8 @@ const defaultProps = {
   inputAttributes: undefined,
   isIncomplete: false,
   isInvalid: false,
-  maxDate: undefined,
-  minDate: undefined,
+  maxDate: '2100-12-31',
+  minDate: '1900-01-01',
   onBlur: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
@@ -352,7 +352,7 @@ class DatePicker extends React.Component {
   isDateWithinRange(date) {
     let isAcceptable = true;
 
-    if (DateUtil.isDateOutOfRange(date, DateUtil.createSafeDate(this.props.minDate), DateUtil.createSafeDate(this.props.maxDate))) {
+    if (DateUtil.isDateOutOfRange(date, DateUtil.createSafeDate(DateUtil.getMinDate(this.props.minDate)), DateUtil.createSafeDate(DateUtil.getMaxDate(this.props.maxDate)))) {
       isAcceptable = false;
     }
 
@@ -455,8 +455,8 @@ class DatePicker extends React.Component {
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}
             filterDate={this.handleFilterDate}
             includeDates={DateUtil.filterInvalidDates(includeDates)}
-            maxDate={DateUtil.createSafeDate(maxDate)}
-            minDate={DateUtil.createSafeDate(minDate)}
+            maxDate={DateUtil.createSafeDate(DateUtil.getMaxDate(maxDate))}
+            minDate={DateUtil.createSafeDate(DateUtil.getMinDate(minDate))}
             todayButton={intl.formatMessage({ id: 'Terra.datePicker.today' })}
             dateFormatCalendar=" "
             dateFormat={dateFormat}

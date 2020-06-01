@@ -9,6 +9,7 @@ import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PopupContainer from './PopupContainer';
+import DateUtil from '../DateUtil';
 import {
   newDate,
   now,
@@ -328,6 +329,8 @@ class DatePicker extends React.Component {
       disabled: false,
       disabledKeyboardNavigation: false,
       dropdownMode: 'scroll',
+      maxDate: newDate(DateUtil.MAX_DATE),
+      minDate: newDate(DateUtil.MIN_DATE),
       onFocus () {},
       onBlur () {},
       onKeyDown () {},
@@ -544,8 +547,7 @@ class DatePicker extends React.Component {
   }
 
   setPreSelection = (date) => {
-    const isDateRangePresent = ((typeof this.props.minDate !== 'undefined') && (typeof this.props.maxDate !== 'undefined'))
-    const isValidDateSelection = isDateRangePresent && date ? isDayInRange(date, this.props.minDate, this.props.maxDate) : true
+    const isValidDateSelection = date ? isDayInRange(date, this.props.minDate, this.props.maxDate) : true
     if (isValidDateSelection) {
       this.setState({
         preSelection: date
