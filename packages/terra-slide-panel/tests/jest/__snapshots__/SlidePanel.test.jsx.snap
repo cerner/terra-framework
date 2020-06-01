@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <SlidePanel
+    panelBehavior="overlay"
+    panelPosition="end"
+    panelSize="small"
+  >
+    <div
+      className="slide-panel orion-fusion-theme"
+      data-slide-panel-panel-behavior="overlay"
+      data-slide-panel-panel-position="end"
+      data-slide-panel-panel-size="small"
+    >
+      <div
+        className="main"
+        key="main"
+        tabIndex="-1"
+      />
+      <div
+        aria-hidden="true"
+        className="panel"
+        key="panel"
+        tabIndex="-1"
+      />
+    </div>
+  </SlidePanel>
+</ThemeContextProvider>
+`;
+
 exports[`should override user provided attributes that aren't className 1`] = `
 <div
   class="slide-panel pad-this-slide-panel"
