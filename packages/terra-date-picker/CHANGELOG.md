@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.38.0 - (June 2, 2020)
+------------------
 ### Fixed
 * Limit the supported dates to between 01/01/1900 and 12/31/2100 because the year dropdown only contains years between 1900 and 2100.
 * Disable the Today button if today is a disabled day. (i.e.; outside the `minDate`/`maxDate` range, in `excludeDates`, not in `includeDates`, or filtered by `filterDate`)
