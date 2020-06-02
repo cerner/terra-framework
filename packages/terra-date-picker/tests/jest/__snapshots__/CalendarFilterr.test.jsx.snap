@@ -36,6 +36,8 @@ exports[`should render a calendar filter with default date 1`] = `
   }
   isIncomplete={false}
   isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="terra-calendar-filter"
   onChange={[Function]}
   required={false}
@@ -84,6 +86,8 @@ exports[`should render a calendar filter with excluded dates 1`] = `
   }
   isIncomplete={false}
   isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="terra-calendar-filter"
   onChange={[Function]}
   required={false}
@@ -127,6 +131,8 @@ exports[`should render a calendar filter with filtered dates 1`] = `
   }
   isIncomplete={false}
   isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="terra-calendar-filter"
   onChange={[Function]}
   required={false}
@@ -174,6 +180,8 @@ exports[`should render a calendar filter with included dates 1`] = `
   }
   isIncomplete={false}
   isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="terra-calendar-filter"
   onChange={[Function]}
   required={false}
@@ -260,6 +268,8 @@ exports[`should render a calendar filter with onChange 1`] = `
   }
   isIncomplete={false}
   isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="terra-calendar-filter"
   onChange={[Function]}
   required={false}
@@ -303,6 +313,8 @@ exports[`should render a controlled calendar filter 1`] = `
   }
   isIncomplete={false}
   isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="terra-calendar-filter"
   onChange={[Function]}
   required={false}
