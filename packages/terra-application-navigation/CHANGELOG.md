@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Removed outline on main content
 
 1.28.0 - (May 26, 2020)
 ------------------
