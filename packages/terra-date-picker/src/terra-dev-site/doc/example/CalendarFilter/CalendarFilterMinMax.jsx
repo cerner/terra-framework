@@ -1,49 +1,13 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import moment from 'moment';
 import CalendarFilter from 'terra-date-picker/lib/CalendarFilter';
-import classNames from 'classnames/bind';
-import styles from '../DatePickerExampleCommon.module.scss';
 
-const cx = classNames.bind(styles);
-
-const propTypes = {
-  /**
-   * The current calendar date if selected. Use for the selected date message.
-   */
-  selectedDate: PropTypes.node,
-};
-
-const defaultProps = {
-  selectedDate: '',
-};
-
-const CalendarFilterMinMax = ({
-  selectedDate,
-}) => {
-  const [date, setSelectedDate] = useState(selectedDate);
-
-  const handleOnDateChange = (event, dateValue) => {
-    setSelectedDate(dateValue);
-  };
-
-  return (
-    <div>
-      <p>
-        Selected ISO Date:
-        <span className={cx('date-wrapper')}>{date}</span>
-      </p>
-      <CalendarFilter
-        id="default"
-        onChange={handleOnDateChange}
-        minDate={moment().format()}
-        maxDate={moment().add(6, 'days').format()}
-      />
-    </div>
-  );
-};
-
-CalendarFilterMinMax.propTypes = propTypes;
-CalendarFilterMinMax.defaultProps = defaultProps;
+const CalendarFilterMinMax = () => (
+  <CalendarFilter
+    id="default"
+    minDate={moment().format()}
+    maxDate={moment().add(6, 'days').format()}
+  />
+);
 
 export default CalendarFilterMinMax;

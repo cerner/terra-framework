@@ -70,7 +70,6 @@ const CalendarFilter = ({
   value,
   ...customProps
 }) => {
-  const shouldInitializeToCurrentDate = !((excludeDates || filterDate || includeDates || minDate || maxDate || value || selectedDate));
   const handleOnChange = useCallback((event, date, metaData) => {
     const { inputValue: formattedDateValue } = metaData;
     onChange(event, date, formattedDateValue);
@@ -82,7 +81,7 @@ const CalendarFilter = ({
       name="terra-calendar-filter"
       inline
       hidePortal
-      selectedDate={(shouldInitializeToCurrentDate) ? moment().format('YYYY-MM-DD') : selectedDate}
+      selectedDate={selectedDate || moment().format('YYYY-MM-DD')}
       value={value}
       onChange={handleOnChange}
       excludeDates={excludeDates}

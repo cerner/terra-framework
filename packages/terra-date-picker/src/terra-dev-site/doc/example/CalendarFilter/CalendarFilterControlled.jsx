@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import CalendarFilter from 'terra-date-picker/lib/CalendarFilter';
-import classNames from 'classnames/bind';
-import styles from '../DatePickerExampleCommon.module.scss';
 
-const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -18,37 +15,50 @@ const defaultProps = {
   value: undefined,
 };
 
-const CalendarFilterExample = ({
+const CalendarFilterControlledExample = ({
   value,
 }) => {
   const [date, setDate] = useState(value);
+  const [formattedDate, setFormattedDate] = useState('');
 
-  const handleOnDateSelect = (event, selectedDate) => {
+  const handleOnDateChange = (event, selectedDate, formatteddate) => {
     setDate(selectedDate);
+    setFormattedDate(formatteddate);
   };
 
   return (
     <div>
-      <p>
-        Selected ISO Date:
-        <span className={cx('date-wrapper')}>{date}</span>
-      </p>
+      <h3>
+        Selected Value:
+        {' '}
+        <span id="input-value">{date}</span>
+        <br />
+        <br />
+        ISO String:
+        {' '}
+        <span id="iso">{date}</span>
+        <br />
+        <br />
+        Formatted Value:
+        {' '}
+        <span id="input-value">{formattedDate}</span>
+      </h3>
       <CalendarFilter
         id="controlled-dates"
-        onSelect={handleOnDateSelect}
+        onChange={handleOnDateChange}
         value={date}
       />
     </div>
   );
 };
 
-CalendarFilterExample.propTypes = propTypes;
-CalendarFilterExample.defaultProps = defaultProps;
+CalendarFilterControlledExample.propTypes = propTypes;
+CalendarFilterControlledExample.defaultProps = defaultProps;
 
-const CalendarFilterControlledExample = () => (
-  <CalendarFilterExample
+const CalendarFilterControlled = () => (
+  <CalendarFilterControlledExample
     value={moment().format('YYYY-MM-DD')}
   />
 );
 
-export default CalendarFilterControlledExample;
+export default CalendarFilterControlled;

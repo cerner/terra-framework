@@ -1,32 +1,8 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import moment from 'moment';
 import CalendarFilter from 'terra-date-picker/lib/CalendarFilter';
-import classNames from 'classnames/bind';
-import styles from '../DatePickerExampleCommon.module.scss';
 
-const cx = classNames.bind(styles);
-
-const propTypes = {
-  /**
-   * The current calendar date if selected. Use for the selected date message.
-   */
-  selectedDate: PropTypes.node,
-};
-
-const defaultProps = {
-  selectedDate: '',
-};
-
-const CalendarFilterFilterDates = ({
-  selectedDate,
-}) => {
-  const [date, setDate] = useState(selectedDate);
-
-  const handleOnDateChange = (event, dateValue) => {
-    setDate(dateValue);
-  };
-
+const CalendarFilterFilterDates = () => {
   const isWeekday = (dateValue) => {
     const momentDate = moment(dateValue);
 
@@ -39,21 +15,11 @@ const CalendarFilterFilterDates = ({
   };
 
   return (
-    <div>
-      <p>
-        Selected ISO Date:
-        <span className={cx('date-wrapper')}>{date}</span>
-      </p>
-      <CalendarFilter
-        id="filter-dates"
-        onChange={handleOnDateChange}
-        filterDate={isWeekday}
-      />
-    </div>
+    <CalendarFilter
+      id="filter-dates"
+      filterDate={isWeekday}
+    />
   );
 };
-
-CalendarFilterFilterDates.propTypes = propTypes;
-CalendarFilterFilterDates.defaultProps = defaultProps;
 
 export default CalendarFilterFilterDates;

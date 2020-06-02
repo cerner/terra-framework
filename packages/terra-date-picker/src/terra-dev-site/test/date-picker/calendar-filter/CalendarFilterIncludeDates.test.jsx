@@ -10,6 +10,7 @@ const CalendarFilterIncludeDates = () => (
     <h3>Included dates : 2020-04-01, 2020-04-02, 2020-04-03</h3>
     <CalendarFilter
       includeDates={['2020-04-01', '2020-04-02', '2020-04-03']}
+      selectedDate="2020-04-05"
     />
   </div>
 

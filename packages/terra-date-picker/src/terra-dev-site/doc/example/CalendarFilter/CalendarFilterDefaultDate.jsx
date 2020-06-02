@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import moment from 'moment';
 import CalendarFilter from 'terra-date-picker/lib/CalendarFilter';
 import classNames from 'classnames/bind';
@@ -7,22 +7,17 @@ import styles from '../DatePickerExampleCommon.module.scss';
 const cx = classNames.bind(styles);
 
 const CalendarFilterDefaultDate = () => {
-  const [date, setSelectedDate] = useState(moment().add(2, 'days').format('YYYY-MM-DD'));
-
-  const handleOnDateChange = (event, selectedDate) => {
-    setSelectedDate(selectedDate);
-  };
+  const defaultDate = moment().add(2, 'days').format('YYYY-MM-DD');
 
   return (
     <div>
       <p>
-        Selected ISO Date:
-        <span className={cx('date-wrapper')}>{date}</span>
+        Default Selected Date:
+        <span className={cx('date-wrapper')}>{defaultDate}</span>
       </p>
       <CalendarFilter
         id="default"
-        onChange={handleOnDateChange}
-        selectedDate={date}
+        selectedDate={defaultDate}
       />
     </div>
   );
