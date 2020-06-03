@@ -113,6 +113,11 @@ const propTypes = {
    * The value must be in the `YYYY-MM-DD` format or the all-numeric date format based on the locale.
    */
   value: PropTypes.string,
+  /**
+   * @private
+   * Prop to show inline version of date picker component.
+   */
+  inline: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -134,6 +139,7 @@ const defaultProps = {
   required: false,
   disableButtonFocusOnClose: false,
   selectedDate: undefined,
+  inline: false,
 };
 
 class DatePicker extends React.Component {
@@ -385,6 +391,7 @@ class DatePicker extends React.Component {
       required,
       selectedDate,
       value,
+      inline,
       ...customProps
     } = this.props;
 
@@ -430,7 +437,7 @@ class DatePicker extends React.Component {
         >
           <ReactDatePicker
             {...customProps}
-            withPortal={(customProps.inline) ? false : this.state.showPortalPicker}
+            withPortal={(this.props.inline) ? false : this.state.showPortalPicker}
             selected={selectedDateInPicker}
             value={formattedValue}
             onBlur={this.handleBlur}

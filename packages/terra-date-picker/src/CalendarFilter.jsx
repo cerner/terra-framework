@@ -71,8 +71,10 @@ const CalendarFilter = ({
   ...customProps
 }) => {
   const handleOnChange = useCallback((event, date, metaData) => {
-    const { inputValue: formattedDateValue } = metaData;
-    onChange(event, date, formattedDateValue);
+    if (onChange) {
+      const { inputValue: formattedDateValue } = metaData;
+      onChange(event, date, formattedDateValue);
+    }
   }, [onChange]);
 
   return (
