@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+5.24.0 - (June 2, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 5.23.0 - (April 28, 2020)
 ------------------
 ### Added

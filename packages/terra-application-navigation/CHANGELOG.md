@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.27.0 - (June 2, 2020)
+------------------
 ### Fixed
 * Removed outline on main content
 

@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.34.0 - (June 2, 2020)
+------------------
 ### Changed
 * Fixed lowlight and clinical theme interference issue.
 
