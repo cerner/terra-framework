@@ -1,5 +1,209 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <SlideGroup
+    isAnimated={false}
+    items={
+      Array [
+        <div>
+          First
+        </div>,
+        <div>
+          Second
+        </div>,
+        <div>
+          Third
+        </div>,
+      ]
+    }
+  >
+    <TransitionGroup
+      childFactory={[Function]}
+      className="slide-group orion-fusion-theme"
+      component="div"
+      key="1"
+    >
+      <div
+        className="slide-group orion-fusion-theme"
+      >
+        <CSSTransition
+          classNames={
+            Object {
+              "enter": "enter",
+              "enterActive": "enter-active",
+              "exit": "exit",
+              "exitActive": "exit-active",
+            }
+          }
+          enter={false}
+          exit={false}
+          id="shmmoop"
+          in={true}
+          key=".$1"
+          onEntered={[Function]}
+          onExit={[Function]}
+          onExited={[Function]}
+          timeout={300}
+        >
+          <Transition
+            appear={false}
+            enter={false}
+            exit={false}
+            id="shmmoop"
+            in={true}
+            mountOnEnter={false}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            timeout={300}
+            unmountOnExit={false}
+          >
+            <Slide
+              id="shmmoop"
+              isHidden={true}
+            >
+              <div
+                aria-hidden={true}
+                className="slide orion-fusion-theme"
+              >
+                <div
+                  className="slide-shadow"
+                />
+                <div
+                  key="1"
+                >
+                  First
+                </div>
+              </div>
+            </Slide>
+          </Transition>
+        </CSSTransition>
+        <CSSTransition
+          classNames={
+            Object {
+              "enter": "enter",
+              "enterActive": "enter-active",
+              "exit": "exit",
+              "exitActive": "exit-active",
+            }
+          }
+          enter={false}
+          exit={false}
+          id="shmmoop"
+          in={true}
+          key=".$2"
+          onEntered={[Function]}
+          onExit={[Function]}
+          onExited={[Function]}
+          timeout={300}
+        >
+          <Transition
+            appear={false}
+            enter={false}
+            exit={false}
+            id="shmmoop"
+            in={true}
+            mountOnEnter={false}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            timeout={300}
+            unmountOnExit={false}
+          >
+            <Slide
+              id="shmmoop"
+              isHidden={true}
+            >
+              <div
+                aria-hidden={true}
+                className="slide orion-fusion-theme"
+              >
+                <div
+                  className="slide-shadow"
+                />
+                <div
+                  key="2"
+                >
+                  Second
+                </div>
+              </div>
+            </Slide>
+          </Transition>
+        </CSSTransition>
+        <CSSTransition
+          classNames={
+            Object {
+              "enter": "enter",
+              "enterActive": "enter-active",
+              "exit": "exit",
+              "exitActive": "exit-active",
+            }
+          }
+          enter={false}
+          exit={false}
+          id="shmmoop"
+          in={true}
+          key=".$3"
+          onEntered={[Function]}
+          onExit={[Function]}
+          onExited={[Function]}
+          timeout={300}
+        >
+          <Transition
+            appear={false}
+            enter={false}
+            exit={false}
+            id="shmmoop"
+            in={true}
+            mountOnEnter={false}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            timeout={300}
+            unmountOnExit={false}
+          >
+            <Slide
+              id="shmmoop"
+              isHidden={false}
+            >
+              <div
+                aria-hidden={null}
+                className="slide orion-fusion-theme"
+              >
+                <div
+                  className="slide-shadow"
+                />
+                <div
+                  key="3"
+                >
+                  Third
+                </div>
+              </div>
+            </Slide>
+          </Transition>
+        </CSSTransition>
+      </div>
+    </TransitionGroup>
+  </SlideGroup>
+</ThemeContextProvider>
+`;
+
 exports[`should render a SlideGroup with animation enabled 1`] = `
 <TransitionGroup
   childFactory={[Function]}
