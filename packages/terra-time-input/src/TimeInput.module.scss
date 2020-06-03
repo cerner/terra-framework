@@ -1,5 +1,8 @@
 // stylelint-disable declaration-property-value-blacklist scss/at-mixin-pattern
 // stylelint-disable scss/at-mixin-pattern
+// Themes
+@import './clinical-lowlight-theme/TimeInput.module';
+@import './orion-fusion-theme/TimeInput.module';
 
 :local {
   @mixin focus-styles {

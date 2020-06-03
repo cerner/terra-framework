@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import Input from 'terra-form-input';
 import ButtonGroup from 'terra-button-group';
 import { injectIntl, intlShape } from 'react-intl';
@@ -9,7 +11,7 @@ import * as KeyCode from 'keycode-js';
 import TimeUtil from './TimeUtil';
 import styles from './TimeInput.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -699,14 +701,17 @@ class TimeInput extends React.Component {
       }
     }
 
-    const timeInputClassNames = cx([
+    const theme = this.context;
+
+    const timeInputClassNames = classNames(cx(
       { disabled },
       'time-input',
       { 'is-focused': this.state.isFocused },
       { 'is-invalid': isInvalid },
       { 'is-incomplete': (isIncomplete && required && !isInvalid && !isInvalidMeridiem) },
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
 
     const hourClassNames = cx([
       'time-input-hour',
@@ -835,5 +840,6 @@ class TimeInput extends React.Component {
 
 TimeInput.propTypes = propTypes;
 TimeInput.defaultProps = defaultProps;
+TimeInput.contextType = ThemeContext;
 
 export default injectIntl(TimeInput);

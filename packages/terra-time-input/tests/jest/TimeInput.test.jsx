@@ -4,6 +4,7 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl, mountWithIntl, renderWithIntl } from 'terra-enzyme-intl';
 import * as KeyCode from 'keycode-js';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import TimeInput from '../../lib/TimeInput';
 import TimeUtil from '../../lib/TimeUtil';
 
@@ -328,4 +329,13 @@ it('should validate the getVariantFromLocale helper method', () => {
   } else {
     expect(TimeUtil.getVariantFromLocale(testComponent.instance().props)).toEqual('24-hour');
   }
+});
+
+it('correctly applies the theme context className', () => {
+  const time = mountWithIntl(
+    <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+      <TimeInput name="time-input" />
+    </ThemeContextProvider>,
+  );
+  expect(time).toMatchSnapshot();
 });
