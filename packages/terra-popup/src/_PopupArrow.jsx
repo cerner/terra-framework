@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from './PopupArrow.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 /**
  * Half the base of the arrow, to use for arrow positioning offset.
  */
@@ -20,10 +22,22 @@ const propTypes = {
   refCallback: PropTypes.func,
 };
 
-const PopupArrow = ({
-  refCallback,
-  ...customProps
-}) => <div {...customProps} className={cx(['popup-arrow', customProps.className])} ref={refCallback} />;
+const PopupArrow = (props) => {
+  const {
+    refCallback,
+    ...customProps
+  } = props;
+  const theme = React.useContext(ThemeContext);
+  const arrowClass = classNames(
+    cx(
+      'popup-arrow',
+      theme.className,
+    ),
+    customProps.className,
+  );
+
+  return <div {...customProps} className={arrowClass} ref={refCallback} />;
+};
 
 PopupArrow.propTypes = propTypes;
 PopupArrow.Opts = {

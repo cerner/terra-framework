@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update failing jest snapshots
 
 1.27.0 - (June 2, 2020)
 ------------------

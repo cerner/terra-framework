@@ -1,5 +1,133 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`PopupContent Prop Tests with default props correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <PopupContent
+    classNameInner={null}
+    contentHeight={640}
+    contentHeightMax={-1}
+    contentWidth={640}
+    contentWidthMax={-1}
+    isFocusedDisabled={false}
+    isHeaderDisabled={false}
+    isHeightAutomatic={false}
+    isWidthAutomatic={false}
+    onRequestClose={[MockFunction]}
+    onResize={[MockFunction]}
+    popupContentRole="dialog"
+  >
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={true}
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+          "returnFocusOnDeactivate": true,
+        }
+      }
+      paused={false}
+    >
+      <div>
+        <OnClickOutside(HookshotContent)
+          className="content orion-fusion-theme"
+          data-terra-popup-content={true}
+          eventTypes={
+            Array [
+              "mousedown",
+              "touchstart",
+            ]
+          }
+          excludeScrollbar={false}
+          onEsc={[MockFunction]}
+          onResize={[Function]}
+          outsideClickIgnoreClass="ignore-react-onclickoutside"
+          preventDefault={false}
+          role="dialog"
+          stopPropagation={false}
+          tabIndex="0"
+        >
+          <HookshotContent
+            className="content orion-fusion-theme"
+            data-terra-popup-content={true}
+            disableOnClickOutside={[Function]}
+            enableOnClickOutside={[Function]}
+            eventTypes={
+              Array [
+                "mousedown",
+                "touchstart",
+              ]
+            }
+            onEsc={[MockFunction]}
+            onResize={[Function]}
+            outsideClickIgnoreClass="ignore-react-onclickoutside"
+            preventDefault={false}
+            role="dialog"
+            stopPropagation={false}
+            tabIndex="0"
+          >
+            <div
+              className="content content orion-fusion-theme"
+              data-terra-popup-content={true}
+              role="dialog"
+              tabIndex="0"
+            >
+              <div
+                className="inner"
+                style={
+                  Object {
+                    "height": "640px",
+                    "width": "640px",
+                  }
+                }
+              >
+                <div
+                  key=".0"
+                >
+                  children node(s)
+                </div>
+              </div>
+            </div>
+          </HookshotContent>
+        </OnClickOutside(HookshotContent)>
+      </div>
+    </FocusTrap>
+  </PopupContent>
+</ThemeContextProvider>
+`;
+
 exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
 <FocusTrap
   _createFocusTrap={[Function]}

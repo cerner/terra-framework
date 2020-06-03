@@ -102,7 +102,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
           containerInfo={
             <div>
               <div
-                class="popup-overlay"
+                class="popup-overlay orion-fusion-theme"
               >
                 <div
                   class="inner"
@@ -116,7 +116,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
             onRequestClose={[MockFunction]}
           >
             <div
-              className="popup-overlay"
+              className="popup-overlay orion-fusion-theme"
               onClick={[Function]}
             >
               <div
@@ -184,7 +184,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
               <div>
                 <div>
                   <div
-                    class="content content"
+                    class="content content orion-fusion-theme"
                     data-terra-popup-content="true"
                     role="dialog"
                   >
@@ -210,7 +210,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                               class="scroll normalizer"
                             >
                               <ul
-                                class="list list"
+                                class="list orion-fusion-theme list"
                                 role="menu"
                               >
                                 <li
@@ -266,7 +266,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
               >
                 <div>
                   <OnClickOutside(HookshotContent)
-                    className="content"
+                    className="content orion-fusion-theme"
                     data-terra-popup-content={true}
                     disableOnClickOutside={true}
                     eventTypes={
@@ -287,7 +287,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                     tabIndex={null}
                   >
                     <HookshotContent
-                      className="content"
+                      className="content orion-fusion-theme"
                       data-terra-popup-content={true}
                       disableOnClickOutside={[Function]}
                       enableOnClickOutside={[Function]}
@@ -308,7 +308,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                       tabIndex={null}
                     >
                       <div
-                        className="content content"
+                        className="content content orion-fusion-theme"
                         data-terra-popup-content={true}
                         role="dialog"
                         tabIndex={null}
@@ -412,7 +412,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                             role="menu"
                                           >
                                             <ul
-                                              className="list list"
+                                              className="list orion-fusion-theme list"
                                               role="menu"
                                             >
                                               <MenuItem
