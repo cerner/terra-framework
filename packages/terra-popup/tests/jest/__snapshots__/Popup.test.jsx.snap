@@ -1,5 +1,233 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <PopupDefaultExample
+    classNameArrow="terra-test-class-arrow"
+  >
+    <div>
+      <Popup
+        attachmentBehavior="auto"
+        boundingRef={null}
+        classNameArrow="terra-test-class-arrow"
+        classNameContent={null}
+        classNameOverlay={null}
+        contentAttachment="top center"
+        contentHeight="80"
+        contentWidth="240"
+        isArrowDisplayed={false}
+        isContentFocusDisabled={false}
+        isHeaderDisabled={false}
+        isOpen={true}
+        onRequestClose={[Function]}
+        popupContentRole="dialog"
+        targetRef={[Function]}
+      >
+        <Portal
+          isOpened={true}
+        >
+          <Portal
+            containerInfo={
+              <div>
+                <div
+                  class="popup-overlay orion-fusion-theme"
+                >
+                  <div
+                    class="inner"
+                  />
+                </div>
+              </div>
+            }
+          >
+            <PopupOverlay
+              className={null}
+              onRequestClose={[Function]}
+            >
+              <div
+                className="popup-overlay orion-fusion-theme"
+                onClick={[Function]}
+              >
+                <div
+                  className="inner"
+                />
+              </div>
+            </PopupOverlay>
+          </Portal>
+        </Portal>
+        <Hookshot
+          attachmentBehavior="auto"
+          attachmentMargin={0}
+          boundingRef={null}
+          contentAttachment={
+            Object {
+              "horizontal": "center",
+              "vertical": "top",
+            }
+          }
+          contentOffset={
+            Object {
+              "horizontal": 0,
+              "vertical": 0,
+            }
+          }
+          isEnabled={true}
+          isOpen={true}
+          onPosition={[Function]}
+          targetAttachment={
+            Object {
+              "horizontal": "center",
+              "vertical": "bottom",
+            }
+          }
+          targetOffset={
+            Object {
+              "horizontal": 0,
+              "vertical": 0,
+            }
+          }
+          targetRef={[Function]}
+        >
+          <Portal
+            isOpened={true}
+          >
+            <Portal
+              containerInfo={
+                <div>
+                  <div>
+                    <div
+                      class="content content orion-fusion-theme"
+                      data-terra-popup-content="true"
+                      role="dialog"
+                      style="transform: translate3d(0px, 0px, 0px); opacity: 1;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="inner"
+                        style="height: 80px; width: 240px;"
+                      >
+                        <p>
+                          this is popup content
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+            >
+              <PopupContent
+                classNameInner={null}
+                contentHeight={80}
+                contentHeightMax={768}
+                contentWidth={240}
+                contentWidthMax={1024}
+                disableOnClickOutside={true}
+                isFocusedDisabled={false}
+                isHeaderDisabled={false}
+                isHeightAutomatic={false}
+                isWidthAutomatic={false}
+                onContentResize={[Function]}
+                onRequestClose={[Function]}
+                onResize={[Function]}
+                popupContentRole="dialog"
+                refCallback={[Function]}
+              >
+                <FocusTrap
+                  _createFocusTrap={[Function]}
+                  active={true}
+                  focusTrapOptions={
+                    Object {
+                      "clickOutsideDeactivates": true,
+                      "returnFocusOnDeactivate": true,
+                    }
+                  }
+                  paused={false}
+                >
+                  <div>
+                    <OnClickOutside(HookshotContent)
+                      className="content orion-fusion-theme"
+                      data-terra-popup-content={true}
+                      disableOnClickOutside={true}
+                      eventTypes={
+                        Array [
+                          "mousedown",
+                          "touchstart",
+                        ]
+                      }
+                      excludeScrollbar={false}
+                      onEsc={[Function]}
+                      onResize={[Function]}
+                      outsideClickIgnoreClass="ignore-react-onclickoutside"
+                      preventDefault={false}
+                      refCallback={[Function]}
+                      role="dialog"
+                      stopPropagation={false}
+                      tabIndex="0"
+                    >
+                      <HookshotContent
+                        className="content orion-fusion-theme"
+                        data-terra-popup-content={true}
+                        disableOnClickOutside={[Function]}
+                        enableOnClickOutside={[Function]}
+                        eventTypes={
+                          Array [
+                            "mousedown",
+                            "touchstart",
+                          ]
+                        }
+                        onEsc={[Function]}
+                        onResize={[Function]}
+                        outsideClickIgnoreClass="ignore-react-onclickoutside"
+                        preventDefault={false}
+                        refCallback={[Function]}
+                        role="dialog"
+                        stopPropagation={false}
+                        tabIndex="0"
+                      >
+                        <div
+                          className="content content orion-fusion-theme"
+                          data-terra-popup-content={true}
+                          role="dialog"
+                          tabIndex="0"
+                        >
+                          <div
+                            className="inner"
+                            style={
+                              Object {
+                                "height": "80px",
+                                "width": "240px",
+                              }
+                            }
+                          >
+                            <p
+                              key=".0"
+                            >
+                              this is popup content
+                            </p>
+                          </div>
+                        </div>
+                      </HookshotContent>
+                    </OnClickOutside(HookshotContent)>
+                  </div>
+                </FocusTrap>
+              </PopupContent>
+            </Portal>
+          </Portal>
+        </Hookshot>
+      </Popup>
+      <div
+        className="container"
+      />
+    </div>
+  </PopupDefaultExample>
+</ThemeContextProvider>
+`;
+
 exports[`should renders with custom arrow class name 1`] = `
 <div>
   <Popup

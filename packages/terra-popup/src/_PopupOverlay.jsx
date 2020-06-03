@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from './PopupOverlay.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -51,6 +53,7 @@ class PopupOverlay extends React.Component {
     delete customProps.closePortal;
     // Delete onRequestClose prop we use to close popup.
     delete customProps.onRequestClose;
+    const theme = this.context;
 
     return (
       <React.Fragment>
@@ -58,7 +61,7 @@ class PopupOverlay extends React.Component {
         <div
           onClick={this.handleOnClick}
           {...customProps}
-          className={cx(['popup-overlay', customProps.className])}
+          className={classNames(cx('popup-overlay', theme.className), customProps.className)}
         >
           <div className={cx('inner')} />
           {children}
@@ -70,5 +73,6 @@ class PopupOverlay extends React.Component {
 
 PopupOverlay.propTypes = propTypes;
 PopupOverlay.defaultProps = defaultProps;
+PopupOverlay.contextType = ThemeContext;
 
 export default PopupOverlay;
