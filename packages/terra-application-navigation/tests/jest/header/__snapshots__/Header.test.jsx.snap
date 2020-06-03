@@ -1228,7 +1228,7 @@ exports[`Header should render with function callbacks 1`] = `
                     >
                       <img
                         alt="user-name"
-                        className="image cover default image hidden"
+                        className="image cover default hidden image"
                         onError={[Function]}
                         onLoad={[Function]}
                         src="user-src"
