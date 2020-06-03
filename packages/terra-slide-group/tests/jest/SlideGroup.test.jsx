@@ -1,4 +1,5 @@
 import React from 'react';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import SlideGroup from '../../src/SlideGroup';
 
 const slideGroup = (
@@ -19,4 +20,13 @@ it('should render a default SlideGroup', () => {
 it('should render a SlideGroup with animation enabled', () => {
   const wrapper = shallow(React.cloneElement(slideGroup, { isAnimated: true }));
   expect(wrapper).toMatchSnapshot();
+});
+
+it('correctly applies the theme context className', () => {
+  const tabs = mount(
+    <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+      {slideGroup}
+    </ThemeContextProvider>,
+  );
+  expect(tabs).toMatchSnapshot();
 });
