@@ -4,11 +4,13 @@ import AbstractModal from 'terra-abstract-modal';
 import FocusTrap from 'focus-trap-react';
 import * as KeyCode from 'keycode-js';
 import Button, { ButtonVariants } from 'terra-button';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import { FormattedMessage } from 'react-intl';
 import styles from './NotificationDialog.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const variants = {
   ALERT: 'alert',
@@ -231,7 +233,12 @@ class NotificationDialog extends React.Component {
     }
 
     const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
-    const notificationDialogClassNames = cx('notification-dialog', customProps.className);
+    const theme = this.context;
+    const notificationDialogClassNames = classNames(cx(
+      'notification-dialog',
+      theme.className,
+    ),
+    customProps.className);
 
     /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     return (
@@ -285,6 +292,7 @@ class NotificationDialog extends React.Component {
 
 NotificationDialog.propTypes = propTypes;
 NotificationDialog.defaultProps = defaultProps;
+NotificationDialog.contextType = ThemeContext;
 
 export { variants as NotificationDialogVariants };
 export default NotificationDialog;
