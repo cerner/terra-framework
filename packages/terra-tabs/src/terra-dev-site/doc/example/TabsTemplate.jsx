@@ -78,6 +78,16 @@ const TabsTemplate = (props) => {
             isSelected: currentTab === 'long',
           },
           {
+            id: 'tab-super',
+            associatedPaneId: 'tab-super-pane',
+            label: 'Super Tab',
+            icon: <IconSearch />,
+            key: 'SuperTab"',
+            onSelect: handleSelect,
+            metaData: { key: 'super' },
+            isSelected: currentTab === 'super',
+          },
+          {
             id: 'tab-last',
             associatedPaneId: 'tab-last-pane',
             label: 'Last Tab',
@@ -85,14 +95,6 @@ const TabsTemplate = (props) => {
             onSelect: handleSelect,
             metaData: { key: 'last' },
             isSelected: currentTab === 'last',
-          },
-          {
-            id: 'tab-disabled',
-            associatedPaneId: 'tab-disabled-pane',
-            label: 'Disabled Tab',
-            icon: <IconSearch />,
-            isDisabled: true,
-            key: 'DisabledTab"',
           },
         ]}
       >

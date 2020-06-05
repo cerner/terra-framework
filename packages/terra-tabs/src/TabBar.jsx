@@ -62,13 +62,14 @@ const propTypes = {
   tabData: PropTypes.arrayOf(tabPropType).isRequired,
 };
 
-const getTabs = (data) => {
-  return data.map(tab => <Tab {...tab} />);
+const getTabs = (data, ids) => {
+  return data.map((tab, index) => <Tab {...tab} index={index} tabIds={ids} />);
 };
 
 const TabBar = ({ onTruncationChange, tabData }) => {
   const [breakpoint, setBreakpoint] = useState(null);
-  const tabs = getTabs(tabData);
+  const ids = tabData.map(tab => tab.id);
+  const tabs = getTabs(tabData, ids);
   
   let currentTabBar;
   if (breakpoint) {
@@ -85,6 +86,7 @@ const TabBar = ({ onTruncationChange, tabData }) => {
         <CollapsibleTabs
           onTruncationChange={onTruncationChange}
           variant="structural"
+          ids={ids}
         >
           {tabs}
         </CollapsibleTabs>

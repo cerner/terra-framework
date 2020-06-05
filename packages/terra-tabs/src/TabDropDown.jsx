@@ -27,6 +27,7 @@ const TabDropDown = ({
   isOpen,
   children,
   onOutsideClick,
+  wrappedRef,
   ...customProps
 }) => {
   TabDropDown.handleClickOutside = event => onOutsideClick(event);
@@ -39,6 +40,7 @@ const TabDropDown = ({
   delete customProps.outsideClickIgnoreClass;
   delete customProps.preventDefault;
   delete customProps.stopPropagation;
+  // delete customProps.wrappedRef;
 
   const paneClassNames = cx([
     'drop-down',
@@ -50,6 +52,7 @@ const TabDropDown = ({
       {...customProps}
       role="none"
       className={paneClassNames}
+      ref={wrappedRef}
     >
       {children}
     </div>

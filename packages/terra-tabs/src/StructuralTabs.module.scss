@@ -144,20 +144,6 @@
         }
       }
 
-      &.is-disabled,
-      &.is-disabled:hover {
-        background-color: var(--terra-tabs-structural-disabled-hover-background-color, #fff);
-        background-size: 0 0;
-        color: var(--terra-tabs-structural-disabled-hover-color, rgba(0, 0, 0, 0.25));
-        cursor: default;
-        opacity: var(--terra-tabs-structural-disabled-hover-opacity, 1);
-      }
-
-      &.is-disabled .label,
-      &.is-disabled svg {
-        opacity: var(--terra-tabs-structural-disabled-label-opacity, 1);
-      }
-
       &:first-child {
         margin-left: 0;
       }
@@ -174,12 +160,17 @@
       outline: none;
       z-index: 1;
 
-      [dir=rtl] & {
-        box-shadow: var(--terra-tabs-keyboard-active-focus-rtl-box-shadow, 0 0 1px 2px #4a90e2);
-      }
+      // [dir=rtl] & {
+      //   box-shadow: var(--terra-tabs-keyboard-active-focus-rtl-box-shadow, 0 0 1px 2px #4a90e2);
+      // }
 
-      [dir=ltr] & {
-        box-shadow: var(--terra-tabs-keyboard-active-focus-ltr-box-shadow, 0 0 1px 2px #4a90e2);
+      // [dir=ltr] & {
+      //   box-shadow: var(--terra-tabs-keyboard-active-focus-ltr-box-shadow, 0 0 1px 2px #4a90e2);
+      // }
+
+      &:focus {
+        outline: 2px dashed #000;
+        outline-offset: -2px;
       }
     }
 

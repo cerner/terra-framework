@@ -30,10 +30,6 @@ const propTypes = {
    */
   customDisplay: PropTypes.node,
   /**
-   * Indicates if the pane should be disabled.
-   */
-  isDisabled: PropTypes.bool,
-  /**
    * Indicates if the pane label should only display the icon. When tab collapses into menu the label text will be used.
    */
   isIconOnly: PropTypes.bool,
@@ -48,15 +44,16 @@ const propTypes = {
   /**
    * Callback function triggering on selection.
    */
-  onSelect: PropTypes.func,
+  onSelect: PropTypes.func.isRequired,
   /**
    * Object to be returned in the onSelect.
    */
   metaData: PropTypes.object,
+  index: PropTypes.number.isRequired,
+  tabIds: PropTypes.array.isRequired,
 };
 
 const defaultProps = {
-  isDisabled: false,
   isIconOnly: false,
   isSelected: false,
   isHidden: false,
@@ -68,7 +65,7 @@ const Tab = ({
   icon,
   label,
   customDisplay,
-  isDisabled,
+  index,
   isIconOnly,
   isSelected,
   isHidden,
@@ -76,12 +73,12 @@ const Tab = ({
   metaData,
   onBlur,
   onFocus,
+  tabIds,
   ...customProps
 }) => {
   const attributes = {};
   const paneClassNames = cx([
     'tab',
-    { 'is-disabled': isDisabled },
     { 'is-icon-only': isIconOnly },
     { 'is-text-only': !icon },
     { 'is-active': isSelected },
@@ -95,7 +92,7 @@ const Tab = ({
       event.stopPropagation();
       onSelect(metaData);
     } else {
-      handleArrows(event);
+      handleArrows(event, index, tabIds);
     }
   }
 
@@ -109,10 +106,6 @@ const Tab = ({
     attributes.onKeyDown = onKeyDown;
   }
   attributes['aria-selected'] = isSelected;
-
-  if (isDisabled) {
-    attributes['aria-disabled'] = true;
-  }
 
   if (isHidden) {
     attributes.onBlur = onBlur;

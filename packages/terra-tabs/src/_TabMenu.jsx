@@ -26,6 +26,7 @@ const propTypes = {
    * Object containing intl APIs.
    */
   intl: intlShape.isRequired,
+  ids: PropTypes.array,
 };
 
 class TabMenu extends React.Component {
@@ -69,7 +70,7 @@ class TabMenu extends React.Component {
       // this.setState({ isOpen: true });
       this.props.onSelect(event);
     } else {
-      handleArrows(event);
+      handleArrows(event, -1, this.props.ids);
     }
   }
 
@@ -89,7 +90,8 @@ class TabMenu extends React.Component {
   render() {
     const {
       intl,
-      children,
+      ids,
+      ...customProps
     } = this.props;
     const menuItems = [];
     let menuToggleText = intl.formatMessage({ id: 'Terra.tabs.more' });
@@ -102,7 +104,7 @@ class TabMenu extends React.Component {
 
     //   if (isSelected && isHidden) {
     //     // menuToggleText = label;
-    //     menuActive = true;
+    //     menuActive = true;yt^
     //   }
     //   menuItems.push((
     //     <Menu.Item
@@ -121,7 +123,7 @@ class TabMenu extends React.Component {
       /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
         role="button"
-        tabIndex="0"
+        tabIndex="-1"
         ref={this.setTargetRef}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
