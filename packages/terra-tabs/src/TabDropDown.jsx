@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import onClickOutside from 'react-onclickoutside';
+import * as KeyCode from 'keycode-js';
 
 import styles from './TabDropDown.module.scss';
 
@@ -20,27 +21,40 @@ const propTypes = {
    * @private
    * The function callback when a click outside event occurs.
    */
-  onOutsideClick: PropTypes.func,
+  onRequestClose: PropTypes.func,
+  refCallback: PropTypes.func,
 };
 
 const TabDropDown = ({
   isOpen,
   children,
-  onOutsideClick,
-  wrappedRef,
-  ...customProps
+  onRequestClose,
+  refCallback,
+  disableOnClickOutside,
+  enableOnClickOutside,
 }) => {
-  TabDropDown.handleClickOutside = event => onOutsideClick(event);
+  const handleKeyDown = event => {
+    if (event.keyCode === KeyCode.KEY_ESCAPE && onRequestClose) {
+      onRequestClose(event);
+    }
+  }
 
-  // Delete the unnecessary props that come from react-onclickoutside.
-  delete customProps.disableOnClickOutside;
-  delete customProps.enableOnClickOutside;
-  delete customProps.eventTypes;
-  delete customProps.excludeScrollbar;
-  delete customProps.outsideClickIgnoreClass;
-  delete customProps.preventDefault;
-  delete customProps.stopPropagation;
-  // delete customProps.wrappedRef;
+  useEffect(() => {
+    if (isOpen) {
+      enableOnClickOutside();
+      document.addEventListener('keydown', handleKeyDown);
+    } else {
+      disableOnClickOutside();
+      document.removeEventListener('keydown', handleKeyDown);
+    }
+
+    return (() => {
+      disableOnClickOutside();
+      document.removeEventListener('keydown', handleKeyDown);
+    });
+  }, [isOpen]); 
+
+  TabDropDown.handleClickOutside = event => onRequestClose(event);
 
   const paneClassNames = cx([
     'drop-down',
@@ -49,10 +63,9 @@ const TabDropDown = ({
 
   return (
     <div
-      {...customProps}
+      ref={refCallback}
       role="none"
       className={paneClassNames}
-      ref={wrappedRef}
     >
       {children}
     </div>
@@ -61,4 +74,8 @@ const TabDropDown = ({
 
 TabDropDown.propTypes = propTypes;
 
-export default onClickOutside(TabDropDown, { handleClickOutside: () => TabDropDown.handleClickOutside });
+const clickOutsideConfig = {
+  handleClickOutside: () => TabDropDown.handleClickOutside,
+};
+
+export default onClickOutside(TabDropDown, clickOutsideConfig);

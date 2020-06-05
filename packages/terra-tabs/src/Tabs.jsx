@@ -100,6 +100,8 @@ const Tabs = ({
     />
   );
 
+  const headerTitle = <div className={cx('title')}>{selectedTab.label}</div>;
+
   return (
     <ContentContainer
       {...customProps}
@@ -113,6 +115,7 @@ const Tabs = ({
         associatedTabId={selectedTab.id}
         fill={fill}
       >
+        {headerTitle}
         {children}
       </TabPane>
     </ContentContainer>

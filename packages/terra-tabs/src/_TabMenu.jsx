@@ -27,6 +27,7 @@ const propTypes = {
    */
   intl: intlShape.isRequired,
   ids: PropTypes.array,
+  isActive: PropTypes.bool,
 };
 
 class TabMenu extends React.Component {
@@ -38,9 +39,9 @@ class TabMenu extends React.Component {
     this.getTargetRef = this.getTargetRef.bind(this);
     this.setTargetRef = this.setTargetRef.bind(this);
     this.wrapOnClick = this.wrapOnClick.bind(this);
-    this.state = {
-      isOpen: false,
-    };
+    // this.state = {
+    //   isOpen: false,
+    // };
   }
 
   getTargetRef() {
@@ -56,7 +57,7 @@ class TabMenu extends React.Component {
   }
 
   handleOnRequestClose() {
-    this.setState({ isOpen: false });
+    // this.setState({ isOpen: false });
   }
 
   handleOnClick(event) {
@@ -83,7 +84,7 @@ class TabMenu extends React.Component {
         child.props.onSelect(metaData);
       }
 
-      this.setState({ isOpen: false });
+      // this.setState({ isOpen: false });
     };
   }
 
@@ -91,11 +92,12 @@ class TabMenu extends React.Component {
     const {
       intl,
       ids,
+      isActive,
       ...customProps
     } = this.props;
-    const menuItems = [];
+    // const menuItems = [];
     let menuToggleText = intl.formatMessage({ id: 'Terra.tabs.more' });
-    let menuActive = false;
+    // let menuActive = false;
 
     // React.Children.forEach(children, (child) => {
     //   const {
@@ -127,7 +129,7 @@ class TabMenu extends React.Component {
         ref={this.setTargetRef}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
-        className={cx('tab-menu', { 'is-active': menuActive }, theme.className)}
+        className={cx('tab-menu', { 'is-active': isActive }, theme.className)}
         data-terra-tabs-menu
       >
         <span>{menuToggleText}</span>

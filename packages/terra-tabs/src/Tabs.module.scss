@@ -9,6 +9,15 @@
     position: relative;
   }
 
+  .title {
+    background-color: #ccc;
+    border: 1px solid #a5a3a3;
+    color: #000;
+    overflow: hidden;
+    padding: 0.643rem 1.071rem;
+    width: 100%;
+  }
+
   .collapsible-tabs-container,
   .collapsed-tabs-container {
     display: flex;
