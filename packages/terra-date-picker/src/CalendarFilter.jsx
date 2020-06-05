@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import moment from 'moment';
 import DatePicker from './DatePicker';
 import styles from './CalendarFilter.module.scss';
 
@@ -83,7 +82,7 @@ const CalendarFilter = ({
       name="terra-calendar-filter"
       inline
       hidePortal
-      selectedDate={selectedDate || moment().format('YYYY-MM-DD')}
+      selectedDate={selectedDate}
       value={value}
       onChange={handleOnChange}
       excludeDates={excludeDates}

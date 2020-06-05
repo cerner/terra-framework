@@ -3,7 +3,7 @@ import CalendarFilter from 'terra-date-picker/lib/CalendarFilter';
 
 const CalendarFilterDefault = () => (
   <div>
-    <p>Defaults to present date</p>
+    <p>Opens to current date. if no date values are provided</p>
     <CalendarFilter
       id="default"
     />
