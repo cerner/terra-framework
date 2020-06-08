@@ -2,8 +2,13 @@ import React from 'react';
 import moment from 'moment';
 import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTemplate';
 
-const isWeekday = (date) => {
+const isWeekdayOrToday = (date) => {
   const momentDate = moment(date);
+
+  // Ensure if today is a weekend that the Today button doesn't get disabled and causes the screenshot to mismatch.
+  if (momentDate.isSame(moment(), 'day')) {
+    return true;
+  }
 
   if (momentDate && momentDate.isValid()) {
     const day = momentDate.day();
@@ -15,7 +20,7 @@ const isWeekday = (date) => {
 
 const DateTimePickerExample = () => (
   <DateTimePickerExampleTemplate
-    filterDate={isWeekday}
+    filterDate={isWeekdayOrToday}
     value="2017-08-15"
   />
 );

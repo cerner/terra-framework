@@ -1,6 +1,7 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import Tabs from '../../src/Tabs';
 
 describe('Tabs', () => {
@@ -100,6 +101,15 @@ describe('Tabs', () => {
       const tabs = <Tabs responsiveTo="none"><Tabs.Pane label="Default" key="default" /></Tabs>;
       const wrapper = shallowWithIntl(tabs);
       expect(wrapper).toMatchSnapshot();
+    });
+
+    it('correctly applies the theme context className', () => {
+      const tabs = mountWithIntl(
+        <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+          <Tabs variant="modular-left-aligned"><Tabs.Pane label="Default" key="default" /></Tabs>
+        </ThemeContextProvider>,
+      );
+      expect(tabs).toMatchSnapshot();
     });
   });
 });

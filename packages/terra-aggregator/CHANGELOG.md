@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+4.50.0 - (June 2, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+4.49.0 - (May 19, 2020)
+------------------
 ### Changed
 * Update screenshot due to change in button hover.
 

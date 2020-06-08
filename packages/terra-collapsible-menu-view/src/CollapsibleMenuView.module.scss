@@ -1,5 +1,9 @@
 @import '~terra-mixins/lib/Mixins';
 
+// Themes
+@import './orion-fusion-theme/CollapsibleMenuView.module';
+@import './clinical-lowlight-theme/CollapsibleMenuView.module';
+
 :local {
   .collapsible-menu-view {
     align-items: center;

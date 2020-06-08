@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.25.0 - (May 19, 2020)
+------------------
 ### Fixed
 * Spacing typo in doc
 

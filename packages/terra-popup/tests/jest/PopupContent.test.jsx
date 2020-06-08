@@ -1,6 +1,7 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import PopupContent, * as PopupContentExports from '../../src/_PopupContent';
 
 describe('PopupContent', () => {
@@ -23,6 +24,15 @@ describe('PopupContent', () => {
 
       it('matches the snapshot', () => {
         expect(wrapper).toMatchSnapshot();
+      });
+
+      it('correctly applies the theme context className', () => {
+        const result = mountWithIntl(
+          <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+            {subject}
+          </ThemeContextProvider>,
+        );
+        expect(result).toMatchSnapshot();
       });
     });
 

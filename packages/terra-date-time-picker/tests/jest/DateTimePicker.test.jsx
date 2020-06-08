@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment-timezone';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import DateTimePicker from '../../lib/DateTimePicker';
 import DateTimeUtils from '../../lib/DateTimeUtils';
 
@@ -122,4 +123,13 @@ it('should validate the isValidTime helper', () => {
 
   expect(DateTimeUtils.isValidTime('16:00', true)).toBe(false);
   expect(DateTimeUtils.isValidTime('16:00:01', true)).toBe(true);
+});
+
+it('correctly applies the theme context className', () => {
+  const dateTime = shallowWithIntl(
+    <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+      <DateTimePicker name="date-time-input" utcOffset={0} />
+    </ThemeContextProvider>,
+  );
+  expect(dateTime).toMatchSnapshot();
 });

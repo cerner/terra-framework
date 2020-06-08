@@ -3,6 +3,18 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Apply themes by context and directly include packaged themes.
+
+6.34.0 - (June 2, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+6.33.0 - (May 19, 2020)
+------------------
+### Changed
+* Minor dependency version bump
 
 6.32.0 - (April 28, 2020)
 ------------------

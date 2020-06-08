@@ -26,4 +26,17 @@ describe('UserData', () => {
 
     expect(result).toMatchSnapshot();
   });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'orion-fusion-theme',
+      });
+    const testUserData = mount(<UserData
+      userName="Test, Person"
+      userDetail="Detail For Test"
+      userPhoto={<div>Test Photo</div>}
+    />);
+    expect(testUserData).toMatchSnapshot();
+  });
 });

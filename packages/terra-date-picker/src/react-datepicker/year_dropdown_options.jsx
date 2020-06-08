@@ -81,8 +81,8 @@ export default class YearDropdownOptions extends React.Component {
       </div>
     )
 
-    const minYear = this.props.minDate ? this.props.minDate.year() : null
-    const maxYear = this.props.maxDate ? this.props.maxDate.year() : null
+    const minYear = this.props.minDate.year();
+    const maxYear = this.props.maxDate.year();
 
     if (!maxYear || !this.state.yearsList.find(year => year === maxYear)) {
       options.unshift(

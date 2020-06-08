@@ -1,6 +1,7 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 
 import NavigationSideMenu from '../../src/NavigationSideMenu';
 
@@ -43,6 +44,26 @@ describe('Layout', () => {
         selectedMenuKey="menu"
       />
     ));
+    expect(result).toMatchSnapshot();
+  });
+
+  it('correctly applies the theme context className', () => {
+    const result = mountWithIntl(
+      <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+        <NavigationSideMenu
+          menuItems={[
+            { key: 'menu', text: 'Test Menu', childKeys: ['test1', 'test2', 'test3', 'test4'] },
+            { key: 'test1', text: 'Test Menu 1' },
+            { key: 'test2', text: 'Test Menu 2' },
+            { key: 'test3', text: 'Test Menu 3' },
+            { key: 'test4', text: 'Test Menu 4' },
+          ]}
+          onChange={() => {}}
+          routingStackBack={() => {}}
+          selectedMenuKey="menu"
+        />
+      </ThemeContextProvider>,
+    );
     expect(result).toMatchSnapshot();
   });
 });

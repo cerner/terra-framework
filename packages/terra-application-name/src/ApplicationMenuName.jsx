@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 
 import styles from './ApplicationMenuName.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -22,10 +24,12 @@ const ApplicationMenuName = ({
   title,
   ...customProps
 }) => {
-  const ApplicationMenuNameClassNames = cx([
+  const theme = React.useContext(ThemeContext);
+  const ApplicationMenuNameClassNames = classNames(cx(
     'application-menu-name',
-    customProps.className,
-  ]);
+    theme.className,
+  ),
+  customProps.className);
 
   return (
     <div {...customProps} className={ApplicationMenuNameClassNames}>

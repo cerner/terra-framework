@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import AbstractModal from 'terra-abstract-modal';
 import ActionHeader from 'terra-action-header';
 import SlideGroup from 'terra-slide-group';
@@ -11,7 +13,7 @@ import styles from './ModalManager.module.scss';
 const disclosureType = 'modal';
 export { disclosureType };
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -57,11 +59,13 @@ class ModalManager extends React.Component {
     const {
       children, disclosureAccessory, withDisclosureContainer, ...customProps
     } = this.props;
+    const theme = this.context;
 
-    const containerClassNames = cx([
+    const containerClassNames = classNames(cx(
       'container',
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
 
     const classArray = ['modal-manager'];
     const isFullscreen = manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
@@ -134,5 +138,6 @@ class ModalManager extends React.Component {
 }
 
 ModalManager.propTypes = propTypes;
+ModalManager.contextType = ThemeContext;
 
 export default ModalManager;

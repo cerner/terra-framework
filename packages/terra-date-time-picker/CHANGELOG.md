@@ -6,6 +6,13 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Apply themes by context and directly include packaged themes.
+* Update test and screenshots to account for min/max changes in DatePicker.
+* Update wdio screenshots failing in master.
+
+4.37.0 - (May 19, 2020)
+------------------
+### Changed
 * Update screenshots due to change in button hover.
 
 4.36.0 - (April 28, 2020)
