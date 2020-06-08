@@ -1,0 +1,141 @@
+:local {
+  .orion-fusion-theme {
+    /* -------------------------------------------------------------------- 
+    * Values for all versions
+    * -------------------------------------------------------------------- */
+    // Default
+    --terra-time-input-background-color: #fff;
+    --terra-time-input-background-image: none;
+    --terra-time-input-background-size: 0 0;
+    --terra-time-input-border-color: #dedfe0;
+    --terra-time-input-border-radius: 3px;
+    --terra-time-input-border-style: solid;
+    --terra-time-input-border-width: 1px;
+    --terra-time-input-color: #1c1f21;
+    --terra-time-input-font-size: 1rem;
+    --terra-time-input-line-height: 1.41666;
+    --terra-time-input-padding-bottom: 0.08333rem;
+    --terra-time-input-padding-left: 0.08333rem;
+    --terra-time-input-padding-right: 0.08333rem;
+    --terra-time-input-padding-top: 0.08333rem;
+    --terra-time-input-time-spacer-margin-top: 0.3571428571rem;
+    --terra-time-input-time-spacer-margin-bottom: 0.3571428571rem;
+    --terra-time-input-time-spacer-margin-left: 0.14285714rem;
+    --terra-time-input-time-spacer-margin-right: 0.14285714rem;
+    --terra-time-input-transition-duration: 0.2s;
+    --terra-time-input-transition-timing-function: ease;
+
+    // Default - Hover
+    --terra-time-input-hover-background-color: #fff;
+    --terra-time-input-hover-border: 1px solid #dedfe0;
+    --terra-time-input-hover-color: #1c1f21;
+
+    // Default - Focus
+    --terra-time-input-focus-background-color: #fff;
+    --terra-time-input-focus-background-size: 0 0;
+    --terra-time-input-focus-border-color: #4cb2e9;
+    --terra-time-input-focus-border-style: solid;
+    --terra-time-input-focus-border-width: 1px;
+    --terra-time-input-focus-ltr-box-shadow: 0 0 8px #a6d9f4;
+    --terra-time-input-focus-rtl-box-shadow: 0 0 8px #a6d9f4;
+    --terra-time-input-focus-color: #1c1f21;
+    --terra-time-input-focus-opacity: 1;
+
+    // Meridiem Button
+    --terra-time-input-meridiem-button-font-size: 1rem;
+    --terra-time-input-meridiem-button-background-color: #fff;
+    --terra-time-input-meridiem-button-border-color: #6f7477;
+    --terra-time-input-meridiem-button-color: #000;
+    --terra-time-input-meridiem-button-hover-background-color: #e5e5e5;
+    --terra-time-input-meridiem-button-hover-border-color: #6f7477;
+    --terra-time-input-meridiem-button-hover-color: #000;
+    --terra-time-input-meridiem-button-padding-bottom: 0.25rem;
+    --terra-time-input-meridiem-button-padding-top: 0.25rem;
+    --terra-time-input-meridiem-button-selected-background-color: #595f62;
+    --terra-time-input-meridiem-button-selected-border-color: #6f7477;
+    --terra-time-input-meridiem-button-selected-color: #fff;
+    --terra-time-input-meridiem-button-selected-hover-background-color: #595f62;
+    --terra-time-input-meridiem-button-selected-hover-border-color: #6f7477;
+    --terra-time-input-meridiem-button-selected-hover-color: #fff;
+
+    // Disabled
+    --terra-time-input-disabled-background-color: #f4f4f4;
+    --terra-time-input-disabled-border: 1px solid #b2b5b6;
+    --terra-time-input-disabled-color: #9b9fa1;
+    --terra-time-input-disabled-opacity: 1;
+    
+    // Invalid
+    --terra-time-input-invalid-background-color: #fff;
+    --terra-time-input-invalid-border: 1px solid #dedfe0;
+    --terra-time-input-invalid-box-shadow: none;
+
+    // Invalid - Hover
+    --terra-time-input-invalid-hover-border: 1px solid #dedfe0;
+    --terra-time-input-invalid-hover-box-shadow: none;
+
+    // Invalid - Focus
+    --terra-time-input-invalid-focus-border: 1px solid #4cb2e9;
+    --terra-time-input-invalid-focus-box-shadow: 0 0 8px #a6d9f4;
+
+    // Invalid - Disabled
+    --terra-time-input-invalid-disabled-background-color: #f4f4f4;
+    --terra-time-input-invalid-disabled-border: 1px solid #b2b5b6;
+    --terra-time-input-invalid-disabled-color: #9b9fa1;
+    --terra-time-input-invalid-disabled-opacity: 1;
+
+    // Incomplete
+    --terra-time-input-incomplete-background-color: #fefd9a;
+    --terra-time-input-incomplete-hover-background-color: #fefd9a;
+    --terra-time-input-incomplete-focus-background-color: #fefd9a;
+    --terra-time-input-incomplete-focused-input-background-color: #b9d7e9;
+
+    // Incomplete - Disabled
+    --terra-time-input-incomplete-disabled-background-color: #f4f4f4;
+    --terra-time-input-incomplete-disabled-border: 1px solid #b2b5b6;
+    --terra-time-input-incomplete-disabled-color: #9b9fa1;
+    --terra-time-input-incomplete-disabled-opacity: 1;
+
+    /* -------------------------------------------------------------------- 
+    * Values for 4.15.0 and after
+    * -------------------------------------------------------------------- */
+    // Default - Hover
+    --terra-time-input-time-component-background-color: transparent;
+    --terra-time-input-time-component-background-image: none;
+    --terra-time-input-time-component-background-size: 0 0;
+    --terra-time-input-time-component-border-color: transparent;
+    --terra-time-input-time-component-border-radius: 2px;
+    --terra-time-input-time-component-border-style: solid;
+    --terra-time-input-time-component-border-width: 0;
+    --terra-time-input-time-component-caret-color: #1c1f21;
+    --terra-time-input-time-component-color: #1c1f21;
+    --terra-time-input-time-component-height: 1.83333rem;
+    --terra-time-input-time-component-line-height: 1.41666;
+    --terra-time-input-time-component-min-width: 1.8em;
+    --terra-time-input-time-component-padding-bottom: 0;
+    --terra-time-input-time-component-padding-left: 0;
+    --terra-time-input-time-component-padding-right: 0;
+    --terra-time-input-time-component-padding-top: 0;
+    --terra-time-input-time-component-transition-duration: 0s;
+    --terra-time-input-time-component-transition-timing-function: ease;
+    --terra-time-input-time-spacer-line-height: 1.41666;
+
+    // Default - Hover
+    --terra-time-input-time-component-hover-background-color: transparent;
+    --terra-time-input-time-component-hover-border: 0 none transparent;
+    --terra-time-input-time-component-hover-color: #1c1f21;
+
+    // Default - Focus
+    --terra-time-input-time-component-focus-background-color: transparent;
+    --terra-time-input-time-component-focus-background-size: 0 0;
+    --terra-time-input-time-component-focus-ltr-box-shadow: none;
+    --terra-time-input-time-component-focus-rtl-box-shadow: none;
+    --terra-time-input-time-component-focused-input-background-color: rgba(139, 194, 249, 0.3);
+    --terra-time-input-time-component-focus-color: #1c1f21;
+
+    // Meridiem Button
+    --terra-time-input-meridiem-button-group-margin-bottom: 0.5rem;
+    --terra-time-input-meridiem-button-group-margin-right: 0.5rem;
+    --terra-time-input-meridiem-button-height: 2.16667rem;
+    --terra-time-input-meridiem-button-line-height: 1.41666;
+  }
+}

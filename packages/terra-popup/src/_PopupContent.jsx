@@ -1,14 +1,16 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import FocusTrap from 'focus-trap-react';
 import Hookshot from 'terra-hookshot';
 import styles from './PopupContent.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 /**
  * Rounded corner size to be used when calculating the arrow offset.
  */
@@ -194,11 +196,13 @@ class PopupContent extends React.Component {
     if (isFullScreen && !isHeaderDisabled) {
       content = PopupContent.addPopupHeader(content, onRequestClose);
     }
+    const theme = this.context;
 
-    const contentClassNames = cx([
+    const contentClassNames = classNames(cx(
       'content',
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
 
     const roundedCorners = arrow && !isFullScreen;
     const arrowContent = roundedCorners ? arrow : undefined;
@@ -240,6 +244,7 @@ class PopupContent extends React.Component {
 
 PopupContent.propTypes = propTypes;
 PopupContent.defaultProps = defaultProps;
+PopupContent.contextType = ThemeContext;
 
 export default PopupContent;
 
