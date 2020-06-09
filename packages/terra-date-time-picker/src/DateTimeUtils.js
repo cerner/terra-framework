@@ -107,8 +107,8 @@ class DateTimeUtils {
    */
   static getTime(time, hasSeconds, timeZone) {
     const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
-    const momentDate = (timeZone && moment.tz.zone(timeZone) ? moment.tz(time, timeZone) : moment(time));
-    return DateUtil.formatISODate(momentDate, timeFormat);
+    const momentDate = (timeZone && moment.tz.zone(timeZone) ? moment.tz(time, timeZone) : this.createSafeDate(time, timeZone));
+    return DateUtil.formatMomentDate(momentDate, timeFormat);
   }
 
   /**
