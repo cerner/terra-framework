@@ -1,6 +1,7 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import UtilityButton from '../../src/utility/_UtilityButton';
 import MockConfig from '../../src/terra-dev-site/doc/common/MockConfig';
 
@@ -89,5 +90,21 @@ describe('UtilityButton', () => {
     );
     const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('correctly applies the theme context className', () => {
+    const component = shallowWithIntl(
+      <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+        <UtilityButton
+          menuItems={[]}
+          onChange={mockOnChange}
+          onDisclose={mockOnDisclose}
+          onRequestClose={mockOnRequestClose}
+          variant={variant}
+          initialSelectedKey={initialSelectedKey}
+        />
+      </ThemeContextProvider>,
+    );
+    expect(component).toMatchSnapshot();
   });
 });

@@ -1,5 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`UtilityMenuItem correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <UtilityMenuItem
+    itemKey="key"
+    onChange={[MockFunction]}
+    title=""
+    variant="header"
+  >
+    <div
+      aria-label=""
+      className="header-utility-body-item orion-fusion-theme"
+      key="key"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex="0"
+    >
+      <Arrange
+        align="center"
+        className="default-left-inset default-right-inset"
+        fill={
+          <div>
+            
+          </div>
+        }
+        fillAttributes={
+          Object {
+            "className": "menu-item-fill",
+          }
+        }
+        fitEnd={null}
+        fitStart={null}
+      >
+        <div
+          className="arrange default-left-inset default-right-inset"
+        >
+          <div
+            className="fit center"
+          />
+          <div
+            className="fill center menu-item-fill"
+          >
+            <div />
+          </div>
+          <div
+            className="fit center"
+          />
+        </div>
+      </Arrange>
+    </div>
+  </UtilityMenuItem>
+</ThemeContextProvider>
+`;
+
 exports[`UtilityMenuItem should pass in a custom prop 1`] = `
 <div
   aria-label=""

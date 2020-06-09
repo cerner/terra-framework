@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`UtilityButton correctly applies the theme context className 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "className": "orion-fusion-theme",
+      "name": undefined,
+    }
+  }
+>
+  <InjectIntl(UtilityButton)
+    initialSelectedKey="menu"
+    menuItems={Array []}
+    onChange={[MockFunction]}
+    onDisclose={[MockFunction]}
+    onRequestClose={[MockFunction]}
+    variant="header"
+  />
+</ContextProvider>
+`;
+
 exports[`UtilityButton it should pass in a custom prop 1`] = `
 <UtilityButton
   id="test"

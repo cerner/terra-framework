@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update failing jest snapshots
+
+1.27.0 - (June 2, 2020)
+------------------
+### Fixed
+* Removed outline on main content
 
 1.28.0 - (May 26, 2020)
 ------------------
