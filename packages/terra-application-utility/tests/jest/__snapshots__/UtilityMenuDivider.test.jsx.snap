@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Divider correctly applies the theme context className 1`] = `
+<UtilityMenuDivider>
+  <div
+    className="divider is-bottom orion-fusion-theme"
+    role="separator"
+  />
+</UtilityMenuDivider>
+`;
+
 exports[`Divider it should pass in a custom prop 1`] = `
 <div
   className="divider is-bottom"
