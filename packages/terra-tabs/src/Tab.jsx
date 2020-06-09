@@ -120,6 +120,7 @@ const Tab = ({
       aria-controls={associatedPaneId}
       role="tab"
       className={paneClassNames}
+      title={label}
     >
       {customDisplay}
       {customDisplay ? null : icon}

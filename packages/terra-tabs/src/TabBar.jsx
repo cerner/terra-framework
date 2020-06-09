@@ -77,9 +77,8 @@ const TabBar = ({ onTruncationChange, tabData }) => {
       currentTabBar = (
         <CollapsedTabs
           onTruncationChange={onTruncationChange}
-        >
-          {tabs}
-        </CollapsedTabs>
+          tabData={tabData}
+        />
       );
     } else {
       currentTabBar = (
