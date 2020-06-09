@@ -1,5 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`UtilityMenu correctly applies the theme context className 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "className": "orion-fusion-theme",
+      "name": undefined,
+    }
+  }
+>
+  <InjectIntl(UtilityMenu)
+    initialSelectedKey="key"
+    menuItems={
+      Array [
+        Object {
+          "childKeys": Array [],
+          "contentLocation": "footer",
+          "isSelected": false,
+          "key": "key",
+          "title": "title",
+        },
+      ]
+    }
+    onChange={[MockFunction]}
+    onDisclose={[MockFunction]}
+    variant="header"
+  />
+</ContextProvider>
+`;
+
 exports[`UtilityMenu it should pass in a custom prop 1`] = `
 <UtilityMenu
   id="test"
