@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.28.0 - (June 9, 2020)
+------------------
 ### Changed
 * Update failing jest snapshots
 

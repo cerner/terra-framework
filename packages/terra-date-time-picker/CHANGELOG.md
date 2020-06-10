@@ -5,6 +5,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.38.0 - (June 9, 2020)
+------------------
 ### Changed
 * Apply themes by context and directly include packaged themes.
 * Update test and screenshots to account for min/max changes in DatePicker.
