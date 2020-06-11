@@ -692,7 +692,7 @@ export default class Calendar extends React.Component {
      */
     if (supportsOnTouchStart) {
       return (
-        <div className={cx(['react-datepicker', 'supports-on-touch-start', this.props.className])} data-terra-date-picker-calendar>
+        <div tabIndex = {(this.props.inline) ? 0 : undefined} className={cx(['react-datepicker', 'supports-on-touch-start', this.props.className])} data-terra-date-picker-calendar>
           <div className={cx('react-datepicker-footer')}>
             {this.renderTodayButton()}
             {this.renderCloseButton()}
@@ -708,7 +708,7 @@ export default class Calendar extends React.Component {
      * when it first opens by making the month component render first in the DOM order
      */
     return (
-      <div className={cx(['react-datepicker', this.props.className])} data-terra-date-picker-calendar>
+      <div tabIndex = {(this.props.inline) ? 0 : undefined} className={cx(['react-datepicker', this.props.className])} data-terra-date-picker-calendar>
           {this.renderMonths()}
           <div className={cx('react-datepicker-footer')}>
             {this.renderTodayButton()}

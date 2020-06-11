@@ -229,7 +229,7 @@ export default class Month extends React.Component {
       <FormattedMessage id="Terra.datePicker.calendarInstructions">
         {text => (
           <div
-            tabIndex="0"
+            tabIndex= {(this.props.inline) ? undefined : 0}
             className={getClassNames}
             onMouseLeave={this.handleMouseLeave}
             role="application"
