@@ -1,3 +1,7 @@
+// Themes
+@import './clinical-lowlight-theme/UtilityMenuItem.module';
+@import './orion-fusion-theme/UtilityMenuItem.module';
+
 :local {
   .header-utility-body-item {
     background-color: var(--terra-application-utility-header-body-item-background-color);

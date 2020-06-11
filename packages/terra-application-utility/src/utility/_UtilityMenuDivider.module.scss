@@ -1,3 +1,7 @@
+// Themes
+@import './clinical-lowlight-theme/UtilityMenuDivider.module';
+@import './orion-fusion-theme/UtilityMenuDivider.module';
+
 :local {
   .divider {
     border-bottom-width: var(--terra-application-utility-menu-divider-border-bottom-width, 0);

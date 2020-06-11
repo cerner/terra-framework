@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from './_UtilityMenuDivider.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -13,12 +15,14 @@ const propTypes = {
 };
 
 const UtilityMenuDivider = ({ isTop, ...customProps }) => {
-  const dividerClassNames = cx([
+  const theme = React.useContext(ThemeContext);
+  const dividerClassNames = classNames(cx(
     'divider',
     { 'is-bottom': !isTop },
     { 'is-top': isTop },
-    customProps.className,
-  ]);
+    theme.className,
+  ),
+  customProps.className);
 
   return <div {...customProps} className={dividerClassNames} role="separator" />;
 };
