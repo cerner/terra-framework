@@ -51,6 +51,7 @@ it('should render a DatePickerField with props', () => {
       isInvalid
       disabled
       selectedDate="2017-04-09"
+      value="2017-04-09"
     />
   );
 
