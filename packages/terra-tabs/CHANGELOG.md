@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update jest snapshot to comply with icon theme changes.
 
 6.37.0 - (June 9, 2020)
 ------------------
