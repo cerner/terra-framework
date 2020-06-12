@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed 
+* Updated Jest Snapshots
 
 1.14.0 - (June 2, 2020)
 ------------------
