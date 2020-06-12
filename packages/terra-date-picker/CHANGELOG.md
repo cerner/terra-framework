@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update jest due to changes in terra-icon.
 
 4.39.0 - (June 9, 2020)
 ------------------
