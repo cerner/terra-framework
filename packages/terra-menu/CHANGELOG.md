@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update fusion sub-menu screenshot due to inline-height changes in terra-base.
 
 6.35.0 - (June 9, 2020)
 ------------------
