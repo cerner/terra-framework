@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
-* Consume latest major version bump of terra-avatar
+* Updated terra-form-select to V6
 
 1.36.0 - (June 9, 2020)
 ------------------
