@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import DatePicker from './DatePicker';
@@ -69,12 +69,12 @@ const CalendarFilter = ({
   value,
   ...customProps
 }) => {
-  const handleOnChange = useCallback((event, date, metaData) => {
+  const handleOnChange = (event, date, metaData) => {
     if (onChange) {
       const { inputValue: formattedDateValue } = metaData;
       onChange(event, date, formattedDateValue);
     }
-  }, [onChange]);
+  };
 
   return (
     <DatePicker

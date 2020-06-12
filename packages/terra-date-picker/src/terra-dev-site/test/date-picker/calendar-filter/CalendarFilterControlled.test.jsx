@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
 import CalendarFilter from '../../../../CalendarFilter';
@@ -9,13 +9,13 @@ const cx = classNames.bind(styles);
 const CalendarFilterControlled = () => {
   const [date, setDate] = useState('2020-04-04');
 
-  const handleOnDateChange = useCallback((event, selectedDate) => {
+  const handleOnDateChange = (event, selectedDate) => {
     setDate(selectedDate);
-  }, []);
+  };
 
-  const handleSelectedDateUpdate = useCallback((event) => {
+  const handleSelectedDateUpdate = (event) => {
     setDate(event.currentTarget.textContent);
-  }, []);
+  };
 
   return (
     <div className={cx('content-wrapper')}>
