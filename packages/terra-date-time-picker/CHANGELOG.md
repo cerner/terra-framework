@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update `maxDate` and `minDate` prop description to clarify usage.
 
 4.38.0 - (June 9, 2020)
 ------------------

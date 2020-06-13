@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added `value` prop in DatePickerField to align with DatePicker.
+
+### Fixed
+* Fixed javascript warning for not setting required `datePickerId` prop in DatePickerField test.
+* Updated DatePickerField example to use correct import.
 
 4.39.0 - (June 9, 2020)
 ------------------
