@@ -3,8 +3,6 @@ Changelog
 
 Unreleased
 ----------
-### Changed
-* Update jest due to changes in terra-icon.
 ### Added
 * Added `value` prop in DatePickerField to align with DatePicker.
 
