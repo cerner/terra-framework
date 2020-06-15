@@ -53,6 +53,7 @@ exports[`should render a DatePickerField with props 1`] = `
     onSelect={[Function]}
     required={true}
     selectedDate="2017-04-09"
+    value="2017-04-09"
   />
 </Field>
 `;

@@ -55,12 +55,12 @@ const propTypes = {
   */
   isInvalidMeridiem: PropTypes.bool,
   /**
-   * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format. Must be before `12/31/2100`
+   * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
   maxDate: PropTypes.string,
   /**
-   * An ISO 8601 string representation of the minimum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format. Must be after `01/01/1900`
+   * An ISO 8601 string representation of the minimum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format. Must be on or after `01/01/1900`.
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
   minDate: PropTypes.string,
