@@ -3,8 +3,6 @@ Changelog
 
 Unreleased
 ----------
-### Changed
-* Update jest snapshot to comply with icon theme changes.
 ### Added
 * Added `value` prop in DatePickerField to align with DatePicker.
 
