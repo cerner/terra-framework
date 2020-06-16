@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated terra-form-select to V6
 
 1.36.0 - (June 9, 2020)
 ------------------

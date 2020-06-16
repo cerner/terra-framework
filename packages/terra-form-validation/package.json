@@ -39,7 +39,7 @@
     "terra-form-field": "^3.1.0",
     "terra-form-input": "^2.3.0",
     "terra-form-radio": "^3.0.0",
-    "terra-form-select": "^5.0.0",
+    "terra-form-select": "^6.8.0",
     "terra-form-textarea": "^3.0.0",
     "terra-spacer": "^3.0.0"
   },

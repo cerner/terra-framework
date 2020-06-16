@@ -37,7 +37,7 @@
     "terra-action-header": "^2.0.0",
     "terra-button": "^3.3.0",
     "terra-date-picker": "^4.39.0",
-    "terra-form-select": "^5.0.0",
+    "terra-form-select": "^6.8.0",
     "terra-modal-manager": "^6.35.0",
     "terra-notification-dialog": "^3.35.0",
     "terra-popup": "^6.35.0"

@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "terra-collapsible-menu-view": "^6.35.0",
-    "terra-form-select": "^5.0.0"
+    "terra-form-select": "^6.8.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
