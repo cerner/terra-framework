@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+6.36.0 - (June 16, 2020)
+------------------
 ### Changed
 * Apply theme context to Menu Item.
 
