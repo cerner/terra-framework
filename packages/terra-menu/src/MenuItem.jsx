@@ -4,11 +4,13 @@ import Arrange from 'terra-arrange';
 import CheckIcon from 'terra-icon/lib/icon/IconCheckmark';
 import ChevronIcon from 'terra-icon/lib/icon/IconChevronRight';
 import InstructionsForUseIcon from 'terra-icon/lib/icon/IconConsultInstructionsForUse';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import * as KeyCode from 'keycode-js';
 import styles from './MenuItem.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const contextTypes = {
   isGroupItem: PropTypes.bool,
@@ -224,9 +226,13 @@ class MenuItem extends React.Component {
     }
 
     return (
-      <li {...attributes} className={itemClassNames} ref={this.setItemNode} role={role} aria-checked={markAsSelected}>
-        {content}
-      </li>
+      <ThemeContext.Consumer>
+        { theme => (
+          <li {...attributes} className={classNames(itemClassNames, cx(theme.className))} ref={this.setItemNode} role={role} aria-checked={markAsSelected}>
+            {content}
+          </li>
+        )}
+      </ThemeContext.Consumer>
     );
   }
 }

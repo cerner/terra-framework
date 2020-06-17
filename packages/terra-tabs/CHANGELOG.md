@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+6.38.0 - (June 16, 2020)
+------------------
+### Changed
+* Update jest snapshot due to terra-icon theme context changes.
+
 6.37.0 - (June 9, 2020)
 ------------------
 ### Changed

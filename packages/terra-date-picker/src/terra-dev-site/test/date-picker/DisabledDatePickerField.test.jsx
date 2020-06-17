@@ -11,6 +11,7 @@ const DatePickerDisabledDate = () => (
       label="Enter Date"
       name="date-input"
       selectedDate="2017-04-01"
+      datePickerId="disabled-date-picker"
       disabled
     />
   </div>
