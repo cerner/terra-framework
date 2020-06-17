@@ -230,7 +230,6 @@ class Day extends React.Component {
         onClick={this.handleClick}
         onMouseEnter={this.handleMouseEnter}
         aria-disabled={this.isDisabled()}
-        tabIndex = {(this.props.inline) ? 0 : undefined}
       >
         <React.Fragment>
           {/* Adding visually hidden text so screen readers like VoiceOver on iOS read the date properly */}

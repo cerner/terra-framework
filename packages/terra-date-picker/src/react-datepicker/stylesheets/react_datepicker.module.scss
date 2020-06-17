@@ -506,8 +506,7 @@
   }
 
   .react-datepicker-day {
-    &--selected-border,
-    &:focus:not(.--selected-border) {
+    &--selected-border {
       outline: var(--terra-date-picker-day-focus-outline, 2px dashed #000);
       outline-offset: var(--terra-date-picker-day-focus-outline-offset, 0);
     }

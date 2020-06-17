@@ -355,6 +355,12 @@ export default class Calendar extends React.Component {
     this.setState({ calendarIsKeyboardFocused: false })
   }
 
+  handleMonthFocus = () => {
+    if (this.props.inline) {
+      this.setState({ calendarIsKeyboardFocused: true })
+    }
+  }
+
   setMonthRef = (node) => {
     this.monthRef = node;
   }
@@ -632,6 +638,7 @@ export default class Calendar extends React.Component {
             day={monthDate}
             isCalendarKeyboardFocused={keyboardFocus}
             dayClassName={this.props.dayClassName}
+            onMonthFocus={this.handleMonthFocus}
             onMonthBlur={this.handleMonthBlur}
             onDayClick={this.handleDayClick}
             onDayMouseEnter={this.handleDayMouseEnter}
@@ -692,7 +699,7 @@ export default class Calendar extends React.Component {
      */
     if (supportsOnTouchStart) {
       return (
-        <div tabIndex = {(this.props.inline) ? 0 : undefined} className={cx(['react-datepicker', 'supports-on-touch-start', this.props.className])} data-terra-date-picker-calendar>
+        <div className={cx(['react-datepicker', 'supports-on-touch-start', this.props.className])} data-terra-date-picker-calendar>
           <div className={cx('react-datepicker-footer')}>
             {this.renderTodayButton()}
             {this.renderCloseButton()}
@@ -708,7 +715,7 @@ export default class Calendar extends React.Component {
      * when it first opens by making the month component render first in the DOM order
      */
     return (
-      <div tabIndex = {(this.props.inline) ? 0 : undefined} className={cx(['react-datepicker', this.props.className])} data-terra-date-picker-calendar>
+      <div className={cx(['react-datepicker', this.props.className])} data-terra-date-picker-calendar>
           {this.renderMonths()}
           <div className={cx('react-datepicker-footer')}>
             {this.renderTodayButton()}
