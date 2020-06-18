@@ -215,7 +215,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                               >
                                 <li
                                   aria-disabled="false"
-                                  class="item"
+                                  class="item orion-fusion-theme"
                                   role="menuitem"
                                   tabindex="0"
                                 >
@@ -428,7 +428,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                               >
                                                 <li
                                                   aria-disabled={false}
-                                                  className="item"
+                                                  className="item orion-fusion-theme"
                                                   onClick={[Function]}
                                                   onKeyDown={[Function]}
                                                   onKeyUp={[Function]}
