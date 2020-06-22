@@ -85,8 +85,7 @@ class Tabs extends React.Component {
         if (!this.isCalculating) {
           this.animationFrameID = window.requestAnimationFrame(() => {
             // Resetting the cache so that all elements will be rendered face-up for width calculations
-            this.resetCache();
-            this.forceUpdate();
+            this.updateSize();
           });
         }
       });
