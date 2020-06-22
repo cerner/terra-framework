@@ -147,6 +147,7 @@ class Tabs extends React.Component {
   }
 
   resetCache() {
+    this.animationFrameID = null;
     this.hiddenStartIndex = -1;
     this.menuHidden = false;
     this.isCalculating = true;
