@@ -47,7 +47,15 @@ Terra.describeViewports('Calendar Filter', ['tiny'], () => {
     Terra.it.validatesElement();
   });
 
-  describe('Controlled DatePicker', () => {
+  describe('Calendar-Filter with OnChange Callback', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-on-change');
+      browser.click('[class*="react-datepicker-day--selected"]');
+    });
+    Terra.it.validatesElement('Returns selected_date-iso-formmated_date');
+  });
+
+  describe('Controlled Calendar Filter', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-controlled');
     });

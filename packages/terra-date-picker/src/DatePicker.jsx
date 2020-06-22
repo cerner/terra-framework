@@ -437,8 +437,8 @@ class DatePicker extends React.Component {
         >
           <ReactDatePicker
             {...customProps}
-            withPortal={(this.props.inline) ? false : this.state.showPortalPicker}
-            inline={this.props.inline}
+            withPortal={(inline) ? false : this.state.showPortalPicker}
+            inline={inline}
             selected={selectedDateInPicker}
             value={formattedValue}
             onBlur={this.handleBlur}

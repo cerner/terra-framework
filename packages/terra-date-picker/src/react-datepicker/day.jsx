@@ -98,7 +98,7 @@ class Day extends React.Component {
   }
 
   handleMouseEnter = (event) => {
-    if (!this.isDisabled() && this.props.onMouseEnter) {
+    if (!this.isDisabled() && this.props.onMouseEnter && !this.props.inline) {
       this.props.onMouseEnter(event)
     }
   }
@@ -207,7 +207,7 @@ class Day extends React.Component {
     return ['react-datepicker-day', dayClassName, 'react-datepicker-day--' + getDayOfWeekCode(this.props.day), {
       'react-datepicker-day--disabled': this.isDisabled(),
       'react-datepicker-day--selected': this.isSameDay(this.props.selected) && !this.isDisabled(),
-      'react-datepicker-day--selected-border': this.isSameDay(this.props.preSelection) && (document.activeElement.tagName === 'DIV' || document.activeElement === document.querySelector('[class*="previous"]')) && this.props.isCalendarKeyboardFocused,
+      'react-datepicker-day--selected-border': this.isSameDay(this.props.preSelection) && !isDayDisabled(this.props.selected, this.props) && (document.activeElement.tagName === 'DIV' || document.activeElement === document.querySelector('[class*="previous"]')) && this.props.isCalendarKeyboardFocused,
       'react-datepicker-day--range-start': this.isRangeStart(),
       'react-datepicker-day--range-end': this.isRangeEnd(),
       'react-datepicker-day--in-range': this.isInRange(),

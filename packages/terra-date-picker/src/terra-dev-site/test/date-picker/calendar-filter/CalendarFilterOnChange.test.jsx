@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import CalendarFilter from 'terra-date-picker/lib/CalendarFilter';
+import CalendarFilter from '../../../../CalendarFilter';
 
 const propTypes = {
   /**
@@ -14,7 +14,7 @@ const defaultProps = {
   value: undefined,
 };
 
-const CalendarFilterControlledExample = ({
+const CalendarFilterOnChange = ({
   value,
 }) => {
   const [date, setDate] = useState(value);
@@ -52,13 +52,13 @@ const CalendarFilterControlledExample = ({
   );
 };
 
-CalendarFilterControlledExample.propTypes = propTypes;
-CalendarFilterControlledExample.defaultProps = defaultProps;
+CalendarFilterOnChange.propTypes = propTypes;
+CalendarFilterOnChange.defaultProps = defaultProps;
 
-const CalendarFilterControlled = () => (
-  <CalendarFilterControlledExample
+const CalendarFilterOnChangeExample = () => (
+  <CalendarFilterOnChange
     value={moment().format('YYYY-MM-DD')}
   />
 );
 
-export default CalendarFilterControlled;
+export default CalendarFilterOnChangeExample;
