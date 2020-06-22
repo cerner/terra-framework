@@ -4,6 +4,34 @@ Changelog
 Unreleased
 ----------
 
+1.35.0 - (June 16, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+1.34.0 - (June 9, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+1.33.0 - (June 2, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+1.32.0 - (May 19, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+1.31.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
 1.30.0 - (April 6, 2020)
 ------------------
 ### Changed

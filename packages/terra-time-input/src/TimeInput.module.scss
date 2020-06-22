@@ -1,5 +1,8 @@
 // stylelint-disable declaration-property-value-blacklist scss/at-mixin-pattern
 // stylelint-disable scss/at-mixin-pattern
+// Themes
+@import './clinical-lowlight-theme/TimeInput.module';
+@import './orion-fusion-theme/TimeInput.module';
 
 :local {
   @mixin focus-styles {
@@ -14,6 +17,7 @@
     display: inline-block;
   }
 
+  // Note: These styles can conflict with form input so care should be taken when changing specificity
   .time-input {
     background-color: var(--terra-time-input-background-color, #fff);
     background-image: var(--terra-time-input-background-image, none);
@@ -82,14 +86,6 @@
       pointer-events: none;
     }
 
-    .time-input-hour[disabled],
-    .time-input-minute[disabled],
-    .time-input-second[disabled] {
-      background-color: transparent;
-      border: 0;
-      opacity: 1;
-    }
-
     &.is-invalid {
       background-color: var(--terra-time-input-invalid-background-color, #fff);
       border: var(--terra-time-input-invalid-border, 1px solid #e50000);
@@ -109,6 +105,105 @@
         color: var(--terra-time-input-invalid-disabled-color, #1c1f21);
         opacity: var(--terra-time-input-invalid-disabled-opacity, 0.25);
       }
+    }
+
+    .time-input-hour,
+    .time-input-minute,
+    .time-input-second {
+      background-color: var(--terra-time-input-time-component-background-color, transparent);
+      background-image: var(--terra-time-input-time-component-background-image, none);
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      background-size: var(--terra-time-input-time-component-background-size, 0 0);
+      border-color: var(--terra-time-input-time-component-border-color, transparent);
+      border-radius: var(--terra-time-input-time-component-border-radius, 2px);
+      border-style: var(--terra-time-input-time-component-border-style, none);
+      border-width: var(--terra-time-input-time-component-border-width, 0);
+      box-sizing: border-box;
+      caret-color: var(--terra-time-input-time-component-caret-color, #1c1f21);
+      color: var(--terra-time-input-time-component-color, #1c1f21);
+      display: inline-block;
+      height: var(--terra-time-input-time-component-height, 1.5714285714rem);
+      line-height: var(--terra-time-input-time-component-line-height, 1.375);
+      min-width: var(--terra-time-input-time-component-min-width, 4rem);
+      padding-bottom: var(--terra-time-input-time-component-padding-bottom, 0);
+      padding-left: var(--terra-time-input-time-component-padding-left, 0);
+      padding-right: var(--terra-time-input-time-component-padding-right, 0);
+      padding-top: var(--terra-time-input-time-component-padding-top, 0);
+      transition-duration: var(--terra-time-input-time-component-transition-duration, 0.2s);
+      transition-property: background-size;
+      transition-timing-function: var(--terra-time-input-time-component-transition-timing-function, ease);
+      width: 100%;
+
+      &:hover {
+        background-color: var(--terra-time-input-time-component-hover-background-color, transparent);
+        border: var(--terra-time-input-time-component-hover-border, 0 none transparent);
+        color: var(--terra-time-input-time-component-hover-color, #1c1f21);
+      }
+
+      &:focus {
+        @include focus-styles;
+        background-color: var(--terra-time-input-time-component-focus-background-color, transparent);
+        background-size: var(--terra-time-input-time-component-focus-background-size, 0 0);
+        border: 0;
+
+        /* stylelint-disable max-nesting-depth */
+        /* stylelint-disable-next-line selector-max-compound-selectors */
+        [dir=ltr] & {
+          box-shadow: var(--terra-time-input-time-component-focus-ltr-box-shadow, none);
+        }
+
+        /* stylelint-disable-next-line selector-max-compound-selectors */
+        [dir=rtl] & {
+          box-shadow: var(--terra-time-input-time-component-focus-rtl-box-shadow, none);
+        }
+        /* stylelint-enable max-nesting-depth */
+      }
+
+      &::selection {
+        background-color: transparent;
+      }
+
+      &.initial-focus {
+        background-color: var(--terra-time-input-time-component-focused-input-background-color, rgba(139, 194, 249, 0.3));
+        background-size: 0 0;
+        border: 0;
+        box-shadow: none;
+        color: var(--terra-time-input-time-component-focus-color, #1c1f21);
+      }
+
+      &[disabled] {
+        background-color: transparent;
+        border: 0;
+        color: var(--terra-time-input-disabled-color, #1c1f21);
+        opacity: 1;
+      }
+    }
+
+    .time-input-hour {
+      min-width: 1.7em;
+      text-align: right;
+      width: 1.7em;
+
+      &.with-second {
+        text-align: center;
+      }
+    }
+
+    .time-input-minute {
+      min-width: 1.8em;
+      text-align: left;
+      width: 1.8em;
+
+      &.with-second {
+        text-align: center;
+      }
+    }
+
+    .time-input-second {
+      min-width: 1.8em;
+      text-align: center;
+      width: 1.8em;
     }
 
     &.is-incomplete {
@@ -133,95 +228,6 @@
         opacity: var(--terra-time-input-incomplete-disabled-opacity, 0.25);
       }
     }
-  }
-
-  .time-input-hour,
-  .time-input-minute,
-  .time-input-second {
-    background-color: var(--terra-time-input-time-component-background-color, transparent);
-    background-image: var(--terra-time-input-time-component-background-image, none);
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    background-size: var(--terra-time-input-time-component-background-size, 0 0);
-    border-color: var(--terra-time-input-time-component-border-color, transparent);
-    border-radius: var(--terra-time-input-time-component-border-radius, 2px);
-    border-style: var(--terra-time-input-time-component-border-style, none);
-    border-width: var(--terra-time-input-time-component-border-width, 0);
-    box-sizing: border-box;
-    caret-color: var(--terra-time-input-time-component-caret-color, #1c1f21);
-    color: var(--terra-time-input-time-component-color, #1c1f21);
-    display: inline-block;
-    height: var(--terra-time-input-time-component-height, 1.5714285714rem);
-    line-height: var(--terra-time-input-time-component-line-height, 1.375);
-    min-width: var(--terra-time-input-time-component-min-width, 4rem);
-    padding-bottom: var(--terra-time-input-time-component-padding-bottom, 0);
-    padding-left: var(--terra-time-input-time-component-padding-left, 0);
-    padding-right: var(--terra-time-input-time-component-padding-right, 0);
-    padding-top: var(--terra-time-input-time-component-padding-top, 0);
-    transition-duration: var(--terra-time-input-time-component-transition-duration, 0.2s);
-    transition-property: background-size;
-    transition-timing-function: var(--terra-time-input-time-component-transition-timing-function, ease);
-    width: 100%;
-
-    &:hover {
-      background-color: var(--terra-time-input-time-component-hover-background-color, transparent);
-      border: var(--terra-time-input-time-component-hover-border, 0 none transparent);
-      color: var(--terra-time-input-time-component-hover-color, #1c1f21);
-    }
-
-    &:focus {
-      @include focus-styles;
-      background-color: var(--terra-time-input-time-component-focus-background-color, transparent);
-      background-size: var(--terra-time-input-time-component-focus-background-size, 0 0);
-      border: 0;
-
-      [dir=ltr] & {
-        box-shadow: var(--terra-time-input-time-component-focus-ltr-box-shadow, none);
-      }
-
-      [dir=rtl] & {
-        box-shadow: var(--terra-time-input-time-component-focus-rtl-box-shadow, none);
-      }
-    }
-
-    &::selection {
-      background-color: transparent;
-    }
-
-    &.initial-focus {
-      background-color: var(--terra-time-input-time-component-focused-input-background-color, rgba(139, 194, 249, 0.3));
-      background-size: 0 0;
-      border: 0;
-      box-shadow: none;
-      color: var(--terra-time-input-time-component-focus-color, #1c1f21);
-    }
-  }
-
-  .time-input-hour {
-    min-width: 1.7em;
-    text-align: right;
-    width: 1.7em;
-
-    &.with-second {
-      text-align: center;
-    }
-  }
-
-  .time-input-minute {
-    min-width: 1.8em;
-    text-align: left;
-    width: 1.8em;
-
-    &.with-second {
-      text-align: center;
-    }
-  }
-
-
-  .time-input-second {
-    min-width: 1.8em;
-    text-align: center;
-    width: 1.8em;
   }
 
   .time-spacer {

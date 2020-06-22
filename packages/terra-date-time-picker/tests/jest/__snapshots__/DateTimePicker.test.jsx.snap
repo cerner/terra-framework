@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`correctly applies the theme context className 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "className": "orion-fusion-theme",
+      "name": undefined,
+    }
+  }
+>
+  <InjectIntl(DateTimePicker)
+    name="date-time-input"
+    utcOffset={0}
+  />
+</ContextProvider>
+`;
+
 exports[`should render a date time picker with a default date and time 1`] = `
 <DateTimePicker
   disabled={false}
@@ -33,6 +49,8 @@ exports[`should render a date time picker with a default date and time 1`] = `
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   required={false}
   showSeconds={false}
@@ -80,6 +98,8 @@ exports[`should render a date time picker with disabled dates 1`] = `
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   required={false}
   showSeconds={false}
@@ -122,6 +142,8 @@ exports[`should render a date time picker with filtered dates 1`] = `
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   required={false}
   showSeconds={false}
@@ -168,6 +190,8 @@ exports[`should render a date time picker with included dates 1`] = `
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   required={false}
   showSeconds={false}
@@ -252,6 +276,8 @@ exports[`should render a date time picker with onBlur 1`] = `
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   onBlur={[Function]}
   required={false}
@@ -294,6 +320,8 @@ exports[`should render a date time picker with onChange 1`] = `
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   onChange={[Function]}
   required={false}
@@ -336,6 +364,8 @@ exports[`should render a date time picker with onChangeRaw 1`] = `
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   onChangeRaw={[Function]}
   required={false}
@@ -378,6 +408,8 @@ exports[`should render a date time picker with the seconds field enabled 1`] = `
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   required={false}
   showSeconds={true}
@@ -419,6 +451,8 @@ exports[`should render a default date time picker 1`] = `
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   required={false}
   showSeconds={false}
@@ -465,6 +499,8 @@ exports[`should render a default date time picker with custom date input attribu
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   required={false}
   showSeconds={false}
@@ -506,6 +542,8 @@ exports[`should render a default date time picker with custom time input attribu
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   required={false}
   showSeconds={false}
@@ -552,6 +590,8 @@ exports[`should render a disabled date time picker 1`] = `
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   required={false}
   showSeconds={false}
@@ -593,6 +633,8 @@ exports[`should render with a default timeVariant if variant is not specified 1`
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-time-input"
   required={false}
   showSeconds={false}

@@ -1,5 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ModalManager correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <ModalManager>
+    <withDisclosureManager(DisclosureManager)
+      render={[Function]}
+      supportedDisclosureTypes={
+        Array [
+          "modal",
+        ]
+      }
+      trapNestedDisclosureRequests={true}
+    >
+      <DisclosureManager
+        render={[Function]}
+        supportedDisclosureTypes={
+          Array [
+            "modal",
+          ]
+        }
+        trapNestedDisclosureRequests={true}
+      >
+        <div
+          className="container orion-fusion-theme"
+        >
+          <withDisclosureManager(Component)>
+            <Component
+              disclosureManager={
+                DisclosureManagerDelegateInstance {
+                  "disclose": [Function],
+                }
+              }
+            >
+              <button
+                type="button"
+              >
+                Hello World
+              </button>
+            </Component>
+          </withDisclosureManager(Component)>
+          <AbstractModal
+            ariaLabel="Modal"
+            classNameModal="modal-manager"
+            classNameOverlay={null}
+            closeOnEsc={true}
+            closeOnOutsideClick={false}
+            isFullscreen={false}
+            isOpen={false}
+            onRequestClose={[Function]}
+            role="dialog"
+            rootSelector="#root"
+            zIndex="6000"
+          />
+        </div>
+      </DisclosureManager>
+    </withDisclosureManager(DisclosureManager)>
+  </ModalManager>
+</ThemeContextProvider>
+`;
+
 exports[`ModalManager should disclose content in Modal 1`] = `
 <ModalManager
   intl={

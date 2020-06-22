@@ -4,6 +4,34 @@ ChangeLog
 Unreleased
 ----------
 
+4.39.0 - (June 16, 2020)
+------------------
+### Changed
+* Update `maxDate` and `minDate` prop description to clarify usage.
+
+4.38.0 - (June 9, 2020)
+------------------
+### Changed
+* Apply themes by context and directly include packaged themes.
+* Update test and screenshots to account for min/max changes in DatePicker.
+* Update wdio screenshots failing in master.
+
+4.37.0 - (May 19, 2020)
+------------------
+### Changed
+* Update screenshots due to change in button hover.
+
+4.36.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
 4.35.0 - (April 14, 2020)
 ------------------
 ### Fixed

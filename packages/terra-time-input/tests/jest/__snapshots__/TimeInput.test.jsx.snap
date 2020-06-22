@@ -1,5 +1,185 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <InjectIntl(TimeInput)
+    name="time-input"
+  >
+    <TimeInput
+      disabled={false}
+      hourAttributes={Object {}}
+      inputAttributes={Object {}}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      isIncomplete={false}
+      isInvalid={false}
+      isInvalidMeridiem={false}
+      minuteAttributes={Object {}}
+      name="time-input"
+      onBlur={null}
+      onChange={null}
+      required={false}
+      secondAttributes={Object {}}
+      showSeconds={false}
+      variant="24-hour"
+    >
+      <div
+        className="time-input-container"
+      >
+        <div
+          className="time-input orion-fusion-theme"
+        >
+          <input
+            name="time-input"
+            type="hidden"
+            value=""
+          />
+          <Input
+            aria-label="Terra.timeInput.hours"
+            className="time-input-hour"
+            disabled={false}
+            isIncomplete={false}
+            isInvalid={false}
+            maxLength="2"
+            name="terra-time-hour-time-input"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            pattern="\\\\d*"
+            placeholder="Terra.timeInput.hh"
+            refCallback={[Function]}
+            required={false}
+            size="2"
+            type="text"
+            value=""
+          >
+            <input
+              aria-label="Terra.timeInput.hours"
+              className="form-input time-input-hour"
+              disabled={false}
+              maxLength="2"
+              name="terra-time-hour-time-input"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              pattern="\\\\d*"
+              placeholder="Terra.timeInput.hh"
+              required={false}
+              size="2"
+              type="text"
+              value=""
+            />
+          </Input>
+          <span
+            className="time-spacer"
+          >
+            :
+          </span>
+          <Input
+            aria-label="Terra.timeInput.minutes"
+            className="time-input-minute"
+            disabled={false}
+            isIncomplete={false}
+            isInvalid={false}
+            maxLength="2"
+            name="terra-time-minute-time-input"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            pattern="\\\\d*"
+            placeholder="Terra.timeInput.mm"
+            refCallback={[Function]}
+            required={false}
+            size="2"
+            type="text"
+            value=""
+          >
+            <input
+              aria-label="Terra.timeInput.minutes"
+              className="form-input time-input-minute"
+              disabled={false}
+              maxLength="2"
+              name="terra-time-minute-time-input"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              pattern="\\\\d*"
+              placeholder="Terra.timeInput.mm"
+              required={false}
+              size="2"
+              type="text"
+              value=""
+            />
+          </Input>
+        </div>
+      </div>
+    </TimeInput>
+  </InjectIntl(TimeInput)>
+</ThemeContextProvider>
+`;
+
 exports[`should ignore invalid times properly 1`] = `
 <div
   className="time-input-container"

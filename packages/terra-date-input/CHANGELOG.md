@@ -6,6 +6,27 @@ Unreleased
 ### Added
 * Added an interaction media query to apply `hover` styles only on non-touch devices.
 
+1.14.0 - (June 2, 2020)
+------------------
+### Changed
+* Apply themes by context and directly include packaged themes.
+
+1.13.0 - (May 19, 2020)
+------------------
+### Fixed
+* Fixed `browser.execute` in tests to not use an arrow function since those are not supported by IE
+
+1.12.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
 1.11.0 - (March 31, 2020)
 ------------------
 ### Added

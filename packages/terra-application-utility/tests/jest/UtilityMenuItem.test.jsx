@@ -1,4 +1,5 @@
 import React from 'react';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import HeaderUtilityMenuItem from '../../src/utility/_UtilityMenuItem';
 
 describe('UtilityMenuItem', () => {
@@ -128,5 +129,18 @@ describe('UtilityMenuItem', () => {
       id="test"
     />);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('correctly applies the theme context className', () => {
+    const component = mount(
+      <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+        <HeaderUtilityMenuItem
+          itemKey="key"
+          onChange={mockOnChange}
+          variant={variant}
+        />
+      </ThemeContextProvider>,
+    );
+    expect(component).toMatchSnapshot();
   });
 });

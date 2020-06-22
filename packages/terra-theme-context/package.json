@@ -1,11 +1,12 @@
 {
   "name": "terra-theme-context",
   "main": "lib/ThemeContext.js",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A react context to provide the current theme.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-framework.git"
+    "url": "git+https://github.com/cerner/terra-framework.git",
+    "directory": "packages/terra-theme-context"
   },
   "keywords": [
     "Cerner",

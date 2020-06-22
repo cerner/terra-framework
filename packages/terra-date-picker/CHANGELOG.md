@@ -6,6 +6,45 @@ Unreleased
 ### Added
 * Added an interaction media query to apply `hover` styles only on non-touch devices.
 
+4.40.0 - (June 16, 2020)
+------------------
+### Added
+* Added `value` prop in DatePickerField to align with DatePicker.
+
+### Fixed
+* Fixed javascript warning for not setting required `datePickerId` prop in DatePickerField test.
+* Updated DatePickerField example to use correct import.
+
+4.39.0 - (June 9, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+4.38.0 - (June 2, 2020)
+------------------
+### Fixed
+* Limit the supported dates to between 01/01/1900 and 12/31/2100 because the year dropdown only contains years between 1900 and 2100.
+* Disable the Today button if today is a disabled day. (i.e.; outside the `minDate`/`maxDate` range, in `excludeDates`, not in `includeDates`, or filtered by `filterDate`)
+
+### Changed
+* Apply themes by context and directly include packaged themes.
+
+4.37.0 - (May 19, 2020)
+------------------
+### Changed
+* Update screenshot due to change in button hover.
+
+4.36.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
 4.35.0 - (April 14, 2020)
 ------------------
 ### Fixed

@@ -317,3 +317,32 @@ Terra.describeViewports('ApplicationNavigation Responsive', ['small', 'medium', 
     Terra.it.validatesElement({ selector: '#root' });
   });
 });
+
+Terra.describeViewports('ApplicationNavigation', ['large', 'huge', 'enormous'], () => {
+  describe('Should open selected item when alert is accepted', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation-prompt-focus');
+      browser.waitForVisible('[aria-label="Management"]', 5000);
+      browser.click('[aria-label="Management"]');
+    });
+
+    it('Dismiss alert', () => {
+      browser.alertDismiss();
+    });
+
+    Terra.it.validatesElement('1. Alert is dismissed');
+
+    it('Accept alert', () => {
+      browser.click('[aria-label="Management"]');
+      browser.alertAccept();
+    });
+
+    Terra.it.validatesElement('2. Alert is accepted');
+
+    it('should focus content after a tab', () => {
+      browser.keys('Tab');
+    });
+
+    Terra.it.validatesElement('3. Content should have focus');
+  });
+});

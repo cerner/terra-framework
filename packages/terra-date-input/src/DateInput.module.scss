@@ -1,5 +1,9 @@
 @import '~terra-mixins/lib/Mixins';
 
+// Themes
+@import './orion-fusion-theme/DateInput.module';
+@import './clinical-lowlight-theme/DateInput.module';
+
 :local {
   .date-input {
     display: flex;

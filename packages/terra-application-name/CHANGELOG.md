@@ -4,6 +4,27 @@ Changelog
 Unreleased
 ----------
 
+3.30.0 - (June 2, 2020)
+------------------
+### Changed
+* Apply themes by context and directly include packaged themes.
+
+3.29.0 - (May 26, 2020)
+------------------
+### Changed
+* Minor dependency updates
+
+3.28.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
 3.27.0 - (March 31, 2020)
 ------------------
 ### Added

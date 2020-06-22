@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import { injectIntl, intlShape } from 'react-intl';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
@@ -11,7 +13,7 @@ import Utils from '../Utils';
 import MenuItem from './_UtilityMenuItem';
 import styles from './_UtilityMenu.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -255,13 +257,15 @@ class UtilityMenu extends React.Component {
     const { currentKey } = this.state;
     const currentItem = this.getItem(currentKey);
     const firstPage = currentKey === initialSelectedKey;
+    const theme = this.context;
 
-    const menuClassNames = cx([
+    const menuClassNames = classNames(cx(
       'utility-menu',
       { 'header-utility-menu': variant === Utils.VARIANTS.HEADER },
       { 'menu-utility-menu': variant === Utils.VARIANTS.MENU },
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
 
     const headerClassNames = cx([
       'utility-menu-header',
@@ -386,4 +390,5 @@ UtilityMenu.propTypes = propTypes;
 UtilityMenu.defaultProps = defaultProps;
 UtilityMenu.processMenuItems = processMenuItems;
 UtilityMenu.hasChevron = hasChevron;
+UtilityMenu.contextType = ThemeContext;
 export default injectIntl(UtilityMenu);

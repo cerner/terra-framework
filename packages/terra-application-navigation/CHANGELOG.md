@@ -6,8 +6,44 @@ Unreleased
 ### Added
 * Added an interaction media query to apply `hover` styles only on non-touch devices.
 
+1.29.0 - (June 16, 2020)
+------------------
 ### Changed
+* Minor dependency version bump
+
+1.28.0 - (June 9, 2020)
+------------------
+### Changed
+* Update failing jest snapshots
+
+1.27.0 - (June 2, 2020)
+------------------
+### Fixed
+* Removed outline on main content
+
+1.28.0 - (May 26, 2020)
+------------------
+### Fixed
+* Focus should be returned to `Tab` key clicked when `Navigation prompt` is dismissed.
+* Focus should be passed to `Content` when `Navigation prompt` is accepted.
+* Updated the static focusMainContent method to use the useCallback hook to fix lint errors
+
+1.27.0 - (May 19, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+1.26.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
 * Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header.
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
 
 1.25.0 - (April 6, 2020)
 ------------------

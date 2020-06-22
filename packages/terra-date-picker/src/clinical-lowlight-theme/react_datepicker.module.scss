@@ -1,0 +1,17 @@
+:local {
+  .clinical-lowlight-theme {
+    --terra-date-picker-prev-next-month-icon-height: 1.571rem;
+    --terra-date-picker-prev-next-month-icon-width: 1.571rem;
+    --terra-date-picker-medium-up-prev-next-month-icon-height: 1rem;
+    --terra-date-picker-medium-up-prev-next-month-icon-width: 1rem;
+    --terra-date-picker-day-focus-outline: 2px dashed #000;
+    --terra-date-picker-day-focus-outline-offset: 0;
+
+    @include terra-inline-svg-var('--terra-date-picker-prev-month-background-image', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="rgb(204, 204, 204)" d="M36 48L12 24 36 0v48z"></path></svg>');
+    @include terra-inline-svg-var('--terra-date-picker-prev-month-focus-background-image', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="rgb(179, 179, 179)" d="M36 48L12 24 36 0v48z"></path></svg>');
+    @include terra-inline-svg-var('--terra-date-picker-prev-month-hover-background-image', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="rgb(179, 179, 179)" d="M36 48L12 24 36 0v48z"></path></svg>');
+    @include terra-inline-svg-var('--terra-date-picker-next-month-background-image', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="rgb(204, 204, 204)" d="M12 0l24 24-24 24V0z"></path></svg>');
+    @include terra-inline-svg-var('--terra-date-picker-next-month-focus-background-image', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="rgb(179, 179, 179)" d="M12 0l24 24-24 24V0z"></path></svg>');
+    @include terra-inline-svg-var('--terra-date-picker-next-month-hover-background-image', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="rgb(179, 179, 179)" d="M12 0l24 24-24 24V0z"></path></svg>');
+  }
+}

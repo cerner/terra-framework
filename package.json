@@ -97,10 +97,10 @@
     "start-heroku": "tt-serve-static --port $PORT --site './build' ",
     "start-prod": "tt-serve --env.disableHotReloading -p",
     "start-static": "npm run compile:prod && tt-serve-static --site ./build",
-    "test": "npm run jest && npm run wdio",
-    "wdio-default": "wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
-    "wdio-lowlight": "NODE_OPTIONS=--max-old-space-size=2048 THEME=clinical-lowlight-theme wdio config/wdio/clinical-lowlight-theme/wdio.conf.js",
-    "wdio-fusion": "THEME=orion-fusion-theme wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
+    "test": "npm run lint && npm run jest && npm run wdio",
+    "wdio-default": "wdio",
+    "wdio-lowlight": "NODE_OPTIONS=--max-old-space-size=2048 THEME=clinical-lowlight-theme wdio",
+    "wdio-fusion": "THEME=orion-fusion-theme wdio",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   },
   "devDependencies": {
@@ -140,7 +140,7 @@
     "terra-dev-site": "^6.5.0",
     "terra-disclosure-manager": "^4.9.0",
     "terra-enzyme-intl": "^3.0.0",
-    "terra-toolkit": "^6.0.0",
+    "terra-toolkit": "^6.2.0",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1",

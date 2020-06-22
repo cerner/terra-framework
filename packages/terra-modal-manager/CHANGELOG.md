@@ -3,8 +3,39 @@ Changelog
 
 Unreleased
 ----------
+
+6.36.0 - (June 16, 2020)
+------------------
 ### Changed
+* Updated terra-form-select to V6
+
+6.35.0 - (June 9, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+6.34.0 - (June 2, 2020)
+------------------
+### Changed
+* Apply themes by context and directly include packaged themes.
+* Updated wdio screenshots
+
+6.33.0 - (May 19, 2020)
+------------------
+### Fixed
+* Fixed `browser.execute` in tests to not use an arrow function since those are not supported by IE
+
+6.32.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
 * Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header.
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
 
 6.31.0 - (April 6, 2020)
 ------------------

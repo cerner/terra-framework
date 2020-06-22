@@ -4,7 +4,8 @@ exports[`ThemeContextProvider Snapshots should render with a theme 1`] = `
 <ContextProvider
   value={
     Object {
-      "className": "test-theme",
+      "className": "test-theme-class",
+      "name": "test-theme",
     }
   }
 >
@@ -17,6 +18,7 @@ exports[`ThemeContextProvider Snapshots should render with minimal props 1`] = `
   value={
     Object {
       "className": undefined,
+      "name": undefined,
     }
   }
 >

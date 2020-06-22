@@ -4,6 +4,40 @@ ChangeLog
 Unreleased
 ----------
 
+6.36.0 - (June 16, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+6.35.0 - (June 9, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+6.34.0 - (June 2, 2020)
+------------------
+### Changed
+* Fixed lowlight and clinical theme interference issue.
+
+### Changed
+* Bumped terra-form-checkbox from v3 to v4
+
+6.33.0 - (May 19, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
+6.32.0 - (April 28, 2020)
+------------------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Changed
+* Update wdio test configuration to use root wdio config
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
 6.31.0 - (April 6, 2020)
 ------------------
 ### Changed

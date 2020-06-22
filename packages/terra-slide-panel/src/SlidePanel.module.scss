@@ -1,3 +1,7 @@
+// Themes
+@import './clinical-lowlight-theme/SlidePanel.module';
+@import './orion-fusion-theme/SlidePanel.module';
+
 :local {
   .slide-panel {
     overflow: hidden;

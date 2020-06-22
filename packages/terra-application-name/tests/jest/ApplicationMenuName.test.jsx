@@ -31,4 +31,13 @@ describe('ApplicationMenuName', () => {
     const wrapper = shallow(<ApplicationMenuName />);
     expect(wrapper.prop('className')).toContain('application-menu-name');
   });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'clinical-lowlight-theme',
+      });
+    const wrapper = shallow(<ApplicationMenuName accessory={<img alt="this is the accessory" />} title="title" />);
+    expect(wrapper).toMatchSnapshot();
+  });
 });

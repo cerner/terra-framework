@@ -1,11 +1,12 @@
 {
   "name": "terra-form-validation",
   "main": "lib/FormValidationUtil.js",
-  "version": "1.32.0",
+  "version": "1.37.0",
   "description": "Form Validation Examples for Terra",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-framework.git"
+    "url": "git+https://github.com/cerner/terra-framework.git",
+    "directory": "packages/terra-form-validation"
   },
   "keywords": [
     "Cerner",
@@ -32,13 +33,13 @@
     "prop-types": "^15.5.8",
     "react-final-form": ">=5.0.2 <7.0.0",
     "terra-button": "^3.3.0",
-    "terra-date-input": "^1.11.0",
-    "terra-date-picker": "^4.35.0",
+    "terra-date-input": "^1.14.0",
+    "terra-date-picker": "^4.40.0",
     "terra-form-checkbox": "^3.0.0",
     "terra-form-field": "^3.1.0",
     "terra-form-input": "^2.3.0",
     "terra-form-radio": "^3.0.0",
-    "terra-form-select": "^5.0.0",
+    "terra-form-select": "^6.8.0",
     "terra-form-textarea": "^3.0.0",
     "terra-spacer": "^3.0.0"
   },

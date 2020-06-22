@@ -1,5 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`LayoutSlidePanel correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <LayoutSlidePanel
+    isAnimated={false}
+    isOpen={false}
+    isToggleEnabled={false}
+    panelBehavior="overlay"
+    size="medium"
+  >
+    <div
+      className="layout-slide-panel is-overlay orion-fusion-theme"
+    >
+      <div
+        aria-hidden="true"
+        className="panel"
+      />
+      <OverlayContainer
+        className="content"
+        overlay={null}
+      >
+        <div
+          className="overlay-container content"
+        >
+          <div
+            className="container-content"
+            data-terra-overlay-container-content={true}
+          >
+            <Overlay
+              backgroundStyle="clear"
+              isOpen={false}
+              isRelativeToContainer={true}
+              isScrollable={false}
+              rootSelector="#root"
+              zIndex="6000"
+            />
+            <main
+              className="main-container"
+              data-terra-layout-main={true}
+              role="main"
+            />
+          </div>
+        </div>
+      </OverlayContainer>
+    </div>
+  </LayoutSlidePanel>
+</ThemeContextProvider>
+`;
+
 exports[`LayoutSlidePanel should render when small 1`] = `
 <div
   className="layout-slide-panel is-open is-overlay"

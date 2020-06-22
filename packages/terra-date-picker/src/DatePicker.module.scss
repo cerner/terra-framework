@@ -1,4 +1,8 @@
 /* stylelint-disable selector-max-compound-selectors, max-nesting-depth */
+// Themes
+@import './clinical-lowlight-theme/DatePicker.module';
+@import './orion-fusion-theme/DatePicker.module';
+
 :local {
   .date-picker {
     display: inline-block;
