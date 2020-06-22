@@ -154,14 +154,13 @@ class InfiniteList extends React.Component {
   }
 
   componentWillUnmount() {
-    if (!this.contentNode) {
-      return;
+    if (this.contentNode) {
+      clearTimeout(this.timer);
+      window.cancelAnimationFrame(this.animationFrameID);
+      this.resizeObserver.disconnect(this.contentNode);
+      this.contentNode.removeEventListener('scroll', this.update);
+      this.listenersAdded = false;
     }
-    clearTimeout(this.timer);
-    window.cancelAnimationFrame(this.animationFrameID);
-    this.resizeObserver.disconnect(this.contentNode);
-    this.contentNode.removeEventListener('scroll', this.update);
-    this.listenersAdded = false;
   }
 
   /**
