@@ -82,6 +82,7 @@ const TabRollup = ({
       className={cx(
         'tab-rollup',
         { 'has-count': hasCount },
+        { 'is-touch-device': ('ontouchstart' in window) },
       )}
       onClick={onTabSelect}
       onKeyDown={generateKeyDownSelection(onTabSelect)}

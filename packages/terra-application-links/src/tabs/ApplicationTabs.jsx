@@ -180,6 +180,7 @@ class ApplicationTabs extends React.Component {
     const tabClass = cx(
       'tabs-container',
       { 'is-calculating': this.isCalculating },
+      { 'is-touch-device': ('ontouchstart' in window) },
       alignment,
     );
     const theme = this.context;

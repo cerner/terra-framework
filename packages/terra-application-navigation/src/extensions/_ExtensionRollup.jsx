@@ -50,7 +50,7 @@ const ExtensionRollup = ({
   <div
     role="button"
     tabIndex="0"
-    className={cx('extension-rollup')}
+    className={cx('extension-rollup', { 'is-touch-device': ('ontouchstart' in window) })}
     onClick={onSelect}
     onKeyDown={generateKeyDownSelection(onSelect)}
     ref={extensionRef}

@@ -22,10 +22,8 @@
       border: 0;
     }
 
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-      &:hover {
-        color: var(--terra-application-navigation-utility-header-button-hover-color, #fff);
-      }
+    &:hover:not(.is-touch-device) {
+      color: var(--terra-application-navigation-utility-header-button-hover-color, #fff);
     }
 
     &[data-focus-styles-enabled='true']:focus {

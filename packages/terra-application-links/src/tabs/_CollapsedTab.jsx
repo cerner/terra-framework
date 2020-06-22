@@ -132,6 +132,7 @@ class CollapseTab extends Component {
       { 'collapsed-tab-with-icon': hasIcon },
       { 'is-active': active },
       { 'is-focused': focused },
+      { 'is-touch-device': ('ontouchstart' in window) },
       theme.className,
     ),
     customProps.className);

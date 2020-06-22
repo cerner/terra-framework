@@ -87,6 +87,7 @@ const Tab = ({
         { 'is-disabled': isActive },
         { 'is-placeholder': !render && isPlaceholder },
         { 'has-count': !render && hasCount },
+        { 'is-touch-device': ('ontouchstart' in window) },
       )}
       onClick={!isActive ? onTabSelect : undefined}
       onKeyDown={!isActive ? generateKeyDownSelection(onTabSelect) : undefined}

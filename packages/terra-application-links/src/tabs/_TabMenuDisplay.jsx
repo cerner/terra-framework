@@ -110,6 +110,7 @@ class TabMenuDisplay extends React.Component {
       { 'is-hidden': isHidden },
       { 'is-active': this.state.active },
       { 'is-focused': this.state.focused },
+      { 'is-touch-device': ('ontouchstart' in window) },
       theme.className,
     ),
     customProps.className);

@@ -59,7 +59,7 @@ const UtilityMenuHeaderButton = ({
     <div
       role="button"
       tabIndex="0"
-      className={cx('utility-button', { 'no-user': !userConfig })}
+      className={cx('utility-button', { 'no-user': !userConfig }, { 'is-touch-device': ('ontouchstart' in window) })}
       onClick={onClick}
       onKeyDown={generateKeyDownSelection(onClick)}
       onBlur={enableFocusStyles}

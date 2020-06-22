@@ -180,7 +180,7 @@ const CompactHeader = ({
     return (
       <div
         role="button"
-        className={cx('menu-button')}
+        className={cx('menu-button', { 'is-touch-device': ('ontouchstart' in window) })}
         aria-label={intl.formatMessage({ id: 'Terra.applicationNavigation.header.menuButtonTitle' })}
         onClick={onSelectMenuButton}
         onBlur={enableFocusStyles}
