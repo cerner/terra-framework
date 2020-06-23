@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Added
-* Added an interaction media query to apply `hover` styles only on non-touch devices.
+* Added `ontouchstart` to apply `hover` styles only on non-touch devices.
 
 2.24.0 - (May 26, 2020)
 ------------------

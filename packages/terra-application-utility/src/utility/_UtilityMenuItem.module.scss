@@ -31,19 +31,16 @@
     }
 
     /* stylelint-disable max-nesting-depth */
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-      &:hover {
-        background-color: var(--terra-application-utility-header-body-item-hover-background-color, #ebf6fd);
+    &:hover:not(.is-touch-device) {
+      background-color: var(--terra-application-utility-header-body-item-hover-background-color, #ebf6fd);
 
-        .checkmark {
-          color: var(--terra-application-utility-header-body-item-checkmark-hover-color);
-        }
+      .checkmark {
+        color: var(--terra-application-utility-header-body-item-checkmark-hover-color);
       }
 
       .chevron {
         color: var(--terra-application-utility-header-body-item-chevron-hover-color);
       }
-
     }
 
     &:focus {
@@ -124,15 +121,13 @@
       margin-right: var(--terra-application-utility-menu-body-item-margin-right, 0.6429rem);
     }
 
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-      &:hover {
-        background-color: var(--terra-application-utility-menu-body-item-hover-background-color, #ebf6fd);
+    &:hover:not(.is-touch-device) {
+      background-color: var(--terra-application-utility-menu-body-item-hover-background-color, #ebf6fd);
 
-        .checkmark {
-          color: var(--terra-application-utility-menu-body-item-checkmark-hover-color);
-        }
+      .checkmark {
+        color: var(--terra-application-utility-menu-body-item-checkmark-hover-color);
       }
-
+      
       .chevron {
         color: var(--terra-application-utility-menu-body-item-chevron-hover-color);
       }
@@ -196,10 +191,8 @@
   .read-only {
     cursor: text;
 
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-      &:hover {
-        background-color: transparent;
-      }
+    &:hover:not(.is-touch-device) {
+      background-color: transparent;
     }
 
     &:focus {
