@@ -107,6 +107,12 @@ class TabMenu extends React.Component {
       ));
     });
     const theme = this.context;
+    const tabMenuClass = cx(
+      'tab-menu',
+      { 'is-active': menuActive },
+      { 'is-touch-device': ('ontouchstart' in window) },
+      theme.className,
+    );
 
     return (
       <div
@@ -115,7 +121,7 @@ class TabMenu extends React.Component {
         ref={this.setTargetRef}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
-        className={cx('tab-menu', { 'is-active': menuActive }, theme.className)}
+        className={tabMenuClass}
         data-terra-tabs-menu
       >
         <FormattedMessage id="Terra.tabs.more">

@@ -11,18 +11,16 @@
       cursor: pointer;
 
       /* stylelint-disable max-nesting-depth */
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-        &:hover {
-          background-color: var(--terra-menu-item-hover-background-color, #ebf6fd);
-        }
+      &:hover:not(.is-touch-device) {
+        background-color: var(--terra-menu-item-hover-background-color, #ebf6fd);
+      }
         
-        &:hover .checkmark {
-          color: var(--terra-menu-item-checkmark-hover-icon-color);
-        }
+      &:hover:not(.is-touch-device) .checkmark {
+        color: var(--terra-menu-item-checkmark-hover-icon-color);
+      }
 
-        &:hover .chevron {
-          color: var(--terra-menu-item-chevron-hover-icon-color);
-        }
+      &:hover:not(.is-touch-device) .chevron {
+        color: var(--terra-menu-item-chevron-hover-icon-color);
       }
 
       &:focus {

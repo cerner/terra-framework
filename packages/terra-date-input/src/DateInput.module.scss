@@ -38,10 +38,9 @@
       top: 50%;
       width: var(--terra-date-input-month-after-arrow-icon-width, 1rem);
     }
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-      &:hover {
-        background-color: var(--terra-date-input-month-hover-background-color, #fff);
-      }
+    
+    &:hover:not(.is-touch-device):not(.disabled) {
+      background-color: var(--terra-date-input-month-hover-background-color, #fff);
     }
 
     &.focused {
@@ -74,10 +73,8 @@
         background-image: var(--terra-date-input-month-after-error-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>'));
       }
       /* stylelint-disable max-nesting-depth */
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-        &:hover {
-          background-color: var(--terra-date-input-month-error-hover-background-color, #fff);
-        }
+      &:hover {
+        background-color: var(--terra-date-input-month-error-hover-background-color, #fff);
       }
 
       &.focused {
@@ -98,10 +95,8 @@
     &.incomplete {
       background-color: var(--terra-date-input-month-incomplete-background-color, #ffc);
 
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-        &:hover {
-          background-color: var(--terra-date-input-month-incomplete-hover-background-color, #ffc);
-        }
+      &:hover {
+        background-color: var(--terra-date-input-month-incomplete-hover-background-color, #ffc);
       }
 
       &.focused {
@@ -145,11 +140,9 @@
       color: var(--terra-date-input-month-select-color, inherit); // stylelint-disable-line terra/custom-property-no-duplicate-declaration
     }
 
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-      &:hover {
-        border: var(--terra-date-input-month-select-hover-border, 1px solid #dedfe0);
-        color: var(--terra-date-input-month-select-hover-color);
-      }
+    &:hover {
+      border: var(--terra-date-input-month-select-hover-border, 1px solid #dedfe0);
+      color: var(--terra-date-input-month-select-hover-color);
     }
 
     // .focused needed for Safari Mobile
@@ -169,11 +162,9 @@
       border: var(--terra-date-input-month-select-disabled-border, 1px solid #868a8c);
       color: var(--terra-date-input-month-select-disabled-color, #1c1f21);
 
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-        &:hover {
-          color: var(--terra-date-input-month-select-disabled-hover-color, #1c1f21);
-          cursor: default;
-        }
+      &:hover {
+        color: var(--terra-date-input-month-select-disabled-hover-color, #1c1f21);
+        cursor: default;
       }
 
       &.is-placeholder {
@@ -185,10 +176,8 @@
       border: var(--terra-date-input-month-select-error-border, 1px solid #e50000);
       box-shadow: var(--terra-date-input-month-select-error-box-shadow, 0 0 0 1px #e50000);
 
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {  
-        &:hover {
-          border: var(--terra-date-input-month-select-error-hover-border, 1px solid #e50000);
-        }
+      &:hover {
+        border: var(--terra-date-input-month-select-error-hover-border, 1px solid #e50000);
       }
 
       // .focused needed for Safari Mobile

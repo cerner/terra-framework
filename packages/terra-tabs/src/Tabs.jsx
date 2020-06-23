@@ -163,6 +163,7 @@ class Tabs extends React.Component {
       'tabs-container',
       { 'tab-fill': tabFill },
       variant,
+      { 'is-touch-device': ('ontouchstart' in window) },
       theme.className,
     ),
     customProps.className);

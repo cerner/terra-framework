@@ -37,11 +37,9 @@
         font-weight: normal;
       }
 
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-        .tab-menu:hover {
-          background-size: 0 0;
-          color: var(--terra-tabs-modular-hover-color, #000);
-        }
+      .tab-menu:hover:not(.is-touch-device) {
+        background-size: 0 0;
+        color: var(--terra-tabs-modular-hover-color, #000);
       }
     }
 
@@ -75,16 +73,15 @@
         color: var(--terra-tabs-modular-active-color, #000);
       }
 
-      &:hover {
+      &:hover:not(.is-touch-device) {
         background-image: var(--terra-tabs-modular-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
         background-size: var(--terra-tabs-modular-hover-background-size, 100% 2px);
         color: var(--terra-tabs-modular-hover-color, #000);
       }
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-        &.is-disabled:hover {
-          background-size: 0 0;
-          color: var(--terra-tabs-modular-disabled-hover-color, #c8cacb);
-        }
+
+      &.is-disabled:hover:not(.is-touch-device) {
+        background-size: 0 0;
+        color: var(--terra-tabs-modular-disabled-hover-color, #c8cacb);
       }
 
       &.is-disabled {

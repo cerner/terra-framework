@@ -29,7 +29,7 @@ const CollapsedTabs = (props) => {
   props.onTruncationChange(false);
   const theme = React.useContext(ThemeContext);
   return (
-    <div className={cx('collapsed-tabs-container', theme.className)}>
+    <div className={cx('collapsed-tabs-container', { 'is-touch-device': ('ontouchstart' in window) }, theme.className)}>
       <Menu activeKey={props.activeKey}>
         {props.children}
       </Menu>
