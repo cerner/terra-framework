@@ -126,14 +126,13 @@ class MenuItem extends React.Component {
         className={cx('list-item')}
       >
         <div
-          role="menuitem"
+          role="link"
           {...customProps}
           tabIndex="0"
           className={itemClassNames}
           onKeyDown={this.handleKeyDown}
           onKeyUp={this.handleKeyUp}
           onBlur={this.handleOnBlur}
-          aria-haspopup={hasChevron}
         >
           <div className={cx('title')}>
             {this.textRender()}
