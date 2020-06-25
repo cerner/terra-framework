@@ -318,7 +318,6 @@ exports[`Tabs should render prop data 1`] = `
           Object {
             "current": <div
               aria-current="false"
-              aria-haspopup="true"
               aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
               class="tab-rollup"
               data-focus-styles-enabled="true"
@@ -425,7 +424,6 @@ exports[`Tabs should render prop data 1`] = `
             Object {
               "current": <div
                 aria-current="false"
-                aria-haspopup="true"
                 aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
                 class="tab-rollup"
                 data-focus-styles-enabled="true"
@@ -469,7 +467,6 @@ exports[`Tabs should render prop data 1`] = `
         >
           <div
             aria-current={false}
-            aria-haspopup={true}
             aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
             className="tab-rollup"
             data-focus-styles-enabled={true}

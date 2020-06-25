@@ -755,7 +755,6 @@ exports[`Header should render with function callbacks 1`] = `
                   Object {
                     "current": <div
                       aria-current="false"
-                      aria-haspopup="true"
                       aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
                       class="tab-rollup"
                       data-focus-styles-enabled="true"
@@ -862,7 +861,6 @@ exports[`Header should render with function callbacks 1`] = `
                     Object {
                       "current": <div
                         aria-current="false"
-                        aria-haspopup="true"
                         aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
                         class="tab-rollup"
                         data-focus-styles-enabled="true"
@@ -906,7 +904,6 @@ exports[`Header should render with function callbacks 1`] = `
                 >
                   <div
                     aria-current={false}
-                    aria-haspopup={true}
                     aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
                     className="tab-rollup"
                     data-focus-styles-enabled={true}

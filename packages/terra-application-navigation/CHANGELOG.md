@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Fixed `aria-haspopup` and `link` role  incompatibility issue.
 
 1.29.0 - (June 16, 2020)
 ------------------

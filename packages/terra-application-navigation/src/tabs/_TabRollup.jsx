@@ -89,7 +89,6 @@ const TabRollup = ({
       onMouseDown={disableFocusStyles}
       ref={tabRef}
       aria-current={isSelected}
-      aria-haspopup
       data-focus-styles-enabled
       aria-label={ariaLabel}
     >

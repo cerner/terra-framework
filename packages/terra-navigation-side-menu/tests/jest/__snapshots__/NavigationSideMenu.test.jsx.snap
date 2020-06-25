@@ -393,7 +393,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             onKeyUp={[Function]}
-                            role="link"
+                            role="menuitem"
                             tabIndex="0"
                           >
                             <div
@@ -457,7 +457,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             onKeyUp={[Function]}
-                            role="link"
+                            role="menuitem"
                             tabIndex="0"
                           >
                             <div
@@ -521,7 +521,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             onKeyUp={[Function]}
-                            role="link"
+                            role="menuitem"
                             tabIndex="0"
                           >
                             <div
@@ -585,7 +585,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             onKeyUp={[Function]}
-                            role="link"
+                            role="menuitem"
                             tabIndex="0"
                           >
                             <div
