@@ -40,7 +40,6 @@ const propTypes = {
    * Custom input attributes to apply to the date input. Use the name prop to set the name for the input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   inputAttributes: PropTypes.object,
   /**
    * @private

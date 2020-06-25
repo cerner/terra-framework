@@ -25,11 +25,8 @@ const HeaderExample = ({ layoutConfig }) => (
             Toggle Menu
           </button>
         )}
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       {layoutConfig.size !== 'small' && layoutConfig.size !== 'tiny' && <Link to="/page1" className={cx('link')}>Page 1</Link>}
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       {layoutConfig.size !== 'small' && layoutConfig.size !== 'tiny' && <Link to="/page2" className={cx('link')}>Page 2</Link>}
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       {layoutConfig.size !== 'small' && layoutConfig.size !== 'tiny' && <Link to="/page3" className={cx('link')}>Page 3</Link>}
     </div>
   </div>

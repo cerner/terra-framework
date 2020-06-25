@@ -4,7 +4,8 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Minor file changs to comply with eslint rules
+* Minor file changes to comply with eslint rules
+* Remove unused disable eslint directives
 
 4.40.0 - (June 16, 2020)
 ------------------

@@ -87,7 +87,7 @@ class UtilityMenu extends React.Component {
       map: processMenuItems(props.menuItems),
       currentKey: props.initialSelectedKey,
       focusIndex: -1,
-      previousKeyStack: [], // eslint-disable-line react/no-unused-state
+      previousKeyStack: [],
       prevPropsInitialSelectedKey: props.initialSelectedKey,
       prevPropsMenuItems: props.menuItems,
     };
@@ -366,8 +366,8 @@ class UtilityMenu extends React.Component {
     }
 
     const menuText = intl.formatMessage({ id: 'Terra.application.utility.menu' });
-    /* eslint-disable jsx-a11y/no-noninteractive-tabindex, react/forbid-dom-props */
     return (
+      // eslint-disable-next-line react/forbid-dom-props
       <div ref={this.setMenuNode} style={{ height: isHeightBounded ? '100%' : 'auto', outline: 'none' }} tabIndex="-1">
         <ContentContainer
           {...customProps}

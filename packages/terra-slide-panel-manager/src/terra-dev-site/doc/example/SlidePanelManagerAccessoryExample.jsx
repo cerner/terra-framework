@@ -289,4 +289,3 @@ const SlidePanelManagerExample = () => (
 );
 
 export default SlidePanelManagerExample;
-/* eslint-disable max-classes-per-file */
