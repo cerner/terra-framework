@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/role-supports-aria-props */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -95,7 +96,7 @@ const TabRollup = ({
     >
       <div aria-hidden className={cx('tab-inner')} data-tab-menu-inner>
         <div id={`terra-navigation-link-${text}`} className={cx('tab-rollup-label')} ref={innerRef}>
-          {<span className={cx('tab-rollup-text')}>{text}</span>}
+          <span className={cx('tab-rollup-text')}>{text}</span>
           {hasChildNotifications && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
           <IconCaretDown className={cx('tab-rollup-icon')} />
         </div>

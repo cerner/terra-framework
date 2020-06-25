@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Minor file changes to comply with eslint config
 
 3.27.0 - (June 2, 2020)
 ------------------

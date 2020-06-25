@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-curly-brace-presence */
 import React from 'react';
 import classNames from 'classnames/bind';
 import DatePicker from '../../../DatePicker';

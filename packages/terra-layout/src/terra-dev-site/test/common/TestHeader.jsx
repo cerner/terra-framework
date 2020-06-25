@@ -25,7 +25,7 @@ const TestHeader = ({
           className={cx('test-header-toggle')}
           onClick={layoutConfig.toggleMenu}
         >
-Toggle Menu
+          Toggle Menu
         </button>
         )}
     </div>

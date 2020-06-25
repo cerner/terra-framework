@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-curly-brace-presence */
 import React from 'react';
 import Hookshot from '../../src/Hookshot';
 import styles from './Hookshot.test.module.scss';
