@@ -103,6 +103,13 @@ class Day extends React.Component {
     }
   }
 
+  handleMouseDown = (event) => {
+    if (this.props.inline) {
+      // to prevent focus style on previous selected date that shows up on holding mouse key.
+      event.preventDefault();
+    }
+  }
+
   isSameDay = (other) => isSameDay(this.props.day, other)
 
   isKeyboardSelected = () =>
@@ -229,6 +236,7 @@ class Day extends React.Component {
         className={cx(this.getClassNames(day))}
         onClick={this.handleClick}
         onMouseEnter={this.handleMouseEnter}
+        onMouseDown={this.handleMouseDown}
         aria-disabled={this.isDisabled()}
       >
         <React.Fragment>

@@ -57,7 +57,7 @@ CalendarFilterOnChange.defaultProps = defaultProps;
 
 const CalendarFilterOnChangeExample = () => (
   <CalendarFilterOnChange
-    value={moment().format('YYYY-MM-DD')}
+    value={moment().format('2020-05-15')}
   />
 );
 
