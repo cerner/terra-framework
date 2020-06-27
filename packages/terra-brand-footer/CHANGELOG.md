@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* 'links' prop has been deprecated, will resolve to 'sections'.
+* `links` prop has been deprecated, will resolve to `sections`.
 * Updated UpgradeGuide.
 
 2.24.0 - (May 26, 2020)
