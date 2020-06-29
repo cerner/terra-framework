@@ -84,19 +84,11 @@ const BrandFooter = ({
   ),
   customProps.className);
 
-  let processedSections;
-  if (sections.length === 0) {
-    processedSections = [{
-      headerText: '',
-      id: 0,
-    }];
-  } else {
-    processedSections = sections;
+  const processedSections = sections;
 
-    // Assign ids to use as keys
-    for (let i = 0; i < processedSections.length; i += 1) {
-      processedSections[i].id = i;
-    }
+  // Assign ids to use as keys
+  for (let i = 0; i < processedSections.length; i += 1) {
+    processedSections[i].id = i;
   }
 
   // The old links prop can't have section headers. Needed for vertical layout to insert padding to keep columns without headers aligned
