@@ -96,56 +96,6 @@ exports[`BrandFooter should render a section header 1`] = `
 </footer>
 `;
 
-exports[`BrandFooter should render the sections prop instead of links prop 1`] = `
-<footer
-  className="brand-footer"
-  links={
-    Array [
-      Object {
-        "href": "https://code.cerner.com/",
-        "text": "Links Prop Link",
-      },
-    ]
-  }
-  role="contentinfo"
->
-  <nav
-    className="nav nav-horizontal"
-  >
-    <section
-      className="navigation-section"
-      key="0"
-    >
-      <ul
-        className="menu"
-      >
-        <li
-          className="list-item"
-          key="Sections Prop linkhttps://www.cerner.com/"
-        >
-          <a
-            className="link"
-            href="https://www.cerner.com/"
-          >
-            Sections Prop link
-          </a>
-        </li>
-      </ul>
-    </section>
-  </nav>
-  <div
-    className="footer-content"
-  >
-    <div
-      className="content-top"
-    />
-    <div
-      className="content-bottom"
-    />
-  </div>
-</footer>
-`;
-
 exports[`BrandFooter should render with a section header and provided links 1`] = `
 <footer
   className="brand-footer"
@@ -763,19 +713,6 @@ exports[`BrandFooter should render with provided links and content bottom 1`] = 
 exports[`BrandFooter should render with provided links and content bottom 2`] = `
 <footer
   className="brand-footer"
-  links={
-    Array [
-      Object {
-        "href": "https://www.cerner.com/",
-        "text": "Cerner Home",
-      },
-      Object {
-        "href": "https://code.cerner.com/",
-        "target": "_blank",
-        "text": "Cerner Code",
-      },
-    ]
-  }
   role="contentinfo"
 >
   <nav
@@ -787,7 +724,37 @@ exports[`BrandFooter should render with provided links and content bottom 2`] = 
     >
       <ul
         className="menu"
-      />
+      >
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
+        >
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
+        >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
     </section>
   </nav>
   <div
@@ -879,19 +846,6 @@ exports[`BrandFooter should render with provided links and content left 1`] = `
 exports[`BrandFooter should render with provided links and content left 2`] = `
 <footer
   className="brand-footer"
-  links={
-    Array [
-      Object {
-        "href": "https://www.cerner.com/",
-        "text": "Cerner Home",
-      },
-      Object {
-        "href": "https://code.cerner.com/",
-        "target": "_blank",
-        "text": "Cerner Code",
-      },
-    ]
-  }
   role="contentinfo"
 >
   <nav
@@ -903,7 +857,37 @@ exports[`BrandFooter should render with provided links and content left 2`] = `
     >
       <ul
         className="menu"
-      />
+      >
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
+        >
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
+        >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
     </section>
   </nav>
   <div
@@ -1002,19 +986,6 @@ exports[`BrandFooter should render with provided links and content right 1`] = `
 exports[`BrandFooter should render with provided links and content right 2`] = `
 <footer
   className="brand-footer"
-  links={
-    Array [
-      Object {
-        "href": "https://www.cerner.com/",
-        "text": "Cerner Home",
-      },
-      Object {
-        "href": "https://code.cerner.com/",
-        "target": "_blank",
-        "text": "Cerner Code",
-      },
-    ]
-  }
   role="contentinfo"
 >
   <nav
@@ -1026,7 +997,37 @@ exports[`BrandFooter should render with provided links and content right 2`] = `
     >
       <ul
         className="menu"
-      />
+      >
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
+        >
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
+        >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
     </section>
   </nav>
   <div
@@ -1143,19 +1144,6 @@ exports[`BrandFooter should render with provided links, content left, content bo
 exports[`BrandFooter should render with provided links, content left, content bottom and content right 2`] = `
 <footer
   className="brand-footer"
-  links={
-    Array [
-      Object {
-        "href": "https://www.cerner.com/",
-        "text": "Cerner Home",
-      },
-      Object {
-        "href": "https://code.cerner.com/",
-        "target": "_blank",
-        "text": "Cerner Code",
-      },
-    ]
-  }
   role="contentinfo"
 >
   <nav
@@ -1167,7 +1155,37 @@ exports[`BrandFooter should render with provided links, content left, content bo
     >
       <ul
         className="menu"
-      />
+      >
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
+        >
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
+        >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
     </section>
   </nav>
   <div
@@ -1204,49 +1222,6 @@ exports[`BrandFooter should render with provided links, content left, content bo
         </small>
       </p>
     </div>
-  </div>
-</footer>
-`;
-
-exports[`BrandFooter should render with the links prop 1`] = `
-<footer
-  className="brand-footer"
-  links={
-    Array [
-      Object {
-        "href": "https://www.cerner.com/",
-        "text": "Cerner Home",
-      },
-      Object {
-        "href": "https://code.cerner.com/",
-        "target": "_blank",
-        "text": "Cerner Code",
-      },
-    ]
-  }
-  role="contentinfo"
->
-  <nav
-    className="nav nav-horizontal"
-  >
-    <section
-      className="navigation-section"
-      key="0"
-    >
-      <ul
-        className="menu"
-      />
-    </section>
-  </nav>
-  <div
-    className="footer-content"
-  >
-    <div
-      className="content-top"
-    />
-    <div
-      className="content-bottom"
-    />
   </div>
 </footer>
 `;
