@@ -42,7 +42,6 @@ exports[`correctly applies the theme context className 1`] = `
     <DatePicker
       disableButtonFocusOnClose={false}
       disabled={false}
-      inline={false}
       intl={
         Object {
           "defaultFormats": Object {},
@@ -71,6 +70,7 @@ exports[`correctly applies the theme context className 1`] = `
         }
       }
       isIncomplete={false}
+      isInline={false}
       isInvalid={false}
       maxDate="2100-12-31"
       minDate="1900-01-01"

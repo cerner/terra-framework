@@ -117,7 +117,7 @@ const propTypes = {
    * @private
    * Prop to show inline version of date picker component.
    */
-  inline: PropTypes.bool,
+  isInline: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -139,7 +139,7 @@ const defaultProps = {
   required: false,
   disableButtonFocusOnClose: false,
   selectedDate: undefined,
-  inline: false,
+  isInline: false,
 };
 
 class DatePicker extends React.Component {
@@ -149,7 +149,7 @@ class DatePicker extends React.Component {
     const activeBreakpointOnMount = activeBreakpointForSize(window.innerWidth);
     this.state = {
       selectedDate: DateUtil.defaultValue(props),
-      showPortalPicker: activeBreakpointOnMount === 'tiny' || activeBreakpointOnMount === 'small',
+      showPortalPicker: !this.props.isInline && (activeBreakpointOnMount === 'tiny' || activeBreakpointOnMount === 'small'),
       prevPropsSelectedDate: props.value || props.selectedDate,
     };
 
@@ -222,7 +222,7 @@ class DatePicker extends React.Component {
   }
 
   handleBreakpointChange(activeBreakpoint) {
-    const showPortalPicker = activeBreakpoint === 'tiny' || activeBreakpoint === 'small';
+    const showPortalPicker = !this.props.isInline && (activeBreakpoint === 'tiny' || activeBreakpoint === 'small');
 
     if (this.state.showPortalPicker !== showPortalPicker) {
       this.setState({ showPortalPicker });
@@ -391,7 +391,7 @@ class DatePicker extends React.Component {
       required,
       selectedDate,
       value,
-      inline,
+      isInline,
       ...customProps
     } = this.props;
 
@@ -437,8 +437,8 @@ class DatePicker extends React.Component {
         >
           <ReactDatePicker
             {...customProps}
-            withPortal={(inline) ? false : this.state.showPortalPicker}
-            inline={inline}
+            withPortal={this.state.showPortalPicker}
+            inline={isInline}
             selected={selectedDateInPicker}
             value={formattedValue}
             onBlur={this.handleBlur}

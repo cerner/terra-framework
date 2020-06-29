@@ -88,6 +88,7 @@ export default class Month extends React.Component {
     onWeekSelect: PropTypes.func,
     /**
      * A callback function to execute when month component receives focus.
+     * requires no parameter.
      */
     onMonthFocus: PropTypes.func,
     /**

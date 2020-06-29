@@ -6,7 +6,6 @@ exports[`should render a calendar filter with default date 1`] = `
   disableButtonFocusOnClose={false}
   disabled={false}
   hidePortal={true}
-  inline={true}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -35,6 +34,7 @@ exports[`should render a calendar filter with default date 1`] = `
     }
   }
   isIncomplete={false}
+  isInline={true}
   isInvalid={false}
   maxDate="2100-12-31"
   minDate="1900-01-01"
@@ -56,7 +56,6 @@ exports[`should render a calendar filter with excluded dates 1`] = `
     ]
   }
   hidePortal={true}
-  inline={true}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -85,6 +84,7 @@ exports[`should render a calendar filter with excluded dates 1`] = `
     }
   }
   isIncomplete={false}
+  isInline={true}
   isInvalid={false}
   maxDate="2100-12-31"
   minDate="1900-01-01"
@@ -101,7 +101,6 @@ exports[`should render a calendar filter with filtered dates 1`] = `
   disabled={false}
   filterDate={[Function]}
   hidePortal={true}
-  inline={true}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -130,6 +129,7 @@ exports[`should render a calendar filter with filtered dates 1`] = `
     }
   }
   isIncomplete={false}
+  isInline={true}
   isInvalid={false}
   maxDate="2100-12-31"
   minDate="1900-01-01"
@@ -150,7 +150,6 @@ exports[`should render a calendar filter with included dates 1`] = `
       "2020-04-01",
     ]
   }
-  inline={true}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -179,6 +178,7 @@ exports[`should render a calendar filter with included dates 1`] = `
     }
   }
   isIncomplete={false}
+  isInline={true}
   isInvalid={false}
   maxDate="2100-12-31"
   minDate="1900-01-01"
@@ -194,7 +194,6 @@ exports[`should render a calendar filter with min and max dates 1`] = `
   disableButtonFocusOnClose={false}
   disabled={false}
   hidePortal={true}
-  inline={true}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -223,6 +222,7 @@ exports[`should render a calendar filter with min and max dates 1`] = `
     }
   }
   isIncomplete={false}
+  isInline={true}
   isInvalid={false}
   maxDate="2020-04-10"
   minDate="2020-04-01"
@@ -238,7 +238,6 @@ exports[`should render a calendar filter with onChange 1`] = `
   disableButtonFocusOnClose={false}
   disabled={false}
   hidePortal={true}
-  inline={true}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -267,6 +266,7 @@ exports[`should render a calendar filter with onChange 1`] = `
     }
   }
   isIncomplete={false}
+  isInline={true}
   isInvalid={false}
   maxDate="2100-12-31"
   minDate="1900-01-01"
@@ -283,7 +283,6 @@ exports[`should render a controlled calendar filter 1`] = `
   disableButtonFocusOnClose={false}
   disabled={false}
   hidePortal={true}
-  inline={true}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -312,6 +311,7 @@ exports[`should render a controlled calendar filter 1`] = `
     }
   }
   isIncomplete={false}
+  isInline={true}
   isInvalid={false}
   maxDate="2100-12-31"
   minDate="1900-01-01"

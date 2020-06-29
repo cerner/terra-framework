@@ -1,3 +1,7 @@
+// Themes
+@import './clinical-lowlight-theme/CalendarFilter.module';
+@import './orion-fusion-theme/CalendarFilter.module';
+
 :local {
   .calendar-filter {
     border: var(--terra-date-picker-calendar-filter-border, 1px solid #aeaeae);

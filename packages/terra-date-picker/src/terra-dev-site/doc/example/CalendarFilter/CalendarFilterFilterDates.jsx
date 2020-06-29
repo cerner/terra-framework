@@ -3,6 +3,7 @@ import moment from 'moment';
 import CalendarFilter from 'terra-date-picker/lib/CalendarFilter';
 
 const CalendarFilterFilterDates = () => {
+  // Callback for filterDate. Returns true if day is not weekend (saturday / sunday)
   const isWeekday = (dateValue) => {
     const momentDate = moment(dateValue);
 

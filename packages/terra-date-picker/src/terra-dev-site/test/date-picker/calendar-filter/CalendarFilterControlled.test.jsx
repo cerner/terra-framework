@@ -28,6 +28,7 @@ const CalendarFilterControlled = () => {
       <Button
         id="button1"
         text=""
+        aria-label="empty" // Fixes accessiblity voilation 'Element has no title attribute or the title attribute is empty'.
         onClick={handleSelectedDateUpdate}
       />
       {'  '}

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import DatePicker from './DatePicker';
 import styles from './CalendarFilter.module.scss';
 
@@ -69,6 +70,7 @@ const CalendarFilter = ({
   value,
   ...customProps
 }) => {
+  const theme = useContext(ThemeContext);
   const handleOnChange = (event, date, metaData) => {
     if (onChange) {
       const { inputValue: formattedDateValue } = metaData;
@@ -80,7 +82,7 @@ const CalendarFilter = ({
     <DatePicker
       {...customProps}
       name="terra-calendar-filter"
-      inline
+      isInline
       hidePortal
       selectedDate={selectedDate}
       value={value}
@@ -90,7 +92,7 @@ const CalendarFilter = ({
       includeDates={includeDates}
       maxDate={maxDate}
       minDate={minDate}
-      calendarClassName={cx('calendar-filter')}
+      calendarClassName={cx('calendar-filter', theme.className)}
     />
   );
 };
