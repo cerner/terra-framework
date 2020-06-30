@@ -31,11 +31,11 @@ const propTypes = {
     */
     headerText: PropTypes.string,
     /**
-    * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
+    * An array of navigation links with each element specifying text, href and target keys with appropriate values.
     */
     links: PropTypes.arrayOf(PropTypes.shape({
       /**
-      * Text to be disaplyed as navigational link.
+      * Text to be displayed as navigational link.
       */
       text: PropTypes.string.isRequired,
       /**
@@ -91,7 +91,6 @@ const BrandFooter = ({
     processedSections[i].id = i;
   }
 
-  // The old links prop can't have section headers. Needed for vertical layout to insert padding to keep columns without headers aligned
   const containsASectionHeader = processedSections.some(linkGroup => linkGroup.headerText);
 
   let navigation;
