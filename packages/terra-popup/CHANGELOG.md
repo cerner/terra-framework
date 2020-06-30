@@ -4,7 +4,8 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Minor file changes to comply with eslint config
+* Minor file changes to comply with eslint rules
+* Replace some empty text with aria-label to comply with eslint
 
 6.36.0 - (June 16, 2020)
 ------------------

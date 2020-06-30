@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-curly-brace-presence */
 import React from 'react';
 import Hookshot from '../../src/Hookshot';
 import styles from './Hookshot.test.module.scss';
@@ -40,9 +39,8 @@ class HookshotDefaultExample extends React.Component {
           type="button"
           id="hookshot-standard-button"
           onClick={this.handleButtonClick}
-        >
-          {''}
-        </button>
+          aria-label=" "
+        />
       </div>
     );
   }

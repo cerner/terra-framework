@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-curly-brace-presence */
 import React from 'react';
 import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
@@ -76,9 +75,8 @@ class AlignmentPopup extends React.Component {
             className={cx('popup-button')}
             onClick={this.handleButtonClick}
             ref={this.setButtonNode}
-          >
-            {''}
-          </button>
+            aria-label=" "
+          />
         </div>
         <p>Choose Target Attachment:</p>
         <button type="button" id="attach-Top" value="top right" onClick={this.handleAttachment}>Attach Top Right</button>
