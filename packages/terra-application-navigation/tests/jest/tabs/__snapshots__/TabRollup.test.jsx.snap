@@ -3,12 +3,13 @@
 exports[`TabRollup should render default element 1`] = `
 <div
   aria-current={false}
+  aria-haspopup={true}
   aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
   className="tab-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
   onMouseDown={[Function]}
-  role="link"
+  role="button"
   tabIndex="0"
   type="button"
 >
@@ -38,12 +39,13 @@ exports[`TabRollup should render default element 1`] = `
 exports[`TabRollup should render prop data 1`] = `
 <div
   aria-current={true}
+  aria-haspopup={true}
   aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription Terra.applicationNavigation.notifications.new"
   className="tab-rollup has-count"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
   onMouseDown={[Function]}
-  role="link"
+  role="button"
   tabIndex="0"
   type="button"
 >
@@ -83,12 +85,13 @@ exports[`TabRollup should render prop data 1`] = `
 exports[`TabRollup should render with function callbacks 1`] = `
 <div
   aria-current={false}
+  aria-haspopup={true}
   aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
   className="tab-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
   onMouseDown={[Function]}
-  role="link"
+  role="button"
   tabIndex="0"
   type="button"
 >
@@ -118,6 +121,7 @@ exports[`TabRollup should render with function callbacks 1`] = `
 exports[`TabRollup should render with selection callback 1`] = `
 <div
   aria-current={false}
+  aria-haspopup={true}
   aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
   className="tab-rollup"
   data-focus-styles-enabled={true}
@@ -125,7 +129,7 @@ exports[`TabRollup should render with selection callback 1`] = `
   onClick={[MockFunction]}
   onKeyDown={[Function]}
   onMouseDown={[Function]}
-  role="link"
+  role="button"
   tabIndex="0"
   type="button"
 >

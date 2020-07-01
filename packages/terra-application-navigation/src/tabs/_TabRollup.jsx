@@ -77,7 +77,7 @@ const TabRollup = ({
   return (
     <div
       type="button"
-      role="link"
+      role="button"
       tabIndex="0"
       className={cx(
         'tab-rollup',
@@ -89,6 +89,7 @@ const TabRollup = ({
       onMouseDown={disableFocusStyles}
       ref={tabRef}
       aria-current={isSelected}
+      aria-haspopup
       data-focus-styles-enabled
       aria-label={ariaLabel}
     >
