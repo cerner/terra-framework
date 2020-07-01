@@ -159,7 +159,7 @@ class InfiniteList extends React.Component {
       window.cancelAnimationFrame(this.animationFrameID);
       this.resizeObserver.disconnect(this.contentNode);
       this.contentNode.removeEventListener('scroll', this.update);
-      this.listenersAdded = false;
+      this.content = null;
     }
   }
 

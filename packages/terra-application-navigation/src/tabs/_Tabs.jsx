@@ -62,16 +62,15 @@ class Tabs extends React.Component {
     this.renderPopup = this.renderPopup.bind(this);
     this.buildVisibleChildren = this.buildVisibleChildren.bind(this);
     this.updateSize = LodashDebounce(this.updateSize.bind(this), 100);
-    this.resetCache = this.resetCache.bind(this);
+    this.resetCalculations = this.resetCalculations.bind(this);
 
     this.containerRef = React.createRef();
     this.rollupTabRef = React.createRef();
     this.rollupInnerRef = React.createRef();
     this.childRefs = [];
     this.previousNotifications = null;
-    this.resizeListenerAdded = false;
 
-    this.resetCache();
+    this.resetCalculations();
 
     this.state = {
       popupIsOpen: false,
@@ -80,7 +79,7 @@ class Tabs extends React.Component {
 
   componentDidMount() {
     if (this.props.navigationItems && this.props.navigationItems.length) {
-      this.resizeObserver = new ResizeObserver((entries) => {
+      this.resizeObserver = new ResizeObserver(entries => {
         this.contentWidth = entries[0].contentRect.width;
         if (!this.isCalculating) {
           this.animationFrameID = window.requestAnimationFrame(() => {
@@ -90,10 +89,7 @@ class Tabs extends React.Component {
         }
       });
       this.resizeObserver.observe(this.containerRef.current);
-      if (this.isCalculating) {
-        this.isCalculating = false;
-        this.handleResize(this.contentWidth);
-      }
+      this.handleResize(this.contentWidth);
     }
   }
 
@@ -101,7 +97,7 @@ class Tabs extends React.Component {
     const { navigationItems, activeTabKey, notifications } = this.props;
 
     if (navigationItems.length !== nextProps.navigationItems.length || activeTabKey !== nextProps.activeTabKey) {
-      this.resetCache();
+      this.resetCalculations();
     }
     this.previousNotifications = notifications;
 
@@ -111,7 +107,7 @@ class Tabs extends React.Component {
   componentDidUpdate(prevProps) {
     const { activeTabKey } = this.props;
     const { popupIsOpen } = this.state;
-    if (this.isCalculating && this.contentWidth) {
+    if (this.isCalculating) {
       this.isCalculating = false;
       this.handleResize(this.contentWidth);
     }
@@ -129,6 +125,7 @@ class Tabs extends React.Component {
     if (this.containerRef.current) {
       this.resizeObserver.disconnect(this.containerRef.current);
     }
+    this.containerRef.current = null;
   }
 
   getRollupTabWidth() {
@@ -142,11 +139,11 @@ class Tabs extends React.Component {
   }
 
   updateSize() {
-    this.resetCache();
+    this.resetCalculations();
     this.forceUpdate();
   }
 
-  resetCache() {
+  resetCalculations() {
     this.animationFrameID = null;
     this.hiddenStartIndex = -1;
     this.menuHidden = false;
@@ -156,7 +153,7 @@ class Tabs extends React.Component {
   handleResize(width) {
     // Calculate hide index
     const childrenCount = this.props.navigationItems.length;
-    const moreWidth = width - this.getRollupTabWidth();
+    const moreWidth = this.rollupTabRef.current ? width - this.getRollupTabWidth() : width;
     let newHideIndex = childrenCount;
     let isMenuHidden = true;
 
