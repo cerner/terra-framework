@@ -3,7 +3,7 @@ Changelog
 
 Unreleased
 ----------
-### Changed
+### Breaking Changes
 * `links` prop has been deprecated, will resolve to `sections`.
 * Updated UpgradeGuide.
 
