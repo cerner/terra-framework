@@ -71,6 +71,7 @@ const CalendarFilter = ({
   ...customProps
 }) => {
   const theme = useContext(ThemeContext);
+
   const handleOnChange = (event, date, metaData) => {
     if (onChange) {
       const { inputValue: formattedDateValue } = metaData;
