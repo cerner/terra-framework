@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* updated `master` references to `main`.
 
 6.36.0 - (June 16, 2020)
 ------------------
@@ -550,4 +552,4 @@ Unreleased
 ------------------
 Initial stable release
 
-[1]: https://github.com/cerner/terra-framework/tree/master/packages/terra-modal/docs/UPGRADEGUIDE.md
+[1]: https://github.com/cerner/terra-framework/tree/main/packages/terra-modal/docs/UPGRADEGUIDE.md

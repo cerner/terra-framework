@@ -20,7 +20,7 @@ const mainContentForSlidePanel = togglePanelHandler => (
       </p>
       <p>
         {'Focus is moved to the toggle button in the panel container when the panel is opened via the componentDidUpdate lifecycle hook in '}
-        <a href="https://github.com/cerner/terra-framework/blob/master/packages/terra-slide-panel/src/terra-dev-site/doc/example/DefaultSlidePanel.jsx">the example code</a>
+        <a href="https://github.com/cerner/terra-framework/blob/main/packages/terra-slide-panel/src/terra-dev-site/doc/example/DefaultSlidePanel.jsx">the example code</a>
         {'.'}
       </p>
       <ul>
@@ -48,7 +48,7 @@ const panelContentForSlidePanel = (togglePanelHandler, toggleFullscreenHandler) 
       <p>This is the panel content area of the slide panel.</p>
       <p>
         {'Focus is moved to the toggle button in the main container when the panel is closed via the componentDidUpdate lifecycle hook in '}
-        <a href="https://github.com/cerner/terra-framework/blob/master/packages/terra-slide-panel/src/terra-dev-site/doc/example/DefaultSlidePanel.jsx">the example code</a>
+        <a href="https://github.com/cerner/terra-framework/blob/main/packages/terra-slide-panel/src/terra-dev-site/doc/example/DefaultSlidePanel.jsx">the example code</a>
         {'.'}
       </p>
       <ul>

@@ -13,7 +13,7 @@ const packages = packagePaths
   .filter(component => component.startsWith('terra-'));
 
 // Generate package listing template
-const packageListing = packages.map(component => `| [${component}](https://github.com/cerner/terra-framework/tree/master/packages/${component}) | [![NPM version](https://badgen.net/npm/v/${component})](https://www.npmjs.org/package/${component}) | ![Stable](https://badgen.net/badge/status/Stable/green) | [![${component}](https://badgen.net/david/dep/cerner/terra-framework/packages/${component})](https://david-dm.org/cerner/terra-framework?path=packages/${component}) |`);
+const packageListing = packages.map(component => `| [${component}](https://github.com/cerner/terra-framework/tree/main/packages/${component}) | [![NPM version](https://badgen.net/npm/v/${component})](https://www.npmjs.org/package/${component}) | ![Stable](https://badgen.net/badge/status/Stable/green) | [![${component}](https://badgen.net/david/dep/cerner/terra-framework/packages/${component})](https://david-dm.org/cerner/terra-framework?path=packages/${component}) |`);
 
 const content = [
   '<!-- AUTO-GENERATED-CONTENT:START (SUBPACKAGELIST) -->',
