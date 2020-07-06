@@ -78,6 +78,12 @@ disclosureManager.disclose({
    *   > Note: `size` should not be provided if `dimensions` are specified.
    */
   size: PropsTypes.func,
+
+  /**
+   * Additional custom properties to override disclosed component.
+   * For instance to set panelBehavior when using a slidepanel manager use `typeConfig: { panelBehavior: 'squish' }`.
+   */
+  typeConfig: PropsTypes.Object
 }).then(() => {
   // do stuff
 });
