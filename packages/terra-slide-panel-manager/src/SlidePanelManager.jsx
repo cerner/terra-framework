@@ -62,7 +62,7 @@ class SlidePanelManager extends React.Component {
 
   renderSlidePanel(manager) {
     const {
-      children, panelBehavior, disclosureAccessory, withDisclosureContainer, ...customProps
+      children, disclosureAccessory, withDisclosureContainer, ...customProps
     } = this.props;
 
     let isFullscreen;
@@ -76,6 +76,8 @@ class SlidePanelManager extends React.Component {
     } else {
       panelSize = disclosureSizeToPanelSize[manager.disclosure.size];
     }
+
+    const panelBehavior = manager.disclosure.typeConfig.panelBehavior ? manager.disclosure.typeConfig.panelBehavior : this.props.panelBehavior;
 
     const presentedDisclosureComponentKey = manager.disclosureComponentKeys[manager.disclosureComponentKeys.length - 1];
     const presentedDisclosureComponentData = manager.disclosureComponentData[presentedDisclosureComponentKey] || {};
@@ -107,7 +109,7 @@ class SlidePanelManager extends React.Component {
                 ) : undefined}
                 {disclosureAccessory}
               </React.Fragment>
-          )}
+            )}
           >
             <SlideGroup items={manager.disclosure.components} isAnimated />
           </ContentContainer>
