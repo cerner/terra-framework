@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Listens to `typeConfig` property. Currently is limited to `panelBehavior`. 
 
 5.37.0 - (June 16, 2020)
 ------------------
