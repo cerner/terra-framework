@@ -5,6 +5,8 @@ Unreleased
 ----------
 ### Changed
 * updated `master` references to `main`.
+* Minor file changes to comply with eslint rules
+* Remove unused disable eslint directives
 
 4.39.0 - (June 16, 2020)
 ------------------

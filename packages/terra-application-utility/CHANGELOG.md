@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * updated `master` references to `main`.
+* Remove unused disable eslint directives
 
 2.35.0 - (June 9, 2020)
 ------------------
@@ -33,7 +34,7 @@ Unreleased
 * Added clinical-lowlight-theme wdio screenshots
 
 2.31.0 - (February 25, 2020)
-------------------
+------------------ß
 ### Changed
 * Update docs to use MDX syntax
 

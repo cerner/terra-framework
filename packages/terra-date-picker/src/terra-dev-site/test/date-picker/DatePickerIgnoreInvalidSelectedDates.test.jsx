@@ -24,7 +24,7 @@ const DateTimePickerInvalidSelectedDates = () => (
     <br />
     <br />
     <span id="selected-date">selectedDate = </span>
-    {'""'}
+    &quot;&quot;
     <br />
     <DatePicker
       name="empty-selectedDate"
@@ -33,7 +33,7 @@ const DateTimePickerInvalidSelectedDates = () => (
     <br />
     <br />
     <span id="selected-date">selectedDate = </span>
-    {'"abc"'}
+    &quot;abc&quot;
     <br />
     <DatePicker
       name="character-selectedDate"
@@ -42,7 +42,7 @@ const DateTimePickerInvalidSelectedDates = () => (
     <br />
     <br />
     <span id="selected-date">selectedDate = </span>
-    {'"!@#$"'}
+    &apos;&quot;!@#$&quot;&apos;
     <br />
     <DatePicker
       name="special-character-selectedDate"

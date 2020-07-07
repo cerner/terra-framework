@@ -25,7 +25,7 @@ const SimpleAggregatorItem = ({ name, aggregatorDelegate, ...customProps }) => (
             aggregatorDelegate.releaseFocus();
           }}
         >
-        Release Focus
+          Release Focus
         </button>
       )
       : (
@@ -35,7 +35,7 @@ const SimpleAggregatorItem = ({ name, aggregatorDelegate, ...customProps }) => (
             aggregatorDelegate.requestFocus();
           }}
         >
-        Get Focus
+          Get Focus
         </button>
       )}
     {aggregatorDelegate.hasFocus ? <h4>Section has focus!</h4> : null}

@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * updated `master` references to `main`.
+* Minor file changes to comply with eslint rules
 
 3.29.0 - (April 28, 2020)
 ------------------
