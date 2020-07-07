@@ -124,15 +124,17 @@ class MenuItem extends React.Component {
     return (
       <li
         className={cx('list-item')}
+        role="none"
       >
         <div
-          role="link"
+          role="menuitem"
           {...customProps}
           tabIndex="0"
           className={itemClassNames}
           onKeyDown={this.handleKeyDown}
           onKeyUp={this.handleKeyUp}
           onBlur={this.handleOnBlur}
+          aria-haspopup
         >
           <div className={cx('title')}>
             {this.textRender()}
