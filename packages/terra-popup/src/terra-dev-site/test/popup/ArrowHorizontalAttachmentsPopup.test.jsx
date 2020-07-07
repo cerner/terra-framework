@@ -75,7 +75,7 @@ class AlignmentPopup extends React.Component {
             className={cx('popup-button')}
             onClick={this.handleButtonClick}
             ref={this.setButtonNode}
-            aria-label=" "
+            aria-label="alignment-button"
           />
         </div>
         <p>Choose Target Attachment:</p>

@@ -39,7 +39,7 @@ class HookshotDefaultExample extends React.Component {
           type="button"
           id="hookshot-standard-button"
           onClick={this.handleButtonClick}
-          aria-label=" "
+          aria-label="hookshot-standard-button"
         />
       </div>
     );
