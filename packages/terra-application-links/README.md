@@ -7,7 +7,7 @@
 This packages contains a list and tab form of ApplicationLinks, to be used in horizontal and vertical display styles. Selection is managed by react-router.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-links/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/main/packages/terra-application-links/docs)
 - [LICENSE](#license)
 
 ## Getting Started

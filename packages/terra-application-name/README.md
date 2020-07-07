@@ -7,7 +7,7 @@
 Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-name/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/main/packages/terra-application-name/docs)
 - [LICENSE](#license)
 
 ## Getting Started

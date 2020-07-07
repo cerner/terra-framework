@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* updated `master` references to `main`.
+* Minor file changes to comply with eslint rules
 
 2.31.0 - (June 2, 2020)
 ------------------

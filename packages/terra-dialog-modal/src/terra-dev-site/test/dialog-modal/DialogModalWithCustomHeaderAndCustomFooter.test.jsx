@@ -44,7 +44,7 @@ class DialogModalWithCustomHeaderAndCustomFooter extends React.Component {
           onRequestClose={this.handleCloseModal}
           header={(
             <div className={cx('header')}>
-Custom Header
+              Custom Header
               <Button id="close-dialog-modal" text="Close" className={cx('close-button')} onClick={this.handleCloseModal} />
             </div>
 )}

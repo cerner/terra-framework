@@ -18,7 +18,7 @@ class TimeInputDefault extends React.Component {
       <div>
         <div id="time-input-value">
           <h3>
-Time Input:
+            Time Input:
             {this.state.input}
           </h3>
         </div>
