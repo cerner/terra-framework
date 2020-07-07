@@ -4,7 +4,8 @@ Changelog
 Unreleased
 ----------
 ### Added
-* Listens to `typeConfig` property. Currently is limited to `panelBehavior`. 
+* Disclosure Manager disclose API accepts a `typeConfig` property for custom properties.
+* Currently setting `typeConfig: { panelBehavior: 'squish' }` allows to set/override panelBehavior prop.
 
 5.37.0 - (June 16, 2020)
 ------------------

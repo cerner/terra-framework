@@ -80,8 +80,8 @@ disclosureManager.disclose({
   size: PropsTypes.func,
 
   /**
-   * Additional custom properties to override disclosed component.
-   * For instance to set panelBehavior when using a slidepanel manager use `typeConfig: { panelBehavior: 'squish' }`.
+   * Additional custom properties to override disclosed component props.
+   * Currently is limited to `panelBehavior` property of slide panel manager. To set\override panelBehavior we could do `typeConfig: { panelBehavior: 'squish' }`.
    */
   typeConfig: PropsTypes.Object
 }).then(() => {
