@@ -16,7 +16,7 @@ const content = ({ layoutConfig }) => (
           className={cx('button')}
           onClick={layoutConfig.toggleMenu}
         >
-Toggle Menu
+          Toggle Menu
         </button>
         )}
     </div>

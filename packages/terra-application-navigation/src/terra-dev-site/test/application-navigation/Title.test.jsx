@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import ApplicationBase from 'terra-application/lib/application-base';
 import ApplicationNavigation from '../../../ApplicationNavigation';

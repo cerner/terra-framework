@@ -7,7 +7,7 @@
 This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-menu-layout/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/main/packages/terra-application-menu-layout/docs)
 - [LICENSE](#license)
 
 ## Getting Started

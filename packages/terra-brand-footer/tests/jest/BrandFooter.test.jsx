@@ -102,7 +102,7 @@ describe('BrandFooter', () => {
   it('should render with provided content left', () => {
     const wrapper = shallow(<BrandFooter
       contentLeft={
-        <img src="https://github.com/cerner/terra-core/raw/master/terra.png" alt="terra-ui" height="40px" width="40px" />
+        <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
         }
     />);
     expect(wrapper).toMatchSnapshot();
@@ -143,7 +143,7 @@ describe('BrandFooter', () => {
           },
         ]}
         contentLeft={
-          <img src="https://github.com/cerner/terra-core/raw/master/terra.png" alt="terra-ui" height="40px" width="40px" />
+          <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
         }
       />
     );
@@ -208,7 +208,7 @@ describe('BrandFooter', () => {
           },
         ]}
         contentLeft={
-          <img src="https://github.com/cerner/terra-core/raw/master/terra.png" alt="terra-ui" height="40px" width="40px" />
+          <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
       }
         contentBottom={(
           <p>
@@ -235,7 +235,7 @@ describe('BrandFooter', () => {
           { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
         ]}
         contentLeft={
-          <img src="https://github.com/cerner/terra-core/raw/master/terra.png" alt="terra-ui" height="40px" width="40px" />
+          <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
       }
       />
     );
@@ -281,7 +281,7 @@ describe('BrandFooter', () => {
         { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
       ]}
       contentLeft={
-        <img src="https://github.com/cerner/terra-core/raw/master/terra.png" alt="terra-ui" height="40px" width="40px" />
+        <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
         }
       contentBottom={(
         <p>
@@ -306,7 +306,7 @@ describe('BrandFooter', () => {
         </p>
 )}
       contentLeft={
-        <img src="https://github.com/cerner/terra-core/raw/master/terra.png" alt="terra-ui" height="40px" width="40px" />
+        <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
         }
     />);
     expect(wrapper).toMatchSnapshot();
@@ -332,7 +332,7 @@ describe('BrandFooter', () => {
   it('should render with content bottom, content right and content left', () => {
     const wrapper = shallow(<BrandFooter
       contentLeft={
-        <img src="https://github.com/cerner/terra-core/raw/master/terra.png" alt="terra-ui" height="40px" width="40px" />
+        <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
         }
       contentBottom={(
         <p>
@@ -352,7 +352,7 @@ describe('BrandFooter', () => {
   it('should render with content right and content left', () => {
     const wrapper = shallow(<BrandFooter
       contentLeft={
-        <img src="https://github.com/cerner/terra-core/raw/master/terra.png" alt="terra-ui" height="40px" width="40px" />
+        <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
         }
       contentRight={(
         <div>

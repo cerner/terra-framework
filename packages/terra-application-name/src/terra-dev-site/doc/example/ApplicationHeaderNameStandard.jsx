@@ -15,7 +15,7 @@ const ApplicationHeaderNameStandard = () => (
     logo={(
       <ApplicationHeaderName
         title="App-Name"
-        accessory={<Image alt="Terra Logo" variant="rounded" src="https://github.com/cerner/terra-framework/raw/master/terra.png" className={cx('demo-image-container')} isFluid />}
+        accessory={<Image alt="Terra Logo" variant="rounded" src="https://github.com/cerner/terra-framework/raw/main/terra.png" className={cx('demo-image-container')} isFluid />}
         className={cx(['demo-background-color'])}
       />
     )}

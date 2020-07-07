@@ -5,6 +5,8 @@ Unreleased
 ----------
 ### Changed
 * Fixed `aria-haspopup` and `link` role  incompatibility issue.
+* Minor file changes to comply with eslint rules
+* Remove unused disable eslint directives
 
 1.29.0 - (June 16, 2020)
 ------------------
