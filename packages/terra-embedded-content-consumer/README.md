@@ -7,7 +7,7 @@
 The Embedded Content Consumer is the application component which is embedding web content within it.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-embedded-content-consumer/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/main/packages/terra-embedded-content-consumer/docs)
 - [LICENSE](#license)
 
 ## Getting Started

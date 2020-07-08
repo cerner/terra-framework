@@ -25,7 +25,6 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the day input
    */
-  // eslint-disable-next-line react/forbid-prop-types
   dayAttributes: PropTypes.object,
   /**
    * Whether the date input should be disabled.
@@ -67,12 +66,10 @@ const propTypes = {
   /**
    * Attributes to attach to the legend.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   legendAttributes: PropTypes.object,
   /**
    * Custom select attributes to apply to the month select
    */
-  // eslint-disable-next-line react/forbid-prop-types
   monthAttributes: PropTypes.object,
   /**
    * Set the max-width of a field using `length` or `%`.  Best practice recommendation to never exceed
@@ -109,7 +106,6 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the year input
    */
-  // eslint-disable-next-line react/forbid-prop-types
   yearAttributes: PropTypes.object,
 };
 

@@ -149,9 +149,9 @@ const ExampleApplication = ({ onAction }) => {
         onSelectNavigationItem={key => setActiveKey(key)}
         utilityItems={utilityItems}
         onSelectUtilityItem={onAction}
-        onSelectSettings={() => onAction('settings')} // eslint-disable-line no-alert
-        onSelectHelp={() => onAction('help')} // eslint-disable-line no-alert
-        onSelectLogout={() => onAction('logout')} // eslint-disable-line no-alert
+        onSelectSettings={() => onAction('settings')}
+        onSelectHelp={() => onAction('help')}
+        onSelectLogout={() => onAction('logout')}
       >
         <Placeholder title={activeKey} />
       </ApplicationNavigation>

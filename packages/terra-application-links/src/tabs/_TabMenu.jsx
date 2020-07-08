@@ -87,8 +87,8 @@ class TabMenu extends React.Component {
     for (let i = 0; i < count; i += 1) {
       const child = childArray[i];
       if (matchPath(location.pathname, { path: child.props.path })) {
-        childText = child.props.text; // eslint-disable-line prefer-destructuring
-        icon = child.props.icon; // eslint-disable-line prefer-destructuring
+        childText = child.props.text;
+        icon = child.props.icon;
         isSelected = true;
         break;
       }

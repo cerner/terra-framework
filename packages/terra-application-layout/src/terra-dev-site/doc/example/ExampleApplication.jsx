@@ -207,7 +207,7 @@ const userData = {
  */
 const nameConfig = Object.freeze({
   title: 'Example Application',
-  accessory: <Image variant="rounded" src="https://github.com/cerner/terra-framework/raw/master/terra.png" alt="App logo" height="26px" width="26px" />,
+  accessory: <Image variant="rounded" src="https://github.com/cerner/terra-framework/raw/main/terra.png" alt="App logo" height="26px" width="26px" />,
 });
 
 class ExampleApplication extends React.Component {

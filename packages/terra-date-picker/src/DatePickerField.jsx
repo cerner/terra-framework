@@ -46,7 +46,6 @@ const propTypes = {
    * Custom input attributes to apply to the date input. Use the name prop to set the name for the input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   inputAttributes: PropTypes.object,
   /**
   * Whether the field displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
@@ -71,7 +70,6 @@ const propTypes = {
   /**
    * Attributes to attach to the label.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   labelAttrs: PropTypes.object,
   /**
    * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
