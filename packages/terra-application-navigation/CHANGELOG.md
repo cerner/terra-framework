@@ -6,6 +6,13 @@ Unreleased
 ### Fixed
 * Corrected the 'resize observer loop limit reached' error with animation frames.
 
+### Fixed
+* Fixed `side-drawer` not opening in IE for tiny viewport.
+
+### Removed
+* Removed themeable variable --terra-application-navigation-content-layout-default-width
+* Removed themeable variable --terra-application-navigation-content-layout-medium-width
+
 ### Changed
 * Minor file changes to comply with eslint rules
 * Remove unused disable eslint directives
