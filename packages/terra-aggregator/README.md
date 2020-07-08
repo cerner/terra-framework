@@ -6,7 +6,7 @@ The Aggregator provides focus-based mechanisms for managing actions across dispa
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-aggregator/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/main/packages/terra-aggregator/docs)
 - [LICENSE](#license)
 
 ## Getting Started

@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* updated `master` references to `main`.
+* Minor file changes to comply with eslint rules
 
 3.29.0 - (April 28, 2020)
 ------------------
@@ -193,7 +196,7 @@ Unreleased
 ### Breaking Change
 * Update to terra-list v4
 * Update props to match List's new API, Guides:
-* https://github.com/cerner/terra-core/tree/master/packages/terra-list/docs/guides
+* https://github.com/cerner/terra-core/tree/main/packages/terra-list/docs/guides
 * Selection state now managed outside of the infinite list
 * Expose `SectionHeader` and `SubsectionHeader` for use within list
 * Removed `isSelectable` prop

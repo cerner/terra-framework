@@ -41,13 +41,10 @@ const MenuExample = ({ layoutConfig }) => (
         )}
       <h2>Menu</h2>
       <br />
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <Link to="/page1">Page 1</Link>
       <br />
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <Link to="/page2">Page 2</Link>
       <br />
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <Link to="/page3">Page 3</Link>
     </div>
   </div>

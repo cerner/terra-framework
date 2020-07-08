@@ -10,6 +10,10 @@ Unreleased
 * Removed themeable variable --terra-application-navigation-content-layout-default-width
 * Removed themeable variable --terra-application-navigation-content-layout-medium-width
 
+### Changed
+* Minor file changes to comply with eslint rules
+* Remove unused disable eslint directives
+
 1.29.0 - (June 16, 2020)
 ------------------
 ### Changed

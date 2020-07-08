@@ -23,7 +23,7 @@ exec('npx lerna updated', (error, stdout) => {
     const releaseDate = new Date().toLocaleString('en-us', { month: 'long', year: 'numeric', day: 'numeric' });
 
     if (!fs.existsSync(packageFile) || !fs.existsSync(changelogFile)) {
-      return; /* eslint-disable-line no-useless-return */
+      return;
     }
 
     // Read package.json and pull out version

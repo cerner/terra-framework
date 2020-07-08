@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-restricted-globals */
 
 class FormValidationUtil {

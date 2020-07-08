@@ -17,10 +17,10 @@ class MenuItemOnClick extends React.Component {
       <div>
         <div id="clickNumber">
           <h3>
-Item has been clicked
+            Item has been clicked
             {this.state.clickNumber}
             {' '}
-times
+            times
           </h3>
         </div>
         <ul role="menu">
