@@ -55,6 +55,10 @@ const propTypes = {
   */
   isInvalid: PropTypes.bool,
   /**
+   * The label of the form control children.
+   */
+  label: PropTypes.node,
+  /**
    * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`
    */
   maxDate: PropTypes.string,
@@ -383,6 +387,7 @@ class DatePicker extends React.Component {
       required,
       selectedDate,
       value,
+      label,
       ...customProps
     } = this.props;
 
@@ -448,6 +453,7 @@ class DatePicker extends React.Component {
                 shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
                 onButtonFocus={this.handleFocus}
                 buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
+                ariaLabel={label}
               />
             )}
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}

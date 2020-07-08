@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'terra-button';
+import moment from 'moment';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
 import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 import DateUtil from './DateUtil';
+import { getLocalizedDateForScreenReader } from './react-datepicker/date_utils';
 import styles from './DatePicker.module.scss';
 
 const cx = classNames.bind(styles);
@@ -80,6 +83,11 @@ const propTypes = {
    * The selected or entered date value to display in the date input.
    */
   value: PropTypes.string,
+  /**
+  * String that labels the current element. 'aria-label' must be present,
+  * for accessibility.
+  */
+  ariaLabel: PropTypes.string,
 };
 
 const defaultProps = {
@@ -155,6 +163,7 @@ class DatePickerInput extends React.Component {
       placeholder,
       required,
       value,
+      ariaLabel,
       ...customProps
     } = this.props;
 
@@ -179,6 +188,8 @@ class DatePickerInput extends React.Component {
     const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
     const theme = this.context;
 
+    const label = this.props.ariaLabel ? this.props.ariaLabel : intl.formatMessage({ id: 'Terra.datePicker.date' });
+
     return (
       <div className={cx('custom-input', theme.className)}>
         <input
@@ -199,8 +210,9 @@ class DatePickerInput extends React.Component {
           placeholder={placeholder}
           onFocus={onFocus}
           onBlur={onBlur}
-          aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
+          aria-hidden
         />
+        <VisuallyHiddenText aria-live="assertive" text={value ? `${label} ${getLocalizedDateForScreenReader(moment(value), this.props)}` : label} />
         <Button
           className={buttonClasses}
           text={buttonText}
