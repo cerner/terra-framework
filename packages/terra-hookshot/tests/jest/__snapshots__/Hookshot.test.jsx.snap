@@ -3,6 +3,7 @@
 exports[`should render a default component 1`] = `
 <div>
   <button
+    aria-label="hookshot-standard-button"
     id="hookshot-standard-button"
     type="button"
   />
@@ -57,6 +58,7 @@ exports[`should shallow a default component 1`] = `
     </OnClickOutside(HookshotContent)>
   </Hookshot>
   <button
+    aria-label="hookshot-standard-button"
     id="hookshot-standard-button"
     onClick={[Function]}
     type="button"

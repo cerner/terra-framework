@@ -6,7 +6,7 @@ The Terra Application Layout is a responsive, themeable layout for building appl
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/main/packages/terra-application/docs)
 - [LICENSE](#license)
 
 ## Getting Started

@@ -23,6 +23,8 @@ class DefaultThemeProvider extends React.Component {
     let themeSwitcher;
 
     function supportsCSSVars() {
+      // This eslint rule complains of the lack of .CSS support in IE, which is exactly what this line is intended to detect.
+      // eslint-disable-next-line compat/compat
       return window.CSS && window.CSS.supports && window.CSS.supports('(--fake-var: 0)');
     }
 

@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Remove unused disable eslint directives
 
 1.37.0 - (June 16, 2020)
 ------------------

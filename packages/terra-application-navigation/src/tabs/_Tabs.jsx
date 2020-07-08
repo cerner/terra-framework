@@ -114,7 +114,6 @@ class Tabs extends React.Component {
 
     if (activeTabKey !== prevProps.activeTabKey && popupIsOpen) {
       // If the active tab has changed between updates due to updates outside of Tabs, the popup is closed.
-      // eslint-disable-next-line react/no-did-update-set-state
       this.closePopup();
     }
   }

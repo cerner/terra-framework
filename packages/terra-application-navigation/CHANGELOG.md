@@ -6,6 +6,10 @@ Unreleased
 ### Fixed
 * Corrected the 'resize observer loop limit reached' error with animation frames.
 
+### Changed
+* Minor file changes to comply with eslint rules
+* Remove unused disable eslint directives
+
 1.29.0 - (June 16, 2020)
 ------------------
 ### Changed

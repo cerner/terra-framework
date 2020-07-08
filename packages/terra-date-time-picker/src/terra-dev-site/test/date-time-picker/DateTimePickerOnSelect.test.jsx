@@ -21,11 +21,11 @@ class DatePickerOnChange extends React.Component {
     return (
       <div>
         <h3>
-OnChange Date:
+          OnChange Date:
           <span id="changed-date">{this.state.onchangedate}</span>
         </h3>
         <h3>
-OnSelect Date:
+          OnSelect Date:
           <span id="selected-date">{this.state.onselectdate}</span>
         </h3>
         <DateTimePicker
