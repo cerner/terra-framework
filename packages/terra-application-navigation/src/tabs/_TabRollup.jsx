@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/role-supports-aria-props */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -78,7 +77,7 @@ const TabRollup = ({
   return (
     <div
       type="button"
-      role="link"
+      role="button"
       tabIndex="0"
       className={cx(
         'tab-rollup',
