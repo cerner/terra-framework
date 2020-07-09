@@ -383,7 +383,7 @@ export function getLocalizedDateForScreenReader (date, props) {
 
   if (date && date.isValid()) {
     const localizedDate = localizeDate(date, locale);
-    localizedDateLabel = localizedDate.format('LLLL');
+    localizedDateLabel = localizedDate.format('dddd, LL');
 
     if (intl && isDayDisabled(date, props)) {
       localizedDateLabel = localizedDateLabel.concat(' ', intl.formatMessage({ id: 'Terra.datePicker.disabled' }));

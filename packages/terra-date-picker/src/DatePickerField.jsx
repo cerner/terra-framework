@@ -249,7 +249,7 @@ const DatePickerField = (props) => {
         isIncomplete={isIncomplete}
         maxDate={maxDate}
         minDate={minDate}
-        label={label}
+        ariaLabel={label}
         name={name}
         onBlur={onBlur}
         onChange={onChange}

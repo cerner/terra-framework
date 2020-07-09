@@ -105,6 +105,7 @@ const defaultProps = {
   required: false,
   placeholder: undefined,
   value: undefined,
+  ariaLabel: undefined,
 };
 
 class DatePickerInput extends React.Component {
