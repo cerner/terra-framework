@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Fixed `aria-haspopup` and `link` role  incompatibility issue.
 * updated `master` references to `main`.
 * Minor file changes to comply with eslint rules
 
