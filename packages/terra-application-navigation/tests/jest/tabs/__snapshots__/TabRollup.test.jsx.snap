@@ -9,7 +9,7 @@ exports[`TabRollup should render default element 1`] = `
   data-focus-styles-enabled={true}
   onBlur={[Function]}
   onMouseDown={[Function]}
-  role="link"
+  role="button"
   tabIndex="0"
   type="button"
 >
@@ -45,7 +45,7 @@ exports[`TabRollup should render prop data 1`] = `
   data-focus-styles-enabled={true}
   onBlur={[Function]}
   onMouseDown={[Function]}
-  role="link"
+  role="button"
   tabIndex="0"
   type="button"
 >
@@ -91,7 +91,7 @@ exports[`TabRollup should render with function callbacks 1`] = `
   data-focus-styles-enabled={true}
   onBlur={[Function]}
   onMouseDown={[Function]}
-  role="link"
+  role="button"
   tabIndex="0"
   type="button"
 >
@@ -129,7 +129,7 @@ exports[`TabRollup should render with selection callback 1`] = `
   onClick={[MockFunction]}
   onKeyDown={[Function]}
   onMouseDown={[Function]}
-  role="link"
+  role="button"
   tabIndex="0"
   type="button"
 >
