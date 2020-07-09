@@ -9,9 +9,13 @@ const cx = classNames.bind(styles);
 export default () => (
   <div id="wrapper">
     <BrandFooter
-      links={[
-        { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
-        { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
+      sections={[
+        {
+          links: [
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
+            { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
+          ],
+        },
       ]}
       contentLeft={(
         <a

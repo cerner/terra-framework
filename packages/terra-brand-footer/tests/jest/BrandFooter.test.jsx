@@ -25,32 +25,6 @@ describe('BrandFooter', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render with the links prop', () => {
-    const wrapper = shallow(<BrandFooter
-      links={[
-        { text: 'Cerner Home', href: 'https://www.cerner.com/' },
-        { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
-      ]}
-    />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should render the sections prop instead of links prop', () => {
-    const wrapper = shallow(<BrandFooter
-      sections={[
-        {
-          links: [
-            { text: 'Sections Prop link', href: 'https://www.cerner.com/' },
-          ],
-        },
-      ]}
-      links={[
-        { text: 'Links Prop Link', href: 'https://code.cerner.com/' },
-      ]}
-    />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('should render a section header', () => {
     const wrapper = shallow(<BrandFooter
       sections={[
@@ -230,9 +204,13 @@ describe('BrandFooter', () => {
   it('should render with provided links and content left', () => {
     const component = (
       <BrandFooter
-        links={[
-          { text: 'Cerner Home', href: 'https://www.cerner.com/' },
-          { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
+        sections={[
+          {
+            links: [
+              { text: 'Cerner Home', href: 'https://www.cerner.com/' },
+              { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
+            ],
+          },
         ]}
         contentLeft={
           <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
@@ -245,9 +223,13 @@ describe('BrandFooter', () => {
 
   it('should render with provided links and content right', () => {
     const wrapper = shallow(<BrandFooter
-      links={[
-        { text: 'Cerner Home', href: 'https://www.cerner.com/' },
-        { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
+      sections={[
+        {
+          links: [
+            { text: 'Cerner Home', href: 'https://www.cerner.com/' },
+            { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
+          ],
+        },
       ]}
       contentRight={(
         <div>
@@ -261,9 +243,13 @@ describe('BrandFooter', () => {
 
   it('should render with provided links and content bottom', () => {
     const wrapper = shallow(<BrandFooter
-      links={[
-        { text: 'Cerner Home', href: 'https://www.cerner.com/' },
-        { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
+      sections={[
+        {
+          links: [
+            { text: 'Cerner Home', href: 'https://www.cerner.com/' },
+            { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
+          ],
+        },
       ]}
       contentBottom={(
         <p>
@@ -276,9 +262,13 @@ describe('BrandFooter', () => {
 
   it('should render with provided links, content left, content bottom and content right', () => {
     const wrapper = shallow(<BrandFooter
-      links={[
-        { text: 'Cerner Home', href: 'https://www.cerner.com/' },
-        { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
+      sections={[
+        {
+          links: [
+            { text: 'Cerner Home', href: 'https://www.cerner.com/' },
+            { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
+          ],
+        },
       ]}
       contentLeft={
         <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
