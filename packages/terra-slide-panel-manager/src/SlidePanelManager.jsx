@@ -77,7 +77,9 @@ class SlidePanelManager extends React.Component {
       panelSize = disclosureSizeToPanelSize[manager.disclosure.size];
     }
 
-    const panelBehavior = manager.disclosure.typeConfig && manager.disclosure.typeConfig.panelBehavior ? manager.disclosure.typeConfig.panelBehavior : customProps.panelBehavior;
+    const panelBehavior = manager?.disclosure?.typeConfig?.panelBehavior ? manager.disclosure.typeConfig.panelBehavior : customProps.panelBehavior;
+
+    console.log("panel",panelBehavior);
 
     const presentedDisclosureComponentKey = manager.disclosureComponentKeys[manager.disclosureComponentKeys.length - 1];
     const presentedDisclosureComponentData = manager.disclosureComponentData[presentedDisclosureComponentKey] || {};
