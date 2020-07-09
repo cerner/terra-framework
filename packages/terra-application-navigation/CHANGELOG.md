@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed `side-drawer` not opening in IE for tiny viewport.
+
+### Removed
+* Removed themeable variable --terra-application-navigation-content-layout-default-width
+* Removed themeable variable --terra-application-navigation-content-layout-medium-width
+
 ### Changed
 * Fixed `aria-haspopup` and `link` role  incompatibility issue.
 * Minor file changes to comply with eslint rules
