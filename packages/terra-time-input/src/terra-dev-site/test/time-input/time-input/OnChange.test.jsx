@@ -21,7 +21,7 @@ class TimeInputDefault extends React.Component {
       <div className={cx('content-wrapper')}>
         <div id="time-input-value">
           <h3>
-Time Input:
+            Time Input:
             {this.state.input}
           </h3>
         </div>

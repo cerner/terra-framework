@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Disclosure Manager disclose API accepts a `typeConfig` property for custom properties.
 * Currently setting `typeConfig: { panelBehavior: 'squish' }` allows to set/override panelBehavior prop.
+=======
+### Changed
+* Remove unused disable eslint directives
 
 5.37.0 - (June 16, 2020)
 ------------------

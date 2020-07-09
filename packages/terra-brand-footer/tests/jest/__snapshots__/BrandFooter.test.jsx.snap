@@ -194,7 +194,7 @@ exports[`BrandFooter should render with content bottom and content left 1`] = `
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
     </div>
@@ -262,7 +262,7 @@ exports[`BrandFooter should render with content bottom, content right and conten
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
       <div>
@@ -305,7 +305,7 @@ exports[`BrandFooter should render with content right and content left 1`] = `
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
       <div>
@@ -476,7 +476,7 @@ exports[`BrandFooter should render with provided content left 1`] = `
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
     </div>
@@ -766,7 +766,7 @@ exports[`BrandFooter should render with provided links and content left 1`] = `
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
     </div>
@@ -833,7 +833,7 @@ exports[`BrandFooter should render with provided links and content left 2`] = `
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
     </div>
@@ -1046,7 +1046,7 @@ exports[`BrandFooter should render with provided links, content left, content bo
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
       <div>
@@ -1131,7 +1131,7 @@ exports[`BrandFooter should render with provided links, content left, content bo
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
       <div>

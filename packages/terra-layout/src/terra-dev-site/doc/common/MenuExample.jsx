@@ -16,7 +16,7 @@ const menu = ({ layoutConfig }) => (
           className={cx('button')}
           onClick={layoutConfig.toggleMenu}
         >
-Toggle Menu
+          Toggle Menu
         </button>
         )}
       {layoutConfig.togglePin && !layoutConfig.menuIsPinned
@@ -26,7 +26,7 @@ Toggle Menu
           className={cx('button')}
           onClick={layoutConfig.togglePin}
         >
-Pin
+          Pin
         </button>
         )}
       {layoutConfig.togglePin && layoutConfig.menuIsPinned
@@ -36,7 +36,7 @@ Pin
           className={cx('button')}
           onClick={layoutConfig.togglePin}
         >
-Unpin
+          Unpin
         </button>
         )}
     </div>

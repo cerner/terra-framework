@@ -3,8 +3,8 @@
 This project is hosted on NPM.  You can find the terra packages [here][project-url].
 
 Below is a guide for releasing packages:
-- Checkout the master branch and run `git pull` to ensure you have the latest changes in master.
-- Run `npm run clean:install` to ensure you have npm packages updated for the master branch.
+- Checkout the `main` branch and run `git pull` to ensure you have the latest changes in `main`.
+- Run `npm run clean:install` to ensure you have npm packages updated for the `main` branch.
 - Run `lerna updated` to view all packages that have updates to be released.
 - Be sure to check the changelogs of all packages that have updates and ensure the changelogs are updated accordingly.
 

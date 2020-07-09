@@ -94,7 +94,7 @@ class DisclosureComponent extends React.Component {
                 });
             }}
           >
-          Dismiss
+            Dismiss
           </button>
           <button
             type="button"
@@ -109,7 +109,7 @@ class DisclosureComponent extends React.Component {
               });
             }}
           >
-          Disclose Again
+            Disclose Again
           </button>
           <br />
           <br />
@@ -283,4 +283,3 @@ const SlidePanelManagerExample = () => (
 );
 
 export default SlidePanelManagerExample;
-/* eslint-disable max-classes-per-file */

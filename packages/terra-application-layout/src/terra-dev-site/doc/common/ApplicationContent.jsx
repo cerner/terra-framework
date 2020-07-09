@@ -113,21 +113,19 @@ class ApplicationContent extends React.Component {
             <p>For example, the displayed menu component will update the router location when its items are clicked. This content component will be notified of the location change and render the update below.</p>
 
             <p>
-Menu item selected:
-              {(
-                <Route
-                  path={`${basePath}/*`}
-                  render={({ location }) => (
-                    <b>{location.pathname}</b>
-                  )}
-                />
-          )}
+              Menu item selected:
+              <Route
+                path={`${basePath}/*`}
+                render={({ location }) => (
+                  <b>{location.pathname}</b>
+                )}
+              />
             </p>
             <h2>Menu/Content Communication</h2>
             <hr />
             <p>Additionally, communication can occur through custom events or shared context.</p>
             <p>
-Event detected:
+              Event detected:
               <b>{this.state.eventState}</b>
             </p>
           </div>
@@ -140,16 +138,16 @@ Event detected:
           <h2>Layout Control</h2>
           <hr />
           <p>
-Content and menu components will receive a prop named
+            Content and menu components will receive a prop named
             <b>layoutConfig</b>
             {' '}
-which contains APIs for manipulating the layout state. When the layout is tiny or small, the layoutConfig will include a function called `toggleMenu` which will present or dismiss the menu.
+            which contains APIs for manipulating the layout state. When the layout is tiny or small, the layoutConfig will include a function called `toggleMenu` which will present or dismiss the menu.
           </p>
           <Button text="Toggle Menu" isDisabled={!layoutConfig.toggleMenu} onClick={() => { layoutConfig.toggleMenu(); }} />
           <h2>Progressive Disclosure</h2>
           <hr />
           <p>
-The ApplicationLayout includes ModalManager support by default. The ApplicationLayout can be wrapped in additional DisclosureManagers to provide additional disclosure capabilities.
+            The ApplicationLayout includes ModalManager support by default. The ApplicationLayout can be wrapped in additional DisclosureManagers to provide additional disclosure capabilities.
           </p>
           <Button
             text="Launch Modal"

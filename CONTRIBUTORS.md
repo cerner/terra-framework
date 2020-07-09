@@ -34,6 +34,7 @@ Cerner Corporation
 - Phil Dodderidge [@pdodde]
 - Jordan Spoor [@Me999999999]
 - Eric McCullough [@EricM96]
+- Dianna McGinn [@DMcginn]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -69,3 +70,4 @@ Cerner Corporation
 [@pdodde]: https://github.com/pdodde
 [@Me999999999]: https://github.com/Me999999999
 [@EricM96]: https://github.com/EricM96
+[@DMcginn]: https://github.com/DMcginn

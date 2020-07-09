@@ -50,12 +50,10 @@ it('correctly applies the theme context className', () => {
         startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
         acceptAction={{
           text: 'Confirm',
-          // eslint-disable-next-line no-console
           onClick: clickConfirm,
         }}
         rejectAction={{
           text: 'Close',
-          // eslint-disable-next-line no-console
           onClick: clickConfirm,
         }}
         buttonOrder="acceptFirst"
