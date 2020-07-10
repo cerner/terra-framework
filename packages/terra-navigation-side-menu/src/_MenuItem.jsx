@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/role-supports-aria-props */
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
@@ -125,9 +124,10 @@ class MenuItem extends React.Component {
     return (
       <li
         className={cx('list-item')}
+        role="none"
       >
         <div
-          role="link"
+          role="menuitem"
           {...customProps}
           tabIndex="0"
           className={itemClassNames}
