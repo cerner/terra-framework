@@ -14,6 +14,7 @@ Unreleased
 * Fixed `aria-haspopup` and `link` role  incompatibility issue.
 * Minor file changes to comply with eslint rules
 * Remove unused disable eslint directives
+* If `notifications` prop is supplied, notification styles are always applied. 
 
 1.29.0 - (June 16, 2020)
 ------------------
