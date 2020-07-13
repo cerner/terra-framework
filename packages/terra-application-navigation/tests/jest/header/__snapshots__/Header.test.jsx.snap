@@ -387,9 +387,9 @@ exports[`Header should render with function callbacks 1`] = `
       "calls": Array [
         Array [
           Object {
-            "hasCount": false,
+            "hasCount": true,
             "isActive": false,
-            "notificationCount": 0,
+            "notificationCount": undefined,
             "text": "test-text",
           },
         ],
@@ -489,9 +489,9 @@ exports[`Header should render with function callbacks 1`] = `
         "calls": Array [
           Array [
             Object {
-              "hasCount": false,
+              "hasCount": true,
               "isActive": false,
-              "notificationCount": 0,
+              "notificationCount": undefined,
               "text": "test-text",
             },
           ],
@@ -573,9 +573,9 @@ exports[`Header should render with function callbacks 1`] = `
               "calls": Array [
                 Array [
                   Object {
-                    "hasCount": false,
+                    "hasCount": true,
                     "isActive": false,
-                    "notificationCount": 0,
+                    "notificationCount": undefined,
                     "text": "test-text",
                   },
                 ],
@@ -637,9 +637,9 @@ exports[`Header should render with function callbacks 1`] = `
                 "calls": Array [
                   Array [
                     Object {
-                      "hasCount": false,
+                      "hasCount": true,
                       "isActive": false,
-                      "notificationCount": 0,
+                      "notificationCount": undefined,
                       "text": "test-text",
                     },
                   ],
@@ -663,19 +663,18 @@ exports[`Header should render with function callbacks 1`] = `
               className="tabs-container is-calculating"
             >
               <Tab
-                hasCount={false}
+                hasCount={true}
                 isActive={false}
                 key="my-test-key"
-                notificationCount={0}
                 onTabSelect={[Function]}
                 render={
                   [MockFunction] {
                     "calls": Array [
                       Array [
                         Object {
-                          "hasCount": false,
+                          "hasCount": true,
                           "isActive": false,
-                          "notificationCount": 0,
+                          "notificationCount": undefined,
                           "text": "test-text",
                         },
                       ],
@@ -720,7 +719,7 @@ exports[`Header should render with function callbacks 1`] = `
               <InjectIntl(TabRollup)
                 data-application-tabs-more={true}
                 hasChildNotifications={false}
-                hasCount={false}
+                hasCount={true}
                 innerRef={
                   Object {
                     "current": <div
@@ -757,7 +756,7 @@ exports[`Header should render with function callbacks 1`] = `
                       aria-current="false"
                       aria-haspopup="true"
                       aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
-                      class="tab-rollup"
+                      class="tab-rollup has-count"
                       data-focus-styles-enabled="true"
                       role="button"
                       tabindex="0"
@@ -800,7 +799,7 @@ exports[`Header should render with function callbacks 1`] = `
                 <TabRollup
                   data-application-tabs-more={true}
                   hasChildNotifications={false}
-                  hasCount={false}
+                  hasCount={true}
                   innerRef={
                     Object {
                       "current": <div
@@ -864,7 +863,7 @@ exports[`Header should render with function callbacks 1`] = `
                         aria-current="false"
                         aria-haspopup="true"
                         aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
-                        class="tab-rollup"
+                        class="tab-rollup has-count"
                         data-focus-styles-enabled="true"
                         role="button"
                         tabindex="0"
@@ -908,7 +907,7 @@ exports[`Header should render with function callbacks 1`] = `
                     aria-current={false}
                     aria-haspopup={true}
                     aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
-                    className="tab-rollup"
+                    className="tab-rollup has-count"
                     data-focus-styles-enabled={true}
                     onBlur={[Function]}
                     onClick={[Function]}
