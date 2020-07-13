@@ -14,6 +14,7 @@ Unreleased
 * Removed themeable variable --terra-application-navigation-content-layout-medium-width
 
 ### Changed
+* Fixed `aria-haspopup` and `link` role  incompatibility issue.
 * Minor file changes to comply with eslint rules
 * Remove unused disable eslint directives
 
