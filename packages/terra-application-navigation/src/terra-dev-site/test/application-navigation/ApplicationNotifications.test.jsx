@@ -132,9 +132,9 @@ const utilityItems = [
 ];
 
 const notifications = {
-  '/lokesh': 5,
-  // 'item-b': 10,
-  // '/page_8': 4,
+  '/page_2': 5,
+  'item-b': 10,
+  '/page_8': 4,
 };
 
 /* eslint-disable no-alert */
