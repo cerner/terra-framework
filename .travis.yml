@@ -24,7 +24,7 @@ jobs:
         - npm run compile:prod -- --env.disableAggregateThemes --output-path $TRAVIS_BUILD_DIR/travis-build/default
         - npm run compile:lowlight -- --env.disableAggregateThemes --output-path $TRAVIS_BUILD_DIR/travis-build/lowlight
         - npm run compile:fusion -- --env.disableAggregateThemes --output-path $TRAVIS_BUILD_DIR/travis-build/fusion
-    # Default - Split out all the themes to not eat up all the travis executors at once.
+    # Split out all the sizes to not eat up all the travis executors at once.
 
     - stage: tiny & small
       name: tiny default-theme
@@ -148,7 +148,7 @@ jobs:
       script: skip
       before_deploy:
         # Build again for deployment because we need the Public path to be updated.
-        - TERRA_DEV_SITE_NEW_RELIC_LICENSE_KEY='c494ac44c8' TERRA_DEV_SITE_NEW_RELIC_APPLICATION_ID='142450088' TERRA_DEV_SITE_PUBLIC_PATH='/terra-framework/' npm run compile:prod
+        - TERRA_DEV_SITE_NEW_RELIC_LICENSE_KEY='c494ac44c8' TERRA_DEV_SITE_NEW_RELIC_APPLICATION_ID='144458769' TERRA_DEV_SITE_PUBLIC_PATH='/terra-framework/' npm run compile:prod
       deploy:
         provider: pages
         skip_cleanup: true
