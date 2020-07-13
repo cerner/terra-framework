@@ -128,6 +128,9 @@ class Tabs extends React.Component {
   }
 
   getRollupTabWidth() {
+    if (!this.rollupTabRef.current) {
+      return 0;
+    }
     return this.rollupTabRef.current.getBoundingClientRect().width;
   }
 
@@ -152,7 +155,7 @@ class Tabs extends React.Component {
   handleResize(width) {
     // Calculate hide index
     const childrenCount = this.props.navigationItems.length;
-    const moreWidth = this.rollupTabRef.current ? width - this.getRollupTabWidth() : width;
+    const moreWidth = width - this.getRollupTabWidth();
     let newHideIndex = childrenCount;
     let isMenuHidden = true;
 
