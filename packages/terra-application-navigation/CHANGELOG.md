@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Fixed
 * Fixed `side-drawer` not opening in IE for tiny viewport.
+* Fix 'tab' text flicker when notifications are provided. 
 
 ### Removed
 * Removed themeable variable --terra-application-navigation-content-layout-default-width
@@ -14,7 +15,6 @@ Unreleased
 * Fixed `aria-haspopup` and `link` role  incompatibility issue.
 * Minor file changes to comply with eslint rules
 * Remove unused disable eslint directives
-* If `notifications` prop is supplied, notification styles are always applied. 
 
 1.29.0 - (June 16, 2020)
 ------------------
