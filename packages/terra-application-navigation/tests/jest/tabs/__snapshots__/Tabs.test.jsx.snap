@@ -322,7 +322,7 @@ exports[`Tabs should render prop data 1`] = `
               aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
               class="tab-rollup"
               data-focus-styles-enabled="true"
-              role="link"
+              role="button"
               tabindex="0"
               type="button"
             >
@@ -429,7 +429,7 @@ exports[`Tabs should render prop data 1`] = `
                 aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
                 class="tab-rollup"
                 data-focus-styles-enabled="true"
-                role="link"
+                role="button"
                 tabindex="0"
                 type="button"
               >
@@ -477,7 +477,7 @@ exports[`Tabs should render prop data 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             onMouseDown={[Function]}
-            role="link"
+            role="button"
             tabIndex="0"
             type="button"
           >

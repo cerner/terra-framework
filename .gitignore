@@ -12,6 +12,7 @@
 *.rbc
 *.seed
 .dat*
+.DS_Store
 .grunt
 .lock-wscript
 .node_repl_history

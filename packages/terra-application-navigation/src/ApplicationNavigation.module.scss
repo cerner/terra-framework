@@ -59,18 +59,18 @@
   }
 
   [dir=ltr] .content-layout.drawer-menu-is-open {
-    transform: translate3d(var(--terra-application-navigation-content-layout-default-width, calc(100% - 3.571rem)), 0, 0);
+    transform: translate3d(100%, 0, 0) translate3d(-3.571rem, 0, 0);
 
     @include terra-mq-small-up {
-      transform: translate3d(var(--terra-application-navigation-content-layout-medium-width, 20rem), 0, 0);
+      transform: translate3d(20rem, 0, 0);
     } 
   }
 
   [dir=rtl] .content-layout.drawer-menu-is-open {
-    transform: translate3d(calc(-1 * var(--terra-application-navigation-content-layout-default-width, calc(100% - 3.571rem))), 0, 0);
+    transform: translate3d(-100%, 0, 0) translate3d(3.571rem, 0, 0);
 
     @include terra-mq-small-up {
-      transform: translate3d(calc(-1 * var(--terra-application-navigation-content-layout-medium-width, 20rem)), 0, 0);
+      transform: translate3d(-20rem, 0, 0);
     } 
   }
 

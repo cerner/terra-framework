@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Minor file changes to comply with eslint rules
+* Remove unused disable eslint directives
 
 4.29.0 - (June 9, 2020)
 ------------------

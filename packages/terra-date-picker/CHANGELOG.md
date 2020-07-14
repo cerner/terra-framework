@@ -6,6 +6,12 @@ Unreleased
 ### Added
 * Added Calendar Filter sub-component.
 
+### Changed
+* updated `master` references to `main`.
+* Minor file changes to comply with eslint rules
+* Remove unused disable eslint directives
+* Escape characters to comply with no unescaped entities eslint rule
+
 4.40.0 - (June 16, 2020)
 ------------------
 ### Added

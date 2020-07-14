@@ -30,7 +30,7 @@
   .panel {
     background-color: var(--terra-slide-panel-panel-background-color, #fff);
     position: absolute;
-    z-index: 500; // z-index used to set master above detail in visual stacking context.
+    z-index: 500; // z-index used to set main above detail in visual stacking context.
   }
 
   // Prevent z-index issues with nesting
