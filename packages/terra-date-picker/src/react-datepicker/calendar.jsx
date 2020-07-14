@@ -138,6 +138,11 @@ export default class Calendar extends React.Component {
      */
     onMonthChange: PropTypes.func,
     /**
+     * A callback function to execute when month component loses focus.
+     * requires no parameter.
+     */
+    onMonthBlur: PropTypes.func,
+    /**
      * Prop to show month navigation.
      */
     forceShowMonthNavigation: PropTypes.bool,
@@ -145,6 +150,11 @@ export default class Calendar extends React.Component {
      * A callback function that is executed when date picker is clicked for dropdown.
      */
     onDropdownFocus: PropTypes.func,
+    /**
+     * A callback function to execute on mouse down on day.
+     * requires no parameter.
+     */
+    onDayMouseDown: PropTypes.func,
     /**
      * A callback function that is executed when a valid date is selected.
      */
@@ -353,6 +363,9 @@ export default class Calendar extends React.Component {
 
   handleMonthBlur = () => {
     this.setState({ calendarIsKeyboardFocused: false })
+    if (this.props.onMonthBlur) {
+      this.props.onMonthBlur();
+    }
   }
 
   handleMonthFocus = () => {
@@ -422,6 +435,12 @@ export default class Calendar extends React.Component {
   handleDayClick = (day, event) => this.props.onSelect(day, event)
 
   handleDayMouseEnter = day => this.setState({ selectingDate: day })
+
+  handleDayMouseDown = () => {
+    if (this.props.onDayMouseDown) {
+      this.props.onDayMouseDown();
+    }
+  }
 
   handleMonthMouseLeave = () => this.setState({ selectingDate: null })
 
@@ -642,6 +661,7 @@ export default class Calendar extends React.Component {
             onMonthBlur={this.handleMonthBlur}
             onDayClick={this.handleDayClick}
             onDayMouseEnter={this.handleDayMouseEnter}
+            onDayMouseDown={this.handleDayMouseDown}
             onMouseLeave={this.handleMonthMouseLeave}
             onWeekSelect={this.props.onWeekSelect}
             formatWeekNumber={this.props.formatWeekNumber}

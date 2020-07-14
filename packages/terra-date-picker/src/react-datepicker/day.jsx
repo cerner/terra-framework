@@ -58,6 +58,11 @@ class Day extends React.Component {
      */
     onMouseEnter: PropTypes.func,
     /**
+     * A callback function to execute on mouse down on day.
+     * requires no parameter.
+     */
+    onDayMouseDown: PropTypes.func,
+    /**
      * Previous Date Value selected .
      */
     preSelection: PropTypes.object,
@@ -98,15 +103,15 @@ class Day extends React.Component {
   }
 
   handleMouseEnter = (event) => {
+    // day should not be get focus border on mouse enter when calendar is inline.
     if (!this.isDisabled() && this.props.onMouseEnter && !this.props.inline) {
       this.props.onMouseEnter(event)
     }
   }
 
-  handleMouseDown = (event) => {
-    if (this.props.inline) {
-      // to prevent focus style on previous selected date that shows up on holding mouse key.
-      event.preventDefault();
+  handleMouseDown = () => {
+    if (this.props.onDayMouseDown) {
+      this.props.onDayMouseDown();
     }
   }
 
