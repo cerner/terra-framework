@@ -6,7 +6,7 @@
 A react context to provide the current theme.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-theme-context/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/main/packages/terra-theme-context/docs)
 - [LICENSE](#license)
 
 ## Getting Started

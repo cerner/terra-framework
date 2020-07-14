@@ -11,7 +11,7 @@ export default () => (
     <ApplicationMenuName
       id="wrapping"
       title="Title TitleTitleTitleTitleTitle Title Title Title Title Title"
-      accessory={<Image alt="terra accessory" variant="rounded" src="https://github.com/cerner/terra-framework/raw/master/terra.png" className={cx('demo-image-container')} />}
+      accessory={<Image alt="terra accessory" variant="rounded" src="https://github.com/cerner/terra-framework/raw/main/terra.png" className={cx('demo-image-container')} />}
     />
   </div>
 );

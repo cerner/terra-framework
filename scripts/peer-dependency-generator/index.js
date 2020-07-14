@@ -14,7 +14,7 @@ packagePaths.forEach((packagePath) => {
   const docReadmeFile = path.resolve(packagePath, 'docs/README.md');
 
   if (!fs.existsSync(packageFile) || !fs.existsSync(readmeFile) || !fs.existsSync(docReadmeFile)) {
-    return; /* eslint-disable-line no-useless-return */
+    return;
   }
 
   // Read package.json and pull out peerDependencies

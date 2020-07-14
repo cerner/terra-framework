@@ -22,7 +22,6 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the date input.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   inputAttributes: PropTypes.object,
   /**
    * @private
@@ -100,7 +99,6 @@ const defaultProps = {
   value: undefined,
 };
 
-// eslint-disable-next-line react/prefer-stateless-function
 class DatePickerInput extends React.Component {
   constructor(props) {
     super(props);

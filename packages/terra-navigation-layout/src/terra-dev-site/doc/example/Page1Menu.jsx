@@ -52,10 +52,8 @@ const Page1Menu = ({ layoutConfig, routingStackDelegate }) => (
         )}
       <h2>Page 1 Menu</h2>
       <br />
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <Link to="/page1/item1">Item 1</Link>
       <br />
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <Link to="/page1/item2">Item 2</Link>
     </div>
   </div>

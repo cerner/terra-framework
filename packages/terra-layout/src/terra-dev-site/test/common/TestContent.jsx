@@ -23,7 +23,7 @@ const TestContent = ({ layoutConfig }) => (
           className={cx('test-content-toggle')}
           onClick={layoutConfig.toggleMenu}
         >
-Toggle Menu
+          Toggle Menu
         </button>
         )}
     </div>

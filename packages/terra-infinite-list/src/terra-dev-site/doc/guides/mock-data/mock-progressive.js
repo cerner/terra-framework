@@ -1,4 +1,3 @@
-
 const mockData = (pageKey) => {
   let isFinalPage = false;
   const nextPageKey = (pageKey >= 0 ? pageKey : 0) + 1;

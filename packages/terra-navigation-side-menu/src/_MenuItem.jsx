@@ -124,9 +124,10 @@ class MenuItem extends React.Component {
     return (
       <li
         className={cx('list-item')}
+        role="none"
       >
         <div
-          role="link"
+          role="menuitem"
           {...customProps}
           tabIndex="0"
           className={itemClassNames}
