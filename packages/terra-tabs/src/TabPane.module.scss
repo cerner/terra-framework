@@ -1,0 +1,18 @@
+@import './ModularTabs.module';
+@import './StructuralTabs.module';
+
+:local {
+  .tab-pane {
+    background-color: aliceblue;
+    outline: none;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .fill {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+}

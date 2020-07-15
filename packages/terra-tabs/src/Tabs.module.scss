@@ -1,4 +1,3 @@
-@import './ModularTabs.module';
 @import './StructuralTabs.module';
 // Themes
 @import './clinical-lowlight-theme/Tabs.module';
@@ -6,6 +5,20 @@
 
 :local {
   .tabs-container {
+    width: 100%;
+    position: relative;
+  }
+
+  .title {
+    background-color: #ccc;
+    border: 1px solid #a5a3a3;
+    color: #000;
+    overflow: hidden;
+    padding: 0.643rem 1.071rem;
+    width: 100%;
+  }
+
+  .collapsed-tabs-container > select {
     width: 100%;
   }
 
@@ -15,7 +28,7 @@
     flex: 1 1 auto;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    position: relative;
+    // position: relative;
     width: 100%;
 
     &:focus {

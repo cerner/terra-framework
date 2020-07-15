@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import Tabs from 'terra-tabs';
+/* eslint-disable import/no-unresolved, import/extensions */
+import Tabs, { Tab, TabBar } from 'terra-tabs/lib/index';
 import TabContent from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
+/* eslint-enable import/no-unresolved, import/extensions */
 import styles from './common/TabExample.module.scss';
 
 const cx = classNames.bind(styles);
 
 const TabsWithFilledContent = () => {
-  const tab1 = (
-    <Tabs.Pane
-      label="Large content"
-      key="LargeContent"
-    >
+  const [isLargeTab, setIsLargeTab] = useState(true);
+
+  function handleSelect(metaData) {
+    setIsLargeTab(metaData.isLarge);
+  }
+
+  function createLargeContent() {
+    return (
       <TabContent label="Large Content">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed elementum mauris. Nunc maximus erat eget mauris posuere, a efficitur ex consequat. Ut mollis justo vitae rutrum tempus. Cras eget nisl a metus convallis fringilla nec non lorem. Fusce viverra velit porta tellus interdum semper eu nec mauris. Suspendisse fringilla viverra dui, et scelerisque nulla aliquet vitae. Duis sodales id ex nec viverra. Cras vel arcu mattis, ullamcorper elit in, molestie neque. Pellentesque tellus nunc, bibendum at nisl ac, fermentum sodales urna. Maecenas ac interdum mi. Suspendisse at condimentum enim. Suspendisse porta ipsum sed lacus congue porttitor. Aenean varius dapibus faucibus. Sed ut est ante. Praesent pharetra luctus dolor, non porta tortor lobortis a.
@@ -29,29 +34,40 @@ const TabsWithFilledContent = () => {
           Phasellus quis purus elementum, tincidunt erat eget, placerat arcu. Aenean in odio in nisi fringilla malesuada. Nunc et consectetur dolor, sed vestibulum tortor. Proin feugiat auctor eros et gravida. Nullam bibendum sagittis augue, convallis faucibus mi sagittis at. Nulla sit amet dolor luctus magna convallis lobortis eget in ligula. Nullam aliquet lacus interdum accumsan efficitur. In sed suscipit justo. Integer malesuada non sem vitae bibendum. Nullam felis augue, lacinia ut neque in, vulputate scelerisque eros.
         </p>
       </TabContent>
-    </Tabs.Pane>
-  );
+    );
+  }
 
-  const tab2 = (
-    <Tabs.Pane
-      label="Short Content"
-      key="ShortContent"
-    >
-      <TabContent label="Short Content" />
-    </Tabs.Pane>
-  );
+  function createSmallContent() {
+    return <TabContent label="Short Content" />;
+  }
 
   return (
     <div className={cx('content-container')}>
-      <Tabs fill>
-        {tab1}
-        {tab2}
+      <Tabs
+        fill
+        tabBar={(
+          <TabBar>
+            <Tab
+              label="Large content"
+              key="LargeContent"
+              onSelect={handleSelect}
+              metaData={{ isLarge: true }}
+              isSelected={isLargeTab}
+            />
+            <Tab
+              label="Short Content"
+              key="ShortContent"
+              onSelect={handleSelect}
+              metaData={{ isLarge: false }}
+              isSelected={!isLargeTab}
+            />
+          </TabBar>
+        )}
+      >
+        {isLargeTab ? createLargeContent() : createSmallContent()}
       </Tabs>
     </div>
   );
 };
-const TabFill = () => (
-  <TabsWithFilledContent fill />
-);
 
-export default TabFill;
+export default TabsWithFilledContent;

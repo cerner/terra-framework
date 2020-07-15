@@ -1,89 +1,57 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import classNamesBind from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
+import classNames from 'classnames/bind';
+
 import styles from './Tabs.module.scss';
 
-const cx = classNamesBind.bind(styles);
+const cx = classNames.bind(styles);
+
 const propTypes = {
   /**
-   * Icon to be displayed on the tab.
+   * The id of the tab to be used in mapping.
    */
-  icon: PropTypes.element,
-
+  id: PropTypes.string.isRequired,
   /**
-   * Text to be displayed on the tab.
+   * The id of the tab element associated to this panel.
    */
-  label: PropTypes.string.isRequired,
-
+  associatedTabId: PropTypes.string.isRequired,
   /**
-   * A custom display for the tab. Component will fallback to label text when collapsed into the menu.
-   */
-  customDisplay: PropTypes.node,
-
-  /**
-   * Content to be displayed when the tab is selected.
+   * Currently active Tabs.Pane content to be displayed.
    */
   children: PropTypes.node,
-
   /**
-   * Indicates if the pane should be disabled.
+   * Indicates if the pane content should fill to the height of the parent container.
    */
-  isDisabled: PropTypes.bool,
-
-  /**
-   * Indicates if the pane label should only display the icon. When tab collapses into menu the label text will be used.
-   */
-  isIconOnly: PropTypes.bool,
-  /**
-   * If enabled, this prop will apply the `aria-selected` style to the pane.
-   */
-  isActive: PropTypes.bool,
+  fill: PropTypes.bool,
 };
 
-const defaultProps = {
-  isDisabled: false,
-  isIconOnly: false,
-  isActive: false,
-};
-
-const TabPane = ({
-  icon,
-  label,
-  customDisplay,
+const Tab = ({
+  id,
+  associatedTabId,
   children,
-  isDisabled,
-  isIconOnly,
-  isActive,
+  fill,
   ...customProps
 }) => {
-  const attributes = { ...customProps };
-  const theme = React.useContext(ThemeContext);
-  const paneClassNames = classNames(cx(
-    'tab',
-    { 'is-disabled': isDisabled },
-    { 'is-icon-only': isIconOnly },
-    { 'is-text-only': !icon },
-    theme.className,
-  ),
-  attributes.className);
-
-  if (isIconOnly) {
-    attributes['aria-label'] = label;
-  }
-  attributes['aria-selected'] = isActive;
+  const paneClassNames = cx([
+    'pane',
+    { fill },
+  ]);
 
   return (
-    <div {...attributes} role="tab" className={paneClassNames}>
-      {customDisplay}
-      {customDisplay ? null : icon}
-      {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
+    <div
+      {...customProps}
+      role="tabpanel"
+      className={paneClassNames}
+      tabIndex="0"
+      id={id}
+      aria-labelledby={associatedTabId}
+      aria-expanded="true"
+    >
+      {children}
     </div>
   );
 };
 
-TabPane.propTypes = propTypes;
-TabPane.defaultProps = defaultProps;
+Tab.propTypes = propTypes;
 
-export default TabPane;
+export default Tab;

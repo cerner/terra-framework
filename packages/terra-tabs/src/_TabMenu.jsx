@@ -2,20 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import { injectIntl, intlShape } from 'react-intl';
 import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import * as KeyCode from 'keycode-js';
-import { FormattedMessage } from 'react-intl';
+import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+import { handleArrows } from './_TabUtils';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   * Key of the current active tab.
-   */
-  activeKey: PropTypes.string,
-
   /**
    * Tabs that should be displayed collapsed as selectable menu items.
    */
@@ -25,20 +21,27 @@ const propTypes = {
    * Ref callback for menu toggle.
    */
   refCallback: PropTypes.func,
+  /**
+   * @private
+   * Object containing intl APIs.
+   */
+  intl: intlShape.isRequired,
+  ids: PropTypes.array,
+  isActive: PropTypes.bool,
 };
 
 class TabMenu extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
     this.getTargetRef = this.getTargetRef.bind(this);
     this.setTargetRef = this.setTargetRef.bind(this);
     this.wrapOnClick = this.wrapOnClick.bind(this);
-    this.state = {
-      isOpen: false,
-    };
+    // this.state = {
+    //   isOpen: false,
+    // };
   }
 
   getTargetRef() {
@@ -54,89 +57,89 @@ class TabMenu extends React.Component {
   }
 
   handleOnRequestClose() {
-    this.setState({ isOpen: false });
+    // this.setState({ isOpen: false });
   }
 
-  handleOnClick() {
-    this.setState({ isOpen: true });
+  handleOnClick(event) {
+    // this.setState({ isOpen: true });
+    this.props.onSelect(event);
   }
 
   handleOnKeyDown(event) {
-    if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
-      this.setState({ isOpen: true });
+    if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
+      event.preventDefault();
+      // this.setState({ isOpen: true });
+      this.props.onSelect(event);
+    } else {
+      handleArrows(event, -1, this.props.ids);
     }
   }
 
-  wrapOnClick(child) {
+  wrapOnClick(child, metaData) {
     return (event) => {
+      event.preventDefault();
       event.stopPropagation();
 
-      if (child.props.onClick) {
-        child.props.onClick(event);
+      if (child.props.onSelect) {
+        child.props.onSelect(metaData);
       }
 
-      this.setState({ isOpen: false });
+      // this.setState({ isOpen: false });
     };
   }
 
   render() {
-    const menuItems = [];
-    let menuActive = false;
-    let toggleText;
+    const {
+      intl,
+      ids,
+      isActive,
+      ...customProps
+    } = this.props;
+    // const menuItems = [];
+    let menuToggleText = intl.formatMessage({ id: 'Terra.tabs.more' });
+    // let menuActive = false;
 
-    React.Children.forEach(this.props.children, (child) => {
-      const {
-        label, customDisplay, icon, isIconOnly, ...otherProps
-      } = child.props;
-      let isSelected = false;
+    // React.Children.forEach(children, (child) => {
+    //   const {
+    //     label, customDisplay, icon, isIconOnly, isSelected, metaData, isHidden, ...otherProps
+    //   } = child.props;
 
-      if (this.props.activeKey === child.key) {
-        toggleText = label;
-        isSelected = true;
-        menuActive = true;
-      }
-      menuItems.push((
-        <Menu.Item
-          {...otherProps}
-          text={label}
-          onClick={this.wrapOnClick(child)}
-          isSelected={isSelected}
-          isSelectable
-          key={child.key}
-        />
-      ));
-    });
+    //   if (isSelected && isHidden) {
+    //     // menuToggleText = label;
+    //     menuActive = true;yt^
+    //   }
+    //   menuItems.push((
+    //     <Menu.Item
+    //       {...otherProps}
+    //       text={label}
+    //       onClick={this.wrapOnClick(child, metaData)}
+    //       isSelected={isSelected}
+    //       isSelectable
+    //       key={child.key}
+    //     />
+    //   ));
+    // });
     const theme = this.context;
 
     return (
+      /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
         role="button"
-        tabIndex="0"
+        tabIndex="-1"
         ref={this.setTargetRef}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
-        className={cx('tab-menu', { 'is-active': menuActive }, theme.className)}
+        className={cx('tab-menu', { 'is-active': isActive }, theme.className)}
         data-terra-tabs-menu
       >
-        <FormattedMessage id="Terra.tabs.more">
-          {menuToggleText => (
-            <span>{toggleText || menuToggleText}</span>
-          )}
-        </FormattedMessage>
+        <span>{menuToggleText}</span>
         <IconCaretDown />
-        <Menu
-          onRequestClose={this.handleOnRequestClose}
-          targetRef={this.getTargetRef}
-          isOpen={this.state.isOpen}
-        >
-          {menuItems}
-        </Menu>
       </div>
+      /* eslint-enable jsx-ally/no-static-element-interactions */
     );
   }
 }
 
 TabMenu.propTypes = propTypes;
-TabMenu.contextType = ThemeContext;
 
-export default TabMenu;
+export default injectIntl(TabMenu);
