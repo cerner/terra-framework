@@ -1,0 +1,11 @@
+.proto-tabs {
+  [role="tablist"] {
+    display: flex;
+  }
+  [role="tab"] {
+    background-color: aliceblue;
+    border: 1px solid lightcoral;
+    flex: 0 0 auto;
+    margin: 10px;
+  }
+}

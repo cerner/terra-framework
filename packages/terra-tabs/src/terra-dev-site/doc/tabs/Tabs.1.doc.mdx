@@ -1,13 +1,12 @@
 import { Badge } from 'terra-tabs/package.json?dev-site-package';
 
+import TabPropsTable from 'terra-tabs/src/Tab?dev-site-props-table';
 import TabsPropsTable from 'terra-tabs/src/Tabs?dev-site-props-table';
-import PanePropsTable from 'terra-tabs/src/TabPane?dev-site-props-table';
+import TabBarPropsTable from 'terra-tabs/src/TabBar?dev-site-props-table';
 
-import TabsTemplate from '../example/TabsTemplate?dev-site-example';
-import TabsTemplateExpanded from '../example/TabsTemplateExpanded?dev-site-example';
-import TabsWithFilledContent from '../example/TabsWithFilledContent?dev-site-example';
-import IconOnlyTabs from '../example/IconOnlyTabs?dev-site-example';
-import ResponsiveTabsVariant from '../example/ResponsiveTabsVariant?dev-site-example';
+import TabsTemplate from '../example/TabsTemplate';
+// import TabsWithFilledContent from '../example/TabsWithFilledContent';
+import IconOnlyTabs from '../example/IconOnlyTabs';
 
 <Badge />
 
@@ -67,13 +66,14 @@ import Tabs from 'terra-tabs';
 
 ## Examples
 <TabsTemplate title='Compact' />
-<TabsTemplateExpanded title='Expanded' />
 <IconOnlyTabs title='Icon Only' />
-<TabsWithFilledContent title='Fill Parent Container' />
-<ResponsiveTabsVariant title='Toggle responsiveTo Variants' />
+{/* <TabsWithFilledContent title='Fill Parent Container' /> */}
 
-## Tabs Props Table 
-<TabsPropsTable />
+## Tab Props Table 
+<TabPropsTable />
 
 ## Tabs Pane Props Table 
-<PanePropsTable />
+<TabsPropsTable />
+
+## TabBar Props Table 
+<TabBarPropsTable />

@@ -3,44 +3,23 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
-import * as KeyCode from 'keycode-js';
-import Menu from './_TabMenu';
+import MenuButton from './_TabMenu';
+import TabDropDown from './TabDropDown';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Key of the current active tab.
-   */
-  activeKey: PropTypes.string.isRequired,
-
-  /**
-   * Index of the current active tab.
-   */
-  activeIndex: PropTypes.number.isRequired,
-
-  /**
    * Tabs to be displayed in the collapsible tab bar.
    */
   children: PropTypes.node.isRequired,
-
-  /**
-   * Tabs style. One of: "modular-centered", "modular-left-aligned", or "structural".
-   */
-  variant: PropTypes.oneOf(['modular-centered', 'modular-left-aligned', 'structural']).isRequired,
-
-  /**
-   * Callback function when selection has changed.
-   * Parameters: 1. Event 2. Selected pane element
-   */
-  onChange: PropTypes.func.isRequired,
-
   /**
    * Callback function when label truncation state has changed.
    * Parameters: 1. Bool indicating if any of the tab labels have been truncated.
    */
   onTruncationChange: PropTypes.func,
+  ids: PropTypes.array,
 };
 
 class CollapsibleTabs extends React.Component {
@@ -51,11 +30,15 @@ class CollapsibleTabs extends React.Component {
     this.resetCache = this.resetCache.bind(this);
     this.handleResize = this.handleResize.bind(this);
     this.handleSelectionAnimation = this.handleSelectionAnimation.bind(this);
-    this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
-    this.handleMenuOnKeyDown = this.handleMenuOnKeyDown.bind(this);
-    this.handleFocusLeft = this.handleFocusLeft.bind(this);
-    this.handleFocusRight = this.handleFocusRight.bind(this);
+    this.handleHiddenBlur = this.handleHiddenBlur.bind(this);
+    this.handleHiddenFocus = this.handleHiddenFocus.bind(this);
+    this.handleOnMenuButtonSelect = this.handleOnMenuButtonSelect.bind(this);
+    this.handleOnSelect = this.handleOnSelect.bind(this);
+    this.handleOnSelectHidden = this.handleOnSelectHidden.bind(this);
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.dropdownRef = React.createRef();
     this.resetCache();
+    this.state = { isOpen : false };
   }
 
   componentDidMount() {
@@ -156,9 +139,7 @@ class CollapsibleTabs extends React.Component {
 
   handleSelectionAnimation() {
     if (this.selectionBar && window.getComputedStyle(this.selectionBar, null).getPropertyValue('transition-property').includes('transform')) {
-      const activeIndex = this.props.activeIndex > this.hiddenStartIndex ? this.hiddenStartIndex : this.props.activeIndex;
-      const selectedTab = this.container.children[activeIndex];
-
+      const selectedTab = this.container.querySelector('[aria-selected="true]');
       if (selectedTab) {
         const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
         const tabRect = selectedTab.getBoundingClientRect();
@@ -174,115 +155,115 @@ class CollapsibleTabs extends React.Component {
     }
   }
 
-  handleOnKeyDown(event) {
-    // If there are less than 2 children we don't need to worry about keyboard navigation
-    if (React.Children.count(this.props.children) < 2) {
-      return;
-    }
+  handleHiddenFocus(e) {
+    // console.log('focus');
+    // // this.setState({ isOpen: true });
 
-    // We don't want menu keydown events to propagate and conflict when the tabs keydown events
-    // Instead of stopping menu key event propagation, we whitelist event.targets so we do tab focus mgmt only on tab based event targets
-    const tabList = event.target.getAttribute('role') === 'tablist';
-    const tabMoreBtn = event.target.getAttribute('data-terra-tabs-menu') === 'true';
+    // if (e.currentTarget.contains(e.relatedTarget)) {
+    //   // focus is leaving the container so do something interesting here
+    //   this.setState({ isOpen: true });
+    // }
+    // if (!this.dropdownRef.current.contains(e.currentTarget.contains(e.relatedTarget)) {
+    //   // focus is leaving the container so do something interesting here
+    //   this.setState({ isOpen: false });
+    // }
+    this.setState({ isOpen: true });
+  }
 
-    if (tabList || tabMoreBtn) {
-      const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
-      const visibleChildren = this.container.children;
+  handleHiddenBlur(e) {
+    // console.log('blur');
+    // // this.setState({ isOpen: false });
 
-      if (event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
-        if (isRTL) {
-          this.handleFocusRight(visibleChildren, event);
-        } else {
-          this.handleFocusLeft(visibleChildren, event);
-        }
-      } else if (event.nativeEvent.keyCode === KeyCode.KEY_RIGHT) {
-        if (isRTL) {
-          this.handleFocusLeft(visibleChildren, event);
-        } else {
-          this.handleFocusRight(visibleChildren, event);
-        }
-      }
+    // if (!this.dropdownRef.current.contains(e.currentTarget.contains(e.relatedTarget)) {
+    //   // focus is leaving the container so do something interesting here
+      this.setState({ isOpen: false });
+    // }
+  }
+
+  handleOnMenuButtonSelect() {
+    this.setState({ isOpen: true });
+    const element = document.getElementById(this.props.ids[this.hiddenStartIndex]);
+    if (element) {
+      element.focus();
     }
   }
 
-  handleFocusRight(visibleChildren, event) {
-    if (this.props.activeIndex >= this.hiddenStartIndex) {
-      return;
-    }
-
-    for (let i = this.props.activeIndex + 1; i < visibleChildren.length; i += 1) {
-      if (!this.props.children[i].props.isDisabled) {
-        if (visibleChildren[i] === this.menuRef) {
-          this.menuRef.focus();
-          break;
-        } else {
-          this.props.onChange(event, this.props.children[i]);
-          break;
-        }
-      }
-    }
+  handleOnSelect(onSelect) {
+    return (metaData) => {
+      this.setState({ isOpen: false });
+      onSelect(metaData);
+    };
   }
 
-  handleFocusLeft(visibleChildren, event) {
-    let startIndex = this.props.activeIndex - 1;
-    if (startIndex >= this.hiddenStartIndex || document.activeElement === this.menuRef) {
-      startIndex = this.hiddenStartIndex - 1;
-    }
-
-    for (let i = startIndex; i >= 0; i -= 1) {
-      if (!this.props.children[i].props.isDisabled) {
-        if (document.activeElement === this.menuRef) {
-          this.container.focus();
-        }
-        this.props.onChange(event, this.props.children[i]);
-        break;
-      }
-    }
+  handleOnSelectHidden(onSelect) {
+    return (metaData) => {
+      this.setState({ isOpen: false });
+      onSelect(metaData);
+      this.menuRef.focus(); 
+    };
   }
 
-  /* eslint class-methods-use-this: ["error", { "exceptMethods": ["handleMenuOnKeyDown"] }] */
-  handleMenuOnKeyDown(event) {
-    // Prevent menu key events from propagating up to CollabsibleTabs handleOnKeyDown listener
-    // This prevents left / right arrow key usage in menu from shifting to different tabs
-    event.stopPropagation();
+  handleOutsideClick() {
+    this.setState({ isOpen: false });
   }
 
   render() {
     const visibleChildren = [];
     const hiddenChildren = [];
-
+    const hiddenChildIds = [];
+    let isMenuActive = false;;
     React.Children.forEach(this.props.children, (child, index) => {
       if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
-        visibleChildren.push(child);
+        visibleChildren.push(React.cloneElement(child, { onSelect: this.handleOnSelect(child.props.onSelect) }));
       } else {
-        hiddenChildren.push(child);
+        const hiddenChild = React.cloneElement(child, {
+          isHidden: true,
+          onFocus: this.handleHiddenFocus,
+          onBlur: this.handleHiddenBlur,
+          onSelect: this.handleOnSelectHidden(child.props.onSelect),
+        });
+        hiddenChildren.push(hiddenChild);
+        hiddenChildIds.push(child.id);
+
+        if (child.props.isSelected) {
+          isMenuActive = true;
+        }
       }
     });
     const theme = this.context;
 
-    const menu = this.menuHidden ? null : (
-      <Menu onKeyDown={this.handleMenuOnKeyDown} refCallback={this.setMenuRef} activeKey={this.props.activeKey}>
-        {hiddenChildren}
-      </Menu>
+    const menuButton = this.menuHidden ? null : (
+      <MenuButton
+        isActive={isMenuActive}
+        onSelect={this.handleOnMenuButtonSelect}
+        refCallback={this.setMenuRef}
+        ids={this.props.ids}
+      />
     );
 
-    const selectionBar = this.props.variant === 'modular-centered' || this.props.variant === 'modular-left-aligned' ? (
-      <div className={cx('selection-bar')} ref={(node) => { if (node) { this.selectionBar = node; } }} />
-    ) : null;
+    // const headerTitle = <heading className={cx('title')}>{this.props.selectedTab.label}</heading>;
 
     return (
       <div>
         <div
           className={cx('collapsible-tabs-container', { 'is-calculating': this.isCalculating }, theme.className)}
           ref={this.setContainer}
-          tabIndex="0"
-          onKeyDown={this.handleOnKeyDown}
           role="tablist"
+          aria-owns={hiddenChildIds.join(' ')}
         >
           {visibleChildren}
-          {menu}
+          <TabDropDown
+            onFocus={this.handleHiddenFocus}
+            onBlur={this.handleHiddenBlur}
+            isOpen={this.state.isOpen}
+            onRequestClose={this.handleOutsideClick}
+            refCallback={node => this.dropdownRef.current = node}
+          >
+            {hiddenChildren}
+          </TabDropDown>
+          {menuButton}
         </div>
-        {selectionBar}
+        {/* {headerTitle} */}
       </div>
     );
   }
