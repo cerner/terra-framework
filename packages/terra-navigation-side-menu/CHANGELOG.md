@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.32.0 - (July 14, 2020)
+------------------
 ### Changed
 * Fixed `aria-haspopup` and `link` role  incompatibility issue.
 * updated `master` references to `main`.

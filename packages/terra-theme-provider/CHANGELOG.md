@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.3.0 - (July 14, 2020)
+------------------
 ### Changed
 * Minor file changes to comply with eslint config
 

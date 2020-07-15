@@ -66,7 +66,7 @@
   },
   "scripts": {
     "bootstrap:hoist": "lerna bootstrap --hoist",
-    "clean": "lerna clean --yes && rm -rf node_modules",
+    "clean": "lerna clean --yes && rm -rf node_modules || true",
     "clean:install": "npm run clean && npm install",
     "clean:obsolete-snapshots": "npm test -- -u",
     "compile": "npm run compile:clean && npm run compile:build",

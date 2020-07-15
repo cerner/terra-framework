@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.30.0 - (July 14, 2020)
+------------------
+### Fixed
+* Corrected the 'resize observer loop limit reached' error with animation frames.
+
 ### Changed
 * updated `master` references to `main`.
 * Minor file changes to comply with eslint rules

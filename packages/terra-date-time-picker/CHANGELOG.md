@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.40.0 - (July 14, 2020)
+------------------
 ### Changed
 * updated `master` references to `main`.
 * Minor file changes to comply with eslint rules
