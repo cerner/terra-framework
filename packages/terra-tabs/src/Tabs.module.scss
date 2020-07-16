@@ -7,6 +7,10 @@
   .tabs-container {
     position: relative;
     width: 100%;
+
+    > :first-child {
+      z-index: 10;
+    }
   }
 
   .title {
@@ -15,10 +19,6 @@
     color: #000;
     overflow: hidden;
     padding: 0.643rem 1.071rem;
-    width: 100%;
-  }
-
-  .collapsed-tabs-container > select {
     width: 100%;
   }
 
