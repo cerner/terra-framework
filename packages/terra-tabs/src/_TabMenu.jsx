@@ -96,7 +96,8 @@ class TabMenu extends React.Component {
       ...customProps
     } = this.props;
     // const menuItems = [];
-    let menuToggleText = intl.formatMessage({ id: 'Terra.tabs.more' });
+    // let menuToggleText = intl.formatMessage({ id: 'Terra.tabs.more' });
+    const menuToggleText = 'More Tabs';
     // let menuActive = false;
 
     // React.Children.forEach(children, (child) => {
@@ -124,8 +125,9 @@ class TabMenu extends React.Component {
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
+        aria-hidden
         role="button"
-        tabIndex="-1"
+        // tabIndex="-1"
         ref={this.setTargetRef}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}

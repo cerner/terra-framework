@@ -90,10 +90,14 @@ const Tab = ({
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       event.preventDefault();
       event.stopPropagation();
-      onSelect(metaData);
+      onSelect(event, metaData);
     } else {
       handleArrows(event, index, tabIds);
     }
+  }
+
+  function onClick(event) {
+    onSelect(event, metaData);
   }
 
   if (isIconOnly) {
@@ -102,7 +106,7 @@ const Tab = ({
 
   if (onSelect) {
     attributes.tabIndex = isSelected ? 0 : -1;
-    attributes.onClick = onSelect.bind(null, metaData);
+    attributes.onClick = onClick;
     attributes.onKeyDown = onKeyDown;
   }
   attributes['aria-selected'] = isSelected;

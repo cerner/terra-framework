@@ -1,9 +1,9 @@
-@import './ModularTabs.module';
 @import './StructuralTabs.module';
 
 :local {
-  .tab-pane {
+  .pane {
     background-color: aliceblue;
+    border: 1px solid #a5a3a3;
     outline: none;
     overflow: hidden;
     width: 100%;

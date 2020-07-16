@@ -108,6 +108,7 @@ const Tabs = ({
       className={tabsClassNames}
       fill={fill}
       header={tabBar}
+      role="none"
     >
       <TabPane
         key={selectedTab.associatedPaneId}

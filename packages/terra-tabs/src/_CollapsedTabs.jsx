@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-// import NativeSelect from 'terra-form-select/lib/native-select/NativeSelect';
+import NativeSelect from 'terra-form-select/lib/native-select/NativeSelect';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -29,11 +29,7 @@ const CollapsedTabs = ({ tabData, onTruncationChange }) => {
     if (tab.isSelected) {
       selectedTab = tab;
     }
-    // return {
-    //   display: tab.label,
-    //   value: tab.key,
-    // };
-    return <option key={`${tab.key}`} value={tab.key}>{tab.label}</option>;
+    return { value: tab.key, display: tab.label };
   });
 
   const onChange = event => {
@@ -44,19 +40,16 @@ const CollapsedTabs = ({ tabData, onTruncationChange }) => {
 
   return (
     <div className={cx('collapsed-tabs-container', theme.className)}>
-      {/* <NativeSelect
-        value={selectedTab.key}
+      <NativeSelect
+        attrs={{ 'aria-controls': selectedTab.associatedPaneId }}
+        ariaDescribedBy="Select a Tab from the Drop Down"
+        ariaLabel="Tab Drop Down"
+        id={selectedTab.id}
+        isFilterStyle
+        onChange={onChange}
         options={selectOptions}
-        onChange={onChange}
-      /> */}
-      <select
         value={selectedTab.key}
-        onChange={onChange}
-        aria-describedby="Select a Tab from the Drop Down"
-        aria-label="Tab Drop Down"
-      >
-        {selectOptions}
-      </select>
+      />
     </div>
   );
 };

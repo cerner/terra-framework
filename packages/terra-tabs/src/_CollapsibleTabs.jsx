@@ -189,17 +189,20 @@ class CollapsibleTabs extends React.Component {
   }
 
   handleOnSelect(onSelect) {
-    return (metaData) => {
+    return (event, metaData) => {
       this.setState({ isOpen: false });
       onSelect(metaData);
     };
   }
 
   handleOnSelectHidden(onSelect) {
-    return (metaData) => {
-      this.setState({ isOpen: false });
-      onSelect(metaData);
-      this.menuRef.focus(); 
+    return (event, metaData) => {
+      if (this.state.isOpen) {
+        this.setState({ isOpen: false });
+        onSelect(metaData);
+      } else {
+        this.setState({ isOpen: true });
+      }
     };
   }
 

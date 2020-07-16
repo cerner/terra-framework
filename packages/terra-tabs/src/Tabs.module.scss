@@ -5,20 +5,20 @@
 
 :local {
   .tabs-container {
-    width: 100%;
     position: relative;
+    width: 100%;
+
+    > :first-child {
+      z-index: 10;
+    }
   }
 
   .title {
     background-color: #ccc;
-    border: 1px solid #a5a3a3;
+    border-bottom: 1px solid #a5a3a3;
     color: #000;
     overflow: hidden;
     padding: 0.643rem 1.071rem;
-    width: 100%;
-  }
-
-  .collapsed-tabs-container > select {
     width: 100%;
   }
 
@@ -90,9 +90,10 @@
   .tab-menu {
     align-items: baseline;
     display: flex;
-    flex: 1 1 auto;
+    flex: 1 0 auto;
     justify-content: center;
     min-width: 7.143rem;
+    max-width: 100%;
 
     span {
       flex: 0 1 auto;
