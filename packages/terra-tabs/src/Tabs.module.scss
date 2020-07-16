@@ -5,13 +5,13 @@
 
 :local {
   .tabs-container {
-    width: 100%;
     position: relative;
+    width: 100%;
   }
 
   .title {
     background-color: #ccc;
-    border: 1px solid #a5a3a3;
+    border-bottom: 1px solid #a5a3a3;
     color: #000;
     overflow: hidden;
     padding: 0.643rem 1.071rem;

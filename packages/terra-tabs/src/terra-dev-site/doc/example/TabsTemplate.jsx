@@ -16,11 +16,12 @@ const propTypes = {
 };
 
 const textMapping = {
-  label: 'Tab with label',
-  icon: 'Tab with icon',
-  custom: 'Custom display',
-  long: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  last: 'Last Tab',
+  label: 'Apples',
+  icon: 'Oranges',
+  custom: 'Strawberries',
+  long: 'Too many fruits to name combined into a bowl',
+  super: 'Pineapples',
+  last: 'Lemons',
 };
 
 const TabsTemplate = (props) => {
@@ -38,7 +39,7 @@ const TabsTemplate = (props) => {
           {
             id: 'tab-label',
             associatedPaneId: 'tab-label-pane',
-            label: 'Tab with label',
+            label: 'Apples',
             key: 'LabelTab',
             onSelect: handleSelect,
             metaData: { key: 'label' },
@@ -47,7 +48,7 @@ const TabsTemplate = (props) => {
           {
             id: 'tab-icon',
             associatedPaneId: 'tab-icon-pane',
-            label: 'Tab with icon',
+            label: 'Oranges',
             icon: <IconBriefcase />,
             key: 'IconTab',
             onSelect: handleSelect,
@@ -59,10 +60,10 @@ const TabsTemplate = (props) => {
             associatedPaneId: 'tab-custom-pane',
             customDisplay: (
               <div className={cx('custom-display')}>
-                Custom display
+                Strawberries
               </div>
             ),
-            label: 'Custom display',
+            label: 'Strawberries',
             key: 'CustomTab',
             onSelect: handleSelect,
             metaData: { key: 'custom' },
@@ -71,7 +72,7 @@ const TabsTemplate = (props) => {
           {
             id: 'tab-lorem',
             associatedPaneId: 'tab-lorem-pane',
-            label: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            label: 'Too many fruits to name combined into a bowl',
             key: 'longLabel',
             onSelect: handleSelect,
             metaData: { key: 'long' },
@@ -80,7 +81,7 @@ const TabsTemplate = (props) => {
           {
             id: 'tab-super',
             associatedPaneId: 'tab-super-pane',
-            label: 'Super Tab',
+            label: 'Pineapples',
             icon: <IconSearch />,
             key: 'SuperTab"',
             onSelect: handleSelect,
@@ -90,7 +91,7 @@ const TabsTemplate = (props) => {
           {
             id: 'tab-last',
             associatedPaneId: 'tab-last-pane',
-            label: 'Last Tab',
+            label: 'Lemons',
             key: 'lastTab',
             onSelect: handleSelect,
             metaData: { key: 'last' },

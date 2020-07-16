@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ContentContainer from 'terra-content-container';
-// import Tab from './Tab';
 import TabBar from './TabBar';
 import TabPane from './TabPane';
 import styles from './Tabs.module.scss';
@@ -83,7 +82,6 @@ const Tabs = ({
   tabData,
   ...customProps
 }) => {
-  const [isLabelTruncated, setIsLabelTruncated] = useState(false);
   const selectedTab = tabData.find(tab => tab.isSelected);
 
   const tabsClassNames = cx([

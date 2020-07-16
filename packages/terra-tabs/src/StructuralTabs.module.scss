@@ -81,15 +81,6 @@
       }
     }
 
-    //Extended Tabs
-    &.tab-fill .collapsible-tabs-container:not(.is-calculating) {
-      .tab,
-      .tab-menu {
-        border-radius: var(--terra-tabs-structural-extended-tabs-border-radius);
-        flex: 1 1 auto;
-      }
-    }
-
     .tab,
     .tab-menu {
       background-color: var(--terra-tabs-structural-background-color, #fff);
