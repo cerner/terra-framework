@@ -5,6 +5,7 @@
 :local {
   .calendar-filter {
     border: var(--terra-date-picker-calendar-filter-border, 1px solid #aeaeae);
+    user-select: none;
     width: var(--terra-date-picker-calendar-filter-width, 16.78571rem);
     
     // To keep month navigation button height consistent across viewports.

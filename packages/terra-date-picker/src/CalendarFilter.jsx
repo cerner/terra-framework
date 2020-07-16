@@ -84,7 +84,6 @@ const CalendarFilter = ({
       {...customProps}
       name="terra-calendar-filter"
       isInline
-      hidePortal
       selectedDate={selectedDate}
       value={value}
       onChange={handleOnChange}
