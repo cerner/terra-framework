@@ -62,15 +62,13 @@ class Tabs extends React.Component {
     this.renderPopup = this.renderPopup.bind(this);
     this.buildVisibleChildren = this.buildVisibleChildren.bind(this);
     this.updateSize = LodashDebounce(this.updateSize.bind(this), 100);
-    this.initializeResize = this.initializeResize.bind(this);
-    this.removeResize = this.removeResize.bind(this);
+    this.resetCalculations = this.resetCalculations.bind(this);
 
     this.containerRef = React.createRef();
     this.rollupTabRef = React.createRef();
     this.rollupInnerRef = React.createRef();
     this.childRefs = [];
     this.previousNotifications = null;
-    this.resizeListenerAdded = false;
 
     this.resetCalculations();
 
@@ -81,9 +79,17 @@ class Tabs extends React.Component {
 
   componentDidMount() {
     if (this.props.navigationItems && this.props.navigationItems.length) {
-      this.initializeResize();
-    } else {
-      this.removeResize();
+      this.resizeObserver = new ResizeObserver(entries => {
+        this.contentWidth = entries[0].contentRect.width;
+        if (!this.isCalculating) {
+          this.animationFrameID = window.requestAnimationFrame(() => {
+            // Resetting the cache so that all elements will be rendered face-up for width calculations
+            this.updateSize();
+          });
+        }
+      });
+      this.resizeObserver.observe(this.containerRef.current);
+      this.handleResize(this.contentWidth);
     }
   }
 
@@ -99,17 +105,11 @@ class Tabs extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { activeTabKey, navigationItems } = this.props;
+    const { activeTabKey } = this.props;
     const { popupIsOpen } = this.state;
-
-    if (navigationItems && navigationItems.length) {
-      this.initializeResize();
-      if (this.isCalculating) {
-        this.isCalculating = false;
-        this.handleResize(this.contentWidth);
-      }
-    } else {
-      this.removeResize();
+    if (this.isCalculating) {
+      this.isCalculating = false;
+      this.handleResize(this.contentWidth);
     }
 
     if (activeTabKey !== prevProps.activeTabKey && popupIsOpen) {
@@ -120,10 +120,17 @@ class Tabs extends React.Component {
 
   componentWillUnmount() {
     this.updateSize.cancel();
-    this.removeResize();
+    window.cancelAnimationFrame(this.animationFrameID);
+    if (this.containerRef.current) {
+      this.resizeObserver.disconnect(this.containerRef.current);
+    }
+    this.containerRef.current = null;
   }
 
   getRollupTabWidth() {
+    if (!this.rollupTabRef.current) {
+      return 0;
+    }
     return this.rollupTabRef.current.getBoundingClientRect().width;
   }
 
@@ -139,27 +146,10 @@ class Tabs extends React.Component {
   }
 
   resetCalculations() {
+    this.animationFrameID = null;
     this.hiddenStartIndex = -1;
     this.menuHidden = false;
     this.isCalculating = true;
-  }
-
-  initializeResize() {
-    if (!this.resizeListenerAdded) {
-      this.resizeObserver = new ResizeObserver((entries) => {
-        this.contentWidth = entries[0].contentRect.width;
-        this.updateSize();
-      });
-      this.resizeObserver.observe(this.containerRef.current);
-      this.resizeListenerAdded = true;
-    }
-  }
-
-  removeResize() {
-    if (this.resizeListenerAdded) {
-      this.resizeObserver.disconnect(this.containerRef.current);
-      this.resizeListenerAdded = false;
-    }
   }
 
   handleResize(width) {
