@@ -7,7 +7,6 @@ import Input from 'terra-form-input';
 import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 import DateUtil from './DateUtil';
 import { getLocalizedDateForScreenReader } from './react-datepicker/date_utils';
@@ -211,9 +210,8 @@ class DatePickerInput extends React.Component {
           placeholder={placeholder}
           onFocus={onFocus}
           onBlur={onBlur}
-          aria-hidden
+          aria-label={value ? `${label} ${getLocalizedDateForScreenReader(moment(value), this.props)}` : label}
         />
-        <VisuallyHiddenText aria-live="assertive" text={value ? `${label} ${getLocalizedDateForScreenReader(moment(value), this.props)}` : label} />
         <Button
           className={buttonClasses}
           text={buttonText}
