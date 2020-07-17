@@ -5,6 +5,7 @@ const { execSync } = require('child_process');
 
 const filePath = './publish-output.txt';
 
+// If on travis setup git to be able to push the tags
 const setupGit = () => {
   const travis = process.env.TRAVIS;
 
@@ -18,6 +19,7 @@ const setupGit = () => {
   }
 };
 
+// Manipulate lerna publish output to find what packages were released and need to be tagged.
 const getTags = (output) => {
   const successString = 'Successfully published:\n';
   const lastIndexOf = output.lastIndexOf(successString);
@@ -29,6 +31,7 @@ const getTags = (output) => {
   return withoutDashes.split('\n');
 };
 
+// If the publish output exists create a tag for each released component and pus it to main
 if (fs.existsSync(filePath)) {
   const output = fs.readFileSync(filePath, 'utf8');
   console.log(output);
