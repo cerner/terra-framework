@@ -8,7 +8,7 @@ Below is a guide for releasing packages:
 2. Update change logs to have the current date for the release of the affected components.
 3. Create a Release PR, Get approvals
 4. Merge PR to `main`
-5. Watch main to ensure releases get pushed and tagged appropriately
+5. Watch main to ensure releases get pushed to npm and tagged in github appropriately
 
 If you are publishing a new package, e.g. a v1.0.0 release, the package will be listed with only you as the collaborator.
 You'll need to move the package into the terra-ui team under the Cerner org on npm.
