@@ -210,7 +210,7 @@ class DatePickerInput extends React.Component {
           placeholder={placeholder}
           onFocus={onFocus}
           onBlur={onBlur}
-          aria-label={value ? `${label} ${getLocalizedDateForScreenReader(moment(value), this.props)}` : label}
+          ariaLabel={value ? `${label} ${getLocalizedDateForScreenReader(moment(new Date(value)), this.props)}` : label}
         />
         <Button
           className={buttonClasses}
