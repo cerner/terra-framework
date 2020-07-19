@@ -84,10 +84,10 @@
     .tab,
     .tab-menu {
       background-color: var(--terra-tabs-structural-background-color, #fff);
-      // background-image: var(--terra-tabs-structural-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
+      background-image: var(--terra-tabs-structural-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
       background-position: var(--terra-tabs-structural-background-position, 0 100%);
       background-repeat: no-repeat;
-      // background-size: var(--terra-tabs-structural-background-size, 0 2px);
+      background-size: var(--terra-tabs-structural-background-size, 0 4px);
       border-color: var(--terra-tabs-structural-border-color, #dedfe0);
       border-radius: var(--terra-tabs-structural-border-radius, 0);
       border-style: solid;
@@ -101,14 +101,14 @@
 
       &:hover {
         // background-color: var(--terra-tabs-structural-hover-background-color, #fff);
-        background-color: lightpink;
+        background-color: aliceblue;
         background-image: var(--terra-tabs-structural-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
-        background-size: var(--terra-tabs-structural-hover-background-size, 100% 2px);
+        background-size: var(--terra-tabs-structural-hover-background-size, 100% 4px);
         color: var(--terra-tabs-structural-hover-color, #000);
       }
 
       &.is-active {
-        background-color: pink;
+        background-size: var(--terra-tabs-structural-active-background-size, 100% 4px);
         box-shadow: var(--terra-tabs-structural-active-box-shadow, none);
         color: var(--terra-tabs-structural-active-color, #000);
         font-weight: var(--terra-tabs-structural-active-font-weight, normal);
@@ -127,14 +127,14 @@
         // Same as the selectors below, but due to the specificity, you can override the variables
         // scoped specifically to the active tab
         &:hover {
-          background-color: #ff90a2;
+          background-color: aliceblue;
 
           &:focus {
-            background-color: #ff6781;
+            background-color: aliceblue;
             
             // background-color: var(--terra-tabs-structural-active-hover-background-color, #fff);
-            background-image: var(--terra-tabs-structural-active-hover-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
-            background-size: var(--terra-tabs-structural-active-hover-background-size, 100% 2px);
+            background-image: var(--terra-tabs-structural-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
+            background-size: var(--terra-tabs-structural-active-hover-background-size, 100% 4px);
             color: var(--terra-tabs-structural-active-hover-color, #000);
           }
         }
