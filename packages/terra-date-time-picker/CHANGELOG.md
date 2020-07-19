@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
-* Updated wdio snapshots due to changes in form-input.
+* Updated wdio snapshots due to changes in terra-date-picker.
 
 4.40.0 - (July 14, 2020)
 ------------------
