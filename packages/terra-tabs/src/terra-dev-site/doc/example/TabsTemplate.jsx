@@ -15,17 +15,8 @@ const propTypes = {
   tabFill: PropTypes.bool,
 };
 
-const textMapping = {
-  label: 'Apples',
-  icon: 'Oranges',
-  custom: 'Strawberries',
-  long: 'Too many fruits to name combined into a bowl',
-  super: 'Pineapples',
-  last: 'Lemons',
-};
-
 const TabsTemplate = (props) => {
-  const [currentTab, setCurrentTab] = useState('label');
+  const [currentTab, setCurrentTab] = useState('apples');
 
   function handleSelect(metaData) {
     setCurrentTab(metaData.key);
@@ -37,69 +28,90 @@ const TabsTemplate = (props) => {
         tabFill={props.tabFill}
         tabData={[
           {
-            id: 'tab-label',
-            associatedPaneId: 'tab-label-pane',
+            id: 'tab-apples',
+            associatedPaneId: 'tab-apples-pane',
             label: 'Apples',
-            key: 'LabelTab',
+            key: 'apples-tab',
             onSelect: handleSelect,
-            metaData: { key: 'label' },
-            isSelected: currentTab === 'label',
+            metaData: { key: 'apples' },
+            isSelected: currentTab === 'apples',
           },
           {
-            id: 'tab-icon',
-            associatedPaneId: 'tab-icon-pane',
+            id: 'tab-oranges',
+            associatedPaneId: 'tab-oranges-pane',
             label: 'Oranges',
             icon: <IconBriefcase />,
-            key: 'IconTab',
+            key: 'oranges-tab',
             onSelect: handleSelect,
-            metaData: { key: 'icon' },
-            isSelected: currentTab === 'icon',
+            metaData: { key: 'oranges' },
+            isSelected: currentTab === 'oranges',
           },
           {
-            id: 'tab-custom',
-            associatedPaneId: 'tab-custom-pane',
-            customDisplay: (
-              <div className={cx('custom-display')}>
-                Strawberries
-              </div>
-            ),
+            id: 'tab-strawberries',
+            associatedPaneId: 'tab-strawberries-pane',
             label: 'Strawberries',
-            key: 'CustomTab',
+            key: 'strawberries-tab',
             onSelect: handleSelect,
-            metaData: { key: 'custom' },
-            isSelected: currentTab === 'custom',
+            metaData: { key: 'strawberries' },
+            isSelected: currentTab === 'strawberries',
           },
           {
-            id: 'tab-lorem',
-            associatedPaneId: 'tab-lorem-pane',
+            id: 'tab-fruit-salad',
+            associatedPaneId: 'tab-fruit-salad-pane',
             label: 'Too many fruits to name combined into a bowl',
-            key: 'longLabel',
+            key: 'fruit-salad-tab',
             onSelect: handleSelect,
-            metaData: { key: 'long' },
-            isSelected: currentTab === 'long',
+            metaData: { key: 'fruit-salad' },
+            isSelected: currentTab === 'fruit-salad',
           },
           {
-            id: 'tab-super',
-            associatedPaneId: 'tab-super-pane',
+            id: 'tab-pineapples',
+            associatedPaneId: 'tab-pineapples-pane',
             label: 'Pineapples',
-            icon: <IconSearch />,
-            key: 'SuperTab"',
+            key: 'pineapples-tab"',
             onSelect: handleSelect,
-            metaData: { key: 'super' },
-            isSelected: currentTab === 'super',
+            metaData: { key: 'pineapples' },
+            isSelected: currentTab === 'pineapples',
           },
           {
-            id: 'tab-last',
-            associatedPaneId: 'tab-last-pane',
+            id: 'tab-lemons',
+            associatedPaneId: 'tab-lemons-pane',
             label: 'Lemons',
-            key: 'lastTab',
+            key: 'lemons-tab',
             onSelect: handleSelect,
-            metaData: { key: 'last' },
-            isSelected: currentTab === 'last',
+            metaData: { key: 'lemons' },
+            isSelected: currentTab === 'lemons',
+          },
+          {
+            id: 'tab-kiwis',
+            associatedPaneId: 'tab-kiwis-pane',
+            label: 'Kiwis',
+            key: 'kiwis-tab',
+            onSelect: handleSelect,
+            metaData: { key: 'kiwis' },
+            isSelected: currentTab === 'kiwis',
+          },
+          {
+            id: 'tab-bananas',
+            associatedPaneId: 'tab-bananas-pane',
+            label: 'Bananas',
+            key: 'bananas-tab',
+            onSelect: handleSelect,
+            metaData: { key: 'bananas' },
+            isSelected: currentTab === 'bananas',
+          },
+          {
+            id: 'tab-grapes',
+            associatedPaneId: 'tab-grapes-pane',
+            label: 'Grapes',
+            key: 'grapes-tab',
+            onSelect: handleSelect,
+            metaData: { key: 'grapes' },
+            isSelected: currentTab === 'grapes',
           },
         ]}
       >
-        <TabContentTemplate label={textMapping[currentTab]} />
+        <TabContentTemplate keyValue={currentTab} />
       </Tabs>
     </div>
   );
