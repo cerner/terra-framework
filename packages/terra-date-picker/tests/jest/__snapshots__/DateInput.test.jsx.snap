@@ -458,7 +458,7 @@ exports[`should render a default date input with all props 1`] = `
     value="2017-01-01"
   />
   <input
-    aria-label="Terra.datePicker.date Sunday, January 1, 2017"
+    aria-label="Terra.datePicker.date, Sunday, January 1, 2017"
     class="form-input input"
     id="terra-date-input"
     name="terra-date-date-input"

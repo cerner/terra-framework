@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'terra-button';
-import moment from 'moment';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
 import { injectIntl, intlShape } from 'react-intl';
@@ -210,7 +209,7 @@ class DatePickerInput extends React.Component {
           placeholder={placeholder}
           onFocus={onFocus}
           onBlur={onBlur}
-          ariaLabel={value ? `${label} ${getLocalizedDateForScreenReader(moment(new Date(value)), this.props)}` : label}
+          ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), this.props)}` : label}
         />
         <Button
           className={buttonClasses}
