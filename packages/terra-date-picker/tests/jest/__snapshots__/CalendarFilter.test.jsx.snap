@@ -5,7 +5,6 @@ exports[`should render a calendar filter with default date 1`] = `
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
-  hidePortal={true}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -55,7 +54,6 @@ exports[`should render a calendar filter with excluded dates 1`] = `
       "2020-04-01",
     ]
   }
-  hidePortal={true}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -100,7 +98,6 @@ exports[`should render a calendar filter with filtered dates 1`] = `
   disableButtonFocusOnClose={false}
   disabled={false}
   filterDate={[Function]}
-  hidePortal={true}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -144,7 +141,6 @@ exports[`should render a calendar filter with included dates 1`] = `
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
-  hidePortal={true}
   includeDates={
     Array [
       "2020-04-01",
@@ -193,7 +189,6 @@ exports[`should render a calendar filter with min and max dates 1`] = `
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
-  hidePortal={true}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -237,7 +232,6 @@ exports[`should render a calendar filter with onChange 1`] = `
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
-  hidePortal={true}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -282,7 +276,6 @@ exports[`should render a controlled calendar filter 1`] = `
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
-  hidePortal={true}
   intl={
     Object {
       "defaultFormats": Object {},
