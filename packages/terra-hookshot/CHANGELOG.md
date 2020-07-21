@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+5.28.0 - (July 14, 2020)
+------------------
 ### Changed
 * Minor file changes to comply with eslint rules
 * Replace some empty text with aria-label to comply with eslint
