@@ -1,3 +1,6 @@
+@import '../../../clinical-lowlight-theme/demoStyles.module.scss';
+@import '../../../orion-fusion-theme/demoStyles.module.scss';
+
 :local {
   .demo-background-color {
     background-color: var(--terra-application-name-demo-background-color, #008000);
