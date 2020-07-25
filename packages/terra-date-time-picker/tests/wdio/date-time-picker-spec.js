@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 const moment = require('moment-timezone');
 
 const ignoredA11y = {

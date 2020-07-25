@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+5.38.0 - (July 14, 2020)
+------------------
+### Changed
+* Remove unused disable eslint directives
+
 5.37.0 - (June 16, 2020)
 ------------------
 ### Changed

@@ -125,7 +125,7 @@ class TimeClarification extends React.Component {
         >
           <div>
             <header className={cx('header')}>
-              {<h1 className={cx('title')}>{title}</h1>}
+              <h1 className={cx('title')}>{title}</h1>
             </header>
             <div className={cx('body')}>
               <p>{message}</p>

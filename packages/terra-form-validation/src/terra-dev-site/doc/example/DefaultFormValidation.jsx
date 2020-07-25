@@ -1,5 +1,3 @@
-/* eslint-disable class-methods-use-this */
-
 import React from 'react';
 import { Form, Field } from 'react-final-form';
 import InputField from 'terra-form-input/lib/InputField';

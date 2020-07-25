@@ -4,6 +4,13 @@ Changelog
 Unreleased
 ----------
 
+2.32.0 - (July 14, 2020)
+------------------
+### Changed
+* Fixed `aria-haspopup` and `link` role  incompatibility issue.
+* updated `master` references to `main`.
+* Minor file changes to comply with eslint rules
+
 2.31.0 - (June 2, 2020)
 ------------------
 ### Changed

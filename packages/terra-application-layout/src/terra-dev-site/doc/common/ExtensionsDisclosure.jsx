@@ -27,7 +27,7 @@ const ExtensionsDisclosure = ({ name, disclosureManager }) => (
    )}
   >
     <div className={cx('content-wrapper')}>
-Content for extension:
+      Content for extension:
       {name}
     </div>
   </ContentContainer>

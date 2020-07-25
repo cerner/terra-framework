@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+6.37.0 - (July 14, 2020)
+------------------
+### Changed
+* Minor file changes to comply with eslint rules
+
 6.36.0 - (June 16, 2020)
 ------------------
 ### Changed

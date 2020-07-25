@@ -4,6 +4,12 @@ Changelog
 Unreleased
 ----------
 
+2.36.0 - (July 14, 2020)
+------------------
+### Changed
+* updated `master` references to `main`.
+* Remove unused disable eslint directives
+
 2.35.0 - (June 9, 2020)
 ------------------
 ### Changed

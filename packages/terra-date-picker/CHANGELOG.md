@@ -4,6 +4,14 @@ Changelog
 Unreleased
 ----------
 
+4.41.0 - (July 14, 2020)
+------------------
+### Changed
+* updated `master` references to `main`.
+* Minor file changes to comply with eslint rules
+* Remove unused disable eslint directives
+* Escape characters to comply with no unescaped entities eslint rule
+
 4.40.0 - (June 16, 2020)
 ------------------
 ### Added

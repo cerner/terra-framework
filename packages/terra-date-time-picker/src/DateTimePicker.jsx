@@ -18,7 +18,6 @@ const propTypes = {
    * Custom input attributes to apply to the date input. Use the name prop to set the name for the date input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   dateInputAttributes: PropTypes.object,
   /**
    * Whether the date and time inputs should be disabled.
@@ -110,7 +109,6 @@ const propTypes = {
    * Custom input attributes to apply to the time input. Use the name prop to set the name for the time input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   timeInputAttributes: PropTypes.object,
   /**
    * An ISO 8601 string representation of the initial value to show in the date and time inputs. The value must be in the `YYYY-MM-DDThh:mm:ss` format.

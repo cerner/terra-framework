@@ -169,7 +169,7 @@ class NavigationLayout extends React.Component {
       history,
       staticContext,
       ...customProps
-    } = this.props; // eslint-disable-line no-unused-vars
+    } = this.props;
 
     const {
       size,
