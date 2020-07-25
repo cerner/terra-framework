@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated themeable variables
 
 3.31.0 - (July 14, 2020)
 ------------------
