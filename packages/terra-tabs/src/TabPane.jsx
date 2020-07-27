@@ -65,7 +65,6 @@ const TabPane = ({
     { 'is-disabled': isDisabled },
     { 'is-icon-only': isIconOnly },
     { 'is-text-only': !icon },
-    { 'is-touch-device': ('ontouchstart' in window) },
     theme.className,
   ),
   attributes.className);

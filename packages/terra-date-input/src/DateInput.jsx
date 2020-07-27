@@ -460,7 +460,6 @@ class DateInput extends React.Component {
       { disabled: this.props.disabled },
       { error: this.props.isInvalid },
       { incomplete: (this.props.isIncomplete && this.props.required && !this.props.isInvalid) },
-      { 'is-touch-device': ('ontouchstart' in window) },
     ]);
 
     const DateInputMonthClassNames = cx([
@@ -470,7 +469,6 @@ class DateInput extends React.Component {
       { disabled: this.props.disabled },
       { error: this.props.isInvalid },
       { incomplete: (this.props.isIncomplete && this.props.required && !this.props.isInvalid) },
-      { 'is-touch-device': ('ontouchstart' in window) },
     ]);
 
     return (

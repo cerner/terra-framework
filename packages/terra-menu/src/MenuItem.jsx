@@ -194,7 +194,6 @@ class MenuItem extends React.Component {
       { 'is-disabled': isDisabled },
       // eslint-disable-next-line quote-props
       { 'active': this.state.isActive },
-      { 'is-touch-device': ('ontouchstart' in window) },
       attributes.className,
     ]);
 

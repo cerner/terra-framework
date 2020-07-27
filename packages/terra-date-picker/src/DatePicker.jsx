@@ -419,7 +419,7 @@ class DatePicker extends React.Component {
 
     return (
       <div
-        className={cx('date-picker', { 'is-touch-device': ('ontouchstart' in window) }, theme.className)}
+        className={cx('date-picker', theme.className)}
         ref={this.datePickerContainer}
       >
         <ResponsiveElement

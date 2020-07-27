@@ -259,12 +259,6 @@ class CollapsibleTabs extends React.Component {
       }
     });
     const theme = this.context;
-    const collapsibleTabClass = cx(
-      'collapsible-tabs-container',
-      { 'is-calculating': this.isCalculating },
-      { 'is-touch-device': ('ontouchstart' in window) },
-      theme.className,
-    );
 
     const menu = this.menuHidden ? null : (
       <Menu onKeyDown={this.handleMenuOnKeyDown} refCallback={this.setMenuRef} activeKey={this.props.activeKey}>
@@ -279,7 +273,7 @@ class CollapsibleTabs extends React.Component {
     return (
       <div>
         <div
-          className={collapsibleTabClass}
+          className={cx('collapsible-tabs-container', { 'is-calculating': this.isCalculating }, theme.className)}
           ref={this.setContainer}
           tabIndex="0"
           onKeyDown={this.handleOnKeyDown}
