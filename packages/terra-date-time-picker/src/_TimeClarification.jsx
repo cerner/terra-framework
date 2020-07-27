@@ -13,7 +13,7 @@ const propTypes = {
   /**
    * An ISO 8601 date time with the ambiguous hour.
    */
-  ambiguousDateTime: PropTypes.object,
+  ambiguousDateTime: PropTypes.string,
   /**
    * @private
    * intl object programmatically imported through injectIntl from react-intl.
@@ -55,6 +55,10 @@ const propTypes = {
    * Whether the clarification is disabled.
    */
   disabled: PropTypes.bool,
+  /**
+   * Time Zone the date time picker is rendered in.
+   */
+  timeZone: PropTypes.string,
 };
 
 const defaultProps = {
@@ -76,8 +80,8 @@ class TimeClarification extends React.Component {
 
   handleDaylightSavingButtonClick(event) {
     this.setState({
-      offsetDisplay: DateTimeUtils.getDaylightSavingTZDisplay(this.props.ambiguousDateTime),
-      offsetLongDisplay: DateTimeUtils.getDaylightSavingExpandedTZDisplay(this.props.ambiguousDateTime),
+      offsetDisplay: DateTimeUtils.getDaylightSavingTZDisplay(this.props.ambiguousDateTime, this.props.timeZone),
+      offsetLongDisplay: DateTimeUtils.getDaylightSavingExpandedTZDisplay(this.props.ambiguousDateTime, this.props.timeZone),
     });
 
     if (this.props.onDaylightSavingButtonClick) {
@@ -87,8 +91,8 @@ class TimeClarification extends React.Component {
 
   handleStandardTimeButtonClick(event) {
     this.setState({
-      offsetDisplay: DateTimeUtils.getStandardTZDisplay(this.props.ambiguousDateTime),
-      offsetLongDisplay: DateTimeUtils.getStandardExpandedTZDisplay(this.props.ambiguousDateTime),
+      offsetDisplay: DateTimeUtils.getStandardTZDisplay(this.props.ambiguousDateTime, this.props.timeZone),
+      offsetLongDisplay: DateTimeUtils.getStandardExpandedTZDisplay(this.props.ambiguousDateTime, this.props.timeZone),
     });
 
     if (this.props.onStandardTimeButtonClick) {

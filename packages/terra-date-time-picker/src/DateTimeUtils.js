@@ -92,11 +92,10 @@ class DateTimeUtils {
     let dateTimeString;
     if (date.isValid()) {
       dateTimeString = newDate.format('YYYY-MM-DD').concat(' ').concat(date.format(timeFormat));
-    } else {
-      return momentDate;
+      return moment.tz(dateTimeString, timeZone);
     }
 
-    return moment.tz(dateTimeString, timeZone);
+    return momentDate;
   }
 
   /**
@@ -107,7 +106,7 @@ class DateTimeUtils {
    */
   static getTime(time, hasSeconds, timeZone) {
     const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
-    const momentDate = (timeZone && moment.tz.zone(timeZone) ? moment.tz(time, timeZone) : this.createSafeDate(time, timeZone));
+    const momentDate = DateTimeUtils.createSafeDate(time, timeZone);
     return DateUtil.formatMomentDate(momentDate, timeFormat);
   }
 
@@ -166,8 +165,8 @@ class DateTimeUtils {
    * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
    * @return {string} - The daylight savings time zone offset display.
    */
-  static getDaylightSavingTZDisplay(ambiguousDateTime) {
-    const daylightSavingsDateTime = moment(ambiguousDateTime);
+  static getDaylightSavingTZDisplay(ambiguousDateTime, timeZone) {
+    const daylightSavingsDateTime = DateTimeUtils.createSafeDate(ambiguousDateTime, timeZone);
     if (!daylightSavingsDateTime.isValid()) {
       return '';
     }
@@ -181,8 +180,8 @@ class DateTimeUtils {
    * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
    * @return {string} - The long daylight savings time zone offset display.
    */
-  static getDaylightSavingExpandedTZDisplay(ambiguousDateTime) {
-    const daylightSavingsDateTime = moment(ambiguousDateTime);
+  static getDaylightSavingExpandedTZDisplay(ambiguousDateTime, timeZone) {
+    const daylightSavingsDateTime = DateTimeUtils.createSafeDate(ambiguousDateTime, timeZone);
     if (!daylightSavingsDateTime.isValid()) {
       return '';
     }
@@ -198,8 +197,8 @@ class DateTimeUtils {
    * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
    * @return {string} - The standard time zone offset display.
    */
-  static getStandardTZDisplay(ambiguousDateTime) {
-    const standardDateTime = moment(ambiguousDateTime);
+  static getStandardTZDisplay(ambiguousDateTime, timeZone) {
+    const standardDateTime = DateTimeUtils.createSafeDate(ambiguousDateTime, timeZone);
     if (!standardDateTime.isValid()) {
       return '';
     }
@@ -213,8 +212,8 @@ class DateTimeUtils {
    * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
    * @return {string} - The long standard time zone offset display.
    */
-  static getStandardExpandedTZDisplay(ambiguousDateTime) {
-    const standardDateTime = moment(ambiguousDateTime);
+  static getStandardExpandedTZDisplay(ambiguousDateTime, timeZone) {
+    const standardDateTime = DateTimeUtils.createSafeDate(ambiguousDateTime, timeZone);
     if (!standardDateTime.isValid()) {
       return '';
     }
@@ -234,7 +233,8 @@ class DateTimeUtils {
    * @return {object} - The moment object representing the given date and time.
    */
   static convertDateTimeStringToMomentObject(date, time, dateformat, hasSeconds, timeZone) {
-    return DateTimeUtils.updateTime(DateTimeUtils.createSafeDate(DateUtil.convertToISO8601(date, dateformat), timeZone), time, hasSeconds);
+    const dateTime = DateTimeUtils.createSafeDate(DateUtil.convertToISO8601(date, dateformat), timeZone);
+    return DateTimeUtils.updateTime(dateTime, time, hasSeconds);
   }
 
   /**
@@ -259,6 +259,14 @@ class DateTimeUtils {
    */
   static isMomentObject(value) {
     return moment.isMoment(value);
+  }
+
+  /**
+   * Creates moment object with local timezone.
+   * @return {object|undefined}- The moment object. Undefined if unable to convert.
+   */
+  static getLocalTimeZone() {
+    return moment.tz.guess();
   }
 }
 

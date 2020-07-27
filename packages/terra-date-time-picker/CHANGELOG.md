@@ -1,7 +1,7 @@
 ChangeLog
 =========
 ### Added
-* Added new prop `timeZone` which takes a valid timezone string. This enables date-time-picker set to a particular timezone. By default is set to local/browser timezone.
+* Added new `timeZone` prop which takes a valid timezone string. This enables date-time-picker set to a particular timezone. The default timezone  is set to the local/browser timezone.
 
 Unreleased
 ----------
