@@ -6,6 +6,23 @@ Unreleased
 ### Added
 * Added `ontouchstart` to apply `hover` styles only on non-touch devices.
 
+1.30.0 - (July 14, 2020)
+------------------
+### Fixed
+* Corrected the 'resize observer loop limit reached' error with animation frames.
+
+### Fixed
+* Fixed `side-drawer` not opening in IE for tiny viewport.
+
+### Removed
+* Removed themeable variable --terra-application-navigation-content-layout-default-width
+* Removed themeable variable --terra-application-navigation-content-layout-medium-width
+
+### Changed
+* Fixed `aria-haspopup` and `link` role  incompatibility issue.
+* Minor file changes to comply with eslint rules
+* Remove unused disable eslint directives
+
 1.29.0 - (June 16, 2020)
 ------------------
 ### Changed

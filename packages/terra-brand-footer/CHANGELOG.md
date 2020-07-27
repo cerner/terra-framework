@@ -6,6 +6,15 @@ Unreleased
 ### Added
 * Added `ontouchstart` to apply `hover` styles only on non-touch devices.
 
+3.0.0 - (July 14, 2020)
+------------------
+### Breaking Changes
+* `links` prop has been deprecated, will resolve to `sections`.
+* Updated UpgradeGuide.
+
+### Changed
+* updated `master` references to `main`.
+
 2.24.0 - (May 26, 2020)
 ------------------
 ### Changed

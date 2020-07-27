@@ -4,6 +4,13 @@ ChangeLog
 Unreleased
 ----------
 
+4.40.0 - (July 14, 2020)
+------------------
+### Changed
+* updated `master` references to `main`.
+* Minor file changes to comply with eslint rules
+* Remove unused disable eslint directives
+
 4.39.0 - (June 16, 2020)
 ------------------
 ### Changed
@@ -14,7 +21,7 @@ Unreleased
 ### Changed
 * Apply themes by context and directly include packaged themes.
 * Update test and screenshots to account for min/max changes in DatePicker.
-* Update wdio screenshots failing in master.
+* Update wdio screenshots failing in main.
 
 4.37.0 - (May 19, 2020)
 ------------------

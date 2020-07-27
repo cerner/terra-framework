@@ -94,8 +94,7 @@ class InfiniteList extends React.Component {
     super(props);
 
     this.update = this.update.bind(this);
-    this.enableListeners = this.enableListeners.bind(this);
-    this.disableListeners = this.disableListeners.bind(this);
+    this.resetCache = this.resetCache.bind(this);
     this.setContentNode = this.setContentNode.bind(this);
     this.updateItemCache = this.updateItemCache.bind(this);
     this.initializeItemCache = this.initializeItemCache.bind(this);
@@ -107,13 +106,26 @@ class InfiniteList extends React.Component {
     this.ariaLiveStatus = '';
     this.updateAriaLiveLoadingStatus = this.updateAriaLiveLoadingStatus.bind(this);
 
+    this.resetCache();
     this.initializeItemCache(props);
   }
 
   componentDidMount() {
-    if (!this.listenersAdded) {
-      this.enableListeners();
+    if (this.contentNode) {
+      this.resizeObserver = new ResizeObserver((entries) => {
+        this.content = entries[0].contentRect;
+        if (!this.isCalculating) {
+          this.animationFrameID = window.requestAnimationFrame(() => {
+            // Resetting the cache so that all elements will be rendered face-up for width calculations
+            this.resetCache();
+            this.forceUpdate();
+          });
+        }
+      });
+      this.handleResize(this.content);
+      this.resizeObserver.observe(this.contentNode);
     }
+    this.contentNode.addEventListener('scroll', this.update);
     this.updateScrollGroups();
     this.handleRenderCompletion();
   }
@@ -134,14 +146,21 @@ class InfiniteList extends React.Component {
   }
 
   componentDidUpdate() {
-    if (!this.listenersAdded) {
-      this.enableListeners();
+    if (this.isCalculating) {
+      this.isCalculating = false;
+      this.handleResize(this.content);
     }
     this.handleRenderCompletion();
   }
 
   componentWillUnmount() {
-    this.disableListeners();
+    if (this.contentNode) {
+      clearTimeout(this.timer);
+      window.cancelAnimationFrame(this.animationFrameID);
+      this.resizeObserver.disconnect(this.contentNode);
+      this.contentNode.removeEventListener('scroll', this.update);
+      this.content = null;
+    }
   }
 
   /**
@@ -221,34 +240,6 @@ class InfiniteList extends React.Component {
   }
 
   /**
-   * Adds a resize observer and scroll event listener to the contentNode.
-   */
-  enableListeners() {
-    if (!this.contentNode) {
-      return;
-    }
-    this.resizeObserver = new ResizeObserver((entries) => {
-      this.handleResize(entries[0].contentRect);
-    });
-    this.resizeObserver.observe(this.contentNode);
-    this.contentNode.addEventListener('scroll', this.update);
-    this.listenersAdded = true;
-  }
-
-  /**
-   * Removes the resize observer and scroll event listener from the contentNode.
-   */
-  disableListeners() {
-    if (!this.contentNode) {
-      return;
-    }
-    clearTimeout(this.timer);
-    this.resizeObserver.disconnect(this.contentNode);
-    this.contentNode.removeEventListener('scroll', this.update);
-    this.listenersAdded = false;
-  }
-
-  /**
    * Reset the timeout on this.timer.
    * @param {function} fn - The handleResize function.
    * @param {object} args - Arguments passed to the handleResize function.
@@ -282,6 +273,11 @@ class InfiniteList extends React.Component {
     };
   }
 
+  resetCache() {
+    this.animationFrameID = null;
+    this.isCalculating = true;
+  }
+
   /**
    * Triggers a height adjustment if the height or scroll height changes.
    */
@@ -289,6 +285,7 @@ class InfiniteList extends React.Component {
     if (this.scrollHeight !== this.contentNode.scrollHeight || this.clientHeight !== this.contentNode.clientHeight) {
       this.adjustHeight();
     }
+    this.forceUpdate();
   }
 
   /**

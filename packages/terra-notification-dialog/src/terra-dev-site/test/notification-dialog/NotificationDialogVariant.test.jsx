@@ -8,7 +8,7 @@ const clickConfirm = () => {
 };
 
 const propTypes = {
-  variant: PropTypes.oneOf(Object.values(NotificationDialogVariants)), // eslint-disable-line compat/compat
+  variant: PropTypes.oneOf(Object.values(NotificationDialogVariants)),
 };
 
 const NotificationDialogVariant = (props) => {

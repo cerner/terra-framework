@@ -20,7 +20,7 @@ class timeInput extends React.Component {
     return (
       <div>
         <p>
-Time Provided:
+          Time Provided:
           <span className={cx('time-wrapper')}>{this.state.time}</span>
         </p>
         <TimeInput

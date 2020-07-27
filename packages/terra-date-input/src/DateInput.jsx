@@ -20,7 +20,6 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the day input
    */
-  // eslint-disable-next-line react/forbid-prop-types
   dayAttributes: PropTypes.object,
   /**
    * Whether the date input should be disabled.
@@ -47,7 +46,6 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the month select
    */
-  // eslint-disable-next-line react/forbid-prop-types
   monthAttributes: PropTypes.object,
   /**
    * A callback function to execute when the entire date input component loses focus.
@@ -78,7 +76,6 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the year input
    */
-  // eslint-disable-next-line react/forbid-prop-types
   yearAttributes: PropTypes.object,
 };
 
@@ -521,10 +518,8 @@ class DateInput extends React.Component {
      * To work around this issue, the day input uses type="number" for all browsers, but if we're in a Mozilla browser,
      * we switch over to using type="text" and pattern="\d*" which allows displaying value="03" in the browser as "03"
      */
-    /* eslint-disable no-useless-escape */
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
-    /* eslint-enable no-useless-escape */
 
     return (
       <Input
@@ -562,10 +557,8 @@ class DateInput extends React.Component {
      * To work around this issue, the year input uses type="number" for all browsers, but if we're in a Mozilla browser,
      * we switch over to using type="text" and pattern="\d*" which allows displaying value="03" in the browser as "03"
      */
-    /* eslint-disable no-useless-escape */
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
-    /* eslint-enable no-useless-escape */
 
     return (
       <Input

@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Added `ontouchstart` to apply `hover` styles only on non-touch devices.
 
+6.39.0 - (July 14, 2020)
+------------------
+### Changed
+* Minor dependency version bump\
+
 6.38.0 - (June 16, 2020)
 ------------------
 ### Changed

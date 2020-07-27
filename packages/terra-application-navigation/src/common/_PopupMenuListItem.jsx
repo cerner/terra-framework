@@ -95,7 +95,6 @@ const PopupMenuListItem = ({
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-  /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
   return (
     <li
       {...ariaSpread}
@@ -117,7 +116,7 @@ const PopupMenuListItem = ({
         ) : null}
       {icon ? <div className={cx('icon')}>{icon}</div> : null}
       <div role="link" className={cx('text')}>{text}</div>
-      {<PopupCount isHidden={!notificationCount} value={notificationCount || 0} isInline className={cx('extension-row-count')} />}
+      <PopupCount isHidden={!notificationCount} value={notificationCount || 0} isInline className={cx('extension-row-count')} />
     </li>
   );
 };

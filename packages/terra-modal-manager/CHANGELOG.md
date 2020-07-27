@@ -4,6 +4,12 @@ Changelog
 Unreleased
 ----------
 
+6.37.0 - (July 14, 2020)
+------------------
+### Changed
+* updated `master` references to `main`.
+* Minor file changes to comply with eslint rules
+
 6.36.0 - (June 16, 2020)
 ------------------
 ### Changed
@@ -550,4 +556,4 @@ Unreleased
 ------------------
 Initial stable release
 
-[1]: https://github.com/cerner/terra-framework/tree/master/packages/terra-modal/docs/UPGRADEGUIDE.md
+[1]: https://github.com/cerner/terra-framework/tree/main/packages/terra-modal/docs/UPGRADEGUIDE.md
