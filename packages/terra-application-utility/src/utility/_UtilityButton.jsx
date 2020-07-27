@@ -107,7 +107,6 @@ class UtilityButton extends React.Component {
     const utilityClassNames = classNames(cx(
       { 'header-utility-button': variant === Utils.VARIANTS.HEADER },
       { 'menu-utility-button': variant === Utils.VARIANTS.MENU },
-      { 'is-touch-device': ('ontouchstart' in window) },
       theme.className,
     ),
     customProps.className);

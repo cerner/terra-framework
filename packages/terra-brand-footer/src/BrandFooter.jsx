@@ -115,7 +115,7 @@ const BrandFooter = ({
                 return (
                   <li className={cx('list-item')} key={link.text + link.href}>
                     {separator}
-                    <a className={cx('link', { 'is-touch-device': ('ontouchstart' in window) })} href={link.href} {...spreadTarget}>
+                    <a className={cx('link')} href={link.href} {...spreadTarget}>
                       {link.text}
                     </a>
                   </li>

@@ -134,27 +134,23 @@ class UtilityMenuItem extends React.Component {
       { 'header-utility-body-item': variant === Utils.VARIANTS.HEADER },
       { 'menu-utility-body-item': variant === Utils.VARIANTS.MENU },
       { 'read-only': isReadOnly },
-      { 'is-touch-device': ('ontouchstart' in window) },
       theme.className,
     ]);
 
     const footerItemClassNames = cx([
       { 'header-utility-footer-item': variant === Utils.VARIANTS.HEADER },
       { 'menu-utility-footer-item': variant === Utils.VARIANTS.MENU },
-      { 'is-touch-device': ('ontouchstart' in window) },
       theme.className,
     ]);
 
     const checkmarkClassNames = cx([
       'checkmark',
       { selected: isSelected },
-      { 'is-touch-device': ('ontouchstart' in window) },
     ]);
 
     const chevronClassNames = cx([
       'chevron',
       { 'has-chevron': hasChevron },
-      { 'is-touch-device': ('ontouchstart' in window) },
     ]);
 
     const arrangeClassNames = cx([
