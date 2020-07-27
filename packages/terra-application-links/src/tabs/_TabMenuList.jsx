@@ -38,7 +38,6 @@ const TabMenuList = ({
     'tab-menu-list',
     { 'height-bounded': isHeightBounded },
     { 'width-bounded': isWidthBounded },
-    { 'is-touch-device': ('ontouchstart' in window) },
     theme.className,
   ));
   return (

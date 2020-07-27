@@ -22,7 +22,7 @@ const propTypes = {
 const DrawerMenuFooterButton = ({ text, onClick, ...customProps }) => (
   <button
     {...customProps}
-    className={cx('drawer-menu-footer-button', { 'is-touch-device': ('ontouchstart' in window) })}
+    className={cx('drawer-menu-footer-button')}
     type="button"
     onClick={onClick}
     onBlur={enableFocusStyles}

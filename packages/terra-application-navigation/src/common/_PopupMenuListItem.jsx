@@ -100,7 +100,7 @@ const PopupMenuListItem = ({
       {...ariaSpread}
       {...customProps}
       tabIndex="0"
-      className={cx('item', { 'is-touch-device': ('ontouchstart' in window) })}
+      className={cx('item')}
       onClick={onSelect}
       onKeyDown={handleKeyDown}
       onBlur={enableFocusStyles}

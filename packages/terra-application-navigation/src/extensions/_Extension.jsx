@@ -47,7 +47,7 @@ const Extension = ({
     <div
       role="button"
       tabIndex="0"
-      className={cx('extension', { 'is-touch-device': ('ontouchstart' in window) })}
+      className={cx('extension')}
       onClick={onSelect}
       onKeyDown={generateKeyDownSelection(onSelect)}
       onBlur={enableFocusStyles}

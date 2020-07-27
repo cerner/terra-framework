@@ -244,7 +244,6 @@ class ApplicationHeader extends React.Component {
     const headerClassNames = classNames(cx(
       'application-navbar',
       { 'application-navbar-with-icons': hasIcons },
-      { 'is-touch-device': ('ontouchstart' in window) },
       theme.className,
     ),
     customProps.className);

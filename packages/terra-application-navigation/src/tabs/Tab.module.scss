@@ -90,10 +90,12 @@
     }
 
     /* stylelint-disable max-nesting-depth */
-    &:hover:not(.is-touch-device) {
-      .tab-inner {
-        background-color: var(--terra-application-navigation-tab-hover-background-color, rgba(3, 43, 70, 0.2));
-        color: var(--terra-application-navigation-tab-hover-color, #fff);
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+      &:hover {
+        .tab-inner {
+          background-color: var(--terra-application-navigation-tab-hover-background-color, rgba(3, 43, 70, 0.2));
+          color: var(--terra-application-navigation-tab-hover-color, #fff);
+        }
       }
     }
 

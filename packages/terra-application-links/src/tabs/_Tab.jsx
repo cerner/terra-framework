@@ -133,7 +133,6 @@ class ApplicationTab extends Component {
       { 'is-disabled': isCurrent && !isCollapsed },
       { 'is-active': active },
       { 'is-focused': focused },
-      { 'is-touch-device': ('ontouchstart' in window) },
       theme.className,
     ),
     customProps.className);

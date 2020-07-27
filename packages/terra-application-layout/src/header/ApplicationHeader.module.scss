@@ -65,12 +65,14 @@
       width: var(--terra-application-layout-toggle-button-icon-width, 1rem);
     }
 
-    &:hover:not(.is-touch-device) {
-      background-color: var(--terra-application-layout-toggle-button-hover-background-color, rgba(0, 0, 0, 0.15));
-      border-color: var(--terra-application-layout-toggle-button-hover-border-color);
-      border-radius: var(--terra-application-layout-toggle-button-hover-border-radius);
-      box-shadow: var(--terra-application-layout-toggle-button-hover-box-shadow);
-      color: var(--terra-application-layout-toggle-button-hover-color, #fff);
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--terra-application-layout-toggle-button-hover-background-color, rgba(0, 0, 0, 0.15));
+        border-color: var(--terra-application-layout-toggle-button-hover-border-color);
+        border-radius: var(--terra-application-layout-toggle-button-hover-border-radius);
+        box-shadow: var(--terra-application-layout-toggle-button-hover-box-shadow);
+        color: var(--terra-application-layout-toggle-button-hover-color, #fff);
+      }
     }
 
     &:focus {

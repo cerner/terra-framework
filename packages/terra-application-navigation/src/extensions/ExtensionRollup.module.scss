@@ -9,10 +9,13 @@
     justify-content: center;
     outline: none;
     position: relative;
-      
-    &:hover:not(.is-touch-device) {
-      .extension-rollup-inner {
-        color: var(--terra-application-navigation-extension-rollup-hover-color, #fff);
+
+    /* stylelint-disable max-nesting-depth */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {    
+      &:hover {
+        .extension-rollup-inner {
+          color: var(--terra-application-navigation-extension-rollup-hover-color, #fff);
+        }
       }
     }
 

@@ -92,9 +92,10 @@
       height: 1rem;
       width: 1rem;
     }
-
-    &:hover:not(.is-touch-device) {
-      color: var(--terra-application-navigation-compact-header-menu-button-hover-color, rgba(255, 255, 255, 1));
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--terra-application-navigation-compact-header-menu-button-hover-color, rgba(255, 255, 255, 1));
+      }
     }
 
     &:active {

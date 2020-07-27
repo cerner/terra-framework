@@ -38,9 +38,11 @@
     outline-offset: var(--terra-application-navigation-drawer-menu-item-selected-focus-outline-offset, -5px);
   }
 
-  .item:hover:not(.is-touch-device) {
-    background-color: var(--terra-application-navigation-drawer-menu-item-hover-background-color, rgba(30, 163, 244, 0.13));
-    color: var(--terra-application-navigation-drawer-menu-item-hover-color, rgba(255, 255, 255, 1));
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+    .item:hover {
+      background-color: var(--terra-application-navigation-drawer-menu-item-hover-background-color, rgba(30, 163, 244, 0.13));
+      color: var(--terra-application-navigation-drawer-menu-item-hover-color, rgba(255, 255, 255, 1));
+    }
   }
 
   .item:focus[data-focus-styles-enabled='true'] {
