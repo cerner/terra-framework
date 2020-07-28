@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+3.42.0 - (July 28, 2020)
+------------------
+### Changed
+* Minor dependency version bump
+
 3.41.0 - (July 14, 2020)
 ------------------
 ### Changed
@@ -36,7 +41,7 @@ Unreleased
 
 ### Changed
 * Update wdio test configuration to use root wdio config
-* Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header. 
+* Regenerate wdio fusion screenshots due to bottom border style changes in terra-action-header.
 
 3.35.0 - (April 14, 2020)
 ------------------

@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.42.0 - (July 28, 2020)
+------------------
 ### Changed
 * Updated color for previous and next month buttons in calendar to meet the minimum contrast ratio.
 
