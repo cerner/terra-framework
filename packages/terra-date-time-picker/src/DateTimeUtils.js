@@ -6,6 +6,7 @@ class DateTimeUtils {
   /**
    * Checks if the ISO string contains the time (hh:mm) part.
    * @param {string} iSODate - The ISO string
+   * @param {string} timeZone- Time zone value for the moment object.
    * @return {boolean} - True if the ISO string contains the time. False, otherwise.
    */
   static hasTime(iSODate, timeZone) {
@@ -77,6 +78,7 @@ class DateTimeUtils {
    * @param {object} momentDate - The moment object to synchronize the date and time.
    * @param {string} time - The time to synchronize with the moment object.
    * @param {boolean} hasSeconds - If true seconds will be processed
+   * @param {string} timeZone- Time zone value for the moment object.
    * @return {object} - The synchronized moment object.
    */
   static updateTime(momentDate, time, hasSeconds) {
@@ -102,6 +104,7 @@ class DateTimeUtils {
    * Gets the time from a date and time
    * @param {string} time An ISO 8601 string to get the time of
    * @param {boolean} hasSeconds Whether or not seconds should be retrieved
+   * @param {string} timeZone- Time zone value for the moment object.
    * @return {string} The time from the date and time string
    */
   static getTime(time, hasSeconds, timeZone) {
@@ -163,6 +166,7 @@ class DateTimeUtils {
   /**
    * Gets the daylight savings time zone offset display. (e.g. CDT)
    * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
+   * @param {string} timeZone- Time zone value for the moment object.
    * @return {string} - The daylight savings time zone offset display.
    */
   static getDaylightSavingTZDisplay(ambiguousDateTime, timeZone) {
@@ -178,6 +182,7 @@ class DateTimeUtils {
   /**
    * Gets the long daylight savings time zone offset display. (e.g. America/Chicago CDT -5:00)
    * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
+   * @param {string} timeZone- Time zone value for the moment object.
    * @return {string} - The long daylight savings time zone offset display.
    */
   static getDaylightSavingExpandedTZDisplay(ambiguousDateTime, timeZone) {
@@ -195,6 +200,7 @@ class DateTimeUtils {
   /**
    * Gets the standard time zone offset display. (e.g. CST)
    * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
+   * @param {string} timeZone- Time zone value for the moment object.
    * @return {string} - The standard time zone offset display.
    */
   static getStandardTZDisplay(ambiguousDateTime, timeZone) {
@@ -210,6 +216,7 @@ class DateTimeUtils {
   /**
    * Gets the long standard time zone offset display. (e.g. America/Chicago CST -6:00)
    * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
+   * @param {string} timeZone- Time zone value for the moment object.
    * @return {string} - The long standard time zone offset display.
    */
   static getStandardExpandedTZDisplay(ambiguousDateTime, timeZone) {
@@ -230,6 +237,7 @@ class DateTimeUtils {
    * @param {string} time - The time string for the conversion.
    * @param {string} dateformat - The format of the date and time strings.
    * @param {boolean} hasSeconds - If true seconds will be converted
+   * @param {string} timeZone- Time zone value for the moment object.
    * @return {object} - The moment object representing the given date and time.
    */
   static convertDateTimeStringToMomentObject(date, time, dateformat, hasSeconds, timeZone) {
@@ -241,6 +249,7 @@ class DateTimeUtils {
    * Creates a moment object using the provided date string. Moment is unable to initialize a valid date if the date passed in is
    * null, empty string, or alpha characters and undefined would be returned.
    * @param {string|undefined} date - The date to convert. Expect to be in ISO format.
+   * @param {string} timeZone- Time zone value for the moment object.
    * @return {object|undefined} - The moment object. Undefined if unable to convert.
    */
   static createSafeDate(date, timeZone) {
@@ -263,7 +272,7 @@ class DateTimeUtils {
 
   /**
    * Creates moment object with local timezone.
-   * @return {object|undefined}- The moment object. Undefined if unable to convert.
+   * @return {string}}- Local/Browser time zone string.
    */
   static getLocalTimeZone() {
     return moment.tz.guess();

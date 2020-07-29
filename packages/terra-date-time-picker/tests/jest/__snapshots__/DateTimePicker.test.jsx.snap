@@ -11,6 +11,7 @@ exports[`correctly applies the theme context className 1`] = `
 >
   <InjectIntl(DateTimePicker)
     name="date-time-input"
+    timeZone="America/Chicago"
     utcOffset={0}
   />
 </ContextProvider>
@@ -55,6 +56,7 @@ exports[`should render a date time picker with a default date and time 1`] = `
   required={false}
   showSeconds={false}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
   value="2017-04-01T10:30"
 />
@@ -104,6 +106,7 @@ exports[`should render a date time picker with disabled dates 1`] = `
   required={false}
   showSeconds={false}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
 />
 `;
@@ -148,6 +151,7 @@ exports[`should render a date time picker with filtered dates 1`] = `
   required={false}
   showSeconds={false}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
 />
 `;
@@ -196,6 +200,7 @@ exports[`should render a date time picker with included dates 1`] = `
   required={false}
   showSeconds={false}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
 />
 `;
@@ -239,6 +244,7 @@ exports[`should render a date time picker with min and max dates 1`] = `
   required={false}
   showSeconds={false}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
 />
 `;
@@ -283,6 +289,7 @@ exports[`should render a date time picker with onBlur 1`] = `
   required={false}
   showSeconds={false}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
 />
 `;
@@ -327,6 +334,7 @@ exports[`should render a date time picker with onChange 1`] = `
   required={false}
   showSeconds={false}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
 />
 `;
@@ -371,6 +379,7 @@ exports[`should render a date time picker with onChangeRaw 1`] = `
   required={false}
   showSeconds={false}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
 />
 `;
@@ -414,6 +423,7 @@ exports[`should render a date time picker with the seconds field enabled 1`] = `
   required={false}
   showSeconds={true}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
 />
 `;
@@ -457,6 +467,7 @@ exports[`should render a default date time picker 1`] = `
   required={false}
   showSeconds={false}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
 />
 `;
@@ -505,6 +516,7 @@ exports[`should render a default date time picker with custom date input attribu
   required={false}
   showSeconds={false}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
 />
 `;
@@ -553,6 +565,7 @@ exports[`should render a default date time picker with custom time input attribu
     }
   }
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
 />
 `;
@@ -596,6 +609,7 @@ exports[`should render a disabled date time picker 1`] = `
   required={false}
   showSeconds={false}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
 />
 `;
@@ -639,6 +653,7 @@ exports[`should render with a default timeVariant if variant is not specified 1`
   required={false}
   showSeconds={false}
   timeVariant="24-hour"
+  timeZone="America/Chicago"
   utcOffset={0}
   value="2017-04-01T10:30"
 />

@@ -56,7 +56,8 @@ const propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * Time Zone the date time picker is rendered in.
+   * Timezone value to indicate in which timezone the date-time component is rendered.
+   * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
    */
   timeZone: PropTypes.string,
 };
