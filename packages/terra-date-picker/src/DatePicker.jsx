@@ -55,6 +55,11 @@ const propTypes = {
   */
   isInvalid: PropTypes.bool,
   /**
+  * String that labels the current element. 'aria-label' must be present,
+  * for accessibility.
+  */
+  ariaLabel: PropTypes.string,
+  /**
    * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`
    */
   maxDate: PropTypes.string,
@@ -390,6 +395,7 @@ class DatePicker extends React.Component {
       selectedDate,
       value,
       isInline,
+      ariaLabel,
       ...customProps
     } = this.props;
 
@@ -456,6 +462,7 @@ class DatePicker extends React.Component {
                 shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
                 onButtonFocus={this.handleFocus}
                 buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
+                ariaLabel={ariaLabel}
               />
             )}
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}

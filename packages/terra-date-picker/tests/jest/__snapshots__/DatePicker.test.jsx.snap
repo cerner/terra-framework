@@ -295,7 +295,7 @@ exports[`correctly applies the theme context className 1`] = `
                         value="2017-01-01"
                       />
                       <Input
-                        aria-label="Terra.datePicker.date"
+                        ariaLabel="Terra.datePicker.date, Sunday, January 1, 2017"
                         className="input"
                         disabled={false}
                         isIncomplete={false}
@@ -310,7 +310,7 @@ exports[`correctly applies the theme context className 1`] = `
                         value="01/01/2017"
                       >
                         <input
-                          aria-label="Terra.datePicker.date"
+                          aria-label="Terra.datePicker.date, Sunday, January 1, 2017"
                           className="form-input input"
                           disabled={false}
                           name="terra-date-date-input"
