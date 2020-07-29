@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Changed
+
+* Updated Changelog format
+
 ## 1.30.0 - (July 14, 2020)
 
 Fixed

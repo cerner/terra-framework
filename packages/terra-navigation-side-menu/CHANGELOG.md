@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Changed
+
+* Updated Changelog format
+
 ## 2.32.0 - (July 14, 2020)
 
 Changed

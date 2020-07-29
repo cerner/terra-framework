@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Changed
+
+* Updated Changelog format
+
 ## 1.39.0 - (July 28, 2020)
 
 Changed

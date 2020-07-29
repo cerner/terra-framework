@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Changed
+
+* Updated Changelog format
+
 ## 4.42.0 - (July 28, 2020)
 
 Changed
