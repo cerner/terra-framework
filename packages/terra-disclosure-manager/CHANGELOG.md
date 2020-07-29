@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Added
+
+* Added typeConfig property to `disclose` API to support custom properties.
+
 Changed
 
 * Updated Changelog format
