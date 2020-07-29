@@ -4,6 +4,12 @@ Changelog
 Unreleased
 ----------
 
+4.42.0 - (July 28, 2020)
+------------------
+### Changed
+* Updated date to be announced correctly by assistive technology.
+* Updated color for previous and next month button in calendar.
+
 4.41.0 - (July 14, 2020)
 ------------------
 ### Changed
