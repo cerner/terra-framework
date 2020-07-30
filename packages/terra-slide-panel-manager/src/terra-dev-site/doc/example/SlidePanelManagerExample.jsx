@@ -209,6 +209,7 @@ class ContentComponent extends React.Component {
         onClick={() => {
           disclosureManager.disclose({
             preferredType: 'panel',
+            typeConfig: { panelBehavior: 'overlay' },
             dimensions: { height: this.state.disclosureHeight, width: this.state.disclosureWidth },
             content: {
               key: 'Content-Disclosure-Dimensions',
@@ -275,9 +276,7 @@ ContentComponent.contextType = DisclosureManagerContext;
 
 const SlidePanelManagerExample = () => (
   <div className={cx('example-wrapper')}>
-    <SlidePanelManager
-      panelBehavior="overlay"
-    >
+    <SlidePanelManager>
       <ContentComponent />
     </SlidePanelManager>
   </div>

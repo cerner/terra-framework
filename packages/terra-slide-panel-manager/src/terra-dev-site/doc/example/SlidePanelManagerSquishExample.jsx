@@ -186,6 +186,7 @@ class ContentComponent extends React.Component {
           disclosureManager.disclose({
             preferredType: 'panel',
             size,
+            typeConfig: { panelBehavior: 'squish' },
             content: {
               key: `Content-Disclosure-${size}`,
               component: <DisclosureComponent name="Disclosure Component" disclosureType="panel" />,
@@ -275,9 +276,7 @@ ContentComponent.contextType = DisclosureManagerContext;
 
 const SlidePanelManagerExample = () => (
   <div className={cx('example-wrapper')}>
-    <SlidePanelManager
-      panelBehavior="squish"
-    >
+    <SlidePanelManager>
       <ContentComponent />
     </SlidePanelManager>
   </div>
