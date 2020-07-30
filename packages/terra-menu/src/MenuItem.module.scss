@@ -9,7 +9,7 @@
 
     &:not(.is-disabled) {
       cursor: pointer;
-
+      
       /* stylelint-disable max-nesting-depth */
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
         &:hover {
@@ -24,6 +24,7 @@
           color: var(--terra-menu-item-chevron-hover-icon-color);
         }
       }
+      /* stylelint-enable max-nesting-depth */
 
       &:focus {
         background-color: var(--terra-menu-item-focus-background-color, #ebf6fd);

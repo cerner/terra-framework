@@ -73,8 +73,9 @@
       &::after {
         background-image: var(--terra-date-input-month-after-error-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>'));
       }
-      /* stylelint-disable max-nesting-depth */
+
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+        /* stylelint-disable-next-line max-nesting-depth */
         &:hover {
           background-color: var(--terra-date-input-month-error-hover-background-color, #fff);
         }
@@ -99,6 +100,7 @@
       background-color: var(--terra-date-input-month-incomplete-background-color, #ffc);
 
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+        /* stylelint-disable-next-line max-nesting-depth */
         &:hover {
           background-color: var(--terra-date-input-month-incomplete-hover-background-color, #ffc);
         }
@@ -170,6 +172,7 @@
       color: var(--terra-date-input-month-select-disabled-color, #1c1f21);
 
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+        /* stylelint-disable-next-line max-nesting-depth */
         &:hover {
           color: var(--terra-date-input-month-select-disabled-hover-color, #1c1f21);
           cursor: default;
@@ -185,7 +188,8 @@
       border: var(--terra-date-input-month-select-error-border, 1px solid #e50000);
       box-shadow: var(--terra-date-input-month-select-error-box-shadow, 0 0 0 1px #e50000);
 
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {  
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+        /* stylelint-disable-next-line max-nesting-depth */  
         &:hover {
           border: var(--terra-date-input-month-select-error-hover-border, 1px solid #e50000);
         }

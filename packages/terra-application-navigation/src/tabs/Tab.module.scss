@@ -89,9 +89,9 @@
       word-wrap: normal;
     }
 
-    /* stylelint-disable max-nesting-depth */
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
       &:hover {
+        /* stylelint-disable-next-line max-nesting-depth */
         .tab-inner {
           background-color: var(--terra-application-navigation-tab-hover-background-color, rgba(3, 43, 70, 0.2));
           color: var(--terra-application-navigation-tab-hover-color, #fff);

@@ -30,11 +30,11 @@
       margin-right: var(--terra-application-utility-header-body-item-margin-right, 0.6429rem);
     }
 
-    /* stylelint-disable max-nesting-depth */
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
       &:hover {
         background-color: var(--terra-application-utility-header-body-item-hover-background-color, #ebf6fd);
-
+        
+        /* stylelint-disable-next-line max-nesting-depth */
         .checkmark {
           color: var(--terra-application-utility-header-body-item-checkmark-hover-color);
         }
@@ -127,7 +127,8 @@
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
       &:hover {
         background-color: var(--terra-application-utility-menu-body-item-hover-background-color, #ebf6fd);
-
+        
+        /* stylelint-disable-next-line max-nesting-depth */
         .checkmark {
           color: var(--terra-application-utility-menu-body-item-checkmark-hover-color);
         }

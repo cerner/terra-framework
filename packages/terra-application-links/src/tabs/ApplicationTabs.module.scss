@@ -172,10 +172,11 @@
       word-break: normal;
       word-wrap: normal;
     }
-    /* stylelint-disable max-nesting-depth */
+    
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
       &:hover,
       &.is-hovered {
+        /* stylelint-disable-next-line max-nesting-depth */
         .tab-inner {
           background-color: var(--terra-application-links-tabs-tab-hover-background-color, rgba(0, 0, 0, 0.15));
         }

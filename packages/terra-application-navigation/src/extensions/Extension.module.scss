@@ -10,9 +10,9 @@
     outline: none;
     position: relative;
     
-    /* stylelint-disable max-nesting-depth */
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
       &:hover {
+        /* stylelint-disable-next-line max-nesting-depth */
         .extension-inner {
           color: var(--terra-application-navigation-extension-hover-color, #fff);
         }
