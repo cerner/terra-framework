@@ -116,6 +116,7 @@ class DisclosureManager extends React.Component {
       disclosureComponentKeys: [],
       disclosureComponentData: {},
       disclosureComponentDelegates: [],
+      disclosureTypeConfig: {},
     };
   }
 
@@ -286,6 +287,7 @@ class DisclosureManager extends React.Component {
       disclosureSize: size,
       disclosureDimensions: dimensions,
       disclosureComponentKeys: [data.content.key],
+      disclosureTypeConfig: data.typeConfig,
       disclosureComponentData: {
         [data.content.key]: {
           key: data.content.key,
@@ -346,6 +348,7 @@ class DisclosureManager extends React.Component {
       disclosureComponentKeys: [],
       disclosureComponentData: {},
       disclosureComponentDelegates: [],
+      disclosureTypeConfig: {},
     }, callbackfunction);
   }
 
@@ -503,6 +506,7 @@ class DisclosureManager extends React.Component {
       disclosureSize,
       disclosureDimensions,
       disclosureComponentKeys,
+      disclosureTypeConfig,
     } = this.state;
 
     if (!render) {
@@ -529,6 +533,7 @@ class DisclosureManager extends React.Component {
         size: disclosureSize,
         dimensions: disclosureDimensions,
         components: disclosureComponentKeys.map(key => disclosureComponentMappingForRender[key].component),
+        typeConfig: disclosureTypeConfig,
       },
       /**
        * The below values were added to give DisclosureManager implementations more control over the rendering of the disclosed components.
