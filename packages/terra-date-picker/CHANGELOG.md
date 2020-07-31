@@ -5,6 +5,10 @@
 * Changed
   * Updated Changelog format
 
+Changed
+
+* Update jest due to change in theme
+
 ## 4.42.0 - (July 28, 2020)
 
 * Changed
