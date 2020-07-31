@@ -4,10 +4,7 @@
 
 * Changed
   * Updated Changelog format
-
-Changed
-
-* Update jest due to change in theme
+  * Update jest due to change in theme
 
 ## 1.30.0 - (July 14, 2020)
 
