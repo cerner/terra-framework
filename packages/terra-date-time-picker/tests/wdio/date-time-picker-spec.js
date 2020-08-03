@@ -71,7 +71,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
       browser.refresh();
-      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
       browser.setValue('input[name="terra-date-input"]', '03/11/2018');
       browser.setValue('input[name="terra-time-hour-input"]', '02');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
@@ -85,7 +84,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
       browser.refresh();
-      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
       browser.setValue('input[name="terra-date-input"]', '03/11/2018');
       browser.setValue('input[name="terra-time-hour-input"]', '02');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
@@ -341,8 +339,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Valid date entry moves focus to hour input', () => {
     before(() => {
       browser.refresh();
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
       browser.setValue('input[name="terra-date-input"]', '04/15/2019');
     });
 
@@ -352,8 +348,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('OnChange', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-change');
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
     });
 
     it('is triggered', () => {
@@ -392,9 +386,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Sync Date Time', () => {
     before(() => {
       browser.refresh();
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
-      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
     });
 
     it('Entering valid date with empty time does not trigger onChange', () => {
@@ -428,8 +419,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('OnChange Raw', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-change-raw');
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
     });
 
     it('is triggered', () => {
@@ -537,8 +526,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-excluded');
       browser.refresh();
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
       browser.click('input[name="terra-time-hour-input"]');
     });
 
@@ -549,8 +536,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-excluded');
       browser.refresh();
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
       browser.click('input[name="terra-time-minute-input"]');
     });
 
@@ -571,8 +556,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-out-of-range');
       browser.refresh();
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
       browser.click('input[name="terra-time-hour-input"]');
     });
 
@@ -583,8 +566,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-out-of-range');
       browser.refresh();
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
       browser.click('input[name="terra-time-minute-input"]');
     });
 
