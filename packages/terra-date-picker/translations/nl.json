@@ -4,10 +4,12 @@
   "Terra.datePicker.openCalendar": "Agenda openen",
   "Terra.datePicker.closeCalendar": "Sluiten",
   "Terra.datePicker.today": "Vandaag",
+  "Terra.datePicker.dayLabel": "Dag",
   "Terra.datePicker.monthLabel": "Maand",
   "Terra.datePicker.yearLabel": "Jaar",
   "Terra.datePicker.date": "Datum",
   "Terra.datePicker.nextMonth": "Volgende maand",
   "Terra.datePicker.previousMonth": "Vorige maand",
-  "Terra.datePicker.calendarInstructions": "Gebruik de pijltoetsen om de selectie te wijzigen. Druk op Enter om een datum te selecteren. Druk op Esc om de datumkiezer te sluiten."
+  "Terra.datePicker.calendarInstructions": "Gebruik de pijltoetsen om de selectie te wijzigen. Druk op Enter om een datum te selecteren. Druk op Esc om de datumkiezer te sluiten.",
+  "Terra.datePicker.dateFormatOrder": "DMY"
 }

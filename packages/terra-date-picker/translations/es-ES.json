@@ -4,10 +4,12 @@
   "Terra.datePicker.openCalendar": "Abrir calendario",
   "Terra.datePicker.closeCalendar": "Cerrar",
   "Terra.datePicker.today": "Hoy",
+  "Terra.datePicker.dayLabel": "Día",
   "Terra.datePicker.monthLabel": "Mes",
   "Terra.datePicker.yearLabel": "Año",
   "Terra.datePicker.date": "Fecha",
   "Terra.datePicker.nextMonth": "Mes siguiente",
   "Terra.datePicker.previousMonth": "Mes anterior",
-  "Terra.datePicker.calendarInstructions": "Para cambiar la selección, use las teclas de flecha. Presione Entrar para seleccionar una fecha. Presione Esc para cerrar el selector de fecha."
+  "Terra.datePicker.calendarInstructions": "Para cambiar la selección, use las teclas de flecha. Presione Entrar para seleccionar una fecha. Presione Esc para cerrar el selector de fecha.",
+  "Terra.datePicker.dateFormatOrder": "DMY"
 }
