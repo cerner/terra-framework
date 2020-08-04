@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.38.0 - (August 4, 2020)
+
 * Changed
   * Updated Changelog format
 
