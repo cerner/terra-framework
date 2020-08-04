@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.40.0 - (August 4, 2020)
+
 * Changed
   * Updated Changelog format
 
