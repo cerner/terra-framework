@@ -3,6 +3,15 @@
 ## Unreleased
 
 * Changed
+  * Fixed issue to clear out selected date when an invalid date is entered after selecting a valid date.
+
+* Changed
+  * Updated Changelog format
+
+* Changed
+  * Update jest due to change in theme
+
+* Changed
   * Updated Changelog format
   * Update jest due to change in theme
 
