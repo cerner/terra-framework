@@ -1,4 +1,5 @@
 /* eslint-disable no-underscore-dangle */
+import React from 'react';
 import moment from 'moment';
 
 class DateUtil {
@@ -143,6 +144,96 @@ class DateUtil {
   }
 
   /**
+   * Returns the date separator based on the locale date format
+   * @param {string} dateOrder - String containing the date input order. Possible values (MDY, DMY, YMD)
+   * @param {string} value - The date/placeholder string.
+   */
+  static getDateSeparator(dateOrder, value) {
+    let dateSeparator;
+
+    if (dateOrder === 'DMY' || dateOrder === 'MDY') {
+      dateSeparator = value.charAt(2);
+    } else {
+      dateSeparator = value.charAt(4);
+    }
+
+    return dateSeparator;
+  }
+
+  /**
+   * Returns an object consisting of date input values based on the date format.
+   * @param {string} dateOrder - String containing the date input order. Possible values (MDY, DMY, YMD)
+   * @param {string} value - The date/placeholder string.
+   */
+  static getDateInputValues(dateOrder, value) {
+    let day;
+    let month;
+    let year;
+    const dateInputParts = value.split(DateUtil.getDateSeparator(dateOrder, value));
+
+    switch (dateOrder) {
+      case 'DMY':
+        [day, month, year] = dateInputParts;
+        break;
+      case 'MDY':
+        [month, day, year] = dateInputParts;
+        break;
+      case 'YMD':
+        [year, month, day] = dateInputParts;
+        break;
+      default:
+        [year, day, month] = dateInputParts;
+    }
+
+    return { day, month, year };
+  }
+
+  /**
+   * Returns component layout based on locale format.
+   * @param {string} dateOrder - The date input order based on the locale date format.
+   * @param {object} spacer - The spacer component with the locale appropriate separator.
+   * @param {object} day - The date day component.
+   * @param {object} month - The date month component.
+   * @param {object} year - The date year component.
+   */
+  static getInputLayout(dateOrder, spacer, day, month, year) {
+    let formatOrder;
+    if (dateOrder === 'DMY') {
+      formatOrder = (
+        <>
+          {day}
+          {spacer}
+          {month}
+          {spacer}
+          {year}
+        </>
+      );
+    } else if (dateOrder === 'MDY') {
+      formatOrder = (
+        <>
+          {month}
+          {spacer}
+          {day}
+          {spacer}
+          {year}
+        </>
+      );
+    } else {
+      formatOrder = (
+        <>
+          {year}
+          {spacer}
+          {month}
+          {spacer}
+          {day}
+        </>
+      );
+    }
+
+    return formatOrder;
+  }
+
+  /**
    * Determines if the date is valid and conforms to the given format.
    * @param {string} date - The date to validate.
    * @param {string} format - The date format to use for the validation.
@@ -180,13 +271,12 @@ class DateUtil {
 
   /**
    * Determines if a provided date input value is valid.
-   * Valid inputs are either empty strings or contain only numeric, `/`, and '.' characters.
+   * Valid inputs are either empty strings or contain only numeric characters.
    * @param {String} value Value to validate
    * @return True if the value is valid, false otherwise.
    */
   static validDateInput(value) {
-    /* eslint-disable-next-line no-useless-escape */
-    return value.length === 0 || /^[\d\/.-]+$/.test(value);
+    return value.length === 0 || /^\d+$/.test(value);
   }
 
   /**
@@ -248,6 +338,11 @@ class DateUtil {
   }
 }
 
+DateUtil.inputType = {
+  DAY: 0,
+  MONTH: 1,
+  YEAR: 2,
+};
 DateUtil.ISO_EXTENDED_DATE_FORMAT = 'YYYY-MM-DD';
 DateUtil.MIN_DATE = '1900-01-01';
 DateUtil.MAX_DATE = '2100-12-31';
