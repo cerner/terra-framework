@@ -23,10 +23,17 @@ class DatePickerInvalidExample extends React.Component {
     super(props);
     this.state = { date: this.props.selectedDate };
     this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleDateChangeRaw = this.handleDateChangeRaw.bind(this);
   }
 
   handleDateChange(event, date) {
     this.setState({ date });
+  }
+
+  handleDateChangeRaw(event, date, metadata) {
+    if (!metadata.isValidValue) {
+      this.setState({ date: null });
+    }
   }
 
   render() {
@@ -41,6 +48,7 @@ class DatePickerInvalidExample extends React.Component {
             name="date-input"
             id="default-invalid"
             onChange={this.handleDateChange}
+            onChangeRaw={this.handleDateChangeRaw}
             isInvalid
             {...this.props}
           />

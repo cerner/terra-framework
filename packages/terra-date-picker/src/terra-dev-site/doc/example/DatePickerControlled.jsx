@@ -31,8 +31,10 @@ class DatePickerExample extends React.Component {
     this.setState({ date });
   }
 
-  handleDateChangeRaw(event, date) {
-    this.setState({ date });
+  handleDateChangeRaw(event, date, metadata) {
+    if (!metadata.isValidValue) {
+      this.setState({ date: null });
+    }
   }
 
   render() {

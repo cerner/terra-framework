@@ -305,6 +305,11 @@ class DatePicker extends React.Component {
 
   handleChangeRaw(event) {
     this.dateValue = event.target.value;
+    if (!this.getMetadata().isValidValue) {
+      this.setState({
+        selectedDate: null,
+      });
+    }
 
     if (this.props.onChangeRaw) {
       const metadata = this.getMetadata();
