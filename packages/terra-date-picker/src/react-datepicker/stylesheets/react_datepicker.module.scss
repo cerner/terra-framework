@@ -467,26 +467,26 @@
   }
 
   .prev-month-icon {
-    background-image: var(--terra-date-picker-prev-month-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgb(204, 204, 204)' d='M36 48L12 24 36 0v48z'></path></svg>"));
+    background-image: var(--terra-date-picker-prev-month-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgba(28, 31, 33, 0.85)' d='M36 48L12 24 36 0v48z'></path></svg>"));
 
     button:focus & {
-      background-image: var(--terra-date-picker-prev-month-focus-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgb(179, 179, 179)' d='M36 48L12 24 36 0v48z'></path></svg>"));
+      background-image: var(--terra-date-picker-prev-month-focus-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgba(28, 31, 33, 0.85)' d='M36 48L12 24 36 0v48z'></path></svg>"));
     }
 
     button:hover & {
-      background-image: var(--terra-date-picker-prev-month-hover-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgb(179, 179, 179)' d='M36 48L12 24 36 0v48z'></path></svg>"));
+      background-image: var(--terra-date-picker-prev-month-hover-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='#1c1f21' d='M36 48L12 24 36 0v48z'></path></svg>"));
     }
   }
 
   .next-month-icon {
-    background-image: var(--terra-date-picker-next-month-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgb(204, 204, 204)' d='M12 0l24 24-24 24V0z'></path></svg>"));
+    background-image: var(--terra-date-picker-next-month-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgba(28, 31, 33, 0.85)' d='M12 0l24 24-24 24V0z'></path></svg>"));
 
     button:focus & {
-      background-image: var(--terra-date-picker-next-month-focus-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgb(179, 179, 179)' d='M12 0l24 24-24 24V0z'></path></svg>"));
+      background-image: var(--terra-date-picker-next-month-focus-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgba(28, 31, 33, 0.85)' d='M12 0l24 24-24 24V0z'></path></svg>"));
     }
 
     button:hover & {
-      background-image: var(--terra-date-picker-next-month-hover-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgb(179, 179, 179)' d='M12 0l24 24-24 24V0z'></path></svg>"));
+      background-image: var(--terra-date-picker-next-month-hover-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='#1c1f21' d='M12 0l24 24-24 24V0z'></path></svg>"));
     }
   }
 
