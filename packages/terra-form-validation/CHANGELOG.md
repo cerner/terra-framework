@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-form-checkbox` from v^2.3.0 to v^3.7.0
+  * Updated `terra-form-field` from v^3.1.0 to v^4.5.0
+  * Updated `terra-form-input` from v^2.3.0 to v^3.7.0
+  * Updated `terra-form-radio` from v^3.0.0 to v^4.12.0
+  * Updated `terra-form-textarea` from v^3.0.0 to v^5.1.0
+
 ## 1.40.0 - (August 4, 2020)
 
 * Changed
