@@ -87,6 +87,21 @@ export default class Month extends React.Component {
      */
     onWeekSelect: PropTypes.func,
     /**
+     * A callback function to execute when month component receives focus.
+     * requires no parameter.
+     */
+    onMonthFocus: PropTypes.func,
+    /**
+     * A callback function to execute when month component loses focus.
+     * requires no parameter.
+     */
+    onMonthBlur: PropTypes.func,
+    /**
+     * A callback function to execute on mouse down on day.
+     * requires no parameter.
+     */
+    onDayMouseDown: PropTypes.func,
+    /**
      * A prop to check next month dates.
      */
     peekNextMonth: PropTypes.bool,
@@ -144,6 +159,12 @@ export default class Month extends React.Component {
     }
   }
 
+  handleDayMouseDown = () => {
+    if (this.props.onDayMouseDown) {
+      this.props.onDayMouseDown();
+    }
+  }
+
   handleMouseLeave = () => {
     if (this.props.onMouseLeave) {
       this.props.onMouseLeave()
@@ -153,6 +174,12 @@ export default class Month extends React.Component {
   handleMonthBlur = () => {
     if (this.props.onMonthBlur) {
       this.props.onMonthBlur()
+    }
+  }
+
+  handleMonthFocus = () => {
+    if (this.props.onMonthFocus) {
+      this.props.onMonthFocus()
     }
   }
 
@@ -177,6 +204,7 @@ export default class Month extends React.Component {
         month={utils.getMonth(this.props.day)}
         onDayClick={this.handleDayClick}
         onDayMouseEnter={this.handleDayMouseEnter}
+        onDayMouseDown={this.handleDayMouseDown}
         onWeekSelect={this.props.onWeekSelect}
         formatWeekNumber={this.props.formatWeekNumber}
         minDate={this.props.minDate}
@@ -234,6 +262,7 @@ export default class Month extends React.Component {
             onMouseLeave={this.handleMouseLeave}
             role="application"
             onBlur={this.handleMonthBlur}
+            onFocus={this.handleMonthFocus}
             aria-label={`${utils.getLocalizedDateForScreenReader(this.props.preSelection, { intl: this.props.intl, locale: this.props.locale })}. ${text}`}
             onKeyDown={this.props.handleCalendarKeyDown}
             ref={this.props.refCallback}
