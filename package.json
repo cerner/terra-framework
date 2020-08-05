@@ -50,12 +50,6 @@
     ],
     "rules": {
       "react/forbid-prop-types": "off"
-    },
-    "settings": {
-      "polyfills": [
-        "Promise",
-        "Map"
-      ]
     }
   },
   "stylelint": {
