@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * DateInput split into 3 distinct inputs that mask the previous single input.
+
 ## 4.43.0 - (August 4, 2020)
 
 * Changed
