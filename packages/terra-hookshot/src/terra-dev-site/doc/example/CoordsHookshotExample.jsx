@@ -55,7 +55,7 @@ class HookshotStandard extends React.Component {
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.setParentNode = this.setParentNode.bind(this);
     this.getParentNode = this.getParentNode.bind(this);
-    this.handleAttachementBehaviorChange = this.handleAttachementBehaviorChange.bind(this);
+    this.handleAttachmentBehaviorChange = this.handleAttachmentBehaviorChange.bind(this);
     this.handleContentAttachmentChange = this.handleContentAttachmentChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.state = {
@@ -84,7 +84,7 @@ class HookshotStandard extends React.Component {
     this.setState({ isOpen: false });
   }
 
-  handleAttachementBehaviorChange(event) {
+  handleAttachmentBehaviorChange(event) {
     this.setState({ hookshotAttachmentBehavior: event.target.value });
   }
 
@@ -93,7 +93,9 @@ class HookshotStandard extends React.Component {
   }
 
   handleInputChange(event) {
-    this.setState({ [event.target.name]: Number.parseFloat(event.target.value) });
+    if (event.target.value !== '') {
+      this.setState({ [event.target.name]: Number.parseFloat(event.target.value) });
+    }
   }
 
   render() {
@@ -117,7 +119,7 @@ class HookshotStandard extends React.Component {
           id={getId('hookshotAttachmentBehavior')}
           name="hookshotAttachmentBehavior"
           value={this.state.hookshotAttachmentBehavior}
-          onChange={this.handleAttachementBehaviorChange}
+          onChange={this.handleAttachmentBehaviorChange}
           className={cx('select-wrapper')}
         >
           {generateOptions(Hookshot.attachmentBehaviors)}

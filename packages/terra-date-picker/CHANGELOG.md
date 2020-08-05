@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.43.0 - (August 4, 2020)
+
 * Changed
   * Fixed issue to clear out selected date when an invalid date is entered after selecting a valid date.
 

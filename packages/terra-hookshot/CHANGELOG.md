@@ -3,6 +3,11 @@
 ## Unreleased
 
 * Changed
+  * Updated `terra-form-input` from ^v2.3.0 to ^v3.7.0
+  
+## 5.29.0 - (August 4, 2020)
+
+* Changed
   * Updated Changelog format
 
 ## 5.28.0 - (July 14, 2020)
