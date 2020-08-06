@@ -50,6 +50,10 @@ const propTypes = {
    */
   onBlur: PropTypes.func,
   /**
+   * A callback function triggered when the calendar button receives focus.
+   */
+  onButtonFocus: PropTypes.func,
+  /**
    * A callback function to execute when a valid date is selected or entered.
    */
   onChange: PropTypes.func,
@@ -61,10 +65,6 @@ const propTypes = {
    * A callback function triggered when the date input receives focus.
    */
   onFocus: PropTypes.func,
-  /**
-   * A callback function triggered when the calendar button receives focus.
-   */
-  onButtonFocus: PropTypes.func,
   /**
    * The onInputKeyDown callback function from react-datepicker to handle keyboard navigation.
    */
@@ -94,10 +94,10 @@ const defaultProps = {
   isInvalid: false,
   name: undefined,
   onBlur: undefined,
+  onButtonFocus: undefined,
   onChange: undefined,
   onClick: undefined,
   onFocus: undefined,
-  onButtonFocus: undefined,
   onKeyDown: undefined,
   required: false,
   placeholder: undefined,
@@ -141,10 +141,10 @@ const DatePickerInput = (props) => {
     isInvalid,
     name,
     onBlur,
+    onButtonFocus,
     onChange,
     onClick,
     onFocus,
-    onButtonFocus,
     onKeyDown,
     placeholder,
     required,
@@ -160,7 +160,8 @@ const DatePickerInput = (props) => {
   const dateValue = DateUtil.convertToISO8601(value, momentDateFormat);
   const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
   const dateFormatOrder = intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' });
-  const placeholderValues = DateUtil.getDateInputValues(dateFormatOrder, placeholder);
+  const dateSeparator = intl.formatMessage({ id: 'Terra.datePicker.separator' });
+  const placeholderValues = DateUtil.getDateInputValues(dateFormatOrder, placeholder, dateSeparator);
   const theme = React.useContext(ThemeContext);
 
   useEffect(() => {
@@ -172,7 +173,7 @@ const DatePickerInput = (props) => {
   // Sets the date state based on the passed in value prop, or if it changes via a calendar click.
   useEffect(() => {
     if (DateUtil.isValidDate(value, momentDateFormat)) {
-      const parseDate = DateUtil.getDateInputValues('YMD', dateValue);
+      const parseDate = DateUtil.getDateInputValues('YMD', dateValue, '-');
       const formattedDate = DateUtil.strictFormatISODate(dateValue, momentDateFormat);
       onChange({ target: { value: formattedDate }, isDefaultPrevented: () => { }, type: 'change' });
       dateDispatch(parseDate);
@@ -548,7 +549,7 @@ const DatePickerInput = (props) => {
     />
   );
 
-  const dateSpacer = <span className={cx('date-spacer')}>{DateUtil.getDateSeparator(dateFormatOrder, placeholder)}</span>;
+  const dateSpacer = <span className={cx('date-spacer')}>{dateSeparator}</span>;
 
   const dateInputFormat = DateUtil.getInputLayout(
     dateFormatOrder,
