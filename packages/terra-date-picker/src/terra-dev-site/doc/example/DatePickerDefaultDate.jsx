@@ -24,10 +24,17 @@ class DatePickerExample extends React.Component {
     super(props);
     this.state = { date: this.props.selectedDate };
     this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleDateChangeRaw = this.handleDateChangeRaw.bind(this);
   }
 
   handleDateChange(event, date) {
     this.setState({ date });
+  }
+
+  handleDateChangeRaw(event, date, metadata) {
+    if (!metadata.isValidValue) {
+      this.setState({ date: null });
+    }
   }
 
   render() {
@@ -42,6 +49,7 @@ class DatePickerExample extends React.Component {
             name="date-input"
             id="defaultedDate"
             onChange={this.handleDateChange}
+            onChangeRaw={this.handleDateChangeRaw}
             {...this.props}
           />
         </Field>

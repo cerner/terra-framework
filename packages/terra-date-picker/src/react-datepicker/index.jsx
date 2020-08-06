@@ -354,6 +354,9 @@ class DatePicker extends React.Component {
     this.handleCalendarKeyDown = this.handleCalendarKeyDown.bind(this);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.updateAriaLiveStatus = this.updateAriaLiveStatus.bind(this);
+    this.handleOnDayMouseDown = this.handleOnDayMouseDown.bind(this);
+    this.boundedPreSelection = this.boundedPreSelection.bind(this);
+    this.handleMonthBlur = this.handleMonthBlur.bind(this);
   }
 
   componentDidMount() {
@@ -396,6 +399,29 @@ class DatePicker extends React.Component {
     }
   }
 
+  handleOnDayMouseDown() {
+    if (this.props.inline) {
+      // prevents focus border on pre-selected day on mouseDown when calendar is inline.
+      this.setState({ preSelection : null })
+    }
+  }
+
+  boundedPreSelection() {
+    const defaultPreSelection = this.getPreSelection()
+    const minDate = getEffectiveMinDate(this.props)
+    const maxDate = getEffectiveMaxDate(this.props)
+    return minDate && isBefore(defaultPreSelection, minDate) ? minDate
+    : maxDate && isAfter(defaultPreSelection, maxDate) ? maxDate
+      : defaultPreSelection;
+  }
+
+  handleMonthBlur() {
+    if (this.props.inline) {
+      // resets previous selected day to selected or current day from previous focused day ( non-selected ) when calendar is inline.
+      this.setState({ preSelection : this.props.selected ? newDate(this.props.selected) : this.boundedPreSelection() })
+    }
+  }
+
   handleOnRequestClose() {
     this.setState({ isCalendarKeyboardFocused: false, isCalendarOpenedViaKeyboard: false });
     this.setOpen(false);
@@ -409,19 +435,12 @@ class DatePicker extends React.Component {
   )
 
   calcInitialState = () => {
-    const defaultPreSelection = this.getPreSelection()
-    const minDate = getEffectiveMinDate(this.props)
-    const maxDate = getEffectiveMaxDate(this.props)
-    const boundedPreSelection =
-      minDate && isBefore(defaultPreSelection, minDate) ? minDate
-        : maxDate && isAfter(defaultPreSelection, maxDate) ? maxDate
-          : defaultPreSelection
     return {
       isCalendarOpenedViaKeyboard: false,
       isCalendarKeyboardFocused: false,
       open: this.props.startOpen || false,
       preventFocus: false,
-      preSelection: this.props.selected ? newDate(this.props.selected) : boundedPreSelection,
+      preSelection: this.props.selected ? newDate(this.props.selected) : this.boundedPreSelection(),
       // transforming highlighted days (perhaps nested array)
       // to flat Map for faster access in day.jsx
       highlightDates: getHightLightDaysMap(this.props.highlightDates)
@@ -729,6 +748,8 @@ class DatePicker extends React.Component {
         preSelection={this.state.preSelection}
         onSelect={this.handleSelect}
         onWeekSelect={this.props.onWeekSelect}
+        onDayMouseDown={this.handleOnDayMouseDown}
+        onMonthBlur={this.handleMonthBlur}
         openToDate={this.props.openToDate}
         minDate={this.props.minDate}
         maxDate={this.props.maxDate}

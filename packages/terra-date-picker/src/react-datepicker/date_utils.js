@@ -294,11 +294,11 @@ export function getMonthInLocale (locale, date, format) {
 // ** Utils for some components **
 
 export function isDayDisabled (day, { minDate, maxDate, excludeDates, includeDates, filterDate } = {}) {
-  return (minDate && day.isBefore(minDate, 'day')) ||
-    (maxDate && day.isAfter(maxDate, 'day')) ||
-    (excludeDates && excludeDates.some(excludeDate => isSameDay(day, excludeDate))) ||
-    (includeDates && !includeDates.some(includeDate => isSameDay(day, includeDate))) ||
-    (filterDate && !filterDate(day.clone())) ||
+  return (minDate && day && day.isBefore(minDate, 'day')) ||
+    (maxDate && day && day.isAfter(maxDate, 'day')) ||
+    (excludeDates && day && excludeDates.some(excludeDate => isSameDay(day, excludeDate))) ||
+    (includeDates && day && !includeDates.some(includeDate => isSameDay(day, includeDate))) ||
+    (filterDate && day && !filterDate(day.clone())) ||
     false
 }
 
@@ -383,7 +383,7 @@ export function getLocalizedDateForScreenReader (date, props) {
 
   if (date && date.isValid()) {
     const localizedDate = localizeDate(date, locale);
-    localizedDateLabel = localizedDate.format('LL');
+    localizedDateLabel = localizedDate.format('dddd, LL');
 
     if (intl && isDayDisabled(date, props)) {
       localizedDateLabel = localizedDateLabel.concat(' ', intl.formatMessage({ id: 'Terra.datePicker.disabled' }));
