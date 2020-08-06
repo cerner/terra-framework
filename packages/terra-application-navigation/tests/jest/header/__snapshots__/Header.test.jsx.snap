@@ -387,17 +387,17 @@ exports[`Header should render with function callbacks 1`] = `
       "calls": Array [
         Array [
           Object {
-            "hasCount": false,
+            "hasCount": true,
             "isActive": false,
-            "notificationCount": 0,
+            "notificationCount": undefined,
             "text": "test-text",
           },
         ],
         Array [
           Object {
-            "hasCount": false,
+            "hasCount": true,
             "isActive": false,
-            "notificationCount": 0,
+            "notificationCount": undefined,
             "text": "test-text",
           },
         ],
@@ -501,17 +501,17 @@ exports[`Header should render with function callbacks 1`] = `
         "calls": Array [
           Array [
             Object {
-              "hasCount": false,
+              "hasCount": true,
               "isActive": false,
-              "notificationCount": 0,
+              "notificationCount": undefined,
               "text": "test-text",
             },
           ],
           Array [
             Object {
-              "hasCount": false,
+              "hasCount": true,
               "isActive": false,
-              "notificationCount": 0,
+              "notificationCount": undefined,
               "text": "test-text",
             },
           ],
@@ -597,17 +597,17 @@ exports[`Header should render with function callbacks 1`] = `
               "calls": Array [
                 Array [
                   Object {
-                    "hasCount": false,
+                    "hasCount": true,
                     "isActive": false,
-                    "notificationCount": 0,
+                    "notificationCount": undefined,
                     "text": "test-text",
                   },
                 ],
                 Array [
                   Object {
-                    "hasCount": false,
+                    "hasCount": true,
                     "isActive": false,
-                    "notificationCount": 0,
+                    "notificationCount": undefined,
                     "text": "test-text",
                   },
                 ],
@@ -673,17 +673,17 @@ exports[`Header should render with function callbacks 1`] = `
                 "calls": Array [
                   Array [
                     Object {
-                      "hasCount": false,
+                      "hasCount": true,
                       "isActive": false,
-                      "notificationCount": 0,
+                      "notificationCount": undefined,
                       "text": "test-text",
                     },
                   ],
                   Array [
                     Object {
-                      "hasCount": false,
+                      "hasCount": true,
                       "isActive": false,
-                      "notificationCount": 0,
+                      "notificationCount": undefined,
                       "text": "test-text",
                     },
                   ],
@@ -711,27 +711,26 @@ exports[`Header should render with function callbacks 1`] = `
               className="tabs-container is-calculating"
             >
               <Tab
-                hasCount={false}
+                hasCount={true}
                 isActive={false}
                 key="my-test-key"
-                notificationCount={0}
                 onTabSelect={[Function]}
                 render={
                   [MockFunction] {
                     "calls": Array [
                       Array [
                         Object {
-                          "hasCount": false,
+                          "hasCount": true,
                           "isActive": false,
-                          "notificationCount": 0,
+                          "notificationCount": undefined,
                           "text": "test-text",
                         },
                       ],
                       Array [
                         Object {
-                          "hasCount": false,
+                          "hasCount": true,
                           "isActive": false,
-                          "notificationCount": 0,
+                          "notificationCount": undefined,
                           "text": "test-text",
                         },
                       ],
