@@ -1,5 +1,6 @@
 {
   "Terra.datePicker.dateFormat": "JJ/MM/AAAA",
+  "Terra.datePicker.separator": "/",
   "Terra.datePicker.disabled": "Désactivé",
   "Terra.datePicker.openCalendar": "Ouvrir le calendrier",
   "Terra.datePicker.closeCalendar": "Fermer",

@@ -144,32 +144,16 @@ class DateUtil {
   }
 
   /**
-   * Returns the date separator based on the locale date format
-   * @param {string} dateOrder - String containing the date input order. Possible values (MDY, DMY, YMD)
-   * @param {string} value - The date/placeholder string.
-   */
-  static getDateSeparator(dateOrder, value) {
-    let dateSeparator;
-
-    if (dateOrder === 'DMY' || dateOrder === 'MDY') {
-      dateSeparator = value.charAt(2);
-    } else {
-      dateSeparator = value.charAt(4);
-    }
-
-    return dateSeparator;
-  }
-
-  /**
    * Returns an object consisting of date input values based on the date format.
    * @param {string} dateOrder - String containing the date input order. Possible values (MDY, DMY, YMD)
    * @param {string} value - The date/placeholder string.
+   * @param {string} separator - The date separator.
    */
-  static getDateInputValues(dateOrder, value) {
+  static getDateInputValues(dateOrder, value, separator) {
     let day;
     let month;
     let year;
-    const dateInputParts = value.split(DateUtil.getDateSeparator(dateOrder, value));
+    const dateInputParts = value.split(separator);
 
     switch (dateOrder) {
       case 'DMY':

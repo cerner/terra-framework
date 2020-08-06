@@ -1,5 +1,6 @@
 {
   "Terra.datePicker.dateFormat": "DD.MM.YYYY",
+  "Terra.datePicker.separator": ".",
   "Terra.datePicker.disabled": "Liikuntarajoitteinen",
   "Terra.datePicker.openCalendar": "Avaa Kalenteri",
   "Terra.datePicker.closeCalendar": "Kiinni",
