@@ -395,9 +395,9 @@ exports[`Header should render with function callbacks 1`] = `
         ],
         Array [
           Object {
-            "hasCount": false,
+            "hasCount": true,
             "isActive": false,
-            "notificationCount": 0,
+            "notificationCount": undefined,
             "text": "test-text",
           },
         ],
@@ -509,9 +509,9 @@ exports[`Header should render with function callbacks 1`] = `
           ],
           Array [
             Object {
-              "hasCount": false,
+              "hasCount": true,
               "isActive": false,
-              "notificationCount": 0,
+              "notificationCount": undefined,
               "text": "test-text",
             },
           ],
@@ -605,9 +605,9 @@ exports[`Header should render with function callbacks 1`] = `
                 ],
                 Array [
                   Object {
-                    "hasCount": false,
+                    "hasCount": true,
                     "isActive": false,
-                    "notificationCount": 0,
+                    "notificationCount": undefined,
                     "text": "test-text",
                   },
                 ],
@@ -681,9 +681,9 @@ exports[`Header should render with function callbacks 1`] = `
                   ],
                   Array [
                     Object {
-                      "hasCount": false,
+                      "hasCount": true,
                       "isActive": false,
-                      "notificationCount": 0,
+                      "notificationCount": undefined,
                       "text": "test-text",
                     },
                   ],
@@ -728,9 +728,9 @@ exports[`Header should render with function callbacks 1`] = `
                       ],
                       Array [
                         Object {
-                          "hasCount": false,
+                          "hasCount": true,
                           "isActive": false,
-                          "notificationCount": 0,
+                          "notificationCount": undefined,
                           "text": "test-text",
                         },
                       ],

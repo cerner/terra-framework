@@ -146,9 +146,9 @@ exports[`Tabs should render prop data 1`] = `
         ],
         Array [
           Object {
-            "hasCount": false,
+            "hasCount": true,
             "isActive": true,
-            "notificationCount": 0,
+            "notificationCount": undefined,
             "text": "test-text",
           },
         ],
@@ -222,9 +222,9 @@ exports[`Tabs should render prop data 1`] = `
           ],
           Array [
             Object {
-              "hasCount": false,
+              "hasCount": true,
               "isActive": true,
-              "notificationCount": 0,
+              "notificationCount": undefined,
               "text": "test-text",
             },
           ],
@@ -269,9 +269,9 @@ exports[`Tabs should render prop data 1`] = `
               ],
               Array [
                 Object {
-                  "hasCount": false,
+                  "hasCount": true,
                   "isActive": true,
-                  "notificationCount": 0,
+                  "notificationCount": undefined,
                   "text": "test-text",
                 },
               ],
