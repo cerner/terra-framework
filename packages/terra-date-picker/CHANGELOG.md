@@ -5,6 +5,9 @@
 * Changed
   * DateInput split into 3 distinct inputs that mask the previous single input.
 
+* Added
+  * Added Calendar Filter sub-component.
+
 ## 4.43.0 - (August 4, 2020)
 
 * Changed
@@ -816,4 +819,4 @@
 
 ## 1.0.0 - (June 28, 2017)
 
-Initial stable release
+* Initial stable release

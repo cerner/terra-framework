@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a calendar filter with default date 1`] = `
+<DatePicker
+  calendarClassName="calendar-filter"
+  disableButtonFocusOnClose={false}
+  disabled={false}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isIncomplete={false}
+  isInline={true}
+  isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
+  name="terra-calendar-filter"
+  onChange={[Function]}
+  required={false}
+  selectedDate="2020-06-01"
+/>
+`;
+
+exports[`should render a calendar filter with excluded dates 1`] = `
+<DatePicker
+  calendarClassName="calendar-filter"
+  disableButtonFocusOnClose={false}
+  disabled={false}
+  excludeDates={
+    Array [
+      "2020-04-01",
+    ]
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isIncomplete={false}
+  isInline={true}
+  isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
+  name="terra-calendar-filter"
+  onChange={[Function]}
+  required={false}
+/>
+`;
+
+exports[`should render a calendar filter with filtered dates 1`] = `
+<DatePicker
+  calendarClassName="calendar-filter"
+  disableButtonFocusOnClose={false}
+  disabled={false}
+  filterDate={[Function]}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isIncomplete={false}
+  isInline={true}
+  isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
+  name="terra-calendar-filter"
+  onChange={[Function]}
+  required={false}
+/>
+`;
+
+exports[`should render a calendar filter with included dates 1`] = `
+<DatePicker
+  calendarClassName="calendar-filter"
+  disableButtonFocusOnClose={false}
+  disabled={false}
+  includeDates={
+    Array [
+      "2020-04-01",
+    ]
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isIncomplete={false}
+  isInline={true}
+  isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
+  name="terra-calendar-filter"
+  onChange={[Function]}
+  required={false}
+/>
+`;
+
+exports[`should render a calendar filter with min and max dates 1`] = `
+<DatePicker
+  calendarClassName="calendar-filter"
+  disableButtonFocusOnClose={false}
+  disabled={false}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isIncomplete={false}
+  isInline={true}
+  isInvalid={false}
+  maxDate="2020-04-10"
+  minDate="2020-04-01"
+  name="terra-calendar-filter"
+  onChange={[Function]}
+  required={false}
+/>
+`;
+
+exports[`should render a calendar filter with onChange 1`] = `
+<DatePicker
+  calendarClassName="calendar-filter"
+  disableButtonFocusOnClose={false}
+  disabled={false}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isIncomplete={false}
+  isInline={true}
+  isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
+  name="terra-calendar-filter"
+  onChange={[Function]}
+  required={false}
+  selectedDate="2020-06-01"
+/>
+`;
+
+exports[`should render a controlled calendar filter 1`] = `
+<DatePicker
+  calendarClassName="calendar-filter"
+  disableButtonFocusOnClose={false}
+  disabled={false}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isIncomplete={false}
+  isInline={true}
+  isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
+  name="terra-calendar-filter"
+  onChange={[Function]}
+  required={false}
+  value="2020-06-15"
+/>
+`;
