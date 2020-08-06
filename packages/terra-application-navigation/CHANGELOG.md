@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fix 'tab' text flicker when notifications are provided.
+
 ## 1.33.0 - (August 4, 2020)
 
 * Changed
