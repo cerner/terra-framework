@@ -11,8 +11,10 @@ import Input from 'terra-form-input';
 import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import * as KeyCode from 'keycode-js';
 import DateUtil from './DateUtil';
+import { getLocalizedDateForScreenReader } from './react-datepicker/date_utils';
 import styles from './DatePicker.module.scss';
 
 const cx = classNames.bind(styles);
@@ -20,6 +22,10 @@ const cx = classNames.bind(styles);
 const Icon = <IconCalendar />;
 
 const propTypes = {
+  /**
+   * String that labels the current element. 'aria-label' must be present for accessibility.
+   */
+  ariaLabel: PropTypes.string,
   /**
    * Callback ref to pass into the calendar button dom element.
    */
@@ -88,6 +94,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  ariaLabel: undefined,
   buttonRefCallback: undefined,
   inputAttributes: undefined,
   isIncomplete: false,
@@ -134,6 +141,7 @@ const DatePickerInput = (props) => {
   }, []);
 
   const {
+    ariaLabel,
     buttonRefCallback,
     inputAttributes,
     intl,
@@ -161,6 +169,7 @@ const DatePickerInput = (props) => {
   const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
   const dateFormatOrder = intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' });
   const dateSeparator = intl.formatMessage({ id: 'Terra.datePicker.separator' });
+  const label = ariaLabel || intl.formatMessage({ id: 'Terra.datePicker.date' });
   const placeholderValues = DateUtil.getDateInputValues(dateFormatOrder, placeholder, dateSeparator);
   const theme = React.useContext(ThemeContext);
 
@@ -570,6 +579,7 @@ const DatePickerInput = (props) => {
           name={name}
           value={dateValue}
         />
+        <VisuallyHiddenText text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: intl, locale: intl.locale })}` : label} />
         {dateInputFormat}
       </div>
       <Button
