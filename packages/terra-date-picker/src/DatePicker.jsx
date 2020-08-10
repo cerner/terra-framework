@@ -55,6 +55,11 @@ const propTypes = {
   */
   isInvalid: PropTypes.bool,
   /**
+  * String that labels the current element. 'aria-label' must be present,
+  * for accessibility.
+  */
+  ariaLabel: PropTypes.string,
+  /**
    * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`
    */
   maxDate: PropTypes.string,
@@ -111,6 +116,11 @@ const propTypes = {
    * The value must be in the `YYYY-MM-DD` format or the all-numeric date format based on the locale.
    */
   value: PropTypes.string,
+  /**
+   * @private
+   * Prop to show inline version of date picker component.
+   */
+  isInline: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -132,6 +142,7 @@ const defaultProps = {
   required: false,
   disableButtonFocusOnClose: false,
   selectedDate: undefined,
+  isInline: false,
 };
 
 class DatePicker extends React.Component {
@@ -141,7 +152,7 @@ class DatePicker extends React.Component {
     const activeBreakpointOnMount = activeBreakpointForSize(window.innerWidth);
     this.state = {
       selectedDate: DateUtil.defaultValue(props),
-      showPortalPicker: activeBreakpointOnMount === 'tiny' || activeBreakpointOnMount === 'small',
+      showPortalPicker: !this.props.isInline && (activeBreakpointOnMount === 'tiny' || activeBreakpointOnMount === 'small'),
       prevPropsSelectedDate: props.value || props.selectedDate,
     };
 
@@ -214,7 +225,7 @@ class DatePicker extends React.Component {
   }
 
   handleBreakpointChange(activeBreakpoint) {
-    const showPortalPicker = activeBreakpoint === 'tiny' || activeBreakpoint === 'small';
+    const showPortalPicker = !this.props.isInline && (activeBreakpoint === 'tiny' || activeBreakpoint === 'small');
 
     if (this.state.showPortalPicker !== showPortalPicker) {
       this.setState({ showPortalPicker });
@@ -300,6 +311,11 @@ class DatePicker extends React.Component {
 
   handleChangeRaw(event) {
     this.dateValue = event.target.value;
+    if (!this.getMetadata().isValidValue) {
+      this.setState({
+        selectedDate: null,
+      });
+    }
 
     if (this.props.onChangeRaw) {
       const metadata = this.getMetadata();
@@ -383,6 +399,8 @@ class DatePicker extends React.Component {
       required,
       selectedDate,
       value,
+      isInline,
+      ariaLabel,
       ...customProps
     } = this.props;
 
@@ -429,6 +447,7 @@ class DatePicker extends React.Component {
           <ReactDatePicker
             {...customProps}
             withPortal={this.state.showPortalPicker}
+            inline={isInline}
             selected={selectedDateInPicker}
             value={formattedValue}
             onBlur={this.handleBlur}
@@ -448,6 +467,7 @@ class DatePicker extends React.Component {
                 shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
                 onButtonFocus={this.handleFocus}
                 buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
+                ariaLabel={ariaLabel}
               />
             )}
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}

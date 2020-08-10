@@ -138,17 +138,17 @@ exports[`Tabs should render prop data 1`] = `
       "calls": Array [
         Array [
           Object {
-            "hasCount": false,
+            "hasCount": true,
             "isActive": true,
-            "notificationCount": 0,
+            "notificationCount": undefined,
             "text": "test-text",
           },
         ],
         Array [
           Object {
-            "hasCount": false,
+            "hasCount": true,
             "isActive": true,
-            "notificationCount": 0,
+            "notificationCount": undefined,
             "text": "test-text",
           },
         ],
@@ -214,17 +214,17 @@ exports[`Tabs should render prop data 1`] = `
         "calls": Array [
           Array [
             Object {
-              "hasCount": false,
+              "hasCount": true,
               "isActive": true,
-              "notificationCount": 0,
+              "notificationCount": undefined,
               "text": "test-text",
             },
           ],
           Array [
             Object {
-              "hasCount": false,
+              "hasCount": true,
               "isActive": true,
-              "notificationCount": 0,
+              "notificationCount": undefined,
               "text": "test-text",
             },
           ],
@@ -252,27 +252,26 @@ exports[`Tabs should render prop data 1`] = `
       className="tabs-container is-calculating"
     >
       <Tab
-        hasCount={false}
+        hasCount={true}
         isActive={true}
         key="my-test-key"
-        notificationCount={0}
         onTabSelect={[Function]}
         render={
           [MockFunction] {
             "calls": Array [
               Array [
                 Object {
-                  "hasCount": false,
+                  "hasCount": true,
                   "isActive": true,
-                  "notificationCount": 0,
+                  "notificationCount": undefined,
                   "text": "test-text",
                 },
               ],
               Array [
                 Object {
-                  "hasCount": false,
+                  "hasCount": true,
                   "isActive": true,
-                  "notificationCount": 0,
+                  "notificationCount": undefined,
                   "text": "test-text",
                 },
               ],
@@ -307,6 +306,229 @@ exports[`Tabs should render prop data 1`] = `
         <div
           aria-current={true}
           aria-label="test-text"
+          className="tab is-disabled"
+          data-focus-styles-enabled={true}
+          onBlur={[Function]}
+          onMouseDown={[Function]}
+          role="link"
+          tabIndex="0"
+          type="button"
+        />
+      </Tab>
+    </nav>
+  </Tabs>
+</InjectIntl(Tabs)>
+`;
+
+exports[`Tabs should render with hasCount set to true when notifications are set to 0 1`] = `
+<InjectIntl(Tabs)
+  activeTabKey="notification-test"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  navigationItems={
+    Array [
+      Object {
+        "key": "notification-test",
+        "text": "sample-text",
+      },
+    ]
+  }
+  navigationRenderFunction={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "hasCount": true,
+            "isActive": true,
+            "notificationCount": undefined,
+            "text": "sample-text",
+          },
+        ],
+        Array [
+          Object {
+            "hasCount": true,
+            "isActive": true,
+            "notificationCount": undefined,
+            "text": "sample-text",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  notifications={
+    Object {
+      "myComponent": 0,
+    }
+  }
+>
+  <Tabs
+    activeTabKey="notification-test"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    navigationItems={
+      Array [
+        Object {
+          "key": "notification-test",
+          "text": "sample-text",
+        },
+      ]
+    }
+    navigationRenderFunction={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "hasCount": true,
+              "isActive": true,
+              "notificationCount": undefined,
+              "text": "sample-text",
+            },
+          ],
+          Array [
+            Object {
+              "hasCount": true,
+              "isActive": true,
+              "notificationCount": undefined,
+              "text": "sample-text",
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    notifications={
+      Object {
+        "myComponent": 0,
+      }
+    }
+  >
+    <nav
+      className="tabs-container is-calculating"
+    >
+      <Tab
+        hasCount={true}
+        isActive={true}
+        key="notification-test"
+        onTabSelect={null}
+        render={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "hasCount": true,
+                  "isActive": true,
+                  "notificationCount": undefined,
+                  "text": "sample-text",
+                },
+              ],
+              Array [
+                Object {
+                  "hasCount": true,
+                  "isActive": true,
+                  "notificationCount": undefined,
+                  "text": "sample-text",
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+        tabRef={
+          Object {
+            "current": <div
+              aria-current="true"
+              aria-label="sample-text"
+              class="tab is-disabled"
+              data-focus-styles-enabled="true"
+              role="link"
+              tabindex="0"
+              type="button"
+            />,
+          }
+        }
+        text="sample-text"
+      >
+        <div
+          aria-current={true}
+          aria-label="sample-text"
           className="tab is-disabled"
           data-focus-styles-enabled={true}
           onBlur={[Function]}

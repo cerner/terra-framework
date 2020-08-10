@@ -512,18 +512,6 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
     Terra.it.matchesScreenshot('beyond maxDate entered');
 
-    it('Opens the date picker', () => {
-      browser.click('[class*="button"]');
-    });
-
-    Terra.it.matchesScreenshot('entered max date not registered', { selector: '[data-terra-date-picker-calendar]' });
-
-    it('Select a day', () => {
-      browser.click('[class*="react-datepicker-day--selected"]');
-    });
-
-    Terra.it.matchesScreenshot('picker closed');
-
     it('Enters min date', () => {
       browser.setValue('input[name="terra-date-date-input"]', '01/01/1900');
     });
@@ -543,15 +531,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     Terra.it.matchesScreenshot('min date selected');
 
     it('Enters date beyond min', () => {
-      browser.setValue('input[name="terra-date-date-input"]', '10/20/1989');
+      browser.setValue('input[name="terra-date-date-input"]', '10/20/1899');
     });
 
     Terra.it.matchesScreenshot('beyond minDate entered');
-
-    it('Opens the date picker', () => {
-      browser.click('[class*="button"]');
-    });
-
-    Terra.it.matchesScreenshot('entered min date not registered', { selector: '[data-terra-date-picker-calendar]' });
   });
 });
