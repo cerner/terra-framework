@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.55.0 - (August 11, 2020)
+
 * Changed
   * Updated `terra-form-input` from ^v2.3.0 to ^v3.7.0
 
