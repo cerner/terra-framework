@@ -160,6 +160,11 @@ const DatePickerInput = (props) => {
     ...customProps
   } = props;
 
+  const id = customProps.id ? customProps.id : undefined;
+  if (customProps.id) {
+    delete customProps.id;
+  }
+
   const { onCalendarButtonClick, shouldShowPicker } = customProps;
   delete customProps.onCalendarButtonClick;
   delete customProps.shouldShowPicker;
@@ -569,7 +574,11 @@ const DatePickerInput = (props) => {
 
   return (
     <div className={dateInputContainerClasses}>
-      <div className={dateInputClasses} disabled={additionalInputProps.disabled}>
+      <div
+        className={dateInputClasses}
+        id={id}
+        disabled={additionalInputProps.disabled}
+      >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.

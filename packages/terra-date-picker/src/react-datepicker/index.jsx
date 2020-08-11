@@ -811,6 +811,7 @@ class DatePicker extends React.Component {
       onClick: this.onInputClick,
       onFocus: this.handleFocus,
       onKeyDown: this.onInputKeyDown,
+      id: this.props.id,
       name: this.props.name,
       autoFocus: this.props.autoFocus,
       placeholder: this.props.placeholderText,

@@ -240,6 +240,7 @@ const DatePickerField = (props) => {
     >
       <DatePicker
         disabled={disabled}
+        id={datePickerId}
         inputAttribute={mergedInputAttrs}
         excludeDates={excludeDates}
         filterDate={filterDate}
