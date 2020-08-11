@@ -5,8 +5,6 @@ import ThemeContext from 'terra-theme-context';
 import { activeBreakpointForSize } from 'terra-breakpoints';
 import ResponsiveElement from 'terra-responsive-element';
 import { injectIntl, intlShape } from 'react-intl';
-
-/* eslint-disable-next-line  */
 import ReactDatePicker from './react-datepicker';
 import DateInput from './DateInput';
 import DateUtil from './DateUtil';
@@ -16,7 +14,12 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * @private Whether or not to disable focus on the calendar button when the calendar picker dismisses.
+   * String that labels the current element. 'aria-label' must be present for accessibility.
+   */
+  ariaLabel: PropTypes.string,
+  /**
+   * @private
+   * Whether or not to disable focus on the calendar button when the calendar picker dismisses.
    */
   disableButtonFocusOnClose: PropTypes.bool,
   /**
@@ -44,21 +47,21 @@ const propTypes = {
   /**
    * @private
    * intl object programmatically imported through injectIntl from react-intl.
-   * */
+   */
   intl: intlShape.isRequired,
   /**
-  * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
-  */
+   * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+   */
   isIncomplete: PropTypes.bool,
   /**
-  * Whether the input displays as Invalid. Use when value does not meet validation pattern.
-  */
-  isInvalid: PropTypes.bool,
+   * @private
+   * Prop to show inline version of date picker component.
+   */
+  isInline: PropTypes.bool,
   /**
-  * String that labels the current element. 'aria-label' must be present,
-  * for accessibility.
-  */
-  ariaLabel: PropTypes.string,
+   * Whether the input displays as Invalid. Use when value does not meet validation pattern.
+   */
+  isInvalid: PropTypes.bool,
   /**
    * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`
    */
@@ -116,20 +119,18 @@ const propTypes = {
    * The value must be in the `YYYY-MM-DD` format or the all-numeric date format based on the locale.
    */
   value: PropTypes.string,
-  /**
-   * @private
-   * Prop to show inline version of date picker component.
-   */
-  isInline: PropTypes.bool,
 };
 
 const defaultProps = {
+  ariaLabel: undefined,
+  disableButtonFocusOnClose: false,
   disabled: false,
   excludeDates: undefined,
   filterDate: undefined,
   includeDates: undefined,
   inputAttributes: undefined,
   isIncomplete: false,
+  isInline: false,
   isInvalid: false,
   maxDate: '2100-12-31',
   minDate: '1900-01-01',
@@ -140,9 +141,8 @@ const defaultProps = {
   onFocus: undefined,
   onSelect: undefined,
   required: false,
-  disableButtonFocusOnClose: false,
   selectedDate: undefined,
-  isInline: false,
+  value: undefined,
 };
 
 class DatePicker extends React.Component {
@@ -311,11 +311,11 @@ class DatePicker extends React.Component {
 
   handleChangeRaw(event) {
     this.dateValue = event.target.value;
-    // if (!this.getMetadata().isValidValue) {
-    //   this.setState({
-    //     selectedDate: null,
-    //   });
-    // }
+    if (!this.getMetadata().isValidValue) {
+      this.setState({
+        selectedDate: null,
+      });
+    }
 
     if (this.props.onChangeRaw) {
       const metadata = this.getMetadata();
@@ -379,13 +379,15 @@ class DatePicker extends React.Component {
 
   render() {
     const {
+      ariaLabel,
       disableButtonFocusOnClose,
-      inputAttributes,
       excludeDates,
       filterDate,
       includeDates,
+      inputAttributes,
       intl,
       isIncomplete,
+      isInline,
       isInvalid,
       maxDate,
       minDate,
@@ -399,8 +401,6 @@ class DatePicker extends React.Component {
       required,
       selectedDate,
       value,
-      isInline,
-      ariaLabel,
       ...customProps
     } = this.props;
 

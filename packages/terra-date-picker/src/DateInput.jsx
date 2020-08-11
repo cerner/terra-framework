@@ -579,7 +579,7 @@ const DatePickerInput = (props) => {
           name={name}
           value={dateValue}
         />
-        <VisuallyHiddenText text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: intl, locale: intl.locale })}` : label} />
+        <VisuallyHiddenText text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl, locale: intl.locale })}` : label} />
         {dateInputFormat}
       </div>
       <Button
