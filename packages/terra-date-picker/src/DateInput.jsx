@@ -183,11 +183,11 @@ const DatePickerInput = (props) => {
   useEffect(() => {
     if (DateUtil.isValidDate(value, momentDateFormat)) {
       const parseDate = DateUtil.getDateInputValues('YMD', dateValue, '-');
-      const formattedDate = DateUtil.strictFormatISODate(dateValue, momentDateFormat);
-      onChange({ target: { value: formattedDate }, isDefaultPrevented: () => { }, type: 'change' });
       dateDispatch(parseDate);
+    } else if (dateValue === '') {
+      dateDispatch(dateState);
     }
-  }, [momentDateFormat, dateValue, onChange, value]);
+  }, [momentDateFormat, dateValue, value]);
 
   /**
    * Moves focus to the correct input depending on date ordering. Focus changing is
@@ -266,19 +266,18 @@ const DatePickerInput = (props) => {
     }
 
     if (onChange) {
-      const updatedEvent = event;
       if (DateUtil.isValidDate(formattedDate, momentDateFormat)) {
-        updatedEvent.target.value = formattedDate;
-        onChange(updatedEvent);
+        onChange(event, formattedDate);
       } else {
+        let dateString;
         if (dateFormatOrder === 'MDY') {
-          updatedEvent.target.value = month + day + year;
+          dateString = month + day + year;
         } else if (dateFormatOrder === 'DMY') {
-          updatedEvent.target.value = day + month + year;
+          dateString = day + month + year;
         } else {
-          updatedEvent.target.value = year + month + day;
+          dateString = year + month + day;
         }
-        onChange(updatedEvent);
+        onChange(event, dateString);
       }
     }
 

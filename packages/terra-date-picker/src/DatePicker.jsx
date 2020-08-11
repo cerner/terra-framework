@@ -294,9 +294,9 @@ class DatePicker extends React.Component {
     }
   }
 
-  handleChange(date, event) {
+  handleChange(date, event, value) {
     if (event.type === 'change') {
-      this.dateValue = event.target.value;
+      this.dateValue = value;
     }
 
     this.setState({
@@ -309,8 +309,8 @@ class DatePicker extends React.Component {
     }
   }
 
-  handleChangeRaw(event) {
-    this.dateValue = event.target.value;
+  handleChangeRaw(event, value) {
+    this.dateValue = value;
     if (!this.getMetadata().isValidValue) {
       this.setState({
         selectedDate: null,
@@ -319,7 +319,7 @@ class DatePicker extends React.Component {
 
     if (this.props.onChangeRaw) {
       const metadata = this.getMetadata();
-      this.props.onChangeRaw(event, event.target.value, metadata);
+      this.props.onChangeRaw(event, value, metadata);
     }
   }
 

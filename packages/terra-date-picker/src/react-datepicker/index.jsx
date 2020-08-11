@@ -505,17 +505,17 @@ class DatePicker extends React.Component {
     if (this.props.withPortal) { event.preventDefault() }
   }
 
-  handleChange = (event) => {
+  handleChange = (event, value) => {
     if (this.props.onChangeRaw) {
-      this.props.onChangeRaw(event)
+      this.props.onChangeRaw(event, value)
       if (event.isDefaultPrevented()) {
         return
       }
     }
-    this.setState({ inputValue: event.target.value })
-    const date = parseDate(event.target.value, this.props)
-    if (date || !event.target.value) {
-      this.setSelected(date, event, true)
+    this.setState({ inputValue: value })
+    const date = parseDate(value, this.props)
+    if (date || !value) {
+      this.setSelected(date, event, value, true)
     }
   }
 
@@ -536,7 +536,7 @@ class DatePicker extends React.Component {
     }
   }
 
-  setSelected = (date, event, keepInput) => {
+  setSelected = (date, event, value, keepInput) => {
     let changedDate = date
 
     if (changedDate !== null && isDayDisabled(changedDate, this.props)) {
@@ -557,7 +557,7 @@ class DatePicker extends React.Component {
     this.props.onSelect(changedDate, event)
 
     if (hasChanged) {
-      this.props.onChange(changedDate, event)
+      this.props.onChange(changedDate, event, value)
     }
 
     if (!keepInput) {
@@ -811,7 +811,6 @@ class DatePicker extends React.Component {
       onClick: this.onInputClick,
       onFocus: this.handleFocus,
       onKeyDown: this.onInputKeyDown,
-      id: this.props.id,
       name: this.props.name,
       autoFocus: this.props.autoFocus,
       placeholder: this.props.placeholderText,
