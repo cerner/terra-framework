@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
@@ -19,44 +19,37 @@ const defaultProps = {
   value: undefined,
 };
 
-class DatePickerExample extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { date: this.props.value };
-    this.handleDateChange = this.handleDateChange.bind(this);
-    this.handleDateChangeRaw = this.handleDateChangeRaw.bind(this);
-  }
+const DatePickerExample = ({ value }) => {
+  const [date, setDate] = useState(value);
 
-  handleDateChange(event, date) {
-    this.setState({ date });
-  }
+  const handleDateChange = (event, dateValue) => {
+    setDate(dateValue);
+  };
 
-  handleDateChangeRaw(event, date, metadata) {
+  const handleDateChangeRaw = (event, dateValue, metadata) => {
     if (!metadata.isValidValue) {
-      this.setState({ date: null });
+      setDate(null);
     }
-  }
+  };
 
-  render() {
-    return (
-      <div>
-        <p>
-          Selected ISO Date:
-          <span className={cx('date-wrapper')}>{this.state.date}</span>
-        </p>
-        <Field label="Enter Date" htmlFor="controlled-dates">
-          <DatePicker
-            name="controlled-input"
-            id="controlled-dates"
-            onChange={this.handleDateChange}
-            onChangeRaw={this.handleDateChangeRaw}
-            value={this.state.date}
-          />
-        </Field>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <p>
+        Selected ISO Date:
+        <span className={cx('date-wrapper')}>{date}</span>
+      </p>
+      <Field label="Enter Date" htmlFor="controlled-dates">
+        <DatePicker
+          name="controlled-input"
+          id="controlled-dates"
+          onChange={handleDateChange}
+          onChangeRaw={handleDateChangeRaw}
+          value={date}
+        />
+      </Field>
+    </div>
+  );
+};
 
 DatePickerExample.propTypes = propTypes;
 DatePickerExample.defaultProps = defaultProps;

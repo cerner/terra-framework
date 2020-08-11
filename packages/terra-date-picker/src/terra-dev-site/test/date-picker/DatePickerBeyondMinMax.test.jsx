@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DatePicker from 'terra-date-picker';
 import classNames from 'classnames/bind';
+import DatePicker from '../../../DatePicker';
 import styles from '../../doc/example/DatePickerExampleCommon.module.scss';
 
 const cx = classNames.bind(styles);

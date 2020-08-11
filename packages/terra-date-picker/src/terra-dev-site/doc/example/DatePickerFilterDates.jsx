@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
 import moment from 'moment';
@@ -19,44 +19,37 @@ const defaultProps = {
   selectedDate: '',
 };
 
-class DatePickerExample extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { date: this.props.selectedDate };
-    this.handleDateChange = this.handleDateChange.bind(this);
-    this.handleDateChangeRaw = this.handleDateChangeRaw.bind(this);
-  }
+const DatePickerExample = (props) => {
+  const [date, setDate] = useState(props.selectedDate);
 
-  handleDateChange(event, date) {
-    this.setState({ date });
-  }
+  const handleDateChange = (event, dateValue) => {
+    setDate(dateValue);
+  };
 
-  handleDateChangeRaw(event, date, metadata) {
+  const handleDateChangeRaw = (event, dateValue, metadata) => {
     if (!metadata.isValidValue) {
-      this.setState({ date: null });
+      setDate(null);
     }
-  }
+  };
 
-  render() {
-    return (
-      <div>
-        <p>
-          Selected ISO Date:
-          <span className={cx('date-wrapper')}>{this.state.date}</span>
-        </p>
-        <Field label="Enter Date" htmlFor="filter-dates">
-          <DatePicker
-            name="date-input"
-            id="filter-dates"
-            onChange={this.handleDateChange}
-            onChangeRaw={this.handleDateChangeRaw}
-            {...this.props}
-          />
-        </Field>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <p>
+        Selected ISO Date:
+        <span className={cx('date-wrapper')}>{date}</span>
+      </p>
+      <Field label="Enter Date" htmlFor="filter-dates">
+        <DatePicker
+          name="date-input"
+          id="filter-dates"
+          onChange={handleDateChange}
+          onChangeRaw={handleDateChangeRaw}
+          {...props}
+        />
+      </Field>
+    </div>
+  );
+};
 
 DatePickerExample.propTypes = propTypes;
 DatePickerExample.defaultProps = defaultProps;
