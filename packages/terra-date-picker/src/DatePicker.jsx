@@ -234,7 +234,7 @@ class DatePicker extends React.Component {
 
   handleFilterDate(date) {
     if (this.props.filterDate) {
-      return this.props.filterDate(date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '');
+      return this.props.filterDate(date?.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '');
     }
 
     return true;
@@ -305,7 +305,7 @@ class DatePicker extends React.Component {
 
     if (this.props.onChange) {
       const metadata = this.getMetadata();
-      this.props.onChange(event, date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '', metadata);
+      this.props.onChange(event, date?.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '', metadata);
     }
   }
 

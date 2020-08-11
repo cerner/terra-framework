@@ -250,7 +250,7 @@ class DateUtil {
    * @return {string} - The formatted date string.
    */
   static formatMomentDate(momentDate, format) {
-    return momentDate && momentDate.isValid() ? momentDate.format(format, true) : undefined;
+    return momentDate?.isValid() ? momentDate.format(format, true) : undefined;
   }
 
   /**
