@@ -8,6 +8,8 @@
 * Changed
   * Updated Changelog format
   
+## 6.40.0 - (August 4, 2020)
+
 * Changed
   * Updated Changelog format
   * Update jest due to change in theme

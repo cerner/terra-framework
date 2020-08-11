@@ -67,6 +67,11 @@ export default class Week extends React.Component {
      */
     onDayMouseEnter: PropTypes.func,
     /**
+     * A callback function to execute on mouse down on day.
+     * requires no parameter.
+     */
+    onDayMouseDown: PropTypes.func,
+    /**
      * A callback function to execute when a week is selected.
      */
     onWeekSelect: PropTypes.func,
@@ -120,6 +125,12 @@ export default class Week extends React.Component {
     }
   }
 
+  handleDayMouseDown = () => {
+    if (this.props.onDayMouseDown) {
+      this.props.onDayMouseDown();
+    }
+  }
+
   handleWeekClick = (day, weekNumber, event) => {
     if (typeof this.props.onWeekSelect === 'function') {
       this.props.onWeekSelect(day, weekNumber, event)
@@ -153,6 +164,7 @@ export default class Week extends React.Component {
           month={this.props.month}
           onClick={this.handleDayClick.bind(this, day)}
           onMouseEnter={this.handleDayMouseEnter.bind(this, day)}
+          onDayMouseDown={this.handleDayMouseDown}
           minDate={this.props.minDate}
           maxDate={this.props.maxDate}
           excludeDates={this.props.excludeDates}

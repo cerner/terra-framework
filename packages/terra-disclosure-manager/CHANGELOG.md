@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.35.0 - (August 4, 2020)
+
 * Added
   * Added typeConfig property to `disclose` API to support custom properties.
 

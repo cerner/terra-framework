@@ -7,6 +7,8 @@
 
 * Changed
   * Updated Changelog format
+  
+## 3.1.0 - (August 4, 2020)
 
 * Changed
   * Updated Changelog format

@@ -4,9 +4,18 @@
 
 * Added
   * Added an interaction media query to apply `hover` styles only on non-touch devices.
+  * Added Calendar Filter sub-component.
+
+## 4.43.0 - (August 4, 2020)
+
+* Changed
+  * Fixed issue to clear out selected date when an invalid date is entered after selecting a valid date.
 
 * Changed
   * Updated Changelog format
+
+* Changed
+  * Update jest due to change in theme
 
 * Changed
   * Updated Changelog format
@@ -808,4 +817,4 @@
 
 ## 1.0.0 - (June 28, 2017)
 
-Initial stable release
+* Initial stable release

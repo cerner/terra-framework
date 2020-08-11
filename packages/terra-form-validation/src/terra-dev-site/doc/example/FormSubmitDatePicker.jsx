@@ -45,6 +45,7 @@ export default class MainEntry extends React.Component {
           {({ input, meta }) => (
             <TerraField
               label="Enter your planned start date"
+              htmlFor="default"
               error={meta.error}
               isInvalid={meta.submitFailed && meta.error !== undefined}
               required
