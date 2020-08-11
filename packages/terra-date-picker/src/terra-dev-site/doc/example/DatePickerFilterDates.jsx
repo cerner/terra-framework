@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
 import moment from 'moment';
 import DatePicker from 'terra-date-picker';
@@ -8,19 +7,8 @@ import styles from './DatePickerExampleCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
-const propTypes = {
-  /**
-   * The current DatePicker date if selected. Use for the selected date message.
-   */
-  selectedDate: PropTypes.node,
-};
-
-const defaultProps = {
-  selectedDate: '',
-};
-
-const DatePickerExample = (props) => {
-  const [date, setDate] = useState(props.selectedDate);
+const DatePickerExampleFilterDates = () => {
+  const [date, setDate] = useState('');
 
   const handleDateChange = (event, dateValue) => {
     setDate(dateValue);
@@ -30,6 +18,17 @@ const DatePickerExample = (props) => {
     if (!metadata.isValidValue) {
       setDate(null);
     }
+  };
+
+  const isWeekday = (dateValue) => {
+    const momentDate = moment(dateValue);
+
+    if (momentDate && momentDate.isValid()) {
+      const day = momentDate.day();
+      return day !== 0 && day !== 6;
+    }
+
+    return true;
   };
 
   return (
@@ -44,29 +43,11 @@ const DatePickerExample = (props) => {
           id="filter-dates"
           onChange={handleDateChange}
           onChangeRaw={handleDateChangeRaw}
-          {...props}
+          filterDate={isWeekday}
         />
       </Field>
     </div>
   );
 };
-
-DatePickerExample.propTypes = propTypes;
-DatePickerExample.defaultProps = defaultProps;
-
-const isWeekday = (date) => {
-  const momentDate = moment(date);
-
-  if (momentDate && momentDate.isValid()) {
-    const day = momentDate.day();
-    return day !== 0 && day !== 6;
-  }
-
-  return true;
-};
-
-const DatePickerExampleFilterDates = () => (
-  <DatePickerExample filterDate={isWeekday} />
-);
 
 export default DatePickerExampleFilterDates;

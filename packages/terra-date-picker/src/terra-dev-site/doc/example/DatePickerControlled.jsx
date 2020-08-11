@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import moment from 'moment';
-import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
 import DatePicker from 'terra-date-picker';
 import classNames from 'classnames/bind';
@@ -8,19 +7,8 @@ import styles from './DatePickerExampleCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
-const propTypes = {
-  /**
-   * The date value used for a controlled component.
-   */
-  value: PropTypes.string,
-};
-
-const defaultProps = {
-  value: undefined,
-};
-
-const DatePickerExample = ({ value }) => {
-  const [date, setDate] = useState(value);
+const DatePickerExampleControlled = () => {
+  const [date, setDate] = useState(moment().format('YYYY-MM-DD'));
 
   const handleDateChange = (event, dateValue) => {
     setDate(dateValue);
@@ -50,14 +38,5 @@ const DatePickerExample = ({ value }) => {
     </div>
   );
 };
-
-DatePickerExample.propTypes = propTypes;
-DatePickerExample.defaultProps = defaultProps;
-
-const DatePickerExampleControlled = () => (
-  <DatePickerExample
-    value={moment().format('YYYY-MM-DD')}
-  />
-);
 
 export default DatePickerExampleControlled;
