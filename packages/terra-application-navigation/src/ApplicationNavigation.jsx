@@ -320,6 +320,18 @@ const ApplicationNavigation = ({
       closeMenuCallbackRef.current = undefined;
     }
   });
+  
+  useEffect(() => {
+    const forceCloseMenu = () => {
+      setDrawerMenuIsOpen(false);
+    }    
+
+    window.addEventListener('blur', forceCloseMenu);
+
+    return () => {
+      window.removeEventListener('blur', forceCloseMenu);
+    };
+  }, []);
 
   useLayoutEffect(() => {
     if (activeNavigationItemKey !== renderedNavItemKeyRef.current) {
