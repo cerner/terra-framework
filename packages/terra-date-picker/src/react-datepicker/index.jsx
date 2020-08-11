@@ -320,23 +320,23 @@ class DatePicker extends React.Component {
     shouldCloseOnSelect: PropTypes.bool,
   }
 
-  static get defaultProps () {
+  static get defaultProps() {
     return {
       allowSameDay: false,
       dateFormat: 'L',
       dateFormatCalendar: 'MMMM YYYY',
-      onChange () {},
+      onChange() { },
       disabled: false,
       disabledKeyboardNavigation: false,
       dropdownMode: 'scroll',
       maxDate: newDate(DateUtil.MAX_DATE),
       minDate: newDate(DateUtil.MIN_DATE),
-      onFocus () {},
-      onBlur () {},
-      onKeyDown () {},
-      onSelect () {},
-      onClickOutside () {},
-      onMonthChange () {},
+      onFocus() { },
+      onBlur() { },
+      onKeyDown() { },
+      onSelect() { },
+      onClickOutside() { },
+      onMonthChange() { },
       preventOpenOnFocus: false,
       monthsShown: 1,
       withPortal: false,
@@ -344,7 +344,7 @@ class DatePicker extends React.Component {
     }
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = this.calcInitialState();
     this.handleKeydown = this.handleKeydown.bind(this);
@@ -370,7 +370,7 @@ class DatePicker extends React.Component {
       this.setPreSelection(this.props.selected)
     }
     if (prevProps.highlightDates !== this.props.highlightDates) {
-      this.setState({'highlightDates': getHightLightDaysMap(this.props.highlightDates)})
+      this.setState({ 'highlightDates': getHightLightDaysMap(this.props.highlightDates) })
     }
     // Shift focus into popup date-picker if it exists
     if (this.datePickerPopupContainer.current) {
@@ -383,7 +383,7 @@ class DatePicker extends React.Component {
     }
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeydown);
     this.clearPreventFocusTimeout()
   }
@@ -402,7 +402,7 @@ class DatePicker extends React.Component {
   handleOnDayMouseDown() {
     if (this.props.inline) {
       // prevents focus border on pre-selected day on mouseDown when calendar is inline.
-      this.setState({ preSelection : null })
+      this.setState({ preSelection: null })
     }
   }
 
@@ -411,14 +411,14 @@ class DatePicker extends React.Component {
     const minDate = getEffectiveMinDate(this.props)
     const maxDate = getEffectiveMaxDate(this.props)
     return minDate && isBefore(defaultPreSelection, minDate) ? minDate
-    : maxDate && isAfter(defaultPreSelection, maxDate) ? maxDate
-      : defaultPreSelection;
+      : maxDate && isAfter(defaultPreSelection, maxDate) ? maxDate
+        : defaultPreSelection;
   }
 
   handleMonthBlur() {
     if (this.props.inline) {
       // resets previous selected day to selected or current day from previous focused day ( non-selected ) when calendar is inline.
-      this.setState({ preSelection : this.props.selected ? newDate(this.props.selected) : this.boundedPreSelection() })
+      this.setState({ preSelection: this.props.selected ? newDate(this.props.selected) : this.boundedPreSelection() })
     }
   }
 
@@ -586,7 +586,7 @@ class DatePicker extends React.Component {
   }
 
   onInputKeyDown = (event) => {
-    if(event.key === 'Enter') {
+    if (event.key === 'Enter') {
       this.setState({ isCalendarOpenedViaKeyboard: true })
 
     }
@@ -642,7 +642,7 @@ class DatePicker extends React.Component {
           newSelection = addWeeks(copy, 1)
           break
         case 'PageUp':
-          this.setState({ isCalendarKeyboardFocused: true })  
+          this.setState({ isCalendarKeyboardFocused: true })
           event.preventDefault()
           newSelection = subtractMonths(copy, 1)
           break
@@ -792,7 +792,7 @@ class DatePicker extends React.Component {
   }
 
   renderDateInput = () => {
-    var classNameList = cx(this.props.className, {
+    const classNameList = cx(this.props.className, {
       [outsideClickIgnoreClass]: this.state.open
     })
 
@@ -832,7 +832,7 @@ class DatePicker extends React.Component {
     }
   }
 
-  render () {
+  render() {
     const calendar = this.renderCalendar()
 
     if (this.props.inline && !this.props.withPortal) {
@@ -843,26 +843,26 @@ class DatePicker extends React.Component {
       return (
         <div>
           {
-            !this.props.inline
-              ? <div className={cx('react-datepicker-input-container')}>
+            !this.props.inline ? (
+              <div className={cx('react-datepicker-input-container')}>
                 {this.renderDateInput()}
                 {this.renderClearButton()}
               </div>
-              : null
+            ) : null
           }
           {
-            this.state.open || this.props.inline
-              ? (<Portal isOpened={true}>
-                  <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: false, clickOutsideDeactivates: true }}>
-                    <div
-                      ref={this.datePickerOverlayContainer}
-                      className={cx('react-datepicker-portal')}
-                    >
-                      {calendar}
-                    </div>
-                  </FocusTrap>
-                </Portal>)
-              : null
+            this.state.open || this.props.inline ? (
+              <Portal isOpened={true}>
+                <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: false, clickOutsideDeactivates: true }}>
+                  <div
+                    ref={this.datePickerOverlayContainer}
+                    className={cx('react-datepicker-portal')}
+                  >
+                    {calendar}
+                  </div>
+                </FocusTrap>
+              </Portal>
+            ) : null
           }
         </div>
       )
@@ -871,8 +871,8 @@ class DatePicker extends React.Component {
     return (
       <React.Fragment>
         <div
-         ref={this.datePickerContainer}
-         className={cx('react-datepicker-input-container')}
+          ref={this.datePickerContainer}
+          className={cx('react-datepicker-input-container')}
         >
           {this.renderDateInput()}
           {this.renderClearButton()}
@@ -882,7 +882,7 @@ class DatePicker extends React.Component {
           contentAttachment="top center"
           isOpen={(this.state.open && !this.props.disabled)}
           targetAttachment="bottom center"
-          targetRef={() => this.datePickerContainer.current }
+          targetRef={() => this.datePickerContainer.current}
           onPosition={this.handleOnPosition}
           onRequestClose={this.handleOnRequestClose}
           classNameArrow={cx('react-datepicker-arrow')}

@@ -17,7 +17,7 @@ export default class YearDropdown extends React.Component {
      * Prop to change date when a valid date is selected.
      */
     adjustDateOnChange: PropTypes.bool,
-   /**
+    /**
      * Whether the year dropdowns should be in the scroll or select mode..
      */
     dropdownMode: PropTypes.oneOf(['scroll', 'select']).isRequired,
@@ -108,7 +108,7 @@ export default class YearDropdown extends React.Component {
   )
 
   renderReadView = (visible) => (
-    <div key="read" style={{visibility: visible ? 'visible' : 'hidden'}} className={cx('react-datepicker-year-read-view')} onClick={(event) => this.toggleDropdown(event)}>
+    <div key="read" style={{ visibility: visible ? 'visible' : 'hidden' }} className={cx('react-datepicker-year-read-view')} onClick={(event) => this.toggleDropdown(event)}>
       <span className={cx('react-datepicker-year-read-view--down-arrow')} />
       <span className={cx('react-datepicker-year-read-view--selected-year')}>{this.props.year}</span>
     </div>
@@ -169,7 +169,7 @@ export default class YearDropdown extends React.Component {
     }
   }
 
-  render () {
+  render() {
     let renderedDropdown
     switch (this.props.dropdownMode) {
       case 'scroll':

@@ -180,12 +180,13 @@ export default class Week extends React.Component {
           startDate={this.props.startDate}
           endDate={this.props.endDate}
           dayClassName={this.props.dayClassName}
-          utcOffset={this.props.utcOffset}/>
+          utcOffset={this.props.utcOffset}
+        />
       )
     }))
   }
 
-  render () {
+  render() {
     return (
       <div className={cx('react-datepicker-week')}>
         {this.renderDays()}
