@@ -4,9 +4,25 @@ import { shallowWithIntl } from 'terra-enzyme-intl';
 import NotificationIcon from '../../src/_NotificationIcon';
 
 describe('Notification Icon', () => {
-  it('shallow renders alert icon', () => {
+  it('shallow renders hazard-high icon', () => {
     const icon = shallowWithIntl(
-      <NotificationIcon variant="alert" />,
+      <NotificationIcon variant="hazard-high" />,
+    );
+
+    expect(icon).toMatchSnapshot();
+  });
+
+  it('shallow renders hazard-medium icon', () => {
+    const icon = shallowWithIntl(
+      <NotificationIcon variant="hazard-high" />,
+    );
+
+    expect(icon).toMatchSnapshot();
+  });
+
+  it('shallow renders hazard-low icon', () => {
+    const icon = shallowWithIntl(
+      <NotificationIcon variant="hazard-low" />,
     );
 
     expect(icon).toMatchSnapshot();
@@ -15,22 +31,6 @@ describe('Notification Icon', () => {
   it('shallow renders error icon', () => {
     const icon = shallowWithIntl(
       <NotificationIcon variant="error" />,
-    );
-
-    expect(icon).toMatchSnapshot();
-  });
-
-  it('shallow renders warning icon', () => {
-    const icon = shallowWithIntl(
-      <NotificationIcon variant="warning" />,
-    );
-
-    expect(icon).toMatchSnapshot();
-  });
-
-  it('shallow renders info icon', () => {
-    const icon = shallowWithIntl(
-      <NotificationIcon variant="info" />,
     );
 
     expect(icon).toMatchSnapshot();
@@ -63,7 +63,7 @@ describe('Notification Icon', () => {
       });
 
     const icon = shallowWithIntl(
-      <NotificationIcon variant="alert" />,
+      <NotificationIcon variant="hazard-high" />,
     );
 
     expect(icon).toMatchSnapshot();

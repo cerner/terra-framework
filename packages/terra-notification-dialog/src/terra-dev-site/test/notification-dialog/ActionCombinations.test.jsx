@@ -56,7 +56,7 @@ const CompleteNotificationDialog = () => {
   return (
     <>
       <NotificationDialog
-        variant="warning"
+        variant="hazard-medium"
         isOpen={isOpen}
         dialogTitle="Action Options in Notification Dialog"
         startMessage="The notification dialog can display one or two buttons to accept and/or reject the message and close the dialog."

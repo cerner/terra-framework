@@ -8,10 +8,10 @@ describe('Notification Dialog', () => {
   const acceptOnClick = jest.fn();
   const rejectOnClick = jest.fn();
 
-  it('shallow renders an alert notification-dialog', () => {
+  it('shallow renders an hazard-high notification-dialog', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
-        variant="alert"
+        variant="hazard-high"
         isOpen
         dialogTitle="Test"
         startMessage="This text is used to provide more details."
@@ -27,40 +27,40 @@ describe('Notification Dialog', () => {
     expect(actions.children().at(1).props()).toHaveProperty('data-terra-notification-dialog-button', 'reject');
   });
 
+  it('shallow renders an hazard-medium notification-dialog', () => {
+    const dialog = shallowWithIntl(
+      <NotificationDialog
+        variant="hazard-medium"
+        isOpen
+        dialogTitle="Test"
+        startMessage="This text is used to provide more details."
+        acceptAction={{ text: 'accept', onClick: () => {} }}
+        rejectAction={{ text: 'reject', onClick: () => {} }}
+      />,
+    );
+
+    expect(dialog).toMatchSnapshot();
+  });
+
+  it('shallow renders an hazard-low notification-dialog', () => {
+    const dialog = shallowWithIntl(
+      <NotificationDialog
+        variant="hazard-low"
+        isOpen
+        dialogTitle="Test"
+        startMessage="This text is used to provide more details."
+        acceptAction={{ text: 'accept', onClick: () => {} }}
+        rejectAction={{ text: 'reject', onClick: () => {} }}
+      />,
+    );
+
+    expect(dialog).toMatchSnapshot();
+  });
+
   it('shallow renders an error notification-dialog', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
         variant="error"
-        isOpen
-        dialogTitle="Test"
-        startMessage="This text is used to provide more details."
-        acceptAction={{ text: 'accept', onClick: () => {} }}
-        rejectAction={{ text: 'reject', onClick: () => {} }}
-      />,
-    );
-
-    expect(dialog).toMatchSnapshot();
-  });
-
-  it('shallow renders an warning notification-dialog', () => {
-    const dialog = shallowWithIntl(
-      <NotificationDialog
-        variant="warning"
-        isOpen
-        dialogTitle="Test"
-        startMessage="This text is used to provide more details."
-        acceptAction={{ text: 'accept', onClick: () => {} }}
-        rejectAction={{ text: 'reject', onClick: () => {} }}
-      />,
-    );
-
-    expect(dialog).toMatchSnapshot();
-  });
-
-  it('shallow renders an info notification-dialog', () => {
-    const dialog = shallowWithIntl(
-      <NotificationDialog
-        variant="info"
         isOpen
         dialogTitle="Test"
         startMessage="This text is used to provide more details."
@@ -91,7 +91,7 @@ describe('Notification Dialog', () => {
   it('shallow renders dialog with startMessage, content, and endMessage', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
-        variant="alert"
+        variant="hazard-high"
         isOpen
         dialogTitle="Test"
         startMessage="This text is used to provide more details."
@@ -108,7 +108,7 @@ describe('Notification Dialog', () => {
   it('shallow renders dialog with reject button first', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
-        variant="alert"
+        variant="hazard-high"
         isOpen
         dialogTitle="Test"
         startMessage="This text is used to provide more details."
@@ -133,7 +133,7 @@ describe('Notification Dialog', () => {
 
     const dialog = shallowWithIntl(
       <NotificationDialog
-        variant="alert"
+        variant="hazard-high"
         isOpen
         startMessage="This text is used to provide more details."
         rejectAction={{ text: 'reject', onClick: rejectOnClick }}
@@ -154,7 +154,7 @@ describe('Notification Dialog functions as expected', () => {
       return (
         <div>
           <NotificationDialog
-            variant="alert"
+            variant="hazard-high"
             isOpen={isOpen}
             dialogTitle="Test"
             startMessage="This text is used to provide more details."

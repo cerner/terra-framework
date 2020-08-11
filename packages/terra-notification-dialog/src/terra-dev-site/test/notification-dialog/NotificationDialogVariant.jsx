@@ -9,10 +9,10 @@ const clickConfirm = () => {
 
 const propTypes = {
   variant: PropTypes.oneOf([
-    'alert',
+    'hazard-high',
+    'hazard-medium',
+    'hazard-low',
     'error',
-    'warning',
-    'info',
     'custom',
   ]),
 };

@@ -100,7 +100,7 @@ const CompleteNotificationDialogWithLongMessage = () => {
   return (
     <>
       <NotificationDialog
-        variant="alert"
+        variant="hazard-high"
         isOpen={isOpen}
         dialogTitle="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
         startMessage={message}

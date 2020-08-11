@@ -16,7 +16,7 @@ const NotificationDialogNoMessage = () => {
   return (
     <>
       <NotificationDialog
-        variant="info"
+        variant="hazard-low"
         isOpen={isOpen}
         dialogTitle="There is no message here."
         acceptAction={{

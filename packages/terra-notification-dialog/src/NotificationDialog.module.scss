@@ -40,24 +40,24 @@
     z-index: -1;
   }
   
-  .alert {
-    background-image: var(--terra-notification-dialog-alert-background-image, linear-gradient(to bottom, #ffdad9, #fff));
-    border-top: var(--terra-notification-dialog-alert-border-top, 7px solid #ea2f2f);
+  .hazard-high {
+    background-image: var(--terra-notification-dialog-hazard-high-background-image, linear-gradient(to bottom, #ffdad9, #fff));
+    border-top: var(--terra-notification-dialog-hazard-high-border-top, 7px solid #ea2f2f);
+  }
+
+  .hazard-medium {
+    background-image: var(--terra-notification-dialog-hazard-medium-background-image, linear-gradient(to bottom, #fff3ce, #fff));
+    border-top: var(--terra-notification-dialog-hazard-medium-border-top, 7px solid #ffc20a);
+  }
+
+  .hazard-low {
+    background-image: var(--terra-notification-dialog-hazard-low-background-image, linear-gradient(to bottom, #e4e2e2, #fff));
+    border-top: var(--terra-notification-dialog-hazard-low-border-top, 7px solid #c8cacb);
   }
 
   .error {
     background-image: var(--terra-notification-dialog-error-background-image, linear-gradient(to bottom, #e4e2e2, #fff));
     border-top: var(--terra-notification-dialog-error-border-top, 7px solid #c8cacb);
-  }
-
-  .warning {
-    background-image: var(--terra-notification-dialog-warning-background-image, linear-gradient(to bottom, #fff3ce, #fff));
-    border-top: var(--terra-notification-dialog-warning-border-top, 7px solid #ffc20a);
-  }
-
-  .info {
-    background-image: var(--terra-notification-dialog-info-background-image, linear-gradient(to bottom, #e4e2e2, #fff));
-    border-top: var(--terra-notification-dialog-info-border-top, 7px solid #c8cacb);
   }
 
   .custom {

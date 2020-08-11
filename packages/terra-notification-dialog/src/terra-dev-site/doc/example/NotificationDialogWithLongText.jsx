@@ -96,7 +96,7 @@ const NotificationDialogWithLongText = () => {
   return (
     <>
       <NotificationDialog
-        variant="warning"
+        variant="hazard-medium"
         isOpen={isOpen}
         dialogTitle="Use a Title That Relates Directly to The Choices. In this case this is a really long title."
         startMessage={message}

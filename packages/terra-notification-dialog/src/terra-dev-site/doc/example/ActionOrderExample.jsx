@@ -21,7 +21,7 @@ const NoVariantNotificationDialog = () => {
       <NotificationDialog
         buttonOrder={buttonOrder}
         isOpen={isOpen}
-        variant="info"
+        variant="hazard-low"
         dialogTitle="Use a Title That Relates Directly to The Choices"
         startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
         acceptAction={{

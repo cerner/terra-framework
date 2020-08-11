@@ -11,13 +11,13 @@ const cx = classNamesBind.bind(styles);
 const propTypes = {
   /**
    * The variant of notification to be rendered. This renders the icon corresponding to the variant concept.
-   * Use one of `alert`, `error`, `warning`, `info`, or `custom`.
+   * Use one of `hazard-high`, `hazard-medium`, `hazard-low`, `error`, or `custom`.
    */
   variant: PropTypes.oneOf([
-    'alert',
+    'hazard-high',
+    'hazard-medium',
+    'hazard-low',
     'error',
-    'warning',
-    'info',
     'custom',
   ]).isRequired,
   /**

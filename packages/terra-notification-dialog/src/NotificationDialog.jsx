@@ -16,10 +16,10 @@ import styles from './NotificationDialog.module.scss';
 const cx = classNamesBind.bind(styles);
 
 const variants = [
-  'alert',
+  'hazard-high',
+  'hazard-medium',
+  'hazard-low',
   'error',
-  'warning',
-  'info',
   'custom',
 ];
 
@@ -27,7 +27,7 @@ const propTypes = {
   /**
    * The variant of notification to be rendered. This renders the dialog with the corresponding header and icon to the
    * variant concept.
-   * Use one of `alert`, `error`, `warning`, `info`, or `custom`.
+   * Use one of `hazard-high`, `hazard-medium`, `hazard-low`, `error`, or `custom`.
    */
   variant: PropTypes.oneOf(variants).isRequired,
   /**
@@ -147,7 +147,12 @@ const NotificationDialog = (props) => {
 
   if (process.env.NODE_ENV !== 'production' && acceptAction === undefined && rejectAction === undefined) {
     // eslint-disable-next-line no-console
-    console.warn('Either the `acceptAction` or `rejectAction` props must be provided for Notification dialog');
+    throw new Error('Either the `acceptAction` or `rejectAction` props must be provided for Notification dialog');
+  }
+
+  if (process.env.NODE_ENV !== 'production' && variant === undefined) {
+    // eslint-disable-next-line no-console
+    throw new Error('The variant must be provided to the Notification dialog');
   }
 
   const signalWord = variant === 'custom' ? custom.signalWord : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;

@@ -4,7 +4,7 @@ import { shallowWithIntl } from 'terra-enzyme-intl';
 import ContentLayoutAsList from '../../src/_ContentLayoutAsList';
 
 describe('Content Layout As List', () => {
-  it('shallow renders layout with not items', () => {
+  it('shallow renders layout with no items', () => {
     const list = shallowWithIntl(
       <ContentLayoutAsList items={[]} />,
     );

@@ -19,20 +19,18 @@ import NotificationDialogWithLongText from '../example/NotificationDialogWithLon
 
 # Terra Notification Dialog
 
-The `terra-notification-dialog` component renders as a notification using the `terra-abstract-modal` to display a dialog over content. It is a common component that can be used to display a message to a user. When the user is presented with the dialog, it is paired with an acceptance and an optional rejection action to allow the user to correctly handle the notification.
+The `terra-notification-dialog` component renders as a notification using the `terra-abstract-modal` to display a dialog over content. It component should be used to interrupt the task at hand to display a message to a user that requires the user's input or attention. When the user is presented with the dialog, it is paired with an acceptance and an optional rejection action to allow the user to correctly handle the notification. The Notification Dialog should only be used to present the user with critical information.
 
-The dialog will have the highest z-index of 9000, so it will display over all other content, including over modals.
+The Notification Dialog implements the Patient Safety Notification Strategy such that notifications can be presented as `hazardous` or `non-hazardous` interruptions.
 
-There are five dialog variants built into `terra-notification-dialog`:
+- Hazardous notifications should be used to notify the user of critical and/or patient safety related messages. Hazardous notifications dialogs are rigid to provide consistent icon and signal word pairs to prevent accidental confusion of the dialog's severity by the user. Currently the three severity levels of hazardous notifications: `high`, `medium` and `low`.
 
-1. `alert`
-2. `error`
-3. `warning`
-4. `info`
+- Non-hazardous notification should be used to provide user or system informational awareness. Since non-hazardous notification dialogs are less critical, yet important, there could be several use-cases for displaying non-hazardous dialog to the user. Currently the pre-defined dialog type of `error` can be be presented to the user.
 
-If one of these variants do not meet your needs, there is the option to customize the signal word and the icon that the dialog displays.
+- Custom notification can be created, but are not recommened. They are classified as non-hazardous notification dialogs. This enabled you to customize the signal word and the icon that the dialog displays. By choosing to create a custom Notification Dialog, you are responsible for providing an icon that is themed correctly for the terra-default-theme, orion-fusion-theme, and clinical-lowlight-theme. See Terra's [Theme Strategy Guide](/guides/terra-application/theme-strategy) for more info.
 
-By choosing to create a custom Notification Dialog, you are responsible for providing an icon that is themed correctly for the terra-default-theme, orion-fusion-theme, and clinical-lowlight-theme. See Terra's [Theme Strategy Guide](/guides/terra-application/theme-strategy) for more info.
+The dialog has the highest z-index of 9000, so it will display over all other content, including over modals.
+
 
 ## Getting Started
 
@@ -75,13 +73,22 @@ import { ContentLayoutAsList } from 'terra-notification-dialog';
  * [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
  * [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
 
-## Examples 
-<AlertVariantExample />
-<WarningVariantExample />
+## Hazardous Notification Dialogs 
+<AlertVariantExample
+  title="Hazardous Notification Dialog with High Severity"
+/>
+<WarningVariantExample
+  title="Hazardous Notification Dialog with Medium Severity"
+/>
+<InfoVariantExample
+  title="Hazardous Notification Dialog with Low Severity"
+/>
+
+## Non-Hazardous Notification Dialogs 
 <ErrorVariantExample />
-<InfoVariantExample />
 <CustomVariantExample />
 
+## Additional Examples
 <ContentNotificationDialog
   title="Notification Dialog with Detailed Message"
   description="This example demonstrates the use for the startMessage, content, and endMessage prop combination. This example also leverages the ContentLayoutAsList component to correctly style the list provided to the content prop."

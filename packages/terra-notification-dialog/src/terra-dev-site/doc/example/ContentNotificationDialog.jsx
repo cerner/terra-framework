@@ -16,7 +16,7 @@ const ContentNotificationDialog = () => {
   return (
     <>
       <NotificationDialog
-        variant="warning"
+        variant="hazard-medium"
         isOpen={isOpen}
         dialogTitle="Use a Title That Relates Directly to The Choices"
         startMessage="The Start Message is text used to provide more detail or define terminology at the beginning of the dialog body. Don’t repeat the title verbatim."
