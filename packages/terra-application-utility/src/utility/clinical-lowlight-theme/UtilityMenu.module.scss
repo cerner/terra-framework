@@ -1,7 +1,7 @@
 :local {
   .clinical-lowlight-theme {
     --terra-application-utility-header-type-menu-background-color: #222a2e;
-    --terra-application-utility-header-type-menu-button-close-display: 0;
+    --terra-application-utility-header-type-menu-button-close-display: flex;
     --terra-application-utility-menu-type-menu-background-color: #222a2e;
     --terra-application-utility-header-type-menu-header-color: #b2b5b6;
     --terra-application-utility-header-type-menu-header-font-size: 1rem;
@@ -24,7 +24,7 @@
     --terra-application-utility-menu-type-menu-back-icon-width: 0.7143rem;
     --terra-application-utility-header-type-menu-page-close-icon-width: 1rem;
     --terra-application-utility-menu-type-menu-page-close-icon-width: 1rem;
-    --terra-application-utility-header-type-menu-page-display: 0;
+    --terra-application-utility-header-type-menu-page-display: flex;
     --terra-application-utility-menu-margin-bottom: 0;
   }
 }
