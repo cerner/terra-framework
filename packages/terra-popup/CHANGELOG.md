@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.39.0 - (August 11, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.38.0 - (August 4, 2020)
 
 * Changed

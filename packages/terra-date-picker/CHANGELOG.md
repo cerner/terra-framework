@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.44.0 - (August 11, 2020)
+
 * Added
   * Added Calendar Filter sub-component.
 
