@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added missing themeable variables.
+  
 ## 2.37.0 - (August 4, 2020)
 
 * Changed
