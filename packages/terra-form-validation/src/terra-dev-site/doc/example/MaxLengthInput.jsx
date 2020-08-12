@@ -45,10 +45,7 @@ export default class Example extends React.Component {
               label="Example"
               error={meta.error}
               isInvalid={meta.error !== undefined}
-              inputAttrs={{
-                placeholder: 'Example',
-                ...input,
-              }}
+              inputAttrs={input}
               onChange={(e) => { input.onChange(e.target.value); }}
               value={input.value}
               required

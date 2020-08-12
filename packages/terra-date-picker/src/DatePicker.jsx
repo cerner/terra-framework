@@ -1,7 +1,7 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import { activeBreakpointForSize } from 'terra-breakpoints';
 import ResponsiveElement from 'terra-responsive-element';
 import { injectIntl, intlShape } from 'react-intl';
@@ -40,7 +40,6 @@ const propTypes = {
    * Custom input attributes to apply to the date input. Use the name prop to set the name for the input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   inputAttributes: PropTypes.object,
   /**
    * @private
@@ -56,11 +55,16 @@ const propTypes = {
   */
   isInvalid: PropTypes.bool,
   /**
-   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format.
+  * String that labels the current element. 'aria-label' must be present,
+  * for accessibility.
+  */
+  ariaLabel: PropTypes.string,
+  /**
+   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`
    */
   maxDate: PropTypes.string,
   /**
-   * An ISO 8601 string representation of the minimum date that can be selected. The value must be in the `YYYY-MM-DD` format.
+   * An ISO 8601 string representation of the minimum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or after `01/01/1900`
    */
   minDate: PropTypes.string,
   /**
@@ -112,6 +116,11 @@ const propTypes = {
    * The value must be in the `YYYY-MM-DD` format or the all-numeric date format based on the locale.
    */
   value: PropTypes.string,
+  /**
+   * @private
+   * Prop to show inline version of date picker component.
+   */
+  isInline: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -122,8 +131,8 @@ const defaultProps = {
   inputAttributes: undefined,
   isIncomplete: false,
   isInvalid: false,
-  maxDate: undefined,
-  minDate: undefined,
+  maxDate: '2100-12-31',
+  minDate: '1900-01-01',
   onBlur: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
@@ -133,6 +142,7 @@ const defaultProps = {
   required: false,
   disableButtonFocusOnClose: false,
   selectedDate: undefined,
+  isInline: false,
 };
 
 class DatePicker extends React.Component {
@@ -142,7 +152,7 @@ class DatePicker extends React.Component {
     const activeBreakpointOnMount = activeBreakpointForSize(window.innerWidth);
     this.state = {
       selectedDate: DateUtil.defaultValue(props),
-      showPortalPicker: activeBreakpointOnMount === 'tiny' || activeBreakpointOnMount === 'small',
+      showPortalPicker: !this.props.isInline && (activeBreakpointOnMount === 'tiny' || activeBreakpointOnMount === 'small'),
       prevPropsSelectedDate: props.value || props.selectedDate,
     };
 
@@ -215,7 +225,7 @@ class DatePicker extends React.Component {
   }
 
   handleBreakpointChange(activeBreakpoint) {
-    const showPortalPicker = activeBreakpoint === 'tiny' || activeBreakpoint === 'small';
+    const showPortalPicker = !this.props.isInline && (activeBreakpoint === 'tiny' || activeBreakpoint === 'small');
 
     if (this.state.showPortalPicker !== showPortalPicker) {
       this.setState({ showPortalPicker });
@@ -301,6 +311,11 @@ class DatePicker extends React.Component {
 
   handleChangeRaw(event) {
     this.dateValue = event.target.value;
+    if (!this.getMetadata().isValidValue) {
+      this.setState({
+        selectedDate: null,
+      });
+    }
 
     if (this.props.onChangeRaw) {
       const metadata = this.getMetadata();
@@ -351,7 +366,7 @@ class DatePicker extends React.Component {
   isDateWithinRange(date) {
     let isAcceptable = true;
 
-    if (DateUtil.isDateOutOfRange(date, DateUtil.createSafeDate(this.props.minDate), DateUtil.createSafeDate(this.props.maxDate))) {
+    if (DateUtil.isDateOutOfRange(date, DateUtil.createSafeDate(DateUtil.getMinDate(this.props.minDate)), DateUtil.createSafeDate(DateUtil.getMaxDate(this.props.maxDate)))) {
       isAcceptable = false;
     }
 
@@ -384,6 +399,8 @@ class DatePicker extends React.Component {
       required,
       selectedDate,
       value,
+      isInline,
+      ariaLabel,
       ...customProps
     } = this.props;
 
@@ -416,9 +433,11 @@ class DatePicker extends React.Component {
       selectedDateInPicker = this.state.selectedDate;
     }
 
+    const theme = this.context;
+
     return (
       <div
-        className={cx('date-picker')}
+        className={cx('date-picker', theme.className)}
         ref={this.datePickerContainer}
       >
         <ResponsiveElement
@@ -428,6 +447,7 @@ class DatePicker extends React.Component {
           <ReactDatePicker
             {...customProps}
             withPortal={this.state.showPortalPicker}
+            inline={isInline}
             selected={selectedDateInPicker}
             value={formattedValue}
             onBlur={this.handleBlur}
@@ -447,13 +467,14 @@ class DatePicker extends React.Component {
                 shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
                 onButtonFocus={this.handleFocus}
                 buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
+                ariaLabel={ariaLabel}
               />
             )}
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}
             filterDate={this.handleFilterDate}
             includeDates={DateUtil.filterInvalidDates(includeDates)}
-            maxDate={DateUtil.createSafeDate(maxDate)}
-            minDate={DateUtil.createSafeDate(minDate)}
+            maxDate={DateUtil.createSafeDate(DateUtil.getMaxDate(maxDate))}
+            minDate={DateUtil.createSafeDate(DateUtil.getMinDate(minDate))}
             todayButton={intl.formatMessage({ id: 'Terra.datePicker.today' })}
             dateFormatCalendar=" "
             dateFormat={dateFormat}
@@ -475,5 +496,6 @@ class DatePicker extends React.Component {
 
 DatePicker.propTypes = propTypes;
 DatePicker.defaultProps = defaultProps;
+DatePicker.contextType = ThemeContext;
 
 export default injectIntl(DatePicker);

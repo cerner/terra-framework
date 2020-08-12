@@ -488,4 +488,52 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
     Terra.it.validatesElement();
   });
+
+  describe('Beyond Min Max', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-beyond-min-max');
+    });
+
+    it('Opens the date picker', () => {
+      browser.click('[class*="button"]');
+    });
+
+    Terra.it.matchesScreenshot('uses default maxDate', { selector: '[data-terra-date-picker-calendar]' });
+
+    it('Select a day', () => {
+      browser.click('[class*="react-datepicker-day--selected"]');
+    });
+
+    Terra.it.matchesScreenshot('date selected');
+
+    it('Enters date beyond max', () => {
+      browser.setValue('input[name="terra-date-date-input"]', '11/11/2111');
+    });
+
+    Terra.it.matchesScreenshot('beyond maxDate entered');
+
+    it('Enters min date', () => {
+      browser.setValue('input[name="terra-date-date-input"]', '01/01/1900');
+    });
+
+    Terra.it.matchesScreenshot('minDate entered');
+
+    it('Opens the date picker', () => {
+      browser.click('[class*="button"]');
+    });
+
+    Terra.it.matchesScreenshot('uses default minDate', { selector: '[data-terra-date-picker-calendar]' });
+
+    it('Select a day', () => {
+      browser.click('[class*="react-datepicker-day--selected"]');
+    });
+
+    Terra.it.matchesScreenshot('min date selected');
+
+    it('Enters date beyond min', () => {
+      browser.setValue('input[name="terra-date-date-input"]', '10/20/1899');
+    });
+
+    Terra.it.matchesScreenshot('beyond minDate entered');
+  });
 });

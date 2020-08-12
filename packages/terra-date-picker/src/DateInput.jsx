@@ -5,8 +5,10 @@ import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
 import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 
 import DateUtil from './DateUtil';
+import { getLocalizedDateForScreenReader } from './react-datepicker/date_utils';
 import styles from './DatePicker.module.scss';
 
 const cx = classNames.bind(styles);
@@ -21,7 +23,6 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the date input.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   inputAttributes: PropTypes.object,
   /**
    * @private
@@ -80,6 +81,11 @@ const propTypes = {
    * The selected or entered date value to display in the date input.
    */
   value: PropTypes.string,
+  /**
+  * String that labels the current element. 'aria-label' must be present,
+  * for accessibility.
+  */
+  ariaLabel: PropTypes.string,
 };
 
 const defaultProps = {
@@ -97,9 +103,9 @@ const defaultProps = {
   required: false,
   placeholder: undefined,
   value: undefined,
+  ariaLabel: undefined,
 };
 
-// eslint-disable-next-line react/prefer-stateless-function
 class DatePickerInput extends React.Component {
   constructor(props) {
     super(props);
@@ -156,6 +162,7 @@ class DatePickerInput extends React.Component {
       placeholder,
       required,
       value,
+      ariaLabel,
       ...customProps
     } = this.props;
 
@@ -178,9 +185,12 @@ class DatePickerInput extends React.Component {
       { 'is-invalid': isInvalid },
     ]);
     const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
+    const theme = this.context;
+
+    const label = this.props.ariaLabel ? this.props.ariaLabel : intl.formatMessage({ id: 'Terra.datePicker.date' });
 
     return (
-      <div className={cx('custom-input')}>
+      <div className={cx('custom-input', theme.className)}>
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
@@ -199,7 +209,7 @@ class DatePickerInput extends React.Component {
           placeholder={placeholder}
           onFocus={onFocus}
           onBlur={onBlur}
-          aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
+          ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
         />
         <Button
           className={buttonClasses}
@@ -221,5 +231,6 @@ class DatePickerInput extends React.Component {
 
 DatePickerInput.propTypes = propTypes;
 DatePickerInput.defaultProps = defaultProps;
+DatePickerInput.contextType = ThemeContext;
 
 export default injectIntl(DatePickerInput);

@@ -94,7 +94,7 @@ class DisclosureComponent extends React.Component {
                 });
             }}
           >
-          Dismiss
+            Dismiss
           </button>
           <button
             type="button"
@@ -109,7 +109,7 @@ class DisclosureComponent extends React.Component {
               });
             }}
           >
-          Disclose Again
+            Disclose Again
           </button>
           <br />
           <br />
@@ -209,6 +209,7 @@ class ContentComponent extends React.Component {
         onClick={() => {
           disclosureManager.disclose({
             preferredType: 'panel',
+            typeConfig: { panelBehavior: 'overlay' },
             dimensions: { height: this.state.disclosureHeight, width: this.state.disclosureWidth },
             content: {
               key: 'Content-Disclosure-Dimensions',
@@ -275,13 +276,10 @@ ContentComponent.contextType = DisclosureManagerContext;
 
 const SlidePanelManagerExample = () => (
   <div className={cx('example-wrapper')}>
-    <SlidePanelManager
-      panelBehavior="overlay"
-    >
+    <SlidePanelManager>
       <ContentComponent />
     </SlidePanelManager>
   </div>
 );
 
 export default SlidePanelManagerExample;
-/* eslint-disable max-classes-per-file */

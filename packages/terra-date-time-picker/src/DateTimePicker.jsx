@@ -2,6 +2,7 @@ import React from 'react';
 import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import DatePicker from 'terra-date-picker';
 import TimeInput from 'terra-time-input';
 import * as KeyCode from 'keycode-js';
@@ -17,7 +18,6 @@ const propTypes = {
    * Custom input attributes to apply to the date input. Use the name prop to set the name for the date input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   dateInputAttributes: PropTypes.object,
   /**
    * Whether the date and time inputs should be disabled.
@@ -54,12 +54,12 @@ const propTypes = {
   */
   isInvalidMeridiem: PropTypes.bool,
   /**
-   * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format.
+   * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
   maxDate: PropTypes.string,
   /**
-   * An ISO 8601 string representation of the minimum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format.
+   * An ISO 8601 string representation of the minimum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format. Must be on or after `01/01/1900`.
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
   minDate: PropTypes.string,
@@ -109,7 +109,6 @@ const propTypes = {
    * Custom input attributes to apply to the time input. Use the name prop to set the name for the time input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   timeInputAttributes: PropTypes.object,
   /**
    * An ISO 8601 string representation of the initial value to show in the date and time inputs. The value must be in the `YYYY-MM-DDThh:mm:ss` format.
@@ -132,8 +131,8 @@ const defaultProps = {
   isIncomplete: false,
   isInvalid: false,
   isInvalidMeridiem: false,
-  maxDate: undefined,
-  minDate: undefined,
+  maxDate: '2100-12-31',
+  minDate: '1900-01-01',
   onBlur: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
@@ -499,7 +498,7 @@ class DateTimePicker extends React.Component {
   isDateTimeAcceptable(newDateTime) {
     let isAcceptable = true;
 
-    if (DateUtil.isDateOutOfRange(newDateTime, DateTimeUtils.createSafeDate(this.props.minDate), DateTimeUtils.createSafeDate(this.props.maxDate))) {
+    if (DateUtil.isDateOutOfRange(newDateTime, DateTimeUtils.createSafeDate(DateUtil.getMinDate(this.props.minDate)), DateTimeUtils.createSafeDate(DateUtil.getMaxDate(this.props.maxDate)))) {
       isAcceptable = false;
     }
 
@@ -625,11 +624,12 @@ class DateTimePicker extends React.Component {
 
     const dateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
     const dateValue = DateUtil.formatMomentDate(dateTime, 'YYYY-MM-DD');
+    const theme = this.context;
 
     return (
       <div
         {...customProps}
-        className={cx('date-time-picker')}
+        className={cx('date-time-picker', theme.className)}
         ref={this.dateTimePickerContainer}
       >
         <input
@@ -654,8 +654,8 @@ class DateTimePicker extends React.Component {
             filterDate={filterDate}
             includeDates={includeDates}
             inputAttributes={dateInputAttributes}
-            maxDate={maxDate}
-            minDate={minDate}
+            maxDate={DateUtil.getMaxDate(maxDate)}
+            minDate={DateUtil.getMinDate(minDate)}
             selectedDate={dateValue}
             name="input"
             disabled={disabled}
@@ -692,5 +692,6 @@ class DateTimePicker extends React.Component {
 
 DateTimePicker.propTypes = propTypes;
 DateTimePicker.defaultProps = defaultProps;
+DateTimePicker.contextType = ThemeContext;
 
 export default injectIntl(DateTimePicker);

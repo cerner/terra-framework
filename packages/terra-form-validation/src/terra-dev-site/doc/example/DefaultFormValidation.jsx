@@ -1,5 +1,3 @@
-/* eslint-disable class-methods-use-this */
-
 import React from 'react';
 import { Form, Field } from 'react-final-form';
 import InputField from 'terra-form-input/lib/InputField';
@@ -53,10 +51,7 @@ export default class MainEntry extends React.Component {
               isInvalid={meta.submitFailed && !meta.valid}
               required
               help="TerraUser is not available"
-              inputAttrs={{
-                placeholder: 'Description',
-                ...input,
-              }}
+              inputAttrs={input}
               onChange={(e) => { input.onChange(e.target.value); }}
               value={input.value}
             />
@@ -71,10 +66,7 @@ export default class MainEntry extends React.Component {
               label="Description"
               error={meta.error}
               isInvalid={meta.submitFailed && !meta.valid}
-              inputAttrs={{
-                placeholder: 'Description',
-                ...input,
-              }}
+              inputAttrs={input}
               onChange={(e) => { input.onChange(e.target.value); }}
               value={input.value}
               required

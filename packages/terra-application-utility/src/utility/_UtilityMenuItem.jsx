@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Arrange from 'terra-arrange';
 import Button from 'terra-button';
+import ThemeContext from 'terra-theme-context';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import Utils from '../Utils';
@@ -127,16 +128,19 @@ class UtilityMenuItem extends React.Component {
       variant,
       ...customProps
     } = this.props;
+    const theme = this.context;
 
     const bodyItemClassNames = cx([
       { 'header-utility-body-item': variant === Utils.VARIANTS.HEADER },
       { 'menu-utility-body-item': variant === Utils.VARIANTS.MENU },
       { 'read-only': isReadOnly },
+      theme.className,
     ]);
 
     const footerItemClassNames = cx([
       { 'header-utility-footer-item': variant === Utils.VARIANTS.HEADER },
       { 'menu-utility-footer-item': variant === Utils.VARIANTS.MENU },
+      theme.className,
     ]);
 
     const checkmarkClassNames = cx([
@@ -154,7 +158,6 @@ class UtilityMenuItem extends React.Component {
       { 'default-right-inset': !rightInset },
     ]);
 
-    /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-to-interactive-role, jsx-a11y/no-noninteractive-tabindex */
     const renderBodyItem = (fill, wrapOnKeyDown, handleSelection) => (
       <div
         {...customProps}
@@ -210,5 +213,6 @@ class UtilityMenuItem extends React.Component {
 
 UtilityMenuItem.propTypes = propTypes;
 UtilityMenuItem.defaultProps = defaultProps;
+UtilityMenuItem.contextType = ThemeContext;
 
 export default UtilityMenuItem;

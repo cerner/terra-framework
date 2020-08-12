@@ -138,14 +138,26 @@ exports[`Tabs should render prop data 1`] = `
       "calls": Array [
         Array [
           Object {
-            "hasCount": false,
+            "hasCount": true,
             "isActive": true,
-            "notificationCount": 0,
+            "notificationCount": undefined,
+            "text": "test-text",
+          },
+        ],
+        Array [
+          Object {
+            "hasCount": true,
+            "isActive": true,
+            "notificationCount": undefined,
             "text": "test-text",
           },
         ],
       ],
       "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
         Object {
           "type": "return",
           "value": undefined,
@@ -202,14 +214,26 @@ exports[`Tabs should render prop data 1`] = `
         "calls": Array [
           Array [
             Object {
-              "hasCount": false,
+              "hasCount": true,
               "isActive": true,
-              "notificationCount": 0,
+              "notificationCount": undefined,
+              "text": "test-text",
+            },
+          ],
+          Array [
+            Object {
+              "hasCount": true,
+              "isActive": true,
+              "notificationCount": undefined,
               "text": "test-text",
             },
           ],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -228,24 +252,35 @@ exports[`Tabs should render prop data 1`] = `
       className="tabs-container is-calculating"
     >
       <Tab
-        hasCount={false}
+        hasCount={true}
         isActive={true}
         key="my-test-key"
-        notificationCount={0}
         onTabSelect={[Function]}
         render={
           [MockFunction] {
             "calls": Array [
               Array [
                 Object {
-                  "hasCount": false,
+                  "hasCount": true,
                   "isActive": true,
-                  "notificationCount": 0,
+                  "notificationCount": undefined,
+                  "text": "test-text",
+                },
+              ],
+              Array [
+                Object {
+                  "hasCount": true,
+                  "isActive": true,
+                  "notificationCount": undefined,
                   "text": "test-text",
                 },
               ],
             ],
             "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
               Object {
                 "type": "return",
                 "value": undefined,
@@ -280,258 +315,229 @@ exports[`Tabs should render prop data 1`] = `
           type="button"
         />
       </Tab>
-      <InjectIntl(TabRollup)
-        data-application-tabs-more={true}
-        hasChildNotifications={false}
-        hasCount={false}
-        innerRef={
+    </nav>
+  </Tabs>
+</InjectIntl(Tabs)>
+`;
+
+exports[`Tabs should render with hasCount set to true when notifications are set to 0 1`] = `
+<InjectIntl(Tabs)
+  activeTabKey="notification-test"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  navigationItems={
+    Array [
+      Object {
+        "key": "notification-test",
+        "text": "sample-text",
+      },
+    ]
+  }
+  navigationRenderFunction={
+    [MockFunction] {
+      "calls": Array [
+        Array [
           Object {
-            "current": <div
-              class="tab-rollup-label"
-              id="terra-navigation-link-Terra.applicationNavigation.tabs.rollupButtonTitle"
-            >
-              <span
-                class="tab-rollup-text"
-              >
-                Terra.applicationNavigation.tabs.rollupButtonTitle
-              </span>
-              <svg
-                aria-hidden="true"
-                class="tui-Icon icon is-bidi tab-rollup-icon"
-                focusable="false"
-                height="1em"
-                viewBox="0 0 48 48"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M48 12L24 36 0 12h48z"
-                />
-              </svg>
-            </div>,
+            "hasCount": true,
+            "isActive": true,
+            "notificationCount": undefined,
+            "text": "sample-text",
+          },
+        ],
+        Array [
+          Object {
+            "hasCount": true,
+            "isActive": true,
+            "notificationCount": undefined,
+            "text": "sample-text",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  notifications={
+    Object {
+      "myComponent": 0,
+    }
+  }
+>
+  <Tabs
+    activeTabKey="notification-test"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    navigationItems={
+      Array [
+        Object {
+          "key": "notification-test",
+          "text": "sample-text",
+        },
+      ]
+    }
+    navigationRenderFunction={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "hasCount": true,
+              "isActive": true,
+              "notificationCount": undefined,
+              "text": "sample-text",
+            },
+          ],
+          Array [
+            Object {
+              "hasCount": true,
+              "isActive": true,
+              "notificationCount": undefined,
+              "text": "sample-text",
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    notifications={
+      Object {
+        "myComponent": 0,
+      }
+    }
+  >
+    <nav
+      className="tabs-container is-calculating"
+    >
+      <Tab
+        hasCount={true}
+        isActive={true}
+        key="notification-test"
+        onTabSelect={null}
+        render={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "hasCount": true,
+                  "isActive": true,
+                  "notificationCount": undefined,
+                  "text": "sample-text",
+                },
+              ],
+              Array [
+                Object {
+                  "hasCount": true,
+                  "isActive": true,
+                  "notificationCount": undefined,
+                  "text": "sample-text",
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
           }
         }
-        isPulsed={false}
-        isSelected={false}
-        onTabSelect={[Function]}
         tabRef={
           Object {
             "current": <div
-              aria-current="false"
-              aria-haspopup="true"
-              aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
-              class="tab-rollup"
+              aria-current="true"
+              aria-label="sample-text"
+              class="tab is-disabled"
               data-focus-styles-enabled="true"
               role="link"
               tabindex="0"
               type="button"
-            >
-              <div
-                aria-hidden="true"
-                class="tab-inner"
-                data-tab-menu-inner="true"
-              >
-                <div
-                  class="tab-rollup-label"
-                  id="terra-navigation-link-Terra.applicationNavigation.tabs.rollupButtonTitle"
-                >
-                  <span
-                    class="tab-rollup-text"
-                  >
-                    Terra.applicationNavigation.tabs.rollupButtonTitle
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    class="tui-Icon icon is-bidi tab-rollup-icon"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 48 48"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M48 12L24 36 0 12h48z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>,
+            />,
           }
         }
-        text="Terra.applicationNavigation.tabs.rollupButtonTitle"
+        text="sample-text"
       >
-        <TabRollup
-          data-application-tabs-more={true}
-          hasChildNotifications={false}
-          hasCount={false}
-          innerRef={
-            Object {
-              "current": <div
-                class="tab-rollup-label"
-                id="terra-navigation-link-Terra.applicationNavigation.tabs.rollupButtonTitle"
-              >
-                <span
-                  class="tab-rollup-text"
-                >
-                  Terra.applicationNavigation.tabs.rollupButtonTitle
-                </span>
-                <svg
-                  aria-hidden="true"
-                  class="tui-Icon icon is-bidi tab-rollup-icon"
-                  focusable="false"
-                  height="1em"
-                  viewBox="0 0 48 48"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M48 12L24 36 0 12h48z"
-                  />
-                </svg>
-              </div>,
-            }
-          }
-          intl={
-            Object {
-              "defaultFormats": Object {},
-              "defaultLocale": "en",
-              "formatDate": [Function],
-              "formatHTMLMessage": [Function],
-              "formatMessage": [Function],
-              "formatNumber": [Function],
-              "formatPlural": [Function],
-              "formatRelative": [Function],
-              "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
-                "getDateTimeFormat": [Function],
-                "getMessageFormat": [Function],
-                "getNumberFormat": [Function],
-                "getPluralFormat": [Function],
-                "getRelativeFormat": [Function],
-              },
-              "locale": "en",
-              "messages": null,
-              "now": [Function],
-              "onError": [Function],
-              "textComponent": "span",
-              "timeZone": null,
-            }
-          }
-          isPulsed={false}
-          isSelected={false}
-          onTabSelect={[Function]}
-          tabRef={
-            Object {
-              "current": <div
-                aria-current="false"
-                aria-haspopup="true"
-                aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
-                class="tab-rollup"
-                data-focus-styles-enabled="true"
-                role="link"
-                tabindex="0"
-                type="button"
-              >
-                <div
-                  aria-hidden="true"
-                  class="tab-inner"
-                  data-tab-menu-inner="true"
-                >
-                  <div
-                    class="tab-rollup-label"
-                    id="terra-navigation-link-Terra.applicationNavigation.tabs.rollupButtonTitle"
-                  >
-                    <span
-                      class="tab-rollup-text"
-                    >
-                      Terra.applicationNavigation.tabs.rollupButtonTitle
-                    </span>
-                    <svg
-                      aria-hidden="true"
-                      class="tui-Icon icon is-bidi tab-rollup-icon"
-                      focusable="false"
-                      height="1em"
-                      viewBox="0 0 48 48"
-                      width="1em"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M48 12L24 36 0 12h48z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>,
-            }
-          }
-          text="Terra.applicationNavigation.tabs.rollupButtonTitle"
-        >
-          <div
-            aria-current={false}
-            aria-haspopup={true}
-            aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
-            className="tab-rollup"
-            data-focus-styles-enabled={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            role="link"
-            tabIndex="0"
-            type="button"
-          >
-            <div
-              aria-hidden={true}
-              className="tab-inner"
-              data-tab-menu-inner={true}
-            >
-              <div
-                className="tab-rollup-label"
-                id="terra-navigation-link-Terra.applicationNavigation.tabs.rollupButtonTitle"
-              >
-                <span
-                  className="tab-rollup-text"
-                >
-                  Terra.applicationNavigation.tabs.rollupButtonTitle
-                </span>
-                <IconCaretDown
-                  className="tab-rollup-icon"
-                  isBidi={true}
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <IconBase
-                    ariaLabel={null}
-                    className="tab-rollup-icon"
-                    focusable="false"
-                    height="1em"
-                    isBidi={true}
-                    isSpin={false}
-                    viewBox="0 0 48 48"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      className="tui-Icon icon is-bidi tab-rollup-icon"
-                      focusable="false"
-                      height="1em"
-                      viewBox="0 0 48 48"
-                      width="1em"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M48 12L24 36 0 12h48z"
-                      />
-                    </svg>
-                  </IconBase>
-                </IconCaretDown>
-              </div>
-            </div>
-          </div>
-        </TabRollup>
-      </InjectIntl(TabRollup)>
+        <div
+          aria-current={true}
+          aria-label="sample-text"
+          className="tab is-disabled"
+          data-focus-styles-enabled={true}
+          onBlur={[Function]}
+          onMouseDown={[Function]}
+          role="link"
+          tabIndex="0"
+          type="button"
+        />
+      </Tab>
     </nav>
   </Tabs>
 </InjectIntl(Tabs)>

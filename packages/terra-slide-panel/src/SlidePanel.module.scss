@@ -1,3 +1,7 @@
+// Themes
+@import './clinical-lowlight-theme/SlidePanel.module';
+@import './orion-fusion-theme/SlidePanel.module';
+
 :local {
   .slide-panel {
     overflow: hidden;
@@ -26,7 +30,7 @@
   .panel {
     background-color: var(--terra-slide-panel-panel-background-color, #fff);
     position: absolute;
-    z-index: 500; // z-index used to set master above detail in visual stacking context.
+    z-index: 500; // z-index used to set main above detail in visual stacking context.
   }
 
   // Prevent z-index issues with nesting

@@ -9,26 +9,7 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-  * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
-  *
-  * **DEPRECATED**: Use `sections` prop instead.
-  */
-  links: PropTypes.arrayOf(PropTypes.shape({
-    /**
-    * Text to be disaplyed as navigational link.
-    */
-    text: PropTypes.string,
-    /**
-    * URL of the navigational link.
-    */
-    href: PropTypes.string,
-    /**
-    * Attribute to open on same or different tab on clicking the navigational link.
-    */
-    target: PropTypes.string,
-  })),
-  /**
-  * A set of navigation links to be displayed with optional headers. Will override the `links` prop if both are provided.
+  * A set of navigation links to be displayed with optional headers.
   *
   * ```
   * Array structured like:
@@ -50,11 +31,11 @@ const propTypes = {
     */
     headerText: PropTypes.string,
     /**
-    * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
+    * An array of navigation links with each element specifying text, href and target keys with appropriate values.
     */
     links: PropTypes.arrayOf(PropTypes.shape({
       /**
-      * Text to be disaplyed as navigational link.
+      * Text to be displayed as navigational link.
       */
       text: PropTypes.string.isRequired,
       /**
@@ -86,7 +67,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  links: [],
   sections: [],
   isVertical: false,
   contentLeft: null,
@@ -95,7 +75,7 @@ const defaultProps = {
 };
 
 const BrandFooter = ({
-  links, sections, isVertical, contentLeft, contentRight, contentBottom, ...customProps
+  sections, isVertical, contentLeft, contentRight, contentBottom, ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
   const BrandFooterClassNames = classNames(cx(
@@ -104,23 +84,13 @@ const BrandFooter = ({
   ),
   customProps.className);
 
-  let processedSections;
-  if (links.length > 0 && sections.length === 0) {
-    processedSections = [{
-      headerText: '',
-      links,
-      id: 0,
-    }];
-  } else {
-    processedSections = sections;
+  const processedSections = sections;
 
-    // Assign ids to use as keys
-    for (let i = 0; i < processedSections.length; i += 1) {
-      processedSections[i].id = i;
-    }
+  // Assign ids to use as keys
+  for (let i = 0; i < processedSections.length; i += 1) {
+    processedSections[i].id = i;
   }
 
-  // The old links prop can't have section headers. Needed for vertical layout to insert padding to keep columns without headers aligned
   const containsASectionHeader = processedSections.some(linkGroup => linkGroup.headerText);
 
   let navigation;

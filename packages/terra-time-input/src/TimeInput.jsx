@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import Input from 'terra-form-input';
 import ButtonGroup from 'terra-button-group';
 import { injectIntl, intlShape } from 'react-intl';
@@ -9,7 +11,7 @@ import * as KeyCode from 'keycode-js';
 import TimeUtil from './TimeUtil';
 import styles from './TimeInput.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -19,12 +21,10 @@ const propTypes = {
   /**
    * Custom input attributes that apply to the hour, minute, and second inputs.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   inputAttributes: PropTypes.object,
   /**
    * Custom input attributes to apply to the hour input
    */
-  // eslint-disable-next-line react/forbid-prop-types
   hourAttributes: PropTypes.object,
   /**
   * @private
@@ -46,7 +46,6 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the minutes input
    */
-  // eslint-disable-next-line react/forbid-prop-types
   minuteAttributes: PropTypes.object,
   /**
    * Name of the time input. The name should be unique.
@@ -77,7 +76,6 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the seconds input
    */
-  // eslint-disable-next-line react/forbid-prop-types
   secondAttributes: PropTypes.object,
   /**
    * Whether the input for seconds should be displayed or not. If true then the second field must have a valid
@@ -173,7 +171,6 @@ class TimeInput extends React.Component {
       if (hour) {
         const parsedHour = TimeUtil.parseTwelveHourTime(hour, this.anteMeridiem, this.postMeridiem);
         hour = parsedHour.hourString;
-        // eslint-disable-next-line prefer-destructuring
         meridiem = parsedHour.meridiem;
       } else {
         meridiem = this.anteMeridiem;
@@ -212,7 +209,6 @@ class TimeInput extends React.Component {
       if (hour) {
         const parsedHour = TimeUtil.parseTwelveHourTime(hour, this.anteMeridiem, this.postMeridiem);
         hour = parsedHour.hourString;
-        // eslint-disable-next-line prefer-destructuring
         meridiem = parsedHour.meridiem;
       }
     }
@@ -699,14 +695,17 @@ class TimeInput extends React.Component {
       }
     }
 
-    const timeInputClassNames = cx([
+    const theme = this.context;
+
+    const timeInputClassNames = classNames(cx(
       { disabled },
       'time-input',
       { 'is-focused': this.state.isFocused },
       { 'is-invalid': isInvalid },
       { 'is-incomplete': (isIncomplete && required && !isInvalid && !isInvalidMeridiem) },
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
 
     const hourClassNames = cx([
       'time-input-hour',
@@ -725,7 +724,6 @@ class TimeInput extends React.Component {
       { 'initial-focus': this.state.secondInitialFocused },
     ]);
 
-    /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
       <div
         {...customProps}
@@ -835,5 +833,6 @@ class TimeInput extends React.Component {
 
 TimeInput.propTypes = propTypes;
 TimeInput.defaultProps = defaultProps;
+TimeInput.contextType = ThemeContext;
 
 export default injectIntl(TimeInput);

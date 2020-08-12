@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import DatePickerField from 'terra-date-picker';
+import DatePickerField from 'terra-date-picker/lib/DatePickerField';
 import styles from './DatePickerExampleCommon.module.scss';
 
 const cx = classNames.bind(styles);
@@ -22,10 +22,17 @@ class DatePickerExample extends React.Component {
     super(props);
     this.state = { date: this.props.selectedDate };
     this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleDateChangeRaw = this.handleDateChangeRaw.bind(this);
   }
 
   handleDateChange(event, date) {
     this.setState({ date });
+  }
+
+  handleDateChangeRaw(event, date, metadata) {
+    if (!metadata.isValidValue) {
+      this.setState({ date: null });
+    }
   }
 
   render() {
@@ -40,6 +47,7 @@ class DatePickerExample extends React.Component {
           name="date-input"
           datePickerId="default-field"
           onChange={this.handleDateChange}
+          onChangeRaw={this.handleDateChangeRaw}
           {...this.props}
         />
       </div>

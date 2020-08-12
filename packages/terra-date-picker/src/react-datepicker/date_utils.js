@@ -1,4 +1,5 @@
 import moment from 'moment'
+import DateUtil from '../DateUtil';
 
 const dayOfWeekCodes = {
   1: 'mon',
@@ -67,7 +68,13 @@ export function cloneDate (date) {
 
 export function parseDate (value, { dateFormat, locale }) {
   const m = moment(value, dateFormat, locale || moment.locale(), true)
-  return m.isValid() ? m : null
+
+  // Only support dates between 01/01/1900 and 12/31/2010 because the year dropdown only allows 1900 - 2100.
+  if (m.isValid() && DateUtil.isBetweenMinMaxDate(m.format('YYYY-MM-DD'))) {
+    return m;
+  }
+
+  return null;
 }
 
 // ** Date "Reflection" **
@@ -287,11 +294,11 @@ export function getMonthInLocale (locale, date, format) {
 // ** Utils for some components **
 
 export function isDayDisabled (day, { minDate, maxDate, excludeDates, includeDates, filterDate } = {}) {
-  return (minDate && day.isBefore(minDate, 'day')) ||
-    (maxDate && day.isAfter(maxDate, 'day')) ||
-    (excludeDates && excludeDates.some(excludeDate => isSameDay(day, excludeDate))) ||
-    (includeDates && !includeDates.some(includeDate => isSameDay(day, includeDate))) ||
-    (filterDate && !filterDate(day.clone())) ||
+  return (minDate && day && day.isBefore(minDate, 'day')) ||
+    (maxDate && day && day.isAfter(maxDate, 'day')) ||
+    (excludeDates && day && excludeDates.some(excludeDate => isSameDay(day, excludeDate))) ||
+    (includeDates && day && !includeDates.some(includeDate => isSameDay(day, includeDate))) ||
+    (filterDate && day && !filterDate(day.clone())) ||
     false
 }
 
@@ -376,7 +383,7 @@ export function getLocalizedDateForScreenReader (date, props) {
 
   if (date && date.isValid()) {
     const localizedDate = localizeDate(date, locale);
-    localizedDateLabel = localizedDate.format('LL');
+    localizedDateLabel = localizedDate.format('dddd, LL');
 
     if (intl && isDayDisabled(date, props)) {
       localizedDateLabel = localizedDateLabel.concat(' ', intl.formatMessage({ id: 'Terra.datePicker.disabled' }));

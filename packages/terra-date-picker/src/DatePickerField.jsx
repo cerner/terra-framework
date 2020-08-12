@@ -39,6 +39,15 @@ const propTypes = {
    */
   hideRequired: PropTypes.bool,
   /**
+   * An array of ISO 8601 string representation of the dates to enable in the picker. All Other dates will be disabled.
+   */
+  includeDates: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Custom input attributes to apply to the date input. Use the name prop to set the name for the input.
+   * Do not set the name in inputAttribute as it will be ignored.
+   */
+  inputAttributes: PropTypes.object,
+  /**
   * Whether the field displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
   */
   isIncomplete: PropTypes.bool,
@@ -55,30 +64,19 @@ const propTypes = {
    */
   isLabelHidden: PropTypes.bool,
   /**
-   * An array of ISO 8601 string representation of the dates to enable in the picker. All Other dates will be disabled.
-   */
-  includeDates: PropTypes.arrayOf(PropTypes.string),
-  /**
-   * Custom input attributes to apply to the date input. Use the name prop to set the name for the input.
-   * Do not set the name in inputAttribute as it will be ignored.
-   */
-  // eslint-disable-next-line react/forbid-prop-types
-  inputAttributes: PropTypes.object,
-  /**
    * The label of the form control children.
    */
   label: PropTypes.node.isRequired,
   /**
    * Attributes to attach to the label.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   labelAttrs: PropTypes.object,
   /**
-   * An ISO 8601 string representation of the maximum date that can be selected.
+   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
    */
   maxDate: PropTypes.string,
   /**
-   * An ISO 8601 string representation of the minimum date that can be selected.
+   * An ISO 8601 string representation of the minimum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or after `01/01/1900`
    */
   minDate: PropTypes.string,
   /**
@@ -132,6 +130,13 @@ const propTypes = {
    * Whether or not to append the 'optional' label to a non-required field label.
    */
   showOptional: PropTypes.bool,
+  /**
+   * The date value. This prop should only be used for a controlled date picker field.
+   * When this prop is set a handler is needed for both the `onChange` and `onChangeRaw` props to manage the date value.
+   * If both `selectedDate` and this prop are set, then `selectedDate` will have no effect.
+   * The value must be in the `YYYY-MM-DD` format or the all-numeric date format based on the locale.
+   */
+  value: PropTypes.string,
 };
 
 const defaultProps = {
@@ -194,6 +199,7 @@ const DatePickerField = (props) => {
     required,
     selectedDate,
     showOptional,
+    value,
     ...customProps
   } = props;
 
@@ -243,6 +249,7 @@ const DatePickerField = (props) => {
         isIncomplete={isIncomplete}
         maxDate={maxDate}
         minDate={minDate}
+        ariaLabel={label}
         name={name}
         onBlur={onBlur}
         onChange={onChange}
@@ -252,6 +259,7 @@ const DatePickerField = (props) => {
         onSelect={onSelect}
         required={required}
         selectedDate={selectedDate}
+        value={value}
       />
     </Field>
   );

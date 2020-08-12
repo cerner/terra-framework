@@ -13,4 +13,13 @@ describe('Divider', () => {
     const wrapper = shallow(<Divider id="testDivider" />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'orion-fusion-theme',
+      });
+    const wrapper = mount(defaultRender);
+    expect(wrapper).toMatchSnapshot();
+  });
 });

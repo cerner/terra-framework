@@ -25,7 +25,7 @@
     "extends browserslist-config-terra"
   ],
   "eslintConfig": {
-    "extends": "terra",
+    "extends": "@cerner/terra",
     "overrides": [
       {
         "files": [
@@ -50,12 +50,6 @@
     ],
     "rules": {
       "react/forbid-prop-types": "off"
-    },
-    "settings": {
-      "polyfills": [
-        "Promise",
-        "Map"
-      ]
     }
   },
   "stylelint": {
@@ -66,7 +60,7 @@
   },
   "scripts": {
     "bootstrap:hoist": "lerna bootstrap --hoist",
-    "clean": "lerna clean --yes && rm -rf node_modules",
+    "clean": "lerna clean --yes && rm -rf node_modules || true",
     "clean:install": "npm run clean && npm install",
     "clean:obsolete-snapshots": "npm test -- -u",
     "compile": "npm run compile:clean && npm run compile:build",
@@ -91,8 +85,6 @@
     "lint:scss": "stylelint 'packages/**/src/**/*.scss' --syntax scss",
     "pretest": "npm run lint",
     "postinstall": "link-parent-bin && npm run compile && npm run bootstrap:hoist",
-    "release": "npm whoami && check-installed-dependencies && npm run compile && npm test && lerna publish",
-    "postrelease": "npm run docs && git add --all && git commit -m 'Updated README.md'",
     "start": "tt-serve",
     "start-heroku": "tt-serve-static --port $PORT --site './build' ",
     "start-prod": "tt-serve --env.disableHotReloading -p",
@@ -101,7 +93,8 @@
     "wdio-default": "wdio",
     "wdio-lowlight": "NODE_OPTIONS=--max-old-space-size=2048 THEME=clinical-lowlight-theme wdio",
     "wdio-fusion": "THEME=orion-fusion-theme wdio",
-    "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
+    "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion",
+    "version": "lerna version --no-git-tag-version && node ./scripts/changelog-updater/index.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
@@ -113,6 +106,7 @@
     "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
+    "@cerner/eslint-config-terra": "^4.0.0",
     "babel-jest": "^24.8.0",
     "browserslist-config-terra": "^1.0.0",
     "check-installed-dependencies": "^1.0.0",
@@ -122,7 +116,6 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.2.2",
     "eslint": "^6.1.0",
-    "eslint-config-terra": "^3.0.0",
     "gh-pages": "^2.0.1",
     "glob": "^7.1.1",
     "identity-obj-proxy": "^3.0.0",
@@ -140,7 +133,7 @@
     "terra-dev-site": "^6.5.0",
     "terra-disclosure-manager": "^4.9.0",
     "terra-enzyme-intl": "^3.0.0",
-    "terra-toolkit": "^6.0.0",
+    "terra-toolkit": "^6.2.0",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1",

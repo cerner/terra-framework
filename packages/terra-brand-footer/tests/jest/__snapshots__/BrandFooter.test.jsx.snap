@@ -72,48 +72,6 @@ exports[`BrandFooter should render a section header 1`] = `
 </footer>
 `;
 
-exports[`BrandFooter should render the sections prop instead of links prop 1`] = `
-<footer
-  className="brand-footer"
-  role="contentinfo"
->
-  <nav
-    className="nav nav-horizontal"
-  >
-    <section
-      className="navigation-section"
-      key="0"
-    >
-      <ul
-        className="menu"
-      >
-        <li
-          className="list-item"
-          key="Sections Prop linkhttps://www.cerner.com/"
-        >
-          <a
-            className="link"
-            href="https://www.cerner.com/"
-          >
-            Sections Prop link
-          </a>
-        </li>
-      </ul>
-    </section>
-  </nav>
-  <div
-    className="footer-content"
-  >
-    <div
-      className="content-top"
-    />
-    <div
-      className="content-bottom"
-    />
-  </div>
-</footer>
-`;
-
 exports[`BrandFooter should render with a section header and provided links 1`] = `
 <footer
   className="brand-footer"
@@ -194,7 +152,7 @@ exports[`BrandFooter should render with content bottom and content left 1`] = `
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
     </div>
@@ -262,7 +220,7 @@ exports[`BrandFooter should render with content bottom, content right and conten
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
       <div>
@@ -305,7 +263,7 @@ exports[`BrandFooter should render with content right and content left 1`] = `
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
       <div>
@@ -476,7 +434,7 @@ exports[`BrandFooter should render with provided content left 1`] = `
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
     </div>
@@ -766,7 +724,7 @@ exports[`BrandFooter should render with provided links and content left 1`] = `
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
     </div>
@@ -833,7 +791,7 @@ exports[`BrandFooter should render with provided links and content left 2`] = `
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
     </div>
@@ -1046,7 +1004,7 @@ exports[`BrandFooter should render with provided links, content left, content bo
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
       <div>
@@ -1131,7 +1089,7 @@ exports[`BrandFooter should render with provided links, content left, content bo
       <img
         alt="terra-ui"
         height="40px"
-        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        src="https://github.com/cerner/terra-core/raw/main/terra.png"
         width="40px"
       />
       <div>
@@ -1156,66 +1114,6 @@ exports[`BrandFooter should render with provided links, content left, content bo
         </small>
       </p>
     </div>
-  </div>
-</footer>
-`;
-
-exports[`BrandFooter should render with the links prop 1`] = `
-<footer
-  className="brand-footer"
-  role="contentinfo"
->
-  <nav
-    className="nav nav-horizontal"
-  >
-    <section
-      className="navigation-section"
-      key="0"
-    >
-      <ul
-        className="menu"
-      >
-        <li
-          className="list-item"
-          key="Cerner Homehttps://www.cerner.com/"
-        >
-          <a
-            className="link"
-            href="https://www.cerner.com/"
-          >
-            Cerner Home
-          </a>
-        </li>
-        <li
-          className="list-item"
-          key="Cerner Codehttps://code.cerner.com/"
-        >
-          <span
-            aria-hidden={true}
-            className="separator"
-          >
-            /
-          </span>
-          <a
-            className="link"
-            href="https://code.cerner.com/"
-            target="_blank"
-          >
-            Cerner Code
-          </a>
-        </li>
-      </ul>
-    </section>
-  </nav>
-  <div
-    className="footer-content"
-  >
-    <div
-      className="content-top"
-    />
-    <div
-      className="content-bottom"
-    />
   </div>
 </footer>
 `;

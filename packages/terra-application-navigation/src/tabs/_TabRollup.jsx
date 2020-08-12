@@ -77,7 +77,7 @@ const TabRollup = ({
   return (
     <div
       type="button"
-      role="link"
+      role="button"
       tabIndex="0"
       className={cx(
         'tab-rollup',
@@ -95,7 +95,7 @@ const TabRollup = ({
     >
       <div aria-hidden className={cx('tab-inner')} data-tab-menu-inner>
         <div id={`terra-navigation-link-${text}`} className={cx('tab-rollup-label')} ref={innerRef}>
-          {<span className={cx('tab-rollup-text')}>{text}</span>}
+          <span className={cx('tab-rollup-text')}>{text}</span>
           {hasChildNotifications && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
           <IconCaretDown className={cx('tab-rollup-icon')} />
         </div>

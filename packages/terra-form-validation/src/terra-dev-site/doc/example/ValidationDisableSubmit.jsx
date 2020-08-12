@@ -48,10 +48,7 @@ export default class MainEntry extends React.Component {
               label="Description"
               error={meta.error}
               isInvalid={meta.submitFailed && meta.error !== undefined}
-              inputAttrs={{
-                placeholder: 'Description',
-                ...input,
-              }}
+              inputAttrs={input}
               onChange={(e) => { input.onChange(e.target.value); }}
               value={input.value}
               required
@@ -69,10 +66,7 @@ export default class MainEntry extends React.Component {
               error={meta.error}
               isInvalid={meta.submitFailed && meta.error !== undefined}
               onChange={(e) => { input.onChange(e.target.value); }}
-              inputAttrs={{
-                placeholder: 'Description',
-                ...input,
-              }}
+              inputAttrs={input}
               value={input.value}
               required
             />

@@ -94,7 +94,7 @@ class DisclosureComponent extends React.Component {
                 });
             }}
           >
-          Dismiss
+            Dismiss
           </button>
           <button
             type="button"
@@ -109,7 +109,7 @@ class DisclosureComponent extends React.Component {
               });
             }}
           >
-          Disclose Again
+            Disclose Again
           </button>
           <br />
           <br />
@@ -186,6 +186,7 @@ class ContentComponent extends React.Component {
           disclosureManager.disclose({
             preferredType: 'panel',
             size,
+            typeConfig: { panelBehavior: 'squish' },
             content: {
               key: `Content-Disclosure-${size}`,
               component: <DisclosureComponent name="Disclosure Component" disclosureType="panel" />,
@@ -275,13 +276,10 @@ ContentComponent.contextType = DisclosureManagerContext;
 
 const SlidePanelManagerExample = () => (
   <div className={cx('example-wrapper')}>
-    <SlidePanelManager
-      panelBehavior="squish"
-    >
+    <SlidePanelManager>
       <ContentComponent />
     </SlidePanelManager>
   </div>
 );
 
 export default SlidePanelManagerExample;
-/* eslint-disable max-classes-per-file */

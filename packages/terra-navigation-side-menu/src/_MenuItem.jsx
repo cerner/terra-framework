@@ -1,14 +1,16 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import * as KeyCode from 'keycode-js';
 import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 import styles from './MenuItem.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -108,21 +110,24 @@ class MenuItem extends React.Component {
       text,
       ...customProps
     } = this.props;
+    const theme = this.context;
 
-    const itemClassNames = cx([
+    const itemClassNames = classNames(cx(
       'menu-item',
       { 'is-selected': isSelected },
       { 'is-active': this.state.active },
       { 'is-focused': this.state.focused },
-      customProps.className,
-    ]);
+      theme.className,
+    ),
+    customProps.className);
 
     return (
       <li
         className={cx('list-item')}
+        role="none"
       >
         <div
-          role="link"
+          role="menuitem"
           {...customProps}
           tabIndex="0"
           className={itemClassNames}
@@ -142,5 +147,6 @@ class MenuItem extends React.Component {
 }
 
 MenuItem.propTypes = propTypes;
+MenuItem.contextType = ThemeContext;
 
 export default injectIntl(MenuItem);

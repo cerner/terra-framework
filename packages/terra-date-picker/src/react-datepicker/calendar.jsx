@@ -1,5 +1,4 @@
 import { FormattedMessage, intlShape } from 'react-intl';
-import Button from 'terra-button';
 import * as KeyCode from 'keycode-js';
 import YearDropdown from './year_dropdown'
 import MonthDropdown from './month_dropdown'
@@ -32,7 +31,8 @@ import {
   allDaysDisabledBefore,
   allDaysDisabledAfter,
   getEffectiveMinDate,
-  getEffectiveMaxDate
+  getEffectiveMaxDate,
+  isDayDisabled
 } from './date_utils'
 
 const cx = classNames.bind(styles);
@@ -138,6 +138,11 @@ export default class Calendar extends React.Component {
      */
     onMonthChange: PropTypes.func,
     /**
+     * A callback function to execute when month component loses focus.
+     * requires no parameter.
+     */
+    onMonthBlur: PropTypes.func,
+    /**
      * Prop to show month navigation.
      */
     forceShowMonthNavigation: PropTypes.bool,
@@ -145,6 +150,11 @@ export default class Calendar extends React.Component {
      * A callback function that is executed when date picker is clicked for dropdown.
      */
     onDropdownFocus: PropTypes.func,
+    /**
+     * A callback function to execute on mouse down on day.
+     * requires no parameter.
+     */
+    onDayMouseDown: PropTypes.func,
     /**
      * A callback function that is executed when a valid date is selected.
      */
@@ -353,6 +363,15 @@ export default class Calendar extends React.Component {
 
   handleMonthBlur = () => {
     this.setState({ calendarIsKeyboardFocused: false })
+    if (this.props.onMonthBlur) {
+      this.props.onMonthBlur();
+    }
+  }
+
+  handleMonthFocus = () => {
+    if (this.props.inline) {
+      this.setState({ calendarIsKeyboardFocused: true })
+    }
   }
 
   setMonthRef = (node) => {
@@ -416,6 +435,12 @@ export default class Calendar extends React.Component {
   handleDayClick = (day, event) => this.props.onSelect(day, event)
 
   handleDayMouseEnter = day => this.setState({ selectingDate: day })
+
+  handleDayMouseDown = () => {
+    if (this.props.onDayMouseDown) {
+      this.props.onDayMouseDown();
+    }
+  }
 
   handleMonthMouseLeave = () => this.setState({ selectingDate: null })
 
@@ -489,7 +514,7 @@ export default class Calendar extends React.Component {
             onKeyDown={this.handlePreviousMonthBtnKeyDown}
             ref={this.previousMonthBtnRef}
           >
-            <span className={cx('prev-month-icon')} />
+            <span data-navigation-previous className={cx('prev-month-icon')} />
           </button>
         )}
       </FormattedMessage>
@@ -512,7 +537,7 @@ export default class Calendar extends React.Component {
             onKeyDown={this.handleNextMonthBtnKeyDown}
             ref={this.nextMonthBtnRef}
           >
-            <span className={cx('next-month-icon')} />
+            <span data-navigation-next className={cx('next-month-icon')} />
           </button>
         )}
       </FormattedMessage>
@@ -580,12 +605,15 @@ export default class Calendar extends React.Component {
     if (!this.props.todayButton) {
       return
     }
+
+    const today = getStartOfDate(now(this.props.utcOffset));
     return (
       <button
         className={cx('react-datepicker-today-button')}
-        onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}
+        onClick={e => this.props.onSelect(today, e)}
         onKeyDown={this.handleTodayBtnKeyDown}
         ref={this.todayBtnRef}
+        disabled={isDayDisabled(today, this.props)}
       >
         {this.props.todayButton}
       </button>
@@ -629,9 +657,11 @@ export default class Calendar extends React.Component {
             day={monthDate}
             isCalendarKeyboardFocused={keyboardFocus}
             dayClassName={this.props.dayClassName}
+            onMonthFocus={this.handleMonthFocus}
             onMonthBlur={this.handleMonthBlur}
             onDayClick={this.handleDayClick}
             onDayMouseEnter={this.handleDayMouseEnter}
+            onDayMouseDown={this.handleDayMouseDown}
             onMouseLeave={this.handleMonthMouseLeave}
             onWeekSelect={this.props.onWeekSelect}
             formatWeekNumber={this.props.formatWeekNumber}

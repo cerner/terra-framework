@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import uuidv4 from 'uuid/v4';
 import IconError from 'terra-icon/lib/icon/IconError';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
@@ -9,7 +11,7 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import DateInput from './DateInput';
 import styles from './DateInputField.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -23,7 +25,6 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the day input
    */
-  // eslint-disable-next-line react/forbid-prop-types
   dayAttributes: PropTypes.object,
   /**
    * Whether the date input should be disabled.
@@ -65,12 +66,10 @@ const propTypes = {
   /**
    * Attributes to attach to the legend.
    */
-  // eslint-disable-next-line react/forbid-prop-types
   legendAttributes: PropTypes.object,
   /**
    * Custom select attributes to apply to the month select
    */
-  // eslint-disable-next-line react/forbid-prop-types
   monthAttributes: PropTypes.object,
   /**
    * Set the max-width of a field using `length` or `%`.  Best practice recommendation to never exceed
@@ -107,7 +106,6 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the year input
    */
-  // eslint-disable-next-line react/forbid-prop-types
   yearAttributes: PropTypes.object,
 };
 
@@ -162,17 +160,20 @@ const DateInputField = (props) => {
   } = props;
 
   const uniqueid = useRef(uuidv4());
+  const theme = React.useContext(ThemeContext);
 
-  const dateInputFieldClasses = cx([
+  const dateInputFieldClasses = classNames(cx(
     'date-input-field',
     { 'is-inline': isInline },
-    customProps.className,
-  ]);
+    theme.className,
+  ),
+  customProps.className);
 
-  const legendClassNames = cx([
+  const legendClassNames = classNames(cx(
     'legend',
-    legendAttributes.className,
-  ]);
+    theme.className,
+  ),
+  legendAttributes.className);
 
   /**
    * aria-describedby ids

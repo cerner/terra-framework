@@ -16,7 +16,7 @@ import DatePickerIncomplete from '../example/DatePickerIncomplete?dev-site-examp
 
 # Terra Date Picker
 
-DatePicker is an input component that provides users a way to enter or select a date from the date picker. The date format used in the input is localized based on the locale. The display of the month and days of the week in the date picker is also localized based on the locale. DatePicker leverages the [momentjs](http://momentjs.com/docs/) library for date formatting and manipulations. A date can be expressed in many [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formats. To reduce confusion and complexity, the date props in terra-date-picker must be expressed in a specific format of the ISO 8601 representation of the date. That is, any date prop must conform to the `YYYY-MM-DD` format.
+DatePicker is an input component that provides users a way to enter or select a date from the date picker. The date format used in the input is localized based on the locale. The display of the month and days of the week in the date picker is also localized based on the locale. DatePicker leverages the [momentjs](http://momentjs.com/docs/) library for date formatting and manipulations. A date can be expressed in many [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formats. To reduce confusion and complexity, the date props in terra-date-picker must be expressed in a specific format of the ISO 8601 representation of the date. That is, any date prop must conform to the `YYYY-MM-DD` format. Only dates between `01/01/1900` and `12/31/2100` are supported.
 
 ## Controlled vs. Uncontrolled Date Picker
 
@@ -71,20 +71,17 @@ This component requires the following peer dependencies be installed in your app
 
 <!-- AUTO-GENERATED-CONTENT:END -->
 
-## Implementation Notes:
-DatePicker is required to be composed inside the [Base](https://engineering.cerner.com/terra-core/components/terra-base/base/base) component with locale in order for it to load the correct date format and translation strings.
-
 ## Usage
 ```js
 import DatePicker from 'terra-date-picker';
 ```
 
 ## Component Features
-* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
-* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
-* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
-* [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
-* [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+* [Localization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
 
 ## Examples
 <DatePickerDefault title='Default' />

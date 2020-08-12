@@ -1,4 +1,5 @@
 import React from 'react';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import PopupDefaultExample from './PopupDefaultExample';
 
 // Snapshot Tests
@@ -25,4 +26,13 @@ it('should renders with custom content class name', () => {
 it('should renders with custom overlay class name', () => {
   const popup = shallow(<PopupDefaultExample classNameOverlay="terra-test-class-overlay" />);
   expect(popup).toMatchSnapshot();
+});
+
+it('correctly applies the theme context className', () => {
+  const result = mount(
+    <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+      <PopupDefaultExample classNameArrow="terra-test-class-arrow" />
+    </ThemeContextProvider>,
+  );
+  expect(result).toMatchSnapshot();
 });

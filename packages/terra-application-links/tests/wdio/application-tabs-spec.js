@@ -1,4 +1,3 @@
-
 Terra.describeViewports('ApplicationTabs', ['small', 'large'], () => {
   describe('Displays a default application tabs', () => {
     beforeEach(() => {

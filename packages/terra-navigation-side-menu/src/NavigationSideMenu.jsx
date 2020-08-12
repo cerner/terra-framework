@@ -6,6 +6,7 @@ import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import * as KeyCode from 'keycode-js';
+import ThemeContext from 'terra-theme-context';
 import MenuItem from './_MenuItem';
 
 import styles from './NavigationSideMenu.module.scss';
@@ -195,7 +196,7 @@ class NavigationSideMenu extends Component {
 
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return <nav role="navigation"><ul className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</ul></nav>;
+      return <nav role="navigation"><ul role="menu" className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</ul></nav>;
     }
     return null;
   }
@@ -223,8 +224,10 @@ class NavigationSideMenu extends Component {
       ...customProps
     } = this.props;
     const currentItem = this.state.items[selectedMenuKey];
+    const theme = this.context;
     let sideMenuContentContainerClassNames = cx([
       'side-menu-content-container',
+      theme.className,
     ]);
 
     let onBack;
@@ -270,5 +273,6 @@ class NavigationSideMenu extends Component {
 
 NavigationSideMenu.propTypes = propTypes;
 NavigationSideMenu.defaultProps = defaultProps;
+NavigationSideMenu.contextType = ThemeContext;
 
 export default injectIntl(NavigationSideMenu);

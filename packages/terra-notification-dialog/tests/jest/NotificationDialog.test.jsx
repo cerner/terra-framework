@@ -1,8 +1,11 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import { KEY_ESCAPE } from 'keycode-js';
+
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import NotificationDialog from '../../src/NotificationDialog';
+import CompleteNotificationDialog from '../../src/terra-dev-site/test/notification-dialog/CompleteNotificationDialog.test';
 
 describe('Notification Dialog', () => {
   const acceptOnClick = jest.fn();
@@ -201,4 +204,36 @@ describe('Notification Dialog functions as expected', () => {
     dialogExample.find('Button[data-terra-notification-dialog-button="accept"]').simulate('keydown', { keycode: KEY_ESCAPE });
     expect(dialogExample.find('NotificationDialog').props()).toHaveProperty('isOpen', true);
   });
+});
+
+it('correctly applies the theme context className', () => {
+  const clickConfirm = () => {
+    alert('You clicked confirm'); // eslint-disable-line no-alert
+  };
+  const modal = mountWithIntl(
+    <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+      <NotificationDialog
+        variant={NotificationDialogVariants.ALERT}
+        isOpen
+        title="Make sure that the title relates directly to the choices."
+        startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+        acceptAction={{
+          text: 'Confirm',
+          onClick: clickConfirm,
+        }}
+        rejectAction={{
+          text: 'Close',
+          onClick: clickConfirm,
+        }}
+        buttonOrder="acceptFirst"
+        emphasizedAction="accept"
+      />
+    </ThemeContextProvider>,
+  );
+  expect(modal).toMatchSnapshot();
+});
+
+it('should shallow a complete notification-dialog', () => {
+  const modal = shallowWithIntl(<CompleteNotificationDialog />);
+  expect(modal).toMatchSnapshot();
 });

@@ -26,7 +26,7 @@ class DefaultMenuItemGroup extends React.Component {
       <div>
         <div id="selected-index">
           <h3>
-Selected Button:
+            Selected Button:
             {this.state.selectedIndex}
           </h3>
         </div>
