@@ -272,7 +272,7 @@ class DateTimeUtils {
 
   /**
    * Creates moment object with local timezone.
-   * @return {string}}- Local/Browser time zone string.
+   * @return {string} - Local/Browser time zone string.
    */
   static getLocalTimeZone() {
     return moment.tz.guess();

@@ -97,24 +97,24 @@ it('should render a date time picker with the seconds field enabled', () => {
 });
 
 it('should validate the hasTime helper', () => {
-  expect(DateTimeUtils.hasTime('2019-06-10T16:00:01')).toBe(true);
-  expect(DateTimeUtils.hasTime('2019-06-10')).toBe(false);
+  expect(DateTimeUtils.hasTime('2019-06-10T16:00:01', 'America/Chicago')).toBe(true);
+  expect(DateTimeUtils.hasTime('2019-06-10', 'America/Chicago')).toBe(false);
 });
 
 it('should validate the updateTime helper', () => {
-  const updatedHM = DateTimeUtils.updateTime(moment.tz('2019-06-10T10:30:54', moment.tz.guess()), '16:00', false);
+  const updatedHM = DateTimeUtils.updateTime(moment.tz('2019-06-10T10:30:54', 'America/Chicago'), '16:00', false);
   // Directly comparing the moment objects fails due to differences in the parsedDateParts property
-  expect(updatedHM.format()).toEqual(moment.tz('2019-06-10T16:00:00', moment.tz.guess()).format());
+  expect(updatedHM.format()).toEqual(moment.tz('2019-06-10T16:00:00', 'America/Chicago').format());
 
-  const updatedHMS = DateTimeUtils.updateTime(moment.tz('2019-06-10T10:30:54', moment.tz.guess()), '16:00:01', true);
+  const updatedHMS = DateTimeUtils.updateTime(moment.tz('2019-06-10T10:30:54', 'America/Chicago'), '16:00:01', true);
   // Directly comparing the moment objects fails due to differences in the parsedDateParts property
-  expect(updatedHMS.format()).toEqual(moment.tz('2019-06-10T16:00:01', moment.tz.guess()).format());
+  expect(updatedHMS.format()).toEqual(moment.tz('2019-06-10T16:00:01', 'America/Chicago').format());
 });
 
 it('should validate the getTime helper', () => {
-  expect(DateTimeUtils.getTime('2019-06-10T16:00:01', false)).toEqual('16:00');
+  expect(DateTimeUtils.getTime('2019-06-10T16:00:01', false, 'America/Chicago')).toEqual('16:00');
 
-  expect(DateTimeUtils.getTime('2019-06-10T16:00:01', true)).toEqual('16:00:01');
+  expect(DateTimeUtils.getTime('2019-06-10T16:00:01', true, 'America/Chicago')).toEqual('16:00:01');
 });
 
 it('should validate the isValidTime helper', () => {
@@ -123,6 +123,31 @@ it('should validate the isValidTime helper', () => {
 
   expect(DateTimeUtils.isValidTime('16:00', true)).toBe(false);
   expect(DateTimeUtils.isValidTime('16:00:01', true)).toBe(true);
+});
+
+it('should validate the checkAmbiguousTime helper', () => {
+  const ambiguousDateTime = '2016-11-06T01:30:00';
+  const nonAmbguousDateTime = '2016-11-06T06:00:00';
+
+  // Ambiguous hour with timezone
+  expect(DateTimeUtils.checkAmbiguousTime(moment.tz(ambiguousDateTime, 'America/Chicago'))).toBe(true);
+
+  // Ambiguous hour with invalid timezone
+  expect(DateTimeUtils.checkAmbiguousTime(moment.tz(ambiguousDateTime, 'Asia/Kolkata'))).toBe(false);
+
+  // Non-Ambigous hour with timezone
+  expect(DateTimeUtils.checkAmbiguousTime(moment.tz(nonAmbguousDateTime, 'America/Chicago'))).toBe(false);
+});
+
+it('should validate the createSafeDate helper', () => {
+  const momentDate = moment.tz('2019-06-10T16:00:01', 'America/Chicago');
+
+  // Valid date and timzone
+  expect(DateTimeUtils.createSafeDate('2019-06-10T16:00:01', 'America/Chicago')).toEqual(momentDate);
+  // Valid date and invalid timezone
+  expect(DateTimeUtils.createSafeDate('2019-06-10T16:00:01', 'America/Test')).not.toEqual(momentDate);
+  // Invalid date and invalid timezone
+  expect(DateTimeUtils.createSafeDate('2019-06-35T16:00:01', 'America/Test')).toEqual(undefined);
 });
 
 it('correctly applies the theme context className', () => {
