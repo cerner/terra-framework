@@ -4,6 +4,9 @@
 
 * Changed
   * DateInput split into 3 distinct inputs that mask the previous single input.
+  * `terra-dev-site` examples to use hooks.
+
+## 4.44.0 - (August 11, 2020)
 
 * Added
   * Added Calendar Filter sub-component.

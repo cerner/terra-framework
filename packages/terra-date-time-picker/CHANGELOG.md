@@ -4,6 +4,12 @@
 
 * Changed
   * Tests updated to reflect input splitting in `terra-date-picker`.
+  * `terra-dev-site` examples to use hooks.
+
+## 4.44.0 - (August 11, 2020)
+
+* Changed
+  * Minor dependency version bump
 
 ## 4.43.0 - (August 4, 2020)
 
