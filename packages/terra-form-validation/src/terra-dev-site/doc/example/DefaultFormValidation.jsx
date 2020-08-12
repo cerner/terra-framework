@@ -51,10 +51,7 @@ export default class MainEntry extends React.Component {
               isInvalid={meta.submitFailed && !meta.valid}
               required
               help="TerraUser is not available"
-              inputAttrs={{
-                placeholder: 'Description',
-                ...input,
-              }}
+              inputAttrs={input}
               onChange={(e) => { input.onChange(e.target.value); }}
               value={input.value}
             />
@@ -69,10 +66,7 @@ export default class MainEntry extends React.Component {
               label="Description"
               error={meta.error}
               isInvalid={meta.submitFailed && !meta.valid}
-              inputAttrs={{
-                placeholder: 'Description',
-                ...input,
-              }}
+              inputAttrs={input}
               onChange={(e) => { input.onChange(e.target.value); }}
               value={input.value}
               required

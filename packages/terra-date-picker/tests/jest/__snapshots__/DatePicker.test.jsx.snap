@@ -70,6 +70,7 @@ exports[`correctly applies the theme context className 1`] = `
         }
       }
       isIncomplete={false}
+      isInline={false}
       isInvalid={false}
       maxDate="2100-12-31"
       minDate="1900-01-01"
@@ -113,6 +114,7 @@ exports[`correctly applies the theme context className 1`] = `
                 "2017-01-01T00:00:00.000Z",
               ]
             }
+            inline={false}
             locale="en"
             maxDate={"2017-01-01T00:00:00.000Z"}
             minDate={"2017-01-01T00:00:00.000Z"}
@@ -163,6 +165,7 @@ exports[`correctly applies the theme context className 1`] = `
                   "2017-01-01T00:00:00.000Z",
                 ]
               }
+              inline={false}
               intl={
                 Object {
                   "defaultFormats": Object {},
@@ -380,7 +383,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 >
                                   <svg
                                     aria-hidden="true"
-                                    className="tui-Icon icon orion-fusion-theme icon-svg"
+                                    className="tui-Icon icon icon-svg"
                                     focusable="false"
                                     height="1em"
                                     viewBox="0 0 48 48"
@@ -447,6 +450,7 @@ exports[`should render a controlled date picker 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -509,6 +513,7 @@ exports[`should render a date picker with disabled dates 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -570,6 +575,7 @@ exports[`should render a date picker with filtered dates 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -631,6 +637,7 @@ exports[`should render a date picker with included dates 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -692,6 +699,7 @@ exports[`should render a date picker with min and max dates 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -753,6 +761,7 @@ exports[`should render a date picker with onBlur 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -814,6 +823,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -875,6 +885,7 @@ exports[`should render a date picker with onChange 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -936,6 +947,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -997,6 +1009,7 @@ exports[`should render a date picker with onFocus 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -1058,6 +1071,7 @@ exports[`should render a date picker with onSelect 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -1119,6 +1133,7 @@ exports[`should render a default date input and date picker 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -1185,6 +1200,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -1246,6 +1262,7 @@ exports[`should render a disabled date picker 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
@@ -1307,6 +1324,7 @@ exports[`should render a required date input and date picker 1`] = `
           "2017-01-01T00:00:00.000Z",
         ]
       }
+      inline={false}
       locale="en"
       maxDate={"2017-01-01T00:00:00.000Z"}
       minDate={"2017-01-01T00:00:00.000Z"}
