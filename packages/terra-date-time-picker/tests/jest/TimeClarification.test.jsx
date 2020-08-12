@@ -13,7 +13,6 @@ it('should render a default date time picker', () => {
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
       timeZone="America/Chicago"
-
     />
   ));
   const wrapper = datePicker.dive();
