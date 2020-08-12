@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import DateTimePicker from 'terra-date-time-picker/lib/DateTimePicker';
 import DateTimeUtils from '../../DateTimeUtils';
@@ -16,48 +16,42 @@ const propTypes = {
 
 const defaultProps = {
   value: '',
-  timeZone: undefined,
+  timeZone: DateTimeUtils.getLocalTimeZone(),
 };
 
-class DateTimePickerTimezoneTemplate extends React.Component {
-  constructor(props) {
-    super(props);
-    let dateTimeDisplay = props.value;
-    let timeZoneDisplay = props.timeZone;
-    const dateTime = DateTimeUtils.createSafeDate(dateTimeDisplay, props.timeZone);
+function DateTimePickerTimezoneTemplate(props) {
+  let dateTimeDisplay = props.value;
+  let timeZoneDisplay = props.timeZone;
 
-    if (dateTime && dateTime.isValid()) {
-      dateTimeDisplay = dateTime.format();
-      timeZoneDisplay = dateTime.tz();
-    }
-
-    this.state = { dateTime: dateTimeDisplay, timeZone: timeZoneDisplay };
-    this.handleDateTimeChange = this.handleDateTimeChange.bind(this);
+  const computedDateTime = DateTimeUtils.createSafeDate(dateTimeDisplay, props.timeZone);
+  if (computedDateTime && computedDateTime.isValid()) {
+    dateTimeDisplay = computedDateTime.format();
+    timeZoneDisplay = computedDateTime.tz();
   }
+  const [dateTime, setDateTime] = useState(dateTimeDisplay);
+  const timeZone = timeZoneDisplay;
 
-  handleDateTimeChange(event, dateTime) {
-    this.setState({ dateTime });
-  }
+  const handleDateTimeChange = (event, time) => {
+    setDateTime(time);
+  };
 
-  render() {
-    return (
-      <div>
-        <p>
-          Selected ISO Date Time:
-          <span id="date-time-value">{this.state.dateTime}</span>
-        </p>
-        <p>
-          Selected Time Zone:
-          <span id="date-time-timeZone">{this.state.timeZone}</span>
-        </p>
-        <DateTimePicker
-          name="date-time-picker-example"
-          onChange={this.handleDateTimeChange}
-          {...this.props}
-        />
-      </div>
-    );
-  }
+  return (
+    <>
+      <p>
+        Selected ISO Date Time:
+        <span id="date-time-value">{dateTime}</span>
+      </p>
+      <p>
+        Selected Time Zone:
+        <span id="date-time-timeZone">{timeZone}</span>
+      </p>
+      <DateTimePicker
+        name="date-time-picker-example"
+        onChange={handleDateTimeChange}
+        {...props}
+      />
+    </>
+  );
 }
 
 DateTimePickerTimezoneTemplate.propTypes = propTypes;
