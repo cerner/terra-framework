@@ -5,17 +5,7 @@ exports[`Notification Icon correctly applies the theme context className 1`] = `
   className="icon-container orion-fusion-theme"
 >
   <span
-    className="icon alert-icon"
-  />
-</div>
-`;
-
-exports[`Notification Icon shallow renders alert icon 1`] = `
-<div
-  className="icon-container"
->
-  <span
-    className="icon alert-icon"
+    className="icon hazard-high-icon"
   />
 </div>
 `;
@@ -50,22 +40,32 @@ exports[`Notification Icon shallow renders error icon 1`] = `
 </div>
 `;
 
-exports[`Notification Icon shallow renders info icon 1`] = `
+exports[`Notification Icon shallow renders hazard-high icon 1`] = `
 <div
   className="icon-container"
 >
   <span
-    className="icon info-icon"
+    className="icon hazard-high-icon"
   />
 </div>
 `;
 
-exports[`Notification Icon shallow renders warning icon 1`] = `
+exports[`Notification Icon shallow renders hazard-low icon 1`] = `
 <div
   className="icon-container"
 >
   <span
-    className="icon warning-icon"
+    className="icon hazard-low-icon"
+  />
+</div>
+`;
+
+exports[`Notification Icon shallow renders hazard-medium icon 1`] = `
+<div
+  className="icon-container"
+>
+  <span
+    className="icon hazard-high-icon"
   />
 </div>
 `;

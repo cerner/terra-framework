@@ -19,7 +19,7 @@ exports[`Content Layout As List shallow renders layout with items 1`] = `
 </ul>
 `;
 
-exports[`Content Layout As List shallow renders layout with not items 1`] = `
+exports[`Content Layout As List shallow renders layout with no items 1`] = `
 <ul
   className="list"
 />

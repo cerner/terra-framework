@@ -190,7 +190,7 @@ class NavigationPromptCheckpoint extends React.Component {
         rejectAction={rejectButton}
         buttonOrder={buttonOrder}
         emphasizedAction={emphasizedAction}
-        variant="warning"
+        variant="hazard-medium"
       />
     );
   }

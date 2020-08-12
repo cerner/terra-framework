@@ -5,7 +5,6 @@ import { KEY_ESCAPE } from 'keycode-js';
 
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import NotificationDialog from '../../src/NotificationDialog';
-import CompleteNotificationDialog from '../../src/terra-dev-site/test/notification-dialog/CompleteNotificationDialog.test';
 
 describe('Notification Dialog', () => {
   const acceptOnClick = jest.fn();
@@ -213,7 +212,7 @@ it('correctly applies the theme context className', () => {
   const modal = mountWithIntl(
     <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
       <NotificationDialog
-        variant={NotificationDialogVariants.ALERT}
+        variant="hazard-high"
         isOpen
         title="Make sure that the title relates directly to the choices."
         startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
@@ -230,10 +229,5 @@ it('correctly applies the theme context className', () => {
       />
     </ThemeContextProvider>,
   );
-  expect(modal).toMatchSnapshot();
-});
-
-it('should shallow a complete notification-dialog', () => {
-  const modal = shallowWithIntl(<CompleteNotificationDialog />);
   expect(modal).toMatchSnapshot();
 });

@@ -17,6 +17,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
       }
     }
     buttonOrder="acceptFirst"
+    custom={Object {}}
     dialogTitle="Test Title"
     emphasizedAction="none"
     isOpen={true}
@@ -27,7 +28,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
       }
     }
     startMessage="Test Message"
-    variant="warning"
+    variant="hazard-medium"
   />
 </ContextProvider>
 `;
@@ -49,6 +50,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
       }
     }
     buttonOrder="acceptFirst"
+    custom={Object {}}
     dialogTitle="Test Title"
     emphasizedAction="accept"
     isOpen={true}
@@ -59,7 +61,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
       }
     }
     startMessage="Test Message"
-    variant="warning"
+    variant="hazard-medium"
   />
 </ContextProvider>
 `;
@@ -81,6 +83,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
       }
     }
     buttonOrder="rejectFirst"
+    custom={Object {}}
     dialogTitle="Test Title"
     emphasizedAction="reject"
     isOpen={true}
@@ -91,7 +94,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
       }
     }
     startMessage="Test Message"
-    variant="warning"
+    variant="hazard-medium"
   />
 </ContextProvider>
 `;
