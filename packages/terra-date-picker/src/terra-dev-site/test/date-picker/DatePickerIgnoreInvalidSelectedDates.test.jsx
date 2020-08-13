@@ -5,7 +5,7 @@ import styles from './common/DatePicker.test.module.scss';
 
 const cx = classNames.bind(styles);
 
-const DateTimePickerInvalidSelectedDates = () => (
+const DatePickerInvalidSelectedDates = () => (
   <div className={cx('content-wrapper')}>
     <span id="selected-date">selectedDate = null</span>
     <br />
@@ -51,4 +51,4 @@ const DateTimePickerInvalidSelectedDates = () => (
   </div>
 );
 
-export default DateTimePickerInvalidSelectedDates;
+export default DatePickerInvalidSelectedDates;
