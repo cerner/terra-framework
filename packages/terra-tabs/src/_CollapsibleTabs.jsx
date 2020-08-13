@@ -14,24 +14,24 @@ const propTypes = {
   tabData: PropTypes.array,
 };
 
-
 class CollapsibleTabs extends React.Component {
   constructor(props) {
     super(props);
-    this.setContainer = this.setContainer.bind(this);
-    this.setMenuRef = this.setMenuRef.bind(this);
+    this.containerRef = React.createRef();
+    this.dropdownRef = React.createRef();
+    this.moreButtonRef = React.createRef();
+
+    this.setIsOpen = this.setIsOpen.bind(this);
     this.resetCache = this.resetCache.bind(this);
     this.handleResize = this.handleResize.bind(this);
-    this.handleSelectionAnimation = this.handleSelectionAnimation.bind(this);
     this.handleHiddenBlur = this.handleHiddenBlur.bind(this);
     this.handleHiddenFocus = this.handleHiddenFocus.bind(this);
     this.handleOnMoreButtonSelect = this.handleOnMoreButtonSelect.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
     this.wrapOnSelect = this.wrapOnSelect.bind(this);
     this.wrapOnSelectHidden = this.wrapOnSelectHidden.bind(this);
-    this.dropdownRef = React.createRef();
+    
     this.resetCache();
-    this.state = { isOpen : false };
   }
 
   componentDidMount() {
@@ -45,9 +45,8 @@ class CollapsibleTabs extends React.Component {
         });
       }
     });
-    this.resizeObserver.observe(this.container);
+    this.resizeObserver.observe(this.containerRef.current);
     this.handleResize(this.contentWidth);
-    this.handleSelectionAnimation();
   }
 
   componentDidUpdate(prevProps) {
@@ -57,94 +56,74 @@ class CollapsibleTabs extends React.Component {
     } else if (this.props.tabData.length !== prevProps.tabData.length) {
       this.resetCache();
       this.forceUpdate();
-    } else {
-      this.handleSelectionAnimation();
     }
   }
 
   componentWillUnmount() {
     window.cancelAnimationFrame(this.animationFrameID);
-    this.resizeObserver.disconnect(this.container);
-    this.container = null;
-  }
-
-  setContainer(node) {
-    if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
-    this.container = node;
-  }
-
-  setMenuRef(node) {
-    if (node === null) { return; }
-    this.menuRef = node;
+    this.resizeObserver.disconnect(this.containerRef.current);
   }
 
   resetCache() {
     this.animationFrameID = null;
     this.hiddenStartIndex = -1;
     this.isCalculating = true;
-    this.menuHidden = false;
+    this.showMoreButton = true;
+    this.isOpen = false;
   }
 
   handleResize(width) {
-    const menuMarginLeft = parseInt(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-left'), 10);
-    const menuMarginRight = parseInt(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-right'), 10);
-    const menuButtonWidth = this.menuRef.getBoundingClientRect().width + menuMarginLeft + menuMarginRight;
-    const availableWidth = width - menuButtonWidth;
+    if (!this.moreButtonRef.current || !this.containerRef.current) {
+      return;
+    }
 
-    // Calculate hide index
+    const moreStyle = window.getComputedStyle(this.moreButtonRef.current, null);
+    const moreMarginLeft = parseInt(moreStyle.getPropertyValue('margin-left'), 10);
+    const moreMarginRight = parseInt(moreStyle.getPropertyValue('margin-right'), 10);
+    const moreButtonWidth = this.moreButtonRef.current.getBoundingClientRect().width + moreMarginLeft + moreMarginRight;
+    const availableWidth = width - moreButtonWidth;
+
+    // Calculate hidden index
     const tabCount = this.props.tabData.length;
     let newHideIndex = tabCount;
     let calcMinWidth = 0;
-    let isMenuHidden = true;
+    let showMoreButton = false;
     for (let i = 0; i < tabCount; i += 1) {
-      const tab = this.container.children[i];
-      const tabMarginLeft = parseFloat(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-left'));
-      const tabMarginRight = parseFloat(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-right'));
-      const minWidth = parseFloat(window.getComputedStyle(tab, null).getPropertyValue('min-width'));
-      calcMinWidth += (minWidth + tabMarginLeft + tabMarginRight);
+      const tab = this.containerRef.current.children[i];
+      const tabStyle = window.getComputedStyle(tab, null);
+      const tabMarginLeft = parseFloat(tabStyle.getPropertyValue('margin-left'));
+      const tabMarginRight = parseFloat(tabStyle.getPropertyValue('margin-right'));
+      const tabMinWidth = parseFloat(tabStyle.getPropertyValue('min-width'));
+      calcMinWidth += (tabMinWidth + tabMarginLeft + tabMarginRight);
       if (calcMinWidth > availableWidth && !(i === tabCount - 1 && calcMinWidth <= width)) {
         newHideIndex = i;
-        isMenuHidden = false;
+        showMoreButton = true;
         break;
       }
     }
 
-    if (this.menuHidden !== isMenuHidden || this.hiddenStartIndex !== newHideIndex) {
-      this.menuHidden = isMenuHidden;
+    if (this.showMoreButton !== showMoreButton || this.hiddenStartIndex !== newHideIndex) {
+      this.showMoreButton = showMoreButton;
       this.hiddenStartIndex = newHideIndex;
       this.forceUpdate();
     }
   }
 
-  handleSelectionAnimation() {
-    if (this.selectionBar && window.getComputedStyle(this.selectionBar, null).getPropertyValue('transition-property').includes('transform')) {
-      const selectedTab = this.container.querySelector('[aria-selected="true]');
-      if (selectedTab) {
-        const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
-        const tabRect = selectedTab.getBoundingClientRect();
-        const barWidth = tabRect.width;
-        let barLeft = tabRect.left - this.container.getBoundingClientRect().left;
-        if (isRTL) {
-          barLeft = tabRect.right - this.container.getBoundingClientRect().right;
-        }
-
-        this.selectionBar.style.width = `${barWidth}px`;
-        this.selectionBar.style.transform = `translate3d(${barLeft}px,0,0)`;
-      }
-    }
+  setIsOpen(value) {
+    this.isOpen = value;
+    this.forceUpdate();
   }
 
-  // TODO: clean up open state
   handleHiddenFocus(e) {
-    this.setState({ isOpen: true });
+    this.setIsOpen(true);
   }
 
   handleHiddenBlur(e) {
-    this.setState({ isOpen: false });
+    this.setIsOpen(false);
   }
 
   handleOnMoreButtonSelect() {
-    this.setState({ isOpen: true });
+    this.setIsOpen(true);
     const element = this.dropdownRef.current.children[0];
     if (element) {
       element.focus();
@@ -152,39 +131,44 @@ class CollapsibleTabs extends React.Component {
   }
 
   handleOutsideClick() {
-    this.setState({ isOpen: false });
+    this.setIsOpen(false);
+  }
+
+  renderMoreButton(isHiddenActive) {
+    return this.showMoreButton ? (
+      <MoreButton
+        isActive={isHiddenActive}
+        onSelect={this.handleOnMoreButtonSelect}
+        refCallback={node => this.moreButtonRef.current = node}
+      />
+    ) : undefined;
   }
 
   wrapOnSelect(onSelect) {
     return (event, metaData) => {
-      this.setState({ isOpen: false });
+      this.setIsOpen(false);
       onSelect(metaData);
     };
   }
-// clean  up
+
   wrapOnSelectHidden(onSelect) {
     return (event, metaData) => {
-      if (this.state.isOpen) {
-        this.setState({ isOpen: false });
+      if (this.isOpen) {
         onSelect(metaData);
-      } else {
-        this.setState({ isOpen: true });
       }
+      this.setIsOpen(!this.isOpen);
     };
   }
 
   render() {
     const { tabData } = this.props;
+    const theme = this.context;
     const ids = tabData.map(tab => tab.id);
     const hiddenIds = [];
     const visibleTabs = [];
     const hiddenTabs = [];
-    
-    // this is a wrap of onSelect
-    // onSelect: this.handleOnSelect(child.props.onSelect)
-    // this.handleOnSelectHidden(child.props.onSelect)
+    let isHiddenSelected = false;
 
-    let isMenuActive = false;
     tabData.forEach((tab, index) => {
       if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
         visibleTabs.push(
@@ -210,26 +194,16 @@ class CollapsibleTabs extends React.Component {
         hiddenIds.push(tab.id);
 
         if (tab.isSelected) {
-          isMenuActive = true;
+          isHiddenSelected = true;
         }
       }
     });
-
-    const theme = this.context;
-
-    const menuButton = this.menuHidden ? null : (
-      <MoreButton
-        isActive={isMenuActive}
-        onSelect={this.handleOnMoreButtonSelect}
-        refCallback={this.setMenuRef}
-      />
-    );
 
     return (
       <div>
         <div
           className={cx('collapsible-tabs-container', { 'is-calculating': this.isCalculating }, theme.className)}
-          ref={this.setContainer}
+          ref={this.containerRef}
           role="tablist"
           aria-owns={hiddenIds.join(' ')}
         >
@@ -237,13 +211,13 @@ class CollapsibleTabs extends React.Component {
           <TabDropDown
             onFocus={this.handleHiddenFocus}
             onBlur={this.handleHiddenBlur}
-            isOpen={this.state.isOpen}
+            isOpen={this.isOpen}
             onRequestClose={this.handleOutsideClick}
             refCallback={node => this.dropdownRef.current = node}
           >
             {hiddenTabs}
           </TabDropDown>
-          {menuButton}
+          {this.renderMoreButton(isHiddenSelected)}
         </div>
       </div>
     );

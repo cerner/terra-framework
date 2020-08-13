@@ -30,6 +30,10 @@ const propTypes = {
    */
   customDisplay: PropTypes.node,
   /**
+   * Index value to use for navigation.
+   */
+  index: PropTypes.number.isRequired,
+  /**
    * Indicates if the pane label should only display the icon. When tab collapses into menu the label text will be used.
    */
   isIconOnly: PropTypes.bool,
@@ -49,8 +53,10 @@ const propTypes = {
    * Object to be returned in the onSelect.
    */
   metaData: PropTypes.object,
-  index: PropTypes.number.isRequired,
-  tabIds: PropTypes.array.isRequired,
+  /**
+   * Array of id strings,
+   */
+  tabIds: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 const defaultProps = {
