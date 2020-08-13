@@ -69,33 +69,143 @@ exports[`correctly applies the theme context className 1`] = `
       required={false}
     >
       <div
-        className="custom-input orion-fusion-theme"
+        className="date-input-container orion-fusion-theme"
       >
-        <input
-          data-terra-date-input-hidden={true}
-          type="hidden"
-        />
-        <Input
-          ariaLabel="Terra.datePicker.date"
-          className="input"
-          disabled={false}
-          isIncomplete={false}
-          isInvalid={false}
-          name="terra-date-undefined"
-          onChange={[Function]}
-          required={false}
-          type="text"
+        <div
+          className="date-input"
         >
           <input
-            aria-label="Terra.datePicker.date"
-            className="form-input input"
-            disabled={false}
-            name="terra-date-undefined"
-            onChange={[Function]}
-            required={false}
-            type="text"
+            data-terra-date-input-hidden={true}
+            type="hidden"
           />
-        </Input>
+          <VisuallyHiddenText
+            text="Terra.datePicker.date"
+          >
+            <span
+              className="visually-hidden-text"
+            >
+              Terra.datePicker.date
+            </span>
+          </VisuallyHiddenText>
+          <Input
+            aria-label="Terra.datePicker.yearLabel"
+            className="date-input-year"
+            disabled={false}
+            isIncomplete={false}
+            isInvalid={false}
+            maxLength="4"
+            name="terra-date-year-undefined"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            pattern="\\\\d*"
+            refCallback={[Function]}
+            required={false}
+            size="4"
+            type="text"
+            value=""
+          >
+            <input
+              aria-label="Terra.datePicker.yearLabel"
+              className="form-input date-input-year"
+              disabled={false}
+              maxLength="4"
+              name="terra-date-year-undefined"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              pattern="\\\\d*"
+              required={false}
+              size="4"
+              type="text"
+              value=""
+            />
+          </Input>
+          <span
+            className="date-spacer"
+          >
+            Terra.datePicker.separator
+          </span>
+          <Input
+            aria-label="Terra.datePicker.monthLabel"
+            className="date-input-month"
+            disabled={false}
+            isIncomplete={false}
+            isInvalid={false}
+            maxLength="2"
+            name="terra-date-month-undefined"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            pattern="\\\\d*"
+            refCallback={[Function]}
+            required={false}
+            size="2"
+            type="text"
+            value=""
+          >
+            <input
+              aria-label="Terra.datePicker.monthLabel"
+              className="form-input date-input-month"
+              disabled={false}
+              maxLength="2"
+              name="terra-date-month-undefined"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              pattern="\\\\d*"
+              required={false}
+              size="2"
+              type="text"
+              value=""
+            />
+          </Input>
+          <span
+            className="date-spacer"
+          >
+            Terra.datePicker.separator
+          </span>
+          <Input
+            aria-label="Terra.datePicker.dayLabel"
+            className="date-input-day"
+            disabled={false}
+            isIncomplete={false}
+            isInvalid={false}
+            maxLength="2"
+            name="terra-date-day-undefined"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            pattern="\\\\d*"
+            refCallback={[Function]}
+            required={false}
+            size="2"
+            type="text"
+            value=""
+          >
+            <input
+              aria-label="Terra.datePicker.dayLabel"
+              className="form-input date-input-day"
+              disabled={false}
+              maxLength="2"
+              name="terra-date-day-undefined"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              pattern="\\\\d*"
+              required={false}
+              size="2"
+              type="text"
+              value=""
+            />
+          </Input>
+        </div>
         <Button
           className="button"
           icon={
@@ -253,33 +363,143 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
   required={false}
 >
   <div
-    className="custom-input"
+    className="date-input-container"
   >
-    <input
-      data-terra-date-input-hidden={true}
-      type="hidden"
-    />
-    <Input
-      ariaLabel="Terra.datePicker.date"
-      className="input"
-      disabled={false}
-      isIncomplete={false}
-      isInvalid={false}
-      name="terra-date-undefined"
-      onChange={[Function]}
-      required={false}
-      type="text"
+    <div
+      className="date-input"
     >
       <input
-        aria-label="Terra.datePicker.date"
-        className="form-input input"
-        disabled={false}
-        name="terra-date-undefined"
-        onChange={[Function]}
-        required={false}
-        type="text"
+        data-terra-date-input-hidden={true}
+        type="hidden"
       />
-    </Input>
+      <VisuallyHiddenText
+        text="Terra.datePicker.date"
+      >
+        <span
+          className="visually-hidden-text"
+        >
+          Terra.datePicker.date
+        </span>
+      </VisuallyHiddenText>
+      <Input
+        aria-label="Terra.datePicker.yearLabel"
+        className="date-input-year"
+        disabled={false}
+        isIncomplete={false}
+        isInvalid={false}
+        maxLength="4"
+        name="terra-date-year-undefined"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        pattern="\\\\d*"
+        refCallback={[Function]}
+        required={false}
+        size="4"
+        type="text"
+        value=""
+      >
+        <input
+          aria-label="Terra.datePicker.yearLabel"
+          className="form-input date-input-year"
+          disabled={false}
+          maxLength="4"
+          name="terra-date-year-undefined"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          pattern="\\\\d*"
+          required={false}
+          size="4"
+          type="text"
+          value=""
+        />
+      </Input>
+      <span
+        className="date-spacer"
+      >
+        Terra.datePicker.separator
+      </span>
+      <Input
+        aria-label="Terra.datePicker.monthLabel"
+        className="date-input-month"
+        disabled={false}
+        isIncomplete={false}
+        isInvalid={false}
+        maxLength="2"
+        name="terra-date-month-undefined"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        pattern="\\\\d*"
+        refCallback={[Function]}
+        required={false}
+        size="2"
+        type="text"
+        value=""
+      >
+        <input
+          aria-label="Terra.datePicker.monthLabel"
+          className="form-input date-input-month"
+          disabled={false}
+          maxLength="2"
+          name="terra-date-month-undefined"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          pattern="\\\\d*"
+          required={false}
+          size="2"
+          type="text"
+          value=""
+        />
+      </Input>
+      <span
+        className="date-spacer"
+      >
+        Terra.datePicker.separator
+      </span>
+      <Input
+        aria-label="Terra.datePicker.dayLabel"
+        className="date-input-day"
+        disabled={false}
+        isIncomplete={false}
+        isInvalid={false}
+        maxLength="2"
+        name="terra-date-day-undefined"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        pattern="\\\\d*"
+        refCallback={[Function]}
+        required={false}
+        size="2"
+        type="text"
+        value=""
+      >
+        <input
+          aria-label="Terra.datePicker.dayLabel"
+          className="form-input date-input-day"
+          disabled={false}
+          maxLength="2"
+          name="terra-date-day-undefined"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          pattern="\\\\d*"
+          required={false}
+          size="2"
+          type="text"
+          value=""
+        />
+      </Input>
+    </div>
     <Button
       className="button"
       icon={
@@ -401,20 +621,241 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
 </DatePickerInput>
 `;
 
+exports[`should render a date input with isIncomplete and required props 1`] = `
+<div
+  class="date-input-container"
+>
+  <div
+    class="date-input is-incomplete"
+  >
+    <input
+      data-terra-date-input-hidden="true"
+      type="hidden"
+    />
+    <span
+      class="visually-hidden-text"
+    >
+      Terra.datePicker.date
+    </span>
+    <input
+      aria-label="Terra.datePicker.yearLabel"
+      class="form-input date-input-year"
+      maxlength="4"
+      name="terra-date-year-undefined"
+      pattern="\\\\d*"
+      size="4"
+      type="text"
+      value=""
+    />
+    <span
+      class="date-spacer"
+    >
+      Terra.datePicker.separator
+    </span>
+    <input
+      aria-label="Terra.datePicker.monthLabel"
+      class="form-input date-input-month"
+      maxlength="2"
+      name="terra-date-month-undefined"
+      pattern="\\\\d*"
+      size="2"
+      type="text"
+      value=""
+    />
+    <span
+      class="date-spacer"
+    >
+      Terra.datePicker.separator
+    </span>
+    <input
+      aria-label="Terra.datePicker.dayLabel"
+      class="form-input date-input-day"
+      maxlength="2"
+      name="terra-date-day-undefined"
+      pattern="\\\\d*"
+      size="2"
+      type="text"
+      value=""
+    />
+  </div>
+  <button
+    aria-disabled="false"
+    aria-label="Terra.datePicker.openCalendar"
+    class="button neutral compact button"
+    title="Terra.datePicker.openCalendar"
+    type="button"
+  >
+    <span
+      class="button-label icon-only"
+    >
+      <span
+        class="icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="tui-Icon icon icon-svg"
+          focusable="false"
+          height="1em"
+          viewBox="0 0 48 48"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
+          />
+        </svg>
+      </span>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`should render a date input with isInvalid prop 1`] = `
+<div
+  class="date-input-container"
+>
+  <div
+    class="date-input is-invalid"
+  >
+    <input
+      data-terra-date-input-hidden="true"
+      type="hidden"
+    />
+    <span
+      class="visually-hidden-text"
+    >
+      Terra.datePicker.date
+    </span>
+    <input
+      aria-label="Terra.datePicker.yearLabel"
+      class="form-input date-input-year"
+      maxlength="4"
+      name="terra-date-year-undefined"
+      pattern="\\\\d*"
+      size="4"
+      type="text"
+      value=""
+    />
+    <span
+      class="date-spacer"
+    >
+      Terra.datePicker.separator
+    </span>
+    <input
+      aria-label="Terra.datePicker.monthLabel"
+      class="form-input date-input-month"
+      maxlength="2"
+      name="terra-date-month-undefined"
+      pattern="\\\\d*"
+      size="2"
+      type="text"
+      value=""
+    />
+    <span
+      class="date-spacer"
+    >
+      Terra.datePicker.separator
+    </span>
+    <input
+      aria-label="Terra.datePicker.dayLabel"
+      class="form-input date-input-day"
+      maxlength="2"
+      name="terra-date-day-undefined"
+      pattern="\\\\d*"
+      size="2"
+      type="text"
+      value=""
+    />
+  </div>
+  <button
+    aria-disabled="false"
+    aria-label="Terra.datePicker.openCalendar"
+    class="button neutral compact button is-invalid"
+    title="Terra.datePicker.openCalendar"
+    type="button"
+  >
+    <span
+      class="button-label icon-only"
+    >
+      <span
+        class="icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="tui-Icon icon icon-svg"
+          focusable="false"
+          height="1em"
+          viewBox="0 0 48 48"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
+          />
+        </svg>
+      </span>
+    </span>
+  </button>
+</div>
+`;
+
 exports[`should render a default date input 1`] = `
 <div
-  class="custom-input"
+  class="date-input-container"
 >
-  <input
-    data-terra-date-input-hidden="true"
-    type="hidden"
-  />
-  <input
-    aria-label="Terra.datePicker.date"
-    class="form-input input"
-    name="terra-date-undefined"
-    type="text"
-  />
+  <div
+    class="date-input"
+  >
+    <input
+      data-terra-date-input-hidden="true"
+      type="hidden"
+    />
+    <span
+      class="visually-hidden-text"
+    >
+      Terra.datePicker.date
+    </span>
+    <input
+      aria-label="Terra.datePicker.yearLabel"
+      class="form-input date-input-year"
+      maxlength="4"
+      name="terra-date-year-undefined"
+      pattern="\\\\d*"
+      size="4"
+      type="text"
+      value=""
+    />
+    <span
+      class="date-spacer"
+    >
+      Terra.datePicker.separator
+    </span>
+    <input
+      aria-label="Terra.datePicker.monthLabel"
+      class="form-input date-input-month"
+      maxlength="2"
+      name="terra-date-month-undefined"
+      pattern="\\\\d*"
+      size="2"
+      type="text"
+      value=""
+    />
+    <span
+      class="date-spacer"
+    >
+      Terra.datePicker.separator
+    </span>
+    <input
+      aria-label="Terra.datePicker.dayLabel"
+      class="form-input date-input-day"
+      maxlength="2"
+      name="terra-date-day-undefined"
+      pattern="\\\\d*"
+      size="2"
+      type="text"
+      value=""
+    />
+  </div>
   <button
     aria-disabled="false"
     aria-label="Terra.datePicker.openCalendar"
@@ -448,52 +889,360 @@ exports[`should render a default date input 1`] = `
 `;
 
 exports[`should render a default date input with all props 1`] = `
-<div
-  class="custom-input"
+<DatePickerInput
+  ariaLabel="Aria Label text"
+  buttonRefCallback={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <button
+            aria-disabled="false"
+            aria-label="Terra.datePicker.openCalendar"
+            class="button neutral compact button"
+            title="Terra.datePicker.openCalendar"
+            type="button"
+          >
+            <span
+              class="button-label icon-only"
+            >
+              <span
+                class="icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="tui-Icon icon icon-svg"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  inputAttributes={
+    Object {
+      "id": "terra-date-input",
+    }
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  name="date-input"
+  onBlur={[Function]}
+  onButtonFocus={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  required={false}
+  value="01/01/2017"
 >
-  <input
-    data-terra-date-input-hidden="true"
-    name="date-input"
-    type="hidden"
-    value="2017-01-01"
-  />
-  <input
-    aria-label="Terra.datePicker.date, Sunday, January 1, 2017"
-    class="form-input input"
-    id="terra-date-input"
-    name="terra-date-date-input"
-    placeholder="MM/DD/YYYY"
-    type="text"
-    value="01/01/2017"
-  />
-  <button
-    aria-disabled="false"
-    aria-label="Terra.datePicker.openCalendar"
-    class="button neutral compact button"
-    title="Terra.datePicker.openCalendar"
-    type="button"
+  <div
+    className="date-input-container"
   >
-    <span
-      class="button-label icon-only"
+    <div
+      className="date-input"
     >
-      <span
-        class="icon"
+      <input
+        data-terra-date-input-hidden={true}
+        name="date-input"
+        type="hidden"
+        value="2017-01-01"
+      />
+      <VisuallyHiddenText
+        text="Aria Label text, Sunday, January 1, 2017"
       >
-        <svg
-          aria-hidden="true"
-          class="tui-Icon icon icon-svg"
-          focusable="false"
-          height="1em"
-          viewBox="0 0 48 48"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+        <span
+          className="visually-hidden-text"
         >
-          <path
-            d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
-          />
-        </svg>
+          Aria Label text, Sunday, January 1, 2017
+        </span>
+      </VisuallyHiddenText>
+      <Input
+        aria-label="Terra.datePicker.yearLabel"
+        className="date-input-year"
+        disabled={false}
+        id="terra-date-input"
+        isIncomplete={false}
+        isInvalid={false}
+        maxLength="4"
+        name="terra-date-year-date-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        pattern="\\\\d*"
+        refCallback={[Function]}
+        required={false}
+        size="4"
+        type="text"
+        value="2017"
+      >
+        <input
+          aria-label="Terra.datePicker.yearLabel"
+          className="form-input date-input-year"
+          disabled={false}
+          id="terra-date-input"
+          maxLength="4"
+          name="terra-date-year-date-input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          pattern="\\\\d*"
+          required={false}
+          size="4"
+          type="text"
+          value="2017"
+        />
+      </Input>
+      <span
+        className="date-spacer"
+      >
+        Terra.datePicker.separator
       </span>
-    </span>
-  </button>
-</div>
+      <Input
+        aria-label="Terra.datePicker.monthLabel"
+        className="date-input-month"
+        disabled={false}
+        id="terra-date-input"
+        isIncomplete={false}
+        isInvalid={false}
+        maxLength="2"
+        name="terra-date-month-date-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        pattern="\\\\d*"
+        refCallback={[Function]}
+        required={false}
+        size="2"
+        type="text"
+        value="01"
+      >
+        <input
+          aria-label="Terra.datePicker.monthLabel"
+          className="form-input date-input-month"
+          disabled={false}
+          id="terra-date-input"
+          maxLength="2"
+          name="terra-date-month-date-input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          pattern="\\\\d*"
+          required={false}
+          size="2"
+          type="text"
+          value="01"
+        />
+      </Input>
+      <span
+        className="date-spacer"
+      >
+        Terra.datePicker.separator
+      </span>
+      <Input
+        aria-label="Terra.datePicker.dayLabel"
+        className="date-input-day"
+        disabled={false}
+        id="terra-date-input"
+        isIncomplete={false}
+        isInvalid={false}
+        maxLength="2"
+        name="terra-date-day-date-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        pattern="\\\\d*"
+        refCallback={[Function]}
+        required={false}
+        size="2"
+        type="text"
+        value="01"
+      >
+        <input
+          aria-label="Terra.datePicker.dayLabel"
+          className="form-input date-input-day"
+          disabled={false}
+          id="terra-date-input"
+          maxLength="2"
+          name="terra-date-day-date-input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          pattern="\\\\d*"
+          required={false}
+          size="2"
+          type="text"
+          value="01"
+        />
+      </Input>
+    </div>
+    <Button
+      className="button"
+      icon={
+        <IconCalendar
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      }
+      isBlock={false}
+      isCompact={true}
+      isDisabled={false}
+      isIconOnly={true}
+      isReversed={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      refCallback={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              <button
+                aria-disabled="false"
+                aria-label="Terra.datePicker.openCalendar"
+                class="button neutral compact button"
+                title="Terra.datePicker.openCalendar"
+                type="button"
+              >
+                <span
+                  class="button-label icon-only"
+                >
+                  <span
+                    class="icon"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="tui-Icon icon icon-svg"
+                      focusable="false"
+                      height="1em"
+                      viewBox="0 0 48 48"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </button>,
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+      text="Terra.datePicker.openCalendar"
+      type="button"
+      variant="neutral"
+    >
+      <button
+        aria-disabled={false}
+        aria-label="Terra.datePicker.openCalendar"
+        className="button neutral compact button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        title="Terra.datePicker.openCalendar"
+        type="button"
+      >
+        <span
+          className="button-label icon-only"
+        >
+          <span
+            className="icon"
+          >
+            <IconCalendar
+              className="icon-svg"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <IconBase
+                ariaLabel={null}
+                className="icon-svg"
+                focusable="false"
+                height="1em"
+                isBidi={false}
+                isSpin={false}
+                viewBox="0 0 48 48"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="tui-Icon icon icon-svg"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
+                  />
+                </svg>
+              </IconBase>
+            </IconCalendar>
+          </span>
+        </span>
+      </button>
+    </Button>
+  </div>
+</DatePickerInput>
 `;

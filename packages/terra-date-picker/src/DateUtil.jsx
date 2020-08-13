@@ -150,6 +150,10 @@ class DateUtil {
    * @param {string} separator - The date separator.
    */
   static getDateInputValues(dateOrder, value, separator) {
+    if (!value) {
+      return false;
+    }
+
     let day;
     let month;
     let year;
