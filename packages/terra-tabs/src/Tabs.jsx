@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import ContentContainer from 'terra-content-container';
-// import Tab from './Tab';
 import TabBar from './TabBar';
 import TabPane from './TabPane';
 import styles from './Tabs.module.scss';
@@ -83,43 +81,37 @@ const Tabs = ({
   tabData,
   ...customProps
 }) => {
-  const [isLabelTruncated, setIsLabelTruncated] = useState(false);
   const selectedTab = tabData.find(tab => tab.isSelected);
 
   const tabsClassNames = cx([
-    'tabs-container',
+    'tabs',
     { 'tab-fill': tabFill },
+    { 'body-fill': fill },
     'structural',
     customProps.className,
   ]);
 
-  const tabBar = (
-    <TabBar
-      onTruncationChange={value => setIsLabelTruncated(value)}
-      tabData={tabData}
-    />
-  );
-
-  const headerTitle = <div className={cx('title')}>{selectedTab.label}</div>;
-
   return (
-    <ContentContainer
+    <div
       {...customProps}
-      className={tabsClassNames}
-      fill={fill}
-      header={tabBar}
+      className={tabsClassNames} 
       role="none"
     >
-      <TabPane
-        key={selectedTab.associatedPaneId}
-        id={selectedTab.associatedPaneId}
-        associatedTabId={selectedTab.id}
-        fill={fill}
-      >
-        {headerTitle}
-        {children}
-      </TabPane>
-    </ContentContainer>
+      <div className={cx('header')}>
+        <TabBar tabData={tabData} />
+        <div className={cx('title')}>{selectedTab.label}</div>
+      </div>
+      <div className={cx('body')}>
+        <TabPane
+          key={selectedTab.associatedPaneId}
+          id={selectedTab.associatedPaneId}
+          associatedTabId={selectedTab.id}
+          fill={fill}
+        >
+          {children}
+        </TabPane>
+      </div>
+    </div>
   );
 };
 

@@ -3,24 +3,17 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
-import MenuButton from './_TabMenu';
+import MoreButton from './_MoreButton';
 import TabDropDown from './TabDropDown';
+import Tab from './Tab';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   * Tabs to be displayed in the collapsible tab bar.
-   */
-  children: PropTypes.node.isRequired,
-  /**
-   * Callback function when label truncation state has changed.
-   * Parameters: 1. Bool indicating if any of the tab labels have been truncated.
-   */
-  onTruncationChange: PropTypes.func,
-  ids: PropTypes.array,
+  tabData: PropTypes.array,
 };
+
 
 class CollapsibleTabs extends React.Component {
   constructor(props) {
@@ -32,10 +25,10 @@ class CollapsibleTabs extends React.Component {
     this.handleSelectionAnimation = this.handleSelectionAnimation.bind(this);
     this.handleHiddenBlur = this.handleHiddenBlur.bind(this);
     this.handleHiddenFocus = this.handleHiddenFocus.bind(this);
-    this.handleOnMenuButtonSelect = this.handleOnMenuButtonSelect.bind(this);
-    this.handleOnSelect = this.handleOnSelect.bind(this);
-    this.handleOnSelectHidden = this.handleOnSelectHidden.bind(this);
+    this.handleOnMoreButtonSelect = this.handleOnMoreButtonSelect.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.wrapOnSelect = this.wrapOnSelect.bind(this);
+    this.wrapOnSelectHidden = this.wrapOnSelectHidden.bind(this);
     this.dropdownRef = React.createRef();
     this.resetCache();
     this.state = { isOpen : false };
@@ -61,7 +54,7 @@ class CollapsibleTabs extends React.Component {
     if (this.isCalculating) {
       this.isCalculating = false;
       this.handleResize(this.contentWidth);
-    } else if (React.Children.count(this.props.children) !== React.Children.count(prevProps.children)) {
+    } else if (this.props.tabData.length !== prevProps.tabData.length) {
       this.resetCache();
       this.forceUpdate();
     } else {
@@ -95,40 +88,26 @@ class CollapsibleTabs extends React.Component {
   handleResize(width) {
     const menuMarginLeft = parseInt(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-left'), 10);
     const menuMarginRight = parseInt(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-right'), 10);
-    const menuToggleWidth = this.menuRef.getBoundingClientRect().width + menuMarginLeft + menuMarginRight;
-    const availableWidth = width - menuToggleWidth;
+    const menuButtonWidth = this.menuRef.getBoundingClientRect().width + menuMarginLeft + menuMarginRight;
+    const availableWidth = width - menuButtonWidth;
 
     // Calculate hide index
-    const childrenCount = React.Children.count(this.props.children);
-    let newHideIndex = childrenCount;
+    const tabCount = this.props.tabData.length;
+    let newHideIndex = tabCount;
     let calcMinWidth = 0;
     let isMenuHidden = true;
-    for (let i = 0; i < this.props.children.length; i += 1) {
+    for (let i = 0; i < tabCount; i += 1) {
       const tab = this.container.children[i];
       const tabMarginLeft = parseFloat(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-left'));
       const tabMarginRight = parseFloat(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-right'));
       const minWidth = parseFloat(window.getComputedStyle(tab, null).getPropertyValue('min-width'));
       calcMinWidth += (minWidth + tabMarginLeft + tabMarginRight);
-      if (calcMinWidth > availableWidth && !(i === childrenCount - 1 && calcMinWidth <= width)) {
+      if (calcMinWidth > availableWidth && !(i === tabCount - 1 && calcMinWidth <= width)) {
         newHideIndex = i;
         isMenuHidden = false;
         break;
       }
     }
-
-    // Calculate if label will be truncated
-    let isLabelTruncated = false;
-    let calcWidth = 0;
-    for (let i = 0; i < newHideIndex; i += 1) {
-      const tab = this.container.children[i];
-      calcWidth += tab.getBoundingClientRect().width;
-      if ((isMenuHidden && calcWidth > width) || (!isMenuHidden && calcWidth > availableWidth)) {
-        isLabelTruncated = true;
-        break;
-      }
-    }
-
-    this.props.onTruncationChange(isLabelTruncated);
 
     if (this.menuHidden !== isMenuHidden || this.hiddenStartIndex !== newHideIndex) {
       this.menuHidden = isMenuHidden;
@@ -155,47 +134,35 @@ class CollapsibleTabs extends React.Component {
     }
   }
 
+  // TODO: clean up open state
   handleHiddenFocus(e) {
-    // console.log('focus');
-    // // this.setState({ isOpen: true });
-
-    // if (e.currentTarget.contains(e.relatedTarget)) {
-    //   // focus is leaving the container so do something interesting here
-    //   this.setState({ isOpen: true });
-    // }
-    // if (!this.dropdownRef.current.contains(e.currentTarget.contains(e.relatedTarget)) {
-    //   // focus is leaving the container so do something interesting here
-    //   this.setState({ isOpen: false });
-    // }
     this.setState({ isOpen: true });
   }
 
   handleHiddenBlur(e) {
-    // console.log('blur');
-    // // this.setState({ isOpen: false });
-
-    // if (!this.dropdownRef.current.contains(e.currentTarget.contains(e.relatedTarget)) {
-    //   // focus is leaving the container so do something interesting here
-      this.setState({ isOpen: false });
-    // }
+    this.setState({ isOpen: false });
   }
 
-  handleOnMenuButtonSelect() {
+  handleOnMoreButtonSelect() {
     this.setState({ isOpen: true });
-    const element = document.getElementById(this.props.ids[this.hiddenStartIndex]);
+    const element = this.dropdownRef.current.children[0];
     if (element) {
       element.focus();
     }
   }
 
-  handleOnSelect(onSelect) {
+  handleOutsideClick() {
+    this.setState({ isOpen: false });
+  }
+
+  wrapOnSelect(onSelect) {
     return (event, metaData) => {
       this.setState({ isOpen: false });
       onSelect(metaData);
     };
   }
-
-  handleOnSelectHidden(onSelect) {
+// clean  up
+  wrapOnSelectHidden(onSelect) {
     return (event, metaData) => {
       if (this.state.isOpen) {
         this.setState({ isOpen: false });
@@ -206,45 +173,57 @@ class CollapsibleTabs extends React.Component {
     };
   }
 
-  handleOutsideClick() {
-    this.setState({ isOpen: false });
-  }
-
   render() {
-    const visibleChildren = [];
-    const hiddenChildren = [];
-    const hiddenChildIds = [];
-    let isMenuActive = false;;
-    React.Children.forEach(this.props.children, (child, index) => {
-      if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
-        visibleChildren.push(React.cloneElement(child, { onSelect: this.handleOnSelect(child.props.onSelect) }));
-      } else {
-        const hiddenChild = React.cloneElement(child, {
-          isHidden: true,
-          onFocus: this.handleHiddenFocus,
-          onBlur: this.handleHiddenBlur,
-          onSelect: this.handleOnSelectHidden(child.props.onSelect),
-        });
-        hiddenChildren.push(hiddenChild);
-        hiddenChildIds.push(child.id);
+    const { tabData } = this.props;
+    const ids = tabData.map(tab => tab.id);
+    const hiddenIds = [];
+    const visibleTabs = [];
+    const hiddenTabs = [];
+    
+    // this is a wrap of onSelect
+    // onSelect: this.handleOnSelect(child.props.onSelect)
+    // this.handleOnSelectHidden(child.props.onSelect)
 
-        if (child.props.isSelected) {
+    let isMenuActive = false;
+    tabData.forEach((tab, index) => {
+      if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
+        visibleTabs.push(
+          <Tab
+            {...tab}
+            index={index}
+            tabIds={ids}
+            onSelect={this.wrapOnSelect(tab.onSelect)}
+          />
+        );
+      } else {
+        hiddenTabs.push(
+          <Tab
+            {...tab}
+            index={index}
+            tabIds={ids}
+            onSelect={this.wrapOnSelectHidden(tab.onSelect)}
+            onFocus={this.handleHiddenFocus}
+            onBlur={this.handleHiddenBlur}
+            isHidden
+          />
+        );
+        hiddenIds.push(tab.id);
+
+        if (tab.isSelected) {
           isMenuActive = true;
         }
       }
     });
+
     const theme = this.context;
 
     const menuButton = this.menuHidden ? null : (
-      <MenuButton
+      <MoreButton
         isActive={isMenuActive}
-        onSelect={this.handleOnMenuButtonSelect}
+        onSelect={this.handleOnMoreButtonSelect}
         refCallback={this.setMenuRef}
-        ids={this.props.ids}
       />
     );
-
-    // const headerTitle = <heading className={cx('title')}>{this.props.selectedTab.label}</heading>;
 
     return (
       <div>
@@ -252,9 +231,9 @@ class CollapsibleTabs extends React.Component {
           className={cx('collapsible-tabs-container', { 'is-calculating': this.isCalculating }, theme.className)}
           ref={this.setContainer}
           role="tablist"
-          aria-owns={hiddenChildIds.join(' ')}
+          aria-owns={hiddenIds.join(' ')}
         >
-          {visibleChildren}
+          {visibleTabs}
           <TabDropDown
             onFocus={this.handleHiddenFocus}
             onBlur={this.handleHiddenBlur}
@@ -262,11 +241,10 @@ class CollapsibleTabs extends React.Component {
             onRequestClose={this.handleOutsideClick}
             refCallback={node => this.dropdownRef.current = node}
           >
-            {hiddenChildren}
+            {hiddenTabs}
           </TabDropDown>
           {menuButton}
         </div>
-        {/* {headerTitle} */}
       </div>
     );
   }

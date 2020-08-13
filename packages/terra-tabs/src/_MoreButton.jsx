@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
 import { injectIntl, intlShape } from 'react-intl';
-import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import { handleArrows } from './_TabUtils';
@@ -13,10 +11,9 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Tabs that should be displayed collapsed as selectable menu items.
+   * Whether or not the 
    */
-  children: PropTypes.node,
-
+  isActive: PropTypes.bool,
   /**
    * Ref callback for menu toggle.
    */
@@ -26,22 +23,15 @@ const propTypes = {
    * Object containing intl APIs.
    */
   intl: intlShape.isRequired,
-  ids: PropTypes.array,
-  isActive: PropTypes.bool,
+  onSelect: PropTypes.func,
 };
 
-class TabMenu extends React.Component {
+class MoreButton extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
-    this.getTargetRef = this.getTargetRef.bind(this);
-    this.setTargetRef = this.setTargetRef.bind(this);
     this.wrapOnClick = this.wrapOnClick.bind(this);
-    // this.state = {
-    //   isOpen: false,
-    // };
   }
 
   getTargetRef() {
@@ -56,19 +46,13 @@ class TabMenu extends React.Component {
     }
   }
 
-  handleOnRequestClose() {
-    // this.setState({ isOpen: false });
-  }
-
   handleOnClick(event) {
-    // this.setState({ isOpen: true });
     this.props.onSelect(event);
   }
 
   handleOnKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       event.preventDefault();
-      // this.setState({ isOpen: true });
       this.props.onSelect(event);
     } else {
       handleArrows(event, -1, this.props.ids);
@@ -83,43 +67,18 @@ class TabMenu extends React.Component {
       if (child.props.onSelect) {
         child.props.onSelect(metaData);
       }
-
-      // this.setState({ isOpen: false });
     };
   }
 
   render() {
     const {
       intl,
-      ids,
       isActive,
-      ...customProps
+      refCallback,
     } = this.props;
-    // const menuItems = [];
-    // let menuToggleText = intl.formatMessage({ id: 'Terra.tabs.more' });
+
+    // translate
     const menuToggleText = 'More Tabs';
-    // let menuActive = false;
-
-    // React.Children.forEach(children, (child) => {
-    //   const {
-    //     label, customDisplay, icon, isIconOnly, isSelected, metaData, isHidden, ...otherProps
-    //   } = child.props;
-
-    //   if (isSelected && isHidden) {
-    //     // menuToggleText = label;
-    //     menuActive = true;yt^
-    //   }
-    //   menuItems.push((
-    //     <Menu.Item
-    //       {...otherProps}
-    //       text={label}
-    //       onClick={this.wrapOnClick(child, metaData)}
-    //       isSelected={isSelected}
-    //       isSelectable
-    //       key={child.key}
-    //     />
-    //   ));
-    // });
     const theme = this.context;
 
     return (
@@ -127,8 +86,7 @@ class TabMenu extends React.Component {
       <div
         aria-hidden
         role="button"
-        // tabIndex="-1"
-        ref={this.setTargetRef}
+        ref={refCallback}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
         className={cx('tab-menu', { 'is-active': isActive }, theme.className)}
@@ -142,6 +100,6 @@ class TabMenu extends React.Component {
   }
 }
 
-TabMenu.propTypes = propTypes;
+MoreButton.propTypes = propTypes;
 
-export default injectIntl(TabMenu);
+export default injectIntl(MoreButton);

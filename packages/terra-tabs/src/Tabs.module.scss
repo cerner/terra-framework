@@ -4,12 +4,23 @@
 @import './orion-fusion-theme/Tabs.module';
 
 :local {
-  .tabs-container {
+  .tabs {
     position: relative;
     width: 100%;
+  }
 
-    > :first-child {
-      z-index: 10;
+  .body-fill {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    > .header {
+      flex: 0 0 auto;
+      z-index: 10
+    }
+
+    > .body {
+      flex: 1 1 auto;
     }
   }
 
@@ -28,7 +39,6 @@
     flex: 1 1 auto;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    // position: relative;
     width: 100%;
 
     &:focus {

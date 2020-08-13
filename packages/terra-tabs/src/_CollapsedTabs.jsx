@@ -8,20 +8,10 @@ import styles from './Tabs.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  tabData: PropTypes.object,
-  // /**
-  //  * Tabs to display in menu.
-  //  */
-  // children: PropTypes.node,
-  /**
-   * Callback function when label truncation state has changed.
-   * Parameters: 1. Bool indicating if any of the tab labels have been truncated.
-   */
-  onTruncationChange: PropTypes.func,
+  tabData: PropTypes.array,
 };
 
-const CollapsedTabs = ({ tabData, onTruncationChange }) => {
-  onTruncationChange(false);
+const CollapsedTabs = ({ tabData }) => {
   const theme = React.useContext(ThemeContext);
 
   let selectedTab;
