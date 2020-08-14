@@ -19,21 +19,14 @@ const NotificationDialogExample = () => {
       <NotificationDialog
         variant="hazard-high"
         isOpen={isOpen}
-        dialogTitle="Use a Title That Relates Directly to The Choices"
-        startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+        dialogTitle="Risk for Allergic Reaction"
+        startMessage="The patient is allergic to an ingredient in the the medication you have prescribed. Please choose an alternative medication for treatment."
         acceptAction={{
-          text: 'accept',
+          text: 'ok',
           onClick: () => {
             handleCloseModal('accept');
           },
         }}
-        rejectAction={{
-          text: 'reject',
-          onClick: () => {
-            handleCloseModal('reject');
-          },
-        }}
-        buttonOrder="acceptFirst"
         emphasizedAction="accept"
       />
       <Button text="Trigger Notification Dialog" onClick={handleOpenModal} />

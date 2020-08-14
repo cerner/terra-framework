@@ -31,19 +31,20 @@ const propTypes = {
    */
   variant: PropTypes.oneOf(variants).isRequired,
   /**
-   * The title to describe the high-level overview of why the notification-dialog is being displayed to the user.
+   * The title to describe the high-level overview of why the notification-dialog is being displayed to the user. Use a title that relates directly to the
+   * message/actions provided in the dialog.
    */
   dialogTitle: PropTypes.string,
   /**
-   * The text to provide more detail or defined terminology to be displayed at the start of the notification dialog body.
+   * The text to provide more detail or defined terminology to be displayed at the start of the notification dialog body. Don’t repeat the title verbatim.
    */
   startMessage: PropTypes.string,
   /**
-   * The text to provide more detail or defined terminology to be displayed at the end of the notification dialog body.
+   * The text to provide more detail or defined terminology to be displayed at the end of the notification dialog body. Don’t repeat the title verbatim.
    */
   endMessage: PropTypes.string,
   /**
-   *  The content to be inserted after `startMessage` and/or before `endMessage` to provide more details to the user in the dialog body.
+   *  The content to be inserted after `startMessage` and/or before `endMessage` to provide more details to the user in the dialog body. Don’t repeat the title verbatim.
    */
   content: PropTypes.node,
   /**
@@ -61,23 +62,6 @@ const propTypes = {
     onClick: PropTypes.func,
   }),
   /**
-   * The pieces to populate a notification-dialog when `variant="custom"`.
-   */
-  custom: PropTypes.shape({
-    /**
-     * The keyword used to represent & emphasis the intention of dialog message that is being shown to the user.
-     */
-    signalWord: PropTypes.string,
-    /**
-     * The class name used to set the icon as the background image to be used as the icon in the notification-dialog.
-     */
-    iconClassName: PropTypes.string,
-  }),
-  /**
-   * Whether or not to show notification-dialog.
-   */
-  isOpen: PropTypes.bool,
-  /**
    * Determines the order of notification action buttons.
    * Use one of `acceptFirst`, `rejectFirst`.
    */
@@ -94,6 +78,23 @@ const propTypes = {
     'accept',
     'reject',
   ]),
+  /**
+   * Whether or not to show notification-dialog.
+   */
+  isOpen: PropTypes.bool,
+  /**
+   * The pieces to populate a notification-dialog when `variant="custom"`.
+   */
+  custom: PropTypes.shape({
+    /**
+     * The keyword used to represent & emphasis the intention of dialog message that is being shown to the user.
+     */
+    signalWord: PropTypes.string,
+    /**
+     * The class name used to set the icon as the background image to be used as the icon in the notification-dialog.
+     */
+    iconClassName: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -170,11 +171,10 @@ const NotificationDialog = (props) => {
       closeOnEsc={false}
       closeOnOutsideClick={false}
       zIndex="9000"
-      data-terra-notification-dialog
     >
       <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
         <div className={cx('notification-dialog-inner-wrapper')}>
-          <div className={cx('notification-dialog-container')} tabIndex="0">
+          <div className={cx('notification-dialog-container')} tabIndex="0" data-terra-notification-dialog>
             <div className={cx(['floating-header-background', variant])} />
             <div className={cx(['header'])}>
               <div className={cx(['header-content'])}>

@@ -4,7 +4,23 @@ import { Badge } from 'terra-notification-dialog/package.json?dev-site-package';
 
 # Terra Notification Dialog Upgrade Guide
 ## Upgrading from version 3 to version 4
-The latest Notification Dialog release has remove the flexibility to add customization on the pre-defined variant types.
+
+The latest changes of the Notification Dialog reflect the Patient Safety Notification Classification standards. Due to this, we have changes the variants provided by the Notification  Dialog to reflect the pre-defined hazardous vs non-hazardous notification types. To align with these standard, the flexibility to change  header (now signalWord for custom) and dialog icon are no longer customizable for these pre-defined variant types. The `custom` variant will need to be used if the predefined signal word-icon combination for a variant does not meet your needs.
+
+### New Props
+- Added `dialogTitle` prop
+- Added `custom` prop which accepts an object of keys
+  - `signalWord`
+  - `iconClassName`
+
+### Changed Props
+- `variant` prop is now required and the supported values have changes. The previous variants were `alert`, `warning`, `error`, `success`, `info`, and `custom`. The new variants are `hazard-high`, `hazard-medium`, `hazard-low`, `error`, and `custom`. The follows are the mappings for these new variants:
+  - `alert` -> `hazard-high`
+  - `warning` -> `hazard-medium`
+  - `info` -> `hazard-low`
+  - `error` and `custom` - these are the same.
+  - `success` - this variant has been removed.
+- `isOpen` prop is no longer required
 
 ### Removed Props
 - Removed `title` - use `dialogTitle` prop instead
@@ -14,17 +30,6 @@ The latest Notification Dialog release has remove the flexibility to add customi
 - Removed `secondaryAction` - use `acceptAction` prop instead
 - Removed `message` - use `startMessage` prop instead
 
-### New Props
-- Added `dialogTitle`
-- Added `custom` which accepts
-  - `signalWord`
-  - `iconClassName`
-
-### Changed Props
-- `variant` prop is now required
-- `variant` prop of type success is no long supported
-- `isOpen` prop is no longer required
-
 ### Removed NotificationDialogVariants Export
 The NotificationDialogVariants export was removed. Use the variant string instead.
 ```diff
@@ -33,8 +38,8 @@ The NotificationDialogVariants export was removed. Use the variant string instea
 
 const Dialog = () => {
   <NotificationDialog
--   variant={NotificationDialogVariants.INFO}
-+    variant="Info"
+-   variant={NotificationDialogVariants.ERROR}
++    variant="error"
 ..
 ```
 
@@ -132,16 +137,28 @@ const Dialog = () => (
 );
 ```
 
-### New Data Attribute for Testing
-The `data-terra-notification-dialog-button` was added to assist with selecting the accept and reject buttons when writing browser tests:
-- use `data-terra-notification-dialog-button="accept"` to select the accept button
-- use `data-terra-notification-dialog-button="reject"` to select the reject button
+### Added Data Attributes for Testing
+The data attribute, `data-terra-notification-dialog`, was added to assist with validating the Notification Dialog was presented. This can be used like:
+```diff
+  it('opens a notification dialog', () => {
+    browser.click('#triggerNotificationDialog');
+-   expect(browser.isExisting('[class*="notification-dialog"]')).to.be.true;
+-   expect(browser.hasFocus('[class*="notification-dialog"]')).to.be.true;
++   expect(browser.isExisting('[data-terra-notification-dialog]')).to.be.true;
++   expect(browser.hasFocus('[data-terra-notification-dialog]')).to.be.true;
+    Terra.validates.element();
+  })
+```
+
+The data attribute, `data-terra-notification-dialog-button` was added to assist with selecting the accept and reject buttons when writing browser tests:
+  - use `data-terra-notification-dialog-button="accept"` to select the accept button
+  - use `data-terra-notification-dialog-button="reject"` to select the reject button
 
 ```diff
   it('rejects the notification dialog', () => {
 -   browser.click('[class*="notification-dialog-inner-wrapper"] button:last-child');
 +   browser.click('[data-terra-notification-dialog-button="reject"]');
-    Terra.validates.element('rejected');
+    Terra.validates.element('rejected', { selector: '#root' });
   })
 ```
 
