@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.41.0 - (August 11, 2020)
+
 * Changed
   * Updated `terra-form-checkbox` from v^2.3.0 to v^3.7.0
   * Updated `terra-form-field` from v^3.1.0 to v^4.5.0
