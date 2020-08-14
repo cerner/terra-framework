@@ -3,10 +3,6 @@ import Button from 'terra-button';
 import PropTypes from 'prop-types';
 import NotificationDialog from '../../../NotificationDialog';
 
-const clickConfirm = () => {
-  alert('You clicked confirm'); // eslint-disable-line no-alert
-};
-
 const propTypes = {
   variant: PropTypes.oneOf([
     'hazard-high',
@@ -40,7 +36,7 @@ const NotificationDialogVariant = (props) => {
         startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
         acceptAction={{
           text: 'Confirm',
-          onClick: clickConfirm,
+          onClick: handleCloseModal,
         }}
         rejectAction={{
           text: 'Close',

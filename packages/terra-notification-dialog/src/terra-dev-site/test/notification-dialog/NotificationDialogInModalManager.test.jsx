@@ -41,7 +41,7 @@ const ModalContent = () => {
         buttonOrder="acceptFirst"
         emphasizedAction="none"
       />
-      <Button text="Trigger Notification Dialog" onClick={handleOpenModal} />
+      <Button id="trigger-notification-dialog" text="Trigger Notification Dialog" onClick={handleOpenModal} />
     </>
   );
 };
@@ -62,7 +62,7 @@ const ModalContainer = () => {
   };
 
   return (
-    <Button text="Trigger Modal" onClick={disclose} />
+    <Button id="openModal" text="Trigger Modal" onClick={disclose} />
   );
 };
 

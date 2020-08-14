@@ -4,30 +4,24 @@ import NotificationDialog from 'terra-notification-dialog';
 
 const CompleteNotificationDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [actions, setActions] = useState();
   const [emphasizedAction, setEmphasizedAction] = useState('accept');
   const [buttonOrder, setButtonOrder] = useState('acceptFirst');
 
-  const handleCloseModal = (actionClicked) => {
-    alert(`You clicked the ${actionClicked} action.`); // eslint-disable-line no-alert
-    setEmphasizedAction('accept');
-    setButtonOrder('acceptFirst');
+  const handleCloseModal = () => {
     setIsOpen(false);
   };
 
   const acceptAction = useMemo(() => ({
     text: 'accept',
-    onClick: () => {
-      handleCloseModal('accept');
-    },
+    onClick: handleCloseModal,
   }), []);
 
   const rejectAction = useMemo(() => ({
     text: 'reject',
-    onClick: () => {
-      handleCloseModal('reject');
-    },
+    onClick: handleCloseModal,
   }), []);
+
+  const [actions, setActions] = useState({ acceptAction });
 
   const handleOpenModal = (actionType) => {
     const actionsProps = {};
@@ -66,19 +60,19 @@ const CompleteNotificationDialog = () => {
         buttonOrder={buttonOrder}
         emphasizedAction={emphasizedAction}
       />
-      <h1>Actions</h1>
-      <Button text="Accept Action" onClick={() => handleOpenModal('accept')} />
-      <Button text="Reject Action" onClick={() => handleOpenModal('reject')} />
-      <Button text="Accept and Reject Action" onClick={() => handleOpenModal('acceptORreject')} />
+      <h2>Actions Options</h2>
+      <Button id="accept" text="Accept Action" onClick={() => handleOpenModal('accept')} />
+      <Button id="reject" text="Reject Action" onClick={() => handleOpenModal('reject')} />
+      <Button id="acceptAndReject" text="Accept and Reject Action" onClick={() => handleOpenModal('acceptORreject')} />
 
-      <h2>Button Order</h2>
+      <h2>Button Order Options</h2>
       <Button id="acceptFirst" text="Accept Action First" onClick={() => handleOpenButtonOrderModal('acceptFirst')} />
       <Button id="rejectFirst" text="Reject Action First" onClick={() => handleOpenButtonOrderModal('rejectFirst')} />
 
-      <h2>Emphasized Button</h2>
-      <Button id="accept-emphasized" text="Accept Action Emphasized" onClick={() => handleOpenEmphasizedModal('accept')} />
-      <Button id="reject-emphasized" text="Reject Action Emphasized" onClick={() => handleOpenEmphasizedModal('reject')} />
-      <Button id="none-emphasized" text="Neither Emphasized" onClick={() => handleOpenEmphasizedModal('none')} />
+      <h2>Emphasized Button Options</h2>
+      <Button id="acceptEmphasized" text="Accept Action Emphasized" onClick={() => handleOpenEmphasizedModal('accept')} />
+      <Button id="rejectEmphasized" text="Reject Action Emphasized" onClick={() => handleOpenEmphasizedModal('reject')} />
+      <Button id="neitherEmphasized" text="Neither Emphasized" onClick={() => handleOpenEmphasizedModal('none')} />
     </>
   );
 };

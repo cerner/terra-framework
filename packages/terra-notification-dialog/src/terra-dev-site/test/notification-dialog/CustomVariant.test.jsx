@@ -2,7 +2,7 @@ import React from 'react';
 import classNamesBind from 'classnames/bind';
 import NotificationDialogVariant from './NotificationDialogVariant';
 
-import styles from './CustomDialog.module.scss';
+import styles from './CustomVariant.module.scss';
 
 const cx = classNamesBind.bind(styles);
 
