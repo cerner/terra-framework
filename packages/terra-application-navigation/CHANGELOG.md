@@ -7,7 +7,9 @@
 
 * Changed
   * Updated Changelog format
-  
+
+## 1.34.0 - (August 11, 2020)
+
 * Fixed
   * Fix 'tab' text flicker when notifications are provided.
 

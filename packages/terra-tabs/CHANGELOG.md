@@ -8,6 +8,11 @@
 * Changed
   * Updated Changelog format
   
+## 6.41.0 - (August 11, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.40.0 - (August 4, 2020)
 
 * Changed

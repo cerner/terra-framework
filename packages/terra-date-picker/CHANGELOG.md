@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.44.0 - (August 11, 2020)
+
 * Added
   * Added an interaction media query to apply `hover` styles only on non-touch devices.
   * Added Calendar Filter sub-component.
