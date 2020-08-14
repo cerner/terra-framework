@@ -101,6 +101,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
   describe('Filter Dates', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-filter-dates');
+      browser.setValue('input[name="terra-date-month-date-input"]', '06');
+      browser.setValue('input[name="terra-date-day-date-input"]', '01');
+      browser.setValue('input[name="terra-date-year-date-input"]', '2017');
       browser.click('[class*="button"]');
     });
 
@@ -441,14 +444,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
     Terra.it.matchesScreenshot('formatted date cleared');
 
-    it('Open the date picker', () => {
-      browser.click('[class*="button"]');
-    });
-
-    Terra.it.matchesScreenshot('picker with formatted date cleared', { selector: '[data-terra-date-picker-calendar]' });
-
     it('Click button 2 to set formatted date', () => {
-      browser.click('[class*="PopupOverlay"]');
       browser.click('#button2');
     });
 
