@@ -12,7 +12,7 @@
 
 * Changed
   * Minor dependency version bump
-  
+ 
 ## 5.40.0 - (August 4, 2020)
 
 * Changed
