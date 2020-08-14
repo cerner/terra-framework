@@ -35,9 +35,11 @@
 
         &.is-incomplete {
           background-color: var(--terra-date-picker-input-incomplete-background-color, #ffc);
-
-          &:hover {
-            background-color: var(--terra-date-picker-input-incomplete-hover-background-color, #ffc);
+          
+          @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+            &:hover {
+              background-color: var(--terra-date-picker-input-incomplete-hover-background-color, #ffc);
+            }
           }
 
           &:focus {
