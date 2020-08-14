@@ -9,7 +9,6 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
   classNameOverlay={null}
   closeOnEsc={false}
   closeOnOutsideClick={false}
-  data-terra-notification-dialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
@@ -34,6 +33,7 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
     >
       <div
         className="notification-dialog-container"
+        data-terra-notification-dialog={true}
         tabIndex="0"
       >
         <div
@@ -163,7 +163,6 @@ exports[`Notification Dialog functions as expected should open the dialog 1`] = 
         classNameOverlay={null}
         closeOnEsc={false}
         closeOnOutsideClick={false}
-        data-terra-notification-dialog={true}
         isFullscreen={false}
         isOpen={false}
         onRequestClose={[Function]}
@@ -192,7 +191,6 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
   classNameOverlay={null}
   closeOnEsc={false}
   closeOnOutsideClick={false}
-  data-terra-notification-dialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
@@ -217,6 +215,7 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
     >
       <div
         className="notification-dialog-container"
+        data-terra-notification-dialog={true}
         tabIndex="0"
       >
         <div
@@ -308,7 +307,6 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
   classNameOverlay={null}
   closeOnEsc={false}
   closeOnOutsideClick={false}
-  data-terra-notification-dialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
@@ -333,6 +331,7 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
     >
       <div
         className="notification-dialog-container"
+        data-terra-notification-dialog={true}
         tabIndex="0"
       >
         <div
@@ -426,7 +425,6 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
   classNameOverlay={null}
   closeOnEsc={false}
   closeOnOutsideClick={false}
-  data-terra-notification-dialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
@@ -451,6 +449,7 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
     >
       <div
         className="notification-dialog-container"
+        data-terra-notification-dialog={true}
         tabIndex="0"
       >
         <div
@@ -544,7 +543,6 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
   classNameOverlay={null}
   closeOnEsc={false}
   closeOnOutsideClick={false}
-  data-terra-notification-dialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
@@ -569,6 +567,7 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
     >
       <div
         className="notification-dialog-container"
+        data-terra-notification-dialog={true}
         tabIndex="0"
       >
         <div
@@ -662,7 +661,6 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
   classNameOverlay={null}
   closeOnEsc={false}
   closeOnOutsideClick={false}
-  data-terra-notification-dialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
@@ -687,6 +685,7 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
     >
       <div
         className="notification-dialog-container"
+        data-terra-notification-dialog={true}
         tabIndex="0"
       >
         <div
@@ -780,7 +779,6 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
   classNameOverlay={null}
   closeOnEsc={false}
   closeOnOutsideClick={false}
-  data-terra-notification-dialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
@@ -805,6 +803,7 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
     >
       <div
         className="notification-dialog-container"
+        data-terra-notification-dialog={true}
         tabIndex="0"
       >
         <div
@@ -898,7 +897,6 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
   classNameOverlay={null}
   closeOnEsc={false}
   closeOnOutsideClick={false}
-  data-terra-notification-dialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
@@ -923,6 +921,7 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
     >
       <div
         className="notification-dialog-container"
+        data-terra-notification-dialog={true}
         tabIndex="0"
       >
         <div
@@ -1078,7 +1077,6 @@ exports[`correctly applies the theme context className 1`] = `
       classNameOverlay={null}
       closeOnEsc={false}
       closeOnOutsideClick={false}
-      data-terra-notification-dialog={true}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -1101,7 +1099,6 @@ exports[`correctly applies the theme context className 1`] = `
                 aria-labelledby="notification-dialog-signal-word"
                 aria-modal="true"
                 class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
-                data-terra-notification-dialog="true"
                 role="alertdialog"
                 tabindex="0"
               >
@@ -1117,6 +1114,7 @@ exports[`correctly applies the theme context className 1`] = `
                 >
                   <div
                     class="notification-dialog-container"
+                    data-terra-notification-dialog="true"
                     tabindex="0"
                   >
                     <div
@@ -1221,7 +1219,6 @@ exports[`correctly applies the theme context className 1`] = `
             classNameModal="notification-dialog orion-fusion-theme"
             classNameOverlay={null}
             closeOnOutsideClick={false}
-            data-terra-notification-dialog={true}
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -1245,7 +1242,6 @@ exports[`correctly applies the theme context className 1`] = `
               aria-labelledby="notification-dialog-signal-word"
               aria-modal="true"
               className="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
-              data-terra-notification-dialog={true}
               role="alertdialog"
               tabIndex="0"
             >
@@ -1284,6 +1280,7 @@ exports[`correctly applies the theme context className 1`] = `
                 >
                   <div
                     className="notification-dialog-container"
+                    data-terra-notification-dialog={true}
                     tabIndex="0"
                   >
                     <div
