@@ -147,7 +147,7 @@ The data attribute, `data-terra-notification-dialog`, was added to assist with v
 +   expect(browser.isExisting('[data-terra-notification-dialog]')).to.be.true;
 +   expect(browser.hasFocus('[data-terra-notification-dialog]')).to.be.true;
     Terra.validates.element();
-  })
+  });
 ```
 
 The data attribute, `data-terra-notification-dialog-button` was added to assist with selecting the accept and reject buttons when writing browser tests:
@@ -159,7 +159,7 @@ The data attribute, `data-terra-notification-dialog-button` was added to assist 
 -   browser.click('[class*="notification-dialog-inner-wrapper"] button:last-child');
 +   browser.click('[data-terra-notification-dialog-button="reject"]');
     Terra.validates.element('rejected', { selector: '#root' });
-  })
+  });
 ```
 
 ## Changes from version 1 to version 2
