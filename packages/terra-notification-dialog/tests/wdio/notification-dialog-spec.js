@@ -1,166 +1,185 @@
 const selector = '#root';
+const NOTIFICATION_DIALOG_SELECTOR = '[data-terra-notification-dialog]';
+const ACCEPT_ACTION_SELECTOR = '[data-terra-notification-dialog-button="accept"]';
+const REJECT_ACTION_SELECTOR = '[data-terra-notification-dialog-button="reject"]';
 
-Terra.describeViewports('notification-dialog', ['tiny', 'medium', 'large'], () => {
-  afterEach(() => browser.click('[class*="NotificationDialog-module__actions"] button:last-child'));
-  describe('Complete notification-dialog title, message and actions', () => {
-    it('focuses on the modal when opened', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
-      browser.click('#trigger-notification-dialog');
+const openNotificationDialog = (buttonSelector = '#trigger-notification-dialog') => {
+  browser.waitForExist(buttonSelector);
+  browser.click(buttonSelector);
+};
 
-      expect(browser.hasFocus('[class*="NotificationDialog-module__notification-dialog-container"]')).to.be.equal(true);
+Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () => {
+  describe('Variants', () => {
+    it('shows notification dialog with hazard-high variant', () => {
+      browser.url('#/raw/tests/terra-notification-dialog/notification-dialog/hazard-high-variant');
+      openNotificationDialog();
+      Terra.validates.element('hazard-high', { selector });
+    });
 
-      Terra.validates.element({ selector });
+    it('shows notification dialog with hazard-medium variant', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/hazard-medium-variant');
+      openNotificationDialog();
+      Terra.validates.element('hazard-medium', { selector });
+    });
+
+    it('shows notification dialog with hazard-low variant', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/hazard-low-variant');
+      openNotificationDialog();
+      Terra.validates.element('hazard-low', { selector });
+    });
+
+    it('shows notification dialog with error variant', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/error-variant');
+      openNotificationDialog();
+      Terra.validates.element('error', { selector });
+    });
+
+    it('shows notification dialog with custom variant', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/custom-variant');
+      openNotificationDialog();
+      Terra.validates.element('custom', { selector });
     });
   });
 
-  describe('Notification Dialog shifts focus into modal on tab', () => {
-    it('focuses on the accept button when tab is pressed', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
-      browser.click('#trigger-notification-dialog');
-      browser.keys('Tab');
-      expect(browser.hasFocus('[class*="NotificationDialog-module__actions"] button:first-child')).to.be.equal(true);
-      Terra.validates.element('Accept Focused', { selector });
+  describe('Actions', () => {
+    it('goes to test page', () => {
+      browser.url('#/raw/tests/terra-notification-dialog/notification-dialog/action-combinations');
     });
 
-    it('focuses on the close button when tab is pressed twice', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
-      browser.click('#trigger-notification-dialog');
-      browser.keys(['Tab', 'Tab']);
-      expect(browser.hasFocus('[class*="NotificationDialog-module__actions"] button:last-child')).to.be.equal(true);
-      Terra.validates.element('Reject Focused', { selector });
+    it('shows notification dialog with only accept action', () => {
+      openNotificationDialog('#accept');
+      Terra.validates.element('only accept action', { selector });
+      browser.click(ACCEPT_ACTION_SELECTOR);
     });
-  });
 
-  describe('Notification Dialog traps focus in modal', () => {
-    it('Notification Dialog traps focus in modal', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
-      browser.click('#trigger-notification-dialog');
-      browser.keys(['Tab', 'Tab', 'Tab', 'Tab']);
-      Terra.validates.element({ selector });
+    it('shows notification dialog with only reject action', () => {
+      openNotificationDialog('#reject');
+      Terra.validates.element('only reject action', { selector });
+      browser.click(REJECT_ACTION_SELECTOR);
     });
-  });
 
-  describe('Success Variant notification-dialog', () => {
-    it('Success Variant notification-dialog', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-success');
-      browser.click('#trigger-notification-dialog');
-      Terra.validates.element({ selector });
+    it('shows notification dialog with accept and reject action', () => {
+      openNotificationDialog('#acceptAndReject');
+      Terra.validates.element('accept and reject action', { selector });
+      browser.click(REJECT_ACTION_SELECTOR);
     });
-  });
 
-  describe('Info Variant notification-dialog', () => {
-    it('Info Variant notification-dialog', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-info');
-      browser.click('#trigger-notification-dialog');
-      Terra.validates.element({ selector });
+    it('shows notification dialog with accept action first', () => {
+      openNotificationDialog('#acceptFirst');
+      Terra.validates.element('accept action first', { selector });
+      browser.click(REJECT_ACTION_SELECTOR);
     });
-  });
 
-  describe('Error Variant notification-dialog', () => {
-    it('Error Variant notification-dialog', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-error');
-      browser.click('#trigger-notification-dialog');
-      Terra.validates.element({ selector });
+    it('shows notification dialog with reject action first', () => {
+      openNotificationDialog('#rejectFirst');
+      Terra.validates.element('reject action first', { selector });
+      browser.click(REJECT_ACTION_SELECTOR);
     });
-  });
 
-  describe('Warning Variant notification-dialog', () => {
-    it('Warning Variant notification-dialog', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-warning');
-      browser.click('#trigger-notification-dialog');
-      Terra.validates.element({ selector });
+    it('shows notification dialog with accept action emphasized', () => {
+      openNotificationDialog('#acceptEmphasized');
+      Terra.validates.element('accept action emphasized', { selector });
+      browser.click(REJECT_ACTION_SELECTOR);
+    });
+
+    it('shows notification dialog with reject action emphasized', () => {
+      openNotificationDialog('#rejectEmphasized');
+      Terra.validates.element('reject action emphasized', { selector });
+      browser.click(REJECT_ACTION_SELECTOR);
+    });
+
+    it('shows notification dialog with neither action emphasized', () => {
+      openNotificationDialog('#neitherEmphasized');
+      Terra.validates.element('neither action emphasized', { selector });
+      browser.click(REJECT_ACTION_SELECTOR);
     });
   });
 
-  describe('Complete notification-dialog with a long message', () => {
-    it('Complete notification-dialog with a long message', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog-with-long-message');
-      browser.click('#trigger-notification-dialog');
-      Terra.validates.element({ selector });
+  describe('Layouts', () => {
+    it('shows notification dialog without a title', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-with-no-title');
+      openNotificationDialog();
+      Terra.validates.element('no title', { selector });
+    });
+
+    it('shows notification dialog without a message', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-with-no-message');
+      openNotificationDialog();
+      Terra.validates.element('no message', { selector });
+    });
+
+    it('shows notification dialog with a long message', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-with-long-message');
+      openNotificationDialog();
+      Terra.validates.element('long message', { selector });
+    });
+
+    it('shows notification dialog with a details message', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-with-detailed-message');
+      openNotificationDialog();
+      Terra.validates.element('detailed message', { selector });
+    });
+
+    it('shows a custom unpopulated notification dialog', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/unpopulated-custom-variant');
+      openNotificationDialog();
+      Terra.validates.element('unpopulated custom variant', { selector });
     });
   });
 
-  describe('No Variant notification-dialog', () => {
-    it('No Variant notification-dialog', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/no-variant-notification-dialog');
-      browser.click('#trigger-notification-dialog');
-      Terra.validates.element({ selector });
-    });
-  });
-
-  describe('Notification-dialog with minimal props', () => {
-    it('Notification-dialog with minimal props', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-minimal-props');
-      browser.click('#trigger-notification-dialog');
-      Terra.validates.element({ selector });
-    });
-  });
-
-  describe('Notification-dialog with No Title', () => {
-    it('Notification-dialog with No Title', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-no-title');
-      browser.click('#trigger-notification-dialog');
-      Terra.validates.element({ selector });
-    });
-  });
-
-  describe('Notification-dialog with No Message', () => {
-    it('Notification-dialog with No Message', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-no-message');
-      browser.click('#trigger-notification-dialog');
-      Terra.validates.element({ selector });
-    });
-  });
-
-  describe('Notification-dialog with Content', () => {
-    it('Notification-dialog with Content', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/content-notification-dialog');
-      browser.click('#trigger-notification-dialog');
-      Terra.validates.element({ selector });
-    });
-  });
-
-  describe('Notification-dialog with emphasized reject action', () => {
-    it('Notification-dialog with emphasized reject action', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/emphasized-reject-notification-dialog');
-      browser.click('#trigger-notification-dialog');
-      Terra.validates.element({ selector });
-    });
-  });
-});
-
-Terra.describeViewports('notification-dialog', ['tiny', 'medium', 'large'], () => {
-  afterEach(() => browser.click('[class*="NotificationDialog-module__actions"] button:first-child'));
-
-  describe('Notification-dialog with Reject Action first', () => {
-    it('Notification-dialog with Reject Action first', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/reject-first-notification-dialog');
-      browser.click('#trigger-notification-dialog');
-      Terra.validates.element({ selector });
-    });
+  it('shows notification dialog over a modal', () => {
+    browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-in-modal-manager');
+    browser.click('#openModal');
+    openNotificationDialog();
+    Terra.validates.element('over modal', { selector });
   });
 });
 
-Terra.describeViewports('NotificationDialog with additional focus trap sources within a modal manager', ['medium'], () => {
-  it('opens popup', () => {
-    browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-on-modal-manager');
-    browser.click('#disclose-modal');
+Terra.describeViewports('Keyboard Accessibility', ['medium'], () => {
+  it('notification dialog receives focus when displayed', () => {
+    browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/hazard-high-variant');
+    openNotificationDialog();
+    expect(browser.hasFocus(NOTIFICATION_DIALOG_SELECTOR), 'dialog to have focus').to.be.true;
+  });
 
-    // Skip color contrast check for elements behind an overlay
-    const ignoredA11y = {
-      'color-contrast': {
-        enabled: false,
-        selector: '[class*="overlay"]',
-      },
-    };
+  it('shifts focus to the accept button in the notification dialog when tab is pressed', () => {
+    browser.keys('Tab');
+    expect(browser.hasFocus(ACCEPT_ACTION_SELECTOR)).to.be.true;
+    Terra.validates.element('accept focused', { selector });
+  });
 
-    // it opens notification dialog
-    browser.click('#trigger-notification-dialog');
-    Terra.validates.element('Open notification dialog', { selector: '[class*="abstract-modal"]', axeRules: ignoredA11y });
+  it('closes the notification dialog when ENTER is pressed', () => {
+    browser.keys('Enter');
+    Terra.validates.element('??', { selector });
+    expect(browser.isExisting(NOTIFICATION_DIALOG_SELECTOR)).to.be.false;
+  });
 
-    // it dismiss notification dialog
-    browser.click('[class*="notification-dialog-inner-wrapper"] button:last-child');
+  it('reopens dialog and tabs to accept action', () => {
+    openNotificationDialog();
+    browser.keys('Tab');
+    expect(browser.hasFocus(ACCEPT_ACTION_SELECTOR), 'accept action to have focus').to.be.true;
+  });
 
-    Terra.validates.element('Close notification dialog', { selector: '[class*="abstract-modal"]' });
+  it('closes the notification dialog when SPACE is pressed', () => {
+    browser.keys('Space');
+    expect(browser.isExisting(NOTIFICATION_DIALOG_SELECTOR)).to.be.false;
+  });
+
+  it('reopens dialog shifts focus to the reject button in the notification dialog via tab', () => {
+    openNotificationDialog();
+    browser.keys(['Tab', 'Tab']);
+    expect(browser.hasFocus(REJECT_ACTION_SELECTOR), 'reject action to have focus').to.be.true;
+    Terra.validates.element('reject focused', { selector });
+  });
+
+  it('the notification dialog traps focus in modal', () => {
+    browser.keys('Tab');
+    expect(browser.hasFocus(NOTIFICATION_DIALOG_SELECTOR), 'dialog to have focus').to.be.true;
+    browser.keys('Tab');
+    expect(browser.hasFocus(ACCEPT_ACTION_SELECTOR), 'accept action to have focus').to.be.true;
+    browser.keys('Tab');
+    expect(browser.hasFocus(REJECT_ACTION_SELECTOR), 'reject action to have focus').to.be.true;
+    browser.keys('Tab');
+    expect(browser.hasFocus(NOTIFICATION_DIALOG_SELECTOR), 'dialog to have focus').to.be.true;
   });
 });
