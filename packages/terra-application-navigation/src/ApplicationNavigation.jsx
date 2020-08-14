@@ -104,6 +104,14 @@ const propTypes = {
    * A collection of child elements to render within the ApplicationNavigation body.
    */
   children: PropTypes.node,
+  /**
+   * auto close drawer on blur
+   */
+  hideOnBlur: PropTypes.bool,
+  /**
+   * auto close drawer on visbility hidden
+   */
+  hideOnHidden: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -129,6 +137,8 @@ const ApplicationNavigation = ({
   onSelectUtilityItem,
   notifications,
   children,
+  hideOnBlur,
+  hideOnHidden,
 }) => {
   const drawerMenuRef = useRef();
   const contentLayoutRef = useRef();
@@ -320,6 +330,29 @@ const ApplicationNavigation = ({
       closeMenuCallbackRef.current = undefined;
     }
   });
+
+  useEffect(() => {
+    if(hideOnBlur) {
+      const forceCloseMenu = () => {
+        setDrawerMenuIsOpen(false);
+      }
+
+      window.addEventListener('blur', forceCloseMenu);
+
+      return () => {
+        window.removeEventListener('blur', forceCloseMenu);
+      };
+    }
+
+    if(hideOnHidden) {
+      document.onvisibilitychange = function() { 
+        console.log("Visibility of page has changed!");
+        if(document.visibilityState === "hidden") {
+          setDrawerMenuIsOpen(false);
+        }
+      };
+    }
+  }, []);
 
   useLayoutEffect(() => {
     if (activeNavigationItemKey !== renderedNavItemKeyRef.current) {
