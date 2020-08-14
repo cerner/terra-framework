@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+* Added
+  * Added an interaction media query to apply `hover` styles only on non-touch devices and removed hover wdio 
+
+* Changed
+  * Updated Changelog format
+  
 ## 2.37.0 - (August 4, 2020)
 
 * Changed

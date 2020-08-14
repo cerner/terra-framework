@@ -8,15 +8,6 @@ Terra.describeViewports('HeaderUtilityMenu', ['huge'], () => {
     Terra.it.validatesElement({ selector: '#default' });
   });
 
-  describe('Hover-header utility menu', () => {
-    before(() => {
-      browser.waitForVisible('#test-item-2');
-      browser.moveToObject('#test-item-2');
-    });
-
-    Terra.it.validatesElement({ selector: '#default' });
-  });
-
   describe('Focus-header utility menu', () => {
     before(() => {
       browser.keys(['Tab', 'Tab']);

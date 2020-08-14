@@ -128,11 +128,13 @@
     line-height: var(--terra-brand-footer-nav-link-line-height, 1.6);
     text-decoration: var(--terra-brand-footer-link-text-decoration, none);
   }
-
-  .link:hover {
-    color: var(--terra-brand-footer-link-hover-color, #fff);
-    text-decoration: var(--terra-brand-footer-link-hover-text-decoration, underline);
-  }
+      
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+    .link:hover {
+      color: var(--terra-brand-footer-link-hover-color, #fff);
+      text-decoration: var(--terra-brand-footer-link-hover-text-decoration, underline);
+    }
+  } 
 
   .link:active {
     color: var(--terra-brand-footer-link-active-color, #fff);
