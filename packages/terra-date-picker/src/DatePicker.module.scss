@@ -1,3 +1,4 @@
+/* stylelint-disable max-nesting-depth */
 // Themes
 @import './clinical-lowlight-theme/DatePicker.module';
 @import './orion-fusion-theme/DatePicker.module';
@@ -51,9 +52,11 @@
       box-shadow: var(--terra-date-picker-input-invalid-box-shadow, 0 0 0 1px #e50000);
       z-index: 1;
 
-      &:hover {
-        border-color: var(--terra-date-picker-input-invalid-hover-border-color, #e50000);
-        box-shadow: var(--terra-date-picker-input-invalid-hover-box-shadow, 0 0 0 1px #e50000);
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+        &:hover {
+          border-color: var(--terra-date-picker-input-invalid-hover-border-color, #e50000);
+          box-shadow: var(--terra-date-picker-input-invalid-hover-box-shadow, 0 0 0 1px #e50000);
+        }
       }
 
       &.is-focused {
@@ -70,8 +73,10 @@
     &.is-incomplete {
       background-color: var(--terra-date-picker-input-incomplete-background-color, #ffc);
 
-      &:hover {
-        background-color: var(--terra-date-picker-input-incomplete-hover-background-color, #ffc);
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--terra-date-picker-input-incomplete-hover-background-color, #ffc);
+        }
       }
 
       &.is-focused {
@@ -99,9 +104,11 @@
     padding: var(--terra-date-picker-input-date-component-padding, 0);
     text-align: center;
 
-    &:hover {
-      background-color: var(--terra-date-picker-input-date-component-hover-background-color, transparent);
-      border: var(--terra-date-picker-input-date-component-hover-border, 0 none transparent);
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--terra-date-picker-input-date-component-hover-background-color, transparent);
+        border: var(--terra-date-picker-input-date-component-hover-border, 0 none transparent);
+      }
     }
 
     &:focus {
@@ -160,8 +167,10 @@
       border-color: var(--terra-date-picker-button-disabled-border-color, #dedfe0);
     }
 
-    &:hover {
-      border-color: var(--terra-date-picker-button-hover-border-color, #dedfe0);
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: var(--terra-date-picker-button-hover-border-color, #dedfe0);
+      }
     }
 
     &:focus {

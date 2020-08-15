@@ -52,8 +52,10 @@
         background-size: var(--terra-tabs-collapsed-tab-menu-active-background-size, 0 0);
       }
 
-      .tab-menu:hover {
-        background-size: var(--terra-tabs-collapsed-tab-menu-hover-background-size, 0 0);
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+        .tab-menu:hover {
+          background-size: var(--terra-tabs-collapsed-tab-menu-hover-background-size, 0 0);
+        }
       }
     }
 
@@ -129,16 +131,17 @@
 
         // Same as the selectors below, but due to the specificity, you can override the variables
         // scoped specifically to the active tab
-        &:hover {
-          background-color: var(--terra-tabs-structural-active-hover-background-color, #fff);
-          background-image: var(--terra-tabs-structural-active-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
-          background-size: var(--terra-tabs-structural-active-hover-background-size, 100% 2px);
-          color: var(--terra-tabs-structural-active-hover-color, #000);
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+          &:hover {
+            background-color: var(--terra-tabs-structural-active-hover-background-color, #fff);
+            background-image: var(--terra-tabs-structural-active-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
+            background-size: var(--terra-tabs-structural-active-hover-background-size, 100% 2px);
+            color: var(--terra-tabs-structural-active-hover-color, #000);
+          }
         }
       }
 
-      &.is-disabled,
-      &.is-disabled:hover {
+      &.is-disabled {
         background-color: var(--terra-tabs-structural-disabled-hover-background-color, #fff);
         background-size: 0 0;
         color: var(--terra-tabs-structural-disabled-hover-color, rgba(0, 0, 0, 0.25));
@@ -146,16 +149,29 @@
         opacity: var(--terra-tabs-structural-disabled-hover-opacity, 1);
       }
 
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+        &.is-disabled:hover {
+          background-color: var(--terra-tabs-structural-disabled-hover-background-color, #fff);
+          background-size: 0 0;
+          color: var(--terra-tabs-structural-disabled-hover-color, rgba(0, 0, 0, 0.25));
+          cursor: default;
+          opacity: var(--terra-tabs-structural-disabled-hover-opacity, 1);
+        }
+      }
+
+
       &.is-disabled .label,
       &.is-disabled svg {
         opacity: var(--terra-tabs-structural-disabled-label-opacity, 1);
       }
 
-      &:hover {
-        background-color: var(--terra-tabs-structural-hover-background-color, #fff);
-        background-image: var(--terra-tabs-structural-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
-        background-size: var(--terra-tabs-structural-hover-background-size, 100% 2px);
-        color: var(--terra-tabs-structural-hover-color, #000);
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--terra-tabs-structural-hover-background-color, #fff);
+          background-image: var(--terra-tabs-structural-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
+          background-size: var(--terra-tabs-structural-hover-background-size, 100% 2px);
+          color: var(--terra-tabs-structural-hover-color, #000);
+        }
       }
 
       &:first-child {
