@@ -81,8 +81,12 @@ it('Should not throw any errors while date value is outside of the Min, Max rang
     <DateTimePicker name="date-time-input" maxDate="2017-04-01T10:30" minDate="2017-04-10T10:30" />
   ));
 
-  const dateInput = datePicker.find({ name: 'terra-date-input', type: 'text' }).at(0);
-  dateInput.simulate('change', { target: { value: '04/12/2017' } });
+  const dateMonthInput = datePicker.find({ name: 'terra-date-month-input', type: 'text' }).at(0);
+  dateMonthInput.simulate('change', { target: { value: '04' } });
+  const dateDayInput = datePicker.find({ name: 'terra-date-day-input', type: 'text' }).at(0);
+  dateDayInput.simulate('change', { target: { value: '12' } });
+  const dateYearInput = datePicker.find({ name: 'terra-date-year-input', type: 'text' }).at(0);
+  dateYearInput.simulate('change', { target: { value: '2017' } });
   expect(() => {
     const hourInput = datePicker.find({ name: 'terra-time-hour-input' }).at(0);
     hourInput.simulate('change', { target: { value: '21' } });
