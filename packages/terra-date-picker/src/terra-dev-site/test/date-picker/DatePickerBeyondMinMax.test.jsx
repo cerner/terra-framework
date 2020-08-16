@@ -6,7 +6,7 @@ import styles from './common/DatePicker.test.module.scss';
 const cx = classNames.bind(styles);
 
 const DatePickerBeyondMinMax = () => {
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState('2100-12-25');
 
   const handleDateChange = (event, dateValue) => {
     setDate(dateValue);
