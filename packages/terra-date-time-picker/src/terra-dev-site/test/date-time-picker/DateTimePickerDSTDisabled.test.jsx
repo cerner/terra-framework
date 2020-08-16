@@ -1,34 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'terra-button';
 import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTemplate';
 
-export default class extends React.Component {
-  constructor(props) {
-    super(props);
+const DateTimePickerDSTDisabled = () => {
+  const [active, setActive] = useState(true);
 
-    this.state = { active: true };
-    this.toggleDateTimePicker = this.toggleDateTimePicker.bind(this);
-  }
+  const toggleDateTimePicker = () => {
+    setActive(!active);
+  };
 
-  toggleDateTimePicker() {
-    this.setState(prevState => ({
-      active: !prevState.active,
-    }));
-  }
+  return (
+    <div>
+      <Button
+        id="date-time-picker-toggler"
+        text={active ? 'Disable' : 'Enable'}
+        onClick={toggleDateTimePicker}
+      />
+      <DateTimePickerExampleTemplate
+        value="2017-11-05T01:30:00"
+        disabled={!active}
+      />
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div>
-        <Button
-          id="date-time-picker-toggler"
-          text={this.state.active ? 'Disable' : 'Enable'}
-          onClick={this.toggleDateTimePicker}
-        />
-        <DateTimePickerExampleTemplate
-          value="2017-11-05T01:30:00"
-          disabled={!this.state.active}
-        />
-      </div>
-    );
-  }
-}
+export default DateTimePickerDSTDisabled;

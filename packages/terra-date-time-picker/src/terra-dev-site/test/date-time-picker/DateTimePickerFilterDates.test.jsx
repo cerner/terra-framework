@@ -18,11 +18,11 @@ const isWeekdayOrToday = (date) => {
   return true;
 };
 
-const DateTimePickerExample = () => (
+const DateTimePickerFilterDates = () => (
   <DateTimePickerExampleTemplate
     filterDate={isWeekdayOrToday}
     value="2017-08-15"
   />
 );
 
-export default DateTimePickerExample;
+export default DateTimePickerFilterDates;
