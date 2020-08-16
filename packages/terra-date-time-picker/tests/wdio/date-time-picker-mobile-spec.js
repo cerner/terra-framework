@@ -26,6 +26,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Value Mobile - Focus Hour Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-value-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
 
       browser.click('input[name="terra-time-hour-input"]');
     });
@@ -36,6 +37,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Empty Mobile - Focus Hour Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-empty-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
 
       browser.click('input[name="terra-time-hour-input"]');
     });
@@ -46,6 +48,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Seconds Mobile - Focus Hour Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
 
       browser.click('input[name="terra-time-hour-input"]');
     });
@@ -64,6 +67,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Value Mobile - Focus Minute Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-value-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
 
       browser.click('input[name="terra-time-minute-input"]');
     });
@@ -74,6 +78,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Empty Mobile - Focus Minute Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-empty-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
 
       browser.click('input[name="terra-time-minute-input"]');
     });
@@ -92,6 +97,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Seconds Mobile - Focus Minute Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
 
       browser.click('input[name="terra-time-minute-input"]');
     });
@@ -102,6 +108,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Seconds Mobile - Focus Second Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-second-input"]');
 
       browser.click('input[name="terra-time-second-input"]');
     });
