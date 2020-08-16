@@ -1,103 +1,91 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DateTimePicker from '../../../DateTimePicker';
 import DateTimeUtils from '../../../DateTimeUtils';
 
-class DateTimePickerEvents extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      blurTriggerCount: 0,
-      focusTriggerCount: 0,
-      changeValue: '',
-      changeRawValue: '',
-      selectValue: '',
-      clickOutsideTriggerCount: 0,
-    };
-    this.handleBlur = this.handleBlur.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleChangeRaw = this.handleChangeRaw.bind(this);
-    this.handleSelect = this.handleSelect.bind(this);
-    this.handleOnClickOutside = this.handleOnClickOutside.bind(this);
-    this.blurCount = 0;
-    this.focusCount = 0;
-    this.clickOutsideCount = 0;
-  }
+let blurCount = 0;
+let focusCount = 0;
+let clickOutsideCount = 0;
 
-  handleBlur() {
-    this.blurCount += 1;
-    this.setState({ blurTriggerCount: this.blurCount });
-  }
+const DateTimePickerEvents = () => {
+  const [blurTriggerCount, setBlurTriggerCount] = useState(0);
+  const [focusTriggerCount, setFocusTriggerCount] = useState(0);
+  const [changeValue, setChangeValue] = useState('');
+  const [changeRawValue, setChangeRawValue] = useState('');
+  const [selectValue, setSelectValue] = useState('');
+  const [clickOutsideTriggerCount, setClickOutsideTriggerCount] = useState(0);
 
-  handleFocus() {
-    this.focusCount += 1;
-    this.setState({ focusTriggerCount: this.focusCount });
-  }
+  const handleBlur = () => {
+    blurCount += 1;
+    setBlurTriggerCount(blurCount);
+  };
 
-  handleChange(event, value) {
-    this.setState({ changeValue: value });
-  }
+  const handleFocus = () => {
+    focusCount += 1;
+    setFocusTriggerCount(focusCount);
+  };
 
-  handleChangeRaw(event, vaue) {
-    this.setState({ changeRawValue: vaue });
-  }
+  const handleChange = (event, value) => {
+    setChangeValue(value);
+  };
 
-  handleSelect(event, value) {
-    this.setState({ selectValue: value });
-  }
+  const handleChangeRaw = (event, value) => {
+    setChangeRawValue(value);
+  };
 
-  handleOnClickOutside() {
-    this.clickOutsideCount += 1;
-    this.setState({ clickOutsideTriggerCount: this.clickOutsideCount });
-  }
+  const handleSelect = (event, value) => {
+    setSelectValue(value);
+  };
 
-  render() {
-    return (
-      <div>
-        <p>
-          onFocus Trigger Count:
-          {' '}
-          <span id="onFocus-count">{this.state.focusTriggerCount}</span>
-          <br />
-          <br />
-          onBlur Trigger Count:
-          {' '}
-          <span id="onBlur-count">{this.state.blurTriggerCount}</span>
-          <br />
-          <br />
-          onClickOutside Trigger Count:
-          {' '}
-          <span id="onClickOutside-count">{this.state.clickOutsideTriggerCount}</span>
-          <br />
-          <br />
-          onChangeRaw Triggered:
-          {' '}
-          <span id="onChangeRaw-count">{this.state.changeRawValue}</span>
-          <br />
-          <br />
-          onChange Triggered:
-          {' '}
-          <span id="onChange-Count">{this.state.changeValue}</span>
-          <br />
-          <br />
-          onSelect Triggered:
-          {' '}
-          <span id="onSelect-count">{this.state.selectValue}</span>
-        </p>
-        <DateTimePicker
-          name="date-time-picker-events"
-          onBlur={this.handleBlur}
-          onFocus={this.handleFocus}
-          onChange={this.handleChange}
-          onChangeRaw={this.handleChangeRaw}
-          onSelect={this.handleSelect}
-          onClickOutside={this.handleOnClickOutside}
-          timeVariant={DateTimeUtils.FORMAT_12_HOUR}
-          showSeconds
-        />
-      </div>
-    );
-  }
-}
+  const handleOnClickOutside = () => {
+    clickOutsideCount += 1;
+    setClickOutsideTriggerCount(clickOutsideCount);
+  };
+
+  return (
+    <div>
+      <p>
+        onFocus Trigger Count:
+        {' '}
+        <span id="onFocus-count">{focusTriggerCount}</span>
+        <br />
+        <br />
+        onBlur Trigger Count:
+        {' '}
+        <span id="onBlur-count">{blurTriggerCount}</span>
+        <br />
+        <br />
+        onClickOutside Trigger Count:
+        {' '}
+        <span id="onClickOutside-count">{clickOutsideTriggerCount}</span>
+        <br />
+        <br />
+        onChangeRaw Triggered:
+        {' '}
+        <span id="onChangeRaw-count">{changeRawValue}</span>
+        <br />
+        <br />
+        onChange Triggered:
+        {' '}
+        <span id="onChange-Count">{changeValue}</span>
+        <br />
+        <br />
+        onSelect Triggered:
+        {' '}
+        <span id="onSelect-count">{selectValue}</span>
+      </p>
+      <DateTimePicker
+        name="date-time-picker-events"
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+        onChange={handleChange}
+        onChangeRaw={handleChangeRaw}
+        onSelect={handleSelect}
+        onClickOutside={handleOnClickOutside}
+        timeVariant={DateTimeUtils.FORMAT_12_HOUR}
+        showSeconds
+      />
+    </div>
+  );
+};
 
 export default DateTimePickerEvents;
