@@ -9,18 +9,22 @@
 
     &:not(.is-disabled) {
       cursor: pointer;
+      
+      /* stylelint-disable max-nesting-depth */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--terra-menu-item-hover-background-color, #ebf6fd);
+        }
+        
+        &:hover .checkmark {
+          color: var(--terra-menu-item-checkmark-hover-icon-color);
+        }
 
-      &:hover {
-        background-color: var(--terra-menu-item-hover-background-color, #ebf6fd);
+        &:hover .chevron {
+          color: var(--terra-menu-item-chevron-hover-icon-color);
+        }
       }
-
-      &:hover .checkmark {
-        color: var(--terra-menu-item-checkmark-hover-icon-color);
-      }
-
-      &:hover .chevron {
-        color: var(--terra-menu-item-chevron-hover-icon-color);
-      }
+      /* stylelint-enable max-nesting-depth */
 
       &:focus {
         background-color: var(--terra-menu-item-focus-background-color, #ebf6fd);
