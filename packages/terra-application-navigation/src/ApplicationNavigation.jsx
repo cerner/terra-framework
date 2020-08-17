@@ -345,11 +345,14 @@ const ApplicationNavigation = ({
     }
 
     if(hideOnHidden) {
-      document.onvisibilitychange = function() { 
-        console.log("Visibility of page has changed!");
-        if(document.visibilityState === "hidden") {
-          setDrawerMenuIsOpen(false);
-        }
+      const forceCloseMenu = () => {
+        setDrawerMenuIsOpen(false);
+      }
+
+      window.addEventListener('visibilitychange', forceCloseMenu);
+
+      return () => {
+        window.removeEventListener('visibilitychange', forceCloseMenu);
       };
     }
   }, []);
