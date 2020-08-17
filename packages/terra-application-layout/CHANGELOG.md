@@ -7,6 +7,7 @@
 
 * Changed
   * Updated Changelog format
+  * Update WDIO screenshot
   
 ## 5.41.0 - (August 11, 2020)
 
