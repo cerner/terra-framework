@@ -17,12 +17,15 @@
     padding-left: var(--terra-application-utility-header-padding-left, 0.5714rem);
     padding-right: var(--terra-application-utility-header-padding-right, 0.5714rem);
     width: 100%;
-
-    &:hover {
-      background-color: var(--terra-application-utility-header-hover-background-color);
-
-      .icon {
-        color: var(--terra-application-utility-header-hover-icon-color);
+    
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--terra-application-utility-header-hover-background-color);
+        
+        /* stylelint-disable-next-line max-nesting-depth */
+        .icon {
+          color: var(--terra-application-utility-header-hover-icon-color);
+        }
       }
     }
 
@@ -77,11 +80,14 @@
     padding-top: var(--terra-application-utility-menu-padding-top, 0.5714rem);
     width: 100%;
 
-    &:hover {
-      background-color: var(--terra-application-utility-menu-hover-background-color);
-
-      .icon {
-        color: var(--terra-application-utility-menu-hover-icon-color);
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--terra-application-utility-menu-hover-background-color);
+        
+        /* stylelint-disable-next-line max-nesting-depth */
+        .icon {
+          color: var(--terra-application-utility-menu-hover-icon-color);
+        }
       }
     }
 

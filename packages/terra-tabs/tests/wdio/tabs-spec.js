@@ -59,14 +59,6 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
       browser.moveToObject('[class*="tab-content"]');
     });
 
-    describe('Collapsible hover', () => {
-      it('Collapsible hover', () => {
-        browser.waitForVisible('#tab2');
-        browser.moveToObject('#tab2');
-        Terra.validates.element();
-      });
-    });
-
     describe('Collapsible active focus', () => {
       it('Collapsible active focus', () => {
         browser.waitForVisible('#tab2');
