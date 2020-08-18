@@ -25,10 +25,10 @@ const CompleteNotificationDialog = () => {
 
   const handleOpenModal = (actionType) => {
     const actionsProps = {};
-    if (actionType.includes('accept')) {
+    if (actionType.toLowerCase().includes('accept')) {
       actionsProps.acceptAction = acceptAction;
     }
-    if (actionType.includes('reject')) {
+    if (actionType.toLowerCase().includes('reject')) {
       actionsProps.rejectAction = rejectAction;
     }
     setActions(actionsProps);
@@ -64,7 +64,7 @@ const CompleteNotificationDialog = () => {
       <h2>Actions Options</h2>
       <Button id="accept" text="Accept Action" onClick={() => handleOpenModal('accept')} />
       <Button id="reject" text="Reject Action" onClick={() => handleOpenModal('reject')} />
-      <Button id="acceptAndReject" text="Accept and Reject Action" onClick={() => handleOpenModal('acceptORreject')} />
+      <Button id="acceptAndReject" text="Accept and Reject Action" onClick={() => handleOpenModal('acceptAndReject')} />
 
       <h2>Button Order Options</h2>
       <Button id="acceptFirst" text="Accept Action First" onClick={() => handleOpenButtonOrderModal('acceptFirst')} />

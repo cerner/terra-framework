@@ -5,7 +5,7 @@ import FocusTrap from 'focus-trap-react';
 import Button from 'terra-button';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
-import { FormattedMessage } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 import ThemeContext from 'terra-theme-context';
 
 import NotificationIcon from './_NotificationIcon';
@@ -27,7 +27,6 @@ const propTypes = {
   /**
    * The variant of notification to be rendered. This renders the dialog with the corresponding header and icon to the
    * variant concept.
-   * Use one of `hazard-high`, `hazard-medium`, `hazard-low`, `error`, or `custom`.
    */
   variant: PropTypes.oneOf(variants).isRequired,
   /**
@@ -63,7 +62,6 @@ const propTypes = {
   }),
   /**
    * Determines the order of notification action buttons.
-   * Use one of `acceptFirst`, `rejectFirst`.
    */
   buttonOrder: PropTypes.oneOf([
     'acceptFirst',
@@ -71,17 +69,12 @@ const propTypes = {
   ]),
   /**
    * Determines whether acceptAction, rejectAction or neither is emphasizedAction
-   * Use one of `none`, `accept` or `reject`.
    */
   emphasizedAction: PropTypes.oneOf([
     'none',
     'accept',
     'reject',
   ]),
-  /**
-   * Whether or not to show notification-dialog.
-   */
-  isOpen: PropTypes.bool,
   /**
    * The pieces to populate a notification-dialog when `variant="custom"`.
    */
@@ -95,10 +88,14 @@ const propTypes = {
      */
     iconClassName: PropTypes.string,
   }),
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: intlShape,
 };
 
 const defaultProps = {
-  isOpen: false,
   buttonOrder: 'acceptFirst',
   emphasizedAction: 'none',
   custom: {},
@@ -139,34 +136,32 @@ const NotificationDialog = (props) => {
     acceptAction,
     rejectAction,
     variant,
-    isOpen,
     buttonOrder,
     emphasizedAction,
     custom,
+    intl,
     ...customProps
   } = props;
 
-  if (process.env.NODE_ENV !== 'production' && acceptAction === undefined && rejectAction === undefined) {
-    // eslint-disable-next-line no-console
+  if (acceptAction === undefined && rejectAction === undefined) {
     throw new Error('Either the `acceptAction` or `rejectAction` props must be provided for Notification dialog');
   }
 
-  if (process.env.NODE_ENV !== 'production' && variant === undefined) {
-    // eslint-disable-next-line no-console
+  if (variant === undefined) {
     throw new Error('The variant must be provided to the Notification dialog');
   }
 
-  const signalWord = variant === 'custom' ? custom.signalWord : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
+  const signalWord = variant === 'custom' ? custom.signalWord : intl.formatMessage({ id: `Terra.notification.dialog.${variant}` });
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
     <AbstractModal
-      ariaLabel="Notification Dialog"
+      ariaLabel={signalWord}
       aria-labelledby="notification-dialog-signal-word"
       aria-describedby={dialogTitle ? 'notification-dialog-title' : 'notification-dialog-signal-word'}
       role="alertdialog"
       classNameModal={classNames(cx('notification-dialog', theme.className), customProps.className)}
-      isOpen={isOpen}
+      isOpen
       onRequestClose={() => {}}
       closeOnEsc={false}
       closeOnOutsideClick={false}
@@ -213,4 +208,4 @@ NotificationDialog.propTypes = propTypes;
 NotificationDialog.defaultProps = defaultProps;
 
 export { ContentLayoutAsList };
-export default NotificationDialog;
+export default injectIntl(NotificationDialog);
