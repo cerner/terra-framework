@@ -298,7 +298,7 @@ const DatePickerInput = (props) => {
     // Ignore the entry if the value did not change or it is invalid.
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have to
     // check the length of inputValue to make sure that it is less then 2.
-    if (inputValue === date.day || inputValue.length > 2 || Number(inputValue) > 31) {
+    if (inputValue === date.day || inputValue.length > 2 || Number(inputValue) > 31 || inputValue === '00') {
       return;
     }
 
@@ -324,7 +324,7 @@ const DatePickerInput = (props) => {
     // Ignore the entry if the value did not change or it is invalid.
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have to
     // check the length of inputValue to make sure that it is less then 2.
-    if (inputValue === date.month || inputValue.length > 2 || Number(inputValue) > 12) {
+    if (inputValue === date.month || inputValue.length > 2 || Number(inputValue) > 12 || inputValue === '00') {
       return;
     }
 
@@ -454,6 +454,17 @@ const DatePickerInput = (props) => {
       setMonthInitialFocused(false);
     } else {
       setYearInitialFocused(false);
+    }
+
+    if (type === DateUtil.inputType.DAY || type === DateUtil.inputType.MONTH) {
+      let inputValue = event.target.value;
+
+      // Prepend a 0 to the value when losing focus and the value is single digit.
+      if (inputValue.length === 1) {
+        inputValue = inputValue === '0' ? '' : '0'.concat(inputValue);
+
+        handleDateChange(event, inputValue, type);
+      }
     }
   };
 
