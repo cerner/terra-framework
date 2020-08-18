@@ -212,6 +212,7 @@ class DatePickerInput extends React.Component {
           ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
         />
         <Button
+          data-terra-open-calendar-button
           className={buttonClasses}
           text={buttonText}
           onClick={this.handleOnButtonClick}

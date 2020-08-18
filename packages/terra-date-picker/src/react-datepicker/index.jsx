@@ -586,7 +586,7 @@ class DatePicker extends React.Component {
   }
 
   onInputKeyDown = (event) => {
-    if(event.key === 'Enter') {
+    if(event.keyCode === 13 || event.keyCode === 32) {
       this.setState({ isCalendarOpenedViaKeyboard: true })
 
     }

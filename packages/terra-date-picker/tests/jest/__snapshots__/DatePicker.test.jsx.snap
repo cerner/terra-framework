@@ -325,6 +325,7 @@ exports[`correctly applies the theme context className 1`] = `
                       </Input>
                       <Button
                         className="button"
+                        data-terra-open-calendar-button={true}
                         icon={
                           <IconCalendar
                             viewBox="0 0 48 48"
@@ -349,6 +350,7 @@ exports[`correctly applies the theme context className 1`] = `
                           aria-disabled={false}
                           aria-label="Terra.datePicker.openCalendar"
                           className="button neutral compact orion-fusion-theme button"
+                          data-terra-open-calendar-button={true}
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
