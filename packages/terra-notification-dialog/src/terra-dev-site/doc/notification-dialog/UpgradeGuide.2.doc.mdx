@@ -3,11 +3,13 @@ import { Badge } from 'terra-notification-dialog/package.json?dev-site-package';
 <Badge />
 
 # Terra Notification Dialog Upgrade Guide
+
 ## Upgrading from version 3 to version 4
 
 The latest changes to the Notification Dialog reflect the further development of Patient Safety Notification Classification standards. We have changed the variants provided by the Notification Dialog to reflect the defined hazardous vs. non-hazardous notification types. To align with these standards, the ability to change the header and dialog icon is no longer available for the defined variant types. The `custom` variant will need to be used if the predefined signal word and icon combination for a variant does not meet your needs.
 
 ### New Props
+
 - Added `dialogTitle` prop
 - Added `custom` prop which accepts an object of keys
   - `signalWord`
@@ -15,7 +17,7 @@ The latest changes to the Notification Dialog reflect the further development of
 
 ### Changed Props
 
-- `variant` prop is now required and the supported values have changes. The previous variants were `alert`, `warning`, `error`, `success`, `info`, and `custom`. The new variants are `hazard-high`, `hazard-medium`, `hazard-low`, `error`, and `custom`. The follows are the mappings for these new variants:
+- `variant` prop is now required and the supported values have changes. The previous variants were `alert`, `warning`, `error`, `success`, `info`, and `custom`. The new variants are `hazard-high`, `hazard-medium`, `hazard-low`, `error`, and `custom`. The mappings from the v3 variants to the v4 variants are as follows:
   - `alert` -> `hazard-high`
   - `warning` -> `hazard-medium`
   - `info` -> `hazard-low`
@@ -161,6 +163,7 @@ const Dialog = () => (
 ### Added Data Attributes for Testing
 
 The data attribute, `data-terra-notification-dialog`, was added to assist with validating the Notification Dialog was presented. This can be used like:
+
 ```diff
   it('opens a notification dialog', () => {
     browser.click('#triggerNotificationDialog');
