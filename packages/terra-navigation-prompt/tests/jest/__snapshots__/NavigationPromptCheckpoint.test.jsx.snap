@@ -20,7 +20,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
     custom={Object {}}
     dialogTitle="Test Title"
     emphasizedAction="none"
-    isOpen={true}
+    isOpen={false}
     rejectAction={
       Object {
         "onClick": [Function],
@@ -53,7 +53,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
     custom={Object {}}
     dialogTitle="Test Title"
     emphasizedAction="accept"
-    isOpen={true}
+    isOpen={false}
     rejectAction={
       Object {
         "onClick": [Function],
@@ -86,7 +86,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
     custom={Object {}}
     dialogTitle="Test Title"
     emphasizedAction="reject"
-    isOpen={true}
+    isOpen={false}
     rejectAction={
       Object {
         "onClick": [Function],

@@ -25,22 +25,23 @@ const ModalContent = () => {
 
   return (
     <>
-      <NotificationDialog
-        variant="hazard-low"
-        isOpen={isOpen}
-        dialogTitle="Use a Title That Relates Directly to The Choices"
-        startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-        acceptAction={{
-          text: 'accept',
-          onClick: handleCloseModal,
-        }}
-        rejectAction={{
-          text: 'reject',
-          onClick: handleCloseModal,
-        }}
-        buttonOrder="acceptFirst"
-        emphasizedAction="none"
-      />
+      {isOpen && (
+        <NotificationDialog
+          variant="hazard-low"
+          dialogTitle="Use a Title That Relates Directly to The Choices"
+          startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+          acceptAction={{
+            text: 'accept',
+            onClick: handleCloseModal,
+          }}
+          rejectAction={{
+            text: 'reject',
+            onClick: handleCloseModal,
+          }}
+          buttonOrder="acceptFirst"
+          emphasizedAction="none"
+        />
+      )}
       <Button id="trigger-notification-dialog" text="Trigger Notification Dialog" onClick={handleOpenModal} />
     </>
   );

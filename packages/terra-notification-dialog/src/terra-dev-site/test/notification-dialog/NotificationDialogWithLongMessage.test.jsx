@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import Button from 'terra-button';
 import NotificationDialog from '../../../NotificationDialog';
 
-const clickConfirm = () => {
-  alert('You clicked confirm'); // eslint-disable-line no-alert
-};
-
 const message = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.
 Integer congue feugiat ultricies.
@@ -99,22 +95,23 @@ const CompleteNotificationDialogWithLongMessage = () => {
 
   return (
     <>
-      <NotificationDialog
-        variant="hazard-high"
-        isOpen={isOpen}
-        dialogTitle="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
-        startMessage={message}
-        acceptAction={{
-          text: 'accept',
-          onClick: clickConfirm,
-        }}
-        rejectAction={{
-          text: 'reject',
-          onClick: handleCloseModal,
-        }}
-        buttonOrder="acceptFirst"
-        emphasizedAction="accept"
-      />
+      {isOpen && (
+        <NotificationDialog
+          variant="hazard-high"
+          dialogTitle="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
+          startMessage={message}
+          acceptAction={{
+            text: 'accept',
+            onClick: handleCloseModal,
+          }}
+          rejectAction={{
+            text: 'reject',
+            onClick: handleCloseModal,
+          }}
+          buttonOrder="acceptFirst"
+          emphasizedAction="accept"
+        />
+      )}
       <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} />
     </>
   );

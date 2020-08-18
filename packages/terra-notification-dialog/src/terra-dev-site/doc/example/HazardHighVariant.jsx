@@ -5,8 +5,7 @@ import NotificationDialog from 'terra-notification-dialog';
 const NotificationDialogExample = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleCloseModal = (actionClicked) => {
-    alert(`You clicked the ${actionClicked} action.`); // eslint-disable-line no-alert
+  const handleCloseModal = () => {
     setIsOpen(false);
   };
 
@@ -16,19 +15,18 @@ const NotificationDialogExample = () => {
 
   return (
     <>
-      <NotificationDialog
-        variant="hazard-high"
-        isOpen={isOpen}
-        dialogTitle="Risk for Allergic Reaction"
-        startMessage="The patient is allergic to an ingredient in the the medication you have prescribed. Please choose an alternative medication for treatment."
-        acceptAction={{
-          text: 'ok',
-          onClick: () => {
-            handleCloseModal('accept');
-          },
-        }}
-        emphasizedAction="accept"
-      />
+      {isOpen && (
+        <NotificationDialog
+          variant="hazard-high"
+          dialogTitle="Risk for Allergic Reaction"
+          startMessage="The patient is allergic to an ingredient in the the medication you have prescribed. Please choose an alternative medication for treatment."
+          acceptAction={{
+            text: 'ok',
+            onClick: handleCloseModal,
+          }}
+          emphasizedAction="accept"
+        />
+      )}
       <Button text="Trigger Notification Dialog" onClick={handleOpenModal} />
     </>
   );

@@ -15,17 +15,18 @@ const NotificationDialogNoMessage = () => {
 
   return (
     <>
-      <NotificationDialog
-        variant="hazard-low"
-        isOpen={isOpen}
-        dialogTitle="There is no message here."
-        acceptAction={{
-          text: 'Close',
-          onClick: handleCloseModal,
-        }}
-        buttonOrder="acceptFirst"
-        emphasizedAction="accept"
-      />
+      {isOpen && (
+        <NotificationDialog
+          variant="hazard-low"
+          dialogTitle="There is no message here."
+          acceptAction={{
+            text: 'Close',
+            onClick: handleCloseModal,
+          }}
+          buttonOrder="acceptFirst"
+          emphasizedAction="accept"
+        />
+      )}
       <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} />
     </>
   );

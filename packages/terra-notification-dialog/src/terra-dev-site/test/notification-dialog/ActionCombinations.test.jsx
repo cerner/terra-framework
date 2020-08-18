@@ -49,17 +49,18 @@ const CompleteNotificationDialog = () => {
 
   return (
     <>
-      <NotificationDialog
-        variant="hazard-medium"
-        isOpen={isOpen}
-        dialogTitle="Action Options in Notification Dialog"
-        startMessage="The notification dialog can display one or two buttons to accept and/or reject the message and close the dialog."
-        content="The buttonOrder prop can be used to flip which button is first when both buttons are rendered."
-        endMessage="The emphasizedAction prop indicates whether acceptAction, rejectAction or neither action should be emphasized."
-        {...actions}
-        buttonOrder={buttonOrder}
-        emphasizedAction={emphasizedAction}
-      />
+      {isOpen && (
+        <NotificationDialog
+          variant="hazard-medium"
+          dialogTitle="Action Options in Notification Dialog"
+          startMessage="The notification dialog can display one or two buttons to accept and/or reject the message and close the dialog."
+          content="The buttonOrder prop can be used to flip which button is first when both buttons are rendered."
+          endMessage="The emphasizedAction prop indicates whether acceptAction, rejectAction or neither action should be emphasized."
+          {...actions}
+          buttonOrder={buttonOrder}
+          emphasizedAction={emphasizedAction}
+        />
+      )}
       <h2>Actions Options</h2>
       <Button id="accept" text="Accept Action" onClick={() => handleOpenModal('accept')} />
       <Button id="reject" text="Reject Action" onClick={() => handleOpenModal('reject')} />

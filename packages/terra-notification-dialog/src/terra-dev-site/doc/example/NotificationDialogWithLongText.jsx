@@ -95,22 +95,23 @@ const NotificationDialogWithLongText = () => {
 
   return (
     <>
-      <NotificationDialog
-        variant="hazard-medium"
-        isOpen={isOpen}
-        dialogTitle="Use a Title That Relates Directly to The Choices. In this case this is a really long title."
-        startMessage={message}
-        acceptAction={{
-          text: 'accept',
-          onClick: handleCloseModal,
-        }}
-        rejectAction={{
-          text: 'reject',
-          onClick: handleCloseModal,
-        }}
-        buttonOrder="acceptFirst"
-        emphasizedAction="accept"
-      />
+      {isOpen && (
+        <NotificationDialog
+          variant="hazard-medium"
+          dialogTitle="Use a Title That Relates Directly to The Choices. In this case this is a really long title."
+          startMessage={message}
+          acceptAction={{
+            text: 'accept',
+            onClick: handleCloseModal,
+          }}
+          rejectAction={{
+            text: 'reject',
+            onClick: handleCloseModal,
+          }}
+          buttonOrder="acceptFirst"
+          emphasizedAction="accept"
+        />
+      )}
       <Button text="Trigger Notification Dialog" onClick={handleOpenModal} />
     </>
   );

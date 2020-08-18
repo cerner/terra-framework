@@ -6,8 +6,7 @@ const NoVariantNotificationDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [buttonOrder, setButtonOrder] = useState();
 
-  const handleCloseModal = (actionClicked) => {
-    alert(`You clicked the ${actionClicked} action.`); // eslint-disable-line no-alert
+  const handleCloseModal = () => {
     setIsOpen(false);
   };
 
@@ -18,25 +17,22 @@ const NoVariantNotificationDialog = () => {
 
   return (
     <>
-      <NotificationDialog
-        buttonOrder={buttonOrder}
-        isOpen={isOpen}
-        variant="hazard-low"
-        dialogTitle="Use a Title That Relates Directly to The Choices"
-        startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-        acceptAction={{
-          text: 'accept',
-          onClick: () => {
-            handleCloseModal('Accept');
-          },
-        }}
-        rejectAction={{
-          text: 'reject',
-          onClick: () => {
-            handleCloseModal('reject');
-          },
-        }}
-      />
+      {isOpen && (
+        <NotificationDialog
+          buttonOrder={buttonOrder}
+          variant="hazard-low"
+          dialogTitle="Use a Title That Relates Directly to The Choices"
+          startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+          acceptAction={{
+            text: 'accept',
+            onClick: handleCloseModal,
+          }}
+          rejectAction={{
+            text: 'reject',
+            onClick: handleCloseModal,
+          }}
+        />
+      )}
       <Button text="Accept Button First" onClick={() => handleOpenModal('acceptFirst')} />
       <Button text="Reject Button First" onClick={() => handleOpenModal('rejectFirst')} />
     </>

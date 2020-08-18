@@ -14,13 +14,12 @@ describe('Notification Dialog', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
         variant="hazard-high"
-        isOpen
         dialogTitle="Test"
         startMessage="This text is used to provide more details."
         acceptAction={{ text: 'accept', onClick: () => {} }}
         rejectAction={{ text: 'reject', onClick: () => {} }}
       />,
-    );
+    ).dive();
 
     expect(dialog).toMatchSnapshot();
     const actions = dialog.find('.actions');
@@ -33,13 +32,12 @@ describe('Notification Dialog', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
         variant="hazard-medium"
-        isOpen
         dialogTitle="Test"
         startMessage="This text is used to provide more details."
         acceptAction={{ text: 'accept', onClick: () => {} }}
         rejectAction={{ text: 'reject', onClick: () => {} }}
       />,
-    );
+    ).dive();
 
     expect(dialog).toMatchSnapshot();
   });
@@ -48,13 +46,12 @@ describe('Notification Dialog', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
         variant="hazard-low"
-        isOpen
         dialogTitle="Test"
         startMessage="This text is used to provide more details."
         acceptAction={{ text: 'accept', onClick: () => {} }}
         rejectAction={{ text: 'reject', onClick: () => {} }}
       />,
-    );
+    ).dive();
 
     expect(dialog).toMatchSnapshot();
   });
@@ -63,13 +60,12 @@ describe('Notification Dialog', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
         variant="error"
-        isOpen
         dialogTitle="Test"
         startMessage="This text is used to provide more details."
         acceptAction={{ text: 'accept', onClick: () => {} }}
         rejectAction={{ text: 'reject', onClick: () => {} }}
       />,
-    );
+    ).dive();
 
     expect(dialog).toMatchSnapshot();
   });
@@ -78,14 +74,13 @@ describe('Notification Dialog', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
         variant="custom"
-        isOpen
         dialogTitle="Test"
         startMessage="This text is used to provide more details."
         acceptAction={{ text: 'accept', onClick: () => {} }}
         rejectAction={{ text: 'reject', onClick: () => {} }}
         custom={{ signalWord: 'Custom', iconClassName: 'custom-icon' }}
       />,
-    );
+    ).dive();
 
     expect(dialog).toMatchSnapshot();
   });
@@ -94,7 +89,6 @@ describe('Notification Dialog', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
         variant="hazard-high"
-        isOpen
         dialogTitle="Test"
         startMessage="This text is used to provide more details."
         content={<div>Middle content</div>}
@@ -102,7 +96,7 @@ describe('Notification Dialog', () => {
         acceptAction={{ text: 'accept', onClick: () => {} }}
         rejectAction={{ text: 'reject', onClick: () => {} }}
       />,
-    );
+    ).dive();
 
     expect(dialog).toMatchSnapshot();
   });
@@ -111,14 +105,13 @@ describe('Notification Dialog', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
         variant="hazard-high"
-        isOpen
         dialogTitle="Test"
         startMessage="This text is used to provide more details."
         buttonOrder="rejectFirst"
         acceptAction={{ text: 'accept', onClick: acceptOnClick }}
         rejectAction={{ text: 'reject', onClick: rejectOnClick }}
       />,
-    );
+    ).dive();
 
     expect(dialog).toMatchSnapshot();
     const actions = dialog.find('.actions');
@@ -136,11 +129,10 @@ describe('Notification Dialog', () => {
     const dialog = shallowWithIntl(
       <NotificationDialog
         variant="hazard-high"
-        isOpen
         startMessage="This text is used to provide more details."
         rejectAction={{ text: 'reject', onClick: rejectOnClick }}
       />,
-    );
+    ).dive();
 
     expect(dialog).toMatchSnapshot();
   });
@@ -155,14 +147,15 @@ describe('Notification Dialog functions as expected', () => {
       const [isOpen, setIsOpen] = React.useState(false);
       return (
         <div>
-          <NotificationDialog
-            variant="hazard-high"
-            isOpen={isOpen}
-            dialogTitle="Test"
-            startMessage="This text is used to provide more details."
-            acceptAction={{ text: 'accept', onClick: acceptOnClick.mockImplementation(() => { setIsOpen(false); }) }}
-            rejectAction={{ text: 'reject', onClick: rejectOnClick.mockImplementation(() => { setIsOpen(false); }) }}
-          />
+          {isOpen && (
+            <NotificationDialog
+              variant="hazard-high"
+              dialogTitle="Test"
+              startMessage="This text is used to provide more details."
+              acceptAction={{ text: 'accept', onClick: acceptOnClick.mockImplementation(() => { setIsOpen(false); }) }}
+              rejectAction={{ text: 'reject', onClick: rejectOnClick.mockImplementation(() => { setIsOpen(false); }) }}
+            />
+          )}
           <button type="button" data-test-button onClick={() => setIsOpen(true)}>Open Dialog</button>
         </div>
       );
@@ -172,36 +165,36 @@ describe('Notification Dialog functions as expected', () => {
 
   it('should open the dialog', () => {
     expect(dialogExample).toMatchSnapshot();
-    expect(dialogExample.find('NotificationDialog').props()).toHaveProperty('isOpen', false);
+    expect(dialogExample.find('NotificationDialog').length).toBe(0);
     expect(dialogExample.find('button[data-test-button]').length).toBe(1);
     dialogExample.find('button[data-test-button]').simulate('click');
-    expect(dialogExample.find('NotificationDialog').props()).toHaveProperty('isOpen', true);
+    expect(dialogExample.find('NotificationDialog').length).toBe(1);
     expect(dialogExample.find('Button[data-terra-notification-dialog-button]').length).toBe(2);
   });
 
   it('should close the dialog when clicking reject button', () => {
     dialogExample.find('Button[data-terra-notification-dialog-button="reject"]').simulate('click');
     expect(rejectOnClick).toHaveBeenCalled();
-    expect(dialogExample.find('NotificationDialog').props()).toHaveProperty('isOpen', false);
+    expect(dialogExample.find('NotificationDialog').length).toBe(0);
   });
 
   it('should close the dialog when clicking accept button', () => {
     // re-open
     dialogExample.find('button[data-test-button]').simulate('click');
-    expect(dialogExample.find('NotificationDialog').props()).toHaveProperty('isOpen', true);
+    expect(dialogExample.find('NotificationDialog').length).toBe(1);
 
     dialogExample.find('Button[data-terra-notification-dialog-button="accept"]').simulate('click');
     expect(acceptOnClick).toHaveBeenCalled();
-    expect(dialogExample.find('NotificationDialog').props()).toHaveProperty('isOpen', false);
+    expect(dialogExample.find('NotificationDialog').length).toBe(0);
   });
 
   it('should not close the dialog when pressing escape key', () => {
     // re-open
     dialogExample.find('button[data-test-button]').simulate('click');
-    expect(dialogExample.find('NotificationDialog').props()).toHaveProperty('isOpen', true);
+    expect(dialogExample.find('NotificationDialog').length).toBe(1);
 
     dialogExample.find('Button[data-terra-notification-dialog-button="accept"]').simulate('keydown', { keycode: KEY_ESCAPE });
-    expect(dialogExample.find('NotificationDialog').props()).toHaveProperty('isOpen', true);
+    expect(dialogExample.find('NotificationDialog').length).toBe(1);
   });
 });
 
@@ -213,7 +206,6 @@ it('correctly applies the theme context className', () => {
     <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
       <NotificationDialog
         variant="hazard-high"
-        isOpen
         title="Make sure that the title relates directly to the choices."
         startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
         acceptAction={{

@@ -19,24 +19,25 @@ const CompleteNotificationDialog = () => {
 
   return (
     <>
-      <NotificationDialog
-        variant="hazard-high"
-        isOpen={isOpen}
-        dialogTitle="Make sure that the title relates directly to the choices."
-        startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-        content={(<ContentLayoutAsList items={['item1', 'item2']} />)}
-        endMessage="The End Message is text used to provide any other additional info."
-        acceptAction={{
-          text: 'accept',
-          onClick: clickConfirm,
-        }}
-        rejectAction={{
-          text: 'reject',
-          onClick: handleCloseModal,
-        }}
-        buttonOrder="acceptFirst"
-        emphasizedAction="accept"
-      />
+      {isOpen && (
+        <NotificationDialog
+          variant="hazard-high"
+          dialogTitle="Make sure that the title relates directly to the choices."
+          startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+          content={(<ContentLayoutAsList items={['item1', 'item2']} />)}
+          endMessage="The End Message is text used to provide any other additional info."
+          acceptAction={{
+            text: 'accept',
+            onClick: clickConfirm,
+          }}
+          rejectAction={{
+            text: 'reject',
+            onClick: handleCloseModal,
+          }}
+          buttonOrder="acceptFirst"
+          emphasizedAction="accept"
+        />
+      )}
       <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} />
     </>
   );
