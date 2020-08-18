@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fix to clear out invalid date value when time input selected in date-time-picker.
+
 ## 4.44.0 - (August 11, 2020)
 
 * Changed
