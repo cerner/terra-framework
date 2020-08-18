@@ -40,7 +40,7 @@ const Tab = ({
   return (
     <div
       {...customProps}
-      role="tabpanel"
+      role="tabpanel" // prop to remove role, or set none
       className={paneClassNames}
       tabIndex="0"
       id={id}

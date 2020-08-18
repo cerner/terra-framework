@@ -200,25 +200,23 @@ class CollapsibleTabs extends React.Component {
     });
 
     return (
-      <div>
-        <div
-          className={cx('collapsible-tabs-container', { 'is-calculating': this.isCalculating }, theme.className)}
-          ref={this.containerRef}
-          role="tablist"
-          aria-owns={hiddenIds.join(' ')}
+      <div
+        className={cx('collapsible-tabs-container', { 'is-calculating': this.isCalculating }, theme.className)}
+        ref={this.containerRef}
+        role="tablist"
+        aria-owns={hiddenIds.join(' ')}
+      >
+        {visibleTabs}
+        <TabDropDown
+          onFocus={this.handleHiddenFocus}
+          onBlur={this.handleHiddenBlur}
+          isOpen={this.isOpen}
+          onRequestClose={this.handleOutsideClick}
+          refCallback={node => this.dropdownRef.current = node}
         >
-          {visibleTabs}
-          <TabDropDown
-            onFocus={this.handleHiddenFocus}
-            onBlur={this.handleHiddenBlur}
-            isOpen={this.isOpen}
-            onRequestClose={this.handleOutsideClick}
-            refCallback={node => this.dropdownRef.current = node}
-          >
-            {hiddenTabs}
-          </TabDropDown>
-          {this.renderMoreButton(isHiddenSelected)}
-        </div>
+          {hiddenTabs}
+        </TabDropDown>
+        {this.renderMoreButton(isHiddenSelected)}
       </div>
     );
   }
