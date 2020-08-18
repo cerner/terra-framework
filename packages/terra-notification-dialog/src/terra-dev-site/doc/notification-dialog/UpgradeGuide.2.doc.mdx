@@ -14,15 +14,16 @@ The latest changes to the Notification Dialog reflect the further development of
   - `iconClassName`
 
 ### Changed Props
+
 - `variant` prop is now required and the supported values have changes. The previous variants were `alert`, `warning`, `error`, `success`, `info`, and `custom`. The new variants are `hazard-high`, `hazard-medium`, `hazard-low`, `error`, and `custom`. The follows are the mappings for these new variants:
   - `alert` -> `hazard-high`
   - `warning` -> `hazard-medium`
   - `info` -> `hazard-low`
   - `error` and `custom` - these are the same.
   - `success` - this variant has been removed.
-- `isOpen` prop is no longer required
 
 ### Removed Props
+
 - Removed `title` - use `dialogTitle` prop instead
 - Removed `header` - create a custom notification dialog if a custom signal word is needed
 - Removed `customIcon` - use `custom.iconClassName` prop instead
@@ -31,16 +32,32 @@ The latest changes to the Notification Dialog reflect the further development of
 - Removed `message` - use `startMessage` prop instead
 - Removed `isOpen` - render NotificationDialog when it should be open
 
+```diff
+import NotificationDialog from 'terra-notification-dialog';
+
+const Dialog = () => {
+  const [showDialog, setShowDialog] = React.useState(true);
+
+  return (
++   {showDialog && <NotificationDialog
+-   <NotificationDialog
+-     isOpen
+      variant="error"
+..
+```
+
 ### Removed NotificationDialogVariants Export
+
 The NotificationDialogVariants export was removed. Use the variant string instead.
 ```diff
 - import NotificationDialog, { NotificationDialogVariants } from 'terra-notification-dialog';
 + import NotificationDialog from 'terra-notification-dialog';
 
 const Dialog = () => {
-  <NotificationDialog
--   variant={NotificationDialogVariants.ERROR}
-+    variant="error"
+  return (
+    <NotificationDialog
+-     variant={NotificationDialogVariants.ERROR}
++     variant="error"
 ..
 ```
 
@@ -54,7 +71,8 @@ Not providing these pieces will render a Custom Notification dialog with space a
 
 **Note:** by choosing to create a custom Notification Dialog, you are responsible for providing an icon that is themed correctly in the terra-default-theme, orion-fusion-theme and in the clinical-lowlight-theme. See Terra's [Theme Strategy Guide](/guides/terra-application/theme-strategy) for more information.
 
-##### Component.jsx
+#### Component.jsx
+
 ```diff
   import NotificationDialog from 'terra-notification-dialog';
 - import MyIcon from './MyIcon';
@@ -86,7 +104,8 @@ const Dialog = () => {
   );
  };
 ```
-##### Component.module.scss
+
+#### Component.module.scss
 
 ```diff
 + @import '~terra-mixins/lib/Mixins';
@@ -107,6 +126,7 @@ const Dialog = () => {
 ```
 
 ### Added Layout for Rendering Lists with content Prop
+
 The Notification Dialog provides has added the `ContentLayoutAsList` layout component to be used with the `content` prop. This layout renders a list of strings with styles that align with the Notification Dialog. Usage like:
 
 ``` diff
@@ -139,6 +159,7 @@ const Dialog = () => (
 ```
 
 ### Added Data Attributes for Testing
+
 The data attribute, `data-terra-notification-dialog`, was added to assist with validating the Notification Dialog was presented. This can be used like:
 ```diff
   it('opens a notification dialog', () => {
@@ -164,6 +185,7 @@ The data attribute, `data-terra-notification-dialog-button` was added to assist 
 ```
 
 ## Changes from version 1 to version 2
+
 ### Changes to CSS Custom Properties
 
 #### Renamed
