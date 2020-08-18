@@ -3,7 +3,8 @@
 ## Unreleased
 
 * Added
-  * Added an interaction media query to apply `hover` styles only on non-touch devices and removed hover wdio 
+  * Added an interaction media query to apply `hover` styles only on non-touch devices and removed hover wdio
+  * Added missing themeable variables.
 
 * Changed
   * Updated Changelog format
