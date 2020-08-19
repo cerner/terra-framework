@@ -69,6 +69,7 @@
   }
 
   .header {
+    box-shadow: var(--terra-notification-dialog-header-box-shadow, -16px 8px 5px 0 rgba(255, 255, 255, 0.5), -16px 2px 2px 0 rgba(255, 255, 255, 0.75));
     flex: 0 0 auto;
     padding: var(--terra-notification-dialog-header-padding, 0 1.42857rem); // left and right padding
     z-index: 1;
@@ -113,10 +114,19 @@
     background-color: var(--terra-notification-dialog-body-background-color, transparent);
     flex: 1 1 auto;
     height: 100%;
-    min-height: var(--terra-notification-dialog-body-min-height, 6.42857rem);
+    min-height: 0;
     overflow: auto;
-    padding: var(--terra-notification-dialog-body-padding, 0.85714rem 1.64285rem 1.07142rem);
+    padding: var(--terra-notification-dialog-body-padding, 0 1.64285rem);
     width: 100%;
+
+    @media screen and (min-height: 15.5rem) {
+      min-height: var(--terra-notification-dialog-body-media-small-min-height, 4.5rem);
+      padding: var(--terra-notification-dialog-body-media-small-padding, 0.85714rem 1.64285rem 1.07142rem);
+    }
+
+    @media screen and (min-height: 31rem) {
+      min-height: var(--terra-notification-dialog-body-media-large-min-height, 7rem);
+    }
   }
 
   .message {
@@ -133,22 +143,24 @@
   .footer {
     background-color: var(--terra-notification-dialog-footer-background-color, #f9f9f9);
     border-top: var(--terra-notification-dialog-footer-border-top, 1px solid #dedfe0);
+    box-shadow: var(--terra-notification-dialog-footer-box-shadow, -16px -9px 5px 0 rgba(255, 255, 255, 0.5), -16px -3px 3px 0 rgba(255, 255, 255, 0.75));
     flex: 0 0 auto;
-    font-size: var(--terra-notification-dialog-footer-font-size, 0.8rem);
     min-height: var(--terra-notification-dialog-footer-min-height, 0.71428rem);
+    z-index: 1;
   }
 
   .actions {
     display: flex;
-    flex-direction: var(--terra-notification-dialog-actions-flex-direction, row);
+    flex-direction: row;
     justify-content: flex-end;
+    padding-bottom: var(--terra-notification-dialog-actions-padding-bottom, 0.64285rem);
+    padding-left: var(--terra-notification-dialog-actions-padding-left, 0.71428rem);
+    padding-right: var(--terra-notification-dialog-actions-padding-right, 0.71428rem);
+    padding-top: var(--terra-notification-dialog-actions-padding-top, 0.64285rem);
 
-    > button {
-      flex: var(--terra-notification-dialog-actions-button-flex, 0 1 auto);
-      margin-bottom: var(--terra-notification-dialog-actions-button-margin-bottom, 0.35714rem);
-      margin-left: var(--terra-notification-dialog-actions-button-margin-left, 0.35714rem);
-      margin-right: var(--terra-notification-dialog-actions-button-margin-right, 0.35714rem);
-      margin-top: var(--terra-notification-dialog-actions-button-margin-top, 0.35714rem);
+    // stylelint-disable-next-line selector-max-compound-selectors
+    > button + button {
+      margin-left: var(--terra-notification-dialog-actions-button-margin-left, 0.71428rem);
     }
   }
 }
