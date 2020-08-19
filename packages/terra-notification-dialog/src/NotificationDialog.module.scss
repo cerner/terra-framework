@@ -153,10 +153,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding-bottom: var(--terra-notification-dialog-actions-padding-bottom, 0.64285rem);
-    padding-left: var(--terra-notification-dialog-actions-padding-left, 0.71428rem);
-    padding-right: var(--terra-notification-dialog-actions-padding-right, 0.71428rem);
-    padding-top: var(--terra-notification-dialog-actions-padding-top, 0.64285rem);
+    padding: var(--terra-notification-dialog-actions-padding, 0.64285rem 0.71428rem);
 
     // stylelint-disable-next-line selector-max-compound-selectors
     > button + button {
