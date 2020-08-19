@@ -25,6 +25,11 @@
   * Removed deprecated `message` prop - use `startMessage` prop instead
   * Removed NotificationDialogVariants
 
+## 3.40.0 - (August 18, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 3.39.0 - (August 11, 2020)
 
 * Changed
