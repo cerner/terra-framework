@@ -5,6 +5,11 @@
 * Fixed
   * Fix to remove dotted border on selected date, on hovering calendar.
 
+## 4.45.0 - (August 18, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.44.0 - (August 11, 2020)
 
 * Added
