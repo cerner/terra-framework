@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Bump terra-notification-dialog version used in tests
+  * Bump terra-notification-dialog version from ^3 to ^4
 
 ## 3.45.0 - (August 18, 2020)
 

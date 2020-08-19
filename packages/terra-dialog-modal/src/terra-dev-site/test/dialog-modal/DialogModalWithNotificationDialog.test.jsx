@@ -60,20 +60,21 @@ class DefaultDialogModal extends React.Component {
           footer={<ActionFooter start="Footer Goes here" />}
         >
           <p>{text}</p>
-          <NotificationDialog
-            variant="alert"
-            isOpen={this.state.isNotificationDialogOpen}
-            dialogTitle="Make sure that the title relates directly to the choices."
-            startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-            acceptAction={{
-              text: 'OK',
-              onClick: clickOK,
-            }}
-            rejectAction={{
-              text: 'Close',
-              onClick: this.handleCloseNotificationDialog,
-            }}
-          />
+          {this.state.isNotificationDialogOpen && (
+            <NotificationDialog
+              variant="hazard-high"
+              dialogTitle="Make sure that the title relates directly to the choices."
+              startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+              acceptAction={{
+                text: 'OK',
+                onClick: clickOK,
+              }}
+              rejectAction={{
+                text: 'Close',
+                onClick: this.handleCloseNotificationDialog,
+              }}
+            />
+          )}
           <Button text="Trigger NotificationDialog" onClick={this.handleOpenNotificationDialog} />
           <p>{text}</p>
         </DialogModal>
