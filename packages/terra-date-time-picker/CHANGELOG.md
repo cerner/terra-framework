@@ -5,6 +5,11 @@
 * Fixed
   * Fix to clear out invalid date value when time input selected in date-time-picker.
 
+## 4.45.0 - (August 18, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.44.0 - (August 11, 2020)
 
 * Changed

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.56.0 - (August 18, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.55.0 - (August 11, 2020)
 
 * Changed
