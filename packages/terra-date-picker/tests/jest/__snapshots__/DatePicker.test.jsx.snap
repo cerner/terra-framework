@@ -202,7 +202,6 @@ exports[`correctly applies the theme context className 1`] = `
               onChange={[Function]}
               onChangeRaw={[Function]}
               onClickOutside={[Function]}
-              onDismiss={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMonthChange={[Function]}
