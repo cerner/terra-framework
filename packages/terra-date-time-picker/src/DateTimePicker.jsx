@@ -3,7 +3,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import DatePicker from 'terra-date-picker';
+import DatePicker from 'terra-date-picker/src/DatePicker';
 import TimeInput from 'terra-time-input';
 import * as KeyCode from 'keycode-js';
 import DateUtil from 'terra-date-picker/lib/DateUtil';
@@ -84,9 +84,13 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
-   * A callback function to execute when clicking outside of the picker to dismiss it.
+   * **Deprecated**, A callback function to execute when clicking outside of the picker to dismiss it. Resolves to `onDismiss`.
    */
   onClickOutside: PropTypes.func,
+  /**
+   * A callback function to execute when clicking outside of the picker to dismiss it.
+   */
+  onDismiss: PropTypes.func,
   /**
    * A callback function triggered when the date input, hour input, or minute input receives focus.
    */
@@ -136,6 +140,7 @@ const defaultProps = {
   onBlur: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
+  onDismiss: undefined,
   onClickOutside: undefined,
   onFocus: undefined,
   onSelect: undefined,
@@ -609,6 +614,7 @@ class DateTimePicker extends React.Component {
       onChange,
       onChangeRaw,
       onClickOutside,
+      onDismiss,
       onFocus,
       onSelect,
       maxDate,
@@ -648,6 +654,7 @@ class DateTimePicker extends React.Component {
             onChangeRaw={this.handleDateChangeRaw}
             onSelect={this.handleOnSelect}
             onClickOutside={onClickOutside}
+            onDismiss={onDismiss}
             onBlur={this.handleOnDateBlur}
             onFocus={this.handleOnDateInputFocus}
             excludeDates={excludeDates}

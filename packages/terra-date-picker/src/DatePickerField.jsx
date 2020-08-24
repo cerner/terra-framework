@@ -100,9 +100,13 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
-   * A callback function to execute when clicking outside of the picker to dismiss it.
+   * **Deprecated**, A callback function to execute when clicking outside of the picker to dismiss it. Resolves to `onDismiss`.
    */
   onClickOutside: PropTypes.func,
+  /**
+   * A callback function to execute when clicking outside of the picker to dismiss it.
+   */
+  onDismiss: PropTypes.func,
   /**
    * A callback function triggered when the date picker component receives focus.
    * This event does not get triggered when the focus is moved from the date input to the calendar button since the focus is still within the main date picker component.
@@ -161,6 +165,7 @@ const defaultProps = {
   onChange: undefined,
   onChangeRaw: undefined,
   onClickOutside: undefined,
+  onDismiss: undefined,
   onFocus: undefined,
   onSelect: undefined,
   required: false,
@@ -194,6 +199,7 @@ const DatePickerField = (props) => {
     onChange,
     onChangeRaw,
     onClickOutside,
+    onDismiss,
     onFocus,
     onSelect,
     required,
@@ -254,6 +260,7 @@ const DatePickerField = (props) => {
         onBlur={onBlur}
         onChange={onChange}
         onChangeRaw={onChangeRaw}
+        onDismiss={onDismiss}
         onClickOutside={onClickOutside}
         onFocus={onFocus}
         onSelect={onSelect}

@@ -18,7 +18,7 @@ class DateTimePickerEvents extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeRaw = this.handleChangeRaw.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
-    this.handleOnClickOutside = this.handleOnClickOutside.bind(this);
+    this.handleOnDismiss = this.handleOnDismiss.bind(this);
     this.blurCount = 0;
     this.focusCount = 0;
     this.clickOutsideCount = 0;
@@ -46,7 +46,7 @@ class DateTimePickerEvents extends React.Component {
     this.setState({ selectValue: value });
   }
 
-  handleOnClickOutside() {
+  handleOnDismiss() {
     this.clickOutsideCount += 1;
     this.setState({ clickOutsideTriggerCount: this.clickOutsideCount });
   }
@@ -65,7 +65,7 @@ class DateTimePickerEvents extends React.Component {
           <span id="onBlur-count">{this.state.blurTriggerCount}</span>
           <br />
           <br />
-          onClickOutside Trigger Count:
+          onDismiss Trigger Count:
           {' '}
           <span id="onClickOutside-count">{this.state.clickOutsideTriggerCount}</span>
           <br />
@@ -91,7 +91,7 @@ class DateTimePickerEvents extends React.Component {
           onChange={this.handleChange}
           onChangeRaw={this.handleChangeRaw}
           onSelect={this.handleSelect}
-          onClickOutside={this.handleOnClickOutside}
+          onDismiss={this.handleOnDismiss}
           timeVariant={DateTimeUtils.FORMAT_12_HOUR}
           showSeconds
         />
