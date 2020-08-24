@@ -104,7 +104,7 @@ const propTypes = {
    */
   onClickOutside: PropTypes.func,
   /**
-   * A callback function to execute when clicking outside of the picker to dismiss it.
+   * A callback function to execute when clicking outside of the picker to dismiss it. onDismiss(event)
    */
   onDismiss: PropTypes.func,
   /**
@@ -165,7 +165,6 @@ const defaultProps = {
   onChange: undefined,
   onChangeRaw: undefined,
   onClickOutside: undefined,
-  onDismiss: undefined,
   onFocus: undefined,
   onSelect: undefined,
   required: false,

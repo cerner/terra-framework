@@ -3,7 +3,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import DatePicker from 'terra-date-picker/src/DatePicker';
+import DatePicker from 'terra-date-picker';
 import TimeInput from 'terra-time-input';
 import * as KeyCode from 'keycode-js';
 import DateUtil from 'terra-date-picker/lib/DateUtil';
@@ -88,7 +88,7 @@ const propTypes = {
    */
   onClickOutside: PropTypes.func,
   /**
-   * A callback function to execute when clicking outside of the picker to dismiss it.
+   * A callback function to execute when clicking outside of the picker to dismiss it. onDismiss(event)
    */
   onDismiss: PropTypes.func,
   /**
@@ -140,7 +140,6 @@ const defaultProps = {
   onBlur: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
-  onDismiss: undefined,
   onClickOutside: undefined,
   onFocus: undefined,
   onSelect: undefined,
