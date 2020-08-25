@@ -468,7 +468,7 @@ class DatePicker extends React.Component {
         open: open,
         preSelection: open && this.state.open ? this.state.preSelection : this.calcInitialState().preSelection
       })
-    if (event && this.props.onDismiss && (!open)) {
+    if (this.props.onDismiss && (!open)) {
       this.props.onDismiss(event);
     }
   }
@@ -508,8 +508,6 @@ class DatePicker extends React.Component {
     if (!this.props.inline) {
       this.setOpen(false, event)
     }
-    this.props.onClickOutside(event)
-    if (this.props.withPortal) { event.preventDefault() }
   }
 
   handleChange = (event) => {

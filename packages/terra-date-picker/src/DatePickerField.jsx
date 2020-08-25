@@ -101,6 +101,7 @@ const propTypes = {
   onChangeRaw: PropTypes.func,
   /**
    * **Deprecated**, A callback function to execute when clicking outside of the picker to dismiss it. Resolves to `onDismiss`.
+   * OnDismiss will take precedence, if passed along with onClickOutside.
    */
   onClickOutside: PropTypes.func,
   /**
@@ -259,8 +260,7 @@ const DatePickerField = (props) => {
         onBlur={onBlur}
         onChange={onChange}
         onChangeRaw={onChangeRaw}
-        onDismiss={onDismiss}
-        onClickOutside={onClickOutside}
+        onDismiss={onDismiss || onClickOutside}
         onFocus={onFocus}
         onSelect={onSelect}
         required={required}
