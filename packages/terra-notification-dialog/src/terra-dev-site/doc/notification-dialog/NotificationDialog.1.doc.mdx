@@ -19,18 +19,17 @@ import NotificationDialogWithLongText from '../example/NotificationDialogWithLon
 
 # Terra Notification Dialog
 
-The `terra-notification-dialog` component renders as a notification using the `terra-abstract-modal` to display a dialog over content. This component should be used to interrupt the task at hand to display a message to a user that requires the user's input or attention. When the user is presented with the dialog, it is paired with an acceptance and an optional rejection action to allow the user to correctly handle the notification. The Notification Dialog should only be used to present the user with critical information.
+The `terra-notification-dialog` component renders a notification to the user within a modal-dialog, which requires the user's input or attention. This component is intended to interrupt the user’s workflow, displaying a descriptive message of what went wrong and context-dependent instructions that state how to correct the error. When the user is presented with the dialog, it is paired with an acceptance action, optional rejection action, and allows the user to correctly handle the notification.
 
-The Notification Dialog implements the Patient Safety Notification Strategy such that notifications can be presented as `hazardous` or `non-hazardous` interruptions.
+The Notification Dialog presentations are categorizes by risk as either `hazardous` or `non-hazardous`. They include fixed icons, colors, and ANSI signal words to provide consistency in risk mitigation required by regulatory affairs and safety certifications.
 
-- Hazardous notifications should be used to notify the user of critical and/or patient safety related messages. Hazardous notifications dialogs are rigid to provide consistent icon and signal word pairs to prevent accidental confusion of the dialog's severity by the user. There are three severity levels of hazardous notifications: `hazard-high`, `hazard-medium` and `hazard-low`.
+- Hazardous notifications are intended to make users aware of risk or hazard, such as risk to patient safety or financial risk, and have three levels of severity: `hazard-high`, `hazard-medium` and `hazard-low`. The Hazardous notifications dialogs are rigid to provide consistent icon and signal word pairs to prevent accidental confusion by the user of the dialog's severity.
 
-- Non-hazardous notification should be used to provide informational awareness about the user or the system. Since non-hazardous notification dialogs are less severe, yet important, there could be several use-cases for displaying non-hazardous dialog to the user. Currently there is one pre-defined non-hazardous dialog variant of `error`.
+- Non-hazardous notification are intended to inform a user of system activity and required actions, but not considered to cause risk. Currently there is one pre-defined non-hazardous dialog variant of `error`.
 
-- Custom notification dialogs can be created, but are **not** recommended. Custom dialogs are classified as non-hazardous notification dialogs and they allow you to customize the signal word and the icon that the dialog displays. By choosing to create a custom Notification Dialog, you are responsible for providing an icon that is themed correctly for the terra-default-theme, orion-fusion-theme, and clinical-lowlight-theme. See Terra's [Theme Strategy Guide](/guides/terra-application/theme-strategy) for more info.
+- The `custom` variant allows for less common standardized non-hazard situations, requiring an icon and signal word be provided in addition to the common props. By choosing to create a custom Notification Dialog, you are responsible for providing an icon that is themed correctly for the terra-default-theme, orion-fusion-theme, and clinical-lowlight-theme. See Terra's [Theme Strategy Guide](/guides/terra-application/theme-strategy) for more info.
 
-The dialog has the highest z-index of 9000, so it will display above all other content, including modals.
-
+The notification dialog has the highest z-index of 9000, intended to display above all other content (including other modals) in a direct and evident manner, and as such, should be used sparingly.
 
 ## Getting Started
 
