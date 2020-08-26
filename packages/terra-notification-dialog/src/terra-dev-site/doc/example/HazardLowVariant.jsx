@@ -18,18 +18,13 @@ const NotificationDialogExample = () => {
       {isOpen && (
         <NotificationDialog
           variant="hazard-low"
-          dialogTitle="Use a Title That Relates Directly to The Choices"
-          startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+          dialogTitle="Protocol Treatment Period Advisory"
+          startMessage="oxyCODONE cannot be included because the associated days of treatment are completed, discontinued, or skipped."
+          endMessage="Resolve the associated days to include in the Protocol treatment period."
           acceptAction={{
-            text: 'accept',
+            text: 'OK',
             onClick: handleCloseModal,
           }}
-          rejectAction={{
-            text: 'reject',
-            onClick: handleCloseModal,
-          }}
-          buttonOrder="acceptFirst"
-          emphasizedAction="accept"
         />
       )}
       <Button text="Trigger Notification Dialog" onClick={handleOpenModal} />

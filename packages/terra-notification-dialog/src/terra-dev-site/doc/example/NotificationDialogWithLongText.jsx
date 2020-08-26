@@ -98,14 +98,14 @@ const NotificationDialogWithLongText = () => {
       {isOpen && (
         <NotificationDialog
           variant="hazard-medium"
-          dialogTitle="Use a Title That Relates Directly to The Choices. In this case this is a really long title."
+          dialogTitle="Use a Title That Relates Directly to the Actions - Long Titles Should Be Avoided When Possible"
           startMessage={message}
           acceptAction={{
-            text: 'accept',
+            text: 'Emphasized Accept Action',
             onClick: handleCloseModal,
           }}
           rejectAction={{
-            text: 'reject',
+            text: 'Reject Action',
             onClick: handleCloseModal,
           }}
           buttonOrder="acceptFirst"

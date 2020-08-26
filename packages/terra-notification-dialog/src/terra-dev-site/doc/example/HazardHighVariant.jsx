@@ -18,10 +18,11 @@ const NotificationDialogExample = () => {
       {isOpen && (
         <NotificationDialog
           variant="hazard-high"
-          dialogTitle="Risk for Allergic Reaction"
-          startMessage="The patient is allergic to an ingredient in the the medication you have prescribed. Please choose an alternative medication for treatment."
+          dialogTitle="Drug Dosage Risk"
+          startMessage="A wrong drug dosage can occur if the suggested cycle (e.g. daily) does not match the intended cycle (e.g. weekly)."
+          endMessage="Change the suggested cycle or the intended cycle so they match."
           acceptAction={{
-            text: 'ok',
+            text: 'OK',
             onClick: handleCloseModal,
           }}
           emphasizedAction="accept"

@@ -18,14 +18,15 @@ const NotificationDialogExample = () => {
       {isOpen && (
         <NotificationDialog
           variant="error"
-          dialogTitle="Use a Title That Relates Directly to The Choices"
-          startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+          dialogTitle="Unable to Save"
+          startMessage="We're sorry, we cannot save your entry at this time."
+          endMessage="Click Submit to try again. If you continue to see this message, contact your support team."
           acceptAction={{
-            text: 'accept',
+            text: 'Submit',
             onClick: handleCloseModal,
           }}
           rejectAction={{
-            text: 'reject',
+            text: 'Cancel',
             onClick: handleCloseModal,
           }}
           buttonOrder="acceptFirst"

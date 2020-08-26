@@ -18,16 +18,16 @@ const ContentNotificationDialog = () => {
       {isOpen && (
         <NotificationDialog
           variant="hazard-medium"
-          dialogTitle="Use a Title That Relates Directly to The Choices"
-          startMessage="The Start Message is text used to provide more detail or define terminology at the beginning of the dialog body. Don’t repeat the title verbatim."
-          content={<ContentLayoutAsList items={['item 1', 'item2 ']} />}
-          endMessage="The End Message is text used to provide more detail or define terminology at the end of the dialog body. Don’t repeat the title verbatim."
+          dialogTitle="Use a Title That Relates Directly to the Actions"
+          startMessage="The message should clearly provide a contextual description of the issue concisely, use ContentLayoutAsList when enumerating a list of relevant items:"
+          content={<ContentLayoutAsList items={['Item 1', 'Item 2']} />}
+          endMessage="If further action is needed, provide relevant actions and ask the user to confirm how to proceed, or include a resolution statement that explains how to resolve the issue or what steps to take next."
           acceptAction={{
-            text: 'accept',
+            text: 'Emphasized Accept Action',
             onClick: handleCloseModal,
           }}
           rejectAction={{
-            text: 'reject',
+            text: 'Reject Action',
             onClick: handleCloseModal,
           }}
           buttonOrder="acceptFirst"
