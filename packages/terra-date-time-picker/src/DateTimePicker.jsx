@@ -88,7 +88,7 @@ const propTypes = {
    */
   onClickOutside: PropTypes.func,
   /**
-   * A callback function to execute when clicking outside of the picker to dismiss it. onDismiss(event)
+   * A callback function to execute when picker is dismissed. onDismiss(event)
    */
   onDismiss: PropTypes.func,
   /**

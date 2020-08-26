@@ -199,7 +199,7 @@ class DatePicker extends React.Component {
      */
     onClickOutside: PropTypes.func,
     /**
-     * A callback function to execute when the mouse cursor leaves the element. onDismiss(event)
+   * A callback function to execute when picker is dismissed. onDismiss(event)
      */
     onDismiss: PropTypes.func,
     /**
