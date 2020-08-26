@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content Layout As List shallow renders layout with items 1`] = `
+<ul
+  className="list"
+>
+  <li
+    className="list-item"
+    key="item 1-0"
+  >
+    item 1
+  </li>
+  <li
+    className="list-item"
+    key="item2-1"
+  >
+    item2
+  </li>
+</ul>
+`;
+
+exports[`Content Layout As List shallow renders layout with no items 1`] = `
+<ul
+  className="list"
+/>
+`;

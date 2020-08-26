@@ -132,6 +132,7 @@ class NavigationPromptCheckpoint extends React.Component {
     return new Promise((resolve, reject) => {
       this.setState({
         notificationDialogProps: {
+          dialogTitle: showDialogOptions.dialogTitle,
           title: showDialogOptions.title,
           message: showDialogOptions.message,
           startMessage: showDialogOptions.startMessage,
@@ -150,6 +151,7 @@ class NavigationPromptCheckpoint extends React.Component {
 
   renderNotificationDialog() {
     const {
+      dialogTitle,
       title,
       message,
       startMessage,
@@ -179,8 +181,7 @@ class NavigationPromptCheckpoint extends React.Component {
 
     return (
       <NotificationDialog
-        isOpen
-        title={title}
+        dialogTitle={dialogTitle || title}
         startMessage={(startMessage || message)}
         endMessage={endMessage}
         content={content}
@@ -188,7 +189,7 @@ class NavigationPromptCheckpoint extends React.Component {
         rejectAction={rejectButton}
         buttonOrder={buttonOrder}
         emphasizedAction={emphasizedAction}
-        variant="warning"
+        variant="hazard-medium"
       />
     );
   }

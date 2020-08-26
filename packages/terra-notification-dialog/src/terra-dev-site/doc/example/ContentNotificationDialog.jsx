@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
-import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
-
-const clickConfirm = () => {
-  console.log('You clicked confirm'); // eslint-disable-line no-console
-};
+import NotificationDialog, { ContentLayoutAsList } from 'terra-notification-dialog';
 
 const ContentNotificationDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,30 +15,26 @@ const ContentNotificationDialog = () => {
 
   return (
     <>
-      <NotificationDialog
-        variant={NotificationDialogVariants.ALERT}
-        isOpen={isOpen}
-        title="Make sure that the title relates directly to the choices."
-        startMessage="The Start Message is text used to provide more detail or define terminology at the beginning of the dialog body. Don’t repeat the title verbatim."
-        content={(
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-          </ul>
-        )}
-        endMessage="The End Message is text used to provide more detail or define terminology at the end of the dialog body. Don’t repeat the title verbatim."
-        acceptAction={{
-          text: 'Confirm',
-          onClick: clickConfirm,
-        }}
-        rejectAction={{
-          text: 'Close',
-          onClick: handleCloseModal,
-        }}
-        buttonOrder="acceptFirst"
-        emphasizedAction="accept"
-      />
-      <Button text="Trigger NotificationDialog" onClick={handleOpenModal} />
+      {isOpen && (
+        <NotificationDialog
+          variant="hazard-medium"
+          dialogTitle="Use a Title That Relates Directly to the Actions"
+          startMessage="The message should clearly provide a contextual description of the issue concisely, use ContentLayoutAsList when enumerating a list of relevant items:"
+          content={<ContentLayoutAsList items={['Item 1', 'Item 2']} />}
+          endMessage="If further action is needed, provide relevant actions and ask the user to confirm how to proceed, or include a resolution statement that explains how to resolve the issue or what steps to take next."
+          acceptAction={{
+            text: 'Emphasized Accept Action',
+            onClick: handleCloseModal,
+          }}
+          rejectAction={{
+            text: 'Reject Action',
+            onClick: handleCloseModal,
+          }}
+          buttonOrder="acceptFirst"
+          emphasizedAction="accept"
+        />
+      )}
+      <Button text="Trigger Notification Dialog" onClick={handleOpenModal} />
     </>
   );
 };
