@@ -85,7 +85,6 @@ const propTypes = {
   onChangeRaw: PropTypes.func,
   /**
    * **Deprecated**, A callback function to execute when clicking outside of the picker to dismiss it. Resolves to `onDismiss`.
-   * OnDismiss will take precedence, if passed along with onClickOutside.
    */
   onClickOutside: PropTypes.func,
   /**
@@ -653,7 +652,8 @@ class DateTimePicker extends React.Component {
             onChange={this.handleDateChange}
             onChangeRaw={this.handleDateChangeRaw}
             onSelect={this.handleOnSelect}
-            onDismiss={onDismiss || onClickOutside}
+            onClickOutside={onClickOutside}
+            onDismiss={onDismiss}
             onBlur={this.handleOnDateBlur}
             onFocus={this.handleOnDateInputFocus}
             excludeDates={excludeDates}
