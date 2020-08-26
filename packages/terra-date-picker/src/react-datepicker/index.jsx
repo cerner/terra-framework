@@ -460,6 +460,12 @@ class DatePicker extends React.Component {
   }
 
   setOpen = (open) => {
+    if(!open) {
+      this.setState({
+        isCalendarOpenedViaKeyboard: false,
+        isCalendarKeyboardFocused: false
+      })
+    }
     this.setState({
       open: open,
       preSelection: open && this.state.open ? this.state.preSelection : this.calcInitialState().preSelection
