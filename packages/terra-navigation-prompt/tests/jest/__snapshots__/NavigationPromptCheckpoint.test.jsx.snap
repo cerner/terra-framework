@@ -9,7 +9,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
     }
   }
 >
-  <NotificationDialog
+  <InjectIntl(NotificationDialog)
     acceptAction={
       Object {
         "onClick": [Function],
@@ -17,10 +17,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
       }
     }
     buttonOrder="acceptFirst"
-    content={null}
-    emphasizedAction="none"
-    endMessage={null}
-    isOpen={true}
+    dialogTitle="Test Title"
     rejectAction={
       Object {
         "onClick": [Function],
@@ -28,8 +25,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
       }
     }
     startMessage="Test Message"
-    title="Test Title"
-    variant="warning"
+    variant="hazard-medium"
   />
 </ContextProvider>
 `;
@@ -43,7 +39,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
     }
   }
 >
-  <NotificationDialog
+  <InjectIntl(NotificationDialog)
     acceptAction={
       Object {
         "onClick": [Function],
@@ -51,10 +47,8 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
       }
     }
     buttonOrder="acceptFirst"
-    content={null}
+    dialogTitle="Test Title"
     emphasizedAction="accept"
-    endMessage={null}
-    isOpen={true}
     rejectAction={
       Object {
         "onClick": [Function],
@@ -62,8 +56,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
       }
     }
     startMessage="Test Message"
-    title="Test Title"
-    variant="warning"
+    variant="hazard-medium"
   />
 </ContextProvider>
 `;
@@ -77,7 +70,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
     }
   }
 >
-  <NotificationDialog
+  <InjectIntl(NotificationDialog)
     acceptAction={
       Object {
         "onClick": [Function],
@@ -85,10 +78,8 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
       }
     }
     buttonOrder="rejectFirst"
-    content={null}
+    dialogTitle="Test Title"
     emphasizedAction="reject"
-    endMessage={null}
-    isOpen={true}
     rejectAction={
       Object {
         "onClick": [Function],
@@ -96,8 +87,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
       }
     }
     startMessage="Test Message"
-    title="Test Title"
-    variant="warning"
+    variant="hazard-medium"
   />
 </ContextProvider>
 `;
