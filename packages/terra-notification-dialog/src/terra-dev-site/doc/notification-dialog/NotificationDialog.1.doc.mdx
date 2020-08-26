@@ -21,11 +21,11 @@ import NotificationDialogWithLongText from '../example/NotificationDialogWithLon
 
 The `terra-notification-dialog` component renders a notification to the user within a modal-dialog, which requires the user's input or attention. This component is intended to interrupt the user’s workflow, displaying a descriptive message of what went wrong and context-dependent instructions that state how to correct the error. When the user is presented with the dialog, it is paired with an acceptance action, optional rejection action, and allows the user to correctly handle the notification.
 
-The Notification Dialog presentations are categorizes by risk as either `hazardous` or `non-hazardous`. They include fixed icons, colors, and ANSI signal words to provide consistency in risk mitigation required by regulatory affairs and safety certifications.
+The Notificaiton Dialog should be used to present interuptions to mitigate a risk situation and to bring awareness of a non-risk situation. A risk sitation can be described as a scenario when there is a likelihood that a hazard will cause harm or loss, where a hazard is anything that has potential to cause harm. There are multiple variants built into the Notificaiton Dialog for common risk and non-risk level situations that could occur within a applicaiton. Each variant include fixed icons, colors, and ANSI signal words to provide consistency in risk mitigation required by regulatory affairs and safety certifications.
 
-- Hazardous notifications are intended to make users aware of risk or hazard, such as risk to patient safety or financial risk, and have three levels of severity: `hazard-high`, `hazard-medium` and `hazard-low`. The Hazardous notifications dialogs are rigid to provide consistent icon and signal word pairs to prevent accidental confusion by the user of the dialog's severity.
+- Notification Dialogs used in risk situtations, such as risk to patient safety or financial risk, are intended to make users aware of risk or hazard while providing options to mitigate it. There are three variants of risk oriented notificaiton dialogs, based on the severity: `hazard-high`, `hazard-medium` and `hazard-low`. These variants are rigid to provide consistent icon and signal word pairs to prevent accidental confusion by the user of the dialog's severity.
 
-- Non-hazardous notification are intended to inform a user of system activity and required actions, but not considered to cause risk. Currently there is one pre-defined non-hazardous dialog variant of `error`.
+- Notificaiton Dialogs used in non-risk situations are intended to inform a user of system activity and required actions, but not considered to cause risk. Currently there is one pre-defined non-risk oriented notificaiton dialog variant of `error`.
 
 - The `custom` variant allows for less common standardized non-hazard situations, requiring an icon and signal word be provided in addition to the common props. By choosing to create a custom Notification Dialog, you are responsible for providing an icon that is themed correctly for the terra-default-theme, orion-fusion-theme, and clinical-lowlight-theme. See Terra's [Theme Strategy Guide](/guides/terra-application/theme-strategy) for more info.
 
@@ -65,7 +65,7 @@ import NotificationDialog from 'terra-notification-dialog';
  * [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
  * [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
 
-## Hazardous Notification Dialogs
+## Example Usage for Risk Situations
 
 <HazardHighVariant
   title="Hazard-High Notification Dialog"
@@ -77,7 +77,7 @@ import NotificationDialog from 'terra-notification-dialog';
   title="Hazard-Low Notification Dialog"
 />
 
-## Non-Hazardous Notification Dialogs 
+## Example Usage for Non-Risk Situations
 
 <ErrorVariant
   title="Error Variant Notification Dialog"
@@ -85,6 +85,7 @@ import NotificationDialog from 'terra-notification-dialog';
 
 <CustomVariant
   title="Custom Variant Notification Dialog"
+  description="By choosing to create a custom Notification Dialog, the consumer is responsible for providing a signal word, plus an icon that is themed correctly for all themes. See Terra's Theme Strategy Guide for more information."
 />
 
 ## Content Layouts
