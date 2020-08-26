@@ -90,16 +90,16 @@ const Dialog = () => {
   return (
     <NotificationDialog
       variant="custom"
--     header="Horse Lovers"
+-     header="Issue"
 -     customIcon={<MyIcon />}
 +     custom={{
-+       signalWord: 'Horse Lovers',
++       signalWord: 'Issue',
 +       iconClassName: cx('my-icon', theme.className)
 +     }}
-      dialogTitle="Horses are the best"
-      startMessage="Horses are super cool"
+      dialogTitle="There was an issue when you saved."
+      startMessage="Please resumbit the form to save your progress."
       acceptAction={{
-        text: 'Super Interesting!',
+        text: 'OK',
         onClick: handleCloseModal,
       }}
     />
@@ -137,23 +137,23 @@ The Notification Dialog provides has added the `ContentLayoutAsList` layout comp
 
 const Dialog = () => (
   <NotificationDialog
-    variant="Info"
-    dialogTitle="Did you know?"
-    startMessage="That that cows:"
+    variant="hazard-low"
+    dialogTitle="Medical Dose Not Selected"
+    startMessage="There are multiple dose options:"
 -   content={() => {
 -     <ul>
--       <li key='info-1'>eat 40lbs of food a day</li>
--       <li key='info-1'>have no upper front teeth</li>
+-       <li key='hazard-low-1'>200 mg every 3 hours</li>
+-       <li key='hazard-low-2'>400 mg ever 6 hours</li>
 -     </ul>
 -   }}
 +   content={(
 +     <ContentLayoutAsList
-+        items={['eat 40lbs of food a day', 'have no upper front teeth ']}
++        items={['200 mg every 3 hours', '400 mg ever 6 hours']}
 +     />
 +   )}
-    endMessage="Interesting right?"
+    endMessage="Please specify the dose and frequency to order the medication."
     acceptAction={{
-      text: 'Super Interesting!',
+      text: 'OK',
       onClick: handleCloseModal,
     }}
   />
