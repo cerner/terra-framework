@@ -49,48 +49,72 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
     it('shows notification dialog with only accept action', () => {
       openNotificationDialog('#accept');
       Terra.validates.element('only accept action', { selector });
+    });
+
+    it('closed dialog with accept action', () => {
       browser.click(ACCEPT_ACTION_SELECTOR);
     });
 
     it('shows notification dialog with only reject action', () => {
       openNotificationDialog('#reject');
       Terra.validates.element('only reject action', { selector });
+    });
+
+    it('closed dialog with reject action', () => {
       browser.click(REJECT_ACTION_SELECTOR);
     });
 
     it('shows notification dialog with accept and reject action', () => {
       openNotificationDialog('#acceptAndReject');
       Terra.validates.element('accept and reject action', { selector });
+    });
+
+    it('closed dialog with reject action', () => {
       browser.click(REJECT_ACTION_SELECTOR);
     });
 
     it('shows notification dialog with accept action first', () => {
       openNotificationDialog('#acceptFirst');
       Terra.validates.element('accept action first', { selector });
+    });
+
+    it('closed dialog with reject action', () => {
       browser.click(REJECT_ACTION_SELECTOR);
     });
 
     it('shows notification dialog with reject action first', () => {
       openNotificationDialog('#rejectFirst');
       Terra.validates.element('reject action first', { selector });
+    });
+
+    it('closed dialog with reject action', () => {
       browser.click(REJECT_ACTION_SELECTOR);
     });
 
     it('shows notification dialog with accept action emphasized', () => {
       openNotificationDialog('#acceptEmphasized');
       Terra.validates.element('accept action emphasized', { selector });
+    });
+
+    it('closed dialog with reject action', () => {
       browser.click(REJECT_ACTION_SELECTOR);
     });
 
     it('shows notification dialog with reject action emphasized', () => {
       openNotificationDialog('#rejectEmphasized');
       Terra.validates.element('reject action emphasized', { selector });
+    });
+
+    it('closed dialog with reject action', () => {
       browser.click(REJECT_ACTION_SELECTOR);
     });
 
     it('shows notification dialog with neither action emphasized', () => {
       openNotificationDialog('#neitherEmphasized');
       Terra.validates.element('neither action emphasized', { selector });
+    });
+
+    it('closed dialog with reject action', () => {
       browser.click(REJECT_ACTION_SELECTOR);
     });
   });
