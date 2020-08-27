@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Update wdio screenshots for fusion theme that depended on terra-dev-site theme values that are now scoped.
+
 ## 4.4.0 - (August 4, 2020)
 
 * Changed
