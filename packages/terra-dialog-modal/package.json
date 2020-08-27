@@ -1,7 +1,7 @@
 {
   "name": "terra-dialog-modal",
   "main": "lib/DialogModal.js",
-  "version": "3.45.0",
+  "version": "3.46.0",
   "description": "The Dialog Modal allows dynamic height modals. It's limited use case, as dynamic heights break with more complicated DOM structures. If content is too complicated, the terra-modal-manager should be used. The components is placed at an 8000 z-index. The dialog supports release and request focus props similar to terra-popup and terra-date-picker, so it can be presented from another modal with focus.",
   "repository": {
     "type": "git",
@@ -39,7 +39,7 @@
     "terra-date-picker": "^4.45.0",
     "terra-form-select": "^6.8.0",
     "terra-modal-manager": "^6.40.0",
-    "terra-notification-dialog": "^3.40.0",
+    "terra-notification-dialog": "^4.0.0",
     "terra-popup": "^6.40.0"
   },
   "scripts": {
