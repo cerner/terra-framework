@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.0.0 - (August 27, 2020)
+
 * Breaking Changes
   * See [Upgrade Guide](/components/terra-notification-dialog/notification-dialog/upgrade-guide#changes-from-version-3-to-version-4) for more information.
 
