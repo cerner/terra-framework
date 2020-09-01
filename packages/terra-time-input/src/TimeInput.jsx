@@ -155,18 +155,8 @@ class TimeInput extends React.Component {
     let meridiem;
 
     if (TimeUtil.getVariantFromLocale(props) === TimeUtil.FORMAT_12_HOUR) {
-      if (!this.props.intl.messages['Terra.timeInput.am'] || !this.props.intl.messages['Terra.timeInput.pm']) {
-        if (process.env !== 'production') {
-          // eslint-disable-next-line no-console
-          console.warn('This locale only uses 24 hour clock. The ante meridiem and post meridiem will not be displayed');
-        }
-
-        this.anteMeridiem = '';
-        this.postMeridiem = '';
-      } else {
-        this.anteMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
-        this.postMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.pm' });
-      }
+      this.anteMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
+      this.postMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.pm' });
 
       if (hour) {
         const parsedHour = TimeUtil.parseTwelveHourTime(hour, this.anteMeridiem, this.postMeridiem);
@@ -174,6 +164,12 @@ class TimeInput extends React.Component {
         meridiem = parsedHour.meridiem;
       } else {
         meridiem = this.anteMeridiem;
+      }
+    }
+    if (this.props.variant === TimeUtil.FORMAT_12_HOUR && TimeUtil.getVariantFromLocale(props) === TimeUtil.FORMAT_24_HOUR) {
+      if (process.env !== 'production') {
+        // eslint-disable-next-line no-console
+        console.warn('This locale only uses 24 hour clock. The ante meridiem and post meridiem will not be displayed');
       }
     }
 
