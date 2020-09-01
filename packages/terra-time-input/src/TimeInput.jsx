@@ -171,6 +171,8 @@ class TimeInput extends React.Component {
         // eslint-disable-next-line no-console
         console.warn('This locale only uses 24 hour clock. The ante meridiem and post meridiem will not be displayed');
       }
+      this.anteMeridiem = '';
+      this.postMeridiem = '';
     }
 
     this.state = {
