@@ -2,101 +2,66 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
 import FocusTrap from 'focus-trap-react';
-import * as KeyCode from 'keycode-js';
-import Button, { ButtonVariants } from 'terra-button';
+import Button from 'terra-button';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
+import { injectIntl, intlShape } from 'react-intl';
 import ThemeContext from 'terra-theme-context';
-import { FormattedMessage } from 'react-intl';
+
+import NotificationIcon from './_NotificationIcon';
+import ContentLayoutAsList from './_ContentLayoutAsList';
+
 import styles from './NotificationDialog.module.scss';
 
 const cx = classNamesBind.bind(styles);
 
-const variants = {
-  ALERT: 'alert',
-  ERROR: 'error',
-  WARNING: 'warning',
-  INFO: 'info',
-  SUCCESS: 'success',
-  CUSTOM: 'custom',
-};
+const variants = [
+  'hazard-high',
+  'hazard-medium',
+  'hazard-low',
+  'error',
+  'custom',
+];
 
 const propTypes = {
   /**
-   * Header of the notification-dialog.
+   * The variant of notification to be rendered. This renders the dialog with the corresponding header and icon to the
+   * variant concept.
    */
-  header: PropTypes.string,
+  variant: PropTypes.oneOf(variants).isRequired,
   /**
-   * Title of the notification-dialog.
+   * The title to describe the high-level overview of why the notification-dialog is being displayed to the user. Use a title that relates directly to the
+   * message/actions provided in the dialog.
    */
-  title: PropTypes.string,
+  dialogTitle: PropTypes.string,
   /**
-   * **Deprecated**, Message of the notification-dialog. Resolves to `startMessage`.
-   */
-  message: PropTypes.string,
-  /**
-   * Message to be displayed at the start of the notification dialog body.
+   * The text to provide more detail or defined terminology to be displayed at the start of the notification dialog body. Don’t repeat the title verbatim.
    */
   startMessage: PropTypes.string,
   /**
-   * Message to be displayed at the end of the notification dialog body.
+   * The text to provide more detail or defined terminology to be displayed at the end of the notification dialog body. Don’t repeat the title verbatim.
    */
   endMessage: PropTypes.string,
   /**
-   *  Non-plain text content to be inserted after `startMessage` and/or before `endMessage`
+   *  The content to be inserted after `startMessage` and/or before `endMessage` to provide more details to the user in the dialog body. Don’t repeat the title verbatim.
    */
   content: PropTypes.node,
   /**
-   * **Deprecated**, The Action of the primary button. Resolves to `acceptAction`
-   */
-  primaryAction: PropTypes.shape({
-    text: PropTypes.string,
-    onClick: PropTypes.func,
-  }),
-  /**
-   * The Action of the accept button.
+   * The button text and onclick values of the accept button.
    */
   acceptAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
   }),
   /**
-   * **Deprecated**, The Action of the secondary button. Resolves to `rejectAction`.
-   */
-  secondaryAction: PropTypes.shape({
-    text: PropTypes.string,
-    onClick: PropTypes.func,
-  }),
-  /**
-   * The Action of the reject button.
+   * The button text and onclick values of the reject button.
    */
   rejectAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
   }),
   /**
-   * The variant of notification to be rendered.
-   * Use one of `alert`, `error`, `warning`, `info`, `success`, `custom`.
-   */
-  variant: PropTypes.oneOf([
-    variants.ALERT,
-    variants.ERROR,
-    variants.WARNING,
-    variants.INFO,
-    variants.SUCCESS,
-    variants.CUSTOM,
-  ]),
-  /**
-   * The icon to be used for a notification of type custom. This will not be used for any other notification types.
-   */
-  customIcon: PropTypes.element,
-  /**
-   * Toggle to show notification-dialog or not.
-   */
-  isOpen: PropTypes.bool.isRequired,
-  /**
    * Determines the order of notification action buttons.
-   * Use one of `acceptFirst`, `rejectFirst`.
    */
   buttonOrder: PropTypes.oneOf([
     'acceptFirst',
@@ -104,195 +69,143 @@ const propTypes = {
   ]),
   /**
    * Determines whether acceptAction, rejectAction or neither is emphasizedAction
-   * Use one of `none`, `accept` or `reject`.
    */
   emphasizedAction: PropTypes.oneOf([
     'none',
     'accept',
     'reject',
   ]),
+  /**
+   * The pieces to populate a notification-dialog when `variant="custom"`.
+   */
+  custom: PropTypes.shape({
+    /**
+     * The keyword used to represent & emphasis the intention of dialog message that is being shown to the user.
+     */
+    signalWord: PropTypes.string,
+    /**
+     * The class name used to set the icon as the background image to be used as the icon in the notification-dialog.
+     */
+    iconClassName: PropTypes.string,
+  }),
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: intlShape,
 };
 
 const defaultProps = {
-  title: null,
-  startMessage: null,
-  endMessage: null,
-  content: null,
-  variant: variants.CUSTOM,
   buttonOrder: 'acceptFirst',
   emphasizedAction: 'none',
+  custom: {},
 };
 
 const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction) => {
-  let acceptButton = null;
-  let rejectButton = null;
   if (!acceptAction && !rejectAction) {
     return null;
   }
+
+  const actionButtons = [];
+
   if (acceptAction) {
-    acceptButton = (emphasizedAction === 'accept')
-      ? <Button text={acceptAction.text} variant={ButtonVariants.EMPHASIS} onClick={acceptAction.onClick} />
-      : <Button text={acceptAction.text} onClick={acceptAction.onClick} />;
-  }
-  if (rejectAction) {
-    rejectButton = (emphasizedAction === 'reject')
-      ? <Button text={rejectAction.text} variant={ButtonVariants.EMPHASIS} onClick={rejectAction.onClick} />
-      : <Button text={rejectAction.text} onClick={rejectAction.onClick} />;
+    const buttonVariant = emphasizedAction === 'accept' ? { variant: 'emphasis' } : {};
+    actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="accept" key="accept" text={acceptAction.text} onClick={acceptAction.onClick} />);
   }
 
-  if (buttonOrder === 'rejectFirst') {
-    return (
-      <div className={cx('actions')}>
-        {rejectButton}
-        {acceptButton}
-      </div>
-    );
+  if (rejectAction) {
+    const buttonVariant = emphasizedAction === 'reject' ? { variant: 'emphasis' } : {};
+    actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
   }
 
   return (
     <div className={cx('actions')}>
-      {acceptButton}
-      {rejectButton}
+      {buttonOrder === 'acceptFirst' ? actionButtons : actionButtons.reverse()}
     </div>
   );
 };
 
-const getIcon = (variant, customIcon = null) => {
-  switch (variant) {
-    case variants.ALERT:
-      return (<span className={cx(['icon', 'alert'])} />);
-    case variants.ERROR:
-      return (<span className={cx(['icon', 'error'])} />);
-    case variants.WARNING:
-      return (<span className={cx(['icon', 'warning'])} />);
-    case variants.INFO:
-      return (<span className={cx(['icon', 'info'])} />);
-    case variants.SUCCESS:
-      return (<span className={cx(['icon', 'success'])} />);
-    case variants.CUSTOM:
-      return customIcon;
-    default:
-      return null;
-  }
-};
+const NotificationDialog = (props) => {
+  const theme = React.useContext(ThemeContext);
 
-class NotificationDialog extends React.Component {
-  constructor(props) {
-    super(props);
+  const {
+    dialogTitle,
+    startMessage,
+    endMessage,
+    content,
+    acceptAction,
+    rejectAction,
+    variant,
+    buttonOrder,
+    emphasizedAction,
+    custom,
+    intl,
+    ...customProps
+  } = props;
 
-    this.handleKeydown = this.handleKeydown.bind(this);
-    this.escapeKey = KeyCode.KEY_ESCAPE;
+  if (acceptAction === undefined && rejectAction === undefined) {
+    throw new Error('Either the `acceptAction` or `rejectAction` props must be provided for Notification dialog');
   }
 
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleKeydown);
+  if (variant === undefined) {
+    throw new Error('The variant must be provided to the Notification dialog');
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeydown);
-  }
+  const signalWord = variant === 'custom' ? custom.signalWord : intl.formatMessage({ id: `Terra.notification.dialog.${variant}` });
 
-  handleKeydown(e) {
-    const notificationDialog = document.querySelector('[data-terra-notification-dialog]');
-
-    if (e.keyCode === this.escapeKey) {
-      if (notificationDialog) {
-        if (e.target === notificationDialog || notificationDialog.contains(e.target)) {
-          e.stopImmediatePropagation();
-        }
-      }
-    }
-  }
-
-  render() {
-    if (!this.props.isOpen) {
-      return null;
-    }
-
-    const {
-      header,
-      title,
-      startMessage,
-      endMessage,
-      content,
-      acceptAction,
-      rejectAction,
-      variant,
-      customIcon,
-      isOpen,
-      buttonOrder,
-      emphasizedAction,
-      primaryAction,
-      secondaryAction,
-      message,
-      ...customProps
-    } = this.props;
-    if (process.env.NODE_ENV !== 'production' && acceptAction === undefined && primaryAction === undefined && rejectAction === undefined && secondaryAction === undefined) {
-      // eslint-disable-next-line no-console
-      console.warn('At least one of `acceptAction`,`primaryAction`,`rejectAction`,`secondaryAction` props must be provided for Notification dialog');
-    }
-
-    const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
-    const theme = this.context;
-    const notificationDialogClassNames = classNames(cx(
-      'notification-dialog',
-      theme.className,
-    ),
-    customProps.className);
-
-    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-    return (
-      <AbstractModal
-        ariaLabel="Notification Dialog"
-        aria-labelledby="notification-dialog-header"
-        aria-describedby={title ? 'notification-dialog-title' : 'notification-dialog-header'}
-        role="alertdialog"
-        classNameModal={notificationDialogClassNames}
-        isOpen={this.props.isOpen}
-        onRequestClose={() => {}}
-        closeOnEsc={false}
-        closeOnOutsideClick={false}
-        zIndex="9000"
-        data-terra-notification-dialog
-      >
-        <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
-          <div className={cx('notification-dialog-inner-wrapper')}>
-            <div className={cx('notification-dialog-container')} tabIndex="0">
-              <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
-              <div className={cx('notification-dialog-body')}>
-                {variant
-                  && <div className={cx('icon-container')}>{getIcon(variant, customIcon)}</div>}
-                <div className={cx('text-wrapper')}>
-                  {title
-                    && <div id="notification-dialog-title" className={cx('title')}>{title}</div>}
-                  {(startMessage || message)
-                    && <div className={cx('message')}>{(startMessage || message)}</div>}
-                  {content
-                    && <div>{content}</div>}
-                  {endMessage
-                    && <div className={cx('message')}>{endMessage}</div>}
+  /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+  return (
+    <AbstractModal
+      ariaLabel={signalWord}
+      aria-labelledby="notification-dialog-signal-word"
+      aria-describedby={dialogTitle ? 'notification-dialog-title' : 'notification-dialog-signal-word'}
+      role="alertdialog"
+      classNameModal={classNames(cx('notification-dialog', theme.className), customProps.className)}
+      isOpen
+      onRequestClose={() => {}}
+      closeOnEsc={false}
+      closeOnOutsideClick={false}
+      zIndex="9000"
+    >
+      <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
+        <div className={cx('notification-dialog-inner-wrapper')}>
+          <div className={cx('notification-dialog-container')} tabIndex="0" data-terra-notification-dialog>
+            <div className={cx(['floating-header-background', variant])} />
+            <div className={cx(['header'])}>
+              <div className={cx(['header-content'])}>
+                <NotificationIcon variant={variant} iconClassName={custom.iconClassName} />
+                <div className={cx('header-container')}>
+                  <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
+                  <div id="notification-dialog-title" className={cx('title')}>{dialogTitle}</div>
                 </div>
               </div>
-              <div className={cx('footer-body')}>
-                {actionSection(
-                  acceptAction || primaryAction,
-                  rejectAction || secondaryAction,
-                  buttonOrder,
-                  emphasizedAction,
-                )}
-              </div>
+            </div>
+            <div className={cx('body')}>
+              {(startMessage)
+                && <div className={cx('message')}>{(startMessage)}</div>}
+              {content
+                && <div className={cx('message')}>{content}</div>}
+              {endMessage
+                && <div className={cx('message')}>{endMessage}</div>}
+            </div>
+            <div className={cx('footer')}>
+              {actionSection(
+                acceptAction,
+                rejectAction,
+                buttonOrder,
+                emphasizedAction,
+              )}
             </div>
           </div>
-        </FocusTrap>
-      </AbstractModal>
-    );
-    /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
-  }
-}
+        </div>
+      </FocusTrap>
+    </AbstractModal>
+  );
+  /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
+};
 
 NotificationDialog.propTypes = propTypes;
 NotificationDialog.defaultProps = defaultProps;
-NotificationDialog.contextType = ThemeContext;
 
-export { variants as NotificationDialogVariants };
-export default NotificationDialog;
+export { ContentLayoutAsList };
+export default injectIntl(NotificationDialog);
