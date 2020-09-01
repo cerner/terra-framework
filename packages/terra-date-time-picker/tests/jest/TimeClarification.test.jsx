@@ -12,7 +12,7 @@ it('should render a default date time picker', () => {
       onStandardTimeButtonClick={jest.fn()}
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
-      initialTimeZone="America/Chicago"
+      timeZone="America/Chicago"
     />
   ));
   const wrapper = datePicker.dive();
@@ -29,7 +29,7 @@ it('should render a disabled time clarification', () => {
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
       disabled
-      initialTimeZone="America/Chicago"
+      timeZone="America/Chicago"
     />
   ));
   const wrapper = datePicker.dive();
@@ -47,7 +47,7 @@ it('should render offset button after daylight savings button clicked', () => {
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
       disabled
-      initialTimeZone="America/Chicago"
+      timeZone="America/Chicago"
     />
   ));
   const wrapper = datePicker.dive();
@@ -66,7 +66,7 @@ it('should render offset button after standard time button clicked', () => {
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
       disabled
-      initialTimeZone="America/Chicago"
+      timeZone="America/Chicago"
     />
   ));
   const wrapper = datePicker.dive();
@@ -85,7 +85,7 @@ it('should render offset button after daylight savings button clicked in the sou
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
       disabled
-      initialTimeZone="Australia/Sydney"
+      timeZone="Australia/Sydney"
     />
   ));
   const wrapper = datePicker.dive();
@@ -104,7 +104,7 @@ it('should render offset button after standard time button clicked in the southe
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
       disabled
-      initialTimeZone="Australia/Sydney"
+      timeZone="Australia/Sydney"
     />
   ));
   const wrapper = datePicker.dive();
