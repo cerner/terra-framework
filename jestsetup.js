@@ -5,6 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+// Add enzyme test helpers as global variables for use in jest suite
 global.shallow = shallow;
 global.render = render;
 global.mount = mount;
