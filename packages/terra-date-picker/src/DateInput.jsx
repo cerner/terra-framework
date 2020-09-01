@@ -169,6 +169,7 @@ const DatePickerInput = (props) => {
   const { onCalendarButtonClick, shouldShowPicker } = customProps;
   delete customProps.onCalendarButtonClick;
   delete customProps.shouldShowPicker;
+
   const additionalInputProps = { ...customProps, ...inputAttributes };
   const momentDateFormat = DateUtil.getFormatByLocale(intl.locale);
   const dateValue = DateUtil.convertToISO8601(value, momentDateFormat);
@@ -222,10 +223,10 @@ const DatePickerInput = (props) => {
         }
       }
     } else if (dateOrder === 'YMD') {
-      if (inputValue.length === 2 && type === DateUtil.inputType.MONTH) {
-        dayInputRef.current.focus();
-      } else if (inputValue.length === 4) {
+      if (inputValue.length === 4) {
         monthInputRef.current.focus();
+      } else if (inputValue.length === 2 && type === DateUtil.inputType.MONTH) {
+        dayInputRef.current.focus();
       }
     }
   };
