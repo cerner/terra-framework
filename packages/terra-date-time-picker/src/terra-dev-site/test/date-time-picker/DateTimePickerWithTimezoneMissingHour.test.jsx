@@ -3,7 +3,7 @@ import DateTimePickerTimezoneExampleTemplate from '../../common/DateTimePickerTi
 
 const DateTimePickerExample = () => (
   <DateTimePickerTimezoneExampleTemplate
-    timeZone="America/New_York"
+    initialTimeZone="America/New_York"
   />
 );
 

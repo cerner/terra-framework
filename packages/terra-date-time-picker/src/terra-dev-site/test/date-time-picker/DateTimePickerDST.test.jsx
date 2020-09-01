@@ -4,7 +4,7 @@ import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTem
 const DateTimePickerExample = () => (
   <DateTimePickerExampleTemplate
     value="2017-11-05T01:30:00"
-    timeZone="America/Chicago"
+    initialTimeZone="America/Chicago"
   />
 );
 

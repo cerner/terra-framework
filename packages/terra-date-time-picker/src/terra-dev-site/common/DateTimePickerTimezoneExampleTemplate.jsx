@@ -11,19 +11,19 @@ const propTypes = {
   /**
    * Timezone for the provided date time.
    */
-  timeZone: PropTypes.string,
+  initialTimeZone: PropTypes.string,
 };
 
 const defaultProps = {
   value: '',
-  timeZone: DateTimeUtils.getLocalTimeZone(),
+  initialTimeZone: DateTimeUtils.getLocalTimeZone(),
 };
 
 function DateTimePickerTimezoneTemplate(props) {
   let dateTimeDisplay = props.value;
-  let timeZoneDisplay = props.timeZone;
+  let timeZoneDisplay = props.initialTimeZone;
 
-  const computedDateTime = DateTimeUtils.createSafeDate(dateTimeDisplay, props.timeZone);
+  const computedDateTime = DateTimeUtils.createSafeDate(dateTimeDisplay, props.initialTimeZone);
   if (computedDateTime && computedDateTime.isValid()) {
     dateTimeDisplay = computedDateTime.format();
     timeZoneDisplay = computedDateTime.tz();
