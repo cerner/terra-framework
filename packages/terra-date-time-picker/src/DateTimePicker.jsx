@@ -374,7 +374,7 @@ class DateTimePicker extends React.Component {
       this.setState({ dateTime: updatedDateTime });
     }
 
-    if (isDateValid) {
+    if (isDateValid && event.currentTarget === this.yearInput) {
       // Allows time for focus-trap to release focus on the picker before shifting focus to the hour input.
       setTimeout(() => {
         /*
@@ -667,6 +667,7 @@ class DateTimePicker extends React.Component {
             isIncomplete={isIncomplete}
             isInvalid={isInvalid}
             required={required}
+            yearRefCallback={(yearInputRef) => { this.yearInput = yearInputRef; }}
           />
         </div>
         <div className={cx('time-facade')}>

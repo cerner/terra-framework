@@ -85,13 +85,19 @@ const propTypes = {
    */
   required: PropTypes.bool,
   /**
-   * @private Internal prop for showing date picker.
+   * @private
+   * Internal prop for showing date picker.
    */
   shouldShowPicker: PropTypes.bool,
   /**
    * The selected or entered date value to display in the date input.
    */
   value: PropTypes.string,
+  /**
+   * @private
+   * Callback ref to pass into the year input dom element.
+   */
+  yearRefCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -110,6 +116,7 @@ const defaultProps = {
   required: false,
   placeholder: undefined,
   value: undefined,
+  yearRefCallback: undefined,
 };
 
 const dateReducer = (state, inputValue) => ({
@@ -120,6 +127,27 @@ const dateReducer = (state, inputValue) => ({
 const dateState = { day: '', month: '', year: '' };
 
 const DatePickerInput = (props) => {
+  const {
+    ariaLabel,
+    buttonRefCallback,
+    inputAttributes,
+    intl,
+    isIncomplete,
+    isInvalid,
+    name,
+    onBlur,
+    onButtonFocus,
+    onChange,
+    onClick,
+    onFocus,
+    onKeyDown,
+    placeholder,
+    required,
+    value,
+    yearRefCallback,
+    ...customProps
+  } = props;
+
   const [date, dateDispatch] = useReducer(dateReducer, dateState);
   const [isFocused, setFocused] = useState(false);
   const [dayInitialFocused, setDayInitialFocused] = useState(false);
@@ -139,27 +167,8 @@ const DatePickerInput = (props) => {
 
   const setYearRef = useCallback(node => {
     yearInputRef.current = node;
-  }, []);
-
-  const {
-    ariaLabel,
-    buttonRefCallback,
-    inputAttributes,
-    intl,
-    isIncomplete,
-    isInvalid,
-    name,
-    onBlur,
-    onButtonFocus,
-    onChange,
-    onClick,
-    onFocus,
-    onKeyDown,
-    placeholder,
-    required,
-    value,
-    ...customProps
-  } = props;
+    if (yearRefCallback) yearRefCallback(node);
+  }, [yearRefCallback]);
 
   const id = customProps.id ? customProps.id : undefined;
   if (customProps.id) {
