@@ -124,7 +124,7 @@ const propTypes = {
    * Timezone value to indicate in which timezone the date-time component is rendered.
    * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
    */
-  timeZone: PropTypes.string,
+  initialTimeZone: PropTypes.string,
 };
 
 const defaultProps = {
@@ -149,7 +149,7 @@ const defaultProps = {
   timeInputAttributes: undefined,
   value: undefined,
   timeVariant: DateTimeUtils.FORMAT_24_HOUR,
-  timeZone: DateTimeUtils.getLocalTimeZone(),
+  initialTimeZone: DateTimeUtils.getLocalTimeZone(),
 };
 
 class DateTimePicker extends React.Component {
@@ -157,11 +157,11 @@ class DateTimePicker extends React.Component {
     super(props);
 
     this.state = {
-      dateTime: DateTimeUtils.createSafeDate(props.value, props.timeZone),
+      dateTime: DateTimeUtils.createSafeDate(props.value, props.initialTimeZone),
       isAmbiguousTime: false,
       isTimeClarificationOpen: false,
       dateFormat: DateUtil.getFormatByLocale(props.intl.locale),
-      timeZone: props.timeZone,
+      timeZone: props.initialTimeZone,
     };
 
     // The dateValue and timeValue variables represent the actual value in the date input and time input respectively.
@@ -211,10 +211,10 @@ class DateTimePicker extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.timeZone !== prevState.timeZone) {
+    if (nextProps.initialTimeZone !== prevState.timeZone) {
       return {
-        timeZone: nextProps.timeZone,
-        dateTime: DateTimeUtils.createSafeDate(nextProps.value, nextProps.timeZone),
+        timeZone: prevState.timeZone,
+        dateTime: DateTimeUtils.createSafeDate(nextProps.value, prevState.timeZone),
       };
     }
 
@@ -638,7 +638,7 @@ class DateTimePicker extends React.Component {
       timeInputAttributes,
       value,
       timeVariant,
-      timeZone,
+      initialTimeZone,
       ...customProps
     } = this.props;
 
