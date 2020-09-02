@@ -261,9 +261,9 @@ class TimeUtil {
    */
   static getVariantFromLocale(props) {
     const { intl, variant } = props;
-    const locale12Hr = ['en-AU', 'en-CA', 'en-GB', 'en-US', 'en', 'es-US'];
+    const locale24Hr = ['de', 'es-ES', 'es', 'fi-FI', 'fr-FR', 'fr', 'nl-BE', 'nl', 'pt-BR', 'pt', 'sv-SE', 'sv'];
 
-    if (!locale12Hr.includes(intl.locale)) {
+    if (locale24Hr.includes(intl.locale)) {
       return this.FORMAT_24_HOUR;
     }
 
