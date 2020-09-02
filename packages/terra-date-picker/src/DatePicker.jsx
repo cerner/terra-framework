@@ -46,6 +46,11 @@ const propTypes = {
   inputAttributes: PropTypes.object,
   /**
    * @private
+   * Callback ref to pass into the last input dom element from Date Input components based on the date format order.
+   */
+  inputRefCallback: PropTypes.func,
+  /**
+   * @private
    * intl object programmatically imported through injectIntl from react-intl.
    */
   intl: intlShape.isRequired,
@@ -119,11 +124,6 @@ const propTypes = {
    * The value must be in the `YYYY-MM-DD` format or the all-numeric date format based on the locale.
    */
   value: PropTypes.string,
-  /**
-   * @private
-   * Callback ref to pass into the year input dom element.
-   */
-  yearRefCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -134,6 +134,7 @@ const defaultProps = {
   filterDate: undefined,
   includeDates: undefined,
   inputAttributes: undefined,
+  inputRefCallback: undefined,
   isIncomplete: false,
   isInline: false,
   isInvalid: false,
@@ -148,7 +149,6 @@ const defaultProps = {
   required: false,
   selectedDate: undefined,
   value: undefined,
-  yearRefCallback: undefined,
 };
 
 class DatePicker extends React.Component {
@@ -391,6 +391,7 @@ class DatePicker extends React.Component {
       filterDate,
       includeDates,
       inputAttributes,
+      inputRefCallback,
       intl,
       isIncomplete,
       isInline,
@@ -407,7 +408,6 @@ class DatePicker extends React.Component {
       required,
       selectedDate,
       value,
-      yearRefCallback,
       ...customProps
     } = this.props;
 
@@ -475,8 +475,8 @@ class DatePicker extends React.Component {
                 onButtonFocus={this.handleFocus}
                 buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
                 ariaLabel={ariaLabel}
-                yearRefCallback={(yearInputRef) => {
-                  if (yearRefCallback) yearRefCallback(yearInputRef);
+                inputRefCallback={(inputRef) => {
+                  if (inputRefCallback) inputRefCallback(inputRef);
                 }}
               />
             )}

@@ -37,6 +37,11 @@ const propTypes = {
   inputAttributes: PropTypes.object,
   /**
    * @private
+   * Callback ref to pass into the last input dom element from Date Input components based on the date format order.
+   */
+  inputRefCallback: PropTypes.func,
+  /**
+   * @private
    * intl object programmatically imported through injectIntl from react-intl.
    */
   intl: intlShape.isRequired,
@@ -93,17 +98,13 @@ const propTypes = {
    * The selected or entered date value to display in the date input.
    */
   value: PropTypes.string,
-  /**
-   * @private
-   * Callback ref to pass into the year input dom element.
-   */
-  yearRefCallback: PropTypes.func,
 };
 
 const defaultProps = {
   ariaLabel: undefined,
   buttonRefCallback: undefined,
   inputAttributes: undefined,
+  inputRefCallback: undefined,
   isIncomplete: false,
   isInvalid: false,
   name: undefined,
@@ -116,7 +117,6 @@ const defaultProps = {
   required: false,
   placeholder: undefined,
   value: undefined,
-  yearRefCallback: undefined,
 };
 
 const dateReducer = (state, inputValue) => ({
@@ -131,6 +131,7 @@ const DatePickerInput = (props) => {
     ariaLabel,
     buttonRefCallback,
     inputAttributes,
+    inputRefCallback,
     intl,
     isIncomplete,
     isInvalid,
@@ -144,7 +145,6 @@ const DatePickerInput = (props) => {
     placeholder,
     required,
     value,
-    yearRefCallback,
     ...customProps
   } = props;
 
@@ -156,19 +156,6 @@ const DatePickerInput = (props) => {
   const dayInputRef = useRef();
   const monthInputRef = useRef();
   const yearInputRef = useRef();
-
-  const setDayRef = useCallback(node => {
-    dayInputRef.current = node;
-  }, []);
-
-  const setMonthRef = useCallback(node => {
-    monthInputRef.current = node;
-  }, []);
-
-  const setYearRef = useCallback(node => {
-    yearInputRef.current = node;
-    if (yearRefCallback) yearRefCallback(node);
-  }, [yearRefCallback]);
 
   const id = customProps.id ? customProps.id : undefined;
   if (customProps.id) {
@@ -188,6 +175,24 @@ const DatePickerInput = (props) => {
   const label = ariaLabel || intl.formatMessage({ id: 'Terra.datePicker.date' });
   const placeholderValues = DateUtil.getDateInputValues(dateFormatOrder, placeholder, dateSeparator);
   const theme = React.useContext(ThemeContext);
+
+  const setDayRef = useCallback(node => {
+    dayInputRef.current = node;
+    if (inputRefCallback && dateFormatOrder === 'YMD') {
+      inputRefCallback(node);
+    }
+  }, [dateFormatOrder, inputRefCallback]);
+
+  const setMonthRef = useCallback(node => {
+    monthInputRef.current = node;
+  }, []);
+
+  const setYearRef = useCallback(node => {
+    yearInputRef.current = node;
+    if (inputRefCallback && (dateFormatOrder === 'MDY' || dateFormatOrder === 'DMY')) {
+      inputRefCallback(node);
+    }
+  }, [dateFormatOrder, inputRefCallback]);
 
   useEffect(() => {
     if (shouldShowPicker && onClick) {
