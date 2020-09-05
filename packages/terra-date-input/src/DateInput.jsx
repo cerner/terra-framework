@@ -32,6 +32,11 @@ const propTypes = {
   displayFormat: PropTypes.oneOf(['month-day-year', 'day-month-year']),
   /**
    * @private
+   * Help element to display with the field.
+   */
+  help: PropTypes.node,
+  /**
+   * @private
    * Intl object injected from injectIntl
    */
   intl: intlShape,
@@ -486,6 +491,7 @@ class DateInput extends React.Component {
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}
           disabled={this.props.disabled}
+          aria-describedby={`format ${this.props.monthAttributes['aria-describedby']}`}
         >
           <option value="" hidden>{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
@@ -528,7 +534,6 @@ class DateInput extends React.Component {
         className={cx('date-input-day', { 'is-focused': this.state.dayIsFocused })}
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
-        placeholder={this.props.intl.formatMessage({ id: 'Terra.date.input.dayPlaceholder' })}
         maxLength="2"
         onChange={this.handleDayChange}
         onKeyDown={this.handleDayKeyDown}
@@ -540,6 +545,7 @@ class DateInput extends React.Component {
         isInvalid={this.props.isInvalid}
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
+        aria-describedby={`format ${this.props.dayAttributes['aria-describedby']}`}
       />
     );
   }
@@ -567,7 +573,6 @@ class DateInput extends React.Component {
         className={cx('date-input-year', { 'is-focused': this.state.yearIsFocused })}
         value={this.state.year}
         name={'terra-date-year-'.concat(this.props.name)}
-        placeholder={this.props.intl.formatMessage({ id: 'Terra.date.input.yearPlaceholder' })}
         maxLength="4"
         onChange={this.handleYearChange}
         onKeyDown={this.handleYearKeyDown}
@@ -579,6 +584,7 @@ class DateInput extends React.Component {
         isInvalid={this.props.isInvalid}
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
+        aria-describedby={`format ${this.props.yearAttributes['aria-describedby']}`}
       />
     );
   }
@@ -618,6 +624,7 @@ class DateInput extends React.Component {
       dayAttributes,
       monthAttributes,
       yearAttributes,
+      help,
       intl,
       isInvalid,
       isIncomplete,
@@ -654,20 +661,29 @@ class DateInput extends React.Component {
       dateValue = `${year}-${month}-${day}`;
     }
 
+    let format = 'DD Month YYYY';
+
+    if (DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale) === 'month-day-year') {
+      format = 'Month DD YYYY';
+    }
+
     return (
-      <div
-        {...customProps}
-        className={dateInputClassNames}
-        ref={(element) => { this.dateInputContainer.current = element; if (refCallback) { refCallback(element); } }}
-      >
-        <input
-          // Create a hidden input for storing the name and value attributes to use when submitting the form.
-          // The data stored in the value attribute will be the visible date in the date input but formatted in YYYY-MM-DD format.
-          type="hidden"
-          name={name}
-          value={dateValue}
-        />
-        {this.formattedRender()}
+      <div>
+        <div
+          {...customProps}
+          className={dateInputClassNames}
+          ref={(element) => { this.dateInputContainer.current = element; if (refCallback) { refCallback(element); } }}
+        >
+          <input
+            // Create a hidden input for storing the name and value attributes to use when submitting the form.
+            // The data stored in the value attribute will be the visible date in the date input but formatted in YYYY-MM-DD format.
+            type="hidden"
+            name={name}
+            value={dateValue}
+          />
+          {this.formattedRender()}
+        </div>
+        { (help === undefined) && <div id="format" className={cx('format-text')} aria-label={`Format: ${format}`}>{`Format: ${format}`}</div>}
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -9,6 +9,7 @@ import IconError from 'terra-icon/lib/icon/IconError';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 import DateInput from './DateInput';
+import DateInputUtil from './DateInputUtil';
 import styles from './DateInputField.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -63,6 +64,11 @@ const propTypes = {
    * Whether or not the legend is visible. Use this props to hide a legend while still creating it on the DOM for accessibility.
    */
   isLegendHidden: PropTypes.bool,
+  /**
+   * @private
+   * Intl object injected from injectIntl
+   */
+  intl: intlShape,
   /**
    * Attributes to attach to the legend.
    */
@@ -144,6 +150,7 @@ const DateInputField = (props) => {
     isInline,
     isInvalid,
     isLegendHidden,
+    intl,
     legend,
     legendAttributes,
     monthAttributes,
@@ -184,13 +191,13 @@ const DateInputField = (props) => {
   const ariaDescriptionIds = `${errorAriaDescriptionId} ${helpAriaDescriptionId}`;
 
   const customMonthAriaDescribedById = monthAttributes['aria-describedby'] ? monthAttributes['aria-describedby'] : '';
-  const monthAriaDesciptionIds = `${ariaDescriptionIds} ${customMonthAriaDescribedById}`;
+  const monthAriaDescriptionIds = `${ariaDescriptionIds} ${customMonthAriaDescribedById}`;
 
   const customDayAriaDescribedById = dayAttributes['aria-describedby'] ? dayAttributes['aria-describedby'] : '';
-  const dayAriaDesciptionIds = `${ariaDescriptionIds} ${customDayAriaDescribedById}`;
+  const dayAriaDescriptionIds = `${ariaDescriptionIds} ${customDayAriaDescribedById}`;
 
   const customYearAriaDescribedById = yearAttributes['aria-describedby'] ? yearAttributes['aria-describedby'] : '';
-  const yearAriaDesciptionIds = `${ariaDescriptionIds} ${customYearAriaDescribedById}`;
+  const yearAriaDescriptionIds = `${ariaDescriptionIds} ${customYearAriaDescribedById}`;
 
   const legendGroup = (
     <legend className={cx(['legend-group', { 'legend-group-hidden': isLegendHidden }])}>
@@ -221,6 +228,12 @@ const DateInputField = (props) => {
     </legend>
   );
 
+  let format = `Format: DD Month YYYY, ${help}`;
+
+  if (DateInputUtil.computedDisplayFormat(displayFormat, intl.locale) === 'month-day-year') {
+    format = `Format: Month DD YYYY, ${help}`;
+  }
+
   return (
     <fieldset {...customProps} className={dateInputFieldClasses}>
       {legendGroup}
@@ -234,13 +247,14 @@ const DateInputField = (props) => {
         disabled={disabled}
         isInvalid={isInvalid}
         isIncomplete={isIncomplete}
+        help={help}
         required={required}
-        monthAttributes={{ ...monthAttributes, ...{ 'aria-describedby': monthAriaDesciptionIds } }}
-        dayAttributes={{ ...dayAttributes, ...{ 'aria-describedby': dayAriaDesciptionIds } }}
-        yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDesciptionIds } }}
+        monthAttributes={{ ...monthAttributes, ...{ 'aria-describedby': monthAriaDescriptionIds } }}
+        dayAttributes={{ ...dayAttributes, ...{ 'aria-describedby': dayAriaDescriptionIds } }}
+        yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDescriptionIds } }}
       />
       {isInvalid && error && <div id={errorAriaDescriptionId} className={cx('error-text')}>{error}</div>}
-      {help && <div id={helpAriaDescriptionId} className={cx('help-text')}>{help}</div>}
+      {help && <div id={helpAriaDescriptionId} className={cx('help-text')}>{format}</div>}
     </fieldset>
   );
 };
@@ -248,4 +262,4 @@ const DateInputField = (props) => {
 DateInputField.propTypes = propTypes;
 DateInputField.defaultProps = defaultProps;
 
-export default DateInputField;
+export default injectIntl(DateInputField);
