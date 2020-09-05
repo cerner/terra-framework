@@ -228,10 +228,10 @@ const DateInputField = (props) => {
     </legend>
   );
 
-  let format = `Format: DD Month YYYY, ${help}`;
+  let format = 'Format: DD Month YYYY';
 
   if (DateInputUtil.computedDisplayFormat(displayFormat, intl.locale) === 'month-day-year') {
-    format = `Format: Month DD YYYY, ${help}`;
+    format = 'Format: Month DD YYYY';
   }
 
   return (
@@ -254,7 +254,7 @@ const DateInputField = (props) => {
         yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDescriptionIds } }}
       />
       {isInvalid && error && <div id={errorAriaDescriptionId} className={cx('error-text')}>{error}</div>}
-      {help && <div id={helpAriaDescriptionId} className={cx('help-text')}>{format}</div>}
+      {help ? <div id={helpAriaDescriptionId} className={cx('help-text')}>{`${format}, ${help}`}</div> : <div id={helpAriaDescriptionId} className={cx('help-text')}>{`${format}`}</div>}
     </fieldset>
   );
 };
