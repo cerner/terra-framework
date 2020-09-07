@@ -46,8 +46,8 @@ terra-date-time-picker has several callback events that are slightly different i
   * `isCompleteValue` - A boolean to indicate whether or not both the date and time values are filled out and conforms to the date/time format. If this boolean is false, the iSO attribute would be empty.
   * `isValidValue` - A boolean to indicate whether or not the complete date/time value is within the range of the minDate and maxDate props and is not an excluded date.
 
-### onDismiss
-* The `onDismiss` callback prop is triggered when dismissing the datepicker by clicking anywhere on the page.
+### onRequestClose
+* The `onRequestClose` callback prop is triggered when dismissing the datepicker.
 
 ### onFocus
 * The `onFocus` callback prop is triggered when the component initially gains focus. If the focus is moved from the date input to the time input, the `onFocus` event will not be triggered since the focus is still within the DateTime Picker component. Similar to the `onBlur` event, the `onFocus` event does not get triggered when the focus is moved from one child node of the DateTime Picker component to another child node of the same DateTime Picker component.

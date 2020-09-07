@@ -195,13 +195,13 @@ class DatePicker extends React.Component {
      */
     onWeekSelect: PropTypes.func,
     /**
-     * **Deprecated**, A callback function to execute when the mouse cursor leaves the element. Resolves to `onDismiss`.
+     * **Deprecated**, A callback function to execute when the mouse cursor leaves the element. Resolves to `onRequestClose`.
      */
     onClickOutside: PropTypes.func,
     /**
-   * A callback function to execute when picker is dismissed. onDismiss(event)
+   * A callback function to execute when picker is dismissed. onRequestClose(event)
      */
-    onDismiss: PropTypes.func,
+    onRequestClose: PropTypes.func,
     /**
      * A callback function to execute when date is entered.
      */
@@ -468,8 +468,8 @@ class DatePicker extends React.Component {
         open: open,
         preSelection: open && this.state.open ? this.state.preSelection : this.calcInitialState().preSelection
       })
-    if (this.props.onDismiss && (!open)) {
-      this.props.onDismiss(event);
+    if (this.props.onRequestClose && (!open)) {
+      this.props.onRequestClose(event);
     }
   }
 

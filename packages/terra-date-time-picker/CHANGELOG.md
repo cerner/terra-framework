@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * `onClickOutside` prop has been deprecated, will resolve to `onDismiss`
+  * `onClickOutside` prop has been deprecated, will resolve to `onRequestClose`
 
 ## 4.45.0 - (August 18, 2020)
 

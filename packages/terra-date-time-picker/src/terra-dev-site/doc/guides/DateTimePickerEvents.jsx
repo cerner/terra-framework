@@ -5,7 +5,7 @@ import DateTimeUtils from '../../../DateTimeUtils';
 const DateTimePickerEvents = () => {
   const [blurCount, setBlurCount] = useState(0);
   const [focusCount, setFocusCount] = useState(0);
-  const [onDismissCount, setOnDismissCount] = useState(0);
+  const [onRequestCloseCount, setonRequestCloseCount] = useState(0);
   const [changeValue, setChangeValue] = useState('');
   const [changeRawValue, setChangeRawValue] = useState('');
   const [selectValue, setSelectValue] = useState('');
@@ -30,8 +30,8 @@ const DateTimePickerEvents = () => {
     setSelectValue(value);
   };
 
-  const handleOnDismiss = () => {
-    setOnDismissCount(onDismissCount + 1);
+  const handleOnRequestClose = () => {
+    setonRequestCloseCount(onRequestCloseCount + 1);
   };
 
   return (
@@ -47,9 +47,9 @@ const DateTimePickerEvents = () => {
         <span id="onBlur-count">{blurCount}</span>
         <br />
         <br />
-        onDismiss Trigger Count:
+        onRequestClose Trigger Count:
         {' '}
-        <span id="onDismiss-count">{onDismissCount}</span>
+        <span id="onRequestClose-count">{onRequestCloseCount}</span>
         <br />
         <br />
         onChangeRaw Triggered:
@@ -73,7 +73,7 @@ const DateTimePickerEvents = () => {
         onChange={handleChange}
         onChangeRaw={handleChangeRaw}
         onSelect={handleSelect}
-        onDismiss={handleOnDismiss}
+        onRequestClose={handleOnRequestClose}
         timeVariant={DateTimeUtils.FORMAT_12_HOUR}
         showSeconds
       />

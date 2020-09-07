@@ -84,13 +84,13 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
-   * **Deprecated**, A callback function to execute when clicking outside of the picker to dismiss it. Resolves to `onDismiss`.
+   * **Deprecated**, A callback function to execute when clicking outside of the picker to dismiss it. Resolves to `onRequestClose`.
    */
   onClickOutside: PropTypes.func,
   /**
-   * A callback function to execute when picker is dismissed. onDismiss(event)
+   * A callback function to execute when picker is dismissed. onRequestClose(event)
    */
-  onDismiss: PropTypes.func,
+  onRequestClose: PropTypes.func,
   /**
    * A callback function triggered when the date input, hour input, or minute input receives focus.
    */
@@ -613,7 +613,7 @@ class DateTimePicker extends React.Component {
       onChange,
       onChangeRaw,
       onClickOutside,
-      onDismiss,
+      onRequestClose,
       onFocus,
       onSelect,
       maxDate,
@@ -653,7 +653,7 @@ class DateTimePicker extends React.Component {
             onChangeRaw={this.handleDateChangeRaw}
             onSelect={this.handleOnSelect}
             onClickOutside={onClickOutside}
-            onDismiss={onDismiss}
+            onRequestClose={onRequestClose}
             onBlur={this.handleOnDateBlur}
             onFocus={this.handleOnDateInputFocus}
             excludeDates={excludeDates}
