@@ -25,8 +25,6 @@ import styles from './DatePicker.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Icon = <IconCalendar />;
-
 const propTypes = {
   /**
    * String that labels the current element. 'aria-label' must be present for accessibility.
@@ -36,6 +34,10 @@ const propTypes = {
    * Callback ref to pass into the calendar button dom element.
    */
   buttonRefCallback: PropTypes.func,
+  /**
+   * The id to append to the date input wrapper.
+   */
+  id: PropTypes.string,
   /**
    * Custom input attributes to apply to the date input.
    */
@@ -108,6 +110,7 @@ const propTypes = {
 const defaultProps = {
   ariaLabel: undefined,
   buttonRefCallback: undefined,
+  id: undefined,
   inputAttributes: undefined,
   inputRefCallback: undefined,
   isIncomplete: false,
@@ -133,6 +136,7 @@ const DatePickerInput = (props) => {
   const {
     ariaLabel,
     buttonRefCallback,
+    id,
     inputAttributes,
     inputRefCallback,
     intl,
@@ -159,11 +163,7 @@ const DatePickerInput = (props) => {
   const dayInputRef = useRef();
   const monthInputRef = useRef();
   const yearInputRef = useRef();
-
-  const id = customProps.id ? customProps.id : undefined;
-  if (customProps.id) {
-    delete customProps.id;
-  }
+  const theme = React.useContext(ThemeContext);
 
   const { onCalendarButtonClick, shouldShowPicker } = customProps;
   delete customProps.onCalendarButtonClick;
@@ -172,12 +172,7 @@ const DatePickerInput = (props) => {
   const additionalInputProps = { ...customProps, ...inputAttributes };
   const momentDateFormat = DateUtil.getFormatByLocale(intl.locale);
   const dateValue = DateUtil.convertToISO8601(value, momentDateFormat);
-  const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
   const dateFormatOrder = intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' });
-  const dateSeparator = intl.formatMessage({ id: 'Terra.datePicker.separator' });
-  const label = ariaLabel || intl.formatMessage({ id: 'Terra.datePicker.date' });
-  const placeholderValues = DateUtil.getDateInputValues(dateFormatOrder, placeholder, dateSeparator);
-  const theme = React.useContext(ThemeContext);
 
   const setDayRef = useCallback(node => {
     dayInputRef.current = node;
@@ -500,36 +495,12 @@ const DatePickerInput = (props) => {
     }
   };
 
-  const dateInputContainerClasses = cx([
-    'date-input-container',
-    theme.className,
-  ]);
-
-  const dateInputClasses = cx([
-    'date-input',
-    { 'is-focused': isFocused },
-    { 'is-invalid': isInvalid },
-    { 'is-incomplete': isIncomplete && required && !isInvalid },
-  ]);
-
-  const buttonClasses = cx([
-    'button',
-    { 'is-invalid': isInvalid },
-  ]);
+  const dateSeparator = intl.formatMessage({ id: 'Terra.datePicker.separator' });
+  const placeholderValues = DateUtil.getDateInputValues(dateFormatOrder, placeholder, dateSeparator);
 
   const dayInputClasses = cx([
     'date-input-day',
     { 'initial-focus': dayInitialFocused },
-  ]);
-
-  const monthInputClasses = cx([
-    'date-input-month',
-    { 'initial-focus': monthInitialFocused },
-  ]);
-
-  const yearInputClasses = cx([
-    'date-input-year',
-    { 'initial-focus': yearInitialFocused },
   ]);
 
   const dateDayInput = (
@@ -552,6 +523,11 @@ const DatePickerInput = (props) => {
     />
   );
 
+  const monthInputClasses = cx([
+    'date-input-month',
+    { 'initial-focus': monthInitialFocused },
+  ]);
+
   const dateMonthInput = (
     <Input
       {...additionalInputProps}
@@ -571,6 +547,11 @@ const DatePickerInput = (props) => {
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
     />
   );
+
+  const yearInputClasses = cx([
+    'date-input-year',
+    { 'initial-focus': yearInitialFocused },
+  ]);
 
   const dateYearInput = (
     <Input
@@ -602,6 +583,25 @@ const DatePickerInput = (props) => {
     dateYearInput,
   );
 
+  const dateInputContainerClasses = cx([
+    'date-input-container',
+    theme.className,
+  ]);
+
+  const dateInputClasses = cx([
+    'date-input',
+    { 'is-focused': isFocused },
+    { 'is-invalid': isInvalid },
+    { 'is-incomplete': isIncomplete && required && !isInvalid },
+  ]);
+
+  const label = ariaLabel || intl.formatMessage({ id: 'Terra.datePicker.date' });
+
+  const buttonClasses = cx([
+    'button',
+    { 'is-invalid': isInvalid },
+  ]);
+
   return (
     <div className={dateInputContainerClasses}>
       <div
@@ -622,10 +622,10 @@ const DatePickerInput = (props) => {
       </div>
       <Button
         className={buttonClasses}
-        text={buttonText}
+        text={intl.formatMessage({ id: 'Terra.datePicker.openCalendar' })}
         onClick={handleOnButtonClick}
         onKeyDown={handleOnButtonKeyDown}
-        icon={Icon}
+        icon={<IconCalendar />}
         isIconOnly
         isCompact
         isDisabled={additionalInputProps.disabled}
