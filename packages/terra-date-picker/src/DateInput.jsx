@@ -488,8 +488,8 @@ const DatePickerInput = (props) => {
   };
 
   const handleOnButtonClick = (event) => {
-    const { readOnly } = inputAttributes;
-    if (!readOnly && onCalendarButtonClick && onClick) {
+    const attributes = { ...inputAttributes };
+    if (!attributes.readOnly && onCalendarButtonClick && onClick) {
       onCalendarButtonClick(event, onClick);
     }
   };
