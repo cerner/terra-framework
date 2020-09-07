@@ -179,20 +179,20 @@ class DateUtil {
   /**
    * Returns component layout based on locale format.
    * @param {string} dateOrder - The date input order based on the locale date format.
-   * @param {object} spacer - The spacer component with the locale appropriate separator.
+   * @param {object} separator - The separator component with the locale appropriate separator.
    * @param {object} day - The date day component.
    * @param {object} month - The date month component.
    * @param {object} year - The date year component.
    */
-  static getInputLayout(dateOrder, spacer, day, month, year) {
+  static getInputLayout(dateOrder, separator, day, month, year) {
     let formatOrder;
     if (dateOrder === 'DMY') {
       formatOrder = (
         <>
           {day}
-          {spacer}
+          {separator}
           {month}
-          {spacer}
+          {separator}
           {year}
         </>
       );
@@ -200,9 +200,9 @@ class DateUtil {
       formatOrder = (
         <>
           {month}
-          {spacer}
+          {separator}
           {day}
-          {spacer}
+          {separator}
           {year}
         </>
       );
@@ -210,9 +210,9 @@ class DateUtil {
       formatOrder = (
         <>
           {year}
-          {spacer}
+          {separator}
           {month}
-          {spacer}
+          {separator}
           {day}
         </>
       );

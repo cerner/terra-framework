@@ -127,7 +127,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  ariaLabel: undefined,
   disableButtonFocusOnClose: false,
   disabled: false,
   excludeDates: undefined,
@@ -148,7 +147,6 @@ const defaultProps = {
   onSelect: undefined,
   required: false,
   selectedDate: undefined,
-  value: undefined,
 };
 
 class DatePicker extends React.Component {
@@ -475,9 +473,7 @@ class DatePicker extends React.Component {
                 onButtonFocus={this.handleFocus}
                 buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
                 ariaLabel={ariaLabel}
-                inputRefCallback={(inputRef) => {
-                  if (inputRefCallback) inputRefCallback(inputRef);
-                }}
+                inputRefCallback={inputRefCallback}
               />
             )}
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}
