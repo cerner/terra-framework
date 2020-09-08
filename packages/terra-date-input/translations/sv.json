@@ -2,7 +2,7 @@
   "Terra.date.input.optional": "(valfri)",
   "Terra.date.input.required": "Obligatorisk",
   "Terra.date.input.monthLabel": "Månad",
-  "Terra.date.input.monthPlaceholder": "Månad",
+  "Terra.date.input.monthPlaceholder": "- Välj -",
   "Terra.date.input.yearLabel": "År",
   "Terra.date.input.yearPlaceholder": "ÅÅÅÅ",
   "Terra.date.input.dayLabel": "Datum",

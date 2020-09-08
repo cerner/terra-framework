@@ -32,7 +32,7 @@ const propTypes = {
   displayFormat: PropTypes.oneOf(['month-day-year', 'day-month-year']),
   /**
    * @private
-   * Help element to display with the field.
+   * To check if help element is provided by the field or not.
    */
   help: PropTypes.node,
   /**
@@ -661,10 +661,10 @@ class DateInput extends React.Component {
       dateValue = `${year}-${month}-${day}`;
     }
 
-    let format = 'DD Month YYYY';
+    let format = `(${this.props.intl.formatMessage({ id: 'Terra.date.input.dayPlaceholder' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.yearPlaceholder' })})`;
 
     if (DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale) === 'month-day-year') {
-      format = 'Month DD YYYY';
+      format = `(${this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.dayPlaceholder' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.yearPlaceholder' })})`;
     }
 
     return (
@@ -682,8 +682,12 @@ class DateInput extends React.Component {
             value={dateValue}
           />
           {this.formattedRender()}
+          { (help === undefined) && (
+          <div id="format" className={cx('format-text')} aria-label={`Date Format: ${format}`}>
+            {format}
+          </div>
+          )}
         </div>
-        { (help === undefined) && <div id="format" className={cx('format-text')} aria-label={`Format: ${format}`}>{`Format: ${format}`}</div>}
       </div>
     );
   }

@@ -228,10 +228,10 @@ const DateInputField = (props) => {
     </legend>
   );
 
-  let format = 'Format: DD Month YYYY';
+  let format = `(${intl.formatMessage({ id: 'Terra.date.input.dayPlaceholder' })} ${intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${intl.formatMessage({ id: 'Terra.date.input.yearPlaceholder' })})`;
 
   if (DateInputUtil.computedDisplayFormat(displayFormat, intl.locale) === 'month-day-year') {
-    format = 'Format: Month DD YYYY';
+    format = `(${intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${intl.formatMessage({ id: 'Terra.date.input.dayPlaceholder' })} ${intl.formatMessage({ id: 'Terra.date.input.yearPlaceholder' })})`;
   }
 
   return (
@@ -254,7 +254,17 @@ const DateInputField = (props) => {
         yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDescriptionIds } }}
       />
       {isInvalid && error && <div id={errorAriaDescriptionId} className={cx('error-text')}>{error}</div>}
-      {help ? <div id={helpAriaDescriptionId} className={cx('help-text')}>{`${format}, ${help}`}</div> : <div id={helpAriaDescriptionId} className={cx('help-text')}>{`${format}`}</div>}
+      {help ? (
+        <div id={helpAriaDescriptionId} className={cx('help-text')} aria-label={`Format: ${format}, ${help}`}>
+          {format}
+          &nbsp;
+          {help}
+        </div>
+      ) : (
+        <div id={helpAriaDescriptionId} className={cx('help-text')} aria-label={`Format: ${format}`}>
+          {format}
+        </div>
+      )}
     </fieldset>
   );
 };

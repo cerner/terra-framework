@@ -2,7 +2,7 @@
   "Terra.date.input.optional": "(facultatif)",
   "Terra.date.input.required": "Requis",
   "Terra.date.input.monthLabel": "Mois",
-  "Terra.date.input.monthPlaceholder": "Mois",
+  "Terra.date.input.monthPlaceholder": "Sélectionner",
   "Terra.date.input.yearLabel": "Année",
   "Terra.date.input.yearPlaceholder": "AAAA",
   "Terra.date.input.dayLabel": "Date",
