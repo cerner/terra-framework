@@ -280,7 +280,7 @@ const DatePickerInput = (props) => {
     let inputDate;
     let formattedDate;
     if (day.length === 2 && month.length === 2 && year.length === 4) {
-      inputDate = DateUtil.convertToISO8601(`${year}-${month}-${day}`, 'YYYY-MM-DD');
+      inputDate = DateUtil.convertToISO8601(`${year}-${month}-${day}`, DateUtil.ISO_EXTENDED_DATE_FORMAT);
       formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
     }
 

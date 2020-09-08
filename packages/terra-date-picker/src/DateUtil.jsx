@@ -183,6 +183,7 @@ class DateUtil {
    * @param {object} day - The date day component.
    * @param {object} month - The date month component.
    * @param {object} year - The date year component.
+   * @return {object} - The object containing the date input components in the order as per the locale date format.
    */
   static getInputLayout(dateOrder, separator, day, month, year) {
     let formatOrder;
