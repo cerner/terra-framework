@@ -1,7 +1,7 @@
 {
   "Terra.date.input.optional": "~ (optional) -",
   "Terra.date.input.required": "~ Required -",
-  "Terra.date.input.monthFormatLabel": "~ Month -",
+  "Terra.date.input.monthLabel": "~ Month -",
   "Terra.date.input.monthPlaceholder": "- Valitat -",
   "Terra.date.input.yearLabel": "~ Year -",
   "Terra.date.input.yearFormatLabel": "~ YYYY -",

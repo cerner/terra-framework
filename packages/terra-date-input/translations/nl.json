@@ -1,7 +1,7 @@
 {
   "Terra.date.input.optional": "(optioneel)",
   "Terra.date.input.required": "Verplicht",
-  "Terra.date.input.monthFormatLabel": "maand",
+  "Terra.date.input.monthLabel": "maand",
   "Terra.date.input.monthPlaceholder": "- Selecteren -",
   "Terra.date.input.yearLabel": "jaar",
   "Terra.date.input.yearFormatLabel": "JJJJ",

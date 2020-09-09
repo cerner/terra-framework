@@ -1,7 +1,7 @@
 {
   "Terra.date.input.optional": "(Optional)",
   "Terra.date.input.required": "Pflichtfeld",
-  "Terra.date.input.monthFormatLabel": "Monat",
+  "Terra.date.input.monthLabel": "Monat",
   "Terra.date.input.monthPlaceholder": "- Auswählen -",
   "Terra.date.input.yearLabel": "Jahr",
   "Terra.date.input.yearFormatLabel": "JJJJ",

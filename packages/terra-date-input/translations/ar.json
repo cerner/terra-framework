@@ -1,7 +1,7 @@
 {
   "Terra.date.input.optional": "(اختياري)",
   "Terra.date.input.required": "مطلوب",
-  "Terra.date.input.monthFormatLabel": "شهر",
+  "Terra.date.input.monthLabel": "شهر",
   "Terra.date.input.monthPlaceholder": "– حدد –",
   "Terra.date.input.yearLabel": "عام",
   "Terra.date.input.yearFormatLabel": "YYYY",

@@ -480,7 +480,7 @@ class DateInput extends React.Component {
       <div className={DateInputMonthWrapperClassNames}>
         <select
           {...this.props.monthAttributes}
-          aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.monthFormatLabel' })}
+          aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })}
           ref={this.monthRef}
           className={DateInputMonthClassNames}
           value={this.state.month}
@@ -662,8 +662,8 @@ class DateInput extends React.Component {
     }
 
     const format = (DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale) === 'month-day-year')
-      ? `(${this.props.intl.formatMessage({ id: 'Terra.date.input.monthFormatLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`
-      : `(${this.props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.monthFormatLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`;
+      ? `(${this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`
+      : `(${this.props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`;
 
     return (
       <div>

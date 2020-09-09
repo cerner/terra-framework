@@ -90,7 +90,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           >
             <select
               aria-describedby="format undefined"
-              aria-label="Terra.date.input.monthFormatLabel"
+              aria-label="Terra.date.input.monthLabel"
               className="month-select"
               disabled={false}
               name="terra-date-month-date-input"
@@ -262,11 +262,11 @@ exports[`DateInput correctly applies the theme context className 1`] = `
             />
           </Input>
           <div
-            aria-label="Date Format: (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+            aria-label="Date Format: (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
             className="format-text"
             id="format"
           >
-            (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+            (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
           </div>
         </div>
       </div>
@@ -293,7 +293,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       >
         <select
           aria-describedby="format undefined"
-          aria-label="Terra.date.input.monthFormatLabel"
+          aria-label="Terra.date.input.monthLabel"
           class="month-select is-placeholder"
           name="terra-date-month-date-input"
         >
@@ -391,11 +391,11 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
         value=""
       />
       <div
-        aria-label="Date Format: (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+        aria-label="Date Format: (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
         class="format-text"
         id="format"
       >
-        (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+        (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
       </div>
     </div>
   </div>
@@ -413,7 +413,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       >
         <select
           aria-describedby="format undefined"
-          aria-label="Terra.date.input.monthFormatLabel"
+          aria-label="Terra.date.input.monthLabel"
           class="month-select is-placeholder"
           name="terra-date-month-date-input-2"
         >
@@ -511,11 +511,11 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
         value=""
       />
       <div
-        aria-label="Date Format: (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+        aria-label="Date Format: (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
         class="format-text"
         id="format"
       >
-        (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+        (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
       </div>
     </div>
   </div>
@@ -533,7 +533,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       >
         <select
           aria-describedby="format undefined"
-          aria-label="Terra.date.input.monthFormatLabel"
+          aria-label="Terra.date.input.monthLabel"
           class="month-select is-placeholder"
           name="terra-date-month-date-input-3"
         >
@@ -631,11 +631,11 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
         value=""
       />
       <div
-        aria-label="Date Format: (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+        aria-label="Date Format: (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
         class="format-text"
         id="format"
       >
-        (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+        (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
       </div>
     </div>
   </div>
@@ -657,7 +657,7 @@ exports[`DateInput should render a date input with a default date 1`] = `
     >
       <select
         aria-describedby="format undefined"
-        aria-label="Terra.date.input.monthFormatLabel"
+        aria-label="Terra.date.input.monthLabel"
         className="month-select"
         disabled={false}
         name="terra-date-month-date-input"
@@ -791,11 +791,11 @@ exports[`DateInput should render a date input with a default date 1`] = `
       value="2000"
     />
     <div
-      aria-label="Date Format: (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+      aria-label="Date Format: (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
       className="format-text"
       id="format"
     >
-      (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+      (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
     </div>
   </div>
 </div>
@@ -821,7 +821,7 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     >
       <select
         aria-describedby="format undefined"
-        aria-label="Terra.date.input.monthFormatLabel"
+        aria-label="Terra.date.input.monthLabel"
         className="month-select is-placeholder"
         disabled={false}
         name="terra-date-month-date-input"
@@ -955,11 +955,11 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
       value=""
     />
     <div
-      aria-label="Date Format: (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+      aria-label="Date Format: (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
       className="format-text"
       id="format"
     >
-      (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+      (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
     </div>
   </div>
 </div>
@@ -980,7 +980,7 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     >
       <select
         aria-describedby="format undefined"
-        aria-label="Terra.date.input.monthFormatLabel"
+        aria-label="Terra.date.input.monthLabel"
         className="month-select is-placeholder"
         disabled={false}
         name="terra-date-month-date-input"
@@ -1114,11 +1114,11 @@ exports[`DateInput should render a date input with onBlur 1`] = `
       value=""
     />
     <div
-      aria-label="Date Format: (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+      aria-label="Date Format: (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
       className="format-text"
       id="format"
     >
-      (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+      (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
     </div>
   </div>
 </div>
@@ -1139,7 +1139,7 @@ exports[`DateInput should render a date input with onChange 1`] = `
     >
       <select
         aria-describedby="format undefined"
-        aria-label="Terra.date.input.monthFormatLabel"
+        aria-label="Terra.date.input.monthLabel"
         className="month-select is-placeholder"
         disabled={false}
         name="terra-date-month-date-input"
@@ -1273,11 +1273,11 @@ exports[`DateInput should render a date input with onChange 1`] = `
       value=""
     />
     <div
-      aria-label="Date Format: (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+      aria-label="Date Format: (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
       className="format-text"
       id="format"
     >
-      (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+      (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
     </div>
   </div>
 </div>
@@ -1298,7 +1298,7 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     >
       <select
         aria-describedby="format undefined"
-        aria-label="Terra.date.input.monthFormatLabel"
+        aria-label="Terra.date.input.monthLabel"
         className="month-select is-placeholder"
         disabled={false}
         name="terra-date-month-date-input"
@@ -1432,11 +1432,11 @@ exports[`DateInput should render a date input with onFocus 1`] = `
       value=""
     />
     <div
-      aria-label="Date Format: (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+      aria-label="Date Format: (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
       className="format-text"
       id="format"
     >
-      (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+      (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
     </div>
   </div>
 </div>
@@ -1457,7 +1457,7 @@ exports[`DateInput should render a default date input 1`] = `
     >
       <select
         aria-describedby="format undefined"
-        aria-label="Terra.date.input.monthFormatLabel"
+        aria-label="Terra.date.input.monthLabel"
         className="month-select is-placeholder"
         disabled={false}
         name="terra-date-month-date-input"
@@ -1591,11 +1591,11 @@ exports[`DateInput should render a default date input 1`] = `
       value=""
     />
     <div
-      aria-label="Date Format: (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+      aria-label="Date Format: (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
       className="format-text"
       id="format"
     >
-      (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+      (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
     </div>
   </div>
 </div>
@@ -1616,7 +1616,7 @@ exports[`DateInput should render a disabled time input 1`] = `
     >
       <select
         aria-describedby="format undefined"
-        aria-label="Terra.date.input.monthFormatLabel"
+        aria-label="Terra.date.input.monthLabel"
         className="month-select is-placeholder disabled"
         disabled={true}
         name="terra-date-month-date-input"
@@ -1750,11 +1750,11 @@ exports[`DateInput should render a disabled time input 1`] = `
       value=""
     />
     <div
-      aria-label="Date Format: (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+      aria-label="Date Format: (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
       className="format-text"
       id="format"
     >
-      (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+      (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
     </div>
   </div>
 </div>
@@ -1952,7 +1952,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                 >
                   <select
                     aria-describedby="format   "
-                    aria-label="Terra.date.input.monthFormatLabel"
+                    aria-label="Terra.date.input.monthLabel"
                     className="month-select"
                     disabled={false}
                     name="terra-date-month-date-input-value"
@@ -2128,11 +2128,11 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
           </DateInput>
         </InjectIntl(DateInput)>
         <div
-          aria-label="Format: (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+          aria-label="Format: (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
           className="help-text"
           id=""
         >
-          (Terra.date.input.monthFormatLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+          (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
         </div>
       </fieldset>
     </DateInputField>
