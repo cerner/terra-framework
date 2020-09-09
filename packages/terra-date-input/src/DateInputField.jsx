@@ -228,11 +228,9 @@ const DateInputField = (props) => {
     </legend>
   );
 
-  let format = `(${intl.formatMessage({ id: 'Terra.date.input.dayPlaceholder' })} ${intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${intl.formatMessage({ id: 'Terra.date.input.yearPlaceholder' })})`;
-
-  if (DateInputUtil.computedDisplayFormat(displayFormat, intl.locale) === 'month-day-year') {
-    format = `(${intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${intl.formatMessage({ id: 'Terra.date.input.dayPlaceholder' })} ${intl.formatMessage({ id: 'Terra.date.input.yearPlaceholder' })})`;
-  }
+  const format = (DateInputUtil.computedDisplayFormat(displayFormat, intl.locale) === 'month-day-year')
+    ? `(${intl.formatMessage({ id: 'Terra.date.input.monthFormatLabel' })} ${intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`
+    : `(${intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${intl.formatMessage({ id: 'Terra.date.input.monthFormatLabel' })} ${intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`;
 
   return (
     <fieldset {...customProps} className={dateInputFieldClasses}>

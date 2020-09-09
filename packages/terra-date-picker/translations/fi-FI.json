@@ -4,7 +4,7 @@
   "Terra.datePicker.openCalendar": "Avaa Kalenteri",
   "Terra.datePicker.closeCalendar": "Kiinni",
   "Terra.datePicker.today": "Tänään",
-  "Terra.datePicker.monthLabel": "Kuukausi",
+  "Terra.datePicker.monthFormatLabel": "Kuukausi",
   "Terra.datePicker.yearLabel": "Vuosi",
   "Terra.datePicker.date": "Ðâté"
 }
