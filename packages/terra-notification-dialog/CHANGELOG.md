@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fix the hazard-high translation for nl and add hazard-medium translations for nl and nl-BE
+
 ## 4.0.0 - (August 27, 2020)
 
 * Breaking Changes
