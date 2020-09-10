@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated wdio screenshots due to changes in time-input.
+
 ## 4.45.0 - (August 18, 2020)
 
 * Changed
