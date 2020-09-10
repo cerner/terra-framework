@@ -253,7 +253,7 @@ const DateInputField = (props) => {
       />
       {isInvalid && error && <div id={errorAriaDescriptionId} className={cx('error-text')}>{error}</div>}
       {help ? (
-        <div id={helpAriaDescriptionId} className={cx('help-text')} aria-label={`Format: ${format}, ${help}`}>
+        <div id={helpAriaDescriptionId} className={cx('help-text')} aria-label={`Date Format: ${format}, ${help}`}>
           {format}
           &nbsp;
           {help}

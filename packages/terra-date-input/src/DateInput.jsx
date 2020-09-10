@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import uuidv4 from 'uuid/v4';
 import { injectIntl, intlShape } from 'react-intl';
 import Input from 'terra-form-input';
 import * as KeyCode from 'keycode-js';
@@ -491,7 +492,7 @@ class DateInput extends React.Component {
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}
           disabled={this.props.disabled}
-          aria-describedby={`format ${this.props.monthAttributes['aria-describedby']}`}
+          aria-describedby={`${this.formatDescriptionId} ${this.props.monthAttributes['aria-describedby']}`}
         >
           <option value="" hidden>{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
@@ -545,7 +546,7 @@ class DateInput extends React.Component {
         isInvalid={this.props.isInvalid}
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        aria-describedby={`format ${this.props.dayAttributes['aria-describedby']}`}
+        aria-describedby={`${this.formatDescriptionId} ${this.props.dayAttributes['aria-describedby']}`}
       />
     );
   }
@@ -584,7 +585,7 @@ class DateInput extends React.Component {
         isInvalid={this.props.isInvalid}
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        aria-describedby={`format ${this.props.yearAttributes['aria-describedby']}`}
+        aria-describedby={`${this.formatDescriptionId} ${this.props.yearAttributes['aria-describedby']}`}
       />
     );
   }
@@ -661,6 +662,8 @@ class DateInput extends React.Component {
       dateValue = `${year}-${month}-${day}`;
     }
 
+    this.formatDescriptionId = (help === undefined) ? `terra-date-picker-description-format-${uuidv4()}` : '';
+
     const format = (DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale) === 'month-day-year')
       ? `(${this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`
       : `(${this.props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`;
@@ -681,7 +684,7 @@ class DateInput extends React.Component {
           />
           {this.formattedRender()}
           { (help === undefined) && (
-          <div id="format" className={cx('format-text')} aria-label={`Date Format: ${format}`}>
+          <div id={this.formatDescriptionId} className={cx('format-text')} aria-label={`Date Format: ${format}`}>
             {format}
           </div>
           )}
