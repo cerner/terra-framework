@@ -183,14 +183,8 @@ class DatePicker extends React.Component {
     if (nextDateValue !== prevState.prevPropsSelectedDate) {
       const nextSelectedDate = DateUtil.createSafeDate(nextDateValue);
 
-      if (nextSelectedDate) {
-        return {
-          selectedDate: nextSelectedDate,
-          prevPropsSelectedDate: nextDateValue,
-        };
-      }
-
       return {
+        selectedDate: nextSelectedDate,
         prevPropsSelectedDate: nextDateValue,
       };
     }
