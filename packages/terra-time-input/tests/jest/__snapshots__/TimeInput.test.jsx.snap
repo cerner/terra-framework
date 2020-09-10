@@ -93,7 +93,7 @@ exports[`correctly applies the theme context className 1`] = `
             value=""
           />
           <Input
-            aria-describedby="terra-time-input-description-format-50b0b56e-3cea-40a6-a0ea-7311801cc777"
+            aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
             aria-label="Terra.timeInput.hours"
             className="time-input-hour"
             disabled={false}
@@ -113,7 +113,7 @@ exports[`correctly applies the theme context className 1`] = `
             value=""
           >
             <input
-              aria-describedby="terra-time-input-description-format-50b0b56e-3cea-40a6-a0ea-7311801cc777"
+              aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.timeInput.hours"
               className="form-input time-input-hour"
               disabled={false}
@@ -136,7 +136,7 @@ exports[`correctly applies the theme context className 1`] = `
             :
           </span>
           <Input
-            aria-describedby="terra-time-input-description-format-50b0b56e-3cea-40a6-a0ea-7311801cc777"
+            aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
             aria-label="Terra.timeInput.minutes"
             className="time-input-minute"
             disabled={false}
@@ -156,7 +156,7 @@ exports[`correctly applies the theme context className 1`] = `
             value=""
           >
             <input
-              aria-describedby="terra-time-input-description-format-50b0b56e-3cea-40a6-a0ea-7311801cc777"
+              aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.timeInput.minutes"
               className="form-input time-input-minute"
               disabled={false}
@@ -177,7 +177,7 @@ exports[`correctly applies the theme context className 1`] = `
         <div
           aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
           className="format-text"
-          id="terra-time-input-description-format-50b0b56e-3cea-40a6-a0ea-7311801cc777"
+          id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
         >
           (Terra.timeInput.hh:Terra.timeInput.mm)
         </div>
@@ -200,7 +200,7 @@ exports[`should ignore invalid times properly 1`] = `
       value=""
     />
     <Input
-      aria-describedby="terra-time-input-description-format-dba4abd6-ea0b-4192-8e1b-d889d28065a8"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour"
       disabled={false}
@@ -225,7 +225,7 @@ exports[`should ignore invalid times properly 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-dba4abd6-ea0b-4192-8e1b-d889d28065a8"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute"
       disabled={false}
@@ -248,7 +248,7 @@ exports[`should ignore invalid times properly 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
-    id="terra-time-input-description-format-dba4abd6-ea0b-4192-8e1b-d889d28065a8"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm)
   </div>
@@ -268,7 +268,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
       value=""
     />
     <Input
-      aria-describedby="terra-time-input-description-format-e53fe7c6-369d-4ba3-a0fd-de929533fc58"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour with-second"
       disabled={false}
@@ -293,7 +293,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-e53fe7c6-369d-4ba3-a0fd-de929533fc58"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute with-second"
       disabled={false}
@@ -318,7 +318,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-e53fe7c6-369d-4ba3-a0fd-de929533fc58"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.seconds"
       className="time-input-second"
       disabled={false}
@@ -341,7 +341,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     className="format-text"
-    id="terra-time-input-description-format-e53fe7c6-369d-4ba3-a0fd-de929533fc58"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)
   </div>
@@ -364,7 +364,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         value=""
       />
       <input
-        aria-describedby="terra-time-input-description-format-fa6e7540-09b2-43a1-a138-e337a74e2a4c"
+        aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.timeInput.hours"
         class="form-input time-input-hour"
         maxlength="2"
@@ -380,7 +380,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         :
       </span>
       <input
-        aria-describedby="terra-time-input-description-format-fa6e7540-09b2-43a1-a138-e337a74e2a4c"
+        aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.timeInput.minutes"
         class="form-input time-input-minute"
         maxlength="2"
@@ -429,7 +429,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     <div
       aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
       class="format-text"
-      id="terra-time-input-description-format-fa6e7540-09b2-43a1-a138-e337a74e2a4c"
+      id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
     >
       (Terra.timeInput.hh:Terra.timeInput.mm)
     </div>
@@ -446,7 +446,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         value=""
       />
       <input
-        aria-describedby="terra-time-input-description-format-924e5130-471a-4d33-af58-d8baedf2e71c"
+        aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.timeInput.hours"
         class="form-input time-input-hour"
         maxlength="2"
@@ -462,7 +462,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         :
       </span>
       <input
-        aria-describedby="terra-time-input-description-format-924e5130-471a-4d33-af58-d8baedf2e71c"
+        aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.timeInput.minutes"
         class="form-input time-input-minute"
         maxlength="2"
@@ -511,7 +511,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     <div
       aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
       class="format-text"
-      id="terra-time-input-description-format-924e5130-471a-4d33-af58-d8baedf2e71c"
+      id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
     >
       (Terra.timeInput.hh:Terra.timeInput.mm)
     </div>
@@ -528,7 +528,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         value=""
       />
       <input
-        aria-describedby="terra-time-input-description-format-631c34ef-28d6-445d-ac55-1c0db818a593"
+        aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.timeInput.hours"
         class="form-input time-input-hour"
         maxlength="2"
@@ -544,7 +544,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         :
       </span>
       <input
-        aria-describedby="terra-time-input-description-format-631c34ef-28d6-445d-ac55-1c0db818a593"
+        aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.timeInput.minutes"
         class="form-input time-input-minute"
         maxlength="2"
@@ -593,7 +593,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     <div
       aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
       class="format-text"
-      id="terra-time-input-description-format-631c34ef-28d6-445d-ac55-1c0db818a593"
+      id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
     >
       (Terra.timeInput.hh:Terra.timeInput.mm)
     </div>
@@ -645,7 +645,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       "calls": Array [
         Array [
           <input
-            aria-describedby="terra-time-input-description-format-9be76e11-2647-48e6-84e0-9190da6efd8f"
+            aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
             aria-label="Terra.timeInput.hours"
             class="form-input time-input-hour"
             maxlength="2"
@@ -682,7 +682,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         value=""
       />
       <Input
-        aria-describedby="terra-time-input-description-format-9be76e11-2647-48e6-84e0-9190da6efd8f"
+        aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.timeInput.hours"
         className="time-input-hour"
         disabled={false}
@@ -702,7 +702,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         value=""
       >
         <input
-          aria-describedby="terra-time-input-description-format-9be76e11-2647-48e6-84e0-9190da6efd8f"
+          aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
           aria-label="Terra.timeInput.hours"
           className="form-input time-input-hour"
           disabled={false}
@@ -725,7 +725,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         :
       </span>
       <Input
-        aria-describedby="terra-time-input-description-format-9be76e11-2647-48e6-84e0-9190da6efd8f"
+        aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.timeInput.minutes"
         className="time-input-minute"
         disabled={false}
@@ -745,7 +745,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         value=""
       >
         <input
-          aria-describedby="terra-time-input-description-format-9be76e11-2647-48e6-84e0-9190da6efd8f"
+          aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
           aria-label="Terra.timeInput.minutes"
           className="form-input time-input-minute"
           disabled={false}
@@ -766,7 +766,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
     <div
       aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
       className="format-text"
-      id="terra-time-input-description-format-9be76e11-2647-48e6-84e0-9190da6efd8f"
+      id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
     >
       (Terra.timeInput.hh:Terra.timeInput.mm)
     </div>
@@ -787,7 +787,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
       value=""
     />
     <Input
-      aria-describedby="terra-time-input-description-format-3152dba5-89dd-4893-ae76-be50ab9f9501"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour with-second"
       disabled={false}
@@ -812,7 +812,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-3152dba5-89dd-4893-ae76-be50ab9f9501"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute with-second"
       disabled={false}
@@ -837,7 +837,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-3152dba5-89dd-4893-ae76-be50ab9f9501"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.seconds"
       className="time-input-second"
       disabled={false}
@@ -887,7 +887,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     className="format-text"
-    id="terra-time-input-description-format-3152dba5-89dd-4893-ae76-be50ab9f9501"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)
   </div>
@@ -907,7 +907,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       value=""
     />
     <input
-      aria-describedby="terra-time-input-description-format-045ec847-304b-4212-b07d-522bffa21825"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       class="form-input time-input-hour with-second"
       maxlength="2"
@@ -923,7 +923,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       :
     </span>
     <input
-      aria-describedby="terra-time-input-description-format-045ec847-304b-4212-b07d-522bffa21825"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       class="form-input time-input-minute with-second"
       maxlength="2"
@@ -939,7 +939,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       :
     </span>
     <input
-      aria-describedby="terra-time-input-description-format-045ec847-304b-4212-b07d-522bffa21825"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.seconds"
       class="form-input time-input-second"
       maxlength="2"
@@ -988,7 +988,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     class="format-text"
-    id="terra-time-input-description-format-045ec847-304b-4212-b07d-522bffa21825"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)
   </div>
@@ -1008,7 +1008,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       value=""
     />
     <input
-      aria-describedby="terra-time-input-description-format-12910a95-7717-4f29-a861-0feed482d302"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       class="form-input time-input-hour"
       maxlength="2"
@@ -1024,7 +1024,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       :
     </span>
     <input
-      aria-describedby="terra-time-input-description-format-12910a95-7717-4f29-a861-0feed482d302"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       class="form-input time-input-minute"
       maxlength="2"
@@ -1073,7 +1073,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
     class="format-text"
-    id="terra-time-input-description-format-12910a95-7717-4f29-a861-0feed482d302"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm)
   </div>
@@ -1093,7 +1093,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       value=""
     />
     <input
-      aria-describedby="terra-time-input-description-format-410f1c12-1e86-41a2-a315-8f53b10f594b"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       class="form-input time-input-hour"
       maxlength="2"
@@ -1109,7 +1109,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       :
     </span>
     <input
-      aria-describedby="terra-time-input-description-format-410f1c12-1e86-41a2-a315-8f53b10f594b"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       class="form-input time-input-minute"
       maxlength="2"
@@ -1123,7 +1123,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
     class="format-text"
-    id="terra-time-input-description-format-410f1c12-1e86-41a2-a315-8f53b10f594b"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm)
   </div>
@@ -1143,7 +1143,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       value=""
     />
     <input
-      aria-describedby="terra-time-input-description-format-937916b9-5fc5-4ac9-86d5-51012f9c2401"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       class="form-input time-input-hour with-second"
       maxlength="2"
@@ -1159,7 +1159,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       :
     </span>
     <input
-      aria-describedby="terra-time-input-description-format-937916b9-5fc5-4ac9-86d5-51012f9c2401"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       class="form-input time-input-minute with-second"
       maxlength="2"
@@ -1175,7 +1175,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       :
     </span>
     <input
-      aria-describedby="terra-time-input-description-format-937916b9-5fc5-4ac9-86d5-51012f9c2401"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.seconds"
       class="form-input time-input-second"
       maxlength="2"
@@ -1189,7 +1189,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     class="format-text"
-    id="terra-time-input-description-format-937916b9-5fc5-4ac9-86d5-51012f9c2401"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)
   </div>
@@ -1209,7 +1209,7 @@ exports[`should render a default time input 1`] = `
       value=""
     />
     <Input
-      aria-describedby="terra-time-input-description-format-6a3f05ee-dfa0-4a7c-89c9-14b8dbdc1899"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour"
       disabled={false}
@@ -1234,7 +1234,7 @@ exports[`should render a default time input 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-6a3f05ee-dfa0-4a7c-89c9-14b8dbdc1899"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute"
       disabled={false}
@@ -1257,7 +1257,7 @@ exports[`should render a default time input 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
-    id="terra-time-input-description-format-6a3f05ee-dfa0-4a7c-89c9-14b8dbdc1899"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm)
   </div>
@@ -1277,7 +1277,7 @@ exports[`should render a disabled time input 1`] = `
       value=""
     />
     <Input
-      aria-describedby="terra-time-input-description-format-9d4291a1-94ed-4838-9a43-e1736fff5d9a"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour"
       disabled={true}
@@ -1302,7 +1302,7 @@ exports[`should render a disabled time input 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-9d4291a1-94ed-4838-9a43-e1736fff5d9a"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute"
       disabled={true}
@@ -1325,7 +1325,7 @@ exports[`should render a disabled time input 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
-    id="terra-time-input-description-format-9d4291a1-94ed-4838-9a43-e1736fff5d9a"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm)
   </div>
@@ -1345,7 +1345,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
       value=""
     />
     <Input
-      aria-describedby="terra-time-input-description-format-6f32d506-2d90-4bbc-baab-ca1e19a690eb"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour"
       disabled={false}
@@ -1370,7 +1370,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-6f32d506-2d90-4bbc-baab-ca1e19a690eb"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute"
       disabled={false}
@@ -1420,7 +1420,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
-    id="terra-time-input-description-format-6f32d506-2d90-4bbc-baab-ca1e19a690eb"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm)
   </div>
@@ -1440,7 +1440,7 @@ exports[`should render a time input with a default time 1`] = `
       value="T10:45"
     />
     <Input
-      aria-describedby="terra-time-input-description-format-ac276034-786f-449c-9fca-9c3a06fed5be"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour"
       disabled={false}
@@ -1465,7 +1465,7 @@ exports[`should render a time input with a default time 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-ac276034-786f-449c-9fca-9c3a06fed5be"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute"
       disabled={false}
@@ -1488,7 +1488,7 @@ exports[`should render a time input with a default time 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
-    id="terra-time-input-description-format-ac276034-786f-449c-9fca-9c3a06fed5be"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm)
   </div>
@@ -1508,7 +1508,7 @@ exports[`should render a time input with custom attributes 1`] = `
       value=""
     />
     <Input
-      aria-describedby="terra-time-input-description-format-3339a889-7622-47d5-a80a-6a4f70a9d3e3"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour"
       disabled={false}
@@ -1534,7 +1534,7 @@ exports[`should render a time input with custom attributes 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-3339a889-7622-47d5-a80a-6a4f70a9d3e3"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute"
       disabled={false}
@@ -1558,7 +1558,7 @@ exports[`should render a time input with custom attributes 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
-    id="terra-time-input-description-format-3339a889-7622-47d5-a80a-6a4f70a9d3e3"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm)
   </div>
@@ -1578,7 +1578,7 @@ exports[`should render a time input with onBlur 1`] = `
       value=""
     />
     <Input
-      aria-describedby="terra-time-input-description-format-f8089930-f436-47ba-a2a2-2b38393501c5"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour"
       disabled={false}
@@ -1603,7 +1603,7 @@ exports[`should render a time input with onBlur 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-f8089930-f436-47ba-a2a2-2b38393501c5"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute"
       disabled={false}
@@ -1626,7 +1626,7 @@ exports[`should render a time input with onBlur 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
-    id="terra-time-input-description-format-f8089930-f436-47ba-a2a2-2b38393501c5"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm)
   </div>
@@ -1646,7 +1646,7 @@ exports[`should render a time input with onChange 1`] = `
       value=""
     />
     <Input
-      aria-describedby="terra-time-input-description-format-44019de4-53a8-4d42-81ff-a0864d3c1f0c"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour"
       disabled={false}
@@ -1671,7 +1671,7 @@ exports[`should render a time input with onChange 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-44019de4-53a8-4d42-81ff-a0864d3c1f0c"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute"
       disabled={false}
@@ -1694,7 +1694,7 @@ exports[`should render a time input with onChange 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
-    id="terra-time-input-description-format-44019de4-53a8-4d42-81ff-a0864d3c1f0c"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm)
   </div>
@@ -1714,7 +1714,7 @@ exports[`should render a time input with onFocus 1`] = `
       value=""
     />
     <Input
-      aria-describedby="terra-time-input-description-format-6a7c7ca9-eac6-496d-bb28-cfbf31286e69"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour"
       disabled={false}
@@ -1739,7 +1739,7 @@ exports[`should render a time input with onFocus 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-6a7c7ca9-eac6-496d-bb28-cfbf31286e69"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute"
       disabled={false}
@@ -1762,7 +1762,7 @@ exports[`should render a time input with onFocus 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
-    id="terra-time-input-description-format-6a7c7ca9-eac6-496d-bb28-cfbf31286e69"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm)
   </div>
@@ -1782,7 +1782,7 @@ exports[`should render a time input with seconds input 1`] = `
       value=""
     />
     <Input
-      aria-describedby="terra-time-input-description-format-48de5f37-db87-4b1c-aca4-0f1856da5989"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour with-second"
       disabled={false}
@@ -1807,7 +1807,7 @@ exports[`should render a time input with seconds input 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-48de5f37-db87-4b1c-aca4-0f1856da5989"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute with-second"
       disabled={false}
@@ -1832,7 +1832,7 @@ exports[`should render a time input with seconds input 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-48de5f37-db87-4b1c-aca4-0f1856da5989"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.seconds"
       className="time-input-second"
       disabled={false}
@@ -1855,7 +1855,7 @@ exports[`should render a time input with seconds input 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     className="format-text"
-    id="terra-time-input-description-format-48de5f37-db87-4b1c-aca4-0f1856da5989"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)
   </div>
@@ -1875,7 +1875,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
       value="T12:12:12"
     />
     <Input
-      aria-describedby="terra-time-input-description-format-6f008641-c519-4b5d-bb57-e5d052e812af"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour with-second"
       disabled={false}
@@ -1900,7 +1900,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-6f008641-c519-4b5d-bb57-e5d052e812af"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute with-second"
       disabled={false}
@@ -1925,7 +1925,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-6f008641-c519-4b5d-bb57-e5d052e812af"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.seconds"
       className="time-input-second"
       disabled={false}
@@ -1948,7 +1948,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     className="format-text"
-    id="terra-time-input-description-format-6f008641-c519-4b5d-bb57-e5d052e812af"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)
   </div>
@@ -1968,7 +1968,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
       value=""
     />
     <Input
-      aria-describedby="terra-time-input-description-format-f358559c-bcd4-42c6-9119-b157a69b9c4d"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       className="time-input-hour with-second"
       disabled={false}
@@ -1994,7 +1994,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-f358559c-bcd4-42c6-9119-b157a69b9c4d"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       className="time-input-minute with-second"
       disabled={false}
@@ -2020,7 +2020,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
       :
     </span>
     <Input
-      aria-describedby="terra-time-input-description-format-f358559c-bcd4-42c6-9119-b157a69b9c4d"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.seconds"
       className="time-input-second"
       disabled={false}
@@ -2044,7 +2044,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     className="format-text"
-    id="terra-time-input-description-format-f358559c-bcd4-42c6-9119-b157a69b9c4d"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)
   </div>
@@ -2064,7 +2064,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       value=""
     />
     <input
-      aria-describedby="terra-time-input-description-format-2437b52c-2996-4e42-aa97-c9c516ba66e5"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       class="form-input time-input-hour"
       id="id-2"
@@ -2081,7 +2081,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       :
     </span>
     <input
-      aria-describedby="terra-time-input-description-format-2437b52c-2996-4e42-aa97-c9c516ba66e5"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       class="form-input time-input-minute"
       id="id-1"
@@ -2096,7 +2096,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
     class="format-text"
-    id="terra-time-input-description-format-2437b52c-2996-4e42-aa97-c9c516ba66e5"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm)
   </div>
@@ -2116,7 +2116,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       value=""
     />
     <input
-      aria-describedby="terra-time-input-description-format-c51d3231-2c29-4270-9efa-57f146bfb4ca"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.hours"
       class="form-input time-input-hour with-second"
       id="id-2"
@@ -2133,7 +2133,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       :
     </span>
     <input
-      aria-describedby="terra-time-input-description-format-c51d3231-2c29-4270-9efa-57f146bfb4ca"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.minutes"
       class="form-input time-input-minute with-second"
       id="id-1"
@@ -2150,7 +2150,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       :
     </span>
     <input
-      aria-describedby="terra-time-input-description-format-c51d3231-2c29-4270-9efa-57f146bfb4ca"
+      aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.timeInput.seconds"
       class="form-input time-input-second"
       id="id-0"
@@ -2165,7 +2165,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
   <div
     aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     class="format-text"
-    id="terra-time-input-description-format-c51d3231-2c29-4270-9efa-57f146bfb4ca"
+    id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
     (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)
   </div>
