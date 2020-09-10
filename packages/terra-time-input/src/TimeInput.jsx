@@ -6,6 +6,7 @@ import ThemeContext from 'terra-theme-context';
 import Input from 'terra-form-input';
 import ButtonGroup from 'terra-button-group';
 import { injectIntl, intlShape } from 'react-intl';
+import uuidv4 from 'uuid/v4';
 
 import * as KeyCode from 'keycode-js';
 import TimeUtil from './TimeUtil';
@@ -703,7 +704,6 @@ class TimeInput extends React.Component {
       { 'is-focused': this.state.isFocused },
       { 'is-invalid': isInvalid },
       { 'is-incomplete': (isIncomplete && required && !isInvalid && !isInvalidMeridiem) },
-      theme.className,
     ),
     customProps.className);
 
@@ -724,11 +724,17 @@ class TimeInput extends React.Component {
       { 'initial-focus': this.state.secondInitialFocused },
     ]);
 
+    const formatDescriptionId = `terra-time-input-description-format-${uuidv4()}`;
+
+    const format = showSeconds
+      ? `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })}:${intl.formatMessage({ id: 'Terra.timeInput.ss' })})`
+      : `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })})`;
+
     return (
       <div
         {...customProps}
         ref={this.timeInputContainer}
-        className={cx('time-input-container')}
+        className={cx('time-input-container', theme.className)}
       >
         <div className={timeInputClassNames}>
           <input
@@ -750,7 +756,6 @@ class TimeInput extends React.Component {
             type="text"
             value={this.state.hour}
             name={'terra-time-hour-'.concat(name)}
-            placeholder={intl.formatMessage({ id: 'Terra.timeInput.hh' })}
             maxLength="2"
             onChange={this.handleHourChange}
             onKeyDown={this.handleHourInputKeyDown}
@@ -759,6 +764,7 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             disabled={disabled}
+            aria-describedby={formatDescriptionId}
           />
           <span className={cx('time-spacer')}>:</span>
           <Input
@@ -770,7 +776,6 @@ class TimeInput extends React.Component {
             type="text"
             value={this.state.minute}
             name={'terra-time-minute-'.concat(name)}
-            placeholder={intl.formatMessage({ id: 'Terra.timeInput.mm' })}
             maxLength="2"
             onChange={this.handleMinuteChange}
             onKeyDown={this.handleMinuteInputKeyDown}
@@ -779,6 +784,7 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             disabled={disabled}
+            aria-describedby={formatDescriptionId}
           />
           {showSeconds && (
             <React.Fragment>
@@ -792,7 +798,6 @@ class TimeInput extends React.Component {
                 type="text"
                 value={this.state.second}
                 name={'terra-time-second-'.concat(name)}
-                placeholder={intl.formatMessage({ id: 'Terra.timeInput.ss' })}
                 maxLength="2"
                 onChange={this.handleSecondChange}
                 onKeyDown={this.handleSecondInputKeyDown}
@@ -801,6 +806,7 @@ class TimeInput extends React.Component {
                 size="2"
                 pattern="\d*"
                 disabled={disabled}
+                aria-describedby={formatDescriptionId}
               />
             </React.Fragment>
           )}
@@ -825,6 +831,9 @@ class TimeInput extends React.Component {
             />
           </ButtonGroup>
         )}
+        <div id={formatDescriptionId} className={cx('format-text')} aria-label={`Time Format: ${format}`}>
+          {format}
+        </div>
       </div>
     );
     /* eslint-enable jsx-a11y/no-static-element-interactions */
