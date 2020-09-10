@@ -5,7 +5,6 @@ import React from 'react';
 import { shallowWithIntl, mountWithIntl, renderWithIntl } from 'terra-enzyme-intl';
 import * as KeyCode from 'keycode-js';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
-import uuid from 'uuid/v4';
 import TimeInput from '../../lib/TimeInput';
 import TimeUtil from '../../lib/TimeUtil';
 
