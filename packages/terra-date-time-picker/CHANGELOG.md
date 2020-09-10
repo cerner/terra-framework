@@ -5,6 +5,8 @@
 * Changed
   * Update `timeVariant` prop description to include `es` in locales supporting only 24 hour format.
 
+## 4.46.0 - (September 10, 2020)
+
 * Fixed
   * Fix to clear out invalid date value when time input selected in date-time-picker.
 
