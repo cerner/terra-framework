@@ -1,6 +1,6 @@
 {
-  "Terra.notification.dialog.hazard-high": "Waarschuwing",
-  "Terra.notification.dialog.error": "Fout",
   "Terra.notification.dialog.hazard-low": "Informatie",
-  "Terra.notification.dialog.success": "Succes"
+  "Terra.notification.dialog.error": "Fout",
+  "Terra.notification.dialog.hazard-medium": "Waarschuwing",
+  "Terra.notification.dialog.hazard-high": "Waarschuwing"
 }
