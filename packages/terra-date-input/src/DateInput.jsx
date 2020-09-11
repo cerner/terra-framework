@@ -669,26 +669,24 @@ class DateInput extends React.Component {
       : `(${this.props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`;
 
     return (
-      <div>
-        <div
-          {...customProps}
-          className={dateInputClassNames}
-          ref={(element) => { this.dateInputContainer.current = element; if (refCallback) { refCallback(element); } }}
-        >
-          <input
-            // Create a hidden input for storing the name and value attributes to use when submitting the form.
-            // The data stored in the value attribute will be the visible date in the date input but formatted in YYYY-MM-DD format.
-            type="hidden"
-            name={name}
-            value={dateValue}
-          />
-          {this.formattedRender()}
-          { (help === undefined) && (
-          <div id={this.formatDescriptionId} className={cx('format-text')} aria-label={`Date Format: ${format}`}>
-            {format}
-          </div>
-          )}
+      <div
+        {...customProps}
+        className={dateInputClassNames}
+        ref={(element) => { this.dateInputContainer.current = element; if (refCallback) { refCallback(element); } }}
+      >
+        <input
+          // Create a hidden input for storing the name and value attributes to use when submitting the form.
+          // The data stored in the value attribute will be the visible date in the date input but formatted in YYYY-MM-DD format.
+          type="hidden"
+          name={name}
+          value={dateValue}
+        />
+        {this.formattedRender()}
+        { (help === undefined) && (
+        <div id={this.formatDescriptionId} className={cx('format-text')} aria-label={`Date Format: ${format}`}>
+          {format}
         </div>
+        )}
       </div>
     );
   }
