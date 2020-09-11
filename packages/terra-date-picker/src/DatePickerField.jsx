@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
+import { injectIntl, intlShape } from 'react-intl';
 import IconError from 'terra-icon/lib/icon/IconError';
 import DatePicker from './DatePicker';
 
@@ -47,6 +48,11 @@ const propTypes = {
    * Do not set the name in inputAttribute as it will be ignored.
    */
   inputAttributes: PropTypes.object,
+  /**
+   * @private
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: intlShape.isRequired,
   /**
   * Whether the field displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
   */
@@ -184,6 +190,7 @@ const DatePickerField = (props) => {
     isInline,
     isLabelHidden,
     includeDates,
+    intl,
     label,
     labelAttrs,
     maxDate,
@@ -222,13 +229,25 @@ const DatePickerField = (props) => {
     mergedInputAttrs = { 'aria-describedby': ariaDescriptionIds, ...inputAttributes };
   }
 
+  const helpLabel = help ? (
+    <div id="format" aria-label={`Date Format: ${intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })}, ${help}`}>
+      {`(${intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })})`}
+      &nbsp;
+      {help}
+    </div>
+  ) : (
+    <div id="format" aria-label={`Date Format: ${intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })}`}>
+      {`(${intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })})`}
+    </div>
+  );
+
   return (
     <Field
       {...customProps}
       label={label}
       labelAttrs={labelAttrs}
       error={error}
-      help={help}
+      help={helpLabel}
       hideRequired={hideRequired}
       required={required}
       showOptional={showOptional}
@@ -244,6 +263,7 @@ const DatePickerField = (props) => {
         inputAttribute={mergedInputAttrs}
         excludeDates={excludeDates}
         filterDate={filterDate}
+        help={help}
         includeDates={includeDates}
         isInvalid={isInvalid}
         isIncomplete={isIncomplete}
@@ -268,4 +288,4 @@ const DatePickerField = (props) => {
 DatePickerField.propTypes = propTypes;
 DatePickerField.defaultProps = defaultProps;
 
-export default DatePickerField;
+export default injectIntl(DatePickerField);

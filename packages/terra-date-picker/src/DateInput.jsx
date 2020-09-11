@@ -4,6 +4,7 @@ import Button from 'terra-button';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
 import { injectIntl, intlShape } from 'react-intl';
+import uuidv4 from 'uuid/v4';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 
@@ -20,6 +21,11 @@ const propTypes = {
    * Callback ref to pass into the calendar button dom element.
    */
   buttonRefCallback: PropTypes.func,
+  /**
+   * @private
+   * To check if help element is provided by the field or not.
+   */
+  help: PropTypes.node,
   /**
    * Custom input attributes to apply to the date input.
    */
@@ -66,10 +72,6 @@ const propTypes = {
    */
   onKeyDown: PropTypes.func,
   /**
-   * The placeholder text to display in the date input.
-   */
-  placeholder: PropTypes.string,
-  /**
    * Whether or not the date is required.
    */
   required: PropTypes.bool,
@@ -101,7 +103,6 @@ const defaultProps = {
   onButtonFocus: undefined,
   onKeyDown: undefined,
   required: false,
-  placeholder: undefined,
   value: undefined,
   ariaLabel: undefined,
 };
@@ -148,6 +149,7 @@ class DatePickerInput extends React.Component {
   render() {
     const {
       buttonRefCallback,
+      help,
       inputAttributes,
       intl,
       isIncomplete,
@@ -159,7 +161,6 @@ class DatePickerInput extends React.Component {
       onFocus,
       onButtonFocus,
       onKeyDown,
-      placeholder,
       required,
       value,
       ariaLabel,
@@ -188,42 +189,50 @@ class DatePickerInput extends React.Component {
     const theme = this.context;
 
     const label = this.props.ariaLabel ? this.props.ariaLabel : intl.formatMessage({ id: 'Terra.datePicker.date' });
+    this.formatDescriptionId = (help === undefined) ? `terra-date-picker-description-format-${uuidv4()}` : '';
 
     return (
-      <div className={cx('custom-input', theme.className)}>
-        <input
-          // Create a hidden input for storing the name and value attributes to use when submitting the form.
-          // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
-          data-terra-date-input-hidden
-          type="hidden"
-          name={name}
-          value={dateValue}
-        />
-        <Input
-          {...additionalInputProps}
-          className={inputClasses}
-          type="text"
-          name={'terra-date-'.concat(name)}
-          value={value}
-          onChange={this.handleOnChange}
-          placeholder={placeholder}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
-        />
-        <Button
-          className={buttonClasses}
-          text={buttonText}
-          onClick={this.handleOnButtonClick}
-          onKeyDown={this.handleOnKeyDown}
-          icon={Icon}
-          isIconOnly
-          isCompact
-          isDisabled={additionalInputProps.disabled}
-          onBlur={onBlur}
-          onFocus={onButtonFocus}
-          refCallback={buttonRefCallback}
-        />
+      <div className={cx(theme.className)}>
+        <div className={cx('custom-input')}>
+          <input
+            // Create a hidden input for storing the name and value attributes to use when submitting the form.
+            // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
+            data-terra-date-input-hidden
+            type="hidden"
+            name={name}
+            value={dateValue}
+          />
+          <Input
+            {...additionalInputProps}
+            className={inputClasses}
+            type="text"
+            name={'terra-date-'.concat(name)}
+            value={value}
+            onChange={this.handleOnChange}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
+            aria-describedby={this.formatDescriptionId}
+          />
+          <Button
+            className={buttonClasses}
+            text={buttonText}
+            onClick={this.handleOnButtonClick}
+            onKeyDown={this.handleOnKeyDown}
+            icon={Icon}
+            isIconOnly
+            isCompact
+            isDisabled={additionalInputProps.disabled}
+            onBlur={onBlur}
+            onFocus={onButtonFocus}
+            refCallback={buttonRefCallback}
+          />
+        </div>
+        { (help === undefined) && (
+        <div id={this.formatDescriptionId} className={cx('format-text')} aria-label={`Date Format: ${intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })}`}>
+          {`(${intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })})`}
+        </div>
+        )}
       </div>
     );
   }

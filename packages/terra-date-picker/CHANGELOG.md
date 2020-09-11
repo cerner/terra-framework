@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+* Removed
+  * Removed `placeholder`.
+
+* Added
+  * Added format to be displayed for both `DatePicker` and `DatePickerField`.
+
 ## 4.46.0 - (September 10, 2020)
 
 * Fixed
