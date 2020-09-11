@@ -8,6 +8,9 @@
 * Added
   * Added format to be displayed under the time-input.
 
+* Fixed
+  * Fix to allow only 24 hour format for `es` locale.
+
 ## 4.31.0 - (August 4, 2020)
 
 * Changed
