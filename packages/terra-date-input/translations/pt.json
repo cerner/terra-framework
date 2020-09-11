@@ -19,5 +19,6 @@
   "Terra.date.input.september": "Setembro",
   "Terra.date.input.october": "Outubro",
   "Terra.date.input.november": "Novembro",
-  "Terra.date.input.december": "Dezembro"
+  "Terra.date.input.december": "Dezembro",
+  "Terra.date.input.dateFormatLabel": "Formato da data:"
 }
