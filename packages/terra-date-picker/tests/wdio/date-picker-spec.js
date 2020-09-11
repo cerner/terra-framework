@@ -457,19 +457,6 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     Terra.it.matchesScreenshot('ordinal date not set');
-
-    it('Open the date picker', () => {
-      browser.click('[class*="button"]');
-    });
-
-    Terra.it.matchesScreenshot('picker with ordinal date not set', { selector: '[data-terra-date-picker-calendar]' });
-
-    it('Select date', () => {
-      browser.keys('ArrowDown');
-      browser.keys('Enter');
-    });
-
-    Terra.it.matchesScreenshot('date selected');
   });
 
   describe('Remounts component', () => {

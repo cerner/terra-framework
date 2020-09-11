@@ -261,8 +261,9 @@ class TimeUtil {
    */
   static getVariantFromLocale(props) {
     const { intl, variant } = props;
+    const locale24Hr = ['de', 'es-ES', 'es', 'fi-FI', 'fr-FR', 'fr', 'nl-BE', 'nl', 'pt-BR', 'pt', 'sv-SE', 'sv'];
 
-    if (!intl.messages['Terra.timeInput.am'] || !intl.messages['Terra.timeInput.pm']) {
+    if (locale24Hr.includes(intl.locale)) {
       return this.FORMAT_24_HOUR;
     }
 
