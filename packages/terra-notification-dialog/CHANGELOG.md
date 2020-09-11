@@ -2,6 +2,36 @@
 
 ## Unreleased
 
+## 4.1.0 - (September 10, 2020)
+
+* Fixed
+  * Fix the hazard-high translation for nl and add hazard-medium translations for nl and nl-BE
+
+## 4.0.0 - (August 27, 2020)
+
+* Breaking Changes
+  * See [Upgrade Guide](/components/terra-notification-dialog/notification-dialog/upgrade-guide#changes-from-version-3-to-version-4) for more information.
+
+* Added
+  * Added `dialogTitle` prop to replace `title` prop
+  * Added `custom` prop to set custom variant pieces
+
+* Changed
+  * Relaxed `isOpen` prop to be optional and set default value of false
+  * Variants
+    * Updated `variant` prop to be required and set default value to undefined
+    * Removed `variant="success"` / `variant={NotificationDialogVariants.SUCCESS}` from variant options
+  * Updated & backfilled orion-fusion-theme and clinical-lowlight-theme
+
+* Removed
+  * Removed `title` prop`
+  * Removed `header` prop - API no longer allows overriding default header (signal words)
+  * Removed `customIcon` prop - set custom.iconClassName instead
+  * Removed deprecated `primaryAction` prop - use `acceptAction` prop instead
+  * Removed deprecated `secondaryAction` prop - use `rejectAction` prop instead
+  * Removed deprecated `message` prop - use `startMessage` prop instead
+  * Removed NotificationDialogVariants
+
 ## 3.40.0 - (August 18, 2020)
 
 * Changed

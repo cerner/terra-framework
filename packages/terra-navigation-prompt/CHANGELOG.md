@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 1.41.0 - (September 10, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.40.0 - (August 27, 2020)
+
+* Changed
+  * Bump terra-notification-dialog version from ^3 to ^4
+
 ## 1.39.0 - (August 18, 2020)
 
 * Changed
