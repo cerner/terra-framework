@@ -4,6 +4,7 @@ import Button from 'terra-button';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
 import { injectIntl, intlShape } from 'react-intl';
+import uuidv4 from 'uuid/v4';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 
@@ -188,6 +189,7 @@ class DatePickerInput extends React.Component {
     const theme = this.context;
 
     const label = this.props.ariaLabel ? this.props.ariaLabel : intl.formatMessage({ id: 'Terra.datePicker.date' });
+    this.formatDescriptionId = (help === undefined) ? `terra-date-picker-description-format-${uuidv4()}` : '';
 
     return (
       <div className={cx(theme.className)}>
@@ -210,7 +212,7 @@ class DatePickerInput extends React.Component {
             onFocus={onFocus}
             onBlur={onBlur}
             ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
-            aria-describedby="format"
+            aria-describedby={this.formatDescriptionId}
           />
           <Button
             className={buttonClasses}
