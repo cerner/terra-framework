@@ -229,15 +229,17 @@ const DatePickerField = (props) => {
     mergedInputAttrs = { 'aria-describedby': ariaDescriptionIds, ...inputAttributes };
   }
 
+  const format = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
+
   const helpLabel = help ? (
-    <div id="format" aria-label={`Date Format: ${intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })}, ${help}`}>
-      {`(${intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })})`}
+    <div id="format" aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}, ${help}`}>
+      {`(${format}})`}
       &nbsp;
       {help}
     </div>
   ) : (
-    <div id="format" aria-label={`Date Format: ${intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })}`}>
-      {`(${intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })})`}
+    <div id="format" aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}`}>
+      {`(${format})`}
     </div>
   );
 
@@ -263,7 +265,7 @@ const DatePickerField = (props) => {
         inputAttribute={mergedInputAttrs}
         excludeDates={excludeDates}
         filterDate={filterDate}
-        help={help}
+        useExternalFormatMask
         includeDates={includeDates}
         isInvalid={isInvalid}
         isIncomplete={isIncomplete}
