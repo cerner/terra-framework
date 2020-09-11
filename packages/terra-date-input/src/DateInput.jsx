@@ -664,9 +664,7 @@ class DateInput extends React.Component {
 
     this.formatDescriptionId = (help === undefined) ? `terra-date-picker-description-format-${uuidv4()}` : '';
 
-    const format = (DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale) === 'month-day-year')
-      ? `(${this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`
-      : `(${this.props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${this.props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`;
+    const format = DateInputUtil.getDateFormat(this.props);
 
     return (
       <div
