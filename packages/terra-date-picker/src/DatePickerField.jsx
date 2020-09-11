@@ -233,7 +233,7 @@ const DatePickerField = (props) => {
 
   const helpLabel = help ? (
     <div id="format" aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}, ${help}`}>
-      {`(${format}})`}
+      {`(${format})`}
       &nbsp;
       {help}
     </div>
