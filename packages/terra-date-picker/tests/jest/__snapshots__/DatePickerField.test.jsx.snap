@@ -163,7 +163,7 @@ exports[`should render a DatePickerField with props 1`] = `
           aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
           id="format"
         >
-          (Terra.datePicker.dateFormat})
+          (Terra.datePicker.dateFormat)
            
           Help
         </div>
@@ -715,7 +715,7 @@ exports[`should render a DatePickerField with props 1`] = `
             aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
             id="format"
           >
-            (Terra.datePicker.dateFormat})
+            (Terra.datePicker.dateFormat)
              
             Help
           </div>
@@ -1460,7 +1460,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
           aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
           id="format"
         >
-          (Terra.datePicker.dateFormat})
+          (Terra.datePicker.dateFormat)
            
           Help
         </div>
@@ -2000,7 +2000,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
             aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
             id="format"
           >
-            (Terra.datePicker.dateFormat})
+            (Terra.datePicker.dateFormat)
              
             Help
           </div>
