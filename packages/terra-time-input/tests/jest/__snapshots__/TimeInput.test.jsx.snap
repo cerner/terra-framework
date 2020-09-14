@@ -175,7 +175,7 @@ exports[`correctly applies the theme context className 1`] = `
           </Input>
         </div>
         <div
-          aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+          aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
           className="format-text"
           id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
         >
@@ -246,7 +246,7 @@ exports[`should ignore invalid times properly 1`] = `
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -339,7 +339,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -427,7 +427,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
       </button>
     </div>
     <div
-      aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+      aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
       class="format-text"
       id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
     >
@@ -509,7 +509,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
       </button>
     </div>
     <div
-      aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+      aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
       class="format-text"
       id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
     >
@@ -591,7 +591,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
       </button>
     </div>
     <div
-      aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+      aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
       class="format-text"
       id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
     >
@@ -764,7 +764,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       </Input>
     </div>
     <div
-      aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+      aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
       className="format-text"
       id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
     >
@@ -885,7 +885,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
     />
   </ButtonGroup>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -986,7 +986,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
     </button>
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     class="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1071,7 +1071,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
     </button>
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
     class="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1121,7 +1121,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
     class="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1187,7 +1187,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     class="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1255,7 +1255,7 @@ exports[`should render a default time input 1`] = `
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1323,7 +1323,7 @@ exports[`should render a disabled time input 1`] = `
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1418,7 +1418,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     />
   </ButtonGroup>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1486,7 +1486,7 @@ exports[`should render a time input with a default time 1`] = `
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1556,7 +1556,7 @@ exports[`should render a time input with custom attributes 1`] = `
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1624,7 +1624,7 @@ exports[`should render a time input with onBlur 1`] = `
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1692,7 +1692,7 @@ exports[`should render a time input with onChange 1`] = `
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1760,7 +1760,7 @@ exports[`should render a time input with onFocus 1`] = `
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1853,7 +1853,7 @@ exports[`should render a time input with seconds input 1`] = `
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -1946,7 +1946,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -2042,7 +2042,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     className="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -2094,7 +2094,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm)"
     class="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >
@@ -2163,7 +2163,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
     />
   </div>
   <div
-    aria-label="Time Format: (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
+    aria-label="Terra.timeInput.timeFormatLabel (Terra.timeInput.hh:Terra.timeInput.mm:Terra.timeInput.ss)"
     class="format-text"
     id="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
   >

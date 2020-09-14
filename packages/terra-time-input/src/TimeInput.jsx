@@ -134,6 +134,8 @@ class TimeInput extends React.Component {
       value = undefined;
     }
 
+    this.uuid = uuidv4();
+
     this.timeInputContainer = React.createRef();
     this.handleHourChange = this.handleHourChange.bind(this);
     this.handleMinuteChange = this.handleMinuteChange.bind(this);
@@ -722,7 +724,7 @@ class TimeInput extends React.Component {
       { 'initial-focus': this.state.secondInitialFocused },
     ]);
 
-    const formatDescriptionId = `terra-time-input-description-format-${uuidv4()}`;
+    const formatDescriptionId = `terra-time-input-description-format-${this.uuid}`;
 
     const format = showSeconds
       ? `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })}:${intl.formatMessage({ id: 'Terra.timeInput.ss' })})`
@@ -829,7 +831,7 @@ class TimeInput extends React.Component {
             />
           </ButtonGroup>
         )}
-        <div id={formatDescriptionId} className={cx('format-text')} aria-label={`Time Format: ${format}`}>
+        <div id={formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })} ${format}`}>
           {format}
         </div>
       </div>
