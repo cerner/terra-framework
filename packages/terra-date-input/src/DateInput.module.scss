@@ -128,13 +128,13 @@
     height: var(--terra-date-input-month-select-height, 2.143rem); // 30px
     margin: 0 0.92857rem 0 0;
     outline: 0;
-    overflow:hidden; 
+    overflow: hidden;
     padding-bottom: var(--terra-date-input-month-select-padding-bottom, 0);
     padding-left: var(--terra-date-input-month-select-padding-left, 0.3571rem);
     padding-right: var(--terra-date-input-month-select-padding-right, 1.42857rem);
     padding-top: var(--terra-date-input-month-select-padding-top, 0);
-    text-overflow:ellipsis;
-    white-space:nowrap; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
     width: 100%;
 
     // Hide the arrow in IE 10 and IE 11
