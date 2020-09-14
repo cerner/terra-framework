@@ -23,7 +23,6 @@
     --terra-time-input-meridiem-button-border-color: #181b1d;
     --terra-time-input-meridiem-button-color: #b2b5b6;
     --terra-time-input-meridiem-button-font-size: 1rem;
-    --terra-time-input-meridiem-button-group-margin-bottom: 0.5rem;
     --terra-time-input-meridiem-button-group-margin-right: 0.5rem;
     --terra-time-input-meridiem-button-height: 2.1428571429rem;
     --terra-time-input-meridiem-button-hover-background-color: #bcbfc0;
@@ -115,5 +114,10 @@
     --terra-time-input-time-spacer-margin-right: 0.14286rem;
     --terra-time-input-time-spacer-margin-top: 0.35714rem;
 
+    // format text
+    --terra-time-input-format-text-color: #6f7477;
+    --terra-time-input-format-text-font-size: 0.857rem;
+    --terra-time-input-format-text-font-weight: normal;
+    --terra-time-input-format-text-margin-top: 0.357em;
   }
 }

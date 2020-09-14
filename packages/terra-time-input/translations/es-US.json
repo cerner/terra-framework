@@ -6,5 +6,7 @@
   "Terra.timeInput.seconds": "segundos",
   "Terra.timeInput.hh": "HH",
   "Terra.timeInput.mm": "mm",
-  "Terra.timeInput.ss": "s"
+  "Terra.timeInput.ss": "s",
+  "Terra.timeInput.timeFormatLabel": "Formato de hora:"
+
 }
