@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import uuidv4 from 'uuid/v4';
 import { injectIntl, intlShape } from 'react-intl';
 import Input from 'terra-form-input';
 import * as KeyCode from 'keycode-js';
@@ -70,6 +71,13 @@ const propTypes = {
    */
   required: PropTypes.bool,
   /**
+   * @private
+   * NOTICE: Internal prop to be used only by Terra framework. This component provides a built-in format mask that is required
+   * to be displayed to users for proper accessibility and must not be removed. 'DateInputField' is permitted to set this prop
+   * because it provides the same format mask in its 'help' prop.
+   */
+  useExternalFormatMask: PropTypes.bool,
+  /**
    * An date string representation of the date value used for the component. This should be in ISO 8601 format: YYYY-MM-DD.
    */
   value: PropTypes.string,
@@ -89,6 +97,7 @@ const defaultProps = {
   onFocus: undefined,
   refCallback: undefined,
   value: undefined,
+  useExternalFormatMask: false,
 };
 
 class DateInput extends React.Component {
@@ -109,6 +118,8 @@ class DateInput extends React.Component {
 
       value = undefined;
     }
+
+    this.uuid = uuidv4();
 
     this.dateInputContainer = React.createRef();
     this.monthRef = React.createRef();
@@ -486,6 +497,7 @@ class DateInput extends React.Component {
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}
           disabled={this.props.disabled}
+          aria-describedby={`${this.formatDescriptionId} ${this.props.monthAttributes['aria-describedby']}`}
         >
           <option value="" hidden>{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
@@ -528,7 +540,6 @@ class DateInput extends React.Component {
         className={cx('date-input-day', { 'is-focused': this.state.dayIsFocused })}
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
-        placeholder={this.props.intl.formatMessage({ id: 'Terra.date.input.dayPlaceholder' })}
         maxLength="2"
         onChange={this.handleDayChange}
         onKeyDown={this.handleDayKeyDown}
@@ -540,6 +551,7 @@ class DateInput extends React.Component {
         isInvalid={this.props.isInvalid}
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
+        aria-describedby={`${this.formatDescriptionId} ${this.props.dayAttributes['aria-describedby']}`}
       />
     );
   }
@@ -567,7 +579,6 @@ class DateInput extends React.Component {
         className={cx('date-input-year', { 'is-focused': this.state.yearIsFocused })}
         value={this.state.year}
         name={'terra-date-year-'.concat(this.props.name)}
-        placeholder={this.props.intl.formatMessage({ id: 'Terra.date.input.yearPlaceholder' })}
         maxLength="4"
         onChange={this.handleYearChange}
         onKeyDown={this.handleYearKeyDown}
@@ -579,6 +590,7 @@ class DateInput extends React.Component {
         isInvalid={this.props.isInvalid}
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
+        aria-describedby={`${this.formatDescriptionId} ${this.props.yearAttributes['aria-describedby']}`}
       />
     );
   }
@@ -627,6 +639,7 @@ class DateInput extends React.Component {
       refCallback,
       required,
       name,
+      useExternalFormatMask,
       value,
       ...customProps
     } = this.props;
@@ -654,6 +667,10 @@ class DateInput extends React.Component {
       dateValue = `${year}-${month}-${day}`;
     }
 
+    this.formatDescriptionId = (useExternalFormatMask === false) ? `terra-date-picker-description-format-${this.uuid}` : '';
+
+    const format = DateInputUtil.getDateFormat(this.props);
+
     return (
       <div
         {...customProps}
@@ -668,6 +685,11 @@ class DateInput extends React.Component {
           value={dateValue}
         />
         {this.formattedRender()}
+        { (useExternalFormatMask === false) && (
+        <div id={this.formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.date.input.dateFormatLabel' })} ${format}`}>
+          {format}
+        </div>
+        )}
       </div>
     );
   }
