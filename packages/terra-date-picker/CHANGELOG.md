@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixes inconsistent focus styles in IE.
+
 * Removed
   * Removed `placeholder`.
 
