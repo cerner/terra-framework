@@ -33,11 +33,6 @@ const propTypes = {
    */
   filterDate: PropTypes.func,
   /**
-   * @private
-   * To check if help element is provided by the field or not.
-   */
-  help: PropTypes.node,
-  /**
    * An array of ISO 8601 string representation of the dates to enable in the picker. All Other dates will be disabled. The values must be in the `YYYY-MM-DD` format.
    */
   includeDates: PropTypes.arrayOf(PropTypes.string),
@@ -390,7 +385,6 @@ class DatePicker extends React.Component {
       inputAttributes,
       excludeDates,
       filterDate,
-      help,
       includeDates,
       intl,
       isIncomplete,

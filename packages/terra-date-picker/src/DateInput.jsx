@@ -22,11 +22,6 @@ const propTypes = {
    */
   buttonRefCallback: PropTypes.func,
   /**
-   * @private
-   * To check if help element is provided by the field or not.
-   */
-  help: PropTypes.node,
-  /**
    * Custom input attributes to apply to the date input.
    */
   inputAttributes: PropTypes.object,
@@ -159,7 +154,6 @@ class DatePickerInput extends React.Component {
   render() {
     const {
       buttonRefCallback,
-      help,
       inputAttributes,
       intl,
       isIncomplete,
@@ -200,7 +194,6 @@ class DatePickerInput extends React.Component {
     const theme = this.context;
 
     const label = this.props.ariaLabel ? this.props.ariaLabel : intl.formatMessage({ id: 'Terra.datePicker.date' });
-    this.formatDescriptionId = (help === undefined) ? `terra-date-picker-description-format-${uuidv4()}` : '';
 
     this.formatDescriptionId = (useExternalFormatMask === false) ? `terra-date-picker-description-format-${this.uuid}` : '';
 
