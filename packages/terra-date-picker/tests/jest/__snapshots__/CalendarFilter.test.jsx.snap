@@ -41,6 +41,7 @@ exports[`should render a calendar filter with default date 1`] = `
   onChange={[Function]}
   required={false}
   selectedDate="2020-06-01"
+  useExternalFormatMask={false}
 />
 `;
 
@@ -89,6 +90,7 @@ exports[`should render a calendar filter with excluded dates 1`] = `
   name="terra-calendar-filter"
   onChange={[Function]}
   required={false}
+  useExternalFormatMask={false}
 />
 `;
 
@@ -133,6 +135,7 @@ exports[`should render a calendar filter with filtered dates 1`] = `
   name="terra-calendar-filter"
   onChange={[Function]}
   required={false}
+  useExternalFormatMask={false}
 />
 `;
 
@@ -181,6 +184,7 @@ exports[`should render a calendar filter with included dates 1`] = `
   name="terra-calendar-filter"
   onChange={[Function]}
   required={false}
+  useExternalFormatMask={false}
 />
 `;
 
@@ -224,6 +228,7 @@ exports[`should render a calendar filter with min and max dates 1`] = `
   name="terra-calendar-filter"
   onChange={[Function]}
   required={false}
+  useExternalFormatMask={false}
 />
 `;
 
@@ -268,6 +273,7 @@ exports[`should render a calendar filter with onChange 1`] = `
   onChange={[Function]}
   required={false}
   selectedDate="2020-06-01"
+  useExternalFormatMask={false}
 />
 `;
 
@@ -311,6 +317,7 @@ exports[`should render a controlled calendar filter 1`] = `
   name="terra-calendar-filter"
   onChange={[Function]}
   required={false}
+  useExternalFormatMask={false}
   value="2020-06-15"
 />
 `;

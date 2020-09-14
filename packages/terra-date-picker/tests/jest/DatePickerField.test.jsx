@@ -1,6 +1,8 @@
 import React from 'react';
 import IconHelp from 'terra-icon/lib/icon/IconHelp';
 import moment from 'moment';
+/* eslint-disable import/no-extraneous-dependencies */
+import { mountWithIntl } from 'terra-enzyme-intl';
 import DateUtil from '../../lib/DateUtil';
 import DatePickerField from '../../lib/DatePickerField';
 
@@ -13,7 +15,7 @@ DateUtil.filterInvalidDates.mockImplementation(() => [moment.utc('2017-01-01')])
 
 it('should render a default DatePickerField component', () => {
   const datePickerField = <DatePickerField datePickerId="test-date-picker" name="test-date-picker" label="Label" />;
-  const wrapper = shallow(datePickerField);
+  const wrapper = mountWithIntl(datePickerField);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -55,7 +57,7 @@ it('should render a DatePickerField with props', () => {
     />
   );
 
-  const wrapper = shallow(datePickerField);
+  const wrapper = mountWithIntl(datePickerField);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -95,6 +97,6 @@ it('should render a valid DatePickerField with props', () => {
     />
   );
 
-  const wrapper = shallow(datePickerField);
+  const wrapper = mountWithIntl(datePickerField);
   expect(wrapper).toMatchSnapshot();
 });
