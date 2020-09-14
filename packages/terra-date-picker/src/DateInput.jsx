@@ -22,11 +22,6 @@ const propTypes = {
    */
   buttonRefCallback: PropTypes.func,
   /**
-   * @private
-   * To check if help element is provided by the field or not.
-   */
-  help: PropTypes.node,
-  /**
    * Custom input attributes to apply to the date input.
    */
   inputAttributes: PropTypes.object,
