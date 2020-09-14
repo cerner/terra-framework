@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Updated wdio snapshots due to changes in date-picker
+  * Updated wdio snapshots due to changes in date-picker and time-input
 
 * Changed
   * Update `timeVariant` prop description to include `es` in locales supporting only 24 hour format.
