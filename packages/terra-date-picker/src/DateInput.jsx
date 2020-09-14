@@ -80,6 +80,13 @@ const propTypes = {
    */
   shouldShowPicker: PropTypes.bool,
   /**
+   * @private
+   * NOTICE: Internal prop to be used only by Terra framework. This component provides a built-in format mask that is
+   * required to be displayed to users for proper accessibility and must not be removed. 'DatePickerField' is permitted to set
+   * this prop because it provides the same format mask in its 'help' prop.
+  */
+  useExternalFormatMask: PropTypes.bool,
+  /**
    * The selected or entered date value to display in the date input.
    */
   value: PropTypes.string,
@@ -103,6 +110,7 @@ const defaultProps = {
   onButtonFocus: undefined,
   onKeyDown: undefined,
   required: false,
+  useExternalFormatMask: false,
   value: undefined,
   ariaLabel: undefined,
 };
@@ -110,6 +118,8 @@ const defaultProps = {
 class DatePickerInput extends React.Component {
   constructor(props) {
     super(props);
+
+    this.uuid = uuidv4();
 
     this.handleOnButtonClick = this.handleOnButtonClick.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
@@ -162,6 +172,7 @@ class DatePickerInput extends React.Component {
       onButtonFocus,
       onKeyDown,
       required,
+      useExternalFormatMask,
       value,
       ariaLabel,
       ...customProps
@@ -190,6 +201,10 @@ class DatePickerInput extends React.Component {
 
     const label = this.props.ariaLabel ? this.props.ariaLabel : intl.formatMessage({ id: 'Terra.datePicker.date' });
     this.formatDescriptionId = (help === undefined) ? `terra-date-picker-description-format-${uuidv4()}` : '';
+
+    this.formatDescriptionId = (useExternalFormatMask === false) ? `terra-date-picker-description-format-${this.uuid}` : '';
+
+    const format = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
 
     return (
       <div className={cx(theme.className)}>
@@ -228,9 +243,9 @@ class DatePickerInput extends React.Component {
             refCallback={buttonRefCallback}
           />
         </div>
-        { (help === undefined) && (
-        <div id={this.formatDescriptionId} className={cx('format-text')} aria-label={`Date Format: ${intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })}`}>
-          {`(${intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })})`}
+        { (useExternalFormatMask === false) && (
+        <div id={this.formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}`}>
+          {`(${format})`}
         </div>
         )}
       </div>

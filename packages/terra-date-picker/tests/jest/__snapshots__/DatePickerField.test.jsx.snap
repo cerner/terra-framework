@@ -160,7 +160,7 @@ exports[`should render a DatePickerField with props 1`] = `
       }
       help={
         <div
-          aria-label="Date Format: Terra.datePicker.dateFormat, Help"
+          aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
           id="format"
         >
           (Terra.datePicker.dateFormat)
@@ -254,7 +254,6 @@ exports[`should render a DatePickerField with props 1`] = `
             ]
           }
           filterDate={[Function]}
-          help="Help"
           id="test-date-picker"
           inputAttribute={
             Object {
@@ -276,6 +275,7 @@ exports[`should render a DatePickerField with props 1`] = `
           onSelect={[Function]}
           required={true}
           selectedDate="2017-04-09"
+          useExternalFormatMask={true}
           value="2017-04-09"
         >
           <DatePicker
@@ -288,7 +288,6 @@ exports[`should render a DatePickerField with props 1`] = `
               ]
             }
             filterDate={[Function]}
-            help="Help"
             id="test-date-picker"
             inputAttribute={
               Object {
@@ -337,6 +336,7 @@ exports[`should render a DatePickerField with props 1`] = `
             onSelect={[Function]}
             required={true}
             selectedDate="2017-04-09"
+            useExternalFormatMask={true}
             value="2017-04-09"
           >
             <div
@@ -352,13 +352,13 @@ exports[`should render a DatePickerField with props 1`] = `
                     <InjectIntl(DatePickerInput)
                       ariaLabel="Label Test"
                       buttonRefCallback={[Function]}
-                      help="Help"
                       isIncomplete={false}
                       isInvalid={true}
                       onButtonFocus={[Function]}
                       onCalendarButtonClick={[Function]}
                       required={true}
                       shouldShowPicker={false}
+                      useExternalFormatMask={true}
                     />
                   }
                   dateFormat="MM/DD/YYYY"
@@ -410,13 +410,13 @@ exports[`should render a DatePickerField with props 1`] = `
                       <InjectIntl(DatePickerInput)
                         ariaLabel="Label Test"
                         buttonRefCallback={[Function]}
-                        help="Help"
                         isIncomplete={false}
                         isInvalid={true}
                         onButtonFocus={[Function]}
                         onCalendarButtonClick={[Function]}
                         required={true}
                         shouldShowPicker={false}
+                        useExternalFormatMask={true}
                       />
                     }
                     dateFormat="MM/DD/YYYY"
@@ -502,7 +502,6 @@ exports[`should render a DatePickerField with props 1`] = `
                         buttonRefCallback={[Function]}
                         className=""
                         disabled={true}
-                        help="Help"
                         id="test-date-picker"
                         isIncomplete={false}
                         isInvalid={true}
@@ -516,6 +515,7 @@ exports[`should render a DatePickerField with props 1`] = `
                         onKeyDown={[Function]}
                         required={true}
                         shouldShowPicker={false}
+                        useExternalFormatMask={true}
                         value="04/09/2017"
                       >
                         <DatePickerInput
@@ -523,7 +523,6 @@ exports[`should render a DatePickerField with props 1`] = `
                           buttonRefCallback={[Function]}
                           className=""
                           disabled={true}
-                          help="Help"
                           id="test-date-picker"
                           intl={
                             Object {
@@ -564,6 +563,7 @@ exports[`should render a DatePickerField with props 1`] = `
                           onKeyDown={[Function]}
                           required={true}
                           shouldShowPicker={false}
+                          useExternalFormatMask={true}
                           value="04/09/2017"
                         >
                           <div
@@ -712,7 +712,7 @@ exports[`should render a DatePickerField with props 1`] = `
           tabIndex="-1"
         >
           <div
-            aria-label="Date Format: Terra.datePicker.dateFormat, Help"
+            aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
             id="format"
           >
             (Terra.datePicker.dateFormat)
@@ -818,7 +818,7 @@ exports[`should render a default DatePickerField component 1`] = `
       }
       help={
         <div
-          aria-label="Date Format: Terra.datePicker.dateFormat"
+          aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
           id="format"
         >
           (Terra.datePicker.dateFormat)
@@ -889,19 +889,18 @@ exports[`should render a default DatePickerField component 1`] = `
         <InjectIntl(DatePicker)
           ariaLabel="Label"
           disabled={false}
-          help={null}
           id="test-date-picker"
           isIncomplete={false}
           isInvalid={false}
           key=".0"
           name="test-date-picker"
           required={false}
+          useExternalFormatMask={true}
         >
           <DatePicker
             ariaLabel="Label"
             disableButtonFocusOnClose={false}
             disabled={false}
-            help={null}
             id="test-date-picker"
             intl={
               Object {
@@ -937,6 +936,7 @@ exports[`should render a default DatePickerField component 1`] = `
             minDate="1900-01-01"
             name="test-date-picker"
             required={false}
+            useExternalFormatMask={true}
           >
             <div
               className="date-picker"
@@ -951,13 +951,13 @@ exports[`should render a default DatePickerField component 1`] = `
                     <InjectIntl(DatePickerInput)
                       ariaLabel="Label"
                       buttonRefCallback={[Function]}
-                      help={null}
                       isIncomplete={false}
                       isInvalid={false}
                       onButtonFocus={[Function]}
                       onCalendarButtonClick={[Function]}
                       required={false}
                       shouldShowPicker={false}
+                      useExternalFormatMask={true}
                     />
                   }
                   dateFormat="MM/DD/YYYY"
@@ -1002,13 +1002,13 @@ exports[`should render a default DatePickerField component 1`] = `
                       <InjectIntl(DatePickerInput)
                         ariaLabel="Label"
                         buttonRefCallback={[Function]}
-                        help={null}
                         isIncomplete={false}
                         isInvalid={false}
                         onButtonFocus={[Function]}
                         onCalendarButtonClick={[Function]}
                         required={false}
                         shouldShowPicker={false}
+                        useExternalFormatMask={true}
                       />
                     }
                     dateFormat="MM/DD/YYYY"
@@ -1087,7 +1087,6 @@ exports[`should render a default DatePickerField component 1`] = `
                         buttonRefCallback={[Function]}
                         className=""
                         disabled={false}
-                        help={null}
                         id="test-date-picker"
                         isIncomplete={false}
                         isInvalid={false}
@@ -1101,6 +1100,7 @@ exports[`should render a default DatePickerField component 1`] = `
                         onKeyDown={[Function]}
                         required={false}
                         shouldShowPicker={false}
+                        useExternalFormatMask={true}
                         value="01/01/2017"
                       >
                         <DatePickerInput
@@ -1108,7 +1108,6 @@ exports[`should render a default DatePickerField component 1`] = `
                           buttonRefCallback={[Function]}
                           className=""
                           disabled={false}
-                          help={null}
                           id="test-date-picker"
                           intl={
                             Object {
@@ -1149,6 +1148,7 @@ exports[`should render a default DatePickerField component 1`] = `
                           onKeyDown={[Function]}
                           required={false}
                           shouldShowPicker={false}
+                          useExternalFormatMask={true}
                           value="01/01/2017"
                         >
                           <div
@@ -1288,7 +1288,7 @@ exports[`should render a default DatePickerField component 1`] = `
           tabIndex="-1"
         >
           <div
-            aria-label="Date Format: Terra.datePicker.dateFormat"
+            aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
             id="format"
           >
             (Terra.datePicker.dateFormat)
@@ -1457,7 +1457,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
       }
       help={
         <div
-          aria-label="Date Format: Terra.datePicker.dateFormat, Help"
+          aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
           id="format"
         >
           (Terra.datePicker.dateFormat)
@@ -1551,7 +1551,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
             ]
           }
           filterDate={[Function]}
-          help="Help"
           id="test-date-picker"
           inputAttribute={
             Object {
@@ -1573,6 +1572,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
           onSelect={[Function]}
           required={true}
           selectedDate="2017-04-09"
+          useExternalFormatMask={true}
         >
           <DatePicker
             ariaLabel="Label Test"
@@ -1584,7 +1584,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
               ]
             }
             filterDate={[Function]}
-            help="Help"
             id="test-date-picker"
             inputAttribute={
               Object {
@@ -1633,6 +1632,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
             onSelect={[Function]}
             required={true}
             selectedDate="2017-04-09"
+            useExternalFormatMask={true}
           >
             <div
               className="date-picker"
@@ -1647,13 +1647,13 @@ exports[`should render a valid DatePickerField with props 1`] = `
                     <InjectIntl(DatePickerInput)
                       ariaLabel="Label Test"
                       buttonRefCallback={[Function]}
-                      help="Help"
                       isIncomplete={false}
                       isInvalid={false}
                       onButtonFocus={[Function]}
                       onCalendarButtonClick={[Function]}
                       required={true}
                       shouldShowPicker={false}
+                      useExternalFormatMask={true}
                     />
                   }
                   dateFormat="MM/DD/YYYY"
@@ -1704,13 +1704,13 @@ exports[`should render a valid DatePickerField with props 1`] = `
                       <InjectIntl(DatePickerInput)
                         ariaLabel="Label Test"
                         buttonRefCallback={[Function]}
-                        help="Help"
                         isIncomplete={false}
                         isInvalid={false}
                         onButtonFocus={[Function]}
                         onCalendarButtonClick={[Function]}
                         required={true}
                         shouldShowPicker={false}
+                        useExternalFormatMask={true}
                       />
                     }
                     dateFormat="MM/DD/YYYY"
@@ -1795,7 +1795,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
                         buttonRefCallback={[Function]}
                         className=""
                         disabled={true}
-                        help="Help"
                         id="test-date-picker"
                         isIncomplete={false}
                         isInvalid={false}
@@ -1809,6 +1808,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                         onKeyDown={[Function]}
                         required={true}
                         shouldShowPicker={false}
+                        useExternalFormatMask={true}
                         value="01/01/2017"
                       >
                         <DatePickerInput
@@ -1816,7 +1816,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
                           buttonRefCallback={[Function]}
                           className=""
                           disabled={true}
-                          help="Help"
                           id="test-date-picker"
                           intl={
                             Object {
@@ -1857,6 +1856,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                           onKeyDown={[Function]}
                           required={true}
                           shouldShowPicker={false}
+                          useExternalFormatMask={true}
                           value="01/01/2017"
                         >
                           <div
@@ -1997,7 +1997,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
           tabIndex="-1"
         >
           <div
-            aria-label="Date Format: Terra.datePicker.dateFormat, Help"
+            aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
             id="format"
           >
             (Terra.datePicker.dateFormat)
