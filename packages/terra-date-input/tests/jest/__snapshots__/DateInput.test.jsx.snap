@@ -73,6 +73,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
       name="date-input"
       onBlur={null}
       onChange={null}
+      useExternalFormatMask={false}
       value="2000-07-04"
       yearAttributes={Object {}}
     >
@@ -88,6 +89,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           className="month-select-wrapper"
         >
           <select
+            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
             aria-label="Terra.date.input.monthLabel"
             className="month-select"
             disabled={false}
@@ -180,6 +182,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           </select>
         </div>
         <Input
+          aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
           aria-label="Terra.date.input.dayLabel"
           autoComplete="off"
           className="date-input-day"
@@ -193,7 +196,6 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           onFocus={[Function]}
           onKeyDown={[Function]}
           pattern="\\\\d*"
-          placeholder="Terra.date.input.dayPlaceholder"
           refCallback={[Function]}
           required={false}
           size="2"
@@ -201,6 +203,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           value="04"
         >
           <input
+            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
             aria-label="Terra.date.input.dayLabel"
             autoComplete="off"
             className="form-input date-input-day"
@@ -212,7 +215,6 @@ exports[`DateInput correctly applies the theme context className 1`] = `
             onFocus={[Function]}
             onKeyDown={[Function]}
             pattern="\\\\d*"
-            placeholder="Terra.date.input.dayPlaceholder"
             required={false}
             size="2"
             type="text"
@@ -220,6 +222,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           />
         </Input>
         <Input
+          aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
           aria-label="Terra.date.input.yearLabel"
           autoComplete="off"
           className="date-input-year"
@@ -233,7 +236,6 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           onFocus={[Function]}
           onKeyDown={[Function]}
           pattern="\\\\d*"
-          placeholder="Terra.date.input.yearPlaceholder"
           refCallback={[Function]}
           required={false}
           size="4"
@@ -241,6 +243,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           value="2000"
         >
           <input
+            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
             aria-label="Terra.date.input.yearLabel"
             autoComplete="off"
             className="form-input date-input-year"
@@ -252,13 +255,19 @@ exports[`DateInput correctly applies the theme context className 1`] = `
             onFocus={[Function]}
             onKeyDown={[Function]}
             pattern="\\\\d*"
-            placeholder="Terra.date.input.yearPlaceholder"
             required={false}
             size="4"
             type="text"
             value="2000"
           />
         </Input>
+        <div
+          aria-label="Terra.date.input.dateFormatLabel (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+          className="format-text"
+          id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+        >
+          (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+        </div>
       </div>
     </DateInput>
   </InjectIntl(DateInput)>
@@ -281,6 +290,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="month-select-wrapper"
     >
       <select
+        aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
         aria-label="Terra.date.input.monthLabel"
         class="month-select is-placeholder"
         name="terra-date-month-date-input"
@@ -355,29 +365,36 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       </select>
     </div>
     <input
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.dayLabel"
       autocomplete="off"
       class="form-input date-input-day"
       maxlength="2"
       name="terra-date-day-date-input"
       pattern="\\\\d*"
-      placeholder="Terra.date.input.dayPlaceholder"
       size="2"
       type="text"
       value=""
     />
     <input
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.yearLabel"
       autocomplete="off"
       class="form-input date-input-year"
       maxlength="4"
       name="terra-date-year-date-input"
       pattern="\\\\d*"
-      placeholder="Terra.date.input.yearPlaceholder"
       size="4"
       type="text"
       value=""
     />
+    <div
+      aria-label="Terra.date.input.dateFormatLabel (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+      class="format-text"
+      id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+    >
+      (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+    </div>
   </div>
   <div
     class="date-input"
@@ -391,6 +408,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="month-select-wrapper"
     >
       <select
+        aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
         aria-label="Terra.date.input.monthLabel"
         class="month-select is-placeholder"
         name="terra-date-month-date-input-2"
@@ -465,29 +483,36 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       </select>
     </div>
     <input
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.dayLabel"
       autocomplete="off"
       class="form-input date-input-day"
       maxlength="2"
       name="terra-date-day-date-input-2"
       pattern="\\\\d*"
-      placeholder="Terra.date.input.dayPlaceholder"
       size="2"
       type="text"
       value=""
     />
     <input
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.yearLabel"
       autocomplete="off"
       class="form-input date-input-year"
       maxlength="4"
       name="terra-date-year-date-input-2"
       pattern="\\\\d*"
-      placeholder="Terra.date.input.yearPlaceholder"
       size="4"
       type="text"
       value=""
     />
+    <div
+      aria-label="Terra.date.input.dateFormatLabel (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+      class="format-text"
+      id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+    >
+      (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+    </div>
   </div>
   <div
     class="date-input"
@@ -501,6 +526,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="month-select-wrapper"
     >
       <select
+        aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
         aria-label="Terra.date.input.monthLabel"
         class="month-select is-placeholder"
         name="terra-date-month-date-input-3"
@@ -575,29 +601,36 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       </select>
     </div>
     <input
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.dayLabel"
       autocomplete="off"
       class="form-input date-input-day"
       maxlength="2"
       name="terra-date-day-date-input-3"
       pattern="\\\\d*"
-      placeholder="Terra.date.input.dayPlaceholder"
       size="2"
       type="text"
       value=""
     />
     <input
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.yearLabel"
       autocomplete="off"
       class="form-input date-input-year"
       maxlength="4"
       name="terra-date-year-date-input-3"
       pattern="\\\\d*"
-      placeholder="Terra.date.input.yearPlaceholder"
       size="4"
       type="text"
       value=""
     />
+    <div
+      aria-label="Terra.date.input.dateFormatLabel (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+      class="format-text"
+      id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+    >
+      (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+    </div>
   </div>
 </div>
 `;
@@ -615,6 +648,7 @@ exports[`DateInput should render a date input with a default date 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.monthLabel"
       className="month-select"
       disabled={false}
@@ -707,6 +741,7 @@ exports[`DateInput should render a date input with a default date 1`] = `
     </select>
   </div>
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.dayLabel"
     autoComplete="off"
     className="date-input-day"
@@ -720,7 +755,6 @@ exports[`DateInput should render a date input with a default date 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.dayPlaceholder"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -728,6 +762,7 @@ exports[`DateInput should render a date input with a default date 1`] = `
     value="04"
   />
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.yearLabel"
     autoComplete="off"
     className="date-input-year"
@@ -741,13 +776,19 @@ exports[`DateInput should render a date input with a default date 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.yearPlaceholder"
     refCallback={[Function]}
     required={false}
     size="4"
     type="text"
     value="2000"
   />
+  <div
+    aria-label="Terra.date.input.dateFormatLabel (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+    className="format-text"
+    id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+  >
+    (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+  </div>
 </div>
 `;
 
@@ -769,6 +810,7 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.monthLabel"
       className="month-select is-placeholder"
       disabled={false}
@@ -861,6 +903,7 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     </select>
   </div>
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.dayLabel"
     autoComplete="off"
     className="date-input-day"
@@ -874,7 +917,6 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.dayPlaceholder"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -882,6 +924,7 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     value=""
   />
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.yearLabel"
     autoComplete="off"
     className="date-input-year"
@@ -895,13 +938,19 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.yearPlaceholder"
     refCallback={[Function]}
     required={false}
     size="4"
     type="text"
     value=""
   />
+  <div
+    aria-label="Terra.date.input.dateFormatLabel (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+    className="format-text"
+    id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+  >
+    (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+  </div>
 </div>
 `;
 
@@ -918,6 +967,7 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.monthLabel"
       className="month-select is-placeholder"
       disabled={false}
@@ -1010,6 +1060,7 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     </select>
   </div>
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.dayLabel"
     autoComplete="off"
     className="date-input-day"
@@ -1023,7 +1074,6 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.dayPlaceholder"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -1031,6 +1081,7 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     value=""
   />
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.yearLabel"
     autoComplete="off"
     className="date-input-year"
@@ -1044,13 +1095,19 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.yearPlaceholder"
     refCallback={[Function]}
     required={false}
     size="4"
     type="text"
     value=""
   />
+  <div
+    aria-label="Terra.date.input.dateFormatLabel (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+    className="format-text"
+    id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+  >
+    (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+  </div>
 </div>
 `;
 
@@ -1067,6 +1124,7 @@ exports[`DateInput should render a date input with onChange 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.monthLabel"
       className="month-select is-placeholder"
       disabled={false}
@@ -1159,6 +1217,7 @@ exports[`DateInput should render a date input with onChange 1`] = `
     </select>
   </div>
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.dayLabel"
     autoComplete="off"
     className="date-input-day"
@@ -1172,7 +1231,6 @@ exports[`DateInput should render a date input with onChange 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.dayPlaceholder"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -1180,6 +1238,7 @@ exports[`DateInput should render a date input with onChange 1`] = `
     value=""
   />
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.yearLabel"
     autoComplete="off"
     className="date-input-year"
@@ -1193,13 +1252,19 @@ exports[`DateInput should render a date input with onChange 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.yearPlaceholder"
     refCallback={[Function]}
     required={false}
     size="4"
     type="text"
     value=""
   />
+  <div
+    aria-label="Terra.date.input.dateFormatLabel (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+    className="format-text"
+    id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+  >
+    (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+  </div>
 </div>
 `;
 
@@ -1216,6 +1281,7 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.monthLabel"
       className="month-select is-placeholder"
       disabled={false}
@@ -1308,6 +1374,7 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     </select>
   </div>
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.dayLabel"
     autoComplete="off"
     className="date-input-day"
@@ -1321,7 +1388,6 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.dayPlaceholder"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -1329,6 +1395,7 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     value=""
   />
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.yearLabel"
     autoComplete="off"
     className="date-input-year"
@@ -1342,13 +1409,19 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.yearPlaceholder"
     refCallback={[Function]}
     required={false}
     size="4"
     type="text"
     value=""
   />
+  <div
+    aria-label="Terra.date.input.dateFormatLabel (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+    className="format-text"
+    id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+  >
+    (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+  </div>
 </div>
 `;
 
@@ -1365,6 +1438,7 @@ exports[`DateInput should render a default date input 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.monthLabel"
       className="month-select is-placeholder"
       disabled={false}
@@ -1457,6 +1531,7 @@ exports[`DateInput should render a default date input 1`] = `
     </select>
   </div>
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.dayLabel"
     autoComplete="off"
     className="date-input-day"
@@ -1470,7 +1545,6 @@ exports[`DateInput should render a default date input 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.dayPlaceholder"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -1478,6 +1552,7 @@ exports[`DateInput should render a default date input 1`] = `
     value=""
   />
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.yearLabel"
     autoComplete="off"
     className="date-input-year"
@@ -1491,13 +1566,19 @@ exports[`DateInput should render a default date input 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.yearPlaceholder"
     refCallback={[Function]}
     required={false}
     size="4"
     type="text"
     value=""
   />
+  <div
+    aria-label="Terra.date.input.dateFormatLabel (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+    className="format-text"
+    id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+  >
+    (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+  </div>
 </div>
 `;
 
@@ -1514,6 +1595,7 @@ exports[`DateInput should render a disabled time input 1`] = `
     className="month-select-wrapper disabled"
   >
     <select
+      aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
       aria-label="Terra.date.input.monthLabel"
       className="month-select is-placeholder disabled"
       disabled={true}
@@ -1606,6 +1688,7 @@ exports[`DateInput should render a disabled time input 1`] = `
     </select>
   </div>
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.dayLabel"
     autoComplete="off"
     className="date-input-day"
@@ -1619,7 +1702,6 @@ exports[`DateInput should render a disabled time input 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.dayPlaceholder"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -1627,6 +1709,7 @@ exports[`DateInput should render a disabled time input 1`] = `
     value=""
   />
   <Input
+    aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 undefined"
     aria-label="Terra.date.input.yearLabel"
     autoComplete="off"
     className="date-input-year"
@@ -1640,13 +1723,19 @@ exports[`DateInput should render a disabled time input 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="Terra.date.input.yearPlaceholder"
     refCallback={[Function]}
     required={false}
     size="4"
     type="text"
     value=""
   />
+  <div
+    aria-label="Terra.date.input.dateFormatLabel (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+    className="format-text"
+    id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+  >
+    (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+  </div>
 </div>
 `;
 
@@ -1685,97 +1774,79 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
     }
   }
 >
-  <DateInputField
-    dayAttributes={Object {}}
-    disabled={false}
-    error={null}
-    help={null}
-    hideRequired={false}
-    isIncomplete={false}
-    isInline={false}
-    isInvalid={false}
-    isLegendHidden={false}
+  <InjectIntl(DateInputField)
     legend="Legend text"
-    legendAttributes={Object {}}
-    monthAttributes={Object {}}
     name="date-input-value"
-    required={false}
-    showOptional={false}
     value="2000-07-04"
-    yearAttributes={Object {}}
   >
-    <fieldset
-      className="date-input-field clinical-lowlight-theme"
+    <DateInputField
+      dayAttributes={Object {}}
+      disabled={false}
+      error={null}
+      help={null}
+      hideRequired={false}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      isIncomplete={false}
+      isInline={false}
+      isInvalid={false}
+      isLegendHidden={false}
+      legend="Legend text"
+      legendAttributes={Object {}}
+      monthAttributes={Object {}}
+      name="date-input-value"
+      required={false}
+      showOptional={false}
+      value="2000-07-04"
+      yearAttributes={Object {}}
     >
-      <legend
-        className="legend-group"
+      <fieldset
+        className="date-input-field clinical-lowlight-theme"
       >
-        <div
-          className="legend clinical-lowlight-theme"
+        <legend
+          className="legend-group"
         >
-          Legend text
-          <span
-            className="error-icon-hidden"
-          />
-        </div>
-      </legend>
-      <InjectIntl(DateInput)
-        dayAttributes={
-          Object {
-            "aria-describedby": "  ",
-          }
-        }
-        disabled={false}
-        isIncomplete={false}
-        isInvalid={false}
-        monthAttributes={
-          Object {
-            "aria-describedby": "  ",
-          }
-        }
-        name="date-input-value"
-        required={false}
-        value="2000-07-04"
-        yearAttributes={
-          Object {
-            "aria-describedby": "  ",
-          }
-        }
-      >
-        <DateInput
+          <div
+            className="legend clinical-lowlight-theme"
+          >
+            Legend text
+            <span
+              className="error-icon-hidden"
+            />
+          </div>
+        </legend>
+        <InjectIntl(DateInput)
           dayAttributes={
             Object {
               "aria-describedby": "  ",
             }
           }
           disabled={false}
-          intl={
-            Object {
-              "defaultFormats": Object {},
-              "defaultLocale": "en",
-              "formatDate": [Function],
-              "formatHTMLMessage": [Function],
-              "formatMessage": [Function],
-              "formatNumber": [Function],
-              "formatPlural": [Function],
-              "formatRelative": [Function],
-              "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
-                "getDateTimeFormat": [Function],
-                "getMessageFormat": [Function],
-                "getNumberFormat": [Function],
-                "getPluralFormat": [Function],
-                "getRelativeFormat": [Function],
-              },
-              "locale": "en",
-              "messages": null,
-              "now": [Function],
-              "onError": [Function],
-              "textComponent": "span",
-              "timeZone": null,
-            }
-          }
           isIncomplete={false}
           isInvalid={false}
           monthAttributes={
@@ -1784,9 +1855,8 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
             }
           }
           name="date-input-value"
-          onBlur={null}
-          onChange={null}
           required={false}
+          useExternalFormatMask={true}
           value="2000-07-04"
           yearAttributes={
             Object {
@@ -1794,138 +1864,171 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
             }
           }
         >
-          <div
-            className="date-input clinical-lowlight-theme"
+          <DateInput
+            dayAttributes={
+              Object {
+                "aria-describedby": "  ",
+              }
+            }
+            disabled={false}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isIncomplete={false}
+            isInvalid={false}
+            monthAttributes={
+              Object {
+                "aria-describedby": "  ",
+              }
+            }
+            name="date-input-value"
+            onBlur={null}
+            onChange={null}
+            required={false}
+            useExternalFormatMask={true}
+            value="2000-07-04"
+            yearAttributes={
+              Object {
+                "aria-describedby": "  ",
+              }
+            }
           >
-            <input
-              name="date-input-value"
-              type="hidden"
-              value="2000-07-04"
-            />
             <div
-              className="month-select-wrapper"
-            >
-              <select
-                aria-describedby="  "
-                aria-label="Terra.date.input.monthLabel"
-                className="month-select"
-                disabled={false}
-                name="terra-date-month-date-input-value"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                value="07"
-              >
-                <option
-                  hidden={true}
-                  value=""
-                >
-                  Terra.date.input.monthPlaceholder
-                </option>
-                <option
-                  key="Terra.date.input.january"
-                  value="01"
-                >
-                  Terra.date.input.january
-                </option>
-                <option
-                  key="Terra.date.input.february"
-                  value="02"
-                >
-                  Terra.date.input.february
-                </option>
-                <option
-                  key="Terra.date.input.march"
-                  value="03"
-                >
-                  Terra.date.input.march
-                </option>
-                <option
-                  key="Terra.date.input.april"
-                  value="04"
-                >
-                  Terra.date.input.april
-                </option>
-                <option
-                  key="Terra.date.input.may"
-                  value="05"
-                >
-                  Terra.date.input.may
-                </option>
-                <option
-                  key="Terra.date.input.june"
-                  value="06"
-                >
-                  Terra.date.input.june
-                </option>
-                <option
-                  key="Terra.date.input.july"
-                  value="07"
-                >
-                  Terra.date.input.july
-                </option>
-                <option
-                  key="Terra.date.input.august"
-                  value="08"
-                >
-                  Terra.date.input.august
-                </option>
-                <option
-                  key="Terra.date.input.september"
-                  value="09"
-                >
-                  Terra.date.input.september
-                </option>
-                <option
-                  key="Terra.date.input.october"
-                  value="10"
-                >
-                  Terra.date.input.october
-                </option>
-                <option
-                  key="Terra.date.input.november"
-                  value="11"
-                >
-                  Terra.date.input.november
-                </option>
-                <option
-                  key="Terra.date.input.december"
-                  value="12"
-                >
-                  Terra.date.input.december
-                </option>
-              </select>
-            </div>
-            <Input
-              aria-describedby="  "
-              aria-label="Terra.date.input.dayLabel"
-              autoComplete="off"
-              className="date-input-day"
-              disabled={false}
-              isIncomplete={false}
-              isInvalid={false}
-              maxLength="2"
-              name="terra-date-day-date-input-value"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              pattern="\\\\d*"
-              placeholder="Terra.date.input.dayPlaceholder"
-              refCallback={[Function]}
-              required={false}
-              size="2"
-              type="text"
-              value="04"
+              className="date-input clinical-lowlight-theme"
             >
               <input
-                aria-describedby="  "
+                name="date-input-value"
+                type="hidden"
+                value="2000-07-04"
+              />
+              <div
+                className="month-select-wrapper"
+              >
+                <select
+                  aria-describedby="   "
+                  aria-label="Terra.date.input.monthLabel"
+                  className="month-select"
+                  disabled={false}
+                  name="terra-date-month-date-input-value"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  value="07"
+                >
+                  <option
+                    hidden={true}
+                    value=""
+                  >
+                    Terra.date.input.monthPlaceholder
+                  </option>
+                  <option
+                    key="Terra.date.input.january"
+                    value="01"
+                  >
+                    Terra.date.input.january
+                  </option>
+                  <option
+                    key="Terra.date.input.february"
+                    value="02"
+                  >
+                    Terra.date.input.february
+                  </option>
+                  <option
+                    key="Terra.date.input.march"
+                    value="03"
+                  >
+                    Terra.date.input.march
+                  </option>
+                  <option
+                    key="Terra.date.input.april"
+                    value="04"
+                  >
+                    Terra.date.input.april
+                  </option>
+                  <option
+                    key="Terra.date.input.may"
+                    value="05"
+                  >
+                    Terra.date.input.may
+                  </option>
+                  <option
+                    key="Terra.date.input.june"
+                    value="06"
+                  >
+                    Terra.date.input.june
+                  </option>
+                  <option
+                    key="Terra.date.input.july"
+                    value="07"
+                  >
+                    Terra.date.input.july
+                  </option>
+                  <option
+                    key="Terra.date.input.august"
+                    value="08"
+                  >
+                    Terra.date.input.august
+                  </option>
+                  <option
+                    key="Terra.date.input.september"
+                    value="09"
+                  >
+                    Terra.date.input.september
+                  </option>
+                  <option
+                    key="Terra.date.input.october"
+                    value="10"
+                  >
+                    Terra.date.input.october
+                  </option>
+                  <option
+                    key="Terra.date.input.november"
+                    value="11"
+                  >
+                    Terra.date.input.november
+                  </option>
+                  <option
+                    key="Terra.date.input.december"
+                    value="12"
+                  >
+                    Terra.date.input.december
+                  </option>
+                </select>
+              </div>
+              <Input
+                aria-describedby="   "
                 aria-label="Terra.date.input.dayLabel"
                 autoComplete="off"
-                className="form-input date-input-day"
+                className="date-input-day"
                 disabled={false}
+                isIncomplete={false}
+                isInvalid={false}
                 maxLength="2"
                 name="terra-date-day-date-input-value"
                 onBlur={[Function]}
@@ -1933,41 +2036,39 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 pattern="\\\\d*"
-                placeholder="Terra.date.input.dayPlaceholder"
+                refCallback={[Function]}
                 required={false}
                 size="2"
                 type="text"
                 value="04"
-              />
-            </Input>
-            <Input
-              aria-describedby="  "
-              aria-label="Terra.date.input.yearLabel"
-              autoComplete="off"
-              className="date-input-year"
-              disabled={false}
-              isIncomplete={false}
-              isInvalid={false}
-              maxLength="4"
-              name="terra-date-year-date-input-value"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              pattern="\\\\d*"
-              placeholder="Terra.date.input.yearPlaceholder"
-              refCallback={[Function]}
-              required={false}
-              size="4"
-              type="text"
-              value="2000"
-            >
-              <input
-                aria-describedby="  "
+              >
+                <input
+                  aria-describedby="   "
+                  aria-label="Terra.date.input.dayLabel"
+                  autoComplete="off"
+                  className="form-input date-input-day"
+                  disabled={false}
+                  maxLength="2"
+                  name="terra-date-day-date-input-value"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  pattern="\\\\d*"
+                  required={false}
+                  size="2"
+                  type="text"
+                  value="04"
+                />
+              </Input>
+              <Input
+                aria-describedby="   "
                 aria-label="Terra.date.input.yearLabel"
                 autoComplete="off"
-                className="form-input date-input-year"
+                className="date-input-year"
                 disabled={false}
+                isIncomplete={false}
+                isInvalid={false}
                 maxLength="4"
                 name="terra-date-year-date-input-value"
                 onBlur={[Function]}
@@ -1975,17 +2076,43 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 pattern="\\\\d*"
-                placeholder="Terra.date.input.yearPlaceholder"
+                refCallback={[Function]}
                 required={false}
                 size="4"
                 type="text"
                 value="2000"
-              />
-            </Input>
-          </div>
-        </DateInput>
-      </InjectIntl(DateInput)>
-    </fieldset>
-  </DateInputField>
+              >
+                <input
+                  aria-describedby="   "
+                  aria-label="Terra.date.input.yearLabel"
+                  autoComplete="off"
+                  className="form-input date-input-year"
+                  disabled={false}
+                  maxLength="4"
+                  name="terra-date-year-date-input-value"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  pattern="\\\\d*"
+                  required={false}
+                  size="4"
+                  type="text"
+                  value="2000"
+                />
+              </Input>
+            </div>
+          </DateInput>
+        </InjectIntl(DateInput)>
+        <div
+          aria-label="Terra.date.input.dateFormatLabel (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)"
+          className="help-text"
+          id=""
+        >
+          (Terra.date.input.monthLabel Terra.date.input.dayFormatLabel Terra.date.input.yearFormatLabel)
+        </div>
+      </fieldset>
+    </DateInputField>
+  </InjectIntl(DateInputField)>
 </ThemeContextProvider>
 `;
