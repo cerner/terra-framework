@@ -592,7 +592,7 @@ class DatePicker extends React.Component {
   }
 
   onInputKeyDown = (event) => {
-    if(event.keyCode === 13 || event.keyCode === 32) {
+    if(event.keyCode === KeyCode.KEY_RETURN || event.keyCode === KeyCode.KEY_SPACE) {
       this.setState({ isCalendarOpenedViaKeyboard: true })
 
     }
