@@ -2,19 +2,19 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   describe('Twelve Hour Default with no time provided', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default'));
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour Default with an evening time filled', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/filled-evening'));
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour Default with a morning time filled', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/filled-morning'));
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour Meridiem - Sets hour to 12 without meridiem change for hour input 00', () => {
@@ -27,7 +27,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.keys('00');
     });
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour Meridiem - Up Arrow on hour does not change meridiem', () => {
@@ -40,7 +40,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.keys(['ArrowUp']);
     });
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour - Changes time to 01 when up is pressed on hour of 12', () => {
@@ -55,7 +55,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.keys(['ArrowUp']);
     });
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour - Changes time to 12 when down is pressed on hour of 01', () => {
@@ -70,7 +70,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.keys(['ArrowDown']);
     });
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour Meridiem - Switched when up is press on hour of 11', () => {
@@ -85,7 +85,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.keys(['ArrowUp']);
     });
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour Meridiem - Switched when down is press on hour of 12', () => {
@@ -100,7 +100,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.keys(['ArrowDown']);
     });
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour - Sets time to 12 when hour is 0 and onBlur is called', () => {
@@ -114,7 +114,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
     });
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour - Sets time to 12 when hour is 0 and onBlur is called', () => {
@@ -128,7 +128,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
     });
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour - Sets time to 12 when hour is 0 and onBlur is called', () => {
@@ -142,36 +142,36 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
     });
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour Default with second and no time provided', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/second'));
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour - Invalid time input', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/invalid'));
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour - Incomplete time input', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/incomplete'));
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour - Invalid incomplete time input', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/invalid-incomplete'));
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour - Invalid meridiem', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/invalid-meridiem'));
 
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 });

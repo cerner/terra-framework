@@ -2,11 +2,11 @@
   "Terra.date.input.optional": "(facultatif)",
   "Terra.date.input.required": "Requis",
   "Terra.date.input.monthLabel": "Mois",
-  "Terra.date.input.monthPlaceholder": "Mois",
+  "Terra.date.input.monthPlaceholder": "- Sélectionner -",
   "Terra.date.input.yearLabel": "Année",
-  "Terra.date.input.yearPlaceholder": "AAAA",
+  "Terra.date.input.yearFormatLabel": "AAAA",
   "Terra.date.input.dayLabel": "Date",
-  "Terra.date.input.dayPlaceholder": "JJ",
+  "Terra.date.input.dayFormatLabel": "JJ",
   "Terra.date.input.legend": "Date",
   "Terra.date.input.january": "Janvier",
   "Terra.date.input.february": "Février",
@@ -19,5 +19,6 @@
   "Terra.date.input.september": "Septembre",
   "Terra.date.input.october": "Octobre",
   "Terra.date.input.november": "Novembre",
-  "Terra.date.input.december": "Décembre"
+  "Terra.date.input.december": "Décembre",
+  "Terra.date.input.dateFormatLabel": "Format de date:"
 }

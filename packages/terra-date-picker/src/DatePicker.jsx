@@ -114,6 +114,13 @@ const propTypes = {
    */
   selectedDate: PropTypes.string,
   /**
+   * @private
+   * NOTICE: Internal prop to be used only by Terra framework. This component provides a built-in format mask that is
+   * required to be displayed to users for proper accessibility and must not be removed. 'DatePickerField' is permitted to set
+   * this prop because it provides the same format mask in its 'help' prop.
+  */
+  useExternalFormatMask: PropTypes.bool,
+  /**
    * The date value. This prop should only be used for a controlled date picker.
    * When this prop is set a handler is needed for both the `onChange` and `onChangeRaw` props to manage the date value.
    * If both `selectedDate` and this prop are set, then `selectedDate` will have no effect.
@@ -143,6 +150,7 @@ const defaultProps = {
   onClickOutside: undefined,
   onFocus: undefined,
   onSelect: undefined,
+  useExternalFormatMask: false,
   required: false,
   disableButtonFocusOnClose: false,
   selectedDate: undefined,
@@ -187,14 +195,8 @@ class DatePicker extends React.Component {
     if (nextDateValue !== prevState.prevPropsSelectedDate) {
       const nextSelectedDate = DateUtil.createSafeDate(nextDateValue);
 
-      if (nextSelectedDate) {
-        return {
-          selectedDate: nextSelectedDate,
-          prevPropsSelectedDate: nextDateValue,
-        };
-      }
-
       return {
+        selectedDate: nextSelectedDate,
         prevPropsSelectedDate: nextDateValue,
       };
     }
@@ -403,6 +405,7 @@ class DatePicker extends React.Component {
       onSelect,
       required,
       selectedDate,
+      useExternalFormatMask,
       value,
       isInline,
       ariaLabel,
@@ -474,6 +477,7 @@ class DatePicker extends React.Component {
                 onButtonFocus={this.handleFocus}
                 buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
                 ariaLabel={ariaLabel}
+                useExternalFormatMask={useExternalFormatMask}
               />
             )}
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}
@@ -486,7 +490,6 @@ class DatePicker extends React.Component {
             dateFormat={dateFormat}
             fixedHeight
             locale={intl.locale}
-            placeholderText={intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })}
             dropdownMode="select"
             showMonthDropdown
             showYearDropdown
