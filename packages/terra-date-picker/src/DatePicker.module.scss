@@ -4,7 +4,7 @@
 
 :local {
   .date-picker {
-    display: inline-block;
+    display: inline-flex;
   }
 
   .date-input-container {
@@ -177,5 +177,14 @@
         z-index: 2;
       }
     }
+  }
+
+  .format-text {
+    color: var(--terra-date-picker-format-text-color, rgba(0, 0, 0, 0.55));
+    font-size: var(--terra-date-picker-format-text-font-size, 0.857rem);
+    font-weight: var(--terra-date-picker-format-text-font-weight, normal);
+    line-height: 1.25;
+    margin-top: var(--terra-date-picker-format-text-margin-top, 0.357em);
+    text-align: left;
   }
 }

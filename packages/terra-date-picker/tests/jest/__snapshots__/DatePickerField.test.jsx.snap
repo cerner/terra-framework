@@ -1,17 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render a DatePickerField with props 1`] = `
-<Field
+<InjectIntl(DatePickerField)
+  datePickerId="test-date-picker"
+  disabled={true}
   error="Text"
   errorIcon={
-    <IconError
+    <IconHelp
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
   }
+  excludeDates={
+    Array [
+      "2017-04-03",
+    ]
+  }
+  filterDate={[Function]}
   help="Help"
   hideRequired={true}
-  htmlFor="test-date-picker"
+  inputAttributes={
+    Object {
+      "name": "test",
+    }
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   isInline={true}
   isInvalid={true}
   isLabelHidden={true}
@@ -21,29 +60,83 @@ exports[`should render a DatePickerField with props 1`] = `
       "className": "label",
     }
   }
+  maxDate="2017-04-10"
   maxWidth="25px"
+  minDate="2017-04-01"
+  name="test-date-picker"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onChangeRaw={[Function]}
+  onClickOutside={[Function]}
+  onFocus={[Function]}
+  onSelect={[Function]}
   required={true}
+  selectedDate="2017-04-09"
   showOptional={true}
+  value="2017-04-09"
 >
-  <InjectIntl(DatePicker)
-    ariaLabel="Label Test"
+  <DatePickerField
+    datePickerId="test-date-picker"
     disabled={true}
+    error="Text"
+    errorIcon={
+      <IconHelp
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    }
     excludeDates={
       Array [
         "2017-04-03",
       ]
     }
     filterDate={[Function]}
-    id="test-date-picker"
-    inputAttribute={
+    help="Help"
+    hideRequired={true}
+    inputAttributes={
       Object {
-        "aria-describedby": "test-date-picker-error test-date-picker-help",
         "name": "test",
       }
     }
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isIncomplete={false}
+    isInline={true}
     isInvalid={true}
+    isLabelHidden={true}
+    label="Label Test"
+    labelAttrs={
+      Object {
+        "className": "label",
+      }
+    }
     maxDate="2017-04-10"
+    maxWidth="25px"
     minDate="2017-04-01"
     name="test-date-picker"
     onBlur={[Function]}
@@ -54,57 +147,1215 @@ exports[`should render a DatePickerField with props 1`] = `
     onSelect={[Function]}
     required={true}
     selectedDate="2017-04-09"
+    showOptional={true}
     value="2017-04-09"
-  />
-</Field>
+  >
+    <Field
+      error="Text"
+      errorIcon={
+        <IconError
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      }
+      help={
+        <div
+          aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
+          id="format"
+        >
+          (Terra.datePicker.dateFormat)
+           
+          Help
+        </div>
+      }
+      hideRequired={true}
+      htmlFor="test-date-picker"
+      isInline={true}
+      isInvalid={true}
+      isLabelHidden={true}
+      label="Label Test"
+      labelAttrs={
+        Object {
+          "className": "label",
+        }
+      }
+      maxWidth="25px"
+      required={true}
+      showOptional={true}
+    >
+      <div
+        className="field field-inline"
+        style={
+          Object {
+            "maxWidth": "25px",
+          }
+        }
+      >
+        <div
+          className="label-group label-group-hidden"
+        >
+          <div
+            className="error-icon"
+          >
+            <IconError
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <IconBase
+                ariaLabel={null}
+                className="IconError"
+                focusable="false"
+                height="1em"
+                isBidi={false}
+                isSpin={false}
+                viewBox="0 0 48 48"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="tui-Icon icon IconError"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                    fill="#E50000"
+                  />
+                  <path
+                    d="M7 21.5h34v5H7v-5z"
+                    fill="#FFF"
+                  />
+                </svg>
+              </IconBase>
+            </IconError>
+          </div>
+          <label
+            className="label label"
+            htmlFor="test-date-picker"
+          >
+            <div
+              className="required"
+            >
+              *
+            </div>
+            Label Test
+          </label>
+        </div>
+        <InjectIntl(DatePicker)
+          ariaLabel="Label Test"
+          disabled={true}
+          excludeDates={
+            Array [
+              "2017-04-03",
+            ]
+          }
+          filterDate={[Function]}
+          id="test-date-picker"
+          inputAttribute={
+            Object {
+              "aria-describedby": "test-date-picker-error test-date-picker-help",
+              "name": "test",
+            }
+          }
+          isIncomplete={false}
+          isInvalid={true}
+          key=".0"
+          maxDate="2017-04-10"
+          minDate="2017-04-01"
+          name="test-date-picker"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onChangeRaw={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onSelect={[Function]}
+          required={true}
+          selectedDate="2017-04-09"
+          useExternalFormatMask={true}
+          value="2017-04-09"
+        >
+          <DatePicker
+            ariaLabel="Label Test"
+            disableButtonFocusOnClose={false}
+            disabled={true}
+            excludeDates={
+              Array [
+                "2017-04-03",
+              ]
+            }
+            filterDate={[Function]}
+            id="test-date-picker"
+            inputAttribute={
+              Object {
+                "aria-describedby": "test-date-picker-error test-date-picker-help",
+                "name": "test",
+              }
+            }
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isIncomplete={false}
+            isInline={false}
+            isInvalid={true}
+            maxDate="2017-04-10"
+            minDate="2017-04-01"
+            name="test-date-picker"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onChangeRaw={[Function]}
+            onClickOutside={[Function]}
+            onFocus={[Function]}
+            onSelect={[Function]}
+            required={true}
+            selectedDate="2017-04-09"
+            useExternalFormatMask={true}
+            value="2017-04-09"
+          >
+            <div
+              className="date-picker"
+            >
+              <ResponsiveElement
+                onChange={[Function]}
+                responsiveTo="window"
+              >
+                <InjectIntl(DatePicker)
+                  allowSameDay={true}
+                  customInput={
+                    <InjectIntl(DatePickerInput)
+                      ariaLabel="Label Test"
+                      buttonRefCallback={[Function]}
+                      isIncomplete={false}
+                      isInvalid={true}
+                      onButtonFocus={[Function]}
+                      onCalendarButtonClick={[Function]}
+                      required={true}
+                      shouldShowPicker={false}
+                      useExternalFormatMask={true}
+                    />
+                  }
+                  dateFormat="MM/DD/YYYY"
+                  dateFormatCalendar=" "
+                  disabled={true}
+                  dropdownMode="select"
+                  excludeDates={
+                    Array [
+                      "2017-01-01T00:00:00.000Z",
+                    ]
+                  }
+                  filterDate={[Function]}
+                  fixedHeight={true}
+                  id="test-date-picker"
+                  includeDates={
+                    Array [
+                      "2017-01-01T00:00:00.000Z",
+                    ]
+                  }
+                  inline={false}
+                  inputAttribute={
+                    Object {
+                      "aria-describedby": "test-date-picker-error test-date-picker-help",
+                      "name": "test",
+                    }
+                  }
+                  locale="en"
+                  maxDate={"2017-01-01T00:00:00.000Z"}
+                  minDate={"2017-01-01T00:00:00.000Z"}
+                  name="test-date-picker"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onChangeRaw={[Function]}
+                  onClickOutside={[Function]}
+                  onFocus={[Function]}
+                  onSelect={[Function]}
+                  preventOpenOnFocus={true}
+                  required={true}
+                  selected={"2017-01-01T00:00:00.000Z"}
+                  showMonthDropdown={true}
+                  showYearDropdown={true}
+                  todayButton="Terra.datePicker.today"
+                  value="04/09/2017"
+                  withPortal={false}
+                >
+                  <DatePicker
+                    allowSameDay={true}
+                    customInput={
+                      <InjectIntl(DatePickerInput)
+                        ariaLabel="Label Test"
+                        buttonRefCallback={[Function]}
+                        isIncomplete={false}
+                        isInvalid={true}
+                        onButtonFocus={[Function]}
+                        onCalendarButtonClick={[Function]}
+                        required={true}
+                        shouldShowPicker={false}
+                        useExternalFormatMask={true}
+                      />
+                    }
+                    dateFormat="MM/DD/YYYY"
+                    dateFormatCalendar=" "
+                    disabled={true}
+                    disabledKeyboardNavigation={false}
+                    dropdownMode="select"
+                    excludeDates={
+                      Array [
+                        "2017-01-01T00:00:00.000Z",
+                      ]
+                    }
+                    filterDate={[Function]}
+                    fixedHeight={true}
+                    id="test-date-picker"
+                    includeDates={
+                      Array [
+                        "2017-01-01T00:00:00.000Z",
+                      ]
+                    }
+                    inline={false}
+                    inputAttribute={
+                      Object {
+                        "aria-describedby": "test-date-picker-error test-date-picker-help",
+                        "name": "test",
+                      }
+                    }
+                    intl={
+                      Object {
+                        "defaultFormats": Object {},
+                        "defaultLocale": "en",
+                        "formatDate": [Function],
+                        "formatHTMLMessage": [Function],
+                        "formatMessage": [Function],
+                        "formatNumber": [Function],
+                        "formatPlural": [Function],
+                        "formatRelative": [Function],
+                        "formatTime": [Function],
+                        "formats": Object {},
+                        "formatters": Object {
+                          "getDateTimeFormat": [Function],
+                          "getMessageFormat": [Function],
+                          "getNumberFormat": [Function],
+                          "getPluralFormat": [Function],
+                          "getRelativeFormat": [Function],
+                        },
+                        "locale": "en",
+                        "messages": null,
+                        "now": [Function],
+                        "onError": [Function],
+                        "textComponent": "span",
+                        "timeZone": null,
+                      }
+                    }
+                    locale="en"
+                    maxDate={"2017-01-01T00:00:00.000Z"}
+                    minDate={"2017-01-01T00:00:00.000Z"}
+                    monthsShown={1}
+                    name="test-date-picker"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onChangeRaw={[Function]}
+                    onClickOutside={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMonthChange={[Function]}
+                    onSelect={[Function]}
+                    preventOpenOnFocus={true}
+                    required={true}
+                    selected={"2017-01-01T00:00:00.000Z"}
+                    shouldCloseOnSelect={true}
+                    showMonthDropdown={true}
+                    showYearDropdown={true}
+                    todayButton="Terra.datePicker.today"
+                    value="04/09/2017"
+                    withPortal={false}
+                  >
+                    <div
+                      className="react-datepicker-input-container"
+                    >
+                      <InjectIntl(DatePickerInput)
+                        ariaLabel="Label Test"
+                        buttonRefCallback={[Function]}
+                        className=""
+                        disabled={true}
+                        id="test-date-picker"
+                        isIncomplete={false}
+                        isInvalid={true}
+                        name="test-date-picker"
+                        onBlur={[Function]}
+                        onButtonFocus={[Function]}
+                        onCalendarButtonClick={[Function]}
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        required={true}
+                        shouldShowPicker={false}
+                        useExternalFormatMask={true}
+                        value="04/09/2017"
+                      >
+                        <DatePickerInput
+                          ariaLabel="Label Test"
+                          buttonRefCallback={[Function]}
+                          className=""
+                          disabled={true}
+                          id="test-date-picker"
+                          intl={
+                            Object {
+                              "defaultFormats": Object {},
+                              "defaultLocale": "en",
+                              "formatDate": [Function],
+                              "formatHTMLMessage": [Function],
+                              "formatMessage": [Function],
+                              "formatNumber": [Function],
+                              "formatPlural": [Function],
+                              "formatRelative": [Function],
+                              "formatTime": [Function],
+                              "formats": Object {},
+                              "formatters": Object {
+                                "getDateTimeFormat": [Function],
+                                "getMessageFormat": [Function],
+                                "getNumberFormat": [Function],
+                                "getPluralFormat": [Function],
+                                "getRelativeFormat": [Function],
+                              },
+                              "locale": "en",
+                              "messages": null,
+                              "now": [Function],
+                              "onError": [Function],
+                              "textComponent": "span",
+                              "timeZone": null,
+                            }
+                          }
+                          isIncomplete={false}
+                          isInvalid={true}
+                          name="test-date-picker"
+                          onBlur={[Function]}
+                          onButtonFocus={[Function]}
+                          onCalendarButtonClick={[Function]}
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          required={true}
+                          shouldShowPicker={false}
+                          useExternalFormatMask={true}
+                          value="04/09/2017"
+                        >
+                          <div
+                            className=""
+                          >
+                            <div
+                              className="custom-input"
+                            >
+                              <input
+                                data-terra-date-input-hidden={true}
+                                name="test-date-picker"
+                                type="hidden"
+                                value="2017-04-09"
+                              />
+                              <Input
+                                aria-describedby=""
+                                ariaLabel="Label Test, Sunday, January 1, 2017"
+                                className="input is-invalid"
+                                disabled={true}
+                                id="test-date-picker"
+                                isIncomplete={false}
+                                isInvalid={false}
+                                name="terra-date-test-date-picker"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onFocus={[Function]}
+                                required={false}
+                                type="text"
+                                value="04/09/2017"
+                              >
+                                <input
+                                  aria-describedby=""
+                                  aria-label="Label Test, Sunday, January 1, 2017"
+                                  className="form-input input is-invalid"
+                                  disabled={true}
+                                  id="test-date-picker"
+                                  name="terra-date-test-date-picker"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  onFocus={[Function]}
+                                  required={false}
+                                  type="text"
+                                  value="04/09/2017"
+                                />
+                              </Input>
+                              <Button
+                                className="button is-invalid"
+                                data-terra-open-calendar-button={true}
+                                icon={
+                                  <IconCalendar
+                                    viewBox="0 0 48 48"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  />
+                                }
+                                isBlock={false}
+                                isCompact={true}
+                                isDisabled={true}
+                                isIconOnly={true}
+                                isReversed={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                refCallback={[Function]}
+                                text="Terra.datePicker.openCalendar"
+                                type="button"
+                                variant="neutral"
+                              >
+                                <button
+                                  aria-disabled={true}
+                                  aria-label="Terra.datePicker.openCalendar"
+                                  className="button neutral is-disabled compact button is-invalid"
+                                  data-terra-open-calendar-button={true}
+                                  disabled={true}
+                                  onBlur={[Function]}
+                                  onClick={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  onKeyUp={[Function]}
+                                  onMouseDown={[Function]}
+                                  tabIndex="-1"
+                                  title="Terra.datePicker.openCalendar"
+                                  type="button"
+                                >
+                                  <span
+                                    className="button-label icon-only"
+                                  >
+                                    <span
+                                      className="icon"
+                                    >
+                                      <IconCalendar
+                                        className="icon-svg"
+                                        viewBox="0 0 48 48"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <IconBase
+                                          ariaLabel={null}
+                                          className="icon-svg"
+                                          focusable="false"
+                                          height="1em"
+                                          isBidi={false}
+                                          isSpin={false}
+                                          viewBox="0 0 48 48"
+                                          width="1em"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="tui-Icon icon icon-svg"
+                                            focusable="false"
+                                            height="1em"
+                                            viewBox="0 0 48 48"
+                                            width="1em"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
+                                            />
+                                          </svg>
+                                        </IconBase>
+                                      </IconCalendar>
+                                    </span>
+                                  </span>
+                                </button>
+                              </Button>
+                            </div>
+                          </div>
+                        </DatePickerInput>
+                      </InjectIntl(DatePickerInput)>
+                    </div>
+                  </DatePicker>
+                </InjectIntl(DatePicker)>
+              </ResponsiveElement>
+            </div>
+          </DatePicker>
+        </InjectIntl(DatePicker)>
+        <div
+          aria-live="assertive"
+          className="error-text"
+          id="test-date-picker-error"
+          tabIndex="-1"
+        >
+          Text
+        </div>
+        <div
+          className="help-text"
+          id="test-date-picker-help"
+          tabIndex="-1"
+        >
+          <div
+            aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
+            id="format"
+          >
+            (Terra.datePicker.dateFormat)
+             
+            Help
+          </div>
+        </div>
+      </div>
+    </Field>
+  </DatePickerField>
+</InjectIntl(DatePickerField)>
 `;
 
 exports[`should render a default DatePickerField component 1`] = `
-<Field
-  error={null}
-  errorIcon={
-    <IconError
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
+<InjectIntl(DatePickerField)
+  datePickerId="test-date-picker"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
   }
-  help={null}
-  hideRequired={false}
-  htmlFor="test-date-picker"
-  isInline={false}
-  isInvalid={false}
-  isLabelHidden={false}
   label="Label"
-  labelAttrs={Object {}}
-  required={false}
-  showOptional={false}
+  name="test-date-picker"
 >
-  <InjectIntl(DatePicker)
-    ariaLabel="Label"
+  <DatePickerField
+    datePickerId="test-date-picker"
     disabled={false}
-    id="test-date-picker"
+    error={null}
+    errorIcon={
+      <IconError
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    }
+    help={null}
+    hideRequired={false}
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isIncomplete={false}
+    isInline={false}
     isInvalid={false}
+    isLabelHidden={false}
+    label="Label"
+    labelAttrs={Object {}}
     name="test-date-picker"
     required={false}
-  />
-</Field>
+    showOptional={false}
+  >
+    <Field
+      error={null}
+      errorIcon={
+        <IconError
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      }
+      help={
+        <div
+          aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
+          id="format"
+        >
+          (Terra.datePicker.dateFormat)
+        </div>
+      }
+      hideRequired={false}
+      htmlFor="test-date-picker"
+      isInline={false}
+      isInvalid={false}
+      isLabelHidden={false}
+      label="Label"
+      labelAttrs={Object {}}
+      required={false}
+      showOptional={false}
+    >
+      <div
+        className="field"
+      >
+        <div
+          className="label-group"
+        >
+          <label
+            className="label"
+            htmlFor="test-date-picker"
+          >
+            Label
+          </label>
+          <div
+            className="error-icon-hidden"
+          >
+            <IconError
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <IconBase
+                ariaLabel={null}
+                className="IconError"
+                focusable="false"
+                height="1em"
+                isBidi={false}
+                isSpin={false}
+                viewBox="0 0 48 48"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="tui-Icon icon IconError"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                    fill="#E50000"
+                  />
+                  <path
+                    d="M7 21.5h34v5H7v-5z"
+                    fill="#FFF"
+                  />
+                </svg>
+              </IconBase>
+            </IconError>
+          </div>
+        </div>
+        <InjectIntl(DatePicker)
+          ariaLabel="Label"
+          disabled={false}
+          id="test-date-picker"
+          isIncomplete={false}
+          isInvalid={false}
+          key=".0"
+          name="test-date-picker"
+          required={false}
+          useExternalFormatMask={true}
+        >
+          <DatePicker
+            ariaLabel="Label"
+            disableButtonFocusOnClose={false}
+            disabled={false}
+            id="test-date-picker"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isIncomplete={false}
+            isInline={false}
+            isInvalid={false}
+            maxDate="2100-12-31"
+            minDate="1900-01-01"
+            name="test-date-picker"
+            required={false}
+            useExternalFormatMask={true}
+          >
+            <div
+              className="date-picker"
+            >
+              <ResponsiveElement
+                onChange={[Function]}
+                responsiveTo="window"
+              >
+                <InjectIntl(DatePicker)
+                  allowSameDay={true}
+                  customInput={
+                    <InjectIntl(DatePickerInput)
+                      ariaLabel="Label"
+                      buttonRefCallback={[Function]}
+                      isIncomplete={false}
+                      isInvalid={false}
+                      onButtonFocus={[Function]}
+                      onCalendarButtonClick={[Function]}
+                      required={false}
+                      shouldShowPicker={false}
+                      useExternalFormatMask={true}
+                    />
+                  }
+                  dateFormat="MM/DD/YYYY"
+                  dateFormatCalendar=" "
+                  disabled={false}
+                  dropdownMode="select"
+                  excludeDates={
+                    Array [
+                      "2017-01-01T00:00:00.000Z",
+                    ]
+                  }
+                  filterDate={[Function]}
+                  fixedHeight={true}
+                  id="test-date-picker"
+                  includeDates={
+                    Array [
+                      "2017-01-01T00:00:00.000Z",
+                    ]
+                  }
+                  inline={false}
+                  locale="en"
+                  maxDate={"2017-01-01T00:00:00.000Z"}
+                  minDate={"2017-01-01T00:00:00.000Z"}
+                  name="test-date-picker"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onChangeRaw={[Function]}
+                  onClickOutside={[Function]}
+                  onFocus={[Function]}
+                  onSelect={[Function]}
+                  preventOpenOnFocus={true}
+                  required={false}
+                  selected={"2017-01-01T00:00:00.000Z"}
+                  showMonthDropdown={true}
+                  showYearDropdown={true}
+                  todayButton="Terra.datePicker.today"
+                  withPortal={false}
+                >
+                  <DatePicker
+                    allowSameDay={true}
+                    customInput={
+                      <InjectIntl(DatePickerInput)
+                        ariaLabel="Label"
+                        buttonRefCallback={[Function]}
+                        isIncomplete={false}
+                        isInvalid={false}
+                        onButtonFocus={[Function]}
+                        onCalendarButtonClick={[Function]}
+                        required={false}
+                        shouldShowPicker={false}
+                        useExternalFormatMask={true}
+                      />
+                    }
+                    dateFormat="MM/DD/YYYY"
+                    dateFormatCalendar=" "
+                    disabled={false}
+                    disabledKeyboardNavigation={false}
+                    dropdownMode="select"
+                    excludeDates={
+                      Array [
+                        "2017-01-01T00:00:00.000Z",
+                      ]
+                    }
+                    filterDate={[Function]}
+                    fixedHeight={true}
+                    id="test-date-picker"
+                    includeDates={
+                      Array [
+                        "2017-01-01T00:00:00.000Z",
+                      ]
+                    }
+                    inline={false}
+                    intl={
+                      Object {
+                        "defaultFormats": Object {},
+                        "defaultLocale": "en",
+                        "formatDate": [Function],
+                        "formatHTMLMessage": [Function],
+                        "formatMessage": [Function],
+                        "formatNumber": [Function],
+                        "formatPlural": [Function],
+                        "formatRelative": [Function],
+                        "formatTime": [Function],
+                        "formats": Object {},
+                        "formatters": Object {
+                          "getDateTimeFormat": [Function],
+                          "getMessageFormat": [Function],
+                          "getNumberFormat": [Function],
+                          "getPluralFormat": [Function],
+                          "getRelativeFormat": [Function],
+                        },
+                        "locale": "en",
+                        "messages": null,
+                        "now": [Function],
+                        "onError": [Function],
+                        "textComponent": "span",
+                        "timeZone": null,
+                      }
+                    }
+                    locale="en"
+                    maxDate={"2017-01-01T00:00:00.000Z"}
+                    minDate={"2017-01-01T00:00:00.000Z"}
+                    monthsShown={1}
+                    name="test-date-picker"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onChangeRaw={[Function]}
+                    onClickOutside={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMonthChange={[Function]}
+                    onSelect={[Function]}
+                    preventOpenOnFocus={true}
+                    required={false}
+                    selected={"2017-01-01T00:00:00.000Z"}
+                    shouldCloseOnSelect={true}
+                    showMonthDropdown={true}
+                    showYearDropdown={true}
+                    todayButton="Terra.datePicker.today"
+                    withPortal={false}
+                  >
+                    <div
+                      className="react-datepicker-input-container"
+                    >
+                      <InjectIntl(DatePickerInput)
+                        ariaLabel="Label"
+                        buttonRefCallback={[Function]}
+                        className=""
+                        disabled={false}
+                        id="test-date-picker"
+                        isIncomplete={false}
+                        isInvalid={false}
+                        name="test-date-picker"
+                        onBlur={[Function]}
+                        onButtonFocus={[Function]}
+                        onCalendarButtonClick={[Function]}
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        required={false}
+                        shouldShowPicker={false}
+                        useExternalFormatMask={true}
+                        value="01/01/2017"
+                      >
+                        <DatePickerInput
+                          ariaLabel="Label"
+                          buttonRefCallback={[Function]}
+                          className=""
+                          disabled={false}
+                          id="test-date-picker"
+                          intl={
+                            Object {
+                              "defaultFormats": Object {},
+                              "defaultLocale": "en",
+                              "formatDate": [Function],
+                              "formatHTMLMessage": [Function],
+                              "formatMessage": [Function],
+                              "formatNumber": [Function],
+                              "formatPlural": [Function],
+                              "formatRelative": [Function],
+                              "formatTime": [Function],
+                              "formats": Object {},
+                              "formatters": Object {
+                                "getDateTimeFormat": [Function],
+                                "getMessageFormat": [Function],
+                                "getNumberFormat": [Function],
+                                "getPluralFormat": [Function],
+                                "getRelativeFormat": [Function],
+                              },
+                              "locale": "en",
+                              "messages": null,
+                              "now": [Function],
+                              "onError": [Function],
+                              "textComponent": "span",
+                              "timeZone": null,
+                            }
+                          }
+                          isIncomplete={false}
+                          isInvalid={false}
+                          name="test-date-picker"
+                          onBlur={[Function]}
+                          onButtonFocus={[Function]}
+                          onCalendarButtonClick={[Function]}
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          required={false}
+                          shouldShowPicker={false}
+                          useExternalFormatMask={true}
+                          value="01/01/2017"
+                        >
+                          <div
+                            className=""
+                          >
+                            <div
+                              className="custom-input"
+                            >
+                              <input
+                                data-terra-date-input-hidden={true}
+                                name="test-date-picker"
+                                type="hidden"
+                                value="2017-01-01"
+                              />
+                              <Input
+                                aria-describedby=""
+                                ariaLabel="Label, Sunday, January 1, 2017"
+                                className="input"
+                                disabled={false}
+                                id="test-date-picker"
+                                isIncomplete={false}
+                                isInvalid={false}
+                                name="terra-date-test-date-picker"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onFocus={[Function]}
+                                required={false}
+                                type="text"
+                                value="01/01/2017"
+                              >
+                                <input
+                                  aria-describedby=""
+                                  aria-label="Label, Sunday, January 1, 2017"
+                                  className="form-input input"
+                                  disabled={false}
+                                  id="test-date-picker"
+                                  name="terra-date-test-date-picker"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  onFocus={[Function]}
+                                  required={false}
+                                  type="text"
+                                  value="01/01/2017"
+                                />
+                              </Input>
+                              <Button
+                                className="button"
+                                data-terra-open-calendar-button={true}
+                                icon={
+                                  <IconCalendar
+                                    viewBox="0 0 48 48"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  />
+                                }
+                                isBlock={false}
+                                isCompact={true}
+                                isDisabled={false}
+                                isIconOnly={true}
+                                isReversed={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                refCallback={[Function]}
+                                text="Terra.datePicker.openCalendar"
+                                type="button"
+                                variant="neutral"
+                              >
+                                <button
+                                  aria-disabled={false}
+                                  aria-label="Terra.datePicker.openCalendar"
+                                  className="button neutral compact button"
+                                  data-terra-open-calendar-button={true}
+                                  disabled={false}
+                                  onBlur={[Function]}
+                                  onClick={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  onKeyUp={[Function]}
+                                  onMouseDown={[Function]}
+                                  title="Terra.datePicker.openCalendar"
+                                  type="button"
+                                >
+                                  <span
+                                    className="button-label icon-only"
+                                  >
+                                    <span
+                                      className="icon"
+                                    >
+                                      <IconCalendar
+                                        className="icon-svg"
+                                        viewBox="0 0 48 48"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <IconBase
+                                          ariaLabel={null}
+                                          className="icon-svg"
+                                          focusable="false"
+                                          height="1em"
+                                          isBidi={false}
+                                          isSpin={false}
+                                          viewBox="0 0 48 48"
+                                          width="1em"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="tui-Icon icon icon-svg"
+                                            focusable="false"
+                                            height="1em"
+                                            viewBox="0 0 48 48"
+                                            width="1em"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
+                                            />
+                                          </svg>
+                                        </IconBase>
+                                      </IconCalendar>
+                                    </span>
+                                  </span>
+                                </button>
+                              </Button>
+                            </div>
+                          </div>
+                        </DatePickerInput>
+                      </InjectIntl(DatePickerInput)>
+                    </div>
+                  </DatePicker>
+                </InjectIntl(DatePicker)>
+              </ResponsiveElement>
+            </div>
+          </DatePicker>
+        </InjectIntl(DatePicker)>
+        <div
+          className="help-text"
+          id="test-date-picker-help"
+          tabIndex="-1"
+        >
+          <div
+            aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
+            id="format"
+          >
+            (Terra.datePicker.dateFormat)
+          </div>
+        </div>
+      </div>
+    </Field>
+  </DatePickerField>
+</InjectIntl(DatePickerField)>
 `;
 
 exports[`should render a valid DatePickerField with props 1`] = `
-<Field
+<InjectIntl(DatePickerField)
+  datePickerId="test-date-picker"
+  disabled={true}
   error="Text"
   errorIcon={
-    <IconError
+    <IconHelp
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
   }
+  excludeDates={
+    Array [
+      "2017-04-03",
+    ]
+  }
+  filterDate={[Function]}
   help="Help"
   hideRequired={true}
-  htmlFor="test-date-picker"
+  inputAttributes={
+    Object {
+      "name": "test",
+    }
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   isInline={true}
-  isInvalid={false}
   isLabelHidden={true}
   label="Label Test"
   labelAttrs={
@@ -112,29 +1363,82 @@ exports[`should render a valid DatePickerField with props 1`] = `
       "className": "label",
     }
   }
+  maxDate="2017-04-10"
   maxWidth="25px"
+  minDate="2017-04-01"
+  name="test-date-picker"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onChangeRaw={[Function]}
+  onClickOutside={[Function]}
+  onFocus={[Function]}
+  onSelect={[Function]}
   required={true}
+  selectedDate="2017-04-09"
   showOptional={true}
 >
-  <InjectIntl(DatePicker)
-    ariaLabel="Label Test"
+  <DatePickerField
+    datePickerId="test-date-picker"
     disabled={true}
+    error="Text"
+    errorIcon={
+      <IconHelp
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    }
     excludeDates={
       Array [
         "2017-04-03",
       ]
     }
     filterDate={[Function]}
-    id="test-date-picker"
-    inputAttribute={
+    help="Help"
+    hideRequired={true}
+    inputAttributes={
       Object {
-        "aria-describedby": "test-date-picker-help",
         "name": "test",
       }
     }
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isIncomplete={false}
+    isInline={true}
     isInvalid={false}
+    isLabelHidden={true}
+    label="Label Test"
+    labelAttrs={
+      Object {
+        "className": "label",
+      }
+    }
     maxDate="2017-04-10"
+    maxWidth="25px"
     minDate="2017-04-01"
     name="test-date-picker"
     onBlur={[Function]}
@@ -145,6 +1449,570 @@ exports[`should render a valid DatePickerField with props 1`] = `
     onSelect={[Function]}
     required={true}
     selectedDate="2017-04-09"
-  />
-</Field>
+    showOptional={true}
+  >
+    <Field
+      error="Text"
+      errorIcon={
+        <IconError
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      }
+      help={
+        <div
+          aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
+          id="format"
+        >
+          (Terra.datePicker.dateFormat)
+           
+          Help
+        </div>
+      }
+      hideRequired={true}
+      htmlFor="test-date-picker"
+      isInline={true}
+      isInvalid={false}
+      isLabelHidden={true}
+      label="Label Test"
+      labelAttrs={
+        Object {
+          "className": "label",
+        }
+      }
+      maxWidth="25px"
+      required={true}
+      showOptional={true}
+    >
+      <div
+        className="field field-inline"
+        style={
+          Object {
+            "maxWidth": "25px",
+          }
+        }
+      >
+        <div
+          className="label-group label-group-hidden"
+        >
+          <label
+            className="label label"
+            htmlFor="test-date-picker"
+          >
+            Label Test
+            <div
+              className="required-hidden"
+            >
+              *
+            </div>
+          </label>
+          <div
+            className="error-icon-hidden"
+          >
+            <IconError
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <IconBase
+                ariaLabel={null}
+                className="IconError"
+                focusable="false"
+                height="1em"
+                isBidi={false}
+                isSpin={false}
+                viewBox="0 0 48 48"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="tui-Icon icon IconError"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                    fill="#E50000"
+                  />
+                  <path
+                    d="M7 21.5h34v5H7v-5z"
+                    fill="#FFF"
+                  />
+                </svg>
+              </IconBase>
+            </IconError>
+          </div>
+        </div>
+        <InjectIntl(DatePicker)
+          ariaLabel="Label Test"
+          disabled={true}
+          excludeDates={
+            Array [
+              "2017-04-03",
+            ]
+          }
+          filterDate={[Function]}
+          id="test-date-picker"
+          inputAttribute={
+            Object {
+              "aria-describedby": "test-date-picker-help",
+              "name": "test",
+            }
+          }
+          isIncomplete={false}
+          isInvalid={false}
+          key=".0"
+          maxDate="2017-04-10"
+          minDate="2017-04-01"
+          name="test-date-picker"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onChangeRaw={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onSelect={[Function]}
+          required={true}
+          selectedDate="2017-04-09"
+          useExternalFormatMask={true}
+        >
+          <DatePicker
+            ariaLabel="Label Test"
+            disableButtonFocusOnClose={false}
+            disabled={true}
+            excludeDates={
+              Array [
+                "2017-04-03",
+              ]
+            }
+            filterDate={[Function]}
+            id="test-date-picker"
+            inputAttribute={
+              Object {
+                "aria-describedby": "test-date-picker-help",
+                "name": "test",
+              }
+            }
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isIncomplete={false}
+            isInline={false}
+            isInvalid={false}
+            maxDate="2017-04-10"
+            minDate="2017-04-01"
+            name="test-date-picker"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onChangeRaw={[Function]}
+            onClickOutside={[Function]}
+            onFocus={[Function]}
+            onSelect={[Function]}
+            required={true}
+            selectedDate="2017-04-09"
+            useExternalFormatMask={true}
+          >
+            <div
+              className="date-picker"
+            >
+              <ResponsiveElement
+                onChange={[Function]}
+                responsiveTo="window"
+              >
+                <InjectIntl(DatePicker)
+                  allowSameDay={true}
+                  customInput={
+                    <InjectIntl(DatePickerInput)
+                      ariaLabel="Label Test"
+                      buttonRefCallback={[Function]}
+                      isIncomplete={false}
+                      isInvalid={false}
+                      onButtonFocus={[Function]}
+                      onCalendarButtonClick={[Function]}
+                      required={true}
+                      shouldShowPicker={false}
+                      useExternalFormatMask={true}
+                    />
+                  }
+                  dateFormat="MM/DD/YYYY"
+                  dateFormatCalendar=" "
+                  disabled={true}
+                  dropdownMode="select"
+                  excludeDates={
+                    Array [
+                      "2017-01-01T00:00:00.000Z",
+                    ]
+                  }
+                  filterDate={[Function]}
+                  fixedHeight={true}
+                  id="test-date-picker"
+                  includeDates={
+                    Array [
+                      "2017-01-01T00:00:00.000Z",
+                    ]
+                  }
+                  inline={false}
+                  inputAttribute={
+                    Object {
+                      "aria-describedby": "test-date-picker-help",
+                      "name": "test",
+                    }
+                  }
+                  locale="en"
+                  maxDate={"2017-01-01T00:00:00.000Z"}
+                  minDate={"2017-01-01T00:00:00.000Z"}
+                  name="test-date-picker"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onChangeRaw={[Function]}
+                  onClickOutside={[Function]}
+                  onFocus={[Function]}
+                  onSelect={[Function]}
+                  preventOpenOnFocus={true}
+                  required={true}
+                  selected={"2017-01-01T00:00:00.000Z"}
+                  showMonthDropdown={true}
+                  showYearDropdown={true}
+                  todayButton="Terra.datePicker.today"
+                  withPortal={false}
+                >
+                  <DatePicker
+                    allowSameDay={true}
+                    customInput={
+                      <InjectIntl(DatePickerInput)
+                        ariaLabel="Label Test"
+                        buttonRefCallback={[Function]}
+                        isIncomplete={false}
+                        isInvalid={false}
+                        onButtonFocus={[Function]}
+                        onCalendarButtonClick={[Function]}
+                        required={true}
+                        shouldShowPicker={false}
+                        useExternalFormatMask={true}
+                      />
+                    }
+                    dateFormat="MM/DD/YYYY"
+                    dateFormatCalendar=" "
+                    disabled={true}
+                    disabledKeyboardNavigation={false}
+                    dropdownMode="select"
+                    excludeDates={
+                      Array [
+                        "2017-01-01T00:00:00.000Z",
+                      ]
+                    }
+                    filterDate={[Function]}
+                    fixedHeight={true}
+                    id="test-date-picker"
+                    includeDates={
+                      Array [
+                        "2017-01-01T00:00:00.000Z",
+                      ]
+                    }
+                    inline={false}
+                    inputAttribute={
+                      Object {
+                        "aria-describedby": "test-date-picker-help",
+                        "name": "test",
+                      }
+                    }
+                    intl={
+                      Object {
+                        "defaultFormats": Object {},
+                        "defaultLocale": "en",
+                        "formatDate": [Function],
+                        "formatHTMLMessage": [Function],
+                        "formatMessage": [Function],
+                        "formatNumber": [Function],
+                        "formatPlural": [Function],
+                        "formatRelative": [Function],
+                        "formatTime": [Function],
+                        "formats": Object {},
+                        "formatters": Object {
+                          "getDateTimeFormat": [Function],
+                          "getMessageFormat": [Function],
+                          "getNumberFormat": [Function],
+                          "getPluralFormat": [Function],
+                          "getRelativeFormat": [Function],
+                        },
+                        "locale": "en",
+                        "messages": null,
+                        "now": [Function],
+                        "onError": [Function],
+                        "textComponent": "span",
+                        "timeZone": null,
+                      }
+                    }
+                    locale="en"
+                    maxDate={"2017-01-01T00:00:00.000Z"}
+                    minDate={"2017-01-01T00:00:00.000Z"}
+                    monthsShown={1}
+                    name="test-date-picker"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onChangeRaw={[Function]}
+                    onClickOutside={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMonthChange={[Function]}
+                    onSelect={[Function]}
+                    preventOpenOnFocus={true}
+                    required={true}
+                    selected={"2017-01-01T00:00:00.000Z"}
+                    shouldCloseOnSelect={true}
+                    showMonthDropdown={true}
+                    showYearDropdown={true}
+                    todayButton="Terra.datePicker.today"
+                    withPortal={false}
+                  >
+                    <div
+                      className="react-datepicker-input-container"
+                    >
+                      <InjectIntl(DatePickerInput)
+                        ariaLabel="Label Test"
+                        buttonRefCallback={[Function]}
+                        className=""
+                        disabled={true}
+                        id="test-date-picker"
+                        isIncomplete={false}
+                        isInvalid={false}
+                        name="test-date-picker"
+                        onBlur={[Function]}
+                        onButtonFocus={[Function]}
+                        onCalendarButtonClick={[Function]}
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        required={true}
+                        shouldShowPicker={false}
+                        useExternalFormatMask={true}
+                        value="01/01/2017"
+                      >
+                        <DatePickerInput
+                          ariaLabel="Label Test"
+                          buttonRefCallback={[Function]}
+                          className=""
+                          disabled={true}
+                          id="test-date-picker"
+                          intl={
+                            Object {
+                              "defaultFormats": Object {},
+                              "defaultLocale": "en",
+                              "formatDate": [Function],
+                              "formatHTMLMessage": [Function],
+                              "formatMessage": [Function],
+                              "formatNumber": [Function],
+                              "formatPlural": [Function],
+                              "formatRelative": [Function],
+                              "formatTime": [Function],
+                              "formats": Object {},
+                              "formatters": Object {
+                                "getDateTimeFormat": [Function],
+                                "getMessageFormat": [Function],
+                                "getNumberFormat": [Function],
+                                "getPluralFormat": [Function],
+                                "getRelativeFormat": [Function],
+                              },
+                              "locale": "en",
+                              "messages": null,
+                              "now": [Function],
+                              "onError": [Function],
+                              "textComponent": "span",
+                              "timeZone": null,
+                            }
+                          }
+                          isIncomplete={false}
+                          isInvalid={false}
+                          name="test-date-picker"
+                          onBlur={[Function]}
+                          onButtonFocus={[Function]}
+                          onCalendarButtonClick={[Function]}
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          required={true}
+                          shouldShowPicker={false}
+                          useExternalFormatMask={true}
+                          value="01/01/2017"
+                        >
+                          <div
+                            className=""
+                          >
+                            <div
+                              className="custom-input"
+                            >
+                              <input
+                                data-terra-date-input-hidden={true}
+                                name="test-date-picker"
+                                type="hidden"
+                                value="2017-01-01"
+                              />
+                              <Input
+                                aria-describedby=""
+                                ariaLabel="Label Test, Sunday, January 1, 2017"
+                                className="input"
+                                disabled={true}
+                                id="test-date-picker"
+                                isIncomplete={false}
+                                isInvalid={false}
+                                name="terra-date-test-date-picker"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onFocus={[Function]}
+                                required={false}
+                                type="text"
+                                value="01/01/2017"
+                              >
+                                <input
+                                  aria-describedby=""
+                                  aria-label="Label Test, Sunday, January 1, 2017"
+                                  className="form-input input"
+                                  disabled={true}
+                                  id="test-date-picker"
+                                  name="terra-date-test-date-picker"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  onFocus={[Function]}
+                                  required={false}
+                                  type="text"
+                                  value="01/01/2017"
+                                />
+                              </Input>
+                              <Button
+                                className="button"
+                                data-terra-open-calendar-button={true}
+                                icon={
+                                  <IconCalendar
+                                    viewBox="0 0 48 48"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  />
+                                }
+                                isBlock={false}
+                                isCompact={true}
+                                isDisabled={true}
+                                isIconOnly={true}
+                                isReversed={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                refCallback={[Function]}
+                                text="Terra.datePicker.openCalendar"
+                                type="button"
+                                variant="neutral"
+                              >
+                                <button
+                                  aria-disabled={true}
+                                  aria-label="Terra.datePicker.openCalendar"
+                                  className="button neutral is-disabled compact button"
+                                  data-terra-open-calendar-button={true}
+                                  disabled={true}
+                                  onBlur={[Function]}
+                                  onClick={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  onKeyUp={[Function]}
+                                  onMouseDown={[Function]}
+                                  tabIndex="-1"
+                                  title="Terra.datePicker.openCalendar"
+                                  type="button"
+                                >
+                                  <span
+                                    className="button-label icon-only"
+                                  >
+                                    <span
+                                      className="icon"
+                                    >
+                                      <IconCalendar
+                                        className="icon-svg"
+                                        viewBox="0 0 48 48"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <IconBase
+                                          ariaLabel={null}
+                                          className="icon-svg"
+                                          focusable="false"
+                                          height="1em"
+                                          isBidi={false}
+                                          isSpin={false}
+                                          viewBox="0 0 48 48"
+                                          width="1em"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="tui-Icon icon icon-svg"
+                                            focusable="false"
+                                            height="1em"
+                                            viewBox="0 0 48 48"
+                                            width="1em"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
+                                            />
+                                          </svg>
+                                        </IconBase>
+                                      </IconCalendar>
+                                    </span>
+                                  </span>
+                                </button>
+                              </Button>
+                            </div>
+                          </div>
+                        </DatePickerInput>
+                      </InjectIntl(DatePickerInput)>
+                    </div>
+                  </DatePicker>
+                </InjectIntl(DatePicker)>
+              </ResponsiveElement>
+            </div>
+          </DatePicker>
+        </InjectIntl(DatePicker)>
+        <div
+          className="help-text"
+          id="test-date-picker-help"
+          tabIndex="-1"
+        >
+          <div
+            aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
+            id="format"
+          >
+            (Terra.datePicker.dateFormat)
+             
+            Help
+          </div>
+        </div>
+      </div>
+    </Field>
+  </DatePickerField>
+</InjectIntl(DatePickerField)>
 `;

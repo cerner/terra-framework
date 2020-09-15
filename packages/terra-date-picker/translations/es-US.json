@@ -12,5 +12,6 @@
   "Terra.datePicker.nextMonth": "Mes siguiente",
   "Terra.datePicker.previousMonth": "Mes anterior",
   "Terra.datePicker.calendarInstructions": "Para cambiar la selección, use las teclas de flecha. Presione Entrar para seleccionar una fecha. Presione Esc para cerrar el selector de fecha.",
-  "Terra.datePicker.dateFormatOrder": "MDY"
+  "Terra.datePicker.dateFormatOrder": "MDY",
+  "Terra.datePicker.dateFormatLabel": "Formato de fecha:"
 }

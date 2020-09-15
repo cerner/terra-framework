@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+* Removed
+  * Removed `placeholder` from day and year input.
+
+* Changed
+  * Updated month `placeholder` to be `- Select -`.
+
+* Added
+  * Added format to be displayed for both `DateInput` and `DateInputField`.
+
 ## 1.17.0 - (August 18, 2020)
 
 * Added

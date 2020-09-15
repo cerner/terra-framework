@@ -6,6 +6,15 @@
   * Tests updated to reflect input splitting in `terra-date-picker`.
   * `terra-dev-site` examples to use hooks.
 
+* Changed
+  * Update `timeVariant` prop description to include `es` in locales supporting only 24 hour format.
+  * Updated wdio snapshots due to changes in date-picker and time-input
+
+## 4.46.0 - (September 10, 2020)
+
+* Fixed
+  * Fix to clear out invalid date value when time input selected in date-time-picker.
+
 ## 4.45.0 - (August 18, 2020)
 
 * Changed

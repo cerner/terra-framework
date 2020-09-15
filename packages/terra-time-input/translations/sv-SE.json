@@ -6,5 +6,6 @@
   "Terra.timeInput.mm": "mm",
   "Terra.timeInput.seconds": "Sekunder",
   "Terra.timeInput.ss": "sek",
-  "Terra.timeInput.pm": ""
+  "Terra.timeInput.pm": "",
+  "Terra.timeInput.timeFormatLabel": "Tidsformat:"
 }
