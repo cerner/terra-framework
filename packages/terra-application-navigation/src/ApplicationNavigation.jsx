@@ -324,6 +324,7 @@ const ApplicationNavigation = ({
   useEffect(() => {
     const forceCloseMenu = () => {
       setDrawerMenuIsOpen(false);
+      setPopupMenuIsOpen(false);
     }
 
     window.addEventListener('terra-application-navigation.dismiss-menu', forceCloseMenu);
