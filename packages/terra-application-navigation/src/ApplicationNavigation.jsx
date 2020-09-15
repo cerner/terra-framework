@@ -104,14 +104,6 @@ const propTypes = {
    * A collection of child elements to render within the ApplicationNavigation body.
    */
   children: PropTypes.node,
-  /**
-   * auto close drawer on blur
-   */
-  hideOnBlur: PropTypes.bool,
-  /**
-   * auto close drawer on visbility hidden
-   */
-  hideOnHidden: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -137,8 +129,6 @@ const ApplicationNavigation = ({
   onSelectUtilityItem,
   notifications,
   children,
-  hideOnBlur,
-  hideOnHidden,
 }) => {
   const drawerMenuRef = useRef();
   const contentLayoutRef = useRef();
@@ -332,29 +322,15 @@ const ApplicationNavigation = ({
   });
 
   useEffect(() => {
-    if(hideOnBlur) {
-      const forceCloseMenu = () => {
-        setDrawerMenuIsOpen(false);
-      }
-
-      window.addEventListener('blur', forceCloseMenu);
-
-      return () => {
-        window.removeEventListener('blur', forceCloseMenu);
-      };
+    const forceCloseMenu = () => {
+      setDrawerMenuIsOpen(false);
     }
 
-    if(hideOnHidden) {
-      const forceCloseMenu = () => {
-        setDrawerMenuIsOpen(false);
-      }
+    window.addEventListener('terra-application-navigation.dismiss-menu', forceCloseMenu);
 
-      window.addEventListener('visibilitychange', forceCloseMenu);
-
-      return () => {
-        window.removeEventListener('visibilitychange', forceCloseMenu);
-      };
-    }
+    return () => {
+      window.removeEventListener('terra-application-navigation.dismiss-menu', forceCloseMenu);
+    };
   }, []);
 
   useLayoutEffect(() => {
