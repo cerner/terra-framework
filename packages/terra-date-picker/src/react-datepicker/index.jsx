@@ -459,11 +459,18 @@ class DatePicker extends React.Component {
     }
   }
 
-  setOpen = (open, event) => {
+  setOpen = (open) => {
+    if(!open) {
       this.setState({
-        open: open,
-        preSelection: open && this.state.open ? this.state.preSelection : this.calcInitialState().preSelection
+        isCalendarOpenedViaKeyboard: false,
+        isCalendarKeyboardFocused: false
       })
+    }
+    this.setState({
+      open: open,
+      preSelection: open && this.state.open ? this.state.preSelection : this.calcInitialState().preSelection
+    })
+
     if (this.props.onRequestClose && (!open)) {
       this.props.onRequestClose(event);
     }
@@ -589,7 +596,7 @@ class DatePicker extends React.Component {
   }
 
   onInputKeyDown = (event) => {
-    if(event.key === 'Enter') {
+    if(event.keyCode === KeyCode.KEY_RETURN || event.keyCode === KeyCode.KEY_SPACE) {
       this.setState({ isCalendarOpenedViaKeyboard: true })
 
     }

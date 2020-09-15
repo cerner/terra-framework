@@ -617,6 +617,7 @@ exports[`should render a DatePickerField with props 1`] = `
                               </Input>
                               <Button
                                 className="button is-invalid"
+                                data-terra-open-calendar-button={true}
                                 icon={
                                   <IconCalendar
                                     viewBox="0 0 48 48"
@@ -641,6 +642,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   aria-disabled={true}
                                   aria-label="Terra.datePicker.openCalendar"
                                   className="button neutral is-disabled compact button is-invalid"
+                                  data-terra-open-calendar-button={true}
                                   disabled={true}
                                   onBlur={[Function]}
                                   onClick={[Function]}
@@ -1202,6 +1204,7 @@ exports[`should render a default DatePickerField component 1`] = `
                               </Input>
                               <Button
                                 className="button"
+                                data-terra-open-calendar-button={true}
                                 icon={
                                   <IconCalendar
                                     viewBox="0 0 48 48"
@@ -1226,6 +1229,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   aria-disabled={false}
                                   aria-label="Terra.datePicker.openCalendar"
                                   className="button neutral compact button"
+                                  data-terra-open-calendar-button={true}
                                   disabled={false}
                                   onBlur={[Function]}
                                   onClick={[Function]}
@@ -1910,6 +1914,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                               </Input>
                               <Button
                                 className="button"
+                                data-terra-open-calendar-button={true}
                                 icon={
                                   <IconCalendar
                                     viewBox="0 0 48 48"
@@ -1934,6 +1939,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   aria-disabled={true}
                                   aria-label="Terra.datePicker.openCalendar"
                                   className="button neutral is-disabled compact button"
+                                  data-terra-open-calendar-button={true}
                                   disabled={true}
                                   onBlur={[Function]}
                                   onClick={[Function]}
