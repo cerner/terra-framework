@@ -570,45 +570,148 @@ exports[`should render a DatePickerField with props 1`] = `
                             className=""
                           >
                             <div
-                              className="custom-input"
+                              className="date-input-container"
                             >
-                              <input
-                                data-terra-date-input-hidden={true}
-                                name="test-date-picker"
-                                type="hidden"
-                                value="2017-04-09"
-                              />
-                              <Input
+                              <div
                                 aria-describedby=""
-                                ariaLabel="Label Test, Sunday, January 1, 2017"
-                                className="input is-invalid"
+                                className="date-input is-invalid"
                                 disabled={true}
                                 id="test-date-picker"
-                                isIncomplete={false}
-                                isInvalid={false}
-                                name="terra-date-test-date-picker"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                onFocus={[Function]}
-                                required={false}
-                                type="text"
-                                value="04/09/2017"
                               >
                                 <input
-                                  aria-describedby=""
-                                  aria-label="Label Test, Sunday, January 1, 2017"
-                                  className="form-input input is-invalid"
+                                  data-terra-date-input-hidden={true}
+                                  name="test-date-picker"
+                                  type="hidden"
+                                  value="2017-04-09"
+                                />
+                                <VisuallyHiddenText
+                                  text="Label Test, Sunday, January 1, 2017"
+                                >
+                                  <span
+                                    className="visually-hidden-text"
+                                  >
+                                    Label Test, Sunday, January 1, 2017
+                                  </span>
+                                </VisuallyHiddenText>
+                                <Input
+                                  aria-label="Terra.datePicker.yearLabel"
+                                  className="date-input-year"
                                   disabled={true}
-                                  id="test-date-picker"
-                                  name="terra-date-test-date-picker"
+                                  isIncomplete={false}
+                                  isInvalid={false}
+                                  maxLength="4"
+                                  name="terra-date-year-test-date-picker"
                                   onBlur={[Function]}
                                   onChange={[Function]}
                                   onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  pattern="\\\\d*"
+                                  refCallback={[Function]}
                                   required={false}
+                                  size="4"
                                   type="text"
-                                  value="04/09/2017"
-                                />
-                              </Input>
+                                  value="2017"
+                                >
+                                  <input
+                                    aria-label="Terra.datePicker.yearLabel"
+                                    className="form-input date-input-year"
+                                    disabled={true}
+                                    maxLength="4"
+                                    name="terra-date-year-test-date-picker"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    pattern="\\\\d*"
+                                    required={false}
+                                    size="4"
+                                    type="text"
+                                    value="2017"
+                                  />
+                                </Input>
+                                <span
+                                  className="date-spacer"
+                                >
+                                  Terra.datePicker.separator
+                                </span>
+                                <Input
+                                  aria-label="Terra.datePicker.monthLabel"
+                                  className="date-input-month"
+                                  disabled={true}
+                                  isIncomplete={false}
+                                  isInvalid={false}
+                                  maxLength="2"
+                                  name="terra-date-month-test-date-picker"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  pattern="\\\\d*"
+                                  refCallback={[Function]}
+                                  required={false}
+                                  size="2"
+                                  type="text"
+                                  value="04"
+                                >
+                                  <input
+                                    aria-label="Terra.datePicker.monthLabel"
+                                    className="form-input date-input-month"
+                                    disabled={true}
+                                    maxLength="2"
+                                    name="terra-date-month-test-date-picker"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    pattern="\\\\d*"
+                                    required={false}
+                                    size="2"
+                                    type="text"
+                                    value="04"
+                                  />
+                                </Input>
+                                <span
+                                  className="date-spacer"
+                                >
+                                  Terra.datePicker.separator
+                                </span>
+                                <Input
+                                  aria-label="Terra.datePicker.dayLabel"
+                                  className="date-input-day"
+                                  disabled={true}
+                                  isIncomplete={false}
+                                  isInvalid={false}
+                                  maxLength="2"
+                                  name="terra-date-day-test-date-picker"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  pattern="\\\\d*"
+                                  refCallback={[Function]}
+                                  required={false}
+                                  size="2"
+                                  type="text"
+                                  value="09"
+                                >
+                                  <input
+                                    aria-label="Terra.datePicker.dayLabel"
+                                    className="form-input date-input-day"
+                                    disabled={true}
+                                    maxLength="2"
+                                    name="terra-date-day-test-date-picker"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    pattern="\\\\d*"
+                                    required={false}
+                                    size="2"
+                                    type="text"
+                                    value="09"
+                                  />
+                                </Input>
+                              </div>
                               <Button
                                 className="button is-invalid"
                                 data-terra-open-calendar-button={true}
@@ -1157,45 +1260,148 @@ exports[`should render a default DatePickerField component 1`] = `
                             className=""
                           >
                             <div
-                              className="custom-input"
+                              className="date-input-container"
                             >
-                              <input
-                                data-terra-date-input-hidden={true}
-                                name="test-date-picker"
-                                type="hidden"
-                                value="2017-01-01"
-                              />
-                              <Input
+                              <div
                                 aria-describedby=""
-                                ariaLabel="Label, Sunday, January 1, 2017"
-                                className="input"
+                                className="date-input"
                                 disabled={false}
                                 id="test-date-picker"
-                                isIncomplete={false}
-                                isInvalid={false}
-                                name="terra-date-test-date-picker"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                onFocus={[Function]}
-                                required={false}
-                                type="text"
-                                value="01/01/2017"
                               >
                                 <input
-                                  aria-describedby=""
-                                  aria-label="Label, Sunday, January 1, 2017"
-                                  className="form-input input"
+                                  data-terra-date-input-hidden={true}
+                                  name="test-date-picker"
+                                  type="hidden"
+                                  value="2017-01-01"
+                                />
+                                <VisuallyHiddenText
+                                  text="Label, Sunday, January 1, 2017"
+                                >
+                                  <span
+                                    className="visually-hidden-text"
+                                  >
+                                    Label, Sunday, January 1, 2017
+                                  </span>
+                                </VisuallyHiddenText>
+                                <Input
+                                  aria-label="Terra.datePicker.yearLabel"
+                                  className="date-input-year"
                                   disabled={false}
-                                  id="test-date-picker"
-                                  name="terra-date-test-date-picker"
+                                  isIncomplete={false}
+                                  isInvalid={false}
+                                  maxLength="4"
+                                  name="terra-date-year-test-date-picker"
                                   onBlur={[Function]}
                                   onChange={[Function]}
                                   onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  pattern="\\\\d*"
+                                  refCallback={[Function]}
                                   required={false}
+                                  size="4"
                                   type="text"
-                                  value="01/01/2017"
-                                />
-                              </Input>
+                                  value="2017"
+                                >
+                                  <input
+                                    aria-label="Terra.datePicker.yearLabel"
+                                    className="form-input date-input-year"
+                                    disabled={false}
+                                    maxLength="4"
+                                    name="terra-date-year-test-date-picker"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    pattern="\\\\d*"
+                                    required={false}
+                                    size="4"
+                                    type="text"
+                                    value="2017"
+                                  />
+                                </Input>
+                                <span
+                                  className="date-spacer"
+                                >
+                                  Terra.datePicker.separator
+                                </span>
+                                <Input
+                                  aria-label="Terra.datePicker.monthLabel"
+                                  className="date-input-month"
+                                  disabled={false}
+                                  isIncomplete={false}
+                                  isInvalid={false}
+                                  maxLength="2"
+                                  name="terra-date-month-test-date-picker"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  pattern="\\\\d*"
+                                  refCallback={[Function]}
+                                  required={false}
+                                  size="2"
+                                  type="text"
+                                  value="01"
+                                >
+                                  <input
+                                    aria-label="Terra.datePicker.monthLabel"
+                                    className="form-input date-input-month"
+                                    disabled={false}
+                                    maxLength="2"
+                                    name="terra-date-month-test-date-picker"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    pattern="\\\\d*"
+                                    required={false}
+                                    size="2"
+                                    type="text"
+                                    value="01"
+                                  />
+                                </Input>
+                                <span
+                                  className="date-spacer"
+                                >
+                                  Terra.datePicker.separator
+                                </span>
+                                <Input
+                                  aria-label="Terra.datePicker.dayLabel"
+                                  className="date-input-day"
+                                  disabled={false}
+                                  isIncomplete={false}
+                                  isInvalid={false}
+                                  maxLength="2"
+                                  name="terra-date-day-test-date-picker"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  pattern="\\\\d*"
+                                  refCallback={[Function]}
+                                  required={false}
+                                  size="2"
+                                  type="text"
+                                  value="01"
+                                >
+                                  <input
+                                    aria-label="Terra.datePicker.dayLabel"
+                                    className="form-input date-input-day"
+                                    disabled={false}
+                                    maxLength="2"
+                                    name="terra-date-day-test-date-picker"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    pattern="\\\\d*"
+                                    required={false}
+                                    size="2"
+                                    type="text"
+                                    value="01"
+                                  />
+                                </Input>
+                              </div>
                               <Button
                                 className="button"
                                 data-terra-open-calendar-button={true}
@@ -1867,45 +2073,148 @@ exports[`should render a valid DatePickerField with props 1`] = `
                             className=""
                           >
                             <div
-                              className="custom-input"
+                              className="date-input-container"
                             >
-                              <input
-                                data-terra-date-input-hidden={true}
-                                name="test-date-picker"
-                                type="hidden"
-                                value="2017-01-01"
-                              />
-                              <Input
+                              <div
                                 aria-describedby=""
-                                ariaLabel="Label Test, Sunday, January 1, 2017"
-                                className="input"
+                                className="date-input"
                                 disabled={true}
                                 id="test-date-picker"
-                                isIncomplete={false}
-                                isInvalid={false}
-                                name="terra-date-test-date-picker"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                onFocus={[Function]}
-                                required={false}
-                                type="text"
-                                value="01/01/2017"
                               >
                                 <input
-                                  aria-describedby=""
-                                  aria-label="Label Test, Sunday, January 1, 2017"
-                                  className="form-input input"
+                                  data-terra-date-input-hidden={true}
+                                  name="test-date-picker"
+                                  type="hidden"
+                                  value="2017-01-01"
+                                />
+                                <VisuallyHiddenText
+                                  text="Label Test, Sunday, January 1, 2017"
+                                >
+                                  <span
+                                    className="visually-hidden-text"
+                                  >
+                                    Label Test, Sunday, January 1, 2017
+                                  </span>
+                                </VisuallyHiddenText>
+                                <Input
+                                  aria-label="Terra.datePicker.yearLabel"
+                                  className="date-input-year"
                                   disabled={true}
-                                  id="test-date-picker"
-                                  name="terra-date-test-date-picker"
+                                  isIncomplete={false}
+                                  isInvalid={false}
+                                  maxLength="4"
+                                  name="terra-date-year-test-date-picker"
                                   onBlur={[Function]}
                                   onChange={[Function]}
                                   onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  pattern="\\\\d*"
+                                  refCallback={[Function]}
                                   required={false}
+                                  size="4"
                                   type="text"
-                                  value="01/01/2017"
-                                />
-                              </Input>
+                                  value="2017"
+                                >
+                                  <input
+                                    aria-label="Terra.datePicker.yearLabel"
+                                    className="form-input date-input-year"
+                                    disabled={true}
+                                    maxLength="4"
+                                    name="terra-date-year-test-date-picker"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    pattern="\\\\d*"
+                                    required={false}
+                                    size="4"
+                                    type="text"
+                                    value="2017"
+                                  />
+                                </Input>
+                                <span
+                                  className="date-spacer"
+                                >
+                                  Terra.datePicker.separator
+                                </span>
+                                <Input
+                                  aria-label="Terra.datePicker.monthLabel"
+                                  className="date-input-month"
+                                  disabled={true}
+                                  isIncomplete={false}
+                                  isInvalid={false}
+                                  maxLength="2"
+                                  name="terra-date-month-test-date-picker"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  pattern="\\\\d*"
+                                  refCallback={[Function]}
+                                  required={false}
+                                  size="2"
+                                  type="text"
+                                  value="01"
+                                >
+                                  <input
+                                    aria-label="Terra.datePicker.monthLabel"
+                                    className="form-input date-input-month"
+                                    disabled={true}
+                                    maxLength="2"
+                                    name="terra-date-month-test-date-picker"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    pattern="\\\\d*"
+                                    required={false}
+                                    size="2"
+                                    type="text"
+                                    value="01"
+                                  />
+                                </Input>
+                                <span
+                                  className="date-spacer"
+                                >
+                                  Terra.datePicker.separator
+                                </span>
+                                <Input
+                                  aria-label="Terra.datePicker.dayLabel"
+                                  className="date-input-day"
+                                  disabled={true}
+                                  isIncomplete={false}
+                                  isInvalid={false}
+                                  maxLength="2"
+                                  name="terra-date-day-test-date-picker"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  pattern="\\\\d*"
+                                  refCallback={[Function]}
+                                  required={false}
+                                  size="2"
+                                  type="text"
+                                  value="01"
+                                >
+                                  <input
+                                    aria-label="Terra.datePicker.dayLabel"
+                                    className="form-input date-input-day"
+                                    disabled={true}
+                                    maxLength="2"
+                                    name="terra-date-day-test-date-picker"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    pattern="\\\\d*"
+                                    required={false}
+                                    size="2"
+                                    type="text"
+                                    value="01"
+                                  />
+                                </Input>
+                              </div>
                               <Button
                                 className="button"
                                 data-terra-open-calendar-button={true}
