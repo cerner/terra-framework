@@ -76,6 +76,7 @@ exports[`correctly applies the theme context className 1`] = `
       minDate="1900-01-01"
       name="date-input"
       required={false}
+      useExternalFormatMask={false}
       utcOffset={0}
     >
       <div
@@ -96,6 +97,7 @@ exports[`correctly applies the theme context className 1`] = `
                 onCalendarButtonClick={[Function]}
                 required={false}
                 shouldShowPicker={false}
+                useExternalFormatMask={false}
               />
             }
             dateFormat="MM/DD/YYYY"
@@ -125,7 +127,6 @@ exports[`correctly applies the theme context className 1`] = `
             onClickOutside={[Function]}
             onFocus={[Function]}
             onSelect={[Function]}
-            placeholderText="Terra.datePicker.dateFormat"
             preventOpenOnFocus={true}
             required={false}
             selected={"2017-01-01T00:00:00.000Z"}
@@ -146,6 +147,7 @@ exports[`correctly applies the theme context className 1`] = `
                   onCalendarButtonClick={[Function]}
                   required={false}
                   shouldShowPicker={false}
+                  useExternalFormatMask={false}
                 />
               }
               dateFormat="MM/DD/YYYY"
@@ -206,7 +208,6 @@ exports[`correctly applies the theme context className 1`] = `
               onKeyDown={[Function]}
               onMonthChange={[Function]}
               onSelect={[Function]}
-              placeholderText="Terra.datePicker.dateFormat"
               preventOpenOnFocus={true}
               required={false}
               selected={"2017-01-01T00:00:00.000Z"}
@@ -234,9 +235,9 @@ exports[`correctly applies the theme context className 1`] = `
                   onClick={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
-                  placeholder="Terra.datePicker.dateFormat"
                   required={false}
                   shouldShowPicker={false}
+                  useExternalFormatMask={false}
                   value="01/01/2017"
                 >
                   <DatePickerInput
@@ -280,128 +281,137 @@ exports[`correctly applies the theme context className 1`] = `
                     onClick={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
-                    placeholder="Terra.datePicker.dateFormat"
                     required={false}
                     shouldShowPicker={false}
+                    useExternalFormatMask={false}
                     value="01/01/2017"
                   >
                     <div
-                      className="custom-input orion-fusion-theme"
+                      className="orion-fusion-theme"
                     >
-                      <input
-                        data-terra-date-input-hidden={true}
-                        name="date-input"
-                        type="hidden"
-                        value="2017-01-01"
-                      />
-                      <Input
-                        ariaLabel="Terra.datePicker.date, Sunday, January 1, 2017"
-                        className="input"
-                        disabled={false}
-                        isIncomplete={false}
-                        isInvalid={false}
-                        name="terra-date-date-input"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        placeholder="Terra.datePicker.dateFormat"
-                        required={false}
-                        type="text"
-                        value="01/01/2017"
+                      <div
+                        className="custom-input"
                       >
                         <input
-                          aria-label="Terra.datePicker.date, Sunday, January 1, 2017"
-                          className="form-input input"
+                          data-terra-date-input-hidden={true}
+                          name="date-input"
+                          type="hidden"
+                          value="2017-01-01"
+                        />
+                        <Input
+                          aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                          ariaLabel="Terra.datePicker.date, Sunday, January 1, 2017"
+                          className="input"
                           disabled={false}
+                          isIncomplete={false}
+                          isInvalid={false}
                           name="terra-date-date-input"
                           onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
-                          placeholder="Terra.datePicker.dateFormat"
                           required={false}
                           type="text"
                           value="01/01/2017"
-                        />
-                      </Input>
-                      <Button
-                        className="button"
-                        data-terra-open-calendar-button={true}
-                        icon={
-                          <IconCalendar
-                            viewBox="0 0 48 48"
-                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <input
+                            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                            aria-label="Terra.datePicker.date, Sunday, January 1, 2017"
+                            className="form-input input"
+                            disabled={false}
+                            name="terra-date-date-input"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            required={false}
+                            type="text"
+                            value="01/01/2017"
                           />
-                        }
-                        isBlock={false}
-                        isCompact={true}
-                        isDisabled={false}
-                        isIconOnly={true}
-                        isReversed={false}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        refCallback={[Function]}
-                        text="Terra.datePicker.openCalendar"
-                        type="button"
-                        variant="neutral"
-                      >
-                        <button
-                          aria-disabled={false}
-                          aria-label="Terra.datePicker.openCalendar"
-                          className="button neutral compact orion-fusion-theme button"
-                          data-terra-open-calendar-button={true}
-                          disabled={false}
+                        </Input>
+                        <Button
+                          className="button"
+                          icon={
+                            <IconCalendar
+                              viewBox="0 0 48 48"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          isBlock={false}
+                          isCompact={true}
+                          isDisabled={false}
+                          isIconOnly={true}
+                          isReversed={false}
                           onBlur={[Function]}
                           onClick={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
-                          onKeyUp={[Function]}
-                          onMouseDown={[Function]}
-                          title="Terra.datePicker.openCalendar"
+                          refCallback={[Function]}
+                          text="Terra.datePicker.openCalendar"
                           type="button"
+                          variant="neutral"
                         >
-                          <span
-                            className="button-label icon-only"
+                          <button
+                            aria-disabled={false}
+                            aria-label="Terra.datePicker.openCalendar"
+                            className="button neutral compact orion-fusion-theme button"
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            title="Terra.datePicker.openCalendar"
+                            type="button"
                           >
                             <span
-                              className="icon"
+                              className="button-label icon-only"
                             >
-                              <IconCalendar
-                                className="icon-svg"
-                                viewBox="0 0 48 48"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <span
+                                className="icon"
                               >
-                                <IconBase
-                                  ariaLabel={null}
+                                <IconCalendar
                                   className="icon-svg"
-                                  focusable="false"
-                                  height="1em"
-                                  isBidi={false}
-                                  isSpin={false}
                                   viewBox="0 0 48 48"
-                                  width="1em"
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <svg
-                                    aria-hidden="true"
-                                    className="tui-Icon icon icon-svg"
+                                  <IconBase
+                                    ariaLabel={null}
+                                    className="icon-svg"
                                     focusable="false"
                                     height="1em"
+                                    isBidi={false}
+                                    isSpin={false}
                                     viewBox="0 0 48 48"
                                     width="1em"
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <path
-                                      d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
-                                    />
-                                  </svg>
-                                </IconBase>
-                              </IconCalendar>
+                                    <svg
+                                      aria-hidden="true"
+                                      className="tui-Icon icon icon-svg"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="0 0 48 48"
+                                      width="1em"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
+                                      />
+                                    </svg>
+                                  </IconBase>
+                                </IconCalendar>
+                              </span>
                             </span>
-                          </span>
-                        </button>
-                      </Button>
+                          </button>
+                        </Button>
+                      </div>
+                      <div
+                        aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
+                        className="format-text"
+                        id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                      >
+                        (Terra.datePicker.dateFormat)
+                      </div>
                     </div>
                   </DatePickerInput>
                 </InjectIntl(DatePickerInput)>
@@ -434,6 +444,7 @@ exports[`should render a controlled date picker 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -463,7 +474,6 @@ exports[`should render a controlled date picker 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -497,6 +507,7 @@ exports[`should render a date picker with disabled dates 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -526,7 +537,6 @@ exports[`should render a date picker with disabled dates 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -559,6 +569,7 @@ exports[`should render a date picker with filtered dates 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -588,7 +599,6 @@ exports[`should render a date picker with filtered dates 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -621,6 +631,7 @@ exports[`should render a date picker with included dates 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -650,7 +661,6 @@ exports[`should render a date picker with included dates 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -683,6 +693,7 @@ exports[`should render a date picker with min and max dates 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -712,7 +723,6 @@ exports[`should render a date picker with min and max dates 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -745,6 +755,7 @@ exports[`should render a date picker with onBlur 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -774,7 +785,6 @@ exports[`should render a date picker with onBlur 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -807,6 +817,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -836,7 +847,6 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -869,6 +879,7 @@ exports[`should render a date picker with onChange 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -898,7 +909,6 @@ exports[`should render a date picker with onChange 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -931,6 +941,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -960,7 +971,6 @@ exports[`should render a date picker with onChangeRaw 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -993,6 +1003,7 @@ exports[`should render a date picker with onFocus 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -1022,7 +1033,6 @@ exports[`should render a date picker with onFocus 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -1055,6 +1065,7 @@ exports[`should render a date picker with onSelect 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -1084,7 +1095,6 @@ exports[`should render a date picker with onSelect 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -1117,6 +1127,7 @@ exports[`should render a default date input and date picker 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -1146,7 +1157,6 @@ exports[`should render a default date input and date picker 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -1184,6 +1194,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -1213,7 +1224,6 @@ exports[`should render a default date input with custom input attributes 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -1246,6 +1256,7 @@ exports[`should render a disabled date picker 1`] = `
           onCalendarButtonClick={[Function]}
           required={false}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -1275,7 +1286,6 @@ exports[`should render a disabled date picker 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={false}
       selected={"2017-01-01T00:00:00.000Z"}
@@ -1308,6 +1318,7 @@ exports[`should render a required date input and date picker 1`] = `
           onCalendarButtonClick={[Function]}
           required={true}
           shouldShowPicker={false}
+          useExternalFormatMask={false}
         />
       }
       dateFormat="MM/DD/YYYY"
@@ -1337,7 +1348,6 @@ exports[`should render a required date input and date picker 1`] = `
       onClickOutside={[Function]}
       onFocus={[Function]}
       onSelect={[Function]}
-      placeholderText="Terra.datePicker.dateFormat"
       preventOpenOnFocus={true}
       required={true}
       selected={"2017-01-01T00:00:00.000Z"}

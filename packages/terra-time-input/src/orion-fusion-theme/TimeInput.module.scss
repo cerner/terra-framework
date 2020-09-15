@@ -133,9 +133,14 @@
     --terra-time-input-time-component-focus-color: #1c1f21;
 
     // Meridiem Button
-    --terra-time-input-meridiem-button-group-margin-bottom: 0.5rem;
     --terra-time-input-meridiem-button-group-margin-right: 0.5rem;
     --terra-time-input-meridiem-button-height: 2.16667rem;
     --terra-time-input-meridiem-button-line-height: 1.41666;
+
+    // format text
+    --terra-time-input-format-text-color: rgba(28, 31, 33, 0.65);
+    --terra-time-input-format-text-font-size: 0.855rem;
+    --terra-time-input-format-text-font-weight: normal;
+    --terra-time-input-format-text-margin-top: 0.25em;
   }
 }

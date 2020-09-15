@@ -4,6 +4,7 @@ import Button from 'terra-button';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
 import { injectIntl, intlShape } from 'react-intl';
+import uuidv4 from 'uuid/v4';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 
@@ -66,10 +67,6 @@ const propTypes = {
    */
   onKeyDown: PropTypes.func,
   /**
-   * The placeholder text to display in the date input.
-   */
-  placeholder: PropTypes.string,
-  /**
    * Whether or not the date is required.
    */
   required: PropTypes.bool,
@@ -77,6 +74,13 @@ const propTypes = {
    * @private Internal prop for showing date picker.
    */
   shouldShowPicker: PropTypes.bool,
+  /**
+   * @private
+   * NOTICE: Internal prop to be used only by Terra framework. This component provides a built-in format mask that is
+   * required to be displayed to users for proper accessibility and must not be removed. 'DatePickerField' is permitted to set
+   * this prop because it provides the same format mask in its 'help' prop.
+  */
+  useExternalFormatMask: PropTypes.bool,
   /**
    * The selected or entered date value to display in the date input.
    */
@@ -101,7 +105,7 @@ const defaultProps = {
   onButtonFocus: undefined,
   onKeyDown: undefined,
   required: false,
-  placeholder: undefined,
+  useExternalFormatMask: false,
   value: undefined,
   ariaLabel: undefined,
 };
@@ -109,6 +113,8 @@ const defaultProps = {
 class DatePickerInput extends React.Component {
   constructor(props) {
     super(props);
+
+    this.uuid = uuidv4();
 
     this.handleOnButtonClick = this.handleOnButtonClick.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
@@ -159,8 +165,8 @@ class DatePickerInput extends React.Component {
       onFocus,
       onButtonFocus,
       onKeyDown,
-      placeholder,
       required,
+      useExternalFormatMask,
       value,
       ariaLabel,
       ...customProps
@@ -189,42 +195,53 @@ class DatePickerInput extends React.Component {
 
     const label = this.props.ariaLabel ? this.props.ariaLabel : intl.formatMessage({ id: 'Terra.datePicker.date' });
 
+    this.formatDescriptionId = (useExternalFormatMask === false) ? `terra-date-picker-description-format-${this.uuid}` : '';
+
+    const format = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
+
     return (
-      <div className={cx('custom-input', theme.className)}>
-        <input
-          // Create a hidden input for storing the name and value attributes to use when submitting the form.
-          // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
-          data-terra-date-input-hidden
-          type="hidden"
-          name={name}
-          value={dateValue}
-        />
-        <Input
-          {...additionalInputProps}
-          className={inputClasses}
-          type="text"
-          name={'terra-date-'.concat(name)}
-          value={value}
-          onChange={this.handleOnChange}
-          placeholder={placeholder}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
-        />
-        <Button
-          data-terra-open-calendar-button
-          className={buttonClasses}
-          text={buttonText}
-          onClick={this.handleOnButtonClick}
-          onKeyDown={this.handleOnKeyDown}
-          icon={Icon}
-          isIconOnly
-          isCompact
-          isDisabled={additionalInputProps.disabled}
-          onBlur={onBlur}
-          onFocus={onButtonFocus}
-          refCallback={buttonRefCallback}
-        />
+      <div className={cx(theme.className)}>
+        <div className={cx('custom-input')}>
+          <input
+            // Create a hidden input for storing the name and value attributes to use when submitting the form.
+            // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
+            data-terra-date-input-hidden
+            type="hidden"
+            name={name}
+            value={dateValue}
+          />
+          <Input
+            {...additionalInputProps}
+            className={inputClasses}
+            type="text"
+            name={'terra-date-'.concat(name)}
+            value={value}
+            onChange={this.handleOnChange}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
+            aria-describedby={this.formatDescriptionId}
+          />
+          <Button
+            data-terra-open-calendar-button
+            className={buttonClasses}
+            text={buttonText}
+            onClick={this.handleOnButtonClick}
+            onKeyDown={this.handleOnKeyDown}
+            icon={Icon}
+            isIconOnly
+            isCompact
+            isDisabled={additionalInputProps.disabled}
+            onBlur={onBlur}
+            onFocus={onButtonFocus}
+            refCallback={buttonRefCallback}
+          />
+        </div>
+        { (useExternalFormatMask === false) && (
+        <div id={this.formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}`}>
+          {`(${format})`}
+        </div>
+        )}
       </div>
     );
   }
