@@ -223,6 +223,7 @@ class DatePickerInput extends React.Component {
             aria-describedby={this.formatDescriptionId}
           />
           <Button
+            data-terra-open-calendar-button
             className={buttonClasses}
             text={buttonText}
             onClick={this.handleOnButtonClick}

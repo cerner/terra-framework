@@ -456,6 +456,12 @@ class DatePicker extends React.Component {
   }
 
   setOpen = (open) => {
+    if(!open) {
+      this.setState({
+        isCalendarOpenedViaKeyboard: false,
+        isCalendarKeyboardFocused: false
+      })
+    }
     this.setState({
       open: open,
       preSelection: open && this.state.open ? this.state.preSelection : this.calcInitialState().preSelection
@@ -582,7 +588,7 @@ class DatePicker extends React.Component {
   }
 
   onInputKeyDown = (event) => {
-    if(event.key === 'Enter') {
+    if(event.keyCode === KeyCode.KEY_RETURN || event.keyCode === KeyCode.KEY_SPACE) {
       this.setState({ isCalendarOpenedViaKeyboard: true })
 
     }
