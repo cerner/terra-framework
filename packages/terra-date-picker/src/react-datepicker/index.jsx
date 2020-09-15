@@ -223,10 +223,6 @@ class DatePicker extends React.Component {
      */
     peekNextMonth: PropTypes.bool,
     /**
-     * Value for placeholder of date picker.
-     */
-    placeholderText: PropTypes.string,
-    /**
      * Prop to prevent date picker from opening on focus.
      */
     preventOpenOnFocus: PropTypes.bool,
@@ -814,7 +810,6 @@ class DatePicker extends React.Component {
       id: this.props.id,
       name: this.props.name,
       autoFocus: this.props.autoFocus,
-      placeholder: this.props.placeholderText,
       disabled: this.props.disabled,
       autoComplete: this.props.autoComplete,
       className: classNameList,
