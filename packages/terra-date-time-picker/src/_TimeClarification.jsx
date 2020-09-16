@@ -59,7 +59,7 @@ const propTypes = {
    * Timezone value to indicate in which timezone the date-time component is rendered.
    * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
    */
-  timeZone: PropTypes.string,
+  initialTimeZone: PropTypes.string,
 };
 
 const defaultProps = {
@@ -81,8 +81,8 @@ class TimeClarification extends React.Component {
 
   handleDaylightSavingButtonClick(event) {
     this.setState({
-      offsetDisplay: DateTimeUtils.getDaylightSavingTZDisplay(this.props.ambiguousDateTime, this.props.timeZone),
-      offsetLongDisplay: DateTimeUtils.getDaylightSavingExpandedTZDisplay(this.props.ambiguousDateTime, this.props.timeZone),
+      offsetDisplay: DateTimeUtils.getDaylightSavingTZDisplay(this.props.ambiguousDateTime, this.props.initialTimeZone),
+      offsetLongDisplay: DateTimeUtils.getDaylightSavingExpandedTZDisplay(this.props.ambiguousDateTime, this.props.initialTimeZone),
     });
 
     if (this.props.onDaylightSavingButtonClick) {
@@ -92,8 +92,8 @@ class TimeClarification extends React.Component {
 
   handleStandardTimeButtonClick(event) {
     this.setState({
-      offsetDisplay: DateTimeUtils.getStandardTZDisplay(this.props.ambiguousDateTime, this.props.timeZone),
-      offsetLongDisplay: DateTimeUtils.getStandardExpandedTZDisplay(this.props.ambiguousDateTime, this.props.timeZone),
+      offsetDisplay: DateTimeUtils.getStandardTZDisplay(this.props.ambiguousDateTime, this.props.initialTimeZone),
+      offsetLongDisplay: DateTimeUtils.getStandardExpandedTZDisplay(this.props.ambiguousDateTime, this.props.initialTimeZone),
     });
 
     if (this.props.onStandardTimeButtonClick) {
