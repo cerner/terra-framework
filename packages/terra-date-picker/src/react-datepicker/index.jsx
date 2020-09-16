@@ -223,10 +223,6 @@ class DatePicker extends React.Component {
      */
     peekNextMonth: PropTypes.bool,
     /**
-     * Value for placeholder of date picker.
-     */
-    placeholderText: PropTypes.string,
-    /**
      * Prop to prevent date picker from opening on focus.
      */
     preventOpenOnFocus: PropTypes.bool,
@@ -460,6 +456,12 @@ class DatePicker extends React.Component {
   }
 
   setOpen = (open) => {
+    if(!open) {
+      this.setState({
+        isCalendarOpenedViaKeyboard: false,
+        isCalendarKeyboardFocused: false
+      })
+    }
     this.setState({
       open: open,
       preSelection: open && this.state.open ? this.state.preSelection : this.calcInitialState().preSelection
@@ -586,7 +588,7 @@ class DatePicker extends React.Component {
   }
 
   onInputKeyDown = (event) => {
-    if(event.key === 'Enter') {
+    if(event.keyCode === KeyCode.KEY_RETURN || event.keyCode === KeyCode.KEY_SPACE) {
       this.setState({ isCalendarOpenedViaKeyboard: true })
 
     }
@@ -814,7 +816,6 @@ class DatePicker extends React.Component {
       id: this.props.id,
       name: this.props.name,
       autoFocus: this.props.autoFocus,
-      placeholder: this.props.placeholderText,
       disabled: this.props.disabled,
       autoComplete: this.props.autoComplete,
       className: classNameList,

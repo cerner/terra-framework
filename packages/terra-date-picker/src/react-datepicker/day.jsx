@@ -214,12 +214,23 @@ class Day extends React.Component {
       this.props.month !== getMonth(this.props.day)
   }
 
+  isBorderApplied = () => {
+    if(this.isSameDay(this.props.preSelection) && !isDayDisabled(this.props.selected, this.props) 
+    && (document.activeElement.hasAttribute('data-terra-open-calendar-button') 
+    || document.activeElement.tagName === 'DIV' 
+    || document.activeElement === document.querySelector('[class*="previous"]'))
+    && this.props.isCalendarKeyboardFocused) {
+      return true;
+    }
+    return false;
+  }
+
   getClassNames = (date) => {
     const dayClassName = (this.props.dayClassName ? this.props.dayClassName(date) : undefined)
     return ['react-datepicker-day', dayClassName, 'react-datepicker-day--' + getDayOfWeekCode(this.props.day), {
       'react-datepicker-day--disabled': this.isDisabled(),
       'react-datepicker-day--selected': this.isSameDay(this.props.selected) && !isDayDisabled(this.props.selected, this.props),
-      'react-datepicker-day--selected-border': this.isSameDay(this.props.preSelection) && !isDayDisabled(this.props.selected, this.props) && (document.activeElement.tagName === 'DIV' || document.activeElement === document.querySelector('[class*="previous"]')) && this.props.isCalendarKeyboardFocused,
+      'react-datepicker-day--selected-border': this.isBorderApplied(),
       'react-datepicker-day--range-start': this.isRangeStart(),
       'react-datepicker-day--range-end': this.isRangeEnd(),
       'react-datepicker-day--in-range': this.isInRange(),

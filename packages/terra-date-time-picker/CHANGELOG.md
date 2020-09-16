@@ -3,8 +3,17 @@
 ## Unreleased
 
 * Added
-  * Added new `initialTimeZone` prop which takes a valid timezone string. This enables date-time-picker set to a particular timezone. The default timezone is set to the local/browser timezone.
+  * Added `initialTimeZone` prop which takes a valid timezone string. This enables date-time-picker set to a particular timezone. The default timezone is set to the local/browser timezone.
   
+* Changed
+  * Updated wdio snapshots due to changes in date-picker and time-input
+  * Update `timeVariant` prop description to include `es` in locales supporting only 24 hour format.
+
+## 4.46.0 - (September 10, 2020)
+
+* Fixed
+  * Fix to clear out invalid date value when time input selected in date-time-picker.
+
 ## 4.45.0 - (August 18, 2020)
 
 * Changed
