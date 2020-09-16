@@ -67,12 +67,17 @@
     }
   }
 
+  .is-top-level .text {
+    margin-right: var(--terra-menu-item-text-margin-right, 0);
+  }
+
   .text {
     color: var(--terra-menu-item-text-color, #1c1f21);
     font-size: var(--terra-menu-item-text-font-size, 13px);
     font-weight: var(--terra-menu-item-text-font-weight, normal);
     line-height: 1.538;
     margin-left: var(--terra-menu-item-text-margin-left, 10px);
+    margin-right: var(--terra-menu-item-text-margin-right, 24px);
   }
 
   .checkmark {
