@@ -152,3 +152,9 @@ it('correctly applies the theme context className', () => {
   );
   expect(date).toMatchSnapshot();
 });
+
+it('should render a date picker with onRequestClose', () => {
+  const datePicker = shallowWithIntl(<DatePicker name="date-input" onRequestClose={() => {}} utcOffset={0} />);
+  const wrapper = datePicker.dive();
+  expect(wrapper).toMatchSnapshot();
+});
