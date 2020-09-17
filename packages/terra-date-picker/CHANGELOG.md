@@ -9,7 +9,7 @@
 
 * Fixed
   * Fix to remove dotted border on selected date, on hovering calendar.
- 
+  
 * Removed
   * Removed `placeholder`.
 
