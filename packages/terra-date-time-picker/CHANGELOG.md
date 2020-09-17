@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.47.0 - (September 16, 2020)
+
 * Changed
   * `onClickOutside` prop has been deprecated, will resolve to `onRequestClose`
   * Updated wdio snapshots due to changes in date-picker and time-input
