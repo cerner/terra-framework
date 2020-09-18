@@ -42,6 +42,7 @@ it('should render a DatePickerField with props', () => {
       onFocus={() => {}}
       onSelect={() => {}}
       onClickOutside={() => {}}
+      onRequestClose={() => {}}
       showOptional
       excludeDates={['2017-04-03']}
       filterDate={() => {}}
