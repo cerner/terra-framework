@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+## 1.18.0 - (September 16, 2020)
+
+* Removed
+  * Removed `placeholder` from day and year input.
+
+* Changed
+  * Updated month `placeholder` to be `- Select -`.
+
+* Added
+  * Added format to be displayed for both `DateInput` and `DateInputField`.
+
+## 1.17.0 - (August 18, 2020)
+
 * Added
   * Added an interaction media query to apply `hover` styles only on non-touch devices.
 

@@ -84,9 +84,13 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
-   * A callback function to execute when clicking outside of the picker to dismiss it.
+   * **Deprecated**, A callback function to execute when clicking outside of the picker to dismiss it. Resolves to `onRequestClose`.
    */
   onClickOutside: PropTypes.func,
+  /**
+   * A callback function to execute when picker is dismissed. onRequestClose(event)
+   */
+  onRequestClose: PropTypes.func,
   /**
    * A callback function triggered when the date input, hour input, or minute input receives focus.
    */
@@ -116,7 +120,7 @@ const propTypes = {
   value: PropTypes.string,
   /**
    * Type of time input to initialize. Must be `24-hour` or `12-hour`.
-   * The `de`, `es-ES`, `fr-FR`, `fr`, `nl-BE`, `nl`, `pt-BR`, `pt`, `sv-SE` and `sv` locales do not use the 12-hour time notation.
+   * The `de`, `es-ES`, `es`, `fr-FR`, `fr`, `nl-BE`, `nl`, `pt-BR`, `pt`, `sv-SE` and `sv` locales do not use the 12-hour time notation.
    * If the `variant` prop if set to `12-hour` for one of these supported locales, the variant will be ignored and defaults to `24-hour`.
    */
   timeVariant: PropTypes.oneOf([DateTimeUtils.FORMAT_12_HOUR, DateTimeUtils.FORMAT_24_HOUR]),
@@ -609,6 +613,7 @@ class DateTimePicker extends React.Component {
       onChange,
       onChangeRaw,
       onClickOutside,
+      onRequestClose,
       onFocus,
       onSelect,
       maxDate,
@@ -648,6 +653,7 @@ class DateTimePicker extends React.Component {
             onChangeRaw={this.handleDateChangeRaw}
             onSelect={this.handleOnSelect}
             onClickOutside={onClickOutside}
+            onRequestClose={onRequestClose}
             onBlur={this.handleOnDateBlur}
             onFocus={this.handleOnDateInputFocus}
             excludeDates={excludeDates}

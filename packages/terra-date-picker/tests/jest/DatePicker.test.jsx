@@ -13,6 +13,8 @@ DateUtil.filterInvalidDates = jest.fn();
 DateUtil.createSafeDate.mockImplementation(() => moment.utc('2017-01-01'));
 DateUtil.filterInvalidDates.mockImplementation(() => [moment.utc('2017-01-01')]);
 
+jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+
 it('should render a default date input and date picker', () => {
   const datePicker = shallowWithIntl(<DatePicker name="date-input" utcOffset={0} />);
   const wrapper = datePicker.dive();
@@ -149,4 +151,10 @@ it('correctly applies the theme context className', () => {
     </ThemeContextProvider>,
   );
   expect(date).toMatchSnapshot();
+});
+
+it('should render a date picker with onRequestClose', () => {
+  const datePicker = shallowWithIntl(<DatePicker name="date-input" onRequestClose={() => {}} utcOffset={0} />);
+  const wrapper = datePicker.dive();
+  expect(wrapper).toMatchSnapshot();
 });

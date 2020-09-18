@@ -85,6 +85,12 @@
     --terra-date-input-date-input-year-max-width: 3.8rem;
     --terra-date-input-gutters-margin-left: 0.25em;
 
+    // format text
+    --terra-date-input-format-text-color: rgba(28, 31, 33, 0.65);
+    --terra-date-input-format-text-font-size: 0.855rem;
+    --terra-date-input-format-text-font-weight: normal;
+    --terra-date-input-format-text-margin-top: 0.25em;
+  
     // Icons
     @include terra-inline-svg-var('--terra-date-input-month-after-arrow-icon-background-image', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>');
     @include terra-inline-svg-var('--terra-date-input-month-after-disabled-arrow-icon-background-image', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path fill="#bfbfbf" d="M48 12L24 36 0 12h48z"/></svg>');

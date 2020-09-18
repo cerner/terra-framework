@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'terra-button';
 import ActionHeader from 'terra-action-header';
 import ActionFooter from 'terra-action-footer';
-import NotificationDialog, { NotificationDialogVariants } from 'terra-notification-dialog';
+import NotificationDialog from 'terra-notification-dialog';
 import DialogModal from '../../../DialogModal';
 
 const clickOK = () => {
@@ -60,20 +60,21 @@ class DefaultDialogModal extends React.Component {
           footer={<ActionFooter start="Footer Goes here" />}
         >
           <p>{text}</p>
-          <NotificationDialog
-            variant={NotificationDialogVariants.ALERT}
-            isOpen={this.state.isNotificationDialogOpen}
-            title="Make sure that the title relates directly to the choices."
-            message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-            primaryAction={{
-              text: 'OK',
-              onClick: clickOK,
-            }}
-            secondaryAction={{
-              text: 'Close',
-              onClick: this.handleCloseNotificationDialog,
-            }}
-          />
+          {this.state.isNotificationDialogOpen && (
+            <NotificationDialog
+              variant="hazard-high"
+              dialogTitle="Make sure that the title relates directly to the choices."
+              startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+              acceptAction={{
+                text: 'OK',
+                onClick: clickOK,
+              }}
+              rejectAction={{
+                text: 'Close',
+                onClick: this.handleCloseNotificationDialog,
+              }}
+            />
+          )}
           <Button text="Trigger NotificationDialog" onClick={this.handleOpenNotificationDialog} />
           <p>{text}</p>
         </DialogModal>

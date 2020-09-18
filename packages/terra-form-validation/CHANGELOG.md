@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 1.44.0 - (September 16, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.43.0 - (September 10, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.42.0 - (August 18, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.41.0 - (August 11, 2020)
 
 * Changed

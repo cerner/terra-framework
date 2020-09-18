@@ -88,9 +88,13 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
-   * A callback function to execute when clicking outside of the picker to dismiss it.
+   * **Deprecated**, A callback function to execute when clicking outside of the picker to dismiss it. Resolves to `onRequestClose`.
    */
   onClickOutside: PropTypes.func,
+  /**
+   * A callback function to execute when picker is dismissed. onRequestClose(event)
+   */
+  onRequestClose: PropTypes.func,
   /**
    * A callback function triggered when the date picker component receives focus.
    * This event does not get triggered when the focus is moved from the date input to the calendar button since the focus is still within the main date picker component.
@@ -109,6 +113,13 @@ const propTypes = {
    * This is analogous to defaultvalue in a form input field.
    */
   selectedDate: PropTypes.string,
+  /**
+   * @private
+   * NOTICE: Internal prop to be used only by Terra framework. This component provides a built-in format mask that is
+   * required to be displayed to users for proper accessibility and must not be removed. 'DatePickerField' is permitted to set
+   * this prop because it provides the same format mask in its 'help' prop.
+  */
+  useExternalFormatMask: PropTypes.bool,
   /**
    * The date value. This prop should only be used for a controlled date picker.
    * When this prop is set a handler is needed for both the `onChange` and `onChangeRaw` props to manage the date value.
@@ -139,6 +150,7 @@ const defaultProps = {
   onClickOutside: undefined,
   onFocus: undefined,
   onSelect: undefined,
+  useExternalFormatMask: false,
   required: false,
   disableButtonFocusOnClose: false,
   selectedDate: undefined,
@@ -183,14 +195,8 @@ class DatePicker extends React.Component {
     if (nextDateValue !== prevState.prevPropsSelectedDate) {
       const nextSelectedDate = DateUtil.createSafeDate(nextDateValue);
 
-      if (nextSelectedDate) {
-        return {
-          selectedDate: nextSelectedDate,
-          prevPropsSelectedDate: nextDateValue,
-        };
-      }
-
       return {
+        selectedDate: nextSelectedDate,
         prevPropsSelectedDate: nextDateValue,
       };
     }
@@ -394,10 +400,12 @@ class DatePicker extends React.Component {
       onChange,
       onChangeRaw,
       onClickOutside,
+      onRequestClose,
       onFocus,
       onSelect,
       required,
       selectedDate,
+      useExternalFormatMask,
       value,
       isInline,
       ariaLabel,
@@ -454,6 +462,7 @@ class DatePicker extends React.Component {
             onChange={this.handleChange}
             onChangeRaw={this.handleChangeRaw}
             onClickOutside={this.handleOnClickOutside}
+            onRequestClose={onRequestClose}
             onFocus={this.handleOnInputFocus}
             onSelect={this.handleOnSelect}
             required={required}
@@ -468,6 +477,7 @@ class DatePicker extends React.Component {
                 onButtonFocus={this.handleFocus}
                 buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
                 ariaLabel={ariaLabel}
+                useExternalFormatMask={useExternalFormatMask}
               />
             )}
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}
@@ -480,7 +490,6 @@ class DatePicker extends React.Component {
             dateFormat={dateFormat}
             fixedHeight
             locale={intl.locale}
-            placeholderText={intl.formatMessage({ id: 'Terra.datePicker.dateFormat' })}
             dropdownMode="select"
             showMonthDropdown
             showYearDropdown

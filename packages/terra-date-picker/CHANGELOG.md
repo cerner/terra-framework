@@ -2,6 +2,30 @@
 
 ## Unreleased
 
+* Changed
+  * `onClickOutside` prop has been deprecated, will resolve to `onRequestClose`
+
+## 4.47.0 - (September 16, 2020)
+
+* Fixed
+  * Fix to remove dotted border on selected date, on hovering calendar.
+
+* Removed
+  * Removed `placeholder`.
+
+* Added
+  * Added format to be displayed for both `DatePicker` and `DatePickerField`.
+
+## 4.46.0 - (September 10, 2020)
+
+* Fixed
+  * Fix to clear out invalid date value when time input selected in date-time-picker.
+
+## 4.45.0 - (August 18, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.44.0 - (August 11, 2020)
 
 * Added

@@ -2,11 +2,14 @@
 
 ## Unreleased
 
+## 5.42.0 - (August 18, 2020)
+
 * Added
   * Added an interaction media query to apply `hover` styles only on non-touch devices.
 
 * Changed
   * Updated Changelog format
+  * Update WDIO screenshot
   
 ## 5.41.0 - (August 11, 2020)
 

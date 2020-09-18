@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
+import { injectIntl, intlShape } from 'react-intl';
 import IconError from 'terra-icon/lib/icon/IconError';
 import DatePicker from './DatePicker';
 
@@ -47,6 +48,11 @@ const propTypes = {
    * Do not set the name in inputAttribute as it will be ignored.
    */
   inputAttributes: PropTypes.object,
+  /**
+   * @private
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: intlShape.isRequired,
   /**
   * Whether the field displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
   */
@@ -100,9 +106,13 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
-   * A callback function to execute when clicking outside of the picker to dismiss it.
+   * **Deprecated**, A callback function to execute when clicking outside of the picker to dismiss it. Resolves to `onRequestClose`.
    */
   onClickOutside: PropTypes.func,
+  /**
+   * A callback function to execute when picker is dismissed. onRequestClose(event)
+   */
+  onRequestClose: PropTypes.func,
   /**
    * A callback function triggered when the date picker component receives focus.
    * This event does not get triggered when the focus is moved from the date input to the calendar button since the focus is still within the main date picker component.
@@ -184,6 +194,7 @@ const DatePickerField = (props) => {
     isInline,
     isLabelHidden,
     includeDates,
+    intl,
     label,
     labelAttrs,
     maxDate,
@@ -194,6 +205,7 @@ const DatePickerField = (props) => {
     onChange,
     onChangeRaw,
     onClickOutside,
+    onRequestClose,
     onFocus,
     onSelect,
     required,
@@ -222,13 +234,27 @@ const DatePickerField = (props) => {
     mergedInputAttrs = { 'aria-describedby': ariaDescriptionIds, ...inputAttributes };
   }
 
+  const format = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
+
+  const helpLabel = help ? (
+    <div id="format" aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}, ${help}`}>
+      {`(${format})`}
+      &nbsp;
+      {help}
+    </div>
+  ) : (
+    <div id="format" aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}`}>
+      {`(${format})`}
+    </div>
+  );
+
   return (
     <Field
       {...customProps}
       label={label}
       labelAttrs={labelAttrs}
       error={error}
-      help={help}
+      help={helpLabel}
       hideRequired={hideRequired}
       required={required}
       showOptional={showOptional}
@@ -244,6 +270,7 @@ const DatePickerField = (props) => {
         inputAttribute={mergedInputAttrs}
         excludeDates={excludeDates}
         filterDate={filterDate}
+        useExternalFormatMask
         includeDates={includeDates}
         isInvalid={isInvalid}
         isIncomplete={isIncomplete}
@@ -254,6 +281,7 @@ const DatePickerField = (props) => {
         onBlur={onBlur}
         onChange={onChange}
         onChangeRaw={onChangeRaw}
+        onRequestClose={onRequestClose}
         onClickOutside={onClickOutside}
         onFocus={onFocus}
         onSelect={onSelect}
@@ -268,4 +296,4 @@ const DatePickerField = (props) => {
 DatePickerField.propTypes = propTypes;
 DatePickerField.defaultProps = defaultProps;
 
-export default DatePickerField;
+export default injectIntl(DatePickerField);
