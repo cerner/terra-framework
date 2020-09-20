@@ -2,26 +2,20 @@ import React, { useState } from 'react';
 import DateTimePicker from '../../../DateTimePicker';
 import DateTimeUtils from '../../../DateTimeUtils';
 
-let blurCount = 0;
-let focusCount = 0;
-let clickOutsideCount = 0;
-
 const DateTimePickerEvents = () => {
-  const [blurTriggerCount, setBlurTriggerCount] = useState(0);
-  const [focusTriggerCount, setFocusTriggerCount] = useState(0);
+  const [blurCount, setBlurCount] = useState(0);
+  const [focusCount, setFocusCount] = useState(0);
+  const [onRequestCloseCount, setonRequestCloseCount] = useState(0);
   const [changeValue, setChangeValue] = useState('');
   const [changeRawValue, setChangeRawValue] = useState('');
   const [selectValue, setSelectValue] = useState('');
-  const [clickOutsideTriggerCount, setClickOutsideTriggerCount] = useState(0);
 
   const handleBlur = () => {
-    blurCount += 1;
-    setBlurTriggerCount(blurCount);
+    setBlurCount(blurCount + 1);
   };
 
   const handleFocus = () => {
-    focusCount += 1;
-    setFocusTriggerCount(focusCount);
+    setFocusCount(focusCount + 1);
   };
 
   const handleChange = (event, value) => {
@@ -36,9 +30,8 @@ const DateTimePickerEvents = () => {
     setSelectValue(value);
   };
 
-  const handleOnClickOutside = () => {
-    clickOutsideCount += 1;
-    setClickOutsideTriggerCount(clickOutsideCount);
+  const handleOnRequestClose = () => {
+    setonRequestCloseCount(onRequestCloseCount + 1);
   };
 
   return (
@@ -46,32 +39,32 @@ const DateTimePickerEvents = () => {
       <p>
         onFocus Trigger Count:
         {' '}
-        <span id="onFocus-count">{focusTriggerCount}</span>
+        <span id="onFocus-count">{focusCount}</span>
         <br />
         <br />
         onBlur Trigger Count:
         {' '}
-        <span id="onBlur-count">{blurTriggerCount}</span>
+        <span id="onBlur-count">{blurCount}</span>
         <br />
         <br />
-        onClickOutside Trigger Count:
+        onRequestClose Trigger Count:
         {' '}
-        <span id="onClickOutside-count">{clickOutsideTriggerCount}</span>
+        <span id="onRequestClose-count">{onRequestCloseCount}</span>
         <br />
         <br />
         onChangeRaw Triggered:
         {' '}
-        <span id="onChangeRaw-count">{changeRawValue}</span>
+        <span id="onChangeRaw">{changeRawValue}</span>
         <br />
         <br />
         onChange Triggered:
         {' '}
-        <span id="onChange-Count">{changeValue}</span>
+        <span id="onChange">{changeValue}</span>
         <br />
         <br />
         onSelect Triggered:
         {' '}
-        <span id="onSelect-count">{selectValue}</span>
+        <span id="onSelect">{selectValue}</span>
       </p>
       <DateTimePicker
         name="date-time-picker-events"
@@ -80,7 +73,7 @@ const DateTimePickerEvents = () => {
         onChange={handleChange}
         onChangeRaw={handleChangeRaw}
         onSelect={handleSelect}
-        onClickOutside={handleOnClickOutside}
+        onRequestClose={handleOnRequestClose}
         timeVariant={DateTimeUtils.FORMAT_12_HOUR}
         showSeconds
       />

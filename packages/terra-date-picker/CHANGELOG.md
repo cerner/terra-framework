@@ -6,6 +6,11 @@
   * DateInput split into 3 distinct inputs that mask the previous single input.
   * `terra-dev-site` examples to use hooks.
 
+* Changed
+  * `onClickOutside` prop has been deprecated, will resolve to `onRequestClose`
+
+## 4.47.0 - (September 16, 2020)
+
 * Fixed
   * Fix to remove dotted border on selected date, on hovering calendar.
 

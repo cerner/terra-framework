@@ -2,13 +2,16 @@
 
 ## Unreleased
 
+## 4.47.0 - (September 16, 2020)
+
 * Changed
   * Tests updated to reflect input splitting in `terra-date-picker`.
   * `terra-dev-site` examples to use hooks.
 
 * Changed
-  * Update `timeVariant` prop description to include `es` in locales supporting only 24 hour format.
+  * `onClickOutside` prop has been deprecated, will resolve to `onRequestClose`
   * Updated wdio snapshots due to changes in date-picker and time-input
+  * Update `timeVariant` prop description to include `es` in locales supporting only 24 hour format.
 
 ## 4.46.0 - (September 10, 2020)
 

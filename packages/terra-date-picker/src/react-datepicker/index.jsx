@@ -195,9 +195,13 @@ class DatePicker extends React.Component {
      */
     onWeekSelect: PropTypes.func,
     /**
-     * A callback function to execute when the mouse cursor leaves the element.
+     * **Deprecated**, A callback function to execute when the mouse cursor leaves the element. Resolves to `onRequestClose`.
      */
     onClickOutside: PropTypes.func,
+    /**
+   * A callback function to execute when picker is dismissed. onRequestClose(event)
+     */
+    onRequestClose: PropTypes.func,
     /**
      * A callback function to execute when date is entered.
      */
@@ -389,7 +393,7 @@ class DatePicker extends React.Component {
       // If date picker is open in overlay
       if (this.datePickerOverlayContainer.current) {
         if (event.target === this.datePickerOverlayContainer.current || this.datePickerOverlayContainer.current.contains(event.target)) {
-          this.setOpen(false);
+          this.setOpen(false, event);
         }
       }
     }
@@ -420,7 +424,7 @@ class DatePicker extends React.Component {
 
   handleOnRequestClose() {
     this.setState({ isCalendarKeyboardFocused: false, isCalendarOpenedViaKeyboard: false });
-    this.setOpen(false);
+    this.setOpen(false, event);
   }
 
   getPreSelection = () => (
@@ -466,13 +470,17 @@ class DatePicker extends React.Component {
       open: open,
       preSelection: open && this.state.open ? this.state.preSelection : this.calcInitialState().preSelection
     })
+
+    if (this.props.onRequestClose && (!open)) {
+      this.props.onRequestClose(event);
+    }
   }
 
   handleFocus = (event) => {
     if (!this.state.preventFocus) {
       this.props.onFocus(event)
       if (!this.props.preventOpenOnFocus) {
-        this.setOpen(true)
+        this.setOpen(true, event)
       }
     }
   }
@@ -501,7 +509,7 @@ class DatePicker extends React.Component {
 
   handleCalendarClickOutside = (event) => {
     if (!this.props.inline) {
-      this.setOpen(false)
+      this.setOpen(false, event)
     }
     this.props.onClickOutside(event)
     if (this.props.withPortal) { event.preventDefault() }
@@ -534,7 +542,7 @@ class DatePicker extends React.Component {
     if (!this.props.shouldCloseOnSelect) {
       this.setPreSelection(date)
     } else if (!this.props.inline) {
-      this.setOpen(false)
+      this.setOpen(false, event)
     }
   }
 
@@ -614,11 +622,11 @@ class DatePicker extends React.Component {
         this.handleSelect(copy, event)
         !this.props.shouldCloseOnSelect && this.setPreSelection(copy)
       } else {
-        this.setOpen(false)
+        this.setOpen(false, event)
       }
     } else if (eventKey === 'Escape') {
       event.preventDefault()
-      this.setOpen(false)
+      this.setOpen(false, event)
     } else if (!this.props.disabledKeyboardNavigation && keyboardNavKeys.indexOf(eventKey) !== -1) {
       let newSelection
       switch (eventKey) {

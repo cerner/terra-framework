@@ -96,9 +96,13 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
-   * A callback function to execute when clicking outside of the picker to dismiss it.
+   * **Deprecated**, A callback function to execute when clicking outside of the picker to dismiss it. Resolves to `onRequestClose`.
    */
   onClickOutside: PropTypes.func,
+  /**
+   * A callback function to execute when picker is dismissed. onRequestClose(event)
+   */
+  onRequestClose: PropTypes.func,
   /**
    * A callback function triggered when the date picker component receives focus.
    * This event does not get triggered when the focus is moved from the date input to the calendar button since the focus is still within the main date picker component.
@@ -403,6 +407,7 @@ class DatePicker extends React.Component {
       onChange,
       onChangeRaw,
       onClickOutside,
+      onRequestClose,
       onFocus,
       onSelect,
       required,
@@ -462,6 +467,7 @@ class DatePicker extends React.Component {
             onChange={this.handleChange}
             onChangeRaw={this.handleChangeRaw}
             onClickOutside={this.handleOnClickOutside}
+            onRequestClose={onRequestClose}
             onFocus={this.handleOnInputFocus}
             onSelect={this.handleOnSelect}
             required={required}
