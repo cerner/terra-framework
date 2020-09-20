@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * DateInput split into 3 distinct inputs that mask the previous single input.
+  * Date input split into 3 distinct inputs that mask the previous single input.
   * `terra-dev-site` examples to use hooks.
 
 * Changed
