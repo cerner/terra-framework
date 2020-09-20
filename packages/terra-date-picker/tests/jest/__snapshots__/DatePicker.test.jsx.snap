@@ -293,7 +293,6 @@ exports[`correctly applies the theme context className 1`] = `
                         className="date-input-container"
                       >
                         <div
-                          aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                           className="date-input"
                           disabled={false}
                         >
@@ -313,6 +312,7 @@ exports[`correctly applies the theme context className 1`] = `
                             </span>
                           </VisuallyHiddenText>
                           <Input
+                            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                             aria-label="Terra.datePicker.yearLabel"
                             className="date-input-year"
                             disabled={false}
@@ -332,6 +332,7 @@ exports[`correctly applies the theme context className 1`] = `
                             value="2017"
                           >
                             <input
+                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                               aria-label="Terra.datePicker.yearLabel"
                               className="form-input date-input-year"
                               disabled={false}
@@ -354,6 +355,7 @@ exports[`correctly applies the theme context className 1`] = `
                             Terra.datePicker.separator
                           </span>
                           <Input
+                            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                             aria-label="Terra.datePicker.monthLabel"
                             className="date-input-month"
                             disabled={false}
@@ -373,6 +375,7 @@ exports[`correctly applies the theme context className 1`] = `
                             value="01"
                           >
                             <input
+                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                               aria-label="Terra.datePicker.monthLabel"
                               className="form-input date-input-month"
                               disabled={false}
@@ -395,6 +398,7 @@ exports[`correctly applies the theme context className 1`] = `
                             Terra.datePicker.separator
                           </span>
                           <Input
+                            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                             aria-label="Terra.datePicker.dayLabel"
                             className="date-input-day"
                             disabled={false}
@@ -414,6 +418,7 @@ exports[`correctly applies the theme context className 1`] = `
                             value="01"
                           >
                             <input
+                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                               aria-label="Terra.datePicker.dayLabel"
                               className="form-input date-input-day"
                               disabled={false}

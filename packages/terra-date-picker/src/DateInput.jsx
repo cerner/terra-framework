@@ -500,6 +500,8 @@ const DatePickerInput = (props) => {
     }
   };
 
+  const formatDescriptionId = !useExternalFormatMask ? `terra-date-picker-description-format-${uuidRef.current}` : '';
+
   const dayInputClasses = cx([
     'date-input-day',
     { 'initial-focus': dayInitialFocused },
@@ -521,6 +523,7 @@ const DatePickerInput = (props) => {
       size="2"
       pattern="\d*"
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
+      aria-describedby={formatDescriptionId}
     />
   );
 
@@ -545,6 +548,7 @@ const DatePickerInput = (props) => {
       size="2"
       pattern="\d*"
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
+      aria-describedby={formatDescriptionId}
     />
   );
 
@@ -569,6 +573,7 @@ const DatePickerInput = (props) => {
       size="4"
       pattern="\d*"
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
+      aria-describedby={formatDescriptionId}
     />
   );
 
@@ -590,14 +595,12 @@ const DatePickerInput = (props) => {
   ]);
 
   const label = ariaLabel || intl.formatMessage({ id: 'Terra.datePicker.date' });
-  const formatDescriptionId = !useExternalFormatMask ? `terra-date-picker-description-format-${uuidRef.current}` : '';
+  const format = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
 
   const buttonClasses = cx([
     'button',
     { 'is-invalid': isInvalid },
   ]);
-
-  const format = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
 
   return (
     <div className={cx(theme.className)}>
@@ -606,7 +609,6 @@ const DatePickerInput = (props) => {
           className={dateInputClasses}
           id={id}
           disabled={additionalInputProps.disabled}
-          aria-describedby={formatDescriptionId}
         >
           <input
             // Create a hidden input for storing the name and value attributes to use when submitting the form.
