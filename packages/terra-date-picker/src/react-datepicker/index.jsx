@@ -199,10 +199,6 @@ class DatePicker extends React.Component {
      */
     onClickOutside: PropTypes.func,
     /**
-   * A callback function to execute when picker is dismissed. onRequestClose(event)
-     */
-    onRequestClose: PropTypes.func,
-    /**
      * A callback function to execute when date is entered.
      */
     onChangeRaw: PropTypes.func,
@@ -218,6 +214,10 @@ class DatePicker extends React.Component {
      * A callback function to execute when month is selected.
      */
     onMonthChange: PropTypes.func,
+    /**
+     * A callback function to execute when picker is dismissed. onRequestClose(event)
+     */
+    onRequestClose: PropTypes.func,
     /**
      * Prop to open calendar on a particular date.
      */
