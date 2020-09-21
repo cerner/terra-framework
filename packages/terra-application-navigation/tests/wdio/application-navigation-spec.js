@@ -129,15 +129,15 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
     it('launch popup', () => {
       browser.click('[data-application-header-utility="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
-      browser.pause(50);
     });
 
     Terra.it.validatesElement('1. Popup Open');
 
     it('close popup', () => {
-      browser.execute(() => {
+      // eslint-disable-next-line prefer-arrow-callback
+      browser.execute(function dispatch() {
         window.dispatchEvent(new Event('terra-application-navigation.dismiss-menu'));
-      })
+      });
     });
 
     Terra.it.validatesElement('2. Popup Closed');
@@ -323,15 +323,15 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
     it('open drawer', () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.moveToObject('[data-compact-header-toggle="true"]').leftClick();
-      browser.pause(250);
     });
 
     Terra.it.validatesElement('1. Drawer Open', { selector: '#root' });
 
     it('close drawer', () => {
-      browser.execute(() => {
+      // eslint-disable-next-line prefer-arrow-callback
+      browser.execute(function dispatch() {
         window.dispatchEvent(new Event('terra-application-navigation.dismiss-menu'));
-      })
+      });
     });
 
     Terra.it.validatesElement('2. Drawer Closed', { selector: '#root' });
