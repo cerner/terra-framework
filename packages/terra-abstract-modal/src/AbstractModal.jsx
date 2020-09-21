@@ -1,4 +1,6 @@
-import React, { useLayoutEffect, useEffect, useRef } from 'react';
+import React, {
+  useLayoutEffect, useEffect, useRef, useCallback,
+} from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import { KEY_ESCAPE } from 'keycode-js';
@@ -100,22 +102,28 @@ const AbstractModal = (props) => {
   }, []);
 
   useEffect(() => {
-    function handleKeydown(e) {
+    function handleDocumentKeydown(e) {
       if (e.keyCode === KEY_ESCAPE && closeOnEsc && isOpen) {
-        if (modalElementRef.current) {
-          const body = document.querySelector('body');
-          if (e.target === modalElementRef.current || modalElementRef.current.contains(e.target) || e.target === body) {
-            onRequestClose();
-          }
+        const body = document.querySelector('body');
+        if (e.target === body) {
+          onRequestClose();
         }
       }
     }
-
-    document.addEventListener('keydown', handleKeydown);
-
+    document.addEventListener('keydown', handleDocumentKeydown);
     return (() => {
-      document.removeEventListener('keydown', handleKeydown);
+      document.removeEventListener('keydown', handleDocumentKeydown);
     });
+  }, [closeOnEsc, isOpen, onRequestClose]);
+
+  const handleKeydown = useCallback(e => {
+    if (e.keyCode === KEY_ESCAPE && closeOnEsc && isOpen) {
+      if (modalElementRef.current) {
+        if (e.target === modalElementRef.current || modalElementRef.current.contains(e.target)) {
+          onRequestClose();
+        }
+      }
+    }
   }, [closeOnEsc, isOpen, onRequestClose, modalElementRef]);
 
   if (!isOpen) {
@@ -139,6 +147,7 @@ const AbstractModal = (props) => {
         zIndex={zIndex}
         aria-modal="true"
         ref={modalElementRef}
+        onKeyDown={handleKeydown}
       >
         {children}
       </ModalContent>
