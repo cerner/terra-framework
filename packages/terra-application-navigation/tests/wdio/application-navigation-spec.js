@@ -317,7 +317,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
     Terra.it.validatesElement({ selector: '#root' });
   });
 
-  describe('Should close open drawer when custom event is dispatched', () => {
+  describe('ApplicationNavigation should close open drawer when custom event is dispatched', () => {
     before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
 
     it('open drawer', () => {
