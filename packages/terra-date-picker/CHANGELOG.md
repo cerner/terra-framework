@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed description id's in DatePickerField.
+
 * Changed
   * `onClickOutside` prop has been deprecated, will resolve to `onRequestClose`
 
