@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.32.0 - (September 16, 2020)
+
 * Removed
   * Removed `placeholder` from the input.
 

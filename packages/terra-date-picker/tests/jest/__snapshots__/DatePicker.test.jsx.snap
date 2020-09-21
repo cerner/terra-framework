@@ -329,6 +329,7 @@ exports[`correctly applies the theme context className 1`] = `
                         </Input>
                         <Button
                           className="button"
+                          data-terra-open-calendar-button={true}
                           icon={
                             <IconCalendar
                               viewBox="0 0 48 48"
@@ -353,6 +354,7 @@ exports[`correctly applies the theme context className 1`] = `
                             aria-disabled={false}
                             aria-label="Terra.datePicker.openCalendar"
                             className="button neutral compact orion-fusion-theme button"
+                            data-terra-open-calendar-button={true}
                             disabled={false}
                             onBlur={[Function]}
                             onClick={[Function]}
@@ -1032,6 +1034,69 @@ exports[`should render a date picker with onFocus 1`] = `
       onChangeRaw={[Function]}
       onClickOutside={[Function]}
       onFocus={[Function]}
+      onSelect={[Function]}
+      preventOpenOnFocus={true}
+      required={false}
+      selected={"2017-01-01T00:00:00.000Z"}
+      showMonthDropdown={true}
+      showYearDropdown={true}
+      todayButton="Terra.datePicker.today"
+      utcOffset={0}
+      withPortal={false}
+    />
+  </ResponsiveElement>
+</div>
+`;
+
+exports[`should render a date picker with onRequestClose 1`] = `
+<div
+  className="date-picker"
+>
+  <ResponsiveElement
+    onChange={[Function]}
+    responsiveTo="window"
+  >
+    <InjectIntl(DatePicker)
+      allowSameDay={true}
+      customInput={
+        <InjectIntl(DatePickerInput)
+          buttonRefCallback={[Function]}
+          isIncomplete={false}
+          isInvalid={false}
+          onButtonFocus={[Function]}
+          onCalendarButtonClick={[Function]}
+          required={false}
+          shouldShowPicker={false}
+          useExternalFormatMask={false}
+        />
+      }
+      dateFormat="MM/DD/YYYY"
+      dateFormatCalendar=" "
+      disabled={false}
+      dropdownMode="select"
+      excludeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      filterDate={[Function]}
+      fixedHeight={true}
+      includeDates={
+        Array [
+          "2017-01-01T00:00:00.000Z",
+        ]
+      }
+      inline={false}
+      locale="en"
+      maxDate={"2017-01-01T00:00:00.000Z"}
+      minDate={"2017-01-01T00:00:00.000Z"}
+      name="date-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onChangeRaw={[Function]}
+      onClickOutside={[Function]}
+      onFocus={[Function]}
+      onRequestClose={[Function]}
       onSelect={[Function]}
       preventOpenOnFocus={true}
       required={false}
