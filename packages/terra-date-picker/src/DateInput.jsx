@@ -195,7 +195,11 @@ class DatePickerInput extends React.Component {
 
     const label = this.props.ariaLabel ? this.props.ariaLabel : intl.formatMessage({ id: 'Terra.datePicker.date' });
 
-    this.formatDescriptionId = (useExternalFormatMask === false) ? `terra-date-picker-description-format-${this.uuid}` : '';
+    if (useExternalFormatMask === false) {
+      this.formatDescriptionId = `terra-date-picker-description-format-${this.uuid}`;
+    } else if (inputAttributes['aria-describedby']) {
+      this.formatDescriptionId = inputAttributes['aria-describedby'];
+    }
 
     const format = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
 
