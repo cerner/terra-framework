@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.18.0 - (September 16, 2020)
+
 * Removed
   * Removed `placeholder` from day and year input.
 
