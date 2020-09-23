@@ -8,6 +8,10 @@
     margin-bottom: var(--terra-date-input-field-margin-bottom, 1.428em);
     max-width: 72.857rem;
     padding: 0;
+
+    > div {
+      flex-wrap: nowrap;
+    }
   }
 
   .is-inline {
