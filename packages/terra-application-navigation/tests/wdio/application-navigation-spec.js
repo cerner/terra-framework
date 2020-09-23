@@ -136,7 +136,9 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
     it('close popup', () => {
       // eslint-disable-next-line prefer-arrow-callback
       browser.execute(function dispatch() {
-        window.dispatchEvent(new Event('terra-application-navigation.dismiss-menu'));
+        const event = document.createEvent('Event');
+        event.initEvent('terra-application-navigation.dismiss-menu', true, true);
+        window.dispatchEvent(event);
       });
     });
 
@@ -330,7 +332,9 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
     it('close drawer', () => {
       // eslint-disable-next-line prefer-arrow-callback
       browser.execute(function dispatch() {
-        window.dispatchEvent(new Event('terra-application-navigation.dismiss-menu'));
+        const event = document.createEvent('Event');
+        event.initEvent('terra-application-navigation.dismiss-menu', true, true);
+        window.dispatchEvent(event);
       });
     });
 
