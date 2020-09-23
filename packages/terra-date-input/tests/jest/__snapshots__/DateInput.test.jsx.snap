@@ -102,7 +102,6 @@ exports[`DateInput correctly applies the theme context className 1`] = `
             value="07"
           >
             <option
-              hidden={true}
               value=""
             >
               Terra.date.input.monthPlaceholder
@@ -296,7 +295,6 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
         name="terra-date-month-date-input"
       >
         <option
-          hidden=""
           selected=""
           value=""
         >
@@ -414,7 +412,6 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
         name="terra-date-month-date-input-2"
       >
         <option
-          hidden=""
           selected=""
           value=""
         >
@@ -532,7 +529,6 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
         name="terra-date-month-date-input-3"
       >
         <option
-          hidden=""
           selected=""
           value=""
         >
@@ -661,7 +657,6 @@ exports[`DateInput should render a date input with a default date 1`] = `
       value="07"
     >
       <option
-        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -823,7 +818,6 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
       value=""
     >
       <option
-        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -980,7 +974,6 @@ exports[`DateInput should render a date input with onBlur 1`] = `
       value=""
     >
       <option
-        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -1137,7 +1130,6 @@ exports[`DateInput should render a date input with onChange 1`] = `
       value=""
     >
       <option
-        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -1294,7 +1286,6 @@ exports[`DateInput should render a date input with onFocus 1`] = `
       value=""
     >
       <option
-        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -1451,7 +1442,6 @@ exports[`DateInput should render a default date input 1`] = `
       value=""
     >
       <option
-        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -1608,7 +1598,6 @@ exports[`DateInput should render a disabled time input 1`] = `
       value=""
     >
       <option
-        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -1942,7 +1931,6 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                   value="07"
                 >
                   <option
-                    hidden={true}
                     value=""
                   >
                     Terra.date.input.monthPlaceholder

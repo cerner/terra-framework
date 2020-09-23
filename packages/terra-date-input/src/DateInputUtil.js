@@ -76,19 +76,18 @@ class DateInputUtil {
    */
   static incrementYear(year) {
     // Handle empty input value
-    if (year === '') {
-      return '1';
+    let numericYear = Number(year);
+    if (numericYear === 0) {
+      return '1900';
     }
 
     if (year) {
-      let numericYear = Number(year);
-
-      // Loop back to 1 if incrementing year from "9999"
-      if (numericYear === 9999) {
-        return '1';
+      // Loop back to 1900 if incrementing year from "2100"
+      if (numericYear === 2100) {
+        return '1900';
       }
 
-      if (numericYear < 9999) {
+      if (numericYear >= 1900 && numericYear < 2100) {
         numericYear += 1;
         return numericYear.toString();
       }
@@ -106,19 +105,18 @@ class DateInputUtil {
    */
   static decrementYear(year) {
     // Handle empty input value
-    if (year === '') {
-      return '9999';
+    let numericYear = Number(year);
+    if (numericYear === 0) {
+      return '2100';
     }
 
     if (year) {
-      let numericYear = Number(year);
-
       // Loop back to 9999. Accounts for day being 1 or 0 (result of empty string)
-      if (numericYear < 2) {
-        return '9999';
+      if (numericYear === 1900) {
+        return '2100';
       }
 
-      if (numericYear > 1) {
+      if (numericYear > 1900) {
         numericYear -= 1;
         return numericYear.toString();
       }

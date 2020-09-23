@@ -382,11 +382,12 @@ class DateInput extends React.Component {
     }
 
     const inputValue = event.target.value;
-    const maxValue = 9999;
+    const maxValue = 2100;
+    const minValue = 1900;
 
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have
     // to check the length of inputValue to make sure that it is less then 4.
-    if (inputValue.length > 5 || Number(inputValue) > maxValue) {
+    if (inputValue.length > 5 || Number(inputValue) > maxValue || (inputValue.length === 4 && Number(inputValue) < minValue)) {
       return;
     }
 
@@ -499,7 +500,7 @@ class DateInput extends React.Component {
           disabled={this.props.disabled}
           aria-describedby={`${this.formatDescriptionId} ${this.props.monthAttributes['aria-describedby']}`}
         >
-          <option value="" hidden>{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
+          <option value="">{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.february' })} value="02">{this.props.intl.formatMessage({ id: 'Terra.date.input.february' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.march' })} value="03">{this.props.intl.formatMessage({ id: 'Terra.date.input.march' })}</option>
