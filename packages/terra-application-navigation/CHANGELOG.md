@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  *  Corrected ApplicationNavigation TabCount consolidation logic
+
 ## 1.35.0 - (August 18, 2020)
 
 * Added
