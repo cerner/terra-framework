@@ -465,6 +465,8 @@ class DateInput extends React.Component {
    * Renders month input
    */
   monthRender() {
+    const { useExternalFormatMask } = this.props;
+
     const DateInputMonthWrapperClassNames = cx([
       'month-select-wrapper',
       { focused: this.state.monthIsFocused },
@@ -482,6 +484,17 @@ class DateInput extends React.Component {
       { incomplete: (this.props.isIncomplete && this.props.required && !this.props.isInvalid) },
     ]);
 
+    let ariaDescriptionIds;
+    if (useExternalFormatMask === false) {
+      if (this.props.monthAttributes && this.props.monthAttributes['aria-describedby']) {
+        ariaDescriptionIds = `${this.formatDescriptionId} ${this.props.monthAttributes['aria-describedby']}`;
+      } else {
+        ariaDescriptionIds = this.formatDescriptionId;
+      }
+    } else {
+      ariaDescriptionIds = this.props.monthAttributes['aria-describedby'];
+    }
+
     return (
       <div className={DateInputMonthWrapperClassNames}>
         <select
@@ -497,7 +510,7 @@ class DateInput extends React.Component {
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}
           disabled={this.props.disabled}
-          aria-describedby={`${this.formatDescriptionId} ${this.props.monthAttributes['aria-describedby']}`}
+          aria-describedby={ariaDescriptionIds}
         >
           <option value="" hidden>{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
@@ -521,6 +534,8 @@ class DateInput extends React.Component {
    * Renders day input
    */
   dayRender() {
+    const { useExternalFormatMask } = this.props;
+
     /**
      * JAWS + Chrome is super buggy when it comes to up/down arrow keys cycling values on the input and only seems to work
      * when input[type=number]. This works great, except in Firefox where <input value="03" type="number" />
@@ -530,6 +545,17 @@ class DateInput extends React.Component {
      */
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
+
+    let ariaDescriptionIds;
+    if (useExternalFormatMask === false) {
+      if (this.props.dayAttributes && this.props.dayAttributes['aria-describedby']) {
+        ariaDescriptionIds = `${this.formatDescriptionId} ${this.props.dayAttributes['aria-describedby']}`;
+      } else {
+        ariaDescriptionIds = this.formatDescriptionId;
+      }
+    } else {
+      ariaDescriptionIds = this.props.dayAttributes['aria-describedby'];
+    }
 
     return (
       <Input
@@ -551,7 +577,7 @@ class DateInput extends React.Component {
         isInvalid={this.props.isInvalid}
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        aria-describedby={`${this.formatDescriptionId} ${this.props.dayAttributes['aria-describedby']}`}
+        aria-describedby={ariaDescriptionIds}
       />
     );
   }
@@ -560,6 +586,8 @@ class DateInput extends React.Component {
    * Renders year select
    */
   yearRender() {
+    const { useExternalFormatMask } = this.props;
+
     /**
      * JAWS + Chrome is super buggy when it comes to up/down arrow keys cycling values on the input and only seems to work
      * when input[type=number]. This works great, except in Firefox where <input value="03" type="number" /> displays the
@@ -569,6 +597,17 @@ class DateInput extends React.Component {
      */
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
+
+    let ariaDescriptionIds;
+    if (useExternalFormatMask === false) {
+      if (this.props.yearAttributes && this.props.yearAttributes['aria-describedby']) {
+        ariaDescriptionIds = `${this.formatDescriptionId} ${this.props.yearAttributes['aria-describedby']}`;
+      } else {
+        ariaDescriptionIds = this.formatDescriptionId;
+      }
+    } else {
+      ariaDescriptionIds = this.props.yearAttributes['aria-describedby'];
+    }
 
     return (
       <Input
@@ -590,7 +629,7 @@ class DateInput extends React.Component {
         isInvalid={this.props.isInvalid}
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        aria-describedby={`${this.formatDescriptionId} ${this.props.yearAttributes['aria-describedby']}`}
+        aria-describedby={ariaDescriptionIds}
       />
     );
   }
@@ -667,7 +706,7 @@ class DateInput extends React.Component {
       dateValue = `${year}-${month}-${day}`;
     }
 
-    this.formatDescriptionId = (useExternalFormatMask === false) ? `terra-date-picker-description-format-${this.uuid}` : '';
+    this.formatDescriptionId = `terra-date-picker-description-format-${this.uuid}`;
 
     const format = DateInputUtil.getDateFormat(this.props);
 

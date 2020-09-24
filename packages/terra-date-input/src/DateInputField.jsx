@@ -186,18 +186,34 @@ const DateInputField = (props) => {
    * aria-describedby ids
    * Used to map legend, help text, and error messages with input/select elements
    */
-  const helpAriaDescriptionId = help ? `terra-date-input-field-description-help-${uniqueid.current}` : '';
-  const errorAriaDescriptionId = isInvalid && error ? `terra-date-input-field-description-error-${uniqueid.current}` : '';
-  const ariaDescriptionIds = `${errorAriaDescriptionId} ${helpAriaDescriptionId}`;
+  const helpAriaDescriptionId = `terra-date-input-field-description-help-${uniqueid.current}`;
+  const errorAriaDescriptionId = `terra-date-input-field-description-error-${uniqueid.current}`;
 
-  const customMonthAriaDescribedById = monthAttributes['aria-describedby'] ? monthAttributes['aria-describedby'] : '';
-  const monthAriaDescriptionIds = `${ariaDescriptionIds} ${customMonthAriaDescribedById}`;
+  let ariaDescriptionIds;
 
-  const customDayAriaDescribedById = dayAttributes['aria-describedby'] ? dayAttributes['aria-describedby'] : '';
-  const dayAriaDescriptionIds = `${ariaDescriptionIds} ${customDayAriaDescribedById}`;
+  if (error && isInvalid) {
+    ariaDescriptionIds = `${errorAriaDescriptionId} ${helpAriaDescriptionId}`;
+  } else {
+    ariaDescriptionIds = helpAriaDescriptionId;
+  }
 
-  const customYearAriaDescribedById = yearAttributes['aria-describedby'] ? yearAttributes['aria-describedby'] : '';
-  const yearAriaDescriptionIds = `${ariaDescriptionIds} ${customYearAriaDescribedById}`;
+  const customMonthAriaDescribedById = monthAttributes && monthAttributes['aria-describedby'];
+  const customDayAriaDescribedById = dayAttributes && dayAttributes['aria-describedby'];
+  const customYearAriaDescribedById = yearAttributes && yearAttributes['aria-describedby'];
+
+  let monthAriaDescriptionIds;
+  let dayAriaDescriptionIds;
+  let yearAriaDescriptionIds;
+
+  if (ariaDescriptionIds) {
+    monthAriaDescriptionIds = customMonthAriaDescribedById ? `${ariaDescriptionIds} ${customMonthAriaDescribedById}` : `${ariaDescriptionIds}`;
+    dayAriaDescriptionIds = customDayAriaDescribedById ? `${ariaDescriptionIds} ${customDayAriaDescribedById}` : `${ariaDescriptionIds}`;
+    yearAriaDescriptionIds = customYearAriaDescribedById ? `${ariaDescriptionIds} ${customYearAriaDescribedById}` : `${ariaDescriptionIds}`;
+  } else {
+    monthAriaDescriptionIds = customMonthAriaDescribedById;
+    dayAriaDescriptionIds = customDayAriaDescribedById;
+    yearAriaDescriptionIds = customYearAriaDescribedById;
+  }
 
   const legendGroup = (
     <legend className={cx(['legend-group', { 'legend-group-hidden': isLegendHidden }])}>
