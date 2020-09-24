@@ -33,7 +33,6 @@ class DatePickerExample extends React.Component {
   render() {
     return (
       <div className={cx('content-wrapper')}>
-        <div id="abc">User Defined</div>
         <button type="button" id="validity-toggle" onClick={this.handleInvalidButtonClick}>Toggle Validity</button>
         <button type="button" id="incomplete-toggle" onClick={this.handleIncompleteButtonClick}>Toggle Incomplete</button>
         <DatePickerField
@@ -45,7 +44,6 @@ class DatePickerExample extends React.Component {
           name="date-input"
           datePickerId="default"
           help="Help message."
-          inputAttributes={{ 'aria-describedby': 'abc' }}
         />
       </div>
     );
