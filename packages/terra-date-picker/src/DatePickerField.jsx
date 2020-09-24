@@ -223,9 +223,11 @@ const DatePickerField = (props) => {
     ariaDescriptionIds = `${datePickerId}-help`;
   }
 
+  const inputAriaDescriptionId = inputAttributes && inputAttributes['aria-describedby'];
+
   let mergedInputAttrs = inputAttributes;
   if (ariaDescriptionIds) {
-    mergedInputAttrs = { 'aria-describedby': ariaDescriptionIds, ...inputAttributes };
+    mergedInputAttrs = { ...inputAttributes, 'aria-describedby': (inputAriaDescriptionId) ? `${ariaDescriptionIds} ${inputAriaDescriptionId}` : ariaDescriptionIds };
   }
 
   const format = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
