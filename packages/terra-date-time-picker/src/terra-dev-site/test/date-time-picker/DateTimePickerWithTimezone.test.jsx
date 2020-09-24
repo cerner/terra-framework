@@ -4,12 +4,12 @@ import DateTimePickerTimezoneExampleTemplate from '../../common/DateTimePickerTi
 const DateTimePickerExample = () => (
   <>
     <DateTimePickerTimezoneExampleTemplate
-      value="2020-02-13T05:30:00"
-      initialTimeZone="Africa/Bangui"
+      value="2020-09-13T05:30:00"
+      initialTimeZone="Pacific/Apia"
     />
     <DateTimePickerTimezoneExampleTemplate
-      value="2017-11-05T01:30:00"
-      initialTimeZone="Asia/Dubai"
+      value="2020-09-13T05:30:00"
+      initialTimeZone="America/Chicago"
     />
   </>
 );
