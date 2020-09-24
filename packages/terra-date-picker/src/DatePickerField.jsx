@@ -215,12 +215,10 @@ const DatePickerField = (props) => {
     ...customProps
   } = props;
 
-  let ariaDescriptionIds;
+  let ariaDescriptionIds = `${datePickerId}-help`;
 
   if (error && isInvalid) {
     ariaDescriptionIds = `${datePickerId}-error ${datePickerId}-help`;
-  } else {
-    ariaDescriptionIds = `${datePickerId}-help`;
   }
 
   const inputAriaDescriptionId = inputAttributes && inputAttributes['aria-describedby'];
