@@ -194,15 +194,16 @@ class DatePickerInput extends React.Component {
     const theme = this.context;
 
     const label = this.props.ariaLabel ? this.props.ariaLabel : intl.formatMessage({ id: 'Terra.datePicker.date' });
+    this.formatDescriptionId = `terra-date-picker-description-format-${this.uuid}`;
 
     if (useExternalFormatMask === false && inputAttributes && inputAttributes['aria-describedby']) {
-      this.formatDescriptionId = `terra-date-picker-description-format-${this.uuid} ${inputAttributes['aria-describedby']}`;
+      this.ariaDescriptionIds = `${this.formatDescriptionId} ${inputAttributes['aria-describedby']}`;
     } else if (useExternalFormatMask === false) {
-      this.formatDescriptionId = `terra-date-picker-description-format-${this.uuid}`;
+      this.ariaDescriptionIds = this.formatDescriptionId;
     } else if (inputAttributes && inputAttributes['aria-describedby']) {
-      this.formatDescriptionId = inputAttributes['aria-describedby'];
+      this.ariaDescriptionIds = inputAttributes['aria-describedby'];
     } else {
-      this.formatDescriptionId = '';
+      this.ariaDescriptionIds = '';
     }
 
     const format = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
@@ -228,7 +229,7 @@ class DatePickerInput extends React.Component {
             onFocus={onFocus}
             onBlur={onBlur}
             ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
-            aria-describedby={this.formatDescriptionId}
+            aria-describedby={this.ariaDescriptionIds}
           />
           <Button
             data-terra-open-calendar-button
