@@ -144,7 +144,7 @@ const ApplicationNavigation = ({
   const [drawerMenuIsOpen, setDrawerMenuIsOpen] = useState(false);
   const [popupMenuIsOpen, setPopupMenuIsOpen] = useState(false);
 
-  const closeMenuEventName = 'terra-application-navigation.dismiss-menu';
+  const closeMenuEvent = 'terra-application-navigation.dismiss-menu';
 
   // Use dot notation temporarily until hooks + enzyme support for userContext
   const activeBreakpoint = React.useContext(ActiveBreakpointContext);
@@ -329,10 +329,10 @@ const ApplicationNavigation = ({
       setPopupMenuIsOpen(false);
     };
 
-    window.addEventListener(closeMenuEventName, forceCloseMenu);
+    window.addEventListener(closeMenuEvent, forceCloseMenu);
 
     return () => {
-      window.removeEventListener(closeMenuEventName, forceCloseMenu);
+      window.removeEventListener(closeMenuEvent, forceCloseMenu);
     };
   }, []);
 
