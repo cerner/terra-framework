@@ -90,16 +90,14 @@ describe('DateInput', () => {
 
   it('should validate the incrementYear helper method', () => {
     expect(DateInputUtil.incrementYear('1999')).toEqual('2000');
-    expect(DateInputUtil.incrementYear('9999')).toEqual('1');
-    expect(DateInputUtil.incrementYear('0')).toEqual('1');
-    expect(DateInputUtil.incrementYear('')).toEqual('1');
+    expect(DateInputUtil.incrementYear('2100')).toEqual('1900');
+    expect(DateInputUtil.incrementYear('')).toEqual('1900');
   });
 
   it('should validate the decrementYear helper method', () => {
     expect(DateInputUtil.decrementYear('1999')).toEqual('1998');
-    expect(DateInputUtil.decrementYear('1')).toEqual('9999');
-    expect(DateInputUtil.decrementYear('0')).toEqual('9999');
-    expect(DateInputUtil.decrementYear('')).toEqual('9999');
+    expect(DateInputUtil.decrementYear('1900')).toEqual('2100');
+    expect(DateInputUtil.decrementYear('')).toEqual('2100');
   });
 
   it('should validate the validNumericInput helper method', () => {
