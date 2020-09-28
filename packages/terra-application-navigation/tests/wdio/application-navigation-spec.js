@@ -122,6 +122,28 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
 
     Terra.it.validatesElement();
   });
+
+  describe('Should close open popup when custom event is dispatched', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
+
+    it('launch popup', () => {
+      browser.click('[data-application-header-utility="true"]');
+      browser.waitForVisible('[data-terra-popup-content="true"]');
+    });
+
+    Terra.it.validatesElement('1. Popup Open');
+
+    it('close popup', () => {
+      // eslint-disable-next-line prefer-arrow-callback
+      browser.execute(function dispatch() {
+        const event = document.createEvent('Event');
+        event.initEvent('terra-application-navigation.dismiss-menu', true, true);
+        window.dispatchEvent(event);
+      });
+    });
+
+    Terra.it.validatesElement('2. Popup Closed');
+  });
 });
 
 Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
@@ -295,6 +317,28 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
     });
 
     Terra.it.validatesElement({ selector: '#root' });
+  });
+
+  describe('ApplicationNavigation should close open drawer when custom event is dispatched', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
+
+    it('open drawer', () => {
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.moveToObject('[data-compact-header-toggle="true"]').leftClick();
+    });
+
+    Terra.it.validatesElement('1. Drawer Open', { selector: '#root' });
+
+    it('close drawer', () => {
+      // eslint-disable-next-line prefer-arrow-callback
+      browser.execute(function dispatch() {
+        const event = document.createEvent('Event');
+        event.initEvent('terra-application-navigation.dismiss-menu', true, true);
+        window.dispatchEvent(event);
+      });
+    });
+
+    Terra.it.validatesElement('2. Drawer Closed', { selector: '#root' });
   });
 });
 

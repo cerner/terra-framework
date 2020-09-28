@@ -13,6 +13,7 @@
 
 * Changed
   * Updated month `placeholder` to be `- Select -`.
+  * Fixed wrapping and applied truncation in month select.
 
 * Added
   * Added format to be displayed for both `DateInput` and `DateInputField`.
