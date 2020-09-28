@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixes inconsistent focus styles in IE.
+
 * Changed
   * `onClickOutside` prop has been deprecated, will resolve to `onRequestClose`
 
