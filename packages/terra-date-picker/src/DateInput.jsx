@@ -181,7 +181,7 @@ const DatePickerInput = (props) => {
 
   const setDayRef = useCallback(node => {
     dayInputRef.current = node;
-    if (inputRefCallback && dateFormatOrder === 'YMD') {
+    if (inputRefCallback && dateFormatOrder === DateUtil.dateOrder.YMD) {
       inputRefCallback(node);
     }
   }, [dateFormatOrder, inputRefCallback]);
@@ -192,7 +192,7 @@ const DatePickerInput = (props) => {
 
   const setYearRef = useCallback(node => {
     yearInputRef.current = node;
-    if (inputRefCallback && (dateFormatOrder === 'MDY' || dateFormatOrder === 'DMY')) {
+    if (inputRefCallback && (dateFormatOrder === DateUtil.dateOrder.MDY || dateFormatOrder === DateUtil.dateOrder.DMY)) {
       inputRefCallback(node);
     }
   }, [dateFormatOrder, inputRefCallback]);
@@ -206,7 +206,7 @@ const DatePickerInput = (props) => {
   // Sets the date state based on the passed in value prop, or if it changes via a calendar click.
   useEffect(() => {
     if (DateUtil.isValidDate(value, momentDateFormat)) {
-      const parseDate = DateUtil.getDateInputValues('YMD', dateValue, '-');
+      const parseDate = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, dateValue, '-');
       dateDispatch(parseDate);
     } else if (dateValue === '') {
       dateDispatch({ day: '', month: '', year: '' });
@@ -219,11 +219,10 @@ const DatePickerInput = (props) => {
    * corrections easier, and is re-enabled if the whole date is erased.
    * @param {string} inputValue - The value from the current input.
    * @param {number} type - The input type, based on DateUtil.inputType.
-   * @param {string} dateOrder - Date variant based on the currently supported date
-   *                      orders: 'MDY', 'DMY', or 'YMD'.
+   * @param {string} dateOrder - Date variant based on the currently supported date orders: 'MDY', 'DMY', or 'YMD'.
    */
   const moveFocusOnChange = (inputValue, type, dateOrder) => {
-    if (dateOrder === 'MDY') {
+    if (dateOrder === DateUtil.dateOrder.MDY) {
       if (inputValue.length === 2) {
         if (type === DateUtil.inputType.MONTH) {
           dayInputRef.current.focus();
@@ -231,7 +230,7 @@ const DatePickerInput = (props) => {
           yearInputRef.current.focus();
         }
       }
-    } else if (dateOrder === 'DMY') {
+    } else if (dateOrder === DateUtil.dateOrder.DMY) {
       if (inputValue.length === 2) {
         if (type === DateUtil.inputType.DAY) {
           monthInputRef.current.focus();
@@ -239,7 +238,7 @@ const DatePickerInput = (props) => {
           yearInputRef.current.focus();
         }
       }
-    } else if (dateOrder === 'YMD') {
+    } else if (dateOrder === DateUtil.dateOrder.YMD) {
       if (inputValue.length === 4) {
         monthInputRef.current.focus();
       } else if (inputValue.length === 2 && type === DateUtil.inputType.MONTH) {
@@ -294,9 +293,9 @@ const DatePickerInput = (props) => {
         onChange(event, formattedDate);
       } else {
         let dateString;
-        if (dateFormatOrder === 'MDY') {
+        if (dateFormatOrder === DateUtil.dateOrder.MDY) {
           dateString = month + day + year;
-        } else if (dateFormatOrder === 'DMY') {
+        } else if (dateFormatOrder === DateUtil.dateOrder.DMY) {
           dateString = day + month + year;
         } else {
           dateString = year + month + day;
@@ -388,17 +387,17 @@ const DatePickerInput = (props) => {
   };
 
   const handleDayInputKeydown = (event) => {
-    if (dateFormatOrder === 'MDY') {
+    if (dateFormatOrder === DateUtil.dateOrder.MDY) {
       if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && dayInputRef.current.selectionEnd === 0) {
         setInputFocus(event, monthInputRef.current, date.month.length, date.month.length);
       } else if (event.keyCode === KEY_RIGHT && dayInputRef.current.selectionEnd === date.day.length) {
         setInputFocus(event, yearInputRef.current, 0, 0);
       }
-    } else if (dateFormatOrder === 'DMY') {
+    } else if (dateFormatOrder === DateUtil.dateOrder.DMY) {
       if (event.keyCode === KEY_RIGHT && dayInputRef.current.selectionEnd === date.day.length) {
         setInputFocus(event, monthInputRef.current, 0, 0);
       }
-    } else if (dateFormatOrder === 'YMD') {
+    } else if (dateFormatOrder === DateUtil.dateOrder.YMD) {
       if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && dayInputRef.current.selectionEnd === 0) {
         setInputFocus(event, monthInputRef.current, date.month.length, date.month.length);
       }
@@ -406,17 +405,17 @@ const DatePickerInput = (props) => {
   };
 
   const handleMonthInputKeydown = (event) => {
-    if (dateFormatOrder === 'MDY') {
+    if (dateFormatOrder === DateUtil.dateOrder.MDY) {
       if (event.keyCode === KEY_RIGHT && monthInputRef.current.selectionEnd === date.month.length) {
         setInputFocus(event, dayInputRef.current, 0, 0);
       }
-    } else if (dateFormatOrder === 'DMY') {
+    } else if (dateFormatOrder === DateUtil.dateOrder.DMY) {
       if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && monthInputRef.current.selectionEnd === 0) {
         setInputFocus(event, dayInputRef.current, date.day.length, date.day.length);
       } else if (event.keyCode === KEY_RIGHT && monthInputRef.current.selectionEnd === date.month.length) {
         setInputFocus(event, yearInputRef.current, 0, 0);
       }
-    } else if (dateFormatOrder === 'YMD') {
+    } else if (dateFormatOrder === DateUtil.dateOrder.YMD) {
       if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && monthInputRef.current.selectionEnd === 0) {
         setInputFocus(event, yearInputRef.current, date.year.length, date.year.length);
       } else if (event.keyCode === KEY_RIGHT && monthInputRef.current.selectionEnd === date.month.length) {
@@ -426,15 +425,15 @@ const DatePickerInput = (props) => {
   };
 
   const handleYearInputKeydown = (event) => {
-    if (dateFormatOrder === 'MDY') {
+    if (dateFormatOrder === DateUtil.dateOrder.MDY) {
       if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && yearInputRef.current.selectionEnd === 0) {
         setInputFocus(event, dayInputRef.current, date.day.length, date.day.length);
       }
-    } else if (dateFormatOrder === 'DMY') {
+    } else if (dateFormatOrder === DateUtil.dateOrder.DMY) {
       if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && yearInputRef.current.selectionEnd === 0) {
         setInputFocus(event, monthInputRef.current, date.month.length, date.month.length);
       }
-    } else if (dateFormatOrder === 'YMD') {
+    } else if (dateFormatOrder === DateUtil.dateOrder.YMD) {
       if (event.keyCode === KEY_RIGHT && yearInputRef.current.selectionEnd === date.year.length) {
         setInputFocus(event, monthInputRef.current, 0, 0);
       }

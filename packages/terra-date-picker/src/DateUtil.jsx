@@ -160,13 +160,13 @@ class DateUtil {
     const dateInputParts = value.split(separator);
 
     switch (dateOrder) {
-      case 'DMY':
+      case DateUtil.dateOrder.DMY:
         [day, month, year] = dateInputParts;
         break;
-      case 'MDY':
+      case DateUtil.dateOrder.MDY:
         [month, day, year] = dateInputParts;
         break;
-      case 'YMD':
+      case DateUtil.dateOrder.YMD:
         [year, month, day] = dateInputParts;
         break;
       default:
@@ -187,7 +187,7 @@ class DateUtil {
    */
   static getInputLayout(dateOrder, separator, day, month, year) {
     let formatOrder;
-    if (dateOrder === 'DMY') {
+    if (dateOrder === DateUtil.dateOrder.DMY) {
       formatOrder = (
         <>
           {day}
@@ -197,7 +197,7 @@ class DateUtil {
           {year}
         </>
       );
-    } else if (dateOrder === 'MDY') {
+    } else if (dateOrder === DateUtil.dateOrder.MDY) {
       formatOrder = (
         <>
           {month}
@@ -331,6 +331,11 @@ DateUtil.inputType = {
   DAY: 0,
   MONTH: 1,
   YEAR: 2,
+};
+DateUtil.dateOrder = {
+  DMY: 'DMY',
+  MDY: 'MDY',
+  YMD: 'YMD',
 };
 DateUtil.ISO_EXTENDED_DATE_FORMAT = 'YYYY-MM-DD';
 DateUtil.MIN_DATE = '1900-01-01';
