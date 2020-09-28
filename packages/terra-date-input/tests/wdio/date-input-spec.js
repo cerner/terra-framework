@@ -101,6 +101,27 @@ Terra.describeViewports('Date Input', ['medium'], () => {
     Terra.it.validatesElement();
   });
 
+  describe('Month Select placeholder option clears value', () => {
+    it('Selects January in month select', () => {
+      browser.url('/#/raw/tests/terra-date-input/date-input/day-month-year-date-input');
+      Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+      Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+      browser.click('select[name="terra-date-month-date-input"]');
+      browser.keys(['ArrowDown']);
+      browser.keys(['Enter']);
+    });
+
+    Terra.it.validatesElement('First Month Selected');
+
+    it('Selects Placeholder option to clear selected value', () => {
+      browser.click('select[name="terra-date-month-date-input"]');
+      browser.keys(['ArrowUp']);
+      browser.keys(['Enter']);
+    });
+
+    Terra.it.validatesElement('Value Cleared');
+  });
+
   describe('Month select keyboard operations', () => {
     describe('Month Select UP_ARROW increments month by 1', () => {
       before(() => {
@@ -406,6 +427,21 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
         browser.click('input[name="terra-date-year-date-input"]');
         browser.keys(['1900', 'ArrowDown']);
+      });
+
+      Terra.it.matchesScreenshot();
+    });
+
+    describe('Year Input does not allows user to enter values outside 1900-2100 ', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        browser.click('input[name="terra-date-year-date-input"]');
+        browser.keys(['7654']);
       });
 
       Terra.it.matchesScreenshot();

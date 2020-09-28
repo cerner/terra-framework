@@ -83,11 +83,11 @@ class DateInputUtil {
 
     if (year) {
       // Loop back to 1900 if incrementing year from "2100"
-      if (numericYear === 2100) {
+      if (numericYear === DateInputUtil.MaxYearValue) {
         return '1900';
       }
 
-      if (numericYear >= 1900 && numericYear < 2100) {
+      if (numericYear >= DateInputUtil.MinYearValue && numericYear < DateInputUtil.MaxYearValue) {
         numericYear += 1;
         return numericYear.toString();
       }
@@ -111,12 +111,12 @@ class DateInputUtil {
     }
 
     if (year) {
-      // Loop back to 9999. Accounts for day being 1 or 0 (result of empty string)
-      if (numericYear === 1900) {
+      // Loop back to 2100. Accounts for day being 1 or 0 (result of empty string)
+      if (numericYear === DateInputUtil.MinYearValue) {
         return '2100';
       }
 
-      if (numericYear > 1900) {
+      if (numericYear > DateInputUtil.MinYearValue) {
         numericYear -= 1;
         return numericYear.toString();
       }
@@ -243,5 +243,7 @@ DateInputUtil.inputType = {
   MONTH: 1,
   DAY: 2,
 };
+DateInputUtil.MinYearValue = 1900;
+DateInputUtil.MaxYearValue = 2100;
 
 export default DateInputUtil;

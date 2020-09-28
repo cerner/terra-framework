@@ -279,6 +279,12 @@ class DateInput extends React.Component {
       return;
     }
 
+    // prevent + and - characters from being entered into number input on keyDown
+    if (event.keyCode === 189 || event.keyCode === 187) {
+      event.preventDefault();
+      return;
+    }
+
     if (event.keyCode === KeyCode.KEY_UP) {
       event.preventDefault();
       stateValue = DateInputUtil.incrementDay(stateValue);
@@ -311,6 +317,12 @@ class DateInput extends React.Component {
 
     // prevent e and . characters from being entered into number input on keyDown
     if (event.keyCode === 69 || event.keyCode === 190) {
+      event.preventDefault();
+      return;
+    }
+
+    // prevent + and - characters from being entered into number input on keyDown
+    if (event.keyCode === 189 || event.keyCode === 187) {
       event.preventDefault();
       return;
     }
@@ -382,12 +394,10 @@ class DateInput extends React.Component {
     }
 
     const inputValue = event.target.value;
-    const maxValue = 2100;
-    const minValue = 1900;
 
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have
     // to check the length of inputValue to make sure that it is less then 4.
-    if (inputValue.length > 5 || Number(inputValue) > maxValue || (inputValue.length === 4 && Number(inputValue) < minValue)) {
+    if (inputValue.length > 5 || Number(inputValue) > DateInputUtil.MaxYearValue || (inputValue.length === 4 && Number(inputValue) < DateInputUtil.MinYearValue)) {
       return;
     }
 
