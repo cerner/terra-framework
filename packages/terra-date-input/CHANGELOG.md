@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed description id's in DateInput for better accessibility.
+
 ## 1.18.0 - (September 16, 2020)
 
 * Removed

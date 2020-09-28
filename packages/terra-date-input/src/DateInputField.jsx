@@ -189,12 +189,10 @@ const DateInputField = (props) => {
   const helpAriaDescriptionId = `terra-date-input-field-description-help-${uniqueid.current}`;
   const errorAriaDescriptionId = `terra-date-input-field-description-error-${uniqueid.current}`;
 
-  let ariaDescriptionIds;
+  let ariaDescriptionIds = helpAriaDescriptionId;
 
   if (error && isInvalid) {
     ariaDescriptionIds = `${errorAriaDescriptionId} ${helpAriaDescriptionId}`;
-  } else {
-    ariaDescriptionIds = helpAriaDescriptionId;
   }
 
   const customMonthAriaDescribedById = monthAttributes && monthAttributes['aria-describedby'];
@@ -206,9 +204,9 @@ const DateInputField = (props) => {
   let yearAriaDescriptionIds;
 
   if (ariaDescriptionIds) {
-    monthAriaDescriptionIds = customMonthAriaDescribedById ? `${ariaDescriptionIds} ${customMonthAriaDescribedById}` : `${ariaDescriptionIds}`;
-    dayAriaDescriptionIds = customDayAriaDescribedById ? `${ariaDescriptionIds} ${customDayAriaDescribedById}` : `${ariaDescriptionIds}`;
-    yearAriaDescriptionIds = customYearAriaDescribedById ? `${ariaDescriptionIds} ${customYearAriaDescribedById}` : `${ariaDescriptionIds}`;
+    monthAriaDescriptionIds = customMonthAriaDescribedById ? `${ariaDescriptionIds} ${customMonthAriaDescribedById}` : ariaDescriptionIds;
+    dayAriaDescriptionIds = customDayAriaDescribedById ? `${ariaDescriptionIds} ${customDayAriaDescribedById}` : ariaDescriptionIds;
+    yearAriaDescriptionIds = customYearAriaDescribedById ? `${ariaDescriptionIds} ${customYearAriaDescribedById}` : ariaDescriptionIds;
   } else {
     monthAriaDescriptionIds = customMonthAriaDescribedById;
     dayAriaDescriptionIds = customDayAriaDescribedById;

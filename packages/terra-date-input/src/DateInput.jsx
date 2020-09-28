@@ -491,7 +491,7 @@ class DateInput extends React.Component {
       } else {
         ariaDescriptionIds = this.formatDescriptionId;
       }
-    } else {
+    } else if (this.props.monthAttributes && this.props.monthAttributes['aria-describedby']) {
       ariaDescriptionIds = this.props.monthAttributes['aria-describedby'];
     }
 
@@ -553,7 +553,7 @@ class DateInput extends React.Component {
       } else {
         ariaDescriptionIds = this.formatDescriptionId;
       }
-    } else {
+    } else if (this.props.dayAttributes && this.props.dayAttributes['aria-describedby']) {
       ariaDescriptionIds = this.props.dayAttributes['aria-describedby'];
     }
 
@@ -605,7 +605,7 @@ class DateInput extends React.Component {
       } else {
         ariaDescriptionIds = this.formatDescriptionId;
       }
-    } else {
+    } else if (this.props.yearAttributes && this.props.yearAttributes['aria-describedby']) {
       ariaDescriptionIds = this.props.yearAttributes['aria-describedby'];
     }
 
@@ -706,7 +706,7 @@ class DateInput extends React.Component {
       dateValue = `${year}-${month}-${day}`;
     }
 
-    this.formatDescriptionId = `terra-date-picker-description-format-${this.uuid}`;
+    this.formatDescriptionId = `terra-date-input-description-format-${this.uuid}`;
 
     const format = DateInputUtil.getDateFormat(this.props);
 
