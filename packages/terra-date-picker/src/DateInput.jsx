@@ -229,6 +229,7 @@ class DatePickerInput extends React.Component {
             onChange={this.handleOnChange}
             onFocus={onFocus}
             onBlur={onBlur}
+            aria-required={required}
             ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
             aria-describedby={ariaDescriptionIds}
           />
