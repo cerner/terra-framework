@@ -300,6 +300,7 @@ exports[`correctly applies the theme context className 1`] = `
                         />
                         <Input
                           aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                          aria-required={false}
                           ariaLabel="Terra.datePicker.date, Sunday, January 1, 2017"
                           className="input"
                           disabled={false}
@@ -316,6 +317,7 @@ exports[`correctly applies the theme context className 1`] = `
                           <input
                             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                             aria-label="Terra.datePicker.date, Sunday, January 1, 2017"
+                            aria-required={false}
                             className="form-input input"
                             disabled={false}
                             name="terra-date-date-input"

@@ -81,6 +81,7 @@ exports[`correctly applies the theme context className 1`] = `
           />
           <Input
             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+            aria-required={false}
             ariaLabel="Terra.datePicker.date"
             className="input"
             disabled={false}
@@ -94,6 +95,7 @@ exports[`correctly applies the theme context className 1`] = `
             <input
               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.datePicker.date"
+              aria-required={false}
               className="form-input input"
               disabled={false}
               name="terra-date-undefined"
@@ -282,6 +284,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       />
       <Input
         aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+        aria-required={false}
         ariaLabel="Terra.datePicker.date"
         className="input"
         disabled={false}
@@ -295,6 +298,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         <input
           aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
           aria-label="Terra.datePicker.date"
+          aria-required={false}
           className="form-input input"
           disabled={false}
           name="terra-date-undefined"
@@ -449,6 +453,7 @@ exports[`should render a default date input 1`] = `
     <input
       aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.datePicker.date"
+      aria-required="false"
       class="form-input input"
       name="terra-date-undefined"
       type="text"
@@ -510,6 +515,7 @@ exports[`should render a default date input with all props 1`] = `
     <input
       aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
       aria-label="Terra.datePicker.date, Sunday, January 1, 2017"
+      aria-required="false"
       class="form-input input"
       id="terra-date-input"
       name="terra-date-date-input"

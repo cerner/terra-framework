@@ -239,6 +239,7 @@ exports[`should render a DatePickerField with props 1`] = `
             htmlFor="test-date-picker"
           >
             <div
+              aria-hidden="true"
               className="required"
             >
               *
@@ -597,6 +598,7 @@ exports[`should render a DatePickerField with props 1`] = `
                               />
                               <Input
                                 aria-describedby="test-date-picker-error test-date-picker-help"
+                                aria-required={true}
                                 ariaLabel="Label Test, Sunday, January 1, 2017"
                                 className="input is-invalid"
                                 disabled={true}
@@ -614,6 +616,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                 <input
                                   aria-describedby="test-date-picker-error test-date-picker-help"
                                   aria-label="Label Test, Sunday, January 1, 2017"
+                                  aria-required={true}
                                   className="form-input input is-invalid"
                                   disabled={true}
                                   id="test-date-picker"
@@ -1212,6 +1215,7 @@ exports[`should render a default DatePickerField component 1`] = `
                               />
                               <Input
                                 aria-describedby="test-date-picker-help"
+                                aria-required={false}
                                 ariaLabel="Label, Sunday, January 1, 2017"
                                 className="input"
                                 disabled={false}
@@ -1229,6 +1233,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                 <input
                                   aria-describedby="test-date-picker-help"
                                   aria-label="Label, Sunday, January 1, 2017"
+                                  aria-required={false}
                                   className="form-input input"
                                   disabled={false}
                                   id="test-date-picker"
@@ -1932,6 +1937,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                               />
                               <Input
                                 aria-describedby="test-date-picker-help"
+                                aria-required={true}
                                 ariaLabel="Label Test, Sunday, January 1, 2017"
                                 className="input"
                                 disabled={true}
@@ -1949,6 +1955,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                 <input
                                   aria-describedby="test-date-picker-help"
                                   aria-label="Label Test, Sunday, January 1, 2017"
+                                  aria-required={true}
                                   className="form-input input"
                                   disabled={true}
                                   id="test-date-picker"
