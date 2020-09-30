@@ -239,7 +239,6 @@ exports[`should render a DatePickerField with props 1`] = `
             htmlFor="test-date-picker"
           >
             <div
-              aria-hidden="true"
               className="required"
             >
               *
