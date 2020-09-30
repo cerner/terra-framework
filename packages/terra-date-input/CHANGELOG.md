@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.19.0 - (September 29, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.18.0 - (September 16, 2020)
 
 * Removed
@@ -9,6 +14,7 @@
 
 * Changed
   * Updated month `placeholder` to be `- Select -`.
+  * Fixed wrapping and applied truncation in month select.
 
 * Added
   * Added format to be displayed for both `DateInput` and `DateInputField`.
