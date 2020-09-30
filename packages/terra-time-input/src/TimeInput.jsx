@@ -84,6 +84,13 @@ const propTypes = {
    */
   showSeconds: PropTypes.bool,
   /**
+   * @private
+   * NOTICE: Internal prop to be used only by Terra framework. This component provides a built-in format mask that is
+   * required to be displayed to users for proper accessibility and must not be removed. 'DatePickerField' is permitted to set
+   * this prop because it provides the same format mask in its 'help' prop.
+  */
+  useExternalFormatMask: PropTypes.bool,
+  /**
    * An ISO 8601 string representation of the time value in the input.
    */
   value: PropTypes.string,
@@ -110,6 +117,7 @@ const defaultProps = {
   required: false,
   secondAttributes: {},
   showSeconds: false,
+  useExternalFormatMask: false,
   value: undefined,
   variant: TimeUtil.FORMAT_24_HOUR,
 };
@@ -662,6 +670,7 @@ class TimeInput extends React.Component {
       required,
       secondAttributes,
       showSeconds,
+      useExternalFormatMask,
       value,
       variant,
       ...customProps
@@ -730,6 +739,17 @@ class TimeInput extends React.Component {
       ? `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })}:${intl.formatMessage({ id: 'Terra.timeInput.ss' })})`
       : `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })})`;
 
+    let ariaDescriptionIds;
+    if (useExternalFormatMask === false) {
+      if (inputAttributes && inputAttributes['aria-describedby']) {
+        ariaDescriptionIds = `${formatDescriptionId} ${inputAttributes['aria-describedby']}`;
+      } else {
+        ariaDescriptionIds = formatDescriptionId;
+      }
+    } else if (inputAttributes && inputAttributes['aria-describedby']) {
+      ariaDescriptionIds = inputAttributes['aria-describedby'];
+    }
+
     return (
       <div
         {...customProps}
@@ -764,7 +784,8 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             disabled={disabled}
-            aria-describedby={formatDescriptionId}
+            aria-required={required}
+            aria-describedby={ariaDescriptionIds}
           />
           <span className={cx('time-spacer')}>:</span>
           <Input
@@ -784,7 +805,8 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             disabled={disabled}
-            aria-describedby={formatDescriptionId}
+            aria-required={required}
+            aria-describedby={ariaDescriptionIds}
           />
           {showSeconds && (
             <React.Fragment>
@@ -806,7 +828,8 @@ class TimeInput extends React.Component {
                 size="2"
                 pattern="\d*"
                 disabled={disabled}
-                aria-describedby={formatDescriptionId}
+                aria-required={required}
+                aria-describedby={ariaDescriptionIds}
               />
             </React.Fragment>
           )}
@@ -831,9 +854,11 @@ class TimeInput extends React.Component {
             />
           </ButtonGroup>
         )}
+        {useExternalFormatMask === false && (
         <div id={formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })} ${format}`}>
           {format}
         </div>
+        )}
       </div>
     );
     /* eslint-enable jsx-a11y/no-static-element-interactions */
