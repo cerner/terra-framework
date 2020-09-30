@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.36.0 - (September 29, 2020)
+
 * Added
   * Added a custom event that closes both drawer menu and popup menu if open.
 
