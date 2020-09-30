@@ -49,7 +49,7 @@ class DefaultDialogModal extends React.Component {
           footer={<ActionFooter start="Footer Goes here" />}
         >
           <p>{text}</p>
-          <Select placeholder="Select a color" className={cx('selection-list')}>
+          <Select variant="combobox" placeholder="Select a color" className={cx('selection-list')}>
             <Select.Option value="blue" display="Blue" />
             <Select.Option value="green" display="Green" />
             <Select.Option value="purple" display="Purple" />

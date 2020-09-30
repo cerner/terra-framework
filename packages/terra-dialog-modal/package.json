@@ -37,7 +37,7 @@
     "terra-action-header": "^2.0.0",
     "terra-button": "^3.3.0",
     "terra-date-picker": "^4.47.0",
-    "terra-form-select": "^6.8.0",
+    "terra-form-select": "https://github.cerner.com/terra/terra-snapshots/blob/master/terra-core/select-propagation/terra-form-select.tgz?raw=true",
     "terra-modal-manager": "^6.40.0",
     "terra-notification-dialog": "^4.1.0",
     "terra-popup": "^6.40.0"
