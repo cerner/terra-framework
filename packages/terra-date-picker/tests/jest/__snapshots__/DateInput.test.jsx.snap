@@ -94,7 +94,7 @@ exports[`correctly applies the theme context className 1`] = `
             <input
               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.datePicker.date"
-              className="form-input input"
+              className="form-input orion-fusion-theme input"
               disabled={false}
               name="terra-date-undefined"
               onChange={[Function]}
@@ -513,7 +513,6 @@ exports[`should render a default date input with all props 1`] = `
       class="form-input input"
       id="terra-date-input"
       name="terra-date-date-input"
-      placeholder="MM/DD/YYYY"
       type="text"
       value="01/01/2017"
     />
