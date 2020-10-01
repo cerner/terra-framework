@@ -33,6 +33,7 @@
     "mutationobserver-shim": "0.3.3",
     "prop-types": "^15.5.8",
     "react-portal": "^4.1.2",
+    "terra-form-select": "https://github.com/cerner/terra-core/blob/select-propagation-tgz/packages/terra-form-select/terra-form-select-6.17.0.tgz?raw=true",
     "terra-theme-context": "^1.4.0",
     "terra-visually-hidden-text": "^2.0.0",
     "wicg-inert": "^3.0.0"
