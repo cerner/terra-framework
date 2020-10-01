@@ -1,18 +1,18 @@
 import React, { useContext } from 'react';
 import { DisclosureManagerContext, DisclosureManagerHeaderAdapter } from 'terra-application/lib/disclosure-manager';
-import AllowClearExample from './select-examples/AllowClear?dev-site-example';
-import ControlledExample from './select-examples/Controlled?dev-site-example';
-import ComboboxExample from './select-examples/Combobox?dev-site-example';
-import DefaultExample from './select-examples/Default?dev-site-example';
-import DisabledExample from './select-examples/Disabled?dev-site-example';
-import IsTouchAccessibleExample from './select-examples/IsTouchAccessible?dev-site-example';
-import InvalidExample from './select-examples/Invalid?dev-site-example';
-import IncompleteExample from './select-examples/Incomplete?dev-site-example';
-import MaxHeightExample from './select-examples/MaxHeight?dev-site-example';
-import MultipleExample from './select-examples/Multiple?dev-site-example';
-import OptGroupExample from './select-examples/OptGroup?dev-site-example';
-import SearchExample from './select-examples/Search?dev-site-example';
-import TagExample from './select-examples/Tag?dev-site-example';
+import AllowClearExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/AllowClear?dev-site-example';
+import ControlledExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/Controlled?dev-site-example';
+import ComboboxExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/Combobox?dev-site-example';
+import DefaultExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/Default?dev-site-example';
+import DisabledExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/Disabled?dev-site-example';
+import IsTouchAccessibleExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/IsTouchAccessible?dev-site-example';
+import InvalidExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/Invalid?dev-site-example';
+import IncompleteExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/Incomplete?dev-site-example';
+import MaxHeightExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/MaxHeight?dev-site-example';
+import MultipleExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/Multiple?dev-site-example';
+import OptGroupExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/OptGroup?dev-site-example';
+import SearchExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/Search?dev-site-example';
+import TagExample from 'terra-form-select/lib/terra-dev-site/doc/example/legacy/Tag?dev-site-example';
 
 const ModalExample = () => {
   const disclosureManager = useContext(DisclosureManagerContext);
@@ -29,7 +29,7 @@ const ModalExample = () => {
             component: (
               <div>
                 <DisclosureManagerHeaderAdapter title="Example" />
-                <h1>Examples</h1>
+                Examples
                 <DefaultExample title="Default - Marked For Deprecation" description="The default variant should no longer be used. It remains for passivity until the next major version bump. Please refer to the Native Select component." />
                 <SearchExample description="A search variant provides a searchable single select." />
                 <ComboboxExample description="A combobox variant allows a user to enter a single free text entry or select a single option from the the dropdown." />
