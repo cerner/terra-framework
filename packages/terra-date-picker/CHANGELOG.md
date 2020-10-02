@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.48.0 - (September 29, 2020)
+
+* Fixed
+  * Fixes inconsistent focus styles in IE.
+
 * Changed
   * `onClickOutside` prop has been deprecated, will resolve to `onRequestClose`
 
