@@ -269,6 +269,21 @@ class TimeUtil {
 
     return variant;
   }
+
+  static getAriaDescriptionId(props, formatDescriptionId, inputAttributes) {
+    const { useExternalFormatMask } = props;
+
+    if (useExternalFormatMask === false) {
+      if (inputAttributes && inputAttributes['aria-describedby']) {
+        return (`${formatDescriptionId} ${inputAttributes['aria-describedby']}`);
+      }
+      return formatDescriptionId;
+    }
+    if (inputAttributes && inputAttributes['aria-describedby']) {
+      return inputAttributes['aria-describedby'];
+    }
+    return undefined;
+  }
 }
 
 TimeUtil.inputType = {

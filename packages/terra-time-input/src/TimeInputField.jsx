@@ -11,7 +11,7 @@ const propTypes = {
   /**
    * The timeInput identifier. Links the htmlFor of the field to the select identifier.
    */
-  dateInputId: PropTypes.string.isRequired,
+  timeInputId: PropTypes.string.isRequired,
   /**
    * Whether the time input should be disabled.
    */
@@ -168,7 +168,7 @@ const defaultProps = {
 
 const DateInputField = (props) => {
   const {
-    dateInputId,
+    timeInputId,
     disabled,
     error,
     errorIcon,
@@ -201,16 +201,30 @@ const DateInputField = (props) => {
     ...customProps
   } = props;
 
-  let ariaDescriptionIds = `${dateInputId}-help`;
+  let ariaDescriptionIds = `${timeInputId}-help`;
 
   if (error && isInvalid) {
-    ariaDescriptionIds = `${dateInputId}-error ${dateInputId}-help`;
+    ariaDescriptionIds = `${timeInputId}-error ${timeInputId}-help`;
   }
 
-  let mergedInputAttrs = inputAttributes;
+  const customHourAriaDescribedById = hourAttributes && hourAttributes['aria-describedby'];
+  const customMinuteAriaDescribedById = minuteAttributes && minuteAttributes['aria-describedby'];
+  const customSecondAriaDescribedById = secondAttributes && secondAttributes['aria-describedby'];
+
+  let hourAriaDescriptionIds;
+  let minuteAriaDescriptionIds;
+  let secondAriaDescriptionIds;
+
   if (ariaDescriptionIds) {
-    mergedInputAttrs = { ...inputAttributes, 'aria-describedby': ariaDescriptionIds };
+    hourAriaDescriptionIds = customHourAriaDescribedById ? `${ariaDescriptionIds} ${customHourAriaDescribedById}` : ariaDescriptionIds;
+    minuteAriaDescriptionIds = customMinuteAriaDescribedById ? `${ariaDescriptionIds} ${customMinuteAriaDescribedById}` : ariaDescriptionIds;
+    secondAriaDescriptionIds = customSecondAriaDescribedById ? `${ariaDescriptionIds} ${customSecondAriaDescribedById}` : ariaDescriptionIds;
+  } else {
+    hourAriaDescriptionIds = customHourAriaDescribedById;
+    minuteAriaDescriptionIds = customMinuteAriaDescribedById;
+    secondAriaDescriptionIds = customSecondAriaDescribedById;
   }
+
   const format = showSeconds
     ? `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })}:${intl.formatMessage({ id: 'Terra.timeInput.ss' })})`
     : `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })})`;
@@ -240,13 +254,12 @@ const DateInputField = (props) => {
       isInvalid={isInvalid}
       isInline={isInline}
       isLabelHidden={isLabelHidden}
-      htmlFor={dateInputId}
+      htmlFor={timeInputId}
       maxWidth={maxWidth}
     >
       <TimeInput
         disabled={disabled}
-        id={dateInputId}
-        inputAttributes={mergedInputAttrs}
+        id={timeInputId}
         isInvalid={isInvalid}
         isIncomplete={isIncomplete}
         isInvalidMeridiem={isInvalidMeridiem}
@@ -257,9 +270,9 @@ const DateInputField = (props) => {
         onFocus={onFocus}
         required={required}
         refCallback={refCallback}
-        hourAttributes={hourAttributes}
-        minuteAttributes={minuteAttributes}
-        secondAttributes={secondAttributes}
+        hourAttributes={{ ...hourAttributes, ...{ 'aria-describedby': hourAriaDescriptionIds } }}
+        minuteAttributes={{ ...minuteAttributes, ...{ 'aria-describedby': minuteAriaDescriptionIds } }}
+        secondAttributes={{ ...secondAttributes, ...{ 'aria-describedby': secondAriaDescriptionIds } }}
         showSeconds={showSeconds}
         value={value}
         variant={variant}

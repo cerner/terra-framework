@@ -739,17 +739,6 @@ class TimeInput extends React.Component {
       ? `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })}:${intl.formatMessage({ id: 'Terra.timeInput.ss' })})`
       : `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })})`;
 
-    let ariaDescriptionIds;
-    if (useExternalFormatMask === false) {
-      if (inputAttributes && inputAttributes['aria-describedby']) {
-        ariaDescriptionIds = `${formatDescriptionId} ${inputAttributes['aria-describedby']}`;
-      } else {
-        ariaDescriptionIds = formatDescriptionId;
-      }
-    } else if (inputAttributes && inputAttributes['aria-describedby']) {
-      ariaDescriptionIds = inputAttributes['aria-describedby'];
-    }
-
     return (
       <div
         {...customProps}
@@ -785,7 +774,7 @@ class TimeInput extends React.Component {
             pattern="\d*"
             disabled={disabled}
             aria-required={required}
-            aria-describedby={ariaDescriptionIds}
+            aria-describedby={TimeUtil.getAriaDescriptionId(this.props, formatDescriptionId, this.props.hourAttributes)}
           />
           <span className={cx('time-spacer')}>:</span>
           <Input
@@ -806,7 +795,7 @@ class TimeInput extends React.Component {
             pattern="\d*"
             disabled={disabled}
             aria-required={required}
-            aria-describedby={ariaDescriptionIds}
+            aria-describedby={TimeUtil.getAriaDescriptionId(this.props, formatDescriptionId, this.props.minuteAttributes)}
           />
           {showSeconds && (
             <React.Fragment>
@@ -829,7 +818,7 @@ class TimeInput extends React.Component {
                 pattern="\d*"
                 disabled={disabled}
                 aria-required={required}
-                aria-describedby={ariaDescriptionIds}
+                aria-describedby={TimeUtil.getAriaDescriptionId(this.props, formatDescriptionId, this.props.secondAttributes)}
               />
             </React.Fragment>
           )}
