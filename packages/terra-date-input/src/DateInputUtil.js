@@ -78,13 +78,13 @@ class DateInputUtil {
     // Handle empty input value
     let numericYear = Number(year);
     if (numericYear === 0) {
-      return '1900';
+      return DateInputUtil.MinYearValue.toString();
     }
 
     if (year) {
       // Loop back to 1900 if incrementing year from "2100"
       if (numericYear === DateInputUtil.MaxYearValue) {
-        return '1900';
+        return DateInputUtil.MinYearValue.toString();
       }
 
       if (numericYear >= DateInputUtil.MinYearValue && numericYear < DateInputUtil.MaxYearValue) {
@@ -107,13 +107,13 @@ class DateInputUtil {
     // Handle empty input value
     let numericYear = Number(year);
     if (numericYear === 0) {
-      return '2100';
+      return DateInputUtil.MaxYearValue.toString();
     }
 
     if (year) {
       // Loop back to 2100. Accounts for day being 1 or 0 (result of empty string)
       if (numericYear === DateInputUtil.MinYearValue) {
-        return '2100';
+        return DateInputUtil.MaxYearValue.toString();
       }
 
       if (numericYear > DateInputUtil.MinYearValue) {
