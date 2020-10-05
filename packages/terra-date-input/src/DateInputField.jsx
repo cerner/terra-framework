@@ -199,19 +199,9 @@ const DateInputField = (props) => {
   const customDayAriaDescribedById = dayAttributes && dayAttributes['aria-describedby'];
   const customYearAriaDescribedById = yearAttributes && yearAttributes['aria-describedby'];
 
-  let monthAriaDescriptionIds;
-  let dayAriaDescriptionIds;
-  let yearAriaDescriptionIds;
-
-  if (ariaDescriptionIds) {
-    monthAriaDescriptionIds = customMonthAriaDescribedById ? `${ariaDescriptionIds} ${customMonthAriaDescribedById}` : ariaDescriptionIds;
-    dayAriaDescriptionIds = customDayAriaDescribedById ? `${ariaDescriptionIds} ${customDayAriaDescribedById}` : ariaDescriptionIds;
-    yearAriaDescriptionIds = customYearAriaDescribedById ? `${ariaDescriptionIds} ${customYearAriaDescribedById}` : ariaDescriptionIds;
-  } else {
-    monthAriaDescriptionIds = customMonthAriaDescribedById;
-    dayAriaDescriptionIds = customDayAriaDescribedById;
-    yearAriaDescriptionIds = customYearAriaDescribedById;
-  }
+  const monthAriaDescriptionIds = customMonthAriaDescribedById ? `${ariaDescriptionIds} ${customMonthAriaDescribedById}` : ariaDescriptionIds;
+  const dayAriaDescriptionIds = customDayAriaDescribedById ? `${ariaDescriptionIds} ${customDayAriaDescribedById}` : ariaDescriptionIds;
+  const yearAriaDescriptionIds = customYearAriaDescribedById ? `${ariaDescriptionIds} ${customYearAriaDescribedById}` : ariaDescriptionIds;
 
   const legendGroup = (
     <legend className={cx(['legend-group', { 'legend-group-hidden': isLegendHidden }])}>
