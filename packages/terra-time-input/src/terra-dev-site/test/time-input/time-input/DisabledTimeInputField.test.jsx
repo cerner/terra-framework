@@ -8,17 +8,11 @@ const cx = classNames.bind(styles);
 const TimeInputFieldDefault = () => (
   <div className={cx('content-wrapper')}>
     <TimeInputField
-      label="Label Text"
-      dateInputId="timeInput"
-      help="help message"
-      error="error message"
+      timeInputId="timeInput"
       name="time-input"
-      required
-      isInvalid
-      isInvalidMeridiem
-      isIncomplete
-      hideRequired
-      showSeconds
+      label="Enter Time"
+      value="12:00"
+      disabled
     />
   </div>
 );
