@@ -211,19 +211,9 @@ const DateInputField = (props) => {
   const customMinuteAriaDescribedById = minuteAttributes && minuteAttributes['aria-describedby'];
   const customSecondAriaDescribedById = secondAttributes && secondAttributes['aria-describedby'];
 
-  let hourAriaDescriptionIds;
-  let minuteAriaDescriptionIds;
-  let secondAriaDescriptionIds;
-
-  if (ariaDescriptionIds) {
-    hourAriaDescriptionIds = customHourAriaDescribedById ? `${ariaDescriptionIds} ${customHourAriaDescribedById}` : ariaDescriptionIds;
-    minuteAriaDescriptionIds = customMinuteAriaDescribedById ? `${ariaDescriptionIds} ${customMinuteAriaDescribedById}` : ariaDescriptionIds;
-    secondAriaDescriptionIds = customSecondAriaDescribedById ? `${ariaDescriptionIds} ${customSecondAriaDescribedById}` : ariaDescriptionIds;
-  } else {
-    hourAriaDescriptionIds = customHourAriaDescribedById;
-    minuteAriaDescriptionIds = customMinuteAriaDescribedById;
-    secondAriaDescriptionIds = customSecondAriaDescribedById;
-  }
+  const hourAriaDescriptionIds = customHourAriaDescribedById ? `${ariaDescriptionIds} ${customHourAriaDescribedById}` : ariaDescriptionIds;
+  const minuteAriaDescriptionIds = customMinuteAriaDescribedById ? `${ariaDescriptionIds} ${customMinuteAriaDescribedById}` : ariaDescriptionIds;
+  const secondAriaDescriptionIds = customSecondAriaDescribedById ? `${ariaDescriptionIds} ${customSecondAriaDescribedById}` : ariaDescriptionIds;
 
   const format = showSeconds
     ? `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })}:${intl.formatMessage({ id: 'Terra.timeInput.ss' })})`
