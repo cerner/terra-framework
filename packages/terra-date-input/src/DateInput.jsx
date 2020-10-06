@@ -482,7 +482,7 @@ class DateInput extends React.Component {
       { incomplete: (this.props.isIncomplete && this.props.required && !this.props.isInvalid) },
     ]);
 
-    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId(this.props, this.formatDescriptionId, this.props.monthAttributes);
+    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.monthAttributes });
 
     return (
       <div className={DateInputMonthWrapperClassNames}>
@@ -533,7 +533,7 @@ class DateInput extends React.Component {
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
 
-    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId(this.props, this.formatDescriptionId, this.props.dayAttributes);
+    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.dayAttributes });
 
     return (
       <Input
@@ -574,7 +574,7 @@ class DateInput extends React.Component {
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
 
-    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId(this.props, this.formatDescriptionId, this.props.yearAttributes);
+    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.yearAttributes });
 
     return (
       <Input

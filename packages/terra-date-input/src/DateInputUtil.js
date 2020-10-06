@@ -239,10 +239,10 @@ class DateInputUtil {
     );
   }
 
-  static getAriaDescriptionId(props, formatDescriptionId, inputAttributes) {
-    const { useExternalFormatMask } = props;
+  static getAriaDescriptionId(options) {
+    const { props, formatDescriptionId, inputAttributes } = options;
 
-    if (useExternalFormatMask === false) {
+    if (props.useExternalFormatMask === false) {
       if (inputAttributes && inputAttributes['aria-describedby']) {
         return (`${formatDescriptionId} ${inputAttributes['aria-describedby']}`);
       }
