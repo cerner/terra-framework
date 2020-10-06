@@ -29,7 +29,7 @@ const DrawerMenuUser = ({ userConfig, variant }) => (
     <div className={cx('avatar-container')}>
       <div className={cx('avatar-outline')} />
       <div className={cx('avatar-inner')}>
-        <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} />
+        <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials || ''} />
       </div>
     </div>
     <div className={cx('info-container')}>

@@ -43,7 +43,7 @@ const UtilityMenuHeaderButton = ({
     content = (
       <React.Fragment>
         <div className={cx('image')}>
-          <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} className={cx('avatar')} />
+          <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials || ''} className={cx('avatar')} />
         </div>
         <div className={cx('title')}>{userConfig.name}</div>
         <IconCaretDown className={cx('caret-icon')} />

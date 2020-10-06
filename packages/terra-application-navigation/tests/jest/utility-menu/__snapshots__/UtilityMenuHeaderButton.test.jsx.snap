@@ -350,9 +350,11 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
                   alt="user-name"
                   aria-hidden={false}
                   aria-label="user-name"
-                  className="icon user"
+                  className="initials"
                   role="img"
-                />
+                >
+                  US
+                </span>
               }
               src="user-src"
               variant="default"
@@ -368,9 +370,11 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
                 alt="user-name"
                 aria-hidden={false}
                 aria-label="user-name"
-                className="icon user"
+                className="initials"
                 role="img"
-              />
+              >
+                US
+              </span>
             </Image>
           </div>
         </Avatar>
