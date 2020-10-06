@@ -1,8 +1,20 @@
 import { Badge } from 'terra-application-navigation/package.json?dev-site-package';
+import { Notice } from '@cerner/terra-docs';
 
 <Badge />
 
 # Terra Application Navigation
+
+<Notice variant='maintenance'>
+
+This component has been moved to [terra-application](/application/terra-application/components/application-navigation) and should be imported from that package. While this is the final major version of this component we will release, this component will continue to receive minor updates until terra adopts react 17.
+
+```diff
+- import ApplicationNavigation from 'terra-application-navigation';
++ import ApplicationNavigation from 'terra-application/lib/application-navigation';
+```
+
+</Notice>
 
 The Terra Application Navigation is a responsive, themeable layout for building applications.
 
@@ -205,6 +217,12 @@ const myTitleConfig = {
 #### Is Required: `false`
 
 The `userConfig` prop allows consumers to set a user associated to the current application context. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint.
+
+<Notice >
+
+If neither initials or the imageSrc are  provided, the avatar will fall back to the generic user avatar. If initials not provided, imageSrc is provided, but fails the avatar will fall back to the first two letters of the name. Initials will be required with the next major version of application navigation, provided via terra-application v2.
+
+</Notice>
 
 |Key Name|Type|Is Required|Description|
 |---|---|---|---|

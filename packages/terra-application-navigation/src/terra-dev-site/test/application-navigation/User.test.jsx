@@ -19,6 +19,11 @@ const userConfigSrc = {
   imageSrc: 'test-src',
 };
 
+const userConfigImageFallbackNoInitials = {
+  name: 'Test Name',
+  imageSrc: 'test-src',
+};
+
 const userConfigNoInitials = {
   name: 'Test Name',
 };
@@ -29,6 +34,7 @@ const UserTest = () => (
     <FixedHeight><ApplicationNavigation userConfig={userConfigDetail} /></FixedHeight>
     <FixedHeight><ApplicationNavigation userConfig={userConfigSrc} /></FixedHeight>
     <FixedHeight><ApplicationNavigation userConfig={userConfigNoInitials} /></FixedHeight>
+    <FixedHeight><ApplicationNavigation userConfig={userConfigImageFallbackNoInitials} /></FixedHeight>
   </>
 );
 

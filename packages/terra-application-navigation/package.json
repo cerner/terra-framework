@@ -32,6 +32,7 @@
     "terra-application": "^1.0.0"
   },
   "dependencies": {
+    "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
     "focus-trap-react": "^6.0.0",
     "keycode-js": "^2.0.1",

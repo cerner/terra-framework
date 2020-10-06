@@ -18,7 +18,7 @@ exports[`DrawerMenuUser should render default element 1`] = `
         color="auto"
         image="user-src"
         initials="user-initials"
-        isAriaHidden={false}
+        isAriaHidden={true}
         isDeceased={false}
       />
     </div>
@@ -59,7 +59,7 @@ exports[`DrawerMenuUser should render with large variant 1`] = `
         color="auto"
         image="user-src"
         initials="user-initials"
-        isAriaHidden={false}
+        isAriaHidden={true}
         isDeceased={false}
       />
     </div>
@@ -100,7 +100,7 @@ exports[`DrawerMenuUser should render with small variant 1`] = `
         color="auto"
         image="user-src"
         initials="user-initials"
-        isAriaHidden={false}
+        isAriaHidden={true}
         isDeceased={false}
       />
     </div>

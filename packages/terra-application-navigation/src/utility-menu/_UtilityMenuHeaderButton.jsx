@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
-import Avatar from 'terra-avatar';
+import Avatar, { Generic } from 'terra-avatar';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import IconRollup from 'terra-icon/lib/icon/IconRollup';
 
@@ -43,7 +43,11 @@ const UtilityMenuHeaderButton = ({
     content = (
       <React.Fragment>
         <div className={cx('image')}>
-          <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials || ''} className={cx('avatar')} />
+          {
+          (userConfig.initials || userConfig.imageSrc)
+            ? <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials || userConfig.name} className={cx('avatar')} isAriaHidden />
+            : <Generic alt={userConfig.name} className={cx('avatar')} isAriaHidden />
+          }
         </div>
         <div className={cx('title')}>{userConfig.name}</div>
         <IconCaretDown className={cx('caret-icon')} />

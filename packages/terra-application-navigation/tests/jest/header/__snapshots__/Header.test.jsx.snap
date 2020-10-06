@@ -1009,7 +1009,7 @@ exports[`Header should render with function callbacks 1`] = `
                   color="auto"
                   image="user-src"
                   initials="user-initials"
-                  isAriaHidden={false}
+                  isAriaHidden={true}
                   isDeceased={false}
                 >
                   <div
@@ -1024,7 +1024,7 @@ exports[`Header should render with function callbacks 1`] = `
                       placeholder={
                         <span
                           alt="user-name"
-                          aria-hidden={false}
+                          aria-hidden={true}
                           aria-label="user-name"
                           className="initials"
                           role="img"
@@ -1044,7 +1044,7 @@ exports[`Header should render with function callbacks 1`] = `
                       />
                       <span
                         alt="user-name"
-                        aria-hidden={false}
+                        aria-hidden={true}
                         aria-label="user-name"
                         className="initials"
                         role="img"
