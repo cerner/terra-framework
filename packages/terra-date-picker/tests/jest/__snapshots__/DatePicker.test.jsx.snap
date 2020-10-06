@@ -316,7 +316,7 @@ exports[`correctly applies the theme context className 1`] = `
                           <input
                             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                             aria-label="Terra.datePicker.date, Sunday, January 1, 2017"
-                            className="form-input input"
+                            className="form-input orion-fusion-theme input"
                             disabled={false}
                             name="terra-date-date-input"
                             onBlur={[Function]}

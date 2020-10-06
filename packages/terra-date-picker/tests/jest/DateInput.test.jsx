@@ -16,7 +16,6 @@ it('should render a default date input with all props', () => {
     <DateInput
       inputAttributes={{ id: 'terra-date-input' }}
       name="date-input"
-      placeholder="MM/DD/YYYY"
       value="01/01/2017"
       onBlur={() => {}}
       onChange={() => {}}
