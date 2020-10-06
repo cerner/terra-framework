@@ -41,10 +41,6 @@ const propTypes = {
    */
   htmlFor: PropTypes.string,
   /**
-   * Custom input attributes that apply to the hour, minute, and second inputs.
-   */
-  inputAttributes: PropTypes.object,
-  /**
   * @private
   * intl object programmatically imported through injectIntl from react-intl.
   * */
@@ -145,7 +141,6 @@ const defaultProps = {
   help: null,
   hideRequired: false,
   hourAttributes: {},
-  inputAttributes: undefined,
   isIncomplete: false,
   isInline: false,
   isInvalid: false,
@@ -176,7 +171,6 @@ const DateInputField = (props) => {
     hideRequired,
     hourAttributes,
     htmlFor,
-    inputAttributes,
     intl,
     isIncomplete,
     isInline,
