@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.49.0 - (October 6, 2020)
+
+* Changed
+  * Upgrade `form-input` dependency to `^4.4.0` and updated jests.
+
 ## 4.48.0 - (September 29, 2020)
 
 * Fixed
