@@ -220,7 +220,7 @@ The `userConfig` prop allows consumers to set a user associated to the current a
 
 <Notice >
 
-If neither initials or the imageSrc are  provided, the avatar will fall back to the generic user avatar. If initials not provided, imageSrc is provided, but fails the avatar will fall back to the first two letters of the name. Initials will be required with the next major version of application navigation, provided via terra-application v2.
+If neither initials or the imageSrc are  provided, the avatar will fall back to the generic user avatar. If initials are not provided and imageSrc is provided, but fails, the avatar will fall back to the first two letters of the provided name. Initials will be required with the next major version of application navigation, provided via terra-application v2.
 
 </Notice>
 
@@ -276,4 +276,3 @@ The ApplicationNavigation has two rendering modes: `standard` and `compact`.
 |`utilityItems`|Content is rendered within ApplicationNavigation's utility popup (as provided by `terra-popup`).|Content is rendered within ApplicationNavigation's navigation drawer.|
 |`navigationItems`|Content is rendered within the ApplicationNavigation's header as tabs.|Content is rendered within ApplicationNavigation's navigation drawer.|
 |`extensionItems`|Content is rendered within ApplicationNavigation's header.|Same as `standard`.|
-
