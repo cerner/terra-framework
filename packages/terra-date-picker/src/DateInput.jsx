@@ -194,8 +194,18 @@ class DatePickerInput extends React.Component {
     const theme = this.context;
 
     const label = this.props.ariaLabel ? this.props.ariaLabel : intl.formatMessage({ id: 'Terra.datePicker.date' });
+    const formatDescriptionId = `terra-date-picker-description-format-${this.uuid}`;
 
-    this.formatDescriptionId = (useExternalFormatMask === false) ? `terra-date-picker-description-format-${this.uuid}` : '';
+    let ariaDescriptionIds;
+    if (useExternalFormatMask === false) {
+      if (inputAttributes && inputAttributes['aria-describedby']) {
+        ariaDescriptionIds = `${formatDescriptionId} ${inputAttributes['aria-describedby']}`;
+      } else {
+        ariaDescriptionIds = formatDescriptionId;
+      }
+    } else if (inputAttributes && inputAttributes['aria-describedby']) {
+      ariaDescriptionIds = inputAttributes['aria-describedby'];
+    }
 
     const format = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
 
@@ -219,8 +229,9 @@ class DatePickerInput extends React.Component {
             onChange={this.handleOnChange}
             onFocus={onFocus}
             onBlur={onBlur}
+            aria-required={required}
             ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
-            aria-describedby={this.formatDescriptionId}
+            aria-describedby={ariaDescriptionIds}
           />
           <Button
             data-terra-open-calendar-button
@@ -238,7 +249,7 @@ class DatePickerInput extends React.Component {
           />
         </div>
         { (useExternalFormatMask === false) && (
-        <div id={this.formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}`}>
+        <div id={formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}`}>
           {`(${format})`}
         </div>
         )}
