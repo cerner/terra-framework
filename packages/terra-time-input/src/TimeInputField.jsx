@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
 import { injectIntl, intlShape } from 'react-intl';
-import IconError from 'terra-icon/lib/icon/IconError';
 import TimeInput from './TimeInput';
 
 import TimeUtil from './TimeUtil';
@@ -20,10 +19,6 @@ const propTypes = {
    * Error message for when the input is invalid. This will only be displayed if isInvalid is true.
    */
   error: PropTypes.node,
-  /**
-   * Error Icon to display when the input is invalid.
-   */
-  errorIcon: PropTypes.element,
   /**
    * Help element to display with the input.
    */
@@ -137,7 +132,6 @@ const propTypes = {
 const defaultProps = {
   disabled: false,
   error: null,
-  errorIcon: <IconError />,
   help: null,
   hideRequired: false,
   hourAttributes: {},
@@ -166,7 +160,6 @@ const DateInputField = (props) => {
     timeInputId,
     disabled,
     error,
-    errorIcon,
     help,
     hideRequired,
     hourAttributes,
@@ -214,13 +207,13 @@ const DateInputField = (props) => {
     : `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })})`;
 
   const helpLabel = help ? (
-    <div id="format" aria-label={`${intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })} ${format}, ${help}`}>
+    <div aria-label={`${intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })} ${format}, ${help}`}>
       {`${format}`}
       &nbsp;
       {help}
     </div>
   ) : (
-    <div id="format" aria-label={`${intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })} ${format}`}>
+    <div aria-label={`${intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })} ${format}`}>
       {`${format}`}
     </div>
   );
