@@ -39,7 +39,9 @@ DateInputField is a component of terra-date-input that provides a container for 
 
 ## Testing
 
-The Date Input Field uses `uuid` which changes the component's description id dynamically. To mock it we can use `jest.mock`.
+The Date Input Field uses `uuid` which changes the component's description id dynamically. To mock it in jest test teams can use `jest.mock`.
+If teams are using `shallow` for the tests then the mock is not required. But if using `mount` then the teams must use the mock as given below.
+
 ```js
 jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
 ```
