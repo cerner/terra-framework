@@ -138,5 +138,8 @@
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1",
     "xfc": "^1.2.1"
+  },
+  "dependencies": {
+    "@cerner/terra-docs": "^1.0.0"
   }
 }

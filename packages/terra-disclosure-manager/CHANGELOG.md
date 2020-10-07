@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Removed terra-doc-template dependency.
+
 ## 4.35.0 - (August 4, 2020)
 
 * Added

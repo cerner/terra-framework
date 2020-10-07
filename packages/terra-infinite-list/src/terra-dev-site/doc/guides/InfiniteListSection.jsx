@@ -1,6 +1,6 @@
 import React from 'react';
 import InfiniteList, { Item, SectionHeader } from 'terra-infinite-list/lib/index';
-import Placeholder from 'terra-doc-template/lib/Placeholder';
+import { Placeholder } from '@cerner/terra-docs';
 import classNames from 'classnames/bind';
 
 import mockData from './mock-data/mock-section';
