@@ -15,7 +15,7 @@ exports[`PopupMenuUser should render default element 1`] = `
       color="auto"
       image="user-src"
       initials="user-initials"
-      isAriaHidden={false}
+      isAriaHidden={true}
       isDeceased={false}
       size="1.174rem"
     />
