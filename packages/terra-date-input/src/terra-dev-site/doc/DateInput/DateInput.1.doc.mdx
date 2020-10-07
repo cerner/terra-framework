@@ -48,6 +48,7 @@ This component requires the following peer dependencies be installed in your app
 ## Testing
 
 The Date Input uses `uuid` which changes the component's description id dynamically. To mock it in jest test teams can use `jest.mock`.
+
 If teams are using `shallow` for the tests then the mock is not required. But if using `mount` then the teams must use the mock as given below.
 
 ```js
