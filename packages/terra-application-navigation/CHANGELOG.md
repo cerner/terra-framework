@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Update terra-avatar to 3.8.0
+
 ## 1.36.0 - (September 29, 2020)
 
 * Added
