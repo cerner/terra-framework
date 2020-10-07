@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added new subcomponent `TimeInputField`.
+
 ## 4.32.0 - (September 16, 2020)
 
 * Removed

@@ -41,7 +41,6 @@ exports[`correctly applies the theme context className 1`] = `
     <TimeInput
       disabled={false}
       hourAttributes={Object {}}
-      inputAttributes={Object {}}
       intl={
         Object {
           "defaultFormats": Object {},
@@ -621,7 +620,6 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
 <TimeInput
   disabled={false}
   hourAttributes={Object {}}
-  inputAttributes={Object {}}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -1541,6 +1539,11 @@ exports[`should render a time input with a default time 1`] = `
 exports[`should render a time input with custom attributes 1`] = `
 <div
   className="time-input-container"
+  inputAttributes={
+    Object {
+      "id": "terra-time-input",
+    }
+  }
 >
   <div
     className="time-input"
@@ -1556,7 +1559,6 @@ exports[`should render a time input with custom attributes 1`] = `
       aria-required={false}
       className="time-input-hour"
       disabled={false}
-      id="terra-time-input"
       isIncomplete={false}
       isInvalid={false}
       maxLength="2"
@@ -1583,7 +1585,6 @@ exports[`should render a time input with custom attributes 1`] = `
       aria-required={false}
       className="time-input-minute"
       disabled={false}
-      id="terra-time-input"
       isIncomplete={false}
       isInvalid={false}
       maxLength="2"
@@ -2015,6 +2016,11 @@ exports[`should render a time input with seconds input and a value 1`] = `
 exports[`should render a time input with seconds input and custom attributes 1`] = `
 <div
   className="time-input-container"
+  inputAttributes={
+    Object {
+      "id": "terra-time-input",
+    }
+  }
 >
   <div
     className="time-input"
@@ -2030,7 +2036,6 @@ exports[`should render a time input with seconds input and custom attributes 1`]
       aria-required={false}
       className="time-input-hour with-second"
       disabled={false}
-      id="terra-time-input"
       isIncomplete={false}
       isInvalid={false}
       maxLength="2"
@@ -2057,7 +2062,6 @@ exports[`should render a time input with seconds input and custom attributes 1`]
       aria-required={false}
       className="time-input-minute with-second"
       disabled={false}
-      id="terra-time-input"
       isIncomplete={false}
       isInvalid={false}
       maxLength="2"
