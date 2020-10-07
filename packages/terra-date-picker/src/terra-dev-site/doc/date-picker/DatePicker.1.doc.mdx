@@ -96,3 +96,10 @@ import DatePicker from 'terra-date-picker';
 
 ## Date Picker props table
 <DatePickerPropsTable />
+
+## Testing
+
+The Date Picker uses `uuid` which changes the component's description id dynamically. To mock it we can use `jest.mock`.
+```js
+jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+```

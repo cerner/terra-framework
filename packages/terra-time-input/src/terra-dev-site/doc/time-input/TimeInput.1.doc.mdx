@@ -70,3 +70,10 @@ Not for general use.' />
 
 ## Time Input Props Table 
 <TimeInputPropsTable />
+
+## Testing
+
+The Time Input uses `uuid` which changes the component's description id dynamically. To mock it we can use `jest.mock`.
+```js
+jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+```
