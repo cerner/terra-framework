@@ -2,14 +2,19 @@
 
 ## Unreleased
 
+* Changed
+  * Date input split into 3 distinct inputs that mask the previous single input.
+  * `terra-dev-site` examples to use hooks.
+
+## 4.49.0 - (October 6, 2020)
+
+* Changed
+  * Upgrade `form-input` dependency to `^4.4.0` and updated jests.
+
 ## 4.48.0 - (September 29, 2020)
 
 * Fixed
   * Fixes inconsistent focus styles in IE.
-
-* Changed
-  * Date input split into 3 distinct inputs that mask the previous single input.
-  * `terra-dev-site` examples to use hooks.
 
 * Changed
   * `onClickOutside` prop has been deprecated, will resolve to `onRequestClose`

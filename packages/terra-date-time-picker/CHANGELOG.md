@@ -2,16 +2,21 @@
 
 ## Unreleased
 
+* Changed
+  * Tests updated to reflect input splitting in `terra-date-picker`.
+  * `terra-dev-site` examples to use hooks.
+
+## 4.49.0 - (October 6, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.48.0 - (September 29, 2020)
 
 * Changed
   * Minor dependency version bump
 
 ## 4.47.0 - (September 16, 2020)
-
-* Changed
-  * Tests updated to reflect input splitting in `terra-date-picker`.
-  * `terra-dev-site` examples to use hooks.
 
 * Changed
   * `onClickOutside` prop has been deprecated, will resolve to `onRequestClose`
