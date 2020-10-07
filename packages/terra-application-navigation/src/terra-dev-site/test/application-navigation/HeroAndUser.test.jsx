@@ -4,7 +4,7 @@ import ApplicationBase from 'terra-application/lib/application-base';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 import { Placeholder } from '@cerner/terra-docs';
 
-const hero = <Placeholder title="Test Hero" variant="light" />;
+const hero = <Placeholder title="Test Hero" />;
 
 const userConfig = {
   name: 'Test Name',

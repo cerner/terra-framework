@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 const MyInitialLoadingIndicator = () => (
   <div className={cx('indicator')}>
-    <Placeholder title="I'm Loading" variant="light" />
+    <Placeholder title="I'm Loading" />
   </div>
 );
 

@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 const MyProgressiveLoadingIndicator = () => (
   <div className={cx('indicator')}>
-    <Placeholder title="I'm Loading More" variant="light" />
+    <Placeholder title="I'm Loading More" />
   </div>
 );
 
