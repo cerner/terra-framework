@@ -118,7 +118,8 @@ const AbstractModal = (props) => {
 
   const handleKeydown = useCallback(e => {
     if (e.keyCode === KEY_ESCAPE && closeOnEsc && isOpen) {
-      if (modalElementRef.current) {
+      const currentModalNode = modalElementRef.current;
+      if (currentModalNode && (e.target === currentModalNode|| currentModalNode.contains(e.target))) {
         if (e.target === modalElementRef.current || modalElementRef.current.contains(e.target)) {
           onRequestClose();
         }
