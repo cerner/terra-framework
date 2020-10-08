@@ -181,6 +181,8 @@ const DatePickerInput = (props) => {
 
   const setDayRef = useCallback(node => {
     dayInputRef.current = node;
+
+    // Logic used internally by date-time-picker to shift focus to time-input from day input when date order is YMD.
     if (inputRefCallback && dateFormatOrder === DateUtil.dateOrder.YMD) {
       inputRefCallback(node);
     }
@@ -192,6 +194,8 @@ const DatePickerInput = (props) => {
 
   const setYearRef = useCallback(node => {
     yearInputRef.current = node;
+
+    // Logic used internally by date-time-picker to shift focus to time-input from year input when date order is MDY or DMY.
     if (inputRefCallback && (dateFormatOrder === DateUtil.dateOrder.MDY || dateFormatOrder === DateUtil.dateOrder.DMY)) {
       inputRefCallback(node);
     }
@@ -219,10 +223,9 @@ const DatePickerInput = (props) => {
    * corrections easier, and is re-enabled if the whole date is erased.
    * @param {string} inputValue - The value from the current input.
    * @param {number} type - The input type, based on DateUtil.inputType.
-   * @param {string} dateOrder - Date variant based on the currently supported date orders: 'MDY', 'DMY', or 'YMD'.
    */
-  const moveFocusOnChange = (inputValue, type, dateOrder) => {
-    if (dateOrder === DateUtil.dateOrder.MDY) {
+  const moveFocusOnChange = (inputValue, type) => {
+    if (dateFormatOrder === DateUtil.dateOrder.MDY) {
       if (inputValue.length === 2) {
         if (type === DateUtil.inputType.MONTH) {
           dayInputRef.current.focus();
@@ -230,7 +233,7 @@ const DatePickerInput = (props) => {
           yearInputRef.current.focus();
         }
       }
-    } else if (dateOrder === DateUtil.dateOrder.DMY) {
+    } else if (dateFormatOrder === DateUtil.dateOrder.DMY) {
       if (inputValue.length === 2) {
         if (type === DateUtil.inputType.DAY) {
           monthInputRef.current.focus();
@@ -238,7 +241,7 @@ const DatePickerInput = (props) => {
           yearInputRef.current.focus();
         }
       }
-    } else if (dateOrder === DateUtil.dateOrder.YMD) {
+    } else if (dateFormatOrder === DateUtil.dateOrder.YMD) {
       if (inputValue.length === 4) {
         monthInputRef.current.focus();
       } else if (inputValue.length === 2 && type === DateUtil.inputType.MONTH) {
@@ -261,23 +264,26 @@ const DatePickerInput = (props) => {
       dateDispatch({ year: inputValue });
     }
 
-    moveFocusOnChange(inputValue, type, dateFormatOrder);
+    moveFocusOnChange(inputValue, type);
   };
 
+  /**
+   * Sets the day, month and year based on input values, formats them
+   * based on the date format variant, and passes the formatted date to onChange.
+   */
   const handleDateChange = (event, inputValue, type) => {
-    /**
-     * Sets the day, month and year based on input values, formats them
-     * based on the date format variant, and passes the formatted date to onChange.
-     */
-    const day = type === DateUtil.inputType.DAY ? inputValue : date.day;
-    const month = type === DateUtil.inputType.MONTH ? inputValue : date.month;
-    const year = type === DateUtil.inputType.YEAR ? inputValue : date.year;
+    let { day } = date;
+    let { month } = date;
+    let { year } = date;
 
     if (type === DateUtil.inputType.DAY) {
+      day = inputValue;
       setDayInitialFocused(false);
     } else if (type === DateUtil.inputType.MONTH) {
+      month = inputValue;
       setMonthInitialFocused(false);
     } else {
+      year = inputValue;
       setYearInitialFocused(false);
     }
 
@@ -479,7 +485,7 @@ const DatePickerInput = (props) => {
 
       // Prepend a 0 to the value when losing focus and the value is single digit.
       if (inputValue.length === 1) {
-        inputValue = inputValue === '0' ? '' : '0'.concat(inputValue);
+        inputValue = inputValue === '0' ? inputValue : '0'.concat(inputValue);
 
         handleDateChange(event, inputValue, type);
       }
