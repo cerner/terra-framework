@@ -314,6 +314,7 @@ exports[`correctly applies the theme context className 1`] = `
                           <Input
                             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                             aria-label="Terra.datePicker.yearLabel"
+                            aria-required={false}
                             className="date-input-year"
                             disabled={false}
                             isIncomplete={false}
@@ -334,6 +335,7 @@ exports[`correctly applies the theme context className 1`] = `
                             <input
                               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                               aria-label="Terra.datePicker.yearLabel"
+                              aria-required={false}
                               className="form-input orion-fusion-theme date-input-year"
                               disabled={false}
                               maxLength="4"
@@ -357,6 +359,7 @@ exports[`correctly applies the theme context className 1`] = `
                           <Input
                             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                             aria-label="Terra.datePicker.monthLabel"
+                            aria-required={false}
                             className="date-input-month"
                             disabled={false}
                             isIncomplete={false}
@@ -377,6 +380,7 @@ exports[`correctly applies the theme context className 1`] = `
                             <input
                               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                               aria-label="Terra.datePicker.monthLabel"
+                              aria-required={false}
                               className="form-input orion-fusion-theme date-input-month"
                               disabled={false}
                               maxLength="2"
@@ -400,6 +404,7 @@ exports[`correctly applies the theme context className 1`] = `
                           <Input
                             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                             aria-label="Terra.datePicker.dayLabel"
+                            aria-required={false}
                             className="date-input-day"
                             disabled={false}
                             isIncomplete={false}
@@ -420,6 +425,7 @@ exports[`correctly applies the theme context className 1`] = `
                             <input
                               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                               aria-label="Terra.datePicker.dayLabel"
+                              aria-required={false}
                               className="form-input orion-fusion-theme date-input-day"
                               disabled={false}
                               maxLength="2"

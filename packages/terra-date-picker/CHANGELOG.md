@@ -6,6 +6,9 @@
   * Date input split into 3 distinct inputs that mask the previous single input.
   * `terra-dev-site` examples to use hooks.
 
+* Fixed
+  * Fixes description id's in DatePicker for better accessibility.
+
 ## 4.49.0 - (October 6, 2020)
 
 * Changed

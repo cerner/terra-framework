@@ -215,35 +215,29 @@ const DatePickerField = (props) => {
     ...customProps
   } = props;
 
-  let ariaDescriptionIds;
+  let ariaDescriptionIds = `${datePickerId}-help`;
 
-  if (help && error && isInvalid) {
+  if (error && isInvalid) {
     ariaDescriptionIds = `${datePickerId}-error ${datePickerId}-help`;
-  } else {
-    if (help) {
-      ariaDescriptionIds = `${datePickerId}-help`;
-    }
-
-    if (error && isInvalid) {
-      ariaDescriptionIds = `${datePickerId}-error`;
-    }
   }
+
+  const inputAriaDescriptionId = inputAttributes && inputAttributes['aria-describedby'];
 
   let mergedInputAttrs = inputAttributes;
   if (ariaDescriptionIds) {
-    mergedInputAttrs = { 'aria-describedby': ariaDescriptionIds, ...inputAttributes };
+    mergedInputAttrs = { ...inputAttributes, 'aria-describedby': (inputAriaDescriptionId) ? `${ariaDescriptionIds} ${inputAriaDescriptionId}` : ariaDescriptionIds };
   }
 
   const format = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
 
   const helpLabel = help ? (
-    <div id="format" aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}, ${help}`}>
+    <div aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}, ${help}`}>
       {`(${format})`}
       &nbsp;
       {help}
     </div>
   ) : (
-    <div id="format" aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}`}>
+    <div aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}`}>
       {`(${format})`}
     </div>
   );
@@ -267,7 +261,7 @@ const DatePickerField = (props) => {
       <DatePicker
         disabled={disabled}
         id={datePickerId}
-        inputAttribute={mergedInputAttrs}
+        inputAttributes={mergedInputAttrs}
         excludeDates={excludeDates}
         filterDate={filterDate}
         useExternalFormatMask

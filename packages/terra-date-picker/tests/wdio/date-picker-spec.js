@@ -415,6 +415,14 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
       Terra.it.validatesElement();
     });
+
+    describe('Multiple DatePickerField', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-date-picker/date-picker/multiple-date-picker-field');
+      });
+
+      Terra.it.validatesElement();
+    });
   });
 
   describe('Controlled DatePicker', () => {

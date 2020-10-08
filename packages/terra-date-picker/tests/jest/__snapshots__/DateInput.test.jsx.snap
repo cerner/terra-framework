@@ -94,6 +94,7 @@ exports[`correctly applies the theme context className 1`] = `
             <Input
               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.datePicker.yearLabel"
+              aria-required={false}
               className="date-input-year"
               disabled={false}
               isIncomplete={false}
@@ -114,6 +115,7 @@ exports[`correctly applies the theme context className 1`] = `
               <input
                 aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                 aria-label="Terra.datePicker.yearLabel"
+                aria-required={false}
                 className="form-input orion-fusion-theme date-input-year"
                 disabled={false}
                 maxLength="4"
@@ -137,6 +139,7 @@ exports[`correctly applies the theme context className 1`] = `
             <Input
               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.datePicker.monthLabel"
+              aria-required={false}
               className="date-input-month"
               disabled={false}
               isIncomplete={false}
@@ -157,6 +160,7 @@ exports[`correctly applies the theme context className 1`] = `
               <input
                 aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                 aria-label="Terra.datePicker.monthLabel"
+                aria-required={false}
                 className="form-input orion-fusion-theme date-input-month"
                 disabled={false}
                 maxLength="2"
@@ -180,6 +184,7 @@ exports[`correctly applies the theme context className 1`] = `
             <Input
               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.datePicker.dayLabel"
+              aria-required={false}
               className="date-input-day"
               disabled={false}
               isIncomplete={false}
@@ -200,6 +205,7 @@ exports[`correctly applies the theme context className 1`] = `
               <input
                 aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                 aria-label="Terra.datePicker.dayLabel"
+                aria-required={false}
                 className="form-input orion-fusion-theme date-input-day"
                 disabled={false}
                 maxLength="2"
@@ -409,6 +415,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         <Input
           aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
           aria-label="Terra.datePicker.yearLabel"
+          aria-required={false}
           className="date-input-year"
           disabled={false}
           isIncomplete={false}
@@ -429,6 +436,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           <input
             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
             aria-label="Terra.datePicker.yearLabel"
+            aria-required={false}
             className="form-input date-input-year"
             disabled={false}
             maxLength="4"
@@ -452,6 +460,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         <Input
           aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
           aria-label="Terra.datePicker.monthLabel"
+          aria-required={false}
           className="date-input-month"
           disabled={false}
           isIncomplete={false}
@@ -472,6 +481,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           <input
             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
             aria-label="Terra.datePicker.monthLabel"
+            aria-required={false}
             className="form-input date-input-month"
             disabled={false}
             maxLength="2"
@@ -495,6 +505,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         <Input
           aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
           aria-label="Terra.datePicker.dayLabel"
+          aria-required={false}
           className="date-input-day"
           disabled={false}
           isIncomplete={false}
@@ -515,6 +526,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           <input
             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
             aria-label="Terra.datePicker.dayLabel"
+            aria-required={false}
             className="form-input date-input-day"
             disabled={false}
             maxLength="2"
@@ -685,6 +697,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
       <input
         aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.yearLabel"
+        aria-required="true"
         class="form-input date-input-year"
         maxlength="4"
         name="terra-date-year-undefined"
@@ -701,6 +714,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
       <input
         aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.monthLabel"
+        aria-required="true"
         class="form-input date-input-month"
         maxlength="2"
         name="terra-date-month-undefined"
@@ -717,6 +731,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
       <input
         aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.dayLabel"
+        aria-required="true"
         class="form-input date-input-day"
         maxlength="2"
         name="terra-date-day-undefined"
@@ -789,6 +804,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
       <input
         aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.yearLabel"
+        aria-required="false"
         class="form-input date-input-year"
         maxlength="4"
         name="terra-date-year-undefined"
@@ -805,6 +821,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
       <input
         aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.monthLabel"
+        aria-required="false"
         class="form-input date-input-month"
         maxlength="2"
         name="terra-date-month-undefined"
@@ -821,6 +838,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
       <input
         aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.dayLabel"
+        aria-required="false"
         class="form-input date-input-day"
         maxlength="2"
         name="terra-date-day-undefined"
@@ -893,6 +911,7 @@ exports[`should render a default date input 1`] = `
       <input
         aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.yearLabel"
+        aria-required="false"
         class="form-input date-input-year"
         maxlength="4"
         name="terra-date-year-undefined"
@@ -909,6 +928,7 @@ exports[`should render a default date input 1`] = `
       <input
         aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.monthLabel"
+        aria-required="false"
         class="form-input date-input-month"
         maxlength="2"
         name="terra-date-month-undefined"
@@ -925,6 +945,7 @@ exports[`should render a default date input 1`] = `
       <input
         aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.dayLabel"
+        aria-required="false"
         class="form-input date-input-day"
         maxlength="2"
         name="terra-date-day-undefined"
@@ -1094,6 +1115,7 @@ exports[`should render a default date input with all props 1`] = `
         <Input
           aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
           aria-label="Terra.datePicker.yearLabel"
+          aria-required={false}
           className="date-input-year"
           disabled={false}
           id="terra-date-input"
@@ -1115,6 +1137,7 @@ exports[`should render a default date input with all props 1`] = `
           <input
             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
             aria-label="Terra.datePicker.yearLabel"
+            aria-required={false}
             className="form-input date-input-year"
             disabled={false}
             id="terra-date-input"
@@ -1139,6 +1162,7 @@ exports[`should render a default date input with all props 1`] = `
         <Input
           aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
           aria-label="Terra.datePicker.monthLabel"
+          aria-required={false}
           className="date-input-month"
           disabled={false}
           id="terra-date-input"
@@ -1160,6 +1184,7 @@ exports[`should render a default date input with all props 1`] = `
           <input
             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
             aria-label="Terra.datePicker.monthLabel"
+            aria-required={false}
             className="form-input date-input-month"
             disabled={false}
             id="terra-date-input"
@@ -1184,6 +1209,7 @@ exports[`should render a default date input with all props 1`] = `
         <Input
           aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
           aria-label="Terra.datePicker.dayLabel"
+          aria-required={false}
           className="date-input-day"
           disabled={false}
           id="terra-date-input"
@@ -1205,6 +1231,7 @@ exports[`should render a default date input with all props 1`] = `
           <input
             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
             aria-label="Terra.datePicker.dayLabel"
+            aria-required={false}
             className="form-input date-input-day"
             disabled={false}
             id="terra-date-input"

@@ -505,7 +505,17 @@ const DatePickerInput = (props) => {
     }
   };
 
-  const formatDescriptionId = !useExternalFormatMask ? `terra-date-picker-description-format-${uuidRef.current}` : '';
+  const formatDescriptionId = `terra-date-picker-description-format-${uuidRef.current}`;
+  let ariaDescriptionIds;
+  if (useExternalFormatMask === false) {
+    if (inputAttributes && inputAttributes['aria-describedby']) {
+      ariaDescriptionIds = `${formatDescriptionId} ${inputAttributes['aria-describedby']}`;
+    } else {
+      ariaDescriptionIds = formatDescriptionId;
+    }
+  } else if (inputAttributes && inputAttributes['aria-describedby']) {
+    ariaDescriptionIds = inputAttributes['aria-describedby'];
+  }
 
   const dayInputClasses = cx([
     'date-input-day',
@@ -527,8 +537,9 @@ const DatePickerInput = (props) => {
       maxLength="2"
       size="2"
       pattern="\d*"
+      aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
-      aria-describedby={formatDescriptionId}
+      aria-describedby={ariaDescriptionIds}
     />
   );
 
@@ -552,8 +563,9 @@ const DatePickerInput = (props) => {
       maxLength="2"
       size="2"
       pattern="\d*"
+      aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
-      aria-describedby={formatDescriptionId}
+      aria-describedby={ariaDescriptionIds}
     />
   );
 
@@ -577,8 +589,9 @@ const DatePickerInput = (props) => {
       maxLength="4"
       size="4"
       pattern="\d*"
+      aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
-      aria-describedby={formatDescriptionId}
+      aria-describedby={ariaDescriptionIds}
     />
   );
 
