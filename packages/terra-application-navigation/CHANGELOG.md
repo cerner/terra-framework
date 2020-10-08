@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Changed
+  * Replaced references to terra-doc-template with terra-docs
   * Update terra-avatar to 3.8.0
 
 ## 1.36.0 - (September 29, 2020)
