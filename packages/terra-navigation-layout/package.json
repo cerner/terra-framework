@@ -35,9 +35,7 @@
   "devDependencies": {
     "react-router-dom": "^5.0.0",
     "terra-button": "^3.3.0",
-    "terra-icon": "^3.1.0",
-    "terra-markdown": "^2.6.0",
-    "terra-toggle-button": "^3.0.0"
+    "terra-icon": "^3.1.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
