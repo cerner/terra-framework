@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import Placeholder from 'terra-doc-template/lib/Placeholder';
+import { Placeholder } from '@cerner/terra-docs';
 
 import InfiniteList, { Item } from 'terra-infinite-list/lib/index';
 import styles from './InfiniteListTestCommon.module.scss';

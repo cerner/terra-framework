@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+* Changed
+  * Replaced references to terra-doc-template with terra-docs
+  * Update terra-avatar to 3.8.0
+
+## 1.36.0 - (September 29, 2020)
+
+* Added
+  * Added a custom event that closes both drawer menu and popup menu if open.
+
 ## 1.35.0 - (August 18, 2020)
 
 * Added

@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixes description id's in DatePicker for better accessibility.
+
+## 4.49.0 - (October 6, 2020)
+
+* Changed
+  * Upgrade `form-input` dependency to `^4.4.0` and updated jests.
+
+## 4.48.0 - (September 29, 2020)
+
+* Fixed
+  * Fixes inconsistent focus styles in IE.
+
 * Changed
   * `onClickOutside` prop has been deprecated, will resolve to `onRequestClose`
 
