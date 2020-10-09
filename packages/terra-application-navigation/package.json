@@ -48,6 +48,7 @@
     "terra-image": "^3.0.0",
     "terra-overlay": "^3.0.0",
     "terra-popup": "^6.40.0",
+    "terra-theme-context": "^1.4.0",
     "terra-visually-hidden-text": "^2.0.0"
   },
   "scripts": {

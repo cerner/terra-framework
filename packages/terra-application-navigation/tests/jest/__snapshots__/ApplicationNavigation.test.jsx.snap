@@ -1,5 +1,258 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ApplicationNavigation correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  theme={
+    Object {
+      "className": "clinical-lowlight-theme",
+    }
+  }
+>
+  <ApplicationNavigation
+    notifications={Object {}}
+    utilityItems={Array []}
+  >
+    <div
+      className="application-navigation clinical-lowlight-theme"
+    >
+      <div
+        aria-hidden={true}
+        className="drawer-menu-container"
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      >
+        <FocusTrap
+          _createFocusTrap={[Function]}
+          active={false}
+          className="drawer-menu-focus-trap-container"
+          focusTrapOptions={
+            Object {
+              "clickOutsideDeactivates": true,
+              "escapeDeactivates": true,
+              "returnFocusOnDeactivate": false,
+            }
+          }
+          paused={false}
+        >
+          <InjectIntl(DrawerMenu)
+            notifications={Object {}}
+            utilityItems={Array []}
+          >
+            <DrawerMenu
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
+              navigationItems={Array []}
+              notifications={Object {}}
+              utilityItems={Array []}
+            >
+              <div
+                className="drawer-container"
+              >
+                <div
+                  className="drawer-menu"
+                  data-navigation-drawer-menu={true}
+                  role={null}
+                  tabIndex={0}
+                >
+                  <div
+                    className="vertical-overflow-container"
+                  >
+                    <div
+                      className="header"
+                    >
+                      <div
+                        className="header-background-fill"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </DrawerMenu>
+          </InjectIntl(DrawerMenu)>
+        </FocusTrap>
+      </div>
+      <div
+        className="content-layout"
+      >
+        <InjectIntl(CompactHeader)
+          activeBreakpoint="medium"
+          isDrawerMenuOpen={false}
+          notifications={Object {}}
+          onSelectMenuButton={[Function]}
+          onSelectSkipToContent={[Function]}
+          utilityItems={Array []}
+        >
+          <CompactHeader
+            activeBreakpoint="medium"
+            extensionItems={Array []}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDrawerMenuOpen={false}
+            navigationItems={Array []}
+            notifications={Object {}}
+            onSelectMenuButton={[Function]}
+            onSelectSkipToContent={[Function]}
+            utilityItems={Array []}
+          >
+            <header
+              className="compact-header"
+              role="banner"
+            >
+              <button
+                className="skip-content-button"
+                onClick={[Function]}
+                role="link"
+                type="button"
+              >
+                Terra.applicationNavigation.header.skipToContentTitle
+              </button>
+              <div
+                className="title-container"
+              />
+              <nav
+                className="hidden-nav"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                tabIndex="-1"
+              >
+                <ul
+                  className="nav-inner"
+                />
+              </nav>
+              <div
+                className="extensions-container"
+              />
+              <ul
+                aria-label="Terra.applicationNavigation.drawerMenu.utilities"
+                className="hidden-utils"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                role="listbox"
+                tabIndex="-1"
+              />
+            </header>
+          </CompactHeader>
+        </InjectIntl(CompactHeader)>
+        <main
+          aria-labelledby={null}
+          className="main-container"
+          role="main"
+          tabIndex="-1"
+        />
+        <Overlay
+          backgroundStyle="clear"
+          className="overlay"
+          isOpen={false}
+          isRelativeToContainer={true}
+          isScrollable={false}
+          onRequestClose={[Function]}
+          rootSelector="#root"
+          zIndex="6000"
+        />
+      </div>
+      <Popup
+        attachmentBehavior="push"
+        boundingRef={null}
+        classNameArrow={null}
+        classNameContent={null}
+        classNameOverlay={null}
+        contentAttachment="top right"
+        contentHeight="auto"
+        contentWidth="320"
+        isArrowDisplayed={true}
+        isContentFocusDisabled={true}
+        isHeaderDisabled={true}
+        isOpen={false}
+        onRequestClose={[Function]}
+        popupContentRole="dialog"
+        targetAttachment="bottom center"
+        targetRef={[Function]}
+      />
+    </div>
+  </ApplicationNavigation>
+</ThemeContextProvider>
+`;
+
 exports[`ApplicationNavigation should render default element 1`] = `
 <div
   className="application-navigation"

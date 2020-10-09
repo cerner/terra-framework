@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Added
+  * Apply theme context to application-navigation.
 
 ## 1.36.0 - (September 29, 2020)
 

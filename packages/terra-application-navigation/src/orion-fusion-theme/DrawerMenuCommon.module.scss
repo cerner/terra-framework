@@ -1,0 +1,63 @@
+:local {
+  .orion-fusion-theme {
+    --terra-application-navigation-drawer-background-color: #f2f3f4;
+    --terra-application-navigation-drawer-count-background-color: #ffda6c;
+    --terra-application-navigation-drawer-count-border: 1px solid #ffb20b;
+    --terra-application-navigation-drawer-count-color: #000;
+    
+    --terra-application-navigation-drawer-menu-user-large-avatar-inner-font-size: 1.6521rem;
+    --terra-application-navigation-drawer-menu-avatar-outline-border: 0.1429rem solid rgba(255, 255, 255, 0.1);
+    --terra-application-navigation-drawer-menu-background-color: #0a5488;
+    --terra-application-navigation-drawer-menu-background-image: linear-gradient(216deg, #2a99d1 5%, #3074b0 33%, #0a5488 58%, #043147 86%);
+  
+    --terra-application-navigation-drawer-menu-footer-background-color: #f2f3f4;
+    --terra-application-navigation-drawer-menu-footer-border-top: 1px solid #d3d4d5;
+    --terra-application-navigation-drawer-menu-footer-box-shadow: 0 0 20px 10px rgba(3, 37, 53, 0.8), 0 -5px 3px 0 rgba(0, 0, 0, 0.4);
+    --terra-application-navigation-drawer-menu-footer-button-active-background-color: #014979;
+    --terra-application-navigation-drawer-menu-footer-button-active-border-color: #014979;
+    --terra-application-navigation-drawer-menu-footer-button-active-color: #fff;
+    --terra-application-navigation-drawer-menu-footer-button-background-color: rgba(0, 0, 0, 0.08);
+    --terra-application-navigation-drawer-menu-footer-button-border: 1px solid #898c90;
+    --terra-application-navigation-drawer-menu-footer-button-border-radius: 3px;
+    --terra-application-navigation-drawer-menu-footer-button-color: #222a2e;
+    --terra-application-navigation-drawer-menu-footer-button-focus-background-color: rgba(0, 0, 0, 0.08);
+    --terra-application-navigation-drawer-menu-footer-button-focus-border: 1px solid #898c90;
+    --terra-application-navigation-drawer-menu-footer-button-focus-box-shadow: none;
+    --terra-application-navigation-drawer-menu-footer-button-focus-color: #222a2e;
+    --terra-application-navigation-drawer-menu-footer-button-focus-outline: 2px dashed #000;
+    --terra-application-navigation-drawer-menu-footer-button-focus-outline-offset: 1px;
+    --terra-application-navigation-drawer-menu-footer-button-hover-background-color: rgba(0, 0, 0, 0.13);
+    --terra-application-navigation-drawer-menu-footer-button-hover-color: #000;
+  
+    --terra-application-navigation-drawer-menu-header-background-color: transparent;
+    --terra-application-navigation-drawer-menu-header-border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    --terra-application-navigation-drawer-menu-header-fill-background-color: transparent;
+  
+    --terra-application-navigation-drawer-menu-item-active-background-color: rgba(3, 43, 70, 0.2);
+    --terra-application-navigation-drawer-menu-item-active-color: rgba(255, 255, 255, 0.5);
+    --terra-application-navigation-drawer-menu-item-background-color: transparent;
+    --terra-application-navigation-drawer-menu-item-color: rgba(255, 255, 255, 0.8);
+    --terra-application-navigation-drawer-menu-item-focus-box-shadow: none;
+    --terra-application-navigation-drawer-menu-item-focus-outline: 2px dashed #fff;
+    --terra-application-navigation-drawer-menu-item-focus-outline-offset: -5px;
+    --terra-application-navigation-drawer-menu-item-hover-background-color: rgba(30, 163, 244, 0.13);
+    --terra-application-navigation-drawer-menu-item-hover-color: rgba(255, 255, 255, 1);
+    --terra-application-navigation-drawer-menu-item-selected-box-shadow: inset 0.35714rem 0 0 0 rgba(40, 154, 214, 0.8);
+    --terra-application-navigation-drawer-menu-item-selected-color: rgba(255, 255, 255, 1);
+    --terra-application-navigation-drawer-menu-item-selected-focus-box-shadow: inset 0.35714rem 0 0 0 rgba(40, 154, 214, 0.8);
+    --terra-application-navigation-drawer-menu-item-selected-focus-outline: 2px dashed #fff;
+    --terra-application-navigation-drawer-menu-item-selected-focus-outline-offset: -5px;
+  
+    --terra-application-navigation-drawer-menu-list-background-color: rgba(8, 72, 114, 0.2);
+    --terra-application-navigation-drawer-menu-navigation-list-border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    --terra-application-navigation-drawer-menu-overflow-background-color: transparent;
+    --terra-application-navigation-drawer-menu-user-large-detail-color: rgba(255, 255, 255, 0.7);
+    --terra-application-navigation-drawer-menu-user-large-name-color: #fff;
+    --terra-application-navigation-drawer-menu-user-small-detail-color: rgba(255, 255, 255, 0.7);
+    --terra-application-navigation-drawer-menu-user-small-name-color: #fff;
+    --terra-application-navigation-drawer-menu-user-small-avatar-inner-font-size: 0.6522rem;
+  
+    --terra-application-navigation-drawer-title-border-bottom: 0;
+    --terra-application-navigation-drawer-title-color: rgba(255, 255, 255, 0.9);
+  }
+}
