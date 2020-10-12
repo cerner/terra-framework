@@ -32,6 +32,7 @@
     "terra-application": "^1.0.0"
   },
   "dependencies": {
+    "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
     "focus-trap-react": "^6.0.0",
     "keycode-js": "^2.0.1",
@@ -41,7 +42,7 @@
     "resize-observer-polyfill": "^1.4.1",
     "terra-action-footer": "^2.0.0",
     "terra-action-header": "^2.0.0",
-    "terra-avatar": "^2.0.0",
+    "terra-avatar": "^3.8.0",
     "terra-button": "^3.3.0",
     "terra-content-container": "^3.0.0",
     "terra-icon": "^3.11.0",
