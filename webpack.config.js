@@ -12,7 +12,7 @@ const WebpackConfigTerra = require('@cerner/webpack-config-terra');
 /**
 * Generates the file representing app name configuration.
 */
-const devSiteConfig = (env = {}, argv = {}) => {
+const devSiteConfig = (env = {}, argv = { p: false }) => {
   const production = argv.p;
   const processPath = process.cwd();
 
