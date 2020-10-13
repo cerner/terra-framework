@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added documentation on mock for `uuid`.
+
 * Fixed
   * Fixes description id's in DatePicker for better accessibility.
 
