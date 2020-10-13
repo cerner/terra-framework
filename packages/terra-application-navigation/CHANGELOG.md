@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Added
+  * Apply theme context to application-navigation.
 
 * Changed
   * Replaced references to terra-doc-template with terra-docs
