@@ -2,13 +2,13 @@ import React, {
   useEffect, useLayoutEffect, useState, useRef, useCallback,
 } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNamesBind from 'classnames/bind';
 import Overlay from 'terra-overlay';
 import { ActiveBreakpointContext } from 'terra-breakpoints';
 import FocusTrap from 'focus-trap-react';
 import Popup from 'terra-popup';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-
+import ThemeContext from 'terra-theme-context';
 import Header from './header/_Header';
 import CompactHeader from './header/_CompactHeader';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
@@ -20,7 +20,7 @@ import {
 
 import styles from './ApplicationNavigation.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -421,9 +421,11 @@ const ApplicationNavigation = ({
     event.stopPropagation();
     updateDrawerIsOpen(false);
   };
+  const theme = React.useContext(ThemeContext);
+  const appNavClassNames = cx('application-navigation', theme.className);
 
   return (
-    <div className={cx('application-navigation')}>
+    <div className={appNavClassNames}>
       <div
         ref={drawerMenuRef}
         className={cx('drawer-menu-container')}
