@@ -6,6 +6,16 @@
   * Restricted year input to be between `1900` and `2100`.
   * Allow users to clear month value by selecting placeholder option value.
 
+## 1.20.0 - (October 6, 2020)
+
+* Changed
+  * Upgrade `form-input` dependency to `^4.4.0` and updated jests.
+
+## 1.19.0 - (September 29, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.18.0 - (September 16, 2020)
 
 * Removed

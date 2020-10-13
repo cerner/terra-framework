@@ -5,7 +5,7 @@ import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
 import IconLightbulb from 'terra-icon/lib/icon/IconLightbulb';
-import Placeholder from 'terra-doc-template/lib/Placeholder';
+import { Placeholder } from '@cerner/terra-docs';
 import ExampleWrapper from './ExampleWrapper';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 

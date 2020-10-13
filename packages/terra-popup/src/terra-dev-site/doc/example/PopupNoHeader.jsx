@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import Popup from 'terra-popup';
-import Placeholder from 'terra-doc-template/lib/Placeholder';
+import { Placeholder } from '@cerner/terra-docs';
 import classNames from 'classnames/bind';
 import styles from './PopupDocCommon.module.scss';
 
