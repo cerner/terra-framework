@@ -269,7 +269,7 @@ class DateInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleDayKeyDown(event) {
-    let stateValue = this.state.day || '0';
+    let stateValue = this.state.day || '';
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
@@ -311,7 +311,7 @@ class DateInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleYearKeyDown(event) {
-    let stateValue = this.state.year || '0';
+    let stateValue = this.state.year || '';
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
