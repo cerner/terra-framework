@@ -1,5 +1,8 @@
 import React from 'react';
 import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { mountWithIntl } from 'terra-enzyme-intl';
 import ApplicationNavigation from '../../src/ApplicationNavigation';
 
 describe('ApplicationNavigation', () => {
@@ -101,5 +104,14 @@ describe('ApplicationNavigation', () => {
     ));
 
     expect(shallowComponent).toMatchSnapshot();
+  });
+
+  it('correctly applies the theme context className', () => {
+    const appNav = mountWithIntl(
+      <ThemeContextProvider theme={{ className: 'clinical-lowlight-theme' }}>
+        <ApplicationNavigation />
+      </ThemeContextProvider>,
+    );
+    expect(appNav).toMatchSnapshot();
   });
 });

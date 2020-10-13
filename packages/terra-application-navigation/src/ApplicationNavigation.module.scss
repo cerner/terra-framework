@@ -1,4 +1,7 @@
 @import '~terra-application/lib/breakpoints/media-queries';
+// Themes
+@import './clinical-lowlight-theme/ApplicationNavigation.module';
+@import './orion-fusion-theme/ApplicationNavigation.module';
 
 @keyframes pulse {
   0%,
