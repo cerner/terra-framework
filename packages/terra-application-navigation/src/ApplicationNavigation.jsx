@@ -4,7 +4,7 @@ import React, {
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Overlay from 'terra-overlay';
-import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
+import { ActiveBreakpointContext } from 'terra-breakpoints';
 import FocusTrap from 'focus-trap-react';
 import Popup from 'terra-popup';
 import VisuallyHiddenText from 'terra-visually-hidden-text';

@@ -7,7 +7,8 @@
   * Update terra-avatar to 3.8.0
 
 * Fixed
-  *  Corrected ApplicationNavigation TabCount consolidation logic
+  * Corrected ApplicationNavigation TabCount consolidation logic
+  * Removed dependency on terra-application
 
 ## 1.36.0 - (September 29, 2020)
 
