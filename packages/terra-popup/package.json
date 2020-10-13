@@ -27,6 +27,7 @@
     "react-intl": "^2.8.0"
   },
   "dependencies": {
+    "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
     "focus-trap-react": "^6.0.0",
     "prop-types": "^15.5.8",

@@ -1,5 +1,5 @@
 import React from 'react';
-import Placeholder from 'terra-doc-template/lib/Placeholder';
+import { Placeholder } from '@cerner/terra-docs';
 
 import InfiniteList, { Item } from 'terra-infinite-list/lib/index';
 import classNames from 'classnames/bind';
