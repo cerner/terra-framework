@@ -5,6 +5,9 @@
 * Changed
   * Added documentation on mock for `uuid`.
 
+* Fixed
+  * Fixes description id's in DatePicker for better accessibility.
+
 ## 4.49.0 - (October 6, 2020)
 
 * Changed

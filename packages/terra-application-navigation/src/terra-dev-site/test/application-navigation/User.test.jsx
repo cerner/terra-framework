@@ -1,5 +1,4 @@
 import React from 'react';
-import ApplicationBase from 'terra-application/lib/application-base';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 import FixedHeight from '../common/FixedHeight';
 
@@ -20,13 +19,23 @@ const userConfigSrc = {
   imageSrc: 'test-src',
 };
 
-// TODO: remove terra-application after it is incorporated into dev-site for themes or themes are co-located
+const userConfigImageFallbackNoInitials = {
+  name: 'Test Name',
+  imageSrc: 'test-src',
+};
+
+const userConfigNoInitials = {
+  name: 'Test Name',
+};
+
 const UserTest = () => (
-  <ApplicationBase locale="en">
+  <>
     <FixedHeight><ApplicationNavigation userConfig={userConfig} /></FixedHeight>
     <FixedHeight><ApplicationNavigation userConfig={userConfigDetail} /></FixedHeight>
     <FixedHeight><ApplicationNavigation userConfig={userConfigSrc} /></FixedHeight>
-  </ApplicationBase>
+    <FixedHeight><ApplicationNavigation userConfig={userConfigNoInitials} /></FixedHeight>
+    <FixedHeight><ApplicationNavigation userConfig={userConfigImageFallbackNoInitials} /></FixedHeight>
+  </>
 );
 
 export default UserTest;

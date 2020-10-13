@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import Avatar from 'terra-avatar';
+import Avatar, { Generic } from 'terra-avatar';
 
 import { userConfigPropType } from '../utils/propTypes';
 
@@ -29,7 +29,11 @@ const DrawerMenuUser = ({ userConfig, variant }) => (
     <div className={cx('avatar-container')}>
       <div className={cx('avatar-outline')} />
       <div className={cx('avatar-inner')}>
-        <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} />
+        {
+        (userConfig.initials || userConfig.imageSrc)
+          ? <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials || userConfig.name} isAriaHidden />
+          : <Generic alt={userConfig.name} isAriaHidden />
+        }
       </div>
     </div>
     <div className={cx('info-container')}>
