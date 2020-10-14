@@ -1,8 +1,20 @@
 import { Badge } from 'terra-application-navigation/package.json?dev-site-package';
+import { Notice } from '@cerner/terra-docs';
 
 <Badge />
 
 # Terra Application Navigation
+
+<Notice variant='maintenance'>
+
+This component has been moved to [terra-application](/application/terra-application/components/application-navigation) and should be imported from that package. While this is the final major version of this component we will release, this component will continue to receive minor updates until terra adopts react 17.
+
+```diff
+- import ApplicationNavigation from 'terra-application-navigation';
++ import ApplicationNavigation from 'terra-application/lib/application-navigation';
+```
+
+</Notice>
 
 The Terra Application Navigation is a responsive, themeable layout for building applications.
 
@@ -206,6 +218,14 @@ const myTitleConfig = {
 
 The `userConfig` prop allows consumers to set a user associated to the current application context. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint.
 
+<Notice ariaLevel="5">
+
+It is recommended that `initials` prop be provided for all cases if `userConfig` is used. It will be updated to **Required** with the next major version of application navigation, provided via terra-application v2.
+
+*Note: If both `initials` and `imageSrc` are not provided, the avatar will fall back to the generic user avatar. If `initials` are not provided, but `imageSrc` is provided and fails, the avatar will fall back to use first two letters of the provided `name` (not preferred) in place of showing the `initials` (preferred).* 
+
+</Notice>
+
 |Key Name|Type|Is Required|Description|
 |---|---|---|---|
 |`name`|String|**required**|User name to be displayed for the user button and within utilities.
@@ -258,4 +278,3 @@ The ApplicationNavigation has two rendering modes: `standard` and `compact`.
 |`utilityItems`|Content is rendered within ApplicationNavigation's utility popup (as provided by `terra-popup`).|Content is rendered within ApplicationNavigation's navigation drawer.|
 |`navigationItems`|Content is rendered within the ApplicationNavigation's header as tabs.|Content is rendered within ApplicationNavigation's navigation drawer.|
 |`extensionItems`|Content is rendered within ApplicationNavigation's header.|Same as `standard`.|
-

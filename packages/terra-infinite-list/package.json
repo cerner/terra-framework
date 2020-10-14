@@ -1,7 +1,7 @@
 {
   "name": "terra-infinite-list",
   "main": "lib/index.js",
-  "version": "3.31.0",
+  "version": "3.32.0",
   "description": "The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.",
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "react-intl": "^2.8.0"
   },
   "dependencies": {
+    "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "resize-observer-polyfill": "^1.4.1",
