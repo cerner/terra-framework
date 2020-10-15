@@ -2,9 +2,18 @@
 
 ## Unreleased
 
+## 1.37.0 - (October 13, 2020)
+
+* Added
+  * Apply theme context to application-navigation.
+
 * Changed
-  * Replaced references to terra-doc-template with terra-docs
-  * Update terra-avatar to 3.8.0
+  * Replaced references to terra-doc-template with terra-docs.
+  * Update terra-avatar to 3.8.0.
+
+* Fixed
+  * Corrected ApplicationNavigation TabCount consolidation logic.
+  * Removed dependency on terra-application.
 
 ## 1.36.0 - (September 29, 2020)
 
