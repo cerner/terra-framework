@@ -1,7 +1,5 @@
 {
   "Terra.datePicker.dateFormat": "س‌س‌س‌س/ي‌ي/ش‌ش",
-  "Terra.datePicker.separator": "/",
   "Terra.datePicker.today": "اليوم",
-  "Terra.datePicker.openCalendar": "فتح التقويم",
-  "Terra.datePicker.dateFormatOrder": "DMY"
+  "Terra.datePicker.openCalendar": "فتح التقويم"
 }

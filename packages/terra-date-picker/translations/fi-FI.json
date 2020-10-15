@@ -1,13 +1,10 @@
 {
   "Terra.datePicker.dateFormat": "DD.MM.YYYY",
-  "Terra.datePicker.separator": ".",
   "Terra.datePicker.disabled": "Liikuntarajoitteinen",
   "Terra.datePicker.openCalendar": "Avaa Kalenteri",
   "Terra.datePicker.closeCalendar": "Kiinni",
   "Terra.datePicker.today": "Tänään",
-  "Terra.datePicker.dayLabel": "Päivä",
   "Terra.datePicker.monthLabel": "Kuukausi",
   "Terra.datePicker.yearLabel": "Vuosi",
-  "Terra.datePicker.date": "Ðâté",
-  "Terra.datePicker.dateFormatOrder": "DMY"
+  "Terra.datePicker.date": "Ðâté"
 }
