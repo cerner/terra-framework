@@ -245,5 +245,9 @@ DateInputUtil.inputType = {
 };
 DateInputUtil.MinYearValue = 1900;
 DateInputUtil.MaxYearValue = 2100;
+DateInputUtil.keyCode = {
+  KEY_PLUS: 187,
+  KEY_MINUS: 189,
+};
 
 export default DateInputUtil;

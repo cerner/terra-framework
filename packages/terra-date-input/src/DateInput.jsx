@@ -274,13 +274,13 @@ class DateInput extends React.Component {
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
     // prevent e and . characters from being entered into number input on keyDown
-    if (event.keyCode === 69 || event.keyCode === 190) {
+    if (event.keyCode === KeyCode.KEY_E || event.keyCode === KeyCode.KEY_PERIOD) {
       event.preventDefault();
       return;
     }
 
     // prevent + and - characters from being entered into number input on keyDown
-    if (event.keyCode === 189 || event.keyCode === 187) {
+    if (event.keyCode === DateInputUtil.keyCode.KEY_MINUS || event.keyCode === DateInputUtil.keyCode.KEY_PLUS) {
       event.preventDefault();
       return;
     }
@@ -316,13 +316,13 @@ class DateInput extends React.Component {
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
     // prevent e and . characters from being entered into number input on keyDown
-    if (event.keyCode === 69 || event.keyCode === 190) {
+    if (event.keyCode === KeyCode.KEY_E || event.keyCode === KeyCode.KEY_PERIOD) {
       event.preventDefault();
       return;
     }
 
     // prevent + and - characters from being entered into number input on keyDown
-    if (event.keyCode === 189 || event.keyCode === 187) {
+    if (event.keyCode === DateInputUtil.keyCode.KEY_MINUS || event.keyCode === DateInputUtil.keyCode.KEY_PLUS) {
       event.preventDefault();
       return;
     }

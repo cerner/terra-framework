@@ -171,6 +171,12 @@
       font-style: var(--terra-date-input-month-select-placeholder-font-style, italic);
     }
 
+    option:not([value='']) {
+      color: transparent;
+      font-style: normal;
+      text-shadow: 0 0 0 #1c1f21;
+    }
+
     &.disabled {
       border: var(--terra-date-input-month-select-disabled-border, 1px solid #868a8c);
       color: var(--terra-date-input-month-select-disabled-color, #1c1f21);
