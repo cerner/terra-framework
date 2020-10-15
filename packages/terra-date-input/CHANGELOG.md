@@ -6,6 +6,11 @@
   * Restricted year input to be between `1900` and `2100`.
   * Allow users to clear month value by selecting placeholder option value.
 
+## 1.21.0 - (October 13, 2020)
+
+* Changed
+  * Added documentation on mock for `uuid`.
+
 ## 1.20.0 - (October 6, 2020)
 
 * Changed

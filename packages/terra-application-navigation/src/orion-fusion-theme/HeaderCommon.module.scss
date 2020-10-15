@@ -1,0 +1,46 @@
+:local {
+  .orion-fusion-theme {
+    --terra-application-navigation-compact-header-background-color: #014979;
+    --terra-application-navigation-compact-header-background-image: none;
+    --terra-application-navigation-compact-header-hidden-nav-background-color: #383f42;
+    --terra-application-navigation-compact-header-hidden-nav-border: 2px solid #000;
+    --terra-application-navigation-compact-header-hidden-nav-box-shadow: 0 0 20px -5px #000, inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    --terra-application-navigation-compact-header-hidden-nav-item-color: #fff;
+    --terra-application-navigation-compact-header-hidden-nav-item-focus-outline: 2px dashed #fff;
+    --terra-application-navigation-compact-header-menu-button-active-color: rgba(255, 255, 255, 0.5);
+    --terra-application-navigation-compact-header-menu-button-color: rgba(255, 255, 255, 0.8);
+    --terra-application-navigation-compact-header-menu-button-focus-background-color: transparent;
+    --terra-application-navigation-compact-header-menu-button-focus-color: rgba(255, 255, 255, 0.8);
+    --terra-application-navigation-compact-header-menu-button-focus-outline: 2px dashed #fff;
+    --terra-application-navigation-compact-header-menu-button-focus-outline-offset: -2px;
+    --terra-application-navigation-compact-header-menu-button-hover-color: rgba(255, 255, 255, 1);
+    --terra-application-navigation-compact-header-hidden-nav-item-focus-outline-offset: -0.14285rem;
+    --terra-application-navigation-compact-header-hidden-nav-item-text-decoration: underline;
+    --terra-application-navigation-compact-header-skip-focus-background-color: #383f42;
+    --terra-application-navigation-compact-header-skip-focus-border: 2px solid #000;
+    --terra-application-navigation-compact-header-skip-focus-box-shadow: 0 0 20px -5px #000, inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    --terra-application-navigation-compact-header-skip-focus-color: #fff;
+    --terra-application-navigation-compact-header-skip-focus-outline: 2px dashed #fff;
+    --terra-application-navigation-compact-header-skip-focus-outline-offset: 0.71428rem;
+    --terra-application-navigation-compact-header-skip-focus-text-decoration: underline;
+    --terra-application-navigation-compact-header-skip-focus-width: 100%;
+    --terra-application-navigation-compact-header-title-color: rgba(255, 255, 255, 1);
+
+    --terra-application-navigation-header-background-color: #014979;
+    --terra-application-navigation-header-background-image: none;
+    --terra-application-navigation-header-skip-focus-background-color: #383f42;
+    --terra-application-navigation-header-skip-focus-border: 2px solid #000;
+    --terra-application-navigation-header-skip-focus-box-shadow: 0 0 20px -5px #000, inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    --terra-application-navigation-header-skip-focus-color: #fff;
+    --terra-application-navigation-header-skip-focus-outline: 2px dashed #fff;
+    --terra-application-navigation-header-skip-focus-outline-offset: -0.71428rem;
+    --terra-application-navigation-header-skip-focus-text-decoration: underline;
+    --terra-application-navigation-header-skip-focus-width: 100%;
+    --terra-application-navigation-header-title-color: rgba(255, 255, 255, 0.9);
+
+    --terra-application-navigation-toggle-count-background-image: linear-gradient(#ffb20b, #ffc20a);
+    --terra-application-navigation-toggle-count-border: none;
+    --terra-application-navigation-toggle-count-box-shadow: 0 1px 0 0 rgba(3, 43, 70, 0.8), -2px 4px 5px 1px rgba(0, 0, 0, 0.33);
+    --terra-application-navigation-toggle-count-color: #000;
+  }
+}

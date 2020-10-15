@@ -1,3 +1,7 @@
+// Themes
+@import '../clinical-lowlight-theme/ExtensionsCommon.module';
+@import '../orion-fusion-theme/ExtensionsCommon.module';
+
 :local {
   .count {
     background-clip: padding-box;
