@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Fixed failing WDIO tests
+
 ## 6.41.0 - (October 13, 2020)
 
 * Changed
