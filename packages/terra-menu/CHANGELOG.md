@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * Added logic to determine whether a menu item is a top-level item for a nested menu
+  * Added margin styles for regular menu items vs. top-level nested items.
+
 ## 6.41.0 - (October 13, 2020)
 
 * Changed

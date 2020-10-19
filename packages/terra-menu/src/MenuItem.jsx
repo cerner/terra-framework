@@ -187,18 +187,19 @@ class MenuItem extends React.Component {
     }
 
     const markAsSelected = this.state.isSelected || (isGroupItem && isSelected);
+    const textContainer = <div className={cx('text')}>{text}</div>;
+    const hasChevron = subMenuItems.length > 0;
 
     const itemClassNames = cx([
       'item',
       { selected: markAsSelected },
       { 'is-disabled': isDisabled },
+      { 'is-top-level': hasChevron },
       // eslint-disable-next-line quote-props
       { 'active': this.state.isActive },
       attributes.className,
     ]);
 
-    const textContainer = <div className={cx('text')}>{text}</div>;
-    const hasChevron = subMenuItems.length > 0;
     let content = textContainer;
     if (hasChevron || isSelectableMenu || isInstructionsForUse) {
       let fitStartIcon = null;
