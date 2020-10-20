@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.21.0 - (October 13, 2020)
+
+* Changed
+  * Added documentation on mock for `uuid`.
+
 ## 1.20.0 - (October 6, 2020)
 
 * Changed

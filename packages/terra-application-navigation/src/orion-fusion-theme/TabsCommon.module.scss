@@ -1,0 +1,28 @@
+:local {
+  .orion-fusion-theme {
+    --terra-application-navigation-tab-active-background-color: rgba(3, 43, 70, 0.4);
+    --terra-application-navigation-tab-active-color: rgba(255, 255, 255, 0.5);
+    --terra-application-navigation-tab-background-color: transparent;
+    --terra-application-navigation-tab-box-shadow: inset 1px 0 0 0 #032b46, inset 2px 0 0 0 #116ba3;
+    --terra-application-navigation-tab-color: rgba(255, 255, 255, 0.8);
+    --terra-application-navigation-tab-count-background-image: linear-gradient(#ffb20b, #ffc20a);
+    --terra-application-navigation-tab-count-border: none;
+    --terra-application-navigation-tab-count-box-shadow: 0 2px 0 0 rgba(3, 43, 70, 0.8), 0 3px 5px 1px rgba(0, 0, 0, 0.26);
+    --terra-application-navigation-tab-count-color: #000;
+    --terra-application-navigation-tab-current-box-shadow: inset 1px 0 0 0 #116ba3, inset 2px 0 0 0 #032b46;
+    --terra-application-navigation-tab-current-color: #fff;
+    --terra-application-navigation-tab-current-inner-background-color: rgba(3, 43, 70, 0.2);
+    --terra-application-navigation-tab-current-inner-background-image: linear-gradient(to right, #0e6ea7 0%, #1889ca 18%, #3797d0 50%, #1889ca 82%, #0e6ea7 100%);
+    --terra-application-navigation-tab-current-inner-background-size: 100% 5px;
+    --terra-application-navigation-tab-current-last-box-shadow: inset 1px 0 0 0 #116ba3, inset 2px 0 0 0 #032b46, inset -1px 0 0 0 #116ba3, inset -2px 0 0 0 #032b46;
+    --terra-application-navigation-tab-focus-background-color: transparent;
+    --terra-application-navigation-tab-focus-outline: 2px dashed #fff;
+    --terra-application-navigation-tab-focus-outline-offset: -5px;
+    --terra-application-navigation-tab-hover-background-color: rgba(3, 43, 70, 0.2);
+    --terra-application-navigation-tab-hover-color: #fff;
+    --terra-application-navigation-tab-inner-background-size: 0 5px;
+    --terra-application-navigation-tab-inner-padding-bottom: 1.143rem;
+    --terra-application-navigation-tab-inner-padding-top: 1.143rem;
+    --terra-application-navigation-tab-last-box-shadow: inset 1px 0 0 0 #032b46, inset 2px 0 0 0 #116ba3, inset -1px 0 0 0 #116ba3, inset -2px 0 0 0 #032b46;  
+  }
+}
