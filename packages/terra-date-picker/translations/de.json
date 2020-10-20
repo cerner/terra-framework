@@ -12,6 +12,5 @@
   "Terra.datePicker.nextMonth": "Nächster Monat",
   "Terra.datePicker.previousMonth": "Letzter Monat",
   "Terra.datePicker.calendarInstructions": "Verwenden Sie die Pfeiltasten, um die Auswahl zu ändern. Drücken Sie die Eingabetaste, um ein Datum zu wählen. Drücken Sie die Esc-Taste, um die Datumsauswahl zu schließen.",
-  "Terra.datePicker.dateFormatOrder": "DMY",
   "Terra.datePicker.dateFormatLabel": "Datumsformat:"
 }

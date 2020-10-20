@@ -177,7 +177,7 @@ const DatePickerInput = (props) => {
   const additionalInputProps = { ...customProps, ...inputAttributes };
   const momentDateFormat = DateUtil.getFormatByLocale(intl.locale);
   const dateValue = DateUtil.convertToISO8601(value, momentDateFormat);
-  const dateFormatOrder = intl.formatMessage({ id: 'Terra.datePicker.dateFormatOrder' });
+  const dateFormatOrder = DateUtil.getDateFormatOrder(momentDateFormat);
 
   const setDayRef = useCallback(node => {
     dayInputRef.current = node;

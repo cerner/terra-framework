@@ -12,6 +12,5 @@
   "Terra.datePicker.nextMonth": "Next month",
   "Terra.datePicker.previousMonth": "Previous month",
   "Terra.datePicker.calendarInstructions": "To change the selection, use the arrow keys. Press Enter to select a date. Press Escape to close the date picker pop-up.",
-  "Terra.datePicker.dateFormatOrder": "YMD",
   "Terra.datePicker.dateFormatLabel": "Date Format:"
 }

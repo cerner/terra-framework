@@ -12,6 +12,5 @@
   "Terra.datePicker.nextMonth": "Mois suivant",
   "Terra.datePicker.previousMonth": "Mois précédent",
   "Terra.datePicker.calendarInstructions": "Pour modifier la sélection, utilisez les touches fléchées. Appuyez sur la touche Entrée pour sélectionner une date. Appuyez sur la touche Échap pour fermer la fenêtre contextuelle du sélecteur de dates.",
-  "Terra.datePicker.dateFormatOrder": "DMY",
   "Terra.datePicker.dateFormatLabel": "Format de date:"
 }

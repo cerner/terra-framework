@@ -144,6 +144,24 @@ class DateUtil {
   }
 
   /**
+   * Gets the date format order from moment's long date format.
+   * @param {string} momentDateFormat - Moment's long date format.
+   * @return {string} - The date format order. Possible Values (MDY, DMY, YMD)
+   */
+  static getDateFormatOrder(momentDateFormat) {
+    let dateFormatOrder;
+    if (momentDateFormat === 'MM/DD/YYYY') {
+      dateFormatOrder = DateUtil.dateOrder.MDY;
+    } else if (momentDateFormat === 'DD/MM/YYYY') {
+      dateFormatOrder = DateUtil.dateOrder.DMY;
+    } else if (momentDateFormat === 'YYYY/MM/DD') {
+      dateFormatOrder = DateUtil.dateOrder.YMD;
+    }
+
+    return dateFormatOrder;
+  }
+
+  /**
    * Returns an object consisting of date input values based on the date format.
    * @param {string} dateOrder - String containing the date input order. Possible values (MDY, DMY, YMD)
    * @param {string} value - The date/placeholder string.

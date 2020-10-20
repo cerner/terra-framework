@@ -313,51 +313,6 @@ exports[`correctly applies the theme context className 1`] = `
                           </VisuallyHiddenText>
                           <Input
                             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-                            aria-label="Terra.datePicker.yearLabel"
-                            aria-required={false}
-                            className="date-input-year"
-                            disabled={false}
-                            isIncomplete={false}
-                            isInvalid={false}
-                            maxLength="4"
-                            name="terra-date-year-date-input"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            pattern="\\\\d*"
-                            refCallback={[Function]}
-                            required={false}
-                            size="4"
-                            type="text"
-                            value="2017"
-                          >
-                            <input
-                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-                              aria-label="Terra.datePicker.yearLabel"
-                              aria-required={false}
-                              className="form-input orion-fusion-theme date-input-year"
-                              disabled={false}
-                              maxLength="4"
-                              name="terra-date-year-date-input"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              pattern="\\\\d*"
-                              required={false}
-                              size="4"
-                              type="text"
-                              value="2017"
-                            />
-                          </Input>
-                          <span
-                            className="date-spacer"
-                          >
-                            Terra.datePicker.separator
-                          </span>
-                          <Input
-                            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                             aria-label="Terra.datePicker.monthLabel"
                             aria-required={false}
                             className="date-input-month"
@@ -439,6 +394,51 @@ exports[`correctly applies the theme context className 1`] = `
                               size="2"
                               type="text"
                               value="01"
+                            />
+                          </Input>
+                          <span
+                            className="date-spacer"
+                          >
+                            Terra.datePicker.separator
+                          </span>
+                          <Input
+                            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                            aria-label="Terra.datePicker.yearLabel"
+                            aria-required={false}
+                            className="date-input-year"
+                            disabled={false}
+                            isIncomplete={false}
+                            isInvalid={false}
+                            maxLength="4"
+                            name="terra-date-year-date-input"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            pattern="\\\\d*"
+                            refCallback={[Function]}
+                            required={false}
+                            size="4"
+                            type="text"
+                            value="2017"
+                          >
+                            <input
+                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                              aria-label="Terra.datePicker.yearLabel"
+                              aria-required={false}
+                              className="form-input orion-fusion-theme date-input-year"
+                              disabled={false}
+                              maxLength="4"
+                              name="terra-date-year-date-input"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              pattern="\\\\d*"
+                              required={false}
+                              size="4"
+                              type="text"
+                              value="2017"
                             />
                           </Input>
                         </div>
