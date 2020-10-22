@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import TimeInputField from '../../../../TimeInputField';
-import styles from '../common/TimeInput.test.module.scss';
+import TimeInputField from 'terra-time-input/lib/TimeInputField';
+import TimeUtil from 'terra-time-input/lib/TimeUtil';
+import styles from './TimeInputDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -20,9 +21,7 @@ const TimeInputFieldDefault = () => {
   };
 
   return (
-    <div className={cx('content-wrapper')}>
-      <button type="button" id="validity-toggle" onClick={handleInvalidButtonClick}>Toggle Validity</button>
-      <button type="button" id="incomplete-toggle" onClick={handleIncompleteButtonClick}>Toggle Incomplete</button>
+    <div className={cx('time-wrapper')}>
       <TimeInputField
         timeInputId="timeInputField"
         name="time-input-field"
@@ -32,7 +31,10 @@ const TimeInputFieldDefault = () => {
         required={required}
         error="Error message."
         help="Help message."
+        variant={TimeUtil.FORMAT_12_HOUR}
       />
+      <button type="button" id="validity-toggle" onClick={handleInvalidButtonClick}>Toggle Validity</button>
+      <button type="button" id="incomplete-toggle" onClick={handleIncompleteButtonClick}>Toggle Incomplete</button>
     </div>
   );
 };

@@ -1,5 +1,43 @@
 
+import { Badge } from 'terra-time-input/package.json?dev-site-package';
+
 import TimeInputFieldPropsTable from 'terra-time-input/src/TimeInputField?dev-site-props-table';
+
+import TimeInputFieldExample from '../example/TimeInputField?dev-site-example';
+import RequiredTimeInputFieldExample from '../example/RequiredTimeInputField?dev-site-example'
+import HideRequiredTimeInputFieldExample from '../example/HideRequiredTimeInputField?dev-site-example';
+import InlineTimeInputFieldExample from '../example/InlineTimeInputField?dev-site-example';
+import OptionalTimeInputFieldExample from '../example/OptionalTimeInputField?dev-site-example';
+import TimeInputFieldSecondExample from '../example/TimeInputFieldSecond?dev-site-example';
+import TimeInputFieldTwelveHourExample from '../example/TimeInputFieldTwelveHour?dev-site-example';
+import TimeInputFieldSecondWithTwelveHourExample from '../example/TimeInputFieldSecondWithTwelveHour?dev-site-example';
+
+<Badge />
+
+# Terra Time Input Field
+
+TimeInputField is a component of terra-time-input that provides a container for rendering the related time inputs. TimeInputField includes displays for help text, error text, required or optional indication, and invalid states.
+
+## Usage
+
+```jsx
+import TimeInputField from 'terra-time-input/lib/TimeInputField';
+```
+
+## Component Features
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+
+## Examples
+<TimeInputFieldExample title="Time Input Field" />
+<RequiredTimeInputFieldExample title="Required Time Input Field" />
+<HideRequiredTimeInputFieldExample title="Hide Required Time Input Field" />
+<InlineTimeInputFieldExample title="Inline Time Input Field" />
+<OptionalTimeInputFieldExample title="Optional Time Input Field" />
+<TimeInputFieldSecondExample title="Time Input Field Second" />
+<TimeInputFieldTwelveHourExample title="Time Input Field - 12 Hour" />
+<TimeInputFieldSecondWithTwelveHourExample title="Time Input Field Second - 12 Hour" />
 
 ## Time Input Field Props Table 
 <TimeInputFieldPropsTable />

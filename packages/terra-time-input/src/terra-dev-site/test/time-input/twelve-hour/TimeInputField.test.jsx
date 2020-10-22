@@ -24,9 +24,9 @@ const TimeInputFieldDefault = () => {
       <button type="button" id="validity-toggle" onClick={handleInvalidButtonClick}>Toggle Validity</button>
       <button type="button" id="incomplete-toggle" onClick={handleIncompleteButtonClick}>Toggle Incomplete</button>
       <TimeInputField
-        timeInputId="timeInput"
-        name="time-input"
-        label="Enter Time"
+        timeInputId="timeInputField"
+        name="time-input-infield"
+        label="Label text"
         isInvalid={isInvalid}
         isIncomplete={isIncomplete}
         required={required}

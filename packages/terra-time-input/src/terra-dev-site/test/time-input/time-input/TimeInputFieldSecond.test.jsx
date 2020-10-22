@@ -30,6 +30,7 @@ const TimeInputFieldDefault = () => {
         isInvalid={isInvalid}
         isIncomplete={isIncomplete}
         required={required}
+        showSeconds
         error="Error message."
         help="Help message."
       />

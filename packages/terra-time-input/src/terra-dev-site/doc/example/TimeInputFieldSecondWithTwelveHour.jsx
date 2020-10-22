@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import TimeInputField from '../../../../TimeInputField';
-import styles from '../common/TimeInput.test.module.scss';
+import TimeInputField from 'terra-time-input/lib/TimeInputField';
+import TimeUtil from 'terra-time-input/lib/TimeUtil';
+import styles from './TimeInputDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
-const TimeInputFieldDefault = () => {
+const TimeInputFieldExample = () => {
+  const [value, setValue] = useState('');
   const [isInvalid, setIsInvalid] = useState(false);
   const [isIncomplete, setIsIncomplete] = useState(false);
   const [required, setRequired] = useState(false);
@@ -20,21 +22,26 @@ const TimeInputFieldDefault = () => {
   };
 
   return (
-    <div className={cx('content-wrapper')}>
-      <button type="button" id="validity-toggle" onClick={handleInvalidButtonClick}>Toggle Validity</button>
-      <button type="button" id="incomplete-toggle" onClick={handleIncompleteButtonClick}>Toggle Incomplete</button>
+    <div className={cx('time-wrapper')}>
       <TimeInputField
         timeInputId="timeInputField"
         name="time-input-field"
         label="Label text"
+        value={value}
+        onChange={(event, timeString) => setValue(timeString)}
         isInvalid={isInvalid}
         isIncomplete={isIncomplete}
         required={required}
         error="Error message."
         help="Help message."
+        showSeconds
+        variant={TimeUtil.FORMAT_12_HOUR}
       />
+      <p>{`TimeInputField Value: ${value}`}</p>
+      <button type="button" id="validity-toggle" onClick={handleInvalidButtonClick}>Toggle Validity</button>
+      <button type="button" id="incomplete-toggle" onClick={handleIncompleteButtonClick}>Toggle Incomplete</button>
     </div>
   );
 };
 
-export default TimeInputFieldDefault;
+export default TimeInputFieldExample;

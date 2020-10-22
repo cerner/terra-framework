@@ -25,13 +25,15 @@ const TimeInputFieldDefault = () => {
       <button type="button" id="incomplete-toggle" onClick={handleIncompleteButtonClick}>Toggle Incomplete</button>
       <TimeInputField
         timeInputId="timeInputField"
-        name="time-input-field"
+        name="time-input-infield"
         label="Label text"
         isInvalid={isInvalid}
         isIncomplete={isIncomplete}
         required={required}
         error="Error message."
         help="Help message."
+        variant="12-hour"
+        showSeconds
       />
     </div>
   );
