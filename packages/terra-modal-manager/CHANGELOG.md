@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Automatically hide expand button at certain breakpoints.
+
 ## 6.41.0 - (October 13, 2020)
 
 * Changed

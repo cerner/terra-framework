@@ -49,6 +49,16 @@ const widthFromSize = {
 };
 
 class ModalManager extends React.Component {
+  static checkIsExpandable() {
+    if (document.querySelector(['[data-terra-abstract-modal]'])) {
+      const { height, width } = document.querySelector(['[data-terra-abstract-modal]']).getBoundingClientRect();
+      if (window.innerHeight === height + 20 && window.innerWidth === width + 20) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   constructor(props) {
     super(props);
 
@@ -85,6 +95,7 @@ class ModalManager extends React.Component {
       <div {...customProps} className={containerClassNames}>
         {manager.children.components}
         <AbstractModal
+          data-terra-abstract-modal
           isOpen={manager.disclosure.isOpen}
           isFullscreen={isFullscreen}
           classNameModal={cx(classArray)}
@@ -104,7 +115,7 @@ class ModalManager extends React.Component {
                     title={headerDataForPresentedComponent.title}
                     onClose={manager.closeDisclosure}
                     onBack={manager.disclosureComponentKeys.length > 1 ? manager.dismissPresentedComponent : undefined}
-                    onMaximize={manager.maximizeDisclosure}
+                    onMaximize={ModalManager.checkIsExpandable() ? manager.maximizeDisclosure : undefined}
                     onMinimize={manager.minimizeDisclosure}
                   >
                     {headerDataForPresentedComponent.collapsibleMenuView}

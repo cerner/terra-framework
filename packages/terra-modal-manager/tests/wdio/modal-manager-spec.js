@@ -411,14 +411,14 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
     });
 
     it('presents the maximize button within the managed header', () => {
-      browser.click('#root-component .disclose-large');
+      browser.click('#root-component .disclose-medium');
 
       browser.waitForVisible('[class*="left-buttons"] > *:first-child', 500);
       Terra.validates.element({ selector });
     });
 
     it('maximizes the disclosure when the maximize button is pressed', () => {
-      browser.click('#root-component .disclose-large');
+      browser.click('#root-component .disclose-medium');
 
       browser.waitForVisible('[class*="left-buttons"] > *:first-child', 500);
       browser.click('[class*="left-buttons"] > *:first-child');
@@ -435,7 +435,7 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
     });
 
     it('presents the minimize button within the managed header', () => {
-      browser.click('#root-component .disclose-large');
+      browser.click('#root-component .disclose-medium');
 
       browser.waitForVisible('[class*="left-buttons"] > *:first-child', 500);
       browser.click('[class*="left-buttons"] > *:first-child');
@@ -443,7 +443,7 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
     });
 
     it('maximizes the disclosure when the minimize button is pressed', () => {
-      browser.click('#root-component .disclose-large');
+      browser.click('#root-component .disclose-medium');
 
       browser.waitForVisible('[class*="left-buttons"] > *:first-child', 500);
       browser.click('[class*="left-buttons"] > *:first-child');
