@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import {
   getDay,
@@ -44,7 +44,7 @@ class Day extends React.Component {
      * @private
      * Internationalization object with translation APIs. Provided by `injectIntl`.
      */
-    intl: intlShape,
+    intl: PropTypes.shape({}),
     /**
      * Month value for the date entered.
      */

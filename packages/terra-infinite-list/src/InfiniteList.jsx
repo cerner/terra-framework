@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import ResizeObserver from 'resize-observer-polyfill';
 import List from 'terra-list';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
@@ -33,7 +33,7 @@ const propTypes = {
    * @private
    * Internationalization object with translation APIs. Provided by `injectIntl`.
    */
-  intl: intlShape,
+  intl: PropTypes.shape({}),
   /**
    * Determines whether or not the loading indicator is visible and if callbacks are triggered.
    */

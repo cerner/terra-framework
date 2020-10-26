@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -21,7 +21,7 @@ const propTypes = {
    * @private
    * Internationalization object with translation APIs. Provided by `injectIntl`.
    */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({}).isRequired,
   /**
    * Whether or not the menu item is selection.
    * */

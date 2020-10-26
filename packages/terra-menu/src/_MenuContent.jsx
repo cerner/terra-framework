@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import List from 'terra-list';
 import IconLeft from 'terra-icon/lib/icon/IconLeft';
@@ -19,7 +19,7 @@ const propTypes = {
   /**
    * The intl object to be injected for translations. Provided by the injectIntl function.
    */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({}).isRequired,
   /**
    * Title the should be displayed in header.
    */

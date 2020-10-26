@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
@@ -18,7 +18,7 @@ const propTypes = {
    * @private
    * Internationalization object with translation APIs. Provided by `injectIntl`.
    */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({}).isRequired,
   /**
    * An array of configuration for each menu item.
    */
