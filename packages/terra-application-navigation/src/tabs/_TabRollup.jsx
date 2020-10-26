@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 import TabCount from './_TabCount';
 import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
@@ -48,7 +48,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs.
    */
-  intl: intlShape,
+  intl: PropTypes.shape({}),
 };
 
 const defaultProps = {

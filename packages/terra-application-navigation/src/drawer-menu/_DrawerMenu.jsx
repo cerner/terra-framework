@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconQuestionOutline from 'terra-icon/lib/icon/IconQuestionOutline';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 import DrawerMenuTitle from './_DrawerMenuTitle';
 import DrawerMenuLinkItem from './_DrawerMenuLinkItem';
@@ -80,7 +80,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs
    */
-  intl: intlShape,
+  intl: PropTypes.shape({}),
 };
 
 const defaultProps = {

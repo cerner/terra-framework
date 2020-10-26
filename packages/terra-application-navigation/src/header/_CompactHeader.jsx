@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import ToggleCount from './_ToggleCount';
 import Extensions from '../extensions/_Extensions';
@@ -102,7 +102,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs.
    */
-  intl: intlShape,
+  intl: PropTypes.shape({}),
   /**
    * An element to render within the Header's utility menu.
    */

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import LodashDebounce from 'lodash.debounce';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import Popup from 'terra-popup';
 
 import Tab from './_Tab';
@@ -43,7 +43,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs.
    */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({}).isRequired,
 };
 
 const defaultProps = {

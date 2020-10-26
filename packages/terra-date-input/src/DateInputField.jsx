@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -68,7 +68,7 @@ const propTypes = {
    * @private
    * Intl object injected from injectIntl
    */
-  intl: intlShape,
+  intl: PropTypes.shape({}),
   /**
    * Attributes to attach to the legend.
    */

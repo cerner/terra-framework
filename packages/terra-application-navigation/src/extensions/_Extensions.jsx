@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import Popup from 'terra-popup';
 
 import PopupMenu from '../common/_PopupMenu';
@@ -35,7 +35,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs
    */
-  intl: intlShape,
+  intl: PropTypes.shape({}),
 };
 
 const defaultProps = {

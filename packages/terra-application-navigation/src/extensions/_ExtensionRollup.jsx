@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import IconExtensions from 'terra-icon/lib/icon/IconExtensions';
 
 import ExtensionCount from './_ExtensionCount';
@@ -32,7 +32,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs
    */
-  intl: intlShape,
+  intl: PropTypes.shape({}),
 };
 
 const defaultProps = {

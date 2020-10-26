@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import uuidv4 from 'uuid/v4';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import Input from 'terra-form-input';
 import * as KeyCode from 'keycode-js';
 
@@ -35,7 +35,7 @@ const propTypes = {
    * @private
    * Intl object injected from injectIntl
    */
-  intl: intlShape,
+  intl: PropTypes.shape({}),
   /**
   * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
   */

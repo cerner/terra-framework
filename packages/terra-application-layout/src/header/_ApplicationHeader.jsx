@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import ApplicationHeaderLayout from 'terra-application-header-layout';
 import { ApplicationHeaderUtility } from 'terra-application-utility';
@@ -53,7 +53,7 @@ const propTypes = {
   /**
    * Internationalization object with translation APIs. Provided by `injectIntl`.
    */
-  intl: intlShape,
+  intl: PropTypes.shape({}),
   /**
    * DisclosureManagerDelegate instance automatically provided by a DisclosureManagerProvider.
    */

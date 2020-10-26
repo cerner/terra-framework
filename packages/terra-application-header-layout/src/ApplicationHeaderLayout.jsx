@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import styles from './ApplicationHeaderLayout.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -20,7 +20,7 @@ const propTypes = {
   /**
    * intl object programmatically imported through injectIntl from react-intl.
    * */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({}),
   /**
    * Navigation element to be placed within the fill area of the header.
    * */
