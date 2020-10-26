@@ -322,7 +322,7 @@ class ExampleApplication extends React.Component {
 }
 
 ExampleApplication.propTypes = {
-  intl: PropsTypes.shape({}),
+  intl: PropTypes.shape({}),
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }),

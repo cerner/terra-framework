@@ -53,7 +53,7 @@ const propTypes = {
   /**
    * Internationalization object with translation APIs. Provided by `injectIntl`.
    */
-  intl: PropTypes.shape({}),
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
   /**
    * DisclosureManagerDelegate instance automatically provided by a DisclosureManagerProvider.
    */

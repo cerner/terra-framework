@@ -102,7 +102,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs.
    */
-  intl: PropTypes.shape({}),
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
   /**
    * An element to render within the Header's utility menu.
    */

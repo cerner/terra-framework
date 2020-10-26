@@ -35,7 +35,7 @@ const propTypes = {
    * @private
    * Intl object injected from injectIntl
    */
-  intl: PropTypes.shape({}),
+  intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }),
   /**
   * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
   */

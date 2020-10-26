@@ -33,7 +33,7 @@ const propTypes = {
    * @private
    * Internationalization object with translation APIs. Provided by `injectIntl`.
    */
-  intl: PropTypes.shape({}),
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
   /**
    * Determines whether or not the loading indicator is visible and if callbacks are triggered.
    */

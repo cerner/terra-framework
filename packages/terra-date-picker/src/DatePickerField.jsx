@@ -52,7 +52,7 @@ const propTypes = {
    * @private
    * intl object programmatically imported through injectIntl from react-intl.
    * */
-  intl: PropTypes.shape({}).isRequired,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }).isRequired,
   /**
   * Whether the field displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
   */

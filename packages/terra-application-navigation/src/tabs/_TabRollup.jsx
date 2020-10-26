@@ -48,7 +48,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs.
    */
-  intl: PropTypes.shape({}),
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {

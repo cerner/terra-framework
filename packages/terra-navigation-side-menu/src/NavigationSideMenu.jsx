@@ -18,7 +18,7 @@ const propTypes = {
    * @private
    * Internationalization object with translation APIs. Provided by `injectIntl`.
    */
-  intl: PropTypes.shape({}).isRequired,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
    * An array of configuration for each menu item.
    */

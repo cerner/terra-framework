@@ -19,7 +19,7 @@ const propTypes = {
   /**
    * The intl object to be injected for translations. Provided by the injectIntl function.
    */
-  intl: PropTypes.shape({}).isRequired,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
    * Title the should be displayed in header.
    */

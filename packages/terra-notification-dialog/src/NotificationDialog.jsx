@@ -92,7 +92,7 @@ const propTypes = {
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
-  intl: PropTypes.shape({}),
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {

@@ -18,7 +18,7 @@ const propTypes = {
    * @private
    * intl object programmatically imported through injectIntl from react-intl.
    * */
-  intl: PropTypes.shape({}).isRequired,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
    * If set to true, the modal will rendered as opened
    */

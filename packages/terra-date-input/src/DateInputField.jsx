@@ -68,7 +68,7 @@ const propTypes = {
    * @private
    * Intl object injected from injectIntl
    */
-  intl: PropTypes.shape({}),
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
   /**
    * Attributes to attach to the legend.
    */
