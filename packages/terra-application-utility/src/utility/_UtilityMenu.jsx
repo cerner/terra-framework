@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import IconClose from 'terra-icon/lib/icon/IconClose';
@@ -21,9 +21,10 @@ const propTypes = {
    */
   initialSelectedKey: PropTypes.string.isRequired,
   /**
+   * @private
    * The intl object to be injected for translations. Provided by the injectIntl function.
    */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
    * Indicates if the height is bound to it's parent container.
    */
