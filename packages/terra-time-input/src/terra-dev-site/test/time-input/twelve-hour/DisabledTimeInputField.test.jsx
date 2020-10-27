@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import TimeInputField from '../../../../TimeInputField';
+import TimeUtil from '../../../../TimeUtil';
 import styles from '../common/TimeInput.test.module.scss';
 
 const cx = classNames.bind(styles);
@@ -12,7 +13,8 @@ const TimeInputFieldDefault = () => (
       name="time-input-field"
       label="Label text"
       value="12:00"
-      variant="12-hour"
+      variant={TimeUtil.FORMAT_12_HOUR}
+      help="Help message."
       disabled
     />
   </div>

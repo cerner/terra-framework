@@ -6,6 +6,7 @@ import styles from '../common/TimeInput.test.module.scss';
 const cx = classNames.bind(styles);
 
 const TimeInputFieldDefault = () => {
+  const [value, setValue] = useState('');
   const [isInvalid, setIsInvalid] = useState(false);
   const [isIncomplete, setIsIncomplete] = useState(false);
   const [required, setRequired] = useState(false);
@@ -27,12 +28,15 @@ const TimeInputFieldDefault = () => {
         timeInputId="timeInputField"
         name="time-input-field"
         label="Label text"
+        value={value}
+        onChange={(event, timeString) => setValue(timeString)}
         isInvalid={isInvalid}
         isIncomplete={isIncomplete}
         required={required}
         error="Error message."
         help="Help message."
       />
+      <p>{`TimeInputField Value: ${value}`}</p>
     </div>
   );
 };

@@ -12,6 +12,7 @@ const TimeInputFieldDefault = () => (
       name="time-input-field"
       label="Label text"
       value="12:00"
+      help="Help message."
       disabled
     />
   </div>

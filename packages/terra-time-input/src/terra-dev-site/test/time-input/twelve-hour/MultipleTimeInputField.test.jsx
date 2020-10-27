@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import TimeInputField from 'terra-time-input/lib/TimeInputField';
-import styles from './TimeInputDocCommon.module.scss';
+import TimeInputField from '../../../../TimeInputField';
+import TimeUtil from '../../../../TimeUtil';
+import styles from '../common/TimeInput.test.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -15,16 +16,17 @@ const TimeInputFieldExample = () => {
   };
 
   return (
-    <div className={cx('time-wrapper')}>
+    <div className={cx('content-wrapper')}>
       <TimeInputField
-        timeInputId="primaryTimeInputField"
-        name="primary-time-input-field1"
+        timeInputId="firstTimeInputField"
+        name="first-time-input-field1"
         label="Primary Time Input"
         value={timeInputFieldValue1}
         onChange={(event, timeString) => setTimeInputFieldValue1(timeString)}
         isInline={isInline}
         error="Error message."
         help="Help message."
+        variant={TimeUtil.FORMAT_12_HOUR}
       />
       <TimeInputField
         timeInputId="secondaryTimeInputField"
@@ -35,10 +37,9 @@ const TimeInputFieldExample = () => {
         isInline={isInline}
         error="Error message."
         help="Help message."
+        variant={TimeUtil.FORMAT_12_HOUR}
       />
-      <p>{`Primary TimeInputField Value: ${timeInputFieldValue1}`}</p>
-      <p>{`Secondary TimeInputField Value: ${timeInputFieldValue2}`}</p>
-      <button type="button" id="inline-toggle" onClick={handleInlineButtonClick}>Toggle isInline</button>
+      <button type="button" className={cx('inline-button')} id="inline-toggle" onClick={handleInlineButtonClick}>Toggle isInline</button>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import TimeInputField from '../../../../TimeInputField';
+import TimeUtil from '../../../../TimeUtil';
 import styles from '../common/TimeInput.test.module.scss';
 
 const cx = classNames.bind(styles);
@@ -32,7 +33,7 @@ const TimeInputFieldDefault = () => {
         required={required}
         error="Error message."
         help="Help message."
-        variant="12-hour"
+        variant={TimeUtil.FORMAT_12_HOUR}
         showSeconds
       />
     </div>

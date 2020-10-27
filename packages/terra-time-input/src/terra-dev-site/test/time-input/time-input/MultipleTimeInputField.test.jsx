@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import TimeInputField from 'terra-time-input/lib/TimeInputField';
-import styles from './TimeInputDocCommon.module.scss';
+import TimeInputField from '../../../../TimeInputField';
+import styles from '../common/TimeInput.test.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -36,9 +36,7 @@ const TimeInputFieldExample = () => {
         error="Error message."
         help="Help message."
       />
-      <p>{`Primary TimeInputField Value: ${timeInputFieldValue1}`}</p>
-      <p>{`Secondary TimeInputField Value: ${timeInputFieldValue2}`}</p>
-      <button type="button" id="inline-toggle" onClick={handleInlineButtonClick}>Toggle isInline</button>
+      <button type="button" className={cx('inline-button')} id="inline-toggle" onClick={handleInlineButtonClick}>Toggle isInline</button>
     </div>
   );
 };
