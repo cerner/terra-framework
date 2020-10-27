@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.22.0 - (October 27, 2020)
+
 * Fixed
   * Fixed description id's in DateInput for better accessibility.
 
