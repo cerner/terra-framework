@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
-import Placeholder from 'terra-doc-template/lib/Placeholder';
+import { Placeholder } from '@cerner/terra-docs';
 
 function PopupArrow() {
   const buttonElement = useRef();

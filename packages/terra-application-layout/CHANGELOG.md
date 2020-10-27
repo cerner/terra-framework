@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 5.44.0 - (October 20, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 5.43.0 - (October 13, 2020)
+
+* Changed
+  * Update terra-avatar to 3.8.0
+
 ## 5.42.0 - (August 18, 2020)
 
 * Added
@@ -10,7 +20,7 @@
 * Changed
   * Updated Changelog format
   * Update WDIO screenshot
-  
+
 ## 5.41.0 - (August 11, 2020)
 
 * Changed

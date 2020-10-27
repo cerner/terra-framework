@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 1.21.0 - (October 13, 2020)
+
+* Changed
+  * Added documentation on mock for `uuid`.
+
+## 1.20.0 - (October 6, 2020)
+
+* Changed
+  * Upgrade `form-input` dependency to `^4.4.0` and updated jests.
+
+## 1.19.0 - (September 29, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.18.0 - (September 16, 2020)
 
 * Removed

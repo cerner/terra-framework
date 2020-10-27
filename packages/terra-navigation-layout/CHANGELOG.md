@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 5.27.0 - (October 13, 2020)
+
+* Changed
+  * Removed terra-markdown and terra-toggle dependency.
+
 ## 5.26.0 - (August 4, 2020)
 
 * Changed

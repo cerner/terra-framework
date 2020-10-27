@@ -1,10 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { MemoryRouter, withRouter } from 'react-router-dom';
-import Markdown from 'terra-markdown';
-import ToggleButton from 'terra-toggle-button';
 import NavigationLayout from 'terra-navigation-layout';
-import ConfigReadMe from 'terra-navigation-layout/lib/terra-dev-site/doc/example/NavigationLayoutStandardConfig.md';
 import HeaderExample from 'terra-navigation-layout/lib/terra-dev-site/doc/example/HeaderExample';
 import MenuExample from 'terra-navigation-layout/lib/terra-dev-site/doc/example/MenuExample';
 import Page1Content from 'terra-navigation-layout/lib/terra-dev-site/doc/example/Page1Content';
@@ -101,10 +98,6 @@ const NavigationLayoutStandard = withRouter(({ location }) => (
       <li>Page menus expose navigation to parent menus</li>
       <li>Page content and menus expose Layout-provided functionality</li>
     </ul>
-    <h3>Configuration</h3>
-    <ToggleButton isAnimated closedButtonText="View">
-      <Markdown id="navigation-layout-standard-config" src={ConfigReadMe} />
-    </ToggleButton>
     <h3>{`Browser Location: ${location.pathname}`}</h3>
     <NavigationLayout
       config={config}
