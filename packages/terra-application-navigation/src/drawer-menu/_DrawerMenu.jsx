@@ -116,7 +116,7 @@ const DrawerMenu = ({
   ) : undefined;
 
   const hasNavItems = navigationItems.length;
-  const hasUtils = utilityItems.length || onSelectSettings || onSelectSettings;
+  const hasUtils = utilityItems.length || onSelectSettings || onSelectHelp;
   const hasItems = hasNavItems || hasUtils;
 
   let navItems;

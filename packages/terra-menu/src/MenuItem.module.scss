@@ -67,12 +67,17 @@
     }
   }
 
+  .is-top-level .text {
+    margin-right: var(--terra-menu-item-top-level-text-margin-right, 0);
+  }
+
   .text {
     color: var(--terra-menu-item-text-color, #1c1f21);
-    font-size: var(--terra-menu-item-text-font-size, 13px);
+    font-size: var(--terra-menu-item-text-font-size, 0.928571429rem);
     font-weight: var(--terra-menu-item-text-font-weight, normal);
     line-height: 1.538;
-    margin-left: var(--terra-menu-item-text-margin-left, 10px);
+    margin-left: var(--terra-menu-item-text-margin-left, 0.714285714rem);
+    margin-right: var(--terra-menu-item-text-margin-right, 1.714285714rem);
   }
 
   .checkmark {
@@ -87,9 +92,9 @@
 
   .chevron {
     color: var(--terra-menu-item-chevron-icon-color, #9b9fa1);
-    font-size: var(--terra-menu-item-chevron-icon-font-size, 10px);
-    margin-left: var(--terra-menu-item-chevron-icon-margin-left, 10px);
-    margin-right: var(--terra-menu-item-chevron-icon-margin-right, 10px);
+    font-size: var(--terra-menu-item-chevron-icon-font-size, 0.714285714rem);
+    margin-left: var(--terra-menu-item-chevron-icon-margin-left, 0.714285714rem);
+    margin-right: var(--terra-menu-item-chevron-icon-margin-right, 0.714285714rem);
   }
 
   .start-icon {
