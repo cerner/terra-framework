@@ -163,7 +163,7 @@ class CollapsibleMenuView extends React.Component {
             boundingRef={boundingRef}
             menuWidth={menuWidth}
             isIconOnly
-            text={intl.formatMessage({ id: 'Terra.collapsibleMenuView.more'})}
+            text={intl.formatMessage({ id: 'Terra.collapsibleMenuView.more' })}
             variant="utility"
           />
         </div>

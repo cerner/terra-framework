@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated to support a peer dependency of react-intl v2-v5
+
 ## 2.33.0 - (August 4, 2020)
 
 * Changed

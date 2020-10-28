@@ -139,6 +139,7 @@ const ModalContent = forwardRef((props, ref) => {
       >
         <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
           {text => {
+            // In the latest version of react-intl this param is an array, when previous versions it was a string.
             let useText = text;
             if (Array.isArray(text)) {
               useText = text.join('');
@@ -151,6 +152,7 @@ const ModalContent = forwardRef((props, ref) => {
         {children}
         <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
           {text => {
+            // In the latest version of react-intl this param is an array, when previous versions it was a string.
             let useText = text;
             if (Array.isArray(text)) {
               useText = text.join('');

@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Changed
+  * Updated to support a peer dependency of react-intl v2-v5
+  * Removed `intlShape` imports
+
 ## 2.38.0 - (August 18, 2020)
 
 * Added
@@ -10,7 +14,7 @@
 
 * Changed
   * Updated Changelog format
-  
+
 ## 2.37.0 - (August 4, 2020)
 
 * Changed

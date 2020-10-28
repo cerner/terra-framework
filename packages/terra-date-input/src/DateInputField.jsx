@@ -11,7 +11,6 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import DateInput from './DateInput';
 import DateInputUtil from './DateInputUtil';
 import styles from './DateInputField.module.scss';
-import InfiniteList from '../../terra-infinite-list/src/InfiniteList';
 
 const cx = classNamesBind.bind(styles);
 
