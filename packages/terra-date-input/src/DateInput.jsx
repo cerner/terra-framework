@@ -482,6 +482,8 @@ class DateInput extends React.Component {
       { incomplete: (this.props.isIncomplete && this.props.required && !this.props.isInvalid) },
     ]);
 
+    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.monthAttributes });
+
     return (
       <div className={DateInputMonthWrapperClassNames}>
         <select
@@ -497,7 +499,7 @@ class DateInput extends React.Component {
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}
           disabled={this.props.disabled}
-          aria-describedby={`${this.formatDescriptionId} ${this.props.monthAttributes['aria-describedby']}`}
+          aria-describedby={ariaDescriptionId}
         >
           <option value="" hidden>{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
@@ -531,6 +533,8 @@ class DateInput extends React.Component {
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
 
+    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.dayAttributes });
+
     return (
       <Input
         {...this.props.dayAttributes}
@@ -551,7 +555,7 @@ class DateInput extends React.Component {
         isInvalid={this.props.isInvalid}
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        aria-describedby={`${this.formatDescriptionId} ${this.props.dayAttributes['aria-describedby']}`}
+        aria-describedby={ariaDescriptionId}
       />
     );
   }
@@ -569,6 +573,8 @@ class DateInput extends React.Component {
      */
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
+
+    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.yearAttributes });
 
     return (
       <Input
@@ -590,7 +596,7 @@ class DateInput extends React.Component {
         isInvalid={this.props.isInvalid}
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        aria-describedby={`${this.formatDescriptionId} ${this.props.yearAttributes['aria-describedby']}`}
+        aria-describedby={ariaDescriptionId}
       />
     );
   }
@@ -667,7 +673,7 @@ class DateInput extends React.Component {
       dateValue = `${year}-${month}-${day}`;
     }
 
-    this.formatDescriptionId = (useExternalFormatMask === false) ? `terra-date-picker-description-format-${this.uuid}` : '';
+    this.formatDescriptionId = `terra-date-input-description-format-${this.uuid}`;
 
     const format = DateInputUtil.getDateFormat(this.props);
 

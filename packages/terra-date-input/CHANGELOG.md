@@ -6,6 +6,11 @@
   * Updated to support a peer dependency of react-intl v2-v5
   * Updated `DateInputField` to use just `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
 
+## 1.22.0 - (October 27, 2020)
+
+* Fixed
+  * Fixed description id's in DateInput for better accessibility.
+
 ## 1.21.0 - (October 13, 2020)
 
 * Changed
