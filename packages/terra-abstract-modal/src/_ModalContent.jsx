@@ -138,15 +138,27 @@ const ModalContent = forwardRef((props, ref) => {
         ref={ref}
       >
         <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
-          {text => (
-            <VisuallyHiddenText data-terra-abstract-modal-begin tabIndex="-1" text={text} />
-          )}
+          {text => {
+            let useText = text;
+            if (Array.isArray(text)) {
+              useText = text.join('');
+            }
+            return (
+              <VisuallyHiddenText data-terra-abstract-modal-begin tabIndex="-1" text={useText} />
+            );
+          }}
         </FormattedMessage>
         {children}
         <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
-          {text => (
-            <VisuallyHiddenText text={text} />
-          )}
+          {text => {
+            let useText = text;
+            if (Array.isArray(text)) {
+              useText = text.join('');
+            }
+            return (
+              <VisuallyHiddenText text={useText} />
+            );
+          }}
         </FormattedMessage>
       </div>
     </React.Fragment>

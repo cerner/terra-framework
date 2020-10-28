@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -11,6 +11,7 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import DateInput from './DateInput';
 import DateInputUtil from './DateInputUtil';
 import styles from './DateInputField.module.scss';
+import InfiniteList from '../../terra-infinite-list/src/InfiniteList';
 
 const cx = classNamesBind.bind(styles);
 
@@ -206,23 +207,13 @@ const DateInputField = (props) => {
         {required && (isInvalid || !hideRequired) && (
           <React.Fragment>
             <div aria-hidden="true" className={cx('required')}>*</div>
-            <FormattedMessage id="Terra.date.input.required">
-              {requiredText => (
-                <VisuallyHiddenText text={requiredText} />
-              )}
-            </FormattedMessage>
+            <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.date.input.required' })} />
           </React.Fragment>
         )}
         {legend}
         {required && !isInvalid && hideRequired && <span className={cx('required-hidden')}>*</span>}
         {showOptional && !required
-          && (
-            <FormattedMessage id="Terra.date.input.optional">
-              {optionalText => (
-                <span className={cx('optional')}>{optionalText}</span>
-              )}
-            </FormattedMessage>
-          )}
+          && (<span className={cx('optional')}>{intl.formatMessage({ id: 'Terra.date.input.optional' })}</span>)}
         {!isInvalid && <span className={cx('error-icon-hidden')} />}
       </div>
     </legend>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
 import { matchPath } from 'react-router-dom';
 import * as KeyCode from 'keycode-js';
-import { FormattedMessage } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import TabMenuList from './_TabMenuList';
 import TabMenuDisplay from './_TabMenuDisplay';
 
@@ -16,6 +16,11 @@ const propTypes = {
    * Should the menu be hidden, set to true if there are no hidden items.
    */
   isHidden: PropTypes.bool,
+  /**
+   * @private
+   * Object containing intl APIs
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
   /**
    * The location as provided by the `withRouter()` HOC.
    */
@@ -95,22 +100,18 @@ class TabMenu extends React.Component {
     }
 
     return (
-      <FormattedMessage id="Terra.application.tabs.more">
-        {text => (
-          <TabMenuDisplay
-            onClick={this.handleOnClick}
-            onKeyDown={this.handleOnKeyDown}
-            popup={popup}
-            refCallback={this.setTargetRef}
-            isHidden={this.props.isHidden}
-            text={childText || text}
-            isSelected={isSelected}
-            icon={icon}
-            key="application-tab-more"
-            data-application-tabs-more
-          />
-        )}
-      </FormattedMessage>
+      <TabMenuDisplay
+        onClick={this.handleOnClick}
+        onKeyDown={this.handleOnKeyDown}
+        popup={popup}
+        refCallback={this.setTargetRef}
+        isHidden={this.props.isHidden}
+        text={childText || this.props.intl.formatMessage({ id: 'Terra.application.tabs.more' })}
+        isSelected={isSelected}
+        icon={icon}
+        key="application-tab-more"
+        data-application-tabs-more
+      />
     );
   }
 
@@ -143,4 +144,4 @@ class TabMenu extends React.Component {
 
 TabMenu.propTypes = propTypes;
 
-export default TabMenu;
+export default injectIntl(TabMenu);
