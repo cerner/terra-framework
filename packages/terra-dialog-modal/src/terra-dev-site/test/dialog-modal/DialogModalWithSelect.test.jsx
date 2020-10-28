@@ -5,7 +5,7 @@ import ActionFooter from 'terra-action-footer';
 import Select from 'terra-form-select';
 import classNames from 'classnames/bind';
 import DialogModal from '../../../DialogModal';
-import styles from './DiaglogModalWithSelect.test.module.scss';
+import styles from './DialogModalWithSelect.test.module.scss';
 
 const cx = classNames.bind(styles);
 
