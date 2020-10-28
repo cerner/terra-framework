@@ -80,20 +80,17 @@ describe('Dialog Modal', () => {
       browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/diaglog-modal-with-select');
       browser.click('#trigger-dialog-modal');
       browser.click('[data-terra-form-select-toggle]');
+      Terra.validates.screenshot('Select Opened inside a modal', { selector: '#root' });
     });
-
-    Terra.it.matchesScreenshot('Select Opened inside a modal', { selector: '#root' });
 
     it('Closes only the select on pressing Escape', () => {
       browser.keys(['Escape']);
+      Terra.validates.screenshot('Select Closed', { selector: '#root' });
     });
-
-    Terra.it.matchesScreenshot('Select Closed', { selector: '#root' });
 
     it('Closes the modal on pressing Escape', () => {
       browser.keys(['Escape']);
+      Terra.validates.screenshot('Modal Closed', { selector: '#root' });
     });
-
-    Terra.it.matchesScreenshot('Modal Closed', { selector: '#root' });
   });
 });
