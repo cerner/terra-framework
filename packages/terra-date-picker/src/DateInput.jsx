@@ -90,6 +90,10 @@ const propTypes = {
   * for accessibility.
   */
   ariaLabel: PropTypes.string,
+  /**
+   * Callback ref to pass into the input dom element.
+   */
+  inputRefCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -169,6 +173,7 @@ class DatePickerInput extends React.Component {
       useExternalFormatMask,
       value,
       ariaLabel,
+      inputRefCallback,
       ...customProps
     } = this.props;
 
@@ -222,6 +227,7 @@ class DatePickerInput extends React.Component {
           />
           <Input
             {...additionalInputProps}
+            ref={inputRefCallback}
             className={inputClasses}
             type="text"
             name={'terra-date-'.concat(name)}

@@ -480,6 +480,7 @@ class DatePicker extends React.Component {
                 useExternalFormatMask={useExternalFormatMask}
               />
             )}
+            customInputRef="inputRefCallback"
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}
             filterDate={this.handleFilterDate}
             includeDates={DateUtil.filterInvalidDates(includeDates)}
