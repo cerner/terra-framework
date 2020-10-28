@@ -77,7 +77,7 @@ describe('Dialog Modal', () => {
 
   describe('Closing Select inside modal using escape', () => {
     it('Opens the Select inside the modal', () => {
-      browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/diaglog-modal-with-select');
+      browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/dialog-modal-with-select');
       browser.click('#trigger-dialog-modal');
       browser.click('[data-terra-form-select-toggle]');
       Terra.validates.screenshot('Select Opened inside a modal', { selector: '#root' });
