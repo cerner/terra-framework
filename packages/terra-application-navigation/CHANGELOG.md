@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.39.0 - (October 27, 2020)
+
 * Fixed
   * Corrected presentation of Help utility item in DrawerMenu when it is the only utility item present.
 
