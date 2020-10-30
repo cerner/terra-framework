@@ -4,6 +4,7 @@ import React, {
   useState,
   useEffect,
   useRef,
+  useMemo,
 } from 'react';
 import {
   KEY_LEFT,
@@ -175,7 +176,7 @@ const DatePickerInput = (props) => {
   delete customProps.shouldShowPicker;
 
   const additionalInputProps = { ...customProps, ...inputAttributes };
-  const momentDateFormat = DateUtil.getFormatByLocale(intl.locale);
+  const momentDateFormat = useMemo(() => DateUtil.getFormatByLocale(intl.locale), [intl.locale]);
   const dateValue = DateUtil.convertToISO8601(value, momentDateFormat);
   const dateFormatOrder = DateUtil.getDateFormatOrder(momentDateFormat);
 
@@ -493,8 +494,8 @@ const DatePickerInput = (props) => {
   };
 
   const handleOnButtonClick = (event) => {
-    const attributes = { ...inputAttributes };
-    if (!attributes.readOnly && onCalendarButtonClick && onClick) {
+    const readOnly = inputAttributes?.readOnly;
+    if (!readOnly && onCalendarButtonClick && onClick) {
       onCalendarButtonClick(event, onClick);
     }
   };

@@ -166,29 +166,29 @@ class DateUtil {
    * @param {string} dateOrder - String containing the date input order. Possible values (MDY, DMY, YMD)
    * @param {string} value - The date/placeholder string.
    * @param {string} separator - The date separator.
+   * @return {Object} - The object containing the day, month and year values.
    */
   static getDateInputValues(dateOrder, value, separator) {
-    if (!value) {
-      return false;
-    }
+    let day = '';
+    let month = '';
+    let year = '';
 
-    let day;
-    let month;
-    let year;
-    const dateInputParts = value.split(separator);
+    if (value) {
+      const dateInputParts = value.split(separator);
 
-    switch (dateOrder) {
-      case DateUtil.dateOrder.DMY:
-        [day, month, year] = dateInputParts;
-        break;
-      case DateUtil.dateOrder.MDY:
-        [month, day, year] = dateInputParts;
-        break;
-      case DateUtil.dateOrder.YMD:
-        [year, month, day] = dateInputParts;
-        break;
-      default:
-        [year, day, month] = dateInputParts;
+      switch (dateOrder) {
+        case DateUtil.dateOrder.DMY:
+          [day, month, year] = dateInputParts;
+          break;
+        case DateUtil.dateOrder.MDY:
+          [month, day, year] = dateInputParts;
+          break;
+        case DateUtil.dateOrder.YMD:
+          [year, month, day] = dateInputParts;
+          break;
+        default:
+          [day, month, year] = ['', '', ''];
+      }
     }
 
     return { day, month, year };
