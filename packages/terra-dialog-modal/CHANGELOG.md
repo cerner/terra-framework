@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Added Test for closing select inside a modal using escape.
 
 ## 3.52.0 - (October 20, 2020)
 
