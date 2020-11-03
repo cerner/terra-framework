@@ -19,18 +19,18 @@ const propTypes = {
   /**
    * Determines if the Pill List rolls up or not.
    */
-  isCollapsible: PropTypes.bool,
+  // isCollapsible: PropTypes.bool,
 };
 
 const defaultProps = {
-  isCollapsible: false,
+  // isCollapsible: false,
 };
 
 const PillList = (props) => {
   const {
     ariaLabel,
     children,
-    isCollapsible
+    // isCollapsible,
   } = props;
   const theme = React.useContext(ThemeContext);
   const PillListClassNames = cx([

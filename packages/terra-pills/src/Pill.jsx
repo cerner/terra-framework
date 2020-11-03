@@ -86,10 +86,23 @@ const Pill = (props) => {
 
   const getPillNode = () => pillRef.current;
 
+  const pillProps = {};
+  if (popupConfig || onRemove) {
+    pillProps.tabIndex = '0';
+    pillProps.onKeyDown = handleOnKeyDown;
+    pillProps.onMouseDown = handleOnMouseDown;
+  }
+
   const popupButtonProps = {};
   if (popupConfig) {
     popupButtonProps.onClick = handleOnClick;
     popupButtonProps.role = 'button';
+  }
+
+  const removeButtonProps = {};
+  if (onRemove) {
+    removeButtonProps.onClick = onRemove;
+    removeButtonProps.role = 'button';
   }
 
   const theme = React.useContext(ThemeContext);
@@ -111,11 +124,9 @@ const Pill = (props) => {
   return (
     <>
       <div
+        {...pillProps}
         className={pillClassNames}
         ref={pillRef}
-        onKeyDown={handleOnKeyDown}
-        onMouseDown={handleOnMouseDown}
-        tabIndex="0"
       >
         <div
           {...popupButtonProps}
@@ -125,9 +136,8 @@ const Pill = (props) => {
         </div>
         {onRemove && (
           <div
+            {...removeButtonProps}
             className={removeButtonClassNames}
-            onClick={onRemove}
-            role="button"
           >
             <IconClear height="0.57143rem" width="0.57143rem" />
           </div>
