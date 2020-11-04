@@ -152,9 +152,9 @@ class DateUtil {
     let dateFormatOrder;
     if (momentDateFormat === 'MM/DD/YYYY') {
       dateFormatOrder = DateUtil.dateOrder.MDY;
-    } else if (momentDateFormat === 'DD/MM/YYYY') {
+    } else if (momentDateFormat === 'DD/MM/YYYY' || momentDateFormat === 'DD.MM.YYYY' || momentDateFormat === 'DD-MM-YYYY') {
       dateFormatOrder = DateUtil.dateOrder.DMY;
-    } else if (momentDateFormat === 'YYYY/MM/DD') {
+    } else if (momentDateFormat === 'YYYY-MM-DD') {
       dateFormatOrder = DateUtil.dateOrder.YMD;
     }
 
@@ -225,7 +225,7 @@ class DateUtil {
           {year}
         </>
       );
-    } else {
+    } else if (dateOrder === DateUtil.dateOrder.YMD) {
       formatOrder = (
         <>
           {year}
