@@ -245,6 +245,7 @@ DateInputUtil.inputType = {
 };
 DateInputUtil.MinYearValue = 1900;
 DateInputUtil.MaxYearValue = 2100;
+/* Certain keycodes are missing in the version of keycode-js used, so these keycodes have been added here. */
 DateInputUtil.keyCode = {
   KEY_PLUS: 187,
   KEY_MINUS: 189,
