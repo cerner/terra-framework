@@ -5,6 +5,11 @@
 * Fixed
   * Restricted year input to be between `1900` and `2100`.
   * Allow users to clear month value by selecting placeholder option value.
+  
+## 1.22.0 - (October 27, 2020)
+
+* Fixed
+  * Fixed description id's in DateInput for better accessibility.
 
 ## 1.21.0 - (October 13, 2020)
 

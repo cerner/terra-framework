@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.44.0 - (October 20, 2020)
+
+* Changed
+  * Updated snapshots with right-padding fixes in terra-menu
+
 ## 6.43.0 - (October 13, 2020)
 
 * Changed

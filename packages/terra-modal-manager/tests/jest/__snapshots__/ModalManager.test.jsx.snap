@@ -247,6 +247,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                 closeOnOutsideClick={false}
                 isFullscreen={false}
                 isScrollable={false}
+                onKeyDown={[Function]}
                 onRequestClose={[Function]}
                 role="dialog"
                 rootSelector="#root"
@@ -266,6 +267,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                   aria-label="Modal"
                   aria-modal="true"
                   className="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                  onKeyDown={[Function]}
                   role="dialog"
                   tabIndex="0"
                 >

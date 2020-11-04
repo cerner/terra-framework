@@ -1206,6 +1206,7 @@ exports[`correctly applies the theme context className 1`] = `
               closeOnOutsideClick={false}
               isFullscreen={false}
               isScrollable={false}
+              onKeyDown={[Function]}
               onRequestClose={[Function]}
               role="alertdialog"
               rootSelector="#root"
@@ -1227,6 +1228,7 @@ exports[`correctly applies the theme context className 1`] = `
                 aria-labelledby="notification-dialog-signal-word"
                 aria-modal="true"
                 className="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
+                onKeyDown={[Function]}
                 role="alertdialog"
                 tabIndex="0"
               >

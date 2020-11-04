@@ -473,4 +473,12 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       });
     });
   });
+
+  describe('Multiple DateInputField', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-input/date-input/multiple-date-input-field');
+    });
+
+    Terra.it.validatesElement();
+  });
 });
