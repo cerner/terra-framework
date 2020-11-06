@@ -49,16 +49,6 @@ const widthFromSize = {
 };
 
 class ModalManager extends React.Component {
-  static checkIsExpandable() {
-    if (document.querySelector(['[data-terra-abstract-modal]'])) {
-      const { height, width } = document.querySelector(['[data-terra-abstract-modal]']).getBoundingClientRect();
-      if (window.innerHeight === height + 20 && window.innerWidth === width + 20) {
-        return false;
-      }
-    }
-    return true;
-  }
-
   constructor(props) {
     super(props);
 
@@ -78,12 +68,17 @@ class ModalManager extends React.Component {
     customProps.className);
 
     const classArray = ['modal-manager'];
+    const windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
+    let hideMaximize = false;
     const isFullscreen = manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
     if (!isFullscreen) {
       if (manager.disclosure.dimensions) {
         classArray.push(`height-${manager.disclosure.dimensions.height}`, `width-${manager.disclosure.dimensions.width}`);
+        hideMaximize = (windowHeight <= manager.disclosure.dimensions.height + 20 && windowWidth <= manager.disclosure.dimensions.width + 20);
       } else if (manager.disclosure.size) {
         classArray.push(`height-${heightFromSize[manager.disclosure.size]}`, `width-${widthFromSize[manager.disclosure.size]}`);
+        hideMaximize = (windowHeight <= heightFromSize[manager.disclosure.size] + 20 && windowWidth <= widthFromSize[manager.disclosure.size] + 20);
       }
     }
 
@@ -95,7 +90,6 @@ class ModalManager extends React.Component {
       <div {...customProps} className={containerClassNames}>
         {manager.children.components}
         <AbstractModal
-          data-terra-abstract-modal
           isOpen={manager.disclosure.isOpen}
           isFullscreen={isFullscreen}
           classNameModal={cx(classArray)}
@@ -115,7 +109,7 @@ class ModalManager extends React.Component {
                     title={headerDataForPresentedComponent.title}
                     onClose={manager.closeDisclosure}
                     onBack={manager.disclosureComponentKeys.length > 1 ? manager.dismissPresentedComponent : undefined}
-                    onMaximize={ModalManager.checkIsExpandable() ? manager.maximizeDisclosure : undefined}
+                    onMaximize={!(hideMaximize) ? manager.maximizeDisclosure : undefined}
                     onMinimize={manager.minimizeDisclosure}
                   >
                     {headerDataForPresentedComponent.collapsibleMenuView}
