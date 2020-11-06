@@ -266,7 +266,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       Terra.hideInputCaret('input[name="terra-date-year-date-input-onchangeraw"]');
 
       expect(browser.getText('#iso')).to.equal('');
-      expect(browser.getText('#input-value')).to.equal('0601');
+      expect(browser.getText('#input-value')).to.equal('06/01/');
       expect(browser.getText('#complete-date')).to.equal('No');
       expect(browser.getText('#valid-date')).to.equal('No');
     });
@@ -448,9 +448,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     it('Click button 1 to clear date', () => {
       browser.click('[class*="PopupOverlay"]');
       browser.click('#button1');
+      Terra.validates.screenshot('formatted date cleared');
     });
-
-    Terra.it.matchesScreenshot('formatted date cleared');
 
     it('Click button 2 to set formatted date', () => {
       browser.click('#button2');
@@ -528,118 +527,104 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
     it('Month input focused', () => {
       browser.click('input[name="terra-date-month-date-input"]');
+      Terra.validates.element('month input highlighted');
     });
-
-    Terra.it.validatesElement('month input highlighted');
 
     it('Month input cleared with single Delete key press and loses highlight', () => {
       browser.keys('Delete');
+      Terra.validates.element('month input cleared completely and loses highlight');
     });
-
-    Terra.it.validatesElement('month input cleared completely and loses highlight');
 
     it('Day input focused', () => {
       browser.click('input[name="terra-date-day-date-input"]');
+      Terra.validates.element('day input highlighted');
     });
-
-    Terra.it.validatesElement('day input highlighted');
 
     it('Day input cleared with single Delete key press and loses highlight', () => {
       browser.keys('Delete');
+      Terra.validates.element('day input cleared completely and loses highlight');
     });
-
-    Terra.it.validatesElement('day input cleared completely and loses highlight');
 
     it('Year input focused', () => {
       browser.click('input[name="terra-date-year-date-input"]');
+      Terra.validates.element('year input highlighted');
     });
-
-    Terra.it.validatesElement('year input highlighted');
 
     it('Year input cleared with single Delete key press and loses highlight', () => {
       browser.keys('Delete');
+      Terra.validates.element('year input cleared completely and loses highlight');
     });
-
-    Terra.it.validatesElement('year input cleared completely and loses highlight');
   });
 
   describe('Arrow, Delete and Backspace Navigation', () => {
     describe('Right Arrow', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
-        browser.click('input[name="terra-date-month-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
       });
 
-      Terra.it.validatesElement('focus on month input');
+      it('Focus on month input', () => {
+        browser.click('input[name="terra-date-month-date-input"]');
+        Terra.validates.element('focus on month input');
+      });
 
       it('Focus on day input', () => {
         browser.keys('ArrowRight');
+        Terra.validates.element('focus on day input');
       });
-
-      Terra.it.validatesElement('focus on day input');
 
       it('Focus on year input', () => {
         browser.keys('ArrowRight');
+        Terra.validates.element('focus on year input');
       });
-
-      Terra.it.validatesElement('focus on year input');
     });
 
     describe('Left Arrow', () => {
       it('Focus on day input', () => {
         browser.keys('ArrowLeft');
+        Terra.validates.element('focus on day input');
       });
-
-      Terra.it.validatesElement('focus on day input');
 
       it('Focus on month input', () => {
         browser.keys('ArrowLeft');
+        Terra.validates.element('focus on month input');
       });
-
-      Terra.it.validatesElement('focus on month input');
     });
 
     describe('Delete Key', () => {
       it('Focus on year input', () => {
         browser.click('input[name="terra-date-year-date-input"]');
+        Terra.validates.element('focus on year input');
       });
-
-      Terra.it.validatesElement('focus on year input');
 
       it('Focus on day input', () => {
         browser.keys('Delete');
+        Terra.validates.element('focus on day input');
       });
-
-      Terra.it.validatesElement('focus on day input');
 
       it('Focus on month input', () => {
         browser.keys('Delete');
+        Terra.validates.element('focus on month input');
       });
-
-      Terra.it.validatesElement('focus on month input');
     });
 
     describe('Backspace Key', () => {
       it('Focus on year input', () => {
         browser.click('input[name="terra-date-year-date-input"]');
+        Terra.validates.element('focus on year input');
       });
-
-      Terra.it.validatesElement('focus on year input');
 
       it('Focus on day input', () => {
         browser.keys('Backspace');
+        Terra.validates.element('focus on day input');
       });
-
-      Terra.it.validatesElement('focus on day input');
 
       it('Focus on month input', () => {
         browser.keys('Backspace');
+        Terra.validates.element('focus on month input');
       });
-
-      Terra.it.validatesElement('focus on month input');
     });
   });
 
@@ -653,18 +638,16 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         browser.click('input[name="terra-date-month-date-input"]');
         browser.keys('3');
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.validates.element('auto prepend 0');
       });
-
-      Terra.it.validatesElement('auto preppend 0');
 
       it('Reject values greater than 12', () => {
         browser.click('input[name="terra-date-month-date-input"]');
         browser.keys('Delete');
         browser.keys('13');
         Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
+        Terra.validates.element('rejected digit 3');
       });
-
-      Terra.it.validatesElement('rejected digit 3');
     });
 
     describe('Day Input', () => {
@@ -676,18 +659,16 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         browser.click('input[name="terra-date-day-date-input"]');
         browser.keys('5');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+        Terra.validates.element('auto prepend 0');
       });
-
-      Terra.it.validatesElement('auto preppend 0');
 
       it('Reject values greater than 31', () => {
         browser.click('input[name="terra-date-day-date-input"]');
         browser.keys('Delete');
         browser.keys('32');
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.validates.element('rejected digit 2');
       });
-
-      Terra.it.validatesElement('rejected digit 2');
     });
 
     describe('Year Input', () => {
@@ -699,18 +680,16 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       it('Reject values greater than 2100', () => {
         browser.click('input[name="terra-date-year-date-input"]');
         browser.keys('2101');
+        Terra.validates.element('rejected digit 1');
       });
-
-      Terra.it.validatesElement('rejected digit 1');
 
       it('Reject values less than 1900', () => {
         browser.keys('Tab');
         browser.click('input[name="terra-date-year-date-input"]');
         browser.keys('Delete');
         browser.keys('1899');
+        Terra.validates.element('rejected digit 9');
       });
-
-      Terra.it.validatesElement('rejected digit 9');
     });
   });
 

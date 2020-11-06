@@ -179,6 +179,7 @@ const DatePickerInput = (props) => {
   const momentDateFormat = useMemo(() => DateUtil.getFormatByLocale(intl.locale), [intl.locale]);
   const dateValue = DateUtil.convertToISO8601(value, momentDateFormat);
   const dateFormatOrder = DateUtil.getDateFormatOrder(momentDateFormat);
+  const separator = intl.formatMessage({ id: 'Terra.datePicker.separator' });
 
   const setDayRef = useCallback(node => {
     dayInputRef.current = node;
@@ -298,14 +299,16 @@ const DatePickerInput = (props) => {
     if (onChange) {
       if (DateUtil.isValidDate(formattedDate, momentDateFormat)) {
         onChange(event, formattedDate);
+      } else if (day === '' && month === '' && year === '') {
+        onChange(event, '');
       } else {
         let dateString;
         if (dateFormatOrder === DateUtil.dateOrder.MDY) {
-          dateString = month + day + year;
+          dateString = month + separator + day + separator + year;
         } else if (dateFormatOrder === DateUtil.dateOrder.DMY) {
-          dateString = day + month + year;
+          dateString = day + separator + month + separator + year;
         } else {
-          dateString = year + month + day;
+          dateString = year + separator + month + separator + day;
         }
         onChange(event, dateString);
       }
@@ -596,7 +599,7 @@ const DatePickerInput = (props) => {
     />
   );
 
-  const dateSpacer = <span className={cx('date-spacer')}>{intl.formatMessage({ id: 'Terra.datePicker.separator' })}</span>;
+  const dateSpacer = <span className={cx('date-spacer')}>{separator}</span>;
 
   const dateInputFormat = DateUtil.getInputLayout(
     dateFormatOrder,
