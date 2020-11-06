@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fix to prevent modal from closing on pressing escape to close select.
+
 ## 3.28.0 - (August 4, 2020)
 
 * Changed

@@ -77,18 +77,17 @@ class DateInputUtil {
   static incrementYear(year) {
     // Handle empty input value
     if (year === '') {
-      return '1';
+      return DateInputUtil.MinYearValue.toString();
     }
 
     if (year) {
       let numericYear = Number(year);
-
-      // Loop back to 1 if incrementing year from "9999"
-      if (numericYear === 9999) {
-        return '1';
+      // Loop back to 1900 if incrementing year from "2100"
+      if (numericYear === DateInputUtil.MaxYearValue) {
+        return DateInputUtil.MinYearValue.toString();
       }
 
-      if (numericYear < 9999) {
+      if (numericYear >= DateInputUtil.MinYearValue && numericYear < DateInputUtil.MaxYearValue) {
         numericYear += 1;
         return numericYear.toString();
       }
@@ -107,18 +106,17 @@ class DateInputUtil {
   static decrementYear(year) {
     // Handle empty input value
     if (year === '') {
-      return '9999';
+      return DateInputUtil.MaxYearValue.toString();
     }
 
     if (year) {
       let numericYear = Number(year);
-
-      // Loop back to 9999. Accounts for day being 1 or 0 (result of empty string)
-      if (numericYear < 2) {
-        return '9999';
+      // Loop back to 2100. Accounts for day being 1 or 0 (result of empty string)
+      if (numericYear === DateInputUtil.MinYearValue) {
+        return DateInputUtil.MaxYearValue.toString();
       }
 
-      if (numericYear > 1) {
+      if (numericYear > DateInputUtil.MinYearValue) {
         numericYear -= 1;
         return numericYear.toString();
       }
@@ -238,12 +236,34 @@ class DateInputUtil {
         : `(${props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`
     );
   }
+
+  static getAriaDescriptionId(options) {
+    const { props, formatDescriptionId, inputAttributes } = options;
+
+    if (props.useExternalFormatMask === false) {
+      if (inputAttributes && inputAttributes['aria-describedby']) {
+        return (`${formatDescriptionId} ${inputAttributes['aria-describedby']}`);
+      }
+      return formatDescriptionId;
+    }
+    if (inputAttributes && inputAttributes['aria-describedby']) {
+      return inputAttributes['aria-describedby'];
+    }
+    return undefined;
+  }
 }
 
 DateInputUtil.inputType = {
   YEAR: 0,
   MONTH: 1,
   DAY: 2,
+};
+DateInputUtil.MinYearValue = 1900;
+DateInputUtil.MaxYearValue = 2100;
+/* Certain keycodes are missing in the version of keycode-js used, so these keycodes have been added here. */
+DateInputUtil.keyCode = {
+  KEY_PLUS: 187,
+  KEY_MINUS: 189,
 };
 
 export default DateInputUtil;

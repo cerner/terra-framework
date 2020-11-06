@@ -269,12 +269,18 @@ class DateInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleDayKeyDown(event) {
-    let stateValue = this.state.day || '0';
+    let stateValue = this.state.day || '';
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
     // prevent e and . characters from being entered into number input on keyDown
-    if (event.keyCode === 69 || event.keyCode === 190) {
+    if (event.keyCode === KeyCode.KEY_E || event.keyCode === KeyCode.KEY_PERIOD) {
+      event.preventDefault();
+      return;
+    }
+
+    // prevent + and - characters from being entered into number input on keyDown
+    if (event.keyCode === DateInputUtil.keyCode.KEY_MINUS || event.keyCode === DateInputUtil.keyCode.KEY_PLUS) {
       event.preventDefault();
       return;
     }
@@ -305,12 +311,18 @@ class DateInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleYearKeyDown(event) {
-    let stateValue = this.state.year || '0';
+    let stateValue = this.state.year || '';
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
     // prevent e and . characters from being entered into number input on keyDown
-    if (event.keyCode === 69 || event.keyCode === 190) {
+    if (event.keyCode === KeyCode.KEY_E || event.keyCode === KeyCode.KEY_PERIOD) {
+      event.preventDefault();
+      return;
+    }
+
+    // prevent + and - characters from being entered into number input on keyDown
+    if (event.keyCode === DateInputUtil.keyCode.KEY_MINUS || event.keyCode === DateInputUtil.keyCode.KEY_PLUS) {
       event.preventDefault();
       return;
     }
@@ -382,11 +394,10 @@ class DateInput extends React.Component {
     }
 
     const inputValue = event.target.value;
-    const maxValue = 9999;
 
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have
     // to check the length of inputValue to make sure that it is less then 4.
-    if (inputValue.length > 5 || Number(inputValue) > maxValue) {
+    if (inputValue.length > 5 || Number(inputValue) > DateInputUtil.MaxYearValue || (inputValue.length === 4 && Number(inputValue) < DateInputUtil.MinYearValue)) {
       return;
     }
 
@@ -482,6 +493,8 @@ class DateInput extends React.Component {
       { incomplete: (this.props.isIncomplete && this.props.required && !this.props.isInvalid) },
     ]);
 
+    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.monthAttributes });
+
     return (
       <div className={DateInputMonthWrapperClassNames}>
         <select
@@ -497,9 +510,9 @@ class DateInput extends React.Component {
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}
           disabled={this.props.disabled}
-          aria-describedby={`${this.formatDescriptionId} ${this.props.monthAttributes['aria-describedby']}`}
+          aria-describedby={ariaDescriptionId}
         >
-          <option value="" hidden>{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
+          <option value="">{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.february' })} value="02">{this.props.intl.formatMessage({ id: 'Terra.date.input.february' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.march' })} value="03">{this.props.intl.formatMessage({ id: 'Terra.date.input.march' })}</option>
@@ -531,6 +544,8 @@ class DateInput extends React.Component {
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
 
+    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.dayAttributes });
+
     return (
       <Input
         {...this.props.dayAttributes}
@@ -551,7 +566,7 @@ class DateInput extends React.Component {
         isInvalid={this.props.isInvalid}
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        aria-describedby={`${this.formatDescriptionId} ${this.props.dayAttributes['aria-describedby']}`}
+        aria-describedby={ariaDescriptionId}
       />
     );
   }
@@ -569,6 +584,8 @@ class DateInput extends React.Component {
      */
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
+
+    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.yearAttributes });
 
     return (
       <Input
@@ -590,7 +607,7 @@ class DateInput extends React.Component {
         isInvalid={this.props.isInvalid}
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        aria-describedby={`${this.formatDescriptionId} ${this.props.yearAttributes['aria-describedby']}`}
+        aria-describedby={ariaDescriptionId}
       />
     );
   }
@@ -667,7 +684,7 @@ class DateInput extends React.Component {
       dateValue = `${year}-${month}-${day}`;
     }
 
-    this.formatDescriptionId = (useExternalFormatMask === false) ? `terra-date-picker-description-format-${this.uuid}` : '';
+    this.formatDescriptionId = `terra-date-input-description-format-${this.uuid}`;
 
     const format = DateInputUtil.getDateFormat(this.props);
 
