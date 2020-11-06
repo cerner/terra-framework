@@ -474,8 +474,8 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.setValue('input[name="terra-date-year-input"]', '2017');
 
       expect(browser.getText('#iso')).to.equal('');
-      expect(browser.getText('#input-value')).to.equal('2017 10:30');
-      expect(browser.getText('#date-value')).to.equal('2017');
+      expect(browser.getText('#input-value')).to.equal('//2017 10:30');
+      expect(browser.getText('#date-value')).to.equal('//2017');
       expect(browser.getText('#time-value')).to.equal('10:30');
       expect(browser.getText('#ambiguous-date')).to.equal('No');
       expect(browser.getText('#complete-date')).to.equal('No');
