@@ -101,6 +101,25 @@ Terra.describeViewports('Date Input', ['medium'], () => {
     Terra.it.validatesElement();
   });
 
+  describe('Month Select placeholder option clears value', () => {
+    it('Selects January in month select', () => {
+      browser.url('/#/raw/tests/terra-date-input/date-input/day-month-year-date-input');
+      Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+      Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+      browser.click('select[name="terra-date-month-date-input"]');
+      browser.keys(['ArrowDown']);
+      browser.keys(['Enter']);
+      Terra.validates.element('First Month Selected');
+    });
+
+    it('Selects Placeholder option to clear selected value', () => {
+      browser.click('select[name="terra-date-month-date-input"]');
+      browser.keys(['ArrowUp']);
+      browser.keys(['Enter']);
+      Terra.validates.element('Value Cleared');
+    });
+  });
+
   describe('Month select keyboard operations', () => {
     describe('Month Select UP_ARROW increments month by 1', () => {
       before(() => {
@@ -336,7 +355,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.it.matchesScreenshot();
     });
 
-    describe('Year Input UP_ARROW increments year by 1 when year value is empty', () => {
+    describe('Year Input UP_ARROW increments year to 1900 when year value is empty', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-date-input/date-input/default-date-input');
         browser.refresh();
@@ -351,7 +370,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.it.matchesScreenshot();
     });
 
-    describe('Year Input UP_ARROW is cycles to 1 when the year has reached 9999', () => {
+    describe('Year Input UP_ARROW is cycles to 1900 when the year has reached 2100', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-date-input/date-input/default-date-input');
         browser.refresh();
@@ -360,7 +379,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
         browser.click('input[name="terra-date-year-date-input"]');
-        browser.keys(['9999', 'ArrowUp']);
+        browser.keys(['2100', 'ArrowUp']);
       });
 
       Terra.it.matchesScreenshot();
@@ -381,7 +400,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.it.matchesScreenshot();
     });
 
-    describe('Year Input DOWN_ARROW decrements year to 9999 when year value is empty', () => {
+    describe('Year Input DOWN_ARROW decrements year to 2100 when year value is empty', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-date-input/date-input/default-date-input');
         browser.refresh();
@@ -396,7 +415,18 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.it.matchesScreenshot();
     });
 
-    describe('Year Input DOWN_ARROW cycles to 9999 when the year has reached 1', () => {
+    it('Year Input DOWN_ARROW cycles to 2100 when the year has reached 1900', () => {
+      browser.url('/#/raw/tests/terra-date-input/date-input/default-date-input');
+      browser.refresh();
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+      Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+      browser.click('input[name="terra-date-year-date-input"]');
+      browser.keys(['1900', 'ArrowDown']);
+      Terra.validates.screenshot('Down Arrow Cycles To 2100');
+    });
+
+    describe('Year Input does not allows user to enter values outside 1900-2100 ', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-date-input/date-input/default-date-input');
         browser.refresh();
@@ -405,7 +435,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
         browser.click('input[name="terra-date-year-date-input"]');
-        browser.keys(['1', 'ArrowDown']);
+        browser.keys(['7654']);
       });
 
       Terra.it.matchesScreenshot();
