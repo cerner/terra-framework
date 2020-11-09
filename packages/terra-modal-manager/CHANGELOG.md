@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+* Changed
+  * Updated jest  due to changes in abstract modal.
+
+## 6.42.0 - (October 20, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.41.0 - (October 13, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.40.0 - (August 18, 2020)
 
 * Changed

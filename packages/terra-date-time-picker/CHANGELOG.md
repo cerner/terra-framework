@@ -1,10 +1,29 @@
 # Changelog
 
 ## Unreleased
-
 * Added
   * Added `initialTimeZone` prop which takes a valid timezone string. This enables date-time-picker set to a particular timezone. The default timezone is set to the local/browser timezone.
   
+## 4.51.0 - (October 20, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.50.0 - (October 13, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.49.0 - (October 6, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.48.0 - (September 29, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.47.0 - (September 16, 2020)
 
 * Changed

@@ -321,7 +321,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.it.matchesScreenshot();
     });
 
-    describe('Year Input UP_ARROW increments year by 1 when year value is empty', () => {
+    describe('Year Input UP_ARROW increments year to 1900 when year value is empty', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-date-input/date-input/default-date-input-field');
         browser.refresh();
@@ -336,7 +336,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.it.matchesScreenshot();
     });
 
-    describe('Year Input UP_ARROW is cycles to 1 when the year has reached 9999', () => {
+    describe('Year Input UP_ARROW is cycles to 1900 when the year has reached 2100', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-date-input/date-input/default-date-input-field');
         browser.refresh();
@@ -345,7 +345,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
         browser.click('input[name="terra-date-year-date-input"]');
-        browser.keys(['9999', 'ArrowUp']);
+        browser.keys(['2100', 'ArrowUp']);
       });
 
       Terra.it.matchesScreenshot();
@@ -366,7 +366,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.it.matchesScreenshot();
     });
 
-    describe('Year Input DOWN_ARROW decrements year to 9999 when year value is empty', () => {
+    describe('Year Input DOWN_ARROW decrements year to 2100 when year value is empty', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-date-input/date-input/default-date-input-field');
         browser.refresh();
@@ -381,7 +381,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.it.matchesScreenshot();
     });
 
-    describe('Year Input DOWN_ARROW cycles to 9999 when the year has reached 1', () => {
+    describe('Year Input DOWN_ARROW cycles to 2100 when the year has reached 1900', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-date-input/date-input/default-date-input-field');
         browser.refresh();
@@ -390,7 +390,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
         browser.click('input[name="terra-date-year-date-input"]');
-        browser.keys(['1', 'ArrowDown']);
+        browser.keys(['1900', 'ArrowDown']);
       });
 
       Terra.it.matchesScreenshot();
@@ -472,5 +472,13 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         expect(browser.getText('#focus-count')).to.equal('1');
       });
     });
+  });
+
+  describe('Multiple DateInputField', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-input/date-input/multiple-date-input-field');
+    });
+
+    Terra.it.validatesElement();
   });
 });

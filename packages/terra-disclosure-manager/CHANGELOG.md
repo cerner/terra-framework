@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+* Changed
+  * Replaced 'size' with 'dimensions' in `disclose` API.
+
+## 4.36.0 - (October 13, 2020)
+
+* Changed
+  * Removed terra-doc-template dependency.
+
 ## 4.35.0 - (August 4, 2020)
 
 * Added

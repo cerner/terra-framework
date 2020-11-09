@@ -2,6 +2,30 @@
 
 ## Unreleased
 
+* Fixed
+  * Restricted year input to be between `1900` and `2100`.
+  * Allow users to clear month value by selecting placeholder option value.
+  
+## 1.22.0 - (October 27, 2020)
+
+* Fixed
+  * Fixed description id's in DateInput for better accessibility.
+
+## 1.21.0 - (October 13, 2020)
+
+* Changed
+  * Added documentation on mock for `uuid`.
+
+## 1.20.0 - (October 6, 2020)
+
+* Changed
+  * Upgrade `form-input` dependency to `^4.4.0` and updated jests.
+
+## 1.19.0 - (September 29, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.18.0 - (September 16, 2020)
 
 * Removed

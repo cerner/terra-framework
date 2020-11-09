@@ -35,6 +35,8 @@ Cerner Corporation
 - Jordan Spoor [@Me999999999]
 - Eric McCullough [@EricM96]
 - Dianna McGinn [@DMcginn]
+- Jeremy Fuksa [@jeremyfuksa]
+- Jason A Savage [@jasonsavage]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -71,3 +73,5 @@ Cerner Corporation
 [@Me999999999]: https://github.com/Me999999999
 [@EricM96]: https://github.com/EricM96
 [@DMcginn]: https://github.com/DMcginn
+[@jeremyfuksa]: https://github.com/jeremyfuksa
+[@jasonsavage]: https://github.com/TheSavageDev

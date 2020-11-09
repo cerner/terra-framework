@@ -2,13 +2,13 @@ import React, {
   useEffect, useLayoutEffect, useState, useRef, useCallback,
 } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNamesBind from 'classnames/bind';
 import Overlay from 'terra-overlay';
-import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
+import { ActiveBreakpointContext } from 'terra-breakpoints';
 import FocusTrap from 'focus-trap-react';
 import Popup from 'terra-popup';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-
+import ThemeContext from 'terra-theme-context';
 import Header from './header/_Header';
 import CompactHeader from './header/_CompactHeader';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
@@ -20,7 +20,7 @@ import {
 
 import styles from './ApplicationNavigation.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -143,6 +143,8 @@ const ApplicationNavigation = ({
 
   const [drawerMenuIsOpen, setDrawerMenuIsOpen] = useState(false);
   const [popupMenuIsOpen, setPopupMenuIsOpen] = useState(false);
+
+  const closeMenuEvent = 'terra-application-navigation.dismiss-menu';
 
   // Use dot notation temporarily until hooks + enzyme support for userContext
   const activeBreakpoint = React.useContext(ActiveBreakpointContext);
@@ -321,6 +323,19 @@ const ApplicationNavigation = ({
     }
   });
 
+  useEffect(() => {
+    const forceCloseMenu = () => {
+      setDrawerMenuIsOpen(false);
+      setPopupMenuIsOpen(false);
+    };
+
+    window.addEventListener(closeMenuEvent, forceCloseMenu);
+
+    return () => {
+      window.removeEventListener(closeMenuEvent, forceCloseMenu);
+    };
+  }, []);
+
   useLayoutEffect(() => {
     if (activeNavigationItemKey !== renderedNavItemKeyRef.current) {
       // The timeout is necessary due to the AbstractModal's similar focus logic.
@@ -406,9 +421,11 @@ const ApplicationNavigation = ({
     event.stopPropagation();
     updateDrawerIsOpen(false);
   };
+  const theme = React.useContext(ThemeContext);
+  const appNavClassNames = cx('application-navigation', theme.className);
 
   return (
-    <div className={cx('application-navigation')}>
+    <div className={appNavClassNames}>
       <div
         ref={drawerMenuRef}
         className={cx('drawer-menu-container')}

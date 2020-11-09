@@ -1,3 +1,7 @@
+// Themes
+@import '../clinical-lowlight-theme/PopupCommon.module';
+@import '../orion-fusion-theme/PopupCommon.module';
+
 :local {
   .popup-count {
     background-color: var(--terra-application-navigation-popup-count-background-color, #fff3ce);

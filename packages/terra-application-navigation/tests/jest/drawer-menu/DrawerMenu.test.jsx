@@ -40,4 +40,28 @@ describe('DrawerMenu', () => {
 
     expect(shallowComponent).toMatchSnapshot();
   });
+
+  it('should render Help utility item when it is the only utility item present', () => {
+    const shallowComponent = shallow(
+      <DrawerMenu.WrappedComponent
+        intl={mockIntl}
+        titleConfig={{
+          title: 'test-title',
+        }}
+        activeNavigationItemKey="test-text"
+        userConfig={{
+          name: 'user-name',
+          detail: 'user-detail',
+          initials: 'user-initials',
+          imageSrc: 'user-src',
+        }}
+        notifications={{}}
+        navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
+        onSelectNavigationItem={jest.fn()}
+        onSelectHelp={jest.fn()}
+      />,
+    );
+
+    expect(shallowComponent).toMatchSnapshot();
+  });
 });
