@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 * Fixed
   * Fix to prevent modal from closing on pressing escape to close select.
 

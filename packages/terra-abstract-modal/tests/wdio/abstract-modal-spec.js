@@ -71,33 +71,31 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
     });
   });
 
-  describe('Disabled Close On Esc', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-esc'));
-
-    Terra.it.validatesElement('open', { selector });
-
-    it('attempts to close modal with ESC', () => {
-      browser.keys('Escape');
-    });
-
-    it('validates close on escape is disabled and the modal was not removed', () => {
-      expect(browser.isExisting('div[role="dialog"]')).to.be.true;
-    });
+  it('displays a modal with close disabled on Esc', () => {
+    browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-esc');
+    Terra.validates.element('disabled close on esc', { selector });
   });
 
-  describe('Disabled Close On Outside Click', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-outside-click'));
+  it('attempts to close modal with ESC', () => {
+    browser.keys('Escape');
+  });
 
-    Terra.it.validatesElement('open', { selector });
+  it('validates close on escape is disabled and the modal was not removed', () => {
+    expect(browser.isExisting('div[role="dialog"]')).to.be.true;
+  });
 
-    it('attempts to close modal with outside click', () => {
-      browser.moveToObject('[class*="ModalOverlay"]', 235, 5)
-        .leftClick();
-    });
+  it('displays a modal with disabled close on outside click', () => {
+    browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-outside-click');
+    Terra.validates.element('disabled close on outside click', { selector });
+  });
 
-    it('validates close on outside click is disabled and the modal was not removed', () => {
-      expect(browser.isExisting('div[role="dialog"]')).to.be.true;
-    });
+  it('attempts to close modal with outside click', () => {
+    browser.moveToObject('[class*="ModalOverlay"]', 235, 5)
+      .leftClick();
+  });
+
+  it('validates close on outside click is disabled and the modal was not removed', () => {
+    expect(browser.isExisting('div[role="dialog"]')).to.be.true;
   });
 
   describe('Modal Focus Handling', () => {
@@ -159,9 +157,8 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
 });
 
 Terra.describeViewports('Abstract Modal', ['enormous'], () => {
-  describe('Content Overflow', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-content-overflow'));
-
-    Terra.it.validatesElement({ selector });
+  it('displays abstract modal with content overflow', () => {
+    browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-content-overflow');
+    Terra.validates.element('content overflow', { selector });
   });
 });
