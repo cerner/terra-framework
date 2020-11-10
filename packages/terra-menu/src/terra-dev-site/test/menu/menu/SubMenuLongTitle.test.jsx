@@ -15,20 +15,20 @@ class SubMenuLongTitle extends React.Component {
     this.forceUpdate();
   }
 
-  setButtonNode(node) {
-    this.buttonNode = node;
-  }
-
-  getButtonNode() {
-    return this.buttonNode;
-  }
-
   handleButtonClick() {
     this.setState({ open: true });
   }
 
   handleRequestClose() {
     this.setState({ open: false });
+  }
+
+  setButtonNode(node) {
+    this.buttonNode = node;
+  }
+
+  getButtonNode() {
+    return this.buttonNode;
   }
 
   render() {

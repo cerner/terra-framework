@@ -125,10 +125,6 @@ class NavigationSideMenu extends Component {
     return null;
   }
 
-  setVisuallyHiddenComponent(node) {
-    this.visuallyHiddenComponent = node;
-  }
-
   handleBackClick(event) {
     const parentKey = this.state.parents[this.props.selectedMenuKey];
     if (parentKey) {
@@ -169,6 +165,10 @@ class NavigationSideMenu extends Component {
         },
       );
     }
+  }
+
+  setVisuallyHiddenComponent(node) {
+    this.visuallyHiddenComponent = node;
   }
 
   buildListItem(key) {

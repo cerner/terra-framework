@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed build failures due to the react/sort-comp rule
+
 ## 4.34.0 - (October 13, 2020)
 
 * Changed

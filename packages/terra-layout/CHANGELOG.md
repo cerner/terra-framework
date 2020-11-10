@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed build failures due to the react/sort-comp rule
+
 ## 4.26.0 - (August 4, 2020)
 
 * Changed
