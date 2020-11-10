@@ -1,22 +1,14 @@
 Terra.describeViewports('RoutingMenu', ['small'], () => {
-  describe('Displays a default routing menu', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-application-layout/application-layout/routing-menu');
-      browser.waitForVisible('#routing-menu-test');
-    });
-
-    Terra.it.matchesScreenshot({ selector: '#routing-menu-test' });
-    Terra.it.isAccessible();
+  it('Displays a default routing menu', () => {
+    browser.url('/#/raw/tests/terra-application-layout/application-layout/routing-menu');
+    browser.waitForVisible('#routing-menu-test');
+    Terra.validates.element({ selector: '#routing-menu-test' });
   });
 
-  describe('Displays a routing menu without header', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-application-layout/application-layout/routing-menu-no-header');
-      browser.waitForVisible('#routing-menu-test');
-    });
-
-    Terra.it.matchesScreenshot({ selector: '#routing-menu-test' });
-    Terra.it.isAccessible();
+  it('Displays a routing menu without header', () => {
+    browser.url('/#/raw/tests/terra-application-layout/application-layout/routing-menu-no-header');
+    browser.waitForVisible('#routing-menu-test');
+    Terra.validates.element('without header', { selector: '#routing-menu-test' });
   });
 
   describe('Navigates away from the site', () => {
