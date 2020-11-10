@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed build failures due to the react/sort-comp rule
+
 ## 2.38.0 - (August 18, 2020)
 
 * Added

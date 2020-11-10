@@ -16,14 +16,6 @@ class SelectableMenu extends React.Component {
     this.forceUpdate();
   }
 
-  setButtonNode(node) {
-    this.buttonNode = node;
-  }
-
-  getButtonNode() {
-    return this.buttonNode;
-  }
-
   handleButtonClick() {
     this.setState({ open: true });
   }
@@ -35,6 +27,14 @@ class SelectableMenu extends React.Component {
   handleItemClick() {
     this.setState(prevState => ({ isSelected: !prevState.isSelected }));
     this.handleRequestClose();
+  }
+
+  setButtonNode(node) {
+    this.buttonNode = node;
+  }
+
+  getButtonNode() {
+    return this.buttonNode;
   }
 
   render() {

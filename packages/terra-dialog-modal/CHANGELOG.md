@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+
+* Fixed
+  * Fixed build failures due to the react/sort-comp rule
+
 * Changed
   * Added Test for closing select inside a modal using escape.
 

@@ -135,27 +135,6 @@ class Popup extends React.Component {
     return true;
   }
 
-  setArrowPosition(contentPosition, targetPosition) {
-    const arrowPosition = PopupUtils.getArrowPosition(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
-    if (!arrowPosition) {
-      this.arrowNode.removeAttribute(PopupArrow.Opts.positionAttr);
-      return;
-    }
-    this.arrowNode.setAttribute(PopupArrow.Opts.positionAttr, arrowPosition);
-
-    if (arrowPosition === 'top' || arrowPosition === 'bottom') {
-      this.arrowNode.style.left = PopupUtils.leftOffset(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
-      this.arrowNode.style.top = '';
-    } else {
-      this.arrowNode.style.left = '';
-      this.arrowNode.style.top = PopupUtils.topOffset(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
-    }
-  }
-
-  setArrowNode(node) {
-    this.arrowNode = node;
-  }
-
   handleOnPosition(event, positions) {
     if (this.arrowNode) {
       this.setArrowPosition(positions.content, positions.target);
@@ -180,6 +159,27 @@ class Popup extends React.Component {
       this.contentWidth = PopupWidths[this.props.contentWidth];
       this.forceUpdate();
     }
+  }
+
+  setArrowPosition(contentPosition, targetPosition) {
+    const arrowPosition = PopupUtils.getArrowPosition(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
+    if (!arrowPosition) {
+      this.arrowNode.removeAttribute(PopupArrow.Opts.positionAttr);
+      return;
+    }
+    this.arrowNode.setAttribute(PopupArrow.Opts.positionAttr, arrowPosition);
+
+    if (arrowPosition === 'top' || arrowPosition === 'bottom') {
+      this.arrowNode.style.left = PopupUtils.leftOffset(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
+      this.arrowNode.style.top = '';
+    } else {
+      this.arrowNode.style.left = '';
+      this.arrowNode.style.top = PopupUtils.topOffset(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
+    }
+  }
+
+  setArrowNode(node) {
+    this.arrowNode = node;
   }
 
   validateContentNode(node) {

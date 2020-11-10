@@ -49,14 +49,6 @@ class TabMenu extends React.Component {
     }
   }
 
-  getTargetRef() {
-    return this.targetRef;
-  }
-
-  setTargetRef(node) {
-    this.targetRef = node;
-  }
-
   handleOnRequestClose() {
     if (this.state.isOpen) {
       this.shouldResetFocus = true;
@@ -74,6 +66,14 @@ class TabMenu extends React.Component {
     if ((event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) && !this.state.isOpen) {
       this.setState({ isOpen: true });
     }
+  }
+
+  getTargetRef() {
+    return this.targetRef;
+  }
+
+  setTargetRef(node) {
+    this.targetRef = node;
   }
 
   createDisplay(popup) {
