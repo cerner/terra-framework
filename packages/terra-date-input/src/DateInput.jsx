@@ -405,33 +405,6 @@ class DateInput extends React.Component {
   }
 
   /**
-   * Shifts programmatic focus to day input
-   * @param {Object} event Event object generated from the event delegation.
-   */
-  focusDay(event) {
-    this.dayRef.focus();
-    event.preventDefault();
-  }
-
-  /**
-   * Shifts programmatic focus to year input
-   * @param {Object} event Event object generated from the event delegation.
-   */
-  focusYear(event) {
-    this.yearRef.focus();
-    event.preventDefault();
-  }
-
-  /**
-   * Shifts programmatic focus to month select
-   * @param {Object} event Event object generated from the event delegation.
-   */
-  focusMonth(event) {
-    this.monthRef.current.focus();
-    event.preventDefault();
-  }
-
-  /**
    * On Click handler for month select
    */
   handleMonthClick() {
@@ -470,6 +443,33 @@ class DateInput extends React.Component {
     if (this.props.onChange) {
       this.props.onChange(event, dateString);
     }
+  }
+
+  /**
+   * Shifts programmatic focus to day input
+   * @param {Object} event Event object generated from the event delegation.
+   */
+  focusDay(event) {
+    this.dayRef.focus();
+    event.preventDefault();
+  }
+
+  /**
+   * Shifts programmatic focus to year input
+   * @param {Object} event Event object generated from the event delegation.
+   */
+  focusYear(event) {
+    this.yearRef.focus();
+    event.preventDefault();
+  }
+
+  /**
+   * Shifts programmatic focus to month select
+   * @param {Object} event Event object generated from the event delegation.
+   */
+  focusMonth(event) {
+    this.monthRef.current.focus();
+    event.preventDefault();
   }
 
   /**

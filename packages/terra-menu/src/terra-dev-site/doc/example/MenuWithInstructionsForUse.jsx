@@ -28,14 +28,6 @@ class MenuWithInstructionsForUse extends React.Component {
     };
   }
 
-  setButtonNode(node) {
-    this.buttonNode = node;
-  }
-
-  getButtonNode() {
-    return this.buttonNode;
-  }
-
   handleButtonClick() {
     this.setState({ open: true });
   }
@@ -55,6 +47,14 @@ class MenuWithInstructionsForUse extends React.Component {
     newState.actionClickCount += 1;
     this.setState(newState);
     this.handleRequestClose();
+  }
+
+  setButtonNode(node) {
+    this.buttonNode = node;
+  }
+
+  getButtonNode() {
+    return this.buttonNode;
   }
 
   render() {

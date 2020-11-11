@@ -92,23 +92,6 @@ class CollapsibleTabs extends React.Component {
     this.container = null;
   }
 
-  setContainer(node) {
-    if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
-    this.container = node;
-  }
-
-  setMenuRef(node) {
-    if (node === null) { return; }
-    this.menuRef = node;
-  }
-
-  resetCache() {
-    this.animationFrameID = null;
-    this.hiddenStartIndex = -1;
-    this.isCalculating = true;
-    this.menuHidden = false;
-  }
-
   handleResize(width) {
     const menuMarginLeft = parseInt(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-left'), 10);
     const menuMarginRight = parseInt(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-right'), 10);
@@ -245,6 +228,23 @@ class CollapsibleTabs extends React.Component {
     // Prevent menu key events from propagating up to CollabsibleTabs handleOnKeyDown listener
     // This prevents left / right arrow key usage in menu from shifting to different tabs
     event.stopPropagation();
+  }
+
+  setContainer(node) {
+    if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
+    this.container = node;
+  }
+
+  setMenuRef(node) {
+    if (node === null) { return; }
+    this.menuRef = node;
+  }
+
+  resetCache() {
+    this.animationFrameID = null;
+    this.hiddenStartIndex = -1;
+    this.isCalculating = true;
+    this.menuHidden = false;
   }
 
   render() {

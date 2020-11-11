@@ -168,12 +168,12 @@ class ContentComponent extends React.Component {
     this.state = { id: 'dimensions', disclosureHeight: HEIGHT_KEYS[0], disclosureWidth: WIDTH_KEYS[0] };
   }
 
-  getId(name) {
-    return name + this.state.id;
-  }
-
   handleSelectChange(event) {
     this.setState({ [event.target.name]: event.target.value });
+  }
+
+  getId(name) {
+    return name + this.state.id;
   }
 
   renderButton(size) {
