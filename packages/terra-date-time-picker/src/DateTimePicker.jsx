@@ -350,10 +350,6 @@ class DateTimePicker extends React.Component {
   }
 
   handleDateChange(event, date) {
-    if (event.type === 'change') {
-      this.dateValue = event.target.value;
-    }
-
     let updatedDateTime;
     const formattedDate = DateUtil.formatISODate(date, 'YYYY-MM-DD');
     const isDateValid = DateUtil.isValidDate(formattedDate, 'YYYY-MM-DD');
