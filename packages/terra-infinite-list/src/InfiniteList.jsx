@@ -164,6 +164,31 @@ class InfiniteList extends React.Component {
   }
 
   /**
+   * Following a render reset newChildren values. If new items were render trigger an update calculation.
+   */
+  handleRenderCompletion() {
+    this.renderNewChildren = false;
+    this.preventUpdate = false;
+    this.lastChildIndex = this.childCount;
+    if (this.isRenderingNew) {
+      this.isRenderingNew = false;
+      this.update(null, false, true); // Prevent from triggering an item request to avoid infinite loop of loading.
+    } else if (this.contentNode && InfiniteUtils.shouldTriggerItemRequest(InfiniteUtils.getContentData(this.contentNode))) {
+      this.triggerItemRequest();
+    }
+  }
+
+  /**
+   * Triggers a height adjustment if the height or scroll height changes.
+   */
+  handleResize() {
+    if (this.scrollHeight !== this.contentNode.scrollHeight || this.clientHeight !== this.contentNode.clientHeight) {
+      this.adjustHeight();
+    }
+    this.forceUpdate();
+  }
+
+  /**
    * Sets the html node of contentNode and if it was previously undefined trigger updateScrollGroups.
    * @param {node} node - Html node of the List.
    */
@@ -193,21 +218,6 @@ class InfiniteList extends React.Component {
     setTimeout(() => {
       this.ariaLiveStatus = '';
     }, 1000);
-  }
-
-  /**
-   * Following a render reset newChildren values. If new items were render trigger an update calculation.
-   */
-  handleRenderCompletion() {
-    this.renderNewChildren = false;
-    this.preventUpdate = false;
-    this.lastChildIndex = this.childCount;
-    if (this.isRenderingNew) {
-      this.isRenderingNew = false;
-      this.update(null, false, true); // Prevent from triggering an item request to avoid infinite loop of loading.
-    } else if (this.contentNode && InfiniteUtils.shouldTriggerItemRequest(InfiniteUtils.getContentData(this.contentNode))) {
-      this.triggerItemRequest();
-    }
   }
 
   /**
@@ -276,16 +286,6 @@ class InfiniteList extends React.Component {
   resetCache() {
     this.animationFrameID = null;
     this.isCalculating = true;
-  }
-
-  /**
-   * Triggers a height adjustment if the height or scroll height changes.
-   */
-  handleResize() {
-    if (this.scrollHeight !== this.contentNode.scrollHeight || this.clientHeight !== this.contentNode.clientHeight) {
-      this.adjustHeight();
-    }
-    this.forceUpdate();
   }
 
   /**

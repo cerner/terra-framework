@@ -70,23 +70,6 @@ class CollapsibleMenuView extends React.Component {
     this.container = null;
   }
 
-  setContainer(node) {
-    if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
-    this.container = node;
-  }
-
-  setMenuButton(node) {
-    if (node === null) { return; }
-    this.menuButton = node;
-  }
-
-  resetCache() {
-    this.animationFrameID = null;
-    this.hiddenStartIndex = -1;
-    this.isCalculating = true;
-    this.menuHidden = false;
-  }
-
   handleResize(width) {
     const menuButtonWidth = this.menuButton.getBoundingClientRect().width;
     const availableWidth = width - menuButtonWidth;
@@ -121,6 +104,23 @@ class CollapsibleMenuView extends React.Component {
       this.hiddenStartIndex = hiddenStartIndex;
       this.forceUpdate();
     }
+  }
+
+  setContainer(node) {
+    if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
+    this.container = node;
+  }
+
+  setMenuButton(node) {
+    if (node === null) { return; }
+    this.menuButton = node;
+  }
+
+  resetCache() {
+    this.animationFrameID = null;
+    this.hiddenStartIndex = -1;
+    this.isCalculating = true;
+    this.menuHidden = false;
   }
 
   render() {

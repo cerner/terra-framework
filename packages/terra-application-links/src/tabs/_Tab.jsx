@@ -87,10 +87,6 @@ class ApplicationTab extends Component {
     }
   }
 
-  isCurrentPath() {
-    return !!matchPath(this.props.location.pathname, { path: this.props.path });
-  }
-
   handleOnClick(event) {
     if (this.props.externalLink) {
       window.open(this.props.externalLink.path, this.props.externalLink.target || '_blank');
@@ -105,6 +101,10 @@ class ApplicationTab extends Component {
     } else if (this.props.onTabClick) {
       this.props.onTabClick(event);
     }
+  }
+
+  isCurrentPath() {
+    return !!matchPath(this.props.location.pathname, { path: this.props.path });
   }
 
   render() {

@@ -19,12 +19,12 @@ class ApplicationMenuUtilityExample extends React.Component {
     };
   }
 
-  onDiscloseUtility() {
-    this.setState(prevState => ({ discloseCount: prevState.discloseCount + 1 }));
-  }
-
   handleOnChange(event, key) {
     this.setState({ selectedKey: key });
+  }
+
+  onDiscloseUtility() {
+    this.setState(prevState => ({ discloseCount: prevState.discloseCount + 1 }));
   }
 
   render() {

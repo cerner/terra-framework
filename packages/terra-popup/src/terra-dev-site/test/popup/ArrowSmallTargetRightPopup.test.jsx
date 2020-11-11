@@ -23,6 +23,14 @@ class OffsetPopup extends React.Component {
     this.forceUpdate();
   }
 
+  handleButtonClick() {
+    this.setState({ open: true });
+  }
+
+  handleRequestClose() {
+    this.setState({ open: false });
+  }
+
   setButtonNode(node) {
     this.buttonNode = node;
   }
@@ -37,14 +45,6 @@ class OffsetPopup extends React.Component {
 
   getParentNode() {
     return this.parentNode;
-  }
-
-  handleButtonClick() {
-    this.setState({ open: true });
-  }
-
-  handleRequestClose() {
-    this.setState({ open: false });
   }
 
   render() {
