@@ -6,6 +6,11 @@
   * Date input split into 3 distinct inputs that mask the previous single input.
   * `terra-dev-site` examples to use hooks.
 
+## 4.52.0 - (November 10, 2020)
+
+* Fixed
+  * Fixed build failures due to the react/sort-comp rule
+
 ## 4.51.0 - (October 20, 2020)
 
 * Changed

@@ -213,27 +213,6 @@ class DatePicker extends React.Component {
     this.isDefaultDateAcceptable = this.validateDefaultDate();
   }
 
-  getMetadata() {
-    const format = DateUtil.getFormatByLocale(this.props.intl.locale);
-    const isCompleteDate = DateUtil.isValidDate(this.dateValue, format);
-    const iSOString = isCompleteDate ? DateUtil.convertToISO8601(this.dateValue, format) : '';
-
-    let isValidDate = false;
-
-    if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString)))) {
-      isValidDate = true;
-    }
-
-    const metadata = {
-      iSO: iSOString,
-      inputValue: this.dateValue,
-      isCompleteValue: isCompleteDate,
-      isValidValue: isValidDate,
-    };
-
-    return metadata;
-  }
-
   handleBreakpointChange(activeBreakpoint) {
     const showPortalPicker = !this.props.isInline && (activeBreakpoint === 'tiny' || activeBreakpoint === 'small');
 
@@ -367,6 +346,27 @@ class DatePicker extends React.Component {
       onClick();
       this.isDefaultDateAcceptable = true;
     }
+  }
+
+  getMetadata() {
+    const format = DateUtil.getFormatByLocale(this.props.intl.locale);
+    const isCompleteDate = DateUtil.isValidDate(this.dateValue, format);
+    const iSOString = isCompleteDate ? DateUtil.convertToISO8601(this.dateValue, format) : '';
+
+    let isValidDate = false;
+
+    if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString)))) {
+      isValidDate = true;
+    }
+
+    const metadata = {
+      iSO: iSOString,
+      inputValue: this.dateValue,
+      isCompleteValue: isCompleteDate,
+      isValidValue: isValidDate,
+    };
+
+    return metadata;
   }
 
   validateDefaultDate() {

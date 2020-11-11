@@ -6,6 +6,11 @@
   * Tests updated to reflect input splitting in `terra-date-picker`.
   * `terra-dev-site` examples to use hooks.
 
+## 4.52.0 - (November 10, 2020)
+
+* Fixed
+  * Fixed build failures due to the react/sort-comp rule
+
 ## 4.51.0 - (October 20, 2020)
 
 * Changed
