@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+
+## 3.53.0 - (November 10, 2020)
+
+* Fixed
+  * Fixed build failures due to the react/sort-comp rule
+
 * Changed
   * Added Test for closing select inside a modal using escape.
 

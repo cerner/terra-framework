@@ -26,14 +26,6 @@ class DefaultDialogModal extends React.Component {
     this.getButtonNode = this.getButtonNode.bind(this);
   }
 
-  setButtonNode(node) {
-    this.parentNode = node;
-  }
-
-  getButtonNode() {
-    return this.parentNode;
-  }
-
   handleOpenModal() {
     this.setState({ isOpen: true });
   }
@@ -48,6 +40,14 @@ class DefaultDialogModal extends React.Component {
 
   handleRequestClose() {
     this.setState({ isPopupOpen: false });
+  }
+
+  setButtonNode(node) {
+    this.parentNode = node;
+  }
+
+  getButtonNode() {
+    return this.parentNode;
   }
 
   render() {
