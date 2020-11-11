@@ -88,6 +88,11 @@ class UtilityMenuItem extends React.Component {
     }
   }
 
+  handleSelection(event, key) {
+    event.preventDefault();
+    this.props.onChange(event, key);
+  }
+
   setItemNode(node) {
     if (node) {
       this.itemNode = node;
@@ -103,11 +108,6 @@ class UtilityMenuItem extends React.Component {
         onKeyDown(event);
       }
     });
-  }
-
-  handleSelection(event, key) {
-    event.preventDefault();
-    this.props.onChange(event, key);
   }
 
   render() {

@@ -18,6 +18,18 @@ class AlignmentPopup extends React.Component {
     this.state = { open: false, attachment: 'top right' };
   }
 
+  handleAttachment(event) {
+    this.setState({ attachment: event.target.value, open: true });
+  }
+
+  handleButtonClick() {
+    this.setState({ open: true });
+  }
+
+  handleRequestClose() {
+    this.setState({ open: false });
+  }
+
   setButtonNode(node) {
     this.buttonNode = node;
   }
@@ -32,18 +44,6 @@ class AlignmentPopup extends React.Component {
 
   getParentNode() {
     return this.parentNode;
-  }
-
-  handleAttachment(event) {
-    this.setState({ attachment: event.target.value, open: true });
-  }
-
-  handleButtonClick() {
-    this.setState({ open: true });
-  }
-
-  handleRequestClose() {
-    this.setState({ open: false });
   }
 
   render() {
