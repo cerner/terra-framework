@@ -88,17 +88,6 @@ class ApplicationHeader extends React.Component {
     this.state = { utilityComponent: undefined };
   }
 
-  setContentNode(node) {
-    this.contentNode = node;
-  }
-
-  getTargetRef() {
-    if (this.contentNode) {
-      return this.contentNode.querySelector('[data-application-header-utility]');
-    }
-    return undefined;
-  }
-
   handleUtilityDiscloseRequest(utility) {
     this.setState({
       utilityComponent: React.cloneElement(utility, { onRequestClose: this.handleUtilityPopupCloseRequest }),
@@ -115,6 +104,17 @@ class ApplicationHeader extends React.Component {
     const { utilityConfig, disclosureManager } = this.props;
 
     utilityConfig.onChange(event, itemData, disclosureManager && disclosureManager.disclose);
+  }
+
+  setContentNode(node) {
+    this.contentNode = node;
+  }
+
+  getTargetRef() {
+    if (this.contentNode) {
+      return this.contentNode.querySelector('[data-application-header-utility]');
+    }
+    return undefined;
   }
 
   renderToggle() {

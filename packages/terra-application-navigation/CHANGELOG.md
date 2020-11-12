@@ -6,6 +6,11 @@
   * Updated to support a peer dependency of react-intl v2-v5
   * Removed `intlShape` imports
 
+## 1.40.0 - (November 10, 2020)
+
+* Fixed
+  * Fixed build failures due to the react/sort-comp rule
+
 ## 1.39.0 - (October 27, 2020)
 
 * Fixed

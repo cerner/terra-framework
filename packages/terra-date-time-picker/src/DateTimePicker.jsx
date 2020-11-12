@@ -207,58 +207,6 @@ class DateTimePicker extends React.Component {
     }
   }
 
-  getMetadata(momentDateTime) {
-    let tempDateTime = (momentDateTime && DateTimeUtils.isMomentObject(momentDateTime)) ? momentDateTime.clone() : null;
-
-    if (DateUtil.isValidDate(this.dateValue, this.state.dateFormat)) {
-      const enteredDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
-
-      // this.state.dateTime does not get updated if the entered date is outside the minDate/maxDate range or an excluded date.
-      // In this case, we need to use the date that was entered instead of the this.state.dateTime.
-      if (enteredDateTime && !enteredDateTime.isSame(tempDateTime, 'day')) {
-        tempDateTime = enteredDateTime;
-      }
-    }
-
-    let iSOString = '';
-    const isCompleteDateTime = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
-
-    if (isCompleteDateTime && tempDateTime) {
-      iSOString = tempDateTime.format();
-    }
-
-    let timeValue = this.timeValue || '';
-
-    if (iSOString) {
-      timeValue = DateTimeUtils.getTime(iSOString, this.props.showSeconds);
-    }
-
-    let isValid = false;
-    const inputValue = `${this.dateValue ? this.dateValue : ''} ${timeValue}`.trim();
-
-    if (inputValue === '' || (isCompleteDateTime && tempDateTime && this.isDateTimeAcceptable(tempDateTime))) {
-      isValid = true;
-    }
-
-    let isAmbiguous = false;
-
-    if (isCompleteDateTime && tempDateTime) {
-      isAmbiguous = DateTimeUtils.checkAmbiguousTime(tempDateTime);
-    }
-
-    const metadata = {
-      iSO: iSOString,
-      inputValue,
-      dateValue: this.dateValue || '',
-      timeValue,
-      isAmbiguousHour: isAmbiguous,
-      isCompleteValue: isCompleteDateTime,
-      isValidValue: isValid,
-    };
-
-    return metadata;
-  }
-
   handleOnSelect(event, selectedDate) {
     this.dateValue = DateUtil.formatISODate(selectedDate, this.state.dateFormat);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
@@ -324,27 +272,6 @@ class DateTimePicker extends React.Component {
     }
 
     this.containerHasFocus = false;
-  }
-
-  checkAmbiguousTime(dateTime, onCheckCallback) {
-    // To prevent multiple time clarification dialogs from rendering, ensure that it is not open before checking for the ambiguous hour.
-    // One situation is when using the right arrow key to move focus from the hour input to the minute input, it will invoke onBlur and check for ambiguous hour.
-    // If the hour is ambiguous, the dialog would display and steal focus from the minute input, which again will invoke onBlur and check for ambiguous hour.
-    if (this.state.isTimeClarificationOpen) {
-      return;
-    }
-
-    let isDateTimeAmbiguous = false;
-    const isOldTimeAmbiguous = this.state.isAmbiguousTime;
-    if (dateTime && dateTime.isValid()) {
-      const tempDateTime = dateTime.clone();
-      isDateTimeAmbiguous = DateTimeUtils.checkAmbiguousTime(tempDateTime);
-    }
-
-    this.setState({
-      isAmbiguousTime: isDateTimeAmbiguous,
-      isTimeClarificationOpen: isDateTimeAmbiguous && !isOldTimeAmbiguous,
-    }, onCheckCallback);
   }
 
   handleDateChange(event, date) {
@@ -495,24 +422,6 @@ class DateTimePicker extends React.Component {
     }
   }
 
-  validateDefaultDate() {
-    return this.isDateTimeAcceptable(this.state.dateTime);
-  }
-
-  isDateTimeAcceptable(newDateTime) {
-    let isAcceptable = true;
-
-    if (DateUtil.isDateOutOfRange(newDateTime, DateTimeUtils.createSafeDate(DateUtil.getMinDate(this.props.minDate)), DateTimeUtils.createSafeDate(DateUtil.getMaxDate(this.props.maxDate)))) {
-      isAcceptable = false;
-    }
-
-    if (DateUtil.isDateExcluded(newDateTime, this.props.excludeDates)) {
-      isAcceptable = false;
-    }
-
-    return isAcceptable;
-  }
-
   handleDaylightSavingButtonClick(event) {
     this.setState({ isTimeClarificationOpen: false });
     const newDateTime = this.state.dateTime.clone();
@@ -580,6 +489,97 @@ class DateTimePicker extends React.Component {
 
   handleOnRequestClose() {
     this.setState({ isTimeClarificationOpen: false });
+  }
+
+  getMetadata(momentDateTime) {
+    let tempDateTime = (momentDateTime && DateTimeUtils.isMomentObject(momentDateTime)) ? momentDateTime.clone() : null;
+
+    if (DateUtil.isValidDate(this.dateValue, this.state.dateFormat)) {
+      const enteredDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
+
+      // this.state.dateTime does not get updated if the entered date is outside the minDate/maxDate range or an excluded date.
+      // In this case, we need to use the date that was entered instead of the this.state.dateTime.
+      if (enteredDateTime && !enteredDateTime.isSame(tempDateTime, 'day')) {
+        tempDateTime = enteredDateTime;
+      }
+    }
+
+    let iSOString = '';
+    const isCompleteDateTime = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
+
+    if (isCompleteDateTime && tempDateTime) {
+      iSOString = tempDateTime.format();
+    }
+
+    let timeValue = this.timeValue || '';
+
+    if (iSOString) {
+      timeValue = DateTimeUtils.getTime(iSOString, this.props.showSeconds);
+    }
+
+    let isValid = false;
+    const inputValue = `${this.dateValue ? this.dateValue : ''} ${timeValue}`.trim();
+
+    if (inputValue === '' || (isCompleteDateTime && tempDateTime && this.isDateTimeAcceptable(tempDateTime))) {
+      isValid = true;
+    }
+
+    let isAmbiguous = false;
+
+    if (isCompleteDateTime && tempDateTime) {
+      isAmbiguous = DateTimeUtils.checkAmbiguousTime(tempDateTime);
+    }
+
+    const metadata = {
+      iSO: iSOString,
+      inputValue,
+      dateValue: this.dateValue || '',
+      timeValue,
+      isAmbiguousHour: isAmbiguous,
+      isCompleteValue: isCompleteDateTime,
+      isValidValue: isValid,
+    };
+
+    return metadata;
+  }
+
+  checkAmbiguousTime(dateTime, onCheckCallback) {
+    // To prevent multiple time clarification dialogs from rendering, ensure that it is not open before checking for the ambiguous hour.
+    // One situation is when using the right arrow key to move focus from the hour input to the minute input, it will invoke onBlur and check for ambiguous hour.
+    // If the hour is ambiguous, the dialog would display and steal focus from the minute input, which again will invoke onBlur and check for ambiguous hour.
+    if (this.state.isTimeClarificationOpen) {
+      return;
+    }
+
+    let isDateTimeAmbiguous = false;
+    const isOldTimeAmbiguous = this.state.isAmbiguousTime;
+    if (dateTime && dateTime.isValid()) {
+      const tempDateTime = dateTime.clone();
+      isDateTimeAmbiguous = DateTimeUtils.checkAmbiguousTime(tempDateTime);
+    }
+
+    this.setState({
+      isAmbiguousTime: isDateTimeAmbiguous,
+      isTimeClarificationOpen: isDateTimeAmbiguous && !isOldTimeAmbiguous,
+    }, onCheckCallback);
+  }
+
+  validateDefaultDate() {
+    return this.isDateTimeAcceptable(this.state.dateTime);
+  }
+
+  isDateTimeAcceptable(newDateTime) {
+    let isAcceptable = true;
+
+    if (DateUtil.isDateOutOfRange(newDateTime, DateTimeUtils.createSafeDate(DateUtil.getMinDate(this.props.minDate)), DateTimeUtils.createSafeDate(DateUtil.getMaxDate(this.props.maxDate)))) {
+      isAcceptable = false;
+    }
+
+    if (DateUtil.isDateExcluded(newDateTime, this.props.excludeDates)) {
+      isAcceptable = false;
+    }
+
+    return isAcceptable;
   }
 
   renderTimeClarification() {

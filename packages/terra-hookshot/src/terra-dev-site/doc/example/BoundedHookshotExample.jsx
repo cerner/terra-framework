@@ -74,14 +74,6 @@ class HookshotStandard extends React.Component {
     this.parentNode.scrollLeft = 475;
   }
 
-  setParentNode(node) {
-    this.parentNode = node;
-  }
-
-  getParentNode() {
-    return this.parentNode;
-  }
-
   handleButtonClick() {
     this.setState(prevState => ({ isOpen: !prevState.isOpen }));
   }
@@ -106,6 +98,14 @@ class HookshotStandard extends React.Component {
     if (event.target.value !== '') {
       this.setState({ [event.target.name]: Number.parseFloat(event.target.value) });
     }
+  }
+
+  setParentNode(node) {
+    this.parentNode = node;
+  }
+
+  getParentNode() {
+    return this.parentNode;
   }
 
   render() {

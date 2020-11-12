@@ -6,6 +6,11 @@
   * Updated to support a peer dependency of react-intl v2-v5
   * Removed `intlShape` imports
 
+## 5.45.0 - (November 10, 2020)
+
+* Fixed
+  * Fixed build failures due to the react/sort-comp rule
+
 ## 5.44.0 - (October 20, 2020)
 
 * Changed
@@ -554,4 +559,4 @@ Removed dependency on terra-clinical-action-header
 
 ## 1.0.0 - (March 23, 2018)
 
-  * Initial release
+* Initial release

@@ -5,6 +5,11 @@
 * Changed
   * Updated to support a peer dependency of react-intl v2-v5
 
+## 2.34.0 - (November 10, 2020)
+
+* Fixed
+  * Fixed build failures due to the react/sort-comp rule
+
 ## 2.33.0 - (August 4, 2020)
 
 * Changed

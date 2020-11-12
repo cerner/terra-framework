@@ -83,10 +83,6 @@ class LayoutSlidePanel extends React.Component {
     }
   }
 
-  setPanelNode(node) {
-    this.panelNode = node;
-  }
-
   handleTransitionEnd() {
     if (!this.props.isOpen && this.panelNode) {
       this.panelNode.setAttribute('aria-hidden', 'true');
@@ -100,6 +96,10 @@ class LayoutSlidePanel extends React.Component {
         tabbable(document.querySelector('[data-terra-layout-main]'))[0].focus();
       }
     }
+  }
+
+  setPanelNode(node) {
+    this.panelNode = node;
   }
 
   preparePanelForTransition() {

@@ -5,6 +5,8 @@
 * Changed
   * Updated to support a peer dependency of react-intl v2-v5
   * Updated FormattedMessage child function to join if given an array.
+  
+## 3.29.0 - (November 10, 2020)
 
 * Fixed
   * Fix to prevent modal from closing on pressing escape to close select.

@@ -60,12 +60,12 @@ class HookshotTemplate extends React.Component {
     this.state = { open: props.isOpen };
   }
 
-  triggerHookshot() {
-    this.setState({ open: true });
-  }
-
   handleRequestClose() {
     this.setState({ open: false });
+  }
+
+  triggerHookshot() {
+    this.setState({ open: true });
   }
 
   render() {

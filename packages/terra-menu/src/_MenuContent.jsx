@@ -132,6 +132,14 @@ class MenuContent extends React.Component {
     this.validateFocus(this.contentNode);
   }
 
+  handleContainerRef(node) {
+    if (this.props.refCallback) {
+      this.props.refCallback(node);
+    }
+    this.contentNode = node;
+    this.validateFocus(node);
+  }
+
   onKeyDown(event) {
     const focusableMenuItems = this.contentNode.querySelectorAll('li[tabindex="0"]');
 
@@ -164,14 +172,6 @@ class MenuContent extends React.Component {
         node.querySelector('[role="button"][tabIndex="0"]').focus();
       }
     }
-  }
-
-  handleContainerRef(node) {
-    if (this.props.refCallback) {
-      this.props.refCallback(node);
-    }
-    this.contentNode = node;
-    this.validateFocus(node);
   }
 
   isSelectable() {
