@@ -5,7 +5,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       browser.click('[data-application-extension-rollup="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.pause(50);
-      Terra.validates.element();
+      Terra.validates.element('default');
     });
   });
 
@@ -16,7 +16,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       browser.click('[data-tab-menu-inner="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.pause(50);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -26,7 +26,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       browser.click('[data-application-header-utility="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.pause(50);
-      Terra.validates.element();
+      Terra.validates.element('default');
     });
   });
 
@@ -37,7 +37,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       browser.click('[data-application-header-utility="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.pause(50);
-      Terra.validates.element();
+      Terra.validates.element('default');
     });
   });
 
@@ -47,7 +47,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       browser.click('[data-application-header-utility="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.pause(50);
-      Terra.validates.element();
+      Terra.validates.element('default');
     });
   });
 
@@ -57,7 +57,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       browser.click('[data-application-header-utility="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.pause(50);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -78,7 +78,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.click('[data-navigation-utility-item-settings="true"]');
       browser.pause(50);
-      Terra.validates.element();
+      Terra.validates.element('default');
     });
   });
 
@@ -89,7 +89,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.click('[data-navigation-utility-item-help="true"]');
       browser.pause(50);
-      Terra.validates.element();
+      Terra.validates.element('default');
     });
   });
 
@@ -100,7 +100,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.click('[data-navigation-utility-item-logout="true"]');
       browser.pause(50);
-      Terra.validates.element();
+      Terra.validates.element('default');
     });
   });
 
@@ -131,7 +131,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.click('[data-application-extension-rollup="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.pause(50);
-      Terra.validates.element();
+      Terra.validates.element('default');
     });
   });
 
@@ -141,7 +141,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -151,7 +151,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -161,7 +161,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -171,7 +171,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -181,7 +181,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -191,7 +191,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -201,7 +201,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -211,7 +211,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(500);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -221,7 +221,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -232,7 +232,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.click('[data-compact-header-toggle="true"]');
       browser.click('[data-navigation-drawer-item-settings="true"]');
       browser.pause(250);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -243,7 +243,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.click('[data-compact-header-toggle="true"]');
       browser.click('[data-navigation-drawer-item-help="true"]');
       browser.pause(250);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -254,7 +254,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.click('[data-compact-header-toggle="true"]');
       browser.click('[data-navigation-drawer-item-logout="true"]');
       browser.pause(250);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
@@ -265,7 +265,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       browser.click('[data-compact-header-toggle="true"]');
       browser.moveToObject('[class*="Overlay"]').leftClick();
       browser.pause(250);
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('default', { selector: '#root' });
     });
   });
 
