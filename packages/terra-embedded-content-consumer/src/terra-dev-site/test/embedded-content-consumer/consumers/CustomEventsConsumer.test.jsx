@@ -17,10 +17,6 @@ class CustomEventsConsumer extends React.Component {
     this.handleEventB = this.handleEventB.bind(this);
   }
 
-  onMount(frame) {
-    this.frame = frame;
-  }
-
   handleEventA() {
     document.getElementById('CustomEvents').style.border = 'thick dashed #0000FF';
     this.frame.trigger('Event-Reply', { eventReply: 'eventA', borderColor: '#0000FF' });
@@ -29,6 +25,10 @@ class CustomEventsConsumer extends React.Component {
   handleEventB() {
     document.getElementById('CustomEvents').style.border = 'thick dashed #00FF00';
     this.frame.trigger('Event-Reply', { eventReply: 'eventB', borderColor: '#00FF00' });
+  }
+
+  onMount(frame) {
+    this.frame = frame;
   }
 
   render() {

@@ -11,16 +11,16 @@ class MenuDefaultExample extends React.Component {
     this.state = { open: true };
   }
 
+  handleRequestClose() {
+    this.setState({ open: false });
+  }
+
   setButtonNode(node) {
     this.buttonNode = node;
   }
 
   getButtonNode() {
     return this.buttonNode;
-  }
-
-  handleRequestClose() {
-    this.setState({ open: false });
   }
 
   render() {

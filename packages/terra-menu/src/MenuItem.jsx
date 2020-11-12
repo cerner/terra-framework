@@ -94,12 +94,6 @@ class MenuItem extends React.Component {
     }
   }
 
-  setItemNode(node) {
-    if (node) {
-      this.itemNode = node;
-    }
-  }
-
   handleSelection(event) {
     event.preventDefault();
 
@@ -109,6 +103,12 @@ class MenuItem extends React.Component {
       if (this.props.onChange) {
         this.props.onChange(event, !this.state.isSelected);
       }
+    }
+  }
+
+  setItemNode(node) {
+    if (node) {
+      this.itemNode = node;
     }
   }
 
