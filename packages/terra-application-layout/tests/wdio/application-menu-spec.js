@@ -1,10 +1,7 @@
 Terra.describeViewports('ApplicationMenu', ['small', 'large'], () => {
-  before(() => {
-    browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout-menu');
-    browser.waitForVisible('#test-menu');
-  });
-
   it('Displays a default application menu', () => {
+    browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-menu');
+    browser.waitForVisible('#test-menu');
     Terra.validates.element({ selector: '#test-menu' });
   });
 

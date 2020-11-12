@@ -1,7 +1,7 @@
 Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
   describe('Displays a default application layout', () => {
     it('Displays a default application layout', () => {
-      browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout');
+      browser.url('/raw/tests/terra-application-layout/application-layout/application-layout');
       browser.waitForVisible('#application-layout-test');
 
       browser.pause(3000);// to display image
@@ -11,7 +11,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
 
   describe('Displays an application layout with top navigation tabs', () => {
     it('Displays an application layout with top navigation tabs', () => {
-      browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout-no-top-nav');
+      browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-no-top-nav');
       browser.waitForVisible('#application-layout-test');
       browser.moveToObject('#root', 0, 0);
       Terra.validates.element({ selector: '#application-layout-test' });
@@ -20,7 +20,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
 
   describe('Displays an application layout with no header content', () => {
     it('Displays an application layout with no header content', () => {
-      browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout-empty');
+      browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-empty');
       browser.waitForVisible('#application-layout-test');
       browser.moveToObject('#root', 0, 0);
       Terra.validates.element({ selector: '#application-layout-test' });
@@ -29,7 +29,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
 
   describe('Displays an application layout with nav icons', () => {
     it('Displays an application layout with nav icons', () => {
-      browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout-with-icons');
+      browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-with-icons');
       browser.moveToObject('#root', 0, 0);
       browser.waitForVisible('#application-layout-test');
 
@@ -41,7 +41,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
 Terra.describeViewports('ApplicationLayout', ['huge'], () => {
   describe('Navigates with top navigation tabs', () => {
     it('Navigates with top navigation tabs', () => {
-      browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout');
+      browser.url('/raw/tests/terra-application-layout/application-layout/application-layout');
       browser.waitForVisible('#application-layout-tab-1');
       browser.click('#application-layout-tab-1');
 
@@ -54,7 +54,7 @@ Terra.describeViewports('ApplicationLayout', ['huge'], () => {
 Terra.describeViewports('ApplicationLayout', ['large'], () => {
   describe('Presents utility menu from header when large', () => {
     it('Presents utility menu from header when large', () => {
-      browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout');
+      browser.url('/raw/tests/terra-application-layout/application-layout/application-layout');
       browser.waitForVisible('[data-application-header-utility]');
       browser.click('[data-application-header-utility]');
 
