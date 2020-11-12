@@ -1,15 +1,12 @@
 Terra.describeViewports('ApplicationMenuUtility', ['tiny', 'medium'], () => {
-  before(() => {
+  it('Displays a default application menu utility', () => {
     browser.url('/#/raw/tests/terra-application-utility/application-utility/default-application-menu-utility');
     browser.waitForVisible('#default');
+    Terra.validates.element({ selector: '#default' });
   });
 
-  describe('Displays a default application menu utility', () => {
-    Terra.it.validatesElement({ selector: '#default' });
-  });
-
-  describe('Focus-application menu utility', () => {
-    before(() => { browser.keys('Tab'); });
-    Terra.it.validatesElement({ selector: '#default' });
+  it('Focus-application menu utility', () => {
+    browser.keys('Tab');
+    Terra.validates.element('focus', { selector: '#default' });
   });
 });

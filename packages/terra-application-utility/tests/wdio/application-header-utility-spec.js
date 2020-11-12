@@ -1,15 +1,12 @@
 Terra.describeViewports('ApplicationHeaderUtility', ['tiny', 'medium'], () => {
-  before(() => {
+  it('Displays a default application header utility', () => {
     browser.url('/#/raw/tests/terra-application-utility/application-utility/default-application-header-utility');
     browser.waitForVisible('#default');
+    Terra.validates.element({ selector: '#default' });
   });
 
-  describe('Displays a default application header utility', () => {
-    Terra.it.validatesElement({ selector: '#default' });
-  });
-
-  describe('Focus-application header utility', () => {
-    before(() => { browser.keys('Tab'); });
-    Terra.it.validatesElement({ selector: '#default' });
+  it('Focus-application header utility', () => {
+    browser.keys('Tab');
+    Terra.validates.element('focus', { selector: '#default' });
   });
 });
