@@ -2,7 +2,7 @@ Terra.describeViewports('MenuUtilityMenu', ['huge'], () => {
   it('Displays a default menu utility menu', () => {
     browser.url('/raw/tests/terra-application-utility/application-utility/default-menu-utility-menu');
     browser.waitForVisible('#default');
-    Terra.validates.element({ selector: '#default' });
+    Terra.validates.element('default', { selector: '#default' });
   });
 
   it('Focus-menu utility menu', () => {
