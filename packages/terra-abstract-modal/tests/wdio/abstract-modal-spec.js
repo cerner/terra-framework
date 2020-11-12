@@ -2,9 +2,8 @@ const selector = '#root';
 
 Terra.describeViewports('Abstract Modal', ['medium'], () => {
   describe('Default Modal', () => {
-    before(() => browser.url('/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal'));
-
     it('clicks to open modal', () => {
+      browser.url('/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal');
       browser.click('button');
       expect(browser.getAttribute('#root', 'inert')).to.equal('true');
       expect(browser.getAttribute('#root', 'aria-hidden')).to.equal('true');
@@ -37,9 +36,8 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
   });
 
   describe('Fullscreen Modal', () => {
-    before(() => browser.url('/raw/tests/terra-abstract-modal/abstract-modal/fullscreen-abstract-modal'));
-
     it('clicks to open modal', () => {
+      browser.url('/raw/tests/terra-abstract-modal/abstract-modal/fullscreen-abstract-modal');
       browser.click('button');
       expect(browser.getAttribute('#root', 'inert')).to.equal('true');
       expect(browser.getAttribute('#root', 'aria-hidden')).to.equal('true');
@@ -104,9 +102,8 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
 
   describe('Modal Focus Handling', () => {
     describe('Focusable Content', () => {
-      before(() => browser.url('/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal'));
-
       it('clicks to open modal', () => {
+        browser.url('/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal');
         browser.click('button');
       });
 
@@ -150,9 +147,8 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
     });
 
     describe('No Focusable Content', () => {
-      before(() => browser.url('/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-no-focusable-content'));
-
       it('does focus on the modal when opened', () => {
+        browser.url('/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-no-focusable-content');
         expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.true;
         Terra.validates.element({ selector });
       });
