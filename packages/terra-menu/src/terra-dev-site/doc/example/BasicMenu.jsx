@@ -34,14 +34,6 @@ class BasicMenu extends React.Component {
     };
   }
 
-  setButtonNode(node) {
-    this.buttonNode = node;
-  }
-
-  getButtonNode() {
-    return this.buttonNode;
-  }
-
   handleButtonClick() {
     this.setState({ open: true });
   }
@@ -73,6 +65,14 @@ class BasicMenu extends React.Component {
     const newState = this.state;
     newState.actionClickCount += 1;
     this.setState(newState);
+  }
+
+  setButtonNode(node) {
+    this.buttonNode = node;
+  }
+
+  getButtonNode() {
+    return this.buttonNode;
   }
 
   render() {

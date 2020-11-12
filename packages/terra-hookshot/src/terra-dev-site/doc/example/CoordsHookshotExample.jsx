@@ -67,14 +67,6 @@ class HookshotStandard extends React.Component {
     };
   }
 
-  setParentNode(node) {
-    this.parentNode = node;
-  }
-
-  getParentNode() {
-    return this.parentNode;
-  }
-
   handleRegionClick(event) {
     const coordinates = { x: event.clientX, y: event.clientY };
     this.setState(prevState => ({ isOpen: !prevState.isOpen, coordinates }));
@@ -96,6 +88,14 @@ class HookshotStandard extends React.Component {
     if (event.target.value !== '') {
       this.setState({ [event.target.name]: Number.parseFloat(event.target.value) });
     }
+  }
+
+  setParentNode(node) {
+    this.parentNode = node;
+  }
+
+  getParentNode() {
+    return this.parentNode;
   }
 
   render() {

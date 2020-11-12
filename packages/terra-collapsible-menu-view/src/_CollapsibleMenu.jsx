@@ -48,16 +48,16 @@ class CollapsibleMenu extends React.Component {
     return { isCollapsibleMenuItem: true };
   }
 
+  handleRequestClose() {
+    this.setState({ isOpen: false });
+  }
+
   setButtonNode(node) {
     this.buttonNode = node;
   }
 
   getButtonNode() {
     return this.buttonNode;
-  }
-
-  handleRequestClose() {
-    this.setState({ isOpen: false });
   }
 
   wrappedOnClick(item) {

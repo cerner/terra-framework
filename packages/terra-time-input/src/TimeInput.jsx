@@ -472,15 +472,6 @@ class TimeInput extends React.Component {
     }
   }
 
-  focusMinuteFromHour(event) {
-    // If the hour is empty or the cursor is after the value, move focus to the minute input when the right arrow is pressed.
-    if (this.state.hour.length === 0 || this.state.hour.length === this.hourInput.selectionEnd) {
-      this.minuteInput.focus();
-      this.minuteInput.setSelectionRange(0, 0);
-      event.preventDefault();
-    }
-  }
-
   /**
    * Takes a key input from the minute input, and processes it based on the value of the keycode.
    * If the key is an up or down arrow, it increments/decrements the minute. If the left arrow
@@ -515,33 +506,6 @@ class TimeInput extends React.Component {
     }
   }
 
-  focusHour(event) {
-    // If the cursor is at the left most position in the minute input, is empty or the cursor is before the value,
-    // move focus to the hour input
-
-    if (this.minuteInput.selectionEnd === 0) {
-      this.hourInput.focus();
-      if (this.state.hour) {
-        this.hourInput.setSelectionRange(this.state.hour.length, this.state.hour.length);
-        event.preventDefault();
-      }
-    }
-  }
-
-  focusSecondFromMinute(event) {
-    // If the minute is empty or the cursor is after the value, move focus to the meridiem.
-    if ((this.state.minute.length === 0
-      || this.state.minute.length === this.minuteInput.selectionEnd)
-      && this.secondInput
-    ) {
-      this.secondInput.focus();
-      if (this.state.second) {
-        this.secondInput.setSelectionRange(0, 0);
-        event.preventDefault();
-      }
-    }
-  }
-
   /**
    * Takes a key input from the second input, and processes it based on the value of the keycode.
    * If the key is an up or down arrow, it increments/decrements the second. If the left arrow
@@ -569,19 +533,6 @@ class TimeInput extends React.Component {
       || event.keyCode === KeyCode.KEY_DELETE
       || event.keyCode === KeyCode.KEY_BACK_SPACE) {
       this.focusMinuteFromSecond(event);
-    }
-  }
-
-  focusMinuteFromSecond(event) {
-    // If the cursor is at the left most position in the second input, is empty or the cursor is before the value,
-    // move focus to the minute input
-
-    if (this.secondInput.selectionEnd === 0) {
-      this.minuteInput.focus();
-      if (this.state.minute) {
-        this.minuteInput.setSelectionRange(this.state.minute.length, this.state.minute.length);
-        event.preventDefault();
-      }
     }
   }
 
@@ -619,6 +570,59 @@ class TimeInput extends React.Component {
     }
   }
 
+  handleMeridiemButtonChange(event, selectedKey) {
+    this.handleValueChange(event, TimeUtil.inputType.HOUR, this.state.hour.toString(), selectedKey);
+  }
+
+  focusMinuteFromHour(event) {
+    // If the hour is empty or the cursor is after the value, move focus to the minute input when the right arrow is pressed.
+    if (this.state.hour.length === 0 || this.state.hour.length === this.hourInput.selectionEnd) {
+      this.minuteInput.focus();
+      this.minuteInput.setSelectionRange(0, 0);
+      event.preventDefault();
+    }
+  }
+
+  focusHour(event) {
+    // If the cursor is at the left most position in the minute input, is empty or the cursor is before the value,
+    // move focus to the hour input
+
+    if (this.minuteInput.selectionEnd === 0) {
+      this.hourInput.focus();
+      if (this.state.hour) {
+        this.hourInput.setSelectionRange(this.state.hour.length, this.state.hour.length);
+        event.preventDefault();
+      }
+    }
+  }
+
+  focusSecondFromMinute(event) {
+    // If the minute is empty or the cursor is after the value, move focus to the meridiem.
+    if ((this.state.minute.length === 0
+      || this.state.minute.length === this.minuteInput.selectionEnd)
+      && this.secondInput
+    ) {
+      this.secondInput.focus();
+      if (this.state.second) {
+        this.secondInput.setSelectionRange(0, 0);
+        event.preventDefault();
+      }
+    }
+  }
+
+  focusMinuteFromSecond(event) {
+    // If the cursor is at the left most position in the second input, is empty or the cursor is before the value,
+    // move focus to the minute input
+
+    if (this.secondInput.selectionEnd === 0) {
+      this.minuteInput.focus();
+      if (this.state.minute) {
+        this.minuteInput.setSelectionRange(this.state.minute.length, this.state.minute.length);
+        event.preventDefault();
+      }
+    }
+  }
+
   formatHour(hour, meridiem) {
     if (!hour) {
       return hour;
@@ -641,10 +645,6 @@ class TimeInput extends React.Component {
     }
 
     return hourString;
-  }
-
-  handleMeridiemButtonChange(event, selectedKey) {
-    this.handleValueChange(event, TimeUtil.inputType.HOUR, this.state.hour.toString(), selectedKey);
   }
 
   render() {

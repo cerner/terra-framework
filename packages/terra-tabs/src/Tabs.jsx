@@ -98,6 +98,23 @@ class Tabs extends React.Component {
     return TabUtils.initialSelectedTabKey(this.props.children, this.props.defaultActiveKey);
   }
 
+  handleOnChange(event, selectedPane) {
+    if (!selectedPane.props.isDisabled) {
+      if (this.props.onChange) {
+        this.props.onChange(event, selectedPane.key);
+      }
+      if (!this.props.activeKey && TabUtils.shouldHandleSelection(this.state.activeKey, selectedPane.key)) {
+        this.setState({ activeKey: selectedPane.key });
+      }
+    }
+  }
+
+  handleTruncationChange(isLabelTruncated) {
+    if (this.state.isLabelTruncated !== isLabelTruncated) {
+      this.setState({ isLabelTruncated });
+    }
+  }
+
   setTabs(event) {
     const showCollapsedTabs = event === 'tiny';
     if (this.state.showCollapsedTabs !== showCollapsedTabs) {
@@ -114,23 +131,6 @@ class Tabs extends React.Component {
     });
 
     return activeIndex;
-  }
-
-  handleOnChange(event, selectedPane) {
-    if (!selectedPane.props.isDisabled) {
-      if (this.props.onChange) {
-        this.props.onChange(event, selectedPane.key);
-      }
-      if (!this.props.activeKey && TabUtils.shouldHandleSelection(this.state.activeKey, selectedPane.key)) {
-        this.setState({ activeKey: selectedPane.key });
-      }
-    }
-  }
-
-  handleTruncationChange(isLabelTruncated) {
-    if (this.state.isLabelTruncated !== isLabelTruncated) {
-      this.setState({ isLabelTruncated });
-    }
   }
 
   wrapPaneOnClick(pane) {

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.4.0 - (November 10, 2020)
+
+* Changed
+  * Updated jest  due to changes in abstract modal.
+  
 ## 4.3.0 - (October 20, 2020)
 
 * Changed

@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
+## 3.29.0 - (November 10, 2020)
+
+* Fixed
+  * Fix to prevent modal from closing on pressing escape to close select.
+
 ## 3.28.0 - (August 4, 2020)
 
 * Changed

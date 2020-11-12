@@ -41,18 +41,6 @@ class TabMenu extends React.Component {
     };
   }
 
-  getTargetRef() {
-    return this.targetRef;
-  }
-
-  setTargetRef(node) {
-    this.targetRef = node;
-
-    if (this.props.refCallback) {
-      this.props.refCallback(node);
-    }
-  }
-
   handleOnRequestClose() {
     this.setState({ isOpen: false });
   }
@@ -64,6 +52,18 @@ class TabMenu extends React.Component {
   handleOnKeyDown(event) {
     if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
       this.setState({ isOpen: true });
+    }
+  }
+
+  getTargetRef() {
+    return this.targetRef;
+  }
+
+  setTargetRef(node) {
+    this.targetRef = node;
+
+    if (this.props.refCallback) {
+      this.props.refCallback(node);
     }
   }
 

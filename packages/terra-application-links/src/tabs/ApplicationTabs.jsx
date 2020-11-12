@@ -104,18 +104,6 @@ class ApplicationTabs extends React.Component {
     this.container = null;
   }
 
-  setContainerNode(node) {
-    if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
-    this.container = node;
-  }
-
-  resetCalculations() {
-    this.animationFrameID = null;
-    this.hiddenStartIndex = -1;
-    this.menuHidden = false;
-    this.isCalculating = true;
-  }
-
   handleResize(width) {
     // Calculate hide index
     const childrenCount = this.props.links.length;
@@ -139,6 +127,18 @@ class ApplicationTabs extends React.Component {
       this.menuHidden = isMenuHidden;
       this.forceUpdate();
     }
+  }
+
+  setContainerNode(node) {
+    if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
+    this.container = node;
+  }
+
+  resetCalculations() {
+    this.animationFrameID = null;
+    this.hiddenStartIndex = -1;
+    this.menuHidden = false;
+    this.isCalculating = true;
   }
 
   render() {

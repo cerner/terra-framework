@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.37.0 - (November 10, 2020)
+
+* Changed
+  * Replaced 'size' with 'dimensions' in `disclose` API.
+
 ## 4.36.0 - (October 13, 2020)
 
 * Changed

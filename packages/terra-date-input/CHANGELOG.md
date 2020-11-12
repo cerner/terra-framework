@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 1.23.0 - (November 10, 2020)
+
+* Fixed
+  * Fixed build failures due to the react/sort-comp rule
+  * Restricted year input to be between `1900` and `2100`.
+  * Allow users to clear month value by selecting placeholder option value.
+  
+## 1.22.0 - (October 27, 2020)
+
 * Fixed
   * Fixed description id's in DateInput for better accessibility.
 

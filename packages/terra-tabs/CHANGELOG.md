@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.45.0 - (November 10, 2020)
+
+* Fixed
+  * Fixed build failures due to the react/sort-comp rule
+
 ## 6.44.0 - (October 20, 2020)
 
 * Changed
