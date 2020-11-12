@@ -2,7 +2,7 @@ const selector = '#root';
 
 Terra.describeViewports('Abstract Modal', ['medium'], () => {
   describe('Default Modal', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal'));
+    before(() => browser.url('/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal'));
 
     it('clicks to open modal', () => {
       browser.click('button');
@@ -37,7 +37,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
   });
 
   describe('Fullscreen Modal', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/fullscreen-abstract-modal'));
+    before(() => browser.url('/raw/tests/terra-abstract-modal/abstract-modal/fullscreen-abstract-modal'));
 
     it('clicks to open modal', () => {
       browser.click('button');
@@ -71,36 +71,40 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
     });
   });
 
-  it('displays a modal with close disabled on Esc', () => {
-    browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-esc');
-    Terra.validates.element('disabled close on esc', { selector });
+  describe('Disabled Close On Esc', () => {
+    it('displays an open modal', () => {
+      browser.url('/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-esc');
+      Terra.validates.element('open', { selector });
+    });
+
+    it('attempts to close modal with ESC', () => {
+      browser.keys('Escape');
+    });
+
+    it('validates close on escape is disabled and the modal was not removed', () => {
+      expect(browser.isExisting('div[role="dialog"]')).to.be.true;
+    });
   });
 
-  it('attempts to close modal with ESC', () => {
-    browser.keys('Escape');
-  });
+  describe('Disabled Close On Outside Click', () => {
+    it('displays an open modal', () => {
+      browser.url('/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-outside-click');
+      Terra.validates.element('open', { selector });
+    });
 
-  it('validates close on escape is disabled and the modal was not removed', () => {
-    expect(browser.isExisting('div[role="dialog"]')).to.be.true;
-  });
+    it('attempts to close modal with outside click', () => {
+      browser.moveToObject('[class*="ModalOverlay"]', 235, 5)
+        .leftClick();
+    });
 
-  it('displays a modal with disabled close on outside click', () => {
-    browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-outside-click');
-    Terra.validates.element('disabled close on outside click', { selector });
-  });
-
-  it('attempts to close modal with outside click', () => {
-    browser.moveToObject('[class*="ModalOverlay"]', 235, 5)
-      .leftClick();
-  });
-
-  it('validates close on outside click is disabled and the modal was not removed', () => {
-    expect(browser.isExisting('div[role="dialog"]')).to.be.true;
+    it('validates close on outside click is disabled and the modal was not removed', () => {
+      expect(browser.isExisting('div[role="dialog"]')).to.be.true;
+    });
   });
 
   describe('Modal Focus Handling', () => {
     describe('Focusable Content', () => {
-      before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal'));
+      before(() => browser.url('/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal'));
 
       it('clicks to open modal', () => {
         browser.click('button');
@@ -146,7 +150,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
     });
 
     describe('No Focusable Content', () => {
-      before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-no-focusable-content'));
+      before(() => browser.url('/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-no-focusable-content'));
 
       it('does focus on the modal when opened', () => {
         expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.true;
@@ -158,7 +162,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
 
 Terra.describeViewports('Abstract Modal', ['enormous'], () => {
   it('displays abstract modal with content overflow', () => {
-    browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-content-overflow');
+    browser.url('/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-content-overflow');
     Terra.validates.element('content overflow', { selector });
   });
 });
