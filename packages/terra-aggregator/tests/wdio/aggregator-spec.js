@@ -1,6 +1,6 @@
 Terra.describeViewports('Aggregator', ['large'], () => {
   it('displays standalone aggregator', () => {
-    browser.url('/#/raw/tests/terra-aggregator/aggregator/aggregator-standalone');
+    browser.url('/raw/tests/terra-aggregator/aggregator/aggregator-standalone');
     browser.click('#test-aggregator #section1');
     browser.click('#test-aggregator #section2');
     browser.click('#test-aggregator #section3');
@@ -8,7 +8,7 @@ Terra.describeViewports('Aggregator', ['large'], () => {
   });
   describe('With Disclosure', () => {
     it('displays aggregator with disclosure - open', () => {
-      browser.url('/#/raw/tests/terra-aggregator/aggregator/aggregator-with-disclosure');
+      browser.url('/raw/tests/terra-aggregator/aggregator/aggregator-with-disclosure');
       browser.click('#test-aggregator #section1');
       Terra.validates.element('Open', { selector: '#test-aggregator' });
     });
