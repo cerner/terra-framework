@@ -2,7 +2,7 @@ Terra.describeViewports('Application Header Layout', ['tiny', 'medium'], () => {
   it('Displays a default application header layout', () => {
     browser.url('/raw/tests/terra-application-header-layout/application-header-layout/application-header-default');
     browser.waitForVisible('#test-header');
-    Terra.validates.screenshot({ selector: '#test-header' });
+    Terra.validates.screenshot('default', { selector: '#test-header' });
   });
 
   describe('Displays the Skip to Content when focused onto', () => {
