@@ -2,7 +2,7 @@ Terra.describeViewports('RoutingMenu', ['small'], () => {
   it('Displays a default routing menu', () => {
     browser.url('/raw/tests/terra-application-layout/application-layout/routing-menu');
     browser.waitForVisible('#routing-menu-test');
-    Terra.validates.element({ selector: '#routing-menu-test' });
+    Terra.validates.element('default', { selector: '#routing-menu-test' });
   });
 
   it('Displays a routing menu without header', () => {

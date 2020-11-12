@@ -2,7 +2,7 @@ Terra.describeViewports('ApplicationHeader', ['small', 'large'], () => {
   it('Displays a default application header', () => {
     browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-header');
     browser.waitForVisible('#test-header');
-    Terra.validates.element({ selector: '#test-header' });
+    Terra.validates.element('default', { selector: '#test-header' });
   });
 
   it('Displays an application header toggle standard', () => {
@@ -18,7 +18,7 @@ Terra.describeViewports('ApplicationHeader', ['small', 'large'], () => {
       browser.waitForVisible('#test-header');
       browser.click('[data-application-header-utility]');
       Terra.validates.element('#test-header', { selector: '#test-header' });
-      Terra.validates.element({ selector: '#site' });
+      Terra.validates.element('default', { selector: '#site' });
     });
   });
 

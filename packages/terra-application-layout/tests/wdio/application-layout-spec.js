@@ -5,7 +5,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
       browser.waitForVisible('#application-layout-test');
 
       browser.pause(3000);// to display image
-      Terra.validates.element({ selector: '#application-layout-test' });
+      Terra.validates.element('default', { selector: '#application-layout-test' });
     });
   });
 
@@ -14,7 +14,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
       browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-no-top-nav');
       browser.waitForVisible('#application-layout-test');
       browser.moveToObject('#root', 0, 0);
-      Terra.validates.element({ selector: '#application-layout-test' });
+      Terra.validates.element('default', { selector: '#application-layout-test' });
     });
   });
 
@@ -23,7 +23,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
       browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-empty');
       browser.waitForVisible('#application-layout-test');
       browser.moveToObject('#root', 0, 0);
-      Terra.validates.element({ selector: '#application-layout-test' });
+      Terra.validates.element('default', { selector: '#application-layout-test' });
     });
   });
 
@@ -33,7 +33,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
       browser.moveToObject('#root', 0, 0);
       browser.waitForVisible('#application-layout-test');
 
-      Terra.validates.element({ selector: '#application-layout-test' });
+      Terra.validates.element('default', { selector: '#application-layout-test' });
     });
   });
 });
@@ -45,7 +45,7 @@ Terra.describeViewports('ApplicationLayout', ['huge'], () => {
       browser.waitForVisible('#application-layout-tab-1');
       browser.click('#application-layout-tab-1');
 
-      Terra.validates.element({ selector: '#application-layout-test' });
+      Terra.validates.element('default', { selector: '#application-layout-test' });
       browser.click('#application-layout-tab-0');
     });
   });
@@ -58,7 +58,7 @@ Terra.describeViewports('ApplicationLayout', ['large'], () => {
       browser.waitForVisible('[data-application-header-utility]');
       browser.click('[data-application-header-utility]');
 
-      Terra.validates.element({ selector: '#application-layout-test' });
+      Terra.validates.element('default', { selector: '#application-layout-test' });
       browser.keys('Escape');
     });
   });
@@ -70,7 +70,7 @@ Terra.describeViewports('ApplicationLayout', ['large'], () => {
       browser.waitForVisible('#readonly');
       browser.click('#readonly');
 
-      Terra.validates.element({ selector: '#application-layout-test' });
+      Terra.validates.element('default', { selector: '#application-layout-test' });
       browser.keys('Escape');
     });
   });
@@ -83,7 +83,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       browser.click('[data-application-header-toggle]');
       browser.waitForVisible('[data-routing-menu]');
 
-      Terra.validates.element({ selector: '#application-layout-test' });
+      Terra.validates.element('default', { selector: '#application-layout-test' });
     });
   });
 
@@ -93,7 +93,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       browser.click('[data-routing-menu] [data-navigation-side-menu-action-header] button');
       browser.waitForVisible('[data-routing-menu]');
 
-      Terra.validates.element({ selector: '#application-layout-test' });
+      Terra.validates.element('default', { selector: '#application-layout-test' });
     });
   });
 
@@ -102,7 +102,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       browser.waitForVisible('[data-application-menu-utility]');
       browser.click('[data-application-menu-utility]');
 
-      Terra.validates.element({ selector: '#application-layout-test' });
+      Terra.validates.element('default', { selector: '#application-layout-test' });
       browser.keys('Escape');
     });
   });
@@ -116,7 +116,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       browser.click('[data-routing-menu] [data-menu-item="/page_2"]');
       browser.pause(150);
 
-      Terra.validates.element({ selector: '#application-layout-test' });
+      Terra.validates.element('default', { selector: '#application-layout-test' });
     });
   });
 });
