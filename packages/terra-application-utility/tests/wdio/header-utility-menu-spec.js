@@ -1,6 +1,6 @@
 Terra.describeViewports('HeaderUtilityMenu', ['huge'], () => {
   it('Displays a default header utility menu', () => {
-    browser.url('/#/raw/tests/terra-application-utility/application-utility/default-header-utility-menu');
+    browser.url('/raw/tests/terra-application-utility/application-utility/default-header-utility-menu');
     browser.waitForVisible('#default');
     Terra.validates.element({ selector: '#default' });
   });
