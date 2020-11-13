@@ -30,7 +30,6 @@ const propTypes = {
    * Bounding container for the menu, will use window if no value provided.
    */
   boundingRef: PropTypes.func,
-
   /**
    * @private
    * Object containing intl APIs
