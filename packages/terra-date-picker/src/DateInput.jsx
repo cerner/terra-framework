@@ -179,7 +179,7 @@ const DatePickerInput = (props) => {
   const momentDateFormat = useMemo(() => DateUtil.getFormatByLocale(intl.locale), [intl.locale]);
   const dateValue = DateUtil.convertToISO8601(value, momentDateFormat);
   const dateFormatOrder = DateUtil.getDateFormatOrder(momentDateFormat);
-  const separator = intl.formatMessage({ id: 'Terra.datePicker.separator' });
+  const separator = DateUtil.getDateSeparator(intl.locale);
 
   const setDayRef = useCallback(node => {
     dayInputRef.current = node;
@@ -203,6 +203,8 @@ const DatePickerInput = (props) => {
     }
   }, [dateFormatOrder, inputRefCallback]);
 
+  // Triggers the onClick callback to launch the dropdown picker for the scenario when the default date is invalid and
+  // the calendar button is clicked which should clear the value and launch the dropdown picker
   useEffect(() => {
     if (shouldShowPicker && onClick) {
       onClick();

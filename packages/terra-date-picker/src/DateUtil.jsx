@@ -162,6 +162,28 @@ class DateUtil {
   }
 
   /**
+   * Gets the date separator based on the locale.
+   * @param {string} locale - The locale to get the date separator.
+   * @return {string} - The date separator. Possible Values (/, -, .)
+   */
+  static getDateSeparator(locale) {
+    let dateSeparator;
+    const localesWithSlash = ['en-AU', 'en-GB', 'en-US', 'en', 'es-ES', 'es-US', 'es', 'fr-FR', 'fr', 'nl-BE', 'pt-BR', 'pt'];
+    const localesWithHyphen = ['en-CA', 'nl', 'sv-SE', 'sv'];
+    const localesWithDot = ['de'];
+
+    if (localesWithSlash.includes(locale)) {
+      dateSeparator = '/';
+    } else if (localesWithHyphen.includes(locale)) {
+      dateSeparator = '-';
+    } else if (localesWithDot.includes(locale)) {
+      dateSeparator = '.';
+    }
+
+    return dateSeparator;
+  }
+
+  /**
    * Returns an object consisting of date input values based on the date format.
    * @param {string} dateOrder - String containing the date input order. Possible values (MDY, DMY, YMD)
    * @param {string} value - The date/placeholder string.
