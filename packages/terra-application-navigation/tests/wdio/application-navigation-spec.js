@@ -31,7 +31,6 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
   });
 
   describe('Utilities should display properly when only help, settings or logout utilities are present', () => {
-    before(() => browser.url('/raw/tests/terra-application-navigation/application-navigation/no-custom-utility-items'));
     it('launch popup', () => {
       browser.url('/raw/tests/terra-application-navigation/application-navigation/no-custom-utility-items');
       browser.click('[data-application-header-utility="true"]');
