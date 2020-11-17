@@ -5,7 +5,7 @@ Terra.describeViewports('HeaderUtilityMenu', ['huge'], () => {
     Terra.validates.element('default', { selector: '#default' });
   });
 
-  it('Focus-header utility menu', () => {
+  it('should Focus-header utility menu', () => {
     browser.keys(['Tab', 'Tab']);
     browser.moveToObject('#root', 0, 0);
     Terra.validates.element('focus', { selector: '#default' });
