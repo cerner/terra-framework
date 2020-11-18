@@ -1,62 +1,44 @@
-const rules = { bypass: { enabled: false } };
-
 Terra.describeViewports('BrandFooter', ['tiny', 'large'], () => {
-  describe('Default', () => {
-    before(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/default-brand-footer'));
-
-    Terra.it.isAccessible({ rules });
-    Terra.it.matchesScreenshot();
+  it('should display default', () => {
+    browser.url('/raw/tests/terra-brand-footer/brand-footer/default-brand-footer');
+    Terra.validates.element('default');
   });
 
-  describe('Links Prop', () => {
-    before(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/links-prop-brand-footer'));
-
-    Terra.it.isAccessible({ rules });
-    Terra.it.matchesScreenshot();
+  it('should display links prop', () => {
+    browser.url('/raw/tests/terra-brand-footer/brand-footer/links-prop-brand-footer');
+    Terra.validates.element('links prop');
   });
 
-  describe('No Nav', () => {
-    before(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/no-nav-brand-footer'));
-
-    Terra.it.isAccessible({ rules });
-    Terra.it.matchesScreenshot();
+  it('should display no nav', () => {
+    browser.url('/raw/tests/terra-brand-footer/brand-footer/no-nav-brand-footer');
+    Terra.validates.element('no nav');
   });
 
-  describe('Section Headers', () => {
-    before(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/section-header-brand-footer'));
-
-    Terra.it.isAccessible({ rules });
-    Terra.it.matchesScreenshot();
+  it('should display section headers', () => {
+    browser.url('/raw/tests/terra-brand-footer/brand-footer/section-header-brand-footer');
+    Terra.validates.element('section headers');
   });
 
-  describe('Vertical Nav', () => {
-    before(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/vertical-nav-brand-footer'));
-
-    Terra.it.isAccessible({ rules });
-    Terra.it.matchesScreenshot();
+  it('should display vertical nav', () => {
+    browser.url('/raw/tests/terra-brand-footer/brand-footer/vertical-nav-brand-footer');
+    Terra.validates.element('vertical nav');
   });
 
-  describe('Vertical Mixed Headers', () => {
-    before(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/vertical-mixed-headers-brand-footer'));
-
-    Terra.it.isAccessible({ rules });
-    Terra.it.matchesScreenshot();
+  it('should display vertical mixed headers', () => {
+    browser.url('/raw/tests/terra-brand-footer/brand-footer/vertical-mixed-headers-brand-footer');
+    Terra.validates.element('vertical mixed headers');
   });
 
-  describe('Horizontal Wrap', () => {
-    before(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/horizontal-wrap-brand-footer'));
-
-    Terra.it.isAccessible({ rules });
-    Terra.it.matchesScreenshot();
+  it('should display horizontal wrap', () => {
+    browser.url('/raw/tests/terra-brand-footer/brand-footer/horizontal-wrap-brand-footer');
+    Terra.validates.element('horizontal wrap');
   });
 });
 
 // Medium exemplifies 3x2 layout and Large 4 in a row with 2 on the botton row
 Terra.describeViewports('BrandFooter', ['medium', 'large'], () => {
-  describe('Many Sections', () => {
-    before(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/many-sections-brand-footer'));
-
-    Terra.it.isAccessible({ rules });
-    Terra.it.matchesScreenshot();
+  it('should display many sections', () => {
+    browser.url('/raw/tests/terra-brand-footer/brand-footer/many-sections-brand-footer');
+    Terra.validates.element('many sections');
   });
 });
