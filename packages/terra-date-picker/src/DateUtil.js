@@ -1,5 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-import React from 'react';
 import moment from 'moment';
 
 class DateUtil {
@@ -214,52 +213,6 @@ class DateUtil {
     }
 
     return { day, month, year };
-  }
-
-  /**
-   * Returns component layout based on locale format.
-   * @param {string} dateOrder - The date input order based on the locale date format.
-   * @param {object} separator - The separator component with the locale appropriate separator.
-   * @param {object} day - The date day component.
-   * @param {object} month - The date month component.
-   * @param {object} year - The date year component.
-   * @return {object} - The object containing the date input components in the order as per the locale date format.
-   */
-  static getInputLayout(dateOrder, separator, day, month, year) {
-    let formatOrder;
-    if (dateOrder === DateUtil.dateOrder.DMY) {
-      formatOrder = (
-        <>
-          {day}
-          {separator}
-          {month}
-          {separator}
-          {year}
-        </>
-      );
-    } else if (dateOrder === DateUtil.dateOrder.MDY) {
-      formatOrder = (
-        <>
-          {month}
-          {separator}
-          {day}
-          {separator}
-          {year}
-        </>
-      );
-    } else if (dateOrder === DateUtil.dateOrder.YMD) {
-      formatOrder = (
-        <>
-          {year}
-          {separator}
-          {month}
-          {separator}
-          {day}
-        </>
-      );
-    }
-
-    return formatOrder;
   }
 
   /**

@@ -22,6 +22,7 @@ import Input from 'terra-form-input';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import DateUtil from './DateUtil';
+import DateInputLayout from './_DateInputLayout';
 import { getLocalizedDateForScreenReader } from './react-datepicker/date_utils';
 import styles from './DatePicker.module.scss';
 
@@ -603,14 +604,6 @@ const DatePickerInput = (props) => {
 
   const dateSpacer = <span className={cx('date-spacer')}>{separator}</span>;
 
-  const dateInputFormat = DateUtil.getInputLayout(
-    dateFormatOrder,
-    dateSpacer,
-    dateDayInput,
-    dateMonthInput,
-    dateYearInput,
-  );
-
   const dateInputClasses = cx([
     'date-input',
     { 'is-focused': isFocused },
@@ -643,7 +636,13 @@ const DatePickerInput = (props) => {
             value={dateValue}
           />
           <VisuallyHiddenText text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl, locale: intl.locale })}` : label} />
-          {dateInputFormat}
+          <DateInputLayout
+            dateFormatOrder={dateFormatOrder}
+            separator={dateSpacer}
+            day={dateDayInput}
+            month={dateMonthInput}
+            year={dateYearInput}
+          />
         </div>
         <Button
           data-terra-open-calendar-button
