@@ -1,56 +1,56 @@
 Terra.describeViewports('Calendar Filter', ['tiny'], () => {
   describe('Calendar-Filter-Default', () => {
     it('renders with default calendar-filter', () => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-default');
-      Terra.validates.element();
+      browser.url('/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-default');
+      Terra.validates.element('default');
     });
   });
 
   describe('Calendar-Filter with Default Date Excluded', () => {
     it('renders with default date disabled', () => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-default-date-excluded');
-      Terra.validates.element();
+      browser.url('/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-default-date-excluded');
+      Terra.validates.element('default date excluded');
     });
   });
 
   describe('Calendar-Filter with Default Date Out Of Range', () => {
     it('renders with default date disabled', () => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-default-date-out-of-range');
-      Terra.validates.element();
+      browser.url('/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-default-date-out-of-range');
+      Terra.validates.element('out of range');
     });
   });
 
   describe('Calendar-Filter with minDate and maxDate', () => {
     it('renders with min and max-date', () => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-min-max');
-      Terra.validates.element();
+      browser.url('/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-min-max');
+      Terra.validates.element('minDate and maxDate');
     });
   });
 
   describe('Calendar-Filter with Exclude Dates', () => {
     it('renders with excluded date', () => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-exclude-dates');
-      Terra.validates.element();
+      browser.url('/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-exclude-dates');
+      Terra.validates.element('exclude date');
     });
   });
 
   describe('Calendar-Filter with filtered Dates', () => {
     it('renders with filtered date', () => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-filter-dates');
-      Terra.validates.element();
+      browser.url('/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-filter-dates');
+      Terra.validates.element('filtered date');
     });
   });
 
   describe('Calendar-Filter with Included Dates', () => {
     it('renders with Included date', () => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-include-dates');
-      Terra.validates.element();
+      browser.url('/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-include-dates');
+      Terra.validates.element('included date');
     });
   });
 
   describe('Calendar-Filter with OnChange Callback', () => {
     it('renders selected date on change', () => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-on-change');
+      browser.url('/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-on-change');
       browser.click('[class*="react-datepicker-day--selected"]');
       Terra.validates.element('Returns selected_date-iso-formmated_date');
     });
@@ -58,7 +58,7 @@ Terra.describeViewports('Calendar Filter', ['tiny'], () => {
 
   describe('Controlled Calendar Filter', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-controlled');
+      browser.url('/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-controlled');
     });
 
     it('Click button 1 to set the date value as empty', () => {
