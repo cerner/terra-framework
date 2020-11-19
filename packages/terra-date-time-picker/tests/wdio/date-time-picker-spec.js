@@ -695,7 +695,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('With timezone', () => {
     before(() => browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone'));
 
-    Terra.it.matchesScreenshot();
+    Terra.it.matchesScreenshot({ selector: '#root' });
   });
 
   describe('With timezone', () => {
@@ -726,5 +726,18 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     });
 
     Terra.it.matchesScreenshot('DST', { selector: '#root' });
+  });
+
+  describe('With timezone and check todays date', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
+    });
+
+    it('today check', () => {
+      browser.refresh();
+      browser.click('[data-terra-open-calendar-button]');
+      browser.click('[class*="react-datepicker-today-button"]');
+      expect(browser.getValue('[name="terra-date-input"]')).to.equal(moment().tz('America/Chicago').format('MM/DD/YYYY'));
+    });
   });
 });
