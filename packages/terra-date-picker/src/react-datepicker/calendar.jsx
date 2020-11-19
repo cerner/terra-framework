@@ -105,6 +105,11 @@ export default class Calendar extends React.Component {
      */
     includeDates: PropTypes.array,
     /**
+     * Timezone value to indicate in which timezone the date-time component is rendered.
+     * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
+     */
+    initialTimeZone: PropTypes.string,
+    /**
      * Prop to show inline version of date picker component.
      */
     inline: PropTypes.bool,
@@ -387,10 +392,10 @@ export default class Calendar extends React.Component {
   }
 
   getDateInView = () => {
-    const { preSelection, selected, openToDate, utcOffset } = this.props
+    const { preSelection, selected, openToDate, initialTimeZone } = this.props
     const minDate = getEffectiveMinDate(this.props)
     const maxDate = getEffectiveMaxDate(this.props)
-    const current = now(utcOffset)
+    const current = now(initialTimeZone)
     const initialDate = openToDate || selected || preSelection
     if (initialDate) {
       return initialDate
@@ -606,7 +611,7 @@ export default class Calendar extends React.Component {
       return
     }
 
-    const today = getStartOfDate(now(this.props.utcOffset));
+    const today = getStartOfDate(now(this.props.initialTimeZone));
     return (
       <button
         className={cx('react-datepicker-today-button')}
@@ -686,7 +691,8 @@ export default class Calendar extends React.Component {
             utcOffset={this.props.utcOffset}
             handleCalendarKeyDown={this.props.handleCalendarKeyDown}
             locale={this.props.locale}
-            intl={this.props.intl} />
+            intl={this.props.intl}
+            initialTimeZone={this.props.initialTimeZone} />
           <div className={cx('react-datepicker-header')}>
             {this.renderCurrentMonth(monthDate)}
             <div className={cx('react-datepicker-header-controls')}>
