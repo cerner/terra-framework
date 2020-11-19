@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added initialTimeZone a private prop that gets passed down from terra-date-time-picker.
+
 ## 4.52.0 - (November 10, 2020)
 
 * Fixed
