@@ -216,7 +216,7 @@ export default class Month extends React.Component {
         maxDate={this.props.maxDate}
         excludeDates={this.props.excludeDates}
         includeDates={this.props.includeDates}
-        initialTimezone={this.props.initialTimezone}
+        initialTimeZone={this.props.initialTimeZone}
         inline={this.props.inline}
         highlightDates={this.props.highlightDates}
         selectingDate={this.props.selectingDate}

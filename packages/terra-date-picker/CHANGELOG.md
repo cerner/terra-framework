@@ -5,6 +5,9 @@
 * Added
   * Added initialTimeZone a private prop that gets passed down from terra-date-time-picker.
 
+* Changed
+  * Changed 'moemnt' dependency to 'moment-timezone'
+
 ## 4.52.0 - (November 10, 2020)
 
 * Fixed
