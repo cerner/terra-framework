@@ -162,7 +162,6 @@ class DateTimePicker extends React.Component {
     super(props);
 
     this.initialTimeZone = props.initialTimeZone;
-    this.utcOffset = this.initialTimeZone ? DateTimeUtils.getUtcOffset(this.props.value, this.initialTimeZone) : undefined;
 
     this.state = {
       dateTime: DateTimeUtils.createSafeDate(props.value, this.initialTimeZone),
@@ -209,7 +208,6 @@ class DateTimePicker extends React.Component {
     // it needs to be updated to the time in this.state.dateTime to reflect the change and force a render.
     if (this.state.dateTime && DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds)) {
       const displayedTime = DateTimeUtils.getTime(this.state.dateTime.format(), this.props.showSeconds, this.initialTimeZone);
-      this.utcOffset = this.state.dateTime.utcOffset();
 
       if (this.timeValue !== displayedTime) {
         this.timeValue = displayedTime;
@@ -270,6 +268,7 @@ class DateTimePicker extends React.Component {
     return metadata;
   }
 
+  // eslint-disable-next-line react/sort-comp
   handleOnSelect(event, selectedDate) {
     this.dateValue = DateUtil.formatISODate(selectedDate, this.state.dateFormat);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
@@ -371,7 +370,6 @@ class DateTimePicker extends React.Component {
     if (isDateValid) {
       const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateTimeUtils.createSafeDate(formattedDate, this.initialTimeZone);
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue, this.props.showSeconds);
-      this.utcOffset = updatedDateTime.utcOffset();
 
       if (isTimeValid) {
         // Update the timeValue in case the updatedDateTime falls in the missing hour and needs to bump the hour up.
@@ -416,7 +414,6 @@ class DateTimePicker extends React.Component {
     // If the date is valid but time is invalid, the time in the dateTime state needs to be cleared and render.
     if (validDate && validTime) {
       const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time, this.props.showSeconds);
-      this.utcOffset = updatedDateTime.utcOffset();
 
       if (event.keyCode === KeyCode.KEY_DOWN
         && previousDateTime && updatedDateTime && previousDateTime.format() === updatedDateTime.format()) {
@@ -645,7 +642,6 @@ class DateTimePicker extends React.Component {
     const dateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
     const dateValue = DateUtil.formatMomentDate(dateTime, 'YYYY-MM-DD');
     const theme = this.context;
-    const utcOffset = this.utcOffset ? this.utcOffset / 60 : undefined;
 
     return (
       <div
@@ -685,7 +681,7 @@ class DateTimePicker extends React.Component {
             isIncomplete={isIncomplete}
             isInvalid={isInvalid}
             required={required}
-            utcOffset={utcOffset}
+            initialTimeZone={initialTimeZone}
           />
         </div>
         <div className={cx('time-facade')}>

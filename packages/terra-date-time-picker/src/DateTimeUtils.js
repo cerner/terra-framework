@@ -277,18 +277,6 @@ class DateTimeUtils {
   static getLocalTimeZone() {
     return moment.tz.guess();
   }
-
-  /**
-    * Creates a moment object with dateTime and  timeZone, and returns the utcOffset of the moment object.
-    * If dateTime is not supplied moment will generate default time according to timezone.
-    * @param {string|undefined} date - The date to convert. Expect to be in ISO format.
-    * @param {string} timeZone - Time zone value for the moment object.
-    * @return {Number} - The utcOffset number of the moment object.
-    */
-  static getUtcOffset(dateTime, timeZone) {
-    const momentDate = dateTime ? moment.tz(dateTime, timeZone) : moment.tz(timeZone);
-    return momentDate.utcOffset();
-  }
 }
 
 DateTimeUtils.FORMAT_12_HOUR = TimeUtil.FORMAT_12_HOUR;
