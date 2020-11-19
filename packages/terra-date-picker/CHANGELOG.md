@@ -7,6 +7,7 @@
 
 * Changed
   * Changed 'moment' dependency to 'moment-timezone'
+  * Update wdio tests to remove deprecated Terra.it helpers
 
 ## 4.52.0 - (November 10, 2020)
 
