@@ -111,6 +111,44 @@ class UtilityMenu extends React.Component {
     }
   }
 
+  /**
+   * Function to trigger when an item is selected.
+   * * Has children: navigate to the next page
+   * * Endpoint: close menu and trigger onChange.
+   * @param {*} event
+   * @param {*} key
+   */
+  handleOnChange(event, key) {
+    const { childKeys } = this.getItem(key);
+    const item = this.getItem(key);
+    if (childKeys && childKeys.length > 0) {
+      this.setState((prevState) => {
+        const newStack = prevState.previousKeyStack.slice();
+        newStack.push(prevState.currentKey);
+        return { previousKeyStack: newStack, currentKey: key };
+      });
+    } else {
+      this.props.onRequestClose();
+      this.props.onChange(event, { key, metaData: item.metaData });
+    }
+
+    if (this.state.focusIndex !== -1) {
+      this.setState({ focusIndex: -1 });
+    }
+  }
+
+  handleOnKeyDown(index) {
+    return ((event) => {
+      if (event.nativeEvent.keyCode === Utils.KEY_CODES.LEFT_ARROW && this.state.currentKey !== this.props.initialSelectedKey) {
+        this.pop();
+      } else if (event.nativeEvent.keyCode === Utils.KEY_CODES.UP_ARROW && this.state.focusIndex !== 0) {
+        this.setState({ focusIndex: index - 1 });
+      } else if (event.nativeEvent.keyCode === Utils.KEY_CODES.DOWN_ARROW || event.nativeEvent.keyCode === Utils.KEY_CODES.tab) {
+        this.setState({ focusIndex: index + 1 });
+      }
+    });
+  }
+
   getItem(key) {
     return this.state.map.get(key);
   }
@@ -194,44 +232,6 @@ class UtilityMenu extends React.Component {
       return childKeys && childKeys.length > 0 && this.getItem(key).contentLocation !== Utils.LOCATIONS.FOOTER;
     });
     return childrenHasChevron;
-  }
-
-  /**
-   * Function to trigger when an item is selected.
-   * * Has children: navigate to the next page
-   * * Endpoint: close menu and trigger onChange.
-   * @param {*} event
-   * @param {*} key
-   */
-  handleOnChange(event, key) {
-    const { childKeys } = this.getItem(key);
-    const item = this.getItem(key);
-    if (childKeys && childKeys.length > 0) {
-      this.setState((prevState) => {
-        const newStack = prevState.previousKeyStack.slice();
-        newStack.push(prevState.currentKey);
-        return { previousKeyStack: newStack, currentKey: key };
-      });
-    } else {
-      this.props.onRequestClose();
-      this.props.onChange(event, { key, metaData: item.metaData });
-    }
-
-    if (this.state.focusIndex !== -1) {
-      this.setState({ focusIndex: -1 });
-    }
-  }
-
-  handleOnKeyDown(index) {
-    return ((event) => {
-      if (event.nativeEvent.keyCode === Utils.KEY_CODES.LEFT_ARROW && this.state.currentKey !== this.props.initialSelectedKey) {
-        this.pop();
-      } else if (event.nativeEvent.keyCode === Utils.KEY_CODES.UP_ARROW && this.state.focusIndex !== 0) {
-        this.setState({ focusIndex: index - 1 });
-      } else if (event.nativeEvent.keyCode === Utils.KEY_CODES.DOWN_ARROW || event.nativeEvent.keyCode === Utils.KEY_CODES.tab) {
-        this.setState({ focusIndex: index + 1 });
-      }
-    });
   }
 
   pop() {

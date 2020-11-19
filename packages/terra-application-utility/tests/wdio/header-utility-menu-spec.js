@@ -1,19 +1,13 @@
 Terra.describeViewports('HeaderUtilityMenu', ['huge'], () => {
-  before(() => {
-    browser.url('/#/raw/tests/terra-application-utility/application-utility/default-header-utility-menu');
+  it('Displays a default header utility menu', () => {
+    browser.url('/raw/tests/terra-application-utility/application-utility/default-header-utility-menu');
     browser.waitForVisible('#default');
+    Terra.validates.element('default', { selector: '#default' });
   });
 
-  describe('Displays a default header utility menu', () => {
-    Terra.it.validatesElement({ selector: '#default' });
-  });
-
-  describe('Focus-header utility menu', () => {
-    before(() => {
-      browser.keys(['Tab', 'Tab']);
-      browser.moveToObject('#root', 0, 0);
-    });
-
-    Terra.it.validatesElement({ selector: '#default' });
+  it('should Focus-header utility menu', () => {
+    browser.keys(['Tab', 'Tab']);
+    browser.moveToObject('#root', 0, 0);
+    Terra.validates.element('focus', { selector: '#default' });
   });
 });
