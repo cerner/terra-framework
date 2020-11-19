@@ -3,7 +3,7 @@ const selector = '#root';
 Terra.describeViewports('Dialog Modal', ['tiny', 'medium', 'large'], () => {
   describe('Default Dialog Modal', () => {
     it('Default Dialog Modal', () => {
-      browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal');
+      browser.url('/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal');
       browser.click('#trigger-dialog-modal');
 
       Terra.validates.element('default', { selector });
@@ -12,7 +12,7 @@ Terra.describeViewports('Dialog Modal', ['tiny', 'medium', 'large'], () => {
 
   describe('Dialog Modal With Long text', () => {
     it('Dialog Modal With Long text', () => {
-      browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/dialog-modal-with-long-text');
+      browser.url('/raw/tests/terra-dialog-modal/dialog-modal/dialog-modal-with-long-text');
       browser.click('#trigger-dialog-modal');
 
       Terra.validates.element('long text', { selector });
@@ -21,7 +21,7 @@ Terra.describeViewports('Dialog Modal', ['tiny', 'medium', 'large'], () => {
 
   describe('Dialog Modal With Custom Header and Custom Footer', () => {
     it('Dialog Modal With Custom Header and Custom Footer', () => {
-      browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/dialog-modal-with-custom-header-and-custom-footer');
+      browser.url('/raw/tests/terra-dialog-modal/dialog-modal/dialog-modal-with-custom-header-and-custom-footer');
       browser.click('#trigger-dialog-modal');
 
       Terra.validates.element('custom header and footer', { selector });
@@ -32,7 +32,7 @@ Terra.describeViewports('Dialog Modal', ['tiny', 'medium', 'large'], () => {
 describe('Dialog Modal', () => {
   describe('Within Modal Focus Handling', () => {
     it('focuses on the modal when opened', () => {
-      browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal');
+      browser.url('/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal');
       browser.click('#trigger-dialog-modal');
       expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.equal(true);
       Terra.validates.element('modal is focused on open', { selector: '#root' });
@@ -70,7 +70,7 @@ describe('Dialog Modal', () => {
 
   describe('Closing Select inside modal using escape', () => {
     it('Opens the Select inside the modal', () => {
-      browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/dialog-modal-with-select');
+      browser.url('/raw/tests/terra-dialog-modal/dialog-modal/dialog-modal-with-select');
       browser.click('#trigger-dialog-modal');
       browser.click('[data-terra-form-select-toggle]');
       Terra.validates.screenshot('Select Opened inside a modal', { selector: '#root' });
