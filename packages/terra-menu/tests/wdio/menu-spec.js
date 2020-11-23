@@ -56,7 +56,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
   });
 
   describe('Menu-Selectable with Varying Items', () => {
-    it('disolays a selectable menu with varying items', () => {
+    it('displays a selectable menu with varying items', () => {
       browser.url('/raw/tests/terra-menu/menu/menu/selectable-and-unselectable-items-menu');
       browser.click('#default-button');
       Terra.validates.element('with varying items', { selector: '#root' });
