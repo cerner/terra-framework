@@ -78,7 +78,6 @@ class DateTimeUtils {
    * @param {object} momentDate - The moment object to synchronize the date and time.
    * @param {string} time - The time to synchronize with the moment object.
    * @param {boolean} hasSeconds - If true seconds will be processed
-   * @param {string} timeZone - Time zone value for the moment object.
    * @return {object} - The synchronized moment object.
    */
   static updateTime(momentDate, time, hasSeconds) {
@@ -89,11 +88,10 @@ class DateTimeUtils {
     const newDate = momentDate.clone();
     const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
     const date = moment(time, timeFormat, true);
-    const timeZone = momentDate.tz() || moment.tz.guess();
+    const timeZone = momentDate.tz() || DateTimeUtils.getLocalTimeZone();
 
-    let dateTimeString;
     if (date.isValid()) {
-      dateTimeString = newDate.format('YYYY-MM-DD').concat(' ').concat(date.format(timeFormat));
+      const dateTimeString = newDate.format('YYYY-MM-DD').concat(' ').concat(date.format(timeFormat));
       return moment.tz(dateTimeString, timeZone);
     }
 
@@ -257,7 +255,7 @@ class DateTimeUtils {
       return undefined;
     }
 
-    const momentDate = (timeZone && moment.tz.zone(timeZone) ? moment.tz(date, timeZone) : moment.tz(date, moment.tz.guess()));
+    const momentDate = (timeZone && moment.tz.zone(timeZone) ? moment.tz(date, timeZone) : moment.tz(date, DateTimeUtils.getLocalTimeZone()));
     return momentDate.isValid() ? momentDate : undefined;
   }
 
