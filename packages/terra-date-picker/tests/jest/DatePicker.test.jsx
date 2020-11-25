@@ -2,7 +2,7 @@ import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import DatePicker from '../../lib/DatePicker';
 import DateUtil from '../../lib/DateUtil';
 

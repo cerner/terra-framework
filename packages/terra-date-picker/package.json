@@ -30,7 +30,6 @@
     "classnames": "^2.2.5",
     "focus-trap-react": "^6.0.0",
     "keycode-js": "^2.0.1",
-    "moment": "^2.21.0",
     "moment-timezone": "^0.5.13",
     "prop-types": "^15.5.8",
     "react-onclickoutside": "^6.7.1",
