@@ -161,7 +161,7 @@ class DateTimePicker extends React.Component {
   constructor(props) {
     super(props);
 
-    this.initialTimeZone = props.initialTimeZone;
+    this.initialTimeZone = DateTimeUtils.checkIfTimeZoneIsValid(props.initialTimeZone);
 
     this.state = {
       dateTime: DateTimeUtils.createSafeDate(props.value, this.initialTimeZone),
@@ -616,6 +616,7 @@ class DateTimePicker extends React.Component {
       excludeDates,
       filterDate,
       includeDates,
+      initialTimeZone,
       isIncomplete,
       isInvalid,
       isInvalidMeridiem,
@@ -634,7 +635,6 @@ class DateTimePicker extends React.Component {
       timeInputAttributes,
       value,
       timeVariant,
-      initialTimeZone,
       ...customProps
     } = this.props;
 
@@ -680,7 +680,7 @@ class DateTimePicker extends React.Component {
             isIncomplete={isIncomplete}
             isInvalid={isInvalid}
             required={required}
-            initialTimeZone={initialTimeZone}
+            initialTimeZone={this.initialTimeZone}
           />
         </div>
         <div className={cx('time-facade')}>

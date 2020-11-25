@@ -14,8 +14,10 @@ class DateUtil {
       return undefined;
     }
 
+    const isTimeZoneValid = initialTimeZone && moment.tz.zone(initialTimeZone);
+
     let momentDate;
-    if (initialTimeZone && moment.tz.zone(initialTimeZone)) {
+    if (isTimeZoneValid) {
       momentDate = moment.tz(date, DateUtil.ISO_EXTENDED_DATE_FORMAT, true, initialTimeZone);
     } else {
       momentDate = moment(date, DateUtil.ISO_EXTENDED_DATE_FORMAT, true);
@@ -23,7 +25,7 @@ class DateUtil {
 
     if (!momentDate || !momentDate.isValid()) {
       // This should allow DateTime inputs that used to work in the moment.ISO_8601 to still pass but discard the time from the value.
-      if (initialTimeZone && moment.tz.zone(initialTimeZone)) {
+      if (isTimeZoneValid) {
         momentDate = moment.tz(date.slice(0, 10), DateUtil.ISO_EXTENDED_DATE_FORMAT, true, initialTimeZone);
       } else {
         momentDate = moment(date.slice(0, 10), DateUtil.ISO_EXTENDED_DATE_FORMAT, true);

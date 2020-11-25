@@ -277,6 +277,16 @@ class DateTimeUtils {
   static getLocalTimeZone() {
     return moment.tz.guess();
   }
+
+  /**
+   * Checks if the intitialTimeZone is a valid timezone string.
+   * If valid the provided timezone is returned or local/browser timezone is returned.
+   * @param {string} intitialTimeZone - timezone string
+   * @return {string} - Returns the timezone string if it is valid or returns the local timezone string.
+   */
+  static checkIfTimeZoneIsValid(intitialTimeZone) {
+    return moment.tz.zone(intitialTimeZone) ? intitialTimeZone : DateTimeUtils.getLocalTimeZone();
+  }
 }
 
 DateTimeUtils.FORMAT_12_HOUR = TimeUtil.FORMAT_12_HOUR;
