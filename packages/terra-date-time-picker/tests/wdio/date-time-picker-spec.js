@@ -33,17 +33,8 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     Terra.validates.element('with date and time');
   });
 
-  it('should Handle Missing Hour', () => {
-    browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
-    Terra.hideInputCaret('input[name="terra-time-minute-input"]');
-    browser.setValue('input[name="terra-date-input"]', '03/11/2018');
-    browser.setValue('input[name="terra-time-hour-input"]', '02');
-    browser.setValue('input[name="terra-time-minute-input"]', '30');
-    Terra.validates.element('handle missing hour');
-  });
-
   it('should handle Re-entering Same Missing Hour Twice', () => {
-    browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
+    browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
     Terra.hideInputCaret('input[name="terra-time-minute-input"]');
     browser.setValue('input[name="terra-date-input"]', '03/11/2018');
     browser.setValue('input[name="terra-time-hour-input"]', '02');
@@ -541,52 +532,35 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     Terra.validates.element('remounts component');
   });
 
-  describe('With timezone', () => {
-    before(() => browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone'));
-
-    Terra.it.matchesScreenshot({ selector: '#root' });
+  it('displays with timezone', () => {
+    browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone');
+    Terra.validates.screenshot('With Timezone', { selector: '#root' });
   });
 
-  describe('With timezone', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-missing-hour');
-    });
-
-    it('missing hour', () => {
-      browser.refresh();
-      browser.setValue('input[name="terra-date-input"]', '03/11/2018');
-      browser.setValue('input[name="terra-time-hour-input"]', '02');
-      browser.setValue('input[name="terra-time-minute-input"]', '30');
-    });
-
-    Terra.it.matchesScreenshot('missing hour');
+  it('With timezone', () => {
+    browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
+    browser.refresh();
+    browser.clearElement('input[name="terra-date-input"]');
+    browser.setValue('input[name="terra-date-input"]', '03/11/2018');
+    browser.setValue('input[name="terra-time-hour-input"]', '02');
+    browser.setValue('input[name="terra-time-minute-input"]', '30');
+    Terra.validates.element('missing hour');
   });
 
-  describe('With timezone', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
-    });
-
-    it('DST', () => {
-      browser.refresh();
-      browser.click('input[name="terra-time-minute-input"]');
-      browser.keys('Tab');
-      browser.waitForVisible('[class*="time-clarification"]');
-    });
-
-    Terra.it.matchesScreenshot('DST', { selector: '#root' });
+  it('With timezone', () => {
+    browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
+    browser.refresh();
+    browser.click('input[name="terra-time-minute-input"]');
+    browser.keys('Tab');
+    browser.waitForVisible('[class*="time-clarification"]');
+    Terra.validates.element('DST', { selector: '#root' });
   });
 
-  describe('With timezone and check todays date', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
-    });
-
-    it('today check', () => {
-      browser.refresh();
-      browser.click('[data-terra-open-calendar-button]');
-      browser.click('[class*="react-datepicker-today-button"]');
-      expect(browser.getValue('[name="terra-date-input"]')).to.equal(moment().tz('America/Chicago').format('MM/DD/YYYY'));
-    });
+  it('With timezone and check todays date', () => {
+    browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
+    browser.refresh();
+    browser.click('[data-terra-open-calendar-button]');
+    browser.click('[class*="react-datepicker-today-button"]');
+    expect(browser.getValue('[name="terra-date-input"]')).to.equal(moment().tz('America/Chicago').format('MM/DD/YYYY'));
   });
 });
