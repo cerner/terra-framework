@@ -108,10 +108,6 @@ export function setYear (date, year) {
   return set(date, 'year', year)
 }
 
-export function setUTCOffset (date, offset) {
-  return date.utcOffset(offset)
-}
-
 // ** Date Getters **
 // Returns day of week
 export function getDay (date) {
@@ -133,10 +129,6 @@ export function getYear (date) {
 // Returns day of month
 export function getDate (date) {
   return get(date, 'date')
-}
-
-export function getUTCOffset () {
-  return moment().utcOffset()
 }
 
 export function getDayOfWeekCode (day) {
@@ -227,14 +219,6 @@ export function isSameMonth (date1, date2) {
 export function isSameDay (moment1, moment2) {
   if (moment1 && moment2) {
     return moment1.isSame(moment2, 'day')
-  } else {
-    return !moment1 && !moment2
-  }
-}
-
-export function isSameUtcOffset (moment1, moment2) {
-  if (moment1 && moment2) {
-    return moment1.utcOffset() === moment2.utcOffset()
   } else {
     return !moment1 && !moment2
   }

@@ -143,10 +143,6 @@ export default class Month extends React.Component {
      */
     startDate: PropTypes.object,
     /**
-     * Difference between utc and local time.
-     */
-    utcOffset: PropTypes.number,
-    /**
      * Whether or not calendar is opened via keyboard
      */
     isCalendarKeyboardFocused: PropTypes.bool,
@@ -228,8 +224,7 @@ export default class Month extends React.Component {
         showWeekNumber={this.props.showWeekNumbers}
         startDate={this.props.startDate}
         endDate={this.props.endDate}
-        dayClassName={this.props.dayClassName}
-        utcOffset={this.props.utcOffset} />)
+        dayClassName={this.props.dayClassName}/>)
 
       if (breakAfterNextPush) break
 

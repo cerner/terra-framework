@@ -225,10 +225,6 @@ export default class Calendar extends React.Component {
      */
     useWeekdaysShort: PropTypes.bool,
     /**
-     * Difference between utc and local time.
-     */
-    utcOffset: PropTypes.number,
-    /**
      * Label value for weeks on date picker.
      */
     weekLabel: PropTypes.string,
@@ -688,7 +684,6 @@ export default class Calendar extends React.Component {
             startDate={this.props.startDate}
             endDate={this.props.endDate}
             peekNextMonth={this.props.peekNextMonth}
-            utcOffset={this.props.utcOffset}
             handleCalendarKeyDown={this.props.handleCalendarKeyDown}
             locale={this.props.locale}
             intl={this.props.intl}

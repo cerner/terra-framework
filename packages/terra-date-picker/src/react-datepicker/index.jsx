@@ -300,10 +300,6 @@ class DatePicker extends React.Component {
      */
     useWeekdaysShort: PropTypes.bool,
     /**
-     * Difference between utc and local time.
-     */
-    utcOffset: PropTypes.number,
-    /**
      * Value of the date picked by user .
      */
     value: PropTypes.string,
@@ -730,7 +726,6 @@ class DatePicker extends React.Component {
         scrollableYearDropdown={this.props.scrollableYearDropdown}
         todayButton={this.props.todayButton}
         weekLabel={this.props.weekLabel}
-        utcOffset={this.props.utcOffset}
         outsideClickIgnoreClass={outsideClickIgnoreClass}
         fixedHeight={this.props.fixedHeight}
         monthsShown={this.props.monthsShown}
@@ -787,7 +782,6 @@ class DatePicker extends React.Component {
         scrollableYearDropdown={this.props.scrollableYearDropdown}
         todayButton={this.props.todayButton}
         weekLabel={this.props.weekLabel}
-        utcOffset={this.props.utcOffset}
         fixedHeight={this.props.fixedHeight}
         monthsShown={this.props.monthsShown}
         onDropdownFocus={this.handleDropdownFocus}

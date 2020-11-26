@@ -92,10 +92,6 @@ class Day extends React.Component {
      */
     startDate: PropTypes.object,
     /**
-     * Difference between utc and local time.
-     */
-    utcOffset: PropTypes.number,
-    /**
      * Whether or not calendar is opened via keyboard
      */
     isCalendarKeyboardFocused: PropTypes.bool,
