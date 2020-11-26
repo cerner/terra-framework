@@ -22,7 +22,7 @@ function DateTimePickerTimeZone() {
         {dateTime}
       </p>
       <p>
-        Selected Timezone:
+        Initial Timezone:
         {timeZone}
       </p>
       <Field label="Enter Date/Time" htmlFor="timeZone">
