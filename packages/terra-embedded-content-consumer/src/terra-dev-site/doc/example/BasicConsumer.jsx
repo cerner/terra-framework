@@ -6,7 +6,7 @@ Consumer.init();
 
 const BasicConsumer = () => (
   <EmbeddedContentConsumer
-    src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/basic-provider"
+    src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/basic-provider"
     options={{ iframeAttrs: { title: 'Basic content example' } }}
   />
 );

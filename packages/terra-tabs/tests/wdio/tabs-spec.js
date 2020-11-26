@@ -1,41 +1,35 @@
 // Verify tabs collapse appropriately
 Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
-  describe('Default', () => {
-    it('Default', () => {
-      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/default-tabs');
-      browser.pause(1000);
-      browser.moveToObject('[class*="tab-content"]');
-      Terra.validates.element({ selector: '#root' });
-    });
-  });
-  describe('Extended', () => {
-    it('Extended', () => {
-      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/extended-tabs');
-      browser.refresh();
-      browser.moveToObject('[class*="tab-content"]');
-      Terra.validates.element({ selector: '#root' });
-    });
-  });
-  describe('Icon Only Tabs', () => {
-    it('Icon Only Tabs', () => {
-      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/default-icon-only-tabs');
-      browser.moveToObject('[class*="tab-content"]');
-      Terra.validates.element();
-    });
+  it('Default', () => {
+    browser.url('/raw/tests/terra-tabs/tabs/tabs/default-tabs');
+    browser.pause(1000);
+    browser.moveToObject('[class*="tab-content"]');
+    Terra.validates.element('default', { selector: '#root' });
   });
 
-  describe('Icon Only Tabs - No Overflow', () => {
-    it('Icon Only Tabs - No Overflow', () => {
-      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/overflow-tabs');
-      Terra.validates.element();
-    });
+  it('displays Extended tabs', () => {
+    browser.url('/raw/tests/terra-tabs/tabs/tabs/extended-tabs');
+    browser.refresh();
+    browser.moveToObject('[class*="tab-content"]');
+    Terra.validates.element('extended', { selector: '#root' });
+  });
+
+  it('displays Icon Only Tabs', () => {
+    browser.url('/raw/tests/terra-tabs/tabs/tabs/default-icon-only-tabs');
+    browser.moveToObject('[class*="tab-content"]');
+    Terra.validates.element('icon only');
+  });
+
+  it('Icon Only Tabs - No Overflow', () => {
+    browser.url('/raw/tests/terra-tabs/tabs/tabs/overflow-tabs');
+    Terra.validates.element('icon only no overflow');
   });
 });
 
 // Only test viewports that have collapsed tabs
 Terra.describeViewports('Responsive Hidden Open', ['tiny', 'small', 'medium', 'large'], () => {
   before(() => {
-    browser.url('/#/raw/tests/terra-tabs/tabs/tabs/default-tabs');
+    browser.url('/raw/tests/terra-tabs/tabs/tabs/default-tabs');
     browser.refresh();
   });
 
@@ -54,7 +48,7 @@ Terra.describeViewports('Responsive Hidden Open', ['tiny', 'small', 'medium', 'l
 Terra.describeViewports('Tabs - Large screen', ['large'], () => {
   describe('Default', () => {
     it('Default', () => {
-      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/default-tabs');
+      browser.url('/raw/tests/terra-tabs/tabs/tabs/default-tabs');
       browser.refresh();
       browser.moveToObject('[class*="tab-content"]');
     });
@@ -63,25 +57,22 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
       it('Collapsible active focus', () => {
         browser.waitForVisible('#tab2');
         browser.click('#tab2');
-        Terra.validates.element();
+        Terra.validates.element('Collapsible active focus');
       });
     });
   });
 
-  describe('Fill Parent Tabs', () => {
-    it('Fill Parent Tabs', () => {
-      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/fill-parent-tabs');
-      browser.moveToObject('[class*="tab-content"]');
-      Terra.validates.element();
-    });
+  it('Fill Parent Tabs', () => {
+    browser.url('/raw/tests/terra-tabs/tabs/tabs/fill-parent-tabs');
+    browser.moveToObject('[class*="tab-content"]');
+    Terra.validates.element('fill parent');
   });
 
   describe('Additional Tabs after mount', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/additional-tabs');
+    it('displays before mount', () => {
+      browser.url('/raw/tests/terra-tabs/tabs/tabs/additional-tabs');
+      Terra.validates.element('before', { selector: '#tabsWrapper-5' });
     });
-
-    Terra.it.matchesScreenshot('before', { selector: '#tabsWrapper-5' });
 
     it('Additional Tabs', () => {
       browser.click('button');
@@ -95,37 +86,33 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
 Terra.describeViewports('Tabs - Uncollapsed', ['tiny'], () => {
   describe('Icon Only Tabs', () => {
     it('Icon Only Tabs', () => {
-      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/uncollapsed-icon-only-tabs');
+      browser.url('/raw/tests/terra-tabs/tabs/tabs/uncollapsed-icon-only-tabs');
       Terra.validates.element('uncollapsed', { selector: '#iconOnlyTabs' });
     });
   });
 
   describe('Default', () => {
     it('Default', () => {
-      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/uncollapsed-tabs');
+      browser.url('/raw/tests/terra-tabs/tabs/tabs/uncollapsed-tabs');
       Terra.validates.element('uncollapsed');
     });
   });
 });
 
 Terra.describeViewports('Tabs - Responsive to Window', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
-  describe('Responsive to Window', () => {
-    it('Responsive to Window', () => {
-      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/tabs-responsive-to-window');
-      browser.moveToObject('[class*="tab-content"]');
-      Terra.validates.element({ selector: '#tabs-container' });
-    });
+  it('Responsive to Window', () => {
+    browser.url('/raw/tests/terra-tabs/tabs/tabs/tabs-responsive-to-window');
+    browser.moveToObject('[class*="tab-content"]');
+    Terra.validates.element('responsive to window', { selector: '#tabs-container' });
   });
 });
 
 Terra.describeViewports('Tabs - Responsive to Parent', ['huge'], () => {
-  describe('Responsive to Parent', () => {
-    it('Responsive to Parent', () => {
-      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/tabs-responsive-to-parent');
-      Terra.validates.element('before');
-      browser.click('button');
-      browser.moveToObject('[class*="tab-content"]');
-      Terra.validates.element('after');
-    });
+  it('Responsive to Parent', () => {
+    browser.url('/raw/tests/terra-tabs/tabs/tabs/tabs-responsive-to-parent');
+    Terra.validates.element('before');
+    browser.click('button');
+    browser.moveToObject('[class*="tab-content"]');
+    Terra.validates.element('after');
   });
 });
