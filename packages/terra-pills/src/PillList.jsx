@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import {
+  KEY_SPACE,
+  KEY_RETURN,
+} from 'keycode-js';
 import PropTypes from 'prop-types';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -19,20 +23,96 @@ const propTypes = {
   /**
    * Determines if the Pill List rolls up or not.
    */
-  // isCollapsible: PropTypes.bool,
+  isCollapsible: PropTypes.bool,
 };
 
 const defaultProps = {
-  // isCollapsible: false,
+  isCollapsible: false,
 };
 
 const PillList = (props) => {
   const {
     ariaLabel,
     children,
-    // isCollapsible,
+    isCollapsible,
   } = props;
+
   const theme = React.useContext(ThemeContext);
+  const pillListRef = useRef();
+  const rollUpPillRef = useRef();
+  const [rollUpCount, setRollUpCount] = useState(0);
+  const [isRollUpRequired, setIsRollUpRequired] = useState(true);
+
+  const handleCollapse = () => {
+    let pillListHeight = pillListRef.current.getBoundingClientRect().height;
+    const pillHeight = rollUpPillRef.current.getBoundingClientRect().height + 12; // Margin + border width
+
+    if (pillListHeight <= pillHeight) {
+      setIsRollUpRequired(false);
+      return;
+    }
+
+    const childPills = pillListRef.current.querySelectorAll('[class*="pill-container"]');
+    let index = childPills.length - 1;
+    let pillCounter = 0;
+    while (pillListHeight > pillHeight) {
+      childPills[index].style.display = 'none';
+      index -= 1;
+      pillCounter += 1;
+      pillListHeight = pillListRef.current.getBoundingClientRect().height;
+    }
+    setIsRollUpRequired(true);
+    setRollUpCount(pillCounter);
+  };
+
+  useEffect(() => {
+    if (isCollapsible) {
+      handleCollapse();
+    }
+    pillListRef.current.style.visibility = 'visible';
+  }, []);
+
+  const handleRollUp = () => {
+    const childPills = pillListRef.current.querySelectorAll('[class*="pill-container"]');
+    let index = childPills.length - 1;
+    let pillCounter = rollUpCount;
+    while (pillCounter > 0) {
+      childPills[index].removeAttribute('style');
+      index -= 1;
+      pillCounter -= 1;
+    }
+    setIsRollUpRequired(false);
+    setRollUpCount(pillCounter);
+  };
+
+  const handleKeyDown = (event) => {
+    rollUpPillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'true');
+    if (event.keyCode === KEY_RETURN || event.keyCode === KEY_SPACE) {
+      handleRollUp();
+    }
+  };
+
+  const handleMouseDown = () => {
+    rollUpPillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'false');
+  };
+
+  let rollUpButton;
+  if (isCollapsible) {
+    rollUpButton = (
+      <div
+        className={cx(['roll-up-button'])}
+        onClick={handleRollUp}
+        onKeyDown={handleKeyDown}
+        onMouseDown={handleMouseDown}
+        ref={rollUpPillRef}
+        role="button"
+        tabIndex="0"
+      >
+        {`${rollUpCount} more ...`}
+      </div>
+    );
+  }
+
   const PillListClassNames = cx([
     'pill-list',
     theme.className,
@@ -42,8 +122,10 @@ const PillList = (props) => {
     <div
       aria-label={ariaLabel}
       className={PillListClassNames}
+      ref={pillListRef}
     >
       {children}
+      {isRollUpRequired && rollUpButton}
     </div>
   );
 };

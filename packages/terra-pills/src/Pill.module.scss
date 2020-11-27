@@ -67,6 +67,37 @@
   }
 
   .pill-list {
+    border: 1px solid #000;
+    visibility: hidden;
     width: 200px;
+  }
+
+  .roll-up-button {
+    background-color: #fff;
+    border: 1px solid #868a8c;
+    border-radius: 0.85714rem;
+    color: #4d5153;
+    display: inline-block;
+    font-size: 0.85714rem;
+    line-height: 1.16667;
+    margin: 0.35714rem;
+    outline: none;
+    padding-bottom: 0.28571rem;
+    padding-left: 0.71428rem;
+    padding-right: 0.71428rem;
+    padding-top: 0.28571rem;
+
+    &[data-terra-pills-show-focus-styles='true']:focus {
+      outline: 2px dashed #000;
+      outline-offset: 2px;
+    }
+
+    &:hover {
+      background-color: #dedfe0;
+    }
+
+    &:active {
+      background-color: #bcbfc0;
+    }
   }
 }

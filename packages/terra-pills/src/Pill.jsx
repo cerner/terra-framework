@@ -67,6 +67,11 @@ const Pill = (props) => {
     setOpen(true);
   };
 
+  const handleOnRemove = () => {
+    pillRef.current.style.display = 'none';
+    onRemove();
+  };
+
   const handleOnKeyDown = (event) => {
     pillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'true');
     if (event.keyCode === KEY_RETURN || event.keyCode === KEY_SPACE) {
@@ -101,7 +106,7 @@ const Pill = (props) => {
 
   const removeButtonProps = {};
   if (onRemove) {
-    removeButtonProps.onClick = onRemove;
+    removeButtonProps.onClick = handleOnRemove;
     removeButtonProps.role = 'button';
   }
 

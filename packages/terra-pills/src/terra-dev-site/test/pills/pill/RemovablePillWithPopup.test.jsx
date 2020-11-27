@@ -1,9 +1,10 @@
 import React from 'react';
-import PillList from '../../../PillList';
-import Pill from '../../../Pill';
+import PillList from '../../../../PillList';
+import Pill from '../../../../Pill';
 
-const BasicPill = () => {
+const RemovablePillWithPopup = () => {
   const handleOnRemove = () => {
+    // eslint-disable-next-line no-alert
     alert('Remove button clicked');
   };
 
@@ -20,4 +21,4 @@ const BasicPill = () => {
   );
 };
 
-export default BasicPill;
+export default RemovablePillWithPopup;
