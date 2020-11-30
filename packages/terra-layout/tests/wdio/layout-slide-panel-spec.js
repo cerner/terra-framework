@@ -1,8 +1,10 @@
 /* globals $ */
 Terra.describeViewports('Toggle the slide panel and hidden styles', ['medium'], () => {
-  it('Toggles the slide panel and hidden styles', () => {
+  before(() => {
     browser.url('/raw/tests/terra-layout/layout/layout-slide-panel-example');
     browser.waitForExist('[class*=_panel_][aria-hidden="true"]');
+  });
+  it('Toggles the slide panel and hidden styles', () => {
     Terra.validates.element('default', { selector: '#site' });
   });
 });
