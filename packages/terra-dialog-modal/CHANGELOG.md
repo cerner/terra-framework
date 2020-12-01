@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 3.54.0 - (November 24, 2020)
+
 * Changed
   * Update wdio tests to remove deprecated Terra.it helpers
 
