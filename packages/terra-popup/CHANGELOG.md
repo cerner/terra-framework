@@ -6,6 +6,11 @@
   * Updated to support a peer dependency of react-intl v2-v5
   * Updated FormattedMessage child function to join if given an array.
 
+## 6.44.0 - (November 24, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 ## 6.43.0 - (November 10, 2020)
 
 * Fixed
