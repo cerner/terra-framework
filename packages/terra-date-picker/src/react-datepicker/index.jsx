@@ -153,7 +153,7 @@ class DatePicker extends React.Component {
      * @private
      * Internationalization object with translation APIs. Provided by `injectIntl`.
      */
-    intl: PropTypes.shape({}),
+    intl: PropTypes.shape({ formatMessage: PropTypes.func }),
     /**
      * Prop to determine whether or not the date picker is clearable.
      */

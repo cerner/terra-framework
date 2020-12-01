@@ -44,7 +44,7 @@ class Day extends React.Component {
      * @private
      * Internationalization object with translation APIs. Provided by `injectIntl`.
      */
-    intl: PropTypes.shape({}),
+    intl: PropTypes.shape({ formatMessage: PropTypes.func }),
     /**
      * Month value for the date entered.
      */

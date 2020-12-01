@@ -56,7 +56,7 @@ export default class Month extends React.Component {
      * @private
      * Internationalization object with translation APIs. Provided by `injectIntl`.
      */
-    intl: PropTypes.shape({}),
+    intl: PropTypes.shape({ formatMessage: PropTypes.func }),
     /**
      * @private
      * Name of locale data for different international formatting.
