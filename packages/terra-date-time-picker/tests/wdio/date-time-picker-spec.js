@@ -268,12 +268,14 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     });
   });
 
-  it('moves focus to hour input on Valid date entry ', () => {
-    browser.refresh();
-    // Removes the blinking cursor to prevent screenshot mismatches.
-    Terra.hideInputCaret('input[name="terra-time-hour-input"]');
-    browser.setValue('input[name="terra-date-input"]', '04/15/2019');
-    Terra.validates.element('move focus to hour');
+  describe('Auto focus', () => {
+    it('moves focus to hour input on valid entry completion', () => {
+      browser.refresh();
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
+      browser.setValue('input[name="terra-date-input"]', '04/15/2019');
+      Terra.validates.element('move focus to hour');
+    });
   });
 
   describe('OnChange', () => {
