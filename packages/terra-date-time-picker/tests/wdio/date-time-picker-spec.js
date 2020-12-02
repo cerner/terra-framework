@@ -533,12 +533,12 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   });
 
   it('displays with timezone', () => {
-    browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone');
+    browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone');
     Terra.validates.screenshot('With Timezone', { selector: '#root' });
   });
 
   it('With timezone', () => {
-    browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
+    browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
     browser.refresh();
     browser.clearElement('input[name="terra-date-input"]');
     browser.setValue('input[name="terra-date-input"]', '03/11/2018');
@@ -548,7 +548,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   });
 
   it('With timezone', () => {
-    browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
+    browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
     browser.refresh();
     browser.click('input[name="terra-time-minute-input"]');
     browser.keys('Tab');
@@ -557,7 +557,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   });
 
   it('With timezone and check todays date', () => {
-    browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
+    browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
     browser.refresh();
     browser.click('[data-terra-open-calendar-button]');
     browser.click('[class*="react-datepicker-today-button"]');
