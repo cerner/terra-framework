@@ -163,7 +163,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     });
 
     it('tabs out of the component and onBlur is triggered', () => {
-      browser.keys('Tab');
+      browser.click('#root');
       expect(browser.getText('#blur-count')).to.equal('1');
       expect(browser.getText('#iso')).to.equal('2019-05-01T10:10:00-05:00');
       expect(browser.getText('#input-value')).to.equal('05/01/2019 10:10');
@@ -181,7 +181,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.setValue('input[name="terra-date-input"]', '04/01/2019');
       browser.setValue('input[name="terra-time-hour-input"]', '10');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
-      browser.keys('Tab');
+      browser.click('#root');
       expect(browser.getText('#iso')).to.equal('2019-04-01T10:30:00-05:00');
       expect(browser.getText('#input-value')).to.equal('04/01/2019 10:30');
       expect(browser.getText('#date-value')).to.equal('04/01/2019');
@@ -196,7 +196,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     it('is triggered ', () => {
       browser.refresh();
       browser.click('input[name="terra-time-minute-input"]');
-      browser.keys('Tab');
+      browser.click('#root');
       expect(browser.getText('#blur-count')).to.equal('1');
       expect(browser.getText('#focus-count')).to.equal('1');
       expect(browser.getText('#iso')).to.equal('');
@@ -215,7 +215,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.setValue('input[name="terra-date-input"]', '03/10/2019');
       browser.setValue('input[name="terra-time-hour-input"]', '02');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
-      browser.keys('Tab');
+      browser.click('#root');
       browser.waitForVisible('#iso');
       expect(browser.getText('#iso')).to.equal('2019-03-10T03:30:00-05:00');
       expect(browser.getText('#input-value')).to.equal('03/10/2019 03:30');
@@ -229,10 +229,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
   describe('OnBlur with only date', () => {
     it('triggers onBlur with date only', () => {
-      browser.refresh();
+      browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-focus-blur');
       browser.setValue('input[name="terra-date-input"]', '05/01/2019');
-      browser.click('input[name="terra-time-minute-input"]');
-      browser.keys('Tab');
+      browser.click('#root');
       expect(browser.getText('#iso')).to.equal('');
       expect(browser.getText('#input-value')).to.equal('05/01/2019');
       expect(browser.getText('#date-value')).to.equal('05/01/2019');
@@ -248,7 +247,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.refresh();
       browser.setValue('input[name="terra-time-hour-input"]', '10');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
-      browser.keys('Tab');
+      browser.click('#root');
       expect(browser.getText('#iso')).to.equal('');
       expect(browser.getText('#input-value')).to.equal('10:30');
       expect(browser.getText('#date-value')).to.equal('');
@@ -337,6 +336,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     it('is triggered', () => {
       browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-change-raw');
       // Removes the blinking cursor to prevent screenshot mismatches.
+      Terra.hideInputCaret('input[name="terra-date-input"]');
       Terra.hideInputCaret('input[name="terra-time-minute-input"]');
       browser.setValue('input[name="terra-date-input"]', '07/12');
       browser.setValue('input[name="terra-time-hour-input"]', '10');
@@ -400,6 +400,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     });
 
     it('Trigger onChange', () => {
+      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
       browser.setValue('input[name="terra-date-input"]', '07/12/2017');
       Terra.validates.element('trigger onChange');
     });
@@ -542,6 +543,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   it('With timezone', () => {
     browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone-dst');
     browser.refresh();
+    Terra.hideInputCaret('input[name="terra-time-minute-input"]');
     browser.clearElement('input[name="terra-date-input"]');
     browser.setValue('input[name="terra-date-input"]', '03/11/2018');
     browser.setValue('input[name="terra-time-hour-input"]', '02');
