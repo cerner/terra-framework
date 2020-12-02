@@ -2,11 +2,13 @@
 
 ## Unreleased
 
+* Added
+  * Added `initialTimeZone` prop which takes a valid timezone string. This enables date-time-picker set to a particular timezone. The default timezone is set to the local/browser timezone.
+  
 ## 4.53.0 - (November 24, 2020)
 
 * Changed
   * Update wdio tests to remove deprecated Terra.it helpers
-
 
 ## 4.52.0 - (November 10, 2020)
 
@@ -38,8 +40,6 @@
 * Changed
   * `onClickOutside` prop has been deprecated, will resolve to `onRequestClose`
   * Updated wdio snapshots due to changes in date-picker and time-input
-
-* Changed
   * Update `timeVariant` prop description to include `es` in locales supporting only 24 hour format.
 
 ## 4.46.0 - (September 10, 2020)
