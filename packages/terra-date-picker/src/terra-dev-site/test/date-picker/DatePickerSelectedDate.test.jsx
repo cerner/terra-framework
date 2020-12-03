@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import classNames from 'classnames/bind';
 import DatePicker from '../../../DatePicker';
 import styles from './common/DatePicker.test.module.scss';
