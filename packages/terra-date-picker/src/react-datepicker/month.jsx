@@ -49,6 +49,11 @@ export default class Month extends React.Component {
      */
     includeDates: PropTypes.array,
     /**
+     * Timezone value to indicate in which timezone the date-time component is rendered.
+     * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
+     */
+    initialTimeZone: PropTypes.string,
+    /**
      * Prop to show inline version of date picker component.
      */
     inline: PropTypes.bool,
@@ -138,10 +143,6 @@ export default class Month extends React.Component {
      */
     startDate: PropTypes.object,
     /**
-     * Difference between utc and local time.
-     */
-    utcOffset: PropTypes.number,
-    /**
      * Whether or not calendar is opened via keyboard
      */
     isCalendarKeyboardFocused: PropTypes.bool,
@@ -211,6 +212,7 @@ export default class Month extends React.Component {
         maxDate={this.props.maxDate}
         excludeDates={this.props.excludeDates}
         includeDates={this.props.includeDates}
+        initialTimeZone={this.props.initialTimeZone}
         inline={this.props.inline}
         highlightDates={this.props.highlightDates}
         selectingDate={this.props.selectingDate}
@@ -222,8 +224,7 @@ export default class Month extends React.Component {
         showWeekNumber={this.props.showWeekNumbers}
         startDate={this.props.startDate}
         endDate={this.props.endDate}
-        dayClassName={this.props.dayClassName}
-        utcOffset={this.props.utcOffset} />)
+        dayClassName={this.props.dayClassName}/>)
 
       if (breakAfterNextPush) break
 
