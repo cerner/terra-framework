@@ -35,6 +35,12 @@ const propTypes = {
   */
   isIncomplete: PropTypes.bool,
   /**
+   * @private
+   * Timezone value to indicate in which timezone the date component is rendered.
+   * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
+   */
+  initialTimeZone: PropTypes.string,
+  /**
   * Whether the input displays as Invalid. Use when value does not meet validation pattern.
   */
   isInvalid: PropTypes.bool,
@@ -154,6 +160,7 @@ class DatePickerInput extends React.Component {
   render() {
     const {
       buttonRefCallback,
+      initialTimeZone,
       inputAttributes,
       intl,
       isIncomplete,
@@ -230,7 +237,7 @@ class DatePickerInput extends React.Component {
             onFocus={onFocus}
             onBlur={onBlur}
             aria-required={required}
-            ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
+            ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
             aria-describedby={ariaDescriptionIds}
           />
           <Button

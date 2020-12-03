@@ -6,10 +6,11 @@ class DateTimeUtils {
   /**
    * Checks if the ISO string contains the time (hh:mm) part.
    * @param {string} iSODate - The ISO string
+   * @param {string} timeZone - Time zone value for the moment object.
    * @return {boolean} - True if the ISO string contains the time. False, otherwise.
    */
-  static hasTime(iSODate) {
-    if (!DateTimeUtils.createSafeDate(iSODate)) {
+  static hasTime(iSODate, timeZone) {
+    if (!DateTimeUtils.createSafeDate(iSODate, timeZone)) {
       return false;
     }
 
@@ -87,23 +88,27 @@ class DateTimeUtils {
     const newDate = momentDate.clone();
     const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
     const date = moment(time, timeFormat, true);
+    const timeZone = momentDate.tz() || DateTimeUtils.getLocalTimeZone();
 
-    if (hasSeconds) {
-      return newDate.hour(date.get('hour')).minute(date.get('minute')).second(date.get('second'));
+    if (date.isValid()) {
+      const dateTimeString = newDate.format('YYYY-MM-DD').concat(' ').concat(date.format(timeFormat));
+      return moment.tz(dateTimeString, timeZone);
     }
 
-    return newDate.hour(date.get('hour')).minute(date.get('minute'));
+    return momentDate;
   }
 
   /**
    * Gets the time from a date and time
    * @param {string} time An ISO 8601 string to get the time of
    * @param {boolean} hasSeconds Whether or not seconds should be retrieved
+   * @param {string} timeZone - Time zone value for the moment object.
    * @return {string} The time from the date and time string
    */
-  static getTime(time, hasSeconds) {
+  static getTime(time, hasSeconds, timeZone) {
     const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
-    return DateUtil.formatISODate(time, timeFormat);
+    const momentDate = DateTimeUtils.createSafeDate(time, timeZone);
+    return DateUtil.formatMomentDate(momentDate, timeFormat);
   }
 
   /**
@@ -141,7 +146,7 @@ class DateTimeUtils {
       return false;
     }
 
-    const localizedDateTime = moment.tz(dateTime.format(), moment.tz.guess());
+    const localizedDateTime = moment.tz(dateTime.format(), dateTime.tz());
     const beforeDaylightSaving = localizedDateTime.clone();
     const afterDaylightSaving = localizedDateTime.clone();
 
@@ -159,31 +164,33 @@ class DateTimeUtils {
   /**
    * Gets the daylight savings time zone offset display. (e.g. CDT)
    * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
+   * @param {string} timeZone - Time zone value for the moment object.
    * @return {string} - The daylight savings time zone offset display.
    */
-  static getDaylightSavingTZDisplay(ambiguousDateTime) {
-    const daylightSavingsDateTime = moment(ambiguousDateTime);
+  static getDaylightSavingTZDisplay(ambiguousDateTime, timeZone) {
+    const daylightSavingsDateTime = DateTimeUtils.createSafeDate(ambiguousDateTime, timeZone);
     if (!daylightSavingsDateTime.isValid()) {
       return '';
     }
 
     daylightSavingsDateTime.subtract(1, 'days');
-    return daylightSavingsDateTime.tz(moment.tz.guess()).format('z');
+    return daylightSavingsDateTime.tz(daylightSavingsDateTime.tz()).format('z');
   }
 
   /**
    * Gets the long daylight savings time zone offset display. (e.g. America/Chicago CDT -5:00)
    * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
+   * @param {string} timeZone - Time zone value for the moment object.
    * @return {string} - The long daylight savings time zone offset display.
    */
-  static getDaylightSavingExpandedTZDisplay(ambiguousDateTime) {
-    const daylightSavingsDateTime = moment(ambiguousDateTime);
+  static getDaylightSavingExpandedTZDisplay(ambiguousDateTime, timeZone) {
+    const daylightSavingsDateTime = DateTimeUtils.createSafeDate(ambiguousDateTime, timeZone);
     if (!daylightSavingsDateTime.isValid()) {
       return '';
     }
 
     daylightSavingsDateTime.subtract(1, 'days');
-    const timezone = moment.tz.guess();
+    const timezone = daylightSavingsDateTime.tz();
     const momentWithTimeZone = daylightSavingsDateTime.tz(timezone);
     return moment.tz.zone(timezone).name + momentWithTimeZone.format(' z Z');
   }
@@ -191,31 +198,33 @@ class DateTimeUtils {
   /**
    * Gets the standard time zone offset display. (e.g. CST)
    * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
+   * @param {string} timeZone - Time zone value for the moment object.
    * @return {string} - The standard time zone offset display.
    */
-  static getStandardTZDisplay(ambiguousDateTime) {
-    const standardDateTime = moment(ambiguousDateTime);
+  static getStandardTZDisplay(ambiguousDateTime, timeZone) {
+    const standardDateTime = DateTimeUtils.createSafeDate(ambiguousDateTime, timeZone);
     if (!standardDateTime.isValid()) {
       return '';
     }
 
     standardDateTime.add(1, 'days');
-    return standardDateTime.tz(moment.tz.guess()).format('z');
+    return standardDateTime.tz(standardDateTime.tz()).format('z');
   }
 
   /**
    * Gets the long standard time zone offset display. (e.g. America/Chicago CST -6:00)
    * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
+   * @param {string} timeZone - Time zone value for the moment object.
    * @return {string} - The long standard time zone offset display.
    */
-  static getStandardExpandedTZDisplay(ambiguousDateTime) {
-    const standardDateTime = moment(ambiguousDateTime);
+  static getStandardExpandedTZDisplay(ambiguousDateTime, timeZone) {
+    const standardDateTime = DateTimeUtils.createSafeDate(ambiguousDateTime, timeZone);
     if (!standardDateTime.isValid()) {
       return '';
     }
 
     standardDateTime.add(1, 'days');
-    const timezone = moment.tz.guess();
+    const timezone = standardDateTime.tz();
     const momentWithTimeZone = standardDateTime.tz(timezone);
     return moment.tz.zone(timezone).name + momentWithTimeZone.format(' z Z');
   }
@@ -226,25 +235,27 @@ class DateTimeUtils {
    * @param {string} time - The time string for the conversion.
    * @param {string} dateformat - The format of the date and time strings.
    * @param {boolean} hasSeconds - If true seconds will be converted
+   * @param {string} timeZone - Time zone value for the moment object.
    * @return {object} - The moment object representing the given date and time.
    */
-  static convertDateTimeStringToMomentObject(date, time, dateformat, hasSeconds) {
-    return DateTimeUtils.updateTime(DateTimeUtils.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time, hasSeconds);
+  static convertDateTimeStringToMomentObject(date, time, dateformat, hasSeconds, timeZone) {
+    const dateTime = DateTimeUtils.createSafeDate(DateUtil.convertToISO8601(date, dateformat), timeZone);
+    return DateTimeUtils.updateTime(dateTime, time, hasSeconds);
   }
 
   /**
    * Creates a moment object using the provided date string. Moment is unable to initialize a valid date if the date passed in is
    * null, empty string, or alpha characters and undefined would be returned.
    * @param {string|undefined} date - The date to convert. Expect to be in ISO format.
+   * @param {string} timeZone - Time zone value for the moment object.
    * @return {object|undefined} - The moment object. Undefined if unable to convert.
    */
-  static createSafeDate(date) {
+  static createSafeDate(date, timeZone) {
     if (!date) {
       return undefined;
     }
 
-    const momentDate = moment(date);
-
+    const momentDate = (timeZone && moment.tz.zone(timeZone) ? moment.tz(date, timeZone) : moment.tz(date, DateTimeUtils.getLocalTimeZone()));
     return momentDate.isValid() ? momentDate : undefined;
   }
 
@@ -255,6 +266,24 @@ class DateTimeUtils {
    */
   static isMomentObject(value) {
     return moment.isMoment(value);
+  }
+
+  /**
+   * Creates moment object with local timezone.
+   * @return {string} - Local/Browser time zone string.
+   */
+  static getLocalTimeZone() {
+    return moment.tz.guess();
+  }
+
+  /**
+   * Checks if the intitialTimeZone is a valid timezone string.
+   * If valid the provided timezone is returned or local/browser timezone is returned.
+   * @param {string} intitialTimeZone - timezone string
+   * @return {string} - Returns the timezone string if it is valid or returns the local timezone string.
+   */
+  static checkIfTimeZoneIsValid(intitialTimeZone) {
+    return moment.tz.zone(intitialTimeZone) ? intitialTimeZone : DateTimeUtils.getLocalTimeZone();
   }
 }
 
