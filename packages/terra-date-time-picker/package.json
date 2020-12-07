@@ -29,7 +29,6 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^2.0.1",
-    "moment": "^2.21.0",
     "moment-timezone": "^0.5.13",
     "prop-types": "^15.5.8",
     "terra-abstract-modal": "^3.30.0",

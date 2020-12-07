@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import PropTypes from 'prop-types';
 import CalendarFilter from 'terra-date-picker/lib/CalendarFilter';
 

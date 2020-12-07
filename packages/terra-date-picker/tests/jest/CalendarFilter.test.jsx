@@ -1,7 +1,7 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import CalendarFilter from '../../lib/CalendarFilter';
 import DateUtil from '../../lib/DateUtil';
 
