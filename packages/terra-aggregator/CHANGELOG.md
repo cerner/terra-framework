@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+ * Fixed broken links in documentation.
+
 ## 4.60.0 - (November 24, 2020)
 
 * Changed

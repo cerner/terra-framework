@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+
+* Fixed
+ * Fixed broken links in documentation.
+ 
 * Changed
   * Update wdio tests to remove deprecated Terra.it helpers
 
