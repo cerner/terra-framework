@@ -20,7 +20,7 @@ const propTypes = {
   /**
    * intl object programmatically imported through injectIntl from react-intl.
    * */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
    * Navigation element to be placed within the fill area of the header.
    * */
