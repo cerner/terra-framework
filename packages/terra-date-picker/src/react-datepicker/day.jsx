@@ -37,6 +37,11 @@ class Day extends React.Component {
      */
     highlightDates: PropTypes.instanceOf(Map),
     /**
+     * Timezone value to indicate in which timezone the date-time component is rendered.
+     * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
+     */
+    initialTimeZone: PropTypes.string,
+    /**
      * Prop to render Inline version of date picker component.
      */
     inline: PropTypes.bool,
@@ -86,10 +91,6 @@ class Day extends React.Component {
      * Minimum date for a given range .
      */
     startDate: PropTypes.object,
-    /**
-     * Difference between utc and local time.
-     */
-    utcOffset: PropTypes.number,
     /**
      * Whether or not calendar is opened via keyboard
      */
@@ -237,7 +238,7 @@ class Day extends React.Component {
       'react-datepicker-day--in-selecting-range': this.isInSelectingRange(),
       'react-datepicker-day--selecting-range-start': this.isSelectingRangeStart(),
       'react-datepicker-day--selecting-range-end': this.isSelectingRangeEnd(),
-      'react-datepicker-day--today': this.isSameDay(now(this.props.utcOffset)),
+      'react-datepicker-day--today': this.isSameDay(now(this.props.initialTimeZone)),
       'react-datepicker-day--weekend': this.isWeekend(),
       'react-datepicker-day--outside-month': this.isOutsideMonth(),
       'is-calendar-focused--keyboard-focus': this.props.isCalendarKeyboardFocused && this.isKeyboardSelected() && document.activeElement.tagName === 'DIV',
