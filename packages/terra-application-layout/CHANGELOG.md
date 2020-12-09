@@ -5,6 +5,11 @@
 * Fixed
  * Fixed broken links in documentation.
 
+## 5.47.0 - (December 8, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 5.46.0 - (November 24, 2020)
 
 * Changed
