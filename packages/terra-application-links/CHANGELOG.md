@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+* Fixed
+ * Fixed broken links in documentation.
+
+## 6.45.0 - (December 8, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.44.0 - (November 24, 2020)
 
 * Changed
