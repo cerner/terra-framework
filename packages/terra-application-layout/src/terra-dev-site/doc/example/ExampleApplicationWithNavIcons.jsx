@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MemoryRouter, withRouter } from 'react-router-dom';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import Image from 'terra-image';
 import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
@@ -336,7 +336,7 @@ class ExampleApplication extends React.Component {
 }
 
 ExampleApplication.propTypes = {
-  intl: intlShape,
+  intl: PropTypes.shape({}),
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }),

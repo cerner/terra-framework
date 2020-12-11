@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'terra-button';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import uuidv4 from 'uuid/v4';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -29,7 +29,7 @@ const propTypes = {
    * @private
    * intl object programmatically imported through injectIntl from react-intl.
    * */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }).isRequired,
   /**
   * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
   */
@@ -96,6 +96,10 @@ const propTypes = {
   * for accessibility.
   */
   ariaLabel: PropTypes.string,
+  /**
+   * Callback ref to pass into the input dom element.
+   */
+  inputRefCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -176,6 +180,7 @@ class DatePickerInput extends React.Component {
       useExternalFormatMask,
       value,
       ariaLabel,
+      inputRefCallback,
       ...customProps
     } = this.props;
 
@@ -229,6 +234,7 @@ class DatePickerInput extends React.Component {
           />
           <Input
             {...additionalInputProps}
+            ref={inputRefCallback}
             className={inputClasses}
             type="text"
             name={'terra-date-'.concat(name)}

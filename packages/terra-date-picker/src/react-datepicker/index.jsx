@@ -6,7 +6,7 @@ import { Portal } from 'react-portal';
 import * as KeyCode from 'keycode-js';
 import Popup from 'terra-popup';
 import classNames from 'classnames/bind';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PopupContainer from './PopupContainer';
 import DateUtil from '../DateUtil';
@@ -158,7 +158,7 @@ class DatePicker extends React.Component {
      * @private
      * Internationalization object with translation APIs. Provided by `injectIntl`.
      */
-    intl: intlShape,
+    intl: PropTypes.shape({ formatMessage: PropTypes.func }),
     /**
      * Prop to determine whether or not the date picker is clearable.
      */

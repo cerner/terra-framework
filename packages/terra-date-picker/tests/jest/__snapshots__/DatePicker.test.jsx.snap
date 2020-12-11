@@ -98,6 +98,7 @@ exports[`correctly applies the theme context className 1`] = `
                 useExternalFormatMask={false}
               />
             }
+            customInputRef="inputRefCallback"
             dateFormat="MM/DD/YYYY"
             dateFormatCalendar=" "
             disabled={false}
@@ -147,6 +148,7 @@ exports[`correctly applies the theme context className 1`] = `
                   useExternalFormatMask={false}
                 />
               }
+              customInputRef="inputRefCallback"
               dateFormat="MM/DD/YYYY"
               dateFormatCalendar=" "
               disabled={false}
@@ -221,6 +223,7 @@ exports[`correctly applies the theme context className 1`] = `
                   buttonRefCallback={[Function]}
                   className=""
                   disabled={false}
+                  inputRefCallback={[Function]}
                   isIncomplete={false}
                   isInvalid={false}
                   name="date-input"
@@ -240,6 +243,7 @@ exports[`correctly applies the theme context className 1`] = `
                     buttonRefCallback={[Function]}
                     className=""
                     disabled={false}
+                    inputRefCallback={[Function]}
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -447,6 +451,7 @@ exports[`should render a controlled date picker 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -509,6 +514,7 @@ exports[`should render a date picker with disabled dates 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -570,6 +576,7 @@ exports[`should render a date picker with filtered dates 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -631,6 +638,7 @@ exports[`should render a date picker with included dates 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -692,6 +700,7 @@ exports[`should render a date picker with min and max dates 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -753,6 +762,7 @@ exports[`should render a date picker with onBlur 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -814,6 +824,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -875,6 +886,7 @@ exports[`should render a date picker with onChange 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -936,6 +948,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -997,6 +1010,7 @@ exports[`should render a date picker with onFocus 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -1058,6 +1072,7 @@ exports[`should render a date picker with onRequestClose 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -1120,6 +1135,7 @@ exports[`should render a date picker with onSelect 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -1181,6 +1197,7 @@ exports[`should render a default date input and date picker 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -1247,6 +1264,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -1308,6 +1326,7 @@ exports[`should render a disabled date picker 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={true}
@@ -1369,6 +1388,7 @@ exports[`should render a required date input and date picker 1`] = `
           useExternalFormatMask={false}
         />
       }
+      customInputRef="inputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}

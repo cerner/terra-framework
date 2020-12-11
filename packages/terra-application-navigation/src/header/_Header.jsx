@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 import Tabs from '../tabs/_Tabs';
 import Extensions from '../extensions/_Extensions';
@@ -73,7 +73,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs.
    */
-  intl: intlShape,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
   /**
    * An element to render within the Header's utility menu.
    */
