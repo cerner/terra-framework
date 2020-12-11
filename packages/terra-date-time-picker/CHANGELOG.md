@@ -6,6 +6,11 @@
   * Updated to support a peer dependency of react-intl v2-v5
   * Updated to use `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
 
+* Fixed
+ * Fixed broken links in documentation.
+
+## 4.54.0 - (December 8, 2020)
+
 * Added
   * Added `initialTimeZone` prop which takes a valid timezone string. This enables date-time-picker set to a particular timezone. The default timezone is set to the local/browser timezone.
 

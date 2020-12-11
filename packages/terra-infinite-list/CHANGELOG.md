@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+* Fixed
+ * Fixed broken links in documentation.
+ 
+## 3.34.0 - (December 8, 2020)
+
 * Changed
   * Updated to support a peer dependency of react-intl v2-v5
   * Update wdio tests to remove deprecated Terra.it helpers
