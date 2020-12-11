@@ -101,7 +101,15 @@ class PopupContent extends React.Component {
     const header = (
       <div className={cx('header')}>
         <FormattedMessage id="Terra.popup.header.close">
-          {text => <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text={text} />}
+          {text => {
+            let useText = text;
+            if (Array.isArray(text)) {
+              useText = text.join('');
+            }
+            return (
+              <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text={useText} />
+            );
+          }}
         </FormattedMessage>
       </div>
     );

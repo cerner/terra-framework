@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Changed
+  * Updated to support a peer dependency of react-intl v2-v5
+  * Updated to use `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
+
 * Fixed
  * Fixed broken links in documentation.
 

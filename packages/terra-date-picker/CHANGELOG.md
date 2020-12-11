@@ -9,6 +9,7 @@
 
 * Changed
   * Changed 'moment' dependency to 'moment-timezone'
+  * Updated to support a peer dependency of react-intl v2-v5
 
 ## 4.53.0 - (November 24, 2020)
 
