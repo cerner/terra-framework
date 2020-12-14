@@ -2,6 +2,7 @@
 Terra.describeViewports('Toggle the slide panel and hidden styles', ['medium'], () => {
   it('toggles the slide panel and hidden styles', () => {
     browser.url('/raw/tests/terra-layout/layout/layout-slide-panel-example');
+    browser.refresh();
     browser.waitForExist('[class*=_panel_][aria-hidden="true"]');
     Terra.validates.element('toggle slide panel', { selector: '#site' });
   });
