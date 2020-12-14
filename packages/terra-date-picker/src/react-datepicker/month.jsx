@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormattedMessage, intlShape } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import Week from './week'
@@ -61,7 +61,7 @@ export default class Month extends React.Component {
      * @private
      * Internationalization object with translation APIs. Provided by `injectIntl`.
      */
-    intl: intlShape,
+    intl: PropTypes.shape({ formatMessage: PropTypes.func }),
     /**
      * @private
      * Name of locale data for different international formatting.

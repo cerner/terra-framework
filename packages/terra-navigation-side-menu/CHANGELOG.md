@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated to support a peer dependency of react-intl v2-v5
+
 * Fixed
  * Fixed broken links in documentation.
 

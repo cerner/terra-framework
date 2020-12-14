@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { activeBreakpointForSize } from 'terra-breakpoints';
 import ResponsiveElement from 'terra-responsive-element';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 /* eslint-disable-next-line  */
 import ReactDatePicker from './react-datepicker';
@@ -51,7 +51,7 @@ const propTypes = {
    * @private
    * intl object programmatically imported through injectIntl from react-intl.
    * */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }).isRequired,
   /**
   * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
   */
@@ -489,6 +489,7 @@ class DatePicker extends React.Component {
                 initialTimeZone={initialTimeZone}
               />
             )}
+            customInputRef="inputRefCallback"
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}
             filterDate={this.handleFilterDate}
             includeDates={DateUtil.filterInvalidDates(includeDates)}
