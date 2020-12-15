@@ -1,7 +1,7 @@
 {
   "name": "terra-navigation-layout",
   "main": "lib/NavigationLayout.js",
-  "version": "5.28.0",
+  "version": "5.29.0",
   "description": "The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, react-router-driven navigation to Terra applications.",
   "repository": {
     "type": "git",

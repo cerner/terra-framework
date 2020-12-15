@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconQuestionOutline from 'terra-icon/lib/icon/IconQuestionOutline';
 import PopupMenu from '../common/_PopupMenu';
@@ -51,7 +51,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs
    */
-  intl: intlShape,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {

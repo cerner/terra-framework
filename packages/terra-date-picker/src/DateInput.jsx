@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'terra-button';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import uuidv4 from 'uuid/v4';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -29,11 +29,17 @@ const propTypes = {
    * @private
    * intl object programmatically imported through injectIntl from react-intl.
    * */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }).isRequired,
   /**
   * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
   */
   isIncomplete: PropTypes.bool,
+  /**
+   * @private
+   * Timezone value to indicate in which timezone the date component is rendered.
+   * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
+   */
+  initialTimeZone: PropTypes.string,
   /**
   * Whether the input displays as Invalid. Use when value does not meet validation pattern.
   */
@@ -90,6 +96,10 @@ const propTypes = {
   * for accessibility.
   */
   ariaLabel: PropTypes.string,
+  /**
+   * Callback ref to pass into the input dom element.
+   */
+  inputRefCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -154,6 +164,7 @@ class DatePickerInput extends React.Component {
   render() {
     const {
       buttonRefCallback,
+      initialTimeZone,
       inputAttributes,
       intl,
       isIncomplete,
@@ -169,6 +180,7 @@ class DatePickerInput extends React.Component {
       useExternalFormatMask,
       value,
       ariaLabel,
+      inputRefCallback,
       ...customProps
     } = this.props;
 
@@ -222,6 +234,7 @@ class DatePickerInput extends React.Component {
           />
           <Input
             {...additionalInputProps}
+            ref={inputRefCallback}
             className={inputClasses}
             type="text"
             name={'terra-date-'.concat(name)}
@@ -230,7 +243,7 @@ class DatePickerInput extends React.Component {
             onFocus={onFocus}
             onBlur={onBlur}
             aria-required={required}
-            ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
+            ariaLabel={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl: this.props.intl, locale: this.props.intl.locale })}` : label}
             aria-describedby={ariaDescriptionIds}
           />
           <Button

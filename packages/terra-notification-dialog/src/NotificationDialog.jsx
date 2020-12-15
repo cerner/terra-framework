@@ -5,7 +5,7 @@ import FocusTrap from 'focus-trap-react';
 import Button from 'terra-button';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import ThemeContext from 'terra-theme-context';
 
 import NotificationIcon from './_NotificationIcon';
@@ -92,7 +92,7 @@ const propTypes = {
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
-  intl: intlShape,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {
