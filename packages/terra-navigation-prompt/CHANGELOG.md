@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+* Fixed
+ * Fixed broken links in documentation.
+
+## 1.46.0 - (December 8, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.45.0 - (November 24, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.44.0 - (November 10, 2020)
 
 * Changed

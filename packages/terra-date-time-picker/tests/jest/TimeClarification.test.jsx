@@ -1,7 +1,6 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
-import moment from 'moment-timezone';
 import TimeClarification from '../../lib/_TimeClarification';
 
 it('should render a default date time picker', () => {
@@ -13,6 +12,7 @@ it('should render a default date time picker', () => {
       onStandardTimeButtonClick={jest.fn()}
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
+      initialTimeZone="America/Chicago"
     />
   ));
   const wrapper = datePicker.dive();
@@ -29,6 +29,7 @@ it('should render a disabled time clarification', () => {
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
       disabled
+      initialTimeZone="America/Chicago"
     />
   ));
   const wrapper = datePicker.dive();
@@ -36,7 +37,6 @@ it('should render a disabled time clarification', () => {
 });
 
 it('should render offset button after daylight savings button clicked', () => {
-  moment.tz.guess = jest.fn(() => 'America/Chicago');
   const datePicker = shallowWithIntl((
     <TimeClarification
       ambiguousDateTime="2019-08-15T10:30:00"
@@ -47,6 +47,7 @@ it('should render offset button after daylight savings button clicked', () => {
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
       disabled
+      initialTimeZone="America/Chicago"
     />
   ));
   const wrapper = datePicker.dive();
@@ -55,7 +56,6 @@ it('should render offset button after daylight savings button clicked', () => {
 });
 
 it('should render offset button after standard time button clicked', () => {
-  moment.tz.guess = jest.fn(() => 'America/Chicago');
   const datePicker = shallowWithIntl((
     <TimeClarification
       ambiguousDateTime="2019-02-15T10:30:00"
@@ -66,6 +66,7 @@ it('should render offset button after standard time button clicked', () => {
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
       disabled
+      initialTimeZone="America/Chicago"
     />
   ));
   const wrapper = datePicker.dive();
@@ -74,7 +75,6 @@ it('should render offset button after standard time button clicked', () => {
 });
 
 it('should render offset button after daylight savings button clicked in the southern hemisphere timezone', () => {
-  moment.tz.guess = jest.fn(() => 'Australia/Sydney');
   const datePicker = shallowWithIntl((
     <TimeClarification
       ambiguousDateTime="2019-04-01T02:30:00"
@@ -85,6 +85,7 @@ it('should render offset button after daylight savings button clicked in the sou
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
       disabled
+      initialTimeZone="Australia/Sydney"
     />
   ));
   const wrapper = datePicker.dive();
@@ -93,7 +94,6 @@ it('should render offset button after daylight savings button clicked in the sou
 });
 
 it('should render offset button after standard time button clicked in the southern hemisphere timezone', () => {
-  moment.tz.guess = jest.fn(() => 'Australia/Sydney');
   const datePicker = shallowWithIntl((
     <TimeClarification
       ambiguousDateTime="2019-10-01T02:30:00"
@@ -104,6 +104,7 @@ it('should render offset button after standard time button clicked in the southe
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
       disabled
+      initialTimeZone="Australia/Sydney"
     />
   ));
   const wrapper = datePicker.dive();

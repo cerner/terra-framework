@@ -7,7 +7,7 @@ const propTypes = {
   /**
    * The current entered date time. Use for the selected date message.
    */
-  value: PropTypes.node,
+  value: PropTypes.string,
 };
 
 const defaultProps = {

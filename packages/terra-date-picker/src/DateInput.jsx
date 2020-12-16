@@ -12,7 +12,7 @@ import {
   KEY_DELETE,
   KEY_BACK_SPACE,
 } from 'keycode-js';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import uuidv4 from 'uuid/v4';
@@ -42,6 +42,12 @@ const propTypes = {
    */
   id: PropTypes.string,
   /**
+   * @private
+   * Timezone value to indicate in which timezone the date component is rendered.
+   * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
+   */
+  initialTimeZone: PropTypes.string,
+  /**
    * Custom input attributes to apply to the date input.
    */
   inputAttributes: PropTypes.object,
@@ -53,15 +59,15 @@ const propTypes = {
   /**
    * @private
    * intl object programmatically imported through injectIntl from react-intl.
-   */
-  intl: intlShape.isRequired,
+   * */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }).isRequired,
   /**
    * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
    */
   isIncomplete: PropTypes.bool,
   /**
-   * Whether the input displays as Invalid. Use when value does not meet validation pattern.
-   */
+  * Whether the input displays as Invalid. Use when value does not meet validation pattern.
+  */
   isInvalid: PropTypes.bool,
   /**
    * Name of the date input.
@@ -143,6 +149,7 @@ const DatePickerInput = (props) => {
     ariaLabel,
     buttonRefCallback,
     id,
+    initialTimeZone,
     inputAttributes,
     inputRefCallback,
     intl,
@@ -635,7 +642,7 @@ const DatePickerInput = (props) => {
             name={name}
             value={dateValue}
           />
-          <VisuallyHiddenText text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue), { intl, locale: intl.locale })}` : label} />
+          <VisuallyHiddenText text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}` : label} />
           <DateInputLayout
             dateFormatOrder={dateFormatOrder}
             separator={dateSpacer}

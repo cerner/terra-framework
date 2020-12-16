@@ -14,7 +14,7 @@ const eventHandlers = [{
 const CustomEventConsumer = () => (
   <div id="CustomEvent">
     <EmbeddedContentConsumer
-      src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-event-provider"
+      src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-event-provider"
       options={{ iframeAttrs: { title: 'Custom Event Example' } }}
       eventHandlers={eventHandlers}
     />

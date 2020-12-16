@@ -3,6 +3,15 @@
 ## Unreleased
 
 * Changed
+  * Updated to support a peer dependency of react-intl v2-v5
+  * Removed `intlShape` imports
+
+* Fixed
+ * Fixed broken links in documentation.
+
+## 2.40.0 - (November 24, 2020)
+
+* Changed
   * Update wdio tests to remove deprecated Terra.it helpers
 
 ## 2.39.0 - (November 10, 2020)
@@ -18,7 +27,7 @@
 
 * Changed
   * Updated Changelog format
-  
+
 ## 2.37.0 - (August 4, 2020)
 
 * Changed

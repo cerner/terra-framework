@@ -6,6 +6,20 @@
   * Date input split into 3 distinct inputs that mask the previous single input.
   * `terra-dev-site` examples to use hooks.
 
+## 4.54.0 - (December 8, 2020)
+
+* Added
+  * Added initialTimeZone a private prop that gets passed down from terra-date-time-picker.
+
+* Changed
+  * Changed 'moment' dependency to 'moment-timezone'
+  * Updated to support a peer dependency of react-intl v2-v5
+
+## 4.53.0 - (November 24, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 ## 4.52.0 - (November 10, 2020)
 
 * Fixed

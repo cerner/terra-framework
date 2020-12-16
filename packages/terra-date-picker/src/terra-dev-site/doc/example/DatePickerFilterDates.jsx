@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Field from 'terra-form-field';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import DatePicker from 'terra-date-picker';
 import classNames from 'classnames/bind';
 import styles from './DatePickerExampleCommon.module.scss';

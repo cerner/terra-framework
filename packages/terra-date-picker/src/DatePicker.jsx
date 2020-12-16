@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { activeBreakpointForSize } from 'terra-breakpoints';
 import ResponsiveElement from 'terra-responsive-element';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import ReactDatePicker from './react-datepicker';
 import DateInput from './DateInput';
 import DateUtil from './DateUtil';
@@ -40,6 +40,12 @@ const propTypes = {
    */
   includeDates: PropTypes.arrayOf(PropTypes.string),
   /**
+   * @private
+   * Timezone value to indicate in which timezone the date-time component is rendered.
+   * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
+   */
+  initialTimeZone: PropTypes.string,
+  /**
    * Custom input attributes to apply to the date input. Use the name prop to set the name for the input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
@@ -52,8 +58,8 @@ const propTypes = {
   /**
    * @private
    * intl object programmatically imported through injectIntl from react-intl.
-   */
-  intl: intlShape.isRequired,
+   * */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }).isRequired,
   /**
    * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
    */
@@ -118,7 +124,7 @@ const propTypes = {
   required: PropTypes.bool,
   /**
    * An ISO 8601 string representation of the default value to show in the date input. The value must be in the `YYYY-MM-DD` format.
-   * This is analogous to defaultvalue in a form input field.
+   * This is analogous to default value in a form input field.
    */
   selectedDate: PropTypes.string,
   /**
@@ -143,6 +149,7 @@ const defaultProps = {
   excludeDates: undefined,
   filterDate: undefined,
   includeDates: undefined,
+  initialTimeZone: undefined,
   inputAttributes: undefined,
   inputRefCallback: undefined,
   isIncomplete: false,
@@ -188,7 +195,7 @@ class DatePicker extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { selectedDate, value } = nextProps;
+    const { initialTimeZone, selectedDate, value } = nextProps;
     let nextDateValue = selectedDate;
 
     // Use the value for a controlled component if one is provided.
@@ -197,7 +204,7 @@ class DatePicker extends React.Component {
     }
 
     if (nextDateValue !== prevState.prevPropsSelectedDate) {
-      const nextSelectedDate = DateUtil.createSafeDate(nextDateValue);
+      const nextSelectedDate = DateUtil.createSafeDate(nextDateValue, initialTimeZone);
 
       return {
         selectedDate: nextSelectedDate,
@@ -355,7 +362,7 @@ class DatePicker extends React.Component {
 
     let isValidDate = false;
 
-    if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString)))) {
+    if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString, this.props.initialTimeZone)))) {
       isValidDate = true;
     }
 
@@ -376,7 +383,7 @@ class DatePicker extends React.Component {
   isDateWithinRange(date) {
     let isAcceptable = true;
 
-    if (DateUtil.isDateOutOfRange(date, DateUtil.createSafeDate(DateUtil.getMinDate(this.props.minDate)), DateUtil.createSafeDate(DateUtil.getMaxDate(this.props.maxDate)))) {
+    if (DateUtil.isDateOutOfRange(date, DateUtil.createSafeDate(DateUtil.getMinDate(this.props.minDate), this.props.initialTimeZone), DateUtil.createSafeDate(DateUtil.getMaxDate(this.props.maxDate), this.props.initialTimeZone))) {
       isAcceptable = false;
     }
 
@@ -396,6 +403,7 @@ class DatePicker extends React.Component {
       includeDates,
       inputAttributes,
       inputRefCallback,
+      initialTimeZone,
       intl,
       isIncomplete,
       isInline,
@@ -435,7 +443,7 @@ class DatePicker extends React.Component {
     if (value !== undefined) {
       // If value is empty, let selectedDateInPicker be undefined as in clearing the value.
       if (value !== '') {
-        selectedDateInPicker = DateUtil.createSafeDate(DateUtil.convertToISO8601(value, dateFormat));
+        selectedDateInPicker = DateUtil.createSafeDate(DateUtil.convertToISO8601(value, dateFormat), initialTimeZone);
 
         // If value is not a valid date, keep the previous selected date in the picker.
         if (selectedDateInPicker === undefined) {
@@ -484,13 +492,15 @@ class DatePicker extends React.Component {
                 ariaLabel={ariaLabel}
                 inputRefCallback={inputRefCallback}
                 useExternalFormatMask={useExternalFormatMask}
+                initialTimeZone={initialTimeZone}
               />
             )}
+            // customInputRef="inputRefCallback"
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}
             filterDate={this.handleFilterDate}
             includeDates={DateUtil.filterInvalidDates(includeDates)}
-            maxDate={DateUtil.createSafeDate(DateUtil.getMaxDate(maxDate))}
-            minDate={DateUtil.createSafeDate(DateUtil.getMinDate(minDate))}
+            maxDate={DateUtil.createSafeDate(DateUtil.getMaxDate(maxDate), initialTimeZone)}
+            minDate={DateUtil.createSafeDate(DateUtil.getMinDate(minDate), initialTimeZone)}
             todayButton={intl.formatMessage({ id: 'Terra.datePicker.today' })}
             dateFormatCalendar=" "
             dateFormat={dateFormat}
@@ -502,6 +512,7 @@ class DatePicker extends React.Component {
             preventOpenOnFocus
             name={name}
             allowSameDay
+            initialTimeZone={initialTimeZone}
           />
         </ResponsiveElement>
       </div>

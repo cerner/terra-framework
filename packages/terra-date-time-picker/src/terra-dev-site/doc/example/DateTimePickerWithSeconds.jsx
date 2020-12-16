@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import Field from 'terra-form-field';
 import DateTimePicker from 'terra-date-time-picker';
 
