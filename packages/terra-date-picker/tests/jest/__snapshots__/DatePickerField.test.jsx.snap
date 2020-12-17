@@ -370,7 +370,6 @@ exports[`should render a DatePickerField with props 1`] = `
                       useExternalFormatMask={true}
                     />
                   }
-                  customInputRef="inputRefCallback"
                   dateFormat="MM/DD/YYYY"
                   dateFormatCalendar=" "
                   disabled={true}
@@ -430,7 +429,6 @@ exports[`should render a DatePickerField with props 1`] = `
                         useExternalFormatMask={true}
                       />
                     }
-                    customInputRef="inputRefCallback"
                     dateFormat="MM/DD/YYYY"
                     dateFormatCalendar=" "
                     disabled={true}
@@ -516,7 +514,6 @@ exports[`should render a DatePickerField with props 1`] = `
                             "name": "test",
                           }
                         }
-                        inputRefCallback={[Function]}
                         isIncomplete={false}
                         isInvalid={true}
                         name="test-date-picker"
@@ -544,7 +541,6 @@ exports[`should render a DatePickerField with props 1`] = `
                               "name": "test",
                             }
                           }
-                          inputRefCallback={[Function]}
                           intl={
                             Object {
                               "defaultFormats": Object {},
@@ -1190,7 +1186,6 @@ exports[`should render a default DatePickerField component 1`] = `
                       useExternalFormatMask={true}
                     />
                   }
-                  customInputRef="inputRefCallback"
                   dateFormat="MM/DD/YYYY"
                   dateFormatCalendar=" "
                   disabled={false}
@@ -1247,7 +1242,6 @@ exports[`should render a default DatePickerField component 1`] = `
                         useExternalFormatMask={true}
                       />
                     }
-                    customInputRef="inputRefCallback"
                     dateFormat="MM/DD/YYYY"
                     dateFormatCalendar=" "
                     disabled={false}
@@ -1330,7 +1324,6 @@ exports[`should render a default DatePickerField component 1`] = `
                             "aria-describedby": "test-date-picker-help",
                           }
                         }
-                        inputRefCallback={[Function]}
                         isIncomplete={false}
                         isInvalid={false}
                         name="test-date-picker"
@@ -1357,7 +1350,6 @@ exports[`should render a default DatePickerField component 1`] = `
                               "aria-describedby": "test-date-picker-help",
                             }
                           }
-                          inputRefCallback={[Function]}
                           intl={
                             Object {
                               "defaultFormats": Object {},
@@ -2105,7 +2097,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
                       useExternalFormatMask={true}
                     />
                   }
-                  customInputRef="inputRefCallback"
                   dateFormat="MM/DD/YYYY"
                   dateFormatCalendar=" "
                   disabled={true}
@@ -2163,7 +2154,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
                         useExternalFormatMask={true}
                       />
                     }
-                    customInputRef="inputRefCallback"
                     dateFormat="MM/DD/YYYY"
                     dateFormatCalendar=" "
                     disabled={true}
@@ -2247,7 +2237,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
                             "name": "test",
                           }
                         }
-                        inputRefCallback={[Function]}
                         isIncomplete={false}
                         isInvalid={false}
                         name="test-date-picker"
@@ -2275,7 +2264,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
                               "name": "test",
                             }
                           }
-                          inputRefCallback={[Function]}
                           intl={
                             Object {
                               "defaultFormats": Object {},

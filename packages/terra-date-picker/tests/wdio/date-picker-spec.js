@@ -205,7 +205,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.keys('Delete');
       browser.click('input[name="terra-date-month-date-input-onchange"]');
       browser.keys('Delete');
-
+      Terra.hideInputCaret('input[name="terra-date-month-date-input-onchange"]');
       expect(browser.getText('#iso')).to.equal('');
       expect(browser.getText('#input-value')).to.equal('');
       expect(browser.getText('#complete-date')).to.equal('No');

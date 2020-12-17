@@ -407,6 +407,10 @@ const DatePickerInput = (props) => {
   };
 
   const handleDayInputKeydown = (event) => {
+    if (inputAttributes?.readOnly) {
+      return;
+    }
+
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
       if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && dayInputRef.current.selectionEnd === 0) {
         setInputFocus(event, monthInputRef.current, date.month.length, date.month.length);
@@ -425,6 +429,10 @@ const DatePickerInput = (props) => {
   };
 
   const handleMonthInputKeydown = (event) => {
+    if (inputAttributes?.readOnly) {
+      return;
+    }
+
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
       if (event.keyCode === KEY_RIGHT && monthInputRef.current.selectionEnd === date.month.length) {
         setInputFocus(event, dayInputRef.current, 0, 0);
@@ -445,6 +453,10 @@ const DatePickerInput = (props) => {
   };
 
   const handleYearInputKeydown = (event) => {
+    if (inputAttributes?.readOnly) {
+      return;
+    }
+
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
       if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && yearInputRef.current.selectionEnd === 0) {
         setInputFocus(event, dayInputRef.current, date.day.length, date.day.length);
