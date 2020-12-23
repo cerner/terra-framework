@@ -46,6 +46,8 @@ const defaultProps = {
   alwaysCollapsedMenuItems: [],
 };
 
+const prepopulatedBaseDivider = <CollapsibleMenuViewDivider key="prepopulatedBaseDivider" />;
+
 class CollapsibleMenuView extends React.Component {
   constructor(props) {
     super(props);
@@ -160,7 +162,7 @@ class CollapsibleMenuView extends React.Component {
 
     if (this.hiddenStartIndex >= 0) {
       visibleChildren = React.Children.toArray(children);
-      hiddenChildren = visibleChildren.splice(this.hiddenStartIndex).concat(hiddenChildren);
+      hiddenChildren = visibleChildren.splice(this.hiddenStartIndex).concat(prepopulatedBaseDivider).concat(hiddenChildren);
     }
 
     return (
