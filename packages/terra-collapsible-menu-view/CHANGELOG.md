@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `alwaysCollapsedMenuItems` attribute to `CollapsibleMenuView` which can be used to prepopulate collapsible menu view. These items will always hidden under the More button. The collapsed menu view will always shown if at least one item is added to the collapsedMenuItems list. 
+
 * Changed
   * Updated to support a peer dependency of react-intl v2-v5
   * Updated to use `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility

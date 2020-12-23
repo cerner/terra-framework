@@ -153,7 +153,7 @@ class CollapsibleMenuView extends React.Component {
     customProps.className);
     const menuButtonClassName = cx(
       'menu-button',
-      { hidden: this.collapsedMenuAlwaysShown ? false : this.menuHidden },
+      { hidden: !this.collapsedMenuAlwaysShown && this.menuHidden },
     );
     let visibleChildren = children;
     let hiddenChildren = alwaysCollapsedMenuItems;

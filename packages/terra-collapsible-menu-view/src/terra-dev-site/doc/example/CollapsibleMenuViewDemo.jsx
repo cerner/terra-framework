@@ -40,7 +40,7 @@ class CollapsibleMenuViewDemo extends React.Component {
           <CollapsibleMenuView.Divider key="CollapsedDivider" />,
           <CollapsibleMenuView.Item text="Collapsed Button 1" key="collapsedButton1" />,
           <CollapsibleMenuView.Item text="Collapsed Button 2" key="collapsedButton2" />,
-          <CollapsibleMenuView.Item text="Collapsed Button 3" key="collapsedButton3" />
+          <CollapsibleMenuView.Item text="Collapsed Button 3" key="collapsedButton3" />,
         ]}
       >
         <CollapsibleMenuView.Toggle
