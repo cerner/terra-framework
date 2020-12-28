@@ -1,13 +1,14 @@
+/* global $ */
 Terra.describeViewports('HeaderUtilityMenu', ['huge'], () => {
   it('Displays a default header utility menu', () => {
     browser.url('/raw/tests/terra-application-utility/application-utility/default-header-utility-menu');
-    browser.waitForVisible('#default');
+    $('#default').waitForDisplayed();
     Terra.validates.element('default', { selector: '#default' });
   });
 
   it('should Focus-header utility menu', () => {
     browser.keys(['Tab', 'Tab']);
-    browser.moveToObject('#root', 0, 0);
+    $('#root').moveTo({ xOffset: 0, yOffset: 0 });
     Terra.validates.element('focus', { selector: '#default' });
   });
 });

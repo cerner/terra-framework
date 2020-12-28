@@ -135,15 +135,15 @@ The Notification Dialog has the following data attributes available for browser 
 ```js
 describe('NotificationDialog', () => {
   it('opens the notification dialog', () => {
-    browser.click('#triggerNotificationDialog');
-    expect(browser.isExisting('[data-terra-notification-dialog]')).to.be.true;
-    expect(browser.hasFocus('[data-terra-notification-dialog]')).to.be.true;
+    $('#triggerNotificationDialog').click();
+    expect($('[data-terra-notification-dialog]').isExisting()).toBeTruthy();
+    expect($('[data-terra-notification-dialog]').isFocused()).toBeTruthy();
     Terra.validates.element('open', { selector: '#root' });
   });
 
   it('user rejects the notification dialog', () => {
-    browser.click('[data-terra-notification-dialog-button="reject"]');
-    expect(browser.isExisting('[data-terra-notification-dialog]')).to.be.false;
+    $('[data-terra-notification-dialog-button="reject"]').click();
+    expect($('[data-terra-notification-dialog]').isExisting()).toBeFalsy();
     Terra.validates.element('closed', { selector: '#root' });
   });
 });

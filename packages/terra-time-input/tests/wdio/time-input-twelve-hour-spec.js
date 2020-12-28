@@ -1,3 +1,4 @@
+/* global $ */
 Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   it('displays twelve hour default with no time provided', () => {
     browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
@@ -19,7 +20,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('00');
     Terra.validates.element('set hour to 12 without meridiem');
   });
@@ -29,7 +30,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys(['ArrowUp']);
     Terra.validates.element('up arrow does not change meridiem');
   });
@@ -39,9 +40,9 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('12');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys(['ArrowUp']);
     Terra.validates.element('up arrow changes time to 01');
   });
@@ -51,9 +52,9 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('01');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys(['ArrowDown']);
 
     Terra.validates.element('down arrow changes time to 12');
@@ -64,9 +65,9 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('11');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys(['ArrowUp']);
 
     Terra.validates.element('switch meridiem - up arrow');
@@ -77,9 +78,9 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('12');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys(['ArrowDown']);
     Terra.validates.element('switch meridiem - down arrow');
   });
@@ -89,9 +90,9 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('0');
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+    $('#timeInput input[name="terra-time-minute-time-input"]').click();
     Terra.validates.element('change hour from 0 to 12 onBlur');
   });
 

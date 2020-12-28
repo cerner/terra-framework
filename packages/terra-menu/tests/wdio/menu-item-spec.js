@@ -1,3 +1,4 @@
+/* global $ */
 Terra.describeViewports('Menu Item', ['medium'], () => {
   it('displays a Menu Item-Default', () => {
     browser.url('/raw/tests/terra-menu/menu/menu-item/menu-item-default');
@@ -8,12 +9,12 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
     describe('Menu Item-Selectable Via Click', () => {
       it('is selected', () => {
         browser.url('/raw/tests/terra-menu/menu/menu-item/menu-item-selectable');
-        browser.click('.TestSelectableItem');
+        $('.TestSelectableItem').click();
         Terra.validates.element('selected');
       });
 
       it('is deselected', () => {
-        browser.click('.TestSelectableItem');
+        $('.TestSelectableItem').click();
         Terra.validates.element('deselected');
       });
     });
@@ -39,7 +40,7 @@ Terra.describeViewports('Menu Item', ['huge'], () => {
     });
 
     it('does not check item when clicked', () => {
-      browser.click('.TestDisabledItem');
+      $('.TestDisabledItem').click();
       Terra.validates.element('disabled item was not checked');
     });
   });
@@ -57,22 +58,22 @@ Terra.describeViewports('Menu Item', ['huge'], () => {
   describe('Menu Item-Triggers onClick Function', () => {
     it('starts with click number of 0', () => {
       browser.url('/raw/tests/terra-menu/menu/menu-item/menu-item-on-click');
-      expect(browser.getText('#clickNumber')).to.contain('0');
+      expect($('#clickNumber')).toHaveTextContaining('0');
     });
 
     it('increments on Click', () => {
-      browser.click('.TestOnClickItem');
-      expect(browser.getText('#clickNumber')).to.contain('1');
+      $('.TestOnClickItem').click();
+      expect($('#clickNumber')).toHaveTextContaining('1');
     });
 
     it('increments on Enter', () => {
       browser.keys('Enter');
-      expect(browser.getText('#clickNumber')).to.contain('2');
+      expect($('#clickNumber')).toHaveTextContaining('2');
     });
 
     it('increments on Space', () => {
       browser.keys('Space');
-      expect(browser.getText('#clickNumber')).to.contain('3');
+      expect($('#clickNumber')).toHaveTextContaining('3');
     });
 
     it('displays Menu Item-With eIFU Icon, eIFU Icon is considered over check mark icon ', () => {

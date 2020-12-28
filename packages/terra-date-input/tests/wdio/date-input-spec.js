@@ -1,3 +1,4 @@
+/* global $ */
 Terra.describeViewports('Date Input', ['medium'], () => {
   it('should display no date provided', () => {
     browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
@@ -58,19 +59,19 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
   it(' should Focus Month Styles', () => {
     browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
-    browser.click('select[name="terra-date-month-date-input"]');
+    $('select[name="terra-date-month-date-input"]').click();
     Terra.validates.element('focus month styles');
   });
 
   it('should Focus Day Styles', () => {
     browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
-    browser.click('input[name="terra-date-day-date-input"]');
+    $('input[name="terra-date-day-date-input"]').click();
     Terra.validates.element('focus day styles');
   });
 
   it('should display Focus Year Styles', () => {
     browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
-    browser.click('input[name="terra-date-year-date-input"]');
+    $('input[name="terra-date-year-date-input"]').click();
     Terra.validates.element('focus year styles');
   });
 
@@ -79,14 +80,14 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       browser.url('/raw/tests/terra-date-input/date-input/day-month-year-date-input');
       Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
       Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
-      browser.click('select[name="terra-date-month-date-input"]');
+      $('select[name="terra-date-month-date-input"]').click();
       browser.keys(['ArrowDown']);
       browser.keys(['Enter']);
       Terra.validates.element('First Month Selected');
     });
 
     it('Selects Placeholder option to clear selected value', () => {
-      browser.click('select[name="terra-date-month-date-input"]');
+      $('select[name="terra-date-month-date-input"]').click();
       browser.keys(['ArrowUp']);
       browser.keys(['Enter']);
       Terra.validates.element('Value Cleared');
@@ -102,7 +103,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('select[name="terra-date-month-date-input"]');
+        $('select[name="terra-date-month-date-input"]').click();
         browser.keys(['ArrowUp']);
         browser.keys(['Enter']);
 
@@ -118,7 +119,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('select[name="terra-date-month-date-input"]');
+        $('select[name="terra-date-month-date-input"]').click();
         browser.keys(['ArrowDown']);
         browser.keys(['Enter']);
         Terra.validates.element('decrement month');
@@ -133,7 +134,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('select[name="terra-date-month-date-input"]');
+        $('select[name="terra-date-month-date-input"]').click();
         browser.keys(['Enter']);
         browser.keys(['Delete']);
         Terra.validates.element('clear month');
@@ -148,7 +149,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('select[name="terra-date-month-date-input"]');
+        $('select[name="terra-date-month-date-input"]').click();
         browser.keys(['Enter']);
         browser.keys(['Delete']);
 
@@ -164,7 +165,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('select[name="terra-date-month-date-input"]');
+        $('select[name="terra-date-month-date-input"]').click();
         browser.keys(['Enter']);
         browser.keys(['Delete']);
 
@@ -182,7 +183,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-day-date-input"]');
+        $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['ArrowUp']);
 
         Terra.validates.element('increment day-filled');
@@ -197,7 +198,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-day-date-input"]');
+        $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['ArrowUp']);
 
         Terra.validates.element('increment day-empty');
@@ -212,7 +213,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-day-date-input"]');
+        $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['31', 'ArrowUp']);
 
         Terra.validates.element('cycle day');
@@ -227,7 +228,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-day-date-input"]');
+        $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['ArrowDown']);
         Terra.validates.element('decrement day-filled');
       });
@@ -241,7 +242,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-day-date-input"]');
+        $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['ArrowDown']);
 
         Terra.validates.element('decrement day-empty');
@@ -256,7 +257,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-day-date-input"]');
+        $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['01', 'ArrowDown']);
 
         Terra.validates.element('cycle day');
@@ -271,7 +272,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-day-date-input"]');
+        $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['Delete']);
 
         Terra.validates.element('clear day');
@@ -286,7 +287,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-day-date-input"]');
+        $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['Delete']);
         Terra.validates.element('shift focus to month');
       });
@@ -300,7 +301,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-day-date-input"]');
+        $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['Delete']);
 
         Terra.validates.element('no shift in focus');
@@ -317,7 +318,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-year-date-input"]');
+        $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['ArrowUp']);
 
         Terra.validates.element('increment year-filled');
@@ -332,7 +333,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-year-date-input"]');
+        $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['ArrowUp']);
 
         Terra.validates.element('increment year-empty');
@@ -347,7 +348,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-year-date-input"]');
+        $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['2100', 'ArrowUp']);
 
         Terra.validates.element('cycle year');
@@ -362,7 +363,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-year-date-input"]');
+        $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['ArrowDown']);
 
         Terra.validates.element('decrement year');
@@ -377,7 +378,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-year-date-input"]');
+        $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['ArrowDown']);
         Terra.validates.element('decrement year-empty');
       });
@@ -389,7 +390,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       // Removes the blinking cursor to prevent screenshot mismatches.
       Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
       Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
-      browser.click('input[name="terra-date-year-date-input"]');
+      $('input[name="terra-date-year-date-input"]').click();
       browser.keys(['1900', 'ArrowDown']);
       Terra.validates.element('Down Arrow Cycles To 2100');
     });
@@ -401,7 +402,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
       Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-      browser.click('input[name="terra-date-year-date-input"]');
+      $('input[name="terra-date-year-date-input"]').click();
       browser.keys(['7654']);
 
       Terra.validates.element('does not allow value outside 1900-2100');
@@ -415,7 +416,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-year-date-input"]');
+        $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['Delete']);
 
         Terra.validates.element('clear year');
@@ -430,7 +431,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-year-date-input"]');
+        $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['Delete']);
         Terra.validates.element('shift focus to day');
       });
@@ -444,7 +445,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('input[name="terra-date-year-date-input"]');
+        $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['Delete']);
         Terra.validates.element('shift focus to month');
       });
@@ -459,13 +460,13 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
       Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-      browser.click('select[name="terra-date-month-date-input"]');
+      $('select[name="terra-date-month-date-input"]').click();
       browser.keys(['ArrowDown']);
 
-      browser.click('input[name="terra-date-day-date-input"]');
+      $('input[name="terra-date-day-date-input"]').click();
       browser.keys('30');
 
-      browser.click('input[name="terra-date-year-date-input"]');
+      $('input[name="terra-date-year-date-input"]').click();
       browser.keys('1990');
 
       Terra.validates.element('onChange valid');
@@ -480,13 +481,13 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
       Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-      browser.click('select[name="terra-date-month-date-input"]');
+      $('select[name="terra-date-month-date-input"]').click();
       browser.keys(['ArrowDown']);
 
-      browser.click('input[name="terra-date-day-date-input"]');
+      $('input[name="terra-date-day-date-input"]').click();
       browser.keys('ab');
 
-      browser.click('input[name="terra-date-year-date-input"]');
+      $('input[name="terra-date-year-date-input"]').click();
       browser.keys('cdef');
       Terra.validates.element('onChange invalid');
     });
@@ -500,9 +501,9 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
       Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-      browser.click('input[name="terra-date-day-date-input"]');
+      $('input[name="terra-date-day-date-input"]').click();
       browser.keys('1');
-      browser.click('input[name="terra-date-year-date-input"]');
+      $('input[name="terra-date-year-date-input"]').click();
 
       Terra.validates.element('prepend 0');
     });
@@ -511,32 +512,32 @@ Terra.describeViewports('Date Input', ['medium'], () => {
   describe('Date Input onBlur', () => {
     before(() => {
       browser.url('/raw/tests/terra-date-input/date-input/focus-blur-date-input');
-      browser.click('select[name="terra-date-month-date-input"]');
+      $('select[name="terra-date-month-date-input"]').click();
       // eslint-disable-next-line prefer-arrow-callback
       browser.execute(function dispatch() {
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
-        expect(browser.getText('#blur-count')).to.equal('0');
-        expect(browser.getText('#focus-count')).to.equal('1');
+        expect($('#blur-count').getText()).toEqual('0');
+        expect($('#focus-count').getText()).toEqual('1');
       });
 
       it('tabs to the day input and onBlur is not triggered', () => {
         browser.keys('Tab');
-        expect(browser.getText('#blur-count')).to.equal('0');
-        expect(browser.getText('#focus-count')).to.equal('1');
+        expect($('#blur-count').getText()).toEqual('0');
+        expect($('#focus-count').getText()).toEqual('1');
       });
 
       it('tabs to the year and onBlur is not triggered', () => {
         browser.keys('Tab');
-        expect(browser.getText('#blur-count')).to.equal('0');
-        expect(browser.getText('#focus-count')).to.equal('1');
+        expect($('#blur-count').getText()).toEqual('0');
+        expect($('#focus-count').getText()).toEqual('1');
       });
 
       it('tabs out of the component and onBlur is triggered', () => {
         browser.keys('Tab');
-        expect(browser.getText('#blur-count')).to.equal('1');
-        expect(browser.getText('#focus-count')).to.equal('1');
+        expect($('#blur-count').getText()).toEqual('1');
+        expect($('#focus-count').getText()).toEqual('1');
       });
     });
   });

@@ -1,3 +1,4 @@
+/* global $ */
 const context = '[data-terra-dev-site-content] *:first-child';
 
 Terra.describeViewports('Slide panel', ['large'], () => {
@@ -53,41 +54,41 @@ Terra.describeViewports('Slide panel', ['large'], () => {
 
   it('Toggles the slide panel and hidden styles', () => {
     browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-toggle');
-    browser.waitForExist('#test-slide [aria-hidden="true"]');
-    Terra.validates.screenshot('toggle and hidden styles', { selector: '#root' });
+    $('#test-slide [aria-hidden="true"]').waitForExist();
+    Terra.validates.element('toggle and hidden styles', { selector: '#root' });
   });
 
   describe('Toggle the slide panel click', () => {
     it('Opens panel and focuses on panel', () => {
       browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-toggle');
-      browser.click('#test-toggle');
-      browser.waitForExist('#test-slide [aria-hidden="false"]');
+      $('#test-toggle').click();
+      $('#test-slide [aria-hidden="false"]').waitForExist();
       browser.pause(150);
-      browser.hasFocus('#panel-content');
+      $('#panel-content').isFocused();
 
       // On Tab Press focuses on the button inside the panel
       browser.keys(['Tab']);
-      browser.hasFocus('#focus-button');
+      $('#focus-button').isFocused();
 
-      Terra.validates.screenshot({ selector: '#root' });
+      Terra.validates.element({ selector: '#root' });
     });
   });
 
   describe('Toggle the slide panel side', () => {
     it('Switches panel side', () => {
       browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-side-toggle');
-      expect(browser.getText('#test-slide [aria-hidden="false"]')).to.equal('Increase Count 0');
+      expect($('#test-slide [aria-hidden="false"]').getText()).toEqual('Increase Count 0');
 
-      browser.click('#focus-button');
-      expect(browser.getText('#test-slide [aria-hidden="false"]')).to.equal('Increase Count 1');
+      $('#focus-button').click();
+      expect($('#test-slide [aria-hidden="false"]').getText()).toEqual('Increase Count 1');
 
-      Terra.validates.screenshot('panel with end position', { selector: '#root' });
+      Terra.validates.element('panel with end position', { selector: '#root' });
 
-      browser.click('#test-toggle');
-      browser.waitForExist('#test-slide [aria-hidden="false"]');
-      expect(browser.getText('#test-slide [aria-hidden="false"]')).to.equal('Increase Count 1');
+      $('#test-toggle').click();
+      $('#test-slide [aria-hidden="false"]').waitForExist();
+      expect($('#test-slide [aria-hidden="false"]').getText()).toEqual('Increase Count 1');
 
-      Terra.validates.screenshot('panel with start position', { selector: '#root' });
+      Terra.validates.element('panel with start position', { selector: '#root' });
     });
   });
 });

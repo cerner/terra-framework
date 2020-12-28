@@ -4,6 +4,6 @@ Terra.describeViewports('Embedded Content Provider Test Template', ['huge'], () 
     const bodyHeight = browser.getElementSize('body', 'height');
     const viewportHeight = browser.getViewportSize('height');
 
-    expect(bodyHeight).not.to.equal(viewportHeight);
+    expect(bodyHeight).not.toEqual(viewportHeight);
   });
 });
