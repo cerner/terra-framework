@@ -337,7 +337,7 @@ Terra.describeViewports('Hookshot targetAttachment and contentAttachment combina
     });
 
     it('targetAttachment=bottom center', () => {
-      b$('#attach-BC').click();
+      $('#attach-BC').click();
       $('#attachment-content').waitForDisplayed();
       Terra.validates.element('targetAttachment=bottom center', { selector: '#attachment-bounds' });
     });

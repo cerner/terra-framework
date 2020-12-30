@@ -1,9 +1,11 @@
 /* global $ */
 Terra.describeViewports('SlidePanelManager', ['tiny', 'large'], () => {
-  before(() => browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default')
-    .refresh());
+  before(() => {
+    browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+    browser.refresh();
+  });
   afterEach(() => {
-    Terra.validates.element({ selector: '#site' });
+    Terra.validates.element('sizes', { selector: '#site' });
     $('[class*="slide-group"] #DemoContainer-1 .dismiss').click();
   });
   describe('Sizes', () => {
@@ -123,8 +125,10 @@ Terra.describeViewports('SlidePanelManager', ['tiny', 'large'], () => {
 });
 
 Terra.describeViewports('SlidePanelManager- Behaviors', ['large'], () => {
-  before(() => browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default')
-    .refresh());
+  before(() => {
+    browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+    browser.refresh();
+  });
 
   describe('Nested Disclose', () => {
     it('Nested Disclose', () => {
@@ -133,7 +137,7 @@ Terra.describeViewports('SlidePanelManager- Behaviors', ['large'], () => {
       $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').waitForDisplayed({ timeout: 1000 });
       $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').click();
 
-      Terra.validates.element({ selector: '#site' });
+      Terra.validates.element('nested disclosure', { selector: '#site' });
       $('[class*="slide-group"] #DemoContainer-2 .close-disclosure').click();
     });
   });
@@ -144,7 +148,7 @@ Terra.describeViewports('SlidePanelManager- Behaviors', ['large'], () => {
 
       $('[class*="slide-group"] #DemoContainer-1 .dismiss').waitForDisplayed({ timeout: 1000 });
       $('[class*="slide-group"] #DemoContainer-1 .dismiss').click();
-      Terra.validates.element({ selector: '#site' });
+      Terra.validates.element('dismiss disclosure', { selector: '#site' });
     });
   });
 
@@ -154,7 +158,7 @@ Terra.describeViewports('SlidePanelManager- Behaviors', ['large'], () => {
 
       $('[class*="slide-group"] #DemoContainer-1 .close-disclosure').waitForDisplayed({ timeout: 1000 });
       $('[class*="slide-group"] #DemoContainer-1 .close-disclosure').click();
-      Terra.validates.element({ selector: '#site' });
+      Terra.validates.element('close disclosure', { selector: '#site' });
     });
   });
 
@@ -165,7 +169,7 @@ Terra.describeViewports('SlidePanelManager- Behaviors', ['large'], () => {
       $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
       $('[class*="slide-group"] #DemoContainer-1 .maximize').click();
 
-      Terra.validates.element({ selector: '#site' });
+      Terra.validates.element('maximize disclosure', { selector: '#site' });
       $('[class*="slide-group"] #DemoContainer-1 .dismiss').click();
     });
   });
@@ -182,7 +186,7 @@ Terra.describeViewports('SlidePanelManager- Behaviors', ['large'], () => {
       $('[class*="slide-group"] #DemoContainer-1 .minimize').click();
 
       $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
-      Terra.validates.element({ selector: '#site' });
+      Terra.validates.element('minimize disclosure', { selector: '#site' });
       $('[class*="slide-group"] #DemoContainer-1 .dismiss').click();
     });
   });
@@ -192,13 +196,16 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
   const selector = '#root-component';
 
   describe('Disclosure - Header Close', () => {
-    before(() => browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-header-adapter').refresh());
+    before(() => {
+      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-header-adapter');
+      browser.refresh();
+    });
 
     it('presents the close button within the managed header', () => {
       $('#root-component .disclose-large').click();
 
       $('[class*="right-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
-      Terra.validates.element({ selector });
+      Terra.validates.element('close button', { selector });
       $('[class*="right-buttons"] > *:first-child').click();
     });
 
@@ -212,7 +219,10 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
   });
 
   describe('Disclosure - Header Back', () => {
-    before(() => browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-header-adapter').refresh());
+    before(() => {
+      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-header-adapter');
+      browser.refresh();
+    });
 
     afterEach(() => {
       $('[class*="right-buttons"] > *:first-child').click();
@@ -224,7 +234,7 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
       $('[class*="slide-group"] #DemoContainer-1 .disclose-large').click();
 
       $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
-      Terra.validates.element({ selector });
+      Terra.validates.element('back button', { selector });
     });
 
     it('navigates back when the back button is pressed', () => {
@@ -239,7 +249,10 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
   });
 
   describe('Disclosure - Header Maximize', () => {
-    before(() => browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-header-adapter').refresh());
+    before(() => {
+      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-header-adapter');
+      browser.refresh();
+    });
 
     afterEach(() => {
       $('[class*="right-buttons"] > *:first-child').click();
@@ -249,7 +262,7 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
       $('#root-component .disclose-large').click();
 
       $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
-      Terra.validates.element({ selector });
+      Terra.validates.element('maximize button', { selector });
     });
 
     it('maximizes the disclosure when the maximize button is pressed', () => {
@@ -262,7 +275,10 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
   });
 
   describe('Disclosure - Header Minimize', () => {
-    before(() => browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-header-adapter').refresh());
+    before(() => {
+      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-header-adapter');
+      browser.refresh();
+    });
 
     afterEach(() => {
       $('[class*="right-buttons"] > *:first-child').click();
@@ -273,7 +289,7 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
 
       $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
       $('[class*="left-buttons"] > *:first-child').click();
-      Terra.validates.element({ selector });
+      Terra.validates.element('minimize button', { selector });
     });
 
     it('maximizes the disclosure when the minimize button is pressed', () => {
@@ -291,12 +307,15 @@ Terra.describeViewports('SlidePanelManager - Disclosure Accessory', ['large'], (
   const selector = '#root-component';
 
   describe('Disclosure Accessory', () => {
-    before(() => browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-disclosure-accessory').refresh());
+    before(() => {
+      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-disclosure-accessory');
+      browser.refresh();
+    });
     it('renders the disclosure accessory', () => {
       $('#root-component .disclose-large').click();
 
       $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').waitForDisplayed({ timeout: 1000 });
-      Terra.validates.element({ selector });
+      Terra.validates.element('disclosure accessory', { selector });
       $('[class*="slide-group"] #DemoContainer-1 .close-disclosure').click();
     });
 
@@ -319,7 +338,7 @@ Terra.describeViewports('SlidePanelManager - Disclosure Accessory', ['large'], (
 
     it('renders the panel in an disclosure container', () => {
       expect($('[data-disclosure-container="true"]').isExisting()).toBeTruthy();
-      Terra.validates.element({ selector });
+      Terra.validates.element('slide panel', { selector });
     });
 
     it('opens a nested slide-panel', () => {

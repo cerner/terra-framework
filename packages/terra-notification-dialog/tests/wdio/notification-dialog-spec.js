@@ -164,7 +164,7 @@ Terra.describeViewports('Keyboard Accessibility', ['medium'], () => {
   it('notification dialog receives focus when displayed', () => {
     browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/hazard-high-variant');
     openNotificationDialog();
-    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused(), 'dialog to have focus').toBeTruthy();
+    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
   });
 
   it('shifts focus to the accept button in the notification dialog when tab is pressed', () => {
@@ -182,7 +182,7 @@ Terra.describeViewports('Keyboard Accessibility', ['medium'], () => {
   it('reopens dialog and tabs to accept action', () => {
     openNotificationDialog();
     browser.keys('Tab');
-    expect($(ACCEPT_ACTION_SELECTOR).isFocused(), 'accept action to have focus').toBeTruthy();
+    expect($(ACCEPT_ACTION_SELECTOR).isFocused()).toBeTruthy();
   });
 
   it('closes the notification dialog when SPACE is pressed', () => {
@@ -193,18 +193,18 @@ Terra.describeViewports('Keyboard Accessibility', ['medium'], () => {
   it('reopens dialog shifts focus to the reject button in the notification dialog via tab', () => {
     openNotificationDialog();
     browser.keys(['Tab', 'Tab']);
-    expect($(REJECT_ACTION_SELECTOR).isFocused(), 'reject action to have focus').toBeTruthy();
+    expect($(REJECT_ACTION_SELECTOR).isFocused()).toBeTruthy();
     Terra.validates.element('reject focused', { selector });
   });
 
   it('the notification dialog traps focus in modal', () => {
     browser.keys('Tab');
-    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused(), 'dialog to have focus').toBeTruthy();
+    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
     browser.keys('Tab');
-    expect($(ACCEPT_ACTION_SELECTOR).isFocused(), 'accept action to have focus').toBeTruthy();
+    expect($(ACCEPT_ACTION_SELECTOR).isFocused()).toBeTruthy();
     browser.keys('Tab');
-    expect($(REJECT_ACTION_SELECTOR).isFocused(), 'reject action to have focus').toBeTruthy();
+    expect($(REJECT_ACTION_SELECTOR).isFocused()).toBeTruthy();
     browser.keys('Tab');
-    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused(), 'dialog to have focus').toBeTruthy();
+    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
   });
 });

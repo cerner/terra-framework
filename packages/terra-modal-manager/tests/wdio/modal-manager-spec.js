@@ -2,10 +2,13 @@
 const selector = '#root';
 
 Terra.describeViewports('ModalManager', ['tiny', 'large'], () => {
-  before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default').refresh());
+  before(() => {
+    browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
+    browser.refresh();
+  });
 
   afterEach(() => {
-    Terra.validates.element({ selector });
+    Terra.validates.element('Disclose size', { selector });
     browser.keys('Escape');
   });
 
@@ -228,15 +231,17 @@ Terra.describeViewports('ModalManager', ['tiny', 'large'], () => {
 
 Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
   describe('Behaviors', () => {
-    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
-      .refresh());
+    before(() => {
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
+      browser.refresh();
+    });
     describe('Nested Disclose', () => {
       it('Nested Disclose', () => {
         $('#root-component .disclose-large').click();
 
         $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').waitForDisplayed({ timeout: 500 });
         $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').click();
-        Terra.validates.element({ selector });
+        Terra.validates.element('Nested Disclose', { selector });
         browser.keys('Escape');
       });
     });
@@ -247,7 +252,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
 
         $('[class*="slide-group"] #DemoContainer-1 .dismiss').waitForDisplayed({ timeout: 500 });
         $('[class*="slide-group"] #DemoContainer-1 .dismiss').click();
-        Terra.validates.element({ selector });
+        Terra.validates.element('Disclosure - Dismiss', { selector });
       });
     });
 
@@ -257,7 +262,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
 
         $('[class*="slide-group"] #DemoContainer-1 .close-disclosure').waitForDisplayed({ timeout: 500 });
         $('[class*="slide-group"] #DemoContainer-1 .close-disclosure').click();
-        Terra.validates.element({ selector });
+        Terra.validates.element('Disclosure - Close Disclosure', { selector });
       });
     });
 
@@ -267,7 +272,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
 
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 500 });
         $('[class*="slide-group"] #DemoContainer-1 .maximize').click();
-        Terra.validates.element({ selector });
+        Terra.validates.element('Disclosure - Maximize', { selector });
         browser.keys('Escape');
       });
     });
@@ -283,7 +288,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         $('[class*="slide-group"] #DemoContainer-1 .minimize').click();
 
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
-        Terra.validates.element({ selector });
+        Terra.validates.element('Disclosure - Minimize', { selector });
         browser.keys('Escape');
       });
     });
@@ -297,7 +302,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
 
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
         $('[role="dialog"] [data-terra-select]').click();
-        Terra.validates.element({ selector });
+        Terra.validates.element('Select Field in Modal Manager', { selector });
         browser.keys(['Escape', 'Escape']);
       });
     });
@@ -352,8 +357,10 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
 
 Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
   describe('Disclosure - Header Close', () => {
-    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter')
-      .refresh());
+    before(() => {
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter');
+      browser.refresh();
+    });
 
     afterEach(() => {
       browser.keys('Escape');
@@ -363,7 +370,7 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
       $('#root-component .disclose-large').click();
 
       $('[class*="right-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
-      Terra.validates.element({ selector });
+      Terra.validates.element('close button displays', { selector });
     });
 
     it('closes the disclosure when the close button is pressed', () => {
@@ -376,8 +383,10 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
   });
 
   describe('Disclosure - Header Back', () => {
-    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter')
-      .refresh());
+    before(() => {
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter');
+      browser.refresh();
+    });
 
     afterEach(() => {
       browser.keys('Escape');
@@ -389,7 +398,7 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
       $('[class*="slide-group"] #DemoContainer-1 .disclose-large').click();
 
       $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
-      Terra.validates.element({ selector });
+      Terra.validates.element('displays back button', { selector });
     });
 
     it('navigates back when the back button is pressed', () => {
@@ -404,8 +413,10 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
   });
 
   describe('Disclosure - Header Maximize', () => {
-    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter')
-      .refresh());
+    before(() => {
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter');
+      browser.refresh();
+    });
 
     afterEach(() => {
       browser.keys('Escape');
@@ -415,7 +426,7 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
       $('#root-component .disclose-large').click();
 
       $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
-      Terra.validates.element({ selector });
+      Terra.validates.element('displays maximize button', { selector });
     });
 
     it('maximizes the disclosure when the maximize button is pressed', () => {
@@ -428,8 +439,10 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
   });
 
   describe('Disclosure - Header Minimize', () => {
-    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter')
-      .refresh());
+    before(() => {
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter');
+      browser.refresh();
+    });
 
     afterEach(() => {
       browser.keys('Escape');
@@ -440,7 +453,7 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
 
       $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
       $('[class*="left-buttons"] > *:first-child').click();
-      Terra.validates.element({ selector });
+      Terra.validates.element('displays minimize button', { selector });
     });
 
     it('maximizes the disclosure when the minimize button is pressed', () => {
@@ -456,12 +469,15 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
 
 Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => {
   describe('Disclosure Accessory', () => {
-    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-disclosure-accessory').refresh());
+    before(() => {
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-disclosure-accessory');
+      browser.refresh();
+    });
     it('renders the disclosure accessory', () => {
       $('#root-component .disclose-large').click();
 
       $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').waitForDisplayed({ timeout: 1000 });
-      Terra.validates.element({ selector });
+      Terra.validates.element('accessory', { selector });
       $('[class*="slide-group"] #DemoContainer-1 .close-disclosure').click();
     });
 
@@ -476,7 +492,10 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
   });
 
   describe('Disclosure Container', () => {
-    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/with-disclosure-container').refresh());
+    before(() => {
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/with-disclosure-container');
+      browser.refresh();
+    });
     // Skip color contrast check for elements behind a slide-shadow
     const ignoredA11y = {
       'color-contrast': {
@@ -492,7 +511,7 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
 
     it('renders the panel in an disclosure container', () => {
       expect($('[data-disclosure-container="true"]').isExisting()).toBeTruthy();
-      Terra.validates.element({ selector, axeRules: ignoredA11y });
+      Terra.validates.element('displays panel', { selector, axeRules: ignoredA11y });
     });
 
     it('opens a nested slide-panel', () => {
@@ -501,7 +520,7 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
     });
 
     it('renders each disclosed component in a disclosure container', () => {
-      expect(browser.isExisting('[data-disclosure-container="true"]')).toBeTruthy();
+      expect($('[data-disclosure-container="true"]').isExisting()).toBeTruthy();
       Terra.validates.element('nested disclosure', { selector, axeRules: ignoredA11y });
       $('[class*="slide-group"] #DemoContainer-2 .close-disclosure').click();
     });

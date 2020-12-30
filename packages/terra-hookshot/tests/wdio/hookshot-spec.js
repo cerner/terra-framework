@@ -244,9 +244,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
     browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
     $('#trigger-AllBehavior').click();
     $('#AllBehavior-content').waitForDisplayed();
-    $('#root')
-      .moveTo(10, 10)
-      .leftClick();
+    $('#root').click({ x: 10, y: 10 });
     Terra.validates.element('close on outside click', { selector: '#AllBehavior-bounds' });
   });
 
@@ -264,9 +262,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
     browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
     $('#trigger-OutsideClickBehavior').click();
     $('#OutsideClickBehavior-content').waitForDisplayed();
-    $('#root')
-      .moveTo(10, 10)
-      .leftClick();
+    $('#root').click({ x: 10, y: 10 });
     Terra.validates.element('closeOnOutsideClick callback', { selector: '#OutsideClickBehavior-bounds' });
   });
 
@@ -276,9 +272,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
     $('#scroll-bounds').click();
     $('#trigger-OutsideClickBehaviorWithSvgs').click();
     $('#OutsideClickBehaviorWithSvgs-content').waitForDisplayed();
-    $('#svg1')
-      .moveTo(10, 10)
-      .leftClick();
+    $('#svg1').click({ x: 10, y: 10 });
     Terra.validates.element('close on SVG click', { selector: '#OutsideClickBehaviorWithSvgs-bounds' });
   });
 
@@ -297,11 +291,9 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
     $('#scroll-bounds').click();
     $('#trigger-NoCloseBehavior').click();
     $('#NoCloseBehavior-content').waitForDisplayed();
-    $('#root')
-      .moveTo(10, 10)
-      .leftClick();
+    $('#root').click({ x: 10, y: 10 });
     Terra.validates.element('close on outside click - no close behavior', { selector: '#NoCloseBehavior-bounds' });
-    $('#root').moveTo(0, 0).leftClick();
+    $('#root').click({ x: 0, y: 0 });
   });
 });
 

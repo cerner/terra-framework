@@ -70,7 +70,7 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       browser.keys(['Tab']);
       $('#focus-button').isFocused();
 
-      Terra.validates.element({ selector: '#root' });
+      Terra.validates.element('panel focused', { selector: '#root' });
     });
   });
 
