@@ -37,7 +37,7 @@ class DatePickerExample extends React.Component {
       <div>
         <p>
           Selected ISO Date Time:
-          <span id="date-time-value">{this.state.dateTime}</span>
+          <span data-date-time-value>{this.state.dateTime}</span>
         </p>
         <DateTimePicker
           name="date-time-picker-example"
