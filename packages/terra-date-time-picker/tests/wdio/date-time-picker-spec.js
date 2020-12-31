@@ -105,7 +105,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     $('[class*="time-clarification"]').waitForDisplayed();
     $('[class*="button-daylight"]').click();
     $('#date-time-picker-toggler').click();
-    $('#root').moveToObject(0, 0);
+    $('#root').moveTo(0, 0);
     Terra.validates.element('disabled time clarification dialog');
   });
 
@@ -181,7 +181,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.refresh();
       $('input[name="terra-date-input"]').setValue('04/01/2019');
       $('input[name="terra-time-hour-input"]').setValue('10');
-      $('input[name="terra-time-minute-input"]30');
+      $('input[name="terra-time-minute-input"]').setValue('30');
       $('#root').click();
       expect($('#iso').getText()).toEqual('2019-04-01T10:30:00-05:00');
       expect($('#input-value').getText()).toEqual('04/01/2019 10:30');
@@ -410,7 +410,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   it('Clears the default date and time on the calendar button click when default date is excluded', () => {
     browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-excluded');
     $('[class*="button"]').click();
-    expect($('#date-time-value').getText()).toEqual('');
+    expect($('span[data-date-time-value]').getText()).toEqual('');
   });
 
   it('Clears the default date and time on date input focus when default date is excluded', () => {
