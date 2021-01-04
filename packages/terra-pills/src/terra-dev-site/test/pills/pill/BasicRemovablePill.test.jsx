@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Pill from '../../../../Pill';
 
 const BasicRemovablePill = () => {
+  const [isRemoved, setIsRemoved] = useState(true);
+
   const handleOnRemove = () => {
-    // eslint-disable-next-line no-alert
-    alert('Remove button clicked');
+    setIsRemoved(false);
   };
 
   return (
-    <Pill
-      labelText="Demo"
-      onRemove={handleOnRemove}
-    />
+    <div>
+      {isRemoved && (
+        <Pill
+          labelText="Demo"
+          onRemove={handleOnRemove}
+        />
+      )}
+    </div>
   );
 };
 

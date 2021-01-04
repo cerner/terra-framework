@@ -9,7 +9,7 @@ const BasicPillListWithDifferentPillType = () => {
 
   return (
     <PillList
-      ariaLabel="Terra Modal"
+      ariaLabel="Pill Container"
     >
       <Pill
         labelText="Basic 1"

@@ -4,7 +4,7 @@ import Pill from '../../../../Pill';
 
 const CollapsiblePillListVariedPillLabel = () => (
   <PillList
-    ariaLabel="Terra Modal"
+    ariaLabel="Pill Container"
     isCollapsible
   >
     <Pill

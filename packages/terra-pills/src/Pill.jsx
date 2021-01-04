@@ -68,7 +68,6 @@ const Pill = (props) => {
   };
 
   const handleOnRemove = () => {
-    pillRef.current.style.display = 'none';
     onRemove();
   };
 

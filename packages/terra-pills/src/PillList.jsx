@@ -17,7 +17,7 @@ const propTypes = {
    */
   ariaLabel: PropTypes.string.isRequired,
   /**
-   * The content to be shown in the pills container. Should only contain the sub-component pills
+   * The content to be shown in the pills container. Should only contain the sub-component pills.
    */
   children: PropTypes.node,
   /**
@@ -44,8 +44,9 @@ const PillList = (props) => {
   const [isRollUpRequired, setIsRollUpRequired] = useState(true);
 
   const handleCollapse = () => {
-    let pillListHeight = pillListRef.current.getBoundingClientRect().height;
-    const pillHeight = rollUpPillRef.current.getBoundingClientRect().height + 12; // Margin + border width
+    let pillListHeight = pillListRef.current.clientHeight;
+    const rollUpPillStyles = rollUpPillRef.current.currentStyle || window.getComputedStyle(rollUpPillRef.current);
+    const pillHeight = rollUpPillRef.current.offsetHeight + Math.round(parseFloat(rollUpPillStyles.marginTop)) + Math.round(parseFloat(rollUpPillStyles.marginBottom));
 
     if (pillListHeight <= pillHeight) {
       setIsRollUpRequired(false);
@@ -59,7 +60,7 @@ const PillList = (props) => {
       childPills[index].style.display = 'none';
       index -= 1;
       pillCounter += 1;
-      pillListHeight = pillListRef.current.getBoundingClientRect().height;
+      pillListHeight = pillListRef.current.clientHeight;
     }
     setIsRollUpRequired(true);
     setRollUpCount(pillCounter);

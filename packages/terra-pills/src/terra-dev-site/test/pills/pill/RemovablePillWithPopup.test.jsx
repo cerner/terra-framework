@@ -1,23 +1,23 @@
-import React from 'react';
-import PillList from '../../../../PillList';
+import React, { useState } from 'react';
 import Pill from '../../../../Pill';
 
 const RemovablePillWithPopup = () => {
+  const [isRemoved, setIsRemoved] = useState(true);
+
   const handleOnRemove = () => {
-    // eslint-disable-next-line no-alert
-    alert('Remove button clicked');
+    setIsRemoved(false);
   };
 
   return (
-    <PillList
-      ariaLabel="Terra Modal"
-    >
-      <Pill
-        labelText="Demo"
-        popupConfig={{ contentHeight: '240', contentWidth: '240', content: (<p>Popup Content</p>) }}
-        onRemove={handleOnRemove}
-      />
-    </PillList>
+    <div>
+      {isRemoved && (
+        <Pill
+          labelText="Demo"
+          popupConfig={{ contentHeight: '240', contentWidth: '240', content: (<p>Popup Content</p>) }}
+          onRemove={handleOnRemove}
+        />
+      )}
+    </div>
   );
 };
 

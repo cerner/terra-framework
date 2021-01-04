@@ -4,7 +4,7 @@ import Pill from '../../../../Pill';
 
 const BasicPillListVariedPillLabel = () => (
   <PillList
-    ariaLabel="Terra Modal"
+    ariaLabel="Pill Container"
   >
     <Pill
       labelText="Demo"

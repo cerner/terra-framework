@@ -9,7 +9,7 @@ const CollapsiblePillListWithDifferentPillType = () => {
 
   return (
     <PillList
-      ariaLabel="Terra Modal"
+      ariaLabel="Pill Container"
       isCollapsible
     >
       <Pill
