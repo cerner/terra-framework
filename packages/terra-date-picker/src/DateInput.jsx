@@ -38,6 +38,10 @@ const propTypes = {
    */
   buttonRefCallback: PropTypes.func,
   /**
+   * Callback ref to pass into the first input dom element from Date Input components based on the date format order.
+   */
+  firstInputRefCallback: PropTypes.func,
+  /**
    * The id to append to the date input wrapper.
    */
   id: PropTypes.string,
@@ -53,11 +57,6 @@ const propTypes = {
   inputAttributes: PropTypes.object,
   /**
    * @private
-   * Callback ref to pass into the last input dom element from Date Input components based on the date format order.
-   */
-  inputRefCallback: PropTypes.func,
-  /**
-   * @private
    * intl object programmatically imported through injectIntl from react-intl.
    * */
   intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }).isRequired,
@@ -69,6 +68,11 @@ const propTypes = {
   * Whether the input displays as Invalid. Use when value does not meet validation pattern.
   */
   isInvalid: PropTypes.bool,
+  /**
+   * @private
+   * Callback ref to pass into the last input dom element from Date Input components based on the date format order.
+   */
+  lastInputRefCallback: PropTypes.func,
   /**
    * Name of the date input.
    */
@@ -124,9 +128,9 @@ const defaultProps = {
   buttonRefCallback: undefined,
   id: undefined,
   inputAttributes: undefined,
-  inputRefCallback: undefined,
   isIncomplete: false,
   isInvalid: false,
+  lastInputRefCallback: undefined,
   name: undefined,
   onBlur: undefined,
   onButtonFocus: undefined,
@@ -148,13 +152,14 @@ const DatePickerInput = (props) => {
   const {
     ariaLabel,
     buttonRefCallback,
+    firstInputRefCallback,
     id,
     initialTimeZone,
     inputAttributes,
-    inputRefCallback,
     intl,
     isIncomplete,
     isInvalid,
+    lastInputRefCallback,
     name,
     onBlur,
     onButtonFocus,
@@ -192,24 +197,36 @@ const DatePickerInput = (props) => {
   const setDayRef = useCallback(node => {
     dayInputRef.current = node;
 
-    // Logic used internally by date-time-picker to shift focus to time-input from day input when date order is YMD.
-    if (inputRefCallback && dateFormatOrder === DateUtil.dateOrder.YMD) {
-      inputRefCallback(node);
+    if (dateFormatOrder === DateUtil.dateOrder.DMY) {
+      firstInputRefCallback(node);
     }
-  }, [dateFormatOrder, inputRefCallback]);
+
+    // Logic used internally by date-time-picker to shift focus to time-input from day input when date order is YMD.
+    if (lastInputRefCallback && dateFormatOrder === DateUtil.dateOrder.YMD) {
+      lastInputRefCallback(node);
+    }
+  }, [dateFormatOrder, firstInputRefCallback, lastInputRefCallback]);
 
   const setMonthRef = useCallback(node => {
     monthInputRef.current = node;
-  }, []);
+
+    if (dateFormatOrder === DateUtil.dateOrder.MDY) {
+      firstInputRefCallback(node);
+    }
+  }, [dateFormatOrder, firstInputRefCallback]);
 
   const setYearRef = useCallback(node => {
     yearInputRef.current = node;
 
-    // Logic used internally by date-time-picker to shift focus to time-input from year input when date order is MDY or DMY.
-    if (inputRefCallback && (dateFormatOrder === DateUtil.dateOrder.MDY || dateFormatOrder === DateUtil.dateOrder.DMY)) {
-      inputRefCallback(node);
+    if (dateFormatOrder === DateUtil.dateOrder.YMD) {
+      firstInputRefCallback(node);
     }
-  }, [dateFormatOrder, inputRefCallback]);
+
+    // Logic used internally by date-time-picker to shift focus to time-input from year input when date order is MDY or DMY.
+    if (lastInputRefCallback && (dateFormatOrder === DateUtil.dateOrder.MDY || dateFormatOrder === DateUtil.dateOrder.DMY)) {
+      lastInputRefCallback(node);
+    }
+  }, [dateFormatOrder, firstInputRefCallback, lastInputRefCallback]);
 
   // Triggers the onClick callback to launch the dropdown picker for the scenario when the default date is invalid and
   // the calendar button is clicked which should clear the value and launch the dropdown picker

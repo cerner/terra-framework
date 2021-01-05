@@ -683,7 +683,7 @@ class DateTimePicker extends React.Component {
             isIncomplete={isIncomplete}
             isInvalid={isInvalid}
             required={required}
-            inputRefCallback={(inputRef) => { this.dateInputComponent = inputRef; }}
+            lastInputRefCallback={(inputRef) => { this.dateInputComponent = inputRef; }}
             initialTimeZone={this.initialTimeZone}
           />
         </div>

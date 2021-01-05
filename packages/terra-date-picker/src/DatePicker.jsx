@@ -54,7 +54,7 @@ const propTypes = {
    * @private
    * Callback ref to pass into the last input dom element from Date Input components based on the date format order.
    */
-  inputRefCallback: PropTypes.func,
+  lastInputRefCallback: PropTypes.func,
   /**
    * @private
    * intl object programmatically imported through injectIntl from react-intl.
@@ -151,7 +151,7 @@ const defaultProps = {
   includeDates: undefined,
   initialTimeZone: undefined,
   inputAttributes: undefined,
-  inputRefCallback: undefined,
+  lastInputRefCallback: undefined,
   isIncomplete: false,
   isInline: false,
   isInvalid: false,
@@ -402,7 +402,7 @@ class DatePicker extends React.Component {
       filterDate,
       includeDates,
       inputAttributes,
-      inputRefCallback,
+      lastInputRefCallback,
       initialTimeZone,
       intl,
       isIncomplete,
@@ -490,12 +490,12 @@ class DatePicker extends React.Component {
                 onButtonFocus={this.handleFocus}
                 buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
                 ariaLabel={ariaLabel}
-                inputRefCallback={inputRefCallback}
+                lastInputRefCallback={lastInputRefCallback}
                 useExternalFormatMask={useExternalFormatMask}
                 initialTimeZone={initialTimeZone}
               />
             )}
-            // customInputRef="inputRefCallback"
+            customInputRef="firstInputRefCallback"
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}
             filterDate={this.handleFilterDate}
             includeDates={DateUtil.filterInvalidDates(includeDates)}
