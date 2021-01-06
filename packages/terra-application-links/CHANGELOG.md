@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.46.0 - (January 5, 2021)
+
 * Changed
   * Updated to support a peer dependency of react-intl v2-v5
   * Updated to use `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
