@@ -35,8 +35,61 @@ exports[`correctly applies the theme context className 1`] = `
     }
   }
 >
-  <InjectIntl(DatePickerInput)>
+  <InjectIntl(DatePickerInput)
+    firstInputRefCallback={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            <input
+              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+              aria-label="Terra.datePicker.monthLabel"
+              aria-required="false"
+              class="form-input orion-fusion-theme date-input-month"
+              maxlength="2"
+              name="terra-date-month-undefined"
+              pattern="\\\\d*"
+              size="2"
+              type="text"
+              value=""
+            />,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
     <DatePickerInput
+      firstInputRefCallback={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              <input
+                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                aria-label="Terra.datePicker.monthLabel"
+                aria-required="false"
+                class="form-input orion-fusion-theme date-input-month"
+                maxlength="2"
+                name="terra-date-month-undefined"
+                pattern="\\\\d*"
+                size="2"
+                type="text"
+                value=""
+              />,
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
       intl={
         Object {
           "defaultFormats": Object {},
@@ -428,6 +481,32 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
               </span>
             </span>
           </button>,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  firstInputRefCallback={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <input
+            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+            aria-label="Terra.datePicker.monthLabel"
+            aria-required="false"
+            class="form-input date-input-month"
+            maxlength="2"
+            name="terra-date-month-undefined"
+            pattern="\\\\d*"
+            size="2"
+            type="text"
+            value=""
+          />,
         ],
       ],
       "results": Array [
@@ -1196,6 +1275,59 @@ exports[`should render a default date input with all props 1`] = `
         ],
       ],
       "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  firstInputRefCallback={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <input
+            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+            aria-label="Terra.datePicker.monthLabel"
+            aria-required="false"
+            class="form-input date-input-month"
+            id="terra-date-input"
+            maxlength="2"
+            name="terra-date-month-date-input"
+            pattern="\\\\d*"
+            size="2"
+            type="text"
+            value="01"
+          />,
+        ],
+        Array [
+          null,
+        ],
+        Array [
+          <input
+            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+            aria-label="Terra.datePicker.monthLabel"
+            aria-required="false"
+            class="form-input date-input-month"
+            id="terra-date-input"
+            maxlength="2"
+            name="terra-date-month-date-input"
+            pattern="\\\\d*"
+            size="2"
+            type="text"
+            value="01"
+          />,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
         Object {
           "type": "return",
           "value": undefined,
