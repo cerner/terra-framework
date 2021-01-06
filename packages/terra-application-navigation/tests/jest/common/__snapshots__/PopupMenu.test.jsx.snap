@@ -6,9 +6,8 @@ exports[`PopupMenu should render default element 1`] = `
   fill={false}
   footer={<ActionFooter />}
   header={
-    <ActionHeader
+    <InjectIntl(ActionHeader)
       aria-hidden={true}
-      level={1}
     />
   }
 >
@@ -50,9 +49,8 @@ exports[`PopupMenu should render prop data 1`] = `
     />
   }
   header={
-    <ActionHeader
+    <InjectIntl(ActionHeader)
       aria-hidden={true}
-      level={1}
       title="my-header"
     />
   }
@@ -110,9 +108,8 @@ exports[`PopupMenu should render with height bounded 1`] = `
   fill={true}
   footer={<ActionFooter />}
   header={
-    <ActionHeader
+    <InjectIntl(ActionHeader)
       aria-hidden={true}
-      level={1}
       title="my-header"
     />
   }
