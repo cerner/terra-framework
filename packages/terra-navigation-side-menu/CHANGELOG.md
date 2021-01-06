@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Update failing jest tests.
+
 ## 2.35.0 - (January 5, 2021)
 
 * Changed
