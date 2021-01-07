@@ -3,6 +3,11 @@
 ## Unreleased
 
 * Changed
+  * Update failing jest tests.
+
+## 1.43.0 - (January 5, 2021)
+
+* Changed
   * Updated to support a peer dependency of react-intl v2-v5
   * Removed `intlShape` imports
 
