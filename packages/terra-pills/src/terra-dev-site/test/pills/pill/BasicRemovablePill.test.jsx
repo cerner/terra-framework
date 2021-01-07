@@ -12,7 +12,7 @@ const BasicRemovablePill = () => {
     <div>
       {isRemoved && (
         <Pill
-          labelText="Demo"
+          label="Demo"
           onRemove={handleOnRemove}
         />
       )}

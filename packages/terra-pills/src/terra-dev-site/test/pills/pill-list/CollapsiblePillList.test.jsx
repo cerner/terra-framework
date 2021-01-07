@@ -8,19 +8,19 @@ const CollapsiblePillList = () => (
     isCollapsible
   >
     <Pill
-      labelText="Demo 1"
+      label="Demo 1"
     />
     <Pill
-      labelText="Demo 2"
+      label="Demo 2"
     />
     <Pill
-      labelText="Demo 3"
+      label="Demo 3"
     />
     <Pill
-      labelText="Demo 4"
+      label="Demo 4"
     />
     <Pill
-      labelText="Demo 5"
+      label="Demo 5"
     />
   </PillList>
 );

@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import Pill from '../../../../Pill';
 
-const RemovablePillWithPopup = () => {
+const SelectableAndRemovablePill = () => {
   const [isRemoved, setIsRemoved] = useState(true);
 
   const handleOnRemove = () => {
     setIsRemoved(false);
   };
 
+  const handleOnSelect = () => {
+    // Callback just to make pill selectable
+  };
+
   return (
     <div>
       {isRemoved && (
         <Pill
-          labelText="Demo"
-          popupConfig={{ contentHeight: '240', contentWidth: '240', content: (<p>Popup Content</p>) }}
+          label="Demo"
+          onSelect={handleOnSelect}
           onRemove={handleOnRemove}
         />
       )}
@@ -21,4 +25,4 @@ const RemovablePillWithPopup = () => {
   );
 };
 
-export default RemovablePillWithPopup;
+export default SelectableAndRemovablePill;

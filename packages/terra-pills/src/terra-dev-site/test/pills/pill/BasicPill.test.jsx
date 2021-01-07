@@ -3,7 +3,7 @@ import Pill from '../../../../Pill';
 
 const BasicPill = () => (
   <Pill
-    labelText="Demo"
+    label="Demo"
   />
 );
 

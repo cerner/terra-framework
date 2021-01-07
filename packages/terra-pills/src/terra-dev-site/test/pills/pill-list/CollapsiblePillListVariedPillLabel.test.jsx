@@ -8,22 +8,22 @@ const CollapsiblePillListVariedPillLabel = () => (
     isCollapsible
   >
     <Pill
-      labelText="Demo"
+      label="Demo"
     />
     <Pill
-      labelText="Long Label"
+      label="Long Label"
     />
     <Pill
-      labelText="Very Long Label"
+      label="Very Long Label"
     />
     <Pill
-      labelText="Very Long Label which should show ellipses"
+      label="Very Long Label which should show ellipses"
     />
     <Pill
-      labelText="Random"
+      label="Random"
     />
     <Pill
-      labelText="Random 2"
+      label="Random 2"
     />
   </PillList>
 );

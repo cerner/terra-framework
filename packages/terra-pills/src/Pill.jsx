@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNamesBind from 'classnames/bind';
 import {
@@ -9,7 +9,6 @@ import {
 } from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
 import IconClear from 'terra-icon/lib/icon/IconClear';
-import Popup from 'terra-popup';
 import styles from './Pill.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -18,53 +17,45 @@ const propTypes = {
   /**
    * The label text of the pill component.
    */
-  labelText: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   /**
    * A callback function to execute when the pill is removed. If specified, the pill will be removable.
    */
   onRemove: PropTypes.func,
   /**
-   * Object containing popup’s Content and the customizable attributes: contentHeight, contentWidth and isContentFocusDisabled.
+   * A callback function to execute when the pill is selected. If specified, the pill will be selectable.
    */
-  popupConfig: PropTypes.shape({
-    /**
-     * The content to be displayed within the popup.
-     */
-    content: PropTypes.node.isRequired,
-    /**
-     * A string representation of the height in px, limited to:
-     * 40, 80, 120, 160, 240, 320, 400, 480, 560, 640, 720, 800, 880 or auto.
-     */
-    contentHeight: PropTypes.oneOf(Object.keys(Popup.Opts.heights)),
-    /**
-     * A string representation of the width in px, limited to:
-     * 160, 240, 320, 640, 960, 1280, 1760 or auto.
-     */
-    contentWidth: PropTypes.oneOf(Object.keys(Popup.Opts.widths)),
-    /**
-     * Set this to `true` if your content has focusable elements and you want them to receive focus instead of focusing on the default popup frame when the popup is opened.
-     */
-    isContentFocusDisabled: PropTypes.bool,
-  }),
+  onSelect: PropTypes.func,
+  /**
+   * Callback to expose pill element's ref for popup placement.
+   */
+  refCallback: PropTypes.func,
 };
 
 const defaultProps = {
   onRemove: undefined,
-  popupConfig: undefined,
+  onSelect: undefined,
+  refCallback: undefined,
 };
 
 const Pill = (props) => {
   const {
-    labelText,
+    label,
     onRemove,
-    popupConfig,
+    onSelect,
+    refCallback,
   } = props;
 
-  const [open, setOpen] = useState(false);
   const pillRef = useRef();
 
+  useEffect(() => {
+    if (refCallback) {
+      refCallback(pillRef);
+    }
+  }, [refCallback]);
+
   const handleOnClick = () => {
-    setOpen(true);
+    onSelect();
   };
 
   const handleOnRemove = () => {
@@ -73,8 +64,8 @@ const Pill = (props) => {
 
   const handleOnKeyDown = (event) => {
     pillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'true');
-    if (event.keyCode === KEY_RETURN || event.keyCode === KEY_SPACE) {
-      setOpen(true);
+    if ((event.keyCode === KEY_RETURN || event.keyCode === KEY_SPACE) && onSelect) {
+      onSelect();
     } else if ((event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && onRemove) {
       onRemove();
     }
@@ -84,23 +75,17 @@ const Pill = (props) => {
     pillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'false');
   };
 
-  const handleOnRequestClose = () => {
-    setOpen(false);
-  };
-
-  const getPillNode = () => pillRef.current;
-
   const pillProps = {};
-  if (popupConfig || onRemove) {
+  if (onSelect || onRemove) {
     pillProps.tabIndex = '0';
     pillProps.onKeyDown = handleOnKeyDown;
     pillProps.onMouseDown = handleOnMouseDown;
   }
 
-  const popupButtonProps = {};
-  if (popupConfig) {
-    popupButtonProps.onClick = handleOnClick;
-    popupButtonProps.role = 'button';
+  const pillButtonProps = {};
+  if (onSelect) {
+    pillButtonProps.onClick = handleOnClick;
+    pillButtonProps.role = 'button';
   }
 
   const removeButtonProps = {};
@@ -112,12 +97,12 @@ const Pill = (props) => {
   const theme = React.useContext(ThemeContext);
   const pillClassNames = cx([
     'pill-container',
-    { 'is-focusable': !!popupConfig || !!onRemove },
+    { 'is-focusable': !!onSelect || !!onRemove },
     theme.className,
   ]);
   const pillLabelClassNames = cx([
     'pill-label',
-    { 'is-popup-button': !!popupConfig },
+    { 'is-selectable': !!onSelect },
     { 'is-removable': !!onRemove },
   ]);
   const removeButtonClassNames = cx([
@@ -133,10 +118,10 @@ const Pill = (props) => {
         ref={pillRef}
       >
         <div
-          {...popupButtonProps}
+          {...pillButtonProps}
           className={pillLabelClassNames}
         >
-          {labelText}
+          {label}
         </div>
         {onRemove && (
           <div
@@ -147,19 +132,6 @@ const Pill = (props) => {
           </div>
         )}
       </div>
-      {popupConfig && (
-        <Popup
-          isOpen={open}
-          isArrowDisplayed
-          targetRef={getPillNode}
-          onRequestClose={handleOnRequestClose}
-          contentHeight={popupConfig.contentHeight}
-          contentWidth={popupConfig.contentWidth}
-          isContentFocusDisabled={popupConfig.isContentFocusDisabled}
-        >
-          {popupConfig.content}
-        </Popup>
-      )}
     </>
   );
 };

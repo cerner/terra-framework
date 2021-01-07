@@ -7,29 +7,33 @@ const CollapsiblePillListWithDifferentPillType = () => {
     // Callback just to enable remove button
   };
 
+  const handleOnSelect = () => {
+    // Callback just to make pill selectable
+  };
+
   return (
     <PillList
       ariaLabel="Pill Container"
       isCollapsible
     >
       <Pill
-        labelText="Basic 1"
+        label="Basic 1"
       />
       <Pill
-        labelText="Removable"
+        label="Removable"
         onRemove={handleOnRemove}
       />
       <Pill
-        labelText="Popup"
-        popupConfig={{ contentHeight: '240', contentWidth: '240', content: (<p>Popup Content</p>) }}
+        label="Popup"
+        onSelect={handleOnSelect}
       />
       <Pill
-        labelText="Removable and Popup"
-        popupConfig={{ contentHeight: '240', contentWidth: '240', content: (<p>Popup Content</p>) }}
+        label="Removable and Popup"
+        onSelect={handleOnSelect}
         onRemove={handleOnRemove}
       />
       <Pill
-        labelText="Basic 2"
+        label="Basic 2"
       />
     </PillList>
   );

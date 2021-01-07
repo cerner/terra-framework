@@ -8,7 +8,7 @@ const CollapsiblePillListSinglePill = () => (
     isCollapsible
   >
     <Pill
-      labelText="Demo"
+      label="Demo"
     />
   </PillList>
 );

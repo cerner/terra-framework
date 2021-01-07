@@ -8,10 +8,10 @@ const CollapsiblePillListFirstEllipsesPill = () => (
     isCollapsible
   >
     <Pill
-      labelText="Very Long Label which should show ellipses"
+      label="Very Long Label which should show ellipses"
     />
     <Pill
-      labelText="Random"
+      label="Random"
     />
   </PillList>
 );
