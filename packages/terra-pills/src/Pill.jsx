@@ -50,7 +50,7 @@ const Pill = (props) => {
 
   useEffect(() => {
     if (refCallback) {
-      refCallback(pillRef);
+      refCallback(pillRef.current);
     }
   }, [refCallback]);
 
@@ -86,6 +86,8 @@ const Pill = (props) => {
   if (onSelect) {
     pillButtonProps.onClick = handleOnClick;
     pillButtonProps.role = 'button';
+  } else {
+    pillButtonProps.role = 'note';
   }
 
   const removeButtonProps = {};
