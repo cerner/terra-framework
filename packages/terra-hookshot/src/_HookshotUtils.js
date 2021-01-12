@@ -533,8 +533,8 @@ const getBoundedPositions = (positions, boundingRect) => {
     content: {
       x: contentCoords.x,
       y: contentCoords.y,
-      attachment: positions.content.cAttachment,
-      offset: positions.content.cOffset,
+      attachment: positions.content.attachment,
+      offset: positions.content.offset,
       rect: contentRect,
     },
     target: positions.target,

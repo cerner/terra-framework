@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Fixed
+ * Change variable names overlooked in refactoring to fix resize popup issue
 
 ## 5.32.0 - (December 8, 2020)
 
