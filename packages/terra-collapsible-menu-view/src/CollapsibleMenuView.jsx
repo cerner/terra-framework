@@ -162,7 +162,9 @@ class CollapsibleMenuView extends React.Component {
 
     if (this.hiddenStartIndex >= 0) {
       visibleChildren = React.Children.toArray(children);
-      hiddenChildren = visibleChildren.splice(this.hiddenStartIndex).concat(prepopulatedBaseDivider).concat(hiddenChildren);
+      hiddenChildren = this.collapsedMenuAlwaysShown
+        ? visibleChildren.splice(this.hiddenStartIndex).concat(prepopulatedBaseDivider).concat(hiddenChildren)
+        : visibleChildren.splice(this.hiddenStartIndex).concat(hiddenChildren);
     }
 
     return (
