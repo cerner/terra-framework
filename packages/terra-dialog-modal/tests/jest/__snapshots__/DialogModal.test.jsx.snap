@@ -12,8 +12,7 @@ exports[`correctly applies the theme context className 1`] = `
         />
       }
       header={
-        <ActionHeader
-          level={1}
+        <InjectIntl(ActionHeader)
           onClose={[Function]}
           title="Action Header used here"
         />
@@ -73,8 +72,7 @@ exports[`should mount an open dialogModal 1`] = `
         />
       }
       header={
-        <ActionHeader
-          level={1}
+        <InjectIntl(ActionHeader)
           onClose={[Function]}
           title="Action Header used here"
         />
@@ -136,8 +134,7 @@ exports[`should mount an open dialogModal 320 width 1`] = `
         />
       }
       header={
-        <ActionHeader
-          level={1}
+        <InjectIntl(ActionHeader)
           onClose={[Function]}
           title="Action Header used here"
         />
@@ -199,8 +196,7 @@ exports[`should mount an open dialogModal 960 width 1`] = `
         />
       }
       header={
-        <ActionHeader
-          level={1}
+        <InjectIntl(ActionHeader)
           onClose={[Function]}
           title="Action Header used here"
         />
@@ -262,8 +258,7 @@ exports[`should mount an open dialogModal 1280 width 1`] = `
         />
       }
       header={
-        <ActionHeader
-          level={1}
+        <InjectIntl(ActionHeader)
           onClose={[Function]}
           title="Action Header used here"
         />
@@ -325,8 +320,7 @@ exports[`should mount an open dialogModal 1600 width 1`] = `
         />
       }
       header={
-        <ActionHeader
-          level={1}
+        <InjectIntl(ActionHeader)
           onClose={[Function]}
           title="Action Header used here"
         />
@@ -388,8 +382,7 @@ exports[`should mount an open dialogModal 1600 width 2`] = `
         />
       }
       header={
-        <ActionHeader
-          level={1}
+        <InjectIntl(ActionHeader)
           onClose={[Function]}
           title="Action Header used here"
         />
@@ -451,8 +444,7 @@ exports[`should set the rootSelector 1`] = `
         />
       }
       header={
-        <ActionHeader
-          level={1}
+        <InjectIntl(ActionHeader)
           onClose={[Function]}
           title="Action Header used here"
         />
@@ -511,8 +503,7 @@ exports[`should shallow an open dialogModal 1`] = `
       />
     }
     header={
-      <ActionHeader
-        level={1}
+      <InjectIntl(ActionHeader)
         onClose={[Function]}
         title="Action Header used here"
       />
@@ -559,8 +550,7 @@ exports[`should shallow an open dialogModal 320 width 1`] = `
       />
     }
     header={
-      <ActionHeader
-        level={1}
+      <InjectIntl(ActionHeader)
         onClose={[Function]}
         title="Action Header used here"
       />
@@ -607,8 +597,7 @@ exports[`should shallow an open dialogModal 960 width 1`] = `
       />
     }
     header={
-      <ActionHeader
-        level={1}
+      <InjectIntl(ActionHeader)
         onClose={[Function]}
         title="Action Header used here"
       />
@@ -655,8 +644,7 @@ exports[`should shallow an open dialogModal 1280 width 1`] = `
       />
     }
     header={
-      <ActionHeader
-        level={1}
+      <InjectIntl(ActionHeader)
         onClose={[Function]}
         title="Action Header used here"
       />
@@ -703,8 +691,7 @@ exports[`should shallow an open dialogModal 1600 width 1`] = `
       />
     }
     header={
-      <ActionHeader
-        level={1}
+      <InjectIntl(ActionHeader)
         onClose={[Function]}
         title="Action Header used here"
       />
