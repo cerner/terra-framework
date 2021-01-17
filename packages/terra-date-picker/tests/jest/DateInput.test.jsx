@@ -22,13 +22,11 @@ it('should render a date input with isIncomplete and required props', () => {
 });
 
 it('should render a default date input with all props', () => {
-  const refCallbackButton = jest.fn();
-  const refCallbackInput = jest.fn();
+  const refCallback = jest.fn();
   const dateInput = mountWithIntl((
     <DateInput
       ariaLabel="Aria Label text"
-      buttonRefCallback={refCallbackButton}
-      firstInputRefCallback={refCallbackInput}
+      buttonRefCallback={refCallback}
       inputAttributes={{ id: 'terra-date-input' }}
       name="date-input"
       onBlur={() => {}}
@@ -46,19 +44,17 @@ it('should render a default date input with all props', () => {
 });
 
 it('should pass in refCallback as the ref prop of the calendar button', () => {
-  const refCallbackButton = jest.fn();
-  const refCallbackInput = jest.fn();
-  const dateInput = mountWithIntl(<DateInput buttonRefCallback={refCallbackButton} firstInputRefCallback={refCallbackInput} />);
+  const refCallback = jest.fn();
+  const dateInput = mountWithIntl(<DateInput buttonRefCallback={refCallback} />);
   const testComponent = dateInput.children();
-  expect(refCallbackButton).toBeCalled();
+  expect(refCallback).toBeCalled();
   expect(testComponent).toMatchSnapshot();
 });
 
 it('correctly applies the theme context className', () => {
-  const refCallback = jest.fn();
   const date = mountWithIntl(
     <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
-      <DateInput firstInputRefCallback={refCallback} />
+      <DateInput />
     </ThemeContextProvider>,
   );
   expect(date).toMatchSnapshot();

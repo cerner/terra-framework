@@ -197,36 +197,24 @@ const DatePickerInput = (props) => {
   const setDayRef = useCallback(node => {
     dayInputRef.current = node;
 
-    if (dateFormatOrder === DateUtil.dateOrder.DMY) {
-      firstInputRefCallback(node);
-    }
-
     // Logic used internally by date-time-picker to shift focus to time-input from day input when date order is YMD.
     if (lastInputRefCallback && dateFormatOrder === DateUtil.dateOrder.YMD) {
       lastInputRefCallback(node);
     }
-  }, [dateFormatOrder, firstInputRefCallback, lastInputRefCallback]);
+  }, [dateFormatOrder, lastInputRefCallback]);
 
   const setMonthRef = useCallback(node => {
     monthInputRef.current = node;
-
-    if (dateFormatOrder === DateUtil.dateOrder.MDY) {
-      firstInputRefCallback(node);
-    }
-  }, [dateFormatOrder, firstInputRefCallback]);
+  }, []);
 
   const setYearRef = useCallback(node => {
     yearInputRef.current = node;
-
-    if (dateFormatOrder === DateUtil.dateOrder.YMD) {
-      firstInputRefCallback(node);
-    }
 
     // Logic used internally by date-time-picker to shift focus to time-input from year input when date order is MDY or DMY.
     if (lastInputRefCallback && (dateFormatOrder === DateUtil.dateOrder.MDY || dateFormatOrder === DateUtil.dateOrder.DMY)) {
       lastInputRefCallback(node);
     }
-  }, [dateFormatOrder, firstInputRefCallback, lastInputRefCallback]);
+  }, [dateFormatOrder, lastInputRefCallback]);
 
   // Triggers the onClick callback to launch the dropdown picker for the scenario when the default date is invalid and
   // the calendar button is clicked which should clear the value and launch the dropdown picker
@@ -569,6 +557,7 @@ const DatePickerInput = (props) => {
     <Input
       {...additionalInputProps}
       refCallback={setDayRef}
+      ref={dateFormatOrder === DateUtil.dateOrder.DMY ? firstInputRefCallback : undefined}
       className={dayInputClasses}
       type="text"
       name={`terra-date-day-${name}`}
@@ -595,6 +584,7 @@ const DatePickerInput = (props) => {
     <Input
       {...additionalInputProps}
       refCallback={setMonthRef}
+      ref={dateFormatOrder === DateUtil.dateOrder.MDY ? firstInputRefCallback : undefined}
       className={monthInputClasses}
       type="text"
       name={`terra-date-month-${name}`}
@@ -621,6 +611,7 @@ const DatePickerInput = (props) => {
     <Input
       {...additionalInputProps}
       refCallback={setYearRef}
+      ref={dateFormatOrder === DateUtil.dateOrder.YMD ? firstInputRefCallback : undefined}
       className={yearInputClasses}
       type="text"
       name={`terra-date-year-${name}`}
