@@ -8,6 +8,10 @@ const propTypes = {
    * The current entered date time. Use for the selected date message.
    */
   value: PropTypes.string,
+  /**
+   * Timezone for the provided date time.
+   */
+  initialTimeZone: PropTypes.string,
 };
 
 const defaultProps = {
@@ -18,7 +22,7 @@ class DatePickerExample extends React.Component {
   constructor(props) {
     super(props);
     let dateTimeDisplay = props.value;
-    const dateTime = DateTimeUtils.createSafeDate(dateTimeDisplay);
+    const dateTime = DateTimeUtils.createSafeDate(dateTimeDisplay, props.initialTimeZone);
 
     if (dateTime && dateTime.isValid()) {
       dateTimeDisplay = dateTime.format();
@@ -42,6 +46,7 @@ class DatePickerExample extends React.Component {
         <DateTimePicker
           name="date-time-picker-example"
           onChange={this.handleDateTimeChange}
+          initialTimeZone={this.props.initialTimeZone}
           {...this.props}
         />
       </div>

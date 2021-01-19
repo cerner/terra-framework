@@ -1,8 +1,6 @@
 /* global $ */
 const moment = require('moment-timezone');
 
-moment.tz.setDefault('America/Chicago');
-
 Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   it('displays Default date time picker', () => {
     browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
