@@ -22,75 +22,87 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
-   * Determines if the Pill List rolls up or not.
+   * Determines if the Pill List is rolled up or not.
    */
-  isCollapsible: PropTypes.bool,
+  isCollapsed: PropTypes.bool,
+  /**
+   * Callback function triggered on click of the roll up pill
+   */
+  rollUpPillOnClick: PropTypes.func,
 };
 
 const defaultProps = {
-  isCollapsible: false,
+  isCollapsed: false,
+  rollUpPillOnClick: undefined,
 };
 
 const PillList = (props) => {
   const {
     ariaLabel,
     children,
-    isCollapsible,
+    isCollapsed,
+    rollUpPillOnClick,
   } = props;
 
   const theme = React.useContext(ThemeContext);
   const pillListRef = useRef();
   const rollUpPillRef = useRef();
   const [rollUpCount, setRollUpCount] = useState(0);
-  const [isRollUpRequired, setIsRollUpRequired] = useState(true);
+  const [isRollUpPillRequired, setIsRollUpPillRequired] = useState(true);
 
-  const handleCollapse = () => {
+  const handleRollUp = () => {
     let pillListHeight = pillListRef.current.clientHeight;
     const rollUpPillStyles = rollUpPillRef.current.currentStyle || window.getComputedStyle(rollUpPillRef.current);
     const pillHeight = rollUpPillRef.current.offsetHeight + Math.round(parseFloat(rollUpPillStyles.marginTop)) + Math.round(parseFloat(rollUpPillStyles.marginBottom));
 
     if (pillListHeight <= pillHeight) {
-      setIsRollUpRequired(false);
+      setIsRollUpPillRequired(false);
       return;
     }
 
     const childPills = pillListRef.current.querySelectorAll('[class*="pill-container"]');
     let index = childPills.length - 1;
-    let pillCounter = 0;
+    let hiddenPillCounter = 0;
     while (pillListHeight > pillHeight) {
       childPills[index].style.display = 'none';
       index -= 1;
-      pillCounter += 1;
+      hiddenPillCounter += 1;
       pillListHeight = pillListRef.current.clientHeight;
     }
-    setIsRollUpRequired(true);
-    setRollUpCount(pillCounter);
+    setIsRollUpPillRequired(true);
+    setRollUpCount(hiddenPillCounter);
+  };
+
+  const handleExpansion = () => {
+    if (rollUpCount === 0) {
+      return;
+    }
+
+    const childPills = pillListRef.current.querySelectorAll('[class*="pill-container"]');
+    let index = childPills.length - 1;
+    let hiddenPillCounter = rollUpCount;
+    while (hiddenPillCounter > 0) {
+      childPills[index].removeAttribute('style');
+      index -= 1;
+      hiddenPillCounter -= 1;
+    }
+    setIsRollUpPillRequired(false);
+    setRollUpCount(hiddenPillCounter);
   };
 
   useEffect(() => {
-    if (isCollapsible) {
-      handleCollapse();
+    if (isCollapsed) {
+      handleRollUp();
+    } else {
+      handleExpansion();
     }
     pillListRef.current.style.visibility = 'visible';
-  }, []);
-
-  const handleRollUp = () => {
-    const childPills = pillListRef.current.querySelectorAll('[class*="pill-container"]');
-    let index = childPills.length - 1;
-    let pillCounter = rollUpCount;
-    while (pillCounter > 0) {
-      childPills[index].removeAttribute('style');
-      index -= 1;
-      pillCounter -= 1;
-    }
-    setIsRollUpRequired(false);
-    setRollUpCount(pillCounter);
-  };
+  }, [isCollapsed]);
 
   const handleKeyDown = (event) => {
     rollUpPillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'true');
     if (event.keyCode === KEY_RETURN || event.keyCode === KEY_SPACE) {
-      handleRollUp();
+      handleExpansion();
     }
   };
 
@@ -98,12 +110,16 @@ const PillList = (props) => {
     rollUpPillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'false');
   };
 
-  let rollUpButton;
-  if (isCollapsible) {
-    rollUpButton = (
+  const handleRollUpPillOnClick = () => {
+    rollUpPillOnClick();
+  };
+
+  let rollUpPill;
+  if (isCollapsed && isRollUpPillRequired) {
+    rollUpPill = (
       <div
-        className={cx(['roll-up-button'])}
-        onClick={handleRollUp}
+        className={cx(['roll-up-pill'])}
+        onClick={handleRollUpPillOnClick}
         onKeyDown={handleKeyDown}
         onMouseDown={handleMouseDown}
         ref={rollUpPillRef}
@@ -127,7 +143,7 @@ const PillList = (props) => {
       ref={pillListRef}
     >
       {children}
-      {isRollUpRequired && rollUpButton}
+      {rollUpPill}
     </div>
   );
 };
