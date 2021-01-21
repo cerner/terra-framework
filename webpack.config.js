@@ -1,3 +1,4 @@
+const path = require('path');
 const { merge } = require('webpack-merge');
 const {
   TerraDevSite,
@@ -9,6 +10,44 @@ const coreConfig = (env = {}) => ({
   plugins: [
     new TerraDevSite({
       defaultLocale: env.defaultLocale,
+      primaryNavigationItems: [{
+        path: '/home',
+        label: 'Home',
+        contentExtension: 'home',
+        additionalContent: [
+          {
+            title: 'Home',
+            filePath: path.resolve(process.cwd(), 'README.md'),
+          },
+        ],
+      }, {
+        path: '/application',
+        label: 'Application',
+        contentExtension: 'app',
+      }, {
+        path: '/components',
+        label: 'Components',
+        contentExtension: 'doc',
+      }, {
+        path: '/dev_tools',
+        label: 'Developer Tools',
+        contentExtension: 'tool',
+      }, {
+        path: '/guides',
+        label: 'Guides',
+        contentExtension: 'guide',
+      }, {
+        path: '/tests',
+        label: 'Tests',
+        contentExtension: 'test',
+      }, {
+        path: '/provider',
+        label: 'Provider',
+        contentExtension: 'provider',
+      }],
+      sideEffectImportFilePaths: [
+        path.resolve(process.cwd(), 'initalizeXFC.js'),
+      ],
     }),
   ],
 });
