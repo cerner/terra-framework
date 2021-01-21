@@ -35,13 +35,7 @@ class CollapsibleMenuViewDemo extends React.Component {
 
   render() {
     return (
-      <CollapsibleMenuView
-        alwaysCollapsedMenuItems={[
-          <CollapsibleMenuView.Item text="Collapsed Button 1" key="collapsedButton1" />,
-          <CollapsibleMenuView.Item text="Collapsed Button 2" key="collapsedButton2" />,
-          <CollapsibleMenuView.Item text="Collapsed Button 3" key="collapsedButton3" />,
-        ]}
-      >
+      <CollapsibleMenuView>
         <CollapsibleMenuView.Toggle
           text="Toggle Item 1"
           key="toggle1"
