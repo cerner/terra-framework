@@ -588,3 +588,6 @@ export default {
   getDirectionalOffset,
   positionStyleFromBounds,
 };
+export {
+  getBoundedPositions,
+};
