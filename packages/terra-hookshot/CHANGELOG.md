@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed error thrown on resizing the popup due to incorrect variables name.
+
 ## 5.32.0 - (December 8, 2020)
 
 * Changed
