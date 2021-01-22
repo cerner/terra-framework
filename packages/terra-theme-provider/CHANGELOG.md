@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated fusion wdio tests to align with other tests
+
 ## 4.6.0 - (December 8, 2020)
 
 * Changed
