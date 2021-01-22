@@ -4,6 +4,7 @@
 
 * Changed
   * Update failing jest tests.
+  * Updated to terra-functional-testing
 
 ## 1.43.0 - (January 5, 2021)
 

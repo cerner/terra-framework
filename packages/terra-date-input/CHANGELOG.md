@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated to terra-functional-testing
+
 ## 1.25.0 - (January 5, 2021)
 
 * Changed
