@@ -556,6 +556,9 @@ const DatePickerInput = (props) => {
   const dateDayInput = (
     <Input
       {...additionalInputProps}
+      // Both 'ref' and 'refCallback' are required here because:
+      // 'refCallback' returns the DOM element of the HTML input element
+      // 'ref' when used on a class component returns the mounted instance of the component
       refCallback={setDayRef}
       ref={dateFormatOrder === DateUtil.dateOrder.DMY ? firstInputRefCallback : undefined}
       className={dayInputClasses}
@@ -583,6 +586,9 @@ const DatePickerInput = (props) => {
   const dateMonthInput = (
     <Input
       {...additionalInputProps}
+      // Both 'ref' and 'refCallback' are required here because:
+      // 'refCallback' returns the DOM element of the HTML input element
+      // 'ref' when used on a class component returns the mounted instance of the component
       refCallback={setMonthRef}
       ref={dateFormatOrder === DateUtil.dateOrder.MDY ? firstInputRefCallback : undefined}
       className={monthInputClasses}
@@ -610,6 +616,9 @@ const DatePickerInput = (props) => {
   const dateYearInput = (
     <Input
       {...additionalInputProps}
+      // Both 'ref' and 'refCallback' are required here because:
+      // 'refCallback' returns the DOM element of the HTML input element
+      // 'ref' when used on a class component returns the mounted instance of the component
       refCallback={setYearRef}
       ref={dateFormatOrder === DateUtil.dateOrder.YMD ? firstInputRefCallback : undefined}
       className={yearInputClasses}
