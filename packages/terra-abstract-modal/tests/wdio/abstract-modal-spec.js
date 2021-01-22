@@ -12,7 +12,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
     });
 
     it('clicks outside to close modal', () => {
-      $('[class*="ModalOverlay"]').click({ button: 'left', x: 235, y: 5 });
+      $('[class*="ModalOverlay"]').click({ x: 235, y: 5 });
       Terra.validates.element('closed');
       expect($('#root').getAttribute('inert')).toEqual('false');
       expect($('#root').getAttribute('aria-hidden')).toEqual(null);
@@ -45,7 +45,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
     });
 
     it('clicks outside to close modal', () => {
-      $('[class*="ModalOverlay"]').click({ button: 'left', x: 235, y: 235 });
+      $('[class*="ModalOverlay"]').click({ x: 410, y: 5 });
       Terra.validates.element('closed');
       expect($('#root').getAttribute('inert')).toEqual('false');
       expect($('#root').getAttribute('aria-hidden')).toEqual(null);
