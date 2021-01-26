@@ -4,7 +4,7 @@ import IconFlowsheet from 'terra-icon/lib/icon/IconFlowsheet';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
-class CollapsibleMenuViewDemo extends React.Component {
+class AlwaysCollapsedMenuItemsDemo extends React.Component {
   constructor(props) {
     super(props);
     this.handleDisplayTypeChange = this.handleDisplayTypeChange.bind(this);
@@ -60,4 +60,4 @@ class CollapsibleMenuViewDemo extends React.Component {
   }
 }
 
-export default CollapsibleMenuViewDemo;
+export default AlwaysCollapsedMenuItemsDemo;
