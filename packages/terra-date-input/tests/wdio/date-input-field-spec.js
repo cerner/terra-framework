@@ -117,7 +117,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
     });
 
     describe('Month Select Pressing DELETE in month with no value shifts focus to day in d-m-y format', () => {
-      it('should shift focus to day  on pressing delete', () => {
+      it('should shift focus to day on pressing delete', () => {
         browser.url('/raw/tests/terra-date-input/date-input/day-month-year-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
@@ -127,7 +127,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
         $('select[name="terra-date-month-date-input"]').click();
         browser.keys(['Enter']);
         browser.keys(['Delete']);
-        Terra.validates.element('shift focus to day');
+        Terra.validates.element('shift focus from month to day on delete');
       });
     });
 
@@ -174,7 +174,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
 
         $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['ArrowUp']);
-        Terra.validates.element('increment day-empty');
+        Terra.validates.element('increment day empty');
       });
     });
 
@@ -189,7 +189,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
         $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['31', 'ArrowUp']);
 
-        Terra.validates.element('cycle day');
+        Terra.validates.element('cycle up day');
       });
     });
 
@@ -204,7 +204,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
         $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['ArrowDown']);
 
-        Terra.validates.element('decrement day-filled');
+        Terra.validates.element('decrement day filled');
       });
     });
 
@@ -219,7 +219,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
         $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['ArrowDown']);
 
-        Terra.validates.element('decrement day-empty');
+        Terra.validates.element('decrement day empty');
       });
     });
 
@@ -233,7 +233,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
 
         $('input[name="terra-date-day-date-input"]').click();
         browser.keys(['01', 'ArrowDown']);
-        Terra.validates.element('cycle day');
+        Terra.validates.element('cycle down day');
       });
     });
 
@@ -295,7 +295,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
         $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['ArrowUp']);
 
-        Terra.validates.element('increment year-filled');
+        Terra.validates.element('increment year filled');
       });
     });
 
@@ -310,7 +310,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
         $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['ArrowUp']);
 
-        Terra.validates.element('increment year-empty');
+        Terra.validates.element('increment year empty');
       });
     });
 
@@ -325,7 +325,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
         $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['2100', 'ArrowUp']);
 
-        Terra.validates.element('cycle year');
+        Terra.validates.element('cycle up year');
       });
     });
 
@@ -340,7 +340,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
         $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['ArrowDown']);
 
-        Terra.validates.element('decrement year-filled');
+        Terra.validates.element('decrement year filled');
       });
     });
 
@@ -355,7 +355,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
         $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['ArrowDown']);
 
-        Terra.validates.element('decrement year-empty');
+        Terra.validates.element('decrement year empty');
       });
     });
 
@@ -370,7 +370,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
         $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['1900', 'ArrowDown']);
 
-        Terra.validates.element('cycle year');
+        Terra.validates.element('cycle down year');
       });
     });
 
@@ -400,7 +400,7 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
         $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['Delete']);
 
-        Terra.validates.element('shift focus to day');
+        Terra.validates.element('shift focus from year to day on delete');
       });
     });
 

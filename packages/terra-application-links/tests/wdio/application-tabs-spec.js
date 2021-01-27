@@ -5,7 +5,7 @@ Terra.describeViewports('ApplicationTabs', ['small', 'large'], () => {
     browser.url('/raw/tests/terra-application-links/application-links/application-tabs-default');
     $('#test-tabs [data-application-tabs-more]').waitForDisplayed();
     $('#test-tabs [data-application-tabs-more]').moveTo();
-    Terra.validates.element('default');
+    Terra.validates.element('application tabs');
   });
 
   describe('Displays collapsed application tabs', () => {
@@ -33,7 +33,7 @@ Terra.describeViewports('ApplicationTabs', ['small', 'large'], () => {
       $('[data-application-tab-menu-content]').waitForDisplayed();
       $('[data-application-tab-menu-content] > *:first-child div').click();
       browser.pause(50);
-      Terra.validates.element('default');
+      Terra.validates.element('hidden application tabs selection');
     });
   });
 

@@ -175,7 +175,7 @@ Terra.describeViewports('Keyboard Accessibility', ['medium'], () => {
 
   it('closes the notification dialog when ENTER is pressed', () => {
     browser.keys('Enter');
-    Terra.validates.element('??', { selector });
+    Terra.validates.element('closes on enter', { selector });
     expect($(NOTIFICATION_DIALOG_SELECTOR).isExisting()).toBeFalsy();
   });
 

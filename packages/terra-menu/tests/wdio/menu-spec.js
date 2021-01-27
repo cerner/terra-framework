@@ -22,7 +22,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
     it('opens submenu', () => {
       $('.TestNestedMenu').click();
       $('[role="button"][aria-label="Back"]').isFocused();
-      Terra.validates.element('submenu', { selector: '#root' });
+      Terra.validates.element('open submenu', { selector: '#root' });
     });
   });
 
@@ -84,7 +84,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
 
     $('.TestNestedMenu').click();
     $('[role="button"][aria-label="Back"]').isFocused();
-    Terra.validates.element('submenu', { selector: '#root' });
+    Terra.validates.element('menu with submenu', { selector: '#root' });
     browser.keys('Escape');
   });
 
@@ -118,13 +118,13 @@ Terra.describeViewports('Menu', ['medium'], () => {
       browser.keys(['ArrowDown', 'ArrowRight']);
       $('[role="button"][aria-label="Back"]').isFocused();
 
-      Terra.validates.element('navigated to submenu', { selector: '#root' });
+      Terra.validates.element('navigated to submenu using arrow keys', { selector: '#root' });
 
       // it returns to the main menu on left arrow
       browser.keys(['ArrowLeft']);
       $('[class*="content"][aria-modal="true"][role="dialog"]').isFocused();
 
-      Terra.validates.element('returned to main menu', { selector: '#root' });
+      Terra.validates.element('returned to main menu using arrow keys', { selector: '#root' });
       browser.keys('Escape');
     });
   });
@@ -139,13 +139,13 @@ Terra.describeViewports('Menu', ['medium'], () => {
       browser.keys(['Tab', 'ArrowDown', 'Enter']);
       $('[role="button"][aria-label="Back"]').isFocused();
 
-      Terra.validates.element('navigated to submenu', { selector: '#root' });
+      Terra.validates.element('navigated to submenu using enter key', { selector: '#root' });
 
       // it returns to the main menu on enter
       browser.keys(['Enter']);
       $('[class*="content"][aria-modal="true"][role="dialog"]').isFocused();
 
-      Terra.validates.element('returned to main menu', { selector: '#root' });
+      Terra.validates.element('returned to main menu using enter key', { selector: '#root' });
     });
   });
 });

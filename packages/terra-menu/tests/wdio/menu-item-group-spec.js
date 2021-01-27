@@ -15,25 +15,25 @@ Terra.describeViewports('Menu Item Group', ['medium'], () => {
   describe('Menu Item Group-Selectable Via Click', () => {
     it('selects Item 3', () => {
       $('.TestGroupItem3').click();
-      Terra.validates.element('Item 3 Selected', { rules: ignoredA11y });
+      Terra.validates.element('item 3 selected via click', { rules: ignoredA11y });
     });
 
     it('selects Item 1 and deselects Item 3', () => {
       $('.TestGroupItem1').click();
       $('h3').moveTo();
-      Terra.validates.element('Item 1 Selected', { rules: ignoredA11y });
+      Terra.validates.element('item 1 selected via click', { rules: ignoredA11y });
     });
   });
 
   describe('Menu Item Group-Selectable Via Keyboard Navigation', () => {
     it('selects Item 2 on Enter', () => {
       browser.keys(['Tab', 'Enter']);
-      Terra.validates.element('Item 2 Selected', { rules: ignoredA11y });
+      Terra.validates.element('item 2 selected via keyboard navigation', { rules: ignoredA11y });
     });
 
     it('selects Item 3 on Space', () => {
       browser.keys(['Tab', 'Space']);
-      Terra.validates.element('Item 3 Selected', { rules: ignoredA11y });
+      Terra.validates.element('item 3 selected via keyboard navigation', { rules: ignoredA11y });
     });
   });
 });

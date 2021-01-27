@@ -6,7 +6,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
       $('#application-layout-test').waitForDisplayed();
 
       browser.pause(3000);// to display image
-      Terra.validates.element('default', { selector: '#application-layout-test' });
+      Terra.validates.element('application layout', { selector: '#application-layout-test' });
     });
   });
 
@@ -15,7 +15,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
       browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-no-top-nav');
       $('#application-layout-test').waitForDisplayed();
       $('#root').moveTo({ xOffset: 0, yOffset: 0 });
-      Terra.validates.element('default', { selector: '#application-layout-test' });
+      Terra.validates.element('application layout with top navigation tabs', { selector: '#application-layout-test' });
     });
   });
 
@@ -24,7 +24,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
       browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-empty');
       $('#application-layout-test').waitForDisplayed();
       $('#root').moveTo({ xOffset: 0, yOffset: 0 });
-      Terra.validates.element('default', { selector: '#application-layout-test' });
+      Terra.validates.element('application layout with no header content', { selector: '#application-layout-test' });
     });
   });
 
@@ -34,7 +34,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
       $('#root').moveTo({ xOffset: 0, yOffset: 0 });
       $('#application-layout-test').waitForDisplayed();
 
-      Terra.validates.element('default', { selector: '#application-layout-test' });
+      Terra.validates.element('application layout with nav icons', { selector: '#application-layout-test' });
     });
   });
 });
@@ -46,7 +46,7 @@ Terra.describeViewports('ApplicationLayout', ['huge'], () => {
       $('#application-layout-tab-1').waitForDisplayed();
       $('#application-layout-tab-1').click();
 
-      Terra.validates.element('default', { selector: '#application-layout-test' });
+      Terra.validates.element('navigates with top navigation tabs', { selector: '#application-layout-test' });
       $('#application-layout-tab-0').click();
     });
   });
@@ -59,7 +59,7 @@ Terra.describeViewports('ApplicationLayout', ['large'], () => {
       $('[data-application-header-utility]').waitForDisplayed();
       $('[data-application-header-utility]').click();
 
-      Terra.validates.element('default', { selector: '#application-layout-test' });
+      Terra.validates.element('presents utility menu from header', { selector: '#application-layout-test' });
       browser.keys('Escape');
     });
   });
@@ -71,7 +71,7 @@ Terra.describeViewports('ApplicationLayout', ['large'], () => {
       $('#readonly').waitForDisplayed();
       $('#readonly').click();
 
-      Terra.validates.element('default', { selector: '#application-layout-test' });
+      Terra.validates.element('checks for closure on read-only item click', { selector: '#application-layout-test' });
       browser.keys('Escape');
     });
   });
@@ -84,7 +84,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       $('[data-application-header-toggle]').click();
       $('[data-routing-menu]').waitForDisplayed();
 
-      Terra.validates.element('default', { selector: '#application-layout-test' });
+      Terra.validates.element('toggles menu when small', { selector: '#application-layout-test' });
     });
   });
 
@@ -94,7 +94,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       $('[data-routing-menu] [data-navigation-side-menu-action-header] button').click();
       $('[data-routing-menu]').waitForDisplayed();
 
-      Terra.validates.element('default', { selector: '#application-layout-test' });
+      Terra.validates.element('renders primary nav menu when small', { selector: '#application-layout-test' });
     });
   });
 
@@ -103,7 +103,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       $('[data-application-menu-utility]').waitForDisplayed();
       $('[data-application-menu-utility]').click();
 
-      Terra.validates.element('default', { selector: '#application-layout-test' });
+      Terra.validates.element('presents utility menu from menu when small', { selector: '#application-layout-test' });
       browser.keys('Escape');
     });
   });
@@ -117,7 +117,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       $('[data-routing-menu] [data-menu-item="/page_2"]').click();
       browser.pause(150);
 
-      Terra.validates.element('default', { selector: '#application-layout-test' });
+      Terra.validates.element('navigates from primary nav menu when small', { selector: '#application-layout-test' });
     });
   });
 });
