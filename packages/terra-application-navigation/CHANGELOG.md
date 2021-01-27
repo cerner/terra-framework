@@ -5,6 +5,8 @@
 * Fixed
   * Updated sv translations due to feedback from the i18n team.
 
+## 1.44.0 - (January 26, 2021)
+
 * Changed
   * Update failing jest tests.
 
