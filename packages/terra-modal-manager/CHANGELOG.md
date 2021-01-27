@@ -5,6 +5,11 @@
 * Changed
   * Updated to terra-functional-testing
 
+## 6.47.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.46.0 - (January 5, 2021)
 
 * Fixed

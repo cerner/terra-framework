@@ -5,6 +5,8 @@
 * Changed
   * Updated to terra-functional-testing
 
+## 5.33.0 - (January 26, 2021)
+
 * Fixed
   * Fixed error thrown on resizing the popup due to incorrect variables name.
 
