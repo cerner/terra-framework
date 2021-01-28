@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('Menu Item', ['medium'], () => {
   it('displays a Menu Item-Default', () => {
     browser.url('/raw/tests/terra-menu/menu/menu-item/menu-item-default');

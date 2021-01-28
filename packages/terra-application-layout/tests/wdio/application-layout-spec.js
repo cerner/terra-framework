@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
   describe('Displays a default application layout', () => {
     it('Displays a default application layout', () => {

@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   before(() => {
     browser.execute('if (!window.ontouchstart) { window.ontouchstart = "true"; }');

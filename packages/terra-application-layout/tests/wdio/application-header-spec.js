@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('ApplicationHeader', ['small', 'large'], () => {
   it('Displays a default application header', () => {
     browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-header');

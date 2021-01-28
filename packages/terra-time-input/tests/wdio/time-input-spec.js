@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('Time Input', ['medium'], () => {
   it('displays default with no time provided', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/default');

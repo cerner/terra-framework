@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('ApplicationMenu', ['small', 'large'], () => {
   it('Displays a default application menu', () => {
     browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-menu');

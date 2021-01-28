@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('Slide Group', ['medium'], () => {
   it('displays default slide group', () => {
     browser.url('/raw/tests/terra-slide-group/slide-group/default-slide-group');

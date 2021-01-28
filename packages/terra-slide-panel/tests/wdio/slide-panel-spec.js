@@ -1,4 +1,3 @@
-/* global $ */
 const context = '[data-terra-dev-site-content] *:first-child';
 
 Terra.describeViewports('Slide panel', ['large'], () => {

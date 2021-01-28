@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
   describe('Extensions roll up properly', () => {
     it('launch popup', () => {

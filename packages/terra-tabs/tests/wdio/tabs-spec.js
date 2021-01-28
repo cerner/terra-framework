@@ -1,4 +1,3 @@
-/* global $ */
 // Verify tabs collapse appropriately
 Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
   it('Default', () => {

@@ -1,4 +1,3 @@
-/* global $ */
 const moment = require('moment-timezone');
 
 Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {

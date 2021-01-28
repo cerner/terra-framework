@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('Date Picker', ['tiny', 'small', 'medium'], () => {
   describe('Default', () => {
     it('creates a hidden input and empty value attr. when no date is entered', () => {

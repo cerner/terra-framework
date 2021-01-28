@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('RoutingMenu', ['small'], () => {
   it('Displays a default routing menu', () => {
     browser.url('/raw/tests/terra-application-layout/application-layout/routing-menu');

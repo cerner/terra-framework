@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('Calendar Filter', ['tiny'], () => {
   describe('Calendar-Filter-Default', () => {
     it('renders with default calendar-filter', () => {

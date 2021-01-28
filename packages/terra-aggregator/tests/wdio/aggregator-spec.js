@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('Aggregator', ['large'], () => {
   it('displays standalone aggregator', () => {
     browser.url('/raw/tests/terra-aggregator/aggregator/aggregator-standalone');

@@ -1,4 +1,3 @@
-/* global $ */
 const selector = '#test-popup-area';
 let currentViewportSize;
 

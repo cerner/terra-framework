@@ -1,4 +1,3 @@
-/* global $ */
 const selector = '#root';
 const NOTIFICATION_DIALOG_SELECTOR = '[data-terra-notification-dialog]';
 const ACCEPT_ACTION_SELECTOR = '[data-terra-notification-dialog-button="accept"]';

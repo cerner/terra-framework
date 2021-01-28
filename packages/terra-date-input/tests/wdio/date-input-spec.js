@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('Date Input', ['medium'], () => {
   it('should display no date provided', () => {
     browser.url('/raw/tests/terra-date-input/date-input/default-date-input');

@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('Hookshot', ['medium'], () => {
   it('Displays default hookshot', () => {
     browser.url('/raw/tests/terra-hookshot/hookshot/default-hookshot');

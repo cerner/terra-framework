@@ -1,5 +1,3 @@
-/* global $ */
-
 Terra.describeViewports('ApplicationTabs', ['small', 'large'], () => {
   it('Displays a default application tabs', () => {
     browser.url('/raw/tests/terra-application-links/application-links/application-tabs-default');

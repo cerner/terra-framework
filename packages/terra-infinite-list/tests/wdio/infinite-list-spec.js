@@ -1,4 +1,3 @@
-/* global $ */
 const selector = '#test-infinite-list';
 
 Terra.describeViewports('InfiniteList', ['small'], () => {

@@ -1,4 +1,3 @@
-/* global $ */
 const selector = '#root';
 
 Terra.describeViewports('Theme Provider', ['tiny', 'medium'], () => {

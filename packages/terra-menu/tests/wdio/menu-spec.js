@@ -1,4 +1,3 @@
-/* global $ */
 const ignoredA11y = {
   'aria-required-parent': { enabled: false }, 'aria-required-children': { enabled: false },
 };

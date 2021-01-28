@@ -1,4 +1,3 @@
-/* global $ */
 const selector = '#test-root';
 
 Terra.describeViewports('Navigation Layout', ['tiny', 'small', 'medium', 'large', 'huge'], () => {

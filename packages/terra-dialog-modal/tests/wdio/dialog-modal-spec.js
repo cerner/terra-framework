@@ -1,4 +1,3 @@
-/* global $ */
 const selector = '#root';
 
 Terra.describeViewports('Dialog Modal', ['tiny', 'medium', 'large'], () => {

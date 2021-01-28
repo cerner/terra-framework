@@ -1,4 +1,3 @@
-/* global $ */
 Terra.describeViewports('SlidePanelManager', ['tiny', 'large'], () => {
   before(() => {
     browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
