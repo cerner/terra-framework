@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.57.0 - (January 26, 2021)
+
 * Changed
   * Update failing jest tests.
 
