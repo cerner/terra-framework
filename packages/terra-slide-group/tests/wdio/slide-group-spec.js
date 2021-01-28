@@ -15,12 +15,12 @@ Terra.describeViewports('Slide Group', ['medium'], () => {
     it('should advance the slide', () => {
       browser.url('/raw/tests/terra-slide-group/slide-group/non-animated-slide-group');
       $('#increment-1').click();
-      Terra.validates.element('slide 2 non animated');
+      Terra.validates.element('slide 2');
     });
 
     it('should go back a slide', () => {
       $('#decrement-2').click();
-      Terra.validates.element('slide 1 non animated');
+      Terra.validates.element('slide 1');
     });
   });
 
@@ -30,14 +30,14 @@ Terra.describeViewports('Slide Group', ['medium'], () => {
       $('#increment-1').click();
 
       browser.pause(350);
-      Terra.validates.element('slide 2 animated');
+      Terra.validates.element('slide 2');
     });
 
     it('should go back a slide', () => {
       $('#decrement-2').click();
 
       browser.pause(350);
-      Terra.validates.element('slide 1 animated');
+      Terra.validates.element('slide 1');
     });
   });
 });

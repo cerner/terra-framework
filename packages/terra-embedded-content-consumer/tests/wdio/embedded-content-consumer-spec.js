@@ -19,7 +19,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
       $('#EventA').click();
       browser.switchToParentFrame();
       $('#root').moveTo(0, 0);
-      Terra.validates.element('EventA for custom-event');
+      Terra.validates.element('EventA');
     });
   });
 
@@ -27,7 +27,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     it('displays with custom event', () => {
       browser.url('/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/custom-events-consumer');
       $('#CustomEvents').waitForDisplayed();
-      Terra.validates.element('custom events');
+      Terra.validates.element('custom event');
     });
 
     it('Provider triggers EventA message', () => {
@@ -37,7 +37,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
       $('#EventA').click();
       browser.switchToParentFrame();
       $('#root').moveTo(0, 0);
-      Terra.validates.element('EventA for custom-events');
+      Terra.validates.element('EventA');
     });
 
     it('successfully replied with EventA message', () => {

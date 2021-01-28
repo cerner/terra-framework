@@ -8,229 +8,223 @@ Terra.describeViewports('ModalManager', ['tiny', 'large'], () => {
   });
 
   afterEach(() => {
+    Terra.validates.element('Disclose size', { selector });
     browser.keys('Escape');
   });
 
   describe('Size Props', () => {
-    it('Disclose Default', () => {
-      $('#root-component .disclose').click();
-      Terra.validates.element('disclose default', { selector });
+    describe('Disclose Default', () => {
+      it('Disclose Default', () => $('#root-component .disclose').click());
     });
 
-    it('Disclose Tiny', () => {
-      $('#root-component .disclose-tiny').click();
-      Terra.validates.element('disclose tiny', { selector });
+    describe('Disclose Tiny', () => {
+      it('Disclose Tiny', () => $('#root-component .disclose-tiny').click());
     });
 
-    it('Disclose Small', () => {
-      $('#root-component .disclose-small').click();
-      Terra.validates.element('disclose small', { selector });
+    describe('Disclose Small', () => {
+      it('Disclose Small', () => $('#root-component .disclose-small').click());
     });
 
-    it('Disclose Medium', () => {
-      $('#root-component .disclose-medium').click();
-      Terra.validates.element('disclose medium', { selector });
+    describe('Disclose Medium', () => {
+      it('Disclose Medium', () => $('#root-component .disclose-medium').click());
     });
 
-    it('Disclose Large', () => {
-      $('#root-component .disclose-large').click();
-      Terra.validates.element('disclose large', { selector });
+    describe('Disclose Large', () => {
+      it('Disclose Large', () => $('#root-component .disclose-large').click());
     });
 
-    it('Disclose Huge', () => {
-      $('#root-component .disclose-huge').click();
-      Terra.validates.element('disclose huge', { selector });
+    describe('Disclose Huge', () => {
+      it('Disclose Huge', () => $('#root-component .disclose-huge').click());
     });
 
-    it('Disclose Fullscreen', () => {
-      $('#root-component .disclose-fullscreen').click();
-      Terra.validates.element('disclose fullscreen', { selector });
+    describe('Disclose Fullscreen', () => {
+      it('Disclose Fullscreen', () => $('#root-component .disclose-fullscreen').click());
     });
   });
 
   describe('Dimensions Props', () => {
-    it('Disclose Width-320', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-320-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-320', { selector });
+    describe('Disclose Width-320', () => {
+      it('Disclose Width-320', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-320-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-480', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-480-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-480', { selector });
+    describe('Disclose Width-480', () => {
+      it('Disclose Width-480', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-480-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-560', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-560-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-560', { selector });
+    describe('Disclose Width-560', () => {
+      it('Disclose Width-560', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-560-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-640', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-640-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-640', { selector });
+    describe('Disclose Width-640', () => {
+      it('Disclose Width-640', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-640-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-800', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-800-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-800', { selector });
+    describe('Disclose Width-800', () => {
+      it('Disclose Width-800', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-800-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-960', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-960-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-960', { selector });
+    describe('Disclose Width-960', () => {
+      it('Disclose Width-960', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-960-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-1120', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-1120-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-1120', { selector });
+    describe('Disclose Width-1120', () => {
+      it('Disclose Width-1120', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-1120-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-1280', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-1280-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-1280', { selector });
+    describe('Disclose Width-1280', () => {
+      it('Disclose Width-1280', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-1280-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-1440', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-1440-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-1440', { selector });
+    describe('Disclose Width-1440', () => {
+      it('Disclose Width-1440', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-1440-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-1600', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-1600-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-1600', { selector });
+    describe('Disclose Width-1600', () => {
+      it('Disclose Width-1600', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-1600-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-1760', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-1760-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-1760', { selector });
+    describe('Disclose Width-1760', () => {
+      it('Disclose Width-1760', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-1760-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-1920', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-1920-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-1920', { selector });
+    describe('Disclose Width-1920', () => {
+      it('Disclose Width-1920', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-1920-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Height-240', () => {
-      // reset width
-      $('#disclosureDimensions-width-0').click();
-      $('#width-320-0').click();
+    describe('Disclose Height-240', () => {
+      it('Disclose Height-240', () => {
+        // reset width
+        $('#disclosureDimensions-width-0').click();
+        $('#width-320-0').click();
 
-      $('#disclosureDimensions-height-0').click();
-      $('#height-240-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose height-240', { selector });
+        $('#disclosureDimensions-height-0').click();
+        $('#height-240-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Height-420', () => {
-      $('#disclosureDimensions-height-0').click();
-      $('#height-420-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose height-420', { selector });
+    describe('Disclose Height-420', () => {
+      it('Disclose Height-420', () => {
+        $('#disclosureDimensions-height-0').click();
+        $('#height-420-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Height-600', () => {
-      $('#disclosureDimensions-height-0').click();
-      $('#height-600-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose height-600', { selector });
+    describe('Disclose Height-600', () => {
+      it('Disclose Height-600', () => {
+        $('#disclosureDimensions-height-0').click();
+        $('#height-600-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Height-690', () => {
-      $('#disclosureDimensions-height-0').click();
-      $('#height-690-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose height-690', { selector });
+    describe('Disclose Height-690', () => {
+      it('Disclose Height-690', () => {
+        $('#disclosureDimensions-height-0').click();
+        $('#height-690-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Height-780', () => {
-      $('#disclosureDimensions-height-0').click();
-      $('#height-780-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose height-780', { selector });
+    describe('Disclose Height-780', () => {
+      it('Disclose Height-780', () => {
+        $('#disclosureDimensions-height-0').click();
+        $('#height-780-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Height-870', () => {
-      $('#disclosureDimensions-height-0').click();
-      $('#height-870-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose height-870', { selector });
+    describe('Disclose Height-870', () => {
+      it('Disclose Height-870', () => {
+        $('#disclosureDimensions-height-0').click();
+        $('#height-870-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Height-960', () => {
-      $('#disclosureDimensions-height-0').click();
-      $('#height-960-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose height-960', { selector });
+    describe('Disclose Height-960', () => {
+      it('Disclose Height-960', () => {
+        $('#disclosureDimensions-height-0').click();
+        $('#height-960-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Height-1140', () => {
-      $('#disclosureDimensions-height-0').click();
-      $('#height-1140-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose height-1140', { selector });
+    describe('Disclose Height-1140', () => {
+      it('Disclose Height-1140', () => {
+        $('#disclosureDimensions-height-0').click();
+        $('#height-1140-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
   });
 });
@@ -247,7 +241,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
 
         $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').waitForDisplayed({ timeout: 500 });
         $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').click();
-        Terra.validates.element('Nested Disclose Behaviors', { selector });
+        Terra.validates.element('Nested Disclose', { selector });
         browser.keys('Escape');
       });
     });
@@ -492,7 +486,7 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
       $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').waitForDisplayed({ timeout: 1000 });
       $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').click();
 
-      Terra.validates.element('nested disclosure accessory', { selector });
+      Terra.validates.element('nested disclosure', { selector });
       $('[class*="slide-group"] #DemoContainer-2 .close-disclosure').click();
     });
   });
@@ -527,7 +521,7 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
 
     it('renders each disclosed component in a disclosure container', () => {
       expect($('[data-disclosure-container="true"]').isExisting()).toBeTruthy();
-      Terra.validates.element('nested disclosure container', { selector, axeRules: ignoredA11y });
+      Terra.validates.element('nested disclosure', { selector, axeRules: ignoredA11y });
       $('[class*="slide-group"] #DemoContainer-2 .close-disclosure').click();
     });
   });

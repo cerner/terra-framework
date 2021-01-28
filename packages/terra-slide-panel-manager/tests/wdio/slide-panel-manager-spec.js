@@ -5,126 +5,121 @@ Terra.describeViewports('SlidePanelManager', ['tiny', 'large'], () => {
     browser.refresh();
   });
   afterEach(() => {
+    Terra.validates.element('sizes', { selector: '#site' });
     $('[class*="slide-group"] #DemoContainer-1 .dismiss').click();
   });
   describe('Sizes', () => {
-    it('Disclose Default', () => {
-      $('#root-component .disclose').click();
-      Terra.validates.element('disclose default', { selector: '#site' });
+    describe('Disclose Default', () => {
+      it('Disclose Default', () => $('#root-component .disclose').click());
     });
 
-    it('Disclose Tiny', () => {
-      $('#root-component .disclose-tiny').click();
-      Terra.validates.element('disclose tiny', { selector: '#site' });
+    describe('Disclose Tiny', () => {
+      it('Disclose Tiny', () => $('#root-component .disclose-tiny').click());
     });
 
-    it('Disclose Small', () => {
-      $('#root-component .disclose-small').click();
-      Terra.validates.element('disclose small', { selector: '#site' });
+    describe('Disclose Small', () => {
+      it('Disclose Small', () => $('#root-component .disclose-small').click());
     });
 
-    it('Disclose Medium', () => {
-      $('#root-component .disclose-medium').click();
-      Terra.validates.element('disclose medium', { selector: '#site' });
+    describe('Disclose Medium', () => {
+      it('Disclose Medium', () => $('#root-component .disclose-medium').click());
     });
 
-    it('Disclose Large', () => {
-      $('#root-component .disclose-large').click();
-      Terra.validates.element('disclose large', { selector: '#site' });
+    describe('Disclose Large', () => {
+      it('Disclose Large', () => $('#root-component .disclose-large').click());
     });
 
-    it('Disclose Huge', () => {
-      $('#root-component .disclose-huge').click();
-      Terra.validates.element('disclose huge', { selector: '#site' });
+    describe('Disclose Huge', () => {
+      it('Disclose Huge', () => $('#root-component .disclose-huge').click());
     });
 
-    it('Disclose Fullscreen', () => {
-      $('#root-component .disclose-fullscreen').click();
-      Terra.validates.element('disclose fullscreen', { selector: '#site' });
+    describe('Disclose Fullscreen', () => {
+      it('Disclose Fullscreen', () => $('#root-component .disclose-fullscreen').click());
     });
   });
 
   describe('Dimensions', () => {
-    it('Disclose Width-320', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-320-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      browser.pause(300);
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-320', { selector: '#site' });
+    describe('Disclose Width-320', () => {
+      it('Disclose Width-320', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-320-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        browser.pause(300);
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-480', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-480-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      browser.pause(300);
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-480', { selector: '#site' });
+    describe('Disclose Width-480', () => {
+      it('Disclose Width-480', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-480-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        browser.pause(300);
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-560', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-560-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      browser.pause(300);
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-560', { selector: '#site' });
+    describe('Disclose Width-560', () => {
+      it('Disclose Width-560', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-560-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        browser.pause(300);
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Width-640', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-640-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      browser.pause(300);
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose width-640', { selector: '#site' });
+    describe('Disclose Width-640', () => {
+      it('Disclose Width-640', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-640-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        browser.pause(300);
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Height-240', () => {
-      $('#disclosureDimensions-width-0').click();
-      $('#width-320-0').click();
+    describe('Disclose Height-240', () => {
+      it('Disclose Height-240', () => {
+        $('#disclosureDimensions-width-0').click();
+        $('#width-320-0').click();
 
-      $('#disclosureDimensions-height-0').click();
-      $('#height-240-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      browser.pause(300);
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose height-240', { selector: '#site' });
+        $('#disclosureDimensions-height-0').click();
+        $('#height-240-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        browser.pause(300);
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Height-420', () => {
-      $('#disclosureDimensions-height-0').click();
-      $('#height-420-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      browser.pause(300);
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose height-420', { selector: '#site' });
+    describe('Disclose Height-420', () => {
+      it('Disclose Height-420', () => {
+        $('#disclosureDimensions-height-0').click();
+        $('#height-420-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        browser.pause(300);
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Height-600', () => {
-      $('#disclosureDimensions-height-0').click();
-      $('#height-600-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      browser.pause(300);
-      $('#DemoContainer-1 .disclose').moveTo();
-
-      Terra.validates.element('disclose height-600', { selector: '#site' });
+    describe('Disclose Height-600', () => {
+      it('Disclose Height-600', () => {
+        $('#disclosureDimensions-height-0').click();
+        $('#height-600-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        browser.pause(300);
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
 
-    it('Disclose Height-690', () => {
-      $('#disclosureDimensions-height-0').click();
-      $('#height-690-0').click();
-      $('#root-component #disclose-dimension-0').click();
-      browser.pause(300);
-      $('#DemoContainer-1 .disclose').moveTo();
-      Terra.validates.element('disclose height-690', { selector: '#site' });
+    describe('Disclose Height-690', () => {
+      it('Disclose Height-690', () => {
+        $('#disclosureDimensions-height-0').click();
+        $('#height-690-0').click();
+        $('#root-component #disclose-dimension-0').click();
+        browser.pause(300);
+        $('#DemoContainer-1 .disclose').moveTo();
+      });
     });
   });
 });
@@ -142,7 +137,7 @@ Terra.describeViewports('SlidePanelManager- Behaviors', ['large'], () => {
       $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').waitForDisplayed({ timeout: 1000 });
       $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').click();
 
-      Terra.validates.element('nested disclosure behaviors', { selector: '#site' });
+      Terra.validates.element('nested disclosure', { selector: '#site' });
       $('[class*="slide-group"] #DemoContainer-2 .close-disclosure').click();
     });
   });
@@ -329,7 +324,7 @@ Terra.describeViewports('SlidePanelManager - Disclosure Accessory', ['large'], (
       $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').waitForDisplayed({ timeout: 1000 });
       $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').click();
 
-      Terra.validates.element('nested disclosure accessory', { selector });
+      Terra.validates.element('nested disclosure', { selector });
       $('[class*="slide-group"] #DemoContainer-2 .close-disclosure').click();
     });
   });
@@ -353,7 +348,7 @@ Terra.describeViewports('SlidePanelManager - Disclosure Accessory', ['large'], (
 
     it('renders each disclosed component in a disclosure container', () => {
       expect($('[data-disclosure-container="true"').isExisting()).toBeTruthy();
-      Terra.validates.element('nested disclosure Container', { selector });
+      Terra.validates.element('nested disclosure', { selector });
       $('[class*="slide-group"] #DemoContainer-2 .close-disclosure').click();
     });
   });

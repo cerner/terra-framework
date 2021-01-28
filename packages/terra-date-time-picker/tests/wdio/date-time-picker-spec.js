@@ -72,12 +72,12 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       $('input[name="terra-time-minute-input"]').click();
       browser.keys('Tab');
       $('[class*="time-clarification"]').waitForDisplayed();
-      Terra.validates.element('dialog open for daylight', { selector: '[class*="abstract-modal"]' });
+      Terra.validates.element('dialog open', { selector: '[class*="abstract-modal"]' });
     });
 
     it('hides the offset button', () => {
       $('[class*="button-daylight"]').click();
-      Terra.validates.element('offset button hidden for daylight');
+      Terra.validates.element('offset button hidden');
     });
   });
 
@@ -87,12 +87,12 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       $('input[name="terra-time-minute-input"]').click();
       browser.keys('Tab');
       $('[class*="time-clarification"]').waitForDisplayed();
-      Terra.validates.element('dialog open for standard time', { selector: '[class*="abstract-modal"]' });
+      Terra.validates.element('dialog open', { selector: '[class*="abstract-modal"]' });
     });
 
     it('hides the offset button', () => {
       $('[class*="button-standard"]').click();
-      Terra.validates.element('offset button hidden for standard time');
+      Terra.validates.element('offset button hidden');
     });
   });
 
@@ -298,7 +298,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       expect($('#ambiguous-date').getText()).toEqual('No');
       expect($('#complete-date').getText()).toEqual('Yes');
       expect($('#valid-date').getText()).toEqual('Yes');
-      Terra.validates.element('missing hour on change');
+      Terra.validates.element('missing hour');
     });
   });
 
@@ -309,25 +309,25 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       Terra.hideInputCaret('input[name="terra-time-minute-input"]');
       Terra.hideInputCaret('input[name="terra-time-hour-input"]');
       $('input[name="terra-date-input"]').setValue('04/17/2019');
-      Terra.validates.element('valid date');
+      Terra.validates.element('valid-date');
     });
 
     it('Entering valid date and time triggers onChange', () => {
       $('input[name="terra-time-hour-input"]').setValue('10');
       $('input[name="terra-time-minute-input"]').setValue('30');
-      Terra.validates.element('valid time');
+      Terra.validates.element('valid-time');
     });
 
     it('Change date to invalid and modify time.', () => {
       $('input[name="terra-date-input"]').setValue('04/17/20');
       $('input[name="terra-time-hour-input"]').setValue('12');
       $('input[name="terra-time-minute-input"]').setValue('45');
-      Terra.validates.element('invalid date');
+      Terra.validates.element('invalid-date');
     });
 
     it('Time persists when date becomes valid', () => {
       $('input[name="terra-date-input"]').setValue('04/18/2019');
-      Terra.validates.element('modified valid time');
+      Terra.validates.element('modified-valid-time');
     });
   });
 
@@ -364,7 +364,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       expect($('#ambiguous-date').getText()).toEqual('No');
       expect($('#complete-date').getText()).toEqual('Yes');
       expect($('#valid-date').getText()).toEqual('Yes');
-      Terra.validates.element('missing hour on change raw');
+      Terra.validates.element('missing hour');
     });
   });
 
@@ -389,19 +389,19 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('OnSelect', () => {
     it('displays date time picker', () => {
       browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-select');
-      Terra.validates.element('display picker on select');
+      Terra.validates.element('display picker');
     });
 
     it('Select a date from the picker', () => {
       $('[class*="button"]').click();
       $('[class*="react-datepicker-week"] > *:nth-child(2)').click();
-      Terra.validates.element('select date on select');
+      Terra.validates.element('select date');
     });
 
     it('Trigger onChange', () => {
       Terra.hideInputCaret('input[name="terra-time-hour-input"]');
       $('input[name="terra-date-input"]').setValue('07/12/2017');
-      Terra.validates.element('trigger onChange on select');
+      Terra.validates.element('trigger onChange');
     });
   });
 
@@ -476,12 +476,12 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       $('input[name="terra-time-minute-input"]').click();
       browser.keys('Tab');
       $('[class*="time-clarification"]').waitForDisplayed();
-      Terra.validates.element('before DST resolution to CST', { selector: '#root' });
+      Terra.validates.element('before DST resolution', { selector: '#root' });
     });
 
     it('handles blur after date-time ambiguity is resolved', () => {
       $('[class*="button-daylight"]').click();
-      Terra.validates.element('after DST resolution to CST', { selector: '#root' });
+      Terra.validates.element('after DST resolution', { selector: '#root' });
     });
 
     it('updates the underlying date-time upon changing the offset using the offset button', () => {
@@ -489,7 +489,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       $('[class*="time-clarification"]').waitForDisplayed();
       $('[class*="button-standard"]').click();
       browser.keys('Tab'); // This is _needed_ to remove focus from the offset button.
-      Terra.validates.element('after offset change to CST', { selector: '#root' });
+      Terra.validates.element('after offset change', { selector: '#root' });
     });
   });
 
@@ -499,12 +499,12 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       $('input[name="terra-time-minute-input"]').click();
       browser.keys('Tab');
       $('[class*="time-clarification"]').waitForDisplayed();
-      Terra.validates.element('before DST resolution to CDT', { selector: '#root' });
+      Terra.validates.element('before DST resolution', { selector: '#root' });
     });
 
     it('handles blur after date-time ambiguity is resolved', () => {
       $('[class*="button-standard"]').click();
-      Terra.validates.element('after DST resolution to CDT', { selector: '#root' });
+      Terra.validates.element('after DST resolution', { selector: '#root' });
     });
 
     it('updates the underlying date-time upon changing the offset using the offset button', () => {
@@ -512,7 +512,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       $('[class*="time-clarification"]').waitForDisplayed();
       $('[class*="button-daylight"]').click();
       browser.keys('Tab'); // This is _needed_ to remove focus from the offset button.
-      Terra.validates.element('after offset change to CDT', { selector: '#root' });
+      Terra.validates.element('after offset change', { selector: '#root' });
     });
   });
 
@@ -536,7 +536,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
   it('displays with timezone', () => {
     browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-timezone');
-    Terra.validates.element('with timezone', { selector: '#root' });
+    Terra.validates.element('With Timezone', { selector: '#root' });
   });
 
   it('With timezone', () => {
@@ -547,7 +547,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     $('input[name="terra-date-input"]').setValue('03/11/2018');
     $('input[name="terra-time-hour-input"]').setValue('02');
     $('input[name="terra-time-minute-input"]').setValue('30');
-    Terra.validates.element('missing hour with timezone');
+    Terra.validates.element('missing hour');
   });
 
   it('With timezone', () => {
