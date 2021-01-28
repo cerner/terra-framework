@@ -7,6 +7,8 @@ import React, {
   useMemo,
 } from 'react';
 import {
+  KEY_UP,
+  KEY_DOWN,
   KEY_LEFT,
   KEY_RIGHT,
   KEY_DELETE,
@@ -397,8 +399,13 @@ const DatePickerInput = (props) => {
       return;
     }
 
-    // Ignore the entry if the year value is not between 1900 and 2100
-    if (inputValue.length === 4 && (Number(inputValue) < 1900 || Number(inputValue) > 2100)) {
+    // Ignore the 3rd entry if the first two digits are not 19, 20 or 21
+    if (inputValue.length === 3 && (Number(inputValue) < 190 || Number(inputValue) > 210)) {
+      return;
+    }
+
+    // Ignore the 4th entry if the year value is not between MIN_YEAR and MAX_YEAR
+    if (inputValue.length === 4 && (Number(inputValue) < Number(DateUtil.MIN_YEAR) || Number(inputValue) > Number(DateUtil.MAX_YEAR))) {
       return;
     }
 
@@ -414,6 +421,16 @@ const DatePickerInput = (props) => {
   const handleDayInputKeydown = (event) => {
     if (inputAttributes?.readOnly) {
       return;
+    }
+
+    if (event.keyCode === KEY_UP) {
+      const incrementedDay = DateUtil.incrementDay(date.day, date.month, date.year);
+      dateDispatch({ day: incrementedDay });
+      setDayInitialFocused(false);
+    } else if (event.keyCode === KEY_DOWN) {
+      const decrementedDay = DateUtil.decrementDay(date.day, date.month, date.year);
+      dateDispatch({ day: decrementedDay });
+      setDayInitialFocused(false);
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
@@ -438,6 +455,16 @@ const DatePickerInput = (props) => {
       return;
     }
 
+    if (event.keyCode === KEY_UP) {
+      const incrementedMonth = DateUtil.incrementMonth(date.month);
+      dateDispatch({ month: incrementedMonth });
+      setMonthInitialFocused(false);
+    } else if (event.keyCode === KEY_DOWN) {
+      const decrementedMonth = DateUtil.decrementMonth(date.month);
+      dateDispatch({ month: decrementedMonth });
+      setMonthInitialFocused(false);
+    }
+
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
       if (event.keyCode === KEY_RIGHT && monthInputRef.current.selectionEnd === date.month.length) {
         setInputFocus(event, dayInputRef.current, 0, 0);
@@ -460,6 +487,16 @@ const DatePickerInput = (props) => {
   const handleYearInputKeydown = (event) => {
     if (inputAttributes?.readOnly) {
       return;
+    }
+
+    if (event.keyCode === KEY_UP) {
+      const incrementedYear = DateUtil.incrementYear(date.year);
+      dateDispatch({ year: incrementedYear });
+      setYearInitialFocused(false);
+    } else if (event.keyCode === KEY_DOWN) {
+      const decrementedYear = DateUtil.decrementYear(date.year);
+      dateDispatch({ year: decrementedYear });
+      setYearInitialFocused(false);
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
@@ -517,6 +554,25 @@ const DatePickerInput = (props) => {
       // Prepend a 0 to the value when losing focus and the value is single digit.
       if (inputValue.length === 1) {
         inputValue = inputValue === '0' ? inputValue : '0'.concat(inputValue);
+
+        handleDateChange(event, inputValue, type);
+      }
+    } else if (type === DateUtil.inputType.YEAR) {
+      let inputValue = event.target.value;
+
+      if (inputValue.length === 1) {
+        // Prepend a 200 to the value when losing focus and the value is single digit.
+        inputValue = '200'.concat(inputValue);
+
+        handleDateChange(event, inputValue, type);
+      } else if (inputValue.length === 2) {
+        // Prepend a 20 to the value when losing focus and the value is two digits.
+        inputValue = '20'.concat(inputValue);
+
+        handleDateChange(event, inputValue, type);
+      } else if (inputValue.length === 3 && (Number(inputValue) >= 190 || Number(inputValue) <= 210)) {
+        // Append a 0 to the value when losing focus and the value is three digits between 190 to 210.
+        inputValue = inputValue.concat('0');
 
         handleDateChange(event, inputValue, type);
       }

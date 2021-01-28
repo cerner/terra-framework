@@ -331,6 +331,167 @@ class DateUtil {
 
     return momentDate.isValid() && momentDate.isSameOrAfter(minDate, 'day') && momentDate.isSameOrBefore(maxDate, 'day');
   }
+
+  /**
+   * Increments the month to it's next value
+   * @param {String} month - Month to increment
+   * @return {String} The incremented string value of the month
+   */
+  static incrementMonth(month) {
+    if (month) {
+      let numericMonth = Number(month);
+
+      if (numericMonth < 12) {
+        numericMonth += 1;
+        return numericMonth < 10 ? '0'.concat(numericMonth.toString()) : numericMonth.toString();
+      }
+
+      return month;
+    }
+
+    return '01';
+  }
+
+  /**
+   * Decrements the month to it's next value
+   * @param {String} month - Month to decrement
+   * @return {String} The decremented string value of the month
+   */
+  static decrementMonth(month) {
+    if (month) {
+      let numericMonth = Number(month);
+
+      if (numericMonth > 1) {
+        numericMonth -= 1;
+        return numericMonth < 10 ? '0'.concat(numericMonth.toString()) : numericMonth.toString();
+      }
+
+      return month;
+    }
+
+    return '01';
+  }
+
+  /**
+   * Increments the day to it's next value
+   * @param {String} day - Day to increment
+   * @param {string} month - Month value
+   * @param {string} year - Year value
+   * @return {String} The incremented string value of the day
+   */
+  static incrementDay(day, month, year) {
+    if (day) {
+      let numericDay = Number(day);
+      const numericMonth = month === '' ? undefined : Number(month);
+      const monthsWithThirtyDays = [4, 6, 9, 11];
+      let dayUpperLimit = 31;
+
+      if (monthsWithThirtyDays.indexOf(numericMonth) > -1) {
+        dayUpperLimit = 30;
+      } else if (numericMonth === 2) {
+        const numericYear = year === '' ? undefined : Number(year);
+        const momentYear = moment([numericYear]);
+        if (momentYear.isLeapYear()) {
+          dayUpperLimit = 29;
+        } else {
+          dayUpperLimit = 28;
+        }
+      }
+
+      if (numericDay < dayUpperLimit) {
+        numericDay += 1;
+        return numericDay < 10 ? '0'.concat(numericDay.toString()) : numericDay.toString();
+      }
+
+      if (numericDay > dayUpperLimit) {
+        return '01';
+      }
+
+      return day;
+    }
+
+    return '01';
+  }
+
+  /**
+   * Decrements the day to it's next value
+   * @param {String} day - Day to decrement
+   * @param {string} month - Month value
+   * @param {string} year - Year value
+   * @return {String} The decremented string value of the day
+   */
+  static decrementDay(day, month, year) {
+    if (day) {
+      let numericDay = Number(day);
+      const numericMonth = month === '' ? undefined : Number(month);
+      const monthsWithThirtyDays = [4, 6, 9, 11];
+      let dayUpperLimit = 31;
+
+      if (monthsWithThirtyDays.indexOf(numericMonth) > -1) {
+        dayUpperLimit = 30;
+      } else if (numericMonth === 2) {
+        const numericYear = year === '' ? undefined : Number(year);
+        const momentYear = moment([numericYear]);
+        if (momentYear.isLeapYear()) {
+          dayUpperLimit = 29;
+        } else {
+          dayUpperLimit = 28;
+        }
+      }
+
+      if (numericDay > dayUpperLimit) {
+        return dayUpperLimit.toString();
+      }
+      if (numericDay > 1) {
+        numericDay -= 1;
+        return numericDay < 10 ? '0'.concat(numericDay.toString()) : numericDay.toString();
+      }
+
+      return day;
+    }
+
+    return '01';
+  }
+
+  /**
+   * Increments the year to it's next value
+   * @param {String} year - Year to increment
+   * @return {String} The incremented string value of the year
+   */
+  static incrementYear(year) {
+    if (year) {
+      let numericYear = Number(year);
+
+      if (numericYear < Number(DateUtil.MAX_YEAR)) {
+        numericYear += 1;
+        return numericYear.toString();
+      }
+
+      return year;
+    }
+
+    return DateUtil.MIN_YEAR;
+  }
+
+  /**
+   * Decrements the year to it's next value
+   * @param {String} year - Year to decrement
+   * @return {String} The decremented string value of the year
+   */
+  static decrementYear(year) {
+    if (year) {
+      let numericYear = Number(year);
+
+      if (numericYear > Number(DateUtil.MIN_YEAR)) {
+        numericYear -= 1;
+        return numericYear.toString();
+      }
+
+      return year;
+    }
+
+    return DateUtil.MIN_YEAR;
+  }
 }
 
 DateUtil.inputType = {
@@ -346,5 +507,7 @@ DateUtil.dateOrder = {
 DateUtil.ISO_EXTENDED_DATE_FORMAT = 'YYYY-MM-DD';
 DateUtil.MIN_DATE = '1900-01-01';
 DateUtil.MAX_DATE = '2100-12-31';
+DateUtil.MIN_YEAR = '1900';
+DateUtil.MAX_YEAR = '2100';
 
 export default DateUtil;

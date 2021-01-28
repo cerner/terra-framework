@@ -459,6 +459,65 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
   });
 
   describe('Arrow, Delete and Backspace Navigation', () => {
+    describe('Up Arrow', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
+        Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+      });
+
+      it('Increment month input', () => {
+        browser.click('input[name="terra-date-month-date-input"]');
+        browser.keys('ArrowUp');
+        Terra.validates.element('increment month input');
+      });
+
+      it('Increment day input', () => {
+        browser.click('input[name="terra-date-day-date-input"]');
+        browser.keys('ArrowUp');
+        Terra.validates.element('increment day input');
+      });
+
+      it('Increment year input', () => {
+        browser.click('input[name="terra-date-year-date-input"]');
+        browser.keys('ArrowUp');
+        Terra.validates.element('increment year input');
+      });
+    });
+
+    describe('Down Arrow', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
+        Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+      });
+
+      it('Increment month input', () => {
+        browser.click('input[name="terra-date-month-date-input"]');
+        browser.keys('10');
+        browser.keys('ArrowLeft');
+        browser.keys('ArrowDown');
+        Terra.validates.element('decrement month input');
+      });
+
+      it('Increment day input', () => {
+        browser.click('input[name="terra-date-day-date-input"]');
+        browser.keys('10');
+        browser.keys('ArrowLeft');
+        browser.keys('ArrowDown');
+        Terra.validates.element('decrement day input');
+      });
+
+      it('Increment year input', () => {
+        browser.click('input[name="terra-date-year-date-input"]');
+        browser.keys('2009');
+        browser.keys('ArrowDown');
+        Terra.validates.element('decrement year input');
+      });
+    });
+
     describe('Right Arrow', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
@@ -579,8 +638,32 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
       });
 
+      it('Auto prepend 200 for single digit', () => {
+        browser.click('input[name="terra-date-year-date-input"]');
+        browser.keys('3');
+        browser.keys('Tab');
+        Terra.validates.element('auto prepend 200');
+      });
+
+      it('Auto prepend 20 for two digits', () => {
+        browser.click('input[name="terra-date-year-date-input"]');
+        browser.keys('Delete');
+        browser.keys('31');
+        browser.keys('Tab');
+        Terra.validates.element('auto prepend 20');
+      });
+
+      it('Auto append 0 for three digits in the range 190 to 210', () => {
+        browser.click('input[name="terra-date-year-date-input"]');
+        browser.keys('Delete');
+        browser.keys('204');
+        browser.keys('Tab');
+        Terra.validates.element('auto append 0');
+      });
+
       it('Reject values greater than 2100', () => {
         browser.click('input[name="terra-date-year-date-input"]');
+        browser.keys('Delete');
         browser.keys('2101');
         Terra.validates.element('rejected digit 1');
       });
