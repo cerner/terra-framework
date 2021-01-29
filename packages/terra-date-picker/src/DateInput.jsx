@@ -551,9 +551,10 @@ const DatePickerInput = (props) => {
     if (type === DateUtil.inputType.DAY || type === DateUtil.inputType.MONTH) {
       let inputValue = event.target.value;
 
-      // Prepend a 0 to the value when losing focus and the value is single digit.
+      // Prepend a 0 to the value when losing focus and the value is single digit except 0.
+      // Append a 1 to the value when the single digit is 0
       if (inputValue.length === 1) {
-        inputValue = inputValue === '0' ? inputValue : '0'.concat(inputValue);
+        inputValue = inputValue === '0' ? '01' : '0'.concat(inputValue);
 
         handleDateChange(event, inputValue, type);
       }

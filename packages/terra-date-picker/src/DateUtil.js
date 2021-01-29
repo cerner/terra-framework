@@ -333,7 +333,7 @@ class DateUtil {
   }
 
   /**
-   * Increments the month to it's next value
+   * Increments the month to its next value
    * @param {String} month - Month to increment
    * @return {String} The incremented string value of the month
    */
@@ -353,7 +353,7 @@ class DateUtil {
   }
 
   /**
-   * Decrements the month to it's next value
+   * Decrements the month to its next value
    * @param {String} month - Month to decrement
    * @return {String} The decremented string value of the month
    */
@@ -373,7 +373,7 @@ class DateUtil {
   }
 
   /**
-   * Increments the day to it's next value
+   * Increments the day to its next value
    * @param {String} day - Day to increment
    * @param {string} month - Month value
    * @param {string} year - Year value
@@ -414,7 +414,7 @@ class DateUtil {
   }
 
   /**
-   * Decrements the day to it's next value
+   * Decrements the day to its next value
    * @param {String} day - Day to decrement
    * @param {string} month - Month value
    * @param {string} year - Year value
@@ -454,7 +454,7 @@ class DateUtil {
   }
 
   /**
-   * Increments the year to it's next value
+   * Increments the year to its next value
    * @param {String} year - Year to increment
    * @return {String} The incremented string value of the year
    */
@@ -474,7 +474,7 @@ class DateUtil {
   }
 
   /**
-   * Decrements the year to it's next value
+   * Decrements the year to its next value
    * @param {String} year - Year to decrement
    * @return {String} The decremented string value of the year
    */
