@@ -699,6 +699,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     it('Enters min date', () => {
+      browser.refresh();
       browser.setValue('input[name="terra-date-month-date-input"]', '01');
       browser.setValue('input[name="terra-date-day-date-input"]', '01');
       browser.setValue('input[name="terra-date-year-date-input"]', '1900');
