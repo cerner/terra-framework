@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Updated sv translations due to feedback from the i18n team.
+
 ## 1.44.0 - (January 26, 2021)
 
 * Changed
@@ -15,7 +18,7 @@
   * Removed `intlShape` imports
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 1.42.0 - (December 8, 2020)
 

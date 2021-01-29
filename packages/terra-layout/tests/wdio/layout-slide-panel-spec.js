@@ -1,4 +1,3 @@
-/* globals $ */
 Terra.describeViewports('Toggle the slide panel and hidden styles', ['medium'], () => {
   it('toggles the slide panel and hidden styles', () => {
     browser.url('/raw/tests/terra-layout/layout/layout-slide-panel-example');

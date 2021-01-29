@@ -4,7 +4,9 @@
 
 * Changed
   * Updated to terra-functional-testing
-
+* Added
+  * Added `alwaysCollapsedMenuItems` attribute to `CollapsibleMenuView` which can be used to prepopulate collapsible menu view. These items will always hidden under the More button. The collapsed menu view will always shown if at least one item is added to the collapsedMenuItems list. A divider will shown if there are other elements pushed to the collapsed menu view to divide them from the prepopulated list. 
+ 
 ## 6.47.0 - (January 26, 2021)
 
 * Changed
