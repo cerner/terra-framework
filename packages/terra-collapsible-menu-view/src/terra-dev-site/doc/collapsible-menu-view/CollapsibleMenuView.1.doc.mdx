@@ -6,6 +6,7 @@ import CollapsibleMenuViewItemGroupProps from 'terra-collapsible-menu-view/src/C
 import CollapsibleMenuViewToggleProps from 'terra-collapsible-menu-view/src/CollapsibleMenuViewToggle?dev-site-props-table';
 
 import BasicView from '../example/CollapsibleMenuViewDemo?dev-site-example';
+import AlwaysCollapsedMenuItemsDemo from "../example/AlwaysCollapsedMenuItemsDemo?dev-site-example";
 
 <Badge />
 
@@ -17,9 +18,11 @@ CollapsibleMenuView.Item will flex between a button when displayed face-up and a
 
 CollapsibleMenuView.Toggle will flex between a checkbox with a label when displayed face-up and a selectable Menu.Item when in a menu.
 
-CollapsibleMenuView.ItemGroup will flex between a button group when displayed face-up and a Menu.ItemGroup when rolled into the ellipsis menu. A selectable ItemGroup will have toggle style selection. An Item group that is not slectable will have it's children roll into the ellipsis menu as non selectable Menu.Items.
+CollapsibleMenuView.ItemGroup will flex between a button group when displayed face-up and a Menu.ItemGroup when rolled into the ellipsis menu. A selectable ItemGroup will have toggle style selection. An Item group that is not selectable will have its children roll into the ellipsis menu as non selectable Menu.Items.
 
 CollapsibleMenuView.Divider will flex between a vertical divider when displayed face-up and a Menu.Divider when in a menu.
+
+To pre-populate the collapsible menu view with menu items that always remain collapsed, use the `alwaysCollapsedMenuItems` prop.
 
 ## Getting Started
 
@@ -54,6 +57,8 @@ import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
 ## Examples
 <BasicView title='CollapsibleMenuView Example' />
+
+<AlwaysCollapsedMenuItemsDemo title='Always collapsed menu items' />
 
 ## Collapsible Menu View props
 <CollapsibleMenuViewProps />

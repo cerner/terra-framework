@@ -35,11 +35,24 @@ const propTypes = {
    * Object containing intl APIs
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }),
+
+  /**
+   *  Puts items under the collapsed (more) menu. More button will be always shown if at least one item is populated here.
+   */
+  alwaysCollapsedMenuItems: PropTypes.arrayOf(PropTypes.element),
 };
+
+const defaultProps = {
+  alwaysCollapsedMenuItems: [],
+};
+
+const prepopulatedBaseDivider = <CollapsibleMenuViewDivider key="prepopulatedBaseDivider" />;
 
 class CollapsibleMenuView extends React.Component {
   constructor(props) {
     super(props);
+
+    this.collapsedMenuAlwaysShown = props.alwaysCollapsedMenuItems.length > 0;
     this.setContainer = this.setContainer.bind(this);
     this.setMenuButton = this.setMenuButton.bind(this);
     this.resetCache = this.resetCache.bind(this);
@@ -89,7 +102,7 @@ class CollapsibleMenuView extends React.Component {
 
       if (calcWidth > availableWidth) {
         // If last child fits in the available space, leave it face up
-        if (i === this.props.children.length - 1 && calcWidth <= width) {
+        if (!this.collapsedMenuAlwaysShown && i === this.props.children.length - 1 && calcWidth <= width) {
           break;
         }
 
@@ -130,14 +143,8 @@ class CollapsibleMenuView extends React.Component {
 
   render() {
     const {
-      children, boundingRef, menuWidth, intl, ...customProps
+      children, boundingRef, menuWidth, intl, alwaysCollapsedMenuItems, ...customProps
     } = this.props;
-    const visibleChildren = React.Children.toArray(children);
-
-    let hiddenChildren = null;
-    if (this.hiddenStartIndex >= 0) {
-      hiddenChildren = visibleChildren.splice(this.hiddenStartIndex);
-    }
     const theme = this.context;
 
     const collapsibleMenuViewClassName = classNames(cx(
@@ -148,8 +155,17 @@ class CollapsibleMenuView extends React.Component {
     customProps.className);
     const menuButtonClassName = cx(
       'menu-button',
-      { hidden: this.menuHidden },
+      { hidden: !this.collapsedMenuAlwaysShown && this.menuHidden },
     );
+    let visibleChildren = children;
+    let hiddenChildren = alwaysCollapsedMenuItems;
+
+    if (this.hiddenStartIndex >= 0) {
+      visibleChildren = React.Children.toArray(children);
+      hiddenChildren = this.collapsedMenuAlwaysShown
+        ? visibleChildren.splice(this.hiddenStartIndex).concat(prepopulatedBaseDivider).concat(hiddenChildren)
+        : visibleChildren.splice(this.hiddenStartIndex).concat(hiddenChildren);
+    }
 
     return (
       <div {...customProps} className={collapsibleMenuViewClassName} ref={this.setContainer}>
@@ -178,5 +194,6 @@ CollapsibleMenuView.Divider = CollapsibleMenuViewDivider;
 
 CollapsibleMenuView.propTypes = propTypes;
 CollapsibleMenuView.contextType = ThemeContext;
+CollapsibleMenuView.defaultProps = defaultProps;
 
 export default injectIntl(CollapsibleMenuView);
