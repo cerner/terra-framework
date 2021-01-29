@@ -340,20 +340,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.setValue('input[name="terra-time-minute-input"]', '30');
       Terra.validates.element('valid-time');
     });
-
-    it('Change date to invalid and modify time.', () => {
-      browser.setValue('input[name="terra-date-year-input"]', '20');
-      browser.setValue('input[name="terra-time-hour-input"]', '12');
-      browser.setValue('input[name="terra-time-minute-input"]', '45');
-      Terra.validates.element('invalid-date');
-    });
-
-    it('Time persists when date becomes valid', () => {
-      browser.setValue('input[name="terra-date-month-input"]', '04');
-      browser.setValue('input[name="terra-date-day-input"]', '18');
-      browser.setValue('input[name="terra-date-year-input"]', '2019');
-      Terra.validates.element('modified-valid-time');
-    });
   });
 
   describe('OnChange Raw', () => {
