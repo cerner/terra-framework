@@ -59,7 +59,7 @@ Terra.describeViewports('Single Item Group Hidden Open', ['tiny', 'small'], () =
 Terra.describeViewports('Collapsed Menu', ['tiny', 'large'], () => {
   it('is always shown and pre populated with menu items when they passed as always collapsed menu items', () => {
     browser.url('/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/pre-populated-collapsed-menu-items');
-    browser.click('[data-collapsible-menu-toggle]');
+    $('[data-collapsible-menu-toggle]').click();
     Terra.validates.element('default', { selector: '#root' });
   });
 });
