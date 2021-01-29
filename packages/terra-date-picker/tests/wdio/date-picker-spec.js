@@ -494,7 +494,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
       });
 
-      it('Increment month input', () => {
+      it('Decrement month input', () => {
         browser.click('input[name="terra-date-month-date-input"]');
         browser.keys('10');
         browser.keys('ArrowLeft');
@@ -502,7 +502,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         Terra.validates.element('decrement month input');
       });
 
-      it('Increment day input', () => {
+      it('Decrement day input', () => {
         browser.click('input[name="terra-date-day-date-input"]');
         browser.keys('10');
         browser.keys('ArrowLeft');
@@ -510,7 +510,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         Terra.validates.element('decrement day input');
       });
 
-      it('Increment year input', () => {
+      it('Decrement year input', () => {
         browser.click('input[name="terra-date-year-date-input"]');
         browser.keys('2009');
         browser.keys('ArrowDown');
