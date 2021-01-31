@@ -1,4 +1,3 @@
-/*
 const selector = '#root';
 const NOTIFICATION_DIALOG_SELECTOR = '[data-terra-notification-dialog]';
 const ACCEPT_ACTION_SELECTOR = '[data-terra-notification-dialog-button="accept"]';
@@ -175,7 +174,7 @@ Terra.describeViewports('Keyboard Accessibility', ['medium'], () => {
 
   it('closes the notification dialog when ENTER is pressed', () => {
     browser.keys('Enter');
-    Terra.validates.element('??', { selector });
+    Terra.validates.element('closes on enter', { selector });
     expect($(NOTIFICATION_DIALOG_SELECTOR).isExisting()).toBeFalsy();
   });
 
@@ -207,4 +206,4 @@ Terra.describeViewports('Keyboard Accessibility', ['medium'], () => {
     browser.keys('Tab');
     expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
   });
-}); */
+});
