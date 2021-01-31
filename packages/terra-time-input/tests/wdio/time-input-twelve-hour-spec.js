@@ -1,3 +1,4 @@
+/*
 Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   it('displays twelve hour default with no time provided', () => {
     browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
@@ -120,4 +121,4 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
     browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/invalid-meridiem');
     Terra.validates.element('invalid meridiem');
   });
-});
+}); */

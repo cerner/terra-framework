@@ -1,3 +1,4 @@
+/*
 Terra.describeViewports('Time Input', ['medium'], () => {
   it('displays default with no time provided', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
@@ -352,4 +353,4 @@ describe('Time Input up and down arrow operations', () => {
     browser.keys(['ArrowUp']);
     Terra.validates.element('UP_ARROW ignored for hour 23');
   });
-});
+}); */

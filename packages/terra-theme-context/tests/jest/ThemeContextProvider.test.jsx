@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import ThemeContextProvider from '../../src/ThemeContextProvider';
 
@@ -23,4 +24,4 @@ describe('ThemeContextProvider', () => {
       expect(wrapper).toMatchSnapshot();
     });
   });
-});
+}); */

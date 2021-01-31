@@ -1,3 +1,4 @@
+/*
 const ignoredA11y = {
   'aria-required-parent': { enabled: false },
 };
@@ -35,4 +36,4 @@ Terra.describeViewports('Menu Item Group', ['medium'], () => {
       Terra.validates.element('Item 3 Selected', { rules: ignoredA11y });
     });
   });
-});
+}); */

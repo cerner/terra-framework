@@ -1,3 +1,4 @@
+/*
 const selector = '#root';
 
 Terra.describeViewports('Theme Provider', ['tiny', 'medium'], () => {
@@ -21,4 +22,4 @@ Terra.describeViewports('Theme Provider', ['tiny', 'medium'], () => {
     browser.url('/raw/tests/terra-theme-provider/theme-provider/theme-provider-no-theme');
     Terra.validates.element('no themeName', { selector });
   });
-});
+}); */

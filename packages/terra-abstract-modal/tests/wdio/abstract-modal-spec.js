@@ -7,12 +7,12 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
       $('button').click();
       expect($('#root').getAttribute('inert')).toEqual('true');
       expect($('#root').getAttribute('aria-hidden')).toEqual('true');
-      Terra.validates.element('open', { selector });
+      Terra.validates.element('open default modal', { selector });
     });
 
     it('clicks outside to close modal', () => {
       $('[class*="ModalOverlay"]').click({ x: 235, y: 5 });
-      Terra.validates.element('closed');
+      Terra.validates.element('closed default modal');
       expect($('#root').getAttribute('inert')).toEqual('false');
       expect($('#root').getAttribute('aria-hidden')).toEqual(null);
       expect($('#modal-open-button').isFocused()).toBeTruthy();
@@ -40,12 +40,12 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
       $('button').click();
       expect($('#root').getAttribute('inert')).toEqual('true');
       expect($('#root').getAttribute('aria-hidden')).toEqual('true');
-      Terra.validates.element('open', { selector });
+      Terra.validates.element('open fullscreen modal', { selector });
     });
 
     it('clicks outside to close modal', () => {
       $('[class*="ModalOverlay"]').click({ x: 410, y: 5 });
-      Terra.validates.element('closed');
+      Terra.validates.element('closed fullscreen modal');
       expect($('#root').getAttribute('inert')).toEqual('false');
       expect($('#root').getAttribute('aria-hidden')).toEqual(null);
       expect($('#modal-open-button').isFocused()).toBeTruthy();
@@ -70,7 +70,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
   describe('Disabled Close On Esc', () => {
     it('displays an open modal', () => {
       browser.url('/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-esc');
-      Terra.validates.element('open', { selector });
+      Terra.validates.element('open and close on esc', { selector });
     });
 
     it('attempts to close modal with ESC', () => {
@@ -85,7 +85,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
   describe('Disabled Close On Outside Click', () => {
     it('displays an open modal', () => {
       browser.url('/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-outside-click');
-      Terra.validates.element('open', { selector });
+      Terra.validates.element('open and close on outside click', { selector });
     });
 
     it('attempts to close modal with outside click', () => {

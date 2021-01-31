@@ -5,7 +5,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       $('[data-application-extension-rollup="true"]').click();
       $('[data-terra-popup-content="true"]').waitForDisplayed();
       browser.pause(50);
-      Terra.validates.element('default');
+      Terra.validates.element('extensions roll up properly');
     });
   });
 
@@ -16,7 +16,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       $('[data-tab-menu-inner="true"]').click();
       $('[data-terra-popup-content="true"]').waitForDisplayed();
       browser.pause(50);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('tabs roll up properly', { selector: '#root' });
     });
   });
 
@@ -26,7 +26,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       $('[data-application-header-utility="true"]').click();
       $('[data-terra-popup-content="true"]').waitForDisplayed();
       browser.pause(50);
-      Terra.validates.element('default');
+      Terra.validates.element('utilities display properly');
     });
   });
 
@@ -36,7 +36,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       $('[data-application-header-utility="true"]').click();
       $('[data-terra-popup-content="true"]').waitForDisplayed();
       browser.pause(50);
-      Terra.validates.element('default');
+      Terra.validates.element('utilities display properly when settings present');
     });
   });
 
@@ -46,7 +46,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       $('[data-application-header-utility="true"]').click();
       $('[data-terra-popup-content="true"]').waitForDisplayed();
       browser.pause(50);
-      Terra.validates.element('default');
+      Terra.validates.element('utilities display properly when custom utility items present');
     });
   });
 
@@ -56,7 +56,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       $('[data-application-header-utility="true"]').click();
       $('[data-terra-popup-content="true"]').waitForDisplayed();
       browser.pause(50);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('hero displays properly', { selector: '#root' });
     });
   });
 
@@ -77,7 +77,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       $('[data-terra-popup-content="true"]').waitForDisplayed();
       $('[data-navigation-utility-item-settings="true"]').click();
       browser.pause(50);
-      Terra.validates.element('default');
+      Terra.validates.element('utilities display properly and onSelectSettings called on clicking settings');
     });
   });
 
@@ -88,7 +88,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       $('[data-terra-popup-content="true"]').waitForDisplayed();
       $('[data-navigation-utility-item-help="true"]').click();
       browser.pause(50);
-      Terra.validates.element('default');
+      Terra.validates.element('utilities display properly and onSelectHelp called on clicking help');
     });
   });
 
@@ -99,7 +99,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       $('[data-terra-popup-content="true"]').waitForDisplayed();
       $('[data-navigation-utility-item-logout="true"]').click();
       browser.pause(50);
-      Terra.validates.element('default');
+      Terra.validates.element('utilities display properly and onSelectLogout called on clicking logout');
     });
   });
 
@@ -130,7 +130,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-application-extension-rollup="true"]').click();
       $('[data-terra-popup-content="true"]').waitForDisplayed();
       browser.pause(50);
-      Terra.validates.element('default');
+      Terra.validates.element('extensions roll up properly');
     });
   });
 
@@ -140,7 +140,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-compact-header-toggle="true"]').waitForDisplayed();
       $('[data-compact-header-toggle="true"]').click();
       browser.pause(250);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('tabs enter the nav drawer', { selector: '#root' });
     });
   });
 
@@ -150,7 +150,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-compact-header-toggle="true"]').waitForDisplayed();
       $('[data-compact-header-toggle="true"]').click();
       browser.pause(250);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('utilities enter the nav drawer', { selector: '#root' });
     });
   });
 
@@ -160,7 +160,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-compact-header-toggle="true"]').waitForDisplayed();
       $('[data-compact-header-toggle="true"]').click();
       browser.pause(250);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('nav drawer button displays when settings present', { selector: '#root' });
     });
   });
 
@@ -170,7 +170,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-compact-header-toggle="true"]').waitForDisplayed();
       $('[data-compact-header-toggle="true"]').click();
       browser.pause(250);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('nav drawer button displays when custom utility items specified', { selector: '#root' });
     });
   });
 
@@ -180,7 +180,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-compact-header-toggle="true"]').waitForDisplayed();
       $('[data-compact-header-toggle="true"]').click();
       browser.pause(250);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('hero enters the nav drawer', { selector: '#root' });
     });
   });
 
@@ -190,7 +190,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-compact-header-toggle="true"]').waitForDisplayed();
       $('[data-compact-header-toggle="true"]').click();
       browser.pause(250);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('hero and user enters nav drawer', { selector: '#root' });
     });
   });
 
@@ -200,7 +200,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-compact-header-toggle="true"]').waitForDisplayed();
       $('[data-compact-header-toggle="true"]').click();
       browser.pause(250);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('ApplicationNavigation displays nav drawer', { selector: '#root' });
     });
   });
 
@@ -210,7 +210,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-compact-header-toggle="true"]').waitForDisplayed();
       $('[data-compact-header-toggle="true"]').click();
       browser.pause(500);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('ApplicationNotifications displays nav drawer', { selector: '#root' });
     });
   });
 
@@ -220,7 +220,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-compact-header-toggle="true"]').waitForDisplayed();
       $('[data-compact-header-toggle="true"]').click();
       browser.pause(250);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('ApplicationNavigation displays nav drawer and onDrawerMenuStateChange callback triggered', { selector: '#root' });
     });
   });
 
@@ -231,7 +231,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-compact-header-toggle="true"]').click();
       $('[data-navigation-drawer-item-settings="true"]').click();
       browser.pause(250);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('ApplicationNavigation displays nav drawer and onSelectSettings triggered', { selector: '#root' });
     });
   });
 
@@ -242,7 +242,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-compact-header-toggle="true"]').click();
       $('[data-navigation-drawer-item-help="true"]').click();
       browser.pause(250);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('ApplicationNavigation displays the nav drawer and onSelectHelp triggered', { selector: '#root' });
     });
   });
 
@@ -253,18 +253,18 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
       $('[data-compact-header-toggle="true"]').click();
       $('[data-navigation-drawer-item-logout="true"]').click();
       browser.pause(250);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('ApplicationNavigation displays nav drawer and onSelectLogout triggered', { selector: '#root' });
     });
   });
 
-  describe('ApplicationNavigation displays the nav drawer and clicking outside closes nav drawer ', () => {
+  describe('ApplicationNavigation displays the nav drawer and clicking outside closes nav drawer', () => {
     it('open drawer', () => {
       browser.url('/raw/tests/terra-application-navigation/application-navigation/application-navigation');
       $('[data-compact-header-toggle="true"]').waitForDisplayed();
       $('[data-compact-header-toggle="true"]').click();
       $('[class*="Overlay"]').click({ button: 'left' });
       browser.pause(250);
-      Terra.validates.element('default', { selector: '#root' });
+      Terra.validates.element('ApplicationNavigation displays nav drawer and clicking outside closes nav drawer', { selector: '#root' });
     });
   });
 

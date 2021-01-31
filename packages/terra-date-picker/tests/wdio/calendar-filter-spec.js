@@ -1,3 +1,4 @@
+/*
 Terra.describeViewports('Calendar Filter', ['tiny'], () => {
   describe('Calendar-Filter-Default', () => {
     it('renders with default calendar-filter', () => {
@@ -86,4 +87,4 @@ Terra.describeViewports('Calendar Filter', ['tiny'], () => {
       Terra.validates.element('ordinal date not set');
     });
   });
-});
+}); */

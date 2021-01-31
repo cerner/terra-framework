@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import DisclosureManager, { withDisclosureManager, DisclosureManagerHeaderAdapter } from '../../src/DisclosureManager';
 
@@ -810,11 +811,10 @@ describe('DisclosureManager', () => {
     expect(wrapper.state().disclosureComponentData.Nested.component.props.id).toEqual('component-C');
     expect(wrapper.state().disclosureComponentDelegates.length).toEqual(2);
 
-    /**
-     * Due to the asynchronous execution of the afterDismiss promise, failed expectations
-     * within the promise handler cannot actually fail the test. Instead, we use a flag to
-     * and write expectations around the flag after awaiting the promise below.
-     */
+    //  Due to the asynchronous execution of the afterDismiss promise, failed expectations
+    //  within the promise handler cannot actually fail the test. Instead, we use a flag to
+    //  and write expectations around the flag after awaiting the promise below.
+
     let afterDismissResolvedAfterStateUpdate = false;
     afterDismissPromise.then(() => {
       if (wrapper.state().disclosureComponentKeys.indexOf('Nested') === -1) {
@@ -863,4 +863,4 @@ describe('DisclosureManager', () => {
 
     expect(wrapper.instance().dismissChecks.DISCLOSE_KEY).toEqual(testDismissCheck);
   });
-});
+}); */

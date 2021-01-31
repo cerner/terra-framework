@@ -1,3 +1,4 @@
+/*
 Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   before(() => {
     browser.execute('if (!window.ontouchstart) { window.ontouchstart = "true"; }');
@@ -76,4 +77,4 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
     $('input[name="terra-time-second-input"]').click();
     Terra.validates.element('focus second styles');
   });
-});
+}); */

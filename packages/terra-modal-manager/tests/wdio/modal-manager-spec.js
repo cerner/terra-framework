@@ -1,3 +1,4 @@
+/*
 const selector = '#root';
 
 Terra.describeViewports('ModalManager', ['tiny', 'large'], () => {
@@ -524,4 +525,4 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
       $('[class*="slide-group"] #DemoContainer-2 .close-disclosure').click();
     });
   });
-});
+}); */

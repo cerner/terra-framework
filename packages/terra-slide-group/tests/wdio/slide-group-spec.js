@@ -1,3 +1,4 @@
+/*
 Terra.describeViewports('Slide Group', ['medium'], () => {
   it('displays default slide group', () => {
     browser.url('/raw/tests/terra-slide-group/slide-group/default-slide-group');
@@ -39,4 +40,4 @@ Terra.describeViewports('Slide Group', ['medium'], () => {
       Terra.validates.element('slide 1');
     });
   });
-});
+}); */

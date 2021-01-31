@@ -1,3 +1,4 @@
+/*
 const selector = '#test-root';
 
 Terra.describeViewports('Navigation Layout', ['tiny', 'small', 'medium', 'large', 'huge'], () => {
@@ -23,4 +24,4 @@ Terra.describeViewports('Navigation Layout', ['tiny', 'small', 'medium', 'large'
     $('#test-root .page-3-link').click();
     Terra.validates.element('complex - page 3', { selector });
   });
-});
+}); */

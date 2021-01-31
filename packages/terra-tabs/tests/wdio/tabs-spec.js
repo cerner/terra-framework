@@ -1,3 +1,4 @@
+/*
 // Verify tabs collapse appropriately
 Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
   it('Default', () => {
@@ -115,4 +116,4 @@ Terra.describeViewports('Tabs - Responsive to Parent', ['huge'], () => {
     $('[class*="tab-content"]').moveTo();
     Terra.validates.element('after');
   });
-});
+}); */
