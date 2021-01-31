@@ -1,4 +1,3 @@
-/*
 const selector = '#root';
 
 Terra.describeViewports('Dialog Modal', ['tiny', 'medium', 'large'], () => {
@@ -47,7 +46,7 @@ describe('Dialog Modal', () => {
 
     it('does not focus on interactive content within the app when the modal is open - tab cycle forward', () => {
       browser.keys(['Tab']);
-      Terra.validates.element('focused shifted outside the end of the modal', { selector: '#root' });
+      Terra.validates.element('focused shifted outside the end of the modal on tab cycle', { selector: '#root' });
     });
 
     it('shifts focus back onto interactive elements within the modal', () => {
@@ -87,4 +86,4 @@ describe('Dialog Modal', () => {
       Terra.validates.element('Modal Closed', { selector: '#root' });
     });
   });
-}); */
+});

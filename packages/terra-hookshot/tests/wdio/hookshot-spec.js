@@ -1,4 +1,3 @@
-/*
 Terra.describeViewports('Hookshot', ['medium'], () => {
   it('Displays default hookshot', () => {
     browser.url('/raw/tests/terra-hookshot/hookshot/default-hookshot');
@@ -332,4 +331,4 @@ Terra.describeViewports('Hookshot', ['small'], () => {
     $('#test-coords-content').waitForDisplayed();
     Terra.validates.element('positioned by target coordinates', { selector: '#coords-test' });
   });
-}); */
+});
