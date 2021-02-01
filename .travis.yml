@@ -5,6 +5,7 @@ services:
 branches:
   only:
     - main
+    - terra-functional-testing-with-screenshots-part1
     - terra-functional-testing-with-screenshots-part2
 cache:
   directories:
