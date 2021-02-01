@@ -5,9 +5,9 @@ services:
 branches:
   only:
     - main
+    - terra-functional-testing
     - terra-functional-testing-with-screenshots-part1
     - terra-functional-testing-with-screenshots-part2
-    - terra-functional-testing-with-screenshots-part3
 cache:
   directories:
     - travis-build
