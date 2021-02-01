@@ -1,4 +1,3 @@
-/*
 import FormValidationUtil from '../../lib/FormValidationUtil';
 
 describe('isUnderMaxLength', () => {
@@ -195,4 +194,4 @@ describe('isNonnegative', () => {
     expect(FormValidationUtil.isNonnegative(0)).toBe(false);
     expect(FormValidationUtil.isNonnegative(null)).toBe(false);
   });
-}); */
+});

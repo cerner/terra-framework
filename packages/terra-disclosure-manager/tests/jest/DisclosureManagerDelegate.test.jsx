@@ -1,4 +1,3 @@
-/*
 import DisclosureManagerDelegate from '../../src/DisclosureManagerDelegate';
 
 const disclose = () => {};
@@ -184,4 +183,4 @@ describe('isEqual', () => {
     expect(DisclosureManagerDelegate.isEqual(DisclosureManagerDelegate.create({}), undefined)).toBe(false);
     expect(DisclosureManagerDelegate.isEqual(undefined, DisclosureManagerDelegate.create({}))).toBe(false);
   });
-}); */
+});

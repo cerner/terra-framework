@@ -1,4 +1,3 @@
-/*
 import DisclosureManagerHeaderAdapterContext from '../../src/DisclosureManagerHeaderAdapterContext';
 
 describe('DisclosureManagerHeaderAdapterContext', () => {
@@ -6,4 +5,4 @@ describe('DisclosureManagerHeaderAdapterContext', () => {
     expect(DisclosureManagerHeaderAdapterContext.Provider).toBeDefined();
     expect(DisclosureManagerHeaderAdapterContext.Consumer).toBeDefined();
   });
-}); */
+});

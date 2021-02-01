@@ -1,4 +1,3 @@
-/*
 import ThemeContext from '../../src/ThemeContext';
 
 describe('TerraThemeContext', () => {
@@ -6,4 +5,4 @@ describe('TerraThemeContext', () => {
     expect(ThemeContext.Provider).toBeDefined();
     expect(ThemeContext.Consumer).toBeDefined();
   });
-}); */
+});
