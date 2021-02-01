@@ -1,4 +1,3 @@
-/*
 import React from 'react';
 
 import NavigationPromptCheckpointHOC from '../../src/NavigationPromptCheckpoint';
@@ -436,4 +435,4 @@ describe('NavigationPrompt', () => {
       expect(mockSetState.mock.calls.length).toEqual(0);
     });
   });
-}); */
+});
