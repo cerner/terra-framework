@@ -116,11 +116,13 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     it('should not accept keyboard input', () => {
-      expect($('input[name="terra-date-date-input"]').setValue.bind($('input[name="terra-date-date-input"]'), '06/01/2017')).toThrow(Error);
+      $('input[name="terra-date-date-input"]').setValue.bind($('input[name="terra-date-date-input"]'), '06/01/2017');
+      Terra.validates.element('disabled reject keyboard input');
     });
 
     it('should not accept mouse interaction', () => {
-      expect($('[class*="button"]').click.bind($('[class*="button"]'))).toThrow(Error);
+      $('[class*="button"]').click.bind($('[class*="button"]'));
+      Terra.validates.element('disabled reject mouse interaction');
     });
   });
 
@@ -133,7 +135,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     it('should not accept keyboard input', () => {
-      expect($('input[name="terra-date-date-input"]').setValue.bind($('input[name="terra-date-date-input"]'), '06/01/2017')).toThrow(Error);
+      $('input[name="terra-date-date-input"]').setValue.bind($('input[name="terra-date-date-input"]'), '06/01/2017');
+      Terra.validates.element('read-only reject keyboard input');
     });
 
     it('should not open the date picker', () => {
