@@ -1,4 +1,3 @@
-/*
 import React from 'react';
 import { act } from 'react-dom/test-utils';
 import DisclosureManagerHeaderAdapter from '../../src/DisclosureManagerHeaderAdapter';
@@ -59,12 +58,13 @@ describe('DisclosureManagerHeaderAdapter', () => {
     expect(mockRegister.mock.calls[2][0].title).toBe('New Title');
     expect(mockRegister.mock.calls[2][0].collapsibleMenuView).toEqual(testMenu2);
 
-    // Test that registration doesn't happen for existing data.
-
+    /**
+     * Test that registration doesn't happen for existing data.
+     */
     act(() => {
       wrapper.setProps({ title: 'New Title' });
       wrapper.update();
     });
     expect(mockRegister.mock.calls.length).toBe(3);
   });
-}); */
+});
