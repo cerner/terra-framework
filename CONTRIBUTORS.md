@@ -37,6 +37,7 @@ Cerner Corporation
 - Dianna McGinn [@DMcginn]
 - Jeremy Fuksa [@jeremyfuksa]
 - Jason A Savage [@jasonsavage]
+- Marcell Neszt [@EPAMMarcell]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -75,3 +76,4 @@ Cerner Corporation
 [@DMcginn]: https://github.com/DMcginn
 [@jeremyfuksa]: https://github.com/jeremyfuksa
 [@jasonsavage]: https://github.com/TheSavageDev
+[@EPAMMarcell]: https://github.com/EPAMMarcell
