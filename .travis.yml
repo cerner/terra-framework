@@ -7,6 +7,7 @@ branches:
     - main
     - feature-terra-functional-testing
     - terra-functional-testing
+    - terra-functional-testing-with-screenshots-part1
 cache:
   directories:
     - travis-build
