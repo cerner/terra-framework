@@ -1,7 +1,7 @@
 {
   "Terra.applicationNavigation.tabs.rollupButtonDescription": "Fler navigeringslänkar",
   "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "Fler navigeringslänkar",
-  "Terra.applicationNavigation.header.utilityButtonTitleUser": "Användarinställningar",
+  "Terra.applicationNavigation.header.utilityButtonTitleUser": "Användarinställningar för: {currentUserName}",
   "Terra.applicationNavigation.header.utilityButtonTitleNoUser": "Alternativ",
   "Terra.applicationNavigation.drawerMenu.navigation": "Navigeringsobjekt",
   "Terra.applicationNavigation.drawerMenu.utilities": "Verktygsobjekt",

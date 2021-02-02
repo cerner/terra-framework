@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fix screen reader to read username along with settings button.
+
 ## 1.44.0 - (January 26, 2021)
 
 * Changed

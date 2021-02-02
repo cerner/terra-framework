@@ -1,7 +1,7 @@
 {
   "Terra.applicationNavigation.tabs.rollupButtonDescription": "Meer navigatie",
   "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "Meer navigatie",
-  "Terra.applicationNavigation.header.utilityButtonTitleUser": "Gebruikersinstellingen",
+  "Terra.applicationNavigation.header.utilityButtonTitleUser": "Gebruikersinstellingen voor {currentUserName}",
   "Terra.applicationNavigation.header.utilityButtonTitleNoUser": "Opties",
   "Terra.applicationNavigation.drawerMenu.navigation": "Navigatie-items",
   "Terra.applicationNavigation.drawerMenu.utilities": "Hulp-items",
