@@ -5,6 +5,7 @@ services:
 branches:
   only:
     - main
+    - feature-terra-functional-testing
     - terra-functional-testing
     - terra-functional-testing-with-screenshots-part1
     - terra-functional-testing-with-screenshots-part2
