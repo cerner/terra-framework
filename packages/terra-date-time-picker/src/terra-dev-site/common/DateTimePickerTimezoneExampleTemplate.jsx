@@ -39,11 +39,11 @@ function DateTimePickerTimezoneTemplate(props) {
     <>
       <p>
         Selected ISO Date Time:
-        <span id="date-time-value">{dateTime}</span>
+        <span data-date-time-value>{dateTime}</span>
       </p>
       <p>
         Initial Time Zone:
-        <span id="date-time-timeZone">{timeZone}</span>
+        <span data-date-time-timeZone>{timeZone}</span>
       </p>
       <DateTimePicker
         name="date-time-picker-example"

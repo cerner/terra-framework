@@ -7,7 +7,8 @@
 * Changed
   * Updated to support a peer dependency of react-intl v2-v5
   * Updated FormattedMessage child function to join if given an array.
-  
+  * Updated to terra-functional-testing
+
 * Fixed
  * Fixed broken links in documentation.
 

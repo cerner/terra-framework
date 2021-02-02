@@ -140,10 +140,9 @@ it('should validate the checkAmbiguousTime helper', () => {
 });
 
 it('should validate the createSafeDate helper', () => {
-  const momentDate = moment.tz('2019-06-10T16:00:01', 'America/Chicago');
-
+  const momentDate = moment.tz('2019-06-10T16:00:01', 'America/Los_Angeles');
   // Valid date and timzone
-  expect(DateTimeUtils.createSafeDate('2019-06-10T16:00:01', 'America/Chicago')).toEqual(momentDate);
+  expect(DateTimeUtils.createSafeDate('2019-06-10T16:00:01', 'America/Los_Angeles')).toEqual(momentDate);
   // Valid date and invalid timezone
   expect(DateTimeUtils.createSafeDate('2019-06-10T16:00:01', 'America/Test')).not.toEqual(momentDate);
   // Invalid date and invalid timezone

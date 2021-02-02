@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Changed
+  * Updated to terra-functional-testing
 * Fixed
   * Removed re-declaration of $ ignore
 

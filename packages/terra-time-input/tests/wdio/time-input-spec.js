@@ -56,14 +56,14 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
   it('displays focus hour styles', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/default-time');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
     Terra.validates.element('focus hour styles');
   });
 
   it('displays focus time component styles', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/incomplete-time');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
     Terra.validates.element('focus time component styles');
   });
@@ -71,7 +71,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
   it('displays focus minute styles', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/default-time');
     browser.refresh();
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+    $('#timeInput input[name="terra-time-minute-time-input"]').click();
     Terra.hideInputCaret('#timeInput input[name=\'terra-time-minute-time-input\']');
     Terra.validates.element('focus minute styles');
   });
@@ -79,7 +79,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
   it('displays focus second styles', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/second-time');
     browser.refresh();
-    browser.click('#timeInput input[name="terra-time-second-time-input"]');
+    $('#timeInput input[name="terra-time-second-time-input"]').click();
     Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
     Terra.validates.element('focus second styles');
@@ -91,7 +91,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
     Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('123456');
     Terra.validates.element('trigger onChange');
   });
@@ -101,9 +101,9 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('2');
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+    $('#timeInput input[name="terra-time-minute-time-input"]').click();
     Terra.validates.element('prepend 0 to single digit');
   });
 
@@ -112,7 +112,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('3');
     Terra.validates.element('prepend 0 to hour more than 3');
   });
@@ -122,7 +122,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('2');
     Terra.validates.element('does not prepend 0 to hour less than 3');
   });
@@ -132,7 +132,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('24');
     Terra.validates.element('does not accept hour more than 23');
   });
@@ -142,9 +142,9 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+    $('#timeInput input[name="terra-time-minute-time-input"]').click();
     browser.keys('2');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     Terra.validates.element('prepends 0 on single digit minute');
   });
 
@@ -153,7 +153,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+    $('#timeInput input[name="terra-time-minute-time-input"]').click();
     browser.keys('6');
     Terra.validates.element('prepends 0 on minute input of 6 or more');
   });
@@ -163,7 +163,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+    $('#timeInput input[name="terra-time-minute-time-input"]').click();
     browser.keys('5');
     Terra.validates.element('does not prepend 0 to minute');
   });
@@ -173,7 +173,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+    $('#timeInput input[name="terra-time-minute-time-input"]').click();
     browser.keys('66');
     Terra.validates.element('does not accept minute input greater than 59');
   });
@@ -184,7 +184,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
     Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+    $('#timeInput input[name="terra-time-minute-time-input"]').click();
     browser.keys(['Delete']);
     Terra.validates.element('delete focuses hour');
   });
@@ -194,9 +194,9 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-second-time-input"]');
+    $('#timeInput input[name="terra-time-second-time-input"]').click();
     browser.keys('2');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     Terra.validates.element('prepends 0 on single digit second');
   });
 
@@ -205,7 +205,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-second-time-input"]');
+    $('#timeInput input[name="terra-time-second-time-input"]').click();
     browser.keys('6');
     Terra.validates.element('prepends 0 on second input of 6 or more');
   });
@@ -215,7 +215,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-second-time-input"]');
+    $('#timeInput input[name="terra-time-second-time-input"]').click();
     browser.keys('5');
     Terra.validates.element('does not prepend 0 on second input less than 6');
   });
@@ -225,7 +225,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-second-time-input"]');
+    $('#timeInput input[name="terra-time-second-time-input"]').click();
     browser.keys('66');
     Terra.validates.element('does not accept second input greater than 59');
   });
@@ -235,7 +235,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-second-time-input"]');
+    $('#timeInput input[name="terra-time-second-time-input"]').click();
     browser.keys(['Delete']);
 
     Terra.validates.element('delete focuses minute');
@@ -246,7 +246,7 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('747');
     Terra.validates.element('trigger onChange for onBlur');
   });
@@ -256,9 +256,9 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('1223');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys(['ArrowLeft', 'ArrowRight', 'Delete']);
     Terra.validates.element('onChange not triggered for hour with one digit');
   });
@@ -268,9 +268,9 @@ Terra.describeViewports('Time input onChange operations', ['medium'], () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('1223');
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+    $('#timeInput input[name="terra-time-minute-time-input"]').click();
     browser.keys(['ArrowLeft', 'ArrowRight', 'Delete']);
     Terra.validates.element('onChange not triggered for minute with one digit');
   });
@@ -280,28 +280,28 @@ describe('Time Input onBlur operations', () => {
   describe('Time Input onBlur', () => {
     it('clicks the hour input and onBlur is not triggered', () => {
       browser.url('/raw/tests/terra-time-input/time-input/time-input/focus-blur');
-      browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-      expect(browser.getText('#blur-count')).to.equal('0');
-      expect(browser.getText('#focus-count')).to.equal('1');
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      expect($('#blur-count').getText()).toEqual('0');
+      expect($('#focus-count').getText()).toEqual('1');
     });
 
     it('tabs to the minute input and onBlur is not triggered', () => {
       browser.keys('Tab');
-      expect(browser.getText('#blur-count')).to.equal('0');
-      expect(browser.getText('#focus-count')).to.equal('1');
+      expect($('#blur-count').getText()).toEqual('0');
+      expect($('#focus-count').getText()).toEqual('1');
     });
 
     it('tabs to the meridiem and onBlur is not triggered', () => {
       browser.keys('Tab');
-      expect(browser.getText('#blur-count')).to.equal('0');
-      expect(browser.getText('#focus-count')).to.equal('1');
+      expect($('#blur-count').getText()).toEqual('0');
+      expect($('#focus-count').getText()).toEqual('1');
     });
 
     it('tabs out of the component and onBlur is triggered', () => {
       browser.keys('Tab'); // Move focus to "p.m."
       browser.keys('Tab'); // Tab out of the component.
-      expect(browser.getText('#blur-count')).to.equal('1');
-      expect(browser.getText('#focus-count')).to.equal('1');
+      expect($('#blur-count').getText()).toEqual('1');
+      expect($('#focus-count').getText()).toEqual('1');
     });
   });
 });
@@ -312,9 +312,9 @@ describe('Time Input up and down arrow operations', () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('23');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys(['ArrowDown']);
     Terra.validates.element('DOWN_ARROW decrements hour by 1');
   });
@@ -324,9 +324,9 @@ describe('Time Input up and down arrow operations', () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('00');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys(['ArrowDown']);
     Terra.validates.element('DOWN_ARROW ignored for hour 00');
   });
@@ -336,7 +336,7 @@ describe('Time Input up and down arrow operations', () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys(['ArrowUp', 'ArrowUp']);
     Terra.validates.element('UP_ARROW increments hour by 1');
   });
@@ -346,9 +346,9 @@ describe('Time Input up and down arrow operations', () => {
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys('23');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys(['ArrowUp']);
     Terra.validates.element('UP_ARROW ignored for hour 23');
   });

@@ -9,6 +9,9 @@
 
 ## 4.62.0 - (January 5, 2021)
 
+* Changed
+  * Updated to terra-functional-testing
+
 * Fixed
  * Fixed broken links in documentation.
 

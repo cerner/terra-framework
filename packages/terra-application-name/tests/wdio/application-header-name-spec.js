@@ -1,7 +1,7 @@
 Terra.describeViewports('ApplicationHeaderName', ['tiny', 'medium'], () => {
   it('Displays a default application header name', () => {
     browser.url('/raw/tests/terra-application-name/application-name/application-header-name-default');
-    browser.waitForVisible('[class*="demo-image-container"]');
+    $('[class*="demo-image-container"]').waitForDisplayed();
     Terra.validates.element('default', { selector: '#default' });
   });
 

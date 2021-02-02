@@ -3,20 +3,20 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
   it('Default', () => {
     browser.url('/raw/tests/terra-tabs/tabs/tabs/default-tabs');
     browser.pause(1000);
-    browser.moveToObject('[class*="tab-content"]');
+    $('[class*="tab-content"]').moveTo();
     Terra.validates.element('default', { selector: '#root' });
   });
 
   it('displays Extended tabs', () => {
     browser.url('/raw/tests/terra-tabs/tabs/tabs/extended-tabs');
     browser.refresh();
-    browser.moveToObject('[class*="tab-content"]');
+    $('[class*="tab-content"]').moveTo();
     Terra.validates.element('extended', { selector: '#root' });
   });
 
   it('displays Icon Only Tabs', () => {
     browser.url('/raw/tests/terra-tabs/tabs/tabs/default-icon-only-tabs');
-    browser.moveToObject('[class*="tab-content"]');
+    $('[class*="tab-content"]').moveTo();
     Terra.validates.element('icon only');
   });
 
@@ -34,11 +34,11 @@ Terra.describeViewports('Responsive Hidden Open', ['tiny', 'small', 'medium', 'l
   });
 
   it('should close menu when tab is selected', () => {
-    browser.waitForVisible('[data-terra-tabs-menu]');
-    browser.click('[data-terra-tabs-menu]');
+    $('[data-terra-tabs-menu]').waitForDisplayed();
+    $('[data-terra-tabs-menu]').click();
 
     Terra.validates.element('0', { selector: '#root' });
-    browser.click('#tab12');
+    $('#tab12').click();
 
     Terra.validates.element('1', { selector: '#root' });
   });
@@ -50,13 +50,13 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
     it('Default', () => {
       browser.url('/raw/tests/terra-tabs/tabs/tabs/default-tabs');
       browser.refresh();
-      browser.moveToObject('[class*="tab-content"]');
+      $('[class*="tab-content"]').moveTo();
     });
 
     describe('Collapsible active focus', () => {
       it('Collapsible active focus', () => {
-        browser.waitForVisible('#tab2');
-        browser.click('#tab2');
+        $('#tab2').waitForDisplayed();
+        $('#tab2').click();
         Terra.validates.element('Collapsible active focus');
       });
     });
@@ -64,7 +64,7 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
 
   it('Fill Parent Tabs', () => {
     browser.url('/raw/tests/terra-tabs/tabs/tabs/fill-parent-tabs');
-    browser.moveToObject('[class*="tab-content"]');
+    $('[class*="tab-content"]').moveTo();
     Terra.validates.element('fill parent');
   });
 
@@ -75,8 +75,8 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
     });
 
     it('Additional Tabs', () => {
-      browser.click('button');
-      browser.waitForVisible('#tabsWrapper-20');
+      $('button').click();
+      $('#tabsWrapper-20').waitForDisplayed();
       Terra.validates.element('after', { selector: '#tabsWrapper-20' });
     });
   });
@@ -102,7 +102,7 @@ Terra.describeViewports('Tabs - Uncollapsed', ['tiny'], () => {
 Terra.describeViewports('Tabs - Responsive to Window', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
   it('Responsive to Window', () => {
     browser.url('/raw/tests/terra-tabs/tabs/tabs/tabs-responsive-to-window');
-    browser.moveToObject('[class*="tab-content"]');
+    $('[class*="tab-content"]').moveTo();
     Terra.validates.element('responsive to window', { selector: '#tabs-container' });
   });
 });
@@ -111,8 +111,8 @@ Terra.describeViewports('Tabs - Responsive to Parent', ['huge'], () => {
   it('Responsive to Parent', () => {
     browser.url('/raw/tests/terra-tabs/tabs/tabs/tabs-responsive-to-parent');
     Terra.validates.element('before');
-    browser.click('button');
-    browser.moveToObject('[class*="tab-content"]');
+    $('button').click();
+    $('[class*="tab-content"]').moveTo();
     Terra.validates.element('after');
   });
 });
