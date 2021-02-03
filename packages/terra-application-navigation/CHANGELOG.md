@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.45.0 - (February 2, 2021)
+
 * Fixed
   * Fix screen reader to read username along with settings button.
   * Updated sv translations due to feedback from the i18n team.
