@@ -2,10 +2,12 @@
 
 ## Unreleased
 
+* Fixed
+  * Fix screen reader to read username along with user settings.
+
 ## 1.45.0 - (February 2, 2021)
 
 * Fixed
-  * Fix screen reader to read username along with user settings.
   * Updated sv translations due to feedback from the i18n team.
 
 ## 1.44.0 - (January 26, 2021)
