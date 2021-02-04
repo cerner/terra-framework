@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated color for disabled MenuItem text in clinical-lowlight-theme to `#656565`.
+
 ## 6.48.0 - (February 2, 2021)
 
 * Changed
