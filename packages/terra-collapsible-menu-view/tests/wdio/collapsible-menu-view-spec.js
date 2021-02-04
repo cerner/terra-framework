@@ -55,3 +55,11 @@ Terra.describeViewports('Single Item Group Hidden Open', ['tiny', 'small'], () =
     Terra.validates.element('single item group hidden open', { selector: '#root' });
   });
 });
+
+Terra.describeViewports('Collapsed Menu', ['tiny', 'large'], () => {
+  it('is always shown and pre populated with menu items when they passed as always collapsed menu items', () => {
+    browser.url('/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/pre-populated-collapsed-menu-items');
+    $('[data-collapsible-menu-toggle]').click();
+    Terra.validates.element('collapsed menu', { selector: '#root' });
+  });
+});
