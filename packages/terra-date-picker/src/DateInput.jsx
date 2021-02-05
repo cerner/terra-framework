@@ -271,10 +271,11 @@ const DatePickerInput = (props) => {
 
   /**
    * Sets state for the day, month, and year.
+   * @param {object} event - Event object
    * @param {string} inputValue - The input value to set in state.
    * @param {number} type - The inputType (day, month, or year).
    */
-  const setDate = (inputValue, type) => {
+  const setDate = (event, inputValue, type) => {
     if (type === DateUtil.inputType.DAY) {
       dateDispatch({ day: inputValue });
     } else if (type === DateUtil.inputType.MONTH) {
@@ -283,7 +284,9 @@ const DatePickerInput = (props) => {
       dateDispatch({ year: inputValue });
     }
 
-    moveFocusOnChange(inputValue, type);
+    if (event.type !== 'keydown') {
+      moveFocusOnChange(inputValue, type);
+    }
   };
 
   /**
@@ -331,7 +334,7 @@ const DatePickerInput = (props) => {
       }
     }
 
-    setDate(inputValue, type);
+    setDate(event, inputValue, type);
   };
 
   const handleDayChange = (event) => {
@@ -425,12 +428,10 @@ const DatePickerInput = (props) => {
 
     if (event.keyCode === KEY_UP) {
       const incrementedDay = DateUtil.incrementDay(date.day, date.month, date.year);
-      dateDispatch({ day: incrementedDay });
-      setDayInitialFocused(false);
+      handleDateChange(event, incrementedDay, DateUtil.inputType.DAY);
     } else if (event.keyCode === KEY_DOWN) {
       const decrementedDay = DateUtil.decrementDay(date.day, date.month, date.year);
-      dateDispatch({ day: decrementedDay });
-      setDayInitialFocused(false);
+      handleDateChange(event, decrementedDay, DateUtil.inputType.DAY);
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
@@ -457,12 +458,10 @@ const DatePickerInput = (props) => {
 
     if (event.keyCode === KEY_UP) {
       const incrementedMonth = DateUtil.incrementMonth(date.month);
-      dateDispatch({ month: incrementedMonth });
-      setMonthInitialFocused(false);
+      handleDateChange(event, incrementedMonth, DateUtil.inputType.MONTH);
     } else if (event.keyCode === KEY_DOWN) {
       const decrementedMonth = DateUtil.decrementMonth(date.month);
-      dateDispatch({ month: decrementedMonth });
-      setMonthInitialFocused(false);
+      handleDateChange(event, decrementedMonth, DateUtil.inputType.MONTH);
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
@@ -491,12 +490,10 @@ const DatePickerInput = (props) => {
 
     if (event.keyCode === KEY_UP) {
       const incrementedYear = DateUtil.incrementYear(date.year);
-      dateDispatch({ year: incrementedYear });
-      setYearInitialFocused(false);
+      handleDateChange(event, incrementedYear, DateUtil.inputType.YEAR);
     } else if (event.keyCode === KEY_DOWN) {
       const decrementedYear = DateUtil.decrementYear(date.year);
-      dateDispatch({ year: decrementedYear });
-      setYearInitialFocused(false);
+      handleDateChange(event, decrementedYear, DateUtil.inputType.YEAR);
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
