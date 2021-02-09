@@ -1,4 +1,3 @@
-/*
 const moment = require('moment-timezone');
 
 Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
@@ -567,4 +566,3 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     expect($('[name="terra-date-input"]').getValue()).toEqual(moment().tz('America/Chicago').format('MM/DD/YYYY'));
   });
 });
-*/
