@@ -13,7 +13,7 @@
 ## 4.7.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 4.6.0 - (December 8, 2020)
 
