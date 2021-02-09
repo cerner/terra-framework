@@ -1,4 +1,3 @@
-/*
 const selector = '#test-infinite-list';
 
 Terra.describeViewports('InfiniteList', ['small'], () => {
@@ -59,4 +58,4 @@ Terra.describeViewports('InfiniteList', ['small'], () => {
       Terra.validates.element('after-update', { selector });
     });
   });
-}); */
+});

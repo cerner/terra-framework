@@ -6,12 +6,12 @@
 
 * Changed
   * Update failing jest tests.
-  * Updated to use terra-functional-testing
+  * Updated to terra-functional-testing
 
 ## 3.56.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 3.55.0 - (December 8, 2020)
 

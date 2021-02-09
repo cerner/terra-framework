@@ -12,7 +12,7 @@
   * Updated `DateInputField` to use just `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 1.24.0 - (November 24, 2020)
 

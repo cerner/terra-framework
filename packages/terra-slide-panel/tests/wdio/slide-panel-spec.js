@@ -1,4 +1,3 @@
-/*
 const context = '[data-terra-dev-site-content] *:first-child';
 
 Terra.describeViewports('Slide panel', ['large'], () => {
@@ -91,4 +90,4 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       Terra.validates.element('panel with start position', { selector: '#root' });
     });
   });
-}); */
+});

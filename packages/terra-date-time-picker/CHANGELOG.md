@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Updated to use terra-functional-testing
+  * Updated to terra-functional-testing
 
 ## 4.56.0 - (January 26, 2021)
 
@@ -17,7 +17,7 @@
   * Updated to use `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 4.54.0 - (December 8, 2020)
 
