@@ -74,7 +74,7 @@ const propTypes = {
    */
   isInvalid: PropTypes.bool,
   /**
-   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`
+   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
    */
   maxDate: PropTypes.string,
   /**
