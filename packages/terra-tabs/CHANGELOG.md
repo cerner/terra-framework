@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## 6.49.1 - (February 9, 2021)
+## 6.50.0 - (February 9, 2021)
 
 * Changed
   * Minor dependency version bump
