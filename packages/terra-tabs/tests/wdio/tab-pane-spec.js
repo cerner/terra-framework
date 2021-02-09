@@ -1,4 +1,3 @@
-/*
 Terra.describeViewports('TabPane', ['tiny'], () => {
   it('displays with Text Only', () => {
     browser.url('/raw/tests/terra-tabs/tabs/tab-pane/text-only-tab-pane');
@@ -24,4 +23,4 @@ Terra.describeViewports('TabPane', ['tiny'], () => {
     browser.url('/raw/tests/terra-tabs/tabs/tab-pane/long-text-tab-pane');
     Terra.validates.element('long text', { selector: '#longText' });
   });
-}); */
+});

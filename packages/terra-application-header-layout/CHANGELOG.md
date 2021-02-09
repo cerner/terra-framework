@@ -12,7 +12,7 @@
   * Removed `intlShape` import
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 3.31.0 - (November 24, 2020)
 

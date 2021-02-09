@@ -17,7 +17,7 @@
   * Updated to use `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 6.45.0 - (December 8, 2020)
 

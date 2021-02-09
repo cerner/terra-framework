@@ -1,4 +1,3 @@
-/*
 Terra.describeViewports('Toggle the slide panel and hidden styles', ['medium'], () => {
   it('toggles the slide panel and hidden styles', () => {
     browser.url('/raw/tests/terra-layout/layout/layout-slide-panel-example');
@@ -28,4 +27,4 @@ describe('Toggle the slide panel double click', () => {
     expect(toggleBtn1.isFocused()).toEqual(true);
     Terra.validates.element('double click', { selector: '#site' });
   });
-}); */
+});

@@ -1,4 +1,3 @@
-/*
 Terra.describeViewports('SlidePanelManager', ['tiny', 'large'], () => {
   before(() => {
     browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
@@ -352,4 +351,4 @@ Terra.describeViewports('SlidePanelManager - Disclosure Accessory', ['large'], (
       $('[class*="slide-group"] #DemoContainer-2 .close-disclosure').click();
     });
   });
-}); */
+});

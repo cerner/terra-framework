@@ -17,7 +17,7 @@
   * Removed `intlShape` imports
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 5.47.0 - (December 8, 2020)
 

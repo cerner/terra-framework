@@ -1,4 +1,3 @@
-/*
 const selector = '#test-popup-area';
 let currentViewportSize;
 
@@ -340,4 +339,4 @@ Terra.describeViewports('Displays a large-sized popup correctly', ['large'], () 
 
     Terra.validates.element('large sized', { selector });
   });
-}); */
+});
