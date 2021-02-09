@@ -1,4 +1,3 @@
-/*
 const selector = '#root';
 
 Terra.describeViewports('Dialog Modal', ['tiny', 'medium', 'large'], () => {
@@ -87,4 +86,4 @@ describe('Dialog Modal', () => {
       Terra.validates.element('Modal Closed', { selector: '#root' });
     });
   });
-}); */
+});

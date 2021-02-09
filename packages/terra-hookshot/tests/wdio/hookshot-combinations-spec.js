@@ -1,4 +1,3 @@
-/*
 // 81 Attachment Variants Combinin Target and Content Attachements
 Terra.describeViewports('Hookshot targetAttachment and contentAttachment combinations', ['small'], () => {
   // Content Attachment: Top Start
@@ -522,4 +521,4 @@ Terra.describeViewports('Hookshot targetAttachment and contentAttachment combina
       Terra.validates.element('targetAttachment=bottom end', { selector: '#attachment-bounds' });
     });
   });
-}); */
+});

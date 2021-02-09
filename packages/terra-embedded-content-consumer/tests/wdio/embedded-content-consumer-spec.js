@@ -1,4 +1,3 @@
-/*
 Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
   it('displays default embedded content consumer', () => {
     browser.url('/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/basic-consumer');
@@ -80,4 +79,4 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
       expect($('#Authorized').isExisting());
     });
   });
-}); */
+});

@@ -1,4 +1,3 @@
-/*
 Terra.describeViewports('Navigation Side Menu', ['medium'], () => {
   describe('Default navigation side menu display', () => {
     it('Default navigation side menu display', () => {
@@ -43,4 +42,4 @@ Terra.describeViewports('Navigation Side Menu', ['medium'], () => {
       Terra.validates.element('#test-menu', { selector: '#test-menu' });
     });
   });
-}); */
+});

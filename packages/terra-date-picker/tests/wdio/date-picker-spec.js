@@ -1,4 +1,3 @@
-/*
 Terra.describeViewports('Date Picker', ['tiny', 'small', 'medium'], () => {
   describe('Default', () => {
     it('creates a hidden input and empty value attr. when no date is entered', () => {
@@ -446,4 +445,4 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       Terra.validates.element('beyond minDate entered');
     });
   });
-}); */
+});
