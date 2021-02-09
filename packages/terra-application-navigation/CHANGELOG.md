@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.46.0 - (February 9, 2021)
+
 * Fixed
   * Fix screen reader to read username along with user settings.
 
