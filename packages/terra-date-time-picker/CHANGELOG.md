@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+* Changed
+  * Tests updated to reflect input splitting in `terra-date-picker`.
+  * `terra-dev-site` examples to use hooks.
+
+## 4.58.0 - (February 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.57.0 - (February 2, 2021)
 
 * Changed
@@ -15,8 +24,6 @@
 ## 4.55.0 - (January 5, 2021)
 
 * Changed
-  * Tests updated to reflect input splitting in `terra-date-picker`.
-  * `terra-dev-site` examples to use hooks.
   * Updated to support a peer dependency of react-intl v2-v5
   * Updated to use `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
 
