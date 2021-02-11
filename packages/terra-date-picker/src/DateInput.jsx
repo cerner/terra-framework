@@ -428,10 +428,14 @@ const DatePickerInput = (props) => {
 
     if (event.keyCode === KEY_UP) {
       const incrementedDay = DateUtil.incrementDay(date.day, date.month, date.year);
-      handleDateChange(event, incrementedDay, DateUtil.inputType.DAY);
+      if (incrementedDay !== date.day) {
+        handleDateChange(event, incrementedDay, DateUtil.inputType.DAY);
+      }
     } else if (event.keyCode === KEY_DOWN) {
       const decrementedDay = DateUtil.decrementDay(date.day, date.month, date.year);
-      handleDateChange(event, decrementedDay, DateUtil.inputType.DAY);
+      if (decrementedDay !== date.day) {
+        handleDateChange(event, decrementedDay, DateUtil.inputType.DAY);
+      }
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
@@ -458,10 +462,14 @@ const DatePickerInput = (props) => {
 
     if (event.keyCode === KEY_UP) {
       const incrementedMonth = DateUtil.incrementMonth(date.month);
-      handleDateChange(event, incrementedMonth, DateUtil.inputType.MONTH);
+      if (incrementedMonth !== date.month) {
+        handleDateChange(event, incrementedMonth, DateUtil.inputType.MONTH);
+      }
     } else if (event.keyCode === KEY_DOWN) {
       const decrementedMonth = DateUtil.decrementMonth(date.month);
-      handleDateChange(event, decrementedMonth, DateUtil.inputType.MONTH);
+      if (decrementedMonth !== date.month) {
+        handleDateChange(event, decrementedMonth, DateUtil.inputType.MONTH);
+      }
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
@@ -490,10 +498,14 @@ const DatePickerInput = (props) => {
 
     if (event.keyCode === KEY_UP) {
       const incrementedYear = DateUtil.incrementYear(date.year);
-      handleDateChange(event, incrementedYear, DateUtil.inputType.YEAR);
+      if (incrementedYear !== date.year) {
+        handleDateChange(event, incrementedYear, DateUtil.inputType.YEAR);
+      }
     } else if (event.keyCode === KEY_DOWN) {
       const decrementedYear = DateUtil.decrementYear(date.year);
-      handleDateChange(event, decrementedYear, DateUtil.inputType.YEAR);
+      if (decrementedYear !== date.year) {
+        handleDateChange(event, decrementedYear, DateUtil.inputType.YEAR);
+      }
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
