@@ -8,7 +8,7 @@
 ## 3.35.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 3.34.0 - (November 24, 2020)
 

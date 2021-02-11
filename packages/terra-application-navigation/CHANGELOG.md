@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated to terra-functional-testing
+
 * Fixed
   * Updated sv translations due to feedback from the i18n team.
 
@@ -9,7 +12,6 @@
 
 * Changed
   * Update failing jest tests.
-  * Updated to terra-functional-testing
 
 ## 1.43.0 - (January 5, 2021)
 
