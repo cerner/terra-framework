@@ -9,24 +9,24 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
       it('is selected', () => {
         browser.url('/raw/tests/terra-menu/menu/menu-item/menu-item-selectable');
         $('.TestSelectableItem').click();
-        Terra.validates.element('selected');
+        Terra.validates.element('selected via click');
       });
 
       it('is deselected', () => {
         $('.TestSelectableItem').click();
-        Terra.validates.element('deselected');
+        Terra.validates.element('deselected via click');
       });
     });
 
     describe('Menu Item-Selectable Via Enter', () => {
       it('is selected', () => {
         browser.keys('Enter');
-        Terra.validates.element('selected');
+        Terra.validates.element('selected via enter');
       });
 
       it('is deselected', () => {
         browser.keys('Enter');
-        Terra.validates.element('deselected');
+        Terra.validates.element('deselected via enter');
       });
     });
   });

@@ -20,6 +20,14 @@ if (process.env.npm_package_name !== 'terra-framework') {
     path.join(__dirname, 'packages', 'terra-brand-footer', 'tests', 'wdio', '**', '*-spec.js'),
     path.join(__dirname, 'packages', 'terra-collapsible-menu-view', 'tests', 'wdio', '**', '*-spec.js'),
     path.join(__dirname, 'packages', 'terra-date-input', 'tests', 'wdio', '**', '*-spec.js'),
+    path.join(__dirname, 'packages', 'terra-date-picker', 'tests', 'wdio', '**', '*-spec.js'),
+    path.join(__dirname, 'packages', 'terra-date-time-picker', 'tests', 'wdio', '**', '*-spec.js'),
+    path.join(__dirname, 'packages', 'terra-dialog-modal', 'tests', 'wdio', '**', '*-spec.js'),
+    path.join(__dirname, 'packages', 'terra-embedded-content-consumer', 'tests', 'wdio', '**', '*-spec.js'),
+    path.join(__dirname, 'packages', 'terra-hookshot', 'tests', 'wdio', '**', '*-spec.js'),
+    path.join(__dirname, 'packages', 'terra-infinite-list', 'tests', 'wdio', '**', '*-spec.js'),
+    path.join(__dirname, 'packages', 'terra-layout', 'tests', 'wdio', '**', '*-spec.js'),
+    path.join(__dirname, 'packages', 'terra-menu', 'tests', 'wdio', '**', '*-spec.js'),
   ];
 }
 

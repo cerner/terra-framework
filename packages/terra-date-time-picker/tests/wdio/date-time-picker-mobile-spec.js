@@ -29,14 +29,14 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
     browser.url('/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-empty-12-hour-mobile');
     Terra.hideInputCaret('input[name="terra-time-hour-input"]');
     $('input[name="terra-time-hour-input"]').click();
-    Terra.validates.element('focus hour styles-empty');
+    Terra.validates.element('focus hour styles empty');
   });
 
   it('displays Date Time Picker Twelve Hour Seconds Mobile - Focus Hour Styles', () => {
     browser.url('/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
     Terra.hideInputCaret('input[name="terra-time-hour-input"]');
     $('input[name="terra-time-hour-input"]').click();
-    Terra.validates.element('focus hour styles-seconds');
+    Terra.validates.element('focus hour styles seconds');
   });
 
   it('displays Date Time Picker Twelve Hour Disabled Mobile - Disabled Styles', () => {
@@ -55,7 +55,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
     browser.url('/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-empty-12-hour-mobile');
     Terra.hideInputCaret('input[name="terra-time-minute-input"]');
     $('input[name="terra-time-minute-input"]').click();
-    Terra.validates.element('focus minute styles-empty');
+    Terra.validates.element('focus minute styles empty');
   });
 
   it('displays Date Time Picker Twelve Hour Seconds Mobile - Default', () => {
@@ -67,7 +67,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
     browser.url('/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
     Terra.hideInputCaret('input[name="terra-time-minute-input"]');
     $('input[name="terra-time-minute-input"]').click();
-    Terra.validates.element('focus minute styles-seconds');
+    Terra.validates.element('focus minute styles seconds');
   });
 
   it('displays Date Time Picker Twelve Hour Seconds Mobile - Focus Second Styles', () => {
