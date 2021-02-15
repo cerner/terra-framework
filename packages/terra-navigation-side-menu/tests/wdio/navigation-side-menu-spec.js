@@ -3,7 +3,7 @@ Terra.describeViewports('Navigation Side Menu', ['medium'], () => {
     it('Default navigation side menu display', () => {
       browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu/navigation-side-menu-default');
       $('#test-menu').waitForDisplayed();
-      Terra.validates.element('#test-menu', { selector: '#test-menu' });
+      Terra.validates.element('navigation side menu display', { selector: '#test-menu' });
     });
   });
 
@@ -11,7 +11,7 @@ Terra.describeViewports('Navigation Side Menu', ['medium'], () => {
     it('Default navigation side menu display with toolbar', () => {
       browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu/navigation-side-menu-default-with-toolbar');
       $('#test-menu').waitForDisplayed();
-      Terra.validates.element('#test-menu', { selector: '#test-menu' });
+      Terra.validates.element('navigation side menu display with toolbar', { selector: '#test-menu' });
     });
   });
 
@@ -20,7 +20,7 @@ Terra.describeViewports('Navigation Side Menu', ['medium'], () => {
       browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu/navigation-side-menu-default');
       $('#test-menu').waitForDisplayed();
       $('#test-menu #test-item-1').moveTo();
-      Terra.validates.element('#test-menu', { selector: '#test-menu' });
+      Terra.validates.element('hover navigation side menu display', { selector: '#test-menu' });
     });
   });
 
@@ -31,7 +31,7 @@ Terra.describeViewports('Navigation Side Menu', ['medium'], () => {
       $('#test-menu #test-item-1').moveTo();
       $('#test-menu #test-item-1').click();
       $('#test-menu #test-item-2').click();
-      Terra.validates.element('#test-menu', { selector: '#test-menu' });
+      Terra.validates.element('selected navigation side menu display', { selector: '#test-menu' });
     });
   });
 
@@ -39,7 +39,7 @@ Terra.describeViewports('Navigation Side Menu', ['medium'], () => {
     it('isRootMenu navigation side menu display', () => {
       browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu/navigation-side-menu-root');
       $('#test-menu').waitForDisplayed();
-      Terra.validates.element('#test-menu', { selector: '#test-menu' });
+      Terra.validates.element('isRootMenu navigation side menu display', { selector: '#test-menu' });
     });
   });
 });

@@ -36,12 +36,12 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
     it('remains open on height resize', () => {
       browser.setWindowSize(currentViewportSize.width, 600);
-      Terra.validates.element('height resize-remains open', { selector });
+      Terra.validates.element('height resize-remains open default popup', { selector });
     });
 
     it('closes on width resize', () => {
       browser.setWindowSize(currentViewportSize.width - 50, currentViewportSize.height);
-      Terra.validates.element('width resize-closes', { selector });
+      Terra.validates.element('width resize-closes open default popup', { selector });
     });
 
     after(() => browser.setWindowSize(currentViewportSize.width, currentViewportSize.height));
@@ -124,12 +124,12 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
     it('remains open on height resize', () => {
       browser.setWindowSize(currentViewportSize.width, 600);
-      Terra.validates.element('height resize-remains open', { selector });
+      Terra.validates.element('height resize-remains open popup in modal', { selector });
     });
 
     it('closes on width resize', () => {
       browser.setWindowSize(currentViewportSize.width - 50, currentViewportSize.height);
-      Terra.validates.element('width resize-closes', { selector });
+      Terra.validates.element('width resize-closes open popup in modal', { selector });
     });
 
     after(() => browser.setWindowSize(currentViewportSize.width, currentViewportSize.height));
@@ -140,21 +140,21 @@ Terra.describeViewports('Popup', ['medium'], () => {
       browser.url('/raw/tests/terra-popup/popup/arrow-vertical-attachments-popup');
       $('#attach-Left').click();
       $('.test-content').waitForDisplayed();
-      Terra.validates.element('vertical-left', { selector });
+      Terra.validates.element('vertical-left attachment arrow', { selector });
       browser.keys('Escape');
     });
 
     it('positions the arrow for vertical-center attachment', () => {
       $('#attach-Center').click();
       $('.test-content').waitForDisplayed();
-      Terra.validates.element('vertical-center', { selector });
+      Terra.validates.element('vertical-center attachment arrow', { selector });
       browser.keys('Escape');
     });
 
     it('positions the arrow for vertical-right attachment', () => {
       $('#attach-Right').click();
       $('.test-content').waitForDisplayed();
-      Terra.validates.element('vertical-right', { selector });
+      Terra.validates.element('vertical-right attachment arrow', { selector });
       browser.keys('Escape');
     });
 
@@ -192,13 +192,13 @@ Terra.describeViewports('Popup', ['medium'], () => {
     it('applies content offset when target is smaller than the arrow for vertical-left attachment', () => {
       browser.url('/raw/tests/terra-popup/popup/arrow-small-target-left-popup');
       $('.test-content').waitForDisplayed();
-      Terra.validates.element('vertical-left', { selector });
+      Terra.validates.element('vertical-left target smaller than arrow', { selector });
     });
 
     it('applies content offset when target is smaller than the arrow for vertical-right attachment', () => {
       browser.url('/raw/tests/terra-popup/popup/arrow-small-target-right-popup');
       $('.test-content').waitForDisplayed();
-      Terra.validates.element('vertical-right', { selector });
+      Terra.validates.element('vertical-right target smaller than arrow', { selector });
     });
   });
 
@@ -253,12 +253,12 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
     it('remains open on height resize', () => {
       browser.setWindowSize(currentViewportSize.width, 600);
-      Terra.validates.element('height resize-remains open', { selector });
+      Terra.validates.element('height resize-remains open automatic height popup', { selector });
     });
 
     it('closes on width resize', () => {
       browser.setWindowSize(currentViewportSize.width - 50, currentViewportSize.height);
-      Terra.validates.element('width resize-closes', { selector });
+      Terra.validates.element('width resize-closes open automatic height popup', { selector });
     });
 
     after(() => browser.setWindowSize(currentViewportSize.width, currentViewportSize.height));
@@ -279,12 +279,12 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
     it('remains open on height resize', () => {
       browser.setWindowSize(currentViewportSize.width, 600);
-      Terra.validates.element('height resize-remains open', { selector });
+      Terra.validates.element('height resize-remains open automatic width popup', { selector });
     });
 
     it('closes on width resize', () => {
       browser.setWindowSize(currentViewportSize.width - 50, currentViewportSize.height);
-      Terra.validates.element('width resize-closes', { selector });
+      Terra.validates.element('width resize-closes automatic width popup', { selector });
     });
 
     after(() => browser.setWindowSize(currentViewportSize.width, currentViewportSize.height));
