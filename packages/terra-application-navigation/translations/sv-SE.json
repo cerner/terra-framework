@@ -10,7 +10,7 @@
   "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "Fler navigeringslänkar",
   "Terra.applicationNavigation.notifications.new": "Nytt",
   "Terra.applicationNavigation.header.skipToContentTitle": "Gå till Innehåll",
-  "Terra.applicationNavigation.header.utilityButtonTitleUser": "Användarinställningar",
+  "Terra.applicationNavigation.header.utilityButtonTitleUser": "Användarinställningar för: {currentUserName}",
   "Terra.applicationNavigation.header.utilityButtonTitleNoUser": "Alternativ",
   "Terra.applicationNavigation.header.menuButtonTitle": "Meny",
   "Terra.applicationNavigation.drawerMenu.navigation": "Navigeringsobjekt",
