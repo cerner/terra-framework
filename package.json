@@ -26,34 +26,12 @@
   ],
   "eslintConfig": {
     "extends": "@cerner/terra",
-    "overrides": [
-      {
-        "files": [
-          "**/*/terra-dev-site/**/*.jsx"
-        ],
-        "rules": {
-          "import/no-extraneous-dependencies": "off",
-          "import/no-unresolved": "off",
-          "import/extensions": "off"
-        }
-      },
-      {
-        "files": [
-          "*.doc.jsx"
-        ],
-        "rules": {
-          "import/no-webpack-loader-syntax": "off",
-          "import/first": "off",
-          "import/no-duplicates": "off"
-        }
-      }
-    ],
     "rules": {
       "react/forbid-prop-types": "off"
     }
   },
   "stylelint": {
-    "extends": "stylelint-config-terra",
+    "extends": "@cerner/stylelint-config-terra",
     "rules": {
       "scss/at-mixin-pattern": "^(terra-)[a-z]+([a-z0-9-]+[a-z0-9]+)?$"
     }
@@ -108,6 +86,7 @@
     "@babel/preset-react": "^7.0.0",
     "@cerner/browserslist-config-terra": "^3.1.0",
     "@cerner/eslint-config-terra": "^5.0.0",
+    "@cerner/stylelint-config-terra": "^4.0.0",
     "@cerner/terra-cli": "^1.1.0",
     "@cerner/terra-open-source-scripts": "^1.1.0",
     "@cerner/webpack-config-terra": "^1.0.0",
@@ -131,8 +110,7 @@
     "react-dom": "^16.8.5",
     "react-test-renderer": "^16.4.2",
     "regenerator-runtime": "^0.13.2",
-    "stylelint": "^11.0.0",
-    "stylelint-config-terra": "^3.2.0",
+    "stylelint": "^13.0.0",
     "terra-aggregate-translations": "^1.0.0",
     "terra-dev-site": "^6.5.0",
     "terra-disclosure-manager": "^4.9.0",
