@@ -5,6 +5,7 @@ describe('Extension', () => {
   it('should render with required prop data', () => {
     const shallowComponent = shallow(
       <Extension
+        id="test-extension-id"
         icon={<span>my icon</span>}
         text="my text"
       />,

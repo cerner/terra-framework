@@ -32,6 +32,10 @@ const propTypes = {
    */
   footerText: PropTypes.string,
   /**
+   * The id for the logout button.
+   */
+  logoutId: PropTypes.string,
+  /**
    * Callback for when the footer item is selected.
    */
   onSelectFooterItem: PropTypes.func,
@@ -59,6 +63,10 @@ const propTypes = {
      * Key used as react key, and returned in the onSelect
      */
     key: PropTypes.string.isRequired,
+    /**
+     * The id for the menuItem.
+     */
+    id: PropTypes.string,
     /**
      * Object to be returned in the onSelect
      */
@@ -102,7 +110,7 @@ const defaultProps = {
 };
 
 const PopupMenu = ({
-  title, footerText, onSelectFooterItem, onSelectMenuItem, customContent, userConfig, menuItems, isHeightBounded, showSelections, role,
+  title, footerText, logoutId, onSelectFooterItem, onSelectMenuItem, customContent, userConfig, menuItems, isHeightBounded, showSelections, role,
 }) => {
   const listRef = useRef();
   const buttonRef = useRef();
@@ -165,6 +173,7 @@ const PopupMenu = ({
   if (onSelectFooterItem) {
     endContent = (
       <Button
+        id={logoutId || undefined}
         text={footerText}
         onClick={onSelectFooterItem}
         onKeyDown={handleButtonKeyDown}
@@ -193,6 +202,7 @@ const PopupMenu = ({
         <ul className={cx('utility-list')} aria-label={title} ref={listRef} role={role} tabIndex="0" onKeyDown={handleKeyDown}>
           {menuItems.map(item => (
             <PopupMenuListItem
+              id={item.id || undefined}
               key={item.key}
               onSelect={onSelectMenuItem && onSelectMenuItem.bind(null, item.key, item.metaData)}
               icon={item.icon}

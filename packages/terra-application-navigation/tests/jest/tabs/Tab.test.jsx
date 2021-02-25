@@ -15,6 +15,7 @@ describe('Tab', () => {
   it('should render prop data', () => {
     const shallowComponent = shallow(
       <Tab
+        id="test-tab-id"
         notificationCount={1}
         text="my text"
         isActive

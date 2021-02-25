@@ -128,6 +128,7 @@ exports[`Tabs should render prop data 1`] = `
   navigationItems={
     Array [
       Object {
+        "id": "test-nav-id",
         "key": "my-test-key",
         "text": "test-text",
       },
@@ -204,6 +205,7 @@ exports[`Tabs should render prop data 1`] = `
     navigationItems={
       Array [
         Object {
+          "id": "test-nav-id",
           "key": "my-test-key",
           "text": "test-text",
         },
@@ -253,6 +255,7 @@ exports[`Tabs should render prop data 1`] = `
     >
       <Tab
         hasCount={true}
+        id="test-nav-id"
         isActive={true}
         key="my-test-key"
         onTabSelect={[Function]}

@@ -64,6 +64,18 @@ const propTypes = {
    */
   activeNavigationItemKey: PropTypes.string,
   /**
+    * The id for the logout utility item.
+    */
+  logoutId: PropTypes.string,
+  /**
+   * The id for the settings utility item.
+   */
+  settingsId: PropTypes.string,
+  /**
+   * The id for the help utility item.
+   */
+  helpId: PropTypes.string,
+  /**
   * Callback function triggered on Drawer Menu state change
   */
   onDrawerMenuStateChange: PropTypes.func,
@@ -125,6 +137,9 @@ const ApplicationNavigation = ({
   onSelectSettings,
   onSelectHelp,
   onSelectLogout,
+  logoutId,
+  settingsId,
+  helpId,
   utilityItems,
   onSelectUtilityItem,
   notifications,
@@ -221,6 +236,9 @@ const ApplicationNavigation = ({
           onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
           onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
           onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
+          logoutId={onSelectLogout ? logoutId : undefined}
+          settingsId={onSelectSettings ? settingsId : undefined}
+          helpId={onSelectHelp ? helpId : undefined}
           utilityItems={utilityItems}
           onSelectUtilityItem={onSelectUtilityItem ? generateMenuClosingCallback(onSelectUtilityItem) : undefined}
           notifications={notifications}
@@ -250,6 +268,9 @@ const ApplicationNavigation = ({
           onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
           onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
           onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
+          logoutId={onSelectLogout ? logoutId : undefined}
+          settingsId={onSelectSettings ? settingsId : undefined}
+          helpId={onSelectHelp ? helpId : undefined}
           utilityItems={utilityItems}
           onSelectUtilityItem={onSelectUtilityItem ? generateMenuClosingCallback(onSelectUtilityItem) : undefined}
         />
@@ -278,6 +299,9 @@ const ApplicationNavigation = ({
         onSelectSettings={onSelectSettings}
         onSelectHelp={onSelectHelp}
         onSelectLogout={onSelectLogout}
+        logoutId={onSelectLogout ? logoutId : undefined}
+        settingsId={onSelectSettings ? settingsId : undefined}
+        helpId={onSelectHelp ? helpId : undefined}
       />
     );
   }

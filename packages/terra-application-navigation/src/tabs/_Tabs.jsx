@@ -212,6 +212,7 @@ class Tabs extends React.Component {
 
     return visibleTabs.map((tab, index) => {
       const tabProps = {
+        id: tab.id,
         text: tab.text,
         key: tab.key,
         onTabSelect: onTabSelect ? onTabSelect.bind(null, tab.key, tab.metaData) : null,
@@ -272,6 +273,7 @@ class Tabs extends React.Component {
           title={intl.formatMessage({ id: 'Terra.applicationNavigation.tabs.rollupMenuHeaderTitle' })}
           role="list"
           menuItems={hiddenTabs.map(tab => ({
+            id: tab.id,
             key: tab.key,
             text: tab.text,
             icon: tab.icon,

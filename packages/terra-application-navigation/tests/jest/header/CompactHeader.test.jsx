@@ -37,8 +37,10 @@ describe('CompactHeader', () => {
           initials: 'user-initials',
           imageSrc: 'user-src',
         }}
-        navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
-        extensionItems={[{ text: 'test-text-1', key: 'my-test-key-1', icon: <span>my icon</span> }]}
+        navigationItems={[{ id: 'test-text-id', text: 'test-text', key: 'my-test-key' }]}
+        extensionItems={[{
+          id: 'test-text-1-id', text: 'test-text-1', key: 'my-test-key-1', icon: <span>my icon</span>,
+        }]}
         notifications={{ 'my-test-key-1': 3 }}
         onSelectExtensionItem={jest.fn()}
       />,

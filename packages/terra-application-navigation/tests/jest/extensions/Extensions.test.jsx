@@ -17,7 +17,9 @@ describe('Extensions', () => {
       <Extensions.WrappedComponent
         intl={mockIntl}
         activeBreakpoint="small"
-        extensionItems={[{ text: 'test-text', icon: <span>my icon</span>, key: 'my-test-key' }]}
+        extensionItems={[{
+          id: 'test-extension-id', text: 'test-text', icon: <span>my icon</span>, key: 'my-test-key',
+        }]}
         notifications={{ myComponent: 3 }}
         onSelect={jest.fn()}
       />,

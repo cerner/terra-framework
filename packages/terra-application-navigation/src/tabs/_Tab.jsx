@@ -15,6 +15,10 @@ const propTypes = {
    */
   text: PropTypes.string.isRequired,
   /**
+   * The id for the tab.
+   */
+  id: PropTypes.string,
+  /**
    * The selection callback for the tab.
    */
   onTabSelect: PropTypes.func,
@@ -45,6 +49,7 @@ const propTypes = {
 };
 
 const Tab = ({
+  id,
   text,
   hasCount,
   isActive,
@@ -65,7 +70,7 @@ const Tab = ({
     }
 
     return (
-      <div aria-hidden className={cx('tab-inner')}>
+      <div id={id || undefined} aria-hidden className={cx('tab-inner')}>
         <span aria-hidden className={cx('tab-label')}>{text}</span>
         {notificationCount > 0 && <span className={cx('tab-count')}><TabCount value={notificationCount} /></span>}
       </div>

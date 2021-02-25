@@ -67,6 +67,7 @@ exports[`DrawerMenu should render Help utility item when it is the only utility 
               xmlns="http://www.w3.org/2000/svg"
             />
           }
+          id="test-help-id"
           onSelect={[MockFunction]}
           text="Terra.applicationNavigation.utilityMenu.help"
         />

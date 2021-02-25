@@ -26,6 +26,10 @@ const propTypes = {
    * The text display for the extension, either the aria label or the inline text.
    */
   text: PropTypes.string.isRequired,
+  /**
+    * The id for the extension item.
+    */
+  id: PropTypes.string,
 };
 
 const defaultProps = {
@@ -36,6 +40,7 @@ const Extension = ({
   notificationCount,
   icon,
   text,
+  id,
   onSelect,
 }) => {
   let validatedValue = notificationCount;
@@ -45,6 +50,7 @@ const Extension = ({
 
   return (
     <div
+      id={id || undefined}
       role="button"
       tabIndex="0"
       className={cx('extension')}

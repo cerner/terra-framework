@@ -41,6 +41,18 @@ const propTypes = {
    */
   activeNavigationItemKey: PropTypes.string,
   /**
+   * The id for the logout utility item.
+   */
+  logoutId: PropTypes.string,
+  /**
+   * The id for the settings utility item.
+   */
+  settingsId: PropTypes.string,
+  /**
+   * The id for the help utility item.
+   */
+  helpId: PropTypes.string,
+  /**
    * A function to be executed upon the selection of a navigation item.
    * Ex: `onSelectNavigationItem(String selectedNavigationItemKey)`
    */
@@ -98,6 +110,9 @@ const DrawerMenu = ({
   onSelectSettings,
   onSelectHelp,
   onSelectLogout,
+  logoutId,
+  settingsId,
+  helpId,
   utilityItems,
   onSelectUtilityItem,
   notifications,
@@ -108,6 +123,7 @@ const DrawerMenu = ({
   const logoutButton = onSelectLogout ? (
     <div className={cx('footer')}>
       <DrawerMenuFooterButton
+        id={logoutId}
         onClick={onSelectLogout}
         text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
         data-navigation-drawer-item-logout
@@ -129,6 +145,7 @@ const DrawerMenu = ({
         >
           {navigationItems.map(item => (
             <DrawerMenuLinkItem
+              id={item.id}
               key={item.key}
               text={item.text}
               notificationCount={notifications[item.key]}
@@ -152,6 +169,7 @@ const DrawerMenu = ({
       >
         {utilityItems.map(item => (
           <DrawerMenuListItem
+            id={item.id}
             key={item.key}
             text={item.text}
             icon={item.icon}
@@ -160,6 +178,7 @@ const DrawerMenu = ({
         ))}
         {onSelectSettings ? (
           <DrawerMenuListItem
+            id={settingsId}
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' })}
             icon={<IconSettings />}
             onSelect={onSelectSettings}
@@ -168,6 +187,7 @@ const DrawerMenu = ({
         ) : null}
         {onSelectHelp ? (
           <DrawerMenuListItem
+            id={helpId}
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' })}
             icon={<IconQuestionOutline />}
             onSelect={onSelectHelp}

@@ -37,6 +37,7 @@ exports[`PopupMenuListItem should render with required prop data 1`] = `
 <li
   className="item"
   data-focus-styles-enabled={true}
+  id="test-menu-item"
   onBlur={[Function]}
   onClick={[MockFunction]}
   onKeyDown={[Function]}

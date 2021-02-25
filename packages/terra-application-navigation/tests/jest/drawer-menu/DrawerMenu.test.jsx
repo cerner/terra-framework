@@ -59,6 +59,7 @@ describe('DrawerMenu', () => {
         navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
         onSelectNavigationItem={jest.fn()}
         onSelectHelp={jest.fn()}
+        helpId="test-help-id"
       />,
     );
 

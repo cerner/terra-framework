@@ -94,6 +94,18 @@ const propTypes = {
    */
   onSelectLogout: PropTypes.func,
   /**
+   * The id for the logout button.
+   */
+  logoutId: PropTypes.string,
+  /**
+   * The id for the settings button.
+   */
+  settingsId: PropTypes.string,
+  /**
+   * The id for the settings button.
+   */
+  helpId: PropTypes.string,
+  /**
    * @private
    * The currently active breakpoint.
    */
@@ -121,9 +133,10 @@ const defaultProps = {
   notifications: {},
 };
 
-function buildUtilityItem(text, key, onSelect, isUtilityOpen) {
+function buildUtilityItem(id, text, key, onSelect, isUtilityOpen) {
   return (
     <li
+      id={id || undefined}
       key={key}
       className={cx('hidden-item')}
       tabIndex={isUtilityOpen ? '0' : '-1'}
@@ -154,6 +167,9 @@ const CompactHeader = ({
   onSelectSettings,
   onSelectHelp,
   onSelectLogout,
+  logoutId,
+  settingsId,
+  helpId,
   intl,
   hero,
   userConfig,
@@ -260,6 +276,7 @@ const CompactHeader = ({
               return (
                 <li key={item.key}>
                   <div
+                    id={item.id || undefined}
                     role="link"
                     className={cx('hidden-item')}
                     tabIndex={navigationIsOpen ? '0' : '-1'}
@@ -304,16 +321,16 @@ const CompactHeader = ({
       >
         {utilityItems.map((item) => {
           const onSelect = onSelectUtilityItem && generateCloseUtilsFunc(onSelectUtilityItem.bind(null, item.key, item.metaData));
-          return buildUtilityItem(item.text, item.key, onSelect, utilitiesIsOpen);
+          return buildUtilityItem(item.id, item.text, item.key, onSelect, utilitiesIsOpen);
         })}
         {onSelectSettings ? (
-          buildUtilityItem(intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' }), 'app-menu-settings', generateCloseUtilsFunc(onSelectSettings), utilitiesIsOpen)
+          buildUtilityItem(settingsId, intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' }), 'app-menu-settings', generateCloseUtilsFunc(onSelectSettings), utilitiesIsOpen)
         ) : null}
         {onSelectHelp ? (
-          buildUtilityItem(intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' }), 'app-menu-help', generateCloseUtilsFunc(onSelectHelp), utilitiesIsOpen)
+          buildUtilityItem(helpId, intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' }), 'app-menu-help', generateCloseUtilsFunc(onSelectHelp), utilitiesIsOpen)
         ) : null}
         {onSelectLogout ? (
-          buildUtilityItem(intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' }), 'app-menu-logout', generateCloseUtilsFunc(onSelectLogout), utilitiesIsOpen)
+          buildUtilityItem(logoutId, intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' }), 'app-menu-logout', generateCloseUtilsFunc(onSelectLogout), utilitiesIsOpen)
         ) : null}
       </ul>
     );

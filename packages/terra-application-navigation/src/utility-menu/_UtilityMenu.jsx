@@ -34,6 +34,18 @@ const propTypes = {
    */
   onSelectLogout: PropTypes.func,
   /**
+    * The id for the logout button.
+    */
+  logoutId: PropTypes.string,
+  /**
+   * The id for the settings button.
+   */
+  settingsId: PropTypes.string,
+  /**
+   * The id for the settings button.
+   */
+  helpId: PropTypes.string,
+  /**
    * An array of configuration objects with information specifying the creation of additional utility menu items.
    * These items are rendered within the popup utility menu at larger breakpoints and within the drawer menu at smaller breakpoints.
    */
@@ -62,13 +74,14 @@ const utilityMenuSettingsKey = 'terra-application-navigation.utility-menu.settin
 const utilityMenuHelpKey = 'terra-application-navigation.utility-menu.help';
 
 const UtilityMenu = ({
-  userConfig, hero, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem, isHeightBounded, intl,
+  userConfig, hero, onSelectSettings, onSelectHelp, onSelectLogout, logoutId, settingsId, helpId, utilityItems, onSelectUtilityItem, isHeightBounded, intl,
 }) => {
   let menuItems = [];
   menuItems = menuItems.concat(utilityItems);
 
   if (onSelectSettings) {
     menuItems.push({
+      id: settingsId,
       key: utilityMenuSettingsKey,
       text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' }),
       icon: <IconSettings />,
@@ -78,6 +91,7 @@ const UtilityMenu = ({
 
   if (onSelectHelp) {
     menuItems.push({
+      id: helpId,
       key: utilityMenuHelpKey,
       text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' }),
       icon: <IconQuestionOutline />,
@@ -91,6 +105,7 @@ const UtilityMenu = ({
       title={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.headerTitle' })}
       footerText={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
       onSelectFooterItem={onSelectLogout}
+      logoutId={onSelectLogout ? logoutId : undefined}
       userConfig={userConfig}
       customContent={hero}
       menuItems={menuItems}
