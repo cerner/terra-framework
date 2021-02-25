@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import ApplicationBase from 'terra-application/lib/application-base';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
@@ -138,24 +137,22 @@ const ExampleApplication = ({ onAction }) => {
   const [activeKey, setActiveKey] = useState(navigationItems[0].key);
 
   return (
-    <ApplicationBase locale="en-US">
-      <ApplicationNavigation
-        titleConfig={titleConfig}
-        userConfig={userConfig}
-        extensionItems={extensionItems}
-        onSelectExtensionItem={onAction}
-        navigationItems={navigationItems}
-        activeNavigationItemKey={activeKey}
-        onSelectNavigationItem={key => setActiveKey(key)}
-        utilityItems={utilityItems}
-        onSelectUtilityItem={onAction}
-        onSelectSettings={() => onAction('settings')}
-        onSelectHelp={() => onAction('help')}
-        onSelectLogout={() => onAction('logout')}
-      >
-        <Placeholder title={activeKey} />
-      </ApplicationNavigation>
-    </ApplicationBase>
+    <ApplicationNavigation
+      titleConfig={titleConfig}
+      userConfig={userConfig}
+      extensionItems={extensionItems}
+      onSelectExtensionItem={onAction}
+      navigationItems={navigationItems}
+      activeNavigationItemKey={activeKey}
+      onSelectNavigationItem={key => setActiveKey(key)}
+      utilityItems={utilityItems}
+      onSelectUtilityItem={onAction}
+      onSelectSettings={() => onAction('settings')}
+      onSelectHelp={() => onAction('help')}
+      onSelectLogout={() => onAction('logout')}
+    >
+      <Placeholder title={activeKey} />
+    </ApplicationNavigation>
   );
 };
 
