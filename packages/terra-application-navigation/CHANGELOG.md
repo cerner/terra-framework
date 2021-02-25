@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added ids to navigation items, settings, help, and logout elements
+
 ## 1.46.0 - (February 9, 2021)
 
 * Fixed
