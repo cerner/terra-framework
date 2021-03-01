@@ -8,9 +8,14 @@ branches:
 cache:
   directories:
     - travis-build
+    - docker_images
 before_install:
   # Clean install on any new build
   - npm run clean
+before_script:
+  - docker load -i docker_images/images.tar || true
+before_cache:
+  - docker save -o docker_images/images.tar $(docker images -a -q)
 jobs:
   include:
     - stage: danger lint jest and compile
