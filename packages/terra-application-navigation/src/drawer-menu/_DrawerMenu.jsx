@@ -13,6 +13,7 @@ import DrawerMenuFooterButton from './_DrawerMenuFooterButton';
 import {
   titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType,
 } from '../utils/propTypes';
+import { navigationItemId, utilityItemId } from '../utils/helpers';
 
 import styles from './DrawerMenu.module.scss';
 
@@ -113,7 +114,7 @@ const DrawerMenu = ({
   const logoutButton = onSelectLogout ? (
     <div className={cx('footer')}>
       <DrawerMenuFooterButton
-        id={`${id}-logout-btn`}
+        id={utilityItemId(id, 'Logout')}
         onClick={onSelectLogout}
         text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
         data-navigation-drawer-item-logout
@@ -135,7 +136,7 @@ const DrawerMenu = ({
         >
           {navigationItems.map(item => (
             <DrawerMenuLinkItem
-              id={`${id}-${item.key}`}
+              id={navigationItemId(id, item.key)}
               key={item.key}
               text={item.text}
               notificationCount={notifications[item.key]}
@@ -159,7 +160,7 @@ const DrawerMenu = ({
       >
         {utilityItems.map(item => (
           <DrawerMenuListItem
-            id={`${id}-${item.key}`}
+            id={utilityItemId(id, item.key)}
             key={item.key}
             text={item.text}
             icon={item.icon}
@@ -168,7 +169,7 @@ const DrawerMenu = ({
         ))}
         {onSelectSettings ? (
           <DrawerMenuListItem
-            id={`${id}-settings-btn`}
+            id={utilityItemId(id, 'Settings')}
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' })}
             icon={<IconSettings />}
             onSelect={onSelectSettings}
@@ -177,7 +178,7 @@ const DrawerMenu = ({
         ) : null}
         {onSelectHelp ? (
           <DrawerMenuListItem
-            id={`${id}-help-btn`}
+            id={utilityItemId(id, "Help")}
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' })}
             icon={<IconQuestionOutline />}
             onSelect={onSelectHelp}
