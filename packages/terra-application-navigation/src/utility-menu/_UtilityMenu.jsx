@@ -5,6 +5,7 @@ import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconQuestionOutline from 'terra-icon/lib/icon/IconQuestionOutline';
 import PopupMenu from '../common/_PopupMenu';
 import { userConfigPropType, utilityItemsPropType } from '../utils/propTypes';
+import { utilityItemId } from '../utils/helpers';
 
 const propTypes = {
   /**
@@ -51,6 +52,10 @@ const propTypes = {
    */
   utilityItems: utilityItemsPropType,
   /**
+   * An id used to generate unique ids for utility items
+   */
+  id: PropTypes.string,
+  /**
    * A function to be executed upon the selection of a custom utility item.
    * Ex: `onSelectUtilityItem(String selectedUtilityItemKey)`
    */
@@ -74,14 +79,20 @@ const utilityMenuSettingsKey = 'terra-application-navigation.utility-menu.settin
 const utilityMenuHelpKey = 'terra-application-navigation.utility-menu.help';
 
 const UtilityMenu = ({
-  userConfig, hero, onSelectSettings, onSelectHelp, onSelectLogout, logoutId, settingsId, helpId, utilityItems, onSelectUtilityItem, isHeightBounded, intl,
+  userConfig, hero, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, id, onSelectUtilityItem, isHeightBounded, intl,
 }) => {
   let menuItems = [];
-  menuItems = menuItems.concat(utilityItems);
+  menuItems = utilityItems.map(item => ({
+    id: utilityItemId(id, item.key),
+    key: item.key,
+    text: item.text,
+    icon: item.icon,
+    dataAttrs: item.dataAttrs,
+  }));
 
   if (onSelectSettings) {
     menuItems.push({
-      id: settingsId,
+      id: utilityItemId(id, 'Settings'),
       key: utilityMenuSettingsKey,
       text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' }),
       icon: <IconSettings />,
@@ -91,7 +102,7 @@ const UtilityMenu = ({
 
   if (onSelectHelp) {
     menuItems.push({
-      id: helpId,
+      id: utilityItemId(id, 'Help'),
       key: utilityMenuHelpKey,
       text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' }),
       icon: <IconQuestionOutline />,
@@ -105,10 +116,10 @@ const UtilityMenu = ({
       title={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.headerTitle' })}
       footerText={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
       onSelectFooterItem={onSelectLogout}
-      logoutId={onSelectLogout ? logoutId : undefined}
       userConfig={userConfig}
       customContent={hero}
       menuItems={menuItems}
+      id={id}
       onSelectMenuItem={(itemKey, metaData) => {
         if (itemKey === utilityMenuSettingsKey) {
           onSelectSettings();

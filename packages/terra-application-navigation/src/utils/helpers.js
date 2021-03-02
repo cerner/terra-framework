@@ -61,6 +61,22 @@ const useAnimatedCount = (countRef, countValue) => {
   }, [countRef, countValue]);
 };
 
+function itemId(appNavId, itemType, itemKey) {
+  return `${appNavId}-${itemType}-${itemKey}`;
+}
+
+function navigationItemId(appNavId, navigationItemKey) {
+  return itemId(appNavId, 'NavigationItem', navigationItemKey);
+}
+
+function utilityItemId(appNavId, utilityItemKey) {
+  return itemId(appNavId, 'UtilityItem', utilityItemKey);
+}
+
+function extensionItemId(appNavId, extenstionItemKey) {
+  return itemId(appNavId, 'ExtensionItem', extenstionItemKey);
+}
+
 export default {
   shouldRenderCompactNavigation,
   enableFocusStyles,
@@ -75,4 +91,7 @@ export {
   disableFocusStyles,
   generateKeyDownSelection,
   useAnimatedCount,
+  navigationItemId,
+  utilityItemId,
+  extensionItemId,
 };

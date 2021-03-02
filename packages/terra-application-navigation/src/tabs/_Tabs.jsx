@@ -9,6 +9,7 @@ import Popup from 'terra-popup';
 import Tab from './_Tab';
 import TabRollup from './_TabRollup';
 import PopupMenu from '../common/_PopupMenu';
+import { navigationItemId } from '../utils/helpers';
 
 import {
   navigationItemsPropType,
@@ -216,7 +217,7 @@ class Tabs extends React.Component {
 
     return visibleTabs.map((tab, index) => {
       const tabProps = {
-        id: id ? `${id}-${tab.key}` : undefined,
+        id: navigationItemId(id, tab.key),
         text: tab.text,
         key: tab.key,
         onTabSelect: onTabSelect ? onTabSelect.bind(null, tab.key, tab.metaData) : null,
@@ -277,7 +278,7 @@ class Tabs extends React.Component {
           title={intl.formatMessage({ id: 'Terra.applicationNavigation.tabs.rollupMenuHeaderTitle' })}
           role="list"
           menuItems={hiddenTabs.map(tab => ({
-            id: id ? `${id}-${tab.key}` : undefined,
+            id: navigationItemId(id, tab.key),
             key: tab.key,
             text: tab.text,
             icon: tab.icon,
@@ -302,6 +303,7 @@ class Tabs extends React.Component {
     const {
       navigationItems,
       notifications,
+      id,
     } = this.props;
     if (!navigationItems || !navigationItems.length) {
       return <Tab isPlaceholder text="W" tabKey="" aria-hidden="true" />;
@@ -316,9 +318,9 @@ class Tabs extends React.Component {
         className={cx('tabs-container', { 'is-calculating': this.isCalculating })}
         ref={this.containerRef}
       >
-        {this.renderVisibleTabs(visibleTabs, useNotificationStyle, notifications, this.id)}
+        {this.renderVisibleTabs(visibleTabs, useNotificationStyle, notifications, id)}
         {!this.menuHidden ? this.renderRollup(hiddenTabs, useNotificationStyle, notifications) : null}
-        {popupIsOpen ? this.renderPopup(hiddenTabs, notifications) : null}
+        {popupIsOpen ? this.renderPopup(hiddenTabs, notifications, id) : null}
       </nav>
     );
   }

@@ -16,6 +16,7 @@ import {
 
 import PopupMenuListItem from './_PopupMenuListItem';
 import { userConfigPropType } from '../utils/propTypes';
+import { utilityItemId } from '../utils/helpers'
 import PopupMenuUser from './_PopupMenuUser';
 
 import styles from './PopupMenu.module.scss';
@@ -32,9 +33,9 @@ const propTypes = {
    */
   footerText: PropTypes.string,
   /**
-   * The id for the logout button.
+   * An id used to unique identify items
    */
-  logoutId: PropTypes.string,
+  id: PropTypes.string,
   /**
    * Callback for when the footer item is selected.
    */
@@ -110,7 +111,7 @@ const defaultProps = {
 };
 
 const PopupMenu = ({
-  title, footerText, logoutId, onSelectFooterItem, onSelectMenuItem, customContent, userConfig, menuItems, isHeightBounded, showSelections, role,
+  title, footerText, id, onSelectFooterItem, onSelectMenuItem, customContent, userConfig, menuItems, isHeightBounded, showSelections, role,
 }) => {
   const listRef = useRef();
   const buttonRef = useRef();
@@ -173,7 +174,7 @@ const PopupMenu = ({
   if (onSelectFooterItem) {
     endContent = (
       <Button
-        id={logoutId || undefined}
+        id={utilityItemId(id, 'Logout')}
         text={footerText}
         onClick={onSelectFooterItem}
         onKeyDown={handleButtonKeyDown}

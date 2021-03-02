@@ -156,6 +156,7 @@ const Header = ({
     return (
       <Tabs
         navigationItems={navigationItems}
+        id={id}
         activeTabKey={activeNavigationItemKey}
         onTabSelect={onSelectNavigationItem}
         notifications={notifications}
@@ -172,6 +173,7 @@ const Header = ({
     return (
       <Extensions
         extensionItems={extensionItems}
+        id={id}
         activeBreakpoint={activeBreakpoint}
         onSelect={onSelectExtensionItem}
         notifications={notifications}
@@ -188,6 +190,7 @@ const Header = ({
       <div className={cx('utilities-container')}>
         <UtilityMenuHeaderButton
           userConfig={userConfig}
+          id={id}
           onClick={onSelectUtilityButton}
           popupAnchorRef={utilityButtonPopupAnchorRef}
         />

@@ -140,7 +140,7 @@ const ExampleApplication = ({ onAction }) => {
   return (
     <ApplicationBase locale="en-US">
       <ApplicationNavigation
-        id='example-application'
+        id="example-application"
         titleConfig={titleConfig}
         userConfig={userConfig}
         extensionItems={extensionItems}

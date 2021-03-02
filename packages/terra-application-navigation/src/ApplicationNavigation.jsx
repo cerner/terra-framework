@@ -297,6 +297,7 @@ const ApplicationNavigation = ({
         titleConfig={titleConfig}
         extensionItems={extensionItems}
         onSelectExtensionItem={onSelectExtensionItem}
+        id={id}
         navigationItems={navigationItems}
         navigationRenderFunction={navigationRenderFunction}
         activeNavigationItemKey={activeNavigationItemKey}
