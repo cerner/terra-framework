@@ -24,6 +24,10 @@ const propTypes = {
    */
   navigationItems: navigationItemsPropType,
   /**
+   * The id used to generate navigation item ids
+   */
+  id: PropTypes.string,
+  /**
    * A function to be executed for the render of each navigation item.
    */
   navigationRenderFunction: PropTypes.func,
@@ -107,6 +111,7 @@ const defaultProps = {
 const Header = ({
   titleConfig,
   navigationItems,
+  id,
   navigationRenderFunction,
   activeNavigationItemKey,
   onSelectNavigationItem,

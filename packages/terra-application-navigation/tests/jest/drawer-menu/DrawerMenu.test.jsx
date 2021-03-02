@@ -27,6 +27,7 @@ describe('DrawerMenu', () => {
           initials: 'user-initials',
           imageSrc: 'user-src',
         }}
+        id='application-navigation'
         navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
         utilityItems={[{ text: 'test-text-2', key: 'my-test-key-2', icon: <span>my icon</span> }]}
         notifications={{ 'my-test-key-1': 3 }}
@@ -55,11 +56,11 @@ describe('DrawerMenu', () => {
           initials: 'user-initials',
           imageSrc: 'user-src',
         }}
+        id="application-navigation"
         notifications={{}}
         navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
         onSelectNavigationItem={jest.fn()}
         onSelectHelp={jest.fn()}
-        helpId="test-help-id"
       />,
     );
 

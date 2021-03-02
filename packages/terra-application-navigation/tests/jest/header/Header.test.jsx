@@ -41,6 +41,7 @@ describe('Header', () => {
           initials: 'user-initials',
           imageSrc: 'user-src',
         }}
+        id="application-navigation"
         navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
         extensionItems={[{ text: 'test-text-1', key: 'my-test-key-1', icon: <span>my icon</span> }]}
         notifications={{ 'my-test-key-1': 3 }}
@@ -61,6 +62,7 @@ describe('Header', () => {
     const mountComponent = mountWithIntl(
       <Header
         onSelectSkipToContent={mockCallBack}
+        id="hello"
       />,
     );
 

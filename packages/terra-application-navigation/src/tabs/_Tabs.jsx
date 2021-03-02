@@ -24,6 +24,10 @@ const propTypes = {
    */
   navigationItems: navigationItemsPropType,
   /**
+   * An id used to generate the id of navigation items
+   */
+  id: PropTypes.string,
+  /**
    * A function to be executed for the render of each navigation item.
    */
   navigationRenderFunction: PropTypes.func,
@@ -207,12 +211,12 @@ class Tabs extends React.Component {
     };
   }
 
-  renderVisibleTabs(visibleTabs, useNotificationStyle, notifications) {
+  renderVisibleTabs(visibleTabs, useNotificationStyle, notifications, id) {
     const { activeTabKey, onTabSelect } = this.props;
 
     return visibleTabs.map((tab, index) => {
       const tabProps = {
-        id: tab.id,
+        id: id ? `${id}-${tab.key}` : undefined,
         text: tab.text,
         key: tab.key,
         onTabSelect: onTabSelect ? onTabSelect.bind(null, tab.key, tab.metaData) : null,
@@ -229,7 +233,7 @@ class Tabs extends React.Component {
     });
   }
 
-  renderRollup(hiddenTabs, useNotificationStyle, notifications) {
+  renderRollup(hiddenTabs, useNotificationStyle, notifications, id) {
     const { activeTabKey, intl } = this.props;
 
     const tabRollupIsSelected = hiddenTabs.some(tab => tab.key === activeTabKey);
@@ -252,7 +256,7 @@ class Tabs extends React.Component {
     );
   }
 
-  renderPopup(hiddenTabs, notifications) {
+  renderPopup(hiddenTabs, notifications, id) {
     const {
       activeTabKey, onTabSelect, intl,
     } = this.props;
@@ -273,7 +277,7 @@ class Tabs extends React.Component {
           title={intl.formatMessage({ id: 'Terra.applicationNavigation.tabs.rollupMenuHeaderTitle' })}
           role="list"
           menuItems={hiddenTabs.map(tab => ({
-            id: tab.id,
+            id: id ? `${id}-${tab.key}` : undefined,
             key: tab.key,
             text: tab.text,
             icon: tab.icon,
@@ -312,7 +316,7 @@ class Tabs extends React.Component {
         className={cx('tabs-container', { 'is-calculating': this.isCalculating })}
         ref={this.containerRef}
       >
-        {this.renderVisibleTabs(visibleTabs, useNotificationStyle, notifications)}
+        {this.renderVisibleTabs(visibleTabs, useNotificationStyle, notifications, this.id)}
         {!this.menuHidden ? this.renderRollup(hiddenTabs, useNotificationStyle, notifications) : null}
         {popupIsOpen ? this.renderPopup(hiddenTabs, notifications) : null}
       </nav>
