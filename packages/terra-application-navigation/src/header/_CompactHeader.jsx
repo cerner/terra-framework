@@ -7,7 +7,13 @@ import { injectIntl } from 'react-intl';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import ToggleCount from './_ToggleCount';
 import Extensions from '../extensions/_Extensions';
-import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
+import {
+  enableFocusStyles,
+  disableFocusStyles,
+  generateKeyDownSelection,
+  utilityItemId,
+  navigationItemId,
+} from '../utils/helpers';
 import {
   userConfigPropType,
   navigationItemsPropType,
@@ -15,6 +21,7 @@ import {
   titleConfigPropType,
   utilityItemsPropType,
 } from '../utils/propTypes';
+
 
 import styles from './CompactHeader.module.scss';
 
@@ -128,7 +135,7 @@ const defaultProps = {
 function buildUtilityItem(text, key, onSelect, isUtilityOpen, id) {
   return (
     <li
-      id={`${id}-${key}`}
+      id={utilityItemId(id, key)}
       key={key}
       className={cx('hidden-item')}
       tabIndex={isUtilityOpen ? '0' : '-1'}
@@ -266,7 +273,7 @@ const CompactHeader = ({
               return (
                 <li key={item.key}>
                   <div
-                    id={`${id}-${item.key}`}
+                    id={navigationItemId(id, item.key)}
                     role="link"
                     className={cx('hidden-item')}
                     tabIndex={navigationIsOpen ? '0' : '-1'}
@@ -311,7 +318,7 @@ const CompactHeader = ({
       >
         {utilityItems.map((item) => {
           const onSelect = onSelectUtilityItem && generateCloseUtilsFunc(onSelectUtilityItem.bind(null, item.key, item.metaData));
-          return buildUtilityItem(id, item.text, item.key, onSelect, utilitiesIsOpen);
+          return buildUtilityItem(item.text, item.key, onSelect, utilitiesIsOpen, id);
         })}
         {onSelectSettings ? (
           buildUtilityItem(intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' }), 'app-menu-settings', generateCloseUtilsFunc(onSelectSettings), utilitiesIsOpen, id)

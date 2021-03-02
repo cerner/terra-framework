@@ -215,6 +215,7 @@ const ApplicationNavigation = ({
           returnFocusOnDeactivate: false,
         }}
         className={cx('drawer-menu-focus-trap-container')}
+        id={id}
       >
         <DrawerMenu
           titleConfig={titleConfig}
