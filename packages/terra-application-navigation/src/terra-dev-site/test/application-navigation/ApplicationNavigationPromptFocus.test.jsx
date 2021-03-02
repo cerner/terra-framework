@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ApplicationBase from 'terra-application/lib/application-base';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconManufacturer from 'terra-icon/lib/icon/IconManufacturer';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
@@ -153,24 +152,22 @@ const ApplicationNavigationPromptFocus = () => {
   }
 
   return (
-    <ApplicationBase locale="en">
-      <ApplicationNavigation
-        titleConfig={titleConfig}
-        userConfig={userConfig}
-        extensionItems={extensionItems}
-        onSelectExtensionItem={handleItemSelection}
-        navigationItems={navigationItems}
-        activeNavigationItemKey={activeKey}
-        onSelectNavigationItem={ManageItemSelection}
-        utilityItems={utilityItems}
-        onSelectUtilityItem={handleItemSelection}
-        onSelectSettings={() => handleItemSelection('settings')}
-        onSelectHelp={() => handleItemSelection('help')}
-        onSelectLogout={() => handleItemSelection('logout')}
-      >
-        <PageContent title={activeKey} subtitle={lastActionKey} />
-      </ApplicationNavigation>
-    </ApplicationBase>
+    <ApplicationNavigation
+      titleConfig={titleConfig}
+      userConfig={userConfig}
+      extensionItems={extensionItems}
+      onSelectExtensionItem={handleItemSelection}
+      navigationItems={navigationItems}
+      activeNavigationItemKey={activeKey}
+      onSelectNavigationItem={ManageItemSelection}
+      utilityItems={utilityItems}
+      onSelectUtilityItem={handleItemSelection}
+      onSelectSettings={() => handleItemSelection('settings')}
+      onSelectHelp={() => handleItemSelection('help')}
+      onSelectLogout={() => handleItemSelection('logout')}
+    >
+      <PageContent title={activeKey} subtitle={lastActionKey} />
+    </ApplicationNavigation>
   );
 };
 

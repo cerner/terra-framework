@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Remove extraneous application bases from tests.
+
 ## 1.46.0 - (February 9, 2021)
 
 * Fixed
