@@ -35,18 +35,6 @@ const propTypes = {
    */
   onSelectLogout: PropTypes.func,
   /**
-    * The id for the logout button.
-    */
-  logoutId: PropTypes.string,
-  /**
-   * The id for the settings button.
-   */
-  settingsId: PropTypes.string,
-  /**
-   * The id for the settings button.
-   */
-  helpId: PropTypes.string,
-  /**
    * An array of configuration objects with information specifying the creation of additional utility menu items.
    * These items are rendered within the popup utility menu at larger breakpoints and within the drawer menu at smaller breakpoints.
    */
@@ -92,7 +80,7 @@ const UtilityMenu = ({
 
   if (onSelectSettings) {
     menuItems.push({
-      id: utilityItemId(id, 'Settings'),
+      id: utilityItemId(id, 'TerraSettings'),
       key: utilityMenuSettingsKey,
       text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' }),
       icon: <IconSettings />,
@@ -102,7 +90,7 @@ const UtilityMenu = ({
 
   if (onSelectHelp) {
     menuItems.push({
-      id: utilityItemId(id, 'Help'),
+      id: utilityItemId(id, 'TerraHelp'),
       key: utilityMenuHelpKey,
       text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' }),
       icon: <IconQuestionOutline />,

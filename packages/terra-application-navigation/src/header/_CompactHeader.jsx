@@ -22,7 +22,6 @@ import {
   utilityItemsPropType,
 } from '../utils/propTypes';
 
-
 import styles from './CompactHeader.module.scss';
 
 const cx = classNames.bind(styles);

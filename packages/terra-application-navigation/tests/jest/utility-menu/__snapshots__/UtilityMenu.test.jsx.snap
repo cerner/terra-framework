@@ -234,10 +234,11 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
     menuItems={
       Array [
         Object {
+          "dataAttrs": undefined,
           "icon": <span>
             my icon
           </span>,
-          "id": "test-utility-2-id",
+          "id": null,
           "key": "my-test-key-2",
           "text": "test-text-2",
         },
@@ -250,7 +251,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
             viewBox="0 0 48 48"
             xmlns="http://www.w3.org/2000/svg"
           />,
-          "id": undefined,
+          "id": null,
           "key": "terra-application-navigation.utility-menu.settings",
           "text": "Terra.applicationNavigation.utilityMenu.settings",
         },
@@ -262,7 +263,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
             viewBox="0 0 48 48"
             xmlns="http://www.w3.org/2000/svg"
           />,
-          "id": undefined,
+          "id": null,
           "key": "terra-application-navigation.utility-menu.help",
           "text": "Terra.applicationNavigation.utilityMenu.help",
         },
@@ -290,6 +291,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
           end={
             <Button
               data-navigation-utility-item-logout={true}
+              id={null}
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -508,7 +510,6 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                         my icon
                       </span>
                     }
-                    id="test-utility-2-id"
                     key="my-test-key-2"
                     loopFocus={[Function]}
                     onSelect={[Function]}
@@ -519,7 +520,6 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     <li
                       className="item"
                       data-focus-styles-enabled={true}
-                      id="test-utility-2-id"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -731,6 +731,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
             end={
               <Button
                 data-navigation-utility-item-logout={true}
+                id={null}
                 isBlock={false}
                 isCompact={false}
                 isDisabled={false}
@@ -756,6 +757,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                 >
                   <Button
                     data-navigation-utility-item-logout={true}
+                    id={null}
                     isBlock={false}
                     isCompact={false}
                     isDisabled={false}
@@ -773,6 +775,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       className="button neutral"
                       data-navigation-utility-item-logout={true}
                       disabled={false}
+                      id={null}
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -853,6 +856,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
           end={
             <Button
               data-navigation-utility-item-logout={true}
+              id={null}
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -976,6 +980,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
             end={
               <Button
                 data-navigation-utility-item-logout={true}
+                id={null}
                 isBlock={false}
                 isCompact={false}
                 isDisabled={false}
@@ -1001,6 +1006,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                 >
                   <Button
                     data-navigation-utility-item-logout={true}
+                    id={null}
                     isBlock={false}
                     isCompact={false}
                     isDisabled={false}
@@ -1018,6 +1024,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                       className="button neutral"
                       data-navigation-utility-item-logout={true}
                       disabled={false}
+                      id={null}
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}

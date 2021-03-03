@@ -347,7 +347,6 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
             "icon": <span>
               my icon
             </span>,
-            "id": "test-text-1-id",
             "key": "my-test-key-1",
             "text": "test-text-1",
           },
@@ -361,7 +360,6 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
       navigationItems={
         Array [
           Object {
-            "id": "test-text-id",
             "key": "my-test-key",
             "text": "test-text",
           },
@@ -404,7 +402,6 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
             "icon": <span>
               my icon
             </span>,
-            "id": "test-text-2-id",
             "key": "my-test-key-2",
             "text": "test-text-2",
           },
@@ -456,18 +453,15 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
     targetRef={[Function]}
   >
     <InjectIntl(UtilityMenu)
-      helpId="test-help-id"
       hero={
         <div>
           my test hero
         </div>
       }
-      logoutId="test-logout-id"
       onSelectHelp={[Function]}
       onSelectLogout={[Function]}
       onSelectSettings={[Function]}
       onSelectUtilityItem={[Function]}
-      settingsId="test-settings-id"
       userConfig={
         Object {
           "detail": "user-detail",
@@ -482,7 +476,6 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
             "icon": <span>
               my icon
             </span>,
-            "id": "test-text-2-id",
             "key": "my-test-key-2",
             "text": "test-text-2",
           },
@@ -521,17 +514,14 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
     >
       <InjectIntl(DrawerMenu)
         activeNavigationItemKey="my-test-key"
-        helpId="test-help-id"
         hero={
           <div>
             my test hero
           </div>
         }
-        logoutId="test-logout-id"
         navigationItems={
           Array [
             Object {
-              "id": "test-text-id",
               "key": "my-test-key",
               "text": "test-text",
             },
@@ -547,7 +537,6 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
         onSelectNavigationItem={[Function]}
         onSelectSettings={[Function]}
         onSelectUtilityItem={[Function]}
-        settingsId="test-settings-id"
         titleConfig={
           Object {
             "title": "test-title",
@@ -567,7 +556,6 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
               "icon": <span>
                 my icon
               </span>,
-              "id": "test-text-2-id",
               "key": "my-test-key-2",
               "text": "test-text-2",
             },
@@ -588,24 +576,20 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
             "icon": <span>
               my icon
             </span>,
-            "id": "test-text-1-id",
             "key": "my-test-key-1",
             "text": "test-text-1",
           },
         ]
       }
-      helpId="test-help-id"
       hero={
         <div>
           my test hero
         </div>
       }
       isDrawerMenuOpen={false}
-      logoutId="test-logout-id"
       navigationItems={
         Array [
           Object {
-            "id": "test-text-id",
             "key": "my-test-key",
             "text": "test-text",
           },
@@ -624,7 +608,6 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
       onSelectSettings={[MockFunction]}
       onSelectSkipToContent={[Function]}
       onSelectUtilityItem={[MockFunction]}
-      settingsId="test-settings-id"
       titleConfig={
         Object {
           "title": "test-title",
@@ -644,7 +627,6 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
             "icon": <span>
               my icon
             </span>,
-            "id": "test-text-2-id",
             "key": "my-test-key-2",
             "text": "test-text-2",
           },
@@ -696,18 +678,15 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
     targetRef={[Function]}
   >
     <InjectIntl(UtilityMenu)
-      helpId="test-help-id"
       hero={
         <div>
           my test hero
         </div>
       }
-      logoutId="test-logout-id"
       onSelectHelp={[Function]}
       onSelectLogout={[Function]}
       onSelectSettings={[Function]}
       onSelectUtilityItem={[Function]}
-      settingsId="test-settings-id"
       userConfig={
         Object {
           "detail": "user-detail",
@@ -722,7 +701,6 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
             "icon": <span>
               my icon
             </span>,
-            "id": "test-text-2-id",
             "key": "my-test-key-2",
             "text": "test-text-2",
           },

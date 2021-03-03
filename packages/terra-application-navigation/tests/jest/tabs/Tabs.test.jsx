@@ -16,7 +16,7 @@ describe('Tabs', () => {
     const mountComponent = mountWithIntl(
       <Tabs
         activeTabKey="my-test-key"
-        navigationItems={[{ id: 'test-nav-id', text: 'test-text', key: 'my-test-key' }]}
+        navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
         notifications={{ myComponent: 3 }}
         onTabSelect={jest.fn()}
         navigationRenderFunction={jest.fn()}

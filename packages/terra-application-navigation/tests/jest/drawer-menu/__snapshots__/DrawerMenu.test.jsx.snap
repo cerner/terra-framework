@@ -47,7 +47,7 @@ exports[`DrawerMenu should render Help utility item when it is the only utility 
           className="navigation-item-list"
         >
           <DrawerMenuLinkItem
-            id="application-navigation-my-test-key"
+            id={null}
             isSelected={false}
             key="my-test-key"
             onSelect={[Function]}
@@ -68,7 +68,7 @@ exports[`DrawerMenu should render Help utility item when it is the only utility 
               xmlns="http://www.w3.org/2000/svg"
             />
           }
-          id="application-navigation-help-btn"
+          id={null}
           onSelect={[MockFunction]}
           text="Terra.applicationNavigation.utilityMenu.help"
         />
@@ -153,7 +153,7 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
           className="navigation-item-list"
         >
           <DrawerMenuLinkItem
-            id="application-navigation-my-test-key"
+            id={null}
             isSelected={false}
             key="my-test-key"
             onSelect={[Function]}
@@ -172,7 +172,7 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
               my icon
             </span>
           }
-          id="application-navigation-my-test-key-2"
+          id={null}
           key="my-test-key-2"
           onSelect={[Function]}
           text="test-text-2"
@@ -186,7 +186,7 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             />
           }
-          id="application-navigation-settings-btn"
+          id={null}
           onSelect={[MockFunction]}
           text="Terra.applicationNavigation.utilityMenu.settings"
         />
@@ -198,7 +198,7 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             />
           }
-          id="application-navigation-help-btn"
+          id={null}
           onSelect={[MockFunction]}
           text="Terra.applicationNavigation.utilityMenu.help"
         />
@@ -209,7 +209,122 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
     >
       <DrawerMenuFooterButton
         data-navigation-drawer-item-logout={true}
-        id="application-navigation-logout-btn"
+        id={null}
+        onClick={[MockFunction]}
+        text="Terra.applicationNavigation.utilityMenu.logout"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DrawerMenu should render with navigation and utility item ids 1`] = `
+<div
+  className="drawer-container"
+>
+  <div
+    className="drawer-menu"
+    data-navigation-drawer-menu={true}
+    role="dialog"
+    tabIndex={0}
+  >
+    <div
+      className="vertical-overflow-container"
+    >
+      <div
+        className="header"
+      >
+        <div
+          className="header-background-fill"
+        >
+          <DrawerMenuTitle
+            titleConfig={
+              Object {
+                "title": "test-title",
+              }
+            }
+          />
+          <div>
+            my test hero
+          </div>
+          <DrawerMenuUser
+            userConfig={
+              Object {
+                "detail": "user-detail",
+                "imageSrc": "user-src",
+                "initials": "user-initials",
+                "name": "user-name",
+              }
+            }
+            variant="small"
+          />
+        </div>
+      </div>
+      <div
+        role="navigation"
+      >
+        <ul
+          aria-label="Terra.applicationNavigation.drawerMenu.navigation"
+          className="navigation-item-list"
+        >
+          <DrawerMenuLinkItem
+            id="test-application-NavigationItem-my-test-key"
+            isSelected={false}
+            key="my-test-key"
+            onSelect={[Function]}
+            text="test-text"
+          />
+        </ul>
+      </div>
+      <ul
+        aria-label="Terra.applicationNavigation.drawerMenu.utilities"
+        className="utility-item-list"
+        role="listbox"
+      >
+        <DrawerMenuListItem
+          icon={
+            <span>
+              my icon
+            </span>
+          }
+          id="test-application-UtilityItem-my-test-key-2"
+          key="my-test-key-2"
+          onSelect={[Function]}
+          text="test-text-2"
+        />
+        <DrawerMenuListItem
+          data-navigation-drawer-item-settings={true}
+          icon={
+            <IconSettings
+              data-name="Layer 1"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            />
+          }
+          id="test-application-UtilityItem-TerraSettings"
+          onSelect={[MockFunction]}
+          text="Terra.applicationNavigation.utilityMenu.settings"
+        />
+        <DrawerMenuListItem
+          data-navigation-drawer-item-help={true}
+          icon={
+            <IconQuestionOutline
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            />
+          }
+          id="test-application-UtilityItem-TerraHelp"
+          onSelect={[MockFunction]}
+          text="Terra.applicationNavigation.utilityMenu.help"
+        />
+      </ul>
+    </div>
+    <div
+      className="footer"
+    >
+      <DrawerMenuFooterButton
+        data-navigation-drawer-item-logout={true}
+        id="test-application-UtilityItem-TerraLogout"
         onClick={[MockFunction]}
         text="Terra.applicationNavigation.utilityMenu.logout"
       />

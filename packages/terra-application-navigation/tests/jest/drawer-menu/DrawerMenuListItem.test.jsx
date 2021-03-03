@@ -5,7 +5,6 @@ describe('DrawerMenuListItem', () => {
   it('should render with required prop data', () => {
     const shallowComponent = shallow(
       <DrawerMenuListItem
-        id="test-menu-item-id"
         text="my text"
         onSelect={jest.fn()}
       />,

@@ -234,7 +234,7 @@ class Tabs extends React.Component {
     });
   }
 
-  renderRollup(hiddenTabs, useNotificationStyle, notifications, id) {
+  renderRollup(hiddenTabs, useNotificationStyle, notifications) {
     const { activeTabKey, intl } = this.props;
 
     const tabRollupIsSelected = hiddenTabs.some(tab => tab.key === activeTabKey);

@@ -41,7 +41,37 @@ describe('Header', () => {
           initials: 'user-initials',
           imageSrc: 'user-src',
         }}
-        id="application-navigation"
+        navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
+        extensionItems={[{ text: 'test-text-1', key: 'my-test-key-1', icon: <span>my icon</span> }]}
+        notifications={{ 'my-test-key-1': 3 }}
+        navigationRenderFunction={jest.fn()}
+        onSelectNavigationItem={jest.fn()}
+        onSelectExtensionItem={jest.fn()}
+        onSelectUtilityButton={jest.fn()}
+        utilityButtonPopupAnchorRef={testUtilityButtonPopupAnchorRef}
+      />,
+    );
+
+    expect(mountComponent).toMatchSnapshot();
+  });
+
+  it('should render with navigation and extension item ids', () => {
+    const testUtilityButtonPopupAnchorRef = React.createRef();
+
+    const mountComponent = mountWithIntl(
+      <Header
+        titleConfig={{
+          title: 'test-title',
+        }}
+        activeNavigationItemKey="test-text"
+        hero={<div>my test hero</div>}
+        userConfig={{
+          name: 'user-name',
+          detail: 'user-detail',
+          initials: 'user-initials',
+          imageSrc: 'user-src',
+        }}
+        id="test-application"
         navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
         extensionItems={[{ text: 'test-text-1', key: 'my-test-key-1', icon: <span>my icon</span> }]}
         notifications={{ 'my-test-key-1': 3 }}
@@ -62,7 +92,6 @@ describe('Header', () => {
     const mountComponent = mountWithIntl(
       <Header
         onSelectSkipToContent={mockCallBack}
-        id="hello"
       />,
     );
 

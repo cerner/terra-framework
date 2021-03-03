@@ -2,9 +2,9 @@
 
 ## Unreleased
 
-* Changed
-  * Added ids to navigation items, settings, help, and logout elements
-
+* Added
+  * Adding an id to ApplicationNavigation now causes navigation, extesion, and utility items to have a unique id.
+  
 ## 1.46.0 - (February 9, 2021)
 
 * Fixed

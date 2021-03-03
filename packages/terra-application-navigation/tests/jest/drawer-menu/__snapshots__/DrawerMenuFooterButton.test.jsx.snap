@@ -25,7 +25,6 @@ exports[`DrawerMenuFooterButton should render with data props 1`] = `
 <button
   className="drawer-menu-footer-button"
   data-focus-styles-enabled={true}
-  id="test-button-id"
   onBlur={[Function]}
   onMouseDown={[Function]}
   type="button"

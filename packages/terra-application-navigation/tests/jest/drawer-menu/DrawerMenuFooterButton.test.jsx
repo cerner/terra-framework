@@ -13,7 +13,6 @@ describe('DrawerMenuFooterButton', () => {
   it('should render with data props', () => {
     const shallowComponent = shallow(
       <DrawerMenuFooterButton
-        id="test-button-id"
         text="test-text"
       />,
     );

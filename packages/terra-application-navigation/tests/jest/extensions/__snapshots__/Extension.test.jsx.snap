@@ -61,7 +61,6 @@ exports[`Extension should render with required prop data 1`] = `
   aria-label="my text"
   className="extension"
   data-focus-styles-enabled={true}
-  id="test-extension-id"
   onBlur={[Function]}
   onMouseDown={[Function]}
   role="button"

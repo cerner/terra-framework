@@ -128,7 +128,6 @@ exports[`Tabs should render prop data 1`] = `
   navigationItems={
     Array [
       Object {
-        "id": "test-nav-id",
         "key": "my-test-key",
         "text": "test-text",
       },
@@ -205,7 +204,6 @@ exports[`Tabs should render prop data 1`] = `
     navigationItems={
       Array [
         Object {
-          "id": "test-nav-id",
           "key": "my-test-key",
           "text": "test-text",
         },
@@ -255,6 +253,7 @@ exports[`Tabs should render prop data 1`] = `
     >
       <Tab
         hasCount={true}
+        id={null}
         isActive={true}
         key="my-test-key"
         onTabSelect={[Function]}
@@ -478,6 +477,7 @@ exports[`Tabs should render with hasCount set to true when notifications are set
     >
       <Tab
         hasCount={true}
+        id={null}
         isActive={true}
         key="notification-test"
         onTabSelect={null}

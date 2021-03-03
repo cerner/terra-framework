@@ -52,13 +52,9 @@ describe('ApplicationNavigation', () => {
           initials: 'user-initials',
           imageSrc: 'user-src',
         }}
-        navigationItems={[{ id: 'test-text-id', text: 'test-text', key: 'my-test-key' }]}
-        extensionItems={[{
-          id: 'test-text-1-id', text: 'test-text-1', key: 'my-test-key-1', icon: <span>my icon</span>,
-        }]}
-        utilityItems={[{
-          id: 'test-text-2-id', text: 'test-text-2', key: 'my-test-key-2', icon: <span>my icon</span>,
-        }]}
+        navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
+        extensionItems={[{ text: 'test-text-1', key: 'my-test-key-1', icon: <span>my icon</span> }]}
+        utilityItems={[{ text: 'test-text-2', key: 'my-test-key-2', icon: <span>my icon</span> }]}
         notifications={{ 'my-test-key-1': 3 }}
         navigationRenderFunction={jest.fn()}
         onSelectNavigationItem={jest.fn()}
@@ -67,9 +63,6 @@ describe('ApplicationNavigation', () => {
         onSelectSettings={jest.fn()}
         onSelectHelp={jest.fn()}
         onSelectLogout={jest.fn()}
-        logoutId="test-logout-id"
-        settingsId="test-settings-id"
-        helpId="test-help-id"
       >
         <div>test child content</div>
       </ApplicationNavigation>,
@@ -94,13 +87,9 @@ describe('ApplicationNavigation', () => {
           initials: 'user-initials',
           imageSrc: 'user-src',
         }}
-        navigationItems={[{ id: 'test-text-id', text: 'test-text', key: 'my-test-key' }]}
-        extensionItems={[{
-          id: 'test-text-1-id', text: 'test-text-1', key: 'my-test-key-1', icon: <span>my icon</span>,
-        }]}
-        utilityItems={[{
-          id: 'test-text-2-id', text: 'test-text-2', key: 'my-test-key-2', icon: <span>my icon</span>,
-        }]}
+        navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
+        extensionItems={[{ text: 'test-text-1', key: 'my-test-key-1', icon: <span>my icon</span> }]}
+        utilityItems={[{ text: 'test-text-2', key: 'my-test-key-2', icon: <span>my icon</span> }]}
         notifications={{ 'my-test-key-1': 3 }}
         navigationRenderFunction={jest.fn()}
         onSelectNavigationItem={jest.fn()}
@@ -109,9 +98,6 @@ describe('ApplicationNavigation', () => {
         onSelectSettings={jest.fn()}
         onSelectHelp={jest.fn()}
         onSelectLogout={jest.fn()}
-        logoutId="test-logout-id"
-        settingsId="test-settings-id"
-        helpId="test-help-id"
       >
         <div>test child content</div>
       </ApplicationNavigation>
