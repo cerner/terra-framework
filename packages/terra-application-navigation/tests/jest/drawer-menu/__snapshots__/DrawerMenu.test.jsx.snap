@@ -47,7 +47,6 @@ exports[`DrawerMenu should render Help utility item when it is the only utility 
           className="navigation-item-list"
         >
           <DrawerMenuLinkItem
-            id={null}
             isSelected={false}
             key="my-test-key"
             onSelect={[Function]}
@@ -68,7 +67,6 @@ exports[`DrawerMenu should render Help utility item when it is the only utility 
               xmlns="http://www.w3.org/2000/svg"
             />
           }
-          id={null}
           onSelect={[MockFunction]}
           text="Terra.applicationNavigation.utilityMenu.help"
         />
@@ -153,7 +151,6 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
           className="navigation-item-list"
         >
           <DrawerMenuLinkItem
-            id={null}
             isSelected={false}
             key="my-test-key"
             onSelect={[Function]}
@@ -172,7 +169,6 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
               my icon
             </span>
           }
-          id={null}
           key="my-test-key-2"
           onSelect={[Function]}
           text="test-text-2"
@@ -186,7 +182,6 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             />
           }
-          id={null}
           onSelect={[MockFunction]}
           text="Terra.applicationNavigation.utilityMenu.settings"
         />
@@ -198,7 +193,6 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             />
           }
-          id={null}
           onSelect={[MockFunction]}
           text="Terra.applicationNavigation.utilityMenu.help"
         />
@@ -209,7 +203,6 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
     >
       <DrawerMenuFooterButton
         data-navigation-drawer-item-logout={true}
-        id={null}
         onClick={[MockFunction]}
         text="Terra.applicationNavigation.utilityMenu.logout"
       />

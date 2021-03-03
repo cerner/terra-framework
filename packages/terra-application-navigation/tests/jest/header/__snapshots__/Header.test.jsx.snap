@@ -712,7 +712,6 @@ exports[`Header should render with function callbacks 1`] = `
             >
               <Tab
                 hasCount={true}
-                id={null}
                 isActive={false}
                 key="my-test-key"
                 onTabSelect={[Function]}
@@ -859,7 +858,6 @@ exports[`Header should render with function callbacks 1`] = `
                     my icon
                   </span>
                 }
-                id={null}
                 key="my-test-key-1"
                 notificationCount={3}
                 onSelect={[Function]}

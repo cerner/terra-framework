@@ -114,7 +114,7 @@ const DrawerMenu = ({
   const logoutButton = onSelectLogout ? (
     <div className={cx('footer')}>
       <DrawerMenuFooterButton
-        id={utilityItemId(id, 'TerraLogout')}
+        id={id && utilityItemId(id, 'TerraLogout')}
         onClick={onSelectLogout}
         text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
         data-navigation-drawer-item-logout
@@ -136,7 +136,7 @@ const DrawerMenu = ({
         >
           {navigationItems.map(item => (
             <DrawerMenuLinkItem
-              id={navigationItemId(id, item.key)}
+              id={id && navigationItemId(id, item.key)}
               key={item.key}
               text={item.text}
               notificationCount={notifications[item.key]}
@@ -160,7 +160,7 @@ const DrawerMenu = ({
       >
         {utilityItems.map(item => (
           <DrawerMenuListItem
-            id={utilityItemId(id, item.key)}
+            id={id && utilityItemId(id, item.key)}
             key={item.key}
             text={item.text}
             icon={item.icon}
@@ -169,7 +169,7 @@ const DrawerMenu = ({
         ))}
         {onSelectSettings ? (
           <DrawerMenuListItem
-            id={utilityItemId(id, 'TerraSettings')}
+            id={id && utilityItemId(id, 'TerraSettings')}
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' })}
             icon={<IconSettings />}
             onSelect={onSelectSettings}
@@ -178,7 +178,7 @@ const DrawerMenu = ({
         ) : null}
         {onSelectHelp ? (
           <DrawerMenuListItem
-            id={utilityItemId(id, 'TerraHelp')}
+            id={id && utilityItemId(id, 'TerraHelp')}
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' })}
             icon={<IconQuestionOutline />}
             onSelect={onSelectHelp}

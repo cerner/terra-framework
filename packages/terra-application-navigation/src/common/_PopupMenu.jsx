@@ -174,7 +174,7 @@ const PopupMenu = ({
   if (onSelectFooterItem) {
     endContent = (
       <Button
-        id={utilityItemId(id, 'TerraLogout')}
+        id={id && utilityItemId(id, 'TerraLogout')}
         text={footerText}
         onClick={onSelectFooterItem}
         onKeyDown={handleButtonKeyDown}

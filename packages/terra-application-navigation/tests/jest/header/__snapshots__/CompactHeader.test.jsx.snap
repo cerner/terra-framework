@@ -498,7 +498,6 @@ exports[`CompactHeader should render with function callbacks 1`] = `
               aria-current={false}
               aria-label="test-text"
               className="hidden-item"
-              id={null}
               role="link"
               tabIndex="-1"
             >
@@ -589,7 +588,6 @@ exports[`CompactHeader should render with function callbacks 1`] = `
                     my icon
                   </span>
                 }
-                id={null}
                 key="my-test-key-1"
                 notificationCount={3}
                 onSelect={[Function]}
@@ -977,7 +975,6 @@ exports[`CompactHeader should render with ids for navigation and extension items
                     my icon
                   </span>
                 }
-                id={null}
                 key="my-test-key-1"
                 notificationCount={3}
                 onSelect={[Function]}

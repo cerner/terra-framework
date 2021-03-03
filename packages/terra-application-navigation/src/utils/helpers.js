@@ -62,7 +62,7 @@ const useAnimatedCount = (countRef, countValue) => {
 };
 
 function itemId(appNavId, itemType, itemKey) {
-  return appNavId ? `${appNavId}-${itemType}-${itemKey}` : null;
+  return `${appNavId}-${itemType}-${itemKey}`;
 }
 
 function navigationItemId(appNavId, navigationItemKey) {

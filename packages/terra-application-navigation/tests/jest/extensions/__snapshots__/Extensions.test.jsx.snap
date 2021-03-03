@@ -45,7 +45,6 @@ exports[`Extensions should render prop data 1`] = `
           my icon
         </span>
       }
-      id={null}
       key="my-test-key"
       notificationCount={0}
       onSelect={[Function]}

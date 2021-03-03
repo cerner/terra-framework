@@ -71,7 +71,7 @@ const UtilityMenu = ({
 }) => {
   let menuItems = [];
   menuItems = utilityItems.map(item => ({
-    id: utilityItemId(id, item.key),
+    id: id ? utilityItemId(id, item.key) : null,
     key: item.key,
     text: item.text,
     icon: item.icon,
@@ -80,7 +80,7 @@ const UtilityMenu = ({
 
   if (onSelectSettings) {
     menuItems.push({
-      id: utilityItemId(id, 'TerraSettings'),
+      id: id ? utilityItemId(id, 'TerraSettings') : null,
       key: utilityMenuSettingsKey,
       text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' }),
       icon: <IconSettings />,
@@ -90,7 +90,7 @@ const UtilityMenu = ({
 
   if (onSelectHelp) {
     menuItems.push({
-      id: utilityItemId(id, 'TerraHelp'),
+      id: id ? utilityItemId(id, 'TerraHelp') : null,
       key: utilityMenuHelpKey,
       text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' }),
       icon: <IconQuestionOutline />,

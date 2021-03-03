@@ -134,7 +134,7 @@ const defaultProps = {
 function buildUtilityItem(text, key, onSelect, isUtilityOpen, id) {
   return (
     <li
-      id={utilityItemId(id, key)}
+      id={id && utilityItemId(id, key)}
       key={key}
       className={cx('hidden-item')}
       tabIndex={isUtilityOpen ? '0' : '-1'}
@@ -272,7 +272,7 @@ const CompactHeader = ({
               return (
                 <li key={item.key}>
                   <div
-                    id={navigationItemId(id, item.key)}
+                    id={id && navigationItemId(id, item.key)}
                     role="link"
                     className={cx('hidden-item')}
                     tabIndex={navigationIsOpen ? '0' : '-1'}

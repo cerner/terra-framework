@@ -119,7 +119,7 @@ const Extensions = ({
           title={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupMenuHeaderTitle' })}
           role="menu"
           menuItems={hiddenExtensions.map(item => ({
-            id: extensionItemId(id, item.key),
+            id: id && extensionItemId(id, item.key),
             key: item.key,
             icon: item.icon,
             text: item.text,
@@ -140,7 +140,7 @@ const Extensions = ({
       <div className={cx('extensions-row')}>
         {visibleExtensions.map(extension => (
           <Extension
-            id={extensionItemId(id, extension.key)}
+            id={id && extensionItemId(id, extension.key)}
             notificationCount={notifications[extension.key]}
             key={extension.key}
             icon={extension.icon}
