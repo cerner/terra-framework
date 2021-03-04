@@ -27,6 +27,7 @@ export default class extends React.Component {
         <DateTimePickerExampleTemplate
           value="2017-11-05T01:30:00"
           disabled={!this.state.active}
+          initialTimeZone="America/Chicago"
         />
       </div>
     );
