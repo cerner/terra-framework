@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Update reference from terra-toolkit to terra-functional-testing.
+
 ## 1.4.0 - (August 4, 2020)
 
 * Changed

@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Changed
+  * Updated to terra-functional-testing
   * Remove extraneous application bases from tests.
 
 * Fixed

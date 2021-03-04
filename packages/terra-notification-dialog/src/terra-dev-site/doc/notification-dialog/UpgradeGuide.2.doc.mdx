@@ -166,11 +166,11 @@ The data attribute, `data-terra-notification-dialog`, was added to assist with v
 
 ```diff
   it('opens a notification dialog', () => {
-    browser.click('#triggerNotificationDialog');
--   expect(browser.isExisting('[class*="notification-dialog"]')).to.be.true;
--   expect(browser.hasFocus('[class*="notification-dialog"]')).to.be.true;
-+   expect(browser.isExisting('[data-terra-notification-dialog]')).to.be.true;
-+   expect(browser.hasFocus('[data-terra-notification-dialog]')).to.be.true;
+    $('#triggerNotificationDialog').click();
+-   expect(browser.isExisting('[class*="notification-dialog"]')).toBeTruthy();
+-   expect(browser.hasFocus('[class*="notification-dialog"]')).toBeTruthy();
++   expect(browser.isExisting('[data-terra-notification-dialog]')).toBeTruthy();
++   expect(browser.hasFocus('[data-terra-notification-dialog]')).toBeTruthy();
     Terra.validates.element();
   });
 ```
@@ -181,8 +181,8 @@ The data attribute, `data-terra-notification-dialog-button` was added to assist 
 
 ```diff
   it('rejects the notification dialog', () => {
--   browser.click('[class*="notification-dialog-inner-wrapper"] button:last-child');
-+   browser.click('[data-terra-notification-dialog-button="reject"]');
+-   $('[class*="notification-dialog-inner-wrapper"] button:last-child').click();
++   $('[data-terra-notification-dialog-button="reject"]').click();
     Terra.validates.element('rejected', { selector: '#root' });
   });
 ```
