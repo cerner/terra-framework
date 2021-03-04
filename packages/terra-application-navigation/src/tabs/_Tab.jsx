@@ -70,7 +70,7 @@ const Tab = ({
     }
 
     return (
-      <div id={id || undefined} aria-hidden className={cx('tab-inner')}>
+      <div id={id} aria-hidden className={cx('tab-inner')}>
         <span aria-hidden className={cx('tab-label')}>{text}</span>
         {notificationCount > 0 && <span className={cx('tab-count')}><TabCount value={notificationCount} /></span>}
       </div>

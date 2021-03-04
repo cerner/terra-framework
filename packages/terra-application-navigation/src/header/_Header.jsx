@@ -24,7 +24,7 @@ const propTypes = {
    */
   navigationItems: navigationItemsPropType,
   /**
-   * The id used to generate navigation item ids
+   * The base id used to generate ids of navigation, utility, and extension items
    */
   id: PropTypes.string,
   /**

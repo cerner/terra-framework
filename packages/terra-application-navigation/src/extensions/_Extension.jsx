@@ -50,7 +50,7 @@ const Extension = ({
 
   return (
     <div
-      id={id || undefined}
+      id={id}
       role="button"
       tabIndex="0"
       className={cx('extension')}

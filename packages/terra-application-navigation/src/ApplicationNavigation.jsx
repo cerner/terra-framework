@@ -64,8 +64,8 @@ const propTypes = {
    */
   activeNavigationItemKey: PropTypes.string,
   /**
-    * The base id used to generate ids of all navigation items
-    */
+   * The base id used to generate ids of navigation, utility, and extension items
+   */
   id: PropTypes.string,
   /**
   * Callback function triggered on Drawer Menu state change

@@ -40,7 +40,7 @@ const propTypes = {
    */
   utilityItems: utilityItemsPropType,
   /**
-   * An id used to generate unique ids for utility items
+   * A base id used to generate unique ids for utility items
    */
   id: PropTypes.string,
   /**
