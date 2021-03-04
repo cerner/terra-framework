@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "terra-framework",
   "engines": {
-    "node": ">=8.9.2 <12"
+    "node": ">=10 <12"
   },
   "repository": {
     "type": "git",
@@ -53,7 +53,6 @@
     "dependency-markdown": "node scripts/dependency-markdown-generator/DependencyMarkdownGenerator.js",
     "docs": "node scripts/root-readme-updater/index.js",
     "docs:peerDependencies": "node scripts/peer-dependency-generator/index.js",
-    "heroku-prebuild": "npx lerna init",
     "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
     "jest": "jest --config jestconfig.js",
     "jest:coverage": "jest --coverage --config jestconfig.js",
@@ -65,9 +64,9 @@
     "pretest": "npm run lint",
     "postinstall": "link-parent-bin && npm run compile && npm run bootstrap:hoist",
     "start": "webpack-dev-server",
-    "start-heroku": "terra express-server --port $PORT --site './build'",
+    "start-heroku": "terra express-server --port $PORT --site build",
     "start-prod": "webpack-dev-server --env.disableHotReloading -p",
-    "start-static": "npm run compile:prod && terra express-server --site ./build",
+    "start-static": "npm run compile:prod && terra express-server --site build",
     "test": "npm run lint && npm run jest && npm run wdio",
     "wdio-default": "terra wdio",
     "wdio-lowlight": "NODE_OPTIONS=--max-old-space-size=2048 terra wdio --themes clinical-lowlight-theme",
