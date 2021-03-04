@@ -1,67 +1,67 @@
 Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
   it('displays default embedded content consumer', () => {
     browser.url('/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/basic-consumer');
-    Terra.validates.screenshot('default');
+    Terra.validates.element('default');
   });
 
   describe('custom-event', () => {
     it('displays with custom events', () => {
       browser.url('/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/custom-event-consumer');
-      browser.waitForExist('#CustomEvent');
-      Terra.validates.screenshot('custom event');
+      $('#CustomEvent').waitForDisplayed();
+      Terra.validates.element('custom event');
     });
 
     it('Provider triggers EventA message', () => {
-      const myFrame = browser.element('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-event-provider"]').value;
-      browser.frame(myFrame);
+      const myFrame = $('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-event-provider"]');
+      browser.switchToFrame(myFrame);
 
-      browser.click('#EventA');
-      browser.frameParent();
-      browser.moveToObject('#root', 0, 0);
-      Terra.validates.screenshot('EventA');
+      $('#EventA').click();
+      browser.switchToParentFrame();
+      $('#root').moveTo(0, 0);
+      Terra.validates.element('EventA for custom-event');
     });
   });
 
   describe('custom-events', () => {
     it('displays with custom event', () => {
       browser.url('/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/custom-events-consumer');
-      browser.waitForExist('#CustomEvents');
-      Terra.validates.element('custom event');
+      $('#CustomEvents').waitForDisplayed();
+      Terra.validates.element('custom events');
     });
 
     it('Provider triggers EventA message', () => {
-      const myFrame = browser.element('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
-      browser.frame(myFrame);
+      const myFrame = $('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]');
+      browser.switchToFrame(myFrame);
 
-      browser.click('#EventA');
-      browser.frameParent();
-      browser.moveToObject('#root', 0, 0);
-      Terra.validates.screenshot('EventA');
+      $('#EventA').click();
+      browser.switchToParentFrame();
+      $('#root').moveTo(0, 0);
+      Terra.validates.element('EventA for custom-events');
     });
 
     it('successfully replied with EventA message', () => {
-      const myFrame = browser.element('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
-      browser.frame(myFrame);
+      const myFrame = $('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]');
+      browser.switchToFrame(myFrame);
 
-      expect(browser.getText('#embedded-content-consumer-reply')).to.have.string('eventA');
-      browser.frameParent();
+      expect($('#embedded-content-consumer-reply')).toHaveTextContaining('eventA');
+      browser.switchToParentFrame();
     });
 
     it('Provider triggers EventB message', () => {
-      const myFrame = browser.element('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
-      browser.frame(myFrame);
+      const myFrame = $('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]');
+      browser.switchToFrame(myFrame);
 
-      browser.click('#EventB');
-      browser.frameParent();
-      browser.moveToObject('#root', 0, 0);
+      $('#EventB').click();
+      browser.switchToParentFrame();
+      $('#root').moveTo(0, 0);
       Terra.validates.element('EventB');
     });
 
     it('successfully replied with EventB message', () => {
-      const myFrame = browser.element('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
-      browser.frame(myFrame);
+      const myFrame = $('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]');
+      browser.switchToFrame(myFrame);
 
-      expect(browser.getText('#embedded-content-consumer-reply')).to.have.string('eventB');
+      expect($('#embedded-content-consumer-reply')).toHaveTextContaining('eventB');
     });
   });
 
@@ -69,14 +69,14 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     it('has mounted, launched, and authorized elements', () => {
       browser.url('/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/data-status-consumer');
       const timeout = browser.options.waitforTimeout + 5000;
-      browser.waitForExist('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"]', timeout);
+      $('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"]').waitForDisplayed({ timeout });
 
-      const myFrame = browser.element('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"]').value;
-      browser.frame(myFrame);
+      const myFrame = $('iframe[src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"]');
+      browser.switchToFrame(myFrame);
 
-      expect(browser.isExisting('#Mounted'));
-      expect(browser.isExisting('#Launched'));
-      expect(browser.isExisting('#Authorized'));
+      expect($('#Mounted').isExisting());
+      expect($('#Launched').isExisting());
+      expect($('#Authorized').isExisting());
     });
   });
 });

@@ -51,7 +51,7 @@ Terra.describeViewports('Calendar Filter', ['tiny'], () => {
   describe('Calendar-Filter with OnChange Callback', () => {
     it('renders selected date on change', () => {
       browser.url('/raw/tests/terra-date-picker/date-picker/calendar-filter/calendar-filter-on-change');
-      browser.click('[class*="react-datepicker-day--selected"]');
+      $('[class*="react-datepicker-day--selected"]').click();
       Terra.validates.element('Returns selected_date-iso-formmated_date');
     });
   });
@@ -62,27 +62,27 @@ Terra.describeViewports('Calendar Filter', ['tiny'], () => {
     });
 
     it('Click button 1 to set the date value as empty', () => {
-      browser.click('#button1');
+      $('#button1').click();
       Terra.validates.element('empty date set');
     });
 
     it('Click button 2 to set formatted date', () => {
-      browser.click('#button2');
+      $('#button2').click();
       Terra.validates.element('formatted date set');
     });
 
     it('Click button 3 to set iso date', () => {
-      browser.click('#button3');
+      $('#button3').click();
       Terra.validates.element('iso date set without time');
     });
 
     it('Click button 4 to set iso date time', () => {
-      browser.click('#button4');
+      $('#button4').click();
       Terra.validates.element('iso date set');
     });
 
     it('Click button 5 to set ordinal date', () => {
-      browser.click('#button5');
+      $('#button5').click();
       Terra.validates.element('ordinal date not set');
     });
   });

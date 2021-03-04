@@ -4,8 +4,8 @@ const ACCEPT_ACTION_SELECTOR = '[data-terra-notification-dialog-button="accept"]
 const REJECT_ACTION_SELECTOR = '[data-terra-notification-dialog-button="reject"]';
 
 const openNotificationDialog = (buttonSelector = '#trigger-notification-dialog') => {
-  browser.waitForExist(buttonSelector);
-  browser.click(buttonSelector);
+  $(buttonSelector).waitForExist();
+  $(buttonSelector).click();
 };
 
 Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () => {
@@ -52,7 +52,7 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
     });
 
     it('closed dialog with accept action', () => {
-      browser.click(ACCEPT_ACTION_SELECTOR);
+      $(ACCEPT_ACTION_SELECTOR).click();
     });
 
     it('shows notification dialog with only reject action', () => {
@@ -61,7 +61,7 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
     });
 
     it('closed dialog with reject action', () => {
-      browser.click(REJECT_ACTION_SELECTOR);
+      $(REJECT_ACTION_SELECTOR).click();
     });
 
     it('shows notification dialog with accept and reject action', () => {
@@ -70,7 +70,7 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
     });
 
     it('closed dialog with reject action', () => {
-      browser.click(REJECT_ACTION_SELECTOR);
+      $(REJECT_ACTION_SELECTOR).click();
     });
 
     it('shows notification dialog with accept action first', () => {
@@ -79,7 +79,7 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
     });
 
     it('closed dialog with reject action', () => {
-      browser.click(REJECT_ACTION_SELECTOR);
+      $(REJECT_ACTION_SELECTOR).click();
     });
 
     it('shows notification dialog with reject action first', () => {
@@ -88,7 +88,7 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
     });
 
     it('closed dialog with reject action', () => {
-      browser.click(REJECT_ACTION_SELECTOR);
+      $(REJECT_ACTION_SELECTOR).click();
     });
 
     it('shows notification dialog with accept action emphasized', () => {
@@ -97,7 +97,7 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
     });
 
     it('closed dialog with reject action', () => {
-      browser.click(REJECT_ACTION_SELECTOR);
+      $(REJECT_ACTION_SELECTOR).click();
     });
 
     it('shows notification dialog with reject action emphasized', () => {
@@ -106,7 +106,7 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
     });
 
     it('closed dialog with reject action', () => {
-      browser.click(REJECT_ACTION_SELECTOR);
+      $(REJECT_ACTION_SELECTOR).click();
     });
 
     it('shows notification dialog with neither action emphasized', () => {
@@ -115,7 +115,7 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
     });
 
     it('closed dialog with reject action', () => {
-      browser.click(REJECT_ACTION_SELECTOR);
+      $(REJECT_ACTION_SELECTOR).click();
     });
   });
 
@@ -153,7 +153,7 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
 
   it('shows notification dialog over a modal', () => {
     browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-in-modal-manager');
-    browser.click('#openModal');
+    $('#openModal').click();
     openNotificationDialog();
     Terra.validates.element('over modal', { selector });
   });
@@ -163,47 +163,47 @@ Terra.describeViewports('Keyboard Accessibility', ['medium'], () => {
   it('notification dialog receives focus when displayed', () => {
     browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/hazard-high-variant');
     openNotificationDialog();
-    expect(browser.hasFocus(NOTIFICATION_DIALOG_SELECTOR), 'dialog to have focus').to.be.true;
+    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
   });
 
   it('shifts focus to the accept button in the notification dialog when tab is pressed', () => {
     browser.keys('Tab');
-    expect(browser.hasFocus(ACCEPT_ACTION_SELECTOR)).to.be.true;
+    expect($(ACCEPT_ACTION_SELECTOR).isFocused()).toBeTruthy();
     Terra.validates.element('accept focused', { selector });
   });
 
   it('closes the notification dialog when ENTER is pressed', () => {
     browser.keys('Enter');
-    Terra.validates.element('??', { selector });
-    expect(browser.isExisting(NOTIFICATION_DIALOG_SELECTOR)).to.be.false;
+    Terra.validates.element('closes on enter', { selector });
+    expect($(NOTIFICATION_DIALOG_SELECTOR).isExisting()).toBeFalsy();
   });
 
   it('reopens dialog and tabs to accept action', () => {
     openNotificationDialog();
     browser.keys('Tab');
-    expect(browser.hasFocus(ACCEPT_ACTION_SELECTOR), 'accept action to have focus').to.be.true;
+    expect($(ACCEPT_ACTION_SELECTOR).isFocused()).toBeTruthy();
   });
 
   it('closes the notification dialog when SPACE is pressed', () => {
     browser.keys('Space');
-    expect(browser.isExisting(NOTIFICATION_DIALOG_SELECTOR)).to.be.false;
+    expect($(NOTIFICATION_DIALOG_SELECTOR).isExisting()).toBeFalsy();
   });
 
   it('reopens dialog shifts focus to the reject button in the notification dialog via tab', () => {
     openNotificationDialog();
     browser.keys(['Tab', 'Tab']);
-    expect(browser.hasFocus(REJECT_ACTION_SELECTOR), 'reject action to have focus').to.be.true;
+    expect($(REJECT_ACTION_SELECTOR).isFocused()).toBeTruthy();
     Terra.validates.element('reject focused', { selector });
   });
 
   it('the notification dialog traps focus in modal', () => {
     browser.keys('Tab');
-    expect(browser.hasFocus(NOTIFICATION_DIALOG_SELECTOR), 'dialog to have focus').to.be.true;
+    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
     browser.keys('Tab');
-    expect(browser.hasFocus(ACCEPT_ACTION_SELECTOR), 'accept action to have focus').to.be.true;
+    expect($(ACCEPT_ACTION_SELECTOR).isFocused()).toBeTruthy();
     browser.keys('Tab');
-    expect(browser.hasFocus(REJECT_ACTION_SELECTOR), 'reject action to have focus').to.be.true;
+    expect($(REJECT_ACTION_SELECTOR).isFocused()).toBeTruthy();
     browser.keys('Tab');
-    expect(browser.hasFocus(NOTIFICATION_DIALOG_SELECTOR), 'dialog to have focus').to.be.true;
+    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
   });
 });
