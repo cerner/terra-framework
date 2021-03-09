@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.47.0 - (March 9, 2021)
+
 * Changed
   * Updated to terra-functional-testing
   * Remove extraneous application bases from tests.
