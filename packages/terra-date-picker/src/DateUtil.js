@@ -509,5 +509,6 @@ DateUtil.MIN_DATE = '1900-01-01';
 DateUtil.MAX_DATE = '2100-12-31';
 DateUtil.MIN_YEAR = '1900';
 DateUtil.MAX_YEAR = '2100';
+DateUtil.EVENT_KEYDOWN = 'keydown';
 
 export default DateUtil;

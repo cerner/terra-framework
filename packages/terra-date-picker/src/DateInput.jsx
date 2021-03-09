@@ -284,7 +284,7 @@ const DatePickerInput = (props) => {
       dateDispatch({ year: inputValue });
     }
 
-    if (event.type !== 'keydown') {
+    if (event.type !== DateUtil.EVENT_KEYDOWN) {
       moveFocusOnChange(inputValue, type);
     }
   };
