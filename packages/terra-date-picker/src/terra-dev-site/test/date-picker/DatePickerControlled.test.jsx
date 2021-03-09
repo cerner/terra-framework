@@ -32,6 +32,7 @@ const DatePickerControlled = () => {
       {'  '}
       <Button
         id="button1"
+        title="Empty String"
         text=""
         onClick={handleSelectedDateUpdate}
       />

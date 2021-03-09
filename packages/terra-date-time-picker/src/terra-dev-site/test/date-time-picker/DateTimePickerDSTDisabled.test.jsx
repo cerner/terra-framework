@@ -19,6 +19,7 @@ const DateTimePickerDSTDisabled = () => {
       <DateTimePickerExampleTemplate
         value="2017-11-05T01:30:00"
         disabled={!active}
+        initialTimeZone="America/Chicago"
       />
     </div>
   );

@@ -3,7 +3,11 @@
 ## Unreleased
 
 * Changed
+  * Updated to terra-functional-testing
   * Remove extraneous application bases from tests.
+
+* Fixed
+  * Prevent error when using focus trap with react-intl v5
 
 ## 1.46.0 - (February 9, 2021)
 

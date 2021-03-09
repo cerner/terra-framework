@@ -38,6 +38,7 @@ const DateTimePickerDSTBlur = () => {
         name="date-time-picker-onblur-dst"
         value="2017-11-05T01:30:00"
         onBlur={handleBlur}
+        initialTimeZone="America/Chicago"
       />
     </div>
   );

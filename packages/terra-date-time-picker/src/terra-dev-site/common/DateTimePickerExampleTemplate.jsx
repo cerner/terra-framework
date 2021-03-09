@@ -8,6 +8,10 @@ const propTypes = {
    * The current entered date time. Use for the selected date message.
    */
   value: PropTypes.string,
+  /**
+   * Timezone for the provided date time.
+   */
+  initialTimeZone: PropTypes.string,
 };
 
 const defaultProps = {
@@ -16,7 +20,7 @@ const defaultProps = {
 
 const DatePickerExample = (props) => {
   let dateTimeDisplay = props.value;
-  const safeDateTime = DateTimeUtils.createSafeDate(dateTimeDisplay);
+  const safeDateTime = DateTimeUtils.createSafeDate(dateTimeDisplay, props.initialTimeZone);
 
   if (safeDateTime && safeDateTime.isValid()) {
     dateTimeDisplay = safeDateTime.format();
@@ -32,11 +36,12 @@ const DatePickerExample = (props) => {
     <div>
       <p>
         Selected ISO Date Time:
-        <span id="date-time-value">{dateTime}</span>
+        <span data-date-time-value>{dateTime}</span>
       </p>
       <DateTimePicker
         name="date-time-picker-example"
         onChange={handleDateTimeChange}
+        initialTimeZone={props.initialTimeZone}
         {...props}
       />
     </div>

@@ -6,6 +6,7 @@
 
 * Changed
   * Update failing jest tests.
+  * Updated to use terra-functional-testing
 
 ## 2.35.0 - (January 5, 2021)
 
@@ -13,7 +14,7 @@
   * Updated to support a peer dependency of react-intl v2-v5
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 2.34.0 - (November 10, 2020)
 

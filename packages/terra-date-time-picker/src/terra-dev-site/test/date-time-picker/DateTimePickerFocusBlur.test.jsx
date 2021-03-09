@@ -95,6 +95,7 @@ const DateTimePickerFocusBlur = () => {
         onFocus={handleFocus}
         onChange={handleDateChange}
         excludeDates={['2019-04-01', '2019-04-02']}
+        initialTimeZone="America/Chicago"
       />
     </div>
   );

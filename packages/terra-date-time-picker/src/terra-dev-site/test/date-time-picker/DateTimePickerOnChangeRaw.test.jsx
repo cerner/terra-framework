@@ -66,6 +66,7 @@ const DateTimePickerOnChangeRaw = () => {
       <DateTimePicker
         name="date-time-picker-onchangeraw"
         onChangeRaw={handleDateChangeRaw}
+        initialTimeZone="America/Chicago"
       />
     </div>
   );
