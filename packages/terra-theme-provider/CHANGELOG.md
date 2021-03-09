@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.7.0 - (March 9, 2021)
+
 * Changed
   * Updated to terra-functional-testing.
 

@@ -5,6 +5,10 @@
 * Changed
   * Date input split into 3 distinct inputs that mask the previous single input.
   * `terra-dev-site` examples to use hooks.
+
+## 4.58.0 - (March 9, 2021)
+
+* Changed
   * Updated to use terra-functional-testing
 
 ## 4.57.0 - (February 2, 2021)
