@@ -637,6 +637,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     $('[data-terra-open-calendar-button]').click();
     $('[class*="react-datepicker-today-button"]').click();
 
-    expect($('[name="input"]')[0].getValue()).toEqual(moment().tz('America/Chicago').format('YYYY-MM-DD'));
+    expect($('input[data-terra-date-input-hidden="true"]').getValue()).toEqual(moment().tz('America/Chicago').format('YYYY-MM-DD'));
   });
 });
