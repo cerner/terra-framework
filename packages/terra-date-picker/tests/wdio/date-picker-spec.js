@@ -784,6 +784,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       $('input[name="terra-date-month-date-input"]').setValue('01');
       $('input[name="terra-date-day-date-input"]').setValue('01');
       $('input[name="terra-date-year-date-input"]').setValue('1900');
+      Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
       Terra.validates.element('min date entered');
     });
