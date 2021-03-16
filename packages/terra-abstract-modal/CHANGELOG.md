@@ -2,14 +2,19 @@
 
 ## Unreleased
 
+## 3.32.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
 ## 3.31.0 - (January 5, 2021)
 
 * Changed
   * Updated to support a peer dependency of react-intl v2-v5
   * Updated FormattedMessage child function to join if given an array.
-  
+
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 3.30.0 - (November 24, 2020)
 

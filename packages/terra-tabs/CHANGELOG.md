@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.51.0 - (March 9, 2021)
+
+* Changed
+  * Updated to use terra-functional-testing
+
 ## 6.50.0 - (February 9, 2021)
 
 * Changed
@@ -15,7 +20,7 @@
 ## 6.48.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 6.47.0 - (December 8, 2020)
 
@@ -23,7 +28,7 @@
   * Updated to support a peer dependency of react-intl v2-v5
   * Removed `intlShape` import
   * Update wdio tests to remove deprecated Terra.it helpers
- 
+
 ## 6.46.0 - (November 24, 2020)
 
 * Changed

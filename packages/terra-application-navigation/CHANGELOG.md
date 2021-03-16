@@ -2,11 +2,17 @@
 
 ## Unreleased
 
+## 1.47.0 - (March 9, 2021)
+
 * Changed
+  * Updated to terra-functional-testing
   * Remove extraneous application bases from tests.
   
 * Added
   * Adding an id to ApplicationNavigation now causes navigation, extesion, and utility items to have a unique id.
+
+* Fixed
+  * Prevent error when using focus trap with react-intl v5
 
 ## 1.46.0 - (February 9, 2021)
 
