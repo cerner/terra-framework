@@ -13,7 +13,9 @@ import DrawerMenuFooterButton from './_DrawerMenuFooterButton';
 import {
   titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType,
 } from '../utils/propTypes';
-import { navigationItemId, utilityItemId } from '../utils/helpers';
+import {
+  navigationItemId, utilityItemId, settingsUtilityItemId, logoutUtilityItemId,
+} from '../utils/helpers';
 
 import styles from './DrawerMenu.module.scss';
 
@@ -114,7 +116,7 @@ const DrawerMenu = ({
   const logoutButton = onSelectLogout ? (
     <div className={cx('footer')}>
       <DrawerMenuFooterButton
-        id={id && utilityItemId(id, 'TerraLogout')}
+        id={id && logoutUtilityItemId(id)}
         onClick={onSelectLogout}
         text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
         data-navigation-drawer-item-logout
@@ -169,7 +171,7 @@ const DrawerMenu = ({
         ))}
         {onSelectSettings ? (
           <DrawerMenuListItem
-            id={id && utilityItemId(id, 'TerraSettings')}
+            id={id && settingsUtilityItemId(id)}
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' })}
             icon={<IconSettings />}
             onSelect={onSelectSettings}
@@ -178,7 +180,7 @@ const DrawerMenu = ({
         ) : null}
         {onSelectHelp ? (
           <DrawerMenuListItem
-            id={id && utilityItemId(id, 'TerraHelp')}
+            id={id && settingsUtilityItemId(id)}
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' })}
             icon={<IconQuestionOutline />}
             onSelect={onSelectHelp}

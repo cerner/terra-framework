@@ -5,7 +5,7 @@ import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconQuestionOutline from 'terra-icon/lib/icon/IconQuestionOutline';
 import PopupMenu from '../common/_PopupMenu';
 import { userConfigPropType, utilityItemsPropType } from '../utils/propTypes';
-import { utilityItemId } from '../utils/helpers';
+import { utilityItemId, helpUtilityItemId, settingsUtilityItemId } from '../utils/helpers';
 
 const propTypes = {
   /**
@@ -71,7 +71,7 @@ const UtilityMenu = ({
 }) => {
   let menuItems = [];
   menuItems = utilityItems.map(item => ({
-    id: id ? utilityItemId(id, item.key) : null,
+    id: id && utilityItemId(id, item.key),
     key: item.key,
     text: item.text,
     icon: item.icon,
@@ -80,7 +80,7 @@ const UtilityMenu = ({
 
   if (onSelectSettings) {
     menuItems.push({
-      id: id ? utilityItemId(id, 'TerraSettings') : null,
+      id: id && settingsUtilityItemId(id),
       key: utilityMenuSettingsKey,
       text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' }),
       icon: <IconSettings />,
@@ -90,7 +90,7 @@ const UtilityMenu = ({
 
   if (onSelectHelp) {
     menuItems.push({
-      id: id ? utilityItemId(id, 'TerraHelp') : null,
+      id: id && helpUtilityItemId(id),
       key: utilityMenuHelpKey,
       text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' }),
       icon: <IconQuestionOutline />,

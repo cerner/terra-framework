@@ -73,6 +73,18 @@ function utilityItemId(appNavId, utilityItemKey) {
   return itemId(appNavId, 'UtilityItem', utilityItemKey);
 }
 
+function helpUtilityItemId(appNavId) {
+  return utilityItemId(appNavId, 'TerraHelp');
+}
+
+function settingsUtilityItemId(appNavId) {
+  return utilityItemId(appNavId, 'TerraSettings');
+}
+
+function logoutUtilityItemId(appNavId) {
+  return utilityItemId(appNavId, 'TerraLogout');
+}
+
 function extensionItemId(appNavId, extenstionItemKey) {
   return itemId(appNavId, 'ExtensionItem', extenstionItemKey);
 }
@@ -94,4 +106,7 @@ export {
   navigationItemId,
   utilityItemId,
   extensionItemId,
+  helpUtilityItemId,
+  settingsUtilityItemId,
+  logoutUtilityItemId,
 };

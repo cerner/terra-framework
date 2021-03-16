@@ -16,7 +16,7 @@ import {
 
 import PopupMenuListItem from './_PopupMenuListItem';
 import { userConfigPropType } from '../utils/propTypes';
-import { utilityItemId } from '../utils/helpers';
+import { logoutUtilityItemId } from '../utils/helpers';
 import PopupMenuUser from './_PopupMenuUser';
 
 import styles from './PopupMenu.module.scss';
@@ -174,7 +174,7 @@ const PopupMenu = ({
   if (onSelectFooterItem) {
     endContent = (
       <Button
-        id={id && utilityItemId(id, 'TerraLogout')}
+        id={id && logoutUtilityItemId(id)}
         text={footerText}
         onClick={onSelectFooterItem}
         onKeyDown={handleButtonKeyDown}
