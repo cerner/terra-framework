@@ -14,7 +14,7 @@ import {
   titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType,
 } from '../utils/propTypes';
 import {
-  navigationItemId, utilityItemId, settingsUtilityItemId, logoutUtilityItemId,
+  navigationItemId, utilityItemId, settingsUtilityItemId, helpUtilityItemId, logoutUtilityItemId,
 } from '../utils/helpers';
 
 import styles from './DrawerMenu.module.scss';
@@ -180,7 +180,7 @@ const DrawerMenu = ({
         ) : null}
         {onSelectHelp ? (
           <DrawerMenuListItem
-            id={id && settingsUtilityItemId(id)}
+            id={id && helpUtilityItemId(id)}
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' })}
             icon={<IconQuestionOutline />}
             onSelect={onSelectHelp}

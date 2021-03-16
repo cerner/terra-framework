@@ -238,7 +238,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
           "icon": <span>
             my icon
           </span>,
-          "id": null,
+          "id": undefined,
           "key": "my-test-key-2",
           "text": "test-text-2",
         },
@@ -251,7 +251,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
             viewBox="0 0 48 48"
             xmlns="http://www.w3.org/2000/svg"
           />,
-          "id": null,
+          "id": undefined,
           "key": "terra-application-navigation.utility-menu.settings",
           "text": "Terra.applicationNavigation.utilityMenu.settings",
         },
@@ -263,7 +263,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
             viewBox="0 0 48 48"
             xmlns="http://www.w3.org/2000/svg"
           />,
-          "id": null,
+          "id": undefined,
           "key": "terra-application-navigation.utility-menu.help",
           "text": "Terra.applicationNavigation.utilityMenu.help",
         },
