@@ -215,7 +215,6 @@ const ApplicationNavigation = ({
           returnFocusOnDeactivate: false,
         }}
         className={cx('drawer-menu-focus-trap-container')}
-        id={id}
       >
         {/*
           The following div has been added to prevent a "Cannot read property 'ownerDocument' of null" error when using react-intl v5.

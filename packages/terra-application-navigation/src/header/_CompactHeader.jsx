@@ -242,6 +242,7 @@ const CompactHeader = ({
         activeBreakpoint={activeBreakpoint}
         onSelect={onSelectExtensionItem}
         notifications={notifications}
+        id={id}
       />
     );
   }
