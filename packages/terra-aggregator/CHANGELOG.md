@@ -2,10 +2,30 @@
 
 ## Unreleased
 
+## 4.66.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 4.65.0 - (February 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.64.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.63.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.62.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 4.61.0 - (December 8, 2020)
 

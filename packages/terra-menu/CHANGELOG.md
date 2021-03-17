@@ -2,6 +2,26 @@
 
 ## Unreleased
 
+## 6.50.0 - (March 9, 2021)
+
+* Changed
+  * Updated to use terra-functional-testing
+
+## 6.49.0 - (February 9, 2021)
+
+* Changed
+  * Updated color for disabled MenuItem text in clinical-lowlight-theme to `#656565`.
+
+## 6.48.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.47.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.46.0 - (January 5, 2021)
 
 * Changed

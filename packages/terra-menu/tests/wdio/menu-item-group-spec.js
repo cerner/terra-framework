@@ -13,26 +13,26 @@ Terra.describeViewports('Menu Item Group', ['medium'], () => {
 
   describe('Menu Item Group-Selectable Via Click', () => {
     it('selects Item 3', () => {
-      browser.click('.TestGroupItem3');
-      Terra.validates.element('Item 3 Selected', { rules: ignoredA11y });
+      $('.TestGroupItem3').click();
+      Terra.validates.element('item 3 selected via click', { rules: ignoredA11y });
     });
 
     it('selects Item 1 and deselects Item 3', () => {
-      browser.click('.TestGroupItem1');
-      browser.moveToObject('h3');
-      Terra.validates.screenshot('Item 1 Selected');
+      $('.TestGroupItem1').click();
+      $('h3').moveTo();
+      Terra.validates.element('item 1 selected via click', { rules: ignoredA11y });
     });
   });
 
   describe('Menu Item Group-Selectable Via Keyboard Navigation', () => {
     it('selects Item 2 on Enter', () => {
       browser.keys(['Tab', 'Enter']);
-      Terra.validates.screenshot('Item 2 Selected');
+      Terra.validates.element('item 2 selected via keyboard navigation', { rules: ignoredA11y });
     });
 
     it('selects Item 3 on Space', () => {
       browser.keys(['Tab', 'Space']);
-      Terra.validates.screenshot('Item 3 Selected');
+      Terra.validates.element('item 3 selected via keyboard navigation', { rules: ignoredA11y });
     });
   });
 });

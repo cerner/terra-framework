@@ -13,30 +13,30 @@ Terra.describeViewports('Slide Group', ['medium'], () => {
   describe('Non Animated', () => {
     it('should advance the slide', () => {
       browser.url('/raw/tests/terra-slide-group/slide-group/non-animated-slide-group');
-      browser.click('#increment-1');
-      Terra.validates.element('slide 2');
+      $('#increment-1').click();
+      Terra.validates.element('slide 2 non animated');
     });
 
     it('should go back a slide', () => {
-      browser.click('#decrement-2');
-      Terra.validates.element('slide 1');
+      $('#decrement-2').click();
+      Terra.validates.element('slide 1 non animated');
     });
   });
 
   describe('Animated', () => {
     it('should advance the slide', () => {
       browser.url('/raw/tests/terra-slide-group/slide-group/animated-slide-group');
-      browser.click('#increment-1');
+      $('#increment-1').click();
 
       browser.pause(350);
-      Terra.validates.element('slide 2');
+      Terra.validates.element('slide 2 animated');
     });
 
     it('should go back a slide', () => {
-      browser.click('#decrement-2');
+      $('#decrement-2').click();
 
       browser.pause(350);
-      Terra.validates.element('slide 1');
+      Terra.validates.element('slide 1 animated');
     });
   });
 });

@@ -2,6 +2,27 @@
 
 ## Unreleased
 
+## 1.47.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+  * Remove extraneous application bases from tests.
+
+* Fixed
+  * Prevent error when using focus trap with react-intl v5
+
+## 1.46.0 - (February 9, 2021)
+
+* Fixed
+  * Fix screen reader to read username along with user settings.
+
+## 1.45.0 - (February 2, 2021)
+
+* Fixed
+  * Updated sv translations due to feedback from the i18n team.
+
+## 1.44.0 - (January 26, 2021)
+
 * Changed
   * Update failing jest tests.
 
@@ -12,7 +33,7 @@
   * Removed `intlShape` imports
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 1.42.0 - (December 8, 2020)
 

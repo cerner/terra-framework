@@ -1,19 +1,19 @@
 Terra.describeViewports('ApplicationMenu', ['small', 'large'], () => {
   it('Displays a default application menu', () => {
     browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-menu');
-    browser.waitForVisible('#test-menu');
-    Terra.validates.element('default', { selector: '#test-menu' });
+    $('#test-menu').waitForDisplayed();
+    Terra.validates.element('application menu', { selector: '#test-menu' });
   });
 
   describe('Displays an application menu utilities', () => {
     it('clicks the menu utility', () => {
-      browser.click('[data-application-menu-utility]');
-      Terra.validates.element('default');
+      $('[data-application-menu-utility]').click();
+      Terra.validates.element('application menu utilities');
     });
 
     it('closes the menu and remove focus for next test', () => {
       browser.keys('Escape');
-      browser.click('#root');
+      $('#root').click();
     });
   });
 });

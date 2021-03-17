@@ -2,8 +2,16 @@
 
 ## Unreleased
 
+## 5.34.0 - (March 9, 2021)
+
+* Changed
+  * Updated to use terra-functional-testing
+
+## 5.33.0 - (January 26, 2021)
+
 * Fixed
   * Fixed error thrown on resizing the popup due to incorrect variables name.
+
 
 ## 5.32.0 - (December 8, 2020)
 

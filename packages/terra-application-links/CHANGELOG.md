@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 6.49.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 6.48.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.47.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.46.0 - (January 5, 2021)
 
 * Changed
@@ -9,7 +24,7 @@
   * Updated to use `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 6.45.0 - (December 8, 2020)
 

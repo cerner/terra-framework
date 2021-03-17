@@ -39,7 +39,7 @@ const UtilityMenuHeaderButton = ({
   let ariaLabel;
   let content;
   if (userConfig) {
-    ariaLabel = intl.formatMessage({ id: 'Terra.applicationNavigation.header.utilityButtonTitleUser' });
+    ariaLabel = intl.formatMessage({ id: 'Terra.applicationNavigation.header.utilityButtonTitleUser' }, { currentUserName: userConfig.name });
     content = (
       <React.Fragment>
         <div className={cx('image')}>
