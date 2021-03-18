@@ -28,6 +28,10 @@ const propTypes = {
    */
   text: PropTypes.string.isRequired,
   /**
+   * The id for the item.
+   */
+  id: PropTypes.string,
+  /**
    * The number value representing the notification count.
    */
   notificationCount: PropTypes.number,
@@ -54,7 +58,7 @@ const propTypes = {
 };
 
 const PopupMenuListItem = ({
-  icon, text, notificationCount, onSelect, showSelections, isSelected, loopFocus, parentRole, ...customProps
+  icon, text, id, notificationCount, onSelect, showSelections, isSelected, loopFocus, parentRole, ...customProps
 }) => {
   const itemRef = useRef();
 
@@ -107,6 +111,7 @@ const PopupMenuListItem = ({
       onMouseDown={disableFocusStyles}
       data-focus-styles-enabled
       ref={itemRef}
+      id={id || undefined}
     >
       {showSelections
         ? (

@@ -19,6 +19,10 @@ const propTypes = {
    */
   text: PropTypes.string.isRequired,
   /**
+   * The id value for the utility menu list item.
+   */
+  id: PropTypes.string,
+  /**
    * The number value representing the notification count.
    */
   notificationCount: PropTypes.number,
@@ -33,10 +37,11 @@ const propTypes = {
 };
 
 const DrawerMenuListItem = ({
-  icon, text, notificationCount, isSelected, onSelect, ...customProps
+  icon, text, id, notificationCount, isSelected, onSelect, ...customProps
 }) => (
   <li
     {...customProps}
+    id={id || undefined}
     role="option"
     aria-selected={isSelected}
     tabIndex="0"
