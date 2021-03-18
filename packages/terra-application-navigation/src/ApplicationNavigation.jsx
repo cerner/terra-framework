@@ -64,6 +64,10 @@ const propTypes = {
    */
   activeNavigationItemKey: PropTypes.string,
   /**
+   * The base id used to generate ids of navigation, utility, and extension items
+   */
+  id: PropTypes.string,
+  /**
   * Callback function triggered on Drawer Menu state change
   */
   onDrawerMenuStateChange: PropTypes.func,
@@ -125,6 +129,7 @@ const ApplicationNavigation = ({
   onSelectSettings,
   onSelectHelp,
   onSelectLogout,
+  id,
   utilityItems,
   onSelectUtilityItem,
   notifications,
@@ -229,6 +234,7 @@ const ApplicationNavigation = ({
             onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
             onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
             onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
+            id={id}
             utilityItems={utilityItems}
             onSelectUtilityItem={onSelectUtilityItem ? generateMenuClosingCallback(onSelectUtilityItem) : undefined}
             notifications={notifications}
@@ -259,6 +265,7 @@ const ApplicationNavigation = ({
           onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
           onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
           onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
+          id={id}
           utilityItems={utilityItems}
           onSelectUtilityItem={onSelectUtilityItem ? generateMenuClosingCallback(onSelectUtilityItem) : undefined}
         />
@@ -287,6 +294,7 @@ const ApplicationNavigation = ({
         onSelectSettings={onSelectSettings}
         onSelectHelp={onSelectHelp}
         onSelectLogout={onSelectLogout}
+        id={id}
       />
     );
   }
@@ -298,6 +306,7 @@ const ApplicationNavigation = ({
         titleConfig={titleConfig}
         extensionItems={extensionItems}
         onSelectExtensionItem={onSelectExtensionItem}
+        id={id}
         navigationItems={navigationItems}
         navigationRenderFunction={navigationRenderFunction}
         activeNavigationItemKey={activeNavigationItemKey}

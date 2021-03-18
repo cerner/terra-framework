@@ -150,6 +150,7 @@ const ExampleApplication = ({ onAction }) => {
       onSelectSettings={() => onAction('settings')}
       onSelectHelp={() => onAction('help')}
       onSelectLogout={() => onAction('logout')}
+      id="example-application"
     >
       <Placeholder title={activeKey} />
     </ApplicationNavigation>

@@ -38,6 +38,8 @@ Cerner Corporation
 - Jeremy Fuksa [@jeremyfuksa]
 - Jason A Savage [@jasonsavage]
 - Marcell Neszt [@EPAMMarcell]
+- Luissette Figueroa [@lfigueroa]
+- Andrew Shoemake [@ashoemake]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -77,3 +79,5 @@ Cerner Corporation
 [@jeremyfuksa]: https://github.com/jeremyfuksa
 [@jasonsavage]: https://github.com/TheSavageDev
 [@EPAMMarcell]: https://github.com/EPAMMarcell
+[@lfigueroa]: https://github.com/lcf-1
+[@ashoemake]: https://github.com/Andrew-Shoemake
