@@ -36,6 +36,6 @@
     "lint:scss": "stylelint src/**/*.scss",
     "precompile": "rm -rf lib",
     "test": "npm run jest",
-    "jest": "jest --config ../../jestconfig.js"
+    "jest": "jest --config ../../jest.config.js"
   }
 }
