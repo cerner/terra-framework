@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated Jest command
+
 ## 6.50.0 - (March 9, 2021)
 
 * Changed
@@ -60,7 +63,7 @@
 
 * Changed
   * Updated Changelog format
-  
+
 ## 6.39.0 - (August 11, 2020)
 
 * Changed
