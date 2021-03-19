@@ -8,8 +8,4 @@ module.exports = {
   snapshotSerializers: [
     'enzyme-to-json/serializer',
   ],
-  moduleDirectories: [
-    'packages',
-    'node_modules',
-  ],
 };
