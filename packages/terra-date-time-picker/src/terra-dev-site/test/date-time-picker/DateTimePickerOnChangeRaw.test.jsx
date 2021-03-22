@@ -75,6 +75,7 @@ class DatePickerOnChange extends React.Component {
         <DateTimePicker
           name="date-time-picker-onchangeraw"
           onChangeRaw={this.handleDateChangeRaw}
+          initialTimeZone="America/Chicago"
         />
       </div>
     );

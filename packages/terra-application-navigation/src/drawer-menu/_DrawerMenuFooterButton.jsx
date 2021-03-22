@@ -14,14 +14,21 @@ const propTypes = {
    */
   text: PropTypes.string,
   /**
+   * Text display for the footer button.
+   */
+  id: PropTypes.string,
+  /**
    * Function callback for button selection.
    */
   onClick: PropTypes.func,
 };
 
-const DrawerMenuFooterButton = ({ text, onClick, ...customProps }) => (
+const DrawerMenuFooterButton = ({
+  text, id, onClick, ...customProps
+}) => (
   <button
     {...customProps}
+    id={id || undefined}
     className={cx('drawer-menu-footer-button')}
     type="button"
     onClick={onClick}

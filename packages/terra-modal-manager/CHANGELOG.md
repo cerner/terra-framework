@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.50.0 - (March 9, 2021)
+
+* Changed
+  * Updated to use terra-functional-testing
+
 ## 6.49.0 - (February 9, 2021)
 
 * Changed
@@ -20,7 +25,7 @@
 ## 6.46.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 6.45.0 - (December 8, 2020)
 

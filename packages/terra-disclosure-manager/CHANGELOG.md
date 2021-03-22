@@ -2,10 +2,15 @@
 
 ## Unreleased
 
+## 4.39.0 - (March 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.38.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 4.37.0 - (November 10, 2020)
 

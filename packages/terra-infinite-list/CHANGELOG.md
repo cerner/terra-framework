@@ -2,10 +2,15 @@
 
 ## Unreleased
 
+## 3.36.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing.
+
 ## 3.35.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
  
 ## 3.34.0 - (December 8, 2020)
 

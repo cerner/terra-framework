@@ -47,6 +47,29 @@ describe('CompactHeader', () => {
     expect(mountComponent).toMatchSnapshot();
   });
 
+  it('should render with ids for navigation and extension items', () => {
+    const mountComponent = mountWithIntl(
+      <CompactHeader
+        titleConfig={{
+          title: 'test-title',
+        }}
+        userConfig={{
+          name: 'user-name',
+          detail: 'user-detail',
+          initials: 'user-initials',
+          imageSrc: 'user-src',
+        }}
+        id="example-application"
+        navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
+        extensionItems={[{ text: 'test-text-1', key: 'my-test-key-1', icon: <span>my icon</span> }]}
+        notifications={{ 'my-test-key-1': 3 }}
+        onSelectExtensionItem={jest.fn()}
+      />,
+    );
+
+    expect(mountComponent).toMatchSnapshot();
+  });
+
   it('should render with skip callback', () => {
     const mockCallBack = jest.fn();
 

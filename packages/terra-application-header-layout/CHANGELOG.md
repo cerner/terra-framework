@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 3.33.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
 ## 3.32.0 - (January 5, 2021)
 
 * Changed
@@ -9,7 +14,7 @@
   * Removed `intlShape` import
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 3.31.0 - (November 24, 2020)
 
