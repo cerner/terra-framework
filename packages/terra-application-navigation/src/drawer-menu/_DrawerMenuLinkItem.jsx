@@ -19,6 +19,10 @@ const propTypes = {
    */
   text: PropTypes.string.isRequired,
   /**
+    * The id for the menu list item.
+   */
+  id: PropTypes.string,
+  /**
    * The number value representing the notification count.
    */
   notificationCount: PropTypes.number,
@@ -33,10 +37,11 @@ const propTypes = {
 };
 
 const DrawerMenuLinkItem = ({
-  icon, text, notificationCount, isSelected, onSelect,
+  icon, text, id, notificationCount, isSelected, onSelect,
 }) => (
   <li>
     <div
+      id={id || undefined}
       role="link"
       aria-current={isSelected}
       tabIndex="0"

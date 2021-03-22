@@ -5,6 +5,7 @@ describe('PopupMenuListItem', () => {
   it('should render with required prop data', () => {
     const shallowComponent = shallow(
       <PopupMenuListItem
+        id="test-menu-item"
         text="my text"
         onSelect={jest.fn()}
       />,

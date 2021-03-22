@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added ability to generate id for tab items through `<ApplicationNavigation>`
+
 ## 6.51.0 - (March 9, 2021)
 
 * Changed
