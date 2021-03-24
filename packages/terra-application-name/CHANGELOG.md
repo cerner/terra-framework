@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated Jest command
+
 ## 3.36.0 - (March 9, 2021)
 
 * Changed
@@ -21,7 +24,7 @@
 
 * Added
   * Added missing themeable variables.
-  
+
 ## 3.32.0 - (August 4, 2020)
 
 * Changed

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated Jest command
+
 * Added
   * Added ability to generate id for tab items through `<ApplicationNavigation>`
 
@@ -59,7 +62,7 @@
 
 * Changed
   * Updated Changelog format
-  
+
 ## 6.41.0 - (August 11, 2020)
 
 * Changed
