@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Updated screenshots with elements that are out of bound
 
 * Changed
   * Updated Jest command
