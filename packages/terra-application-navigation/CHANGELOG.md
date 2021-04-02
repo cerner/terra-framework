@@ -7,6 +7,9 @@
 * Changed
   * Updated Jest command
 
+* Fixed
+  * Applied theme context to drawer menu and popup menu
+
 ## 1.47.0 - (March 9, 2021)
 
 * Changed
@@ -14,7 +17,7 @@
   * Remove extraneous application bases from tests.
 
 * Added
-  * Adding an id to ApplicationNavigation now causes navigation, extesion, and utility items to have a unique id.
+  * Adding an id to ApplicationNavigation now causes navigation, extension, and utility items to have a unique id.
 
 * Fixed
   * Prevent error when using focus trap with react-intl v5

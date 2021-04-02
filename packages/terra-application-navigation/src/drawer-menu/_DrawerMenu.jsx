@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconQuestionOutline from 'terra-icon/lib/icon/IconQuestionOutline';
 import { injectIntl } from 'react-intl';
@@ -19,7 +20,7 @@ import {
 
 import styles from './DrawerMenu.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -191,9 +192,10 @@ const DrawerMenu = ({
     );
   }
 
+  const theme = React.useContext(ThemeContext);
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
-    <div className={cx('drawer-container')}>
+    <div className={cx('drawer-container', theme.className)}>
       <div className={cx('drawer-menu')} role={hasItems ? 'dialog' : null} tabIndex={0} data-navigation-drawer-menu>
         <div className={cx('vertical-overflow-container')}>
           <div className={cx('header')}>
