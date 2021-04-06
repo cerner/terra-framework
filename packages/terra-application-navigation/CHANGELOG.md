@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 1.48.0 - (April 6, 2021)
+
 * Changed
   * Updated screenshots with elements that are out of bound
 
