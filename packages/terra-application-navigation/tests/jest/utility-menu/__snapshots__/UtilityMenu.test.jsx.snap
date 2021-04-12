@@ -218,6 +218,9 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
         </span>,
         "id": "test-utility-2-id",
         "key": "my-test-key-2",
+        "metaData": Object {
+          "meta": "metaData",
+        },
         "text": "test-text-2",
       },
     ]
@@ -240,6 +243,9 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
           </span>,
           "id": undefined,
           "key": "my-test-key-2",
+          "metaData": Object {
+            "meta": "metaData",
+          },
           "text": "test-text-2",
         },
         Object {
