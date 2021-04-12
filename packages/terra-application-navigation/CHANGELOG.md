@@ -3,9 +3,9 @@
 ## Unreleased
 * Changed
   * Updated screenshots with elements that are out of bound
-
 * Changed
   * Updated Jest command
+  * Updated Swedish translations.
 
 ## 1.47.0 - (March 9, 2021)
 
