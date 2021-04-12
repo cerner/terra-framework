@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * add back missing metaData to utility items.
+
 ## 1.48.0 - (April 6, 2021)
 
 * Changed
