@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.52.0 - (April 6, 2021)
+
 * Changed
   * Updated Jest command
 
