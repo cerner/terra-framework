@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated Swedish translations.
+
 ## 1.48.1 - (April 12, 2021)
 
 * Fixed
@@ -11,9 +14,7 @@
 
 * Changed
   * Updated screenshots with elements that are out of bound
-* Changed
   * Updated Jest command
-  * Updated Swedish translations.
 
 * Fixed
   * Applied theme context to drawer menu and popup menu
