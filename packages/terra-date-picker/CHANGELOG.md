@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed focus trap issue for date picker in mobile view.
+
 * Changed
   * Updated Jest command
 
