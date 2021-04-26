@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * add z-index to address ambiguous layers across browsers.
+
 * Changed
   * Updated Swedish translations.
 
