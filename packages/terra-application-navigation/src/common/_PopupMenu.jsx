@@ -2,7 +2,8 @@ import React, {
   useRef,
 } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ActionFooter from 'terra-action-footer';
 import ContentContainer from 'terra-content-container';
 import Button from 'terra-button';
@@ -21,7 +22,7 @@ import PopupMenuUser from './_PopupMenuUser';
 
 import styles from './PopupMenu.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -184,6 +185,7 @@ const PopupMenu = ({
     );
   }
 
+  const theme = React.useContext(ThemeContext);
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
   return (
@@ -191,7 +193,7 @@ const PopupMenu = ({
       header={<ActionHeader aria-hidden title={title} />}
       footer={<ActionFooter end={endContent} />}
       fill={isHeightBounded}
-      className={cx('container')}
+      className={cx('container', theme.className)}
     >
       <div className={cx('content')}>
         {customContent ? (
