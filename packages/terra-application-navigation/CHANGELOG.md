@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.49.0 - (April 27, 2021)
+
 * Changed
   * Updated Swedish translations.
 
