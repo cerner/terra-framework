@@ -2,12 +2,20 @@
 
 ## Unreleased
 
+## 1.49.0 - (April 27, 2021)
+
+* Changed
+  * Updated Swedish translations.
+
+## 1.48.1 - (April 12, 2021)
+
+* Fixed
+  * add back missing metaData to utility items.
+
 ## 1.48.0 - (April 6, 2021)
 
 * Changed
   * Updated screenshots with elements that are out of bound
-
-* Changed
   * Updated Jest command
 
 * Fixed

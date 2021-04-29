@@ -76,6 +76,7 @@ const UtilityMenu = ({
     text: item.text,
     icon: item.icon,
     dataAttrs: item.dataAttrs,
+    metaData: item.metaData,
   }));
 
   if (onSelectSettings) {
