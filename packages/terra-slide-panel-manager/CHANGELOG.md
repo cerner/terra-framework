@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Removed
-  * Removed the onMaximize and onMinimize defaulted implementation
+  * Removed the onMaximize and onMinimize defaulted implementation to prevent usability risk
 
 ## 5.52.0 - (April 6, 2021)
 
