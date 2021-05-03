@@ -5,6 +5,8 @@
 * Fixed
   * add z-index to address ambiguous layers across browsers.
 
+## 1.49.0 - (April 27, 2021)
+
 * Changed
   * Updated Swedish translations.
 
