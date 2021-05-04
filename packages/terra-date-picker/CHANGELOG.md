@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.60.0 - (May 4, 2021)
+
 * Fixed
   * Fixed focus trap issue for date picker in mobile view.
 

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.50.0 - (May 4, 2021)
+
 * Fixed
   * add z-index to address ambiguous layers across browsers.
 
