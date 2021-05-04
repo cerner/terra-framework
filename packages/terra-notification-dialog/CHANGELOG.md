@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.13.0 - (May 4, 2021)
+
 * Changed
   * Regenerated screenshots involving a now removed defaulted implementation
 
