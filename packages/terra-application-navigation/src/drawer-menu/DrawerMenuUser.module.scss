@@ -4,6 +4,16 @@
 
 /* stylelint-disable selector-max-compound-selectors */
 :local {
+  // Z-index necessary to avoid browser dependant layout issues concerning images and box-shadow
+  .small-user-layout,
+  .large-user-layout {
+    z-index: 0;
+
+    .avatar-inner {
+      z-index: 0;
+    }
+  }
+
   .large-user-layout {
     align-items: center;
     display: flex;
