@@ -101,8 +101,6 @@ class SlidePanelManager extends React.Component {
                     title={headerDataForPresentedComponent.title}
                     onClose={manager.closeDisclosure}
                     onBack={manager.disclosureComponentKeys.length > 1 ? manager.dismissPresentedComponent : undefined}
-                    onMaximize={manager.maximizeDisclosure}
-                    onMinimize={manager.minimizeDisclosure}
                   >
                     {headerDataForPresentedComponent.collapsibleMenuView}
                   </ActionHeader>
