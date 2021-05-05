@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.27.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
 ## 1.26.0 - (March 9, 2021)
 
 * Changed
@@ -27,7 +32,7 @@
   * Fixed build failures due to the react/sort-comp rule
   * Restricted year input to be between `1900` and `2100`.
   * Allow users to clear month value by selecting placeholder option value.
-  
+
 ## 1.22.0 - (October 27, 2020)
 
 * Fixed
@@ -67,7 +72,7 @@
 
 * Changed
   * Updated Changelog format
-  
+
 ## 1.16.0 - (August 4, 2020)
 
 * Changed

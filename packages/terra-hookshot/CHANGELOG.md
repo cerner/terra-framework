@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 5.35.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
 ## 5.34.0 - (March 9, 2021)
 
 * Changed
@@ -27,7 +32,7 @@
 
 * Changed
   * Updated `terra-form-input` from ^v2.3.0 to ^v3.7.0
-  
+
 ## 5.29.0 - (August 4, 2020)
 
 * Changed

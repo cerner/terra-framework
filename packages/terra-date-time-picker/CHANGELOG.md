@@ -6,6 +6,16 @@
   * Tests updated to reflect input splitting in `terra-date-picker`.
   * `terra-dev-site` examples to use hooks.
 
+## 4.61.0 - (May 4, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.60.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
 ## 4.59.0 - (March 9, 2021)
 
 * Changed

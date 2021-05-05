@@ -416,60 +416,6 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
       Terra.validates.element('after selecting back', { selector });
     });
   });
-
-  describe('Disclosure - Header Maximize', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter');
-      browser.refresh();
-    });
-
-    afterEach(() => {
-      browser.keys('Escape');
-    });
-
-    it('presents the maximize button within the managed header', () => {
-      $('#root-component .disclose-large').click();
-
-      $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
-      Terra.validates.element('displays maximize button', { selector });
-    });
-
-    it('maximizes the disclosure when the maximize button is pressed', () => {
-      $('#root-component .disclose-large').click();
-
-      $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
-      $('[class*="left-buttons"] > *:first-child').click();
-      Terra.validates.element('after selecting maximize', { selector });
-    });
-  });
-
-  describe('Disclosure - Header Minimize', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter');
-      browser.refresh();
-    });
-
-    afterEach(() => {
-      browser.keys('Escape');
-    });
-
-    it('presents the minimize button within the managed header', () => {
-      $('#root-component .disclose-large').click();
-
-      $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
-      $('[class*="left-buttons"] > *:first-child').click();
-      Terra.validates.element('displays minimize button', { selector });
-    });
-
-    it('maximizes the disclosure when the minimize button is pressed', () => {
-      $('#root-component .disclose-large').click();
-
-      $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
-      $('[class*="left-buttons"] > *:first-child').click();
-      $('[class*="left-buttons"] > *:first-child').click();
-      Terra.validates.element('after selecting minimize', { selector });
-    });
-  });
 });
 
 Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => {

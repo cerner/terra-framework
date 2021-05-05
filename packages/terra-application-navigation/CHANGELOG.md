@@ -2,14 +2,38 @@
 
 ## Unreleased
 
+## 1.50.0 - (May 4, 2021)
+
+* Fixed
+  * add z-index to address ambiguous layers across browsers.
+
+## 1.49.0 - (April 27, 2021)
+
+* Changed
+  * Updated Swedish translations.
+
+## 1.48.1 - (April 12, 2021)
+
+* Fixed
+  * add back missing metaData to utility items.
+
+## 1.48.0 - (April 6, 2021)
+
+* Changed
+  * Updated screenshots with elements that are out of bound
+  * Updated Jest command
+
+* Fixed
+  * Applied theme context to drawer menu and popup menu
+
 ## 1.47.0 - (March 9, 2021)
 
 * Changed
   * Updated to terra-functional-testing
   * Remove extraneous application bases from tests.
-  
+
 * Added
-  * Adding an id to ApplicationNavigation now causes navigation, extesion, and utility items to have a unique id.
+  * Adding an id to ApplicationNavigation now causes navigation, extension, and utility items to have a unique id.
 
 * Fixed
   * Prevent error when using focus trap with react-intl v5

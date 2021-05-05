@@ -6,6 +6,16 @@
   * Date input split into 3 distinct inputs that mask the previous single input.
   * `terra-dev-site` examples to use hooks.
 
+## 4.60.0 - (May 4, 2021)
+
+* Fixed
+  * Fixed focus trap issue for date picker in mobile view.
+
+## 4.59.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
 ## 4.58.0 - (March 9, 2021)
 
 * Changed

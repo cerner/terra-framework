@@ -810,3 +810,15 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
   });
 });
+
+Terra.describeViewports('Date Picker', ['tiny', 'small'], () => {
+  describe('Disable date picker - Disable date picker in mobile view', () => {
+    it('should disable the date picker', () => {
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-calendar-disable');
+      $('#button1').click();
+      expect($('#button1').isFocused()).toEqual(true);
+      $('[data-terra-open-calendar-button]').click();
+      Terra.validates.element('disabled date picker');
+    });
+  });
+});

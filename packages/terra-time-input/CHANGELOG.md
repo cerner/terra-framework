@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.39.0 - (April 6, 2021)
+
+* Fixed
+  * Correct time input test to select the seconds input instead of the minute input.
+
 ## 4.38.0 - (March 9, 2021)
 
 * Changed

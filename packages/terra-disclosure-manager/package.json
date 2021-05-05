@@ -1,7 +1,7 @@
 {
   "name": "terra-disclosure-manager",
   "main": "lib/DisclosureManager.js",
-  "version": "4.39.0",
+  "version": "4.40.0",
   "description": "A stateful component used to manage disclosure presentation.",
   "repository": {
     "type": "git",
@@ -36,6 +36,6 @@
     "lint:scss": "stylelint src/**/*.scss",
     "precompile": "rm -rf lib",
     "test": "npm run jest",
-    "jest": "jest --config ../../jestconfig.js"
+    "jest": "jest --config ../../jest.config.js"
   }
 }

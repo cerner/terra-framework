@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 4.68.0 - (May 4, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.67.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
 ## 4.66.0 - (March 9, 2021)
 
 * Changed
@@ -36,7 +46,7 @@
 
 * Changed
   * Update wdio tests to remove deprecated Terra.it helpers
-  
+
 ## 4.59.0 - (November 10, 2020)
 
 * Fixed

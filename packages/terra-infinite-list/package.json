@@ -1,7 +1,7 @@
 {
   "name": "terra-infinite-list",
   "main": "lib/index.js",
-  "version": "3.36.0",
+  "version": "3.37.0",
   "description": "The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.",
   "repository": {
     "type": "git",
@@ -45,7 +45,7 @@
     "props-table": "props-table ./src/InfiniteList.jsx --out-dir ./docs/props-table",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest && npm run wdio",
-    "jest": "jest --config ../../jestconfig.js",
+    "jest": "jest --config ../../jest.config.js",
     "wdio-default": "cd ../.. && npx wdio",
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",
