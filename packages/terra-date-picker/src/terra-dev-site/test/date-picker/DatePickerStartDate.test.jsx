@@ -12,7 +12,6 @@ const DatePickerStartDate = () => (
       selectedDate="2017-04-01"
     />
   </div>
-
 );
 
 export default DatePickerStartDate;

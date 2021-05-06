@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Changed
+  * Date input split into 3 distinct inputs that mask the previous single input.
+  * `terra-dev-site` examples to use hooks.
+
 ## 4.60.0 - (May 4, 2021)
 
 * Fixed

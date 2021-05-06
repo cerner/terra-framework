@@ -1,42 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DateTimePicker from '../../../DateTimePicker';
 
-class DatePickerOnChange extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { onchangedate: '', onselectdate: '' };
-    this.handleDateChange = this.handleDateChange.bind(this);
-    this.handleDateSelect = this.handleDateSelect.bind(this);
-  }
+const DateTimePickerOnSelect = () => {
+  const [onChangeDate, setOnChangeDate] = useState('');
+  const [onSelectDate, setOnSelectDate] = useState('');
 
-  handleDateChange(event, onchangedate) {
-    this.setState({ onchangedate });
-  }
+  const handleDateChange = (event, onChangeDateValue) => {
+    setOnChangeDate(onChangeDateValue);
+  };
 
-  handleDateSelect(event, onselectdate) {
-    this.setState({ onselectdate });
-  }
+  const handleDateSelect = (event, onSelectDateValue) => {
+    setOnSelectDate(onSelectDateValue);
+  };
 
-  render() {
-    return (
-      <div>
-        <h3>
-          OnChange Date:
-          <span id="changed-date">{this.state.onchangedate}</span>
-        </h3>
-        <h3>
-          OnSelect Date:
-          <span id="selected-date">{this.state.onselectdate}</span>
-        </h3>
-        <DateTimePicker
-          name="date-time-picker-onchange"
-          onChange={this.handleDateChange}
-          onSelect={this.handleDateSelect}
-          value="2017-04-01T12:00"
-        />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <h3>
+        OnChange Date:
+        <span id="changed-date">{onChangeDate}</span>
+      </h3>
+      <h3>
+        OnSelect Date:
+        <span id="selected-date">{onSelectDate}</span>
+      </h3>
+      <DateTimePicker
+        name="date-time-picker-onchange"
+        onChange={handleDateChange}
+        onSelect={handleDateSelect}
+        value="2017-04-01T12:00"
+      />
+    </div>
+  );
+};
 
-export default DatePickerOnChange;
+export default DateTimePickerOnSelect;

@@ -11,20 +11,36 @@ it('should render a default date input', () => {
   expect(dateInput).toMatchSnapshot();
 });
 
+it('should render a date input with isInvalid prop', () => {
+  const dateInput = renderWithIntl(<DateInput isInvalid />);
+  expect(dateInput).toMatchSnapshot();
+});
+
+it('should render a date input with isIncomplete and required props', () => {
+  const dateInput = renderWithIntl(<DateInput isIncomplete required />);
+  expect(dateInput).toMatchSnapshot();
+});
+
 it('should render a default date input with all props', () => {
-  const dateInput = renderWithIntl((
+  const refCallback = jest.fn();
+  const dateInput = mountWithIntl((
     <DateInput
+      ariaLabel="Aria Label text"
+      buttonRefCallback={refCallback}
       inputAttributes={{ id: 'terra-date-input' }}
       name="date-input"
-      value="01/01/2017"
       onBlur={() => {}}
+      onButtonFocus={() => {}}
       onChange={() => {}}
       onClick={() => {}}
+      onFocus={() => {}}
       onKeyDown={() => {}}
+      value="01/01/2017"
     />
   ));
+  const testComponent = dateInput.children();
 
-  expect(dateInput).toMatchSnapshot();
+  expect(testComponent).toMatchSnapshot();
 });
 
 it('should pass in refCallback as the ref prop of the calendar button', () => {

@@ -98,7 +98,7 @@ exports[`correctly applies the theme context className 1`] = `
                 useExternalFormatMask={false}
               />
             }
-            customInputRef="inputRefCallback"
+            customInputRef="firstInputRefCallback"
             dateFormat="MM/DD/YYYY"
             dateFormatCalendar=" "
             disabled={false}
@@ -148,7 +148,7 @@ exports[`correctly applies the theme context className 1`] = `
                   useExternalFormatMask={false}
                 />
               }
-              customInputRef="inputRefCallback"
+              customInputRef="firstInputRefCallback"
               dateFormat="MM/DD/YYYY"
               dateFormatCalendar=" "
               disabled={false}
@@ -223,7 +223,7 @@ exports[`correctly applies the theme context className 1`] = `
                   buttonRefCallback={[Function]}
                   className=""
                   disabled={false}
-                  inputRefCallback={[Function]}
+                  firstInputRefCallback={[Function]}
                   isIncomplete={false}
                   isInvalid={false}
                   name="date-input"
@@ -243,7 +243,7 @@ exports[`correctly applies the theme context className 1`] = `
                     buttonRefCallback={[Function]}
                     className=""
                     disabled={false}
-                    inputRefCallback={[Function]}
+                    firstInputRefCallback={[Function]}
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -290,45 +290,238 @@ exports[`correctly applies the theme context className 1`] = `
                       className="orion-fusion-theme"
                     >
                       <div
-                        className="custom-input"
+                        className="date-input-container"
                       >
-                        <input
-                          data-terra-date-input-hidden={true}
-                          name="date-input"
-                          type="hidden"
-                          value="2017-01-01"
-                        />
-                        <Input
-                          aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-                          aria-required={false}
-                          ariaLabel="Terra.datePicker.date, Sunday, January 1, 2017"
-                          className="input"
+                        <div
+                          className="date-input"
                           disabled={false}
-                          isIncomplete={false}
-                          isInvalid={false}
-                          name="terra-date-date-input"
-                          onBlur={[Function]}
-                          onChange={[Function]}
-                          onFocus={[Function]}
-                          required={false}
-                          type="text"
-                          value="01/01/2017"
                         >
                           <input
-                            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-                            aria-label="Terra.datePicker.date, Sunday, January 1, 2017"
-                            aria-required={false}
-                            className="form-input orion-fusion-theme input"
-                            disabled={false}
-                            name="terra-date-date-input"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            required={false}
-                            type="text"
-                            value="01/01/2017"
+                            data-terra-date-input-hidden={true}
+                            name="date-input"
+                            type="hidden"
+                            value="2017-01-01"
                           />
-                        </Input>
+                          <VisuallyHiddenText
+                            text="Terra.datePicker.date, Sunday, January 1, 2017"
+                          >
+                            <span
+                              className="visually-hidden-text"
+                            >
+                              Terra.datePicker.date, Sunday, January 1, 2017
+                            </span>
+                          </VisuallyHiddenText>
+                          <DateInputLayout
+                            dateFormatOrder="MDY"
+                            day={
+                              <Input
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-label="Terra.datePicker.dayLabel"
+                                aria-required={false}
+                                className="date-input-day"
+                                disabled={false}
+                                isIncomplete={false}
+                                isInvalid={false}
+                                maxLength="2"
+                                name="terra-date-day-date-input"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                pattern="\\\\d*"
+                                refCallback={[Function]}
+                                required={false}
+                                size="2"
+                                type="text"
+                                value="01"
+                              />
+                            }
+                            month={
+                              <Input
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-label="Terra.datePicker.monthLabel"
+                                aria-required={false}
+                                className="date-input-month"
+                                disabled={false}
+                                isIncomplete={false}
+                                isInvalid={false}
+                                maxLength="2"
+                                name="terra-date-month-date-input"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                pattern="\\\\d*"
+                                refCallback={[Function]}
+                                required={false}
+                                size="2"
+                                type="text"
+                                value="01"
+                              />
+                            }
+                            separator={
+                              <span
+                                className="date-spacer"
+                              >
+                                /
+                              </span>
+                            }
+                            year={
+                              <Input
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-label="Terra.datePicker.yearLabel"
+                                aria-required={false}
+                                className="date-input-year"
+                                disabled={false}
+                                isIncomplete={false}
+                                isInvalid={false}
+                                maxLength="4"
+                                name="terra-date-year-date-input"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                pattern="\\\\d*"
+                                refCallback={[Function]}
+                                required={false}
+                                size="4"
+                                type="text"
+                                value="2017"
+                              />
+                            }
+                          >
+                            <Input
+                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                              aria-label="Terra.datePicker.monthLabel"
+                              aria-required={false}
+                              className="date-input-month"
+                              disabled={false}
+                              isIncomplete={false}
+                              isInvalid={false}
+                              maxLength="2"
+                              name="terra-date-month-date-input"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              pattern="\\\\d*"
+                              refCallback={[Function]}
+                              required={false}
+                              size="2"
+                              type="text"
+                              value="01"
+                            >
+                              <input
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-label="Terra.datePicker.monthLabel"
+                                aria-required={false}
+                                className="form-input orion-fusion-theme date-input-month"
+                                disabled={false}
+                                maxLength="2"
+                                name="terra-date-month-date-input"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                pattern="\\\\d*"
+                                required={false}
+                                size="2"
+                                type="text"
+                                value="01"
+                              />
+                            </Input>
+                            <span
+                              className="date-spacer"
+                            >
+                              /
+                            </span>
+                            <Input
+                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                              aria-label="Terra.datePicker.dayLabel"
+                              aria-required={false}
+                              className="date-input-day"
+                              disabled={false}
+                              isIncomplete={false}
+                              isInvalid={false}
+                              maxLength="2"
+                              name="terra-date-day-date-input"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              pattern="\\\\d*"
+                              refCallback={[Function]}
+                              required={false}
+                              size="2"
+                              type="text"
+                              value="01"
+                            >
+                              <input
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-label="Terra.datePicker.dayLabel"
+                                aria-required={false}
+                                className="form-input orion-fusion-theme date-input-day"
+                                disabled={false}
+                                maxLength="2"
+                                name="terra-date-day-date-input"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                pattern="\\\\d*"
+                                required={false}
+                                size="2"
+                                type="text"
+                                value="01"
+                              />
+                            </Input>
+                            <span
+                              className="date-spacer"
+                            >
+                              /
+                            </span>
+                            <Input
+                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                              aria-label="Terra.datePicker.yearLabel"
+                              aria-required={false}
+                              className="date-input-year"
+                              disabled={false}
+                              isIncomplete={false}
+                              isInvalid={false}
+                              maxLength="4"
+                              name="terra-date-year-date-input"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              pattern="\\\\d*"
+                              refCallback={[Function]}
+                              required={false}
+                              size="4"
+                              type="text"
+                              value="2017"
+                            >
+                              <input
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-label="Terra.datePicker.yearLabel"
+                                aria-required={false}
+                                className="form-input orion-fusion-theme date-input-year"
+                                disabled={false}
+                                maxLength="4"
+                                name="terra-date-year-date-input"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                pattern="\\\\d*"
+                                required={false}
+                                size="4"
+                                type="text"
+                                value="2017"
+                              />
+                            </Input>
+                          </DateInputLayout>
+                        </div>
                         <Button
                           className="button"
                           data-terra-open-calendar-button={true}
@@ -451,7 +644,7 @@ exports[`should render a controlled date picker 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -514,7 +707,7 @@ exports[`should render a date picker with disabled dates 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -576,7 +769,7 @@ exports[`should render a date picker with filtered dates 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -638,7 +831,7 @@ exports[`should render a date picker with included dates 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -700,7 +893,7 @@ exports[`should render a date picker with min and max dates 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -762,7 +955,7 @@ exports[`should render a date picker with onBlur 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -824,7 +1017,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -886,7 +1079,7 @@ exports[`should render a date picker with onChange 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -948,7 +1141,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -1010,7 +1203,7 @@ exports[`should render a date picker with onFocus 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -1072,7 +1265,7 @@ exports[`should render a date picker with onRequestClose 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -1135,7 +1328,7 @@ exports[`should render a date picker with onSelect 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -1197,7 +1390,7 @@ exports[`should render a default date input and date picker 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -1264,7 +1457,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}
@@ -1326,7 +1519,7 @@ exports[`should render a disabled date picker 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={true}
@@ -1388,7 +1581,7 @@ exports[`should render a required date input and date picker 1`] = `
           useExternalFormatMask={false}
         />
       }
-      customInputRef="inputRefCallback"
+      customInputRef="firstInputRefCallback"
       dateFormat="MM/DD/YYYY"
       dateFormatCalendar=" "
       disabled={false}

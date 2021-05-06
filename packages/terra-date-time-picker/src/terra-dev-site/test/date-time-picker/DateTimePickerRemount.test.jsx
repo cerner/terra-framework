@@ -3,6 +3,7 @@ import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTem
 
 const DateTimePickerRemount = () => {
   const [dateTime, setDateTime] = useState('2020-04-06T01:30');
+
   return (
     <DateTimePickerExampleTemplate
       key={dateTime}

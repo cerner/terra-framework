@@ -5,6 +5,7 @@ import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTem
 const DateTimePickerChangingDefaultValueProgrammatically = () => {
   const [dateTime, setDate] = useState('2020-01-01T01:10:09');
   const [message, setStatus] = useState('');
+
   return (
     <div>
       <DateTimePickerExampleTemplate

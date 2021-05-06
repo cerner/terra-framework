@@ -5,7 +5,7 @@ import styles from './stylesheets/react_datepicker.module.scss'
 
 const cx = classNames.bind(styles);
 
-function generateYears (year, noOfYear, minDate, maxDate) {
+function generateYears(year, noOfYear, minDate, maxDate) {
   var list = []
   for (var i = 0; i < (2 * noOfYear + 1); i++) {
     const newYear = year + noOfYear - i
@@ -59,7 +59,7 @@ export default class YearDropdownOptions extends React.Component {
     yearDropdownItemNumber: PropTypes.number
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     const { yearDropdownItemNumber, scrollableYearDropdown } = props
     const noOfYear = yearDropdownItemNumber || (scrollableYearDropdown ? 10 : 5)
@@ -135,7 +135,7 @@ export default class YearDropdownOptions extends React.Component {
     return this.shiftYears(-1)
   }
 
-  render () {
+  render() {
     const dropdownClass = cx({
       'react-datepicker-year-dropdown': true,
       'react-datepicker-year-dropdown--scrollable': this.props.scrollableYearDropdown

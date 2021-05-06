@@ -99,6 +99,7 @@ import DatePicker from 'terra-date-picker';
 
 ## Testing
 
+### uuid
 The Date Picker uses `uuid` which changes the component's description id dynamically. To mock it in jest test teams can use `jest.mock`.
 
 If teams are using `shallow` for the tests then the mock is not required. But if using `mount` then the teams must use the mock as given below.
@@ -106,3 +107,14 @@ If teams are using `shallow` for the tests then the mock is not required. But if
 ```js
 jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
 ```
+
+### Date Picker's Inputs
+The Date Picker's input has been split into 3 separate inputs (day, month and year inputs), due to which the values have to be set into each individual input in WDIO as follows:
+
+```diff
+- browser.setValue('input[name="terra-date-date-input"]', '06/01/2017');
++ browser.setValue('input[name="terra-date-month-date-input"]', '06');
++ browser.setValue('input[name="terra-date-day-date-input"]', '01');
++ browser.setValue('input[name="terra-date-year-date-input"]', '2017');
+```
+Note: Here the `name` prop's value is "date-input"

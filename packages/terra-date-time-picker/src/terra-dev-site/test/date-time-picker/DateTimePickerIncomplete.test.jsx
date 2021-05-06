@@ -1,11 +1,11 @@
 import React from 'react';
 import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTemplate';
 
-const DateTimePickerExample = () => (
+const DateTimePickerIncomplete = () => (
   <DateTimePickerExampleTemplate
     isIncomplete
     required
   />
 );
 
-export default DateTimePickerExample;
+export default DateTimePickerIncomplete;

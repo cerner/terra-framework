@@ -245,7 +245,7 @@ class Day extends React.Component {
     }, this.getHighLightedClass('react-datepicker-day--highlighted')]
   }
 
-  render () {
+  render() {
     const { day } = this.props;
 
     return (

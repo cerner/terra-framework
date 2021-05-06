@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Changed
+  * Tests updated to reflect input splitting in `terra-date-picker`.
+  * `terra-dev-site` examples to use hooks.
+
 ## 4.61.0 - (May 4, 2021)
 
 * Changed

@@ -5,7 +5,7 @@ import styles from './common/DatePicker.test.module.scss';
 
 const cx = classNames.bind(styles);
 
-const DatePickerDisabledDate = () => (
+const DisabledDatePickerField = () => (
   <div className={cx('content-wrapper')}>
     <DatePickerField
       label="Enter Date"
@@ -17,4 +17,4 @@ const DatePickerDisabledDate = () => (
   </div>
 );
 
-export default DatePickerDisabledDate;
+export default DisabledDatePickerField;

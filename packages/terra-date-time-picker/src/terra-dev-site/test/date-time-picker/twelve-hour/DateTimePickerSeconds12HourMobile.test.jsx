@@ -1,46 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import DateTimePickerExampleTemplate from '../../../common/DateTimePickerExampleTemplate';
 import DateTimeUtil from '../../../../DateTimeUtils';
 
-export default class DateTimePickerValue12HourMobile extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { datetime: '2019-04-10T15:23:00-05:00' };
-    this.handleOnChange = this.handleOnChange.bind(this);
+let resetOnTouchStart;
+
+const DateTimePickerSeconds12HourMobile = () => {
+  useEffect(() => {
     if (!window.ontouchstart) {
-      this.resetontouchstart = true;
+      resetOnTouchStart = true;
       window.ontouchstart = 'true';
     }
-  }
 
-  componentDidMount() {
-    if (!window.ontouchstart) {
-      this.resetontouchstart = true;
-      window.ontouchstart = 'true';
-    }
-  }
+    return () => {
+      if (resetOnTouchStart) {
+        delete window.ontouchstart;
+      }
+    };
+  });
 
-  componentWillUnmount() {
-    if (this.resetontouchstart) {
-      delete window.ontouchstart;
-    }
-  }
+  return (
+    <>
+      <h3 id="titleWithDateTimeValue">Date-Time-Picker with Seconds</h3>
+      <DateTimePickerExampleTemplate
+        id="disabledDatetimeValueProvided"
+        showSeconds
+        value="2019-04-10T15:23:00-05:00"
+        timeVariant={DateTimeUtil.FORMAT_12_HOUR}
+      />
+    </>
+  );
+};
 
-  handleOnChange(event, datetime) {
-    this.setState({ datetime });
-  }
-
-  render() {
-    return (
-      <>
-        <h3 id="titleWithDateTimeValue">Date-Time-Picker with Seconds</h3>
-        <DateTimePickerExampleTemplate
-          id="disabledDatetimeValueProvided"
-          showSeconds
-          value={this.state.datetime}
-          timeVariant={DateTimeUtil.FORMAT_12_HOUR}
-        />
-      </>
-    );
-  }
-}
+export default DateTimePickerSeconds12HourMobile;

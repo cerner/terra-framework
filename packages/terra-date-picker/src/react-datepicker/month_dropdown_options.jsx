@@ -41,7 +41,7 @@ export default class MonthDropdownOptions extends React.Component {
 
   handleClickOutside = () => this.props.onCancel()
 
-  render () {
+  render() {
     return (
       <div className={cx('react-datepicker-month-dropdown')}>
         {this.renderOptions()}

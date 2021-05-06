@@ -156,6 +156,79 @@ class DateUtil {
   }
 
   /**
+   * Gets the date format order from moment's long date format.
+   * @param {string} momentDateFormat - Moment's long date format.
+   * @return {string} - The date format order. Possible Values (MDY, DMY, YMD)
+   */
+  static getDateFormatOrder(momentDateFormat) {
+    let dateFormatOrder;
+    if (momentDateFormat === 'MM/DD/YYYY') {
+      dateFormatOrder = DateUtil.dateOrder.MDY;
+    } else if (momentDateFormat === 'DD/MM/YYYY' || momentDateFormat === 'DD.MM.YYYY' || momentDateFormat === 'DD-MM-YYYY') {
+      dateFormatOrder = DateUtil.dateOrder.DMY;
+    } else if (momentDateFormat === 'YYYY-MM-DD') {
+      dateFormatOrder = DateUtil.dateOrder.YMD;
+    }
+
+    return dateFormatOrder;
+  }
+
+  /**
+   * Gets the date separator based on the locale.
+   * @param {string} locale - The locale to get the date separator.
+   * @return {string} - The date separator. Possible Values (/, -, .)
+   */
+  static getDateSeparator(locale) {
+    let dateSeparator;
+    const localesWithSlash = ['en-AU', 'en-GB', 'en-US', 'en', 'es-ES', 'es-US', 'es', 'fr-FR', 'fr', 'nl-BE', 'pt-BR', 'pt'];
+    const localesWithHyphen = ['en-CA', 'nl', 'sv-SE', 'sv'];
+    const localesWithDot = ['de'];
+
+    if (localesWithSlash.includes(locale)) {
+      dateSeparator = '/';
+    } else if (localesWithHyphen.includes(locale)) {
+      dateSeparator = '-';
+    } else if (localesWithDot.includes(locale)) {
+      dateSeparator = '.';
+    }
+
+    return dateSeparator;
+  }
+
+  /**
+   * Returns an object consisting of date input values based on the date format.
+   * @param {string} dateOrder - String containing the date input order. Possible values (MDY, DMY, YMD)
+   * @param {string} value - The date/placeholder string.
+   * @param {string} separator - The date separator.
+   * @return {Object} - The object containing the day, month and year values.
+   */
+  static getDateInputValues(dateOrder, value, separator) {
+    let day = '';
+    let month = '';
+    let year = '';
+
+    if (value) {
+      const dateInputParts = value.split(separator);
+
+      switch (dateOrder) {
+        case DateUtil.dateOrder.DMY:
+          [day, month, year] = dateInputParts;
+          break;
+        case DateUtil.dateOrder.MDY:
+          [month, day, year] = dateInputParts;
+          break;
+        case DateUtil.dateOrder.YMD:
+          [year, month, day] = dateInputParts;
+          break;
+        default:
+          [day, month, year] = ['', '', ''];
+      }
+    }
+
+    return { day, month, year };
+  }
+
+  /**
    * Determines if the date is valid and conforms to the given format.
    * @param {string} date - The date to validate.
    * @param {string} format - The date format to use for the validation.
@@ -188,18 +261,17 @@ class DateUtil {
    * @return {string} - The formatted date string.
    */
   static formatMomentDate(momentDate, format) {
-    return momentDate && momentDate.isValid() ? momentDate.format(format, true) : undefined;
+    return momentDate?.isValid() ? momentDate.format(format, true) : undefined;
   }
 
   /**
    * Determines if a provided date input value is valid.
-   * Valid inputs are either empty strings or contain only numeric, `/`, and '.' characters.
+   * Valid inputs are either empty strings or contain only numeric characters.
    * @param {String} value Value to validate
    * @return True if the value is valid, false otherwise.
    */
   static validDateInput(value) {
-    /* eslint-disable-next-line no-useless-escape */
-    return value.length === 0 || /^[\d\/.-]+$/.test(value);
+    return value.length === 0 || /^\d+$/.test(value);
   }
 
   /**
@@ -259,10 +331,184 @@ class DateUtil {
 
     return momentDate.isValid() && momentDate.isSameOrAfter(minDate, 'day') && momentDate.isSameOrBefore(maxDate, 'day');
   }
+
+  /**
+   * Increments the month to its next value
+   * @param {String} month - Month to increment
+   * @return {String} The incremented string value of the month
+   */
+  static incrementMonth(month) {
+    if (month) {
+      let numericMonth = Number(month);
+
+      if (numericMonth < 12) {
+        numericMonth += 1;
+        return numericMonth < 10 ? '0'.concat(numericMonth.toString()) : numericMonth.toString();
+      }
+
+      return month;
+    }
+
+    return '01';
+  }
+
+  /**
+   * Decrements the month to its next value
+   * @param {String} month - Month to decrement
+   * @return {String} The decremented string value of the month
+   */
+  static decrementMonth(month) {
+    if (month) {
+      let numericMonth = Number(month);
+
+      if (numericMonth > 1) {
+        numericMonth -= 1;
+        return numericMonth < 10 ? '0'.concat(numericMonth.toString()) : numericMonth.toString();
+      }
+
+      return month;
+    }
+
+    return '01';
+  }
+
+  /**
+   * Increments the day to its next value
+   * @param {String} day - Day to increment
+   * @param {string} month - Month value
+   * @param {string} year - Year value
+   * @return {String} The incremented string value of the day
+   */
+  static incrementDay(day, month, year) {
+    if (day) {
+      let numericDay = Number(day);
+      const numericMonth = month === '' ? undefined : Number(month);
+      const monthsWithThirtyDays = [4, 6, 9, 11];
+      let dayUpperLimit = 31;
+
+      if (monthsWithThirtyDays.indexOf(numericMonth) > -1) {
+        dayUpperLimit = 30;
+      } else if (numericMonth === 2) {
+        const numericYear = year === '' ? undefined : Number(year);
+        const momentYear = moment([numericYear]);
+        if (momentYear.isLeapYear()) {
+          dayUpperLimit = 29;
+        } else {
+          dayUpperLimit = 28;
+        }
+      }
+
+      if (numericDay < dayUpperLimit) {
+        numericDay += 1;
+        return numericDay < 10 ? '0'.concat(numericDay.toString()) : numericDay.toString();
+      }
+
+      if (numericDay > dayUpperLimit) {
+        return '01';
+      }
+
+      return day;
+    }
+
+    return '01';
+  }
+
+  /**
+   * Decrements the day to its next value
+   * @param {String} day - Day to decrement
+   * @param {string} month - Month value
+   * @param {string} year - Year value
+   * @return {String} The decremented string value of the day
+   */
+  static decrementDay(day, month, year) {
+    if (day) {
+      let numericDay = Number(day);
+      const numericMonth = month === '' ? undefined : Number(month);
+      const monthsWithThirtyDays = [4, 6, 9, 11];
+      let dayUpperLimit = 31;
+
+      if (monthsWithThirtyDays.indexOf(numericMonth) > -1) {
+        dayUpperLimit = 30;
+      } else if (numericMonth === 2) {
+        const numericYear = year === '' ? undefined : Number(year);
+        const momentYear = moment([numericYear]);
+        if (momentYear.isLeapYear()) {
+          dayUpperLimit = 29;
+        } else {
+          dayUpperLimit = 28;
+        }
+      }
+
+      if (numericDay > dayUpperLimit) {
+        return dayUpperLimit.toString();
+      }
+      if (numericDay > 1) {
+        numericDay -= 1;
+        return numericDay < 10 ? '0'.concat(numericDay.toString()) : numericDay.toString();
+      }
+
+      return day;
+    }
+
+    return '01';
+  }
+
+  /**
+   * Increments the year to its next value
+   * @param {String} year - Year to increment
+   * @return {String} The incremented string value of the year
+   */
+  static incrementYear(year) {
+    if (year) {
+      let numericYear = Number(year);
+
+      if (numericYear < Number(DateUtil.MAX_YEAR)) {
+        numericYear += 1;
+        return numericYear.toString();
+      }
+
+      return year;
+    }
+
+    return DateUtil.MIN_YEAR;
+  }
+
+  /**
+   * Decrements the year to its next value
+   * @param {String} year - Year to decrement
+   * @return {String} The decremented string value of the year
+   */
+  static decrementYear(year) {
+    if (year) {
+      let numericYear = Number(year);
+
+      if (numericYear > Number(DateUtil.MIN_YEAR)) {
+        numericYear -= 1;
+        return numericYear.toString();
+      }
+
+      return year;
+    }
+
+    return DateUtil.MIN_YEAR;
+  }
 }
 
+DateUtil.inputType = {
+  DAY: 0,
+  MONTH: 1,
+  YEAR: 2,
+};
+DateUtil.dateOrder = {
+  DMY: 'DMY',
+  MDY: 'MDY',
+  YMD: 'YMD',
+};
 DateUtil.ISO_EXTENDED_DATE_FORMAT = 'YYYY-MM-DD';
 DateUtil.MIN_DATE = '1900-01-01';
 DateUtil.MAX_DATE = '2100-12-31';
+DateUtil.MIN_YEAR = '1900';
+DateUtil.MAX_YEAR = '2100';
+DateUtil.EVENT_KEYDOWN = 'keydown';
 
 export default DateUtil;

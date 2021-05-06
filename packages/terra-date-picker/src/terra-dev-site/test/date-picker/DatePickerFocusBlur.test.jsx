@@ -1,85 +1,75 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import DatePicker from '../../../DatePicker';
 import styles from './common/DatePicker.test.module.scss';
 
 const cx = classNames.bind(styles);
 
-class DatePickerOnBlur extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      blurTriggerCount: 0,
-      focusTriggerCount: 0,
-      iSO: '',
-      inputValue: '',
-      isCompleteValue: 'No',
-      isValidValue: 'Yes',
-    };
-    this.handleBlur = this.handleBlur.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
-    this.blurCount = 0;
-    this.focusCount = 0;
-  }
+let blurCount = 0;
+let focusCount = 0;
 
-  handleBlur(event, options) {
-    this.blurCount += 1;
-    this.setState({
-      blurTriggerCount: this.blurCount,
-      iSO: options.iSO,
-      inputValue: options.inputValue,
-      isCompleteValue: options.isCompleteValue ? 'Yes' : 'No',
-      isValidValue: options.isValidValue ? 'Yes' : 'No',
-    });
-  }
+const DatePickerFocusBlur = () => {
+  const [blurTriggerCount, setBlurTriggerCount] = useState(0);
+  const [focusTriggerCount, setFocusTriggerCount] = useState(0);
+  const [iSO, setISO] = useState('');
+  const [inputValue, setInputValue] = useState('');
+  const [isCompleteValue, setIsCompleteValue] = useState('No');
+  const [isValidValue, setIsValidValue] = useState('Yes');
 
-  handleFocus() {
-    this.focusCount += 1;
-    this.setState({ focusTriggerCount: this.focusCount });
-  }
+  const handleBlur = (event, options) => {
+    blurCount += 1;
+    setBlurTriggerCount(blurCount);
+    setISO(options.iSO);
+    setInputValue(options.inputValue);
+    setIsCompleteValue(options.isCompleteValue ? 'Yes' : 'No');
+    setIsValidValue(options.isValidValue ? 'Yes' : 'No');
+  };
 
-  render() {
-    return (
-      <div className={cx('content-wrapper')}>
-        <h3>
-          onBlur Trigger Count:
-          {' '}
-          <span id="blur-count">{this.state.blurTriggerCount}</span>
-          <br />
-          <br />
-          onFocus Trigger Count:
-          {' '}
-          <span id="focus-count">{this.state.focusTriggerCount}</span>
-          <br />
-          <br />
-          ISO String:
-          {' '}
-          <span id="iso">{this.state.iSO}</span>
-          <br />
-          <br />
-          Input Value:
-          {' '}
-          <span id="input-value">{this.state.inputValue}</span>
-          <br />
-          <br />
-          Is Date Complete?
-          {' '}
-          <span id="complete-date">{this.state.isCompleteValue}</span>
-          <br />
-          <br />
-          Is Date Valid?
-          {' '}
-          <span id="valid-date">{this.state.isValidValue}</span>
-        </h3>
-        <DatePicker
-          name="date-input-onblur"
-          onBlur={this.handleBlur}
-          onFocus={this.handleFocus}
-          excludeDates={['2019-04-01', '2019-04-02']}
-        />
-      </div>
-    );
-  }
-}
+  const handleFocus = () => {
+    focusCount += 1;
+    setFocusTriggerCount(focusCount);
+  };
 
-export default DatePickerOnBlur;
+  return (
+    <div className={cx('content-wrapper')}>
+      <h3>
+        onBlur Trigger Count:
+        {' '}
+        <span id="blur-count">{blurTriggerCount}</span>
+        <br />
+        <br />
+        onFocus Trigger Count:
+        {' '}
+        <span id="focus-count">{focusTriggerCount}</span>
+        <br />
+        <br />
+        ISO String:
+        {' '}
+        <span id="iso">{iSO}</span>
+        <br />
+        <br />
+        Input Value:
+        {' '}
+        <span id="input-value">{inputValue}</span>
+        <br />
+        <br />
+        Is Date Complete?
+        {' '}
+        <span id="complete-date">{isCompleteValue}</span>
+        <br />
+        <br />
+        Is Date Valid?
+        {' '}
+        <span id="valid-date">{isValidValue}</span>
+      </h3>
+      <DatePicker
+        name="date-input-onblur"
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+        excludeDates={['2019-04-01', '2019-04-02']}
+      />
+    </div>
+  );
+};
+
+export default DatePickerFocusBlur;

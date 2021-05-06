@@ -5,8 +5,6 @@ import ThemeContext from 'terra-theme-context';
 import { activeBreakpointForSize } from 'terra-breakpoints';
 import ResponsiveElement from 'terra-responsive-element';
 import { injectIntl } from 'react-intl';
-
-/* eslint-disable-next-line  */
 import ReactDatePicker from './react-datepicker';
 import DateInput from './DateInput';
 import DateUtil from './DateUtil';
@@ -16,7 +14,12 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * @private Whether or not to disable focus on the calendar button when the calendar picker dismisses.
+   * String that labels the current element. 'aria-label' must be present for accessibility.
+   */
+  ariaLabel: PropTypes.string,
+  /**
+   * @private
+   * Whether or not to disable focus on the calendar button when the calendar picker dismisses.
    */
   disableButtonFocusOnClose: PropTypes.bool,
   /**
@@ -49,24 +52,29 @@ const propTypes = {
   inputAttributes: PropTypes.object,
   /**
    * @private
+   * Callback ref to pass into the last input dom element from Date Input components based on the date format order.
+   */
+  lastInputRefCallback: PropTypes.func,
+  /**
+   * @private
    * intl object programmatically imported through injectIntl from react-intl.
    * */
   intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }).isRequired,
   /**
-  * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
-  */
+   * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+   */
   isIncomplete: PropTypes.bool,
   /**
-  * Whether the input displays as Invalid. Use when value does not meet validation pattern.
-  */
+   * @private
+   * Prop to show inline version of date picker component.
+   */
+  isInline: PropTypes.bool,
+  /**
+   * Whether the input displays as Invalid. Use when value does not meet validation pattern.
+   */
   isInvalid: PropTypes.bool,
   /**
-  * String that labels the current element. 'aria-label' must be present,
-  * for accessibility.
-  */
-  ariaLabel: PropTypes.string,
-  /**
-   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`
+   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
    */
   maxDate: PropTypes.string,
   /**
@@ -98,14 +106,14 @@ const propTypes = {
    */
   onClickOutside: PropTypes.func,
   /**
-   * A callback function to execute when picker is dismissed. onRequestClose(event)
-   */
-  onRequestClose: PropTypes.func,
-  /**
    * A callback function triggered when the date picker component receives focus.
    * This event does not get triggered when the focus is moved from the date input to the calendar button since the focus is still within the main date picker component.
    */
   onFocus: PropTypes.func,
+  /**
+   * A callback function to execute when picker is dismissed. onRequestClose(event)
+   */
+  onRequestClose: PropTypes.func,
   /**
    * A callback function to execute when a date is selected from within the picker.
    */
@@ -116,7 +124,7 @@ const propTypes = {
   required: PropTypes.bool,
   /**
    * An ISO 8601 string representation of the default value to show in the date input. The value must be in the `YYYY-MM-DD` format.
-   * This is analogous to defaultvalue in a form input field.
+   * This is analogous to default value in a form input field.
    */
   selectedDate: PropTypes.string,
   /**
@@ -133,21 +141,19 @@ const propTypes = {
    * The value must be in the `YYYY-MM-DD` format or the all-numeric date format based on the locale.
    */
   value: PropTypes.string,
-  /**
-   * @private
-   * Prop to show inline version of date picker component.
-   */
-  isInline: PropTypes.bool,
 };
 
 const defaultProps = {
+  disableButtonFocusOnClose: false,
   disabled: false,
   excludeDates: undefined,
   filterDate: undefined,
   includeDates: undefined,
   initialTimeZone: undefined,
   inputAttributes: undefined,
+  lastInputRefCallback: undefined,
   isIncomplete: false,
+  isInline: false,
   isInvalid: false,
   maxDate: '2100-12-31',
   minDate: '1900-01-01',
@@ -159,9 +165,7 @@ const defaultProps = {
   onSelect: undefined,
   useExternalFormatMask: false,
   required: false,
-  disableButtonFocusOnClose: false,
   selectedDate: undefined,
-  isInline: false,
 };
 
 class DatePicker extends React.Component {
@@ -226,7 +230,7 @@ class DatePicker extends React.Component {
 
   handleFilterDate(date) {
     if (this.props.filterDate) {
-      return this.props.filterDate(date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '');
+      return this.props.filterDate(date?.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '');
     }
 
     return true;
@@ -236,9 +240,9 @@ class DatePicker extends React.Component {
     // onSelect should only be invoked when selecting a date from the picker.
     // react-datepicker has an issue where onSelect is invoked both when selecting a date from the picker
     // as well as manually entering a valid date or clearing the date,
-    // Until a fix is made, we need to return if the event type is 'change' indicating that onSelect was
+    // Until a fix is made, we need to return if the event type is 'change' or 'keydown' indicating that onSelect was
     // invoked from a manual change. See https://github.com/Hacker0x01/react-datepicker/issues/990
-    if (event.type === 'change' || !selectedDate || !selectedDate.isValid()) {
+    if (event.type === 'change' || event.type === 'keydown' || !selectedDate || !selectedDate.isValid()) {
       return;
     }
 
@@ -286,9 +290,9 @@ class DatePicker extends React.Component {
     }
   }
 
-  handleChange(date, event) {
+  handleChange(date, event, value) {
     if (event.type === 'change') {
-      this.dateValue = event.target.value;
+      this.dateValue = value;
     }
 
     this.setState({
@@ -297,12 +301,12 @@ class DatePicker extends React.Component {
 
     if (this.props.onChange) {
       const metadata = this.getMetadata();
-      this.props.onChange(event, date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '', metadata);
+      this.props.onChange(event, date?.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '', metadata);
     }
   }
 
-  handleChangeRaw(event) {
-    this.dateValue = event.target.value;
+  handleChangeRaw(event, value) {
+    this.dateValue = value;
     if (!this.getMetadata().isValidValue) {
       this.setState({
         selectedDate: null,
@@ -311,7 +315,7 @@ class DatePicker extends React.Component {
 
     if (this.props.onChangeRaw) {
       const metadata = this.getMetadata();
-      this.props.onChangeRaw(event, event.target.value, metadata);
+      this.props.onChangeRaw(event, value, metadata);
     }
   }
 
@@ -392,14 +396,17 @@ class DatePicker extends React.Component {
 
   render() {
     const {
+      ariaLabel,
       disableButtonFocusOnClose,
-      inputAttributes,
       excludeDates,
       filterDate,
       includeDates,
+      inputAttributes,
+      lastInputRefCallback,
       initialTimeZone,
       intl,
       isIncomplete,
+      isInline,
       isInvalid,
       maxDate,
       minDate,
@@ -408,15 +415,13 @@ class DatePicker extends React.Component {
       onChange,
       onChangeRaw,
       onClickOutside,
-      onRequestClose,
       onFocus,
+      onRequestClose,
       onSelect,
       required,
       selectedDate,
       useExternalFormatMask,
       value,
-      isInline,
-      ariaLabel,
       ...customProps
     } = this.props;
 
@@ -485,11 +490,12 @@ class DatePicker extends React.Component {
                 onButtonFocus={this.handleFocus}
                 buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
                 ariaLabel={ariaLabel}
+                lastInputRefCallback={lastInputRefCallback}
                 useExternalFormatMask={useExternalFormatMask}
                 initialTimeZone={initialTimeZone}
               />
             )}
-            customInputRef="inputRefCallback"
+            customInputRef="firstInputRefCallback"
             excludeDates={DateUtil.filterInvalidDates(excludeDates)}
             filterDate={this.handleFilterDate}
             includeDates={DateUtil.filterInvalidDates(includeDates)}

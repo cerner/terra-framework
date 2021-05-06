@@ -1,38 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import DateTimePickerExampleTemplate from '../../../common/DateTimePickerExampleTemplate';
 import DateTimeUtil from '../../../../DateTimeUtils';
 
-export default class DateTimePickerEmpty12HourMobile extends React.Component {
-  constructor(props) {
-    super(props);
+let resetOnTouchStart;
+
+const DateTimePickerEmpty12HourMobile = () => {
+  useEffect(() => {
     if (!window.ontouchstart) {
-      this.resetontouchstart = true;
+      resetOnTouchStart = true;
       window.ontouchstart = 'true';
     }
-  }
 
-  componentDidMount() {
-    if (!window.ontouchstart) {
-      this.resetontouchstart = true;
-      window.ontouchstart = 'true';
-    }
-  }
+    return () => {
+      if (resetOnTouchStart) {
+        delete window.ontouchstart;
+      }
+    };
+  });
 
-  componentWillUnmount() {
-    if (this.resetontouchstart) {
-      delete window.ontouchstart;
-    }
-  }
+  return (
+    <>
+      <h3>Empty Date-Time-Picker</h3>
+      <DateTimePickerExampleTemplate
+        id="datetimeEmpty"
+        timeVariant={DateTimeUtil.FORMAT_12_HOUR}
+      />
+    </>
+  );
+};
 
-  render() {
-    return (
-      <>
-        <h3>Empty Date-Time-Picker</h3>
-        <DateTimePickerExampleTemplate
-          id="datetimeEmpty"
-          timeVariant={DateTimeUtil.FORMAT_12_HOUR}
-        />
-      </>
-    );
-  }
-}
+export default DateTimePickerEmpty12HourMobile;

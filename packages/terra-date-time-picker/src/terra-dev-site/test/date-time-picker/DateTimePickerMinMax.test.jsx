@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment-timezone';
 import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTemplate';
 
-const DateTimePickerExample = () => (
+const DateTimePickerMinMax = () => (
   <DateTimePickerExampleTemplate
     minDate={moment().format()}
     maxDate={moment().add(6, 'days').format()}
@@ -10,4 +10,4 @@ const DateTimePickerExample = () => (
   />
 );
 
-export default DateTimePickerExample;
+export default DateTimePickerMinMax;
