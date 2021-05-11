@@ -9,27 +9,27 @@ import ModalManagerPropsTable from 'terra-modal-manager/src/ModalManager?dev-sit
 # Terra Modal Manager
 
 The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal.
-  
+
 ModalManager provides the ability to handle and navigate stacked disclosures.
-  
+
 ## Getting Started
-  
+
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-modal-manager`
-  
+
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
 ## Peer Dependencies
 
 This component requires the following peer dependencies be installed in your app for the component to properly function.
-  
+
 | Peer Dependency | Version |
 |-|-|
 | react | ^16.8.5 |
 | react-dom | ^16.8.5 |
 | terra-disclosure-manager | ^4.16.0 |
-  
+
 <!-- AUTO-GENERATED-CONTENT:END -->
-  
+
 ## Usage
 ```jsx
 import ModalManager, { disclosureType } from 'terra-modal-manager';
@@ -43,8 +43,8 @@ The ModalManager responds to `"modal"` disclosure type requests. Components that
 
 ## DisclosureManagerHeaderAdapter Support
 
-If a component disclosed by the ModalManager renders a `DisclosureManagerHeaderAdapter`, the ModalManager will render an ActionHeader and provide the standard disclosure navigation controls (close, go back, maximize/minimize, etc.) within it. The disclosed component can use the `DisclosureManagerHeaderAdapter` to inject its own title and CollapsibleButtonView into the ActionHeader.
-  
+If a component disclosed by the ModalManager renders a `DisclosureManagerHeaderAdapter`, the ModalManager will render an ActionHeader and provide the standard disclosure navigation controls (close, go back, etc.) within it. The disclosed component can use the `DisclosureManagerHeaderAdapter` to inject its own title and CollapsibleButtonView into the ActionHeader.
+
 If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter`, the ModalManager will **not** render an ActionHeader itself. In this case, it is assumed that the disclosed component is rendering its own header. The disclosed component is responsible for rendering the appropriate controls to navigate the disclosure stack.
 s
 > Note: The DisclosureManagerHeaderAdapter is the preferred way to present a header within the ModalManager. In a future major release, the ModalManager will **always** render the header and navigation controls, regardless of the presence of a DisclosureManagerHeaderAdapter.
@@ -54,7 +54,7 @@ s
 The `disclosureAccessory` prop allows consumers of the ModalManager to render a static component above the disclosed modal content. The provided component will be rendered below the standard ActionHeader and above the disclosed content. This can be used to easily provide additional context to every disclosed component. This component is provided once to the ModalManager instance, not on a per-disclosure basis, and each component in the disclosure stack will be decorated with the same accessory component.
 
 ## Component Features
-  
+
 * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
 * [Responsive Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#responsive-support)
 * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
