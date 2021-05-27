@@ -2,11 +2,31 @@
 
 ## Unreleased
 
+## 3.37.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 3.36.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 3.35.0 - (January 5, 2021)
+
+* Fixed
+  * Fixed broken links in documentation.
+
+## 3.34.0 - (November 24, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 ## 3.33.0 - (August 18, 2020)
 
 * Added
   * Added missing themeable variables.
-  
+
 ## 3.32.0 - (August 4, 2020)
 
 * Changed

@@ -2,6 +2,50 @@
 
 ## Unreleased
 
+## 4.60.0 - (May 4, 2021)
+
+* Fixed
+  * Fixed focus trap issue for date picker in mobile view.
+
+## 4.59.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 4.58.0 - (March 9, 2021)
+
+* Changed
+  * Updated to use terra-functional-testing
+
+## 4.57.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.56.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.55.0 - (January 5, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.54.0 - (December 8, 2020)
+
+* Added
+  * Added initialTimeZone a private prop that gets passed down from terra-date-time-picker.
+
+* Changed
+  * Changed 'moment' dependency to 'moment-timezone'
+  * Updated to support a peer dependency of react-intl v2-v5
+
+## 4.53.0 - (November 24, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 ## 4.52.0 - (November 10, 2020)
 
 * Fixed

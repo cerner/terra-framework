@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import { FormattedMessage } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import CollapsibleMenuViewItem from './CollapsibleMenuViewItem';
 import CollapsibleMenuViewItemGroup from './CollapsibleMenuViewItemGroup';
 import CollapsibleMenuViewToggle from './CollapsibleMenuViewToggle';
@@ -30,11 +30,29 @@ const propTypes = {
    * Bounding container for the menu, will use window if no value provided.
    */
   boundingRef: PropTypes.func,
+  /**
+   * @private
+   * Object containing intl APIs
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
+
+  /**
+   *  Puts items under the collapsed (more) menu. More button will be always shown if at least one item is populated here.
+   */
+  alwaysCollapsedMenuItems: PropTypes.arrayOf(PropTypes.element),
 };
+
+const defaultProps = {
+  alwaysCollapsedMenuItems: [],
+};
+
+const prepopulatedBaseDivider = <CollapsibleMenuViewDivider key="prepopulatedBaseDivider" />;
 
 class CollapsibleMenuView extends React.Component {
   constructor(props) {
     super(props);
+
+    this.collapsedMenuAlwaysShown = props.alwaysCollapsedMenuItems.length > 0;
     this.setContainer = this.setContainer.bind(this);
     this.setMenuButton = this.setMenuButton.bind(this);
     this.resetCache = this.resetCache.bind(this);
@@ -84,7 +102,7 @@ class CollapsibleMenuView extends React.Component {
 
       if (calcWidth > availableWidth) {
         // If last child fits in the available space, leave it face up
-        if (i === this.props.children.length - 1 && calcWidth <= width) {
+        if (!this.collapsedMenuAlwaysShown && i === this.props.children.length - 1 && calcWidth <= width) {
           break;
         }
 
@@ -125,14 +143,8 @@ class CollapsibleMenuView extends React.Component {
 
   render() {
     const {
-      children, boundingRef, menuWidth, ...customProps
+      children, boundingRef, menuWidth, intl, alwaysCollapsedMenuItems, ...customProps
     } = this.props;
-    const visibleChildren = React.Children.toArray(children);
-
-    let hiddenChildren = null;
-    if (this.hiddenStartIndex >= 0) {
-      hiddenChildren = visibleChildren.splice(this.hiddenStartIndex);
-    }
     const theme = this.context;
 
     const collapsibleMenuViewClassName = classNames(cx(
@@ -143,27 +155,32 @@ class CollapsibleMenuView extends React.Component {
     customProps.className);
     const menuButtonClassName = cx(
       'menu-button',
-      { hidden: this.menuHidden },
+      { hidden: !this.collapsedMenuAlwaysShown && this.menuHidden },
     );
+    let visibleChildren = children;
+    let hiddenChildren = alwaysCollapsedMenuItems;
+
+    if (this.hiddenStartIndex >= 0) {
+      visibleChildren = React.Children.toArray(children);
+      hiddenChildren = this.collapsedMenuAlwaysShown
+        ? visibleChildren.splice(this.hiddenStartIndex).concat(prepopulatedBaseDivider).concat(hiddenChildren)
+        : visibleChildren.splice(this.hiddenStartIndex).concat(hiddenChildren);
+    }
 
     return (
       <div {...customProps} className={collapsibleMenuViewClassName} ref={this.setContainer}>
         {visibleChildren}
         <div className={menuButtonClassName} ref={this.setMenuButton}>
-          <FormattedMessage id="Terra.collapsibleMenuView.more">
-            {ellipsesText => (
-              <CollapsibleMenuViewItem
-                data-collapsible-menu-toggle
-                icon={<span className={cx('menu-button-icon')} />}
-                subMenuItems={hiddenChildren}
-                boundingRef={boundingRef}
-                menuWidth={menuWidth}
-                isIconOnly
-                text={ellipsesText}
-                variant="utility"
-              />
-            )}
-          </FormattedMessage>
+          <CollapsibleMenuViewItem
+            data-collapsible-menu-toggle
+            icon={<span className={cx('menu-button-icon')} />}
+            subMenuItems={hiddenChildren}
+            boundingRef={boundingRef}
+            menuWidth={menuWidth}
+            isIconOnly
+            text={intl.formatMessage({ id: 'Terra.collapsibleMenuView.more' })}
+            variant="utility"
+          />
         </div>
       </div>
     );
@@ -177,5 +194,6 @@ CollapsibleMenuView.Divider = CollapsibleMenuViewDivider;
 
 CollapsibleMenuView.propTypes = propTypes;
 CollapsibleMenuView.contextType = ThemeContext;
+CollapsibleMenuView.defaultProps = defaultProps;
 
-export default CollapsibleMenuView;
+export default injectIntl(CollapsibleMenuView);

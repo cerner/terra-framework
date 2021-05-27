@@ -2,6 +2,27 @@
 
 ## Unreleased
 
+## 5.35.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 5.34.0 - (March 9, 2021)
+
+* Changed
+  * Updated to use terra-functional-testing
+
+## 5.33.0 - (January 26, 2021)
+
+* Fixed
+  * Fixed error thrown on resizing the popup due to incorrect variables name.
+
+
+## 5.32.0 - (December 8, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 ## 5.31.0 - (November 10, 2020)
 
 * Fixed
@@ -11,7 +32,7 @@
 
 * Changed
   * Updated `terra-form-input` from ^v2.3.0 to ^v3.7.0
-  
+
 ## 5.29.0 - (August 4, 2020)
 
 * Changed

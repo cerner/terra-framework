@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import Popup from 'terra-popup';
 
 import PopupMenu from '../common/_PopupMenu';
@@ -9,7 +9,7 @@ import { extensionItemsPropType } from '../utils/propTypes';
 import ExtensionRollup from './_ExtensionRollup';
 import Extension from './_Extension';
 import { sliceIndexForBreakpoint } from './_ExtensionUtils';
-import { shouldRenderCompactNavigation } from '../utils/helpers';
+import { shouldRenderCompactNavigation, extensionItemId } from '../utils/helpers';
 import styles from './Extensions.module.scss';
 
 const cx = classNames.bind(styles);
@@ -24,6 +24,10 @@ const propTypes = {
    */
   extensionItems: extensionItemsPropType,
   /**
+   * An id used to generate unique ids for extension items
+   */
+  id: PropTypes.string,
+  /**
    * A function to be executed upon selection of a tab.
    */
   onSelect: PropTypes.func,
@@ -35,7 +39,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs
    */
-  intl: intlShape,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {
@@ -47,6 +51,7 @@ const defaultProps = {
 const Extensions = ({
   activeBreakpoint,
   extensionItems,
+  id,
   notifications,
   onSelect,
   intl,
@@ -114,6 +119,7 @@ const Extensions = ({
           title={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupMenuHeaderTitle' })}
           role="menu"
           menuItems={hiddenExtensions.map(item => ({
+            id: id && extensionItemId(id, item.key),
             key: item.key,
             icon: item.icon,
             text: item.text,
@@ -134,6 +140,7 @@ const Extensions = ({
       <div className={cx('extensions-row')}>
         {visibleExtensions.map(extension => (
           <Extension
+            id={id && extensionItemId(id, extension.key)}
             notificationCount={notifications[extension.key]}
             key={extension.key}
             icon={extension.icon}

@@ -2,6 +2,46 @@
 
 ## Unreleased
 
+## 1.58.0 - (May 4, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.57.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 1.56.0 - (March 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.55.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.54.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.53.0 - (January 5, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.52.0 - (December 8, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.51.0 - (November 24, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.50.0 - (November 10, 2020)
 
 * Changed

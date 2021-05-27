@@ -45,9 +45,8 @@ exports[`UtilityMenu should render default element 1`] = `
       fill={false}
       footer={<ActionFooter />}
       header={
-        <ActionHeader
+        <InjectIntl(ActionHeader)
           aria-hidden={true}
-          level={1}
           title="Terra.applicationNavigation.utilityMenu.headerTitle"
         />
       }
@@ -58,38 +57,70 @@ exports[`UtilityMenu should render default element 1`] = `
         <div
           className="header"
         >
-          <ActionHeader
+          <InjectIntl(ActionHeader)
             aria-hidden={true}
-            level={1}
             title="Terra.applicationNavigation.utilityMenu.headerTitle"
           >
-            <ActionHeaderContainer
+            <ActionHeader
               aria-hidden={true}
-              endContent={null}
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               level={1}
-              startContent={null}
               title="Terra.applicationNavigation.utilityMenu.headerTitle"
             >
-              <div
+              <ActionHeaderContainer
                 aria-hidden={true}
-                className="flex-header"
+                endContent={null}
+                level={1}
+                startContent={null}
+                title="Terra.applicationNavigation.utilityMenu.headerTitle"
               >
                 <div
-                  className="flex-fill"
+                  aria-hidden={true}
+                  className="flex-header"
                 >
                   <div
-                    className="title-container"
+                    className="flex-fill"
                   >
-                    <h1
-                      className="title"
+                    <div
+                      className="title-container"
                     >
-                      Terra.applicationNavigation.utilityMenu.headerTitle
-                    </h1>
+                      <h1
+                        className="title"
+                      >
+                        Terra.applicationNavigation.utilityMenu.headerTitle
+                      </h1>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </ActionHeaderContainer>
-          </ActionHeader>
+              </ActionHeaderContainer>
+            </ActionHeader>
+          </InjectIntl(ActionHeader)>
         </div>
         <div
           className="main"
@@ -185,7 +216,11 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
         "icon": <span>
           my icon
         </span>,
+        "id": "test-utility-2-id",
         "key": "my-test-key-2",
+        "metaData": Object {
+          "meta": "metaData",
+        },
         "text": "test-text-2",
       },
     ]
@@ -202,10 +237,15 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
     menuItems={
       Array [
         Object {
+          "dataAttrs": undefined,
           "icon": <span>
             my icon
           </span>,
+          "id": undefined,
           "key": "my-test-key-2",
+          "metaData": Object {
+            "meta": "metaData",
+          },
           "text": "test-text-2",
         },
         Object {
@@ -217,6 +257,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
             viewBox="0 0 48 48"
             xmlns="http://www.w3.org/2000/svg"
           />,
+          "id": undefined,
           "key": "terra-application-navigation.utility-menu.settings",
           "text": "Terra.applicationNavigation.utilityMenu.settings",
         },
@@ -228,6 +269,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
             viewBox="0 0 48 48"
             xmlns="http://www.w3.org/2000/svg"
           />,
+          "id": undefined,
           "key": "terra-application-navigation.utility-menu.help",
           "text": "Terra.applicationNavigation.utilityMenu.help",
         },
@@ -271,9 +313,8 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
         />
       }
       header={
-        <ActionHeader
+        <InjectIntl(ActionHeader)
           aria-hidden={true}
-          level={1}
           title="Terra.applicationNavigation.utilityMenu.headerTitle"
         />
       }
@@ -284,38 +325,70 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
         <div
           className="header"
         >
-          <ActionHeader
+          <InjectIntl(ActionHeader)
             aria-hidden={true}
-            level={1}
             title="Terra.applicationNavigation.utilityMenu.headerTitle"
           >
-            <ActionHeaderContainer
+            <ActionHeader
               aria-hidden={true}
-              endContent={null}
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               level={1}
-              startContent={null}
               title="Terra.applicationNavigation.utilityMenu.headerTitle"
             >
-              <div
+              <ActionHeaderContainer
                 aria-hidden={true}
-                className="flex-header"
+                endContent={null}
+                level={1}
+                startContent={null}
+                title="Terra.applicationNavigation.utilityMenu.headerTitle"
               >
                 <div
-                  className="flex-fill"
+                  aria-hidden={true}
+                  className="flex-header"
                 >
                   <div
-                    className="title-container"
+                    className="flex-fill"
                   >
-                    <h1
-                      className="title"
+                    <div
+                      className="title-container"
                     >
-                      Terra.applicationNavigation.utilityMenu.headerTitle
-                    </h1>
+                      <h1
+                        className="title"
+                      >
+                        Terra.applicationNavigation.utilityMenu.headerTitle
+                      </h1>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </ActionHeaderContainer>
-          </ActionHeader>
+              </ActionHeaderContainer>
+            </ActionHeader>
+          </InjectIntl(ActionHeader)>
         </div>
         <div
           className="main"
@@ -801,9 +874,8 @@ exports[`UtilityMenu should render with skip callback 1`] = `
         />
       }
       header={
-        <ActionHeader
+        <InjectIntl(ActionHeader)
           aria-hidden={true}
-          level={1}
           title="Terra.applicationNavigation.utilityMenu.headerTitle"
         />
       }
@@ -814,38 +886,70 @@ exports[`UtilityMenu should render with skip callback 1`] = `
         <div
           className="header"
         >
-          <ActionHeader
+          <InjectIntl(ActionHeader)
             aria-hidden={true}
-            level={1}
             title="Terra.applicationNavigation.utilityMenu.headerTitle"
           >
-            <ActionHeaderContainer
+            <ActionHeader
               aria-hidden={true}
-              endContent={null}
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               level={1}
-              startContent={null}
               title="Terra.applicationNavigation.utilityMenu.headerTitle"
             >
-              <div
+              <ActionHeaderContainer
                 aria-hidden={true}
-                className="flex-header"
+                endContent={null}
+                level={1}
+                startContent={null}
+                title="Terra.applicationNavigation.utilityMenu.headerTitle"
               >
                 <div
-                  className="flex-fill"
+                  aria-hidden={true}
+                  className="flex-header"
                 >
                   <div
-                    className="title-container"
+                    className="flex-fill"
                   >
-                    <h1
-                      className="title"
+                    <div
+                      className="title-container"
                     >
-                      Terra.applicationNavigation.utilityMenu.headerTitle
-                    </h1>
+                      <h1
+                        className="title"
+                      >
+                        Terra.applicationNavigation.utilityMenu.headerTitle
+                      </h1>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </ActionHeaderContainer>
-          </ActionHeader>
+              </ActionHeaderContainer>
+            </ActionHeader>
+          </InjectIntl(ActionHeader)>
         </div>
         <div
           className="main"

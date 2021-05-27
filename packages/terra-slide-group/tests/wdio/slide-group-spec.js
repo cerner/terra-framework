@@ -1,53 +1,42 @@
 Terra.describeViewports('Slide Group', ['medium'], () => {
-  describe('Default', () => {
-    before(() => browser.url('/#/raw/tests/terra-slide-group/slide-group/default-slide-group'));
-
-    Terra.it.matchesScreenshot({ selector: '#SlideGroup' });
-    Terra.it.isAccessible();
+  it('displays default slide group', () => {
+    browser.url('/raw/tests/terra-slide-group/slide-group/default-slide-group');
+    Terra.validates.element('default', { selector: '#SlideGroup' });
   });
 
-  describe('One Item', () => {
-    before(() => browser.url('/#/raw/tests/terra-slide-group/slide-group/one-item-slide-group'));
+  it('displays slide group with One Item', () => {
+    browser.url('/raw/tests/terra-slide-group/slide-group/one-item-slide-group');
 
-    Terra.it.matchesScreenshot({ selector: '#SlideGroup' });
-    Terra.it.isAccessible();
+    Terra.validates.element('one item', { selector: '#SlideGroup' });
   });
 
   describe('Non Animated', () => {
-    before(() => browser.url('/#/raw/tests/terra-slide-group/slide-group/non-animated-slide-group'));
-
     it('should advance the slide', () => {
-      browser.click('#increment-1');
+      browser.url('/raw/tests/terra-slide-group/slide-group/non-animated-slide-group');
+      $('#increment-1').click();
+      Terra.validates.element('slide 2 non animated');
     });
-
-    Terra.it.matchesScreenshot('slide 2');
 
     it('should go back a slide', () => {
-      browser.click('#decrement-2');
+      $('#decrement-2').click();
+      Terra.validates.element('slide 1 non animated');
     });
-
-    Terra.it.matchesScreenshot('slide 1');
-    Terra.it.isAccessible();
   });
 
   describe('Animated', () => {
-    before(() => browser.url('/#/raw/tests/terra-slide-group/slide-group/animated-slide-group'));
-
     it('should advance the slide', () => {
-      browser.click('#increment-1');
+      browser.url('/raw/tests/terra-slide-group/slide-group/animated-slide-group');
+      $('#increment-1').click();
 
       browser.pause(350);
+      Terra.validates.element('slide 2 animated');
     });
-
-    Terra.it.matchesScreenshot('slide 2');
 
     it('should go back a slide', () => {
-      browser.click('#decrement-2');
+      $('#decrement-2').click();
 
       browser.pause(350);
+      Terra.validates.element('slide 1 animated');
     });
-
-    Terra.it.matchesScreenshot('slide 1');
-    Terra.it.isAccessible();
   });
 });

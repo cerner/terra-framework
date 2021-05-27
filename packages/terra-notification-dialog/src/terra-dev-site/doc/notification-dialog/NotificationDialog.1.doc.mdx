@@ -58,12 +58,12 @@ import NotificationDialog from 'terra-notification-dialog';
 
 ## Component Features
 
- * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
- * [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
- * [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
- * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#ltr--rtl-support)
- * [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
- * [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+ * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+ * [Responsive Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#responsive-support)
+ * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+ * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
+ * [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+ * [Localization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
 
 ## Example Usage for Risk Situations
 
@@ -135,15 +135,15 @@ The Notification Dialog has the following data attributes available for browser 
 ```js
 describe('NotificationDialog', () => {
   it('opens the notification dialog', () => {
-    browser.click('#triggerNotificationDialog');
-    expect(browser.isExisting('[data-terra-notification-dialog]')).to.be.true;
-    expect(browser.hasFocus('[data-terra-notification-dialog]')).to.be.true;
+    $('#triggerNotificationDialog').click();
+    expect($('[data-terra-notification-dialog]').isExisting()).toBeTruthy();
+    expect($('[data-terra-notification-dialog]').isFocused()).toBeTruthy();
     Terra.validates.element('open', { selector: '#root' });
   });
 
   it('user rejects the notification dialog', () => {
-    browser.click('[data-terra-notification-dialog-button="reject"]');
-    expect(browser.isExisting('[data-terra-notification-dialog]')).to.be.false;
+    $('[data-terra-notification-dialog-button="reject"]').click();
+    expect($('[data-terra-notification-dialog]').isExisting()).toBeFalsy();
     Terra.validates.element('closed', { selector: '#root' });
   });
 });

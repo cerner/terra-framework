@@ -178,7 +178,7 @@ it('should handle focusing on the seconds input without error', () => {
   const wrapper = mountWithIntl(timeInput);
   const testComponent = wrapper.children();
   testComponent.instance().setState({ hour: 2, minute: 15 });
-  testComponent.instance().handleMinuteInputKeyDown(mockEvent);
+  testComponent.instance().handleSecondInputKeyDown(mockEvent);
   expect(mockEvent.preventDefault).toHaveBeenCalled();
 });
 

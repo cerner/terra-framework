@@ -1,534 +1,463 @@
 Terra.describeViewports('Date Picker', ['tiny', 'small', 'medium'], () => {
   describe('Default', () => {
-    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default'));
-
     it('creates a hidden input and empty value attr. when no date is entered', () => {
-      expect(browser.getAttribute('[data-terra-date-input-hidden]', 'name')).to.equal('date-input');
-      expect(browser.getAttribute('[data-terra-date-input-hidden]', 'value')).to.equal('');
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-default');
+      expect($('[data-terra-date-input-hidden]').getAttribute('name')).toEqual('date-input');
+      expect($('[data-terra-date-input-hidden]').getAttribute('value')).toEqual('');
     });
 
     it('sets the date', () => {
-      browser.setValue('input[name="terra-date-date-input"]', '06/01/2017');
+      $('input[name="terra-date-date-input"]').setValue('06/01/2017');
       browser.keys('Enter');
-      browser.click('[class*="button"]');
-    });
+      $('[class*="button"]').click();
 
-    Terra.it.validatesElement({ selector: '#root' });
+      Terra.validates.element('default date set', { selector: '#root' });
+    });
   });
 });
 
 Terra.describeViewports('Date Picker', ['medium'], () => {
   describe('Default Date Excluded', () => {
     describe('Default Date Excluded - Clears input using calendar icon', () => {
-      before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-excluded'));
-
-      Terra.it.matchesScreenshot('default date displayed');
-      it('clears the default date after clicking on calendar button', () => {
-        browser.click('[class*="button"]');
+      it('should display default date', () => {
+        browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-default-date-excluded');
+        Terra.validates.element('default date displayed');
       });
-      Terra.it.matchesScreenshot('default date cleared');
-      Terra.it.isAccessible();
+
+      it('clears the default date after clicking on calendar button', () => {
+        $('[class*="button"]').click();
+        Terra.validates.element('default date cleared');
+      });
     });
 
     describe('Default Date Excluded - Clears input focusing on input box', () => {
-      before(() => browser.refresh());
-
-      Terra.it.matchesScreenshot('default date displayed');
-      it('clears the default date and time after focusing on input box', () => {
-        browser.click('input[name="terra-date-date-input"]');
-        // Ensures the mouse pointer doesn't appear in the screenshot
-        browser.click('h3');
+      it('should display default date', () => {
+        browser.refresh();
+        Terra.validates.element('excluded date displayed');
       });
-      Terra.it.matchesScreenshot('default date cleared');
+
+      it('clears the default date and time after focusing on input box', () => {
+        $('input[name="terra-date-date-input"]').click();
+        // Ensures the mouse pointer doesn't appear in the screenshot
+        $('h3').click();
+        Terra.validates.element('excluded date cleared');
+      });
     });
   });
 
   describe('Default Date Out Of Range', () => {
     describe('Default Date Out Of Range - Clears input using calendar icon', () => {
-      before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-out-of-range'));
-
-      Terra.it.matchesScreenshot('default date displayed');
-      it('clears the default date and time after clicking on calendar button', () => {
-        browser.click('[class*="button"]');
+      it('should display default date', () => {
+        browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-default-date-out-of-range');
+        Terra.validates.element('out of range date displayed');
       });
-      Terra.it.matchesScreenshot('default date cleared');
-      Terra.it.isAccessible();
+
+      it('clears the default date and time after clicking on calendar button', () => {
+        $('[class*="button"]').click();
+        Terra.validates.element('out of range date cleared');
+      });
     });
 
     describe('Default Date Out Of Range - Clears input focusing on input box', () => {
-      before(() => browser.refresh());
+      it('should display default date', () => {
+        browser.refresh();
 
-      Terra.it.matchesScreenshot('default date displayed');
-      it('clears the default date and time after focusing on input box', () => {
-        browser.click('input[name="terra-date-date-input"]');
-        // Ensures the mouse pointer doesn't appear in the screenshot
-        browser.click('h3');
+        Terra.validates.element('out of range date displayed focusing on input box');
       });
-      Terra.it.matchesScreenshot('default date cleared');
+
+      it('clears the default date and time after focusing on input box', () => {
+        $('input[name="terra-date-date-input"]').click();
+        // Ensures the mouse pointer doesn't appear in the screenshot
+        $('h3').click();
+        Terra.validates.element('out of range date cleared focusing on input box');
+      });
     });
 
     describe('Clears default date value that is before the minDate and no maxDate', () => {
-      before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-before-min-date-only'));
+      it('should display default date', () => {
+        browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-default-date-before-min-date-only');
 
-      Terra.it.matchesScreenshot('default date displayed');
-      it('clears the default date when focus is on the input', () => {
-        browser.click('input[name="terra-date-date-input"]');
-        // Ensures the mouse pointer doesn't appear in the screenshot
-        browser.click('h3');
+        Terra.validates.element('date before the minDate displayed');
       });
-      Terra.it.matchesScreenshot('default date cleared');
+
+      it('clears the default date when focus is on the input', () => {
+        $('input[name="terra-date-date-input"]').click();
+        // Ensures the mouse pointer doesn't appear in the screenshot
+        $('h3').click();
+        Terra.validates.element('date before the minDate cleared');
+      });
     });
   });
 
-  describe('Exclude Dates', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-exclude-dates');
-      browser.click('[class*="button"]');
-    });
-
-    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
-    Terra.it.isAccessible();
+  it('displays Exclude Dates', () => {
+    browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-exclude-dates');
+    $('[class*="button"]').click();
+    Terra.validates.element('exclude dates', { selector: '[data-terra-date-picker-calendar]' });
   });
 
-  describe('Filter Dates', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-filter-dates');
-      browser.setValue('input[name="terra-date-date-input"]', '06/01/2017');
-      browser.keys('Enter');
-      browser.click('[class*="button"]');
-    });
-
-    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
-    Terra.it.isAccessible();
+  it('displays Filter Dates', () => {
+    browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-filter-dates');
+    $('input[name="terra-date-date-input"]').setValue('06/01/2017');
+    browser.keys('Enter');
+    $('[class*="button"]').click();
+    Terra.validates.element('filter dates', { selector: '[data-terra-date-picker-calendar]' });
   });
 
-  describe('Include Dates', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-include-dates');
-      browser.click('[class*="button"]');
-    });
-
-    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
-    Terra.it.isAccessible();
+  it('displays Include Dates', () => {
+    browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-include-dates');
+    $('[class*="button"]').click();
+    Terra.validates.element('include dates', { selector: '[data-terra-date-picker-calendar]' });
   });
 
   describe('Disabled', () => {
-    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-disabled'));
-
-    Terra.it.matchesScreenshot();
-    Terra.it.isAccessible();
+    it('should display disabled date picker', () => {
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-disabled');
+      Terra.validates.element('disabled');
+    });
 
     it('should not accept keyboard input', () => {
-      expect(browser.setValue.bind(browser, 'input[name="terra-date-date-input"]', '06/01/2017')).to.throw(Error);
+      $('input[name="terra-date-date-input"]').setValue.bind($('input[name="terra-date-date-input"]'), '06/01/2017');
+      Terra.validates.element('disabled reject keyboard input');
     });
 
     it('should not accept mouse interaction', () => {
-      expect(browser.click.bind(browser, '[class*="button"]')).to.throw(Error);
+      $('[class*="button"]').click.bind($('[class*="button"]'));
+      Terra.validates.element('disabled reject mouse interaction');
     });
   });
 
   describe('Read Only', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-read-only');
-      browser.moveToObject('#root', 0, 0);
+    it('should not be clicked', () => {
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-read-only');
+      $('#root').moveTo(0, 0);
+
+      Terra.validates.element('not clicked');
     });
 
-    Terra.it.matchesScreenshot('not clicked');
-    Terra.it.isAccessible();
-
     it('should not accept keyboard input', () => {
-      expect(browser.setValue.bind(browser, 'input[name="terra-date-date-input"]', '06/01/2017')).to.throw(Error);
+      $('input[name="terra-date-date-input"]').setValue.bind($('input[name="terra-date-date-input"]'), '06/01/2017');
+      Terra.validates.element('read-only reject keyboard input');
     });
 
     it('should not open the date picker', () => {
-      browser.click('[class*="button"]');
+      $('[class*="button"]').click();
+      Terra.validates.element('clicked');
     });
-
-    Terra.it.matchesScreenshot('clicked');
   });
 
-  describe('Min Max', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-min-max');
-      browser.click('[class*="button"]');
-    });
-
-    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
-    Terra.it.isAccessible();
+  it('should display Min Max', () => {
+    browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-min-max');
+    $('[class*="button"]').click();
+    Terra.validates.element('min max', { selector: '[data-terra-date-picker-calendar]' });
   });
 
   describe('On Blur', () => {
-    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-focus-blur'));
-
     it('puts focus on the input', () => {
-      browser.click('input[name="terra-date-date-input-onblur"]');
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-focus-blur');
+      $('input[name="terra-date-date-input-onblur"]').click();
 
       browser.keys('05/01/2019');
-      expect(browser.getText('#blur-count')).to.equal('0');
-      expect(browser.getText('#focus-count')).to.equal('1');
-      expect(browser.getText('#iso')).to.equal('');
-      expect(browser.getText('#input-value')).to.equal('');
-      expect(browser.getText('#complete-date')).to.equal('No');
-      expect(browser.getText('#valid-date')).to.equal('Yes');
+      expect($('#blur-count').getText()).toEqual('0');
+      expect($('#focus-count').getText()).toEqual('1');
+      expect($('#iso').getText()).toEqual('');
+      expect($('#input-value').getText()).toEqual('');
+      expect($('#complete-date').getText()).toEqual('No');
+      expect($('#valid-date').getText()).toEqual('Yes');
     });
 
     it('tabs to the calendar button and onBlur is not triggered', () => {
       browser.keys('Tab');
-      expect(browser.getText('#blur-count')).to.equal('0');
-      expect(browser.getText('#focus-count')).to.equal('1');
-      expect(browser.getText('#iso')).to.equal('');
-      expect(browser.getText('#input-value')).to.equal('');
-      expect(browser.getText('#complete-date')).to.equal('No');
-      expect(browser.getText('#valid-date')).to.equal('Yes');
+      expect($('#blur-count').getText()).toEqual('0');
+      expect($('#focus-count').getText()).toEqual('1');
+      expect($('#iso').getText()).toEqual('');
+      expect($('#input-value').getText()).toEqual('');
+      expect($('#complete-date').getText()).toEqual('No');
+      expect($('#valid-date').getText()).toEqual('Yes');
     });
 
     it('tabs out of the component and onBlur is triggered', () => {
       browser.keys('Tab');
-      expect(browser.getText('#blur-count')).to.equal('1');
-      expect(browser.getText('#focus-count')).to.equal('1');
-      expect(browser.getText('#iso')).to.equal('2019-05-01');
-      expect(browser.getText('#input-value')).to.equal('05/01/2019');
-      expect(browser.getText('#complete-date')).to.equal('Yes');
-      expect(browser.getText('#valid-date')).to.equal('Yes');
+      expect($('#blur-count').getText()).toEqual('1');
+      expect($('#focus-count').getText()).toEqual('1');
+      expect($('#iso').getText()).toEqual('2019-05-01');
+      expect($('#input-value').getText()).toEqual('05/01/2019');
+      expect($('#complete-date').getText()).toEqual('Yes');
+      expect($('#valid-date').getText()).toEqual('Yes');
     });
   });
 
   describe('On Change', () => {
-    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-on-change'));
-
     it('sets the date', () => {
-      browser.setValue('input[name="terra-date-date-input-onchange"]', '06/01/2017');
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-on-change');
+      $('input[name="terra-date-date-input-onchange"]').setValue('06/01/2017');
       browser.keys('Enter');
       // Ensures the mouse pointer doesn't appear in the screenshot
-      browser.click('h3');
-      expect(browser.getText('#iso')).to.equal('2017-06-01');
-      expect(browser.getText('#input-value')).to.equal('06/01/2017');
-      expect(browser.getText('#complete-date')).to.equal('Yes');
-      expect(browser.getText('#valid-date')).to.equal('Yes');
+      $('h3').click();
+      expect($('#iso').getText()).toEqual('2017-06-01');
+      expect($('#input-value').getText()).toEqual('06/01/2017');
+      expect($('#complete-date').getText()).toEqual('Yes');
+      expect($('#valid-date').getText()).toEqual('Yes');
+      Terra.validates.element('on change date set');
     });
-    Terra.it.matchesScreenshot('date set');
 
     it('clears the date', () => {
-      browser.click('input[name="terra-date-date-input-onchange"]');
+      $('input[name="terra-date-date-input-onchange"]').click();
       // Manually clear the date input -- clearValue command successfully clears the input value,
       // however chromedriver does not trigger the change event.
       for (let i = 0; i < 8; i += 1) {
         browser.keys('Backspace');
       }
       // The date extends past the center of the element so the cursor must be repositioned to remove everything
-      browser.click('input[name="terra-date-date-input-onchange"]');
+      $('input[name="terra-date-date-input-onchange"]').click();
       browser.keys('Backspace');
       browser.keys('Backspace');
       browser.keys('Backspace');
       // Ensures the mouse pointer doesn't appear in the screenshot
-      browser.click('h3');
-      expect(browser.getText('#iso')).to.equal('');
-      expect(browser.getText('#input-value')).to.equal('');
-      expect(browser.getText('#complete-date')).to.equal('No');
-      expect(browser.getText('#valid-date')).to.equal('Yes');
+      $('h3').click();
+      expect($('#iso').getText()).toEqual('');
+      expect($('#input-value').getText()).toEqual('');
+      expect($('#complete-date').getText()).toEqual('No');
+      expect($('#valid-date').getText()).toEqual('Yes');
+      Terra.validates.element('on change no date set');
     });
-    Terra.it.matchesScreenshot('no date set');
-    Terra.it.isAccessible();
   });
 
   describe('On Change Raw', () => {
-    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-on-change-raw'));
-
     it('sets an invalid date', () => {
-      browser.setValue('input[name="terra-date-date-input-onchangeraw"]', '04/01/2019');
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-on-change-raw');
+      $('input[name="terra-date-date-input-onchangeraw"]').setValue('04/01/2019');
       // Ensures the mouse pointer doesn't appear in the screenshot
-      browser.click('h3');
-      expect(browser.getText('#iso')).to.equal('2019-04-01');
-      expect(browser.getText('#input-value')).to.equal('04/01/2019');
-      expect(browser.getText('#complete-date')).to.equal('Yes');
-      expect(browser.getText('#valid-date')).to.equal('No');
+      $('h3').click();
+      expect($('#iso').getText()).toEqual('2019-04-01');
+      expect($('#input-value').getText()).toEqual('04/01/2019');
+      expect($('#complete-date').getText()).toEqual('Yes');
+      expect($('#valid-date').getText()).toEqual('No');
+      Terra.validates.element('on change raw date set to invalid 04/01/2019');
     });
-    Terra.it.matchesScreenshot('date set to invalid 04/01/2019');
 
     it('partially sets the date', () => {
-      browser.setValue('input[name="terra-date-date-input-onchangeraw"]', '06/01');
+      $('input[name="terra-date-date-input-onchangeraw"]').setValue('06/01');
       // Ensures the mouse pointer doesn't appear in the screenshot
-      browser.click('h3');
-      expect(browser.getText('#iso')).to.equal('');
-      expect(browser.getText('#input-value')).to.equal('06/01');
-      expect(browser.getText('#complete-date')).to.equal('No');
-      expect(browser.getText('#valid-date')).to.equal('No');
+      $('h3').click();
+      expect($('#iso').getText()).toEqual('');
+      expect($('#input-value').getText()).toEqual('06/01');
+      expect($('#complete-date').getText()).toEqual('No');
+      expect($('#valid-date').getText()).toEqual('No');
+      Terra.validates.element('on change raw date set to 06-01');
     });
-    Terra.it.matchesScreenshot('date set to 06-01');
 
     it('finishes setting the date', () => {
-      browser.addValue('input[name="terra-date-date-input-onchangeraw"]', '/2017');
+      $('input[name="terra-date-date-input-onchangeraw"]').addValue('/2017');
       // Ensures the mouse pointer doesn't appear in the screenshot
-      browser.click('h3');
-      expect(browser.getText('#iso')).to.equal('2017-06-01');
-      expect(browser.getText('#input-value')).to.equal('06/01/2017');
-      expect(browser.getText('#complete-date')).to.equal('Yes');
-      expect(browser.getText('#valid-date')).to.equal('Yes');
+      $('h3').click();
+      expect($('#iso').getText()).toEqual('2017-06-01');
+      expect($('#input-value').getText()).toEqual('06/01/2017');
+      expect($('#complete-date').getText()).toEqual('Yes');
+      expect($('#valid-date').getText()).toEqual('Yes');
+      Terra.validates.element('on change raw date set to 06-01-2017');
     });
-    Terra.it.matchesScreenshot('date set to 06-01-2017');
-    Terra.it.isAccessible();
   });
 
   describe('On Click Outside', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
-      browser.click('[class*="button"]');
-    });
-
     it('dismisses the datepicker after clicking outside', () => {
-      browser.click('[class*="PopupOverlay"]');
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-default');
+      $('[class*="button"]').click();
+      $('[class*="PopupOverlay"]').click();
+      Terra.validates.element('on click outside date picker closed');
     });
-
-    Terra.it.matchesScreenshot('date picker closed');
-    Terra.it.isAccessible();
   });
 
   describe('On Select', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-on-select');
-    });
-
     it('enters a date through input', () => {
-      browser.setValue('input[name="terra-date-date-input-onselect"]', '06/01/2017');
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-on-select');
+      $('input[name="terra-date-date-input-onselect"]').setValue('06/01/2017');
       // Ensures the mouse pointer doesn't appear in the screenshot
-      browser.click('h3');
+      $('h3').click();
+      Terra.validates.element('on select date not displayed');
     });
-    Terra.it.matchesScreenshot('Selected date not displayed');
 
     it('selects a date through date picker', () => {
-      browser.click('[class*="button"]');
-      browser.click('div[class*="selected"]');
+      $('[class*="button"]').click();
+      $('div[class*="selected"]').click();
+      Terra.validates.element('on select  date displayed');
     });
-    Terra.it.matchesScreenshot('Selected date displayed');
-    Terra.it.isAccessible();
   });
 
-  describe('Start Date', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-start-date');
-    });
-
-    it('creates a hidden input with default name attr. and sets value in ISO8601 when a valid date is entered', () => {
-      expect(browser.getAttribute('[data-terra-date-input-hidden]', 'name')).to.equal('date-input');
-      expect(browser.getAttribute('[data-terra-date-input-hidden]', 'value')).to.equal('2017-04-01');
-    });
-    Terra.it.matchesScreenshot();
-    Terra.it.isAccessible();
+  it('creates a hidden input with default name attr. and sets value in ISO8601 when a valid date is entered', () => {
+    browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-start-date');
+    expect($('[data-terra-date-input-hidden]').getAttribute('name')).toEqual('date-input');
+    expect($('[data-terra-date-input-hidden]').getAttribute('value')).toEqual('2017-04-01');
+    Terra.validates.element('hidden input start date');
   });
 
-  describe('Invalid dates are ignored', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-ignore-invalid-selected-dates');
-      browser.moveToObject('#root', 0, 0);
-    });
-
-    Terra.it.matchesScreenshot();
+  it('should ignore invalid dates ', () => {
+    browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-ignore-invalid-selected-dates');
+    $('#root').moveTo(0, 0);
+    Terra.validates.element('ignore invalid date');
   });
 
   describe('Key Limitations', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
-    });
-
     it('sets the date', () => {
-      browser.setValue('input[name="terra-date-date-input"]', '0');
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-default');
+      $('input[name="terra-date-date-input"]').setValue('0');
       browser.keys('a1.b2/;3');
+      Terra.validates.element('key limitations');
     });
-
-    Terra.it.validatesElement('default');
   });
 
   describe('DatePickerField', () => {
-    describe('Valid DatePickerField', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-field');
-        browser.moveToObject('#root', 0, 0);
-      });
-
-      Terra.it.validatesElement();
+    it('displays Valid DatePickerField', () => {
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-field');
+      $('#root').moveTo(0, 0);
+      Terra.validates.element('date picker field valid');
     });
 
-    describe('Invalid DatePickerField', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-field');
-        browser.click('#validity-toggle');
-      });
-      after(() => {
-        browser.click('#validity-toggle');
-      });
-
-      Terra.it.validatesElement();
+    it('displays Invalid DatePickerField', () => {
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-field');
+      $('#validity-toggle').click();
+      Terra.validates.element('date picker field invalid');
+      $('#validity-toggle').click();
     });
 
-    describe('Incomplete DatePickerField', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-field');
-        browser.click('#incomplete-toggle');
-      });
-      after(() => {
-        browser.click('#incomplete-toggle');
-      });
-
-      Terra.it.validatesElement();
+    it('displays Incomplete DatePickerField', () => {
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-field');
+      $('#incomplete-toggle').click();
+      Terra.validates.element('date picker field incomplete');
+      $('#incomplete-toggle').click();
     });
 
-    describe('Invalid and Incomplete DatePickerField', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-field');
-        browser.click('#validity-toggle');
-        browser.click('#incomplete-toggle');
-      });
-      after(() => {
-        browser.click('#validity-toggle');
-        browser.click('#incomplete-toggle');
-      });
-
-      Terra.it.validatesElement();
+    it('displays Invalid and Incomplete DatePickerField', () => {
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-field');
+      $('#validity-toggle').click();
+      $('#incomplete-toggle').click();
+      Terra.validates.element('date picker field invalid and incomplete');
+      $('#validity-toggle').click();
+      $('#incomplete-toggle').click();
     });
 
-    describe('Disabled DatePickerField', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-date-picker/date-picker/disabled-date-picker-field');
-      });
-
-      Terra.it.validatesElement();
+    it('displays Disabled DatePickerField', () => {
+      browser.url('/raw/tests/terra-date-picker/date-picker/disabled-date-picker-field');
+      Terra.validates.element('date picker field disabled');
     });
 
-    describe('Multiple DatePickerField', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-date-picker/date-picker/multiple-date-picker-field');
-      });
-
-      Terra.it.validatesElement();
+    it('displays Multiple DatePickerField', () => {
+      browser.url('/raw/tests/terra-date-picker/date-picker/multiple-date-picker-field');
+      Terra.validates.element('date picker field multiple');
     });
   });
 
   describe('Controlled DatePicker', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-controlled');
-    });
-
     it('Enters date value', () => {
-      browser.setValue('input[name="terra-date-controlled-date-picker"]', '03/07/2019');
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-controlled');
+      $('input[name="terra-date-controlled-date-picker"]').setValue('03/07/2019');
+      Terra.validates.element('controlled date picker date input manually updated');
     });
-
-    Terra.it.matchesScreenshot('date input manually updated');
 
     it('Open the date picker', () => {
-      browser.click('[class*="button"]');
+      $('[class*="button"]').click();
+      Terra.validates.element('controlled date picker date picker updated', { selector: '[data-terra-date-picker-calendar]' });
     });
-
-    Terra.it.matchesScreenshot('date picker updated', { selector: '[data-terra-date-picker-calendar]' });
 
     it('Click button 2 to set formatted date', () => {
-      browser.click('[class*="PopupOverlay"]');
-      browser.click('#button2');
+      $('[class*="PopupOverlay"]').click();
+      $('#button2').click();
+      Terra.validates.element('controlled date picker formatted date set');
     });
-
-    Terra.it.matchesScreenshot('formatted date set');
 
     it('Open the date picker', () => {
-      browser.click('[class*="button"]');
+      $('[class*="button"]').click();
+      Terra.validates.element('controlled date picker with formatted date', { selector: '[data-terra-date-picker-calendar]' });
     });
-
-    Terra.it.matchesScreenshot('picker with formatted date', { selector: '[data-terra-date-picker-calendar]' });
 
     it('Click button 3 to set iso date', () => {
-      browser.click('[class*="PopupOverlay"]');
-      browser.click('#button3');
+      $('[class*="PopupOverlay"]').click();
+      $('#button3').click();
+      Terra.validates.element('controlled date picker iso date set');
     });
-
-    Terra.it.matchesScreenshot('iso date set');
 
     it('Open the date picker', () => {
-      browser.click('[class*="button"]');
+      $('[class*="button"]').click();
+      Terra.validates.element('controlled date picker with iso date', { selector: '[data-terra-date-picker-calendar]' });
     });
-
-    Terra.it.matchesScreenshot('picker with iso date', { selector: '[data-terra-date-picker-calendar]' });
 
     it('Click button 4 to set iso date time', () => {
-      browser.click('[class*="PopupOverlay"]');
-      browser.click('#button4');
+      $('[class*="PopupOverlay"]').click();
+      $('#button4').click();
+      Terra.validates.element('controlled date picker iso date set without time');
     });
-
-    Terra.it.matchesScreenshot('iso date set without time');
 
     it('Open the date picker', () => {
-      browser.click('[class*="button"]');
+      $('[class*="button"]').click();
+      Terra.validates.element('controlled date picker with iso date no time', { selector: '[data-terra-date-picker-calendar]' });
     });
-
-    Terra.it.matchesScreenshot('picker with iso date no time', { selector: '[data-terra-date-picker-calendar]' });
 
     it('Click button 5 to set ordinal date', () => {
-      browser.click('[class*="PopupOverlay"]');
-      browser.click('#button5');
+      $('[class*="PopupOverlay"]').click();
+      $('#button5').click();
+      Terra.validates.element('controlled date picker ordinal date not set');
     });
-
-    Terra.it.matchesScreenshot('ordinal date not set');
   });
 
   describe('Remounts component', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-remount');
-    });
-
     it('Opens the date picker', () => {
-      browser.click('[class*="button"]');
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-remount');
+      $('[class*="button"]').click();
     });
 
     it('Selects a date from date picker', () => {
       browser.keys('ArrowDown');
       browser.keys('Enter');
+      Terra.validates.element('remounts component date selected');
     });
-
-    Terra.it.validatesElement();
   });
 
   describe('Beyond Min Max', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-beyond-min-max');
-    });
-
     it('Opens the date picker', () => {
-      browser.click('[class*="button"]');
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-beyond-min-max');
+      $('[class*="button"]').click();
+      Terra.validates.element('uses default maxDate', { selector: '[data-terra-date-picker-calendar]' });
     });
-
-    Terra.it.matchesScreenshot('uses default maxDate', { selector: '[data-terra-date-picker-calendar]' });
 
     it('Select a day', () => {
-      browser.click('[class*="react-datepicker-day--selected"]');
+      $('[class*="react-datepicker-day--selected"]').click();
+      Terra.validates.element('beyond min max date selected');
     });
-
-    Terra.it.matchesScreenshot('date selected');
 
     it('Enters date beyond max', () => {
-      browser.setValue('input[name="terra-date-date-input"]', '11/11/2111');
+      $('input[name="terra-date-date-input"]').setValue('11/11/2111');
+      Terra.validates.element('beyond max date entered');
     });
-
-    Terra.it.matchesScreenshot('beyond maxDate entered');
 
     it('Enters min date', () => {
-      browser.setValue('input[name="terra-date-date-input"]', '01/01/1900');
+      $('input[name="terra-date-date-input"]').setValue('01/01/1900');
+      Terra.validates.element('min date entered');
     });
-
-    Terra.it.matchesScreenshot('minDate entered');
 
     it('Opens the date picker', () => {
-      browser.click('[class*="button"]');
+      $('[class*="button"]').click();
+      Terra.validates.element('uses default minDate', { selector: '[data-terra-date-picker-calendar]' });
     });
-
-    Terra.it.matchesScreenshot('uses default minDate', { selector: '[data-terra-date-picker-calendar]' });
 
     it('Select a day', () => {
-      browser.click('[class*="react-datepicker-day--selected"]');
+      $('[class*="react-datepicker-day--selected"]').click();
+      Terra.validates.element('min date selected');
     });
-
-    Terra.it.matchesScreenshot('min date selected');
 
     it('Enters date beyond min', () => {
-      browser.setValue('input[name="terra-date-date-input"]', '10/20/1899');
+      $('input[name="terra-date-date-input"]').setValue('10/20/1899');
+      Terra.validates.element('beyond min date entered');
     });
+  });
+});
 
-    Terra.it.matchesScreenshot('beyond minDate entered');
+Terra.describeViewports('Date Picker', ['tiny', 'small'], () => {
+  describe('Disable date picker - Disable date picker in mobile view', () => {
+    it('should disable the date picker', () => {
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-calendar-disable');
+      $('#button1').click();
+      expect($('#button1').isFocused()).toEqual(true);
+      $('[data-terra-open-calendar-button]').click();
+      Terra.validates.element('disabled date picker');
+    });
   });
 });

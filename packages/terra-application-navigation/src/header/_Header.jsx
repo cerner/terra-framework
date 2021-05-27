@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 import Tabs from '../tabs/_Tabs';
 import Extensions from '../extensions/_Extensions';
@@ -23,6 +23,10 @@ const propTypes = {
    * Array of navigation items to render within the Header.
    */
   navigationItems: navigationItemsPropType,
+  /**
+   * The base id used to generate ids of navigation, utility, and extension items
+   */
+  id: PropTypes.string,
   /**
    * A function to be executed for the render of each navigation item.
    */
@@ -73,7 +77,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs.
    */
-  intl: intlShape,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
   /**
    * An element to render within the Header's utility menu.
    */
@@ -107,6 +111,7 @@ const defaultProps = {
 const Header = ({
   titleConfig,
   navigationItems,
+  id,
   navigationRenderFunction,
   activeNavigationItemKey,
   onSelectNavigationItem,
@@ -151,6 +156,7 @@ const Header = ({
     return (
       <Tabs
         navigationItems={navigationItems}
+        id={id}
         activeTabKey={activeNavigationItemKey}
         onTabSelect={onSelectNavigationItem}
         notifications={notifications}
@@ -167,6 +173,7 @@ const Header = ({
     return (
       <Extensions
         extensionItems={extensionItems}
+        id={id}
         activeBreakpoint={activeBreakpoint}
         onSelect={onSelectExtensionItem}
         notifications={notifications}
@@ -183,6 +190,7 @@ const Header = ({
       <div className={cx('utilities-container')}>
         <UtilityMenuHeaderButton
           userConfig={userConfig}
+          id={id}
           onClick={onSelectUtilityButton}
           popupAnchorRef={utilityButtonPopupAnchorRef}
         />

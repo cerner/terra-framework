@@ -2,6 +2,29 @@
 
 ## Unreleased
 
+## 4.31.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 4.30.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 4.29.0 - (February 2, 2021)
+
+* Fixed
+  * Removed re-declaration of $ ignore
+
+## 4.28.0 - (January 5, 2021)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
+* Fixed
+  * Fixed broken links in documentation.
+
 ## 4.27.0 - (November 10, 2020)
 
 * Fixed

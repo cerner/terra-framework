@@ -2,6 +2,31 @@
 
 ## Unreleased
 
+## 5.33.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 5.32.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 5.31.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 5.30.0 - (January 5, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 5.29.0 - (December 8, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 ## 5.28.0 - (November 10, 2020)
 
 * Changed

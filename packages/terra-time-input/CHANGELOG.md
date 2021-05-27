@@ -5,6 +5,27 @@
 * Added
   * Added new subcomponent `TimeInputField`.
 
+## 4.39.0 - (April 6, 2021)
+
+* Fixed
+  * Correct time input test to select the seconds input instead of the minute input.
+
+## 4.38.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 4.37.0 - (January 5, 2021)
+
+* Fixed
+  * Fixed broken links in documentation.
+
+## 4.36.0 - (December 8, 2020)
+
+* Changed
+  * Updated to support a peer dependency of react-intl v2-v5
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 ## 4.35.0 - (November 10, 2020)
 
 * Fixed

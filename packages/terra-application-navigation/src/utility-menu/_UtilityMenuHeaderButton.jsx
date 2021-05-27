@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import Avatar, { Generic } from 'terra-avatar';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import IconRollup from 'terra-icon/lib/icon/IconRollup';
@@ -30,7 +30,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs.
    */
-  intl: intlShape,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const UtilityMenuHeaderButton = ({
@@ -39,7 +39,7 @@ const UtilityMenuHeaderButton = ({
   let ariaLabel;
   let content;
   if (userConfig) {
-    ariaLabel = intl.formatMessage({ id: 'Terra.applicationNavigation.header.utilityButtonTitleUser' });
+    ariaLabel = intl.formatMessage({ id: 'Terra.applicationNavigation.header.utilityButtonTitleUser' }, { currentUserName: userConfig.name });
     content = (
       <React.Fragment>
         <div className={cx('image')}>

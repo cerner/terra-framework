@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconQuestionOutline from 'terra-icon/lib/icon/IconQuestionOutline';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 import DrawerMenuTitle from './_DrawerMenuTitle';
 import DrawerMenuLinkItem from './_DrawerMenuLinkItem';
@@ -13,10 +14,13 @@ import DrawerMenuFooterButton from './_DrawerMenuFooterButton';
 import {
   titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType,
 } from '../utils/propTypes';
+import {
+  navigationItemId, utilityItemId, settingsUtilityItemId, helpUtilityItemId, logoutUtilityItemId,
+} from '../utils/helpers';
 
 import styles from './DrawerMenu.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -40,6 +44,10 @@ const propTypes = {
    * `navigationItems` array.
    */
   activeNavigationItemKey: PropTypes.string,
+  /**
+   * The base id used to generate ids of navigation, utility, and extension items
+   */
+  id: PropTypes.string,
   /**
    * A function to be executed upon the selection of a navigation item.
    * Ex: `onSelectNavigationItem(String selectedNavigationItemKey)`
@@ -80,7 +88,7 @@ const propTypes = {
    * @private
    * Object containing intl APIs
    */
-  intl: intlShape,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {
@@ -98,6 +106,7 @@ const DrawerMenu = ({
   onSelectSettings,
   onSelectHelp,
   onSelectLogout,
+  id,
   utilityItems,
   onSelectUtilityItem,
   notifications,
@@ -108,6 +117,7 @@ const DrawerMenu = ({
   const logoutButton = onSelectLogout ? (
     <div className={cx('footer')}>
       <DrawerMenuFooterButton
+        id={id && logoutUtilityItemId(id)}
         onClick={onSelectLogout}
         text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
         data-navigation-drawer-item-logout
@@ -129,6 +139,7 @@ const DrawerMenu = ({
         >
           {navigationItems.map(item => (
             <DrawerMenuLinkItem
+              id={id && navigationItemId(id, item.key)}
               key={item.key}
               text={item.text}
               notificationCount={notifications[item.key]}
@@ -152,6 +163,7 @@ const DrawerMenu = ({
       >
         {utilityItems.map(item => (
           <DrawerMenuListItem
+            id={id && utilityItemId(id, item.key)}
             key={item.key}
             text={item.text}
             icon={item.icon}
@@ -160,6 +172,7 @@ const DrawerMenu = ({
         ))}
         {onSelectSettings ? (
           <DrawerMenuListItem
+            id={id && settingsUtilityItemId(id)}
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' })}
             icon={<IconSettings />}
             onSelect={onSelectSettings}
@@ -168,6 +181,7 @@ const DrawerMenu = ({
         ) : null}
         {onSelectHelp ? (
           <DrawerMenuListItem
+            id={id && helpUtilityItemId(id)}
             text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' })}
             icon={<IconQuestionOutline />}
             onSelect={onSelectHelp}
@@ -178,9 +192,10 @@ const DrawerMenu = ({
     );
   }
 
+  const theme = React.useContext(ThemeContext);
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
-    <div className={cx('drawer-container')}>
+    <div className={cx('drawer-container', theme.className)}>
       <div className={cx('drawer-menu')} role={hasItems ? 'dialog' : null} tabIndex={0} data-navigation-drawer-menu>
         <div className={cx('vertical-overflow-container')}>
           <div className={cx('header')}>

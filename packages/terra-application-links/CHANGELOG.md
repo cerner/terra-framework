@@ -2,6 +2,50 @@
 
 ## Unreleased
 
+## 6.51.0 - (May 4, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.50.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 6.49.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 6.48.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.47.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.46.0 - (January 5, 2021)
+
+* Changed
+  * Updated to support a peer dependency of react-intl v2-v5
+  * Updated to use `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
+
+* Fixed
+  * Fixed broken links in documentation.
+
+## 6.45.0 - (December 8, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.44.0 - (November 24, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 ## 6.43.0 - (November 10, 2020)
 
 * Fixed
@@ -24,7 +68,7 @@
 
 * Changed
   * Updated Changelog format
-  
+
 ## 6.39.0 - (August 11, 2020)
 
 * Changed

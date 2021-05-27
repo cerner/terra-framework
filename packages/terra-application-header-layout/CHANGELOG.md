@@ -2,6 +2,30 @@
 
 ## Unreleased
 
+## 3.34.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 3.33.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 3.32.0 - (January 5, 2021)
+
+* Changed
+  * Updated to support a peer dependency of react-intl v2-v5
+  * Removed `intlShape` import
+
+* Fixed
+  * Fixed broken links in documentation.
+
+## 3.31.0 - (November 24, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 ## 3.30.0 - (August 4, 2020)
 
 * Changed

@@ -2,11 +2,57 @@
 
 ## Unreleased
 
+## 4.13.0 - (May 4, 2021)
+
+* Changed
+  * Regenerated screenshots involving a now removed defaulted implementation
+
+## 4.12.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 4.11.0 - (March 9, 2021)
+
+* Changed
+  * Updated to use terra-functional-testing
+
+## 4.10.0 - (February 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.9.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.8.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.7.0 - (January 5, 2021)
+
+* Fixed
+  * Fixed broken links in documentation.
+
+## 4.6.0 - (December 8, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.5.0 - (November 24, 2020)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.4.0 - (November 10, 2020)
 
 * Changed
+  * Updated to support a peer dependency of react-intl v2-v5
   * Updated jest  due to changes in abstract modal.
-  
+
 ## 4.3.0 - (October 20, 2020)
 
 * Changed

@@ -64,6 +64,10 @@ const propTypes = {
    */
   activeNavigationItemKey: PropTypes.string,
   /**
+   * The base id used to generate ids of navigation, utility, and extension items
+   */
+  id: PropTypes.string,
+  /**
   * Callback function triggered on Drawer Menu state change
   */
   onDrawerMenuStateChange: PropTypes.func,
@@ -125,6 +129,7 @@ const ApplicationNavigation = ({
   onSelectSettings,
   onSelectHelp,
   onSelectLogout,
+  id,
   utilityItems,
   onSelectUtilityItem,
   notifications,
@@ -211,20 +216,30 @@ const ApplicationNavigation = ({
         }}
         className={cx('drawer-menu-focus-trap-container')}
       >
-        <DrawerMenu
-          titleConfig={titleConfig}
-          userConfig={userConfig}
-          hero={hero}
-          navigationItems={navigationItems}
-          activeNavigationItemKey={activeNavigationItemKey}
-          onSelectNavigationItem={onSelectNavigationItem ? generateMenuClosingCallback(onSelectNavigationItem) : undefined}
-          onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
-          onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
-          onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
-          utilityItems={utilityItems}
-          onSelectUtilityItem={onSelectUtilityItem ? generateMenuClosingCallback(onSelectUtilityItem) : undefined}
-          notifications={notifications}
-        />
+        {/*
+          The following div has been added to prevent a "Cannot read property 'ownerDocument' of null" error when using react-intl v5.
+          See link for more info: https://github.com/focus-trap/focus-trap-react/issues/44#issuecomment-543770159
+          This div could be removed with a newer version of FocusTrap
+        */}
+        <div
+          className={cx('drawer-menu-focus-trap-container')}
+        >
+          <DrawerMenu
+            titleConfig={titleConfig}
+            userConfig={userConfig}
+            hero={hero}
+            navigationItems={navigationItems}
+            activeNavigationItemKey={activeNavigationItemKey}
+            onSelectNavigationItem={onSelectNavigationItem ? generateMenuClosingCallback(onSelectNavigationItem) : undefined}
+            onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
+            onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
+            onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
+            id={id}
+            utilityItems={utilityItems}
+            onSelectUtilityItem={onSelectUtilityItem ? generateMenuClosingCallback(onSelectUtilityItem) : undefined}
+            notifications={notifications}
+          />
+        </div>
       </FocusTrap>
     );
   }
@@ -250,6 +265,7 @@ const ApplicationNavigation = ({
           onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
           onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
           onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
+          id={id}
           utilityItems={utilityItems}
           onSelectUtilityItem={onSelectUtilityItem ? generateMenuClosingCallback(onSelectUtilityItem) : undefined}
         />
@@ -278,6 +294,7 @@ const ApplicationNavigation = ({
         onSelectSettings={onSelectSettings}
         onSelectHelp={onSelectHelp}
         onSelectLogout={onSelectLogout}
+        id={id}
       />
     );
   }
@@ -289,6 +306,7 @@ const ApplicationNavigation = ({
         titleConfig={titleConfig}
         extensionItems={extensionItems}
         onSelectExtensionItem={onSelectExtensionItem}
+        id={id}
         navigationItems={navigationItems}
         navigationRenderFunction={navigationRenderFunction}
         activeNavigationItemKey={activeNavigationItemKey}

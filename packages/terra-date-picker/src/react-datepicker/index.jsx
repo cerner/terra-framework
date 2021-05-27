@@ -6,7 +6,7 @@ import { Portal } from 'react-portal';
 import * as KeyCode from 'keycode-js';
 import Popup from 'terra-popup';
 import classNames from 'classnames/bind';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PopupContainer from './PopupContainer';
 import DateUtil from '../DateUtil';
@@ -146,6 +146,11 @@ class DatePicker extends React.Component {
      */
     includeDates: PropTypes.array,
     /**
+     * Timezone value to indicate in which timezone the date-time component is rendered.
+     * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
+     */
+    initialTimeZone: PropTypes.string,
+    /**
      * Prop to render Inline version of datepicker component.
      */
     inline: PropTypes.bool,
@@ -153,7 +158,7 @@ class DatePicker extends React.Component {
      * @private
      * Internationalization object with translation APIs. Provided by `injectIntl`.
      */
-    intl: intlShape,
+    intl: PropTypes.shape({ formatMessage: PropTypes.func }),
     /**
      * Prop to determine whether or not the date picker is clearable.
      */
@@ -295,10 +300,6 @@ class DatePicker extends React.Component {
      */
     useWeekdaysShort: PropTypes.bool,
     /**
-     * Difference between utc and local time.
-     */
-    utcOffset: PropTypes.number,
-    /**
      * Value of the date picked by user .
      */
     value: PropTypes.string,
@@ -431,7 +432,7 @@ class DatePicker extends React.Component {
     this.props.openToDate ? newDate(this.props.openToDate)
       : this.props.selectsEnd && this.props.startDate ? newDate(this.props.startDate)
         : this.props.selectsStart && this.props.endDate ? newDate(this.props.endDate)
-          : now(this.props.utcOffset)
+          : now(this.props.initialTimeZone)
   )
 
   calcInitialState = () => {
@@ -725,7 +726,6 @@ class DatePicker extends React.Component {
         scrollableYearDropdown={this.props.scrollableYearDropdown}
         todayButton={this.props.todayButton}
         weekLabel={this.props.weekLabel}
-        utcOffset={this.props.utcOffset}
         outsideClickIgnoreClass={outsideClickIgnoreClass}
         fixedHeight={this.props.fixedHeight}
         monthsShown={this.props.monthsShown}
@@ -739,6 +739,7 @@ class DatePicker extends React.Component {
         setPreSelection={this.setPreSelection}
         isCalendarKeyboardFocused={this.state.isCalendarKeyboardFocused}
         isCalendarOpenedViaKeyboard={this.state.isCalendarOpenedViaKeyboard}
+        initialTimeZone={this.props.initialTimeZone}
       >
         {this.props.children}
         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" refCallback={(ref) => { this.visuallyHiddenText = ref; }} />
@@ -781,7 +782,6 @@ class DatePicker extends React.Component {
         scrollableYearDropdown={this.props.scrollableYearDropdown}
         todayButton={this.props.todayButton}
         weekLabel={this.props.weekLabel}
-        utcOffset={this.props.utcOffset}
         fixedHeight={this.props.fixedHeight}
         monthsShown={this.props.monthsShown}
         onDropdownFocus={this.handleDropdownFocus}
@@ -794,6 +794,7 @@ class DatePicker extends React.Component {
         setPreSelection={this.setPreSelection}
         isCalendarKeyboardFocused={this.state.isCalendarKeyboardFocused}
         isCalendarOpenedViaKeyboard={this.state.isCalendarOpenedViaKeyboard}
+        initialTimeZone={this.props.initialTimeZone}
       >
         {this.props.children}
         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" refCallback={(ref) => { this.visuallyHiddenText = ref; }} />
@@ -861,7 +862,7 @@ class DatePicker extends React.Component {
               : null
           }
           {
-            this.state.open || this.props.inline
+            (this.state.open && !this.props.disabled) || this.props.inline
               ? (<Portal isOpened={true}>
                   <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: false, clickOutsideDeactivates: true }}>
                     <div

@@ -1,34 +1,23 @@
 Terra.describeViewports('RoutingMenu', ['small'], () => {
-  describe('Displays a default routing menu', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-application-layout/application-layout/routing-menu');
-      browser.waitForVisible('#routing-menu-test');
-    });
-
-    Terra.it.matchesScreenshot({ selector: '#routing-menu-test' });
-    Terra.it.isAccessible();
+  it('Displays a default routing menu', () => {
+    browser.url('/raw/tests/terra-application-layout/application-layout/routing-menu');
+    $('#routing-menu-test').waitForDisplayed();
+    Terra.validates.element('routing menu', { selector: '#routing-menu-test' });
   });
 
-  describe('Displays a routing menu without header', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-application-layout/application-layout/routing-menu-no-header');
-      browser.waitForVisible('#routing-menu-test');
-    });
-
-    Terra.it.matchesScreenshot({ selector: '#routing-menu-test' });
-    Terra.it.isAccessible();
+  it('Displays a routing menu without header', () => {
+    browser.url('/raw/tests/terra-application-layout/application-layout/routing-menu-no-header');
+    $('#routing-menu-test').waitForDisplayed();
+    Terra.validates.element('routing menu without header', { selector: '#routing-menu-test' });
   });
 
   describe('Navigates away from the site', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-application-layout/application-layout/routing-menu-external');
-      browser.waitForVisible('#routing-menu-test');
-      browser.click('[data-menu-item="/item_3"]');
-      browser.pause(100);
-    });
-
     it('successfully navigated away', () => {
-      expect(browser.url().value).to.equal('https://engineering.cerner.com/terra-ui/home/terra-ui/index');
+      browser.url('/raw/tests/terra-application-layout/application-layout/routing-menu-external');
+      $('#routing-menu-test').waitForDisplayed();
+      $('[data-menu-item="/item_3"]').click();
+      browser.pause(100);
+      expect(browser.getUrl()).toEqual('https://engineering.cerner.com/terra-ui/home/terra-ui/index');
     });
   });
 });

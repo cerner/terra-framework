@@ -1,124 +1,93 @@
 const context = '[data-terra-dev-site-content] *:first-child';
 
 Terra.describeViewports('Slide panel', ['large'], () => {
-  describe('Slide panel end', () => {
-    beforeEach(() => browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-end'));
-    Terra.it.isAccessible({ context });
-    Terra.it.matchesScreenshot();
+  it('displays Slide panel end', () => {
+    browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-end');
+    Terra.validates.element('end', { context });
   });
 
-  describe('Slide panel fill', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-fill');
-    });
-
-    Terra.it.matchesScreenshot();
+  it('displays Slide panel fill', () => {
+    browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-fill');
+    Terra.validates.element('fill');
   });
 
-  describe('Slide panel fullscreen', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-fullscreen');
-    });
-
-    Terra.it.matchesScreenshot();
+  it('displays Slide panel fullscreen', () => {
+    browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-fullscreen');
+    Terra.validates.element('fullscreen');
   });
 
-  describe('Slide panel large', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-large');
-    });
-
-    Terra.it.matchesScreenshot();
+  it('displays Slide panel large', () => {
+    browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-large');
+    Terra.validates.element('large');
   });
 
-  describe('Slide panel no fill', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-no-fill');
-    });
-
-    Terra.it.matchesScreenshot();
+  it('displays Slide panel no fill', () => {
+    browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-no-fill');
+    Terra.validates.element('no fill');
   });
 
-  describe('Slide panel overlay', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-overlay');
-    });
-
-    Terra.it.matchesScreenshot();
+  it('displays Slide panel overlay', () => {
+    browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-overlay');
+    Terra.validates.element('overlay');
   });
 
-  describe('Slide panel small', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-small');
-    });
-
-    Terra.it.matchesScreenshot();
+  it('displays Slide panel small', () => {
+    browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-small');
+    Terra.validates.element('small');
   });
 
-  describe('Slide panel squish', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-squish');
-    });
-
-    Terra.it.matchesScreenshot();
+  it('displays Slide panel squish', () => {
+    browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-squish');
+    Terra.validates.element('squish');
   });
 
-  describe('Slide panel start', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-start');
-    });
-
-    Terra.it.matchesScreenshot();
+  it('displays Slide panel start', () => {
+    browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-start');
+    Terra.validates.element('start');
   });
 
-  describe('Large size squished slide panel', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-squish-large');
-    });
-
-    Terra.it.matchesScreenshot();
+  it('displays Large size squished slide panel', () => {
+    browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-squish-large');
+    Terra.validates.element('large squish');
   });
 
-  describe('Toggle the slide panel and hidden styles', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-toggle');
-      browser.waitForExist('#test-slide [aria-hidden="true"]');
-    });
-
-    Terra.it.matchesScreenshot({ selector: '#root' });
+  it('Toggles the slide panel and hidden styles', () => {
+    browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-toggle');
+    $('#test-slide [aria-hidden="true"]').waitForExist();
+    Terra.validates.element('toggle and hidden styles', { selector: '#root' });
   });
 
   describe('Toggle the slide panel click', () => {
     it('Opens panel and focuses on panel', () => {
-      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-toggle');
-      browser.click('#test-toggle');
-      browser.waitForExist('#test-slide [aria-hidden="false"]');
+      browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-toggle');
+      $('#test-toggle').click();
+      $('#test-slide [aria-hidden="false"]').waitForExist();
       browser.pause(150);
-      browser.hasFocus('#panel-content');
+      $('#panel-content').isFocused();
 
       // On Tab Press focuses on the button inside the panel
       browser.keys(['Tab']);
-      browser.hasFocus('#focus-button');
+      $('#focus-button').isFocused();
 
-      Terra.validates.screenshot({ selector: '#root' });
+      Terra.validates.element('panel focused', { selector: '#root' });
     });
   });
 
   describe('Toggle the slide panel side', () => {
     it('Switches panel side', () => {
-      browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-side-toggle');
-      expect(browser.getText('#test-slide [aria-hidden="false"]')).to.equal('Increase Count 0');
+      browser.url('/raw/tests/terra-slide-panel/slide-panel/slide-panel-side-toggle');
+      expect($('#test-slide [aria-hidden="false"]').getText()).toEqual('Increase Count 0');
 
-      browser.click('#focus-button');
-      expect(browser.getText('#test-slide [aria-hidden="false"]')).to.equal('Increase Count 1');
+      $('#focus-button').click();
+      expect($('#test-slide [aria-hidden="false"]').getText()).toEqual('Increase Count 1');
 
-      Terra.validates.screenshot('panel with end position', { selector: '#root' });
+      Terra.validates.element('panel with end position', { selector: '#root' });
 
-      browser.click('#test-toggle');
-      browser.waitForExist('#test-slide [aria-hidden="false"]');
-      expect(browser.getText('#test-slide [aria-hidden="false"]')).to.equal('Increase Count 1');
+      $('#test-toggle').click();
+      $('#test-slide [aria-hidden="false"]').waitForExist();
+      expect($('#test-slide [aria-hidden="false"]').getText()).toEqual('Increase Count 1');
 
-      Terra.validates.screenshot('panel with start position', { selector: '#root' });
+      Terra.validates.element('panel with start position', { selector: '#root' });
     });
   });
 });

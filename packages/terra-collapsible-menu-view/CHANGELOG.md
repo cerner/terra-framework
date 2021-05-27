@@ -2,6 +2,55 @@
 
 ## Unreleased
 
+## 6.52.0 - (May 4, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.51.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 6.50.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 6.49.0 - (February 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.48.0 - (February 2, 2021)
+
+* Added
+  * Added `alwaysCollapsedMenuItems` attribute to `CollapsibleMenuView` which can be used to prepopulate collapsible menu view. These items will always hidden under the More button. The collapsed menu view will always shown if at least one item is added to the collapsedMenuItems list. A divider will shown if there are other elements pushed to the collapsed menu view to divide them from the prepopulated list.
+
+## 6.47.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.46.0 - (January 5, 2021)
+
+* Changed
+  * Updated to support a peer dependency of react-intl v2-v5
+  * Updated to use `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
+
+* Fixed
+  * Fixed broken links in documentation.
+
+## 6.45.0 - (December 8, 2020)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.44.0 - (November 24, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 ## 6.43.0 - (November 10, 2020)
 
 * Fixed

@@ -1,78 +1,61 @@
 const selector = '#test-infinite-list';
 
 Terra.describeViewports('InfiniteList', ['small'], () => {
-  describe('Displays an infinite list with loading indicator', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-loading');
-      browser.waitForVisible('#test-infinite-list');
-    });
-
-    Terra.it.matchesScreenshot({ selector });
+  it('Displays an infinite list with loading indicator', () => {
+    browser.url('/raw/tests/terra-infinite-list/infinite-list/infinite-list-loading');
+    $('#test-infinite-list').waitForDisplayed();
+    Terra.validates.element('with loading indicator', { selector });
   });
 
-  describe('Displays an infinite list with updating indicator', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-updating');
-      browser.waitForVisible('#test-infinite-list');
-    });
-
-    Terra.it.matchesScreenshot({ selector });
+  it('Displays an infinite list with updating indicator', () => {
+    browser.url('/raw/tests/terra-infinite-list/infinite-list/infinite-list-updating');
+    $('#test-infinite-list').waitForDisplayed();
+    Terra.validates.element('with updating indicator', { selector });
   });
 
-  describe('Displays an infinite list with selection', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-selection');
-      browser.waitForVisible('#test-infinite-list');
-      browser.moveToObject('#root', 0, 900);
-    });
-
-    Terra.it.matchesScreenshot({ selector });
+  it('Displays an infinite list with selection', () => {
+    browser.url('/raw/tests/terra-infinite-list/infinite-list/infinite-list-selection');
+    $('#test-infinite-list').waitForDisplayed();
+    $('#root').moveTo(0, 900);
+    Terra.validates.element('with selection', { selector });
   });
 
-  describe('Displays an infinite list with role as listbox', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-listbox');
-      browser.waitForVisible('#test-infinite-list');
-      browser.moveToObject('#root', 0, 900);
-    });
-
-    Terra.it.validatesElement({ selector });
+  it('Displays an infinite list with role as listbox', () => {
+    browser.url('/raw/tests/terra-infinite-list/infinite-list/infinite-list-listbox');
+    $('#test-infinite-list').waitForDisplayed();
+    $('#root').moveTo(0, 900);
+    Terra.validates.element('with role as listbox', { selector });
   });
 
-  describe('Displays an infinite list with virtual dom from top', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-virtual');
-      browser.waitForVisible('#test-infinite-list');
-      browser.pause(150);
-    });
-
-    Terra.it.matchesScreenshot({ selector });
+  it('Displays an infinite list with virtual dom from top', () => {
+    browser.url('/raw/tests/terra-infinite-list/infinite-list/infinite-list-virtual');
+    $('#test-infinite-list').waitForDisplayed();
+    browser.pause(150);
+    Terra.validates.element('virtual dom from top', { selector });
   });
 
-  describe('Displays an infinite list with virtual dom from bottom', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-virtual');
-      browser.waitForVisible('#test-infinite-list [data-infinite-list-index="0"]');
-      browser.pause(150);
-      browser.click('#test-click');
-      browser.waitForVisible('#test-infinite-list [data-infinite-list-index="15"]');
-      browser.pause(50);
-    });
-
-    Terra.it.matchesScreenshot({ selector });
+  it('Displays an infinite list with virtual dom from bottom', () => {
+    browser.url('/raw/tests/terra-infinite-list/infinite-list/infinite-list-virtual');
+    $('#test-infinite-list [data-infinite-list-index="0"]').waitForDisplayed();
+    browser.pause(150);
+    $('#test-click').click();
+    $('#test-infinite-list [data-infinite-list-index="15"]').waitForDisplayed();
+    browser.pause(50);
+    Terra.validates.element('virtual dom from bottom', { selector });
   });
 
   describe('Displays an infinite list same count and different content', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-same-count');
-      browser.waitForVisible('#test-infinite-list');
+    it('displays before updating child items', () => {
+      browser.url('/raw/tests/terra-infinite-list/infinite-list/infinite-list-same-count');
+      $('#test-infinite-list').waitForDisplayed();
       browser.pause(150);
+      Terra.validates.element('before-update', { selector });
     });
-    Terra.it.matchesScreenshot('before-update', { selector });
-    it('update the child items', () => {
-      browser.click('#test-click');
+
+    it('updates the child items', () => {
+      $('#test-click').click();
       browser.pause(50);
+      Terra.validates.element('after-update', { selector });
     });
-    Terra.it.matchesScreenshot('after-update', { selector });
   });
 });

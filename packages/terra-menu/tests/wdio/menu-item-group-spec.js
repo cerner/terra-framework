@@ -4,37 +4,35 @@ const ignoredA11y = {
 
 Terra.describeViewports('Menu Item Group', ['medium'], () => {
   before(() => {
-    browser.url('/#/raw/tests/terra-menu/menu/menu-item-group/menu-item-group-default');
+    browser.url('/raw/tests/terra-menu/menu/menu-item-group/menu-item-group-default');
   });
 
-  describe('Menu Item Group-Default', () => {
-    Terra.it.matchesScreenshot();
-    Terra.it.isAccessible({ rules: ignoredA11y });
+  it('displays a Menu Item Group-Default', () => {
+    Terra.validates.element('default', { rules: ignoredA11y });
   });
 
   describe('Menu Item Group-Selectable Via Click', () => {
     it('selects Item 3', () => {
-      browser.click('.TestGroupItem3');
+      $('.TestGroupItem3').click();
+      Terra.validates.element('item 3 selected via click', { rules: ignoredA11y });
     });
-    Terra.it.matchesScreenshot('Item 3 Selected');
-    Terra.it.isAccessible({ rules: ignoredA11y });
 
     it('selects Item 1 and deselects Item 3', () => {
-      browser.click('.TestGroupItem1');
-      browser.moveToObject('h3');
+      $('.TestGroupItem1').click();
+      $('h3').moveTo();
+      Terra.validates.element('item 1 selected via click', { rules: ignoredA11y });
     });
-    Terra.it.matchesScreenshot('Item 1 Selected');
   });
 
   describe('Menu Item Group-Selectable Via Keyboard Navigation', () => {
     it('selects Item 2 on Enter', () => {
       browser.keys(['Tab', 'Enter']);
+      Terra.validates.element('item 2 selected via keyboard navigation', { rules: ignoredA11y });
     });
-    Terra.it.matchesScreenshot('Item 2 Selected');
 
     it('selects Item 3 on Space', () => {
       browser.keys(['Tab', 'Space']);
+      Terra.validates.element('item 3 selected via keyboard navigation', { rules: ignoredA11y });
     });
-    Terra.it.matchesScreenshot('Item 3 Selected');
   });
 });

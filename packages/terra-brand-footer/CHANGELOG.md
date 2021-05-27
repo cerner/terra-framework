@@ -2,6 +2,26 @@
 
 ## Unreleased
 
+## 3.6.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 3.5.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 3.4.0 - (January 5, 2021)
+
+* Fixed
+  * Fixed broken links in documentation.
+
+## 3.3.0 - (November 24, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 ## 3.2.0 - (August 18, 2020)
 
 * Added
@@ -9,7 +29,7 @@
 
 * Changed
   * Updated Changelog format
-  
+
 ## 3.1.0 - (August 4, 2020)
 
 * Changed

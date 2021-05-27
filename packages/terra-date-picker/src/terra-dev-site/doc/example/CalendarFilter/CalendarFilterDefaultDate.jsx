@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import CalendarFilter from 'terra-date-picker/lib/CalendarFilter';
 import classNames from 'classnames/bind';
 import styles from '../DatePickerExampleCommon.module.scss';
