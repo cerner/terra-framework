@@ -20,10 +20,6 @@ const propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * Custom input attributes that apply to the hour, minute, and second inputs.
-   */
-  inputAttributes: PropTypes.object,
-  /**
    * Custom input attributes to apply to the hour input
    */
   hourAttributes: PropTypes.object,
@@ -84,6 +80,13 @@ const propTypes = {
    */
   showSeconds: PropTypes.bool,
   /**
+   * @private
+   * NOTICE: Internal prop to be used only by Terra framework. This component provides a built-in format mask that is
+   * required to be displayed to users for proper accessibility and must not be removed. 'DatePickerField' is permitted to set
+   * this prop because it provides the same format mask in its 'help' prop.
+  */
+  useExternalFormatMask: PropTypes.bool,
+  /**
    * An ISO 8601 string representation of the time value in the input.
    */
   value: PropTypes.string,
@@ -97,7 +100,6 @@ const propTypes = {
 
 const defaultProps = {
   disabled: false,
-  inputAttributes: {},
   isIncomplete: false,
   isInvalid: false,
   isInvalidMeridiem: false,
@@ -110,6 +112,7 @@ const defaultProps = {
   required: false,
   secondAttributes: {},
   showSeconds: false,
+  useExternalFormatMask: false,
   value: undefined,
   variant: TimeUtil.FORMAT_24_HOUR,
 };
@@ -647,7 +650,6 @@ class TimeInput extends React.Component {
   render() {
     const {
       disabled,
-      inputAttributes,
       minuteAttributes,
       hourAttributes,
       intl,
@@ -662,6 +664,7 @@ class TimeInput extends React.Component {
       required,
       secondAttributes,
       showSeconds,
+      useExternalFormatMask,
       value,
       variant,
       ...customProps
@@ -745,7 +748,6 @@ class TimeInput extends React.Component {
             value={timeValue}
           />
           <Input
-            {...inputAttributes}
             {...hourAttributes}
             aria-label={intl.formatMessage({ id: 'Terra.timeInput.hours' })}
             refCallback={(inputRef) => {
@@ -764,11 +766,11 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             disabled={disabled}
-            aria-describedby={formatDescriptionId}
+            aria-required={required}
+            aria-describedby={TimeUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId, inputAttributes: this.props.hourAttributes })}
           />
           <span className={cx('time-spacer')}>:</span>
           <Input
-            {...inputAttributes}
             {...minuteAttributes}
             refCallback={(inputRef) => { this.minuteInput = inputRef; }}
             aria-label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
@@ -784,13 +786,13 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             disabled={disabled}
-            aria-describedby={formatDescriptionId}
+            aria-required={required}
+            aria-describedby={TimeUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId, inputAttributes: this.props.minuteAttributes })}
           />
           {showSeconds && (
             <React.Fragment>
               <span className={cx('time-spacer')}>:</span>
               <Input
-                {...inputAttributes}
                 {...secondAttributes}
                 refCallback={(inputRef) => { this.secondInput = inputRef; }}
                 aria-label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
@@ -806,7 +808,8 @@ class TimeInput extends React.Component {
                 size="2"
                 pattern="\d*"
                 disabled={disabled}
-                aria-describedby={formatDescriptionId}
+                aria-required={required}
+                aria-describedby={TimeUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId, inputAttributes: this.props.secondAttributes })}
               />
             </React.Fragment>
           )}
@@ -831,9 +834,11 @@ class TimeInput extends React.Component {
             />
           </ButtonGroup>
         )}
+        {useExternalFormatMask === false && (
         <div id={formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })} ${format}`}>
           {format}
         </div>
+        )}
       </div>
     );
     /* eslint-enable jsx-a11y/no-static-element-interactions */
