@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed crash issue for upper and lower bound dates in IE.
+  
 ## 4.60.0 - (May 4, 2021)
 
 * Fixed

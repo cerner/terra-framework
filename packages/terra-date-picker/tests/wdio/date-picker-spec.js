@@ -429,6 +429,10 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     it('Enters min date', () => {
+      $('input[name="terra-date-date-input"]').setValue('02/01/1900');
+      $('[class*="button"]').click();
+      $('[aria-label="Previous month"]').click();
+      browser.keys('Escape');
       $('input[name="terra-date-date-input"]').setValue('01/01/1900');
       Terra.validates.element('min date entered');
     });
