@@ -5,6 +5,11 @@
 * Changed
   * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
 
+## 1.50.0 - (May 4, 2021)
+
+* Fixed
+  * add z-index to address ambiguous layers across browsers.
+
 ## 1.49.0 - (April 27, 2021)
 
 * Changed

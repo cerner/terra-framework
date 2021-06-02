@@ -862,7 +862,7 @@ class DatePicker extends React.Component {
               : null
           }
           {
-            this.state.open || this.props.inline
+            (this.state.open && !this.props.disabled) || this.props.inline
               ? (<Portal isOpened={true}>
                   <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: false, clickOutsideDeactivates: true }}>
                     <div
