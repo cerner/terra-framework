@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "keycode-js": "^2.0.1",
+    "keycode-js": "^3.1.0",
     "prop-types": "^15.5.8",
     "resize-observer-polyfill": "^1.4.1",
     "terra-content-container": "^3.0.0",

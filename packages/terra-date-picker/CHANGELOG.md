@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+
 ## 4.61.0 - (June 1, 2021)
 
 * Fixed
@@ -11,7 +14,7 @@
 
 * Fixed
   * Fixed focus trap issue for date picker in mobile view.
-
+  
 ## 4.59.0 - (April 6, 2021)
 
 * Changed

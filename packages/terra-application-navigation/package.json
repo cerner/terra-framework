@@ -35,7 +35,7 @@
     "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
     "focus-trap-react": "^6.0.0",
-    "keycode-js": "^2.0.1",
+    "keycode-js": "^3.1.0",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8",
     "react-onclickoutside": "^6.7.1",
