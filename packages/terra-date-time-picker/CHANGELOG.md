@@ -4,6 +4,7 @@
 
 * Changed
   * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+  * screenshot updates
 
 ## 4.62.0 - (June 1, 2021)
 
