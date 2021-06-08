@@ -4,6 +4,8 @@
 
 * Changed
   * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+* Fixed
+  * Arrow alignment in ie
 
 ## 4.61.0 - (June 1, 2021)
 
