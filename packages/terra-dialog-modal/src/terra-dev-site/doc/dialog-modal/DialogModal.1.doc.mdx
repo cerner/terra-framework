@@ -1,4 +1,5 @@
 import { Badge } from 'terra-dialog-modal/package.json?dev-site-package';
+import { Notice } from '@cerner/terra-docs';
 import DialogModalPropsTable from 'terra-dialog-modal/src/DialogModal?dev-site-props-table';
 
 import DefaultDialogModal from '../example/DefaultDialogModal?dev-site-example';
@@ -9,7 +10,13 @@ import DialogModalWithCustomHeaderAndCustomFooter from '../example/DialogModalWi
 
 # Terra Dialog Modal
 
-The Dialog Modal allows for disclosing accessible modals with dynamic heights. The components is placed at an 7000 z-index. The dialog modal should not be disclosed from the terra-modal-manager component. If you need to display another modal while using the modal manager, use the modal stacking functionality provided in terra-modal-manager or the terra-notification-dialog.
+<Notice variant="deprecation">
+
+The terra-dialog-modal has been deprecated and is no longer recommended for use. Use [terra-modal-manager](/application/terra-application/components/modal-manager) for an alternative modal implementation. The terra-dialog-modal package has been deprecated because duplicates functionality found in the modal manager package.
+
+</Notice>
+
+The Dialog Modal allows for disclosing modals with dynamic heights. The components is placed at an 7000 z-index. The dialog modal should not be disclosed from the terra-modal-manager component. If you need to display another modal while using the modal manager, use the modal stacking functionality provided in terra-modal-manager or the terra-notification-dialog.
 
 
 ## Getting Started
