@@ -27,6 +27,7 @@
     "react-dom": "^16.8.5"
   },
   "dependencies": {
+    "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-abstract-modal": "^3.34.0",
@@ -38,8 +39,6 @@
     "terra-button": "^3.3.0",
     "terra-date-picker": "^4.62.0",
     "terra-form-select": "^6.8.0",
-    "terra-modal-manager": "^6.53.0",
-    "terra-notification-dialog": "^4.14.0",
     "terra-popup": "^6.53.0"
   },
   "scripts": {
