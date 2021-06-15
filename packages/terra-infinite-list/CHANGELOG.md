@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.39.0 - (June 15, 2021)
+
 * Changed
   * Mark package as deprecated
 
