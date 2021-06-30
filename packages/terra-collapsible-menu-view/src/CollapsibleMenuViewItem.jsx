@@ -83,6 +83,13 @@ class CollapsibleMenuViewItem extends React.Component {
     super(props);
     this.setButtonNode = this.setButtonNode.bind(this);
     this.getButtonNode = this.getButtonNode.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
+  }
+
+  handleButtonClick(event) {
+    if (this.props.onClick) {
+      this.props.onClick(event);
+    }
   }
 
   setButtonNode(node) {

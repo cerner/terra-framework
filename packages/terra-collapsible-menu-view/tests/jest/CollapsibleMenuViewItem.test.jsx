@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies, import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import IconTrash from 'terra-icon/lib/icon/IconTrash';
 /* eslint-enable import/no-extraneous-dependencies, import/no-extraneous-dependencies */
 import CollapsibleMenuViewItem from '../../src/CollapsibleMenuViewItem';
@@ -120,6 +120,23 @@ describe('CollapsibleMenuViewItem', () => {
       const context = { isCollapsibleMenuItem: true };
       const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isDisabled />, { context });
       expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should call any custom onClick that is provided by the user correctly when clicked', () => {
+      const customOnClick = jest.fn();
+      const collapsibleMenu = mountWithIntl(<CollapsibleMenuViewItem
+        text="Menu Button 1"
+        key="MenuButton1"
+        className="MenuButton1"
+        shouldCloseOnClick={false}
+        onClick={customOnClick}
+        subMenuItems={[
+          <CollapsibleMenuViewItem text="Default Item 1" key="defaultItem1" />,
+          <CollapsibleMenuViewItem text="Default Item 2" key="defaultItem2" />,
+        ]}
+      />);
+      collapsibleMenu.find('Button').simulate('click');
+      expect(customOnClick).toHaveBeenCalled();
     });
   });
 });

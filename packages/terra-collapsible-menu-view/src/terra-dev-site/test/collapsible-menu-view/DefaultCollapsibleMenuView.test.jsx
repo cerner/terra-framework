@@ -24,7 +24,6 @@ class CollapsibleMenuViewDemo extends React.Component {
   }
 
   handleToggleOneOnChange(event, isSelected) {
-    console.log('Test Toggle 1');
     this.setState({ toggle1Selection: isSelected });
   }
 
@@ -74,15 +73,7 @@ class CollapsibleMenuViewDemo extends React.Component {
           className="MenuButton1"
           shouldCloseOnClick={false}
           subMenuItems={[
-            <CollapsibleMenuView.Item
-              shouldCloseOnClick={false}
-              text="Default Item 1"
-              key="defaultItem1"
-              subMenuItems={[
-                <CollapsibleMenuView.Item onClick={this.handleToggleOneOnChange} text="Default Item 1" key="defaultItem1" />,
-                <CollapsibleMenuView.Item text="Default Item 2" key="defaultItem2" />,
-              ]}
-            />,
+            <CollapsibleMenuView.Item text="Default Item 1" key="defaultItem1" />,
             <CollapsibleMenuView.Item text="Default Item 2" key="defaultItem2" />,
           ]}
         />
@@ -139,7 +130,7 @@ class CollapsibleMenuViewDemo extends React.Component {
         <CollapsibleMenuView.Divider key="Divider3" />
         <CollapsibleMenuView.Item icon={<IconSend />} text="Send Message" className="SendMessage" key="send" isIconOnly />
         <CollapsibleMenuView.ItemGroup className="MessageActionGroup" key="messageActionGroup">
-          <CollapsibleMenuView.Item onClick={this.handleToggleOneOnChange} icon={<IconPrinter />} text="Print Message" className="Print" key="print" isIconOnly />
+          <CollapsibleMenuView.Item icon={<IconPrinter />} text="Print Message" className="Print" key="print" isIconOnly />
           <CollapsibleMenuView.Item icon={<IconFolder />} text="Move Message to Folder..." className="Move" key="move" isIconOnly />
           <CollapsibleMenuView.Item icon={<IconTrash />} text="Trash Message" key="trash" className="Trash" isIconOnly />
         </CollapsibleMenuView.ItemGroup>
@@ -148,8 +139,8 @@ class CollapsibleMenuViewDemo extends React.Component {
         <CollapsibleMenuView.Item text="Button 2" className="Button2" key="button2" />
         <CollapsibleMenuView.Item text="Button 3" className="Button3" key="button3" />
         <CollapsibleMenuView.Item text="Button 4" className="Button4" key="button4" />
-        <CollapsibleMenuView.Item onClick={() => alert('Ive been clicked!')} text="Button 5" className="Button5" key="button5" />
-        <CollapsibleMenuView.Item onClick={this.handleToggleOneOnChange} text="Button 6" className="Button6" key="button6" />
+        <CollapsibleMenuView.Item text="Button 5" className="Button5" key="button5" />
+        <CollapsibleMenuView.Item text="Button 6" className="Button6" key="button6" />
         <CollapsibleMenuView.Item text="Button 7" className="Button7" key="button7" />
         <CollapsibleMenuView.Item text="Button 8" className="Button8" key="button8" />
       </CollapsibleMenuView>

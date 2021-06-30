@@ -646,6 +646,7 @@ exports[`CollapsibleMenuViewItem should render a menu when subMenuItems are give
       isDisabled={false}
       isIconOnly={false}
       isReversed={false}
+      onClick={[Function]}
       text="Testing"
       type="button"
       variant="neutral"
