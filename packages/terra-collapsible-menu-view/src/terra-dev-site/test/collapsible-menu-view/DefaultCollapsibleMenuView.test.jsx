@@ -71,6 +71,7 @@ class CollapsibleMenuViewDemo extends React.Component {
           text="Menu Button 1"
           key="MenuButton1"
           className="MenuButton1"
+          onClick={this.handleToggleOneOnChange}
           shouldCloseOnClick={false}
           subMenuItems={[
             <CollapsibleMenuView.Item text="Default Item 1" key="defaultItem1" />,
