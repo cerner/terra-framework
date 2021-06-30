@@ -2,6 +2,26 @@
 
 ## Unreleased
 
+## 3.65.0 - (June 15, 2021)
+
+* Changed
+  * Mark package as deprecated.
+
+## 3.64.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 3.63.0 - (June 1, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 3.62.0 - (May 4, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 3.61.0 - (April 6, 2021)
 
 * Changed

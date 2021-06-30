@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 4.14.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.13.0 - (May 4, 2021)
+
+* Changed
+  * Regenerated screenshots involving a now removed defaulted implementation
+
 ## 4.12.0 - (April 6, 2021)
 
 * Changed
