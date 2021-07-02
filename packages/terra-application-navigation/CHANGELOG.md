@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.52.0
+
+* Changed
+  * Updated the compact header to not render the menu button if titleConfig has an empty title
+
 ## 1.51.0 - (June 8, 2021)
 
 * Changed
