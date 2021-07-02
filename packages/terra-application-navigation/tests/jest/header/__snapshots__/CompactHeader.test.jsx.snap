@@ -1,5 +1,124 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CompactHeader should not render with menu 1`] = `
+<InjectIntl(CompactHeader)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  titleConfig={
+    Object {
+      "title": "",
+    }
+  }
+>
+  <CompactHeader
+    extensionItems={Array []}
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isDrawerMenuOpen={false}
+    navigationItems={Array []}
+    notifications={Object {}}
+    titleConfig={
+      Object {
+        "title": "",
+      }
+    }
+    utilityItems={Array []}
+  >
+    <header
+      className="compact-header"
+      role="banner"
+    >
+      <button
+        className="skip-content-button"
+        role="link"
+        type="button"
+      >
+        Terra.applicationNavigation.header.skipToContentTitle
+      </button>
+      <div
+        className="title-container"
+      >
+        <div
+          className="title"
+          title=""
+        />
+      </div>
+      <nav
+        className="hidden-nav"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        tabIndex="-1"
+      >
+        <ul
+          className="nav-inner"
+        />
+      </nav>
+      <div
+        className="extensions-container"
+      />
+      <ul
+        aria-label="Terra.applicationNavigation.drawerMenu.utilities"
+        className="hidden-utils"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        role="listbox"
+        tabIndex="-1"
+      />
+    </header>
+  </CompactHeader>
+</InjectIntl(CompactHeader)>
+`;
+
 exports[`CompactHeader should render default element 1`] = `
 <InjectIntl(CompactHeader)
   intl={

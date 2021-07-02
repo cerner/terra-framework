@@ -100,4 +100,17 @@ describe('CompactHeader', () => {
     mountComponent.find('.menu-button').simulate('click');
     expect(mockCallBack.mock.calls.length).toEqual(1);
   });
+
+  it('should not render with menu', () => {
+    const mountComponent = mountWithIntl(
+      <CompactHeader
+        titleConfig={{
+          title: '',
+        }}
+      />,
+    );
+
+    expect(mountComponent).toMatchSnapshot();
+    expect(mountComponent.find('.menu-button')).toHaveLength(0);
+  });
 });
