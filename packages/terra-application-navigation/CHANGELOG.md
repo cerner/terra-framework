@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated screenshots due to changes made in `terra-application-name`.
+
 ## 1.51.0 - (June 8, 2021)
 
 * Changed
