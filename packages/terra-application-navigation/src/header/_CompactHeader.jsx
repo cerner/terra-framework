@@ -178,7 +178,7 @@ const CompactHeader = ({
   });
 
   function renderMenuButton() {
-    if (!(utilityItems.length > 0 || navigationItems.length > 0 || userConfig || titleConfig || hero || onSelectHelp || onSelectLogout || onSelectSettings)) {
+    if (!(utilityItems.length > 0 || navigationItems.length > 0 || (titleConfig && titleConfig.title.length) || userConfig || hero || onSelectHelp || onSelectLogout || onSelectSettings)) {
       return null;
     }
 
