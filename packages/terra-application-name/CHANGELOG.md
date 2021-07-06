@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.39.0 - (July 6, 2021)
+
 * Changed
   * Updated `waitForDisplayed` to `waitForExist` to fix failing tests in cerner clinical theme.
 
