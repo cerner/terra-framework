@@ -280,7 +280,7 @@ class DateInput extends React.Component {
     }
 
     // prevent + and - characters from being entered into number input on keyDown
-    if (event.keyCode === DateInputUtil.keyCode.KEY_MINUS || event.keyCode === DateInputUtil.keyCode.KEY_PLUS) {
+    if (event.keyCode === KeyCode.KEY_EQUALS || event.keyCode === KeyCode.KEY_DASH) {
       event.preventDefault();
       return;
     }
@@ -322,7 +322,7 @@ class DateInput extends React.Component {
     }
 
     // prevent + and - characters from being entered into number input on keyDown
-    if (event.keyCode === DateInputUtil.keyCode.KEY_MINUS || event.keyCode === DateInputUtil.keyCode.KEY_PLUS) {
+    if (event.keyCode === KeyCode.KEY_EQUALS || event.keyCode === KeyCode.KEY_DASH) {
       event.preventDefault();
       return;
     }

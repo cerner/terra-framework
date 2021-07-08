@@ -429,6 +429,10 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     it('Enters min date', () => {
+      $('input[name="terra-date-date-input"]').setValue('02/01/1900');
+      $('[class*="button"]').click();
+      $('[aria-label="Previous month"]').click();
+      browser.keys('Escape');
       $('input[name="terra-date-date-input"]').setValue('01/01/1900');
       Terra.validates.element('min date entered');
     });
@@ -446,6 +450,18 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     it('Enters date beyond min', () => {
       $('input[name="terra-date-date-input"]').setValue('10/20/1899');
       Terra.validates.element('beyond min date entered');
+    });
+  });
+});
+
+Terra.describeViewports('Date Picker', ['tiny', 'small'], () => {
+  describe('Disable date picker - Disable date picker in mobile view', () => {
+    it('should disable the date picker', () => {
+      browser.url('/raw/tests/terra-date-picker/date-picker/date-picker-calendar-disable');
+      $('#button1').click();
+      expect($('#button1').isFocused()).toEqual(true);
+      $('[data-terra-open-calendar-button]').click();
+      Terra.validates.element('disabled date picker');
     });
   });
 });

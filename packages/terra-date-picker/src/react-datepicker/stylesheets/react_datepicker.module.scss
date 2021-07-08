@@ -438,6 +438,7 @@
     border: 2px solid transparent;
     cursor: pointer;
     height: 1.571rem;
+    line-height: 0;
     padding: 0;
     text-align: center;
     width: 1.571rem;
@@ -462,6 +463,7 @@
   .next-month-icon {
     display: inline-block;
     height: var(--terra-date-picker-prev-next-month-icon-height, 1.571rem);
+    line-height: 0;
     vertical-align: middle;
     width: var(--terra-date-picker-prev-next-month-icon-width, 1.571rem);
   }
