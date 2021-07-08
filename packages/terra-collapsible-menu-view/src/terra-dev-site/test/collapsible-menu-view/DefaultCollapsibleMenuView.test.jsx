@@ -15,12 +15,18 @@ class CollapsibleMenuViewDemo extends React.Component {
     this.handleToggleOneOnChange = this.handleToggleOneOnChange.bind(this);
     this.handleToggleTwoOnChange = this.handleToggleTwoOnChange.bind(this);
     this.handleToggleThreeOnChange = this.handleToggleThreeOnChange.bind(this);
+    this.handleMenuButtonClick = this.handleMenuButtonClick.bind(this);
     this.state = {
       toggle1Selection: false,
       toggle2Selection: false,
       toggle3Selection: false,
       displayType: 'tableView',
+      buttonClickCount: 0,
     };
+  }
+
+  handleMenuButtonClick() {
+    this.setState(prevState => ({ buttonClickCount: prevState.buttonClickCount + 1 }));
   }
 
   handleToggleOneOnChange(event, isSelected) {
@@ -71,7 +77,7 @@ class CollapsibleMenuViewDemo extends React.Component {
           text="Menu Button 1"
           key="MenuButton1"
           className="MenuButton1"
-          onClick={this.handleToggleOneOnChange}
+          onClick={this.handleMenuButtonClick}
           shouldCloseOnClick={false}
           subMenuItems={[
             <CollapsibleMenuView.Item text="Default Item 1" key="defaultItem1" />,
