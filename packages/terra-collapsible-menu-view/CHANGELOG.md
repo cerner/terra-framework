@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.54.0 - (July 13, 2021)
+
 * Fixed
   * Fix to invoke consumer's `onClick` handler for menu buttons.
 
