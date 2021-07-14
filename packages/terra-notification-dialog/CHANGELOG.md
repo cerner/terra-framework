@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated the upgrade guide to state to replace `secondaryAction` with `rejectAction` instead of `primaryAction` 
+
 ## 4.15.0 - (July 13, 2021)
 
 * Changed

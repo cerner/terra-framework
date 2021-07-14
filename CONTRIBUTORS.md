@@ -10,7 +10,7 @@ Cerner Corporation
 - Ismail Jones [@papasmile]
 - Alvin Cheung [@pseudofaux]
 - Stephen Esser [@StephenEsser]
-- Nathan Faltermeier [@Blackop778]
+- Nathan Faltermeier [@nfaltermeier]
 - Ben Boersma [@BenBoersma]
 - Alex Brisimitzakis [@AlexBrizi]
 - Adam Parker [@amichaelparker]
@@ -51,7 +51,7 @@ Cerner Corporation
 [@papasmile]: https://github.com/papasmile
 [@pseudofaux]: https://github.com/pseudofaux
 [@StephenEsser]: https://github.com/StephenEsser
-[@Blackop778]: https://github.com/Blackop778
+[@nfaltermeier]: https://github.com/nfaltermeier
 [@BenBoersma]: https://github.com/BenBoersma
 [@AlexBrizi]: https://github.com/AlexBrizi
 [@amichaelparker]: https://github.com/amichaelparker
