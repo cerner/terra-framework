@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated Jest Snapshots
+
 ## 4.63.0 - (July 13, 2021)
 
 * Changed
@@ -18,12 +21,12 @@
 
 * Fixed
   * Fixed crash issue for upper and lower bound dates in IE.
-  
+
 ## 4.60.0 - (May 4, 2021)
 
 * Fixed
   * Fixed focus trap issue for date picker in mobile view.
-  
+
 ## 4.59.0 - (April 6, 2021)
 
 * Changed
