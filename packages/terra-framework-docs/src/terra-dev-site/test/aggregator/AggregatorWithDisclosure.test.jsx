@@ -3,10 +3,10 @@ import Button from 'terra-button';
 import SlidePanelManager from 'terra-slide-panel-manager';
 import { withDisclosureManager } from 'terra-disclosure-manager';
 import classNames from 'classnames/bind';
-import styles from './AggregatorWithDisclosure.test.module.scss';
+import Aggregator from 'terra-aggregator';
 
-import Aggregator from '../../../Aggregator';
-import AggregatorItem from '../common/AggregatorItem';
+import styles from './AggregatorWithDisclosure.test.module.scss';
+import AggregatorItem from './common/AggregatorItem';
 
 const cx = classNames.bind(styles);
 

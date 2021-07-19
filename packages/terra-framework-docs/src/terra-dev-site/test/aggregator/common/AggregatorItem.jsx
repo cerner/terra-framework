@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import List from '../../doc/common/placeholder-list/PlaceholderList';
-import Item from '../../doc/common/placeholder-list/PlaceholderListItem';
+import List from '../../../doc/aggregator/common/placeholder-list/PlaceholderList';
+import Item from '../../../doc/aggregator/common/placeholder-list/PlaceholderListItem';
 import DisclosureComponent from './DisclosureComponent';
 
 /* eslint-disable react/prop-types */
