@@ -1,4 +1,4 @@
-# Terra Toolkit Docs
+# Terra Framework Docs
 
 [![NPM version](https://badgen.net/npm/v/@cerner/terra-framework-docs)](https://www.npmjs.org/package/@cerner/terra-framework-docs)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
