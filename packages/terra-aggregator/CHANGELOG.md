@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.71.0 - (July 20, 2021)
+
 * Changed
   * Migrated docs to terra-framework-docs
 
