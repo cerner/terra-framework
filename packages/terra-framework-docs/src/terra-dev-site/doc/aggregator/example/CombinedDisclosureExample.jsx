@@ -4,8 +4,8 @@ import SlidePanelManager from 'terra-slide-panel-manager';
 import { withDisclosureManager } from 'terra-disclosure-manager';
 
 import Aggregator from 'terra-aggregator';
-import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
-import SimpleAggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/SimpleAggregatorItem';
+import AggregatorItem from '../common/AggregatorItem';
+import SimpleAggregatorItem from '../common/SimpleAggregatorItem';
 
 const items = Object.freeze([{
   key: 'SECTION_0',

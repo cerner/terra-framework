@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from 'terra-grid';
 
 import Aggregator from 'terra-aggregator';
-import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
+import AggregatorItem from '../common/AggregatorItem';
 
 const items = Object.freeze([{
   key: 'SECTION_0',

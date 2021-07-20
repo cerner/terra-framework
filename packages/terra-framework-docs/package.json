@@ -1,0 +1,53 @@
+{
+  "name": "@cerner/terra-framework-docs",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Contains documentation for packages in the terra-framework monorepo",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra-framework.git",
+    "directory": "packages/terra-framework-docs"
+  },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "terra-framework-docs"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cerner/terra-framework/issues"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "homepage": "https://github.com/cerner/terra-framework",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "compile": "babel --root-mode upward src --out-dir lib --copy-files",
+    "lint": "eslint --ext .js,.jsx .",
+    "precompile": "rm -rf lib"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.8",
+    "terra-action-header": "^2.0.0",
+    "terra-aggregator": "^4.70.0",
+    "terra-arrange": "^3.0.0",
+    "terra-button": "^3.3.0",
+    "terra-content-container": "^3.0.0",
+    "terra-disclosure-manager": "^4.41.0",
+    "terra-form-input": "^3.7.0",
+    "terra-grid": "^6.0.0",
+    "terra-modal-manager": "^6.54.0",
+    "terra-section-header": "^2.0.0",
+    "terra-slide-panel-manager": "^5.55.0"
+  }
+}

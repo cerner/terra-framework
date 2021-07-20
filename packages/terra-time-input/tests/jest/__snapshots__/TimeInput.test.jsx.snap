@@ -115,7 +115,7 @@ exports[`correctly applies the theme context className 1`] = `
             <input
               aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.timeInput.hours"
-              className="form-input orion-fusion-theme time-input-hour"
+              className="form-input time-input-hour"
               disabled={false}
               maxLength="2"
               name="terra-time-hour-time-input"
@@ -158,7 +158,7 @@ exports[`correctly applies the theme context className 1`] = `
             <input
               aria-describedby="terra-time-input-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.timeInput.minutes"
-              className="form-input orion-fusion-theme time-input-minute"
+              className="form-input time-input-minute"
               disabled={false}
               maxLength="2"
               name="terra-time-minute-time-input"

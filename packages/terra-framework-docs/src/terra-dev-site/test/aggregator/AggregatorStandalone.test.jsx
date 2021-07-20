@@ -1,6 +1,6 @@
 import React from 'react';
-import Aggregator from '../../../Aggregator';
-import AggregatorItem from '../common/AggregatorItem';
+import Aggregator from 'terra-aggregator';
+import AggregatorItem from './common/AggregatorItem';
 
 const items = Object.freeze([{
   key: 'SECTION_0',

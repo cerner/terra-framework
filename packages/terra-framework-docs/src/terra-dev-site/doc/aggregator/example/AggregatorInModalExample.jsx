@@ -2,7 +2,7 @@ import React from 'react';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import ModalManager from 'terra-modal-manager';
 
-import ModalAggregator from 'terra-aggregator/lib/terra-dev-site/doc/common/ModalAggregator';
+import ModalAggregator from '../common/ModalAggregator';
 
 const ModalButton = withDisclosureManager(({ disclosureManager }) => (
   <button
