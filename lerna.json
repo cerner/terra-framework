@@ -1,11 +1,4 @@
 {
   "version": "independent",
-  "packages": ["packages/*"],
-  "command": {
-    "publish": {
-      "ignoreChanges": [
-        "packages/terra-framework-docs/**"
-      ]
-    }
-  }
+  "packages": ["packages/*"]
 }

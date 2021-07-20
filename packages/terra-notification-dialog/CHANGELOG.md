@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.16.0 - (July 20, 2021)
+
 * Changed
   * Updated the upgrade guide to state to replace `secondaryAction` with `rejectAction` instead of `primaryAction` 
 

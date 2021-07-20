@@ -1,7 +1,6 @@
 {
   "name": "@cerner/terra-framework-docs",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
   "description": "Contains documentation for packages in the terra-framework monorepo",
   "main": "index.js",
   "publishConfig": {
@@ -39,7 +38,7 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-action-header": "^2.0.0",
-    "terra-aggregator": "^4.70.0",
+    "terra-aggregator": "^4.71.0",
     "terra-arrange": "^3.0.0",
     "terra-button": "^3.3.0",
     "terra-content-container": "^3.0.0",
