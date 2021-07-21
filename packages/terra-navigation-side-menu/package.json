@@ -33,7 +33,7 @@
     "prop-types": "^15.5.8",
     "terra-action-header": "^2.0.0",
     "terra-content-container": "^3.0.0",
-    "terra-icon": "^3.1.0",
+    "terra-icon": "^3.19.0",
     "terra-theme-context": "^1.7.0",
     "terra-visually-hidden-text": "^2.0.0"
   },

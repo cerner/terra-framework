@@ -32,7 +32,7 @@
     "prop-types": "^15.5.8",
     "resize-observer-polyfill": "^1.4.1",
     "terra-content-container": "^3.0.0",
-    "terra-icon": "^3.1.0",
+    "terra-icon": "^3.19.0",
     "terra-menu": "^6.53.0",
     "terra-responsive-element": "^5.0.0",
     "terra-theme-context": "^1.7.0"

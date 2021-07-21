@@ -1,17 +1,17 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import ModalManager from 'terra-modal-manager/src/ModalManager';
 import DisclosureComponent from './DisclosureComponent';
-import ModalManager from '../../../ModalManager';
 import styles from './ModalManagerCommon.test.module.scss';
 
 const cx = classNames.bind(styles);
 
-const ModalManagerDefault = () => (
+const ModalManagerWithHeaderAdapter = () => (
   <div role="main" className={cx('content-wrapper')}>
     <ModalManager>
-      <DisclosureComponent identifier="root-component" disclosureType="modal" />
+      <DisclosureComponent identifier="root-component" disclosureType="modal" renderHeaderAdapter />
     </ModalManager>
   </div>
 );
 
-export default ModalManagerDefault;
+export default ModalManagerWithHeaderAdapter;

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-form-input` from `v3.7.0` to `v4.4.0`.
+
 ## 5.36.0 - (June 8, 2021)
 
 * Changed
