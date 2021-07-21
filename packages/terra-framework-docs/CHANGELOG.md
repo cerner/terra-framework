@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.1.0 - (July 21, 2021)
+
 * Updated
   * Migrated terra-modal-manager docs
 
