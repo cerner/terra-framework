@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[506],{1773:function(e,t,a){"use strict";var l=a(6);Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n=l(a(0)),o=l(a(340)),r=a(1010),u=n.default.createElement(r.Placeholder,{title:"Test Hero"}),d=function(){return n.default.createElement(o.default,{hero:u})};t.default=d}}]);
