@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-icon` from `v3.11.0` to `v3.19.0`.
+  * Updated `terra-breakpoints` from `v2.0.0` to `v2.19.0`
+
 ## 1.53.0 - (July 13, 2021)
 
 * Changed

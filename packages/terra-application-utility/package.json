@@ -33,7 +33,7 @@
     "terra-arrange": "^3.0.0",
     "terra-button": "^3.3.0",
     "terra-content-container": "^3.0.0",
-    "terra-icon": "^3.1.0",
+    "terra-icon": "^3.19.0",
     "terra-theme-context": "^1.7.0"
   },
   "devDependencies": {

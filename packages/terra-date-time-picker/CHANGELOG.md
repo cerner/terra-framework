@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-form-field` from `v3.1.0` to `v4.5.0`.
+
 ## 4.65.0 - (July 20, 2021)
 
 * Changed
