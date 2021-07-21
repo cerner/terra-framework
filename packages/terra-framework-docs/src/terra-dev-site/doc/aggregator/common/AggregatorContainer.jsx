@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withDisclosureManager } from 'terra-disclosure-manager';
-import Aggregator from '../../../Aggregator';
+import Aggregator from 'terra-aggregator';
 
 const propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({

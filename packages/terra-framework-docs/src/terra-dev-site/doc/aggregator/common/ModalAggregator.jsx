@@ -3,7 +3,7 @@ import ContentContainer from 'terra-content-container';
 import ActionHeader from 'terra-action-header';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
-import Aggregator from '../../../Aggregator';
+import Aggregator from 'terra-aggregator';
 import AggregatorItem from './AggregatorItem';
 import SimpleAggregatorItem from './SimpleAggregatorItem';
 
