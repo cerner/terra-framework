@@ -6,7 +6,6 @@ import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
 import Pill from './Private/_Pill';
 import styles from './Private/Pill.module.scss';
-import RollUpPill from './Private/_RollupPill';
 
 const cx = classNamesBind.bind(styles);
 
@@ -59,7 +58,6 @@ const Pills = (props) => {
       tabIndex="-1"
     >
       {children ? renderChildren(children) : []}
-      <RollUpPill pillCount={children.length} />
     </div>
   );
 };

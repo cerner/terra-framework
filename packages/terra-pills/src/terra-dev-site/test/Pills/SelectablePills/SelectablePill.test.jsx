@@ -1,11 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Popup from 'terra-popup';
-import classNames from 'classnames/bind';
 import { SelectablePills } from 'terra-pills/lib/index';
 import Spacer from 'terra-spacer';
-import styles from '../PillTestCommon.module.scss';
-
-const cx = classNames.bind(styles);
 
 const DisclosureAndRemovablePill = () => {
   const pillsData = [
@@ -82,7 +78,6 @@ const DisclosureAndRemovablePill = () => {
         ariaLabel="Example of a Basic Pill with a Popup"
         onSelect={handleOnSelect}
         onRemove={handleOnRemove}
-        className={cx(['container', 'show-border', 'width-200'])}
       >
         {pillsState.map((pill, index) => (
           <SelectablePills.Pill
