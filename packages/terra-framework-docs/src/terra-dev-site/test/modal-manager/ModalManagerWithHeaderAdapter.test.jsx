@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import ModalManager from 'terra-modal-manager/src/ModalManager';
+import ModalManager from 'terra-modal-manager';
 import DisclosureComponent from './DisclosureComponent';
 import styles from './ModalManagerCommon.test.module.scss';
 
