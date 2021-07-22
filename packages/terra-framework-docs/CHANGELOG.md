@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Fixed
-  * Updated test to non reference the src directory for modal manager.
+  * Updated test to not reference the src directory for modal manager.
 
 ## 1.1.0 - (July 21, 2021)
 
