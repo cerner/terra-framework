@@ -10,7 +10,7 @@ import {
 } from 'terra-disclosure-manager';
 
 import ModalManager from 'terra-modal-manager';
-import styles from 'terra-modal-manager/lib/terra-dev-site/doc/example/example-styles.module.scss';
+import styles from './example-styles.module.scss';
 
 const cx = classNames.bind(styles);
 

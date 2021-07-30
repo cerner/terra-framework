@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 5.34.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+
 ## 5.33.1 - (June 8, 2021)
 
 * Changed

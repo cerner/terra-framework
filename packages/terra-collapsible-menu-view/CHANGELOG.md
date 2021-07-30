@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 6.55.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-form-checkbox` from `v4.0.0` to `v4.8.0`.
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+
 ## 6.54.0 - (July 13, 2021)
 
 * Fixed

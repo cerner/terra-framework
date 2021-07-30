@@ -2,7 +2,7 @@ const selector = '#root';
 
 Terra.describeViewports('ModalManager', ['tiny', 'large'], () => {
   before(() => {
-    browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
+    browser.url('/#/raw/tests/cerner-terra-framework-docs/modal-manager/modal-manager-default');
     browser.refresh();
   });
 
@@ -237,7 +237,7 @@ Terra.describeViewports('ModalManager', ['tiny', 'large'], () => {
 Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
   describe('Behaviors', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/modal-manager/modal-manager-default');
       browser.refresh();
     });
     describe('Nested Disclose', () => {
@@ -300,7 +300,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
   });
 
   describe('Component Integration', () => {
-    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-integration'));
+    before(() => browser.url('/#/raw/tests/cerner-terra-framework-docs/modal-manager/modal-manager-integration'));
     describe('Select Field in Modal Manager', () => {
       it('Select Field in Modal Manager', () => {
         $('#root-component .disclose-small').click();
@@ -363,7 +363,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
 Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
   describe('Disclosure - Header Close', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/modal-manager/modal-manager-with-header-adapter');
       browser.refresh();
     });
 
@@ -389,7 +389,7 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
 
   describe('Disclosure - Header Back', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/modal-manager/modal-manager-with-header-adapter');
       browser.refresh();
     });
 
@@ -421,7 +421,7 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
 Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => {
   describe('Disclosure Accessory', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-disclosure-accessory');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/modal-manager/modal-manager-with-disclosure-accessory');
       browser.refresh();
     });
     it('renders the disclosure accessory', () => {
@@ -444,7 +444,7 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
 
   describe('Disclosure Container', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/with-disclosure-container');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/modal-manager/with-disclosure-container');
       browser.refresh();
     });
     // Skip color contrast check for elements behind a slide-shadow
