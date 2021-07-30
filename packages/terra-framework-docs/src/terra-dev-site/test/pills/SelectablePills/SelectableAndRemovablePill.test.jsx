@@ -3,7 +3,7 @@ import Popup from 'terra-popup';
 import { SelectablePills } from 'terra-pills/lib/index';
 import Spacer from 'terra-spacer';
 
-const SelectablePill = () => {
+const SelectableAndRemovablePill = () => {
   const pillsData = [
     {
       label: 'asthma',
@@ -21,9 +21,15 @@ const SelectablePill = () => {
       id: 'terra-pills-example-disclosure-removable-pill-fibro',
     },
   ];
-  const [pillsState] = useState(pillsData);
+  const [pillsState, setPillsState] = useState(pillsData);
   const [openPillIndex, setOpenPillIndex] = useState(undefined);
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleOnRemove = (pillKey, metaData) => {
+    const pillsArray = pillsState;
+    pillsArray.splice(metaData.index, 1);
+    setPillsState([...pillsArray]);
+  };
 
   const handleOnSelect = (pillKey, metaData) => {
     setOpenPillIndex(metaData.index);
@@ -59,8 +65,9 @@ const SelectablePill = () => {
   return (
     <>
       <SelectablePills
-        ariaLabel="Example of a Selectable Pill with a Popup"
+        ariaLabel="Example of a Selectable and Removable Pill with a Popup"
         onSelect={handleOnSelect}
+        onRemove={handleOnRemove}
       >
         {pillsState.map((pill, index) => (
           <SelectablePills.Pill
@@ -68,6 +75,7 @@ const SelectablePill = () => {
             id={pill.id}
             key={pill.id}
             pillKey={pill.label}
+            isRemovable
             metaData={{ index }}
             // eslint-disable-next-line no-param-reassign
             refCallback={(node) => { pill.ref.current = node; }}
@@ -80,4 +88,4 @@ const SelectablePill = () => {
   );
 };
 
-export default SelectablePill;
+export default SelectableAndRemovablePill;

@@ -5,12 +5,15 @@ const BasicRemovablePill = () => {
   const pills = [
     {
       label: 'asthma',
+      id: 'terra-removable-pill-asthma',
     },
     {
       label: 'bronchitis',
+      id: 'terra-removable-pill-bronchitis',
     },
     {
       label: 'fibro',
+      id: 'terra-removable-pill-fibro',
     },
   ];
   const [pillsState, setPillsState] = useState(pills);
@@ -23,12 +26,14 @@ const BasicRemovablePill = () => {
 
   return (
     <Pills
-      ariaLabel="Example of a Removable Pill"
+      ariaLabel="Example of Removable Pills"
       onRemove={handleOnRemove}
     >
       {pillsState.map((pill, index) => (
         <Pills.Pill
+          key={pill.id}
           label={pill.label}
+          id={pill.id}
           pillKey={pill.label}
           isRemovable
           metaData={{ index }}

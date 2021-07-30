@@ -1,4 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+  useEffect, useLayoutEffect, useRef, useState,
+} from 'react';
+import {
+  KEY_SPACE,
+  KEY_RETURN,
+  KEY_DELETE,
+  KEY_BACK_SPACE,
+} from 'keycode-js';
 import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -12,69 +20,79 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-    * The html `id` attribute for the pill.
+   * Sets the aria-expanded attribute to true when using a popup via 'onSelect' and the popup is visible. Only applies when used along with the 'onSelect' prop.
+   */
+  ariaExpanded: PropTypes.bool,
+  /**
+    * The html 'id' attribute for the pill, needed for proper interactability (Required must be unique)
     */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   /**
     * @private
     * The intl object to be injected for translations.
     */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
-    * Whether or not the pill is removable
+   * @private
+   * Whethe or not the pill is a basicPill(used for auto detecting truncation and showing internal pop-up)
+   */
+  isBasicPill: PropTypes.bool,
+  /**
+    * Adds the ability for a pill to be removable.
     */
   isRemovable: PropTypes.bool,
-  /**
-   * Whether or not the pill is selectable
-   */
-  isSelectable: PropTypes.bool,
   /**
     * The label text for the pill. (Required)
     */
   label: PropTypes.string.isRequired,
   /**
-    * Metadata for the pill
+    * Object returned along with the pillKey in the onRemove and onSelect(<SelectablePills />) callback.
     */
   metaData: PropTypes.object,
   /**
+    * @private
     * A callback function to execute when the pill is removed. Returns pillKey, metadata.
     */
   onRemove: PropTypes.func,
   /**
-   * A callback function to execute when the pill is selected. Returns pillKey, metadata.
+   * @private
+   * A callback function to execute when the pill is selected. Returns pillKey, metadata. Only applicable for <SelectablePills />
    *
    * ![IMPORTANT](https://badgen.net/badge/UX/Design-Standards/blue) Intended to only be used to disclose a popup.
    */
   onSelect: PropTypes.func,
   /**
-   * Key to uniquely identify pill.
+   * To identify which pill is being removed.
    */
   pillKey: PropTypes.string,
   /**
-   * Callback to expose pill element's ref for popup placement.
+   * Callback to expose pill element's ref for popup placement. Only applicable for <SelectablePills />
    */
   refCallback: PropTypes.func,
   /**
+   * @private
    * Tooltip to display if the pill label does not have enough space to display and will show as truncated, to be used
-   * in addition to a popup. Only applies when used along with the 'onSelect' prop.
+   * in addition to a popup.
    */
   title: PropTypes.string,
 };
 
 const defaultProps = {
-  id: undefined,
+  ariaExpanded: undefined,
   onRemove: undefined,
+  pillKey: undefined,
   refCallback: undefined,
   title: undefined,
 };
 
 const Pill = (props) => {
   const {
+    ariaExpanded,
     label,
     id,
     intl,
     isRemovable,
-    isSelectable,
+    isBasicPill,
     metaData,
     onRemove,
     onSelect,
@@ -86,31 +104,40 @@ const Pill = (props) => {
 
   const theme = React.useContext(ThemeContext);
   const pillRef = useRef();
-  const [isEllipsis, setIsEllipsis] = useState(false);
+  const [isTruncated, setIsTruncated] = useState(false);
   const [open, setPopupOpen] = useState(false);
 
-  useEffect(() => {
-    if (pillRef.current && pillRef.current.firstChild.offsetWidth < pillRef.current.firstChild.scrollWidth) {
-      setIsEllipsis(true);
+  useLayoutEffect(() => {
+    if (isBasicPill && pillRef.current && pillRef.current.firstChild.offsetWidth < pillRef.current.firstChild.scrollWidth) {
+      setIsTruncated(true);
+      pillRef.current.setAttribute('aria-haspopup', true);
     }
-  }, []);
+  }, [isBasicPill, isTruncated]);
 
   useEffect(() => {
-    if (refCallback) {
+    // refCallback not applicable for Pills(Basic Pills) lp052179
+    if (refCallback && !isBasicPill) {
       refCallback(pillRef.current);
     }
-  }, [refCallback]);
+  }, [isBasicPill, refCallback]);
+
+  useEffect(() => {
+    if (isRemovable && pillRef.current && onRemove) {
+      pillRef.current.setAttribute('data-terra-pill-removable', true);
+    }
+  }, [isRemovable, onRemove]);
 
   const handleOnRemove = () => {
     onRemove(pillKey, metaData);
   };
 
-  const handleOnClick = () => {
-    if (isSelectable && isEllipsis) {
+  const handleOnClick = (event) => {
+    if (isBasicPill && isTruncated) {
       setPopupOpen(true);
+      pillRef.current.setAttribute('aria-expanded', true);
     }
     if (onSelect) {
-      onSelect(pillKey, metaData);
+      onSelect(pillKey, metaData, event);
     }
   };
 
@@ -118,31 +145,73 @@ const Pill = (props) => {
     setPopupOpen(false);
   };
 
+  const handleOnKeyDown = (event) => {
+    pillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'true');
+    if ((event.keyCode === KEY_RETURN || event.keyCode === KEY_SPACE)) {
+      event.preventDefault();
+      if (isBasicPill && isTruncated) {
+        setPopupOpen(true);
+      }
+      if (onSelect) {
+        onSelect(pillKey, metaData, event);
+      }
+    } else if ((event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE)) {
+      event.preventDefault();
+      if (onRemove && isRemovable) {
+        onRemove(pillKey, metaData);
+      }
+    }
+  };
+
+  const handleOnMouseDown = () => {
+    pillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'false');
+  };
+
+  const handleOnBlur = () => {
+    if (onSelect || isTruncated) {
+      pillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'true');
+    }
+  };
+
   const getPillRef = () => pillRef.current;
 
   const pillProps = {};
-  if (onSelect || onRemove || isSelectable) {
+  if (onSelect || isRemovable || (isBasicPill && isTruncated)) {
     pillProps.tabIndex = '0';
     pillProps.role = 'button';
+    pillProps.onKeyDown = handleOnKeyDown;
+    pillProps.onMouseDown = handleOnMouseDown;
+    pillProps.onBlur = handleOnBlur;
   }
 
   const pillButtonProps = {};
-  pillButtonProps.title = title;
+  pillButtonProps.title = isTruncated ? label : '';
 
-  if (onSelect || isSelectable) {
+  if (onSelect || isBasicPill) {
     pillButtonProps.onClick = handleOnClick;
   }
 
   const removeButtonProps = {};
-  if (onRemove) {
+  if (onRemove && isRemovable) {
     removeButtonProps.onClick = handleOnRemove;
   }
 
-  const pillInteractionHint = 'Default';
+  let pillInteractionHint;
+  if (onSelect && (onRemove && isRemovable)) {
+    pillInteractionHint = intl.formatMessage({ id: 'Terra.pills.pillHint.selectableAndRemovable' });
+  } else if (onSelect) {
+    pillInteractionHint = intl.formatMessage({ id: 'Terra.pills.pillHint.selectable' });
+  } else if (onRemove && isRemovable) {
+    pillInteractionHint = intl.formatMessage({ id: 'Terra.pills.pillHint.removable' });
+  }
 
   const pillClassNames = classNames(
     cx([
       'pill-container',
+      { 'is-focusable': !!onSelect || isTruncated || isRemovable },
+      { 'is-selectable': !!onSelect || (isBasicPill && isTruncated) },
+      { 'is-removable': isRemovable },
+      { 'is-selectable-and-removable': (!!onSelect && isRemovable) || (isRemovable && isTruncated) },
       theme.className,
     ]),
     customProps.className,
@@ -150,9 +219,9 @@ const Pill = (props) => {
 
   const pillLabelClassNames = cx([
     'pill-label',
-    { 'is-selectable': !!onSelect || (isSelectable && isEllipsis) },
-    { 'is-removable': !!onRemove },
-    { 'is-selectable-and-removable': (!!onSelect || (isSelectable && isEllipsis)) && !!onRemove },
+    { 'is-selectable': !!onSelect || (isBasicPill && isTruncated) },
+    { 'is-removable': isRemovable },
+    { 'is-selectable-and-removable': (!!onSelect && isRemovable) || (isRemovable && isTruncated) },
   ]);
 
   const removeButtonClassNames = cx([
@@ -160,7 +229,7 @@ const Pill = (props) => {
   ]);
 
   const popupConent = () => {
-    if (isEllipsis && isSelectable) {
+    if (isTruncated && isBasicPill) {
       return (
         <Popup
           isOpen={open}
@@ -177,12 +246,15 @@ const Pill = (props) => {
 
   return (
     <div
-      {...customProps}
       {...pillProps}
+      // aria-haspopup={!!onSelect || isTruncated ? true : undefined}
+      aria-expanded={!onSelect ? undefined : ariaExpanded}
+      className={pillClassNames}
       id={id}
       ref={pillRef}
       data-terra-pills-show-focus-styles
-      className={pillClassNames}
+      data-terra-pill
+      {...customProps}
     >
       <div
         {...pillButtonProps}

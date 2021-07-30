@@ -3,8 +3,8 @@ import Pills from 'terra-pills/lib/index';
 
 const BasicPillTest = () => (
   <div>
-    <Pills>
-      <Pills.Pill pillKey="Label" label="Label" />
+    <Pills ariaLabel="Single Pill Example">
+      <Pills.Pill id="Label" pillKey="Label" label="Label" />
     </Pills>
   </div>
 );

@@ -41,6 +41,16 @@
       }
     }
 
+    &.is-removable {
+      &:hover {
+        border-color: var(--terra-pills-pill-container-removable-hover-border-color, #868a8c);
+      }
+  
+      &:active {
+        border-color: var(--terra-pills-pill-container-removable-active-border-color, #868a8c);
+      }
+    }
+
     &.is-selectable-and-removable {
       &:hover {
         border-color: var(--terra-pills-pill-container-selectable-removable-hover-border-color, #868a8c);
@@ -165,7 +175,7 @@
     vertical-align: top;
 
 
-    &[data-terra-pillList-show-focus-styles='true']:focus {
+    &[data-terra-rollup-pill-show-focus-styles='true']:focus {
       border-color: var(--terra-pills-roll-up-pill-focus-border-color, #868a8c);
       border-width: var(--terra-pills-roll-up-pill-focus-border-width, 1px);
       box-shadow: var(--terra-pills-roll-up-pill-focus-box-shadow, none);

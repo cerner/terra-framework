@@ -1,9 +1,13 @@
 import React, { useRef, useState } from 'react';
 import Popup from 'terra-popup';
+import classNames from 'classnames/bind';
 import { SelectablePills } from 'terra-pills/lib/index';
 import Spacer from 'terra-spacer';
+import styles from '../PillListTestCommon.module.scss';
 
-const SelectablePill = () => {
+const cx = classNames.bind(styles);
+
+const CollapsibleSelectablePills = () => {
   const pillsData = [
     {
       label: 'asthma',
@@ -20,10 +24,22 @@ const SelectablePill = () => {
       ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-fibro',
     },
+    {
+      label: 'fibro1',
+      ref: useRef(),
+      id: 'terra-pills-example-disclosure-removable-pill-fibro1',
+    },
   ];
-  const [pillsState] = useState(pillsData);
+  const [pillsState, setPillsState] = useState(pillsData);
   const [openPillIndex, setOpenPillIndex] = useState(undefined);
   const [isOpen, setIsOpen] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
+
+  const handleOnRemove = (pillKey, metaData) => {
+    const pillsArray = pillsState;
+    pillsArray.splice(metaData.index, 1);
+    setPillsState([...pillsArray]);
+  };
 
   const handleOnSelect = (pillKey, metaData) => {
     setOpenPillIndex(metaData.index);
@@ -58,9 +74,14 @@ const SelectablePill = () => {
 
   return (
     <>
+      <p>In-consisten focus when pills are removed if there is a roll up.</p>
       <SelectablePills
-        ariaLabel="Example of a Selectable Pill with a Popup"
+        ariaLabel="Example of a Selectable and Removable Pill with a Popup"
         onSelect={handleOnSelect}
+        onRemove={handleOnRemove}
+        isCollapsed={isCollapsed}
+        onSelectRollUp={() => setIsCollapsed(false)}
+        className={cx(['container', 'show-border', 'width-200'])}
       >
         {pillsState.map((pill, index) => (
           <SelectablePills.Pill
@@ -68,6 +89,7 @@ const SelectablePill = () => {
             id={pill.id}
             key={pill.id}
             pillKey={pill.label}
+            isRemovable
             metaData={{ index }}
             // eslint-disable-next-line no-param-reassign
             refCallback={(node) => { pill.ref.current = node; }}
@@ -76,8 +98,9 @@ const SelectablePill = () => {
         ))}
       </SelectablePills>
       {renderPopup()}
+      <button type="button" onClick={() => setIsCollapsed(!isCollapsed)}> Click </button>
     </>
   );
 };
 
-export default SelectablePill;
+export default CollapsibleSelectablePills;
