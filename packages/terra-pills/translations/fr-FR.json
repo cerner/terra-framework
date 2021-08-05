@@ -1,7 +1,7 @@
 {
-  "Terra.pills.pillHint.removable": "",
-  "Terra.pills.pillHint.selectable": "",
-  "Terra.pills.pillHint.selectableAndRemovable": "",
-  "Terra.pills.pillListHint": "{numberOfPills}",
-  "Terra.pills.rollupPillLabel": "{pillsNotVisibleCount}"
+  "Terra.pills.pillHint.removable": "Vous pouvez supprimer la gélule avec la touche Supprimer ou Retour arrière.",
+  "Terra.pills.pillHint.selectable": "Vous pouvez sélectionner la gélule avec la barre d'espace ou la touche Entrée.",
+  "Terra.pills.pillHint.selectableAndRemovable": "Vous pouvez sélectionner la gélule avec la barre d'espace ou la touche Entrée et la supprimer avec la touche Supprimer ou Retour arrière.",
+  "Terra.pills.pillListHint": "Contient {numberOfPills} gélule(s)",
+  "Terra.pills.rollupPillLabel": "{pillsNotVisibleCount} de plus"
 }
