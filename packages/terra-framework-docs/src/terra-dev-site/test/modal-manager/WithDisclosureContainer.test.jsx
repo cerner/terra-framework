@@ -1,19 +1,26 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import ModalManager from 'terra-modal-manager';
 import DisclosureComponent from './DisclosureComponent';
-import ModalManager from '../../../ModalManager';
 import styles from './ModalManagerCommon.test.module.scss';
 
 const cx = classNames.bind(styles);
 
-const ModalManagerWithDisclosureAccessory = () => (
+const DisclosureContainer = (wrappedContent) => (
+  <div data-disclosure-container className={cx('disclosure-container')}>
+    I am wrapping the content with a purple background!
+    {wrappedContent}
+  </div>
+);
+
+const ModalManagerWithDisclosureContainer = () => (
   <div role="main" className={cx('content-wrapper')}>
     <ModalManager
-      disclosureAccessory={<div className={cx('disclosure-accessory')}>Disclosure Accessory</div>}
+      withDisclosureContainer={DisclosureContainer}
     >
       <DisclosureComponent identifier="root-component" disclosureType="modal" renderHeaderAdapter />
     </ModalManager>
   </div>
 );
 
-export default ModalManagerWithDisclosureAccessory;
+export default ModalManagerWithDisclosureContainer;
