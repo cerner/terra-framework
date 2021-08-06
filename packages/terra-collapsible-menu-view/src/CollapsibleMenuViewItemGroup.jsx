@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import Button from 'terra-button';
 import ButtonGroup from 'terra-button-group';
 import Menu from './_CollapsibleMenu';
 import styles from './CollapsibleMenuView.module.scss';
@@ -20,6 +21,11 @@ const propTypes = {
    * A list of keys of the CollapsibleMenuView.Items that should be selected.
    */
   selectedKeys: PropTypes.arrayOf(PropTypes.string),
+
+  /**
+   * Sets the button variant. One of neutral, emphasis, ghost, de-emphasis, action or utility.
+   */
+  variant: PropTypes.oneOf([Button.Opts.Variants.NEUTRAL, Button.Opts.Variants.EMPHASIS, Button.Opts.Variants.GHOST, Button.Opts.Variants['DE-EMPHASIS'], Button.Opts.Variants.ACTION, Button.Opts.Variants.UTILITY]),
 };
 
 const defaultProps = {
@@ -62,6 +68,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
       children,
       onChange,
       selectedKeys,
+      variant,
       ...customProps
     } = this.props;
 

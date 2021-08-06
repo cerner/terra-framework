@@ -1,8 +1,10 @@
 import React from 'react';
-import IconTable from 'terra-icon/lib/icon/IconTable';
-import IconFlowsheet from 'terra-icon/lib/icon/IconFlowsheet';
-import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
+import IconAdd from 'terra-icon/lib/icon/IconAdd';
+import IconCalculator from 'terra-icon/lib/icon/IconCalculator';
+import IconComment from 'terra-icon/lib/icon/IconComment';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
+import Button from 'terra-button';
+import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
 class AlwaysCollapsedMenuItemsDemo extends React.Component {
   constructor(props) {
@@ -20,41 +22,39 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
   render() {
     return (
       <CollapsibleMenuView
-        alwaysCollapsedMenuItems={[
-          <CollapsibleMenuView.Item text="Always Collapsed Button 1" key="collapsedButton1" />,
-          <CollapsibleMenuView.Item text="Always Collapsed Button 2" key="collapsedButton2" />,
-          <CollapsibleMenuView.Item text="Always Collapsed Button 3" key="collapsedButton3" />,
-        ]}
+        menuItemButtonVariant={Button.Opts.Variants['DE-EMPHASIS']}
+        menuItemDropdownButtonIcon={<IconCaretDown />}
+        horizontalAlign="left"
+        menuItemDropdownButtonVariant={Button.Opts.Variants['DE-EMPHASIS']}
       >
-        <CollapsibleMenuView.Item text="Collapsible Button 1" key="button1" />
-        <CollapsibleMenuView.Item text="Collapsible Button 2" key="button2" />
-        <CollapsibleMenuView.Divider key="divider1" />
-        <CollapsibleMenuView.ItemGroup key="ViewTypeSelection" selectedKeys={[this.state.displayType]} onChange={this.handleDisplayTypeChange}>
-          <CollapsibleMenuView.Item
-            icon={<IconTable />}
-            text="Table View"
-            key="tableView"
-            isIconOnly
-            shouldCloseOnClick={false}
-            isSelected={this.state.displayType === 'tableView'}
-          />
-          <CollapsibleMenuView.Item
-            icon={<IconFlowsheet />}
-            text="Expanded View"
-            key="expandedView"
-            isIconOnly
-            shouldCloseOnClick={false}
-            isSelected={this.state.displayType === 'expandedView'}
-          />
-          <CollapsibleMenuView.Item
-            icon={<IconVisualization />}
-            text="Trending View"
-            key="trendingView"
-            isIconOnly
-            shouldCloseOnClick={false}
-            isSelected={this.state.displayType === 'trendingView'}
-          />
-        </CollapsibleMenuView.ItemGroup>
+        <CollapsibleMenuView.Item
+          text="Ingredients"
+          className="ButtonA"
+          key="buttonA"
+        />
+        <CollapsibleMenuView.Item
+          icon={<IconComment />}
+          text="Comments"
+          className="ButtonB"
+          key="buttonB"
+        />
+        <CollapsibleMenuView.Item
+          icon={<IconCalculator />}
+          text="Dose Calculator"
+          className="Button1"
+          key="button1"
+        />
+        <CollapsibleMenuView.Item
+          icon={<IconAdd />}
+          text="Add Diagnosis"
+          className="IconOnly"
+          key="button3"
+        />
+        <CollapsibleMenuView.Item
+          text="Sliding Scale"
+          className="Button2"
+          key="button2"
+        />
       </CollapsibleMenuView>
     );
   }

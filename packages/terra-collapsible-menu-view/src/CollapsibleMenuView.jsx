@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
+import Button from 'terra-button';
 import CollapsibleMenuViewItem from './CollapsibleMenuViewItem';
 import CollapsibleMenuViewItemGroup from './CollapsibleMenuViewItemGroup';
 import CollapsibleMenuViewToggle from './CollapsibleMenuViewToggle';
@@ -40,10 +41,40 @@ const propTypes = {
    *  Puts items under the collapsed (more) menu. More button will be always shown if at least one item is populated here.
    */
   alwaysCollapsedMenuItems: PropTypes.arrayOf(PropTypes.element),
+
+  /**
+   * Sets the button variant. One of neutral, emphasis, ghost, de-emphasis, action or utility.
+   */
+  menuItemButtonVariant: PropTypes.oneOf([Button.Opts.Variants.NEUTRAL, Button.Opts.Variants.EMPHASIS, Button.Opts.Variants.GHOST, Button.Opts.Variants['DE-EMPHASIS'], Button.Opts.Variants.ACTION, Button.Opts.Variants.UTILITY]),
+
+  /**
+   * Whether or not the dropdown button should only display as an icon.
+   */
+  menuItemDropdownButtonIsIconOnly: PropTypes.bool,
+
+  /**
+  * An optional icon. Nested inline with the text when provided to be displayed for the dropdown button
+  */
+  menuItemDropdownButtonIcon: PropTypes.element,
+
+  /**
+   * Sets the button variant for the dropdown button. One of neutral, emphasis, ghost, de-emphasis, action or utility.
+   */
+  menuItemDropdownButtonVariant: PropTypes.oneOf([Button.Opts.Variants.NEUTRAL, Button.Opts.Variants.EMPHASIS, Button.Opts.Variants.GHOST, Button.Opts.Variants['DE-EMPHASIS'], Button.Opts.Variants.ACTION, Button.Opts.Variants.UTILITY]),
+
+  /**
+   * Whether or not the alignment of the component will be justified to the right or left
+   */
+  horizontalAlign: PropTypes.oneOf(['right', 'left']),
 };
 
 const defaultProps = {
   alwaysCollapsedMenuItems: [],
+  menuItemButtonVariant: Button.Opts.Variants.NEUTRAL,
+  menuItemDropdownButtonIsIconOnly: false,
+  menuItemDropdownButtonIcon: <span className={cx('menu-button-icon')} />,
+  horizontalAlign: 'right',
+  menuItemDropdownButtonVariant: Button.Opts.Variants.UTILITY,
 };
 
 const prepopulatedBaseDivider = <CollapsibleMenuViewDivider key="prepopulatedBaseDivider" />;
@@ -143,7 +174,17 @@ class CollapsibleMenuView extends React.Component {
 
   render() {
     const {
-      children, boundingRef, menuWidth, intl, alwaysCollapsedMenuItems, ...customProps
+      children,
+      boundingRef,
+      menuWidth,
+      intl,
+      alwaysCollapsedMenuItems,
+      menuItemButtonVariant,
+      menuItemDropdownButtonIsIconOnly,
+      menuItemDropdownButtonIcon,
+      horizontalAlign,
+      menuItemDropdownButtonVariant,
+      ...customProps
     } = this.props;
     const theme = this.context;
 
@@ -151,6 +192,8 @@ class CollapsibleMenuView extends React.Component {
       'collapsible-menu-view',
       { 'is-calculating': this.isCalculating },
       theme.className,
+      { 'collapsible-menu-view-flex-end': horizontalAlign === 'right' },
+      { 'collapsible-menu-view-flex-start': horizontalAlign === 'left' },
     ),
     customProps.className);
     const menuButtonClassName = cx(
@@ -167,19 +210,24 @@ class CollapsibleMenuView extends React.Component {
         : visibleChildren.splice(this.hiddenStartIndex).concat(hiddenChildren);
     }
 
+    const visibleChildrenWithProps = React.Children.map(visibleChildren, function (child) {
+      return React.cloneElement(child, { variant: menuItemButtonVariant });
+    });
+
     return (
       <div {...customProps} className={collapsibleMenuViewClassName} ref={this.setContainer}>
-        {visibleChildren}
+        {visibleChildrenWithProps}
         <div className={menuButtonClassName} ref={this.setMenuButton}>
           <CollapsibleMenuViewItem
             data-collapsible-menu-toggle
-            icon={<span className={cx('menu-button-icon')} />}
+            icon={menuItemDropdownButtonIcon}
             subMenuItems={hiddenChildren}
             boundingRef={boundingRef}
             menuWidth={menuWidth}
-            isIconOnly
+            isIconOnly={menuItemDropdownButtonIsIconOnly}
+            isReversed={(horizontalAlign === 'left')}
             text={intl.formatMessage({ id: 'Terra.collapsibleMenuView.more' })}
-            variant="utility"
+            variant={menuItemDropdownButtonVariant}
           />
         </div>
       </div>

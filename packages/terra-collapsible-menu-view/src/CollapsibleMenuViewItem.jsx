@@ -64,6 +64,11 @@ const propTypes = {
    * 160, 240, 320, 640, 960, 1280, 1760, or auto
    */
   menuWidth: PropTypes.oneOf(['160', '240', '320', '640', '960', '1280', '1760', 'auto']),
+
+  /**
+   * Sets the button variant. One of neutral, emphasis, ghost, de-emphasis, action or utility.
+   */
+  variant: PropTypes.oneOf([Button.Opts.Variants.NEUTRAL, Button.Opts.Variants.EMPHASIS, Button.Opts.Variants.GHOST, Button.Opts.Variants['DE-EMPHASIS'], Button.Opts.Variants.ACTION, Button.Opts.Variants.UTILITY]),
 };
 
 const contextTypes = {
@@ -76,6 +81,7 @@ const defaultProps = {
   isReversed: false,
   shouldCloseOnClick: true,
   isIconOnly: false,
+  variant: Button.Opts.Variants.NEUTRAL,
 };
 
 class CollapsibleMenuViewItem extends React.Component {
@@ -105,6 +111,7 @@ class CollapsibleMenuViewItem extends React.Component {
       shouldCloseOnClick,
       boundingRef,
       menuWidth,
+      variant,
       ...customProps
     } = this.props;
 
@@ -144,6 +151,7 @@ class CollapsibleMenuViewItem extends React.Component {
               isReversed={isReversed}
               isDisabled={isDisabled}
               isIconOnly={isIconOnly}
+              variant={variant}
             />
           )}
         >
@@ -160,6 +168,7 @@ class CollapsibleMenuViewItem extends React.Component {
             isReversed={isReversed}
             isDisabled={isDisabled}
             isIconOnly={isIconOnly}
+            variant={variant}
           />
         </div>
       );
