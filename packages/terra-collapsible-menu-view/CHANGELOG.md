@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `menuItemButtonVariant`, `menuItemDropdownButtonIsIconOnly`, `menuItemDropdownButtonIcon`, `menuItemDropdownButtonVariant`, and `horizontalAlign` attributes to `CollapsibleMenuView` which can be used to provide additional styling for the collapsible menu view.  Attribute `menuItemButtonVariant` will allow you to pass in the variant style from terra-button to apply to the menu buttons.  Attribute `menuItemDropdownButtonIsIconOnly` will allow you to pass in whethere the dropdown button should be an icon only button or a button with an icon and text of `More`.  Attribute `menuItemDropdownButtonIcon` will allow you to pass in any type of icon you want to use for the dropdown button.  Attribute `menuItemDropdownButtonVariant` will allow you to pass in the variant style from terra-button to apply to the dropdown button that contains the menu for the collapsed items.  Attribute `horizontalAlign` will allow you to right or left align the collapsible button view.
+
 ## 6.55.0 - (July 21, 2021)
 
 * Changed
