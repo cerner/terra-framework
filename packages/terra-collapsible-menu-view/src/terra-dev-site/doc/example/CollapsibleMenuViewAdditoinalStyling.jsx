@@ -7,13 +7,25 @@ import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import IconExpandMore from 'terra-icon/lib/icon/IconExpandMore';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
+import Button from 'terra-button';
 
-class CollapsibleMenuViewCustomIcon extends React.Component {
+class CollapsibleMenuViewAdditoinalStyling extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { icon: <IconCaretDown />, iconValue: 'caretDown', iconOnly: true, iconOnlyValue: 'true' };
+    this.state = {
+      icon: <IconCaretDown />,
+      iconValue: 'caretDown',
+      iconOnly: false,
+      iconOnlyValue: 'false',
+      variant: Button.Opts.Variants.NEUTRAL,
+      variantDropdown: Button.Opts.Variants.NEUTRAL,
+      alignment: 'right',
+    };
     this.handleOnSelectIcon = this.handleOnSelectIcon.bind(this);
     this.handleOnSelectIconOnly = this.handleOnSelectIconOnly.bind(this);
+    this.handleOnSelectVariantDropdown = this.handleOnSelectVariantDropdown.bind(this);
+    this.handleOnSelectVariant = this.handleOnSelectVariant.bind(this);
+    this.handleOnSelectAlignment = this.handleOnSelectAlignment.bind(this);
   }
 
   handleOnSelectIcon = (event) => {
@@ -40,12 +52,27 @@ class CollapsibleMenuViewCustomIcon extends React.Component {
     this.setState({ iconOnly: isIconOnly, iconOnlyValue: event.target.value });
   }
 
+  handleOnSelectVariantDropdown = (event) => {
+    this.setState({ variantDropdown: event.target.value });
+  }
+
+  handleOnSelectVariant = (event) => {
+    this.setState({ variant: event.target.value });
+  }
+
+  handleOnSelectAlignment = (event) => {
+    this.setState({ alignment: event.target.value });
+  }
+
   render() {
     return (
       <div>
         <CollapsibleMenuView
           menuItemDropdownButtonIcon={this.state.icon}
           menuItemDropdownButtonIsIconOnly={this.state.iconOnly}
+          menuItemDropdownButtonVariant={this.state.variantDropdown}
+          menuItemButtonVariant={this.state.variant}
+          horizontalAlign={this.state.alignment}
         >
           <CollapsibleMenuView.Item
             text="Ingredients"
@@ -76,6 +103,53 @@ class CollapsibleMenuViewCustomIcon extends React.Component {
             key="button2"
           />
         </CollapsibleMenuView>
+        <fieldset>
+          <legend>Change horizontalAlign</legend>
+          <select
+            aria-label="changeAlignment"
+            id="collapsibleMenuViewDifferentAlignment"
+            name="collapsibleMenuViewDifferentAlignment"
+            value={this.state.alignment}
+            onChange={this.handleOnSelectAlignment}
+          >
+            <option value="right">Right</option>
+            <option value="left">Left</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Change menuItemButtonVariant</legend>
+          <select
+            aria-label="changeVariant"
+            id="collapsibleMenuViewDifferentVariant"
+            name="collapsibleMenuViewDifferentVariant"
+            value={this.state.variant}
+            onChange={this.handleOnSelectVariant}
+          >
+            <option value={Button.Opts.Variants.NEUTRAL}>Neutral</option>
+            <option value={Button.Opts.Variants.EMPHASIS}>Emphasis</option>
+            <option value={Button.Opts.Variants.GHOST}>Ghost</option>
+            <option value={Button.Opts.Variants['DE-EMPHASIS']}>De-Emphasis</option>
+            <option value={Button.Opts.Variants.ACTION}>Action</option>
+            <option value={Button.Opts.Variants.UTILITY}>Utility</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Change menuItemDropdownButtonVariant</legend>
+          <select
+            aria-label="changeVariantMenuItemDropdownButtonVariantCustomIcon"
+            id="changeVariantMenuItemDropdownButtonVariantCustomIcon"
+            name="changeVariantMenuItemDropdownButtonVariantCustomIcon"
+            value={this.state.variantDropdown}
+            onChange={this.handleOnSelectVariantDropdown}
+          >
+            <option value={Button.Opts.Variants.NEUTRAL}>Neutral</option>
+            <option value={Button.Opts.Variants.EMPHASIS}>Emphasis</option>
+            <option value={Button.Opts.Variants.GHOST}>Ghost</option>
+            <option value={Button.Opts.Variants['DE-EMPHASIS']}>De-Emphasis</option>
+            <option value={Button.Opts.Variants.ACTION}>Action</option>
+            <option value={Button.Opts.Variants.UTILITY}>Utility</option>
+          </select>
+        </fieldset>
         <fieldset>
           <legend>Change menuItemDropdownButtonIcon</legend>
           <select
@@ -109,4 +183,4 @@ class CollapsibleMenuViewCustomIcon extends React.Component {
   }
 }
 
-export default CollapsibleMenuViewCustomIcon;
+export default CollapsibleMenuViewAdditoinalStyling;

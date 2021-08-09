@@ -71,7 +71,7 @@ const propTypes = {
 const defaultProps = {
   alwaysCollapsedMenuItems: [],
   menuItemButtonVariant: Button.Opts.Variants.NEUTRAL,
-  menuItemDropdownButtonIsIconOnly: true,
+  menuItemDropdownButtonIsIconOnly: false,
   menuItemDropdownButtonIcon: <span className={cx('menu-button-icon')} />,
   horizontalAlign: 'right',
   menuItemDropdownButtonVariant: Button.Opts.Variants.UTILITY,
@@ -224,8 +224,8 @@ class CollapsibleMenuView extends React.Component {
             subMenuItems={hiddenChildren}
             boundingRef={boundingRef}
             menuWidth={menuWidth}
-            isIconOnly={(menuItemDropdownButtonIsIconOnly === true)}
-            isReversed={(horizontalAlign === 'left')}
+            isIconOnly={menuItemDropdownButtonIsIconOnly}
+            isReversed
             text={intl.formatMessage({ id: 'Terra.collapsibleMenuView.more' })}
             variant={menuItemDropdownButtonVariant}
           />
