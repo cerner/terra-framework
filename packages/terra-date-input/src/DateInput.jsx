@@ -150,6 +150,8 @@ class DateInput extends React.Component {
     this.dayRender = this.dayRender.bind(this);
     this.yearRender = this.yearRender.bind(this);
 
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+
     this.handleMonthClick = this.handleMonthClick.bind(this);
 
     this.state = {
@@ -265,6 +267,17 @@ class DateInput extends React.Component {
   }
 
   /**
+   * Takes a key press from the day and year input, and processes it based on the value of the keycode
+   * Prevents non-numeric characters from being entered in Safari browser.
+   * @param {Object} event Event object generated from the event delegation.
+   */
+  handleKeyPress = event => {
+    const keyCode = (typeof event.which === 'undefined') ? event.keyCode : event.which;
+    const input = String.fromCharCode(keyCode);
+    if (!input.match(/^[0-9]+$/) && !event.metaKey) event.preventDefault();
+  }
+
+  /**
    * Takes a key input from the day input, and processes it based on the value of the keycode.
    * @param {Object} event Event object generated from the event delegation.
    */
@@ -272,18 +285,6 @@ class DateInput extends React.Component {
     let stateValue = this.state.day || '';
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
-
-    // prevent e and . characters from being entered into number input on keyDown
-    if (event.keyCode === KeyCode.KEY_E || event.keyCode === KeyCode.KEY_PERIOD) {
-      event.preventDefault();
-      return;
-    }
-
-    // prevent + and - characters from being entered into number input on keyDown
-    if (event.keyCode === KeyCode.KEY_EQUALS || event.keyCode === KeyCode.KEY_DASH) {
-      event.preventDefault();
-      return;
-    }
 
     if (event.keyCode === KeyCode.KEY_UP) {
       event.preventDefault();
@@ -314,18 +315,6 @@ class DateInput extends React.Component {
     let stateValue = this.state.year || '';
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
-
-    // prevent e and . characters from being entered into number input on keyDown
-    if (event.keyCode === KeyCode.KEY_E || event.keyCode === KeyCode.KEY_PERIOD) {
-      event.preventDefault();
-      return;
-    }
-
-    // prevent + and - characters from being entered into number input on keyDown
-    if (event.keyCode === KeyCode.KEY_EQUALS || event.keyCode === KeyCode.KEY_DASH) {
-      event.preventDefault();
-      return;
-    }
 
     if (event.keyCode === KeyCode.KEY_UP) {
       event.preventDefault();
@@ -558,6 +547,7 @@ class DateInput extends React.Component {
         maxLength="2"
         onChange={this.handleDayChange}
         onKeyDown={this.handleDayKeyDown}
+        onKeyPress={this.handleKeyPress}
         onFocus={this.handleDayFocus}
         onBlur={this.handleDayBlur}
         size="2"
@@ -599,6 +589,7 @@ class DateInput extends React.Component {
         maxLength="4"
         onChange={this.handleYearChange}
         onKeyDown={this.handleYearKeyDown}
+        onKeyPress={this.handleKeyPress}
         onFocus={this.handleYearFocus}
         onBlur={this.handleYearBlur}
         size="4"
