@@ -1,8 +1,5 @@
 import React from 'react';
-import IconAdd from 'terra-icon/lib/icon/IconAdd';
-import IconCalculator from 'terra-icon/lib/icon/IconCalculator';
-import IconComment from 'terra-icon/lib/icon/IconComment';
-import Button from 'terra-button';
+import IconSend from 'terra-icon/lib/icon/IconSend';
 
 import CollapsibleMenuView from '../../../CollapsibleMenuView';
 
@@ -12,17 +9,18 @@ const CollapsibleMenuViewDemo = () => (
     <CollapsibleMenuView.Item text="Collapsed Button 2" key="collapsedButton2" />,
     <CollapsibleMenuView.Item text="Collapsed Button 3" key="collapsedButton3" />]}
   >
-    <CollapsibleMenuView.Item text="Ingredients" className="ButtonA" key="buttonA" variant={Button.Opts.Variants['DE-EMPHASIS']} />
-    <CollapsibleMenuView.Item icon={<IconComment />} text="Comments" className="ButtonB" key="buttonB" variant={Button.Opts.Variants['DE-EMPHASIS']} />
-    <CollapsibleMenuView.Item icon={<IconCalculator />} text="Dose Calculator" className="Button1" key="button1" variant={Button.Opts.Variants['DE-EMPHASIS']} />
+    <CollapsibleMenuView.Item text="Button A" className="ButtonA" key="buttonA" />
+    <CollapsibleMenuView.Item text="Button B" className="ButtonB" key="buttonB" />
+    <CollapsibleMenuView.Divider key="Divider4" />
+    <CollapsibleMenuView.Item text="Button 1" className="Button1" key="button1" />
+    <CollapsibleMenuView.Item text="Button 2" className="Button2" key="button2" />
     <CollapsibleMenuView.Item
-      icon={<IconAdd />}
-      text="Add Diagnosis"
+      icon={<IconSend />}
+      text="Button3"
       className="IconOnly"
       key="button3"
-      variant={Button.Opts.Variants['DE-EMPHASIS']}
+      isIconOnly
     />
-    <CollapsibleMenuView.Item text="Sliding Scale" className="Button2" key="button2" variant={Button.Opts.Variants['DE-EMPHASIS']} />
   </CollapsibleMenuView>
 );
 

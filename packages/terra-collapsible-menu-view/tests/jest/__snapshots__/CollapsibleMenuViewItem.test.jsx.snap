@@ -269,6 +269,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
         isSelected={false}
         shouldCloseOnClick={true}
         text="Menu Item"
+        variant="neutral"
       />,
     ]
   }
@@ -659,6 +660,7 @@ exports[`CollapsibleMenuViewItem should render a menu when subMenuItems are give
     key="1"
     shouldCloseOnClick={true}
     text="Menu Item"
+    variant="neutral"
   />
 </CollapsibleMenu>
 `;
