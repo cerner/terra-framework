@@ -210,9 +210,7 @@ class CollapsibleMenuView extends React.Component {
         : visibleChildren.splice(this.hiddenStartIndex).concat(hiddenChildren);
     }
 
-    const visibleChildrenWithProps = React.Children.map(visibleChildren, function (child) {
-      return React.cloneElement(child, { variant: menuItemButtonVariant });
-    });
+    const visibleChildrenWithProps = React.Children.map(visibleChildren, (child) => React.cloneElement(child, { variant: menuItemButtonVariant }));
 
     return (
       <div {...customProps} className={collapsibleMenuViewClassName} ref={this.setContainer}>
