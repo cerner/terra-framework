@@ -158,12 +158,11 @@ const Pills = (props) => {
     const prevFocusableNode = PillsUtils.getPreviousFocusableNode(pills, focusNode.current);
     const startIndex = PillsUtils.handleRollUp(pillsRef);
 
-    if (nextFocusableNode === -1 && prevFocusableNode === -1 && rollUpPill === null) {
-      focusPillsContainer();
-      return;
-    }
-
     if (isPillDeleted.current && React.Children.count(children) > 0) {
+      if (nextFocusableNode === -1 && prevFocusableNode === -1 && rollUpPill === null) {
+        focusPillsContainer();
+        return;
+      }
       // if there is a roll Up pill, set tabindex to 0
       if (rollUpPill) {
         PillsUtils.setRollUpPillTabIndex(rollUpPill, '-1');
