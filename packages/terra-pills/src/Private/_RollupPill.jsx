@@ -15,7 +15,7 @@ const propTypes = {
   /**
    * Determines if the Pill List is rolled up or not.
    */
-  isCollapsed: PropTypes.bool,
+  isSingleLine: PropTypes.bool,
   /**
    * Callback function triggered on click/key press of the roll-up pill
    */
@@ -25,12 +25,15 @@ const propTypes = {
    * The intl object to be injected for translations.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
+   * Number of pills that are rolled up.
+   */
   rollupCount: PropTypes.number,
 };
 
 const RollUpPill = (props) => {
   const {
-    isCollapsed, onSelectRollUp, intl, rollupCount,
+    isSingleLine, onSelectRollUp, intl, rollupCount,
   } = props;
   const rollUpPillRef = useRef();
 
@@ -49,7 +52,7 @@ const RollUpPill = (props) => {
     rollUpPillRef.current.setAttribute('data-terra-rollup-pill-show-focus-styles', 'false');
   };
 
-  return (isCollapsed && rollupCount > 0) ? (
+  return (isSingleLine && rollupCount > 0) ? (
     <div
       id="rollup-pill"
       className={cx(['roll-up-pill'])}

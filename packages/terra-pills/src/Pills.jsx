@@ -43,7 +43,7 @@ const propTypes = {
   /**
    * Determines if the Pills group should be shown as rolled up or not, limited to a single line of display.
    */
-  isCollapsed: PropTypes.bool,
+  isSingleLine: PropTypes.bool,
   /**
    * Callback function triggered on click/keypress of any included removable pill. Returns (pillKey, metaData)
    */
@@ -58,7 +58,7 @@ const defaultProps = {
   ariaLabelledBy: undefined,
   ariaDescribedBy: undefined,
   children: undefined,
-  isCollapsed: false,
+  isSingleLine: false,
   onSelectRollUp: undefined,
 };
 
@@ -69,7 +69,7 @@ const Pills = (props) => {
     ariaDescribedBy,
     children,
     onRemove,
-    isCollapsed,
+    isSingleLine,
     intl,
     onSelectRollUp,
     ...customProps
@@ -96,12 +96,12 @@ const Pills = (props) => {
   }, [children]);
 
   useLayoutEffect(() => {
-    if (isCollapsed) {
+    if (isSingleLine) {
       generateRollUp();
     } else {
       generateExpansion();
     }
-  }, [children, generateExpansion, generateRollUp, isCollapsed]);
+  }, [children, generateExpansion, generateRollUp, isSingleLine]);
 
   const setTabIndex = (val) => {
     const currentNode = currentPill.current ? pillsRef.current.querySelector(`[id=${currentPill.current}]`) : null;
@@ -140,16 +140,16 @@ const Pills = (props) => {
         focusNode.current = firstFocusableNode;
         currentPill.current = pills[focusNode.current].id;
         setTabIndex('0');
-      } else if (isCollapsed && rollUpPill) {
+      } else if (isSingleLine && rollUpPill) {
         currentPill.current = rollUpPill.getAttribute('id');
         setTabIndex('0');
       }
-    } else if (isCollapsed && rollUpPill && pills.length === 0) { // if the first pill is rollUp pill, set rollUp pill tabindex 0
+    } else if (isSingleLine && rollUpPill && pills.length === 0) { // if the first pill is rollUp pill, set rollUp pill tabindex 0
       currentPill.current = rollUpPill.getAttribute('id');
       setTabIndex('0');
       focusNode.current = 0;
     }
-  }, [isCollapsed, updatedCount]);
+  }, [isSingleLine, updatedCount]);
 
   useEffect(() => {
     const pills = [...pillsRef.current.querySelectorAll('[data-terra-pill]')];
@@ -320,7 +320,7 @@ const Pills = (props) => {
   };
 
   const handleWidthChange = () => {
-    if (isCollapsed) {
+    if (isSingleLine) {
       setUpdatedCount(React.Children.count(children));
       setRollUpCount(React.Children.count(children));
       generateRollUp();
@@ -366,7 +366,7 @@ const Pills = (props) => {
         <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.pills.pillListHint' }, { numberOfPills: React.Children.count(children) })} />
         {children ? renderChildren(children) : []}
         <RollUpPill
-          isCollapsed={isCollapsed}
+          isSingleLine={isSingleLine}
           onSelectRollUp={handleOnSelectRollUp}
           rollupCount={rollUpCount}
         />

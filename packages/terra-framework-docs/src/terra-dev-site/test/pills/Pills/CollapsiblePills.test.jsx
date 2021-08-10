@@ -45,7 +45,7 @@ const CollapsibleBasicPills = () => {
     },
   ];
   const [pillsState, setPillsState] = useState(pillsData);
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isSingleLine, setIsSingleLine] = useState(true);
 
   const handleOnRemove = (pillKey, metaData) => {
     const pillsArray = pillsState;
@@ -57,8 +57,8 @@ const CollapsibleBasicPills = () => {
     <>
       <Pills
         ariaLabel="Example of Collapsible Basic Pills"
-        isCollapsed={isCollapsed}
-        onSelectRollUp={() => setIsCollapsed(false)}
+        isSingleLine={isSingleLine}
+        onSelectRollUp={() => setIsSingleLine(false)}
         className={cx(['container', 'show-border', 'width-200'])}
         onRemove={handleOnRemove}
 

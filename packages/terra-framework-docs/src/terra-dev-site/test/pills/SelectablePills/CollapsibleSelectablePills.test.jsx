@@ -43,7 +43,7 @@ const CollapsibleSelectablePills = () => {
   const [pillsState, setPillsState] = useState(pillsData);
   const [openPillIndex, setOpenPillIndex] = useState(undefined);
   const [isOpen, setIsOpen] = useState(false);
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isSingleLine, setIsSingleLine] = useState(true);
 
   const handleOnRemove = (pillKey, metaData) => {
     const pillsArray = pillsState;
@@ -88,8 +88,8 @@ const CollapsibleSelectablePills = () => {
         ariaLabel="Example of a Selectable and Removable Pill with a Popup"
         onSelect={handleOnSelect}
         onRemove={handleOnRemove}
-        isCollapsed={isCollapsed}
-        onSelectRollUp={() => setIsCollapsed(false)}
+        isSingleLine={isSingleLine}
+        onSelectRollUp={() => setIsSingleLine(false)}
         className={cx(['container', 'show-border', 'width-200'])}
       >
         {pillsState.map((pill, index) => (

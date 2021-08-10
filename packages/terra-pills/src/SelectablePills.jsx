@@ -46,7 +46,7 @@ const propTypes = {
   /**
    * Indicates if the Selectable Pills container is rolled up or not.
    */
-  isCollapsed: PropTypes.bool,
+  isSingleLine: PropTypes.bool,
   /**
    * Callback function to remove a pill, returns pillKey, metadata
    */
@@ -65,7 +65,7 @@ const defaultProps = {
   ariaLabelledBy: undefined,
   ariaDescribedBy: undefined,
   children: undefined,
-  isCollapsed: false,
+  isSingleLine: false,
   onSelect: undefined,
   onSelectRollUp: undefined,
 };
@@ -77,7 +77,7 @@ const SelectablePills = (props) => {
     ariaDescribedBy,
     children,
     intl,
-    isCollapsed,
+    isSingleLine,
     onRemove,
     onSelect,
     onSelectRollUp,
@@ -119,12 +119,12 @@ const SelectablePills = (props) => {
   };
 
   useLayoutEffect(() => {
-    if (isCollapsed) {
+    if (isSingleLine) {
       generateRollUp();
     } else {
       generateExpansion();
     }
-  }, [children, generateExpansion, generateRollUp, isCollapsed]);
+  }, [children, generateExpansion, generateRollUp, isSingleLine]);
 
   useEffect(() => {
     const pills = [...selectablePillsRef.current.querySelectorAll('[data-terra-pill]')];
@@ -139,11 +139,11 @@ const SelectablePills = (props) => {
       PillsUtils.setPillsTabIndex(pills, '-1');
       currentPill.current = pills[focusNode.current].id;
       setTabIndex('0');
-    } else if (isCollapsed && rollUpPill && pills.length === 0) { // if the first pill is rollUp pill, set rollUp pill tabindex 0
+    } else if (isSingleLine && rollUpPill && pills.length === 0) { // if the first pill is rollUp pill, set rollUp pill tabindex 0
       currentPill.current = rollUpPill.getAttribute('id');
       setTabIndex('0');
     }
-  }, [isCollapsed, updatedCount]);
+  }, [isSingleLine, updatedCount]);
 
   // When a pill is deleted, focuses the new pill.
   useEffect(() => {
@@ -306,7 +306,7 @@ const SelectablePills = (props) => {
   const handlePillListOnblur = () => setContainerTabindex(-1);
 
   const handleWidthChange = () => {
-    if (isCollapsed) {
+    if (isSingleLine) {
       setUpdatedCount(React.Children.count(children));
       setRollUpCount(React.Children.count(children));
       generateRollUp();
@@ -354,7 +354,7 @@ const SelectablePills = (props) => {
         <VisuallyHiddenText id="terra-pill-visual-hidden-text" text={intl.formatMessage({ id: 'Terra.pills.pillListHint' }, { numberOfPills: React.Children.count(children) })} />
         {children ? renderChildren(children) : []}
         <RollUpPill
-          isCollapsed={isCollapsed}
+          isSingleLine={isSingleLine}
           onSelectRollUp={handleOnSelectRollUp}
           rollupCount={rollUpCount}
         />
