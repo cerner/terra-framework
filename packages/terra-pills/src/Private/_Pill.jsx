@@ -1,5 +1,5 @@
 import React, {
-  useEffect, useLayoutEffect, useRef, useState,
+  useEffect, useRef, useState,
 } from 'react';
 import {
   KEY_SPACE,
@@ -14,6 +14,7 @@ import classNamesBind from 'classnames/bind';
 import Popup from 'terra-popup';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import ResponsiveElement from 'terra-responsive-element';
 import styles from './Pill.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -107,15 +108,8 @@ const Pill = (props) => {
   const [isTruncated, setIsTruncated] = useState(false);
   const [open, setPopupOpen] = useState(false);
 
-  useLayoutEffect(() => {
-    if (isBasicPill && pillRef.current && pillRef.current.firstChild.offsetWidth < pillRef.current.firstChild.scrollWidth) {
-      setIsTruncated(true);
-      pillRef.current.setAttribute('aria-haspopup', true);
-    }
-  }, [isBasicPill, isTruncated]);
-
   useEffect(() => {
-    // refCallback not applicable for Pills(Basic Pills) lp052179
+    // refCallback not applicable for Pills(Basic Pills)
     if (refCallback && !isBasicPill) {
       refCallback(pillRef.current);
     }
@@ -244,35 +238,49 @@ const Pill = (props) => {
     return null;
   };
 
+  const handleWidthChange = () => {
+    if (isBasicPill && (pillRef.current.firstElementChild.scrollWidth > pillRef.current.firstElementChild.offsetWidth)) {
+      setIsTruncated(true);
+      pillRef.current.setAttribute('aria-haspopup', true);
+    } else {
+      setIsTruncated(false);
+      if (pillRef.current.hasAttribute('aria-haspopup')) {
+        pillRef.current.setAttribute('aria-haspopup', false);
+      }
+    }
+  };
+
   return (
-    <div
-      {...pillProps}
-      // aria-haspopup={!!onSelect || isTruncated ? true : undefined}
-      aria-expanded={!onSelect ? undefined : ariaExpanded}
-      className={pillClassNames}
-      id={id}
-      ref={pillRef}
-      data-terra-pills-show-focus-styles
-      data-terra-pill
-      {...customProps}
-    >
+    <ResponsiveElement responsiveTo="window" onResize={handleWidthChange}>
       <div
-        {...pillButtonProps}
-        className={pillLabelClassNames}
+        {...pillProps}
+        aria-expanded={!onSelect ? undefined : ariaExpanded}
+        className={pillClassNames}
+        id={id}
+        ref={pillRef}
+        data-terra-pills-show-focus-styles
+        data-terra-pill
+        {...customProps}
       >
-        {label}
-      </div>
-      {isRemovable && (
         <div
-          {...removeButtonProps}
-          className={removeButtonClassNames}
+          {...pillButtonProps}
+          className={pillLabelClassNames}
         >
-          <span className={cx('clear-icon')} />
+          {label}
         </div>
-      )}
-      {pillInteractionHint && <VisuallyHiddenText text={pillInteractionHint} />}
-      {popupConent()}
-    </div>
+        {isRemovable && (
+          <div
+            {...removeButtonProps}
+            className={removeButtonClassNames}
+          >
+            <span className={cx('clear-icon')} />
+          </div>
+        )}
+        {pillInteractionHint && <VisuallyHiddenText text={pillInteractionHint} />}
+        {popupConent()}
+      </div>
+    </ResponsiveElement>
+
   );
 };
 

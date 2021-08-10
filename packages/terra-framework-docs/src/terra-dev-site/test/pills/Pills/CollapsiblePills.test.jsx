@@ -11,48 +11,57 @@ const CollapsibleBasicPills = () => {
       label: 'asthma',
       ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-asthma',
+      isRemovable: true,
     },
     {
       label: 'bronchitis',
       ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-bronchitis',
+      isRemovable: true,
     },
     {
       label: 'fibro',
       ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-fibro',
+      isRemovable: true,
     },
     {
-      label: 'fibro1',
+      label: 'allergies',
       ref: useRef(),
-      id: 'terra-pills-example-disclosure-removable-pill-fibro1',
+      id: 'terra-pills-example-disclosure-removable-pill-allergies',
+      isRemovable: true,
     },
     {
-      label: 'fibro2',
+      label: 'hypertension',
       ref: useRef(),
-      id: 'terra-pills-example-disclosure-removable-pill-fibro2',
+      id: 'terra-pills-example-disclosure-removable-pill-hypertension',
+      isRemovable: true,
     },
     {
-      label: 'fibro3',
+      label: 'cardiac',
       ref: useRef(),
-      id: 'terra-pills-example-disclosure-removable-pill-fibro3',
-    },
-    {
-      label: 'fibro4',
-      ref: useRef(),
-      id: 'terra-pills-example-disclosure-removable-pill-fibro4',
+      id: 'terra-pills-example-disclosure-removable-pill-cardiac',
+      isRemovable: true,
     },
   ];
-  const [pillsState] = useState(pillsData);
+  const [pillsState, setPillsState] = useState(pillsData);
   const [isCollapsed, setIsCollapsed] = useState(true);
+
+  const handleOnRemove = (pillKey, metaData) => {
+    const pillsArray = pillsState;
+    pillsArray.splice(metaData.index, 1);
+    setPillsState([...pillsArray]);
+  };
+
   return (
     <>
-      <p>In consistent with keyboard navigation and removal when its collapsed </p>
       <Pills
-        ariaLabel="Example of a Collapsible Basic Pill"
+        ariaLabel="Example of Collapsible Basic Pills"
         isCollapsed={isCollapsed}
         onSelectRollUp={() => setIsCollapsed(false)}
         className={cx(['container', 'show-border', 'width-200'])}
+        onRemove={handleOnRemove}
+
       >
         {pillsState.map((pill, index) => (
           <Pills.Pill
@@ -60,7 +69,7 @@ const CollapsibleBasicPills = () => {
             id={pill.id}
             key={pill.id}
             pillKey={pill.label}
-            isRemovable
+            isRemovable={pill.isRemovable}
             metaData={{ index }}
             // eslint-disable-next-line no-param-reassign
             refCallback={(node) => { pill.ref.current = node; }}

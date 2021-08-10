@@ -25,9 +25,19 @@ const CollapsibleSelectablePills = () => {
       id: 'terra-pills-example-disclosure-removable-pill-fibro',
     },
     {
-      label: 'fibro1',
+      label: 'hypertension',
       ref: useRef(),
-      id: 'terra-pills-example-disclosure-removable-pill-fibro1',
+      id: 'terra-pills-example-disclosure-removable-pill-hypertension',
+    },
+    {
+      label: 'cardiac',
+      ref: useRef(),
+      id: 'terra-pills-example-disclosure-removable-pill-cardiac',
+    },
+    {
+      label: 'allergies',
+      ref: useRef(),
+      id: 'terra-pills-example-disclosure-removable-pill-allergies',
     },
   ];
   const [pillsState, setPillsState] = useState(pillsData);
@@ -74,7 +84,6 @@ const CollapsibleSelectablePills = () => {
 
   return (
     <>
-      <p>In-consisten focus when pills are removed if there is a roll up.</p>
       <SelectablePills
         ariaLabel="Example of a Selectable and Removable Pill with a Popup"
         onSelect={handleOnSelect}
@@ -98,7 +107,6 @@ const CollapsibleSelectablePills = () => {
         ))}
       </SelectablePills>
       {renderPopup()}
-      <button type="button" onClick={() => setIsCollapsed(!isCollapsed)}> Click </button>
     </>
   );
 };

@@ -8,6 +8,10 @@ const cx = classNames.bind(styles);
 const BasicPillWithTruncation = () => {
   const pills = [
     {
+      label: 'Small Label',
+      id: 'long-text-pill-example-6',
+    },
+    {
       label: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis libero dolor. Sed ullamcorper ante orci, a feugiat odio laoreet quis. Integer at felis sit amet dui luctus faucibus',
       id: 'long-text-pill-example-1',
     },

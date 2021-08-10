@@ -65,7 +65,7 @@ const SelectableAndRemovablePill = () => {
   return (
     <>
       <SelectablePills
-        ariaLabel="Example of a Selectable and Removable Pill with a Popup"
+        ariaLabel="Example of Selectable and Removable Pill with a Popup"
         onSelect={handleOnSelect}
         onRemove={handleOnRemove}
       >
