@@ -7,6 +7,7 @@ import {
 import { injectIntl } from 'react-intl';
 import classNamesBind from 'classnames/bind';
 import PropTypes from 'prop-types';
+import ThemeContext from 'terra-theme-context';
 import styles from './Pill.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -36,6 +37,7 @@ const RollUpPill = (props) => {
     isSingleLine, onSelectRollUp, intl, rollupCount,
   } = props;
   const rollUpPillRef = useRef();
+  const theme = React.useContext(ThemeContext);
 
   const handleOnSelectRollUp = (event) => {
     onSelectRollUp(event);
@@ -55,7 +57,7 @@ const RollUpPill = (props) => {
   return (isSingleLine && rollupCount > 0) ? (
     <div
       id="rollup-pill"
-      className={cx(['roll-up-pill'])}
+      className={cx(['roll-up-pill', theme.className])}
       onClick={handleOnSelectRollUp}
       onKeyDown={handleRollUpPillKeyDown}
       onMouseDown={handleRollUpPillMouseDown}
