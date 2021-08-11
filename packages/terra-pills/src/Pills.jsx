@@ -11,10 +11,10 @@ import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
 import ResponsiveElement from 'terra-responsive-element';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import Pill from './Private/_Pill';
-import styles from './Private/Pill.module.scss';
-import RollUpPill from './Private/_RollupPill';
-import PillsUtils from './Private/PillsUtils';
+import Pill from './private/_Pill';
+import styles from './private/Pill.module.scss';
+import RollUpPill from './private/_RollupPill';
+import PillsUtils from './private/PillsUtils';
 
 const cx = classNamesBind.bind(styles);
 
