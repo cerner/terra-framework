@@ -191,11 +191,11 @@ const Pill = (props) => {
   }
 
   let pillInteractionHint;
-  if (onSelect && (onRemove && isRemovable)) {
+  if ((onSelect && isRemovable) || (isTruncated && isRemovable)) {
     pillInteractionHint = intl.formatMessage({ id: 'Terra.pills.pillHint.selectableAndRemovable' });
-  } else if (onSelect) {
+  } else if (onSelect || (isBasicPill && isTruncated)) {
     pillInteractionHint = intl.formatMessage({ id: 'Terra.pills.pillHint.selectable' });
-  } else if (onRemove && isRemovable) {
+  } else if (isRemovable) {
     pillInteractionHint = intl.formatMessage({ id: 'Terra.pills.pillHint.removable' });
   }
 

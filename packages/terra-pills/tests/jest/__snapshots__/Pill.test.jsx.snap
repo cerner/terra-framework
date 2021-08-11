@@ -1,0 +1,407 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pill should render a basic pill 1`] = `
+<InjectIntl(Pill)
+  id="Default"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  label="Default"
+>
+  <Pill
+    id="Default"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    label="Default"
+  >
+    <ResponsiveElement
+      onResize={[Function]}
+      responsiveTo="window"
+    >
+      <div
+        className="pill-container"
+        data-terra-pill={true}
+        data-terra-pills-show-focus-styles={true}
+        id="Default"
+      >
+        <div
+          className="pill-label"
+          title=""
+        >
+          Default
+        </div>
+      </div>
+    </ResponsiveElement>
+  </Pill>
+</InjectIntl(Pill)>
+`;
+
+exports[`Pill should render a removable pill 1`] = `
+<InjectIntl(Pill)
+  id="Removable"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isRemovable={true}
+  label="Removable"
+>
+  <Pill
+    id="Removable"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isRemovable={true}
+    label="Removable"
+  >
+    <ResponsiveElement
+      onResize={[Function]}
+      responsiveTo="window"
+    >
+      <div
+        className="pill-container is-focusable is-removable"
+        data-terra-pill={true}
+        data-terra-pills-show-focus-styles={true}
+        id="Removable"
+        onBlur={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <div
+          className="pill-label is-removable"
+          title=""
+        >
+          Removable
+        </div>
+        <div
+          className="pill-remove-button"
+        >
+          <span
+            className="clear-icon"
+          />
+        </div>
+        <VisuallyHiddenText
+          text="Terra.pills.pillHint.removable"
+        >
+          <span
+            className="visually-hidden-text"
+          >
+            Terra.pills.pillHint.removable
+          </span>
+        </VisuallyHiddenText>
+      </div>
+    </ResponsiveElement>
+  </Pill>
+</InjectIntl(Pill)>
+`;
+
+exports[`Pill should render a selectable and removable pill 1`] = `
+<InjectIntl(Pill)
+  id="SelectableRemovable"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isRemovable={true}
+  label="Selectable and Removable"
+  onSelect={[Function]}
+>
+  <Pill
+    id="SelectableRemovable"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isRemovable={true}
+    label="Selectable and Removable"
+    onSelect={[Function]}
+  >
+    <ResponsiveElement
+      onResize={[Function]}
+      responsiveTo="window"
+    >
+      <div
+        className="pill-container is-focusable is-selectable is-removable is-selectable-and-removable"
+        data-terra-pill={true}
+        data-terra-pills-show-focus-styles={true}
+        id="SelectableRemovable"
+        onBlur={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <div
+          className="pill-label is-selectable is-removable is-selectable-and-removable"
+          onClick={[Function]}
+          title=""
+        >
+          Selectable and Removable
+        </div>
+        <div
+          className="pill-remove-button"
+        >
+          <span
+            className="clear-icon"
+          />
+        </div>
+        <VisuallyHiddenText
+          text="Terra.pills.pillHint.selectableAndRemovable"
+        >
+          <span
+            className="visually-hidden-text"
+          >
+            Terra.pills.pillHint.selectableAndRemovable
+          </span>
+        </VisuallyHiddenText>
+      </div>
+    </ResponsiveElement>
+  </Pill>
+</InjectIntl(Pill)>
+`;
+
+exports[`Pill should render a selectable pill 1`] = `
+<InjectIntl(Pill)
+  id="Selectable"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  label="Selectable"
+  onSelect={[Function]}
+>
+  <Pill
+    id="Selectable"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    label="Selectable"
+    onSelect={[Function]}
+  >
+    <ResponsiveElement
+      onResize={[Function]}
+      responsiveTo="window"
+    >
+      <div
+        className="pill-container is-focusable is-selectable"
+        data-terra-pill={true}
+        data-terra-pills-show-focus-styles={true}
+        id="Selectable"
+        onBlur={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <div
+          className="pill-label is-selectable"
+          onClick={[Function]}
+          title=""
+        >
+          Selectable
+        </div>
+        <VisuallyHiddenText
+          text="Terra.pills.pillHint.selectable"
+        >
+          <span
+            className="visually-hidden-text"
+          >
+            Terra.pills.pillHint.selectable
+          </span>
+        </VisuallyHiddenText>
+      </div>
+    </ResponsiveElement>
+  </Pill>
+</InjectIntl(Pill)>
+`;

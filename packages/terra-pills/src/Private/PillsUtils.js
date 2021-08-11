@@ -37,7 +37,7 @@ const getFirstFocusableNode = (pills) => {
   let firstIndex = -1;
   if (pills.length > 0) {
     for (let i = 0; i < pills.length; i += 1) {
-      if ((pills[i].hasAttribute('data-terra-pill-removable')) || (pills[i].hasAttribute('data-terra-rollup-pill')) || (pills[i].hasAttribute('aria-haspopup'))) {
+      if ((pills[i].hasAttribute('data-terra-pill-removable')) || (pills[i].hasAttribute('aria-haspopup'))) {
         firstIndex = i;
         break;
       }
@@ -51,7 +51,7 @@ const getNextFocusableNode = (pills, currentIndex) => {
   let nextIndex = -1;
   if (pills.length > 0) {
     for (let i = currentIndex; i < pills.length; i += 1) {
-      if ((pills[i].hasAttribute('data-terra-pill-removable')) || (pills[i].hasAttribute('data-terra-rollup-pill')) || (pills[i].hasAttribute('aria-haspopup'))) {
+      if ((pills[i].hasAttribute('data-terra-pill-removable')) || (pills[i].hasAttribute('aria-haspopup'))) {
         nextIndex = i;
         break;
       }
@@ -64,7 +64,7 @@ const getPreviousFocusableNode = (pills, currentIndex) => {
   let previousIndex = -1;
   if (pills.length > 0) {
     for (let i = currentIndex; i >= 0; i -= 1) {
-      if ((pills[i].hasAttribute('data-terra-pill-removable')) || (pills[i].hasAttribute('data-terra-rollup-pill')) || (pills[i].hasAttribute('aria-haspopup'))) {
+      if ((pills[i].hasAttribute('data-terra-pill-removable')) || (pills[i].hasAttribute('aria-haspopup'))) {
         previousIndex = i;
         break;
       }
