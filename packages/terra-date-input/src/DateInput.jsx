@@ -272,8 +272,7 @@ class DateInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleKeyPress = event => {
-    const keyCode = (typeof event.which === 'undefined') ? event.keyCode : event.which;
-    const input = String.fromCharCode(keyCode);
+    const input = event.key;
     if (!input.match(/^[0-9]+$/) && !event.metaKey) event.preventDefault();
   }
 
