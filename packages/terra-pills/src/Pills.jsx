@@ -179,7 +179,7 @@ const Pills = (props) => {
       } else if (prevFocusableNode >= 0) {
         focusNode.current = prevFocusableNode;
         currentPill.current = pills[focusNode.current].id;
-      } else {
+      } else if (nextFocusableNode >= 0) {
         focusNode.current = nextFocusableNode;
         currentPill.current = pills[focusNode.current].id;
       }
@@ -365,11 +365,13 @@ const Pills = (props) => {
       >
         <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.pills.pillListHint' }, { numberOfPills: React.Children.count(children) })} />
         {children ? renderChildren(children) : []}
-        <RollUpPill
-          isSingleLine={isSingleLine}
-          onSelectRollUp={handleOnSelectRollUp}
-          rollupCount={rollUpCount}
-        />
+        {isSingleLine && (
+          <RollUpPill
+            isSingleLine={isSingleLine}
+            onSelectRollUp={handleOnSelectRollUp}
+            rollupCount={rollUpCount}
+          />
+        )}
       </div>
     </ResponsiveElement>
 

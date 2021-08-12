@@ -353,14 +353,15 @@ const SelectablePills = (props) => {
       >
         <VisuallyHiddenText id="terra-pill-visual-hidden-text" text={intl.formatMessage({ id: 'Terra.pills.pillListHint' }, { numberOfPills: React.Children.count(children) })} />
         {children ? renderChildren(children) : []}
-        <RollUpPill
-          isSingleLine={isSingleLine}
-          onSelectRollUp={handleOnSelectRollUp}
-          rollupCount={rollUpCount}
-        />
+        {isSingleLine && (
+          <RollUpPill
+            isSingleLine={isSingleLine}
+            onSelectRollUp={handleOnSelectRollUp}
+            rollupCount={rollUpCount}
+          />
+        )}
       </div>
     </ResponsiveElement>
-
   );
 };
 
