@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Popup from 'terra-popup';
-import { SelectablePills } from 'terra-pills/lib/index';
+import { SelectablePills } from '@cerner/terra-pills/lib/index';
 
 const SingleSelectablePill = () => {
   const [isOpen, setIsOpen] = useState(false);

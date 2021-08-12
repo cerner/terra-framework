@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Pills from 'terra-pills/lib/index';
+import Pills from '@cerner/terra-pills/lib/index';
 
 const BasicRemovablePill = () => {
   const pills = [

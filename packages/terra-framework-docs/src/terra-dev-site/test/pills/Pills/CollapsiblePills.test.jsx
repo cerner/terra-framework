@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import classNames from 'classnames/bind';
-import Pills from 'terra-pills/lib/index';
+import Pills from '@cerner/terra-pills/lib/index';
 import styles from '../PillListTestCommon.module.scss';
 
 const cx = classNames.bind(styles);

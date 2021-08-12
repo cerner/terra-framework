@@ -1,5 +1,5 @@
 import React from 'react';
-import Pills from 'terra-pills/lib/index';
+import Pills from '@cerner/terra-pills/lib/index';
 
 const BasicPillTest = () => (
   <div>

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Popup from 'terra-popup';
 import classNames from 'classnames/bind';
-import { SelectablePills } from 'terra-pills/lib/index';
+import { SelectablePills } from '@cerner/terra-pills/lib/index';
 import Spacer from 'terra-spacer';
 import styles from '../PillListTestCommon.module.scss';
 
