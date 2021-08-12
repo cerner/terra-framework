@@ -57,7 +57,7 @@ const propTypes = {
   onRemove: PropTypes.func,
   /**
    * @private
-   * A callback function to execute when the pill is selected. Returns pillKey, metadata. Only applicable for <SelectablePills />
+   * A callback function to execute when the pill is selected. Returns pillRef, pillKey, metadata. Only applicable for <SelectablePills />
    *
    * ![IMPORTANT](https://badgen.net/badge/UX/Design-Standards/blue) Intended to only be used to disclose a popup.
    */
