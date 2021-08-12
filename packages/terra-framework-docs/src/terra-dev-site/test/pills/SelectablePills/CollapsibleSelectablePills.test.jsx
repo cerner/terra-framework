@@ -66,7 +66,7 @@ const CollapsibleSelectablePills = () => {
       <Popup
         isOpen={isOpen}
         isArrowDisplayed
-        targetRef={() => pillData.ref.current}
+        targetRef={() => pillRef.current}
         onRequestClose={handleOnRequestClose}
         contentHeight="40"
         contentWidth="240"

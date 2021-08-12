@@ -24,7 +24,7 @@ const SelectablePill = () => {
   const pillRef = useRef();
 
   const handleOnSelect = (ref, pillKey, metaData) => {
-    pillRef.current = pillRef;
+    pillRef.current = ref;
     setOpenPillIndex(metaData.index);
     setIsOpen(true);
   };
