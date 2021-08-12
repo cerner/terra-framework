@@ -23,15 +23,8 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "files": [
-    "*.log",
-    "target",
-    "reports",
-    "tests/**/__snapshots__/",
-    "aggregated-translations",
-    "dev-site-config",
-    "screenshots",
-    "errorScreenshots",
-    "generated-themes"
+    "lib",
+    "src"
   ],
   "peerDependencies": {
     "react": "^16.8.5",
