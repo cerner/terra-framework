@@ -131,7 +131,7 @@ const Pill = (props) => {
       pillRef.current.setAttribute('aria-expanded', true);
     }
     if (onSelect) {
-      onSelect(pillKey, metaData, event);
+      onSelect(pillRef.current, pillKey, metaData, event);
     }
   };
 
@@ -147,7 +147,7 @@ const Pill = (props) => {
         setPopupOpen(true);
       }
       if (onSelect) {
-        onSelect(pillKey, metaData, event);
+        onSelect(pillRef.current, pillKey, metaData, event);
       }
     } else if ((event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE)) {
       event.preventDefault();

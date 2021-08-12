@@ -278,7 +278,7 @@ const SelectablePills = (props) => {
   };
 
   // set the focus to current pill if the pill is clicked with mouse
-  const handleOnPillSelect = (pillKey, metaData, event) => {
+  const handleOnPillSelect = (pillRef, pillKey, metaData, event) => {
     const pills = [...selectablePillsRef.current.querySelectorAll('[data-terra-pill]')];
     const targetId = event.target.parentElement.getAttribute('id');
 
@@ -289,7 +289,7 @@ const SelectablePills = (props) => {
       focusCurrentNode();
     }
     if (onSelect) {
-      onSelect(pillKey, metaData);
+      onSelect(pillRef, pillKey, metaData);
     }
   };
 

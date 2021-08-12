@@ -7,23 +7,21 @@ const SelectableAndRemovablePill = () => {
   const pillsData = [
     {
       label: 'asthma',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-asthma',
     },
     {
       label: 'bronchitis',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-bronchitis',
     },
     {
       label: 'fibro',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-fibro',
     },
   ];
   const [pillsState, setPillsState] = useState(pillsData);
   const [openPillIndex, setOpenPillIndex] = useState(undefined);
   const [isOpen, setIsOpen] = useState(false);
+  const pillRef = useRef();
 
   const handleOnRemove = (pillKey, metaData) => {
     const pillsArray = pillsState;
@@ -31,7 +29,8 @@ const SelectableAndRemovablePill = () => {
     setPillsState([...pillsArray]);
   };
 
-  const handleOnSelect = (pillKey, metaData) => {
+  const handleOnSelect = (ref, pillKey, metaData) => {
+    pillRef.current = ref;
     setOpenPillIndex(metaData.index);
     setIsOpen(true);
   };
@@ -50,7 +49,7 @@ const SelectableAndRemovablePill = () => {
       <Popup
         isOpen={isOpen}
         isArrowDisplayed
-        targetRef={() => pillData.ref.current}
+        targetRef={() => pillRef.current}
         onRequestClose={handleOnRequestClose}
         contentHeight="40"
         contentWidth="240"
@@ -77,8 +76,6 @@ const SelectableAndRemovablePill = () => {
             pillKey={pill.label}
             isRemovable
             metaData={{ index }}
-            // eslint-disable-next-line no-param-reassign
-            refCallback={(node) => { pill.ref.current = node; }}
             ariaExpanded={openPillIndex === index}
           />
         ))}

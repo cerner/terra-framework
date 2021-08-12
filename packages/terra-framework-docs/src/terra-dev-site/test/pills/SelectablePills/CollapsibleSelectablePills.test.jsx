@@ -11,32 +11,26 @@ const CollapsibleSelectablePills = () => {
   const pillsData = [
     {
       label: 'asthma',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-asthma',
     },
     {
       label: 'bronchitis',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-bronchitis',
     },
     {
       label: 'fibro',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-fibro',
     },
     {
       label: 'hypertension',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-hypertension',
     },
     {
       label: 'cardiac',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-cardiac',
     },
     {
       label: 'allergies',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-allergies',
     },
   ];
@@ -44,6 +38,7 @@ const CollapsibleSelectablePills = () => {
   const [openPillIndex, setOpenPillIndex] = useState(undefined);
   const [isOpen, setIsOpen] = useState(false);
   const [isSingleLine, setIsSingleLine] = useState(true);
+  const pillRef = useRef();
 
   const handleOnRemove = (pillKey, metaData) => {
     const pillsArray = pillsState;
@@ -51,7 +46,8 @@ const CollapsibleSelectablePills = () => {
     setPillsState([...pillsArray]);
   };
 
-  const handleOnSelect = (pillKey, metaData) => {
+  const handleOnSelect = (ref, pillKey, metaData) => {
+    pillRef.current = ref;
     setOpenPillIndex(metaData.index);
     setIsOpen(true);
   };
@@ -100,8 +96,6 @@ const CollapsibleSelectablePills = () => {
             pillKey={pill.label}
             isRemovable
             metaData={{ index }}
-            // eslint-disable-next-line no-param-reassign
-            refCallback={(node) => { pill.ref.current = node; }}
             ariaExpanded={openPillIndex === index}
           />
         ))}

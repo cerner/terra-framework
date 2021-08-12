@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import Pills from '@cerner/terra-pills/lib/index';
 import styles from '../PillListTestCommon.module.scss';
@@ -9,37 +9,31 @@ const CollapsibleBasicPills = () => {
   const pillsData = [
     {
       label: 'asthma',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-asthma',
       isRemovable: true,
     },
     {
       label: 'bronchitis',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-bronchitis',
       isRemovable: true,
     },
     {
       label: 'fibro',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-fibro',
       isRemovable: true,
     },
     {
       label: 'allergies',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-allergies',
       isRemovable: true,
     },
     {
       label: 'hypertension',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-hypertension',
       isRemovable: true,
     },
     {
       label: 'cardiac',
-      ref: useRef(),
       id: 'terra-pills-example-disclosure-removable-pill-cardiac',
       isRemovable: true,
     },
@@ -71,8 +65,6 @@ const CollapsibleBasicPills = () => {
             pillKey={pill.label}
             isRemovable={pill.isRemovable}
             metaData={{ index }}
-            // eslint-disable-next-line no-param-reassign
-            refCallback={(node) => { pill.ref.current = node; }}
           />
         ))}
       </Pills>

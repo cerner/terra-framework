@@ -6,7 +6,8 @@ const SingleSelectablePill = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pillRef = useRef();
 
-  const handleOnSelect = () => {
+  const handleOnSelect = (ref) => {
+    pillRef.current = ref;
     setIsOpen(true);
   };
 
@@ -37,7 +38,6 @@ const SingleSelectablePill = () => {
           label="Asthma"
           id="selectabla-asthma"
           key="selectable-asthma"
-          refCallback={(node) => { pillRef.current = node; }}
         />
       </SelectablePills>
       {renderPopup()}
