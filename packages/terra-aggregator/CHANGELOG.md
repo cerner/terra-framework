@@ -2,10 +2,58 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 4.71.0 - (July 20, 2021)
+
+* Changed
+  * Migrated docs to terra-framework-docs
+
+## 4.70.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.69.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.68.0 - (May 4, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.67.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 4.66.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 4.65.0 - (February 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.64.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.63.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.62.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 4.61.0 - (December 8, 2020)
 
@@ -16,7 +64,7 @@
 
 * Changed
   * Update wdio tests to remove deprecated Terra.it helpers
-  
+
 ## 4.59.0 - (November 10, 2020)
 
 * Fixed

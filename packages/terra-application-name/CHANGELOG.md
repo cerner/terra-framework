@@ -2,10 +2,30 @@
 
 ## Unreleased
 
+## 3.39.0 - (July 6, 2021)
+
+* Changed
+  * Updated `waitForDisplayed` to `waitForExist` to fix failing tests in cerner clinical theme.
+
+## 3.38.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 3.37.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 3.36.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
 ## 3.35.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 3.34.0 - (November 24, 2020)
 
@@ -16,7 +36,7 @@
 
 * Added
   * Added missing themeable variables.
-  
+
 ## 3.32.0 - (August 4, 2020)
 
 * Changed

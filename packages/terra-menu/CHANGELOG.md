@@ -2,6 +2,51 @@
 
 ## Unreleased
 
+## 6.55.0 - (July 21, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.54.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.53.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+
+## 6.52.0 - (May 4, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.51.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 6.50.0 - (March 9, 2021)
+
+* Changed
+  * Updated to use terra-functional-testing
+
+## 6.49.0 - (February 9, 2021)
+
+* Changed
+  * Updated color for disabled MenuItem text in clinical-lowlight-theme to `#656565`.
+
+## 6.48.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.47.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.46.0 - (January 5, 2021)
 
 * Changed
@@ -40,7 +85,7 @@
 
 * Changed
   * Updated Changelog format
-  
+
 ## 6.39.0 - (August 11, 2020)
 
 * Changed

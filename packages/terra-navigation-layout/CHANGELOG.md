@@ -2,6 +2,34 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 5.34.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+
+## 5.33.1 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 5.33.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 5.32.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 5.31.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 5.30.0 - (January 5, 2021)
 
 * Changed

@@ -2,6 +2,60 @@
 
 ## Unreleased
 
+## 4.65.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+  * Updated `terra-breakpoints` from `v2.0.0` to `v2.19.0`.
+  * Updated `terra-form-field` from `v3.1.0` to `v4.5.0`.
+
+## 4.64.0 - (July 20, 2021)
+
+* Changed
+  * Updated Jest Snapshots
+
+## 4.63.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.62.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+* Fixed
+  * Arrow alignment in ie
+
+## 4.61.0 - (June 1, 2021)
+
+* Fixed
+  * Fixed crash issue for upper and lower bound dates in IE.
+
+## 4.60.0 - (May 4, 2021)
+
+* Fixed
+  * Fixed focus trap issue for date picker in mobile view.
+
+## 4.59.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 4.58.0 - (March 9, 2021)
+
+* Changed
+  * Updated to use terra-functional-testing
+
+## 4.57.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.56.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.55.0 - (January 5, 2021)
 
 * Changed

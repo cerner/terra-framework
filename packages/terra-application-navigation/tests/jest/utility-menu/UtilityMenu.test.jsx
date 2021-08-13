@@ -22,7 +22,9 @@ describe('UtilityMenu', () => {
           initials: 'user-initials',
           imageSrc: 'user-src',
         }}
-        utilityItems={[{ text: 'test-text-2', key: 'my-test-key-2', icon: <span>my icon</span> }]}
+        utilityItems={[{
+          id: 'test-utility-2-id', text: 'test-text-2', key: 'my-test-key-2', icon: <span>my icon</span>, metaData: { meta: 'metaData' },
+        }]}
         onSelectUtilityItem={jest.fn()}
         onSelectSettings={jest.fn()}
         onSelectHelp={jest.fn()}

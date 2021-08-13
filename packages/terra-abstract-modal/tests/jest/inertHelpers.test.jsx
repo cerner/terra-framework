@@ -22,32 +22,23 @@ describe('showModalDomUpdates', () => {
   });
 
   describe('when inert has not been set on root', () => {
-    beforeAll(() => {
-      showModalDomUpdates(mockModalElement, '#root');
-    });
-
     it('sets inert on root', () => {
+      showModalDomUpdates(mockModalElement, '#root');
       expect(mockSetAttribute).toHaveBeenNthCalledWith(1, 'inert', 'true');
-    });
 
-    it('sets modal-overlay count to 1', () => {
+      // sets modal-overlay count to 1', () => {
       expect(mockSetAttribute).toHaveBeenNthCalledWith(2, 'data-abstract-modal-overlay-count', '1');
     });
   });
 
   describe('when inert has already been set on root', () => {
-    beforeAll(() => {
-      jest.clearAllMocks();
+    it('does not resets inert on root', () => {
       mockGetAttribute.mockReturnValue('1');
 
       showModalDomUpdates(mockModalElement, '#root');
-    });
-
-    it('does not resets inert on root', () => {
       expect(mockSetAttribute).not.toHaveBeenNthCalledWith(1, 'inert', 'true');
-    });
 
-    it('sets modal-overlay count to 1', () => {
+      // sets modal-overlay count to 1
       expect(mockSetAttribute).toHaveBeenNthCalledWith(1, 'data-abstract-modal-overlay-count', '2');
     });
   });
@@ -98,32 +89,23 @@ describe('hideModalDomUpdates', () => {
   });
 
   describe('when inert has been set once on root', () => {
-    beforeAll(() => {
-      hideModalDomUpdates(mockModalTriggerElement, '#root');
-    });
-
     it('removes modal-overlay count', () => {
+      hideModalDomUpdates(mockModalTriggerElement, '#root');
       expect(mockRemoveAttribute).toHaveBeenNthCalledWith(1, 'data-abstract-modal-overlay-count');
-    });
 
-    it('removes inert on root', () => {
+      // removes inert on root
       expect(mockRemoveAttribute).toHaveBeenNthCalledWith(2, 'inert');
     });
   });
 
   describe('when inert has been set multiple times on root', () => {
-    beforeAll(() => {
-      jest.clearAllMocks();
+    it('reduces the modal-overlay count to 1', () => {
       mockGetAttribute.mockReturnValue('2');
 
       hideModalDomUpdates(mockModalTriggerElement, '#root');
-    });
-
-    it('reduces the modal-overlay count to 1', () => {
       expect(mockSetAttribute).toHaveBeenNthCalledWith(1, 'data-abstract-modal-overlay-count', '1');
-    });
 
-    it('does not remove inert on root', () => {
+      // does not remove inert on root
       expect(mockRemoveAttribute).not.toHaveBeenNthCalledWith(1, 'inert');
     });
   });

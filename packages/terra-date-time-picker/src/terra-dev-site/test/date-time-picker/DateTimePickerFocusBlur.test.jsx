@@ -105,6 +105,7 @@ class DateTimePickerOnBlur extends React.Component {
           onFocus={this.handleFocus}
           onChange={this.handleDateChange}
           excludeDates={['2019-04-01', '2019-04-02']}
+          initialTimeZone="America/Chicago"
         />
       </div>
     );

@@ -46,6 +46,7 @@ class DateTimePickerOnBlur extends React.Component {
           name="date-time-picker-onblur-dst"
           value="2017-11-05T01:30:00"
           onBlur={this.handleBlur}
+          initialTimeZone="America/Chicago"
         />
       </div>
     );

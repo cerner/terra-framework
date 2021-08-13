@@ -1,7 +1,7 @@
 {
   "name": "terra-application-name",
   "main": "lib/ApplicationName.js",
-  "version": "3.35.0",
+  "version": "3.39.0",
   "description": "Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.",
   "repository": {
     "type": "git",
@@ -29,11 +29,11 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-theme-context": "^1.4.0"
+    "terra-theme-context": "^1.7.0"
   },
   "devDependencies": {
-    "terra-application-header-layout": "^3.32.0",
-    "terra-application-menu-layout": "^3.27.0",
+    "terra-application-header-layout": "^3.35.0",
+    "terra-application-menu-layout": "^3.30.0",
     "terra-image": "^3.0.0"
   },
   "scripts": {
@@ -43,7 +43,7 @@
     "lint:scss": "stylelint src/**/*.scss",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest && npm run wdio",
-    "jest": "jest --config ../../jestconfig.js",
+    "jest": "jest --config ../../jest.config.js",
     "wdio-default": "cd ../.. && npx wdio",
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",

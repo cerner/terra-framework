@@ -1,7 +1,7 @@
 {
   "name": "terra-theme-context",
   "main": "lib/ThemeContext.js",
-  "version": "1.4.0",
+  "version": "1.7.0",
   "description": "A react context to provide the current theme.",
   "repository": {
     "type": "git",
@@ -37,6 +37,6 @@
     "lint:scss": "stylelint src/**/*.scss",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest",
-    "jest": "jest --config ../../jestconfig.js"
+    "jest": "jest --config ../../jest.config.js"
   }
 }

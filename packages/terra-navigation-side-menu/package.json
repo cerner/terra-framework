@@ -1,7 +1,7 @@
 {
   "name": "terra-navigation-side-menu",
   "main": "lib/NavigationSideMenu.js",
-  "version": "2.35.0",
+  "version": "2.40.0",
   "description": "A structual component for nesting navigational items within the content section of the terra-menu-layout.",
   "repository": {
     "type": "git",
@@ -29,12 +29,12 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "keycode-js": "^2.0.1",
+    "keycode-js": "^3.1.0",
     "prop-types": "^15.5.8",
     "terra-action-header": "^2.0.0",
     "terra-content-container": "^3.0.0",
-    "terra-icon": "^3.1.0",
-    "terra-theme-context": "^1.4.0",
+    "terra-icon": "^3.19.0",
+    "terra-theme-context": "^1.7.0",
     "terra-visually-hidden-text": "^2.0.0"
   },
   "scripts": {
@@ -44,7 +44,7 @@
     "lint:scss": "stylelint src/**/*.scss",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest && npm run wdio",
-    "jest": "jest --config ../../jestconfig.js",
+    "jest": "jest --config ../../jest.config.js",
     "wdio-default": "cd ../.. && npx wdio",
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",

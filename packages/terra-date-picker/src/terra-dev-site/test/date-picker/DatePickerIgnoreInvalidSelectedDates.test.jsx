@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 const DateTimePickerInvalidSelectedDates = () => (
   <div className={cx('content-wrapper')}>
-    <span id="selected-date">selectedDate = null</span>
+    <span>selectedDate = null</span>
     <br />
     <DatePicker
       name="null-selectedDate"
@@ -15,7 +15,7 @@ const DateTimePickerInvalidSelectedDates = () => (
     />
     <br />
     <br />
-    <span id="selected-date">selectedDate = undefined</span>
+    <span>selectedDate = undefined</span>
     <br />
     <DatePicker
       name="undefined-selectedDate"
@@ -23,7 +23,7 @@ const DateTimePickerInvalidSelectedDates = () => (
     />
     <br />
     <br />
-    <span id="selected-date">selectedDate = </span>
+    <span>selectedDate = </span>
     &quot;&quot;
     <br />
     <DatePicker
@@ -32,7 +32,7 @@ const DateTimePickerInvalidSelectedDates = () => (
     />
     <br />
     <br />
-    <span id="selected-date">selectedDate = </span>
+    <span>selectedDate = </span>
     &quot;abc&quot;
     <br />
     <DatePicker
@@ -41,7 +41,7 @@ const DateTimePickerInvalidSelectedDates = () => (
     />
     <br />
     <br />
-    <span id="selected-date">selectedDate = </span>
+    <span>selectedDate = </span>
     &quot;!@#$&quot;
     <br />
     <DatePicker

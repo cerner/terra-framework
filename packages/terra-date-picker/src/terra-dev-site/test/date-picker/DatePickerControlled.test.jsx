@@ -42,6 +42,7 @@ class DatePickerDefault extends React.Component {
         {'  '}
         <Button
           id="button1"
+          title="Empty String"
           text=""
           onClick={this.handleSelectedDateUpdate}
         />

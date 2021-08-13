@@ -2,10 +2,63 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 4.17.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+
+## 4.16.0 - (July 20, 2021)
+
+* Changed
+  * Updated the upgrade guide to state to replace `secondaryAction` with `rejectAction` instead of `primaryAction`
+
+## 4.15.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.14.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.13.0 - (May 4, 2021)
+
+* Changed
+  * Regenerated screenshots involving a now removed defaulted implementation
+
+## 4.12.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 4.11.0 - (March 9, 2021)
+
+* Changed
+  * Updated to use terra-functional-testing
+
+## 4.10.0 - (February 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.9.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.8.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.7.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 4.6.0 - (December 8, 2020)
 

@@ -5,6 +5,21 @@
 * Changed
   * Updated fusion wdio tests to align with other tests
 
+## 4.9.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.8.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 4.7.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing.
+
 ## 4.6.0 - (December 8, 2020)
 
 * Changed

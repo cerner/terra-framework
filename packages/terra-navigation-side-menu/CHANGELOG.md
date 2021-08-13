@@ -2,8 +2,31 @@
 
 ## Unreleased
 
+## 2.40.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+
+## 2.39.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+
+## 2.38.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 2.37.0 - (March 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 2.36.0 - (January 26, 2021)
+
 * Changed
   * Update failing jest tests.
+  * Updated to use terra-functional-testing
 
 ## 2.35.0 - (January 5, 2021)
 
@@ -11,7 +34,7 @@
   * Updated to support a peer dependency of react-intl v2-v5
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 2.34.0 - (November 10, 2020)
 

@@ -2,6 +2,55 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 6.55.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-form-checkbox` from `v4.0.0` to `v4.8.0`.
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+
+## 6.54.0 - (July 13, 2021)
+
+* Fixed
+  * Fix to invoke consumer's `onClick` handler for menu buttons.
+
+## 6.53.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.52.0 - (May 4, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.51.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 6.50.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 6.49.0 - (February 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.48.0 - (February 2, 2021)
+
+* Added
+  * Added `alwaysCollapsedMenuItems` attribute to `CollapsibleMenuView` which can be used to prepopulate collapsible menu view. These items will always hidden under the More button. The collapsed menu view will always shown if at least one item is added to the collapsedMenuItems list. A divider will shown if there are other elements pushed to the collapsed menu view to divide them from the prepopulated list.
+
+## 6.47.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.46.0 - (January 5, 2021)
 
 * Changed
@@ -9,7 +58,7 @@
   * Updated to use `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 6.45.0 - (December 8, 2020)
 

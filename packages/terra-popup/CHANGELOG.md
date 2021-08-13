@@ -2,6 +2,54 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 6.55.0 - (July 21, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.54.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.53.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.52.0 - (May 4, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.51.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 6.50.0 - (March 9, 2021)
+
+* Changed
+  * Updated to use terra-functional-testing
+
+## 6.49.0 - (February 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.48.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.47.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.46.0 - (January 5, 2021)
 
 * Changed

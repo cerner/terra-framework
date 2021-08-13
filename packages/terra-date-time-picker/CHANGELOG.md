@@ -2,6 +2,65 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 4.66.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-form-field` from `v3.1.0` to `v4.5.0`.
+
+## 4.65.0 - (July 20, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.64.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.63.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+  * screenshot updates
+
+## 4.62.0 - (June 1, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.61.0 - (May 4, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.60.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 4.59.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 4.58.0 - (February 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.57.0 - (February 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.56.0 - (January 26, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.55.0 - (January 5, 2021)
 
 * Changed
@@ -9,7 +68,7 @@
   * Updated to use `injectIntl` instead of `FormattedMessage` for react-intl v2-v5 compatibility
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 4.54.0 - (December 8, 2020)
 

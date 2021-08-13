@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 1.7.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.6.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 1.5.0 - (March 9, 2021)
+
+* Changed
+  * Update reference from terra-toolkit to terra-functional-testing.
+
 ## 1.4.0 - (August 4, 2020)
 
 * Changed

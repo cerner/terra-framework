@@ -1,7 +1,7 @@
 {
   "Terra.applicationNavigation.tabs.rollupButtonDescription": "Más opciones de navegación",
   "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "Más opciones de navegación",
-  "Terra.applicationNavigation.header.utilityButtonTitleUser": "Configuración de usuario",
+  "Terra.applicationNavigation.header.utilityButtonTitleUser": "Configuración del usuario para: {currentUserName}",
   "Terra.applicationNavigation.header.utilityButtonTitleNoUser": "Opciones",
   "Terra.applicationNavigation.drawerMenu.navigation": "Elementos de navegación",
   "Terra.applicationNavigation.drawerMenu.utilities": "Elementos de utilidades",

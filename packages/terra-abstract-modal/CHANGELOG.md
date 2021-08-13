@@ -2,14 +2,34 @@
 
 ## Unreleased
 
+## 3.35.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+
+## 3.34.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+
+## 3.33.0 - (April 6, 2021)
+
+* Changed
+  * updated jest tests to not expect a mock to cross it blocks.
+
+## 3.32.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
 ## 3.31.0 - (January 5, 2021)
 
 * Changed
   * Updated to support a peer dependency of react-intl v2-v5
   * Updated FormattedMessage child function to join if given an array.
-  
+
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 3.30.0 - (November 24, 2020)
 

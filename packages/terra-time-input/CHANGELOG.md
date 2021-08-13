@@ -2,10 +2,35 @@
 
 ## Unreleased
 
+## 4.42.0 - (July 21, 2021)
+
+* Changed
+  * Updated Jest Snapshots
+
+## 4.41.0 - (July 20, 2021)
+
+* Changed
+  * Updated Jest Snapshots
+
+## 4.40.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+
+## 4.39.0 - (April 6, 2021)
+
+* Fixed
+  * Correct time input test to select the seconds input instead of the minute input.
+
+## 4.38.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
 ## 4.37.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 4.36.0 - (December 8, 2020)
 

@@ -2,13 +2,38 @@
 
 ## Unreleased
 
+## 4.33.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+
+## 4.32.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.31.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 4.30.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+
+## 4.29.0 - (February 2, 2021)
+
+* Fixed
+  * Removed re-declaration of $ ignore
+
 ## 4.28.0 - (January 5, 2021)
 
 * Changed
   * Update wdio tests to remove deprecated Terra.it helpers
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 4.27.0 - (November 10, 2020)
 

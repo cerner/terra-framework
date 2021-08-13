@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 4.27.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.26.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 4.25.0 - (March 9, 2021)
+
+* Changed
+  * Updated to use terra-functional-testing
+
 ## 4.24.0 - (December 8, 2020)
 
 * Changed

@@ -84,6 +84,14 @@ describe('Tabs', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render an id based on the Tabs id and the Tab key', () => {
+    const defaultRender = <Tabs id="application-id"><Tabs.Pane label="Default" key="default" className="customClass" /></Tabs>;
+    const wrapper = shallowWithIntl(defaultRender);
+    wrapper.setState({ showCollapsedTabs: true });
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  });
+
   describe('Responsiveness', () => {
     it('should render tabs that are responsive to the parent node viewport by default', () => {
       const defaultRender = <Tabs><Tabs.Pane label="Default" key="default" /></Tabs>;

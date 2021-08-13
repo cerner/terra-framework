@@ -3,6 +3,78 @@
 ## Unreleased
 
 * Changed
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 1.54.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.11.0` to `v3.19.0`.
+  * Updated `terra-breakpoints` from `v2.0.0` to `v2.19.0`
+
+## 1.53.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.52.0 - (July 6, 2021)
+
+* Changed
+  * Updated screenshots due to changes made in `terra-application-name`.
+
+## 1.51.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+
+## 1.50.0 - (May 4, 2021)
+
+* Fixed
+  * add z-index to address ambiguous layers across browsers.
+
+## 1.49.0 - (April 27, 2021)
+
+* Changed
+  * Updated Swedish translations.
+
+## 1.48.1 - (April 12, 2021)
+
+* Fixed
+  * add back missing metaData to utility items.
+
+## 1.48.0 - (April 6, 2021)
+
+* Changed
+  * Updated screenshots with elements that are out of bound
+  * Updated Jest command
+
+* Fixed
+  * Applied theme context to drawer menu and popup menu
+
+## 1.47.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing
+  * Remove extraneous application bases from tests.
+
+* Added
+  * Adding an id to ApplicationNavigation now causes navigation, extension, and utility items to have a unique id.
+
+* Fixed
+  * Prevent error when using focus trap with react-intl v5
+
+## 1.46.0 - (February 9, 2021)
+
+* Fixed
+  * Fix screen reader to read username along with user settings.
+
+## 1.45.0 - (February 2, 2021)
+
+* Fixed
+  * Updated sv translations due to feedback from the i18n team.
+
+## 1.44.0 - (January 26, 2021)
+
+* Changed
   * Update failing jest tests.
 
 ## 1.43.0 - (January 5, 2021)
@@ -12,7 +84,7 @@
   * Removed `intlShape` imports
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 1.42.0 - (December 8, 2020)
 

@@ -2,11 +2,31 @@
 
 ## Unreleased
 
+## 3.39.0 - (June 15, 2021)
+
+* Changed
+  * Mark package as deprecated
+
+## 3.38.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 3.37.0 - (April 6, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 3.36.0 - (March 9, 2021)
+
+* Changed
+  * Updated to terra-functional-testing.
+
 ## 3.35.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
- 
+  * Fixed broken links in documentation.
+
 ## 3.34.0 - (December 8, 2020)
 
 * Changed
