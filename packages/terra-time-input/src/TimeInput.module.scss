@@ -284,16 +284,19 @@
         box-shadow: var(--terra-time-input-invalid-box-shadow, 0 0 0 1px #e50000);
         z-index: 1;
 
+        // stylelint-disable-next-line max-nesting-depth
         &:focus {
           border: var(--terra-time-input-invalid-focus-border, 1px solid #e50000);
           box-shadow: var(--terra-time-input-invalid-focus-box-shadow, 0 0 0 1px #e50000, 0 0 4px 3px rgba(229, 0, 0, 0.35));
         }
 
+        // stylelint-disable-next-line max-nesting-depth
         &:hover {
           border: var(--terra-time-input-invalid-hover-border, 1px solid #e50000);
           box-shadow: var(--terra-time-input-invalid-hover-box-shadow, 0 0 0 1px #e50000);
         }
 
+        // stylelint-disable-next-line max-nesting-depth
         &.disabled {
           background-color: var(--terra-time-input-invalid-disabled-background-color, rgba(111, 116, 119, 0.2));
           border: var(--terra-time-input-invalid-disabled-border, 1px solid #e50000);
