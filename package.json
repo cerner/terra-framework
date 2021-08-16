@@ -65,7 +65,7 @@
     "postinstall": "link-parent-bin && npm run compile && npm run bootstrap:hoist",
     "start": "webpack serve",
     "start-heroku": "terra express-server --port $PORT --site build",
-    "start-prod": "webpack serve --env.disableHotReloading --mode=production",
+    "start-prod": "webpack serve --env disableHotReloading --mode=production",
     "start-static": "npm run compile:prod && terra express-server --site build",
     "test": "npm run lint && npm run jest && npm run wdio",
     "wdio-default": "terra wdio",
