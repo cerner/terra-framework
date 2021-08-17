@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Pills from '@cerner/terra-pills/lib/index';
 
 const BasicRemovablePill = () => {
-  const pills = [
+  const pillsData = [
     {
       label: 'asthma',
       id: 'terra-removable-pill-asthma',
@@ -11,35 +11,30 @@ const BasicRemovablePill = () => {
     {
       label: 'bronchitis',
       id: 'terra-removable-pill-bronchitis',
-      isRemovable: false,
+      isRemovable: true,
     },
     {
       label: 'fibro',
       id: 'terra-removable-pill-fibro',
-      isRemovable: true,
-    },
-    {
-      label: 'asthma',
-      id: 'terra-removable-pill-asthma1',
       isRemovable: false,
     },
     {
-      label: 'bronchitis',
-      id: 'terra-removable-pill-bronchitis1',
+      label: 'hypertension',
+      id: 'terra-removable-pill-hypertension',
       isRemovable: true,
     },
     {
-      label: 'fibro',
-      id: 'terra-removable-pill-fibro1',
-      isRemovable: false,
+      label: 'cardiac',
+      id: 'terra-removable-pill-cardiac',
+      isRemovable: true,
     },
   ];
-  const [pillsState, setPillsState] = useState(pills);
+  const [pills, setPills] = useState(pillsData);
 
   const handleOnRemove = (pillKey, metaData) => {
-    const pillsArray = pillsState;
+    const pillsArray = pills;
     pillsArray.splice(metaData.index, 1);
-    setPillsState([...pillsArray]);
+    setPills([...pillsArray]);
   };
 
   return (
@@ -47,7 +42,7 @@ const BasicRemovablePill = () => {
       ariaLabel="Example of Removable Pills"
       onRemove={handleOnRemove}
     >
-      {pillsState.map((pill, index) => (
+      {pills.map((pill, index) => (
         <Pills.Pill
           key={pill.id}
           label={pill.label}

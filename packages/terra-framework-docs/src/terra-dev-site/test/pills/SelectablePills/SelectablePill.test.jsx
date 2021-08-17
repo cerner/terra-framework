@@ -18,13 +18,13 @@ const SelectablePill = () => {
       id: 'terra-pills-example-disclosure-removable-pill-fibro',
     },
   ];
-  const [pillsState] = useState(pillsData);
+  const [pills] = useState(pillsData);
   const [openPillIndex, setOpenPillIndex] = useState(undefined);
   const [isOpen, setIsOpen] = useState(false);
   const pillRef = useRef();
 
   const handleOnSelect = (ref, pillKey, metaData) => {
-    pillRef.current = pillRef;
+    pillRef.current = ref;
     setOpenPillIndex(metaData.index);
     setIsOpen(true);
   };
@@ -38,7 +38,7 @@ const SelectablePill = () => {
     if (openPillIndex === undefined) {
       return undefined;
     }
-    const pillData = pillsState[openPillIndex];
+    const pillData = pills[openPillIndex];
     return (
       <Popup
         isOpen={isOpen}
@@ -58,10 +58,10 @@ const SelectablePill = () => {
   return (
     <>
       <SelectablePills
-        ariaLabel="Example of a Selectable Pill with a Popup"
+        ariaLabel="Example of Selectable Pill with a Popup"
         onSelect={handleOnSelect}
       >
-        {pillsState.map((pill, index) => (
+        {pills.map((pill, index) => (
           <SelectablePills.Pill
             label={pill.label}
             id={pill.id}

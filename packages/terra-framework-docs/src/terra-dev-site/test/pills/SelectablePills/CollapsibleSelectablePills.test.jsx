@@ -34,16 +34,16 @@ const CollapsibleSelectablePills = () => {
       id: 'terra-pills-example-disclosure-removable-pill-allergies',
     },
   ];
-  const [pillsState, setPillsState] = useState(pillsData);
+  const [pills, setPills] = useState(pillsData);
   const [openPillIndex, setOpenPillIndex] = useState(undefined);
   const [isOpen, setIsOpen] = useState(false);
   const [isSingleLine, setIsSingleLine] = useState(true);
   const pillRef = useRef();
 
   const handleOnRemove = (pillKey, metaData) => {
-    const pillsArray = pillsState;
+    const pillsArray = pills;
     pillsArray.splice(metaData.index, 1);
-    setPillsState([...pillsArray]);
+    setPills([...pillsArray]);
   };
 
   const handleOnSelect = (ref, pillKey, metaData) => {
@@ -61,7 +61,7 @@ const CollapsibleSelectablePills = () => {
     if (openPillIndex === undefined) {
       return undefined;
     }
-    const pillData = pillsState[openPillIndex];
+    const pillData = pills[openPillIndex];
     return (
       <Popup
         isOpen={isOpen}
@@ -88,7 +88,7 @@ const CollapsibleSelectablePills = () => {
         onSelectRollUp={() => setIsSingleLine(false)}
         className={cx(['container', 'show-border', 'width-200'])}
       >
-        {pillsState.map((pill, index) => (
+        {pills.map((pill, index) => (
           <SelectablePills.Pill
             label={pill.label}
             id={pill.id}

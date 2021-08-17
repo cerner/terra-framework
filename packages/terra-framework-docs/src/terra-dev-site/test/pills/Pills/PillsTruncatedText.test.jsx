@@ -6,7 +6,7 @@ import styles from '../PillListTestCommon.module.scss';
 const cx = classNames.bind(styles);
 
 const BasicPillWithTruncation = () => {
-  const pills = [
+  const pillsData = [
     {
       label: 'Small Label',
       id: 'long-text-pill-example-6',
@@ -32,7 +32,7 @@ const BasicPillWithTruncation = () => {
       id: 'long-text-pill-example-5',
     },
   ];
-  const pillsState = (pills);
+  const pills = (pillsData);
 
   return (
     <>
@@ -40,7 +40,7 @@ const BasicPillWithTruncation = () => {
         ariaLabel="Example of Basic pills with long text"
         className={cx(['container', 'show-border', 'width-200'])}
       >
-        {pillsState.map((pill, index) => (
+        {pills.map((pill, index) => (
           <Pills.Pill
             key={pill.id}
             label={pill.label}
