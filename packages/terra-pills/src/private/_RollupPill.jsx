@@ -55,9 +55,30 @@ const RollUpPill = (props) => {
   };
 
   return (isSingleLine && rollupCount > 0) ? (
-    <div
+    <button
       id="rollup-pill"
       className={cx(['roll-up-pill', theme.className])}
+      onClick={handleOnSelectRollUp}
+      onKeyDown={handleRollUpPillKeyDown}
+      onMouseDown={handleRollUpPillMouseDown}
+      ref={rollUpPillRef}
+      tabIndex="0"
+      type="button"
+      data-terra-rollup-pill-show-focus-styles
+      data-terra-rollup-pill
+    >
+      <span className={cx('selectable-button-inner-span')}>{intl.formatMessage({ id: 'Terra.pills.rollupPillLabel' }, { pillsNotVisibleCount: rollupCount })}</span>
+    </button>
+  ) : null;
+};
+
+RollUpPill.propTypes = propTypes;
+export default injectIntl(RollUpPill);
+
+/*
+    <div
+      id="rollup-pill"
+      className={cx(['pill', 'roll-up-pill', theme.className])}
       onClick={handleOnSelectRollUp}
       onKeyDown={handleRollUpPillKeyDown}
       onMouseDown={handleRollUpPillMouseDown}
@@ -67,10 +88,4 @@ const RollUpPill = (props) => {
       data-terra-rollup-pill-show-focus-styles
       data-terra-rollup-pill
     >
-      {intl.formatMessage({ id: 'Terra.pills.rollupPillLabel' }, { pillsNotVisibleCount: rollupCount })}
-    </div>
-  ) : null;
-};
-
-RollUpPill.propTypes = propTypes;
-export default injectIntl(RollUpPill);
+*/

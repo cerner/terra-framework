@@ -121,11 +121,13 @@ const Pill = (props) => {
     }
   }, [isRemovable, onRemove]);
 
-  const handleOnRemove = () => {
+  const handleOnRemove = (event) => {
+    event.stopPropagation();
     onRemove(pillKey, metaData);
   };
 
   const handleOnClick = (event) => {
+    event.stopPropagation();
     if (isBasicPill && isTruncated) {
       setPopupOpen(true);
       pillRef.current.setAttribute('aria-expanded', true);
@@ -143,6 +145,7 @@ const Pill = (props) => {
     pillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'true');
     if ((event.keyCode === KEY_RETURN || event.keyCode === KEY_SPACE)) {
       event.preventDefault();
+      event.stopPropagation();
       if (isBasicPill && isTruncated) {
         setPopupOpen(true);
       }
@@ -151,6 +154,7 @@ const Pill = (props) => {
       }
     } else if ((event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE)) {
       event.preventDefault();
+      event.stopPropagation();
       if (onRemove && isRemovable) {
         onRemove(pillKey, metaData);
       }
@@ -179,7 +183,7 @@ const Pill = (props) => {
   }
 
   const pillButtonProps = {};
-  pillButtonProps.title = isTruncated ? label : '';
+  pillButtonProps.title = isTruncated ? label : undefined;
 
   if (onSelect || isBasicPill) {
     pillButtonProps.onClick = handleOnClick;
@@ -201,7 +205,7 @@ const Pill = (props) => {
 
   const pillClassNames = classNames(
     cx([
-      'pill-container',
+      'pill',
       { 'is-focusable': !!onSelect || isTruncated || isRemovable },
       { 'is-selectable': !!onSelect || (isBasicPill && isTruncated) },
       { 'is-removable': isRemovable },
@@ -222,7 +226,37 @@ const Pill = (props) => {
     'pill-remove-button',
   ]);
 
-  const popupConent = () => {
+  const pillLabelData = {
+    labelProps: pillButtonProps,
+    labelStyles: pillLabelClassNames,
+    labelText: label,
+    isSelectable: !!onSelect || (isBasicPill && isTruncated)
+  };
+
+  const createPillLabel = (pillLabelData) => {
+    if (pillLabelData.isSelectable) {
+      return (
+        <button
+         {...pillLabelData.labelProps}
+         tabIndex="-1"
+         type="button"
+         className={pillLabelData.labelStyles}
+        >
+          <span className={cx('selectable-button-inner-span')}>{pillLabelData.labelText}</span>
+        </button>
+      );
+    }
+    return (
+      <span
+        {...pillLabelData.labelProps}
+        className={pillLabelData.labelStyles}
+      >
+       {pillLabelData.labelText}
+      </span>
+    );
+  };
+
+  const createPopupContent = () => {
     if (isTruncated && isBasicPill) {
       return (
         <Popup
@@ -230,8 +264,10 @@ const Pill = (props) => {
           isArrowDisplayed
           targetRef={getPillRef}
           onRequestClose={handleOnRequestClose}
-        >
-          <p>{label}</p>
+          contentHeight="auto"
+          contentWidth="auto"
+        > 
+          <div className={cx('popup-content-pill-label')}>{label}</div>
         </Popup>
       );
     }
@@ -253,6 +289,7 @@ const Pill = (props) => {
   return (
     <ResponsiveElement responsiveTo="window" onResize={handleWidthChange}>
       <div
+        {...customProps}
         {...pillProps}
         aria-expanded={!onSelect ? undefined : ariaExpanded}
         className={pillClassNames}
@@ -260,14 +297,8 @@ const Pill = (props) => {
         ref={pillRef}
         data-terra-pills-show-focus-styles
         data-terra-pill
-        {...customProps}
       >
-        <div
-          {...pillButtonProps}
-          className={pillLabelClassNames}
-        >
-          {label}
-        </div>
+        {createPillLabel(pillLabelData)}
         {isRemovable && (
           <div
             {...removeButtonProps}
@@ -277,7 +308,7 @@ const Pill = (props) => {
           </div>
         )}
         {pillInteractionHint && <VisuallyHiddenText text={pillInteractionHint} />}
-        {popupConent()}
+        {createPopupContent()}
       </div>
     </ResponsiveElement>
 

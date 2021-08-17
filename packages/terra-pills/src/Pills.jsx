@@ -333,7 +333,7 @@ const Pills = (props) => {
 
   const pillListClassNames = classNames(
     cx([
-      'pill-list',
+      'pills-container',
       theme.className,
     ]),
     customProps.className,
@@ -355,13 +355,13 @@ const Pills = (props) => {
   return (
     <ResponsiveElement responsiveTo="window" onResize={handleWidthChange}>
       <div
+        {...customProps}
         {...pillsProps}
         aria-label={!ariaLabelledBy ? ariaLabel : undefined}
         aria-describedby={ariaDescribedBy}
         className={pillListClassNames}
         ref={pillsRef}
         tabIndex={containerTabindex}
-        {...customProps}
       >
         <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.pills.pillListHint' }, { numberOfPills: React.Children.count(children) })} />
         {children ? renderChildren(children) : []}

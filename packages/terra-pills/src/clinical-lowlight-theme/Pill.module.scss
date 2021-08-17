@@ -3,29 +3,30 @@
 :local {
   .clinical-lowlight-theme {
     // Pill
-    --terra-pills-pill-container-background-color: #1d2427;
-    --terra-pills-pill-container-border-color: #525659;
-    --terra-pills-pill-container-border-style: solid;
-    --terra-pills-pill-container-border-radius: 2rem;
-    --terra-pills-pill-container-border-width: 1px;
-    --terra-pills-pill-container-margin: 0.35714rem;
-    --terra-pills-pill-container-max-width-inset: 0.35714rem;
-    --terra-pills-pill-container-focus-border-color: #525659;
-    --terra-pills-pill-container-focus-border-width: 1px;
-    --terra-pills-pill-container-focus-box-shadow: none;
-    --terra-pills-pill-container-focus-outline: 2px dashed #fff;
-    --terra-pills-pill-container-focus-outline-offset: 2px;
-    --terra-pills-pill-container-selectable-hover-border-color: #525659;
-    --terra-pills-pill-container-selectable-active-border-color: #525659;
-    --terra-pills-pill-container-removable-hover-border-color: #525659;
-    --terra-pills-pill-container-selectable-removable-hover-border-color: #525659;
-    --terra-pills-pill-container-selectable-removable-active-border-color: #525659;
+    --terra-pills-pill-background-color: #1d2427;
+    --terra-pills-pill-border-color: #525659;
+    --terra-pills-pill-border-style: solid;
+    --terra-pills-pill-border-radius: 2rem;
+    --terra-pills-pill-border-width: 1px;
+    --terra-pills-pill-height: 1.71429rem;
+    --terra-pills-pill-margin: 0.35714rem;
+    --terra-pills-pill-max-width-inset: 0.35714rem;
+    --terra-pills-pill-focus-border-color: #525659;
+    --terra-pills-pill-focus-border-width: 1px;
+    --terra-pills-pill-focus-box-shadow: none;
+    --terra-pills-pill-focus-outline: 2px dashed #fff;
+    --terra-pills-pill-focus-outline-offset: 2px;
+    --terra-pills-pill-selectable-hover-border-color: #525659;
+    --terra-pills-pill-selectable-active-border-color: #525659;
+    --terra-pills-pill-removable-hover-border-color: #525659;
+    --terra-pills-pill-selectable-removable-hover-border-color: #525659;
+    --terra-pills-pill-selectable-removable-active-border-color: #525659;
 
     --terra-pills-pill-label-background-color: transparent;
     --terra-pills-pill-label-color: #b2b5b6;
     --terra-pills-pill-label-font-size: 0.85714rem;
-    --terra-pills-pill-label-line-height: 1.25;
-    --terra-pills-pill-label-padding-bottom: 0.21428rem;
+    --terra-pills-pill-label-line-height: 1.16667;
+    --terra-pills-pill-label-padding-bottom: 0.28571rem;
     --terra-pills-pill-label-padding-left: 0.64285rem;
     --terra-pills-pill-label-padding-right: 0.64285rem;
     --terra-pills-pill-label-padding-top: 0.28571rem;
@@ -63,9 +64,10 @@
     --terra-pills-roll-up-pill-border-width: 1px;
     --terra-pills-roll-up-pill-color: #b2b5b6;
     --terra-pills-roll-up-pill-font-size: 0.85714rem;
-    --terra-pills-roll-up-pill-line-height: 1.25;
+    --terra-pills-roll-up-pill-height: 1.71429rem;
+    --terra-pills-roll-up-pill-line-height: 1.16667;
     --terra-pills-roll-up-pill-margin: 0.35714rem;
-    --terra-pills-roll-up-pill-padding-bottom: 0.21428rem;
+    --terra-pills-roll-up-pill-padding-bottom: 0.28571rem;
     --terra-pills-roll-up-pill-padding-left: 0.64285rem;
     --terra-pills-roll-up-pill-padding-right: 0.64285rem;
     --terra-pills-roll-up-pill-padding-top: 0.28571rem;
@@ -80,6 +82,12 @@
     --terra-pills-roll-up-pill-active-border-color: #525659;
     --terra-pills-roll-up-pill-active-color: #9b9b9b;
 
+    // Popup Content for Truncated Basic Pill
+    --terra-pills-popup-pill-label-font-size: 0.92857rem;
+    --terra-pills-popup-pill-label-line-height: 1.3846;
+    --terra-pills-popup-pill-label-max-width: 640px;
+    --terra-pills-popup-pill-label-padding: 0.35714rem 0.57143rem;
+ 
     // Clear Icon SVG
     @include terra-inline-svg-var('--terra-pills-clear-icon-background-image', '<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#b2b5b6" d="M28.2 24L42.9 9.1 40.8 7l-1.7-1.6-.4-.5L24 19.7 9.4 4.9 7.2 7 5.6 8.6l-.5.5L19.8 24 5.1 38.9 7.2 41l1.7 1.6.5.5L24 28.3l14.7 14.8.4-.5 1.7-1.6 2.1-2.1L28.2 24z"></path></svg>');
     @include terra-inline-svg-var('--terra-pills-clear-icon-hover-background-image', '<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#9b9b9b" d="M28.2 24L42.9 9.1 40.8 7l-1.7-1.6-.4-.5L24 19.7 9.4 4.9 7.2 7 5.6 8.6l-.5.5L19.8 24 5.1 38.9 7.2 41l1.7 1.6.5.5L24 28.3l14.7 14.8.4-.5 1.7-1.6 2.1-2.1L28.2 24z"></path></svg>');

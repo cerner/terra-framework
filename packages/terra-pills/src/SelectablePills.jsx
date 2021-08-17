@@ -319,7 +319,7 @@ const SelectablePills = (props) => {
 
   const pillListClassNames = classNames(
     cx([
-      'pill-list',
+      'pills-container',
       theme.className,
     ]),
     customProps.className,
@@ -343,13 +343,13 @@ const SelectablePills = (props) => {
   return (
     <ResponsiveElement responsiveTo="window" onResize={handleWidthChange}>
       <div
+        {...customProps}
         {...selectablePillsProps}
         aria-label={!ariaLabelledBy ? ariaLabel : undefined}
         aria-describedby={ariaDescribedBy}
         className={pillListClassNames}
         ref={selectablePillsRef}
         tabIndex={containerTabindex}
-        {...customProps}
       >
         <VisuallyHiddenText id="terra-pill-visual-hidden-text" text={intl.formatMessage({ id: 'Terra.pills.pillListHint' }, { numberOfPills: React.Children.count(children) })} />
         {children ? renderChildren(children) : []}
