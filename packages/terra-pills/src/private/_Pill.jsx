@@ -21,59 +21,58 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-   * Sets the aria-expanded attribute to true when using a popup via 'onSelect' and the popup is visible. Only applies when used along with the 'onSelect' prop.
-   */
-  ariaExpanded: PropTypes.bool,
-  /**
-    * The html 'id' attribute for the pill, needed for proper interactability (Required must be unique)
+    * The html 'id' attribute for the pill, needed for proper keyboard interactions. (Required & must be unique)
     */
   id: PropTypes.string.isRequired,
   /**
-    * @private
-    * The intl object to be injected for translations.
-    */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
-  /**
-   * @private
-   * Whethe or not the pill is a basicPill(used for auto detecting truncation and showing internal pop-up)
+   * The label text for the pill. (Required)
    */
-  isBasicPill: PropTypes.bool,
-  /**
-    * Adds the ability for a pill to be removable.
-    */
-  isRemovable: PropTypes.bool,
-  /**
-    * The label text for the pill. (Required)
-    */
   label: PropTypes.string.isRequired,
   /**
-    * Object returned along with the pillKey in the onRemove and onSelect(<SelectablePills />) callback.
-    */
-  metaData: PropTypes.object,
-  /**
-    * @private
-    * A callback function to execute when the pill is removed. Returns pillKey, metadata.
-    */
-  onRemove: PropTypes.func,
-  /**
-   * @private
-   * A callback function to execute when the pill is selected. Returns pillRef, pillKey, metadata. Only applicable for <SelectablePills />
-   *
-   * ![IMPORTANT](https://badgen.net/badge/UX/Design-Standards/blue) Intended to only be used to disclose a popup.
+   * Sets the aria-expanded attribute to true when using a popup and the popup is visible. (Only applicable for `<SelectablePills />`)
    */
-  onSelect: PropTypes.func,
+  ariaExpanded: PropTypes.bool,
+  /**
+   * Adds the ability for a pill to be removable.
+   */
+  isRemovable: PropTypes.bool,
+  /**
+   * Object returned along with the 'pillKey' in the `onRemove` and `onSelect` callback. ('onSelect' only applicable for `<SelectablePills />`)
+   */
+  metaData: PropTypes.object,
   /**
    * To identify which pill is being removed.
    */
   pillKey: PropTypes.string,
   /**
-   * Callback to expose pill element's ref for popup placement. Only applicable for <SelectablePills />
+   * Callback to expose pill element's ref for popup placement. (Only applicable for `<SelectablePills />`)
    */
   refCallback: PropTypes.func,
   /**
    * @private
-   * Tooltip to display if the pill label does not have enough space to display and will show as truncated, to be used
-   * in addition to a popup.
+   * The intl object to be injected for translations.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
+   * @private
+   * Whether or not the pill is a basicPill (used for auto detecting truncation and showing internal pop-up)
+   */
+  isBasicPill: PropTypes.bool,
+  /**
+   * @private
+   * A callback function to execute when the pill is removed. Returns pillKey, metadata.
+   */
+  onRemove: PropTypes.func,
+  /**
+   * @private
+   * A callback function to execute when the pill is selected. Returns pillRef, pillKey, metadata. Only applicable for <SelectablePills />
+   * Intended to only be used to disclose a popup.
+   */
+  onSelect: PropTypes.func,
+  /**
+   * @private
+   * Tooltip to display if the pill label does not have enough space to display and will show as truncated,
+   * to be used in addition with a popup.
    */
   title: PropTypes.string,
 };
@@ -122,11 +121,13 @@ const Pill = (props) => {
   }, [isRemovable, onRemove]);
 
   const handleOnRemove = (event) => {
+    event.preventDefault();
     event.stopPropagation();
     onRemove(pillKey, metaData);
   };
 
   const handleOnClick = (event) => {
+    event.preventDefault();
     event.stopPropagation();
     if (isBasicPill && isTruncated) {
       setPopupOpen(true);
@@ -145,7 +146,6 @@ const Pill = (props) => {
     pillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'true');
     if ((event.keyCode === KEY_RETURN || event.keyCode === KEY_SPACE)) {
       event.preventDefault();
-      event.stopPropagation();
       if (isBasicPill && isTruncated) {
         setPopupOpen(true);
       }
@@ -154,7 +154,6 @@ const Pill = (props) => {
       }
     } else if ((event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE)) {
       event.preventDefault();
-      event.stopPropagation();
       if (onRemove && isRemovable) {
         onRemove(pillKey, metaData);
       }
@@ -171,21 +170,36 @@ const Pill = (props) => {
     }
   };
 
+  const handleWidthChange = () => {
+    if (pillRef.current.firstElementChild.scrollWidth > pillRef.current.firstElementChild.offsetWidth) {
+      setIsTruncated(true);
+      if (isBasicPill) { pillRef.current.setAttribute('aria-haspopup', 'dialog'); }
+    } else {
+      setIsTruncated(false);
+      if (isBasicPill && pillRef.current.hasAttribute('aria-haspopup')) {
+        pillRef.current.setAttribute('aria-haspopup', false);
+      }
+    }
+  };
+
   const getPillRef = () => pillRef.current;
 
+  const pillInteraction = {};
+  pillInteraction.isSelectable = !!onSelect || (isBasicPill && isTruncated);
+  pillInteraction.isRemovable = isRemovable;
+  pillInteraction.isSelectableAndRemovable = (!!onSelect && isRemovable) || (isRemovable && isTruncated);
+
   const pillProps = {};
-  if (onSelect || isRemovable || (isBasicPill && isTruncated)) {
+  pillProps.title = title || (isTruncated ? label : undefined);
+  if (pillInteraction.isSelectable || pillInteraction.isRemovable) {
     pillProps.tabIndex = '0';
-    pillProps.role = 'button';
     pillProps.onKeyDown = handleOnKeyDown;
     pillProps.onMouseDown = handleOnMouseDown;
     pillProps.onBlur = handleOnBlur;
   }
 
   const pillButtonProps = {};
-  pillButtonProps.title = isTruncated ? label : undefined;
-
-  if (onSelect || isBasicPill) {
+  if (pillInteraction.isSelectable) {
     pillButtonProps.onClick = handleOnClick;
   }
 
@@ -195,123 +209,105 @@ const Pill = (props) => {
   }
 
   let pillInteractionHint;
-  if ((onSelect && isRemovable) || (isTruncated && isRemovable)) {
-    pillInteractionHint = intl.formatMessage({ id: 'Terra.pills.pillHint.selectableAndRemovable' });
-  } else if (onSelect || (isBasicPill && isTruncated)) {
-    pillInteractionHint = intl.formatMessage({ id: 'Terra.pills.pillHint.selectable' });
-  } else if (isRemovable) {
-    pillInteractionHint = intl.formatMessage({ id: 'Terra.pills.pillHint.removable' });
+  if (pillInteraction.isSelectableAndRemovable) {
+    pillInteractionHint = `, ${intl.formatMessage({ id: 'Terra.pills.pillHint.selectableAndRemovable' })}`;
+  } else if (pillInteraction.isSelectable) {
+    pillInteractionHint = `, ${intl.formatMessage({ id: 'Terra.pills.pillHint.selectable' })}`;
+  } else if (pillInteraction.isRemovable) {
+    pillInteractionHint = `, ${intl.formatMessage({ id: 'Terra.pills.pillHint.removable' })}`;
   }
 
   const pillClassNames = classNames(
     cx([
       'pill',
-      { 'is-focusable': !!onSelect || isTruncated || isRemovable },
-      { 'is-selectable': !!onSelect || (isBasicPill && isTruncated) },
-      { 'is-removable': isRemovable },
-      { 'is-selectable-and-removable': (!!onSelect && isRemovable) || (isRemovable && isTruncated) },
+      { 'is-focusable': pillInteraction.isSelectable || pillInteraction.isRemovable },
+      { 'is-selectable': pillInteraction.isSelectable },
+      { 'is-removable': pillInteraction.isRemovable },
+      { 'is-selectable-and-removable': pillInteraction.isSelectableAndRemovable },
       theme.className,
     ]),
     customProps.className,
   );
 
-  const pillLabelClassNames = cx([
-    'pill-label',
-    { 'is-selectable': !!onSelect || (isBasicPill && isTruncated) },
-    { 'is-removable': isRemovable },
-    { 'is-selectable-and-removable': (!!onSelect && isRemovable) || (isRemovable && isTruncated) },
-  ]);
+  const createTruncatedPopupContent = () => (
+    <Popup
+      isOpen={open}
+      isArrowDisplayed
+      targetRef={getPillRef}
+      onRequestClose={handleOnRequestClose}
+      contentHeight="auto"
+      contentWidth="auto"
+    >
+      <div className={cx('popup-content-pill-label')}>{label}</div>
+    </Popup>
+  );
 
-  const removeButtonClassNames = cx([
-    'pill-remove-button',
-  ]);
+  const createRemoveButton = () => (
+    <span
+      {...removeButtonProps}
+      className={cx('pill-remove-button')}
+      aria-hidden="true"
+    >
+      <span className={cx('clear-icon')} />
+    </span>
+  );
 
-  const pillLabelData = {
-    labelProps: pillButtonProps,
-    labelStyles: pillLabelClassNames,
-    labelText: label,
-    isSelectable: !!onSelect || (isBasicPill && isTruncated)
-  };
-
-  const createPillLabel = (pillLabelData) => {
-    if (pillLabelData.isSelectable) {
-      return (
-        <button
-         {...pillLabelData.labelProps}
-         tabIndex="-1"
-         type="button"
-         className={pillLabelData.labelStyles}
-        >
-          <span className={cx('selectable-button-inner-span')}>{pillLabelData.labelText}</span>
-        </button>
-      );
-    }
-    return (
-      <span
-        {...pillLabelData.labelProps}
-        className={pillLabelData.labelStyles}
-      >
-       {pillLabelData.labelText}
-      </span>
-    );
-  };
-
-  const createPopupContent = () => {
-    if (isTruncated && isBasicPill) {
-      return (
-        <Popup
-          isOpen={open}
-          isArrowDisplayed
-          targetRef={getPillRef}
-          onRequestClose={handleOnRequestClose}
-          contentHeight="auto"
-          contentWidth="auto"
-        > 
-          <div className={cx('popup-content-pill-label')}>{label}</div>
-        </Popup>
-      );
-    }
-    return null;
-  };
-
-  const handleWidthChange = () => {
-    if (isBasicPill && (pillRef.current.firstElementChild.scrollWidth > pillRef.current.firstElementChild.offsetWidth)) {
-      setIsTruncated(true);
-      pillRef.current.setAttribute('aria-haspopup', true);
-    } else {
-      setIsTruncated(false);
-      if (pillRef.current.hasAttribute('aria-haspopup')) {
-        pillRef.current.setAttribute('aria-haspopup', false);
-      }
-    }
-  };
-
-  return (
-    <ResponsiveElement responsiveTo="window" onResize={handleWidthChange}>
-      <div
+  const createSelectablePill = () => (
+    <>
+      <button
         {...customProps}
         {...pillProps}
-        aria-expanded={!onSelect ? undefined : ariaExpanded}
-        className={pillClassNames}
+        {...pillButtonProps}
+        aria-expanded={pillInteraction.isSelectable ? ariaExpanded : undefined}
+        aria-haspopup={pillInteraction.isSelectable ? 'dialog' : undefined}
         id={id}
+        className={pillClassNames}
         ref={pillRef}
+        type="button"
         data-terra-pills-show-focus-styles
         data-terra-pill
       >
-        {createPillLabel(pillLabelData)}
-        {isRemovable && (
-          <div
-            {...removeButtonProps}
-            className={removeButtonClassNames}
-          >
-            <span className={cx('clear-icon')} />
-          </div>
-        )}
+        <span
+          className={cx('pill-label')}
+        >
+          {label}
+        </span>
+        {pillInteraction.isRemovable && createRemoveButton()}
         {pillInteractionHint && <VisuallyHiddenText text={pillInteractionHint} />}
-        {createPopupContent()}
+      </button>
+      {isTruncated && isBasicPill && createTruncatedPopupContent()}
+    </>
+  );
+
+  const createBasicPill = () => (
+    <div
+      {...customProps}
+      {...pillProps}
+      id={id}
+      className={pillClassNames}
+      ref={pillRef}
+      data-terra-pills-show-focus-styles
+      data-terra-pill
+      aria-label={label}
+      aria-describedby={`interaction-hint-${id}`}
+    >
+      <span
+        className={cx('pill-label')}
+        aria-hidden="true"
+      >
+        {label}
+      </span>
+      {pillInteraction.isRemovable && createRemoveButton()}
+      {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={pillInteractionHint} aria-hidden="true" />}
+    </div>
+  );
+
+  return (
+    <ResponsiveElement responsiveTo="window" onResize={handleWidthChange}>
+      <div role="listitem" className={cx('pill-list-item')}>
+        { pillInteraction.isSelectable ? createSelectablePill() : createBasicPill() }
       </div>
     </ResponsiveElement>
-
   );
 };
 
