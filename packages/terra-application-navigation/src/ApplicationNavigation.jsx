@@ -343,7 +343,7 @@ const ApplicationNavigation = ({
 
   useEffect(() => {
     const forceCloseMenu = () => {
-      setDrawerMenuIsOpen(false);
+      updateDrawerIsOpen(false);
       setPopupMenuIsOpen(false);
     };
 
