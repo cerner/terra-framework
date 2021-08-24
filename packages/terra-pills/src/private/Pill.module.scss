@@ -184,7 +184,9 @@
     cursor: pointer;
     display: flex;
     flex: 0 0 auto;
+    font-family: inherit; // Button reset
     height: 100%;
+    left: 0; // Button reset for IE
     line-height: 0;
     margin: 0;
     min-width: 0;
@@ -192,7 +194,9 @@
     overflow: hidden;
     padding: 0;
     pointer-events: auto;
+    position: relative; // Button reset for IE
     text-align: start;
+    top: 0;  // Button reset for IE
     touch-action: manipulation; // Enable fast tap interaction in webkit browsers; see https://webkit.org/blog/5610/more-responsive-tapping-on-ios/
     user-select: none; // Prevent text selection on buttons in mobile devices;
 
@@ -210,6 +214,10 @@
       background-color: var(--terra-pills-pill-remove-button-active-background-color, #bcbfc0);
       box-shadow: var(--terra-pills-pill-remove-button-active-box-shadow, -1px 0 0 0 #595f62, 1px 0 0 0 #bcbfc0);
       color: var(--terra-pills-pill-remove-button-active-color, #222a2e);
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 

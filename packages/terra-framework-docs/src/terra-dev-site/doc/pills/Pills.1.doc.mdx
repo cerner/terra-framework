@@ -1,0 +1,159 @@
+import { Badge } from '@cerner/terra-pills/package.json?dev-site-package';
+import { Notice } from '@cerner/terra-docs';
+import Spacer from 'terra-spacer';
+
+import IntroductionToPillsExample from './example/IntroductionToPills?dev-site-example';
+import BasicPillExample from './example/BasicPill?dev-site-example';
+import BasicRemovablePillExample from './example/BasicRemovablePill?dev-site-example';
+import DisclosurePillExample from './example/DisclosurePill?dev-site-example';
+import DisclosureRemovablePillExample from './example/DisclosureRemovablePill?dev-site-example';
+import StandardPillsGroupExample from './example/StandardPillsGroup?dev-site-example';
+import CollapsiblePillsGroupExample from './example/CollapsiblePillsGroup?dev-site-example';
+
+import BasicPillsPropsTable from '@cerner/terra-pills/src/Pills?dev-site-props-table';
+import SelectablePillsPropsTable from '@cerner/terra-pills/src/SelectablePills?dev-site-props-table';
+import ChildPillPropsTable from '@cerner/terra-pills/src/private/_Pill?dev-site-props-table';
+
+<Badge />
+
+# Terra Pills
+
+Pills are used to assign a label or keyword to user interface (UI) objects, defining a non-hierarchal group. They are used to visually label UI objects for quick recognition. These labels can be generated either by the system or created by users entering data.
+
+## What the component is
+
+Pills are comprised of the following:
+* Pill container with actionable target area
+* Label
+
+There are two types of pills:
+* Basic
+* Removable
+
+## What the component is not
+
+* Although similar, pills and tags have their own use cases and best practices for when they should be used within the UI. See tags for more information.
+* Pills should not be used to create button group functionality. See button groups for more information.
+* Pills should not be used to create toggle functionality. See button group, checkbox, radio buttons, or switch for more information.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-pills`
+
+## Usage
+
+```jsx
+import Pills, { SelectablePills } from 'terra-pills';
+```
+
+## Component Features
+
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [LTR/RTL Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#ltr--rtl-support)
+
+<Spacer marginTop="large+4" marginBottom="large+4" aria-hidden="true">&nbsp;</Spacer>
+
+## Introduction
+Pills can be added to a variety of situations and compositions to apply context.
+<IntroductionToPillsExample title="Introduction to Pills: Sample Article" />
+
+<Spacer marginTop="large+2" marginBottom="large+2" aria-hidden="true">&nbsp;</Spacer>
+
+## How To Construct: Basic Pills
+Pills in their most basic form are non-interactive and only display a label. 
+<BasicPillExample title="Basic Pill" />
+
+The basic pills can also be configured to be removeable by using the `isRemovable` prop, which makes them interactive with the addition 
+of a remove ("X") button. Note: be sure to also include a `pillKey` and `metaData` for each pill to used by the Pills container `onRemove` 
+handler.
+<BasicRemovablePillExample title="Removable Pill" />
+
+<Spacer marginBottom="large+2" aria-hidden="true">&nbsp;</Spacer>
+
+## How To Construct: Selectable Pills
+Pills can also disclose additional information by providing a popover (via terra-popup), which will make the label of the pill selectable.
+<DisclosurePillExample title="Basic Pill with a Popup" />
+
+Selectable pills can also be configured to be removeable in the same way as basic pills by using the `isRemovable` prop, which makes them 
+interactive with the addition of a remove ("X") button. Note: be sure to also include a `pillKey` and `metaData` for each pill to used by 
+the Pills container `onRemove` handler.
+
+<DisclosureRemovablePillExample title="Removable Pill with a Popup" />
+
+Providing a popup to the pill component requires additional construction considerations in order to make it properly accessible, since the
+popup component is not provided by default with the pills component.
+
+<Notice variant="important" ariaLevel="3">
+  Accessibility Considerations:
+
+  ```diff
+  +   <span id={pillgrouplabel.id}>
+  +     {pillgrouplabel.label}
+  +   </span>
+      <SelectablePills
+        ariaLabel={pillgrouplabel.label}
+  +     ariaLabelledBy={pillgrouplabel.id}
+  +     onSelect={handleOnSelect}
+        onRemove={handleOnRemove}
+      >
+        <SelectablePills.Pill
+            label={pill.label}
+            id={pill.id}
+            key={pill.id}
+            pillKey={pill.label}
+            metaData={{ index }}
+  +         ariaExpanded={state.isOpen}
+        />
+      </SelectablePills>
+  ```
+
+  ```diff
+      <Popup
+        isOpen={state.isOpen}
+        isArrowDisplayed
+        targetRef={getPillNodeRef}
+        onRequestClose={handleOnRequestClose}
+        contentHeight="160"
+        contentWidth="240"
+      >
+        <Content 
+  +       aria-labelledby={pill.id}
+        >
+           {popupContentHere}
+        </Content>
+      </Popup>
+  ```
+
+</Notice>
+
+<Spacer marginTop="large+4" marginBottom="large+4" aria-hidden="true">&nbsp;</Spacer>
+
+## Examples of Pill Groups
+Since pills are commonly used in a group, pills come with a container that is needed for proper keyboard interactions and accessibilty hints.  
+The pills component requires an `ariaLabel` for accessibility minimum standards, but it is not visible to users. For actual usage, 
+pills should include an additional visible label, styled and positioned according to needed usage, which can be connected to the pills
+component via the `ariaLabelledBy` prop.
+<StandardPillsGroupExample title="Group of Basic Pills with a Visible Label" />
+
+<Spacer marginBottom="large+2" aria-hidden="true">&nbsp;</Spacer>
+
+Pills also have the ability to be collapsible, restricting the display of pills to a single line when there are more pills that can display, 
+and automatically will insert a roll-up pill that contains the count of the number of pills not visible.
+<CollapsiblePillsGroupExample title="Collapsible Group of Pills: example for Applied Filters" />
+
+
+<Spacer marginTop="large+4" marginBottom="large+4" aria-hidden="true">&nbsp;</Spacer>
+
+## Props for Basic Pills
+<BasicPillsPropsTable />
+
+<Spacer marginBottom="large+2" aria-hidden="true">&nbsp;</Spacer>
+
+## Props for Selectable Pills
+<SelectablePillsPropsTable />
+
+<Spacer marginBottom="large+2" aria-hidden="true">&nbsp;</Spacer>
+
+## Props for Pills.Pill sub-component
+<ChildPillPropsTable />

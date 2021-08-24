@@ -68,16 +68,23 @@ exports[`Pill should render a basic pill 1`] = `
       responsiveTo="window"
     >
       <div
-        className="pill-container"
-        data-terra-pill={true}
-        data-terra-pills-show-focus-styles={true}
-        id="Default"
+        className="pill-list-item"
+        role="listitem"
       >
         <div
-          className="pill-label"
-          title=""
+          aria-describedby="interaction-hint-Default"
+          aria-label="Default"
+          className="pill"
+          data-terra-pill={true}
+          data-terra-pills-show-focus-styles={true}
+          id="Default"
         >
-          Default
+          <span
+            aria-hidden="true"
+            className="pill-label"
+          >
+            Default
+          </span>
         </div>
       </div>
     </ResponsiveElement>
@@ -155,38 +162,49 @@ exports[`Pill should render a removable pill 1`] = `
       responsiveTo="window"
     >
       <div
-        className="pill-container is-focusable is-removable"
-        data-terra-pill={true}
-        data-terra-pills-show-focus-styles={true}
-        id="Removable"
-        onBlur={[Function]}
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        role="button"
-        tabIndex="0"
+        className="pill-list-item"
+        role="listitem"
       >
         <div
-          className="pill-label is-removable"
-          title=""
-        >
-          Removable
-        </div>
-        <div
-          className="pill-remove-button"
-        >
-          <span
-            className="clear-icon"
-          />
-        </div>
-        <VisuallyHiddenText
-          text="Terra.pills.pillHint.removable"
+          aria-describedby="interaction-hint-Removable"
+          aria-label="Removable"
+          className="pill is-focusable is-removable"
+          data-terra-pill={true}
+          data-terra-pills-show-focus-styles={true}
+          id="Removable"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          tabIndex="0"
         >
           <span
-            className="visually-hidden-text"
+            aria-hidden="true"
+            className="pill-label"
           >
-            Terra.pills.pillHint.removable
+            Removable
           </span>
-        </VisuallyHiddenText>
+          <span
+            aria-hidden="true"
+            className="pill-remove-button"
+          >
+            <span
+              className="clear-icon"
+            />
+          </span>
+          <VisuallyHiddenText
+            aria-hidden="true"
+            id="interaction-hint-Removable"
+            text=", Terra.pills.pillHint.removable"
+          >
+            <span
+              aria-hidden="true"
+              className="visually-hidden-text"
+              id="interaction-hint-Removable"
+            >
+              , Terra.pills.pillHint.removable
+            </span>
+          </VisuallyHiddenText>
+        </div>
       </div>
     </ResponsiveElement>
   </Pill>
@@ -265,39 +283,45 @@ exports[`Pill should render a selectable and removable pill 1`] = `
       responsiveTo="window"
     >
       <div
-        className="pill-container is-focusable is-selectable is-removable is-selectable-and-removable"
-        data-terra-pill={true}
-        data-terra-pills-show-focus-styles={true}
-        id="SelectableRemovable"
-        onBlur={[Function]}
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        role="button"
-        tabIndex="0"
+        className="pill-list-item"
+        role="listitem"
       >
-        <div
-          className="pill-label is-selectable is-removable is-selectable-and-removable"
+        <button
+          aria-haspopup="dialog"
+          className="pill is-focusable is-selectable is-removable is-selectable-and-removable"
+          data-terra-pill={true}
+          data-terra-pills-show-focus-styles={true}
+          id="SelectableRemovable"
+          onBlur={[Function]}
           onClick={[Function]}
-          title=""
-        >
-          Selectable and Removable
-        </div>
-        <div
-          className="pill-remove-button"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          tabIndex="0"
+          type="button"
         >
           <span
-            className="clear-icon"
-          />
-        </div>
-        <VisuallyHiddenText
-          text="Terra.pills.pillHint.selectableAndRemovable"
-        >
-          <span
-            className="visually-hidden-text"
+            className="pill-label"
           >
-            Terra.pills.pillHint.selectableAndRemovable
+            Selectable and Removable
           </span>
-        </VisuallyHiddenText>
+          <span
+            aria-hidden="true"
+            className="pill-remove-button"
+          >
+            <span
+              className="clear-icon"
+            />
+          </span>
+          <VisuallyHiddenText
+            text=", Terra.pills.pillHint.selectableAndRemovable"
+          >
+            <span
+              className="visually-hidden-text"
+            >
+              , Terra.pills.pillHint.selectableAndRemovable
+            </span>
+          </VisuallyHiddenText>
+        </button>
       </div>
     </ResponsiveElement>
   </Pill>
@@ -374,32 +398,37 @@ exports[`Pill should render a selectable pill 1`] = `
       responsiveTo="window"
     >
       <div
-        className="pill-container is-focusable is-selectable"
-        data-terra-pill={true}
-        data-terra-pills-show-focus-styles={true}
-        id="Selectable"
-        onBlur={[Function]}
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        role="button"
-        tabIndex="0"
+        className="pill-list-item"
+        role="listitem"
       >
-        <div
-          className="pill-label is-selectable"
+        <button
+          aria-haspopup="dialog"
+          className="pill is-focusable is-selectable"
+          data-terra-pill={true}
+          data-terra-pills-show-focus-styles={true}
+          id="Selectable"
+          onBlur={[Function]}
           onClick={[Function]}
-          title=""
-        >
-          Selectable
-        </div>
-        <VisuallyHiddenText
-          text="Terra.pills.pillHint.selectable"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          tabIndex="0"
+          type="button"
         >
           <span
-            className="visually-hidden-text"
+            className="pill-label"
           >
-            Terra.pills.pillHint.selectable
+            Selectable
           </span>
-        </VisuallyHiddenText>
+          <VisuallyHiddenText
+            text=", Terra.pills.pillHint.selectable"
+          >
+            <span
+              className="visually-hidden-text"
+            >
+              , Terra.pills.pillHint.selectable
+            </span>
+          </VisuallyHiddenText>
+        </button>
       </div>
     </ResponsiveElement>
   </Pill>

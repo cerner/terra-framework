@@ -1,0 +1,369 @@
+// Themes
+@import '../../../theme/clinical-lowlight-theme/Pills.module';
+@import '../../../theme/orion-fusion-theme/Pills.module';
+
+:local {
+  .inline-pill-container {
+    display: inline-block;
+  }
+
+  .fixed-width-100 {
+    width: 100px;    
+  }
+
+  .fixed-width-200 {
+    width: 200px;    
+  }
+
+  .fixed-width-400 {
+    width: 400px;    
+  }
+
+  .fixed-width-600 {
+    width: 600px;    
+  }
+
+  .fixed-width-50per {
+    width: 50%;    
+  }
+
+  .width-100per-min-150 {
+    min-width: 150px;
+    width: 100%;
+  }
+
+  .toggle-active-button:disabled {
+    opacity: 0.3;
+  }
+
+
+  // Introduction to Pills Example
+  .card-article {
+    width: 100%;
+  
+    .card-article-photo {
+      margin: 0;
+      padding: 1.0714285714rem;
+
+      .card-article-photo-caption {
+        color: var(--terra-framework-docs-pills-doc-example-intro-card-article-photo-caption-color, rgba(28, 31, 33, 0.65));
+        font-size: 0.82142rem;
+        margin: 0.28571rem 0 0 0;
+        max-width: 320px;
+        padding: 0;
+        text-align: left;
+      }
+    }
+
+    .card-article-content {
+      padding: 0.71428rem 1.0714285714rem 0 0.42857rem;
+    
+      .card-article-content p {
+        font-size: 0.92857rem;
+        margin: 0.71428rem 0;
+      }
+
+      .card-article-content-heading {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .card-article-pills {
+      padding: 0.5rem 1.0714285714rem 1.0714285714rem 0;
+
+      .pill-container-label {
+        color: var(--terra-framework-docs-pills-doc-example-intro-card-article-pill-container-label-color, rgba(28, 31, 33, 0.7));
+        font-size: 0.92857rem;
+        font-weight: bold;
+        margin: 0 0 0 0.5rem;
+        padding: 0;
+      } 
+    }
+
+    .single-column-layout{
+      .card-article-photo {
+        // background-color: #bd10e0;
+        padding-left: 0.42857rem;
+        padding-right: 0.42857rem;
+        padding-top: 0;
+
+        img {
+          object-fit: cover;
+          height: 100px;
+          width: 100%;
+        }
+      }
+
+      .card-article-content {
+        padding-right: 0.42857rem;
+      }  
+    }
+  }
+
+  // Standard Pills Example
+  .standard-pill-container-example {
+    margin: 0;
+    padding: 1.07142rem 1.07142rem 0 1.5rem;
+
+    .pill-container-label {
+      color: var(--terra-framework-docs-pills-doc-example-standard-pill-container-label-color, rgba(28, 31, 33, 0.7));
+      display: inline-block;
+      font-size: 0.92857rem;
+      font-weight: bold;
+      margin: 0 0.35714rem 0 0.5rem;
+      padding: 0;
+      vertical-align: middle;
+    }
+
+    .inline-pill-container {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  // Collapsible Pills Example
+  .terra-pills-doc-example-applied-filters { 
+    border: var(--terra-framework-docs-pills-doc-example-applied-filters-border, 1px solid #d3d4d5);
+    margin-bottom: 1rem;
+
+    .applied-filters-toolbar {
+      padding-bottom: var(--terra-framework-docs-pills-doc-example-applied-filters-toolbar-padding-bottom, 0.14286rem);
+      padding-left: var(--terra-framework-docs-pills-doc-example-applied-filters-toolbar-padding-left, 0.71429rem);
+      padding-right: var(--terra-framework-docs-pills-doc-example-applied-filters-toolbar-padding-right, 0.35714rem);
+      padding-top: var(--terra-framework-docs-pills-doc-example-applied-filters-toolbar-padding-top, 0.28571rem);
+
+      & > [class*='Toolbar-module__item___'] {
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+    }
+
+    .applied-filters-content-panel {
+      background-color: var(--terra-framework-docs-pills-doc-example-applied-filters-content-panel-background-color, #f4f4f4);
+      margin: 0;
+      padding: var(--terra-framework-docs-pills-doc-example-applied-filters-content-panel-padding, 0);
+    }
+
+    .applied-filters-flex-arrange {
+      display: flex;
+      margin: 0;
+      min-width: 100%;
+      padding: 0;
+      width: 100%;
+    }
+
+    .applied-filters-label-flex,
+    .applied-filters-pilllist-flex,
+    .applied-filters-clearbtn-flex {
+      margin: 0;
+      padding: 0;
+    }
+
+    .applied-filters-label-flex {
+      flex: 0 0 auto;
+      margin-right: var(--terra-framework-docs-pills-doc-example-applied-filters-label-flex-margin-right, 0.35714rem); //0.71429rem);
+      padding-top: var(--terra-framework-docs-pills-doc-example-applied-filters-label-flex-padding-top, 0.60714rem); // 0.57143rem);//0.64286rem);
+      vertical-align: top;
+  
+      .pill-container-label {
+        color: var(--terra-framework-docs-pills-doc-example-applied-filters-pill-container-label-color, #4d5153);
+        display: inline-block;
+        font-size: var(--terra-framework-docs-pills-doc-example-applied-filters-pill-container-label-font-size, 0.92857rem);
+        vertical-align: top;
+      }  
+    }
+
+    .applied-filters-pilllist-flex {
+      flex: 1 1 auto;
+      min-width: 10rem;
+      vertical-align: top;
+    }
+
+    .applied-filters-clearbtn-flex {
+      flex: 0 0 auto;
+      margin-left: var(--terra-framework-docs-pills-doc-example-applied-filters-clearbtn-flex-margin-left, 0.35714rem); //0.71429rem);
+      padding-top: var(--terra-framework-docs-pills-doc-example-applied-filters-clearbtn-flex-padding-top, 0.10714rem); //0.14285rem);
+      vertical-align: top;
+    }
+  }
+
+  // Truncation Example
+  .terra-pills-doc-example-handling-truncation {
+    padding: 0 0.71428rem 0 0.71428rem;
+
+    .label {
+      color: var(--terra-framework-docs-pills-doc-example-handling-truncation-label-color, rgba(28, 31, 33, 0.85));
+      font-size: var(--terra-framework-docs-pills-doc-example-handling-truncation-label-font-size, 0.96428rem);
+      margin: 0;
+      margin-bottom: var(--terra-framework-docs-pills-doc-example-handling-truncation-label-margin-bottom, 0.25rem);
+      margin-top: var(--terra-framework-docs-pills-doc-example-handling-truncation-label-margin-top, 0.25rem);
+      padding: 0;
+    }
+
+    .space-between {
+      margin-top: var(--terra-framework-docs-pills-doc-example-handling-truncation-space-between-margin-top, 2rem);
+    }
+
+    .show-outer-container {
+      border-left: var(--terra-framework-docs-pills-doc-example-handling-truncation-outer-container-border-left, 2px dashed #bd10e0);
+      border-right: var(--terra-framework-docs-pills-doc-example-handling-truncation-outer-container-border-right, 2px dashed #bd10e0);
+      margin: 0;
+      padding: 0;
+      padding-left: var(--terra-framework-docs-pills-doc-example-handling-truncation-outer-container-padding-left, 6px);
+      padding-right: var(--terra-framework-docs-pills-doc-example-handling-truncation-outer-container-padding-right, 6px);
+    }
+  
+    .show-pill-container {
+      background-color: var(--terra-framework-docs-pills-doc-example-handling-truncation-pill-container-background-color, rgba(249, 138, 236, 0.04));
+      border-bottom: var(--terra-framework-docs-pills-doc-example-handling-truncation-pill-container-border-bottom, 1px dashed rgba(119, 85, 126, 0.25));
+      border-left: var(--terra-framework-docs-pills-doc-example-handling-truncation-pill-container-border-left, 2px dashed #bd10e0);
+      border-right: var(--terra-framework-docs-pills-doc-example-handling-truncation-pill-container-border-right, 2px dashed #bd10e0);
+      border-top: var(--terra-framework-docs-pills-doc-example-handling-truncation-pill-container-border-top, 1px dashed rgba(189, 16, 224, 0.25));
+      box-shadow: var(--terra-framework-docs-pills-doc-example-handling-truncation-pill-container-box-shadow, 6px 0 0 0 rgba(189, 16, 224, 0.15), -6px 0 0 0 rgba(189, 16, 224, 0.15));
+      padding-bottom: var(--terra-framework-docs-pills-doc-example-handling-truncation-pill-container-padding-bottom, 4px);
+      padding-top: var(--terra-framework-docs-pills-doc-example-handling-truncation-pill-container-padding-top, 4px);
+    }
+  
+    .truncation-protection-width {
+      min-width: var(--terra-framework-docs-pills-doc-example-handling-truncation-protection-min-width, 10.25rem);
+      width: var(--terra-framework-docs-pills-doc-example-handling-truncation-protection-width, 50%);
+    }
+
+    .truncation-forced-width {
+      width: var(--terra-framework-docs-pills-doc-example-handling-truncation-forced-width, 8.5rem);
+    }
+  }
+  
+  // Truncation Example Popup
+  .terra-pills-doc-example-handling-truncation-popup-sample-content {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: var(--terra-framework-docs-pills-doc-example-handling-truncation-popup-content-padding, 0.35714rem);
+    width: 100%;
+
+    .centered-text {
+      display: inline-block;
+      line-height: var(--terra-framework-docs-pills-doc-example-handling-truncation-popup-content-line-height, 1.14285);
+      text-align: center;
+    }
+  }
+
+  // Example Group Container Styles
+
+  // Variables
+  $terra-example-group-default: (
+    background-color: transparent,
+    border-radius: 0,
+    padding: 0,
+  );
+
+  $terra-example-group-default-divider: (
+    border: var(--terra-framework-docs-pills-doc-example-group-default-divider-border, 1px solid #eaecef),
+    padding: var(--terra-framework-docs-pills-doc-example-group-default-divider-padding, 0.85714rem),
+  );
+
+  // Mixins
+  @mixin terra-example-group-container($style-map) {
+    background-color: map-get($style-map, background-color);
+    border-radius: map-get($style-map, border-radius);
+    padding: map-get($style-map, padding);
+  }
+
+  @mixin terra-example-group-direction-column-with-divider-reset {
+    .group-start {
+      border-bottom: 0 none;
+      padding-bottom: 0;
+    }
+    .group-end {
+      padding-top: 0;
+    }
+  }
+
+  @mixin terra-example-group-direction-column-with-divider($style-map) {
+    .group-start {
+      border-bottom: map-get($style-map, border);
+      padding-bottom: map-get($style-map, padding);
+    }
+    .group-end {
+      padding-top: map-get($style-map, padding);
+    }
+  }
+
+  @mixin terra-example-group-direction-column {
+    flex-direction: column;
+
+    .group-start,
+    .group-end {
+      flex-basis: 100%;
+      width: 100%
+    }
+
+    &.show-column-divider {
+      @include terra-example-group-direction-column-with-divider($terra-example-group-default-divider);
+    }
+  }
+
+  @mixin terra-example-group-direction-row-with-divider($style-map) {
+    .group-start {
+      border-right: map-get($style-map, border);
+      padding-right: map-get($style-map, padding);
+    }
+    .group-end {
+      padding-left: map-get($style-map, padding);
+    }
+  }
+
+  @mixin terra-example-group-direction-row {
+    flex-direction: row;
+
+    .group-start,
+    .group-end {
+      flex-basis: 50%;
+      width: 50%
+    }
+
+    &.show-row-divider {
+      @include terra-example-group-direction-row-with-divider($terra-example-group-default-divider);
+    }
+  }
+
+  .group-container {
+    @include terra-example-group-container($terra-example-group-default);
+    display: flex;
+    margin: 0;
+    width: 100%;
+  }
+
+  .group-start,
+  .group-end {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .responsive {
+    @include terra-example-group-direction-column;
+  }
+
+  @media screen and (min-width: 990px) { // size is not from $terra-breakpoints, custom for terra-docsite
+    .responsive {
+      @include terra-example-group-direction-row;
+
+      &.show-column-divider {
+        @include terra-example-group-direction-column-with-divider-reset;
+      }
+    }
+  }
+
+}
+

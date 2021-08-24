@@ -41,7 +41,7 @@ const propTypes = {
    */
   ariaDescribedBy: PropTypes.string,
   /**
-   * The content to be shown in the pills container. Should only contain the sub-component <Pills.Pill>.
+   * The content to be shown in the pills container. Should only contain the sub-component `<Pills.Pill>`.
    */
   children: PropTypes.node,
   /**
