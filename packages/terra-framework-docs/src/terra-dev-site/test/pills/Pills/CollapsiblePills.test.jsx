@@ -9,32 +9,32 @@ const CollapsibleBasicPills = () => {
   const pillsData = [
     {
       label: 'asthma',
-      id: 'terra-pills-example-disclosure-removable-pill-asthma',
-      isRemovable: true,
+      id: 'terra-pills-example-pill-asthma',
+      isRemovable: false,
     },
     {
       label: 'bronchitis',
-      id: 'terra-pills-example-disclosure-removable-pill-bronchitis',
+      id: 'terra-pills-example-pill-bronchitis',
       isRemovable: true,
     },
     {
       label: 'fibro',
-      id: 'terra-pills-example-disclosure-removable-pill-fibro',
+      id: 'terra-pills-example-pill-fibro',
       isRemovable: true,
     },
     {
       label: 'allergies',
-      id: 'terra-pills-example-disclosure-removable-pill-allergies',
+      id: 'terra-pills-example-pill-allergies',
       isRemovable: true,
     },
     {
       label: 'hypertension',
-      id: 'terra-pills-example-disclosure-removable-pill-hypertension',
-      isRemovable: true,
+      id: 'terra-pills-example-pill-hypertension',
+      isRemovable: false,
     },
     {
       label: 'cardiac',
-      id: 'terra-pills-example-disclosure-removable-pill-cardiac',
+      id: 'terra-pills-example-pill-cardiac',
       isRemovable: true,
     },
   ];

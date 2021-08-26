@@ -7,15 +7,15 @@ const SelectableAndRemovablePill = () => {
   const pillsData = [
     {
       label: 'asthma',
-      id: 'terra-pills-example-disclosure-removable-pill-asthma',
+      id: 'terra-pills-removable-pill-asthma',
     },
     {
       label: 'bronchitis',
-      id: 'terra-pills-example-disclosure-removable-pill-bronchitis',
+      id: 'terra-pills-removable-pill-bronchitis',
     },
     {
       label: 'fibro',
-      id: 'terra-pills-example-disclosure-removable-pill-fibro',
+      id: 'terra-pills-removable-pill-fibro',
     },
   ];
   const [pills, setPills] = useState(pillsData);

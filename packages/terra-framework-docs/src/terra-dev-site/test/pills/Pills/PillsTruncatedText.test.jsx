@@ -9,10 +9,6 @@ const BasicPillWithTruncation = () => {
   const pillsData = [
     {
       label: 'Small Label',
-      id: 'long-text-pill-example-6',
-    },
-    {
-      label: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis libero dolor. Sed ullamcorper ante orci, a feugiat odio laoreet quis. Integer at felis sit amet dui luctus faucibus',
       id: 'long-text-pill-example-1',
     },
     {
@@ -20,16 +16,20 @@ const BasicPillWithTruncation = () => {
       id: 'long-text-pill-example-2',
     },
     {
-      label: 'Small Label',
+      label: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis libero dolor. Sed ullamcorper ante orci, a feugiat odio laoreet quis. Integer at felis sit amet dui luctus faucibus',
       id: 'long-text-pill-example-3',
     },
     {
-      label: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis libero dolor. Sed ullamcorper ante orci, a feugiat odio laoreet quis. Integer at felis sit amet dui luctus faucibus',
+      label: 'Small Label',
       id: 'long-text-pill-example-4',
     },
     {
-      label: 'Small Label',
+      label: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis libero dolor. Sed ullamcorper ante orci, a feugiat odio laoreet quis. Integer at felis sit amet dui luctus faucibus',
       id: 'long-text-pill-example-5',
+    },
+    {
+      label: 'Small Label',
+      id: 'long-text-pill-example-6',
     },
   ];
   const pills = (pillsData);

@@ -11,27 +11,33 @@ const CollapsibleSelectablePills = () => {
   const pillsData = [
     {
       label: 'asthma',
-      id: 'terra-pills-example-disclosure-removable-pill-asthma',
+      id: 'terra-pills-pill-asthma',
+      isRemovable: true,
     },
     {
       label: 'bronchitis',
-      id: 'terra-pills-example-disclosure-removable-pill-bronchitis',
+      id: 'terra-pills-pill-bronchitis',
+      isRemovable: true,
     },
     {
       label: 'fibro',
-      id: 'terra-pills-example-disclosure-removable-pill-fibro',
-    },
-    {
-      label: 'hypertension',
-      id: 'terra-pills-example-disclosure-removable-pill-hypertension',
-    },
-    {
-      label: 'cardiac',
-      id: 'terra-pills-example-disclosure-removable-pill-cardiac',
+      id: 'terra-pills-pill-fibro',
+      isRemovable: true,
     },
     {
       label: 'allergies',
-      id: 'terra-pills-example-disclosure-removable-pill-allergies',
+      id: 'terra-pills-pill-allergies',
+      isRemovable: true,
+    },
+    {
+      label: 'hypertension',
+      id: 'terra-pills-pill-hypertension',
+      isRemovable: true,
+    },
+    {
+      label: 'cardiac',
+      id: 'terra-pills-pill-cardiac',
+      isRemovable: true,
     },
   ];
   const [pills, setPills] = useState(pillsData);
@@ -66,7 +72,7 @@ const CollapsibleSelectablePills = () => {
       <Popup
         isOpen={isOpen}
         isArrowDisplayed
-        targetRef={() => pillData.ref.current}
+        targetRef={() => pillRef.current}
         onRequestClose={handleOnRequestClose}
         contentHeight="40"
         contentWidth="240"
@@ -86,7 +92,7 @@ const CollapsibleSelectablePills = () => {
         onRemove={handleOnRemove}
         isSingleLine={isSingleLine}
         onSelectRollUp={() => setIsSingleLine(false)}
-        className={cx(['container', 'show-border', 'width-200'])}
+        className={cx(['container', 'show-border'])}
       >
         {pills.map((pill, index) => (
           <SelectablePills.Pill
