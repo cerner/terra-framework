@@ -3,8 +3,8 @@
 ## Unreleased
 
 * Changed
-  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
   * Updated behavior for the menu close custom event to trigger onDrawerMenuStateChange callback.
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
 
 ## 1.54.0 - (July 21, 2021)
 
