@@ -139,7 +139,7 @@
         color: var(--terra-pills-pill-selectable-removable-label-hover-color, #222a2e);
       }
 
-      & + .pill-remove-button {
+      + .pill-remove-button {
         box-shadow: var(--terra-pills-pill-selectable-removable-label-hover-pill-remove-button-box-shadow, -1px 0 0 0 #6f7477, 1px 0 0 0 #868a8c);
       }
     }
@@ -153,7 +153,7 @@
         color: var(--terra-pills-pill-selectable-removable-label-active-color, #222a2e);
       }
 
-      & + .pill-remove-button {
+      + .pill-remove-button {
         box-shadow: var(--terra-pills-pill-selectable-removable-label-active-pill-remove-button-box-shadow, -1px 0 0 0 #595f62, 1px 0 0 0 #868a8c);
       }     
     }
@@ -173,7 +173,6 @@
     flex: 0 0 auto;
     font-family: inherit; // Button reset
     height: var(--terra-pills-pill-remove-button-height, 1.57142rem);
-    right: var(--terra-pills-pill-remove-button-right, 0.42857rem);
     line-height: 0;
     margin: 0;
     min-width: 0;
@@ -182,6 +181,7 @@
     padding: 0;
     pointer-events: auto;
     position: absolute;
+    right: var(--terra-pills-pill-remove-button-right, 0.42857rem);
     text-align: start;
     top: var(--terra-pills-pill-remove-button-top, 0.42857rem);
     touch-action: manipulation; // Enable fast tap interaction in webkit browsers; see https://webkit.org/blog/5610/more-responsive-tapping-on-ios/
@@ -200,7 +200,7 @@
       color: var(--terra-pills-pill-remove-button-active-color, #222a2e);
     }
 
-    &:hover, 
+    &:hover,
     &:active {
       .clear-icon {
         background-image: var(--terra-pills-clear-icon-hover-active-background-image, inline-svg('<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#222a2e" d="M28.2 24L42.9 9.1 40.8 7l-1.7-1.6-.4-.5L24 19.7 9.4 4.9 7.2 7 5.6 8.6l-.5.5L19.8 24 5.1 38.9 7.2 41l1.7 1.6.5.5L24 28.3l14.7 14.8.4-.5 1.7-1.6 2.1-2.1L28.2 24z"></path></svg>'));

@@ -134,7 +134,8 @@ exports[`Rollup Pill should render with rollup count 4 1`] = `
       role="listitem"
     >
       <button
-        className="roll-up-pill is-selectable"
+        aria-describedby="rollup-pill-hint"
+        className="rollup-pill is-selectable"
         data-terra-rollup-pill={true}
         data-terra-rollup-pill-show-focus-styles={true}
         id="rollup-pill"
@@ -145,11 +146,24 @@ exports[`Rollup Pill should render with rollup count 4 1`] = `
         type="button"
       >
         <span
-          className="roll-up-pill-label"
+          className="rollup-pill-label"
         >
           Terra.pills.label.rollupPill
         </span>
       </button>
+      <VisuallyHiddenText
+        aria-hidden="true"
+        id="rollup-pill-hint"
+        text="Terra.pills.hint.rollupPill"
+      >
+        <span
+          aria-hidden="true"
+          className="visually-hidden-text"
+          id="rollup-pill-hint"
+        >
+          Terra.pills.hint.rollupPill
+        </span>
+      </VisuallyHiddenText>
     </div>
   </RollUpPill>
 </InjectIntl(RollUpPill)>

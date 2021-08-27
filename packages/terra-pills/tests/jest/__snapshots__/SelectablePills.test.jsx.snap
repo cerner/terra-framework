@@ -71,6 +71,8 @@ exports[`Selectable Pill should render a selectable pill 1`] = `
       <div
         aria-describedby="terra-pills-group-interaction-hint"
         aria-label="Example of a Selectable Pill"
+        aria-live="polite"
+        aria-relevant="removals"
         className="pills-group"
         onBlur={[Function]}
         onKeyDown={[Function]}
@@ -80,16 +82,14 @@ exports[`Selectable Pill should render a selectable pill 1`] = `
         <VisuallyHiddenText
           aria-hidden="true"
           id="terra-pills-group-interaction-hint"
-          text=", Terra.pills.hint.pillList
-"
+          text="Terra.pills.hint.pillList"
         >
           <span
             aria-hidden="true"
             className="visually-hidden-text"
             id="terra-pills-group-interaction-hint"
           >
-            , Terra.pills.hint.pillList
-
+            Terra.pills.hint.pillList
           </span>
         </VisuallyHiddenText>
         <InjectIntl(Pill)
@@ -143,6 +143,7 @@ exports[`Selectable Pill should render a selectable pill 1`] = `
                 role="listitem"
               >
                 <button
+                  aria-describedby="interaction-hint-selectabla-pill"
                   aria-haspopup="dialog"
                   className="pill is-focusable is-selectable"
                   data-terra-pill={true}
@@ -160,16 +161,20 @@ exports[`Selectable Pill should render a selectable pill 1`] = `
                   >
                     Selectable Pill
                   </span>
-                  <VisuallyHiddenText
-                    text=", Terra.pills.hint.selectable"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      , Terra.pills.hint.selectable
-                    </span>
-                  </VisuallyHiddenText>
                 </button>
+                <VisuallyHiddenText
+                  aria-hidden="true"
+                  id="interaction-hint-selectabla-pill"
+                  text=", Terra.pills.hint.selectable"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="visually-hidden-text"
+                    id="interaction-hint-selectabla-pill"
+                  >
+                    , Terra.pills.hint.selectable
+                  </span>
+                </VisuallyHiddenText>
               </div>
             </ResponsiveElement>
           </Pill>
@@ -252,6 +257,8 @@ exports[`Selectable Pill should render a selectable pill with roll up 1`] = `
       <div
         aria-describedby="terra-pills-group-interaction-hint"
         aria-label="Example of a Selectable Pill"
+        aria-live="polite"
+        aria-relevant="removals"
         className="pills-group"
         onBlur={[Function]}
         onKeyDown={[Function]}
@@ -261,16 +268,14 @@ exports[`Selectable Pill should render a selectable pill with roll up 1`] = `
         <VisuallyHiddenText
           aria-hidden="true"
           id="terra-pills-group-interaction-hint"
-          text=", Terra.pills.hint.pillList
-"
+          text="Terra.pills.hint.pillList"
         >
           <span
             aria-hidden="true"
             className="visually-hidden-text"
             id="terra-pills-group-interaction-hint"
           >
-            , Terra.pills.hint.pillList
-
+            Terra.pills.hint.pillList
           </span>
         </VisuallyHiddenText>
         <InjectIntl(RollUpPill)
@@ -315,7 +320,8 @@ exports[`Selectable Pill should render a selectable pill with roll up 1`] = `
               role="listitem"
             >
               <button
-                className="roll-up-pill is-selectable"
+                aria-describedby="rollup-pill-hint"
+                className="rollup-pill is-selectable"
                 data-terra-rollup-pill={true}
                 data-terra-rollup-pill-show-focus-styles={true}
                 id="rollup-pill"
@@ -326,11 +332,24 @@ exports[`Selectable Pill should render a selectable pill with roll up 1`] = `
                 type="button"
               >
                 <span
-                  className="roll-up-pill-label"
+                  className="rollup-pill-label"
                 >
                   Terra.pills.label.rollupPill
                 </span>
               </button>
+              <VisuallyHiddenText
+                aria-hidden="true"
+                id="rollup-pill-hint"
+                text="Terra.pills.hint.rollupPill"
+              >
+                <span
+                  aria-hidden="true"
+                  className="visually-hidden-text"
+                  id="rollup-pill-hint"
+                >
+                  Terra.pills.hint.rollupPill
+                </span>
+              </VisuallyHiddenText>
             </div>
           </RollUpPill>
         </InjectIntl(RollUpPill)>
