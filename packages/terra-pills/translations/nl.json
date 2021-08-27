@@ -1,7 +1,12 @@
 {
-  "Terra.pills.pillHint.removable": "pill-element kan verwijderd worden met de Delete- of Backspace-knop",
-  "Terra.pills.pillHint.selectable": "pill-element kan geselecteerd worden met de spatiebalk of Enter-knop",
-  "Terra.pills.pillHint.selectableAndRemovable": "pill-element kan worden geselecteerd met de spatiebalk of Enter-knop en worden verwijderd met de Delete- of Backspace-knop",
-  "Terra.pills.pillListHint": "Bevat {numberOfPills} pill-elementen",
-  "Terra.pills.rollupPillLabel": "Nog {pillsNotVisibleCount}"
+  "Terra.pills.label.delete": "{pillLabelName}",
+  "Terra.pills.label.rollupPill": "Nog {pillsNotVisibleCount}",
+  "Terra.pills.hint.removable": "pill-element kan verwijderd worden met de Delete- of Backspace-knop",
+  "Terra.pills.hint.selectable": "pill-element kan geselecteerd worden met de spatiebalk of Enter-knop",
+  "Terra.pills.hint.selectableAndRemovable": "pill-element kan worden geselecteerd met de spatiebalk of Enter-knop en worden verwijderd met de Delete- of Backspace-knop",
+  "Terra.pills.hint.wasRemoved": "{pillLabelName}",
+  "Terra.pills.hint.rollupPill": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.rollupNotVisible": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.rollupVisible": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.pillList": "Bevat {numberOfPills} pill-elementen"
 }

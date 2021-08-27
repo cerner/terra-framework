@@ -8,6 +8,7 @@ import { injectIntl } from 'react-intl';
 import classNamesBind from 'classnames/bind';
 import PropTypes from 'prop-types';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './Pill.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -61,18 +62,20 @@ const RollUpPill = (props) => {
     >
       <button
         id="rollup-pill"
-        className={cx(['roll-up-pill', 'is-selectable', theme.className])}
+        className={cx(['rollup-pill', 'is-selectable', theme.className])}
         onClick={handleOnSelectRollUp}
         onKeyDown={handleRollUpPillKeyDown}
         onMouseDown={handleRollUpPillMouseDown}
         ref={rollUpPillRef}
         tabIndex="0"
         type="button"
+        aria-describedby="rollup-pill-hint"
         data-terra-rollup-pill-show-focus-styles
         data-terra-rollup-pill
       >
-        <span className={cx('roll-up-pill-label')}>{intl.formatMessage({ id: 'Terra.pills.rollupPillLabel' }, { pillsNotVisibleCount: rollupCount })}</span>
+        <span className={cx('rollup-pill-label')}>{intl.formatMessage({ id: 'Terra.pills.label.rollupPill' }, { pillsNotVisibleCount: rollupCount })}</span>
       </button>
+      <VisuallyHiddenText id="rollup-pill-hint" text={intl.formatMessage({ id: 'Terra.pills.hint.rollupPill' }, { pillsNotVisibleCount: rollupCount })} aria-hidden="true" />
     </div>
   ) : null;
 };

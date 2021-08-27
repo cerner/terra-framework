@@ -78,14 +78,14 @@ exports[`Pills should render a basic pill 1`] = `
         <VisuallyHiddenText
           aria-hidden="true"
           id="terra-pills-group-interaction-hint"
-          text=", Terra.pills.pillListHint"
+          text=", Terra.pills.hint.pillList"
         >
           <span
             aria-hidden="true"
             className="visually-hidden-text"
             id="terra-pills-group-interaction-hint"
           >
-            , Terra.pills.pillListHint
+            , Terra.pills.hint.pillList
           </span>
         </VisuallyHiddenText>
         <InjectIntl(Pill)
@@ -240,14 +240,14 @@ exports[`Pills should render a basic pill with roll up 1`] = `
         <VisuallyHiddenText
           aria-hidden="true"
           id="terra-pills-group-interaction-hint"
-          text=", Terra.pills.pillListHint"
+          text=", Terra.pills.hint.pillList"
         >
           <span
             aria-hidden="true"
             className="visually-hidden-text"
             id="terra-pills-group-interaction-hint"
           >
-            , Terra.pills.pillListHint
+            , Terra.pills.hint.pillList
           </span>
         </VisuallyHiddenText>
         <InjectIntl(RollUpPill)
@@ -305,7 +305,7 @@ exports[`Pills should render a basic pill with roll up 1`] = `
                 <span
                   className="roll-up-pill-label"
                 >
-                  Terra.pills.rollupPillLabel
+                  Terra.pills.label.rollupPill
                 </span>
               </button>
             </div>

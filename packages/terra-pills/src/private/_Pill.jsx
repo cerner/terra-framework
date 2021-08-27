@@ -210,11 +210,11 @@ const Pill = (props) => {
 
   let pillInteractionHint;
   if (pillInteraction.isSelectableAndRemovable) {
-    pillInteractionHint = `, ${intl.formatMessage({ id: 'Terra.pills.pillHint.selectableAndRemovable' })}`;
+    pillInteractionHint = `, ${intl.formatMessage({ id: 'Terra.pills.hint.selectableAndRemovable' })}`;
   } else if (pillInteraction.isSelectable) {
-    pillInteractionHint = `, ${intl.formatMessage({ id: 'Terra.pills.pillHint.selectable' })}`;
+    pillInteractionHint = `, ${intl.formatMessage({ id: 'Terra.pills.hint.selectable' })}`;
   } else if (pillInteraction.isRemovable) {
-    pillInteractionHint = `, ${intl.formatMessage({ id: 'Terra.pills.pillHint.removable' })}`;
+    pillInteractionHint = `, ${intl.formatMessage({ id: 'Terra.pills.hint.removable' })}`;
   }
 
   const pillClassNames = classNames(
@@ -229,7 +229,7 @@ const Pill = (props) => {
     customProps.className,
   );
 
-  const createTruncatedPopupContent = () => (
+  const renderTruncatedLabelPopup = () => (
     <Popup
       isOpen={open}
       isArrowDisplayed
@@ -242,17 +242,20 @@ const Pill = (props) => {
     </Popup>
   );
 
-  const createRemoveButton = () => (
-    <span
+  const renderRemoveButton = () => (
+    <button
       {...removeButtonProps}
       className={cx('pill-remove-button')}
+      tabIndex="-1"
+      aria-labelledby={`remove-button-${id}`}
       aria-hidden="true"
     >
+      <span id={`remove-button-${id}`} className={cx('remove-button-label')}>{intl.formatMessage({ id: 'Terra.pills.label.delete' }, { pillLabelName: label })}</span>
       <span className={cx('clear-icon')} />
-    </span>
+    </button>
   );
 
-  const createSelectablePill = () => (
+  const renderSelectablePill = () => (
     <>
       <button
         {...customProps}
@@ -264,6 +267,30 @@ const Pill = (props) => {
         className={pillClassNames}
         ref={pillRef}
         type="button"
+        aria-describedby={`interaction-hint-${id}`}
+        data-terra-pills-show-focus-styles
+        data-terra-pill
+      >
+        <span className={cx('pill-label')}>
+          {label}
+        </span>
+      </button>
+      {pillInteraction.isRemovable && renderRemoveButton()}
+      {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={pillInteractionHint} aria-hidden="true" />}
+      {isTruncated && isBasicPill && renderTruncatedLabelPopup()}
+    </>
+  );
+
+  const renderBasicPill = () => (
+    <>
+      <div
+        {...customProps}
+        {...pillProps}
+        id={id}
+        className={pillClassNames}
+        ref={pillRef}
+        role="text" // Prevent VoiceOver from announcing as "group" https://dequeuniversity.com/rules/axe/4.2/aria-text
+        aria-describedby={`interaction-hint-${id}`}
         data-terra-pills-show-focus-styles
         data-terra-pill
       >
@@ -272,40 +299,16 @@ const Pill = (props) => {
         >
           {label}
         </span>
-        {pillInteraction.isRemovable && createRemoveButton()}
-        {pillInteractionHint && <VisuallyHiddenText text={pillInteractionHint} />}
-      </button>
-      {isTruncated && isBasicPill && createTruncatedPopupContent()}
-    </>
-  );
-
-  const createBasicPill = () => (
-    <div
-      {...customProps}
-      {...pillProps}
-      id={id}
-      className={pillClassNames}
-      ref={pillRef}
-      data-terra-pills-show-focus-styles
-      data-terra-pill
-      aria-label={label}
-      aria-describedby={`interaction-hint-${id}`}
-    >
-      <span
-        className={cx('pill-label')}
-        aria-hidden="true"
-      >
-        {label}
-      </span>
-      {pillInteraction.isRemovable && createRemoveButton()}
+      </div>
+      {pillInteraction.isRemovable && renderRemoveButton()}
       {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={pillInteractionHint} aria-hidden="true" />}
-    </div>
+    </>
   );
 
   return (
     <ResponsiveElement responsiveTo="window" onResize={handleWidthChange}>
       <div role="listitem" className={cx('pill-list-item')}>
-        { pillInteraction.isSelectable ? createSelectablePill() : createBasicPill() }
+        { pillInteraction.isSelectable ? renderSelectablePill() : renderBasicPill() }
       </div>
     </ResponsiveElement>
   );

@@ -372,6 +372,8 @@ const Pills = (props) => {
         aria-label={!ariaLabelledBy ? ariaLabel : undefined}
         aria-labelledby={ariaLabelledBy}
         aria-describedby={pillGroupAriaDescribedBy}
+        aria-live="polite"
+        aria-relevant="removals"  
         className={pillListClassNames}
         ref={pillsRef}
         role="list"
@@ -379,7 +381,7 @@ const Pills = (props) => {
       >
         <VisuallyHiddenText
           id={pillGroupInteractionHintID}
-          text={`, ${intl.formatMessage({ id: 'Terra.pills.pillListHint' }, { numberOfPills: React.Children.count(children) })}`}
+          text={intl.formatMessage({ id: 'Terra.pills.hint.pillList' }, { numberOfPills: React.Children.count(children) })}
           aria-hidden="true"
         />
         {children ? renderChildren(children) : []}
@@ -392,7 +394,6 @@ const Pills = (props) => {
         )}
       </div>
     </ResponsiveElement>
-
   );
 };
 

@@ -147,7 +147,7 @@ exports[`Rollup Pill should render with rollup count 4 1`] = `
         <span
           className="roll-up-pill-label"
         >
-          Terra.pills.rollupPillLabel
+          Terra.pills.label.rollupPill
         </span>
       </button>
     </div>

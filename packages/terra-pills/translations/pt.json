@@ -1,7 +1,12 @@
 {
-  "Terra.pills.pillHint.removable": "pílula removível por meio da tecla Delete ou Voltar",
-  "Terra.pills.pillHint.selectable": "pílula selecionável por meio da tecla Enter ou da barra de espaço",
-  "Terra.pills.pillHint.selectableAndRemovable": "pílula selecionável por meio da tecla Enter ou da barra de espaço e removível por meio das teclas Delete ou Voltar",
-  "Terra.pills.pillListHint": "Contém {numberOfPills} pílulas",
-  "Terra.pills.rollupPillLabel": "{pillsNotVisibleCount} mais..."
+  "Terra.pills.label.delete": "{pillLabelName}",
+  "Terra.pills.label.rollupPill": "{pillsNotVisibleCount} mais...",
+  "Terra.pills.hint.removable": "pílula removível por meio da tecla Delete ou Voltar",
+  "Terra.pills.hint.selectable": "pílula selecionável por meio da tecla Enter ou da barra de espaço",
+  "Terra.pills.hint.selectableAndRemovable": "pílula selecionável por meio da tecla Enter ou da barra de espaço e removível por meio das teclas Delete ou Voltar",
+  "Terra.pills.hint.wasRemoved": "{pillLabelName}",
+  "Terra.pills.hint.rollupPill": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.rollupNotVisible": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.rollupVisible": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.pillList": "Contém {numberOfPills} pílulas"
 }

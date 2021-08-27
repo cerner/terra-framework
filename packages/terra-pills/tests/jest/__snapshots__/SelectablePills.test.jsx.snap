@@ -80,7 +80,7 @@ exports[`Selectable Pill should render a selectable pill 1`] = `
         <VisuallyHiddenText
           aria-hidden="true"
           id="terra-pills-group-interaction-hint"
-          text=", Terra.pills.pillListHint
+          text=", Terra.pills.hint.pillList
 "
         >
           <span
@@ -88,7 +88,7 @@ exports[`Selectable Pill should render a selectable pill 1`] = `
             className="visually-hidden-text"
             id="terra-pills-group-interaction-hint"
           >
-            , Terra.pills.pillListHint
+            , Terra.pills.hint.pillList
 
           </span>
         </VisuallyHiddenText>
@@ -161,12 +161,12 @@ exports[`Selectable Pill should render a selectable pill 1`] = `
                     Selectable Pill
                   </span>
                   <VisuallyHiddenText
-                    text=", Terra.pills.pillHint.selectable"
+                    text=", Terra.pills.hint.selectable"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      , Terra.pills.pillHint.selectable
+                      , Terra.pills.hint.selectable
                     </span>
                   </VisuallyHiddenText>
                 </button>
@@ -261,7 +261,7 @@ exports[`Selectable Pill should render a selectable pill with roll up 1`] = `
         <VisuallyHiddenText
           aria-hidden="true"
           id="terra-pills-group-interaction-hint"
-          text=", Terra.pills.pillListHint
+          text=", Terra.pills.hint.pillList
 "
         >
           <span
@@ -269,7 +269,7 @@ exports[`Selectable Pill should render a selectable pill with roll up 1`] = `
             className="visually-hidden-text"
             id="terra-pills-group-interaction-hint"
           >
-            , Terra.pills.pillListHint
+            , Terra.pills.hint.pillList
 
           </span>
         </VisuallyHiddenText>
@@ -328,7 +328,7 @@ exports[`Selectable Pill should render a selectable pill with roll up 1`] = `
                 <span
                   className="roll-up-pill-label"
                 >
-                  Terra.pills.rollupPillLabel
+                  Terra.pills.label.rollupPill
                 </span>
               </button>
             </div>

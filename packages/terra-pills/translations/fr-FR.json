@@ -1,7 +1,12 @@
 {
-  "Terra.pills.pillHint.removable": "Vous pouvez supprimer la gélule avec la touche Supprimer ou Retour arrière.",
-  "Terra.pills.pillHint.selectable": "Vous pouvez sélectionner la gélule avec la barre d'espace ou la touche Entrée.",
-  "Terra.pills.pillHint.selectableAndRemovable": "Vous pouvez sélectionner la gélule avec la barre d'espace ou la touche Entrée et la supprimer avec la touche Supprimer ou Retour arrière.",
-  "Terra.pills.pillListHint": "Contient {numberOfPills} gélule(s)",
-  "Terra.pills.rollupPillLabel": "{pillsNotVisibleCount} de plus"
+  "Terra.pills.label.delete": "{pillLabelName}",
+  "Terra.pills.label.rollupPill": "{pillsNotVisibleCount} de plus",
+  "Terra.pills.hint.removable": "Vous pouvez supprimer la gélule avec la touche Supprimer ou Retour arrière.",
+  "Terra.pills.hint.selectable": "Vous pouvez sélectionner la gélule avec la barre d'espace ou la touche Entrée.",
+  "Terra.pills.hint.selectableAndRemovable": "Vous pouvez sélectionner la gélule avec la barre d'espace ou la touche Entrée et la supprimer avec la touche Supprimer ou Retour arrière.",
+  "Terra.pills.hint.wasRemoved": "{pillLabelName}",
+  "Terra.pills.hint.rollupPill": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.rollupNotVisible": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.rollupVisible": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.pillList": "Contient {numberOfPills} gélule(s)"
 }
