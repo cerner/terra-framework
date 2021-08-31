@@ -216,7 +216,8 @@ class Day extends React.Component {
   }
 
   isBorderApplied = () => {
-    if(this.isSameDay(this.props.preSelection) && !isDayDisabled(this.props.selected, this.props) 
+    if(this.isSameDay(this.props.preSelection) && !isDayDisabled(this.props.selected, this.props)
+    && (document.activeElement) 
     && (document.activeElement.hasAttribute('data-terra-open-calendar-button') 
     || document.activeElement.tagName === 'DIV' 
     || document.activeElement === document.querySelector('[class*="previous"]'))

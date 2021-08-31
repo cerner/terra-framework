@@ -2,6 +2,30 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 5.58.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+  * Updated `terra-breakpoints` from `v2.0.0` to `v2.19.0`.
+
+## 5.57.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 5.56.0 - (July 6, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 5.55.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 5.54.0 - (May 4, 2021)
 
 * Changed

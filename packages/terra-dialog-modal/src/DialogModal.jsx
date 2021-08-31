@@ -49,6 +49,12 @@ const propTypes = {
    */
   width: PropTypes.oneOf(Object.keys(widthFromSize)),
   /**
+   * **DO NOT USE THIS PROP**
+   *
+   * This prop was added in error, but has not been removed due to passivity concerns.
+   *
+   * Modals & Dialogs must be closed by clicking a ui element to prevent accidental clicks and to force an intentional decision by the user to close the dialog.
+   *
    * If set to true, the modal will close when a mouse click is triggered outside the modal.
    */
   closeOnOutsideClick: PropTypes.bool,

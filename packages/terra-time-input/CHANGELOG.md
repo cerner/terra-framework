@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 4.42.0 - (July 21, 2021)
+
+* Changed
+  * Updated Jest Snapshots
+
+## 4.41.0 - (July 20, 2021)
+
+* Changed
+  * Updated Jest Snapshots
+
+## 4.40.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+
 ## 4.39.0 - (April 6, 2021)
 
 * Fixed

@@ -2,6 +2,30 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 1.54.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.11.0` to `v3.19.0`.
+  * Updated `terra-breakpoints` from `v2.0.0` to `v2.19.0`
+
+## 1.53.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.52.0 - (July 6, 2021)
+
+* Changed
+  * Updated screenshots due to changes made in `terra-application-name`.
+
+## 1.51.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+
 ## 1.50.0 - (May 4, 2021)
 
 * Fixed

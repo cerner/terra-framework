@@ -1,7 +1,7 @@
 {
   "name": "terra-application-navigation",
   "main": "lib/ApplicationNavigation.js",
-  "version": "1.50.0",
+  "version": "1.54.0",
   "description": "The Terra Application Navigation is a responsive, themeable layout for building applications. ApplicationNavigation is comprised of selectable navigation and utility elements with selection callbacks.",
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
     "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
     "focus-trap-react": "^6.0.0",
-    "keycode-js": "^2.0.1",
+    "keycode-js": "^3.1.0",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8",
     "react-onclickoutside": "^6.7.1",
@@ -43,14 +43,14 @@
     "terra-action-footer": "^2.0.0",
     "terra-action-header": "^2.0.0",
     "terra-avatar": "^3.8.0",
-    "terra-breakpoints": "^2.0.0",
+    "terra-breakpoints": "^2.19.0",
     "terra-button": "^3.3.0",
     "terra-content-container": "^3.0.0",
-    "terra-icon": "^3.11.0",
+    "terra-icon": "^3.19.0",
     "terra-image": "^3.0.0",
     "terra-overlay": "^3.0.0",
-    "terra-popup": "^6.52.0",
-    "terra-theme-context": "^1.6.0",
+    "terra-popup": "^6.55.0",
+    "terra-theme-context": "^1.7.0",
     "terra-visually-hidden-text": "^2.0.0"
   },
   "scripts": {

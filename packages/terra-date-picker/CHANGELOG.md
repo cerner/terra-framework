@@ -4,7 +4,36 @@
 
 * Changed
   * Date input split into 3 distinct inputs that mask the previous single input.
-  * `terra-dev-site` examples to use hooks.
+  * Updated `terra-dev-site` examples to use hooks.
+
+## 4.65.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+  * Updated `terra-breakpoints` from `v2.0.0` to `v2.19.0`.
+  * Updated `terra-form-field` from `v3.1.0` to `v4.5.0`.
+
+## 4.64.0 - (July 20, 2021)
+
+* Changed
+  * Updated Jest Snapshots
+
+## 4.63.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.62.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+* Fixed
+  * Arrow alignment in ie
+
+## 4.61.0 - (June 1, 2021)
+
+* Fixed
+  * Fixed crash issue for upper and lower bound dates in IE.
 
 ## 4.60.0 - (May 4, 2021)
 

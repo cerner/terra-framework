@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 3.35.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+
+## 3.34.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+
 ## 3.33.0 - (April 6, 2021)
 
 * Changed

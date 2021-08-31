@@ -4,7 +4,34 @@
 
 * Changed
   * Tests updated to reflect input splitting in `terra-date-picker`.
-  * `terra-dev-site` examples to use hooks.
+  * Updated `terra-dev-site` examples to use hooks.
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 4.66.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-form-field` from `v3.1.0` to `v4.5.0`.
+
+## 4.65.0 - (July 20, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.64.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.63.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+  * screenshot updates
+
+## 4.62.0 - (June 1, 2021)
+
+* Changed
+  * Minor dependency version bump
 
 ## 4.61.0 - (May 4, 2021)
 

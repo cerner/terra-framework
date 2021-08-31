@@ -2,6 +2,24 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 4.71.0 - (July 20, 2021)
+
+* Changed
+  * Migrated docs to terra-framework-docs
+
+## 4.70.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.69.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.68.0 - (May 4, 2021)
 
 * Changed

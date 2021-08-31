@@ -1,6 +1,6 @@
 Terra.describeViewports('Aggregator', ['large'], () => {
   it('displays standalone aggregator', () => {
-    browser.url('/raw/tests/terra-aggregator/aggregator/aggregator-standalone');
+    browser.url('/raw/tests/cerner-terra-framework-docs/aggregator/aggregator-standalone');
     $('#test-aggregator #section1').click();
     $('#test-aggregator #section2').click();
     $('#test-aggregator #section3').click();
@@ -8,7 +8,7 @@ Terra.describeViewports('Aggregator', ['large'], () => {
   });
   describe('With Disclosure', () => {
     it('displays aggregator with disclosure - open', () => {
-      browser.url('/raw/tests/terra-aggregator/aggregator/aggregator-with-disclosure');
+      browser.url('/raw/tests/cerner-terra-framework-docs/aggregator/aggregator-with-disclosure');
       $('#test-aggregator #section1').click();
       Terra.validates.element('Open', { selector: '#test-aggregator' });
     });

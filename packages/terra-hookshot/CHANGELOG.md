@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 5.37.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-form-input` from `v3.7.0` to `v4.4.0`.
+
+## 5.36.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+
 ## 5.35.0 - (April 6, 2021)
 
 * Changed

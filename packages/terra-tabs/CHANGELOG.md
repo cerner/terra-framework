@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 6.55.0 - (July 21, 2021)
+
+* Changed
+  * Updated `terra-icon` from `v3.1.0` to `v3.19.0`.
+
+## 6.54.0 - (June 8, 2021)
+
+* Changed
+  * Updated `keycode-js` from `v2.0.1` to `v3.1.0`.
+
 ## 6.53.0 - (May 4, 2021)
 
 * Changed

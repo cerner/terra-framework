@@ -59,6 +59,6 @@ props-table
 **/__snapshots__/screen
 **/__snapshots__/latest
 **/__snapshots__/diff
-errorScreenshots
+**/__snapshots__/error
 .vscode/
 generated-themes

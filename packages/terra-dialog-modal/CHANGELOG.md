@@ -2,6 +2,39 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+
+## 3.68.0 - (July 21, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 3.67.0 - (July 20, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 3.66.0 - (July 13, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 3.65.0 - (June 15, 2021)
+
+* Changed
+  * Mark package as deprecated.
+
+## 3.64.0 - (June 8, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 3.63.0 - (June 1, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 3.62.0 - (May 4, 2021)
 
 * Changed
