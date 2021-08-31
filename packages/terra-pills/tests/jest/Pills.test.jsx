@@ -21,7 +21,7 @@ describe('Pills', () => {
   it('should render a basic pill with roll up', () => {
     const wrapper = mountWithIntl(
       <Pills
-        ariaLabel="Example of a basic Pill"
+        ariaLabel="Example of a basic Pill with roll up"
         isSingleLine
       >
         <Pills.Pill

@@ -12,7 +12,7 @@ describe('Selectable Pill', () => {
       >
         <SelectablePills.Pill
           label="Selectable Pill"
-          id="selectabla-pill"
+          id="selectable-pill"
         />
       </SelectablePills>,
     );
@@ -22,13 +22,13 @@ describe('Selectable Pill', () => {
   it('should render a selectable pill with roll up', () => {
     const wrapper = mountWithIntl(
       <SelectablePills
-        ariaLabel="Example of a Selectable Pill"
+        ariaLabel="Example of a Selectable Pill with roll up"
         onSelect={() => jest.fn()}
         isSingleLine
       >
         <SelectablePills.Pill
           label="Selectable Pill"
-          id="selectabla-pill"
+          id="selectable-pill"
         />
       </SelectablePills>,
     );
