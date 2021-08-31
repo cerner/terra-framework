@@ -4,6 +4,8 @@ import React, {
 import {
   KEY_BACK_SPACE,
   KEY_DELETE,
+  KEY_END,
+  KEY_HOME,
   KEY_LEFT,
   KEY_RIGHT,
 } from 'keycode-js';
@@ -143,7 +145,7 @@ const SelectablePills = (props) => {
       currentPill.current = rollUpPill.getAttribute('id');
       setTabIndex('0');
     }
-  }, [isSingleLine, updatedCount]);
+  }, [isSingleLine]);
 
   // When a pill is deleted, focuses the new pill.
   useEffect(() => {
@@ -266,6 +268,22 @@ const SelectablePills = (props) => {
         event.preventDefault();
         focusNodeAfterDelete(pills, rollUpPill, isPillRemovable);
         break;
+      case KEY_HOME:
+        event.preventDefault();
+        setTabIndex('-1');
+        focusNode.current = 0;
+        currentPill.current = pills[focusNode.current].id;
+        setTabIndex('0');
+        focusCurrentNode();
+        break;
+      case KEY_END:
+        event.preventDefault();
+        setTabIndex('-1');
+        focusNode.current = pills.length - 1;
+        currentPill.current = pills[focusNode.current].id;
+        setTabIndex('0');
+        focusCurrentNode();
+        break;
       default:
         break;
     }
@@ -283,6 +301,7 @@ const SelectablePills = (props) => {
     const targetId = event.target.parentElement.getAttribute('id');
 
     if (targetId && event.target.parentElement.hasAttribute('data-terra-pill')) {
+      setTabIndex('-1');
       currentPill.current = targetId;
       focusNode.current = pills.findIndex((element) => element.id === targetId);
       setTabIndex('0');
@@ -343,13 +362,13 @@ const SelectablePills = (props) => {
   return (
     <ResponsiveElement responsiveTo="window" onResize={handleWidthChange}>
       <div
+        {...customProps}
         {...selectablePillsProps}
         aria-label={!ariaLabelledBy ? ariaLabel : undefined}
         aria-describedby={ariaDescribedBy}
         className={pillListClassNames}
         ref={selectablePillsRef}
         tabIndex={containerTabindex}
-        {...customProps}
       >
         <VisuallyHiddenText id="terra-pill-visual-hidden-text" text={intl.formatMessage({ id: 'Terra.pills.pillListHint' }, { numberOfPills: React.Children.count(children) })} />
         {children ? renderChildren(children) : []}

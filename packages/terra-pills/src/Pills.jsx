@@ -2,7 +2,7 @@ import React, {
   useCallback, useEffect, useLayoutEffect, useRef, useState,
 } from 'react';
 import {
-  KEY_BACK_SPACE, KEY_DELETE, KEY_LEFT, KEY_RIGHT,
+  KEY_BACK_SPACE, KEY_DELETE, KEY_END, KEY_HOME, KEY_LEFT, KEY_RIGHT,
 } from 'keycode-js';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -125,7 +125,7 @@ const Pills = (props) => {
   useEffect(() => {
     const pills = [...pillsRef.current.querySelectorAll('[data-terra-pill]')];
     const rollUpPill = pillsRef.current.querySelector('[data-terra-rollup-pill]');
-    const firstFocusableNode = PillsUtils.getFirstFocusableNode(pills, focusNode.current);
+    const firstFocusableNode = PillsUtils.getNextFocusableNode(pills, 0);
 
     // if there is a roll Up pill, set tabindex to -1
     if (rollUpPill) {
@@ -144,12 +144,12 @@ const Pills = (props) => {
         currentPill.current = rollUpPill.getAttribute('id');
         setTabIndex('0');
       }
-    } else if (isSingleLine && rollUpPill && pills.length === 0) { // if the first pill is rollUp pill, set rollUp pill tabindex 0
+    } else if (isSingleLine && rollUpPill && firstFocusableNode === -1) { // if the first pill is rollUp pill, set rollUp pill tabindex 0
       currentPill.current = rollUpPill.getAttribute('id');
       setTabIndex('0');
       focusNode.current = 0;
     }
-  }, [isSingleLine, updatedCount]);
+  }, [isSingleLine]);
 
   useEffect(() => {
     const pills = [...pillsRef.current.querySelectorAll('[data-terra-pill]')];
@@ -254,7 +254,7 @@ const Pills = (props) => {
     }
   };
 
-  const focusNodeAfterDelete = (pills, rollUpPill, pillCount, isRemovable) => {
+  const focusNodeAfterDelete = (pills, rollUpPill, isRemovable) => {
     if (isRemovable) {
       // If there is only one pill and is removable
       if (pills.length === 1 && rollUpPill === null) {
@@ -278,9 +278,10 @@ const Pills = (props) => {
 
   const handlePillListKeyDown = (event) => {
     const pills = [...pillsRef.current.querySelectorAll('[data-terra-pill]')];
-    const pillCount = pills.length;
     const rollUpPill = pillsRef.current.querySelector('[data-terra-rollup-pill]');
     const isPillRemovable = event.target.hasAttribute('data-terra-pill-removable');
+    const firstFocusableNode = PillsUtils.getNextFocusableNode(pills, 0);
+    const lastFocusableNode = PillsUtils.getPreviousFocusableNode(pills, pills.length - 1);
 
     switch (event.keyCode) {
       case KEY_RIGHT:
@@ -293,7 +294,23 @@ const Pills = (props) => {
         break;
       case KEY_BACK_SPACE || KEY_DELETE:
         event.preventDefault();
-        focusNodeAfterDelete(pills, rollUpPill, pillCount, isPillRemovable);
+        focusNodeAfterDelete(pills, rollUpPill, isPillRemovable);
+        break;
+      case KEY_HOME:
+        event.preventDefault();
+        setTabIndex('-1');
+        focusNode.current = firstFocusableNode;
+        currentPill.current = pills[focusNode.current].id;
+        setTabIndex('0');
+        focusCurrentNode();
+        break;
+      case KEY_END:
+        event.preventDefault();
+        setTabIndex('-1');
+        focusNode.current = lastFocusableNode;
+        currentPill.current = pills[focusNode.current].id;
+        setTabIndex('0');
+        focusCurrentNode();
         break;
       default:
         break;
@@ -355,13 +372,13 @@ const Pills = (props) => {
   return (
     <ResponsiveElement responsiveTo="window" onResize={handleWidthChange}>
       <div
+        {...customProps}
         {...pillsProps}
         aria-label={!ariaLabelledBy ? ariaLabel : undefined}
         aria-describedby={ariaDescribedBy}
         className={pillListClassNames}
         ref={pillsRef}
         tabIndex={containerTabindex}
-        {...customProps}
       >
         <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.pills.pillListHint' }, { numberOfPills: React.Children.count(children) })} />
         {children ? renderChildren(children) : []}
@@ -374,7 +391,6 @@ const Pills = (props) => {
         )}
       </div>
     </ResponsiveElement>
-
   );
 };
 
