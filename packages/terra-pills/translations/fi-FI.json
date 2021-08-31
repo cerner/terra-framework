@@ -1,7 +1,12 @@
 {
-  "Terra.pills.pillHint.removable": "",
-  "Terra.pills.pillHint.selectable": "",
-  "Terra.pills.pillHint.selectableAndRemovable": "",
-  "Terra.pills.pillListHint": "{numberOfPills}",
-  "Terra.pills.rollupPillLabel": "{pillsNotVisibleCount}"
+  "Terra.pills.label.delete": "{pillLabelName}",
+  "Terra.pills.label.rollupPill": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.removable": "",
+  "Terra.pills.hint.selectable": "",
+  "Terra.pills.hint.selectableAndRemovable": "",
+  "Terra.pills.hint.wasRemoved": "{pillLabelName}",
+  "Terra.pills.hint.rollupPill": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.rollupNotVisible": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.rollupVisible": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.pillList": "{numberOfPills}"
 }

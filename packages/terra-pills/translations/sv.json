@@ -1,7 +1,12 @@
 {
-  "Terra.pills.pillHint.removable": "tablett går att ta bort via Delete-tangenten eller Backstegstangenten",
-  "Terra.pills.pillHint.selectable": "tablett går att välja via Blankstegstangenten eller Enter-tangenten",
-  "Terra.pills.pillHint.selectableAndRemovable": "tablett går att välja via Blankstegstangenten eller Enter-tangenten och går att ta bort via Delete-tangenten eller Backstegstangenten",
-  "Terra.pills.pillListHint": "Innehåller {numberOfPills} tabletter",
-  "Terra.pills.rollupPillLabel": "{pillsNotVisibleCount} fler..."
+  "Terra.pills.label.delete": "{pillLabelName}",
+  "Terra.pills.label.rollupPill": "{pillsNotVisibleCount} fler...",
+  "Terra.pills.hint.removable": "tablett går att ta bort via Delete-tangenten eller Backstegstangenten",
+  "Terra.pills.hint.selectable": "tablett går att välja via Blankstegstangenten eller Enter-tangenten",
+  "Terra.pills.hint.selectableAndRemovable": "tablett går att välja via Blankstegstangenten eller Enter-tangenten och går att ta bort via Delete-tangenten eller Backstegstangenten",
+  "Terra.pills.hint.wasRemoved": "{pillLabelName}",
+  "Terra.pills.hint.rollupPill": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.rollupNotVisible": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.rollupVisible": "{pillsNotVisibleCount}",
+  "Terra.pills.hint.pillList": "Innehåller {numberOfPills} tabletter"
 }

@@ -1,7 +1,12 @@
 {
-  "Terra.pills.pillHint.removable": "pill is removable via Delete or Back Space key",
-  "Terra.pills.pillHint.selectable": "pill is selectable via Space Bar or Enter key",
-  "Terra.pills.pillHint.selectableAndRemovable": "pill is selectable via Space Bar or Enter key and removable via Delete or Back Space key",
-  "Terra.pills.pillListHint": "Contains {numberOfPills} pills",
-  "Terra.pills.rollupPillLabel": "{pillsNotVisibleCount} more..."
+  "Terra.pills.label.delete": "Delete {pillLabelName}",
+  "Terra.pills.label.rollupPill": "{pillsNotVisibleCount} more...",
+  "Terra.pills.hint.removable": "item is removable via Delete or Back Space key",
+  "Terra.pills.hint.selectable": "for additional information, button is selectable via Space Bar or Enter key",
+  "Terra.pills.hint.selectableAndRemovable": "item is removable via Delete or Back Space key, for additional information, button is selectable via Space Bar or Enter key",
+  "Terra.pills.hint.wasRemoved": "{pillLabelName} Removed",
+  "Terra.pills.hint.rollupPill": "select to display {pillsNotVisibleCount} hidden items",
+  "Terra.pills.hint.rollupNotVisible": "{pillsNotVisibleCount} items are not displayed",
+  "Terra.pills.hint.rollupVisible": "{pillsNotVisibleCount} hidden items are now displayed",
+  "Terra.pills.hint.pillList": "Contains {numberOfPills} items"
 }
