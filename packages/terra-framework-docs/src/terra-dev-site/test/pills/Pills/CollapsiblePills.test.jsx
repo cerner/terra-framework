@@ -53,7 +53,7 @@ const CollapsibleBasicPills = () => {
         ariaLabel="Example of Collapsible Basic Pills"
         isSingleLine={isSingleLine}
         onSelectRollUp={() => setIsSingleLine(false)}
-        className={cx(['container', 'show-border'])}
+        className={cx(['container', 'show-border', 'width-200'])}
         onRemove={handleOnRemove}
 
       >

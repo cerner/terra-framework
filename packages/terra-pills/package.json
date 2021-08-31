@@ -36,8 +36,8 @@
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
     "prop-types": "^15.5.8",
+    "resize-observer-polyfill": "^1.4.1",
     "terra-popup": "^6.53.0",
-    "terra-responsive-element": "^5.32.0",
     "terra-theme-context": "^1.0.0",
     "terra-visually-hidden-text": "^2.32.0"
   },

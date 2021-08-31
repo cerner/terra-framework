@@ -9,7 +9,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
-import ResponsiveElement from 'terra-responsive-element';
+import ResizeObserver from 'resize-observer-polyfill';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import Pill from './private/_Pill';
 import styles from './private/Pill.module.scss';
@@ -91,17 +91,28 @@ const Pills = (props) => {
     setRollUpCount(React.Children.count(children) - startIndex);
   }, [children]);
 
-  const generateExpansion = useCallback(() => {
-    setUpdatedCount(React.Children.count(children));
-  }, [children]);
+  const handleResize = useCallback((entries) => {
+    if (!Array.isArray(entries)) {
+      return;
+    }
 
-  useLayoutEffect(() => {
+    setUpdatedCount(React.Children.count(children));
     if (isSingleLine) {
       generateRollUp();
-    } else {
-      generateExpansion();
     }
-  }, [children, generateExpansion, generateRollUp, isSingleLine]);
+  }, [generateRollUp, isSingleLine, children]);
+
+  useLayoutEffect(() => {
+    let observer = new ResizeObserver((entries) => {
+      handleResize(entries);
+    });
+    observer.observe(pillsRef.current.parentNode);
+
+    return () => {
+      observer.disconnect();
+      observer = null;
+    };
+  }, [children, handleResize, isSingleLine]);
 
   const setTabIndex = (val) => {
     const currentNode = currentPill.current ? pillsRef.current.querySelector(`[id=${currentPill.current}]`) : null;
@@ -336,14 +347,6 @@ const Pills = (props) => {
     }
   };
 
-  const handleWidthChange = () => {
-    if (isSingleLine) {
-      setUpdatedCount(React.Children.count(children));
-      setRollUpCount(React.Children.count(children));
-      generateRollUp();
-    }
-  };
-
   const pillsProps = {};
   pillsProps.onKeyDown = handlePillListKeyDown;
   pillsProps.onBlur = handlePillListOnblur;
@@ -370,27 +373,25 @@ const Pills = (props) => {
   };
 
   return (
-    <ResponsiveElement responsiveTo="window" onResize={handleWidthChange}>
-      <div
-        {...customProps}
-        {...pillsProps}
-        aria-label={!ariaLabelledBy ? ariaLabel : undefined}
-        aria-describedby={ariaDescribedBy}
-        className={pillListClassNames}
-        ref={pillsRef}
-        tabIndex={containerTabindex}
-      >
-        <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.pills.pillListHint' }, { numberOfPills: React.Children.count(children) })} />
-        {children ? renderChildren(children) : []}
-        {isSingleLine && (
-          <RollUpPill
-            isSingleLine={isSingleLine}
-            onSelectRollUp={handleOnSelectRollUp}
-            rollupCount={rollUpCount}
-          />
-        )}
-      </div>
-    </ResponsiveElement>
+    <div
+      {...customProps}
+      {...pillsProps}
+      aria-label={!ariaLabelledBy ? ariaLabel : undefined}
+      aria-describedby={ariaDescribedBy}
+      className={pillListClassNames}
+      ref={pillsRef}
+      tabIndex={containerTabindex}
+    >
+      <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.pills.pillListHint' }, { numberOfPills: React.Children.count(children) })} />
+      {children ? renderChildren(children) : []}
+      {isSingleLine && (
+        <RollUpPill
+          isSingleLine={isSingleLine}
+          onSelectRollUp={handleOnSelectRollUp}
+          rollupCount={rollUpCount}
+        />
+      )}
+    </div>
   );
 };
 

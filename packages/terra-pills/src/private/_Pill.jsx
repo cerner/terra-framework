@@ -1,4 +1,5 @@
 import React, {
+  useCallback,
   useEffect, useRef, useState,
 } from 'react';
 import {
@@ -14,7 +15,7 @@ import classNamesBind from 'classnames/bind';
 import Popup from 'terra-popup';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import ResponsiveElement from 'terra-responsive-element';
+import ResizeObserver from 'resize-observer-polyfill';
 import styles from './Pill.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -107,6 +108,34 @@ const Pill = (props) => {
   const pillRef = useRef();
   const [isTruncated, setIsTruncated] = useState(false);
   const [open, setPopupOpen] = useState(false);
+
+  const handleResize = useCallback((entries) => {
+    if (!Array.isArray(entries)) {
+      return;
+    }
+
+    if (isBasicPill && (pillRef.current.firstElementChild.scrollWidth > pillRef.current.firstElementChild.clientWidth)) {
+      setIsTruncated(true);
+      pillRef.current.setAttribute('aria-haspopup', true);
+    } else {
+      setIsTruncated(false);
+      if (pillRef.current.hasAttribute('aria-haspopup')) {
+        pillRef.current.setAttribute('aria-haspopup', false);
+      }
+    }
+  }, [isBasicPill]);
+
+  useEffect(() => {
+    let observer = new ResizeObserver((entries) => {
+      handleResize(entries);
+    });
+    observer.observe(pillRef.current.firstElementChild);
+
+    return () => {
+      observer.disconnect();
+      observer = null;
+    };
+  }, [handleResize, isBasicPill]);
 
   useEffect(() => {
     // refCallback not applicable for Pills(Basic Pills)
@@ -222,7 +251,7 @@ const Pill = (props) => {
     'pill-remove-button',
   ]);
 
-  const popupConent = () => {
+  const popupContent = () => {
     if (isTruncated && isBasicPill) {
       return (
         <Popup
@@ -238,49 +267,34 @@ const Pill = (props) => {
     return null;
   };
 
-  const handleWidthChange = () => {
-    if (isBasicPill && (pillRef.current.firstElementChild.scrollWidth > pillRef.current.firstElementChild.offsetWidth)) {
-      setIsTruncated(true);
-      pillRef.current.setAttribute('aria-haspopup', true);
-    } else {
-      setIsTruncated(false);
-      if (pillRef.current.hasAttribute('aria-haspopup')) {
-        pillRef.current.setAttribute('aria-haspopup', false);
-      }
-    }
-  };
-
   return (
-    <ResponsiveElement responsiveTo="window" onResize={handleWidthChange}>
+    <div
+      {...pillProps}
+      aria-expanded={!onSelect ? undefined : ariaExpanded}
+      className={pillClassNames}
+      id={id}
+      ref={pillRef}
+      data-terra-pills-show-focus-styles
+      data-terra-pill
+      {...customProps}
+    >
       <div
-        {...pillProps}
-        aria-expanded={!onSelect ? undefined : ariaExpanded}
-        className={pillClassNames}
-        id={id}
-        ref={pillRef}
-        data-terra-pills-show-focus-styles
-        data-terra-pill
-        {...customProps}
+        {...pillButtonProps}
+        className={pillLabelClassNames}
       >
-        <div
-          {...pillButtonProps}
-          className={pillLabelClassNames}
-        >
-          {label}
-        </div>
-        {isRemovable && (
-          <div
-            {...removeButtonProps}
-            className={removeButtonClassNames}
-          >
-            <span className={cx('clear-icon')} />
-          </div>
-        )}
-        {pillInteractionHint && <VisuallyHiddenText text={pillInteractionHint} />}
-        {popupConent()}
+        {label}
       </div>
-    </ResponsiveElement>
-
+      {isRemovable && (
+        <div
+          {...removeButtonProps}
+          className={removeButtonClassNames}
+        >
+          <span className={cx('clear-icon')} />
+        </div>
+      )}
+      {pillInteractionHint && <VisuallyHiddenText text={pillInteractionHint} />}
+      {popupContent()}
+    </div>
   );
 };
 

@@ -6,16 +6,15 @@ const getPillWidth = (pill) => {
 
 const handleRollUp = (pillListRef) => {
   const rollUpPill = pillListRef.current.querySelector('[data-terra-rollup-pill]');
-  const containerWidth = pillListRef.current.clientWidth;
-  let rollupPillWidth;
+  const pills = pillListRef.current.querySelectorAll('[data-terra-pill]');
+  const containerWidth = Math.round(pillListRef.current.getBoundingClientRect().width);
+  let totalPillWidth = 0;
+  let startIndex = 0;
+  let rollupPillWidth = 0;
+
   if (rollUpPill) {
     rollupPillWidth = getPillWidth(rollUpPill);
   }
-
-  let totalPillWidth = 0;
-  let startIndex = 0;
-
-  const pills = pillListRef.current.querySelectorAll('[data-terra-pill]');
 
   for (let i = 0; i < pills.length; i += 1) {
     if (totalPillWidth > containerWidth) {
@@ -31,20 +30,6 @@ const handleRollUp = (pillListRef) => {
   }
 
   return startIndex;
-};
-
-const getFirstFocusableNode = (pills) => {
-  let firstIndex = -1;
-  if (pills.length > 0) {
-    for (let i = 0; i < pills.length; i += 1) {
-      if ((pills[i].hasAttribute('data-terra-pill-removable')) || (pills[i].hasAttribute('aria-haspopup'))) {
-        firstIndex = i;
-        break;
-      }
-    }
-  }
-
-  return firstIndex;
 };
 
 const getNextFocusableNode = (pills, currentIndex) => {
@@ -85,7 +70,6 @@ const setRollUpPillTabIndex = (pill, val) => {
 
 const PillsUtils = {
   handleRollUp,
-  getFirstFocusableNode,
   getNextFocusableNode,
   getPreviousFocusableNode,
   setPillsTabIndex,
