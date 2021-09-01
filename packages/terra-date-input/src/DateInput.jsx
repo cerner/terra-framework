@@ -152,7 +152,7 @@ class DateInput extends React.Component {
 
     this.handleMonthClick = this.handleMonthClick.bind(this);
     this.handlePaste = this.handlePaste.bind(this);
-
+    this.handleKeyPress = this.handleKeyPress.bind(this);
     this.state = {
       month: DateInputUtil.splitMonth(value),
       day: DateInputUtil.splitDay(value),
@@ -266,7 +266,7 @@ class DateInput extends React.Component {
   }
 
   /**
-   * Takes a key press from the day and year input, and processes it based on the value of the keycode
+   * Checks Paste event in the day and year input, and processes it based on the value of the keycode
    * Prevents non-numeric characters from being entered in Safari browser.
    * @param {Object} event Event object generated from the event delegation.
    */
@@ -276,7 +276,7 @@ class DateInput extends React.Component {
   }
 
   /**
-   * Checks Paste event in the day and year input, and processes it based on the value of the keycode
+   * Takes a key press from the day and year input, and processes it based on the value of the keycode
    * Prevents non-numeric characters from being entered in Safari browser.
    * @param {Object} event Event object generated from the event delegation.
    */
