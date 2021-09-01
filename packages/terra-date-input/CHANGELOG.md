@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Check NODE_ENV for the current development environment.
+
 ## 1.30.0 - (July 21, 2021)
 
 * Changed
