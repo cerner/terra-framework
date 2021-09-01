@@ -64,29 +64,22 @@ exports[`Pill should render a basic pill 1`] = `
     label="Default"
   >
     <div
-      className="pill-container"
-      data-terra-pill={true}
-      data-terra-pills-show-focus-styles={true}
-      id="Default"
+      className="pill-list-item"
+      role="listitem"
     >
       <div
-        className="pill-list-item"
-        role="listitem"
+        aria-describedby="interaction-hint-Default"
+        className="pill"
+        data-terra-pill={true}
+        data-terra-pills-show-focus-styles={true}
+        id="Default"
+        role="text"
       >
-        <div
-          aria-describedby="interaction-hint-Default"
-          className="pill"
-          data-terra-pill={true}
-          data-terra-pills-show-focus-styles={true}
-          id="Default"
-          role="text"
+        <span
+          className="pill-label"
         >
-          <span
-            className="pill-label"
-          >
-            Default
-          </span>
-        </div>
+          Default
+        </span>
       </div>
     </div>
   </Pill>
@@ -159,82 +152,55 @@ exports[`Pill should render a removable pill 1`] = `
     label="Removable"
   >
     <div
-      className="pill-container is-focusable is-removable"
-      data-terra-pill={true}
-      data-terra-pills-show-focus-styles={true}
-      id="Removable"
-      onBlur={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      role="button"
-      tabIndex="0"
+      className="pill-list-item"
+      role="listitem"
     >
       <div
-        className="pill-list-item"
-        role="listitem"
+        aria-describedby="interaction-hint-Removable"
+        className="pill is-focusable is-removable"
+        data-terra-pill={true}
+        data-terra-pills-show-focus-styles={true}
+        id="Removable"
+        onBlur={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        role="text"
+        tabIndex="0"
       >
-        <div
-          aria-describedby="interaction-hint-Removable"
-          className="pill is-focusable is-removable"
-          data-terra-pill={true}
-          data-terra-pills-show-focus-styles={true}
-          id="Removable"
-          onBlur={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          role="text"
-          tabIndex="0"
+        <span
+          className="pill-label"
         >
-          <span
-            className="pill-label"
-          >
-            Removable
-          </span>
-        </div>
-        <button
-          aria-hidden="true"
-          aria-labelledby="remove-button-Removable"
-          className="pill-remove-button"
-          tabIndex="-1"
-        >
-          <span
-            className="remove-button-label"
-            id="remove-button-Removable"
-          >
-            Terra.pills.label.delete
-          </span>
-          <span
-            className="clear-icon"
-          />
-        </button>
-        <VisuallyHiddenText
-          aria-hidden="true"
-          id="interaction-hint-Removable"
-          text=", Terra.pills.hint.removable"
-        >
-          <span
-            aria-hidden="true"
-            className="visually-hidden-text"
-            id="interaction-hint-Removable"
-          >
-            , Terra.pills.hint.removable
-          </span>
-        </VisuallyHiddenText>
+          Removable
+        </span>
       </div>
-      <div
+      <button
+        aria-hidden="true"
+        aria-labelledby="remove-button-Removable"
         className="pill-remove-button"
+        tabIndex="-1"
+        type="button"
       >
+        <span
+          className="remove-button-label"
+          id="remove-button-Removable"
+        >
+          Terra.pills.label.delete
+        </span>
         <span
           className="clear-icon"
         />
-      </div>
+      </button>
       <VisuallyHiddenText
-        text="Terra.pills.pillHint.removable"
+        aria-hidden="true"
+        id="interaction-hint-Removable"
+        text=", Terra.pills.hint.removable"
       >
         <span
+          aria-hidden="true"
           className="visually-hidden-text"
+          id="interaction-hint-Removable"
         >
-          Terra.pills.pillHint.removable
+          , Terra.pills.hint.removable
         </span>
       </VisuallyHiddenText>
     </div>
@@ -310,84 +276,57 @@ exports[`Pill should render a selectable and removable pill 1`] = `
     onSelect={[Function]}
   >
     <div
-      className="pill-container is-focusable is-selectable is-removable is-selectable-and-removable"
-      data-terra-pill={true}
-      data-terra-pills-show-focus-styles={true}
-      id="SelectableRemovable"
-      onBlur={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      role="button"
-      tabIndex="0"
+      className="pill-list-item"
+      role="listitem"
     >
-      <div
-        className="pill-list-item"
-        role="listitem"
+      <button
+        aria-describedby="interaction-hint-SelectableRemovable"
+        aria-haspopup="dialog"
+        className="pill is-focusable is-selectable is-removable is-selectable-and-removable"
+        data-terra-pill={true}
+        data-terra-pills-show-focus-styles={true}
+        id="SelectableRemovable"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        tabIndex="0"
+        type="button"
       >
-        <button
-          aria-describedby="interaction-hint-SelectableRemovable"
-          aria-haspopup="dialog"
-          className="pill is-focusable is-selectable is-removable is-selectable-and-removable"
-          data-terra-pill={true}
-          data-terra-pills-show-focus-styles={true}
-          id="SelectableRemovable"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          tabIndex="0"
-          type="button"
+        <span
+          className="pill-label"
         >
-          <span
-            className="pill-label"
-          >
-            Selectable and Removable
-          </span>
-        </button>
-        <button
-          aria-hidden="true"
-          aria-labelledby="remove-button-SelectableRemovable"
-          className="pill-remove-button"
-          tabIndex="-1"
-        >
-          <span
-            className="remove-button-label"
-            id="remove-button-SelectableRemovable"
-          >
-            Terra.pills.label.delete
-          </span>
-          <span
-            className="clear-icon"
-          />
-        </button>
-        <VisuallyHiddenText
-          aria-hidden="true"
-          id="interaction-hint-SelectableRemovable"
-          text=", Terra.pills.hint.selectableAndRemovable"
-        >
-          <span
-            aria-hidden="true"
-            className="visually-hidden-text"
-            id="interaction-hint-SelectableRemovable"
-          >
-            , Terra.pills.hint.selectableAndRemovable
-          </span>
-        </VisuallyHiddenText>
-      </div>
-      <div
+          Selectable and Removable
+        </span>
+      </button>
+      <button
+        aria-hidden="true"
+        aria-labelledby="remove-button-SelectableRemovable"
         className="pill-remove-button"
+        tabIndex="-1"
+        type="button"
       >
+        <span
+          className="remove-button-label"
+          id="remove-button-SelectableRemovable"
+        >
+          Terra.pills.label.delete
+        </span>
         <span
           className="clear-icon"
         />
-      </div>
+      </button>
       <VisuallyHiddenText
-        text="Terra.pills.pillHint.selectableAndRemovable"
+        aria-hidden="true"
+        id="interaction-hint-SelectableRemovable"
+        text=", Terra.pills.hint.selectableAndRemovable"
       >
         <span
+          aria-hidden="true"
           className="visually-hidden-text"
+          id="interaction-hint-SelectableRemovable"
         >
-          Terra.pills.pillHint.selectableAndRemovable
+          , Terra.pills.hint.selectableAndRemovable
         </span>
       </VisuallyHiddenText>
     </div>
@@ -461,61 +400,40 @@ exports[`Pill should render a selectable pill 1`] = `
     onSelect={[Function]}
   >
     <div
-      className="pill-container is-focusable is-selectable"
-      data-terra-pill={true}
-      data-terra-pills-show-focus-styles={true}
-      id="Selectable"
-      onBlur={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      role="button"
-      tabIndex="0"
+      className="pill-list-item"
+      role="listitem"
     >
-      <div
-        className="pill-list-item"
-        role="listitem"
-      >
-        <button
-          aria-describedby="interaction-hint-Selectable"
-          aria-haspopup="dialog"
-          className="pill is-focusable is-selectable"
-          data-terra-pill={true}
-          data-terra-pills-show-focus-styles={true}
-          id="Selectable"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          tabIndex="0"
-          type="button"
-        >
-          <span
-            className="pill-label"
-          >
-            Selectable
-          </span>
-        </button>
-        <VisuallyHiddenText
-          aria-hidden="true"
-          id="interaction-hint-Selectable"
-          text=", Terra.pills.hint.selectable"
-        >
-          <span
-            aria-hidden="true"
-            className="visually-hidden-text"
-            id="interaction-hint-Selectable"
-          >
-            , Terra.pills.hint.selectable
-          </span>
-        </VisuallyHiddenText>
-      </div>
-      <VisuallyHiddenText
-        text="Terra.pills.pillHint.selectable"
+      <button
+        aria-describedby="interaction-hint-Selectable"
+        aria-haspopup="dialog"
+        className="pill is-focusable is-selectable"
+        data-terra-pill={true}
+        data-terra-pills-show-focus-styles={true}
+        id="Selectable"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        tabIndex="0"
+        type="button"
       >
         <span
-          className="visually-hidden-text"
+          className="pill-label"
         >
-          Terra.pills.pillHint.selectable
+          Selectable
+        </span>
+      </button>
+      <VisuallyHiddenText
+        aria-hidden="true"
+        id="interaction-hint-Selectable"
+        text=", Terra.pills.hint.selectable"
+      >
+        <span
+          aria-hidden="true"
+          className="visually-hidden-text"
+          id="interaction-hint-Selectable"
+        >
+          , Terra.pills.hint.selectable
         </span>
       </VisuallyHiddenText>
     </div>

@@ -63,37 +63,37 @@ exports[`Pills should render a basic pill 1`] = `
     isSingleLine={false}
   >
     <div
+      aria-describedby="terra-pills-group-interaction-hint"
       aria-label="Example of a Basic Pill"
-      className="pill-list"
+      aria-live="polite"
+      aria-relevant="removals"
+      className="pills-group"
       onBlur={[Function]}
       onKeyDown={[Function]}
+      role="list"
       tabIndex="-1"
     >
-      <div
-        aria-describedby="terra-pills-group-interaction-hint"
-        aria-label="Example of a Basic Pill"
-        aria-live="polite"
-        aria-relevant="removals"
-        className="pills-group"
-        onBlur={[Function]}
-        onKeyDown={[Function]}
-        role="list"
-        tabIndex="-1"
+      <VisuallyHiddenText
+        aria-hidden="true"
+        id="terra-pills-group-interaction-hint"
+        text="Terra.pills.hint.pillList"
       >
-        <VisuallyHiddenText
+        <span
           aria-hidden="true"
+          className="visually-hidden-text"
           id="terra-pills-group-interaction-hint"
-          text="Terra.pills.hint.pillList"
         >
-          <span
-            aria-hidden="true"
-            className="visually-hidden-text"
-            id="terra-pills-group-interaction-hint"
-          >
-            Terra.pills.hint.pillList
-          </span>
-        </VisuallyHiddenText>
-        <InjectIntl(Pill)
+          Terra.pills.hint.pillList
+        </span>
+      </VisuallyHiddenText>
+      <InjectIntl(Pill)
+        id="basic-pill"
+        isBasicPill={true}
+        key=".0"
+        label="Basic Pill"
+        onRemove={[Function]}
+      >
+        <Pill
           id="basic-pill"
           intl={
             Object {
@@ -127,40 +127,27 @@ exports[`Pills should render a basic pill 1`] = `
           onRemove={[Function]}
         >
           <div
-            className="pill-container"
-            data-terra-pill={true}
-            data-terra-pills-show-focus-styles={true}
-            id="basic-pill"
+            className="pill-list-item"
+            role="listitem"
           >
             <div
-              className="pill-label"
-              onClick={[Function]}
-              title=""
+              aria-describedby="interaction-hint-basic-pill"
+              className="pill"
+              data-terra-pill={true}
+              data-terra-pills-show-focus-styles={true}
+              id="basic-pill"
+              role="text"
             >
-              <div
-                className="pill-list-item"
-                role="listitem"
+              <span
+                className="pill-label"
               >
-                <div
-                  aria-describedby="interaction-hint-basic-pill"
-                  className="pill"
-                  data-terra-pill={true}
-                  data-terra-pills-show-focus-styles={true}
-                  id="basic-pill"
-                  role="text"
-                >
-                  <span
-                    className="pill-label"
-                  >
-                    Basic Pill
-                  </span>
-                </div>
-              </div>
-            </ResponsiveElement>
-          </Pill>
-        </InjectIntl(Pill)>
-      </div>
-    </ResponsiveElement>
+                Basic Pill
+              </span>
+            </div>
+          </div>
+        </Pill>
+      </InjectIntl(Pill)>
+    </div>
   </Pills>
 </InjectIntl(Pills)>
 `;
@@ -229,68 +216,63 @@ exports[`Pills should render a basic pill with roll up 1`] = `
     isSingleLine={true}
   >
     <div
+      aria-describedby="terra-pills-group-interaction-hint"
       aria-label="Example of a basic Pill with roll up"
-      className="pill-list"
+      aria-live="polite"
+      aria-relevant="removals"
+      className="pills-group"
       onBlur={[Function]}
       onKeyDown={[Function]}
+      role="list"
       tabIndex="-1"
     >
-      <div
-        aria-describedby="terra-pills-group-interaction-hint"
-        aria-label="Example of a basic Pill"
-        aria-live="polite"
-        aria-relevant="removals"
-        className="pills-group"
-        onBlur={[Function]}
-        onKeyDown={[Function]}
-        role="list"
-        tabIndex="-1"
+      <VisuallyHiddenText
+        aria-hidden="true"
+        id="terra-pills-group-interaction-hint"
+        text="Terra.pills.hint.pillList, Terra.pills.hint.rollupNotVisible"
       >
-        <VisuallyHiddenText
+        <span
           aria-hidden="true"
+          className="visually-hidden-text"
           id="terra-pills-group-interaction-hint"
-          text="Terra.pills.hint.pillList"
         >
-          <span
-            aria-hidden="true"
-            className="visually-hidden-text"
-            id="terra-pills-group-interaction-hint"
-          >
-            Terra.pills.hint.pillList
-          </span>
-        </VisuallyHiddenText>
-        <InjectIntl(RollUpPill)
-          isSingleLine={true}
-          onSelectRollUp={[Function]}
-          rollupCount={1}
-        >
-          <RollUpPill
-            intl={
-              Object {
-                "defaultFormats": Object {},
-                "defaultLocale": "en",
-                "formatDate": [Function],
-                "formatHTMLMessage": [Function],
-                "formatMessage": [Function],
-                "formatNumber": [Function],
-                "formatPlural": [Function],
-                "formatRelative": [Function],
-                "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
-                  "getDateTimeFormat": [Function],
-                  "getMessageFormat": [Function],
-                  "getNumberFormat": [Function],
-                  "getPluralFormat": [Function],
-                  "getRelativeFormat": [Function],
-                },
-                "locale": "en",
-                "messages": null,
-                "now": [Function],
-                "onError": [Function],
-                "textComponent": "span",
-                "timeZone": null,
-              }
+          Terra.pills.hint.pillList, Terra.pills.hint.rollupNotVisible
+        </span>
+      </VisuallyHiddenText>
+      <InjectIntl(Pill)
+        id="basic-pill"
+        isBasicPill={true}
+        key=".0"
+        label="Basic Pill"
+        onRemove={[Function]}
+      >
+        <Pill
+          id="basic-pill"
+          intl={
+            Object {
+              "defaultFormats": Object {},
+              "defaultLocale": "en",
+              "formatDate": [Function],
+              "formatHTMLMessage": [Function],
+              "formatMessage": [Function],
+              "formatNumber": [Function],
+              "formatPlural": [Function],
+              "formatRelative": [Function],
+              "formatTime": [Function],
+              "formats": Object {},
+              "formatters": Object {
+                "getDateTimeFormat": [Function],
+                "getMessageFormat": [Function],
+                "getNumberFormat": [Function],
+                "getPluralFormat": [Function],
+                "getRelativeFormat": [Function],
+              },
+              "locale": "en",
+              "messages": null,
+              "now": [Function],
+              "onError": [Function],
+              "textComponent": "span",
+              "timeZone": null,
             }
           }
           isBasicPill={true}
@@ -298,46 +280,22 @@ exports[`Pills should render a basic pill with roll up 1`] = `
           onRemove={[Function]}
         >
           <div
-            className="pill-container"
-            data-terra-pill={true}
-            data-terra-pills-show-focus-styles={true}
-            id="basic-pill"
+            className="pill-list-item"
+            role="listitem"
           >
             <div
-              className="pill-list-item"
-              role="listitem"
+              aria-describedby="interaction-hint-basic-pill"
+              className="pill"
+              data-terra-pill={true}
+              data-terra-pills-show-focus-styles={true}
+              id="basic-pill"
+              role="text"
             >
-              <button
-                aria-describedby="rollup-pill-hint"
-                className="rollup-pill is-selectable"
-                data-terra-rollup-pill={true}
-                data-terra-rollup-pill-show-focus-styles={true}
-                id="rollup-pill"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                onMouseDown={[Function]}
-                tabIndex="0"
-                type="button"
+              <span
+                className="pill-label"
               >
-                <span
-                  className="rollup-pill-label"
-                >
-                  Terra.pills.label.rollupPill
-                </span>
-              </button>
-              <VisuallyHiddenText
-                aria-hidden="true"
-                id="rollup-pill-hint"
-                text="Terra.pills.hint.rollupPill"
-              >
-                <span
-                  aria-hidden="true"
-                  className="visually-hidden-text"
-                  id="rollup-pill-hint"
-                >
-                  Terra.pills.hint.rollupPill
-                </span>
-              </VisuallyHiddenText>
+                Basic Pill
+              </span>
             </div>
           </div>
         </Pill>
@@ -380,17 +338,40 @@ exports[`Pills should render a basic pill with roll up 1`] = `
           rollupCount={1}
         >
           <div
-            className="roll-up-pill"
-            data-terra-rollup-pill={true}
-            data-terra-rollup-pill-show-focus-styles={true}
-            id="rollup-pill"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            role="button"
-            tabIndex="0"
+            className="pill-list-item"
+            role="listitem"
           >
-            Terra.pills.rollupPillLabel
+            <button
+              aria-describedby="rollup-pill-hint"
+              className="rollup-pill is-selectable"
+              data-terra-rollup-pill={true}
+              data-terra-rollup-pill-show-focus-styles={true}
+              id="rollup-pill"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              tabIndex="0"
+              type="button"
+            >
+              <span
+                className="rollup-pill-label"
+              >
+                Terra.pills.label.rollupPill
+              </span>
+            </button>
+            <VisuallyHiddenText
+              aria-hidden="true"
+              id="rollup-pill-hint"
+              text="Terra.pills.hint.rollupPill"
+            >
+              <span
+                aria-hidden="true"
+                className="visually-hidden-text"
+                id="rollup-pill-hint"
+              >
+                Terra.pills.hint.rollupPill
+              </span>
+            </VisuallyHiddenText>
           </div>
         </RollUpPill>
       </InjectIntl(RollUpPill)>

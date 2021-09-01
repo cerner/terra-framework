@@ -65,107 +65,112 @@ exports[`Selectable Pill should render a selectable pill 1`] = `
     onSelect={[Function]}
   >
     <div
+      aria-describedby="terra-pills-group-interaction-hint"
       aria-label="Example of a Selectable Pill"
-      className="pill-list"
+      aria-live="polite"
+      aria-relevant="removals"
+      className="pills-group"
       onBlur={[Function]}
       onKeyDown={[Function]}
+      role="list"
       tabIndex="-1"
     >
-      <div
-        aria-describedby="terra-pills-group-interaction-hint"
-        aria-label="Example of a Selectable Pill"
-        aria-live="polite"
-        aria-relevant="removals"
-        className="pills-group"
-        onBlur={[Function]}
-        onKeyDown={[Function]}
-        role="list"
-        tabIndex="-1"
+      <VisuallyHiddenText
+        aria-hidden="true"
+        id="terra-pills-group-interaction-hint"
+        text="Terra.pills.hint.pillList"
       >
-        <VisuallyHiddenText
+        <span
           aria-hidden="true"
+          className="visually-hidden-text"
           id="terra-pills-group-interaction-hint"
-          text="Terra.pills.hint.pillList"
         >
-          <span
-            aria-hidden="true"
-            className="visually-hidden-text"
-            id="terra-pills-group-interaction-hint"
-          >
-            Terra.pills.hint.pillList
-          </span>
-        </VisuallyHiddenText>
-        <InjectIntl(Pill)
-          id="selectabla-pill"
+          Terra.pills.hint.pillList
+        </span>
+      </VisuallyHiddenText>
+      <InjectIntl(Pill)
+        id="selectable-pill"
+        isBasicPill={false}
+        key=".0"
+        label="Selectable Pill"
+        onRemove={[Function]}
+        onSelect={[Function]}
+      >
+        <Pill
+          id="selectable-pill"
+          intl={
+            Object {
+              "defaultFormats": Object {},
+              "defaultLocale": "en",
+              "formatDate": [Function],
+              "formatHTMLMessage": [Function],
+              "formatMessage": [Function],
+              "formatNumber": [Function],
+              "formatPlural": [Function],
+              "formatRelative": [Function],
+              "formatTime": [Function],
+              "formats": Object {},
+              "formatters": Object {
+                "getDateTimeFormat": [Function],
+                "getMessageFormat": [Function],
+                "getNumberFormat": [Function],
+                "getPluralFormat": [Function],
+                "getRelativeFormat": [Function],
+              },
+              "locale": "en",
+              "messages": null,
+              "now": [Function],
+              "onError": [Function],
+              "textComponent": "span",
+              "timeZone": null,
+            }
+          }
           isBasicPill={false}
           label="Selectable Pill"
           onRemove={[Function]}
           onSelect={[Function]}
         >
           <div
-            className="pill-container is-focusable is-selectable"
-            data-terra-pill={true}
-            data-terra-pills-show-focus-styles={true}
-            id="selectable-pill"
-            onBlur={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            role="button"
-            tabIndex="0"
+            className="pill-list-item"
+            role="listitem"
           >
-            <div
-              className="pill-label is-selectable"
+            <button
+              aria-describedby="interaction-hint-selectable-pill"
+              aria-haspopup="dialog"
+              className="pill is-focusable is-selectable"
+              data-terra-pill={true}
+              data-terra-pills-show-focus-styles={true}
+              id="selectable-pill"
+              onBlur={[Function]}
               onClick={[Function]}
-              title=""
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              tabIndex="0"
+              type="button"
             >
-              Selectable Pill
-            </div>
-            <VisuallyHiddenText
-              text="Terra.pills.pillHint.selectable"
-            >
-              <div
-                className="pill-list-item"
-                role="listitem"
+              <span
+                className="pill-label"
               >
-                <button
-                  aria-describedby="interaction-hint-selectabla-pill"
-                  aria-haspopup="dialog"
-                  className="pill is-focusable is-selectable"
-                  data-terra-pill={true}
-                  data-terra-pills-show-focus-styles={true}
-                  id="selectabla-pill"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseDown={[Function]}
-                  tabIndex="0"
-                  type="button"
-                >
-                  <span
-                    className="pill-label"
-                  >
-                    Selectable Pill
-                  </span>
-                </button>
-                <VisuallyHiddenText
-                  aria-hidden="true"
-                  id="interaction-hint-selectabla-pill"
-                  text=", Terra.pills.hint.selectable"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="visually-hidden-text"
-                    id="interaction-hint-selectabla-pill"
-                  >
-                    , Terra.pills.hint.selectable
-                  </span>
-                </VisuallyHiddenText>
-              </div>
-            </ResponsiveElement>
-          </Pill>
-        </InjectIntl(Pill)>
-      </div>
-    </ResponsiveElement>
+                Selectable Pill
+              </span>
+            </button>
+            <VisuallyHiddenText
+              aria-hidden="true"
+              id="interaction-hint-selectable-pill"
+              text=", Terra.pills.hint.selectable"
+            >
+              <span
+                aria-hidden="true"
+                className="visually-hidden-text"
+                id="interaction-hint-selectable-pill"
+              >
+                , Terra.pills.hint.selectable
+              </span>
+            </VisuallyHiddenText>
+          </div>
+        </Pill>
+      </InjectIntl(Pill)>
+    </div>
   </SelectablePills>
 </InjectIntl(SelectablePills)>
 `;
@@ -236,42 +241,27 @@ exports[`Selectable Pill should render a selectable pill with roll up 1`] = `
     onSelect={[Function]}
   >
     <div
+      aria-describedby="terra-pills-group-interaction-hint"
       aria-label="Example of a Selectable Pill with roll up"
-      className="pill-list"
+      aria-live="polite"
+      aria-relevant="removals"
+      className="pills-group"
       onBlur={[Function]}
       onKeyDown={[Function]}
+      role="list"
       tabIndex="-1"
     >
-      <div
-        aria-describedby="terra-pills-group-interaction-hint"
-        aria-label="Example of a Selectable Pill"
-        aria-live="polite"
-        aria-relevant="removals"
-        className="pills-group"
-        onBlur={[Function]}
-        onKeyDown={[Function]}
-        role="list"
-        tabIndex="-1"
+      <VisuallyHiddenText
+        aria-hidden="true"
+        id="terra-pills-group-interaction-hint"
+        text="Terra.pills.hint.pillList, Terra.pills.hint.rollupNotVisible"
       >
-        <VisuallyHiddenText
+        <span
           aria-hidden="true"
+          className="visually-hidden-text"
           id="terra-pills-group-interaction-hint"
-          text="Terra.pills.hint.pillList"
         >
-          <span
-            aria-hidden="true"
-            className="visually-hidden-text"
-            id="terra-pills-group-interaction-hint"
-          >
-            Terra.pills.hint.pillList
-          </span>
-        </VisuallyHiddenText>
-        <InjectIntl(RollUpPill)
-          isSingleLine={true}
-          onSelectRollUp={[Function]}
-          rollupCount={1}
-        >
-          Terra.pills.pillListHint
+          Terra.pills.hint.pillList, Terra.pills.hint.rollupNotVisible
         </span>
       </VisuallyHiddenText>
       <InjectIntl(Pill)
@@ -317,59 +307,40 @@ exports[`Selectable Pill should render a selectable pill with roll up 1`] = `
           onSelect={[Function]}
         >
           <div
-            className="pill-container is-focusable is-selectable"
-            data-terra-pill={true}
-            data-terra-pills-show-focus-styles={true}
-            id="selectable-pill"
-            onBlur={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            role="button"
-            tabIndex="0"
+            className="pill-list-item"
+            role="listitem"
           >
-            <div
-              className="pill-list-item"
-              role="listitem"
-            >
-              <button
-                aria-describedby="rollup-pill-hint"
-                className="rollup-pill is-selectable"
-                data-terra-rollup-pill={true}
-                data-terra-rollup-pill-show-focus-styles={true}
-                id="rollup-pill"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                onMouseDown={[Function]}
-                tabIndex="0"
-                type="button"
-              >
-                <span
-                  className="rollup-pill-label"
-                >
-                  Terra.pills.label.rollupPill
-                </span>
-              </button>
-              <VisuallyHiddenText
-                aria-hidden="true"
-                id="rollup-pill-hint"
-                text="Terra.pills.hint.rollupPill"
-              >
-                <span
-                  aria-hidden="true"
-                  className="visually-hidden-text"
-                  id="rollup-pill-hint"
-                >
-                  Terra.pills.hint.rollupPill
-                </span>
-              </VisuallyHiddenText>
-            </div>
-            <VisuallyHiddenText
-              text="Terra.pills.pillHint.selectable"
+            <button
+              aria-describedby="interaction-hint-selectable-pill"
+              aria-haspopup="dialog"
+              className="pill is-focusable is-selectable"
+              data-terra-pill={true}
+              data-terra-pills-show-focus-styles={true}
+              id="selectable-pill"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              tabIndex="0"
+              type="button"
             >
               <span
-                className="visually-hidden-text"
+                className="pill-label"
               >
-                Terra.pills.pillHint.selectable
+                Selectable Pill
+              </span>
+            </button>
+            <VisuallyHiddenText
+              aria-hidden="true"
+              id="interaction-hint-selectable-pill"
+              text=", Terra.pills.hint.selectable"
+            >
+              <span
+                aria-hidden="true"
+                className="visually-hidden-text"
+                id="interaction-hint-selectable-pill"
+              >
+                , Terra.pills.hint.selectable
               </span>
             </VisuallyHiddenText>
           </div>
@@ -413,17 +384,40 @@ exports[`Selectable Pill should render a selectable pill with roll up 1`] = `
           rollupCount={1}
         >
           <div
-            className="roll-up-pill"
-            data-terra-rollup-pill={true}
-            data-terra-rollup-pill-show-focus-styles={true}
-            id="rollup-pill"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            role="button"
-            tabIndex="0"
+            className="pill-list-item"
+            role="listitem"
           >
-            Terra.pills.rollupPillLabel
+            <button
+              aria-describedby="rollup-pill-hint"
+              className="rollup-pill is-selectable"
+              data-terra-rollup-pill={true}
+              data-terra-rollup-pill-show-focus-styles={true}
+              id="rollup-pill"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              tabIndex="0"
+              type="button"
+            >
+              <span
+                className="rollup-pill-label"
+              >
+                Terra.pills.label.rollupPill
+              </span>
+            </button>
+            <VisuallyHiddenText
+              aria-hidden="true"
+              id="rollup-pill-hint"
+              text="Terra.pills.hint.rollupPill"
+            >
+              <span
+                aria-hidden="true"
+                className="visually-hidden-text"
+                id="rollup-pill-hint"
+              >
+                Terra.pills.hint.rollupPill
+              </span>
+            </VisuallyHiddenText>
           </div>
         </RollUpPill>
       </InjectIntl(RollUpPill)>
