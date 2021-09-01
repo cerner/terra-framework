@@ -151,6 +151,7 @@ class DateInput extends React.Component {
     this.yearRender = this.yearRender.bind(this);
 
     this.handleMonthClick = this.handleMonthClick.bind(this);
+    this.handlePaste = this.handlePaste.bind(this);
 
     this.state = {
       month: DateInputUtil.splitMonth(value),
@@ -262,6 +263,26 @@ class DateInput extends React.Component {
     if (event.keyCode === KeyCode.KEY_SPACE || event.keyCode === KeyCode.KEY_UP || event.keyCode === KeyCode.KEY_DOWN) {
       this.setState({ isPlaceholderColored: false });
     }
+  }
+
+  /**
+   * Takes a key press from the day and year input, and processes it based on the value of the keycode
+   * Prevents non-numeric characters from being entered in Safari browser.
+   * @param {Object} event Event object generated from the event delegation.
+   */
+  handlePaste = event => {
+    const input = (event.clipboardData || window.clipboardData).getData('text');
+    if (!input.match(/^[0-9]+$/)) event.preventDefault();
+  }
+
+  /**
+   * Checks Paste event in the day and year input, and processes it based on the value of the keycode
+   * Prevents non-numeric characters from being entered in Safari browser.
+   * @param {Object} event Event object generated from the event delegation.
+   */
+  handleKeyPress = event => {
+    const input = event.key;
+    if (!input.match(/^[0-9]+$/) && !event.metaKey) event.preventDefault();
   }
 
   /**
@@ -510,24 +531,35 @@ class DateInput extends React.Component {
    * Renders day input
    */
   dayRender() {
+    /**
+     * JAWS + Chrome is super buggy when it comes to up/down arrow keys cycling values on the input and only seems to work
+     * when input[type=number]. This works great, except in Firefox where <input value="03" type="number" /> displays the
+     * value in the browsers as "3" instead of "03". https://bugzilla.mozilla.org/show_bug.cgi?id=1005603
+     * To work around this issue, the year input uses type="number" for all browsers, but if we're in a Mozilla browser,
+     * we switch over to using type="text" and pattern="\d*" which allows displaying value="03" in the browser as "03"
+     */
+    const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
+      ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
+
     const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.dayAttributes });
 
     return (
       <Input
         {...this.props.dayAttributes}
+        {...numberAttributes}
         refCallback={(inputRef) => { this.dayRef = inputRef; }}
         aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.dayLabel' })}
         className={cx('date-input-day', { 'is-focused': this.state.dayIsFocused })}
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
         maxLength="2"
+        onKeyPress={this.handleKeyPress}
         onChange={this.handleDayChange}
         onKeyDown={this.handleDayKeyDown}
         onFocus={this.handleDayFocus}
         onBlur={this.handleDayBlur}
+        onPaste={this.handlePaste}
         size="2"
-        type="text"
-        pattern="\d*"
         autoComplete="off"
         disabled={this.props.disabled}
         isInvalid={this.props.isInvalid}
@@ -542,11 +574,22 @@ class DateInput extends React.Component {
    * Renders year select
    */
   yearRender() {
+    /**
+     * JAWS + Chrome is super buggy when it comes to up/down arrow keys cycling values on the input and only seems to work
+     * when input[type=number]. This works great, except in Firefox where <input value="03" type="number" /> displays the
+     * value in the browsers as "3" instead of "03". https://bugzilla.mozilla.org/show_bug.cgi?id=1005603
+     * To work around this issue, the year input uses type="number" for all browsers, but if we're in a Mozilla browser,
+     * we switch over to using type="text" and pattern="\d*" which allows displaying value="03" in the browser as "03"
+     */
+    const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
+      ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
+
     const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.yearAttributes });
 
     return (
       <Input
         {...this.props.yearAttributes}
+        {...numberAttributes}
         refCallback={(inputRef) => { this.yearRef = inputRef; }}
         aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}
         className={cx('date-input-year', { 'is-focused': this.state.yearIsFocused })}
@@ -554,12 +597,12 @@ class DateInput extends React.Component {
         name={'terra-date-year-'.concat(this.props.name)}
         maxLength="4"
         onChange={this.handleYearChange}
+        onKeyPress={this.handleKeyPress}
         onKeyDown={this.handleYearKeyDown}
         onFocus={this.handleYearFocus}
         onBlur={this.handleYearBlur}
+        onPaste={this.handlePaste}
         size="4"
-        type="text"
-        pattern="\d*"
         autoComplete="off"
         disabled={this.props.disabled}
         isInvalid={this.props.isInvalid}
