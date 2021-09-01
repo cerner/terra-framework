@@ -20,26 +20,30 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-   * The string that labels the collection of pills, used in cased where the text label is not visible on the screen and required for minimum accessibility standards. Providing this prop adds the aria-label attribute to the Pills container element. (Required)
+   * The string that labels the collection of pills, used in cased where the text label is not visible on
+   * the screen and required for minimum accessibility standards. Providing this prop adds the `aria-label`
+   * attribute to the Pill List container element. (Required)
    */
   ariaLabel: PropTypes.string.isRequired,
   /**
-   * If additional visible information text is used, provide a string containing the IDs for html elements that help describe the intent of the group of pills.
-   */
-  ariaDescribedBy: PropTypes.string,
-  /**
-   * If a visible text label is used with the collection of pills, provide a string of the ID for the html element containing the visible text label. Supplying the 'ariaLabelledBy' prop will override the 'ariaLabel' prop and adds the aria-labelledby attribute instead to the Pills container element. For best practices, ensure the visible text in the html element id provided to the Pills ariaLabelledbyprop matches the text provided to the ariaLabel prop, for consistency in the case of fallback or errors.
+   * If a visible text label is used with the collection of pills, provide a string of the ID for the html
+   * element containing the visible text label. Supplying the 'ariaLabelledBy' prop will override the 'ariaLabel'
+   * prop and adds the `aria-labelledby` attribute instead to the Pill List container element.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) For best practices, ensure the visible text
+   * in the html element `id` provided to the Pill List `ariaLabelledby` prop matches the text provided to the
+   * `ariaLabel` prop, for consistency in the case of fallback or errors.
    */
   ariaLabelledBy: PropTypes.string,
   /**
-   * The content to be shown in the pills container. Should only contain the sub-component <Pills.Pill>.
+   * If additional visible information text is used, provide a string containing the IDs for html elements that
+   * help describe the intent of the group of pills.
+   */
+  ariaDescribedBy: PropTypes.string,
+  /**
+   * The content to be shown in the pills container. Should only contain the sub-component `<Pills.Pill>`.
    */
   children: PropTypes.node,
-  /**
-   * @private
-   * The intl object to be injected for translations.
-   */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
    * Determines if the Pills group should be shown as rolled up or not, limited to a single line of display.
    */
@@ -52,6 +56,11 @@ const propTypes = {
    * Callback function triggered on click/keypress of the roll-up pill when group of pills is collapsed.
    */
   onSelectRollUp: PropTypes.func,
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -353,7 +362,7 @@ const Pills = (props) => {
 
   const pillListClassNames = classNames(
     cx([
-      'pill-list',
+      'pills-group',
       theme.className,
     ]),
     customProps.className,
@@ -372,17 +381,32 @@ const Pills = (props) => {
     return reducedArray;
   };
 
+  const pillGroupInteractionHintID = 'terra-pills-group-interaction-hint';
+  const pillGroupAriaDescribedBy = ariaDescribedBy ? `${ariaDescribedBy} ${pillGroupInteractionHintID}` : pillGroupInteractionHintID;
+  let pillGroupInteractionHint = intl.formatMessage({ id: 'Terra.pills.hint.pillList' }, { numberOfPills: React.Children.count(children) });
+  if (isSingleLine && (rollUpCount > 0)) {
+    pillGroupInteractionHint += `, ${intl.formatMessage({ id: 'Terra.pills.hint.rollupNotVisible' }, { pillsNotVisibleCount: rollUpCount })}`;
+  }
+
   return (
     <div
       {...customProps}
       {...pillsProps}
       aria-label={!ariaLabelledBy ? ariaLabel : undefined}
-      aria-describedby={ariaDescribedBy}
+      aria-labelledby={ariaLabelledBy}
+      aria-describedby={pillGroupAriaDescribedBy}
+      aria-live="polite"
+      aria-relevant="removals"
       className={pillListClassNames}
       ref={pillsRef}
+      role="list"
       tabIndex={containerTabindex}
     >
-      <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.pills.pillListHint' }, { numberOfPills: React.Children.count(children) })} />
+      <VisuallyHiddenText
+        id={pillGroupInteractionHintID}
+        text={pillGroupInteractionHint}
+        aria-hidden="true"
+      />
       {children ? renderChildren(children) : []}
       {isSingleLine && (
         <RollUpPill

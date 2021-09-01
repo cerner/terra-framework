@@ -8,6 +8,7 @@ import { injectIntl } from 'react-intl';
 import classNamesBind from 'classnames/bind';
 import PropTypes from 'prop-types';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './Pill.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -22,14 +23,14 @@ const propTypes = {
    */
   onSelectRollUp: PropTypes.func,
   /**
+   * Number of pills that are rolled up.
+   */
+  rollupCount: PropTypes.number,
+  /**
    * @private
    * The intl object to be injected for translations.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
-  /**
-   * Number of pills that are rolled up.
-   */
-  rollupCount: PropTypes.number,
 };
 
 const RollUpPill = (props) => {
@@ -56,18 +57,25 @@ const RollUpPill = (props) => {
 
   return (isSingleLine && rollupCount > 0) ? (
     <div
-      id="rollup-pill"
-      className={cx(['roll-up-pill', theme.className])}
-      onClick={handleOnSelectRollUp}
-      onKeyDown={handleRollUpPillKeyDown}
-      onMouseDown={handleRollUpPillMouseDown}
-      ref={rollUpPillRef}
-      role="button"
-      tabIndex="0"
-      data-terra-rollup-pill-show-focus-styles
-      data-terra-rollup-pill
+      role="listitem"
+      className={cx('pill-list-item')}
     >
-      {intl.formatMessage({ id: 'Terra.pills.rollupPillLabel' }, { pillsNotVisibleCount: rollupCount })}
+      <button
+        id="rollup-pill"
+        className={cx(['rollup-pill', 'is-selectable', theme.className])}
+        onClick={handleOnSelectRollUp}
+        onKeyDown={handleRollUpPillKeyDown}
+        onMouseDown={handleRollUpPillMouseDown}
+        ref={rollUpPillRef}
+        tabIndex="0"
+        type="button"
+        aria-describedby="rollup-pill-hint"
+        data-terra-rollup-pill-show-focus-styles
+        data-terra-rollup-pill
+      >
+        <span className={cx('rollup-pill-label')}>{intl.formatMessage({ id: 'Terra.pills.label.rollupPill' }, { pillsNotVisibleCount: rollupCount })}</span>
+      </button>
+      <VisuallyHiddenText id="rollup-pill-hint" text={intl.formatMessage({ id: 'Terra.pills.hint.rollupPill' }, { pillsNotVisibleCount: rollupCount })} aria-hidden="true" />
     </div>
   ) : null;
 };
