@@ -272,7 +272,7 @@ class DateInput extends React.Component {
    */
   handlePaste = event => {
     const input = (event.clipboardData || window.clipboardData).getData('text');
-    if (!input.match(/^[0-9]+$/)) event.preventDefault();
+    if (!DateInputUtil.validNumericInput(input)) event.preventDefault();
   }
 
   /**
@@ -282,7 +282,7 @@ class DateInput extends React.Component {
    */
   handleKeyPress = event => {
     const input = event.key;
-    if (!input.match(/^[0-9]+$/) && !event.metaKey) event.preventDefault();
+    if (!DateInputUtil.validNumericInput(input) && !event.metaKey) event.preventDefault();
   }
 
   /**
