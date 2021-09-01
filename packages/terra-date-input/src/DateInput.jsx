@@ -533,9 +533,9 @@ class DateInput extends React.Component {
   dayRender() {
     /**
      * JAWS + Chrome is super buggy when it comes to up/down arrow keys cycling values on the input and only seems to work
-     * when input[type=number]. This works great, except in Firefox where <input value="03" type="number" /> displays the
-     * value in the browsers as "3" instead of "03". https://bugzilla.mozilla.org/show_bug.cgi?id=1005603
-     * To work around this issue, the year input uses type="number" for all browsers, but if we're in a Mozilla browser,
+     * when input[type=number]. This works great, except in Firefox where <input value="03" type="number" />
+     * displays in the browsers as "3".
+     * To work around this issue, the day input uses type="number" for all browsers, but if we're in a Mozilla browser,
      * we switch over to using type="text" and pattern="\d*" which allows displaying value="03" in the browser as "03"
      */
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
