@@ -122,7 +122,7 @@ class TimeInput extends React.Component {
     const { showSeconds } = this.props;
 
     if (value && !TimeUtil.validateTime(value, showSeconds)) {
-      if (process.env !== 'production') {
+      if (process.env.NODE_ENV !== 'production') {
         // eslint-disable-next-line no-console
         console.warn(
           `An invalid time value, ${value}, has been passed to the terra-time-picker. `
@@ -170,7 +170,7 @@ class TimeInput extends React.Component {
       }
     }
     if (this.props.variant === TimeUtil.FORMAT_12_HOUR && TimeUtil.getVariantFromLocale(props) === TimeUtil.FORMAT_24_HOUR) {
-      if (process.env !== 'production') {
+      if (process.env.NODE_ENV !== 'production') {
         // eslint-disable-next-line no-console
         console.warn('This locale only uses 24 hour clock. The ante meridiem and post meridiem will not be displayed');
       }
