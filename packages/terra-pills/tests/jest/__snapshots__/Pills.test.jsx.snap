@@ -92,6 +92,7 @@ exports[`Pills should render a basic pill 1`] = `
         key=".0"
         label="Basic Pill"
         onRemove={[Function]}
+        onSelect={[Function]}
       >
         <Pill
           id="basic-pill"
@@ -125,6 +126,7 @@ exports[`Pills should render a basic pill 1`] = `
           isBasicPill={true}
           label="Basic Pill"
           onRemove={[Function]}
+          onSelect={[Function]}
         >
           <div
             className="pill-list-item"
@@ -245,6 +247,7 @@ exports[`Pills should render a basic pill with roll up 1`] = `
         key=".0"
         label="Basic Pill"
         onRemove={[Function]}
+        onSelect={[Function]}
       >
         <Pill
           id="basic-pill"
@@ -278,6 +281,7 @@ exports[`Pills should render a basic pill with roll up 1`] = `
           isBasicPill={true}
           label="Basic Pill"
           onRemove={[Function]}
+          onSelect={[Function]}
         >
           <div
             className="pill-list-item"

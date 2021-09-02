@@ -1,6 +1,6 @@
 import React, {
   useCallback,
-  useEffect, useRef, useState,
+  useEffect, useLayoutEffect, useRef, useState,
 } from 'react';
 import {
   KEY_SPACE,
@@ -108,33 +108,39 @@ const Pill = (props) => {
   const [isTruncated, setIsTruncated] = useState(false);
   const [open, setPopupOpen] = useState(false);
 
+  const basicPillTruncation = useCallback(() => {
+    if (isBasicPill) {
+      if (pillRef.current.firstElementChild.scrollWidth > pillRef.current.firstElementChild.clientWidth) {
+        setIsTruncated(true);
+        pillRef.current.setAttribute('aria-haspopup', 'dialog');
+      } else {
+        setIsTruncated(false);
+        if (pillRef.current.hasAttribute('aria-haspopup')) {
+          pillRef.current.setAttribute('aria-haspopup', false);
+        }
+      }
+    }
+  }, [isBasicPill]);
+
   const handleResize = useCallback((entries) => {
     if (!Array.isArray(entries)) {
       return;
     }
 
-    if (isBasicPill && (pillRef.current.firstElementChild.scrollWidth > pillRef.current.firstElementChild.clientWidth)) {
-      setIsTruncated(true);
-      pillRef.current.setAttribute('aria-haspopup', true);
-    } else {
-      setIsTruncated(false);
-      if (pillRef.current.hasAttribute('aria-haspopup')) {
-        pillRef.current.setAttribute('aria-haspopup', false);
-      }
-    }
-  }, [isBasicPill]);
+    basicPillTruncation();
+  }, [basicPillTruncation]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     let observer = new ResizeObserver((entries) => {
       handleResize(entries);
     });
-    observer.observe(pillRef.current.firstElementChild);
+    observer.observe(pillRef.current.parentNode);
 
     return () => {
       observer.disconnect();
       observer = null;
     };
-  }, [handleResize, isBasicPill]);
+  }, [isBasicPill, basicPillTruncation, handleResize]);
 
   useEffect(() => {
     // refCallback not applicable for Pills(Basic Pills)
@@ -152,7 +158,7 @@ const Pill = (props) => {
   const handleOnRemove = (event) => {
     event.preventDefault();
     event.stopPropagation();
-    onRemove(pillKey, metaData);
+    onRemove(pillKey, metaData, event);
   };
 
   const handleOnClick = (event) => {
@@ -202,7 +208,7 @@ const Pill = (props) => {
   const getPillRef = () => pillRef.current;
 
   const pillInteraction = {};
-  pillInteraction.isSelectable = !!onSelect || (isBasicPill && isTruncated);
+  pillInteraction.isSelectable = (!!onSelect && !isBasicPill) || (isBasicPill && isTruncated);
   pillInteraction.isRemovable = isRemovable;
   pillInteraction.isSelectableAndRemovable = (!!onSelect && isRemovable) || (isRemovable && isTruncated);
 
@@ -263,6 +269,7 @@ const Pill = (props) => {
     <button
       {...removeButtonProps}
       className={cx('pill-remove-button')}
+      id={id}
       tabIndex="-1"
       type="button"
       aria-labelledby={`remove-button-${id}`}

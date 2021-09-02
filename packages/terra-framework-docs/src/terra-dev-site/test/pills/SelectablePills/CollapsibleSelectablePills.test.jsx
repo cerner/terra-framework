@@ -92,7 +92,7 @@ const CollapsibleSelectablePills = () => {
         onRemove={handleOnRemove}
         isSingleLine={isSingleLine}
         onSelectRollUp={() => setIsSingleLine(false)}
-        className={cx(['container', 'show-border'])}
+        className={cx(['container', 'show-border', 'width-50'])}
       >
         {pills.map((pill, index) => (
           <SelectablePills.Pill

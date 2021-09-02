@@ -1,13 +1,12 @@
 const getPillWidth = (pill) => {
-  const pillStyles = window.getComputedStyle(pill);
-  const pillWidth = pill.offsetWidth + Math.round(parseFloat(pillStyles.marginLeft)) + Math.round(parseFloat(pillStyles.marginRight));
+  const pillWidth = pill.parentNode.getBoundingClientRect().width;
   return pillWidth;
 };
 
 const handleRollUp = (pillListRef) => {
   const rollUpPill = pillListRef.current.querySelector('[data-terra-rollup-pill]');
   const pills = pillListRef.current.querySelectorAll('[data-terra-pill]');
-  const containerWidth = Math.round(pillListRef.current.getBoundingClientRect().width);
+  const containerWidth = Math.ceil(pillListRef.current.clientWidth);
   let totalPillWidth = 0;
   let startIndex = 0;
   let rollupPillWidth = 0;
@@ -17,7 +16,7 @@ const handleRollUp = (pillListRef) => {
   }
 
   for (let i = 0; i < pills.length; i += 1) {
-    if (totalPillWidth > containerWidth) {
+    if (totalPillWidth >= containerWidth) {
       break;
     }
     const pillWidth = getPillWidth(pills[i]);
@@ -28,7 +27,6 @@ const handleRollUp = (pillListRef) => {
     }
     totalPillWidth += pillWidth;
   }
-
   return startIndex;
 };
 

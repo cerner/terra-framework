@@ -106,6 +106,7 @@ const Pills = (props) => {
     }
 
     setUpdatedCount(React.Children.count(children));
+    setRollUpCount(React.Children.count(children));
     if (isSingleLine) {
       generateRollUp();
     }
@@ -339,7 +340,22 @@ const Pills = (props) => {
 
   const handlePillListOnblur = () => setContainerTabindex(-1);
 
-  const handleOnRemove = (pillKey, metaData) => {
+  const handleOnRemove = (pillKey, metaData, event) => {
+    const pills = [...pillsRef.current.querySelectorAll('[data-terra-pill]')];
+    const targetId = event.target.getAttribute('id');
+    const currentIndex = pills.findIndex((element) => element.id === targetId);
+    const nextFocusableNode = PillsUtils.getNextFocusableNode(pills, currentIndex + 1);
+    const prevFocusableNode = PillsUtils.getPreviousFocusableNode(pills, currentIndex - 1);
+
+    setTabIndex('-1');
+    if (prevFocusableNode !== -1 && currentIndex > prevFocusableNode) {
+      focusNode.current = prevFocusableNode;
+    } else {
+      focusNode.current = nextFocusableNode;
+    }
+    currentPill.current = pills[focusNode.current].id;
+    setTabIndex('0');
+
     if (onRemove) {
       onRemove(pillKey, metaData);
     }
@@ -353,6 +369,19 @@ const Pills = (props) => {
     if (event.type === 'keydown') {
       isRollUpRemoved.current = true;
       setUpdatedCount(React.Children.count(children));
+    }
+  };
+
+  const handleOnPillSelect = (pillRef, pillKey, metaData, event) => {
+    const pills = [...pillsRef.current.querySelectorAll('[data-terra-pill]')];
+    const targetId = event.target.getAttribute('id');
+
+    if (targetId && event.target.hasAttribute('data-terra-pill')) {
+      setTabIndex('-1');
+      currentPill.current = targetId;
+      focusNode.current = pills.findIndex((element) => element.id === targetId);
+      setTabIndex('0');
+      focusCurrentNode();
     }
   };
 
@@ -371,7 +400,7 @@ const Pills = (props) => {
   const renderChildren = (items) => {
     const pills = React.Children.map(items, (pill) => {
       if (React.isValidElement(pill)) {
-        return React.cloneElement(pill, { onRemove: handleOnRemove, isBasicPill: true });
+        return React.cloneElement(pill, { onRemove: handleOnRemove, isBasicPill: true, onSelect: handleOnPillSelect });
       }
       return undefined;
     });

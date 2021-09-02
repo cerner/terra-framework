@@ -131,6 +131,7 @@ const SelectablePills = (props) => {
     }
 
     setUpdatedCount(React.Children.count(children));
+    setRollUpCount(React.Children.count(children));
     if (isSingleLine) {
       generateRollUp();
     }
@@ -309,7 +310,19 @@ const SelectablePills = (props) => {
     }
   };
 
-  const handleOnRemove = (pillKey, metaData) => {
+  const handleOnRemove = (pillKey, metaData, event) => {
+    const pills = [...selectablePillsRef.current.querySelectorAll('[data-terra-pill]')];
+    const targetId = event.target.getAttribute('id');
+    const currentIndex = pills.findIndex((element) => element.id === targetId);
+
+    if (currentIndex === 0) {
+      focusNode.current = currentIndex + 1;
+    } else {
+      focusNode.current = currentIndex - 1;
+    }
+    currentPill.current = pills[focusNode.current].id;
+    setTabIndex('0');
+
     if (onRemove) {
       onRemove(pillKey, metaData);
     }
@@ -318,9 +331,9 @@ const SelectablePills = (props) => {
   // set the focus to current pill if the pill is clicked with mouse
   const handleOnPillSelect = (pillRef, pillKey, metaData, event) => {
     const pills = [...selectablePillsRef.current.querySelectorAll('[data-terra-pill]')];
-    const targetId = event.target.parentElement.getAttribute('id');
+    const targetId = event.target.getAttribute('id');
 
-    if (targetId && event.target.parentElement.hasAttribute('data-terra-pill')) {
+    if (targetId && event.target.hasAttribute('data-terra-pill')) {
       setTabIndex('-1');
       currentPill.current = targetId;
       focusNode.current = pills.findIndex((element) => element.id === targetId);
