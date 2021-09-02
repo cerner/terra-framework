@@ -4,6 +4,7 @@
 
 * Changed
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
+  * Check NODE_ENV for the current development environment.
 
 ## 1.30.0 - (July 21, 2021)
 

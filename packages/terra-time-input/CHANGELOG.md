@@ -4,6 +4,8 @@
 
 * Changed
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
+  * Improved specificity of meridiem button group.
+  * Check NODE_ENV for the current development environment.
 
 ## 4.42.0 - (July 21, 2021)
 

@@ -4,6 +4,7 @@
 
 * Changed
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
+  * Updated fusion wdio tests to align with other tests
 
 ## 4.9.0 - (June 8, 2021)
 
