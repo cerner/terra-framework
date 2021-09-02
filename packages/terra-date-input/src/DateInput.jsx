@@ -107,7 +107,7 @@ class DateInput extends React.Component {
     let { value } = this.props;
 
     if (value && !DateInputUtil.acceptedDateValue(value)) {
-      if (process.env !== 'production') {
+      if (process.env.NODE_ENV !== 'production') {
         // eslint-disable-next-line no-console
         console.warn(
           `An invalid date value, ${value}, has been passed to the terra-date-input. `

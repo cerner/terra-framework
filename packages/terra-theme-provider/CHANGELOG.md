@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated fusion wdio tests to align with other tests
+
 ## 4.9.0 - (June 8, 2021)
 
 * Changed
