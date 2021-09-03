@@ -4,6 +4,7 @@
 
 * Changed
   * Check NODE_ENV for the current development environment.
+  * Updated screenshots due to viewport size change in @cerner/terra-functional-testing.
 
 ## 1.30.0 - (July 21, 2021)
 

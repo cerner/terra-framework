@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated screenshots due to viewport size change in @cerner/terra-functional-testing.
+
 ## 4.65.0 - (July 21, 2021)
 
 * Changed

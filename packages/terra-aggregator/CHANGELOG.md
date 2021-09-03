@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
+  * Updated screenshots due to viewport size change in @cerner/terra-functional-testing.
 
 ## 4.71.0 - (July 20, 2021)
 

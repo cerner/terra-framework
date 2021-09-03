@@ -4,6 +4,7 @@
 
 * Changed
   * Updated fusion wdio tests to align with other tests
+  * Updated screenshots due to viewport size change in @cerner/terra-functional-testing.
 
 ## 4.9.0 - (June 8, 2021)
 
