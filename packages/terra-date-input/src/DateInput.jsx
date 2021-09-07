@@ -151,7 +151,8 @@ class DateInput extends React.Component {
     this.yearRender = this.yearRender.bind(this);
 
     this.handleMonthClick = this.handleMonthClick.bind(this);
-
+    this.handlePaste = this.handlePaste.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
     this.state = {
       month: DateInputUtil.splitMonth(value),
       day: DateInputUtil.splitDay(value),
@@ -265,6 +266,26 @@ class DateInput extends React.Component {
   }
 
   /**
+   * Checks Paste event in the day and year input, and processes it based on the value of the keycode
+   * Prevents non-numeric characters from being entered in Safari browser.
+   * @param {Object} event Event object generated from the event delegation.
+   */
+  handlePaste = event => {
+    const input = (event.clipboardData || window.clipboardData).getData('text');
+    if (!DateInputUtil.validNumericInput(input)) event.preventDefault();
+  }
+
+  /**
+   * Takes a key press from the day and year input, and processes it based on the value of the keycode
+   * Prevents non-numeric characters from being entered in Safari browser.
+   * @param {Object} event Event object generated from the event delegation.
+   */
+  handleKeyPress = event => {
+    const input = event.key;
+    if (!DateInputUtil.validNumericInput(input) && !event.metaKey) event.preventDefault();
+  }
+
+  /**
    * Takes a key input from the day input, and processes it based on the value of the keycode.
    * @param {Object} event Event object generated from the event delegation.
    */
@@ -272,18 +293,6 @@ class DateInput extends React.Component {
     let stateValue = this.state.day || '';
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
-
-    // prevent e and . characters from being entered into number input on keyDown
-    if (event.keyCode === KeyCode.KEY_E || event.keyCode === KeyCode.KEY_PERIOD) {
-      event.preventDefault();
-      return;
-    }
-
-    // prevent + and - characters from being entered into number input on keyDown
-    if (event.keyCode === KeyCode.KEY_EQUALS || event.keyCode === KeyCode.KEY_DASH) {
-      event.preventDefault();
-      return;
-    }
 
     if (event.keyCode === KeyCode.KEY_UP) {
       event.preventDefault();
@@ -314,18 +323,6 @@ class DateInput extends React.Component {
     let stateValue = this.state.year || '';
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
-
-    // prevent e and . characters from being entered into number input on keyDown
-    if (event.keyCode === KeyCode.KEY_E || event.keyCode === KeyCode.KEY_PERIOD) {
-      event.preventDefault();
-      return;
-    }
-
-    // prevent + and - characters from being entered into number input on keyDown
-    if (event.keyCode === KeyCode.KEY_EQUALS || event.keyCode === KeyCode.KEY_DASH) {
-      event.preventDefault();
-      return;
-    }
 
     if (event.keyCode === KeyCode.KEY_UP) {
       event.preventDefault();
@@ -556,10 +553,12 @@ class DateInput extends React.Component {
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
         maxLength="2"
+        onKeyPress={this.handleKeyPress}
         onChange={this.handleDayChange}
         onKeyDown={this.handleDayKeyDown}
         onFocus={this.handleDayFocus}
         onBlur={this.handleDayBlur}
+        onPaste={this.handlePaste}
         size="2"
         autoComplete="off"
         disabled={this.props.disabled}
@@ -598,9 +597,11 @@ class DateInput extends React.Component {
         name={'terra-date-year-'.concat(this.props.name)}
         maxLength="4"
         onChange={this.handleYearChange}
+        onKeyPress={this.handleKeyPress}
         onKeyDown={this.handleYearKeyDown}
         onFocus={this.handleYearFocus}
         onBlur={this.handleYearBlur}
+        onPaste={this.handlePaste}
         size="4"
         autoComplete="off"
         disabled={this.props.disabled}
