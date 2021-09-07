@@ -166,7 +166,7 @@ const SelectablePills = (props) => {
       currentPill.current = rollUpPill.getAttribute('id');
       setTabIndex('0');
     }
-  }, [isSingleLine]);
+  }, [isSingleLine, updatedCount]);
 
   // When a pill is deleted, focuses the new pill.
   useEffect(() => {
@@ -215,24 +215,21 @@ const SelectablePills = (props) => {
 
   const focusNextNode = (pills, rollUpPill) => {
     // if the next pill is roll up pill, focus the roll up pill
-    if (focusNode.current + 1 === pills.length && rollUpPill) {
-      setTabIndex('-1');
-      currentPill.current = rollUpPill.getAttribute('id');
-      setTabIndex('0');
-      focusCurrentNode();
-    }
 
-    // focus the next pill
-    if (focusNode.current + 1 < pills.length) {
+    if (focusNode.current + 1 === pills.length || focusNode.current + 1 < pills.length) {
       setTabIndex('-1');
-      focusNode.current += 1;
-      currentPill.current = children[focusNode.current].props.id;
+      if (rollUpPill && focusNode.current + 1 === pills.length) {
+        currentPill.current = rollUpPill.getAttribute('id');
+      } else if (focusNode.current + 1 < pills.length) {
+        focusNode.current += 1;
+        currentPill.current = children[focusNode.current].props.id;
+      }
       setTabIndex('0');
       focusCurrentNode();
     }
   };
 
-  const focusPreviousNode = (pills, rollUpPill) => {
+  const focusPreviousNode = (pills, rollUpPill) => { // lp052179
     // if the focused pill is roll up pill, then focus the immediate previous pill
     if (rollUpPill && currentPill.current === 'rollup-pill') {
       setTabIndex('-1');
@@ -259,9 +256,7 @@ const SelectablePills = (props) => {
       }
       if (pills.length - 1 < React.Children.count(children)) {
         setTabIndex('-1');
-        if (focusNode.current === 0) { // If the first pill is deleted
-          focusNode.current = 0;
-        } else {
+        if (focusNode.current > 0) {
           focusNode.current -= 1;
         }
         setRollUpCount(React.Children.count(children));
@@ -311,17 +306,22 @@ const SelectablePills = (props) => {
   };
 
   const handleOnRemove = (pillKey, metaData, event) => {
-    const pills = [...selectablePillsRef.current.querySelectorAll('[data-terra-pill]')];
-    const targetId = event.target.getAttribute('id');
-    const currentIndex = pills.findIndex((element) => element.id === targetId);
+    if (event.type === 'click') {
+      const pills = [...selectablePillsRef.current.querySelectorAll('[data-terra-pill]')];
+      const targetId = event.target.previousSibling.getAttribute('id');
+      const currentIndex = pills.findIndex((element) => element.id === targetId);
 
-    if (currentIndex === 0) {
-      focusNode.current = currentIndex + 1;
-    } else {
-      focusNode.current = currentIndex - 1;
+      if (pills.length > 1) {
+        setTabIndex('-1');
+        if (currentIndex === 0) {
+          focusNode.current = 0;
+        } else {
+          focusNode.current = currentIndex - 1;
+        }
+        currentPill.current = pills[focusNode.current].id;
+        setTabIndex('0');
+      }
     }
-    currentPill.current = pills[focusNode.current].id;
-    setTabIndex('0');
 
     if (onRemove) {
       onRemove(pillKey, metaData);
@@ -355,7 +355,7 @@ const SelectablePills = (props) => {
     }
   };
 
-  const handlePillListOnblur = () => setContainerTabindex(-1);
+  const handlePillListOnblur = () => setContainerTabindex('-1');
 
   const selectablePillsProps = {};
   selectablePillsProps.onKeyDown = handlePillListKeyDown;

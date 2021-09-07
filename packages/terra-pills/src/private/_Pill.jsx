@@ -190,7 +190,7 @@ const Pill = (props) => {
     } else if ((event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE)) {
       event.preventDefault();
       if (onRemove && isRemovable) {
-        onRemove(pillKey, metaData);
+        onRemove(pillKey, metaData, event);
       }
     }
   };
@@ -269,7 +269,6 @@ const Pill = (props) => {
     <button
       {...removeButtonProps}
       className={cx('pill-remove-button')}
-      id={id}
       tabIndex="-1"
       type="button"
       aria-labelledby={`remove-button-${id}`}

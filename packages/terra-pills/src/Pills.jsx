@@ -170,7 +170,7 @@ const Pills = (props) => {
       setTabIndex('0');
       focusNode.current = 0;
     }
-  }, [isSingleLine]);
+  }, [isSingleLine, updatedCount]);
 
   useEffect(() => {
     const pills = [...pillsRef.current.querySelectorAll('[data-terra-pill]')];
@@ -230,46 +230,32 @@ const Pills = (props) => {
     const allPills = React.Children.toArray(children);
     const nextFocusableNode = PillsUtils.getNextFocusableNode(pills, focusNode.current + 1);
 
-    // if the next pill is roll up pill, focus the roll up pill
-    if (focusNode.current + 1 === pills.length && rollUpPill) {
+    if (focusNode.current + 1 < pills.length || focusNode.current + 1 === pills.length) {
       setTabIndex('-1');
-      currentPill.current = rollUpPill.getAttribute('id');
-      setTabIndex('0');
-      focusCurrentNode();
-      return;
-    }
-
-    // focus the next pill
-    if (focusNode.current + 1 < pills.length) {
-      // if there no focusable pills, focus the rollUpPill
-      if (nextFocusableNode === focusNode.current && rollUpPill) {
-        setTabIndex('-1');
+      // if there no focusable pills or the next pill is rollUpPill, focus the rollUpPill
+      if ((nextFocusableNode === focusNode.current || focusNode.current + 1 === pills.length) && rollUpPill) {
         currentPill.current = rollUpPill.getAttribute('id');
-        setTabIndex('0');
-        focusCurrentNode();
       } else if (nextFocusableNode !== -1) {
-        setTabIndex('-1');
         focusNode.current = nextFocusableNode;
         currentPill.current = allPills[focusNode.current].props.id;
-        setTabIndex('0');
-        focusCurrentNode();
       }
+      setTabIndex('0');
+      focusCurrentNode();
     }
   };
 
   const focusPreviousNode = (pills, rollUpPill) => {
     const allPills = React.Children.toArray(children);
     const prevFocusableNode = PillsUtils.getPreviousFocusableNode(pills, focusNode.current - 1);
-    // if the focused pill is roll up pill, then focus the immediate previous pill that was in focus
-    if (rollUpPill && currentPill.current === 'rollup-pill') {
+
+    if (focusNode.current >= 1 && prevFocusableNode !== -1) {
       setTabIndex('-1');
-      currentPill.current = allPills[focusNode.current].props.id;
-      setTabIndex('0');
-      focusCurrentNode();
-    } else if (focusNode.current >= 1 && prevFocusableNode !== -1) { // focus the previous pill
-      setTabIndex('-1');
-      focusNode.current = prevFocusableNode;
-      currentPill.current = allPills[focusNode.current].props.id;
+      if (rollUpPill && currentPill.current === 'rollup-pill') {
+        currentPill.current = allPills[focusNode.current].props.id;
+      } else {
+        focusNode.current = prevFocusableNode;
+        currentPill.current = allPills[focusNode.current].props.id;
+      }
       setTabIndex('0');
       focusCurrentNode();
     }
@@ -284,9 +270,7 @@ const Pills = (props) => {
       }
       if (pills.length - 1 < React.Children.count(children)) {
         setTabIndex('-1');
-        if (focusNode.current === 0) { // If the first pill is deleted, focus the next pill
-          focusNode.current = 0;
-        } else {
+        if (focusNode.current > 0) {
           focusNode.current -= 1;
         }
 
@@ -341,20 +325,24 @@ const Pills = (props) => {
   const handlePillListOnblur = () => setContainerTabindex(-1);
 
   const handleOnRemove = (pillKey, metaData, event) => {
-    const pills = [...pillsRef.current.querySelectorAll('[data-terra-pill]')];
-    const targetId = event.target.getAttribute('id');
-    const currentIndex = pills.findIndex((element) => element.id === targetId);
-    const nextFocusableNode = PillsUtils.getNextFocusableNode(pills, currentIndex + 1);
-    const prevFocusableNode = PillsUtils.getPreviousFocusableNode(pills, currentIndex - 1);
+    if (event.type === 'click') {
+      const pills = [...pillsRef.current.querySelectorAll('[data-terra-pill]')];
+      const targetId = event.target.previousSibling.getAttribute('id');
+      const currentIndex = pills.findIndex((element) => element.id === targetId);
+      const nextFocusableNode = PillsUtils.getNextFocusableNode(pills, currentIndex + 1);
+      const prevFocusableNode = PillsUtils.getPreviousFocusableNode(pills, currentIndex - 1);
 
-    setTabIndex('-1');
-    if (prevFocusableNode !== -1 && currentIndex > prevFocusableNode) {
-      focusNode.current = prevFocusableNode;
-    } else {
-      focusNode.current = nextFocusableNode;
+      if ((nextFocusableNode >= 0 || prevFocusableNode >= 0)) {
+        setTabIndex('-1');
+        if (prevFocusableNode !== -1 && currentIndex > prevFocusableNode) {
+          focusNode.current = prevFocusableNode;
+        } else {
+          focusNode.current = nextFocusableNode;
+        }
+        currentPill.current = pills[focusNode.current].id;
+        setTabIndex('0');
+      }
     }
-    currentPill.current = pills[focusNode.current].id;
-    setTabIndex('0');
 
     if (onRemove) {
       onRemove(pillKey, metaData);

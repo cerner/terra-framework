@@ -1,7 +1,12 @@
 import React, { useRef, useState } from 'react';
 import Popup from 'terra-popup';
+import classNames from 'classnames/bind';
 import { SelectablePills } from '@cerner/terra-pills/lib/index';
 import Spacer from 'terra-spacer';
+
+import styles from '../PillListTestCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 const SelectableAndRemovablePill = () => {
   const pillsData = [
@@ -67,6 +72,8 @@ const SelectableAndRemovablePill = () => {
         ariaLabel="Example of Selectable and Removable Pill with a Popup"
         onSelect={handleOnSelect}
         onRemove={handleOnRemove}
+        className={cx(['show-border'])}
+
       >
         {pills.map((pill, index) => (
           <SelectablePills.Pill

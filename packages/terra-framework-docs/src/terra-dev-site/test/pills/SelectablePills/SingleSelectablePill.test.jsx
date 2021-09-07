@@ -36,7 +36,7 @@ const SingleSelectablePill = () => {
       >
         <SelectablePills.Pill
           label="Asthma"
-          id="selectabla-asthma"
+          id="selectableAsthma"
           key="selectable-asthma"
         />
       </SelectablePills>

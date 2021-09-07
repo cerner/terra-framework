@@ -177,7 +177,6 @@ exports[`Pill should render a removable pill 1`] = `
         aria-hidden="true"
         aria-labelledby="remove-button-Removable"
         className="pill-remove-button"
-        id="Removable"
         tabIndex="-1"
         type="button"
       >
@@ -304,7 +303,6 @@ exports[`Pill should render a selectable and removable pill 1`] = `
         aria-hidden="true"
         aria-labelledby="remove-button-SelectableRemovable"
         className="pill-remove-button"
-        id="SelectableRemovable"
         tabIndex="-1"
         type="button"
       >
