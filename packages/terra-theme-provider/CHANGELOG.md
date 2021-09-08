@@ -3,6 +3,9 @@
 ## Unreleased
 
 * Changed
+  * Added package json lint test.
+
+* Changed
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
   * Updated fusion wdio tests to align with other tests
 
