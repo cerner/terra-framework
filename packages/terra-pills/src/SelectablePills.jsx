@@ -166,7 +166,12 @@ const SelectablePills = (props) => {
       currentPill.current = rollUpPill.getAttribute('id');
       setTabIndex('0');
     }
-  }, [isSingleLine, updatedCount]);
+  }, [isSingleLine, children]);
+
+  const focusPillsContainer = () => {
+    setContainerTabindex('0');
+    selectablePillsRef.current.focus();
+  };
 
   // When a pill is deleted, focuses the new pill.
   useEffect(() => {
@@ -174,7 +179,11 @@ const SelectablePills = (props) => {
     const rollUpPill = selectablePillsRef.current.querySelector('[data-terra-rollup-pill]');
     const startIndex = PillsUtils.handleRollUp(selectablePillsRef);
 
-    if (isPillDeleted.current && React.Children.count(children) > 0) {
+    if (isPillDeleted.current) {
+      if (React.Children.count(children) <= 0) {
+        focusPillsContainer();
+        return;
+      }
       // if there is a roll Up pill, set tabindex to 0
       if (rollUpPill) {
         PillsUtils.setRollUpPillTabIndex(rollUpPill, '-1');
@@ -184,12 +193,12 @@ const SelectablePills = (props) => {
         PillsUtils.setPillsTabIndex(pills, '-1');
       }
 
-      if (rollUpPill && startIndex >= 1) { // if there is rollup pill and collapsible pills, then focus the collapsible pill.
+      if (pills.length === startIndex) {
         currentPill.current = pills[focusNode.current].id;
-      } else if (rollUpPill) { // if the new pill cannot fit within the the container, then focuus the roll up pill
+      } else if (rollUpPill && startIndex >= 1) {
+        currentPill.current = pills[focusNode.current].id;
+      } else if (rollUpPill) {
         currentPill.current = rollUpPill.getAttribute('id');
-      } else {
-        currentPill.current = pills[focusNode.current].id;
       }
       setTabIndex('0');
       focusCurrentNode();
@@ -249,19 +258,20 @@ const SelectablePills = (props) => {
   const focusNodeAfterDelete = (pills, rollUpPill, isRemovable) => {
     if (isRemovable) {
       // If there is only one pill
-      if (pills.length === 1 && rollUpPill === null) {
-        setContainerTabindex('0');
-        selectablePillsRef.current.focus();
-        return;
-      }
+      // if (pills.length === 1 && rollUpPill === null) {
+      //   focusPillsContainer();
+      //   return;
+      // }
       if (pills.length - 1 < React.Children.count(children)) {
         setTabIndex('-1');
         if (focusNode.current > 0) {
           focusNode.current -= 1;
         }
-        setRollUpCount(React.Children.count(children));
         setUpdatedCount(React.Children.count(children));
         isPillDeleted.current = true;
+        if (isSingleLine) {
+          setRollUpCount(React.Children.count(children));
+        }
       }
     }
   };
@@ -318,7 +328,6 @@ const SelectablePills = (props) => {
         } else {
           focusNode.current = currentIndex - 1;
         }
-        currentPill.current = pills[focusNode.current].id;
         setTabIndex('0');
       }
     }
