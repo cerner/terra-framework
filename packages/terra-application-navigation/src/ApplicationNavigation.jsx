@@ -154,14 +154,6 @@ const ApplicationNavigation = ({
   // Use dot notation temporarily until hooks + enzyme support for userContext
   const activeBreakpoint = React.useContext(ActiveBreakpointContext);
 
-  function updateDrawerIsOpen(value) {
-    drawerMenuIsOpenRef.current = value;
-    setDrawerMenuIsOpen(value);
-    if (onDrawerMenuStateChange) {
-      onDrawerMenuStateChange(value);
-    }
-  }
-
   /**
    * Given a callback function, generateMenuClosingCallback will return a new function
    * that will ensure that the various menu states are reset before the callback function
@@ -174,7 +166,7 @@ const ApplicationNavigation = ({
       }
 
       closeMenuCallbackRef.current = () => { wrappedFunction(...args); };
-      updateDrawerIsOpen(false);
+      setDrawerMenuIsOpen(false);
       setPopupMenuIsOpen(false);
     };
   }
@@ -281,7 +273,7 @@ const ApplicationNavigation = ({
         extensionItems={extensionItems}
         onSelectExtensionItem={onSelectExtensionItem}
         navigationItems={navigationItems}
-        onSelectMenuButton={() => updateDrawerIsOpen(true)}
+        onSelectMenuButton={() => setDrawerMenuIsOpen(true)}
         onSelectSkipToContent={focusMainContentCallback}
         notifications={notifications}
         isDrawerMenuOpen={drawerMenuIsOpen}
@@ -343,7 +335,7 @@ const ApplicationNavigation = ({
 
   useEffect(() => {
     const forceCloseMenu = () => {
-      updateDrawerIsOpen(false);
+      setDrawerMenuIsOpen(false);
       setPopupMenuIsOpen(false);
     };
 
@@ -353,6 +345,15 @@ const ApplicationNavigation = ({
       window.removeEventListener(closeMenuEvent, forceCloseMenu);
     };
   }, []);
+
+  useLayoutEffect(() => {
+    if (drawerMenuIsOpen !== drawerMenuIsOpenRef.current) {
+      drawerMenuIsOpenRef.current = drawerMenuIsOpen;
+      if (onDrawerMenuStateChange) {
+        onDrawerMenuStateChange(drawerMenuIsOpen);
+      }
+    }
+  }, [onDrawerMenuStateChange, drawerMenuIsOpen]);
 
   useLayoutEffect(() => {
     if (activeNavigationItemKey !== renderedNavItemKeyRef.current) {
@@ -411,7 +412,7 @@ const ApplicationNavigation = ({
    * the current render.
    */
   if (drawerMenuIsOpen && !shouldRenderCompactNavigation(activeBreakpoint)) {
-    updateDrawerIsOpen(false);
+    setDrawerMenuIsOpen(false);
   }
 
   /**
@@ -437,7 +438,7 @@ const ApplicationNavigation = ({
   const handleRequestClose = (event) => {
     event.preventDefault();
     event.stopPropagation();
-    updateDrawerIsOpen(false);
+    setDrawerMenuIsOpen(false);
   };
   const theme = React.useContext(ThemeContext);
   const appNavClassNames = cx('application-navigation', theme.className);
