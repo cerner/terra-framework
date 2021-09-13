@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Changed
+  * Updated behavior for the menu close custom event to trigger onDrawerMenuStateChange callback.
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
   * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
 
