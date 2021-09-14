@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.43.0 - (September 14, 2021)
+
 * Changed
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
   * Improved specificity of meridiem button group.
