@@ -3,6 +3,8 @@
 ## Unreleased
 
 * Changed
+  * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
+  * Fix to prevent non-numeric characters from being entered in Safari.
   * Check NODE_ENV for the current development environment.
 
 ## 1.30.0 - (July 21, 2021)
