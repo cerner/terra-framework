@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.55.0 - (September 20, 2021)
+
 * Changed
   * Updated behavior for the menu close custom event to trigger onDrawerMenuStateChange callback.
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
