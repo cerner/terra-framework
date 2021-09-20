@@ -197,7 +197,6 @@ class DateTimePicker extends React.Component {
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.dateTimePickerContainer = React.createRef();
     this.containerHasFocus = false;
-    this.isDateSelected = false;
   }
 
   componentDidMount() {
@@ -219,7 +218,6 @@ class DateTimePicker extends React.Component {
 
   handleOnSelect(event, selectedDate) {
     this.dateValue = DateUtil.formatISODate(selectedDate, this.state.dateFormat);
-    this.isDateSelected = true;
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
     const updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, selectedDate, this.timeValue, this.props.showSeconds);
 
@@ -668,7 +666,6 @@ class DateTimePicker extends React.Component {
             isIncomplete={isIncomplete}
             isInvalid={isInvalid}
             required={required}
-            lastInputRefCallback={(inputRef) => { this.dateInputComponent = inputRef; }}
             initialTimeZone={this.initialTimeZone}
           />
         </div>
