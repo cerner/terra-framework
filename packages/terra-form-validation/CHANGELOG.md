@@ -2,13 +2,11 @@
 
 ## Unreleased
 
-* Changed
-  * Added package json lint test.
-
 ## 1.63.0 - (July 21, 2021)
 
 * Changed
   * Updated `terra-form-input` from `v3.7.0` to `v4.4.0`.
+  * Added package json lint test.
 
 ## 1.62.0 - (July 20, 2021)
 
