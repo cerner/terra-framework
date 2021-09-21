@@ -1,7 +1,7 @@
 {
   "name": "terra-tabs",
   "main": "lib/Tabs.js",
-  "version": "6.55.0",
+  "version": "6.56.0",
   "description": "Tabs are containers used to organize content. They allow for quick switching between groups of contextually related content. Content is divided into different containers and each container is viewable one at a time. The user can switch between containers by selecting the corresponding tab control. Tabs are meant for organizing content that doesn’t need to be compared or accessed simultaneously or if the user needs quick access through a group of contextually related content. Tabs are not intended for navigation.",
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
     "resize-observer-polyfill": "^1.4.1",
     "terra-content-container": "^3.0.0",
     "terra-icon": "^3.19.0",
-    "terra-menu": "^6.55.0",
+    "terra-menu": "^6.56.0",
     "terra-responsive-element": "^5.0.0",
     "terra-theme-context": "^1.7.0"
   },
@@ -45,9 +45,9 @@
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest && npm run wdio",
     "jest": "jest --config ../../jest.config.js",
-    "wdio-default": "cd ../.. && npx wdio",
-    "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
-    "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",
+    "wdio-default": "cd ../.. && terra wdio",
+    "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
+    "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   }
 }

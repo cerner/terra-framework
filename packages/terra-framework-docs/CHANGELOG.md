@@ -5,6 +5,11 @@
 * Added
   * Added tests for terra-pills
   
+## 1.2.0 - (September 20, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.1.1 - (July 23, 2021)
 
 * Fixed

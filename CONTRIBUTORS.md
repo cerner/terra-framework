@@ -40,6 +40,7 @@ Cerner Corporation
 - Marcell Neszt [@EPAMMarcell]
 - Luissette Figueroa [@lfigueroa]
 - Andrew Shoemake [@ashoemake]
+- Ryan Rickard [@RLRickard]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -81,3 +82,4 @@ Cerner Corporation
 [@EPAMMarcell]: https://github.com/EPAMMarcell
 [@lfigueroa]: https://github.com/lcf-1
 [@ashoemake]: https://github.com/Andrew-Shoemake
+[@RLRickard]: https://github.com/RLRickard
