@@ -4,7 +4,11 @@
 
 * Added
   * Added additional styling attributes.
+  
+## 6.56.0 - (September 20, 2021)
+
 * Changed
+  * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
   * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
 
 ## 6.55.0 - (July 21, 2021)

@@ -1,7 +1,7 @@
 {
   "name": "terra-date-input",
   "main": "lib/DateInput.js",
-  "version": "1.30.0",
+  "version": "1.31.0",
   "description": "The DateInput allows for easy data entry of known dates like birthdays, anniversaries, etc. The display of the DateInput is localized based on the locale but can be customized via the `displayFormat` prop. The DateInput uses the ISO 8601 format for date values (YYYY-MM-DD).",
   "repository": {
     "type": "git",
@@ -46,9 +46,9 @@
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest && npm run wdio",
     "jest": "jest --config ../../jest.config.js",
-    "wdio-default": "cd ../.. && npx wdio",
-    "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
-    "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",
+    "wdio-default": "cd ../.. && terra wdio",
+    "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
+    "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   }
 }

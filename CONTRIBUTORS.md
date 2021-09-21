@@ -41,6 +41,7 @@ Cerner Corporation
 - Luissette Figueroa [@lfigueroa]
 - Andrew Shoemake [@ashoemake]
 - Kevin Schuster [@kschuste]
+- Ryan Rickard [@RLRickard]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -83,3 +84,4 @@ Cerner Corporation
 [@lfigueroa]: https://github.com/lcf-1
 [@ashoemake]: https://github.com/Andrew-Shoemake
 [@kschuste]: https://github.com/kschuste
+[@RLRickard]: https://github.com/RLRickard
