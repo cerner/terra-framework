@@ -2,8 +2,13 @@
 
 ## Unreleased
 
-* Changed
+* Added
   * Added package json lint test.
+
+## 1.58.0 - (September 20, 2021)
+
+* Changed
+  * Minor dependency version bump
 
 ## 1.57.0 - (July 21, 2021)
 
