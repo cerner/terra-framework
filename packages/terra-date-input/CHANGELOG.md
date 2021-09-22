@@ -2,13 +2,15 @@
 
 ## Unreleased
 
+* Added
+  * Added package json lint test.
+
 ## 1.31.0 - (September 20, 2021)
 
 * Changed
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
   * Fix to prevent non-numeric characters from being entered in Safari.
   * Check NODE_ENV for the current development environment.
-  * Added package json lint test.
 
 ## 1.30.0 - (July 21, 2021)
 

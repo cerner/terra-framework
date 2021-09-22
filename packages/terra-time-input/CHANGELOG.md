@@ -2,13 +2,15 @@
 
 ## Unreleased
 
+* Added
+  * Added package json lint test.
+
 ## 4.43.0 - (September 20, 2021)
 
 * Changed
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
   * Improved specificity of meridiem button group.
   * Check NODE_ENV for the current development environment.
-  * Added package json lint test.
 
 ## 4.42.0 - (July 21, 2021)
 

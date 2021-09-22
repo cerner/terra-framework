@@ -2,11 +2,13 @@
 
 ## Unreleased
 
+* Added
+  * Added package json lint test.
+
 ## 3.31.0 - (September 20, 2021)
 
 * Changed
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
-  * Added package json lint test.
 
 ## 3.30.0 - (June 8, 2021)
 
