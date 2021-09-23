@@ -30,7 +30,7 @@
       "react/forbid-prop-types": "off"
     }
   },
-    "package-json-lint": {
+  "package-json-lint": {
     "extends": "@cerner/package-json-lint-config-terra"
   },
   "stylelint": {
