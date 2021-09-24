@@ -139,7 +139,8 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       expect($('#valid-date').getText()).toEqual('Yes');
     });
 
-    it('enter a complete date to move focus to the hour input and onBlur is not triggered', () => {
+    it('enter a complete date to keep focus on the year input and onBlur is not triggered', () => {
+      browser.refresh();
       $('input[name="terra-date-month-input"]').setValue('05');
       $('input[name="terra-date-day-input"]').setValue('01');
       $('input[name="terra-date-year-input"]').setValue('2019');
@@ -156,6 +157,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     });
 
     it('enter the hour to move focus to the minute input and onBlur is not triggered', () => {
+      browser.refresh();
       $('input[name="terra-time-hour-input"]').setValue('10');
 
       expect($('#blur-count').getText()).toEqual('0');
@@ -170,6 +172,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     });
 
     it('enter the minute and onBlur is not triggered', () => {
+      browser.refresh();
       $('input[name="terra-time-minute-input"]').setValue('10');
 
       expect($('#blur-count').getText()).toEqual('0');
@@ -184,9 +187,15 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     });
 
     it('tabs out of the component and onBlur is triggered', () => {
+      browser.refresh();
+      $('input[name="terra-date-month-input"]').setValue('05');
+      $('input[name="terra-date-day-input"]').setValue('01');
+      $('input[name="terra-date-year-input"]').setValue('2019');
+      $('input[name="terra-time-hour-input"]').setValue('10');
+      $('input[name="terra-time-minute-input"]').setValue('10');
       $('#root').click();
 
-      expect($('#blur-count').getText()).toEqual('1');
+      expect($('#blur-count').getText()).toEqual('2');
       expect($('#iso').getText()).toEqual('2019-05-01T10:10:00-05:00');
       expect($('#input-value').getText()).toEqual('05/01/2019 10:10');
       expect($('#date-value').getText()).toEqual('05/01/2019');
@@ -291,18 +300,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     });
   });
 
-  describe('Auto focus', () => {
-    it('moves focus to hour input on valid entry completion', () => {
-      browser.refresh();
-      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
-      $('input[name="terra-date-month-input"]').setValue('04');
-      $('input[name="terra-date-day-input"]').setValue('15');
-      $('input[name="terra-date-year-input"]').setValue('2019');
-
-      Terra.validates.element('move focus to hour');
-    });
-  });
-
   describe('OnChange', () => {
     it('is triggered', () => {
       browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-change');
@@ -321,6 +318,16 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       expect($('#complete-date').getText()).toEqual('Yes');
       expect($('#valid-date').getText()).toEqual('Yes');
       Terra.validates.element('onChange triggered');
+    });
+
+    it('keeps focus on year input on valid entry completion', () => {
+      browser.refresh();
+      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
+      $('input[name="terra-date-month-input"]').setValue('04');
+      $('input[name="terra-date-day-input"]').setValue('15');
+      $('input[name="terra-date-year-input"]').setValue('2019');
+
+      Terra.validates.element('keep focus on year');
     });
 
     it('missing hour', () => {

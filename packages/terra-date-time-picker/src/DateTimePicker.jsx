@@ -197,7 +197,6 @@ class DateTimePicker extends React.Component {
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.dateTimePickerContainer = React.createRef();
     this.containerHasFocus = false;
-    this.isDateSelected = false;
   }
 
   componentDidMount() {
@@ -219,7 +218,6 @@ class DateTimePicker extends React.Component {
 
   handleOnSelect(event, selectedDate) {
     this.dateValue = DateUtil.formatISODate(selectedDate, this.state.dateFormat);
-    this.isDateSelected = true;
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
     const updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, selectedDate, this.timeValue, this.props.showSeconds);
 
@@ -310,21 +308,6 @@ class DateTimePicker extends React.Component {
       this.handleChange(event, updatedDateTime);
     } else {
       this.setState({ dateTime: updatedDateTime });
-    }
-
-    if (isDateValid && (event.currentTarget === this.dateInputComponent || this.isDateSelected)) {
-      // Allows time for focus-trap to release focus on the picker before shifting focus to the hour input.
-      setTimeout(() => {
-        /*
-         * Make sure the reference to hourInput still exists before calling focus because it is possible that it is now
-         * nullified after the 100 ms timeout due to a force remount of this component with a new `key` prop value.
-         * Reference https://github.com/cerner/terra-framework/issues/1086
-         */
-        if (this.hourInput) {
-          this.isDateSelected = false;
-          this.hourInput.focus();
-        }
-      }, 100);
     }
   }
 
@@ -683,7 +666,6 @@ class DateTimePicker extends React.Component {
             isIncomplete={isIncomplete}
             isInvalid={isInvalid}
             required={required}
-            lastInputRefCallback={(inputRef) => { this.dateInputComponent = inputRef; }}
             initialTimeZone={this.initialTimeZone}
           />
         </div>
