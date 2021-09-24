@@ -62,7 +62,7 @@
     box-sizing: border-box;
     color: var(--terra-pills-pill-label-color, #4d5153);
     cursor: default;
-    display: block;
+    display: inline;
     flex: 1 1 auto;
     font-size: var(--terra-pills-pill-label-font-size, 0.85714rem);
     height: 100%;
@@ -70,8 +70,30 @@
     min-width: 0;
     overflow: hidden;
     padding-bottom: var(--terra-pills-pill-label-padding-bottom, 0.28571rem);
-    padding-left: var(--terra-pills-pill-label-padding-left, 0.64285rem);
+    padding-left: var(--terra-pills-pill-label-padding-left, 0.64285rem); //lp052179
     padding-right: var(--terra-pills-pill-label-padding-right, 0.64285rem);
+    padding-top: var(--terra-pills-pill-label-padding-top, 0.28571rem);
+    pointer-events: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .pill-label-category {
+    background-color: var(--terra-pills-pill-label-background-color, transparent);
+    box-sizing: border-box;
+    color: var(--terra-pills-pill-label-color, #4d5153);
+    cursor: default;
+    display: inline;
+    flex: 1 1 auto;
+    font-size: var(--terra-pills-pill-label-font-size, 0.85714rem);
+    font-weight: bold;
+    height: 100%;
+    line-height: var(--terra-pills-pill-label-line-height, 1.16667);
+    min-width: 0;
+    overflow: hidden;
+    padding-bottom: var(--terra-pills-pill-label-padding-bottom, 0.28571rem);
+    padding-left: var(--terra-pills-pill-label-padding-left, 0.64285rem);
+    // padding-right: var(--terra-pills-pill-label-padding-right, 0.64285rem); // lp052179
     padding-top: var(--terra-pills-pill-label-padding-top, 0.28571rem);
     pointer-events: none;
     text-overflow: ellipsis;

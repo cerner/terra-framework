@@ -1,5 +1,3 @@
-import Pills from './Pills';
-import SelectablePills from './SelectablePills';
+import FilterPills from './FilterPills';
 
-export default Pills;
-export { SelectablePills };
+export default FilterPills;

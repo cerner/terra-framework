@@ -17,7 +17,7 @@ const propTypes = {
   /**
    * Determines if the Pill List is rolled up or not.
    */
-  isSingleLine: PropTypes.bool,
+  isCollapsed: PropTypes.bool,
   /**
    * Callback function triggered on click/key press of the roll-up pill
    */
@@ -35,7 +35,7 @@ const propTypes = {
 
 const RollUpPill = (props) => {
   const {
-    isSingleLine, onSelectRollUp, intl, rollupCount,
+    isCollapsed, onSelectRollUp, intl, rollupCount,
   } = props;
   const rollUpPillRef = useRef();
   const theme = React.useContext(ThemeContext);
@@ -59,7 +59,9 @@ const RollUpPill = (props) => {
     rollUpPillRef.current.setAttribute('data-terra-rollup-pill-show-focus-styles', 'false');
   };
 
-  return (isSingleLine && rollupCount > 0) ? (
+  const rollUpLabel = isCollapsed && rollupCount > 0 ? intl.formatMessage({ id: 'Terra.pills.label.rollupPill' }, { pillsNotVisibleCount: rollupCount }) : 'Show Less';
+
+  return (
     <div
       role="listitem"
       className={cx('pill-list-item')}
@@ -77,11 +79,11 @@ const RollUpPill = (props) => {
         data-terra-rollup-pill-show-focus-styles
         data-terra-rollup-pill
       >
-        <span className={cx('rollup-pill-label')}>{intl.formatMessage({ id: 'Terra.pills.label.rollupPill' }, { pillsNotVisibleCount: rollupCount })}</span>
+        <span className={cx('rollup-pill-label')}>{rollUpLabel}</span>
       </button>
       <VisuallyHiddenText id="rollup-pill-hint" text={intl.formatMessage({ id: 'Terra.pills.hint.rollupPill' }, { pillsNotVisibleCount: rollupCount })} aria-hidden="true" />
     </div>
-  ) : null;
+  );
 };
 
 RollUpPill.propTypes = propTypes;
