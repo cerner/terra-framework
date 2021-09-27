@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Upgrade focus-trap-react to version ^8.0.0.
+
 ## 4.18.0 - (September 20, 2021)
 
 * Changed
