@@ -93,6 +93,14 @@ const propTypes = {
    * If the `variant` prop if set to `12-hour` for one of these supported locales, the variant will be ignored and defaults to `24-hour`.
    */
   variant: PropTypes.oneOf([TimeUtil.FORMAT_12_HOUR, TimeUtil.FORMAT_24_HOUR]),
+
+  /** NEW!
+   * Human-readable label used for assistive technologies.
+   *
+   * If you have a visible label for this TimeInput, you should set this label
+   * to the same value.
+   */
+  label: PropTypes.string,
 };
 
 const defaultProps = {
@@ -112,6 +120,7 @@ const defaultProps = {
   showSeconds: false,
   value: undefined,
   variant: TimeUtil.FORMAT_24_HOUR,
+  label: 'Time Input',
 };
 
 class TimeInput extends React.Component {
@@ -664,6 +673,7 @@ class TimeInput extends React.Component {
       showSeconds,
       value,
       variant,
+      label,
       ...customProps
     } = this.props;
 
@@ -736,7 +746,18 @@ class TimeInput extends React.Component {
         ref={this.timeInputContainer}
         className={cx('time-input-container', theme.className)}
       >
-        <div className={timeInputClassNames}>
+        {/*
+        Grouping the input fields so that all of their values are announced at
+        once when any of the inputs are updated.
+         */}
+        <div
+          className={timeInputClassNames}
+          role="group"
+          aria-label={label}
+          aria-live="polite"
+          aria-atomic
+          aria-relevant="all"
+        >
           <input
             // Create a hidden input for storing the name and value attributes to use when submitting the form.
             // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
