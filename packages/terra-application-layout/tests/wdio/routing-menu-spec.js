@@ -16,7 +16,7 @@ Terra.describeViewports('RoutingMenu', ['small'], () => {
       browser.url('/raw/tests/terra-application-layout/application-layout/routing-menu-external');
       $('#routing-menu-test').waitForDisplayed();
       $('[data-menu-item="/item_3"]').click();
-      browser.pause(100);
+      browser.pause(500);
       expect(browser.getUrl()).toEqual('https://engineering.cerner.com/terra-ui/home/terra-ui/index');
     });
   });
