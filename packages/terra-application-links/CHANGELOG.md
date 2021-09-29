@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Increased timeout for redirecting url.
+  * Removed routing tests.
 
 ## 6.55.0 - (September 20, 2021)
 
