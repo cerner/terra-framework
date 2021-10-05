@@ -1,11 +1,18 @@
 {
+  "Terra.timeInput.defaultLabel": "Time Input:",
+  "Terra.timeInput.meridianChoiceGroup": "a.m. or p.m.:",
   "Terra.timeInput.am": "a.m.",
   "Terra.timeInput.pm": "p.m.",
   "Terra.timeInput.hours": "Hours",
   "Terra.timeInput.minutes": "Minutes",
   "Terra.timeInput.seconds": "Seconds",
-  "Terra.timeInput.hh": "hh",
-  "Terra.timeInput.mm": "mm",
-  "Terra.timeInput.ss": "ss",
-  "Terra.timeInput.timeFormatLabel": "Time Format:"
+  "Terra.timeInput.hourFormat": "'Format: hh'",
+  "Terra.timeInput.minuteFormat": "'Format: mm'",
+  "Terra.timeInput.secondFormat": "'Format: ss'",
+  "Terra.timeInput.timeFormatLabel": "Time Format: hh:mm",
+  "Terra.timeInput.timeFormatSecondsLabel": "Time Format: hh:mm:ss",
+  "Terra.timeInput.fullValueLabel": "{timeInputLabel} full value: {hour}:{minute}",
+  "Terra.timeInput.fullValueLabelWithSeconds": "{timeInputLabel} full value: {hour}:{minute}:{second}",
+  "Terra.timeInput.fullValueLabelTwelveHour": "{timeInputLabel} full value: {hour}:{minute} {meridiem}",
+  "Terra.timeInput.fullValueLabelTwelveHourWithSeconds": "{timeInputLabel} full value: {hour}:{minute}:{second} {meridiem}"
 }

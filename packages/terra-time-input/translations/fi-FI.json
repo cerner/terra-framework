@@ -3,6 +3,6 @@
   "Terra.timeInput.pm": "",
   "Terra.timeInput.hours": "Tuntia",
   "Terra.timeInput.minutes": "Minuuttia",
-  "Terra.timeInput.hh": "HH",
-  "Terra.timeInput.mm": "mm"
+  "Terra.timeInput.hourFormat": "HH",
+  "Terra.timeInput.minuteFormat": "mm"
 }
