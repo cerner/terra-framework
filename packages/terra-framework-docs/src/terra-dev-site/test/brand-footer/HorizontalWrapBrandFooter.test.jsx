@@ -1,14 +1,15 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import BrandFooter from '../../../BrandFooter';
+import BrandFooter from 'terra-brand-footer';
 import styles from './BrandFooterTestCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
 export default () => (
   <BrandFooter
-    isVertical
+    className={cx('content')}
+    isVertical={false}
     sections={[
       {
         headerText: 'Links',
@@ -21,6 +22,18 @@ export default () => (
         headerText: 'More Links',
         links: [
           { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/' },
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/a' },
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/b' },
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/c' },
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/d' },
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/e' },
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/f' },
+        ],
+      },
+      {
+        headerText: '',
+        links: [
+          { text: 'Cerner Github', href: 'https://github.com/cerner' },
         ],
       },
     ]}

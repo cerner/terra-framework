@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BrandFooter from '../../../BrandFooter';
+import BrandFooter from '../../../../../terra-brand-footer/src/BrandFooter';
 
 export default () => (
   <BrandFooter
