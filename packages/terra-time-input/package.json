@@ -33,6 +33,7 @@
     "terra-button-group": "^3.0.0",
     "terra-form-input": "^4.4.0",
     "terra-theme-context": "^1.7.0",
+    "terra-visually-hidden-text": "^2.0.0",
     "uuid": "^3.3.2"
   },
   "scripts": {
