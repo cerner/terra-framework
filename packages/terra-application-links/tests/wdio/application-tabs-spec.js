@@ -58,7 +58,7 @@ Terra.describeViewports('ApplicationTabs', ['small', 'large'], () => {
       browser.url('/raw/tests/terra-application-links/application-links/application-tabs-external');
       browser.pause(50);
       $('#test-tabs #test-button').click();
-      browser.pause(100);
+      browser.pause(500);
       expect(browser.getUrl()).toEqual('https://engineering.cerner.com/terra-ui/home/terra-ui/index');
     });
   });

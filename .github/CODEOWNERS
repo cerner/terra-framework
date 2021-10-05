@@ -1,5 +1,5 @@
 # Set default code owners for all files in repo
-* @mjhenkes @ryanthemanuel @tbiethman
+* @mjhenkes @ryanthemanuel @tbiethman @benbcai
 terra-date-picker/ @benbcai @mjhenkes @ryanthemanuel @tbiethman
 terra-date-time-picker/ @benbcai @mjhenkes @ryanthemanuel @tbiethman
 terra-time-input/ @benbcai @mjhenkes @ryanthemanuel @tbiethman
