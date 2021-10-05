@@ -6,6 +6,11 @@
   * Date input split into 3 distinct inputs that mask the previous single input.
   * Updated `terra-dev-site` examples to use hooks.
 
+## 4.66.0 - (September 20, 2021)
+
+* Changed
+  * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
+
 ## 4.65.0 - (July 21, 2021)
 
 * Changed

@@ -2,9 +2,15 @@
 
 ## Unreleased
 
+## 4.67.0 - (September 20, 2021)
+
 * Changed
+<<<<<<< HEAD
   * Tests updated to reflect input splitting in `terra-date-picker`.
   * Updated `terra-dev-site` examples to use hooks.
+=======
+  * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
+>>>>>>> main
   * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
 
 ## 4.66.0 - (July 21, 2021)

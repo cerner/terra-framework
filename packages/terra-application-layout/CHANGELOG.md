@@ -3,6 +3,12 @@
 ## Unreleased
 
 * Changed
+  * Increased timeout for redirecting url.
+
+## 5.59.0 - (September 20, 2021)
+
+* Changed
+  * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
   * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
 
 ## 5.58.0 - (July 21, 2021)
