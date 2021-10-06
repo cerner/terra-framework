@@ -4,6 +4,8 @@
 
 * Added
   * Added package json lint test.
+* Changed
+  * Removed routing tests.
 
 ## 6.55.0 - (September 20, 2021)
 
