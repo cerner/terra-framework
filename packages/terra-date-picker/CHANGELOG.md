@@ -5,6 +5,7 @@
 * Changed
   * Date input split into 3 distinct inputs that mask the previous single input.
   * Updated `terra-dev-site` examples to use hooks.
+  * Added hotkey `T` for quick date entry.
 
 ## 4.66.0 - (September 20, 2021)
 

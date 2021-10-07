@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added hotkey `T` for quick date entry.
+
 ## 1.31.0 - (September 20, 2021)
 
 * Changed

@@ -81,9 +81,9 @@
     }
   }
 
-  .date-input-month,
-  .date-input-day,
-  .date-input-year {
+  .date-input .date-input-month,
+  .date-input .date-input-day,
+  .date-input .date-input-year {
     background-color: var(--terra-date-picker-input-date-component-background-color, transparent);
     border-color: var(--terra-date-picker-input-date-component-border-color, transparent);
     border-radius: var(--terra-date-picker-input-date-component-border-radius, 2px);
@@ -125,15 +125,15 @@
     }
   }
 
-  .date-input-month {
+  .date-input .date-input-month {
     width: 2rem;
   }
 
-  .date-input-day {
+  .date-input .date-input-day {
     width: 1.7rem;
   }
 
-  .date-input-year {
+  .date-input .date-input-year {
     width: 3.1rem;
   }
 

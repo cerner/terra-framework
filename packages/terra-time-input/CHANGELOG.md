@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added hotkey `N` for quick time entry.
+
 ## 4.43.0 - (September 20, 2021)
 
 * Changed
