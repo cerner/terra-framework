@@ -1,3 +1,10 @@
+import {
+  KEY_A,
+  KEY_J,
+  KEY_M,
+  KEY_N,
+} from 'keycode-js';
+
 class TimeUtil {
   /**
    * Determines if a provided nuermic input value is valid.
@@ -268,6 +275,24 @@ class TimeUtil {
     }
 
     return variant;
+  }
+
+  static getNowHotkeyCodeByLocale(locale) {
+    const localesWithKeyA = ['es', 'es-ES', 'es-US', 'pt', 'pt-BR']; // Ahora, Agora
+    const localesWithKeyJ = ['de']; // Jetzt
+    const localesWithKeyM = ['fr', 'fr-FR']; // Maintenant
+
+    if (localesWithKeyA.includes(locale)) {
+      return KEY_A;
+    } else if (localesWithKeyJ.includes(locale)) {
+      return KEY_J;
+    } else if (localesWithKeyM.includes(locale)) {
+      return KEY_M;
+    }
+
+    // "Now" for ['en', 'en-AU', 'en-CA', 'en-GB', 'en-US']
+    // "NU" for ['nl', 'nl-BE', 'sv', 'sv-SE']
+    return KEY_N;
   }
 }
 

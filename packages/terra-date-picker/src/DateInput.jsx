@@ -7,6 +7,12 @@ import React, {
   useMemo,
 } from 'react';
 import {
+  KEY_0,
+  KEY_9,
+  KEY_NUMPAD0,
+  KEY_NUMPAD9,
+  KEY_EQUALS,
+  KEY_DASH,
   KEY_UP,
   KEY_DOWN,
   KEY_LEFT,
@@ -144,6 +150,8 @@ const dateReducer = (state, inputValue) => ({
   ...inputValue,
 });
 
+let keysPressed = {};
+
 const DatePickerInput = (props) => {
   const {
     ariaLabel,
@@ -188,6 +196,8 @@ const DatePickerInput = (props) => {
   const dateValue = DateUtil.convertToISO8601(value, momentDateFormat);
   const dateFormatOrder = DateUtil.getDateFormatOrder(momentDateFormat);
   const separator = DateUtil.getDateSeparator(intl.locale);
+  let hotkeyTimeout = undefined;
+  let hotkeyTimeoutMap = {};
 
   const setDayRef = useCallback(node => {
     dayInputRef.current = node;
@@ -322,7 +332,8 @@ const DatePickerInput = (props) => {
 
   const handleDayChange = (event) => {
     let inputValue = event.target.value;
-    if (!DateUtil.validDateInput(inputValue)) {
+    const todayKeyCode = DateUtil.getTodayHotkeyCodeByLocale(intl.locale);
+    if (keysPressed[todayKeyCode] || !DateUtil.validDateInput(inputValue)) {
       return;
     }
 
@@ -348,7 +359,8 @@ const DatePickerInput = (props) => {
 
   const handleMonthChange = (event) => {
     let inputValue = event.target.value;
-    if (!DateUtil.validDateInput(inputValue)) {
+    const todayKeyCode = DateUtil.getTodayHotkeyCodeByLocale(intl.locale);
+    if (keysPressed[todayKeyCode] || !DateUtil.validDateInput(inputValue)) {
       return;
     }
 
@@ -374,7 +386,8 @@ const DatePickerInput = (props) => {
 
   const handleYearChange = (event) => {
     const inputValue = event.target.value;
-    if (!DateUtil.validDateInput(inputValue)) {
+    const todayKeyCode = DateUtil.getTodayHotkeyCodeByLocale(intl.locale);
+    if (keysPressed[todayKeyCode] || !DateUtil.validDateInput(inputValue)) {
       return;
     }
 
@@ -403,6 +416,81 @@ const DatePickerInput = (props) => {
     inputRef.setSelectionRange(selectionStart, selectionEnd);
     event.preventDefault();
   };
+
+  const setHotKeyDate = (event, addDays) => {
+    clearHotkeyTimeout();
+
+    const today = DateUtil.addDaysFromToday(addDays);
+    const parseDate = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, today, '-');
+    const inputDate = DateUtil.convertToISO8601(today, DateUtil.ISO_EXTENDED_DATE_FORMAT);
+    const formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
+
+    if (onChange && DateUtil.isValidDate(formattedDate, momentDateFormat)) {
+      onChange(event, formattedDate);
+    }
+
+    dateDispatch(parseDate);
+  }
+
+  const clearHotkeyTimeout = () => {
+    if (hotkeyTimeoutMap.key) {
+      clearTimeout(hotkeyTimeoutMap.key);
+      hotkeyTimeoutMap.key = null;
+    }
+  }
+
+  const handleInputKeyDown = (event, inputType) => {
+    if (inputAttributes?.readOnly) {
+      return;
+    }
+
+    keysPressed[event.keyCode] = true;
+
+    const todayKeyCode = DateUtil.getTodayHotkeyCodeByLocale(intl.locale);
+    if (event.keyCode === todayKeyCode) {
+      // Need to persist the event since it is used after the timeout. See https://reactjs.org/docs/legacy-event-pooling.html
+      event.persist();
+      
+      clearHotkeyTimeout();
+
+      hotkeyTimeout = setTimeout(() => {
+        setHotKeyDate(event, 0);
+      }, 1000);
+
+      hotkeyTimeoutMap = {key: hotkeyTimeout, event, addDays: 0};
+      
+      return;
+    } else if (keysPressed[todayKeyCode]) {
+      if ((event.keyCode >= KEY_0 && event.keyCode <= KEY_9) || (event.keyCode >= KEY_NUMPAD0 && event.keyCode <= KEY_NUMPAD9)) {
+        if (keysPressed[KEY_EQUALS] || keysPressed[KEY_DASH]) {
+
+          let adjustDays = parseInt(event.key, 10);
+          if (keysPressed[KEY_DASH]) {
+            adjustDays = 0 - adjustDays
+          }
+
+          event.persist();
+          clearHotkeyTimeout();
+
+          hotkeyTimeout = setTimeout(() => {
+            setHotKeyDate(event, adjustDays);
+          }, 1000);
+
+          hotkeyTimeoutMap = {key: hotkeyTimeout, event, adjustDays};
+        }
+      }
+
+      return;
+    }
+
+    if (inputType === DateUtil.inputType.DAY) {
+      handleDayInputKeydown(event);
+    } else if (inputType === DateUtil.inputType.MONTH) {
+      handleMonthInputKeydown(event);
+    } else {
+      handleYearInputKeydown(event);
+    }
+  }
 
   const handleDayInputKeydown = (event) => {
     if (inputAttributes?.readOnly) {
@@ -443,6 +531,8 @@ const DatePickerInput = (props) => {
       return;
     }
 
+    keysPressed[event.keyCode] = true;
+
     if (event.keyCode === KEY_UP) {
       const incrementedMonth = DateUtil.incrementMonth(date.month);
       if (incrementedMonth !== date.month) {
@@ -479,6 +569,8 @@ const DatePickerInput = (props) => {
       return;
     }
 
+    keysPressed[event.keyCode] = true;
+
     if (event.keyCode === KEY_UP) {
       const incrementedYear = DateUtil.incrementYear(date.year);
       if (incrementedYear !== date.year) {
@@ -505,6 +597,20 @@ const DatePickerInput = (props) => {
       }
     }
   };
+
+  const handleInputKeyUp = (event) => {
+    // if (event.keyCode === DateUtil.getTodayHotkeyCodeByLocale(intl.locale) && hotkeyTimeoutMap.key) {
+
+    //   const timeoutEvent = hotkeyTimeoutMap.event;
+    //   const addDays = hotkeyTimeoutMap.addDays;
+
+    //   clearHotkeyTimeout();
+
+    //   setHotKeyDate(timeoutEvent, addDays);
+    // }
+
+    delete keysPressed[event.keyCode];
+  }
 
   const handleOnInputFocus = (event, type) => {
     if (onFocus) {
@@ -617,7 +723,8 @@ const DatePickerInput = (props) => {
       onChange={handleDayChange}
       onFocus={(e) => handleOnInputFocus(e, DateUtil.inputType.DAY)}
       onBlur={(e) => handleOnInputBlur(e, DateUtil.inputType.DAY)}
-      onKeyDown={handleDayInputKeydown}
+      onKeyDown={(e) => handleInputKeyDown(e, DateUtil.inputType.DAY)}
+      onKeyUp={handleInputKeyUp}
       maxLength="2"
       size="2"
       pattern="\d*"
@@ -647,7 +754,8 @@ const DatePickerInput = (props) => {
       onChange={handleMonthChange}
       onFocus={(e) => handleOnInputFocus(e, DateUtil.inputType.MONTH)}
       onBlur={(e) => handleOnInputBlur(e, DateUtil.inputType.MONTH)}
-      onKeyDown={handleMonthInputKeydown}
+      onKeyDown={(e) => handleInputKeyDown(e, DateUtil.inputType.MONTH)}
+      onKeyUp={handleInputKeyUp}
       maxLength="2"
       size="2"
       pattern="\d*"
@@ -677,7 +785,8 @@ const DatePickerInput = (props) => {
       onChange={handleYearChange}
       onFocus={(e) => handleOnInputFocus(e, DateUtil.inputType.YEAR)}
       onBlur={(e) => handleOnInputBlur(e, DateUtil.inputType.YEAR)}
-      onKeyDown={handleYearInputKeydown}
+      onKeyDown={(e) => handleInputKeyDown(e, DateUtil.inputType.YEAR)}
+      onKeyUp={handleInputKeyUp}
       maxLength="4"
       size="4"
       pattern="\d*"

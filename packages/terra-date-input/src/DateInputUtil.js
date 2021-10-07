@@ -1,3 +1,11 @@
+import {
+  KEY_A,
+  KEY_H,
+  KEY_I,
+  KEY_T,
+  KEY_V,
+} from 'keycode-js';
+
 class DateInputUtil {
   /**
    * Determines if a provided numeric input value is valid.
@@ -250,6 +258,32 @@ class DateInputUtil {
       return inputAttributes['aria-describedby'];
     }
     return undefined;
+  }
+
+  static addDaysFromToday(addDays = 0) {
+    let today = new Date();
+    today.setDate(today.getDate() + addDays);
+    return today.toISOString();
+  }
+
+  static getTodayHotkeyCodeByLocale(locale) {
+    const localesWithKeyA = ['fr', 'fr-FR']; // Aujourd'hui
+    const localesWithKeyH = ['es', 'es-ES', 'es-US', 'de', 'pt', 'pt-BR']; // Hoy, Heute, Hoje
+    const localesWithKeyI = ['sv', 'sv-SE']; // I dag
+    const localesWithKeyV = ['nl', 'nl-BE']; // Vandaag
+
+    if (localesWithKeyA.includes(locale)) {
+      return KEY_A;
+    } else if (localesWithKeyH.includes(locale)) {
+      return KEY_H;
+    } else if (localesWithKeyI.includes(locale)) {
+      return KEY_I;
+    } else if (localesWithKeyV.includes(locale)) {
+      return KEY_V;
+    }
+
+    // "Today" for ['en', 'en-AU', 'en-CA', 'en-GB', 'en-US']
+    return KEY_T;
   }
 }
 

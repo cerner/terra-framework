@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-import DateInput from 'terra-date-input';
+import DateInput from '../../../DateInput';
 import classNames from 'classnames/bind';
 import styles from './common/DateInput.test.module.scss';
 

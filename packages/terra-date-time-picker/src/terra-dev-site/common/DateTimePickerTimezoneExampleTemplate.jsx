@@ -43,7 +43,7 @@ function DateTimePickerTimezoneTemplate(props) {
       </p>
       <p>
         Initial Time Zone:
-        <span data-date-time-timeZone>{timeZone}</span>
+        <span data-date-time-timezone>{timeZone}</span>
       </p>
       <DateTimePicker
         name="date-time-picker-example"

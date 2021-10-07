@@ -1,5 +1,12 @@
 /* eslint-disable no-underscore-dangle */
 import moment from 'moment-timezone';
+import {
+  KEY_A,
+  KEY_H,
+  KEY_I,
+  KEY_T,
+  KEY_V,
+} from 'keycode-js';
 
 class DateUtil {
   /**
@@ -491,6 +498,31 @@ class DateUtil {
     }
 
     return DateUtil.MIN_YEAR;
+  }
+
+  static addDaysFromToday(addDays = 0) {
+    let today = moment().add(addDays, 'days');
+    return today.format('YYYY-MM-DD')
+  }
+
+  static getTodayHotkeyCodeByLocale(locale) {
+    const localesWithKeyA = ['fr', 'fr-FR']; // Aujourd'hui
+    const localesWithKeyH = ['es', 'es-ES', 'es-US', 'de', 'pt', 'pt-BR']; // Hoy, Heute, Hoje
+    const localesWithKeyI = ['sv', 'sv-SE']; // I dag
+    const localesWithKeyV = ['nl', 'nl-BE']; // Vandaag
+
+    if (localesWithKeyA.includes(locale)) {
+      return KEY_A;
+    } else if (localesWithKeyH.includes(locale)) {
+      return KEY_H;
+    } else if (localesWithKeyI.includes(locale)) {
+      return KEY_I;
+    } else if (localesWithKeyV.includes(locale)) {
+      return KEY_V;
+    }
+
+    // "Today" for ['en', 'en-AU', 'en-CA', 'en-GB', 'en-US']
+    return KEY_T;
   }
 }
 

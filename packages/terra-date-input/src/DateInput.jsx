@@ -6,7 +6,21 @@ import ThemeContext from 'terra-theme-context';
 import uuidv4 from 'uuid/v4';
 import { injectIntl } from 'react-intl';
 import Input from 'terra-form-input';
-import * as KeyCode from 'keycode-js';
+import {
+  KEY_0,
+  KEY_9,
+  KEY_NUMPAD0,
+  KEY_NUMPAD9,
+  KEY_BACK_SPACE,
+  KEY_DELETE,
+  KEY_DOWN,
+  KEY_E,
+  KEY_EQUALS,
+  KEY_DASH,
+  KEY_PERIOD,
+  KEY_SPACE,
+  KEY_UP,
+} from 'keycode-js';
 
 import DateInputUtil from './DateInputUtil';
 import styles from './DateInput.module.scss';
@@ -120,7 +134,8 @@ class DateInput extends React.Component {
     }
 
     this.uuid = uuidv4();
-
+    this.keysPressed = {};
+    this.hotkeyTimeoutMap = {};
     this.dateInputContainer = React.createRef();
     this.monthRef = React.createRef();
 
@@ -128,6 +143,9 @@ class DateInput extends React.Component {
     this.handleDayChange = this.handleDayChange.bind(this);
     this.handleYearChange = this.handleYearChange.bind(this);
 
+    this.handleInputKeyUp = this.handleInputKeyUp.bind(this);
+
+    this.handleInputKeyDown = this.handleInputKeyDown.bind(this);
     this.handleMonthKeyDown = this.handleMonthKeyDown.bind(this);
     this.handleDayKeyDown = this.handleDayKeyDown.bind(this);
     this.handleYearKeyDown = this.handleYearKeyDown.bind(this);
@@ -245,6 +263,89 @@ class DateInput extends React.Component {
     }
   }
 
+  clearHotkeyTimeout() {
+    if (this.hotkeyTimeoutMap.key) {
+      clearTimeout(this.hotkeyTimeoutMap.key);
+      this.hotkeyTimeoutMap.key = null;
+    }
+  }
+
+  setHotKeyDate(event, addDays) {
+    this.clearHotkeyTimeout();
+
+    const hotkeyDate = DateInputUtil.addDaysFromToday(addDays);
+    const iSODate = hotkeyDate.split('T')[0];
+    const dateParts = iSODate.split('-');
+
+    this.setState({ year: dateParts[0], month: dateParts[1], day: dateParts[2] });
+
+    if (this.props.onChange) {
+      this.handleOnChange(event, iSODate);
+    }
+  }
+
+  handleInputKeyUp(event) {
+    // if (event.keyCode === DateInputUtil.getTodayHotkeyCodeByLocale(this.props.intl.locale) && this.hotkeyTimeoutMap.key) {
+
+    //   const timeoutEvent = this.hotkeyTimeoutMap.event;
+    //   const timeoutAddDays = this.hotkeyTimeoutMap.addDays;
+
+    //   this.clearHotkeyTimeout();
+
+    //   this.setHotKeyDate(timeoutEvent, timeoutAddDays);
+    // }
+
+    delete this.keysPressed[event.keyCode];
+  }
+
+  handleInputKeyDown(event, inputType) {
+    this.keysPressed[event.keyCode] = true;
+
+    const todayKeyCode = DateInputUtil.getTodayHotkeyCodeByLocale(this.props.intl.locale);
+    if (event.keyCode === todayKeyCode) {
+      // Need to persist the event since it is used after the timeout. See https://reactjs.org/docs/legacy-event-pooling.html
+      event.persist();
+      
+      this.clearHotkeyTimeout();
+
+      const hotkeyTimeout = setTimeout(() => {
+        this.setHotKeyDate(event, 0);
+      }, 1000);
+
+      this.hotkeyTimeoutMap = {key: hotkeyTimeout, event, addDays: 0};
+      
+      return;
+    } else if (this.keysPressed[todayKeyCode]) {
+      if ((event.keyCode >= KEY_0 && event.keyCode <= KEY_9) || (event.keyCode >= KEY_NUMPAD0 && event.keyCode <= KEY_NUMPAD9)) {
+        if (this.keysPressed[KEY_EQUALS] || this.keysPressed[KEY_DASH]) {
+          let adjustDays = parseInt(event.key, 10);
+
+          if (this.keysPressed[KEY_DASH]) {
+            adjustDays = 0 - adjustDays
+          }
+
+          event.persist();
+          this.clearHotkeyTimeout();
+
+          const hotkeyTimeout = setTimeout(() => {
+            this.setHotKeyDate(event, adjustDays);
+          }, 1000);
+
+          this.hotkeyTimeoutMap = {key: hotkeyTimeout, event, adjustDays};
+        }
+      }
+      return;
+    }
+
+    if (inputType === DateInputUtil.inputType.MONTH) {
+      this.handleMonthKeyDown(event);
+    } else if (inputType === DateInputUtil.inputType.DAY) {
+      this.handleDayKeyDown(event);
+    } else {
+      this.handleYearKeyDown(event);
+    }
+  }
+
   /**
  * Takes a key input from the month select, and processes it based on the value of the keycode.
  * @param {Object} event Event object generated from the event delegation.
@@ -252,7 +353,7 @@ class DateInput extends React.Component {
   handleMonthKeyDown(event) {
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
-    if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
+    if (event.keyCode === KEY_BACK_SPACE || event.keyCode === KEY_DELETE) {
       this.handleValueChange(event, DateInputUtil.inputType.MONTH, '');
 
       if (displayFormat === 'day-month-year' && event.target.value === '') {
@@ -260,7 +361,7 @@ class DateInput extends React.Component {
       }
     }
 
-    if (event.keyCode === KeyCode.KEY_SPACE || event.keyCode === KeyCode.KEY_UP || event.keyCode === KeyCode.KEY_DOWN) {
+    if (event.keyCode === KEY_SPACE || event.keyCode === KEY_UP || event.keyCode === KEY_DOWN) {
       this.setState({ isPlaceholderColored: false });
     }
   }
@@ -294,12 +395,12 @@ class DateInput extends React.Component {
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
-    if (event.keyCode === KeyCode.KEY_UP) {
+    if (event.keyCode === KEY_UP) {
       event.preventDefault();
       stateValue = DateInputUtil.incrementDay(stateValue);
     }
 
-    if (event.keyCode === KeyCode.KEY_DOWN) {
+    if (event.keyCode === KEY_DOWN) {
       event.preventDefault();
       stateValue = DateInputUtil.decrementDay(stateValue);
     }
@@ -308,7 +409,7 @@ class DateInput extends React.Component {
       this.handleValueChange(event, DateInputUtil.inputType.DAY, stateValue);
     }
 
-    if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
+    if (event.keyCode === KEY_BACK_SPACE || event.keyCode === KEY_DELETE) {
       if (displayFormat === 'month-day-year' && event.target.value === '') {
         this.focusMonth(event);
       }
@@ -324,12 +425,12 @@ class DateInput extends React.Component {
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
-    if (event.keyCode === KeyCode.KEY_UP) {
+    if (event.keyCode === KEY_UP) {
       event.preventDefault();
       stateValue = DateInputUtil.incrementYear(stateValue);
     }
 
-    if (event.keyCode === KeyCode.KEY_DOWN) {
+    if (event.keyCode === KEY_DOWN) {
       event.preventDefault();
       stateValue = DateInputUtil.decrementYear(stateValue);
     }
@@ -338,7 +439,7 @@ class DateInput extends React.Component {
       this.handleValueChange(event, DateInputUtil.inputType.YEAR, stateValue);
     }
 
-    if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
+    if (event.keyCode === KEY_BACK_SPACE || event.keyCode === KEY_DELETE) {
       if (displayFormat === 'month-day-year' && event.target.value === '') {
         this.focusDay(event);
       }
@@ -502,7 +603,8 @@ class DateInput extends React.Component {
           value={this.state.month}
           name={'terra-date-month-'.concat(this.props.name)}
           onChange={this.handleMonthChange}
-          onKeyDown={this.handleMonthKeyDown}
+          onKeyDown={(e) => this.handleInputKeyDown(e, DateInputUtil.inputType.MONTH)}
+          onKeyUp={this.handleInputKeyUp}
           onClick={this.handleMonthClick}
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}
@@ -555,7 +657,8 @@ class DateInput extends React.Component {
         maxLength="2"
         onKeyPress={this.handleKeyPress}
         onChange={this.handleDayChange}
-        onKeyDown={this.handleDayKeyDown}
+        onKeyDown={(e) => this.handleInputKeyDown(e, DateInputUtil.inputType.DAY)}
+        onKeyUp={this.handleInputKeyUp}
         onFocus={this.handleDayFocus}
         onBlur={this.handleDayBlur}
         onPaste={this.handlePaste}
@@ -598,7 +701,8 @@ class DateInput extends React.Component {
         maxLength="4"
         onChange={this.handleYearChange}
         onKeyPress={this.handleKeyPress}
-        onKeyDown={this.handleYearKeyDown}
+        onKeyDown={(e) => this.handleInputKeyDown(e, DateInputUtil.inputType.YEAR)}
+        onKeyUp={this.handleInputKeyUp}
         onFocus={this.handleYearFocus}
         onBlur={this.handleYearBlur}
         onPaste={this.handlePaste}
