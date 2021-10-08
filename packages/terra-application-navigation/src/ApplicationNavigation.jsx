@@ -208,30 +208,21 @@ const ApplicationNavigation = ({
         }}
         className={cx('drawer-menu-focus-trap-container')}
       >
-        {/*
-          The following div has been added to prevent a "Cannot read property 'ownerDocument' of null" error when using react-intl v5.
-          See link for more info: https://github.com/focus-trap/focus-trap-react/issues/44#issuecomment-543770159
-          This div could be removed with a newer version of FocusTrap
-        */}
-        <div
-          className={cx('drawer-menu-focus-trap-container')}
-        >
-          <DrawerMenu
-            titleConfig={titleConfig}
-            userConfig={userConfig}
-            hero={hero}
-            navigationItems={navigationItems}
-            activeNavigationItemKey={activeNavigationItemKey}
-            onSelectNavigationItem={onSelectNavigationItem ? generateMenuClosingCallback(onSelectNavigationItem) : undefined}
-            onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
-            onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
-            onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
-            id={id}
-            utilityItems={utilityItems}
-            onSelectUtilityItem={onSelectUtilityItem ? generateMenuClosingCallback(onSelectUtilityItem) : undefined}
-            notifications={notifications}
-          />
-        </div>
+        <DrawerMenu
+          titleConfig={titleConfig}
+          userConfig={userConfig}
+          hero={hero}
+          navigationItems={navigationItems}
+          activeNavigationItemKey={activeNavigationItemKey}
+          onSelectNavigationItem={onSelectNavigationItem ? generateMenuClosingCallback(onSelectNavigationItem) : undefined}
+          onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
+          onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
+          onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
+          id={id}
+          utilityItems={utilityItems}
+          onSelectUtilityItem={onSelectUtilityItem ? generateMenuClosingCallback(onSelectUtilityItem) : undefined}
+          notifications={notifications}
+        />
       </FocusTrap>
     );
   }
