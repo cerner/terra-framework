@@ -79,62 +79,62 @@
         background-color: var(--terra-date-picker-input-incomplete-disabled-background-color, #ffc);
       }
     }
-  }
 
-  .date-input .date-input-month,
-  .date-input .date-input-day,
-  .date-input .date-input-year {
-    background-color: var(--terra-date-picker-input-date-component-background-color, transparent);
-    border-color: var(--terra-date-picker-input-date-component-border-color, transparent);
-    border-radius: var(--terra-date-picker-input-date-component-border-radius, 2px);
-    border-style: var(--terra-date-picker-input-date-component-border-style, none);
-    border-width: var(--terra-date-picker-input-date-component-border-width, 0);
-    box-sizing: border-box;
-    caret-color: var(--terra-date-picker-input-date-component-caret-color, #1c1f21);
-    display: inline-block;
-    height: var(--terra-date-picker-input-date-component-height, 1.4285714286rem);
-    padding: var(--terra-date-picker-input-date-component-padding, 0);
-    text-align: center;
+    .date-input-month,
+    .date-input-day,
+    .date-input-year {
+      background-color: var(--terra-date-picker-input-date-component-background-color, transparent);
+      border-color: var(--terra-date-picker-input-date-component-border-color, transparent);
+      border-radius: var(--terra-date-picker-input-date-component-border-radius, 2px);
+      border-style: var(--terra-date-picker-input-date-component-border-style, none);
+      border-width: var(--terra-date-picker-input-date-component-border-width, 0);
+      box-sizing: border-box;
+      caret-color: var(--terra-date-picker-input-date-component-caret-color, #1c1f21);
+      display: inline-block;
+      height: var(--terra-date-picker-input-date-component-height, 1.4285714286rem);
+      padding: var(--terra-date-picker-input-date-component-padding, 0);
+      text-align: center;
 
-    &:hover {
-      background-color: var(--terra-date-picker-input-date-component-hover-background-color, transparent);
-      border: var(--terra-date-picker-input-date-component-hover-border, 0 none transparent);
+      &:hover {
+        background-color: var(--terra-date-picker-input-date-component-hover-background-color, transparent);
+        border: var(--terra-date-picker-input-date-component-hover-border, 0 none transparent);
+      }
+
+      &:focus {
+        background-color: var(--terra-date-picker-input-date-component-focus-background-color, transparent);
+        border: var(--terra-date-picker-input-date-component-focus-border, 0);
+        box-shadow: var(--terra-date-picker-input-date-component-focus-box-shadow, none);
+        z-index: 1;
+      }
+
+      &[disabled] {
+        background-color: var(--terra-date-picker-input-date-component-disabled-background-color, transparent);
+        border: var(--terra-date-picker-input-date-component-disabled-border, 0);
+        opacity: 1;
+      }
+
+      &::selection {
+        background-color: transparent;
+      }
+
+      &.initial-focus {
+        background-color: var(--terra-date-picker-input-date-component-initial-focus-background-color, rgba(139, 194, 249, 0.3));
+        border: 0;
+        box-shadow: none;
+      }
     }
 
-    &:focus {
-      background-color: var(--terra-date-picker-input-date-component-focus-background-color, transparent);
-      border: var(--terra-date-picker-input-date-component-focus-border, 0);
-      box-shadow: var(--terra-date-picker-input-date-component-focus-box-shadow, none);
-      z-index: 1;
+    .date-input-month {
+      width: 2rem;
     }
 
-    &[disabled] {
-      background-color: var(--terra-date-picker-input-date-component-disabled-background-color, transparent);
-      border: var(--terra-date-picker-input-date-component-disabled-border, 0);
-      opacity: 1;
+    .date-input-day {
+      width: 1.7rem;
     }
 
-    &::selection {
-      background-color: transparent;
+    .date-input-year {
+      width: 3.1rem;
     }
-
-    &.initial-focus {
-      background-color: var(--terra-date-picker-input-date-component-initial-focus-background-color, rgba(139, 194, 249, 0.3));
-      border: 0;
-      box-shadow: none;
-    }
-  }
-
-  .date-input .date-input-month {
-    width: 2rem;
-  }
-
-  .date-input .date-input-day {
-    width: 1.7rem;
-  }
-
-  .date-input .date-input-year {
-    width: 3.1rem;
   }
 
   .date-spacer {
