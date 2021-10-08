@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "focus-trap-react": "^6.0.0",
+    "focus-trap-react": "^8.0.0",
     "prop-types": "^15.5.8",
     "terra-abstract-modal": "^3.36.0",
     "terra-button": "^3.3.0",
