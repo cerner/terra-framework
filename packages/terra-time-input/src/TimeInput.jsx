@@ -738,7 +738,10 @@ class TimeInput extends React.Component {
       { 'initial-focus': this.state.secondInitialFocused },
     ]);
 
-    const labelId = `terra-time-input-label-${this.uuid}`;
+    // Allowing ID to be over-written by customProps in case consumers depend on certain
+    // ID values for testing.
+    const labelId = customProps.id || `terra-time-input-label-${this.uuid}`;
+
     const descriptionId = `terra-time-input-description-${this.uuid}`;
     const hourLabelId = `terra-time-input-hour-label-${this.uuid}`;
     const hourDescriptionId = `terra-time-input-hour-description-${this.uuid}`;
