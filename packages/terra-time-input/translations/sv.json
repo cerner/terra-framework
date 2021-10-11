@@ -1,11 +1,11 @@
 {
   "Terra.timeInput.am": "",
-  "Terra.timeInput.hh": "hh",
+  "Terra.timeInput.hourFormat": "hh",
   "Terra.timeInput.hours": "Timmar",
   "Terra.timeInput.minutes": "Minuter",
-  "Terra.timeInput.mm": "mm",
+  "Terra.timeInput.minuteFormat": "mm",
   "Terra.timeInput.seconds": "Sekunder",
-  "Terra.timeInput.ss": "sek",
+  "Terra.timeInput.secondFormat": "sek",
   "Terra.timeInput.pm": "",
   "Terra.timeInput.timeFormatLabel": "Tidsformat:"
 }
