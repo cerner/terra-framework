@@ -1,7 +1,4 @@
-import React, {
-  useCallback,
-  useEffect, useLayoutEffect, useRef, useState,
-} from 'react';
+import React, { useRef, useState } from 'react';
 import {
   KEY_SPACE,
   KEY_RETURN,
@@ -15,7 +12,7 @@ import classNamesBind from 'classnames/bind';
 import Popup from 'terra-popup';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import ResizeObserver from 'resize-observer-polyfill';
+// import ResizeObserver from 'resize-observer-polyfill'; // lp052179
 import styles from './Pill.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -79,7 +76,8 @@ const Pill = (props) => {
 
   const theme = React.useContext(ThemeContext);
   const pillRef = useRef();
-  const [isTruncated, setIsTruncated] = useState(false);
+  // const [isTruncated, setIsTruncated] = useState(false);
+  const isTruncated = false;
   const [open, setPopupOpen] = useState(false);
 
   const handleOnRemove = (event) => {
