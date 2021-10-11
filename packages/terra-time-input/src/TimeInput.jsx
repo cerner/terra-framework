@@ -9,8 +9,11 @@ import { injectIntl } from 'react-intl';
 import uuidv4 from 'uuid/v4';
 
 import * as KeyCode from 'keycode-js';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import TimeUtil from './TimeUtil';
 import styles from './TimeInput.module.scss';
+
+import TimeInputFullValue from './_TimeInputFullValue';
 
 const cx = classNamesBind.bind(styles);
 
@@ -52,6 +55,17 @@ const propTypes = {
    * Name of the time input. The name should be unique.
    */
   name: PropTypes.string.isRequired,
+  /**
+ * Human-readable name of the time input. Though optional for passivity, you should provide this
+ * if at all possible to increase the accessibility of the field, especially for users using
+ * assistive technologies such as screen readers.
+ *
+ * If not given, the default value will be the localized version of Time Input. It is not recommended
+ * to use the default, as it will not give good context to the user about the intention of the input.
+ *
+ * See also: https://www.w3.org/TR/accname-1.1/#dfn-accessible-name
+ */
+  label: PropTypes.string,
   /**
    * A callback function to execute when the entire time input component loses focus.
    * This event does not get triggered when the focus is moved from the hour input to the minute input or meridiem because the focus is still within the main time input component.
@@ -658,6 +672,7 @@ class TimeInput extends React.Component {
       onChange,
       onFocus,
       name,
+      label,
       refCallback,
       required,
       secondAttributes,
@@ -704,8 +719,7 @@ class TimeInput extends React.Component {
       { 'is-focused': this.state.isFocused },
       { 'is-invalid': isInvalid },
       { 'is-incomplete': (isIncomplete && required && !isInvalid && !isInvalidMeridiem) },
-    ),
-    customProps.className);
+    ), customProps.className);
 
     const hourClassNames = cx([
       'time-input-hour',
@@ -724,117 +738,211 @@ class TimeInput extends React.Component {
       { 'initial-focus': this.state.secondInitialFocused },
     ]);
 
-    const formatDescriptionId = `terra-time-input-description-format-${this.uuid}`;
+    // Allowing ID to be over-written by customProps in case consumers depend on certain
+    // ID values for testing.
+    const labelId = customProps.id || `terra-time-input-label-${this.uuid}`;
 
-    const format = showSeconds
-      ? `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })}:${intl.formatMessage({ id: 'Terra.timeInput.ss' })})`
-      : `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })})`;
+    const descriptionId = `terra-time-input-description-${this.uuid}`;
+    const hourLabelId = `terra-time-input-hour-label-${this.uuid}`;
+    const hourDescriptionId = `terra-time-input-hour-description-${this.uuid}`;
+    const minuteLabelId = `terra-time-input-minute-label-${this.uuid}`;
+    const minuteDescriptionId = `terra-time-input-minute-description-${this.uuid}`;
+    const secondLabelId = `terra-time-input-second-label-${this.uuid}`;
+    const secondDescriptionId = `terra-time-input-second-description-${this.uuid}`;
+    const meridianChoiceId = `terra-time-input-meridiem-choice-label-${this.uuid}`;
+
+    const timeSpacer = intl.formatMessage({
+      id: 'Terra.timeInput.timeSpacer',
+      defaultMessage: ':',
+      description: 'The symbol between hours and minutes, or between minutes and seconds.',
+    });
+
+    // Returns an aria-labelledby value reflecting the nested components.
+    // This structure is critical for speech input users who might need to jump
+    // directly into a subfield, like "type '09' in Birth Time Hour".
+    //
+    // Granted, we don't visually display these labels, but in theory a user w/ a
+    // speech input device would be able to index each component using their
+    // device. Several browser plug-ins also provide do that for us.
+    const subFieldAriaLabelledBy = (subfieldLabelId) => `${labelId} ${subfieldLabelId}`;
 
     return (
-      <div
-        {...customProps}
-        ref={this.timeInputContainer}
-        className={cx('time-input-container', theme.className)}
-      >
-        <div className={timeInputClassNames}>
-          <input
-            // Create a hidden input for storing the name and value attributes to use when submitting the form.
-            // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
-            type="hidden"
-            name={name}
-            value={timeValue}
-          />
-          <Input
-            {...inputAttributes}
-            {...hourAttributes}
-            aria-label={intl.formatMessage({ id: 'Terra.timeInput.hours' })}
-            refCallback={(inputRef) => {
-              this.hourInput = inputRef;
-              if (refCallback) refCallback(inputRef);
-            }}
-            className={hourClassNames}
-            type="text"
-            value={this.state.hour}
-            name={'terra-time-hour-'.concat(name)}
-            maxLength="2"
-            onChange={this.handleHourChange}
-            onKeyDown={this.handleHourInputKeyDown}
-            onFocus={this.handleHourFocus}
-            onBlur={this.handleHourBlur}
-            size="2"
-            pattern="\d*"
-            disabled={disabled}
-            aria-describedby={formatDescriptionId}
-          />
-          <span className={cx('time-spacer')}>:</span>
-          <Input
-            {...inputAttributes}
-            {...minuteAttributes}
-            refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-            aria-label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
-            className={minuteClassNames}
-            type="text"
-            value={this.state.minute}
-            name={'terra-time-minute-'.concat(name)}
-            maxLength="2"
-            onChange={this.handleMinuteChange}
-            onKeyDown={this.handleMinuteInputKeyDown}
-            onFocus={this.handleMinuteFocus}
-            onBlur={this.handleMinuteBlur}
-            size="2"
-            pattern="\d*"
-            disabled={disabled}
-            aria-describedby={formatDescriptionId}
-          />
-          {showSeconds && (
+      <React.Fragment>
+        <div
+          {...customProps}
+          id={labelId}
+          // All of the sub-fields should be grouped together, so that assistive technologies understand their relationship.
+          //
+          // See also: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_group_role
+          role="group"
+          ref={this.timeInputContainer}
+          className={cx('time-input-container', theme.className)}
+          // This field, the subfields, and the focusable controls should have an accessible label and description.
+          // These are available but not visible because the consumers of this component should decide how to visually
+          // present the label and description based on their use case. For example: an iOS toolbar versus a web-form.
+          //
+          // See also:
+          // - https://www.w3.org/TR/wai-aria-implementation/#mapping_additional_nd
+          // - https://www.w3.org/TR/accname-1.1/
+          aria-label={label || intl.formatMessage({ id: 'Terra.timeInput.defaultLabel' })}
+          aria-describedby={descriptionId}
+        >
+          <div className={timeInputClassNames}>
+            <input
+              // Create a hidden input for storing the name and value attributes to use when submitting the form.
+              // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
+              type="hidden"
+              name={name}
+              value={timeValue}
+            />
+            <VisuallyHiddenText
+              // These are aria-hidden so that they don't get read and then re-read again due to the aria-labelledby
+              // of the component referencing this node.
+              aria-hidden
+              id={hourLabelId}
+              text={intl.formatMessage({
+                id: 'Terra.timeInput.hours',
+                description: 'Informs the user they must use a two-digit hour value.',
+              })}
+            />
+            <Input
+              {...inputAttributes}
+              {...hourAttributes}
+              aria-labelledby={subFieldAriaLabelledBy(hourLabelId)}
+              aria-describedby={hourDescriptionId}
+              refCallback={(inputRef) => {
+                this.hourInput = inputRef;
+                if (refCallback) refCallback(inputRef);
+              }}
+              className={hourClassNames}
+              type="text"
+              value={this.state.hour}
+              name={'terra-time-hour-'.concat(name)}
+              maxLength="2"
+              onChange={this.handleHourChange}
+              onKeyDown={this.handleHourInputKeyDown}
+              onFocus={this.handleHourFocus}
+              onBlur={this.handleHourBlur}
+              size="2"
+              pattern="\d*"
+              disabled={disabled}
+            />
+            <VisuallyHiddenText id={hourDescriptionId} text={intl.formatMessage({ id: 'Terra.timeInput.hourFormat' })} />
+            <span
+              // Elements like this time spacer should not be read by assistive technologies
+              // because they have no meaning when placed in between two sub-fields.
+              aria-hidden
+              className={cx('time-spacer')}
+            >
+              {timeSpacer}
+            </span>
+            <VisuallyHiddenText aria-hidden id={minuteLabelId} text={intl.formatMessage({ id: 'Terra.timeInput.minutes' })} />
+            <Input
+              {...inputAttributes}
+              {...minuteAttributes}
+              refCallback={(inputRef) => { this.minuteInput = inputRef; }}
+              aria-labelledby={subFieldAriaLabelledBy(minuteLabelId)}
+              aria-describedby={minuteDescriptionId}
+              className={minuteClassNames}
+              type="text"
+              value={this.state.minute}
+              name={'terra-time-minute-'.concat(name)}
+              maxLength="2"
+              onChange={this.handleMinuteChange}
+              onKeyDown={this.handleMinuteInputKeyDown}
+              onFocus={this.handleMinuteFocus}
+              onBlur={this.handleMinuteBlur}
+              size="2"
+              pattern="\d*"
+              disabled={disabled}
+            />
+            <VisuallyHiddenText id={minuteDescriptionId} text={intl.formatMessage({ id: 'Terra.timeInput.minuteFormat' })} />
+            {showSeconds && (
+              <React.Fragment>
+                <span
+                  aria-hidden
+                  className={cx('time-spacer')}
+                >
+                  {timeSpacer}
+                </span>
+                <VisuallyHiddenText aria-hidden id={secondLabelId} text={intl.formatMessage({ id: 'Terra.timeInput.seconds' })} />
+                <Input
+                  {...inputAttributes}
+                  {...secondAttributes}
+                  refCallback={(inputRef) => { this.secondInput = inputRef; }}
+                  aria-labelledby={subFieldAriaLabelledBy(secondLabelId)}
+                  aria-describedby={secondDescriptionId}
+                  className={secondClassNames}
+                  type="text"
+                  value={this.state.second}
+                  name={'terra-time-second-'.concat(name)}
+                  maxLength="2"
+                  onChange={this.handleSecondChange}
+                  onKeyDown={this.handleSecondInputKeyDown}
+                  onFocus={this.handleSecondFocus}
+                  onBlur={this.handleSecondBlur}
+                  size="2"
+                  pattern="\d*"
+                  disabled={disabled}
+                />
+                <VisuallyHiddenText id={secondDescriptionId} text={intl.formatMessage({ id: 'Terra.timeInput.secondFormat' })} />
+              </React.Fragment>
+            )}
+          </div>
+          {variantFromLocale === TimeUtil.FORMAT_12_HOUR && (
             <React.Fragment>
-              <span className={cx('time-spacer')}>:</span>
-              <Input
-                {...inputAttributes}
-                {...secondAttributes}
-                refCallback={(inputRef) => { this.secondInput = inputRef; }}
-                aria-label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
-                className={secondClassNames}
-                type="text"
-                value={this.state.second}
-                name={'terra-time-second-'.concat(name)}
-                maxLength="2"
-                onChange={this.handleSecondChange}
-                onKeyDown={this.handleSecondInputKeyDown}
-                onFocus={this.handleSecondFocus}
-                onBlur={this.handleSecondBlur}
-                size="2"
-                pattern="\d*"
-                disabled={disabled}
-                aria-describedby={formatDescriptionId}
-              />
+              <VisuallyHiddenText aria-hidden id={meridianChoiceId} text={intl.formatMessage({ id: 'Terra.timeInput.meridianChoiceGroup' })} />
+              <ButtonGroup
+                // These meridiem buttons should be grouped together so that assistive technologies present them as related.
+                // For example, screen readers will read a group of buttons as "button group, a.m., one of two".
+                role="group"
+                aria-labelledby={subFieldAriaLabelledBy(meridianChoiceId)}
+                selectedKeys={[this.state.meridiem]}
+                onChange={this.handleMeridiemButtonChange}
+                className={cx('meridiem-button-group')}
+              >
+                {/*
+                TODO: give the A.M. and P.M. buttons an accessible name that reflects their grouping as part
+                of the Time Input, such as "<Time Input's Name> <AM>", to help when there are multiple Time Inputs presented at once.
+                 */}
+                <ButtonGroup.Button
+                  key={this.anteMeridiem}
+                  className={anteMeridiemClassNames}
+                  text={this.anteMeridiem}
+                  onBlur={this.handleMeridiemButtonBlur}
+                  onFocus={this.handleMeridiemButtonFocus}
+                  isDisabled={disabled}
+                />
+                <ButtonGroup.Button
+                  key={this.postMeridiem}
+                  className={postMeridiemClassNames}
+                  text={this.postMeridiem}
+                  onBlur={this.handleMeridiemButtonBlur}
+                  onFocus={this.handleMeridiemButtonFocus}
+                  isDisabled={disabled}
+                />
+              </ButtonGroup>
             </React.Fragment>
           )}
+          <p aria-hidden>
+            {showSeconds ? intl.formatMessage({ id: 'Terra.timeInput.timeFormatSecondsLabel' }) : intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })}
+          </p>
+          <TimeInputFullValue
+            // This provides a human readable value to users of assistive technologies.
+            // It will read the initial value, if any, and then any updated value. The full value is
+            // something like "09:22 pm", is localized, and respects the variants.
+            id={descriptionId}
+            className={cx('format-text')}
+            timeInputLabel={label}
+            variant={variantFromLocale}
+            showSeconds={showSeconds}
+            hour={this.state.hour}
+            minute={this.state.minute}
+            second={this.state.second}
+            meridiem={this.state.meridiem}
+          />
         </div>
-        {variantFromLocale === TimeUtil.FORMAT_12_HOUR && (
-          <ButtonGroup selectedKeys={[this.state.meridiem]} onChange={this.handleMeridiemButtonChange} className={cx('meridiem-button-group')}>
-            <ButtonGroup.Button
-              key={this.anteMeridiem}
-              className={anteMeridiemClassNames}
-              text={this.anteMeridiem}
-              onBlur={this.handleMeridiemButtonBlur}
-              onFocus={this.handleMeridiemButtonFocus}
-              isDisabled={disabled}
-            />
-            <ButtonGroup.Button
-              key={this.postMeridiem}
-              className={postMeridiemClassNames}
-              text={this.postMeridiem}
-              onBlur={this.handleMeridiemButtonBlur}
-              onFocus={this.handleMeridiemButtonFocus}
-              isDisabled={disabled}
-            />
-          </ButtonGroup>
-        )}
-        <div id={formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })} ${format}`}>
-          {format}
-        </div>
-      </div>
+      </React.Fragment>
     );
     /* eslint-enable jsx-a11y/no-static-element-interactions */
   }

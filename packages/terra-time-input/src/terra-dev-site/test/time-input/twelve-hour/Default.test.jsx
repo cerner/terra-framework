@@ -16,12 +16,10 @@ class TimeInputDefault extends React.Component {
   render() {
     return (
       <div>
-        <div id="time-input-value">
-          <h3>
-            Time Input:
-            {this.state.input}
-          </h3>
-        </div>
+        <h3 id="time-input-value">
+          Time Input:
+          {this.state.input}
+        </h3>
         <TimeInput
           id="timeInput"
           name="time-input"
