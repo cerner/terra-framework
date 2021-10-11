@@ -56,19 +56,19 @@ const propTypes = {
    */
   name: PropTypes.string.isRequired,
   /**
-   * A callback function to execute when the entire time input component loses focus.
-   * This event does not get triggered when the focus is moved from the hour input to the minute input or meridiem because the focus is still within the main time input component.
-   */
+ * Human-readable name of the time input. Though optional for passivity, you should provide this
+ * if at all possible to increase the accessibility of the field, especially for users using
+ * assistive technologies such as screen readers.
+ *
+ * If not given, the default value will be the localized version of Time Input. It is not recommended
+ * to use the default, as it will not give good context to the user about the intention of the input.
+ *
+ * See also: https://www.w3.org/TR/accname-1.1/#dfn-accessible-name
+ */
   label: PropTypes.string,
   /**
-   * Human-readable name of the time input. Though optional for passivity, you should provide this
-   * if at all possible to increase the accessibility of the field, especially for users using
-   * assistive technologies such as screen readers.
-   *
-   * If not given, the default value will be the localized version of Time Input. It is not recommended
-   * to use the default, as it will not give good context to the user about the intention of the input.
-   *
-   * See also: https://www.w3.org/TR/accname-1.1/#dfn-accessible-name
+   * A callback function to execute when the entire time input component loses focus.
+   * This event does not get triggered when the focus is moved from the hour input to the minute input or meridiem because the focus is still within the main time input component.
    */
   onBlur: PropTypes.func,
   /**
@@ -126,7 +126,6 @@ const defaultProps = {
   showSeconds: false,
   value: undefined,
   variant: TimeUtil.FORMAT_24_HOUR,
-  label: 'Time Input', // TODO: i18n this. But how, if intl is a prop?
 };
 
 class TimeInput extends React.Component {
@@ -782,7 +781,7 @@ class TimeInput extends React.Component {
           // See also:
           // - https://www.w3.org/TR/wai-aria-implementation/#mapping_additional_nd
           // - https://www.w3.org/TR/accname-1.1/
-          aria-label={label}
+          aria-label={label || intl.formatMessage({ id: 'Terra.timeInput.defaultLabel' })}
           aria-describedby={descriptionId}
         >
           <div className={timeInputClassNames}>
@@ -922,7 +921,7 @@ class TimeInput extends React.Component {
               </ButtonGroup>
             </React.Fragment>
           )}
-          <p aria-hidden className={cx('format-text')}>
+          <p aria-hidden>
             {showSeconds ? intl.formatMessage({ id: 'Terra.timeInput.timeFormatSecondsLabel' }) : intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })}
           </p>
           <TimeInputFullValue
@@ -938,7 +937,6 @@ class TimeInput extends React.Component {
             minute={this.state.minute}
             second={this.state.second}
             meridiem={this.state.meridiem}
-            timeInputName={label}
           />
         </div>
       </React.Fragment>
