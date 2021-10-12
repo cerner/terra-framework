@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.3.0 - (October 12, 2021)
+
 * Added
   * Migrated doc from terra-brand-footer.
 
