@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import BrandFooter from '../../../BrandFooter';
+import BrandFooter from 'terra-brand-footer';
 import styles from './BrandFooterTestCommon.module.scss';
 
 const cx = classNames.bind(styles);
@@ -9,6 +9,7 @@ const cx = classNames.bind(styles);
 export default () => (
   <div id="wrapper">
     <BrandFooter
+      isVertical={false}
       sections={[
         {
           links: [

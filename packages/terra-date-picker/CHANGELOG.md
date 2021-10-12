@@ -4,6 +4,8 @@
 
 * Added
   * Added package json lint test.
+* Changed
+  * Upgrade focus-trap-react to version ^8.0.0.
 
 ## 4.66.0 - (September 20, 2021)
 

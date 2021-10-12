@@ -4,6 +4,8 @@
 
 * Added
   * Added package json lint test.
+* Changed
+  * Migrated doc to terra-framework-docs.
 
 ## 3.8.0 - (September 20, 2021)
 
