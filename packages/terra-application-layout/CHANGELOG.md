@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.60.0 - (October 12, 2021)
+
 * Changed
   * Increased timeout for redirecting url.
 
