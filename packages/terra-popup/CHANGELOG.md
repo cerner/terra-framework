@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.58.0 - (October 14, 2021)
+
+* Fixed
+  * Reverted focus-trap-react upgrade due to passivity concerns
+
 ## 6.57.0 - (October 12, 2021)
 
 * Changed
