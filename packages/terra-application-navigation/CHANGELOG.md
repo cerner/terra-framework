@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.57.0 - (October 14, 2021)
+
 * Fixed
   * Reverted focus-trap-react upgrade due to passivity concerns
 
