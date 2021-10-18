@@ -808,7 +808,8 @@ class TimeInput extends React.Component {
             <Input
               {...inputAttributes}
               {...hourAttributes}
-              aria-labelledby={subFieldAriaLabelledBy(hourLabelId)}
+              aria-labelledby={hourLabelId}
+              // aria-labelledby={subFieldAriaLabelledBy(hourLabelId)}
               aria-describedby={hourDescriptionId}
               refCallback={(inputRef) => {
                 this.hourInput = inputRef;
@@ -841,7 +842,8 @@ class TimeInput extends React.Component {
               {...inputAttributes}
               {...minuteAttributes}
               refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-              aria-labelledby={subFieldAriaLabelledBy(minuteLabelId)}
+              aria-labelledby={minuteLabelId}
+              // aria-labelledby={subFieldAriaLabelledBy(minuteLabelId)}
               aria-describedby={minuteDescriptionId}
               className={minuteClassNames}
               type="text"
@@ -870,7 +872,8 @@ class TimeInput extends React.Component {
                   {...inputAttributes}
                   {...secondAttributes}
                   refCallback={(inputRef) => { this.secondInput = inputRef; }}
-                  aria-labelledby={subFieldAriaLabelledBy(secondLabelId)}
+                  // aria-labelledby={subFieldAriaLabelledBy(secondLabelId)}
+                  aria-labelledby={secondLabelId}
                   aria-describedby={secondDescriptionId}
                   className={secondClassNames}
                   type="text"
@@ -895,8 +898,9 @@ class TimeInput extends React.Component {
               <ButtonGroup
                 // These meridiem buttons should be grouped together so that assistive technologies present them as related.
                 // For example, screen readers will read a group of buttons as "button group, a.m., one of two".
-                role="group"
-                aria-labelledby={subFieldAriaLabelledBy(meridianChoiceId)}
+                // role="group"
+                role="radiogroup"
+                // aria-labelledby={subFieldAriaLabelledBy(meridianChoiceId)}
                 selectedKeys={[this.state.meridiem]}
                 onChange={this.handleMeridiemButtonChange}
                 className={cx('meridiem-button-group')}
@@ -912,6 +916,7 @@ class TimeInput extends React.Component {
                   onBlur={this.handleMeridiemButtonBlur}
                   onFocus={this.handleMeridiemButtonFocus}
                   isDisabled={disabled}
+                  role="radio"
                 />
                 <ButtonGroup.Button
                   key={this.postMeridiem}
@@ -920,13 +925,14 @@ class TimeInput extends React.Component {
                   onBlur={this.handleMeridiemButtonBlur}
                   onFocus={this.handleMeridiemButtonFocus}
                   isDisabled={disabled}
+                  role="radio"
                 />
               </ButtonGroup>
             </React.Fragment>
           )}
-          <p aria-hidden>
+          {/* <p aria-hidden>
             {showSeconds ? intl.formatMessage({ id: 'Terra.timeInput.timeFormatSecondsLabel' }) : intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })}
-          </p>
+          </p> */}
           <TimeInputFullValue
             // This provides a human readable value to users of assistive technologies.
             // It will read the initial value, if any, and then any updated value. The full value is
