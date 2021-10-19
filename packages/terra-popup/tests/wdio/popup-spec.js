@@ -84,6 +84,13 @@ Terra.describeViewports('Popup', ['medium'], () => {
       $('.test-content').waitForDisplayed();
       Terra.validates.element('bounded width', { selector });
     });
+
+    it('validates focus to be on first interactable element', () => {
+      browser.url('/raw/tests/terra-popup/popup/bounded-popup-with-interactable-children');
+      $('#bounded-button').click();
+      $('.test-content').waitForDisplayed();
+      Terra.validates.element('first interactable child focused', { selector });
+    });
   });
 
   describe('Popup inside a modal', () => {
