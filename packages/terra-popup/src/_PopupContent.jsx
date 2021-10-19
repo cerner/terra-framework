@@ -107,13 +107,25 @@ class PopupContent extends React.Component {
               useText = text.join('');
             }
             return (
-              <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text={useText} />
+              <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text={useText} tabIndex={0} />
             );
           }}
         </FormattedMessage>
       </div>
     );
-    return <ContentContainer header={header} fill>{children}</ContentContainer>;
+
+    const UpdatedChildren = children.map(child => React.cloneElement(child));
+    UpdatedChildren.every((child, index) => {
+      if ((['a', 'button', 'input', 'textarea', 'select', 'details'].includes(child.type) || Object.keys(child.props).includes('tabIndex')) && child.props.tabIndex !== '-1') {
+        if (!child.props.disabled && !child.props.hidden) {
+          UpdatedChildren[index] = React.cloneElement(child, { autoFocus: true });
+          return false;
+        }
+      }
+      return true;
+    });
+
+    return <ContentContainer header={header} fill>{UpdatedChildren}</ContentContainer>;
   }
 
   static isBounded(value, maxValue) {

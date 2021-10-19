@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated popup to have focus on first interactable child when opened.
+
 ## 6.58.0 - (October 14, 2021)
 
 * Fixed
