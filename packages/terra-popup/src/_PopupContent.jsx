@@ -107,7 +107,7 @@ class PopupContent extends React.Component {
               useText = text.join('');
             }
             return (
-              <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text={useText} tabIndex={0} />
+              <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text={useText} />
             );
           }}
         </FormattedMessage>
