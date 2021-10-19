@@ -764,7 +764,7 @@ class TimeInput extends React.Component {
     // Granted, we don't visually display these labels, but in theory a user w/ a
     // speech input device would be able to index each component using their
     // device. Several browser plug-ins also provide do that for us.
-    const subFieldAriaLabelledBy = (subfieldLabelId) => `${labelId} ${subfieldLabelId}`;
+    // const subFieldAriaLabelledBy = (subfieldLabelId) => `${labelId} ${subfieldLabelId}`;
 
     return (
       <React.Fragment>
