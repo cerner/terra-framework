@@ -8,6 +8,7 @@ import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import FocusTrap from 'focus-trap-react';
 import Hookshot from 'terra-hookshot';
+import { tabbable } from 'tabbable';
 import styles from './PopupContent.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -114,18 +115,7 @@ class PopupContent extends React.Component {
       </div>
     );
 
-    const UpdatedChildren = children.map(child => React.cloneElement(child));
-    UpdatedChildren.every((child, index) => {
-      if ((['a', 'button', 'input', 'textarea', 'select', 'details'].includes(child.type) || Object.keys(child.props).includes('tabIndex')) && child.props.tabIndex !== '-1') {
-        if (!child.props.disabled && !child.props.hidden) {
-          UpdatedChildren[index] = React.cloneElement(child, { autoFocus: true });
-          return false;
-        }
-      }
-      return true;
-    });
-
-    return <ContentContainer header={header} fill>{UpdatedChildren}</ContentContainer>;
+    return <ContentContainer header={header} fill>{children}</ContentContainer>;
   }
 
   static isBounded(value, maxValue) {
@@ -149,11 +139,26 @@ class PopupContent extends React.Component {
   constructor(props) {
     super(props);
     this.handleOnResize = this.handleOnResize.bind(this);
+    this.popupContentRef = React.createRef();
   }
 
   componentDidMount() {
     // Value used to verify horizontal resize.
     this.windowWidth = window.innerWidth;
+  }
+
+  componentDidUpdate() {
+    if (this.popupContentRef.current) {
+      const mainContentFocusableChildren = tabbable(this.popupContentRef.current.querySelector("[class*='main']"));
+      if (mainContentFocusableChildren && mainContentFocusableChildren[0]) {
+        mainContentFocusableChildren[0].focus();
+      } else {
+        const headerContentFocusableChildren = tabbable(this.popupContentRef.current.querySelector("[class*='header']"));
+        if (headerContentFocusableChildren && headerContentFocusableChildren[0]) {
+          headerContentFocusableChildren[0].focus();
+        }
+      }
+    }
   }
 
   static getContentStyle(height, maxHeight, width, maxWidth, isHeightAutomatic, isWidthAutomatic) {
@@ -252,7 +257,7 @@ class PopupContent extends React.Component {
           >
             {arrowContent}
             {/* eslint-disable-next-line react/forbid-dom-props */}
-            <div {...heightData} {...widthData} className={innerClassNames} style={contentStyle}>
+            <div {...heightData} {...widthData} ref={this.popupContentRef} className={innerClassNames} style={contentStyle}>
               {content}
             </div>
           </Hookshot.Content>

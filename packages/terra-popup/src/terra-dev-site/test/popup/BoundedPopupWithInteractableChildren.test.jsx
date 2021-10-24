@@ -60,7 +60,9 @@ class BoundedPopup extends React.Component {
           targetRef={this.getButtonNode}
         >
           <p placeholder="Popup Content">Popup Content</p>
-          <input placeholder="1st childPopup Content" aria-label="1st child" />
+          <div>
+            <input placeholder="1st childPopup Content" aria-label="1st child" />
+          </div>
           <input placeholder="2nd child Popup Content" aria-label="2nd child" />
         </Popup>
         <button type="button" id="bounded-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
