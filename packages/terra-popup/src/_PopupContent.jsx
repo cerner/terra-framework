@@ -148,14 +148,19 @@ class PopupContent extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.popupContentRef.current) {
-      const mainContentFocusableChildren = tabbable(this.popupContentRef.current.querySelector("[class*='main']"));
-      if (mainContentFocusableChildren && mainContentFocusableChildren[0]) {
-        mainContentFocusableChildren[0].focus();
-      } else {
-        const headerContentFocusableChildren = tabbable(this.popupContentRef.current.querySelector("[class*='header']"));
+    if (this.popupContentRef && this.popupContentRef.current) {
+      const mainContent = this.popupContentRef.current.querySelector("[class*='main']");
+      const headerContent = this.popupContentRef.current.querySelector("[class*='header']");
+      if (headerContent) {
+        const headerContentFocusableChildren = tabbable(headerContent);
         if (headerContentFocusableChildren && headerContentFocusableChildren[0]) {
           headerContentFocusableChildren[0].focus();
+        }
+      }
+      if (mainContent) {
+        const mainContentFocusableChildren = tabbable(mainContent);
+        if (mainContentFocusableChildren && mainContentFocusableChildren[0]) {
+          mainContentFocusableChildren[0].focus();
         }
       }
     }
