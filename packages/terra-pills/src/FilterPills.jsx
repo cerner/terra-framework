@@ -93,6 +93,9 @@ const FilterPills = (props) => {
   const [rollUpCount, setRollUpCount] = useState(React.Children.count(children));
   const isPillDeleted = useRef(false);
   const [isCollapsed, setIsCollapsed] = useState(isCollapsible);
+  const [pillRemoved, setIsPillRemoved] = useState(false);
+  const removedLabel = useRef();
+  const [showRollupPillInteraction, setShowRollupPillInteraction] = useState(false);
 
   const generateRollUp = useCallback(() => {
     const startIndex = PillsUtils.handleRollUp(filterPillsRef);
@@ -253,6 +256,8 @@ const FilterPills = (props) => {
 
   const focusNodeAfterDelete = (pills) => {
     if (pills.length - 1 < React.Children.count(children)) {
+      setIsPillRemoved(true);
+      removedLabel.current = pills[focusNode.current].innerText;
       setTabIndex('-1');
       if (focusNode.current > 0) {
         focusNode.current -= 1;
@@ -265,6 +270,8 @@ const FilterPills = (props) => {
   const handlePillListKeyDown = (event) => {
     const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
     const rollUpPill = filterPillsRef.current.querySelector('[data-terra-rollup-pill]');
+    setIsPillRemoved(false);
+    setShowRollupPillInteraction(false);
 
     switch (event.keyCode) {
       case KEY_RIGHT:
@@ -346,6 +353,7 @@ const FilterPills = (props) => {
     }
     if (!isCollapsed) { // lp052179
       focusNode.current = 0;
+      setShowRollupPillInteraction(false);
     }
     setIsCollapsed(!isCollapsed);
   };
@@ -364,11 +372,25 @@ const FilterPills = (props) => {
     customProps.className,
   );
 
+  const pillInteractionHintID = 'terra-pills-interaction-hint';
+  const pillGroupInteractionHintID = 'terra-pills-group-interaction-hint';
+  let removedPillInteractionHint = '';
+  const pillGroupAriaDescribedBy = ariaDescribedBy ? `${ariaDescribedBy} ${pillGroupInteractionHintID}` : pillGroupInteractionHintID;
+  let pillGroupInteractionHint = intl.formatMessage({ id: 'Terra.pills.hint.pillList' }, { numberOfPills: React.Children.count(children) });
+  if (isCollapsible && (rollUpCount > 0) && isCollapsed) {
+    pillGroupInteractionHint += `, ${intl.formatMessage({ id: 'Terra.pills.hint.rollupNotVisible' }, { pillsNotVisibleCount: rollUpCount })}`;
+  } else if (isCollapsible && !isCollapsed && showRollupPillInteraction) {
+    removedPillInteractionHint = 'hidden items are displayed now...';
+  }
+  if (pillRemoved) {
+    removedPillInteractionHint = `${removedLabel.current} was removed...`;
+  }
+
   const renderChildren = (items) => {
     const pills = React.Children.map(items, (pill) => {
       if (React.isValidElement(pill)) {
         return React.cloneElement(pill, {
-          onRemove: handleOnRemove, onSelect: handleOnPillSelect,
+          onRemove: handleOnRemove, onSelect: handleOnPillSelect, pillInteractionHintID,
         });
       }
       return undefined;
@@ -379,13 +401,6 @@ const FilterPills = (props) => {
     return reducedArray;
   };
 
-  const pillGroupInteractionHintID = 'terra-pills-group-interaction-hint';
-  const pillGroupAriaDescribedBy = ariaDescribedBy ? `${ariaDescribedBy} ${pillGroupInteractionHintID}` : pillGroupInteractionHintID;
-  let pillGroupInteractionHint = intl.formatMessage({ id: 'Terra.pills.hint.pillList' }, { numberOfPills: React.Children.count(children) });
-  if (isCollapsible && (rollUpCount > 0)) {
-    pillGroupInteractionHint += `, ${intl.formatMessage({ id: 'Terra.pills.hint.rollupNotVisible' }, { pillsNotVisibleCount: rollUpCount })}`;
-  }
-
   return (
     <div
       {...customProps}
@@ -393,14 +408,19 @@ const FilterPills = (props) => {
       aria-label={!ariaLabelledBy ? ariaLabel : undefined}
       aria-labelledby={ariaLabelledBy}
       aria-describedby={pillGroupAriaDescribedBy}
-      aria-live="polite"
-      aria-relevant="removals"
       className={pillListClassNames}
       ref={filterPillsRef}
       role="list"
       tabIndex={containerTabindex}
     >
       <VisuallyHiddenText
+        aria-live="assertive"
+        id={pillInteractionHintID}
+        text={removedPillInteractionHint}
+        aria-hidden="true"
+      />
+      <VisuallyHiddenText
+        aria-live="assertive"
         id={pillGroupInteractionHintID}
         text={pillGroupInteractionHint}
         aria-hidden="true"

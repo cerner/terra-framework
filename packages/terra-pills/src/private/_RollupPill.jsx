@@ -59,8 +59,8 @@ const RollUpPill = (props) => {
     rollUpPillRef.current.setAttribute('data-terra-rollup-pill-show-focus-styles', 'false');
   };
 
-  const rollUpLabel = isCollapsed && rollupCount > 0 ? intl.formatMessage({ id: 'Terra.pills.label.rollupPill' }, { pillsNotVisibleCount: rollupCount }) : 'Show Less';
-
+  const rollUpLabel = isCollapsed && rollupCount > 0 ? intl.formatMessage({ id: 'Terra.pills.label.rollupPill' }, { pillsNotVisibleCount: rollupCount }) : intl.formatMessage({ id: 'Terra.pills.label.showLess' });
+  const rollUpHint = isCollapsed ? intl.formatMessage({ id: 'Terra.pills.hint.rollupPill' }, { pillsNotVisibleCount: rollupCount }) : intl.formatMessage({ id: 'Terra.pills.hint.showLess' });
   return (
     <div
       role="listitem"
@@ -81,7 +81,7 @@ const RollUpPill = (props) => {
       >
         <span className={cx('rollup-pill-label')}>{rollUpLabel}</span>
       </button>
-      <VisuallyHiddenText id="rollup-pill-hint" text={intl.formatMessage({ id: 'Terra.pills.hint.rollupPill' }, { pillsNotVisibleCount: rollupCount })} aria-hidden="true" />
+      <VisuallyHiddenText id="rollup-pill-hint" text={rollUpHint} aria-hidden="true" />
     </div>
   );
 };

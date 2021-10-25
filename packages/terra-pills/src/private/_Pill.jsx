@@ -53,12 +53,17 @@ const propTypes = {
    * to be used in addition with a popup.
    */
   title: PropTypes.string,
+  /**
+   * aria-labelledBy Id for when a pill is removed.
+   */
+  pillInteractionHintID: PropTypes.string,
 };
 
 const defaultProps = {
   onRemove: undefined,
   pillKey: undefined,
   title: undefined,
+  pillInteractionHintID: '',
 };
 
 const Pill = (props) => {
@@ -71,6 +76,7 @@ const Pill = (props) => {
     onRemove,
     pillKey,
     title,
+    pillInteractionHintID,
     ...customProps
   } = props;
 
@@ -234,7 +240,7 @@ const Pill = (props) => {
         className={pillClassNames}
         ref={pillRef}
         role="text" // Prevent VoiceOver from announcing as "group" https://dequeuniversity.com/rules/axe/4.2/aria-text
-        aria-describedby={`interaction-hint-${id}`}
+        aria-labelledby={`${pillInteractionHintID} interaction-hint-${id}`}
         data-terra-pills-show-focus-styles
         data-terra-pill
       >
@@ -246,7 +252,7 @@ const Pill = (props) => {
         </span>
       </div>
       {pillInteraction.isRemovable && renderRemoveButton()}
-      {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={pillInteractionHint} aria-hidden="true" />}
+      {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={` ${label} ${pillInteractionHint}`} aria-hidden="true" />}
     </>
   );
   /* eslint-enable jsx-a11y/aria-role */
