@@ -94,13 +94,13 @@ const propTypes = {
    */
   onClickOutside: PropTypes.func,
   /**
-   * A callback function to execute when picker is dismissed. onRequestClose(event)
-   */
-  onRequestClose: PropTypes.func,
-  /**
    * A callback function triggered when the date input, hour input, or minute input receives focus.
    */
   onFocus: PropTypes.func,
+  /**
+   * A callback function to execute when picker is dismissed. onRequestClose(event)
+   */
+  onRequestClose: PropTypes.func,
   /**
    * A callback function to execute when a selection is made in the date picker.
    * The first parameter is the event. The second parameter is the selected input value in ISO format.
@@ -284,14 +284,14 @@ class DateTimePicker extends React.Component {
   }
 
   handleDateChange(event, date) {
-    if (event.type === 'change') {
-      this.dateValue = event.target.value;
-    }
-
     let updatedDateTime;
     const formattedDate = DateUtil.formatISODate(date, 'YYYY-MM-DD');
     const isDateValid = DateUtil.isValidDate(formattedDate, 'YYYY-MM-DD');
     const isTimeValid = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
+
+    if (isDateValid) {
+      this.dateValue = DateUtil.formatISODate(date, this.state.dateFormat);
+    }
 
     if (isDateValid) {
       const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateTimeUtils.createSafeDate(formattedDate, this.initialTimeZone);
@@ -309,25 +309,11 @@ class DateTimePicker extends React.Component {
     } else {
       this.setState({ dateTime: updatedDateTime });
     }
-
-    if (isDateValid) {
-      // Allows time for focus-trap to release focus on the picker before shifting focus to the hour input.
-      setTimeout(() => {
-        /*
-         * Make sure the reference to hourInput still exists before calling focus because it is possible that it is now
-         * nullified after the 100 ms timeout due to a force remount of this component with a new `key` prop value.
-         * Reference https://github.com/cerner/terra-framework/issues/1086
-         */
-        if (this.hourInput) {
-          this.hourInput.focus();
-        }
-      }, 100);
-    }
   }
 
-  handleDateChangeRaw(event, date) {
-    this.dateValue = event.target.value;
-    this.handleChangeRaw(event, date);
+  handleDateChangeRaw(event, value) {
+    this.dateValue = value;
+    this.handleChangeRaw(event, value);
   }
 
   handleTimeChange(event, time) {
@@ -381,7 +367,7 @@ class DateTimePicker extends React.Component {
     // This allows a user to use TimeClarification before onChange is fired.
     if (this.props.onChange && (this.state.isAmbiguousTime || !DateTimeUtils.checkAmbiguousTime(newDateTime))) {
       const metadata = this.getMetadata(newDateTime);
-      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '', metadata);
+      this.props.onChange(event, newDateTime?.isValid() ? newDateTime.format() : '', metadata);
     }
   }
 
@@ -442,14 +428,14 @@ class DateTimePicker extends React.Component {
       });
       if (this.props.onChange) {
         const metadata = this.getMetadata(newDateTime);
-        this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '', metadata);
+        this.props.onChange(event, newDateTime?.isValid() ? newDateTime.format() : '', metadata);
       }
     } else if (this.props.onChange && !this.wasOffsetButtonClicked) {
       // This fires onChange if the TimeClarification dialog was launched without using the OffsetButton.
       // If the user clicks the OffsetButton, onChange should have already been fired and does not need to be fired
       // again (unless they change the DateTime).
       const metadata = this.getMetadata(newDateTime);
-      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '', metadata);
+      this.props.onChange(event, newDateTime?.isValid() ? newDateTime.format() : '', metadata);
     }
 
     // When the Time Clarification dialog was launched _without_ using the Offset button, 'blur' event
@@ -472,14 +458,14 @@ class DateTimePicker extends React.Component {
       });
       if (this.props.onChange) {
         const metadata = this.getMetadata(newDateTime);
-        this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '', metadata);
+        this.props.onChange(event, newDateTime?.isValid() ? newDateTime.format() : '', metadata);
       }
     } else if (this.props.onChange && !this.wasOffsetButtonClicked) {
       // This fires onChange if the TimeClarification dialog was launched without using the OffsetButton.
       // If the user clicks the OffsetButton, onChange should have already been fired and does not need to be fired
       // again (unless they change the DateTime).
       const metadata = this.getMetadata(newDateTime);
-      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '', metadata);
+      this.props.onChange(event, newDateTime?.isValid() ? newDateTime.format() : '', metadata);
     }
 
     // When the Time Clarification dialog was launched _without_ using the Offset button, 'blur' event
@@ -624,8 +610,8 @@ class DateTimePicker extends React.Component {
       onChange,
       onChangeRaw,
       onClickOutside,
-      onRequestClose,
       onFocus,
+      onRequestClose,
       onSelect,
       maxDate,
       minDate,
@@ -654,7 +640,7 @@ class DateTimePicker extends React.Component {
           data-terra-date-time-input-hidden
           type="hidden"
           name={name}
-          value={dateTime && dateTime.isValid() ? dateTime.format() : ''}
+          value={dateTime?.isValid() ? dateTime.format() : ''}
         />
 
         <div className={cx('date-facade')}>

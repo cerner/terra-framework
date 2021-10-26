@@ -10,6 +10,8 @@
 ## 4.67.0 - (October 12, 2021)
 
 * Changed
+  * Date input split into 3 distinct inputs that mask the previous single input.
+  * Updated `terra-dev-site` examples to use hooks.
   * Upgrade focus-trap-react to version ^8.0.0.
 
 ## 4.66.0 - (September 20, 2021)

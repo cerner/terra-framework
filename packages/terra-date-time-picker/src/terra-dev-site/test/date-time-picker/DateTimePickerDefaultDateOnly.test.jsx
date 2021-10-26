@@ -1,10 +1,10 @@
 import React from 'react';
 import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTemplate';
 
-const DateTimePickerExample = () => (
+const DateTimePickerDefaultDateOnly = () => (
   <DateTimePickerExampleTemplate
     value="2017-08-08"
   />
 );
 
-export default DateTimePickerExample;
+export default DateTimePickerDefaultDateOnly;
