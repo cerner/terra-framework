@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated tests due to rounding differences in terra-abstract-modal
+
 ## 3.71.0 - (October 14, 2021)
 
 * Changed
