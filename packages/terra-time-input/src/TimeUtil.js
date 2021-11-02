@@ -255,6 +255,20 @@ class TimeUtil {
   }
 
   /**
+ * Ensures the passed in value is a valid time in the 12-hour HH:mm format or 12-hour HH:mm:ss format if hasSeconds is true
+ * @param {string} value The time to validate
+ * @param {boolean} hasSeconds The time will be required to have seconds if this is true
+ */
+  static validate12HourTime(value, hasSeconds) {
+    // Including seconds in the value is required if seconds are shown
+    if (hasSeconds) {
+      return /^(0[1-9]|1[0-2]):[0-5][0-9]:[0-5][0-9]$/.test(value);
+    }
+
+    return /^(0[0-9]|1[0-9]):[0-5][0-9]$/.test(value);
+  }
+
+  /**
    * Determines if the locale can use the 12-hour time notation. Default to use the 24-hour variant if the locale does not use it.
    * @param {Object} props - The component props.
    * @return {String} FORMAT_24_HOUR if the locale does not use the 12-hour notation. Otherwise, the current variant prop.

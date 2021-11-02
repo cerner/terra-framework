@@ -11,8 +11,8 @@
   "Terra.timeInput.secondFormat": "'Format: ss'",
   "Terra.timeInput.timeFormatLabel": "Time Format: hh:mm",
   "Terra.timeInput.timeFormatSecondsLabel": "Time Format: hh:mm:ss",
-  "Terra.timeInput.fullValueLabel": "{timeInputLabel} full value: {hour}:{minute}",
-  "Terra.timeInput.fullValueLabelWithSeconds": "{timeInputLabel} full value: {hour}:{minute}:{second}",
-  "Terra.timeInput.fullValueLabelTwelveHour": "{timeInputLabel} full value: {hour}:{minute} {meridiem}",
-  "Terra.timeInput.fullValueLabelTwelveHourWithSeconds": "{timeInputLabel} full value: {hour}:{minute}:{second} {meridiem}"
+  "Terra.timeInput.localTime": "{timeInputLabel} full value: {hour}:{minute}",
+  "Terra.timeInput.localTimeWithSeconds": "{timeInputLabel} full value: {hour}:{minute}:{second}",
+  "Terra.timeInput.localTimeTwelveHour": "{timeInputLabel} full value: {hour}:{minute} {meridiem}",
+  "Terra.timeInput.localTimeTwelveHourWithSeconds": "{timeInputLabel} full value: {hour}:{minute}:{second} {meridiem}"
 }

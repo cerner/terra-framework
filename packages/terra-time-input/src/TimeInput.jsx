@@ -9,11 +9,11 @@ import { injectIntl } from 'react-intl';
 import uuidv4 from 'uuid/v4';
 
 import * as KeyCode from 'keycode-js';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
 import TimeUtil from './TimeUtil';
 import styles from './TimeInput.module.scss';
 
-import TimeInputFullValue from './_TimeInputFullValue';
+import AccessibleValue from './_AccessibleValue';
+import TimeSpacer from './_TimeSpacer';
 
 const cx = classNamesBind.bind(styles);
 
@@ -157,6 +157,7 @@ class TimeInput extends React.Component {
     this.handleHourInputKeyDown = this.handleHourInputKeyDown.bind(this);
     this.handleMinuteInputKeyDown = this.handleMinuteInputKeyDown.bind(this);
     this.handleSecondInputKeyDown = this.handleSecondInputKeyDown.bind(this);
+    this.handleMeridiemKeyDown = this.handleMeridiemKeyDown.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleHourFocus = this.handleHourFocus.bind(this);
     this.handleMinuteFocus = this.handleMinuteFocus.bind(this);
@@ -547,6 +548,20 @@ class TimeInput extends React.Component {
     }
   }
 
+  handleMeridiemKeyDown(event) {
+    if ([KeyCode.KEY_UP, KeyCode.KEY_LEFT].includes(event.keyCode)) {
+      if (this.state.meridiem === this.postMeridiem) {
+        this.handleValueChange(event, TimeUtil.inputType.MERIDIEM, '', this.anteMeridiem);
+        this.anteMeridiemButton.focus();
+      }
+    } else if ([KeyCode.KEY_DOWN, KeyCode.KEY_RIGHT].includes(event.keyCode)) {
+      if (this.state.meridiem === this.anteMeridiem) {
+        this.handleValueChange(event, TimeUtil.inputType.MERIDIEM, '', this.postMeridiem);
+        this.postMeridiemButton.focus();
+      }
+    }
+  }
+
   handleValueChange(event, type, timeValue, meridiem, moveFocusOnChange) {
     if (type === TimeUtil.inputType.HOUR) {
       this.setState({
@@ -559,10 +574,14 @@ class TimeInput extends React.Component {
         minute: timeValue,
         minuteInitialFocused: false,
       }, moveFocusOnChange);
-    } else {
+    } else if (type === TimeUtil.inputType.SECOND) {
       this.setState({
         second: timeValue,
         secondInitialFocused: false,
+      }, moveFocusOnChange);
+    } else if (type === TimeUtil.inputType.MERIDIEM) {
+      this.setState({
+        meridiem,
       }, moveFocusOnChange);
     }
 
@@ -711,6 +730,52 @@ class TimeInput extends React.Component {
       }
     }
 
+    // Construct the value we'll supply to assistive tech, like screen readers.
+    //
+    // We only want to set this value if the full time has been populated.
+    let accessibleValue;
+
+    const completeTime = () => {
+      if (this.state.hour.length < 2 || this.state.minute.length < 2) {
+        return false;
+      }
+      if (showSeconds && this.state.second.length < 2) {
+        return false;
+      }
+
+      return true;
+    };
+
+    if (completeTime() && variant === TimeUtil.FORMAT_12_HOUR && showSeconds) {
+      accessibleValue = intl.formatMessage({ id: 'Terra.timeInput.localTimeTwelveHourWithSeconds' }, {
+        label,
+        hour: this.state.hour,
+        minute: this.state.minute,
+        second: this.state.second,
+        meridiem: this.state.meridiem,
+      });
+    } else if (completeTime() && variant === TimeUtil.FORMAT_12_HOUR) {
+      accessibleValue = intl.formatMessage({ id: 'Terra.timeInput.localTimeTwelveHour' }, {
+        label,
+        hour: this.state.hour,
+        minute: this.state.minute,
+        meridiem: this.state.meridiem,
+      });
+    } else if (completeTime() && variant === TimeUtil.FORMAT_24_HOUR && showSeconds) {
+      accessibleValue = intl.formatMessage({ id: 'Terra.timeInput.localTimeWithSeconds' }, {
+        label,
+        hour: this.state.hour,
+        minute: this.state.minute,
+        second: this.state.second,
+      });
+    } else if (completeTime() && variant === TimeUtil.FORMAT_24_HOUR) {
+      accessibleValue = intl.formatMessage({ id: 'Terra.timeInput.localTime' }, {
+        label,
+        hour: this.state.hour,
+        minute: this.state.minute,
+      });
+    }
+
     const theme = this.context;
 
     const timeInputClassNames = classNames(cx(
@@ -751,39 +816,14 @@ class TimeInput extends React.Component {
     const secondDescriptionId = `terra-time-input-second-description-${this.uuid}`;
     const meridianChoiceId = `terra-time-input-meridiem-choice-label-${this.uuid}`;
 
-    const timeSpacer = intl.formatMessage({
-      id: 'Terra.timeInput.timeSpacer',
-      defaultMessage: ':',
-      description: 'The symbol between hours and minutes, or between minutes and seconds.',
-    });
-
-    // Returns an aria-labelledby value reflecting the nested components.
-    // This structure is critical for speech input users who might need to jump
-    // directly into a subfield, like "type '09' in Birth Time Hour".
-    //
-    // Granted, we don't visually display these labels, but in theory a user w/ a
-    // speech input device would be able to index each component using their
-    // device. Several browser plug-ins also provide do that for us.
-    const subFieldAriaLabelledBy = (subfieldLabelId) => `${labelId} ${subfieldLabelId}`;
-
     return (
-      <React.Fragment>
+      <>
         <div
           {...customProps}
           id={labelId}
-          // All of the sub-fields should be grouped together, so that assistive technologies understand their relationship.
-          //
-          // See also: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_group_role
           role="group"
           ref={this.timeInputContainer}
           className={cx('time-input-container', theme.className)}
-          // This field, the subfields, and the focusable controls should have an accessible label and description.
-          // These are available but not visible because the consumers of this component should decide how to visually
-          // present the label and description based on their use case. For example: an iOS toolbar versus a web-form.
-          //
-          // See also:
-          // - https://www.w3.org/TR/wai-aria-implementation/#mapping_additional_nd
-          // - https://www.w3.org/TR/accname-1.1/
           aria-label={label || intl.formatMessage({ id: 'Terra.timeInput.defaultLabel' })}
           aria-describedby={descriptionId}
         >
@@ -795,20 +835,10 @@ class TimeInput extends React.Component {
               name={name}
               value={timeValue}
             />
-            <VisuallyHiddenText
-              // These are aria-hidden so that they don't get read and then re-read again due to the aria-labelledby
-              // of the component referencing this node.
-              aria-hidden
-              id={hourLabelId}
-              text={intl.formatMessage({
-                id: 'Terra.timeInput.hours',
-                description: 'Informs the user they must use a two-digit hour value.',
-              })}
-            />
             <Input
               {...inputAttributes}
               {...hourAttributes}
-              aria-labelledby={subFieldAriaLabelledBy(hourLabelId)}
+              aria-labelledby={hourLabelId}
               aria-describedby={hourDescriptionId}
               refCallback={(inputRef) => {
                 this.hourInput = inputRef;
@@ -827,21 +857,12 @@ class TimeInput extends React.Component {
               pattern="\d*"
               disabled={disabled}
             />
-            <VisuallyHiddenText id={hourDescriptionId} text={intl.formatMessage({ id: 'Terra.timeInput.hourFormat' })} />
-            <span
-              // Elements like this time spacer should not be read by assistive technologies
-              // because they have no meaning when placed in between two sub-fields.
-              aria-hidden
-              className={cx('time-spacer')}
-            >
-              {timeSpacer}
-            </span>
-            <VisuallyHiddenText aria-hidden id={minuteLabelId} text={intl.formatMessage({ id: 'Terra.timeInput.minutes' })} />
+            <TimeSpacer />
             <Input
               {...inputAttributes}
               {...minuteAttributes}
               refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-              aria-labelledby={subFieldAriaLabelledBy(minuteLabelId)}
+              aria-labelledby={minuteLabelId}
               aria-describedby={minuteDescriptionId}
               className={minuteClassNames}
               type="text"
@@ -856,21 +877,14 @@ class TimeInput extends React.Component {
               pattern="\d*"
               disabled={disabled}
             />
-            <VisuallyHiddenText id={minuteDescriptionId} text={intl.formatMessage({ id: 'Terra.timeInput.minuteFormat' })} />
             {showSeconds && (
-              <React.Fragment>
-                <span
-                  aria-hidden
-                  className={cx('time-spacer')}
-                >
-                  {timeSpacer}
-                </span>
-                <VisuallyHiddenText aria-hidden id={secondLabelId} text={intl.formatMessage({ id: 'Terra.timeInput.seconds' })} />
+              <>
+                <TimeSpacer />
                 <Input
                   {...inputAttributes}
                   {...secondAttributes}
                   refCallback={(inputRef) => { this.secondInput = inputRef; }}
-                  aria-labelledby={subFieldAriaLabelledBy(secondLabelId)}
+                  aria-labelledby={secondLabelId}
                   aria-describedby={secondDescriptionId}
                   className={secondClassNames}
                   type="text"
@@ -885,64 +899,53 @@ class TimeInput extends React.Component {
                   pattern="\d*"
                   disabled={disabled}
                 />
-                <VisuallyHiddenText id={secondDescriptionId} text={intl.formatMessage({ id: 'Terra.timeInput.secondFormat' })} />
-              </React.Fragment>
+              </>
             )}
           </div>
           {variantFromLocale === TimeUtil.FORMAT_12_HOUR && (
-            <React.Fragment>
-              <VisuallyHiddenText aria-hidden id={meridianChoiceId} text={intl.formatMessage({ id: 'Terra.timeInput.meridianChoiceGroup' })} />
+            <>
               <ButtonGroup
-                // These meridiem buttons should be grouped together so that assistive technologies present them as related.
-                // For example, screen readers will read a group of buttons as "button group, a.m., one of two".
-                role="group"
-                aria-labelledby={subFieldAriaLabelledBy(meridianChoiceId)}
+                role="radiogroup"
+                aria-labelledby={meridianChoiceId}
                 selectedKeys={[this.state.meridiem]}
                 onChange={this.handleMeridiemButtonChange}
                 className={cx('meridiem-button-group')}
               >
-                {/*
-                TODO: give the A.M. and P.M. buttons an accessible name that reflects their grouping as part
-                of the Time Input, such as "<Time Input's Name> <AM>", to help when there are multiple Time Inputs presented at once.
-                 */}
                 <ButtonGroup.Button
+                  refCallback={(inputRef) => { this.anteMeridiemButton = inputRef; }}
+                  role="radio"
+                  aria-checked={this.state.meridiem === this.anteMeridiem}
+                  tabIndex={this.state.meridiem === this.anteMeridiem ? "0" : "-1"}
                   key={this.anteMeridiem}
                   className={anteMeridiemClassNames}
                   text={this.anteMeridiem}
                   onBlur={this.handleMeridiemButtonBlur}
                   onFocus={this.handleMeridiemButtonFocus}
                   isDisabled={disabled}
+                  onKeyDown={this.handleMeridiemKeyDown}
                 />
                 <ButtonGroup.Button
+                  refCallback={(inputRef) => { this.postMeridiemButton = inputRef; }}
+                  role="radio"
+                  aria-checked={this.state.meridiem === this.postMeridiem}
+                  tabIndex={this.state.meridiem === this.postMeridiem ? "0" : "-1"}
                   key={this.postMeridiem}
                   className={postMeridiemClassNames}
                   text={this.postMeridiem}
                   onBlur={this.handleMeridiemButtonBlur}
                   onFocus={this.handleMeridiemButtonFocus}
                   isDisabled={disabled}
+                  onKeyDown={this.handleMeridiemKeyDown}
                 />
               </ButtonGroup>
-            </React.Fragment>
+            </>
           )}
           <p aria-hidden>
             {showSeconds ? intl.formatMessage({ id: 'Terra.timeInput.timeFormatSecondsLabel' }) : intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })}
           </p>
-          <TimeInputFullValue
-            // This provides a human readable value to users of assistive technologies.
-            // It will read the initial value, if any, and then any updated value. The full value is
-            // something like "09:22 pm", is localized, and respects the variants.
-            id={descriptionId}
-            className={cx('format-text')}
-            timeInputLabel={label}
-            variant={variantFromLocale}
-            showSeconds={showSeconds}
-            hour={this.state.hour}
-            minute={this.state.minute}
-            second={this.state.second}
-            meridiem={this.state.meridiem}
-          />
+          <AccessibleValue id={descriptionId} value={accessibleValue} />
         </div>
-      </React.Fragment>
+      </>
     );
     /* eslint-enable jsx-a11y/no-static-element-interactions */
   }
