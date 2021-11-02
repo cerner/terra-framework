@@ -18,6 +18,7 @@ import TimeSpacer from './_TimeSpacer';
 const cx = classNamesBind.bind(styles);
 
 const propTypes = {
+  'aria-label': PropTypes.string,
   /**
    * Whether the time input should be disabled.
    */
@@ -701,6 +702,9 @@ class TimeInput extends React.Component {
       ...customProps
     } = this.props;
 
+    // const ariaLabel = this.props.ariaLabel;
+    // const ariaLabelledBy = this.props['aria-labelledby'];
+
     const anteMeridiemClassNames = cx([
       'meridiem-button',
       { 'is-invalid': isInvalidMeridiem && this.state.meridiem === this.anteMeridiem },
@@ -745,6 +749,15 @@ class TimeInput extends React.Component {
 
       return true;
     };
+
+    // Populate special hour text alternatives for A11Y.
+    const ariaLabel = this.props['aria-label'];
+    if (ariaLabel) {
+      hourAttributes['aria-label'] = `${ariaLabel} hours`;
+    }
+    // } else if (ariaLabelledBy) {
+    //   hourAttributes['aria-labelledby'] = `${ariaLabelledBy} hours`;
+    // }
 
     if (completeTime() && variant === TimeUtil.FORMAT_12_HOUR && showSeconds) {
       accessibleValue = intl.formatMessage({ id: 'Terra.timeInput.localTimeTwelveHourWithSeconds' }, {
@@ -803,29 +816,13 @@ class TimeInput extends React.Component {
       { 'initial-focus': this.state.secondInitialFocused },
     ]);
 
-    // Allowing ID to be over-written by customProps in case consumers depend on certain
-    // ID values for testing.
-    const labelId = customProps.id || `terra-time-input-label-${this.uuid}`;
-
-    const descriptionId = `terra-time-input-description-${this.uuid}`;
-    const hourLabelId = `terra-time-input-hour-label-${this.uuid}`;
-    const hourDescriptionId = `terra-time-input-hour-description-${this.uuid}`;
-    const minuteLabelId = `terra-time-input-minute-label-${this.uuid}`;
-    const minuteDescriptionId = `terra-time-input-minute-description-${this.uuid}`;
-    const secondLabelId = `terra-time-input-second-label-${this.uuid}`;
-    const secondDescriptionId = `terra-time-input-second-description-${this.uuid}`;
-    const meridianChoiceId = `terra-time-input-meridiem-choice-label-${this.uuid}`;
-
     return (
       <>
         <div
           {...customProps}
-          id={labelId}
           role="group"
           ref={this.timeInputContainer}
           className={cx('time-input-container', theme.className)}
-          aria-label={label || intl.formatMessage({ id: 'Terra.timeInput.defaultLabel' })}
-          aria-describedby={descriptionId}
         >
           <div className={timeInputClassNames}>
             <input
@@ -838,8 +835,6 @@ class TimeInput extends React.Component {
             <Input
               {...inputAttributes}
               {...hourAttributes}
-              aria-labelledby={hourLabelId}
-              aria-describedby={hourDescriptionId}
               refCallback={(inputRef) => {
                 this.hourInput = inputRef;
                 if (refCallback) refCallback(inputRef);
@@ -862,8 +857,6 @@ class TimeInput extends React.Component {
               {...inputAttributes}
               {...minuteAttributes}
               refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-              aria-labelledby={minuteLabelId}
-              aria-describedby={minuteDescriptionId}
               className={minuteClassNames}
               type="text"
               value={this.state.minute}
@@ -884,8 +877,6 @@ class TimeInput extends React.Component {
                   {...inputAttributes}
                   {...secondAttributes}
                   refCallback={(inputRef) => { this.secondInput = inputRef; }}
-                  aria-labelledby={secondLabelId}
-                  aria-describedby={secondDescriptionId}
                   className={secondClassNames}
                   type="text"
                   value={this.state.second}
@@ -906,7 +897,6 @@ class TimeInput extends React.Component {
             <>
               <ButtonGroup
                 role="radiogroup"
-                aria-labelledby={meridianChoiceId}
                 selectedKeys={[this.state.meridiem]}
                 onChange={this.handleMeridiemButtonChange}
                 className={cx('meridiem-button-group')}
@@ -915,7 +905,7 @@ class TimeInput extends React.Component {
                   refCallback={(inputRef) => { this.anteMeridiemButton = inputRef; }}
                   role="radio"
                   aria-checked={this.state.meridiem === this.anteMeridiem}
-                  tabIndex={this.state.meridiem === this.anteMeridiem ? "0" : "-1"}
+                  tabIndex={this.state.meridiem === this.anteMeridiem ? '0' : '-1'}
                   key={this.anteMeridiem}
                   className={anteMeridiemClassNames}
                   text={this.anteMeridiem}
@@ -928,7 +918,7 @@ class TimeInput extends React.Component {
                   refCallback={(inputRef) => { this.postMeridiemButton = inputRef; }}
                   role="radio"
                   aria-checked={this.state.meridiem === this.postMeridiem}
-                  tabIndex={this.state.meridiem === this.postMeridiem ? "0" : "-1"}
+                  tabIndex={this.state.meridiem === this.postMeridiem ? '0' : '-1'}
                   key={this.postMeridiem}
                   className={postMeridiemClassNames}
                   text={this.postMeridiem}
@@ -943,7 +933,7 @@ class TimeInput extends React.Component {
           <p aria-hidden>
             {showSeconds ? intl.formatMessage({ id: 'Terra.timeInput.timeFormatSecondsLabel' }) : intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })}
           </p>
-          <AccessibleValue id={descriptionId} value={accessibleValue} />
+          <AccessibleValue id="" value={accessibleValue} />
         </div>
       </>
     );

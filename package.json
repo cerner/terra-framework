@@ -120,5 +120,8 @@
     "webpack-dev-server": "^3.3.1",
     "webpack-merge": "^5.1.4",
     "xfc": "^1.2.1"
+  },
+  "dependencies": {
+    "terra-button": "file:terra-button-3.59.0.tgz"
   }
 }
