@@ -5,6 +5,12 @@
 * Fixed
   * Set input id at the parent div instead of at each of the three inputs to prevent elements with identical id.
 
+## 4.69.0 - (November 2, 2021)
+
+* Changed
+  * Date input split into 3 distinct inputs that mask the previous single input.
+  * Updated `terra-dev-site` examples to use hooks.
+
 ## 4.68.0 - (October 14, 2021)
 
 * Fixed
@@ -13,8 +19,6 @@
 ## 4.67.0 - (October 12, 2021)
 
 * Changed
-  * Date input split into 3 distinct inputs that mask the previous single input.
-  * Updated `terra-dev-site` examples to use hooks.
   * Upgrade focus-trap-react to version ^8.0.0.
 
 ## 4.66.0 - (September 20, 2021)
