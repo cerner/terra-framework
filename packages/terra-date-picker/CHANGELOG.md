@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Set input id at the parent div instead of at each of the three inputs to prevent elements with identical id.
+
 ## 4.68.0 - (October 14, 2021)
 
 * Fixed

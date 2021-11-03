@@ -182,6 +182,8 @@ const DatePickerInput = (props) => {
   const { onCalendarButtonClick, shouldShowPicker } = customProps;
   delete customProps.onCalendarButtonClick;
   delete customProps.shouldShowPicker;
+  const idFromInputAttributes = inputAttributes ? inputAttributes.id : undefined;
+  delete inputAttributes.id;
 
   const additionalInputProps = { ...customProps, ...inputAttributes };
   const momentDateFormat = useMemo(() => DateUtil.getFormatByLocale(intl.locale), [intl.locale]);
@@ -709,7 +711,7 @@ const DatePickerInput = (props) => {
       <div className={cx('date-input-container')}>
         <div
           className={dateInputClasses}
-          id={id}
+          id={id || idFromInputAttributes}
           disabled={additionalInputProps.disabled}
         >
           <input
