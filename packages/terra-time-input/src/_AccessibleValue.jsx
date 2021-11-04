@@ -3,7 +3,6 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  id: PropTypes.string.isRequired,
   value: PropTypes.string,
 };
 
@@ -25,11 +24,9 @@ function AccessibleValue(props) {
   }, [props.value, value]);
 
   return (
-    <VisuallyHiddenText
-      id={props.id}
-      text={props.value}
-      role={role}
-    />
+    <>
+      {props.value && <VisuallyHiddenText text={props.value} role={role} /> }
+    </>
   );
 }
 

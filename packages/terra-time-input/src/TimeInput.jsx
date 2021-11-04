@@ -9,6 +9,7 @@ import { injectIntl } from 'react-intl';
 import uuidv4 from 'uuid/v4';
 
 import * as KeyCode from 'keycode-js';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import TimeUtil from './TimeUtil';
 import styles from './TimeInput.module.scss';
 
@@ -18,11 +19,25 @@ import TimeSpacer from './_TimeSpacer';
 const cx = classNamesBind.bind(styles);
 
 const propTypes = {
-  'aria-label': PropTypes.string,
+  /**
+   * WE HIGHLY RECOMMNEDED you set this prop to match the label of this TimeInput, though it is optional for passivity. By setting this prop, you'll be increasing accessibility for end-users of assistive technologies such as screen readers or braille keyboards.
+   *
+   * Places this prop shows up include:
+   * - Assistive technology (AT) users will hear (and see/feel/etc.) this prop when the time value is presented or updated.
+   * - AT users will hear this prop when picking from a menu of the hour, minute, etc. inputs to view or edit out.
+   * - Speech input user can speak this prop as part of requesting to view or edit one the time.
+   *
+   * This prop never appears visually. It only appears to users of AT.
+   */
+  a11yLabel: PropTypes.string,
   /**
    * Whether the time input should be disabled.
    */
   disabled: PropTypes.bool,
+  /**
+   * WE HIGHLY RECOMMEND you do not set this prop unless you are presenting several TimeInputs together. The TimeInput control has special keyboard controls that must be explained to users of AT. If you have several TimeInputs together, consider setting this value on the 2nd, 3rd, etc. Time Inputs to spare AT users from hearing a repeat of the Time Input instructions.
+   */
+  disableA11YInstructions: PropTypes.bool,
   /**
    * Custom input attributes that apply to the hour, minute, and second inputs.
    */
@@ -56,17 +71,6 @@ const propTypes = {
    * Name of the time input. The name should be unique.
    */
   name: PropTypes.string.isRequired,
-  /**
- * Human-readable name of the time input. Though optional for passivity, you should provide this
- * if at all possible to increase the accessibility of the field, especially for users using
- * assistive technologies such as screen readers.
- *
- * If not given, the default value will be the localized version of Time Input. It is not recommended
- * to use the default, as it will not give good context to the user about the intention of the input.
- *
- * See also: https://www.w3.org/TR/accname-1.1/#dfn-accessible-name
- */
-  label: PropTypes.string,
   /**
    * A callback function to execute when the entire time input component loses focus.
    * This event does not get triggered when the focus is moved from the hour input to the minute input or meridiem because the focus is still within the main time input component.
@@ -112,6 +116,7 @@ const propTypes = {
 
 const defaultProps = {
   disabled: false,
+  disableA11YInstructions: false,
   inputAttributes: {},
   isIncomplete: false,
   isInvalid: false,
@@ -549,6 +554,10 @@ class TimeInput extends React.Component {
     }
   }
 
+  /**
+   * Make the meridiem buttons behave like a radio button group. UP and LEFT
+   * select AM, while DOWN and RIGHT select PM.
+   */
   handleMeridiemKeyDown(event) {
     if ([KeyCode.KEY_UP, KeyCode.KEY_LEFT].includes(event.keyCode)) {
       if (this.state.meridiem === this.postMeridiem) {
@@ -678,9 +687,83 @@ class TimeInput extends React.Component {
     return hourString;
   }
 
+  // Returns true if a time is fully specified.
+  completeTime() {
+    if (this.state.hour.length < 2 || this.state.minute.length < 2) {
+      return false;
+    }
+    if (this.props.showSeconds && this.state.second.length < 2) {
+      return false;
+    }
+    return true;
+  }
+
+  a11yHourDescription() {
+    if (this.props.variant === TimeUtil.FORMAT_12_HOUR) {
+      return '12-hour format: hh';
+    }
+    return '24-hour format: hh';
+  }
+
+  a11yInstructions() {
+    const { variant, showSeconds, intl } = this.props;
+    if (variant === TimeUtil.FORMAT_12_HOUR && showSeconds) {
+      return intl.formatMessage({ id: 'Terra.timeInput.a11yInstructions12HourSeconds' });
+    }
+    if (variant === TimeUtil.FORMAT_12_HOUR) {
+      return intl.formatMessage({ id: 'Terra.timeInput.a11yInstructions12Hour' });
+    }
+    if (variant === TimeUtil.FORMAT_24_HOUR && showSeconds) {
+      return intl.formatMessage({ id: 'Terra.timeInput.a11yInstructions24HourSeconds' });
+    }
+    return intl.formatMessage({ id: 'Terra.timeInput.a11yInstructions24Hour' });
+  }
+
+  a11yStatus() {
+    const {
+      a11yLabel, variant, showSeconds, intl,
+    } = this.props;
+
+    if (!this.completeTime()) {
+      return undefined;
+    }
+    if (variant === TimeUtil.FORMAT_12_HOUR && showSeconds) {
+      return intl.formatMessage({ id: 'Terra.timeInput.a11yStatus12HourSeconds' }, {
+        a11yLabel,
+        hour: this.state.hour,
+        minute: this.state.minute,
+        second: this.state.second,
+        meridiem: this.state.meridiem,
+      });
+    }
+    if (variant === TimeUtil.FORMAT_12_HOUR) {
+      return intl.formatMessage({ id: 'Terra.timeInput.a11yStatus12Hour' }, {
+        a11yLabel,
+        hour: this.state.hour,
+        minute: this.state.minute,
+        meridiem: this.state.meridiem,
+      });
+    }
+    if (variant === TimeUtil.FORMAT_24_HOUR && showSeconds) {
+      return intl.formatMessage({ id: 'Terra.timeInput.a11yStatus24HourSeconds' }, {
+        a11yLabel,
+        hour: this.state.hour,
+        minute: this.state.minute,
+        second: this.state.second,
+      });
+    }
+    return intl.formatMessage({ id: 'Terra.timeInput.a11yStatus24Hour' }, {
+      a11yLabel,
+      hour: this.state.hour,
+      minute: this.state.minute,
+    });
+  }
+
   render() {
     const {
+      a11yLabel,
       disabled,
+      disableA11YInstructions,
       inputAttributes,
       minuteAttributes,
       hourAttributes,
@@ -692,7 +775,6 @@ class TimeInput extends React.Component {
       onChange,
       onFocus,
       name,
-      label,
       refCallback,
       required,
       secondAttributes,
@@ -701,9 +783,6 @@ class TimeInput extends React.Component {
       variant,
       ...customProps
     } = this.props;
-
-    // const ariaLabel = this.props.ariaLabel;
-    // const ariaLabelledBy = this.props['aria-labelledby'];
 
     const anteMeridiemClassNames = cx([
       'meridiem-button',
@@ -734,60 +813,9 @@ class TimeInput extends React.Component {
       }
     }
 
-    // Construct the value we'll supply to assistive tech, like screen readers.
-    //
-    // We only want to set this value if the full time has been populated.
-    let accessibleValue;
-
-    const completeTime = () => {
-      if (this.state.hour.length < 2 || this.state.minute.length < 2) {
-        return false;
-      }
-      if (showSeconds && this.state.second.length < 2) {
-        return false;
-      }
-
-      return true;
-    };
-
-    // Populate special hour text alternatives for A11Y.
-    const ariaLabel = this.props['aria-label'];
-    if (ariaLabel) {
-      hourAttributes['aria-label'] = `${ariaLabel} hours`;
-    }
-    // } else if (ariaLabelledBy) {
-    //   hourAttributes['aria-labelledby'] = `${ariaLabelledBy} hours`;
-    // }
-
-    if (completeTime() && variant === TimeUtil.FORMAT_12_HOUR && showSeconds) {
-      accessibleValue = intl.formatMessage({ id: 'Terra.timeInput.localTimeTwelveHourWithSeconds' }, {
-        label,
-        hour: this.state.hour,
-        minute: this.state.minute,
-        second: this.state.second,
-        meridiem: this.state.meridiem,
-      });
-    } else if (completeTime() && variant === TimeUtil.FORMAT_12_HOUR) {
-      accessibleValue = intl.formatMessage({ id: 'Terra.timeInput.localTimeTwelveHour' }, {
-        label,
-        hour: this.state.hour,
-        minute: this.state.minute,
-        meridiem: this.state.meridiem,
-      });
-    } else if (completeTime() && variant === TimeUtil.FORMAT_24_HOUR && showSeconds) {
-      accessibleValue = intl.formatMessage({ id: 'Terra.timeInput.localTimeWithSeconds' }, {
-        label,
-        hour: this.state.hour,
-        minute: this.state.minute,
-        second: this.state.second,
-      });
-    } else if (completeTime() && variant === TimeUtil.FORMAT_24_HOUR) {
-      accessibleValue = intl.formatMessage({ id: 'Terra.timeInput.localTime' }, {
-        label,
-        hour: this.state.hour,
-        minute: this.state.minute,
-      });
-    }
+    const a11yHourLabel = intl.formatMessage({ id: 'Terra.timeInput.hours' }, { a11yLabel });
+    const a11yMinuteLabel = intl.formatMessage({ id: 'Terra.timeInput.minutes' });
+    const a11ySecondLabel = intl.formatMessage({ id: 'Terra.timeInput.seconds' });
 
     const theme = this.context;
 
@@ -818,9 +846,9 @@ class TimeInput extends React.Component {
 
     return (
       <>
+        {!disableA11YInstructions && (<VisuallyHiddenText text={this.a11yInstructions()} />)}
         <div
           {...customProps}
-          role="group"
           ref={this.timeInputContainer}
           className={cx('time-input-container', theme.className)}
         >
@@ -832,6 +860,19 @@ class TimeInput extends React.Component {
               name={name}
               value={timeValue}
             />
+            {/* -=PATTERNS FOR Accessibility and Accessibility Technology (AT)=-
+
+            When an input field has a value:
+                Prepend the input with an invisible label so that the label will be read when the AT is reading the page ("read-mode").
+                Use aria-labelled to tie the input field to the label for other modes of AT.
+            When an input field is blank:
+                Label the input field via aria-label, and keep arial-lablledby undefined.
+
+            The altenative would be to always use an invisible label, but set the invisible label to aria-hidden to prevent it from being
+            double-read. This idea was nixed due to concerns from UX that aria-hidden might behave inconsistently across browser/AT combinations
+            in the future.
+             */}
+            {this.state.hour && <VisuallyHiddenText text={a11yHourLabel} id={`hourLabel-${this.uuid}`} />}
             <Input
               {...inputAttributes}
               {...hourAttributes}
@@ -840,6 +881,9 @@ class TimeInput extends React.Component {
                 if (refCallback) refCallback(inputRef);
               }}
               className={hourClassNames}
+              aria-labelledby={this.state.hour ? `hourLabel-${this.uuid}` : undefined}
+              aria-label={this.state.hour ? undefined : a11yHourLabel}
+              aria-describedby={`hour-description-${this.uuid}`}
               type="text"
               value={this.state.hour}
               name={'terra-time-hour-'.concat(name)}
@@ -852,12 +896,17 @@ class TimeInput extends React.Component {
               pattern="\d*"
               disabled={disabled}
             />
+            <VisuallyHiddenText id={`hour-description-${this.uuid}`} text={this.a11yHourDescription()} />
             <TimeSpacer />
+            {this.state.minute && <VisuallyHiddenText text={a11yMinuteLabel} id={`minuteLabel-${this.uuid}`} />}
             <Input
               {...inputAttributes}
               {...minuteAttributes}
               refCallback={(inputRef) => { this.minuteInput = inputRef; }}
               className={minuteClassNames}
+              aria-labelledby={this.state.minute ? `minuteLabel-${this.uuid}` : undefined}
+              aria-label={this.state.minute ? undefined : a11yMinuteLabel}
+              aria-describedby={`minute-description-${this.uuid}`}
               type="text"
               value={this.state.minute}
               name={'terra-time-minute-'.concat(name)}
@@ -870,14 +919,18 @@ class TimeInput extends React.Component {
               pattern="\d*"
               disabled={disabled}
             />
+            <VisuallyHiddenText id={`minute-description-${this.uuid}`} text={this.a11yMinuteDescription()} />
             {showSeconds && (
               <>
                 <TimeSpacer />
+                {this.state.second && <VisuallyHiddenText text={a11ySecondLabel} id={`secondLabel-${this.uuid}`} />}
                 <Input
                   {...inputAttributes}
                   {...secondAttributes}
                   refCallback={(inputRef) => { this.secondInput = inputRef; }}
                   className={secondClassNames}
+                  aria-labelledby={this.state.second ? `secondLabel-${this.uuid}` : undefined}
+                  aria-label={this.state.second ? undefined : a11ySecondLabel}
                   type="text"
                   value={this.state.second}
                   name={'terra-time-second-'.concat(name)}
@@ -933,7 +986,8 @@ class TimeInput extends React.Component {
           <p aria-hidden>
             {showSeconds ? intl.formatMessage({ id: 'Terra.timeInput.timeFormatSecondsLabel' }) : intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })}
           </p>
-          <AccessibleValue id="" value={accessibleValue} />
+          {/* Only show the AccessibleValue if we have a complete time value to read. */}
+          <AccessibleValue value={this.a11yStatus()} />
         </div>
       </>
     );
