@@ -10,7 +10,7 @@ const DatePickerReadOnly = () => (
     <DatePicker
       name="date-input"
       selectedDate="2017-04-01"
-      inputAttributes={{ readOnly: true }}
+      inputAttributes={{ readOnly: true, id: 'read-only-input' }}
     />
   </div>
 

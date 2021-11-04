@@ -2,10 +2,20 @@
 
 ## Unreleased
 
+## 4.69.1 - (November 3, 2021)
+
+* Fixed
+  * Set input id at the parent div instead of at each of the three inputs to prevent elements with identical id. The following labels will be appended to the provided id and set as the id for each corresponding input.
+    * `-terra-date-picker-month`
+    * `-terra-date-picker-day`
+    * `-terra-date-picker-year`
+
 ## 4.69.0 - (November 2, 2021)
 
 * Changed
   * Date input split into 3 distinct inputs that mask the previous single input.
+    * The internal DOM structure of the date-picker has changed from one single input to three separate inputs. Updates may be required depending on how these inputs are queried.
+    * WDIO screenshots capturing the date-picker will need to be regenerated due to the visual changes.
   * Updated `terra-dev-site` examples to use hooks.
 
 ## 4.68.0 - (October 14, 2021)
