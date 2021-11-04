@@ -182,8 +182,13 @@ const DatePickerInput = (props) => {
   const { onCalendarButtonClick, shouldShowPicker } = customProps;
   delete customProps.onCalendarButtonClick;
   delete customProps.shouldShowPicker;
-  const idFromInputAttributes = inputAttributes ? inputAttributes.id : undefined;
-  delete inputAttributes.id;
+
+  let idFromInputAttributes;
+  if (inputAttributes && inputAttributes.id) {
+    // Get the id and set it on the outer div and delete inputAttributes.id to prevent from setting the same id on all three inputs.
+    idFromInputAttributes = inputAttributes.id;
+    delete inputAttributes.id;
+  }
 
   const additionalInputProps = { ...customProps, ...inputAttributes };
   const momentDateFormat = useMemo(() => DateUtil.getFormatByLocale(intl.locale), [intl.locale]);
