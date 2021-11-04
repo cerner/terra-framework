@@ -841,7 +841,7 @@ class TimeInput extends React.Component {
           ref={this.timeInputContainer}
           className={cx('time-input-container', theme.className)}
         >
-          <div className={timeInputClassNames}>
+          <div className={timeInputClassNames} role="group" aria-label={a11yLabel}>
             <input
               // Create a hidden input for storing the name and value attributes to use when submitting the form.
               // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.

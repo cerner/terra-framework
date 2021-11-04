@@ -12,7 +12,10 @@ const a11yNameDescription = () => (
         There is a special accessibility label prop - <code>A11yLabel</code> - that users can provide. The label is optional for passivity but when provided it will appear in several places to meet our a11y standards - see below.
       </li>
       <li>
-        The hour/minute/second inputs each have a their own label and description. These labels and descriptions are visually hidden but available to the browser&apos;s Accessibility Tree (AT) for use by assistive technology like screen readers.  The <code>A11yLabel</code> label is part of the hour label, so that users can pick the right field out of many on a page. The hour description indicates whether the input is using a 12 or 24-hour clock.
+        The entire component is grouped together, and the group&apos;s name is the <code>A11yLabel</code> value. The grouping associates all of the inputs, labels, descirptions and instruction as part of the same component. When users focus on a control within the component, the group name will typically be read by the AT.
+      </li>
+      <li>
+        The hour/minute/second inputs each have a their own label and description. These labels and descriptions are visually hidden but available to the browser&apos;s AT for use by assistive technology like screen readers.  The <code>A11yLabel</code> label is part of the hour label, so that users can pick the right field out of many on a page. The hour description indicates whether the input is using a 12 or 24-hour clock.
       </li>
       <li>The visual description is hidden from the AT so that it won&apos;t confuse users who hear the field descriptions.</li>
       <li>
