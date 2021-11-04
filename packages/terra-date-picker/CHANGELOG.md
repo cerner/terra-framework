@@ -5,7 +5,7 @@
 ## 4.69.1 - (November 3, 2021)
 
 * Fixed
-  * Set input id at the parent div instead of at each of the three inputs to prevent elements with identical id. The following labels text will be appended to the provided id for each corresponding input.
+  * Set input id at the parent div instead of at each of the three inputs to prevent elements with identical id. The following labels will be appended to the provided id and set as the id for each corresponding input.
     * `-terra-date-picker-month`
     * `-terra-date-picker-day`
     * `-terra-date-picker-year`
