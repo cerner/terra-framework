@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added hotkeys 'T', '-', and '+' for auto-setting dates
+
 ## 1.31.0 - (September 20, 2021)
 
 * Changed

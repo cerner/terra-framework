@@ -128,6 +128,8 @@ class DateInput extends React.Component {
     this.handleDayChange = this.handleDayChange.bind(this);
     this.handleYearChange = this.handleYearChange.bind(this);
 
+    this.handleInputKeyDown = this.handleInputKeyDown.bind(this);
+
     this.handleMonthKeyDown = this.handleMonthKeyDown.bind(this);
     this.handleDayKeyDown = this.handleDayKeyDown.bind(this);
     this.handleYearKeyDown = this.handleYearKeyDown.bind(this);
@@ -246,9 +248,35 @@ class DateInput extends React.Component {
   }
 
   /**
- * Takes a key input from the month select, and processes it based on the value of the keycode.
- * @param {Object} event Event object generated from the event delegation.
- */
+   * Takes a key input and processes it based on if it is a hot key otherwise passes it to the apprioate input type key down handler.
+   * @param {Object} event Event object generated from the event delegation.
+   * @param {DateInputUtil.inputType} inputType Type definition of the input that recieved the keydown event.
+   */
+  handleInputKeyDown(event, inputType) {
+    if (event.keyCode === KeyCode.KEY_T) {
+      this.setHotKeyDate(event, 0);
+      return;
+    } if (event.keyCode === KeyCode.KEY_DASH) {
+      this.setHotKeyDate(event, -1);
+      return;
+    } if (event.keyCode === KeyCode.KEY_EQUALS) {
+      this.setHotKeyDate(event, 1);
+      return;
+    }
+
+    if (inputType === DateInputUtil.inputType.MONTH) {
+      this.handleMonthKeyDown(event);
+    } else if (inputType === DateInputUtil.inputType.DAY) {
+      this.handleDayKeyDown(event);
+    } else {
+      this.handleYearKeyDown(event);
+    }
+  }
+
+  /**
+   * Takes a key input from the month select, and processes it based on the value of the keycode.
+   * @param {Object} event Event object generated from the event delegation.
+   */
   handleMonthKeyDown(event) {
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
@@ -443,6 +471,35 @@ class DateInput extends React.Component {
   }
 
   /**
+   * Sets state to new value dependent on existing date
+   * @param {Object} event Event object generated from the event delegation.
+   * @param {Number} addDays Adds days to current date or today's date.
+   */
+  setHotKeyDate(event, addDays) {
+    if (!this.props.value || event.keyCode === KeyCode.KEY_T) {
+      const hotkeyDate = DateInputUtil.addDaysFromToday(addDays);
+      const iSODate = hotkeyDate.split('T')[0];
+      const dateParts = iSODate.split('-');
+
+      this.setState({ year: dateParts[0], month: dateParts[1], day: dateParts[2] });
+
+      if (this.props.onChange) {
+        this.handleOnChange(event, iSODate);
+      }
+    } else {
+      const hotkeyDate = DateInputUtil.addDaysToDate(this.props.value, addDays);
+      const iSODate = hotkeyDate.split('T')[0];
+      const dateParts = iSODate.split('-');
+
+      this.setState({ year: dateParts[0], month: dateParts[1], day: dateParts[2] });
+
+      if (this.props.onChange) {
+        this.handleOnChange(event, iSODate);
+      }
+    }
+  }
+
+  /**
    * Shifts programmatic focus to day input
    * @param {Object} event Event object generated from the event delegation.
    */
@@ -502,7 +559,7 @@ class DateInput extends React.Component {
           value={this.state.month}
           name={'terra-date-month-'.concat(this.props.name)}
           onChange={this.handleMonthChange}
-          onKeyDown={this.handleMonthKeyDown}
+          onKeyDown={(e) => this.handleInputKeyDown(e, DateInputUtil.inputType.MONTH)}
           onClick={this.handleMonthClick}
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}
@@ -555,7 +612,7 @@ class DateInput extends React.Component {
         maxLength="2"
         onKeyPress={this.handleKeyPress}
         onChange={this.handleDayChange}
-        onKeyDown={this.handleDayKeyDown}
+        onKeyDown={(e) => this.handleInputKeyDown(e, DateInputUtil.inputType.DAY)}
         onFocus={this.handleDayFocus}
         onBlur={this.handleDayBlur}
         onPaste={this.handlePaste}
@@ -598,7 +655,7 @@ class DateInput extends React.Component {
         maxLength="4"
         onChange={this.handleYearChange}
         onKeyPress={this.handleKeyPress}
-        onKeyDown={this.handleYearKeyDown}
+        onKeyDown={(e) => this.handleInputKeyDown(e, DateInputUtil.inputType.YEAR)}
         onFocus={this.handleYearFocus}
         onBlur={this.handleYearBlur}
         onPaste={this.handlePaste}
