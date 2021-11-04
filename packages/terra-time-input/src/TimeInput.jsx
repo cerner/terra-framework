@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import Input from 'terra-form-input';
 import ButtonGroup from 'terra-button-group';
 import { injectIntl } from 'react-intl';
 import uuidv4 from 'uuid/v4';
@@ -15,6 +14,7 @@ import styles from './TimeInput.module.scss';
 
 import AccessibleValue from './_AccessibleValue';
 import TimeSpacer from './_TimeSpacer';
+import A11yInputWrapper from './_A11yInputWrapper';
 
 const cx = classNamesBind.bind(styles);
 
@@ -179,15 +179,15 @@ class TimeInput extends React.Component {
     let meridiem;
 
     if (TimeUtil.getVariantFromLocale(props) === TimeUtil.FORMAT_12_HOUR) {
-      this.anteMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
-      this.postMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.pm' });
+      this.am = this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
+      this.pm = this.props.intl.formatMessage({ id: 'Terra.timeInput.pm' });
 
       if (hour) {
-        const parsedHour = TimeUtil.parseTwelveHourTime(hour, this.anteMeridiem, this.postMeridiem);
+        const parsedHour = TimeUtil.parseTwelveHourTime(hour, this.am, this.pm);
         hour = parsedHour.hourString;
         meridiem = parsedHour.meridiem;
       } else {
-        meridiem = this.anteMeridiem;
+        meridiem = this.am;
       }
     }
     if (this.props.variant === TimeUtil.FORMAT_12_HOUR && TimeUtil.getVariantFromLocale(props) === TimeUtil.FORMAT_24_HOUR) {
@@ -195,8 +195,8 @@ class TimeInput extends React.Component {
         // eslint-disable-next-line no-console
         console.warn('This locale only uses 24 hour clock. The ante meridiem and post meridiem will not be displayed');
       }
-      this.anteMeridiem = '';
-      this.postMeridiem = '';
+      this.am = '';
+      this.pm = '';
     }
 
     this.state = {
@@ -225,11 +225,11 @@ class TimeInput extends React.Component {
     let { meridiem } = this.state;
 
     if (variant === TimeUtil.FORMAT_12_HOUR) {
-      this.anteMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
-      this.postMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.pm' });
+      this.am = this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
+      this.pm = this.props.intl.formatMessage({ id: 'Terra.timeInput.pm' });
 
       if (hour) {
-        const parsedHour = TimeUtil.parseTwelveHourTime(hour, this.anteMeridiem, this.postMeridiem);
+        const parsedHour = TimeUtil.parseTwelveHourTime(hour, this.am, this.pm);
         hour = parsedHour.hourString;
         meridiem = parsedHour.meridiem;
       }
@@ -464,10 +464,10 @@ class TimeInput extends React.Component {
 
       // Hitting 12 when incrementing up changes the meridiem
       if (variant === TimeUtil.FORMAT_12_HOUR && stateValue === '12') {
-        if (meridiem === this.postMeridiem || !previousStateValue) {
-          meridiem = this.anteMeridiem;
+        if (meridiem === this.pm || !previousStateValue) {
+          meridiem = this.am;
         } else {
-          meridiem = this.postMeridiem;
+          meridiem = this.pm;
         }
       }
     }
@@ -477,7 +477,7 @@ class TimeInput extends React.Component {
 
       // Hitting 11 when incrementing down changes the meridiem
       if (variant === TimeUtil.FORMAT_12_HOUR && stateValue === '11') {
-        meridiem = meridiem === this.postMeridiem ? this.anteMeridiem : this.postMeridiem;
+        meridiem = meridiem === this.pm ? this.am : this.pm;
       }
     }
 
@@ -560,13 +560,13 @@ class TimeInput extends React.Component {
    */
   handleMeridiemKeyDown(event) {
     if ([KeyCode.KEY_UP, KeyCode.KEY_LEFT].includes(event.keyCode)) {
-      if (this.state.meridiem === this.postMeridiem) {
-        this.handleValueChange(event, TimeUtil.inputType.MERIDIEM, '', this.anteMeridiem);
+      if (this.state.meridiem === this.pm) {
+        this.handleValueChange(event, TimeUtil.inputType.MERIDIEM, '', this.am);
         this.anteMeridiemButton.focus();
       }
     } else if ([KeyCode.KEY_DOWN, KeyCode.KEY_RIGHT].includes(event.keyCode)) {
-      if (this.state.meridiem === this.anteMeridiem) {
-        this.handleValueChange(event, TimeUtil.inputType.MERIDIEM, '', this.postMeridiem);
+      if (this.state.meridiem === this.am) {
+        this.handleValueChange(event, TimeUtil.inputType.MERIDIEM, '', this.pm);
         this.postMeridiemButton.focus();
       }
     }
@@ -671,9 +671,9 @@ class TimeInput extends React.Component {
     let tempHour = parseInt(hour, 10);
 
     if (TimeUtil.getVariantFromLocale(this.props) === TimeUtil.FORMAT_12_HOUR) {
-      if (meridiem === this.postMeridiem && tempHour < 12) {
+      if (meridiem === this.pm && tempHour < 12) {
         tempHour += 12;
-      } else if (meridiem === this.anteMeridiem && tempHour === 12) {
+      } else if (meridiem === this.am && tempHour === 12) {
         tempHour = 0;
       }
     }
@@ -698,28 +698,21 @@ class TimeInput extends React.Component {
     return true;
   }
 
-  a11yHourDescription() {
-    if (this.props.variant === TimeUtil.FORMAT_12_HOUR) {
-      return '12-hour format: hh';
-    }
-    return '24-hour format: hh';
-  }
-
   a11yInstructions() {
     const { variant, showSeconds, intl } = this.props;
     if (variant === TimeUtil.FORMAT_12_HOUR && showSeconds) {
-      return intl.formatMessage({ id: 'Terra.timeInput.a11yInstructions12HourSeconds' });
+      return intl.formatMessage({ id: 'Terra.timeInput.instructionsHourMinuteSecond12' });
     }
     if (variant === TimeUtil.FORMAT_12_HOUR) {
-      return intl.formatMessage({ id: 'Terra.timeInput.a11yInstructions12Hour' });
+      return intl.formatMessage({ id: 'Terra.timeInput.instructionsHourMinute12' });
     }
     if (variant === TimeUtil.FORMAT_24_HOUR && showSeconds) {
-      return intl.formatMessage({ id: 'Terra.timeInput.a11yInstructions24HourSeconds' });
+      return intl.formatMessage({ id: 'Terra.timeInput.instructionsHourMinuteSecond24' });
     }
-    return intl.formatMessage({ id: 'Terra.timeInput.a11yInstructions24Hour' });
+    return intl.formatMessage({ id: 'Terra.timeInput.instructionsHourMinute24' });
   }
 
-  a11yStatus() {
+  a11yValue() {
     const {
       a11yLabel, variant, showSeconds, intl,
     } = this.props;
@@ -728,7 +721,7 @@ class TimeInput extends React.Component {
       return undefined;
     }
     if (variant === TimeUtil.FORMAT_12_HOUR && showSeconds) {
-      return intl.formatMessage({ id: 'Terra.timeInput.a11yStatus12HourSeconds' }, {
+      return intl.formatMessage({ id: 'Terra.timeInput.statusHourMinuteSecond12' }, {
         a11yLabel,
         hour: this.state.hour,
         minute: this.state.minute,
@@ -737,7 +730,7 @@ class TimeInput extends React.Component {
       });
     }
     if (variant === TimeUtil.FORMAT_12_HOUR) {
-      return intl.formatMessage({ id: 'Terra.timeInput.a11yStatus12Hour' }, {
+      return intl.formatMessage({ id: 'Terra.timeInput.statusHourMinute12' }, {
         a11yLabel,
         hour: this.state.hour,
         minute: this.state.minute,
@@ -745,14 +738,14 @@ class TimeInput extends React.Component {
       });
     }
     if (variant === TimeUtil.FORMAT_24_HOUR && showSeconds) {
-      return intl.formatMessage({ id: 'Terra.timeInput.a11yStatus24HourSeconds' }, {
+      return intl.formatMessage({ id: 'Terra.timeInput.statusHourMinuteSecond24' }, {
         a11yLabel,
         hour: this.state.hour,
         minute: this.state.minute,
         second: this.state.second,
       });
     }
-    return intl.formatMessage({ id: 'Terra.timeInput.a11yStatus24Hour' }, {
+    return intl.formatMessage({ id: 'Terra.timeInput.statusHourMinute24' }, {
       a11yLabel,
       hour: this.state.hour,
       minute: this.state.minute,
@@ -786,12 +779,12 @@ class TimeInput extends React.Component {
 
     const anteMeridiemClassNames = cx([
       'meridiem-button',
-      { 'is-invalid': isInvalidMeridiem && this.state.meridiem === this.anteMeridiem },
+      { 'is-invalid': isInvalidMeridiem && this.state.meridiem === this.am },
     ]);
 
     const postMeridiemClassNames = cx([
       'meridiem-button',
-      { 'is-invalid': isInvalidMeridiem && this.state.meridiem === this.postMeridiem },
+      { 'is-invalid': isInvalidMeridiem && this.state.meridiem === this.pm },
     ]);
 
     const variantFromLocale = TimeUtil.getVariantFromLocale(this.props);
@@ -802,7 +795,7 @@ class TimeInput extends React.Component {
     if (this.state.hour.length > 0 || this.state.minute.length > 0 || (this.state.second.length > 0 && showSeconds)) {
       let hour = parseInt(this.state.hour, 10);
 
-      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem) {
+      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.pm) {
         hour += 12;
       }
 
@@ -812,10 +805,6 @@ class TimeInput extends React.Component {
         timeValue = timeValue.concat(':', this.state.second);
       }
     }
-
-    const a11yHourLabel = intl.formatMessage({ id: 'Terra.timeInput.hours' }, { a11yLabel });
-    const a11yMinuteLabel = intl.formatMessage({ id: 'Terra.timeInput.minutes' });
-    const a11ySecondLabel = intl.formatMessage({ id: 'Terra.timeInput.seconds' });
 
     const theme = this.context;
 
@@ -860,32 +849,20 @@ class TimeInput extends React.Component {
               name={name}
               value={timeValue}
             />
-            {/* -=PATTERNS FOR Accessibility and Accessibility Technology (AT)=-
-
-            When an input field has a value:
-                Prepend the input with an invisible label so that the label will be read when the AT is reading the page ("read-mode").
-                Use aria-labelled to tie the input field to the label for other modes of AT.
-            When an input field is blank:
-                Label the input field via aria-label, and keep arial-lablledby undefined.
-
-            The altenative would be to always use an invisible label, but set the invisible label to aria-hidden to prevent it from being
-            double-read. This idea was nixed due to concerns from UX that aria-hidden might behave inconsistently across browser/AT combinations
-            in the future.
-             */}
-            {this.state.hour && <VisuallyHiddenText text={a11yHourLabel} id={`hourLabel-${this.uuid}`} />}
-            <Input
+            <A11yInputWrapper
               {...inputAttributes}
               {...hourAttributes}
+              value={this.state.hour}
+              label={intl.formatMessage({ id: 'Terra.timeInput.hourInputLabel' }, { a11yLabel })}
+              labelId={`hour-input-label-${this.uuid}`}
+              description={variantFromLocale === TimeUtil.FORMAT_12_HOUR ? intl.formatMessage({ id: 'Terra.timeInput.hourInputDescription12' }) : intl.formatMessage({ id: 'Terra.timeInput.hourInputDescription24' })}
+              descriptionId={`hour-description-${this.uuid}`}
               refCallback={(inputRef) => {
                 this.hourInput = inputRef;
                 if (refCallback) refCallback(inputRef);
               }}
               className={hourClassNames}
-              aria-labelledby={this.state.hour ? `hourLabel-${this.uuid}` : undefined}
-              aria-label={this.state.hour ? undefined : a11yHourLabel}
-              aria-describedby={`hour-description-${this.uuid}`}
               type="text"
-              value={this.state.hour}
               name={'terra-time-hour-'.concat(name)}
               maxLength="2"
               onChange={this.handleHourChange}
@@ -896,19 +873,18 @@ class TimeInput extends React.Component {
               pattern="\d*"
               disabled={disabled}
             />
-            <VisuallyHiddenText id={`hour-description-${this.uuid}`} text={this.a11yHourDescription()} />
             <TimeSpacer />
-            {this.state.minute && <VisuallyHiddenText text={a11yMinuteLabel} id={`minuteLabel-${this.uuid}`} />}
-            <Input
+            <A11yInputWrapper
               {...inputAttributes}
               {...minuteAttributes}
+              value={this.state.minute}
+              label={intl.formatMessage({ id: 'Terra.timeInput.minuteInputLabel' })}
+              labelId={`minute-input-label-${this.uuid}`}
+              description={intl.formatMessage({ id: 'Terra.timeInput.minuteInputDescription' })}
+              descriptionId={`minute-description-${this.uuid}`}
               refCallback={(inputRef) => { this.minuteInput = inputRef; }}
               className={minuteClassNames}
-              aria-labelledby={this.state.minute ? `minuteLabel-${this.uuid}` : undefined}
-              aria-label={this.state.minute ? undefined : a11yMinuteLabel}
-              aria-describedby={`minute-description-${this.uuid}`}
               type="text"
-              value={this.state.minute}
               name={'terra-time-minute-'.concat(name)}
               maxLength="2"
               onChange={this.handleMinuteChange}
@@ -919,20 +895,20 @@ class TimeInput extends React.Component {
               pattern="\d*"
               disabled={disabled}
             />
-            <VisuallyHiddenText id={`minute-description-${this.uuid}`} text={this.a11yMinuteDescription()} />
             {showSeconds && (
               <>
                 <TimeSpacer />
-                {this.state.second && <VisuallyHiddenText text={a11ySecondLabel} id={`secondLabel-${this.uuid}`} />}
-                <Input
+                <A11yInputWrapper
                   {...inputAttributes}
                   {...secondAttributes}
+                  value={this.state.second}
+                  label={intl.formatMessage({ id: 'Terra.timeInput.secondInputLabel' })}
+                  labelId={`second-input-label-${this.uuid}`}
+                  description={intl.formatMessage({ id: 'Terra.timeInput.secondInputDescription' })}
+                  descriptionId={`second-input-description-${this.uuid}`}
                   refCallback={(inputRef) => { this.secondInput = inputRef; }}
                   className={secondClassNames}
-                  aria-labelledby={this.state.second ? `secondLabel-${this.uuid}` : undefined}
-                  aria-label={this.state.second ? undefined : a11ySecondLabel}
                   type="text"
-                  value={this.state.second}
                   name={'terra-time-second-'.concat(name)}
                   maxLength="2"
                   onChange={this.handleSecondChange}
@@ -957,11 +933,11 @@ class TimeInput extends React.Component {
                 <ButtonGroup.Button
                   refCallback={(inputRef) => { this.anteMeridiemButton = inputRef; }}
                   role="radio"
-                  aria-checked={this.state.meridiem === this.anteMeridiem}
-                  tabIndex={this.state.meridiem === this.anteMeridiem ? '0' : '-1'}
-                  key={this.anteMeridiem}
+                  aria-checked={this.state.meridiem === this.am}
+                  tabIndex={this.state.meridiem === this.am ? '0' : '-1'}
+                  key={this.am}
                   className={anteMeridiemClassNames}
-                  text={this.anteMeridiem}
+                  text={this.am}
                   onBlur={this.handleMeridiemButtonBlur}
                   onFocus={this.handleMeridiemButtonFocus}
                   isDisabled={disabled}
@@ -970,11 +946,11 @@ class TimeInput extends React.Component {
                 <ButtonGroup.Button
                   refCallback={(inputRef) => { this.postMeridiemButton = inputRef; }}
                   role="radio"
-                  aria-checked={this.state.meridiem === this.postMeridiem}
-                  tabIndex={this.state.meridiem === this.postMeridiem ? '0' : '-1'}
-                  key={this.postMeridiem}
+                  aria-checked={this.state.meridiem === this.pm}
+                  tabIndex={this.state.meridiem === this.pm ? '0' : '-1'}
+                  key={this.pm}
                   className={postMeridiemClassNames}
-                  text={this.postMeridiem}
+                  text={this.pm}
                   onBlur={this.handleMeridiemButtonBlur}
                   onFocus={this.handleMeridiemButtonFocus}
                   isDisabled={disabled}
@@ -984,10 +960,9 @@ class TimeInput extends React.Component {
             </>
           )}
           <p aria-hidden>
-            {showSeconds ? intl.formatMessage({ id: 'Terra.timeInput.timeFormatSecondsLabel' }) : intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })}
+            {showSeconds ? intl.formatMessage({ id: 'Terra.timeInput.descriptionHourMinuteSecond' }) : intl.formatMessage({ id: 'Terra.timeInput.descriptionHourMinute' })}
           </p>
-          {/* Only show the AccessibleValue if we have a complete time value to read. */}
-          <AccessibleValue value={this.a11yStatus()} />
+          <AccessibleValue value={this.a11yValue()} />
         </div>
       </>
     );
