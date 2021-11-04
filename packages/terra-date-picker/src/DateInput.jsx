@@ -184,9 +184,17 @@ const DatePickerInput = (props) => {
   delete customProps.shouldShowPicker;
 
   let idFromInputAttributes;
+  let monthInputId;
+  let dayInputId;
+  let yearInputId;
   if (inputAttributes && inputAttributes.id) {
-    // Get the id and set it on the outer div and delete inputAttributes.id to prevent from setting the same id on all three inputs.
+    // Get the inputAttributes.id and set it on the outer div and delete inputAttributes.id to prevent from setting the same id on all three inputs.
+    // Create new ids to set on each input using the inputAttributes.id.
     idFromInputAttributes = inputAttributes.id;
+    monthInputId = idFromInputAttributes.concat('-terra-date-picker-month');
+    dayInputId = idFromInputAttributes.concat('-terra-date-picker-day');
+    yearInputId = idFromInputAttributes.concat('-terra-date-picker-year');
+
     delete inputAttributes.id;
   }
 
@@ -631,6 +639,7 @@ const DatePickerInput = (props) => {
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
       aria-describedby={ariaDescriptionIds}
+      id={dayInputId}
     />
   );
 
@@ -661,6 +670,7 @@ const DatePickerInput = (props) => {
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
       aria-describedby={ariaDescriptionIds}
+      id={monthInputId}
     />
   );
 
@@ -691,6 +701,7 @@ const DatePickerInput = (props) => {
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
       aria-describedby={ariaDescriptionIds}
+      id={yearInputId}
     />
   );
 
