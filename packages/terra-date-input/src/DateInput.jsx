@@ -258,17 +258,13 @@ class DateInput extends React.Component {
       return;
     } if (event.keyCode === KeyCode.KEY_DASH) {
       this.setHotKeyDate(event, -1);
-      event.bubbles = false;
-      event.preventDefault();
-      return false;
+      return;
     } if (event.keyCode === KeyCode.KEY_EQUALS) {
       this.setHotKeyDate(event, 1);
       return;
     }
 
-    if (inputType === DateInputUtil.inputType.MONTH) {
-      this.handleMonthKeyDown(event);
-    } else if (inputType === DateInputUtil.inputType.DAY) {
+    if (inputType === DateInputUtil.inputType.DAY) {
       this.handleDayKeyDown(event);
     } else {
       this.handleYearKeyDown(event);
@@ -478,26 +474,21 @@ class DateInput extends React.Component {
    * @param {Number} addDays Adds days to current date or today's date.
    */
   setHotKeyDate(event, addDays) {
-    if (!this.state.month || !this.state.year || !this.state.day || event.keyCode === KeyCode.KEY_T) {
-      const hotkeyDate = DateInputUtil.addDaysFromToday(addDays);
-      const iSODate = hotkeyDate.split('T')[0];
-      const dateParts = iSODate.split('-');
-
-      this.setState({ year: dateParts[0], month: dateParts[1], day: dateParts[2] });
-
-      if (this.props.onChange) {
-        this.handleOnChange(event, iSODate);
-      }
+    let dateObj;
+    if (!this.state.month || !this.state.year || !this.state.day || addDays === 0) {
+      dateObj = new Date();
     } else {
-      const hotkeyDate = DateInputUtil.addDaysToDate(this.props.value, addDays);
-      const iSODate = hotkeyDate.split('T')[0];
-      const dateParts = iSODate.split('-');
+      dateObj = new Date(`${this.state.year}-${this.state.month}-${this.state.day}`);
+    }
+    dateObj.setDate(dateObj.getDate() + addDays);
+    const hotkeyDate = dateObj.toISOString();
+    const iSODate = hotkeyDate.split('T')[0];
+    const dateParts = iSODate.split('-');
 
-      this.setState({ year: dateParts[0], month: dateParts[1], day: dateParts[2] });
+    this.setState({ year: dateParts[0], month: dateParts[1], day: dateParts[2] });
 
-      if (this.props.onChange) {
-        this.handleOnChange(event, iSODate);
-      }
+    if (this.props.onChange) {
+      this.handleOnChange(event, iSODate);
     }
   }
 
@@ -561,7 +552,7 @@ class DateInput extends React.Component {
           value={this.state.month}
           name={'terra-date-month-'.concat(this.props.name)}
           onChange={this.handleMonthChange}
-          onKeyDown={(e) => this.handleInputKeyDown(e, DateInputUtil.inputType.MONTH)}
+          onKeyDown={this.handleMonthKeyDown}
           onClick={this.handleMonthClick}
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}

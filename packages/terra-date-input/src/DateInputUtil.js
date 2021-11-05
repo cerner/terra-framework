@@ -251,18 +251,6 @@ class DateInputUtil {
     }
     return undefined;
   }
-
-  static addDaysFromToday(addDays = 0) {
-    const today = new Date();
-    today.setDate(today.getDate() + addDays);
-    return today.toISOString();
-  }
-
-  static addDaysToDate(date, addDays = 0) {
-    const dateObj = new Date(date);
-    dateObj.setDate(dateObj.getDate() + addDays);
-    return dateObj.toISOString();
-  }
 }
 
 DateInputUtil.inputType = {
