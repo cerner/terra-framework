@@ -1203,11 +1203,7 @@ exports[`should render a default date input with all props 1`] = `
       ],
     }
   }
-  inputAttributes={
-    Object {
-      "id": "terra-date-input",
-    }
-  }
+  inputAttributes={Object {}}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -1281,7 +1277,6 @@ exports[`should render a default date input with all props 1`] = `
               aria-required={false}
               className="date-input-day"
               disabled={false}
-              id="terra-date-input"
               isIncomplete={false}
               isInvalid={false}
               maxLength="2"
@@ -1305,7 +1300,6 @@ exports[`should render a default date input with all props 1`] = `
               aria-required={false}
               className="date-input-month"
               disabled={false}
-              id="terra-date-input"
               isIncomplete={false}
               isInvalid={false}
               maxLength="2"
@@ -1336,7 +1330,6 @@ exports[`should render a default date input with all props 1`] = `
               aria-required={false}
               className="date-input-year"
               disabled={false}
-              id="terra-date-input"
               isIncomplete={false}
               isInvalid={false}
               maxLength="4"
@@ -1360,7 +1353,6 @@ exports[`should render a default date input with all props 1`] = `
             aria-required={false}
             className="date-input-month"
             disabled={false}
-            id="terra-date-input"
             isIncomplete={false}
             isInvalid={false}
             maxLength="2"
@@ -1382,7 +1374,6 @@ exports[`should render a default date input with all props 1`] = `
               aria-required={false}
               className="form-input date-input-month"
               disabled={false}
-              id="terra-date-input"
               maxLength="2"
               name="terra-date-month-date-input"
               onBlur={[Function]}
@@ -1407,7 +1398,6 @@ exports[`should render a default date input with all props 1`] = `
             aria-required={false}
             className="date-input-day"
             disabled={false}
-            id="terra-date-input"
             isIncomplete={false}
             isInvalid={false}
             maxLength="2"
@@ -1429,7 +1419,6 @@ exports[`should render a default date input with all props 1`] = `
               aria-required={false}
               className="form-input date-input-day"
               disabled={false}
-              id="terra-date-input"
               maxLength="2"
               name="terra-date-day-date-input"
               onBlur={[Function]}
@@ -1454,7 +1443,6 @@ exports[`should render a default date input with all props 1`] = `
             aria-required={false}
             className="date-input-year"
             disabled={false}
-            id="terra-date-input"
             isIncomplete={false}
             isInvalid={false}
             maxLength="4"
@@ -1476,7 +1464,6 @@ exports[`should render a default date input with all props 1`] = `
               aria-required={false}
               className="form-input date-input-year"
               disabled={false}
-              id="terra-date-input"
               maxLength="4"
               name="terra-date-year-date-input"
               onBlur={[Function]}

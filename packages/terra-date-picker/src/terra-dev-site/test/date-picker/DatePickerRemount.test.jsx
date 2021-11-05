@@ -12,6 +12,7 @@ const DatePickerRemount = () => {
       onSelect={(event, value) => {
         setDate(value);
       }}
+      inputAttributes={{ id: 'date-input-id' }}
     />
   );
 };
