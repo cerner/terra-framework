@@ -258,7 +258,9 @@ class DateInput extends React.Component {
       return;
     } if (event.keyCode === KeyCode.KEY_DASH) {
       this.setHotKeyDate(event, -1);
-      return;
+      event.bubbles = false;
+      event.preventDefault();
+      return false;
     } if (event.keyCode === KeyCode.KEY_EQUALS) {
       this.setHotKeyDate(event, 1);
       return;
@@ -476,7 +478,7 @@ class DateInput extends React.Component {
    * @param {Number} addDays Adds days to current date or today's date.
    */
   setHotKeyDate(event, addDays) {
-    if (!this.props.value || event.keyCode === KeyCode.KEY_T) {
+    if (!this.state.month || !this.state.year || !this.state.day || event.keyCode === KeyCode.KEY_T) {
       const hotkeyDate = DateInputUtil.addDaysFromToday(addDays);
       const iSODate = hotkeyDate.split('T')[0];
       const dateParts = iSODate.split('-');

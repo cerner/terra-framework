@@ -242,6 +242,19 @@ describe('DateInput', () => {
     expect(DateInputUtil.computedDisplayFormat('', 'ru_RU')).toEqual('day-month-year');
   });
 
+  it('should validate the addDaysFromToday helper method', () => {
+    jest.useFakeTimers('modern').setSystemTime(new Date('2000-07-04').getTime());
+    expect(DateInputUtil.addDaysFromToday(0)).toEqual('2000-07-04T00:00:00.000Z');
+    expect(DateInputUtil.addDaysFromToday(1)).toEqual('2000-07-05T00:00:00.000Z');
+    expect(DateInputUtil.addDaysFromToday(-1)).toEqual('2000-07-03T00:00:00.000Z');
+  });
+
+  it('should validate the addDaysToDate helper method', () => {
+    expect(DateInputUtil.addDaysToDate('2000-07-04', 0)).toEqual('2000-07-04T00:00:00.000Z');
+    expect(DateInputUtil.addDaysToDate('2000-07-04', 1)).toEqual('2000-07-05T00:00:00.000Z');
+    expect(DateInputUtil.addDaysToDate('2000-07-04', -1)).toEqual('2000-07-03T00:00:00.000Z');
+  });
+
   it('correctly applies the theme context className', () => {
     const date = mountWithIntl(
       <ThemeContextProvider theme={{ className: 'clinical-lowlight-theme' }}>
