@@ -474,8 +474,10 @@ class DateInput extends React.Component {
    * @param {Number} addDays Adds days to current date or today's date.
    */
   setHotKeyDate(event, addDays) {
+    const validYear = (this.state.year.length === 4 && Number(this.state.year) < DateInputUtil.MaxYearValue && Number(this.state.year) > DateInputUtil.MinYearValue);
+    const validDay = (Number(this.state.day) <= 31 && Number(this.state.day) > 0);
     let dateObj;
-    if (!this.state.month || !this.state.year || !this.state.day || addDays === 0) {
+    if (!this.state.month || addDays === 0 || !validYear || !validDay) {
       dateObj = new Date();
     } else {
       dateObj = new Date(`${this.state.year}-${this.state.month}-${this.state.day}`);
