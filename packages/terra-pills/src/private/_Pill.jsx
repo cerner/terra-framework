@@ -1,4 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, {
+  useCallback, useLayoutEffect, useRef, useState,
+} from 'react';
 import {
   KEY_SPACE,
   KEY_RETURN,
@@ -10,9 +12,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import Popup from 'terra-popup';
+import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-// import ResizeObserver from 'resize-observer-polyfill'; // lp052179
 import styles from './Pill.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -82,9 +84,36 @@ const Pill = (props) => {
 
   const theme = React.useContext(ThemeContext);
   const pillRef = useRef();
-  // const [isTruncated, setIsTruncated] = useState(false);
-  const isTruncated = false;
+  const [isTruncated, setIsTruncated] = useState(false);
   const [open, setPopupOpen] = useState(false);
+
+  const basicPillTruncation = useCallback(() => {
+    if (pillRef.current.firstElementChild.scrollWidth > pillRef.current.firstElementChild.clientWidth) {
+      setIsTruncated(true);
+    } else {
+      setIsTruncated(false);
+    }
+  }, []);
+
+  const handleResize = useCallback((entries) => {
+    if (!Array.isArray(entries)) {
+      return;
+    }
+
+    basicPillTruncation();
+  }, [basicPillTruncation]);
+
+  useLayoutEffect(() => {
+    let observer = new ResizeObserver((entries) => {
+      handleResize(entries);
+    });
+    observer.observe(pillRef.current.parentNode);
+
+    return () => {
+      observer.disconnect();
+      observer = null;
+    };
+  }, [basicPillTruncation, handleResize]);
 
   const handleOnRemove = (event) => {
     event.preventDefault();
@@ -186,7 +215,12 @@ const Pill = (props) => {
       contentHeight="auto"
       contentWidth="auto"
     >
-      <div className={cx('popup-content-pill-label')}>{label}</div>
+      <div className={cx('popup-content-pill-label')}>
+        {labelCategory
+          ? <span className={cx('popup-content-pill-category')}>{`${labelCategory}: `}</span>
+          : undefined}
+        <span>{label}</span>
+      </div>
     </Popup>
   );
 
@@ -206,7 +240,7 @@ const Pill = (props) => {
 
   const renderSelectablePill = () => (
     <>
-      <button
+      <div
         {...customProps}
         {...pillProps}
         {...pillButtonProps}
@@ -221,9 +255,12 @@ const Pill = (props) => {
         data-terra-pill
       >
         <span className={cx('pill-label')}>
-          {label}
+          {labelCategory
+            ? <span className={cx('pill-category')}>{`${labelCategory}: `}</span>
+            : undefined}
+          <span>{label}</span>
         </span>
-      </button>
+      </div>
       {pillInteraction.isRemovable && renderRemoveButton()}
       {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={pillInteractionHint} aria-hidden="true" />}
       {isTruncated && renderTruncatedLabelPopup()}
@@ -244,12 +281,12 @@ const Pill = (props) => {
         data-terra-pills-show-focus-styles
         data-terra-pill
       >
-        <span className={cx('pill-label-category')}>
-          {labelCategory}
-        </span>
-        <span className={cx('pill-label')}>
-          {label}
-        </span>
+        <label className={cx('pill-label')}>
+          {labelCategory
+            ? <span className={cx('pill-category')}>{`${labelCategory}: `}</span>
+            : undefined}
+          <span>{label}</span>
+        </label>
       </div>
       {pillInteraction.isRemovable && renderRemoveButton()}
       {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={` ${label} ${pillInteractionHint}`} aria-hidden="true" />}

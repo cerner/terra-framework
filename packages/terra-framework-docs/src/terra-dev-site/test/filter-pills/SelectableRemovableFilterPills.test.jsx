@@ -6,22 +6,22 @@ import styles from './FilterPillsTestCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
-const RemovableFilterPills = () => {
+const SelectableRemovableFilterPills = () => {
   const pillsData = [
     {
       label: 'asthma',
       labelCategory: 'respiratory',
-      id: 'terra-filter-pills-removable-pill-asthma',
+      id: 'terra-filter-pills-selectable-removable-pill-asthma',
     },
     {
       label: 'bronchitis',
       labelCategory: 'respiratory',
-      id: 'terra-filter-pills-removable-pill-bronchitis',
+      id: 'terra-filter-pills-selectable-removable-pill-bronchitis',
     },
     {
       label: 'fibro',
       labelCategory: 'respiratory',
-      id: 'terra-filter-pills-removable-pill-fibro',
+      id: 'terra-filter-pills-selectable-removable-pill-fibro',
     },
   ];
   const [pills, setPills] = useState(pillsData);
@@ -35,9 +35,9 @@ const RemovableFilterPills = () => {
   return (
     <>
       <FilterPills
-        ariaLabel="Example of removable Filter Pills"
+        ariaLabel="Example of selectable and removable Filter Pills"
         onRemove={handleOnRemove}
-        className={cx(['show-border'])}
+        className={cx(['show-border', 'width-10'])}
 
       >
         {pills.map((pill, index) => (
@@ -55,4 +55,4 @@ const RemovableFilterPills = () => {
   );
 };
 
-export default RemovableFilterPills;
+export default SelectableRemovableFilterPills;
