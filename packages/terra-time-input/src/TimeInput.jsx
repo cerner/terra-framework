@@ -112,11 +112,15 @@ const propTypes = {
    * If the `variant` prop if set to `12-hour` for one of these supported locales, the variant will be ignored and defaults to `24-hour`.
    */
   variant: PropTypes.oneOf([TimeUtil.FORMAT_12_HOUR, TimeUtil.FORMAT_24_HOUR]),
+  onTextValueChange: PropTypes.func,
+  maskCallback: PropTypes.func,
 };
 
 const defaultProps = {
   disabled: false,
   disableA11YInstructions: false,
+  onTextValueChange: undefined,
+  maskCallback: undefined,
   inputAttributes: {},
   isIncomplete: false,
   isInvalid: false,
@@ -211,8 +215,21 @@ class TimeInput extends React.Component {
     };
   }
 
+  componentDidMount() {
+    if (this.props.maskCallback) {
+      this.props.maskCallback(this.mask());
+    }
+    if (this.props.onTextValueChange) {
+      this.props.onTextValueChange(this.textValue());
+    }
+  }
+
   componentDidUpdate(prevProps) {
     const variant = TimeUtil.getVariantFromLocale(this.props);
+
+    if (this.props.onTextValueChange) {
+      this.props.onTextValueChange(this.textValue());
+    }
 
     if (
       this.props.value === prevProps.value
@@ -712,7 +729,7 @@ class TimeInput extends React.Component {
     return intl.formatMessage({ id: 'Terra.timeInput.instructionsHourMinute24' });
   }
 
-  a11yValue() {
+  textValue() {
     const {
       a11yLabel, variant, showSeconds, intl,
     } = this.props;
@@ -721,7 +738,7 @@ class TimeInput extends React.Component {
       return undefined;
     }
     if (variant === TimeUtil.FORMAT_12_HOUR && showSeconds) {
-      return intl.formatMessage({ id: 'Terra.timeInput.statusHourMinuteSecond12' }, {
+      return intl.formatMessage({ id: 'Terra.timeInput.valueHourMinuteSecond12' }, {
         a11yLabel,
         hour: this.state.hour,
         minute: this.state.minute,
@@ -730,7 +747,7 @@ class TimeInput extends React.Component {
       });
     }
     if (variant === TimeUtil.FORMAT_12_HOUR) {
-      return intl.formatMessage({ id: 'Terra.timeInput.statusHourMinute12' }, {
+      return intl.formatMessage({ id: 'Terra.timeInput.valueHourMinute12' }, {
         a11yLabel,
         hour: this.state.hour,
         minute: this.state.minute,
@@ -738,18 +755,36 @@ class TimeInput extends React.Component {
       });
     }
     if (variant === TimeUtil.FORMAT_24_HOUR && showSeconds) {
-      return intl.formatMessage({ id: 'Terra.timeInput.statusHourMinuteSecond24' }, {
+      return intl.formatMessage({ id: 'Terra.timeInput.valueHourMinuteSecond24' }, {
         a11yLabel,
         hour: this.state.hour,
         minute: this.state.minute,
         second: this.state.second,
       });
     }
-    return intl.formatMessage({ id: 'Terra.timeInput.statusHourMinute24' }, {
+    return intl.formatMessage({ id: 'Terra.timeInput.valueHourMinute24' }, {
       a11yLabel,
       hour: this.state.hour,
       minute: this.state.minute,
     });
+  }
+
+  status() {
+    const {
+      a11yLabel, intl,
+    } = this.props;
+
+    return intl.formatMessage({ id: 'Terra.timeInput.status' }, {
+      a11yLabel,
+      value: this.textValue(),
+    });
+  }
+
+  mask() {
+    if (this.props.showSeconds) {
+      return this.props.intl.formatMessage({ id: 'Terra.timeInput.descriptionHourMinuteSecond' });
+    }
+    return this.props.intl.formatMessage({ id: 'Terra.timeInput.descriptionHourMinute' });
   }
 
   render() {
@@ -774,6 +809,8 @@ class TimeInput extends React.Component {
       showSeconds,
       value,
       variant,
+      maskCallback,
+      onTextValueChange,
       ...customProps
     } = this.props;
 
@@ -959,10 +996,8 @@ class TimeInput extends React.Component {
               </ButtonGroup>
             </>
           )}
-          <p aria-hidden>
-            {showSeconds ? intl.formatMessage({ id: 'Terra.timeInput.descriptionHourMinuteSecond' }) : intl.formatMessage({ id: 'Terra.timeInput.descriptionHourMinute' })}
-          </p>
-          <AccessibleValue value={this.a11yValue()} />
+          {!maskCallback && (<p className={cx('format-text')} aria-hidden>{this.mask()}</p>)}
+          <AccessibleValue value={this.status()} />
         </div>
       </>
     );

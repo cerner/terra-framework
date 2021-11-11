@@ -122,6 +122,7 @@
     "xfc": "^1.2.1"
   },
   "dependencies": {
-    "terra-button": "file:terra-button-3.59.0.tgz"
+    "terra-button": "file:terra-button-3.59.0.tgz",
+    "terra-form-field": "file:terra-form-field-4.20.0.tgz"
   }
 }
