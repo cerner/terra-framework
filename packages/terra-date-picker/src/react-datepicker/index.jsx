@@ -531,6 +531,10 @@ class DatePicker extends React.Component {
   }
 
   handleSelect = (date, event) => {
+    const value =  DateUtil.formatISODate(date, DateUtil.getFormatByLocale(this.props.intl.locale));
+    if (this.props.onChangeRaw) {
+      this.props.onChangeRaw(event, value)
+    }
     // Preventing onFocus event to fix issue
     // https://github.com/Hacker0x01/react-datepicker/issues/628
     this.setState({ preventFocus: true },

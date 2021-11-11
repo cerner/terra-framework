@@ -277,6 +277,20 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       expect($('#valid-date').getText()).toEqual('Yes');
       Terra.validates.element('on change raw date set to 06-01-2017');
     });
+
+    it('sets date on select through datepicker', () => {
+      // Enter date
+      $('input[name="terra-date-month-date-input-onchangeraw"]').setValue('06');
+      $('input[name="terra-date-day-date-input-onchangeraw"]').setValue('01');
+      $('input[name="terra-date-year-date-input-onchangeraw"]').setValue('2017');
+      Terra.hideInputCaret('input[name="terra-date-year-date-input-onchangeraw"]');
+
+      // Select date through date picker
+      $('[class*="button"]').click();
+      $('div[class*="selected"]').click();
+
+      Terra.validates.element('datepicker - on change raw date displayed');
+    });
   });
 
   describe('On Click Outside', () => {
