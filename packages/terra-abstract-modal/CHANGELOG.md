@@ -3,6 +3,11 @@
 ## Unreleased
 
 * Changed
+  * Updated dependencies to not be hard-coded.
+
+## 3.36.0 - (September 20, 2021)
+
+* Changed
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
   * Updated WDIO screenshots due to the webpack-config-terra sass upgrade.
   * Updated dependencies to not be hard-coded.
