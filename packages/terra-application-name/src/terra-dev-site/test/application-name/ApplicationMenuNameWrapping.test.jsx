@@ -5,6 +5,7 @@ import ThemeContext from 'terra-theme-context';
 import classNamesBind from 'classnames/bind';
 import ApplicationMenuName from '../../../ApplicationMenuName';
 import demoStyles from './demoStyles.module.scss';
+import img from './terra.png';
 
 const cx = classNamesBind.bind(demoStyles);
 
@@ -20,7 +21,7 @@ export default () => {
       <ApplicationMenuName
         id="wrapping"
         title="Title TitleTitleTitleTitleTitle Title Title Title Title Title"
-        accessory={<Image alt="terra accessory" variant="rounded" src="https://github.com/cerner/terra-framework/raw/main/terra.png" className={cx('demo-image-container')} />}
+        accessory={<Image alt="terra accessory" variant="rounded" src={img} className={cx('demo-image-container')} />}
       />
     </div>
   );
