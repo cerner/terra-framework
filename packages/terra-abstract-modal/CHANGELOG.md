@@ -5,6 +5,7 @@
 * Changed
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
   * Updated WDIO screenshots due to the webpack-config-terra sass upgrade.
+  * Updated dependencies to not be hard-coded.
 
 ## 3.35.0 - (July 21, 2021)
 
