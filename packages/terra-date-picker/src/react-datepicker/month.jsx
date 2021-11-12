@@ -32,7 +32,7 @@ export default class Month extends React.Component {
      * A callback function to be executed to determine if a given date should be filtered.
      */
     filterDate: PropTypes.func,
-   /**
+    /**
      * Specifies whether the height of calendar dom fixed or variable.
      */
     fixedHeight: PropTypes.bool,

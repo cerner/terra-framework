@@ -2,9 +2,34 @@
 
 ## Unreleased
 
+* Changed
+  * Updated tests due to rounding differences in terra-abstract-modal
+
+## 4.70.1 - (November 3, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.70.0 - (November 2, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.69.0 - (October 14, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.68.0 - (October 12, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.67.0 - (September 20, 2021)
 
 * Changed
+  * Tests updated to reflect input splitting in `terra-date-picker`.
+  * Updated `terra-dev-site` examples to use hooks.
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
   * Updated WDIO snapshots due to terra-functional-testing v2 upgrade.
 

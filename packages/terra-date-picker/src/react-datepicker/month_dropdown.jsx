@@ -67,7 +67,7 @@ export default class MonthDropdown extends React.Component {
   )
 
   renderReadView = (visible, monthNames) => (
-    <div key="read" style={{visibility: visible ? 'visible' : 'hidden'}} className={cx('react-datepicker-month-read-view')} onClick={this.toggleDropdown}>
+    <div key="read" style={{ visibility: visible ? 'visible' : 'hidden' }} className={cx('react-datepicker-month-read-view')} onClick={this.toggleDropdown}>
       <span className={cx('react-datepicker-month-read-view--down-arrow')} />
       <span className={cx('react-datepicker-month-read-view--selected-month')}>{monthNames[this.props.month]}</span>
     </div>
@@ -103,10 +103,10 @@ export default class MonthDropdown extends React.Component {
     dropdownVisible: !this.state.dropdownVisible
   })
 
-  render () {
+  render() {
     const localeData = utils.getLocaleDataForLocale(this.props.locale)
     const monthNames = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(
-      (M) => utils.getMonthInLocale(localeData, utils.newDate({M}), this.props.dateFormat)
+      (M) => utils.getMonthInLocale(localeData, utils.newDate({ M }), this.props.dateFormat)
     )
 
     let renderedDropdown

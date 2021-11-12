@@ -9,6 +9,7 @@ const DatePickerDefault = () => (
   <div className={cx('content-wrapper')}>
     <DatePicker
       name="date-input"
+      id="default-date-input"
     />
   </div>
 );
