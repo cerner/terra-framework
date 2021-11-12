@@ -3,8 +3,13 @@
 ## Unreleased
 
 * Changed
+  * Upgrade focus-trap-react to version ^8.0.0.
+
+## 4.66.0 - (September 20, 2021)
+
+* Changed
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
-  
+
 ## 4.65.0 - (July 21, 2021)
 
 * Changed
