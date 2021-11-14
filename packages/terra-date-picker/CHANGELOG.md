@@ -5,6 +5,11 @@
 * Fixed
   * Updated onChangeRaw to also get called when date is selected from datepicker
 
+## 4.70.0 - (November 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.69.1 - (November 3, 2021)
 
 * Fixed
