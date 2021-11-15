@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 1.58.0 - (November 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.57.0 - (October 14, 2021)
+
+* Fixed
+  * Reverted focus-trap-react upgrade due to passivity concerns
+
+## 1.56.0 - (October 12, 2021)
+
+* Changed
+  * Upgrade focus-trap-react to version ^8.0.0.
+
 ## 1.55.0 - (September 20, 2021)
 
 * Changed

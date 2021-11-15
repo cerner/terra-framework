@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 5.62.0 - (November 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 5.61.0 - (October 14, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 5.60.0 - (October 12, 2021)
+
+* Changed
+  * Increased timeout for redirecting url.
+
 ## 5.59.0 - (September 20, 2021)
 
 * Changed

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 3.9.0 - (October 12, 2021)
+
+* Changed
+  * Migrated doc to terra-framework-docs.
+
 ## 3.8.0 - (September 20, 2021)
 
 * Changed

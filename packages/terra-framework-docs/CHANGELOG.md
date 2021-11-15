@@ -3,8 +3,23 @@
 ## Unreleased
 
 * Added
-  * Added tests for terra-pills
+  * Added tests for terra-filter-pills
   
+## 1.5.0 - (November 9, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.4.0 - (October 14, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.3.0 - (October 12, 2021)
+
+* Added
+  * Migrated doc from terra-brand-footer.
+
 ## 1.2.0 - (September 20, 2021)
 
 * Changed

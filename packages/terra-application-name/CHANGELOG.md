@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 3.41.0 - (October 12, 2021)
+
+* Changed
+  * Updated WDIO tests to not pull from github and instead be bundled with the package.
+
 ## 3.40.0 - (September 20, 2021)
 
 * Changed

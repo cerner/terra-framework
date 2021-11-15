@@ -4,15 +4,15 @@
 
 :local {
   .abstract-modal {
+    bottom: 50%;
     display: block;
-    left: 50%;
     max-height: calc(100% - 2 * var(--terra-abstract-modal-vertical-inset, 10px));
     max-width: calc(100% - 2 * var(--terra-abstract-modal-horizontal-inset, 10px));
     outline: none;
     overflow: hidden;
     position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    right: 50%;
+    transform: translate(50%, 50%);
 
     &.layer-6000 {
       z-index: 6000 + 1;
