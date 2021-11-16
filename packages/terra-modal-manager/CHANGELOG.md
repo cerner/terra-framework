@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.58.0 - (November 16, 2021)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.57.0 - (November 9, 2021)
 
 * Changed
