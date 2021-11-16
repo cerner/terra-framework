@@ -566,7 +566,8 @@ class DatePicker extends React.Component {
     }
 
     if (this.props.onChangeRaw && hasChanged) {
-      this.props.onChangeRaw(event, value)
+      const newValue =  DateUtil.formatISODate(date, DateUtil.getFormatByLocale(this.props.intl.locale));
+      this.props.onChangeRaw(event, newValue)
     }
 
     this.props.onSelect(changedDate, event)
