@@ -20,7 +20,7 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-   * WE HIGHLY RECOMMNEDED you set this prop to match the label of this TimeInput, though it is optional for passivity. By setting this prop, you'll be increasing accessibility for end-users of assistive technologies such as screen readers or braille keyboards.
+   * WE HIGHLY RECOMMENDED you set this prop to match the label of this TimeInput, though it is optional for passivity. By setting this prop, you'll be increasing accessibility for end-users of assistive technologies such as screen readers or braille keyboards.
    *
    * Places this prop shows up include:
    * - Assistive technology (AT) users will hear (and see/feel/etc.) this prop when the time value is presented or updated.

@@ -11,12 +11,12 @@ const defaultProps = {
 };
 
 function AccessibleValue(props) {
-  const [role, setRole] = useState('generic');
+  const [role, setRole] = useState(undefined);
   const [value, setValue] = useState(props.value);
 
   useEffect(() => {
     if (!props.value) {
-      setRole('generic');
+      setRole(undefined);
     } else if (props.value !== value) {
       setRole('status');
       setValue(props.value);
