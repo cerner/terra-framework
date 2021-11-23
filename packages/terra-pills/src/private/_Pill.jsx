@@ -154,9 +154,7 @@ const Pill = (props) => {
   };
 
   const handleOnBlur = () => {
-    if (isTruncated) {
-      pillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'true');
-    }
+    pillRef.current.setAttribute('data-terra-pills-show-focus-styles', 'true');
   };
 
   const getPillRef = () => pillRef.current;

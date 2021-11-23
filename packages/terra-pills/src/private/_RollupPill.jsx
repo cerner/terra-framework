@@ -59,6 +59,10 @@ const RollUpPill = (props) => {
     rollUpPillRef.current.setAttribute('data-terra-rollup-pill-show-focus-styles', 'false');
   };
 
+  const handleOnBlur = () => {
+    rollUpPillRef.current.setAttribute('data-terra-rollup-pill-show-focus-styles', 'true');
+  };
+
   const rollUpLabel = isCollapsed && rollupCount > 0 ? intl.formatMessage({ id: 'Terra.pills.label.rollupPill' }, { pillsNotVisibleCount: rollupCount }) : intl.formatMessage({ id: 'Terra.pills.label.showLess' });
   const rollUpHint = isCollapsed ? intl.formatMessage({ id: 'Terra.pills.hint.rollupPill' }, { pillsNotVisibleCount: rollupCount }) : intl.formatMessage({ id: 'Terra.pills.hint.showLess' });
   return (
@@ -72,6 +76,7 @@ const RollUpPill = (props) => {
         onClick={handleOnSelectRollUp}
         onKeyDown={handleRollUpPillKeyDown}
         onMouseDown={handleRollUpPillMouseDown}
+        onBlur={handleOnBlur}
         ref={rollUpPillRef}
         tabIndex="0"
         type="button"

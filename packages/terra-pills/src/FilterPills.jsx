@@ -121,6 +121,25 @@ const FilterPills = (props) => {
     }
   };
 
+  const handleTabIndex = useCallback(() => {
+    const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
+    const rollUpPill = filterPillsRef.current.querySelector('[data-terra-rollup-pill]');
+
+    // if there is a roll Up pill, set tabindex to -1
+    if (rollUpPill) {
+      PillsUtils.setRollUpPillTabIndex(rollUpPill, '-1');
+    }
+
+    if (pills.length > 0 && focusNode.current < pills.length) {
+      PillsUtils.setPillsTabIndex(pills, '-1');
+      currentPill.current = pills[focusNode.current].id;
+      setTabIndex('0');
+    } else if (isCollapsible && rollUpPill) { // if the first pill is rollUp pill, set rollUp pill tabindex 0
+      currentPill.current = rollUpPill.getAttribute('id');
+      setTabIndex('0');
+    }
+  }, [isCollapsible]);
+
   const handleResize = useCallback((entries) => {
     if (!Array.isArray(entries)) {
       return;
@@ -132,7 +151,9 @@ const FilterPills = (props) => {
     if (isCollapsible) {
       generateRollUp();
     }
-  }, [children, isCollapsible, generateRollUp]);
+
+    handleTabIndex();
+  }, [children, isCollapsible, handleTabIndex, generateRollUp]);
 
   useLayoutEffect(() => {
     let observer = new ResizeObserver((entries) => {
@@ -146,24 +167,23 @@ const FilterPills = (props) => {
     };
   }, [children, handleResize, isCollapsed]);
 
-  useEffect(() => {
-    const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
-    const rollUpPill = filterPillsRef.current.querySelector('[data-terra-rollup-pill]');
+  // useEffect(() => {
+  //   const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
+  //   const rollUpPill = filterPillsRef.current.querySelector('[data-terra-rollup-pill]');
+  //   // if there is a roll Up pill, set tabindex to -1
+  //   if (rollUpPill) {
+  //     PillsUtils.setRollUpPillTabIndex(rollUpPill, '-1');
+  //   }
 
-    // if there is a roll Up pill, set tabindex to -1
-    if (rollUpPill) {
-      PillsUtils.setRollUpPillTabIndex(rollUpPill, '-1');
-    }
-
-    if (pills.length > 0) {
-      PillsUtils.setPillsTabIndex(pills, '-1');
-      currentPill.current = pills[focusNode.current].id;
-      setTabIndex('0');
-    } else if (isCollapsible && rollUpPill && pills.length === 0) { // if the first pill is rollUp pill, set rollUp pill tabindex 0
-      currentPill.current = rollUpPill.getAttribute('id');
-      setTabIndex('0');
-    }
-  }, [children, isCollapsible, updatedCount]);
+  //   if (pills.length > 0) {
+  //     PillsUtils.setPillsTabIndex(pills, '-1');
+  //     currentPill.current = pills[focusNode.current].id;
+  //     setTabIndex('0');
+  //   } else if (isCollapsible && rollUpPill && pills.length === 0) { // if the first pill is rollUp pill, set rollUp pill tabindex 0
+  //     currentPill.current = rollUpPill.getAttribute('id');
+  //     setTabIndex('0');
+  //   }
+  // }, [children, isCollapsible, updatedCount]);
 
   const focusPillsContainer = () => {
     setContainerTabindex('0');
@@ -205,7 +225,6 @@ const FilterPills = (props) => {
 
   useEffect(() => {
     const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
-
     // To focus the immediate focusable pill after the rollUp pill is selected/removed
     if (isCollapsible && !isCollapsed) {
       if (pills.length === React.Children.count(children)) {
@@ -345,14 +364,14 @@ const FilterPills = (props) => {
 
   const handleOnSelectRollUp = (event) => {
     const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
-    if (event.type === 'keydown') {
-      isRollUpRemoved.current = true;
+    if (isCollapsible && isCollapsed) {
+      if (event.type === 'keydown') {
+        isRollUpRemoved.current = true;
+      } else {
+        setTabIndex('-1');
+        focusNode.current = pills.length - 1;
+      }
     } else {
-      setTabIndex('-1');
-      focusNode.current = pills.length - 1;
-    }
-    if (!isCollapsed) { // lp052179
-      focusNode.current = 0;
       setShowRollupPillInteraction(false);
     }
     setIsCollapsed(!isCollapsed);
