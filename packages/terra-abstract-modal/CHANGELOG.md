@@ -2,10 +2,14 @@
 
 ## Unreleased
 
-## 3.37.0 - (November 9, 2021)
+## 3.38.0 - (November 16, 2021)
 
 * Changed
   * Updated dependencies to not be hard-coded.
+
+## 3.37.0 - (November 9, 2021)
+
+* Changed
   * Changed some css rules to not cause issues with Abstract Modal in IE.
 
 ## 3.36.0 - (September 20, 2021)
