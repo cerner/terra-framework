@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 4.22.0 - (November 16, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.21.0 - (November 9, 2021)
+
+* Changed
+  * Updated tests due to rounding differences in terra-abstract-modal
+
+## 4.20.0 - (October 14, 2021)
+
+* Fixed
+  * Reverted focus-trap-react upgrade due to passivity concerns
+
 ## 4.19.0 - (October 12, 2021)
 
 * Changed

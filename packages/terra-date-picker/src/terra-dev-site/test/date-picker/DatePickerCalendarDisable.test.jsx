@@ -12,7 +12,7 @@ export default () => {
   return (
     <div className={cx('content-wrapper')}>
       <Button id="button1" text="Test Button" onBlur={() => setDisabled(true)} />
-      <DatePicker disabled={disabled} />
+      <DatePicker name="date-input" disabled={disabled} />
     </div>
   );
 };

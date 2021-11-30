@@ -33,7 +33,7 @@ const MultipleDatePickerField = () => {
         name="date-input"
         datePickerId="primary"
         help="Help message."
-        inputAttributes={{ 'aria-describedby': 'primary-description' }}
+        inputAttributes={{ 'aria-describedby': 'primary-description', id: 'primary-date-picker' }}
       />
 
       <DatePickerField
@@ -45,6 +45,7 @@ const MultipleDatePickerField = () => {
         name="date-input"
         datePickerId="secondary"
         help="Help message."
+        inputAttributes={{ id: 'secondary-date-picker' }}
       />
     </div>
   );

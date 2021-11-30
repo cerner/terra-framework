@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import DateTimePicker from 'terra-date-time-picker/lib/DateTimePicker';
 import DateTimeUtils from '../../DateTimeUtils';
@@ -18,41 +18,35 @@ const defaultProps = {
   value: '',
 };
 
-class DatePickerExample extends React.Component {
-  constructor(props) {
-    super(props);
-    let dateTimeDisplay = props.value;
-    const dateTime = DateTimeUtils.createSafeDate(dateTimeDisplay, props.initialTimeZone);
+const DatePickerExample = (props) => {
+  let dateTimeDisplay = props.value;
+  const safeDateTime = DateTimeUtils.createSafeDate(dateTimeDisplay, props.initialTimeZone);
 
-    if (dateTime && dateTime.isValid()) {
-      dateTimeDisplay = dateTime.format();
-    }
-
-    this.state = { dateTime: dateTimeDisplay };
-    this.handleDateTimeChange = this.handleDateTimeChange.bind(this);
+  if (safeDateTime && safeDateTime.isValid()) {
+    dateTimeDisplay = safeDateTime.format();
   }
 
-  handleDateTimeChange(event, dateTime) {
-    this.setState({ dateTime });
-  }
+  const [dateTime, setDateTime] = useState(dateTimeDisplay);
 
-  render() {
-    return (
-      <div>
-        <p>
-          Selected ISO Date Time:
-          <span data-date-time-value>{this.state.dateTime}</span>
-        </p>
-        <DateTimePicker
-          name="date-time-picker-example"
-          onChange={this.handleDateTimeChange}
-          initialTimeZone={this.props.initialTimeZone}
-          {...this.props}
-        />
-      </div>
-    );
-  }
-}
+  const handleDateTimeChange = (event, dateTimeValue) => {
+    setDateTime(dateTimeValue);
+  };
+
+  return (
+    <div>
+      <p>
+        Selected ISO Date Time:
+        <span data-date-time-value>{dateTime}</span>
+      </p>
+      <DateTimePicker
+        name="date-time-picker-example"
+        onChange={handleDateTimeChange}
+        initialTimeZone={props.initialTimeZone}
+        {...props}
+      />
+    </div>
+  );
+};
 
 DatePickerExample.propTypes = propTypes;
 DatePickerExample.defaultProps = defaultProps;

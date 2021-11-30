@@ -3,6 +3,7 @@ import DatePicker from '../../../DatePicker';
 
 const DatePickerRemount = () => {
   const [date, setDate] = useState('2020-04-07');
+
   return (
     <DatePicker
       name="date-picker-remount"
@@ -11,6 +12,7 @@ const DatePickerRemount = () => {
       onSelect={(event, value) => {
         setDate(value);
       }}
+      inputAttributes={{ id: 'date-input-id' }}
     />
   );
 };
