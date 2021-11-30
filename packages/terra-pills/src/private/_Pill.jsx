@@ -287,7 +287,7 @@ const Pill = (props) => {
         </label>
       </div>
       {pillInteraction.isRemovable && renderRemoveButton()}
-      {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={` ${label} ${pillInteractionHint}`} aria-hidden="true" />}
+      {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={` ${labelCategory} ${label} ${pillInteractionHint}`} aria-hidden="true" />}
     </>
   );
   /* eslint-enable jsx-a11y/aria-role */

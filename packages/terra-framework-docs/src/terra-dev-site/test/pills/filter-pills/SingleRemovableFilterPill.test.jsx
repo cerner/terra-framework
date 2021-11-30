@@ -7,10 +7,19 @@ import styles from './FilterPillsTestCommon.module.scss';
 const cx = classNames.bind(styles);
 
 const SingleRemovableFilterPill = () => {
-  const [showPill, setShowPill] = useState(true);
+  const pillsData = [
+    {
+      label: 'asthma',
+      labelCategory: 'respiratory',
+      id: 'terra-filter-pills-removable-pill-asthma',
+    },
+  ];
+  const [pills, setPills] = useState(pillsData);
 
-  const handleOnRemove = () => {
-    setShowPill(false);
+  const handleOnRemove = (pillKey, metaData) => {
+    const pillsArray = pills;
+    pillsArray.splice(metaData.index, 1);
+    setPills([...pillsArray]);
   };
 
   return (
@@ -20,19 +29,19 @@ const SingleRemovableFilterPill = () => {
         onRemove={handleOnRemove}
         className={cx(['show-border'])}
       >
-        {showPill
-          && (
-            <FilterPills.Pill
-              label="Bronchitis"
-              labelCategory="Respiratory"
-              id="single-removable-filter-pill-bronchitis"
-              key="single-removable-filter-pill-bronchitis"
-              pillKey="bronchitis"
-            />
-          )}
+        {pills.map((pill, index) => (
+          <FilterPills.Pill
+            label={pill.label}
+            labelCategory={pill.labelCategory}
+            id={pill.id}
+            key={pill.id}
+            pillKey={pill.label}
+            metaData={{ index }}
+          />
+        ))}
       </FilterPills>
-      {!showPill
-        && <button type="button" onClick={() => setShowPill(true)}>Show Pill</button>}
+      {pillsData.length <= 0
+        && <button type="button" onClick={() => setPills(pillsData)}>Show Pill</button>}
     </>
   );
 };

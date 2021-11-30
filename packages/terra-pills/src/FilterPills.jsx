@@ -167,24 +167,6 @@ const FilterPills = (props) => {
     };
   }, [children, handleResize, isCollapsed]);
 
-  // useEffect(() => {
-  //   const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
-  //   const rollUpPill = filterPillsRef.current.querySelector('[data-terra-rollup-pill]');
-  //   // if there is a roll Up pill, set tabindex to -1
-  //   if (rollUpPill) {
-  //     PillsUtils.setRollUpPillTabIndex(rollUpPill, '-1');
-  //   }
-
-  //   if (pills.length > 0) {
-  //     PillsUtils.setPillsTabIndex(pills, '-1');
-  //     currentPill.current = pills[focusNode.current].id;
-  //     setTabIndex('0');
-  //   } else if (isCollapsible && rollUpPill && pills.length === 0) { // if the first pill is rollUp pill, set rollUp pill tabindex 0
-  //     currentPill.current = rollUpPill.getAttribute('id');
-  //     setTabIndex('0');
-  //   }
-  // }, [children, isCollapsible, updatedCount]);
-
   const focusPillsContainer = () => {
     setContainerTabindex('0');
     filterPillsRef.current.focus();
