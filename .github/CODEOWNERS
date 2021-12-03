@@ -1,9 +1,2 @@
 # Set default code owners for all files in repo
-* @mjhenkes @ryanthemanuel @tbiethman @benbcai
-terra-date-picker/ @benbcai @mjhenkes @ryanthemanuel @tbiethman
-terra-date-time-picker/ @benbcai @mjhenkes @ryanthemanuel @tbiethman
-terra-time-input/ @benbcai @mjhenkes @ryanthemanuel @tbiethman
-terra-form-validation/ @BenBoersma @mjhenkes @ryanthemanuel @tbiethman
-terra-menu/ @jmsv6d @mjhenkes @ryanthemanuel @tbiethman
-terra-collapsible-menu/ @jmsv6d @mjhenkes @ryanthemanuel @tbiethman
-terra-tabs/ @jmsv6d @mjhenkes @ryanthemanuel @tbiethman
+* @benbcai @jmsv6d @elliott-hoffman-cerner

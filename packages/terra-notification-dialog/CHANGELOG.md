@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 4.22.0 - (November 16, 2021)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.21.0 - (November 9, 2021)
+
 * Changed
   * Updated tests due to rounding differences in terra-abstract-modal
 

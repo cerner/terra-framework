@@ -539,6 +539,12 @@ class DatePicker extends React.Component {
         return this.preventFocusTimeout
       }
     )
+
+    if (this.props.onChangeRaw && !isSameDay(this.props.selected, date) || this.props.allowSameDay) {
+      const value = DateUtil.formatISODate(date, DateUtil.getFormatByLocale(this.props.intl.locale));
+      this.props.onChangeRaw(event, value);
+    }
+
     this.setSelected(date, event)
     if (!this.props.shouldCloseOnSelect) {
       this.setPreSelection(date)
