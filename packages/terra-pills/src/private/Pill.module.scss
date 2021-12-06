@@ -71,7 +71,7 @@
     font-size: var(--terra-pills-pill-label-font-size, 0.85714rem);
     font-weight: var(--terra-pills-pill-label-font-weight, 400);
     height: 100%;
-    line-height: var(--terra-pills-pill-label-line-height, 1.16667); // np032453 - 1.16667 is accurate // lp052179 - suggested value 1.3846
+    line-height: var(--terra-pills-pill-label-line-height, 1.16667);
     min-width: 0;
     overflow: hidden;
     padding-bottom: var(--terra-pills-pill-label-padding-bottom, 0.28571rem);

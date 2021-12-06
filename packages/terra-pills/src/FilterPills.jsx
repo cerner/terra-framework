@@ -1,5 +1,5 @@
 import React, {
-  useCallback, useEffect, useLayoutEffect, useRef, useState,
+  useCallback, useLayoutEffect, useRef, useState,
 } from 'react';
 import {
   KEY_BACK_SPACE,
@@ -9,17 +9,17 @@ import {
   KEY_LEFT,
   KEY_RIGHT,
 } from 'keycode-js';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
+import PropTypes from 'prop-types';
+import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import ResizeObserver from 'resize-observer-polyfill';
 import Pill from './private/_Pill';
-import styles from './private/Pill.module.scss';
-import RollUpPill from './private/_RollupPill';
 import PillsUtils from './private/PillsUtils';
+import RollUpPill from './private/_RollupPill';
+import styles from './private/Pill.module.scss';
 
 const cx = classNamesBind.bind(styles);
 
@@ -84,19 +84,20 @@ const FilterPills = (props) => {
   } = props;
 
   const theme = React.useContext(ThemeContext);
-  const filterPillsRef = useRef();
-  const focusNode = useRef(0);
-  const currentPill = useRef();
   const [containerTabindex, setContainerTabindex] = useState('-1');
-  const isRollUpRemoved = useRef(false);
   const [updatedCount, setUpdatedCount] = useState(React.Children.count(children));
   const [rollUpCount, setRollUpCount] = useState(React.Children.count(children));
-  const isPillDeleted = useRef(false);
   const [isCollapsed, setIsCollapsed] = useState(isCollapsible);
   const [pillRemoved, setIsPillRemoved] = useState(false);
-  const removedLabel = useRef();
   const [showRollupPillInteraction, setShowRollupPillInteraction] = useState(false);
+  const currentPill = useRef(); // ID of the pill that will recevie focus
+  const filterPillsRef = useRef();
+  const focusNode = useRef(0); // index of the pill that will receive focus
+  const isPillDeleted = useRef(false);
+  const isRollUpRemoved = useRef(false);
+  const removedLabel = useRef();
 
+  // Identifies the number of pills that needs to be hidden/rolled up
   const generateRollUp = useCallback(() => {
     const startIndex = PillsUtils.handleRollUp(filterPillsRef);
     if (isCollapsed) {
@@ -107,6 +108,7 @@ const FilterPills = (props) => {
     }
   }, [children, isCollapsed]);
 
+  // Modifies the tabindex of the pill/rollup pill node
   const setTabIndex = (val) => {
     const currentNode = currentPill.current ? filterPillsRef.current.querySelector(`[id=${currentPill.current}]`) : null;
     if (currentNode) {
@@ -114,6 +116,7 @@ const FilterPills = (props) => {
     }
   };
 
+  // Sets focus to the current pill/rollup pill with tabindex 0
   const focusCurrentNode = () => {
     const currentNode = currentPill.current ? filterPillsRef.current.querySelector(`[id=${currentPill.current}]`) : null;
     if (currentNode) {
@@ -121,7 +124,14 @@ const FilterPills = (props) => {
     }
   };
 
-  const handleTabIndex = useCallback(() => {
+  // sets focus to the pill container if there are Zero pills/all pill are deleted.
+  const focusPillsContainer = () => {
+    setContainerTabindex('0');
+    filterPillsRef.current.focus();
+  };
+
+  // resets all pill nodes tabindex to -1, except for the one pill that receives focus.
+  const resetTabIndex = useCallback(() => {
     const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
     const rollUpPill = filterPillsRef.current.querySelector('[data-terra-rollup-pill]');
 
@@ -134,46 +144,29 @@ const FilterPills = (props) => {
       PillsUtils.setPillsTabIndex(pills, '-1');
       currentPill.current = pills[focusNode.current].id;
       setTabIndex('0');
-    } else if (isCollapsible && rollUpPill) { // if the first pill is rollUp pill, set rollUp pill tabindex 0
+    } else if (isCollapsible && isCollapsed && rollUpPill) { // if the first pill is rollUp pill, set rollUp pill tabindex 0
       currentPill.current = rollUpPill.getAttribute('id');
       setTabIndex('0');
     }
-  }, [isCollapsible]);
+  }, [isCollapsed, isCollapsible]);
 
-  const handleResize = useCallback((entries) => {
-    if (!Array.isArray(entries)) {
-      return;
+  const handleFocusOnRollUpTrigger = useCallback(() => {
+    const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
+    // To focus the immediate focusable pill after the rollUp pill is selected
+    if (isCollapsible && !isCollapsed && pills.length > 0) {
+      if (pills.length === React.Children.count(children)) {
+        setTabIndex('-1');
+        currentPill.current = pills[focusNode.current].id;
+        setTabIndex('0');
+        if (isRollUpRemoved.current) { // if the rollup pill was triggered with keyboard focus the node
+          focusCurrentNode();
+          isRollUpRemoved.current = false;
+        }
+      }
     }
+  }, [children, isCollapsed, isCollapsible]);
 
-    setUpdatedCount(React.Children.count(children));
-    setRollUpCount(React.Children.count(children));
-
-    if (isCollapsible) {
-      generateRollUp();
-    }
-
-    handleTabIndex();
-  }, [children, isCollapsible, handleTabIndex, generateRollUp]);
-
-  useLayoutEffect(() => {
-    let observer = new ResizeObserver((entries) => {
-      handleResize(entries);
-    });
-    observer.observe(filterPillsRef.current.parentNode);
-
-    return () => {
-      observer.disconnect();
-      observer = null;
-    };
-  }, [children, handleResize, isCollapsed]);
-
-  const focusPillsContainer = () => {
-    setContainerTabindex('0');
-    filterPillsRef.current.focus();
-  };
-
-  // When a pill is deleted, focuses the new pill.
-  useEffect(() => {
+  const handlePillDeletion = useCallback(() => {
     const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
     const rollUpPill = filterPillsRef.current.querySelector('[data-terra-rollup-pill]');
     const startIndex = PillsUtils.handleRollUp(filterPillsRef);
@@ -183,7 +176,7 @@ const FilterPills = (props) => {
         focusPillsContainer();
         return;
       }
-      // if there is a roll Up pill, set tabindex to 0
+      // if there is a roll Up pill, set tabindex to -1
       if (rollUpPill) {
         PillsUtils.setRollUpPillTabIndex(rollUpPill, '-1');
       }
@@ -203,33 +196,44 @@ const FilterPills = (props) => {
       focusCurrentNode();
       isPillDeleted.current = false;
     }
-  }, [isPillDeleted, children]);
+  }, [children]);
 
-  useEffect(() => {
-    const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
-    // To focus the immediate focusable pill after the rollUp pill is selected/removed
-    if (isCollapsible && !isCollapsed) {
-      if (pills.length === React.Children.count(children)) {
-        setTabIndex('-1');
-        focusNode.current += 1;
-        currentPill.current = pills[focusNode.current].id;
-        setTabIndex('0');
-        if (isRollUpRemoved.current) {
-          focusCurrentNode();
-          isRollUpRemoved.current = false;
-        }
-      }
+  const handleResize = useCallback((entries) => {
+    if (!Array.isArray(entries)) {
+      return;
     }
-  }, [children, isCollapsed, isCollapsible, updatedCount]);
+
+    setUpdatedCount(React.Children.count(children));
+    setRollUpCount(React.Children.count(children));
+
+    if (isCollapsible) {
+      generateRollUp();
+    }
+
+    resetTabIndex();
+    handleFocusOnRollUpTrigger();
+    handlePillDeletion();
+  }, [children, isCollapsible, resetTabIndex, handleFocusOnRollUpTrigger, handlePillDeletion, generateRollUp]);
+
+  useLayoutEffect(() => {
+    let observer = new ResizeObserver((entries) => {
+      handleResize(entries);
+    });
+    observer.observe(filterPillsRef.current.parentNode);
+
+    return () => {
+      observer.disconnect();
+      observer = null;
+    };
+  }, [children, handleResize]);
 
   const focusNextNode = (pills, rollUpPill) => {
-    // if the next pill is roll up pill, focus the roll up pill
-
     if (focusNode.current + 1 === pills.length || focusNode.current + 1 < pills.length) {
       setTabIndex('-1');
+      // if the next pill is roll up pill, focus the roll up pill
       if (rollUpPill && focusNode.current + 1 === pills.length) {
         currentPill.current = rollUpPill.getAttribute('id');
-      } else if (focusNode.current + 1 < pills.length) {
+      } else if (focusNode.current + 1 < pills.length) { // focus the next available pill
         focusNode.current += 1;
         currentPill.current = children[focusNode.current].props.id;
       }
@@ -238,18 +242,16 @@ const FilterPills = (props) => {
     }
   };
 
-  const focusPreviousNode = (pills, rollUpPill) => { // lp052179
-    // if the focused pill is roll up pill, then focus the immediate previous pill
-    if (rollUpPill && currentPill.current === 'rollup-pill') {
+  const focusPreviousNode = (pills, rollUpPill) => {
+    if (currentPill.current === 'rollup-pill' || focusNode.current >= 1) {
       setTabIndex('-1');
-      focusNode.current = pills.length - 1;
-      currentPill.current = children[focusNode.current].props.id;
-      setTabIndex('0');
-      focusCurrentNode();
-    } else if (focusNode.current >= 1) { // focus the previous pill
-      setTabIndex('-1');
-      focusNode.current -= 1;
-      currentPill.current = children[focusNode.current].props.id;
+      if (rollUpPill && currentPill.current === 'rollup-pill') { // If rollup pill, then focus the roll up pill
+        focusNode.current = pills.length - 1;
+        currentPill.current = children[focusNode.current].props.id;
+      } else {
+        focusNode.current -= 1;
+        currentPill.current = children[focusNode.current].props.id;
+      }
       setTabIndex('0');
       focusCurrentNode();
     }
@@ -349,9 +351,10 @@ const FilterPills = (props) => {
     if (isCollapsible && isCollapsed) {
       if (event.type === 'keydown') {
         isRollUpRemoved.current = true;
+        focusNode.current = pills.length;
       } else {
         setTabIndex('-1');
-        focusNode.current = pills.length - 1;
+        focusNode.current = pills.length;
       }
     } else {
       setShowRollupPillInteraction(false);

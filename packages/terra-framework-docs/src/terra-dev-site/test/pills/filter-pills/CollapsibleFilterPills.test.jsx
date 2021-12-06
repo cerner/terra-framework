@@ -33,11 +33,23 @@ const CollapsibleFilterPills = () => {
     },
   ];
   const [pills, setPills] = useState(pillsData);
+  const [counter, setCounter] = useState(0);
 
   const handleOnRemove = (pillKey, metaData) => {
     const pillsArray = pills;
     pillsArray.splice(metaData.index, 1);
     setPills([...pillsArray]);
+  };
+
+  const handleAddPills = () => {
+    const oldPills = pills;
+    const pill = {
+      label: `test-pill- ${counter}`,
+      id: `test-filter-pills-test-${counter}`,
+    };
+    setCounter(newCounter => newCounter + 1);
+    oldPills.push(pill);
+    setPills(oldPills);
   };
 
   return (
@@ -58,6 +70,7 @@ const CollapsibleFilterPills = () => {
           />
         ))}
       </FilterPills>
+      <button type="button" onClick={handleAddPills}> Add more pills</button>
     </>
   );
 };
