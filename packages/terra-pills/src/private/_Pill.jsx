@@ -236,60 +236,68 @@ const Pill = (props) => {
     </button>
   );
 
-  const renderSelectablePill = () => (
-    <>
-      <div
-        {...customProps}
-        {...pillProps}
-        {...pillButtonProps}
-        aria-expanded={pillInteraction.isSelectable ? true : undefined}
-        aria-haspopup={pillInteraction.isSelectable ? 'dialog' : undefined}
-        id={id}
-        className={pillClassNames}
-        ref={pillRef}
-        type="button"
-        aria-describedby={`interaction-hint-${id}`}
-        data-terra-pills-show-focus-styles
-        data-terra-pill
-      >
-        <span className={cx('pill-label')}>
-          {labelCategory
-            ? <span className={cx('pill-category')}>{`${labelCategory}: `}</span>
-            : undefined}
-          <span>{label}</span>
-        </span>
-      </div>
-      {pillInteraction.isRemovable && renderRemoveButton()}
-      {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={pillInteractionHint} aria-hidden="true" />}
-      {isTruncated && renderTruncatedLabelPopup()}
-    </>
-  );
+  const renderSelectablePill = () => {
+    const categoryLabel = labelCategory || '';
+    const visuallyHiddenTextHint = ` ${categoryLabel} ${label} ${pillInteractionHint}`;
+    return (
+      <>
+        <div
+          {...customProps}
+          {...pillProps}
+          {...pillButtonProps}
+          aria-expanded={pillInteraction.isSelectable ? true : undefined}
+          aria-haspopup={pillInteraction.isSelectable ? 'dialog' : undefined}
+          id={id}
+          className={pillClassNames}
+          ref={pillRef}
+          type="button"
+          aria-describedby={`interaction-hint-${id}`}
+          data-terra-pills-show-focus-styles
+          data-terra-pill
+        >
+          <span className={cx('pill-label')}>
+            {labelCategory
+              ? <span className={cx('pill-category')}>{`${labelCategory}: `}</span>
+              : undefined}
+            <span>{label}</span>
+          </span>
+        </div>
+        {pillInteraction.isRemovable && renderRemoveButton()}
+        {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={visuallyHiddenTextHint} aria-hidden="true" />}
+        {isTruncated && renderTruncatedLabelPopup()}
+      </>
+    );
+  };
 
   /* eslint-disable jsx-a11y/aria-role */
-  const renderBasicPill = () => (
-    <>
-      <div
-        {...customProps}
-        {...pillProps}
-        id={id}
-        className={pillClassNames}
-        ref={pillRef}
-        role="text" // Prevent VoiceOver from announcing as "group" https://dequeuniversity.com/rules/axe/4.2/aria-text
-        aria-labelledby={`${pillInteractionHintID} interaction-hint-${id}`}
-        data-terra-pills-show-focus-styles
-        data-terra-pill
-      >
-        <label className={cx('pill-label')}>
-          {labelCategory
-            ? <span className={cx('pill-category')}>{`${labelCategory}: `}</span>
-            : undefined}
-          <span>{label}</span>
-        </label>
-      </div>
-      {pillInteraction.isRemovable && renderRemoveButton()}
-      {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={` ${labelCategory} ${label} ${pillInteractionHint}`} aria-hidden="true" />}
-    </>
-  );
+  const renderBasicPill = () => {
+    const categoryLabel = labelCategory || '';
+    const visuallyHiddenTextHint = ` ${categoryLabel} ${label} ${pillInteractionHint}`;
+    return (
+      <>
+        <div
+          {...customProps}
+          {...pillProps}
+          id={id}
+          className={pillClassNames}
+          ref={pillRef}
+          role="text" // Prevent VoiceOver from announcing as "group" https://dequeuniversity.com/rules/axe/4.2/aria-text
+          aria-labelledby={`${pillInteractionHintID} interaction-hint-${id}`}
+          data-terra-pills-show-focus-styles
+          data-terra-pill
+        >
+          <label className={cx('pill-label')}>
+            {labelCategory
+              ? <span className={cx('pill-category')}>{`${labelCategory}: `}</span>
+              : undefined}
+            <span>{label}</span>
+          </label>
+        </div>
+        {pillInteraction.isRemovable && renderRemoveButton()}
+        {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={visuallyHiddenTextHint} aria-hidden="true" />}
+      </>
+    );
+  };
   /* eslint-enable jsx-a11y/aria-role */
 
   return (

@@ -25,7 +25,7 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-   * The string that labels the collection of pills, used in cased where the text label is not visible on
+   * The string that labels the collection of pills, used in cases where the text label is not visible on
    * the screen and required for minimum accessibility standards. Providing this prop adds the `aria-label`
    * attribute to the Pill List container element. (Required)
    */
@@ -384,10 +384,10 @@ const FilterPills = (props) => {
   if (isCollapsible && (rollUpCount > 0) && isCollapsed) {
     pillGroupInteractionHint += `, ${intl.formatMessage({ id: 'Terra.pills.hint.rollupNotVisible' }, { pillsNotVisibleCount: rollUpCount })}`;
   } else if (isCollapsible && !isCollapsed && showRollupPillInteraction) {
-    removedPillInteractionHint = 'hidden items are displayed now...';
+    removedPillInteractionHint = 'hidden items are displayed now...'; // needs transtaions lp052179
   }
   if (pillRemoved) {
-    removedPillInteractionHint = `${removedLabel.current} was removed...`;
+    removedPillInteractionHint = `${removedLabel.current} was removed...`; // needs translations lp052179
   }
 
   const renderChildren = (items) => {
