@@ -3,14 +3,22 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import Input from 'terra-form-input';
 import ButtonGroup from 'terra-button-group';
 import { injectIntl } from 'react-intl';
 import uuidv4 from 'uuid/v4';
-
 import * as KeyCode from 'keycode-js';
 import TimeUtil from './TimeUtil';
 import styles from './TimeInput.module.scss';
+import Instructions from './_Instructions';
+import {
+  TWELVE_HOUR_MINUTE,
+  TWELVE_HOUR_MINUTE_SECOND,
+  TWENTY_FOUR_HOUR_MINUTE,
+  TWENTY_FOUR_HOUR_MINUTE_SECOND,
+} from './TimeTypes';
+import AccessibleInput from './_AccessibleInput';
+import TimeSpacer from './_TimeSpacer';
+import AccessibleValue from './_AccessibleValue';
 
 const cx = classNamesBind.bind(styles);
 
@@ -19,6 +27,16 @@ const propTypes = {
    * Whether the time input should be disabled.
    */
   disabled: PropTypes.bool,
+  /**
+   * Prevents screen reader users from hearing instructions on how to use this Time Input. The instructions are never
+   * rendered visually.
+   *
+   * **BEST PRACTICE FOR ACCESSIBILITY**: Only set this prop true on the 2nd, 3rd, etc. Time Inputs on the same view.
+   * The idea is you can save screen reader users the annoyance of hearing the same lengthy instructions more than once
+   * when the screen reader is reading the entire view. Do not disable instructions on the 1st or only Time Input in the
+   * view. Time Input uses some non-standard keyboard controls, so it's important to explain them to the user.
+   */
+  disableInstructions: PropTypes.bool,
   /**
    * Custom input attributes that apply to the hour, minute, and second inputs.
    */
@@ -52,6 +70,14 @@ const propTypes = {
    * Name of the time input. The name should be unique.
    */
   name: PropTypes.string.isRequired,
+  /**
+   * An identifier used by assistive technologies like screen readers to briefly describe this time input to users.
+   * The label is not rendered visually.
+   *
+   * **BEST PRACTICE FOR ACCESSIBILITY**: you _SHOULD_ set this to match whatever visible label you give in your UI.
+   * Currently this is optional for passivity reasons, but it will become mandatory in a future major version.
+   */
+  label: PropTypes.string,
   /**
    * A callback function to execute when the entire time input component loses focus.
    * This event does not get triggered when the focus is moved from the hour input to the minute input or meridiem because the focus is still within the main time input component.
@@ -97,12 +123,14 @@ const propTypes = {
 
 const defaultProps = {
   disabled: false,
+  disableInstructions: false,
   inputAttributes: {},
   isIncomplete: false,
   isInvalid: false,
   isInvalidMeridiem: false,
   minuteAttributes: {},
   hourAttributes: {},
+  label: '',
   onBlur: null,
   onChange: null,
   onFocus: undefined,
@@ -647,6 +675,7 @@ class TimeInput extends React.Component {
   render() {
     const {
       disabled,
+      disableInstructions,
       inputAttributes,
       minuteAttributes,
       hourAttributes,
@@ -654,6 +683,7 @@ class TimeInput extends React.Component {
       isIncomplete,
       isInvalid,
       isInvalidMeridiem,
+      label,
       onBlur,
       onChange,
       onFocus,
@@ -679,22 +709,30 @@ class TimeInput extends React.Component {
 
     const variantFromLocale = TimeUtil.getVariantFromLocale(this.props);
 
-    // Using the state of hour, minute, and second (if shown) create a time in UTC represented in ISO 8601 format.
-    let timeValue = '';
+    /**
+     * Returns an ISO 8601 representation of the state. The representation might be incomplete or invalid.
+     */
+    const isoValue = () => {
+      // Using the state of hour, minute, and second (if shown) create a time in UTC represented in ISO 8601 format.
+      let iso = '';
 
-    if (this.state.hour.length > 0 || this.state.minute.length > 0 || (this.state.second.length > 0 && showSeconds)) {
-      let hour = parseInt(this.state.hour, 10);
+      if (this.state.hour.length > 0 || this.state.minute.length > 0 || (this.state.second.length > 0 && showSeconds)) {
+        let hour = parseInt(this.state.hour, 10);
+        console.log(`parsed hour: ${hour}`);
+        if (variantFromLocale === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem) {
+          hour += 12;
+          console.log(`parsed hour: ${hour}`);
+        }
 
-      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem) {
-        hour += 12;
+        iso = 'T'.concat(hour, ':', this.state.minute);
+
+        if (showSeconds) {
+          iso = iso.concat(':', this.state.second);
+        }
       }
 
-      timeValue = 'T'.concat(hour, ':', this.state.minute);
-
-      if (showSeconds) {
-        timeValue = timeValue.concat(':', this.state.second);
-      }
-    }
+      return iso;
+    };
 
     const theme = this.context;
 
@@ -724,11 +762,103 @@ class TimeInput extends React.Component {
       { 'initial-focus': this.state.secondInitialFocused },
     ]);
 
-    const formatDescriptionId = `terra-time-input-description-format-${this.uuid}`;
+    function mask() {
+      if (showSeconds) {
+        return intl.formatMessage({
+          id: 'Terra.timeInput.maskHourMinute',
+          defaultMessage: '(hh:mm:ss)',
+          description: 'A visual hint that the Time Input expects two-digit hour, minute and second.',
+        });
+      }
+      return intl.formatMessage({
+        id: 'Terra.timeInput.maskHourMinuteSecond',
+        defaultMessage: '(hh:mm)',
+        description: 'Like Terra.timeInput.maskHourMinute but no second.',
+      });
+    }
 
-    const format = showSeconds
-      ? `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })}:${intl.formatMessage({ id: 'Terra.timeInput.ss' })})`
-      : `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })})`;
+    // timeType is used in a couple places to avoid repeating this if ladder when both variant and showSeconds need to
+    // be considered.
+    function timeType() {
+      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR && showSeconds) {
+        return TWELVE_HOUR_MINUTE_SECOND;
+      }
+      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR) {
+        return TWELVE_HOUR_MINUTE;
+      }
+      if (showSeconds) {
+        return TWELVE_HOUR_MINUTE_SECOND;
+      }
+      return TWELVE_HOUR_MINUTE;
+    }
+
+    // Thh:mm or Thh:mm:ss
+    const isCompleteTime = () => (showSeconds ? isoValue().length === 9 : isoValue().length === 6);
+
+    /**
+     * Using the state to create a human-readable representation to be used for screen readers.
+     *
+     * Returns undefined if the time is incomplete or invalid.
+     * */
+    const textValue = () => {
+      if (!isCompleteTime()) {
+        console.log(`incomplete time: ${isoValue()}`);
+        return undefined;
+      }
+
+      console.log(`complete time: ${isoValue()}`);
+
+      switch (timeType()) {
+        case TWELVE_HOUR_MINUTE:
+          return intl.formatMessage({
+            id: 'Terra.timeInput.textValueTwelveHourMinute',
+            defaultMessage: `${this.state.hour}:${this.state.minute} ${this.state.meridiem}`,
+            description: 'Human-readable time value in a 12-hour clock with hours and minutes.',
+          });
+        case TWELVE_HOUR_MINUTE_SECOND:
+          return intl.formatMessage({
+            id: 'Terra.timeInput.textValueTwelveHourMinuteSecond',
+            defaultMessage: `${this.state.hour}:${this.state.minute}:${this.state.second} ${this.state.meridiem}`,
+            description: 'Human-readable time value in a 12-hour clock with hours, minutes, and seconds.',
+          });
+        case TWENTY_FOUR_HOUR_MINUTE:
+          return intl.formatMessage({
+            id: 'Terra.timeInput.textValueTwentyFourHourMinute',
+            defaultMessage: `${this.state.hour}:${this.state.minute}`,
+            description: 'Human-readable time value in a 24-hour clock with hours and minutes.',
+          });
+        case TWENTY_FOUR_HOUR_MINUTE_SECOND:
+          return intl.formatMessage({
+            id: 'Terra.timeInput.textValueTwentyFourHourMinuteSecond',
+            defaultMessage: `${this.state.hour}:${this.state.minute}:${this.state.second}`,
+            description: 'Human-readable time value in a 24-hour clock with hours, minutes, and seconds.',
+          });
+        default:
+          throw new Error('Unrecognized TimeType.');
+      }
+    };
+
+    /**
+     * Returns a localized description for the hour input that reflects whether this is a 12 or 24-hour clock.
+     *
+     * NOTE: the description does not take the place of validation or error messages.
+     */
+    function hourDescription() {
+      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR) {
+        return intl.formatMessage({
+          id: 'Terra.timeInput.hourDescriptionTwelve',
+          defaultMessage: 'A two-digit 12-hour value',
+          description: `Explains to screen reader users that the hour field needs a two digit hour. This will be read
+          only when a screen reader is enabled. It is never displayed. It will be read when the user has focused on
+          the hour input or when the screen reader is reading the page to the user.`,
+        });
+      }
+      return intl.formatMessage({
+        id: 'Terra.timeInput.hourDescriptionTwelve',
+        defaultMessage: 'A two-digit 24-hour value',
+        description: 'Like Terra.timeInput.hourDescriptionTwelve but for a 24-hour clock.',
+      });
+    }
 
     return (
       <div
@@ -736,18 +866,73 @@ class TimeInput extends React.Component {
         ref={this.timeInputContainer}
         className={cx('time-input-container', theme.className)}
       >
-        <div className={timeInputClassNames}>
+        {/*
+        Explaining to screen reader users how to use the Time Input is important, because we're not using a native
+        time input like the ones some browsers now support. We present an invisible set of instructions first so that
+        the user will hear something like this:
+
+          "Time of Birth group. <instruction text> Time of birth Hours input., ..."
+
+        Hearing the same lengthy instructions several times in the same view can get annoying, so the instructions can
+        be disabled for the 2nd and subsequent Time Inputs.
+
+        All of the controls should be presented as a group to assistive technologies. Then, each component also
+        has its own specific label as well. If a TimeInput is to be labeled Time of Birth then it would be presented to
+        assistive tech. like this:
+
+          Time of Birth (group)
+            |--<instructions>
+            |--Time of Birth Hours (input)
+            |--Minutes (input)
+            |--Seconds (input)
+            |--AM (toggle button)
+            |--PM (toggle button)
+
+        In read mode, and ignoring instructions, values and descriptions for a moment, the screen reader would read
+        something like:
+
+          "Time of Birth group. Time of Birth hours input. Minutes input. Seconds input. AM toggle button.
+          PM toggle button."
+
+        The first Input in the group has a combination label, 'Time of Birth Hours', so that it's easy to pick out that
+        field out of a list of many inputs in the same view when the screen reader is in picker mode. Picker mode lets
+        the user can jump to elements in a page. Screen readers tend to present a flat list of inputs without context
+        of which Time Input those inputs belong to, like this:
+
+          ==SCREEN READER'S LIST OF FORM INPUTS TO PICK==
+          1. Time of Birth Hour
+          2. Minute
+          3. Second
+          4. Time of Death Hour <-- easy to spot the start of the Time of Death input.
+          5. Minute
+
+        The AccessibleValue's job is to announce a localized human-readable representation of the time to screen reader
+        users. The announcement is only made when the value changes to a valid time. If the Time of Birth started out at
+        T14:22 and the user changed the hour from 02 to 03, the value would be T15:22 and the announcer would
+        immediately say "Time of birth 3:22 pm."
+        */}
+        {!disableInstructions && <Instructions timeType={timeType()} />}
+        <AccessibleValue
+          value={textValue()}
+          readThis={intl.formatMessage({
+            id: 'Terra.timeInput.textValue',
+            defaultMessage: `${label} ${textValue()}`,
+            description: `This will be read to screen reader users only when there is a change to a new time. We want to
+          give the screen reader user feedback that their change to one of the controls has updated this time.`,
+          })}
+        />
+        <div className={timeInputClassNames} role="group" aria-label={label}>
           <input
             // Create a hidden input for storing the name and value attributes to use when submitting the form.
             // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
             type="hidden"
             name={name}
-            value={timeValue}
+            value={isoValue()}
           />
-          <Input
+          <AccessibleInput
             {...inputAttributes}
             {...hourAttributes}
-            aria-label={intl.formatMessage({ id: 'Terra.timeInput.hours' })}
+            label={intl.formatMessage({ id: 'Terra.timeInput.hours' })}
             refCallback={(inputRef) => {
               this.hourInput = inputRef;
               if (refCallback) refCallback(inputRef);
@@ -764,14 +949,14 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             disabled={disabled}
-            aria-describedby={formatDescriptionId}
+            description={hourDescription()}
           />
-          <span className={cx('time-spacer')}>:</span>
-          <Input
+          <TimeSpacer className={cx('time-spacer')} />
+          <AccessibleInput
             {...inputAttributes}
             {...minuteAttributes}
             refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-            aria-label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
+            label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
             className={minuteClassNames}
             type="text"
             value={this.state.minute}
@@ -784,16 +969,20 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             disabled={disabled}
-            aria-describedby={formatDescriptionId}
+            description={intl.formatMessage({
+              id: 'Terra.timeInput.descriptionMinute',
+              defaultMessage: 'A two-digit minute.',
+              description: 'Like the hour descriptions, but for the minute input.',
+            })}
           />
           {showSeconds && (
             <React.Fragment>
-              <span className={cx('time-spacer')}>:</span>
-              <Input
+              <TimeSpacer className={cx('time-spacer')} />
+              <AccessibleInput
                 {...inputAttributes}
                 {...secondAttributes}
                 refCallback={(inputRef) => { this.secondInput = inputRef; }}
-                aria-label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
+                label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
                 className={secondClassNames}
                 type="text"
                 value={this.state.second}
@@ -806,12 +995,17 @@ class TimeInput extends React.Component {
                 size="2"
                 pattern="\d*"
                 disabled={disabled}
-                aria-describedby={formatDescriptionId}
+                description={intl.formatMessage({
+                  id: 'Terra.timeInput.descriptionSecond',
+                  defaultMessage: 'A two-digit second.',
+                  description: 'Like the hour descriptions, but for the second input.',
+                })}
               />
             </React.Fragment>
           )}
         </div>
         {variantFromLocale === TimeUtil.FORMAT_12_HOUR && (
+          // TODO: consume https://github.com/cerner/terra-core/pull/3535 so that the am/pm controls present as toggle buttons to screen reader users.
           <ButtonGroup selectedKeys={[this.state.meridiem]} onChange={this.handleMeridiemButtonChange} className={cx('meridiem-button-group')}>
             <ButtonGroup.Button
               key={this.anteMeridiem}
@@ -831,9 +1025,11 @@ class TimeInput extends React.Component {
             />
           </ButtonGroup>
         )}
-        <div id={formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })} ${format}`}>
-          {format}
-        </div>
+        {/*
+        Screen readers should not read this because it will not make sense, and screen reader users already got special
+        instructions including format information.
+        */}
+        <p aria-hidden className={cx('format-text')}>{mask()}</p>
       </div>
     );
     /* eslint-enable jsx-a11y/no-static-element-interactions */

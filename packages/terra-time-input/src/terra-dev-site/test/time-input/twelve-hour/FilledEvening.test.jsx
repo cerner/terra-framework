@@ -7,6 +7,8 @@ const TimeInputDefault = () => (
     id="timeInput"
     name="time-input"
     value="21:22"
+    disableInstructions
+    label="Time of Birth"
     variant={TimeUtil.FORMAT_12_HOUR}
   />
 );
