@@ -177,6 +177,11 @@ class TimeUtil {
     return '00';
   }
 
+  /**
+   * Returns a string representation of the time's hour, or ''.
+   * @param {*} time String time formatted like hh:mm or hh:mm:ss.
+   * @returns A zero-padded two digit hour, 00 <= mm < 24.
+   */
   static splitHour(time) {
     if (typeof (time) === 'string') {
       const hourMinuteAndSecond = time.split(':');
@@ -198,6 +203,11 @@ class TimeUtil {
     return '';
   }
 
+  /**
+   * Returns a string representation of the time's minute, or ''.
+   * @param {*} time String time formatted like hh:mm or hh:mm:ss.
+   * @returns A zero-padded two digit minute, 00 <= mm < 60.
+   */
   static splitMinute(time) {
     if (typeof (time) === 'string') {
       const hourMinuteAndSecond = time.split(':');
@@ -219,6 +229,11 @@ class TimeUtil {
     return '';
   }
 
+  /**
+   * Returns a string representation of the time's second, or ''.
+   * @param {*} time String time formatted like hh:mm or hh:mm:ss.
+   * @returns A zero-padded two digit second, 00 <= mm < 60.
+   */
   static splitSecond(time) {
     if (typeof (time) === 'string') {
       const hourMinuteAndSecond = time.split(':');
