@@ -140,6 +140,7 @@ class TimeInput extends React.Component {
     this.handleHourChange = this.handleHourChange.bind(this);
     this.handleMinuteChange = this.handleMinuteChange.bind(this);
     this.handleSecondChange = this.handleSecondChange.bind(this);
+    this.handleInputKeyDown = this.handleInputKeyDown.bind(this);
     this.handleHourInputKeyDown = this.handleHourInputKeyDown.bind(this);
     this.handleMinuteInputKeyDown = this.handleMinuteInputKeyDown.bind(this);
     this.handleSecondInputKeyDown = this.handleSecondInputKeyDown.bind(this);
@@ -423,6 +424,35 @@ class TimeInput extends React.Component {
   handleMeridiemButtonFocus(event) {
     if (this.props.onFocus && !this.timeInputContainer.current.contains(event.relatedTarget)) {
       this.props.onFocus(event);
+    }
+  }
+
+  handleInputKeyDown(event) {
+    let { hour, minute, second } = this.state;
+
+    if (event.keyCode === KeyCode.KEY_N) {
+
+      return;
+    } if (event.keyCode === KeyCode.KEY_DASH) {
+      minute = TimeUtil.decrementMinute(minute);
+
+      return;
+    } if (event.keyCode === KeyCode.KEY_EQUALS) {
+      minute = TimeUtil.incrementMinute(minute);
+
+      return;
+    } if (event.keyCode === KeyCode.KEY_A) {
+
+      return;
+    } if (event.keyCode === KeyCode.KEY_P) {
+
+      return;
+    }
+
+    if (inputType === DateInputUtil.inputType.DAY) {
+      this.handleDayKeyDown(event);
+    } else {
+      this.handleYearKeyDown(event);
     }
   }
 
