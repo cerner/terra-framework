@@ -474,17 +474,19 @@ class DateInput extends React.Component {
    * @param {Number} addDays Adds days to current date or today's date.
    */
   setHotKeyDate(event, addDays) {
-    const { year, month, day } = this.state;
-    // The Date constructor uses 0-based index for month, using our set month value will give the next month but by also using 0 for day
-    // we move the day back by one giving the set month's final day.
-    const daysInMonth = new Date(Number(year), Number(month), 0).getDate();
-    const validYear = (year.length === 4 && Number(year) < DateInputUtil.MaxYearValue && Number(year) > DateInputUtil.MinYearValue);
-    const validDay = (Number(day) > 0 && Number(day) <= daysInMonth);
+    let { year, month, day } = this.state;
+    year = Number(year);
+    month = Number(month) - 1;
+    day = Number(day);
+    const dateFromInput = new Date(year, month, day);
+    const validYear = (year < DateInputUtil.MaxYearValue && year > DateInputUtil.MinYearValue && dateFromInput.getFullYear() === year);
+    const validMonth = (dateFromInput.getMonth() === month);
+    const validDay = (day > 0 && day <= 31 && dateFromInput.getDate() === day);
     let dateObj;
-    if (!month || addDays === 0 || !validYear || !validDay) {
+    if (!month || addDays === 0 || !validYear || !validDay || !validMonth) {
       dateObj = new Date();
     } else {
-      dateObj = new Date(`${year}-${month}-${day}`);
+      dateObj = dateFromInput;
     }
     dateObj.setDate(dateObj.getDate() + addDays);
     const hotkeyDate = dateObj.toISOString();
