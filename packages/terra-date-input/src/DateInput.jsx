@@ -248,9 +248,9 @@ class DateInput extends React.Component {
   }
 
   /**
-   * Takes a key input and processes it based on if it is a hot key otherwise passes it to the apprioate input type key down handler.
+   * Takes a key input and processes it based on if it is a hot key otherwise passes it to the appropriate input type key down handler.
    * @param {Object} event Event object generated from the event delegation.
-   * @param {DateInputUtil.inputType} inputType Type definition of the input that recieved the keydown event.
+   * @param {DateInputUtil.inputType} inputType Type definition of the input that received the keydown event.
    */
   handleInputKeyDown(event, inputType) {
     if (event.keyCode === KeyCode.KEY_T) {
