@@ -427,8 +427,8 @@ class TimeInput extends React.Component {
     }
   }
 
-  handleInputKeyDown(event) {
-    let { hour, minute, second } = this.state;
+  handleInputKeyDown(event, inputType) {
+    let { hour, minute, second, meridiem } = this.state;
 
     if (event.keyCode === KeyCode.KEY_N) {
 
@@ -442,17 +442,19 @@ class TimeInput extends React.Component {
 
       return;
     } if (event.keyCode === KeyCode.KEY_A) {
-
+      meridiem = this.anteMeridiem;
       return;
     } if (event.keyCode === KeyCode.KEY_P) {
-
+      meridiem = this.postMeridiem;
       return;
     }
 
-    if (inputType === DateInputUtil.inputType.DAY) {
-      this.handleDayKeyDown(event);
+    if (inputType === TimeUtil.inputType.HOUR) {
+      this.handleHourInputKeyDown(event);
+    } if (inputType === TimeUtil.inputType.MINUTE) {
+      this.handleMinuteInputKeyDown(event);
     } else {
-      this.handleYearKeyDown(event);
+      this.handleSecondInputKeyDown(event);
     }
   }
 
