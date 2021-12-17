@@ -9,7 +9,6 @@ import uuidv4 from 'uuid/v4';
 import * as KeyCode from 'keycode-js';
 import TimeUtil from './TimeUtil';
 import styles from './TimeInput.module.scss';
-import Instructions from './_Instructions';
 import {
   TWELVE_HOUR_MINUTE,
   TWELVE_HOUR_MINUTE_SECOND,
@@ -27,16 +26,6 @@ const propTypes = {
    * Whether the time input should be disabled.
    */
   disabled: PropTypes.bool,
-  /**
-   * Prevents screen reader users from hearing instructions on how to use this Time Input. The instructions are never
-   * rendered visually.
-   *
-   * **BEST PRACTICE FOR ACCESSIBILITY**: Only set this prop true on the 2nd, 3rd, etc. Time Inputs on the same view.
-   * The idea is you can save screen reader users the annoyance of hearing the same lengthy instructions more than once
-   * when the screen reader is reading the entire view. Do not disable instructions on the 1st or only Time Input in the
-   * view. Time Input uses some non-standard keyboard controls, so it's important to explain them to the user.
-   */
-  disableInstructions: PropTypes.bool,
   /**
    * Custom input attributes that apply to the hour, minute, and second inputs.
    */
@@ -123,7 +112,6 @@ const propTypes = {
 
 const defaultProps = {
   disabled: false,
-  disableInstructions: false,
   inputAttributes: {},
   isIncomplete: false,
   isInvalid: false,
@@ -675,7 +663,6 @@ class TimeInput extends React.Component {
   render() {
     const {
       disabled,
-      disableInstructions,
       inputAttributes,
       minuteAttributes,
       hourAttributes,
@@ -885,28 +872,20 @@ class TimeInput extends React.Component {
       >
         <div className={timeInputClassNames} role="group" aria-label={label}>
           {/*
-        Explaining to screen reader users how to use the Time Input is important, because we're not using a native
-        time input like the ones some browsers now support. We present an invisible set of instructions first so that
-        the user will hear something like this:
-
-          "Time of Birth group. <instruction text> Time of birth Hours input., ..."
-
-        Hearing the same lengthy instructions several times in the same view can get annoying, so the instructions can
-        be disabled for the 2nd and subsequent Time Inputs.
+          "Time of Birth group. Time of birth Hours input., ..."
 
         All of the controls should be presented as a group to assistive technologies. Then, each component also
         has its own specific label as well. If a TimeInput is to be labeled Time of Birth then it would be presented to
         assistive tech. like this:
 
           Time of Birth (group)
-            |--<instructions>
             |--Time of Birth Hours (input)
             |--Minutes (input)
             |--Seconds (input)
             |--AM (toggle button)
             |--PM (toggle button)
 
-        In read mode, and ignoring instructions, values and descriptions for a moment, the screen reader would read
+        In read mode, and ignoring values and descriptions for a moment, the screen reader would read
         something like:
 
           "Time of Birth group. Time of Birth hours input. Minutes input. Seconds input. AM toggle button.
@@ -939,7 +918,6 @@ class TimeInput extends React.Component {
         T14:22 and the user changed the hour from 02 to 03, the value would be T15:22 and the announcer would
         immediately say "Time of birth 3:22 pm." or just "3:22 pm" if no label is provided.
           */}
-          {!disabled && !disableInstructions && <Instructions timeType={timeType()} />}
           { label ? (
             <AccessibleValue
               value={textValue()}
@@ -1066,8 +1044,7 @@ class TimeInput extends React.Component {
           </ButtonGroup>
         )}
         {/*
-        Screen readers should not read this because it will not make sense, and screen reader users already got special
-        instructions including format information.
+        Screen readers should not read this because it will not make sense.
         */}
         <p aria-hidden className={cx('format-text')}>{mask()}</p>
       </div>
