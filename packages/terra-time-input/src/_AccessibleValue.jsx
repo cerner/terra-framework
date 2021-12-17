@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PropTypes from 'prop-types';
 
@@ -52,16 +52,7 @@ function AccessibleValue(props) {
   }
 
   return (
-    <dl>
-      <dt>Props.Value:</dt>
-      <dd>{props.value}</dd>
-      <dt>Value:</dt>
-      <dd>{value}</dd>
-      <dt>Role:</dt>
-      <dd>{role}</dd>
-      <dt>Read this:</dt>
-      <dd>{props.readThis}</dd>
-    </dl>
+    <VisuallyHiddenText aria-hidden={!props.value} text={props.readThis} aria-live={ariaLive} role={role} />
   );
 }
 
