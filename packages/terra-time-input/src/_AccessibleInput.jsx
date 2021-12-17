@@ -15,7 +15,7 @@ const propTypes = {
    * screen readers. This value is not rendered visually.
    * */
   description: PropTypes.string,
-
+  /** Set to true to disable the input and mark it disabled for screen readers */
 };
 
 const defaultProps = {
@@ -41,6 +41,7 @@ function AccessibleInput(props) {
     value,
     label,
     description,
+    disabled,
     ...inputProps
   } = props;
 
@@ -62,6 +63,8 @@ function AccessibleInput(props) {
       <Input
         {...inputProps}
         value={value}
+        disabled={disabled}
+        aria-disabled={disabled}
         aria-labelledby={value ? labelId : undefined}
         aria-label={value ? undefined : label}
         aria-describedby={descriptionId}
