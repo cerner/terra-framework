@@ -950,6 +950,12 @@ class TimeInput extends React.Component {
           <AccessibleInput
             {...inputAttributes}
             {...hourAttributes}
+            /**
+             * If the entire Time Input isInvalid, then pass isInvalid into each wrapped input, so that the screen
+             * reader users will get an indication that something is invalid. It's not perfect because both inputs will
+             * be marked invalid even though it's the combination of both that is really the problem. For example,
+             * 09:88 is a valid hour and an invalid minute, but both hour and minute will */
+            isInvalid={isInvalid}
             label={intl.formatMessage({ id: 'Terra.timeInput.hours' })}
             refCallback={(inputRef) => {
               this.hourInput = inputRef;
@@ -977,6 +983,7 @@ class TimeInput extends React.Component {
             label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
             className={minuteClassNames}
             type="text"
+            isInvalid={isInvalid}
             value={this.state.minute}
             name={'terra-time-minute-'.concat(name)}
             maxLength="2"
@@ -1003,6 +1010,7 @@ class TimeInput extends React.Component {
                 label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
                 className={secondClassNames}
                 type="text"
+                isInvalid={isInvalid}
                 value={this.state.second}
                 name={'terra-time-second-'.concat(name)}
                 maxLength="2"
