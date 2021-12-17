@@ -471,7 +471,7 @@ class DateInput extends React.Component {
   /**
    * Sets state to new value dependent on existing date
    * @param {Object} event Event object generated from the event delegation.
-   * @param {Number} addDays Adds days to current date or today's date.
+   * @param {Number} addDays Adds days to current date or today's date, if 0 sets state to today.
    */
   setHotKeyDate(event, addDays) {
     let { year, month, day } = this.state;
@@ -481,9 +481,9 @@ class DateInput extends React.Component {
     const dateFromInput = new Date(year, month, day);
     const validYear = (year < DateInputUtil.MaxYearValue && year > DateInputUtil.MinYearValue && dateFromInput.getFullYear() === year);
     const validMonth = (dateFromInput.getMonth() === month);
-    const validDay = (day > 0 && day <= 31 && dateFromInput.getDate() === day);
+    const validDay = (dateFromInput.getDate() === day);
     let dateObj;
-    if (!month || addDays === 0 || !validYear || !validDay || !validMonth) {
+    if (addDays === 0 || !validYear || !validDay || !validMonth) {
       dateObj = new Date();
     } else {
       dateObj = dateFromInput;
