@@ -864,6 +864,11 @@ class TimeInput extends React.Component {
       });
     }
 
+    // Fan out some component-level props into input-level a11y attributes. See the big comment below for more info.
+    inputAttributes.isInvalid = isInvalid;
+    inputAttributes.disabled = disabled;
+    inputAttributes.required = required;
+
     return (
       <div
         {...customProps}
@@ -917,6 +922,11 @@ class TimeInput extends React.Component {
         users. The announcement is only made when the value changes to a valid time. If the Time of Birth started out at
         T14:22 and the user changed the hour from 02 to 03, the value would be T15:22 and the announcer would
         immediately say "Time of birth 3:22 pm." or just "3:22 pm" if no label is provided.
+
+        It's important to give screen reader users an indication if the Time Input is disabled, incomplete or invalid
+        just as we do for visual users. Since the isInvalid and required flags are component-wide but
+        aria-invalid/required are for inputs, we must mark all inputs the same. It's not perfect but it gives better
+        information than nothing.
           */}
           { label ? (
             <AccessibleValue
@@ -955,7 +965,6 @@ class TimeInput extends React.Component {
              * reader users will get an indication that something is invalid. It's not perfect because both inputs will
              * be marked invalid even though it's the combination of both that is really the problem. For example,
              * 09:88 is a valid hour and an invalid minute, but both hour and minute will */
-            isInvalid={isInvalid}
             label={intl.formatMessage({ id: 'Terra.timeInput.hours' })}
             refCallback={(inputRef) => {
               this.hourInput = inputRef;
@@ -972,7 +981,6 @@ class TimeInput extends React.Component {
             onBlur={this.handleHourBlur}
             size="2"
             pattern="\d*"
-            disabled={disabled}
             description={hourDescription()}
           />
           <TimeSpacer className={cx('time-spacer')} />
@@ -983,7 +991,6 @@ class TimeInput extends React.Component {
             label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
             className={minuteClassNames}
             type="text"
-            isInvalid={isInvalid}
             value={this.state.minute}
             name={'terra-time-minute-'.concat(name)}
             maxLength="2"
@@ -993,7 +1000,6 @@ class TimeInput extends React.Component {
             onBlur={this.handleMinuteBlur}
             size="2"
             pattern="\d*"
-            disabled={disabled}
             description={intl.formatMessage({
               id: 'Terra.timeInput.descriptionMinute',
               defaultMessage: 'A two-digit minute.',
@@ -1010,7 +1016,6 @@ class TimeInput extends React.Component {
                 label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
                 className={secondClassNames}
                 type="text"
-                isInvalid={isInvalid}
                 value={this.state.second}
                 name={'terra-time-second-'.concat(name)}
                 maxLength="2"
@@ -1020,7 +1025,6 @@ class TimeInput extends React.Component {
                 onBlur={this.handleSecondBlur}
                 size="2"
                 pattern="\d*"
-                disabled={disabled}
                 description={intl.formatMessage({
                   id: 'Terra.timeInput.descriptionSecond',
                   defaultMessage: 'A two-digit second.',
@@ -1031,7 +1035,6 @@ class TimeInput extends React.Component {
           )}
         </div>
         {variantFromLocale === TimeUtil.FORMAT_12_HOUR && (
-          // TODO: consume https://github.com/cerner/terra-core/pull/3535 so that the am/pm controls present as toggle buttons to screen reader users.
           <ButtonGroup selectedKeys={[this.state.meridiem]} onChange={this.handleMeridiemButtonChange} className={cx('meridiem-button-group')}>
             <ButtonGroup.Button
               key={this.anteMeridiem}
