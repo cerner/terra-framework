@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added hotkeys 'T', '-', and '+' for auto-setting dates
+  * Added keyboard shortcuts `T`, `-`, and `+` for auto-setting date values.
 
 ## 1.31.0 - (September 20, 2021)
 
