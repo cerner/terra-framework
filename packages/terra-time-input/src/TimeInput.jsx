@@ -9,15 +9,12 @@ import uuidv4 from 'uuid/v4';
 import * as KeyCode from 'keycode-js';
 import TimeUtil from './TimeUtil';
 import styles from './TimeInput.module.scss';
-import {
-  TWELVE_HOUR_MINUTE,
-  TWELVE_HOUR_MINUTE_SECOND,
-  TWENTY_FOUR_HOUR_MINUTE,
-  TWENTY_FOUR_HOUR_MINUTE_SECOND,
-} from './TimeTypes';
 import AccessibleInput from './_AccessibleInput';
 import TimeSpacer from './_TimeSpacer';
 import AccessibleValue from './_AccessibleValue';
+import Hour from './_Hour';
+import Minute from './_Minute';
+import Second from './_Second';
 
 const cx = classNamesBind.bind(styles);
 
@@ -696,33 +693,28 @@ class TimeInput extends React.Component {
 
     const variantFromLocale = TimeUtil.getVariantFromLocale(this.props);
 
-    // Returns a zero-padded hour string. The arg can be a string or int.
-    function paddedHour(hour) {
-      return hour.toString().padStart(2, '0');
-    }
-
     /**
-     * Returns an ISO 8601 representation of the state. The representation might be incomplete or invalid.
+     * Keeping this as it was, because it's got strange behavior I'm not sure how to break. It has a bug where a person
+     * could type leave some fields blank and see a value containing 'NaN', like 'NaN:22'. Not sure if that is desired.
      */
-    const timeValue = () => {
+    const oldTimeValue = () => {
       // Using the state of hour, minute, and second (if shown) create a time in UTC represented in ISO 8601 format.
-      let timeVal = '';
+      let timeValue = '';
 
       if (this.state.hour.length > 0 || this.state.minute.length > 0 || (this.state.second.length > 0 && showSeconds)) {
         let hour = parseInt(this.state.hour, 10);
+
         if (variantFromLocale === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem) {
           hour += 12;
         }
 
-        // Ensure hour value is zero-padded
-        timeVal = `${paddedHour(hour)}:${this.state.minute}`;
+        timeValue = 'T'.concat(hour, ':', this.state.minute);
 
         if (showSeconds) {
-          timeVal = timeVal.concat(':', this.state.second);
+          timeValue = timeValue.concat(':', this.state.second);
         }
       }
-
-      return timeVal;
+      return timeValue;
     };
 
     const theme = this.context;
@@ -768,34 +760,12 @@ class TimeInput extends React.Component {
       });
     }
 
-    // timeType is used in a couple places to avoid repeating this if ladder when both variant and showSeconds need to
-    // be considered.
-    function timeType() {
-      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR && showSeconds) {
-        return TWELVE_HOUR_MINUTE_SECOND;
-      }
-      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR) {
-        return TWELVE_HOUR_MINUTE;
-      }
-      if (showSeconds) {
-        return TWENTY_FOUR_HOUR_MINUTE_SECOND;
-      }
-      return TWENTY_FOUR_HOUR_MINUTE;
-    }
-
-    // hh:mm or hh:mm:ss
-    const isCompleteTime = () => (showSeconds ? timeValue().length === 8 : timeValue().length === 5);
-
     /**
      * Using the state to create a human-readable representation to be used for screen readers.
      *
      * Returns undefined if the time is incomplete or invalid.
      * */
     const textValue = () => {
-      if (!isCompleteTime()) {
-        return undefined;
-      }
-
       /**
       * FUTURE: this is not the right way to localize a time. We should be using the Intl API to format the time per
       * locale. Since we support IE 10, and IE 10 lacks the Intl API, we will have to update our polyfills before we can
@@ -810,36 +780,59 @@ class TimeInput extends React.Component {
 
       // Padding the values so that a change from "01" to "1" won't trigger a re-read. This is safe because we
       // know the time is complete, so there is no risk the user might turn "1" into "11"/"10".
-      const hour = paddedHour(this.state.hour);
-      switch (timeType()) {
-        case TWELVE_HOUR_MINUTE:
-          return intl.formatMessage({
-            id: 'Terra.timeInput.textValueTwelveHourMinute',
-            defaultMessage: `${hour}:${this.state.minute} ${this.state.meridiem}`,
-            description: 'Human-readable time value in a 12-hour clock with hours, and minutes.',
-          }, { time: new Date() });
+      const {
+        hour, minute, second, meridiem,
+      } = this.state;
+      const is12Hour = variantFromLocale === TimeUtil.FORMAT_12_HOUR;
+      const isPM = meridiem === this.postMeridiem;
 
-        case TWELVE_HOUR_MINUTE_SECOND:
-          return intl.formatMessage({
-            id: 'Terra.timeInput.textValueTwelveHourMinuteSecond',
-            defaultMessage: `${hour}:${this.state.minute}:${this.state.second} ${this.state.meridiem}`,
-            description: 'Human-readable time value in a 12-hour clock with hours, minutes, and seconds.',
-          });
-        case TWENTY_FOUR_HOUR_MINUTE:
-          return intl.formatMessage({
-            id: 'Terra.timeInput.textValueTwentyFourHourMinute',
-            defaultMessage: `${hour}:${this.state.minute}`,
-            description: 'Human-readable time value in a 24-hour clock with hours and minutes.',
-          });
-        case TWENTY_FOUR_HOUR_MINUTE_SECOND:
-          return intl.formatMessage({
-            id: 'Terra.timeInput.textValueTwentyFourHourMinuteSecond',
-            defaultMessage: `${hour}:${this.state.minute}:${this.state.second}`,
-            description: 'Human-readable time value in a 24-hour clock with hours, minutes, and seconds.',
-          });
-        default:
-          throw new Error('Unrecognized TimeType.');
+      let hourMode;
+      if (is12Hour && isPM) {
+        hourMode = Hour.TWELVE_HOUR_PM;
+      } else if (is12Hour) {
+        hourMode = Hour.TWELVE_HOUR_AM;
+      } else {
+        hourMode = Hour.TWENTY_FOUR_HOUR;
       }
+
+      const hourOrUndef = Hour.FromString(hour, hourMode);
+      const minuteOrUndef = Minute.FromString(minute);
+      const secondOrUndef = Second.FromString(second);
+
+      if ([hourOrUndef, minuteOrUndef].includes(undefined)) {
+        return undefined;
+      }
+
+      if (showSeconds && secondOrUndef === undefined) {
+        return undefined;
+      }
+
+      if (is12Hour && showSeconds) {
+        return intl.formatMessage({
+          id: 'Terra.timeInput.textValueTwelveHourMinuteSecond',
+          defaultMessage: `${hourOrUndef.toTwelveHourString()}:${minuteOrUndef}:${secondOrUndef} ${meridiem}`,
+          description: 'Human-readable time value in a 12-hour clock with hours, minutes, and seconds.',
+        });
+      }
+      if (is12Hour) {
+        return intl.formatMessage({
+          id: 'Terra.timeInput.textValueTwelveHourMinute',
+          defaultMessage: `${hourOrUndef.toTwelveHourString()}:${minuteOrUndef} ${this.state.meridiem}`,
+          description: 'Human-readable time value in a 12-hour clock with hours, and minutes.',
+        }, { time: new Date() });
+      }
+      if (showSeconds) {
+        return intl.formatMessage({
+          id: 'Terra.timeInput.textValueTwentyFourHourMinuteSecond',
+          defaultMessage: `${hourOrUndef}:${minuteOrUndef}:${secondOrUndef}`,
+          description: 'Human-readable time value in a 24-hour clock with hours, minutes, and seconds.',
+        });
+      }
+      return intl.formatMessage({
+        id: 'Terra.timeInput.textValueTwentyFourHourMinute',
+        defaultMessage: `${hourOrUndef}:${minuteOrUndef}`,
+        description: 'Human-readable time value in a 24-hour clock with hours and minutes.',
+      });
     };
 
     /**
@@ -955,7 +948,7 @@ class TimeInput extends React.Component {
             // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
             type="hidden"
             name={name}
-            value={`T${timeValue()}`}
+            value={oldTimeValue()}
           />
           <AccessibleInput
             {...inputAttributes}
