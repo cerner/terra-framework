@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated snaps for consuming updated components.
+
 ## 4.43.0 - (September 20, 2021)
 
 * Changed
