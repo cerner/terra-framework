@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated snaps from consuming updated components.
+
 ## 4.71.0 - (November 16, 2021)
 
 * Changed
