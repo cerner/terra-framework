@@ -12,9 +12,6 @@ import styles from './TimeInput.module.scss';
 import AccessibleInput from './_AccessibleInput';
 import TimeSpacer from './_TimeSpacer';
 import AccessibleValue from './_AccessibleValue';
-import Hour from './_Hour';
-import Minute from './_Minute';
-import Second from './_Second';
 
 const cx = classNamesBind.bind(styles);
 
@@ -693,30 +690,6 @@ class TimeInput extends React.Component {
 
     const variantFromLocale = TimeUtil.getVariantFromLocale(this.props);
 
-    /**
-     * Keeping this as it was, because it's got strange behavior I'm not sure how to break. It has a bug where a person
-     * could type leave some fields blank and see a value containing 'NaN', like 'TNaN:22'. Not sure if that is desired.
-     */
-    const oldTimeValue = () => {
-      // Using the state of hour, minute, and second (if shown) create a time in UTC represented in ISO 8601 format.
-      let timeValue = '';
-
-      if (this.state.hour.length > 0 || this.state.minute.length > 0 || (this.state.second.length > 0 && showSeconds)) {
-        let hour = parseInt(this.state.hour, 10);
-
-        if (variantFromLocale === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem) {
-          hour += 12;
-        }
-
-        timeValue = 'T'.concat(hour, ':', this.state.minute);
-
-        if (showSeconds) {
-          timeValue = timeValue.concat(':', this.state.second);
-        }
-      }
-      return timeValue;
-    };
-
     const theme = this.context;
 
     const timeInputClassNames = classNames(cx(
@@ -872,10 +845,10 @@ class TimeInput extends React.Component {
           )}
           <input
             // Create a hidden input for storing the name and value attributes to use when submitting the form.
-            // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
+            // The value will be sort of like, but not strictly, an ISO 8601 value's time component.
             type="hidden"
             name={name}
-            value={oldTimeValue()}
+            value={TimeUtil.deprecatedAndDangerousKindOfISOValueButNotReally(this.props, this.state, this.postMeridiem)}
           />
           <AccessibleInput
             {...inputAttributes}

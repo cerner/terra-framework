@@ -290,6 +290,39 @@ class TimeUtil {
   }
 
   /**
+   * Using the state of hour, minute, and second (if shown) create a time in UTC represented in kind-of-but-not-really ISO 8601 format.
+   *
+   * WARNING: Read the name. This has very peculiar behavior you probably don' want ot use for new features. I'm
+   * keeping this around as it was, because it's got strange behavior I'm not sure how to break. It has a bug where a
+   * person could type leave some fields blank and see a value containing 'NaN', like 'TNaN:22'. Not sure if that is
+   * desired.
+   */
+  static deprecatedAndDangerousKindOfISOValueButNotReally(props, state, postMeridiem) {
+    const {
+      hour, minute, second, meridiem,
+    } = state;
+    const { showSeconds } = props;
+    let timeValue = '';
+
+    const is12Hour = TimeUtil.getVariantFromLocale(props) === TimeUtil.FORMAT_12_HOUR;
+
+    if (hour.length > 0 || minute.length > 0 || (second.length > 0 && showSeconds)) {
+      let hourInt = parseInt(hour, 10);
+
+      if (is12Hour && meridiem === postMeridiem) {
+        hourInt += 12;
+      }
+
+      timeValue = 'T'.concat(hourInt, ':', minute);
+
+      if (showSeconds) {
+        timeValue = timeValue.concat(':', second);
+      }
+    }
+    return timeValue;
+  }
+
+  /**
    * Returns a time string suitable for being read by a screen reader to the end user.
    *
    * NOTE: this is not meant to replace general localization of the time. It's just enough for screen reading.
