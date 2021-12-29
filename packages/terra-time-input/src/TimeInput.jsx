@@ -695,7 +695,7 @@ class TimeInput extends React.Component {
 
     /**
      * Keeping this as it was, because it's got strange behavior I'm not sure how to break. It has a bug where a person
-     * could type leave some fields blank and see a value containing 'NaN', like 'NaN:22'. Not sure if that is desired.
+     * could type leave some fields blank and see a value containing 'NaN', like 'TNaN:22'. Not sure if that is desired.
      */
     const oldTimeValue = () => {
       // Using the state of hour, minute, and second (if shown) create a time in UTC represented in ISO 8601 format.
@@ -761,81 +761,6 @@ class TimeInput extends React.Component {
     }
 
     /**
-     * Using the state to create a human-readable representation to be used for screen readers.
-     *
-     * Returns undefined if the time is incomplete or invalid.
-     * */
-    const textValue = () => {
-      /**
-      * FUTURE: this is not the right way to localize a time. We should be using the Intl API to format the time per
-      * locale. Since we support IE 10, and IE 10 lacks the Intl API, we will have to update our polyfills before we can
-      * properly localize these time values. As it is written it's probably good enough for release until we update the
-      * polyfills.
-      *
-      * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
-      *
-      * e.g.:
-      * > new Date(1983, 3, 24, ...value.split(':')).toLocaleTimeString(locale, {timeStyle: 'short', hour12: true});
-      */
-
-      // Padding the values so that a change from "01" to "1" won't trigger a re-read. This is safe because we
-      // know the time is complete, so there is no risk the user might turn "1" into "11"/"10".
-      const {
-        hour, minute, second, meridiem,
-      } = this.state;
-      const is12Hour = variantFromLocale === TimeUtil.FORMAT_12_HOUR;
-      const isPM = meridiem === this.postMeridiem;
-
-      let hourMode;
-      if (is12Hour && isPM) {
-        hourMode = Hour.TWELVE_HOUR_PM;
-      } else if (is12Hour) {
-        hourMode = Hour.TWELVE_HOUR_AM;
-      } else {
-        hourMode = Hour.TWENTY_FOUR_HOUR;
-      }
-
-      const hourOrUndef = Hour.FromString(hour, hourMode);
-      const minuteOrUndef = Minute.FromString(minute);
-      const secondOrUndef = Second.FromString(second);
-
-      if ([hourOrUndef, minuteOrUndef].includes(undefined)) {
-        return undefined;
-      }
-
-      if (showSeconds && secondOrUndef === undefined) {
-        return undefined;
-      }
-
-      if (is12Hour && showSeconds) {
-        return intl.formatMessage({
-          id: 'Terra.timeInput.textValueTwelveHourMinuteSecond',
-          defaultMessage: `${hourOrUndef.toTwelveHourString()}:${minuteOrUndef}:${secondOrUndef} ${meridiem}`,
-          description: 'Human-readable time value in a 12-hour clock with hours, minutes, and seconds.',
-        });
-      }
-      if (is12Hour) {
-        return intl.formatMessage({
-          id: 'Terra.timeInput.textValueTwelveHourMinute',
-          defaultMessage: `${hourOrUndef.toTwelveHourString()}:${minuteOrUndef} ${this.state.meridiem}`,
-          description: 'Human-readable time value in a 12-hour clock with hours, and minutes.',
-        }, { time: new Date() });
-      }
-      if (showSeconds) {
-        return intl.formatMessage({
-          id: 'Terra.timeInput.textValueTwentyFourHourMinuteSecond',
-          defaultMessage: `${hourOrUndef}:${minuteOrUndef}:${secondOrUndef}`,
-          description: 'Human-readable time value in a 24-hour clock with hours, minutes, and seconds.',
-        });
-      }
-      return intl.formatMessage({
-        id: 'Terra.timeInput.textValueTwentyFourHourMinute',
-        defaultMessage: `${hourOrUndef}:${minuteOrUndef}`,
-        description: 'Human-readable time value in a 24-hour clock with hours and minutes.',
-      });
-    };
-
-    /**
      * Returns a localized description for the hour input that reflects whether this is a 12 or 24-hour clock.
      *
      * NOTE: the description does not take the place of validation or error messages.
@@ -861,6 +786,8 @@ class TimeInput extends React.Component {
     inputAttributes.isInvalid = isInvalid;
     inputAttributes.disabled = disabled;
     inputAttributes.required = required;
+
+    const a11yString = TimeUtil.getA11YTimeValue(this.props, this.state, this.postMeridiem);
 
     return (
       <div
@@ -923,20 +850,20 @@ class TimeInput extends React.Component {
           */}
           { label ? (
             <AccessibleValue
-              value={textValue()}
+              value={a11yString}
               readThis={intl.formatMessage({
                 id: 'Terra.timeInput.labeledtextValue',
-                defaultMessage: `${label} ${textValue()}`,
+                defaultMessage: `${label} ${a11yString}`,
                 description: `This will be read to screen reader users only textValue changes to a new time. We want
               to give the screen reader user feedback that their change to one of the controls has updated this time.`,
               })}
             />
           ) : (
             <AccessibleValue
-              value={textValue()}
+              value={a11yString}
               readThis={intl.formatMessage({
                 id: 'Terra.timeInput.textValue',
-                defaultMessage: `Time ${textValue()}`,
+                defaultMessage: `Time ${a11yString}`,
                 description: `Similar to Terra.timeInput.labeledtextValue, but we want the screen reader to say "time"
                 before reading the value because no label was provided. It would be confusing to hear "09 22" right
                 after you typed "22" or "09". So instead we can say "Time 09 22".`,

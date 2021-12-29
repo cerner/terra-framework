@@ -1,6 +1,10 @@
+import Hour from './_Hour';
+import Minute from './_Minute';
+import Second from './_Second';
+
 class TimeUtil {
   /**
-   * Determines if a provided nuermic input value is valid.
+   * Determines if a provided numeric input value is valid.
    * Valid inputs are either empty strings or numeric.
    * @param {String} value Value to validate
    * @return True if the value is empty or numeric, false otherwise.
@@ -283,6 +287,85 @@ class TimeUtil {
     }
 
     return variant;
+  }
+
+  /**
+   * Returns a time string suitable for being read by a screen reader to the end user.
+   *
+   * NOTE: this is not meant to replace general localization of the time. It's just enough for screen reading.
+   * @param {Object} props The TimeInput's props.
+   * @param {Object} state The TimeInput's state.
+   * @param {String} postMeridiem The localized PM string (e.g. 'p.m.') used to compare against current state in 12-hour scenarios.
+   * @returns The time string or undefined if the time is incomplete or invalid.
+   */
+  static getA11YTimeValue(props, state, postMeridiem) {
+    /**
+      * FUTURE: this is not the right way to localize a time. We should be using the Intl API to format the time per
+      * locale. Since we support IE 10, and IE 10 lacks the Intl API, we will have to update our polyfills before we can
+      * properly localize these time values. As it is written it's probably good enough for release until we update the
+      * polyfills.
+      *
+      * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+      *
+      * e.g.:
+      * > new Date(1983, 3, 24, ...value.split(':')).toLocaleTimeString(locale, {timeStyle: 'short', hour12: true});
+      */
+    const {
+      hour, minute, second, meridiem,
+    } = state;
+
+    const { intl, showSeconds } = props;
+
+    const is12Hour = TimeUtil.getVariantFromLocale(props) === TimeUtil.FORMAT_12_HOUR;
+    const isPM = meridiem === postMeridiem;
+
+    let hourMode;
+    if (is12Hour && isPM) {
+      hourMode = Hour.TWELVE_HOUR_PM;
+    } else if (is12Hour) {
+      hourMode = Hour.TWELVE_HOUR_AM;
+    } else {
+      hourMode = Hour.TWENTY_FOUR_HOUR;
+    }
+
+    const hourOrUndef = Hour.FromString(hour, hourMode);
+    const minuteOrUndef = Minute.FromString(minute);
+    const secondOrUndef = Second.FromString(second);
+
+    if ([hourOrUndef, minuteOrUndef].includes(undefined)) {
+      return undefined;
+    }
+
+    if (showSeconds && secondOrUndef === undefined) {
+      return undefined;
+    }
+
+    if (is12Hour && showSeconds) {
+      return intl.formatMessage({
+        id: 'Terra.timeInput.textValueTwelveHourMinuteSecond',
+        defaultMessage: `${hourOrUndef.toTwelveHourString()}:${minuteOrUndef}:${secondOrUndef} ${meridiem}`,
+        description: 'Human-readable time value in a 12-hour clock with hours, minutes, and seconds.',
+      });
+    }
+    if (is12Hour) {
+      return intl.formatMessage({
+        id: 'Terra.timeInput.textValueTwelveHourMinute',
+        defaultMessage: `${hourOrUndef.toTwelveHourString()}:${minuteOrUndef} ${meridiem}`,
+        description: 'Human-readable time value in a 12-hour clock with hours, and minutes.',
+      }, { time: new Date() });
+    }
+    if (showSeconds) {
+      return intl.formatMessage({
+        id: 'Terra.timeInput.textValueTwentyFourHourMinuteSecond',
+        defaultMessage: `${hourOrUndef}:${minuteOrUndef}:${secondOrUndef}`,
+        description: 'Human-readable time value in a 24-hour clock with hours, minutes, and seconds.',
+      });
+    }
+    return intl.formatMessage({
+      id: 'Terra.timeInput.textValueTwentyFourHourMinute',
+      defaultMessage: `${hourOrUndef}:${minuteOrUndef}`,
+      description: 'Human-readable time value in a 24-hour clock with hours and minutes.',
+    });
   }
 }
 
