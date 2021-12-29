@@ -290,26 +290,46 @@ class TimeUtil {
   }
 
   /**
-   * Using the state of hour, minute, and second (if shown) create a time in UTC represented in kind-of-but-not-really ISO 8601 format.
+   * Is the Time Input operating as a 12-hour variant?
+   * @param {Object} The TimeInput props.
+   * @returns {Boolean} True iff the locale allows a 12-hour time and the variant is 12-hour time.
+   */
+  static is12Hour(props) {
+    return TimeUtil.getVariantFromLocale(props) === TimeUtil.FORMAT_12_HOUR;
+  }
+
+  /**
+   * Is the Time Input's state representing a 12-hour time in the PM?
+   * @param {Object} props The TimeInput props.
+   * @param {Object} state The TimeInput state.
+   * @param {String} postMeridiem The PM string to compare against.
+   * @returns {Boolean} True iff the time input is in 12-hour mode and the state is a PM time.
+   */
+  static isPM(props, state, postMeridiem) {
+    return TimeUtil.is12Hour(props) && state.meridiem === postMeridiem;
+  }
+
+  /**
+   * Build a UTC time string in kind-of-but-not-really ISO 8601 format.
    *
    * WARNING: Read the name. This has very peculiar behavior you probably don' want ot use for new features. I'm
    * keeping this around as it was, because it's got strange behavior I'm not sure how to break. It has a bug where a
    * person could type leave some fields blank and see a value containing 'NaN', like 'TNaN:22'. Not sure if that is
    * desired.
+   * @param {Object} props TimeInput props
+   * @param {Object} state  TimeInput state
+   * @param {String} postMeridiem PM string to compare against.
+   * @returns {String} A representation of the time that might be invalid or incomplete. Best case, it's like 'T22:00'.
    */
   static deprecatedAndDangerousKindOfISOValueButNotReally(props, state, postMeridiem) {
-    const {
-      hour, minute, second, meridiem,
-    } = state;
+    const { hour, minute, second } = state;
     const { showSeconds } = props;
     let timeValue = '';
-
-    const is12Hour = TimeUtil.getVariantFromLocale(props) === TimeUtil.FORMAT_12_HOUR;
 
     if (hour.length > 0 || minute.length > 0 || (second.length > 0 && showSeconds)) {
       let hourInt = parseInt(hour, 10);
 
-      if (is12Hour && meridiem === postMeridiem) {
+      if (TimeUtil.isPM(props, state, postMeridiem)) {
         hourInt += 12;
       }
 
@@ -346,14 +366,11 @@ class TimeUtil {
     const {
       hour, minute, second, meridiem,
     } = state;
-
     const { intl, showSeconds } = props;
-
-    const is12Hour = TimeUtil.getVariantFromLocale(props) === TimeUtil.FORMAT_12_HOUR;
-    const isPM = meridiem === postMeridiem;
+    const is12Hour = TimeUtil.is12Hour(props);
 
     let hourMode;
-    if (is12Hour && isPM) {
+    if (TimeUtil.isPM(props, state, postMeridiem)) {
       hourMode = Hour.TWELVE_HOUR_PM;
     } else if (is12Hour) {
       hourMode = Hour.TWELVE_HOUR_AM;
