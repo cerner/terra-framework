@@ -764,13 +764,28 @@ class TimeInput extends React.Component {
 
     const a11yString = TimeUtil.getA11YTimeValue(this.props, this.state, this.postMeridiem);
 
+    const groupLabel = intl.formatMessage({
+      id: 'Terra.timeInput.inputGroupValue',
+      defaultMessage: `${label}`,
+      description: `This will be read by screen readers as the reader moves into the group of inputs. It is intended to
+      help the user understand "you are about to enter a section of the page where many different inputs all work
+      together for this one concept of time.`,
+    });
+
+    const defaultGroupLabel = intl.formatMessage({
+      id: 'Terra.timeInput.inputGroupValue',
+      defaultMessage: 'Time',
+      description: `Same meaning as groupLabel, only for situations where the consumer has not provided a label for us
+      to plug in.`,
+    });
+
     return (
       <div
         {...customProps}
         ref={this.timeInputContainer}
         className={cx('time-input-container', theme.className)}
       >
-        <div className={timeInputClassNames} role="group" aria-label={label}>
+        <div className={timeInputClassNames} role="group" aria-label={label ? groupLabel : defaultGroupLabel}>
           {/*
           "Time of Birth group. Time of birth Hours input., ..."
 
@@ -822,6 +837,10 @@ class TimeInput extends React.Component {
         just as we do for visual users. Since the isInvalid and required flags are component-wide but
         aria-invalid/required are for inputs, we must mark all inputs the same. It's not perfect but it gives better
         information than nothing.
+
+        Unanswered questions:
+        1 - why does it mean to have an invalid meridiem? Why is that possible? It is not supported by Aria or HTML to indicate a button is "invalid".
+        2 - why won't the mobile invalid and mobile incomplete tests read the inputs as invalid or incomplete? The voiceOver rotor and the accessibility panel both show them correctly as incomplete or invalid, just the read-mode is wrong. This problem doesn't happen on the normal incomplete/invalid tests. I was testing on macOS the entire time.
           */}
           { label ? (
             <AccessibleValue
