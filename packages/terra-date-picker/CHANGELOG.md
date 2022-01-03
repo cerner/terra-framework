@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated Jest Snapshots
+  
 ## 4.71.0 - (November 16, 2021)
 
 * Changed
