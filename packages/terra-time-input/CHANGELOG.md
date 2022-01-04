@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated jest snapshots
+
 ## 4.43.0 - (September 20, 2021)
 
 * Changed
