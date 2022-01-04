@@ -1,0 +1,22 @@
+import { Badge } from 'terra-date-input/package.json?dev-site-package';
+
+<Badge />
+
+# Keyboard Shortcuts for Terra Date Input
+
+The Terra Date Input offers additional functionality with specific keyboard shortcuts to save time when interacting with date inputs.
+
+Pressing any of the supported keys while the input is in focus will populate the inputs with the listed shortcut response.
+
+| Key / Sequence | Description |
+|-|-|
+| T | Sets the date value to the current date (Today). |
+| - | Decrements the date value by 1 day. If blank or not a valid date, input will set value to Yesterday. |
+| + | Increments the date value by 1 day. If blank or not a valid date, input will set value to Tomorrow. |
+
+_Note: For any key listed, pressing the designated keyboard character key is not specific to uppercase or lowercase and works for both cases (e.g. if capslock or shift key is also being applied). Uppercase-only usage is not required._
+
+## Release notes for specific versions
+
+### 1.32.0
+* Initial release. This adds the key listeners to the day number input and the year number input, but does not add the listeners or shortcut responses to the month dropdown select input, since pressing keys with the dropdown in focus will contradict with the select's existing behavior of attempting to match the localized month name strings. This will continue to be explored with how to best add the keyboard shortcut behavior for the month dropdown potentially in a future release.

@@ -306,6 +306,188 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         Terra.validates.element('no shift in focus for day');
       });
     });
+
+    describe('Day Input Pressing T in day input', () => {
+      it('should set date to current if blank', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['t']);
+        const currentDate = new Date();
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to current if valid value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['t']);
+        const currentDate = new Date();
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to current if invalid value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['2000']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['t']);
+        const currentDate = new Date();
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+    });
+
+    describe('Day Input Pressing - in day input', () => {
+      it('should set date to yesterday if blank', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['-']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() - 1);
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to current value - 1 day if valid value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['-']);
+
+        expect($('#dateInput input')).toHaveValue('2000-07-03');
+      });
+
+      it('should set date to yesterday if no value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['2000']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['-']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() - 1);
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to yesterday if invalid value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['2000']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['0']);
+        browser.keys(['-']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() - 1);
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+    });
+
+    describe('Day Input Pressing + in day input', () => {
+      it('should set date to tomorrow if blank', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['+']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 1);
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to current value + 1 day if valid value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['+']);
+
+        expect($('#dateInput input')).toHaveValue('2000-07-05');
+      });
+
+      it('should set date to tomorrow if no value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['2000']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['+']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 1);
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to tomorrow if invalid value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['2000']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['0']);
+        browser.keys(['+']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 1);
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+    });
   });
 
   describe('Year input keyboard operations', () => {
@@ -447,6 +629,188 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         $('input[name="terra-date-year-date-input"]').click();
         browser.keys(['Delete']);
         Terra.validates.element('shift focus from year to month');
+      });
+    });
+
+    describe('Year Input Pressing T in year input', () => {
+      it('should set date to current if blank', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['t']);
+        const currentDate = new Date();
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to current if valid value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['t']);
+        const currentDate = new Date();
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to current if invalid value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['11']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['t']);
+        const currentDate = new Date();
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+    });
+
+    describe('Year Input Pressing - in year', () => {
+      it('should set date to yesterday if blank', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['-']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() - 1);
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to current value - 1 day if valid value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['-']);
+
+        expect($('#dateInput input')).toHaveValue('2000-07-03');
+      });
+
+      it('should set date to yesterday if no value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['11']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['-']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() - 1);
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to yesterday if invalid value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['11']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['180']);
+        browser.keys(['-']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() - 1);
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+    });
+
+    describe('Year Input Pressing + in year input', () => {
+      it('should set date to tomorrow if blank', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['+']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 1);
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to current value + 1 day if valid value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['+']);
+
+        expect($('#dateInput input')).toHaveValue('2000-07-05');
+      });
+
+      it('should set date to tomorrow if no value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['11']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['+']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 1);
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to tomorrow if invalid value is there', () => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['11']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['180']);
+        browser.keys(['+']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 1);
+        expect($('#dateInput input')).toHaveValue(currentDate.toISOString().split('T')[0]);
       });
     });
   });
