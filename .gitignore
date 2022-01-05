@@ -36,6 +36,7 @@
 /spec/reports/
 /test/tmp/
 /test/version_tmp/
+/translations/*.*
 /tmp/
 /vendor/bundle
 build-iPhoneOS/

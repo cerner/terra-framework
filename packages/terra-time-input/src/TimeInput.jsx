@@ -751,7 +751,7 @@ class TimeInput extends React.Component {
         });
       }
       return intl.formatMessage({
-        id: 'Terra.timeInput.hourDescriptionTwelve',
+        id: 'Terra.timeInput.hourDescriptionTwentyFour',
         defaultMessage: 'A two-digit 24-hour value',
         description: 'Like Terra.timeInput.hourDescriptionTwelve but for a 24-hour clock.',
       });
@@ -773,7 +773,7 @@ class TimeInput extends React.Component {
     });
 
     const defaultGroupLabel = intl.formatMessage({
-      id: 'Terra.timeInput.inputGroupValue',
+      id: 'Terra.timeInput.inputGroupValueDefault',
       defaultMessage: 'Time',
       description: `Same meaning as groupLabel, only for situations where the consumer has not provided a label for us
       to plug in.`,
@@ -846,7 +846,7 @@ class TimeInput extends React.Component {
             <AccessibleValue
               value={a11yString}
               readThis={intl.formatMessage({
-                id: 'Terra.timeInput.labeledtextValue',
+                id: 'Terra.timeInput.labeledTextValue',
                 defaultMessage: `${label} ${a11yString}`,
                 description: `This will be read to screen reader users only textValue changes to a new time. We want
               to give the screen reader user feedback that their change to one of the controls has updated this time.`,
@@ -858,7 +858,7 @@ class TimeInput extends React.Component {
               readThis={intl.formatMessage({
                 id: 'Terra.timeInput.textValue',
                 defaultMessage: `Time ${a11yString}`,
-                description: `Similar to Terra.timeInput.labeledtextValue, but we want the screen reader to say "time"
+                description: `Similar to Terra.timeInput.labeledTextValue, but we want the screen reader to say "time"
                 before reading the value because no label was provided. It would be confusing to hear "09 22" right
                 after you typed "22" or "09". So instead we can say "Time 09 22".`,
               })}
