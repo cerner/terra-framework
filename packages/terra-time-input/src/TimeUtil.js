@@ -290,7 +290,7 @@ class TimeUtil {
   }
 
   /**
-   * Is the Time Input operating as a 12-hour variant?
+   * Indicates if the Time Input is operating as a 12-hour variant.
    * @param {Object} The TimeInput props.
    * @returns {Boolean} True iff the locale allows a 12-hour time and the variant is 12-hour time.
    */
