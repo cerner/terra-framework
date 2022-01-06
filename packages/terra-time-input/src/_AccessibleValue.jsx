@@ -3,7 +3,9 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  // The value you want read only when changed. An undefined value is never read.
+  /**
+   * The value you want read only when changed. An undefined value is never read.
+   */
   value: PropTypes.string,
   readThis: PropTypes.string,
 };
