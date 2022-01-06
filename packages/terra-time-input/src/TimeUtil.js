@@ -314,7 +314,7 @@ class TimeUtil {
    *
    * WARNING: Read the name. This has very peculiar behavior you probably don' want ot use for new features. I'm
    * keeping this around as it was, because it's got strange behavior I'm not sure how to break. It has a bug where a
-   * person could type leave some fields blank and see a value containing 'NaN', like 'TNaN:22'. Not sure if that is
+   * person could leave some fields blank and see a value containing 'NaN', like 'TNaN:22'. Not sure if that is
    * desired.
    * @param {Object} props TimeInput props
    * @param {Object} state  TimeInput state
