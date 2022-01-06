@@ -907,7 +907,7 @@ class TimeInput extends React.Component {
              * If the entire Time Input isInvalid, then pass isInvalid into each wrapped input, so that the screen
              * reader users will get an indication that something is invalid. It's not perfect because both inputs will
              * be marked invalid even though it's the combination of both that is really the problem. For example,
-             * 09:88 is a valid hour and an invalid minute, but both hour and minute will */
+             * 09:88 is a valid hour and an invalid minute, but both hour and minute will be marked invalid.*/
             label={hoursLabel()}
             refCallback={(inputRef) => {
               this.hourInput = inputRef;
