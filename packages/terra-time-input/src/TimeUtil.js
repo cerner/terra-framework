@@ -299,7 +299,7 @@ class TimeUtil {
   }
 
   /**
-   * Is the Time Input's state representing a 12-hour time in the PM?
+   * Indicates if the Time Input's state is representing a 12-hour time in the PM.
    * @param {Object} props The TimeInput props.
    * @param {Object} state The TimeInput state.
    * @param {String} postMeridiem The PM string to compare against.
