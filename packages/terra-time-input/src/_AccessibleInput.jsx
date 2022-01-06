@@ -68,9 +68,9 @@ function AccessibleInput(props) {
        inconsistently across browser/AT combinations in the future.
        */}
       <Input
+        {...inputProps}
         value={value}
         disabled={disabled}
-        {...inputProps}
         aria-disabled={disabled}
         /** We are not passing isInvalid because that is not an input prop, we are using it to give some indication to
          * screen reader users in both read mode and forms mode (picker mode) that this input is _part of_ an invalid

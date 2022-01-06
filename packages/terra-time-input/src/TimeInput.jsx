@@ -720,6 +720,10 @@ class TimeInput extends React.Component {
       { 'initial-focus': this.state.secondInitialFocused },
     ]);
 
+    /**
+     * Get the mask string to place under the time input fields.
+     * @returns {String} a visual hint of the time format, like 'hh:mm'.
+     */
     function mask() {
       if (showSeconds) {
         return intl.formatMessage({
@@ -736,9 +740,10 @@ class TimeInput extends React.Component {
     }
 
     /**
-     * Returns a localized description for the hour input that reflects whether this is a 12 or 24-hour clock.
+     * Get the description for the hour field.
      *
      * NOTE: the description does not take the place of validation or error messages.
+     * @returns {String} a description of the hour field, intended to be read to screen reader users.
      */
     function hourDescription() {
       if (is12Hour) {
@@ -764,20 +769,42 @@ class TimeInput extends React.Component {
 
     const a11yString = TimeUtil.getA11YTimeValue(this.props, this.state, this.postMeridiem);
 
-    const groupLabel = intl.formatMessage({ // fix
-      id: 'Terra.timeInput.inputGroupValue',
-      defaultMessage: '{label}',
-      description: `This will be read by screen readers as the reader moves into the group of inputs. It is intended to
+    function groupLabel() {
+      if (label) {
+        return intl.formatMessage({ // fix
+          id: 'Terra.timeInput.inputGroupValue',
+          defaultMessage: '{label}',
+          description: `This will be read by screen readers as the reader moves into the group of inputs. It is intended to
       help the user understand "you are about to enter a section of the page where many different inputs all work
       together for this one concept of time.`,
-    }, { label });
-
-    const defaultGroupLabel = intl.formatMessage({
-      id: 'Terra.timeInput.inputGroupValueDefault',
-      defaultMessage: 'Time',
-      description: `Same meaning as groupLabel, only for situations where the consumer has not provided a label for us
+        }, { label });
+      }
+      return intl.formatMessage({
+        id: 'Terra.timeInput.inputGroupValueDefault',
+        defaultMessage: 'Time',
+        description: `Same meaning as groupLabel, only for situations where the consumer has not provided a label for us
       to plug in.`,
-    });
+      });
+    }
+
+    function hoursLabel() {
+      if(label){
+        return intl.formatMessage({
+          id: 'Terra.timeInput.hourLabel',
+          defaultMessage: '{label} hour',
+          description: `The label that will only be read to screen readers. It is prefixed with the time input's name,
+          e.g. 'Time of Birth', so that screen reader users can pick this specific hour field out of a list of many
+          hour fields on the same page. The minute and second screen reader labels won't contain the name because they
+          will always follow their labeld hour field. We didn't want to say the label too many times.`
+        }, {label});
+      }
+      return intl.formatMessage({
+        id: 'Terra.timeInput.hourLabelDefault',
+        defaultMessage: 'Hour',
+        description: `Like Terra.timeInput.hourLabel but used in situations where the consumer of the time input did not
+        supply a label value.`
+      });
+    }
 
     return (
       <div
@@ -785,7 +812,7 @@ class TimeInput extends React.Component {
         ref={this.timeInputContainer}
         className={cx('time-input-container', theme.className)}
       >
-        <div className={timeInputClassNames} role="group" aria-label={label ? groupLabel : defaultGroupLabel}>
+        <div className={timeInputClassNames} role="group" aria-label={groupLabel()}>
           {/*
           "Time of Birth group. Time of birth Hours input., ..."
 
@@ -881,7 +908,7 @@ class TimeInput extends React.Component {
              * reader users will get an indication that something is invalid. It's not perfect because both inputs will
              * be marked invalid even though it's the combination of both that is really the problem. For example,
              * 09:88 is a valid hour and an invalid minute, but both hour and minute will */
-            label={intl.formatMessage({ id: 'Terra.timeInput.hours' })}
+            label={hoursLabel()}
             refCallback={(inputRef) => {
               this.hourInput = inputRef;
               if (refCallback) refCallback(inputRef);
