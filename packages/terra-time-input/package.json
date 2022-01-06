@@ -31,7 +31,6 @@
     "keycode-js": "^3.1.0",
     "prop-types": "^15.5.8",
     "terra-button-group": "^3.60.1",
-    "terra-form-field": "^4.20.0",
     "terra-form-input": "^4.4.0",
     "terra-theme-context": "^1.7.0",
     "terra-visually-hidden-text": "^2.34.0",

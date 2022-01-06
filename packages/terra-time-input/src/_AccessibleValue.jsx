@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   /**
-   * The value you want read only when changed. An undefined value is never read.
+   * This is examined to determine whether readThis should be read or not. If value is undefined or falsy, then
+   * readThis will not be read. If value has not changed, or is set for the first time, then readThis will be read. If
+   * value is changed to another non-falsy value then readThis will be read.
    */
   value: PropTypes.string,
+  /**
+   * This is what will be read when value is not falsy.
+   */
   readThis: PropTypes.string,
-};
-
-const defaultProps = {
-  value: undefined,
-  readThis: undefined,
 };
 
 /**
@@ -59,6 +59,5 @@ function AccessibleValue(props) {
 }
 
 AccessibleValue.propTypes = propTypes;
-AccessibleValue.defaultProps = defaultProps;
 
 export default AccessibleValue;

@@ -5,6 +5,9 @@ import Input from 'terra-form-input';
 import uuidv4 from 'uuid/v4';
 
 const propTypes = {
+  /**
+   * The initial value of the Input that this component wraps.
+   */
   value: PropTypes.string,
   /**
    * The string labeling the input for assistive technologies like screen readers. This value is not rendered visually.
@@ -22,8 +25,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  value: undefined,
-  label: undefined,
   isInvalid: false,
 };
 

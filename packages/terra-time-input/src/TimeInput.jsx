@@ -60,7 +60,7 @@ const propTypes = {
    * **BEST PRACTICE FOR ACCESSIBILITY**: you _SHOULD_ set this to match whatever visible label you give in your UI.
    * Currently this is optional for passivity reasons, but it will become mandatory in a future major version.
    */
-  label: PropTypes.string,
+  a11yLabel: PropTypes.string,
   /**
    * A callback function to execute when the entire time input component loses focus.
    * This event does not get triggered when the focus is moved from the hour input to the minute input or meridiem because the focus is still within the main time input component.
@@ -112,7 +112,6 @@ const defaultProps = {
   isInvalidMeridiem: false,
   minuteAttributes: {},
   hourAttributes: {},
-  label: '',
   onBlur: null,
   onChange: null,
   onFocus: undefined,
@@ -666,7 +665,7 @@ class TimeInput extends React.Component {
       isIncomplete,
       isInvalid,
       isInvalidMeridiem,
-      label,
+      a11yLabel,
       onBlur,
       onChange,
       onFocus,
@@ -727,15 +726,15 @@ class TimeInput extends React.Component {
     function mask() {
       if (showSeconds) {
         return intl.formatMessage({
-          id: 'Terra.timeInput.maskHourMinute',
+          id: 'Terra.timeInput.maskHourMinuteSecond',
           defaultMessage: '(hh:mm:ss)',
           description: 'A visual hint that the Time Input expects two-digit hour, minute and second.',
         });
       }
       return intl.formatMessage({
-        id: 'Terra.timeInput.maskHourMinuteSecond',
+        id: 'Terra.timeInput.maskHourMinute',
         defaultMessage: '(hh:mm)',
-        description: 'Like Terra.timeInput.maskHourMinute but no second.',
+        description: 'Like Terra.timeInput.maskHourMinuteSecond but no second.',
       });
     }
 
@@ -751,8 +750,8 @@ class TimeInput extends React.Component {
           id: 'Terra.timeInput.hourDescriptionTwelve',
           defaultMessage: 'A two-digit 12-hour value',
           description: `Explains to screen reader users that the hour field needs a two digit hour. This will be read
-          only when a screen reader is enabled. It is never displayed. It will be read when the user has focused on
-          the hour input or when the screen reader is reading the page to the user.`,
+only when a screen reader is enabled. It is never displayed. It will be read when the user has focused on the hour input
+or when the screen reader is reading the page to the user.`,
         });
       }
       return intl.formatMessage({
@@ -767,43 +766,65 @@ class TimeInput extends React.Component {
     inputAttributes.disabled = disabled;
     inputAttributes.required = required;
 
-    const a11yString = TimeUtil.getA11YTimeValue(this.props, this.state, this.postMeridiem);
+    const a11yTimeValue = TimeUtil.getA11YTimeValue(this.props, this.state, this.postMeridiem);
 
+    /**
+     * @returns {String} The label screen readers should use for the entire group of controls.
+     */
     function groupLabel() {
-      if (label) {
-        return intl.formatMessage({ // fix
-          id: 'Terra.timeInput.inputGroupValue',
-          defaultMessage: '{label}',
-          description: `This will be read by screen readers as the reader moves into the group of inputs. It is intended to
-      help the user understand "you are about to enter a section of the page where many different inputs all work
-      together for this one concept of time.`,
-        }, { label });
-      }
-      return intl.formatMessage({
+      return a11yLabel || intl.formatMessage({
         id: 'Terra.timeInput.inputGroupValueDefault',
         defaultMessage: 'Time',
-        description: `Same meaning as groupLabel, only for situations where the consumer has not provided a label for us
-      to plug in.`,
+        description: `For situations where the consumer has not provided a a11yLabel: This will be read by screen
+readers as the reader moves into the group of inputs. It is intended to help the user understand "you are about to enter
+a section of the page where many different inputs all work together for this one concept of time.`,
       });
     }
 
+    /**
+     * @returns {String} The label screen readers should use for the hour input.
+     */
     function hoursLabel() {
-      if (label) {
+      if (a11yLabel) {
         return intl.formatMessage({
           id: 'Terra.timeInput.hourLabel',
-          defaultMessage: '{label} hour',
+          // eslint-disable-next-line formatjs/no-camel-case
+          defaultMessage: '{a11yLabel} hour',
           description: `The label that will only be read to screen readers. It is prefixed with the time input's name,
-          e.g. 'Time of Birth', so that screen reader users can pick this specific hour field out of a list of many
-          hour fields on the same page. The minute and second screen reader labels won't contain the name because they
-          will always follow their labeld hour field. We didn't want to say the label too many times.`
-        }, {label});
+e.g. 'Time of Birth', so that screen reader users can pick this specific hour field out of a list of many hour fields on
+the same page. The minute and second screen reader labels won't contain the name because they will always follow their
+labeled hour field. We didn't want to say the a11yLabel too many times.`,
+        }, { a11yLabel });
       }
       return intl.formatMessage({
         id: 'Terra.timeInput.hourLabelDefault',
         defaultMessage: 'Hour',
         description: `Like Terra.timeInput.hourLabel but used in situations where the consumer of the time input did not
-        supply a label value.`
+supply a a11yLabel value.`,
       });
+    }
+
+    /**
+     * @returns {String} The words the screen reader should read to announce the time.
+     */
+    function a11yAnnouncement() {
+      if (a11yLabel) {
+        return intl.formatMessage({
+          id: 'Terra.timeInput.labeledTextValue',
+          // eslint-disable-next-line formatjs/no-camel-case
+          defaultMessage: '{a11yLabel} {a11yTimeValue}',
+          description: `This will be read to screen reader users only textValue changes to a new time. We want
+        to give the screen reader user feedback that their change to one of the controls has updated this time.`,
+        }, { a11yLabel, a11yTimeValue });
+      }
+      return intl.formatMessage({
+        id: 'Terra.timeInput.textValue',
+        // eslint-disable-next-line formatjs/no-camel-case
+        defaultMessage: 'Time {a11yTimeValue}',
+        description: `Similar to Terra.timeInput.labeledTextValue, but we want the screen reader to say "time"
+before reading the value because no a11yLabel was provided. It would be confusing to hear "09 22" right after you typed
+"22" or "09". So instead we can say "Time 09 22".`,
+      }, { a11yTimeValue });
     }
 
     return (
@@ -845,20 +866,20 @@ class TimeInput extends React.Component {
           4. Time of Death Hour <-- easy to spot the start of the Time of Death input.
           5. Minute
 
-        To remain passive, the label is optional. If a consumer doesn't supply a label like 'Time of Birth' then the
-        best we can do is say "hour" and we have this scenario:
+        To remain passive, the a11yLabel is optional. If a consumer doesn't supply a a11yLabel like 'Time of Birth'
+        then the best we can do is say "hour" and we have this scenario:
 
           ==SCREEN READER'S LIST OF FORM INPUTS TO PICK==
           1. Hour
           2. Minute
           3. Second
-          4. Hour <-- Confusing which hour/minute is which because there is no label.
+          4. Hour <-- Confusing which hour/minute is which because there is no a11yLabel.
           5. Minute
 
         The AccessibleValue's job is to announce a localized human-readable representation of the time to screen reader
         users. The announcement is only made when the value changes to a valid time. If the Time of Birth started out at
         T14:22 and the user changed the hour from 02 to 03, the value would be T15:22 and the announcer would
-        immediately say "Time of birth 3:22 pm." or just "3:22 pm" if no label is provided.
+        immediately say "Time of birth 3:22 pm." or just "3:22 pm" if no a11yLabel is provided.
 
         It's important to give screen reader users an indication if the Time Input is disabled, incomplete or invalid
         just as we do for visual users. Since the isInvalid and required flags are component-wide but
@@ -869,30 +890,10 @@ class TimeInput extends React.Component {
         1 - why does it mean to have an invalid meridiem? Why is that possible? It is not supported by Aria or HTML to indicate a button is "invalid".
         2 - why won't the mobile invalid and mobile incomplete tests read the inputs as invalid or incomplete? The voiceOver rotor and the accessibility panel both show them correctly as incomplete or invalid, just the read-mode is wrong. This problem doesn't happen on the normal incomplete/invalid tests. I was testing on macOS the entire time.
           */}
-          { label ? (
-            <AccessibleValue
-              value={a11yString}
-              readThis={intl.formatMessage({
-                id: 'Terra.timeInput.labeledTextValue',
-                // eslint-disable-next-line formatjs/no-camel-case
-                defaultMessage: '{label} {a11yString}',
-                description: `This will be read to screen reader users only textValue changes to a new time. We want
-              to give the screen reader user feedback that their change to one of the controls has updated this time.`,
-              }, { label, a11yString })}
-            />
-          ) : (
-            <AccessibleValue
-              value={a11yString}
-              readThis={intl.formatMessage({ // fix
-                id: 'Terra.timeInput.textValue',
-                // eslint-disable-next-line formatjs/no-camel-case
-                defaultMessage: 'Time {a11yString}',
-                description: `Similar to Terra.timeInput.labeledTextValue, but we want the screen reader to say "time"
-                before reading the value because no label was provided. It would be confusing to hear "09 22" right
-                after you typed "22" or "09". So instead we can say "Time 09 22".`,
-              }, { a11yString })}
-            />
-          )}
+          <AccessibleValue
+            value={a11yTimeValue}
+            readThis={a11yAnnouncement()}
+          />
           <input
             // Create a hidden input for storing the name and value attributes to use when submitting the form.
             // The value will be sort of like, but not strictly, an ISO 8601 value's time component.
@@ -907,7 +908,7 @@ class TimeInput extends React.Component {
              * If the entire Time Input isInvalid, then pass isInvalid into each wrapped input, so that the screen
              * reader users will get an indication that something is invalid. It's not perfect because both inputs will
              * be marked invalid even though it's the combination of both that is really the problem. For example,
-             * 09:88 is a valid hour and an invalid minute, but both hour and minute will be marked invalid.*/
+             * 09:88 is a valid hour and an invalid minute, but both hour and minute will be marked invalid. */
             label={hoursLabel()}
             refCallback={(inputRef) => {
               this.hourInput = inputRef;
