@@ -788,7 +788,7 @@ class TimeInput extends React.Component {
     }
 
     function hoursLabel() {
-      if(label){
+      if (label) {
         return intl.formatMessage({
           id: 'Terra.timeInput.hourLabel',
           defaultMessage: '{label} hour',
