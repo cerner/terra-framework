@@ -764,13 +764,13 @@ class TimeInput extends React.Component {
 
     const a11yString = TimeUtil.getA11YTimeValue(this.props, this.state, this.postMeridiem);
 
-    const groupLabel = intl.formatMessage({
+    const groupLabel = intl.formatMessage({ // fix
       id: 'Terra.timeInput.inputGroupValue',
-      defaultMessage: `${label}`,
+      defaultMessage: '{label}',
       description: `This will be read by screen readers as the reader moves into the group of inputs. It is intended to
       help the user understand "you are about to enter a section of the page where many different inputs all work
       together for this one concept of time.`,
-    });
+    }, { label });
 
     const defaultGroupLabel = intl.formatMessage({
       id: 'Terra.timeInput.inputGroupValueDefault',
@@ -847,21 +847,23 @@ class TimeInput extends React.Component {
               value={a11yString}
               readThis={intl.formatMessage({
                 id: 'Terra.timeInput.labeledTextValue',
-                defaultMessage: `${label} ${a11yString}`,
+                // eslint-disable-next-line formatjs/no-camel-case
+                defaultMessage: '{label} {a11yString}',
                 description: `This will be read to screen reader users only textValue changes to a new time. We want
               to give the screen reader user feedback that their change to one of the controls has updated this time.`,
-              })}
+              }, { label, a11yString })}
             />
           ) : (
             <AccessibleValue
               value={a11yString}
-              readThis={intl.formatMessage({
+              readThis={intl.formatMessage({ // fix
                 id: 'Terra.timeInput.textValue',
-                defaultMessage: `Time ${a11yString}`,
+                // eslint-disable-next-line formatjs/no-camel-case
+                defaultMessage: 'Time {a11yString}',
                 description: `Similar to Terra.timeInput.labeledTextValue, but we want the screen reader to say "time"
                 before reading the value because no label was provided. It would be confusing to hear "09 22" right
                 after you typed "22" or "09". So instead we can say "Time 09 22".`,
-              })}
+              }, { a11yString })}
             />
           )}
           <input

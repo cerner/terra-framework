@@ -363,9 +363,7 @@ class TimeUtil {
       * e.g.:
       * > new Date(1983, 3, 24, ...value.split(':')).toLocaleTimeString(locale, {timeStyle: 'short', hour12: true});
       */
-    const {
-      hour, minute, second, meridiem,
-    } = state;
+    const { meridiem } = state;
     const { intl, showSeconds } = props;
     const is12Hour = TimeUtil.is12Hour(props);
 
@@ -378,43 +376,51 @@ class TimeUtil {
       hourMode = Hour.TWENTY_FOUR_HOUR;
     }
 
-    const hourOrUndef = Hour.FromString(hour, hourMode);
-    const minuteOrUndef = Minute.FromString(minute);
-    const secondOrUndef = Second.FromString(second);
+    const hour = Hour.FromString(state.hour, hourMode);
+    const minute = Minute.FromString(state.minute);
+    const second = Second.FromString(state.second);
 
-    if ([hourOrUndef, minuteOrUndef].includes(undefined)) {
+    if ([hour, minute].includes(undefined)) {
       return undefined;
     }
 
-    if (showSeconds && secondOrUndef === undefined) {
+    if (showSeconds && second === undefined) {
       return undefined;
     }
 
     if (is12Hour && showSeconds) {
       return intl.formatMessage({
         id: 'Terra.timeInput.textValueTwelveHourMinuteSecond',
-        defaultMessage: `${hourOrUndef.toTwelveHourString()}:${minuteOrUndef}:${secondOrUndef} ${meridiem}`,
+        defaultMessage: '{hour}:{minute}:{second} {meridiem}',
         description: 'Human-readable time value in a 12-hour clock with hours, minutes, and seconds.',
+      }, {
+        hour: hour.toTwelveHourString(), minute, second, meridiem,
       });
     }
     if (is12Hour) {
       return intl.formatMessage({
         id: 'Terra.timeInput.textValueTwelveHourMinute',
-        defaultMessage: `${hourOrUndef.toTwelveHourString()}:${minuteOrUndef} ${meridiem}`,
+        defaultMessage: '{hour}:{minute} {meridiem}',
         description: 'Human-readable time value in a 12-hour clock with hours, and minutes.',
-      }, { time: new Date() });
+      }, {
+        hour: hour.toTwelveHourString(), minute, meridiem,
+      });
     }
     if (showSeconds) {
       return intl.formatMessage({
         id: 'Terra.timeInput.textValueTwentyFourHourMinuteSecond',
-        defaultMessage: `${hourOrUndef}:${minuteOrUndef}:${secondOrUndef}`,
+        defaultMessage: '{hour}:{minute}:{second}',
         description: 'Human-readable time value in a 24-hour clock with hours, minutes, and seconds.',
+      }, {
+        hour, minute, second,
       });
     }
     return intl.formatMessage({
       id: 'Terra.timeInput.textValueTwentyFourHourMinute',
-      defaultMessage: `${hourOrUndef}:${minuteOrUndef}`,
+      defaultMessage: '{hour}:{minute}',
       description: 'Human-readable time value in a 24-hour clock with hours and minutes.',
+    }, {
+      hour, minute,
     });
   }
 }
