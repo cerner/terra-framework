@@ -25,7 +25,6 @@ const defaultProps = {
   value: undefined,
   label: undefined,
   isInvalid: false,
-
 };
 
 /**
