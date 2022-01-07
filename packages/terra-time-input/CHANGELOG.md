@@ -4,7 +4,11 @@
 
 - Changed
   - Major yet passive A11y improvements.
-  - Updated jest snapshots
+
+## 4.43.1 - (January 4, 2022)
+
+* Changed
+  * Updated jest snapshots
 
 ## 4.43.0 - (September 20, 2021)
 
