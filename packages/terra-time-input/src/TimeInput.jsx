@@ -17,6 +17,14 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
+   * An identifier used by assistive technologies like screen readers to briefly describe this time input to users.
+   * The label is not rendered visually.
+   *
+   * **BEST PRACTICE FOR ACCESSIBILITY**: you _SHOULD_ set this to match whatever visible label you give in your UI.
+   * Currently this is optional for passivity reasons, but it will become mandatory in a future major version.
+   */
+  a11yLabel: PropTypes.string,
+  /**
    * Whether the time input should be disabled.
    */
   disabled: PropTypes.bool,
@@ -53,14 +61,6 @@ const propTypes = {
    * Name of the time input. The name should be unique.
    */
   name: PropTypes.string.isRequired,
-  /**
-   * An identifier used by assistive technologies like screen readers to briefly describe this time input to users.
-   * The label is not rendered visually.
-   *
-   * **BEST PRACTICE FOR ACCESSIBILITY**: you _SHOULD_ set this to match whatever visible label you give in your UI.
-   * Currently this is optional for passivity reasons, but it will become mandatory in a future major version.
-   */
-  a11yLabel: PropTypes.string,
   /**
    * A callback function to execute when the entire time input component loses focus.
    * This event does not get triggered when the focus is moved from the hour input to the minute input or meridiem because the focus is still within the main time input component.
@@ -574,6 +574,18 @@ class TimeInput extends React.Component {
     this.handleValueChange(event, TimeUtil.inputType.HOUR, this.state.hour.toString(), selectedKey);
   }
 
+  get a11yLabel() {
+    const { a11yLabel, intl } = this.props;
+    return a11yLabel || intl.formatMessage({
+      id: 'Terra.timeInput.a11yLabelDefault',
+      defaultMessage: 'Time',
+      description: `For situations where the consumer has not provided a a11yLabel: This will be read by screen
+readers as the reader moves into the group of inputs. It is intended to help the user understand "you are about to enter
+a section of the page where many different inputs all work together for this one concept of time. It is also used as
+part of many other localized messages`,
+    });
+  }
+
   get anteMeridiem() {
     return this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
   }
@@ -657,19 +669,19 @@ class TimeInput extends React.Component {
 
   render() {
     const {
+      a11yLabel,
       disabled,
-      inputAttributes,
-      minuteAttributes,
       hourAttributes,
+      inputAttributes,
       intl,
       isIncomplete,
       isInvalid,
       isInvalidMeridiem,
-      a11yLabel,
+      minuteAttributes,
+      name,
       onBlur,
       onChange,
       onFocus,
-      name,
       refCallback,
       required,
       secondAttributes,
@@ -768,72 +780,13 @@ or when the screen reader is reading the page to the user.`,
 
     const a11yTimeValue = TimeUtil.getA11YTimeValue(this.props, this.state, this.postMeridiem);
 
-    /**
-     * @returns {String} The label screen readers should use for the entire group of controls.
-     */
-    function groupLabel() {
-      return a11yLabel || intl.formatMessage({
-        id: 'Terra.timeInput.inputGroupValueDefault',
-        defaultMessage: 'Time',
-        description: `For situations where the consumer has not provided a a11yLabel: This will be read by screen
-readers as the reader moves into the group of inputs. It is intended to help the user understand "you are about to enter
-a section of the page where many different inputs all work together for this one concept of time.`,
-      });
-    }
-
-    /**
-     * @returns {String} The label screen readers should use for the hour input.
-     */
-    function hoursLabel() {
-      if (a11yLabel) {
-        return intl.formatMessage({
-          id: 'Terra.timeInput.hourLabel',
-          // eslint-disable-next-line formatjs/no-camel-case
-          defaultMessage: '{a11yLabel} hour',
-          description: `The label that will only be read to screen readers. It is prefixed with the time input's name,
-e.g. 'Time of Birth', so that screen reader users can pick this specific hour field out of a list of many hour fields on
-the same page. The minute and second screen reader labels won't contain the name because they will always follow their
-labeled hour field. We didn't want to say the a11yLabel too many times.`,
-        }, { a11yLabel });
-      }
-      return intl.formatMessage({
-        id: 'Terra.timeInput.hourLabelDefault',
-        defaultMessage: 'Hour',
-        description: `Like Terra.timeInput.hourLabel but used in situations where the consumer of the time input did not
-supply a a11yLabel value.`,
-      });
-    }
-
-    /**
-     * @returns {String} The words the screen reader should read to announce the time.
-     */
-    function a11yAnnouncement() {
-      if (a11yLabel) {
-        return intl.formatMessage({
-          id: 'Terra.timeInput.labeledTextValue',
-          // eslint-disable-next-line formatjs/no-camel-case
-          defaultMessage: '{a11yLabel} {a11yTimeValue}',
-          description: `This will be read to screen reader users only textValue changes to a new time. We want
-        to give the screen reader user feedback that their change to one of the controls has updated this time.`,
-        }, { a11yLabel, a11yTimeValue });
-      }
-      return intl.formatMessage({
-        id: 'Terra.timeInput.textValue',
-        // eslint-disable-next-line formatjs/no-camel-case
-        defaultMessage: 'Time {a11yTimeValue}',
-        description: `Similar to Terra.timeInput.labeledTextValue, but we want the screen reader to say "time"
-before reading the value because no a11yLabel was provided. It would be confusing to hear "09 22" right after you typed
-"22" or "09". So instead we can say "Time 09 22".`,
-      }, { a11yTimeValue });
-    }
-
     return (
       <div
         {...customProps}
         ref={this.timeInputContainer}
         className={cx('time-input-container', theme.className)}
       >
-        <div className={timeInputClassNames} role="group" aria-label={groupLabel()}>
+        <div className={timeInputClassNames} role="group" aria-label={this.a11yLabel}>
           {/*
           "Time of Birth group. Time of birth Hours input., ..."
 
@@ -892,7 +845,13 @@ before reading the value because no a11yLabel was provided. It would be confusin
           */}
           <AccessibleValue
             value={a11yTimeValue}
-            readThis={a11yAnnouncement()}
+            readThis={intl.formatMessage({
+              id: 'Terra.timeInput.labeledTextValue',
+              // eslint-disable-next-line formatjs/no-camel-case
+              defaultMessage: '{a11yLabel} {a11yTimeValue}',
+              description: `This will be read to screen reader users only textValue changes to a new time. We want
+        to give the screen reader user feedback that their change to one of the controls has updated this time.`,
+            }, { a11yLabel: this.a11yLabel, a11yTimeValue })}
           />
           <input
             // Create a hidden input for storing the name and value attributes to use when submitting the form.
@@ -909,7 +868,15 @@ before reading the value because no a11yLabel was provided. It would be confusin
              * reader users will get an indication that something is invalid. It's not perfect because both inputs will
              * be marked invalid even though it's the combination of both that is really the problem. For example,
              * 09:88 is a valid hour and an invalid minute, but both hour and minute will be marked invalid. */
-            label={hoursLabel()}
+            label={intl.formatMessage({
+              id: 'Terra.timeInput.hourLabel',
+              // eslint-disable-next-line formatjs/no-camel-case
+              defaultMessage: '{a11yLabel} hour',
+              description: `The label that will only be read to screen readers. It is prefixed with the time input's name,
+e.g. 'Time of Birth', so that screen reader users can pick this specific hour field out of a list of many hour fields on
+the same page. The minute and second screen reader labels won't contain the name because they will always follow their
+labeled hour field. We didn't want to say the a11yLabel too many times.`,
+            }, { a11yLabel: this.a11yLabel })}
             refCallback={(inputRef) => {
               this.hourInput = inputRef;
               if (refCallback) refCallback(inputRef);

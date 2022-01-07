@@ -15,12 +15,13 @@
  * - Slightly longer `npm run` time due to the extra formatjs extraction command.
  * - We still have to specify IDs of each message :( for now.
  * - The metadata of the messages is not automatically given to the translation tools - it is only in the source code.
+ *
+ * 1 - https://formatjs.io/docs/react-intl/#message-extraction
  * @param {Object} msgs The messages that were extracted by formatjs.
  * @returns {Object} A shallow key/message object as required by terra-aggregate-translations.
  */
 exports.format = (msgs) => {
   const results = {};
-  // eslint-disable-next-line no-restricted-syntax
   Object.entries(msgs).forEach(
     ([id, msg]) => { results[id] = msg.defaultMessage; },
   );
