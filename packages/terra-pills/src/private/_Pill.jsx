@@ -33,7 +33,7 @@ const propTypes = {
    */
   labelCategory: PropTypes.string,
   /**
-   * Object returned along with the 'pillKey' in the `onRemove` and `onSelect` callback. ('onSelect' only applicable for `<SelectablePills />`)
+   * Object returned along with the 'pillKey' in the `onRemove`
    */
   metaData: PropTypes.object,
   /**
