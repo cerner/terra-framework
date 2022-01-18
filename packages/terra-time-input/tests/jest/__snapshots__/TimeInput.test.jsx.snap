@@ -78,7 +78,6 @@ exports[`correctly applies the theme context className 1`] = `
       isIncomplete={false}
       isInvalid={false}
       isInvalidMeridiem={false}
-      label=""
       minuteAttributes={Object {}}
       name="time-input"
       onBlur={null}
@@ -92,22 +91,22 @@ exports[`correctly applies the theme context className 1`] = `
         className="time-input-container orion-fusion-theme"
       >
         <div
-          aria-label=""
+          aria-label="Terra.timeInput.a11yLabelDefault"
           className="time-input"
           role="group"
         >
           <AccessibleValue
-            readThis="Terra.timeInput.textValue"
+            readThis="Terra.timeInput.labeledTextValue"
           >
             <VisuallyHiddenText
               aria-hidden={true}
-              text="Terra.timeInput.textValue"
+              text="Terra.timeInput.labeledTextValue"
             >
               <span
                 aria-hidden={true}
                 className="visually-hidden-text"
               >
-                Terra.timeInput.textValue
+                Terra.timeInput.labeledTextValue
               </span>
             </VisuallyHiddenText>
           </AccessibleValue>
@@ -118,10 +117,10 @@ exports[`correctly applies the theme context className 1`] = `
           />
           <AccessibleInput
             className="time-input-hour"
-            description="Terra.timeInput.hourDescriptionTwelve"
+            description="Terra.timeInput.hourDescriptionTwentyFour"
             disabled={false}
             isInvalid={false}
-            label="Terra.timeInput.hours"
+            label="Terra.timeInput.hourLabel"
             maxLength="2"
             name="terra-time-hour-time-input"
             onBlur={[Function]}
@@ -139,7 +138,7 @@ exports[`correctly applies the theme context className 1`] = `
               aria-describedby="00000000-0000-0000-0000-000000000000-description"
               aria-disabled={false}
               aria-invalid={false}
-              aria-label="Terra.timeInput.hours"
+              aria-label="Terra.timeInput.hourLabel"
               className="time-input-hour"
               disabled={false}
               isIncomplete={false}
@@ -161,7 +160,7 @@ exports[`correctly applies the theme context className 1`] = `
                 aria-describedby="00000000-0000-0000-0000-000000000000-description"
                 aria-disabled={false}
                 aria-invalid={false}
-                aria-label="Terra.timeInput.hours"
+                aria-label="Terra.timeInput.hourLabel"
                 className="form-input orion-fusion-theme time-input-hour"
                 disabled={false}
                 maxLength="2"
@@ -179,13 +178,13 @@ exports[`correctly applies the theme context className 1`] = `
             </Input>
             <VisuallyHiddenText
               id="00000000-0000-0000-0000-000000000000-description"
-              text="Terra.timeInput.hourDescriptionTwelve"
+              text="Terra.timeInput.hourDescriptionTwentyFour"
             >
               <span
                 className="visually-hidden-text"
                 id="00000000-0000-0000-0000-000000000000-description"
               >
-                Terra.timeInput.hourDescriptionTwelve
+                Terra.timeInput.hourDescriptionTwentyFour
               </span>
             </VisuallyHiddenText>
           </AccessibleInput>
@@ -308,7 +307,7 @@ exports[`correctly applies the theme context className 1`] = `
           aria-hidden={true}
           className="format-text"
         >
-          Terra.timeInput.maskHourMinuteSecond
+          Terra.timeInput.maskHourMinute
         </p>
       </div>
     </TimeInput>
@@ -321,12 +320,12 @@ exports[`should ignore invalid times properly 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -335,10 +334,10 @@ exports[`should ignore invalid times properly 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -379,7 +378,7 @@ exports[`should ignore invalid times properly 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinuteSecond
+    Terra.timeInput.maskHourMinute
   </p>
 </div>
 `;
@@ -389,12 +388,12 @@ exports[`should ignore invalid times with seconds properly 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -403,10 +402,10 @@ exports[`should ignore invalid times with seconds properly 1`] = `
     />
     <AccessibleInput
       className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -469,7 +468,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinute
+    Terra.timeInput.maskHourMinuteSecond
   </p>
 </div>
 `;
@@ -482,7 +481,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     class="time-input-container"
   >
     <div
-      aria-label=""
+      aria-label="Terra.timeInput.a11yLabelDefault"
       class="time-input"
       role="group"
     >
@@ -490,7 +489,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         aria-hidden="true"
         class="visually-hidden-text"
       >
-        Terra.timeInput.textValue
+        Terra.timeInput.labeledTextValue
       </span>
       <input
         name="time-input"
@@ -501,7 +500,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         aria-describedby="00000000-0000-0000-0000-000000000000-description"
         aria-disabled="false"
         aria-invalid="false"
-        aria-label="Terra.timeInput.hours"
+        aria-label="Terra.timeInput.hourLabel"
         class="form-input time-input-hour"
         maxlength="2"
         name="terra-time-hour-time-input"
@@ -582,14 +581,14 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
       aria-hidden="true"
       class="format-text"
     >
-      Terra.timeInput.maskHourMinuteSecond
+      Terra.timeInput.maskHourMinute
     </p>
   </div>
   <div
     class="time-input-container"
   >
     <div
-      aria-label=""
+      aria-label="Terra.timeInput.a11yLabelDefault"
       class="time-input"
       role="group"
     >
@@ -597,7 +596,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         aria-hidden="true"
         class="visually-hidden-text"
       >
-        Terra.timeInput.textValue
+        Terra.timeInput.labeledTextValue
       </span>
       <input
         name="time-input-2"
@@ -608,7 +607,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         aria-describedby="00000000-0000-0000-0000-000000000000-description"
         aria-disabled="false"
         aria-invalid="false"
-        aria-label="Terra.timeInput.hours"
+        aria-label="Terra.timeInput.hourLabel"
         class="form-input time-input-hour"
         maxlength="2"
         name="terra-time-hour-time-input-2"
@@ -689,14 +688,14 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
       aria-hidden="true"
       class="format-text"
     >
-      Terra.timeInput.maskHourMinuteSecond
+      Terra.timeInput.maskHourMinute
     </p>
   </div>
   <div
     class="time-input-container"
   >
     <div
-      aria-label=""
+      aria-label="Terra.timeInput.a11yLabelDefault"
       class="time-input"
       role="group"
     >
@@ -704,7 +703,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         aria-hidden="true"
         class="visually-hidden-text"
       >
-        Terra.timeInput.textValue
+        Terra.timeInput.labeledTextValue
       </span>
       <input
         name="time-input-3"
@@ -715,7 +714,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         aria-describedby="00000000-0000-0000-0000-000000000000-description"
         aria-disabled="false"
         aria-invalid="false"
-        aria-label="Terra.timeInput.hours"
+        aria-label="Terra.timeInput.hourLabel"
         class="form-input time-input-hour"
         maxlength="2"
         name="terra-time-hour-time-input-3"
@@ -796,7 +795,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
       aria-hidden="true"
       class="format-text"
     >
-      Terra.timeInput.maskHourMinuteSecond
+      Terra.timeInput.maskHourMinute
     </p>
   </div>
 </div>
@@ -843,7 +842,6 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
-  label=""
   minuteAttributes={Object {}}
   name="time-input"
   onBlur={null}
@@ -856,7 +854,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
             aria-describedby="00000000-0000-0000-0000-000000000000-description"
             aria-disabled="false"
             aria-invalid="false"
-            aria-label="Terra.timeInput.hours"
+            aria-label="Terra.timeInput.hourLabel"
             class="form-input time-input-hour"
             maxlength="2"
             name="terra-time-hour-time-input"
@@ -884,22 +882,22 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
     className="time-input-container"
   >
     <div
-      aria-label=""
+      aria-label="Terra.timeInput.a11yLabelDefault"
       className="time-input"
       role="group"
     >
       <AccessibleValue
-        readThis="Terra.timeInput.textValue"
+        readThis="Terra.timeInput.labeledTextValue"
       >
         <VisuallyHiddenText
           aria-hidden={true}
-          text="Terra.timeInput.textValue"
+          text="Terra.timeInput.labeledTextValue"
         >
           <span
             aria-hidden={true}
             className="visually-hidden-text"
           >
-            Terra.timeInput.textValue
+            Terra.timeInput.labeledTextValue
           </span>
         </VisuallyHiddenText>
       </AccessibleValue>
@@ -910,10 +908,10 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       />
       <AccessibleInput
         className="time-input-hour"
-        description="Terra.timeInput.hourDescriptionTwelve"
+        description="Terra.timeInput.hourDescriptionTwentyFour"
         disabled={false}
         isInvalid={false}
-        label="Terra.timeInput.hours"
+        label="Terra.timeInput.hourLabel"
         maxLength="2"
         name="terra-time-hour-time-input"
         onBlur={[Function]}
@@ -931,7 +929,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
           aria-describedby="00000000-0000-0000-0000-000000000000-description"
           aria-disabled={false}
           aria-invalid={false}
-          aria-label="Terra.timeInput.hours"
+          aria-label="Terra.timeInput.hourLabel"
           className="time-input-hour"
           disabled={false}
           isIncomplete={false}
@@ -953,7 +951,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
             aria-describedby="00000000-0000-0000-0000-000000000000-description"
             aria-disabled={false}
             aria-invalid={false}
-            aria-label="Terra.timeInput.hours"
+            aria-label="Terra.timeInput.hourLabel"
             className="form-input time-input-hour"
             disabled={false}
             maxLength="2"
@@ -971,13 +969,13 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         </Input>
         <VisuallyHiddenText
           id="00000000-0000-0000-0000-000000000000-description"
-          text="Terra.timeInput.hourDescriptionTwelve"
+          text="Terra.timeInput.hourDescriptionTwentyFour"
         >
           <span
             className="visually-hidden-text"
             id="00000000-0000-0000-0000-000000000000-description"
           >
-            Terra.timeInput.hourDescriptionTwelve
+            Terra.timeInput.hourDescriptionTwentyFour
           </span>
         </VisuallyHiddenText>
       </AccessibleInput>
@@ -1100,7 +1098,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       aria-hidden={true}
       className="format-text"
     >
-      Terra.timeInput.maskHourMinuteSecond
+      Terra.timeInput.maskHourMinute
     </p>
   </div>
 </TimeInput>
@@ -1111,12 +1109,12 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -1128,7 +1126,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
       description="Terra.timeInput.hourDescriptionTwelve"
       disabled={false}
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -1218,7 +1216,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinute
+    Terra.timeInput.maskHourMinuteSecond
   </p>
 </div>
 `;
@@ -1228,7 +1226,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
   class="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
@@ -1236,7 +1234,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       aria-hidden="true"
       class="visually-hidden-text"
     >
-      Terra.timeInput.textValue
+      Terra.timeInput.labeledTextValue
     </span>
     <input
       name="time-input"
@@ -1247,7 +1245,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
       aria-disabled="false"
       aria-invalid="false"
-      aria-label="Terra.timeInput.hours"
+      aria-label="Terra.timeInput.hourLabel"
       class="form-input time-input-hour with-second"
       maxlength="2"
       name="terra-time-hour-time-input"
@@ -1353,7 +1351,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
     aria-hidden="true"
     class="format-text"
   >
-    Terra.timeInput.maskHourMinute
+    Terra.timeInput.maskHourMinuteSecond
   </p>
 </div>
 `;
@@ -1363,7 +1361,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
   class="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
@@ -1371,7 +1369,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       aria-hidden="true"
       class="visually-hidden-text"
     >
-      Terra.timeInput.textValue
+      Terra.timeInput.labeledTextValue
     </span>
     <input
       name="time-input"
@@ -1382,7 +1380,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
       aria-disabled="false"
       aria-invalid="false"
-      aria-label="Terra.timeInput.hours"
+      aria-label="Terra.timeInput.hourLabel"
       class="form-input time-input-hour"
       maxlength="2"
       name="terra-time-hour-time-input"
@@ -1463,7 +1461,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
     aria-hidden="true"
     class="format-text"
   >
-    Terra.timeInput.maskHourMinuteSecond
+    Terra.timeInput.maskHourMinute
   </p>
 </div>
 `;
@@ -1473,7 +1471,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
   class="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
@@ -1481,7 +1479,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       aria-hidden="true"
       class="visually-hidden-text"
     >
-      Terra.timeInput.textValue
+      Terra.timeInput.labeledTextValue
     </span>
     <input
       name="time-input"
@@ -1492,7 +1490,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
       aria-disabled="false"
       aria-invalid="false"
-      aria-label="Terra.timeInput.hours"
+      aria-label="Terra.timeInput.hourLabel"
       class="form-input time-input-hour"
       maxlength="2"
       name="terra-time-hour-time-input"
@@ -1505,7 +1503,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.hourDescriptionTwelve
+      Terra.timeInput.hourDescriptionTwentyFour
     </span>
     <span
       aria-hidden="true"
@@ -1537,7 +1535,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
     aria-hidden="true"
     class="format-text"
   >
-    Terra.timeInput.maskHourMinuteSecond
+    Terra.timeInput.maskHourMinute
   </p>
 </div>
 `;
@@ -1547,7 +1545,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
   class="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
@@ -1555,7 +1553,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       aria-hidden="true"
       class="visually-hidden-text"
     >
-      Terra.timeInput.textValue
+      Terra.timeInput.labeledTextValue
     </span>
     <input
       name="time-input"
@@ -1566,7 +1564,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
       aria-disabled="false"
       aria-invalid="false"
-      aria-label="Terra.timeInput.hours"
+      aria-label="Terra.timeInput.hourLabel"
       class="form-input time-input-hour with-second"
       maxlength="2"
       name="terra-time-hour-time-input"
@@ -1579,7 +1577,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.hourDescriptionTwelve
+      Terra.timeInput.hourDescriptionTwentyFour
     </span>
     <span
       aria-hidden="true"
@@ -1636,7 +1634,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
     aria-hidden="true"
     class="format-text"
   >
-    Terra.timeInput.maskHourMinute
+    Terra.timeInput.maskHourMinuteSecond
   </p>
 </div>
 `;
@@ -1646,12 +1644,12 @@ exports[`should render a default time input 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -1660,10 +1658,10 @@ exports[`should render a default time input 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -1704,7 +1702,7 @@ exports[`should render a default time input 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinuteSecond
+    Terra.timeInput.maskHourMinute
   </p>
 </div>
 `;
@@ -1714,12 +1712,12 @@ exports[`should render a disabled time input 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="disabled time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -1728,10 +1726,10 @@ exports[`should render a disabled time input 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={true}
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -1772,7 +1770,7 @@ exports[`should render a disabled time input 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinuteSecond
+    Terra.timeInput.maskHourMinute
   </p>
 </div>
 `;
@@ -1782,12 +1780,12 @@ exports[`should render a time input with 12 hour clock set 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -1799,7 +1797,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
       description="Terra.timeInput.hourDescriptionTwelve"
       disabled={false}
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -1867,7 +1865,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinuteSecond
+    Terra.timeInput.maskHourMinute
   </p>
 </div>
 `;
@@ -1877,12 +1875,12 @@ exports[`should render a time input with a default time 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
       value="Terra.timeInput.textValueTwentyFourHourMinute"
     />
     <input
@@ -1892,10 +1890,10 @@ exports[`should render a time input with a default time 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -1936,7 +1934,7 @@ exports[`should render a time input with a default time 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinuteSecond
+    Terra.timeInput.maskHourMinute
   </p>
 </div>
 `;
@@ -1946,12 +1944,12 @@ exports[`should render a time input with custom attributes 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -1960,11 +1958,11 @@ exports[`should render a time input with custom attributes 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
       id="terra-time-input"
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -2006,7 +2004,7 @@ exports[`should render a time input with custom attributes 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinuteSecond
+    Terra.timeInput.maskHourMinute
   </p>
 </div>
 `;
@@ -2016,12 +2014,12 @@ exports[`should render a time input with onBlur 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2030,10 +2028,10 @@ exports[`should render a time input with onBlur 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -2074,7 +2072,7 @@ exports[`should render a time input with onBlur 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinuteSecond
+    Terra.timeInput.maskHourMinute
   </p>
 </div>
 `;
@@ -2084,12 +2082,12 @@ exports[`should render a time input with onChange 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2098,10 +2096,10 @@ exports[`should render a time input with onChange 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -2142,7 +2140,7 @@ exports[`should render a time input with onChange 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinuteSecond
+    Terra.timeInput.maskHourMinute
   </p>
 </div>
 `;
@@ -2152,12 +2150,12 @@ exports[`should render a time input with onFocus 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2166,10 +2164,10 @@ exports[`should render a time input with onFocus 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -2210,7 +2208,7 @@ exports[`should render a time input with onFocus 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinuteSecond
+    Terra.timeInput.maskHourMinute
   </p>
 </div>
 `;
@@ -2220,12 +2218,12 @@ exports[`should render a time input with seconds input 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2234,10 +2232,10 @@ exports[`should render a time input with seconds input 1`] = `
     />
     <AccessibleInput
       className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -2300,7 +2298,7 @@ exports[`should render a time input with seconds input 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinute
+    Terra.timeInput.maskHourMinuteSecond
   </p>
 </div>
 `;
@@ -2310,12 +2308,12 @@ exports[`should render a time input with seconds input and a value 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
       value="Terra.timeInput.textValueTwentyFourHourMinuteSecond"
     />
     <input
@@ -2325,10 +2323,10 @@ exports[`should render a time input with seconds input and a value 1`] = `
     />
     <AccessibleInput
       className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -2391,7 +2389,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinute
+    Terra.timeInput.maskHourMinuteSecond
   </p>
 </div>
 `;
@@ -2401,12 +2399,12 @@ exports[`should render a time input with seconds input and custom attributes 1`]
   className="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
     <AccessibleValue
-      readThis="Terra.timeInput.textValue"
+      readThis="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2415,11 +2413,11 @@ exports[`should render a time input with seconds input and custom attributes 1`]
     />
     <AccessibleInput
       className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
       id="terra-time-input"
       isInvalid={false}
-      label="Terra.timeInput.hours"
+      label="Terra.timeInput.hourLabel"
       maxLength="2"
       name="terra-time-hour-time-input"
       onBlur={[Function]}
@@ -2484,7 +2482,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
     aria-hidden={true}
     className="format-text"
   >
-    Terra.timeInput.maskHourMinute
+    Terra.timeInput.maskHourMinuteSecond
   </p>
 </div>
 `;
@@ -2494,7 +2492,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
   class="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
@@ -2502,7 +2500,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       aria-hidden="true"
       class="visually-hidden-text"
     >
-      Terra.timeInput.textValue
+      Terra.timeInput.labeledTextValue
     </span>
     <input
       name="time-input"
@@ -2513,7 +2511,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
       aria-disabled="false"
       aria-invalid="false"
-      aria-label="Terra.timeInput.hours"
+      aria-label="Terra.timeInput.hourLabel"
       class="form-input time-input-hour"
       id="id-2"
       maxlength="2"
@@ -2527,7 +2525,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.hourDescriptionTwelve
+      Terra.timeInput.hourDescriptionTwentyFour
     </span>
     <span
       aria-hidden="true"
@@ -2560,7 +2558,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
     aria-hidden="true"
     class="format-text"
   >
-    Terra.timeInput.maskHourMinuteSecond
+    Terra.timeInput.maskHourMinute
   </p>
 </div>
 `;
@@ -2570,7 +2568,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
   class="time-input-container"
 >
   <div
-    aria-label=""
+    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
@@ -2578,7 +2576,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       aria-hidden="true"
       class="visually-hidden-text"
     >
-      Terra.timeInput.textValue
+      Terra.timeInput.labeledTextValue
     </span>
     <input
       name="time-input"
@@ -2589,7 +2587,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
       aria-disabled="false"
       aria-invalid="false"
-      aria-label="Terra.timeInput.hours"
+      aria-label="Terra.timeInput.hourLabel"
       class="form-input time-input-hour with-second"
       id="id-2"
       maxlength="2"
@@ -2603,7 +2601,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.hourDescriptionTwelve
+      Terra.timeInput.hourDescriptionTwentyFour
     </span>
     <span
       aria-hidden="true"
@@ -2662,7 +2660,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
     aria-hidden="true"
     class="format-text"
   >
-    Terra.timeInput.maskHourMinute
+    Terra.timeInput.maskHourMinuteSecond
   </p>
 </div>
 `;
