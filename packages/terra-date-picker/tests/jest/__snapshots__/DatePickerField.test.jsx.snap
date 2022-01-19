@@ -920,14 +920,12 @@ exports[`should render a DatePickerField with props 1`] = `
           aria-live="assertive"
           className="error-text"
           id="test-date-picker-error"
-          tabIndex="-1"
         >
           Text
         </div>
         <div
           className="help-text"
           id="test-date-picker-help"
-          tabIndex="-1"
         >
           <div
             aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
@@ -1731,7 +1729,6 @@ exports[`should render a default DatePickerField component 1`] = `
         <div
           className="help-text"
           id="test-date-picker-help"
-          tabIndex="-1"
         >
           <div
             aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
@@ -2650,7 +2647,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
         <div
           className="help-text"
           id="test-date-picker-help"
-          tabIndex="-1"
         >
           <div
             aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"

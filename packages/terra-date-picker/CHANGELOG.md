@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.71.1 - (January 4, 2022)
+
+* Changed
+  * Updated jest snapshots
+
 ## 4.71.0 - (November 16, 2021)
 
 * Changed

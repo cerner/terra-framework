@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.72.1 - (January 4, 2022)
+
+* Changed
+  * Updated tests due to terra-button-group update
+
 ## 4.72.0 - (November 16, 2021)
 
 * Changed
