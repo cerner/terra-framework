@@ -9,8 +9,8 @@ const cx = classNames.bind(styles);
 const SingleSelectableRemovableFilterPill = () => {
   const pillsData = [
     {
-      label: 'asthma',
-      labelCategory: 'respiratory',
+      label: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar magna non erat eleifend auctor. Ut rhoncus nibh sed ante mollis, ac iaculis libero lacinia.',
+      labelCategory: 'Long Label',
       id: 'terra-filter-pills-selectable-removable-pill-asthma',
     },
   ];
@@ -25,7 +25,7 @@ const SingleSelectableRemovableFilterPill = () => {
   return (
     <>
       <FilterPills
-        ariaLabel="Example of single selectable and removable Filter Pill"
+        ariaLabel="Example of single selectable and removable Filter Pill with long label"
         onRemove={handleOnRemove}
         className={cx(['show-border', 'width-10'])}
       >
