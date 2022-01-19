@@ -213,9 +213,9 @@ const Pill = (props) => {
       contentHeight="auto"
       contentWidth="auto"
     >
-      <div className={cx('popup-content-pill-label')}>
+      <div className={cx(['popup-content-pill-label', theme.className])}>
         {labelCategory
-          ? <span className={cx('popup-content-pill-category')}>{`${labelCategory}: `}</span>
+          ? <span className={cx(['popup-content-pill-category', theme.className])}>{`${labelCategory}: `}</span>
           : undefined}
         <span>{label}</span>
       </div>
