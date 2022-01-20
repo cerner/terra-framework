@@ -1,4 +1,3 @@
-const getCurrentDate = () => new Date();
 let realDate;
 
 Terra.describeViewports('Time Input', ['medium'], () => {
@@ -315,7 +314,7 @@ describe('Time Input shortcut key operations', () => {
   global.Date = class extends Date {
     constructor(date) {
       if (date) {
-        return super(date);
+        return date;
       }
 
       return currentDate;
@@ -377,7 +376,6 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('n');
-        const currentDate = new Date();
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
@@ -392,7 +390,6 @@ describe('Time Input shortcut key operations', () => {
         browser.keys('12');
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('n');
-        const currentDate = new Date();
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
@@ -405,7 +402,6 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('n');
-        const currentDate = new Date();
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
@@ -420,7 +416,6 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-minute-time-input"]').click();
         browser.keys('n');
-        const currentDate = new Date();
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
@@ -435,7 +430,6 @@ describe('Time Input shortcut key operations', () => {
         browser.keys('12');
         $('#timeInput input[name="terra-time-minute-time-input"]').click();
         browser.keys('n');
-        const currentDate = new Date();
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
@@ -448,7 +442,6 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-minute-time-input"]').click();
         browser.keys('n');
-        const currentDate = new Date();
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
@@ -462,7 +455,6 @@ describe('Time Input shortcut key operations', () => {
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
         $('#timeInput input[name="terra-time-second-time-input"]').click();
-        const currentDate = new Date();
         browser.keys('n');
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
@@ -478,7 +470,6 @@ describe('Time Input shortcut key operations', () => {
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('12');
         $('#timeInput input[name="terra-time-second-time-input"]').click();
-        const currentDate = new Date();
         browser.keys('n');
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
@@ -492,7 +483,6 @@ describe('Time Input shortcut key operations', () => {
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
         $('#timeInput input[name="terra-time-second-time-input"]').click();
-        const currentDate = new Date();
         browser.keys('n');
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
@@ -511,7 +501,6 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('-');
-        const currentDate = new Date();
         currentDate.setMinutes(currentDate.getMinutes() - 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
@@ -527,7 +516,6 @@ describe('Time Input shortcut key operations', () => {
         browser.keys('12');
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('-');
-        const currentDate = new Date();
         currentDate.setMinutes(currentDate.getMinutes() - 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
@@ -541,8 +529,8 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('-');
-        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue("11");
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue("59");
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('11');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('59');
       });
     });
 
@@ -554,7 +542,6 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-minute-time-input"]').click();
         browser.keys('-');
-        const currentDate = new Date();
         currentDate.setMinutes(currentDate.getMinutes() - 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
@@ -570,7 +557,6 @@ describe('Time Input shortcut key operations', () => {
         browser.keys('12');
         $('#timeInput input[name="terra-time-minute-time-input"]').click();
         browser.keys('-');
-        const currentDate = new Date();
         currentDate.setMinutes(currentDate.getMinutes() - 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
@@ -588,8 +574,8 @@ describe('Time Input shortcut key operations', () => {
         browser.keys('00');
         $('#timeInput input[name="terra-time-minute-time-input"]').click();
         browser.keys('-');
-        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue("11");
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue("59");
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('11');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('59');
       });
 
       it('should subtract 1 minute if filled', () => {
@@ -599,8 +585,8 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-minute-time-input"]').click();
         browser.keys('-');
-        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue("11");
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue("59");
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('11');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('59');
       });
     });
 
@@ -611,7 +597,6 @@ describe('Time Input shortcut key operations', () => {
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
         $('#timeInput input[name="terra-time-second-time-input"]').click();
-        const currentDate = new Date();
         browser.keys('-');
         currentDate.setMinutes(currentDate.getMinutes() - 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
@@ -628,7 +613,6 @@ describe('Time Input shortcut key operations', () => {
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('12');
         $('#timeInput input[name="terra-time-second-time-input"]').click();
-        const currentDate = new Date();
         browser.keys('-');
         currentDate.setMinutes(currentDate.getMinutes() - 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
@@ -644,9 +628,9 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('-');
-        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue("12");
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue("11");
-        expect($('#timeInput input[name="terra-time-second-time-input"]')).toHaveValue("12");
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('11');
+        expect($('#timeInput input[name="terra-time-second-time-input"]')).toHaveValue('12');
       });
     });
   });
@@ -660,7 +644,6 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('+');
-        const currentDate = new Date();
         currentDate.setMinutes(currentDate.getMinutes() + 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
@@ -676,7 +659,6 @@ describe('Time Input shortcut key operations', () => {
         browser.keys('12');
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('+');
-        const currentDate = new Date();
         currentDate.setMinutes(currentDate.getMinutes() + 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
@@ -690,8 +672,8 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('+');
-        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue("12");
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue("01");
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('01');
       });
     });
 
@@ -703,7 +685,6 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-minute-time-input"]').click();
         browser.keys('+');
-        const currentDate = new Date();
         currentDate.setMinutes(currentDate.getMinutes() + 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
@@ -719,7 +700,6 @@ describe('Time Input shortcut key operations', () => {
         browser.keys('12');
         $('#timeInput input[name="terra-time-minute-time-input"]').click();
         browser.keys('+');
-        const currentDate = new Date();
         currentDate.setMinutes(currentDate.getMinutes() + 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
@@ -737,8 +717,8 @@ describe('Time Input shortcut key operations', () => {
         browser.keys('59');
         $('#timeInput input[name="terra-time-minute-time-input"]').click();
         browser.keys('+');
-        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue("12");
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue("00");
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('00');
       });
 
       it('should add 1 minute if filled', () => {
@@ -748,8 +728,8 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-minute-time-input"]').click();
         browser.keys('+');
-        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue("12");
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue("01");
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('01');
       });
     });
 
@@ -760,7 +740,6 @@ describe('Time Input shortcut key operations', () => {
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
         $('#timeInput input[name="terra-time-second-time-input"]').click();
-        const currentDate = new Date();
         browser.keys('+');
         currentDate.setMinutes(currentDate.getMinutes() + 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
@@ -777,7 +756,6 @@ describe('Time Input shortcut key operations', () => {
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('12');
         $('#timeInput input[name="terra-time-second-time-input"]').click();
-        const currentDate = new Date();
         browser.keys('+');
         currentDate.setMinutes(currentDate.getMinutes() + 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
@@ -793,9 +771,9 @@ describe('Time Input shortcut key operations', () => {
 
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('+');
-        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue("12");
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue("13");
-        expect($('#timeInput input[name="terra-time-second-time-input"]')).toHaveValue("12");
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('13');
+        expect($('#timeInput input[name="terra-time-second-time-input"]')).toHaveValue('12');
       });
     });
   });
