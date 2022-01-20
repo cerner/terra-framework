@@ -1,3 +1,6 @@
+const getCurrentDate = () => new Date();
+let realDate;
+
 Terra.describeViewports('Time Input', ['medium'], () => {
   it('displays default with no time provided', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
@@ -307,6 +310,18 @@ describe('Time Input onBlur operations', () => {
 });
 
 describe('Time Input shortcut key operations', () => {
+  const currentDate = new Date('2019-05-14T11:01:58.135Z');
+  realDate = Date;
+  global.Date = class extends Date {
+    constructor(date) {
+      if (date) {
+        return super(date);
+      }
+
+      return currentDate;
+    }
+  };
+
   it('decrements hour by 1 using DOWN_ARROW', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
     browser.refresh();
@@ -785,271 +800,6 @@ describe('Time Input shortcut key operations', () => {
     });
   });
 
-  describe('pressing A', () => {
-    describe('in the hour input', () => {
-      it('should set merdiem to antemeridiem if it was postmerdiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-evening');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-        $('#timeInput input[name="terra-time-hour-time-input"]').click();
-        browser.keys('a');
-        Terra.validates.element('A in hour input evening');
-      });
-
-      it('should not change if it was antemeridiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-morning');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-        $('#timeInput input[name="terra-time-hour-time-input"]').click();
-        browser.keys('a');
-        Terra.validates.element('A in hour input morning');
-      });
-
-      it('should set time to midnight if blank', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-        $('#timeInput input[name="terra-time-hour-time-input"]').click();
-        browser.keys('a');
-        Terra.validates.element('A in hour input empty');
-      });
-
-      it('should set time to midnight if partially filled', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-        $('#timeInput input[name="terra-time-hour-time-input"]').click();
-        browser.keys('12');
-        $('#timeInput input[name="terra-time-hour-time-input"]').click();
-        browser.keys('a');
-        Terra.validates.element('A in hour input partial');
-      });
-    });
-
-    describe('in the minute input', () => {
-      it('should set merdiem to antemeridiem if it was postmerdiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-evening');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-        $('#timeInput input[name="terra-time-minute-time-input"]').click();
-        browser.keys('a');
-        Terra.validates.element('A in minute input evening');
-      });
-
-      it('should not change if it was antemeridiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-morning');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-        $('#timeInput input[name="terra-time-minute-time-input"]').click();
-        browser.keys('a');
-        Terra.validates.element('A in minute input morning');
-      });
-
-      it('should set time to midnight if blank', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-        $('#timeInput input[name="terra-time-minute-time-input"]').click();
-        browser.keys('a');
-        Terra.validates.element('A in minute input empty');
-      });
-
-      it('should set time to midnight if partially filled', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-        $('#timeInput input[name="terra-time-minute-time-input"]').click();
-        browser.keys('12');
-        $('#timeInput input[name="terra-time-minute-time-input"]').click();
-        browser.keys('a');
-        Terra.validates.element('A in minute input partial');
-      });
-    });
-
-    describe('in the second input', () => {
-      it('should set merdiem to antemeridiem if it was postmerdiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-second-evening');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-        $('#timeInput input[name="terra-time-second-time-input"]').click();
-        browser.keys('a');
-        Terra.validates.element('A in second input evening');
-      });
-
-      it('should not change if it was antemeridiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-second-morning');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-        $('#timeInput input[name="terra-time-second-time-input"]').click();
-        browser.keys('a');
-        Terra.validates.element('A in second input morning');
-      });
-
-      it('should set time to midnight if blank', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default-second');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-        $('#timeInput input[name="terra-time-second-time-input"]').click();
-        browser.keys('a');
-        Terra.validates.element('A in second input empty');
-      });
-
-      it('should set time to midnight if partially filled', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default-second');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-        $('#timeInput input[name="terra-time-second-time-input"]').click();
-        browser.keys('12');
-        $('#timeInput input[name="terra-time-second-time-input"]').click();
-        browser.keys('a');
-        Terra.validates.element('A in second input partial');
-      });
-    });
-  });
-
-  describe('pressing P', () => {
-    describe('in the hour input', () => {
-      it('should set merdiem to postmerdiem if it was antemeridiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-morning');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-        $('#timeInput input[name="terra-time-hour-time-input"]').click();
-        browser.keys('p');
-        Terra.validates.element('P in hour input morning');
-      });
-
-      it('should not change if it was postmerdiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-evening');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-        $('#timeInput input[name="terra-time-hour-time-input"]').click();
-        browser.keys('p');
-        Terra.validates.element('P in hour input evening');
-      });
-
-      it('should set time to noon if blank', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-        $('#timeInput input[name="terra-time-hour-time-input"]').click();
-        browser.keys('p');
-        Terra.validates.element('P in hour input empty');
-      });
-
-      it('should set time to noon if partially filled', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-        $('#timeInput input[name="terra-time-hour-time-input"]').click();
-        browser.keys('12');
-        $('#timeInput input[name="terra-time-hour-time-input"]').click();
-        browser.keys('p');
-        Terra.validates.element('P in hour input partial');
-      });
-    });
-
-    describe('in the minute input', () => {
-      it('should set merdiem to postmerdiem if it was antemeridiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-morning');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-        $('#timeInput input[name="terra-time-minute-time-input"]').click();
-        browser.keys('p');
-        Terra.validates.element('P in minute input morning');
-      });
-
-      it('should not change if it was postmerdiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-evening');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-        $('#timeInput input[name="terra-time-minute-time-input"]').click();
-        browser.keys('p');
-        Terra.validates.element('P in minute input evening');
-      });
-
-      it('should set time to noon if blank', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-        $('#timeInput input[name="terra-time-minute-time-input"]').click();
-        browser.keys('p');
-        Terra.validates.element('P in minute input empty');
-      });
-
-      it('should set time to noon if partially filled', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-        $('#timeInput input[name="terra-time-minute-time-input"]').click();
-        browser.keys('12');
-        $('#timeInput input[name="terra-time-minute-time-input"]').click();
-        browser.keys('p');
-        Terra.validates.element('P in minute input partial');
-      });
-    });
-
-    describe('in the second input', () => {
-      it('should set merdiem to postmerdiem if it was antemeridiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-second-morning');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-        $('#timeInput input[name="terra-time-second-time-input"]').click();
-        browser.keys('p');
-        Terra.validates.element('P in second input morning');
-      });
-
-      it('should not change if it was postmerdiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-second-evening');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-        $('#timeInput input[name="terra-time-second-time-input"]').click();
-        browser.keys('p');
-        Terra.validates.element('P in second input evening');
-      });
-
-      it('should set time to noon if blank', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default-second');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-        $('#timeInput input[name="terra-time-second-time-input"]').click();
-        browser.keys('p');
-        Terra.validates.element('P in second input empty');
-      });
-
-      it('should set time to noon if partially filled', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default-second');
-        browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-        $('#timeInput input[name="terra-time-second-time-input"]').click();
-        browser.keys('12');
-        $('#timeInput input[name="terra-time-second-time-input"]').click();
-        browser.keys('p');
-        Terra.validates.element('P in second input partial');
-      });
-    });
-  });
+  // Cleanup
+  global.Date = realDate;
 });

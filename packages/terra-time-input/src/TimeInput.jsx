@@ -505,7 +505,7 @@ class TimeInput extends React.Component {
 
     if (inputType === TimeUtil.inputType.HOUR) {
       this.handleHourInputKeyDown(event);
-    } if (inputType === TimeUtil.inputType.MINUTE) {
+    } else if (inputType === TimeUtil.inputType.MINUTE) {
       this.handleMinuteInputKeyDown(event);
     } else {
       this.handleSecondInputKeyDown(event);
