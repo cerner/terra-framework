@@ -694,7 +694,9 @@ class TimeInput extends React.Component {
       second,
       secondInitialFocused: false,
     });
-    this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : ''));
+    if (this.props.onChange) {
+      this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : ''));
+    }
   }
 
   focusMinuteFromHour(event) {
