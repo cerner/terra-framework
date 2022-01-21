@@ -99,7 +99,6 @@
     "@cerner/terra-functional-testing": "^2.4.0",
     "@cerner/terra-open-source-scripts": "^1.1.0",
     "@cerner/webpack-config-terra": "^2.0.0",
-    "@formatjs/cli": "^4.7.0",
     "check-installed-dependencies": "^1.0.0",
     "core-js": "^3.1.3",
     "danger": "^9.1.0",
