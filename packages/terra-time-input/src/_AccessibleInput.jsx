@@ -57,7 +57,7 @@ function AccessibleInput(props) {
   const descriptionId = `${uuid}-description`;
 
   return (
-    <div>
+    <>
       {value && <VisuallyHiddenText text={label} id={labelId} />}
       {/*
       When an input field has a value: Prepend the input with an invisible label so that the label will be read
@@ -83,7 +83,7 @@ function AccessibleInput(props) {
 
       />
       <VisuallyHiddenText id={descriptionId} text={description} />
-    </div>
+    </>
   );
 }
 
