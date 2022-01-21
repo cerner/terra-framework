@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/role-supports-aria-props */ // lp052179
 import React, {
   useCallback, useLayoutEffect, useRef, useState,
 } from 'react';
@@ -196,8 +197,8 @@ const Pill = (props) => {
     cx([
       'pill',
       { 'is-focusable': pillInteraction.isSelectable || pillInteraction.isRemovable },
+      { 'is-removable': pillInteraction.isRemovable && !pillInteraction.isSelectableAndRemovable },
       { 'is-selectable': pillInteraction.isSelectable },
-      { 'is-removable': pillInteraction.isRemovable },
       { 'is-selectable-and-removable': pillInteraction.isSelectableAndRemovable },
       theme.className,
     ]),
@@ -229,7 +230,6 @@ const Pill = (props) => {
       tabIndex="-1"
       type="button"
       aria-labelledby={`remove-button-${id}`}
-      aria-hidden="true"
     >
       <span id={`remove-button-${id}`} className={cx('remove-button-label')}>{intl.formatMessage({ id: 'Terra.pills.label.delete' }, { pillLabelName: label })}</span>
       <span className={cx('clear-icon')} />
@@ -239,18 +239,19 @@ const Pill = (props) => {
   const renderSelectablePill = () => {
     const categoryLabel = labelCategory || '';
     const visuallyHiddenTextHint = ` ${categoryLabel} ${label} ${pillInteractionHint}`;
+
     return (
       <>
         <div
           {...customProps}
           {...pillProps}
           {...pillButtonProps}
-          aria-expanded={pillInteraction.isSelectable ? true : undefined}
+          // aria-expanded={pillInteraction.isSelectable ? true : undefined}
           aria-haspopup={pillInteraction.isSelectable ? 'dialog' : undefined}
           id={id}
           className={pillClassNames}
           ref={pillRef}
-          type="button"
+          role="listitem"
           aria-describedby={`interaction-hint-${id}`}
           data-terra-pills-show-focus-styles
           data-terra-pill
@@ -281,7 +282,7 @@ const Pill = (props) => {
           id={id}
           className={pillClassNames}
           ref={pillRef}
-          role="text" // Prevent VoiceOver from announcing as "group" https://dequeuniversity.com/rules/axe/4.2/aria-text
+          role="listitem"
           aria-labelledby={`${pillInteractionHintID} interaction-hint-${id}`}
           data-terra-pills-show-focus-styles
           data-terra-pill
@@ -301,9 +302,7 @@ const Pill = (props) => {
   /* eslint-enable jsx-a11y/aria-role */
 
   return (
-    <div role="listitem" className={cx('pill-list-item')}>
-      {pillInteraction.isSelectable ? renderSelectablePill() : renderBasicPill()}
-    </div>
+    pillInteraction.isSelectable ? renderSelectablePill() : renderBasicPill()
   );
 };
 
