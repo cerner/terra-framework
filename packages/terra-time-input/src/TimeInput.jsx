@@ -576,14 +576,13 @@ class TimeInput extends React.Component {
 
   get a11yLabel() {
     const { a11yLabel, intl } = this.props;
-    return a11yLabel || intl.formatMessage({
-      id: 'Terra.timeInput.a11yLabelDefault',
-      defaultMessage: 'Time',
-      description: `For situations where the consumer has not provided a a11yLabel: This will be read by screen
-readers as the reader moves into the group of inputs. It is intended to help the user understand "you are about to enter
-a section of the page where many different inputs all work together for this one concept of time. It is also used as
-part of many other localized messages`,
-    });
+    /**
+     * description: For situations where the consumer has not provided a a11yLabel: This will be read by screen
+     * readers as the reader moves into the group of inputs. It is intended to help the user understand "you are about
+     * to enter a section of the page where many different inputs all work together for this one concept of time. It is
+     * also used aspart of many other localized messages.
+     */
+    return a11yLabel || intl.formatMessage({ id: 'Terra.timeInput.a11yLabelDefault' });
   }
 
   get anteMeridiem() {
@@ -737,17 +736,11 @@ part of many other localized messages`,
      */
     function mask() {
       if (showSeconds) {
-        return intl.formatMessage({
-          id: 'Terra.timeInput.maskHourMinuteSecond',
-          defaultMessage: '(hh:mm:ss)',
-          description: 'A visual hint that the Time Input expects two-digit hour, minute and second.',
-        });
+        // description: A visual hint that the Time Input expects two-digit hour, minute and second.
+        return intl.formatMessage({ id: 'Terra.timeInput.maskHourMinuteSecond' });
       }
-      return intl.formatMessage({
-        id: 'Terra.timeInput.maskHourMinute',
-        defaultMessage: '(hh:mm)',
-        description: 'Like Terra.timeInput.maskHourMinuteSecond but no second.',
-      });
+      // description: Like Terra.timeInput.maskHourMinuteSecond but no second.,
+      return intl.formatMessage({ id: 'Terra.timeInput.maskHourMinute' });
     }
 
     /**
@@ -758,19 +751,15 @@ part of many other localized messages`,
      */
     function hourDescription() {
       if (is12Hour) {
-        return intl.formatMessage({
-          id: 'Terra.timeInput.hourDescriptionTwelve',
-          defaultMessage: 'A two-digit 12-hour value',
-          description: `Explains to screen reader users that the hour field needs a two digit hour. This will be read
-only when a screen reader is enabled. It is never displayed. It will be read when the user has focused on the hour input
-or when the screen reader is reading the page to the user.`,
-        });
+        /**
+         * description: Explains to screen reader users that the hour field needs a two digit hour. This will be read
+         * only when a screen reader is enabled. It is never displayed. It will be read when the user has focused on
+         * the hour input or when the screen reader is reading the page to the user.
+         */
+        return intl.formatMessage({ id: 'Terra.timeInput.hourDescriptionTwelve' });
       }
-      return intl.formatMessage({
-        id: 'Terra.timeInput.hourDescriptionTwentyFour',
-        defaultMessage: 'A two-digit 24-hour value',
-        description: 'Like Terra.timeInput.hourDescriptionTwelve but for a 24-hour clock.',
-      });
+      // description: Like Terra.timeInput.hourDescriptionTwelve but for a 24-hour clock.
+      return intl.formatMessage({ id: 'Terra.timeInput.hourDescriptionTwentyFour' });
     }
 
     // Fan out some component-level props into input-level a11y attributes. See the big comment below for more info.
@@ -845,13 +834,12 @@ or when the screen reader is reading the page to the user.`,
           */}
           <AccessibleValue
             value={a11yTimeValue}
-            readThis={intl.formatMessage({
-              id: 'Terra.timeInput.labeledTextValue',
-              // eslint-disable-next-line formatjs/no-camel-case
-              defaultMessage: '{a11yLabel} {a11yTimeValue}',
-              description: `This will be read to screen reader users only textValue changes to a new time. We want
-        to give the screen reader user feedback that their change to one of the controls has updated this time.`,
-            }, { a11yLabel: this.a11yLabel, a11yTimeValue })}
+            /**
+             * description: This will be read to screen reader users only textValue changes to a new time. We want to
+             * give the screen reader user feedback that their change to one of the controls has updated this time.
+             */
+            readThis={intl.formatMessage({ id: 'Terra.timeInput.labeledTextValue' },
+              { a11yLabel: this.a11yLabel, a11yTimeValue })}
           />
           <input
             // Create a hidden input for storing the name and value attributes to use when submitting the form.
@@ -867,16 +855,15 @@ or when the screen reader is reading the page to the user.`,
              * If the entire Time Input isInvalid, then pass isInvalid into each wrapped input, so that the screen
              * reader users will get an indication that something is invalid. It's not perfect because both inputs will
              * be marked invalid even though it's the combination of both that is really the problem. For example,
-             * 09:88 is a valid hour and an invalid minute, but both hour and minute will be marked invalid. */
-            label={intl.formatMessage({
-              id: 'Terra.timeInput.hourLabel',
-              // eslint-disable-next-line formatjs/no-camel-case
-              defaultMessage: '{a11yLabel} hour',
-              description: `The label that will only be read to screen readers. It is prefixed with the time input's name,
-e.g. 'Time of Birth', so that screen reader users can pick this specific hour field out of a list of many hour fields on
-the same page. The minute and second screen reader labels won't contain the name because they will always follow their
-labeled hour field. We didn't want to say the a11yLabel too many times.`,
-            }, { a11yLabel: this.a11yLabel })}
+             * 09:88 is a valid hour and an invalid minute, but both hour and minute will be marked invalid.
+             *
+             * description: The label that will only be read to screen readers. It is prefixed with the time input's
+             * name e.g. 'Time of Birth', so that screen reader users can pick this specific hour field out of a list
+             * of many hour fields on the same page. The minute and second screen reader labels won't contain the name
+             * because they will always follow their labeled hour field. We didn't want to say the a11yLabel too many
+             * times.
+             */
+            label={intl.formatMessage({ id: 'Terra.timeInput.hourLabel' }, { a11yLabel: this.a11yLabel })}
             refCallback={(inputRef) => {
               this.hourInput = inputRef;
               if (refCallback) refCallback(inputRef);
@@ -911,11 +898,8 @@ labeled hour field. We didn't want to say the a11yLabel too many times.`,
             onBlur={this.handleMinuteBlur}
             size="2"
             pattern="\d*"
-            description={intl.formatMessage({
-              id: 'Terra.timeInput.descriptionMinute',
-              defaultMessage: 'A two-digit minute.',
-              description: 'Like the hour descriptions, but for the minute input.',
-            })}
+            // description: Like the hour descriptions, but for the minute input.
+            description={intl.formatMessage({ id: 'Terra.timeInput.descriptionMinute' })}
           />
           {showSeconds && (
             <React.Fragment>
@@ -936,11 +920,8 @@ labeled hour field. We didn't want to say the a11yLabel too many times.`,
                 onBlur={this.handleSecondBlur}
                 size="2"
                 pattern="\d*"
-                description={intl.formatMessage({
-                  id: 'Terra.timeInput.descriptionSecond',
-                  defaultMessage: 'A two-digit second.',
-                  description: 'Like the hour descriptions, but for the second input.',
-                })}
+                // description: Like the hour descriptions, but for the second input.
+                description={intl.formatMessage({ id: 'Terra.timeInput.descriptionSecond' })}
               />
             </React.Fragment>
           )}

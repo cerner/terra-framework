@@ -19,11 +19,8 @@ const cx = classNamesBind.bind(styles);
  * screen readers.
  */
 function TimeSpacer(props) {
-  const spacer = props.intl.formatMessage({
-    id: 'Terra.timeInput.timeSpacer',
-    defaultMessage: ':',
-    description: 'The symbol between hours and minutes, or between minutes and seconds.',
-  });
+  // description: 'The symbol between hours and minutes, or between minutes and seconds.',
+  const spacer = props.intl.formatMessage({ id: 'Terra.timeInput.timeSpacer' });
 
   return (
     <span

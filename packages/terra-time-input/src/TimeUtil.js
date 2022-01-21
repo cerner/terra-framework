@@ -389,37 +389,26 @@ class TimeUtil {
     }
 
     if (is12Hour && showSeconds) {
-      return intl.formatMessage({
-        id: 'Terra.timeInput.textValueTwelveHourMinuteSecond',
-        defaultMessage: '{hour}:{minute}:{second} {meridiem}',
-        description: 'Human-readable time value in a 12-hour clock with hours, minutes, and seconds.',
-      }, {
+      // description: Human-readable time value in a 12-hour clock with hours, minutes, and seconds.
+      return intl.formatMessage({ id: 'Terra.timeInput.textValueTwelveHourMinuteSecond' }, {
         hour: hour.toTwelveHourString(), minute, second, meridiem,
       });
     }
     if (is12Hour) {
-      return intl.formatMessage({
-        id: 'Terra.timeInput.textValueTwelveHourMinute',
-        defaultMessage: '{hour}:{minute} {meridiem}',
-        description: 'Human-readable time value in a 12-hour clock with hours, and minutes.',
-      }, {
+      // description: Human-readable time value in a 12-hour clock with hours, and minutes.
+      return intl.formatMessage({ id: 'Terra.timeInput.textValueTwelveHourMinute' }, {
         hour: hour.toTwelveHourString(), minute, meridiem,
       });
     }
     if (showSeconds) {
-      return intl.formatMessage({
-        id: 'Terra.timeInput.textValueTwentyFourHourMinuteSecond',
-        defaultMessage: '{hour}:{minute}:{second}',
-        description: 'Human-readable time value in a 24-hour clock with hours, minutes, and seconds.',
-      }, {
+      // description: Human-readable time value in a 24-hour clock with hours, minutes, and seconds.
+      return intl.formatMessage({ id: 'Terra.timeInput.textValueTwentyFourHourMinuteSecond' }, {
         hour, minute, second,
       });
     }
-    return intl.formatMessage({
-      id: 'Terra.timeInput.textValueTwentyFourHourMinute',
-      defaultMessage: '{hour}:{minute}',
-      description: 'Human-readable time value in a 24-hour clock with hours and minutes.',
-    }, {
+
+    // description: Human-readable time value in a 24-hour clock with hours and minutes.
+    return intl.formatMessage({ id: 'Terra.timeInput.textValueTwentyFourHourMinute' }, {
       hour, minute,
     });
   }
