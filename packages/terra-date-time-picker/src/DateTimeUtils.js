@@ -1,8 +1,57 @@
 import moment from 'moment-timezone';
+import { Temporal } from 'proposal-temporal';
 import DateUtil from 'terra-date-picker/lib/DateUtil';
 import TimeUtil from 'terra-time-input/lib/TimeUtil';
 
 class DateTimeUtils {
+  static CompareTemporalWithMoment() {
+
+    // console.log('Moment  Date: ', moment().format('YYYY-MM-DD'));
+    // console.log('Temporal Date: ', Temporal.now.plainDateISO().toString());
+
+    // console.log('Moment  Time: ', moment().format('HH:mm:ss'));
+    // console.log('Temporal Time: ', Temporal.now.plainTimeISO().toString());
+
+    console.log('Moment   now: ', moment().format());
+    console.log('Temporal now: ', Temporal.now.zonedDateTimeISO().toString());
+
+    console.log('')
+
+    console.log('Moment   local timezone: ', moment.tz.guess());
+    console.log('Temporal local timezone: ', Temporal.now.timeZone().toString());
+    
+    console.log('')
+
+    console.log('Moment - New York timez: ', moment.tz(moment().format(), "America/New_York").format());
+    console.log('Temporal New York timez: ', Temporal.now.zonedDateTimeISO('America/New_York').toString());
+
+    console.log('')
+
+    console.log('Moment - London time: ', moment.tz(moment().format(), "Europe/London").format());
+    console.log('Temporal London time: ', Temporal.now.zonedDateTimeISO('Europe/London').toString());
+
+    console.log('')
+
+    console.log('Moment - Tokyo time: ', moment.tz(moment().format(), "Asia/Tokyo").format());
+    console.log('Temporal Tokyo time: ', Temporal.now.zonedDateTimeISO('Asia/Tokyo').toString());
+
+    console.log('')
+
+    console.log('Temporal Previous Transition: ', Temporal.now.timeZone().getPreviousTransition('2022-01-14T10:30:30-05:00').toString());
+    console.log('Temporal Next Transition: ', Temporal.now.timeZone().getNextTransition('2022-01-14T10:30:30-05:00').toString());
+
+
+    console.log('Temporal Previous Transition from June 2021: ', Temporal.now.timeZone().getPreviousTransition('2021-06-14T10:30:30-05:00').toString());
+    console.log('Temporal Next Transition from June 2021: ', Temporal.now.timeZone().getNextTransition('2021-06-14T10:30:30-05:00').toString());
+
+    const localTZ = Temporal.now.timeZone();
+    const now = Temporal.now.instant();
+    const nextTransition = localTZ.getNextTransition(now);
+    const before = localTZ.getOffsetStringFor(nextTransition.subtract({ nanoseconds: 1 }));
+    const after = localTZ.getOffsetStringFor(nextTransition.add({ nanoseconds: 1 }));
+    console.log(`At ${nextTransition.toZonedDateTimeISO(localTZ)} the offset will change from UTC ${before} to ${after}`);
+  }
+
   /**
    * Checks if the ISO string contains the time (hh:mm) part.
    * @param {string} iSODate - The ISO string

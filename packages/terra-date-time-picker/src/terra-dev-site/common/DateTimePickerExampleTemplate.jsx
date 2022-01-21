@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import DateTimePicker from 'terra-date-time-picker/lib/DateTimePicker';
+import { Temporal } from 'proposal-temporal';
+import DateTimePicker from '../../DateTimePicker';
 import DateTimeUtils from '../../DateTimeUtils';
 
 const propTypes = {

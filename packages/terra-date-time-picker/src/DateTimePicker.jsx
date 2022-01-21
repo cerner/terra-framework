@@ -6,6 +6,7 @@ import ThemeContext from 'terra-theme-context';
 import DatePicker from 'terra-date-picker';
 import TimeInput from 'terra-time-input';
 import * as KeyCode from 'keycode-js';
+import { Temporal } from 'proposal-temporal';
 import DateUtil from 'terra-date-picker/lib/DateUtil';
 import styles from './DateTimePicker.module.scss';
 import DateTimeUtils from './DateTimeUtils';
@@ -197,6 +198,8 @@ class DateTimePicker extends React.Component {
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.dateTimePickerContainer = React.createRef();
     this.containerHasFocus = false;
+
+    DateTimeUtils.CompareTemporalWithMoment();
   }
 
   componentDidMount() {
