@@ -72,7 +72,7 @@ const RollUpPill = (props) => {
     >
       <button
         id="rollup-pill"
-        className={cx(['rollup-pill', 'is-selectable', theme.className])}
+        className={cx(['rollup-pill', theme.className])}
         onClick={handleOnSelectRollUp}
         onKeyDown={handleRollUpPillKeyDown}
         onMouseDown={handleRollUpPillMouseDown}

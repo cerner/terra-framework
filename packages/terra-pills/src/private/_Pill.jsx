@@ -195,10 +195,10 @@ const Pill = (props) => {
 
   const pillClassNames = classNames(
     cx([
-      'pill',
+      'pill-label',
       { 'is-focusable': pillInteraction.isSelectable || pillInteraction.isRemovable },
       { 'is-removable': pillInteraction.isRemovable && !pillInteraction.isSelectableAndRemovable },
-      { 'is-selectable': pillInteraction.isSelectable },
+      // { 'is-selectable': pillInteraction.isSelectable },
       { 'is-selectable-and-removable': pillInteraction.isSelectableAndRemovable },
       theme.className,
     ]),
@@ -249,21 +249,21 @@ const Pill = (props) => {
           // aria-expanded={pillInteraction.isSelectable ? true : undefined}
           aria-haspopup={pillInteraction.isSelectable ? 'dialog' : undefined}
           id={id}
-          className={pillClassNames}
+          className={cx(['pill', 'is-focusable'])}
           ref={pillRef}
           role="listitem"
           aria-describedby={`interaction-hint-${id}`}
           data-terra-pills-show-focus-styles
           data-terra-pill
         >
-          <span className={cx('pill-label')}>
+          <span className={pillClassNames}>
             {labelCategory
               ? <span className={cx('pill-category')}>{`${labelCategory}: `}</span>
               : undefined}
             <span>{label}</span>
           </span>
+          {pillInteraction.isRemovable && renderRemoveButton()}
         </div>
-        {pillInteraction.isRemovable && renderRemoveButton()}
         {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={visuallyHiddenTextHint} aria-hidden="true" />}
         {isTruncated && renderTruncatedLabelPopup()}
       </>
@@ -280,21 +280,21 @@ const Pill = (props) => {
           {...customProps}
           {...pillProps}
           id={id}
-          className={pillClassNames}
+          className={cx(['pill', 'is-focusable'])}
           ref={pillRef}
           role="listitem"
           aria-labelledby={`${pillInteractionHintID} interaction-hint-${id}`}
           data-terra-pills-show-focus-styles
           data-terra-pill
         >
-          <label className={cx('pill-label')}>
+          <label className={pillClassNames}>
             {labelCategory
               ? <span className={cx('pill-category')}>{`${labelCategory}: `}</span>
               : undefined}
             <span>{label}</span>
           </label>
+          {pillInteraction.isRemovable && renderRemoveButton()}
         </div>
-        {pillInteraction.isRemovable && renderRemoveButton()}
         {pillInteractionHint && <VisuallyHiddenText id={`interaction-hint-${id}`} text={visuallyHiddenTextHint} aria-hidden="true" />}
       </>
     );

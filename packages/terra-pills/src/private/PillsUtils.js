@@ -1,5 +1,5 @@
 const getPillWidth = (pill) => {
-  const pillWidth = pill.parentNode.getBoundingClientRect().width;
+  const pillWidth = pill.clientWidth;
   return pillWidth;
 };
 
