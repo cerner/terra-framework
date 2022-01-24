@@ -1,36 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TimeInput from '../../../../TimeInput';
 import TimeUtil from '../../../../TimeUtil';
 
-class TimeInputDefault extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { input: null };
-    this.handleOnChange = this.handleOnChange.bind(this);
-  }
+const TimeInputDefault = () => {
+  const [input, setInput] = useState(null);
 
-  handleOnChange(event, input) {
-    this.setState({ input });
-  }
+  const handleOnChange = (event, changedInput) => {
+    setInput(changedInput);
+  };
 
-  render() {
-    return (
-      <div>
-        <div id="time-input-value">
-          <h3>
-            Time Input:
-            {this.state.input}
-          </h3>
-        </div>
-        <TimeInput
-          id="timeInput"
-          name="time-input"
-          onChange={this.handleOnChange}
-          variant={TimeUtil.FORMAT_12_HOUR}
-          showSeconds
-        />
+  return (
+    <div>
+      <div id="time-input-value">
+        <h3>
+          Time Input:
+          {input}
+        </h3>
       </div>
-    );
-  }
-}
+      <TimeInput
+        id="timeInput"
+        name="time-input"
+        onChange={handleOnChange}
+        variant={TimeUtil.FORMAT_12_HOUR}
+        showSeconds
+      />
+    </div>
+  );
+};
 export default TimeInputDefault;
