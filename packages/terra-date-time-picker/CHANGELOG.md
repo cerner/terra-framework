@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated tests due to Time Input changes. 
+
 ## 4.72.1 - (January 4, 2022)
 
 * Changed
