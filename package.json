@@ -59,6 +59,7 @@
     "docs:peerDependencies": "node scripts/peer-dependency-generator/index.js",
     "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
     "jest": "jest",
+    "jest:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "jest:coverage": "jest --coverage",
     "link-parent-bin": "link-parent-bin",
     "lint": "npm run lint:js && npm run lint:scss && npm run lint:package-json",
