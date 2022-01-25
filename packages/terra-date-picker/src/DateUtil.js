@@ -492,6 +492,22 @@ class DateUtil {
 
     return DateUtil.MIN_YEAR;
   }
+
+  /**
+   * Increments the date by one day
+   * @return {String} The incremented string value of the date
+   */
+  static incrementDateByDay(date) {
+
+  }
+
+  /**
+   * Decrements the date by one day
+   * @return {String} The decremented string value of the date
+   */
+  static incrementDateByDay() {
+
+  }
 }
 
 DateUtil.inputType = {
