@@ -494,19 +494,30 @@ class DateUtil {
   }
 
   /**
-   * Increments the date by one day
-   * @return {String} The incremented string value of the date
+   * Increments a date by one day
+   * @param {moment} date - date to increment
+   * @return {moment} The incremented moment date
    */
-  static incrementDateByDay(date) {
-
+  static incrementDateByDay(date, format) {
+    return moment(date, format, true).add(1, 'd').format('YYYY-MM-DD');
   }
 
   /**
-   * Decrements the date by one day
-   * @return {String} The decremented string value of the date
+   * Decrement a date by one day
+   * @param {moment} date - date to decrement
+   * @return {moment} The decremented moment date
    */
-  static incrementDateByDay() {
+  static decrementDateByDay(date, format) {
+    return moment(date, format, true).subtract(1, 'd').format('YYYY-MM-DD');
+  }
 
+  /**
+   * Return current date
+   * @param {string} format - format for moment
+   * @return {moment} The current date
+   */
+  static getCurrentDate() {
+    return moment().format('YYYY-MM-DD');
   }
 }
 

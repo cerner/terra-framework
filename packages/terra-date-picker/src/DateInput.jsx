@@ -412,53 +412,6 @@ const DatePickerInput = (props) => {
     event.preventDefault();
   };
 
-  const handleInputKeydown = (event, inputType) => {
-    let { day } = date;
-    let { month } = date;
-    let { year } = date;
-    let inputDate;
-    let formattedDate;
-    if (day.length === 2 && month.length === 2 && year.length === 4) {
-      inputDate = DateUtil.convertToISO8601(`${year}-${month}-${day}`, DateUtil.ISO_EXTENDED_DATE_FORMAT);
-      formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
-    }
-    const validDate = DateUtil.isValidDate(formattedDate, momentDateFormat);
-
-
-    if (event.keyCode === KeyCode.KEY_T) {
-      if(validDate) {
-
-      } else {
-
-      }
-      return;
-    }
-    if (event.keyCode === KeyCode.KEY_DASH) {
-      if(validDate) {
-        
-      } else {
-
-      }
-      return;
-    }
-    if (event.keyCode === KeyCode.KEY_EQUALS) {
-      if(validDate) {
-
-      } else {
-
-      }
-      return;
-    }
-
-    if (inputType === DateUtil.inputType.YEAR) {
-      handleYearInputKeydown(event);
-    } else if (inputType === DateUtil.inputType.MONTH) {
-      handleMonthInputKeydown(event);
-    } else if (inputType === DateUtil.inputType.DAY) {
-      handleDayInputKeydown(event);
-    }
-  }
-
   const handleDayInputKeydown = (event) => {
     if (inputAttributes?.readOnly) {
       return;
@@ -558,6 +511,67 @@ const DatePickerInput = (props) => {
       if (event.keyCode === KeyCode.KEY_RIGHT && yearInputRef.current.selectionEnd === date.year.length) {
         setInputFocus(event, monthInputRef.current, 0, 0);
       }
+    }
+  };
+
+
+
+  const handleInputKeydown = (event, inputType) => {
+    const { day, month, year } = date;
+    let inputDate;
+    let formattedDate;
+    if (day.length === 2 && month.length === 2 && year.length === 4) {
+      inputDate = DateUtil.convertToISO8601(`${year}-${month}-${day}`, DateUtil.ISO_EXTENDED_DATE_FORMAT);
+      formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
+    }
+    const validDate = DateUtil.isValidDate(formattedDate, momentDateFormat);
+
+
+    if (event.keyCode === KeyCode.KEY_T) {
+      inputDate = DateUtil.getCurrentDate();
+      formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
+      if (onChange) {
+        onChange(event, formattedDate);
+      }
+      const nextDayValues = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, inputDate, '-');
+      dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
+      return;
+    }
+    if (event.keyCode === KeyCode.KEY_DASH) {
+      if (validDate) {
+        inputDate = DateUtil.decrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
+      } else {
+        inputDate = DateUtil.decrementDateByDay(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT);
+      }
+      formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
+      if (onChange) {
+        onChange(event, formattedDate);
+      }
+      const nextDayValues = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, inputDate, '-');
+      dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
+      return;
+    }
+    if (event.keyCode === KeyCode.KEY_EQUALS) {
+      if (validDate) {
+        inputDate = DateUtil.incrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
+      } else {
+        inputDate = DateUtil.incrementDateByDay(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT);
+      }
+      formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
+      if (onChange) {
+        onChange(event, formattedDate);
+      }
+      const nextDayValues = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, inputDate, '-');
+      dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
+      return;
+    }
+
+    if (inputType === DateUtil.inputType.YEAR) {
+      handleYearInputKeydown(event);
+    } else if (inputType === DateUtil.inputType.MONTH) {
+      handleMonthInputKeydown(event);
+    } else if (inputType === DateUtil.inputType.DAY) {
+      handleDayInputKeydown(event);
     }
   };
 
