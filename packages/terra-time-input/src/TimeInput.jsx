@@ -438,13 +438,13 @@ class TimeInput extends React.Component {
     } = this.state;
     const variant = TimeUtil.getVariantFromLocale(this.props);
 
-    if (event.keyCode === KeyCode.KEY_N) {
+    if (event.key === 'n' || event.key === 'N') {
       const currentTime = this.getCurrentTime();
       this.setTime(event, currentTime.hour, currentTime.minute, currentTime.second, currentTime.meridiem);
       return;
     }
 
-    if (event.keyCode === KeyCode.KEY_DASH) {
+    if (event.key === '-' || event.key === '_') {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
         if (minute === '0' || minute === '00') {
@@ -469,7 +469,7 @@ class TimeInput extends React.Component {
       return;
     }
 
-    if (event.keyCode === KeyCode.KEY_EQUALS) {
+    if (event.key === '=' || event.key === '+') {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
         if (minute === '59') {
@@ -494,7 +494,7 @@ class TimeInput extends React.Component {
       return;
     }
 
-    if (event.keyCode === KeyCode.KEY_A && variant === TimeUtil.FORMAT_12_HOUR) {
+    if ((event.key === 'a' || event.key === 'A') && variant === TimeUtil.FORMAT_12_HOUR) {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       meridiem = this.anteMeridiem;
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
@@ -505,7 +505,7 @@ class TimeInput extends React.Component {
       return;
     }
 
-    if (event.keyCode === KeyCode.KEY_P && variant === TimeUtil.FORMAT_12_HOUR) {
+    if ((event.key === 'p' || event.key === 'P') && variant === TimeUtil.FORMAT_12_HOUR) {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       meridiem = this.postMeridiem;
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
