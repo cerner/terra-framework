@@ -23,9 +23,9 @@
     margin: 0;
     max-width: 100%; // Needed for IE10 truncation
     outline: none;
-    padding-bottom: var(--terra-pills-pill-list-item-padding-bottom, 0.28571rem);
-    padding-right: var(--terra-pills-pill-list-item-padding-right, 0.42857rem);
-    padding-top: var(--terra-pills-pill-list-item-padding-top, 0.28571rem);
+    margin-bottom: var(--terra-pills-pill-list-item-margin-bottom, 0.28571rem);
+    margin-right: var(--terra-pills-pill-list-item-margin-right, 0.42857rem);
+    margin-top: var(--terra-pills-pill-list-item-padding-top, 0.28571rem);
     position: relative;
     vertical-align: top;
   }
