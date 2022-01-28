@@ -527,7 +527,7 @@ const DatePickerInput = (props) => {
     const validDate = DateUtil.isValidDate(formattedDate, momentDateFormat);
 
 
-    if (event.keyCode === KeyCode.KEY_T) {
+    if (event.key === 't' || event.key === 'T') {
       inputDate = DateUtil.getCurrentDate();
       formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
       if (onChange) {
@@ -537,7 +537,7 @@ const DatePickerInput = (props) => {
       dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
       return;
     }
-    if (event.keyCode === KeyCode.KEY_DASH) {
+    if (event.key === '-' || event.key === '_') {
       if (validDate) {
         inputDate = DateUtil.decrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
       } else {
@@ -551,7 +551,7 @@ const DatePickerInput = (props) => {
       dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
       return;
     }
-    if (event.keyCode === KeyCode.KEY_EQUALS) {
+    if (event.key === '=' || event.key === '+') {
       if (validDate) {
         inputDate = DateUtil.incrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
       } else {
