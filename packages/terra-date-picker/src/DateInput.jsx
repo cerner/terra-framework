@@ -6,7 +6,14 @@ import React, {
   useRef,
   useMemo,
 } from 'react';
-import * as KeyCode from 'keycode-js';
+import {
+  KEY_UP,
+  KEY_DOWN,
+  KEY_LEFT,
+  KEY_RIGHT,
+  KEY_DELETE,
+  KEY_BACK_SPACE,
+} from 'keycode-js';
 import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -417,12 +424,12 @@ const DatePickerInput = (props) => {
       return;
     }
 
-    if (event.keyCode === KeyCode.KEY_UP) {
+    if (event.keyCode === KEY_UP) {
       const incrementedDay = DateUtil.incrementDay(date.day, date.month, date.year);
       if (incrementedDay !== date.day) {
         handleDateChange(event, incrementedDay, DateUtil.inputType.DAY);
       }
-    } else if (event.keyCode === KeyCode.KEY_DOWN) {
+    } else if (event.keyCode === KEY_DOWN) {
       const decrementedDay = DateUtil.decrementDay(date.day, date.month, date.year);
       if (decrementedDay !== date.day) {
         handleDateChange(event, decrementedDay, DateUtil.inputType.DAY);
@@ -430,17 +437,17 @@ const DatePickerInput = (props) => {
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
-      if ((event.keyCode === KeyCode.KEY_LEFT || event.keyCode === KeyCode.KEY_DELETE || event.keyCode === KeyCode.KEY_BACK_SPACE) && dayInputRef.current.selectionEnd === 0) {
+      if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && dayInputRef.current.selectionEnd === 0) {
         setInputFocus(event, monthInputRef.current, date.month.length, date.month.length);
-      } else if (event.keyCode === KeyCode.KEY_RIGHT && dayInputRef.current.selectionEnd === date.day.length) {
+      } else if (event.keyCode === KEY_RIGHT && dayInputRef.current.selectionEnd === date.day.length) {
         setInputFocus(event, yearInputRef.current, 0, 0);
       }
     } else if (dateFormatOrder === DateUtil.dateOrder.DMY) {
-      if (event.keyCode === KeyCode.KEY_RIGHT && dayInputRef.current.selectionEnd === date.day.length) {
+      if (event.keyCode === KEY_RIGHT && dayInputRef.current.selectionEnd === date.day.length) {
         setInputFocus(event, monthInputRef.current, 0, 0);
       }
     } else if (dateFormatOrder === DateUtil.dateOrder.YMD) {
-      if ((event.keyCode === KeyCode.KEY_LEFT || event.keyCode === KeyCode.KEY_DELETE || event.keyCode === KeyCode.KEY_BACK_SPACE) && dayInputRef.current.selectionEnd === 0) {
+      if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && dayInputRef.current.selectionEnd === 0) {
         setInputFocus(event, monthInputRef.current, date.month.length, date.month.length);
       }
     }
@@ -451,12 +458,12 @@ const DatePickerInput = (props) => {
       return;
     }
 
-    if (event.keyCode === KeyCode.KEY_UP) {
+    if (event.keyCode === KEY_UP) {
       const incrementedMonth = DateUtil.incrementMonth(date.month);
       if (incrementedMonth !== date.month) {
         handleDateChange(event, incrementedMonth, DateUtil.inputType.MONTH);
       }
-    } else if (event.keyCode === KeyCode.KEY_DOWN) {
+    } else if (event.keyCode === KEY_DOWN) {
       const decrementedMonth = DateUtil.decrementMonth(date.month);
       if (decrementedMonth !== date.month) {
         handleDateChange(event, decrementedMonth, DateUtil.inputType.MONTH);
@@ -464,19 +471,19 @@ const DatePickerInput = (props) => {
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
-      if (event.keyCode === KeyCode.KEY_RIGHT && monthInputRef.current.selectionEnd === date.month.length) {
+      if (event.keyCode === KEY_RIGHT && monthInputRef.current.selectionEnd === date.month.length) {
         setInputFocus(event, dayInputRef.current, 0, 0);
       }
     } else if (dateFormatOrder === DateUtil.dateOrder.DMY) {
-      if ((event.keyCode === KeyCode.KEY_LEFT || event.keyCode === KeyCode.KEY_DELETE || event.keyCode === KeyCode.KEY_BACK_SPACE) && monthInputRef.current.selectionEnd === 0) {
+      if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && monthInputRef.current.selectionEnd === 0) {
         setInputFocus(event, dayInputRef.current, date.day.length, date.day.length);
-      } else if (event.keyCode === KeyCode.KEY_RIGHT && monthInputRef.current.selectionEnd === date.month.length) {
+      } else if (event.keyCode === KEY_RIGHT && monthInputRef.current.selectionEnd === date.month.length) {
         setInputFocus(event, yearInputRef.current, 0, 0);
       }
     } else if (dateFormatOrder === DateUtil.dateOrder.YMD) {
-      if ((event.keyCode === KeyCode.KEY_LEFT || event.keyCode === KeyCode.KEY_DELETE || event.keyCode === KeyCode.KEY_BACK_SPACE) && monthInputRef.current.selectionEnd === 0) {
+      if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && monthInputRef.current.selectionEnd === 0) {
         setInputFocus(event, yearInputRef.current, date.year.length, date.year.length);
-      } else if (event.keyCode === KeyCode.KEY_RIGHT && monthInputRef.current.selectionEnd === date.month.length) {
+      } else if (event.keyCode === KEY_RIGHT && monthInputRef.current.selectionEnd === date.month.length) {
         setInputFocus(event, dayInputRef.current, 0, 0);
       }
     }
@@ -487,12 +494,12 @@ const DatePickerInput = (props) => {
       return;
     }
 
-    if (event.keyCode === KeyCode.KEY_UP) {
+    if (event.keyCode === KEY_UP) {
       const incrementedYear = DateUtil.incrementYear(date.year);
       if (incrementedYear !== date.year) {
         handleDateChange(event, incrementedYear, DateUtil.inputType.YEAR);
       }
-    } else if (event.keyCode === KeyCode.KEY_DOWN) {
+    } else if (event.keyCode === KEY_DOWN) {
       const decrementedYear = DateUtil.decrementYear(date.year);
       if (decrementedYear !== date.year) {
         handleDateChange(event, decrementedYear, DateUtil.inputType.YEAR);
@@ -500,15 +507,15 @@ const DatePickerInput = (props) => {
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
-      if ((event.keyCode === KeyCode.KEY_LEFT || event.keyCode === KeyCode.KEY_DELETE || event.keyCode === KeyCode.KEY_BACK_SPACE) && yearInputRef.current.selectionEnd === 0) {
+      if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && yearInputRef.current.selectionEnd === 0) {
         setInputFocus(event, dayInputRef.current, date.day.length, date.day.length);
       }
     } else if (dateFormatOrder === DateUtil.dateOrder.DMY) {
-      if ((event.keyCode === KeyCode.KEY_LEFT || event.keyCode === KeyCode.KEY_DELETE || event.keyCode === KeyCode.KEY_BACK_SPACE) && yearInputRef.current.selectionEnd === 0) {
+      if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && yearInputRef.current.selectionEnd === 0) {
         setInputFocus(event, monthInputRef.current, date.month.length, date.month.length);
       }
     } else if (dateFormatOrder === DateUtil.dateOrder.YMD) {
-      if (event.keyCode === KeyCode.KEY_RIGHT && yearInputRef.current.selectionEnd === date.year.length) {
+      if (event.keyCode === KEY_RIGHT && yearInputRef.current.selectionEnd === date.year.length) {
         setInputFocus(event, monthInputRef.current, 0, 0);
       }
     }
