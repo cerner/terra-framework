@@ -684,8 +684,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('t');
 
-          const currentDate = new Date();
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
         });
 
         it('sets Date to today on day input', () => {
@@ -693,8 +693,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-day-date-input"]').click();
           browser.keys('t');
 
-          const currentDate = new Date();
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
         });
 
         it('sets Date to today on year input', () => {
@@ -702,8 +702,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('t');
 
-          const currentDate = new Date();
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
         });
       });
 
@@ -719,8 +719,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('t');
 
-          const currentDate = new Date();
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
         });
 
         it('sets Date to today on day input', () => {
@@ -730,8 +730,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-day-date-input"]').click();
           browser.keys('t');
 
-          const currentDate = new Date();
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
         });
 
         it('sets Date to today on year input', () => {
@@ -741,8 +741,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('t');
 
-          const currentDate = new Date();
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
         });
       });
 
@@ -756,8 +756,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('t');
 
-          const currentDate = new Date();
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
         });
 
         it('sets Date to today on day input', () => {
@@ -765,8 +765,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-day-date-input"]').click();
           browser.keys('t');
 
-          const currentDate = new Date();
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
         });
 
         it('sets Date to today on year input', () => {
@@ -774,8 +774,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('t');
 
-          const currentDate = new Date();
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
         });
       });
     });
@@ -791,9 +791,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('-');
 
-          const currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() - 1);
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
         });
 
         it('sets Date to yesterday if on day input', () => {
@@ -801,9 +801,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-day-date-input"]').click();
           browser.keys('-');
 
-          const currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() - 1);
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
         });
 
         it('sets Date to yesterday if on year input', () => {
@@ -811,9 +811,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('-');
 
-          const currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() - 1);
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
         });
       });
 
@@ -829,9 +829,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('-');
 
-          const currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() - 1);
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
         });
 
         it('sets Date to yesterday if on day input', () => {
@@ -841,9 +841,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-day-date-input"]').click();
           browser.keys('-');
 
-          const currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() - 1);
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
         });
 
         it('sets Date to yesterday if on year input', () => {
@@ -853,9 +853,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('-');
 
-          const currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() - 1);
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
         });
       });
 
@@ -901,9 +901,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('=');
 
-          const currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() + 1);
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
 
         it('sets Date to tomorrow if on day input', () => {
@@ -911,9 +911,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-day-date-input"]').click();
           browser.keys('=');
 
-          const currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() + 1);
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
 
         it('sets Date to tomorrow if on year input', () => {
@@ -921,9 +921,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('=');
 
-          const currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() + 1);
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
       });
 
@@ -939,9 +939,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('=');
 
-          const currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() + 1);
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
 
         it('sets Date to tomorrow if on day input', () => {
@@ -951,9 +951,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-day-date-input"]').click();
           browser.keys('=');
 
-          const currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() + 1);
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
 
         it('sets Date to tomorrow if on year input', () => {
@@ -963,9 +963,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('=');
 
-          const currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() + 1);
-          expect($('input')).toHaveValue(currentDate.toISOString().split('T')[0]);
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
       });
 
