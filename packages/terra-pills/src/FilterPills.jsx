@@ -96,6 +96,7 @@ const FilterPills = (props) => {
   const isPillDeleted = useRef(false);
   const isRollUpRemoved = useRef(false);
   const removedLabel = useRef();
+  const containerHint = useRef(ariaLabel);
 
   // Identifies the number of pills that needs to be hidden/rolled up
   const generateRollUp = useCallback(() => {
@@ -260,7 +261,7 @@ const FilterPills = (props) => {
   const focusNodeAfterDelete = (pills) => {
     if (pills.length - 1 < React.Children.count(children)) {
       setIsPillRemoved(true);
-      removedLabel.current = pills[focusNode.current].innerText;
+      removedLabel.current = pills[focusNode.current].children[0].innerText;
       setTabIndex('-1');
       if (focusNode.current > 0) {
         focusNode.current -= 1;
@@ -311,11 +312,10 @@ const FilterPills = (props) => {
   };
 
   const handleOnRemove = (pillKey, metaData, event) => {
+    const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
+    const targetId = event.target.parentElement.getAttribute('id');
+    const currentIndex = pills.findIndex((element) => element.id === targetId);
     if (event.type === 'click') {
-      const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
-      const targetId = event.target.previousSibling.getAttribute('id');
-      const currentIndex = pills.findIndex((element) => element.id === targetId);
-
       if (pills.length > 1) {
         setTabIndex('-1');
         if (currentIndex === 0) {
@@ -325,7 +325,9 @@ const FilterPills = (props) => {
         }
         setTabIndex('0');
       }
+      setIsPillRemoved(true);
     }
+    focusPillsContainer();
 
     if (onRemove) {
       onRemove(pillKey, metaData);
@@ -333,16 +335,9 @@ const FilterPills = (props) => {
   };
 
   // set the focus to current pill if the pill is clicked with mouse
-  const handleOnPillSelect = (pillRef, pillKey, metaData, event) => {
-    const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
-    const targetId = event.target.getAttribute('id');
-
-    if (targetId && event.target.hasAttribute('data-terra-pill')) {
-      setTabIndex('-1');
-      currentPill.current = targetId;
-      focusNode.current = pills.findIndex((element) => element.id === targetId);
-      setTabIndex('0');
-      focusCurrentNode();
+  const handleOnPillSelect = (pillRef) => {
+    if (pillRef.current && pillRef.current.children.length > 0) {
+      removedLabel.current = pillRef.current.children[0].innerText;
     }
   };
 
@@ -376,7 +371,7 @@ const FilterPills = (props) => {
     customProps.className,
   );
 
-  const pillInteractionHintID = 'terra-pills-interaction-hint';
+  // const pillInteractionHintID = 'terra-pills-interaction-hint';
   const pillGroupInteractionHintID = 'terra-pills-group-interaction-hint';
   let removedPillInteractionHint = '';
   const pillGroupAriaDescribedBy = ariaDescribedBy ? `${ariaDescribedBy} ${pillGroupInteractionHintID}` : pillGroupInteractionHintID;
@@ -388,13 +383,14 @@ const FilterPills = (props) => {
   }
   if (pillRemoved) {
     removedPillInteractionHint = `${removedLabel.current} was removed...`; // needs translations lp052179
+    console.log(removedPillInteractionHint);
   }
 
   const renderChildren = (items) => {
     const pills = React.Children.map(items, (pill) => {
       if (React.isValidElement(pill)) {
         return React.cloneElement(pill, {
-          onRemove: handleOnRemove, onSelect: handleOnPillSelect, pillInteractionHintID,
+          onRemove: handleOnRemove, onSelect: handleOnPillSelect,
         });
       }
       return undefined;
@@ -409,7 +405,8 @@ const FilterPills = (props) => {
     <div
       {...customProps}
       {...filterPillsProps}
-      aria-label={!ariaLabelledBy ? ariaLabel : undefined}
+      aria-live="assertive"
+      aria-label={!ariaLabelledBy ? `${removedPillInteractionHint} ${containerHint.current}` : undefined}
       aria-labelledby={ariaLabelledBy}
       aria-describedby={pillGroupAriaDescribedBy}
       className={pillListClassNames}
@@ -418,13 +415,7 @@ const FilterPills = (props) => {
       tabIndex={containerTabindex}
     >
       <VisuallyHiddenText
-        aria-live="assertive"
-        id={pillInteractionHintID}
-        text={removedPillInteractionHint}
-        aria-hidden="true"
-      />
-      <VisuallyHiddenText
-        aria-live="assertive"
+        aria-live="polite"
         id={pillGroupInteractionHintID}
         text={pillGroupInteractionHint}
         aria-hidden="true"
