@@ -533,7 +533,7 @@ const DatePickerInput = (props) => {
     }
     const validDate = DateUtil.isValidDate(formattedDate, momentDateFormat);
 
-
+    // set date to today
     if (event.key === 't' || event.key === 'T') {
       inputDate = DateUtil.getCurrentDate();
       formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
@@ -544,6 +544,7 @@ const DatePickerInput = (props) => {
       dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
       return;
     }
+    // decrement current valid date by 1 day, if not valid set date to yesterday instead
     if (event.key === '-' || event.key === '_') {
       if (validDate) {
         inputDate = DateUtil.decrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
@@ -558,6 +559,7 @@ const DatePickerInput = (props) => {
       dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
       return;
     }
+    // increment current valid date by 1 day, if not valid date set date to tomorrow instead
     if (event.key === '=' || event.key === '+') {
       if (validDate) {
         inputDate = DateUtil.incrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
