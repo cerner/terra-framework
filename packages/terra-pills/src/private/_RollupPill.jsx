@@ -86,7 +86,7 @@ const RollUpPill = (props) => {
       >
         <span className={cx('rollup-pill-label')}>{rollUpLabel}</span>
       </button>
-      <VisuallyHiddenText id="rollup-pill-hint" text={rollUpHint} aria-hidden="true" />
+      <VisuallyHiddenText id="rollup-pill-hint" text={rollUpHint} />
     </div>
   );
 };

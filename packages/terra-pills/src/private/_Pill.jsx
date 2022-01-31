@@ -15,7 +15,7 @@ import classNamesBind from 'classnames/bind';
 import Popup from 'terra-popup';
 import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
+// import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './Pill.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -231,9 +231,8 @@ const Pill = (props) => {
       className={cx('pill-remove-button')}
       tabIndex="-1"
       type="button"
-      aria-labelledby={`remove-button-${id}`}
+      aria-label={intl.formatMessage({ id: 'Terra.pills.label.delete' }, { pillLabelName: label })}
     >
-      <span id={`remove-button-${id}`} className={cx('remove-button-label')}>{intl.formatMessage({ id: 'Terra.pills.label.delete' }, { pillLabelName: label })}</span>
       <span className={cx('clear-icon')} />
     </button>
   );

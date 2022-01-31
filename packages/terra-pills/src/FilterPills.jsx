@@ -383,7 +383,6 @@ const FilterPills = (props) => {
   }
   if (pillRemoved) {
     removedPillInteractionHint = `${removedLabel.current} was removed...`; // needs translations lp052179
-    console.log(removedPillInteractionHint);
   }
 
   const renderChildren = (items) => {
@@ -406,7 +405,7 @@ const FilterPills = (props) => {
       {...customProps}
       {...filterPillsProps}
       aria-live="assertive"
-      aria-label={!ariaLabelledBy ? `${removedPillInteractionHint} ${containerHint.current}` : undefined}
+      aria-label={!ariaLabelledBy ? `${removedPillInteractionHint}. ${containerHint.current}` : undefined}
       aria-labelledby={ariaLabelledBy}
       aria-describedby={pillGroupAriaDescribedBy}
       className={pillListClassNames}
@@ -418,7 +417,6 @@ const FilterPills = (props) => {
         aria-live="polite"
         id={pillGroupInteractionHintID}
         text={pillGroupInteractionHint}
-        aria-hidden="true"
       />
       {children ? renderChildren(children) : []}
       {(isCollapsible && rollUpCount > 0) && (
