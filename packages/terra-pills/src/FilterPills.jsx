@@ -417,6 +417,7 @@ const FilterPills = (props) => {
         aria-live="polite"
         id={pillGroupInteractionHintID}
         text={pillGroupInteractionHint}
+        aria-hidden="true"
       />
       {children ? renderChildren(children) : []}
       {(isCollapsible && rollUpCount > 0) && (
