@@ -405,7 +405,7 @@ const FilterPills = (props) => {
       {...customProps}
       {...filterPillsProps}
       aria-live="assertive"
-      aria-label={!ariaLabelledBy ? `${removedPillInteractionHint}. ${containerHint.current}` : undefined}
+      aria-label={!ariaLabelledBy ? `${removedPillInteractionHint} ${containerHint.current}` : undefined}
       aria-labelledby={ariaLabelledBy}
       aria-describedby={pillGroupAriaDescribedBy}
       className={pillListClassNames}
