@@ -1,18 +1,23 @@
 const getPillWidth = (pill) => {
-  const pillWidth = pill.parentNode.getBoundingClientRect().width;
+  const pillWidth = pill.offsetWidth + parseFloat(window.getComputedStyle(pill, null).getPropertyValue('margin-right'), 10);
   return pillWidth;
+};
+
+const getRollupPillWidth = (rollupPill) => {
+  const rollupPillWidth = rollupPill.parentElement.offsetWidth + parseFloat(window.getComputedStyle(rollupPill.parentElement, null).getPropertyValue('margin-right'), 10);
+  return rollupPillWidth;
 };
 
 const handleRollUp = (pillListRef) => {
   const rollUpPill = pillListRef.current.querySelector('[data-terra-rollup-pill]');
   const pills = pillListRef.current.querySelectorAll('[data-terra-pill]');
-  const containerWidth = Math.ceil(pillListRef.current.clientWidth);
+  const containerWidth = pillListRef.current.offsetWidth;
   let totalPillWidth = 0;
   let startIndex = 0;
   let rollupPillWidth = 0;
 
   if (rollUpPill) {
-    rollupPillWidth = getPillWidth(rollUpPill);
+    rollupPillWidth = getRollupPillWidth(rollUpPill);
   }
 
   for (let i = 0; i < pills.length; i += 1) {
@@ -20,10 +25,8 @@ const handleRollUp = (pillListRef) => {
       break;
     }
     const pillWidth = getPillWidth(pills[i]);
-    if (pillWidth + totalPillWidth < containerWidth) {
+    if (pillWidth + totalPillWidth + rollupPillWidth < containerWidth) {
       startIndex = i + 1;
-    } else if (rollupPillWidth + totalPillWidth > containerWidth) {
-      startIndex -= 1;
     }
     totalPillWidth += pillWidth;
   }
