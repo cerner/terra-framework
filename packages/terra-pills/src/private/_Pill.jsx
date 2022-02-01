@@ -15,7 +15,6 @@ import classNamesBind from 'classnames/bind';
 import Popup from 'terra-popup';
 import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
-// import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './Pill.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -56,17 +55,12 @@ const propTypes = {
    * to be used in addition with a popup.
    */
   title: PropTypes.string,
-  /**
-   * aria-labelledBy Id for when a pill is removed.
-   */
-  // pillInteractionHintID: PropTypes.string,
 };
 
 const defaultProps = {
   onRemove: undefined,
   pillKey: undefined,
   title: undefined,
-  // pillInteractionHintID: '',
 };
 
 const Pill = (props) => {
@@ -79,7 +73,6 @@ const Pill = (props) => {
     onRemove,
     pillKey,
     title,
-    // pillInteractionHintID,
     onSelect,
     ...customProps
   } = props;
@@ -134,6 +127,7 @@ const Pill = (props) => {
 
   const handleOnRequestClose = () => {
     setPopupOpen(false);
+    pillRef.current.setAttribute('aria-expanded', false);
   };
 
   const handleOnKeyDown = (event) => {
@@ -200,7 +194,6 @@ const Pill = (props) => {
       'pill-label',
       { 'is-focusable': pillInteraction.isSelectable || pillInteraction.isRemovable },
       { 'is-removable': pillInteraction.isRemovable && !pillInteraction.isSelectableAndRemovable },
-      // { 'is-selectable': pillInteraction.isSelectable },
       { 'is-selectable-and-removable': pillInteraction.isSelectableAndRemovable },
       theme.className,
     ]),
@@ -243,12 +236,10 @@ const Pill = (props) => {
 
     return (
       <>
-        {/* <VisuallyHiddenText id={`interaction-hint-${id}`} text={visuallyHiddenTextHint} aria-hidden="true" /> */}
         <div
           {...customProps}
           {...pillProps}
           {...pillButtonProps}
-          // aria-expanded={pillInteraction.isSelectable ? true : undefined}
           aria-haspopup={pillInteraction.isSelectable ? 'dialog' : undefined}
           id={id}
           className={cx(['pill', 'is-focusable'])}
@@ -271,13 +262,11 @@ const Pill = (props) => {
     );
   };
 
-  /* eslint-disable jsx-a11y/aria-role */
   const renderBasicPill = () => {
     const categoryLabel = labelCategory || '';
     const visuallyHiddenTextHint = ` ${categoryLabel} ${label} ${pillInteractionHint}`;
     return (
       <>
-        {/* <VisuallyHiddenText id={`interaction-hint-${id}`} text={visuallyHiddenTextHint} aria-hidden="true" /> */}
         <div
           {...customProps}
           {...pillProps}
@@ -300,7 +289,6 @@ const Pill = (props) => {
       </>
     );
   };
-  /* eslint-enable jsx-a11y/aria-role */
 
   return (
     pillInteraction.isSelectable ? renderSelectablePill() : renderBasicPill()

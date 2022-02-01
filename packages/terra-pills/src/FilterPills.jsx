@@ -371,7 +371,6 @@ const FilterPills = (props) => {
     customProps.className,
   );
 
-  // const pillInteractionHintID = 'terra-pills-interaction-hint';
   const pillGroupInteractionHintID = 'terra-pills-group-interaction-hint';
   let removedPillInteractionHint = '';
   const pillGroupAriaDescribedBy = ariaDescribedBy ? `${ariaDescribedBy} ${pillGroupInteractionHintID}` : pillGroupInteractionHintID;
