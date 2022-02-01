@@ -25,7 +25,8 @@
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "files": [
     "lib",
-    "src"
+    "src",
+    "translations"
   ],
   "peerDependencies": {
     "react": "^16.8.5",

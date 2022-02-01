@@ -17,7 +17,7 @@ import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import Pill from './private/_Pill';
-import PillsUtils from './private/PillsUtils';
+import PillsUtils from './private/_PillsUtils';
 import RollUpPill from './private/_RollupPill';
 import styles from './private/Pill.module.scss';
 
@@ -229,7 +229,7 @@ const FilterPills = (props) => {
   }, [children, handleResize]);
 
   const focusNextNode = (pills, rollUpPill) => {
-    if (focusNode.current + 1 === pills.length || focusNode.current + 1 < pills.length) {
+    if (focusNode.current + 1 <= pills.length) {
       setTabIndex('-1');
       // if the next pill is roll up pill, focus the roll up pill
       if (rollUpPill && focusNode.current + 1 === pills.length) {
