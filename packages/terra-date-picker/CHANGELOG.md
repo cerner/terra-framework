@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added keyboard shortcuts `T`, `-`, and `+` for auto-setting date values.
+
 ## 4.71.1 - (January 4, 2022)
 
 * Changed
