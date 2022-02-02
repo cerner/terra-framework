@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.44.0 - (February 2, 2022)
+
 * Added
   * Added keyboard shortcuts `N`, `-`, `+`, `A`, and `P` for auto-setting time values.
 
