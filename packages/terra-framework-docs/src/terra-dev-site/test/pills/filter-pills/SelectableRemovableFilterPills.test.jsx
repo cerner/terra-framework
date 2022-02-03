@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import FilterPills from '@cerner/terra-pills/lib/index';
+import FilterPills from 'terra-pills';
 
 import styles from './FilterPillsTestCommon.module.scss';
 
