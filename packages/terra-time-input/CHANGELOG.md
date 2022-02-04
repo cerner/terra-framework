@@ -4,6 +4,8 @@
 
 * Added
   * Added a test of time-input padding. 
+* Fixed
+  * Reduce random test failures.
 
 ## 4.44.0 - (February 2, 2022)
 
