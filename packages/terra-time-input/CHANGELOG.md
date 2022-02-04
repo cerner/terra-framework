@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added a test of time-input padding. 
+
 ## 4.44.0 - (February 2, 2022)
 
 * Added
