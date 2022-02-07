@@ -88,9 +88,9 @@ it('Should not throw any errors while date value is outside of the Min, Max rang
   const dateYearInput = datePicker.find({ name: 'terra-date-year-input', type: 'text' }).at(0);
   dateYearInput.simulate('change', { target: { value: '2017' } });
   expect(() => {
-    const hourInput = datePicker.find({ name: 'terra-time-hour-input' }).at(0);
+    const hourInput = datePicker.find({ name: 'terra-time-hour-input' }).at(2);
     hourInput.simulate('change', { target: { value: '21' } });
-    const minuteInput = datePicker.find({ name: 'terra-time-minute-input' }).at(0);
+    const minuteInput = datePicker.find({ name: 'terra-time-minute-input' }).at(2);
     minuteInput.simulate('change', { target: { value: '30' } });
   }).not.toThrowError();
 });
