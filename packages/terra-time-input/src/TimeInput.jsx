@@ -692,14 +692,6 @@ class TimeInput extends React.Component {
     return a11yLabel || intl.formatMessage({ id: 'Terra.timeInput.a11yLabelDefault' });
   }
 
-  get anteMeridiem() {
-    return this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
-  }
-
-  get postMeridiem() {
-    return this.props.intl.formatMessage({ id: 'Terra.timeInput.pm' });
-  }
-
   getCurrentTime() {
     const date = new Date();
     // prepend a 0 to single digit values in minute, second, and hours
@@ -910,7 +902,7 @@ class TimeInput extends React.Component {
      * @returns {String} a description of the hour field, intended to be read to screen reader users.
      */
     function hourDescription() {
-      if (TimeUtil.getVariantFromLocale(this.props) === TimeUtil.FORMAT_12_HOUR) {
+      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR) {
         /**
          * description: Explains to screen reader users that the hour field needs a two digit hour. This will be read
          * only when a screen reader is enabled. It is never displayed. It will be read when the user has focused on
