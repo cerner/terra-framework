@@ -41,7 +41,13 @@ exports[`correctly applies the theme context className 1`] = `
     <TimeInput
       disabled={false}
       hourAttributes={Object {}}
-      inputAttributes={Object {}}
+      inputAttributes={
+        Object {
+          "disabled": false,
+          "isInvalid": false,
+          "required": false,
+        }
+      }
       intl={
         Object {
           "defaultFormats": Object {},
@@ -85,8 +91,25 @@ exports[`correctly applies the theme context className 1`] = `
         className="time-input-container orion-fusion-theme"
       >
         <div
+          aria-label="Terra.timeInput.a11yLabelDefault"
           className="time-input"
+          role="group"
         >
+          <AccessibleValue
+            readThis="Terra.timeInput.labeledTextValue"
+          >
+            <VisuallyHiddenText
+              aria-hidden={true}
+              text="Terra.timeInput.labeledTextValue"
+            >
+              <span
+                aria-hidden={true}
+                className="visually-hidden-text"
+              >
+                Terra.timeInput.labeledTextValue
+              </span>
+            </VisuallyHiddenText>
+          </AccessibleValue>
           <input
             name="time-input"
             type="hidden"
