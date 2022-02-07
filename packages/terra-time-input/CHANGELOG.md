@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Added
+  * Added a test for time-input padding. 
 * Fixed
   * Reduce random test failures.
 
