@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Fixed
-  * Tests.
+  * Updated tests for Time Input changes.
 
 ## 1.32.0 - (January 4, 2022)
 
