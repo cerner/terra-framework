@@ -33,10 +33,12 @@ const FilterPillsWithVisibleLabel = () => {
   };
 
   return (
-    <div className={cx('colored-div')}>
-      <span id="titleLabel" className={cx('title-label')}>Patient Education Search Terms :</span>
+    <div className={cx('filter-group-panel')}>
+      <span id="search-terms-fiter-label" className={cx('title-label')}>
+        Patient Education Search Terms :
+      </span>
       <FilterPills
-        ariaLabelledBy="titleLabel"
+        ariaLabelledBy="search-terms-fiter-label"
         ariaLabel="Patient Education Search Terms"
         onRemove={handleOnRemove}
       >

@@ -23,7 +23,7 @@ const FilterPillsWithLongLabel = () => {
   };
 
   return (
-    <div className={cx('compressed-container')}>
+    <div className={cx('filter-pill-container')}>
       <FilterPills
         ariaLabel="Example of Filter Pill with long label"
         onRemove={handleOnRemove}

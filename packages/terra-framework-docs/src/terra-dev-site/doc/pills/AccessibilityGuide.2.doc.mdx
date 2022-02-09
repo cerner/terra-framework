@@ -1,0 +1,115 @@
+import { Badge } from 'terra-pills/package.json?dev-site-package';
+
+<Badge />
+
+# Accessibility Guide for Terra Filter Pills
+
+Filters Pills have special interactons and construction that makes them unique from them standard buttons and interactive list items.
+
+## Important Considerations:
+
+### Group Label / Heading
+
+ - Filter Pills as a group requires that an aria-label be provided as accesibility minimum standard protection, but is not visible, and therefore is not
+reccomended to be used alone.
+ - For accessbility best practices, it is reccommended consumers should always include a visible label by using the `ariaLabelledBy` prop.
+
+### Construction
+
+Filter Pills are commonly used in a group or list, which must include a label to indicate the intent or purpose of the contents of the list.
+Accordingly, the filter pills component requires the `ariaLabel` prop for accessibility minimum standards, to give a screenreader user the proper
+context of the list, but it is not visible to users.
+
+<div style={{ background: "#def3dcab", padding: "15px", 'border-radius': "5px"}}>
+    <h4 id="pill-accesibility-heading" style={{ 'border-bottom': "2px solid #33e148", background: "#f7f7f70f", 'margin-top': "5px"}}> IMPORTANT </h4>
+    <p>Accessibility Considerations:</p>
+    For best practice, it is recommended that pills include a visible label, which may need to be styled and positioned according to a specific
+    usage and should be done so by each consumer. Use the `ariaLabelledBy` prop in Filter Pills, and provide it the ʻidʼ of the visible label or
+    heading, which will allow for the visible text to be accessibly connected to the pills.
+</div>
+<br />
+
+```diff
+    <div className={cx('filter-group-panel')}>
++       <span id="search-terms-fiter-label" className={cx('title-label')}>
++       Patient Education Search Terms:
++       </span>
+        <FilterPills
++           ariaLabelledBy="search-terms-fiter-label"
+            ariaLabel="Patient Education Search Terms"
+            onRemove={handleOnRemove}
+        >
+            {pills.map((pill, index) => (
+                <FilterPills.Pill
+                    label={pill.label}
+                    labelCategory={pill.labelCategory}
+                    id={pill.id}
+                    key={pill.id}
+                    pillKey={pill.label}
+                    metaData={{ index }}
+                />
+            ))}
+        </FilterPills>
+    </div>
+```
+
+<div style={{ background: "#def3dcab", padding: "15px", 'border-radius': "5px"}}>
+    Note: _see the prop reccomended to set the visible text and the `ariaLabel` prop to the same string values for fallback
+    protection, even though the `ariaLabelledBy` should override the `ariaLabel` use._
+</div>
+
+## Usability Expectations:
+
+### Interaction Details:
+
+- Filter Pills recieves focus as a group by `tab` keypress, then arrow keys change focus between individual pills within the group.
+- Only one focused pill per set of Filter Pills.
+- The remove button must not be a focusable element, but can be clickable.
+- Removing a filter pill with a keyboard is performed with the `Backspace` or `Delete` key when a pill has focus.
+
+## Keyboard Navigation:
+- Filter Pills will have the following keyboard navigation expectations:
+
+<table style={{ margin: "5px", border: "1px solid #0000", 'border-collapse': "collapse" }}>
+  <tr>
+    <th>Key / Sequence</th>
+    <th>Description</th> 
+  </tr>
+  <tr>
+    <td>`Tab`</td>
+    <td>Initial focus goes to the first pill in the list, pressing tab again moves focus out of the Filter Pills group and to the next
+    focusable element on the page.</td>
+  </tr>
+  <tr>
+    <td>`Right`</td>
+    <td>Right arrow key will move focus to the next pill in the list. When on the last pill in the list, focus remains on the last
+    pill and does not cycle to the first pill.</td>
+  </tr>
+  <tr>
+    <td>`Left`</td>
+    <td>Left arrow key will move focus to the previous pill in the list. When on the first pill in the list, focus remains on the
+    first pill and does not cycle to the last pill.</td>
+  </tr>
+  <tr>
+    <td>`Backspace` or `Delete`</td>
+    <td>Removes the pill that currently has focus. After removing, focus should then be placed on the previous pill in the
+    list. If no pills remain, focus is temporarily on the Filter Pills group until user navigates away, but cannot be focused
+    on again while no interactive pills remain in the Filter Pills group.</td>
+  </tr>
+  <tr>
+    <td>`Enter` or `Space`</td>
+    <td>If a pill is selectable via having truncated label, Enter or Space will show the popup to display the full pill label.</td>
+  </tr>
+</table>
+
+## Support Compliance
+
+### Supported Features & Technology
+- Keyboard Interactions
+- PC: JAWS Support with Chrome (latest)
+- MAC: VoiceOver Support with Chrome (latest), Safari (latest)
+
+### Requiring Futher Enhancement to Support
+- Mobile Touch Interactions with Screen Reader assistive technology
+- Speech Input Interactions with assistive technology
+- PC: NVDA Support
