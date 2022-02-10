@@ -72,7 +72,7 @@ into in various higher-order component patterns like an ʻApplied Filters' toolb
 user. They also have the ability to flex layouts between an expanded state showing all filter pills, and a collapsed state showing just a single line
 and roll-up toggle to show and hide the additional filter pills.
 
-<AppliedFiltersToolbar title='Introduction to Filter Pills: Applied Filters Toolbar' />
+<AppliedFiltersExample title='Introduction to Filter Pills: Applied Filters Toolbar' />
 
 # How To Construct:
 
@@ -82,7 +82,7 @@ Filter Pills in their standard form display a single keyword or short phrase as 
 with the clickable remove ("X") button, as well as by interactive by keyboard, able to be removed by pressing the 'delete' or 'backspace' key when
 they are in focus.
 
-<BasicFilterPills title="Basic Filter Pills" />
+<BasicLabelExample title="Basic Filter Pills" />
 
 ## Adding the optional Category to the Label
 
@@ -90,7 +90,7 @@ Additional category terms can be added to the single keyword or short phrase lab
 keyword label may appear twice (but apply to different groupings), or is needed to help indicate to a user the category groupings the labels
 belong to.
 
-<FilterPillsWithLabelCategory title="Adding a Label Category" />
+<CategoryLabelExample title="Adding a Label Category" />
 
 ## Long Labels & Truncation: Popup Added
 
@@ -98,7 +98,7 @@ In cases where the width of the space is constrained and the text label for the 
 added and the label will become an interactive target. Clicking the label will disclose the full Filter Pill text label (and category if applied) as the
 contents. No additional content can be added to the popup.
 
-<FilterPillsWithLongLabel title="Selectable Filter Pill Label on Truncation" />
+<TruncatedLabelExample title="Selectable Filter Pill Label on Truncation" />
 
 ## Adding a Visible Label
 
@@ -113,7 +113,7 @@ will allow for the visible text to be accessibly connected to the pills.
 _(Note: see the prop reccomended to set the visible text and the `ariaLabel` prop to the same string values for fallback
 protection, even though the `ariaLabelledBy` should override the `ariaLabel` use.)_ [read more](https://engineering.cerner.com/terra-ui/components/cerner-terra-framework-docs/pills/accessibility-guide#pill-accesibility-heading)
 
-<FilterPillsWithVisibleLabel title="" />
+<VisibleLabelExample title="" />
 
 
 ## Props for Filter Pills
