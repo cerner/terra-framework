@@ -6,7 +6,7 @@ import styles from './FilterPillCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
-const FilterPillsWithVisibleLabel = () => {
+const VisibleLabelExample = () => {
   const pillsData = [
     {
       label: 'asthma',
@@ -59,4 +59,4 @@ const FilterPillsWithVisibleLabel = () => {
   );
 };
 
-export default FilterPillsWithVisibleLabel;
+export default VisibleLabelExample;

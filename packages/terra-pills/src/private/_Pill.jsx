@@ -46,7 +46,7 @@ const propTypes = {
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
-   * @private
+   *
    * A callback function to execute when the pill is removed. Returns pillKey, metadata.
    */
   onRemove: PropTypes.func,

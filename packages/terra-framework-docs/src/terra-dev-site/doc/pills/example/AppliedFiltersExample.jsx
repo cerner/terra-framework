@@ -7,7 +7,7 @@ import styles from './FilterPillCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
-const AppliedFiltersToolbar = () => {
+const AppliedFiltersExample = () => {
   const pillsData = [];
   for (let pillCount = 1; pillCount < 11; pillCount += 1) {
     const pillData = {
@@ -55,4 +55,4 @@ const AppliedFiltersToolbar = () => {
   );
 };
 
-export default AppliedFiltersToolbar;
+export default AppliedFiltersExample;

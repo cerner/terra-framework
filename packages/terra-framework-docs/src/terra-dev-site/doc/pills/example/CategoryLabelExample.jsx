@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import FilterPills from 'terra-pills';
 
-const BasicFilterPills = () => {
+const CategoryLabelExample = () => {
   const pillsData = [
     {
       label: 'asthma',
+      labelCategory: 'respiratory',
       id: 'terra-filter-pills-removable-pill-asthma',
     },
     {
       label: 'bronchitis',
+      labelCategory: 'respiratory',
       id: 'terra-filter-pills-removable-pill-bronchitis',
     },
     {
       label: 'fibro',
+      labelCategory: 'respiratory',
       id: 'terra-filter-pills-removable-pill-fibro',
     },
   ];
@@ -27,7 +30,7 @@ const BasicFilterPills = () => {
   return (
     <>
       <FilterPills
-        ariaLabel="Example of Basic Filter Pill"
+        ariaLabel="Example of Filter Pills with category label"
         onRemove={handleOnRemove}
       >
         {pills.map((pill, index) => (
@@ -47,4 +50,4 @@ const BasicFilterPills = () => {
   );
 };
 
-export default BasicFilterPills;
+export default CategoryLabelExample;
