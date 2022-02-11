@@ -521,6 +521,69 @@ const DatePickerInput = (props) => {
     }
   };
 
+
+
+  const handleInputKeydown = (event, inputType) => {
+    const { day, month, year } = date;
+    let inputDate;
+    let formattedDate;
+    if (day.length === 2 && month.length === 2 && year.length === 4) {
+      inputDate = DateUtil.convertToISO8601(`${year}-${month}-${day}`, DateUtil.ISO_EXTENDED_DATE_FORMAT);
+      formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
+    }
+    const validDate = DateUtil.isValidDate(formattedDate, momentDateFormat);
+
+    // set date to today
+    if (event.key === 't' || event.key === 'T') {
+      inputDate = DateUtil.getCurrentDate();
+      formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
+      if (onChange) {
+        onChange(event, formattedDate);
+      }
+      const nextDayValues = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, inputDate, '-');
+      dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
+      return;
+    }
+    // decrement current valid date by 1 day, if not valid set date to yesterday instead
+    if (event.key === '-' || event.key === '_') {
+      if (validDate) {
+        inputDate = DateUtil.decrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
+      } else {
+        inputDate = DateUtil.decrementDateByDay(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT);
+      }
+      formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
+      if (onChange) {
+        onChange(event, formattedDate);
+      }
+      const nextDayValues = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, inputDate, '-');
+      dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
+      return;
+    }
+    // increment current valid date by 1 day, if not valid date set date to tomorrow instead
+    if (event.key === '=' || event.key === '+') {
+      if (validDate) {
+        inputDate = DateUtil.incrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
+      } else {
+        inputDate = DateUtil.incrementDateByDay(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT);
+      }
+      formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
+      if (onChange) {
+        onChange(event, formattedDate);
+      }
+      const nextDayValues = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, inputDate, '-');
+      dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
+      return;
+    }
+
+    if (inputType === DateUtil.inputType.YEAR) {
+      handleYearInputKeydown(event);
+    } else if (inputType === DateUtil.inputType.MONTH) {
+      handleMonthInputKeydown(event);
+    } else if (inputType === DateUtil.inputType.DAY) {
+      handleDayInputKeydown(event);
+    }
+  };
+
   const handleOnInputFocus = (event, type) => {
     if (onFocus) {
       onFocus(event);
@@ -632,7 +695,7 @@ const DatePickerInput = (props) => {
       onChange={handleDayChange}
       onFocus={(e) => handleOnInputFocus(e, DateUtil.inputType.DAY)}
       onBlur={(e) => handleOnInputBlur(e, DateUtil.inputType.DAY)}
-      onKeyDown={handleDayInputKeydown}
+      onKeyDown={(e) => handleInputKeydown(e, DateUtil.inputType.DAY)}
       maxLength="2"
       size="2"
       pattern="\d*"
@@ -663,7 +726,7 @@ const DatePickerInput = (props) => {
       onChange={handleMonthChange}
       onFocus={(e) => handleOnInputFocus(e, DateUtil.inputType.MONTH)}
       onBlur={(e) => handleOnInputBlur(e, DateUtil.inputType.MONTH)}
-      onKeyDown={handleMonthInputKeydown}
+      onKeyDown={(e) => handleInputKeydown(e, DateUtil.inputType.MONTH)}
       maxLength="2"
       size="2"
       pattern="\d*"
@@ -694,7 +757,7 @@ const DatePickerInput = (props) => {
       onChange={handleYearChange}
       onFocus={(e) => handleOnInputFocus(e, DateUtil.inputType.YEAR)}
       onBlur={(e) => handleOnInputBlur(e, DateUtil.inputType.YEAR)}
-      onKeyDown={handleYearInputKeydown}
+      onKeyDown={(e) => handleInputKeydown(e, DateUtil.inputType.YEAR)}
       maxLength="4"
       size="4"
       pattern="\d*"

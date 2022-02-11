@@ -672,6 +672,335 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
   });
 
+  describe('Keyboard shortcuts', () => {
+    describe('N', () => {
+      describe('if blank', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
+        });
+
+        it('sets Date to today on month input', () => {
+          Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
+          $('input[name="terra-date-month-date-input"]').click();
+          browser.keys('t');
+
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to today on day input', () => {
+          Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+          $('input[name="terra-date-day-date-input"]').click();
+          browser.keys('t');
+
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to today on year input', () => {
+          Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+          $('input[name="terra-date-year-date-input"]').click();
+          browser.keys('t');
+
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
+        });
+      });
+
+      describe('if partially filled', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
+        });
+
+        it('sets Date to today on month input', () => {
+          Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
+          $('input[name="terra-date-month-date-input"]').click();
+          browser.keys('06');
+          $('input[name="terra-date-month-date-input"]').click();
+          browser.keys('t');
+
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to today on day input', () => {
+          Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+          $('input[name="terra-date-day-date-input"]').click();
+          browser.keys('20');
+          $('input[name="terra-date-day-date-input"]').click();
+          browser.keys('t');
+
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to today on year input', () => {
+          Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+          $('input[name="terra-date-year-date-input"]').click();
+          browser.keys('2005');
+          $('input[name="terra-date-year-date-input"]').click();
+          browser.keys('t');
+
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
+        });
+      });
+
+      describe('if a valid date', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-start-date');
+        });
+
+        it('sets Date to today on month input', () => {
+          Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
+          $('input[name="terra-date-month-date-input"]').click();
+          browser.keys('t');
+
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to today on day input', () => {
+          Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+          $('input[name="terra-date-day-date-input"]').click();
+          browser.keys('t');
+
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to today on year input', () => {
+          Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+          $('input[name="terra-date-year-date-input"]').click();
+          browser.keys('t');
+
+          const today = new Date();
+          expect($('input')).toHaveValue(today.toISOString().split('T')[0]);
+        });
+      });
+    });
+
+    describe('-', () => {
+      describe('if blank', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
+        });
+
+        it('sets Date to yesterday on month input', () => {
+          Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
+          $('input[name="terra-date-month-date-input"]').click();
+          browser.keys('-');
+
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to yesterday if on day input', () => {
+          Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+          $('input[name="terra-date-day-date-input"]').click();
+          browser.keys('-');
+
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to yesterday if on year input', () => {
+          Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+          $('input[name="terra-date-year-date-input"]').click();
+          browser.keys('-');
+
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
+        });
+      });
+
+      describe('if partially filled', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
+        });
+
+        it('sets Date to yesterday on month input', () => {
+          Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
+          $('input[name="terra-date-month-date-input"]').click();
+          browser.keys('06');
+          $('input[name="terra-date-month-date-input"]').click();
+          browser.keys('-');
+
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to yesterday if on day input', () => {
+          Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+          $('input[name="terra-date-day-date-input"]').click();
+          browser.keys('20');
+          $('input[name="terra-date-day-date-input"]').click();
+          browser.keys('-');
+
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to yesterday if on year input', () => {
+          Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+          $('input[name="terra-date-year-date-input"]').click();
+          browser.keys('2005');
+          $('input[name="terra-date-year-date-input"]').click();
+          browser.keys('-');
+
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
+        });
+      });
+
+      describe('if a valid date', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-start-date');
+        });
+
+        it('sets Date to valid date minus 1 day if pressed in month', () => {
+          Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
+          $('input[name="terra-date-month-date-input"]').click();
+          browser.keys('-');
+
+          expect($('input')).toHaveValue('2017-03-31');
+        });
+
+        it('sets Date to valid date minus 1 day if pressed in day', () => {
+          Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+          $('input[name="terra-date-day-date-input"]').click();
+          browser.keys('-');
+
+          expect($('input')).toHaveValue('2017-03-31');
+        });
+
+        it('sets Date to valid date minus 1 day if pressed in year', () => {
+          Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+          $('input[name="terra-date-year-date-input"]').click();
+          browser.keys('-');
+
+          expect($('input')).toHaveValue('2017-03-31');
+        });
+      });
+    });
+
+    describe('+', () => {
+      describe('if blank', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
+        });
+
+        it('sets Date to tomorrow on month input', () => {
+          Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
+          $('input[name="terra-date-month-date-input"]').click();
+          browser.keys('=');
+
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to tomorrow if on day input', () => {
+          Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+          $('input[name="terra-date-day-date-input"]').click();
+          browser.keys('=');
+
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to tomorrow if on year input', () => {
+          Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+          $('input[name="terra-date-year-date-input"]').click();
+          browser.keys('=');
+
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
+        });
+      });
+
+      describe('if partially filled', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
+        });
+
+        it('sets Date to tomorrow on month input', () => {
+          Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
+          $('input[name="terra-date-month-date-input"]').click();
+          browser.keys('06');
+          $('input[name="terra-date-month-date-input"]').click();
+          browser.keys('=');
+
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to tomorrow if on day input', () => {
+          Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+          $('input[name="terra-date-day-date-input"]').click();
+          browser.keys('20');
+          $('input[name="terra-date-day-date-input"]').click();
+          browser.keys('=');
+
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
+        });
+
+        it('sets Date to tomorrow if on year input', () => {
+          Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+          $('input[name="terra-date-year-date-input"]').click();
+          browser.keys('2005');
+          $('input[name="terra-date-year-date-input"]').click();
+          browser.keys('=');
+
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
+        });
+      });
+
+      describe('if a valid date', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-start-date');
+        });
+
+        it('sets Date to valid date plus 1 day if pressed in month', () => {
+          Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
+          $('input[name="terra-date-month-date-input"]').click();
+          browser.keys('=');
+
+          expect($('input')).toHaveValue('2017-04-02');
+        });
+
+        it('sets Date to valid date plus 1 day if pressed in day', () => {
+          Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+          $('input[name="terra-date-day-date-input"]').click();
+          browser.keys('=');
+
+          expect($('input')).toHaveValue('2017-04-02');
+        });
+
+        it('sets Date to valid date plus 1 day if pressed in year', () => {
+          Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+          $('input[name="terra-date-year-date-input"]').click();
+          browser.keys('=');
+
+          expect($('input')).toHaveValue('2017-04-02');
+        });
+      });
+    });
+  });
+
   describe('Auto Prepend and Restrictions', () => {
     describe('Month Input', () => {
       before(() => {
