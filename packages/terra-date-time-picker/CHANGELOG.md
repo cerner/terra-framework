@@ -5,6 +5,11 @@
 * Changed
   * Minor test updates due to Time Input dependency changes
 
+## 4.72.3 - (February 9, 2022)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.72.2 - (February 2, 2022)
 
 * Changed

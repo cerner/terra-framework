@@ -4,6 +4,9 @@
 
 * Fixed
   * Accessibility improvements.
+
+## 4.44.1 - (February 9, 2022)
+
 * Added
   * Added a test for time-input padding.
 * Fixed
