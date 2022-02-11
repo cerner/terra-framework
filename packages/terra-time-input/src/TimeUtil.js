@@ -184,7 +184,7 @@ class TimeUtil {
   /**
    * Returns a string representation of the time's hour, or ''.
    * @param {*} time String time formatted like hh:mm or hh:mm:ss.
-   * @returns A zero-padded two digit hour, 00 <= mm < 24.
+   * @returns A zero-padded two digit hour, 00 <= hh < 24.
    */
   static splitHour(time) {
     if (typeof (time) === 'string') {
@@ -236,7 +236,7 @@ class TimeUtil {
   /**
    * Returns a string representation of the time's second, or ''.
    * @param {*} time String time formatted like hh:mm or hh:mm:ss.
-   * @returns A zero-padded two digit second, 00 <= mm < 60.
+   * @returns A zero-padded two digit second, 00 <= ss < 60.
    */
   static splitSecond(time) {
     if (typeof (time) === 'string') {
