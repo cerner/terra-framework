@@ -184,7 +184,7 @@ class TimeUtil {
   /**
    * Returns a string representation of the time's hour, or ''.
    * @param {*} time String time formatted like hh:mm or hh:mm:ss.
-   * @returns A zero-padded two digit hour, 00 <= mm < 24.
+   * @returns A zero-padded two digit hour, 00 <= hh < 24.
    */
   static splitHour(time) {
     if (typeof (time) === 'string') {
@@ -236,7 +236,7 @@ class TimeUtil {
   /**
    * Returns a string representation of the time's second, or ''.
    * @param {*} time String time formatted like hh:mm or hh:mm:ss.
-   * @returns A zero-padded two digit second, 00 <= mm < 60.
+   * @returns A zero-padded two digit second, 00 <= ss < 60.
    */
   static splitSecond(time) {
     if (typeof (time) === 'string') {
@@ -262,7 +262,7 @@ class TimeUtil {
   /**
   * Indicates if the Time Input is operating as a 12-hour variant.
   * @param {Object} The TimeInput props.
-  * @returns {Boolean} True iff the locale allows a 12-hour time and the variant is 12-hour time.
+  * @returns {Boolean} True if the locale allows a 12-hour time and the variant is 12-hour time.
   */
   static is12Hour(props) {
     return TimeUtil.getVariantFromLocale(props) === TimeUtil.FORMAT_12_HOUR;
