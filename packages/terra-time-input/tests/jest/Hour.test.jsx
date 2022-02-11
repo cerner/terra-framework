@@ -59,47 +59,47 @@ describe('Hour', () => {
     });
   });
 
-  describe('FromString', () => {
+  describe('fromString', () => {
     it('can create an Hour from a 24-hour string', () => {
-      expect(Hour.FromString('00').value).toBe(0);
-      expect(Hour.FromString('0').value).toBe(0);
-      expect(Hour.FromString('1').value).toBe(1);
-      expect(Hour.FromString('12').value).toBe(12);
-      expect(Hour.FromString('13').value).toBe(13);
-      expect(Hour.FromString('23').value).toBe(23);
+      expect(Hour.fromString('00').value).toBe(0);
+      expect(Hour.fromString('0').value).toBe(0);
+      expect(Hour.fromString('1').value).toBe(1);
+      expect(Hour.fromString('12').value).toBe(12);
+      expect(Hour.fromString('13').value).toBe(13);
+      expect(Hour.fromString('23').value).toBe(23);
     });
     it('returns undefined if the Hour cannot be created from the 24-hour string', () => {
-      expect(Hour.FromString(1)).toBe(undefined);
-      expect(Hour.FromString('24')).toBe(undefined);
-      expect(Hour.FromString('')).toBe(undefined);
-      expect(Hour.FromString()).toBe(undefined);
-      expect(Hour.FromString('1.1')).toBe(undefined);
-      expect(Hour.FromString(undefined)).toBe(undefined);
+      expect(Hour.fromString(1)).toBe(undefined);
+      expect(Hour.fromString('24')).toBe(undefined);
+      expect(Hour.fromString('')).toBe(undefined);
+      expect(Hour.fromString()).toBe(undefined);
+      expect(Hour.fromString('1.1')).toBe(undefined);
+      expect(Hour.fromString(undefined)).toBe(undefined);
     });
     it('can create an Hour from a 12-hour AM string', () => {
-      expect(Hour.FromString('12', Hour.TWELVE_HOUR_AM).value).toBe(0);
-      expect(Hour.FromString('1', Hour.TWELVE_HOUR_AM).value).toBe(1);
-      expect(Hour.FromString('01', Hour.TWELVE_HOUR_AM).value).toBe(1);
-      expect(Hour.FromString('11', Hour.TWELVE_HOUR_AM).value).toBe(11);
+      expect(Hour.fromString('12', Hour.TWELVE_HOUR_AM).value).toBe(0);
+      expect(Hour.fromString('1', Hour.TWELVE_HOUR_AM).value).toBe(1);
+      expect(Hour.fromString('01', Hour.TWELVE_HOUR_AM).value).toBe(1);
+      expect(Hour.fromString('11', Hour.TWELVE_HOUR_AM).value).toBe(11);
     });
     it('returns undefined if an Hour cannot be created from the 12-hour AM string', () => {
-      expect(Hour.FromString('0', Hour.TWELVE_HOUR_AM)).toBe(undefined);
-      expect(Hour.FromString('00', Hour.TWELVE_HOUR_AM)).toBe(undefined);
-      expect(Hour.FromString('13', Hour.TWELVE_HOUR_AM)).toBe(undefined);
+      expect(Hour.fromString('0', Hour.TWELVE_HOUR_AM)).toBe(undefined);
+      expect(Hour.fromString('00', Hour.TWELVE_HOUR_AM)).toBe(undefined);
+      expect(Hour.fromString('13', Hour.TWELVE_HOUR_AM)).toBe(undefined);
     });
     it('can create an Hour from a 12-hour PM string', () => {
-      expect(Hour.FromString('12', Hour.TWELVE_HOUR_PM).value).toBe(12);
-      expect(Hour.FromString('1', Hour.TWELVE_HOUR_PM).value).toBe(13);
-      expect(Hour.FromString('01', Hour.TWELVE_HOUR_PM).value).toBe(13);
-      expect(Hour.FromString('2', Hour.TWELVE_HOUR_PM).value).toBe(14);
-      expect(Hour.FromString('02', Hour.TWELVE_HOUR_PM).value).toBe(14);
-      expect(Hour.FromString('10', Hour.TWELVE_HOUR_PM).value).toBe(22);
-      expect(Hour.FromString('11', Hour.TWELVE_HOUR_PM).value).toBe(23);
+      expect(Hour.fromString('12', Hour.TWELVE_HOUR_PM).value).toBe(12);
+      expect(Hour.fromString('1', Hour.TWELVE_HOUR_PM).value).toBe(13);
+      expect(Hour.fromString('01', Hour.TWELVE_HOUR_PM).value).toBe(13);
+      expect(Hour.fromString('2', Hour.TWELVE_HOUR_PM).value).toBe(14);
+      expect(Hour.fromString('02', Hour.TWELVE_HOUR_PM).value).toBe(14);
+      expect(Hour.fromString('10', Hour.TWELVE_HOUR_PM).value).toBe(22);
+      expect(Hour.fromString('11', Hour.TWELVE_HOUR_PM).value).toBe(23);
     });
     it('returns undefined if an Hour cannot be created by a 12-hour PM string', () => {
-      expect(Hour.FromString('-1', Hour.TWELVE_HOUR_PM)).toBe(undefined);
-      expect(Hour.FromString('0', Hour.TWELVE_HOUR_PM)).toBe(undefined);
-      expect(Hour.FromString('24', Hour.TWELVE_HOUR_PM)).toBe(undefined);
+      expect(Hour.fromString('-1', Hour.TWELVE_HOUR_PM)).toBe(undefined);
+      expect(Hour.fromString('0', Hour.TWELVE_HOUR_PM)).toBe(undefined);
+      expect(Hour.fromString('24', Hour.TWELVE_HOUR_PM)).toBe(undefined);
     });
   });
 

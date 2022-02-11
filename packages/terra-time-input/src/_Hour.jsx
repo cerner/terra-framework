@@ -21,7 +21,7 @@ class Hour {
    * a 24-hour clock hour value.
    * @returns an Hour object or undefined if the hour doesn't make sense.
    */
-  static FromString(string, mode = Hour.TWENTY_FOUR_HOUR) {
+  static fromString(string, mode = Hour.TWENTY_FOUR_HOUR) {
     if (!Hour.STRINGS.includes(string)) {
       return undefined;
     }

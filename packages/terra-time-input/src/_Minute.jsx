@@ -8,9 +8,8 @@ class Minute {
    * @param {String} string A string expressing an minute. Can be be like '1' or '01'.
    * @returns a Minute object or undefined if the minute doesn't make sense.
    */
-  static FromString(string) {
+  static fromString(string) {
     if (!Minute.STRINGS.includes(string)) {
-      // throw new Error(`Expected a string in ${Minute.STRINGS}`);
       return undefined;
     }
 
@@ -24,7 +23,7 @@ class Minute {
   /**
    * @param {Number} number A number between 0 and 59.
    * @throws An error if the number is not valid.
-   * @see FromString
+   * @see fromString
    */
   constructor(number) {
     if (!Minute.NUMBERS.includes(number)) {

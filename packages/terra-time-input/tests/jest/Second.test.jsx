@@ -34,20 +34,20 @@ describe('Second', () => {
     });
   });
 
-  describe('FromString', () => {
+  describe('fromString', () => {
     it('can create a second from a string', () => {
-      expect(Second.FromString('00').value).toBe(0);
-      expect(Second.FromString('0').value).toBe(0);
-      expect(Second.FromString('1').value).toBe(1);
-      expect(Second.FromString('59').value).toBe(59);
+      expect(Second.fromString('00').value).toBe(0);
+      expect(Second.fromString('0').value).toBe(0);
+      expect(Second.fromString('1').value).toBe(1);
+      expect(Second.fromString('59').value).toBe(59);
     });
     it('will return undefined if a second cannot be created from the string', () => {
-      expect(Second.FromString(1)).toBe(undefined);
-      expect(Second.FromString('60')).toBe(undefined);
-      expect(Second.FromString('')).toBe(undefined);
-      expect(Second.FromString()).toBe(undefined);
-      expect(Second.FromString('1.1')).toBe(undefined);
-      expect(Second.FromString(undefined)).toBe(undefined);
+      expect(Second.fromString(1)).toBe(undefined);
+      expect(Second.fromString('60')).toBe(undefined);
+      expect(Second.fromString('')).toBe(undefined);
+      expect(Second.fromString()).toBe(undefined);
+      expect(Second.fromString('1.1')).toBe(undefined);
+      expect(Second.fromString(undefined)).toBe(undefined);
     });
   });
 

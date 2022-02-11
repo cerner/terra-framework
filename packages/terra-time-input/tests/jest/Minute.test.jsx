@@ -34,20 +34,20 @@ describe('Minute', () => {
     });
   });
 
-  describe('FromString', () => {
+  describe('fromString', () => {
     it('can create a minute from a string', () => {
-      expect(Minute.FromString('00').value).toBe(0);
-      expect(Minute.FromString('0').value).toBe(0);
-      expect(Minute.FromString('1').value).toBe(1);
-      expect(Minute.FromString('59').value).toBe(59);
+      expect(Minute.fromString('00').value).toBe(0);
+      expect(Minute.fromString('0').value).toBe(0);
+      expect(Minute.fromString('1').value).toBe(1);
+      expect(Minute.fromString('59').value).toBe(59);
     });
     it('returns undefined if a Minute cannot be created from the string', () => {
-      expect(Minute.FromString(1)).toBe(undefined);
-      expect(Minute.FromString('60')).toBe(undefined);
-      expect(Minute.FromString('')).toBe(undefined);
-      expect(Minute.FromString()).toBe(undefined);
-      expect(Minute.FromString('1.1')).toBe(undefined);
-      expect(Minute.FromString(undefined)).toBe(undefined);
+      expect(Minute.fromString(1)).toBe(undefined);
+      expect(Minute.fromString('60')).toBe(undefined);
+      expect(Minute.fromString('')).toBe(undefined);
+      expect(Minute.fromString()).toBe(undefined);
+      expect(Minute.fromString('1.1')).toBe(undefined);
+      expect(Minute.fromString(undefined)).toBe(undefined);
     });
   });
 

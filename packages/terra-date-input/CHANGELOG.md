@@ -2,9 +2,6 @@
 
 ## Unreleased
 
-* Fixed
-  * Tests.
-
 ## 1.32.0 - (January 4, 2022)
 
 * Added

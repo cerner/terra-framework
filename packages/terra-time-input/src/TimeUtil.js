@@ -346,9 +346,9 @@ class TimeUtil {
       hourMode = Hour.TWENTY_FOUR_HOUR;
     }
 
-    const hour = Hour.FromString(state.hour, hourMode);
-    const minute = Minute.FromString(state.minute);
-    const second = Second.FromString(state.second);
+    const hour = Hour.fromString(state.hour, hourMode);
+    const minute = Minute.fromString(state.minute);
+    const second = Second.fromString(state.second);
 
     if ([hour, minute].includes(undefined)) {
       return undefined;

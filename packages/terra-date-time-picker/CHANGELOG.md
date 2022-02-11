@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Minor test updates due to Time Input dependency changes
+
 ## 4.72.2 - (February 2, 2022)
 
 * Changed
@@ -482,7 +485,7 @@
 
 * Added
   * Added 'onFocus' prop since 'preventOpenOnFocus' can be used to prevent picker from opening on focus.
-  * Add minDate and maxDate props. These props replace minDateTime and maxDateTime for the purpose of ignoring the time portion when determing the min/max range.
+  * Add minDate and maxDate props. These props replace minDateTime and maxDateTime for the purpose of ignoring the time portion when determining the min/max range.
 
 ## 3.16.0 - (May 7, 2019)
 
