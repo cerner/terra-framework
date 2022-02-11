@@ -189,12 +189,21 @@ const Pill = (props) => {
     pillInteractionHint = `, ${intl.formatMessage({ id: 'Terra.pills.hint.removable' })}`;
   }
 
-  const pillClassNames = classNames(
+  const pillLabelClassNames = classNames(
     cx([
       'pill-label',
       { 'is-focusable': pillInteraction.isSelectable || pillInteraction.isRemovable },
       { 'is-removable': pillInteraction.isRemovable && !pillInteraction.isSelectableAndRemovable },
       { 'is-selectable-and-removable': pillInteraction.isSelectableAndRemovable },
+      theme.className,
+    ]),
+    customProps.className,
+  );
+
+  const pillClassNames = classNames(
+    cx([
+      'pill',
+      'is-focusable',
       theme.className,
     ]),
     customProps.className,
@@ -242,14 +251,14 @@ const Pill = (props) => {
           {...pillButtonProps}
           aria-haspopup={pillInteraction.isSelectable ? 'dialog' : undefined}
           id={id}
-          className={cx(['pill', 'is-focusable'])}
+          className={pillClassNames}
           ref={pillRef}
           role="listitem"
           aria-label={visuallyHiddenTextHint}
           data-terra-pills-show-focus-styles
           data-terra-pill
         >
-          <span className={pillClassNames}>
+          <span className={pillLabelClassNames}>
             {labelCategory
               ? <span className={cx('pill-category')}>{`${labelCategory}: `}</span>
               : undefined}
@@ -271,14 +280,14 @@ const Pill = (props) => {
           {...customProps}
           {...pillProps}
           id={id}
-          className={cx(['pill', 'is-focusable'])}
+          className={pillClassNames}
           ref={pillRef}
           role="listitem"
           aria-label={visuallyHiddenTextHint}
           data-terra-pills-show-focus-styles
           data-terra-pill
         >
-          <label className={pillClassNames}>
+          <label className={pillLabelClassNames}>
             {labelCategory
               ? <span className={cx('pill-category')}>{`${labelCategory}: `}</span>
               : undefined}
