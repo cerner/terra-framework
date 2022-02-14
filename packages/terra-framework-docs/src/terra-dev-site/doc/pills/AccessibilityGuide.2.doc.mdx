@@ -1,4 +1,5 @@
 import { Badge } from 'terra-pills/package.json?dev-site-package';
+import { Notice } from '@cerner/terra-docs';
 
 <Badge />
 
@@ -20,14 +21,13 @@ Filter Pills are commonly used in a group or list, which must include a label to
 Accordingly, the filter pills component requires the `ariaLabel` prop for accessibility minimum standards, to give a screenreader user the proper
 context of the list, but it is not visible to users.
 
-<div style={{ background: "#def3dcab", padding: "15px", 'border-radius': "5px"}}>
-    <h4 id="pill-accesibility-heading" style={{ 'border-bottom': "2px solid #33e148", background: "#f7f7f70f", 'margin-top': "5px"}}> IMPORTANT </h4>
-    <p>Accessibility Considerations:</p>
-    For best practice, it is recommended that pills include a visible label, which may need to be styled and positioned according to a specific
-    usage and should be done so by each consumer. Use the `ariaLabelledBy` prop in Filter Pills, and provide it the ʻidʼ of the visible label or
-    heading, which will allow for the visible text to be accessibly connected to the pills.
-</div>
-<br />
+
+<Notice variant="important" ariaLevel="1">
+Accessibility Considerations:
+
+For best practice, it is recommended that pills include a visible label, which may need to be styled and positioned according to a specific
+usage and should be done so by each consumer. Use the `ariaLabelledBy` prop in Filter Pills, and provide it the ʻidʼ of the visible label or
+heading, which will allow for the visible text to be accessibly connected to the pills.
 
 ```diff
     <div className={cx('filter-group-panel')}>
@@ -53,10 +53,9 @@ context of the list, but it is not visible to users.
     </div>
 ```
 
-<div style={{ background: "#def3dcab", padding: "15px", 'border-radius': "5px"}}>
-    Note: _see the prop reccomended to set the visible text and the `ariaLabel` prop to the same string values for fallback
-    protection, even though the `ariaLabelledBy` should override the `ariaLabel` use._
-</div>
+Note: _see the prop reccomended to set the visible text and the `ariaLabel` prop to the same string values for fallback
+protection, even though the `ariaLabelledBy` should override the `ariaLabel` use._
+</Notice>
 
 ## Usability Expectations:
 

@@ -42,7 +42,7 @@ const BasicLabelExample = () => {
         ))}
       </FilterPills>
       {pills.length <= 0
-        && <button type="button" onClick={() => setPills(pillsData)}>Reset</button>}
+        && <button type="button" onClick={() => setPills(pillsData)}>Reset the Example</button>}
     </>
   );
 };
