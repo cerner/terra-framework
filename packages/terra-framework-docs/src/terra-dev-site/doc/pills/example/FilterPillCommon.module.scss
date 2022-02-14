@@ -1,47 +1,46 @@
 :local {
-    .toolbar-container {
-        background-color: #f3f3f3;
-        border: 1px solid #cecece;
-        width: 100%;
-    }
+  .toolbar-container {
+    background-color: #f3f3f3;
+    border: 1px solid #cecece;
+    width: 100%;
+  }
 
-    .example-pills-container {
-        border-bottom: 1px solid #cecece;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        padding: 5px;
-    }
+  .example-pills-container {
+    border-bottom: 1px solid #cecece;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 5px;
+  }
 
-    .example-label {
-        flex: 0 0 auto;
-        display: inline-block;
-        padding: 5px;
-        text-align: center;
-        width: 10rem;
-    }
+  .example-label {
+    display: inline-block;
+    flex: 0 0 auto;
+    padding: 5px;
+    text-align: center;
+    width: 10rem;
+  }
 
-    .clear-filter-button {
-        color: #2431e5;
-        cursor: pointer;
-        background-color: transparent;
-        border: none;
-        display: inline-block;
-        width: 15rem;
-    }
+  .clear-filter-button {
+    background-color: transparent;
+    border: 0;
+    color: #2431e5;
+    cursor: pointer;
+    display: inline-block;
+    width: 15rem;
+  }
 
-    .filter-pill-container {
-        width: 10rem;
-    }
+  .filter-pill-container {
+    width: 10rem;
+  }
 
-    .filter-group-panel {
-        background-color: #ebf6fc;
-        padding: 10px;
+  .filter-group-panel {
+    background-color: #ebf6fc;
+    padding: 10px;
 
-        .title-label {
-            color: #00548e;
-            font-weight: 600;
-        }
+    .title-label {
+      color: #00548e;
+      font-weight: 600;
     }
   }
-  
+}
