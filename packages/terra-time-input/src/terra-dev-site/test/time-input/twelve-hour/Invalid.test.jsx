@@ -12,7 +12,6 @@ const TimeInputDefault = () => (
       id="timeInput"
       name="time-input"
       variant={TimeUtil.FORMAT_12_HOUR}
-      required
       isInvalid
     />
   </div>
