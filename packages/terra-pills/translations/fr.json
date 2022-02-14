@@ -1,12 +1,14 @@
 {
-  "Terra.pills.label.delete": "{pillLabelName}",
-  "Terra.pills.label.rollupPill": "{pillsNotVisibleCount} de plus",
-  "Terra.pills.hint.removable": "Vous pouvez supprimer la gélule avec la touche Supprimer ou Retour arrière.",
-  "Terra.pills.hint.selectable": "Vous pouvez sélectionner la gélule avec la barre d'espace ou la touche Entrée.",
-  "Terra.pills.hint.selectableAndRemovable": "Vous pouvez sélectionner la gélule avec la barre d'espace ou la touche Entrée et la supprimer avec la touche Supprimer ou Retour arrière.",
-  "Terra.pills.hint.wasRemoved": "{pillLabelName}",
-  "Terra.pills.hint.rollupPill": "{pillsNotVisibleCount}",
-  "Terra.pills.hint.rollupNotVisible": "{pillsNotVisibleCount}",
-  "Terra.pills.hint.rollupVisible": "{pillsNotVisibleCount}",
-  "Terra.pills.hint.pillList": "Contient {numberOfPills} gélule(s)"
+  "Terra.pills.label.delete": "Supprimer {pillLabelName}",
+  "Terra.pills.label.rollupPill": "{pillsNotVisibleCount} de plus...",
+  "Terra.pills.label.showLess": "Réduire",
+  "Terra.pills.hint.removable": "Vous pouvez supprimer cet élément avec la touche Supprimer ou Retour arrière",
+  "Terra.pills.hint.selectable": "Pour plus d'informations, vous pouvez sélectionner le bouton avec la barre d'espace ou la touche Entrée",
+  "Terra.pills.hint.selectableAndRemovable": "Vous pouvez supprimer cet élément avec la touche Suppression ou Retour arrière. Pour plus d'informations, vous pouvez sélectionner le bouton avec la barre d'espace ou la touche Entrée",
+  "Terra.pills.hint.wasRemoved": "{pillLabelName} supprimé",
+  "Terra.pills.hint.rollupPill": "{pillsNotVisibleCount} éléments sont masqués. Sélectionnez pour afficher {pillsNotVisibleCount} éléments masqués",
+  "Terra.pills.hint.showLess": "Sélectionnez pour masquer les éléments",
+  "Terra.pills.hint.rollupNotVisible": "{pillsNotVisibleCount} éléments ne sont pas affichés",
+  "Terra.pills.hint.rollupVisible": "{pillsNotVisibleCount} éléments masqués sont désormais affichés",
+  "Terra.pills.hint.pillList": "Contient {numberOfPills} éléments"
 }

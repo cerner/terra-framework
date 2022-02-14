@@ -1,5 +1,5 @@
 {
-  "Terra.pills.label.delete": "Delete {pillLabelName}",
+  "Terra.pills.label.delete": "Remove {pillLabelName}",
   "Terra.pills.label.rollupPill": "{pillsNotVisibleCount} more...",
   "Terra.pills.label.showLess": "Show Less",
   "Terra.pills.hint.removable": "item is removable via Delete or Back Space key",

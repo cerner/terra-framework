@@ -1,12 +1,14 @@
 {
-  "Terra.pills.label.delete": "{pillLabelName}",
+  "Terra.pills.label.delete": "Remover {pillLabelName}",
   "Terra.pills.label.rollupPill": "{pillsNotVisibleCount} mais...",
-  "Terra.pills.hint.removable": "pílula removível por meio da tecla Delete ou Voltar",
-  "Terra.pills.hint.selectable": "pílula selecionável por meio da tecla Enter ou da barra de espaço",
-  "Terra.pills.hint.selectableAndRemovable": "pílula selecionável por meio da tecla Enter ou da barra de espaço e removível por meio das teclas Delete ou Voltar",
-  "Terra.pills.hint.wasRemoved": "{pillLabelName}",
-  "Terra.pills.hint.rollupPill": "{pillsNotVisibleCount}",
-  "Terra.pills.hint.rollupNotVisible": "{pillsNotVisibleCount}",
-  "Terra.pills.hint.rollupVisible": "{pillsNotVisibleCount}",
-  "Terra.pills.hint.pillList": "Contém {numberOfPills} pílulas"
+  "Terra.pills.label.showLess": "Mostrar menos",
+  "Terra.pills.hint.removable": "item removível via tecla Delete ou Backspace",
+  "Terra.pills.hint.selectable": "para informações adicionais, o botão é selecionável por meio da barra de espaço ou da tecla Enter",
+  "Terra.pills.hint.selectableAndRemovable": "item removível via tecla Delete ou Backspace, para informações adicionais, o botão é selecionável por meio da barra de espaço ou da tecla Enter",
+  "Terra.pills.hint.wasRemoved": "{pillLabelName} removido",
+  "Terra.pills.hint.rollupPill": "{pillsNotVisibleCount} itens ocultos. Optar por exibir itens {pillsNotVisibleCount} ocultos",
+  "Terra.pills.hint.showLess": "Optar por ocultar itens",
+  "Terra.pills.hint.rollupNotVisible": "{pillsNotVisibleCount} itens não exibidos",
+  "Terra.pills.hint.rollupVisible": "{pillsNotVisibleCount} itens ocultos agora são exibidos",
+  "Terra.pills.hint.pillList": "Contém {numberOfPills} itens"
 }
