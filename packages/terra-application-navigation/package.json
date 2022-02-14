@@ -1,7 +1,7 @@
 {
   "name": "terra-application-navigation",
   "main": "lib/ApplicationNavigation.js",
-  "version": "1.59.0",
+  "version": "1.59.1",
   "description": "The Terra Application Navigation is a responsive, themeable layout for building applications. ApplicationNavigation is comprised of selectable navigation and utility elements with selection callbacks.",
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-application": "^1.12.0"
+    "terra-application": "^1.48.0"
   },
   "peerDependencies": {
     "react": "^16.8.5",

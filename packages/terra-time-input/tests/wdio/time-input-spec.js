@@ -306,7 +306,7 @@ describe('Time Input onBlur operations', () => {
   });
 });
 
-describe('Time Input up and down arrow operations', () => {
+describe('Time Input shortcut key operations', () => {
   it('decrements hour by 1 using DOWN_ARROW', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
     browser.refresh();
@@ -351,5 +351,473 @@ describe('Time Input up and down arrow operations', () => {
     $('#timeInput input[name="terra-time-hour-time-input"]').click();
     browser.keys(['ArrowUp']);
     Terra.validates.element('UP_ARROW ignored for hour 23');
+  });
+
+  describe.only('pressing N', () => {
+    describe('in the hour input', () => {
+      it('should set time to current if blank', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('n');
+        const currentDate = new Date();
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+      });
+
+      it('should set time to current if partially filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('12');
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('n');
+        const currentDate = new Date();
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        const minuteValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const minuteTimeValue = Number(timevalue[1]);
+        const minutesInRange = (minuteTimeValue === minuteValue + 1 || minuteTimeValue === minuteValue);
+        expect(minutesInRange).toBe(true);
+      });
+
+      it('should set time to current if filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default-time');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('n');
+        const currentDate = new Date();
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        const minuteValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const minuteTimeValue = Number(timevalue[1]);
+        const minutesInRange = (minuteTimeValue === minuteValue + 1 || minuteTimeValue === minuteValue);
+        expect(minutesInRange).toBe(true);
+      });
+    });
+
+    describe('in the minute input', () => {
+      it('should set time to current if blank', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('n');
+        const currentDate = new Date();
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        const minuteValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const minuteTimeValue = Number(timevalue[1]);
+        const minutesInRange = (minuteTimeValue === minuteValue + 1 || minuteTimeValue === minuteValue);
+        expect(minutesInRange).toBe(true);
+      });
+
+      it('should set time to current if partially filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('12');
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('n');
+        const currentDate = new Date();
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        const minuteValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const minuteTimeValue = Number(timevalue[1]);
+        const minutesInRange = (minuteTimeValue === minuteValue + 1 || minuteTimeValue === minuteValue);
+        expect(minutesInRange).toBe(true);
+      });
+
+      it('should set time to current if filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default-time');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('n');
+        const currentDate = new Date();
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        const minuteValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const minuteTimeValue = Number(timevalue[1]);
+        const minutesInRange = (minuteTimeValue === minuteValue + 1 || minuteTimeValue === minuteValue);
+        expect(minutesInRange).toBe(true);
+      });
+    });
+
+    describe('in the second input', () => {
+      it('should set time to current if blank', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/second');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+        $('#timeInput input[name="terra-time-second-time-input"]').click();
+        browser.keys('n');
+        const currentDate = new Date();
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const secondsTimeValue = Number(timevalue[1]);
+        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+        expect(secondsInRange).toBe(true);
+      });
+
+      it('should set time to current if partially filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/second');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+        $('#timeInput input[name="terra-time-second-time-input"]').click();
+        browser.keys('12');
+        $('#timeInput input[name="terra-time-second-time-input"]').click();
+        browser.keys('n');
+        const currentDate = new Date();
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const secondsTimeValue = Number(timevalue[1]);
+        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+        expect(secondsInRange).toBe(true);
+      });
+
+      it('should set time to current if filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/second-time');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+        $('#timeInput input[name="terra-time-second-time-input"]').click();
+        browser.keys('n');
+        const currentDate = new Date();
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const secondsTimeValue = Number(timevalue[1]);
+        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+        expect(secondsInRange).toBe(true);
+      });
+    });
+  });
+
+  describe.only('pressing -', () => {
+    describe('in the hour input', () => {
+      it('should set time to current time minus one minute if blank', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('-');
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() - 1);
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+      });
+
+      it('should set time to current time minus one minute if partially filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('12');
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('-');
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() - 1);
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+      });
+
+      it('should subtract 1 minute if filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default-time');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('-');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('11');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('59');
+      });
+    });
+
+    describe('in the minute input', () => {
+      it('should set time to current time minus one minute if blank', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('-');
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() - 1);
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+      });
+
+      it('should set time to current time minus one minute if partially filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('12');
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('-');
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() - 1);
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+      });
+
+      it('should roll over the hour if minute is at 00', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('12');
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('00');
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('-');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('11');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('59');
+      });
+
+      it('should subtract 1 minute if filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default-time');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('-');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('11');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('59');
+      });
+    });
+
+    describe('in the second input', () => {
+      it('should set time to current time minus one minute if blank', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/second');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+        $('#timeInput input[name="terra-time-second-time-input"]').click();
+        browser.keys('-');
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() - 1);
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const secondsTimeValue = Number(timevalue[1]);
+        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+        expect(secondsInRange).toBe(true);
+      });
+
+      it('should set time to current time minus one minute if partially filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/second');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+        $('#timeInput input[name="terra-time-second-time-input"]').click();
+        browser.keys('12');
+        $('#timeInput input[name="terra-time-second-time-input"]').click();
+        browser.keys('-');
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() - 1);
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const secondsTimeValue = Number(timevalue[1]);
+        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+        expect(secondsInRange).toBe(true);
+      });
+
+      it('should subtract 1 minute if filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/second-time');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+        $('#timeInput input[name="terra-time-second-time-input"]').click();
+        browser.keys('-');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('11');
+        expect($('#timeInput input[name="terra-time-second-time-input"]')).toHaveValue('12');
+      });
+    });
+  });
+
+  describe.only('pressing +', () => {
+    describe('in the hour input', () => {
+      it('should set time to current time plus one minute if blank', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('+');
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() + 1);
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+      });
+
+      it('should set time to current time plus one minute if partially filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('12');
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('+');
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() + 1);
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+      });
+
+      it('should add 1 minute if filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default-time');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('+');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('01');
+      });
+    });
+
+    describe('in the minute input', () => {
+      it('should set time to current time plus one minute if blank', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('+');
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() + 1);
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+      });
+
+      it('should set time to current time plus one minute if partially filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('12');
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('+');
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() + 1);
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+      });
+
+      it('should roll over the hour if minute is at 59', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+        $('#timeInput input[name="terra-time-hour-time-input"]').click();
+        browser.keys('11');
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('59');
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('+');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('00');
+      });
+
+      it('should add 1 minute if filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/default-time');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+        $('#timeInput input[name="terra-time-minute-time-input"]').click();
+        browser.keys('+');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('01');
+      });
+    });
+
+    describe('in the second input', () => {
+      it('should set time to current time plus one minute if blank', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/second');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+        $('#timeInput input[name="terra-time-second-time-input"]').click();
+        browser.keys('+');
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() + 1);
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const secondsTimeValue = Number(timevalue[1]);
+        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+        expect(secondsInRange).toBe(true);
+      });
+
+      it('should set time to current time plus one minute if partially filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/second');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+        $('#timeInput input[name="terra-time-second-time-input"]').click();
+        browser.keys('12');
+        $('#timeInput input[name="terra-time-second-time-input"]').click();
+        browser.keys('+');
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() + 1);
+        const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const secondsTimeValue = Number(timevalue[1]);
+        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+        expect(secondsInRange).toBe(true);
+      });
+
+      it('should add 1 minute if filled', () => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/second-time');
+        browser.refresh();
+        Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+        $('#timeInput input[name="terra-time-second-time-input"]').click();
+        browser.keys('+');
+        expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('13');
+        expect($('#timeInput input[name="terra-time-second-time-input"]')).toHaveValue('12');
+      });
+    });
   });
 });

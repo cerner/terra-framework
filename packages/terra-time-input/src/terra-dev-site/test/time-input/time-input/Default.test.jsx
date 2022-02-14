@@ -7,10 +7,12 @@ const cx = classNames.bind(styles);
 
 const TimeInputDefault = () => (
   <div className={cx('content-wrapper')}>
+    <p>Placeholder text to gauge padding.</p>
     <TimeInput
       id="timeInput"
       name="time-input"
     />
+    <p>Placeholder text to gauge padding.</p>
   </div>
 );
 
