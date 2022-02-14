@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import FilterPills from '@cerner/terra-pills/lib/index';
+import FilterPills from 'terra-pills';
 
 import styles from './FilterPillsTestCommon.module.scss';
 
@@ -41,7 +41,7 @@ const SingleSelectableRemovableFilterPill = () => {
         ))}
       </FilterPills>
 
-      {pillsData.length <= 0
+      {pills.length <= 0
         && <button type="button" onClick={() => setPills(pillsData)}>Show Pill</button>}
     </>
   );
