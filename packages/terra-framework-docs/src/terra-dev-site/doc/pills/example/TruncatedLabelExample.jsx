@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import FilterPills from 'terra-pills';
 
-import styles from './FilterPillsTestCommon.module.scss';
+import styles from './FilterPillCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
-const SingleRemovableFilterPill = () => {
+const FilterPillsWithLongLabel = () => {
   const pillsData = [
     {
-      label: 'asthma',
+      label: 'bronchitis',
       labelCategory: 'respiratory',
-      id: 'terra-filter-pills-removable-pill-asthma',
+      id: 'terra-filter-pills-selectable-removable-pill-bronchitis',
     },
   ];
   const [pills, setPills] = useState(pillsData);
@@ -23,11 +23,10 @@ const SingleRemovableFilterPill = () => {
   };
 
   return (
-    <>
+    <div className={cx('filter-pill-container')}>
       <FilterPills
-        ariaLabel="Example of Single Removable Filter Pill"
+        ariaLabel="Example of Filter Pill with long label"
         onRemove={handleOnRemove}
-        className={cx(['show-border'])}
       >
         {pills.map((pill, index) => (
           <FilterPills.Pill
@@ -40,10 +39,11 @@ const SingleRemovableFilterPill = () => {
           />
         ))}
       </FilterPills>
+
       {pills.length <= 0
-        && <button type="button" onClick={() => setPills(pillsData)}>Show Pill</button>}
-    </>
+        && <button type="button" onClick={() => setPills(pillsData)}>Reset the Example</button>}
+    </div>
   );
 };
 
-export default SingleRemovableFilterPill;
+export default FilterPillsWithLongLabel;
