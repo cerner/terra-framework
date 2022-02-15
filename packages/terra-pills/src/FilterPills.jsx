@@ -378,12 +378,11 @@ const FilterPills = (props) => {
   if (isCollapsible && (rollUpCount > 0) && isCollapsed) {
     pillGroupInteractionHint += `, ${intl.formatMessage({ id: 'Terra.pills.hint.rollupNotVisible' }, { pillsNotVisibleCount: rollUpCount })}`;
   } else if (isCollapsible && !isCollapsed && showRollupPillInteraction) {
-    removedPillInteractionHint = 'hidden items are displayed now...'; // needs transtaions lp052179
+    removedPillInteractionHint = intl.formatMessage({ id: 'Terra.pills.hint.rollupVisible' });
   }
   if (pillRemoved) {
-    removedPillInteractionHint = `${removedLabel.current} was removed...`; // needs translations lp052179
+    removedPillInteractionHint = intl.formatMessage({ id: 'Terra.pills.hint.wasRemoved' }, { pillLabelName: removedLabel.current });
   }
-
   const renderChildren = (items) => {
     const pills = React.Children.map(items, (pill) => {
       if (React.isValidElement(pill)) {
