@@ -68,11 +68,11 @@ exports[`Rollup Pill should render rollup pill with label show less when isColla
       role="listitem"
     >
       <button
-        aria-describedby="rollup-pill-hint"
+        aria-describedby="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
         className="rollup-pill"
         data-terra-rollup-pill={true}
         data-terra-rollup-pill-show-focus-styles={true}
-        id="rollup-pill"
+        id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -88,13 +88,13 @@ exports[`Rollup Pill should render rollup pill with label show less when isColla
       </button>
       <VisuallyHiddenText
         aria-hidden="true"
-        id="rollup-pill-hint"
+        id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
         text="Terra.pills.hint.showLess"
       >
         <span
           aria-hidden="true"
           className="visually-hidden-text"
-          id="rollup-pill-hint"
+          id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
         >
           Terra.pills.hint.showLess
         </span>
@@ -172,11 +172,11 @@ exports[`Rollup Pill should render rollup pill with label show less when isColla
       role="listitem"
     >
       <button
-        aria-describedby="rollup-pill-hint"
+        aria-describedby="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
         className="rollup-pill"
         data-terra-rollup-pill={true}
         data-terra-rollup-pill-show-focus-styles={true}
-        id="rollup-pill"
+        id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -192,13 +192,13 @@ exports[`Rollup Pill should render rollup pill with label show less when isColla
       </button>
       <VisuallyHiddenText
         aria-hidden="true"
-        id="rollup-pill-hint"
+        id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
         text="Terra.pills.hint.rollupPill"
       >
         <span
           aria-hidden="true"
           className="visually-hidden-text"
-          id="rollup-pill-hint"
+          id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
         >
           Terra.pills.hint.rollupPill
         </span>
@@ -276,11 +276,11 @@ exports[`Rollup Pill should render rollup pill with label show more 1`] = `
       role="listitem"
     >
       <button
-        aria-describedby="rollup-pill-hint"
+        aria-describedby="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
         className="rollup-pill"
         data-terra-rollup-pill={true}
         data-terra-rollup-pill-show-focus-styles={true}
-        id="rollup-pill"
+        id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -296,13 +296,13 @@ exports[`Rollup Pill should render rollup pill with label show more 1`] = `
       </button>
       <VisuallyHiddenText
         aria-hidden="true"
-        id="rollup-pill-hint"
+        id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
         text="Terra.pills.hint.rollupPill"
       >
         <span
           aria-hidden="true"
           className="visually-hidden-text"
-          id="rollup-pill-hint"
+          id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
         >
           Terra.pills.hint.rollupPill
         </span>

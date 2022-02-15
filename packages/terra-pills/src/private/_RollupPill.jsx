@@ -8,6 +8,7 @@ import { injectIntl } from 'react-intl';
 import classNamesBind from 'classnames/bind';
 import PropTypes from 'prop-types';
 import ThemeContext from 'terra-theme-context';
+import uuidv4 from 'uuid/v4';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './Pill.module.scss';
 
@@ -65,13 +66,15 @@ const RollUpPill = (props) => {
 
   const rollUpLabel = isCollapsed && rollupCount > 0 ? intl.formatMessage({ id: 'Terra.pills.label.rollupPill' }, { pillsNotVisibleCount: rollupCount }) : intl.formatMessage({ id: 'Terra.pills.label.showLess' });
   const rollUpHint = isCollapsed ? intl.formatMessage({ id: 'Terra.pills.hint.rollupPill' }, { pillsNotVisibleCount: rollupCount }) : intl.formatMessage({ id: 'Terra.pills.hint.showLess' });
+  const rollUpPillId = `terra-rollup-pill-${uuidv4()}`;
+  const visuallyHiddenContentId = `terra-rollup-pill-${uuidv4()}`;
   return (
     <div
       role="listitem"
       className={cx('pill-list-item')}
     >
       <button
-        id="rollup-pill"
+        id={rollUpPillId}
         className={cx(['rollup-pill', theme.className])}
         onClick={handleOnSelectRollUp}
         onKeyDown={handleRollUpPillKeyDown}
@@ -80,13 +83,13 @@ const RollUpPill = (props) => {
         ref={rollUpPillRef}
         tabIndex="0"
         type="button"
-        aria-describedby="rollup-pill-hint"
+        aria-describedby={visuallyHiddenContentId}
         data-terra-rollup-pill-show-focus-styles
         data-terra-rollup-pill
       >
         <span className={cx('rollup-pill-label')}>{rollUpLabel}</span>
       </button>
-      <VisuallyHiddenText id="rollup-pill-hint" text={rollUpHint} aria-hidden="true" />
+      <VisuallyHiddenText id={visuallyHiddenContentId} text={rollUpHint} aria-hidden="true" />
     </div>
   );
 };

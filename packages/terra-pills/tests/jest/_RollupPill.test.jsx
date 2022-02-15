@@ -3,6 +3,8 @@ import React from 'react';
 import { mountWithIntl } from 'terra-enzyme-intl';
 import RollupPill from '../../src/private/_RollupPill';
 
+jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+
 describe('Rollup Pill', () => {
   it('should render rollup pill with label show more', () => {
     const wrapper = mountWithIntl(<RollupPill isCollapsed rollupCount={4} />);

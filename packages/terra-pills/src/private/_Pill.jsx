@@ -58,12 +58,6 @@ const propTypes = {
   title: PropTypes.string,
 };
 
-const defaultProps = {
-  onRemove: undefined,
-  pillKey: undefined,
-  title: undefined,
-};
-
 const Pill = (props) => {
   const {
     label,
@@ -81,7 +75,7 @@ const Pill = (props) => {
   const theme = React.useContext(ThemeContext);
   const pillRef = useRef();
   const [isTruncated, setIsTruncated] = useState(false);
-  const [open, setPopupOpen] = useState(false);
+  const [popupOpen, setPopupOpen] = useState(false);
 
   const basicPillTruncation = useCallback(() => {
     if (pillRef.current.firstElementChild.scrollWidth > pillRef.current.firstElementChild.clientWidth) {
@@ -212,7 +206,7 @@ const Pill = (props) => {
 
   const renderTruncatedLabelPopup = () => (
     <Popup
-      isOpen={open}
+      isOpen={popupOpen}
       isArrowDisplayed
       targetRef={getPillRef}
       onRequestClose={handleOnRequestClose}
@@ -288,12 +282,12 @@ const Pill = (props) => {
           data-terra-pills-show-focus-styles
           data-terra-pill
         >
-          <label className={pillLabelClassNames}>
+          <span className={pillLabelClassNames}>
             {labelCategory
               ? <span className={cx('pill-category')}>{`${labelCategory}: `}</span>
               : undefined}
             <span>{label}</span>
-          </label>
+          </span>
           {pillInteraction.isRemovable && renderRemoveButton()}
         </div>
       </>
@@ -306,6 +300,5 @@ const Pill = (props) => {
 };
 
 Pill.propTypes = propTypes;
-Pill.defaultProps = defaultProps;
 
 export default injectIntl(Pill);
