@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.45.0 - (February 15, 2022)
+
 * Fixed
   * Accessibility improvements.
 
