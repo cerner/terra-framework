@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.73.0 - (February 15, 2022)
+
 * Changed
   * Minor test updates due to Time Input dependency changes
 
