@@ -1,4 +1,9 @@
 Terra.describeViewports('Time Input', ['medium'], () => {
+  it('works with a label', () => {
+    browser.url('/raw/tests/terra-time-input/time-input/time-input/accessibility');
+    Terra.validates.element('default no time');
+  });
+
   it('displays default with no time provided', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
     Terra.validates.element('default no time');

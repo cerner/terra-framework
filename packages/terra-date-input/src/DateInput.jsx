@@ -253,13 +253,13 @@ class DateInput extends React.Component {
    * @param {DateInputUtil.inputType} inputType Type definition of the input that received the keydown event.
    */
   handleInputKeyDown(event, inputType) {
-    if (event.keyCode === KeyCode.KEY_T) {
+    if (event.key === 't' || event.key === 'T') {
       this.setHotKeyDate(event, 0);
       return;
-    } if (event.keyCode === KeyCode.KEY_DASH) {
+    } if (event.key === '-' || event.key === '_') {
       this.setHotKeyDate(event, -1);
       return;
-    } if (event.keyCode === KeyCode.KEY_EQUALS) {
+    } if (event.key === '=' || event.key === '+') {
       this.setHotKeyDate(event, 1);
       return;
     }
