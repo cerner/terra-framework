@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Changed keyboard shortcuts to detect via `event.key` instead of `event.keyCode`.
+
 ## 1.32.0 - (January 4, 2022)
 
 * Added

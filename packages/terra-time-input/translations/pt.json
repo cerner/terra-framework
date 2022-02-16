@@ -1,11 +1,22 @@
 {
-  "Terra.timeInput.am": "",
-  "Terra.timeInput.pm": "",
+  "Terra.timeInput.a11yLabelDefault": "Hora",
+  "Terra.timeInput.am": "a.m.",
+  "Terra.timeInput.descriptionMinute": "Minutos com dois dígitos.",
+  "Terra.timeInput.descriptionSecond": "Segundos com dois dígitos.",
+  "Terra.timeInput.hourDescriptionTwelve": "Formato de 12 horas com dois dígitos.",
+  "Terra.timeInput.hourDescriptionTwentyFour": "Formato de 24 horas com dois dígitos.",
+  "Terra.timeInput.hourLabel": "{a11yLabel} hora",
   "Terra.timeInput.hours": "Horas",
+  "Terra.timeInput.labeledTextValue": "{a11yLabel} {a11yTimeValue}",
+  "Terra.timeInput.maskHourMinute": "(hh:mm)",
+  "Terra.timeInput.maskHourMinuteSecond": "(hh:mm:ss)",
   "Terra.timeInput.minutes": "Minutos",
+  "Terra.timeInput.pm": "p.m.",
   "Terra.timeInput.seconds": "Segundos",
-  "Terra.timeInput.hh": "HH",
-  "Terra.timeInput.mm": "mm",
-  "Terra.timeInput.ss": "s",
-  "Terra.timeInput.timeFormatLabel": "Formato da hora:"
+  "Terra.timeInput.textValueTwelveHourMinute": "{hour}:{minute} {meridiem}",
+  "Terra.timeInput.textValueTwelveHourMinuteSecond": "{hour}:{minute}:{second} {meridiem}",
+  "Terra.timeInput.textValueTwentyFourHourMinute": "{hour}:{minute}",
+  "Terra.timeInput.textValueTwentyFourHourMinuteSecond": "{hour}:{minute}:{second}",
+  "Terra.timeInput.timeFormatLabel": "Formato da hora:",
+  "Terra.timeInput.timeSpacer": ":"
 }
