@@ -17,10 +17,9 @@ import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
 import uuidv4 from 'uuid/v4';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import Pill from './private/_Pill';
-import PillsUtils from './private/_PillsUtils';
-import RollUpPill from './private/_RollupPill';
-import styles from './private/Pill.module.scss';
+import PillsUtils from './PillsUtils';
+import RollUpPill from './subcomponents/_RollupPill';
+import styles from './subcomponents/Pill.module.scss';
 
 const cx = classNamesBind.bind(styles);
 
@@ -47,6 +46,7 @@ const propTypes = {
    */
   ariaDescribedBy: PropTypes.string,
   /**
+   * @private
    * The content to be shown in the pills container. Should only contain the sub-component `<Pills.Pill>`.
    */
   children: PropTypes.node,
@@ -55,7 +55,7 @@ const propTypes = {
    */
   isCollapsible: PropTypes.bool,
   /**
-   * Callback function to remove a pill, returns 'pillKey' and 'metadata' props from the removed `<Pills.Pill>` sub-component.
+   * Callback function to remove a pill, returns 'id' and 'metadata'.
    */
   onRemove: PropTypes.func,
   /**
@@ -98,7 +98,7 @@ const FilterPills = (props) => {
 
   // Identifies the number of pills that needs to be hidden/rolled up
   const generateRollUp = useCallback(() => {
-    const startIndex = PillsUtils.handleRollUp(filterPillsRef);
+    const startIndex = PillsUtils.getRollUpIndex(filterPillsRef);
     if (isCollapsed) {
       setUpdatedCount(startIndex);
       setRollUpCount(React.Children.count(children) - startIndex);
@@ -168,7 +168,7 @@ const FilterPills = (props) => {
   const handlePillDeletion = useCallback(() => {
     const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
     const rollUpPill = filterPillsRef.current.querySelector('[data-terra-rollup-pill]');
-    const startIndex = PillsUtils.handleRollUp(filterPillsRef);
+    const startIndex = PillsUtils.getRollUpIndex(filterPillsRef);
 
     if (isPillDeleted.current) {
       if (React.Children.count(children) <= 0) {
@@ -259,7 +259,7 @@ const FilterPills = (props) => {
   };
 
   const focusNodeAfterDelete = (pills) => {
-    if (pills.length - 1 < React.Children.count(children)) {
+    if (React.Children.count(children) > 0 && pills.length - 1 < React.Children.count(children)) {
       setIsPillRemoved(true);
       removedLabel.current = pills[focusNode.current].children[0].innerText;
       setTabIndex('-1');
@@ -311,7 +311,7 @@ const FilterPills = (props) => {
     }
   };
 
-  const handleOnRemove = (pillKey, metaData, event) => {
+  const handleOnRemove = (id, metaData, event) => {
     const pills = [...filterPillsRef.current.querySelectorAll('[data-terra-pill]')];
     const targetId = event.target.parentElement.getAttribute('id');
     const currentIndex = pills.findIndex((element) => element.id === targetId);
@@ -330,7 +330,7 @@ const FilterPills = (props) => {
     focusPillsContainer();
 
     if (onRemove) {
-      onRemove(pillKey, metaData);
+      onRemove(id, metaData);
     }
   };
 
@@ -428,7 +428,6 @@ const FilterPills = (props) => {
   );
 };
 
-FilterPills.Pill = Pill;
 FilterPills.defaultProps = defaultProps;
 FilterPills.propTypes = propTypes;
 

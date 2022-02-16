@@ -1,7 +1,3 @@
-// const ignoredA11y = {
-//   'aria-roles': { enabled: false },
-// };
-
 Terra.describeViewports('Pills', ['medium'], () => {
   describe('Single Selectable Removable Pills', () => {
     it('display a selectable-pill', () => {
@@ -100,12 +96,12 @@ Terra.describeViewports('Pills', ['large'], () => {
       });
 
       it('should collapse all collapsible-pills', () => {
-        browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'Enter']);
+        browser.keys(['Tab', 'ArrowRight', 'Enter']);
         Terra.validates.element('collapse all pills', { selector: '#root' });
       });
 
       it('should hide all collapsible-pills', () => {
-        browser.keys(['ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'Enter']);
+        browser.keys(['ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'Enter']);
         Terra.validates.element('hide all pills', { selector: '#root' });
       });
 

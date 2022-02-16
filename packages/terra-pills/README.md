@@ -3,7 +3,7 @@
 [![NPM version](https://badgen.net/npm/v/terra-pills)](https://www.npmjs.com/package/terra-pills)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
-The terra-pills component provides a way to either display a static text or optionally allow trigger actions to launch popovers with the desired content.
+The terra-pills component provides a way to allow trigger actions to launch popovers with the desired content or to remove the component.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://engineering.cerner.com/terra-ui/components/terra-pills/pills/pills)

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import FilterPills from 'terra-pills';
+import FilterPills, { Pill } from 'terra-pills';
 
 import styles from './FilterPillCommon.module.scss';
 
@@ -26,7 +26,7 @@ const VisibleLabelExample = () => {
   ];
   const [pills, setPills] = useState(pillsData);
 
-  const handleOnRemove = (pillKey, metaData) => {
+  const handleOnRemove = (id, metaData) => {
     const pillsArray = pills;
     pillsArray.splice(metaData.index, 1);
     setPills([...pillsArray]);
@@ -43,12 +43,11 @@ const VisibleLabelExample = () => {
         onRemove={handleOnRemove}
       >
         {pills.map((pill, index) => (
-          <FilterPills.Pill
+          <Pill
             label={pill.label}
             labelCategory={pill.labelCategory}
             id={pill.id}
             key={pill.id}
-            pillKey={pill.label}
             metaData={{ index }}
           />
         ))}

@@ -33,13 +33,9 @@ const propTypes = {
    */
   labelCategory: PropTypes.string,
   /**
-   * Object returned along with the 'pillKey' in the `onRemove`
+   * Object returned in the `onRemove`
    */
   metaData: PropTypes.object,
-  /**
-   * To identify which pill is being removed.
-   */
-  pillKey: PropTypes.string,
   /**
    * @private
    * The intl object to be injected for translations.
@@ -47,7 +43,7 @@ const propTypes = {
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
    *
-   * A callback function to execute when the pill is removed. Returns pillKey, metadata.
+   * A callback function to execute when the pill is removed. Returns id, metadata.
    */
   onRemove: PropTypes.func,
   /**
@@ -66,7 +62,6 @@ const Pill = (props) => {
     intl,
     metaData,
     onRemove,
-    pillKey,
     title,
     onSelect,
     ...customProps
@@ -108,7 +103,7 @@ const Pill = (props) => {
   const handleOnRemove = (event) => {
     event.preventDefault();
     event.stopPropagation();
-    onRemove(pillKey, metaData, event);
+    onRemove(id, metaData, event);
   };
 
   const handleOnClick = (event) => {
@@ -135,7 +130,7 @@ const Pill = (props) => {
     } else if ((event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE)) {
       event.preventDefault();
       if (onRemove) {
-        onRemove(pillKey, metaData, event);
+        onRemove(id, metaData, event);
       }
     }
   };
@@ -157,7 +152,8 @@ const Pill = (props) => {
   pillInteraction.isSelectableAndRemovable = (onRemove && isTruncated);
 
   const pillProps = {};
-  pillProps.title = title || (isTruncated ? label : undefined);
+  const categoryAndLabel = labelCategory ? `${labelCategory}: ${label}` : label;
+  pillProps.title = title || (isTruncated ? categoryAndLabel : undefined);
   if (pillInteraction.isSelectable || pillInteraction.isRemovable) {
     pillProps.tabIndex = '0';
     pillProps.onKeyDown = handleOnKeyDown;
