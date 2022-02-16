@@ -449,7 +449,18 @@ class TimeInput extends React.Component {
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
         if (minute === '0' || minute === '00') {
           minute = '59';
-          hour = TimeUtil.decrementHour(hour);
+          if (hour === '0' || hour === '00') {
+            hour = '23';
+          } else {
+            if (variant === TimeUtil.FORMAT_12_HOUR && hour === '12') {
+              if (meridiem === this.anteMeridiem) {
+                meridiem = this.postMeridiem;
+              } else {
+                meridiem = this.anteMeridiem;
+              }
+            }
+            hour = TimeUtil.decrementHour(hour);
+          }
         } else {
           minute = TimeUtil.decrementMinute(minute);
         }
@@ -458,13 +469,25 @@ class TimeInput extends React.Component {
         const currentTime = this.getCurrentTime();
         let formatHour = currentTime.hour;
         let formatMinute = currentTime.minute;
-        if (currentTime.minute === '0' || currentTime.minute === '00') {
+        let formatMeridiem = currentTime.meridiem;
+        if (formatMinute === '0' || formatMinute === '00') {
           formatMinute = '59';
-          formatHour = TimeUtil.decrementHour(formatHour);
+          if (formatHour === '0' || formatHour === '00') {
+            formatHour = '23';
+          } else {
+            if (variant === TimeUtil.FORMAT_12_HOUR && formatHour === '12') {
+              if (formatMeridiem === this.anteMeridiem) {
+                formatMeridiem = this.postMeridiem;
+              } else {
+                formatMeridiem = this.anteMeridiem;
+              }
+            }
+            formatHour = TimeUtil.decrementHour(formatHour);
+          }
         } else {
           formatMinute = TimeUtil.decrementMinute(formatMinute);
         }
-        this.setTime(event, formatHour, formatMinute, currentTime.second, currentTime.meridiem);
+        this.setTime(event, formatHour, formatMinute, currentTime.second, formatMeridiem);
       }
       return;
     }
@@ -474,7 +497,18 @@ class TimeInput extends React.Component {
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
         if (minute === '59') {
           minute = '00';
-          hour = TimeUtil.incrementHour(hour);
+          if (hour === '23') {
+            hour = '00';
+          } else {
+            if (variant === TimeUtil.FORMAT_12_HOUR && hour === '11') {
+              if (meridiem === this.anteMeridiem) {
+                meridiem = this.postMeridiem;
+              } else {
+                meridiem = this.anteMeridiem;
+              }
+            }
+            hour = TimeUtil.incrementHour(hour);
+          }
         } else {
           minute = TimeUtil.incrementMinute(minute);
         }
@@ -483,13 +517,25 @@ class TimeInput extends React.Component {
         const currentTime = this.getCurrentTime();
         let formatHour = currentTime.hour;
         let formatMinute = currentTime.minute;
+        let formatMeridiem = currentTime.meridiem;
         if (currentTime.minute === '59') {
           formatMinute = '00';
-          formatHour = TimeUtil.incrementHour(formatHour);
+          if (formatHour === '23') {
+            formatHour = '00';
+          } else {
+            if (variant === TimeUtil.FORMAT_12_HOUR && formatHour === '11') {
+              if (formatMeridiem === this.anteMeridiem) {
+                formatMeridiem = this.postMeridiem;
+              } else {
+                formatMeridiem = this.anteMeridiem;
+              }
+            }
+            formatHour = TimeUtil.incrementHour(formatHour);
+          }
         } else {
           formatMinute = TimeUtil.incrementMinute(formatMinute);
         }
-        this.setTime(event, formatHour, formatMinute, currentTime.second, currentTime.meridiem);
+        this.setTime(event, formatHour, formatMinute, currentTime.second, formatMeridiem);
       }
       return;
     }

@@ -318,9 +318,63 @@ class DateTimePicker extends React.Component {
 
   handleTimeChange(event, time) {
     this.timeValue = time;
-    const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.initialTimeZone));
-    const validTime = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
-    const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
+    let validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.initialTimeZone));
+    let validTime = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
+    let previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
+    let dateChanged = false;
+
+    if (event.type === 'keydown') {
+      const timeArray = time.split(':');
+      if (event.key === 'n' || event.key === 'N') {
+        previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
+        this.dateValue = DateUtil.formatMomentDate(previousDateTime, this.state.dateFormat);
+        validDate = true;
+        dateChanged = true;
+      }
+
+      if (event.key === '-' || event.key === '_') {
+        if (!validDate) {
+          previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
+          this.dateValue = DateUtil.formatMomentDate(previousDateTime, this.state.dateFormat);
+          validDate = true;
+          dateChanged = true;
+        }
+
+        if (timeArray[0] === '23' && timeArray[1] === '59') {
+          previousDateTime = previousDateTime.subtract(1, 'd');
+          this.dateValue = DateUtil.formatMomentDate(previousDateTime, this.state.dateFormat);
+          dateChanged = true;
+        }
+      }
+
+      if (event.key === '=' || event.key === '+') {
+        if (!validDate) {
+          previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
+          this.dateValue = DateUtil.formatMomentDate(previousDateTime, this.state.dateFormat);
+          validDate = true;
+          dateChanged = true;
+        }
+
+        if (timeArray[0] === '00' && timeArray[1] === '00') {
+          previousDateTime = previousDateTime.add(1, 'd');
+          this.dateValue = DateUtil.formatMomentDate(previousDateTime, this.state.dateFormat);
+          dateChanged = true;
+        }
+      }
+
+      if (this.props.timeVariant === DateTimeUtils.FORMAT_12_HOUR && (event.key === 'a' || event.key === 'A' || event.key === 'p' || event.key === 'P')) {
+        if (!validDate) {
+          previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
+          this.dateValue = DateUtil.formatMomentDate(previousDateTime, this.state.dateFormat);
+          validDate = true;
+          dateChanged = true;
+        }
+      }
+    }
+
+    if (dateChanged) {
+      this.handleDateChange(event, previousDateTime.format('YYYY-MM-DD'));
+    }
 
     // If both date and time are valid, check if the time is the missing hour and invoke onChange.
     // If the date is valid but time is invalid, the time in the dateTime state needs to be cleared and render.
@@ -625,7 +679,9 @@ class DateTimePicker extends React.Component {
     } = this.props;
 
     const dateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
+    console.log(dateTime);
     const dateValue = DateUtil.formatMomentDate(dateTime, 'YYYY-MM-DD');
+    console.log(dateValue);
     const theme = this.context;
 
     return (
