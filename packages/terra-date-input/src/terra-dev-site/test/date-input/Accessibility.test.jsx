@@ -19,8 +19,31 @@ const Accessibility = () => {
   const [showDateInput, setShowDateInput] = useState(true);
   const [showDateInputField, setShowDateInputField] = useState(true);
 
-  function handleMutexChange(e) {
-    setMutex(e.currentTarget.value);
+  /**
+   * Use this generator to pump out tedious RadioField + Radios.
+   * @param {string} legend The text of the legend tag.
+   * @param {string} name The name of every Radio
+   * @param {object} options A list of strings to serve as the key, id, labelText, and value of every Radio.
+   * @param {function} onChange The handler you want called for every Radio's `change` event.
+   * @returns A component like <RadioField …><Radio …>, … </RadioField>
+   */
+  function generateRadioField(legend, name, options, onChange) {
+    return (
+      <RadioField legend={legend}>
+        {options.map((opt, index) => (
+          <Radio
+            // https://reactjs.org/docs/lists-and-keys.html#keys
+            key={opt}
+            name={name}
+            id={opt}
+            defaultChecked={index === 0}
+            labelText={opt}
+            value={opt}
+            onChange={onChange}
+          />
+        ))}
+      </RadioField>
+    );
   }
 
   return (
@@ -42,6 +65,8 @@ const Accessibility = () => {
           displayFormat={displayFormat}
           isIncomplete={mutex.includes('incomplete')}
           required={mutex.includes('required')}
+          showOptional={mutex.includes('showOptional')}
+          hideRequired={mutex.includes('hideRequired')}
         />
       </div>
       <div
@@ -54,6 +79,7 @@ const Accessibility = () => {
           value={value}
           onChange={(event, dateString) => setValue(dateString)}
           isInvalid={isInvalid}
+          displayFormat={displayFormat}
           disabled={disabled}
           isIncomplete={mutex.includes('incomplete')}
           required={mutex.includes('required')}
@@ -74,50 +100,19 @@ const Accessibility = () => {
         <InputField type="text" label="Error Message:" inputId="error" placeholder="Message to show when invalid" defaultValue={error} onInput={(e) => setError(e.currentTarget.value)} />
         <InputField type="text" label="Help Message:" inputId="help" placeholder="Message to provide more detailed help" defaultValue={help} onInput={(e) => setHelp(e.currentTarget.value)} />
 
-        <RadioField legend="Mutually Exclusive">
-          <Radio
-            name="mutex"
-            id="optional"
-            labelText="optional"
-            value="optional"
-            onChange={handleMutexChange}
-            defaultChecked
-          />
-          <Radio
-            name="mutex"
-            id="required"
-            labelText="required"
-            value="required"
-            onChange={handleMutexChange}
-          />
+        {generateRadioField('Mutually Exclusive', 'mutex', [
+          'optional',
+          'optional-showOptional',
+          'required',
+          'required-hideRequired',
+          'required-incomplete',
+          'required-incomplete-hideRequired',
+        ], (e) => setMutex(e.currentTarget.value))}
 
-          <Radio
-            name="mutex"
-            id="required-incomplete"
-            labelText="required &amp; incomplete"
-            value="required-incomplete"
-            onChange={handleMutexChange}
-          />
-        </RadioField>
-
-        <RadioField legend="Format">
-          <Radio
-            name="format"
-            id="month-day-year"
-            labelText="month-day-year"
-            value="month-day-year"
-            defaultChecked
-            onChange={(e) => setDisplayFormat(e.currentTarget.value)}
-          />
-
-          <Radio
-            name="format"
-            id="day-month-year"
-            labelText="day-month-year"
-            value="day-month-year"
-            onChange={(e) => setDisplayFormat(e.currentTarget.value)}
-          />
-        </RadioField>
+        {generateRadioField('Format', 'format', [
+          'month-day-year',
+          'day-month-year',
+        ], (e) => setDisplayFormat(e.currentTarget.value))}
 
         <CheckboxField legend="Show/Hide">
           <Checkbox id="showField" labelText="Show DateInputField" defaultChecked onChange={(e) => setShowDateInputField(e.currentTarget.checked)} />
