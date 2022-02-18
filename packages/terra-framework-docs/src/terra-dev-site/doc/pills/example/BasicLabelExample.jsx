@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FilterPills, { Pill } from 'terra-pills';
+import FilterPills, { Pill } from '@cerner/terra-pills';
 
 const BasicLabelExample = () => {
   const pillsData = [

@@ -21,19 +21,19 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-    * The html 'id' attribute for the pill, needed for proper keyboard interactions. (Required & must be unique)
+    * The html 'id' attribute for the pill, needed for proper keyboard interactions. (Required & must be unique).
     */
   id: PropTypes.string.isRequired,
   /**
-   * The label text for the pill. (Required)
+   * The label text for the pill. (Required).
    */
   label: PropTypes.string.isRequired,
   /**
-   * Secondary label text for the pill that displays a filter category
+   * Secondary label text for the pill that displays a filter category.
    */
   labelCategory: PropTypes.string,
   /**
-   * Object returned in the `onRemove`
+   * The associated metaData to be returned in the onRemove callback.
    */
   metaData: PropTypes.object,
   /**

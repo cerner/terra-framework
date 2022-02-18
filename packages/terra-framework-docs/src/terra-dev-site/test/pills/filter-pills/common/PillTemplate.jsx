@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import FilterPills, { Pill } from 'terra-pills';
+import FilterPills, { Pill } from '@cerner/terra-pills';
 
 const propTypes = {
   /**

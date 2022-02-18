@@ -1,5 +1,5 @@
 {
-  "name": "terra-pills",
+  "name": "@cerner/terra-pills",
   "main": "lib/index.js",
   "private": true,
   "version": "1.0.0",
