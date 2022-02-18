@@ -13,7 +13,7 @@ import PillsPropsTable from 'terra-pills/src/subcomponents/_Pill?dev-site-props-
 
 # Terra Filter Pills
 
-Pills are generally used to assign a label or keyword to user interface (UI) objects, defining a non-hierarchal group. They are used to visually label UI objects for quick recognition. These labels can be generated either by the system or created by users entering data.
+Pills are generally used to assign a label or keyword to user interface (UI) objects, defining a non-hierarchal group. They are used to visually label UI objects for quick recognition. These labels can be generated either by the system or users entering data.
 
 When using a filter workflow, which removes items from a view that do not satisfy specific criteria, Filter Pills can provide indication as to which facet categories and attributes the user can narrow the content by, helping to futher divide content in order to assist users in refining large results.
 
@@ -31,7 +31,7 @@ Filter Pills are comprised of the following:
 
 - Although similar, pills and tags have their own use cases and best practices for when they should be used within the UI. See [tags](https://engineering.cerner.com/terra-ui/components/terra-tag/tag/tag) for more information.
 
-- Although the filtering workflow may narrow down content to drive the user's workflow, it should not be used in place of primary or secondary navigation. See primary navigation and secondary navigation for more information.
+- Although the filtering workflow may narrow down content to drive the user's workflow, it should not be used in the place of primary or secondary navigation. See primary navigation and secondary navigation for more information.
 
 ## Getting Started
 
@@ -91,7 +91,7 @@ In cases where the width of the space is constrained and the text label for the 
 
 Filter Pills are commonly used in a group or list, which must include a label to indicate the intent or purpose of the contents of the list. Accordingly, the filter pills component requires the `ariaLabel` prop for accessibility minimum standards, to give a screenreader user the proper context of the list, but it is not visible to users.
 
-For best practice, it is recommended that pills include a visible label, which may need to be styled and positioned according to a specific usage and should be done so by each consumer. Use the `ariaLabelledBy` prop in Filter Pills, and provide it the ʻidʼ of the visible label or heading, which will allow for the visible text to be accessibly connected to the pills.
+As a best practice, the Filter Pills component should be accompanied by a visible label, which may need to be styled and positioned according to a specific usage and should be done so by each consumer. Use the `ariaLabelledBy` prop in Filter Pills, and provide it the ʻidʼ of the visible label or heading, which will allow for the visible text to be accessibly connected to the pills.
 
 Note: _The visible label referenced by the `ariaLabelledBy` prop and the `ariaLabel` prop should be set to the same string values for fallback protection, even though `ariaLabelledBy` should override `ariaLabel`._ [read more](https://engineering.cerner.com/terra-ui/components/cerner-terra-framework-docs/pills/accessibility-guide#construction)
 

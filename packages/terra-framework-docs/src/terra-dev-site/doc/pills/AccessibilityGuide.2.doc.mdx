@@ -19,7 +19,7 @@ Filter Pills have special interactions and construction that makes them unique f
 <Notice variant="important" ariaLevel="1">
 Accessibility Considerations:
 
-For best practice, it is recommended that pills include a visible label, which may need to be styled and positioned according to a specific usage and should be done so by each consumer. Use the `ariaLabelledBy` prop in Filter Pills, and provide it the ʻidʼ of the visible label or heading, which will allow for the visible text to be accessibly connected to the pills.
+As a best practice, the Filter Pills component should be accompanied by a visible label, which may need to be styled and positioned by the consumer according to their specific usage. Use the `ariaLabelledBy` prop in Filter Pills, and provide it the ʻidʼ of the visible label or heading. This will allow for the visible text to be accessibly connected to the pills.
 
 ```diff
     <div className={cx('filter-group-panel')}>
@@ -51,8 +51,8 @@ Note: _The visible label referenced by the `ariaLabelledBy` prop and the `ariaLa
 
 ### Interaction Details:
 
-- Filter Pills recieves focus as a group by `tab` keypress, then arrow keys change focus between individual pills within the group.
-- Only one focused pill per set of Filter Pills.
+- Filter Pills receives focus as a group by `tab` keypress, with arrow keys changing focus between individual pills within the group.
+- Only one pill can be focused per set of Filter Pills.
 - The remove button must not be a focusable element, but can be clickable.
 - Removing a filter pill with a keyboard is performed with the `Backspace` or `Delete` key when a pill has focus.
 
@@ -78,7 +78,7 @@ Note: _The visible label referenced by the `ariaLabelledBy` prop and the `ariaLa
   </tr>
   <tr>
     <td>Backspace or Delete</td>
-    <td>Removes the pill that currently has focus. After removing, focus should then be placed on the previous pill in the list. If no pills remain, focus is temporarily on the Filter Pills group until user navigates away, but cannot be focused on again while no interactive pills remain in the Filter Pills group.</td>
+    <td>Removes the pill that currently has focus. After removing, the focus should then be placed on the previous pill in the list. If no pills remain then the Filter Pills group will be focused until user navigates away. However the Filter Pills group cannot be focused on again while no interactive pills remain in the Filter Pills group.</td>
   </tr>
   <tr>
     <td>Enter or Space</td>

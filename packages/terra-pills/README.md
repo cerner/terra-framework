@@ -3,7 +3,7 @@
 [![NPM version](https://badgen.net/npm/v/terra-pills)](https://www.npmjs.com/package/terra-pills)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
-The terra-pills component provides a way to allow trigger actions to launch popovers with the desired content or to remove the component.
+Pills are generally used to assign a label or keyword to user interface (UI) objects, defining a non-hierarchal group. They are used to visually label UI objects for quick recognition. These labels can be generated either by the system or created by users entering data and labels provides close button to clear the label when required.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://engineering.cerner.com/terra-ui/components/terra-pills/pills/pills)
