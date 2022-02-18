@@ -4,6 +4,8 @@
 
 * Changed
   * Changed keyboard shortcuts to detect via `event.key` instead of `event.keyCode`.
+* Added
+  * Preliminary A11Y test harness for future enhancements.
 
 ## 1.32.0 - (January 4, 2022)
 
