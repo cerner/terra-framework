@@ -12,6 +12,7 @@ const Accessibility = () => {
   const [value, setValue] = useState('');
   const [disabled, setDisabled] = useState(false);
   const [isInvalid, setIsInvalid] = useState(false);
+  const [isLegendHidden, setIsLegendHidden] = useState(false);
   const [mutex, setMutex] = useState('optional');
   const [displayFormat, setDisplayFormat] = useState('month-day-year');
   const [help, setHelp] = useState('Helpful text.');
@@ -61,6 +62,7 @@ const Accessibility = () => {
           error={error}
           help={help}
           isInvalid={isInvalid}
+          isLegendHidden={isLegendHidden}
           disabled={disabled}
           displayFormat={displayFormat}
           isIncomplete={mutex.includes('incomplete')}
@@ -75,6 +77,7 @@ const Accessibility = () => {
       >
         <h1 aria-hidden>DateInput</h1>
         <DateInput
+          a11yLabel="Anniversary"
           name="date-of-birth"
           value={value}
           onChange={(event, dateString) => setValue(dateString)}
@@ -95,6 +98,7 @@ const Accessibility = () => {
         <CheckboxField legend="Props">
           <Checkbox id="disabled" labelText="disabled" onChange={() => setDisabled(val => !val)} />
           <Checkbox id="isInvalid" labelText="isInvalid" onChange={() => setIsInvalid(val => !val)} />
+          <Checkbox id="isLegendHidden" labelText="isLegendHidden" onChange={() => setIsLegendHidden(val => !val)} />
         </CheckboxField>
 
         <InputField type="text" label="Error Message:" inputId="error" placeholder="Message to show when invalid" defaultValue={error} onInput={(e) => setError(e.currentTarget.value)} />

@@ -228,6 +228,20 @@ const DateInputField = (props) => {
     <fieldset {...customProps} className={dateInputFieldClasses}>
       {legendGroup}
       <DateInput
+        /** The DateInput needs a label to use for the first control (date or month, depending on the locale).
+         *
+         * The first Input in the group has a combination label, 'Date of Birth Month', so that it's easy to pick out
+         * that field out of a list of many inputs in the same view when the screen reader is in picker mode. Picker
+         * mode lets the user can jump to elements in a page. Screen readers tend to present a flat list of inputs
+         * without context of which the Date Input those inputs belong to, like this:
+         *  ==SCREEN READER'S LIST OF FORM INPUTS TO PICK==
+         *  1. Date of Birth Month
+         *  2. Date
+         *  3. Year
+         *  4. Anniversary Month <-- easy to spot the start of this Date Input.
+         *  5. Date
+        */
+        a11yLabel={legend}
         name={name}
         onChange={onChange}
         onBlur={onBlur}

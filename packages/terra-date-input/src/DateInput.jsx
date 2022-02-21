@@ -558,11 +558,13 @@ class DateInput extends React.Component {
       { incomplete: (this.props.isIncomplete && this.props.required && !this.props.isInvalid) },
     ]);
 
+    const label = this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' }, { a11yLabel });
+
     return (
       <div className={DateInputMonthWrapperClassNames}>
         <select
           {...this.props.monthAttributes}
-          aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' }, { a11yLabel })}
+          aria-label={label}
           ref={this.monthRef}
           className={DateInputMonthClassNames}
           value={this.state.month}
@@ -746,8 +748,6 @@ class DateInput extends React.Component {
     if (month.length > 0 || day.length > 0 || year.length > 0) {
       dateValue = `${year}-${month}-${day}`;
     }
-
-    this.formatDescriptionId = `terra-date-input-description-format-${this.uuid}`;
 
     const format = DateInputUtil.getDateFormat(this.props);
 
