@@ -229,12 +229,11 @@ class DateInputUtil {
   }
 
   static getDateFormat(props) {
-    return (
-      (
-        DateInputUtil.computedDisplayFormat(props.displayFormat, props.intl.locale) === 'month-day-year')
-        ? `(${props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`
-        : `(${props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`
-    );
+    if (DateInputUtil.computedDisplayFormat(props.displayFormat, props.intl.locale) === 'month-day-year') {
+      return props.intl.formatMessage({ id: 'Terra.date.input.formatMonthDayYear' });
+    }
+
+    return props.intl.formatMessage({ id: 'Terra.date.input.formatDayMonthYear' });
   }
 
   static getAriaDescriptionId(options) {
