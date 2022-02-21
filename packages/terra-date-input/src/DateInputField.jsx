@@ -16,7 +16,7 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-   * The legend of the Date Input fieldset
+   * The legend of the Date Input fieldset. Also used by assistive technologies like screen readers even if isLegendHidden is true.
    */
   legend: PropTypes.string.isRequired,
   /**
@@ -244,14 +244,17 @@ const DateInputField = (props) => {
         yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDescriptionIds } }}
       />
       {isInvalid && error && <div id={errorAriaDescriptionId} className={cx('error-text')}>{error}</div>}
+      {/* The format is aria-hidden because it makes no sense when assistive technologies are reading the entire multi-field DateInput. Instead, each subfield component has its own description.  */}
       {help ? (
-        <div id={helpAriaDescriptionId} className={cx('help-text')} aria-label={`${intl.formatMessage({ id: 'Terra.date.input.dateFormatLabel' })} ${format}, ${help}`}>
-          {format}
+        <div className={cx('help-text')}>
+          <span aria-hidden>
+            {format}
           &nbsp;
+          </span>
           {help}
         </div>
       ) : (
-        <div id={helpAriaDescriptionId} className={cx('help-text')} aria-label={`${intl.formatMessage({ id: 'Terra.date.input.dateFormatLabel' })} ${format}`}>
+        <div aria-hidden className={cx('help-text')}>
           {format}
         </div>
       )}
