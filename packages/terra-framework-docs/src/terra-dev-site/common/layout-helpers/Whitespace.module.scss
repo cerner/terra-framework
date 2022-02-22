@@ -14,35 +14,35 @@
     padding: 0;
   }
 
-  .terra-newline-1 {
+  .newline-1 {
     @include terra-newline-height(1);
   }
 
-  .terra-newline-2 {
+  .newline-2 {
     @include terra-newline-height(2);
   }
 
-  .terra-newline-3 {
+  .newline-3 {
     @include terra-newline-height(3);
   }
 
-  .terra-newline-4 {
+  .newline-4 {
     @include terra-newline-height(4);
   }
 
-  .terra-newline-5 {
+  .newline-5 {
     @include terra-newline-height(5);
   }
 
-  .terra-newline-6 {
+  .newline-6 {
     @include terra-newline-height(6);
   }
 
-  .terra-newline-7 {
+  .newline-7 {
     @include terra-newline-height(7);
   }
 
-  .terra-newline-8 {
+  .newline-8 {
     @include terra-newline-height(8);
   }
 }
