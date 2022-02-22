@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
+import classNamesBind from 'classnames/bind';
+import { Button as DocsButton } from '@cerner/terra-docs';
 import FilterPills, { Pill } from '@cerner/terra-pills';
+import ThemeContext from 'terra-theme-context';
+import styles from './FilterPillsCommon.module.scss';
+
+const cx = classNamesBind.bind(styles);
 
 const BasicLabelExample = () => {
+  const theme = React.useContext(ThemeContext);
+
   const pillsData = [
     {
-      label: 'asthma',
-      id: 'terra-filter-pills-removable-pill-asthma',
+      label: 'Asthma',
+      id: 'terra-filter-pills-asthma',
     },
     {
-      label: 'bronchitis',
-      id: 'terra-filter-pills-removable-pill-bronchitis',
+      label: 'Bronchitis',
+      id: 'terra-filter-pills-bronchitis',
     },
     {
-      label: 'fibro',
-      id: 'terra-filter-pills-removable-pill-fibro',
+      label: 'Fibro',
+      id: 'terra-filter-pills-fibro',
     },
   ];
   const [pills, setPills] = useState(pillsData);
+  const isResetButtonDisabled = (pills.length === pillsData.length);
 
   const handleOnRemove = (id, metaData) => {
     const pillsArray = pills;
@@ -27,7 +36,7 @@ const BasicLabelExample = () => {
   return (
     <>
       <FilterPills
-        ariaLabel="Example of Basic Filter Pill"
+        ariaLabel="Demonstration example of Filter Pills with basic labels"
         onRemove={handleOnRemove}
       >
         {pills.map((pill, index) => (
@@ -40,10 +49,18 @@ const BasicLabelExample = () => {
           />
         ))}
       </FilterPills>
-      {pills.length <= 0
-        && <button type="button" onClick={() => setPills(pillsData)}>Reset the Example</button>}
+      <DocsButton
+        aria-disabled={isResetButtonDisabled}
+        className={cx(['terra-docs-example-reset-button', { 'is-disabled': isResetButtonDisabled }, theme.className])}
+        disabled={isResetButtonDisabled}
+        onClick={() => setPills(pillsData)}
+      >
+        Reset Example
+      </DocsButton>
     </>
   );
 };
+
+BasicLabelExample.contextType = ThemeContext;
 
 export default BasicLabelExample;

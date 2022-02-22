@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
-import classNames from 'classnames/bind';
+import classNamesBind from 'classnames/bind';
+import { Button as DocsButton } from '@cerner/terra-docs';
 import FilterPills, { Pill } from '@cerner/terra-pills';
+import Text from 'terra-text';
+import ThemeContext from 'terra-theme-context';
+import styles from './FilterPillsCommon.module.scss';
 
-import styles from './FilterPillCommon.module.scss';
-
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const VisibleLabelExample = () => {
+  const theme = React.useContext(ThemeContext);
+
   const pillsData = [
     {
-      label: 'asthma',
-      labelCategory: 'respiratory',
-      id: 'terra-filter-pills-removable-pill-asthma',
+      label: 'Asthma',
+      labelCategory: 'Respiratory',
+      id: 'terra-filter-pills-respiratory-asthma',
     },
     {
-      label: 'bronchitis',
-      labelCategory: 'respiratory',
-      id: 'terra-filter-pills-removable-pill-bronchitis',
+      label: 'Bronchitis',
+      labelCategory: 'Respiratory',
+      id: 'terra-filter-pills-respiratory-bronchitis',
     },
     {
-      label: 'fibro',
-      labelCategory: 'respiratory',
-      id: 'terra-filter-pills-removable-pill-fibro',
+      label: 'Fibro',
+      labelCategory: 'Respiratory',
+      id: 'terra-filter-pills-respiratory-fibro',
     },
   ];
   const [pills, setPills] = useState(pillsData);
+  const isResetButtonDisabled = (pills.length === pillsData.length);
 
   const handleOnRemove = (id, metaData) => {
     const pillsArray = pills;
@@ -32,30 +37,46 @@ const VisibleLabelExample = () => {
     setPills([...pillsArray]);
   };
 
+  const patientEducationSearchTermsLabel = 'Patient Education Search Terms:';
+  const patientEducationSearchTermsLabelId = 'terra-filter-pills-example-patient-education-search-terms-label';
+
   return (
-    <div className={cx('filter-group-panel')}>
-      <span id="search-terms-fiter-label" className={cx('title-label')}>
-        Patient Education Search Terms :
-      </span>
-      <FilterPills
-        ariaLabelledBy="search-terms-fiter-label"
-        ariaLabel="Patient Education Search Terms"
-        onRemove={handleOnRemove}
+    <>
+      <div className={cx(['terra-filter-pills-doc-example-search-terms', theme.className])}>
+        <Text
+          id={patientEducationSearchTermsLabelId}
+          className={cx('search-terms-label')}
+        >
+          {patientEducationSearchTermsLabel}
+        </Text>
+        <FilterPills
+          ariaLabelledBy={patientEducationSearchTermsLabelId}
+          ariaLabel={patientEducationSearchTermsLabel}
+          onRemove={handleOnRemove}
+        >
+          {pills.map((pill, index) => (
+            <Pill
+              label={pill.label}
+              labelCategory={pill.labelCategory}
+              id={pill.id}
+              key={pill.id}
+              metaData={{ index }}
+            />
+          ))}
+        </FilterPills>
+      </div>
+      <DocsButton
+        aria-disabled={isResetButtonDisabled}
+        className={cx(['terra-docs-example-reset-button', { 'is-disabled': isResetButtonDisabled }, theme.className])}
+        disabled={isResetButtonDisabled}
+        onClick={() => setPills(pillsData)}
       >
-        {pills.map((pill, index) => (
-          <Pill
-            label={pill.label}
-            labelCategory={pill.labelCategory}
-            id={pill.id}
-            key={pill.id}
-            metaData={{ index }}
-          />
-        ))}
-      </FilterPills>
-      {pills.length <= 0
-        && <button type="button" onClick={() => setPills(pillsData)}>Reset the Example</button>}
-    </div>
+        Reset Example
+      </DocsButton>
+    </>
   );
 };
+
+VisibleLabelExample.contextType = ThemeContext;
 
 export default VisibleLabelExample;
