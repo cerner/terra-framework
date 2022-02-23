@@ -72,10 +72,7 @@ function AccessibleInput(props) {
         value={value}
         disabled={disabled}
         aria-disabled={disabled}
-        /** We are not passing isInvalid because that is not an input prop, we are using it to give some indication to
-         * screen reader users in both read mode and forms mode (picker mode) that this input is _part of_ an invalid
-         * Time Input. Aria-invalid can only be applied to inputs, and TimeInput has no API to mark inputs as invalid.
-         * */
+        isInvalid={isInvalid}
         aria-invalid={isInvalid}
         aria-labelledby={value ? labelId : undefined}
         aria-label={value ? undefined : label}

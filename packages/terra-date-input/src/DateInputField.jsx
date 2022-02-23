@@ -227,6 +227,8 @@ const DateInputField = (props) => {
   return (
     <fieldset {...customProps} className={dateInputFieldClasses}>
       {legendGroup}
+      {/* Screen reader users should hear the help text before reading the input field. Think of it like instructions. */}
+      {help && <VisuallyHiddenText text={help} />}
       <DateInput
         /** The DateInput needs a label to use for the first control (date or month, depending on the locale).
          *
@@ -242,36 +244,28 @@ const DateInputField = (props) => {
          *  5. Date
         */
         a11yLabel={legend}
-        name={name}
-        onChange={onChange}
-        onBlur={onBlur}
-        onFocus={onFocus}
-        value={value}
-        displayFormat={displayFormat}
-        disabled={disabled}
-        isInvalid={isInvalid}
-        isIncomplete={isIncomplete}
-        useExternalFormatMask
-        required={required}
-        monthAttributes={{ ...monthAttributes, ...{ 'aria-describedby': monthAriaDescriptionIds } }}
         dayAttributes={{ ...dayAttributes, ...{ 'aria-describedby': dayAriaDescriptionIds } }}
+        disabled={disabled}
+        displayFormat={displayFormat}
+        isA11yControlled // This field is controlling the a11y features of the input.
+        isIncomplete={isIncomplete}
+        isInvalid={isInvalid}
+        monthAttributes={{ ...monthAttributes, ...{ 'aria-describedby': monthAriaDescriptionIds } }}
+        name={name}
+        onBlur={onBlur}
+        onChange={onChange}
+        onFocus={onFocus}
+        required={required}
+        useExternalFormatMask
+        value={value}
         yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDescriptionIds } }}
       />
       {isInvalid && error && <div id={errorAriaDescriptionId} className={cx('error-text')}>{error}</div>}
-      {/* The format is aria-hidden because it makes no sense when assistive technologies are reading the entire multi-field DateInput. Instead, each subfield component has its own description.  */}
-      {help ? (
-        <div className={cx('help-text')}>
-          <span aria-hidden>
-            {format}
-          &nbsp;
-          </span>
-          {help}
-        </div>
-      ) : (
-        <div aria-hidden className={cx('help-text')}>
-          {format}
-        </div>
-      )}
+      {/* It makes no sense for screen readers to hear the format or the help text in this position. */}
+      {/* Instead, each subfield component reads its own format and the help text is read before the first control. */}
+      <div aria-hidden className={cx('help-text')}>
+        {help ? `${format} ${help}` : format}
+      </div>
     </fieldset>
   );
 };

@@ -235,21 +235,6 @@ class DateInputUtil {
 
     return props.intl.formatMessage({ id: 'Terra.date.input.formatDayMonthYear' });
   }
-
-  static getAriaDescriptionId(options) {
-    const { props, formatDescriptionId, inputAttributes } = options;
-
-    if (props.useExternalFormatMask === false) {
-      if (inputAttributes && inputAttributes['aria-describedby']) {
-        return (`${formatDescriptionId} ${inputAttributes['aria-describedby']}`);
-      }
-      return formatDescriptionId;
-    }
-    if (inputAttributes && inputAttributes['aria-describedby']) {
-      return inputAttributes['aria-describedby'];
-    }
-    return undefined;
-  }
 }
 
 DateInputUtil.inputType = {
