@@ -103,13 +103,13 @@
 
   // Search Terms Example (has Visible Label)
   .terra-filter-pills-doc-example-search-terms {
-    background-color: var(--terra-framework-docs-filter-pills-doc-example-search-terms-background-color, #e9edf1);
+    background-color: var(--terra-framework-docs-filter-pills-doc-example-search-terms-background-color, #ecf3ff);
     box-sizing: border-box;
     min-height: var(--terra-framework-docs-filter-pills-doc-example-search-terms-min-height, 7.5rem);
     padding: var(--terra-framework-docs-filter-pills-doc-example-search-terms-padding, 0.71428rem 0.85714rem);
 
     .search-terms-label {
-      color: var(--terra-framework-docs-filter-pills-doc-example-search-terms-label-color, #2a4b77);
+      color: var(--terra-framework-docs-filter-pills-doc-example-search-terms-label-color, #1a2f4b);
       display: block;
       font-size: var(--terra-framework-docs-filter-pills-doc-example-search-terms-label-font-size, 1.07142rem);
       font-weight: var(--terra-framework-docs-filter-pills-doc-example-search-terms-label-font-weight, 500);
