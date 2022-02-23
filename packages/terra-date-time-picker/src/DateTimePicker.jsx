@@ -319,7 +319,7 @@ class DateTimePicker extends React.Component {
   handleTimeChange(event, time) {
     this.timeValue = time;
     let validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.initialTimeZone));
-    let validTime = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
+    const validTime = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
     let previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
     let dateChanged = false;
 
@@ -327,7 +327,6 @@ class DateTimePicker extends React.Component {
       const timeArray = time.split(':');
       if (event.key === 'n' || event.key === 'N') {
         previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
-        this.dateValue = DateUtil.formatMomentDate(previousDateTime, this.state.dateFormat);
         validDate = true;
         dateChanged = true;
       }
@@ -335,14 +334,12 @@ class DateTimePicker extends React.Component {
       if (event.key === '-' || event.key === '_') {
         if (!validDate) {
           previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
-          this.dateValue = DateUtil.formatMomentDate(previousDateTime, this.state.dateFormat);
           validDate = true;
           dateChanged = true;
         }
 
         if (timeArray[0] === '23' && timeArray[1] === '59') {
           previousDateTime = previousDateTime.subtract(1, 'd');
-          this.dateValue = DateUtil.formatMomentDate(previousDateTime, this.state.dateFormat);
           dateChanged = true;
         }
       }
@@ -350,14 +347,12 @@ class DateTimePicker extends React.Component {
       if (event.key === '=' || event.key === '+') {
         if (!validDate) {
           previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
-          this.dateValue = DateUtil.formatMomentDate(previousDateTime, this.state.dateFormat);
           validDate = true;
           dateChanged = true;
         }
 
         if (timeArray[0] === '00' && timeArray[1] === '00') {
           previousDateTime = previousDateTime.add(1, 'd');
-          this.dateValue = DateUtil.formatMomentDate(previousDateTime, this.state.dateFormat);
           dateChanged = true;
         }
       }
@@ -365,7 +360,6 @@ class DateTimePicker extends React.Component {
       if (this.props.timeVariant === DateTimeUtils.FORMAT_12_HOUR && (event.key === 'a' || event.key === 'A' || event.key === 'p' || event.key === 'P')) {
         if (!validDate) {
           previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
-          this.dateValue = DateUtil.formatMomentDate(previousDateTime, this.state.dateFormat);
           validDate = true;
           dateChanged = true;
         }
@@ -679,9 +673,7 @@ class DateTimePicker extends React.Component {
     } = this.props;
 
     const dateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
-    console.log(dateTime);
     const dateValue = DateUtil.formatMomentDate(dateTime, 'YYYY-MM-DD');
-    console.log(dateValue);
     const theme = this.context;
 
     return (
@@ -716,6 +708,7 @@ class DateTimePicker extends React.Component {
             maxDate={DateUtil.getMaxDate(maxDate)}
             minDate={DateUtil.getMinDate(minDate)}
             selectedDate={dateValue}
+            value={dateValue}
             name="input"
             disabled={disabled}
             disableButtonFocusOnClose
