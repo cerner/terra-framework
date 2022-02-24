@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import Input from 'terra-form-input';
 import ButtonGroup from 'terra-button-group';
 import { injectIntl } from 'react-intl';
 import uuidv4 from 'uuid/v4';
@@ -12,9 +11,21 @@ import * as KeyCode from 'keycode-js';
 import TimeUtil from './TimeUtil';
 import styles from './TimeInput.module.scss';
 
+import AccessibleInput from './_AccessibleInput';
+import TimeSpacer from './_TimeSpacer';
+import AccessibleValue from './_AccessibleValue';
+
 const cx = classNamesBind.bind(styles);
 
 const propTypes = {
+  /**
+   * An identifier used by assistive technologies like screen readers to briefly describe this time input to users.
+   * The label is not rendered visually.
+   *
+   * **BEST PRACTICE FOR ACCESSIBILITY**: you _SHOULD_ set this to match whatever visible label you give in your UI.
+   * Currently this is optional for passivity reasons, but it will become mandatory in a future major version.
+   */
+  a11yLabel: PropTypes.string,
   /**
    * Whether the time input should be disabled.
    */
@@ -716,6 +727,17 @@ class TimeInput extends React.Component {
     this.handleValueChange(event, TimeUtil.inputType.HOUR, this.state.hour.toString(), selectedKey);
   }
 
+  get a11yLabel() {
+    const { a11yLabel, intl } = this.props;
+    /**
+     * description: For situations where the consumer has not provided a a11yLabel: This will be read by screen
+     * readers as the reader moves into the group of inputs. It is intended to help the user understand "you are about
+     * to enter a section of the page where many different inputs all work together for this one concept of time. It is
+     * also used as part of many other localized messages.
+     */
+    return a11yLabel || intl.formatMessage({ id: 'Terra.timeInput.a11yLabelDefault' });
+  }
+
   getCurrentTime() {
     const date = new Date();
     // prepend a 0 to single digit values in minute, second, and hours
@@ -828,6 +850,7 @@ class TimeInput extends React.Component {
 
   render() {
     const {
+      a11yLabel,
       disabled,
       inputAttributes,
       minuteAttributes,
@@ -906,11 +929,43 @@ class TimeInput extends React.Component {
       { 'initial-focus': this.state.secondInitialFocused },
     ]);
 
-    const formatDescriptionId = `terra-time-input-description-format-${this.uuid}`;
+    /**
+     * Get the mask string to place under the time input fields.
+     * @returns {String} a visual hint of the time format, like 'hh:mm'.
+     */
+    function mask() {
+      if (showSeconds) {
+        // description: A visual hint that the Time Input expects two-digit hour, minute and second.
+        return intl.formatMessage({ id: 'Terra.timeInput.maskHourMinuteSecond' });
+      }
+      // description: Like Terra.timeInput.maskHourMinuteSecond but no second.,
+      return intl.formatMessage({ id: 'Terra.timeInput.maskHourMinute' });
+    }
+    /**
+     * Get the description for the hour field.
+     *
+     * NOTE: the description does not take the place of validation or error messages.
+     * @returns {String} a description of the hour field, intended to be read to screen reader users.
+     */
+    function hourDescription() {
+      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR) {
+        /**
+         * description: Explains to screen reader users that the hour field needs a two digit hour. This will be read
+         * only when a screen reader is enabled. It is never displayed. It will be read when the user has focused on
+         * the hour input or when the screen reader is reading the page to the user.
+         */
+        return intl.formatMessage({ id: 'Terra.timeInput.hourDescriptionTwelve' });
+      }
+      // description: Like Terra.timeInput.hourDescriptionTwelve but for a 24-hour clock.
+      return intl.formatMessage({ id: 'Terra.timeInput.hourDescriptionTwentyFour' });
+    }
 
-    const format = showSeconds
-      ? `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })}:${intl.formatMessage({ id: 'Terra.timeInput.ss' })})`
-      : `(${intl.formatMessage({ id: 'Terra.timeInput.hh' })}:${intl.formatMessage({ id: 'Terra.timeInput.mm' })})`;
+    // Fan out some component-level props into input-level a11y attributes. See the big comment below for more info.
+    inputAttributes.isInvalid = isInvalid;
+    inputAttributes.disabled = disabled;
+    inputAttributes.required = required;
+
+    const a11yTimeValue = TimeUtil.getA11YTimeValue(this.props, this.state, this.postMeridiem);
 
     return (
       <div
@@ -918,18 +973,84 @@ class TimeInput extends React.Component {
         ref={this.timeInputContainer}
         className={cx('time-input-container', theme.className)}
       >
-        <div className={timeInputClassNames}>
+        <div className={timeInputClassNames} role="group" aria-label={this.a11yLabel}>
+          {/*
+          "Time of Birth group. Time of birth Hours input., ..."
+        All of the controls should be presented as a group to assistive technologies. Then, each component also
+        has its own specific label as well. If a TimeInput is to be labeled Time of Birth then it would be presented to
+        assistive tech. like this:
+          Time of Birth (group)
+            |--Time of Birth Hours (input)
+            |--Minutes (input)
+            |--Seconds (input)
+            |--AM (toggle button)
+            |--PM (toggle button)
+        In read mode, and ignoring values and descriptions for a moment, the screen reader would read
+        something like:
+          "Time of Birth group. Time of Birth hours input. Minutes input. Seconds input. AM toggle button.
+          PM toggle button."
+        The first Input in the group has a combination label, 'Time of Birth Hours', so that it's easy to pick out that
+        field out of a list of many inputs in the same view when the screen reader is in picker mode. Picker mode lets
+        the user can jump to elements in a page. Screen readers tend to present a flat list of inputs without context
+        of which Time Input those inputs belong to, like this:
+          ==SCREEN READER'S LIST OF FORM INPUTS TO PICK==
+          1. Time of Birth Hour
+          2. Minute
+          3. Second
+          4. Time of Death Hour <-- easy to spot the start of the Time of Death input.
+          5. Minute
+        To remain passive, the a11yLabel is optional. If a consumer doesn't supply a a11yLabel like 'Time of Birth'
+        then the best we can do is say "hour" and we have this scenario:
+          ==SCREEN READER'S LIST OF FORM INPUTS TO PICK==
+          1. Hour
+          2. Minute
+          3. Second
+          4. Hour <-- Confusing which hour/minute is which because there is no a11yLabel.
+          5. Minute
+        The AccessibleValue's job is to announce a localized human-readable representation of the time to screen reader
+        users. The announcement is only made when the value changes to a valid time. If the Time of Birth started out at
+        T14:22 and the user changed the hour from 02 to 03, the value would be T15:22 and the announcer would
+        immediately say "Time of birth 3:22 pm." or just "3:22 pm" if no a11yLabel is provided.
+        It's important to give screen reader users an indication if the Time Input is disabled, incomplete or invalid
+        just as we do for visual users. Since the isInvalid and required flags are component-wide but
+        aria-invalid/required are for inputs, we must mark all inputs the same. It's not perfect but it gives better
+        information than nothing.
+        Unanswered questions:
+        1 - why does it mean to have an invalid meridiem? Why is that possible? It is not supported by Aria or HTML to indicate a button is "invalid".
+        2 - why won't the mobile invalid and mobile incomplete tests read the inputs as invalid or incomplete? The voiceOver rotor and the accessibility panel both show them correctly as incomplete or invalid, just the read-mode is wrong. This problem doesn't happen on the normal incomplete/invalid tests. I was testing on macOS the entire time.
+          */}
+          <AccessibleValue
+            value={a11yTimeValue}
+            /**
+             * description: This will be read to screen reader users only textValue changes to a new time. We want to
+             * give the screen reader user feedback that their change to one of the controls has updated this time.
+             */
+            readThis={intl.formatMessage({ id: 'Terra.timeInput.labeledTextValue' },
+              { a11yLabel: this.a11yLabel, a11yTimeValue })}
+          />
           <input
             // Create a hidden input for storing the name and value attributes to use when submitting the form.
-            // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
+            // The value will be sort of like, but not strictly, an ISO 8601 value's time component.
             type="hidden"
             name={name}
             value={timeValue}
           />
-          <Input
+          <AccessibleInput
             {...inputAttributes}
             {...hourAttributes}
-            aria-label={intl.formatMessage({ id: 'Terra.timeInput.hours' })}
+            /**
+             * If the entire Time Input isInvalid, then pass isInvalid into each wrapped input, so that the screen
+             * reader users will get an indication that something is invalid. It's not perfect because both inputs will
+             * be marked invalid even though it's the combination of both that is really the problem. For example,
+             * 09:88 is a valid hour and an invalid minute, but both hour and minute will be marked invalid.
+             *
+             * description: The label that will only be read to screen readers. It is prefixed with the time input's
+             * name e.g. 'Time of Birth', so that screen reader users can pick this specific hour field out of a list
+             * of many hour fields on the same page. The minute and second screen reader labels won't contain the name
+             * because they will always follow their labeled hour field. We didn't want to say the a11yLabel too many
+             * times.
+             */
+            label={intl.formatMessage({ id: 'Terra.timeInput.hourLabel' }, { a11yLabel: this.a11yLabel })}
             refCallback={(inputRef) => {
               this.hourInput = inputRef;
               if (refCallback) refCallback(inputRef);
@@ -945,15 +1066,14 @@ class TimeInput extends React.Component {
             onBlur={this.handleHourBlur}
             size="2"
             pattern="\d*"
-            disabled={disabled}
-            aria-describedby={formatDescriptionId}
+            description={hourDescription()}
           />
-          <span className={cx('time-spacer')}>:</span>
-          <Input
+          <TimeSpacer className={cx('time-spacer')} />
+          <AccessibleInput
             {...inputAttributes}
             {...minuteAttributes}
             refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-            aria-label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
+            label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
             className={minuteClassNames}
             type="text"
             value={this.state.minute}
@@ -965,32 +1085,32 @@ class TimeInput extends React.Component {
             onBlur={this.handleMinuteBlur}
             size="2"
             pattern="\d*"
-            disabled={disabled}
-            aria-describedby={formatDescriptionId}
+            // description: Like the hour descriptions, but for the minute input.
+            description={intl.formatMessage({ id: 'Terra.timeInput.descriptionMinute' })}
           />
           {showSeconds && (
-            <React.Fragment>
-              <span className={cx('time-spacer')}>:</span>
-              <Input
-                {...inputAttributes}
-                {...secondAttributes}
-                refCallback={(inputRef) => { this.secondInput = inputRef; }}
-                aria-label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
-                className={secondClassNames}
-                type="text"
-                value={this.state.second}
-                name={'terra-time-second-'.concat(name)}
-                maxLength="2"
-                onChange={this.handleSecondChange}
-                onKeyDown={(e) => this.handleInputKeyDown(e, TimeUtil.inputType.SECOND)}
-                onFocus={this.handleSecondFocus}
-                onBlur={this.handleSecondBlur}
-                size="2"
-                pattern="\d*"
-                disabled={disabled}
-                aria-describedby={formatDescriptionId}
-              />
-            </React.Fragment>
+          <React.Fragment>
+            <TimeSpacer className={cx('time-spacer')} />
+            <AccessibleInput
+              {...inputAttributes}
+              {...secondAttributes}
+              refCallback={(inputRef) => { this.secondInput = inputRef; }}
+              label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
+              className={secondClassNames}
+              type="text"
+              value={this.state.second}
+              name={'terra-time-second-'.concat(name)}
+              maxLength="2"
+              onChange={this.handleSecondChange}
+              onKeyDown={(e) => this.handleInputKeyDown(e, TimeUtil.inputType.SECOND)}
+              onFocus={this.handleSecondFocus}
+              onBlur={this.handleSecondBlur}
+              size="2"
+              pattern="\d*"
+              // description: Like the hour descriptions, but for the second input.
+              description={intl.formatMessage({ id: 'Terra.timeInput.descriptionSecond' })}
+            />
+          </React.Fragment>
           )}
         </div>
         {variantFromLocale === TimeUtil.FORMAT_12_HOUR && (
@@ -1013,9 +1133,10 @@ class TimeInput extends React.Component {
             />
           </ButtonGroup>
         )}
-        <div id={formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.timeInput.timeFormatLabel' })} ${format}`}>
-          {format}
-        </div>
+        {/*
+        Screen readers should not read this because it will not make sense.
+        */}
+        <div aria-hidden className={cx('format-text')}>{mask()}</div>
       </div>
     );
     /* eslint-enable jsx-a11y/no-static-element-interactions */

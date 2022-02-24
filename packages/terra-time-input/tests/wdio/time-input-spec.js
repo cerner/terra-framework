@@ -1,4 +1,9 @@
 Terra.describeViewports('Time Input', ['medium'], () => {
+  it('works with a label', () => {
+    browser.url('/raw/tests/terra-time-input/time-input/time-input/accessibility');
+    Terra.validates.element('default no time');
+  });
+
   it('displays default with no time provided', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
     Terra.validates.element('default no time');
@@ -380,7 +385,10 @@ describe('Time Input shortcut key operations', () => {
         const currentDate = new Date();
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const minuteValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const minuteTimeValue = Number(timevalue[1]);
+        const minutesInRange = (minuteTimeValue === minuteValue + 1 || minuteTimeValue === minuteValue);
+        expect(minutesInRange).toBe(true);
       });
 
       it('should set time to current if filled', () => {
@@ -393,7 +401,10 @@ describe('Time Input shortcut key operations', () => {
         const currentDate = new Date();
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const minuteValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const minuteTimeValue = Number(timevalue[1]);
+        const minutesInRange = (minuteTimeValue === minuteValue + 1 || minuteTimeValue === minuteValue);
+        expect(minutesInRange).toBe(true);
       });
     });
 
@@ -408,7 +419,10 @@ describe('Time Input shortcut key operations', () => {
         const currentDate = new Date();
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const minuteValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const minuteTimeValue = Number(timevalue[1]);
+        const minutesInRange = (minuteTimeValue === minuteValue + 1 || minuteTimeValue === minuteValue);
+        expect(minutesInRange).toBe(true);
       });
 
       it('should set time to current if partially filled', () => {
@@ -423,7 +437,10 @@ describe('Time Input shortcut key operations', () => {
         const currentDate = new Date();
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const minuteValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const minuteTimeValue = Number(timevalue[1]);
+        const minutesInRange = (minuteTimeValue === minuteValue + 1 || minuteTimeValue === minuteValue);
+        expect(minutesInRange).toBe(true);
       });
 
       it('should set time to current if filled', () => {
@@ -436,7 +453,10 @@ describe('Time Input shortcut key operations', () => {
         const currentDate = new Date();
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const minuteValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const minuteTimeValue = Number(timevalue[1]);
+        const minutesInRange = (minuteTimeValue === minuteValue + 1 || minuteTimeValue === minuteValue);
+        expect(minutesInRange).toBe(true);
       });
     });
 

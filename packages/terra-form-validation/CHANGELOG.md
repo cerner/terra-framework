@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 1.69.3 - (February 15, 2022)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.69.2 - (February 2, 2022)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.69.1 - (January 4, 2022)
 
 * Changed

@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+## 4.45.0 - (February 15, 2022)
+
+* Fixed
+  * Accessibility improvements.
+
+## 4.44.1 - (February 9, 2022)
+
+* Added
+  * Added a test for time-input padding.
+* Fixed
+  * Reduce random test failures.
+
+## 4.44.0 - (February 2, 2022)
+
 * Added
   * Added keyboard shortcuts `N`, `-`, `+`, `A`, and `P` for auto-setting time values.
 
