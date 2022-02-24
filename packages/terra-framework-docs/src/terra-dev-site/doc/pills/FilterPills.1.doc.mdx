@@ -15,9 +15,9 @@ import PillsPropsTable from '@cerner/terra-pills/src/subcomponents/_Pill?dev-sit
 
 # Terra Filter Pills
 
-Pills are generally used to assign a label or keyword to user interface (UI) objects, defining a non-hierarchal group. They are used to visually label UI objects for quick recognition. These labels can be generated either by the system or users entering data.
+Pills are generally used to assign a label or keyword to user interface (UI) objects, defining a non-hierarchical group. They are used to visually label UI objects for quick recognition. These labels can be generated either by the system or users entering data.
 
-When using a filter workflow, which removes items from a view that do not satisfy specific criteria, Filter Pills can provide indication as to which facet categories and attributes the user can narrow the content by, helping to futher divide content in order to assist users in refining large results.
+When using a filter workflow, which removes items from a view that do not satisfy specific criteria, Filter Pills can provide indication as to which facet categories and attributes the user can narrow the content by, helping to further divide content in order to assist users in refining large results.
 
 ## What the component is
 
@@ -65,7 +65,7 @@ import FilterPills from 'terra-pills';
 
 ## Introduction:
 
-Filter Pills can be added to a variety of situations and compositions to apply context of the applied categories or labels. They can be constructed into in various higher-order component patterns like an ʻApplied Filters' toolbar, or locations that the applied category labels are removable by the user. They also have the ability to flex layouts between an expanded state showing all filter pills, and a collapsed state showing just a single line and roll-up toggle to show and hide the additional filter pills.
+Filter Pills can be added to a variety of situations and compositions when it is necessary to display the selected facets being applied to a filtered layout. They can be constructed into in various higher-order component patterns like an **Applied Filters** toolbar, and similar locations that the applied category labels are removable by the user. They also have the ability to flex layouts between an expanded state showing all filter pills, and a collapsed state showing just a single line and roll-up toggle to show and hide the additional filter pills.
 
 <AppliedFiltersExample title='Introduction to Filter Pills: Applied Filters Toolbar' />
 
@@ -75,7 +75,7 @@ Filter Pills can be added to a variety of situations and compositions to apply c
 
 ### Filter Pill with a basic Label
 
-Filter Pills in their standard form display a single keyword or short phrase as their label. They are also removeable, which makes them interactive with the clickable remove ("X") button, as well as by interactive by keyboard, able to be removed by pressing the 'delete' or 'backspace' key when they are in focus.
+Filter Pills in their standard form display a single keyword or short phrase as their label. They are also removable, which makes them interactive with the clickable remove ("X") button, as well as by interactive by keyboard, able to be removed by pressing the 'delete' or 'backspace' key when they are in focus.
 
 <BasicLabelExample title="Basic Label" />
 
@@ -91,7 +91,7 @@ Additional category terms can be added to the single keyword or short phrase lab
 
 ### Long Labels & Truncation: A Popup is Added
 
-In cases where the width of the space is constrained and the text label for the Filter Pill is unable to fully display, a popup will automatically be added and the label will become an interactive target. Clicking the label will disclose the full Filter Pill text label (and category if applied) as the contents. No additional content can be added to the popup.
+In cases where the width of the space is constrained and the text label for the Filter Pill is unable to fully display, a popup will automatically be added, the label will become an interactive target. Clicking the label will disclose the full Filter Pill text label (and category if applied) as the contents. No additional content can be added to the popup.
 
 <TruncatedLabelExample title="Selectable Label when Truncated" />
 
@@ -101,7 +101,7 @@ In cases where the width of the space is constrained and the text label for the 
 
 ### Adding a Visible Label
 
-Filter Pills are commonly used in a group or list, which must include a label to indicate the intent or purpose of the contents of the list. Accordingly, the filter pills component requires the `ariaLabel` prop for accessibility minimum standards, to give a screenreader user the proper context of the list, but it is not visible to users.
+Filter Pills are commonly used in a group or list, which must include a label to indicate the intent or purpose of the contents of the list. Accordingly, the filter pills component requires the `ariaLabel` prop for accessibility minimum standards, to give a screen reader user the proper context of the list, but it is not visible to users.
 
 <Notice variant="ux-recommendation" ariaLevel="3">
 
@@ -109,7 +109,7 @@ As a best practice, the Filter Pills component should be accompanied by a visibl
 
 </Notice>
 
-Note: _The visible label referenced by the `ariaLabelledBy` prop and the `ariaLabel` prop should be set to the same string values for fallback protection, even though when done properly `ariaLabelledBy` should override `ariaLabel` and the 'aria-labelledby' attribute will replace the 'aria-label' attribute in the compiled markup._
+Note: _The visible label referenced by the `ariaLabelledBy` prop and the `ariaLabel` prop should be set to the same string values for fallback protection, even though when done properly `ariaLabelledBy` should override `ariaLabel` and the 'aria-labelledby' property will replace the 'aria-label' property in the compiled markup._
 
 <VisibleLabelExample title="Adding a Styled Label or Heading" />
 
@@ -145,10 +145,10 @@ Consumers should be aware to not intentionally create the above situation.
 
 </Notice>
 
-<Whitespace newline={7} />
+<Whitespace newline={5} />
 
 ## Props for Filter Pills
 <FilterPillsPropsTable />
 
-## Props for Pill sub-component
+## Props for Pill subcomponent
 <PillsPropsTable />

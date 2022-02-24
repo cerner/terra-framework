@@ -1,99 +1,191 @@
 import { Badge } from '@cerner/terra-pills/package.json?dev-site-package';
 import { Notice } from '@cerner/terra-docs';
+import Whitespace from '../../common/layout-helpers/Whitespace';
 
 <Badge />
 
 # Accessibility Guide for Terra Filter Pills
 
-Filter Pills have special interactions and construction that makes them unique from standard buttons and interactive list items.
+<Notice variant="important" ariaLevel="2">
 
-## Important Considerations:
+1. **Filter Pills have special interactions and construction** that makes them unique from standard buttons or a list of interactive items.
+2. Used as a group of combined elements, the collection of pills **interacts like a single unit** having one tab focus order sequence for the full group, with arrow keys providing inner-navigation by keyboard between the individual items. 
+3. The group of filter pills will **always need to have a label** in the form of a heading, visible text, or at minimum by providing the aria-label (for reserved circumstances).
 
-### Construction of Group Label / Heading
+</Notice>
 
-- Filter Pills as a group requires that an `aria-label` be provided as accessibility minimum standard protection, but is not visible, and therefore is not reccomended to be used alone.
-- For accessibility best practices, it is recommended that consumers should always include a visible label by using the `ariaLabelledBy` prop.
-- Filter Pills are commonly used in a group or list, which must include a label to indicate the intent or purpose of the contents of the list. Accordingly, the filter pills component requires the `ariaLabel` prop for accessibility minimum standards, to give a screenreader user the proper context of the list, but it is not visible to users.
+<Whitespace />
 
+## Accessibility Considerations:
 
-<Notice variant="important" ariaLevel="1">
-Accessibility Considerations:
+### Code Considerations
 
-As a best practice, the Filter Pills component should be accompanied by a visible label, which may need to be styled and positioned by the consumer according to their specific usage. Use the `ariaLabelledBy` prop in Filter Pills, and provide it the ʻidʼ of the visible label or heading. This will allow for the visible text to be accessibly connected to the pills.
+Each use of Filters Pills is a grouping of interactive elements and will need to have a clear and descriptive label that informs the user of the intent of the pills being shown, separating it from other areas on the page with similar usage.  Filter Pills offers two approaches to providing the correct labelling, using the **`ariaLabel`** prop or the **`ariaLabelledBy`** prop, each with a specific and intended use.
+
+----
+
+#### Using aria-label
+
+- Filter Pills includes a required prop called **`ariaLabel`** which will add the [aria-label](https://www.w3.org/TR/wai-aria-1.1/#aria-label) html property on the parent `<FilterPills/>` div element,  satisfying the minimum level of accessibility required to provide an [Accessible Name](https://www.w3.org/TR/accname-1.1/#dfn-accessible-name). However, the [aria-label](https://www.w3.org/TR/wai-aria-1.1/#aria-label) is not visible to users. However, providing visible text to users is _preferred_ for the majority of cases, instead using [aria-labelledby](https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby) to identify the element that labels each use of a filter pills group. 
+
+- Using the `ariaLabel` prop alone should be reserved for special circumstances to [provide an invisible label where a visible label cannont be used](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14), such as filter pills being composed in a higher-order component where the visible items are purely decorative, the context is clearly understood, and correct use of the [aria-label](https://www.w3.org/TR/wai-aria-1.1/#aria-label) html property is ensured. It is a required prop for the component purely as a method of accessibility minimum standard protection.
+
+#### Using aria-labelledby _(recommended)_
+
+- Filter Pills includes an optional prop called **`ariaLabelled`** which will add the [aria-labelledby](https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby) html property and accessibly connects a visible heading, text, or elements that labels the filter pills group. Using the **`ariaLabelled`** prop is the recommended method to provide an [Accessible Name](https://www.w3.org/TR/accname-1.1/#dfn-accessible-name) in order to [provide a name for user interface controls](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16).
+
+- Note: The visible label referenced by the **`ariaLabelledBy`** prop and the **`ariaLabel`** prop should be set to the same string values for fallback protection, even though when done properly ariaLabelledBy should override ariaLabel and the `aria-labelledby="id"` property will replace the `aria-label="string"` property in the compiled markup.
+
+<Notice variant="important" ariaLevel="5">
+
+**Accessibility Guidance: Adding a Visible Label**
+
+- As a best practice, the Filter Pills component should be accompanied by a visible label, which may need to be styled and positioned according to a specific usage and should be done so by each consumer. Use the [ariaLabelledBy](components/cerner-terra-framework-docs/pills/filter-pills#props-for-filter-pills) prop in Filter Pills, and provide it the **`id`** of the visible label or heading, which will allow for the visible text to be accessibly connected to the pills. 
+
+- To see a working example of the code sample below, go to [Usage Considerations: Adding a Visible Label](/components/cerner-terra-framework-docs/pills/filter-pills#adding-a-visible-label):
 
 ```diff
-    <div className={cx('filter-group-panel')}>
-+       <span id="search-terms-fiter-label" className={cx('title-label')}>
-+       Patient Education Search Terms:
-+       </span>
-        <FilterPills
-+           ariaLabelledBy="search-terms-fiter-label"
-            ariaLabel="Patient Education Search Terms"
-            onRemove={handleOnRemove}
++   const patientEducationSearchTermsLabel = 'Patient Education Search Terms:';
++   const patientEducationSearchTermsLabelID = 'patient-education-search-terms-label';
+
+    return (
+      <div className={cx('filter-group-panel')}>
+        <Text
++         id={patientEducationSearchTermsLabelID}
+          className={cx('search-terms-label')}
         >
-            {pills.map((pill, index) => (
-                <Pill
-                    label={pill.label}
-                    labelCategory={pill.labelCategory}
-                    id={pill.id}
-                    key={pill.id}
-                    metaData={{ index }}
-                />
-            ))}
++         {patientEducationSearchTermsLabel}
+        </Text>
+        <FilterPills
++         ariaLabelledBy={patientEducationSearchTermsLabelID}
++         ariaLabel={patientEducationSearchTermsLabel}
+          onRemove={handleOnRemove}
+        >
+          {pills.map((pill, index) => (
+            <Pill
+              label={pill.label}
+              labelCategory={pill.labelCategory}
+              id={pill.id}
+              key={pill.id}
+              metaData={{ index }}
+            />
+          ))}
         </FilterPills>
-    </div>
+      </div>
+    );
 ```
 
-Note: _The visible label referenced by the `ariaLabelledBy` prop and the `ariaLabel` prop should be set to the same string values for fallback protection, even though `ariaLabelledBy` should override `ariaLabel`._
 </Notice>
+
+<Whitespace newline={2} />
+
+### Content Considerations
+
+As authors create text, choosing words and phrases for Filter Pills — the content itself is also a very important factor in ensuring proper accessibility in addition to the coding techniques listed above.
+
+---
+
+#### Filter Pills group label
+
+Each use of Filters Pills is a grouping of interactive elements, specifically a list, which [requires a list label](https://fae.disability.illinois.edu/rulesets/LIST_2/) to meet the WCAG Success Criteria for [2.4.6 Headings and Labels (Level AA)](https://www.w3.org/TR/WCAG21/#headings-and-labels). In order to best meet this criteria, techniques that help to determine how to author appropriate labels are to make them:
+
+- **[Descriptive](https://www.w3.org/WAI/WCAG21/Techniques/general/G131.html)** = Labels that are descriptive inform the user as to the specific intent of the grouping of filters.
+
+> | _Bad_ | _Good_ |
+> |---|---|
+> | **Search Terms:** | **Patient Education Search Terms:** |
+
+- **[Unique](https://fae.disability.illinois.edu/rulesets/CONTROL_10/)** = Labels that are unique make it possible for people to understand the different purposes of [repeated controls on the same page](https://adrianroselli.com/2019/06/group-labels-do-not-guarantee-uniquity.html).
+
+> | _Bad_ | _Good_ |
+> |---|---|
+> | **Applied Filters:** <sub>(ex.1)</sub> | **Applied Color Filters:** <sub>(ex.1)</sub> |
+> | **Applied Filters:** <sub>(ex.2)</sub> | **Applied Size Filters:** <sub>(ex.2)</sub> |
+
+<Whitespace />
+
+#### Pill Label and Pill Category
+
+Similarly to the group of Filter Pills, each individual Pill also needs to follow similar techniques that make them descriptive and unique. In addition, UX Guidance recommends that:
+
+- Pill labels should be concise and contain a minimal number of words.
+
+> | _Bad_ | _Good_ |
+> |---|---|
+> | Swelling of the Left Arm | Left Arm Swelling |
+
+- Pill labels should follow Title Case capitalization rules when applied as filters.
+- When a group of facet terms create unclear context using the attributes alone, include the facet categories for additional clarity, e.g. Department: Radiology
+- When the same filter label may be used in different categories or groupings, to ensure labels are unique, the Label Category should be added to the pill label display.
+
+> | _Bad_ | _Good_ |
+> |---|---|
+> | Swelling <sub>(ex.1)</sub> | **Brachial:** Swelling <sub>(ex.1)</sub> |
+> | Swelling <sub>(ex.2)</sub> | **Radial:** Swelling <sub>(ex.2)</sub> |
+
+<Whitespace />
+
+#### Additional Writing Resources and Content Strategies
+ 
+- [W3C Web Accessibility Initiative (WAI) » Tips: Writing for Web Accessibility](https://www.w3.org/WAI/tips/writing/)
+- [Deque » Blog: Accessibility Strategies for Your Content Team](https://www.deque.com/blog/accessibility-strategies-for-your-content-team/)
+- [Yale University » Usability Best Practices: Organization and Labeling](https://usability.yale.edu/best-practices/organization-and-labeling-0)
+
+<Whitespace newline={4} />
 
 ## Usability Expectations:
 
-### Interaction Details:
+### Interaction Details
 
 - Filter Pills receives focus as a group by `tab` keypress, with arrow keys changing focus between individual pills within the group.
 - Only one pill can be focused per set of Filter Pills.
 - The remove button must not be a focusable element, but can be clickable.
 - Removing a filter pill with a keyboard is performed with the `Backspace` or `Delete` key when a pill has focus.
 
-## Keyboard Navigation:
-- Filter Pills will have the following keyboard navigation expectations:
+<Whitespace />
 
-<table style={{ margin: "5px", border: "1px solid #0000", 'border-collapse': "collapse" }}>
-  <tr>
-    <th>Key / Sequence</th>
-    <th>Description</th> 
-  </tr>
-  <tr>
-    <td>Tab</td>
-    <td>Initial focus goes to the first pill in the list, pressing tab again moves focus out of the Filter Pills group and to the next focusable element on the page.</td>
-  </tr>
-  <tr>
-    <td>Right</td>
-    <td>Right arrow key will move focus to the next pill in the list. When on the last pill in the list, focus remains on the last pill and does not cycle to the first pill.</td>
-  </tr>
-  <tr>
-    <td>Left</td>
-    <td>Left arrow key will move focus to the previous pill in the list. When on the first pill in the list, focus remains on the first pill and does not cycle to the last pill.</td>
-  </tr>
-  <tr>
-    <td>Backspace or Delete</td>
-    <td>Removes the pill that currently has focus. After removing, the focus should then be placed on the previous pill in the list. If no pills remain then the Filter Pills group will be focused until user navigates away. However the Filter Pills group cannot be focused on again while no interactive pills remain in the Filter Pills group.</td>
-  </tr>
-  <tr>
-    <td>Enter or Space</td>
-    <td>If a pill is selectable via having truncated label, Enter or Space will show the popup to display the full pill label.</td>
-  </tr>
-</table>
+### Keyboard Navigation
 
-## Support Compliance
+Filter Pills will have the following keyboard navigation expectations:
+
+| Key/Sequence | Description |
+|---|---|
+|**Tab**| Initial focus goes to the first pill in the list, pressing tab again moves focus out of the Filter Pills group and to the next focusable element on the page. |
+|**Right Arrow**| When the Filter Pills group is in focus, pressing the right arrow key will move focus to the next pill in the list. When on the last pill in the list, focus remains on the last pill and does not cycle to the first pill. |
+|**Left Arrow**| When the Filter Pills group is in focus, pressing the left arrow key will move focus to the previous pill in the list. When on the first pill in the list, focus remains on the first pill and does not cycle to the last pill. |
+|**Backspace** or **Delete**| Removes the pill that currently has focus. After removing, the focus should then be placed on the previous pill in the list. If no pills remain, then the Filter Pills group will be focused until the user navigates away. However, the Filter Pills group cannot be focused on again while no interactive pills remain in the Filter Pills group. |
+|**Space** or **Enter**| If a pill is selectable via having a truncated label, pressing the Space or Enter key will show the popup to display the full pill label. |
+
+<Whitespace newline={4} />
+
+## Concerns & Hazards:
+
+### Incorrect Use
+
+Terra Filter Pills contains a specific reusable subcomponent `<Pill/>`. However, the inner 'Pill' subcomponent is not intended to be used alone, or 
+independently without being used properly as children of the `<FilterPills/>` parent container. If used as standalone, the `<Pill/>` offers no support for accessibility or correct behaviors.
+
+<Notice variant="not-supported" ariaLevel="4">
+
+> The `<Pill/>` subcomponent was created and tested with the express intent of always being used as children of the `<FilterPills/>` component.
+>
+> See [Usage Considerations: Incorrect Use](/components/cerner-terra-framework-docs/pills/filter-pills#incorrect-use) for an example of situations consumers should not intentionally create.
+ 
+</Notice>
+
+<Whitespace newline={4} />
+
+## Support Compliance:
 
 ### Supported Features & Technology
 - Keyboard Interactions
-- PC: JAWS Support with Chrome (latest)
-- MAC: VoiceOver Support with Chrome (latest), Safari (latest)
-
-### Requiring Further Enhancement to Support
+- JAWS Support with Chrome (PC) <sup>1</sup>
+- VoiceOver Support with Chrome, Safari (MAC)
+ 
+### Partial Support & Requiring Further Enhancement
+- <sup>[1]</sup> JAWS: improve tab/focus indication after pill removal
+- NVDA Support (PC)
 - Mobile Touch Interactions with Screen Reader assistive technology
 - Speech Input Interactions with assistive technology
-- PC: NVDA Support
+
+_For more information about Accessibility Support with Terra — go to [Component Standards: Accessibility (A11y)](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#accessibility-a11y)._
