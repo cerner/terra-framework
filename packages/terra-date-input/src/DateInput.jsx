@@ -797,7 +797,7 @@ class DateInput extends React.Component {
     }
 
     const format = DateInputUtil.getDateFormat(this.props);
-    const label = a11yLabel || 'Date';
+    const label = a11yLabel || this.props.intl.formatMessage({ id: 'Terra.date.input.labelDefault' });
 
     return (
       <div
@@ -807,7 +807,7 @@ class DateInput extends React.Component {
         role={isA11yControlled ? undefined : 'group'}
         aria-label={isA11yControlled ? undefined : label}
       >
-        <AccessibleValue value={completeDateValue} readThis={`Date is ${completeDateValue}`} />
+        <AccessibleValue value={completeDateValue} readThis={`${label} ${completeDateValue}`} />
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but formatted in YYYY-MM-DD format.
