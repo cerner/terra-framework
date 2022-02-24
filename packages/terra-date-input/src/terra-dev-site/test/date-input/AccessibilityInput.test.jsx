@@ -12,8 +12,6 @@ const AccessibilityInputTest = () => {
   const [isInvalid, setIsInvalid] = useState(false);
   const [mutex, setMutex] = useState('optional');
   const [displayFormat, setDisplayFormat] = useState('month-day-year');
-  const [help, setHelp] = useState('Helpful text.');
-  const [error, setError] = useState('Something went wrong.');
   const [a11yLabel, setA11yLabel] = useState('Anniversary');
 
   return (
@@ -38,8 +36,6 @@ const AccessibilityInputTest = () => {
           <Checkbox id="isInvalid" labelText="isInvalid" onChange={() => setIsInvalid(val => !val)} />
         </CheckboxField>
         <InputField type="text" label="A11YLabel:" inputId="a11yLabel" value={a11yLabel} onChange={(e) => setA11yLabel(e.currentTarget.value)} />
-        <InputField type="text" label="Error Message:" inputId="error" value={error} placeholder="Message to show when invalid" onChange={(e) => setError(e.currentTarget.value)} />
-        <InputField type="text" label="Help Message:" inputId="help" value={help} placeholder="Message to provide more detailed help" onChange={(e) => setHelp(e.currentTarget.value)} />
         <RadioFieldGenerator
           fieldLegend="Mutually Exclusive"
           name="mutex"

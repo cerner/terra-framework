@@ -7,13 +7,10 @@ import uuidv4 from 'uuid/v4';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 
+import AccessibleValue from 'terra-time-input/lib/_AccessibleValue';
+import AccessibleInput from 'terra-time-input/lib/_AccessibleInput';
 import DateInputUtil from './DateInputUtil';
 import styles from './DateInput.module.scss';
-
-import AccessibleValue from '../../terra-time-input/src/_AccessibleValue';
-
-// import AccessibleValue from '../../terra-time-input/src/_AccessibleValue';
-import AccessibleInput from '../../terra-time-input/src/_AccessibleInput';
 
 const cx = classNamesBind.bind(styles);
 
