@@ -597,6 +597,7 @@ class DateInput extends React.Component {
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}
           disabled={this.props.disabled}
+          aria-disabled={this.props.disabled}
           aria-invalid={this.props.isInvalid}
           aria-required={this.props.required}
         >
