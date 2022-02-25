@@ -223,7 +223,7 @@ const DateInputField = (props) => {
         {/* We only include the following span so that elements do not pop around in the layout when isInvalid changes. */}
         {required && !isInvalid && hideRequired && (<span className={cx('required-hidden')}>*</span>)}
 
-        {/* This bit controls whether the (Optional suffix displays after the legend text */}
+        {/* This bit controls whether the (Optional) suffix displays after the legend text */}
         {showOptional && !required && <span className={cx('optional')}>{intl.formatMessage({ id: 'Terra.date.input.optional' })}</span>}
         {!isInvalid && <span className={cx('error-icon-hidden')} />}
       </div>
