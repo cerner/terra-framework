@@ -5,6 +5,9 @@
 * Added
   * Added keyboard shortcuts `N`, `-`, `+`, `A`, and `P` for auto-setting time values.
 
+* Fixed
+  * Fixed some edge case scenarios for keyboard shortcuts
+
 ## 4.43.1 - (January 4, 2022)
 
 * Changed

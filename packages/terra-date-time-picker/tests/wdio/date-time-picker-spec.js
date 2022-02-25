@@ -652,7 +652,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
   describe('Keyboard Shortcuts', () => {
     describe('N', () => {
       describe('if blank date', () => {
-        it('in the hour input should set date to today', () => {
+        it('should set date to today in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -666,7 +666,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the minute input should set date to today', () => {
+        it('should set date to today in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-time-minute-input"]').click();
@@ -680,7 +680,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the second input should set date to today', () => {
+        it('should set date to today in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-seconds');
           browser.refresh();
           $('input[name="terra-time-second-input"]').click();
@@ -700,7 +700,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
       });
 
       describe('if invalid date', () => {
-        it('in the hour input should set date to today', () => {
+        it('should set date to today in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -718,7 +718,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the minute input should set date to today', () => {
+        it('should set date to today in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -736,7 +736,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the second input should set date to today', () => {
+        it('should set date to today in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-seconds');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -760,7 +760,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
       });
 
       describe('if valid date', () => {
-        it('in the hour input should set date to today', () => {
+        it('should set date to today in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -774,7 +774,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the minute input should set date to today', () => {
+        it('should set date to today in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time');
           browser.refresh();
           $('input[name="terra-time-minute-input"]').click();
@@ -788,7 +788,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the second input should set date to today', () => {
+        it('should set date to today in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time-with-seconds');
           browser.refresh();
           $('input[name="terra-time-second-input"]').click();
@@ -810,7 +810,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
 
     describe('-', () => {
       describe('if blank date', () => {
-        it('in the hour input should set date to today and now minus 1 minute', () => {
+        it('should set date to today and now minus 1 minute in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -824,7 +824,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the minute input should set date to today and now minus 1 minute', () => {
+        it('should set date to today and now minus 1 minute in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-time-minute-input"]').click();
@@ -838,7 +838,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the second input should set date to today and now minus 1 minute', () => {
+        it('should set date to today and now minus 1 minute in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-seconds');
           browser.refresh();
           $('input[name="terra-time-second-input"]').click();
@@ -858,7 +858,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
       });
 
       describe('if invalid date', () => {
-        it('in the hour input should set date to today and now minus 1 minute', () => {
+        it('should set date to today and now minus 1 minute in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -876,7 +876,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the minute input should set date to today and now minus 1 minute', () => {
+        it('should set date to today and now minus 1 minute in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -894,7 +894,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the second input should set date to today and now minus 1 minute', () => {
+        it('should set date to today and now minus 1 minute in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-seconds');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -918,7 +918,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
       });
 
       describe('if valid date', () => {
-        it('in the hour input should not change the date and lower time by 1 minute', () => {
+        it('should not change the date and lower time by 1 minute in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -931,7 +931,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue('29');
         });
 
-        it('in the minute input should not change the date and lower time by 1 minute', () => {
+        it('should not change the date and lower time by 1 minute in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time');
           browser.refresh();
           $('input[name="terra-time-minute-input"]').click();
@@ -944,7 +944,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue('29');
         });
 
-        it('in the second input should not change the date and lower time by 1 minute', () => {
+        it('should not change the date and lower time by 1 minute in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time-with-seconds');
           browser.refresh();
           $('input[name="terra-time-second-input"]').click();
@@ -955,6 +955,22 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-date-day-input"]')).toHaveValue('08');
           expect($('input[name="terra-time-hour-input"]')).toHaveValue('10');
           expect($('input[name="terra-time-minute-input"]')).toHaveValue('29');
+          expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
+        });
+
+        it('should decrement date by one day if time is at 00:00 ', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time-with-seconds');
+          browser.refresh();
+          $('input[name="terra-time-hour-input"]').click();
+          browser.keys('0000');
+          $('input[name="terra-time-second-input"]').click();
+          browser.keys('-');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('2017');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('08');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('07');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('23');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('59');
           expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
         });
       });
@@ -962,7 +978,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
 
     describe('+', () => {
       describe('if blank date', () => {
-        it('in the hour input should set date to today and now plus 1 minute', () => {
+        it('should set date to today and now plus 1 minute in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -976,7 +992,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the minute input should set date to today and now plus 1 minute', () => {
+        it('should set date to today and now plus 1 minute in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-time-minute-input"]').click();
@@ -990,7 +1006,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the second input should set date to today and now plus 1 minute', () => {
+        it('should set date to today and now plus 1 minute in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-seconds');
           browser.refresh();
           $('input[name="terra-time-second-input"]').click();
@@ -1010,7 +1026,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
       });
 
       describe('if invalid date', () => {
-        it('in the hour input should set date to today and now plus 1 minute', () => {
+        it('should set date to today and now plus 1 minute in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -1028,7 +1044,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the minute input should set date to today and now plus 1 minute', () => {
+        it('should set date to today and now plus 1 minute in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -1046,7 +1062,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
 
-        it('in the second input should set date to today and now plus 1 minute', () => {
+        it('should set date to today and now plus 1 minute in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-seconds');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -1070,7 +1086,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
       });
 
       describe('if valid date', () => {
-        it('in the hour input should not change date and subtract 1 minute from the time', () => {
+        it('should not change date and subtract 1 minute from the time in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -1083,7 +1099,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue('31');
         });
 
-        it('in the minute input should not change date and subtract 1 minute from the time', () => {
+        it('should not change date and subtract 1 minute from the time in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time');
           browser.refresh();
           $('input[name="terra-time-minute-input"]').click();
@@ -1096,7 +1112,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue('31');
         });
 
-        it('in the second input should not change date and subtract 1 minute from the time', () => {
+        it('should not change date and subtract 1 minute from the time in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time-with-seconds');
           browser.refresh();
           $('input[name="terra-time-second-input"]').click();
@@ -1109,12 +1125,28 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue('31');
           expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
         });
+
+        it('should increment date by one day if time is at 23:59', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time-with-seconds');
+          browser.refresh();
+          $('input[name="terra-time-hour-input"]').click();
+          browser.keys('2359');
+          $('input[name="terra-time-second-input"]').click();
+          browser.keys('+');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('2017');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('08');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('09');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('00');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('00');
+          expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
+        });
       });
     });
 
     describe('A', () => {
       describe('if blank date', () => {
-        it('in the hour input should set date to today and time to 12:00 AM', () => {
+        it('should set date to today and time to 12:00 AM in the hour input ', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -1130,7 +1162,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('button[class*="meridiem"]')).toHaveAttrContaining('class', 'is-selected');
         });
 
-        it('in the minute input should set date to today and time to 12:00 AM', () => {
+        it('should set date to today and time to 12:00 AM in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-time-minute-input"]').click();
@@ -1146,7 +1178,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('button[class*="meridiem"]')).toHaveAttrContaining('class', 'is-selected');
         });
 
-        it('in the second input should set date to today and time to 12:00 AM', () => {
+        it('should set date to today and time to 12:00 AM in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-time-second-input"]').click();
@@ -1164,7 +1196,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
       });
 
       describe('if invalid date', () => {
-        it('in the hour input should set date to today and time to 12:00 AM', () => {
+        it('should set date to today and time to 12:00 AM in the hour input ', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -1184,7 +1216,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('button[class*="meridiem"]')).toHaveAttrContaining('class', 'is-selected');
         });
 
-        it('in the minute input should set date to today and time to 12:00 AM', () => {
+        it('should set date to today and time to 12:00 AM in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -1204,7 +1236,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('button[class*="meridiem"]')).toHaveAttrContaining('class', 'is-selected');
         });
 
-        it('in the second input should set date to today and time to 12:00 AM', () => {
+        it('should set date to today and time to 12:00 AM in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -1225,8 +1257,8 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
         });
       });
 
-      describe('if valid date', () => {
-        it('in the hour input should not change date and should leave it as AM', () => {
+      describe('if valid date and AM time', () => {
+        it('should not change date and should leave time as AM in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -1241,7 +1273,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('button[class*="meridiem"]')).toHaveAttrContaining('class', 'is-selected');
         });
 
-        it('in the minute input should not change date and should leave it as AM', () => {
+        it('should not change date and should leave time as AM in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-time-minute-input"]').click();
@@ -1256,7 +1288,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('button[class*="meridiem"]')).toHaveAttrContaining('class', 'is-selected');
         });
 
-        it('in the second input should not change date and should leave it as AM', () => {
+        it('should not change date and should leave time as AM in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-time-second-input"]').click();
@@ -1269,13 +1301,105 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue('30');
           expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
           expect($('button[class*="meridiem"]')).toHaveAttrContaining('class', 'is-selected');
+        });
+      });
+
+      describe('if valid date and PM time', () => {
+        it('should not change date and should change time to AM in the hour input', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-seconds-twelve-hour');
+          browser.refresh();
+          $('button[class*="meridiem"]:not([class*="is-selected"])').click();
+          $('input[name="terra-time-hour-input"]').click();
+          browser.keys('a');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('2017');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('08');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('08');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('10');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('30');
+          expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
+          expect($('button[class*="meridiem"]')).toHaveAttrContaining('class', 'is-selected');
+        });
+
+        it('should not change date and should change time to AM in the minute input', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-seconds-twelve-hour');
+          browser.refresh();
+          $('button[class*="meridiem"]:not([class*="is-selected"])').click();
+          $('input[name="terra-time-minute-input"]').click();
+          browser.keys('a');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('2017');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('08');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('08');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('10');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('30');
+          expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
+          expect($('button[class*="meridiem"]')).toHaveAttrContaining('class', 'is-selected');
+        });
+
+        it('should not change date and should change time to AM in the second input', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-seconds-twelve-hour');
+          browser.refresh();
+          $('button[class*="meridiem"]:not([class*="is-selected"])').click();
+          $('input[name="terra-time-second-input"]').click();
+          browser.keys('a');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('2017');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('08');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('08');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('10');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('30');
+          expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
+          expect($('button[class*="meridiem"]')).toHaveAttrContaining('class', 'is-selected');
+        });
+      });
+
+      describe('if 24 time', () => {
+        it('should not do anything in hour input', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
+          browser.refresh();
+          $('input[name="terra-time-hour-input"]').click();
+          browser.keys('a');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('');
+        });
+
+        it('should not do anything in minute input', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
+          browser.refresh();
+          $('input[name="terra-time-minute-input"]').click();
+          browser.keys('a');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('');
+        });
+
+        it('should not do anything in second input', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-seconds');
+          browser.refresh();
+          $('input[name="terra-time-second-input"]').click();
+          browser.keys('a');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-second-input"]')).toHaveValue('');
         });
       });
     });
 
     describe('P', () => {
       describe('if blank date', () => {
-        it('in the hour input should set date to today and time to 12:00 PM', () => {
+        it('should set date to today and time to 12:00 PM in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -1291,7 +1415,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('button[class*="meridiem"]')).not.toHaveAttrContaining('class', 'is-selected');
         });
 
-        it('in the minute input should set date to today and time to 12:00 PM', () => {
+        it('should set date to today and time to 12:00 PM in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-time-minute-input"]').click();
@@ -1307,7 +1431,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('button[class*="meridiem"]')).not.toHaveAttrContaining('class', 'is-selected');
         });
 
-        it('in the second input should set date to today and time to 12:00 PM', () => {
+        it('should set date to today and time to 12:00 PM in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-time-second-input"]').click();
@@ -1325,7 +1449,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
       });
 
       describe('if invalid date', () => {
-        it('in the hour input should set date to today and time to 12:00 PM', () => {
+        it('should set date to today and time to 12:00 PM in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -1345,7 +1469,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('button[class*="meridiem"]')).not.toHaveAttrContaining('class', 'is-selected');
         });
 
-        it('in the minute input should set date to today and time to 12:00 PM', () => {
+        it('should set date to today and time to 12:00 PM in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -1365,7 +1489,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('button[class*="meridiem"]')).not.toHaveAttrContaining('class', 'is-selected');
         });
 
-        it('in the second input should set date to today and time to 12:00 PM', () => {
+        it('should set date to today and time to 12:00 PM in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -1386,8 +1510,8 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
         });
       });
 
-      describe('if valid date', () => {
-        it('in the hour input should set date to today', () => {
+      describe('if valid date and AM time', () => {
+        it('should not change date and should change time to PM in the hour input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -1402,7 +1526,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('button[class*="meridiem"]')).not.toHaveAttrContaining('class', 'is-selected');
         });
 
-        it('in the minute input should set date to today', () => {
+        it('should not change date and should change time to PM in the minute input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-time-minute-input"]').click();
@@ -1417,7 +1541,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('button[class*="meridiem"]')).not.toHaveAttrContaining('class', 'is-selected');
         });
 
-        it('in the second input should set date to today', () => {
+        it('should not change date and should change time to PM in the second input', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-seconds-twelve-hour');
           browser.refresh();
           $('input[name="terra-time-second-input"]').click();
@@ -1430,6 +1554,98 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue('30');
           expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
           expect($('button[class*="meridiem"]')).not.toHaveAttrContaining('class', 'is-selected');
+        });
+      });
+
+      describe('if valid date and PM time', () => {
+        it('should not change date and should keep time to PM in the hour input', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-seconds-twelve-hour');
+          browser.refresh();
+          $('button[class*="meridiem"]:not([class*="is-selected"])').click();
+          $('input[name="terra-time-hour-input"]').click();
+          browser.keys('p');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('2017');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('08');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('08');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('10');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('30');
+          expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
+          expect($('button[class*="meridiem"]')).not.toHaveAttrContaining('class', 'is-selected');
+        });
+
+        it('should not change date and should keep time to PM in the minute input', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-seconds-twelve-hour');
+          browser.refresh();
+          $('button[class*="meridiem"]:not([class*="is-selected"])').click();
+          $('input[name="terra-time-minute-input"]').click();
+          browser.keys('p');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('2017');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('08');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('08');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('10');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('30');
+          expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
+          expect($('button[class*="meridiem"]')).not.toHaveAttrContaining('class', 'is-selected');
+        });
+
+        it('should not change date and should keep time to PM in the second input', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-seconds-twelve-hour');
+          browser.refresh();
+          $('button[class*="meridiem"]:not([class*="is-selected"])').click();
+          $('input[name="terra-time-second-input"]').click();
+          browser.keys('p');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('2017');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('08');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('08');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('10');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('30');
+          expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
+          expect($('button[class*="meridiem"]')).not.toHaveAttrContaining('class', 'is-selected');
+        });
+      });
+
+      describe('if 24 time', () => {
+        it('should not do anything in hour input', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
+          browser.refresh();
+          $('input[name="terra-time-hour-input"]').click();
+          browser.keys('p');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('');
+        });
+
+        it('should not do anything in minute input', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
+          browser.refresh();
+          $('input[name="terra-time-minute-input"]').click();
+          browser.keys('p');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('');
+        });
+
+        it('should not do anything in second input', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-seconds');
+          browser.refresh();
+          $('input[name="terra-time-second-input"]').click();
+          browser.keys('p');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('');
+          expect($('input[name="terra-time-second-input"]')).toHaveValue('');
         });
       });
     });
