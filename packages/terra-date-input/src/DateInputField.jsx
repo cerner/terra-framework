@@ -206,17 +206,25 @@ const DateInputField = (props) => {
   const legendGroup = (
     <legend className={cx(['legend-group', { 'legend-group-hidden': isLegendHidden }])}>
       <div {...legendAttributes} className={legendClassNames}>
+        {/* The icon used here is undocumented and not supported other than in a specific theme not typically used. */}
         {isInvalid && <span className={cx('error-icon')}><IconError /></span>}
+
+        {/* This bit controls showing the little star prefix, *, to show that the input is required. */}
         {required && (isInvalid || !hideRequired) && (
           <React.Fragment>
             <div aria-hidden="true" className={cx('required')}>*</div>
             <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.date.input.required' })} />
           </React.Fragment>
         )}
+
+        {/* The text of the legend, besides any decorations. */}
         {legend}
-        {required && !isInvalid && hideRequired && <span className={cx('required-hidden')}>*</span>}
-        {showOptional && !required
-          && (<span className={cx('optional')}>{intl.formatMessage({ id: 'Terra.date.input.optional' })}</span>)}
+
+        {/* We only include the following span so that elements do not pop around in the layout when isInvalid changes. */}
+        {required && !isInvalid && hideRequired && (<span className={cx('required-hidden')}>*</span>)}
+
+        {/* This bit controls whether the (Optional suffix displays after the legend text */}
+        {showOptional && !required && <span className={cx('optional')}>{intl.formatMessage({ id: 'Terra.date.input.optional' })}</span>}
         {!isInvalid && <span className={cx('error-icon-hidden')} />}
       </div>
     </legend>
