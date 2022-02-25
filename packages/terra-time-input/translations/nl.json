@@ -1,11 +1,22 @@
 {
-  "Terra.timeInput.am": "",
-  "Terra.timeInput.hh": "uu",
+  "Terra.timeInput.a11yLabelDefault": "Tijd",
+  "Terra.timeInput.am": "AM",
+  "Terra.timeInput.descriptionMinute": "Een tweecijferige minuut.",
+  "Terra.timeInput.descriptionSecond": "Een tweecijferige seconde.",
+  "Terra.timeInput.hourDescriptionTwelve": "Een tweecijferige 12-uurswaarde",
+  "Terra.timeInput.hourDescriptionTwentyFour": "Een tweecijferige 24-uurswaarde",
+  "Terra.timeInput.hourLabel": "{a11yLabel} uur",
   "Terra.timeInput.hours": "Uren",
+  "Terra.timeInput.labeledTextValue": "{a11yLabel} {a11yTimeValue}",
+  "Terra.timeInput.maskHourMinute": "(uu:mm)",
+  "Terra.timeInput.maskHourMinuteSecond": "(uu:mm:ss)",
   "Terra.timeInput.minutes": "Minuten",
-  "Terra.timeInput.mm": "mm",
+  "Terra.timeInput.pm": "PM",
   "Terra.timeInput.seconds": "Seconden",
-  "Terra.timeInput.ss": "s",
-  "Terra.timeInput.pm": "",
-  "Terra.timeInput.timeFormatLabel": "Tijdformaat:"
+  "Terra.timeInput.textValueTwelveHourMinute": "{hour}:{minute} {meridiem}",
+  "Terra.timeInput.textValueTwelveHourMinuteSecond": "{hour}:{minute}:{second} {meridiem}",
+  "Terra.timeInput.textValueTwentyFourHourMinute": "{hour}:{minute}",
+  "Terra.timeInput.textValueTwentyFourHourMinuteSecond": "{hour}:{minute}:{second}",
+  "Terra.timeInput.timeFormatLabel": "Tijdformaat:",
+  "Terra.timeInput.timeSpacer": ":"
 }

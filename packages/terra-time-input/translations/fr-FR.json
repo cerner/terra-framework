@@ -1,12 +1,3 @@
 {
-  "Terra.timeInput.am": "",
-  "Terra.timeInput.pm": "",
-  "Terra.timeInput.hours": "Heures",
-  "Terra.timeInput.minutes": "Minutes",
-  "Terra.timeInput.seconds": "Secondes",
-  "Terra.timeInput.hh": "HH",
-  "Terra.timeInput.mm": "mm",
-  "Terra.timeInput.ss": "s",
   "Terra.timeInput.timeFormatLabel": "Format d'heure:"
-
 }
