@@ -125,14 +125,14 @@
     --terra-pills-rollup-pill-active-color: #9b9b9b;
 
     // Text alignment for all but IE + Safari
-    --terra-pills-rollup-pill-label-not-ms-top: -0.05em;
-    --terra-pills-pill-label-not-ms-top: -0.05em;
-    --terra-pills-selectable-removable-pill-label-not-ms-top: -0.05em;
+    --terra-pills-rollup-pill-label-not-ms-top: -0.01em;
+    --terra-pills-pill-label-not-ms-top: -0.01em;
+    --terra-pills-selectable-removable-pill-label-not-ms-top: 0;
 
     // Text alignment for Firefox
     --terra-pills-rollup-pill-label-moz-top: -0.02em;
     --terra-pills-pill-label-moz-top: -0.02em;
-    --terra-pills-selectable-removable-pill-label-moz-top: -0.02em;
+    --terra-pills-selectable-removable-pill-label-moz-top: 0;
 
     // Popup Content for Truncated Basic Pill
     --terra-pills-popup-pill-label-color: #b2b5b6;

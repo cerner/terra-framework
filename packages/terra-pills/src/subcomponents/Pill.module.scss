@@ -360,7 +360,7 @@
 
     @supports (not (-webkit-hyphens:none)) {
       .rollup-pill-label {
-        top: var(--terra-pills-rollup-pill-label-not-ms-top, -0.05em); // Text alignment for all but IE + Safari
+        top: var(--terra-pills-rollup-pill-label-not-ms-top, -0.01em); // Text alignment for all but IE + Safari
       }
     }
 
@@ -373,11 +373,11 @@
   
   @supports (not (-webkit-hyphens:none)) {
     .pill-label {
-      top: var(--terra-pills-pill-label-not-ms-top, -0.05em); // Text alignment for all but IE + Safari
+      top: var(--terra-pills-pill-label-not-ms-top, -0.01em); // Text alignment for all but IE + Safari
     }
 
     .is-selectable-and-removable {
-      top: var(--terra-pills-selectable-removable-pill-label-not-ms-top, -0.05em); // Text alignment for all but IE + Safari
+      top: var(--terra-pills-selectable-removable-pill-label-not-ms-top, 0); // Text alignment for all but IE + Safari
     }
   }
 
@@ -387,7 +387,7 @@
     }
 
     .is-selectable-and-removable {
-      top: var(--terra-pills-selectable-removable-pill-label-moz-top, -0.02em); // Text alignment for Firefox
+      top: var(--terra-pills-selectable-removable-pill-label-moz-top, 0); // Text alignment for Firefox
     }
   }
 
