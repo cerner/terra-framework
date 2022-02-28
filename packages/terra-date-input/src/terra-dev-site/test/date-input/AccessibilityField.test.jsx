@@ -4,7 +4,7 @@ import DateInputField from 'terra-date-input/lib/DateInputField';
 import Checkbox from 'terra-form-checkbox';
 import InputField from 'terra-form-input/lib/InputField';
 import CheckboxField from 'terra-form-checkbox/lib/CheckboxField';
-import RadioFieldGenerator from './common/_RadioFieldGenerator.jsx';
+import RadioFieldGenerator from './common/_RadioFieldGenerator';
 
 const AccessibilityFieldTest = () => {
   const [value, setValue] = useState('');

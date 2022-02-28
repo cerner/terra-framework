@@ -671,6 +671,7 @@ class DateInput extends React.Component {
         autoComplete="off"
         disabled={this.props.disabled}
         isInvalid={this.props.isInvalid}
+        showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
       />
@@ -712,6 +713,7 @@ class DateInput extends React.Component {
         autoComplete="off"
         disabled={this.props.disabled}
         isInvalid={this.props.isInvalid}
+        showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
       />

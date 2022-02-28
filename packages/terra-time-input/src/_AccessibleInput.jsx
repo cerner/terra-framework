@@ -22,10 +22,13 @@ const propTypes = {
   disabled: PropTypes.bool,
   /** Set to true to mark as invalid for screen readers. */
   isInvalid: PropTypes.bool,
+  /** When true, setting isInvalid to true will also visually display the input as invalid. */
+  showIsInvalid: PropTypes.bool,
 };
 
 const defaultProps = {
   isInvalid: false,
+  showIsInvalid: false,
 };
 
 /**
@@ -49,6 +52,7 @@ function AccessibleInput(props) {
     description,
     disabled,
     isInvalid,
+    showIsInvalid,
     ...inputProps
   } = props;
 
@@ -72,7 +76,8 @@ function AccessibleInput(props) {
         value={value}
         disabled={disabled}
         aria-disabled={disabled}
-        isInvalid={isInvalid}
+        // TimeInput requires us not to show isInvalid visually, but DateInput requires we do show isInvalid visually.
+        isInvalid={showIsInvalid && isInvalid}
         aria-invalid={isInvalid}
         aria-labelledby={value ? labelId : undefined}
         aria-label={value ? undefined : label}
