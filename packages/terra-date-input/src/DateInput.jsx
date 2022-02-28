@@ -807,7 +807,7 @@ class DateInput extends React.Component {
         {...customProps}
         className={dateInputClassNames}
         ref={(element) => { this.dateInputContainer.current = element; if (refCallback) { refCallback(element); } }}
-        role={isA11yControlled ? undefined : 'group'}
+        role={isA11yControlled ? null : 'group'}
         aria-label={isA11yControlled ? undefined : label}
       >
         <AccessibleValue value={completeDateValue} readThis={`${label} ${completeDateValue}`} />
