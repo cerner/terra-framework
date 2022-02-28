@@ -19,8 +19,9 @@ const AccessibilityFieldTest = () => {
 
   return (
     <>
-      <h1 aria-hidden>Component Under Test</h1>
+      <h1>Component Under Test</h1>
       <DateInputField
+        id="componentUnderTest"
         legend={legend}
         name="date-of-birth-field"
         value={value}
@@ -37,7 +38,7 @@ const AccessibilityFieldTest = () => {
         hideRequired={mutex.includes('hideRequired')}
       />
 
-      <div aria-hidden="true">
+      <div>
         <h1>Test Settings</h1>
         <CheckboxField legend="Props">
           <Checkbox id="disabled" labelText="disabled" onChange={() => setDisabled(val => !val)} />

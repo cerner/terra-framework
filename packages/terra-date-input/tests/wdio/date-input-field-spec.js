@@ -1,4 +1,9 @@
 Terra.describeViewports('Date Input Field', ['medium'], () => {
+  it('should display the a11yLabel when that prop is provided', () => {
+    // Using a special selector to avoid false positives against the test setting controls on the same page.
+    browser.url('/raw/tests/terra-date-input/date-input/accessibility-field');
+    Terra.validates.element('a11y label', { selector: '#componentUnderTest' });
+  });
   it('should display no date provided', () => {
     browser.url('/raw/tests/terra-date-input/date-input/default-date-input-field');
     Terra.validates.element('no date');
