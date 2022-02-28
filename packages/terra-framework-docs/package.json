@@ -35,7 +35,7 @@
     "precompile": "rm -rf lib"
   },
   "dependencies": {
-    "@cerner/terra-docs": "file:cerner-terra-docs-1.7.0.tgz",
+    "@cerner/terra-docs": "^1.7.0",
     "@cerner/terra-pills": "^1.0.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
