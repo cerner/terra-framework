@@ -16,7 +16,7 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-   * The legend of the Date Input fieldset
+   * The legend of the Date Input fieldset. Also used by assistive technologies like screen readers even if isLegendHidden is true.
    */
   legend: PropTypes.string.isRequired,
   /**
@@ -206,17 +206,25 @@ const DateInputField = (props) => {
   const legendGroup = (
     <legend className={cx(['legend-group', { 'legend-group-hidden': isLegendHidden }])}>
       <div {...legendAttributes} className={legendClassNames}>
+        {/* The icon used here is undocumented and not supported other than in a specific theme not typically used. */}
         {isInvalid && <span className={cx('error-icon')}><IconError /></span>}
+
+        {/* This bit controls showing the little star prefix, *, to show that the input is required. */}
         {required && (isInvalid || !hideRequired) && (
           <React.Fragment>
             <div aria-hidden="true" className={cx('required')}>*</div>
             <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.date.input.required' })} />
           </React.Fragment>
         )}
+
+        {/* The text of the legend, besides any decorations. */}
         {legend}
-        {required && !isInvalid && hideRequired && <span className={cx('required-hidden')}>*</span>}
-        {showOptional && !required
-          && (<span className={cx('optional')}>{intl.formatMessage({ id: 'Terra.date.input.optional' })}</span>)}
+
+        {/* We only include the following span so that elements do not pop around in the layout when isInvalid changes. */}
+        {required && !isInvalid && hideRequired && (<span className={cx('required-hidden')}>*</span>)}
+
+        {/* This bit controls whether the (Optional) suffix displays after the legend text */}
+        {showOptional && !required && <span className={cx('optional')}>{intl.formatMessage({ id: 'Terra.date.input.optional' })}</span>}
         {!isInvalid && <span className={cx('error-icon-hidden')} />}
       </div>
     </legend>
@@ -227,34 +235,45 @@ const DateInputField = (props) => {
   return (
     <fieldset {...customProps} className={dateInputFieldClasses}>
       {legendGroup}
+      {/* Screen reader users should hear the help text before reading the input field. Think of it like instructions. */}
+      {help && <VisuallyHiddenText text={help} />}
       <DateInput
-        name={name}
-        onChange={onChange}
-        onBlur={onBlur}
-        onFocus={onFocus}
-        value={value}
-        displayFormat={displayFormat}
-        disabled={disabled}
-        isInvalid={isInvalid}
-        isIncomplete={isIncomplete}
-        useExternalFormatMask
-        required={required}
-        monthAttributes={{ ...monthAttributes, ...{ 'aria-describedby': monthAriaDescriptionIds } }}
+        /** The DateInput needs a label to use for the first control (date or month, depending on the locale).
+         *
+         * The first Input in the group has a combination label, 'Date of Birth Month', so that it's easy to pick out
+         * that field out of a list of many inputs in the same view when the screen reader is in picker mode. Picker
+         * mode lets the user can jump to elements in a page. Screen readers tend to present a flat list of inputs
+         * without context of which the Date Input those inputs belong to, like this:
+         *  ==SCREEN READER'S LIST OF FORM INPUTS TO PICK==
+         *  1. Date of Birth Month
+         *  2. Date
+         *  3. Year
+         *  4. Anniversary Month <-- easy to spot the start of this Date Input.
+         *  5. Date
+        */
+        a11yLabel={legend}
         dayAttributes={{ ...dayAttributes, ...{ 'aria-describedby': dayAriaDescriptionIds } }}
+        disabled={disabled}
+        displayFormat={displayFormat}
+        isA11yControlled // This field is controlling the a11y features of the input.
+        isIncomplete={isIncomplete}
+        isInvalid={isInvalid}
+        monthAttributes={{ ...monthAttributes, ...{ 'aria-describedby': monthAriaDescriptionIds } }}
+        name={name}
+        onBlur={onBlur}
+        onChange={onChange}
+        onFocus={onFocus}
+        required={required}
+        useExternalFormatMask
+        value={value}
         yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDescriptionIds } }}
       />
       {isInvalid && error && <div id={errorAriaDescriptionId} className={cx('error-text')}>{error}</div>}
-      {help ? (
-        <div id={helpAriaDescriptionId} className={cx('help-text')} aria-label={`${intl.formatMessage({ id: 'Terra.date.input.dateFormatLabel' })} ${format}, ${help}`}>
-          {format}
-          &nbsp;
-          {help}
-        </div>
-      ) : (
-        <div id={helpAriaDescriptionId} className={cx('help-text')} aria-label={`${intl.formatMessage({ id: 'Terra.date.input.dateFormatLabel' })} ${format}`}>
-          {format}
-        </div>
-      )}
+      {/* It makes no sense for screen readers to hear the format or the help text in this position. */}
+      {/* Instead, each subfield component reads its own format and the help text is read before the first control. */}
+      <div aria-hidden className={cx('help-text')}>
+        {help ? `${format} ${help}` : format}
+      </div>
     </fieldset>
   );
 };
