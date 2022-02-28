@@ -108,6 +108,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           className="month-select-wrapper"
         >
           <select
+            aria-disabled={false}
             aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
             className="month-select"
             disabled={false}
@@ -215,6 +216,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           onPaste={[Function]}
           pattern="\\\\d*"
           refCallback={[Function]}
+          showIsInvalid={true}
           size="2"
           type="text"
           value="04"
@@ -307,6 +309,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           onPaste={[Function]}
           pattern="\\\\d*"
           refCallback={[Function]}
+          showIsInvalid={true}
           size="4"
           type="text"
           value="2000"
@@ -418,6 +421,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="month-select-wrapper"
     >
       <select
+        aria-disabled="false"
         aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
         class="month-select is-placeholder"
         name="terra-date-month-date-input"
@@ -557,6 +561,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="month-select-wrapper"
     >
       <select
+        aria-disabled="false"
         aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
         class="month-select is-placeholder"
         name="terra-date-month-date-input-2"
@@ -696,6 +701,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="month-select-wrapper"
     >
       <select
+        aria-disabled="false"
         aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
         class="month-select is-placeholder"
         name="terra-date-month-date-input-3"
@@ -837,6 +843,7 @@ exports[`DateInput should render a date input with a default date 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select"
       disabled={false}
@@ -944,6 +951,7 @@ exports[`DateInput should render a date input with a default date 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="2"
     type="text"
     value="04"
@@ -965,6 +973,7 @@ exports[`DateInput should render a date input with a default date 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="4"
     type="text"
     value="2000"
@@ -1001,6 +1010,7 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
       disabled={false}
@@ -1108,6 +1118,7 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="2"
     type="text"
     value=""
@@ -1129,6 +1140,7 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="4"
     type="text"
     value=""
@@ -1160,6 +1172,7 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
       disabled={false}
@@ -1267,6 +1280,7 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="2"
     type="text"
     value=""
@@ -1288,6 +1302,7 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="4"
     type="text"
     value=""
@@ -1319,6 +1334,7 @@ exports[`DateInput should render a date input with onChange 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
       disabled={false}
@@ -1426,6 +1442,7 @@ exports[`DateInput should render a date input with onChange 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="2"
     type="text"
     value=""
@@ -1447,6 +1464,7 @@ exports[`DateInput should render a date input with onChange 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="4"
     type="text"
     value=""
@@ -1478,6 +1496,7 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
       disabled={false}
@@ -1585,6 +1604,7 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="2"
     type="text"
     value=""
@@ -1606,6 +1626,7 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="4"
     type="text"
     value=""
@@ -1637,6 +1658,7 @@ exports[`DateInput should render a default date input 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
       disabled={false}
@@ -1744,6 +1766,7 @@ exports[`DateInput should render a default date input 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="2"
     type="text"
     value=""
@@ -1765,6 +1788,7 @@ exports[`DateInput should render a default date input 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="4"
     type="text"
     value=""
@@ -1796,6 +1820,7 @@ exports[`DateInput should render a disabled time input 1`] = `
     className="month-select-wrapper disabled"
   >
     <select
+      aria-disabled={true}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder disabled"
       disabled={true}
@@ -1903,6 +1928,7 @@ exports[`DateInput should render a disabled time input 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="2"
     type="text"
     value=""
@@ -1924,6 +1950,7 @@ exports[`DateInput should render a disabled time input 1`] = `
     onPaste={[Function]}
     pattern="\\\\d*"
     refCallback={[Function]}
+    showIsInvalid={true}
     size="4"
     type="text"
     value=""
@@ -2121,6 +2148,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
           >
             <div
               className="date-input clinical-lowlight-theme"
+              role={null}
             >
               <AccessibleValue
                 readThis="Legend text 2000-07-04"
@@ -2148,6 +2176,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
               >
                 <select
                   aria-describedby="terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000"
+                  aria-disabled={false}
                   aria-invalid={false}
                   aria-label="Terra.date.input.monthSelectLabelWithName"
                   aria-required={false}
@@ -2260,6 +2289,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                 pattern="\\\\d*"
                 refCallback={[Function]}
                 required={false}
+                showIsInvalid={true}
                 size="2"
                 type="text"
                 value="04"
@@ -2355,6 +2385,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                 pattern="\\\\d*"
                 refCallback={[Function]}
                 required={false}
+                showIsInvalid={true}
                 size="4"
                 type="text"
                 value="2000"
