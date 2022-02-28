@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const propTypes = {
   // The text of the legend tag.
   fieldLegend: PropTypes.string,
-  // The name of every Radio
+  // The name of every Radio.
   name: PropTypes.string,
   // A list of strings to serve as the key, id, labelText, and value of every Radio.
   options: PropTypes.array,
