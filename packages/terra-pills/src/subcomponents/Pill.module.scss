@@ -212,6 +212,7 @@
       right: 0;
       top: 0;
       width: var(--terra-pills-pill-remove-button-before-width, 1.42857rem);
+      z-index: 2;
     }
 
     &:hover {
@@ -279,10 +280,11 @@
     top: 0; // Button reset for IE
     user-select: none; // Prevent text selection on buttons in mobile devices;
     width: var(--terra-pills-clear-icon-width, 0.71429rem);
+    z-index: 3;
 
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       height: var(--terra-pills-clear-icon-ms-height, 0.71429rem);
-      top: var(--terra-pills-clear-icon-ms-top, -0.045rem);
+      top: var(--terra-pills-clear-icon-ms-top, 0);
       width: var(--terra-pills-clear-icon-ms-width, 0.71429rem);
     }
   }
@@ -356,37 +358,37 @@
       white-space: nowrap;  
     }
 
-    @supports (not (-webkit-hyphens:none)) { 
-      .rollup-pill-label { 
+    @supports (not (-webkit-hyphens:none)) {
+      .rollup-pill-label {
         top: var(--terra-pills-rollup-pill-label-not-ms-top, -0.05em); // Text alignment for all but IE + Safari
-      } 
+      }
     }
 
-    @supports selector(:-moz-is-html) { 
+    @supports selector(:-moz-is-html) {
       .rollup-pill-label { 
         top: var(--terra-pills-rollup-pill-label-moz-top, -0.02em); // Text alignment for Firefox
       }
     }
   }
   
-  @supports (not (-webkit-hyphens:none)) { 
-    .pill-label { 
+  @supports (not (-webkit-hyphens:none)) {
+    .pill-label {
       top: var(--terra-pills-pill-label-not-ms-top, -0.05em); // Text alignment for all but IE + Safari
-    } 
+    }
 
-    .is-selectable-and-removable { 
+    .is-selectable-and-removable {
       top: var(--terra-pills-selectable-removable-pill-label-not-ms-top, -0.05em); // Text alignment for all but IE + Safari
-    } 
+    }
   }
 
-  @supports selector(:-moz-is-html) { 
-    .pill-label { 
+  @supports selector(:-moz-is-html) {
+    .pill-label {
       top: var(--terra-pills-pill-label-moz-top, -0.02em); // Text alignment for Firefox
     }
 
-    .is-selectable-and-removable { 
+    .is-selectable-and-removable {
       top: var(--terra-pills-selectable-removable-pill-label-moz-top, -0.02em); // Text alignment for Firefox
-    } 
+    }
   }
 
   .popup-content-pill-label {
