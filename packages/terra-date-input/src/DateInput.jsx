@@ -19,7 +19,7 @@ const propTypes = {
    * An identifier used by assistive technologies like screen readers to briefly describe this time input to users.
    * The label is not rendered visually.
    *
-   * **BEST PRACTICE FOR ACCESSIBILITY**: you _SHOULD_ set this to match whatever visible label you give in your UI.
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue)  **BEST PRACTICE FOR ACCESSIBILITY**: you _SHOULD_ set this to match whatever visible label you give in your UI.
    * Currently this is optional for passivity reasons, but it will become mandatory in a future major version.
    */
   a11yLabel: PropTypes.string,
@@ -47,7 +47,7 @@ const propTypes = {
   intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }),
   /**
    * @private
-   * Set to True if a higher order comopnent like a field is providing the needed a11y features.
+   * Set to True if a higher order component like a field is providing the needed a11y features.
    */
   isA11yControlled: PropTypes.bool,
   /**
