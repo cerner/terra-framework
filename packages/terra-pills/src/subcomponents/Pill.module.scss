@@ -76,12 +76,14 @@
     line-height: var(--terra-pills-pill-label-line-height, 1.16667);
     min-width: 0;
     overflow: hidden;
-    padding-bottom: var(--terra-pills-pill-label-padding-bottom, 0.32142rem);
+    padding-bottom: var(--terra-pills-pill-label-padding-bottom, 0.28571rem);
     padding-left: var(--terra-pills-pill-label-padding-left, 0.71428rem);
     padding-right: var(--terra-pills-pill-label-padding-right, 0.28571rem);
-    padding-top: var(--terra-pills-pill-label-padding-top, 0.25rem);
+    padding-top: var(--terra-pills-pill-label-padding-top, 0.285714rem);
     pointer-events: none;
+    position: relative;
     text-overflow: ellipsis;
+    top: 0;
     white-space: nowrap;
     width: 100%;
 
@@ -353,8 +355,40 @@
       top: 0;  // Button reset for IE
       white-space: nowrap;  
     }
+
+    @supports (not (-webkit-hyphens:none)) { 
+      .rollup-pill-label { 
+        top: var(--terra-pills-rollup-pill-label-not-ms-top, -0.05em); // Text alignment for all but IE + Safari
+      } 
+    }
+
+    @supports selector(:-moz-is-html) { 
+      .rollup-pill-label { 
+        top: var(--terra-pills-rollup-pill-label-moz-top, -0.02em); // Text alignment for Firefox
+      }
+    }
   }
   
+  @supports (not (-webkit-hyphens:none)) { 
+    .pill-label { 
+      top: var(--terra-pills-pill-label-not-ms-top, -0.05em); // Text alignment for all but IE + Safari
+    } 
+
+    .is-selectable-and-removable { 
+      top: var(--terra-pills-selectable-removable-pill-label-not-ms-top, -0.05em); // Text alignment for all but IE + Safari
+    } 
+  }
+
+  @supports selector(:-moz-is-html) { 
+    .pill-label { 
+      top: var(--terra-pills-pill-label-moz-top, -0.02em); // Text alignment for Firefox
+    }
+
+    .is-selectable-and-removable { 
+      top: var(--terra-pills-selectable-removable-pill-label-moz-top, -0.02em); // Text alignment for Firefox
+    } 
+  }
+
   .popup-content-pill-label {
     color: var(--terra-pills-popup-pill-label-color, #595f62);
     font-size: var(--terra-pills-popup-pill-label-font-size, 0.92857rem);
