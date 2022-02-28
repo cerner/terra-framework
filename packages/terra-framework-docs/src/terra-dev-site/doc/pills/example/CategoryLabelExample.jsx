@@ -1,25 +1,34 @@
 import React, { useState } from 'react';
+import classNamesBind from 'classnames/bind';
+import { Button as DocsButton } from '@cerner/terra-docs';
 import FilterPills, { Pill } from '@cerner/terra-pills';
+import ThemeContext from 'terra-theme-context';
+import styles from './FilterPillsCommon.module.scss';
+
+const cx = classNamesBind.bind(styles);
 
 const CategoryLabelExample = () => {
+  const theme = React.useContext(ThemeContext);
+
   const pillsData = [
     {
-      label: 'asthma',
-      labelCategory: 'respiratory',
-      id: 'terra-filter-pills-removable-pill-asthma',
+      label: 'Asthma',
+      labelCategory: 'Respiratory',
+      id: 'terra-filter-pills-respiratory-asthma',
     },
     {
-      label: 'bronchitis',
-      labelCategory: 'respiratory',
-      id: 'terra-filter-pills-removable-pill-bronchitis',
+      label: 'Bronchitis',
+      labelCategory: 'Respiratory',
+      id: 'terra-filter-pills-respiratory-bronchitis',
     },
     {
-      label: 'fibro',
-      labelCategory: 'respiratory',
-      id: 'terra-filter-pills-removable-pill-fibro',
+      label: 'Fibro',
+      labelCategory: 'Respiratory',
+      id: 'terra-filter-pills-respiratory-fibro',
     },
   ];
   const [pills, setPills] = useState(pillsData);
+  const isResetButtonDisabled = (pills.length === pillsData.length);
 
   const handleOnRemove = (id, metaData) => {
     const pillsArray = pills;
@@ -30,7 +39,7 @@ const CategoryLabelExample = () => {
   return (
     <>
       <FilterPills
-        ariaLabel="Example of Filter Pills with category label"
+        ariaLabel="Demonstration example of Filter Pills with category labels"
         onRemove={handleOnRemove}
       >
         {pills.map((pill, index) => (
@@ -43,10 +52,18 @@ const CategoryLabelExample = () => {
           />
         ))}
       </FilterPills>
-      {pills.length <= 0
-        && <button type="button" onClick={() => setPills(pillsData)}>Reset the Example</button>}
+      <DocsButton
+        aria-disabled={isResetButtonDisabled}
+        className={cx(['terra-docs-example-reset-button', { 'is-disabled': isResetButtonDisabled }, theme.className])}
+        disabled={isResetButtonDisabled}
+        onClick={() => setPills(pillsData)}
+      >
+        Reset Example
+      </DocsButton>
     </>
   );
 };
+
+CategoryLabelExample.contextType = ThemeContext;
 
 export default CategoryLabelExample;

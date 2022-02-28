@@ -3,9 +3,9 @@
 :local {
   .orion-fusion-theme {
     // Pill List Item
-    --terra-pills-pill-list-item-margin-bottom: 0.33333rem;
+    --terra-pills-pill-list-item-margin-bottom: 0.2rem;
     --terra-pills-pill-list-item-margin-right: 0.5rem;
-    --terra-pills-pill-list-item-margin-top: 0.33333rem;
+    --terra-pills-pill-list-item-margin-top: 0.25rem;
 
     // Pill
     --terra-pills-pill-background-color: #fff;
@@ -15,9 +15,9 @@
     --terra-pills-pill-color: #595f62;
     --terra-pills-pill-font-size: 1rem;
     --terra-pills-pill-height: 2rem;
-    --terra-pills-pill-margin-bottom: 0.33333rem;
+    --terra-pills-pill-margin-bottom: 0.2rem;
     --terra-pills-pill-margin-right: 0.5rem;
-    --terra-pills-pill-margin-top: 0.33333rem;
+    --terra-pills-pill-margin-top: 0.25rem;
     --terra-pills-pill-focus-border-color: #868a8c;
     --terra-pills-pill-focus-border-width: 1px;
     --terra-pills-pill-focus-box-shadow: none;
@@ -96,7 +96,7 @@
     --terra-pills-clear-icon-margin-top: 0.4375rem;
     --terra-pills-clear-icon-width: 0.91667rem;
     --terra-pills-clear-icon-ms-height: 1.125rem;
-    --terra-pills-clear-icon-ms-top: -0.05rem;
+    --terra-pills-clear-icon-ms-top: 0;
     --terra-pills-clear-icon-ms-width: 1.125rem;
 
     // Roll Up Pill
@@ -123,6 +123,16 @@
     --terra-pills-rollup-pill-active-background-color: #bcbfc0;
     --terra-pills-rollup-pill-active-border: 1px solid #868a8c;
     --terra-pills-rollup-pill-active-color: #222a2e;
+
+    // Text alignment for all but IE + Safari
+    --terra-pills-rollup-pill-label-not-ms-top: 0;
+    --terra-pills-pill-label-not-ms-top: 0;
+    --terra-pills-selectable-removable-pill-label-not-ms-top: 0;
+
+    // Text alignment for Firefox
+    --terra-pills-rollup-pill-label-moz-top: -0.05em;
+    --terra-pills-pill-label-moz-top: -0.05em;
+    --terra-pills-selectable-removable-pill-label-moz-top: -0.05em;
 
     // Popup Content for Truncated Basic Pill
     --terra-pills-popup-pill-label-color: #595f62;

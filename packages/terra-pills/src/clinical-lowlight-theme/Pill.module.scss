@@ -30,16 +30,16 @@
     --terra-pills-pill-label-font-size: 0.85714rem;
     --terra-pills-pill-label-font-weight: 400;
     --terra-pills-pill-label-line-height: 1.16667;
-    --terra-pills-pill-label-padding-bottom: 0.28571rem;
+    --terra-pills-pill-label-padding-bottom: 0.285714rem;
     --terra-pills-pill-label-padding-left: 0.71428rem;
     --terra-pills-pill-label-padding-right: 0.28571rem;
-    --terra-pills-pill-label-padding-top: 0.28571rem;
+    --terra-pills-pill-label-padding-top: 0.285714rem;
     --terra-pills-pill-label-category-font-size: 0.85714rem;
     --terra-pills-pill-label-category-font-weight: 500;
 
     // Removable hover + affect Remove Button
-    --terra-pills-removable-hover-pill-remove-button-background-color: #222a2e;
-    --terra-pills-removable-hover-pill-remove-button-box-shadow: 1px 0 0 0 #525659;
+    --terra-pills-removable-hover-pill-remove-button-background-color: #3b4245;
+    --terra-pills-removable-hover-pill-remove-button-box-shadow: 1px 0 0 0 #525659, inset 5px 0 5px 1px #222a2e;
     --terra-pills-removable-hover-pill-remove-button-before-background-color: #141719;
     --terra-pills-removable-hover-pill-remove-button-before-border-color: #141719;
     --terra-pills-removable-hover-clear-icon-color: #9b9b9b;
@@ -80,7 +80,7 @@
     --terra-pills-pill-remove-button-hover-background-color: #222a2e;
     --terra-pills-pill-remove-button-hover-box-shadow: 1px 0 0 0 #525659;
     --terra-pills-pill-remove-button-hover-before-background-color: #141719;
-    --terra-pills-pill-remove-button-hover-before-border-color: #3b4245;
+    --terra-pills-pill-remove-button-hover-before-border-color: rgba(82, 86, 89, 0.8);
     --terra-pills-pill-remove-button-hover-clear-icon-color: #9b9b9b;
     --terra-pills-pill-remove-button-active-background-color: #222a2e;
     --terra-pills-pill-remove-button-active-box-shadow: 1px 0 0 0 #525659;
@@ -96,7 +96,7 @@
     --terra-pills-clear-icon-margin-top: 0.42857rem;
     --terra-pills-clear-icon-width: 0.71429rem;
     --terra-pills-clear-icon-ms-height: 0.71429rem;
-    --terra-pills-clear-icon-ms-top: -0.045rem;
+    --terra-pills-clear-icon-ms-top: 0;
     --terra-pills-clear-icon-ms-width: 0.71429rem;
 
     // Roll Up Pill
@@ -123,6 +123,16 @@
     --terra-pills-rollup-pill-active-background-color: #0c0d0e;
     --terra-pills-rollup-pill-active-border: 1px solid #525659;
     --terra-pills-rollup-pill-active-color: #9b9b9b;
+
+    // Text alignment for all but IE + Safari
+    --terra-pills-rollup-pill-label-not-ms-top: -0.05em;
+    --terra-pills-pill-label-not-ms-top: -0.05em;
+    --terra-pills-selectable-removable-pill-label-not-ms-top: -0.05em;
+
+    // Text alignment for Firefox
+    --terra-pills-rollup-pill-label-moz-top: -0.02em;
+    --terra-pills-pill-label-moz-top: -0.02em;
+    --terra-pills-selectable-removable-pill-label-moz-top: -0.02em;
 
     // Popup Content for Truncated Basic Pill
     --terra-pills-popup-pill-label-color: #b2b5b6;
