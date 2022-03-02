@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * A11y improvements
+
 ## 1.32.1 - (February 15, 2022)
 
 * Changed
