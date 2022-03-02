@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## Unreleased 
+
+## 1.33.0 - (March 1, 2022)
 
 * Added
   * A11y improvements
