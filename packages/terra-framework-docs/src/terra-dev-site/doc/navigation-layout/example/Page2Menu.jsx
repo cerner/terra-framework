@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import RoutingStackDelegate from '../../../RoutingStackDelegate';
+import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 import styles from './NavigationLayoutDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
