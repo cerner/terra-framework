@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import Layout from '../../../Layout';
+import Layout from 'terra-layout';
 import TestHeader from '../common/TestHeader';
 import TestMenu from '../common/TestMenu';
 import TestContent from '../common/TestContent';

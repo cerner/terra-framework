@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import LayoutSlidePanel from '../../../_LayoutSlidePanel';
+import LayoutSlidePanel from 'terra-layout/lib/_LayoutSlidePanel';
 import styles from './TestLayoutCommon.module.scss';
 
 const cx = classNames.bind(styles);
