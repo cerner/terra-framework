@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.45.1 - (March 1, 2022)
+
 * Fixed
   * Supply isInvalid as well as aria-invalid to AccessibleInput
 
