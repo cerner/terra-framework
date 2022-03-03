@@ -1,5 +1,8 @@
 # Changelog
 
+* Added
+  * Migrate docs from terra-menu
+
 ## Unreleased
 
 ## 1.6.0 - (November 16, 2021)

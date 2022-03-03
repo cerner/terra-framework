@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from '../../../../Menu';
+import Menu from 'terra-menu';
 
 class MediumMenu extends React.Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Menu from '../../../../Menu';
+import Menu from 'terra-menu';
 
 const childContextTypes = {
   isSelectableMenu: PropTypes.bool,

@@ -1,7 +1,7 @@
 import React from 'react';
-import Menu from '../../../../Menu';
+import Menu from 'terra-menu';
 
-class SmallMenu extends React.Component {
+class NonSelectableMenu extends React.Component {
   constructor(props) {
     super(props);
     this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -35,7 +35,7 @@ class SmallMenu extends React.Component {
     return (
       <div>
         <div>
-          This menu should have a small height. And all items should be visible without scrolling.
+          This menu has no selectable items. The items in the menu should not have the spacing on the left for a checkmark.
         </div>
         <Menu
           isOpen={this.state.open}
@@ -43,9 +43,9 @@ class SmallMenu extends React.Component {
           onRequestClose={this.handleRequestClose}
         >
           <Menu.Item text="Default 1" key="1" className="TestFirstItem" />
-          <Menu.Item text="Default 2" key="2" className="TestLastItem" />
+          <Menu.Item text="Default 2" key="2" className="TestSecondItem" />
         </Menu>
-        <button type="button" id="small-menu-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
+        <button type="button" id="non-selectable-menu-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Default Menu
         </button>
       </div>
@@ -53,4 +53,4 @@ class SmallMenu extends React.Component {
   }
 }
 
-export default SmallMenu;
+export default NonSelectableMenu;
