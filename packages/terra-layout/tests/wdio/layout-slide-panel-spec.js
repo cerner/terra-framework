@@ -1,6 +1,6 @@
 Terra.describeViewports('Toggle the slide panel and hidden styles', ['medium'], () => {
   it('toggles the slide panel and hidden styles', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/layout/layout/layout-slide-panel-example');
+    browser.url('/raw/tests/cerner-terra-framework-docs/layout/layout-slide-panel-example');
     browser.refresh();
     $('[class*=_panel_][aria-hidden="true"]').waitForExist();
     Terra.validates.element('toggle slide panel', { selector: '#site' });
@@ -9,7 +9,7 @@ Terra.describeViewports('Toggle the slide panel and hidden styles', ['medium'], 
 
 describe('Toggle the slide panel click', () => {
   it('toggles the panel with click', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/layout/layout/layout-slide-panel-example');
+    browser.url('/raw/tests/cerner-terra-framework-docs/layout/layout-slide-panel-example');
     $('#test-toggle-1').click();
     $('[class*=_panel_][aria-hidden="false"]').waitForExist();
     Terra.validates.element('click', { selector: '#site' });
