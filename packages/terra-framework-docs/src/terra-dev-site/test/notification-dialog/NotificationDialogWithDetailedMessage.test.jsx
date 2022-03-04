@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
-import NotificationDialog, { ContentLayoutAsList } from '../../../NotificationDialog';
+import NotificationDialog, { ContentLayoutAsList } from 'terra-notification-dialog';
 
 const clickConfirm = () => {
   alert('You clicked confirm'); // eslint-disable-line no-alert

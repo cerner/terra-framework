@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
-import NotificationDialog from '../../../NotificationDialog';
+import NotificationDialog from 'terra-notification-dialog';
 
 const message = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.
