@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import SlideGroup from '../../../SlideGroup';
-import styles from '../../doc/example/SlideGroupDemo.module.scss';
+import SlideGroup from 'terra-slide-group';
+import styles from '../../doc/slide-group/example/SlideGroupDemo.module.scss';
 
 const cx = classNames.bind(styles);
 

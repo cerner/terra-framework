@@ -49,6 +49,7 @@
     "terra-grid": "^6.0.0",
     "terra-modal-manager": "^6.58.0",
     "terra-section-header": "^2.0.0",
+    "terra-slide-group": "^4.28.0",
     "terra-slide-panel-manager": "^5.61.0"
   }
 }
