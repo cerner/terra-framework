@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Migrated terra-collapsible-menu-view-docs
+
 ## 1.6.0 - (November 16, 2021)
 
 * Changed

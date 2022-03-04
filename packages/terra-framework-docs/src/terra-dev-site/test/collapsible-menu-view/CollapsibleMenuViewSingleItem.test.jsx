@@ -1,5 +1,5 @@
 import React from 'react';
-import CollapsibleMenuView from '../../../CollapsibleMenuView';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
 const CollapsibleMenuViewSingleItem = () => (
   <CollapsibleMenuView>
