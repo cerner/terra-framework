@@ -470,7 +470,7 @@ class TimeInput extends React.Component {
                 meridiem = this.anteMeridiem;
               }
             }
-            hour = TimeUtil.decrementHour(hour);
+            hour = TimeUtil.decrementHour(hour, variant);
           }
         } else {
           minute = TimeUtil.decrementMinute(minute);
@@ -493,7 +493,7 @@ class TimeInput extends React.Component {
                 formatMeridiem = this.anteMeridiem;
               }
             }
-            formatHour = TimeUtil.decrementHour(formatHour);
+            formatHour = TimeUtil.decrementHour(formatHour, variant);
           }
         } else {
           formatMinute = TimeUtil.decrementMinute(formatMinute);
@@ -518,7 +518,7 @@ class TimeInput extends React.Component {
                 meridiem = this.anteMeridiem;
               }
             }
-            hour = TimeUtil.incrementHour(hour);
+            hour = TimeUtil.incrementHour(hour, variant);
           }
         } else {
           minute = TimeUtil.incrementMinute(minute);
@@ -541,7 +541,7 @@ class TimeInput extends React.Component {
                 formatMeridiem = this.anteMeridiem;
               }
             }
-            formatHour = TimeUtil.incrementHour(formatHour);
+            formatHour = TimeUtil.incrementHour(formatHour, variant);
           }
         } else {
           formatMinute = TimeUtil.incrementMinute(formatMinute);

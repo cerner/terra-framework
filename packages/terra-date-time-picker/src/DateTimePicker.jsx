@@ -321,59 +321,61 @@ class DateTimePicker extends React.Component {
     let validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.initialTimeZone));
     const validTime = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
     let previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
-    let dateChanged = false;
 
     if (event.type === 'keydown') {
-      const timeArray = time.split(':');
+      // Keyboard shortcut is pressed, split the time value into hour and minute inputs
+      const timeArray = this.timeValue.split(':');
       if (event.key === 'n' || event.key === 'N') {
+        // `N` set Date to today
         previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
         validDate = true;
-        dateChanged = true;
-      }
-
-      if (event.key === '-' || event.key === '_') {
+      } else if (event.key === '-' || event.key === '_') {
+        // `-` subtract 1 minute`
         if (!validDate) {
+          // Date is not valid, set date to today making it valid
           previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
           validDate = true;
-          dateChanged = true;
         }
 
         if (timeArray[0] === '23' && timeArray[1] === '59') {
+          // Time is 23:59 which means previous datetime should be on the wrong day, lower it by 1
           previousDateTime = previousDateTime.subtract(1, 'd');
-          dateChanged = true;
         }
-      }
 
-      if (event.key === '=' || event.key === '+') {
+        const changedDateTime = DateTimeUtils.updateTime(previousDateTime, this.timeValue, this.props.showSeconds);
+        const checkHour = previousDateTime.subtract(1, 'minute').hours();
+        previousDateTime.add(1, 'minute');
+        if (changedDateTime.isDST() && checkHour !== changedDateTime.hours()) {
+          // Datetime falls under DST and hour is wrong using moment logic, so rewrite it using moment logic
+          timeArray[0] = (`0${checkHour}`).slice(-2);
+          this.timeValue = timeArray.join(':');
+        }
+      } else if (event.key === '=' || event.key === '+') {
+        // `+` add 1 minute`
         if (!validDate) {
+          // Date is not valid, set date to today making it valid
           previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
           validDate = true;
-          dateChanged = true;
         }
 
         if (timeArray[0] === '00' && timeArray[1] === '00') {
+          // Time is 00:00 which means previous datetime should be on the wrong day, increase it by 1
           previousDateTime = previousDateTime.add(1, 'd');
-          dateChanged = true;
         }
-      }
-
-      if (this.props.timeVariant === DateTimeUtils.FORMAT_12_HOUR && (event.key === 'a' || event.key === 'A' || event.key === 'p' || event.key === 'P')) {
+      } else if (this.props.timeVariant === DateTimeUtils.FORMAT_12_HOUR && (event.key === 'a' || event.key === 'A' || event.key === 'p' || event.key === 'P')) {
+        // `A` and `P`, swapped meridiem`
         if (!validDate) {
+          // Date is not valid, set date to today making it valid
           previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
           validDate = true;
-          dateChanged = true;
         }
       }
-    }
-
-    if (dateChanged) {
-      this.handleDateChange(event, previousDateTime.format('YYYY-MM-DD'));
     }
 
     // If both date and time are valid, check if the time is the missing hour and invoke onChange.
     // If the date is valid but time is invalid, the time in the dateTime state needs to be cleared and render.
     if (validDate && validTime) {
-      const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time, this.props.showSeconds);
+      const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, this.timeValue, this.props.showSeconds);
 
       if (event.keyCode === KeyCode.KEY_DOWN
         && previousDateTime && updatedDateTime && previousDateTime.format() === updatedDateTime.format()) {
@@ -395,14 +397,14 @@ class DateTimePicker extends React.Component {
       this.handleChange(event, null);
     } else {
       if (!validDate && validTime) {
-        const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time, this.props.showSeconds);
+        const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, this.timeValue, this.props.showSeconds);
 
         this.setState({
           dateTime: updatedDateTime,
         });
       }
 
-      this.handleChangeRaw(event, time);
+      this.handleChangeRaw(event, this.timeValue);
     }
   }
 
