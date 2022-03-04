@@ -4,6 +4,8 @@
 
 * Added
   * Migrate docs from terra-notification-dialog.
+  * Added docs for `terra-filter-pills`
+  * Added tests for `terra-filter-pills`
 
 ## 1.6.0 - (November 16, 2021)
 
