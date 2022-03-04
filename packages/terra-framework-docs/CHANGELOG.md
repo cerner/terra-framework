@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Migrate docs from terra-navigation-side-menu.
+
 ## 1.6.0 - (November 16, 2021)
 
 * Changed
