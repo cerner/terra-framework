@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import SlidePanelManager from 'terra-slide-panel-manager';
 import DisclosureComponent from './DisclosureComponent';
-import SlidePanelManager from '../../../SlidePanelManager';
 import styles from './SlidePanelManagerDefault.test.module.scss';
 
 const cx = classNames.bind(styles);

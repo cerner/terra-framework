@@ -11,7 +11,7 @@ import {
 } from 'terra-disclosure-manager';
 
 import SlidePanelManager from 'terra-slide-panel-manager';
-import styles from 'terra-slide-panel-manager/lib/terra-dev-site/doc/example/SlidePanelManager.module.scss';
+import styles from './SlidePanelManager.module.scss';
 
 const cx = classNames.bind(styles);
 
