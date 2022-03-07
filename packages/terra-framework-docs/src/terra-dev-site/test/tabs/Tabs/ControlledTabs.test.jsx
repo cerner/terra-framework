@@ -1,5 +1,5 @@
 import React from 'react';
-import Tabs from '../../../../Tabs';
+import Tabs from 'terra-tabs';
 import TabContent from './TabContentTemplate';
 
 class ControlledTabs extends React.Component {

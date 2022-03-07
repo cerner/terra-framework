@@ -53,6 +53,7 @@
     "terra-section-header": "^2.0.0",
     "terra-slide-panel-manager": "^5.61.0",
     "terra-spacer": "^3.59.0",
+    "terra-tabs": "^6.60.0",
     "terra-text": "^4.49.0",
     "terra-theme-context": "^1.0.0",
     "terra-toolbar": "^1.27.0"

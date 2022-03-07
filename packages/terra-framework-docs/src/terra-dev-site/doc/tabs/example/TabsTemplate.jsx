@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import Tabs from 'terra-tabs';
-import TabContentTemplate from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
+import TabContentTemplate from './TabContentTemplate';
 import styles from './common/TabExample.module.scss';
 
 const cx = classNames.bind(styles);
@@ -74,8 +74,4 @@ const TabsTemplate = (props) => {
 };
 
 TabsTemplate.propTypes = propTypes;
-
-const TabExpanded = () => (
-  <TabsTemplate tabFill />
-);
-export default TabExpanded;
+export default TabsTemplate;
