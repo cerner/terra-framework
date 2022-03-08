@@ -55,6 +55,7 @@
     "terra-spacer": "^3.59.0",
     "terra-text": "^4.49.0",
     "terra-theme-context": "^1.0.0",
+    "terra-theme-provider": "^4.10.0",
     "terra-toolbar": "^1.27.0"
   }
 }
