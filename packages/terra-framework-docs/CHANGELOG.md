@@ -1,9 +1,20 @@
 # Changelog
 
+* Added
+  * Migrate docs from terra-menu
+
 ## Unreleased
 
 * Added
   * Migrated docs from terra-navigation-prompt.
+  * Migrate docs from terra-navigation-layout
+
+## 1.7.0 - (March 8, 2022)
+
+* Added
+  * Migrate docs from terra-layout
+  * Added docs for `terra-filter-pills`
+  * Added tests for `terra-filter-pills`
 
 ## 1.6.0 - (November 16, 2021)
 
