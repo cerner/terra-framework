@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.7.0 - (March 8, 2022)
+
 * Added
   * Migrate docs from terra-layout
   * Added docs for `terra-filter-pills`
