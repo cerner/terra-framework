@@ -5,6 +5,9 @@
 
 ## Unreleased
 
+* Added
+  * Migrate docs from terra-navigation-layout
+
 ## 1.7.0 - (March 8, 2022)
 
 * Added

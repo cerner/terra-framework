@@ -1,7 +1,6 @@
 import React from 'react';
 import { MemoryRouter, Link } from 'react-router-dom';
-
-import NavigationLayout from '../../../NavigationLayout';
+import NavigationLayout from 'terra-navigation-layout';
 
 const config = {
   header: {
