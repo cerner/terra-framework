@@ -1,13 +1,13 @@
 Terra.describeViewports('Menu Item', ['medium'], () => {
   it('displays a Menu Item-Default', () => {
-    browser.url('/raw/tests/terra-menu/menu/menu-item/menu-item-default');
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item/menu-item-default');
     Terra.validates.element('default');
   });
 
   describe('Menu Item-Selectable', () => {
     describe('Menu Item-Selectable Via Click', () => {
       it('is selected', () => {
-        browser.url('/raw/tests/terra-menu/menu/menu-item/menu-item-selectable');
+        browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item/menu-item-selectable');
         $('.TestSelectableItem').click();
         Terra.validates.element('selected via click');
       });
@@ -34,7 +34,7 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
 Terra.describeViewports('Menu Item', ['huge'], () => {
   describe('Menu Item-Disabled', () => {
     it('displays a disabled Menu Item', () => {
-      browser.url('/raw/tests/terra-menu/menu/menu-item/menu-item-disabled');
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item/menu-item-disabled');
       Terra.validates.element('disabled');
     });
 
@@ -45,18 +45,18 @@ Terra.describeViewports('Menu Item', ['huge'], () => {
   });
 
   it('displays a Menu Item-Submenu Indicator', () => {
-    browser.url('/raw/tests/terra-menu/menu/menu-item/menu-item-sub-menu');
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item/menu-item-sub-menu');
     Terra.validates.element('submenu indicator');
   });
 
   it('displays a Menu Item-Wrapped Text', () => {
-    browser.url('/raw/tests/terra-menu/menu/menu-item/menu-item-wrapped-text');
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item/menu-item-wrapped-text');
     Terra.validates.element('wrapped text');
   });
 
   describe('Menu Item-Triggers onClick Function', () => {
     it('starts with click number of 0', () => {
-      browser.url('/raw/tests/terra-menu/menu/menu-item/menu-item-on-click');
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item/menu-item-on-click');
       expect($('#clickNumber')).toHaveTextContaining('0');
     });
 
@@ -76,7 +76,7 @@ Terra.describeViewports('Menu Item', ['huge'], () => {
     });
 
     it('displays Menu Item-With eIFU Icon, eIFU Icon is considered over check mark icon ', () => {
-      browser.url('/raw/tests/terra-menu/menu/menu-item/menu-item-with-instructions-for-use');
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item/menu-item-with-instructions-for-use');
       Terra.validates.element('with eIFU icon');
     });
   });
