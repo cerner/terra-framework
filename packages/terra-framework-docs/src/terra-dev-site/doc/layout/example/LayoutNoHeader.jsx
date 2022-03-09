@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from 'terra-layout';
-import ContentExample from 'terra-layout/lib/terra-dev-site/doc/common/ContentExample';
-import MenuExample from 'terra-layout/lib/terra-dev-site/doc/common/MenuExample';
 import classNames from 'classnames/bind';
+import ContentExample from '../common/ContentExample';
+import MenuExample from '../common/MenuExample';
 import styles from './LayoutDocExampleCommon.module.scss';
 
 const cx = classNames.bind(styles);
