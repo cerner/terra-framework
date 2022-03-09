@@ -5,6 +5,7 @@
 * Added
   * Added docs for `terra-filter-pills`
   * Added tests for `terra-filter-pills`
+  * Migrate docs from terra-hookshot
 
 ## 1.6.0 - (November 16, 2021)
 

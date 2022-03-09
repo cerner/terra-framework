@@ -1,11 +1,11 @@
 import React from 'react';
-import HookshotTemplate from '../common/HookshotTestTemplate';
+import HookshotTemplate from './common/HookshotTestTemplate';
 
-class HookshotAttachmentMargin extends React.Component {
+class HookshotExample extends React.Component {
   constructor(props) {
     super(props);
     this.handleTargetAttachment = this.handleTargetAttachment.bind(this);
-    this.state = { attachment: 'middle start' };
+    this.state = { attachment: 'top start' };
   }
 
   handleTargetAttachment(event) {
@@ -13,40 +13,18 @@ class HookshotAttachmentMargin extends React.Component {
   }
 
   render() {
-    let targetAttachment;
-    const type = 'primary';
-
-    if (this.state.attachment === 'middle start') {
-      targetAttachment = 'middle end';
-    } else if (this.state.attachment === 'middle end') {
-      targetAttachment = 'middle start';
-    } else if (this.state.attachment === 'middle center') {
-      targetAttachment = 'middle center';
-    } else if (this.state.attachment === 'top start') {
-      targetAttachment = 'bottom end';
-    } else if (this.state.attachment === 'top end') {
-      targetAttachment = 'bottom start';
-    } else if (this.state.attachment === 'top center') {
-      targetAttachment = 'bottom center';
-    } else if (this.state.attachment === 'bottom start') {
-      targetAttachment = 'top end';
-    } else if (this.state.attachment === 'bottom end') {
-      targetAttachment = 'top start';
-    } else if (this.state.attachment === 'bottom center') {
-      targetAttachment = 'top center';
-    }
     return (
       <div>
         <HookshotTemplate
-          id="attachment-margin"
-          attachmentMargin={10}
-          targetAttachment={targetAttachment}
-          contentAttachment={this.state.attachment}
-          type={type}
+          id="attachment"
+          hookshotContentProps={{ closeOnEsc: false, closeOnOutsideClick: false, closeOnResize: false }}
+          contentAttachment="top center"
+          type="primary"
+          targetAttachment={this.state.attachment}
           isOpen
         />
-        <p> Shoulp apply attachment margin appropriately for all attachment points </p>
-        <p> Choose the content attachement: </p>
+        <p> Content attachement: top center </p>
+        <p> Choose the target attachement: </p>
         <button type="button" id="attach-TS" value="top start" onClick={this.handleTargetAttachment}>TOP START</button>
         <button type="button" id="attach-TC" value="top center" onClick={this.handleTargetAttachment}>TOP CENTER</button>
         <button type="button" id="attach-TE" value="top end" onClick={this.handleTargetAttachment}>TOP END</button>
@@ -61,4 +39,4 @@ class HookshotAttachmentMargin extends React.Component {
   }
 }
 
-export default HookshotAttachmentMargin;
+export default HookshotExample;
