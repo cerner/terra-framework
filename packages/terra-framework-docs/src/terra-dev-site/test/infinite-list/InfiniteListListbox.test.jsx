@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import InfiniteList, { Item } from '../../../index';
+import InfiniteList, { Item } from 'terra-infinite-list/lib/index';
 import styles from './InfiniteListTestCommon.module.scss';
 
 const cx = classNames.bind(styles);

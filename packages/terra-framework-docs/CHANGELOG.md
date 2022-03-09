@@ -2,11 +2,8 @@
 
 * Added
   * Migrate docs from terra-menu
-
-## Unreleased
-
-* Added
   * Migrate docs from terra-navigation-layout
+  * Migrate docs from terra-infinite-list
 
 ## 1.7.0 - (March 8, 2022)
 
