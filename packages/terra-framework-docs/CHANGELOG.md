@@ -5,6 +5,9 @@
 
 ## Unreleased
 
+* Changed
+  * Migrated docs from date-time-picker
+
 * Added
   * Migrate docs from terra-navigation-layout
 
