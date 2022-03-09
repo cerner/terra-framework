@@ -1,5 +1,8 @@
 # Changelog
 
+* Added
+  * Migrate docs from terra-menu
+
 ## Unreleased
 
 ## 1.7.0 - (March 8, 2022)

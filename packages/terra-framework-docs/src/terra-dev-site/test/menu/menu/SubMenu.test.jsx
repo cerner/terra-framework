@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from '../../../../Menu';
+import Menu from 'terra-menu';
 
 class SubMenu extends React.Component {
   constructor(props) {

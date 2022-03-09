@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from '../../../../Menu';
+import Menu from 'terra-menu';
 
 class SubMenuLongTitle extends React.Component {
   constructor(props) {

@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import List from 'terra-list';
-import Menu from '../../../../Menu';
+import Menu from 'terra-menu';
 
 const childContextTypes = {
   isSelectableMenu: PropTypes.bool,
 };
 
-class MenuItemWithInstructionsForUse extends React.Component {
+class MenuItemDisabled extends React.Component {
   getChildContext() {
     return { isSelectableMenu: true };
   }
@@ -16,31 +16,39 @@ class MenuItemWithInstructionsForUse extends React.Component {
     return (
       <div>
         <div id="isSelected">
-          <p>Menu Items with eIFU Icon</p>
+          <p>The item is disabled. The selection state should not change with any user interaction.</p>
         </div>
         <List role="menu">
           <Menu.Item
-            text="eIFU Icon Menu Item"
+            text="Disabled Menu Item"
             key="1"
-            className="TestMenuItem"
-            isInstructionsForUse
+            className="TestDisabledItem"
+            isSelectable
+            isDisabled
           />
           <Menu.Item
+            isDisabled
             isSelectable
-            text="eIFU Icon Nested Menu"
+            text="Nested Menu"
             key="2"
-            className="TestMenuItem"
-            isInstructionsForUse
+            className="TestNestedMenu"
             subMenuItems={[
               <Menu.Item text="Default 2.1" key="2.1" className="TestNestedMenuContent" />,
             ]}
           />
           <Menu.Item
-            text="Selectable+Selected eIFU Icon Menu Item"
+            isDisabled
+            text="Disabled Selected Menu Item"
             key="3"
-            className="TestMenuItem"
+            className="TestDisabledItem"
             isSelectable
             isSelected
+          />
+          <Menu.Item
+            isDisabled
+            text="Disabled eIFU Icon Menu Item"
+            key="4"
+            className="TestDisabledItem"
             isInstructionsForUse
           />
         </List>
@@ -49,5 +57,5 @@ class MenuItemWithInstructionsForUse extends React.Component {
   }
 }
 
-MenuItemWithInstructionsForUse.childContextTypes = childContextTypes;
-export default MenuItemWithInstructionsForUse;
+MenuItemDisabled.childContextTypes = childContextTypes;
+export default MenuItemDisabled;

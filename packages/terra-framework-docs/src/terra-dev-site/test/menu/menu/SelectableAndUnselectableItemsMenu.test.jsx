@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from '../../../../Menu';
+import Menu from 'terra-menu';
 
 class SelectableMenu extends React.Component {
   constructor(props) {
