@@ -4,7 +4,7 @@ const ignoredA11y = {
 
 Terra.describeViewports('Menu', ['medium'], () => {
   it('displays a default Menu', () => {
-    browser.url('/raw/tests/terra-menu/menu/menu/default-menu');
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/default-menu');
     $('#default-button').click();
     $('[class*="content"][aria-modal="true"][role="dialog"]').isFocused();
     Terra.validates.element('default', { selector: '#root' });
@@ -12,7 +12,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
 
   describe('Menu-Bounded', () => {
     it('displays a bounded menu', () => {
-      browser.url('/raw/tests/terra-menu/menu/menu/bounded-menu');
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/bounded-menu');
       $('#bounded-button').click();
       $('[class*="content"][aria-modal="true"][role="dialog"]').isFocused();
       Terra.validates.element('bounded', { rules: ignoredA11y });
@@ -26,31 +26,31 @@ Terra.describeViewports('Menu', ['medium'], () => {
   });
 
   it('displays a Menu with Small Height', () => {
-    browser.url('/raw/tests/terra-menu/menu/menu/small-menu');
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/small-menu');
     $('#small-menu-button').click();
     Terra.validates.element('small height', { selector: '#root' });
   });
 
   it('displays a Menu with Medium Height', () => {
-    browser.url('/raw/tests/terra-menu/menu/menu/medium-menu');
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/medium-menu');
     $('#medium-menu-button').click();
     Terra.validates.element('medium height', { selector: '#root', rules: ignoredA11y });
   });
 
   it('displays a Menu with Large Height', () => {
-    browser.url('/raw/tests/terra-menu/menu/menu/large-menu');
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/large-menu');
     $('#large-menu-button').click();
     Terra.validates.element('large height', { selector: '#root', rules: ignoredA11y });
   });
 
   it('displays a non-selectable menu', () => {
-    browser.url('/raw/tests/terra-menu/menu/menu/non-selectable-menu');
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/non-selectable-menu');
     $('#non-selectable-menu-button').click();
     Terra.validates.element('non selectable', { selector: '#root' });
   });
 
   it('displays a Menu-Selectable', () => {
-    browser.url('/raw/tests/terra-menu/menu/menu/selectable-menu');
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/selectable-menu');
     $('#selectable-menu-button').click();
     $('[class*="content"][aria-modal="true"][role="dialog"]').isFocused();
     $('.TestGroupItem3').click();
@@ -61,7 +61,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
 
   describe('Menu-Selectable with Varying Items', () => {
     it('displays a selectable menu with varying items', () => {
-      browser.url('/raw/tests/terra-menu/menu/menu/selectable-and-unselectable-items-menu');
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/selectable-and-unselectable-items-menu');
       $('#default-button').click();
       Terra.validates.element('with varying items', { selector: '#root' });
     });
@@ -76,7 +76,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
   });
 
   it('displays a Menu with a submenu', () => {
-    browser.url('/raw/tests/terra-menu/menu/menu/sub-menu');
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu');
     $('#sub-menu-button').click();
     $('[class*="content"][aria-modal="true"][role="dialog"]').isFocused();
     Terra.validates.element('main menu', { selector: '#root' });
@@ -89,7 +89,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
 
   describe('Menu and submenu with long header title', () => {
     it('displays Menu with submenu and long header title', () => {
-      browser.url('/raw/tests/terra-menu/menu/menu/sub-menu-long-title');
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu-long-title');
       $('#sub-menu-button').click();
       $('[class*="content"][aria-modal="true"][role="dialog"]').isFocused();
       Terra.validates.element('main menu long header', { selector: '#root' });
@@ -103,7 +103,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
 
   describe('Menu Keyboard Navigation-Arrow Keys', () => {
     it('navigates Menu using  Keyboard Navigation-Arrow Keys', () => {
-      browser.url('/raw/tests/terra-menu/menu/menu/sub-menu');
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu');
       $('#sub-menu-button').click();
       $('[class*="content"][aria-modal="true"][role="dialog"]').isFocused();
 
@@ -130,7 +130,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
 
   describe('Menu Keyboard Navigation-Enter Key', () => {
     it('Menu Keyboard Navigation-Enter Key', () => {
-      browser.url('/raw/tests/terra-menu/menu/menu/sub-menu');
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu');
       $('#sub-menu-button').click();
       $('[class*="content"][aria-modal="true"][role="dialog"]').isFocused();
 
