@@ -1,0 +1,86 @@
+import { Badge } from 'terra-date-time-picker/package.json?dev-site-package';
+import DateTimePickerSrc from 'terra-date-time-picker/src/DateTimePicker?dev-site-props-table';
+
+import DateTimePickerDefault from './example/DateTimePickerDefault?dev-site-example';
+import DateTimePickerDefaultDateTime from './example/DateTimePickerDefaultDateTime?dev-site-example';
+import DateTimePickerDefaultDateOnly from './example/DateTimePickerDefaultDateOnly?dev-site-example';
+import DateTimePickerExcludeDates from './example/DateTimePickerExcludeDates?dev-site-example';
+import DateTimePickerIncludeDates from './example/DateTimePickerIncludeDates?dev-site-example';
+import DateTimePickerFilterDates from './example/DateTimePickerFilterDates?dev-site-example';
+import DateTimePickerMinMax from './example/DateTimePickerMinMax?dev-site-example';
+import DateTimePickerDST from './example/DateTimePickerDST?dev-site-example';
+import DateTimePickerTimeVariant from './example/DateTimePickerTimeVariant?dev-site-example';
+import DateTimePickerWithSeconds from './example/DateTimePickerWithSeconds?dev-site-example';
+import DateTimePickerWithSecondsAndTimeVariant from './example/DateTimePickerWithSecondsAndTimeVariant?dev-site-example';
+import DateTimePickerInvalid from './example/DateTimePickerInvalid?dev-site-example';
+import DateTimePickerIncomplete from './example/DateTimePickerIncomplete?dev-site-example';
+import DateTimePickerTimeZone from './example/DateTimePickerTimeZone?dev-site-example';
+
+<Badge />
+
+# Terra Date Time Picker
+
+The DateTimePicker component composes the [DatePicker][1] component for selecting date and the [TimeInput][2] component for entering time. A date and time can be expressed in many [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formats. To reduce confusion and complexity, the date time props in DateTimePicker must be expressed in a specific format of the ISO 8601 representation of the date time. That is, any date time prop must conform to the `YYYY-MM-DDThh:mm:ss` format. DateTimePicker supports the Spring and Fall daylight saving time changes in the following behaviors:
+
+Spring: If you enter a date and time that falls within the missing hour during the Spring time change, the time will automatically be adjusted to the next relevant hour when the component loses focus. In the central time zone, the missing hour occurs between 2:00 and 2:59. For example, if the entered time is 2:15, the component will automatically adjust the time to the next hour at 3:15.
+
+Fall: If you enter a date and time that falls within the ambiguous hour during the Fall time change, the component will display a dialog to require you to select daylight or standard time. After a selection is made a button will be displayed with a label showing the selected option.
+
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-date-time-picker`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Implementation Notes:
+DateTimePicker is required to be composed inside the [Base][3] component with locale in order for it to load the correct date format and translation strings.
+
+[1]: https://engineering.cerner.com/terra-framework/components/terra-date-picker/date-picker/date-picker
+[2]: https://engineering.cerner.com/terra-framework/components/terra-time-input/time-input/time-input
+[3]: https://engineering.cerner.com/terra-core/components/terra-base/base/base
+
+## Usage
+```js
+import DateTimePicker from 'terra-date-time-picker';
+```
+
+## Component Features
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+* [Localization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+* [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
+
+## Examples
+<DateTimePickerDefault title='Default' />
+<DateTimePickerDefaultDateTime title='Default Date Time' />
+<DateTimePickerDefaultDateOnly title='Default Date Only' />
+<DateTimePickerExcludeDates title='Exclude Dates' />
+<DateTimePickerIncludeDates title='Include Dates' />
+<DateTimePickerFilterDates title='Filter Dates' />
+<DateTimePickerMinMax title='Min Max Selection Options' />
+<DateTimePickerDST title='Daylight Saving' />
+<DateTimePickerTimeVariant title='Time Variant with 12-hour Time Format' />
+<DateTimePickerWithSeconds title='Time Variant with Seconds Field' />
+<DateTimePickerWithSecondsAndTimeVariant title='Time Variant with Seconds Field in 12-hour Time Format' />
+<DateTimePickerInvalid title='Invalid' />
+<DateTimePickerIncomplete title='Incomplete' />
+<DateTimePickerTimeZone title='With time zone' />
+
+
+## Date Time Picker props table
+<DateTimePickerSrc />

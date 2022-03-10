@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Migrated docs to terra framework docs.
+
 ## 4.72.0 - (February 2, 2022)
 
 * Added
