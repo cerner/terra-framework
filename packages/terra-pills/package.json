@@ -8,6 +8,9 @@
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-pills"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "Cerner",
     "Terra",
