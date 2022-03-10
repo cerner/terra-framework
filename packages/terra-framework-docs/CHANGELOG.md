@@ -10,6 +10,8 @@
 * Added
   * Migrate docs from terra-navigation-layout
   * Migrate docs from terra-menu
+  * Migrate docs from terra-disclosure-manager
+
 
 ## 1.7.0 - (March 8, 2022)
 
@@ -17,7 +19,6 @@
   * Migrate docs from terra-layout
   * Added docs for `terra-filter-pills`
   * Added tests for `terra-filter-pills`
-  * Migrate docs from terra-disclosure-manager
 
 ## 1.6.0 - (November 16, 2021)
 
