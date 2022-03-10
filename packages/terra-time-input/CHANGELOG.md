@@ -2,9 +2,11 @@
 
 ## Unreleased
 
+* Added
+  * Migrate docs to terra-framework-docs
+
+
 ## 4.45.1 - (March 1, 2022)
-  * Added
-    * Migrate docs to terra-framework-docs
 
 * Fixed
   * Supply isInvalid as well as aria-invalid to AccessibleInput
