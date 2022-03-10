@@ -9,6 +9,7 @@
   * Migrated docs from date-time-picker
 
 * Added
+  * Migrated docs from terra-navigation-prompt.
   * Migrate docs from terra-navigation-layout
   * Migrate docs from terra-menu
 
