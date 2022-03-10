@@ -2,7 +2,19 @@
 
 ## Unreleased
 
+* Changed
+  * Migrated terra-collapsible-menu-view-docs
+  * Migrated docs from date-picker.
+  * Migrated docs from date-time-picker
+
 * Added
+  * Migrate docs from terra-navigation-layout
+  * Migrate docs from terra-menu
+
+## 1.7.0 - (March 8, 2022)
+
+* Added
+  * Migrate docs from terra-layout
   * Added docs for `terra-filter-pills`
   * Added tests for `terra-filter-pills`
   * Migrate docs from terra-hookshot
