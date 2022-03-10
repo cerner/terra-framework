@@ -958,7 +958,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
         });
 
-        it('should decrement date by one day if time is at 00:00 ', () => {
+        it('should decrement date by one day if time is at 00:00', () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time-with-seconds');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -972,6 +972,28 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-hour-input"]')).toHaveValue('23');
           expect($('input[name="terra-time-minute-input"]')).toHaveValue('59');
           expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
+        });
+
+        it('should not decrement date past minimum date possible', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
+          browser.refresh();
+          $('input[name="terra-date-year-input"]').click();
+          browser.keys('1900');
+          $('input[name="terra-date-month-input"]').click();
+          browser.keys('01');
+          $('input[name="terra-date-day-input"]').click();
+          browser.keys('01');
+          $('input[name="terra-time-hour-input"]').click();
+          browser.keys('00');
+          $('input[name="terra-time-minute-input"]').click();
+          browser.keys('00');
+          browser.keys('-');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('1900');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('01');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('01');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('00');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('00');
         });
 
         describe('in DST', () => {
@@ -1278,6 +1300,28 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-hour-input"]')).toHaveValue('00');
           expect($('input[name="terra-time-minute-input"]')).toHaveValue('00');
           expect($('input[name="terra-time-second-input"]')).toHaveValue('00');
+        });
+
+        it('should not increment date past maximum datetime possible', () => {
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
+          browser.refresh();
+          $('input[name="terra-date-year-input"]').click();
+          browser.keys('2100');
+          $('input[name="terra-date-month-input"]').click();
+          browser.keys('12');
+          $('input[name="terra-date-day-input"]').click();
+          browser.keys('31');
+          $('input[name="terra-time-hour-input"]').click();
+          browser.keys('23');
+          $('input[name="terra-time-minute-input"]').click();
+          browser.keys('59');
+          browser.keys('+');
+
+          expect($('input[name="terra-date-year-input"]')).toHaveValue('2100');
+          expect($('input[name="terra-date-month-input"]')).toHaveValue('12');
+          expect($('input[name="terra-date-day-input"]')).toHaveValue('31');
+          expect($('input[name="terra-time-hour-input"]')).toHaveValue('23');
+          expect($('input[name="terra-time-minute-input"]')).toHaveValue('59');
         });
 
         describe('in DST', () => {
