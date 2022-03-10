@@ -1,15 +1,16 @@
 # Changelog
 
-* Added
-  * Migrate docs from terra-menu
-
 ## Unreleased
 
 * Changed
   * Migrated docs from terra date input.
+  * Migrated terra-collapsible-menu-view-docs
+  * Migrated docs from date-picker.
+  * Migrated docs from date-time-picker
 
 * Added
   * Migrate docs from terra-navigation-layout
+  * Migrate docs from terra-menu
 
 ## 1.7.0 - (March 8, 2022)
 
