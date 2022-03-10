@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Changed
+  * Migrated terra-collapsible-menu-view-docs
   * Migrated docs from date-picker.
   * Migrated docs from date-time-picker
 
