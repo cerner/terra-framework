@@ -4,7 +4,7 @@ const ignoredA11y = {
 
 Terra.describeViewports('Menu Item Group', ['medium'], () => {
   before(() => {
-    browser.url('/raw/tests/terra-menu/menu/menu-item-group/menu-item-group-default');
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item-group/menu-item-group-default');
   });
 
   it('displays a Menu Item Group-Default', () => {

@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rollup Pill should render rollup pill with the label "4 more" 1`] = `
+<InjectIntl(RollUpPill)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isCollapsed={true}
+  rollupCount={4}
+>
+  <RollUpPill
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isCollapsed={true}
+    rollupCount={4}
+  >
+    <div
+      className="pill-list-item"
+      role="listitem"
+    >
+      <button
+        aria-describedby="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
+        className="rollup-pill"
+        data-terra-rollup-pill={true}
+        data-terra-rollup-pill-show-focus-styles={true}
+        id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="rollup-pill-label"
+        >
+          Terra.pills.label.rollupPill
+        </span>
+      </button>
+      <VisuallyHiddenText
+        aria-hidden="true"
+        id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
+        text="Terra.pills.hint.rollupPill"
+      >
+        <span
+          aria-hidden="true"
+          className="visually-hidden-text"
+          id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
+        >
+          Terra.pills.hint.rollupPill
+        </span>
+      </VisuallyHiddenText>
+    </div>
+  </RollUpPill>
+</InjectIntl(RollUpPill)>
+`;
+
+exports[`Rollup Pill should render rollup pill with the label "show less" when isCollapsed is false 1`] = `
+<InjectIntl(RollUpPill)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isCollapsed={false}
+  rollupCount={3}
+>
+  <RollUpPill
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isCollapsed={false}
+    rollupCount={3}
+  >
+    <div
+      className="pill-list-item"
+      role="listitem"
+    >
+      <button
+        aria-describedby="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
+        className="rollup-pill"
+        data-terra-rollup-pill={true}
+        data-terra-rollup-pill-show-focus-styles={true}
+        id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="rollup-pill-label"
+        >
+          Terra.pills.label.showLess
+        </span>
+      </button>
+      <VisuallyHiddenText
+        aria-hidden="true"
+        id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
+        text="Terra.pills.hint.showLess"
+      >
+        <span
+          aria-hidden="true"
+          className="visually-hidden-text"
+          id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
+        >
+          Terra.pills.hint.showLess
+        </span>
+      </VisuallyHiddenText>
+    </div>
+  </RollUpPill>
+</InjectIntl(RollUpPill)>
+`;
+
+exports[`Rollup Pill should render rollup pill with the label "show less" when isCollapsed is true and rollupCount is 0 1`] = `
+<InjectIntl(RollUpPill)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isCollapsed={true}
+  rollupCount={0}
+>
+  <RollUpPill
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isCollapsed={true}
+    rollupCount={0}
+  >
+    <div
+      className="pill-list-item"
+      role="listitem"
+    >
+      <button
+        aria-describedby="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
+        className="rollup-pill"
+        data-terra-rollup-pill={true}
+        data-terra-rollup-pill-show-focus-styles={true}
+        id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="rollup-pill-label"
+        >
+          Terra.pills.label.showLess
+        </span>
+      </button>
+      <VisuallyHiddenText
+        aria-hidden="true"
+        id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
+        text="Terra.pills.hint.rollupPill"
+      >
+        <span
+          aria-hidden="true"
+          className="visually-hidden-text"
+          id="terra-rollup-pill-00000000-0000-0000-0000-000000000000"
+        >
+          Terra.pills.hint.rollupPill
+        </span>
+      </VisuallyHiddenText>
+    </div>
+  </RollUpPill>
+</InjectIntl(RollUpPill)>
+`;
