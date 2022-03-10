@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed logic with keyboard shortcuts for minimum and maximum dates
+
 ## 4.72.0 - (February 2, 2022)
 
 * Added
