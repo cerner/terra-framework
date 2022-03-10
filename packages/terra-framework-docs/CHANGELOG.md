@@ -3,12 +3,14 @@
 ## Unreleased
 
 * Changed
+  * Migrated docs from terra date input.
   * Migrated terra-collapsible-menu-view-docs
   * Migrated docs from date-picker.
   * Migrated docs from date-time-picker
 
 * Added
   * Migrate docs from terra-navigation-side-menu.
+  * Migrated docs from terra-navigation-prompt.
   * Migrate docs from terra-navigation-layout
   * Migrate docs from terra-menu
 
