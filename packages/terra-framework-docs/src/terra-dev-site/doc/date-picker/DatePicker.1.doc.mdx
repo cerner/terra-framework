@@ -1,0 +1,120 @@
+import { Badge } from 'terra-date-picker/package.json?dev-site-package';
+
+import DatePickerPropsTable from 'terra-date-picker/src/DatePicker?dev-site-props-table';
+
+import DatePickerDefault from './example/DatePickerDefault?dev-site-example';
+import DatePickerExcludeDates from './example/DatePickerExcludeDates?dev-site-example';
+import DatePickerIncludeDates from './example/DatePickerIncludeDates?dev-site-example';
+import DatePickerFilterDates from './example/DatePickerFilterDates?dev-site-example';
+import DatePickerMinMax from './example/DatePickerMinMax?dev-site-example';
+import DatePickerDefaultDate from './example/DatePickerDefaultDate?dev-site-example';
+import DatePickerControlled from './example/DatePickerControlled?dev-site-example';
+import DatePickerInvalid from './example/DatePickerInvalid?dev-site-example';
+import DatePickerIncomplete from './example/DatePickerIncomplete?dev-site-example';
+
+<Badge />
+
+# Terra Date Picker
+
+DatePicker is an input component that provides users a way to enter or select a date from the date picker. The date format used in the input is localized based on the locale. The display of the month and days of the week in the date picker is also localized based on the locale. DatePicker leverages the [momentjs](http://momentjs.com/docs/) library for date formatting and manipulations. A date can be expressed in many [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formats. To reduce confusion and complexity, the date props in terra-date-picker must be expressed in a specific format of the ISO 8601 representation of the date. That is, any date prop must conform to the `YYYY-MM-DD` format. Only dates between `01/01/1900` and `12/31/2100` are supported.
+
+## Controlled vs. Uncontrolled Date Picker
+
+Terra-date-picker can be composed either as a controlled or uncontrolled component. This allows you to decide the amount of control you need.
+
+### Uncontrolled Date Picker
+
+An uncontrolled date picker is the default mode. In the uncontrolled mode, a default date can be passed to the `selectedDate` prop to initially set as the default date. The date picker will manage all states internally. See the Default Date example below for implementation details.
+
+### Controlled Date Picker
+
+In a controlled date picker, the consumer is responsible for managing the state of the date value. The date picker does not manage any of state internally. This mode gives the consumer the flexibility to update the date value as needed. A controlled date picker can be composed by setting the `value` prop with an ISO date value. A handler is needed for both `onChange` and `onChangeRaw` to be notified when date selection or input change is made so the state can be updated. If both `value` and `selectedDate` are set, then `selectedDate` will have no effect. See the Controlled Component example below for implementation details.
+
+## Date Formats
+The date format used in the date-picker is determined by the locale. The following are the date format for the supported locales.
+
+| Locale | Date Format |
+|-|-|
+| de | DD.MM.YYYY |
+| en | MM/DD/YYYY |
+| en-AU | DD/MM/YYYY |
+| en-CA | YYYY-MM-DD |
+| en-GB | DD/MM/YYYY |
+| en-US | MM/DD/YYYY |
+| es | DD/MM/YYYY |
+| es-ES | DD/MM/YYYY |
+| es-US | MM/DD/YYYY |
+| fr | DD/MM/YYYY |
+| fr-FR | DD/MM/YYYY |
+| nl | DD-MM-YYYY |
+| nl-BE | DD/MM/YYYY |
+| pt | DD/MM/YYYY |
+| pt-BR | DD/MM/YYYY |
+| sv | YYYY-MM-DD |
+| sv-SE | YYYY-MM-DD |
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-date-picker`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Usage
+```js
+import DatePicker from 'terra-date-picker';
+```
+
+## Component Features
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+* [Localization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+
+## Examples
+<DatePickerDefault title='Default' />
+<DatePickerExcludeDates title='Exclude Dates' />
+<DatePickerFilterDates title='Filter Dates' />
+<DatePickerIncludeDates title='Include Dates' />
+<DatePickerMinMax title='Min Max Selection Options' />
+<DatePickerDefaultDate title='Default Date' />
+<DatePickerControlled title='Controlled Component' />
+<DatePickerInvalid title='Invalid' />
+<DatePickerIncomplete title='Incomplete' description='Applies theme-specific styling for incomplete. ***Note: Only use incomplete if given specific guidance, reserved for specific applications when no value has been provided. Not for general use.***' />
+
+## Date Picker props table
+<DatePickerPropsTable />
+
+## Testing
+
+### uuid
+The Date Picker uses `uuid` which changes the component's description id dynamically. To mock it in jest test teams can use `jest.mock`.
+
+If teams are using `shallow` for the tests then the mock is not required. But if using `mount` then the teams must use the mock as given below.
+
+```js
+jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+```
+
+### Date Picker's Inputs
+The Date Picker's input has been split into 3 separate inputs (day, month and year inputs), due to which the values have to be set into each individual input in WDIO as follows:
+
+```diff
+- browser.setValue('input[name="terra-date-date-input"]', '06/01/2017');
++ browser.setValue('input[name="terra-date-month-date-input"]', '06');
++ browser.setValue('input[name="terra-date-day-date-input"]', '01');
++ browser.setValue('input[name="terra-date-year-date-input"]', '2017');
+```
+Note: Here the `name` prop's value is "date-input"
