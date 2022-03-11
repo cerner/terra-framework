@@ -1,6 +1,6 @@
 import React from 'react';
-import ThemeProvider from '../../../ThemeProvider';
-import MockThemeComponent from '../common/MockThemeComponent';
+import ThemeProvider from 'terra-theme-provider';
+import MockThemeComponent from './common/MockThemeComponent';
 
 const DefaultThemeProvider = () => (
   // Showing use of a default theme provider with a mock theme.

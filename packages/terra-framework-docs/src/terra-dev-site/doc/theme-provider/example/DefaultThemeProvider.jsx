@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import ThemeProvider from 'terra-theme-provider';
-import MockThemeComponent from 'terra-theme-provider/lib/terra-dev-site/doc/example/MockThemeComponent';
+import MockThemeComponent from './MockThemeComponent';
 import styles from './DefaultThemeProvider.module.scss';
 
 const cx = classNames.bind(styles);

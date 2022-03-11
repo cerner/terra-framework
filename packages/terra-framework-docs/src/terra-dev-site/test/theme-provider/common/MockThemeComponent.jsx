@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import '../../theme/scoped-theme.scss';
+import '../../../theme/theme-provider-scoped-theme.scss';
 import styles from './MockThemeComponent.module.scss';
 
 const cx = classNames.bind(styles);

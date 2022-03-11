@@ -15,6 +15,7 @@
   * Migrate docs from terra-menu
   * Migrate docs from terra-notification-dialog.
   * Migrate docs from terra-time-input
+  * Migrate docs from terra-theme-provider
 
 ## 1.7.0 - (March 8, 2022)
 
