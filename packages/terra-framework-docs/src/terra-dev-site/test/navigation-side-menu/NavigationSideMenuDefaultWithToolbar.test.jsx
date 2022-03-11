@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import NavigationSideMenu from '../../../NavigationSideMenu';
+import NavigationSideMenu from 'terra-navigation-side-menu';
 import styles from './NavigationSideMenuDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
@@ -44,9 +44,7 @@ class NavigationSideMenuDefault extends React.Component {
         <NavigationSideMenu
           id="test-menu"
           menuItems={[
-            {
-              key: 'menu', text: 'Menu', childKeys: ['submenu1', 'submenu2', 'submenu3', 'submenu4'], isRootMenu: true,
-            },
+            { key: 'menu', text: 'Menu', childKeys: ['submenu1', 'submenu2', 'submenu3', 'submenu4'] },
             {
               key: 'submenu1', text: 'Sub Menu 1', childKeys: ['subsubmenu1', 'subsubmenu2', 'subsubmenu3'], id: 'test-item-1',
             },
@@ -58,8 +56,10 @@ class NavigationSideMenuDefault extends React.Component {
             { key: 'subsubmenu3', text: 'Sub-Sub Menu 3' },
           ]}
           onChange={this.handleOnChange}
+          routingStackBack={this.fakeRoutingBack}
           selectedMenuKey={this.state.selectedMenuKey}
           selectedChildKey={this.state.selectedChildKey}
+          toolbar={<div className={cx('toolbar')}>Toolbar here</div>}
         />
       );
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import NavigationSideMenu from '../../../NavigationSideMenu';
+import NavigationSideMenu from 'terra-navigation-side-menu';
 import styles from './NavigationSideMenuDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
