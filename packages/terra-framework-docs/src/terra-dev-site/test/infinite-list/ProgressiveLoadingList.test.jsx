@@ -4,12 +4,11 @@ import { Placeholder } from '@cerner/terra-docs';
 
 import InfiniteList, { Item } from 'terra-infinite-list/lib/index';
 import styles from './InfiniteListTestCommon.module.scss';
+import MyInitialLoadingIndicator from '../../doc/infinite-list/common/MyInitialLoadingIndicator';
+import MyProgressiveLoadingIndicator from '../../doc/infinite-list/common/MyProgressiveLoadingIndicator';
+import MyExampleContainer from '../../doc/infinite-list/common/MyExampleContainer';
 
-import MyInitialLoadingIndicator from '../../doc/common/MyInitialLoadingIndicator';
-import MyProgressiveLoadingIndicator from '../../doc/common/MyProgressiveLoadingIndicator';
-import MyExampleContainer from '../../doc/common/MyExampleContainer';
-
-import mockRequest from '../../doc/guides/mock-data/mock-progressive';
+import mockRequest from '../../doc/infinite-list/guides/mock-data/mock-progressive';
 
 const cx = classNames.bind(styles);
 

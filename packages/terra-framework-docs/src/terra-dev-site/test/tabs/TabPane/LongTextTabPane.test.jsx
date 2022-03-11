@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import TabPane from 'terra-tabs';
+import TabPane from 'terra-tabs/lib/TabPane';
 import styles from './common/TabPane.test.module.scss';
 
 const cx = classNames.bind(styles);
