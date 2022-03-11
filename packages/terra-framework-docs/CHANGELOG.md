@@ -17,6 +17,7 @@
   * Migrate docs from terra-time-input
   * Migrate docs from terra-theme-provider
   * Migrate docs from terra-theme-context
+  * Migrate docs from terra-tabs
 
 ## 1.7.0 - (March 8, 2022)
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
-import Tabs from '../../../../Tabs';
+import Tabs from 'terra-tabs';
 import TabContent from './TabContentTemplate';
 
 const createTabPanes = () => {

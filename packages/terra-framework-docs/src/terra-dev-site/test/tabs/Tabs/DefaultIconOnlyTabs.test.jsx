@@ -3,7 +3,7 @@ import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
-import Tabs from '../../../../Tabs';
+import Tabs from 'terra-tabs';
 import TabContent from './TabContentTemplate';
 
 const IconOnlyTabs = () => {

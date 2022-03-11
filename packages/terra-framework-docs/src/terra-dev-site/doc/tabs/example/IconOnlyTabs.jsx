@@ -6,7 +6,7 @@ import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Tabs from 'terra-tabs';
-import TabContent from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
+import TabContent from './TabContentTemplate';
 import styles from './common/TabExample.module.scss';
 
 const propTypes = { responsiveTo: PropTypes.string };
