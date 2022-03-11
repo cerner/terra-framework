@@ -19,7 +19,7 @@
   * Migrate docs from terra-theme-context
   * Migrate docs from terra-tabs
   * Migrate docs from terra-slide-panel-manager
-
+  * Migrate docs from terra-infinite-list
 
 ## 1.7.0 - (March 8, 2022)
 
