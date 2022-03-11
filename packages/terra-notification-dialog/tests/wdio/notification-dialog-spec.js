@@ -11,31 +11,31 @@ const openNotificationDialog = (buttonSelector = '#trigger-notification-dialog')
 Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () => {
   describe('Variants', () => {
     it('shows notification dialog with hazard-high variant', () => {
-      browser.url('#/raw/tests/terra-notification-dialog/notification-dialog/hazard-high-variant');
+      browser.url('#/raw/tests/cerner-terra-framework-docs/notification-dialog/hazard-high-variant');
       openNotificationDialog();
       Terra.validates.element('hazard-high', { selector });
     });
 
     it('shows notification dialog with hazard-medium variant', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/hazard-medium-variant');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/notification-dialog/hazard-medium-variant');
       openNotificationDialog();
       Terra.validates.element('hazard-medium', { selector });
     });
 
     it('shows notification dialog with hazard-low variant', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/hazard-low-variant');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/notification-dialog/hazard-low-variant');
       openNotificationDialog();
       Terra.validates.element('hazard-low', { selector });
     });
 
     it('shows notification dialog with error variant', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/error-variant');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/notification-dialog/error-variant');
       openNotificationDialog();
       Terra.validates.element('error', { selector });
     });
 
     it('shows notification dialog with custom variant', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/custom-variant');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/notification-dialog/custom-variant');
       openNotificationDialog();
       Terra.validates.element('custom', { selector });
     });
@@ -43,7 +43,7 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
 
   describe('Actions', () => {
     it('goes to test page', () => {
-      browser.url('#/raw/tests/terra-notification-dialog/notification-dialog/action-combinations');
+      browser.url('#/raw/tests/cerner-terra-framework-docs/notification-dialog/action-combinations');
     });
 
     it('shows notification dialog with only accept action', () => {
@@ -121,38 +121,38 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
 
   describe('Layouts', () => {
     it('shows notification dialog without a title', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-with-no-title');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/notification-dialog/notification-dialog-with-no-title');
       openNotificationDialog();
       Terra.validates.element('no title', { selector });
     });
 
     it('shows notification dialog without a message', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-with-no-message');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/notification-dialog/notification-dialog-with-no-message');
       openNotificationDialog();
       Terra.validates.element('no message', { selector });
     });
 
     it('shows notification dialog with a long message', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-with-long-message');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/notification-dialog/notification-dialog-with-long-message');
       openNotificationDialog();
       Terra.validates.element('long message', { selector });
     });
 
     it('shows notification dialog with a details message', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-with-detailed-message');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/notification-dialog/notification-dialog-with-detailed-message');
       openNotificationDialog();
       Terra.validates.element('detailed message', { selector });
     });
 
     it('shows a custom unpopulated notification dialog', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/unpopulated-custom-variant');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/notification-dialog/unpopulated-custom-variant');
       openNotificationDialog();
       Terra.validates.element('unpopulated custom variant', { selector });
     });
   });
 
   it('shows notification dialog over a modal', () => {
-    browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-in-modal-manager');
+    browser.url('/#/raw/tests/cerner-terra-framework-docs/notification-dialog/notification-dialog-in-modal-manager');
     $('#openModal').click();
     openNotificationDialog();
     Terra.validates.element('over modal', { selector });
@@ -161,7 +161,7 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
 
 Terra.describeViewports('Keyboard Accessibility', ['medium'], () => {
   it('notification dialog receives focus when displayed', () => {
-    browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/hazard-high-variant');
+    browser.url('/#/raw/tests/cerner-terra-framework-docs/notification-dialog/hazard-high-variant');
     openNotificationDialog();
     expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
   });
