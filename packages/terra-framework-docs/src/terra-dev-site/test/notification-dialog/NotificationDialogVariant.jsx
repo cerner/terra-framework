@@ -1,8 +1,19 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
-import NotificationDialog from '../../../NotificationDialog';
+import PropTypes from 'prop-types';
+import NotificationDialog from 'terra-notification-dialog';
 
-const NotificationDialogNoTitle = () => {
+const propTypes = {
+  variant: PropTypes.oneOf([
+    'hazard-high',
+    'hazard-medium',
+    'hazard-low',
+    'error',
+    'custom',
+  ]),
+};
+
+const NotificationDialogVariant = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -13,13 +24,21 @@ const NotificationDialogNoTitle = () => {
     setIsOpen(false);
   };
 
+  const { variant, ...customProps } = props;
+
   return (
     <>
       {isOpen && (
         <NotificationDialog
-          variant="error"
+          {...customProps}
+          variant={variant}
+          dialogTitle="The title relates directly to the choices."
           startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
           acceptAction={{
+            text: 'Confirm',
+            onClick: handleCloseModal,
+          }}
+          rejectAction={{
             text: 'Close',
             onClick: handleCloseModal,
           }}
@@ -32,4 +51,5 @@ const NotificationDialogNoTitle = () => {
   );
 };
 
-export default NotificationDialogNoTitle;
+NotificationDialogVariant.propTypes = propTypes;
+export default NotificationDialogVariant;

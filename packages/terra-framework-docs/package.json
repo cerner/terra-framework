@@ -58,6 +58,7 @@
     "terra-navigation-side-menu": "^2.41.0",
     "terra-navigation-prompt": "^1.62.0",
     "terra-navigation-layout": "^5.35.0",
+    "terra-notification-dialog": "^4.22.0",
     "terra-section-header": "^2.0.0",
     "terra-slide-panel-manager": "^5.61.0",
     "terra-spacer": "^3.59.0",
