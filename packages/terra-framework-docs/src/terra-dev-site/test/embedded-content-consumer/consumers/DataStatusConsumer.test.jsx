@@ -1,7 +1,7 @@
 import React from 'react';
 import { Consumer } from 'xfc';
 import classNames from 'classnames/bind';
-import EmbeddedContentConsumer from '../../../../EmbeddedContentConsumer';
+import EmbeddedContentConsumer from 'terra-embedded-content-consumer';
 import styles from './Consumer.module.scss';
 
 const cx = classNames.bind(styles);
