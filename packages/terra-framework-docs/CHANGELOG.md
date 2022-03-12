@@ -17,6 +17,7 @@
   * Migrate docs from terra-hookshot
   * Migrate docs from terra-disclosure-manager
   * Migrate docs from terra-embedded-content-consumer
+  * Migrate docs from terra-slide-panel.
 
 ## 1.7.0 - (March 8, 2022)
 

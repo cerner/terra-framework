@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import SlidePanel from '../../../SlidePanel';
+import SlidePanel from 'terra-slide-panel';
 import styles from './SlidePanelDocCommon.test.module.scss';
 
 const cx = classNames.bind(styles);
