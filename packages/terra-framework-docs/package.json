@@ -61,6 +61,7 @@
     "terra-navigation-prompt": "^1.62.0",
     "terra-navigation-layout": "^5.35.0",
     "terra-notification-dialog": "^4.22.0",
+    "terra-popup": "^6.60.0",
     "terra-section-header": "^2.0.0",
     "terra-slide-group": "^4.28.0",
     "terra-slide-panel": "^3.35.0",

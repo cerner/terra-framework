@@ -19,6 +19,7 @@
   * Migrate docs from terra-embedded-content-consumer
   * Migrate docs from terra-slide-panel.
   * Migrate docs from terra-slide-group.
+  * Migrate docs from terra-popup
 
 ## 1.7.0 - (March 8, 2022)
 
