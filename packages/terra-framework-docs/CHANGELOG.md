@@ -15,6 +15,7 @@
   * Migrate docs from terra-menu
   * Migrate docs from terra-notification-dialog.
   * Migrate docs from terra-hookshot
+  * Migrate docs from terra-disclosure-manager
 
 ## 1.7.0 - (March 8, 2022)
 
