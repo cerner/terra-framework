@@ -44,7 +44,7 @@ const onAuthorize = () => {
 const DataStatusConsumer = () => (
   <EmbeddedContentConsumer
     className={cx('iframe')}
-    src="/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"
+    src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/data-status-provider"
     onMount={onMount}
     onLaunch={onLaunch}
     onAuthorize={onAuthorize}

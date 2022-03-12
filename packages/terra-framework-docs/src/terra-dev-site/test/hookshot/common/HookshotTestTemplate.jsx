@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import Hookshot from '../../../Hookshot';
+import Hookshot from 'terra-hookshot';
 import HookshotContent from './HookshotContentTestTemplate';
 import styles from './HookshotTestDocCommon.module.scss';
 
