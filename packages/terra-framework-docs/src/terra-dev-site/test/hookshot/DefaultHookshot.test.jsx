@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import Hookshot from '../../../Hookshot';
-import styles from '../common/HookshotTestDocCommon.module.scss';
+import Hookshot from 'terra-hookshot';
+import styles from './common/HookshotTestDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

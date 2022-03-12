@@ -3,7 +3,7 @@ Terra.describeViewports('Hookshot targetAttachment and contentAttachment combina
   // Content Attachment: Top Start
   describe('contentAttachment=top start', () => {
     it('targetAttachment=top start', () => {
-      browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-content-attachment-ts');
+      browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-content-attachment-ts');
       $('#attach-TS').click();
       $('#attachment-content').waitForDisplayed();
       Terra.validates.element('Top Start targetAttachment=top start', { selector: '#attachment-bounds' });
@@ -61,7 +61,7 @@ Terra.describeViewports('Hookshot targetAttachment and contentAttachment combina
   // Content Attachment: Top Center
   describe('contentAttachment=top center', () => {
     it('targetAttachment=top start', () => {
-      browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-content-attachment-tc');
+      browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-content-attachment-tc');
       $('#attach-TS').click();
       $('#attachment-content').waitForDisplayed();
       Terra.validates.element('Top Center targetAttachment=top start', { selector: '#attachment-bounds' });
@@ -119,7 +119,7 @@ Terra.describeViewports('Hookshot targetAttachment and contentAttachment combina
   // Content Attachment: Top End
   describe('contentAttachment=top end', () => {
     it('targetAttachment=top start', () => {
-      browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-content-attachment-te');
+      browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-content-attachment-te');
       $('#attach-TS').click();
       $('#attachment-content').waitForDisplayed();
       Terra.validates.element('Top End targetAttachment=top start', { selector: '#attachment-bounds' });
@@ -177,7 +177,7 @@ Terra.describeViewports('Hookshot targetAttachment and contentAttachment combina
   // Content Attachment: Middle Start
   describe('contentAttachment=middle start', () => {
     it('targetAttachment=top start', () => {
-      browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-content-attachment-ms');
+      browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-content-attachment-ms');
       $('#attach-TS').click();
       $('#attachment-content').waitForDisplayed();
       Terra.validates.element('Middle Start targetAttachment=top start', { selector: '#attachment-bounds' });
@@ -235,7 +235,7 @@ Terra.describeViewports('Hookshot targetAttachment and contentAttachment combina
   // Content Attachment: Middle Center
   describe('contentAttachment=middle center', () => {
     it('targetAttachment=top start', () => {
-      browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-content-attachment-mc');
+      browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-content-attachment-mc');
       $('#attach-TS').click();
       $('#attachment-content').waitForDisplayed();
       Terra.validates.element('Middle Center targetAttachment=top start', { selector: '#attachment-bounds' });
@@ -293,7 +293,7 @@ Terra.describeViewports('Hookshot targetAttachment and contentAttachment combina
   // Content Attachment: Middle End
   describe('contentAttachment=middle end', () => {
     it('targetAttachment=top start', () => {
-      browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-content-attachment-me');
+      browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-content-attachment-me');
       $('#attach-TS').click();
       $('#attachment-content').waitForDisplayed();
       Terra.validates.element('Middle End targetAttachment=top start', { selector: '#attachment-bounds' });
@@ -351,7 +351,7 @@ Terra.describeViewports('Hookshot targetAttachment and contentAttachment combina
   // Content Attachment: Bottom Start
   describe('contentAttachment=bottom start', () => {
     it('targetAttachment=top start', () => {
-      browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-content-attachment-bs');
+      browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-content-attachment-bs');
       $('#attach-TS').click();
       $('#attachment-content').waitForDisplayed();
       Terra.validates.element('Bottom Start targetAttachment=top start', { selector: '#attachment-bounds' });
@@ -409,7 +409,7 @@ Terra.describeViewports('Hookshot targetAttachment and contentAttachment combina
   // Content Attachment: Bottom Center
   describe('contentAttachment=bottom center', () => {
     it('targetAttachment=top start', () => {
-      browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-content-attachment-bc');
+      browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-content-attachment-bc');
       $('#attach-TS').click();
       $('#attachment-content').waitForDisplayed();
       Terra.validates.element('Bottom Center targetAttachment=top start', { selector: '#attachment-bounds' });
@@ -467,7 +467,7 @@ Terra.describeViewports('Hookshot targetAttachment and contentAttachment combina
   // Content Attachment: Bottom End
   describe('contentAttachment=bottom end', () => {
     it('targetAttachment=top start', () => {
-      browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-content-attachment-be');
+      browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-content-attachment-be');
       $('#attach-TS').click();
       $('#attachment-content').waitForDisplayed();
       Terra.validates.element('Bottom End targetAttachment=top start', { selector: '#attachment-bounds' });

@@ -1,5 +1,5 @@
 import React from 'react';
-import HookshotTemplate from '../common/HookshotTestTemplate';
+import HookshotTemplate from './common/HookshotTestTemplate';
 
 class HookshotAttachmentBehaviorFlip extends React.Component {
   constructor(props) {

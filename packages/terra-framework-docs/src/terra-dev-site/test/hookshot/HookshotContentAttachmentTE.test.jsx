@@ -1,5 +1,5 @@
 import React from 'react';
-import HookshotTemplate from '../common/HookshotTestTemplate';
+import HookshotTemplate from './common/HookshotTestTemplate';
 
 class HookshotExample extends React.Component {
   constructor(props) {
@@ -18,12 +18,12 @@ class HookshotExample extends React.Component {
         <HookshotTemplate
           id="attachment"
           hookshotContentProps={{ closeOnEsc: false, closeOnOutsideClick: false, closeOnResize: false }}
-          contentAttachment="bottom end"
+          contentAttachment="top end"
           type="primary"
           targetAttachment={this.state.attachment}
           isOpen
         />
-        <p> Content attachement: bottom end </p>
+        <p> Content attachement: top end </p>
         <p> Choose the target attachement: </p>
         <button type="button" id="attach-TS" value="top start" onClick={this.handleTargetAttachment}>TOP START</button>
         <button type="button" id="attach-TC" value="top center" onClick={this.handleTargetAttachment}>TOP CENTER</button>
