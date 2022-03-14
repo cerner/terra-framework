@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Migrate docs to terra-framework-docs
+
 ## 5.61.0 - (November 16, 2021)
 
 * Changed

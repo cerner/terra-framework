@@ -2,22 +2,22 @@ const validateElement = (testName) => Terra.validates.element(testName, { select
 
 Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   it('displays twelve hour default with no time provided', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
     validateElement('no time');
   });
 
   it('displays twelve hour default with an evening time filled', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-evening');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-evening');
     validateElement('evening time');
   });
 
   it('displays twelve hour default with a morning time filled', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-morning');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
     validateElement('morning time');
   });
 
   it('displays twelve Hour meridiem - Sets hour to 12 without meridiem change for hour input 00', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -27,7 +27,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   });
 
   it('displays twelve hour meridiem - Up Arrow on hour does not change meridiem', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -37,7 +37,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   });
 
   it('displays twelve hour - Changes time to 01 when up is pressed on hour of 12', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -49,7 +49,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   });
 
   it('displays twelve hour - Changes time to 12 when down is pressed on hour of 01', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -62,7 +62,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   });
 
   it('displays twelve hour meridiem - Switched when up is press on hour of 11', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -75,7 +75,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   });
 
   it('displays twelve hour meridiem - Switched when down is press on hour of 12', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -87,7 +87,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   });
 
   it('displays twelve hour - Sets time to 12 when hour is 0 and onBlur is called', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -98,35 +98,35 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   });
 
   it('displays twelve hour Default with second and no time provided', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/second');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/second');
     validateElement('with second - no time');
   });
 
   it('displays twelve hour - Invalid time input', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/invalid');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/invalid');
 
     validateElement('invalid input');
   });
 
   it('displays twelve hour - Incomplete time input', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/incomplete');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/incomplete');
     validateElement('incomplete input');
   });
 
   it('displays twelve hour - Invalid incomplete time input', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/invalid-incomplete');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/invalid-incomplete');
     validateElement('invalid and incomplete');
   });
 
   it('displays twelve hour - Invalid meridiem', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/invalid-meridiem');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/invalid-meridiem');
     validateElement('invalid meridiem');
   });
 
   describe('pressing A', () => {
     describe('in the hour input', () => {
       it('should set merdiem to antemeridiem if it was postmerdiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-evening');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-evening');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -136,7 +136,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should not change if it was antemeridiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-morning');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -146,7 +146,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should set time to midnight if blank', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -156,7 +156,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should set time to midnight if partially filled', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -170,7 +170,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
 
     describe('in the minute input', () => {
       it('should set merdiem to antemeridiem if it was postmerdiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-evening');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-evening');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -180,7 +180,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should not change if it was antemeridiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-morning');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -190,7 +190,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should set time to midnight if blank', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -200,7 +200,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should set time to midnight if partially filled', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -214,7 +214,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
 
     describe('in the second input', () => {
       it('should set merdiem to antemeridiem if it was postmerdiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-second-evening');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-second-evening');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
@@ -224,7 +224,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should not change if it was antemeridiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-second-morning');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-second-morning');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
@@ -234,7 +234,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should set time to midnight if blank', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default-second');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default-second');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
@@ -244,7 +244,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should set time to midnight if partially filled', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default-second');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default-second');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
@@ -260,7 +260,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   describe('pressing P', () => {
     describe('in the hour input', () => {
       it('should set merdiem to postmerdiem if it was antemeridiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-morning');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -270,7 +270,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should not change if it was postmerdiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-evening');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-evening');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -280,7 +280,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should set time to noon if blank', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -290,7 +290,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should set time to noon if partially filled', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
@@ -304,7 +304,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
 
     describe('in the minute input', () => {
       it('should set merdiem to postmerdiem if it was antemeridiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-morning');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -314,7 +314,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should not change if it was postmerdiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-evening');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-evening');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -324,7 +324,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should set time to noon if blank', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -334,7 +334,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should set time to noon if partially filled', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -348,7 +348,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
 
     describe('in the second input', () => {
       it('should set merdiem to postmerdiem if it was antemeridiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-second-morning');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-second-morning');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
@@ -358,7 +358,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should not change if it was postmerdiem', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-second-evening');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-second-evening');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
@@ -368,7 +368,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should set time to noon if blank', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default-second');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default-second');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
@@ -378,7 +378,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       });
 
       it('should set time to noon if partially filled', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/default-second');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default-second');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 

@@ -1,27 +1,27 @@
 // Verify tabs collapse appropriately
 Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
   it('Default', () => {
-    browser.url('/raw/tests/terra-tabs/tabs/tabs/default-tabs');
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/default-tabs');
     browser.pause(1000);
     $('[class*="tab-content"]').moveTo();
     Terra.validates.element('default', { selector: '#root' });
   });
 
   it('displays Extended tabs', () => {
-    browser.url('/raw/tests/terra-tabs/tabs/tabs/extended-tabs');
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/extended-tabs');
     browser.refresh();
     $('[class*="tab-content"]').moveTo();
     Terra.validates.element('extended', { selector: '#root' });
   });
 
   it('displays Icon Only Tabs', () => {
-    browser.url('/raw/tests/terra-tabs/tabs/tabs/default-icon-only-tabs');
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/default-icon-only-tabs');
     $('[class*="tab-content"]').moveTo();
     Terra.validates.element('icon only');
   });
 
   it('Icon Only Tabs - No Overflow', () => {
-    browser.url('/raw/tests/terra-tabs/tabs/tabs/overflow-tabs');
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/overflow-tabs');
     Terra.validates.element('icon only no overflow');
   });
 });
@@ -29,7 +29,7 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
 // Only test viewports that have collapsed tabs
 Terra.describeViewports('Responsive Hidden Open', ['tiny', 'small', 'medium', 'large'], () => {
   before(() => {
-    browser.url('/raw/tests/terra-tabs/tabs/tabs/default-tabs');
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/default-tabs');
     browser.refresh();
   });
 
@@ -48,7 +48,7 @@ Terra.describeViewports('Responsive Hidden Open', ['tiny', 'small', 'medium', 'l
 Terra.describeViewports('Tabs - Large screen', ['large'], () => {
   describe('Default', () => {
     it('Default', () => {
-      browser.url('/raw/tests/terra-tabs/tabs/tabs/default-tabs');
+      browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/default-tabs');
       browser.refresh();
       $('[class*="tab-content"]').moveTo();
     });
@@ -63,14 +63,14 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
   });
 
   it('Fill Parent Tabs', () => {
-    browser.url('/raw/tests/terra-tabs/tabs/tabs/fill-parent-tabs');
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/fill-parent-tabs');
     $('[class*="tab-content"]').moveTo();
     Terra.validates.element('fill parent');
   });
 
   describe('Additional Tabs after mount', () => {
     it('displays before mount', () => {
-      browser.url('/raw/tests/terra-tabs/tabs/tabs/additional-tabs');
+      browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/additional-tabs');
       Terra.validates.element('additional tabs before mount', { selector: '#tabsWrapper-5' });
     });
 
@@ -86,14 +86,14 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
 Terra.describeViewports('Tabs - Uncollapsed', ['tiny'], () => {
   describe('Icon Only Tabs', () => {
     it('Icon Only Tabs', () => {
-      browser.url('/raw/tests/terra-tabs/tabs/tabs/uncollapsed-icon-only-tabs');
+      browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/uncollapsed-icon-only-tabs');
       Terra.validates.element('uncollapsed icon only tabs', { selector: '#iconOnlyTabs' });
     });
   });
 
   describe('Default', () => {
     it('Default', () => {
-      browser.url('/raw/tests/terra-tabs/tabs/tabs/uncollapsed-tabs');
+      browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/uncollapsed-tabs');
       Terra.validates.element('uncollapsed default');
     });
   });
@@ -101,7 +101,7 @@ Terra.describeViewports('Tabs - Uncollapsed', ['tiny'], () => {
 
 Terra.describeViewports('Tabs - Responsive to Window', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
   it('Responsive to Window', () => {
-    browser.url('/raw/tests/terra-tabs/tabs/tabs/tabs-responsive-to-window');
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/tabs-responsive-to-window');
     $('[class*="tab-content"]').moveTo();
     Terra.validates.element('responsive to window', { selector: '#tabs-container' });
   });
@@ -109,7 +109,7 @@ Terra.describeViewports('Tabs - Responsive to Window', ['tiny', 'small', 'medium
 
 Terra.describeViewports('Tabs - Responsive to Parent', ['huge'], () => {
   it('Responsive to Parent', () => {
-    browser.url('/raw/tests/terra-tabs/tabs/tabs/tabs-responsive-to-parent');
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/tabs-responsive-to-parent');
     Terra.validates.element('responsive to parent before');
     $('button').click();
     $('[class*="tab-content"]').moveTo();

@@ -1,6 +1,6 @@
 Terra.describeViewports('SlidePanelManager', ['tiny', 'large'], () => {
   before(() => {
-    browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+    browser.url('/#/raw/tests/cerner-terra-framework-docs/slide-panel-manager/slide-panel-manager-default');
     browser.refresh();
   });
   afterEach(() => {
@@ -130,7 +130,7 @@ Terra.describeViewports('SlidePanelManager', ['tiny', 'large'], () => {
 
 Terra.describeViewports('SlidePanelManager- Behaviors', ['large'], () => {
   before(() => {
-    browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+    browser.url('/#/raw/tests/cerner-terra-framework-docs/slide-panel-manager/slide-panel-manager-default');
     browser.refresh();
   });
 
@@ -201,7 +201,7 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
 
   describe('Disclosure - Header Close', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-header-adapter');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/slide-panel-manager/slide-panel-manager-with-header-adapter');
       browser.refresh();
     });
 
@@ -224,7 +224,7 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
 
   describe('Disclosure - Header Back', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-header-adapter');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/slide-panel-manager/slide-panel-manager-with-header-adapter');
       browser.refresh();
     });
 
@@ -258,7 +258,7 @@ Terra.describeViewports('SlidePanelManager - Disclosure Accessory', ['large'], (
 
   describe('Disclosure Accessory', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-disclosure-accessory');
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/slide-panel-manager/slide-panel-manager-with-disclosure-accessory');
       browser.refresh();
     });
     it('renders the disclosure accessory', () => {
@@ -280,7 +280,7 @@ Terra.describeViewports('SlidePanelManager - Disclosure Accessory', ['large'], (
   });
 
   describe('Disclosure Container', () => {
-    before(() => browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/with-disclosure-container'));
+    before(() => browser.url('/#/raw/tests/cerner-terra-framework-docs/slide-panel-manager/with-disclosure-container'));
     it('opens the slide-panel', () => {
       $('#root-component .disclose-large').click();
       $('[class*="slide-group"] #DemoContainer-1 .disclose-tiny').waitForDisplayed({ timeout: 1000 });
