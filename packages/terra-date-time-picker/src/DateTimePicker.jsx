@@ -283,7 +283,7 @@ class DateTimePicker extends React.Component {
     this.containerHasFocus = false;
   }
 
-  handleDateChange(event, date, metaData, fromHandleTime) {
+  handleDateChange(event, date, metaData) {
     let updatedDateTime;
     const formattedDate = DateUtil.formatISODate(date, 'YYYY-MM-DD');
     const isDateValid = DateUtil.isValidDate(formattedDate, 'YYYY-MM-DD');
@@ -303,13 +303,11 @@ class DateTimePicker extends React.Component {
       }
     }
 
-    if (!fromHandleTime) {
-      // onChange should only be triggered when both the date and time values are valid or both values are empty/cleared.
-      if ((isDateValid && isTimeValid) || (this.dateValue === '' && this.timeValue === '')) {
-        this.handleChange(event, updatedDateTime);
-      } else {
-        this.setState({ dateTime: updatedDateTime });
-      }
+    // onChange should only be triggered when both the date and time values are valid or both values are empty/cleared.
+    if ((isDateValid && isTimeValid) || (this.dateValue === '' && this.timeValue === '')) {
+      this.handleChange(event, updatedDateTime);
+    } else {
+      this.setState({ dateTime: updatedDateTime });
     }
   }
 
@@ -361,6 +359,15 @@ class DateTimePicker extends React.Component {
           timeArray[0] = (`0${checkHour}`).slice(-2);
           this.timeValue = timeArray.join(':');
         }
+
+        // Check if date is at or below minium
+        if (previousDateTime.isBefore(DateUtil.MIN_DATE.concat(' ', '00:00:00'))) {
+          previousDateTime = DateUtil.createSafeDate(DateUtil.MIN_DATE, this.initialTimeZone);
+          timeArray[0] = '00';
+          timeArray[1] = '00';
+          timeArray[2] = '00';
+          this.timeValue = timeArray.join(':');
+        }
       } else if (event.key === '=' || event.key === '+') {
         // `+` add 1 minute to time, so check date to see if it needs changed
         if (!validDate) {
@@ -375,6 +382,15 @@ class DateTimePicker extends React.Component {
           previousDateTime = previousDateTime.add(1, 'd');
           dateChanged = true;
         }
+
+        // Check if date is at or below minium
+        if (previousDateTime.isAfter(DateUtil.MAX_DATE.concat(' ', '23:59:59'))) {
+          previousDateTime = DateUtil.createSafeDate(DateUtil.MAX_DATE, this.initialTimeZone);
+          timeArray[0] = '23';
+          timeArray[1] = '59';
+          timeArray[2] = '59';
+          this.timeValue = timeArray.join(':');
+        }
       } else if (this.props.timeVariant === DateTimeUtils.FORMAT_12_HOUR && (event.key === 'a' || event.key === 'A' || event.key === 'p' || event.key === 'P')) {
         // `A` and `P`, changes the meridiem, so check date to see if it needs changed
         if (!validDate) {
@@ -386,7 +402,7 @@ class DateTimePicker extends React.Component {
       }
     }
     if (dateChanged) {
-      this.handleDateChange(event, previousDateTime.format('YYYY-MM-DD'), null, true);
+      this.dateValue = DateUtil.formatISODate(previousDateTime.format('YYYY-MM-DD'), this.state.dateFormat);
     }
 
     // If both date and time are valid, check if the time is the missing hour and invoke onChange.
