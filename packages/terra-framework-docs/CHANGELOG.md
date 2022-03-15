@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.8.0 - (March 15, 2022)
+
 * Changed
   * Migrated docs from terra date input.
   * Migrated terra-collapsible-menu-view-docs
