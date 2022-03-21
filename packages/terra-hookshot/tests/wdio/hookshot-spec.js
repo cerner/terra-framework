@@ -1,6 +1,6 @@
 Terra.describeViewports('Hookshot', ['medium'], () => {
   it('Displays default hookshot', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/default-hookshot');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/default-hookshot');
     $('#hookshot-standard-button').click();
     $('#testDefaultContent').waitForDisplayed();
     Terra.validates.element('default', { selector: '#default-bounds' });
@@ -8,7 +8,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
   // none position behavior
   it('Displays in primary position when there is enough room with no attachment behavior', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-attachment-behavior-none');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-attachment-behavior-none');
     $('#position-primary').click();
     $('#trigger-attachment-behavior-none').click();
     $('#attachment-behavior-none-content').waitForDisplayed();
@@ -16,7 +16,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
   });
 
   it('Displays in primary position when there is not enough room in primary position with no attachment behavior', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-attachment-behavior-none');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-attachment-behavior-none');
     $('#position-offset').click();
     $('#trigger-attachment-behavior-none').click();
     $('#attachment-behavior-none-content').waitForDisplayed();
@@ -25,7 +25,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
   // push position behavior
   it('Displays with position pushed when there is not enough room in primary position with no attachment behavior', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-attachment-behavior-push');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-attachment-behavior-push');
     $('#position-pushed').click();
     $('#trigger-attachment-behavior-push').click();
     $('#attachment-behavior-push-content').waitForDisplayed();
@@ -34,7 +34,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
   // flip position behavior
   it('Displays in primary position when there is enough room with flip attachment behavior', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-attachment-behavior-flip');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-attachment-behavior-flip');
     $('#position-primary').click();
     $('#trigger-attachment-behavior-flip').click();
     $('#attachment-behavior-flip-content').waitForDisplayed();
@@ -42,7 +42,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
   });
 
   it('Displays with position flipped when there is not enough room in primary position with flip attachment behavior', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-attachment-behavior-flip');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-attachment-behavior-flip');
     $('#position-flipped').click();
     $('#trigger-attachment-behavior-flip').click();
     $('#attachment-behavior-flip-content').waitForDisplayed();
@@ -50,7 +50,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
   });
 
   it('Displays with position pushed when there is not enough room in primary or flipped position with flip attachment behavior', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-attachment-behavior-flip');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-attachment-behavior-flip');
     $('#position-flipped').click();
     $('#trigger-attachment-behavior-flip').click();
     $('#attachment-behavior-flip-content').waitForDisplayed();
@@ -59,7 +59,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
   // auto position behavior
   it('Displays in primary position when there is enough room with auto attachment behavior', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-attachment-behavior-auto');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-attachment-behavior-auto');
     $('#position-primary').click();
     $('#trigger-attachment-behavior-auto').click();
     $('#attachment-behavior-auto-content').waitForDisplayed();
@@ -67,7 +67,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
   });
 
   it('Displays with position flipped when there is not enough room in primary position with auto attachment behavior', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-attachment-behavior-auto');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-attachment-behavior-auto');
     $('#position-flipped').click();
     $('#trigger-attachment-behavior-auto').click();
     $('#attachment-behavior-auto-content').waitForDisplayed();
@@ -75,7 +75,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
   });
 
   it('Displays with position rotated 90 degrees when there is not enough room in primary or flipped positions with auto attachment behavior', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-attachment-behavior-auto');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-attachment-behavior-auto');
     $('#position-90-deg').click();
     $('#trigger-attachment-behavior-auto').click();
     $('#attachment-behavior-auto-content').waitForDisplayed();
@@ -83,7 +83,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
   });
 
   it('Displays with position rotated -90 degrees when there is not enough room in primary, flipped, or 90 degree positions with auto attachment behavior', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-attachment-behavior-auto');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-attachment-behavior-auto');
     $('#position-neg-90-deg').click();
     $('#trigger-attachment-behavior-auto').click();
     $('#attachment-behavior-auto-content').waitForDisplayed();
@@ -91,7 +91,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
   });
 
   it('Displays with position pushed when there is not enough room in primary, flipped, 90 degree, or -90 degree positions with auto attachment', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-attachment-behavior-auto');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-attachment-behavior-auto');
     $('#position-pushed').click();
     $('#trigger-attachment-behavior-auto').click();
     $('#attachment-behavior-auto-content').waitForDisplayed();
@@ -101,7 +101,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
   // attachmentMargin: validate number set adjusts positioning by so much.
   describe('Displays with given margin between the attachment points', () => {
     it('Top Start Content Attachment', () => {
-      browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-attachment-margin');
+      browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-attachment-margin');
       $('#attach-TS').click();
       $('#attachment-margin-content').waitForDisplayed();
       Terra.validates.element('Top Start', { selector: '#attachment-margin-bounds' });
@@ -159,7 +159,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
   // boundingRef: test - top bottom start end bounding container adjustments.
   describe('Displays content pushed by bounding container', () => {
     it('Push Left', () => {
-      browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-bounding-container');
+      browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-bounding-container');
       $('#push-left').click();
       $('#trigger-bounding-container').click();
       $('#bounding-container-content').waitForDisplayed();
@@ -190,13 +190,13 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
   // Verify Content Offset Positioning
   it('Displays the content offset correctly for dir=ltr', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-content-offset');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-content-offset');
     $('#ContentOffset-content').waitForDisplayed();
     Terra.validates.element('content offset dir=ltr', { selector: '#ContentOffset-bounds' });
   });
 
   it('Displays the content offset correctly for dir=rtl', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-content-offset');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-content-offset');
     $('#rtl-ContentOffset').click();
     $('#trigger-ContentOffset').click();
     browser.pause(50);
@@ -207,13 +207,13 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
   // Verify Target Offset Positioning
   it('Displays the target offset correctly for dir=ltr', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-target-offset');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-target-offset');
     $('#TargetOffset-content').waitForDisplayed();
     Terra.validates.element('target offset dir=ltr', { selector: '#TargetOffset-bounds' });
   });
 
   it('Displays the target offset correctly for dir=rtl', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-target-offset');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-target-offset');
     $('#rtl-TargetOffset').click();
     $('#trigger-TargetOffset').click();
     browser.pause(50);
@@ -224,7 +224,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
   // Verify Enabled Behaviors
   it('displays Content when isEnabled={true} vs isEnabled={false} ', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-enabled-behaviors');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-enabled-behaviors');
     $('#Enabled-bounds').waitForDisplayed();
     $('#NotEnabled-bounds').waitForDisplayed();
     Terra.validates.element('display content with isEnabled', { selector: '#EnabledBehaviors-bounds' });
@@ -232,7 +232,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
   // Verify Close Behaviors - ALL
   it('Closes the hookshot content on ESC when all close behavior is present', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-close-behaviors');
     $('#trigger-AllBehavior').click();
     $('#AllBehavior-content').waitForDisplayed();
     browser.keys('ESCAPE');
@@ -240,7 +240,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
   });
 
   it('Closes the hookshot content on outside click when all close behavior is present', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-close-behaviors');
     $('#trigger-AllBehavior').click();
     $('#AllBehavior-content').waitForDisplayed();
     $('#root').click({ x: 10, y: 10 });
@@ -249,7 +249,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
   // Verify Close Behaviors - ESCAPE
   it('Closes the hookshot content on ESC when closeOnEsc', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-close-behaviors');
     $('#trigger-EscBehavior').click();
     $('#EscBehavior-content').waitForDisplayed();
     browser.keys('ESCAPE');
@@ -258,7 +258,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
   // Verify Close Behaviors - CLICK
   it('Closes the hookshot content on outside click when closeOnOutsideClick', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-close-behaviors');
     $('#trigger-OutsideClickBehavior').click();
     $('#OutsideClickBehavior-content').waitForDisplayed();
     $('#root').click({ x: 10, y: 10 });
@@ -267,7 +267,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
   // Verify Close Behaviors - CLICK on SVG
   it('Closes the hookshot content on outside click on SVG when closeOnOutsideClick', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-close-behaviors');
     $('#scroll-bounds').click();
     $('#trigger-OutsideClickBehaviorWithSvgs').click();
     $('#OutsideClickBehaviorWithSvgs-content').waitForDisplayed();
@@ -277,7 +277,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
   // Verify Close Behaviors - NONE
   it('Closes the hookshot content on ESC when no close behavior is present', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-close-behaviors');
     $('#scroll-bounds').click();
     $('#trigger-NoCloseBehavior').click();
     $('#NoCloseBehavior-content').waitForDisplayed();
@@ -286,7 +286,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
   });
 
   it('Closes the hookshot content on outside click when no close behavior is present', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-close-behaviors');
     $('#scroll-bounds').click();
     $('#trigger-NoCloseBehavior').click();
     $('#NoCloseBehavior-content').waitForDisplayed();
@@ -299,7 +299,7 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 Terra.describeViewports('Hookshot', ['small'], () => {
   it('Closes the hookshot content on resize when all close behavior is present', () => {
     browser.refresh();
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-close-behaviors');
     $('#trigger-AllBehavior').click();
     $('#AllBehavior-content').waitForDisplayed();
     browser.pause(100);
@@ -308,7 +308,7 @@ Terra.describeViewports('Hookshot', ['small'], () => {
 
   // Verify Close Behaviors - RESIZE
   it('Closes the hookshot content on resize', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-close-behaviors');
     $('#trigger-ResizeBehavior').click();
     $('#ResizeBehavior-content').waitForDisplayed();
     $('#scroll-bounds').click();
@@ -317,7 +317,7 @@ Terra.describeViewports('Hookshot', ['small'], () => {
   });
 
   it('Closes the hookshot content on resize when no close behavior is present', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-close-behaviors');
     $('#scroll-bounds').click();
     $('#trigger-NoCloseBehavior').click();
     $('#NoCloseBehavior-content').waitForDisplayed();
@@ -326,7 +326,7 @@ Terra.describeViewports('Hookshot', ['small'], () => {
   });
 
   it('Displays hookshot positioned by target coordinates', () => {
-    browser.url('/raw/tests/terra-hookshot/hookshot/hookshot-coordinates');
+    browser.url('/raw/tests/cerner-terra-framework-docs/hookshot/hookshot-coordinates');
     $('#coords-button').click();
     $('#test-coords-content').waitForDisplayed();
     Terra.validates.element('positioned by target coordinates', { selector: '#coords-test' });

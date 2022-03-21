@@ -1,0 +1,50 @@
+import { Badge } from 'terra-date-input/package.json?dev-site-package';
+
+import DateInputFieldPropsTable from 'terra-date-input/src/DateInputField?dev-site-props-table';
+
+import DefaultDateInputField from './example/DefaultDateInputField?dev-site-example';
+import InlineDateInputField from './example/InlineDateInputField?dev-site-example';
+import OptionalDateInputField from './example/OptionalDateInputField?dev-site-example';
+import RequiredDateInputField from './example/RequiredDateInputField?dev-site-example';
+import HideRequiredDateInputField from './example/HideRequiredDateInputField?dev-site-example';
+import DayMonthYearDateInputField from './example/DayMonthYearDateInputField?dev-site-example';
+import MonthDayYearDateInputField from './example/MonthDayYearDateInputField?dev-site-example';
+import IncompleteDateInputField from './example/IncompleteDateInputField?dev-site-example';
+
+<Badge />
+
+# Terra Date Input Field
+
+DateInputField is a component of terra-date-input that provides a container for rendering the related date inputs. DateInputField includes displays for help text, error text, required or optional indication, and invalid states.
+
+Additional functionality for quick date entry is available with specific [keyboard shortcuts](/components/terra-date-input/date-input/keyboard-shortcuts).
+
+## Component Features
+
+ * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+ * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+ * [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+ * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
+
+## Examples
+<DefaultDateInputField title='Default DateInputField' />
+<RequiredDateInputField title='Required DateInputField' />
+<HideRequiredDateInputField  title='Hide Required DateInputField' />
+<InlineDateInputField title='Inline DateInputField'/>
+<OptionalDateInputField title='Optional DateInputField' />
+<MonthDayYearDateInputField title='Month Day Year Display Format DateInputField' />
+<DayMonthYearDateInputField title='Day Month Year Display Format DateInputField' />
+<IncompleteDateInputField title='Incomplete DateInputField' description='Applies theme-specific styling for incomplete. ***Note: Only use incomplete if given specific guidance, reserved for specific applications when no value has been provided. Not for general use.***' />
+
+## Date input field props table
+<DateInputFieldPropsTable />
+
+## Testing
+
+The Date Input Field uses `uuid` which changes the component's description id dynamically. To mock it in jest test teams can use `jest.mock`.
+
+If teams are using `shallow` for the tests then the mock is not required. But if using `mount` then the teams must use the mock as given below.
+
+```js
+jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+```

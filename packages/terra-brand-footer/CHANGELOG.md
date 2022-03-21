@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 3.9.1 - (March 15, 2022)
+
+* Changed
+  * Minor dependency version bump
+
 ## 3.9.0 - (October 12, 2021)
 
 * Changed

@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+## 1.34.0 - (March 15, 2022)
+
+ 
+
+* Changed
+  * Migrate docs to terra framework docs
+
+## 1.33.0 - (March 1, 2022)
+
+* Added
+  * A11y improvements
+
 ## 1.32.1 - (February 15, 2022)
 
 * Changed

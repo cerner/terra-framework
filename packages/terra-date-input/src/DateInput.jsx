@@ -5,15 +5,24 @@ import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import uuidv4 from 'uuid/v4';
 import { injectIntl } from 'react-intl';
-import Input from 'terra-form-input';
 import * as KeyCode from 'keycode-js';
 
+import AccessibleValue from 'terra-time-input/lib/_AccessibleValue';
+import AccessibleInput from 'terra-time-input/lib/_AccessibleInput';
 import DateInputUtil from './DateInputUtil';
 import styles from './DateInput.module.scss';
 
 const cx = classNamesBind.bind(styles);
 
 const propTypes = {
+  /**
+   * An identifier used by assistive technologies like screen readers to briefly describe this time input to users.
+   * The label is not rendered visually.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue)  **BEST PRACTICE FOR ACCESSIBILITY**: you _SHOULD_ set this to match whatever visible label you give in your UI.
+   * Currently this is optional for passivity reasons, but it will become mandatory in a future major version.
+   */
+  a11yLabel: PropTypes.string,
   /**
    * Name of the date input. This name should be unique.
    */
@@ -36,6 +45,11 @@ const propTypes = {
    * Intl object injected from injectIntl
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }),
+  /**
+   * @private
+   * Set to True if a higher order component like a field is providing the needed a11y features.
+   */
+  isA11yControlled: PropTypes.bool,
   /**
   * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
   */
@@ -98,6 +112,7 @@ const defaultProps = {
   refCallback: undefined,
   value: undefined,
   useExternalFormatMask: false,
+  isA11yControlled: false,
 };
 
 class DateInput extends React.Component {
@@ -276,12 +291,10 @@ class DateInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleMonthKeyDown(event) {
-    const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
-
     if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
       this.handleValueChange(event, DateInputUtil.inputType.MONTH, '');
 
-      if (displayFormat === 'day-month-year' && event.target.value === '') {
+      if (this.computedDisplayFormat() === 'day-month-year' && event.target.value === '') {
         this.focusDay(event);
       }
     }
@@ -318,7 +331,6 @@ class DateInput extends React.Component {
   handleDayKeyDown(event) {
     let stateValue = this.state.day || '';
     const previousStateValue = stateValue;
-    const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
     if (event.keyCode === KeyCode.KEY_UP) {
       event.preventDefault();
@@ -335,7 +347,7 @@ class DateInput extends React.Component {
     }
 
     if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
-      if (displayFormat === 'month-day-year' && event.target.value === '') {
+      if (this.computedDisplayFormat() === 'month-day-year' && event.target.value === '') {
         this.focusMonth(event);
       }
     }
@@ -348,7 +360,7 @@ class DateInput extends React.Component {
   handleYearKeyDown(event) {
     let stateValue = this.state.year || '';
     const previousStateValue = stateValue;
-    const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
+    const displayFormat = this.computedDisplayFormat();
 
     if (event.keyCode === KeyCode.KEY_UP) {
       event.preventDefault();
@@ -500,6 +512,11 @@ class DateInput extends React.Component {
     }
   }
 
+  // Returns the display format, considering the locale and the prop.
+  computedDisplayFormat() {
+    return DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
+  }
+
   /**
    * Shifts programmatic focus to day input
    * @param {Object} event Event object generated from the event delegation.
@@ -528,9 +545,26 @@ class DateInput extends React.Component {
   }
 
   /**
-   * Renders month input
+   * Renders the month select.
+   *
+   * If the display format begins with the month, then a special label will be set for accessibility.
+   * The special label makes it easy for users to see which control on the page is the start of this particular
+   * DateInput - even if there are other DateInputs in the same view.
    */
   monthRender() {
+    const { intl, a11yLabel } = this.props;
+    let label;
+
+    if (this.computedDisplayFormat() === 'month-day-year') {
+      if (a11yLabel) {
+        label = intl.formatMessage({ id: 'Terra.date.input.monthSelectLabelWithName' }, { a11yLabel });
+      } else {
+        label = intl.formatMessage({ id: 'Terra.date.input.monthSelectLabelWithDefaultName' });
+      }
+    } else {
+      label = intl.formatMessage({ id: 'Terra.date.input.monthSelectLabel' }, { a11yLabel });
+    }
+
     const DateInputMonthWrapperClassNames = cx([
       'month-select-wrapper',
       { focused: this.state.monthIsFocused },
@@ -548,13 +582,11 @@ class DateInput extends React.Component {
       { incomplete: (this.props.isIncomplete && this.props.required && !this.props.isInvalid) },
     ]);
 
-    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.monthAttributes });
-
     return (
       <div className={DateInputMonthWrapperClassNames}>
         <select
           {...this.props.monthAttributes}
-          aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })}
+          aria-label={label}
           ref={this.monthRef}
           className={DateInputMonthClassNames}
           value={this.state.month}
@@ -565,7 +597,9 @@ class DateInput extends React.Component {
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}
           disabled={this.props.disabled}
-          aria-describedby={ariaDescriptionId}
+          aria-disabled={this.props.disabled}
+          aria-invalid={this.props.isInvalid}
+          aria-required={this.props.required}
         >
           <option value="">{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
@@ -586,7 +620,11 @@ class DateInput extends React.Component {
   }
 
   /**
-   * Renders day input
+   * Renders the day input.
+   *
+   * If the display format begins with the day, then a special label will be set for accessibility.
+   * The special label makes it easy for users to see which control on the page is the start of this particular
+   * DateInput - even if there are other DateInputs in the same view.
    */
   dayRender() {
     /**
@@ -596,17 +634,29 @@ class DateInput extends React.Component {
      * To work around this issue, the day input uses type="number" for all browsers, but if we're in a Mozilla browser,
      * we switch over to using type="text" and pattern="\d*" which allows displaying value="03" in the browser as "03"
      */
+    const { intl, a11yLabel } = this.props;
+    let label;
+
+    if (this.computedDisplayFormat() === 'day-month-year') {
+      if (a11yLabel) {
+        label = intl.formatMessage({ id: 'Terra.date.input.dayInputLabelWithName' }, { a11yLabel });
+      } else {
+        label = intl.formatMessage({ id: 'Terra.date.input.dayInputLabelWithDefaultName' });
+      }
+    } else {
+      label = intl.formatMessage({ id: 'Terra.date.input.dayInputLabel' });
+    }
+
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
 
-    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.dayAttributes });
-
     return (
-      <Input
+      <AccessibleInput
         {...this.props.dayAttributes}
         {...numberAttributes}
         refCallback={(inputRef) => { this.dayRef = inputRef; }}
-        aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.dayLabel' })}
+        label={label}
+        description={intl.formatMessage({ id: 'Terra.date.input.dayDescription' })}
         className={cx('date-input-day', { 'is-focused': this.state.dayIsFocused })}
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
@@ -621,9 +671,9 @@ class DateInput extends React.Component {
         autoComplete="off"
         disabled={this.props.disabled}
         isInvalid={this.props.isInvalid}
+        showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        aria-describedby={ariaDescriptionId}
       />
     );
   }
@@ -642,14 +692,13 @@ class DateInput extends React.Component {
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
 
-    const ariaDescriptionId = DateInputUtil.getAriaDescriptionId({ props: this.props, formatDescriptionId: this.formatDescriptionId, inputAttributes: this.props.yearAttributes });
-
     return (
-      <Input
+      <AccessibleInput
         {...this.props.yearAttributes}
         {...numberAttributes}
         refCallback={(inputRef) => { this.yearRef = inputRef; }}
-        aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}
+        label={this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}
+        description={this.props.intl.formatMessage({ id: 'Terra.date.input.yearDescription' })}
         className={cx('date-input-year', { 'is-focused': this.state.yearIsFocused })}
         value={this.state.year}
         name={'terra-date-year-'.concat(this.props.name)}
@@ -664,9 +713,9 @@ class DateInput extends React.Component {
         autoComplete="off"
         disabled={this.props.disabled}
         isInvalid={this.props.isInvalid}
+        showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        aria-describedby={ariaDescriptionId}
       />
     );
   }
@@ -692,7 +741,7 @@ class DateInput extends React.Component {
       </React.Fragment>
     );
 
-    if (DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale) === 'month-day-year') {
+    if (this.computedDisplayFormat() === 'month-day-year') {
       return monthDayYearFormat;
     }
 
@@ -701,12 +750,14 @@ class DateInput extends React.Component {
 
   render() {
     const {
+      a11yLabel,
       disabled,
       displayFormat,
       dayAttributes,
       monthAttributes,
       yearAttributes,
       intl,
+      isA11yControlled,
       isInvalid,
       isIncomplete,
       onBlur,
@@ -738,21 +789,28 @@ class DateInput extends React.Component {
 
     // Using the state of month, day, and year to create a formatted date value
     let dateValue = '';
+    let completeDateValue;
 
     if (month.length > 0 || day.length > 0 || year.length > 0) {
       dateValue = `${year}-${month}-${day}`;
     }
 
-    this.formatDescriptionId = `terra-date-input-description-format-${this.uuid}`;
+    if (dateValue.length === 'xx-xx-xxxx'.length) {
+      completeDateValue = dateValue;
+    }
 
     const format = DateInputUtil.getDateFormat(this.props);
+    const label = a11yLabel || this.props.intl.formatMessage({ id: 'Terra.date.input.labelDefault' });
 
     return (
       <div
         {...customProps}
         className={dateInputClassNames}
         ref={(element) => { this.dateInputContainer.current = element; if (refCallback) { refCallback(element); } }}
+        role={isA11yControlled ? null : 'group'}
+        aria-label={isA11yControlled ? undefined : label}
       >
+        <AccessibleValue value={completeDateValue} readThis={`${label} ${completeDateValue}`} />
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but formatted in YYYY-MM-DD format.
@@ -761,10 +819,11 @@ class DateInput extends React.Component {
           value={dateValue}
         />
         {this.formattedRender()}
-        { (useExternalFormatMask === false) && (
-        <div id={this.formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.date.input.dateFormatLabel' })} ${format}`}>
-          {format}
-        </div>
+        {/* The format is aria-hidden because it makes no sense when assistive technologies are reading the entire multi-field DateInput. Instead, each subfield component has its own description.  */}
+        {(useExternalFormatMask === false) && (
+          <div aria-hidden className={cx('format-text')}>
+            {format}
+          </div>
         )}
       </div>
     );

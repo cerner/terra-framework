@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.35.0 - (March 15, 2022)
+
+* Added
+  * Migrate docs to terra-framework-docs
+
 ## 4.34.0 - (September 20, 2021)
 
 * Changed

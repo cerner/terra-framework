@@ -229,27 +229,11 @@ class DateInputUtil {
   }
 
   static getDateFormat(props) {
-    return (
-      (
-        DateInputUtil.computedDisplayFormat(props.displayFormat, props.intl.locale) === 'month-day-year')
-        ? `(${props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`
-        : `(${props.intl.formatMessage({ id: 'Terra.date.input.dayFormatLabel' })} ${props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })} ${props.intl.formatMessage({ id: 'Terra.date.input.yearFormatLabel' })})`
-    );
-  }
-
-  static getAriaDescriptionId(options) {
-    const { props, formatDescriptionId, inputAttributes } = options;
-
-    if (props.useExternalFormatMask === false) {
-      if (inputAttributes && inputAttributes['aria-describedby']) {
-        return (`${formatDescriptionId} ${inputAttributes['aria-describedby']}`);
-      }
-      return formatDescriptionId;
+    if (DateInputUtil.computedDisplayFormat(props.displayFormat, props.intl.locale) === 'month-day-year') {
+      return props.intl.formatMessage({ id: 'Terra.date.input.formatMonthDayYear' });
     }
-    if (inputAttributes && inputAttributes['aria-describedby']) {
-      return inputAttributes['aria-describedby'];
-    }
-    return undefined;
+
+    return props.intl.formatMessage({ id: 'Terra.date.input.formatDayMonthYear' });
   }
 }
 

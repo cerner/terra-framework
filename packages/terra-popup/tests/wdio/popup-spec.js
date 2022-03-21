@@ -8,7 +8,7 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
   describe('Default popup', () => {
     it('validates popup does not have an arrow', () => {
-      browser.url('/raw/tests/terra-popup/popup/default-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/default-popup');
       $('.test-content').waitForDisplayed();
       expect($('.test-arrow').isExisting()).toBeFalsy();
       Terra.validates.element('default', { selector });
@@ -49,7 +49,7 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
   describe('Arrow popup', () => {
     it('validates popup has an arrow', () => {
-      browser.url('/raw/tests/terra-popup/popup/arrow-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/arrow-popup');
       $('.test-content').waitForDisplayed();
       expect($('.test-arrow').isExisting()).toBeTruthy();
 
@@ -62,25 +62,25 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
   describe('Bounded popup', () => {
     it('validates popup with a header', () => {
-      browser.url('/raw/tests/terra-popup/popup/bounded-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/bounded-popup');
       $('.test-content').waitForDisplayed();
       Terra.validates.element('with header', { selector });
     });
 
     it('validates popup without a header', () => {
-      browser.url('/raw/tests/terra-popup/popup/bounded-no-header-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/bounded-no-header-popup');
       $('.test-content').waitForDisplayed();
       Terra.validates.element('without header', { selector });
     });
 
     it('validates height bounded popup', () => {
-      browser.url('/raw/tests/terra-popup/popup/bounded-height-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/bounded-height-popup');
       $('.test-content').waitForDisplayed();
       Terra.validates.element('bounded height', { selector });
     });
 
     it('validates width bounded popup', () => {
-      browser.url('/raw/tests/terra-popup/popup/bounded-width-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/bounded-width-popup');
       $('.test-content').waitForDisplayed();
       Terra.validates.element('bounded width', { selector });
     });
@@ -88,7 +88,7 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
   describe('Popup inside a modal', () => {
     it('opens modal', () => {
-      browser.url('/raw/tests/terra-popup/popup/popup-inside-modal');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/popup-inside-modal');
       $('.disclose').click();
       $('#test-popup-area').waitForDisplayed();
     });
@@ -137,7 +137,7 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
   describe('Vertical Attachments', () => {
     it('positions the arrow for vertical-left attachment', () => {
-      browser.url('/raw/tests/terra-popup/popup/arrow-vertical-attachments-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/arrow-vertical-attachments-popup');
       $('#attach-Left').click();
       $('.test-content').waitForDisplayed();
       Terra.validates.element('vertical-left attachment arrow', { selector });
@@ -159,13 +159,13 @@ Terra.describeViewports('Popup', ['medium'], () => {
     });
 
     it('adjusts the arrow for vertical-left attachment when arrow would be offscreen', () => {
-      browser.url('/raw/tests/terra-popup/popup/arrow-vertical-left-adjustment-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/arrow-vertical-left-adjustment-popup');
       $('.test-content').waitForDisplayed();
       Terra.validates.element('adjusted vertical-left', { selector });
     });
 
     it('adjusts the arrow for vertical-right attachment when arrow would be offscreen', () => {
-      browser.url('/raw/tests/terra-popup/popup/arrow-vertical-right-adjustment-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/arrow-vertical-right-adjustment-popup');
       $('.test-content').waitForDisplayed();
       Terra.validates.element('adjusted vertical-right', { selector });
     });
@@ -173,7 +173,7 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
   describe('Content offset', () => {
     it('applies content offset when target has vertical-right when content vertical-left attachment', () => {
-      browser.url('/raw/tests/terra-popup/popup/different-attachments-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/different-attachments-popup');
       $('#attach-Left').click();
       $('.test-content').waitForDisplayed();
       Terra.validates.element('target:vertical-right & content:vertical-left', { selector });
@@ -190,13 +190,13 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
   describe('Popup with [Target Smaller Than Arrow]', () => {
     it('applies content offset when target is smaller than the arrow for vertical-left attachment', () => {
-      browser.url('/raw/tests/terra-popup/popup/arrow-small-target-left-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/arrow-small-target-left-popup');
       $('.test-content').waitForDisplayed();
       Terra.validates.element('vertical-left target smaller than arrow', { selector });
     });
 
     it('applies content offset when target is smaller than the arrow for vertical-right attachment', () => {
-      browser.url('/raw/tests/terra-popup/popup/arrow-small-target-right-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/arrow-small-target-right-popup');
       $('.test-content').waitForDisplayed();
       Terra.validates.element('vertical-right target smaller than arrow', { selector });
     });
@@ -204,7 +204,7 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
   describe('Horizontal Attachments', () => {
     it('positions the arrow for horizontal-top attachment', () => {
-      browser.url('/raw/tests/terra-popup/popup/arrow-horizontal-attachments-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/arrow-horizontal-attachments-popup');
       $('#attach-Top').click();
       $('.test-content').waitForDisplayed();
       Terra.validates.element('horizontal-top', { selector });
@@ -227,26 +227,26 @@ Terra.describeViewports('Popup', ['medium'], () => {
   });
 
   it('Displays a small-sized popup correctly', () => {
-    browser.url('/raw/tests/terra-popup/popup/size-small-popup');
+    browser.url('/raw/tests/cerner-terra-framework-docs/popup/size-small-popup');
     $('.test-content').waitForDisplayed();
     Terra.validates.element('small sized', { selector });
   });
 
   it('Displays a medium-sized popup correctly', () => {
-    browser.url('/raw/tests/terra-popup/popup/size-medium-popup');
+    browser.url('/raw/tests/cerner-terra-framework-docs/popup/size-medium-popup');
     $('.test-content').waitForDisplayed();
     Terra.validates.element('medium sized', { selector });
   });
 
   it('[Fallback-sized Popup] when invalid sizes are provided', () => {
-    browser.url('/raw/tests/terra-popup/popup/size-invalid-popup');
+    browser.url('/raw/tests/cerner-terra-framework-docs/popup/size-invalid-popup');
     $('.test-content').waitForDisplayed();
     Terra.validates.element('invalid size', { selector });
   });
 
   describe('Automatic Height Popup', () => {
     it('displays a popup with automatic height correctly', () => {
-      browser.url('/raw/tests/terra-popup/popup/automatic-height-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/automatic-height-popup');
       $('.test-content').waitForDisplayed();
       Terra.validates.element('automatic height', { selector });
     });
@@ -265,14 +265,14 @@ Terra.describeViewports('Popup', ['medium'], () => {
   });
 
   it('displays a popup with automatic height correctly when bounded', () => {
-    browser.url('/raw/tests/terra-popup/popup/automatic-height-bounded-popup');
+    browser.url('/raw/tests/cerner-terra-framework-docs/popup/automatic-height-bounded-popup');
     $('.test-content').waitForDisplayed();
     Terra.validates.element('automatic height bounded popup', { selector });
   });
 
   describe('Automatic Width Popup', () => {
     it('displays a popup with automatic width correctly', () => {
-      browser.url('/raw/tests/terra-popup/popup/automatic-width-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/automatic-width-popup');
       $('.test-content').waitForDisplayed();
       Terra.validates.element('automatic width', { selector });
     });
@@ -291,14 +291,14 @@ Terra.describeViewports('Popup', ['medium'], () => {
   });
 
   it('displays a popup with automatic width correctly when bounded', () => {
-    browser.url('/raw/tests/terra-popup/popup/automatic-width-bounded-popup');
+    browser.url('/raw/tests/cerner-terra-framework-docs/popup/automatic-width-bounded-popup');
     $('.test-content').waitForDisplayed();
     Terra.validates.element('bounded automatic width', { selector });
   });
 
   describe('Automatic Dimensions Resizing', () => {
     it('validates original content size', () => {
-      browser.url('/raw/tests/terra-popup/popup/resized-content-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/resized-content-popup');
       $('.test-content').waitForDisplayed();
       Terra.validates.element('original content size', { selector });
     });
@@ -312,7 +312,7 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
   describe('Focus Trap Management', () => {
     it('validates focus is moved to popup when open', () => {
-      browser.url('/raw/tests/terra-popup/popup/focus-trap-popup');
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/focus-trap-popup');
       $('.test-content').waitForDisplayed();
       expect($('[data-terra-popup-content]').isFocused()).toBeTruthy();
     });
@@ -334,7 +334,7 @@ Terra.describeViewports('Popup', ['medium'], () => {
 
 Terra.describeViewports('Displays a large-sized popup correctly', ['large'], () => {
   it('displays a large sized popup', () => {
-    browser.url('/raw/tests/terra-popup/popup/size-large-popup');
+    browser.url('/raw/tests/cerner-terra-framework-docs/popup/size-large-popup');
     $('.test-content').waitForDisplayed();
 
     Terra.validates.element('large sized', { selector });

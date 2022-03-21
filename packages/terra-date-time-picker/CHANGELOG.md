@@ -5,6 +5,16 @@
 * Added
   * Added keyboard shortcuts `N`, `-`, `+`, `A`, and `P` for auto-setting date and time values.
 
+## 4.74.0 - (March 15, 2022)
+
+* Changed
+  * Migrated docs to terra framework docs
+
+## 4.73.1 - (March 1, 2022)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.73.0 - (February 15, 2022)
 
 * Changed

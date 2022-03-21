@@ -2,6 +2,41 @@
 
 ## Unreleased
 
+## 1.8.0 - (March 15, 2022)
+
+* Changed
+  * Migrated docs from terra date input.
+  * Migrated terra-collapsible-menu-view-docs
+  * Migrated docs from date-picker.
+  * Migrated docs from date-time-picker
+
+* Added
+  * Migrate docs from terra-navigation-side-menu.
+  * Migrated docs from terra-navigation-prompt.
+  * Migrate docs from terra-navigation-layout
+  * Migrate docs from terra-menu
+  * Migrate docs from terra-notification-dialog.
+  * Migrate docs from terra-time-input
+  * Migrate docs from terra-theme-provider
+  * Migrate docs from terra-theme-context
+  * Migrate docs from terra-tabs
+  * Migrate docs from terra-slide-panel-manager
+  * Migrate docs from terra-infinite-list
+  * Migrate docs from terra-hookshot
+  * Migrate docs from terra-disclosure-manager
+  * Migrate docs from terra-embedded-content-consumer
+  * Migrate docs from terra-slide-panel.
+  * Migrate docs from terra-slide-group.
+  * Migrate docs from terra-popup
+
+
+## 1.7.0 - (March 8, 2022)
+
+* Added
+  * Migrate docs from terra-layout
+  * Added docs for `terra-filter-pills`
+  * Added tests for `terra-filter-pills`
+
 ## 1.6.0 - (November 16, 2021)
 
 * Changed

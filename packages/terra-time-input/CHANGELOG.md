@@ -5,6 +5,17 @@
 * Fixed
   * Fixed some edge case scenarios for keyboard shortcuts
 
+## 4.46.0 - (March 15, 2022)
+
+* Added
+  * Migrate docs to terra-framework-docs
+
+
+## 4.45.1 - (March 1, 2022)
+
+* Fixed
+  * Supply isInvalid as well as aria-invalid to AccessibleInput
+
 ## 4.45.0 - (February 15, 2022)
 
 * Fixed
