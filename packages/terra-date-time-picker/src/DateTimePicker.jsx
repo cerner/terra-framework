@@ -362,11 +362,13 @@ class DateTimePicker extends React.Component {
 
         // Check if date is at or below minium
         if (previousDateTime.isBefore(DateUtil.MIN_DATE.concat(' ', '00:00:00'))) {
-          previousDateTime = DateUtil.createSafeDate(DateUtil.MIN_DATE, this.initialTimeZone);
           timeArray[0] = '00';
           timeArray[1] = '00';
-          timeArray[2] = '00';
+          if (this.props.showSeconds) {
+            timeArray[2] = '00';
+          }
           this.timeValue = timeArray.join(':');
+          previousDateTime = DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.MIN_DATE, this.initialTimeZone), this.timeValue, this.props.showSeconds);
         }
       } else if (event.key === '=' || event.key === '+') {
         // `+` add 1 minute to time, so check date to see if it needs changed
@@ -385,11 +387,13 @@ class DateTimePicker extends React.Component {
 
         // Check if date is at or below minium
         if (previousDateTime.isAfter(DateUtil.MAX_DATE.concat(' ', '23:59:59'))) {
-          previousDateTime = DateUtil.createSafeDate(DateUtil.MAX_DATE, this.initialTimeZone);
           timeArray[0] = '23';
           timeArray[1] = '59';
-          timeArray[2] = '59';
+          if (this.props.showSeconds) {
+            timeArray[2] = '59';
+          }
           this.timeValue = timeArray.join(':');
+          previousDateTime = DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.MAX_DATE, this.initialTimeZone), this.timeValue, this.props.showSeconds);
         }
       } else if (this.props.timeVariant === DateTimeUtils.FORMAT_12_HOUR && (event.key === 'a' || event.key === 'A' || event.key === 'p' || event.key === 'P')) {
         // `A` and `P`, changes the meridiem, so check date to see if it needs changed
@@ -751,6 +755,7 @@ class DateTimePicker extends React.Component {
             isInvalid={isInvalid}
             required={required}
             initialTimeZone={this.initialTimeZone}
+            isDefaultDateAcceptable
           />
         </div>
         <div className={cx('time-facade')}>

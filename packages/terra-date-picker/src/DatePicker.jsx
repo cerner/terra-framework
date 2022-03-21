@@ -41,6 +41,11 @@ const propTypes = {
   includeDates: PropTypes.arrayOf(PropTypes.string),
   /**
    * @private
+   * bool to bypass isDefaultDateAcceptable logic
+   */
+  isDefaultDateAcceptable: PropTypes.bool,
+  /**
+   * @private
    * Timezone value to indicate in which timezone the date-time component is rendered.
    * The value provided should be a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) string, else will default to browser/local timezone.
    */
@@ -174,7 +179,7 @@ class DatePicker extends React.Component {
     };
 
     this.datePickerContainer = React.createRef();
-    this.isDefaultDateAcceptable = false;
+    this.isDefaultDateAcceptable = props.isDefaultDateAcceptable;
     this.containerHasFocus = false;
     this.handleBlur = this.handleBlur.bind(this);
     this.handleBreakpointChange = this.handleBreakpointChange.bind(this);
@@ -211,7 +216,7 @@ class DatePicker extends React.Component {
 
   componentDidMount() {
     this.dateValue = DateUtil.formatMomentDate(this.state.selectedDate, DateUtil.getFormatByLocale(this.props.intl.locale)) || '';
-    this.isDefaultDateAcceptable = this.validateDefaultDate();
+    this.isDefaultDateAcceptable = (this.props.isDefaultDateAcceptable) ? this.props.isDefaultDateAcceptable : this.validateDefaultDate();
   }
 
   handleBreakpointChange(activeBreakpoint) {
