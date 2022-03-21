@@ -502,11 +502,10 @@ class DateUtil {
     const momentDate = moment(date, format, true).add(1, 'd');
     if (momentDate.year() < Number(DateUtil.MIN_YEAR)) {
       return DateUtil.MIN_DATE;
-    } else if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
+    } if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
       return DateUtil.MAX_DATE;
-    } else {
-      return momentDate.format('YYYY-MM-DD');
     }
+    return momentDate.format('YYYY-MM-DD');
   }
 
   /**
@@ -518,11 +517,10 @@ class DateUtil {
     const momentDate = moment(date, format, true).subtract(1, 'd');
     if (momentDate.year() < Number(DateUtil.MIN_YEAR)) {
       return DateUtil.MIN_DATE;
-    } else if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
+    } if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
       return DateUtil.MAX_DATE;
-    } else {
-      return momentDate.format('YYYY-MM-DD');
     }
+    return momentDate.format('YYYY-MM-DD');
   }
 
   /**
@@ -534,11 +532,10 @@ class DateUtil {
     const momentDate = moment();
     if (momentDate.year() < Number(DateUtil.MIN_YEAR)) {
       return DateUtil.MIN_DATE;
-    } else if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
+    } if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
       return DateUtil.MAX_DATE;
-    } else {
-      return momentDate.format('YYYY-MM-DD');
     }
+    return momentDate.format('YYYY-MM-DD');
   }
 }
 

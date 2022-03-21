@@ -27,6 +27,16 @@ const propTypes = {
    */
   a11yLabel: PropTypes.string,
   /**
+  * @private
+  * boolean saying that date associated with time is at max date
+  * */
+  atMaxDate: PropTypes.bool,
+  /**
+  * @private
+  * boolean saying that date associated with time is at min date
+  * */
+  atMinDate: PropTypes.bool,
+  /**
    * Whether the time input should be disabled.
    */
   disabled: PropTypes.bool,
@@ -107,6 +117,8 @@ const propTypes = {
 };
 
 const defaultProps = {
+  atMaxDate: false,
+  atMinDate: false,
   disabled: false,
   inputAttributes: {},
   isIncomplete: false,
@@ -234,6 +246,8 @@ class TimeInput extends React.Component {
       minute: TimeUtil.splitMinute(this.props.value),
       second: TimeUtil.splitSecond(this.props.value),
       meridiem,
+      atMaxDate: this.props.atMaxDate,
+      atMinDate: this.props.atMinDate,
     });
   }
 
@@ -455,7 +469,7 @@ class TimeInput extends React.Component {
       return;
     }
 
-    if (event.key === '-' || event.key === '_') {
+    if ((event.key === '-' || event.key === '_') && !this.props.atMinDate) {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
         if (minute === '0' || minute === '00') {
@@ -503,7 +517,7 @@ class TimeInput extends React.Component {
       return;
     }
 
-    if (event.key === '=' || event.key === '+') {
+    if ((event.key === '=' || event.key === '+') && !this.props.atMaxDate) {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
         if (minute === '59') {
@@ -851,6 +865,8 @@ class TimeInput extends React.Component {
   render() {
     const {
       a11yLabel,
+      atMaxDate,
+      atMinDate,
       disabled,
       inputAttributes,
       minuteAttributes,

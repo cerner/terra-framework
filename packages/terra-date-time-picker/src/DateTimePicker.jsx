@@ -283,7 +283,7 @@ class DateTimePicker extends React.Component {
     this.containerHasFocus = false;
   }
 
-  handleDateChange(event, date, metaData) {
+  handleDateChange(event, date) {
     let updatedDateTime;
     const formattedDate = DateUtil.formatISODate(date, 'YYYY-MM-DD');
     const isDateValid = DateUtil.isValidDate(formattedDate, 'YYYY-MM-DD');
@@ -715,6 +715,9 @@ class DateTimePicker extends React.Component {
     const dateValue = DateUtil.formatMomentDate(dateTime, 'YYYY-MM-DD');
     const theme = this.context;
 
+    const atMaxDate = this.state.dateTime ? dateTime.isAfter(DateTimeUtils.createSafeDate(DateUtil.MAX_DATE.concat(' ', '23:58:59'), this.initialTimeZone)) : false;
+    const atMinDate = this.state.dateTime ? dateTime.isBefore(DateTimeUtils.createSafeDate(DateUtil.MIN_DATE.concat(' ', '00:01:00'), this.initialTimeZone)) : false;
+
     return (
       <div
         {...customProps}
@@ -774,6 +777,8 @@ class DateTimePicker extends React.Component {
             isInvalid={isInvalid}
             isInvalidMeridiem={isInvalidMeridiem}
             required={required}
+            atMaxDate={atMaxDate}
+            atMinDate={atMinDate}
           />
 
           {this.state.isAmbiguousTime ? this.renderTimeClarification() : null}

@@ -962,7 +962,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time-with-seconds');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
-          browser.keys('0000');
+          browser.keys('000000');
           $('input[name="terra-time-second-input"]').click();
           browser.keys('-');
 
@@ -975,18 +975,9 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
         });
 
         it('should not decrement date past minimum date possible', () => {
-          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-min-date');
           browser.refresh();
-          $('input[name="terra-date-year-input"]').click();
-          browser.keys('1900');
-          $('input[name="terra-date-month-input"]').click();
-          browser.keys('01');
-          $('input[name="terra-date-day-input"]').click();
-          browser.keys('01');
-          $('input[name="terra-time-hour-input"]').click();
-          browser.keys('00');
           $('input[name="terra-time-minute-input"]').click();
-          browser.keys('00');
           browser.keys('-');
 
           expect($('input[name="terra-date-year-input"]')).toHaveValue('1900');
@@ -1303,18 +1294,9 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
         });
 
         it('should not increment date past maximum datetime possible', () => {
-          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
+          browser.url('/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-max-date');
           browser.refresh();
-          $('input[name="terra-date-year-input"]').click();
-          browser.keys('2100');
-          $('input[name="terra-date-month-input"]').click();
-          browser.keys('12');
-          $('input[name="terra-date-day-input"]').click();
-          browser.keys('31');
-          $('input[name="terra-time-hour-input"]').click();
-          browser.keys('23');
           $('input[name="terra-time-minute-input"]').click();
-          browser.keys('59');
           browser.keys('+');
 
           expect($('input[name="terra-date-year-input"]')).toHaveValue('2100');
