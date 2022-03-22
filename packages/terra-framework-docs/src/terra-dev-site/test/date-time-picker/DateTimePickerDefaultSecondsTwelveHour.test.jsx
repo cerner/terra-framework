@@ -1,6 +1,6 @@
 import React from 'react';
-import DateTimePickerExampleTemplate from './common/DateTimePickerExampleTemplate';
 import DateTimeUtil from 'terra-date-time-picker/lib/DateTimeUtils';
+import DateTimePickerExampleTemplate from './common/DateTimePickerExampleTemplate';
 
 const DateTimePickerSecondsTwelveHour = () => (
   <DateTimePickerExampleTemplate
