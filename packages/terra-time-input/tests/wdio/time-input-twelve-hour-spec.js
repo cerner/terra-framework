@@ -125,7 +125,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
 
   describe('pressing -', () => {
     it('should roll over to 11 AM if hour and minute is at 12:00 PM', () => {
-      browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-evening');
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-evening');
       browser.refresh();
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -140,7 +140,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
     });
 
     it('should roll over to 11 PM if hour and minute is at 12:00 AM', () => {
-      browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-morning');
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
       browser.refresh();
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -157,7 +157,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
 
   describe('pressing +', () => {
     it('should roll over to 12 AM if hour and minute is at 11:59 PM', () => {
-      browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-evening');
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-evening');
       browser.refresh();
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -172,7 +172,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
     });
 
     it('should roll over to 12 PM if hour and minute is at 11:59 AM', () => {
-      browser.url('/raw/tests/terra-time-input/time-input/twelve-hour/filled-morning');
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
       browser.refresh();
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 

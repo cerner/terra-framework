@@ -890,7 +890,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       });
 
       it('leaves date at minimum allowed date', () => {
-        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
+        browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
         $('input[name="terra-date-year-date-input"]').click();
         browser.keys('1900');
         $('input[name="terra-date-month-date-input"]').click();
@@ -1013,7 +1013,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       });
 
       it('does not change date at maximum allowed date', () => {
-        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
+        browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
         $('input[name="terra-date-year-date-input"]').click();
         browser.keys('2100');
         $('input[name="terra-date-month-date-input"]').click();

@@ -2,62 +2,62 @@ const validateElement = (testName) => Terra.validates.element(testName, { select
 
 Terra.describeViewports('Time Input', ['medium'], () => {
   it('works with a label', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/accessibility');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/accessibility');
     validateElement('default with a label');
   });
 
   it('displays default with no time provided', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
     validateElement('default no time');
   });
 
   it('displays default with time provided', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/default-time');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
     validateElement('default with time');
   });
 
   it('displays second with no time provided', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/second');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
     validateElement('seconds no time');
   });
 
   it('displays second with time provided', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/second-time');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second-time');
     validateElement('second with time');
   });
 
   it('displays invalid time provided', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/invalid-provided-time');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/invalid-provided-time');
     validateElement('invalid time');
   });
 
   it('displays invalid time input', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/invalid-time');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/invalid-time');
     validateElement('invalid input');
   });
 
   it('displays invalid mobile time input', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/mobile-invalid');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/mobile-invalid');
     validateElement('invalid mobile input');
   });
 
   it('displays incomplete time input', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/incomplete-time');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/incomplete-time');
     validateElement('incomplete input');
   });
 
   it('displays incomplete mobile time input', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/mobile-incomplete');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/mobile-incomplete');
     validateElement('incomplete mobile');
   });
 
   it('displays invalid and incomplete time input', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/invalid-incomplete-time');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/invalid-incomplete-time');
     validateElement('invalid and incomplete');
   });
 
   it('displays invalid and incomplete mobile time input', () => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/mobile-invalid-incomplete');
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/mobile-invalid-incomplete');
     validateElement('invalid and incomplete mobile');
   });
 
@@ -609,7 +609,7 @@ describe('Time Input shortcut key operations', () => {
       });
 
       it('should roll over to 23 if hour and minute is at 00:00', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -779,7 +779,7 @@ describe('Time Input shortcut key operations', () => {
       });
 
       it('should roll over the hour to 00 if hour and minute is at 23:59', () => {
-        browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
+        browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
