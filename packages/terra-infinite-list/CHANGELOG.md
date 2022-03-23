@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Additional terra-infinite-list deprecation notice
+
 ## 3.41.0 - (March 15, 2022)
 
 * Added

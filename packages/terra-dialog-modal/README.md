@@ -3,6 +3,15 @@
 
 [![NPM version](https://badgen.net/npm/v/terra-dialog-modal)](https://www.npmjs.org/package/terra-dialog-modal)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
+[![Deprecated](https://badgen.net/badge/status/Deprecated/grey)](https://github.com/cerner/terra-framework/tree/main/packages/terra-dialog-modal#readme)
+
+---
+
+:warning: **DEPRECATED**
+
+The terra-dialog-modal has been deprecated and is no longer recommended for use. Use [ModalManager](https://engineering.cerner.com/terra-ui/application/terra-application/components/modal-manager) from [terra-application](https://www.npmjs.com/package/terra-application) for an alternative modal implementation. The terra-dialog-modal package has been deprecated because duplicates functionality found in the modal manager package.
+
+---
 
 The Dialog Modal allows dynamic height modals. It's limited use case, as dynamic heights break with more complicated DOM structures. If content is too complicated, the terra-modal-manager should be used. The components is placed at an 8000 z-index. The dialog supports release and request focus props similar to terra-popup and terra-date-picker, so it can be presented from another modal with focus.
 
