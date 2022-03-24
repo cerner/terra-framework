@@ -335,14 +335,12 @@ class DateTimePicker extends React.Component {
       if (event.key === 'n' || event.key === 'N') {
         // `N` sets Time to now, so Date should be set to today
         previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
-        validDate = true;
         dateChanged = true;
       } else if (event.key === '-' || event.key === '_') {
         // `-` subtracts 1 minute`from time, so check date to see if it needs changed
         if (!validDate) {
           // Date is not valid, set date to today making it valid
           previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
-          validDate = true;
           dateChanged = true;
         }
 
@@ -375,7 +373,6 @@ class DateTimePicker extends React.Component {
         if (!validDate) {
           // Date is not valid, set date to today making it valid
           previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
-          validDate = true;
           dateChanged = true;
         }
 
@@ -400,13 +397,13 @@ class DateTimePicker extends React.Component {
         if (!validDate) {
           // Date is not valid, set date to today making it valid
           previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
-          validDate = true;
           dateChanged = true;
         }
       }
     }
     if (dateChanged) {
       this.dateValue = DateUtil.formatISODate(previousDateTime.format('YYYY-MM-DD'), this.state.dateFormat);
+      validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.initialTimeZone));
     }
 
     // If both date and time are valid, check if the time is the missing hour and invoke onChange.

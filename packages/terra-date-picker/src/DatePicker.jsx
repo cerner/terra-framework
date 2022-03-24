@@ -452,6 +452,10 @@ class DatePicker extends React.Component {
       selectedDateInPicker = this.state.selectedDate;
     }
 
+    if (this.isDefaultDateAcceptable && !this.isDateWithinRange(selectedDateInPicker)) {
+      selectedDateInPicker = undefined;
+    }
+
     const theme = this.context;
 
     return (
