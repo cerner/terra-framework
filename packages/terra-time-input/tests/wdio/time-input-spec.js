@@ -1,5 +1,5 @@
 const validateElement = (testName) => Terra.validates.element(testName, { selector: '#timeInput' });
-const validateRoot = (testName) => Terra.validates.element(testName, { selector: '#root' });
+const validateRoot = (testName) => Terra.validates.element(testName);
 
 Terra.describeViewports('Time Input', ['medium'], () => {
   it('works with a label', () => {

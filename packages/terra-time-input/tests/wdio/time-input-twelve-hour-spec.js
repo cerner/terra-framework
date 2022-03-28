@@ -1,5 +1,5 @@
 const validateElement = (testName) => Terra.validates.element(testName, { selector: '#timeInput' });
-const validateRoot = (testName) => Terra.validates.element(testName, { selector: '#root' });
+const validateRoot = (testName) => Terra.validates.element(testName);
 
 Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   it('displays twelve hour default with no time provided', () => {
