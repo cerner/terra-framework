@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.73.1 - (March 29, 2022)
+
 * Fixed
   * Fixed logic with keyboard shortcuts for minimum and maximum dates
 

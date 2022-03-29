@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.8.1 - (March 29, 2022)
+
 * Added
   * Added docs for `terra-date-time-picker`
   * Added tests for `terra-date-time-picker`
