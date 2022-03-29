@@ -313,19 +313,103 @@ class DateTimePicker extends React.Component {
 
   handleDateChangeRaw(event, value) {
     this.dateValue = value;
+    const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.initialTimeZone));
+    if (!validDate) {
+      this.setState({
+        dateTime: null,
+      });
+    }
     this.handleChangeRaw(event, value);
   }
 
   handleTimeChange(event, time) {
     this.timeValue = time;
-    const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.initialTimeZone));
+    let validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.initialTimeZone));
     const validTime = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
-    const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
+    let previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
+    let dateChanged = false;
+
+    if (event.type === 'keydown') {
+      // Keyboard shortcut is pressed, split the time value into hour and minute inputs
+      const timeArray = this.timeValue.split(':');
+      if (event.key === 'n' || event.key === 'N') {
+        // `N` sets Time to now, so Date should be set to today
+        previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
+        dateChanged = true;
+      } else if (event.key === '-' || event.key === '_') {
+        // `-` subtracts 1 minute`from time, so check date to see if it needs changed
+        if (!validDate) {
+          // Date is not valid, set date to today making it valid
+          previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
+          dateChanged = true;
+        }
+
+        if (timeArray[0] === '23' && timeArray[1] === '59') {
+          // Time is 23:59 which means previous datetime should be on the wrong day, lower it by 1
+          previousDateTime = previousDateTime.subtract(1, 'd');
+          dateChanged = true;
+        }
+
+        const changedDateTime = DateTimeUtils.updateTime(previousDateTime, this.timeValue, this.props.showSeconds);
+        const checkHour = previousDateTime.clone().subtract(1, 'minute').hours();
+        if (changedDateTime.isDST() && checkHour !== changedDateTime.hours()) {
+          // Datetime falls under DST and hour is wrong using moment logic, so rewrite it using moment logic
+          timeArray[0] = (`0${checkHour}`).slice(-2);
+          this.timeValue = timeArray.join(':');
+        }
+
+        // Check if date is at or below minium
+        if (previousDateTime.isBefore(DateUtil.MIN_DATE.concat(' ', '00:00:00'))) {
+          timeArray[0] = '00';
+          timeArray[1] = '00';
+          if (this.props.showSeconds) {
+            timeArray[2] = '00';
+          }
+          this.timeValue = timeArray.join(':');
+          previousDateTime = DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.MIN_DATE, this.initialTimeZone), this.timeValue, this.props.showSeconds);
+        }
+      } else if (event.key === '=' || event.key === '+') {
+        // `+` add 1 minute to time, so check date to see if it needs changed
+        if (!validDate) {
+          // Date is not valid, set date to today making it valid
+          previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
+          dateChanged = true;
+        }
+
+        if (timeArray[0] === '00' && timeArray[1] === '00') {
+          // Time is 00:00 which means previous datetime should be on the wrong day, increase it by 1
+          previousDateTime = previousDateTime.add(1, 'd');
+          dateChanged = true;
+        }
+
+        // Check if date is at or below minium
+        if (previousDateTime.isAfter(DateUtil.MAX_DATE.concat(' ', '23:59:59'))) {
+          timeArray[0] = '23';
+          timeArray[1] = '59';
+          if (this.props.showSeconds) {
+            timeArray[2] = '59';
+          }
+          this.timeValue = timeArray.join(':');
+          previousDateTime = DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.MAX_DATE, this.initialTimeZone), this.timeValue, this.props.showSeconds);
+        }
+      } else if (this.props.timeVariant === DateTimeUtils.FORMAT_12_HOUR && (event.key === 'a' || event.key === 'A' || event.key === 'p' || event.key === 'P')) {
+        // `A` and `P`, changes the meridiem, so check date to see if it needs changed
+        if (!validDate) {
+          // Date is not valid, set date to today making it valid
+          previousDateTime = DateUtil.createSafeDate(DateUtil.getCurrentDate(), this.initialTimeZone);
+          dateChanged = true;
+        }
+      }
+    }
+    if (dateChanged) {
+      this.dateValue = DateUtil.formatISODate(previousDateTime.format('YYYY-MM-DD'), this.state.dateFormat);
+      validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.initialTimeZone));
+    }
 
     // If both date and time are valid, check if the time is the missing hour and invoke onChange.
     // If the date is valid but time is invalid, the time in the dateTime state needs to be cleared and render.
     if (validDate && validTime) {
-      const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time, this.props.showSeconds);
+      const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, this.timeValue, this.props.showSeconds);
 
       if (event.keyCode === KeyCode.KEY_DOWN
         && previousDateTime && updatedDateTime && previousDateTime.format() === updatedDateTime.format()) {
@@ -347,14 +431,14 @@ class DateTimePicker extends React.Component {
       this.handleChange(event, null);
     } else {
       if (!validDate && validTime) {
-        const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time, this.props.showSeconds);
+        const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, this.timeValue, this.props.showSeconds);
 
         this.setState({
           dateTime: updatedDateTime,
         });
       }
 
-      this.handleChangeRaw(event, time);
+      this.handleChangeRaw(event, this.timeValue);
     }
   }
 
@@ -628,6 +712,9 @@ class DateTimePicker extends React.Component {
     const dateValue = DateUtil.formatMomentDate(dateTime, 'YYYY-MM-DD');
     const theme = this.context;
 
+    const atMaxDate = this.state.dateTime ? dateTime.isAfter(DateTimeUtils.createSafeDate(DateUtil.MAX_DATE.concat(' ', '23:58:59'), this.initialTimeZone)) : false;
+    const atMinDate = this.state.dateTime ? dateTime.isBefore(DateTimeUtils.createSafeDate(DateUtil.MIN_DATE.concat(' ', '00:01:00'), this.initialTimeZone)) : false;
+
     return (
       <div
         {...customProps}
@@ -660,6 +747,7 @@ class DateTimePicker extends React.Component {
             maxDate={DateUtil.getMaxDate(maxDate)}
             minDate={DateUtil.getMinDate(minDate)}
             selectedDate={dateValue}
+            value={dateValue}
             name="input"
             disabled={disabled}
             disableButtonFocusOnClose
@@ -667,6 +755,7 @@ class DateTimePicker extends React.Component {
             isInvalid={isInvalid}
             required={required}
             initialTimeZone={this.initialTimeZone}
+            isDefaultDateAcceptable
           />
         </div>
         <div className={cx('time-facade')}>
@@ -685,6 +774,8 @@ class DateTimePicker extends React.Component {
             isInvalid={isInvalid}
             isInvalidMeridiem={isInvalidMeridiem}
             required={required}
+            atMaxDate={atMaxDate}
+            atMinDate={atMinDate}
           />
 
           {this.state.isAmbiguousTime ? this.renderTimeClarification() : null}
