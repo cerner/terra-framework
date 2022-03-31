@@ -888,6 +888,19 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           expect($('input')).toHaveValue('2017-03-31');
         });
       });
+
+      it('leaves date at minimum allowed date', () => {
+        browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys('1900');
+        $('input[name="terra-date-month-date-input"]').click();
+        browser.keys('01');
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys('01');
+        browser.keys('-');
+
+        expect($('input')).toHaveValue('1900-01-01');
+      });
     });
 
     describe('+', () => {
@@ -997,6 +1010,22 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
           expect($('input')).toHaveValue('2017-04-02');
         });
+      });
+
+      it('does not change date at maximum allowed date', () => {
+        browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys('2100');
+        $('input[name="terra-date-month-date-input"]').click();
+        browser.keys('12');
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys('31');
+        browser.keys('+');
+
+        expect($('input[name="terra-date-year-date-input"]')).toHaveValue('2100');
+        expect($('input[name="terra-date-month-date-input"]')).toHaveValue('12');
+        expect($('input[name="terra-date-day-date-input"]')).toHaveValue('31');
+        expect($('input')).toHaveValue('2100-12-31');
       });
     });
   });

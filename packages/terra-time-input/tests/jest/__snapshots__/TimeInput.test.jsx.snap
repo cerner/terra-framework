@@ -39,6 +39,8 @@ exports[`correctly applies the theme context className 1`] = `
     name="time-input"
   >
     <TimeInput
+      atMaxDate={false}
+      atMinDate={false}
       disabled={false}
       hourAttributes={Object {}}
       inputAttributes={
@@ -810,6 +812,8 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
 
 exports[`should pass in refCallback as the ref prop of the hour input element 1`] = `
 <TimeInput
+  atMaxDate={false}
+  atMinDate={false}
   disabled={false}
   hourAttributes={Object {}}
   inputAttributes={
