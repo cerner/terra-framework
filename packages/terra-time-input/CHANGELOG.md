@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.46.1 - (March 29, 2022)
+
+* Fixed
+  * Fixed some edge case scenarios for keyboard shortcuts
+
 ## 4.46.0 - (March 15, 2022)
 
 * Added

@@ -5,6 +5,12 @@
 * Changed
   * Additional terra-infinite-list deprecation notices
 
+## 1.8.1 - (March 29, 2022)
+
+* Added
+  * Added docs for `terra-date-time-picker`
+  * Added tests for `terra-date-time-picker`
+
 ## 1.8.0 - (March 15, 2022)
 
 * Changed
@@ -31,7 +37,6 @@
   * Migrate docs from terra-slide-panel.
   * Migrate docs from terra-slide-group.
   * Migrate docs from terra-popup
-
 
 ## 1.7.0 - (March 8, 2022)
 

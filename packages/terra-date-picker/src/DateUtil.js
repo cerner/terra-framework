@@ -499,7 +499,13 @@ class DateUtil {
    * @return {moment} The incremented moment date
    */
   static incrementDateByDay(date, format) {
-    return moment(date, format, true).add(1, 'd').format('YYYY-MM-DD');
+    const momentDate = moment(date, format, true).add(1, 'd');
+    if (momentDate.year() < Number(DateUtil.MIN_YEAR)) {
+      return DateUtil.MIN_DATE;
+    } if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
+      return DateUtil.MAX_DATE;
+    }
+    return momentDate.format('YYYY-MM-DD');
   }
 
   /**
@@ -508,7 +514,13 @@ class DateUtil {
    * @return {moment} The decremented moment date
    */
   static decrementDateByDay(date, format) {
-    return moment(date, format, true).subtract(1, 'd').format('YYYY-MM-DD');
+    const momentDate = moment(date, format, true).subtract(1, 'd');
+    if (momentDate.year() < Number(DateUtil.MIN_YEAR)) {
+      return DateUtil.MIN_DATE;
+    } if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
+      return DateUtil.MAX_DATE;
+    }
+    return momentDate.format('YYYY-MM-DD');
   }
 
   /**
@@ -517,7 +529,13 @@ class DateUtil {
    * @return {moment} The current date
    */
   static getCurrentDate() {
-    return moment().format('YYYY-MM-DD');
+    const momentDate = moment();
+    if (momentDate.year() < Number(DateUtil.MIN_YEAR)) {
+      return DateUtil.MIN_DATE;
+    } if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
+      return DateUtil.MAX_DATE;
+    }
+    return momentDate.format('YYYY-MM-DD');
   }
 }
 

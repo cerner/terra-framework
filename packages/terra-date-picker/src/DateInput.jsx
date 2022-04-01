@@ -521,8 +521,6 @@ const DatePickerInput = (props) => {
     }
   };
 
-
-
   const handleInputKeydown = (event, inputType) => {
     const { day, month, year } = date;
     let inputDate;
