@@ -3,6 +3,26 @@
 
 [![NPM version](https://badgen.net/npm/v/terra-infinite-list)](https://www.npmjs.org/package/terra-infinite-list)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
+[![Deprecated](https://badgen.net/badge/status/Deprecated/grey)](https://github.com/cerner/terra-framework/blob/main/packages/terra-infinite-list#readme)
+
+---
+
+:warning: **DEPRECATED**
+
+The terra-infinite-list component has been deprecated and is no longer recommended for use.
+
+From a usability perspective, infinite scrolling is a pattern designed and best used when users are casually looking for or discovering things, like shopping and social media. The infinite scrolling pattern should not be used for [goal-oriented tasks](https://www.nngroup.com/articles/infinite-scrolling/). Cerner products and our users most often fall into goal-oriented workflows. Users should have proper navigation methods (pagination) to navigate to predetermined points within the content easily.
+
+Infinite scrolling also poses significant accessibility challenges for multiple user groups:
+
+- Keyboard-only users have to navigate the entire infinite scroll to get to the content below or to the side of the endless loading content. This creates a very time-consuming and unnecessary burden for the keyboard-only user.
+- Screen reader users would have the same problem even though they have more ways to navigate content on the page. When content is dynamically loaded and not within the DOM, screen reader users won't have access to any of that content which poses more significant challenges than just navigating.
+- Focus can be lost when new content loads. Unless focus is managed, sighted keyboard-only users will have difficulties finding where they are on the page.
+- For data with hierarchical relationships, infinite scrolling can make it difficult for screen readers to effectively communicate the required context if related content is split between loaded and unloaded content.
+
+The [terra-paginator](https://www.npmjs.com/package/terra-paginator) should be considered as an alternative approach to paging large amounts of data.
+
+---
 
 The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.
 
