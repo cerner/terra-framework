@@ -1,6 +1,6 @@
 {
   "name": "@cerner/terra-framework-docs",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "Contains documentation for packages in the terra-framework monorepo",
   "main": "index.js",
   "publishConfig": {
@@ -54,7 +54,7 @@
     "terra-form-select": "^6.8.0",
     "terra-grid": "^6.0.0",
     "terra-hookshot": "^5.39.0",
-    "terra-infinite-list": "^3.41.0",
+    "terra-infinite-list": "^3.41.1",
     "terra-layout": "^4.35.0",
     "terra-menu": "^6.61.0",
     "terra-modal-manager": "^6.58.1",

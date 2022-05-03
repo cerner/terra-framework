@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.74.5 - (May 3, 2022)
+
 * Changed
   * Additional terra-dialog-modal deprecation notices
 
