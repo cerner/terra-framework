@@ -1,63 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Rollup Pill should render rollup pill with the label "4 more" 1`] = `
-<InjectIntl(RollUpPill)
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
+<injectIntl(RollUpPill)
   isCollapsed={true}
   rollupCount={4}
 >
   <RollUpPill
     intl={
       Object {
+        "$t": [Function],
         "defaultFormats": Object {},
         "defaultLocale": "en",
+        "defaultRichTextElements": undefined,
+        "fallbackOnEmptyString": true,
         "formatDate": [Function],
-        "formatHTMLMessage": [Function],
+        "formatDateTimeRange": [Function],
+        "formatDateToParts": [Function],
+        "formatDisplayName": [Function],
+        "formatList": [Function],
+        "formatListToParts": [Function],
         "formatMessage": [Function],
         "formatNumber": [Function],
+        "formatNumberToParts": [Function],
         "formatPlural": [Function],
-        "formatRelative": [Function],
+        "formatRelativeTime": [Function],
         "formatTime": [Function],
+        "formatTimeToParts": [Function],
         "formats": Object {},
         "formatters": Object {
           "getDateTimeFormat": [Function],
+          "getDisplayNames": [Function],
+          "getListFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
+          "getPluralRules": [Function],
+          "getRelativeTimeFormat": [Function],
         },
         "locale": "en",
         "messages": null,
-        "now": [Function],
         "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
+        "onWarn": [Function],
+        "textComponent": Symbol(react.fragment),
+        "timeZone": undefined,
+        "wrapRichTextChunksInFragment": undefined,
       }
     }
     isCollapsed={true}
@@ -101,67 +86,52 @@ exports[`Rollup Pill should render rollup pill with the label "4 more" 1`] = `
       </VisuallyHiddenText>
     </div>
   </RollUpPill>
-</InjectIntl(RollUpPill)>
+</injectIntl(RollUpPill)>
 `;
 
 exports[`Rollup Pill should render rollup pill with the label "show less" when isCollapsed is false 1`] = `
-<InjectIntl(RollUpPill)
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
+<injectIntl(RollUpPill)
   isCollapsed={false}
   rollupCount={3}
 >
   <RollUpPill
     intl={
       Object {
+        "$t": [Function],
         "defaultFormats": Object {},
         "defaultLocale": "en",
+        "defaultRichTextElements": undefined,
+        "fallbackOnEmptyString": true,
         "formatDate": [Function],
-        "formatHTMLMessage": [Function],
+        "formatDateTimeRange": [Function],
+        "formatDateToParts": [Function],
+        "formatDisplayName": [Function],
+        "formatList": [Function],
+        "formatListToParts": [Function],
         "formatMessage": [Function],
         "formatNumber": [Function],
+        "formatNumberToParts": [Function],
         "formatPlural": [Function],
-        "formatRelative": [Function],
+        "formatRelativeTime": [Function],
         "formatTime": [Function],
+        "formatTimeToParts": [Function],
         "formats": Object {},
         "formatters": Object {
           "getDateTimeFormat": [Function],
+          "getDisplayNames": [Function],
+          "getListFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
+          "getPluralRules": [Function],
+          "getRelativeTimeFormat": [Function],
         },
         "locale": "en",
         "messages": null,
-        "now": [Function],
         "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
+        "onWarn": [Function],
+        "textComponent": Symbol(react.fragment),
+        "timeZone": undefined,
+        "wrapRichTextChunksInFragment": undefined,
       }
     }
     isCollapsed={false}
@@ -205,67 +175,52 @@ exports[`Rollup Pill should render rollup pill with the label "show less" when i
       </VisuallyHiddenText>
     </div>
   </RollUpPill>
-</InjectIntl(RollUpPill)>
+</injectIntl(RollUpPill)>
 `;
 
 exports[`Rollup Pill should render rollup pill with the label "show less" when isCollapsed is true and rollupCount is 0 1`] = `
-<InjectIntl(RollUpPill)
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
+<injectIntl(RollUpPill)
   isCollapsed={true}
   rollupCount={0}
 >
   <RollUpPill
     intl={
       Object {
+        "$t": [Function],
         "defaultFormats": Object {},
         "defaultLocale": "en",
+        "defaultRichTextElements": undefined,
+        "fallbackOnEmptyString": true,
         "formatDate": [Function],
-        "formatHTMLMessage": [Function],
+        "formatDateTimeRange": [Function],
+        "formatDateToParts": [Function],
+        "formatDisplayName": [Function],
+        "formatList": [Function],
+        "formatListToParts": [Function],
         "formatMessage": [Function],
         "formatNumber": [Function],
+        "formatNumberToParts": [Function],
         "formatPlural": [Function],
-        "formatRelative": [Function],
+        "formatRelativeTime": [Function],
         "formatTime": [Function],
+        "formatTimeToParts": [Function],
         "formats": Object {},
         "formatters": Object {
           "getDateTimeFormat": [Function],
+          "getDisplayNames": [Function],
+          "getListFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
+          "getPluralRules": [Function],
+          "getRelativeTimeFormat": [Function],
         },
         "locale": "en",
         "messages": null,
-        "now": [Function],
         "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
+        "onWarn": [Function],
+        "textComponent": Symbol(react.fragment),
+        "timeZone": undefined,
+        "wrapRichTextChunksInFragment": undefined,
       }
     }
     isCollapsed={true}
@@ -309,5 +264,5 @@ exports[`Rollup Pill should render rollup pill with the label "show less" when i
       </VisuallyHiddenText>
     </div>
   </RollUpPill>
-</InjectIntl(RollUpPill)>
+</injectIntl(RollUpPill)>
 `;

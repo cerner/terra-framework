@@ -1,61 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs should render default element 1`] = `
-<InjectIntl(Tabs)
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
->
+<injectIntl(Tabs)>
   <Tabs
     intl={
       Object {
+        "$t": [Function],
         "defaultFormats": Object {},
         "defaultLocale": "en",
+        "defaultRichTextElements": undefined,
+        "fallbackOnEmptyString": true,
         "formatDate": [Function],
-        "formatHTMLMessage": [Function],
+        "formatDateTimeRange": [Function],
+        "formatDateToParts": [Function],
+        "formatDisplayName": [Function],
+        "formatList": [Function],
+        "formatListToParts": [Function],
         "formatMessage": [Function],
         "formatNumber": [Function],
+        "formatNumberToParts": [Function],
         "formatPlural": [Function],
-        "formatRelative": [Function],
+        "formatRelativeTime": [Function],
         "formatTime": [Function],
+        "formatTimeToParts": [Function],
         "formats": Object {},
         "formatters": Object {
           "getDateTimeFormat": [Function],
+          "getDisplayNames": [Function],
+          "getListFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
+          "getPluralRules": [Function],
+          "getRelativeTimeFormat": [Function],
         },
         "locale": "en",
         "messages": null,
-        "now": [Function],
         "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
+        "onWarn": [Function],
+        "textComponent": Symbol(react.fragment),
+        "timeZone": undefined,
+        "wrapRichTextChunksInFragment": undefined,
       }
     }
     navigationItems={Array []}
@@ -92,39 +76,12 @@ exports[`Tabs should render default element 1`] = `
       </div>
     </Tab>
   </Tabs>
-</InjectIntl(Tabs)>
+</injectIntl(Tabs)>
 `;
 
 exports[`Tabs should render prop data 1`] = `
-<InjectIntl(Tabs)
+<injectIntl(Tabs)
   activeTabKey="my-test-key"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
   navigationItems={
     Array [
       Object {
@@ -176,29 +133,41 @@ exports[`Tabs should render prop data 1`] = `
     activeTabKey="my-test-key"
     intl={
       Object {
+        "$t": [Function],
         "defaultFormats": Object {},
         "defaultLocale": "en",
+        "defaultRichTextElements": undefined,
+        "fallbackOnEmptyString": true,
         "formatDate": [Function],
-        "formatHTMLMessage": [Function],
+        "formatDateTimeRange": [Function],
+        "formatDateToParts": [Function],
+        "formatDisplayName": [Function],
+        "formatList": [Function],
+        "formatListToParts": [Function],
         "formatMessage": [Function],
         "formatNumber": [Function],
+        "formatNumberToParts": [Function],
         "formatPlural": [Function],
-        "formatRelative": [Function],
+        "formatRelativeTime": [Function],
         "formatTime": [Function],
+        "formatTimeToParts": [Function],
         "formats": Object {},
         "formatters": Object {
           "getDateTimeFormat": [Function],
+          "getDisplayNames": [Function],
+          "getListFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
+          "getPluralRules": [Function],
+          "getRelativeTimeFormat": [Function],
         },
         "locale": "en",
         "messages": null,
-        "now": [Function],
         "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
+        "onWarn": [Function],
+        "textComponent": Symbol(react.fragment),
+        "timeZone": undefined,
+        "wrapRichTextChunksInFragment": undefined,
       }
     }
     navigationItems={
@@ -317,39 +286,12 @@ exports[`Tabs should render prop data 1`] = `
       </Tab>
     </nav>
   </Tabs>
-</InjectIntl(Tabs)>
+</injectIntl(Tabs)>
 `;
 
 exports[`Tabs should render with hasCount set to true when notifications are set to 0 1`] = `
-<InjectIntl(Tabs)
+<injectIntl(Tabs)
   activeTabKey="notification-test"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
   navigationItems={
     Array [
       Object {
@@ -400,29 +342,41 @@ exports[`Tabs should render with hasCount set to true when notifications are set
     activeTabKey="notification-test"
     intl={
       Object {
+        "$t": [Function],
         "defaultFormats": Object {},
         "defaultLocale": "en",
+        "defaultRichTextElements": undefined,
+        "fallbackOnEmptyString": true,
         "formatDate": [Function],
-        "formatHTMLMessage": [Function],
+        "formatDateTimeRange": [Function],
+        "formatDateToParts": [Function],
+        "formatDisplayName": [Function],
+        "formatList": [Function],
+        "formatListToParts": [Function],
         "formatMessage": [Function],
         "formatNumber": [Function],
+        "formatNumberToParts": [Function],
         "formatPlural": [Function],
-        "formatRelative": [Function],
+        "formatRelativeTime": [Function],
         "formatTime": [Function],
+        "formatTimeToParts": [Function],
         "formats": Object {},
         "formatters": Object {
           "getDateTimeFormat": [Function],
+          "getDisplayNames": [Function],
+          "getListFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
+          "getPluralRules": [Function],
+          "getRelativeTimeFormat": [Function],
         },
         "locale": "en",
         "messages": null,
-        "now": [Function],
         "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
+        "onWarn": [Function],
+        "textComponent": Symbol(react.fragment),
+        "timeZone": undefined,
+        "wrapRichTextChunksInFragment": undefined,
       }
     }
     navigationItems={
@@ -540,5 +494,5 @@ exports[`Tabs should render with hasCount set to true when notifications are set
       </Tab>
     </nav>
   </Tabs>
-</InjectIntl(Tabs)>
+</injectIntl(Tabs)>
 `;

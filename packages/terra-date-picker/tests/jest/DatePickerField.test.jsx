@@ -2,7 +2,7 @@ import React from 'react';
 import IconHelp from 'terra-icon/lib/icon/IconHelp';
 import moment from 'moment-timezone';
 /* eslint-disable import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl } from '@cerner/terra-enzyme-intl';
 import DateUtil from '../../lib/DateUtil';
 import DatePickerField from '../../lib/DatePickerField';
 

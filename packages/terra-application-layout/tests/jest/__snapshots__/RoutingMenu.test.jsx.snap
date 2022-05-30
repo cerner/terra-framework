@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RoutingMenu Snapshot tests renders with given props 1`] = `
-<InjectIntl(NavigationSideMenu)
+<injectIntl(NavigationSideMenu)
   data-routing-menu={true}
   menuItems={
     Array [

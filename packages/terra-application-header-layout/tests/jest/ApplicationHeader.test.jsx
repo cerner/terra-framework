@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, mountWithIntl } from '@cerner/terra-enzyme-intl';
 
 import ApplicationHeaderLayout from '../../src/ApplicationHeaderLayout';
 
@@ -8,7 +8,7 @@ describe('ApplicationHeaderLayout', () => {
   it('should render without optional props', () => {
     const result = shallowWithIntl(<ApplicationHeaderLayout />);
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render with provided extensions', () => {
@@ -18,7 +18,7 @@ describe('ApplicationHeaderLayout', () => {
       />,
     );
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render with provided extensions and navigation', () => {
@@ -29,7 +29,7 @@ describe('ApplicationHeaderLayout', () => {
       />,
     );
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render with provided extensions, navigation, and logo', () => {
@@ -41,7 +41,7 @@ describe('ApplicationHeaderLayout', () => {
       />,
     );
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render with provided extensions, navigation, logo, and toggle', () => {
@@ -54,7 +54,7 @@ describe('ApplicationHeaderLayout', () => {
       />,
     );
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render with provided extensions, navigation, logo, toggle, and utilities', () => {
@@ -68,7 +68,7 @@ describe('ApplicationHeaderLayout', () => {
       />,
     );
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render with provided navigation, logo, toggle, and utilities', () => {
@@ -81,7 +81,7 @@ describe('ApplicationHeaderLayout', () => {
       />,
     );
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render with provided logo, toggle, and utilities', () => {
@@ -93,7 +93,7 @@ describe('ApplicationHeaderLayout', () => {
       />,
     );
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render with provided toggle and utilities', () => {
@@ -104,7 +104,7 @@ describe('ApplicationHeaderLayout', () => {
       />,
     );
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render with provided utilities', () => {
@@ -114,7 +114,7 @@ describe('ApplicationHeaderLayout', () => {
       />,
     );
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render with provided navigation', () => {
@@ -124,7 +124,7 @@ describe('ApplicationHeaderLayout', () => {
       />,
     );
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render with provided logo', () => {
@@ -134,7 +134,7 @@ describe('ApplicationHeaderLayout', () => {
       />,
     );
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render with provided toggle', () => {
@@ -144,7 +144,7 @@ describe('ApplicationHeaderLayout', () => {
       />,
     );
 
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('correctly applies the theme context className', () => {

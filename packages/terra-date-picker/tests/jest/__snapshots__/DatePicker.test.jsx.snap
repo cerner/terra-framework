@@ -2,40 +2,13 @@
 
 exports[`correctly applies the theme context className 1`] = `
 <ThemeContextProvider
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
   theme={
     Object {
       "className": "orion-fusion-theme",
     }
   }
 >
-  <InjectIntl(DatePicker)
+  <injectIntl(DatePicker)
     name="date-input"
   >
     <DatePicker
@@ -43,29 +16,41 @@ exports[`correctly applies the theme context className 1`] = `
       disabled={false}
       intl={
         Object {
+          "$t": [Function],
           "defaultFormats": Object {},
           "defaultLocale": "en",
+          "defaultRichTextElements": undefined,
+          "fallbackOnEmptyString": true,
           "formatDate": [Function],
-          "formatHTMLMessage": [Function],
+          "formatDateTimeRange": [Function],
+          "formatDateToParts": [Function],
+          "formatDisplayName": [Function],
+          "formatList": [Function],
+          "formatListToParts": [Function],
           "formatMessage": [Function],
           "formatNumber": [Function],
+          "formatNumberToParts": [Function],
           "formatPlural": [Function],
-          "formatRelative": [Function],
+          "formatRelativeTime": [Function],
           "formatTime": [Function],
+          "formatTimeToParts": [Function],
           "formats": Object {},
           "formatters": Object {
             "getDateTimeFormat": [Function],
+            "getDisplayNames": [Function],
+            "getListFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
-            "getPluralFormat": [Function],
-            "getRelativeFormat": [Function],
+            "getPluralRules": [Function],
+            "getRelativeTimeFormat": [Function],
           },
           "locale": "en",
           "messages": null,
-          "now": [Function],
           "onError": [Function],
-          "textComponent": "span",
-          "timeZone": null,
+          "onWarn": [Function],
+          "textComponent": Symbol(react.fragment),
+          "timeZone": undefined,
+          "wrapRichTextChunksInFragment": undefined,
         }
       }
       isIncomplete={false}
@@ -84,10 +69,10 @@ exports[`correctly applies the theme context className 1`] = `
           onChange={[Function]}
           responsiveTo="window"
         >
-          <InjectIntl(DatePicker)
+          <injectIntl(DatePicker)
             allowSameDay={true}
             customInput={
-              <InjectIntl(DatePickerInput)
+              <injectIntl(DatePickerInput)
                 buttonRefCallback={[Function]}
                 isIncomplete={false}
                 isInvalid={false}
@@ -137,7 +122,7 @@ exports[`correctly applies the theme context className 1`] = `
             <DatePicker
               allowSameDay={true}
               customInput={
-                <InjectIntl(DatePickerInput)
+                <injectIntl(DatePickerInput)
                   buttonRefCallback={[Function]}
                   isIncomplete={false}
                   isInvalid={false}
@@ -169,29 +154,41 @@ exports[`correctly applies the theme context className 1`] = `
               inline={false}
               intl={
                 Object {
+                  "$t": [Function],
                   "defaultFormats": Object {},
                   "defaultLocale": "en",
+                  "defaultRichTextElements": undefined,
+                  "fallbackOnEmptyString": true,
                   "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
+                  "formatDateTimeRange": [Function],
+                  "formatDateToParts": [Function],
+                  "formatDisplayName": [Function],
+                  "formatList": [Function],
+                  "formatListToParts": [Function],
                   "formatMessage": [Function],
                   "formatNumber": [Function],
+                  "formatNumberToParts": [Function],
                   "formatPlural": [Function],
-                  "formatRelative": [Function],
+                  "formatRelativeTime": [Function],
                   "formatTime": [Function],
+                  "formatTimeToParts": [Function],
                   "formats": Object {},
                   "formatters": Object {
                     "getDateTimeFormat": [Function],
+                    "getDisplayNames": [Function],
+                    "getListFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
+                    "getPluralRules": [Function],
+                    "getRelativeTimeFormat": [Function],
                   },
                   "locale": "en",
                   "messages": null,
-                  "now": [Function],
                   "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
+                  "onWarn": [Function],
+                  "textComponent": Symbol(react.fragment),
+                  "timeZone": undefined,
+                  "wrapRichTextChunksInFragment": undefined,
                 }
               }
               locale="en"
@@ -219,7 +216,7 @@ exports[`correctly applies the theme context className 1`] = `
               <div
                 className="react-datepicker-input-container"
               >
-                <InjectIntl(DatePickerInput)
+                <injectIntl(DatePickerInput)
                   buttonRefCallback={[Function]}
                   className=""
                   disabled={false}
@@ -246,29 +243,41 @@ exports[`correctly applies the theme context className 1`] = `
                     firstInputRefCallback={[Function]}
                     intl={
                       Object {
+                        "$t": [Function],
                         "defaultFormats": Object {},
                         "defaultLocale": "en",
+                        "defaultRichTextElements": undefined,
+                        "fallbackOnEmptyString": true,
                         "formatDate": [Function],
-                        "formatHTMLMessage": [Function],
+                        "formatDateTimeRange": [Function],
+                        "formatDateToParts": [Function],
+                        "formatDisplayName": [Function],
+                        "formatList": [Function],
+                        "formatListToParts": [Function],
                         "formatMessage": [Function],
                         "formatNumber": [Function],
+                        "formatNumberToParts": [Function],
                         "formatPlural": [Function],
-                        "formatRelative": [Function],
+                        "formatRelativeTime": [Function],
                         "formatTime": [Function],
+                        "formatTimeToParts": [Function],
                         "formats": Object {},
                         "formatters": Object {
                           "getDateTimeFormat": [Function],
+                          "getDisplayNames": [Function],
+                          "getListFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
-                          "getPluralFormat": [Function],
-                          "getRelativeFormat": [Function],
+                          "getPluralRules": [Function],
+                          "getRelativeTimeFormat": [Function],
                         },
                         "locale": "en",
                         "messages": null,
-                        "now": [Function],
                         "onError": [Function],
-                        "textComponent": "span",
-                        "timeZone": null,
+                        "onWarn": [Function],
+                        "textComponent": Symbol(react.fragment),
+                        "timeZone": undefined,
+                        "wrapRichTextChunksInFragment": undefined,
                       }
                     }
                     isIncomplete={false}
@@ -611,14 +620,14 @@ exports[`correctly applies the theme context className 1`] = `
                       </div>
                     </div>
                   </DatePickerInput>
-                </InjectIntl(DatePickerInput)>
+                </injectIntl(DatePickerInput)>
               </div>
             </DatePicker>
-          </InjectIntl(DatePicker)>
+          </injectIntl(DatePicker)>
         </ResponsiveElement>
       </div>
     </DatePicker>
-  </InjectIntl(DatePicker)>
+  </injectIntl(DatePicker)>
 </ThemeContextProvider>
 `;
 
@@ -630,10 +639,10 @@ exports[`should render a controlled date picker 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -693,10 +702,10 @@ exports[`should render a date picker with disabled dates 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -755,10 +764,10 @@ exports[`should render a date picker with filtered dates 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -817,10 +826,10 @@ exports[`should render a date picker with included dates 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -879,10 +888,10 @@ exports[`should render a date picker with min and max dates 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -941,10 +950,10 @@ exports[`should render a date picker with onBlur 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -1003,10 +1012,10 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -1065,10 +1074,10 @@ exports[`should render a date picker with onChange 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -1127,10 +1136,10 @@ exports[`should render a date picker with onChangeRaw 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -1189,10 +1198,10 @@ exports[`should render a date picker with onFocus 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -1251,10 +1260,10 @@ exports[`should render a date picker with onRequestClose 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -1314,10 +1323,10 @@ exports[`should render a date picker with onSelect 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -1376,10 +1385,10 @@ exports[`should render a default date input and date picker 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -1438,10 +1447,10 @@ exports[`should render a default date input with custom input attributes 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           inputAttributes={
             Object {
@@ -1505,10 +1514,10 @@ exports[`should render a disabled date picker 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}
@@ -1567,10 +1576,10 @@ exports[`should render a required date input and date picker 1`] = `
     onChange={[Function]}
     responsiveTo="window"
   >
-    <InjectIntl(DatePicker)
+    <injectIntl(DatePicker)
       allowSameDay={true}
       customInput={
-        <InjectIntl(DatePickerInput)
+        <injectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
           isIncomplete={false}
           isInvalid={false}

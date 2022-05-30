@@ -2,7 +2,7 @@
 
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl, renderWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, mountWithIntl, renderWithIntl } from '@cerner/terra-enzyme-intl';
 import * as KeyCode from 'keycode-js';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import TimeInput from '../../lib/TimeInput';
@@ -70,8 +70,8 @@ it('should render a time input with 12 hour clock set', () => {
 it('should ignore invalid times properly', () => {
   const timeInput = <TimeInput name="time-input" value="11:2" />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  const testComponent = wrapper;
+  expect(testComponent.dive()).toMatchSnapshot();
 
   expect(testComponent.instance().state.hour).toEqual('');
   expect(testComponent.instance().state.minute).toEqual('');
@@ -229,10 +229,10 @@ it('should render a 12 hour timepicker meridiem with buttons and seconds input w
 it('should ignore invalid times with seconds properly', () => {
   const timeInput = <TimeInput name="time-input" value="11:25:4" showSeconds />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
-
-  expect(testComponent.instance().state.hour).toEqual('');
+  const testComponent = wrapper;
+  expect(testComponent.dive()).toMatchSnapshot();
+  console.log(testComponent.instance());
+  expect(testComponent.dive().instance().state.hour).toEqual('');
   expect(testComponent.instance().state.minute).toEqual('');
   expect(testComponent.instance().state.second).toEqual('');
 });

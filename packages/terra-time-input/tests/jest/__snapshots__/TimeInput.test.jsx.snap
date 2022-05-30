@@ -2,40 +2,13 @@
 
 exports[`correctly applies the theme context className 1`] = `
 <ThemeContextProvider
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
   theme={
     Object {
       "className": "orion-fusion-theme",
     }
   }
 >
-  <InjectIntl(TimeInput)
+  <injectIntl(TimeInput)
     name="time-input"
   >
     <TimeInput
@@ -52,29 +25,41 @@ exports[`correctly applies the theme context className 1`] = `
       }
       intl={
         Object {
+          "$t": [Function],
           "defaultFormats": Object {},
           "defaultLocale": "en",
+          "defaultRichTextElements": undefined,
+          "fallbackOnEmptyString": true,
           "formatDate": [Function],
-          "formatHTMLMessage": [Function],
+          "formatDateTimeRange": [Function],
+          "formatDateToParts": [Function],
+          "formatDisplayName": [Function],
+          "formatList": [Function],
+          "formatListToParts": [Function],
           "formatMessage": [Function],
           "formatNumber": [Function],
+          "formatNumberToParts": [Function],
           "formatPlural": [Function],
-          "formatRelative": [Function],
+          "formatRelativeTime": [Function],
           "formatTime": [Function],
+          "formatTimeToParts": [Function],
           "formats": Object {},
           "formatters": Object {
             "getDateTimeFormat": [Function],
+            "getDisplayNames": [Function],
+            "getListFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
-            "getPluralFormat": [Function],
-            "getRelativeFormat": [Function],
+            "getPluralRules": [Function],
+            "getRelativeTimeFormat": [Function],
           },
           "locale": "en",
           "messages": null,
-          "now": [Function],
           "onError": [Function],
-          "textComponent": "span",
-          "timeZone": null,
+          "onWarn": [Function],
+          "textComponent": Symbol(react.fragment),
+          "timeZone": undefined,
+          "wrapRichTextChunksInFragment": undefined,
         }
       }
       isIncomplete={false}
@@ -191,36 +176,48 @@ exports[`correctly applies the theme context className 1`] = `
               </span>
             </VisuallyHiddenText>
           </AccessibleInput>
-          <InjectIntl(TimeSpacer)
+          <injectIntl(TimeSpacer)
             className="time-spacer"
           >
             <TimeSpacer
               className="time-spacer"
               intl={
                 Object {
+                  "$t": [Function],
                   "defaultFormats": Object {},
                   "defaultLocale": "en",
+                  "defaultRichTextElements": undefined,
+                  "fallbackOnEmptyString": true,
                   "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
+                  "formatDateTimeRange": [Function],
+                  "formatDateToParts": [Function],
+                  "formatDisplayName": [Function],
+                  "formatList": [Function],
+                  "formatListToParts": [Function],
                   "formatMessage": [Function],
                   "formatNumber": [Function],
+                  "formatNumberToParts": [Function],
                   "formatPlural": [Function],
-                  "formatRelative": [Function],
+                  "formatRelativeTime": [Function],
                   "formatTime": [Function],
+                  "formatTimeToParts": [Function],
                   "formats": Object {},
                   "formatters": Object {
                     "getDateTimeFormat": [Function],
+                    "getDisplayNames": [Function],
+                    "getListFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
+                    "getPluralRules": [Function],
+                    "getRelativeTimeFormat": [Function],
                   },
                   "locale": "en",
                   "messages": null,
-                  "now": [Function],
                   "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
+                  "onWarn": [Function],
+                  "textComponent": Symbol(react.fragment),
+                  "timeZone": undefined,
+                  "wrapRichTextChunksInFragment": undefined,
                 }
               }
             >
@@ -231,7 +228,7 @@ exports[`correctly applies the theme context className 1`] = `
                 Terra.timeInput.timeSpacer
               </span>
             </TimeSpacer>
-          </InjectIntl(TimeSpacer)>
+          </injectIntl(TimeSpacer)>
           <AccessibleInput
             className="time-input-minute"
             description="Terra.timeInput.descriptionMinute"
@@ -315,177 +312,140 @@ exports[`correctly applies the theme context className 1`] = `
         </div>
       </div>
     </TimeInput>
-  </InjectIntl(TimeInput)>
+  </injectIntl(TimeInput)>
 </ThemeContextProvider>
 `;
 
 exports[`should ignore invalid times properly 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <AccessibleInput
-      className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinute
-  </div>
-</div>
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={Object {}}
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={false}
+  value="11:2"
+  variant="24-hour"
+/>
 `;
 
 exports[`should ignore invalid times with seconds properly 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <AccessibleInput
-      className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute with-second"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-second"
-      description="Terra.timeInput.descriptionSecond"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.seconds"
-      maxLength="2"
-      name="terra-time-second-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinuteSecond
-  </div>
-</div>
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={
+    Object {
+      "disabled": false,
+      "isInvalid": false,
+      "required": false,
+    }
+  }
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={true}
+  value="11:25:4"
+  variant="24-hour"
+/>
 `;
 
 exports[`should not have duplicate ids on the page when multiple date pickers are initialized 1`] = `
-<div
-  intl="[object Object]"
->
+<div>
   <div
     class="time-input-container"
   >
@@ -825,29 +785,41 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
   }
   intl={
     Object {
+      "$t": [Function],
       "defaultFormats": Object {},
       "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
       "formatDate": [Function],
-      "formatHTMLMessage": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
       "formatMessage": [Function],
       "formatNumber": [Function],
+      "formatNumberToParts": [Function],
       "formatPlural": [Function],
-      "formatRelative": [Function],
+      "formatRelativeTime": [Function],
       "formatTime": [Function],
+      "formatTimeToParts": [Function],
       "formats": Object {},
       "formatters": Object {
         "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
       },
       "locale": "en",
       "messages": null,
-      "now": [Function],
       "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
     }
   }
   isIncomplete={false}
@@ -991,36 +963,48 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
           </span>
         </VisuallyHiddenText>
       </AccessibleInput>
-      <InjectIntl(TimeSpacer)
+      <injectIntl(TimeSpacer)
         className="time-spacer"
       >
         <TimeSpacer
           className="time-spacer"
           intl={
             Object {
+              "$t": [Function],
               "defaultFormats": Object {},
               "defaultLocale": "en",
+              "defaultRichTextElements": undefined,
+              "fallbackOnEmptyString": true,
               "formatDate": [Function],
-              "formatHTMLMessage": [Function],
+              "formatDateTimeRange": [Function],
+              "formatDateToParts": [Function],
+              "formatDisplayName": [Function],
+              "formatList": [Function],
+              "formatListToParts": [Function],
               "formatMessage": [Function],
               "formatNumber": [Function],
+              "formatNumberToParts": [Function],
               "formatPlural": [Function],
-              "formatRelative": [Function],
+              "formatRelativeTime": [Function],
               "formatTime": [Function],
+              "formatTimeToParts": [Function],
               "formats": Object {},
               "formatters": Object {
                 "getDateTimeFormat": [Function],
+                "getDisplayNames": [Function],
+                "getListFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
-                "getPluralFormat": [Function],
-                "getRelativeFormat": [Function],
+                "getPluralRules": [Function],
+                "getRelativeTimeFormat": [Function],
               },
               "locale": "en",
               "messages": null,
-              "now": [Function],
               "onError": [Function],
-              "textComponent": "span",
-              "timeZone": null,
+              "onWarn": [Function],
+              "textComponent": Symbol(react.fragment),
+              "timeZone": undefined,
+              "wrapRichTextChunksInFragment": undefined,
             }
           }
         >
@@ -1031,7 +1015,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
             Terra.timeInput.timeSpacer
           </span>
         </TimeSpacer>
-      </InjectIntl(TimeSpacer)>
+      </injectIntl(TimeSpacer)>
       <AccessibleInput
         className="time-input-minute"
         description="Terra.timeInput.descriptionMinute"
@@ -1118,123 +1102,69 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
 `;
 
 exports[`should render a 12 hour clock time input with seconds input 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <AccessibleInput
-      className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwelve"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute with-second"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-second"
-      description="Terra.timeInput.descriptionSecond"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.seconds"
-      maxLength="2"
-      name="terra-time-second-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-  </div>
-  <ButtonGroup
-    className="meridiem-button-group"
-    isBlock={false}
-    onChange={[Function]}
-    selectedKeys={
-      Array [
-        "Terra.timeInput.am",
-      ]
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={
+    Object {
+      "disabled": true,
+      "isInvalid": false,
+      "required": false,
     }
-  >
-    <ButtonGroupButton
-      className="meridiem-button"
-      isDisabled={false}
-      key="Terra.timeInput.am"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      text="Terra.timeInput.am"
-    />
-    <ButtonGroupButton
-      className="meridiem-button"
-      isDisabled={false}
-      key="Terra.timeInput.pm"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      text="Terra.timeInput.pm"
-    />
-  </ButtonGroup>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinuteSecond
-  </div>
-</div>
+  }
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={true}
+  variant="12-hour"
+/>
 `;
 
 exports[`should render a 12 hour timepicker meridiem with buttons and seconds input when viewed on a mobile device 1`] = `
@@ -1656,876 +1586,696 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
 `;
 
 exports[`should render a default time input 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <AccessibleInput
-      className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinute
-  </div>
-</div>
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={Object {}}
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={false}
+  variant="24-hour"
+/>
 `;
 
 exports[`should render a disabled time input 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="disabled time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <AccessibleInput
-      className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
-      disabled={true}
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={true}
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinute
-  </div>
-</div>
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={true}
+  hourAttributes={Object {}}
+  inputAttributes={
+    Object {
+      "disabled": false,
+      "isInvalid": false,
+      "required": false,
+    }
+  }
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={false}
+  variant="24-hour"
+/>
 `;
 
 exports[`should render a time input with 12 hour clock set 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <AccessibleInput
-      className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwelve"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-  </div>
-  <ButtonGroup
-    className="meridiem-button-group"
-    isBlock={false}
-    onChange={[Function]}
-    selectedKeys={
-      Array [
-        "Terra.timeInput.am",
-      ]
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={Object {}}
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
     }
-  >
-    <ButtonGroupButton
-      className="meridiem-button"
-      isDisabled={false}
-      key="Terra.timeInput.am"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      text="Terra.timeInput.am"
-    />
-    <ButtonGroupButton
-      className="meridiem-button"
-      isDisabled={false}
-      key="Terra.timeInput.pm"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      text="Terra.timeInput.pm"
-    />
-  </ButtonGroup>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinute
-  </div>
-</div>
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={false}
+  variant="12-hour"
+/>
 `;
 
 exports[`should render a time input with a default time 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-      value="Terra.timeInput.textValueTwentyFourHourMinute"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value="T10:45"
-    />
-    <AccessibleInput
-      className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value="10"
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value="45"
-    />
-  </div>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinute
-  </div>
-</div>
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={Object {}}
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={false}
+  value="10:45"
+  variant="24-hour"
+/>
 `;
 
 exports[`should render a time input with custom attributes 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <AccessibleInput
-      className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
-      disabled={false}
-      id="terra-time-input"
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      id="terra-time-input"
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinute
-  </div>
-</div>
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={
+    Object {
+      "id": "terra-time-input",
+    }
+  }
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={false}
+  variant="24-hour"
+/>
 `;
 
 exports[`should render a time input with onBlur 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <AccessibleInput
-      className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinute
-  </div>
-</div>
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={Object {}}
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={[Function]}
+  onChange={null}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={false}
+  variant="24-hour"
+/>
 `;
 
 exports[`should render a time input with onChange 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <AccessibleInput
-      className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinute
-  </div>
-</div>
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={Object {}}
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={[Function]}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={false}
+  variant="24-hour"
+/>
 `;
 
 exports[`should render a time input with onFocus 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <AccessibleInput
-      className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinute
-  </div>
-</div>
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={Object {}}
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  onFocus={[Function]}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={false}
+  variant="24-hour"
+/>
 `;
 
 exports[`should render a time input with seconds input 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <AccessibleInput
-      className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute with-second"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-second"
-      description="Terra.timeInput.descriptionSecond"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.seconds"
-      maxLength="2"
-      name="terra-time-second-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinuteSecond
-  </div>
-</div>
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={
+    Object {
+      "disabled": false,
+      "isInvalid": false,
+      "required": false,
+    }
+  }
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={true}
+  variant="24-hour"
+/>
 `;
 
 exports[`should render a time input with seconds input and a value 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-      value="Terra.timeInput.textValueTwentyFourHourMinuteSecond"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value="T12:12:12"
-    />
-    <AccessibleInput
-      className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value="12"
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute with-second"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value="12"
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-second"
-      description="Terra.timeInput.descriptionSecond"
-      disabled={false}
-      isInvalid={false}
-      label="Terra.timeInput.seconds"
-      maxLength="2"
-      name="terra-time-second-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value="12"
-    />
-  </div>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinuteSecond
-  </div>
-</div>
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={
+    Object {
+      "disabled": false,
+      "isInvalid": false,
+      "required": false,
+    }
+  }
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  required={false}
+  secondAttributes={Object {}}
+  showSeconds={true}
+  value="12:12:12"
+  variant="24-hour"
+/>
 `;
 
 exports[`should render a time input with seconds input and custom attributes 1`] = `
-<div
-  className="time-input-container"
->
-  <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
-    className="time-input"
-    role="group"
-  >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-    />
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <AccessibleInput
-      className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
-      disabled={false}
-      id="terra-time-input"
-      isInvalid={false}
-      label="Terra.timeInput.hourLabel"
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-minute with-second"
-      description="Terra.timeInput.descriptionMinute"
-      disabled={false}
-      id="terra-time-input"
-      isInvalid={false}
-      label="Terra.timeInput.minutes"
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-    <InjectIntl(TimeSpacer)
-      className="time-spacer"
-    />
-    <AccessibleInput
-      className="time-input-second"
-      description="Terra.timeInput.descriptionSecond"
-      disabled={false}
-      id="id-0"
-      isInvalid={false}
-      label="Terra.timeInput.seconds"
-      maxLength="2"
-      name="terra-time-second-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      refCallback={[Function]}
-      required={false}
-      showIsInvalid={false}
-      size="2"
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    aria-hidden={true}
-    className="format-text"
-  >
-    Terra.timeInput.maskHourMinuteSecond
-  </div>
-</div>
+<TimeInput
+  atMaxDate={false}
+  atMinDate={false}
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={
+    Object {
+      "id": "terra-time-input",
+    }
+  }
+  intl={
+    Object {
+      "$t": [Function],
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "onError": [Function],
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  required={false}
+  secondAttributes={
+    Object {
+      "id": "id-0",
+    }
+  }
+  showSeconds={true}
+  variant="24-hour"
+/>
 `;
 
 exports[`should set the labels with the correct htmlFor a 24 hour timepicker properly on mobile devices 1`] = `

@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl } from '@cerner/terra-enzyme-intl';
 import NotificationIcon from '../../src/_NotificationIcon';
 
 describe('Notification Icon', () => {

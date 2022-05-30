@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render a DatePickerField with props 1`] = `
-<InjectIntl(DatePickerField)
+<injectIntl(DatePickerField)
   datePickerId="test-date-picker"
   disabled={true}
   error="Text"
@@ -22,33 +22,6 @@ exports[`should render a DatePickerField with props 1`] = `
   inputAttributes={
     Object {
       "name": "test",
-    }
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
     }
   }
   isInline={true}
@@ -101,29 +74,41 @@ exports[`should render a DatePickerField with props 1`] = `
     }
     intl={
       Object {
+        "$t": [Function],
         "defaultFormats": Object {},
         "defaultLocale": "en",
+        "defaultRichTextElements": undefined,
+        "fallbackOnEmptyString": true,
         "formatDate": [Function],
-        "formatHTMLMessage": [Function],
+        "formatDateTimeRange": [Function],
+        "formatDateToParts": [Function],
+        "formatDisplayName": [Function],
+        "formatList": [Function],
+        "formatListToParts": [Function],
         "formatMessage": [Function],
         "formatNumber": [Function],
+        "formatNumberToParts": [Function],
         "formatPlural": [Function],
-        "formatRelative": [Function],
+        "formatRelativeTime": [Function],
         "formatTime": [Function],
+        "formatTimeToParts": [Function],
         "formats": Object {},
         "formatters": Object {
           "getDateTimeFormat": [Function],
+          "getDisplayNames": [Function],
+          "getListFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
+          "getPluralRules": [Function],
+          "getRelativeTimeFormat": [Function],
         },
         "locale": "en",
         "messages": null,
-        "now": [Function],
         "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
+        "onWarn": [Function],
+        "textComponent": Symbol(react.fragment),
+        "timeZone": undefined,
+        "wrapRichTextChunksInFragment": undefined,
       }
     }
     isIncomplete={false}
@@ -247,7 +232,7 @@ exports[`should render a DatePickerField with props 1`] = `
             Label Test
           </label>
         </div>
-        <InjectIntl(DatePicker)
+        <injectIntl(DatePicker)
           ariaLabel="Label Test"
           disabled={true}
           excludeDates={
@@ -300,29 +285,41 @@ exports[`should render a DatePickerField with props 1`] = `
             }
             intl={
               Object {
+                "$t": [Function],
                 "defaultFormats": Object {},
                 "defaultLocale": "en",
+                "defaultRichTextElements": undefined,
+                "fallbackOnEmptyString": true,
                 "formatDate": [Function],
-                "formatHTMLMessage": [Function],
+                "formatDateTimeRange": [Function],
+                "formatDateToParts": [Function],
+                "formatDisplayName": [Function],
+                "formatList": [Function],
+                "formatListToParts": [Function],
                 "formatMessage": [Function],
                 "formatNumber": [Function],
+                "formatNumberToParts": [Function],
                 "formatPlural": [Function],
-                "formatRelative": [Function],
+                "formatRelativeTime": [Function],
                 "formatTime": [Function],
+                "formatTimeToParts": [Function],
                 "formats": Object {},
                 "formatters": Object {
                   "getDateTimeFormat": [Function],
+                  "getDisplayNames": [Function],
+                  "getListFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
-                  "getPluralFormat": [Function],
-                  "getRelativeFormat": [Function],
+                  "getPluralRules": [Function],
+                  "getRelativeTimeFormat": [Function],
                 },
                 "locale": "en",
                 "messages": null,
-                "now": [Function],
                 "onError": [Function],
-                "textComponent": "span",
-                "timeZone": null,
+                "onWarn": [Function],
+                "textComponent": Symbol(react.fragment),
+                "timeZone": undefined,
+                "wrapRichTextChunksInFragment": undefined,
               }
             }
             isIncomplete={false}
@@ -350,10 +347,10 @@ exports[`should render a DatePickerField with props 1`] = `
                 onChange={[Function]}
                 responsiveTo="window"
               >
-                <InjectIntl(DatePicker)
+                <injectIntl(DatePicker)
                   allowSameDay={true}
                   customInput={
-                    <InjectIntl(DatePickerInput)
+                    <injectIntl(DatePickerInput)
                       ariaLabel="Label Test"
                       buttonRefCallback={[Function]}
                       inputAttributes={
@@ -413,7 +410,7 @@ exports[`should render a DatePickerField with props 1`] = `
                   <DatePicker
                     allowSameDay={true}
                     customInput={
-                      <InjectIntl(DatePickerInput)
+                      <injectIntl(DatePickerInput)
                         ariaLabel="Label Test"
                         buttonRefCallback={[Function]}
                         inputAttributes={
@@ -453,29 +450,41 @@ exports[`should render a DatePickerField with props 1`] = `
                     inline={false}
                     intl={
                       Object {
+                        "$t": [Function],
                         "defaultFormats": Object {},
                         "defaultLocale": "en",
+                        "defaultRichTextElements": undefined,
+                        "fallbackOnEmptyString": true,
                         "formatDate": [Function],
-                        "formatHTMLMessage": [Function],
+                        "formatDateTimeRange": [Function],
+                        "formatDateToParts": [Function],
+                        "formatDisplayName": [Function],
+                        "formatList": [Function],
+                        "formatListToParts": [Function],
                         "formatMessage": [Function],
                         "formatNumber": [Function],
+                        "formatNumberToParts": [Function],
                         "formatPlural": [Function],
-                        "formatRelative": [Function],
+                        "formatRelativeTime": [Function],
                         "formatTime": [Function],
+                        "formatTimeToParts": [Function],
                         "formats": Object {},
                         "formatters": Object {
                           "getDateTimeFormat": [Function],
+                          "getDisplayNames": [Function],
+                          "getListFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
-                          "getPluralFormat": [Function],
-                          "getRelativeFormat": [Function],
+                          "getPluralRules": [Function],
+                          "getRelativeTimeFormat": [Function],
                         },
                         "locale": "en",
                         "messages": null,
-                        "now": [Function],
                         "onError": [Function],
-                        "textComponent": "span",
-                        "timeZone": null,
+                        "onWarn": [Function],
+                        "textComponent": Symbol(react.fragment),
+                        "timeZone": undefined,
+                        "wrapRichTextChunksInFragment": undefined,
                       }
                     }
                     locale="en"
@@ -505,7 +514,7 @@ exports[`should render a DatePickerField with props 1`] = `
                     <div
                       className="react-datepicker-input-container"
                     >
-                      <InjectIntl(DatePickerInput)
+                      <injectIntl(DatePickerInput)
                         ariaLabel="Label Test"
                         buttonRefCallback={[Function]}
                         className=""
@@ -548,29 +557,41 @@ exports[`should render a DatePickerField with props 1`] = `
                           }
                           intl={
                             Object {
+                              "$t": [Function],
                               "defaultFormats": Object {},
                               "defaultLocale": "en",
+                              "defaultRichTextElements": undefined,
+                              "fallbackOnEmptyString": true,
                               "formatDate": [Function],
-                              "formatHTMLMessage": [Function],
+                              "formatDateTimeRange": [Function],
+                              "formatDateToParts": [Function],
+                              "formatDisplayName": [Function],
+                              "formatList": [Function],
+                              "formatListToParts": [Function],
                               "formatMessage": [Function],
                               "formatNumber": [Function],
+                              "formatNumberToParts": [Function],
                               "formatPlural": [Function],
-                              "formatRelative": [Function],
+                              "formatRelativeTime": [Function],
                               "formatTime": [Function],
+                              "formatTimeToParts": [Function],
                               "formats": Object {},
                               "formatters": Object {
                                 "getDateTimeFormat": [Function],
+                                "getDisplayNames": [Function],
+                                "getListFormat": [Function],
                                 "getMessageFormat": [Function],
                                 "getNumberFormat": [Function],
-                                "getPluralFormat": [Function],
-                                "getRelativeFormat": [Function],
+                                "getPluralRules": [Function],
+                                "getRelativeTimeFormat": [Function],
                               },
                               "locale": "en",
                               "messages": null,
-                              "now": [Function],
                               "onError": [Function],
-                              "textComponent": "span",
-                              "timeZone": null,
+                              "onWarn": [Function],
+                              "textComponent": Symbol(react.fragment),
+                              "timeZone": undefined,
+                              "wrapRichTextChunksInFragment": undefined,
                             }
                           }
                           isIncomplete={false}
@@ -908,14 +929,14 @@ exports[`should render a DatePickerField with props 1`] = `
                             </div>
                           </div>
                         </DatePickerInput>
-                      </InjectIntl(DatePickerInput)>
+                      </injectIntl(DatePickerInput)>
                     </div>
                   </DatePicker>
-                </InjectIntl(DatePicker)>
+                </injectIntl(DatePicker)>
               </ResponsiveElement>
             </div>
           </DatePicker>
-        </InjectIntl(DatePicker)>
+        </injectIntl(DatePicker)>
         <div
           aria-live="assertive"
           className="error-text"
@@ -938,39 +959,12 @@ exports[`should render a DatePickerField with props 1`] = `
       </div>
     </Field>
   </DatePickerField>
-</InjectIntl(DatePickerField)>
+</injectIntl(DatePickerField)>
 `;
 
 exports[`should render a default DatePickerField component 1`] = `
-<InjectIntl(DatePickerField)
+<injectIntl(DatePickerField)
   datePickerId="test-date-picker"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
   label="Label"
   name="test-date-picker"
 >
@@ -988,29 +982,41 @@ exports[`should render a default DatePickerField component 1`] = `
     hideRequired={false}
     intl={
       Object {
+        "$t": [Function],
         "defaultFormats": Object {},
         "defaultLocale": "en",
+        "defaultRichTextElements": undefined,
+        "fallbackOnEmptyString": true,
         "formatDate": [Function],
-        "formatHTMLMessage": [Function],
+        "formatDateTimeRange": [Function],
+        "formatDateToParts": [Function],
+        "formatDisplayName": [Function],
+        "formatList": [Function],
+        "formatListToParts": [Function],
         "formatMessage": [Function],
         "formatNumber": [Function],
+        "formatNumberToParts": [Function],
         "formatPlural": [Function],
-        "formatRelative": [Function],
+        "formatRelativeTime": [Function],
         "formatTime": [Function],
+        "formatTimeToParts": [Function],
         "formats": Object {},
         "formatters": Object {
           "getDateTimeFormat": [Function],
+          "getDisplayNames": [Function],
+          "getListFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
+          "getPluralRules": [Function],
+          "getRelativeTimeFormat": [Function],
         },
         "locale": "en",
         "messages": null,
-        "now": [Function],
         "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
+        "onWarn": [Function],
+        "textComponent": Symbol(react.fragment),
+        "timeZone": undefined,
+        "wrapRichTextChunksInFragment": undefined,
       }
     }
     isIncomplete={false}
@@ -1100,7 +1106,7 @@ exports[`should render a default DatePickerField component 1`] = `
             </IconError>
           </div>
         </div>
-        <InjectIntl(DatePicker)
+        <injectIntl(DatePicker)
           ariaLabel="Label"
           disabled={false}
           id="test-date-picker"
@@ -1128,29 +1134,41 @@ exports[`should render a default DatePickerField component 1`] = `
             }
             intl={
               Object {
+                "$t": [Function],
                 "defaultFormats": Object {},
                 "defaultLocale": "en",
+                "defaultRichTextElements": undefined,
+                "fallbackOnEmptyString": true,
                 "formatDate": [Function],
-                "formatHTMLMessage": [Function],
+                "formatDateTimeRange": [Function],
+                "formatDateToParts": [Function],
+                "formatDisplayName": [Function],
+                "formatList": [Function],
+                "formatListToParts": [Function],
                 "formatMessage": [Function],
                 "formatNumber": [Function],
+                "formatNumberToParts": [Function],
                 "formatPlural": [Function],
-                "formatRelative": [Function],
+                "formatRelativeTime": [Function],
                 "formatTime": [Function],
+                "formatTimeToParts": [Function],
                 "formats": Object {},
                 "formatters": Object {
                   "getDateTimeFormat": [Function],
+                  "getDisplayNames": [Function],
+                  "getListFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
-                  "getPluralFormat": [Function],
-                  "getRelativeFormat": [Function],
+                  "getPluralRules": [Function],
+                  "getRelativeTimeFormat": [Function],
                 },
                 "locale": "en",
                 "messages": null,
-                "now": [Function],
                 "onError": [Function],
-                "textComponent": "span",
-                "timeZone": null,
+                "onWarn": [Function],
+                "textComponent": Symbol(react.fragment),
+                "timeZone": undefined,
+                "wrapRichTextChunksInFragment": undefined,
               }
             }
             isIncomplete={false}
@@ -1169,10 +1187,10 @@ exports[`should render a default DatePickerField component 1`] = `
                 onChange={[Function]}
                 responsiveTo="window"
               >
-                <InjectIntl(DatePicker)
+                <injectIntl(DatePicker)
                   allowSameDay={true}
                   customInput={
-                    <InjectIntl(DatePickerInput)
+                    <injectIntl(DatePickerInput)
                       ariaLabel="Label"
                       buttonRefCallback={[Function]}
                       inputAttributes={
@@ -1229,7 +1247,7 @@ exports[`should render a default DatePickerField component 1`] = `
                   <DatePicker
                     allowSameDay={true}
                     customInput={
-                      <InjectIntl(DatePickerInput)
+                      <injectIntl(DatePickerInput)
                         ariaLabel="Label"
                         buttonRefCallback={[Function]}
                         inputAttributes={
@@ -1268,29 +1286,41 @@ exports[`should render a default DatePickerField component 1`] = `
                     inline={false}
                     intl={
                       Object {
+                        "$t": [Function],
                         "defaultFormats": Object {},
                         "defaultLocale": "en",
+                        "defaultRichTextElements": undefined,
+                        "fallbackOnEmptyString": true,
                         "formatDate": [Function],
-                        "formatHTMLMessage": [Function],
+                        "formatDateTimeRange": [Function],
+                        "formatDateToParts": [Function],
+                        "formatDisplayName": [Function],
+                        "formatList": [Function],
+                        "formatListToParts": [Function],
                         "formatMessage": [Function],
                         "formatNumber": [Function],
+                        "formatNumberToParts": [Function],
                         "formatPlural": [Function],
-                        "formatRelative": [Function],
+                        "formatRelativeTime": [Function],
                         "formatTime": [Function],
+                        "formatTimeToParts": [Function],
                         "formats": Object {},
                         "formatters": Object {
                           "getDateTimeFormat": [Function],
+                          "getDisplayNames": [Function],
+                          "getListFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
-                          "getPluralFormat": [Function],
-                          "getRelativeFormat": [Function],
+                          "getPluralRules": [Function],
+                          "getRelativeTimeFormat": [Function],
                         },
                         "locale": "en",
                         "messages": null,
-                        "now": [Function],
                         "onError": [Function],
-                        "textComponent": "span",
-                        "timeZone": null,
+                        "onWarn": [Function],
+                        "textComponent": Symbol(react.fragment),
+                        "timeZone": undefined,
+                        "wrapRichTextChunksInFragment": undefined,
                       }
                     }
                     locale="en"
@@ -1318,7 +1348,7 @@ exports[`should render a default DatePickerField component 1`] = `
                     <div
                       className="react-datepicker-input-container"
                     >
-                      <InjectIntl(DatePickerInput)
+                      <injectIntl(DatePickerInput)
                         ariaLabel="Label"
                         buttonRefCallback={[Function]}
                         className=""
@@ -1359,29 +1389,41 @@ exports[`should render a default DatePickerField component 1`] = `
                           }
                           intl={
                             Object {
+                              "$t": [Function],
                               "defaultFormats": Object {},
                               "defaultLocale": "en",
+                              "defaultRichTextElements": undefined,
+                              "fallbackOnEmptyString": true,
                               "formatDate": [Function],
-                              "formatHTMLMessage": [Function],
+                              "formatDateTimeRange": [Function],
+                              "formatDateToParts": [Function],
+                              "formatDisplayName": [Function],
+                              "formatList": [Function],
+                              "formatListToParts": [Function],
                               "formatMessage": [Function],
                               "formatNumber": [Function],
+                              "formatNumberToParts": [Function],
                               "formatPlural": [Function],
-                              "formatRelative": [Function],
+                              "formatRelativeTime": [Function],
                               "formatTime": [Function],
+                              "formatTimeToParts": [Function],
                               "formats": Object {},
                               "formatters": Object {
                                 "getDateTimeFormat": [Function],
+                                "getDisplayNames": [Function],
+                                "getListFormat": [Function],
                                 "getMessageFormat": [Function],
                                 "getNumberFormat": [Function],
-                                "getPluralFormat": [Function],
-                                "getRelativeFormat": [Function],
+                                "getPluralRules": [Function],
+                                "getRelativeTimeFormat": [Function],
                               },
                               "locale": "en",
                               "messages": null,
-                              "now": [Function],
                               "onError": [Function],
-                              "textComponent": "span",
-                              "timeZone": null,
+                              "onWarn": [Function],
+                              "textComponent": Symbol(react.fragment),
+                              "timeZone": undefined,
+                              "wrapRichTextChunksInFragment": undefined,
                             }
                           }
                           isIncomplete={false}
@@ -1718,14 +1760,14 @@ exports[`should render a default DatePickerField component 1`] = `
                             </div>
                           </div>
                         </DatePickerInput>
-                      </InjectIntl(DatePickerInput)>
+                      </injectIntl(DatePickerInput)>
                     </div>
                   </DatePicker>
-                </InjectIntl(DatePicker)>
+                </injectIntl(DatePicker)>
               </ResponsiveElement>
             </div>
           </DatePicker>
-        </InjectIntl(DatePicker)>
+        </injectIntl(DatePicker)>
         <div
           className="help-text"
           id="test-date-picker-help"
@@ -1739,11 +1781,11 @@ exports[`should render a default DatePickerField component 1`] = `
       </div>
     </Field>
   </DatePickerField>
-</InjectIntl(DatePickerField)>
+</injectIntl(DatePickerField)>
 `;
 
 exports[`should render a valid DatePickerField with props 1`] = `
-<InjectIntl(DatePickerField)
+<injectIntl(DatePickerField)
   datePickerId="test-date-picker"
   disabled={true}
   error="Text"
@@ -1764,33 +1806,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
   inputAttributes={
     Object {
       "name": "test",
-    }
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
     }
   }
   isInline={true}
@@ -1840,29 +1855,41 @@ exports[`should render a valid DatePickerField with props 1`] = `
     }
     intl={
       Object {
+        "$t": [Function],
         "defaultFormats": Object {},
         "defaultLocale": "en",
+        "defaultRichTextElements": undefined,
+        "fallbackOnEmptyString": true,
         "formatDate": [Function],
-        "formatHTMLMessage": [Function],
+        "formatDateTimeRange": [Function],
+        "formatDateToParts": [Function],
+        "formatDisplayName": [Function],
+        "formatList": [Function],
+        "formatListToParts": [Function],
         "formatMessage": [Function],
         "formatNumber": [Function],
+        "formatNumberToParts": [Function],
         "formatPlural": [Function],
-        "formatRelative": [Function],
+        "formatRelativeTime": [Function],
         "formatTime": [Function],
+        "formatTimeToParts": [Function],
         "formats": Object {},
         "formatters": Object {
           "getDateTimeFormat": [Function],
+          "getDisplayNames": [Function],
+          "getListFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
+          "getPluralRules": [Function],
+          "getRelativeTimeFormat": [Function],
         },
         "locale": "en",
         "messages": null,
-        "now": [Function],
         "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
+        "onWarn": [Function],
+        "textComponent": Symbol(react.fragment),
+        "timeZone": undefined,
+        "wrapRichTextChunksInFragment": undefined,
       }
     }
     isIncomplete={false}
@@ -1983,7 +2010,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
             </IconError>
           </div>
         </div>
-        <InjectIntl(DatePicker)
+        <injectIntl(DatePicker)
           ariaLabel="Label Test"
           disabled={true}
           excludeDates={
@@ -2034,29 +2061,41 @@ exports[`should render a valid DatePickerField with props 1`] = `
             }
             intl={
               Object {
+                "$t": [Function],
                 "defaultFormats": Object {},
                 "defaultLocale": "en",
+                "defaultRichTextElements": undefined,
+                "fallbackOnEmptyString": true,
                 "formatDate": [Function],
-                "formatHTMLMessage": [Function],
+                "formatDateTimeRange": [Function],
+                "formatDateToParts": [Function],
+                "formatDisplayName": [Function],
+                "formatList": [Function],
+                "formatListToParts": [Function],
                 "formatMessage": [Function],
                 "formatNumber": [Function],
+                "formatNumberToParts": [Function],
                 "formatPlural": [Function],
-                "formatRelative": [Function],
+                "formatRelativeTime": [Function],
                 "formatTime": [Function],
+                "formatTimeToParts": [Function],
                 "formats": Object {},
                 "formatters": Object {
                   "getDateTimeFormat": [Function],
+                  "getDisplayNames": [Function],
+                  "getListFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
-                  "getPluralFormat": [Function],
-                  "getRelativeFormat": [Function],
+                  "getPluralRules": [Function],
+                  "getRelativeTimeFormat": [Function],
                 },
                 "locale": "en",
                 "messages": null,
-                "now": [Function],
                 "onError": [Function],
-                "textComponent": "span",
-                "timeZone": null,
+                "onWarn": [Function],
+                "textComponent": Symbol(react.fragment),
+                "timeZone": undefined,
+                "wrapRichTextChunksInFragment": undefined,
               }
             }
             isIncomplete={false}
@@ -2082,10 +2121,10 @@ exports[`should render a valid DatePickerField with props 1`] = `
                 onChange={[Function]}
                 responsiveTo="window"
               >
-                <InjectIntl(DatePicker)
+                <injectIntl(DatePicker)
                   allowSameDay={true}
                   customInput={
-                    <InjectIntl(DatePickerInput)
+                    <injectIntl(DatePickerInput)
                       ariaLabel="Label Test"
                       buttonRefCallback={[Function]}
                       inputAttributes={
@@ -2143,7 +2182,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                   <DatePicker
                     allowSameDay={true}
                     customInput={
-                      <InjectIntl(DatePickerInput)
+                      <injectIntl(DatePickerInput)
                         ariaLabel="Label Test"
                         buttonRefCallback={[Function]}
                         inputAttributes={
@@ -2183,29 +2222,41 @@ exports[`should render a valid DatePickerField with props 1`] = `
                     inline={false}
                     intl={
                       Object {
+                        "$t": [Function],
                         "defaultFormats": Object {},
                         "defaultLocale": "en",
+                        "defaultRichTextElements": undefined,
+                        "fallbackOnEmptyString": true,
                         "formatDate": [Function],
-                        "formatHTMLMessage": [Function],
+                        "formatDateTimeRange": [Function],
+                        "formatDateToParts": [Function],
+                        "formatDisplayName": [Function],
+                        "formatList": [Function],
+                        "formatListToParts": [Function],
                         "formatMessage": [Function],
                         "formatNumber": [Function],
+                        "formatNumberToParts": [Function],
                         "formatPlural": [Function],
-                        "formatRelative": [Function],
+                        "formatRelativeTime": [Function],
                         "formatTime": [Function],
+                        "formatTimeToParts": [Function],
                         "formats": Object {},
                         "formatters": Object {
                           "getDateTimeFormat": [Function],
+                          "getDisplayNames": [Function],
+                          "getListFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
-                          "getPluralFormat": [Function],
-                          "getRelativeFormat": [Function],
+                          "getPluralRules": [Function],
+                          "getRelativeTimeFormat": [Function],
                         },
                         "locale": "en",
                         "messages": null,
-                        "now": [Function],
                         "onError": [Function],
-                        "textComponent": "span",
-                        "timeZone": null,
+                        "onWarn": [Function],
+                        "textComponent": Symbol(react.fragment),
+                        "timeZone": undefined,
+                        "wrapRichTextChunksInFragment": undefined,
                       }
                     }
                     locale="en"
@@ -2233,7 +2284,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                     <div
                       className="react-datepicker-input-container"
                     >
-                      <InjectIntl(DatePickerInput)
+                      <injectIntl(DatePickerInput)
                         ariaLabel="Label Test"
                         buttonRefCallback={[Function]}
                         className=""
@@ -2276,29 +2327,41 @@ exports[`should render a valid DatePickerField with props 1`] = `
                           }
                           intl={
                             Object {
+                              "$t": [Function],
                               "defaultFormats": Object {},
                               "defaultLocale": "en",
+                              "defaultRichTextElements": undefined,
+                              "fallbackOnEmptyString": true,
                               "formatDate": [Function],
-                              "formatHTMLMessage": [Function],
+                              "formatDateTimeRange": [Function],
+                              "formatDateToParts": [Function],
+                              "formatDisplayName": [Function],
+                              "formatList": [Function],
+                              "formatListToParts": [Function],
                               "formatMessage": [Function],
                               "formatNumber": [Function],
+                              "formatNumberToParts": [Function],
                               "formatPlural": [Function],
-                              "formatRelative": [Function],
+                              "formatRelativeTime": [Function],
                               "formatTime": [Function],
+                              "formatTimeToParts": [Function],
                               "formats": Object {},
                               "formatters": Object {
                                 "getDateTimeFormat": [Function],
+                                "getDisplayNames": [Function],
+                                "getListFormat": [Function],
                                 "getMessageFormat": [Function],
                                 "getNumberFormat": [Function],
-                                "getPluralFormat": [Function],
-                                "getRelativeFormat": [Function],
+                                "getPluralRules": [Function],
+                                "getRelativeTimeFormat": [Function],
                               },
                               "locale": "en",
                               "messages": null,
-                              "now": [Function],
                               "onError": [Function],
-                              "textComponent": "span",
-                              "timeZone": null,
+                              "onWarn": [Function],
+                              "textComponent": Symbol(react.fragment),
+                              "timeZone": undefined,
+                              "wrapRichTextChunksInFragment": undefined,
                             }
                           }
                           isIncomplete={false}
@@ -2636,14 +2699,14 @@ exports[`should render a valid DatePickerField with props 1`] = `
                             </div>
                           </div>
                         </DatePickerInput>
-                      </InjectIntl(DatePickerInput)>
+                      </injectIntl(DatePickerInput)>
                     </div>
                   </DatePicker>
-                </InjectIntl(DatePicker)>
+                </injectIntl(DatePicker)>
               </ResponsiveElement>
             </div>
           </DatePicker>
-        </InjectIntl(DatePicker)>
+        </injectIntl(DatePicker)>
         <div
           className="help-text"
           id="test-date-picker-help"
@@ -2659,5 +2722,5 @@ exports[`should render a valid DatePickerField with props 1`] = `
       </div>
     </Field>
   </DatePickerField>
-</InjectIntl(DatePickerField)>
+</injectIntl(DatePickerField)>
 `;

@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl } from '@cerner/terra-enzyme-intl';
 import TimeClarification from '../../lib/_TimeClarification';
 
 it('should render a default date time picker', () => {
@@ -15,7 +15,7 @@ it('should render a default date time picker', () => {
       initialTimeZone="America/Chicago"
     />
   ));
-  const wrapper = datePicker.dive();
+  const wrapper = datePicker.dive().dive();
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -32,7 +32,7 @@ it('should render a disabled time clarification', () => {
       initialTimeZone="America/Chicago"
     />
   ));
-  const wrapper = datePicker.dive();
+  const wrapper = datePicker.dive().dive();
   expect(wrapper).toMatchSnapshot();
 });
 

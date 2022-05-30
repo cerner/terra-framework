@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mockIntl } from 'terra-enzyme-intl';
+import { mockIntl } from '@cerner/terra-enzyme-intl';
 import Extensions from '../../../src/extensions/_Extensions';
 
 describe('Extensions', () => {

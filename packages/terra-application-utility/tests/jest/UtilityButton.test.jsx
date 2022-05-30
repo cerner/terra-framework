@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl } from '@cerner/terra-enzyme-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import UtilityButton from '../../src/utility/_UtilityButton';
 import MockConfig from '../../src/terra-dev-site/doc/common/MockConfig';
@@ -26,7 +26,7 @@ describe('UtilityButton', () => {
       />
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('should render with a title', () => {
@@ -42,7 +42,7 @@ describe('UtilityButton', () => {
       />
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('should render with an accessory', () => {
@@ -58,7 +58,7 @@ describe('UtilityButton', () => {
       />
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('should render with menu items', () => {
@@ -73,7 +73,7 @@ describe('UtilityButton', () => {
       />
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('it should pass in a custom prop', () => {
@@ -89,7 +89,7 @@ describe('UtilityButton', () => {
       />
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('correctly applies the theme context className', () => {

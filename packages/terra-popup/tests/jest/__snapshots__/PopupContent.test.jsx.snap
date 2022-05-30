@@ -2,33 +2,6 @@
 
 exports[`PopupContent Prop Tests with default props correctly applies the theme context className 1`] = `
 <ThemeContextProvider
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
   theme={
     Object {
       "className": "orion-fusion-theme",
@@ -151,33 +124,6 @@ exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
         ]
       }
       excludeScrollbar={false}
-      intl={
-        Object {
-          "defaultFormats": Object {},
-          "defaultLocale": "en",
-          "formatDate": [Function],
-          "formatHTMLMessage": [Function],
-          "formatMessage": [Function],
-          "formatNumber": [Function],
-          "formatPlural": [Function],
-          "formatRelative": [Function],
-          "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
-            "getDateTimeFormat": [Function],
-            "getMessageFormat": [Function],
-            "getNumberFormat": [Function],
-            "getPluralFormat": [Function],
-            "getRelativeFormat": [Function],
-          },
-          "locale": "en",
-          "messages": null,
-          "now": [Function],
-          "onError": [Function],
-          "textComponent": "span",
-          "timeZone": null,
-        }
-      }
       onEsc={[MockFunction]}
       onResize={[Function]}
       outsideClickIgnoreClass="ignore-react-onclickoutside"
@@ -213,33 +159,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
   contentHeightMax={640}
   contentWidth={640}
   contentWidthMax={640}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
   isFocusedDisabled={false}
   isHeaderDisabled={false}
   isHeightAutomatic={false}
@@ -254,7 +173,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
           <div
             class="content content"
             data-terra-popup-content="true"
-            intl="[object Object]"
             role="dialog"
             tabindex="0"
           >
@@ -339,33 +257,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
           ]
         }
         excludeScrollbar={false}
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
-        }
         onEsc={[MockFunction]}
         onResize={[Function]}
         outsideClickIgnoreClass="ignore-react-onclickoutside"
@@ -377,7 +268,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                 <div
                   class="content content"
                   data-terra-popup-content="true"
-                  intl="[object Object]"
                   role="dialog"
                   tabindex="0"
                 >
@@ -454,33 +344,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
               "touchstart",
             ]
           }
-          intl={
-            Object {
-              "defaultFormats": Object {},
-              "defaultLocale": "en",
-              "formatDate": [Function],
-              "formatHTMLMessage": [Function],
-              "formatMessage": [Function],
-              "formatNumber": [Function],
-              "formatPlural": [Function],
-              "formatRelative": [Function],
-              "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
-                "getDateTimeFormat": [Function],
-                "getMessageFormat": [Function],
-                "getNumberFormat": [Function],
-                "getPluralFormat": [Function],
-                "getRelativeFormat": [Function],
-              },
-              "locale": "en",
-              "messages": null,
-              "now": [Function],
-              "onError": [Function],
-              "textComponent": "span",
-              "timeZone": null,
-            }
-          }
           onEsc={[MockFunction]}
           onResize={[Function]}
           outsideClickIgnoreClass="ignore-react-onclickoutside"
@@ -492,7 +355,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                   <div
                     class="content content"
                     data-terra-popup-content="true"
-                    intl="[object Object]"
                     role="dialog"
                     tabindex="0"
                   >
@@ -561,33 +423,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
           <div
             className="content content"
             data-terra-popup-content={true}
-            intl={
-              Object {
-                "defaultFormats": Object {},
-                "defaultLocale": "en",
-                "formatDate": [Function],
-                "formatHTMLMessage": [Function],
-                "formatMessage": [Function],
-                "formatNumber": [Function],
-                "formatPlural": [Function],
-                "formatRelative": [Function],
-                "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
-                  "getDateTimeFormat": [Function],
-                  "getMessageFormat": [Function],
-                  "getNumberFormat": [Function],
-                  "getPluralFormat": [Function],
-                  "getRelativeFormat": [Function],
-                },
-                "locale": "en",
-                "messages": null,
-                "now": [Function],
-                "onError": [Function],
-                "textComponent": "span",
-                "timeZone": null,
-              }
-            }
             role="dialog"
             tabIndex="0"
           >
@@ -606,12 +441,11 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                   <div
                     className="header"
                   >
-                    <FormattedMessage
+                    <Memo(MemoizedFormattedMessage)
                       id="Terra.popup.header.close"
-                      values={Object {}}
                     >
                       [Function]
-                    </FormattedMessage>
+                    </Memo(MemoizedFormattedMessage)>
                   </div>
                 }
               >
@@ -626,7 +460,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                     >
                       <FormattedMessage
                         id="Terra.popup.header.close"
-                        values={Object {}}
                       >
                         <Button
                           icon={
@@ -725,33 +558,6 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
         ]
       }
       excludeScrollbar={false}
-      intl={
-        Object {
-          "defaultFormats": Object {},
-          "defaultLocale": "en",
-          "formatDate": [Function],
-          "formatHTMLMessage": [Function],
-          "formatMessage": [Function],
-          "formatNumber": [Function],
-          "formatPlural": [Function],
-          "formatRelative": [Function],
-          "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
-            "getDateTimeFormat": [Function],
-            "getMessageFormat": [Function],
-            "getNumberFormat": [Function],
-            "getPluralFormat": [Function],
-            "getRelativeFormat": [Function],
-          },
-          "locale": "en",
-          "messages": null,
-          "now": [Function],
-          "onError": [Function],
-          "textComponent": "span",
-          "timeZone": null,
-        }
-      }
       onEsc={[MockFunction]}
       onResize={[Function]}
       outsideClickIgnoreClass="ignore-react-onclickoutside"
@@ -776,12 +582,11 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
             <div
               className="header"
             >
-              <FormattedMessage
+              <Memo(MemoizedFormattedMessage)
                 id="Terra.popup.header.close"
-                values={Object {}}
               >
                 [Function]
-              </FormattedMessage>
+              </Memo(MemoizedFormattedMessage)>
             </div>
           }
         >

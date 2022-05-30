@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from 'terra-icon/lib/icon/IconFeatured';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mockIntl } from 'terra-enzyme-intl';
+import { mockIntl } from '@cerner/terra-enzyme-intl';
 
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import ApplicationHeader from '../../src/header/_ApplicationHeader';

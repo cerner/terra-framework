@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { mountWithIntl, renderWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl, renderWithIntl } from '@cerner/terra-enzyme-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import DateInput from '../../lib/DateInput';
 

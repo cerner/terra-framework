@@ -9,7 +9,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
     }
   }
 >
-  <InjectIntl(NotificationDialog)
+  <injectIntl(NotificationDialog)
     acceptAction={
       Object {
         "onClick": [Function],
@@ -39,7 +39,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
     }
   }
 >
-  <InjectIntl(NotificationDialog)
+  <injectIntl(NotificationDialog)
     acceptAction={
       Object {
         "onClick": [Function],
@@ -70,7 +70,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
     }
   }
 >
-  <InjectIntl(NotificationDialog)
+  <injectIntl(NotificationDialog)
     acceptAction={
       Object {
         "onClick": [Function],

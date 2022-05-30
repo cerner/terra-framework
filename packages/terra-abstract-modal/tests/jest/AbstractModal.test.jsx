@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, mountWithIntl } from '@cerner/terra-enzyme-intl';
 import AbstractModalExample from './AbstractModalExample';
 
 it('should shallow an open modal', () => {
@@ -102,6 +102,6 @@ it('correctly applies the theme context className', () => {
     .mockReturnValue({
       className: 'orion-fusion-theme',
     });
-  const wrapper = mountWithIntl(<AbstractModalExample />);
+  const wrapper = shallowWithIntl(<AbstractModalExample />);
   expect(wrapper).toMatchSnapshot();
 });
