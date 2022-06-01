@@ -1,9 +1,7 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl } from '@cerner/terra-enzyme-intl';
+import { shallowWithIntl, mountWithIntl, mockIntl } from '@cerner/terra-enzyme-intl';
 import { KEY_ESCAPE } from 'keycode-js';
-
-import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import NotificationDialog from '../../src/NotificationDialog';
 
 describe('Notification Dialog', () => {
@@ -148,7 +146,8 @@ describe('Notification Dialog functions as expected', () => {
       return (
         <div>
           {isOpen && (
-            <NotificationDialog
+            <NotificationDialog.WrappedComponent
+              intl={mockIntl}
               variant="hazard-high"
               dialogTitle="Test"
               startMessage="This text is used to provide more details."
@@ -167,13 +166,14 @@ describe('Notification Dialog functions as expected', () => {
     expect(dialogExample).toMatchSnapshot();
     expect(dialogExample.find('NotificationDialog').length).toBe(0);
     expect(dialogExample.find('button[data-test-button]').length).toBe(1);
-    dialogExample.dive().find('button[data-test-button]').simulate('click');
+    dialogExample.find('button[data-test-button]').simulate('click');
+    expect(dialogExample).toMatchSnapshot();
     expect(dialogExample.find('NotificationDialog').length).toBe(1);
-    expect(dialogExample.find('Button[data-terra-notification-dialog-button]').length).toBe(2);
+    expect(dialogExample.find('NotificationDialog').dive().find('Button[data-terra-notification-dialog-button]').length).toBe(2);
   });
 
   it('should close the dialog when clicking reject button', () => {
-    dialogExample.find('Button[data-terra-notification-dialog-button="reject"]').simulate('click');
+    dialogExample.find('NotificationDialog').dive().find('Button[data-terra-notification-dialog-button="reject"]').simulate('click');
     expect(rejectOnClick).toHaveBeenCalled();
     expect(dialogExample.find('NotificationDialog').length).toBe(0);
   });
@@ -183,7 +183,7 @@ describe('Notification Dialog functions as expected', () => {
     dialogExample.find('button[data-test-button]').simulate('click');
     expect(dialogExample.find('NotificationDialog').length).toBe(1);
 
-    dialogExample.find('Button[data-terra-notification-dialog-button="accept"]').simulate('click');
+    dialogExample.find('NotificationDialog').dive().find('Button[data-terra-notification-dialog-button="accept"]').simulate('click');
     expect(acceptOnClick).toHaveBeenCalled();
     expect(dialogExample.find('NotificationDialog').length).toBe(0);
   });
@@ -193,33 +193,7 @@ describe('Notification Dialog functions as expected', () => {
     dialogExample.find('button[data-test-button]').simulate('click');
     expect(dialogExample.find('NotificationDialog').length).toBe(1);
 
-    dialogExample.find('Button[data-terra-notification-dialog-button="accept"]').simulate('keydown', { keycode: KEY_ESCAPE });
+    dialogExample.find('NotificationDialog').dive().find('Button[data-terra-notification-dialog-button="accept"]').simulate('keydown', { keycode: KEY_ESCAPE });
     expect(dialogExample.find('NotificationDialog').length).toBe(1);
   });
-});
-
-it('correctly applies the theme context className', () => {
-  const clickConfirm = () => {
-    alert('You clicked confirm'); // eslint-disable-line no-alert
-  };
-  const modal = mountWithIntl(
-    <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
-      <NotificationDialog
-        variant="hazard-high"
-        title="Make sure that the title relates directly to the choices."
-        startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-        acceptAction={{
-          text: 'Confirm',
-          onClick: clickConfirm,
-        }}
-        rejectAction={{
-          text: 'Close',
-          onClick: clickConfirm,
-        }}
-        buttonOrder="acceptFirst"
-        emphasizedAction="accept"
-      />
-    </ThemeContextProvider>,
-  );
-  expect(modal).toMatchSnapshot();
 });
