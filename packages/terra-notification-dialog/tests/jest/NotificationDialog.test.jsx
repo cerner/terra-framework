@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, mountWithIntl } from '@cerner/terra-enzyme-intl';
 import { KEY_ESCAPE } from 'keycode-js';
 
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
@@ -11,7 +11,7 @@ describe('Notification Dialog', () => {
   const rejectOnClick = jest.fn();
 
   it('shallow renders an hazard-high notification-dialog', () => {
-    const dialog = shallowWithIntl(
+    const dialog = mountWithIntl(
       <NotificationDialog
         variant="hazard-high"
         dialogTitle="Test"
@@ -19,7 +19,7 @@ describe('Notification Dialog', () => {
         acceptAction={{ text: 'accept', onClick: () => {} }}
         rejectAction={{ text: 'reject', onClick: () => {} }}
       />,
-    ).dive();
+    );
 
     expect(dialog).toMatchSnapshot();
     const actions = dialog.find('.actions');
@@ -39,7 +39,7 @@ describe('Notification Dialog', () => {
       />,
     ).dive();
 
-    expect(dialog).toMatchSnapshot();
+    expect(dialog.dive()).toMatchSnapshot();
   });
 
   it('shallow renders an hazard-low notification-dialog', () => {
@@ -53,7 +53,7 @@ describe('Notification Dialog', () => {
       />,
     ).dive();
 
-    expect(dialog).toMatchSnapshot();
+    expect(dialog.dive()).toMatchSnapshot();
   });
 
   it('shallow renders an error notification-dialog', () => {
@@ -67,7 +67,7 @@ describe('Notification Dialog', () => {
       />,
     ).dive();
 
-    expect(dialog).toMatchSnapshot();
+    expect(dialog.dive()).toMatchSnapshot();
   });
 
   it('shallow renders an custom notification-dialog', () => {
@@ -82,7 +82,7 @@ describe('Notification Dialog', () => {
       />,
     ).dive();
 
-    expect(dialog).toMatchSnapshot();
+    expect(dialog.dive()).toMatchSnapshot();
   });
 
   it('shallow renders dialog with startMessage, content, and endMessage', () => {
@@ -98,11 +98,11 @@ describe('Notification Dialog', () => {
       />,
     ).dive();
 
-    expect(dialog).toMatchSnapshot();
+    expect(dialog.dive()).toMatchSnapshot();
   });
 
   it('shallow renders dialog with reject button first', () => {
-    const dialog = shallowWithIntl(
+    const dialog = mountWithIntl(
       <NotificationDialog
         variant="hazard-high"
         dialogTitle="Test"
@@ -111,7 +111,7 @@ describe('Notification Dialog', () => {
         acceptAction={{ text: 'accept', onClick: acceptOnClick }}
         rejectAction={{ text: 'reject', onClick: rejectOnClick }}
       />,
-    ).dive();
+    );
 
     expect(dialog).toMatchSnapshot();
     const actions = dialog.find('.actions');
@@ -134,7 +134,7 @@ describe('Notification Dialog', () => {
       />,
     ).dive();
 
-    expect(dialog).toMatchSnapshot();
+    expect(dialog.dive()).toMatchSnapshot();
   });
 });
 
@@ -160,14 +160,14 @@ describe('Notification Dialog functions as expected', () => {
         </div>
       );
     };
-    dialogExample = mountWithIntl(<Example />);
+    dialogExample = shallowWithIntl(<Example />);
   });
 
   it('should open the dialog', () => {
     expect(dialogExample).toMatchSnapshot();
     expect(dialogExample.find('NotificationDialog').length).toBe(0);
     expect(dialogExample.find('button[data-test-button]').length).toBe(1);
-    dialogExample.find('button[data-test-button]').simulate('click');
+    dialogExample.dive().find('button[data-test-button]').simulate('click');
     expect(dialogExample.find('NotificationDialog').length).toBe(1);
     expect(dialogExample.find('Button[data-terra-notification-dialog-button]').length).toBe(2);
   });

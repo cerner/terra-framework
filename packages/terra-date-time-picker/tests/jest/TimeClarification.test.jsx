@@ -50,7 +50,7 @@ it('should render offset button after daylight savings button clicked', () => {
       initialTimeZone="America/Chicago"
     />
   ));
-  const wrapper = datePicker.dive();
+  const wrapper = datePicker.dive().dive();
   wrapper.find('.button-daylight').simulate('click');
   expect(wrapper).toMatchSnapshot();
 });
@@ -69,7 +69,7 @@ it('should render offset button after standard time button clicked', () => {
       initialTimeZone="America/Chicago"
     />
   ));
-  const wrapper = datePicker.dive();
+  const wrapper = datePicker.dive().dive();
   wrapper.find('.button-standard').simulate('click');
   expect(wrapper).toMatchSnapshot();
 });
@@ -88,7 +88,7 @@ it('should render offset button after daylight savings button clicked in the sou
       initialTimeZone="Australia/Sydney"
     />
   ));
-  const wrapper = datePicker.dive();
+  const wrapper = datePicker.dive().dive();
   wrapper.find('.button-daylight').simulate('click');
   expect(wrapper).toMatchSnapshot();
 });
@@ -107,7 +107,7 @@ it('should render offset button after standard time button clicked in the southe
       initialTimeZone="Australia/Sydney"
     />
   ));
-  const wrapper = datePicker.dive();
+  const wrapper = datePicker.dive().dive();
   wrapper.find('.button-standard').simulate('click');
   expect(wrapper).toMatchSnapshot();
 });

@@ -7,7 +7,6 @@ Terra.describeViewports('ApplicationHeader', ['small', 'large'], () => {
 
   it('Displays an application header toggle standard', () => {
     browser.url('/raw/tests/terra-application-layout/application-layout/application-layout-header-small');
-    $('#root').moveTo({ xOffset: 0, yOffset: 900 });
     $('#test-header').waitForDisplayed();
     Terra.validates.element('toggle standard', { selector: '#test-header' });
   });

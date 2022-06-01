@@ -131,6 +131,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
 
       it('shifts focus backwards away from the modal dialog', () => {
         browser.keys(['Shift', 'Tab']);
+        browser.keys(['Shift', 'Tab']);
         expect($('#modal-button').isFocused()).toBeFalsy();
         expect($('#modal-open-button').isFocused()).toBeFalsy();
         expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeFalsy();

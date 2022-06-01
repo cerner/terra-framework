@@ -66,9 +66,9 @@ it('should render a date time picker with a default date and time', () => {
 
 it('should render with a default timeVariant if variant is not specified', () => {
   const defaultTimeVariant = '24-hour';
-  const datePicker = mountWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" value="2017-04-01T10:30" />);
-  expect(datePicker.prop('timeVariant')).toBe(defaultTimeVariant);
-  expect(datePicker).toMatchSnapshot();
+  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" value="2017-04-01T10:30" />);
+  expect(datePicker.dive().prop('timeVariant')).toBe(defaultTimeVariant);
+  expect(datePicker.dive()).toMatchSnapshot();
 });
 
 it('should render a disabled date time picker', () => {

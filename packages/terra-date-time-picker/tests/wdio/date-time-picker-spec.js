@@ -40,9 +40,15 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   it('should handle Re-entering Same Missing Hour Twice', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-with-timezone-dst');
     Terra.hideInputCaret('input[name="terra-time-minute-input"]');
-    $('input[name="terra-date-month-input"]').setValue('03');
-    $('input[name="terra-date-day-input"]').setValue('11');
-    $('input[name="terra-date-year-input"]').setValue('2018');
+    $('input[name="terra-date-month-input"]').click();
+    $('input[name="terra-date-month-input"]').keys('Backspace');
+    $('input[name="terra-date-month-input"]').keys('03');
+    $('input[name="terra-date-day-input"]').click();
+    $('input[name="terra-date-day-input"]').keys('Backspace');
+    $('input[name="terra-date-day-input"]').keys('11');
+    $('input[name="terra-date-year-input"]').click();
+    $('input[name="terra-date-year-input"]').keys('Backspace');
+    $('input[name="terra-date-year-input"]').keys('2018');
     $('input[name="terra-time-hour-input"]').setValue('02');
     $('input[name="terra-time-minute-input"]').setValue('30');
     $('input[name="terra-time-hour-input"]').clearValue();
@@ -619,7 +625,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-with-timezone-dst');
     browser.refresh();
     Terra.hideInputCaret('input[name="terra-time-minute-input"]');
-    $('input[name="terra-date-month-input"]').setValue('03');
+    $('input[name="terra-date-month-input"]').click();
+    $('input[name="terra-date-month-input"]').keys('Backspace');
+    $('input[name="terra-date-month-input"]').keys('03');
     $('input[name="terra-date-day-input"]').setValue('11');
     $('input[name="terra-date-year-input"]').setValue('2018');
     $('input[name="terra-time-hour-input"]').setValue('02');

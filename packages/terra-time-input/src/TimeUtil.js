@@ -357,29 +357,28 @@ class TimeUtil {
     if (showSeconds && second === undefined) {
       return undefined;
     }
-
     if (is12Hour && showSeconds) {
       // description: Human-readable time value in a 12-hour clock with hours, minutes, and seconds.
       return intl.formatMessage({ id: 'Terra.timeInput.textValueTwelveHourMinuteSecond' }, {
-        hour: hour.toTwelveHourString(), minute, second, meridiem,
+        hour: hour.toTwelveHourString(), minute: minute.toString(), second: second.toString(), meridiem,
       });
     }
     if (is12Hour) {
       // description: Human-readable time value in a 12-hour clock with hours, and minutes.
       return intl.formatMessage({ id: 'Terra.timeInput.textValueTwelveHourMinute' }, {
-        hour: hour.toTwelveHourString(), minute, meridiem,
+        hour: hour.toTwelveHourString(), minute: minute.toString(), meridiem,
       });
     }
     if (showSeconds) {
       // description: Human-readable time value in a 24-hour clock with hours, minutes, and seconds.
       return intl.formatMessage({ id: 'Terra.timeInput.textValueTwentyFourHourMinuteSecond' }, {
-        hour, minute, second,
+        hour: hour.toString(), minute: minute.toString(), second: second.toString(),
       });
     }
 
     // description: Human-readable time value in a 24-hour clock with hours and minutes.
     return intl.formatMessage({ id: 'Terra.timeInput.textValueTwentyFourHourMinute' }, {
-      hour, minute,
+      hour: hour.toString(), minute: minute.toString(),
     });
   }
 

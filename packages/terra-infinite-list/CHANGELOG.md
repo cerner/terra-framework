@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Breaking Change
+  * Dropped rect-intl v2-v4 support.
+
 ## 3.41.1 - (May 3, 2022)
 
 * Changed
