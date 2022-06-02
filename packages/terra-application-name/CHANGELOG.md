@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated wdio snapshots.
+
 ## 3.41.1 - (March 15, 2022)
 
 * Changed

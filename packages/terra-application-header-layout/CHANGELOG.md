@@ -5,6 +5,9 @@
 * Breaking Change
   * Dropped rect-intl v2-v4 support.
 
+* Changed
+  * Updated wdio snapshots.
+
 ## 3.36.1 - (March 15, 2022)
 
 * Changed

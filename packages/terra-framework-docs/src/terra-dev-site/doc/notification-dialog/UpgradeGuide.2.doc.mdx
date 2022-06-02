@@ -4,6 +4,18 @@ import { Badge } from 'terra-notification-dialog/package.json?dev-site-package';
 
 # Terra Notification Dialog Upgrade Guide
 
+## Changes from version 4 to version 5
+
+Terra Notification Dialog was updated to use React-Intl `v5` and drops support for React-Intl `v4` and lower.
+Projects consuming Terra Notification Dialog version 5 should use React Intl version >= 5.
+
+React-intl V5 no longer exports the `intlShape` consuming project should replace the `intlShape` with `PropTypes.shape()` containing the functions that are utilized by the component. See [doc](https://formatjs.io/docs/intl#the-intl-object) for most complete and up to date intl shape.
+
+Follow the upgrade guides of react-intl to know more about the breaking changes : 
+- v5 Upgrade Guide - https://formatjs.io/docs/react-intl/upgrade-guide-5x
+- v4 Upgrade Guide - https://formatjs.io/docs/react-intl/upgrade-guide-4x
+- v3 Upgrade Guide - https://formatjs.io/docs/react-intl/upgrade-guide-3x
+
 ## Upgrading from version 3 to version 4
 
 The latest changes to the Notification Dialog reflect risk vs non-risk situations on when a dialog is presented and we have changed the variants provided by the Notification Dialog to reflect these. To align with standards, the ability to change the header and dialog icon is no longer available for the defined variant types. The `custom` variant will need to be used if the predefined signal word and icon combination for a variant does not meet your needs.
