@@ -1,5 +1,5 @@
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mockIntl } from 'terra-enzyme-intl';
+import { mockIntl } from '@cerner/terra-enzyme-intl';
 
 import utilityHelpers from '../../src/utils/utilityHelpers';
 

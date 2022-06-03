@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added Upgrade guide for components requiring intl-v5 upgrade.
+
 ## 1.8.2 - (May 3, 2022)
 
 * Changed

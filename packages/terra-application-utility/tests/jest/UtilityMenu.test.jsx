@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl } from '@cerner/terra-enzyme-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import HeaderUtilityMenu from '../../src/utility/_UtilityMenu';
 
@@ -24,7 +24,7 @@ describe('UtilityMenu', () => {
       />
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('should render with isHeightBounded', () => {
@@ -39,7 +39,7 @@ describe('UtilityMenu', () => {
       />
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('should render with onRequestClose set', () => {
@@ -54,7 +54,7 @@ describe('UtilityMenu', () => {
       />
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('it should render with a read-only menu item', () => {
@@ -72,7 +72,7 @@ describe('UtilityMenu', () => {
       />
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('it should pass in a custom prop', () => {
@@ -87,7 +87,7 @@ describe('UtilityMenu', () => {
       />
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('should render with a user specified role', () => {
@@ -104,8 +104,7 @@ describe('UtilityMenu', () => {
       />
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper.prop('menuRole')).toBe(menuRole);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('correctly applies the theme context className', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl } from '@cerner/terra-enzyme-intl';
 import TimeClarification from '../../lib/_TimeClarification';
 
 it('should render a default date time picker', () => {
@@ -15,7 +15,7 @@ it('should render a default date time picker', () => {
       initialTimeZone="America/Chicago"
     />
   ));
-  const wrapper = datePicker.dive();
+  const wrapper = datePicker.dive().dive();
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -32,7 +32,7 @@ it('should render a disabled time clarification', () => {
       initialTimeZone="America/Chicago"
     />
   ));
-  const wrapper = datePicker.dive();
+  const wrapper = datePicker.dive().dive();
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -50,7 +50,7 @@ it('should render offset button after daylight savings button clicked', () => {
       initialTimeZone="America/Chicago"
     />
   ));
-  const wrapper = datePicker.dive();
+  const wrapper = datePicker.dive().dive();
   wrapper.find('.button-daylight').simulate('click');
   expect(wrapper).toMatchSnapshot();
 });
@@ -69,7 +69,7 @@ it('should render offset button after standard time button clicked', () => {
       initialTimeZone="America/Chicago"
     />
   ));
-  const wrapper = datePicker.dive();
+  const wrapper = datePicker.dive().dive();
   wrapper.find('.button-standard').simulate('click');
   expect(wrapper).toMatchSnapshot();
 });
@@ -88,7 +88,7 @@ it('should render offset button after daylight savings button clicked in the sou
       initialTimeZone="Australia/Sydney"
     />
   ));
-  const wrapper = datePicker.dive();
+  const wrapper = datePicker.dive().dive();
   wrapper.find('.button-daylight').simulate('click');
   expect(wrapper).toMatchSnapshot();
 });
@@ -107,7 +107,7 @@ it('should render offset button after standard time button clicked in the southe
       initialTimeZone="Australia/Sydney"
     />
   ));
-  const wrapper = datePicker.dive();
+  const wrapper = datePicker.dive().dive();
   wrapper.find('.button-standard').simulate('click');
   expect(wrapper).toMatchSnapshot();
 });

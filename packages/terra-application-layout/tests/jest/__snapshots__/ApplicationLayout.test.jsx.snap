@@ -233,7 +233,7 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
       }
     }
     header={
-      <InjectIntl(withDisclosureManager(ApplicationHeader))
+      <injectIntl(withDisclosureManager(ApplicationHeader))
         applicationLinks={
           Object {
             "alignment": undefined,
@@ -398,7 +398,7 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with onl
       }
     }
     header={
-      <InjectIntl(withDisclosureManager(ApplicationHeader))
+      <injectIntl(withDisclosureManager(ApplicationHeader))
         applicationLinks={
           Object {
             "alignment": undefined,
@@ -538,7 +538,7 @@ exports[`ApplicationLayout Snapshot Tests when given nav items with icons matche
       }
     }
     header={
-      <InjectIntl(withDisclosureManager(ApplicationHeader))
+      <injectIntl(withDisclosureManager(ApplicationHeader))
         applicationLinks={
           Object {
             "alignment": undefined,

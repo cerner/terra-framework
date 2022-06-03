@@ -26,7 +26,7 @@ exports[`Tab should render prop data 1`] = `
     <span
       className="tab-count"
     >
-      <InjectIntl(TabCount)
+      <injectIntl(TabCount)
         value={1}
       />
     </span>

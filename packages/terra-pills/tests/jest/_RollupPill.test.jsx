@@ -1,6 +1,6 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { mountWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl } from '@cerner/terra-enzyme-intl';
 import RollupPill from '../../src/subcomponents/_RollupPill';
 
 jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');

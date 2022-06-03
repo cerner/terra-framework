@@ -2,33 +2,6 @@
 
 exports[`CollapsibleMenuViewToggle Collapsible Menu Context should render a selectable menu item 1`] = `
 <MenuItem
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
   isActive={false}
   isDisabled={false}
   isInstructionsForUse={false}
@@ -41,33 +14,6 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should render a sele
 
 exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isDisabled prop on menu item 1`] = `
 <MenuItem
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
   isActive={false}
   isDisabled={true}
   isInstructionsForUse={false}
@@ -80,33 +26,6 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isDisable
 
 exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isSelectable prop on menu item to false 1`] = `
 <MenuItem
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
   isActive={false}
   isDisabled={false}
   isInstructionsForUse={false}
@@ -119,33 +38,6 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isSelecta
 
 exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set selected prop on menu item 1`] = `
 <MenuItem
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
   isActive={false}
   isDisabled={false}
   isInstructionsForUse={false}
@@ -165,33 +57,6 @@ exports[`CollapsibleMenuViewToggle should disable checkbox when isSelectable is 
     defaultChecked={false}
     disabled={true}
     inputAttrs={Object {}}
-    intl={
-      Object {
-        "defaultFormats": Object {},
-        "defaultLocale": "en",
-        "formatDate": [Function],
-        "formatHTMLMessage": [Function],
-        "formatMessage": [Function],
-        "formatNumber": [Function],
-        "formatPlural": [Function],
-        "formatRelative": [Function],
-        "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
-          "getDateTimeFormat": [Function],
-          "getMessageFormat": [Function],
-          "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
-        },
-        "locale": "en",
-        "messages": null,
-        "now": [Function],
-        "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
-      }
-    }
     isInline={false}
     isLabelHidden={false}
     labelText="Testing"
@@ -211,33 +76,6 @@ exports[`CollapsibleMenuViewToggle should merge custom props 1`] = `
     defaultChecked={false}
     disabled={false}
     inputAttrs={Object {}}
-    intl={
-      Object {
-        "defaultFormats": Object {},
-        "defaultLocale": "en",
-        "formatDate": [Function],
-        "formatHTMLMessage": [Function],
-        "formatMessage": [Function],
-        "formatNumber": [Function],
-        "formatPlural": [Function],
-        "formatRelative": [Function],
-        "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
-          "getDateTimeFormat": [Function],
-          "getMessageFormat": [Function],
-          "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
-        },
-        "locale": "en",
-        "messages": null,
-        "now": [Function],
-        "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
-      }
-    }
     isInline={false}
     isLabelHidden={false}
     labelText="Testing"
@@ -257,33 +95,6 @@ exports[`CollapsibleMenuViewToggle should render a default component 1`] = `
     defaultChecked={false}
     disabled={false}
     inputAttrs={Object {}}
-    intl={
-      Object {
-        "defaultFormats": Object {},
-        "defaultLocale": "en",
-        "formatDate": [Function],
-        "formatHTMLMessage": [Function],
-        "formatMessage": [Function],
-        "formatNumber": [Function],
-        "formatPlural": [Function],
-        "formatRelative": [Function],
-        "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
-          "getDateTimeFormat": [Function],
-          "getMessageFormat": [Function],
-          "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
-        },
-        "locale": "en",
-        "messages": null,
-        "now": [Function],
-        "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
-      }
-    }
     isInline={false}
     isLabelHidden={false}
     labelText="Testing"
@@ -303,33 +114,6 @@ exports[`CollapsibleMenuViewToggle should set defaultChecked prop 1`] = `
     defaultChecked={true}
     disabled={false}
     inputAttrs={Object {}}
-    intl={
-      Object {
-        "defaultFormats": Object {},
-        "defaultLocale": "en",
-        "formatDate": [Function],
-        "formatHTMLMessage": [Function],
-        "formatMessage": [Function],
-        "formatNumber": [Function],
-        "formatPlural": [Function],
-        "formatRelative": [Function],
-        "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
-          "getDateTimeFormat": [Function],
-          "getMessageFormat": [Function],
-          "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
-        },
-        "locale": "en",
-        "messages": null,
-        "now": [Function],
-        "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
-      }
-    }
     isInline={false}
     isLabelHidden={false}
     labelText="Testing"
@@ -349,33 +133,6 @@ exports[`CollapsibleMenuViewToggle should set isDisabled prop 1`] = `
     defaultChecked={false}
     disabled={true}
     inputAttrs={Object {}}
-    intl={
-      Object {
-        "defaultFormats": Object {},
-        "defaultLocale": "en",
-        "formatDate": [Function],
-        "formatHTMLMessage": [Function],
-        "formatMessage": [Function],
-        "formatNumber": [Function],
-        "formatPlural": [Function],
-        "formatRelative": [Function],
-        "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
-          "getDateTimeFormat": [Function],
-          "getMessageFormat": [Function],
-          "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
-        },
-        "locale": "en",
-        "messages": null,
-        "now": [Function],
-        "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
-      }
-    }
     isInline={false}
     isLabelHidden={false}
     labelText="Testing"

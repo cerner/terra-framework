@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl, renderWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, renderWithIntl, mountWithIntl } from '@cerner/terra-enzyme-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 
 import DateInput from '../../src/DateInput';
@@ -15,42 +15,42 @@ describe('DateInput', () => {
   // Snapshot Tests
   it('should render a default date input', () => {
     const wrapper = shallowWithIntl(defaultRender);
-    const testComponent = wrapper.dive();
+    const testComponent = wrapper.dive().dive();
     expect(testComponent).toMatchSnapshot();
   });
 
   it('should render a date input with custom attributes', () => {
     const dateInput = <DateInput name="date-input" inputAttributes={{ id: 'terra-date-input' }} />;
     const wrapper = shallowWithIntl(dateInput);
-    const testComponent = wrapper.dive();
+    const testComponent = wrapper.dive().dive();
     expect(testComponent).toMatchSnapshot();
   });
 
   it('should render a date input with a default date', () => {
     const dateInput = <DateInput name="date-input" value="2000-07-04" />;
     const wrapper = shallowWithIntl(dateInput);
-    const testComponent = wrapper.dive();
+    const testComponent = wrapper.dive().dive();
     expect(testComponent).toMatchSnapshot();
   });
 
   it('should render a date input with onChange', () => {
     const dateInput = <DateInput name="date-input" onChange={() => { }} />;
     const wrapper = shallowWithIntl(dateInput);
-    const testComponent = wrapper.dive();
+    const testComponent = wrapper.dive().dive();
     expect(testComponent).toMatchSnapshot();
   });
 
   it('should render a date input with onBlur', () => {
     const dateInput = <DateInput name="date-input" onBlur={() => { }} />;
     const wrapper = shallowWithIntl(dateInput);
-    const testComponent = wrapper.dive();
+    const testComponent = wrapper.dive().dive();
     expect(testComponent).toMatchSnapshot();
   });
 
   it('should render a date input with onFocus', () => {
     const dateInput = <DateInput name="date-input" onFocus={() => { }} />;
     const wrapper = shallowWithIntl(dateInput);
-    const testComponent = wrapper.dive();
+    const testComponent = wrapper.dive().dive();
     expect(testComponent).toMatchSnapshot();
   });
 
@@ -70,7 +70,7 @@ describe('DateInput', () => {
   it('should render a disabled time input', () => {
     const timeInput = <DateInput name="date-input" disabled />;
     const wrapper = shallowWithIntl(timeInput);
-    const testComponent = wrapper.dive();
+    const testComponent = wrapper.dive().dive();
     expect(testComponent).toMatchSnapshot();
   });
 

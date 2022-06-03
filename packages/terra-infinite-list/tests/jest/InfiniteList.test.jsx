@@ -1,13 +1,13 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl } from '@cerner/terra-enzyme-intl';
 import InfiniteList, { Item } from '../../src/index';
 import styles from './InfiniteList.test.module.scss';
 
 describe('InfiniteList', () => {
   it('should render a default component', () => {
     const wrapper = shallowWithIntl(<InfiniteList ariaLabel="Infinite List" />);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('should render with no children and loading', () => {
@@ -19,7 +19,7 @@ describe('InfiniteList', () => {
 
     const component = <InfiniteList ariaLabel="Infinite List" {...infiniteProps} />;
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('should render with initial children', () => {
@@ -43,7 +43,7 @@ describe('InfiniteList', () => {
       </InfiniteList>
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('should render with list props', () => {
@@ -71,7 +71,7 @@ describe('InfiniteList', () => {
       </InfiniteList>
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
   it('should render with list with style props', () => {
@@ -98,6 +98,6 @@ describe('InfiniteList', () => {
       </InfiniteList>
     );
     const wrapper = shallowWithIntl(component);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 });

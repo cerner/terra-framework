@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApplicationMenuUtility it should pass in a custom prop 1`] = `
-<InjectIntl(UtilityButton)
+<injectIntl(UtilityButton)
   id="test"
   initialSelectedKey="menu"
   menuItems={Array []}
@@ -14,7 +14,7 @@ exports[`ApplicationMenuUtility it should pass in a custom prop 1`] = `
 `;
 
 exports[`ApplicationMenuUtility should render with a default role when no role is specified 1`] = `
-<InjectIntl(UtilityButton)
+<injectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={Array []}
   menuRole="navigation"
@@ -27,7 +27,7 @@ exports[`ApplicationMenuUtility should render with a default role when no role i
 `;
 
 exports[`ApplicationMenuUtility should render with a title 1`] = `
-<InjectIntl(UtilityButton)
+<injectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={Array []}
   menuRole="navigation"
@@ -40,7 +40,7 @@ exports[`ApplicationMenuUtility should render with a title 1`] = `
 `;
 
 exports[`ApplicationMenuUtility should render with a user specified role 1`] = `
-<InjectIntl(UtilityButton)
+<injectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={Array []}
   menuRole="menu"
@@ -53,7 +53,7 @@ exports[`ApplicationMenuUtility should render with a user specified role 1`] = `
 `;
 
 exports[`ApplicationMenuUtility should render with an accessory 1`] = `
-<InjectIntl(UtilityButton)
+<injectIntl(UtilityButton)
   accessory={<image />}
   initialSelectedKey="menu"
   menuItems={Array []}
@@ -66,7 +66,7 @@ exports[`ApplicationMenuUtility should render with an accessory 1`] = `
 `;
 
 exports[`ApplicationMenuUtility should render with default props 1`] = `
-<InjectIntl(UtilityButton)
+<injectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={Array []}
   menuRole="navigation"
@@ -78,7 +78,7 @@ exports[`ApplicationMenuUtility should render with default props 1`] = `
 `;
 
 exports[`ApplicationMenuUtility should render with menu items 1`] = `
-<InjectIntl(UtilityButton)
+<injectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={
     Array [

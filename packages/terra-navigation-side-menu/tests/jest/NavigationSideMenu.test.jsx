@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, mountWithIntl } from '@cerner/terra-enzyme-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 
 import NavigationSideMenu from '../../src/NavigationSideMenu';
@@ -14,7 +14,7 @@ describe('Layout', () => {
         selectedMenuKey=""
       />
     ));
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render a NavigationSideMenu with a toolbar', () => {
@@ -26,7 +26,7 @@ describe('Layout', () => {
         toolbar={<div>Toolbar</div>}
       />
     ));
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('should render a NavigationSideMenu with selectedKey', () => {
@@ -44,7 +44,7 @@ describe('Layout', () => {
         selectedMenuKey="menu"
       />
     ));
-    expect(result).toMatchSnapshot();
+    expect(result.dive()).toMatchSnapshot();
   });
 
   it('correctly applies the theme context className', () => {

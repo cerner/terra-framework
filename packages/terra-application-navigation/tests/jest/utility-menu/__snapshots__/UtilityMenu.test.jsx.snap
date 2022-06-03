@@ -4,29 +4,13 @@ exports[`UtilityMenu should render default element 1`] = `
 <UtilityMenu
   intl={
     Object {
-      "defaultFormats": Object {},
       "defaultLocale": "en",
       "formatDate": [Function],
-      "formatHTMLMessage": [Function],
       "formatMessage": [Function],
       "formatNumber": [Function],
       "formatPlural": [Function],
-      "formatRelative": [Function],
+      "formatRelativeTime": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
     }
   }
   utilityItems={Array []}
@@ -45,7 +29,7 @@ exports[`UtilityMenu should render default element 1`] = `
       fill={false}
       footer={<ActionFooter />}
       header={
-        <InjectIntl(ActionHeader)
+        <injectIntl(ActionHeader)
           aria-hidden={true}
           title="Terra.applicationNavigation.utilityMenu.headerTitle"
         />
@@ -57,7 +41,7 @@ exports[`UtilityMenu should render default element 1`] = `
         <div
           className="header"
         >
-          <InjectIntl(ActionHeader)
+          <injectIntl(ActionHeader)
             aria-hidden={true}
             title="Terra.applicationNavigation.utilityMenu.headerTitle"
           >
@@ -65,29 +49,41 @@ exports[`UtilityMenu should render default element 1`] = `
               aria-hidden={true}
               intl={
                 Object {
+                  "$t": [Function],
                   "defaultFormats": Object {},
                   "defaultLocale": "en",
+                  "defaultRichTextElements": undefined,
+                  "fallbackOnEmptyString": true,
                   "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
+                  "formatDateTimeRange": [Function],
+                  "formatDateToParts": [Function],
+                  "formatDisplayName": [Function],
+                  "formatList": [Function],
+                  "formatListToParts": [Function],
                   "formatMessage": [Function],
                   "formatNumber": [Function],
+                  "formatNumberToParts": [Function],
                   "formatPlural": [Function],
-                  "formatRelative": [Function],
+                  "formatRelativeTime": [Function],
                   "formatTime": [Function],
+                  "formatTimeToParts": [Function],
                   "formats": Object {},
                   "formatters": Object {
                     "getDateTimeFormat": [Function],
+                    "getDisplayNames": [Function],
+                    "getListFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
+                    "getPluralRules": [Function],
+                    "getRelativeTimeFormat": [Function],
                   },
                   "locale": "en",
                   "messages": null,
-                  "now": [Function],
                   "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
+                  "onWarn": [Function],
+                  "textComponent": Symbol(react.fragment),
+                  "timeZone": undefined,
+                  "wrapRichTextChunksInFragment": undefined,
                 }
               }
               level={1}
@@ -120,7 +116,7 @@ exports[`UtilityMenu should render default element 1`] = `
                 </div>
               </ActionHeaderContainer>
             </ActionHeader>
-          </InjectIntl(ActionHeader)>
+          </injectIntl(ActionHeader)>
         </div>
         <div
           className="main"
@@ -173,29 +169,13 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
   }
   intl={
     Object {
-      "defaultFormats": Object {},
       "defaultLocale": "en",
       "formatDate": [Function],
-      "formatHTMLMessage": [Function],
       "formatMessage": [Function],
       "formatNumber": [Function],
       "formatPlural": [Function],
-      "formatRelative": [Function],
+      "formatRelativeTime": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
     }
   }
   onSelectHelp={[MockFunction]}
@@ -313,7 +293,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
         />
       }
       header={
-        <InjectIntl(ActionHeader)
+        <injectIntl(ActionHeader)
           aria-hidden={true}
           title="Terra.applicationNavigation.utilityMenu.headerTitle"
         />
@@ -325,7 +305,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
         <div
           className="header"
         >
-          <InjectIntl(ActionHeader)
+          <injectIntl(ActionHeader)
             aria-hidden={true}
             title="Terra.applicationNavigation.utilityMenu.headerTitle"
           >
@@ -333,29 +313,41 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
               aria-hidden={true}
               intl={
                 Object {
+                  "$t": [Function],
                   "defaultFormats": Object {},
                   "defaultLocale": "en",
+                  "defaultRichTextElements": undefined,
+                  "fallbackOnEmptyString": true,
                   "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
+                  "formatDateTimeRange": [Function],
+                  "formatDateToParts": [Function],
+                  "formatDisplayName": [Function],
+                  "formatList": [Function],
+                  "formatListToParts": [Function],
                   "formatMessage": [Function],
                   "formatNumber": [Function],
+                  "formatNumberToParts": [Function],
                   "formatPlural": [Function],
-                  "formatRelative": [Function],
+                  "formatRelativeTime": [Function],
                   "formatTime": [Function],
+                  "formatTimeToParts": [Function],
                   "formats": Object {},
                   "formatters": Object {
                     "getDateTimeFormat": [Function],
+                    "getDisplayNames": [Function],
+                    "getListFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
+                    "getPluralRules": [Function],
+                    "getRelativeTimeFormat": [Function],
                   },
                   "locale": "en",
                   "messages": null,
-                  "now": [Function],
                   "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
+                  "onWarn": [Function],
+                  "textComponent": Symbol(react.fragment),
+                  "timeZone": undefined,
+                  "wrapRichTextChunksInFragment": undefined,
                 }
               }
               level={1}
@@ -388,7 +380,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                 </div>
               </ActionHeaderContainer>
             </ActionHeader>
-          </InjectIntl(ActionHeader)>
+          </injectIntl(ActionHeader)>
         </div>
         <div
           className="main"
@@ -812,29 +804,13 @@ exports[`UtilityMenu should render with skip callback 1`] = `
 <UtilityMenu
   intl={
     Object {
-      "defaultFormats": Object {},
       "defaultLocale": "en",
       "formatDate": [Function],
-      "formatHTMLMessage": [Function],
       "formatMessage": [Function],
       "formatNumber": [Function],
       "formatPlural": [Function],
-      "formatRelative": [Function],
+      "formatRelativeTime": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
     }
   }
   onSelectLogout={[MockFunction]}
@@ -874,7 +850,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
         />
       }
       header={
-        <InjectIntl(ActionHeader)
+        <injectIntl(ActionHeader)
           aria-hidden={true}
           title="Terra.applicationNavigation.utilityMenu.headerTitle"
         />
@@ -886,7 +862,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
         <div
           className="header"
         >
-          <InjectIntl(ActionHeader)
+          <injectIntl(ActionHeader)
             aria-hidden={true}
             title="Terra.applicationNavigation.utilityMenu.headerTitle"
           >
@@ -894,29 +870,41 @@ exports[`UtilityMenu should render with skip callback 1`] = `
               aria-hidden={true}
               intl={
                 Object {
+                  "$t": [Function],
                   "defaultFormats": Object {},
                   "defaultLocale": "en",
+                  "defaultRichTextElements": undefined,
+                  "fallbackOnEmptyString": true,
                   "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
+                  "formatDateTimeRange": [Function],
+                  "formatDateToParts": [Function],
+                  "formatDisplayName": [Function],
+                  "formatList": [Function],
+                  "formatListToParts": [Function],
                   "formatMessage": [Function],
                   "formatNumber": [Function],
+                  "formatNumberToParts": [Function],
                   "formatPlural": [Function],
-                  "formatRelative": [Function],
+                  "formatRelativeTime": [Function],
                   "formatTime": [Function],
+                  "formatTimeToParts": [Function],
                   "formats": Object {},
                   "formatters": Object {
                     "getDateTimeFormat": [Function],
+                    "getDisplayNames": [Function],
+                    "getListFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
+                    "getPluralRules": [Function],
+                    "getRelativeTimeFormat": [Function],
                   },
                   "locale": "en",
                   "messages": null,
-                  "now": [Function],
                   "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
+                  "onWarn": [Function],
+                  "textComponent": Symbol(react.fragment),
+                  "timeZone": undefined,
+                  "wrapRichTextChunksInFragment": undefined,
                 }
               }
               level={1}
@@ -949,7 +937,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                 </div>
               </ActionHeaderContainer>
             </ActionHeader>
-          </InjectIntl(ActionHeader)>
+          </injectIntl(ActionHeader)>
         </div>
         <div
           className="main"

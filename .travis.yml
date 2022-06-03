@@ -5,6 +5,7 @@ services:
 branches:
   only:
     - main
+    - MVB
 cache:
   directories:
     - travis-build

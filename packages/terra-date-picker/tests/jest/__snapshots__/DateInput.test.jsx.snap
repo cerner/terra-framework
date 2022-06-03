@@ -2,66 +2,51 @@
 
 exports[`correctly applies the theme context className 1`] = `
 <ThemeContextProvider
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
   theme={
     Object {
       "className": "orion-fusion-theme",
     }
   }
 >
-  <InjectIntl(DatePickerInput)>
+  <injectIntl(DatePickerInput)>
     <DatePickerInput
       intl={
         Object {
+          "$t": [Function],
           "defaultFormats": Object {},
           "defaultLocale": "en",
+          "defaultRichTextElements": undefined,
+          "fallbackOnEmptyString": true,
           "formatDate": [Function],
-          "formatHTMLMessage": [Function],
+          "formatDateTimeRange": [Function],
+          "formatDateToParts": [Function],
+          "formatDisplayName": [Function],
+          "formatList": [Function],
+          "formatListToParts": [Function],
           "formatMessage": [Function],
           "formatNumber": [Function],
+          "formatNumberToParts": [Function],
           "formatPlural": [Function],
-          "formatRelative": [Function],
+          "formatRelativeTime": [Function],
           "formatTime": [Function],
+          "formatTimeToParts": [Function],
           "formats": Object {},
           "formatters": Object {
             "getDateTimeFormat": [Function],
+            "getDisplayNames": [Function],
+            "getListFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
-            "getPluralFormat": [Function],
-            "getRelativeFormat": [Function],
+            "getPluralRules": [Function],
+            "getRelativeTimeFormat": [Function],
           },
           "locale": "en",
           "messages": null,
-          "now": [Function],
           "onError": [Function],
-          "textComponent": "span",
-          "timeZone": null,
+          "onWarn": [Function],
+          "textComponent": Symbol(react.fragment),
+          "timeZone": undefined,
+          "wrapRichTextChunksInFragment": undefined,
         }
       }
       isIncomplete={false}
@@ -388,7 +373,7 @@ exports[`correctly applies the theme context className 1`] = `
         </div>
       </div>
     </DatePickerInput>
-  </InjectIntl(DatePickerInput)>
+  </injectIntl(DatePickerInput)>
 </ThemeContextProvider>
 `;
 
@@ -440,29 +425,41 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
   }
   intl={
     Object {
+      "$t": [Function],
       "defaultFormats": Object {},
       "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
       "formatDate": [Function],
-      "formatHTMLMessage": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
       "formatMessage": [Function],
       "formatNumber": [Function],
+      "formatNumberToParts": [Function],
       "formatPlural": [Function],
-      "formatRelative": [Function],
+      "formatRelativeTime": [Function],
       "formatTime": [Function],
+      "formatTimeToParts": [Function],
       "formats": Object {},
       "formatters": Object {
         "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
       },
       "locale": "en",
       "messages": null,
-      "now": [Function],
       "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
     }
   }
   isIncomplete={false}
@@ -1206,29 +1203,41 @@ exports[`should render a default date input with all props 1`] = `
   inputAttributes={Object {}}
   intl={
     Object {
+      "$t": [Function],
       "defaultFormats": Object {},
       "defaultLocale": "en",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
       "formatDate": [Function],
-      "formatHTMLMessage": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
       "formatMessage": [Function],
       "formatNumber": [Function],
+      "formatNumberToParts": [Function],
       "formatPlural": [Function],
-      "formatRelative": [Function],
+      "formatRelativeTime": [Function],
       "formatTime": [Function],
+      "formatTimeToParts": [Function],
       "formats": Object {},
       "formatters": Object {
         "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
       },
       "locale": "en",
       "messages": null,
-      "now": [Function],
       "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
+      "onWarn": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
     }
   }
   isIncomplete={false}

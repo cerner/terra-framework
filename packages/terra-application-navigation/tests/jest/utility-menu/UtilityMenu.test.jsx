@@ -1,12 +1,12 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl, mockIntl } from '@cerner/terra-enzyme-intl';
 import UtilityMenu from '../../../src/utility-menu/_UtilityMenu';
 
 describe('UtilityMenu', () => {
   it('should render default element', () => {
     const mountComponent = mountWithIntl(
-      <UtilityMenu.WrappedComponent />,
+      <UtilityMenu.WrappedComponent intl={mockIntl} />,
     );
 
     expect(mountComponent).toMatchSnapshot();
@@ -29,6 +29,7 @@ describe('UtilityMenu', () => {
         onSelectSettings={jest.fn()}
         onSelectHelp={jest.fn()}
         onSelectLogout={jest.fn()}
+        intl={mockIntl}
       />,
     );
 
@@ -41,6 +42,7 @@ describe('UtilityMenu', () => {
     const mountComponent = mountWithIntl(
       <UtilityMenu.WrappedComponent
         onSelectLogout={mockCallBack}
+        intl={mockIntl}
       />,
     );
 
