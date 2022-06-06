@@ -2,50 +2,53 @@
 
 ## Unreleased
 
+* Changed
+  * Updated docs for terra-pills
+
 ## 1.8.2 - (May 3, 2022)
 
 * Changed
-  * Additional terra-infinite-list deprecation notices
+  * Additional deprecation notices for terra-infinite-list
 
 ## 1.8.1 - (March 29, 2022)
 
 * Added
-  * Added docs for `terra-date-time-picker`
-  * Added tests for `terra-date-time-picker`
+  * Added docs for terra-date-time-picker
+  * Added tests for terra-date-time-picker
 
 ## 1.8.0 - (March 15, 2022)
 
 * Changed
-  * Migrated docs from terra date input.
-  * Migrated terra-collapsible-menu-view-docs
-  * Migrated docs from date-picker.
-  * Migrated docs from date-time-picker
+  * Migrated docs from terra-date-input
+  * Migrated docs from terra-collapsible-menu-view
+  * Migrated docs from terra-date-picker
+  * Migrated docs from terra-date-time-picker
 
 * Added
-  * Migrate docs from terra-navigation-side-menu.
-  * Migrated docs from terra-navigation-prompt.
-  * Migrate docs from terra-navigation-layout
-  * Migrate docs from terra-menu
-  * Migrate docs from terra-notification-dialog.
-  * Migrate docs from terra-time-input
-  * Migrate docs from terra-theme-provider
-  * Migrate docs from terra-theme-context
-  * Migrate docs from terra-tabs
-  * Migrate docs from terra-slide-panel-manager
-  * Migrate docs from terra-infinite-list
-  * Migrate docs from terra-hookshot
-  * Migrate docs from terra-disclosure-manager
-  * Migrate docs from terra-embedded-content-consumer
-  * Migrate docs from terra-slide-panel.
-  * Migrate docs from terra-slide-group.
-  * Migrate docs from terra-popup
+  * Migrated docs from terra-navigation-side-menu
+  * Migrated docs from terra-navigation-prompt
+  * Migrated docs from terra-navigation-layout
+  * Migrated docs from terra-menu
+  * Migrated docs from terra-notification-dialog
+  * Migrated docs from terra-time-input
+  * Migrated docs from terra-theme-provider
+  * Migrated docs from terra-theme-context
+  * Migrated docs from terra-tabs
+  * Migrated docs from terra-slide-panel-manager
+  * Migrated docs from terra-infinite-list
+  * Migrated docs from terra-hookshot
+  * Migrated docs from terra-disclosure-manager
+  * Migrated docs from terra-embedded-content-consumer
+  * Migrated docs from terra-slide-panel
+  * Migrated docs from terra-slide-group
+  * Migrated docs from terra-popup
 
 ## 1.7.0 - (March 8, 2022)
 
 * Added
-  * Migrate docs from terra-layout
-  * Added docs for `terra-filter-pills`
-  * Added tests for `terra-filter-pills`
+  * Migrated docs from terra-layout
+  * Added docs for terra-pills
+  * Added tests for terra-pills
 
 ## 1.6.0 - (November 16, 2021)
 
@@ -65,7 +68,7 @@
 ## 1.3.0 - (October 12, 2021)
 
 * Added
-  * Migrated doc from terra-brand-footer.
+  * Migrated docs from terra-brand-footer
 
 ## 1.2.0 - (September 20, 2021)
 
@@ -75,12 +78,12 @@
 ## 1.1.1 - (July 23, 2021)
 
 * Fixed
-  * Updated test to not reference the src directory for modal manager.
+  * Updated test to not reference the src directory for modal manager
 
 ## 1.1.0 - (July 21, 2021)
 
 * Updated
-  * Migrated terra-modal-manager docs
+  * Migrated docs from terra-modal-manager
 
 ## 1.0.0 - (July 20, 2021)
 
