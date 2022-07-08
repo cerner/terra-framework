@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.8.3 - (July 5, 2022)
+
 * Changed
   * Updated docs for terra-pills
 
