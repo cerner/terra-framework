@@ -136,7 +136,7 @@ class DatePicker extends React.Component {
     /**
      * Highlight range of dates with custom classes.
      */
-    highlightDates: PropTypes.array,
+    highlightDates: PropTypes.instanceOf(WeakMap),
     /**
      * Value of custom input id.
      */

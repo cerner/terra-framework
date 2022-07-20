@@ -324,7 +324,7 @@ export function getHightLightDaysMap (
   highlightDates = [],
   defaultClassName = 'react-datepicker-day--highlighted'
 ) {
-  const dateClasses = new Map()
+  const dateClasses = new WeakMap()
   for (let i = 0, len = highlightDates.length; i < len; i++) {
     const obj = highlightDates[i]
     if (isMoment(obj)) {
