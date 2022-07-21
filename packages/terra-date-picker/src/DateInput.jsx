@@ -3,7 +3,6 @@ import React, {
   useState,
   useEffect,
   useMemo,
-  useCallback,
 } from 'react';
 import {
   KEY_UP,
@@ -162,17 +161,10 @@ const DatePickerInput = (props) => {
     ...customProps
   } = props;
 
-  // const dateReducer = (state, inputValue) => ({
-  //   ...state,
-  //   ...inputValue,
-  // });
-
-  const [date, dateDispatch] = useState({ day: '', month: '', year: '' });
   const [isFocused, setFocused] = useState(false);
   const [dayInitialFocused, setDayInitialFocused] = useState(false);
   const [monthInitialFocused, setMonthInitialFocused] = useState(false);
   const [yearInitialFocused, setYearInitialFocused] = useState(false);
-  const uuid = uuidv4();
   const theme = React.useContext(ThemeContext);
 
   const { onCalendarButtonClick, shouldShowPicker } = customProps;
@@ -204,15 +196,11 @@ const DatePickerInput = (props) => {
   const dateFormatOrder = DateUtil.getDateFormatOrder(momentDateFormat);
   const separator = DateUtil.getDateSeparator(intl.locale);
 
+  let date = useMemo(() => ({ day: '', month: '', year: '' }), []);
   // Sets the date state based on the passed in value prop, or if it changes via a calendar click.
-  const updateDateValue = useCallback(() => {
-    if (DateUtil.isValidDate(value, momentDateFormat)) {
-      const parseDate = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, dateValue, '-');
-      dateDispatch(parseDate);
-    } else if (dateValue === '') {
-      dateDispatch({ day: '', month: '', year: '' });
-    }
-  }, [momentDateFormat, dateValue, value]);
+  if (DateUtil.isValidDate(value, momentDateFormat)) {
+    date = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, dateValue, '-');
+  }
 
   // Triggers the onClick callback to launch the dropdown picker for the scenario when the default date is invalid and
   // the calendar button is clicked which should clear the value and launch the dropdown picker
@@ -220,12 +208,7 @@ const DatePickerInput = (props) => {
     if (shouldShowPicker && onClick) {
       onClick();
     }
-    updateDateValue();
-
-    return (() => {
-      dateDispatch({});
-    });
-  }, [shouldShowPicker, onClick, updateDateValue, date]);
+  }, [shouldShowPicker, onClick]);
 
   /**
    * Moves focus to the correct input depending on date ordering. Focus changing is
@@ -261,18 +244,18 @@ const DatePickerInput = (props) => {
   };
 
   /**
-   * Sets state for the day, month, and year.
+   * Sets date value for the day, month, and year.
    * @param {object} event - Event object
    * @param {string} inputValue - The input value to set in state.
    * @param {number} type - The inputType (day, month, or year).
    */
   const setDate = (event, inputValue, type) => {
     if (type === DateUtil.inputType.DAY) {
-      dateDispatch({ day: inputValue });
+      date.day = inputValue;
     } else if (type === DateUtil.inputType.MONTH) {
-      dateDispatch({ month: inputValue });
+      date.month = inputValue;
     } else {
-      dateDispatch({ year: inputValue });
+      date.year = inputValue;
     }
 
     if (event.type !== DateUtil.EVENT_KEYDOWN) {
@@ -285,9 +268,7 @@ const DatePickerInput = (props) => {
    * based on the date format variant, and passes the formatted date to onChange.
    */
   const handleDateChange = (event, inputValue, type) => {
-    let { day } = date;
-    let { month } = date;
-    let { year } = date;
+    let { day, month, year } = date;
 
     if (type === DateUtil.inputType.DAY) {
       day = inputValue;
@@ -532,7 +513,7 @@ const DatePickerInput = (props) => {
         onChange(event, formattedDate);
       }
       const nextDayValues = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, inputDate, '-');
-      dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
+      date = { day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year };
       return;
     }
     // decrement current valid date by 1 day, if not valid set date to yesterday instead
@@ -547,7 +528,7 @@ const DatePickerInput = (props) => {
         onChange(event, formattedDate);
       }
       const nextDayValues = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, inputDate, '-');
-      dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
+      date = { day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year };
       return;
     }
     // increment current valid date by 1 day, if not valid date set date to tomorrow instead
@@ -562,7 +543,7 @@ const DatePickerInput = (props) => {
         onChange(event, formattedDate);
       }
       const nextDayValues = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, inputDate, '-');
-      dateDispatch({ day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year });
+      date = { day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year };
       return;
     }
 
@@ -654,7 +635,7 @@ const DatePickerInput = (props) => {
     }
   };
 
-  const formatDescriptionId = `terra-date-picker-description-format-${uuid.current}`;
+  const formatDescriptionId = `terra-date-picker-description-format-${uuidv4()}`;
   let ariaDescriptionIds;
   if (useExternalFormatMask === false) {
     if (inputAttributes && inputAttributes['aria-describedby']) {
