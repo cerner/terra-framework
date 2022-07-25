@@ -1,45 +1,31 @@
 import React, { useState } from 'react';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
-import IconPill from 'terra-icon/lib/icon/IconPill';
-import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
 import IconLightbulb from 'terra-icon/lib/icon/IconLightbulb';
+import IconAvailable from 'terra-icon/lib/icon/IconAvailable';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 
 const titleConfig = {
-  title: 'Test Title',
+  title: 'Connect Messenger',
 };
 
 const userConfig = {
-  name: 'Test Name',
-  initials: 'TN',
+  name: 'Phil Callahan',
+  initials: 'PC',
+  detail: 'Physician - Innovation',
 };
 
 const extensionItems = [
   {
     icon: <IconSearch />,
     key: 'item-a',
-    text: 'Item A',
+    text: 'Search',
     metaData: {
       test: 'a',
     },
   }, {
-    icon: <IconPill />,
-    key: 'item-b',
-    text: 'Item B',
-    metaData: {
-      test: 'b',
-    },
-  }, {
-    icon: <IconVisualization />,
-    key: 'item-c',
-    text: 'Item C',
-    metaData: {
-      test: 'c',
-    },
-  }, {
     icon: <IconLightbulb />,
     key: 'item-d',
-    text: 'Item D',
+    text: 'Suggestions',
     metaData: {
       test: 'd',
     },
@@ -49,83 +35,44 @@ const extensionItems = [
 const navigationItems = [
   {
     key: '/page_1',
-    text: 'Page 1',
+    text: 'Messages',
     metaData: {
       test: '1',
     },
   }, {
     key: '/page_2',
-    text: 'Page 2',
+    text: 'Notifications',
     metaData: {
       test: '2',
     },
   }, {
     key: '/page_3',
-    text: 'Page 3',
+    text: 'Contacts',
     metaData: {
       test: '3',
     },
   }, {
     key: '/page_4',
-    text: 'Page 4',
+    text: 'Care Team',
     metaData: {
       test: '4',
     },
   }, {
     key: '/page_5',
-    text: 'Page 5',
+    text: 'Video',
     metaData: {
       test: '5',
-    },
-  }, {
-    key: '/page_6',
-    text: 'Page 6',
-    metaData: {
-      test: '6',
-    },
-  }, {
-    key: '/page_7',
-    text: 'Page 7',
-    metaData: {
-      test: '7',
-    },
-  }, {
-    key: '/page_8',
-    text: 'Page 8',
-    metaData: {
-      test: '8',
     },
   },
 ];
 
 const utilityItems = [
   {
-    icon: <IconSearch />,
+    icon: <IconAvailable />,
     key: 'item-a',
-    text: 'Item A',
+    text: 'Status - Available',
     metaData: {
       test: 'a',
-    },
-  }, {
-    icon: <IconPill />,
-    key: 'item-b',
-    text: 'Item B',
-    metaData: {
-      test: 'b',
-    },
-  }, {
-    icon: <IconVisualization />,
-    key: 'item-c',
-    text: 'Item C',
-    metaData: {
-      test: 'c',
-    },
-  }, {
-    icon: <IconLightbulb />,
-    key: 'item-d',
-    text: 'Item D',
-    metaData: {
-      test: 'd',
     },
   },
 ];
@@ -152,7 +99,7 @@ function ApplicationNavigationTest() {
       extensionItems={extensionItems}
       onSelectExtensionItem={handleItemSelection}
       navigationItems={navigationItems}
-      activeNavigationItemKey="/page_1"
+      // activeNavigationItemKey="/page_1"
       onSelectNavigationItem={handleItemSelection}
       utilityItems={utilityItems}
       onSelectUtilityItem={handleItemSelection}
