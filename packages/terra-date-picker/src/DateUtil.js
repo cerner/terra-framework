@@ -275,6 +275,27 @@ class DateUtil {
   }
 
   /**
+   * Determines if a provided date values are valid.
+   * @param {String} value Value to validate
+   * @return True if the value is valid, false otherwise.
+   */
+  static validdateDateValues(value, dateFormatOrder, editOnkeyDown, previousDateValueRef) {
+    const date = { day: '', month: '', year: '' };
+
+    if (editOnkeyDown.current) {
+      let separator = '-';
+      if (value?.includes('.')) {
+        separator = '.';
+      } else if (value?.includes('/')) {
+        separator = '/';
+      }
+      return this.getDateInputValues(dateFormatOrder, value, separator);
+    }
+
+    return (value === '') ? date : previousDateValueRef.current || date;
+  }
+
+  /**
    * Converts an ISO string to the given format.
    * @param {string} iSODate - The ISO string to convert.
    * @param {string} format - The desired date format for the conversion
@@ -554,6 +575,5 @@ DateUtil.MIN_DATE = '1900-01-01';
 DateUtil.MAX_DATE = '2100-12-31';
 DateUtil.MIN_YEAR = '1900';
 DateUtil.MAX_YEAR = '2100';
-DateUtil.EVENT_KEYDOWN = 'keydown';
 
 export default DateUtil;

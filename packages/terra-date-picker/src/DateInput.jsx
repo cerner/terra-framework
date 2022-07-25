@@ -3,6 +3,7 @@ import React, {
   useState,
   useEffect,
   useMemo,
+  useRef,
 } from 'react';
 import {
   KEY_UP,
@@ -165,7 +166,12 @@ const DatePickerInput = (props) => {
   const [dayInitialFocused, setDayInitialFocused] = useState(false);
   const [monthInitialFocused, setMonthInitialFocused] = useState(false);
   const [yearInitialFocused, setYearInitialFocused] = useState(false);
+  const editOnkeyDown = useRef(false);
   const theme = React.useContext(ThemeContext);
+  // variables to store ref's for day, month and year input
+  let dayInputRef;
+  let monthInputRef;
+  let yearInputRef;
 
   const { onCalendarButtonClick, shouldShowPicker } = customProps;
   delete customProps.onCalendarButtonClick;
@@ -186,20 +192,21 @@ const DatePickerInput = (props) => {
     delete inputAttributes.id;
   }
 
-  let dayInputRef = document.getElementById(dayInputId);
-  let monthInputRef = document.getElementById(monthInputId);
-  let yearInputRef = document.getElementById(yearInputId);
-
   const additionalInputProps = { ...customProps, ...inputAttributes };
   const momentDateFormat = useMemo(() => DateUtil.getFormatByLocale(intl.locale), [intl.locale]);
   const dateValue = useMemo(() => (DateUtil.convertToISO8601(value, momentDateFormat)), [momentDateFormat, value]);
   const dateFormatOrder = DateUtil.getDateFormatOrder(momentDateFormat);
   const separator = DateUtil.getDateSeparator(intl.locale);
+  const previousDateValueRef = useRef();
 
   let date = useMemo(() => ({ day: '', month: '', year: '' }), []);
   // Sets the date state based on the passed in value prop, or if it changes via a calendar click.
   if (DateUtil.isValidDate(value, momentDateFormat)) {
     date = DateUtil.getDateInputValues(DateUtil.dateOrder.YMD, dateValue, '-');
+    previousDateValueRef.current = date;
+    editOnkeyDown.current = false;
+  } else {
+    date = DateUtil.validdateDateValues(value, dateFormatOrder, editOnkeyDown, previousDateValueRef);
   }
 
   // Triggers the onClick callback to launch the dropdown picker for the scenario when the default date is invalid and
@@ -496,6 +503,7 @@ const DatePickerInput = (props) => {
   };
 
   const handleInputKeydown = (event, inputType) => {
+    editOnkeyDown.current = true;
     const { day, month, year } = date;
     let inputDate;
     let formattedDate;
