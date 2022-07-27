@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.74.0 - (July 27, 2022)
+
 * Fixed
   * Fixed Memory Leak issue happened due to complex state updates with `useEffect` of `DateInput.jsx`.
 
