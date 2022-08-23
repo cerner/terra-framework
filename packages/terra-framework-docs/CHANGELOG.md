@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated doc site links
+
 ## 1.9.0 - (July 27, 2022)
 
 * Changed
