@@ -297,6 +297,16 @@ class DateTimePicker extends React.Component {
       const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateTimeUtils.createSafeDate(formattedDate, this.initialTimeZone);
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue, this.props.showSeconds);
 
+      if (previousDateTime.isDST() && previousDateTime.hours() === 3) {
+        if (!updatedDateTime.isDST() && (event.key === '-' || event.key === '_')) {
+          updatedDateTime.subtract(1, 'hours');
+        }
+
+        if (!previousDateTime.subtract(1, 'days').isDST() && updatedDateTime.isDST() && (event.key === '+' || event.key === '=')) {
+          updatedDateTime.subtract(1, 'hours');
+        }
+      }
+
       if (isTimeValid) {
         // Update the timeValue in case the updatedDateTime falls in the missing hour and needs to bump the hour up.
         this.timeValue = DateTimeUtils.getTime(updatedDateTime.format(), this.props.showSeconds, this.initialTimeZone);

@@ -1442,6 +1442,30 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
             expect($('input[name="terra-time-hour-input"]')).toHaveValue('02');
             expect($('input[name="terra-time-minute-input"]')).toHaveValue('00');
           });
+
+          it('should should show correct time when moved over the start date of  DST', () => {
+            browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst');
+            browser.refresh();
+            $('input[name="terra-date-year-input"]').click();
+            browser.keys('2020');
+            $('input[name="terra-date-month-input"]').click();
+            browser.keys('03');
+            $('input[name="terra-date-day-input"]').click();
+            browser.keys('07');
+            $('input[name="terra-time-hour-input"]').click();
+            browser.keys('02');
+            $('input[name="terra-time-minute-input"]').click();
+            browser.keys('30');
+            $('input[name="terra-date-day-input"]').click();
+            browser.keys('+');
+            browser.keys('-');
+
+            expect($('input[name="terra-date-year-input"]')).toHaveValue('2020');
+            expect($('input[name="terra-date-month-input"]')).toHaveValue('03');
+            expect($('input[name="terra-date-day-input"]')).toHaveValue('07');
+            expect($('input[name="terra-time-hour-input"]')).toHaveValue('02');
+            expect($('input[name="terra-time-minute-input"]')).toHaveValue('30');
+          });
         });
       });
     });
