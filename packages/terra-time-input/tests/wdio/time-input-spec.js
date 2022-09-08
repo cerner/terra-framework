@@ -1,12 +1,26 @@
 Terra.describeViewports('Time Input', ['medium'], () => {
+  it('should display no date provided', () => {
+    browser.url('/raw/tests/terra-time-input/time-input/time-input/default-date-input');
+    Terra.validates.element('*default no date');
+  });
+
+  it('should display a red square', () => {
+    browser.url('/raw/tests/terra-time-input/time-input/time-input/a-square');
+    Terra.validates.element('*a square no para');
+  });
+  it('should display a red square with para', () => {
+    browser.url('/raw/tests/terra-time-input/time-input/time-input/a-square-para');
+    Terra.validates.element('*a square with para');
+  });
+
   it('displays default with no time provided', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/default');
-    Terra.validates.element('default no time');
+    Terra.validates.element('*default no time');
   });
 
   it('displays default with time provided', () => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/default-time');
-    Terra.validates.element('default with time');
+    Terra.validates.element('*default with time');
   });
 
   it('displays second with no time provided', () => {

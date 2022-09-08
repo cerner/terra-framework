@@ -2,4 +2,22 @@
   .content-wrapper {
     margin: 10px;
   }
+
+  .hidden-label {
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+  
+  .red-square {
+    background-color: #f00;
+    height: 20px;
+    width: 20px;
+    position: relative;
+  }
+
+  .blue-wrapper {
+    outline: 1px solid rgba(0, 204, 255, 0.5);
+    margin: 10px;
+    position: relative;
+  }
 }

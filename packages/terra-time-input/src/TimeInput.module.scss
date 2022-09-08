@@ -14,13 +14,16 @@
   }
 
   .time-input-container {
+    background-color: #dcf5e1;
     display: inline-block;
+    position: relative;
 
     .format-text {
       color: var(--terra-time-input-format-text-color, rgba(0, 0, 0, 0.55));
       font-size: var(--terra-time-input-format-text-font-size, 0.857rem);
       font-weight: var(--terra-time-input-format-text-font-weight, normal);
       line-height: 1.25;
+      margin-bottom: 0;
       margin-top: var(--terra-time-input-format-text-margin-top, 0.357em);
       text-align: left;
     }
@@ -33,7 +36,8 @@
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: var(--terra-time-input-background-size, 0 0);
-    border-color: var(--terra-time-input-border-color, #dedfe0);
+    // border-color: var(--terra-time-input-border-color, #dedfe0);
+    border-color: var(--terra-time-input-border-color, #188f00);
     border-radius: var(--terra-time-input-border-radius, 3px);
     border-style: var(--terra-time-input-border-style, solid);
     border-width: var(--terra-time-input-border-width, 1px);
@@ -48,6 +52,7 @@
     padding-left: var(--terra-time-input-padding-left, 0.2142857143rem);
     padding-right: var(--terra-time-input-padding-right, 0.2142857143rem);
     padding-top: var(--terra-time-input-padding-top, 0.2142857143rem);
+    position: relative;
     transition-duration: var(--terra-time-input-transition-duration, 0.2s);
     transition-property: background-size;
     transition-timing-function: var(--terra-time-input-transition-timing-function, ease);

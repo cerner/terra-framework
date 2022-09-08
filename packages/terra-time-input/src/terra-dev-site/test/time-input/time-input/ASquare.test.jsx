@@ -1,18 +1,14 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import TimeInput from '../../../../TimeInput';
 import styles from '../common/TimeInput.test.module.scss';
 
 const cx = classNames.bind(styles);
 
-const TimeInputDefault = () => (
+const SquareExample = () => (
   <div className={cx('content-wrapper')}>
     <p className={cx('hidden-label')} />
-    <TimeInput
-      id="timeInput"
-      name="time-input"
-    />
+    <div className={cx('red-square')}>A</div>
   </div>
 );
 
-export default TimeInputDefault;
+export default SquareExample;

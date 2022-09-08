@@ -1,4 +1,13 @@
 Terra.describeViewports('Date Input', ['medium'], () => {
+  it('should display a red square', () => {
+    browser.url('/raw/tests/terra-date-input/date-input/a-square');
+    Terra.validates.element('a square no para');
+  });
+  it('should display a red square with para', () => {
+    browser.url('/raw/tests/terra-date-input/date-input/a-square-para');
+    Terra.validates.element('a square with para');
+  });
+
   it('should display no date provided', () => {
     browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
     Terra.validates.element('no date');
