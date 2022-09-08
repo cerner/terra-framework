@@ -298,11 +298,11 @@ class DateTimePicker extends React.Component {
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue, this.props.showSeconds);
 
       if (previousDateTime.isDST() && previousDateTime.hours() === 3) {
-        if (!updatedDateTime.isDST() && (event.key === '-' || event.key === '_')) {
+        if (!updatedDateTime.isDST()) {
           updatedDateTime.subtract(1, 'hours');
         }
 
-        if (!previousDateTime.subtract(1, 'days').isDST() && updatedDateTime.isDST() && (event.key === '+' || event.key === '=')) {
+        if (!previousDateTime.subtract(1, 'days').isDST() && updatedDateTime.isDST()) {
           updatedDateTime.subtract(1, 'hours');
         }
       }
