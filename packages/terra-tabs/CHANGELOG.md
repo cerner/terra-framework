@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Allow for icons to be shown in tabs when collapsed
+
 ## 6.61.0 - (March 15, 2022)
 
 * Added
