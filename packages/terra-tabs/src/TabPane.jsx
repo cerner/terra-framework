@@ -40,12 +40,17 @@ const propTypes = {
    * If enabled, this prop will apply the `aria-selected` style to the pane.
    */
   isActive: PropTypes.bool,
+  /**
+   * If enabled, this prop will show the icon when the tab is collapsed when it is selected and in the drop down menu.
+   */
+  showIconInTabAndMenuWhenCollapsed: PropTypes.bool,
 };
 
 const defaultProps = {
   isDisabled: false,
   isIconOnly: false,
   isActive: false,
+  showIconInTabAndMenuWhenCollapsed: false,
 };
 
 const TabPane = ({

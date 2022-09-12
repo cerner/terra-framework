@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import * as KeyCode from 'keycode-js';
 import { FormattedMessage } from 'react-intl';
+import Spacer from 'terra-spacer';
 import styles from './Tabs.module.scss';
+import Menu from '../../terra-menu/lib/Menu';
 
 const cx = classNames.bind(styles);
 
@@ -25,6 +26,11 @@ const propTypes = {
    * Ref callback for menu toggle.
    */
   refCallback: PropTypes.func,
+
+  /**
+   * The current active tab
+   */
+  selectedTab: PropTypes.element,
 };
 
 class TabMenu extends React.Component {
@@ -86,7 +92,7 @@ class TabMenu extends React.Component {
 
     React.Children.forEach(this.props.children, (child) => {
       const {
-        label, customDisplay, icon, isIconOnly, ...otherProps
+        label, customDisplay, icon, isIconOnly, showIconInTabAndMenuWhenCollapsed, ...otherProps
       } = child.props;
       let isSelected = false;
 
@@ -103,10 +109,17 @@ class TabMenu extends React.Component {
           isSelected={isSelected}
           isSelectable
           key={child.key}
+          menuIcon={(showIconInTabAndMenuWhenCollapsed) ? icon : null}
         />
       ));
     });
     const theme = this.context;
+    let icon = null;
+    if (this.props.selectedTab) {
+      if (this.props.selectedTab.props.icon && this.props.selectedTab.props.showIconInTabAndMenuWhenCollapsed) {
+        icon = (<Spacer className={cx('active-tab-icon')} marginRight="small">{this.props.selectedTab.props.icon}</Spacer>);
+      }
+    }
 
     return (
       <div
@@ -118,6 +131,7 @@ class TabMenu extends React.Component {
         className={cx('tab-menu', { 'is-active': menuActive }, theme.className)}
         data-terra-tabs-menu
       >
+        {icon}
         <FormattedMessage id="Terra.tabs.more">
           {menuToggleText => (
             <span>{toggleText || menuToggleText}</span>
@@ -128,6 +142,7 @@ class TabMenu extends React.Component {
           onRequestClose={this.handleOnRequestClose}
           targetRef={this.getTargetRef}
           isOpen={this.state.isOpen}
+          menuIcon={icon}
         >
           {menuItems}
         </Menu>

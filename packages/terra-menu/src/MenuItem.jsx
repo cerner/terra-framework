@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import * as KeyCode from 'keycode-js';
+import Spacer from 'terra-spacer';
 import styles from './MenuItem.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -62,6 +63,11 @@ const propTypes = {
    * Indicates if the item has focus. This is used internally to control focus and does not set initial focus.
    */
   isActive: PropTypes.bool,
+
+  /**
+   * Custom icon to display in the menu
+   */
+  menuIcon: PropTypes.element,
 };
 
 const defaultProps = {
@@ -165,6 +171,7 @@ class MenuItem extends React.Component {
       isSelectable,
       subMenuItems,
       isActive,
+      menuIcon,
       ...customProps
     } = this.props;
 
@@ -201,10 +208,14 @@ class MenuItem extends React.Component {
     ]);
 
     let content = textContainer;
-    if (hasChevron || isSelectableMenu || isInstructionsForUse) {
+    if (hasChevron || isSelectableMenu || isInstructionsForUse || menuIcon) {
       let fitStartIcon = null;
       if (isInstructionsForUse) {
         fitStartIcon = <InstructionsForUseIcon className={cx('start-icon')} />;
+      } else if (menuIcon && isSelectableMenu && markAsSelected) {
+        fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
+      } else if (menuIcon) {
+        fitStartIcon = (<Spacer marginLeft="small">{menuIcon}</Spacer>);
       } else if (isSelectableMenu) {
         fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
       }
