@@ -197,6 +197,7 @@ class DateTimePicker extends React.Component {
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.dateTimePickerContainer = React.createRef();
     this.containerHasFocus = false;
+    this.prevDateTime = DateTimeUtils.createSafeDate(props.value, this.initialTimeZone);
   }
 
   componentDidMount() {
@@ -298,13 +299,27 @@ class DateTimePicker extends React.Component {
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue, this.props.showSeconds);
 
       if (previousDateTime.isDST() && previousDateTime.hours() === 3) {
+        let flag = false;
         if (!updatedDateTime.isDST()) {
           updatedDateTime.subtract(1, 'hours');
+          flag = true;
         }
 
         if (!previousDateTime.subtract(1, 'days').isDST() && updatedDateTime.isDST()) {
           updatedDateTime.subtract(1, 'hours');
+          flag = true;
         }
+
+        // eslint-disable-next-line no-underscore-dangle
+        if (previousDateTime._a[3] === 3 && flag) {
+          updatedDateTime.add(1, 'hours');
+          flag = false;
+        }
+      }
+
+      // eslint-disable-next-line no-underscore-dangle
+      if (this.prevDateTime._a[3] === 2 && this.prevDateTime.hours() === 3) {
+        updatedDateTime.subtract(1, 'hours');
       }
 
       if (isTimeValid) {
@@ -325,6 +340,7 @@ class DateTimePicker extends React.Component {
     this.dateValue = value;
     const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.initialTimeZone));
     if (!validDate) {
+      this.prevDateTime = this.state.dateTime ? this.state.dateTime : this.prevDateTime;
       this.setState({
         dateTime: null,
       });
