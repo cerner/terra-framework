@@ -311,14 +311,14 @@ class DateTimePicker extends React.Component {
         }
 
         // eslint-disable-next-line no-underscore-dangle
-        if (previousDateTime._a[3] === 3 && flag) {
+        if (previousDateTime && previousDateTime._a[3] === 3 && flag) {
           updatedDateTime.add(1, 'hours');
           flag = false;
         }
       }
 
       // eslint-disable-next-line no-underscore-dangle
-      if (this.prevDateTime._a[3] === 2 && this.prevDateTime.hours() === 3) {
+      if (this.prevDateTime && this.prevDateTime._a[3] === 2 && this.prevDateTime.hours() === 3) {
         updatedDateTime.subtract(1, 'hours');
       }
 
