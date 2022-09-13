@@ -206,7 +206,11 @@ class Tabs extends React.Component {
 
       if (responsiveTo === 'parent' || responsiveTo === 'window') {
         const collapsedTabs = (
-          <CollapsedTabs activeKey={activeKey || this.state.activeKey} onTruncationChange={this.handleTruncationChange}>
+          <CollapsedTabs
+            activeKey={activeKey || this.state.activeKey}
+            activeIndex={this.getActiveTabIndex()}
+            onTruncationChange={this.handleTruncationChange}
+          >
             {clonedPanes}
           </CollapsedTabs>
         );

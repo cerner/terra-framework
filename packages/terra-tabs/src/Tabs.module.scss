@@ -5,6 +5,12 @@
 @import './orion-fusion-theme/Tabs.module';
 
 :local {
+  .active-tab-icon {  
+    svg {
+      font-size: initial !important;
+    }
+  }
+  
   .tabs-container {
     width: 100%;
   }
