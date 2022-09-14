@@ -4,7 +4,8 @@ import Field from 'terra-form-field';
 import DateTimePicker from 'terra-date-time-picker';
 
 const DateTimePickerExampleDST = () => {
-  const [dateTime, setDateTime] = useState(moment().format());
+  const initialValue = moment().tz('America/Chicago').format();
+  const [dateTime, setDateTime] = useState(initialValue);
 
   const handleDateTimeChange = (event, dateTimeValue) => {
     setDateTime(dateTimeValue);
@@ -72,7 +73,8 @@ const DateTimePickerExampleDST = () => {
           name="date-time-picker-example"
           dateInputAttributes={{ id: 'dst-picker' }}
           onChange={handleDateTimeChange}
-          value={moment().format()}
+          value={initialValue}
+          initialTimeZone="America/Chicago"
         />
       </Field>
     </div>

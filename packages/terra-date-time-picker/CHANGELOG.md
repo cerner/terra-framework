@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Fixed Keyboard navigation when moving over the start day of DST.
+
 ## 4.76.0 - (July 27, 2022)
 
 * Changed
