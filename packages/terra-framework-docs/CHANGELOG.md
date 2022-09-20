@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.10.0 - (September 20, 2022)
+
 * Changed
   * Updated DST example for `terra-date-time-picker`.
 
