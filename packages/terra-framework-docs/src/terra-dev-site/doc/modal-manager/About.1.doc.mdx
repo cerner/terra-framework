@@ -53,6 +53,11 @@ s
 
 The `disclosureAccessory` prop allows consumers of the ModalManager to render a static component above the disclosed modal content. The provided component will be rendered below the standard ActionHeader and above the disclosed content. This can be used to easily provide additional context to every disclosed component. This component is provided once to the ModalManager instance, not on a per-disclosure basis, and each component in the disclosure stack will be decorated with the same accessory component.
 
+## ModalManager Height & Width
+
+- The String size desired for the disclosure. One of `tiny`, `small`, `medium`, `large`, `huge`, or `fullscreen`. The functional implementation of this size is determined by the rendering component. `size` should not be provided if `dimensions` are specified.
+- An Object containing explicit `height` and `width` values for the disclosure. These values may not be honored due to the disclosure type or the available viewport size. `dimensions` should not be provided if a `size` is specified.<br />Supported `height` values include: `'240'`, `'420'`, `'600'`, `'690'`, `'780'`, `'870'`, `'960'`, `'1140'`.<br />Supported `width` values include: `'320'`, `'480'`, `'640'`, `'800'`, `'960'`, `'1120'`, `'1280'`, `'1440'`, `'1600'`, `'1760'`, `'1920'`.
+
 ## Component Features
 
 * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)

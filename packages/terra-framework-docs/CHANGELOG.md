@@ -21,6 +21,7 @@
 ## 1.8.0 - (March 15, 2022)
 
 * Changed
+  * Migrated docs from terra-modal-manager
   * Migrated docs from terra-date-input
   * Migrated docs from terra-collapsible-menu-view
   * Migrated docs from terra-date-picker
