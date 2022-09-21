@@ -197,6 +197,7 @@ class DateTimePicker extends React.Component {
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.dateTimePickerContainer = React.createRef();
     this.containerHasFocus = false;
+    this.prevDateTime = DateTimeUtils.createSafeDate(props.value, this.initialTimeZone);
   }
 
   componentDidMount() {
@@ -297,6 +298,33 @@ class DateTimePicker extends React.Component {
       const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateTimeUtils.createSafeDate(formattedDate, this.initialTimeZone);
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue, this.props.showSeconds);
 
+      // Conditions to subtract an hour when date is moved past the start of DST when navigating using keyboard shortcut keys.
+      if (previousDateTime.isDST() && previousDateTime.hours() === 3) {
+        let isHourSubtracted = false;
+        if (!updatedDateTime.isDST()) {
+          updatedDateTime.subtract(1, 'hours');
+          isHourSubtracted = true;
+        }
+
+        if (!previousDateTime.subtract(1, 'days').isDST() && updatedDateTime.isDST()) {
+          updatedDateTime.subtract(1, 'hours');
+          isHourSubtracted = true;
+        }
+
+        // Condition to add back an hour if initial time was 3AM and date is moved past start of DST.
+        // eslint-disable-next-line no-underscore-dangle
+        if (previousDateTime && previousDateTime._a[3] === 3 && isHourSubtracted) {
+          updatedDateTime.add(1, 'hours');
+          isHourSubtracted = false;
+        }
+      }
+
+      // Conditions to subtract an hour when date is moved past the start of DST when using keyboard to input (Numeric Keys and Delete).
+      // eslint-disable-next-line no-underscore-dangle
+      if (this.prevDateTime && this.prevDateTime._a[3] === 2 && this.prevDateTime.hours() === 3) {
+        updatedDateTime.subtract(1, 'hours');
+      }
+
       if (isTimeValid) {
         // Update the timeValue in case the updatedDateTime falls in the missing hour and needs to bump the hour up.
         this.timeValue = DateTimeUtils.getTime(updatedDateTime.format(), this.props.showSeconds, this.initialTimeZone);
@@ -315,6 +343,7 @@ class DateTimePicker extends React.Component {
     this.dateValue = value;
     const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds, this.initialTimeZone));
     if (!validDate) {
+      this.prevDateTime = this.state.dateTime ? this.state.dateTime : this.prevDateTime;
       this.setState({
         dateTime: null,
       });
