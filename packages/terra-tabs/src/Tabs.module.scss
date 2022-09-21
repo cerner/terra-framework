@@ -7,6 +7,7 @@
 :local {
   .active-tab-icon {  
     margin-right: var(--terra-tabs-icon-margin-right, 0.5rem);
+
     svg {
       font-size: var(--terra-tabs-icon-font-size, 1rem) !important;
     }

@@ -5,7 +5,6 @@ import ThemeContext from 'terra-theme-context';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import * as KeyCode from 'keycode-js';
 import { FormattedMessage } from 'react-intl';
-import Spacer from 'terra-spacer';
 import styles from './Tabs.module.scss';
 import Menu from '../../terra-menu/lib/Menu';
 

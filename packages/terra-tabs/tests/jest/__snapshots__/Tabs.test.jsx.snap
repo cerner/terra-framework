@@ -152,9 +152,9 @@ exports[`Tabs Responsiveness correctly applies the theme context className 1`] =
                     <Menu
                       contentWidth="240"
                       headerTitle=""
+                      icon={null}
                       isArrowDisplayed={false}
                       isOpen={false}
-                      icon={null}
                       onRequestClose={[Function]}
                       targetRef={[Function]}
                     >
