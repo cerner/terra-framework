@@ -141,7 +141,6 @@ class TabMenu extends React.Component {
           onRequestClose={this.handleOnRequestClose}
           targetRef={this.getTargetRef}
           isOpen={this.state.isOpen}
-          icon={icon}
         >
           {menuItems}
         </Menu>
