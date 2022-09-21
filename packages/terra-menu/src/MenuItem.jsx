@@ -8,7 +8,6 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import * as KeyCode from 'keycode-js';
-import Spacer from 'terra-spacer';
 import styles from './MenuItem.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -65,9 +64,9 @@ const propTypes = {
   isActive: PropTypes.bool,
 
   /**
-   * Custom icon to display in the menu
+   * Custom icon to display in the item
    */
-  menuIcon: PropTypes.element,
+  icon: PropTypes.element,
 };
 
 const defaultProps = {
@@ -171,7 +170,7 @@ class MenuItem extends React.Component {
       isSelectable,
       subMenuItems,
       isActive,
-      menuIcon,
+      icon,
       ...customProps
     } = this.props;
 
@@ -208,14 +207,14 @@ class MenuItem extends React.Component {
     ]);
 
     let content = textContainer;
-    if (hasChevron || isSelectableMenu || isInstructionsForUse || menuIcon) {
+    if (hasChevron || isSelectableMenu || isInstructionsForUse || icon) {
       let fitStartIcon = null;
       if (isInstructionsForUse) {
         fitStartIcon = <InstructionsForUseIcon className={cx('start-icon')} />;
-      } else if (menuIcon && isSelectableMenu && markAsSelected) {
+      } else if (icon && isSelectableMenu && markAsSelected) {
         fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
-      } else if (menuIcon) {
-        fitStartIcon = (<Spacer marginLeft="small">{menuIcon}</Spacer>);
+      } else if (icon) {
+        fitStartIcon = React.cloneElement(icon, { className: cx('start-icon') });
       } else if (isSelectableMenu) {
         fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
       }

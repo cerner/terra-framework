@@ -109,7 +109,7 @@ class TabMenu extends React.Component {
           isSelected={isSelected}
           isSelectable
           key={child.key}
-          menuIcon={(showIconInTabAndMenuWhenCollapsed) ? icon : null}
+          icon={(showIconInTabAndMenuWhenCollapsed) ? icon : null}
         />
       ));
     });
@@ -117,7 +117,7 @@ class TabMenu extends React.Component {
     let icon = null;
     if (this.props.selectedTab) {
       if (this.props.selectedTab.props.icon && this.props.selectedTab.props.showIconInTabAndMenuWhenCollapsed) {
-        icon = (<Spacer className={cx('active-tab-icon')} marginRight="small">{this.props.selectedTab.props.icon}</Spacer>);
+        icon = <div className={cx('active-tab-icon')}>{this.props.selectedTab.props.icon}</div>;
       }
     }
 
@@ -142,7 +142,7 @@ class TabMenu extends React.Component {
           onRequestClose={this.handleOnRequestClose}
           targetRef={this.getTargetRef}
           isOpen={this.state.isOpen}
-          menuIcon={icon}
+          icon={icon}
         >
           {menuItems}
         </Menu>

@@ -34,7 +34,6 @@
     "terra-icon": "^3.19.0",
     "terra-list": "^4.0.0",
     "terra-popup": "^6.61.0",
-    "terra-spacer": "^3.0.0",
     "terra-theme-context": "^1.8.0"
   },
   "devDependencies": {

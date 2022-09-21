@@ -154,7 +154,7 @@ exports[`Tabs Responsiveness correctly applies the theme context className 1`] =
                       headerTitle=""
                       isArrowDisplayed={false}
                       isOpen={false}
-                      menuIcon={null}
+                      icon={null}
                       onRequestClose={[Function]}
                       targetRef={[Function]}
                     >

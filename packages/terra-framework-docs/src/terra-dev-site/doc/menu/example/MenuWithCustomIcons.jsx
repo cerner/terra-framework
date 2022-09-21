@@ -121,7 +121,7 @@ class MenuWithCustomIcons extends React.Component {
               isSelected={this.state.errorSelected}
               isSelectable
               onClick={this.handleErrorClick}
-              menuIcon={<IconError className={cx('start-icon')} />}
+              icon={<IconError className={cx('start-icon')} />}
             />
             <Menu.Item
               text="Alert Icon"
@@ -129,7 +129,7 @@ class MenuWithCustomIcons extends React.Component {
               isSelected={this.state.alertSelected}
               isSelectable
               onClick={this.handleAlertClick}
-              menuIcon={<IconAlert className={cx('start-icon')} />}
+              icon={<IconAlert className={cx('start-icon')} />}
             />
             <Menu.Item
               text="Warning Icon"
@@ -137,7 +137,7 @@ class MenuWithCustomIcons extends React.Component {
               isSelected={this.state.warningSelected}
               isSelectable
               onClick={this.handleWarningClick}
-              menuIcon={<IconWarning className={cx('start-icon')} />}
+              icon={<IconWarning className={cx('start-icon')} />}
             />
             <Menu.Item
               text="Help Icon"
@@ -145,7 +145,7 @@ class MenuWithCustomIcons extends React.Component {
               isSelected={this.state.helpSelected}
               isSelectable
               onClick={this.handleHelpClick}
-              menuIcon={<IconHelp className={cx('start-icon')} />}
+              icon={<IconHelp className={cx('start-icon')} />}
             />
             <Menu.Item
               text="Required Icon"
@@ -153,7 +153,7 @@ class MenuWithCustomIcons extends React.Component {
               isSelected={this.state.requiredSelected}
               isSelectable
               onClick={this.handleRequiredClick}
-              menuIcon={<IconRequired className={cx('start-icon')} />}
+              icon={<IconRequired className={cx('start-icon')} />}
             />
           </Menu>
           <Button onClick={this.handleButtonClick} text="Help" />

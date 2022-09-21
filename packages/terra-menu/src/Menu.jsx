@@ -61,7 +61,7 @@ const propTypes = {
   /**
    * Custom icon to display in the menu
    */
-  menuIcon: PropTypes.element,
+  icon: PropTypes.element,
 };
 
 const defaultProps = {
@@ -129,7 +129,7 @@ class Menu extends React.Component {
       targetRef,
       isArrowDisplayed,
       contentWidth,
-      menuIcon,
+      icon,
       ...customProps
     } = this.props;
     const arrowClass = cx([
@@ -156,7 +156,7 @@ class Menu extends React.Component {
         boundingRef={boundingRef}
         isFocused={index === visiblePage}
         headerTitle={this.props.headerTitle}
-        menuIcon={menuIcon}
+        icon={icon}
       >
         {item.props.children || item.props.subMenuItems}
       </MenuContent>
