@@ -53,10 +53,14 @@ s
 
 The `disclosureAccessory` prop allows consumers of the ModalManager to render a static component above the disclosed modal content. The provided component will be rendered below the standard ActionHeader and above the disclosed content. This can be used to easily provide additional context to every disclosed component. This component is provided once to the ModalManager instance, not on a per-disclosure basis, and each component in the disclosure stack will be decorated with the same accessory component.
 
-## ModalManager Height & Width
+## ModalManager Dynamic Height Support With Limitations
 
-- The String size desired for the disclosure. One of `tiny`, `small`, `medium`, `large`, `huge`, or `fullscreen`. The functional implementation of this size is determined by the rendering component. `size` should not be provided if `dimensions` are specified.
-- An Object containing explicit `height` and `width` values for the disclosure. These values may not be honored due to the disclosure type or the available viewport size. `dimensions` should not be provided if a `size` is specified.<br />Supported `height` values include: `'240'`, `'420'`, `'600'`, `'690'`, `'780'`, `'870'`, `'960'`, `'1140'`.<br />Supported `width` values include: `'320'`, `'480'`, `'640'`, `'800'`, `'960'`, `'1120'`, `'1280'`, `'1440'`, `'1600'`, `'1760'`, `'1920'`.
+In Terra-Model-manager intentionally do not have dynamic height, as it posed technical limitations with not being able to also allow for popups and conditionally positioned UI elements like the dropdowns within a select, as well as not handling responsive design alternate layouts without extensive browser redrawing/calculations that would result in poor performance.
+
+When the set sizes of the modal's width -or- height is larger than the available device-screen/viewport (e.g. if you shrink down your window smaller than what the modal size was set to be), at that point the modal-manager is like the dialog-modal in that they both then "stick" near to the edge of the viewport as it's outer size, and then if the inner content has not been built responsively (it should be), it will force internal scrolling.
+
+The modal-manager never grows or changes sizes in response to the content, mainly because the content should be built to respond to the outer size of the modal container using the original fixed size, and then alternate designs for when smaller.
+>Key thing to remember - the Modal-Manger works based on the `outside-in` layout principal, which allows the inside content to "respond" to when the outside container changes to be smaller/larger in size.
 
 ## Component Features
 
