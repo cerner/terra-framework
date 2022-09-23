@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * updating docs for disclosure-manager and modal-manager for modal-sizing explainations
+
 ## 1.8.3 - (July 5, 2022)
 
 * Changed
@@ -21,7 +24,6 @@
 ## 1.8.0 - (March 15, 2022)
 
 * Changed
-  * Migrated docs from terra-modal-manager
   * Migrated docs from terra-date-input
   * Migrated docs from terra-collapsible-menu-view
   * Migrated docs from terra-date-picker
