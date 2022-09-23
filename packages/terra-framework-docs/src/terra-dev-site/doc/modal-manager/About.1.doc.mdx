@@ -1,3 +1,4 @@
+import { Notice } from '@cerner/terra-docs';
 import { Badge } from 'terra-modal-manager/package.json?dev-site-package';
 
 import ModalManagerExample from './example/ModalManagerExample?dev-site-example';
@@ -11,6 +12,12 @@ import ModalManagerPropsTable from 'terra-modal-manager/src/ModalManager?dev-sit
 The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal.
 
 ModalManager provides the ability to handle and navigate stacked disclosures.
+
+<Notice variant="important" ariaLevel="3">
+
+ For applications that utilize Terra Application, use the [ModelManager](https://engineering.cerner.com/terra-ui/application/terra-application/components/modal-manager) and [DisclosureManagerContext](https://engineering.cerner.com/terra-ui/application/terra-application/contexts/disclosure-manager-context) provided by terra-application instead of using terra-modal-manager directly.
+
+</Notice>
 
 ## Getting Started
 
@@ -34,14 +41,15 @@ This component requires the following peer dependencies be installed in your app
 ```jsx
 import ModalManager, { disclosureType } from 'terra-modal-manager';
 ```
+## Details
 
-## Implementation Requirements
+### Implementation Requirements
 
 The ModalManager utilizes the DisclosureManager API to manage disclosure requests. The components provided as children to the ModalManager, and the components disclosed within it, must interface with the ModalManager's context using the `withDisclosureManager()` higher-order component generator provided by the `terra-disclosure-manager` package. Alternatively, `DisclosureManagerContext` can be consumed directly using the `useContext` hook.
 
-The ModalManager responds to `"modal"` disclosure type requests. Components that wish to disclose content using the ModalManager should provide a preferred type of `"modal"`. This value is exported from the package as `disclosureType`. Please see the [DisclosureManager API documentation](https://engineering.cerner.com/terra-ui/#/components/terra-disclosure-manager/disclosure-manager/disclosure-manager-api) for a full description of the ModalManager's capabilities.
+The ModalManager responds to `"modal"` disclosure type requests. Components that wish to disclose content using the ModalManager should provide a preferred type of `"modal"`. This value is exported from the package as `disclosureType`. Please see the [DisclosureManager API documentation](https://engineering.cerner.com/terra-ui/components/cerner-terra-framework-docs/discosure-manager/disclosure-manager/disclosure-manager-api) for a full description of the ModalManager's capabilities.
 
-## DisclosureManagerHeaderAdapter Support
+### DisclosureManagerHeaderAdapter Support
 
 If a component disclosed by the ModalManager renders a `DisclosureManagerHeaderAdapter`, the ModalManager will render an ActionHeader and provide the standard disclosure navigation controls (close, go back, etc.) within it. The disclosed component can use the `DisclosureManagerHeaderAdapter` to inject its own title and CollapsibleButtonView into the ActionHeader.
 
@@ -49,18 +57,67 @@ If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter
 s
 > Note: The DisclosureManagerHeaderAdapter is the preferred way to present a header within the ModalManager. In a future major release, the ModalManager will **always** render the header and navigation controls, regardless of the presence of a DisclosureManagerHeaderAdapter.
 
-## Disclosure Accessory
+### Disclosure Accessory
 
 The `disclosureAccessory` prop allows consumers of the ModalManager to render a static component above the disclosed modal content. The provided component will be rendered below the standard ActionHeader and above the disclosed content. This can be used to easily provide additional context to every disclosed component. This component is provided once to the ModalManager instance, not on a per-disclosure basis, and each component in the disclosure stack will be decorated with the same accessory component.
 
-## ModalManager Dynamic Height Support With Limitations
+### Static Height vs. Dynamic Height
 
-In Terra-Model-manager intentionally do not have dynamic height, as it posed technical limitations with not being able to also allow for popups and conditionally positioned UI elements like the dropdowns within a select, as well as not handling responsive design alternate layouts without extensive browser redrawing/calculations that would result in poor performance.
+Terra-Model-Manager was intentionally designed to have static preset heights in order to work in conjunction with Terra content that can adjust responsively using the [terra-responsive-element](https://engineering.cerner.com/terra-ui/components/cerner-terra-core-docs/responsive-element/about), as well as any conditionally positioned UI elements like a [popup](https://engineering.cerner.com/terra-ui/components/cerner-terra-framework-docs/popup/popup), [multi-select dropdown](https://engineering.cerner.com/terra-ui/components/cerner-terra-core-docs/form-select/multi-select), or [date picker](https://engineering.cerner.com/terra-ui/components/cerner-terra-framework-docs/date-picker/date-picker). Having static preset heights allows for Terra to quickly present modal content without requiring extensive browser multiple-render drawing calculations that results in poor application performance.
 
-When the set sizes of the modal's width -or- height is larger than the available device-screen/viewport (e.g. if you shrink down your window smaller than what the modal size was set to be), at that point the modal-manager is like the dialog-modal in that they both then "stick" near to the edge of the viewport as it's outer size, and then if the inner content has not been built responsively (it should be), it will force internal scrolling.
+Some may be used to other libraries that commonly offer simple modals that can adjust the modal's height dynamically based on the content provided, but those situations only work well for when content is designed for a single presentation (i.e. is not responsive), and ones that have no higher z-index layers that require position calculation relative to the base content (i.e. no popups with pointers).
 
-The modal-manager never grows or changes sizes in response to the content, mainly because the content should be built to respond to the outer size of the modal container using the original fixed size, and then alternate designs for when smaller.
->Key thing to remember - the Modal-Manger works based on the `outside-in` layout principal, which allows the inside content to "respond" to when the outside container changes to be smaller/larger in size.
+### Creating Modal Content
+
+The Modal-Manager is intended for content which has regularly composed & designed layouts, including responsive variations. It is very grid-based, so it comes with standard heights and widths to accommodate the highly-structured assembly of content.
+
+When the preset size of the modal's width or height is _larger_ than the available device-screen or viewport (e.g. if you shrink down your window smaller than what the modal size was set to be), at that point the modal-manager will then "stick" near to the edge of the viewport as it's outer size and not flow offscreen. It is recommended to build the inner content with a responsive design, so when the modal is smaller than it’s preset size, the content will then know to adapt and adjust to alternate layouts accordingly to the new maximum available height and/or width as the outer size. If content is not built responsively, or if you intentionally build the content to overflow in one direction, it will then force scrolling inside of the modal. Scrolling is perfectly acceptable, but should be limited to one direction, preferably vertical-only.
+
+The key thing to remember is that the Modal-Manager, similar to a page layout, works based on the "**outside-in**" layout principal, which allows the _inside_ content to respond when the _outside_ container changes in size.  The Modal-Manager unfortunately cannot simultaneously also follow the "**inside-out**" layout principal, which would mean the _outside_ container height grows or shrinks based on the _inside_ content size.  The reason is that the inside content cannot dictate what size it would like to be at the same as as listening for when it no longer has any space remaining, which is required in order to be able to change itself to a new layout, and cannot do both (or at least not without attempting many redraws). Designers are encouraged to create structured and grid based layout designs that work well for the modal layout size options that best utilize space, similar to designing base pages within applications.
+
+### Sizing: Height & Width Options
+
+The Terra-Modal-Manager has two methods of setting the preferred modal height & width. The first method is by choosing from a list of easy shorthand size options that combine a predefined height and width pair, which works standard application screen ratios. The second method is more advanced and provides the ability to choose from a list of grid-based dimensions to set the height and width independently. _(Note: all values used for Modal-Manager are true pixels and not rem (relative em) units.)_
+
+Using the `size` prop within the [disclose argument API](/components/cerner-terra-framework-docs/discosure-manager/disclosure-manager/disclosure-manager-api#disclose-props) allows the consumer to provide a simpler implementation to set the modal preferred dimension, and typically might be used for common application disclosures of similarly sized content. _(Note: `size` should not be provided if `dimensions` are specified.)_
+
+| `size` prop: Shorthand options | pixel dimensions |
+|---|---|
+| `tiny` | w: 320px, h: 240px |
+| `small` | w: 640px, h: 420px |
+| `medium` | w: 960px, h: 600px |
+| **default** | w: 1120px, h: 690px _(modal size if no other details are provided)_ |
+| `large` | w: 1280px, h: 870px |
+| `huge` | w: 1600px, h: 960px |
+| `fullscreen` | w: screen width less ~10px, h: screen height less ~10px |
+
+For application content that needs more specific dimensional control of modal sizes, using the `dimension` prop within the [disclose argument API](/components/cerner-terra-framework-docs/discosure-manager/disclosure-manager/disclosure-manager-api#disclose-props) will be the implementation to choose. Consumers supply a simple object that contains both height wand width values: `{ height: '480', width: '600' }`. _(Note: `dimensions` should not be provided if a `size` is specified.)_
+
+| `dimensions` prop: Width options | pixel dimensions |
+|---|---|
+| `width: '320'` | w: 320px, h: -- |
+| `width: '480'` | w: 480px, h: -- |
+| `width: '560'` | w: 560px, h: -- |
+| `width: '640'` | w: 640px, h: -- |
+| `width: '800'` | w: 800px, h: -- |
+| `width: '960'` | w: 960px, h: -- |
+| `width: '1120'` | w: 1120px, h: -- |
+| `width: '1280'` | w: 1280px, h: -- |
+| `width: '1440'` | w: 1440px, h: -- |
+| `width: '1600'` | w: 1600px, h: -- |
+| `width: '1760'` | w: 1760px, h: -- |
+| `width: '1920'` | w: 1920px, h: -- |
+
+| `dimensions` prop: Height options | pixel dimensions |
+|---|---|
+| `height: '240'` | w: --, h: 240px |
+| `height: '420'` | w: --, h: 420px |
+| `height: '600'` | w: --, h: 600px |
+| `height: '690'` | w: --, h: 690px |
+| `height: '780'` | w: --, h: 780px |
+| `height: '870'` | w: --, h: 870px |
+| `height: '960'` | w: --, h: 960px |
+| `height: '1140'` | w: --, h: 1140px |
 
 ## Component Features
 
