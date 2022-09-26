@@ -988,7 +988,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
         });
 
         describe('in DST', () => {
-          it('should should skip the DST Spring hour ', () => {
+          it('should skip the DST Spring hour ', () => {
             browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst');
             browser.refresh();
             $('input[name="terra-date-year-input"]').click();
@@ -1010,7 +1010,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
             expect($('input[name="terra-time-minute-input"]')).toHaveValue('59');
           });
 
-          it('should should skip the DST Spring hour - Twelve Hour', () => {
+          it('should skip the DST Spring hour - Twelve Hour', () => {
             browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst-twelve-hour');
             browser.refresh();
             $('input[name="terra-date-year-input"]').click();
@@ -1032,7 +1032,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
             expect($('input[name="terra-time-minute-input"]')).toHaveValue('59');
           });
 
-          it('should should not trigger the Time Clarification dialog', () => {
+          it('should not trigger the Time Clarification dialog', () => {
             browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst');
             browser.refresh();
             $('input[name="terra-date-year-input"]').click();
@@ -1052,7 +1052,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
             Terra.validates.element('- keyboard shortcut blurring results in dialog', { selector: '#root' });
           });
 
-          it('should should not trigger the Time Clarification dialog - Twelve Hour', () => {
+          it('should not trigger the Time Clarification dialog - Twelve Hour', () => {
             browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst-twelve-hour');
             browser.refresh();
             $('input[name="terra-date-year-input"]').click();
@@ -1072,7 +1072,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
             Terra.validates.element('- keyboard shortcut blurring results in dialog - Twelve Hour', { selector: '#root' });
           });
 
-          it('should should leave DST Fall time clarified hour', () => {
+          it('should leave DST Fall time clarified hour', () => {
             browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst');
             browser.refresh();
             $('input[name="terra-date-year-input"]').click();
@@ -1098,7 +1098,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
             expect($('input[name="terra-time-minute-input"]')).toHaveValue('59');
           });
 
-          it('should should leave DST Fall time clarified hour - Twelve Hour', () => {
+          it('should leave DST Fall time clarified hour - Twelve Hour', () => {
             browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst-twelve-hour');
             browser.refresh();
             $('input[name="terra-date-year-input"]').click();
@@ -1307,7 +1307,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
         });
 
         describe('in DST', () => {
-          it('should should skip the DST Spring hour ', () => {
+          it('should skip the DST Spring hour ', () => {
             browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst');
             browser.refresh();
             $('input[name="terra-date-year-input"]').click();
@@ -1329,7 +1329,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
             expect($('input[name="terra-time-minute-input"]')).toHaveValue('00');
           });
 
-          it('should should skip the DST Spring hour - Twelve Hour', () => {
+          it('should skip the DST Spring hour - Twelve Hour', () => {
             browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst-twelve-hour');
             browser.refresh();
             $('input[name="terra-date-year-input"]').click();
@@ -1351,7 +1351,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
             expect($('input[name="terra-time-minute-input"]')).toHaveValue('00');
           });
 
-          it('should should not trigger the Time Clarification dialog', () => {
+          it('should not trigger the Time Clarification dialog', () => {
             browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst');
             browser.refresh();
             $('input[name="terra-date-year-input"]').click();
@@ -1371,7 +1371,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
             Terra.validates.element('+ keyboard shortcut blurring results in dialog', { selector: '#root' });
           });
 
-          it('should should not trigger the Time Clarification dialog - Twelve Hour', () => {
+          it('should not trigger the Time Clarification dialog - Twelve Hour', () => {
             browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst-twelve-hour');
             browser.refresh();
             $('input[name="terra-date-year-input"]').click();
@@ -1391,7 +1391,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
             Terra.validates.element('+ keyboard shortcut blurring results in dialog - Twelve Hour', { selector: '#root' });
           });
 
-          it('should should leave DST Fall time clarified hour', () => {
+          it('should leave DST Fall time clarified hour', () => {
             browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst');
             browser.refresh();
             $('input[name="terra-date-year-input"]').click();
@@ -1417,7 +1417,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
             expect($('input[name="terra-time-minute-input"]')).toHaveValue('00');
           });
 
-          it('should should leave DST Fall time clarified hour  - Twelve Hour', () => {
+          it('should leave DST Fall time clarified hour  - Twelve Hour', () => {
             browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst-twelve-hour');
             browser.refresh();
             $('input[name="terra-date-year-input"]').click();
@@ -1441,6 +1441,30 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
             expect($('input[name="terra-date-day-input"]')).toHaveValue('06');
             expect($('input[name="terra-time-hour-input"]')).toHaveValue('02');
             expect($('input[name="terra-time-minute-input"]')).toHaveValue('00');
+          });
+
+          it('should show the correct time when the day moves past the start date of  DST', () => {
+            browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default-dst');
+            browser.refresh();
+            $('input[name="terra-date-year-input"]').click();
+            browser.keys('2020');
+            $('input[name="terra-date-month-input"]').click();
+            browser.keys('03');
+            $('input[name="terra-date-day-input"]').click();
+            browser.keys('07');
+            $('input[name="terra-time-hour-input"]').click();
+            browser.keys('02');
+            $('input[name="terra-time-minute-input"]').click();
+            browser.keys('30');
+            $('input[name="terra-date-day-input"]').click();
+            browser.keys('+');
+            browser.keys('-');
+
+            expect($('input[name="terra-date-year-input"]')).toHaveValue('2020');
+            expect($('input[name="terra-date-month-input"]')).toHaveValue('03');
+            expect($('input[name="terra-date-day-input"]')).toHaveValue('07');
+            expect($('input[name="terra-time-hour-input"]')).toHaveValue('02');
+            expect($('input[name="terra-time-minute-input"]')).toHaveValue('30');
           });
         });
       });

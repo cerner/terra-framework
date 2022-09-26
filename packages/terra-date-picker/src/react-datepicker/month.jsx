@@ -43,7 +43,7 @@ export default class Month extends React.Component {
     /**
      * Highlight range of dates with custom classes.
      */
-    highlightDates: PropTypes.instanceOf(Map),
+    highlightDates: PropTypes.instanceOf(WeakMap),
     /**
      * Show dates only in the given array.
      */
