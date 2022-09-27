@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.11.0 - (September 27, 2022)
+
 * Added
   * updating docs for disclosure-manager and modal-manager for modal-sizing explainations
 
