@@ -104,7 +104,6 @@ const ApplicationHeaderLayout = ({
   if (headerInner || logoElement || utilitiesElement) {
     headerBody = (
       <div className={cx('fill', 'header-body')}>
-        {skipToContentButton}
         {logoElement}
         {headerInner}
         {utilitiesElement}
@@ -114,6 +113,7 @@ const ApplicationHeaderLayout = ({
 
   return (
     <div {...customProps} className={headerClassNames}>
+      {skipToContentButton}
       {headerToggle}
       {headerBody}
     </div>
