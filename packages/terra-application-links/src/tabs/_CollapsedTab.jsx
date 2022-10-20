@@ -142,6 +142,7 @@ class CollapseTab extends Component {
         {...customProps}
         {...tabAttr}
         role="menuitem"
+        tabIndex="0"
         className={tabClassNames}
         onClick={this.handleOnClick}
         onKeyDown={this.handleKeyDown}

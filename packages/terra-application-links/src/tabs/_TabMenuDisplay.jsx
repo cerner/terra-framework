@@ -124,8 +124,9 @@ class TabMenuDisplay extends React.Component {
       <div
         {...customProps}
         {...attributes}
-        role="tab"
+        role="button"
         tabIndex="0"
+        aria-haspopup="menu"
         className={displayClassNames}
         ref={(node) => { this.contentNode = node; this.props.refCallback(node); }}
         onKeyDown={this.handleKeyDown}
