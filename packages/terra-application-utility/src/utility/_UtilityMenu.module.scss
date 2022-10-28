@@ -42,6 +42,7 @@
     display: flex;
     justify-content: space-between;
     min-height: var(--terra-application-utility-header-type-menu-header-min-height);
+    flex-direction: row-reverse;
   }
 
   .header-utility-menu-content-container {

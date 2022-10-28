@@ -134,6 +134,7 @@ class UtilityButton extends React.Component {
     return (
       <button
         type="button"
+        aria-haspopup="menu"
         {...customProps}
         className={utilityClassNames}
         onClick={(event) => { this.handleOnClick(event); }}
