@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed broken links in documentation.
+
 ## 1.59.2 - (March 15, 2022)
 
 * Changed
