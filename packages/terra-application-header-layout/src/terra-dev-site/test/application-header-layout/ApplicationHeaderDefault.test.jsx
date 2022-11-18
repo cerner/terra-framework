@@ -12,7 +12,7 @@ const ApplicationHeaderDefault = () => (
     extensions={<div id="test-extensions">Extensions&nbsp;</div>}
     navigation={<div className={cx('test-navigation')} id="test-navigation">Navigation&nbsp;</div>}
     logo={<div id="test-logo">Logo&nbsp;</div>}
-    toggle={<div id="test-toggle" className={cx('test-toggle')} tabIndex={0}>Toggle&nbsp;</div>}
+    toggle={<div id="test-toggle" className={cx('test-toggle')} tabIndex={0}>Toggle&nbsp;</div>} // eslint-disable-line jsx-a11y/no-noninteractive-tabindex
     utilities={<div id="test-utilities">Utilities&nbsp;</div>}
   />
 );
