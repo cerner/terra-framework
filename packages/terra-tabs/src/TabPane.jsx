@@ -41,7 +41,7 @@ const propTypes = {
    */
   isActive: PropTypes.bool,
   /**
-   * If enabled, this prop will show the icon when the tab is collapsed when it is selected and in the drop down menu.
+   * If enabled, this prop will show the icon on the tab and also in the menu if pane is collapsed.
    */
   showIconInTabAndMenuWhenCollapsed: PropTypes.bool,
 };

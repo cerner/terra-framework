@@ -17,7 +17,7 @@ const childContextTypes = {
   isGroupItem: PropTypes.bool,
 };
 
-const initialSingleSelectedIndex = (children) => {
+const initialSingleToggledIndex = (children) => {
   const childArray = React.Children.toArray(children);
   for (let i = 0; i < childArray.length; i += 1) {
     if (childArray[i].props.isSelected) {
@@ -31,18 +31,18 @@ class MenuItemGroup extends React.Component {
   constructor(props) {
     super(props);
     this.cloneChildren = this.cloneChildren.bind(this);
-    this.handleItemSelection = this.handleItemSelection.bind(this);
-    this.state = { selectedIndex: initialSingleSelectedIndex(props.children) };
+    this.handleItemToggled = this.handleItemToggled.bind(this);
+    this.state = { toggledIndex: initialSingleToggledIndex(props.children) };
   }
 
   getChildContext() {
     return { isGroupItem: true };
   }
 
-  handleItemSelection(event, metaData) {
-    if (this.state.selectedIndex !== metaData.index) {
+  handleItemToggled(event, metaData) {
+    if (this.state.toggledIndex !== metaData.index) {
       event.preventDefault();
-      this.setState({ selectedIndex: metaData.index });
+      this.setState({ toggledIndex: metaData.index });
       if (this.props.onChange) {
         this.props.onChange(event, metaData.index);
       }
@@ -51,15 +51,15 @@ class MenuItemGroup extends React.Component {
 
   cloneChildren(children) {
     return React.Children.map(children, (child, index) => {
-      let isSelectable = true;
-      if (child.props.isSelectable === false) {
-        isSelectable = false;
+      let isToggleable = true;
+      if (child.props.isToggleable === false && child.props.isSelectable === false) {
+        isToggleable = false;
       }
       return React.cloneElement(child, {
-        isSelectable,
-        isSelected: this.state.selectedIndex === index,
-        onClick: Utils.wrappedOnClickForItem(child.props.onClick, this.handleItemSelection, { index }),
-        onKeyDown: Utils.wrappedOnKeyDownForItem(child.props.onKeyDown, this.handleItemSelection, { index }),
+        isToggleable,
+        isToggled: this.state.toggledIndex === index,
+        onClick: Utils.wrappedOnClickForItem(child.props.onClick, this.handleItemToggled, { index }),
+        onKeyDown: Utils.wrappedOnKeyDownForItem(child.props.onKeyDown, this.handleItemToggled, { index }),
       });
     });
   }

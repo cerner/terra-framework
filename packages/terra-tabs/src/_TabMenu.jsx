@@ -109,12 +109,15 @@ class TabMenu extends React.Component {
           isSelectable
           key={child.key}
           icon={(showIconInTabAndMenuWhenCollapsed) ? icon : null}
+          isHighlighted={isSelected && showIconInTabAndMenuWhenCollapsed}
         />
       ));
     });
+
     const theme = this.context;
     let icon = null;
-    if (this.props.selectedTab) {
+    // add icon for tab, but not for the 'More' tab
+    if (toggleText && this.props.selectedTab) {
       if (this.props.selectedTab.props.icon && this.props.selectedTab.props.showIconInTabAndMenuWhenCollapsed) {
         icon = <div className={cx('active-tab-icon')}>{this.props.selectedTab.props.icon}</div>;
       }

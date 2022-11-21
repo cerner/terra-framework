@@ -27,20 +27,10 @@ class MenuWithCustomIcons extends React.Component {
     this.setButtonNode = this.setButtonNode.bind(this);
     this.getButtonNode = this.getButtonNode.bind(this);
     this.handleAction = this.handleAction.bind(this);
-    this.handleCloseOnClick = this.handleCloseOnClick.bind(this);
-    this.handleErrorClick = this.handleErrorClick.bind(this);
-    this.handleAlertClick = this.handleAlertClick.bind(this);
-    this.handleHelpClick = this.handleHelpClick.bind(this);
-    this.handleRequiredClick = this.handleRequiredClick.bind(this);
-    this.handleWarningClick = this.handleWarningClick.bind(this);
+    this.handleOnClick = this.handleOnClick.bind(this);
     this.state = {
       open: false,
       actionClickCount: 0,
-      errorSelected: false,
-      alertSelected: false,
-      helpSelected: false,
-      requiredSelected: false,
-      warningSelected: false,
     };
   }
 
@@ -48,33 +38,8 @@ class MenuWithCustomIcons extends React.Component {
     this.setState({ open: true });
   }
 
-  handleErrorClick(event) {
+  handleOnClick(event) {
     event.preventDefault();
-    this.setState({ errorSelected: !this.state.errorSelected });
-    this.handleRequestClose();
-  }
-
-  handleAlertClick(event) {
-    event.preventDefault();
-    this.setState({ alertSelected: !this.state.alertSelected });
-    this.handleRequestClose();
-  }
-
-  handleHelpClick(event) {
-    event.preventDefault();
-    this.setState({ helpSelected: !this.state.helpSelected });
-    this.handleRequestClose();
-  }
-
-  handleRequiredClick(event) {
-    event.preventDefault();
-    this.setState({ requiredSelected: !this.state.requiredSelected });
-    this.handleRequestClose();
-  }
-
-  handleWarningClick(event) {
-    event.preventDefault();
-    this.setState({ warningSelected: !this.state.warningSelected });
     this.handleRequestClose();
   }
 
@@ -118,45 +83,35 @@ class MenuWithCustomIcons extends React.Component {
             <Menu.Item
               text="Error Icon"
               key="Error"
-              isSelected={this.state.errorSelected}
-              isSelectable
-              onClick={this.handleErrorClick}
-              icon={<IconError className={cx('start-icon')} />}
+              onClick={this.handleOnClick}
+              icon={<IconError />}
             />
             <Menu.Item
               text="Alert Icon"
               key="Alert"
-              isSelected={this.state.alertSelected}
-              isSelectable
-              onClick={this.handleAlertClick}
-              icon={<IconAlert className={cx('start-icon')} />}
+              onClick={this.handleOnClick}
+              icon={<IconAlert />}
             />
             <Menu.Item
               text="Warning Icon"
               key="Warning"
-              isSelected={this.state.warningSelected}
-              isSelectable
-              onClick={this.handleWarningClick}
-              icon={<IconWarning className={cx('start-icon')} />}
+              onClick={this.handleOnClick}
+              icon={<IconWarning />}
             />
             <Menu.Item
               text="Help Icon"
               key="Help"
-              isSelected={this.state.helpSelected}
-              isSelectable
-              onClick={this.handleHelpClick}
-              icon={<IconHelp className={cx('start-icon')} />}
+              onClick={this.handleOnClick}
+              icon={<IconHelp />}
             />
             <Menu.Item
               text="Required Icon"
               key="Required"
-              isSelected={this.state.requiredSelected}
-              isSelectable
-              onClick={this.handleRequiredClick}
-              icon={<IconRequired className={cx('start-icon')} />}
+              onClick={this.handleOnClick}
+              icon={<IconRequired />}
             />
           </Menu>
-          <Button onClick={this.handleButtonClick} text="Help" />
+          <Button onClick={this.handleButtonClick} text="Click Me" />
         </div>
       </div>
     );

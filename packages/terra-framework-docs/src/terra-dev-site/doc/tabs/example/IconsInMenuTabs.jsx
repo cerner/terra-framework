@@ -17,38 +17,38 @@ const cx = classNames.bind(styles);
 
 const IconsOnlyAndInMenuTabs = (props) => {
   const searchTab = (
-    <Tabs.Pane label="Search" icon={<IconSearch />} isIconOnly showIconInTabAndMenuWhenCollapsed key="Search">
+    <Tabs.Pane label="Search" icon={<IconSearch />} showIconInTabAndMenuWhenCollapsed key="Search">
       <TabContent label="Search" />
     </Tabs.Pane>
   );
 
   const requiredTab = (
     // eslint-disable-next-line react/forbid-component-props
-    <Tabs.Pane label="Required" icon={<IconRequired style={{ color: 'red' }} />} isIconOnly showIconInTabAndMenuWhenCollapsed key="Required">
+    <Tabs.Pane label="Required" icon={<IconRequired style={{ color: 'red' }} />} showIconInTabAndMenuWhenCollapsed key="Required">
       <TabContent label="Required" />
     </Tabs.Pane>
   );
 
   const alertTab = (
-    <Tabs.Pane label="Alert" icon={<IconAlert />} isIconOnly showIconInTabAndMenuWhenCollapsed key="Alert">
+    <Tabs.Pane label="Alert" icon={<IconAlert />} showIconInTabAndMenuWhenCollapsed key="Alert">
       <TabContent label="Alert" />
     </Tabs.Pane>
   );
 
   const informationTab = (
-    <Tabs.Pane label="Information" icon={<IconInformation />} isIconOnly showIconInTabAndMenuWhenCollapsed key="Information">
+    <Tabs.Pane label="Information" icon={<IconInformation />} showIconInTabAndMenuWhenCollapsed key="Information">
       <TabContent label="Information" />
     </Tabs.Pane>
   );
 
   const warningTab = (
-    <Tabs.Pane label="Warning" icon={<IconWarning />} isIconOnly showIconInTabAndMenuWhenCollapsed key="Warning">
+    <Tabs.Pane label="Warning" icon={<IconWarning />} showIconInTabAndMenuWhenCollapsed key="Warning">
       <TabContent label="Warning" />
     </Tabs.Pane>
   );
 
   const errorTab = (
-    <Tabs.Pane label="Error" icon={<IconError />} isIconOnly showIconInTabAndMenuWhenCollapsed key="Error">
+    <Tabs.Pane label="Error" icon={<IconError />} showIconInTabAndMenuWhenCollapsed key="Error">
       <TabContent label="Error" />
     </Tabs.Pane>
   );

@@ -14,7 +14,16 @@ const cx = classNamesBind.bind(styles);
 
 const contextTypes = {
   isGroupItem: PropTypes.bool,
+
+  /**
+  * Deprecated - Indicates if the menu should be toggleable, maps to isToggleableMenu.
+  */
   isSelectableMenu: PropTypes.bool,
+
+  /**
+  * Indicates if the menu should be toggleable.
+  */
+  isToggleableMenu: PropTypes.bool,
 };
 
 const propTypes = {
@@ -29,14 +38,14 @@ const propTypes = {
   isDisabled: PropTypes.bool,
 
   /**
-   * Indicates if the item is selected. A selected item is indicated with a checkmark.
-   */
-  isSelected: PropTypes.bool,
+  * Indicates if the item is toggled. A toggled item is indicated with a checkmark.
+  */
+  isToggled: PropTypes.bool,
 
   /**
-   * Indicates if the item should be selectable.
-   */
-  isSelectable: PropTypes.bool,
+  * Indicates if the item should be toggleable.
+  */
+  isToggleable: PropTypes.bool,
 
   /**
    * Displays the  eIFU (electronic instructions for use) icon for menu item if set to true. (This icon is used to indicate Help content that is the equivalent of an instruction manual)
@@ -44,7 +53,7 @@ const propTypes = {
   isInstructionsForUse: PropTypes.bool,
 
   /**
-   * List of Menu.Items to display in a submenu when this item is selected.
+   * List of Menu.Items to display in a submenu when this item is clicked.
    */
   subMenuItems: PropTypes.arrayOf(PropTypes.element),
 
@@ -54,7 +63,7 @@ const propTypes = {
   onClick: PropTypes.func,
 
   /**
-   * Callback function for when selection state changes on a selectable item.
+   * Callback function for when toggleable state changes on a toggleabe item.
    */
   onChange: PropTypes.func,
 
@@ -71,10 +80,10 @@ const propTypes = {
 
 const defaultProps = {
   text: '',
-  isSelected: false,
+  isToggled: false,
   isInstructionsForUse: false,
   isActive: false,
-  isSelectable: undefined,
+  isToggleable: undefined,
   isDisabled: false,
   subMenuItems: [],
 };
@@ -82,13 +91,21 @@ const defaultProps = {
 class MenuItem extends React.Component {
   constructor(props, context) {
     super(props, context);
+    const {
+      isToggled,
+      isToggleable,
+      ...customProps
+    } = this.props;
+
     this.wrapOnClick = this.wrapOnClick.bind(this);
     this.wrapOnKeyDown = this.wrapOnKeyDown.bind(this);
     this.wrapOnKeyUp = this.wrapOnKeyUp.bind(this);
-    this.handleSelection = this.handleSelection.bind(this);
+    this.handleToggled = this.handleToggled.bind(this);
     this.setItemNode = this.setItemNode.bind(this);
+    const toggled = (isToggled || customProps.isSelected);
+    const toggleable = (isToggleable || customProps.isSelectable);
     this.state = {
-      isSelected: props.isSelected && props.isSelectable && !context.isGroupItem,
+      isToggled: toggled && toggleable && !context.isGroupItem,
       isActive: false,
     };
   }
@@ -99,14 +116,21 @@ class MenuItem extends React.Component {
     }
   }
 
-  handleSelection(event) {
+  handleToggled(event) {
     event.preventDefault();
 
-    if (this.props.isSelectable && !this.context.isGroupItem && !this.props.isDisabled) {
-      this.setState(prevState => ({ isSelected: !prevState.isSelected }));
+    const {
+      isToggleable,
+      ...customProps
+    } = this.props;
+
+    const toggleable = (isToggleable || customProps.isSelectable);
+
+    if (toggleable && !this.context.isGroupItem && !this.props.isDisabled) {
+      this.setState(prevState => ({ isToggled: !prevState.isToggled }));
 
       if (this.props.onChange) {
-        this.props.onChange(event, !this.state.isSelected);
+        this.props.onChange(event, !this.state.isToggled);
       }
     }
   }
@@ -118,7 +142,7 @@ class MenuItem extends React.Component {
   }
 
   wrapOnClick(event) {
-    this.handleSelection(event);
+    this.handleToggled(event);
 
     if (this.props.onClick) {
       this.props.onClick(event);
@@ -128,7 +152,7 @@ class MenuItem extends React.Component {
   wrapOnKeyDown(onKeyDown) {
     return ((event) => {
       if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
-        this.handleSelection(event);
+        this.handleToggled(event);
 
         // Only add active style if the menu doesn't have a sub menu to avoid active style being stuck enabled
         if (!(this.props.subMenuItems && this.props.subMenuItems.length > 0)) {
@@ -165,20 +189,24 @@ class MenuItem extends React.Component {
     const {
       text,
       isDisabled,
-      isSelected,
+      isToggled,
       isInstructionsForUse,
-      isSelectable,
+      isToggleable,
       subMenuItems,
       isActive,
       icon,
       ...customProps
     } = this.props;
 
-    const { isGroupItem, isSelectableMenu } = this.context;
-
+    const { isGroupItem, isToggleableMenu, isSelectableMenu } = this.context;
     const attributes = { ...customProps };
+
     attributes.tabIndex = isDisabled ? '-1' : '0';
     attributes['aria-disabled'] = isDisabled;
+
+    const toggled = (isToggled || customProps.isSelected);
+    const toggleable = (isToggleable || customProps.isSelectable);
+    const toggleableMenu = (isToggleableMenu || isSelectableMenu);
 
     // This is passed down by the single select list in group item and not needed
     delete attributes.hasChevron;
@@ -192,13 +220,15 @@ class MenuItem extends React.Component {
       attributes.onKeyUp = this.wrapOnKeyUp(attributes.Up);
     }
 
-    const markAsSelected = this.state.isSelected || (isGroupItem && isSelected);
+    const markAsToggled = this.state.isToggled || (isGroupItem && toggled);
     const textContainer = <div className={cx('text')}>{text}</div>;
     const hasChevron = subMenuItems.length > 0;
 
     const itemClassNames = cx([
       'item',
-      { selected: markAsSelected },
+      { 'is-highlighted': customProps.isHighlighted },
+      { 'is-toggled': markAsToggled },
+      { 'is-toggleable': toggleable },
       { 'is-disabled': isDisabled },
       { 'is-top-level': hasChevron },
       // eslint-disable-next-line quote-props
@@ -207,16 +237,16 @@ class MenuItem extends React.Component {
     ]);
 
     let content = textContainer;
-    if (hasChevron || isSelectableMenu || isInstructionsForUse || icon) {
+    if (hasChevron || toggleableMenu || isInstructionsForUse || icon) {
       let fitStartIcon = null;
       if (isInstructionsForUse) {
         fitStartIcon = <InstructionsForUseIcon className={cx('start-icon')} />;
-      } else if (icon && isSelectableMenu && markAsSelected) {
+      } else if (toggleableMenu && icon) {
+        fitStartIcon = React.cloneElement(icon, { className: cx('start-icon') });
+      } else if (toggleableMenu) {
         fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
       } else if (icon) {
         fitStartIcon = React.cloneElement(icon, { className: cx('start-icon') });
-      } else if (isSelectableMenu) {
-        fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
       }
 
       content = (
@@ -232,14 +262,14 @@ class MenuItem extends React.Component {
     let role = 'menuitem';
     if (isGroupItem) {
       role = 'menuitemradio';
-    } else if (isSelectable) {
+    } else if (toggleable) {
       role = 'menuitemcheckbox';
     }
 
     return (
       <ThemeContext.Consumer>
         { theme => (
-          <li {...attributes} className={classNames(itemClassNames, cx(theme.className))} ref={this.setItemNode} role={role} aria-checked={markAsSelected}>
+          <li {...attributes} className={classNames(itemClassNames, cx(theme.className))} ref={this.setItemNode} role={role} aria-checked={markAsToggled}>
             {content}
           </li>
         )}
