@@ -9,6 +9,10 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
+   * Title of the tab menu list.
+   */
+  title: PropTypes.string,
+  /**
    * The child tabs to be placed in the menu.
    */
   children: PropTypes.node,
@@ -27,6 +31,7 @@ const propTypes = {
 };
 
 const TabMenuList = ({
+  title,
   children,
   isHeightBounded,
   isWidthBounded,
@@ -43,9 +48,10 @@ const TabMenuList = ({
   return (
     <ul
       {...customProps}
+      aria-label={title}
       data-application-tab-menu-content
       className={listClass}
-      role="menu"
+      role="list"
       ref={refCallback}
     >
       {children}

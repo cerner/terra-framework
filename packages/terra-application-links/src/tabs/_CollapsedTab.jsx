@@ -141,7 +141,7 @@ class CollapseTab extends Component {
       <li
         {...customProps}
         {...tabAttr}
-        role="menuitem"
+        role="link"
         tabIndex="0"
         className={tabClassNames}
         onClick={this.handleOnClick}

@@ -31,6 +31,10 @@ const propTypes = {
    */
   text: PropTypes.string,
   /**
+   * The text label read by screenreaders.
+   */
+  ariaLabel: PropTypes.string,
+   /**
    * Ref callback for menu display.
    */
   refCallback: PropTypes.func,
@@ -97,6 +101,7 @@ class TabMenuDisplay extends React.Component {
       popup,
       refCallback,
       text,
+      ariaLabel,
       icon,
       ...customProps
     } = this.props;
@@ -127,6 +132,7 @@ class TabMenuDisplay extends React.Component {
         role="button"
         tabIndex="0"
         aria-haspopup="menu"
+        aria-label={ariaLabel}
         className={displayClassNames}
         ref={(node) => { this.contentNode = node; this.props.refCallback(node); }}
         onKeyDown={this.handleKeyDown}
