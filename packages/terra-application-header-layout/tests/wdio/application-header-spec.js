@@ -10,12 +10,12 @@ Terra.describeViewports('Application Header Layout', ['tiny', 'medium'], () => {
       browser.url('/raw/tests/terra-application-header-layout/application-header-layout/application-header-default');
       $('#test-header').waitForDisplayed();
       browser.keys(['Tab']);
-      Terra.validates.element('Visible', { selector: '#test-header' });
+      Terra.validates.element('skipTo visible', { selector: '#test-header' });
     });
 
-    it('should hide the button after a tab', () => {
-      browser.keys(['Tab', 'Tab']);
-      Terra.validates.element('Not Visible', { selector: '#test-header' });
+    it('should hide the Skip to Content when focused away', () => {
+      browser.keys(['Tab']);
+      Terra.validates.element('skipTo not visible', { selector: '#test-header' });
     });
   });
 

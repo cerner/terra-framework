@@ -62,16 +62,16 @@ exports[`ApplicationHeaderLayout correctly applies the theme context className 1
     <div
       className="header fill clinical-lowlight-theme"
     >
+      <button
+        className="skip-content"
+        onClick={[Function]}
+        type="button"
+      >
+        Terra.ApplicationHeaderLayout.SkipToContent
+      </button>
       <div
         className="fill header-body"
       >
-        <button
-          className="skip-content"
-          onClick={[Function]}
-          type="button"
-        >
-          Terra.ApplicationHeaderLayout.SkipToContent
-        </button>
         <div
           className="fill header-inner"
         />
