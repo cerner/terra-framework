@@ -30,6 +30,13 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
       });
     });
   });
+
+  describe('Menu Item-Icon', () => {
+    it('displays Menu Items with icon', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item/menu-items-with-icons');
+      Terra.validates.element('default icon');
+    });
+  });
 });
 Terra.describeViewports('Menu Item', ['huge'], () => {
   describe('Menu Item-Disabled', () => {

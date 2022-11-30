@@ -242,6 +242,7 @@ class MenuItem extends React.Component {
       if (isInstructionsForUse) {
         fitStartIcon = <InstructionsForUseIcon className={cx('start-icon')} />;
       } else if (toggleableMenu && icon) {
+        // used for when inside a terra-tab, to show icon when tab is selected
         fitStartIcon = React.cloneElement(icon, { className: cx('start-icon') });
       } else if (toggleableMenu) {
         fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
