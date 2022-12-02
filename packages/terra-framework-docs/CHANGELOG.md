@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added 
+  * Added test for invalid date in `terra-date-picker`.
+
 ## 1.11.0 - (September 27, 2022)
 
 * Added
