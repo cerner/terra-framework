@@ -45,6 +45,8 @@ const TabMenuList = ({
     { 'width-bounded': isWidthBounded },
     theme.className,
   ));
+
+  /* eslint-disable jsx-a11y/no-redundant-roles */
   return (
     <ul
       {...customProps}

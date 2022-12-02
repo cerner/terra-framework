@@ -34,7 +34,7 @@ const propTypes = {
    * The text label read by screenreaders.
    */
   ariaLabel: PropTypes.string,
-   /**
+  /**
    * Ref callback for menu display.
    */
   refCallback: PropTypes.func,

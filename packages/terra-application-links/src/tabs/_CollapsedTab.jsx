@@ -137,6 +137,7 @@ class CollapseTab extends Component {
     customProps.className);
     const tabAttr = { 'aria-current': isCurrent };
 
+    /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
     return (
       <li
         {...customProps}

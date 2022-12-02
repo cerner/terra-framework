@@ -107,7 +107,7 @@ class TabMenu extends React.Component {
         refCallback={this.setTargetRef}
         isHidden={this.props.isHidden}
         text={childText || this.props.intl.formatMessage({ id: 'Terra.application.tabs.more' })}
-        ariaLabel={ this.props.intl.formatMessage({ id: 'Terra.application.tabs.moreButtonDescription' }) } 
+        ariaLabel={this.props.intl.formatMessage({ id: 'Terra.application.tabs.moreButtonDescription' })}
         isSelected={isSelected}
         icon={icon}
         key="application-tab-more"
