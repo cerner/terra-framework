@@ -206,7 +206,7 @@ class DatePicker extends React.Component {
       const nextSelectedDate = DateUtil.createSafeDate(nextDateValue, initialTimeZone);
 
       return {
-        selectedDate: nextSelectedDate,
+        selectedDate: nextSelectedDate || prevState.selectedDate,
         prevPropsSelectedDate: nextDateValue,
       };
     }
