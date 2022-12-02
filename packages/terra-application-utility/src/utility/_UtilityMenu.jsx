@@ -335,6 +335,7 @@ class UtilityMenu extends React.Component {
       />
     );
 
+    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     let headerText;
     if (currentItem !== undefined) {
       headerText = currentItem.title;
