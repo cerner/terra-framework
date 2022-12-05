@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * fix for Invalid dates and Excluded dates in `terra-date-picker`.
+
 ## 4.74.0 - (July 27, 2022)
 
 * Fixed

@@ -206,7 +206,7 @@ class DatePicker extends React.Component {
       const nextSelectedDate = DateUtil.createSafeDate(nextDateValue, initialTimeZone);
 
       return {
-        selectedDate: nextSelectedDate,
+        selectedDate: nextSelectedDate || prevState.selectedDate,
         prevPropsSelectedDate: nextDateValue,
       };
     }
@@ -449,11 +449,7 @@ class DatePicker extends React.Component {
         }
       }
     } else {
-      selectedDateInPicker = this.state.selectedDate;
-    }
-
-    if (this.isDefaultDateAcceptable && !this.isDateWithinRange(selectedDateInPicker)) {
-      selectedDateInPicker = undefined;
+      selectedDateInPicker = (this.isDefaultDateAcceptable && !this.isDateWithinRange(selectedDateInPicker)) ? undefined : this.state.selectedDate;
     }
 
     const theme = this.context;
