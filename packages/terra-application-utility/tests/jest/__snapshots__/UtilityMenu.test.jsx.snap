@@ -71,7 +71,7 @@ exports[`UtilityMenu it should pass in a custom prop 1`] = `
       },
     ]
   }
-  menuRole="navigation"
+  menuRole="menu"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   variant="header"
@@ -120,7 +120,7 @@ exports[`UtilityMenu it should render with a read-only menu item 1`] = `
       },
     ]
   }
-  menuRole="navigation"
+  menuRole="menu"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   variant="header"
@@ -217,7 +217,7 @@ exports[`UtilityMenu should render with default props 1`] = `
       },
     ]
   }
-  menuRole="navigation"
+  menuRole="menu"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   variant="header"
@@ -266,7 +266,7 @@ exports[`UtilityMenu should render with isHeightBounded 1`] = `
       },
     ]
   }
-  menuRole="navigation"
+  menuRole="menu"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   variant="header"
@@ -314,7 +314,7 @@ exports[`UtilityMenu should render with onRequestClose set 1`] = `
       },
     ]
   }
-  menuRole="navigation"
+  menuRole="menu"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
