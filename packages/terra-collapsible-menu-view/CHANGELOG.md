@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Updated WDIO screenshots due to terra-menu updates.
 
 ## 6.61.0 - (March 15, 2022)
 

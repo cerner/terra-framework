@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO screenshots due dependency updates.
+
 ## 1.0.1 - (March 15, 2022)
 
 * Changed
