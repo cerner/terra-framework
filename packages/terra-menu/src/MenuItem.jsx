@@ -104,6 +104,7 @@ class MenuItem extends React.Component {
     this.setItemNode = this.setItemNode.bind(this);
     const toggled = (isToggled || customProps.isSelected);
     const toggleable = (isToggleable || customProps.isSelectable);
+
     this.state = {
       isToggled: toggled && toggleable && !context.isGroupItem,
       isActive: false,
@@ -241,11 +242,12 @@ class MenuItem extends React.Component {
       let fitStartIcon = null;
       if (isInstructionsForUse) {
         fitStartIcon = <InstructionsForUseIcon className={cx('start-icon')} />;
-      } else if (toggleableMenu && icon) {
-        // used for when inside a terra-tab, to show icon when tab is selected
-        fitStartIcon = React.cloneElement(icon, { className: cx('start-icon') });
       } else if (toggleableMenu) {
-        fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
+        if (!toggleable && icon) {
+          fitStartIcon = React.cloneElement(icon, { className: cx('start-icon') });
+        } else {
+          fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
+        }
       } else if (icon) {
         fitStartIcon = React.cloneElement(icon, { className: cx('start-icon') });
       }

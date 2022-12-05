@@ -100,16 +100,15 @@ class TabMenu extends React.Component {
         isSelected = true;
         menuActive = true;
       }
+
       menuItems.push((
         <Menu.Item
           {...otherProps}
           text={label}
           onClick={this.wrapOnClick(child)}
-          isSelected={isSelected}
-          isSelectable
           key={child.key}
           icon={(showIconInTabAndMenuWhenCollapsed) ? icon : null}
-          isHighlighted={isSelected && showIconInTabAndMenuWhenCollapsed}
+          isHighlighted={isSelected}
         />
       ));
     });
