@@ -66,7 +66,7 @@ const processMenuItems = (items) => {
 };
 
 const defaultProps = {
-  menuRole: 'navigation',
+  menuRole: 'menu',
 };
 
 const hasChevron = item => item.childKeys && item.childKeys.length > 0;
