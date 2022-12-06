@@ -66,7 +66,7 @@ const processMenuItems = (items) => {
 };
 
 const defaultProps = {
-  menuRole: 'menu',
+  menuRole: 'navigation',
 };
 
 const hasChevron = item => item.childKeys && item.childKeys.length > 0;
@@ -191,7 +191,7 @@ class UtilityMenu extends React.Component {
       const rightInset = this.childrenHasChevron(currentItem);
       let index = -1;
       return (
-        <div className={cx('utility-menu-body')}>
+        <div className={cx('utility-menu-body')} role="menu">
           {currentItem.childKeys.map((key) => {
             if (this.getItem(key).contentLocation !== Utils.LOCATIONS.FOOTER) {
               index += 1;
