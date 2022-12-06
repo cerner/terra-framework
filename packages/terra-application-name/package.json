@@ -1,7 +1,7 @@
 {
   "name": "terra-application-name",
   "main": "lib/ApplicationName.js",
-  "version": "3.41.1",
+  "version": "3.41.2",
   "description": "Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.",
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
     "terra-theme-context": "^1.8.0"
   },
   "devDependencies": {
-    "terra-application-header-layout": "^3.36.1",
+    "terra-application-header-layout": "^3.37.0",
     "terra-application-menu-layout": "^3.31.0",
     "terra-image": "^3.0.0"
   },
