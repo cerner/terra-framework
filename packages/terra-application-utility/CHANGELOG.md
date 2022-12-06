@@ -8,6 +8,11 @@
     * Add `flex-direction: row-reverse` to SCSS in order to make close button the first focusable element in the menu
   * Assign `UtilityMenuItem` component the `menuitem` aria role
 
+## 2.46.2 - (December 6, 2022)
+
+* Changed
+  * Minor dependency version bump
+
 ## 2.46.1 - (March 15, 2022)
 
 * Changed
