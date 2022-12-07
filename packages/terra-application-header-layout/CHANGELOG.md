@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.37.0 - (December 6, 2022)
+
 * Changed
   * Moved "Skip to Content" button to render first at smallest breakpoint.
 
