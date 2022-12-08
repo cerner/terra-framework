@@ -188,7 +188,6 @@ class ApplicationTabs extends React.Component {
       <div {...customProps} className={cx('tabs-wrapper', theme.className)}>
         <div
           className={tabClass}
-          role="tablist"
           ref={this.setContainerNode}
         >
           {visibleTabs}
