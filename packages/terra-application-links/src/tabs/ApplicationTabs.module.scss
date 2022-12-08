@@ -294,7 +294,7 @@
     padding-right: var(--terra-application-links-tabs-collapsed-icon-padding-right, 0.714285714rem);
   }
 
-  .tab-menu-list[role='menu'] {
+  .tab-menu-list[role='list'] {
     background-color: var(--terra-application-links-tabs-menu-content-background-color, transparent);
     color: var(--terra-application-links-tabs-menu-content-color, #1c1f21);
     list-style: none;

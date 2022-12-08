@@ -41,6 +41,7 @@ Cerner Corporation
 - Luissette Figueroa [@lfigueroa]
 - Andrew Shoemake [@ashoemake]
 - Ryan Rickard [@RLRickard]
+- Michael Day [@mumkymikey]
 - Gage Phillips [@gagerdude]
 
 [@tbiethman]: https://github.com/tbiethman
@@ -84,4 +85,5 @@ Cerner Corporation
 [@lfigueroa]: https://github.com/lcf-1
 [@ashoemake]: https://github.com/Andrew-Shoemake
 [@RLRickard]: https://github.com/RLRickard
+[@mumkymikey]: https://github.com/mumkymikey
 [@gagerdude]: https://github.com/gagerdude
