@@ -1,3 +1,5 @@
 {
-  "Terra.application.tabs.more": "Plus"
+  "Terra.application.tabs.more": "Plus",
+  "Terra.application.tabs.moreButtonDescription": "Liens de navigation supplémentaires",
+  "Terra.application.tabs.moreMenuHeaderTitle": "Liens de navigation supplémentaires"
 }
