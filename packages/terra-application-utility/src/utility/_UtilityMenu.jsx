@@ -342,11 +342,11 @@ class UtilityMenu extends React.Component {
       <div className={headerClassNames}>
         <span className={contentContainerClassNames}>
           <span className={leftContentContainer}>
-            <span id="utility-menu-header" role="heading" aria-level="2" tabIndex="0" className={headerTextClassName}>{headerText}</span>
             {!firstPage && backButton}
-            <span className={cx('utility-menu-right-content-container')}>
-              {closeButton}
-            </span>
+            <span id="utility-menu-header" role="heading" aria-level="2" className={headerTextClassName}>{headerText}</span>
+          </span>
+          <span className={cx('utility-menu-right-content-container')}>
+            {closeButton}
           </span>
         </span>
         <MenuDivider isTop />
