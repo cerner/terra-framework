@@ -328,14 +328,12 @@ class UtilityMenu extends React.Component {
         icon={<IconClose className={iconCloseClassNames} />}
         isCompact
         isIconOnly
-        aria-describedby="utility-menu-header"
         text={closeText}
         variant={Button.Opts.Variants.UTILITY}
         className={closeButtonClassNames}
       />
     );
 
-    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     let headerText;
     if (currentItem !== undefined) {
       headerText = currentItem.title;
@@ -343,12 +341,12 @@ class UtilityMenu extends React.Component {
     const header = (
       <div className={headerClassNames}>
         <span className={contentContainerClassNames}>
-          <span className={cx('utility-menu-right-content-container')}>
-            {closeButton}
-          </span>
           <span className={leftContentContainer}>
-            {!firstPage && backButton}
             <span id="utility-menu-header" role="heading" aria-level="2" tabIndex="0" className={headerTextClassName}>{headerText}</span>
+            {!firstPage && backButton}
+            <span className={cx('utility-menu-right-content-container')}>
+              {closeButton}
+            </span>
           </span>
         </span>
         <MenuDivider isTop />
