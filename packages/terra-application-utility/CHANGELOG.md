@@ -4,8 +4,7 @@
 
 * Changed
   * Define the `UtilityButton` component as having a menu popup with `aria-haspopup`
-  * Swap the element ordering of the `UtilityMenu` header and close button
-    * Add `flex-direction: row-reverse` to SCSS in order to make close button the first focusable element in the menu
+  * Remove the `aria-describedby` relationship between the menu header and close button
   * Assign `UtilityMenuItem` component the `menuitem` aria role
 
 ## 2.46.2 - (December 6, 2022)
