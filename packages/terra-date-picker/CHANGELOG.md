@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Updated Jest snapshots
+
 ## 4.74.0 - (July 27, 2022)
 
 * Fixed

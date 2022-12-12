@@ -165,8 +165,9 @@ class UtilityMenuItem extends React.Component {
         key={itemKey}
         onClick={!isReadOnly ? event => handleSelection(event, itemKey) : undefined}
         onKeyDown={!isReadOnly ? wrapOnKeyDown(itemKey, onKeyDown) : undefined}
-        role={isReadOnly ? 'note' : 'button'}
+        role={!isReadOnly ? 'menuitem' : 'note'}
         className={bodyItemClassNames}
+        aria-disabled={isReadOnly}
         aria-label={title}
         ref={this.setItemNode}
       >
