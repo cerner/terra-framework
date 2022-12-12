@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+* Changed
+  * Define the `UtilityButton` component as having a menu popup with `aria-haspopup`
+  * Remove the `aria-describedby` relationship between the menu header and close button
+  * Assign `UtilityMenuItem` component the `menuitem` aria role
+
 ## 2.46.2 - (December 6, 2022)
 
 * Changed
