@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+* Changed
+  * Assign `TabMenuDisplay` component the `button` aria role
+  * Designate `TabMenuDisplay` component as a menu popup
+  * Make `CollapsedTab` component accessible to keyboard users
+  * Remove the `tablist` aria role from `ApplicationTabs` component
+
 ## 6.59.1 - (March 15, 2022)
 
 * Changed

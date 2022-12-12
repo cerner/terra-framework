@@ -137,18 +137,20 @@ class CollapseTab extends Component {
     customProps.className);
     const tabAttr = { 'aria-current': isCurrent };
 
+    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+    /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
     return (
       <li
         {...customProps}
         {...tabAttr}
-        role="menuitem"
+        tabIndex="0"
         className={tabClassNames}
         onClick={this.handleOnClick}
         onKeyDown={this.handleKeyDown}
         onKeyUp={this.handleKeyUp}
         onBlur={this.handleOnBlur}
       >
-        <div className={cx('tab-inner')}>
+        <div role="link" className={cx('tab-inner')}>
           {icon && <span className={cx('collapsed-tab-icon')}>{icon}</span>}
           <span className={cx('tab-label')}>{text}</span>
         </div>

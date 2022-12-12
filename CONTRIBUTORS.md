@@ -42,6 +42,7 @@ Cerner Corporation
 - Andrew Shoemake [@ashoemake]
 - Ryan Rickard [@RLRickard]
 - Kevin Schuster [@kschuste]
+- Michael Day [@mumkymikey]
 - Gage Phillips [@gagerdude]
 
 [@tbiethman]: https://github.com/tbiethman
@@ -86,4 +87,5 @@ Cerner Corporation
 [@ashoemake]: https://github.com/Andrew-Shoemake
 [@RLRickard]: https://github.com/RLRickard
 [@kschuste]: https://github.com/kschuste
+[@mumkymikey]: https://github.com/mumkymikey
 [@gagerdude]: https://github.com/gagerdude
