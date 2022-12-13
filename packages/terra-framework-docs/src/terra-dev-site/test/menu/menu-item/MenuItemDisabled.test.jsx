@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import List from 'terra-list';
 import Menu from 'terra-menu';
+import IconWarning from 'terra-icon/lib/icon/IconWarning';
 
 const childContextTypes = {
   isSelectableMenu: PropTypes.bool,
@@ -50,6 +51,13 @@ class MenuItemDisabled extends React.Component {
             key="4"
             className="TestDisabledItem"
             isInstructionsForUse
+          />
+          <Menu.Item
+            isDisabled
+            text="Disabled Icon Menu Item"
+            key="5"
+            className="TestDisabledItem"
+            icon={<IconWarning />}
           />
         </List>
       </div>

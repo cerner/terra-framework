@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import * as KeyCode from 'keycode-js';
 import { FormattedMessage } from 'react-intl';
 import styles from './Tabs.module.scss';
+import Menu from '../../terra-menu/lib/Menu';
 
 const cx = classNames.bind(styles);
 
@@ -25,6 +25,11 @@ const propTypes = {
    * Ref callback for menu toggle.
    */
   refCallback: PropTypes.func,
+
+  /**
+   * The current active tab
+   */
+  selectedTab: PropTypes.element,
 };
 
 class TabMenu extends React.Component {
@@ -86,7 +91,7 @@ class TabMenu extends React.Component {
 
     React.Children.forEach(this.props.children, (child) => {
       const {
-        label, customDisplay, icon, isIconOnly, ...otherProps
+        label, customDisplay, icon, isIconOnly, showIconInTabAndMenuWhenCollapsed, ...otherProps
       } = child.props;
       let isSelected = false;
 
@@ -95,18 +100,27 @@ class TabMenu extends React.Component {
         isSelected = true;
         menuActive = true;
       }
+
       menuItems.push((
         <Menu.Item
           {...otherProps}
           text={label}
           onClick={this.wrapOnClick(child)}
-          isSelected={isSelected}
-          isSelectable
           key={child.key}
+          icon={(showIconInTabAndMenuWhenCollapsed) ? icon : null}
+          isHighlighted={isSelected}
         />
       ));
     });
+
     const theme = this.context;
+    let icon = null;
+    // add icon for tab, but not for the 'More' tab
+    if (toggleText && this.props.selectedTab) {
+      if (this.props.selectedTab.props.icon && this.props.selectedTab.props.showIconInTabAndMenuWhenCollapsed) {
+        icon = <div className={cx('active-tab-icon')}>{this.props.selectedTab.props.icon}</div>;
+      }
+    }
 
     return (
       <div
@@ -118,6 +132,7 @@ class TabMenu extends React.Component {
         className={cx('tab-menu', { 'is-active': menuActive }, theme.className)}
         data-terra-tabs-menu
       >
+        {icon}
         <FormattedMessage id="Terra.tabs.more">
           {menuToggleText => (
             <span>{toggleText || menuToggleText}</span>

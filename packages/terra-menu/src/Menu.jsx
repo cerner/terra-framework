@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
 import classNames from 'classnames/bind';
+import MenuContent from './_MenuContent';
 import MenuItem from './MenuItem';
 import MenuItemGroup from './MenuItemGroup';
 import MenuDivider from './MenuDivider';
-import MenuContent from './_MenuContent';
 import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);

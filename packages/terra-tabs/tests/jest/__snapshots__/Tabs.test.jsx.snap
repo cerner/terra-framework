@@ -50,6 +50,7 @@ exports[`Tabs Responsiveness correctly applies the theme context className 1`] =
           responsiveTo="parent"
         >
           <CollapsedTabs
+            activeIndex={0}
             activeKey="default"
             onTruncationChange={[Function]}
           >
@@ -60,6 +61,7 @@ exports[`Tabs Responsiveness correctly applies the theme context className 1`] =
               isIconOnly={false}
               label="Default"
               onClick={[Function]}
+              showIconInTabAndMenuWhenCollapsed={false}
             />
           </CollapsedTabs>
         </ResponsiveElement>
@@ -78,6 +80,7 @@ exports[`Tabs Responsiveness correctly applies the theme context className 1`] =
             responsiveTo="parent"
           >
             <CollapsedTabs
+              activeIndex={0}
               activeKey="default"
               onTruncationChange={[Function]}
             >
@@ -86,6 +89,17 @@ exports[`Tabs Responsiveness correctly applies the theme context className 1`] =
               >
                 <TabMenu
                   activeKey="default"
+                  selectedTab={
+                    <TabPane
+                      className="is-active"
+                      isActive={true}
+                      isDisabled={false}
+                      isIconOnly={false}
+                      label="Default"
+                      onClick={[Function]}
+                      showIconInTabAndMenuWhenCollapsed={false}
+                    />
+                  }
                 >
                   <div
                     className="tab-menu is-active orion-fusion-theme"
@@ -213,6 +227,7 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the paren
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsibleTabs>
     </ResponsiveElement>
@@ -275,6 +290,7 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the windo
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsibleTabs>
     </ResponsiveElement>
@@ -333,6 +349,7 @@ exports[`Tabs Responsiveness should render tabs that do not completely collapse 
         isIconOnly={false}
         label="Default"
         onClick={[Function]}
+        showIconInTabAndMenuWhenCollapsed={false}
       />
     </CollapsibleTabs>
   }
@@ -394,6 +411,7 @@ exports[`Tabs Variants should render modular-centered tabs 1`] = `
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsibleTabs>
     </ResponsiveElement>
@@ -444,6 +462,7 @@ exports[`Tabs Variants should render modular-left-aligned tabs 1`] = `
       responsiveTo="parent"
     >
       <CollapsedTabs
+        activeIndex={0}
         activeKey="default"
         onTruncationChange={[Function]}
       >
@@ -454,6 +473,7 @@ exports[`Tabs Variants should render modular-left-aligned tabs 1`] = `
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsedTabs>
     </ResponsiveElement>
@@ -504,6 +524,7 @@ exports[`Tabs Variants should render structural tabs 1`] = `
       responsiveTo="parent"
     >
       <CollapsedTabs
+        activeIndex={0}
         activeKey="default"
         onTruncationChange={[Function]}
       >
@@ -514,6 +535,7 @@ exports[`Tabs Variants should render structural tabs 1`] = `
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsedTabs>
     </ResponsiveElement>
@@ -577,6 +599,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsibleTabs>
     </ResponsiveElement>
@@ -639,6 +662,7 @@ exports[`Tabs should render a default component 1`] = `
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsibleTabs>
     </ResponsiveElement>
@@ -688,6 +712,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
       responsiveTo="parent"
     >
       <CollapsedTabs
+        activeIndex={0}
         activeKey="default"
         onTruncationChange={[Function]}
       >
@@ -698,6 +723,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsedTabs>
     </ResponsiveElement>
@@ -749,6 +775,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
       responsiveTo="parent"
     >
       <CollapsedTabs
+        activeIndex={0}
         activeKey="default"
         onTruncationChange={[Function]}
       >
@@ -759,6 +786,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsedTabs>
     </ResponsiveElement>
@@ -808,6 +836,7 @@ exports[`Tabs should render with content filled when indicated 1`] = `
       responsiveTo="parent"
     >
       <CollapsedTabs
+        activeIndex={0}
         activeKey="default"
         onTruncationChange={[Function]}
       >
@@ -818,6 +847,7 @@ exports[`Tabs should render with content filled when indicated 1`] = `
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsedTabs>
     </ResponsiveElement>
@@ -867,6 +897,7 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
       responsiveTo="parent"
     >
       <CollapsedTabs
+        activeIndex={0}
         activeKey="default"
         onTruncationChange={[Function]}
       >
@@ -877,6 +908,7 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsedTabs>
     </ResponsiveElement>
@@ -927,6 +959,7 @@ exports[`Tabs should set custom props 1`] = `
       responsiveTo="parent"
     >
       <CollapsedTabs
+        activeIndex={0}
         activeKey="default"
         onTruncationChange={[Function]}
       >
@@ -937,6 +970,7 @@ exports[`Tabs should set custom props 1`] = `
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsedTabs>
     </ResponsiveElement>
@@ -986,6 +1020,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
       responsiveTo="parent"
     >
       <CollapsedTabs
+        activeIndex={0}
         activeKey="default"
         onTruncationChange={[Function]}
       >
@@ -996,6 +1031,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
           isIconOnly={false}
           label="Default"
           onClick={[Function]}
+          showIconInTabAndMenuWhenCollapsed={false}
         />
       </CollapsedTabs>
     </ResponsiveElement>

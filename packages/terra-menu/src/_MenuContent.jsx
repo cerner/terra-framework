@@ -97,7 +97,7 @@ const defaultProps = {
 };
 
 const childContextTypes = {
-  isSelectableMenu: PropTypes.bool,
+  isToggleableMenu: PropTypes.bool,
 };
 
 class MenuContent extends React.Component {
@@ -106,7 +106,7 @@ class MenuContent extends React.Component {
     this.wrapOnClick = this.wrapOnClick.bind(this);
     this.wrapOnKeyDown = this.wrapOnKeyDown.bind(this);
     this.buildHeader = this.buildHeader.bind(this);
-    this.isSelectable = this.isSelectable.bind(this);
+    this.isToggleable = this.isToggleable.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyDownBackButton = this.onKeyDownBackButton.bind(this);
     this.validateFocus = this.validateFocus.bind(this);
@@ -119,7 +119,7 @@ class MenuContent extends React.Component {
   }
 
   getChildContext() {
-    return { isSelectableMenu: this.isSelectable() };
+    return { isToggleableMenu: this.isToggleable() };
   }
 
   componentDidUpdate(prevProps) {
@@ -174,15 +174,20 @@ class MenuContent extends React.Component {
     }
   }
 
-  isSelectable() {
-    let isSelectable = false;
+  isToggleable() {
+    let isToggleableValue = false;
     React.Children.forEach(this.props.children, (child) => {
-      if (child.props.children || child.props.isSelectable) {
-        isSelectable = true;
+      const {
+        children,
+        isToggleable,
+        ...customProps
+      } = child.props;
+      if (children || (isToggleable || customProps.isSelectable)) {
+        isToggleableValue = true;
       }
     });
 
-    return isSelectable;
+    return isToggleableValue;
   }
 
   wrapOnClick(item) {
@@ -294,6 +299,7 @@ class MenuContent extends React.Component {
     let index = -1;
     let shouldDisplayMainMenuHeader;
     const items = this.props.children ? [] : undefined;
+
     React.Children.map(this.props.children, (item) => {
       const onClick = this.wrapOnClick(item);
       let newItem = item;
