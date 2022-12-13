@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.12.0 - (December 13, 2022)
+
 * Fixed
   * Fixed broken links in documentation.
 

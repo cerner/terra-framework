@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.47.0 - (December 13, 2022)
+
 * Changed
   * Define the `UtilityButton` component as having a menu popup with `aria-haspopup`
   * Remove the `aria-describedby` relationship between the menu header and close button

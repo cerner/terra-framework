@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.60.0 - (December 13, 2022)
+
 * Changed
   * Assign `TabMenuDisplay` component the `button` aria role
   * Designate `TabMenuDisplay` component as a menu popup
