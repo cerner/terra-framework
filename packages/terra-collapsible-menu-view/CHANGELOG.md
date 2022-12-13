@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated wdio screenshots
+
 ## 6.61.0 - (March 15, 2022)
 
 * Changed
