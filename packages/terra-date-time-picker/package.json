@@ -1,7 +1,7 @@
 {
   "name": "terra-date-time-picker",
   "main": "lib/DateTimePicker.js",
-  "version": "4.77.0",
+  "version": "4.78.0",
   "description": "The DateTimePicker component has a date picker for selecting date and a time input for entering time",
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
     "prop-types": "^15.5.8",
     "terra-abstract-modal": "^3.38.1",
     "terra-button": "^3.3.0",
-    "terra-date-picker": "^4.74.0",
+    "terra-date-picker": "^4.75.0",
     "terra-theme-context": "^1.8.0",
     "terra-time-input": "^4.46.1"
   },
