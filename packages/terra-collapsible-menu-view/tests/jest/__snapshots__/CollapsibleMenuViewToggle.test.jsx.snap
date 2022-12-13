@@ -34,7 +34,6 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should render a sele
   isInstructionsForUse={false}
   isSelectable={true}
   isSelected={false}
-  isToggled={false}
   subMenuItems={Array []}
   text="Testing"
 />
@@ -74,7 +73,6 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isDisable
   isInstructionsForUse={false}
   isSelectable={true}
   isSelected={false}
-  isToggled={false}
   subMenuItems={Array []}
   text="Testing"
 />
@@ -114,7 +112,6 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isSelecta
   isInstructionsForUse={false}
   isSelectable={false}
   isSelected={false}
-  isToggled={false}
   subMenuItems={Array []}
   text="Testing"
 />
@@ -154,7 +151,6 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set selected 
   isInstructionsForUse={false}
   isSelectable={true}
   isSelected={true}
-  isToggled={false}
   subMenuItems={Array []}
   text="Testing"
 />
