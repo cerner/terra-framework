@@ -165,7 +165,7 @@ exports[`should render a DatePickerField with props 1`] = `
           aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
         >
           (Terra.datePicker.dateFormat)
-           
+           
           Help
         </div>
       }
@@ -917,7 +917,6 @@ exports[`should render a DatePickerField with props 1`] = `
           </DatePicker>
         </InjectIntl(DatePicker)>
         <div
-          aria-live="assertive"
           className="error-text"
           id="test-date-picker-error"
         >
@@ -931,7 +930,7 @@ exports[`should render a DatePickerField with props 1`] = `
             aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
           >
             (Terra.datePicker.dateFormat)
-             
+             
             Help
           </div>
         </div>
@@ -1902,7 +1901,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
           aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
         >
           (Terra.datePicker.dateFormat)
-           
+           
           Help
         </div>
       }
@@ -1938,6 +1937,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
           >
             Label Test
             <div
+              aria-hidden="true"
               className="required-hidden"
             >
               *
@@ -2652,7 +2652,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
             aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat, Help"
           >
             (Terra.datePicker.dateFormat)
-             
+             
             Help
           </div>
         </div>
