@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Changed
+  * Updated doc and added test for terra-menu
+  * Updated doc and added test for terra-tabs
+  
 ## 1.12.0 - (December 13, 2022)
 
 * Fixed
@@ -15,8 +19,6 @@
 ## 1.10.0 - (September 20, 2022)
 
 * Changed
-  * Updated doc and added test for terra-menu
-  * Updated doc and added test for terra-tabs
   * Updated DST example for `terra-date-time-picker`.
 
 ## 1.9.0 - (July 27, 2022)

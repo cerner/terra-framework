@@ -115,7 +115,7 @@ class TabMenu extends React.Component {
 
     const theme = this.context;
     let icon = null;
-    // add icon for tab, but not for the 'More' tab
+    // allow icon to be displayed on the tab, but not for the 'More' dropdown tab
     if (toggleText && this.props.selectedTab) {
       if (this.props.selectedTab.props.icon && this.props.selectedTab.props.showIconInTabAndMenuWhenCollapsed) {
         icon = <div className={cx('active-tab-icon')}>{this.props.selectedTab.props.icon}</div>;

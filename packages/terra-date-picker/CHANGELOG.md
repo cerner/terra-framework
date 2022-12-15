@@ -2,9 +2,6 @@
 
 ## Unreleased
 
-* Changed
-  * Updated wdio screenshots
-
 ## 4.75.0 - (December 13, 2022)
 
 * Fixed
