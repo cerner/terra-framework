@@ -209,7 +209,7 @@ class MenuContent extends React.Component {
         isInstructionsForUse,
       } = child.props;
 
-      // reserve space for when there is a custom icon or instructions to be shown
+      // reserve space for when there is a custom icon or instructions icon to be shown
       if (icon || isInstructionsForUse) {
         shouldReserveSpaceForIcon = true;
       }

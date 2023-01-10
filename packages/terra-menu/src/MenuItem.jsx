@@ -25,6 +25,10 @@ const contextTypes = {
   */
   isToggleableMenu: PropTypes.bool,
 
+  /**
+   * Indicates if the menu needs to reserve space on the left for each menu item
+   * if one or more of the items needs to display and icon or checkmark
+   */
   shouldReserveSpaceForIcon: PropTypes.bool,
 };
 
@@ -245,7 +249,7 @@ class MenuItem extends React.Component {
     ]);
 
     let content = textContainer;
-    if (isGroupItem || hasChevron || toggleableMenu || isInstructionsForUse || icon || shouldReserveSpaceForIcon) {
+    if (hasChevron || toggleableMenu || isInstructionsForUse || icon || shouldReserveSpaceForIcon) {
       let fitStartIcon = null;
       if (isInstructionsForUse) {
         fitStartIcon = <InstructionsForUseIcon className={cx('start-icon')} />;
