@@ -2,11 +2,14 @@
 import React from 'react';
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
-import IconWarning from 'terra-icon/lib/icon/IconWarning';
-import IconError from 'terra-icon/lib/icon/IconError';
-import IconAlert from 'terra-icon/lib/icon/IconAlert';
-import IconHelp from 'terra-icon/lib/icon/IconHelp';
-import IconRequired from 'terra-icon/lib/icon/IconRequired';
+
+import IconSearch from 'terra-icon/lib/icon/IconSearch';
+import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
+import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
+import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
+import IconEnvelope from 'terra-icon/lib/icon/IconEnvelope';
+import IconPrinter from 'terra-icon/lib/icon/IconPrinter';
+
 import classNames from 'classnames/bind';
 import styles from './BasicMenu.module.scss';
 import Menu from '../../../../../../terra-menu/lib/Menu';
@@ -81,34 +84,40 @@ class MenuWithCustomIcons extends React.Component {
             boundingRef={this.props.boundingRef}
           >
             <Menu.Item
-              text="Error Icon"
-              key="Error"
+              text="Search Icon"
+              key="Search"
               onClick={this.handleOnClick}
-              icon={<IconError />}
+              icon={<IconSearch />}
             />
             <Menu.Item
-              text="Alert Icon"
-              key="Alert"
+              text="Briefcase Icon"
+              key="Briefcase"
               onClick={this.handleOnClick}
-              icon={<IconAlert />}
+              icon={<IconBriefcase />}
             />
             <Menu.Item
-              text="Warning Icon"
-              key="Warning"
+              text="Bookmark Icon"
+              key="Bookmark"
               onClick={this.handleOnClick}
-              icon={<IconWarning />}
+              icon={<IconBookmark />}
             />
             <Menu.Item
-              text="Help Icon"
-              key="Help"
+              text="Calendar Icon"
+              key="Calendar"
               onClick={this.handleOnClick}
-              icon={<IconHelp />}
+              icon={<IconCalendar />}
             />
             <Menu.Item
-              text="Required Icon"
-              key="Required"
+              text="Envelope Icon"
+              key="Envelope"
               onClick={this.handleOnClick}
-              icon={<IconRequired />}
+              icon={<IconEnvelope />}
+            />
+            <Menu.Item
+              text="Printer Icon"
+              key="Printer"
+              onClick={this.handleOnClick}
+              icon={<IconPrinter />}
             />
           </Menu>
           <Button onClick={this.handleButtonClick} text="Click Me" />

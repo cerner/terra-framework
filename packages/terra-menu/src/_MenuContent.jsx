@@ -11,6 +11,7 @@ import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
 import MenuUtils from './_MenuUtils';
+import MenuItem from './MenuItem';
 import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
@@ -98,6 +99,7 @@ const defaultProps = {
 
 const childContextTypes = {
   isToggleableMenu: PropTypes.bool,
+  shouldReserveSpaceForIcon: PropTypes.bool,
 };
 
 class MenuContent extends React.Component {
@@ -107,6 +109,7 @@ class MenuContent extends React.Component {
     this.wrapOnKeyDown = this.wrapOnKeyDown.bind(this);
     this.buildHeader = this.buildHeader.bind(this);
     this.isToggleable = this.isToggleable.bind(this);
+    this.shouldReserveSpaceForIcon = this.shouldReserveSpaceForIcon.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyDownBackButton = this.onKeyDownBackButton.bind(this);
     this.validateFocus = this.validateFocus.bind(this);
@@ -119,7 +122,7 @@ class MenuContent extends React.Component {
   }
 
   getChildContext() {
-    return { isToggleableMenu: this.isToggleable() };
+    return { isToggleableMenu: this.isToggleable(), shouldReserveSpaceForIcon: this.shouldReserveSpaceForIcon() };
   }
 
   componentDidUpdate(prevProps) {
@@ -182,12 +185,37 @@ class MenuContent extends React.Component {
         isToggleable,
         ...customProps
       } = child.props;
-      if (children || (isToggleable || customProps.isSelectable)) {
+
+      // child is a group menu item that needs space reserved for the checkmark
+      React.Children.forEach(children, (subchild) => {
+        if (subchild.type === MenuItem) {
+          isToggleableValue = true;
+        }
+      });
+
+      if (isToggleable || customProps.isSelectable) {
         isToggleableValue = true;
       }
     });
 
     return isToggleableValue;
+  }
+
+  shouldReserveSpaceForIcon() {
+    let shouldReserveSpaceForIcon = false;
+    React.Children.forEach(this.props.children, (child) => {
+      const {
+        icon,
+        isInstructionsForUse,
+      } = child.props;
+
+      // reserve space for when there is a custom icon or instructions to be shown
+      if (icon || isInstructionsForUse) {
+        shouldReserveSpaceForIcon = true;
+      }
+    });
+
+    return shouldReserveSpaceForIcon;
   }
 
   wrapOnClick(item) {

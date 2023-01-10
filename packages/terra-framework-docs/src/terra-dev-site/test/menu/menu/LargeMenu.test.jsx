@@ -1,5 +1,6 @@
 import React from 'react';
 import Menu from 'terra-menu';
+import IconPrinter from 'terra-icon/lib/icon/IconPrinter';
 
 class LargeMenu extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class LargeMenu extends React.Component {
               <Menu.Item text="Default 2.1" key="2.1" />,
               <Menu.Item text="Default 2.2" key="2.2" />,
               <Menu.Item text="Default 2.3" key="2.3" />,
+              <Menu.Item text="Default 2.4" key="2.4" icon={<IconPrinter />} />,
             ]}
           />
           <Menu.Item text="Default 3" key="3" />

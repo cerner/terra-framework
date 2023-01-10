@@ -14,7 +14,7 @@ const propTypes = {
 };
 
 const childContextTypes = {
-  isGroupItem: PropTypes.bool,
+  isGroupItem: PropTypes.bool, shouldReserveSpaceForIcon: PropTypes.bool,
 };
 
 const initialSingleToggledIndex = (children) => {
@@ -36,7 +36,7 @@ class MenuItemGroup extends React.Component {
   }
 
   getChildContext() {
-    return { isGroupItem: true };
+    return { isGroupItem: true, shouldReserveSpaceForIcon: true };
   }
 
   handleItemToggled(event, metaData) {

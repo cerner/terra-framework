@@ -24,6 +24,8 @@ const contextTypes = {
   * Indicates if the menu should be toggleable.
   */
   isToggleableMenu: PropTypes.bool,
+
+  shouldReserveSpaceForIcon: PropTypes.bool,
 };
 
 const propTypes = {
@@ -199,7 +201,12 @@ class MenuItem extends React.Component {
       ...customProps
     } = this.props;
 
-    const { isGroupItem, isToggleableMenu, isSelectableMenu } = this.context;
+    const {
+      isGroupItem,
+      isToggleableMenu,
+      isSelectableMenu,
+      shouldReserveSpaceForIcon,
+    } = this.context;
     const attributes = { ...customProps };
 
     attributes.tabIndex = isDisabled ? '-1' : '0';
@@ -238,7 +245,7 @@ class MenuItem extends React.Component {
     ]);
 
     let content = textContainer;
-    if (hasChevron || toggleableMenu || isInstructionsForUse || icon) {
+    if (isGroupItem || hasChevron || toggleableMenu || isInstructionsForUse || icon || shouldReserveSpaceForIcon) {
       let fitStartIcon = null;
       if (isInstructionsForUse) {
         fitStartIcon = <InstructionsForUseIcon className={cx('start-icon')} />;
@@ -250,6 +257,8 @@ class MenuItem extends React.Component {
         }
       } else if (icon) {
         fitStartIcon = React.cloneElement(icon, { className: cx('start-icon') });
+      } else if (shouldReserveSpaceForIcon) {
+        fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
       }
 
       content = (

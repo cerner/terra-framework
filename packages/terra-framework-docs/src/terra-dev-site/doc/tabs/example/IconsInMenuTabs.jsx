@@ -2,11 +2,11 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
-import IconRequired from 'terra-icon/lib/icon/IconRequired';
-import IconAlert from 'terra-icon/lib/icon/IconAlert';
-import IconInformation from 'terra-icon/lib/icon/IconInformation';
-import IconWarning from 'terra-icon/lib/icon/IconWarning';
-import IconError from 'terra-icon/lib/icon/IconError';
+import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
+import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
+import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
+import IconEnvelope from 'terra-icon/lib/icon/IconEnvelope';
+import IconPrinter from 'terra-icon/lib/icon/IconPrinter';
 import TabContent from './TabContentTemplate';
 import styles from './common/TabExample.module.scss';
 import Tabs from '../../../../../../terra-tabs/lib/Tabs';
@@ -22,34 +22,34 @@ const IconsOnlyAndInMenuTabs = (props) => {
     </Tabs.Pane>
   );
 
-  const requiredTab = (
+  const briefcaseTab = (
     // eslint-disable-next-line react/forbid-component-props
-    <Tabs.Pane label="Required" icon={<IconRequired style={{ color: 'red' }} />} showIconInTabAndMenuWhenCollapsed key="Required">
-      <TabContent label="Required" />
+    <Tabs.Pane label="Briefcase" icon={<IconBriefcase />} showIconInTabAndMenuWhenCollapsed key="Briefcase">
+      <TabContent label="Briefcase" />
     </Tabs.Pane>
   );
 
-  const alertTab = (
-    <Tabs.Pane label="Alert" icon={<IconAlert />} showIconInTabAndMenuWhenCollapsed key="Alert">
-      <TabContent label="Alert" />
+  const bookmarkTab = (
+    <Tabs.Pane label="Bookmark" icon={<IconBookmark />} showIconInTabAndMenuWhenCollapsed key="Bookmark">
+      <TabContent label="Bookmark" />
     </Tabs.Pane>
   );
 
-  const informationTab = (
-    <Tabs.Pane label="Information" icon={<IconInformation />} showIconInTabAndMenuWhenCollapsed key="Information">
-      <TabContent label="Information" />
+  const calendarTab = (
+    <Tabs.Pane label="Calendar" icon={<IconCalendar />} showIconInTabAndMenuWhenCollapsed key="Calendar">
+      <TabContent label="Calendar" />
     </Tabs.Pane>
   );
 
-  const warningTab = (
-    <Tabs.Pane label="Warning" icon={<IconWarning />} showIconInTabAndMenuWhenCollapsed key="Warning">
-      <TabContent label="Warning" />
+  const envelopeTab = (
+    <Tabs.Pane label="Envelope" icon={<IconEnvelope />} showIconInTabAndMenuWhenCollapsed key="Envelope">
+      <TabContent label="Envelope" />
     </Tabs.Pane>
   );
 
-  const errorTab = (
-    <Tabs.Pane label="Error" icon={<IconError />} showIconInTabAndMenuWhenCollapsed key="Error">
-      <TabContent label="Error" />
+  const printerTab = (
+    <Tabs.Pane label="Printer" icon={<IconPrinter />} showIconInTabAndMenuWhenCollapsed key="Printer">
+      <TabContent label="Printer" />
     </Tabs.Pane>
   );
 
@@ -57,11 +57,11 @@ const IconsOnlyAndInMenuTabs = (props) => {
     <div className={cx('content-wrapper')}>
       <Tabs responsiveTo={props.responsiveTo}>
         {searchTab}
-        {requiredTab}
-        {alertTab}
-        {informationTab}
-        {warningTab}
-        {errorTab}
+        {briefcaseTab}
+        {bookmarkTab}
+        {calendarTab}
+        {envelopeTab}
+        {printerTab}
       </Tabs>
     </div>
   );
