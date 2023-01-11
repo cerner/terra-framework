@@ -26,8 +26,9 @@ const contextTypes = {
   isToggleableMenu: PropTypes.bool,
 
   /**
-   * Indicates if the menu needs to reserve space on the left for each menu item
-   * if one or more of the items needs to display and icon or checkmark
+   * Indicates if the menu needs to reserve space on the left for each menu item if one
+   * or more of the items needs to display a custom icon, instructions for use icon, or
+   * a checkmark if the item is part of a group item.
    */
   shouldReserveSpaceForIcon: PropTypes.bool,
 };
