@@ -17,6 +17,12 @@
           background-image: var(--terra-menu-item-hover-background-image, linear-gradient(to bottom, #e1f2fd 2%, #ebf6fe 30%, #f4fafe 80%));
           box-shadow: var(--terra-menu-item-hover-box-shadow, inset 0 0 0 1px #e1f2fd);
         }
+
+        &.is-highlighted:hover {
+          background-color: var(--terra-menu-item-highlighted-hover-background-color, #d1ebfb);
+          background-image: var(--terra-menu-item-highlighted-hover-background-image, linear-gradient(to bottom, #b3ddf8 2%, #c8e9fe 30%, #d1ebfb 80%));
+          box-shadow: var(--terra-menu-item-highlighted-hover-box-shadow, inset 0 0 0 1px #e1f3fd);
+        }
         
         &:hover .checkmark {
           color: var(--terra-menu-item-checkmark-hover-icon-color);
@@ -65,7 +71,8 @@
     }
 
     .start-icon {
-      color: var(--terra-menu-item-disabled-start-icon-color, #9b9fa1);
+      color: var(--terra-menu-item-disabled-start-icon-color, #1c1f21);
+      opacity: 0.3;
     }
   }
 
@@ -108,11 +115,5 @@
 
   .is-highlighted {
     background-color: var(--terra-menu-item-highlighted-background-color, #e1f3fd);
-
-    &:hover {
-      background-color: var(--terra-menu-item-highlighted-hover-background-color, #d1ebfb);
-      background-image: var(--terra-menu-item-highlighted-hover-background-image, linear-gradient(to bottom, #b3ddf8 2%, #c8e9fe 30%, #d1ebfb 80%));
-      box-shadow: var(--terra-menu-item-highlighted-hover-box-shadow, inset 0 0 0 1px #e1f3fd);
-    }
   }
 }

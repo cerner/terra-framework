@@ -4,15 +4,7 @@
 @import './clinical-lowlight-theme/Tabs.module';
 @import './orion-fusion-theme/Tabs.module';
 
-:local {
-  .active-tab-icon {  
-    margin-right: var(--terra-tabs-icon-margin-right, 0.5rem);
-
-    svg {
-      font-size: var(--terra-tabs-icon-font-size, 1rem) !important;
-    }
-  }
-  
+:local {  
   .tabs-container {
     width: 100%;
   }
@@ -98,6 +90,15 @@
       flex: 0 0 auto;
       font-size: 0.571rem;
       margin-left: var(--terra-tabs-menu-arrow-margin-left, 0.5rem);
+    }
+
+    .active-tab-icon {  
+      margin-right: var(--terra-tabs-menu-icon-margin-right, 0.5rem);
+  
+      /* stylelint-disable-next-line selector-max-compound-selectors */
+      svg {
+        font-size: var(--terra-tabs-menu-icon-font-size, 1rem);
+      }
     }
   }
 
