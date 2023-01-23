@@ -2,6 +2,7 @@
 import React from 'react';
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
+import Menu from 'terra-menu';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
@@ -10,7 +11,6 @@ import IconEnvelope from 'terra-icon/lib/icon/IconEnvelope';
 import IconPrinter from 'terra-icon/lib/icon/IconPrinter';
 import classNames from 'classnames/bind';
 import styles from './BasicMenu.module.scss';
-import Menu from '../../../../../../terra-menu/lib/Menu';
 
 const cx = classNames.bind(styles);
 
