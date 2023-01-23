@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+import Tabs from 'terra-tabs';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
@@ -9,7 +10,6 @@ import IconEnvelope from 'terra-icon/lib/icon/IconEnvelope';
 import IconPrinter from 'terra-icon/lib/icon/IconPrinter';
 import TabContent from './TabContentTemplate';
 import styles from './common/TabExample.module.scss';
-import Tabs from '../../../../../../terra-tabs/lib/Tabs';
 
 const propTypes = { responsiveTo: PropTypes.string };
 

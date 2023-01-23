@@ -1,4 +1,3 @@
-/* eslint-disable react/no-access-state-in-setstate */
 import React from 'react';
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
@@ -48,16 +47,11 @@ class MenuWithCustomIcons extends React.Component {
     this.setState({ open: false });
   }
 
-  handleCloseOnClick(event) {
-    event.preventDefault();
-    this.handleRequestClose();
-  }
-
   handleAction(event) {
     event.preventDefault();
-    const newState = this.state;
-    newState.actionClickCount += 1;
-    this.setState(newState);
+    let { actionClickCount } = this.state;
+    actionClickCount += 1;
+    this.setState({ actionClickCount });
     this.handleRequestClose();
   }
 
