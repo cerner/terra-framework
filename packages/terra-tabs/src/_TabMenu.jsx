@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import * as KeyCode from 'keycode-js';
 import { FormattedMessage } from 'react-intl';
 import styles from './Tabs.module.scss';
-import Menu from '../../terra-menu/lib/Menu';
 
 const cx = classNames.bind(styles);
 
@@ -91,7 +91,7 @@ class TabMenu extends React.Component {
 
     React.Children.forEach(this.props.children, (child) => {
       const {
-        label, customDisplay, icon, isIconOnly, showIconInTabAndMenuWhenCollapsed, ...otherProps
+        label, customDisplay, icon, isIconOnly, showIcon, ...otherProps
       } = child.props;
       let isSelected = false;
 
@@ -107,7 +107,7 @@ class TabMenu extends React.Component {
           text={label}
           onClick={this.wrapOnClick(child)}
           key={child.key}
-          icon={(showIconInTabAndMenuWhenCollapsed) ? icon : null}
+          icon={(showIcon) ? icon : null}
           isHighlighted={isSelected}
         />
       ));
@@ -117,7 +117,7 @@ class TabMenu extends React.Component {
     let icon = null;
     // allow icon to be displayed on the tab, but not for the 'More' dropdown tab
     if (toggleText && this.props.selectedTab) {
-      if (this.props.selectedTab.props.icon && this.props.selectedTab.props.showIconInTabAndMenuWhenCollapsed) {
+      if (this.props.selectedTab.props.icon && this.props.selectedTab.props.showIcon) {
         icon = <div className={cx('active-tab-icon')}>{this.props.selectedTab.props.icon}</div>;
       }
     }

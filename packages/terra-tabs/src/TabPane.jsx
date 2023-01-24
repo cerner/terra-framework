@@ -43,14 +43,14 @@ const propTypes = {
   /**
    * If enabled, this prop will show the icon on the tab and also in the menu if pane is collapsed.
    */
-  showIconInTabAndMenuWhenCollapsed: PropTypes.bool,
+  showIcon: PropTypes.bool,
 };
 
 const defaultProps = {
   isDisabled: false,
   isIconOnly: false,
   isActive: false,
-  showIconInTabAndMenuWhenCollapsed: false,
+  showIcon: false,
 };
 
 const TabPane = ({

@@ -16,10 +16,6 @@ class CustomIconsMenu extends React.Component {
     this.state = { open: false };
   }
 
-  componentDidMount() {
-    this.forceUpdate();
-  }
-
   handleButtonClick() {
     this.setState({ open: true });
   }
@@ -47,31 +43,26 @@ class CustomIconsMenu extends React.Component {
           <Menu.Item
             text="Error Icon"
             key="Error"
-            onClick={this.handleOnClick}
             icon={<IconError />}
           />
           <Menu.Item
             text="Alert Icon"
             key="Alert"
-            onClick={this.handleOnClick}
             icon={<IconAlert />}
           />
           <Menu.Item
             text="Warning Icon"
             key="Warning"
-            onClick={this.handleOnClick}
             icon={<IconWarning />}
           />
           <Menu.Item
             text="Help Icon"
             key="Help"
-            onClick={this.handleOnClick}
             icon={<IconHelp />}
           />
           <Menu.Item
             text="Required Icon"
             key="Required"
-            onClick={this.handleOnClick}
             icon={<IconRequired />}
           />
         </Menu>

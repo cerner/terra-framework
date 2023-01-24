@@ -17,38 +17,38 @@ const cx = classNames.bind(styles);
 
 const IconsOnlyAndInMenuTabs = (props) => {
   const searchTab = (
-    <Tabs.Pane label="Search" icon={<IconSearch />} showIconInTabAndMenuWhenCollapsed key="Search">
+    <Tabs.Pane label="Search" icon={<IconSearch />} showIcon key="Search">
       <TabContent label="Search" />
     </Tabs.Pane>
   );
 
   const briefcaseTab = (
     // eslint-disable-next-line react/forbid-component-props
-    <Tabs.Pane label="Briefcase" icon={<IconBriefcase />} showIconInTabAndMenuWhenCollapsed key="Briefcase">
+    <Tabs.Pane label="Briefcase" icon={<IconBriefcase />} showIcon key="Briefcase">
       <TabContent label="Briefcase" />
     </Tabs.Pane>
   );
 
   const bookmarkTab = (
-    <Tabs.Pane label="Bookmark" icon={<IconBookmark />} showIconInTabAndMenuWhenCollapsed key="Bookmark">
+    <Tabs.Pane label="Bookmark" icon={<IconBookmark />} showIcon key="Bookmark">
       <TabContent label="Bookmark" />
     </Tabs.Pane>
   );
 
   const calendarTab = (
-    <Tabs.Pane label="Calendar" icon={<IconCalendar />} showIconInTabAndMenuWhenCollapsed key="Calendar">
+    <Tabs.Pane label="Calendar" icon={<IconCalendar />} showIcon key="Calendar">
       <TabContent label="Calendar" />
     </Tabs.Pane>
   );
 
   const envelopeTab = (
-    <Tabs.Pane label="Envelope" icon={<IconEnvelope />} showIconInTabAndMenuWhenCollapsed key="Envelope">
+    <Tabs.Pane label="Envelope" icon={<IconEnvelope />} showIcon key="Envelope">
       <TabContent label="Envelope" />
     </Tabs.Pane>
   );
 
   const printerTab = (
-    <Tabs.Pane label="Printer" icon={<IconPrinter />} showIconInTabAndMenuWhenCollapsed key="Printer">
+    <Tabs.Pane label="Printer" icon={<IconPrinter />} showIcon key="Printer">
       <TabContent label="Printer" />
     </Tabs.Pane>
   );

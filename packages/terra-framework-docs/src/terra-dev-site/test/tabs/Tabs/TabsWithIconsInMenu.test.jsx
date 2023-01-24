@@ -17,16 +17,16 @@ const TabsWithIconsInMenu = () => (
     <Tabs.Pane id="required" label="Required" icon={<IconRequired style={{ color: 'red' }} />} isIconOnly key="Required">
       <TabContent label="Required Icon, Icon Only" />
     </Tabs.Pane>
-    <Tabs.Pane id="alert" label="Alert" icon={<IconAlert />} showIconInTabAndMenuWhenCollapsed key="Alert">
+    <Tabs.Pane id="alert" label="Alert" icon={<IconAlert />} showIcon key="Alert">
       <TabContent label="Alert Icon, Show in Tab and Menu" />
     </Tabs.Pane>
-    <Tabs.Pane id="warning" label="Warning" icon={<IconWarning />} isIconOnly showIconInTabAndMenuWhenCollapsed key="Warning">
+    <Tabs.Pane id="warning" label="Warning" icon={<IconWarning />} isIconOnly showIcon key="Warning">
       <TabContent label="Warning Icon, Icon Only, Show in Tab and Menu" />
     </Tabs.Pane>
-    <Tabs.Pane id="error" label="Error" icon={<IconError />} showIconInTabAndMenuWhenCollapsed key="Error">
+    <Tabs.Pane id="error" label="Error" icon={<IconError />} showIcon key="Error">
       <TabContent label="Error Icon, Show in Tab and Menu" />
     </Tabs.Pane>
-    <Tabs.Pane id="information" label="Information" isDisabled icon={<IconInformation />} showIconInTabAndMenuWhenCollapsed key="Information">
+    <Tabs.Pane id="information" label="Information" isDisabled icon={<IconInformation />} showIcon key="Information">
       <TabContent label="Information Icon, Disabled, Show in Tab and Menu" />
     </Tabs.Pane>
   </Tabs>
