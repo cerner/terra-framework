@@ -25,20 +25,17 @@ class MenuItemWithIcon extends React.Component {
           <Menu.Item
             text="Icon"
             key="Icon"
-            onClick={this.handleOnClick}
             icon={<IconAlert />}
           />
           <Menu.Item
             text="Icon, isToggleable"
             key="Icon, isToggleable"
-            onClick={this.handleOnClick}
             icon={<IconAlert />}
             isSelectable
           />
           <Menu.Item
             text="Icon, isToggleable, and isToggled"
             key="Icon, isToggleable, isToggled"
-            onClick={this.handleOnClick}
             icon={<IconAlert />}
             isSelectable
             isSelected
@@ -46,14 +43,12 @@ class MenuItemWithIcon extends React.Component {
           <Menu.Item
             text="Icon, isToggled, notToggleable"
             key="Icon, isToggled, notToggleable"
-            onClick={this.handleOnClick}
             icon={<IconAlert />}
             isSelected
           />
           <Menu.Item
             text="isInstructionsForUse, icon"
             key="isInstructionsForUse, icon"
-            onClick={this.handleOnClick}
             isSelected
             isSelectable
             icon={<IconAlert />}
