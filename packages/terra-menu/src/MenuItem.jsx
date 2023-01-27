@@ -102,9 +102,6 @@ const defaultProps = {
   isHighlighted: false,
 };
 
-let toggled = false;
-let toggleable = false;
-
 class MenuItem extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -119,8 +116,8 @@ class MenuItem extends React.Component {
     this.wrapOnKeyUp = this.wrapOnKeyUp.bind(this);
     this.handleToggled = this.handleToggled.bind(this);
     this.setItemNode = this.setItemNode.bind(this);
-    toggled = (isToggled || customProps.isSelected);
-    toggleable = (isToggleable || customProps.isSelectable);
+    const toggled = (isToggled || customProps.isSelected);
+    const toggleable = (isToggleable || customProps.isSelectable);
 
     this.state = {
       isToggled: toggled && toggleable && !context.isGroupItem,
@@ -136,6 +133,13 @@ class MenuItem extends React.Component {
 
   handleToggled(event) {
     event.preventDefault();
+
+    const {
+      isToggleable,
+      ...customProps
+    } = this.props;
+
+    const toggleable = (isToggleable || customProps.isSelectable);
 
     if (toggleable && !this.context.isGroupItem && !this.props.isDisabled) {
       this.setState(prevState => ({ isToggled: !prevState.isToggled }));
@@ -221,6 +225,8 @@ class MenuItem extends React.Component {
     attributes.tabIndex = isDisabled ? '-1' : '0';
     attributes['aria-disabled'] = isDisabled;
 
+    const toggled = (isToggled || customProps.isSelected);
+    const toggleable = (isToggleable || customProps.isSelectable);
     const toggleableMenu = (isToggleableMenu || isSelectableMenu);
 
     // This is passed down by the single select list in group item and not needed
