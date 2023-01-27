@@ -83,6 +83,12 @@ const propTypes = {
    * Custom icon to display in the item
    */
   icon: PropTypes.element,
+
+  /**
+   * @private
+   * Indicates if the item should display with a highlighted background.
+   */
+  isHighlighted: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -93,7 +99,11 @@ const defaultProps = {
   isToggleable: undefined,
   isDisabled: false,
   subMenuItems: [],
+  isHighlighted: false,
 };
+
+let toggled = false;
+let toggleable = false;
 
 class MenuItem extends React.Component {
   constructor(props, context) {
@@ -109,8 +119,8 @@ class MenuItem extends React.Component {
     this.wrapOnKeyUp = this.wrapOnKeyUp.bind(this);
     this.handleToggled = this.handleToggled.bind(this);
     this.setItemNode = this.setItemNode.bind(this);
-    const toggled = (isToggled || customProps.isSelected);
-    const toggleable = (isToggleable || customProps.isSelectable);
+    toggled = (isToggled || customProps.isSelected);
+    toggleable = (isToggleable || customProps.isSelectable);
 
     this.state = {
       isToggled: toggled && toggleable && !context.isGroupItem,
@@ -126,13 +136,6 @@ class MenuItem extends React.Component {
 
   handleToggled(event) {
     event.preventDefault();
-
-    const {
-      isToggleable,
-      ...customProps
-    } = this.props;
-
-    const toggleable = (isToggleable || customProps.isSelectable);
 
     if (toggleable && !this.context.isGroupItem && !this.props.isDisabled) {
       this.setState(prevState => ({ isToggled: !prevState.isToggled }));
@@ -203,6 +206,7 @@ class MenuItem extends React.Component {
       subMenuItems,
       isActive,
       icon,
+      isHighlighted,
       ...customProps
     } = this.props;
 
@@ -217,8 +221,6 @@ class MenuItem extends React.Component {
     attributes.tabIndex = isDisabled ? '-1' : '0';
     attributes['aria-disabled'] = isDisabled;
 
-    const toggled = (isToggled || customProps.isSelected);
-    const toggleable = (isToggleable || customProps.isSelectable);
     const toggleableMenu = (isToggleableMenu || isSelectableMenu);
 
     // This is passed down by the single select list in group item and not needed
@@ -239,7 +241,7 @@ class MenuItem extends React.Component {
 
     const itemClassNames = cx([
       'item',
-      { 'is-highlighted': customProps.isHighlighted },
+      { 'is-highlighted': isHighlighted },
       { 'is-toggled': markAsToggled },
       { 'is-toggleable': toggleable },
       { 'is-disabled': isDisabled },
