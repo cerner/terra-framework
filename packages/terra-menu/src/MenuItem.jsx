@@ -16,8 +16,9 @@ const contextTypes = {
   isGroupItem: PropTypes.bool,
 
   /**
-  * Deprecated - Indicates if the menu should be toggleable, maps to isToggleableMenu.
-  */
+   * isSelectableMenu has been deprecated and will be removed on next major version release.
+   * Rename the `isSelectableMenu` prop to `isToggleableMenu`.
+   */
   isSelectableMenu: PropTypes.bool,
 
   /**
@@ -43,6 +44,20 @@ const propTypes = {
    * Indicates if item should be disabled
    */
   isDisabled: PropTypes.bool,
+
+  /**
+   * ![IMPORTANT](https://badgen.net/badge/prop/deprecated/red)
+   * isSelected has been deprecated and will be removed on next major version release.
+   * Rename the `isSelected` prop to `isToggled`.
+   */
+  isSelected: PropTypes.bool,
+
+  /**
+   * ![IMPORTANT](https://badgen.net/badge/prop/deprecated/red)
+   * isSelectable has been deprecated and will be removed on next major version release.
+   * Rename the `isSelectable` prop to `isToggleable`.
+   */
+  isSelectable: PropTypes.bool,
 
   /**
   * Indicates if the item is toggled. A toggled item is indicated with a checkmark.
@@ -102,13 +117,15 @@ const defaultProps = {
   isHighlighted: false,
 };
 
+// TODO: remove isSelect and isSeletable props on the next major release
 class MenuItem extends React.Component {
   constructor(props, context) {
     super(props, context);
     const {
+      isSelected,
+      isSelectable,
       isToggled,
       isToggleable,
-      ...customProps
     } = this.props;
 
     this.wrapOnClick = this.wrapOnClick.bind(this);
@@ -116,8 +133,8 @@ class MenuItem extends React.Component {
     this.wrapOnKeyUp = this.wrapOnKeyUp.bind(this);
     this.handleToggled = this.handleToggled.bind(this);
     this.setItemNode = this.setItemNode.bind(this);
-    const toggled = (isToggled || customProps.isSelected);
-    const toggleable = (isToggleable || customProps.isSelectable);
+    const toggled = (isToggled || isSelected);
+    const toggleable = (isToggleable || isSelectable);
 
     this.state = {
       isToggled: toggled && toggleable && !context.isGroupItem,
@@ -135,11 +152,11 @@ class MenuItem extends React.Component {
     event.preventDefault();
 
     const {
+      isSelectable,
       isToggleable,
-      ...customProps
     } = this.props;
 
-    const toggleable = (isToggleable || customProps.isSelectable);
+    const toggleable = (isToggleable || isSelectable);
 
     if (toggleable && !this.context.isGroupItem && !this.props.isDisabled) {
       this.setState(prevState => ({ isToggled: !prevState.isToggled }));
@@ -204,8 +221,10 @@ class MenuItem extends React.Component {
     const {
       text,
       isDisabled,
+      isSelected,
       isToggled,
       isInstructionsForUse,
+      isSelectable,
       isToggleable,
       subMenuItems,
       isActive,
@@ -225,8 +244,8 @@ class MenuItem extends React.Component {
     attributes.tabIndex = isDisabled ? '-1' : '0';
     attributes['aria-disabled'] = isDisabled;
 
-    const toggled = (isToggled || customProps.isSelected);
-    const toggleable = (isToggleable || customProps.isSelectable);
+    const toggled = (isToggled || isSelected);
+    const toggleable = (isToggleable || isSelectable);
     const toggleableMenu = (isToggleableMenu || isSelectableMenu);
 
     // This is passed down by the single select list in group item and not needed
