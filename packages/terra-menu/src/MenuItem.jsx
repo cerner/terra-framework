@@ -156,9 +156,7 @@ class MenuItem extends React.Component {
       isToggleable,
     } = this.props;
 
-    const toggleable = (isToggleable || isSelectable);
-
-    if (toggleable && !this.context.isGroupItem && !this.props.isDisabled) {
+    if ((isToggleable || isSelectable) && !this.context.isGroupItem && !this.props.isDisabled) {
       this.setState(prevState => ({ isToggled: !prevState.isToggled }));
 
       if (this.props.onChange) {
