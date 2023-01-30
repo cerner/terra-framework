@@ -101,7 +101,7 @@ const propTypes = {
 
   /**
    * @private
-   * Indicates if the item should display with a highlighted background.
+   * Indicates if the item should display with a highlighted background. Reserved for Terra higher-order component approved usage only.
    */
   isHighlighted: PropTypes.bool,
 };
