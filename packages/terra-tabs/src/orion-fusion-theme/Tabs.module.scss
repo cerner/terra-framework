@@ -65,10 +65,14 @@
     --terra-tabs-structural-active-focus-background-image: linear-gradient(to bottom, #007ee0, #007ee0);
     --terra-tabs-structural-active-before-transition-duration: 0;
     --terra-tabs-structural-active-before-transition-timing-function: ease;
+    --terra-tabs-structural-disabled-background-color: #fff;
+    --terra-tabs-structural-disabled-opacity: 1;
+    --terra-tabs-structural-disabled-color: rgba(28, 31, 33, 0.3);
     --terra-tabs-structural-disabled-hover-background-color: #fff;
     --terra-tabs-structural-disabled-hover-opacity: 1;
-    --terra-tabs-structural-disabled-hover-color: #9b9fa1;
-    --terra-tabs-structural-disabled-label-opacity: 1;
+    --terra-tabs-structural-disabled-hover-color: rgba(28, 31, 33, 0.3);
+    --terra-tabs-structural-disabled-label-color: #1c1f21;
+    --terra-tabs-structural-disabled-label-opacity: 0.3;
     --terra-tabs-structural-hover-background-color: #fff;
     --terra-tabs-structural-hover-background-image: linear-gradient(to bottom, #c8cacb, #c8cacb);
     --terra-tabs-structural-hover-color: #1c1f21;
@@ -86,6 +90,9 @@
     --terra-tabs-keyboard-focus-ltr-box-shadow: none;
     --terra-tabs-structural-collapsed-menu-bar-focus-border-bottom-color: none;
     --terra-tabs-structural-collapsed-menu-bar-focus-border-bottom-width: 0;
+
+    --terra-tabs-menu-icon-margin-right: 0.25rem;
+    --terra-tabs-menu-icon-font-size: 1rem;
 
     /* NOTE: This is being commented out until discussions have been resolved around if modular tabs should be removed.
 

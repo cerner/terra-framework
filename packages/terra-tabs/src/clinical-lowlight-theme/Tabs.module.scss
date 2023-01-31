@@ -24,7 +24,8 @@
     --terra-tabs-structural-container-background-color: #222a2e;
     --terra-tabs-structural-content-background-color: #222a2e;
     --terra-tabs-structural-content-box-shadow: 0;
-    --terra-tabs-structural-disabled-label-opacity: 1;
+    --terra-tabs-structural-disabled-label-color: #b2b5b6;
+    --terra-tabs-structural-disabled-label-opacity: 0.3;
     --terra-tabs-structural-content-border-radius: 0;
     --terra-tabs-structural-content-z-index: 0;
 
@@ -74,6 +75,9 @@
     --terra-tabs-structural-collapsed-border-radius: 0;
     --terra-tabs-structural-collapsed-menu-bar-focus-border-bottom-width: 0;
     --terra-tabs-structural-collapsed-position: static;
+    --terra-tabs-structural-disabled-background-color: #222a2e;
+    --terra-tabs-structural-disabled-color: #404344;
+    --terra-tabs-structural-disabled-opacity: 1;
     --terra-tabs-structural-disabled-hover-background-color: #222a2e;
     --terra-tabs-structural-disabled-hover-color: #404344;
     --terra-tabs-structural-disabled-hover-opacity: 1;
@@ -83,6 +87,9 @@
     --terra-tabs-structural-tab-bar-border-bottom-width: 1px;
     --terra-tabs-structural-transition-duration: 0;
     --terra-tabs-structural-transition-timing-function: ease;
+
+    --terra-tabs-menu-icon-margin-right: 0.5rem;
+    --terra-tabs-menu-icon-font-size: 1rem;
 
     /* NOTE: This is being commented out until discussions have been resolved around if modular tabs should be removed.
 

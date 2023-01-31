@@ -25,6 +25,11 @@ const propTypes = {
    * Ref callback for menu toggle.
    */
   refCallback: PropTypes.func,
+
+  /**
+   * The current active tab
+   */
+  selectedTab: PropTypes.element,
 };
 
 class TabMenu extends React.Component {
@@ -86,7 +91,7 @@ class TabMenu extends React.Component {
 
     React.Children.forEach(this.props.children, (child) => {
       const {
-        label, customDisplay, icon, isIconOnly, ...otherProps
+        label, customDisplay, icon, isIconOnly, showIcon, ...otherProps
       } = child.props;
       let isSelected = false;
 
@@ -95,18 +100,27 @@ class TabMenu extends React.Component {
         isSelected = true;
         menuActive = true;
       }
+
       menuItems.push((
         <Menu.Item
           {...otherProps}
           text={label}
           onClick={this.wrapOnClick(child)}
-          isSelected={isSelected}
-          isSelectable
           key={child.key}
+          icon={(showIcon) ? icon : null}
+          isHighlighted={isSelected}
         />
       ));
     });
+
     const theme = this.context;
+    let icon = null;
+    // allow icon to be displayed on the tab, but not for the 'More' dropdown tab
+    if (toggleText && this.props.selectedTab) {
+      if (this.props.selectedTab.props.icon && this.props.selectedTab.props.showIcon) {
+        icon = <div className={cx('active-tab-icon')}>{this.props.selectedTab.props.icon}</div>;
+      }
+    }
 
     return (
       <div
@@ -118,6 +132,7 @@ class TabMenu extends React.Component {
         className={cx('tab-menu', { 'is-active': menuActive }, theme.className)}
         data-terra-tabs-menu
       >
+        {icon}
         <FormattedMessage id="Terra.tabs.more">
           {menuToggleText => (
             <span>{toggleText || menuToggleText}</span>

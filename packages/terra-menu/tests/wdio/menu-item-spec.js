@@ -30,6 +30,20 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
       });
     });
   });
+
+  describe('Menu Item-Icon', () => {
+    it('displays Menu Items with icon', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item/menu-items-with-icons');
+      Terra.validates.element('default icon');
+    });
+  });
+
+  describe('Menu Item-Highlighted', () => {
+    it('displays Menu Items highlighted', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item/menu-items-highlighted');
+      Terra.validates.element('default isHighlighted');
+    });
+  });
 });
 Terra.describeViewports('Menu Item', ['huge'], () => {
   describe('Menu Item-Disabled', () => {

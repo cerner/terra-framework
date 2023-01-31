@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
 import * as KeyCode from 'keycode-js';
-import Menu from './_TabMenu';
+import TabMenu from './_TabMenu';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -259,11 +259,17 @@ class CollapsibleTabs extends React.Component {
       }
     });
     const theme = this.context;
+    const selectedTab = this.props.children[this.props.activeIndex];
 
     const menu = this.menuHidden ? null : (
-      <Menu onKeyDown={this.handleMenuOnKeyDown} refCallback={this.setMenuRef} activeKey={this.props.activeKey}>
+      <TabMenu
+        onKeyDown={this.handleMenuOnKeyDown}
+        refCallback={this.setMenuRef}
+        activeKey={this.props.activeKey}
+        selectedTab={selectedTab}
+      >
         {hiddenChildren}
-      </Menu>
+      </TabMenu>
     );
 
     const selectionBar = this.props.variant === 'modular-centered' || this.props.variant === 'modular-left-aligned' ? (

@@ -147,4 +147,13 @@ Terra.describeViewports('Menu', ['medium'], () => {
       Terra.validates.element('returned to main menu using enter key', { selector: '#root' });
     });
   });
+
+  describe('Menu With Custom Icons', () => {
+    it('Menu With Custom Icons', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/custom-icons-menu');
+      $('#custom-icons-button').click();
+      // $('[class*="content"][aria-modal="true"][role="dialog"]').isFocused();
+      Terra.validates.element('shows custom icons in the menu', { selector: '#root' });
+    });
+  });
 });

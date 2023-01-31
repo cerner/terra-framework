@@ -99,6 +99,21 @@ Terra.describeViewports('Tabs - Uncollapsed', ['tiny'], () => {
   });
 });
 
+Terra.describeViewports('Tabs - Icons in Menu', ['tiny'], () => {
+  it('displays Tabs With Icons In Menu', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/tabs-with-icons-in-menu');
+
+    $('[data-terra-tabs-menu]').waitForDisplayed();
+    Terra.validates.element('displays tabs with icons', { selector: '#tabsWithIconsInMenu' });
+
+    $('[data-terra-tabs-menu]').click();
+    Terra.validates.element('displays tabs with icons in menu', { selector: '#tabsWithIconsInMenu' });
+
+    $('#error').click();
+    Terra.validates.element('error icon list item selected', { selector: '#tabsWithIconsInMenu' });
+  });
+});
+
 Terra.describeViewports('Tabs - Responsive to Window', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
   it('Responsive to Window', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/tabs-responsive-to-window');

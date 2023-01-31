@@ -14,7 +14,9 @@
     --terra-menu-item-chevron-hover-icon-color: #c5c5c6;
     --terra-menu-item-focus-background-color: #1e3a49;
     --terra-menu-item-focus-outline: #004c76;
-    --terra-menu-item-hover-background-color: #1e3a49;
+    --terra-menu-item-hover-background-color: #232a2d;
+    --terra-menu-item-hover-background-image: linear-gradient(to bottom, #122b39 2%, #152933 30%, #1e3a49 80%);
+    --terra-menu-item-hover-box-shadow: inset 0 0 0 1px #04293f;
     --terra-menu-item-margin: 0;
     --terra-menu-item-padding: 0.286rem 0;
     --terra-menu-item-text-font-size: 0.928571429rem;
@@ -28,5 +30,9 @@
     --terra-menu-item-start-icon-font-size: 0.85714rem;
     --terra-menu-item-start-icon-margin-left: 0.71428rem;
     --terra-menu-item-start-icon-margin-right: 0;
+    --terra-menu-item-highlighted-background-color: #1e3a49;
+    --terra-menu-item-highlighted-hover-background-color: #232a2d;
+    --terra-menu-item-highlighted-hover-background-image: linear-gradient(to bottom, #04293f 2%, #053754 30%, #004c76 80%);
+    --terra-menu-item-highlighted-hover-box-shadow: inset 0 0 0 1px #04293f;
   }
 }

@@ -31,8 +31,10 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon on
   }
   isActive={false}
   isDisabled={false}
+  isHighlighted={false}
   isInstructionsForUse={false}
   isSelected={false}
+  isToggled={false}
   subMenuItems={Array []}
   text="Testing"
 />
@@ -69,8 +71,10 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon pr
   }
   isActive={false}
   isDisabled={false}
+  isHighlighted={false}
   isInstructionsForUse={false}
   isSelected={false}
+  isToggled={false}
   subMenuItems={Array []}
   text="Testing"
 />
@@ -107,8 +111,10 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set isRever
   }
   isActive={false}
   isDisabled={false}
+  isHighlighted={false}
   isInstructionsForUse={false}
   isSelected={false}
+  isToggled={false}
   subMenuItems={Array []}
   text="Testing"
 />
@@ -145,8 +151,9 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set selecte
   }
   isActive={false}
   isDisabled={false}
+  isHighlighted={false}
   isInstructionsForUse={false}
-  isSelected={false}
+  isToggled={false}
   subMenuItems={Array []}
   text="Testing"
 />
@@ -183,8 +190,10 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a disabl
   }
   isActive={false}
   isDisabled={true}
+  isHighlighted={false}
   isInstructionsForUse={false}
   isSelected={false}
+  isToggled={false}
   subMenuItems={Array []}
   text="Testing"
 />
@@ -221,8 +230,10 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
   }
   isActive={false}
   isDisabled={false}
+  isHighlighted={false}
   isInstructionsForUse={false}
   isSelected={false}
+  isToggled={false}
   subMenuItems={Array []}
   text="Testing"
 />
@@ -259,8 +270,10 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
   }
   isActive={false}
   isDisabled={false}
+  isHighlighted={false}
   isInstructionsForUse={false}
   isSelected={false}
+  isToggled={false}
   subMenuItems={
     Array [
       <CollapsibleMenuViewItem
@@ -307,8 +320,10 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should set selected pr
   }
   isActive={false}
   isDisabled={false}
+  isHighlighted={false}
   isInstructionsForUse={false}
   isSelected={true}
+  isToggled={false}
   subMenuItems={Array []}
   text="Testing"
 />
