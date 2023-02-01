@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 5.62.1 - (February 1, 2023)
+
+* Changed
+  * Minor dependency version bump of `terra-collapsible-menu-view`.
+
 ## 5.62.0 - (March 15, 2022)
 
 * Added
