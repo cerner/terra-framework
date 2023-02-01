@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.13.0 - (February 1, 2023)
+
 * Changed
   * Updated doc and added test for terra-menu
   * Updated doc and added test for terra-tabs

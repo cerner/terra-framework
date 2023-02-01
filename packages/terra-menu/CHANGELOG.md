@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.62.0 - (February 1, 2023)
+
 * Added
   * Allow for custom icons to be shown in menu
 
