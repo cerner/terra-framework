@@ -5,7 +5,6 @@ exports[`TabPane correctly applies the theme context className 1`] = `
   aria-selected={false}
   className="tab is-text-only orion-fusion-theme customClass"
   role="tab"
-  showIcon={false}
 >
   <span
     className="label"
@@ -20,7 +19,6 @@ exports[`TabPane should render a default component with label 1`] = `
   aria-selected={false}
   className="tab is-text-only"
   role="tab"
-  showIcon={false}
 >
   <span
     className="label"
@@ -35,7 +33,6 @@ exports[`TabPane should render as disabled when indicated 1`] = `
   aria-selected={false}
   className="tab is-disabled is-text-only"
   role="tab"
-  showIcon={false}
 >
   <span
     className="label"
@@ -50,7 +47,6 @@ exports[`TabPane should render with a custom display when provided 1`] = `
   aria-selected={false}
   className="tab is-text-only"
   role="tab"
-  showIcon={false}
 >
   <div>
     Custom Display
@@ -63,7 +59,6 @@ exports[`TabPane should render with custom props 1`] = `
   aria-selected={false}
   className="tab is-text-only customClass"
   role="tab"
-  showIcon={false}
 >
   <span
     className="label"
@@ -78,7 +73,6 @@ exports[`TabPane should render with icon and label 1`] = `
   aria-selected={false}
   className="tab"
   role="tab"
-  showIcon={false}
 >
   <div>
     Fake icon
@@ -97,7 +91,6 @@ exports[`TabPane should render with icon only when indicated 1`] = `
   aria-selected={false}
   className="tab is-icon-only"
   role="tab"
-  showIcon={false}
 >
   <div>
     Fake icon

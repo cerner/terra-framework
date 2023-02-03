@@ -349,7 +349,6 @@ exports[`correctly applies the theme context className 1`] = `
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <IconBase
-                      ariaLabel={null}
                       className="icon-svg"
                       focusable="false"
                       height="1em"
@@ -360,10 +359,10 @@ exports[`correctly applies the theme context className 1`] = `
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <svg
-                        aria-hidden="true"
                         className="tui-Icon icon icon-svg"
                         focusable="false"
                         height="1em"
+                        role="presentation"
                         viewBox="0 0 48 48"
                         width="1em"
                         xmlns="http://www.w3.org/2000/svg"
@@ -413,10 +412,10 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
                 class="icon"
               >
                 <svg
-                  aria-hidden="true"
                   class="tui-Icon icon icon-svg"
                   focusable="false"
                   height="1em"
+                  role="presentation"
                   viewBox="0 0 48 48"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
@@ -738,10 +737,10 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
                       class="icon"
                     >
                       <svg
-                        aria-hidden="true"
                         class="tui-Icon icon icon-svg"
                         focusable="false"
                         height="1em"
+                        role="presentation"
                         viewBox="0 0 48 48"
                         width="1em"
                         xmlns="http://www.w3.org/2000/svg"
@@ -794,7 +793,6 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <IconBase
-                  ariaLabel={null}
                   className="icon-svg"
                   focusable="false"
                   height="1em"
@@ -805,10 +803,10 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <svg
-                    aria-hidden="true"
                     className="tui-Icon icon icon-svg"
                     focusable="false"
                     height="1em"
+                    role="presentation"
                     viewBox="0 0 48 48"
                     width="1em"
                     xmlns="http://www.w3.org/2000/svg"
@@ -916,10 +914,10 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
           class="icon"
         >
           <svg
-            aria-hidden="true"
             class="tui-Icon icon icon-svg"
             focusable="false"
             height="1em"
+            role="presentation"
             viewBox="0 0 48 48"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
@@ -1023,10 +1021,10 @@ exports[`should render a date input with isInvalid prop 1`] = `
           class="icon"
         >
           <svg
-            aria-hidden="true"
             class="tui-Icon icon icon-svg"
             focusable="false"
             height="1em"
+            role="presentation"
             viewBox="0 0 48 48"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
@@ -1130,10 +1128,10 @@ exports[`should render a default date input 1`] = `
           class="icon"
         >
           <svg
-            aria-hidden="true"
             class="tui-Icon icon icon-svg"
             focusable="false"
             height="1em"
+            role="presentation"
             viewBox="0 0 48 48"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
@@ -1178,10 +1176,10 @@ exports[`should render a default date input with all props 1`] = `
                 class="icon"
               >
                 <svg
-                  aria-hidden="true"
                   class="tui-Icon icon icon-svg"
                   focusable="false"
                   height="1em"
+                  role="presentation"
                   viewBox="0 0 48 48"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1526,10 +1524,10 @@ exports[`should render a default date input with all props 1`] = `
                       class="icon"
                     >
                       <svg
-                        aria-hidden="true"
                         class="tui-Icon icon icon-svg"
                         focusable="false"
                         height="1em"
+                        role="presentation"
                         viewBox="0 0 48 48"
                         width="1em"
                         xmlns="http://www.w3.org/2000/svg"
@@ -1582,7 +1580,6 @@ exports[`should render a default date input with all props 1`] = `
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <IconBase
-                  ariaLabel={null}
                   className="icon-svg"
                   focusable="false"
                   height="1em"
@@ -1593,10 +1590,10 @@ exports[`should render a default date input with all props 1`] = `
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <svg
-                    aria-hidden="true"
                     className="tui-Icon icon icon-svg"
                     focusable="false"
                     height="1em"
+                    role="presentation"
                     viewBox="0 0 48 48"
                     width="1em"
                     xmlns="http://www.w3.org/2000/svg"

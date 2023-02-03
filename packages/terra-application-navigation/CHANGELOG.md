@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated jest snapshot for decorative icon changes.
+
 ## 1.60.0 - (December 13, 2022)
 
 * Fixed
