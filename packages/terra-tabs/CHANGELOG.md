@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed console warning `React does not recognize the `showIcon` prop on a DOM element`.
+
 ## 6.62.0 - (February 1, 2023)
 
 * Added

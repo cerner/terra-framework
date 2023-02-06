@@ -214,7 +214,6 @@ exports[`CompactHeader should render title element 1`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <IconBase
-            ariaLabel={null}
             data-name="Layer 1"
             focusable="false"
             height="1em"
@@ -225,11 +224,11 @@ exports[`CompactHeader should render title element 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <svg
-              aria-hidden="true"
               className="tui-Icon icon"
               data-name="Layer 1"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -445,7 +444,6 @@ exports[`CompactHeader should render with function callbacks 1`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <IconBase
-            ariaLabel={null}
             data-name="Layer 1"
             focusable="false"
             height="1em"
@@ -456,11 +454,11 @@ exports[`CompactHeader should render with function callbacks 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <svg
-              aria-hidden="true"
               className="tui-Icon icon"
               data-name="Layer 1"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -831,7 +829,6 @@ exports[`CompactHeader should render with ids for navigation and extension items
           xmlns="http://www.w3.org/2000/svg"
         >
           <IconBase
-            ariaLabel={null}
             data-name="Layer 1"
             focusable="false"
             height="1em"
@@ -842,11 +839,11 @@ exports[`CompactHeader should render with ids for navigation and extension items
             xmlns="http://www.w3.org/2000/svg"
           >
             <svg
-              aria-hidden="true"
               className="tui-Icon icon"
               data-name="Layer 1"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -1161,7 +1158,6 @@ exports[`CompactHeader should render with menu callback 1`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <IconBase
-            ariaLabel={null}
             data-name="Layer 1"
             focusable="false"
             height="1em"
@@ -1172,11 +1168,11 @@ exports[`CompactHeader should render with menu callback 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <svg
-              aria-hidden="true"
               className="tui-Icon icon"
               data-name="Layer 1"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"

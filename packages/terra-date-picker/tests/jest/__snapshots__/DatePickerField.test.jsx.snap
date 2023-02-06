@@ -203,7 +203,6 @@ exports[`should render a DatePickerField with props 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             >
               <IconBase
-                ariaLabel={null}
                 className="IconError"
                 focusable="false"
                 height="1em"
@@ -214,10 +213,10 @@ exports[`should render a DatePickerField with props 1`] = `
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <svg
-                  aria-hidden="true"
                   className="tui-Icon icon IconError"
                   focusable="false"
                   height="1em"
+                  role="presentation"
                   viewBox="0 0 48 48"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
@@ -876,7 +875,6 @@ exports[`should render a DatePickerField with props 1`] = `
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <IconBase
-                                          ariaLabel={null}
                                           className="icon-svg"
                                           focusable="false"
                                           height="1em"
@@ -887,10 +885,10 @@ exports[`should render a DatePickerField with props 1`] = `
                                           xmlns="http://www.w3.org/2000/svg"
                                         >
                                           <svg
-                                            aria-hidden="true"
                                             className="tui-Icon icon icon-svg"
                                             focusable="false"
                                             height="1em"
+                                            role="presentation"
                                             viewBox="0 0 48 48"
                                             width="1em"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -1067,7 +1065,6 @@ exports[`should render a default DatePickerField component 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             >
               <IconBase
-                ariaLabel={null}
                 className="IconError"
                 focusable="false"
                 height="1em"
@@ -1078,10 +1075,10 @@ exports[`should render a default DatePickerField component 1`] = `
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <svg
-                  aria-hidden="true"
                   className="tui-Icon icon IconError"
                   focusable="false"
                   height="1em"
+                  role="presentation"
                   viewBox="0 0 48 48"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1685,7 +1682,6 @@ exports[`should render a default DatePickerField component 1`] = `
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <IconBase
-                                          ariaLabel={null}
                                           className="icon-svg"
                                           focusable="false"
                                           height="1em"
@@ -1696,10 +1692,10 @@ exports[`should render a default DatePickerField component 1`] = `
                                           xmlns="http://www.w3.org/2000/svg"
                                         >
                                           <svg
-                                            aria-hidden="true"
                                             className="tui-Icon icon icon-svg"
                                             focusable="false"
                                             height="1em"
+                                            role="presentation"
                                             viewBox="0 0 48 48"
                                             width="1em"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -1951,7 +1947,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             >
               <IconBase
-                ariaLabel={null}
                 className="IconError"
                 focusable="false"
                 height="1em"
@@ -1962,10 +1957,10 @@ exports[`should render a valid DatePickerField with props 1`] = `
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <svg
-                  aria-hidden="true"
                   className="tui-Icon icon IconError"
                   focusable="false"
                   height="1em"
+                  role="presentation"
                   viewBox="0 0 48 48"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
@@ -2604,7 +2599,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <IconBase
-                                          ariaLabel={null}
                                           className="icon-svg"
                                           focusable="false"
                                           height="1em"
@@ -2615,10 +2609,10 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                           xmlns="http://www.w3.org/2000/svg"
                                         >
                                           <svg
-                                            aria-hidden="true"
                                             className="tui-Icon icon icon-svg"
                                             focusable="false"
                                             height="1em"
+                                            role="presentation"
                                             viewBox="0 0 48 48"
                                             width="1em"
                                             xmlns="http://www.w3.org/2000/svg"

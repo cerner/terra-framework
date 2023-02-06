@@ -572,7 +572,6 @@ exports[`correctly applies the theme context className 1`] = `
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <IconBase
-                                    ariaLabel={null}
                                     className="icon-svg"
                                     focusable="false"
                                     height="1em"
@@ -583,10 +582,10 @@ exports[`correctly applies the theme context className 1`] = `
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <svg
-                                      aria-hidden="true"
                                       className="tui-Icon icon icon-svg"
                                       focusable="false"
                                       height="1em"
+                                      role="presentation"
                                       viewBox="0 0 48 48"
                                       width="1em"
                                       xmlns="http://www.w3.org/2000/svg"

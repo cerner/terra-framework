@@ -61,6 +61,7 @@ const TabPane = ({
   isDisabled,
   isIconOnly,
   isActive,
+  showIcon,
   ...customProps
 }) => {
   const attributes = { ...customProps };
