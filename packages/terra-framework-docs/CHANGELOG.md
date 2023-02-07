@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 1.14.0 - (February 7, 2023)
+
 * Fixed
   * Fixed link to terra-tabs badge.
 
