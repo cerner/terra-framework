@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO test and screenshots due to webpack-config-terra and 
+  terra-functional-testing upgrade.
+
 ## 3.38.1 - (March 15, 2022)
 
 * Changed
