@@ -129,17 +129,17 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
         Terra.validates.element('modal button focused again', { selector });
       });
 
-      it('shifts focus backwards away from the modal dialog', () => {
+      it('shifts focus back onto the modal dialog', () => {
         browser.keys(['Shift', 'Tab']);
         expect($('#modal-button').isFocused()).toBeFalsy();
         expect($('#modal-open-button').isFocused()).toBeFalsy();
-        expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeFalsy();
-        Terra.validates.element('focused shifted outside the beginning of the modal', { selector });
+        expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeTruthy();
+        Terra.validates.element('focused shifted back to the modal', { selector });
       });
 
-      it('shifts focus back onto interactive elements within the modal', () => {
+      it('shifts focus backwards away from the modal dialog', () => {
         browser.keys(['Shift', 'Tab']);
-        expect($('#modal-button').isFocused()).toBeTruthy();
+        expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeFalsy();
       });
     });
 
