@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Menu from 'terra-menu';
 import IconAlert from 'terra-icon/lib/icon/IconAlert';
+import IconRequired from 'terra-icon/lib/icon/IconRequired';
 import styles from './MenuItemCommon.module.scss';
 
 const cx = classNames.bind(styles);
@@ -19,13 +20,18 @@ class MenuItemWithIcon extends React.Component {
   render() {
     return (
       <div>
-        <p>default icon, isToggled, isToggleable, and isInstructionsForUse combinations</p>
+        <p>default icon, themeable, isToggled, isToggleable, and isInstructionsForUse combinations</p>
         <br />
         <ul className={cx('unordered-list')} role="menu">
           <Menu.Item
             text="Icon"
             key="Icon"
             icon={<IconAlert />}
+          />
+          <Menu.Item
+            text="Icon, themeable"
+            key="Icon, themeable"
+            icon={<IconRequired className={cx('red-color')} />}
           />
           <Menu.Item
             text="Icon, isToggleable"
