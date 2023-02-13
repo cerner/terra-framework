@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added event.persist to fix onBlur bug.
+
 ## 4.79.0 - (February 7, 2023)
 
 * Changed
