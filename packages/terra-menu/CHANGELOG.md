@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Allow existing classnames on icon to be retained
+  
 ## 6.63.0 - (February 14, 2023)
 
 * Changed
