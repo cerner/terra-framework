@@ -244,6 +244,7 @@ class DateTimePicker extends React.Component {
       this.checkAmbiguousTime(enteredDateTime, () => {
         // If the entered time is ambiguous then do not handle blur just yet. It should be handled _after_
         // the ambiguity is resolved (i.e., after dismissing the Time Clarification dialog).
+        event.persist();
         if (!(this.state.isAmbiguousTime && this.state.isTimeClarificationOpen)) {
           this.handleBlur(event, this.state.dateTime);
         }
@@ -266,6 +267,7 @@ class DateTimePicker extends React.Component {
       }
 
       this.checkAmbiguousTime(updatedDateTime, () => {
+        event.persist();
         // If the entered time is ambiguous then do not handle blur just yet. It should be handled _after_
         // the ambiguity is resolved (i.e., after dismissing the Time Clarification dialog).
         if (!(this.state.isAmbiguousTime && this.state.isTimeClarificationOpen)) {
