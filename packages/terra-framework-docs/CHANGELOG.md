@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated test for terra-menu
+
 ## 1.15.0 - (February 14, 2023)
 
 * Changed
