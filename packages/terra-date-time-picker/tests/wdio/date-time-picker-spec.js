@@ -40,13 +40,20 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   it('should handle Re-entering Same Missing Hour Twice', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-with-timezone-dst');
     Terra.hideInputCaret('input[name="terra-time-minute-input"]');
-    $('input[name="terra-date-month-input"]').setValue('03');
-    $('input[name="terra-date-day-input"]').setValue('11');
-    $('input[name="terra-date-year-input"]').setValue('2018');
-    $('input[name="terra-time-hour-input"]').setValue('02');
-    $('input[name="terra-time-minute-input"]').setValue('30');
+    browser.keys('Tab');
+    $('input[name="terra-date-month-input"]').waitForDisplayed();
+    $('input[name="terra-date-day-input"]').waitForDisplayed();
+    $('input[name="terra-date-year-input"]').waitForDisplayed();
+    $('input[name="terra-time-hour-input"]').waitForDisplayed();
+    $('input[name="terra-time-minute-input"]').waitForDisplayed();
+
+    $('input[name="terra-date-month-input"]').addValue('03');
+    $('input[name="terra-date-day-input"]').addValue('11');
+    $('input[name="terra-date-year-input"]').addValue('2018');
+    $('input[name="terra-time-hour-input"]').addValue('02');
+    $('input[name="terra-time-minute-input"]').addValue('30');
     $('input[name="terra-time-hour-input"]').clearValue();
-    $('input[name="terra-time-hour-input"]').setValue('02');
+    $('input[name="terra-time-hour-input"]').addValue('02');
 
     Terra.validates.element('re-enter missing hour');
   });
@@ -619,11 +626,18 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-with-timezone-dst');
     browser.refresh();
     Terra.hideInputCaret('input[name="terra-time-minute-input"]');
-    $('input[name="terra-date-month-input"]').setValue('03');
-    $('input[name="terra-date-day-input"]').setValue('11');
-    $('input[name="terra-date-year-input"]').setValue('2018');
-    $('input[name="terra-time-hour-input"]').setValue('02');
-    $('input[name="terra-time-minute-input"]').setValue('30');
+    browser.keys('Tab');
+    $('input[name="terra-date-month-input"]').waitForDisplayed();
+    $('input[name="terra-date-day-input"]').waitForDisplayed();
+    $('input[name="terra-date-year-input"]').waitForDisplayed();
+    $('input[name="terra-time-hour-input"]').waitForDisplayed();
+    $('input[name="terra-time-minute-input"]').waitForDisplayed();
+
+    $('input[name="terra-date-month-input"]').addValue('03');
+    $('input[name="terra-date-day-input"]').addValue('11');
+    $('input[name="terra-date-year-input"]').addValue('2018');
+    $('input[name="terra-time-hour-input"]').addValue('02');
+    $('input[name="terra-time-minute-input"]').addValue('30');
 
     Terra.validates.element('missing hour with timezone');
   });

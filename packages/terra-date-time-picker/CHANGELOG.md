@@ -4,6 +4,8 @@
 
 * Changed
   * Added event.persist to fix onBlur bug.
+  * Updated WDIO test and screenshots due to webpack-config-terra and
+    terra-functional-testing upgrade.
 
 ## 4.79.0 - (February 7, 2023)
 
