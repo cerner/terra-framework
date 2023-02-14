@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.39.0 - (February 14, 2023)
+
 * Changed
   * Updated WDIO test and screenshots due to webpack-config-terra and 
   terra-functional-testing upgrade
