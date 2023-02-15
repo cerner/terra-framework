@@ -93,6 +93,7 @@ exports[`UtilityMenuItem should pass in a custom prop 1`] = `
 exports[`UtilityMenuItem should render with a content location 1`] = `
 <Button
   className="header-utility-footer-item"
+  iconType="decorative"
   isBlock={false}
   isCompact={false}
   isDisabled={false}
