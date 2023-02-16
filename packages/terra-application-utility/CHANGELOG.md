@@ -2,9 +2,6 @@
 
 ## Unreleased
 
-* Changed
-  * Update failing jest tests.
-
 ## 2.48.0 - (February 14, 2023)
 
 * Changed
