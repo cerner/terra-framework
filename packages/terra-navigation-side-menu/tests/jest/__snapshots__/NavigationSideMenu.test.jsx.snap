@@ -276,7 +276,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             className="header-icon back"
                           />
                         }
-                        iconType="decorative"
                         isBlock={false}
                         isCompact={false}
                         isDisabled={false}
@@ -309,7 +308,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                               className="header-icon back"
                             />
                           }
-                          iconType="decorative"
                           isBlock={false}
                           isCompact={false}
                           isDisabled={false}
@@ -322,6 +320,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         >
                           <button
                             aria-disabled={false}
+                            aria-label="Terra.actionHeader.back"
                             className="button utility orion-fusion-theme header-button back-button"
                             data-terra-action-header="back-button"
                             disabled={false}

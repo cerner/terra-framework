@@ -297,7 +297,6 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
           end={
             <Button
               data-navigation-utility-item-logout={true}
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -735,7 +734,6 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
             end={
               <Button
                 data-navigation-utility-item-logout={true}
-                iconType="decorative"
                 isBlock={false}
                 isCompact={false}
                 isDisabled={false}
@@ -761,7 +759,6 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                 >
                   <Button
                     data-navigation-utility-item-logout={true}
-                    iconType="decorative"
                     isBlock={false}
                     isCompact={false}
                     isDisabled={false}
@@ -859,7 +856,6 @@ exports[`UtilityMenu should render with skip callback 1`] = `
           end={
             <Button
               data-navigation-utility-item-logout={true}
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -983,7 +979,6 @@ exports[`UtilityMenu should render with skip callback 1`] = `
             end={
               <Button
                 data-navigation-utility-item-logout={true}
-                iconType="decorative"
                 isBlock={false}
                 isCompact={false}
                 isDisabled={false}
@@ -1009,7 +1004,6 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                 >
                   <Button
                     data-navigation-utility-item-logout={true}
-                    iconType="decorative"
                     isBlock={false}
                     isCompact={false}
                     isDisabled={false}
