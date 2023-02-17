@@ -37,6 +37,7 @@ exports[`should render a default date time picker 1`] = `
       >
         <Button
           className="button-daylight"
+          iconType="decorative"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -49,6 +50,7 @@ exports[`should render a default date time picker 1`] = `
         />
         <Button
           className="button-standard"
+          iconType="decorative"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -68,6 +70,7 @@ exports[`should render a default date time picker 1`] = `
     <Button
       aria-label=""
       className="button-offset button-offset-hidden"
+      iconType="decorative"
       isBlock={false}
       isCompact={true}
       isDisabled={false}
@@ -120,6 +123,7 @@ exports[`should render a disabled time clarification 1`] = `
       >
         <Button
           className="button-daylight"
+          iconType="decorative"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -132,6 +136,7 @@ exports[`should render a disabled time clarification 1`] = `
         />
         <Button
           className="button-standard"
+          iconType="decorative"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -151,6 +156,7 @@ exports[`should render a disabled time clarification 1`] = `
     <Button
       aria-label=""
       className="button-offset button-offset-hidden"
+      iconType="decorative"
       isBlock={false}
       isCompact={true}
       isDisabled={true}
@@ -203,6 +209,7 @@ exports[`should render offset button after daylight savings button clicked 1`] =
       >
         <Button
           className="button-daylight"
+          iconType="decorative"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -215,6 +222,7 @@ exports[`should render offset button after daylight savings button clicked 1`] =
         />
         <Button
           className="button-standard"
+          iconType="decorative"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -234,6 +242,7 @@ exports[`should render offset button after daylight savings button clicked 1`] =
     <Button
       aria-label="America/Chicago CDT -05:00"
       className="button-offset button-offset-hidden"
+      iconType="decorative"
       isBlock={false}
       isCompact={true}
       isDisabled={true}
@@ -286,6 +295,7 @@ exports[`should render offset button after daylight savings button clicked in th
       >
         <Button
           className="button-daylight"
+          iconType="decorative"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -298,6 +308,7 @@ exports[`should render offset button after daylight savings button clicked in th
         />
         <Button
           className="button-standard"
+          iconType="decorative"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -317,6 +328,7 @@ exports[`should render offset button after daylight savings button clicked in th
     <Button
       aria-label="Australia/Sydney AEDT +11:00"
       className="button-offset button-offset-hidden"
+      iconType="decorative"
       isBlock={false}
       isCompact={true}
       isDisabled={true}
@@ -369,6 +381,7 @@ exports[`should render offset button after standard time button clicked 1`] = `
       >
         <Button
           className="button-daylight"
+          iconType="decorative"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -381,6 +394,7 @@ exports[`should render offset button after standard time button clicked 1`] = `
         />
         <Button
           className="button-standard"
+          iconType="decorative"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -400,6 +414,7 @@ exports[`should render offset button after standard time button clicked 1`] = `
     <Button
       aria-label="America/Chicago CST -06:00"
       className="button-offset button-offset-hidden"
+      iconType="decorative"
       isBlock={false}
       isCompact={true}
       isDisabled={true}
@@ -452,6 +467,7 @@ exports[`should render offset button after standard time button clicked in the s
       >
         <Button
           className="button-daylight"
+          iconType="decorative"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -464,6 +480,7 @@ exports[`should render offset button after standard time button clicked in the s
         />
         <Button
           className="button-standard"
+          iconType="decorative"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -483,6 +500,7 @@ exports[`should render offset button after standard time button clicked in the s
     <Button
       aria-label="Australia/Sydney AEST +10:00"
       className="button-offset button-offset-hidden"
+      iconType="decorative"
       isBlock={false}
       isCompact={true}
       isDisabled={true}
