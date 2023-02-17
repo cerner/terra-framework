@@ -40,7 +40,7 @@ describe('Dialog Modal', () => {
 
     it('focuses on interactive elements within the modal', () => {
       browser.keys(['Tab']);
-      expect($('[type="button"][aria-label="Close"]').isFocused()).toEqual(true);
+      expect($('[type="button"][data-terra-action-header]').isFocused()).toEqual(true);
       Terra.validates.element('modal button focused', { selector: '#root' });
     });
 
@@ -51,7 +51,7 @@ describe('Dialog Modal', () => {
 
     it('shifts focus back onto interactive elements within the modal', () => {
       browser.keys(['Shift', 'Tab']);
-      expect($('[type="button"][aria-label="Close"]').isFocused()).toEqual(true);
+      expect($('[type="button"][data-terra-action-header]').isFocused()).toEqual(true);
       Terra.validates.element('modal button focused again', { selector: '#root' });
     });
   });
