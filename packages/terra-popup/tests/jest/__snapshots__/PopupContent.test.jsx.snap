@@ -273,7 +273,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                   >
                     <button
                       aria-disabled="false"
-                      aria-label="Terra.popup.header.close"
                       class="button utility"
                       title="Terra.popup.header.close"
                       type="button"
@@ -396,7 +395,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                         >
                           <button
                             aria-disabled="false"
-                            aria-label="Terra.popup.header.close"
                             class="button utility"
                             title="Terra.popup.header.close"
                             type="button"
@@ -511,7 +509,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                           >
                             <button
                               aria-disabled="false"
-                              aria-label="Terra.popup.header.close"
                               class="button utility"
                               title="Terra.popup.header.close"
                               type="button"
@@ -634,6 +631,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                               className="close-icon"
                             />
                           }
+                          iconType="decorative"
                           isBlock={false}
                           isCompact={false}
                           isDisabled={false}
@@ -646,7 +644,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                         >
                           <button
                             aria-disabled={false}
-                            aria-label="Terra.popup.header.close"
                             className="button utility"
                             disabled={false}
                             onBlur={[Function]}

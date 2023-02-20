@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated Jest snapshot for terra-button changes
+
 ## 6.63.0 - (February 14, 2023)
 
 * Changed

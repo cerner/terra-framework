@@ -335,6 +335,7 @@ exports[`CollapsibleMenuViewItem should merge custom props 1`] = `
 >
   <Button
     className="Testing"
+    iconType="decorative"
     intl={
       Object {
         "defaultFormats": Object {},
@@ -379,6 +380,7 @@ exports[`CollapsibleMenuViewItem should not set isSelected on button outside of 
   className="face-up-item"
 >
   <Button
+    iconType="decorative"
     intl={
       Object {
         "defaultFormats": Object {},
@@ -464,6 +466,7 @@ exports[`CollapsibleMenuViewItem should render a button with icon and text when 
         xmlns="http://www.w3.org/2000/svg"
       />
     }
+    iconType="decorative"
     intl={
       Object {
         "defaultFormats": Object {},
@@ -508,6 +511,7 @@ exports[`CollapsibleMenuViewItem should render a default component 1`] = `
   className="face-up-item"
 >
   <Button
+    iconType="decorative"
     intl={
       Object {
         "defaultFormats": Object {},
@@ -586,6 +590,7 @@ exports[`CollapsibleMenuViewItem should render a disabled button when isDisabled
   className="face-up-item"
 >
   <Button
+    iconType="decorative"
     intl={
       Object {
         "defaultFormats": Object {},
@@ -629,6 +634,7 @@ exports[`CollapsibleMenuViewItem should render a menu when subMenuItems are give
 <CollapsibleMenu
   button={
     <Button
+      iconType="decorative"
       intl={
         Object {
           "defaultFormats": Object {},
@@ -690,6 +696,7 @@ exports[`CollapsibleMenuViewItem should set icon prop on button 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       />
     }
+    iconType="decorative"
     intl={
       Object {
         "defaultFormats": Object {},
@@ -741,6 +748,7 @@ exports[`CollapsibleMenuViewItem should set isReversed prop on button 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       />
     }
+    iconType="decorative"
     intl={
       Object {
         "defaultFormats": Object {},
