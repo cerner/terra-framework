@@ -35,6 +35,10 @@
     height: var(--terra-menu-submenu-header-height);
     width: 100%;
 
+    *[role='button'] {
+      outline-offset: var(--terra-menu-submenu-header-button-outline-offset, -2px);
+    }
+
     .header-title {
       align-self: center;
       color: var(--terra-menu-submenu-header-title-color, #1c1f21);
@@ -103,6 +107,7 @@
     background-color: var(--terra-menu-background-color, #fff);
     background-image: var(--terra-menu-background-image);
     color: var(--terra-menu-foreground-color, #1c1f21);
+    outline: 0;
   }
 
   .content.submenu {

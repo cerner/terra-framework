@@ -22,7 +22,7 @@ class MenuItemsHighlighted extends React.Component {
       <div>
         <p>default isHighlighted, icon, isToggled, isToggleable, and isInstructionsForUse combinations</p>
         <br />
-        <ul className={cx('unordered-list')} role="menu">
+        <ul className={cx('mimic-menu-container')} role="menu">
           <Spacer marginBottom="medium">
             <Menu.Item
               text="isHighlighted"
@@ -71,6 +71,17 @@ class MenuItemsHighlighted extends React.Component {
               icon={<IconAlert />}
             />
           </Spacer>
+          <Spacer marginBottom="medium">
+            <Menu.Item
+              text="isHighlighted - Submenu"
+              key="isHighlighted - Submenu"
+              isHighlighted
+              subMenuItems={[
+                <Menu.Item text="Not Visible" />,
+              ]}
+            />
+          </Spacer>
+
         </ul>
       </div>
     );

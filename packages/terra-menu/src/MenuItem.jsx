@@ -281,12 +281,12 @@ class MenuItem extends React.Component {
         fitStartIcon = <InstructionsForUseIcon className={cx('start-icon')} />;
       } else if (toggleableMenu) {
         if (!toggleable && icon) {
-          fitStartIcon = React.cloneElement(icon, { className: cx('start-icon') });
+          fitStartIcon = React.cloneElement(icon, { className: cx([icon.props.className, 'start-icon']) });
         } else {
           fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
         }
       } else if (icon) {
-        fitStartIcon = React.cloneElement(icon, { className: cx('start-icon') });
+        fitStartIcon = React.cloneElement(icon, { className: cx([icon.props.className, 'start-icon']) });
       } else if (shouldReserveSpaceForIcon) {
         fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
       }

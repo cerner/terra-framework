@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import List from 'terra-list';
 import Menu from 'terra-menu';
 import IconWarning from 'terra-icon/lib/icon/IconWarning';
+import IconRequired from 'terra-icon/lib/icon/IconRequired';
+import ThemeContext from 'terra-theme-context';
+import styles from './MenuItemCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 const childContextTypes = {
   isSelectableMenu: PropTypes.bool,
@@ -14,12 +20,13 @@ class MenuItemDisabled extends React.Component {
   }
 
   render() {
+    const theme = this.context;
     return (
       <div>
         <div id="isSelected">
           <p>The item is disabled. The selection state should not change with any user interaction.</p>
         </div>
-        <List role="menu">
+        <List className={cx(['mimic-menu-container'])} role="menu">
           <Menu.Item
             text="Disabled Menu Item"
             key="1"
@@ -59,6 +66,13 @@ class MenuItemDisabled extends React.Component {
             className="TestDisabledItem"
             icon={<IconWarning />}
           />
+          <Menu.Item
+            isDisabled
+            text="Disabled Themeable Icon Menu Item"
+            key="6"
+            className="TestDisabledItem"
+            icon={<IconRequired className={cx(['red-color', theme.className])} />}
+          />
         </List>
       </div>
     );
@@ -66,4 +80,5 @@ class MenuItemDisabled extends React.Component {
 }
 
 MenuItemDisabled.childContextTypes = childContextTypes;
+MenuItemDisabled.contextType = ThemeContext;
 export default MenuItemDisabled;
