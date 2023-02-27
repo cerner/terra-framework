@@ -4,6 +4,7 @@
 
 * Changed
   * Updated Jest snapshot for terra-button changes
+  * Updated WDIO screenshots due to terra-menu changes
 
 ## 6.63.0 - (February 14, 2023)
 
