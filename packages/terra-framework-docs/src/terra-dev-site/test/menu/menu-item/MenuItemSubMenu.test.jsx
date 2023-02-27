@@ -6,7 +6,7 @@ import styles from './MenuItemCommon.module.scss';
 const cx = classNames.bind(styles);
 
 const MenuItemSubMenu = () => (
-  <ul className={cx('unordered-list')} role="menu">
+  <ul className={cx('mimic-menu-container')} role="menu">
     <Menu.Item
       className="TestSubMenuItem"
       text="MenuItem - Submenu"

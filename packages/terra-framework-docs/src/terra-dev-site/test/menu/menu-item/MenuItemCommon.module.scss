@@ -1,10 +1,19 @@
 :local {
-  .unordered-list {
-    height: 34px;
-    width: 240px;
+  .mimic-menu-container {
+    list-style: none;
+    padding: 0;
+    width: 238px;
   }
 
   .red-color {
-    color: #f00;
+    color: var(--terra-framework-docs-menu-item-test-red-color, #e50000);
+  }
+
+  .orion-fusion-theme {
+    --terra-framework-docs-menu-item-test-red-color: #e50000;
+  }
+
+  .clinical-lowlight-theme {
+    --terra-framework-docs-menu-item-test-red-color: #fb4c4c;
   }
 }
