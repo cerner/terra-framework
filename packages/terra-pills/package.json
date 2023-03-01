@@ -1,7 +1,7 @@
 {
   "name": "@cerner/terra-pills",
   "main": "lib/index.js",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "The terra-pills component provides a way to trigger actions to launch popovers with the desired content or remove the component",
   "repository": {
     "type": "git",
@@ -40,7 +40,7 @@
     "keycode-js": "^3.1.0",
     "prop-types": "^15.5.8",
     "resize-observer-polyfill": "^1.4.1",
-    "terra-popup": "^6.62.0",
+    "terra-popup": "^6.63.0",
     "terra-theme-context": "^1.8.0",
     "terra-visually-hidden-text": "^2.32.0",
     "uuid": "^3.3.2"
