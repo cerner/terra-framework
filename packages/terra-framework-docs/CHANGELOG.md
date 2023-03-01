@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.16.0 - (March 1, 2023)
+
 * Changed
   * Updated test for terra-menu
 
