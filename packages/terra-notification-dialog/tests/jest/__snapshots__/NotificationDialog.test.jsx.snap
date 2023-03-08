@@ -81,7 +81,6 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
           >
             <Button
               data-terra-notification-dialog-button="reject"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -227,7 +226,6 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
           >
             <Button
               data-terra-notification-dialog-button="accept"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -241,7 +239,6 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
             />
             <Button
               data-terra-notification-dialog-button="reject"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -344,7 +341,6 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
           >
             <Button
               data-terra-notification-dialog-button="accept"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -358,7 +354,6 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
             />
             <Button
               data-terra-notification-dialog-button="reject"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -461,7 +456,6 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
           >
             <Button
               data-terra-notification-dialog-button="accept"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -475,7 +469,6 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
             />
             <Button
               data-terra-notification-dialog-button="reject"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -578,7 +571,6 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
           >
             <Button
               data-terra-notification-dialog-button="accept"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -592,7 +584,6 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
             />
             <Button
               data-terra-notification-dialog-button="reject"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -695,7 +686,6 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
           >
             <Button
               data-terra-notification-dialog-button="accept"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -709,7 +699,6 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
             />
             <Button
               data-terra-notification-dialog-button="reject"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -812,7 +801,6 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
           >
             <Button
               data-terra-notification-dialog-button="reject"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -826,7 +814,6 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
             />
             <Button
               data-terra-notification-dialog-button="accept"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -936,7 +923,6 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
           >
             <Button
               data-terra-notification-dialog-button="accept"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -950,7 +936,6 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
             />
             <Button
               data-terra-notification-dialog-button="reject"
-              iconType="decorative"
               isBlock={false}
               isCompact={false}
               isDisabled={false}
@@ -1338,7 +1323,6 @@ exports[`correctly applies the theme context className 1`] = `
                         >
                           <Button
                             data-terra-notification-dialog-button="accept"
-                            iconType="decorative"
                             isBlock={false}
                             isCompact={false}
                             isDisabled={false}
@@ -1376,7 +1360,6 @@ exports[`correctly applies the theme context className 1`] = `
                           </Button>
                           <Button
                             data-terra-notification-dialog-button="reject"
-                            iconType="decorative"
                             isBlock={false}
                             isCompact={false}
                             isDisabled={false}

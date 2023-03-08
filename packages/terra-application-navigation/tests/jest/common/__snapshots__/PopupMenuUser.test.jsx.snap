@@ -10,13 +10,11 @@ exports[`PopupMenuUser should render default element 1`] = `
     <div
       className="avatar-outline"
     />
-    <Avatar
+    <InjectIntl(Avatar)
       alt="user-name"
-      color="auto"
       image="user-src"
       initials="user-initials"
       isAriaHidden={true}
-      isDeceased={false}
       size="1.174rem"
     />
   </div>
