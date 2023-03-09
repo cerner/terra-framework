@@ -13,14 +13,16 @@
 *.seed
 .dat*
 .DS_Store
+.fleet
 .grunt
+.idea
 .lock-wscript
 .node_repl_history
 .npm
 .nyc_output
 .repl_history
 .rvmrc
-.idea
+.vscode
 .sass-cache/
 /.bundle/
 /.config
@@ -60,5 +62,4 @@ props-table
 **/__snapshots__/latest
 **/__snapshots__/diff
 **/__snapshots__/error
-.vscode/
 generated-themes

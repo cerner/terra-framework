@@ -833,7 +833,6 @@ exports[`should render a DatePickerField with props 1`] = `
                                     xmlns="http://www.w3.org/2000/svg"
                                   />
                                 }
-                                iconType="decorative"
                                 isBlock={false}
                                 isCompact={true}
                                 isDisabled={true}
@@ -850,6 +849,7 @@ exports[`should render a DatePickerField with props 1`] = `
                               >
                                 <button
                                   aria-disabled={true}
+                                  aria-label="Terra.datePicker.openCalendar"
                                   className="button neutral is-disabled compact button is-invalid"
                                   data-terra-open-calendar-button={true}
                                   disabled={true}
@@ -1641,7 +1641,6 @@ exports[`should render a default DatePickerField component 1`] = `
                                     xmlns="http://www.w3.org/2000/svg"
                                   />
                                 }
-                                iconType="decorative"
                                 isBlock={false}
                                 isCompact={true}
                                 isDisabled={false}
@@ -1658,6 +1657,7 @@ exports[`should render a default DatePickerField component 1`] = `
                               >
                                 <button
                                   aria-disabled={false}
+                                  aria-label="Terra.datePicker.openCalendar"
                                   className="button neutral compact button"
                                   data-terra-open-calendar-button={true}
                                   disabled={false}
@@ -2557,7 +2557,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                     xmlns="http://www.w3.org/2000/svg"
                                   />
                                 }
-                                iconType="decorative"
                                 isBlock={false}
                                 isCompact={true}
                                 isDisabled={true}
@@ -2574,6 +2573,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                               >
                                 <button
                                   aria-disabled={true}
+                                  aria-label="Terra.datePicker.openCalendar"
                                   className="button neutral is-disabled compact button"
                                   data-terra-open-calendar-button={true}
                                   disabled={true}

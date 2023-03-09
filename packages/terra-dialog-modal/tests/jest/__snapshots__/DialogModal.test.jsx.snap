@@ -23,7 +23,6 @@ exports[`correctly applies the theme context className 1`] = `
       width="1120"
     />
     <Button
-      iconType="decorative"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
@@ -84,7 +83,6 @@ exports[`should mount an open dialogModal 1`] = `
       width="1120"
     />
     <Button
-      iconType="decorative"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
@@ -147,7 +145,6 @@ exports[`should mount an open dialogModal 320 width 1`] = `
       width="320"
     />
     <Button
-      iconType="decorative"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
@@ -210,7 +207,6 @@ exports[`should mount an open dialogModal 960 width 1`] = `
       width="960"
     />
     <Button
-      iconType="decorative"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
@@ -273,7 +269,6 @@ exports[`should mount an open dialogModal 1280 width 1`] = `
       width="1280"
     />
     <Button
-      iconType="decorative"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
@@ -336,7 +331,6 @@ exports[`should mount an open dialogModal 1600 width 1`] = `
       width="1600"
     />
     <Button
-      iconType="decorative"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
@@ -399,7 +393,6 @@ exports[`should mount an open dialogModal 1600 width 2`] = `
       width="1600"
     />
     <Button
-      iconType="decorative"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
@@ -462,7 +455,6 @@ exports[`should set the rootSelector 1`] = `
       width="1120"
     />
     <Button
-      iconType="decorative"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
@@ -534,7 +526,6 @@ exports[`should shallow an open dialogModal 1`] = `
     </p>
   </DialogModal>
   <Button
-    iconType="decorative"
     isBlock={false}
     isCompact={false}
     isDisabled={false}
@@ -582,7 +573,6 @@ exports[`should shallow an open dialogModal 320 width 1`] = `
     </p>
   </DialogModal>
   <Button
-    iconType="decorative"
     isBlock={false}
     isCompact={false}
     isDisabled={false}
@@ -630,7 +620,6 @@ exports[`should shallow an open dialogModal 960 width 1`] = `
     </p>
   </DialogModal>
   <Button
-    iconType="decorative"
     isBlock={false}
     isCompact={false}
     isDisabled={false}
@@ -678,7 +667,6 @@ exports[`should shallow an open dialogModal 1280 width 1`] = `
     </p>
   </DialogModal>
   <Button
-    iconType="decorative"
     isBlock={false}
     isCompact={false}
     isDisabled={false}
@@ -726,7 +714,6 @@ exports[`should shallow an open dialogModal 1600 width 1`] = `
     </p>
   </DialogModal>
   <Button
-    iconType="decorative"
     isBlock={false}
     isCompact={false}
     isDisabled={false}
