@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO screenshots.
+
 ## 4.47.0 - (February 14, 2023)
 
 * Changed

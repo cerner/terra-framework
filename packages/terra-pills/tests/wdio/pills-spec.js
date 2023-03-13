@@ -92,7 +92,7 @@ Terra.describeViewports('Pills', ['large'], () => {
 
       it('should collapse more pills after resizing the window', () => {
         browser.setWindowSize(viewportSize.width - 400, 1000);
-        Terra.validates.element('collapsed pills afeter resize', { selector: '#root' });
+        Terra.validates.element('collapsed pills after resize', { selector: '#root' });
       });
 
       it('should collapse all collapsible-pills', () => {
