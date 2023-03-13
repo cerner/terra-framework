@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated Jest snapshots.
+
 ## 4.78.0 - (March 1, 2023)
 
 * Changed
