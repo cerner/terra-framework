@@ -76,20 +76,26 @@ class SlidePanel extends React.Component {
     super(props);
     this.setPanelNode = this.setPanelNode.bind(this);
     this.mainNode = React.createRef();
+    this.setLastClicked = this.setLastClicked.bind(this);
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
+      // Give focus to the first focusable element within the slide panel
       const panelNodeFocus = findFirstFocusableElement(this.panelNode);
       panelNodeFocus.focus();
     } else if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
-      const mainNodeFocus = findFirstFocusableElement(this.mainNode.current);
-      mainNodeFocus.focus();
+      // Return focus to the disclosing element
+      this.lastClicked.focus();
     }
   }
 
   setPanelNode(node) {
     this.panelNode = node;
+  }
+
+  setLastClicked(event) {
+    this.lastClicked = event.target;
   }
 
   render() {
@@ -125,7 +131,7 @@ class SlidePanel extends React.Component {
     );
 
     const mainDiv = (
-      <div className={cx('main')} key="main" tabIndex="-1" aria-label={mainAriaLabel} ref={this.mainNode}>
+      <div className={cx('main')} key="main" tabIndex="-1" aria-label={mainAriaLabel} ref={this.mainNode} onClick={this.setLastClicked}>
         {mainContent}
       </div>
     );
