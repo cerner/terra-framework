@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './SlidePanel.module.scss';
+import SlidePanelUtils from './SlidePanelUtils';
 
 const cx = classNamesBind.bind(styles);
 
@@ -70,26 +71,6 @@ const defaultProps = {
   panelSize: 'small',
 };
 
-const isFocusable = element => {
-  if (element.tabIndex < 0) {
-    return false;
-  }
-  switch (element.tagName) {
-    case 'A':
-      return !!element.href;
-    case 'INPUT':
-      return element.type !== 'hidden' && !element.disabled;
-    case 'SELECT':
-    case 'TEXTAREA':
-    case 'BUTTON':
-      return !element.disabled;
-    default:
-      return false;
-  }
-};
-
-const findFirstFocusableElement = container => Array.from(container.getElementsByTagName('*')).find(isFocusable);
-
 class SlidePanel extends React.Component {
   constructor(props) {
     super(props);
@@ -99,10 +80,10 @@ class SlidePanel extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
-      const panelNodeFocus = findFirstFocusableElement(this.panelNode);
+      const panelNodeFocus = SlidePanelUtils.findFirstFocusableElement(this.panelNode);
       panelNodeFocus.focus();
     } else if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
-      const mainNodeFocus = findFirstFocusableElement(this.mainNode.current);
+      const mainNodeFocus = SlidePanelUtils.findFirstFocusableElement(this.mainNode.current);
       mainNodeFocus.focus();
     }
   }
