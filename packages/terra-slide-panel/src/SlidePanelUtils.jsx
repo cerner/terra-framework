@@ -1,7 +1,7 @@
 /**
  * Returns true if the given element is focusable, otherwise returns false.
  */
-const isFocusable = element => {
+export const isFocusable = element => {
   if (element.tabIndex < 0) {
     return false;
   }
