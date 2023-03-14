@@ -97,16 +97,13 @@ class SlidePanel extends React.Component {
     this.mainNode = React.createRef();
   }
 
-  componentDidUpdate(prevProps) {
-    console.log(this.panelNode);
-    console.log(this.panelNode);
-
+  componentDidUpdate(prevProps) {     
     if (this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
-      this.panelNode.focus(); // TODO: Find the interactable element?
-      console.log("Panel Node first element", findFirstFocusableElement(this.panelNode));
+      const panelNodeFocus = findFirstFocusableElement(this.panelNode);
+      panelNodeFocus.focus();
     } else if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
-      this.mainNode.current.focus(); // TODO: Find the interactable element?
-      console.log("Main Node first element", findFirstFocusableElement(this.mainNode));
+      const mainNodeFocus = findFirstFocusableElement(this.mainNode.current);
+      mainNodeFocus.focus();
     }
   }
 
