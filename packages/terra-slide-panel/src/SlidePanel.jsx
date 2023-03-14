@@ -70,6 +70,26 @@ const defaultProps = {
   panelSize: 'small',
 };
 
+const isFocusable = item => {
+  if (item.tabIndex < 0) {
+    return false;
+  }
+  switch (item.tagName) {
+    case 'A':
+      return !!item.href;
+    case 'INPUT':
+      return item.type !== 'hidden' && !item.disabled;
+    case 'SELECT':
+    case 'TEXTAREA':
+    case 'BUTTON':
+      return !item.disabled;
+    default:
+      return false;
+  }
+};
+
+const findFirstFocusableElement = container => Array.from(container.getElementsByTagName('*')).find(isFocusable);
+
 class SlidePanel extends React.Component {
   constructor(props) {
     super(props);
@@ -80,8 +100,10 @@ class SlidePanel extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
       this.panelNode.focus();
+      console.log("Panel Node first element", findFirstFocusableElement(this.panelNode));
     } else if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
       this.mainNode.current.focus();
+      console.log("Main Node first element", findFirstFocusableElement(this.mainNode));
     }
   }
 
