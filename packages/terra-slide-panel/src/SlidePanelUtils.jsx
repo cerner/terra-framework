@@ -1,5 +1,5 @@
 /**
- * Returns true if the given element is focusable.
+ * Returns true if the given element is focusable, otherwise returns false.
  */
 const isFocusable = element => {
   if (element.tabIndex < 0) {
