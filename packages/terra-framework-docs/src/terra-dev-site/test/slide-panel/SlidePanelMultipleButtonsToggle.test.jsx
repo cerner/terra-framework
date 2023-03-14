@@ -31,6 +31,7 @@ class SlidePanelDemo extends React.Component {
             <div className={cx('main-content')}>
               <button type="button" id="other-button" className={cx('button')} onClick={this.handleOtherButton}>Other Button</button>
               <button type="button" id="test-toggle" className={cx('button')} onClick={this.handlePanelToggle}>toggle</button>
+              <button type="button" id="another-button" className={cx('button')} onClick={this.handleOtherButton}>Another Button</button>
             </div>
           )}
           panelContent={(
