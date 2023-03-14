@@ -25,4 +25,4 @@ const isFocusable = element => {
 export const findFirstFocusableElement = (container) => {
   const elements = Array.from(container.querySelectorAll('*'));
   return (elements.find(isFocusable));
-}
+};
