@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './SlidePanel.module.scss';
-import SlidePanelUtils from './SlidePanelUtils';
+import { findFirstFocusableElement } from './SlidePanelUtils';
 
 const cx = classNamesBind.bind(styles);
 
@@ -80,10 +80,10 @@ class SlidePanel extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
-      const panelNodeFocus = SlidePanelUtils.findFirstFocusableElement(this.panelNode);
+      const panelNodeFocus = findFirstFocusableElement(this.panelNode);
       panelNodeFocus.focus();
     } else if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
-      const mainNodeFocus = SlidePanelUtils.findFirstFocusableElement(this.mainNode.current);
+      const mainNodeFocus = findFirstFocusableElement(this.mainNode.current);
       mainNodeFocus.focus();
     }
   }

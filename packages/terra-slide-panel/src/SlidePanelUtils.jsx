@@ -22,13 +22,7 @@ const isFocusable = element => {
 /**
  * Returns the first focusable element in the container.
  */
-const findFirstFocusableElement = (container) => {
+export const findFirstFocusableElement = (container) => {
   const elements = Array.from(container.querySelectorAll('*'));
   return (elements.find(isFocusable));
 }
-
-const SlidePanelUtils = {
-  findFirstFocusableElement
-}
-
-export default SlidePanelUtils;
