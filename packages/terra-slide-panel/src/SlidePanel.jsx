@@ -95,7 +95,7 @@ class SlidePanel extends React.Component {
   }
 
   setLastClicked(event) {
-    if (isFocusable(event.target)){
+    if (isFocusable(event.target)) {
       this.lastClicked = event.target;
     }
   }
