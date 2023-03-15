@@ -7,7 +7,7 @@ import TransitionGroup from 'react-transition-group/TransitionGroup';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import Slide from './Slide';
 import transitions from './Slide.module.scss';
-import { findFirstFocusableElement } from '../../terra-slide-panel/src/SlidePanelUtils';
+import { isFocusable, findFirstFocusableElement } from '../../terra-slide-panel/src/SlidePanelUtils';
 
 const cx = classNamesBind.bind(transitions);
 
@@ -31,6 +31,10 @@ class SlideGroup extends React.Component {
     if (enteredElement.previousSibling) {
       enteredElement.previousSibling.setAttribute('aria-hidden', true);
 
+      // console.log([...this.disclosingNodes])
+      // console.log(this.lastClicked);
+      // this.setDisclosingNodes([...this.disclosingNodes, this.lastClicked]);
+
       const focusElement = findFirstFocusableElement(enteredElement);
       focusElement.focus();
     }
@@ -40,16 +44,34 @@ class SlideGroup extends React.Component {
     if (exitingElement.previousSibling) {
       exitingElement.previousSibling.removeAttribute('aria-hidden');
     }
+
+    console.log(this.lastClicked);
   }
 
   constructor(props) {
     super(props);
     this.setContainer = this.setContainer.bind(this);
+    this.setLastClicked = this.setLastClicked.bind(this);
+    this.setDisclosingNodes = this.setDisclosingNodes.bind(this);
+    this.disclosingNodes = [];
   }
 
   setContainer(node) {
     if (!node) { return; } // Ref callbacks happen on mount and unmount, element is null on unmount
     this.slideGroup = node;
+  }
+
+  setLastClicked(event) {
+    if (isFocusable(event.target)) {
+      this.lastClicked = event.target;
+    }
+  }
+
+  setDisclosingNodes(nodes) {
+    console.log("setting disclosing nodes!");
+    console.log(nodes);
+
+    this.disclosingNodes = nodes;
   }
 
   render() {
@@ -80,7 +102,7 @@ class SlideGroup extends React.Component {
     customProps.className);
 
     return (
-      <TransitionGroup {...customProps} ref={this.setContainer} className={slideGroupClass} key={transitionGroupKey}>
+      <TransitionGroup {...customProps} ref={this.setContainer} className={slideGroupClass} key={transitionGroupKey} onClick={this.setLastClicked}>
         {items.map((item, index) => (
           <CSSTransition
             classNames={transitionNames}
