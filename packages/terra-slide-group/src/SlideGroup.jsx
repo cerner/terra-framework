@@ -126,7 +126,7 @@ class SlideGroup extends React.Component {
             key={item.key}
             id="shmmoop"
           >
-            <Slide isHidden={!isAnimated && index !== itemCount}>
+            <Slide isHidden={index !== itemCount}>
               {item}
             </Slide>
           </CSSTransition>

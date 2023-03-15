@@ -24,19 +24,19 @@ const defaultProps = {
 };
 
 const Slide = (props) => {
-  const [lastClicked, setLastClicked] = useState(null); 
+  const [lastClicked, setLastClicked] = useState(null);
 
   useEffect(() => {
     if (!props.isHidden && lastClicked) {
       lastClicked.focus();
     }
-  }, [props.isHidden]);
+  });
 
   const handleClick = (event) => {
     if (isFocusable(event.target)) {
       setLastClicked(event.target);
     }
-  }
+  };
 
   const theme = React.useContext(ThemeContext);
   return (

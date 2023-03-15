@@ -82,11 +82,9 @@ class SlidePanel extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
-      // Give focus to the first focusable element within the slide panel
-      const panelNodeFocus = findFirstFocusableElement(this.panelNode);
       // Save the disclosing node for returning focus when panel is closed
       this.setDisclosingNode(this.lastClicked);
-      panelNodeFocus.focus();
+      this.panelNode.focus();
     } else if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
       // Return focus to the disclosing element
       this.disclosingNode.focus();
