@@ -53,7 +53,11 @@ class SlideGroup extends React.Component {
     this.setContainer = this.setContainer.bind(this);
     this.setLastClicked = this.setLastClicked.bind(this);
     this.setDisclosingNodes = this.setDisclosingNodes.bind(this);
-    this.disclosingNodes = [];
+
+    this.state = {
+      currentSlide: 0,
+      lastClicked: [],
+    };
   }
 
   setContainer(node) {
@@ -61,9 +65,17 @@ class SlideGroup extends React.Component {
     this.slideGroup = node;
   }
 
-  setLastClicked(event) {
+  setLastClicked(event, itemCount) {
+    event.persist();
+
+    console.log('state', this.state);
+    console.log('clicked. event:', event.target);
+    console.log('item count', itemCount);
+
     if (isFocusable(event.target)) {
-      this.lastClicked = event.target;
+      this.setState((state) => {
+        state.lastClicked.splice(itemCount, 1, event.target);
+      });
     }
   }
 
@@ -102,7 +114,7 @@ class SlideGroup extends React.Component {
     customProps.className);
 
     return (
-      <TransitionGroup {...customProps} ref={this.setContainer} className={slideGroupClass} key={transitionGroupKey} onClick={this.setLastClicked}>
+      <TransitionGroup {...customProps} ref={this.setContainer} className={slideGroupClass} key={transitionGroupKey} onClick={(e) => this.setLastClicked(e, itemCount)}>
         {items.map((item, index) => (
           <CSSTransition
             classNames={transitionNames}

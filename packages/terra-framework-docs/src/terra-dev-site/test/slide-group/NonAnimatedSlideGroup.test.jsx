@@ -33,8 +33,9 @@ class SlideGroupExample extends React.Component {
             {i}
           </h2>
           <br />
-          {i !== 4 ? <button type="button" id={`increment-${i}`} className={cx('button')} onClick={this.increment}>Increment</button> : null}
+          <button type="button" id="other-button" className={cx('button')} onClick={this.handleOtherButton}>Other Button</button>
           {i !== 1 ? <button type="button" id={`decrement-${i}`} className={cx('button')} onClick={this.decrement}>Decrement</button> : null}
+          {i !== 4 ? <button type="button" id={`increment-${i}`} className={cx('button')} onClick={this.increment}>Increment</button> : null}
         </div>
       ));
     }
