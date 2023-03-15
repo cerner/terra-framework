@@ -30,13 +30,6 @@ class SlideGroup extends React.Component {
   static hidePreviousSlide(enteredElement) {
     if (enteredElement.previousSibling) {
       enteredElement.previousSibling.setAttribute('aria-hidden', true);
-
-      // console.log([...this.disclosingNodes])
-      // console.log(this.lastClicked);
-      // this.setDisclosingNodes([...this.disclosingNodes, this.lastClicked]);
-
-      const focusElement = findFirstFocusableElement(enteredElement);
-      focusElement.focus();
     }
   }
 
