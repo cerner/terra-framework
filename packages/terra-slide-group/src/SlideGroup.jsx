@@ -37,46 +37,16 @@ class SlideGroup extends React.Component {
     if (exitingElement.previousSibling) {
       exitingElement.previousSibling.removeAttribute('aria-hidden');
     }
-
-    console.log(this.lastClicked);
   }
 
   constructor(props) {
     super(props);
     this.setContainer = this.setContainer.bind(this);
-    this.setLastClicked = this.setLastClicked.bind(this);
-    this.setDisclosingNodes = this.setDisclosingNodes.bind(this);
-
-    this.state = {
-      currentSlide: 0,
-      lastClicked: [],
-    };
   }
 
   setContainer(node) {
     if (!node) { return; } // Ref callbacks happen on mount and unmount, element is null on unmount
     this.slideGroup = node;
-  }
-
-  setLastClicked(event, itemCount) {
-    event.persist();
-
-    console.log('state', this.state);
-    console.log('clicked. event:', event.target);
-    console.log('item count', itemCount);
-
-    if (isFocusable(event.target)) {
-      this.setState((state) => {
-        state.lastClicked.splice(itemCount, 1, event.target);
-      });
-    }
-  }
-
-  setDisclosingNodes(nodes) {
-    console.log("setting disclosing nodes!");
-    console.log(nodes);
-
-    this.disclosingNodes = nodes;
   }
 
   render() {
@@ -107,7 +77,7 @@ class SlideGroup extends React.Component {
     customProps.className);
 
     return (
-      <TransitionGroup {...customProps} ref={this.setContainer} className={slideGroupClass} key={transitionGroupKey} onClick={(e) => this.setLastClicked(e, itemCount)}>
+      <TransitionGroup {...customProps} ref={this.setContainer} className={slideGroupClass} key={transitionGroupKey}>
         {items.map((item, index) => (
           <CSSTransition
             classNames={transitionNames}
