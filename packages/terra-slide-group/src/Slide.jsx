@@ -40,6 +40,7 @@ const Slide = (props) => {
 
   const theme = React.useContext(ThemeContext);
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div className={cx('slide', theme.className)} aria-hidden={props.isHidden || null} onClick={handleClick} onKeyUp={handleClick}>
       <div className={cx('slide-shadow')} />
       {props.children}

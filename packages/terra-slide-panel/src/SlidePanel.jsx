@@ -138,6 +138,7 @@ class SlidePanel extends React.Component {
     );
 
     const mainDiv = (
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div className={cx('main')} key="main" tabIndex="-1" aria-label={mainAriaLabel} ref={this.mainNode} onClick={this.setLastClicked} onKeyUp={this.setLastClicked}>
         {mainContent}
       </div>
