@@ -7,7 +7,6 @@ import TransitionGroup from 'react-transition-group/TransitionGroup';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import Slide from './Slide';
 import transitions from './Slide.module.scss';
-import { isFocusable, findFirstFocusableElement } from '../../terra-slide-panel/src/SlidePanelUtils';
 
 const cx = classNamesBind.bind(transitions);
 

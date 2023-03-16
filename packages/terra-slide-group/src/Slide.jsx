@@ -40,7 +40,7 @@ const Slide = (props) => {
 
   const theme = React.useContext(ThemeContext);
   return (
-    <div className={cx('slide', theme.className)} aria-hidden={props.isHidden || null} onClick={handleClick}>
+    <div className={cx('slide', theme.className)} aria-hidden={props.isHidden || null} onClick={handleClick} onKeyUp={handleClick}>
       <div className={cx('slide-shadow')} />
       {props.children}
     </div>
