@@ -1,7 +1,7 @@
 /**
  * Returns true if the given element is focusable, otherwise returns false.
  */
-export const isFocusable = element => {
+const isFocusable = element => {
   if (element.tabIndex < 0) {
     return false;
   }
@@ -19,10 +19,4 @@ export const isFocusable = element => {
   }
 };
 
-/**
- * Returns the first focusable element in the container.
- */
-export const findFirstFocusableElement = (container) => {
-  const elements = Array.from(container.querySelectorAll('*'));
-  return (elements.find(isFocusable));
-};
+export default isFocusable;

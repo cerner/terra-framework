@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './Slide.module.scss';
-import { isFocusable } from '../../terra-slide-panel/src/SlidePanelUtils';
+import isFocusable from '../../terra-slide-panel/src/SlidePanelUtils';
 
 const cx = classNames.bind(styles);
 

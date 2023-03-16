@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './SlidePanel.module.scss';
-import { isFocusable } from './SlidePanelUtils';
+import isFocusable from './SlidePanelUtils';
 
 const cx = classNamesBind.bind(styles);
 
