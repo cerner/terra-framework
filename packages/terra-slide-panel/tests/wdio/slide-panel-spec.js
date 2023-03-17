@@ -82,7 +82,28 @@ Terra.describeViewports('Slide panel', ['large'], () => {
 
       $('#test-toggle').isFocused();
 
+      browser.pause(150);
+
       Terra.validates.element('toggle button focused', { selector: '#root' });
+    });
+    it('Closes panel and focuses on toggle button with multiple buttons', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-multiple-buttons-toggle');
+
+      $('#test-toggle').click();
+      $('#test-slide [aria-hidden="false"]').waitForExist();
+      browser.pause(150);
+
+      browser.keys(['Shift', 'Tab']);
+      $('#another-button').isFocused();
+
+      $('#focus-button').click();
+      $('#test-slide [aria-hidden="true"]').waitForExist();
+
+      browser.pause(150);
+
+      $('#test-toggle').isFocused();
+
+      Terra.validates.element('toggle button focused with multiple buttons', { selector: '#root' });
     });
   });
 

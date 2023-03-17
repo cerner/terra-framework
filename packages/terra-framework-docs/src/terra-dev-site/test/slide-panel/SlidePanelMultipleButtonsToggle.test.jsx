@@ -29,14 +29,14 @@ class SlidePanelDemo extends React.Component {
           id="test-slide"
           mainContent={(
             <div className={cx('main-content')}>
-              <button type="button" id="other-button" className={cx('button')} onClick={SlidePanelDemo.handleOtherButton}>Other Button</button>
+              <button type="button" id="other-button-1" className={cx('button')} onClick={SlidePanelDemo.handleOtherButton}>Other Button 1</button>
               <button type="button" id="test-toggle" className={cx('button')} onClick={this.handlePanelToggle}>toggle</button>
               <button type="button" id="another-button" className={cx('button')} onClick={SlidePanelDemo.handleOtherButton}>Another Button</button>
             </div>
           )}
           panelContent={(
             <div id="panel-content" className={cx('panel-content')}>
-              <button type="button" id="other-button" className={cx('button')} onClick={SlidePanelDemo.handleOtherButton}>Other Button</button>
+              <button type="button" id="other-button-2" className={cx('button')} onClick={SlidePanelDemo.handleOtherButton}>Other Button 2</button>
               <button id="focus-button" type="button" className={cx('button')} onClick={this.handlePanelToggle}>Close panel</button>
             </div>
           )}
