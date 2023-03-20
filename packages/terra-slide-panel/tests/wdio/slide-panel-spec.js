@@ -71,7 +71,27 @@ Terra.describeViewports('Slide panel', ['large'], () => {
 
       Terra.validates.element('panel focused', { selector: '#root' });
     });
-    it('Closes panel and focuses on toggle button', () => {
+    it('Closes panel and focuses on toggle button with keyboard controls', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggle');
+
+      browser.keys(['Tab']);
+      $('#test-toggle').isFocused();
+      browser.keys(['Enter']);
+      $('#test-slide [aria-hidden="false"]').waitForExist();
+      browser.pause(150);
+
+      browser.keys(['Tab']);
+      $('#focus-button').isFocused();
+      browser.keys(['Enter']);
+      $('#test-slide [aria-hidden="true"]').waitForExist();
+
+      $('#test-toggle').isFocused();
+
+      browser.pause(150);
+
+      Terra.validates.element('toggle button focused', { selector: '#root' });
+    });
+    it('Closes panel and focuses on toggle button with mouse controls', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggle');
       $('#test-toggle').click();
       $('#test-slide [aria-hidden="false"]').waitForExist();
@@ -86,7 +106,30 @@ Terra.describeViewports('Slide panel', ['large'], () => {
 
       Terra.validates.element('toggle button focused', { selector: '#root' });
     });
-    it('Closes panel and focuses on toggle button with multiple buttons', () => {
+    it('Closes panel and focuses on toggle button with multiple buttons with keyboard controls', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-multiple-buttons-toggle');
+
+      browser.keys(['Tab', 'Tab']);
+      $('#test-toggle').isFocused();
+      browser.keys(['Enter']);
+      $('#test-slide [aria-hidden="false"]').waitForExist();
+      browser.pause(150);
+
+      browser.keys(['Shift', 'Tab']);
+      $('#another-button').isFocused();
+
+      browser.keys(['Tab', 'Tab']);
+      $('#focus-button').isFocused();
+      browser.keys(['Enter']);
+      $('#test-slide [aria-hidden="true"]').waitForExist();
+
+      browser.pause(150);
+
+      $('#test-toggle').isFocused();
+
+      Terra.validates.element('toggle button focused with multiple buttons', { selector: '#root' });
+    });
+    it('Closes panel and focuses on toggle button with multiple buttons with mouse controls', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-multiple-buttons-toggle');
 
       $('#test-toggle').click();
