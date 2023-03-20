@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated doc and added test for terra-collapsible-menu-view
+
 ## 1.16.0 - (March 1, 2023)
 
 * Changed
