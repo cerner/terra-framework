@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated to focus originating element when slide panel is closed. 
+
 ## 3.37.0 - (February 14, 2023)
 
 * Changed

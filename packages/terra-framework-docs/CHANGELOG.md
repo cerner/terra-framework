@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added test for `terra-slide-panel`.
+
 ## 1.16.0 - (March 1, 2023)
 
 * Changed
