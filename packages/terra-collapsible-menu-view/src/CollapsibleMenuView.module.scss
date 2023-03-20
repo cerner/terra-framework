@@ -10,9 +10,16 @@
     display: flex;
     flex: 1 1 auto;
     flex-wrap: nowrap;
-    justify-content: flex-end;
     position: relative;
     width: 100%;
+  }
+
+  .collapsible-menu-view-flex-end {
+    justify-content: flex-end;
+  }
+
+  .collapsible-menu-view-flex-start {
+    justify-content: flex-start;
   }
 
   .menu-button {

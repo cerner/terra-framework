@@ -63,3 +63,19 @@ Terra.describeViewports('Collapsed Menu', ['tiny', 'large'], () => {
     Terra.validates.element('collapsed menu', { selector: '#root' });
   });
 });
+
+Terra.describeViewports('Start Aligned', ['tiny', 'small', 'medium', 'huge', 'large', 'enormous'], () => {
+  it('should display start aligned', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/collapsible-menu-view-start-alignment');
+    Terra.validates.element('start aligned');
+  });
+});
+
+// Only test viewports that have collapsed menu items
+Terra.describeViewports('Responsive Hidden Open', ['tiny', 'small', 'medium', 'large'], () => {
+  it('should display start aligned with menu open', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/collapsible-menu-view-start-alignment');
+    $('[data-collapsible-menu-toggle]').click();
+    Terra.validates.element('start aligned with menu open', { selector: '#root', rules: ignoredA11y });
+  });
+});
