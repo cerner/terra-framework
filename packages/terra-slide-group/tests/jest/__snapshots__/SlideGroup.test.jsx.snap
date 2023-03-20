@@ -75,6 +75,8 @@ exports[`correctly applies the theme context className 1`] = `
               <div
                 aria-hidden={true}
                 className="slide orion-fusion-theme"
+                onClick={[Function]}
+                onKeyUp={[Function]}
               >
                 <div
                   className="slide-shadow"
@@ -130,6 +132,8 @@ exports[`correctly applies the theme context className 1`] = `
               <div
                 aria-hidden={true}
                 className="slide orion-fusion-theme"
+                onClick={[Function]}
+                onKeyUp={[Function]}
               >
                 <div
                   className="slide-shadow"
@@ -185,6 +189,8 @@ exports[`correctly applies the theme context className 1`] = `
               <div
                 aria-hidden={null}
                 className="slide orion-fusion-theme"
+                onClick={[Function]}
+                onKeyUp={[Function]}
               >
                 <div
                   className="slide-shadow"
@@ -229,7 +235,7 @@ exports[`should render a SlideGroup with animation enabled 1`] = `
     timeout={300}
   >
     <Slide
-      isHidden={false}
+      isHidden={true}
     >
       <div
         key="1"
@@ -256,7 +262,7 @@ exports[`should render a SlideGroup with animation enabled 1`] = `
     timeout={300}
   >
     <Slide
-      isHidden={false}
+      isHidden={true}
     >
       <div
         key="2"

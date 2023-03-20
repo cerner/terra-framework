@@ -117,6 +117,8 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
           <div
             className="main"
             key="main"
+            onClick={[Function]}
+            onKeyUp={[Function]}
             tabIndex="-1"
           >
             <withDisclosureManager(Component)
@@ -245,6 +247,8 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                                   <div
                                     aria-hidden={null}
                                     className="slide"
+                                    onClick={[Function]}
+                                    onKeyUp={[Function]}
                                   >
                                     <div
                                       className="slide-shadow"
@@ -355,6 +359,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
           <div
             className="main"
             key="main"
+            onClick={[Function]}
+            onKeyUp={[Function]}
             tabIndex="-1"
           >
             <withDisclosureManager(Component)>
@@ -471,6 +477,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
           <div
             className="main"
             key="main"
+            onClick={[Function]}
+            onKeyUp={[Function]}
             tabIndex="-1"
           >
             <withDisclosureManager(Component)>
@@ -587,6 +595,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
           <div
             className="main"
             key="main"
+            onClick={[Function]}
+            onKeyUp={[Function]}
             tabIndex="-1"
           >
             <withDisclosureManager(Component)>
