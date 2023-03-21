@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added package-lock.json
+
 ## 1.16.0 - (March 1, 2023)
 
 * Changed
@@ -22,7 +25,7 @@
 * Changed
   * Updated doc and added test for terra-menu
   * Updated doc and added test for terra-tabs
-  
+
 ## 1.12.0 - (December 13, 2022)
 
 * Fixed

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added package-lock.json
+
 ## 1.74.0 - (March 1, 2023)
 
 * Changed
