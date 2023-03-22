@@ -2,12 +2,12 @@ Terra.describeViewports('Pills', ['medium'], () => {
   describe('Single Selectable Removable Pills', () => {
     it('displays a selectable-pill', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/pills/filter-pills/single-selectable-removable-filter-pill');
-      Terra.validates.element('truncated');
+      Terra.validates.element('truncated', { selector: '#root' });
     });
 
     it('focuses on the pill', () => {
       browser.keys('Tab');
-      Terra.validates.element('focus the pill');
+      Terra.validates.element('focus the pill', { selector: '#root' });
     });
 
     it('opens popup', () => {
@@ -25,12 +25,12 @@ Terra.describeViewports('Pills', ['medium'], () => {
   describe('Single Removable Pills', () => {
     it('display a single removable pill', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/pills/filter-pills/single-removable-filter-pill');
-      Terra.validates.element('removable');
+      Terra.validates.element('removable', { selector: '#root' });
     });
 
     it('focus on the pill', () => {
       browser.keys('Tab');
-      Terra.validates.element('focus pill');
+      Terra.validates.element('focus pill', { selector: '#root' });
     });
   });
 });
@@ -39,39 +39,39 @@ Terra.describeViewports('Pills', ['large'], () => {
   describe('Removable Pills', () => {
     it('should render removable pills', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/pills/filter-pills/removable-filter-pills');
-      Terra.validates.element('removable pills');
+      Terra.validates.element('removable pills', { selector: '#root' });
     });
 
     it('should set focus to the first removable-pill', () => {
       browser.keys('Tab');
-      Terra.validates.element('focus first removable-pill');
+      Terra.validates.element('focus first removable-pill', { selector: '#root' });
     });
 
     it('should set focus to the second removable-pill', () => {
       browser.keys('ArrowRight');
-      Terra.validates.element('focus second removable-pill');
+      Terra.validates.element('focus second removable-pill', { selector: '#root' });
     });
 
     it('should delete the second pill and set focus on the first pill', () => {
       browser.keys('Delete');
-      Terra.validates.element('delete second removable-pill');
+      Terra.validates.element('delete second removable-pill', { selector: '#root' });
     });
   });
 
   describe('Selectable Pills', () => {
     it('should render Selectable pills', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/pills/filter-pills/selectable-removable-filter-pills');
-      Terra.validates.element('selectable pills');
+      Terra.validates.element('selectable pills', { selector: '#root' });
     });
 
     it('should set focus to the first selectable-pill', () => {
       browser.keys('Tab');
-      Terra.validates.element('focus first selectable-pill');
+      Terra.validates.element('focus first selectable-pill', { selector: '#root' });
     });
 
     it('should set focus to the second selectable-pill', () => {
       browser.keys('ArrowRight');
-      Terra.validates.element('focus second selectable-pill');
+      Terra.validates.element('focus second selectable-pill', { selector: '#root' });
     });
 
     it('should open pop up', () => {
