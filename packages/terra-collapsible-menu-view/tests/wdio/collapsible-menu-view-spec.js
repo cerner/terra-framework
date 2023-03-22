@@ -72,7 +72,7 @@ Terra.describeViewports('Start Aligned', ['tiny', 'small', 'medium', 'huge', 'la
 });
 
 // Only test viewports that have collapsed menu items
-Terra.describeViewports('Responsive Hidden Open', ['tiny', 'small', 'medium', 'large'], () => {
+Terra.describeViewports('Start Aligned Hidden Open', ['tiny', 'small', 'medium', 'large'], () => {
   it('should display start aligned with menu open', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/collapsible-menu-view-start-alignment');
     $('[data-collapsible-menu-toggle]').click();
