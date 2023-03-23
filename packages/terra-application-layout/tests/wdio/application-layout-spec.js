@@ -65,6 +65,7 @@ Terra.describeViewports('ApplicationLayout', ['large'], () => {
 
   describe('Presents utility menu from header and checks for closure on read-only item click', () => {
     it('Presents utility menu from header and checks for closure on read-only item click', () => {
+      browser.url('/raw/tests/terra-application-layout/application-layout/application-layout');
       $('[data-application-header-utility]').waitForDisplayed();
       $('[data-application-header-utility]').click();
       $('#readonly').waitForDisplayed();
@@ -109,6 +110,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
 
   describe('Navigates from primary nav menu when small', () => {
     it('Navigates from primary nav menu when small', () => {
+      browser.url('/raw/tests/terra-application-layout/application-layout/application-layout');
       $('[data-application-header-toggle]').click();
       $('[data-routing-menu] [data-navigation-side-menu-action-header] button').waitForDisplayed();
       $('[data-routing-menu] [data-navigation-side-menu-action-header] button').click();
