@@ -1,3 +1,6 @@
 {
-  "Terra.tabs.more": "Mer"
+  "Terra.tabs.more": "Mer",
+  "Terra.tabs.hint.tabList": "Innehåller {numberOfTabs} objekt",
+  "Terra.tabs.hint.hiddenTabs": "{hiddenTabs} objekt visas inte",
+  "Terra.tabs.hint.tabMenu": "{hiddenTabs} objekt är dolda. Välj för att visa {hiddenTabs} dolda objekt"
 }
