@@ -5,7 +5,9 @@ import ThemeContext from 'terra-theme-context';
 import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import * as KeyCode from 'keycode-js';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+import uuidv4 from 'uuid/v4';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -30,6 +32,12 @@ const propTypes = {
    * The current active tab
    */
   selectedTab: PropTypes.element,
+
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 class TabMenu extends React.Component {
@@ -55,7 +63,7 @@ class TabMenu extends React.Component {
   }
 
   handleOnKeyDown(event) {
-    if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_DOWN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
       this.setState({ isOpen: true });
     }
   }
@@ -122,31 +130,45 @@ class TabMenu extends React.Component {
       }
     }
 
+    const hiddenTabsCount = menuItems.length;
+    const buttonHintId = `terra-tabs-button-interaction-hint-${uuidv4()}`;
+    const buttonHint = this.props.intl.formatMessage({ id: 'Terra.tabs.hint.tabMenu' }, { hiddenTabs: hiddenTabsCount });
+
     return (
-      <div
-        role="button"
-        tabIndex="0"
-        ref={this.setTargetRef}
-        onClick={this.handleOnClick}
-        onKeyDown={this.handleOnKeyDown}
-        className={cx('tab-menu', { 'is-active': menuActive }, theme.className)}
-        data-terra-tabs-menu
-      >
-        {icon}
-        <FormattedMessage id="Terra.tabs.more">
-          {menuToggleText => (
-            <span>{toggleText || menuToggleText}</span>
-          )}
-        </FormattedMessage>
-        <IconCaretDown />
-        <Menu
-          onRequestClose={this.handleOnRequestClose}
-          targetRef={this.getTargetRef}
-          isOpen={this.state.isOpen}
+      <>
+        <div
+          role="button"
+          tabIndex="0"
+          ref={this.setTargetRef}
+          onClick={this.handleOnClick}
+          onKeyDown={this.handleOnKeyDown}
+          className={cx('tab-menu', { 'is-active': menuActive }, theme.className)}
+          data-terra-tabs-menu
+          aria-hidden="true"
+          aria-describedby={buttonHintId}
         >
-          {menuItems}
-        </Menu>
-      </div>
+          {icon}
+          <FormattedMessage id="Terra.tabs.more">
+            {menuToggleText => (
+              <span>{toggleText || menuToggleText}</span>
+            )}
+          </FormattedMessage>
+          <IconCaretDown />
+          <Menu
+            onRequestClose={this.handleOnRequestClose}
+            targetRef={this.getTargetRef}
+            isOpen={this.state.isOpen}
+          >
+            {menuItems}
+          </Menu>
+        </div>
+        <VisuallyHiddenText
+          aria-live="polite"
+          id={buttonHintId}
+          text={buttonHint}
+          aria-hidden="true"
+        />
+      </>
     );
   }
 }
@@ -154,4 +176,4 @@ class TabMenu extends React.Component {
 TabMenu.propTypes = propTypes;
 TabMenu.contextType = ThemeContext;
 
-export default TabMenu;
+export default injectIntl(TabMenu);

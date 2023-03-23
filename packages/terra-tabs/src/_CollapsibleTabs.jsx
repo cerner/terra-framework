@@ -4,6 +4,9 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
 import * as KeyCode from 'keycode-js';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+import uuidv4 from 'uuid/v4';
+import { injectIntl } from 'react-intl';
 import TabMenu from './_TabMenu';
 import styles from './Tabs.module.scss';
 
@@ -41,6 +44,12 @@ const propTypes = {
    * Parameters: 1. Bool indicating if any of the tab labels have been truncated.
    */
   onTruncationChange: PropTypes.func,
+
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 class CollapsibleTabs extends React.Component {
@@ -258,6 +267,15 @@ class CollapsibleTabs extends React.Component {
         hiddenChildren.push(child);
       }
     });
+
+    const visibleTabsCount = visibleChildren.length;
+    const hiddenTabsCount = hiddenChildren.length;
+    const tabListID = `terra-tabs-list-interaction-hint-${uuidv4()}`;
+    let tabListHint = this.props.intl.formatMessage({ id: 'Terra.tabs.hint.tabList' }, { numberOfTabs: visibleTabsCount + hiddenTabsCount });
+    if (hiddenTabsCount > 0) {
+      tabListHint += `, ${this.props.intl.formatMessage({ id: 'Terra.tabs.hint.hiddenTabs' }, { hiddenTabs: hiddenTabsCount })}`;
+    }
+
     const theme = this.context;
     const selectedTab = this.props.children[this.props.activeIndex];
 
@@ -283,10 +301,17 @@ class CollapsibleTabs extends React.Component {
           ref={this.setContainer}
           tabIndex="0"
           onKeyDown={this.handleOnKeyDown}
+          aria-describedby={tabListID}
           role="tablist"
         >
           {visibleChildren}
           {menu}
+          <VisuallyHiddenText
+            aria-live="polite"
+            id={tabListID}
+            text={tabListHint}
+            aria-hidden="true"
+          />
         </div>
         {selectionBar}
       </div>
@@ -297,4 +322,4 @@ class CollapsibleTabs extends React.Component {
 CollapsibleTabs.propTypes = propTypes;
 CollapsibleTabs.contextType = ThemeContext;
 
-export default CollapsibleTabs;
+export default injectIntl(CollapsibleTabs);

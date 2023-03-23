@@ -1,3 +1,6 @@
 {
-  "Terra.tabs.more": "Mehr"
+  "Terra.tabs.more": "Mehr",
+  "Terra.tabs.hint.tabList": "Enthält {numberOfTabs} Elemente",
+  "Terra.tabs.hint.hiddenTabs": "{hiddenTabs} Elemente werden nicht angezeigt",
+  "Terra.tabs.hint.tabMenu": "{hiddenTabs} Elemente sind ausgeblendet. Wählen, um {hiddenTabs} ausgeblendete Elemente anzuzeigen.s"
 }
