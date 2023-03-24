@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Removed one of the WDIO tests. It will be added back after an investigation.
+
 ## 5.66.0 - (March 1, 2023)
 
 * Changed

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO screenshots.
+* Added
+  * Added package-lock.json
+
 ## 4.47.0 - (February 14, 2023)
 
 * Changed
