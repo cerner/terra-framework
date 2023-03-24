@@ -552,11 +552,14 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     </div>
     <div
       class="button-group meridiem-button-group"
+      role="radiogroup"
     >
       <button
+        aria-checked="true"
         aria-disabled="false"
-        aria-pressed="true"
         class="button neutral button-group-button is-selected meridiem-button"
+        data-terra-button-group-button="true"
+        role="radio"
         type="button"
       >
         <span
@@ -570,9 +573,11 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         </span>
       </button>
       <button
+        aria-checked="false"
         aria-disabled="false"
-        aria-pressed="false"
         class="button neutral button-group-button meridiem-button"
+        data-terra-button-group-button="true"
+        role="radio"
         type="button"
       >
         <span
@@ -659,11 +664,14 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     </div>
     <div
       class="button-group meridiem-button-group"
+      role="radiogroup"
     >
       <button
+        aria-checked="true"
         aria-disabled="false"
-        aria-pressed="true"
         class="button neutral button-group-button is-selected meridiem-button"
+        data-terra-button-group-button="true"
+        role="radio"
         type="button"
       >
         <span
@@ -677,9 +685,11 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         </span>
       </button>
       <button
+        aria-checked="false"
         aria-disabled="false"
-        aria-pressed="false"
         class="button neutral button-group-button meridiem-button"
+        data-terra-button-group-button="true"
+        role="radio"
         type="button"
       >
         <span
@@ -766,11 +776,14 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     </div>
     <div
       class="button-group meridiem-button-group"
+      role="radiogroup"
     >
       <button
+        aria-checked="true"
         aria-disabled="false"
-        aria-pressed="true"
         class="button neutral button-group-button is-selected meridiem-button"
+        data-terra-button-group-button="true"
+        role="radio"
         type="button"
       >
         <span
@@ -784,9 +797,11 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         </span>
       </button>
       <button
+        aria-checked="false"
         aria-disabled="false"
-        aria-pressed="false"
         class="button neutral button-group-button meridiem-button"
+        data-terra-button-group-button="true"
+        role="radio"
         type="button"
       >
         <span
@@ -1204,6 +1219,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
   <ButtonGroup
     className="meridiem-button-group"
     isBlock={false}
+    isMultiSelect={false}
     onChange={[Function]}
     selectedKeys={
       Array [
@@ -1329,11 +1345,14 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
   </div>
   <div
     class="button-group meridiem-button-group"
+    role="radiogroup"
   >
     <button
+      aria-checked="true"
       aria-disabled="false"
-      aria-pressed="true"
       class="button neutral button-group-button is-selected meridiem-button"
+      data-terra-button-group-button="true"
+      role="radio"
       type="button"
     >
       <span
@@ -1347,9 +1366,11 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       </span>
     </button>
     <button
+      aria-checked="false"
       aria-disabled="false"
-      aria-pressed="false"
       class="button neutral button-group-button meridiem-button"
+      data-terra-button-group-button="true"
+      role="radio"
       type="button"
     >
       <span
@@ -1439,11 +1460,14 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
   </div>
   <div
     class="button-group meridiem-button-group"
+    role="radiogroup"
   >
     <button
+      aria-checked="true"
       aria-disabled="false"
-      aria-pressed="true"
       class="button neutral button-group-button is-selected meridiem-button"
+      data-terra-button-group-button="true"
+      role="radio"
       type="button"
     >
       <span
@@ -1457,9 +1481,11 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       </span>
     </button>
     <button
+      aria-checked="false"
       aria-disabled="false"
-      aria-pressed="false"
       class="button neutral button-group-button meridiem-button"
+      data-terra-button-group-button="true"
+      role="radio"
       type="button"
     >
       <span
@@ -1859,6 +1885,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
   <ButtonGroup
     className="meridiem-button-group"
     isBlock={false}
+    isMultiSelect={false}
     onChange={[Function]}
     selectedKeys={
       Array [

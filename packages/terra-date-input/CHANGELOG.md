@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added package-lock.json
+
 ## 1.35.0 - (February 14, 2023)
 
 * Changed
@@ -15,7 +18,7 @@
 
 ## 1.34.0 - (March 15, 2022)
 
- 
+
 
 * Changed
   * Migrate docs to terra framework docs

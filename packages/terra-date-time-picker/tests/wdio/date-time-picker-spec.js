@@ -40,6 +40,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   it('should handle Re-entering Same Missing Hour Twice', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-with-timezone-dst');
     Terra.hideInputCaret('input[name="terra-time-minute-input"]');
+    Terra.hideInputCaret('input[name="terra-time-hour-input"]');
     browser.keys('Tab');
     $('input[name="terra-date-month-input"]').waitForDisplayed();
     $('input[name="terra-date-day-input"]').waitForDisplayed();
@@ -311,6 +312,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     it('is triggered', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-on-change');
       Terra.hideInputCaret('input[name="terra-time-minute-input"]');
+      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
       $('input[name="terra-date-month-input"]').setValue('07');
       $('input[name="terra-date-day-input"]').setValue('12');
       $('input[name="terra-date-year-input"]').setValue('2017');
@@ -611,7 +613,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   it('should remount component', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-remount');
     $('input[name="terra-date-day-input"]').setValue('07');
-    Terra.hideInputCaret('input[name="terra-date-year-input"]');
+    Terra.hideInputCaret('input[name="terra-date-day-input"]');
 
     Terra.validates.element('remounts component');
   });

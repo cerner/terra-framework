@@ -44,6 +44,7 @@ Cerner Corporation
 - Kevin Schuster [@kschuste]
 - Michael Day [@mumkymikey]
 - Gage Phillips [@gagerdude]
+- Art Parkeenvincha [@artpark]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -89,3 +90,4 @@ Cerner Corporation
 [@kschuste]: https://github.com/kschuste
 [@mumkymikey]: https://github.com/mumkymikey
 [@gagerdude]: https://github.com/gagerdude
+[@artpark]: https://github.com/artpark
