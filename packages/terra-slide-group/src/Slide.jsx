@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './Slide.module.scss';
-import isFocusable from '../../terra-slide-panel/src/SlidePanelUtils';
 
 const cx = classNames.bind(styles);
 
@@ -33,9 +32,7 @@ const Slide = (props) => {
   });
 
   const handleClick = (event) => {
-    if (isFocusable(event.target)) {
-      setLastClicked(event.target);
-    }
+    setLastClicked(event.target);
   };
 
   const theme = React.useContext(ThemeContext);

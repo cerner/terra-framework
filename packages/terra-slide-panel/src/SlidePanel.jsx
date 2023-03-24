@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './SlidePanel.module.scss';
-import isFocusable from './SlidePanelUtils';
 
 const cx = classNamesBind.bind(styles);
 
@@ -96,9 +95,7 @@ class SlidePanel extends React.Component {
   }
 
   setLastClicked(event) {
-    if (isFocusable(event.target)) {
-      this.lastClicked = event.target;
-    }
+    this.lastClicked = event.target;
   }
 
   setDisclosingNode(node) {
