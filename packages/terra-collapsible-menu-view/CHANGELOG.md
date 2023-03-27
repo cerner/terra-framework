@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added isStartAligned prop
+  * Added `isStartAligned` prop
 
 * Changed
   * Updated Jest snapshots.
