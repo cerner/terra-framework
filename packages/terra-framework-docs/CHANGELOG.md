@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added test for `terra-slide-panel`.
+  * Updated docs for `terra-slide-group`.
 * Added
   * Added package-lock.json
 

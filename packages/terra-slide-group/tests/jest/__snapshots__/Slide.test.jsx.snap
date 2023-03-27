@@ -4,6 +4,8 @@ exports[`correctly applies the theme context className 1`] = `
 <div
   aria-hidden={null}
   className="slide orion-fusion-theme"
+  onClick={[Function]}
+  onKeyUp={[Function]}
 >
   <div
     className="slide-shadow"
@@ -18,6 +20,8 @@ exports[`should render a default Slide 1`] = `
 <div
   aria-hidden={null}
   className="slide"
+  onClick={[Function]}
+  onKeyUp={[Function]}
 >
   <div
     className="slide-shadow"
@@ -32,6 +36,8 @@ exports[`should render a hidden Slide 1`] = `
 <div
   aria-hidden={true}
   className="slide"
+  onClick={[Function]}
+  onKeyUp={[Function]}
 >
   <div
     className="slide-shadow"

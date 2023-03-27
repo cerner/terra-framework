@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated Jest snapshot due to `terra-slide-group` change.
+
 ## 6.59.0 - (February 14, 2023)
 
 * Changed

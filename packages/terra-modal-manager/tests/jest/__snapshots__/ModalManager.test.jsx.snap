@@ -390,6 +390,8 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                         <div
                                           aria-hidden={null}
                                           className="slide"
+                                          onClick={[Function]}
+                                          onKeyUp={[Function]}
                                         >
                                           <div
                                             className="slide-shadow"

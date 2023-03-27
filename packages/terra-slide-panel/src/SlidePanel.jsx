@@ -75,18 +75,31 @@ class SlidePanel extends React.Component {
     super(props);
     this.setPanelNode = this.setPanelNode.bind(this);
     this.mainNode = React.createRef();
+    this.setLastClicked = this.setLastClicked.bind(this);
+    this.setDisclosingNode = this.setDisclosingNode.bind(this);
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
+      // Save the disclosing node for returning focus when panel is closed
+      this.setDisclosingNode(this.lastClicked);
       this.panelNode.focus();
     } else if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
-      this.mainNode.current.focus();
+      // Return focus to the disclosing element
+      this.disclosingNode.focus();
     }
   }
 
   setPanelNode(node) {
     this.panelNode = node;
+  }
+
+  setLastClicked(event) {
+    this.lastClicked = event.target;
+  }
+
+  setDisclosingNode(node) {
+    this.disclosingNode = node;
   }
 
   render() {
@@ -122,7 +135,8 @@ class SlidePanel extends React.Component {
     );
 
     const mainDiv = (
-      <div className={cx('main')} key="main" tabIndex="-1" aria-label={mainAriaLabel} ref={this.mainNode}>
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+      <div className={cx('main')} key="main" tabIndex="-1" aria-label={mainAriaLabel} ref={this.mainNode} onClick={this.setLastClicked} onKeyUp={this.setLastClicked}>
         {mainContent}
       </div>
     );

@@ -15,7 +15,7 @@ animated fashion.
 The last component in the group is visible, and all others are hidden. While the hidden components are not visible and
 marked with the `aria-hidden` attribute, they are not actually unmounted.
 
-As a utility component, any component utilizing the SlideGroup will need to handle the keyboard accessibility of the content on each slide.
+When a slide is disclosed, non-visible focus is assigned to the outermost slide container. Any component utilizing the SlideGroup will need to handle the keyboard accessibility of the content on each slide.
 
 ## Getting Started
 
@@ -40,9 +40,9 @@ This component requires the following peer dependencies be installed in your app
 import SlideGroup from 'terra-slide-group';
 ```
 
-## Examples 
+## Examples
 <SlideGroupDemo title='Non-Animated SlideGroup' />
 <SlideGroupDemoAnimated title='Animated SlideGroup' />
 
-## Slide Group Props Table 
+## Slide Group Props Table
 <SlideGroupPropsTable />
