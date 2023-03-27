@@ -156,9 +156,9 @@ class CollapsibleMenuView extends React.Component {
     const collapsibleMenuViewClassName = classNames(cx(
       'collapsible-menu-view',
       { 'is-calculating': this.isCalculating },
-      theme.className,
       { 'collapsible-menu-view-flex-end': !isStartAligned },
       { 'collapsible-menu-view-flex-start': isStartAligned },
+      theme.className,
     ),
 
     customProps.className);
