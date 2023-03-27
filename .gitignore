@@ -13,14 +13,16 @@
 *.seed
 .dat*
 .DS_Store
+.fleet
 .grunt
+.idea
 .lock-wscript
 .node_repl_history
 .npm
 .nyc_output
 .repl_history
 .rvmrc
-.idea
+.vscode
 .sass-cache/
 /.bundle/
 /.config
@@ -49,7 +51,6 @@ logs
 node_modules
 npm-debug.log*
 pids
-package-lock.json
 reports
 screenshots
 target
@@ -60,5 +61,4 @@ props-table
 **/__snapshots__/latest
 **/__snapshots__/diff
 **/__snapshots__/error
-.vscode/
 generated-themes

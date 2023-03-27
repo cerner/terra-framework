@@ -47,7 +47,7 @@ jobs:
         uses: ./.github/actions/setup      
       - name: Compile Project Default
         run: |
-          npm run compile:prod -- --output-path build/default
+          npm run compile:default -- --output-path build/default
         if: matrix.theme == 'default'
       - name: Compile Project Lowlight
         run: |
@@ -82,7 +82,7 @@ jobs:
           TERRA_DEV_SITE_NEW_RELIC_LICENSE_KEY: ${{ secrets.TERRA_DEV_SITE_NEW_RELIC_LICENSE_KEY }}
           TERRA_DEV_SITE_NEW_RELIC_APPLICATION_ID: "144458769"
           TERRA_DEV_SITE_PUBLIC_PATH: /terra-framework/
-        run: npm run compile:prod
+        run: npm run compile:default
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
