@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
-import { Placeholder } from '@cerner/terra-docs';
 
 function PopupStandard() {
   const buttonElement = useRef();
@@ -21,15 +20,23 @@ function PopupStandard() {
     setOpen(false);
   };
 
+  const text = 'Default PopUp Example';
+  const truncatedText = text.substring(0, 15) + '...'; // eslint-disable-line prefer-template
+
   return (
     <React.Fragment>
-      <Button text="Default Popup" onClick={handleButtonClick} refCallback={setButtonNode} />
+      <Button text={truncatedText} onClick={handleButtonClick} refCallback={setButtonNode} />
+
       <Popup
         isOpen={open}
         targetRef={getButtonNode}
         onRequestClose={handleRequestClose}
+        isHeaderDisabled={false}
+        isContentFocusDisabled={false}
       >
-        <Placeholder title="Popup Content" />
+        <div>
+          {text}
+        </div>
       </Popup>
     </React.Fragment>
   );
