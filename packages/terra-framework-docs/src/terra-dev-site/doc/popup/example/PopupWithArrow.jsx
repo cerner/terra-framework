@@ -2,14 +2,10 @@ import React, { useRef, useState } from 'react';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
 import FilterPills, { Pill } from '@cerner/terra-pills';
-import classNames from 'classnames/bind';
-import styles from './PopupDocCommon.module.scss';
 
-const cx = classNames.bind(styles);
 function PopupArrow() {
   const buttonElement = useRef();
   const [open, setOpen] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
 
   const setButtonNode = (node) => {
     buttonElement.current = node;
@@ -25,9 +21,6 @@ function PopupArrow() {
     setOpen(false);
   };
 
-  const handlePopUpButton = () => {
-    setShowDetails(true);
-  };
   const pillsData = [
     {
       label: 'Menu Option-1',
@@ -55,28 +48,21 @@ function PopupArrow() {
         targetRef={getButtonNode}
         isArrowDisplayed
       >
-        {showDetails ? (
-          <div>
-            <Button text="Hide more menu option" onClick={() => setShowDetails(false)} className={cx('popup-button')} />
 
-            <FilterPills
-              onRemove={handleOnRemove}
-            >
-              {pills.map((pill, index) => (
-                <Pill
-                  label={pill.label}
-                  labelCategory={pill.labelCategory}
-                  id={pill.id}
-                  key={pill.id}
-                  metaData={{ index }}
-                />
-              ))}
-            </FilterPills>
-          </div>
-        )
-          : (
-            <Button text="Show more menu option" onClick={handlePopUpButton} className={cx('popup-button')} />
-          )}
+        <FilterPills
+          onRemove={handleOnRemove}
+        >
+          {pills.map((pill, index) => (
+            <Pill
+              label={pill.label}
+              labelCategory={pill.labelCategory}
+              id={pill.id}
+              key={pill.id}
+              metaData={{ index }}
+            />
+          ))}
+        </FilterPills>
+
       </Popup>
     </React.Fragment>
   );
