@@ -3,6 +3,9 @@
 ## Unreleased
 
 * Added
+  * Examples for Popup
+
+* Added
   * Added package-lock.json
 
 ## 1.16.0 - (March 1, 2023)
