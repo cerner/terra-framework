@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -23,9 +23,22 @@ const defaultProps = {
 };
 
 const Slide = (props) => {
+  const [lastClicked, setLastClicked] = useState(null);
+
+  useEffect(() => {
+    if (!props.isHidden && lastClicked) {
+      lastClicked.focus();
+    }
+  });
+
+  const handleClick = (event) => {
+    setLastClicked(event.target);
+  };
+
   const theme = React.useContext(ThemeContext);
   return (
-    <div className={cx('slide', theme.className)} aria-hidden={props.isHidden || null}>
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div className={cx('slide', theme.className)} aria-hidden={props.isHidden || null} onClick={handleClick} onKeyUp={handleClick}>
       <div className={cx('slide-shadow')} />
       {props.children}
     </div>

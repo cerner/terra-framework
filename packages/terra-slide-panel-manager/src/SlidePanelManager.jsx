@@ -107,7 +107,7 @@ class SlidePanelManager extends React.Component {
                 ) : undefined}
                 {disclosureAccessory}
               </React.Fragment>
-          )}
+            )}
           >
             <SlideGroup items={manager.disclosure.components} isAnimated />
           </ContentContainer>

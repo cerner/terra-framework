@@ -22,6 +22,8 @@ exports[`correctly applies the theme context className 1`] = `
       <div
         className="main"
         key="main"
+        onClick={[Function]}
+        onKeyUp={[Function]}
         tabIndex="-1"
       />
       <div

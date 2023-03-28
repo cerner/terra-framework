@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated to focus originating element when a slide is closed. 
+
 ## 4.29.0 - (March 15, 2022)
 
 * Added
