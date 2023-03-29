@@ -93,7 +93,7 @@ jobs:
         env:
           TERRA_DEV_SITE_NEW_RELIC_LICENSE_KEY: ${{ secrets.TERRA_DEV_SITE_NEW_RELIC_LICENSE_KEY }}
           TERRA_DEV_SITE_NEW_RELIC_APPLICATION_ID: "144458769"
-        run: npm run compile:prod
+        run: npm run compile:default
 
       - name: deploy the pull request
         uses: peaceiris/actions-gh-pages@v3
