@@ -4,7 +4,7 @@ import { danger, fail } from 'danger';
 const CHANGELOG_PATTERN = /^packages\/terra-([a-z-0-9])*\/CHANGELOG\.md/i;
 
 const changedFiles = danger.git.created_files.concat(danger.git.modified_files);
-const allowedFilepaths = ['package.json', 'src', 'translations'];
+const allowedFilepaths = ['package.json', 'src', 'translations', 'terra-framework-docs'];
 
 const changedChangelogs = new Set();
 const changedPackages = new Set();
