@@ -11,6 +11,28 @@ jobs:
     env:
       PR_PATH: pull/${{github.event.number}}
     steps:
+      - name: get deployment
+        id: get-deplpoyment
+        uses: octokit/request-action@v2.x
+        with:
+          route: GET /repos/{repository}/deployments
+          repository: ${{ github.repository }}
+          ref: ${{ github.event.pull_request.head.ref }}
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+      - name: delete deployment
+        if: |
+            steps.get-deplpoyment.outputs.status != '404' &&
+              toJSON(fromJSON(steps.get-deplpoyment.outputs.data)) != '[]'
+        uses: octokit/request-action@v2.x
+        with:
+          route: DELETE /repos/{repository}/deployments/{deployment}
+          deployment: ${{ fromJSON(steps.get-deplpoyment.outputs.data)[0].id }}
+          repository: ${{ github.repository }}
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
       - name: make empty dir
         run: mkdir public
 
@@ -20,12 +42,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           destination_dir: ${{ env.PR_PATH }}
-
-      - name: Comment on PR
-        uses: hasura/comment-progress@v2.2.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.repository }}
-          number: ${{ github.event.number }}
-          id: deploy-preview
-          message: "🪓 PR closed, deleted preview at https://github.com/${{ github.repository }}/tree/gh-pages/${{ env.PR_PATH }}/"
