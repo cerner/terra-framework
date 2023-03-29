@@ -36,7 +36,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  level: 1,
+  level: 2,
   panelBehavior: 'overlay',
 };
 

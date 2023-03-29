@@ -281,7 +281,7 @@ const SlidePanelManagerExample = () => (
         <div className={cx('disclosure-accessory')}>
           Disclosure Accessory
         </div>
-      )}
+)}
     >
       <ContentComponent />
     </SlidePanelManager>
