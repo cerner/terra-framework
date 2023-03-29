@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.36.0 - (March 29, 2023)
+
 * Added
   * Added package-lock.json
 

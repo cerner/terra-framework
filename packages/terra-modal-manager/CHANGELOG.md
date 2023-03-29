@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.60.0 - (March 29, 2023)
+
 * Changed
   * Updated Jest snapshot due to `terra-slide-group` change.
 
