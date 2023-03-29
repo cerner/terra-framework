@@ -32,7 +32,7 @@ exports[`SlidePanelManager should disclose content in Modal wrapped by disclose 
 
 exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
 <SlidePanelManager
-  level={1}
+  level={2}
   panelBehavior="overlay"
 >
   <withDisclosureManager(DisclosureManager)
@@ -425,7 +425,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
 <SlidePanelManager
   className="test"
   id="my-slide-panel-manager"
-  level={1}
+  level={2}
   panelBehavior="overlay"
 >
   <withDisclosureManager(DisclosureManager)
@@ -547,7 +547,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
 
 exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`] = `
 <SlidePanelManager
-  level={1}
+  level={2}
   panelBehavior="overlay"
 >
   <withDisclosureManager(DisclosureManager)
@@ -666,7 +666,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
 
 exports[`SlidePanelManager should render the SlidePanelManager with squish override 1`] = `
 <SlidePanelManager
-  level={1}
+  level={2}
   panelBehavior="squish"
 >
   <withDisclosureManager(DisclosureManager)
