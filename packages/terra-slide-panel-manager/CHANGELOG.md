@@ -2,8 +2,8 @@
 
 ## Unreleased
 
-* Changed
-  * Update jest snapshot.
+* Added
+  * Added `level` prop as a passthrough for the underlying `terra-action-header`.
 
 ## 5.64.0 - (March 1, 2023)
 
