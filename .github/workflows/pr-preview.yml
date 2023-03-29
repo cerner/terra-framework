@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PR_PATH: pull/${{ github.event.number }}
-      TERRA_DEV_SITE_PUBLIC_PATH: "/terra-core/pull/${{ github.event.number }}/"
+      TERRA_DEV_SITE_PUBLIC_PATH: "/terra-framework/pull/${{ github.event.number }}/"
       BASE_URL: "https://engineering.cerner.com/${{ github.event.repository.name }}/pull/${{ github.event.number }}/"
       ENVIRONMENT_NAME: preview-pr-${{ github.event.number }}
     steps:
