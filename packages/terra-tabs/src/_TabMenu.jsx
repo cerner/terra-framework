@@ -46,6 +46,7 @@ class TabMenu extends React.Component {
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
+    this.handleMouseDown = this.handleMouseDown.bind(this);
     this.getTargetRef = this.getTargetRef.bind(this);
     this.setTargetRef = this.setTargetRef.bind(this);
     this.wrapOnClick = this.wrapOnClick.bind(this);
@@ -62,7 +63,12 @@ class TabMenu extends React.Component {
     this.setState({ isOpen: true });
   }
 
+  handleMouseDown() {
+    this.getTargetRef().setAttribute('data-terra-tabs-show-focus-styles', 'false');
+  }
+
   handleOnKeyDown(event) {
+    this.getTargetRef().setAttribute('data-terra-tabs-show-focus-styles', 'true');
     if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_DOWN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
       this.setState({ isOpen: true });
     }
@@ -137,14 +143,16 @@ class TabMenu extends React.Component {
     return (
       <>
         <div
-          role="button"
-          tabIndex="0"
+          role="tab"
+          tabIndex={menuActive ? '0' : '-1'}
+          aria-selected={menuActive}
           ref={this.setTargetRef}
+          onMouseDown={this.handleMouseDown}
           onClick={this.handleOnClick}
           onKeyDown={this.handleOnKeyDown}
           className={cx('tab-menu', { 'is-active': menuActive }, theme.className)}
           data-terra-tabs-menu
-          aria-hidden="true"
+          data-terra-tabs-show-focus-styles
           aria-describedby={buttonHintId}
         >
           {icon}

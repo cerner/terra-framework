@@ -170,7 +170,7 @@ class Tabs extends React.Component {
     let content = null;
     let isIconOnly = false;
     const clonedPanes = [];
-    React.Children.forEach(children, (child) => {
+    React.Children.forEach(children, (child, index) => {
       let isActive = false;
       if (child.key === this.state.activeKey || child.key === activeKey) {
         isActive = true;
@@ -184,6 +184,7 @@ class Tabs extends React.Component {
         className: cx({ 'is-active': isActive }, child.props.className),
         onClick: this.wrapPaneOnClick(child),
         isActive,
+        index,
       }));
     });
 
