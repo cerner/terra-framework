@@ -4,8 +4,6 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
 import * as KeyCode from 'keycode-js';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
-import uuidv4 from 'uuid/v4';
 import { injectIntl } from 'react-intl';
 import TabMenu from './_TabMenu';
 import styles from './Tabs.module.scss';
@@ -62,8 +60,6 @@ class CollapsibleTabs extends React.Component {
     this.handleSelectionAnimation = this.handleSelectionAnimation.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
     this.handleMenuOnKeyDown = this.handleMenuOnKeyDown.bind(this);
-    this.handleFocusLeft = this.handleFocusLeft.bind(this);
-    this.handleFocusRight = this.handleFocusRight.bind(this);
     this.resetCache();
   }
 
@@ -174,60 +170,24 @@ class CollapsibleTabs extends React.Component {
 
     // We don't want menu keydown events to propagate and conflict when the tabs keydown events
     // Instead of stopping menu key event propagation, we whitelist event.targets so we do tab focus mgmt only on tab based event targets
-    const tabList = event.target.getAttribute('role') === 'tablist';
-    const tabMoreBtn = event.target.getAttribute('data-terra-tabs-menu') === 'true';
-
-    if (tabList || tabMoreBtn) {
-      const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
-      const visibleChildren = this.container.children;
-
-      if (event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
-        if (isRTL) {
-          this.handleFocusRight(visibleChildren, event);
-        } else {
-          this.handleFocusLeft(visibleChildren, event);
-        }
-      } else if (event.nativeEvent.keyCode === KeyCode.KEY_RIGHT) {
-        if (isRTL) {
-          this.handleFocusLeft(visibleChildren, event);
-        } else {
-          this.handleFocusRight(visibleChildren, event);
-        }
+    const tabList = event.target.getAttribute('role') === 'tab';
+    const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
+    const nextKey = !isRTL ? KeyCode.KEY_RIGHT : KeyCode.KEY_LEFT;
+    const previousKey = !isRTL ? KeyCode.KEY_LEFT : KeyCode.KEY_RIGHT;
+    const tabPanes = this.container.querySelectorAll('[role="tab"]');
+    const index = parseInt(event.target.getAttribute('index'), 10);
+    if (tabList) {
+      if ((event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) && event.target !== tabPanes[tabPanes.length - 1]) {
+        this.props.onChange(event, this.props.children[event.target.getAttribute('index')]);
       }
     }
-  }
-
-  handleFocusRight(visibleChildren, event) {
-    if (this.props.activeIndex >= this.hiddenStartIndex) {
-      return;
-    }
-
-    for (let i = this.props.activeIndex + 1; i < visibleChildren.length; i += 1) {
-      if (!this.props.children[i].props.isDisabled) {
-        if (visibleChildren[i] === this.menuRef) {
-          this.menuRef.focus();
-          break;
-        } else {
-          this.props.onChange(event, this.props.children[i]);
-          break;
-        }
-      }
-    }
-  }
-
-  handleFocusLeft(visibleChildren, event) {
-    let startIndex = this.props.activeIndex - 1;
-    if (startIndex >= this.hiddenStartIndex || document.activeElement === this.menuRef) {
-      startIndex = this.hiddenStartIndex - 1;
-    }
-
-    for (let i = startIndex; i >= 0; i -= 1) {
-      if (!this.props.children[i].props.isDisabled) {
-        if (document.activeElement === this.menuRef) {
-          this.container.focus();
-        }
-        this.props.onChange(event, this.props.children[i]);
-        break;
+    if (event.nativeEvent.keyCode === nextKey && tabPanes[index + 1]) {
+      tabPanes[index + 1].focus();
+    } else if (event.nativeEvent.keyCode === previousKey) {
+      if (tabPanes[index - 1]) {
+        tabPanes[index - 1].focus();
+      } else if (event.target === tabPanes[tabPanes.length - 1] && tabPanes[tabPanes.length - 2]) {
+        tabPanes[tabPanes.length - 2].focus();
       }
     }
   }
@@ -268,14 +228,6 @@ class CollapsibleTabs extends React.Component {
       }
     });
 
-    const visibleTabsCount = visibleChildren.length;
-    const hiddenTabsCount = hiddenChildren.length;
-    const tabListID = `terra-tabs-list-interaction-hint-${uuidv4()}`;
-    let tabListHint = this.props.intl.formatMessage({ id: 'Terra.tabs.hint.tabList' }, { numberOfTabs: visibleTabsCount + hiddenTabsCount });
-    if (hiddenTabsCount > 0) {
-      tabListHint += `, ${this.props.intl.formatMessage({ id: 'Terra.tabs.hint.hiddenTabs' }, { hiddenTabs: hiddenTabsCount })}`;
-    }
-
     const theme = this.context;
     const selectedTab = this.props.children[this.props.activeIndex];
 
@@ -297,21 +249,14 @@ class CollapsibleTabs extends React.Component {
     return (
       <div>
         <div
+          tabIndex="-1"
           className={cx('collapsible-tabs-container', { 'is-calculating': this.isCalculating }, theme.className)}
           ref={this.setContainer}
-          tabIndex="0"
           onKeyDown={this.handleOnKeyDown}
-          aria-describedby={tabListID}
           role="tablist"
         >
           {visibleChildren}
           {menu}
-          <VisuallyHiddenText
-            aria-live="polite"
-            id={tabListID}
-            text={tabListHint}
-            aria-hidden="true"
-          />
         </div>
         {selectionBar}
       </div>
