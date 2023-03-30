@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.50.0 - (March 29, 2023)
+
 * Changed
   * Updated Jest snapshots.
 
