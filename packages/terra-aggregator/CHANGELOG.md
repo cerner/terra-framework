@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.74.0 - (March 29, 2023)
+
 * Changed
   * Updated WDIO screenshots due to `terra-slide-panel` and `terra-slide-group` changes.
 

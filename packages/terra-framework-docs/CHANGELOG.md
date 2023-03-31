@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.17.0 - (March 29, 2023)
+
 * Changed
   * Added test for `terra-slide-panel`.
   * Updated docs for `terra-slide-group`.
