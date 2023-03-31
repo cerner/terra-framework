@@ -93,7 +93,7 @@ const TabPane = ({
   attributes.onMouseDown = handleMouseDown;
 
   return (
-    <div {...attributes} ref={paneRef} data-terra-tabs-show-focus-styles data-terra-tab-pane role="tab" className={paneClassNames}>
+    <div {...attributes} ref={paneRef} data-terra-tabs-show-focus-styles={!isDisabled} data-terra-tab-pane role="tab" className={paneClassNames}>
       {customDisplay}
       {customDisplay ? null : icon}
       {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}

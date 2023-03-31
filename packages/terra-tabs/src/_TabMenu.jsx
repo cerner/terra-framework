@@ -171,6 +171,7 @@ class TabMenu extends React.Component {
           </Menu>
         </div>
         <VisuallyHiddenText
+          role="tab"
           aria-live="polite"
           id={buttonHintId}
           text={buttonHint}

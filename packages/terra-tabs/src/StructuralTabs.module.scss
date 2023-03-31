@@ -214,6 +214,7 @@
       [dir=ltr] & {
         box-shadow: var(--terra-tabs-keyboard-focus-ltr-box-shadow, 0 0 1px 2px #4a90e2);
       }
+      
       &[data-terra-tabs-show-focus-styles='true'] {
         outline: var(--terra-tabs-structural-focus-outline, 2px dashed #000);
         outline-offset: var(--terra-tabs-structural-focus-outline-offset, -5px);

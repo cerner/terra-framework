@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+* Changed
+  * Fixed screen reader announcing incorrect tab count.
+  * Allow screen reader to announce hidden tabs count.
+  * Fixed keyboard navigation of tabs menu.
+
 ## 6.66.0 - (March 29, 2023)
 
 * Changed

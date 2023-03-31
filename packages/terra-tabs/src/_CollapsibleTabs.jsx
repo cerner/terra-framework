@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
 import * as KeyCode from 'keycode-js';
-import { injectIntl } from 'react-intl';
 import TabMenu from './_TabMenu';
 import styles from './Tabs.module.scss';
 
@@ -42,12 +41,6 @@ const propTypes = {
    * Parameters: 1. Bool indicating if any of the tab labels have been truncated.
    */
   onTruncationChange: PropTypes.func,
-
-  /**
-   * @private
-   * The intl object to be injected for translations.
-   */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 class CollapsibleTabs extends React.Component {
@@ -174,10 +167,11 @@ class CollapsibleTabs extends React.Component {
     const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
     const nextKey = !isRTL ? KeyCode.KEY_RIGHT : KeyCode.KEY_LEFT;
     const previousKey = !isRTL ? KeyCode.KEY_LEFT : KeyCode.KEY_RIGHT;
-    const tabPanes = this.container.querySelectorAll('[role="tab"]');
-    const index = parseInt(event.target.getAttribute('index'), 10);
+    let tabPanes = this.container.querySelectorAll('[role="tab"]');
+    tabPanes = (Array.from(tabPanes).filter((pane) => pane.hasAttribute('data-terra-tabs-show-focus-styles') && pane.getAttribute('data-terra-tabs-show-focus-styles') === 'true'));
+    const index = tabPanes.indexOf(event.target);
     if (tabList) {
-      if ((event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) && event.target !== tabPanes[tabPanes.length - 1]) {
+      if ((event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) && !event.target.getAttribute('data-terra-tabs-menu')) {
         this.props.onChange(event, this.props.children[event.target.getAttribute('index')]);
       }
     }
@@ -267,4 +261,4 @@ class CollapsibleTabs extends React.Component {
 CollapsibleTabs.propTypes = propTypes;
 CollapsibleTabs.contextType = ThemeContext;
 
-export default injectIntl(CollapsibleTabs);
+export default CollapsibleTabs;

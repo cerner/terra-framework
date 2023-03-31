@@ -4,6 +4,8 @@ import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import Tabs from '../../src/Tabs';
 
+jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+
 describe('Tabs', () => {
   it('should render a default component', () => {
     const defaultRender = <Tabs><Tabs.Pane label="Default" key="default" /></Tabs>;

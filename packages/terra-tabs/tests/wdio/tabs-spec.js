@@ -131,3 +131,15 @@ Terra.describeViewports('Tabs - Responsive to Parent', ['huge'], () => {
     Terra.validates.element('responsive to parent after');
   });
 });
+
+Terra.describeViewports('TAbs - Keyboard Navigation', ['medium'], () => {
+  it('displays tab with keyboard focus', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/default-tabs');
+    browser.keys('Tab');
+    Terra.validates.element('Keyboard Focus', { selector: '#root' });
+  });
+  it('should navigate to 2nd tab using right arrow and activate on enter', () => {
+    browser.keys(['ArrowRight', 'Enter']);
+    Terra.validates.element('Navigate and activate using keyboard', { selector: '#root' });
+  });
+});
