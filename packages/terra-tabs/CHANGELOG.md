@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-* Changed
+* Fixed
   * Fixed screen reader announcing incorrect tab count.
   * Allow screen reader to announce hidden tabs count.
   * Fixed keyboard navigation of tabs menu.
