@@ -35,7 +35,8 @@
     "terra-list": "^4.0.0",
     "terra-popup": "^6.64.0",
     "terra-theme-context": "^1.8.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "terra-visually-hidden-text": "^2.36.0"
   },
   "devDependencies": {
     "terra-button": "^3.3.0",

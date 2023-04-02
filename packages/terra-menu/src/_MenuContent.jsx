@@ -127,6 +127,11 @@ class MenuContent extends React.Component {
     return { isToggleableMenu: this.isToggleable(), shouldReserveSpaceForIcon: this.shouldReserveSpaceForIcon() };
   }
 
+  componentDidMount() {
+    // Set focus to first focusable menu item
+    this.contentNode.querySelectorAll('li[tabindex="0"]')[0].focus();
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.isFocused) {
       this.needsFocus = this.needsFocus || this.props.isFocused !== prevProps.isFocused;
@@ -148,12 +153,12 @@ class MenuContent extends React.Component {
   onKeyDown(event) {
     const focusableMenuItems = this.contentNode.querySelectorAll('li[tabindex="0"]');
 
-    if (event.nativeEvent.keyCode === KeyCode.KEY_UP) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_UP || event.nativeEvent.keyCode === KeyCode.KEY_END) {
       // Shift focus to last focusable menu item
       focusableMenuItems[focusableMenuItems.length - 1].focus();
     }
 
-    if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN || event.nativeEvent.keyCode === KeyCode.KEY_HOME) {
       // Shift focus to first focusable menu item
       focusableMenuItems[0].focus();
     }
@@ -346,6 +351,8 @@ class MenuContent extends React.Component {
           onClick,
           onKeyDown,
           isActive,
+          index,
+          totalItems: this.props.children.length,
         });
         // If the menu is first-tier and is provided with `headerTitle` prop, terra-menu should render a header.
         // Also the first-tier menu to have a header should possess at least one menu-item that drills-in to a sub-menu with sub-menu items.
@@ -361,6 +368,8 @@ class MenuContent extends React.Component {
             const clonedElement = React.cloneElement(child, {
               onKeyDown: this.wrapOnKeyDown(child, index),
               isActive: index === this.state.focusIndex,
+              index,
+              totalItems: this.props.children.length,
             });
             children.push(clonedElement);
           } else {
@@ -408,7 +417,7 @@ class MenuContent extends React.Component {
         onKeyDown={this.onKeyDown}
       >
         <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
-          <List className={cx('list')} role="menu">
+          <List className={cx('list')} role="menu" data-submenu={isSubMenu}>
             {items}
           </List>
         </ContentContainer>

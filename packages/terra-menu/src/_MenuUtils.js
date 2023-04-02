@@ -15,8 +15,11 @@ const isFullScreen = (isHeightBounded, isWidthBounded, boundingFrame, popupWidth
   return isHeightBounded && (width >= maxWidth || isWidthBounded);
 };
 
+const isMac = () => navigator.userAgent.indexOf('Mac') !== -1 && navigator.userAgent.indexOf('Win') === -1;
+
 const MenuUtils = {
   isFullScreen,
+  isMac,
 };
 
 export default MenuUtils;

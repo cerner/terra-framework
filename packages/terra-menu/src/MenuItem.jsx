@@ -7,7 +7,9 @@ import InstructionsForUseIcon from 'terra-icon/lib/icon/IconConsultInstructionsF
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import * as KeyCode from 'keycode-js';
+import MenuUtils from './_MenuUtils';
 import styles from './MenuItem.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -104,6 +106,16 @@ const propTypes = {
    * Indicates if the item should display with a highlighted background. Reserved for Terra higher-order component approved usage only.
    */
   isHighlighted: PropTypes.bool,
+  /**
+   * @private
+   * The index of the menu item.
+   */
+  index: PropTypes.number,
+  /**
+   * @private
+   * Number of items in the menu.
+   */
+  totalItems: PropTypes.number,
 };
 
 const defaultProps = {
@@ -227,6 +239,8 @@ class MenuItem extends React.Component {
       subMenuItems,
       isActive,
       icon,
+      index,
+      totalItems,
       isHighlighted,
       ...customProps
     } = this.props;
@@ -275,6 +289,20 @@ class MenuItem extends React.Component {
     ]);
 
     let content = textContainer;
+
+    // Adds context for navigating back to parent menu from submenu
+    if (this.itemNode) {
+      this.submenu = this.itemNode.parentNode.getAttribute('data-submenu') === 'true';
+      if (this.submenu) {
+        content = (
+          <>
+            {textContainer}
+            <VisuallyHiddenText text=". To exit submenu press Left Arrow or navigate to Back button. " />
+          </>
+        );
+      }
+    }
+
     if (hasChevron || toggleableMenu || isInstructionsForUse || icon || shouldReserveSpaceForIcon) {
       let fitStartIcon = null;
       if (isInstructionsForUse) {
@@ -292,12 +320,22 @@ class MenuItem extends React.Component {
       }
 
       content = (
-        <Arrange
-          fitStart={fitStartIcon}
-          fill={textContainer}
-          fitEnd={hasChevron ? <ChevronIcon className={cx('chevron')} /> : null}
-          align="center"
-        />
+        <>
+          <Arrange
+            fitStart={fitStartIcon}
+            fill={textContainer}
+            fitEnd={hasChevron ? <ChevronIcon className={cx('chevron')} /> : null}
+            align="center"
+          />
+          {/* Adds index and selection state context for macOS */}
+          { MenuUtils.isMac() && <VisuallyHiddenText text={`(${index + 1} of ${totalItems})`} /> }
+          { MenuUtils.isMac() && (isGroupItem || toggleable)
+              && <VisuallyHiddenText text={markAsToggled ? ', selected, ' : ', unselected'} /> }
+          {/* Adds context for item with submenu-items */}
+          { subMenuItems.length > 0 && <VisuallyHiddenText text=". With submenu items" /> }
+          {/* Adds context for navigating back to parent menu from submenu */}
+          { this.submenu === true && <VisuallyHiddenText text=". To exit submenu press Left Arrow or navigate to Back button. " /> }
+        </>
       );
     }
 

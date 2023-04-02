@@ -10,7 +10,7 @@
 
     &:not(.is-disabled) {
       cursor: pointer;
-      
+
       /* stylelint-disable max-nesting-depth */
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
         &:hover {
