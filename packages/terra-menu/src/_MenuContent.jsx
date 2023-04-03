@@ -13,8 +13,10 @@ import ThemeContext from 'terra-theme-context';
 import MenuUtils from './_MenuUtils';
 import MenuItem from './MenuItem';
 import styles from './Menu.module.scss';
+import uuidv4 from 'uuid/v4';
 
 const cx = classNames.bind(styles);
+const menuHeaderId = `terra-menu-headertitle-${uuidv4()}`;
 
 const propTypes = {
   /**
@@ -306,17 +308,18 @@ class MenuContent extends React.Component {
         <>
 >>>>>>> Fix for Sub_Prop
           <div className={cx('header-container')}>
-            <div 
+            <div
               className={cx('header-button')}
               role="button"
               onClick={this.props.onRequestBack}
               onKeyDown={this.onKeyDownBackButton}
               tabIndex="0"
               aria-label={backBtnText}
-              aria-description={this.props.title}>
-                {backIcon}
+              aria-describedby={menuHeaderId}
+              >
+            {backIcon}
             </div>
-            <h1 className={cx('header-title')}>{this.props.title}</h1>
+            <h1 id={menuHeaderId} className={cx('header-title')}>{this.props.title}</h1>
           </div>
 <<<<<<< HEAD
           </div>
@@ -327,7 +330,7 @@ class MenuContent extends React.Component {
       );
     } else if (this.props.headerTitle.length > 0) {
       header = (
-        <h1 className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
+        <h1 id={buttonHintId}className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
       );
     }
 
