@@ -292,6 +292,7 @@ class MenuContent extends React.Component {
 
     if (this.props.index > 0) {
       header = (
+<<<<<<< HEAD
         <div className={cx('header-container')}>
           <div className={cx('header-button')}
           role="button"
@@ -301,14 +302,28 @@ class MenuContent extends React.Component {
           aria-label={backBtnText}
           aria-description={this.props.title}
         >
+=======
+        <>
+>>>>>>> Fix for Sub_Prop
           <div className={cx('header-container')}>
-            <div className={cx('header-button')}>
-              {backIcon}
-            </div>
-            <h1 className={cx('header-title')}>{this.props.title}</h1>
+            <div className={cx('header-button')}
+              role="button"
+              onClick={this.props.onRequestBack}
+              onKeyDown={this.onKeyDownBackButton}
+              tabIndex="0"
+              aria-label={backBtnText}
+              aria-description={this.props.title}
+              >
+                {backIcon}
+              </div>
+              <h1 className={cx('header-title')}>{this.props.title}</h1>
           </div>
+<<<<<<< HEAD
           </div>
       </div>
+=======
+        </>
+>>>>>>> Fix for Sub_Prop
       );
     } else if (this.props.headerTitle.length > 0) {
       header = (
