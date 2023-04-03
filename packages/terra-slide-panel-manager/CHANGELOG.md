@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `level` prop as a passthrough for the underlying `terra-action-header`
+
 ## 5.65.0 - (March 29, 2023)
 
 * Changed

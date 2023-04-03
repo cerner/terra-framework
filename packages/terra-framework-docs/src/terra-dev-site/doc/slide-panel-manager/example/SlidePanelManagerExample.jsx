@@ -1,6 +1,6 @@
 /* eslint-disable max-classes-per-file */
 /* Slide Panel Manager example with panel behavior as "overlay" */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ActionHeader from 'terra-action-header';
@@ -9,6 +9,7 @@ import ContentContainer from 'terra-content-container';
 import {
   availableDisclosureHeights, availableDisclosureWidths, DisclosureManagerHeaderAdapter, DisclosureManagerContext,
 } from 'terra-disclosure-manager';
+import NativeSelect from 'terra-form-select/lib/native-select/NativeSelect';
 
 import SlidePanelManager from 'terra-slide-panel-manager';
 import styles from './SlidePanelManager.module.scss';
@@ -274,12 +275,34 @@ class ContentComponent extends React.Component {
 
 ContentComponent.contextType = DisclosureManagerContext;
 
-const SlidePanelManagerExample = () => (
-  <div className={cx('example-wrapper')}>
-    <SlidePanelManager>
-      <ContentComponent />
-    </SlidePanelManager>
-  </div>
-);
+const SlidePanelManagerExample = () => {
+  const [level, setLevel] = useState(0);
+
+  return (
+    <div className={cx('example-wrapper')}>
+      <SlidePanelManager level={level === 0 ? undefined : level}>
+        <ContentComponent />
+        <br />
+        <div id="headingLevel" className={cx('form-select')}>Select panel heading level:</div>
+        <NativeSelect
+          ariaLabel="Panel heading level"
+          className={cx('form-select')}
+          isFilterStyle
+          onChange={(event) => setLevel(Number(event.currentTarget.value))}
+          options={[
+            { value: '0', display: 'Default' },
+            { value: 1, display: '1' },
+            { value: 2, display: '2' },
+            { value: 3, display: '3' },
+            { value: 4, display: '4' },
+            { value: 5, display: '5' },
+            { value: 6, display: '6' },
+          ]}
+          value={level}
+        />
+      </SlidePanelManager>
+    </div>
+  );
+};
 
 export default SlidePanelManagerExample;
