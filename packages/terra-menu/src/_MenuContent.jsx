@@ -306,17 +306,17 @@ class MenuContent extends React.Component {
         <>
 >>>>>>> Fix for Sub_Prop
           <div className={cx('header-container')}>
-            <div className={cx('header-button')}
+            <div 
+              className={cx('header-button')}
               role="button"
               onClick={this.props.onRequestBack}
               onKeyDown={this.onKeyDownBackButton}
               tabIndex="0"
               aria-label={backBtnText}
-              aria-description={this.props.title}
-              >
+              aria-description={this.props.title}>
                 {backIcon}
-              </div>
-              <h1 className={cx('header-title')}>{this.props.title}</h1>
+            </div>
+            <h1 className={cx('header-title')}>{this.props.title}</h1>
           </div>
 <<<<<<< HEAD
           </div>
