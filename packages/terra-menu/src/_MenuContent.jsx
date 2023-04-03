@@ -353,6 +353,7 @@ class MenuContent extends React.Component {
           isActive,
           index,
           totalItems: this.props.children.length,
+          intl: this.props.intl,
         });
         // If the menu is first-tier and is provided with `headerTitle` prop, terra-menu should render a header.
         // Also the first-tier menu to have a header should possess at least one menu-item that drills-in to a sub-menu with sub-menu items.
@@ -370,6 +371,7 @@ class MenuContent extends React.Component {
               isActive: index === this.state.focusIndex,
               index,
               totalItems: this.props.children.length,
+              intl: this.props.intl,
             });
             children.push(clonedElement);
           } else {

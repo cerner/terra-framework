@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
 import Menu from 'terra-menu';
-import IconCaretRight from 'terra-icon/lib/icon/IconCaretRight';
+import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import classNames from 'classnames/bind';
 import styles from './BasicMenu.module.scss';
 
@@ -143,7 +143,7 @@ class BasicMenu extends React.Component {
               <Menu.Item text="Group Item 3" key="GroupItem3" isSelected={this.state.groupSelectedIndex === 2} isDisabled />
             </Menu.ItemGroup>
           </Menu>
-          <Button onClick={this.handleButtonClick} text="Click Me" aria-haspopup icon={<IconCaretRight />} isReversed />
+          <Button onClick={this.handleButtonClick} text="Click Me" aria-haspopup icon={<IconCaretDown />} isReversed />
         </div>
         <br />
         <p>

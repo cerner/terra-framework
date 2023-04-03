@@ -1,4 +1,6 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import Arrange from 'terra-arrange';
 import CheckIcon from 'terra-icon/lib/icon/IconCheckmark';
@@ -116,6 +118,10 @@ const propTypes = {
    * Number of items in the menu.
    */
   totalItems: PropTypes.number,
+  /**
+   * The intl object to be injected for translations. Provided by the injectIntl function.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -242,6 +248,7 @@ class MenuItem extends React.Component {
       index,
       totalItems,
       isHighlighted,
+      intl,
       ...customProps
     } = this.props;
 
@@ -290,6 +297,17 @@ class MenuItem extends React.Component {
 
     let content = textContainer;
 
+    const screenReaderResponse = (
+      <>
+        { MenuUtils.isMac() && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.index' }, { index: index + 1, totalItems })} /> }
+        { MenuUtils.isMac() && (isGroupItem || toggleable) && <VisuallyHiddenText text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
+        {/* Adds context for item with submenu-items */}
+        { subMenuItems.length > 0 && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.itemWithSubmenu' })} /> }
+        {/* Adds context for navigating back to parent menu from submenu */}
+        { this.submenu === true && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.exitSubmenu' })} /> }
+      </>
+    );
+
     // Adds context for navigating back to parent menu from submenu
     if (this.itemNode) {
       this.submenu = this.itemNode.parentNode.getAttribute('data-submenu') === 'true';
@@ -297,7 +315,7 @@ class MenuItem extends React.Component {
         content = (
           <>
             {textContainer}
-            <VisuallyHiddenText text=". To exit submenu press Left Arrow or navigate to Back button. " />
+            {screenReaderResponse}
           </>
         );
       }
@@ -327,14 +345,7 @@ class MenuItem extends React.Component {
             fitEnd={hasChevron ? <ChevronIcon className={cx('chevron')} /> : null}
             align="center"
           />
-          {/* Adds index and selection state context for macOS */}
-          { MenuUtils.isMac() && <VisuallyHiddenText text={`(${index + 1} of ${totalItems})`} /> }
-          { MenuUtils.isMac() && (isGroupItem || toggleable)
-              && <VisuallyHiddenText text={markAsToggled ? ', selected, ' : ', unselected'} /> }
-          {/* Adds context for item with submenu-items */}
-          { subMenuItems.length > 0 && <VisuallyHiddenText text=". With submenu items" /> }
-          {/* Adds context for navigating back to parent menu from submenu */}
-          { this.submenu === true && <VisuallyHiddenText text=". To exit submenu press Left Arrow or navigate to Back button. " /> }
+          {screenReaderResponse}
         </>
       );
     }
@@ -362,4 +373,4 @@ MenuItem.propTypes = propTypes;
 MenuItem.defaultProps = defaultProps;
 MenuItem.contextTypes = contextTypes;
 
-export default MenuItem;
+export default injectIntl(MenuItem);

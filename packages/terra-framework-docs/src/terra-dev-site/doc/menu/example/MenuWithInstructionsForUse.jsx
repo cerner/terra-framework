@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
 import Menu from 'terra-menu';
+import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import classNames from 'classnames/bind';
 import styles from './BasicMenu.module.scss';
 
@@ -88,7 +89,7 @@ class MenuWithInstructionsForUse extends React.Component {
               onClick={this.handleCloseOnClick}
             />
           </Menu>
-          <Button onClick={this.handleButtonClick} text="Help" />
+          <Button onClick={this.handleButtonClick} text="Help" aria-haspopup icon={<IconCaretDown />} isReversed />
         </div>
         <br />
         <p>

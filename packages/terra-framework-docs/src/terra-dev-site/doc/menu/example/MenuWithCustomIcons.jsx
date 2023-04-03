@@ -8,6 +8,7 @@ import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import IconEnvelope from 'terra-icon/lib/icon/IconEnvelope';
 import IconPrinter from 'terra-icon/lib/icon/IconPrinter';
+import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import classNames from 'classnames/bind';
 import styles from './BasicMenu.module.scss';
 
@@ -112,7 +113,7 @@ class MenuWithCustomIcons extends React.Component {
               icon={<IconPrinter />}
             />
           </Menu>
-          <Button onClick={this.handleButtonClick} text="Click Me" />
+          <Button onClick={this.handleButtonClick} text="Click Me" aria-haspopup icon={<IconCaretDown />} isReversed />
         </div>
       </div>
     );
