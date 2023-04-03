@@ -292,12 +292,14 @@ class MenuContent extends React.Component {
 
     if (this.props.index > 0) {
       header = (
-        <div
+        <div className={cx('header-container')}>
+          <div className={cx('header-button')}
           role="button"
           onClick={this.props.onRequestBack}
           onKeyDown={this.onKeyDownBackButton}
           tabIndex="0"
           aria-label={backBtnText}
+          aria-description={this.props.title}
         >
           <div className={cx('header-container')}>
             <div className={cx('header-button')}>
@@ -305,7 +307,8 @@ class MenuContent extends React.Component {
             </div>
             <h1 className={cx('header-title')}>{this.props.title}</h1>
           </div>
-        </div>
+          </div>
+      </div>
       );
     } else if (this.props.headerTitle.length > 0) {
       header = (
