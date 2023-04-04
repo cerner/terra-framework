@@ -10,10 +10,10 @@ import Arrange from 'terra-arrange';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
+import uuidv4 from 'uuid/v4';
 import MenuUtils from './_MenuUtils';
 import MenuItem from './MenuItem';
 import styles from './Menu.module.scss';
-import uuidv4 from 'uuid/v4';
 
 const cx = classNames.bind(styles);
 const menuHeaderId = `terra-menu-headertitle-${uuidv4()}`;
@@ -316,8 +316,8 @@ class MenuContent extends React.Component {
               tabIndex="0"
               aria-label={backBtnText}
               aria-describedby={menuHeaderId}
-              >
-            {backIcon}
+            >
+             {backIcon}
             </div>
             <h1 id={menuHeaderId} className={cx('header-title')}>{this.props.title}</h1>
           </div>
@@ -330,7 +330,7 @@ class MenuContent extends React.Component {
       );
     } else if (this.props.headerTitle.length > 0) {
       header = (
-        <h1 id={buttonHintId}className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
+        <h1 className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
       );
     }
 
