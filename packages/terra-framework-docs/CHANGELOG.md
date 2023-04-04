@@ -6,6 +6,8 @@
 
 * Changed
   * Updated docs for `terra-slide-group`.
+  * Updated doc and added test for terra-collapsible-menu-view
+  
 * Added
   * Added package-lock.json
   * Added test for `terra-slide-panel`.

@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * Added `isStartAligned` prop
+  * Added new Jest test and snapshots
+  
 ## 6.65.0 - (March 29, 2023)
 
 * Changed
