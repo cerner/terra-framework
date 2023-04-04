@@ -317,7 +317,7 @@ class MenuContent extends React.Component {
               aria-label={backBtnText}
               aria-describedby={menuHeaderId}
             >
-             {backIcon}
+              {backIcon}
             </div>
             <h1 id={menuHeaderId} className={cx('header-title')}>{this.props.title}</h1>
           </div>
