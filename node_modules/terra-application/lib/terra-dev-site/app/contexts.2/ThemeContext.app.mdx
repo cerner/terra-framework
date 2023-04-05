@@ -1,0 +1,26 @@
+import ThemedComponent from './example/ThemedComponent?dev-site-example';
+
+# ThemeContext
+
+The ThemeContext defines an interface for access to the framework's current theme.
+
+This context can be used to apply any theme related changes to a component.
+
+The most common use would be to apply a theme class to the root tag of the component to apply theme variables. See below for an example.
+
+
+> Note: An ThemeContextProvider is rendered by [ApplicationBase](/application/terra-application/components/application-base).
+> Any components rendered within ApplicationBase can access a ThemeContext without rendering additional providers.
+
+## Usage
+
+<ThemedComponent description="This example pulls the current theme from the theme context and adds the theme class name to apply theme variables." isExpanded />
+
+## Context Value
+
+The ThemeContext provides an object with the following values:
+
+|Key Name|Type|Is Required|DefaultValue|Description|
+|---|---|---|---|---|
+|`name`|String|optional|undefined|The current application theme name. This field requires use of the terra-toolkit webpack config.|
+|`className`|String|optional|undefined|The current application theme className. The default theme is indicated as undefined or empty string.|

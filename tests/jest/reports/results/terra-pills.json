@@ -1,0 +1,11 @@
+{
+  "startDate": "4/5/2023, 11:39:54 AM",
+  "output": [
+    " PASS  packages/terra-pills/tests/jest/_RollupPill.test.jsx",
+    "  Rollup Pill",
+    "    ✓ should render rollup pill with the label \"4 more\" (23ms)",
+    "    ✓ should render rollup pill with the label \"show less\" when isCollapsed is false (4ms)",
+    "    ✓ should render rollup pill with the label \"show less\" when isCollapsed is true and rollupCount is 0 (4ms)"
+  ],
+  "endDate": "4/5/2023, 11:40:50 AM"
+}

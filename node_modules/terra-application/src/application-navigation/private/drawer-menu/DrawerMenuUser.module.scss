@@ -1,0 +1,169 @@
+// Themes
+@import '../clinical-lowlight-theme/DrawerMenuCommon.module';
+@import '../orion-fusion-theme/DrawerMenuCommon.module';
+
+/* stylelint-disable selector-max-compound-selectors */
+:local {
+  // Z-index necessary to avoid browser dependant layout issues concerning images and box-shadow
+  .small-user-layout,
+  .large-user-layout {
+    z-index: 0;
+
+    .avatar-inner {
+      z-index: 0;
+    }
+
+    .drawer-menu-action-button {
+      background-color: var(--terra-application-navigation-drawer-menu-action-button-background-color, #004c76);
+      border: var(--terra-application-navigation-drawer-menu-action-button-border, 1px solid #a7aaab);
+      border-radius: var(--terra-application-navigation-drawer-menu-action-button-border-radius, 3px);
+      color: var(--terra-application-navigation-drawer-menu-action-button-color, #dedfe0);
+      font-size: 1rem;
+      outline: none;
+      overflow-wrap: break-word; /* Modern browsers */
+      padding: 3px 0.7142857143rem;
+      text-align: center;
+      text-decoration: none;
+      text-transform: none;
+      touch-action: manipulation; // Enable fast tap interaction in webkit browsers; see https://webkit.org/blog/5610/more-responsive-tapping-on-ios/
+      user-select: none; // Prevent text selection on buttons on mobile devices
+      white-space: normal;
+      width: 100%;
+      word-wrap: break-word; /* For IE 10 and IE 11 */
+
+      &[data-focus-styles-enabled='true']:focus {
+        outline: var(--terra-application-navigation-drawer-menu-action-button-focus-outline, 2px dashed #fff);
+        outline-offset: var(--terra-application-navigation-drawer-menu-action-button-focus-outline-offset, 1px);
+      }
+
+      &:hover {
+        background-color: var(--terra-application-navigation-drawer-menu-action-button-hover-background-color, #005685);
+        color: var(--terra-application-navigation-drawer-menu-action-button-hover-color, #dedfe0);
+      }
+
+      &:active {
+        background-color: var(--terra-application-navigation-drawer-menu-action-button-active-background-color, #0065a3);
+        color: var(--terra-application-navigation-drawer-menu-action-button-active-color, #dedfe0);
+      }
+    }
+  }
+
+  .large-user-layout {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 1.857rem 1.4285714286rem 2rem;
+
+    .name,
+    .detail {
+      flex: 1 1 auto;
+    }
+  
+    .avatar-container {
+      align-items: center;
+      display: flex;
+      height: 5.7143rem;
+      justify-content: center;
+      margin-bottom: 1.143rem;
+      position: relative;
+      width: 5.7143rem;
+    }
+
+    .avatar-outline {
+      border: var(--terra-application-navigation-drawer-menu-avatar-outline-border, 0.1429rem solid rgba(255, 255, 255, 0.1));
+      border-radius: 50%;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+
+    .avatar-inner {
+      font-size: var(--terra-application-navigation-drawer-menu-user-large-avatar-inner-font-size, 1.6521rem);
+    }
+
+    .name {
+      color: var(--terra-application-navigation-drawer-menu-user-large-name-color, #fff);
+      font-size: 1.2857142857rem;
+      font-weight: 500;
+      overflow-wrap: break-word;
+      text-align: center;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }
+  
+    .detail {
+      color: var(--terra-application-navigation-drawer-menu-user-large-detail-color, rgba(255, 255, 255, 0.7));
+      font-size: 1rem;
+      margin-top: 0.2142857143rem;
+      overflow-wrap: break-word;
+      text-align: center;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }
+
+    .drawer-menu-action-button {
+      margin-top: 12px;
+    }
+  }
+
+  .small-user-layout {
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.7142857143rem 1.4285714286rem;
+
+    .avatar-container {
+      flex: 0 0 auto;
+      height: auto;
+      margin-right: 0.5rem;
+      overflow: hidden;
+      position: relative;
+      width: auto;
+    }
+
+    .avatar-container > * {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  
+    .avatar-inner {
+      font-size: var(--terra-application-navigation-drawer-menu-user-small-avatar-inner-font-size, 0.6522rem);
+    }
+
+    .info-container {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+    }
+  
+    .name {
+      color: var(--terra-application-navigation-drawer-menu-user-small-name-color, rgba(255, 255, 255, 1));
+      font-size: 1rem;
+      font-weight: 500;
+      overflow-wrap: break-word;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }
+  
+    .detail {
+      color: var(--terra-application-navigation-drawer-menu-user-small-detail-color, rgba(255, 255, 255, 0.7));
+      font-size: 0.8571428571rem;
+      overflow-wrap: break-word;
+      padding-top: 0.2142857143rem;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }
+
+    .drawer-menu-action-button {
+      margin-top: 6px;
+    }
+  }
+}
+/* stylelint-enable selector-max-compound-selectors */

@@ -1,0 +1,48 @@
+/// <reference types="node" />
+import { EventEmitter } from 'events';
+import type { Options, Capabilities } from '@wdio/types';
+import type { ProtocolCommandsAsync } from '@wdio/protocols';
+import { LaunchOptions, BrowserLaunchArgumentOptions, BrowserConnectOptions, ConnectOptions } from 'puppeteer-core';
+import { EventEmitter as PuppeteerEventEmitter } from 'puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js';
+export interface ExtendedCapabilities extends Capabilities.Capabilities, WDIODevtoolsOptions {
+}
+export interface WDIODevtoolsOptions {
+    'wdio:devtoolsOptions'?: DevToolsOptions;
+}
+export interface DevToolsOptions extends LaunchOptions, BrowserLaunchArgumentOptions, BrowserConnectOptions, ConnectOptions {
+    /**
+     * If you want to start Google Chrome on a custom port
+     */
+    customPort?: number;
+}
+export interface AttachOptions {
+    capabilities: {
+        'goog:chromeOptions': {
+            debuggerAddress: string;
+        };
+    } | {
+        'ms:edgeOptions': {
+            debuggerAddress: string;
+        };
+    };
+}
+export interface BaseClient extends EventEmitter {
+    sessionId: string;
+    capabilities: Capabilities.DesiredCapabilities | Capabilities.W3CCapabilities;
+    requestedCapabilities: Capabilities.DesiredCapabilities | Capabilities.W3CCapabilities;
+    options: Options.WebDriver;
+}
+export interface Client extends BaseClient, ProtocolCommandsAsync {
+}
+/**
+ * Interface keeping together information allowing to remove active listener from emitter.
+ */
+export interface ActiveListener {
+    /** Event Emitter object emitting to the handler. */
+    emitter: PuppeteerEventEmitter;
+    /** Name of the event the handler is attached to. */
+    eventName: string;
+    /** Event function handler, bound to the context of its class instance. */
+    boundHandler: (...args: any[]) => any;
+}
+//# sourceMappingURL=types.d.ts.map

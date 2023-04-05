@@ -1,0 +1,26 @@
+// Themes
+@import './clinical-lowlight-theme/ApplicationStatusOverlayProvider.module';
+@import './orion-fusion-theme/ApplicationStatusOverlayProvider.module';
+
+:local {
+  .container {
+    height: 100%;
+    outline: none;
+    position: relative;
+    z-index: 0;
+  }
+
+  .container-content {
+    height: 100%;
+    z-index: 0;
+  }
+
+  .status-view {
+    background-color: var(--terra-application-status-overlay-background-color, #fff);
+    outline: none;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+}

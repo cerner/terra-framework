@@ -1,0 +1,47 @@
+# Logger
+
+`terra-application` provides an override-able logger to handle error, info, and warning messages.
+
+## Usage
+
+The logger works like the `console` for the `warn`, `error`, and `info` methods. By default the logger will send the messages to the corresponding console methods. In production, info and warning messages will be suppressed.
+
+```js
+import logger from 'terra-application/lib/utils/logger';
+
+logger.error('error');
+logger.warn('warning');
+logger.info('info');
+```
+
+## Overriding
+
+It may be desirable to override the default implementation of the logger. For example, logs could be sent to a server side log aggregator. The logger is a singleton and should only be overridden once per application. To override the logger implementation, use the `initializeLogger` function and provide a new function for the logger. All loggers must have a method signature of `(obj1 [, obj2, ..., objN])`, the same as the [console.warn](https://developer.mozilla.org/en-US/docs/Web/API/Console/warn), [console.error](https://developer.mozilla.org/en-US/docs/Web/API/Console/error), and [console.info](https://developer.mozilla.org/en-US/docs/Web/API/Console/info) methods.
+
+```js
+import { initializeLogger } from 'terra-application/lib/logger';
+
+initializeLogger({
+  onInfo: (...args) => console.log('[Info] ', ...args),
+  onWarn: (...args) => console.warn('[Warn] ', ...args),
+  onError: (...args) => console.log('[Error] ', ...args),
+});
+```
+
+## API
+
+### Logger
+
+|method|syntax|Default Behavior|
+|---|---|---|
+|`error`|`Logger.error(obj1 [, obj2, ..., objN])`|Logs an error to the console.|
+|`info`|`Logger.info(obj1 [, obj2, ..., objN])`|Logs an info message to the console in a non production environment.|
+|`warn`|`Logger.warn(obj1 [, obj2, ..., objN])`|Logs an warning message to the console in a non production environment.|
+
+### initializeLogger
+
+|Key Name|Type|Is Required|DefaultValue|Description|
+|---|---|---|---|---|
+|`onInfo`|function|optional|undefined|The method to override the default info logging method.|
+|`onWarn`|function|optional|undefined|The method to override the default warning logging method.|
+|`onError`|function|optional|undefined|The method to override the default error logging method.|

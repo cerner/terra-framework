@@ -1,0 +1,9 @@
+.DS_Store
+.git
+.gitignore
+.idea
+log/*
+tmp
+node_modules
+build
+reports

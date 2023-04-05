@@ -1,0 +1,24 @@
+// Themes
+@import '../clinical-lowlight-theme/ResizeHandle.module';
+@import '../orion-fusion-theme/ResizeHandle.module';
+
+:local {
+  .resize-handle {
+    background-color: transparent;
+    cursor: col-resize; /* stylelint-disable-line plugin/no-unsupported-browser-features */ // cursor isn't supported by Android/iOS browsers
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 5px;
+    z-index: 1;
+
+    &:hover {
+      background-color: var(--terra-application-resize-handle-hover-background-color, rgba(34, 42, 46, 0.6));
+    }
+
+    &.dragging {
+      background-color: var(--terra-application-resize-handle-dragging-background-color, rgba(34, 42, 46, 0.6));
+      z-index: 4;
+    }
+  }
+}

@@ -1,0 +1,3 @@
+export declare const STACK_START: RegExp;
+export declare const STACKTRACE_FILTER: readonly ["node_modules/@wdio/sync/", "node_modules/webdriverio/build/", "node_modules/webdriver/build/", "node_modules/request/request", " (events.js:", " (domain.js:", "(internal/process/next_tick.js", "new Promise (<anonymous>)", "Generator.next (<anonymous>)", "__awaiter ("];
+//# sourceMappingURL=constants.d.ts.map

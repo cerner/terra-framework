@@ -1,0 +1,36 @@
+# How To Show Loading Overlays
+
+Loading overlays can be rendered within the framework by rendering an [ApplicationLoadingOverlay](/application/terra-application/components/application-loading-overlay) component. Overlays will be rendered by the closest ancestor [ApplicationLoadingOverlayProvider](/application/terra-application/components/application-loading-overlay-provider). All content rendered within the responsding ApplicationLoadingOverlayProvider will be overlaid.
+
+```jsx
+import React, { useState } from 'react';
+import ApplicationLoadingOverlay from 'terra-application/lib/application-loading-overlay';
+
+const ExampleComponent = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  return (
+    <div>
+      <p>This component toggles a loading state that lasts for 3 seconds.</p>
+      <p>
+        <button type="button" onClick={() => {
+          setIsLoading(true);
+
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 3000);
+        }}>
+          Start Loading
+        </button>
+      </p>
+      <ApplicationLoadingOverlay isOpen={isLoading} />
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+Any component that wants to create an overlay container for its children can render its own [ApplicationLoadingOverlayProvider](/application/terra-application/components/application-loading-overlay-provider) to scope overlay presentation to that container.
+
+> Note: ApplicationLoadingOverlayProviders are provided by [ApplicationBase](/application/terra-application/components/application-base), [ApplicationNavigation](/application/terra-application/components/application-navigation), [ModalManager](/application/terra-application/components/modal-manager) and the [SlidePanelManager](/application/terra-application/components/slide-panel-manager).

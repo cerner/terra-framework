@@ -1,0 +1,24 @@
+{
+  "startDate": "4/5/2023, 11:39:54 AM",
+  "output": [
+    " PASS  packages/terra-popup/tests/jest/PopupContent.test.jsx",
+    "  PopupContent",
+    "    Prop Tests",
+    "      with default props",
+    "        ✓ matches the snapshot (2ms)",
+    "        ✓ correctly applies the theme context className (70ms)",
+    "      with header",
+    "        ✓ matches the shallow snapshot (2ms)",
+    "        ✓ matches the mount snapshot (64ms)",
+    "  PopupContentExports",
+    "    ✓ should match the snapshot",
+    " PASS  packages/terra-popup/tests/jest/Popup.test.jsx",
+    "  ✓ should shallow a default component (2ms)",
+    "  ✓ should shallow render a component with push attachment behavior (2ms)",
+    "  ✓ should renders with custom arrow class name (1ms)",
+    "  ✓ should renders with custom content class name (1ms)",
+    "  ✓ should renders with custom overlay class name (1ms)",
+    "  ✓ correctly applies the theme context className (83ms)"
+  ],
+  "endDate": "4/5/2023, 11:40:50 AM"
+}

@@ -1,0 +1,14 @@
+//Themes
+@import './AppPage.clinical-lowlight-theme.module';
+@import './AppPage.orion-fusion-theme.module';
+
+:local {
+  .page-content {
+    padding: 1.5rem;
+  }
+
+  .themed-block {
+    background-color: var(--terra-application-app-page-block-background-color, #0079be);
+    height: 1rem;
+  }
+}

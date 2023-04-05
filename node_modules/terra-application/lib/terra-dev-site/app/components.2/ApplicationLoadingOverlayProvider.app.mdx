@@ -1,0 +1,26 @@
+import ApplicationLoadingOverlayProviderProps from 'terra-application/lib/application-loading-overlay/ApplicationLoadingOverlayProvider?dev-site-props-table';
+
+# ApplicationLoadingOverlayProvider
+
+The ApplicationLoadingOverlayProvider defines a container within which loading overlays may be presented.
+
+[ApplicationLoadingOverlay](/application/terra-application/components/application-loading-overlay) components rendered by children of the ApplicationLoadingOverlayProvider will cause the
+ApplicationLoadingOverlayProvider to render a loading overlay on top of those children. A single loading overlay will be rendered,
+even if multiple ApplicationLoadingOverlay components are rendered at the same time.
+
+The style of the overlay will be determined by the `backgroundStyle` prop specified for each ApplicationLoadingOverlay,
+with the darkest specified style being honored.
+
+> Note: The ApplicationLoadingOverlayProvider has a default height of `100%`. This allows the overlay to be appropriately
+> positioned over the rest of the provider's content. If a different height is desired, a custom class can be provied to
+> the ApplicationOverlayProvider to overwrite the default value.
+
+## Usage
+
+```jsx
+import { ApplicationLoadingOverlayProvider } from 'terra-application/lib/application-loading-overlay';
+```
+
+## Props
+
+<ApplicationLoadingOverlayProviderProps />

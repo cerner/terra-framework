@@ -1,0 +1,17 @@
+//Themes
+@import './clinical-lowlight-theme/ThemedComponent.module';
+@import './orion-fusion-theme/ThemedComponent.module';
+
+:local {
+  .themed {
+    height: 100%;
+    overflow: auto;
+    padding: 24px;
+    position: relative;
+  }
+
+  .themed-block {
+    background-color: var(--terra-application-themed-component-block-background-color, #0079be);
+    height: 24px;
+  }
+}

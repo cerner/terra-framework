@@ -1,0 +1,40 @@
+@import './clinical-lowlight-theme/searchModal.module';
+@import './orion-fusion-theme/searchModal.module';
+
+:local {
+  .search-field {
+    background-color: var(--terra-dev-site-search-field-background-color, #f4f4f4);
+    border-bottom: 0.07143rem;
+    padding-bottom: 0.3571rem;
+    padding-left: 0.7143rem;
+    padding-right: 0.7143rem;
+    padding-top: 0.3571rem;
+  }
+
+  .item {
+    padding-bottom: 0.7143rem;
+    padding-left: 0.7143rem;
+    padding-right: 0.7143rem;
+    padding-top: 0.7143rem;
+  }
+
+  .title {
+    color: var(--terra-dev-site-search-title-color, #1c1f21);
+    font-size: 1.1428571428571428rem;
+    line-height: 1.4285714285714286;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .path {
+    color: var(--terra-dev-site-search-path-color, #64696c);
+    font-size: 1.1428571428571428rem;
+    line-height: 1.4285714285714286;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}

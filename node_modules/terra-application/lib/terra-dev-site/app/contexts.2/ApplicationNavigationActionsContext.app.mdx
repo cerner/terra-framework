@@ -1,0 +1,27 @@
+# ApplicationNavigationActionsContext
+
+The ApplicationNavigationActionsContext defines an interface for communicating actions that may be taken to influence an ApplicationNavigation component's state.
+
+Components rendered within the ApplicationNavigation component as children should respond to changes in this context's value and render appropriate controls for the provided action definitions.
+
+## Usage
+
+```jsx
+import { ApplicationNavigationActionsContext } from 'terra-application/lib/application-navigation/';
+```
+
+## Context Props
+
+|Key|Type|Description|
+|---|---|---|
+|`actions`|actionShape|An array of action objects.|
+
+## Action Props
+|Key|Type|Description|
+|---|---|---|
+|`key`|String|An identifier for the action. This must be unique within the provided actions.|
+|`label`|String|A string description for the action. This will be presented to users and should be translated if necessary.|
+|`icon`|Node|A graphic representing the action. This may be used by the context consumer to render controls for the action.|
+|`onSelect`|Function|A function executed upon selection of the action.|
+
+<ApplicationNavigationActionsContextProps />

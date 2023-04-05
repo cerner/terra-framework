@@ -1,0 +1,162 @@
+import PropsTable from 'terra-application/lib/slide-panel-manager/SlidePanelManager?dev-site-props-table';
+
+<Badge />
+
+# SlidePanelManager
+
+The SlidePanelManager exposes its children to panel presentation APIs through the
+[DisclosureManagerContext](/application/terra-application/contexts/disclosure-manager-context).
+
+## Usage
+
+```jsx
+import SlidePanelManager from 'terra-application/lib/slide-panel-manager';
+```
+
+## Props
+
+<PropsTable />
+
+## Features
+
+### Exception Handling
+
+SlidePanelManager renders an [ApplicationErrorBoundary](/application/terra-application/components/application-error-boundary)
+around its disclosed components. If the disclosed components throw exceptions during React lifecycle functions, SlidePanelManager will
+catch the exceptions and render a styled error component in place of the children.
+
+> If the disclosed panel contents do not utilize the DisclosureManagerHeaderAdapter and render their own panel header instead,
+> it is recommended that those components render an additional ApplicationErrorBoundary below their panel header to keep the
+> header controls for panel dismissal exposed.
+
+### Loading Overlays
+
+SlidePanelManager renders an [ApplicationLoadingOverlayProvider](/application/terra-application/components/application-loading-overlay-provider)
+around its disclosed components. Any [ApplicationLoadingOverlay](/application/terra-application/components/application-loading-overlay)
+components rendered by children will cause a loading overlay to be rendered over the panel's contents.
+
+> If the disclosed panel contents do not utilize the DisclosureManagerHeaderAdapter and render their own panel header instead,
+> it is recommended that those components render an additional ApplicationLoadingOverlayProvider below their panel header to keep
+> the header controls for panel dismissal exposed while the overlay is active.
+
+### Status Views
+
+SlidePanelManager renders an [ApplicationStatusOverlayProvider](/application/terra-application/components/application-status-overlay-provider)
+around its disclosed components. Any [ApplicationStatusOverlay](/application/terra-application/components/application-status-overlay)
+components rendered by children will cause a status view to be rendered over the panel's contents.
+
+> If the disclosed panel contents do not utilize the DisclosureManagerHeaderAdapter and render their own panel header instead,
+> it is recommended that those components render an additional ApplicationStatusOverlayProvider below their panel header to keep
+> the header controls for panel dismissal exposed while the status view is active.
+
+### Unsaved Changes
+
+SlidePanelManager monitors its disclosed content for the presence of rendered [NavigationPrompts](/application/terra-application/components/navigation-prompt)
+within its disclosed content. SlidePanelManager will ensure that the user is prompted prior to dismissing the presented panel if any
+[NavigationPrompts](/application/terra-application/components/navigation-prompt) are rendered at the time of the dismissal request.
+
+## Details
+
+### Implementation Requirements
+
+The SlidePanelManager utilizes the [DisclosureManagerContext](/application/terra-application/contexts/disclosure-manager-context) to manage disclosure requests.
+
+The SlidePanelManager responds to `"panel"` disclosure type requests. Components that wish to disclose content using the SlidePanelManager
+should provide a preferred type of `"panel"`.
+
+### DisclosureManagerHeaderAdapter Support
+
+If a component disclosed by the SlidePanelManager renders a `DisclosureManagerHeaderAdapter`, the SlidePanelManager will render an ActionHeader
+and provide the standard disclosure navigation controls (close, go back, maximize/minimize, etc.) within it. The disclosed component
+can use the `DisclosureManagerHeaderAdapter` to inject its own title and CollapsibleButtonView into the ActionHeader.
+
+If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter`, the SlidePanelManager will **not** render an ActionHeader itself.
+In this case, it is assumed that the disclosed component is rendering its own header. The disclosed component is responsible for rendering
+the appropriate controls to navigate the disclosure stack.
+
+> Note: The DisclosureManagerHeaderAdapter is the preferred way to present a header within the SlidePanelManager.
+> In a future major release, the SlidePanelManager will **always** render the header and navigation controls, regardless of the presence of a DisclosureManagerHeaderAdapter.
+
+### Disclosure Accessory
+
+The `disclosureAccessory` prop allows consumers of the SlidePanelManager to render a static component above the disclosed panel content.
+The provided component will be rendered below the standard ActionHeader and above the disclosed content. This can be used to easily
+provide additional context to every disclosed component. This component is provided once to the SlidePanelManager instance, not on a per-disclosure basis,
+and each component in the disclosure stack will be decorated with the same accessory component.
+
+### Example
+
+```jsx
+import React from 'react';
+import Button from 'terra-button';
+import SlidePanelManager, { disclosureType } from 'terra-application/lib/slide-panel-manager';
+import { withDisclosureManager, DisclosureManagerContext, DisclosureManagerHeaderAdapter } from 'terra-application/lib/disclosure-manager';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
+
+const PanelComponentB = () => (
+  <React.Fragment>
+    <DisclosureManagerHeaderAdapter
+      title="Panel Component B"
+    />
+    <p>I am PanelComponentB!</p>
+  </React.Fragment>
+);
+
+const PanelComponentA = () => {
+  const disclosureManager = React.useContext(DisclosureManagerContext);
+
+  return (
+    <div>
+      <DisclosureManagerHeaderAdapter
+        title="Panel Component A"
+        collapsibleMenuView={<CollapsibleMenuView />}
+      />
+      <p>I am PanelComponentA!</p>
+      <Button
+        text="Disclose PanelComponentB"
+        onClick={() => {
+          disclosureManager.disclose({
+            preferredType: 'panel',
+            size: 'large',
+            content: {
+              key: 'panel-component-b-instance',
+              component: <PanelComponentB />
+            }
+          });
+        }}
+      />
+    </div>
+  );
+}
+
+const MyContentComponent = withDisclosureManager(({ disclosureManager }) => (
+  <div>
+    <p>I am MyContentComponent!</p>
+    <Button
+      text="Disclose PanelComponentA"
+      onClick={() => {
+        disclosureManager.disclose({
+          preferredType: 'panel',
+          size: 'large',
+          content: {
+            key: 'panel-component-a-instance',
+            component: <PanelComponentA />
+          }
+        });
+      }}
+    />
+  </div>
+));
+
+MyContentComponent.propTypes = {
+  disclosureManager: disclosureManagerShape,
+}
+
+const MySlidePanelManagerComponent = () => (
+  <SlidePanelManager
+    disclosureAccessory={<div>Disclosure Accessory</div>}
+  >
+    <MyContentComponent />
+  </SlidePanelManager>
+);
+```

@@ -1,0 +1,42 @@
+# FAQ
+
+## Consumption
+
+### I own an application that consumes multiple libraries. The libraries I consume depend on a different version of `terra-application` than I provide. How can I resolve the dependency mismatch?
+
+As an application owner, you are responsible for defining the version of `terra-application` that is
+being used by the components that make up your application.
+
+It may be tempting to use webpack `alias`'s to force a specific version of `terra-application` to be used.
+However, this is likely to result in API conflicts between the expected and provided versions (and many runtime exceptions).
+
+It may also be tempting to forgo using `peerDependencies` and have each package install its own `terra-application` version.
+But at this point, we all know that doing so will lead to Context mismatches and a non-functioning application.
+
+At the end of the day, if your dependencies require a different version of `terra-application` than your application provides,
+your dependencies need to be updated to use the version you provide.
+
+### Why does bundling multiple versions of `terra-application` cause problems? I can bundle multiple versions of other packages with no issues.
+
+Some packages may be duplicated if their implementations are sandboxed. In those cases, you're weighing the technical costs
+of duplicating the logic (and inflating your asset size) against the cost of managing synchronizing versions across multiple packages.
+It's definitely worth thinking about, but generally there's not functional impact to the overall application.
+
+However, a number of APIs that are provided by `terra-application`'s components are [Context](https://reactjs.org/docs/context.html)-based.
+Contexts are object instances that include components, a Provider and a Consumer, that are able to communicate with each other.
+However, a unique Provider/Consumer pair is generated each time a Context is instantiated, and Providers can only communicate with the Consumer
+provided by the same Context instance.
+
+If multiple versions of `terra-application` are installed, multiple instances of each provided Context are created. This can lead to scenarios
+where one Provider instance is used by the application while an altogether different Consumer instance is used by the application's contents,
+leading to a Provider/Consumer mismatch and a complete communication breakdown. This largely negates the value provided by `terra-application`
+and will likely result in a functionally broken application.
+
+### I see "Unmet Peer Dependency" warnings when I install my dependencies. Do I need to provide these dependencies myself?
+
+Yes. These warnings indicate that you or your dependencies do not have access to the packages they expect.
+You should provide these dependencies yourself (even if only as a `devDependency`).
+
+If resolving one warning results in a unmet peer dependency for another package or version, then you or your dependencies
+have conflicting peer dependencies specified. You will need to get the dependency versions aligned between the affected packages
+in order to consume both correctly.

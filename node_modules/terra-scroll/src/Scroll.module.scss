@@ -1,0 +1,9 @@
+:local {
+  .scroll {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    width: 100%;
+  }
+}

@@ -1,0 +1,36 @@
+@import '~terra-mixins/lib/Mixins';
+
+:local {
+  .orion-fusion-theme {
+    --terra-application-workspace-tab-background-color: #f4f4f4;
+    --terra-application-workspace-tab-background-image: none;
+    --terra-application-workspace-tab-border: 1px solid #868a8c;
+    --terra-application-workspace-tab-border-top-left-radius: 3px;
+    --terra-application-workspace-tab-border-top-right-radius: 3px;
+    --terra-application-workspace-tab-height: 28px;
+    --terra-application-workspace-tab-margin-right: 2px;
+    --terra-application-workspace-tab-icon-color: #7a7f82;
+    --terra-application-workspace-tab-label-color: #434a4d;
+    --terra-application-workspace-tab-hover-icon-color: #64696c;
+    --terra-application-workspace-tab-hover-label-color: #2d3539;
+    --terra-application-workspace-tab-hover-background-color: transparent;
+    --terra-application-workspace-tab-hover-background-image: linear-gradient(to bottom, #fff, #f4f4f4);
+    --terra-application-workspace-tab-focus-before-border: 0;
+    --terra-application-workspace-tab-focus-before-box-shadow: 0 0 1px 1px rgba(76, 178, 233, 0.5), 0 0 6px 2px rgba(76, 178, 233, 0.4), inset 0 0 4px 1px rgba(76, 178, 233, 0.5);
+    --terra-application-workspace-tab-focus-before-bottom: 1px;
+    --terra-application-workspace-tab-focus-before-left: 1px;
+    --terra-application-workspace-tab-focus-before-right: 1px;
+    --terra-application-workspace-tab-focus-before-top: 1px;
+    --terra-application-workspace-tab-is-active-background-color: #fff;
+    --terra-application-workspace-tab-is-active-background-image: none;
+    --terra-application-workspace-tab-is-active-height: 29px;
+    --terra-application-workspace-tab-is-active-icon-color: #64696c;
+    --terra-application-workspace-tab-is-active-label-color: #2d3539;
+    --terra-application-workspace-tab-is-active-icon-label-margin-top: -1px;
+    --terra-application-workspace-tab-min-width: 74px;
+    --terra-application-workspace-tab-menu-svg-height: 0.8334rem;
+    --terra-application-workspace-tab-menu-is-active-hover-background-color: transparent;
+    --terra-application-workspace-tab-menu-is-active-hover-background-image: linear-gradient(to bottom, #f4f4f4, #fff);
+    --terra-application-workspace-tab-menu-is-active-hover-icon-color: #4e5558;
+  }
+}

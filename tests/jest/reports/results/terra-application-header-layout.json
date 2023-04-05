@@ -1,0 +1,22 @@
+{
+  "startDate": "4/5/2023, 11:39:54 AM",
+  "output": [
+    " PASS  packages/terra-application-header-layout/tests/jest/ApplicationHeader.test.jsx",
+    "  ApplicationHeaderLayout",
+    "    ✓ should render without optional props (3ms)",
+    "    ✓ should render with provided extensions (1ms)",
+    "    ✓ should render with provided extensions and navigation (4ms)",
+    "    ✓ should render with provided extensions, navigation, and logo (2ms)",
+    "    ✓ should render with provided extensions, navigation, logo, and toggle (1ms)",
+    "    ✓ should render with provided extensions, navigation, logo, toggle, and utilities (10ms)",
+    "    ✓ should render with provided navigation, logo, toggle, and utilities (4ms)",
+    "    ✓ should render with provided logo, toggle, and utilities (3ms)",
+    "    ✓ should render with provided toggle and utilities (1ms)",
+    "    ✓ should render with provided utilities (4ms)",
+    "    ✓ should render with provided navigation (4ms)",
+    "    ✓ should render with provided logo (4ms)",
+    "    ✓ should render with provided toggle (4ms)",
+    "    ✓ correctly applies the theme context className (107ms)"
+  ],
+  "endDate": "4/5/2023, 11:40:50 AM"
+}

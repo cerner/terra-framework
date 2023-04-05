@@ -1,0 +1,44 @@
+@import './clinical-lowlight-theme/ActionMenuHeader.module';
+@import './orion-fusion-theme/ActionMenuHeader.module';
+
+:local {
+  .action-menu-header {
+    align-items: var(--terra-application-action-menu-header-align-items, flex-start);
+    background-color: var(--terra-application-action-menu-header-background-color, #f4f4f4);
+    border-bottom: var(--terra-application-action-menu-header-border-bottom, 0);
+    border-left: var(--terra-application-action-menu-header-border-left);
+    border-right: var(--terra-application-action-menu-header-border-right);
+    border-top: var(--terra-application-action-menu-header-border-top);
+    box-shadow: var(--terra-application-action-menu-header-box-shadow, 0 1px 0 0 #dedfe0, 0 2px 0 0 #f9f9f9);
+    display: flex;
+    justify-content: space-between;
+    min-height: var(--terra-application-action-menu-header-min-height, 2.5rem);
+    padding-bottom: var(--terra-application-action-menu-header-padding-bottom, 0.5714rem);
+    padding-left: var(--terra-application-action-menu-header-padding-left, 0.7143rem);
+    padding-right: var(--terra-application-action-menu-header-padding-right, 0.7143rem);
+    padding-top: var(--terra-application-action-menu-header-padding-top, 0.5rem);
+    position: relative;
+    width: 100%;
+    z-index: 10;
+
+    .title {
+      align-self: var(--terra-application-action-menu-header-title-align-self);
+      color: var(--terra-application-action-menu-header-title-color);
+      flex: 1 1 auto;
+      font-size: var(--terra-application-action-menu-header-title-font-size, 1rem);
+      font-weight: var(--terra-application-action-menu-header-title-font-weight, 500);
+      hyphens: auto; // stylelint-disable-line plugin/no-unsupported-browser-features
+      margin: 0;
+      overflow-wrap: break-word; /* Modern browsers */
+      position: relative;
+      width: 100%;
+      word-wrap: break-word; /* For IE 10 and IE 11 */
+    }
+  
+    .close-button {
+      display: flex;
+      flex: 0 0 auto;
+      position: relative;
+    }
+  }
+}

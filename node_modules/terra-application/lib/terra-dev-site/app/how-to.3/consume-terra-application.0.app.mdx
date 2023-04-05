@@ -1,0 +1,15 @@
+# How To Consume Terra Application
+
+Due to the large number of Context-based APIs provided by `terra-application`, the recommended strategy for consuming `terra-application` is to define it as a `peerDependency` within your `package.json`.
+
+```json
+{
+  "peerDependencies": {
+    "terra-application": "^x.x.x"
+  }
+}
+```
+
+Packages that define `terra-application` within their `dependencies` out of necessity must take extra precaution to ensure that only a single version of `terra-application` is installed. The [DuplicatePackageCheckerPlugin](https://github.com/cerner/duplicate-package-checker-webpack-plugin) should be used to detect duplicated packages at build time.
+
+> The DuplicatePackageCheckerPlugin is included in `terra-toolkit`'s provided [webpack configuration](https://github.com/cerner/terra-toolkit-boneyard/blob/main/docs/Webpack.md).

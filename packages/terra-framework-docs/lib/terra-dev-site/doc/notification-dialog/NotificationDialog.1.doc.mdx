@@ -1,0 +1,150 @@
+import { Badge } from 'terra-notification-dialog/package.json?dev-site-package';
+
+import NotificationDialogPropsTable from 'terra-notification-dialog/src/NotificationDialog?dev-site-props-table';
+import ContentLayoutAsListPropsTable from 'terra-notification-dialog/src/_ContentLayoutAsList?dev-site-props-table';
+
+import HazardHighVariant from './example/HazardHighVariant?dev-site-example';
+import HazardMediumVariant from './example/HazardMediumVariant?dev-site-example';
+import HazardLowVariant from './example/HazardLowVariant?dev-site-example';
+import ErrorVariant from './example/ErrorVariant?dev-site-example';
+import CustomVariant from './example/CustomVariant?dev-site-example';
+
+import ContentNotificationDialog from './example/ContentNotificationDialog?dev-site-example';
+import ActionOrderExample from './example/ActionOrderExample?dev-site-example';
+import EmphasizedRejectExample from './example/EmphasizedRejectExample?dev-site-example';
+import NotificationDialogInModalManager from './example/NotificationDialogInModalManager?dev-site-example';
+import NotificationDialogWithLongText from './example/NotificationDialogWithLongText?dev-site-example';
+
+<Badge />
+
+# Terra Notification Dialog
+
+The `terra-notification-dialog` component renders a notification to the user within a modal dialog, which requires the user’s input or attention, displaying a descriptive message of what went wrong and context-dependent instructions that state how to correct the situation. When the user is presented with the dialog, it is paired with an acceptance action, optional rejection action, and allows the user to correctly handle the notification.
+
+The Notification Dialog should be used to interrupt a user’s workflow, with multiple variants provided for common risk and non-risk situations that may occur within an application. A risk situation can be described as a scenario when there is a likelihood of exposure to danger, harm, or loss. Each variant include fixed icons, colors, and ANSI signal words to provide consistency in risk mitigation required by regulatory affairs and safety certifications.
+
+- Notification Dialogs used in risk situations are intended to make a user aware of hazards, such as risks to patient safety or causing financial harm, and provide options to mitigate or remove the hazard. There are three variants of risk oriented notification dialogs, based on the severity: `hazard-high`, `hazard-medium` and `hazard-low`. These variants are rigid to provide consistent icon and signal word pairs to prevent accidental confusion by the user of the dialog’s severity.
+
+- Notification Dialogs used in non-risk situations are intended to inform a user of system activity or required actions considered to be non-hazards. Currently there is one pre-defined non-risk oriented notification dialog variant of `error`.
+
+- The `custom` variant allows for less common standardized non-hazard situations, requiring an icon and signal word be provided in addition to the common props. By choosing to create a custom Notification Dialog, you are responsible for providing an icon that is themed correctly for the terra-default-theme, orion-fusion-theme, and clinical-lowlight-theme. See Terra’s [Theme Strategy Guide](https://engineering.cerner.com/terra-ui/guides/terra-application/theme-strategy) for more info.
+
+The notification dialog has the highest z-index of 9000, intended to display above all other content (including other modals) in a direct and evident manner, and as such, should be used sparingly.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-notification-dialog`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+| terra-breakpoints | ^2.19.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Usage
+
+``` jsx
+import NotificationDialog from 'terra-notification-dialog';
+```
+
+## Component Features
+
+ * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+ * [Responsive Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#responsive-support)
+ * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+ * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
+ * [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+ * [Localization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+
+## Example Usage for Risk Situations
+
+<HazardHighVariant
+  title="Hazard-High Variant Notification Dialog"
+/>
+<HazardMediumVariant
+  title="Hazard-Medium Variant Notification Dialog"
+/>
+<HazardLowVariant
+  title="Hazard-Low Variant Notification Dialog"
+/>
+
+## Example Usage for Non-Risk Situations
+
+<ErrorVariant
+  title="Error Variant Notification Dialog"
+/>
+
+<CustomVariant
+  title="Custom Variant Notification Dialog"
+  description="By choosing to create a custom Notification Dialog, the consumer is responsible for providing a signal word, plus an icon that is themed correctly for all themes. See Terra's Theme Strategy Guide for more information."
+/>
+
+## Content Layouts
+
+The Notification Dialog provides the following layouts for the `content` prop:
+
+### ContentLayoutAsList
+
+The layout styles list of strings. Import like:
+``` jsx
+import { ContentLayoutAsList } from 'terra-notification-dialog';
+```
+
+<ContentNotificationDialog
+  title="Notification Dialog with Detailed Message using ContentLayoutAsList"
+  description="This example demonstrates the use for the startMessage, content, and endMessage prop combination. This example also leverages the ContentLayoutAsList component to correctly style the list provided to the content prop."
+/>
+
+## Additional Examples
+
+<NotificationDialogInModalManager
+  title="Notification Dialog in a Modal"
+  description="Notification Dialog has the highest z-index of 9000. Trigger the Notification Dialog in the modal to see it displays above the modal content."
+/>
+
+<NotificationDialogWithLongText
+  description="Long titles and long messages should be avoided when possible. This example shows that the Notification Dialog can handle long messages with scrolling."
+/>
+
+## Notification Dialog Props Table 
+
+<NotificationDialogPropsTable />
+
+## Content Layouts Props Table
+
+<ContentLayoutAsListPropsTable />
+
+## Testing
+
+The Notification Dialog has the following data attributes available for browser tests:
+
+- The data attribute, `data-terra-notification-dialog` can be used to validate the Notification Dialog exists or has focus
+- The data attribute, `data-terra-notification-dialog-button` can be used to select the accept and reject button
+  - use `data-terra-notification-dialog-button="accept"` to select the accept button
+  - use `data-terra-notification-dialog-button="reject"` to select the reject button
+
+```js
+describe('NotificationDialog', () => {
+  it('opens the notification dialog', () => {
+    $('#triggerNotificationDialog').click();
+    expect($('[data-terra-notification-dialog]').isExisting()).toBeTruthy();
+    expect($('[data-terra-notification-dialog]').isFocused()).toBeTruthy();
+    Terra.validates.element('open', { selector: '#root' });
+  });
+
+  it('user rejects the notification dialog', () => {
+    $('[data-terra-notification-dialog-button="reject"]').click();
+    expect($('[data-terra-notification-dialog]').isExisting()).toBeFalsy();
+    Terra.validates.element('closed', { selector: '#root' });
+  });
+});
+```

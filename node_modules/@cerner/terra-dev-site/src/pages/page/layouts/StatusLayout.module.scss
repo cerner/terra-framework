@@ -1,0 +1,13 @@
+@import '~terra-mixins/lib/Mixins';
+
+/* autoprefixer grid: on */
+:local {
+  .outer-view {
+    display: flex;
+    justify-content: center;
+  }
+
+  .inner-view {
+    max-width: 500px;
+  }
+}

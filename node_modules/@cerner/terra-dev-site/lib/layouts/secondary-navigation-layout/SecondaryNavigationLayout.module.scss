@@ -1,0 +1,97 @@
+@import '~terra-breakpoints/lib/media-queries';
+@import './clinical-lowlight-theme/SecondaryNavigationLayout.module';
+@import './orion-fusion-theme/SecondaryNavigationLayout.module';
+
+:local {
+  .sidebar-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    outline: none;
+    padding-right: 2px;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+
+    .header-container {
+      flex: 0 0 auto;
+      z-index: 0;
+    }
+
+    .content {
+      flex: 1 1 auto;
+      height: 100%;
+      min-height: 50px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  .side-nav-container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: stretch;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .side-nav-sidebar {
+    background-color: var(--terra-dev-site-secondary-navigation-layout-side-nav-sidebar-background-color, #eff0ef);
+    box-shadow: var(--terra-dev-site-secondary-navigation-layout-side-nav-sidebar-box-shadow, inset -3px 0 0 -2px#fefffe, inset -4px 0 0 -2px #c7cacb);
+    display: none;
+    flex: 0 0 auto;
+    height: 100%;
+    width: 280px;
+
+    &.visible {
+      display: block;
+    }
+
+    &.overlay {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: calc(100% - 50px);
+      z-index: 6;
+
+      @include terra-mq-medium-up {
+        width: 200px;
+      }
+    }
+  }
+
+  .side-nav-body {
+    align-items: flex-start;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: stretch;
+    overflow: hidden;
+  }
+
+  .page-body {
+    flex: 1 1 320px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .side-nav-overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+  }
+}
+

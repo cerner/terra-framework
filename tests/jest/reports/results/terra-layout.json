@@ -1,0 +1,33 @@
+{
+  "startDate": "4/5/2023, 11:39:54 AM",
+  "output": [
+    " PASS  packages/terra-layout/tests/jest/Layout.test.jsx",
+    "  Layout",
+    "    ✓ should render a Layout without optional props (3ms)",
+    "    ✓ should render a Layout with custom props (1ms)",
+    "    Menu Disabled",
+    "      ✓ should render a Layout when tiny (44ms)",
+    "      ✓ should render a Layout when small (2ms)",
+    "      ✓ should render a Layout when medium (3ms)",
+    "      ✓ should render a Layout when large (2ms)",
+    "      ✓ should render a Layout when huge (9ms)",
+    "    Menu Enabled",
+    "      ✓ should render a Layout when tiny (9ms)",
+    "      ✓ should render a Layout when small (5ms)",
+    "      ✓ should render a Layout when medium (2ms)",
+    "      ✓ should render a Layout when large (1ms)",
+    "      ✓ should render a Layout when huge (1ms)",
+    " PASS  packages/terra-layout/tests/jest/LayoutSlidePanel.test.jsx",
+    "  LayoutSlidePanel",
+    "    ✓ should render without optional props (2ms)",
+    "    ✓ should render with provided props (2ms)",
+    "    ✓ should render when small (1ms)",
+    "    ✓ should render when tiny (1ms)",
+    "    ✓ correctly applies the theme context className (28ms)",
+    " PASS  packages/terra-layout/tests/jest/LayoutUtils.test.js",
+    "  LayoutUtils",
+    "    getCustomProps",
+    "      ✓ filters out custom props (1ms)"
+  ],
+  "endDate": "4/5/2023, 11:40:50 AM"
+}

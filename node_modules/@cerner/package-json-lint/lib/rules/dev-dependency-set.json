@@ -1,0 +1,26 @@
+{
+  "devDependencySet": [
+    "@babel/cli",
+    "@babel/core",
+    "@babel/helpers",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-syntax-async-generators",
+    "@babel/plugin-transform-object-assign",
+    "@babel/plugin-transform-regenerator",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/register",
+    "@cerner/browserslist-config-terra",
+    "@cerner/eslint-config-terra",
+    "@cerner/jest-config-terra",
+    "@cerner/stylelint-config-terra",
+    "@cerner/terra-aggregate-translations",
+    "@cerner/terra-cli",
+    "@cerner/terra-dev-site",
+    "@cerner/terra-functional-testing",
+    "@cerner/terra-open-source-scripts",
+    "@cerner/webpack-config-terra",
+    "jest"
+  ]
+}

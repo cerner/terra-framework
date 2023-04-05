@@ -1,0 +1,22 @@
+{
+  "name": "keycode-js",
+  "description": "A JavaScript package with Key Code constants",
+  "main": "dist/keycode.min.js",
+  "authors": ["Kabir Baidhya <kabirbaidhya@gmail.com>"],
+  "license": "MIT",
+  "keywords": ["keycode", "constants", "javascript", "typescript", "deno", "js", "ts"],
+  "homepage": "https://github.com/kabirbaidhya/keycode-js",
+  "ignore": [
+    "t",
+    "test",
+    "mod.d.ts",
+    "yarn.lock",
+    ".travis.yml",
+    "mod.spec.js",
+    "node_modules",
+    "tsconfig.json",
+    ".editorconfig",
+    "bower_components",
+    "rollup.config.js"
+  ]
+}

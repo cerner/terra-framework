@@ -1,0 +1,33 @@
+@import './clinical-lowlight-theme/PropsTable.module';
+@import './orion-fusion-theme/PropsTable.module';
+
+:local {
+  .bold {
+    font-weight: 600;
+  }
+
+  .table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    margin-bottom: 1.143rem;
+    margin-top: 0;
+    overflow: auto;
+    width: 100%;
+  }
+
+  table {
+    .required {
+      color: var(--terra-dev-site-props-table-table-required-color, #d53040);
+    }
+
+    .code-block-override {
+      /* stylelint-disable-next-line selector-max-compound-selectors */
+      pre {
+        max-width: 35.71rem;
+        padding: 0.2857rem;
+        width: fit-content;
+      }
+    }
+  }
+}

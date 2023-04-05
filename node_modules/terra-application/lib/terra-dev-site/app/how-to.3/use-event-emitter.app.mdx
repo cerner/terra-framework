@@ -1,0 +1,48 @@
+# How To Use Event Emitter
+
+Any react component can use EventEmitter to send events for notification purposes. Listeners can be registered and removed at any given time. It is important to remove all listeners before the component or application is unmounted to prevent memory leaks. It is also a good practice to remove listeners at any point when they are no longer needed.
+
+```jsx
+import React, { useState, useEffect } from 'react';
+import EventEmitter from 'terra-application/lib/utils/event-emitter';
+
+const EventEmitterExample = () => {
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    const listener = () => {
+      setCounter(prevCounter => prevCounter + 1);
+    };
+
+    // Registers the listener function to the event named "increment-counter".
+    EventEmitter.on('increment-counter', listener);
+
+    return () => {
+      // Removes the listener when it is no longer needed.
+      EventEmitter.off('increment-counter', listener);
+    };
+  }, []);
+
+  return (
+    <div>
+      <h3>Event Emitter</h3>
+      <p>
+        Emitter:
+        {' '}
+        <button type="button" onClick={() => { EventEmitter.emit('increment-counter'); }}>
+          Emit event to increment
+        </button>
+      </p>
+      <p>
+        Listener:
+        {' '}
+        {counter}
+      </p>
+    </div>
+  );
+};
+
+export default EventEmitterExample;
+```
+
+Events are emitted to listeners synchronously in the order in which they were registered. For this reason, it is important to ensure that events are emitted in the proper sequence to avoid logical errors.

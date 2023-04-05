@@ -1,0 +1,32 @@
+:local {
+  .outer,
+  .inner {
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  .outer {
+    padding: 1rem;
+  }
+
+  .inner {
+    border: 5px dashed rgb(128, 128, 128);
+  }
+
+  .center {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  .button {
+    font-size: 2rem;
+  }
+}

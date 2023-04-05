@@ -1,0 +1,37 @@
+@import '../clinical-lowlight-theme/WorkspaceContentActivityOverlay.module';
+@import '../orion-fusion-theme/WorkspaceContentActivityOverlay.module';
+
+:local {
+  .activity-overlay {
+    align-items: center;
+    background: var(--terra-application-workspace-content-activity-overlay-background, rgba(255, 255, 255, 0.01));
+    background-image: var(--terra-application-workspace-content-activity-overlay-background-image, radial-gradient(circle, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) 25%, rgba(255, 255, 255, 0.8) 100%));
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    outline: none;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+
+    .content {
+      color: var(--terra-application-workspace-content-activity-overlay-content-color, #1c1f21);
+      font-size: 1rem;
+      max-height: 100%;
+      padding-bottom: var(--terra-application-workspace-content-activity-overlay-content-padding-bottom, 1rem);
+      padding-left: var(--terra-application-workspace-content-activity-overlay-content-padding-left, 1rem);
+      padding-right: var(--terra-application-workspace-content-activity-overlay-content-padding-right, 1rem);
+      padding-top: var(--terra-application-workspace-content-activity-overlay-content-padding-top, 1rem);
+      text-shadow: var(--terra-application-workspace-content-activity-overlay-content-text-shadow, none);
+    }
+
+    .icon {
+      display: block !important;
+      margin: auto;
+    }
+  
+    .message {
+      padding: 5px;
+    }  
+  }
+}

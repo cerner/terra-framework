@@ -1,0 +1,269 @@
+{
+  "packageName": "terra-menu",
+  "theme": "clinical-lowlight-theme",
+  "locale": "en",
+  "capabilities": {
+    "browserName": "chrome"
+  },
+  "specs": [
+    {
+      "spec": "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/menu-spec.js",
+      "start": "2023-04-05T06:04:52.592Z",
+      "end": "2023-04-05T06:05:18.084Z",
+      "suites": [
+        {
+          "title": "[medium]",
+          "fullTitle": "[medium]",
+          "duration": 25428,
+          "start": "2023-04-05T06:04:52.596Z",
+          "end": "2023-04-05T06:05:18.024Z",
+          "tests": [],
+          "suites": [
+            {
+              "title": "Menu",
+              "fullTitle": "[medium].Menu",
+              "duration": 25112,
+              "start": "2023-04-05T06:04:52.769Z",
+              "end": "2023-04-05T06:05:17.881Z",
+              "tests": [
+                {
+                  "title": "displays a default Menu",
+                  "fullTitle": "[medium].Menu.displays a default Menu",
+                  "duration": 1919,
+                  "start": "2023-04-05T06:04:52.769Z",
+                  "end": "2023-04-05T06:04:54.688Z",
+                  "state": "passed",
+                  "screenshots": [
+                    "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/default.png"
+                  ]
+                },
+                {
+                  "title": "displays a Menu with Small Height",
+                  "fullTitle": "[medium].Menu.displays a Menu with Small Height",
+                  "duration": 1454,
+                  "start": "2023-04-05T06:04:54.688Z",
+                  "end": "2023-04-05T06:04:56.142Z",
+                  "state": "passed",
+                  "screenshots": [
+                    "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/small_height.png"
+                  ]
+                },
+                {
+                  "title": "displays a Menu with Medium Height",
+                  "fullTitle": "[medium].Menu.displays a Menu with Medium Height",
+                  "duration": 1537,
+                  "start": "2023-04-05T06:04:56.143Z",
+                  "end": "2023-04-05T06:04:57.680Z",
+                  "state": "passed",
+                  "screenshots": [
+                    "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/medium_height.png"
+                  ]
+                },
+                {
+                  "title": "displays a Menu with Large Height",
+                  "fullTitle": "[medium].Menu.displays a Menu with Large Height",
+                  "duration": 1477,
+                  "start": "2023-04-05T06:04:57.680Z",
+                  "end": "2023-04-05T06:04:59.157Z",
+                  "state": "passed",
+                  "screenshots": [
+                    "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/large_height.png"
+                  ]
+                },
+                {
+                  "title": "displays a non-selectable menu",
+                  "fullTitle": "[medium].Menu.displays a non-selectable menu",
+                  "duration": 1306,
+                  "start": "2023-04-05T06:04:59.158Z",
+                  "end": "2023-04-05T06:05:00.464Z",
+                  "state": "passed",
+                  "screenshots": [
+                    "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/non_selectable.png"
+                  ]
+                },
+                {
+                  "title": "displays a Menu-Selectable",
+                  "fullTitle": "[medium].Menu.displays a Menu-Selectable",
+                  "duration": 1476,
+                  "start": "2023-04-05T06:05:00.465Z",
+                  "end": "2023-04-05T06:05:01.941Z",
+                  "state": "passed",
+                  "screenshots": [
+                    "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/selectable.png"
+                  ]
+                },
+                {
+                  "title": "displays a Menu with a submenu",
+                  "fullTitle": "[medium].Menu.displays a Menu with a submenu",
+                  "duration": 2317,
+                  "start": "2023-04-05T06:05:01.942Z",
+                  "end": "2023-04-05T06:05:04.259Z",
+                  "state": "passed",
+                  "screenshots": [
+                    "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/main_menu.png",
+                    "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/menu_with_submenu.png"
+                  ]
+                }
+              ],
+              "suites": [
+                {
+                  "title": "Menu-Bounded",
+                  "fullTitle": "[medium].Menu.Menu-Bounded",
+                  "duration": 2069,
+                  "start": "2023-04-05T06:05:04.261Z",
+                  "end": "2023-04-05T06:05:06.330Z",
+                  "tests": [
+                    {
+                      "title": "displays a bounded menu",
+                      "fullTitle": "[medium].Menu.Menu-Bounded.displays a bounded menu",
+                      "duration": 1096,
+                      "start": "2023-04-05T06:05:04.261Z",
+                      "end": "2023-04-05T06:05:05.357Z",
+                      "state": "passed",
+                      "screenshots": [
+                        "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/bounded.png"
+                      ]
+                    },
+                    {
+                      "title": "opens submenu",
+                      "fullTitle": "[medium].Menu.Menu-Bounded.opens submenu",
+                      "duration": 972,
+                      "start": "2023-04-05T06:05:05.358Z",
+                      "end": "2023-04-05T06:05:06.330Z",
+                      "state": "passed",
+                      "screenshots": [
+                        "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/open_submenu.png"
+                      ]
+                    }
+                  ],
+                  "suites": []
+                },
+                {
+                  "title": "Menu-Selectable with Varying Items",
+                  "fullTitle": "[medium].Menu.Menu-Selectable with Varying Items",
+                  "duration": 2360,
+                  "start": "2023-04-05T06:05:06.330Z",
+                  "end": "2023-04-05T06:05:08.690Z",
+                  "tests": [
+                    {
+                      "title": "displays a selectable menu with varying items",
+                      "fullTitle": "[medium].Menu.Menu-Selectable with Varying Items.displays a selectable menu with varying items",
+                      "duration": 1301,
+                      "start": "2023-04-05T06:05:06.330Z",
+                      "end": "2023-04-05T06:05:07.631Z",
+                      "state": "passed",
+                      "screenshots": [
+                        "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/with_varying_items.png"
+                      ]
+                    },
+                    {
+                      "title": "selects an item and maintains selection after menu has been reopened",
+                      "fullTitle": "[medium].Menu.Menu-Selectable with Varying Items.selects an item and maintains selection after menu has been reopened",
+                      "duration": 1057,
+                      "start": "2023-04-05T06:05:07.632Z",
+                      "end": "2023-04-05T06:05:08.689Z",
+                      "state": "passed",
+                      "screenshots": [
+                        "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/maintained_selection_after_reopen.png"
+                      ]
+                    }
+                  ],
+                  "suites": []
+                },
+                {
+                  "title": "Menu and submenu with long header title",
+                  "fullTitle": "[medium].Menu.Menu and submenu with long header title",
+                  "duration": 2266,
+                  "start": "2023-04-05T06:05:08.690Z",
+                  "end": "2023-04-05T06:05:10.956Z",
+                  "tests": [
+                    {
+                      "title": "displays Menu with submenu and long header title",
+                      "fullTitle": "[medium].Menu.Menu and submenu with long header title.displays Menu with submenu and long header title",
+                      "duration": 2264,
+                      "start": "2023-04-05T06:05:08.690Z",
+                      "end": "2023-04-05T06:05:10.954Z",
+                      "state": "passed",
+                      "screenshots": [
+                        "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/main_menu_long_header.png",
+                        "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/submenu_long_header.png"
+                      ]
+                    }
+                  ],
+                  "suites": []
+                },
+                {
+                  "title": "Menu Keyboard Navigation-Arrow Keys",
+                  "fullTitle": "[medium].Menu.Menu Keyboard Navigation-Arrow Keys",
+                  "duration": 3298,
+                  "start": "2023-04-05T06:05:10.956Z",
+                  "end": "2023-04-05T06:05:14.254Z",
+                  "tests": [
+                    {
+                      "title": "navigates Menu using  Keyboard Navigation-Arrow Keys",
+                      "fullTitle": "[medium].Menu.Menu Keyboard Navigation-Arrow Keys.navigates Menu using  Keyboard Navigation-Arrow Keys",
+                      "duration": 3296,
+                      "start": "2023-04-05T06:05:10.956Z",
+                      "end": "2023-04-05T06:05:14.252Z",
+                      "state": "passed",
+                      "screenshots": [
+                        "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/main_menu_remains_open.png",
+                        "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/navigated_to_submenu_using_arrow_keys.png",
+                        "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/returned_to_main_menu_using_arrow_keys.png"
+                      ]
+                    }
+                  ],
+                  "suites": []
+                },
+                {
+                  "title": "Menu Keyboard Navigation-Enter Key",
+                  "fullTitle": "[medium].Menu.Menu Keyboard Navigation-Enter Key",
+                  "duration": 2266,
+                  "start": "2023-04-05T06:05:14.254Z",
+                  "end": "2023-04-05T06:05:16.520Z",
+                  "tests": [
+                    {
+                      "title": "Menu Keyboard Navigation-Enter Key",
+                      "fullTitle": "[medium].Menu.Menu Keyboard Navigation-Enter Key.Menu Keyboard Navigation-Enter Key",
+                      "duration": 2265,
+                      "start": "2023-04-05T06:05:14.254Z",
+                      "end": "2023-04-05T06:05:16.519Z",
+                      "state": "passed",
+                      "screenshots": [
+                        "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/navigated_to_submenu_using_enter_key.png",
+                        "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/returned_to_main_menu_using_enter_key.png"
+                      ]
+                    }
+                  ],
+                  "suites": []
+                },
+                {
+                  "title": "Menu With Custom Icons",
+                  "fullTitle": "[medium].Menu.Menu With Custom Icons",
+                  "duration": 1360,
+                  "start": "2023-04-05T06:05:16.520Z",
+                  "end": "2023-04-05T06:05:17.880Z",
+                  "tests": [
+                    {
+                      "title": "Menu With Custom Icons",
+                      "fullTitle": "[medium].Menu.Menu With Custom Icons.Menu With Custom Icons",
+                      "duration": 1356,
+                      "start": "2023-04-05T06:05:16.520Z",
+                      "end": "2023-04-05T06:05:17.876Z",
+                      "state": "passed",
+                      "screenshots": [
+                        "/Users/st063655/Desktop/Git_Terra/UXPLATFORM-8646/terra-framework/packages/terra-menu/tests/wdio/__snapshots__/latest/clinical-lowlight-theme/en/chrome_medium/menu-spec/shows_custom_icons_in_the_menu.png"
+                      ]
+                    }
+                  ],
+                  "suites": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tests": []
+    }
+  ]
+}

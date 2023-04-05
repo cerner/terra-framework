@@ -1,0 +1,76 @@
+import { Notice } from '@cerner/terra-docs';
+import PropsTable from './NotificationBannerPropsTable?dev-site-props-table';
+
+# Notification Banner
+
+A Notification Banner should be rendered by a component that needs to render a notification with information that needs to be brought to the user's attention. This is a non-disruptive notification that does not require immediate input or attention by the user.
+
+When rendered, the Notification Banner registers itself with the framework so it is prioritized correctly when any other rendered notification banners before they are is displayed in a list above all other content.
+
+<Notice ariaLevel="2" variant="caution">
+
+NotificationBanners are only supported when rendered within the following components:
+
+* [WorkspaceContent](/application/terra-application/components/workspace-content)
+* Modal components disclosed by the [ModalManager](/application/terra-application/components/modal-manager)
+* Panel components disclosed by the [SlidePanelManager](/application/terra-application/components/slide-panel-manager)
+
+Rendering a NotificationBanner outside these locations will result in an exception being thrown.
+
+</Notice>
+
+## Banner Variants
+
+The Notification Banner can be used to bring awareness to a user’s risk and non-risk situations that may occur within an application; there are multiple variants provided for common situations. 
+
+- Notification Banners shown for risk situations are intended to notify the user of hazards, such as risks to patient safety or causing financial harm, and provide options to mitigate or remove the hazard. There are three variants of risk oriented notification banners, based on the severity: `hazard-high`, `hazard-medium` and `hazard-low`. These variants are rigid to provide consistent icon and signal word pairs to prevent accidental confusion by the user of the banner's severity.
+
+- Notification Banners used in non-risk situations are intended to inform a user of system activity or required actions considered to be non-hazards. Currently there are three pre-defined non-risk oriented notification banner variants: `error`, `unsatisfied` and `unverified`.
+
+- The custom variant allows for less common standardized non-hazard situations, requiring an icon and signal word be provided in addition to the common props. By choosing to create a custom Notification Banner, you are responsible for providing an icon that is themed correctly for the terra-default-theme, orion-fusion-theme, and clinical-lowlight-theme. See Terra’s [Theme Strategy Guide](/guides/terra-application/theme-strategy) for more info.
+
+## Banner Priority Order
+
+Notification Banners are prioritized by variant and in the following order:
+
+1. `hazard-high` - displays a critical notification for current emergencies or situations of high severity that need to be addressed promptly
+2. `hazard-medium` - recommended to show moderately urgent notifications that are cautionary in nature and forecast potential risk
+3. `hazard-low` - recommended to provide the user with guidance and/or advice for completing an action
+4. `error` - recommended to provide feedback of a negative system status such as failures or limitations of the system
+5. `unsatisfied` - recommended to show the user that an unsatisfied or incomplete action needs to be addressed
+6. `unverified` - recommended to provide feedback that information from outside systems has been included but has yet to be verified by the user
+7. `custom` - not recommended but can be used to create a custom signal word-icon banner to display information to the user
+
+### Notification Banners in the Fusion Theme
+
+When Notification Banners are rendered within an application that has the orion-fusion-theme applied, the banners will be prioritized in the following order:
+
+1. `hazard-high`
+2. `error`
+3. `hazard-medium`
+4. `unsatisfied`
+5. `unverified`
+6. `hazard-low`
+7. `custom`
+
+The expected banner's usage when in the orion-fusion-theme are consistent with the descriptions above, the order is just changed.
+
+## Props
+
+<PropsTable />
+
+## Testing
+
+The Notification Banner has the following data attribute available for browser tests:
+- The data attribute, `data-terra-application-notification-banner` can be used to validate the expected banner exists
+
+```js
+describe('Notification Banner', () => {
+  it('renders a notification banner', () => {
+    $('#triggerErrorNotificationBanner').click();
+    $('[data-terra-application-notification-banner="error]').waitForExist();
+    Terra.validates.element('shows error banner', { selector: '#root' });
+  });
+});
+```
+

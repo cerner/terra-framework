@@ -1,0 +1,10 @@
+{
+  "startDate": "4/5/2023, 11:39:54 AM",
+  "output": [
+    " PASS  packages/terra-application-links/tests/jest/ApplicationTabs.test.jsx",
+    "  ✓ should render ApplicationTabs with links and alignment (2ms)",
+    "  ✓ should render ApplicationTabs with icons (1ms)",
+    "  ✓ correctly applies the theme context className (2ms)"
+  ],
+  "endDate": "4/5/2023, 11:40:50 AM"
+}

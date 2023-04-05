@@ -1,0 +1,47 @@
+@import '~terra-mixins/lib/Mixins';
+@import './clinical-lowlight-theme/SideNavHeader.module';
+@import './orion-fusion-theme/SideNavHeader.module';
+
+:local {
+  .page-header-container {
+    box-shadow: var(--terra-dev-site-side-nav-header-page-header-container-box-shadow, inset -3px -4px 0 -3px #fefffe, inset -3px -5px 0 -3px #c7cacb);
+
+    min-height: 40px;
+    padding: 10px;
+
+    > *:nth-child(n+2) {
+      border-radius: 3px;
+      margin-top: 5px;
+      overflow: hidden;
+    }
+  }
+
+  .page-layout-header {
+    align-items: center;
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .back-button-container {
+    display: flex;
+    flex: 0 0 auto;
+    padding-right: 5px;
+  }
+
+  .header-button {
+    color: #027cc3;
+  }
+
+  .header-button.disabled {
+    color: rgba(2, 124, 195, 0.85) !important;
+  }
+
+  .label-container {
+    flex: 1 1 auto;
+    font-weight: 500;
+  }
+}

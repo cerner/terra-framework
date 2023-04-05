@@ -1,0 +1,155 @@
+import ExampleComponent from './example/ExampleComponent?dev-site-example';
+import ExampleComponentSCSS from './example/ExampleComponent.module.scss?dev-site-codeblock'
+import ClinicalLowLightSCSS from './example/clinical-lowlight-theme/ExampleComponent.module.scss?dev-site-codeblock';
+import OrionFusionThemeSCSS from './example/orion-fusion-theme/ExampleComponent.module.scss?dev-site-codeblock';
+
+# Theming Guide
+
+Welcome to the Terra theming strategy guide. This guide will walk through the recommended approach for theming custom components.
+
+## Summary
+
+Terra provides a default, clinical-lowlight-theme, and orion-fusion-theme. This guide is for theming custom components. Custom components are any non Terra-UI component created by teams that need to be integrated into an application using a supported Terra theme. Teams should not create new themes or theme Terra components.
+
+## Getting Started
+
+This guide will walk through theming an example component. The example component is using the base component from terra-application to provide an API for interacting with the theme.
+
+## Theme Context
+
+An application's theme is provided through [React context](https://reactjs.org/docs/context.html) by a theme provider. [Application Base](/application/terra-application/components/application-base) initializes a theme provider automatically. The theme value is accessed using the [theme context](/application/terra-application/contexts/theme-context) from terra-application.
+
+```jsx
+import { ThemeContext } from 'terra-application/lib/theme';
+```
+
+Use the theme context to read the active theme value.
+
+```jsx
+import { ThemeContext } from 'terra-application/lib/theme';
+
+const ExampleComponent = () => {
+  // Access the active theme context value.
+  const theme = React.useContext(ThemeContext);
+};
+```
+
+The active theme's class name is stored in a `className` key in the context value. To apply the theme, bind the className to the component using [classnames/bind](https://github.com/JedWatson/classnames#alternate-bind-version-for-css-modules). Some additional documentation for CSS Modules and classNames can be found on the [conventions page](https://engineering.cerner.com/terra-ui/about/terra-ui/contributing/conventions). Please note that generally an empty or undefined className indicates the default theme is active. The `className` key maps directly to the anticipated theme css class name. Using the correct theme className is required.
+
+```jsx
+import React from 'react';
+import classNames from 'classnames/bind';
+import { ThemeContext } from 'terra-application/lib/theme';
+import styles from './ThemedComponent.module.scss';
+
+const cx = classNames.bind(styles);
+
+const ExampleComponent = () => {
+  const theme = React.useContext(ThemeContext);
+
+  return (
+    <div className={cx('example-component', theme.className)}>
+      This is an example component.
+    </div>
+  );
+};
+```
+
+## SCSS
+
+Once the theme className has been bound, the component can be appropriately themed. Start by defining the variables for the CSS properties that are expected to change between themes. SCSS variables are defined using [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*). These values should utilize the SCSS [var()](https://developer.mozilla.org/en-US/docs/Web/CSS/var) functionality. The var() function works by applying a variable if the value has been set. If no value has been set the default value is used.
+
+### ExampleComponent.module.scss
+
+```scss
+// The values in this file represent the default theme. The default theme is applied using the default values in the var() function.
+:local {
+  .example-component {
+    background-color: var(--terra-application-example-component-background-color, #fff);
+    color: var(--terra-application-example-component-color, inherit);
+    font-size: var(--terra-application-example-component-font-size, 1rem);
+  }
+}
+```
+
+To add themes, create new files for each theme and include them in the original SCSS file. Theme are regular SCSS files that define variables to be applied when the theme becomes active. Themes must be locally scoped and must use a supported theme class name. It is recommended to define all available theme variables for each theme. If the component, example component in this case, defines three themable variables, all three variables should be assigned a value in each of the created theme files. This ensures a more robust theme.
+
+### orion-fusion-theme/ExampleComponent.module.scss
+
+<OrionFusionThemeSCSS />
+
+### clinical-lowlight-theme/ExampleComponent.module.scss
+
+<ClinicalLowLightSCSS />
+
+Include the new theme files in the original SCSS file.
+
+<ExampleComponentSCSS />
+
+The recommended file structure looks like this:
+
+```
+.
+├── example-component
+│   ├── ExampleComponent.jsx
+│   ├── ExampleComponent.module.scss
+│   ├── clinical-lowlight-theme
+│   │   └── ExampleComponent.module.scss
+│   └── orion-fusion-theme
+│       └── ExampleComponent.module.scss
+```
+
+## Webpack
+
+To enable themes a `terra-theme.config.js` configuration file must be defined. This file is read by the [terra-toolkit postcss loader](https://github.com/cerner/terra-toolkit-boneyard/tree/main/config/webpack/postcss) to apply default themes. The loader runs automatically for webpack configurations using [terra-toolkit's webpack config](https://github.com/cerner/terra-toolkit-boneyard/blob/main/config/webpack/webpack.config.js).
+
+```js
+const themeConfig = {
+  theme: 'terra-dark-theme', // The default theme to be enabled on page load.
+  scoped: ['terra-light-theme', 'terra-lowlight-theme'], // An array of scoped themes. Note: Scoped themes do not work in IE 10.
+};
+
+module.exports = themeConfig;
+```
+
+## Example
+
+Toggle the theme from the dropdown at the top of the page to see changes.
+
+<ExampleComponent isExpanded />
+
+## Testing
+
+Applications can opt into running WDIO tests against multiple themes.
+
+Themes testing can be enabled via the CLI using `--themes`.
+
+```json
+{
+  "test:wdio": "npm run pack; tt-wdio --config ./wdio.conf.js --locales ['en','es'] --themes ['orion-fusion-theme']; rm -rf ./build"
+}
+```
+
+See the [WDIO documentation](https://github.com/cerner/terra-toolkit-boneyard/tree/main/scripts/wdio#terra-toolkit-wdio-helpers) for additional configuration options.
+
+## FAQ
+
+### Are Terra Theme Variables Reusable?
+
+No, theme variables are considered private and should never be used by consuming applications. Do not use Terra theme variables in custom CSS.
+
+### Is It Okay To Override Terra Component Styles?
+
+It is not recommended to override Terra component styles. The exceptions are layout and positioning concerns such as width or margins.
+
+### Do I Have To Use Terra Toolkit's Webpack Configuration?
+
+It is highly recommended that teams use the terra-toolkit webpack configuration to ensure the appropriate loaders are used.
+
+### Can I Use Multiple Themes Providers At Once?
+
+Technically yes, officially no. Multiple themes will apply all CSS styles for all themes to the root element. This will result in style collisions, specifically the base font-size themes depend on. An incorrect font-size will impact all rem based CSS (padding, margins, line-heights, etc...). The theme context supports a single theme in context at a time.
+
+### Can I Create An Entirely New Theme?
+
+No, the internal implementation of Terra components is considered private and changes frequently. All Terra component theme variables must be maintained by the Terra team.

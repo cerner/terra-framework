@@ -1,0 +1,13 @@
+{
+  "startDate": "4/5/2023, 11:39:54 AM",
+  "output": [
+    " PASS  packages/terra-modal-manager/tests/jest/ModalManager.test.jsx",
+    "  ModalManager",
+    "    ✓ should render the ModalManager with defaults (147ms)",
+    "    ✓ should render the ModalManager with custom props (12ms)",
+    "    ✓ should disclose content in Modal (103ms)",
+    "    ✓ should disclose content in Modal wrapped by disclose container (93ms)",
+    "    ✓ correctly applies the theme context className (4ms)"
+  ],
+  "endDate": "4/5/2023, 11:40:50 AM"
+}

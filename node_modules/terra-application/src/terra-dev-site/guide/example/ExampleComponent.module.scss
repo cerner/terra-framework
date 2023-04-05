@@ -1,0 +1,11 @@
+// Import each theme.
+@import './clinical-lowlight-theme/ExampleComponent.module';
+@import './orion-fusion-theme/ExampleComponent.module';
+
+:local {
+  .example-component {
+    background-color: var(--terra-application-example-component-background-color, #fff);
+    color: var(--terra-application-example-component-color, inherit);
+    font-size: var(--terra-application-example-component-font-size, 1rem);
+  }
+}

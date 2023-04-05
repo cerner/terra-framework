@@ -1,0 +1,145 @@
+import { Badge } from 'terra-disclosure-manager/package.json?dev-site-package';
+import DisclosureManagerPropsTable from 'terra-disclosure-manager/src/DisclosureManager.jsx?dev-site-props-table';
+
+<Badge />
+
+# Terra Disclosure Manager
+
+The DisclosureManager is a stateful component used to manage disclosure presentation. It provides consumers with access to the `DisclosureManager` component, the `DisclosureManagerContext`, and the context wrapper `withDisclosureManager`. Additionally, it provides the `DisclosureManagerHeaderAdapter` to allow disclosed content to register header information with the disclosing container.
+
+For the purpose of clarity, the concepts explained can be broken down into:
+- Disclosure Manager
+- Disclosure Manager Children - content rendered as children of the DisclosureManager
+- Disclosed Content - content that will be disclosed by a DisclosureManager child
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-disclosure-manager`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+This package uses React's Context for inter-component communication. A single instance of this package must be installed to ensure that communication occurs between all Context Providers and Consumers. To help ensure a single instance is installed, this package should be defined as a peer dependency in packages that are reusable libraries or otherwise consumed by other packages.
+
+## Usage
+```js
+import DisclosureManager from 'terra-disclosure-manager';
+```
+
+## Component Features
+
+- [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+- [Responsive Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#responsive-support)
+- [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+
+## Disclosure Manager Props
+<DisclosureManagerPropsTable />
+
+### Requirements of the Render Prop 
+
+The DisclosureManager does not implement a traditional render function. Instead, it uses the `render` prop provided to the DisclosureManager to allow the implementing component to managed how disclsoures should be presented. The `render` function should define the following parameters that will reflect the the DisclosureManager's state.
+
+```js
+const render = ({
+  children,
+  closeDisclosure,
+  disclosureComponentKeys,
+  disclosureComponentData,
+  disclosure,
+  dismissPresentedComponent,
+  maximizeDisclosure,
+  minimizeDisclosure,
+}) => {
+  // render stuff
+};
+```
+
+<details>
+<summary>Render Arguments in Detail</summary>
+
+```js
+const render = ({
+  /* The children components provided to the DisclosureManager. */
+  children: {
+    /* Array of React components to render as content. */
+    components: PropsTypes.arrayOf(PropsTypes.node),
+  },
+
+  /* Closes the disclosure and removes all components from the disclosure stack. */
+  closeDisclosure: PropsTypes.func,
+
+  /* The components in the disclosure stack. */
+  disclose: {
+    /* The React components to render in a disclosure mechanism. */
+    components: PropTypes.arrayOf(PropsTypes.node),
+        
+    /* Indicate the current display state of the DisclosureManager. */
+    isOpen: PropTypes.bool,
+        
+    /**
+     * Indicate the current focus state of the DisclosureManager.
+     *  > Note: The `isFocused` value has little relevance now that Terra's AbstractModal and other
+     *    components directly manage their own focus state. `isFocused` will be removed from their
+     *    DisclosureManager API in a future major release.
+     */
+    isFocused: PropTypes.bool,
+        
+    /* Indicate the current maximize state of the DisclosureManager. */
+    isMaximized: PropTypes.bool,
+    
+    /* The String size of the disclosure. */
+    size: PropTypes.string,
+  },
+  
+  /* Array of keys representing the components in the disclosure stack. */
+  disclosureComponentKeys: PropsTypes.arrayOf(PropsTypes.string),
+
+  /* Contains components and associated data representing the state of disclosure stack */
+  disclosureComponentData: {
+    
+    /* Component that has been wrapped with the DisclosureManager-provided contexts */
+    component: PropsTypes.node,
+
+    /** 
+     * Contains the header data for the associated component. This will be provided if the 
+     * component's title is provided title on disclose or the DisclosureHeaderAdapter is rendered
+     * by the disclosed component.
+     */
+    headerAdapterData: {
+      /* The disclosed component's title that can be rendered within the header. */
+      title: PropsTypes.string,
+
+      /* A CollapsibleMenuView component that can render within the header. */
+      collapsibleMenuView: PropType.node,
+    },
+  },
+
+  /* Pops the currently disclosed component off the disclosure stack. */
+  dismissPresentedComponent: PropsTypes.func,
+
+  /**
+   * Maximizes the disclosure size. If the disclosure cannot be maximized, or if it is already
+   * maximized, the function is not provided.
+   */
+  maximizeDisclosure: PropsTypes.func,
+
+  /**
+   * Minimizes the disclosure size. If the disclosure cannot be minimized, or if it is already
+   * minimized, the function is not provided.
+   */
+  minimizeDisclosure: PropsTypes.func,
+}) => {
+  // render stuff
+};
+```
+</details>

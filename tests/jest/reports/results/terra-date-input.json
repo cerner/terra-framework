@@ -1,0 +1,29 @@
+{
+  "startDate": "4/5/2023, 11:39:54 AM",
+  "output": [
+    " PASS  packages/terra-date-input/tests/jest/DateInput.test.jsx (17.258s)",
+    "  DateInput",
+    "    ✓ should render a default date input (52ms)",
+    "    ✓ should render a date input with custom attributes (3ms)",
+    "    ✓ should render a date input with a default date (4ms)",
+    "    ✓ should render a date input with onChange (3ms)",
+    "    ✓ should render a date input with onBlur (2ms)",
+    "    ✓ should render a date input with onFocus (3ms)",
+    "    ✓ should not have duplicate ids on the page when multiple date inputs are initialized (191ms)",
+    "    ✓ should render a disabled time input (3ms)",
+    "    ✓ should validate the incrementDay helper method (1ms)",
+    "    ✓ should validate the decrementDay helper method",
+    "    ✓ should validate the incrementYear helper method (1ms)",
+    "    ✓ should validate the decrementYear helper method",
+    "    ✓ should validate the validNumericInput helper method (1ms)",
+    "    ✓ should validate the splitMonth helper method (1ms)",
+    "    ✓ should validate the splitDay helper method (1ms)",
+    "    ✓ should validate the splitYear helper method (45ms)",
+    "    ✓ should validate the acceptedDateValue helper method (18ms)",
+    "    ✓ should validate the computedDisplayFormat helper method (23ms)",
+    "    ✓ correctly applies the theme context className (102ms)",
+    "  DateInputField",
+    "    ✓ correctly applies the theme context className (48ms)"
+  ],
+  "endDate": "4/5/2023, 11:40:50 AM"
+}

@@ -1,0 +1,166 @@
+// Themes
+@import '../clinical-lowlight-theme/NotificationBannerView.module';
+@import '../orion-fusion-theme/NotificationBannerView.module';
+
+:local {
+  /* stylelint-disable  property-no-unknown */
+  .notification-banner {
+    align-items: stretch;
+    color: var(--terra-application-notification-banner-view-color);
+    display: flex;
+    justify-content: space-between;
+    min-height: var(--terra-application-notification-banner-view-min-height);
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .narrow {
+    flex-direction: column;
+  }
+
+  .wide {
+    flex-direction: row;
+  }
+
+  .icon {
+    display: inline-block;
+    flex-shrink: 0;
+    font-size: var(--terra-application-notification-banner-view-icon-font-size, 1.286em);
+    margin-left: var(--terra-application-notification-banner-view-icon-margin-left);
+    margin-right: var(--terra-application-notification-banner-view-icon-margin-right, 0.5rem);
+    margin-top: var(--terra-application-notification-banner-view-icon-margin-top);
+  }
+
+  .body {
+    align-items: flex-start;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    line-height: 1.2;
+    margin-left: var(--terra-application-notification-banner-view-body-margin-left, 0.64285rem);
+    margin-right: var(--terra-application-notification-banner-view-body-margin-right, 0.7143rem);
+    margin-top: var(--terra-application-notification-banner-view-body-margin-top, 0.7143rem);
+    overflow: hidden;
+    padding-top: 0;
+  }
+
+  .body-narrow {
+    margin-bottom: 0;
+  }
+
+  .body-std {
+    margin-bottom: var(--terra-application-notification-banner-view-std-margin-bottom, 0.7143rem);
+    margin-right: var(--terra-application-notification-banner-view-std-margin-right, 0.6667rem);
+  }
+
+  .section {
+    flex: 1;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: var(--terra-application-notification-banner-view-section-padding-bottom, 0.142857rem);
+    padding-top: var(--terra-application-notification-banner-view-section-padding-top, 0.21429rem);
+  }
+
+  .section-custom {
+    color: var(--terra-application-notification-banner-view-custom-text-color, #1c1f21);
+  }
+
+  .title {
+    display: var(--terra-application-notification-banner-view-title-display);
+    float: var(--terra-application-notification-banner-view-title-float, left);
+    margin-bottom: var(--terra-application-notification-banner-view-title-margin-bottom);
+    margin-right: var(--terra-application-notification-banner-view-title-margin-right, 0.5833rem);
+  }
+
+  .actions {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    margin-bottom: var(--terra-application-notification-banner-view-actions-margin-bottom, 0.4286rem);
+    margin-left: var(--terra-application-notification-banner-view-actions-margin-left, 0.142857rem);
+    margin-right: var(--terra-application-notification-banner-view-actions-margin-right, 0.5rem);
+    margin-top: var(--terra-application-notification-banner-view-actions-margin-top, 0.4286rem);
+  }
+
+  .actions-custom {
+    color: var(--terra-application-notification-banner-view-custom-text-color, #1c1f21);
+  }
+
+  .actions > :first-child {
+    margin-right: 0.5714rem;
+  }
+
+  .actions > :last-child {
+    margin-right: 0;
+  }
+
+  .alert {
+    background-color: var(--terra-application-notification-banner-view-alert-background-color, #fedcdc);
+    box-shadow: var(--terra-application-notification-banner-view-alert-box-shadow, 2px 0 0 #c00 inset);
+  }
+
+  .error {
+    background-color: var(--terra-application-notification-banner-view-error-background-color, #fedcdc);
+    box-shadow: var(--terra-application-notification-banner-view-error-box-shadow, 2px 0 0 #c00 inset);
+  }
+
+  .warning {
+    background-color: var(--terra-application-notification-banner-view-warning-background-color, #fff3ce);
+    box-shadow: var(--terra-application-notification-banner-view-warning-box-shadow, 2px 0 0 #ffc20a inset);
+  }
+
+  .unsatisfied {
+    background-color: var(--terra-application-notification-banner-view-unsatisfied-background-color, #f4f4f4);
+    box-shadow: var(--terra-application-notification-banner-view-unsatisfied-box-shadow, 2px 0 0 #fa0000 inset);
+  }
+
+  .unverified {
+    background-color: var(--terra-application-notification-banner-view-unverified-background-color, #f4f4f4);
+    box-shadow: var(--terra-application-notification-banner-view-unverified-box-shadow, 2px 0 0 #78288c inset);
+  }
+
+  .advisory {
+    background-color: var(--terra-application-notification-banner-view-advisory-background-color, #f4f4f4);
+    box-shadow: var(--terra-application-notification-banner-view-advisory-box-shadow, 2px 0 0 #9b9fa1 inset);
+  }
+
+  .info {
+    background-color: var(--terra-application-notification-banner-view-info-background-color, #f4f4f4);
+    box-shadow: var(--terra-application-notification-banner-view-info-box-shadow, 2px 0 0 #0092e0 inset);
+  }
+
+  .success {
+    background-color: var(--terra-application-notification-banner-view-success-background-color, #f4f4f4);
+    box-shadow: var(--terra-application-notification-banner-view-success-box-shadow, 2px 0 0 #78c346 inset);
+  }
+
+  .custom {
+    background-color: var(--terra-application-notification-banner-view-custom-background-color, #f4f4f4);
+    /* As per the W3C spec if the box-shadow does not have the color defined, 
+    it will use the prevailing color style */
+    box-shadow: var(--terra-application-notification-banner-view-custom-box-shadow, 2px 0 0 inset);
+  }
+
+  .alert .title {
+    color: var(--terra-application-notification-banner-view-alert-title-color, #c00);
+  }
+
+  .error .title {
+    color: var(--terra-application-notification-banner-view-error-title-color, #c00);
+  }
+
+  .unsatisfied-icon {
+    color: var(--terra-application-notification-banner-view-unsatisfied-icon-color, #fa0000);
+  }
+
+  .unverified-icon {
+    color: var(--terra-application-notification-banner-view-unverified-icon-color, #78288c);
+  }
+
+  .custom-default-color {
+    color: var(--terra-application-notification-banner-view-custom-default-color, #9b9fa1);
+  }
+  /* stylelint-enable */
+}

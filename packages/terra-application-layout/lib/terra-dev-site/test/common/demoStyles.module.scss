@@ -1,0 +1,10 @@
+:local {
+  .demo-extensions {
+    color: var(--terra-application-layout-demo-extensions-color, #fff);
+  }
+  
+  .demo-extensions-small {
+    height: 50px;
+    width: 100%;
+  }
+}
