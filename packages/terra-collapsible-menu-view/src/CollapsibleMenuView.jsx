@@ -40,10 +40,16 @@ const propTypes = {
    *  Puts items under the collapsed (more) menu. More button will be always shown if at least one item is populated here.
    */
   alwaysCollapsedMenuItems: PropTypes.arrayOf(PropTypes.element),
+
+  /**
+   * Aligns the menu to the start of the container
+   */
+  isStartAligned: PropTypes.bool,
 };
 
 const defaultProps = {
   alwaysCollapsedMenuItems: [],
+  isStartAligned: false,
 };
 
 const prepopulatedBaseDivider = <CollapsibleMenuViewDivider key="prepopulatedBaseDivider" />;
@@ -143,15 +149,18 @@ class CollapsibleMenuView extends React.Component {
 
   render() {
     const {
-      children, boundingRef, menuWidth, intl, alwaysCollapsedMenuItems, ...customProps
+      children, boundingRef, menuWidth, intl, alwaysCollapsedMenuItems, isStartAligned, ...customProps
     } = this.props;
     const theme = this.context;
 
     const collapsibleMenuViewClassName = classNames(cx(
       'collapsible-menu-view',
       { 'is-calculating': this.isCalculating },
+      { 'collapsible-menu-view-flex-end': !isStartAligned },
+      { 'collapsible-menu-view-flex-start': isStartAligned },
       theme.className,
     ),
+
     customProps.className);
     const menuButtonClassName = cx(
       'menu-button',

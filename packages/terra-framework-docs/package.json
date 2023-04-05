@@ -1,6 +1,6 @@
 {
   "name": "@cerner/terra-framework-docs",
-  "version": "1.17.0",
+  "version": "1.18.0",
   "description": "Contains documentation for packages in the terra-framework monorepo",
   "main": "index.js",
   "publishConfig": {
@@ -43,7 +43,7 @@
     "terra-aggregator": "^4.74.0",
     "terra-arrange": "^3.0.0",
     "terra-button": "^3.3.0",
-    "terra-collapsible-menu-view": "^6.65.0",
+    "terra-collapsible-menu-view": "^6.66.0",
     "terra-content-container": "^3.0.0",
     "terra-date-input": "^1.36.0",
     "terra-date-picker": "^4.79.0",
@@ -66,7 +66,7 @@
     "terra-section-header": "^2.0.0",
     "terra-slide-group": "^4.30.0",
     "terra-slide-panel": "^3.38.0",
-    "terra-slide-panel-manager": "^5.65.0",
+    "terra-slide-panel-manager": "^5.66.0",
     "terra-spacer": "^3.59.0",
     "terra-tabs": "^6.66.0",
     "terra-text": "^4.49.0",

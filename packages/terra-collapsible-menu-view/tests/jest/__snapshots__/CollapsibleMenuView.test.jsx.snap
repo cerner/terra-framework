@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollapsibleMenuView should render a default component 1`] = `
+<CollapsibleMenuView
+  alwaysCollapsedMenuItems={Array []}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isStartAligned={false}
+>
+  <CollapsibleMenuViewItem
+    className="Button1"
+    isIconOnly={false}
+    isReversed={false}
+    isSelected={false}
+    key="button1"
+    shouldCloseOnClick={true}
+    text="Button 1"
+  />
+  <CollapsibleMenuViewItem
+    className="Button2"
+    isIconOnly={false}
+    isReversed={false}
+    isSelected={false}
+    key="button2"
+    shouldCloseOnClick={true}
+    text="Button 2"
+  />
+  <CollapsibleMenuViewDivider
+    key="Divider"
+  />
+  <CollapsibleMenuViewItem
+    className="Button3"
+    isIconOnly={false}
+    isReversed={false}
+    isSelected={false}
+    key="button3"
+    shouldCloseOnClick={true}
+    text="Button 3"
+  />
+  <CollapsibleMenuViewItem
+    className="Button4"
+    isIconOnly={false}
+    isReversed={false}
+    isSelected={false}
+    key="button4"
+    shouldCloseOnClick={true}
+    text="Button 4"
+  />
+</CollapsibleMenuView>
+`;
+
+exports[`CollapsibleMenuView should render a fixed menu width 1`] = `
+<CollapsibleMenuView
+  alwaysCollapsedMenuItems={
+    Array [
+      <CollapsibleMenuViewItem
+        isIconOnly={false}
+        isReversed={false}
+        isSelected={false}
+        shouldCloseOnClick={true}
+        text="Collapsed Button 3"
+      />,
+      <CollapsibleMenuViewItem
+        isIconOnly={false}
+        isReversed={false}
+        isSelected={false}
+        shouldCloseOnClick={true}
+        text="Collapsed Button 4"
+      />,
+    ]
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isStartAligned={false}
+  menuWidth="640"
+>
+  <CollapsibleMenuViewItem
+    className="Button1"
+    isIconOnly={false}
+    isReversed={false}
+    isSelected={false}
+    key="button1"
+    shouldCloseOnClick={true}
+    text="Button 1"
+  />
+  <CollapsibleMenuViewItem
+    className="Button2"
+    isIconOnly={false}
+    isReversed={false}
+    isSelected={false}
+    key="button2"
+    shouldCloseOnClick={true}
+    text="Button 2"
+  />
+</CollapsibleMenuView>
+`;
+
+exports[`CollapsibleMenuView should render a start aligned component 1`] = `
+<CollapsibleMenuView
+  alwaysCollapsedMenuItems={
+    Array [
+      <CollapsibleMenuViewItem
+        isIconOnly={false}
+        isReversed={false}
+        isSelected={false}
+        shouldCloseOnClick={true}
+        text="Collapsed Button 3"
+      />,
+      <CollapsibleMenuViewDivider />,
+      <CollapsibleMenuViewItem
+        isIconOnly={false}
+        isReversed={false}
+        isSelected={false}
+        shouldCloseOnClick={true}
+        text="Collapsed Button 4"
+      />,
+    ]
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isStartAligned={true}
+>
+  <CollapsibleMenuViewItem
+    className="Button1"
+    isIconOnly={false}
+    isReversed={false}
+    isSelected={false}
+    key="button1"
+    shouldCloseOnClick={true}
+    text="Button 1"
+  />
+  <CollapsibleMenuViewDivider
+    key="divider1"
+  />
+  <CollapsibleMenuViewItem
+    className="Button2"
+    isIconOnly={false}
+    isReversed={false}
+    isSelected={false}
+    key="button2"
+    shouldCloseOnClick={true}
+    text="Button 2"
+  />
+</CollapsibleMenuView>
+`;

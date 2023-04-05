@@ -40,6 +40,16 @@ describe('SlidePanelManager', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it('should render a SlidePanelManager with level three header element and title', () => {
+    const slidePanelManager = (
+      <SlidePanelManager id="my-slide-panel-manager" className="test" level={3}>
+        <TestContainer />
+      </SlidePanelManager>
+    );
+    const wrapper = mount(slidePanelManager);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should disclose content in SlidePanel', () => {
     const slidePanelManager = (
       <SlidePanelManager>

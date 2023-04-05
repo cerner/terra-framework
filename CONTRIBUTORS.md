@@ -45,6 +45,7 @@ Cerner Corporation
 - Michael Day [@mumkymikey]
 - Gage Phillips [@gagerdude]
 - Art Parkeenvincha [@artpark]
+- Andrew Tran [@trandrew1023]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -91,3 +92,4 @@ Cerner Corporation
 [@mumkymikey]: https://github.com/mumkymikey
 [@gagerdude]: https://github.com/gagerdude
 [@artpark]: https://github.com/artpark
+[@trandrew1023]: https://github.com/trandrew1023

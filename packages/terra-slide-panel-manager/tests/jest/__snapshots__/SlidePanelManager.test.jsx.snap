@@ -32,6 +32,7 @@ exports[`SlidePanelManager should disclose content in Modal wrapped by disclose 
 
 exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
 <SlidePanelManager
+  level={2}
   panelBehavior="overlay"
 >
   <withDisclosureManager(DisclosureManager)
@@ -296,10 +297,135 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
 </SlidePanelManager>
 `;
 
+exports[`SlidePanelManager should render a SlidePanelManager with level three header element and title 1`] = `
+<SlidePanelManager
+  className="test"
+  id="my-slide-panel-manager"
+  level={3}
+  panelBehavior="overlay"
+>
+  <withDisclosureManager(DisclosureManager)
+    render={[Function]}
+    supportedDisclosureTypes={
+      Array [
+        "panel",
+      ]
+    }
+  >
+    <DisclosureManager
+      render={[Function]}
+      supportedDisclosureTypes={
+        Array [
+          "panel",
+        ]
+      }
+    >
+      <SlidePanel
+        className="test"
+        fill={true}
+        id="my-slide-panel-manager"
+        isOpen={false}
+        mainContent={
+          <Context.Provider
+            value={
+              DisclosureManagerDelegateInstance {
+                "disclose": [Function],
+              }
+            }
+          >
+            <withDisclosureManager(Component) />
+          </Context.Provider>
+        }
+        panelBehavior="overlay"
+        panelContent={
+          <ContentContainer
+            fill={true}
+            header={<React.Fragment />}
+          >
+            <SlideGroup
+              isAnimated={true}
+              items={Array []}
+            />
+          </ContentContainer>
+        }
+        panelPosition="end"
+        panelSize="small"
+      >
+        <div
+          className="slide-panel fill test"
+          data-slide-panel-panel-behavior="overlay"
+          data-slide-panel-panel-position="end"
+          data-slide-panel-panel-size="small"
+          id="my-slide-panel-manager"
+        >
+          <div
+            className="main"
+            key="main"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            tabIndex="-1"
+          >
+            <withDisclosureManager(Component)>
+              <Component
+                disclosureManager={
+                  DisclosureManagerDelegateInstance {
+                    "disclose": [Function],
+                  }
+                }
+              >
+                <div>
+                  Hello World
+                </div>
+              </Component>
+            </withDisclosureManager(Component)>
+          </div>
+          <div
+            aria-hidden="true"
+            className="panel"
+            key="panel"
+            tabIndex="-1"
+          >
+            <ContentContainer
+              fill={true}
+              header={<React.Fragment />}
+            >
+              <div
+                className="content-container-fill"
+              >
+                <div
+                  className="header"
+                />
+                <div
+                  className="main"
+                >
+                  <Scroll
+                    className="normalizer"
+                  >
+                    <div
+                      className="scroll normalizer"
+                    >
+                      <SlideGroup
+                        isAnimated={true}
+                        items={Array []}
+                      />
+                    </div>
+                  </Scroll>
+                </div>
+              </div>
+            </ContentContainer>
+          </div>
+        </div>
+      </SlidePanel>
+    </DisclosureManager>
+  </withDisclosureManager(DisclosureManager)>
+</SlidePanelManager>
+`;
+
 exports[`SlidePanelManager should render the SlidePanelManager with custom props 1`] = `
 <SlidePanelManager
   className="test"
   id="my-slide-panel-manager"
+  level={2}
   panelBehavior="overlay"
 >
   <withDisclosureManager(DisclosureManager)
@@ -421,6 +547,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
 
 exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`] = `
 <SlidePanelManager
+  level={2}
   panelBehavior="overlay"
 >
   <withDisclosureManager(DisclosureManager)
@@ -539,6 +666,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
 
 exports[`SlidePanelManager should render the SlidePanelManager with squish override 1`] = `
 <SlidePanelManager
+  level={2}
   panelBehavior="squish"
 >
   <withDisclosureManager(DisclosureManager)

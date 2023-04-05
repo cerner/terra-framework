@@ -2,13 +2,21 @@
 
 ## Unreleased
 
+## 1.18.0 - (April 5, 2023)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.17.0 - (March 29, 2023)
 
 * Changed
-  * Added test for `terra-slide-panel`.
   * Updated docs for `terra-slide-group`.
+  * Updated doc and added test for terra-collapsible-menu-view
+  
 * Added
   * Added package-lock.json
+  * Added test for `terra-slide-panel`.
+  * Added test for `terra-slide-panel-manager`.
 
 ## 1.16.0 - (March 1, 2023)
 

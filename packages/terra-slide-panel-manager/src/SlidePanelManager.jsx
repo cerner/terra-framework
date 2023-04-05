@@ -16,6 +16,11 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
+   * Sets the heading level of the disclosed panel. One of `1`, `2`, `3`, `4`, `5`, `6`. This helps screen readers to announce appropriate heading levels.
+   * Changing 'level' will not visually change the style of the content.
+   */
+  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  /**
    * The desired panel behavior. Either 'squish' or 'overlay'.
    */
   panelBehavior: PropTypes.oneOf(['overlay', 'squish']),
@@ -31,6 +36,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  level: 2,
   panelBehavior: 'overlay',
 };
 
@@ -62,7 +68,7 @@ class SlidePanelManager extends React.Component {
 
   renderSlidePanel(manager) {
     const {
-      children, disclosureAccessory, withDisclosureContainer, ...customProps
+      children, level, disclosureAccessory, withDisclosureContainer, ...customProps
     } = this.props;
 
     let isFullscreen;
@@ -100,6 +106,7 @@ class SlidePanelManager extends React.Component {
                   <ActionHeader
                     title={headerDataForPresentedComponent.title}
                     onClose={manager.closeDisclosure}
+                    level={level}
                     onBack={manager.disclosureComponentKeys.length > 1 ? manager.dismissPresentedComponent : undefined}
                   >
                     {headerDataForPresentedComponent.collapsibleMenuView}
