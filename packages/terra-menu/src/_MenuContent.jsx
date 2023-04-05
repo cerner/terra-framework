@@ -260,6 +260,7 @@ class MenuContent extends React.Component {
       if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
         if (item.props.subMenuItems && item.props.subMenuItems.length > 0) {
           this.props.onRequestNext(item);
+          this.setState({ focusIndex: index });
         }
       } else if (event.nativeEvent.keyCode === KeyCode.KEY_RIGHT) {
         if (item.props.subMenuItems && item.props.subMenuItems.length > 0) {
