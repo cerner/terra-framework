@@ -1,2 +1,0 @@
-export declare function MakePartsList(pattern: string, unit: Intl.RelativeTimeFormatUnit, parts: Intl.NumberFormatPart[] | Intl.RelativeTimeFormatPart[]): Intl.RelativeTimeFormatPart[];
-//# sourceMappingURL=MakePartsList.d.ts.map
