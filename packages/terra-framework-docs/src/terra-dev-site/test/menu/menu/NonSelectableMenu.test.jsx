@@ -1,5 +1,11 @@
 import React from 'react';
 import Menu from 'terra-menu';
+import Button from 'terra-button';
+import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
+import classNames from 'classnames/bind';
+import styles from './TestMenu.module.scss';
+
+const cx = classNames.bind(styles);
 
 class NonSelectableMenu extends React.Component {
   constructor(props) {
@@ -37,17 +43,17 @@ class NonSelectableMenu extends React.Component {
         <div>
           This menu has no selectable items. The items in the menu should not have the spacing on the left for a checkmark.
         </div>
-        <Menu
-          isOpen={this.state.open}
-          targetRef={this.getButtonNode}
-          onRequestClose={this.handleRequestClose}
-        >
-          <Menu.Item text="Default 1" key="1" className="TestFirstItem" />
-          <Menu.Item text="Default 2" key="2" className="TestSecondItem" />
-        </Menu>
-        <button type="button" id="non-selectable-menu-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
-          Default Menu
-        </button>
+        <div className={cx('menu-wrapper')} ref={this.setButtonNode}>
+          <Menu
+            isOpen={this.state.open}
+            targetRef={this.getButtonNode}
+            onRequestClose={this.handleRequestClose}
+          >
+            <Menu.Item text="Default 1" key="1" className="TestFirstItem" />
+            <Menu.Item text="Default 2" key="2" className="TestSecondItem" />
+          </Menu>
+          <Button id="non-selectable-menu-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed />
+        </div>
       </div>
     );
   }
