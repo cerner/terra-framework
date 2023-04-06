@@ -33,6 +33,15 @@ const propTypes = {
    * The container to wrap the disclosed content. This should be provided from the application level.
    */
   withDisclosureContainer: PropTypes.func,
+  /**
+    * The aria label for the panel region. This should be provided if the header does not contain a title
+    * to make the panel more accessible to assistive technologies.
+    */
+  panelAriaLabel: PropTypes.string,
+  /**
+    * The aria label for the main region.
+    */
+  mainAriaLabel: PropTypes.string,
 };
 
 const defaultProps = {
@@ -64,11 +73,22 @@ class SlidePanelManager extends React.Component {
     super(props);
 
     this.renderSlidePanel = this.renderSlidePanel.bind(this);
+    this.setSlidePanel = this.setSlidePanel.bind(this);
+  }
+
+  setSlidePanel(node) {
+    this.slidePanel = node;
   }
 
   renderSlidePanel(manager) {
     const {
-      children, level, disclosureAccessory, withDisclosureContainer, ...customProps
+      children,
+      level,
+      disclosureAccessory,
+      withDisclosureContainer,
+      mainAriaLabel,
+      panelAriaLabel,
+      ...customProps
     } = this.props;
 
     let isFullscreen;
@@ -97,6 +117,7 @@ class SlidePanelManager extends React.Component {
         isFullscreen={isFullscreen}
         panelSize={panelSize}
         isOpen={manager.disclosure.isOpen}
+        setSlidePanelRef={this.setSlidePanel}
         panelContent={(
           <ContentContainer
             fill
@@ -104,7 +125,7 @@ class SlidePanelManager extends React.Component {
               <React.Fragment>
                 {headerDataForPresentedComponent ? (
                   <ActionHeader
-                    title={headerDataForPresentedComponent.title}
+                    text={headerDataForPresentedComponent.title}
                     onClose={manager.closeDisclosure}
                     level={level}
                     onBack={manager.disclosureComponentKeys.length > 1 ? manager.dismissPresentedComponent : undefined}
@@ -116,9 +137,11 @@ class SlidePanelManager extends React.Component {
               </React.Fragment>
             )}
           >
-            <SlideGroup items={manager.disclosure.components} isAnimated />
+            <SlideGroup items={manager.disclosure.components} isAnimated focusRef={this.slidePanel} slideAriaLabel={headerDataForPresentedComponent?.title || panelAriaLabel} />
           </ContentContainer>
         )}
+        panelAriaLabel={headerDataForPresentedComponent?.title || panelAriaLabel}
+        mainAriaLabel={mainAriaLabel}
         mainContent={manager.children.components}
       />
     );

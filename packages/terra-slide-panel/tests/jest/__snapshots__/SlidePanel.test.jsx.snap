@@ -24,14 +24,22 @@ exports[`correctly applies the theme context className 1`] = `
         key="main"
         onClick={[Function]}
         onKeyUp={[Function]}
+        role="main"
         tabIndex="-1"
       />
       <div
         aria-hidden="true"
         className="panel"
         key="panel"
+        role="region"
         tabIndex="-1"
-      />
+      >
+        <VisuallyHiddenText>
+          <span
+            className="visually-hidden-text"
+          />
+        </VisuallyHiddenText>
+      </div>
     </div>
   </SlidePanel>
 </ThemeContextProvider>
@@ -47,13 +55,19 @@ exports[`should override user provided attributes that aren't className 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
 </div>
 `;
 
@@ -66,13 +80,19 @@ exports[`should render a SlidePanel with a fullscreen state 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
 </div>
 `;
 
@@ -85,13 +105,19 @@ exports[`should render a SlidePanel with an open state 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="false"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
 </div>
 `;
 
@@ -104,13 +130,19 @@ exports[`should render a SlidePanel with fill 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
 </div>
 `;
 
@@ -123,6 +155,7 @@ exports[`should render a SlidePanel with main content 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   >
     <p>
@@ -132,8 +165,13 @@ exports[`should render a SlidePanel with main content 1`] = `
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
 </div>
 `;
 
@@ -146,13 +184,18 @@ exports[`should render a SlidePanel with panel content 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
   >
+    <span
+      class="visually-hidden-text"
+    />
     <p>
       Panel Content
     </p>
@@ -170,14 +213,22 @@ exports[`should render a SlidePanel with panelAriaLabel and mainAriaLabel specif
   <div
     aria-label="Main content area"
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="true"
     aria-label="Panel content area"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    >
+      Panel content area
+    </span>
+  </div>
 </div>
 `;
 
@@ -190,13 +241,19 @@ exports[`should render a SlidePanel with panelBehavior = overlay 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
 </div>
 `;
 
@@ -209,13 +266,19 @@ exports[`should render a SlidePanel with panelBehavior = squish 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
 </div>
 `;
 
@@ -228,13 +291,19 @@ exports[`should render a SlidePanel with panelPosition = end 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
 </div>
 `;
 
@@ -248,10 +317,16 @@ exports[`should render a SlidePanel with panelPosition = start 1`] = `
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
 </div>
@@ -266,13 +341,19 @@ exports[`should render a SlidePanel with panelSize = large 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
 </div>
 `;
 
@@ -285,13 +366,19 @@ exports[`should render a SlidePanel with panelSize = small 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
 </div>
 `;
 
@@ -306,13 +393,19 @@ exports[`should render a SlidePanel with the given extra attributes 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
 </div>
 `;
 
@@ -325,12 +418,18 @@ exports[`should render a default SlidePanel with no props 1`] = `
 >
   <div
     class="main"
+    role="main"
     tabindex="-1"
   />
   <div
     aria-hidden="true"
     class="panel"
+    role="region"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
 </div>
 `;
