@@ -148,6 +148,16 @@ Terra.describeViewports('Slide panel', ['large'], () => {
 
       Terra.validates.element('toggle button focused with multiple buttons', { selector: '#root' });
     });
+    it('Closes panel and focuses on main div if panel is closed after open on load', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggled-on');
+
+      $('#toggle-panel-button').click();
+      $('#test-slide [aria-hidden="true"]').waitForExist();
+      browser.pause(150);
+
+      $('#main-div').isFocused();
+      Terra.validates.element('main div focused after panel closed', { selector: '#root' });
+    });
   });
 
   describe('Toggle the slide panel side', () => {
