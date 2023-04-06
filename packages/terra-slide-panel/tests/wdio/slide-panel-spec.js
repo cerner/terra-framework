@@ -155,8 +155,7 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       $('#test-slide [aria-hidden="true"]').waitForExist();
       browser.pause(150);
 
-      $('#main-div').isFocused();
-      Terra.validates.element('main div focused after panel closed', { selector: '#root' });
+      expect($('#main-div').isFocused()).toBeTruthy();
     });
   });
 
