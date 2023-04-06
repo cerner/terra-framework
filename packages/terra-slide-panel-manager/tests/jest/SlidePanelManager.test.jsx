@@ -1,5 +1,7 @@
 import React from 'react';
 import { withDisclosureManager } from 'terra-disclosure-manager';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { mountWithIntl } from 'terra-enzyme-intl';
 import SlidePanelManager from '../../src/SlidePanelManager';
 
 const TestContainer = withDisclosureManager(({ id }) => (
@@ -14,7 +16,7 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const result = mount(slidePanelManager);
+    const result = mountWithIntl(slidePanelManager);
     expect(result).toMatchSnapshot();
   });
 
@@ -25,7 +27,7 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const result = mount(slidePanelManager);
+    const result = mountWithIntl(slidePanelManager);
     expect(result).toMatchSnapshot();
   });
 
@@ -36,7 +38,7 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const result = mount(slidePanelManager);
+    const result = mountWithIntl(slidePanelManager);
     expect(result).toMatchSnapshot();
   });
 
@@ -46,7 +48,7 @@ describe('SlidePanelManager', () => {
         <TestContainer />
       </SlidePanelManager>
     );
-    const wrapper = mount(slidePanelManager);
+    const wrapper = mountWithIntl(slidePanelManager);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -57,7 +59,34 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const wrapper = mount(slidePanelManager);
+    const wrapper = mountWithIntl(slidePanelManager);
+
+    return new Promise((resolve, reject) => {
+      const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;
+      childDisclosureManager.disclose({
+        preferredType: 'panel',
+        size: 'large',
+        content: {
+          key: 'DISCLOSE_KEY',
+          component: <TestContainer id="test-panel" />,
+        },
+      }).then(resolve).catch(reject);
+    })
+      .then(() => {
+        wrapper.update();
+
+        expect(wrapper).toMatchSnapshot();
+      });
+  });
+
+  it('should pass mainAriaDescribedBy and replaceMainAriaDescribedBy props to SlidePanel', () => {
+    const slidePanelManager = (
+      <SlidePanelManager mainAriaDescribedBy="details-1" replaceMainAriaDescribedBy={true}>
+        <TestContainer id="test" />
+      </SlidePanelManager>
+    );
+
+    const wrapper = mountWithIntl(slidePanelManager);
 
     return new Promise((resolve, reject) => {
       const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;
@@ -84,7 +113,7 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const wrapper = mount(slidePanelManager);
+    const wrapper = mountWithIntl(slidePanelManager);
 
     return new Promise((resolve, reject) => {
       const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;

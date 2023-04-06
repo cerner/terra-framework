@@ -2,46 +2,118 @@
 
 exports[`correctly applies the theme context className 1`] = `
 <ThemeContextProvider
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   theme={
     Object {
       "className": "orion-fusion-theme",
     }
   }
 >
-  <SlidePanel
-    panelBehavior="overlay"
-    panelPosition="end"
-    panelSize="small"
-  >
-    <div
-      className="slide-panel orion-fusion-theme"
-      data-slide-panel-panel-behavior="overlay"
-      data-slide-panel-panel-position="end"
-      data-slide-panel-panel-size="small"
+  <InjectIntl(SlidePanel)>
+    <SlidePanel
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      panelBehavior="overlay"
+      panelPosition="end"
+      panelSize="small"
+      replaceMainAriaDescribedBy={false}
     >
       <div
-        className="main"
-        key="main"
-        onClick={[Function]}
-        onKeyUp={[Function]}
-        role="main"
-        tabIndex="-1"
-      />
-      <div
-        aria-hidden="true"
-        className="panel"
-        key="panel"
-        role="region"
-        tabIndex="-1"
+        className="slide-panel orion-fusion-theme"
+        data-slide-panel-panel-behavior="overlay"
+        data-slide-panel-panel-position="end"
+        data-slide-panel-panel-size="small"
       >
-        <VisuallyHiddenText>
-          <span
-            className="visually-hidden-text"
-          />
-        </VisuallyHiddenText>
+        <div
+          aria-describedby="detail-panel-warning"
+          className="main"
+          key="main"
+          onClick={[Function]}
+          onKeyUp={[Function]}
+          role="main"
+          tabIndex="-1"
+        >
+          <VisuallyHiddenText
+            id="detail-panel-warning"
+            tabIndex="-1"
+            text="Terra.slidePanel.discloseWarning"
+          >
+            <span
+              className="visually-hidden-text"
+              id="detail-panel-warning"
+              tabIndex="-1"
+            >
+              Terra.slidePanel.discloseWarning
+            </span>
+          </VisuallyHiddenText>
+        </div>
+        <div
+          aria-hidden="true"
+          className="panel"
+          key="panel"
+          role="region"
+          tabIndex="-1"
+        >
+          <VisuallyHiddenText>
+            <span
+              className="visually-hidden-text"
+            />
+          </VisuallyHiddenText>
+        </div>
       </div>
-    </div>
-  </SlidePanel>
+    </SlidePanel>
+  </InjectIntl(SlidePanel)>
 </ThemeContextProvider>
 `;
 
@@ -54,10 +126,155 @@ exports[`should override user provided attributes that aren't className 1`] = `
   data-test-attr="ahoy thar"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
+  <div
+    aria-hidden="true"
+    class="panel"
+    role="region"
+    tabindex="-1"
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
+</div>
+`;
+
+exports[`should render a SlidePanel when mainAriaDescribedBy has a single ID and replaceMainAriaDescribedBy is false 1`] = `
+<div
+  class="slide-panel"
+  data-slide-panel-panel-behavior="overlay"
+  data-slide-panel-panel-position="end"
+  data-slide-panel-panel-size="small"
+>
+  <div
+    aria-describedby="detail-panel-warning patient-list"
+    class="main"
+    role="main"
+    tabindex="-1"
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
+  <div
+    aria-hidden="true"
+    class="panel"
+    role="region"
+    tabindex="-1"
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
+</div>
+`;
+
+exports[`should render a SlidePanel when mainAriaDescribedBy has a single ID and replaceMainAriaDescribedBy is true 1`] = `
+<div
+  class="slide-panel"
+  data-slide-panel-panel-behavior="overlay"
+  data-slide-panel-panel-position="end"
+  data-slide-panel-panel-size="small"
+>
+  <div
+    aria-describedby="patient-list"
+    class="main"
+    role="main"
+    tabindex="-1"
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
+  <div
+    aria-hidden="true"
+    class="panel"
+    role="region"
+    tabindex="-1"
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
+</div>
+`;
+
+exports[`should render a SlidePanel when mainAriaDescribedBy has multiple IDs and replaceMainAriaDescribedBy is false 1`] = `
+<div
+  class="slide-panel"
+  data-slide-panel-panel-behavior="overlay"
+  data-slide-panel-panel-position="end"
+  data-slide-panel-panel-size="small"
+>
+  <div
+    aria-describedby="detail-panel-warning patient-list-1 patient-list-2"
+    class="main"
+    role="main"
+    tabindex="-1"
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
+  <div
+    aria-hidden="true"
+    class="panel"
+    role="region"
+    tabindex="-1"
+  >
+    <span
+      class="visually-hidden-text"
+    />
+  </div>
+</div>
+`;
+
+exports[`should render a SlidePanel when mainAriaDescribedBy has multiple IDs and replaceMainAriaDescribedBy is true 1`] = `
+<div
+  class="slide-panel"
+  data-slide-panel-panel-behavior="overlay"
+  data-slide-panel-panel-position="end"
+  data-slide-panel-panel-size="small"
+>
+  <div
+    aria-describedby="patient-list-1 patient-list-2"
+    class="main"
+    role="main"
+    tabindex="-1"
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="true"
     class="panel"
@@ -79,10 +296,19 @@ exports[`should render a SlidePanel with a fullscreen state 1`] = `
   data-slide-panel-panel-size="small"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="true"
     class="panel"
@@ -104,10 +330,19 @@ exports[`should render a SlidePanel with an open state 1`] = `
   data-slide-panel-panel-size="small"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="false"
     class="panel"
@@ -129,10 +364,19 @@ exports[`should render a SlidePanel with fill 1`] = `
   data-slide-panel-panel-size="small"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="true"
     class="panel"
@@ -154,10 +398,18 @@ exports[`should render a SlidePanel with main content 1`] = `
   data-slide-panel-panel-size="small"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
   >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
     <p>
       Main Content
     </p>
@@ -183,10 +435,19 @@ exports[`should render a SlidePanel with panel content 1`] = `
   data-slide-panel-panel-size="small"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="true"
     class="panel"
@@ -211,11 +472,20 @@ exports[`should render a SlidePanel with panelAriaLabel and mainAriaLabel specif
   data-slide-panel-panel-size="small"
 >
   <div
+    aria-describedby="detail-panel-warning"
     aria-label="Main content area"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="true"
     aria-label="Panel content area"
@@ -240,10 +510,19 @@ exports[`should render a SlidePanel with panelBehavior = overlay 1`] = `
   data-slide-panel-panel-size="small"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="true"
     class="panel"
@@ -265,10 +544,19 @@ exports[`should render a SlidePanel with panelBehavior = squish 1`] = `
   data-slide-panel-panel-size="small"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="true"
     class="panel"
@@ -290,10 +578,19 @@ exports[`should render a SlidePanel with panelPosition = end 1`] = `
   data-slide-panel-panel-size="small"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="true"
     class="panel"
@@ -325,10 +622,19 @@ exports[`should render a SlidePanel with panelPosition = start 1`] = `
     />
   </div>
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
 </div>
 `;
 
@@ -340,10 +646,19 @@ exports[`should render a SlidePanel with panelSize = large 1`] = `
   data-slide-panel-panel-size="large"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="true"
     class="panel"
@@ -365,10 +680,19 @@ exports[`should render a SlidePanel with panelSize = small 1`] = `
   data-slide-panel-panel-size="small"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="true"
     class="panel"
@@ -392,10 +716,19 @@ exports[`should render a SlidePanel with the given extra attributes 1`] = `
   id="my-slide-panel"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="true"
     class="panel"
@@ -417,10 +750,19 @@ exports[`should render a default SlidePanel with no props 1`] = `
   data-slide-panel-panel-size="small"
 >
   <div
+    aria-describedby="detail-panel-warning"
     class="main"
     role="main"
     tabindex="-1"
-  />
+  >
+    <span
+      class="visually-hidden-text"
+      id="detail-panel-warning"
+      tabindex="-1"
+    >
+      Terra.slidePanel.discloseWarning
+    </span>
+  </div>
   <div
     aria-hidden="true"
     class="panel"

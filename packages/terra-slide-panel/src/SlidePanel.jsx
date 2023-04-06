@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { injectIntl } from 'react-intl';
 import styles from './SlidePanel.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -23,6 +24,17 @@ const propTypes = {
    * String that labels the Main content area for screen readers.
    */
   mainAriaLabel: PropTypes.string,
+
+  /**
+   * An ID or space-separated string of IDs that describe the Main content area for screen readers.
+   * Example: "patient-details" or "patient-details-1 patient-details-2 patient-details-3" are valid.
+   */
+  mainAriaDescribedBy: PropTypes.string,
+
+  /**
+   * Whether the mainAriaDescribedBy should replace the default or be appended to it.
+   */
+  replaceMainAriaDescribedBy: PropTypes.bool,
 
   /**
    * The component to display in the main content area.
@@ -69,12 +81,19 @@ const propTypes = {
    * Callback function to set the slide panel ref.
    */
   setSlidePanelRef: PropTypes.func,
+
+  /**
+   * @private
+   * Intl object injected from injectIntl
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }),
 };
 
 const defaultProps = {
   panelBehavior: 'overlay',
   panelPosition: SlidePanelPositions.END,
   panelSize: 'small',
+  replaceMainAriaDescribedBy: false,
 };
 
 class SlidePanel extends React.Component {
@@ -84,6 +103,14 @@ class SlidePanel extends React.Component {
     this.mainNode = React.createRef();
     this.setLastClicked = this.setLastClicked.bind(this);
     this.setDisclosingNode = this.setDisclosingNode.bind(this);
+    this.defaultMainAriaDescribedByID = 'detail-panel-warning';
+    this.mainAriaDescribedByList = this.defaultMainAriaDescribedByID;
+
+    if (this.props.replaceMainAriaDescribedBy) {
+      this.mainAriaDescribedByList = this.props.mainAriaDescribedBy;
+    } else if (this.props.mainAriaDescribedBy) {
+      this.mainAriaDescribedByList = this.mainAriaDescribedByList.concat(' ', this.props.mainAriaDescribedBy);
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -126,16 +153,19 @@ class SlidePanel extends React.Component {
 
   render() {
     const {
-      panelAriaLabel,
+      intl,
+      isFullscreen,
+      isOpen,
+      fill,
+      mainAriaDescribedBy,
       mainAriaLabel,
       mainContent,
+      panelAriaLabel,
       panelContent,
       panelBehavior,
       panelPosition,
       panelSize,
-      isFullscreen,
-      isOpen,
-      fill,
+      replaceMainAriaDescribedBy,
       setSlidePanelRef,
       ...customProps
     } = this.props;
@@ -156,13 +186,13 @@ class SlidePanel extends React.Component {
         className={cx(['panel'])}
         key="panel"
         tabIndex="-1"
-        aria-label={panelAriaLabel}
+        aria-label={panelAriaLabel || intl.formatMessage({ id: 'Terra.slidePanel.defaultPanelLabel' })}
         aria-hidden={!isOpen ? 'true' : 'false'}
         role="region"
         ref={this.setPanelNode}
       >
         <VisuallyHiddenText
-          text={panelAriaLabel}
+          text={panelAriaLabel || intl.formatMessage({ id: 'Terra.slidePanel.defaultPanelLabel' })}
         />
         {panelContent}
       </div>
@@ -175,11 +205,17 @@ class SlidePanel extends React.Component {
         key="main"
         tabIndex="-1"
         aria-label={mainAriaLabel}
+        aria-describedby={this.mainAriaDescribedByList}
         ref={this.mainNode}
         role="main"
         onClick={this.setLastClicked}
         onKeyUp={this.setLastClicked}
       >
+        <VisuallyHiddenText
+          tabIndex="-1"
+          id={this.defaultMainAriaDescribedByID}
+          text={intl.formatMessage({ id: 'Terra.slidePanel.discloseWarning' })}
+        />
         {mainContent}
       </div>
     );
@@ -214,5 +250,5 @@ SlidePanel.propTypes = propTypes;
 SlidePanel.defaultProps = defaultProps;
 SlidePanel.contextType = ThemeContext;
 
-export default SlidePanel;
+export default injectIntl(SlidePanel);
 export { SlidePanelPositions };
