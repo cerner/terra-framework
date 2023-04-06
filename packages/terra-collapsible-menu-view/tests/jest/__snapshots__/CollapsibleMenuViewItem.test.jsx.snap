@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon on menu item when isIconOnly is set, but should set the text 1`] = `
-<MenuItem
+<InjectIntl(MenuItem)
   intl={
     Object {
       "defaultFormats": Object {},
@@ -29,19 +29,13 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon on
       "timeZone": null,
     }
   }
-  isActive={false}
-  isDisabled={false}
-  isHighlighted={false}
-  isInstructionsForUse={false}
   isSelected={false}
-  isToggled={false}
-  subMenuItems={Array []}
   text="Testing"
 />
 `;
 
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon prop menu item, but should render text 1`] = `
-<MenuItem
+<InjectIntl(MenuItem)
   intl={
     Object {
       "defaultFormats": Object {},
@@ -69,19 +63,13 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon pr
       "timeZone": null,
     }
   }
-  isActive={false}
-  isDisabled={false}
-  isHighlighted={false}
-  isInstructionsForUse={false}
   isSelected={false}
-  isToggled={false}
-  subMenuItems={Array []}
   text="Testing"
 />
 `;
 
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set isReversed prop on menu item 1`] = `
-<MenuItem
+<InjectIntl(MenuItem)
   intl={
     Object {
       "defaultFormats": Object {},
@@ -109,19 +97,13 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set isRever
       "timeZone": null,
     }
   }
-  isActive={false}
-  isDisabled={false}
-  isHighlighted={false}
-  isInstructionsForUse={false}
   isSelected={false}
-  isToggled={false}
-  subMenuItems={Array []}
   text="Testing"
 />
 `;
 
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set selected prop on menu item outside of item group 1`] = `
-<MenuItem
+<InjectIntl(MenuItem)
   intl={
     Object {
       "defaultFormats": Object {},
@@ -149,18 +131,12 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set selecte
       "timeZone": null,
     }
   }
-  isActive={false}
-  isDisabled={false}
-  isHighlighted={false}
-  isInstructionsForUse={false}
-  isToggled={false}
-  subMenuItems={Array []}
   text="Testing"
 />
 `;
 
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a disabled menu item when isDisabled is set 1`] = `
-<MenuItem
+<InjectIntl(MenuItem)
   intl={
     Object {
       "defaultFormats": Object {},
@@ -188,19 +164,14 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a disabl
       "timeZone": null,
     }
   }
-  isActive={false}
   isDisabled={true}
-  isHighlighted={false}
-  isInstructionsForUse={false}
   isSelected={false}
-  isToggled={false}
-  subMenuItems={Array []}
   text="Testing"
 />
 `;
 
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu item 1`] = `
-<MenuItem
+<InjectIntl(MenuItem)
   intl={
     Object {
       "defaultFormats": Object {},
@@ -228,19 +199,13 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
       "timeZone": null,
     }
   }
-  isActive={false}
-  isDisabled={false}
-  isHighlighted={false}
-  isInstructionsForUse={false}
   isSelected={false}
-  isToggled={false}
-  subMenuItems={Array []}
   text="Testing"
 />
 `;
 
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu item when subMenuItems are given 1`] = `
-<MenuItem
+<InjectIntl(MenuItem)
   intl={
     Object {
       "defaultFormats": Object {},
@@ -268,12 +233,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
       "timeZone": null,
     }
   }
-  isActive={false}
-  isDisabled={false}
-  isHighlighted={false}
-  isInstructionsForUse={false}
   isSelected={false}
-  isToggled={false}
   subMenuItems={
     Array [
       <CollapsibleMenuViewItem
@@ -290,7 +250,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
 `;
 
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should set selected prop on menu item when inside item group 1`] = `
-<MenuItem
+<InjectIntl(MenuItem)
   intl={
     Object {
       "defaultFormats": Object {},
@@ -318,13 +278,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should set selected pr
       "timeZone": null,
     }
   }
-  isActive={false}
-  isDisabled={false}
-  isHighlighted={false}
-  isInstructionsForUse={false}
   isSelected={true}
-  isToggled={false}
-  subMenuItems={Array []}
   text="Testing"
 />
 `;
