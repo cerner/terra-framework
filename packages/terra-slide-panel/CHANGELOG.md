@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Fixed
-  * Fixed edge case where component crashed when open by default on load.
+  * Fixed bug where `terra-slide-panel` crashes when open by default on load.
 
 ## 3.38.0 - (March 29, 2023)
 
