@@ -132,7 +132,7 @@ Terra.describeViewports('Tabs - Responsive to Parent', ['huge'], () => {
   });
 });
 
-Terra.describeViewports('TAbs - Keyboard Navigation', ['medium'], () => {
+Terra.describeViewports('Tabs - Keyboard Navigation', ['medium'], () => {
   it('displays tab with keyboard focus', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/default-tabs');
     browser.keys('Tab');

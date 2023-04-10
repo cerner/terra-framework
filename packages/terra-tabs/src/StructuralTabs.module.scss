@@ -191,14 +191,6 @@
       color: var(--terra-tabs-structural-active-focus-color, inherit);
       position: relative;
       z-index: 1;
-
-      [dir=rtl] & {
-        box-shadow: var(--terra-tabs-keyboard-active-focus-rtl-box-shadow, 0 0 1px 2px #4a90e2);
-      }
-
-      [dir=ltr] & {
-        box-shadow: var(--terra-tabs-keyboard-active-focus-ltr-box-shadow, 0 0 1px 2px #4a90e2);
-      }
     }
 
     .tab-menu:focus {
@@ -206,15 +198,7 @@
       background-image: var(--terra-tabs-structural-focus-background-image);
       color: var(--terra-tabs-structural-focus-color, inherit);
       outline: none;
-
-      [dir=rtl] & {
-        box-shadow: var(--terra-tabs-keyboard-focus-rtl-box-shadow, 0 0 1px 2px #4a90e2);
-      }
-
-      [dir=ltr] & {
-        box-shadow: var(--terra-tabs-keyboard-focus-ltr-box-shadow, 0 0 1px 2px #4a90e2);
-      }
-      
+  
       &[data-terra-tabs-show-focus-styles='true'] {
         outline: var(--terra-tabs-structural-focus-outline, 2px dashed #000);
         outline-offset: var(--terra-tabs-structural-focus-outline-offset, -5px);
