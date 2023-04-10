@@ -10,11 +10,13 @@ import Arrange from 'terra-arrange';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
+import uuidv4 from 'uuid/v4';
 import MenuUtils from './_MenuUtils';
 import MenuItem from './MenuItem';
 import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
+const menuHeaderId = `terra-menu-headertitle-${uuidv4()}`;
 
 const propTypes = {
   /**
@@ -292,20 +294,22 @@ class MenuContent extends React.Component {
 
     if (this.props.index > 0) {
       header = (
-        <div
-          role="button"
-          onClick={this.props.onRequestBack}
-          onKeyDown={this.onKeyDownBackButton}
-          tabIndex="0"
-          aria-label={backBtnText}
-        >
+        <>
           <div className={cx('header-container')}>
-            <div className={cx('header-button')}>
+            <div
+              className={cx('header-button')}
+              role="button"
+              onClick={this.props.onRequestBack}
+              onKeyDown={this.onKeyDownBackButton}
+              tabIndex="0"
+              aria-label={backBtnText}
+              aria-describedby={menuHeaderId}
+            >
               {backIcon}
             </div>
-            <h1 className={cx('header-title')}>{this.props.title}</h1>
+            <h2 id={menuHeaderId} className={cx('header-title')}>{this.props.title}</h2>
           </div>
-        </div>
+        </>
       );
     } else if (this.props.headerTitle.length > 0) {
       header = (
