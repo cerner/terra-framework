@@ -172,6 +172,7 @@ class CollapsibleTabs extends React.Component {
     const index = tabPanes.indexOf(event.target);
     if (tabList) {
       if ((event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) && !event.target.getAttribute('data-terra-tabs-menu')) {
+        event.preventDefault();
         this.props.onChange(event, this.props.children[event.target.getAttribute('index')]);
       }
     }
