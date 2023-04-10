@@ -56,6 +56,7 @@ exports[`Tabs Responsiveness correctly applies the theme context className 1`] =
           >
             <TabPane
               className="is-active"
+              index={0}
               isActive={true}
               isDisabled={false}
               isIconOnly={false}
@@ -86,12 +87,14 @@ exports[`Tabs Responsiveness correctly applies the theme context className 1`] =
             >
               <div
                 className="collapsed-tabs-container orion-fusion-theme"
+                role="tablist"
               >
-                <TabMenu
+                <InjectIntl(TabMenu)
                   activeKey="default"
                   selectedTab={
                     <TabPane
                       className="is-active"
+                      index={0}
                       isActive={true}
                       isDisabled={false}
                       isIconOnly={false}
@@ -101,82 +104,146 @@ exports[`Tabs Responsiveness correctly applies the theme context className 1`] =
                     />
                   }
                 >
-                  <div
-                    className="tab-menu is-active orion-fusion-theme"
-                    data-terra-tabs-menu={true}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    role="button"
-                    tabIndex="0"
+                  <TabMenu
+                    activeKey="default"
+                    intl={
+                      Object {
+                        "defaultFormats": Object {},
+                        "defaultLocale": "en",
+                        "formatDate": [Function],
+                        "formatHTMLMessage": [Function],
+                        "formatMessage": [Function],
+                        "formatNumber": [Function],
+                        "formatPlural": [Function],
+                        "formatRelative": [Function],
+                        "formatTime": [Function],
+                        "formats": Object {},
+                        "formatters": Object {
+                          "getDateTimeFormat": [Function],
+                          "getMessageFormat": [Function],
+                          "getNumberFormat": [Function],
+                          "getPluralFormat": [Function],
+                          "getRelativeFormat": [Function],
+                        },
+                        "locale": "en",
+                        "messages": null,
+                        "now": [Function],
+                        "onError": [Function],
+                        "textComponent": "span",
+                        "timeZone": null,
+                      }
+                    }
+                    selectedTab={
+                      <TabPane
+                        className="is-active"
+                        index={0}
+                        isActive={true}
+                        isDisabled={false}
+                        isIconOnly={false}
+                        label="Default"
+                        onClick={[Function]}
+                        showIcon={false}
+                      />
+                    }
                   >
-                    <FormattedMessage
-                      id="Terra.tabs.more"
-                      values={Object {}}
+                    <div
+                      aria-describedby="terra-tabs-button-interaction-hint-00000000-0000-0000-0000-000000000000"
+                      aria-selected={true}
+                      className="tab-menu is-active orion-fusion-theme"
+                      data-terra-tabs-menu={true}
+                      data-terra-tabs-show-focus-styles={true}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      role="tab"
+                      tabIndex="0"
                     >
-                      <span>
-                        Default
-                      </span>
-                    </FormattedMessage>
-                    <IconCaretDown
-                      className=""
-                      isBidi={true}
-                      viewBox="0 0 48 48"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <IconBase
+                      <FormattedMessage
+                        id="Terra.tabs.more"
+                        values={Object {}}
+                      >
+                        <span>
+                          Default
+                        </span>
+                      </FormattedMessage>
+                      <IconCaretDown
                         className=""
-                        focusable="false"
-                        height="1em"
                         isBidi={true}
-                        isSpin={false}
                         viewBox="0 0 48 48"
-                        width="1em"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          className="tui-Icon icon is-bidi"
+                        <IconBase
+                          className=""
                           focusable="false"
                           height="1em"
-                          role="presentation"
+                          isBidi={true}
+                          isSpin={false}
                           viewBox="0 0 48 48"
                           width="1em"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path
-                            d="M48 12L24 36 0 12h48z"
-                          />
-                        </svg>
-                      </IconBase>
-                    </IconCaretDown>
-                    <Menu
-                      contentWidth="240"
-                      headerTitle=""
-                      isArrowDisplayed={false}
-                      isOpen={false}
-                      onRequestClose={[Function]}
-                      targetRef={[Function]}
-                    >
-                      <Popup
-                        attachmentBehavior="flip"
-                        boundingRef={null}
-                        classNameArrow="arrow"
-                        classNameContent={null}
-                        classNameOverlay={null}
-                        contentAttachment="top right"
-                        contentHeight="auto"
+                          <svg
+                            className="tui-Icon icon is-bidi"
+                            focusable="false"
+                            height="1em"
+                            role="presentation"
+                            viewBox="0 0 48 48"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M48 12L24 36 0 12h48z"
+                            />
+                          </svg>
+                        </IconBase>
+                      </IconCaretDown>
+                      <Menu
                         contentWidth="240"
                         headerTitle=""
                         isArrowDisplayed={false}
-                        isContentFocusDisabled={true}
-                        isHeaderDisabled={true}
                         isOpen={false}
                         onRequestClose={[Function]}
-                        popupContentRole="dialog"
                         targetRef={[Function]}
-                      />
-                    </Menu>
-                  </div>
-                </TabMenu>
+                      >
+                        <Popup
+                          attachmentBehavior="flip"
+                          boundingRef={null}
+                          classNameArrow="arrow"
+                          classNameContent={null}
+                          classNameOverlay={null}
+                          contentAttachment="top right"
+                          contentHeight="auto"
+                          contentWidth="240"
+                          headerTitle=""
+                          isArrowDisplayed={false}
+                          isContentFocusDisabled={true}
+                          isHeaderDisabled={true}
+                          isOpen={false}
+                          onRequestClose={[Function]}
+                          popupContentRole="dialog"
+                          targetRef={[Function]}
+                        />
+                      </Menu>
+                    </div>
+                    <VisuallyHiddenText
+                      aria-hidden="true"
+                      aria-live="polite"
+                      id="terra-tabs-button-interaction-hint-00000000-0000-0000-0000-000000000000"
+                      role="tab"
+                      text="Terra.tabs.hint.tabMenu"
+                    >
+                      <span
+                        aria-hidden="true"
+                        aria-live="polite"
+                        className="visually-hidden-text"
+                        id="terra-tabs-button-interaction-hint-00000000-0000-0000-0000-000000000000"
+                        role="tab"
+                      >
+                        Terra.tabs.hint.tabMenu
+                      </span>
+                    </VisuallyHiddenText>
+                  </TabMenu>
+                </InjectIntl(TabMenu)>
               </div>
             </CollapsedTabs>
           </ResponsiveElement>
@@ -221,6 +288,7 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the paren
       >
         <TabPane
           className="is-active"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}
@@ -284,6 +352,7 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the windo
       >
         <TabPane
           className="is-active"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}
@@ -343,6 +412,7 @@ exports[`Tabs Responsiveness should render tabs that do not completely collapse 
     >
       <TabPane
         className="is-active"
+        index={0}
         isActive={true}
         isDisabled={false}
         isIconOnly={false}
@@ -405,6 +475,7 @@ exports[`Tabs Variants should render modular-centered tabs 1`] = `
       >
         <TabPane
           className="is-active"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}
@@ -467,6 +538,7 @@ exports[`Tabs Variants should render modular-left-aligned tabs 1`] = `
       >
         <TabPane
           className="is-active"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}
@@ -529,6 +601,7 @@ exports[`Tabs Variants should render structural tabs 1`] = `
       >
         <TabPane
           className="is-active"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}
@@ -593,6 +666,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
       >
         <TabPane
           className="is-active"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}
@@ -656,6 +730,7 @@ exports[`Tabs should render a default component 1`] = `
       >
         <TabPane
           className="is-active"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}
@@ -717,6 +792,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
       >
         <TabPane
           className="is-active customClass"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}
@@ -780,6 +856,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
       >
         <TabPane
           className="is-active"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}
@@ -841,6 +918,7 @@ exports[`Tabs should render with content filled when indicated 1`] = `
       >
         <TabPane
           className="is-active"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}
@@ -902,6 +980,7 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
       >
         <TabPane
           className="is-active"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}
@@ -964,6 +1043,7 @@ exports[`Tabs should set custom props 1`] = `
       >
         <TabPane
           className="is-active"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}
@@ -1025,6 +1105,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
       >
         <TabPane
           className="is-active customClass"
+          index={0}
           isActive={true}
           isDisabled={false}
           isIconOnly={false}

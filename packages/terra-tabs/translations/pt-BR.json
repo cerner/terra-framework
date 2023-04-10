@@ -1,3 +1,6 @@
 {
-  "Terra.tabs.more": "Mais"
+  "Terra.tabs.more": "Mais",
+  "Terra.tabs.hint.tabList": "Contém {numberOfTabs} itens",
+  "Terra.tabs.hint.hiddenTabs": "{hiddenTabs} itens não exibidos",
+  "Terra.tabs.hint.tabMenu": "{hiddenTabs} itens ocultos. Optar por exibir itens {hiddenTabs} ocultos"
 }

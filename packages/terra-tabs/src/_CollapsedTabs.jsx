@@ -36,7 +36,7 @@ const CollapsedTabs = (props) => {
 
   const selectedTab = props.children[props.activeIndex];
   return (
-    <div className={cx('collapsed-tabs-container', theme.className)}>
+    <div role="tablist" className={cx('collapsed-tabs-container', theme.className)}>
       <TabMenu activeKey={props.activeKey} selectedTab={selectedTab}>
         {props.children}
       </TabMenu>

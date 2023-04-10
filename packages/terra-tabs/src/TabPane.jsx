@@ -64,6 +64,22 @@ const TabPane = ({
   showIcon,
   ...customProps
 }) => {
+  const paneRef = React.useRef(null);
+  const handleKeyDown = () => {
+    paneRef.current.setAttribute('data-terra-tabs-show-focus-styles', 'true');
+  };
+
+  const handleMouseDown = (event) => {
+    paneRef.current.setAttribute('data-terra-tabs-show-focus-styles', 'false');
+    if (isDisabled) {
+      event.preventDefault();
+    }
+  };
+
+  const handleBlur = () => {
+    paneRef.current.setAttribute('data-terra-tabs-show-focus-styles', `${!isDisabled}`);
+  };
+
   const attributes = { ...customProps };
   const theme = React.useContext(ThemeContext);
   const paneClassNames = classNames(cx(
@@ -79,9 +95,13 @@ const TabPane = ({
     attributes['aria-label'] = label;
   }
   attributes['aria-selected'] = isActive;
+  attributes.tabIndex = isActive ? 0 : -1;
+  attributes.onKeyDown = handleKeyDown;
+  attributes.onMouseDown = handleMouseDown;
+  attributes.onBlur = handleBlur;
 
   return (
-    <div {...attributes} role="tab" className={paneClassNames}>
+    <div {...attributes} ref={paneRef} data-terra-tabs-show-focus-styles={!isDisabled} data-terra-tab-pane role="tab" className={paneClassNames}>
       {customDisplay}
       {customDisplay ? null : icon}
       {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}

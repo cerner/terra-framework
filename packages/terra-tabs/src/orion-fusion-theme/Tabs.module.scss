@@ -3,6 +3,9 @@
     // Common
     --terra-tabs-font-size: 1rem;
     --terra-tabs-font-weight: 400;
+    --terra-tabs-focus-box-shadow: none;
+    --terra-tabs-focus-outline: 2px dashed #000;
+    --terra-tabs-focus-outline-offset: -5px;
     --terra-tabs-line-height: 1.41666667rem;
     --terra-tabs-padding: 0.5rem 1.25rem;
     --terra-tabs-text-only-padding: 0.5rem 1.25rem;
@@ -83,9 +86,9 @@
     --terra-tabs-structural-active-focus-color: #1c1f21;
     --terra-tabs-structural-focus-background-image: none;
     --terra-tabs-structural-focus-color: #1c1f21;
+    --terra-tabs-structural-focus-outline: 2px dashed #000;
+    --terra-tabs-structural-focus-outline-offset: -5px;
     --terra-tabs-structural-last-tab-border-width: 0;
-    --terra-tabs-keyboard-active-focus-rtl-box-shadow: none;
-    --terra-tabs-keyboard-active-focus-ltr-box-shadow: none;
     --terra-tabs-keyboard-focus-rtl-box-shadow: none;
     --terra-tabs-keyboard-focus-ltr-box-shadow: none;
     --terra-tabs-structural-collapsed-menu-bar-focus-border-bottom-color: none;

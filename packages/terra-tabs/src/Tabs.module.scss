@@ -58,6 +58,12 @@
     min-width: 8.357rem;
     text-align: center;
 
+    &[data-terra-tabs-show-focus-styles='true']:focus {
+      box-shadow: var(--terra-tabs-focus-box-shadow, none);
+      outline: var(--terra-tabs-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-tabs-focus-outline-offset, -5px);
+    }
+
     &.is-icon-only {
       flex: 0 0 auto;
       min-width: 2.571rem;
