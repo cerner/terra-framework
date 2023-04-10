@@ -82,8 +82,21 @@ Terra.describeViewports('Menu', ['medium'], () => {
     Terra.validates.element('main menu', { selector: '#root' });
 
     $('.TestNestedMenu').click();
-    $('[role="button"][aria-label="Back"]').isFocused();
+    $('li:first-child[role="menuitem"]').isFocused();
     Terra.validates.element('menu with submenu', { selector: '#root' });
+    browser.keys('Escape');
+  });
+
+  it('focuses on back button in submenu', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu');
+    $('#sub-menu-button').click();
+    $('li:first-child[role="menuitem"]').isFocused();
+    Terra.validates.element('main menu', { selector: '#root' });
+
+    $('.TestNestedMenu').click();
+    browser.keys(['Shift', 'Tab']);
+    $('[role="button"][aria-label="Back"]').isFocused();
+    Terra.validates.element('navigating to back button', { selector: '#root' });
     browser.keys('Escape');
   });
 
@@ -95,7 +108,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
       Terra.validates.element('main menu long header', { selector: '#root' });
 
       $('.TestNestedMenu').click();
-      $('[role="button"][aria-label="Back"]').isFocused();
+      $('li:first-child[role="menuitem"]').isFocused();
       Terra.validates.element('submenu long header', { selector: '#root' });
       browser.keys('Escape');
     });
