@@ -178,12 +178,8 @@ class CollapsibleTabs extends React.Component {
     }
     if (event.nativeEvent.keyCode === nextKey && tabPanes[index + 1]) {
       tabPanes[index + 1].focus();
-    } else if (event.nativeEvent.keyCode === previousKey) {
-      if (tabPanes[index - 1]) {
-        tabPanes[index - 1].focus();
-      } else if (event.target === tabPanes[tabPanes.length - 1] && tabPanes[tabPanes.length - 2]) {
-        tabPanes[tabPanes.length - 2].focus();
-      }
+    } else if (event.nativeEvent.keyCode === previousKey && tabPanes[index - 1]) {
+      tabPanes[index - 1].focus();
     }
   }
 
