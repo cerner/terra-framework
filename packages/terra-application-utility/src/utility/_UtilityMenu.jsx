@@ -313,7 +313,7 @@ class UtilityMenu extends React.Component {
     const backButton = (
       <Button
         onClick={this.pop}
-        icon={<IconLeft className={iconLeftClassNames} />}
+        icon={<IconLeft a11yLabel={backText} className={iconLeftClassNames} />}
         isCompact
         isIconOnly
         text={backText}
@@ -325,7 +325,7 @@ class UtilityMenu extends React.Component {
     const closeButton = (
       <Button
         onClick={this.props.onRequestClose}
-        icon={<IconClose className={iconCloseClassNames} />}
+        icon={<IconClose a11yLabel={closeText} className={iconCloseClassNames} />}
         isCompact
         isIconOnly
         text={closeText}

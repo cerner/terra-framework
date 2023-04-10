@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added a11yLabel for terra-button upgrades.
+
 ## 2.50.0 - (March 29, 2023)
 
 * Changed
