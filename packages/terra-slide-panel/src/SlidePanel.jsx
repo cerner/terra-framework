@@ -96,7 +96,6 @@ class SlidePanel extends React.Component {
       // The disclosing element doesn't exist and return focus to the main div
       this.mainNode.current.focus();
     }
-    return;
   }
 
   setPanelNode(node) {
