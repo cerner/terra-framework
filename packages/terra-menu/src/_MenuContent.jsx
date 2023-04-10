@@ -307,7 +307,7 @@ class MenuContent extends React.Component {
             >
               {backIcon}
             </div>
-            <h1 id={menuHeaderId} className={cx('header-title')}>{this.props.title}</h1>
+            <h2 id={menuHeaderId} className={cx('header-title')}>{this.props.title}</h2>
           </div>
         </>
       );
