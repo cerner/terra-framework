@@ -144,7 +144,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-7',
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+    title: 'With side navigation, you have several options: Always display the navigation pane to the left of the page content. Use a collapsible, "fully automatic" responsive side navigation. Open navigation pane over the left part of the page content. Open navigation pane over all of the page.',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: true,
     isSelectable: false,
