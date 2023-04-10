@@ -27,7 +27,7 @@ const dummyContent = (
     <p>Despite its simplicity, single column layouts are quite popular among many websites. The mobile revolution also had its impact on the popularity of this type of layout — single column layouts fit mobile screens perfectly.</p>
     <h2>When to use it</h2>
     <hr />
-   <p>This layout finds application in many personal blogs based on minimalistic design principles. This is a common layout for microblogs such as Tumblr.</p>
+    <p>This layout finds application in many personal blogs based on minimalistic design principles. This is a common layout for microblogs such as Tumblr.</p>
     <h2>Split screen layout</h2>
     <hr />
     <p>A split screen (or one screen divided in two) web layout is perfect for a page that has two main pieces of content of equal importance. It allows designers to display both items simultaneously while giving them equal consideration.</p>
