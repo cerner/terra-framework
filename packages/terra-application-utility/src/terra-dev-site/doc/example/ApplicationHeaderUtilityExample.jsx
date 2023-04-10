@@ -23,7 +23,7 @@ class ApplicationHeaderUtilityExample extends React.Component {
 
   render() {
     const accessory = <Image alt="Fallback Avatar" src={FallbackAvatar} />;
-    const title = 'User Name';
+    const title = 'John Doe';
 
     return (
       <div className={cx('container')}>
