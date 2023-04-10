@@ -69,8 +69,11 @@ const TabPane = ({
     paneRef.current.setAttribute('data-terra-tabs-show-focus-styles', 'true');
   };
 
-  const handleMouseDown = () => {
+  const handleMouseDown = (event) => {
     paneRef.current.setAttribute('data-terra-tabs-show-focus-styles', 'false');
+    if (isDisabled) {
+      event.preventDefault();
+    }
   };
 
   const handleBlur = () => {
