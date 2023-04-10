@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Fixed 
-  * Fix for "Terra-Menu" to navigate back when clicking on a submenu back button.
+  * Fixed issue of navigation on menu header click.
 
 ## 6.65.0 - (March 29, 2023)
 
