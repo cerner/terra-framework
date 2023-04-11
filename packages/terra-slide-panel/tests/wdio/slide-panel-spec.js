@@ -148,15 +148,6 @@ Terra.describeViewports('Slide panel', ['large'], () => {
 
       Terra.validates.element('toggle button focused with multiple buttons', { selector: '#root' });
     });
-    it('Closes panel and focuses on main div if panel is closed after open on load', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggled-on');
-
-      $('#toggle-panel-button').click();
-      $('#test-slide [aria-hidden="true"]').waitForExist();
-      browser.pause(150);
-
-      expect($('#main-div').isFocused()).toBeTruthy();
-    });
   });
 
   describe('Toggle the slide panel side', () => {
@@ -174,6 +165,16 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       expect($('#test-slide [aria-hidden="false"]').getText()).toEqual('Increase Count 1');
 
       Terra.validates.element('panel with start position', { selector: '#root' });
+    });
+  });
+
+  describe('Panel is open by default on page load', () => {
+    it('Closes panel and focuses on main div', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggled-on');
+
+      $('#toggle-panel-button').click();
+
+      expect($('[aria-label="Main content area"]').isFocused()).toBeTruthy();
     });
   });
 });
