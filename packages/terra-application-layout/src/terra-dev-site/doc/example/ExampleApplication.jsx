@@ -253,7 +253,7 @@ class ExampleApplication extends React.Component {
       isReadOnly: true,
       parentKey: Utils.utilityHelpers.defaultKeys.MENU,
     }, {
-      key: 'additional-3',
+      key: 'Notifications',
       contentLocation: Utils.utilityHelpers.locations.FOOTER,
       title: 'Notifications',
       parentKey: Utils.utilityHelpers.defaultKeys.MENU,
