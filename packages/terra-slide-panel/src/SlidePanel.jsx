@@ -88,7 +88,7 @@ class SlidePanel extends React.Component {
     }
 
     if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
-      if (this.disclosingNode !== undefined) {
+      if (this.disclosingNode) {
         // Return focus to the disclosing element
         this.disclosingNode.focus();
         return;
