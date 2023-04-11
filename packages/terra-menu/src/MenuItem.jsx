@@ -309,19 +309,6 @@ class MenuItem extends React.Component {
       </>
     );
 
-    // Adds context for navigating back to parent menu from submenu
-    if (this.itemNode) {
-      this.submenu = this.itemNode.parentNode.getAttribute('data-submenu') === 'true';
-      if (this.submenu) {
-        content = (
-          <>
-            {textContainer}
-            {screenReaderResponse}
-          </>
-        );
-      }
-    }
-
     if (hasChevron || toggleableMenu || isInstructionsForUse || icon || shouldReserveSpaceForIcon) {
       let fitStartIcon = null;
       if (isInstructionsForUse) {
