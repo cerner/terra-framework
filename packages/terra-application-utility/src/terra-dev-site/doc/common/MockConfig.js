@@ -21,7 +21,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-1',
-    title: 'Item 1',
+    title: 'Name',
     content: customComponent,
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: false,
@@ -32,7 +32,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-2',
-    title: 'Item 2',
+    title: 'Profile',
     isSelected: false,
     isSelectable: false,
     childKeys: [
@@ -43,7 +43,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-3',
-    title: 'item-3',
+    title: 'Notifications',
     contentLocation: UtilityUtils.LOCATIONS.FOOTER,
     isSelected: false,
     isSelectable: false,
@@ -51,7 +51,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-4',
-    title: 'Item 4',
+    title: 'Projects',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: false,
     isSelectable: false,
@@ -63,7 +63,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-1.1',
-    title: 'Item 1.1',
+    title: 'John Doe',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: false,
     isSelectable: false,
@@ -72,7 +72,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-2.1',
-    title: 'Item 2.1',
+    title: 'Gender: Male',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: false,
     isSelectable: false,
@@ -80,7 +80,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-2.2',
-    title: 'Item 2.2',
+    title: 'Location: Germany',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: false,
     isSelectable: false,
@@ -88,7 +88,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-4.1',
-    title: 'Item 4.1',
+    title: 'Project 1',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: false,
     isSelectable: false,
@@ -96,7 +96,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-4.2',
-    title: 'Item 4.2',
+    title: 'Project 2',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: false,
     isSelectable: false,
@@ -104,7 +104,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-4.3',
-    title: 'Item 4.3',
+    title: 'Project 3',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: false,
     isSelectable: false,
@@ -112,7 +112,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-5',
-    title: 'Item 5',
+    title: 'Skills',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: false,
     isSelectable: false,
@@ -120,7 +120,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-5.1',
-    title: 'Item 5.1',
+    title: 'Skill 1',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: false,
     isSelectable: true,
@@ -128,7 +128,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-5.2',
-    title: 'Item 5.2',
+    title: 'Skill 2',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: false,
     isSelectable: true,
@@ -136,7 +136,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-6',
-    title: 'Item 6',
+    title: 'Logout',
     contentLocation: UtilityUtils.LOCATIONS.FOOTER,
     isSelected: false,
     isSelectable: true,
@@ -144,7 +144,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-7',
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+    title: 'Drill-down capabilities provide the ability for the end-user to access different levels of information without creating ad hoc queries for each level of information. Instead the user is able to drill down to a detail level, or elevate to the summary level, through pull-down menus or mouse clicks.',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: true,
     isSelectable: false,
@@ -153,7 +153,7 @@ const MockConfig = customComponent => [
   },
   {
     key: 'item-8',
-    title: 'Read Only Item',
+    title: 'Last logged in: yesterday',
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isReadOnly: true,
     isSelected: false,
