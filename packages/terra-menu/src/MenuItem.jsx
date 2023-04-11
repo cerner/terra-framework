@@ -304,7 +304,8 @@ class MenuItem extends React.Component {
         {/* Adds context for item with submenu-items */}
         { subMenuItems.length > 0 && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.itemWithSubmenu' })} /> }
         {/* Adds context for navigating back to parent menu from submenu */}
-        { this.submenu === true && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.exitSubmenu' })} /> }
+        { this.itemNode && this.itemNode.parentNode.getAttribute('data-submenu') === 'true'
+            && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.exitSubmenu' })} /> }
       </>
     );
 
@@ -345,6 +346,13 @@ class MenuItem extends React.Component {
             fitEnd={hasChevron ? <ChevronIcon className={cx('chevron')} /> : null}
             align="center"
           />
+          {screenReaderResponse}
+        </>
+      );
+    } else {
+      content = (
+        <>
+          {textContainer}
           {screenReaderResponse}
         </>
       );

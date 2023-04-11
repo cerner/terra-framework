@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CollapsibleMenuViewToggle Collapsible Menu Context should render a selectable menu item 1`] = `
-<InjectIntl(MenuItem)
+<MenuItem
   intl={
     Object {
       "defaultFormats": Object {},
@@ -29,14 +29,20 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should render a sele
       "timeZone": null,
     }
   }
+  isActive={false}
+  isDisabled={false}
+  isHighlighted={false}
+  isInstructionsForUse={false}
   isSelectable={true}
   isSelected={false}
+  isToggled={false}
+  subMenuItems={Array []}
   text="Testing"
 />
 `;
 
 exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isDisabled prop on menu item 1`] = `
-<InjectIntl(MenuItem)
+<MenuItem
   intl={
     Object {
       "defaultFormats": Object {},
@@ -64,15 +70,20 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isDisable
       "timeZone": null,
     }
   }
+  isActive={false}
   isDisabled={true}
+  isHighlighted={false}
+  isInstructionsForUse={false}
   isSelectable={true}
   isSelected={false}
+  isToggled={false}
+  subMenuItems={Array []}
   text="Testing"
 />
 `;
 
 exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isSelectable prop on menu item to false 1`] = `
-<InjectIntl(MenuItem)
+<MenuItem
   intl={
     Object {
       "defaultFormats": Object {},
@@ -100,14 +111,20 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isSelecta
       "timeZone": null,
     }
   }
+  isActive={false}
+  isDisabled={false}
+  isHighlighted={false}
+  isInstructionsForUse={false}
   isSelectable={false}
   isSelected={false}
+  isToggled={false}
+  subMenuItems={Array []}
   text="Testing"
 />
 `;
 
 exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set selected prop on menu item 1`] = `
-<InjectIntl(MenuItem)
+<MenuItem
   intl={
     Object {
       "defaultFormats": Object {},
@@ -135,8 +152,14 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set selected 
       "timeZone": null,
     }
   }
+  isActive={false}
+  isDisabled={false}
+  isHighlighted={false}
+  isInstructionsForUse={false}
   isSelectable={true}
   isSelected={true}
+  isToggled={false}
+  subMenuItems={Array []}
   text="Testing"
 />
 `;
