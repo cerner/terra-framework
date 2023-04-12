@@ -5,6 +5,9 @@
 * Changed
   * Updated component examples.
 
+* Added
+  * Added a `terra-slide-panel` example where the panel is open on page load.
+
 ## 1.18.0 - (April 5, 2023)
 
 * Changed

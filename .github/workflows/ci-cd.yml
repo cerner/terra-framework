@@ -39,12 +39,12 @@ jobs:
       matrix:
         form-factor: [tiny, small, medium, large, huge, enormous]
         theme: [default, lowlight, fusion]
-      
+
     steps:
       - name: Checkout Project
         uses: actions/checkout@v3
       - name: Setup Project
-        uses: ./.github/actions/setup      
+        uses: ./.github/actions/setup
       - name: Compile Project Default
         run: |
           npm run compile:default -- --output-path build/default
@@ -93,7 +93,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'chore(docs): Regenerate docs'
