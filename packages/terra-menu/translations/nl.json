@@ -1,4 +1,9 @@
 {
   "Terra.menu.back": "Terug",
-  "Terra.menu.close": "Sluiten"
+  "Terra.menu.close": "Sluiten",
+  "Terra.menu.exitSubmenu": "druk op de pijl naar links om het submenu te verbergen of navigeer naar de knop Terug",
+  "Terra.menu.selected": "geselecteerd",
+  "Terra.menu.unselected": "niet geselecteerd",
+  "Terra.menu.itemWithSubmenu": "met submenu-items",
+  "Terra.menu.index": "({index} van {totalItems})"
 }

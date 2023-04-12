@@ -1,4 +1,9 @@
 {
   "Terra.menu.back": "Retour",
-  "Terra.menu.close": "Fermer"
+  "Terra.menu.close": "Fermer",
+  "Terra.menu.exitSubmenu": "Pour quitter le sous-menu, appuyez sur la flèche Gauche ou sélectionnez le bouton Précédent.",
+  "Terra.menu.selected": "sélectionné",
+  "Terra.menu.unselected": "non sélectionné",
+  "Terra.menu.itemWithSubmenu": "avec des éléments de sous-menu",
+  "Terra.menu.index": "({index} sur {totalItems})"
 }

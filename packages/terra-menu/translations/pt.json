@@ -1,4 +1,9 @@
 {
   "Terra.menu.back": "Voltar",
-  "Terra.menu.close": "Fechar"
+  "Terra.menu.close": "Fechar",
+  "Terra.menu.exitSubmenu": "para sair do submenu pressione a seta para a esquerda ou o botão de navegação Voltar",
+  "Terra.menu.selected": "selecionado",
+  "Terra.menu.unselected": "não selecionado",
+  "Terra.menu.itemWithSubmenu": "com itens de submenu",
+  "Terra.menu.index": "({index} de {totalItems})"
 }
