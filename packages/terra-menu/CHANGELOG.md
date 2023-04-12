@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.65.1 - (April 12, 2023)
+
 * Fixed 
   * Fixed issue of navigation on menu header click.
 
