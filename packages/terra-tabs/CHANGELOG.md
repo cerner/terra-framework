@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.66.1 - (April 12, 2023)
+
 * Fixed
   * Fixed screen reader announcing incorrect tab count.
   * Allow screen reader to announce hidden tabs count.

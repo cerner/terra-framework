@@ -1,7 +1,7 @@
 {
   "name": "terra-application-layout",
   "main": "lib/ApplicationLayout.js",
-  "version": "5.67.0",
+  "version": "5.67.1",
   "description": "The Terra Application Layout is a responsive, themeable layout for building applications.",
   "repository": {
     "type": "git",
@@ -36,7 +36,7 @@
     "terra-application-links": "^6.63.0",
     "terra-application-menu-layout": "^3.31.0",
     "terra-application-name": "^3.42.0",
-    "terra-application-utility": "^2.50.0",
+    "terra-application-utility": "^2.51.0",
     "terra-breakpoints": "^2.19.0",
     "terra-icon": "^3.19.0",
     "terra-modal-manager": "^6.60.0",

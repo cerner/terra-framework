@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.19.0 - (April 12, 2023)
+
 * Added
   * Added a `terra-slide-panel` example where the panel is open on page load.
 
