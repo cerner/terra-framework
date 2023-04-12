@@ -167,4 +167,14 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       Terra.validates.element('panel with start position', { selector: '#root' });
     });
   });
+
+  describe('Panel is open by default on page load', () => {
+    it('Closes panel and focuses on main div', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggled-on');
+
+      $('#toggle-panel-button').click();
+
+      expect($('[aria-label="Main content area"]').isFocused()).toBeTruthy();
+    });
+  });
 });
