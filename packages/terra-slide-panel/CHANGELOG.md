@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.38.1 - (April 12, 2023)
+
 * Fixed
   * Fixed bug where `terra-slide-panel` crashes when open by default on load.
 
