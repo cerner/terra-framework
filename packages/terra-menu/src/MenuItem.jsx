@@ -119,6 +119,7 @@ const propTypes = {
    */
   totalItems: PropTypes.number,
   /**
+   * @private
    * The intl object to be injected for translations. Provided by the injectIntl function.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
