@@ -77,6 +77,23 @@
     }
   }
 
+  // Focus trap 
+  .is-open {
+    // Removes main content elements from tab order as slide panel lays over them on narrow screen
+    @media (min-width: 0px), print {
+      > .main {
+        visibility: hidden;
+      } 
+    }
+
+    // Returns main content elements to tab order
+    @media (min-width: 768px), print {
+      > .main {
+        visibility: visible;
+      }
+    }
+  }
+
   // Overlay
   /* stylelint-disable max-nesting-depth */
   .is-open[data-slide-panel-panel-behavior='overlay'] {
@@ -151,6 +168,10 @@
   }
 
   .panel[aria-hidden='true'] {
+    visibility: hidden;
+  }
+
+  .main[aria-hidden='true'] {
     visibility: hidden;
   }
 }
