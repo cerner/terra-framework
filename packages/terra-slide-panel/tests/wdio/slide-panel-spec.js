@@ -161,7 +161,7 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       Terra.validates.element('panel with end position', { selector: '#root' });
 
       $('#test-toggle').click();
-      $('#test-slide [aria-hidden="false"]').waitForExist();
+      $('#panel-content').waitForExist();
       expect($('#panel-content').getText()).toEqual('Increase Count 1');
 
       Terra.validates.element('panel with start position', { selector: '#root' });
