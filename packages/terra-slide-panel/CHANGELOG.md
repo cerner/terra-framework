@@ -4,6 +4,8 @@
 
 * Added
   * Added roles and visually hidden text to slide panel.
+  * Added `mainAriaDescribedBy` and `replaceMainAriaDescribedBy` props to describe the main content area for screen readers.
+  * Added internationalization for built-in `aria-describedby` text.
 
 ## 3.38.1 - (April 12, 2023)
 

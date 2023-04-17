@@ -4,6 +4,7 @@
 
 * Added
   * Added programmatic context when slides are opened and closed.
+  * Added `mainAriaDescribedBy` and `replaceMainAriaDescribedBy` props to describe the main content area for screen readers.
 
 ## 5.67.0 - (April 12, 2023)
 

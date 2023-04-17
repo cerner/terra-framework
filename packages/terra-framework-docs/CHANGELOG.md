@@ -2,8 +2,11 @@
 
 ## Unreleased
 
+* Added
+  * Added `aria-describedby` tests for `terra-slide-panel-manager`.
 * Changed
   * Updated examples for `terra-slide-panel-manager`.
+  * Removed package-lock.json.
 
 ## 1.19.0 - (April 12, 2023)
 
