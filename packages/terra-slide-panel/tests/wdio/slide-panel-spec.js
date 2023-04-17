@@ -8,7 +8,7 @@ Terra.describeViewports('Slide panel', ['large'], () => {
 
   it('displays Slide panel fill', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-fill');
-    Terra.validates.element('fill');
+    Terra.validates.element('fill', { selector: '#root' });
   });
 
   it('displays Slide panel fullscreen', () => {
@@ -63,11 +63,11 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       $('#test-toggle').click();
       $('#test-slide [aria-hidden="false"]').waitForExist();
       browser.pause(150);
-      $('#panel-content').isFocused();
+      expect($('[aria-label="Panel content area"]').isFocused()).toBeTruthy();
 
       // On Tab Press focuses on the button inside the panel
       browser.keys(['Tab']);
-      $('#focus-button').isFocused();
+      expect($('#focus-button').isFocused()).toBeTruthy();
 
       Terra.validates.element('panel focused', { selector: '#root' });
     });
@@ -75,17 +75,17 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggle');
 
       browser.keys(['Tab']);
-      $('#test-toggle').isFocused();
+      expect($('#test-toggle').isFocused()).toBeTruthy();
       browser.keys(['Enter']);
       $('#test-slide [aria-hidden="false"]').waitForExist();
       browser.pause(150);
 
       browser.keys(['Tab']);
-      $('#focus-button').isFocused();
+      expect($('#focus-button').isFocused()).toBeTruthy();
       browser.keys(['Enter']);
       $('#test-slide [aria-hidden="true"]').waitForExist();
 
-      $('#test-toggle').isFocused();
+      expect($('#test-toggle').isFocused()).toBeTruthy();
 
       browser.pause(150);
 
@@ -100,32 +100,31 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       $('#focus-button').click();
       $('#test-slide [aria-hidden="true"]').waitForExist();
 
-      $('#test-toggle').isFocused();
-
       browser.pause(150);
-
+      
+      expect($('#test-toggle').isFocused()).toBeTruthy();
       Terra.validates.element('toggle button focused', { selector: '#root' });
     });
     it('Closes panel and focuses on toggle button with multiple buttons with keyboard controls', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-multiple-buttons-toggle');
 
       browser.keys(['Tab', 'Tab']);
-      $('#test-toggle').isFocused();
+      expect($('#test-toggle').isFocused()).toBeTruthy();
       browser.keys(['Enter']);
       $('#test-slide [aria-hidden="false"]').waitForExist();
       browser.pause(150);
 
       browser.keys(['Shift', 'Tab']);
-      $('#another-button').isFocused();
+      expect($('#another-button').isFocused()).toBeTruthy();
 
       browser.keys(['Tab', 'Tab']);
-      $('#focus-button').isFocused();
+      expect($('#focus-button').isFocused()).toBeTruthy();
       browser.keys(['Enter']);
       $('#test-slide [aria-hidden="true"]').waitForExist();
 
       browser.pause(150);
 
-      $('#test-toggle').isFocused();
+      expect($('#test-toggle').isFocused()).toBeTruthy();
 
       Terra.validates.element('toggle button focused with multiple buttons', { selector: '#root' });
     });
@@ -137,14 +136,14 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       browser.pause(150);
 
       browser.keys(['Shift', 'Tab']);
-      $('#another-button').isFocused();
+      expect($('#another-button').isFocused()).toBeTruthy();
 
       $('#focus-button').click();
       $('#test-slide [aria-hidden="true"]').waitForExist();
 
       browser.pause(150);
 
-      $('#test-toggle').isFocused();
+      expect($('#test-toggle').isFocused()).toBeTruthy();
 
       Terra.validates.element('toggle button focused with multiple buttons', { selector: '#root' });
     });
