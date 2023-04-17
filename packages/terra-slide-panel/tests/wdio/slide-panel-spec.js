@@ -153,16 +153,16 @@ Terra.describeViewports('Slide panel', ['large'], () => {
   describe('Toggle the slide panel side', () => {
     it('Switches panel side', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-side-toggle');
-      expect($('#test-slide [aria-hidden="false"]').getText()).toEqual('Increase Count 0');
+      expect($('#panel-content').getText()).toEqual('Increase Count 0');
 
       $('#focus-button').click();
-      expect($('#test-slide [aria-hidden="false"]').getText()).toEqual('Increase Count 1');
+      expect($('#panel-content').getText()).toEqual('Increase Count 1');
 
       Terra.validates.element('panel with end position', { selector: '#root' });
 
       $('#test-toggle').click();
       $('#test-slide [aria-hidden="false"]').waitForExist();
-      expect($('#test-slide [aria-hidden="false"]').getText()).toEqual('Increase Count 1');
+      expect($('#panel-content').getText()).toEqual('Increase Count 1');
 
       Terra.validates.element('panel with start position', { selector: '#root' });
     });

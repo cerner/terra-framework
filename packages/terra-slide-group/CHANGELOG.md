@@ -2,10 +2,14 @@
 
 ## Unreleased
 
+* Added
+  * Added programmatic context when opening and closing slides.
+  * Added focus for disclosed (nested) slides.
+
 ## 4.30.0 - (March 29, 2023)
 
 * Changed
-  * Updated to focus originating element when a slide is closed. 
+  * Updated to focus originating element when a slide is closed.
 
 ## 4.29.0 - (March 15, 2022)
 
