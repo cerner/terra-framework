@@ -77,9 +77,8 @@
     }
   }
 
-  // Focus trap
+  // Remove main content from tab order when it's covered by slide panel on narrow screen
   .is-open {
-    // Removes main content from tab access when it's covered by slide panel on narrow screen
     // max-width is set to 1 pixel less than "min-width: 768px" breakpoint to avoid the main content being invisible at width 768px when the panel has already moved to the side, as both max-width and max-width include that width
     @media (max-width: 767px), print {
       > .main {
