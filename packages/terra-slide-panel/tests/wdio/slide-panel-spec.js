@@ -101,7 +101,7 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       $('#test-slide [aria-hidden="true"]').waitForExist();
 
       browser.pause(150);
-      
+
       expect($('#test-toggle').isFocused()).toBeTruthy();
       Terra.validates.element('toggle button focused', { selector: '#root' });
     });

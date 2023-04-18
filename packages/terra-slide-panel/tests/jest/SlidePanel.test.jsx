@@ -109,7 +109,7 @@ describe('When a SlidePanel is rendered', () => {
       <SlidePanel panelBehavior="overlay" id="my-slide-panel" className="pad-this-slide-panel" data-test-attr="ahoy thar" />
     );
     const wrapper = renderWithIntl(slidePanel);
-  
+
     expect(wrapper).toMatchSnapshot();
   });
 });
@@ -118,31 +118,31 @@ describe('When mainAriaDescribedBy and replaceMainAriaDescribedBy are set', () =
   it('should construct aria-describedby when mainAriaDescribedBy has a single ID and replaceMainAriaDescribedBy is false', () => {
     const slidePanel = <SlidePanel mainAriaDescribedBy="patient-list" replaceMainAriaDescribedBy={false} />;
     const wrapper = shallowWithIntl(slidePanel).dive();
-  
+
     const mainDiv = wrapper.find('.main').prop('aria-describedby');
     expect(mainDiv).toEqual('detail-panel-warning patient-list');
   });
-  
+
   it('should construct aria-describedby when mainAriaDescribedBy has multiple IDs and replaceMainAriaDescribedBy is false', () => {
     const slidePanel = <SlidePanel mainAriaDescribedBy="patient-list-1 patient-list-2" replaceMainAriaDescribedBy={false} />;
     const wrapper = shallowWithIntl(slidePanel).dive();
-  
+
     const mainDiv = wrapper.find('.main').prop('aria-describedby');
     expect(mainDiv).toEqual('detail-panel-warning patient-list-1 patient-list-2');
   });
-  
+
   it('should construct aria-describedby when mainAriaDescribedBy has a single ID and replaceMainAriaDescribedBy is true', () => {
     const slidePanel = <SlidePanel mainAriaDescribedBy="patient-list" replaceMainAriaDescribedBy />;
     const wrapper = shallowWithIntl(slidePanel).dive();
-  
+
     const mainDiv = wrapper.find('.main').prop('aria-describedby');
     expect(mainDiv).toEqual('patient-list');
   });
-  
+
   it('should construct aria-describedby when mainAriaDescribedBy has multiple IDs and replaceMainAriaDescribedBy is true', () => {
     const slidePanel = <SlidePanel mainAriaDescribedBy="patient-list-1 patient-list-2" replaceMainAriaDescribedBy />;
     const wrapper = shallowWithIntl(slidePanel).dive();
-  
+
     const mainDiv = wrapper.find('.main').prop('aria-describedby');
     expect(mainDiv).toEqual('patient-list-1 patient-list-2');
   });
@@ -150,23 +150,22 @@ describe('When mainAriaDescribedBy and replaceMainAriaDescribedBy are set', () =
   it('should construct aria-describedby when mainAriaDescribedBy is undefined', () => {
     const slidePanel = <SlidePanel />;
     const wrapper = shallowWithIntl(slidePanel).dive();
-  
+
     const mainDiv = wrapper.find('.main').prop('aria-describedby');
     expect(mainDiv).toEqual('detail-panel-warning');
   });
 });
 
 describe('When custom props are used', () => {
-  
   it('should override user provided attributes that aren\'t className', () => {
     const slidePanel = (
       <SlidePanel panelBehavior="overlay" className="pad-this-slide-panel" data-test-attr="ahoy thar" data-slide-panel-panel-behavior="i am not good with slide panel" />
     );
     const wrapper = renderWithIntl(slidePanel);
-  
+
     expect(wrapper).toMatchSnapshot();
   });
-  
+
   it('correctly applies the theme context className', () => {
     const tabs = mountWithIntl(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
@@ -175,5 +174,4 @@ describe('When custom props are used', () => {
     );
     expect(tabs).toMatchSnapshot();
   });
-  
 });

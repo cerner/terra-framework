@@ -81,7 +81,7 @@ describe('SlidePanelManager', () => {
 
   it('should pass mainAriaDescribedBy and replaceMainAriaDescribedBy props to SlidePanel', () => {
     const slidePanelManager = (
-      <SlidePanelManager mainAriaDescribedBy="details-1" replaceMainAriaDescribedBy={true}>
+      <SlidePanelManager mainAriaDescribedBy="details-1" replaceMainAriaDescribedBy>
         <TestContainer id="test" />
       </SlidePanelManager>
     );
