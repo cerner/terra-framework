@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Updated component examples.
+  * Updated `notification-dialog` and `tabs` examples.
 
 ## 1.19.0 - (April 12, 2023)
 
