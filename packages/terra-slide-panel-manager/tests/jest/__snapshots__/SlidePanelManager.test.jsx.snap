@@ -131,13 +131,16 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
               focusRef={
                 <div
                   aria-hidden="false"
+                  aria-label="Terra.slidePanel.defaultPanelLabel"
                   class="panel"
                   role="region"
                   tabindex="-1"
                 >
                   <span
                     class="visually-hidden-text"
-                  />
+                  >
+                    Terra.slidePanel.defaultPanelLabel
+                  </span>
                   <div
                     class="content-container-fill"
                   >
@@ -259,13 +262,16 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                 focusRef={
                   <div
                     aria-hidden="false"
+                    aria-label="Terra.slidePanel.defaultPanelLabel"
                     class="panel"
                     role="region"
                     tabindex="-1"
                   >
                     <span
                       class="visually-hidden-text"
-                    />
+                    >
+                      Terra.slidePanel.defaultPanelLabel
+                    </span>
                     <div
                       class="content-container-fill"
                     >
@@ -385,15 +391,20 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
             </div>
             <div
               aria-hidden="false"
+              aria-label="Terra.slidePanel.defaultPanelLabel"
               className="panel"
               key="panel"
               role="region"
               tabIndex="-1"
             >
-              <VisuallyHiddenText>
+              <VisuallyHiddenText
+                text="Terra.slidePanel.defaultPanelLabel"
+              >
                 <span
                   className="visually-hidden-text"
-                />
+                >
+                  Terra.slidePanel.defaultPanelLabel
+                </span>
               </VisuallyHiddenText>
               <ContentContainer
                 fill={true}
@@ -418,13 +429,16 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                           focusRef={
                             <div
                               aria-hidden="false"
+                              aria-label="Terra.slidePanel.defaultPanelLabel"
                               class="panel"
                               role="region"
                               tabindex="-1"
                             >
                               <span
                                 class="visually-hidden-text"
-                              />
+                              >
+                                Terra.slidePanel.defaultPanelLabel
+                              </span>
                               <div
                                 class="content-container-fill"
                               >
@@ -536,13 +550,16 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                                     focusRef={
                                       <div
                                         aria-hidden="false"
+                                        aria-label="Terra.slidePanel.defaultPanelLabel"
                                         class="panel"
                                         role="region"
                                         tabindex="-1"
                                       >
                                         <span
                                           class="visually-hidden-text"
-                                        />
+                                        >
+                                          Terra.slidePanel.defaultPanelLabel
+                                        </span>
                                         <div
                                           class="content-container-fill"
                                         >
@@ -736,13 +753,16 @@ exports[`SlidePanelManager should pass mainAriaDescribedBy and replaceMainAriaDe
               focusRef={
                 <div
                   aria-hidden="false"
+                  aria-label="Terra.slidePanel.defaultPanelLabel"
                   class="panel"
                   role="region"
                   tabindex="-1"
                 >
                   <span
                     class="visually-hidden-text"
-                  />
+                  >
+                    Terra.slidePanel.defaultPanelLabel
+                  </span>
                   <div
                     class="content-container-fill"
                   >
@@ -866,13 +886,16 @@ exports[`SlidePanelManager should pass mainAriaDescribedBy and replaceMainAriaDe
                 focusRef={
                   <div
                     aria-hidden="false"
+                    aria-label="Terra.slidePanel.defaultPanelLabel"
                     class="panel"
                     role="region"
                     tabindex="-1"
                   >
                     <span
                       class="visually-hidden-text"
-                    />
+                    >
+                      Terra.slidePanel.defaultPanelLabel
+                    </span>
                     <div
                       class="content-container-fill"
                     >
@@ -992,15 +1015,20 @@ exports[`SlidePanelManager should pass mainAriaDescribedBy and replaceMainAriaDe
             </div>
             <div
               aria-hidden="false"
+              aria-label="Terra.slidePanel.defaultPanelLabel"
               className="panel"
               key="panel"
               role="region"
               tabIndex="-1"
             >
-              <VisuallyHiddenText>
+              <VisuallyHiddenText
+                text="Terra.slidePanel.defaultPanelLabel"
+              >
                 <span
                   className="visually-hidden-text"
-                />
+                >
+                  Terra.slidePanel.defaultPanelLabel
+                </span>
               </VisuallyHiddenText>
               <ContentContainer
                 fill={true}
@@ -1025,13 +1053,16 @@ exports[`SlidePanelManager should pass mainAriaDescribedBy and replaceMainAriaDe
                           focusRef={
                             <div
                               aria-hidden="false"
+                              aria-label="Terra.slidePanel.defaultPanelLabel"
                               class="panel"
                               role="region"
                               tabindex="-1"
                             >
                               <span
                                 class="visually-hidden-text"
-                              />
+                              >
+                                Terra.slidePanel.defaultPanelLabel
+                              </span>
                               <div
                                 class="content-container-fill"
                               >
@@ -1143,13 +1174,16 @@ exports[`SlidePanelManager should pass mainAriaDescribedBy and replaceMainAriaDe
                                     focusRef={
                                       <div
                                         aria-hidden="false"
+                                        aria-label="Terra.slidePanel.defaultPanelLabel"
                                         class="panel"
                                         role="region"
                                         tabindex="-1"
                                       >
                                         <span
                                           class="visually-hidden-text"
-                                        />
+                                        >
+                                          Terra.slidePanel.defaultPanelLabel
+                                        </span>
                                         <div
                                           class="content-container-fill"
                                         >
@@ -1451,15 +1485,20 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
             </div>
             <div
               aria-hidden="true"
+              aria-label="Terra.slidePanel.defaultPanelLabel"
               className="panel"
               key="panel"
               role="region"
               tabIndex="-1"
             >
-              <VisuallyHiddenText>
+              <VisuallyHiddenText
+                text="Terra.slidePanel.defaultPanelLabel"
+              >
                 <span
                   className="visually-hidden-text"
-                />
+                >
+                  Terra.slidePanel.defaultPanelLabel
+                </span>
               </VisuallyHiddenText>
               <ContentContainer
                 fill={true}
@@ -1710,15 +1749,20 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
             </div>
             <div
               aria-hidden="true"
+              aria-label="Terra.slidePanel.defaultPanelLabel"
               className="panel"
               key="panel"
               role="region"
               tabIndex="-1"
             >
-              <VisuallyHiddenText>
+              <VisuallyHiddenText
+                text="Terra.slidePanel.defaultPanelLabel"
+              >
                 <span
                   className="visually-hidden-text"
-                />
+                >
+                  Terra.slidePanel.defaultPanelLabel
+                </span>
               </VisuallyHiddenText>
               <ContentContainer
                 fill={true}
@@ -1962,15 +2006,20 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
             </div>
             <div
               aria-hidden="true"
+              aria-label="Terra.slidePanel.defaultPanelLabel"
               className="panel"
               key="panel"
               role="region"
               tabIndex="-1"
             >
-              <VisuallyHiddenText>
+              <VisuallyHiddenText
+                text="Terra.slidePanel.defaultPanelLabel"
+              >
                 <span
                   className="visually-hidden-text"
-                />
+                >
+                  Terra.slidePanel.defaultPanelLabel
+                </span>
               </VisuallyHiddenText>
               <ContentContainer
                 fill={true}
@@ -2214,15 +2263,20 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
             </div>
             <div
               aria-hidden="true"
+              aria-label="Terra.slidePanel.defaultPanelLabel"
               className="panel"
               key="panel"
               role="region"
               tabIndex="-1"
             >
-              <VisuallyHiddenText>
+              <VisuallyHiddenText
+                text="Terra.slidePanel.defaultPanelLabel"
+              >
                 <span
                   className="visually-hidden-text"
-                />
+                >
+                  Terra.slidePanel.defaultPanelLabel
+                </span>
               </VisuallyHiddenText>
               <ContentContainer
                 fill={true}
