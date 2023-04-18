@@ -1,9 +1,8 @@
 {
   "Terra.menu.back": "Zurück",
   "Terra.menu.close": "Schließen",
-  "Terra.menu.exitSubmenu": "Drücken Sie die linke Pfeiltaste oder navigieren Sie zur Schaltfläche 'Zurück', um das Untermenü zu verlassen.",
-  "Terra.menu.selected": "Ausgewählt",
-  "Terra.menu.unselected": "Auswahl aufgehoben",
-  "Terra.menu.itemWithSubmenu": "mit Elementen des Untermenüs",
-  "Terra.menu.index": "({index} von {totalItems})"
+  "Terra.menu.exitSubmenu": ",Drücken Sie die linke Pfeiltaste oder navigieren Sie zur Schaltfläche 'Zurück', um das Untermenü zu verlassen.",
+  "Terra.menu.selected": ",Ausgewählt",
+  "Terra.menu.unselected": ",Auswahl aufgehoben",
+  "Terra.menu.itemWithSubmenu": ",mit Elementen des Untermenüs"
 }

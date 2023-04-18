@@ -1,9 +1,8 @@
 {
   "Terra.menu.back": "Retroceder",
   "Terra.menu.close": "Cerrar",
-  "Terra.menu.exitSubmenu": "para salir del submenú presione la flecha Izquierda o navegue al botón Volver",
-  "Terra.menu.selected": "seleccionado",
-  "Terra.menu.unselected": "no seleccionado",
-  "Terra.menu.itemWithSubmenu": "con elementos del submenú",
-  "Terra.menu.index": "({index} de {totalItems})"
+  "Terra.menu.exitSubmenu": ",para salir del submenú presione la flecha Izquierda o navegue al botón Volver",
+  "Terra.menu.selected": ",seleccionado",
+  "Terra.menu.unselected": ",no seleccionado",
+  "Terra.menu.itemWithSubmenu": ",con elementos del submenú"
 }

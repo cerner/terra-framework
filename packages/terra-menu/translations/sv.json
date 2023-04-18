@@ -4,6 +4,5 @@
   "Terra.menu.exitSubmenu": "för att stänga undermenyn trycker du på vänsterpilen eller navigerar till knappen Tillbaka",
   "Terra.menu.selected": "valt",
   "Terra.menu.unselected": "ej valt",
-  "Terra.menu.itemWithSubmenu": "med undermenykommandon",
-  "Terra.menu.index": "({index} av {totalItems})"
+  "Terra.menu.itemWithSubmenu": "med undermenykommandon"
 }

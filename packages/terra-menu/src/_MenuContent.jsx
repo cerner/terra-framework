@@ -335,7 +335,6 @@ class MenuContent extends React.Component {
 
   render() {
     let index = -1;
-    const totalItems = MenuUtils.totalItems(this.props.children);
     let shouldDisplayMainMenuHeader;
     const items = this.props.children ? [] : undefined;
 
@@ -353,8 +352,6 @@ class MenuContent extends React.Component {
           onClick,
           onKeyDown,
           isActive,
-          index,
-          totalItems,
           intl: this.props.intl,
         });
         // If the menu is first-tier and is provided with `headerTitle` prop, terra-menu should render a header.
@@ -371,8 +368,6 @@ class MenuContent extends React.Component {
             const clonedElement = React.cloneElement(child, {
               onKeyDown: this.wrapOnKeyDown(child, index),
               isActive: index === this.state.focusIndex,
-              index,
-              totalItems,
               intl: this.props.intl,
             });
             children.push(clonedElement);

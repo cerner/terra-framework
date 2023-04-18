@@ -453,7 +453,6 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                 role="menu"
                                               >
                                                 <InjectIntl(MenuItem)
-                                                  index={0}
                                                   intl={
                                                     Object {
                                                       "defaultFormats": Object {},
@@ -486,10 +485,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                   onClick={[Function]}
                                                   onKeyDown={[Function]}
                                                   text="testing"
-                                                  totalItems={1}
                                                 >
                                                   <MenuItem
-                                                    index={0}
                                                     intl={
                                                       Object {
                                                         "defaultFormats": Object {},
@@ -526,7 +523,6 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                     onKeyDown={[Function]}
                                                     subMenuItems={Array []}
                                                     text="testing"
-                                                    totalItems={1}
                                                   >
                                                     <li
                                                       aria-disabled={false}
