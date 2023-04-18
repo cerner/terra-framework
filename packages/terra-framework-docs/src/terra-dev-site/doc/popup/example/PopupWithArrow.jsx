@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
-import { Placeholder } from '@cerner/terra-docs';
+import FilterPills, { Pill } from '@cerner/terra-pills';
 
 function PopupArrow() {
   const buttonElement = useRef();
@@ -21,16 +21,48 @@ function PopupArrow() {
     setOpen(false);
   };
 
+  const pillsData = [
+    {
+      label: 'Menu Option-1',
+      id: 'terra-filter-pills-option1',
+    },
+    {
+      label: 'Menu Option-2',
+      id: 'terra-filter-pills-option1',
+    },
+  ];
+  const [pills, setPills] = useState(pillsData);
+
+  const handleOnRemove = (id, metaData) => {
+    const pillsArray = pills;
+    pillsArray.splice(metaData.index, 1);
+    setPills([...pillsArray]);
+  };
+
   return (
     <React.Fragment>
-      <Button text="Arrow Popup" onClick={handleButtonClick} refCallback={setButtonNode} />
+      <Button text="Show More Options" onClick={handleButtonClick} refCallback={setButtonNode} />
       <Popup
         isOpen={open}
         onRequestClose={handleRequestClose}
         targetRef={getButtonNode}
         isArrowDisplayed
       >
-        <Placeholder title="Popup Content" />
+
+        <FilterPills
+          onRemove={handleOnRemove}
+        >
+          {pills.map((pill, index) => (
+            <Pill
+              label={pill.label}
+              labelCategory={pill.labelCategory}
+              id={pill.id}
+              key={pill.id}
+              metaData={{ index }}
+            />
+          ))}
+        </FilterPills>
+
       </Popup>
     </React.Fragment>
   );

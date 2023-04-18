@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+*Changed
+  * Updated examples for `terra-popup`.
+
 * Changed
   * Updated `notification-dialog` and `tabs` examples.
   * Updated examples for `terra-slide-panel-manager`.
