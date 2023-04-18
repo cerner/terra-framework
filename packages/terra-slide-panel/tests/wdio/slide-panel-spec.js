@@ -177,4 +177,19 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       expect($('[aria-label="Main content area"]').isFocused()).toBeTruthy();
     });
   });
+
+  describe('Main content is not focusable when fullscreen panel is open', () => {
+    it('Tabs back out of panel content and does not select main content button element', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggled-on-fullscreen');
+
+      $('#test-slide [aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
+      browser.keys(['Tab']);
+
+      expect($('#close-panel-button').isFocused()).toBeTruthy();
+      browser.keys(['Shift', 'Tab']);
+
+      expect($('#close-panel-button').isFocused()).toBeFalsy();
+      expect($('#toggle-panel-button').isFocused()).toBeFalsy();
+    });
+  });
 });
