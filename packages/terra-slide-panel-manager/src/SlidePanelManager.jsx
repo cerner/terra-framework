@@ -42,15 +42,6 @@ const propTypes = {
     * The aria label for the main region.
     */
   mainAriaLabel: PropTypes.string,
-  /**
-   * An ID or space-separated string of IDs that describe the Main content area for screen readers.
-   * Example: "patient-details" or "patient-details-1 patient-details-2 patient-details-3" are valid.
-   */
-  mainAriaDescribedBy: PropTypes.string,
-  /**
-   * Whether the mainAriaDescribedBy should replace the default or be appended to it.
-   */
-  replaceMainAriaDescribedBy: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -97,8 +88,6 @@ class SlidePanelManager extends React.Component {
       withDisclosureContainer,
       mainAriaLabel,
       panelAriaLabel,
-      mainAriaDescribedBy,
-      replaceMainAriaDescribedBy,
       ...customProps
     } = this.props;
 
@@ -153,8 +142,6 @@ class SlidePanelManager extends React.Component {
         )}
         panelAriaLabel={headerDataForPresentedComponent?.title || panelAriaLabel}
         mainAriaLabel={mainAriaLabel}
-        mainAriaDescribedBy={mainAriaDescribedBy}
-        replaceMainAriaDescribedBy={replaceMainAriaDescribedBy}
         mainContent={manager.children.components}
       />
     );

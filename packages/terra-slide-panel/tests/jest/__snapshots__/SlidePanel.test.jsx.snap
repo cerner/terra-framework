@@ -594,7 +594,6 @@ exports[`When custom props are used correctly applies the theme context classNam
       panelBehavior="overlay"
       panelPosition="end"
       panelSize="small"
-      replaceMainAriaDescribedBy={false}
     >
       <div
         className="slide-panel orion-fusion-theme"

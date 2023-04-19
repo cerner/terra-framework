@@ -27,17 +27,6 @@ const propTypes = {
   mainAriaLabel: PropTypes.string,
 
   /**
-   * An ID or space-separated string of IDs that describe the Main content area for screen readers. For MacOS VoiceOver only.
-   * Example: "patient-details" or "patient-details-1 patient-details-2 patient-details-3" are valid.
-   */
-  mainAriaDescribedBy: PropTypes.string,
-
-  /**
-   * Whether the mainAriaDescribedBy should replace the default or be appended to it. For   MacOS VoiceOver only.
-   */
-  replaceMainAriaDescribedBy: PropTypes.bool,
-
-  /**
    * The component to display in the main content area.
    */
   mainContent: PropTypes.node,
@@ -94,7 +83,6 @@ const defaultProps = {
   panelBehavior: 'overlay',
   panelPosition: SlidePanelPositions.END,
   panelSize: 'small',
-  replaceMainAriaDescribedBy: false,
 };
 
 class SlidePanel extends React.Component {
@@ -104,18 +92,7 @@ class SlidePanel extends React.Component {
     this.mainNode = React.createRef();
     this.setLastClicked = this.setLastClicked.bind(this);
     this.setDisclosingNode = this.setDisclosingNode.bind(this);
-    this.defaultMainAriaDescribedByID = 'detail-panel-warning';
-    this.mainAriaDescribedByList = this.defaultMainAriaDescribedByID;
-
-    if(SlidePanelUtils.isMac()){
-
-      if (this.props.replaceMainAriaDescribedBy) {
-        this.mainAriaDescribedByList = this.props.mainAriaDescribedBy;
-      } else if (this.props.mainAriaDescribedBy) {
-        this.mainAriaDescribedByList = this.mainAriaDescribedByList.concat(' ', this.props.mainAriaDescribedBy);
-      }
-
-    }
+    this.mainAriaDescribedByID = 'detail-panel-warning';
   }
 
   componentDidUpdate(prevProps) {
@@ -162,7 +139,6 @@ class SlidePanel extends React.Component {
       isFullscreen,
       isOpen,
       fill,
-      mainAriaDescribedBy,
       mainAriaLabel,
       mainContent,
       panelAriaLabel,
@@ -170,7 +146,6 @@ class SlidePanel extends React.Component {
       panelBehavior,
       panelPosition,
       panelSize,
-      replaceMainAriaDescribedBy,
       setSlidePanelRef,
       ...customProps
     } = this.props;
@@ -210,7 +185,7 @@ class SlidePanel extends React.Component {
         key="main"
         tabIndex="-1"
         aria-label={mainAriaLabel}
-        aria-describedby={this.mainAriaDescribedByList}
+        aria-describedby={this.mainAriaDescribedByID}
         ref={this.mainNode}
         role="main"
         onClick={this.setLastClicked}
@@ -218,7 +193,7 @@ class SlidePanel extends React.Component {
       >
         <VisuallyHiddenText
           tabIndex="-1"
-          id={this.defaultMainAriaDescribedByID}
+          id={this.mainAriaDescribedByID}
           text={intl.formatMessage({ id: 'Terra.slidePanel.discloseWarning' })}
         />
         {mainContent}

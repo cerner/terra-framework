@@ -2,7 +2,10 @@ import React from 'react';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl, renderWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import { IntlProvider } from 'react-intl';
 import SlidePanel from '../../src/SlidePanel';
+import fs from 'fs';
+import translationsFile from '../../translations/en.json';
 
 describe('When a SlidePanel is rendered', () => {
   it('should render a default SlidePanel with no props', () => {
@@ -112,47 +115,22 @@ describe('When a SlidePanel is rendered', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
-});
 
-describe('When mainAriaDescribedBy and replaceMainAriaDescribedBy are set', () => {
-  it('should construct aria-describedby when mainAriaDescribedBy has a single ID and replaceMainAriaDescribedBy is false', () => {
-    const slidePanel = <SlidePanel mainAriaDescribedBy="patient-list" replaceMainAriaDescribedBy={false} />;
-    const wrapper = shallowWithIntl(slidePanel).dive();
-
-    const mainDiv = wrapper.find('.main').prop('aria-describedby');
-    expect(mainDiv).toEqual('detail-panel-warning patient-list');
-  });
-
-  it('should construct aria-describedby when mainAriaDescribedBy has multiple IDs and replaceMainAriaDescribedBy is false', () => {
-    const slidePanel = <SlidePanel mainAriaDescribedBy="patient-list-1 patient-list-2" replaceMainAriaDescribedBy={false} />;
-    const wrapper = shallowWithIntl(slidePanel).dive();
-
-    const mainDiv = wrapper.find('.main').prop('aria-describedby');
-    expect(mainDiv).toEqual('detail-panel-warning patient-list-1 patient-list-2');
-  });
-
-  it('should construct aria-describedby when mainAriaDescribedBy has a single ID and replaceMainAriaDescribedBy is true', () => {
-    const slidePanel = <SlidePanel mainAriaDescribedBy="patient-list" replaceMainAriaDescribedBy />;
-    const wrapper = shallowWithIntl(slidePanel).dive();
-
-    const mainDiv = wrapper.find('.main').prop('aria-describedby');
-    expect(mainDiv).toEqual('patient-list');
-  });
-
-  it('should construct aria-describedby when mainAriaDescribedBy has multiple IDs and replaceMainAriaDescribedBy is true', () => {
-    const slidePanel = <SlidePanel mainAriaDescribedBy="patient-list-1 patient-list-2" replaceMainAriaDescribedBy />;
-    const wrapper = shallowWithIntl(slidePanel).dive();
-
-    const mainDiv = wrapper.find('.main').prop('aria-describedby');
-    expect(mainDiv).toEqual('patient-list-1 patient-list-2');
-  });
-
-  it('should construct aria-describedby when mainAriaDescribedBy is undefined', () => {
+  it('should contain a Visually Hidden Text as the aria-describedby target', () => {
     const slidePanel = <SlidePanel />;
     const wrapper = shallowWithIntl(slidePanel).dive();
 
-    const mainDiv = wrapper.find('.main').prop('aria-describedby');
-    expect(mainDiv).toEqual('detail-panel-warning');
+    const mainDiv = wrapper.find('#detail-panel-warning').prop('text');
+    expect(mainDiv).toEqual('Terra.slidePanel.discloseWarning');
+  });
+
+  it('should set the text property of Visually Hidden Text from ./translations', () => {
+
+    const slidePanel = <IntlProvider locale="en" messages={translationsFile}><SlidePanel /></IntlProvider>;
+    const wrapper = shallowWithIntl(slidePanel).dive().dive();
+      
+    const mainDiv = wrapper.find('#detail-panel-warning').prop('text');
+    expect(mainDiv).toEqual(translationsFile["Terra.slidePanel.discloseWarning"]);
   });
 });
 
