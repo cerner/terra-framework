@@ -12,6 +12,7 @@ import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import * as KeyCode from 'keycode-js';
 import styles from './MenuItem.module.scss';
+import MenuUtils from './_MenuUtils';
 
 const cx = classNamesBind.bind(styles);
 
@@ -107,6 +108,16 @@ const propTypes = {
    * Indicates if the item should display with a highlighted background. Reserved for Terra higher-order component approved usage only.
    */
   isHighlighted: PropTypes.bool,
+  /**
+   * @private
+   * The index of the menu item.
+   */
+  index: PropTypes.number,
+  /**
+   * @private
+   * Number of items in the menu.
+   */
+  totalItems: PropTypes.number,
   /**
    * @private
    * The intl object to be injected for translations. Provided by the injectIntl function.
@@ -236,6 +247,8 @@ class MenuItem extends React.Component {
       isActive,
       icon,
       isHighlighted,
+      index,
+      totalItems,
       intl,
       ...customProps
     } = this.props;
@@ -287,7 +300,8 @@ class MenuItem extends React.Component {
 
     const screenReaderResponse = (
       <>
-        {(isGroupItem || toggleable) && <VisuallyHiddenText text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
+        { MenuUtils.isMac() && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.index' }, { index: index + 1, totalItems })} /> }
+        { MenuUtils.isMac() && (isGroupItem || toggleable) && <VisuallyHiddenText text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
         {/* Adds context for item with submenu-items */}
         { subMenuItems.length > 0 && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.itemWithSubmenu' })} /> }
         {/* Adds context for navigating back to parent menu from submenu */}
@@ -332,10 +346,17 @@ class MenuItem extends React.Component {
       );
     }
 
+    let role = 'menuitem';
+    if (isGroupItem) {
+      role = 'menuitemradio';
+    } else if (toggleable) {
+      role = 'menuitemcheckbox';
+    }
+
     return (
       <ThemeContext.Consumer>
         { theme => (
-          <li {...attributes} className={classNames(itemClassNames, cx(theme.className))} ref={this.setItemNode} role="menuitem">
+          <li {...attributes} className={classNames(itemClassNames, cx(theme.className))} ref={this.setItemNode} role={role} aria-checked={markAsToggled}>
             {content}
           </li>
         )}

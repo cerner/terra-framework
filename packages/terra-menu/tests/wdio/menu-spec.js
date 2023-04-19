@@ -52,9 +52,9 @@ Terra.describeViewports('Menu', ['medium'], () => {
   it('displays a Menu-Selectable', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/selectable-menu');
     $('#selectable-menu-button').click();
-    $('li:first-child[role="menuitem"]').isFocused();
+    $('li:first-child[role="menuitemradio"]').isFocused();
     $('.TestGroupItem3').click();
-    $('li:last-child[aria-checked="true"][role="menuitem"]').isFocused();
+    $('li:last-child[aria-checked="true"][role="menuitemradio"]').isFocused();
 
     Terra.validates.element('selectable', { selector: '#root', rules: ignoredA11y });
   });
