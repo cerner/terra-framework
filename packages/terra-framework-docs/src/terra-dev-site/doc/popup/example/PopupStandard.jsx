@@ -31,7 +31,7 @@ function PopupStandard() {
 
   return (
     <React.Fragment>
-      <Button text="Default Popup" onClick={handleButtonClick} refCallback={setButtonNode} title="This is a pop up" />
+      <Button text="Patient Details" onClick={handleButtonClick} refCallback={setButtonNode} title="This is a pop up" />
       <Popup
         isOpen={open}
         targetRef={getButtonNode}
