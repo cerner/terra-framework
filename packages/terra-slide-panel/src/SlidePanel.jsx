@@ -6,6 +6,7 @@ import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { injectIntl } from 'react-intl';
 import styles from './SlidePanel.module.scss';
+import SlidePanelUtils from './_SlidePanelUtils';
 
 const cx = classNamesBind.bind(styles);
 
@@ -26,13 +27,13 @@ const propTypes = {
   mainAriaLabel: PropTypes.string,
 
   /**
-   * An ID or space-separated string of IDs that describe the Main content area for screen readers.
+   * An ID or space-separated string of IDs that describe the Main content area for screen readers. For MacOS VoiceOver only.
    * Example: "patient-details" or "patient-details-1 patient-details-2 patient-details-3" are valid.
    */
   mainAriaDescribedBy: PropTypes.string,
 
   /**
-   * Whether the mainAriaDescribedBy should replace the default or be appended to it.
+   * Whether the mainAriaDescribedBy should replace the default or be appended to it. For   MacOS VoiceOver only.
    */
   replaceMainAriaDescribedBy: PropTypes.bool,
 
@@ -106,10 +107,14 @@ class SlidePanel extends React.Component {
     this.defaultMainAriaDescribedByID = 'detail-panel-warning';
     this.mainAriaDescribedByList = this.defaultMainAriaDescribedByID;
 
-    if (this.props.replaceMainAriaDescribedBy) {
-      this.mainAriaDescribedByList = this.props.mainAriaDescribedBy;
-    } else if (this.props.mainAriaDescribedBy) {
-      this.mainAriaDescribedByList = this.mainAriaDescribedByList.concat(' ', this.props.mainAriaDescribedBy);
+    if(SlidePanelUtils.isMac()){
+
+      if (this.props.replaceMainAriaDescribedBy) {
+        this.mainAriaDescribedByList = this.props.mainAriaDescribedBy;
+      } else if (this.props.mainAriaDescribedBy) {
+        this.mainAriaDescribedByList = this.mainAriaDescribedByList.concat(' ', this.props.mainAriaDescribedBy);
+      }
+
     }
   }
 
