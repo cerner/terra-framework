@@ -1,7 +1,8 @@
 # Changelog
 
 ## Unreleased
-
+* Changed
+  * Changed ariaLabel to a11yLabel in TabMenuDisplay
 ## 6.63.0 - (March 29, 2023)
 
 * Changed
