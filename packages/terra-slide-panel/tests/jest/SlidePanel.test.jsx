@@ -4,7 +4,6 @@ import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import { shallowWithIntl, renderWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import { IntlProvider } from 'react-intl';
 import SlidePanel from '../../src/SlidePanel';
-import fs from 'fs';
 import translationsFile from '../../translations/en.json';
 
 describe('When a SlidePanel is rendered', () => {
@@ -125,12 +124,11 @@ describe('When a SlidePanel is rendered', () => {
   });
 
   it('should set the text property of Visually Hidden Text from ./translations', () => {
-
     const slidePanel = <IntlProvider locale="en" messages={translationsFile}><SlidePanel /></IntlProvider>;
     const wrapper = shallowWithIntl(slidePanel).dive().dive();
-      
+
     const mainDiv = wrapper.find('#detail-panel-warning').prop('text');
-    expect(mainDiv).toEqual(translationsFile["Terra.slidePanel.discloseWarning"]);
+    expect(mainDiv).toEqual(translationsFile['Terra.slidePanel.discloseWarning']);
   });
 });
 
