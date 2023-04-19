@@ -46,6 +46,7 @@ Cerner Corporation
 - Gage Phillips [@gagerdude]
 - Art Parkeenvincha [@artpark]
 - Andrew Tran [@trandrew1023]
+- Scot Rossman [@ScotRossman]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -93,3 +94,4 @@ Cerner Corporation
 [@gagerdude]: https://github.com/gagerdude
 [@artpark]: https://github.com/artpark
 [@trandrew1023]: https://github.com/trandrew1023
+[@ScotRossman]: https://github.com/ScotRossman
