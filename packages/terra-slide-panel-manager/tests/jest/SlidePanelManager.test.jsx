@@ -79,33 +79,6 @@ describe('SlidePanelManager', () => {
       });
   });
 
-  it('should pass mainAriaDescribedBy and replaceMainAriaDescribedBy props to SlidePanel', () => {
-    const slidePanelManager = (
-      <SlidePanelManager mainAriaDescribedBy="details-1" replaceMainAriaDescribedBy>
-        <TestContainer id="test" />
-      </SlidePanelManager>
-    );
-
-    const wrapper = mountWithIntl(slidePanelManager);
-
-    return new Promise((resolve, reject) => {
-      const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;
-      childDisclosureManager.disclose({
-        preferredType: 'panel',
-        size: 'large',
-        content: {
-          key: 'DISCLOSE_KEY',
-          component: <TestContainer id="test-panel" />,
-        },
-      }).then(resolve).catch(reject);
-    })
-      .then(() => {
-        wrapper.update();
-
-        expect(wrapper).toMatchSnapshot();
-      });
-  });
-
   it('should disclose content in Modal wrapped by disclose container', () => {
     const slidePanelManager = (
       <SlidePanelManager withDisclosureContainer={(wrappedContent) => (<div id="disclosure-container">{wrappedContent}</div>)}>

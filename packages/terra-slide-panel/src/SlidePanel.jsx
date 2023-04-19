@@ -6,7 +6,6 @@ import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { injectIntl } from 'react-intl';
 import styles from './SlidePanel.module.scss';
-import SlidePanelUtils from './_SlidePanelUtils';
 
 const cx = classNamesBind.bind(styles);
 
