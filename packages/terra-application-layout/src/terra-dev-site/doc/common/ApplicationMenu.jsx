@@ -52,11 +52,11 @@ class ApplicationMenu extends React.Component {
         footer={(
           <div className={cx('footer')}>
             <Button
-              text="Custom Event 1"
+              text="Layouts"
               isBlock
               onClick={() => {
                 const evt = document.createEvent('CustomEvent');
-                evt.initCustomEvent('applicationMenu.itemSelected', false, false, 'Custom Event 1');
+                evt.initCustomEvent('applicationMenu.itemSelected', false, false, 'Layouts');
                 document.dispatchEvent(evt);
 
                 if (layoutConfig && layoutConfig.toggleMenu) {
@@ -66,11 +66,11 @@ class ApplicationMenu extends React.Component {
               className={cx('custom-event-button')}
             />
             <Button
-              text="Custom Event 2"
+              text="Themes"
               isBlock
               onClick={() => {
                 const evt = document.createEvent('CustomEvent');
-                evt.initCustomEvent('applicationMenu.itemSelected', false, false, 'Custom Event 2');
+                evt.initCustomEvent('applicationMenu.itemSelected', false, false, 'Themes');
                 document.dispatchEvent(evt);
 
                 if (layoutConfig && layoutConfig.toggleMenu) {

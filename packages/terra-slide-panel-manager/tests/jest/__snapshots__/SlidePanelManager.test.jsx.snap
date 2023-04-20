@@ -209,6 +209,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
         panelSize="large"
         setSlidePanelRef={[Function]}
       >
+<<<<<<< HEAD
         <SlidePanel
           fill={true}
           intl={
@@ -244,6 +245,31 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
               value={
                 DisclosureManagerDelegateInstance {
                   "disclose": [Function],
+=======
+        <div
+          className="slide-panel is-open fill"
+          data-slide-panel-panel-behavior="overlay"
+          data-slide-panel-panel-position="end"
+          data-slide-panel-panel-size="large"
+        >
+          <div
+            aria-hidden="false"
+            className="main"
+            key="main"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            role="main"
+            tabIndex="-1"
+          >
+            <withDisclosureManager(Component)
+              id="test"
+            >
+              <Component
+                disclosureManager={
+                  DisclosureManagerDelegateInstance {
+                    "disclose": [Function],
+                  }
+>>>>>>> main
                 }
               }
             >
@@ -759,6 +785,7 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
           className="test"
           fill={true}
           id="my-slide-panel-manager"
+<<<<<<< HEAD
           intl={
             Object {
               "defaultFormats": Object {},
@@ -792,6 +819,24 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
               value={
                 DisclosureManagerDelegateInstance {
                   "disclose": [Function],
+=======
+        >
+          <div
+            aria-hidden="false"
+            className="main"
+            key="main"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            role="main"
+            tabIndex="-1"
+          >
+            <withDisclosureManager(Component)>
+              <Component
+                disclosureManager={
+                  DisclosureManagerDelegateInstance {
+                    "disclose": [Function],
+                  }
+>>>>>>> main
                 }
               }
             >
@@ -1022,6 +1067,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
           className="test"
           fill={true}
           id="my-slide-panel-manager"
+<<<<<<< HEAD
           intl={
             Object {
               "defaultFormats": Object {},
@@ -1055,6 +1101,24 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
               value={
                 DisclosureManagerDelegateInstance {
                   "disclose": [Function],
+=======
+        >
+          <div
+            aria-hidden="false"
+            className="main"
+            key="main"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            role="main"
+            tabIndex="-1"
+          >
+            <withDisclosureManager(Component)>
+              <Component
+                disclosureManager={
+                  DisclosureManagerDelegateInstance {
+                    "disclose": [Function],
+                  }
+>>>>>>> main
                 }
               }
             >
@@ -1277,6 +1341,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
         }
         setSlidePanelRef={[Function]}
       >
+<<<<<<< HEAD
         <SlidePanel
           fill={true}
           intl={
@@ -1312,6 +1377,29 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
               value={
                 DisclosureManagerDelegateInstance {
                   "disclose": [Function],
+=======
+        <div
+          className="slide-panel fill"
+          data-slide-panel-panel-behavior="overlay"
+          data-slide-panel-panel-position="end"
+          data-slide-panel-panel-size="small"
+        >
+          <div
+            aria-hidden="false"
+            className="main"
+            key="main"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            role="main"
+            tabIndex="-1"
+          >
+            <withDisclosureManager(Component)>
+              <Component
+                disclosureManager={
+                  DisclosureManagerDelegateInstance {
+                    "disclose": [Function],
+                  }
+>>>>>>> main
                 }
               }
             >
@@ -1533,6 +1621,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
         }
         setSlidePanelRef={[Function]}
       >
+<<<<<<< HEAD
         <SlidePanel
           fill={true}
           intl={
@@ -1568,6 +1657,29 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
               value={
                 DisclosureManagerDelegateInstance {
                   "disclose": [Function],
+=======
+        <div
+          className="slide-panel fill"
+          data-slide-panel-panel-behavior="squish"
+          data-slide-panel-panel-position="end"
+          data-slide-panel-panel-size="small"
+        >
+          <div
+            aria-hidden="false"
+            className="main"
+            key="main"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            role="main"
+            tabIndex="-1"
+          >
+            <withDisclosureManager(Component)>
+              <Component
+                disclosureManager={
+                  DisclosureManagerDelegateInstance {
+                    "disclose": [Function],
+                  }
+>>>>>>> main
                 }
               }
             >

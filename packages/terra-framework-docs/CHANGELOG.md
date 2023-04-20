@@ -3,7 +3,11 @@
 ## Unreleased
 
 * Changed
+  * Updated `notification-dialog` and `tabs` examples.
   * Updated examples for `terra-slide-panel-manager`.
+
+* Added
+  * Added a `terra-slide-panel` example where the panel is open on page load and fullscreen.
 
 ## 1.19.0 - (April 12, 2023)
 

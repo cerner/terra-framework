@@ -77,6 +77,16 @@
     }
   }
 
+  // Remove main content from tab order when it's covered by slide panel on narrow screen
+  .is-open {
+    // max-width is set to 1 pixel less than "min-width: 768px" breakpoint to avoid the main content being invisible at width 768px when the panel has already moved to the side, as both max-width and max-width include that width
+    @media (max-width: 767px), print {
+      > .main {
+        visibility: hidden;
+      }
+    }
+  }
+
   // Overlay
   /* stylelint-disable max-nesting-depth */
   .is-open[data-slide-panel-panel-behavior='overlay'] {
@@ -151,6 +161,10 @@
   }
 
   .panel[aria-hidden='true'] {
+    visibility: hidden;
+  }
+
+  .main[aria-hidden='true'] {
     visibility: hidden;
   }
 }

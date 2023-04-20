@@ -185,6 +185,7 @@ class SlidePanel extends React.Component {
         tabIndex="-1"
         aria-label={mainAriaLabel}
         aria-describedby={this.mainAriaDescribedByID}
+        aria-hidden={isOpen && isFullscreen ? 'true' : 'false'}
         ref={this.mainNode}
         role="main"
         onClick={this.setLastClicked}

@@ -7,6 +7,9 @@
   * Added built-in text for screen readers to communicate that a slide panel may be present and interactable.
   * Added internationalization for built-in `aria-describedby` text.
 
+* Changed
+  * Updated main content to not be focusable when panel content is fullscreen.
+
 ## 3.38.1 - (April 12, 2023)
 
 * Fixed
