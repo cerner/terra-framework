@@ -20,6 +20,7 @@ exports[`correctly applies the theme context className 1`] = `
       data-slide-panel-panel-size="small"
     >
       <div
+        aria-hidden="false"
         className="main"
         key="main"
         onClick={[Function]}
@@ -45,118 +46,162 @@ exports[`correctly applies the theme context className 1`] = `
 </ThemeContextProvider>
 `;
 
+exports[`sets aria-hidden to true on main content div when isOpen and isFullscreen props are both true 1`] = `
+<div
+  className="slide-panel is-open is-fullscreen"
+  data-slide-panel-panel-behavior="overlay"
+  data-slide-panel-panel-position="end"
+  data-slide-panel-panel-size="small"
+>
+  <div
+    aria-hidden="true"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+    role="main"
+    tabIndex="-1"
+  />
+  <div
+    aria-hidden="false"
+    className="panel"
+    key="panel"
+    role="region"
+    tabIndex="-1"
+  >
+    <VisuallyHiddenText />
+  </div>
+</div>
+`;
+
 exports[`should override user provided attributes that aren't className 1`] = `
 <div
-  class="slide-panel pad-this-slide-panel"
+  className="slide-panel pad-this-slide-panel"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
   data-test-attr="ahoy thar"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
   </div>
 </div>
 `;
 
 exports[`should render a SlidePanel with a fullscreen state 1`] = `
 <div
-  class="slide-panel is-fullscreen"
+  className="slide-panel is-fullscreen"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
   </div>
 </div>
 `;
 
 exports[`should render a SlidePanel with an open state 1`] = `
 <div
-  class="slide-panel is-open"
+  className="slide-panel is-open"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="false"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
   </div>
 </div>
 `;
 
 exports[`should render a SlidePanel with fill 1`] = `
 <div
-  class="slide-panel fill"
+  className="slide-panel fill"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
   </div>
 </div>
 `;
 
 exports[`should render a SlidePanel with main content 1`] = `
 <div
-  class="slide-panel"
+  className="slide-panel"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   >
     <p>
       Main Content
@@ -164,38 +209,75 @@ exports[`should render a SlidePanel with main content 1`] = `
   </div>
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
+  </div>
+</div>
+`;
+
+exports[`should render a SlidePanel with main content and panel content 1`] = `
+<div
+  className="slide-panel"
+  data-slide-panel-panel-behavior="overlay"
+  data-slide-panel-panel-position="end"
+  data-slide-panel-panel-size="small"
+>
+  <div
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+    role="main"
+    tabIndex="-1"
+  >
+    <p>
+      Main Content
+    </p>
+  </div>
+  <div
+    aria-hidden="true"
+    className="panel"
+    key="panel"
+    role="region"
+    tabIndex="-1"
+  >
+    <VisuallyHiddenText />
+    <p>
+      Panel Content
+    </p>
   </div>
 </div>
 `;
 
 exports[`should render a SlidePanel with panel content 1`] = `
 <div
-  class="slide-panel"
+  className="slide-panel"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
     <p>
       Panel Content
     </p>
@@ -205,186 +287,207 @@ exports[`should render a SlidePanel with panel content 1`] = `
 
 exports[`should render a SlidePanel with panelAriaLabel and mainAriaLabel specified 1`] = `
 <div
-  class="slide-panel"
+  className="slide-panel"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
   <div
+    aria-hidden="false"
     aria-label="Main content area"
-    class="main"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="true"
     aria-label="Panel content area"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    >
-      Panel content area
-    </span>
+    <VisuallyHiddenText
+      text="Panel content area"
+    />
   </div>
 </div>
 `;
 
 exports[`should render a SlidePanel with panelBehavior = overlay 1`] = `
 <div
-  class="slide-panel"
+  className="slide-panel"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
   </div>
 </div>
 `;
 
 exports[`should render a SlidePanel with panelBehavior = squish 1`] = `
 <div
-  class="slide-panel"
+  className="slide-panel"
   data-slide-panel-panel-behavior="squish"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
   </div>
 </div>
 `;
 
 exports[`should render a SlidePanel with panelPosition = end 1`] = `
 <div
-  class="slide-panel"
+  className="slide-panel"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
   </div>
 </div>
 `;
 
 exports[`should render a SlidePanel with panelPosition = start 1`] = `
 <div
-  class="slide-panel"
+  className="slide-panel"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="start"
   data-slide-panel-panel-size="small"
 >
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
   </div>
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
 </div>
 `;
 
 exports[`should render a SlidePanel with panelSize = large 1`] = `
 <div
-  class="slide-panel"
+  className="slide-panel"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="large"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
   </div>
 </div>
 `;
 
 exports[`should render a SlidePanel with panelSize = small 1`] = `
 <div
-  class="slide-panel"
+  className="slide-panel"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
   </div>
 </div>
 `;
 
 exports[`should render a SlidePanel with the given extra attributes 1`] = `
 <div
-  class="slide-panel pad-this-slide-panel"
+  className="slide-panel pad-this-slide-panel"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
@@ -392,44 +495,50 @@ exports[`should render a SlidePanel with the given extra attributes 1`] = `
   id="my-slide-panel"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
   </div>
 </div>
 `;
 
 exports[`should render a default SlidePanel with no props 1`] = `
 <div
-  class="slide-panel"
+  className="slide-panel"
   data-slide-panel-panel-behavior="overlay"
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
   <div
-    class="main"
+    aria-hidden="false"
+    className="main"
+    key="main"
+    onClick={[Function]}
+    onKeyUp={[Function]}
     role="main"
-    tabindex="-1"
+    tabIndex="-1"
   />
   <div
     aria-hidden="true"
-    class="panel"
+    className="panel"
+    key="panel"
     role="region"
-    tabindex="-1"
+    tabIndex="-1"
   >
-    <span
-      class="visually-hidden-text"
-    />
+    <VisuallyHiddenText />
   </div>
 </div>
 `;

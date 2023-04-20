@@ -5,6 +5,9 @@
 * Added
   * Added roles and visually hidden text to slide panel.
 
+* Changed
+  * Updated main content to not be focusable when panel content is fullscreen.
+
 ## 3.38.1 - (April 12, 2023)
 
 * Fixed
