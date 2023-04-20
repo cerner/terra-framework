@@ -16,7 +16,7 @@ describe('When a SlidePanel is rendered', () => {
 
   it('should render a SlidePanel with panelBehavior = squish', () => {
     const slidePanel = <SlidePanel panelBehavior="squish" />;
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
 
     expect(wrapper.prop('data-slide-panel-panel-behavior')).toEqual('squish');
     expect(wrapper).toMatchSnapshot();
@@ -24,7 +24,7 @@ describe('When a SlidePanel is rendered', () => {
 
   it('should render a SlidePanel with panelBehavior = overlay', () => {
     const slidePanel = <SlidePanel panelBehavior="overlay" />;
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
 
     expect(wrapper.prop('data-slide-panel-panel-behavior')).toEqual('overlay');
     expect(wrapper).toMatchSnapshot();
@@ -32,7 +32,7 @@ describe('When a SlidePanel is rendered', () => {
 
   it('should render a SlidePanel with panelPosition = start', () => {
     const slidePanel = <SlidePanel panelPosition="start" />;
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
     
     expect(wrapper.prop('data-slide-panel-panel-position')).toEqual('start');
     expect(wrapper).toMatchSnapshot();
@@ -40,7 +40,7 @@ describe('When a SlidePanel is rendered', () => {
 
   it('should render a SlidePanel with panelPosition = end', () => {
     const slidePanel = <SlidePanel panelPosition="end" />;
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
 
     expect(wrapper.prop('data-slide-panel-panel-position')).toEqual('end');
     expect(wrapper).toMatchSnapshot();
@@ -48,7 +48,7 @@ describe('When a SlidePanel is rendered', () => {
 
   it('should render a SlidePanel with panelSize = small', () => {
     const slidePanel = <SlidePanel panelSize="small" />;
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
 
     expect(wrapper.prop('data-slide-panel-panel-size')).toEqual('small');
     expect(wrapper).toMatchSnapshot();
@@ -56,7 +56,7 @@ describe('When a SlidePanel is rendered', () => {
 
   it('should render a SlidePanel with panelSize = large', () => {
     const slidePanel = <SlidePanel panelSize="large" />;
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
 
     expect(wrapper.prop('data-slide-panel-panel-size')).toEqual('large');
     expect(wrapper).toMatchSnapshot();
@@ -64,7 +64,7 @@ describe('When a SlidePanel is rendered', () => {
 
   it('should render a SlidePanel with an open state', () => {
     const slidePanel = <SlidePanel isOpen />;
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
 
     expect(wrapper.prop('className')).toEqual('slide-panel is-open');
     expect(wrapper).toMatchSnapshot();
@@ -72,7 +72,7 @@ describe('When a SlidePanel is rendered', () => {
 
   it('should render a SlidePanel with a fullscreen state', () => {
     const slidePanel = <SlidePanel isFullscreen />;
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
 
     expect(wrapper.prop('className')).toEqual('slide-panel is-fullscreen');
     expect(wrapper).toMatchSnapshot();
@@ -80,7 +80,7 @@ describe('When a SlidePanel is rendered', () => {
 
   it('should render a SlidePanel with fill', () => {
     const slidePanel = <SlidePanel fill />;
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
 
     expect(wrapper.prop('className')).toEqual('slide-panel fill');
     expect(wrapper).toMatchSnapshot();
@@ -92,10 +92,10 @@ describe('When a SlidePanel is rendered', () => {
         mainContent={<p>Main Content</p>}
       />
     );
-    const wrapper = shallowWithIntl(slidePanel);
-    const mainContent = wrapper.find('.main').childAt(0);
+    const wrapper = shallowWithIntl(slidePanel).dive();
+    const mainContent = wrapper.find('.main').childAt(1);
 
-    expect(mainContent.equals(<p>Main Content</p>)).toBe(true);
+    expect(mainContent.equals(<p>Main Content</p>)).toBeTruthy();
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -105,10 +105,10 @@ describe('When a SlidePanel is rendered', () => {
         panelContent={<p>Panel Content</p>}
       />
     );
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
     const panelContent = wrapper.find('.panel').childAt(1);
  
-    expect(panelContent.equals(<p>Panel Content</p>)).toBe(true);
+    expect(panelContent.equals(<p>Panel Content</p>)).toBeTruthy();
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -119,19 +119,19 @@ describe('When a SlidePanel is rendered', () => {
         panelContent={<p>Panel Content</p>}
       />
     );
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
 
     const panelContent = wrapper.find('.panel').childAt(1);
-    const mainContent = wrapper.find('.main').childAt(0);
+    const mainContent = wrapper.find('.main').childAt(1);
  
-    expect(panelContent.equals(<p>Panel Content</p>)).toBe(true);
-    expect(mainContent.equals(<p>Main Content</p>)).toBe(true);
+    expect(panelContent.equals(<p>Panel Content</p>)).toBeTruthy();
+    expect(mainContent.equals(<p>Main Content</p>)).toBeTruthy();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render a SlidePanel with panelAriaLabel and mainAriaLabel specified', () => {
     const slidePanel = <SlidePanel panelAriaLabel="Panel content area" mainAriaLabel="Main content area" />;
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
 
     const panelDiv = wrapper.find('.panel');
     const mainDiv = wrapper.find('.main');
@@ -145,7 +145,7 @@ describe('When a SlidePanel is rendered', () => {
     const slidePanel = (
       <SlidePanel panelBehavior="overlay" id="my-slide-panel" className="pad-this-slide-panel" data-test-attr="ahoy thar" />
     );
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
 
     expect(wrapper.prop('data-slide-panel-panel-behavior')).toEqual('overlay');
     expect(wrapper.prop('id')).toEqual('my-slide-panel');
@@ -176,7 +176,7 @@ describe('When custom props are used', () => {
     const slidePanel = (
       <SlidePanel panelBehavior="overlay" className="pad-this-slide-panel" data-test-attr="ahoy thar" data-slide-panel-panel-behavior="i am not good with slide panel" />
     );
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
 
     expect(wrapper.prop('data-slide-panel-panel-behavior')).toEqual('overlay');
     expect(wrapper.prop('className')).toEqual('slide-panel pad-this-slide-panel');
@@ -186,7 +186,7 @@ describe('When custom props are used', () => {
 
   it('sets aria-hidden to true on main content div when isOpen and isFullscreen props are both true', () => {
     const slidePanel = <SlidePanel isOpen isFullscreen />;
-    const wrapper = shallowWithIntl(slidePanel);
+    const wrapper = shallowWithIntl(slidePanel).dive();
   
     const mainDiv = wrapper.find('.main');
   
