@@ -33,7 +33,7 @@ This change was tested using:
 ### Reviews
 
 In addition to engineering reviews, this PR needs:
-
+<!-- Please include the appropriate "Required" & "Ready" labels (ex. "UX Review Required" and "UX Review Ready").  -->
 - [ ] UX review
 - [ ] Accessibility review
 - [ ] Functional review
