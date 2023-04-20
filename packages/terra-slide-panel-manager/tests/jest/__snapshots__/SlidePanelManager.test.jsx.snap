@@ -349,6 +349,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
           >
             <div
               aria-describedby="detail-panel-warning"
+              aria-hidden="false"
               className="main"
               key="main"
               onClick={[Function]}
@@ -823,6 +824,7 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
           >
             <div
               aria-describedby="detail-panel-warning"
+              aria-hidden="false"
               className="main"
               key="main"
               onClick={[Function]}
@@ -1086,6 +1088,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
           >
             <div
               aria-describedby="detail-panel-warning"
+              aria-hidden="false"
               className="main"
               key="main"
               onClick={[Function]}
@@ -1342,6 +1345,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
           >
             <div
               aria-describedby="detail-panel-warning"
+              aria-hidden="false"
               className="main"
               key="main"
               onClick={[Function]}
@@ -1598,6 +1602,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
           >
             <div
               aria-describedby="detail-panel-warning"
+              aria-hidden="false"
               className="main"
               key="main"
               onClick={[Function]}
