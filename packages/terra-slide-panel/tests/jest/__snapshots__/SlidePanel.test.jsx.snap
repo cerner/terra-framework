@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When a SlidePanel is rendered should render a default SlidePanel with no props 1`] = `
+<SlidePanel
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  panelBehavior="overlay"
+  panelPosition="end"
+  panelSize="small"
+/>
+`;
+
+exports[`When custom props are used correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <InjectIntl(SlidePanel)>
+    <SlidePanel
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      panelBehavior="overlay"
+      panelPosition="end"
+      panelSize="small"
+    >
+      <div
+        className="slide-panel orion-fusion-theme"
+        data-slide-panel-panel-behavior="overlay"
+        data-slide-panel-panel-position="end"
+        data-slide-panel-panel-size="small"
+      >
+        <div
+          aria-describedby="detail-panel-warning"
+          aria-hidden="false"
+          className="main"
+          key="main"
+          onClick={[Function]}
+          onKeyUp={[Function]}
+          role="main"
+          tabIndex="-1"
+        >
+          <VisuallyHiddenText
+            id="detail-panel-warning"
+            tabIndex="-1"
+            text="Terra.slidePanel.discloseWarning"
+          >
+            <span
+              className="visually-hidden-text"
+              id="detail-panel-warning"
+              tabIndex="-1"
+            >
+              Terra.slidePanel.discloseWarning
+            </span>
+          </VisuallyHiddenText>
+        </div>
+        <div
+          aria-hidden="true"
+          aria-label="Terra.slidePanel.defaultPanelLabel"
+          className="panel"
+          key="panel"
+          role="region"
+          tabIndex="-1"
+        >
+          <VisuallyHiddenText
+            text="Terra.slidePanel.defaultPanelLabel"
+          >
+            <span
+              className="visually-hidden-text"
+            >
+              Terra.slidePanel.defaultPanelLabel
+            </span>
+          </VisuallyHiddenText>
+        </div>
+      </div>
+    </SlidePanel>
+  </InjectIntl(SlidePanel)>
+</ThemeContextProvider>
+`;
