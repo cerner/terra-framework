@@ -67,7 +67,7 @@ class BoundedMenu extends React.Component {
               key="2"
               className="TestNestedMenu"
               subMenuItems={[
-                <Menu.Item text="Default 2.1" key="2.1" />,
+                <Menu.Item text="Default 2.1" key="2.1" className="TestNestedMenuContent" />,
                 <Menu.Item text="Default 2.2" key="2.2" />,
                 <Menu.Item text="Default 2.3" key="2.3" />,
               ]}
