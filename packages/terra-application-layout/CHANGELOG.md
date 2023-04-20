@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated component examples.
+
 ## 5.67.1 - (April 12, 2023)
 
 * Changed

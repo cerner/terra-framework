@@ -42,10 +42,10 @@ const TabsTemplate = (props) => {
 
   const longLabel = (
     <Tabs.Pane
-      label="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      label="Longer text tab name with label for application"
       key="longLabel"
     >
-      <TabContentTemplate label="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+      <TabContentTemplate label="Longer text tab name with label for application" />
     </Tabs.Pane>
   );
 
