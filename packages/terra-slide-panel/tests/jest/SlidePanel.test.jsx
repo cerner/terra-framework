@@ -33,7 +33,7 @@ describe('When a SlidePanel is rendered', () => {
   it('should render a SlidePanel with panelPosition = start', () => {
     const slidePanel = <SlidePanel panelPosition="start" />;
     const wrapper = shallowWithIntl(slidePanel).dive();
-    
+
     expect(wrapper.prop('data-slide-panel-panel-position')).toEqual('start');
     expect(wrapper).toMatchSnapshot();
   });
@@ -107,7 +107,7 @@ describe('When a SlidePanel is rendered', () => {
     );
     const wrapper = shallowWithIntl(slidePanel).dive();
     const panelContent = wrapper.find('.panel').childAt(1);
- 
+
     expect(panelContent.equals(<p>Panel Content</p>)).toBeTruthy();
     expect(wrapper).toMatchSnapshot();
   });
@@ -123,7 +123,7 @@ describe('When a SlidePanel is rendered', () => {
 
     const panelContent = wrapper.find('.panel').childAt(1);
     const mainContent = wrapper.find('.main').childAt(1);
- 
+
     expect(panelContent.equals(<p>Panel Content</p>)).toBeTruthy();
     expect(mainContent.equals(<p>Main Content</p>)).toBeTruthy();
     expect(wrapper).toMatchSnapshot();
@@ -135,7 +135,7 @@ describe('When a SlidePanel is rendered', () => {
 
     const panelDiv = wrapper.find('.panel');
     const mainDiv = wrapper.find('.main');
-  
+
     expect(panelDiv.prop('aria-label')).toEqual('Panel content area');
     expect(mainDiv.prop('aria-label')).toEqual('Main content area');
     expect(wrapper).toMatchSnapshot();
@@ -187,9 +187,9 @@ describe('When custom props are used', () => {
   it('sets aria-hidden to true on main content div when isOpen and isFullscreen props are both true', () => {
     const slidePanel = <SlidePanel isOpen isFullscreen />;
     const wrapper = shallowWithIntl(slidePanel).dive();
-  
+
     const mainDiv = wrapper.find('.main');
-  
+
     expect(mainDiv.prop('aria-hidden')).toEqual('true');
     expect(wrapper).toMatchSnapshot();
   });
