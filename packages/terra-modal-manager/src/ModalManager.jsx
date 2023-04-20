@@ -93,7 +93,7 @@ class ModalManager extends React.Component {
           }}
           closeOnEsc
           closeOnOutsideClick={false}
-          ariaLabel="Modal"
+          ariaLabel={headerDataForPresentedComponent?.title || 'Modal'}
         >
           <ContentContainer
             fill

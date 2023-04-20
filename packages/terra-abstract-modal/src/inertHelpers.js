@@ -17,8 +17,7 @@ function showModalDomUpdates(modalElement, rootSelector) {
 
     mainDocumentElement.setAttribute('data-abstract-modal-overlay-count', `${dataOverlayCount + 1}`);
 
-    // Handle focus shift for VoiceOver on iOS
-    if ('ontouchstart' in window) {
+    if (modalElement.querySelector('[data-terra-abstract-modal-begin]')) {
       modalElement.querySelector('[data-terra-abstract-modal-begin]').focus();
     } else {
       // Shift focus to modal dialog
