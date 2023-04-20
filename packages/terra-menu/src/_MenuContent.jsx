@@ -336,6 +336,7 @@ class MenuContent extends React.Component {
   render() {
     let index = -1;
     const totalItems = MenuUtils.totalItems(this.props.children);
+    let itemIndex = -1;
     let shouldDisplayMainMenuHeader;
     const items = this.props.children ? [] : undefined;
 
@@ -346,6 +347,7 @@ class MenuContent extends React.Component {
       // Check if child is an enabled Menu.Item
       if (item.props.text && !item.props.isDisabled) {
         index += 1;
+        itemIndex += 1;
         const onKeyDown = this.wrapOnKeyDown(item, index);
         const isActive = this.state.focusIndex === index;
 
@@ -354,7 +356,7 @@ class MenuContent extends React.Component {
           onKeyDown,
           isActive,
           totalItems,
-          index,
+          itemIndex,
           intl: this.props.intl,
         });
         // If the menu is first-tier and is provided with `headerTitle` prop, terra-menu should render a header.
@@ -368,11 +370,12 @@ class MenuContent extends React.Component {
         React.Children.forEach(item.props.children, (child) => {
           if (!child.props.isDisabled) {
             index += 1;
+            itemIndex += 1;
             const clonedElement = React.cloneElement(child, {
               onKeyDown: this.wrapOnKeyDown(child, index),
               isActive: index === this.state.focusIndex,
               totalItems,
-              index,
+              itemIndex,
               intl: this.props.intl,
             });
             children.push(clonedElement);
@@ -381,6 +384,9 @@ class MenuContent extends React.Component {
           }
         });
         newItem = React.cloneElement(item, {}, children);
+        // Increment item index count for disabled items
+      } else if (item.props.text && item.props.isDisabled) {
+        itemIndex += 1;
       }
 
       items.push(newItem);

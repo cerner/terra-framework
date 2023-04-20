@@ -112,7 +112,7 @@ const propTypes = {
    * @private
    * The index of the menu item.
    */
-  index: PropTypes.number,
+  itemIndex: PropTypes.number,
   /**
    * @private
    * Number of items in the menu.
@@ -247,7 +247,7 @@ class MenuItem extends React.Component {
       isActive,
       icon,
       isHighlighted,
-      index,
+      itemIndex,
       totalItems,
       intl,
       ...customProps
@@ -300,7 +300,7 @@ class MenuItem extends React.Component {
 
     const screenReaderResponse = (
       <>
-        { MenuUtils.isMac() && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.index' }, { index: index + 1, totalItems })} /> }
+        { MenuUtils.isMac() && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.index' }, { index: itemIndex + 1, totalItems })} /> }
         { MenuUtils.isMac() && (isGroupItem || toggleable) && <VisuallyHiddenText text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
         {/* Adds context for item with submenu-items */}
         { subMenuItems.length > 0 && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.itemWithSubmenu' })} /> }

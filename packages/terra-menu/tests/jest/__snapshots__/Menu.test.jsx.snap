@@ -453,7 +453,6 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                 role="menu"
                                               >
                                                 <InjectIntl(MenuItem)
-                                                  index={0}
                                                   intl={
                                                     Object {
                                                       "defaultFormats": Object {},
@@ -482,6 +481,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                     }
                                                   }
                                                   isActive={false}
+                                                  itemIndex={0}
                                                   key="abc"
                                                   onClick={[Function]}
                                                   onKeyDown={[Function]}
@@ -489,7 +489,6 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                   totalItems={1}
                                                 >
                                                   <MenuItem
-                                                    index={0}
                                                     intl={
                                                       Object {
                                                         "defaultFormats": Object {},
@@ -522,6 +521,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                     isHighlighted={false}
                                                     isInstructionsForUse={false}
                                                     isToggled={false}
+                                                    itemIndex={0}
                                                     onClick={[Function]}
                                                     onKeyDown={[Function]}
                                                     subMenuItems={Array []}
