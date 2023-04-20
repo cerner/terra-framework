@@ -1,7 +1,7 @@
 import React from 'react';
 import { withDisclosureManager } from 'terra-disclosure-manager';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import SlidePanelManager from '../../src/SlidePanelManager';
 
 const TestContainer = withDisclosureManager(({ id }) => (
@@ -16,8 +16,19 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const result = mountWithIntl(slidePanelManager);
-    expect(result).toMatchSnapshot();
+    const wrapper = mountWithIntl(slidePanelManager);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should set panelBehavior in SlidePanel with squish override', () => {
+    const slidePanelManager = (
+      <SlidePanelManager panelBehavior="squish">
+        <TestContainer />
+      </SlidePanelManager>
+    );
+
+    const slidePanelWrapper = shallowWithIntl(slidePanelManager).dive().dive().dive();
+    expect(slidePanelWrapper.prop('panelBehavior')).toEqual('squish');
   });
 
   it('should render the SlidePanelManager with squish override', () => {
@@ -27,8 +38,8 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const result = mountWithIntl(slidePanelManager);
-    expect(result).toMatchSnapshot();
+    const wrapper = mountWithIntl(slidePanelManager);
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render the SlidePanelManager with custom props', () => {
@@ -38,8 +49,10 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const result = mountWithIntl(slidePanelManager);
-    expect(result).toMatchSnapshot();
+    const wrapper = mountWithIntl(slidePanelManager);
+    expect(wrapper.prop('id')).toEqual('my-slide-panel-manager');
+    expect(wrapper.prop('className')).toEqual('test');
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render a SlidePanelManager with level three header element and title', () => {
@@ -101,7 +114,7 @@ describe('SlidePanelManager', () => {
     })
       .then(() => {
         wrapper.update();
-        expect(wrapper.exists('#disclosure-container')).toBe(true);
+        expect(wrapper.exists('#disclosure-container')).toBeTruthy();
         expect(wrapper.find('#disclosure-container')).toMatchSnapshot();
       });
   });
