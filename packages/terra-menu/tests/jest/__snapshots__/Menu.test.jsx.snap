@@ -445,6 +445,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                             >
                                               <ul
                                                 className="list orion-fusion-theme list"
+                                                onKeyDown={[Function]}
                                                 role="menu"
                                               >
                                                 <MenuItem

@@ -62,3 +62,4 @@ props-table
 **/__snapshots__/diff
 **/__snapshots__/error
 generated-themes
+packages/**/package-lock.json

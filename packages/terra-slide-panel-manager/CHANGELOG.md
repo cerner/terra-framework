@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added programmatic context when slides are opened and closed.
+
 ## 5.67.0 - (April 12, 2023)
 
 * Changed
