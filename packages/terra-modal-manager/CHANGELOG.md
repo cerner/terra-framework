@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+  * Changed
+    * Updated to read the title of the modal by the screen reader when a modal is opened.
+
 ## 6.60.0 - (March 29, 2023)
 
 * Changed
