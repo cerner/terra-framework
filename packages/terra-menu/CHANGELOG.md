@@ -9,7 +9,6 @@
   
 * Added
   * Allow screen readers to recognise as menu button
-  * Updated menu button to use down caret for visual context
   * Added context for menu item index, item with submenu and selected/unselected state
 
 ## 6.65.0 - (March 29, 2023)

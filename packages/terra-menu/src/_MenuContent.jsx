@@ -129,7 +129,7 @@ class MenuContent extends React.Component {
 
   componentDidMount() {
     // Set focus to first focusable menu item
-    this.contentNode.querySelectorAll('li[tabindex="0"]')[0].focus();
+    this.contentNode.querySelectorAll('li[class^="MenuItem"]')[0].focus();
   }
 
   componentDidUpdate(prevProps) {
