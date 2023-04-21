@@ -14,19 +14,43 @@ const TabsWithFilledContent = () => {
     >
       <TabContent label="Large Content">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed elementum mauris. Nunc maximus erat eget mauris posuere, a efficitur ex consequat. Ut mollis justo vitae rutrum tempus. Cras eget nisl a metus convallis fringilla nec non lorem. Fusce viverra velit porta tellus interdum semper eu nec mauris. Suspendisse fringilla viverra dui, et scelerisque nulla aliquet vitae. Duis sodales id ex nec viverra. Cras vel arcu mattis, ullamcorper elit in, molestie neque. Pellentesque tellus nunc, bibendum at nisl ac, fermentum sodales urna. Maecenas ac interdum mi. Suspendisse at condimentum enim. Suspendisse porta ipsum sed lacus congue porttitor. Aenean varius dapibus faucibus. Sed ut est ante. Praesent pharetra luctus dolor, non porta tortor lobortis a.
+          Users need to know what is going on, and get appropriate feedback during interaction. For example, users need confirmation messages when actions are completed, such as when forms are submitted. Also, error messages must provide clear directions rather than confuse users.
+          People with some cognitive and learning disabilities, who may be easily confused by unexpected behavior and unclear error messages.
+          People with partial sight and blindness, who rely on notifications, instructions, and errors messages to understand the context and interactions.
+          Content is more usable for people who are new to the particular website or application.
         </p>
         <p>
-          Vestibulum pellentesque nunc viverra, maximus ipsum sit amet, suscipit purus. Cras consequat mi et elit auctor rutrum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc tincidunt pharetra faucibus. Sed at sem commodo, eleifend ipsum non, vehicula eros. Aliquam ac odio sit amet ipsum ultricies convallis vel eu sapien. Suspendisse condimentum fringilla nibh non ornare. Nulla quis porttitor eros, a facilisis lacus. Integer nec suscipit felis, vel sodales massa. Aliquam id dolor ullamcorper purus volutpat efficitur. Vestibulum in est finibus, convallis nisi et, vulputate nunc. Sed metus mi, faucibus vel accumsan et, varius nec ipsum. Ut gravida consectetur sem, vel accumsan orci gravida a.
+          Content is more usable for people who are not confident using computers and the web.
+          Content is less confusing and daunting to everyone, regardless of skills.
+          Use clear and simple language to make error messages more understandable. For example, describe how to fix an error. When forms are submitted, provide a confirmation message. When a change is made on the screen, such as new content added, alert users to the change.
+          Content must be easy to follow and understand for many users. For most content, this means simply avoiding overly complex sentences and jargon, and providing clear layout and design. For some complex content such as medical information, separate, easy-to-read information may be necessary.
+          People with learning disabilities who cannot understand complex sentence structures and vocabulary.
         </p>
         <p>
-          Nam tincidunt nisl at nunc dictum, ac volutpat erat dignissim. Suspendisse ut augue nec enim malesuada lobortis. Etiam ut magna lacinia, eleifend orci quis, egestas sem. Morbi nulla mi, dignissim eget sem finibus, tempus sodales augue. Nullam dignissim augue ac diam semper euismod. Mauris ultricies condimentum nunc eu congue. Maecenas vehicula a dui in viverra. Vivamus id scelerisque felis. Morbi commodo feugiat feugiat. Aenean ac dapibus orci, quis pulvinar ante. Fusce faucibus porta est, malesuada pharetra libero scelerisque vel. Duis tempus turpis sit amet est lacinia condimentum. Fusce sollicitudin tincidunt ultrices.
+          People with cognitive disabilities who have difficulty focusing on long passages of dense text.
+          Content is more usable for people with lower language skills, such as people who are not fluent in the language of the website and people with low literacy.
+          Content is easier to understand by users who are not familiar with the topic.
+          Content is easier to skim, and get an overview of the information.
         </p>
         <p>
-          Mauris sit amet aliquet augue, imperdiet fringilla ligula. Ut sapien metus, auctor sit amet mauris quis, ullamcorper convallis risus. Sed congue nisi diam, eget consectetur massa feugiat a. Curabitur placerat posuere ipsum rutrum convallis. In iaculis aliquet velit ac scelerisque. Vestibulum eu interdum lectus. In rutrum vel lacus ac varius. Proin ac suscipit metus. Proin non tortor vel augue laoreet placerat vulputate in nisi. Etiam sagittis dapibus lobortis. Phasellus eros dui, lacinia et metus id, consectetur pretium turpis. Donec venenatis augue vitae leo condimentum, sit amet lacinia sem pretium. Aliquam sed dolor viverra, rhoncus arcu sit amet, porta velit. Aenean congue vel odio et tristique.
+          Avoid overly complex words, jargon, and acronyms, or provide explanations when they need to be used. Provide structure using headings, lists, and spacing. Provide illustrations that clarify the content, when helpful. Provide clear layout and design with consistent orientation and navigation cues.
+          Some users need to be able to change the way text is displayed so that they can read the text. This includes changing the size, spacing, font, color, and other text properties. When users change these properties, no information or functionality should be lost, and the text should re-flow so users don’t have to scroll horizontally to read sentences. Text customization is more than the zoom functionality, which only changes the text size.
+          People with low vision who are not using screen magnification software.
+          People with some forms of dyslexia and other cognitive and learning disabilities who need a particular presentation of text to read it.
+          Content is more adaptable to smaller and larger screen sizes.
+          Content is more adaptable to personal preferences and comfort.
         </p>
         <p>
-          Phasellus quis purus elementum, tincidunt erat eget, placerat arcu. Aenean in odio in nisi fringilla malesuada. Nunc et consectetur dolor, sed vestibulum tortor. Proin feugiat auctor eros et gravida. Nullam bibendum sagittis augue, convallis faucibus mi sagittis at. Nulla sit amet dolor luctus magna convallis lobortis eget in ligula. Nullam aliquet lacus interdum accumsan efficitur. In sed suscipit justo. Integer malesuada non sem vitae bibendum. Nullam felis augue, lacinia ut neque in, vulputate scelerisque eros.
+          Content is more adaptable when translated, since words and sentences are different lengths in different languages.
+          Content must be properly designed and coded so that it can adapt to different customization settings. This includes using relative rather than absolute units for the size of fonts, controls, and other objects. Applications should use the operating system and web browser text settings. Websites and applications could also provide information to help users change their settings. Web browsers and other web tools need to provide users with text customization functionality.
+          The area for clicking and tapping controls must be large enough for people to activate them. This includes links, buttons, checkboxes, and other controls. Small controls, and controls that are placed too close to each other, are difficult for many people to use. This is particularly relevant on mobile devices with small screens.
+          People with physical disabilities who have reduced dexterity.
+          Content is more usable on touch screens, especially on smaller mobile devices.
+        </p>
+        <p>
+          Content is more usable for people who are not experienced with the mouse or touch-pad on the computer they are using.
+          Content is more usable in situations where the device cannot be held steady.
+          Design large controls or activation areas around the controls. (Increasing the font size of the control sometimes isn’t enough.) Provide adequate separation between selectable controls. Provide labels for controls, which enlarges the activation area in many browsers because the label for checkboxes and option buttons is also clickable.
         </p>
       </TabContent>
     </Tabs.Pane>

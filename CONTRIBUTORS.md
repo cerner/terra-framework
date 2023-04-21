@@ -47,6 +47,9 @@ Cerner Corporation
 - Art Parkeenvincha [@artpark]
 - Andrew Tran [@trandrew1023]
 - Scot Rossman [@ScotRossman]
+- Steven Mason [@smason0]
+- Alla Doroshkevych [@adoroshk]
+
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -95,3 +98,6 @@ Cerner Corporation
 [@artpark]: https://github.com/artpark
 [@trandrew1023]: https://github.com/trandrew1023
 [@ScotRossman]: https://github.com/ScotRossman
+[@smason0]: https://github.com/smason0
+[@adoroshk]: https://github.com/adoroshk
+

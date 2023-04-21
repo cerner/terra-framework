@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './SlidePanel.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -62,6 +63,12 @@ const propTypes = {
    * Whether or not the SlidePanel should be sized relative to its parent container.
    */
   fill: PropTypes.bool,
+
+  /**
+   * @private
+   * Callback function to set the slide panel ref.
+   */
+  setSlidePanelRef: PropTypes.func,
 };
 
 const defaultProps = {
@@ -90,6 +97,7 @@ class SlidePanel extends React.Component {
     if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
       if (this.disclosingNode) {
         // Return focus to the disclosing element
+        this.disclosingNode.setAttribute('aria-expanded', 'false');
         this.disclosingNode.focus();
         return;
       }
@@ -99,6 +107,9 @@ class SlidePanel extends React.Component {
   }
 
   setPanelNode(node) {
+    if (this.props.setSlidePanelRef) {
+      this.props.setSlidePanelRef(node);
+    }
     this.panelNode = node;
   }
 
@@ -107,7 +118,10 @@ class SlidePanel extends React.Component {
   }
 
   setDisclosingNode(node) {
-    this.disclosingNode = node;
+    if (node) {
+      node.setAttribute('aria-expanded', 'true');
+      this.disclosingNode = node;
+    }
   }
 
   render() {
@@ -122,6 +136,7 @@ class SlidePanel extends React.Component {
       isFullscreen,
       isOpen,
       fill,
+      setSlidePanelRef,
       ...customProps
     } = this.props;
 
@@ -137,14 +152,35 @@ class SlidePanel extends React.Component {
     customProps.className);
 
     const panelDiv = (
-      <div className={cx(['panel'])} key="panel" tabIndex="-1" aria-label={panelAriaLabel} aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
+      <div
+        className={cx(['panel'])}
+        key="panel"
+        tabIndex="-1"
+        aria-label={panelAriaLabel}
+        aria-hidden={!isOpen ? 'true' : 'false'}
+        role="region"
+        ref={this.setPanelNode}
+      >
+        <VisuallyHiddenText
+          text={panelAriaLabel}
+        />
         {panelContent}
       </div>
     );
 
     const mainDiv = (
-      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-      <div className={cx('main')} key="main" tabIndex="-1" aria-label={mainAriaLabel} ref={this.mainNode} onClick={this.setLastClicked} onKeyUp={this.setLastClicked}>
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-interactions
+      <div
+        className={cx('main')}
+        key="main"
+        tabIndex="-1"
+        aria-label={mainAriaLabel}
+        aria-hidden={isOpen && isFullscreen ? 'true' : 'false'}
+        ref={this.mainNode}
+        role="main"
+        onClick={this.setLastClicked}
+        onKeyUp={this.setLastClicked}
+      >
         {mainContent}
       </div>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'terra-image';
 import classNames from 'classnames/bind';
-import MockConfig from '../../doc/common/MockConfig';
+import MockConfig from './MockConfig';
 import FallbackAvatar from '../../doc/common/FallbackAvatar.svg';
 import { ApplicationHeaderUtility, UtilityUtils } from '../../../ApplicationUtility';
 import styles from './ApplicationUtilityTestCommon.module.scss';

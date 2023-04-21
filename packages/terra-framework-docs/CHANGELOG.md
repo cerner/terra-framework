@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `notification-dialog` and `tabs` examples.
+  * Updated examples for `terra-slide-panel-manager`.
+
+* Added
+  * Added a `terra-slide-panel` example where the panel is open on page load and fullscreen.
+
 ## 1.19.0 - (April 12, 2023)
 
 * Added
@@ -17,7 +24,7 @@
 * Changed
   * Updated docs for `terra-slide-group`.
   * Updated doc and added test for terra-collapsible-menu-view
-  
+
 * Added
   * Added package-lock.json
   * Added test for `terra-slide-panel`.

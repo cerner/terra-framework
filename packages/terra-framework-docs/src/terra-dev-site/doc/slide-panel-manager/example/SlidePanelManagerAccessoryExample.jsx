@@ -193,7 +193,7 @@ class ContentComponent extends React.Component {
           });
         }}
       >
-        {`Disclose (${size})`}
+        {`${size.charAt(0).toUpperCase() + size.slice(1)} panel`}
       </button>
     );
   }
@@ -246,7 +246,7 @@ class ContentComponent extends React.Component {
       <ContentContainer
         header={(
           <ActionHeader
-            title="SlidePanelManager Child Component"
+            text="SlidePanelManager Child Component"
           />
         )}
       >

@@ -74,6 +74,49 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
             header={<React.Fragment />}
           >
             <SlideGroup
+              focusRef={
+                <div
+                  aria-hidden="false"
+                  class="panel"
+                  role="region"
+                  tabindex="-1"
+                >
+                  <span
+                    class="visually-hidden-text"
+                  />
+                  <div
+                    class="content-container-fill"
+                  >
+                    <div
+                      class="header"
+                    />
+                    <div
+                      class="main"
+                    >
+                      <div
+                        class="scroll normalizer"
+                      >
+                        <div
+                          class="slide-group"
+                        >
+                          <div
+                            class="slide"
+                          >
+                            <div
+                              class="slide-shadow"
+                            />
+                            <div
+                              id="test-panel"
+                            >
+                              Hello World
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
               isAnimated={true}
               items={
                 Array [
@@ -108,6 +151,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
         }
         panelPosition="end"
         panelSize="large"
+        setSlidePanelRef={[Function]}
       >
         <div
           className="slide-panel is-open fill"
@@ -116,10 +160,12 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
           data-slide-panel-panel-size="large"
         >
           <div
+            aria-hidden="false"
             className="main"
             key="main"
             onClick={[Function]}
             onKeyUp={[Function]}
+            role="main"
             tabIndex="-1"
           >
             <withDisclosureManager(Component)
@@ -145,8 +191,14 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
             aria-hidden="false"
             className="panel"
             key="panel"
+            role="region"
             tabIndex="-1"
           >
+            <VisuallyHiddenText>
+              <span
+                className="visually-hidden-text"
+              />
+            </VisuallyHiddenText>
             <ContentContainer
               fill={true}
               header={<React.Fragment />}
@@ -167,6 +219,49 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                       className="scroll normalizer"
                     >
                       <SlideGroup
+                        focusRef={
+                          <div
+                            aria-hidden="false"
+                            class="panel"
+                            role="region"
+                            tabindex="-1"
+                          >
+                            <span
+                              class="visually-hidden-text"
+                            />
+                            <div
+                              class="content-container-fill"
+                            >
+                              <div
+                                class="header"
+                              />
+                              <div
+                                class="main"
+                              >
+                                <div
+                                  class="scroll normalizer"
+                                >
+                                  <div
+                                    class="slide-group"
+                                  >
+                                    <div
+                                      class="slide"
+                                    >
+                                      <div
+                                        class="slide-shadow"
+                                      />
+                                      <div
+                                        id="test-panel"
+                                      >
+                                        Hello World
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        }
                         isAnimated={true}
                         items={
                           Array [
@@ -242,6 +337,49 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                                 unmountOnExit={false}
                               >
                                 <Slide
+                                  focusRef={
+                                    <div
+                                      aria-hidden="false"
+                                      class="panel"
+                                      role="region"
+                                      tabindex="-1"
+                                    >
+                                      <span
+                                        class="visually-hidden-text"
+                                      />
+                                      <div
+                                        class="content-container-fill"
+                                      >
+                                        <div
+                                          class="header"
+                                        />
+                                        <div
+                                          class="main"
+                                        >
+                                          <div
+                                            class="scroll normalizer"
+                                          >
+                                            <div
+                                              class="slide-group"
+                                            >
+                                              <div
+                                                class="slide"
+                                              >
+                                                <div
+                                                  class="slide-shadow"
+                                                />
+                                                <div
+                                                  id="test-panel"
+                                                >
+                                                  Hello World
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  }
                                   id="shmmoop"
                                   isHidden={false}
                                 >
@@ -350,6 +488,7 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
         }
         panelPosition="end"
         panelSize="small"
+        setSlidePanelRef={[Function]}
       >
         <div
           className="slide-panel fill test"
@@ -359,10 +498,12 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
           id="my-slide-panel-manager"
         >
           <div
+            aria-hidden="false"
             className="main"
             key="main"
             onClick={[Function]}
             onKeyUp={[Function]}
+            role="main"
             tabIndex="-1"
           >
             <withDisclosureManager(Component)>
@@ -383,8 +524,14 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
             aria-hidden="true"
             className="panel"
             key="panel"
+            role="region"
             tabIndex="-1"
           >
+            <VisuallyHiddenText>
+              <span
+                className="visually-hidden-text"
+              />
+            </VisuallyHiddenText>
             <ContentContainer
               fill={true}
               header={<React.Fragment />}
@@ -474,6 +621,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
         }
         panelPosition="end"
         panelSize="small"
+        setSlidePanelRef={[Function]}
       >
         <div
           className="slide-panel fill test"
@@ -483,10 +631,12 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
           id="my-slide-panel-manager"
         >
           <div
+            aria-hidden="false"
             className="main"
             key="main"
             onClick={[Function]}
             onKeyUp={[Function]}
+            role="main"
             tabIndex="-1"
           >
             <withDisclosureManager(Component)>
@@ -507,8 +657,14 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
             aria-hidden="true"
             className="panel"
             key="panel"
+            role="region"
             tabIndex="-1"
           >
+            <VisuallyHiddenText>
+              <span
+                className="visually-hidden-text"
+              />
+            </VisuallyHiddenText>
             <ContentContainer
               fill={true}
               header={<React.Fragment />}
@@ -594,6 +750,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
         }
         panelPosition="end"
         panelSize="small"
+        setSlidePanelRef={[Function]}
       >
         <div
           className="slide-panel fill"
@@ -602,10 +759,12 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
           data-slide-panel-panel-size="small"
         >
           <div
+            aria-hidden="false"
             className="main"
             key="main"
             onClick={[Function]}
             onKeyUp={[Function]}
+            role="main"
             tabIndex="-1"
           >
             <withDisclosureManager(Component)>
@@ -626,8 +785,14 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
             aria-hidden="true"
             className="panel"
             key="panel"
+            role="region"
             tabIndex="-1"
           >
+            <VisuallyHiddenText>
+              <span
+                className="visually-hidden-text"
+              />
+            </VisuallyHiddenText>
             <ContentContainer
               fill={true}
               header={<React.Fragment />}
@@ -713,6 +878,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
         }
         panelPosition="end"
         panelSize="small"
+        setSlidePanelRef={[Function]}
       >
         <div
           className="slide-panel fill"
@@ -721,10 +887,12 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
           data-slide-panel-panel-size="small"
         >
           <div
+            aria-hidden="false"
             className="main"
             key="main"
             onClick={[Function]}
             onKeyUp={[Function]}
+            role="main"
             tabIndex="-1"
           >
             <withDisclosureManager(Component)>
@@ -745,8 +913,14 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
             aria-hidden="true"
             className="panel"
             key="panel"
+            role="region"
             tabIndex="-1"
           >
+            <VisuallyHiddenText>
+              <span
+                className="visually-hidden-text"
+              />
+            </VisuallyHiddenText>
             <ContentContainer
               fill={true}
               header={<React.Fragment />}

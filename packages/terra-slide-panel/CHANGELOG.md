@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+* Added
+  * Added roles and visually hidden text to slide panel.
+
+* Changed
+  * Updated main content to not be focusable when panel content is fullscreen.
+
 ## 3.38.1 - (April 12, 2023)
 
 * Fixed
@@ -10,7 +16,7 @@
 ## 3.38.0 - (March 29, 2023)
 
 * Changed
-  * Updated to focus originating element when slide panel is closed. 
+  * Updated to focus originating element when slide panel is closed.
 
 ## 3.37.0 - (February 14, 2023)
 

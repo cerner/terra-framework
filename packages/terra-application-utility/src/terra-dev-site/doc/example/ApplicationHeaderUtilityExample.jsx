@@ -23,14 +23,14 @@ class ApplicationHeaderUtilityExample extends React.Component {
 
   render() {
     const accessory = <Image alt="Fallback Avatar" src={FallbackAvatar} />;
-    const title = 'User Name';
+    const title = 'John Doe';
 
     return (
       <div className={cx('container')}>
         <div className={cx('content-wrapper')}>
           <ApplicationHeaderUtility
             menuItems={MockConfig(accessory)}
-            onChange={() => {}}
+            onChange={() => { }}
             onDisclose={this.onDiscloseUtility}
             initialSelectedKey="menu"
             title={title}

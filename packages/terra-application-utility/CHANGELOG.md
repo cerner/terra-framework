@@ -5,6 +5,9 @@
 ## 2.51.0 - (April 12, 2023)
 
 * Changed
+  * Updated component examples.
+
+* Changed
   * Added a11yLabel for terra-button upgrades.
 
 ## 2.50.0 - (March 29, 2023)
