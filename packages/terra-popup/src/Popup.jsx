@@ -126,6 +126,7 @@ class Popup extends React.Component {
     this.isContentSized = props.contentHeight !== 'auto' && props.contentWidth !== 'auto';
     this.contentHeight = PopupHeights[props.contentHeight];
     this.contentWidth = PopupWidths[props.contentWidth];
+    this.handleClick = this.handleClick.bind(this);
   }
 
   shouldComponentUpdate(nextProps) {
@@ -133,6 +134,12 @@ class Popup extends React.Component {
     this.contentHeight = PopupHeights[nextProps.contentHeight];
     this.contentWidth = PopupWidths[nextProps.contentWidth];
     return true;
+  }
+
+  handleClick() {
+    const { targetRef } = this.props;
+    targetRef().focus();
+    this.props.onRequestClose();
   }
 
   handleOnPosition(event, positions) {
@@ -225,7 +232,7 @@ class Popup extends React.Component {
         arrow={arrow}
         classNameInner={this.props.classNameContent}
         isHeaderDisabled={this.props.isHeaderDisabled}
-        onRequestClose={this.props.onRequestClose}
+        onRequestClose={this.handleClick}
         onContentResize={this.handleOnContentResize}
         onResize={this.handleOnResize}
         popupContentRole={this.props.popupContentRole}

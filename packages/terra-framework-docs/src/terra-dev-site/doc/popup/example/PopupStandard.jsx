@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
 import classNames from 'classnames/bind';
+import List, { Item } from 'terra-list/lib/index';
 import styles from './PopupDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
@@ -38,6 +39,8 @@ function PopupStandard() {
         onRequestClose={handleRequestClose}
         isHeaderDisabled={false}
         isContentFocusDisabled
+        contentWidth={240}
+        contentHeight={240}
       >
         <div>
           Medications for Patient John Doe
@@ -45,10 +48,21 @@ function PopupStandard() {
         {showDetails ? (
           <div>
             <Button text="Hide Medications" onClick={() => setShowDetails(false)} className={cx('popup-button')} />
-            <ul>
-              <li>lisinopril</li>
-              <li>amoxicillin</li>
-            </ul>
+            <List role="listbox" aria-label="example-label">
+              <Item
+                key="listitem"
+                isSelectable
+              >
+                Lisinopril
+              </Item>
+              <Item
+                key="selected"
+                isSelectable
+                isSelected
+              >
+                Amoxicillin
+              </Item>
+            </List>
           </div>
         )
           : (
