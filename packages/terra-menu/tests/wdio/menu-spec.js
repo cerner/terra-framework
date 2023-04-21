@@ -6,7 +6,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
   it('displays a default Menu', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/default-menu');
     $('#default-button').click();
-    expect($('li:first-child[role="menuitem"]').isFocused()).toBe(true);
+    expect($('li:first-child[role="menuitem"]').isFocused()).toBeTruthy();
     Terra.validates.element('default', { selector: '#root' });
   });
 
@@ -14,13 +14,13 @@ Terra.describeViewports('Menu', ['medium'], () => {
     it('displays a bounded menu', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/bounded-menu');
       $('#bounded-button').click();
-      expect($('li:first-child[role="menuitem"]').isFocused()).toBe(true);
+      expect($('li:first-child[role="menuitem"]').isFocused()).toBeTruthy();
       Terra.validates.element('bounded', { rules: ignoredA11y });
     });
 
     it('opens submenu', () => {
       $('.TestNestedMenu').click();
-      expect($('.TestNestedMenuContent').isFocused()).toBe(true);
+      expect($('.TestNestedMenuContent').isFocused()).toBeTruthy();
       Terra.validates.element('open submenu', { selector: '#root' });
     });
   });
@@ -52,9 +52,9 @@ Terra.describeViewports('Menu', ['medium'], () => {
   it('displays a Menu-Selectable', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/selectable-menu');
     $('#selectable-menu-button').click();
-    expect($('li:first-child[role="menuitemradio"]').isFocused()).toBe(true);
+    expect($('li:first-child[role="menuitemradio"]').isFocused()).toBeTruthy();
     $('.TestGroupItem3').click();
-    $('li:last-child[aria-checked="true"][role="menuitemradio"]').isFocused();
+    expect($('li:last-child[aria-checked="true"][role="menuitemradio"]').isFocused()).toBeTruthy();
 
     Terra.validates.element('selectable', { selector: '#root', rules: ignoredA11y });
   });
@@ -68,9 +68,9 @@ Terra.describeViewports('Menu', ['medium'], () => {
 
     it('selects an item and maintains selection after menu has been reopened', () => {
       $('.TestSelectableItem').click();
-      expect($('#default-button').isFocused()).toBe(true);
+      expect($('#default-button').isFocused()).toBeTruthy();
       $('#default-button').click();
-      $('li:first-child[role="menuitem"]').isFocused();
+      expect($('li:first-child[role="menuitem"]').isFocused()).toBeTruthy();
       Terra.validates.element('maintained selection after reopen', { selector: '#root' });
     });
   });
@@ -78,11 +78,11 @@ Terra.describeViewports('Menu', ['medium'], () => {
   it('displays a Menu with a submenu', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu');
     $('#sub-menu-button').click();
-    expect($('li:first-child[role="menuitem"]').isFocused()).toBe(true);
+    expect($('li:first-child[role="menuitem"]').isFocused()).toBeTruthy();
     Terra.validates.element('main menu', { selector: '#root' });
 
     $('.TestNestedMenu').click();
-    expect($('.TestNestedMenuContent').isFocused()).toBe(true);
+    expect($('.TestNestedMenuContent').isFocused()).toBeTruthy();
     Terra.validates.element('menu with submenu', { selector: '#root' });
     browser.keys('Escape');
   });
@@ -90,12 +90,12 @@ Terra.describeViewports('Menu', ['medium'], () => {
   it('focuses on back button in submenu', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu');
     $('#sub-menu-button').click();
-    expect($('li:first-child[role="menuitem"]').isFocused()).toBe(true);
+    expect($('li:first-child[role="menuitem"]').isFocused()).toBeTruthy();
     Terra.validates.element('main menu', { selector: '#root' });
 
     $('.TestNestedMenu').click();
     browser.keys(['Shift', 'Tab']);
-    expect($('[role="button"][aria-label="Back"]').isFocused()).toBe(true);
+    expect($('[role="button"][aria-label="Back"]').isFocused()).toBeTruthy();
     Terra.validates.element('navigating to back button', { selector: '#root' });
     browser.keys('Escape');
   });
@@ -104,11 +104,11 @@ Terra.describeViewports('Menu', ['medium'], () => {
     it('displays Menu with submenu and long header title', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu-long-title');
       $('#sub-menu-button').click();
-      expect($('li:first-child[role="menuitem"]').isFocused()).toBe(true);
+      expect($('li:first-child[role="menuitem"]').isFocused()).toBeTruthy();
       Terra.validates.element('main menu long header', { selector: '#root' });
 
       $('.TestNestedMenu').click();
-      expect($('.TestNestedMenuContent').isFocused()).toBe(true);
+      expect($('.TestNestedMenuContent').isFocused()).toBeTruthy();
       Terra.validates.element('submenu long header', { selector: '#root' });
       browser.keys('Escape');
     });
@@ -122,19 +122,19 @@ Terra.describeViewports('Menu', ['medium'], () => {
 
       // it does not do anything when left arrow is pressed on the first layer
       browser.keys(['ArrowLeft']);
-      expect($('li:first-child[class*="item"][role="menuitem"]').isFocused()).toBe(true);
+      expect($('li:first-child[class*="item"][role="menuitem"]').isFocused()).toBeTruthy();
 
       Terra.validates.element('main menu remains open', { selector: '#root' });
 
       // it displays the submenu on right arrow
       browser.keys(['ArrowDown', 'ArrowRight']);
-      expect($('.TestNestedMenuContent').isFocused()).toBe(true);
+      expect($('.TestNestedMenuContent').isFocused()).toBeTruthy();
 
       Terra.validates.element('navigated to submenu using arrow keys', { selector: '#root' });
 
       // it returns to the item in main menu on left arrow
       browser.keys(['ArrowLeft']);
-      expect($('.TestNestedMenu').isFocused()).toBe(true);
+      expect($('.TestNestedMenu').isFocused()).toBeTruthy();
 
       Terra.validates.element('returned to main menu using arrow keys', { selector: '#root' });
       browser.keys('Escape');
@@ -145,18 +145,18 @@ Terra.describeViewports('Menu', ['medium'], () => {
     it('Menu Keyboard Navigation-Enter Key', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu');
       $('#sub-menu-button').click();
-      expect($('li:first-child[role="menuitem"]').isFocused()).toBe(true);
+      expect($('li:first-child[role="menuitem"]').isFocused()).toBeTruthy();
 
       // it displays the submenu on enter
       browser.keys(['ArrowDown', 'Enter']);
-      expect($('.TestNestedMenuContent').isFocused()).toBe(true);
+      expect($('.TestNestedMenuContent').isFocused()).toBeTruthy();
 
       Terra.validates.element('navigated to submenu using enter key', { selector: '#root' });
 
       // it returns to the item in main menu on enter
       browser.keys(['Shift', 'Tab']);
       browser.keys(['Enter']);
-      expect($('.TestNestedMenu').isFocused()).toBe(true);
+      expect($('.TestNestedMenu').isFocused()).toBeTruthy();
 
       Terra.validates.element('returned to main menu using enter key', { selector: '#root' });
     });
@@ -166,7 +166,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
     it('Menu With Custom Icons', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/custom-icons-menu');
       $('#custom-icons-button').click();
-      expect($('li:first-child[role="menuitem"]').isFocused()).toBe(true);
+      expect($('li:first-child[role="menuitem"]').isFocused()).toBeTruthy();
       Terra.validates.element('shows custom icons in the menu', { selector: '#root' });
     });
   });
