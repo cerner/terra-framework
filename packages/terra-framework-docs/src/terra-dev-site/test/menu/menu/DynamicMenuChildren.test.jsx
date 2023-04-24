@@ -2,7 +2,6 @@ import React from 'react';
 import Menu from 'terra-menu';
 import Button from 'terra-button';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import classNames from 'classnames/bind';
 
 class DefaultMenu extends React.Component {
   constructor(props) {
