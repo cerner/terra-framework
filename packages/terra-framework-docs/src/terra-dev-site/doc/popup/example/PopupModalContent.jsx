@@ -30,7 +30,7 @@ function ModalContainer(props) {
         >
           <Placeholder title="Popup Content" />
         </Popup>
-        <Button id="popup-in-modal" text="Popup In Modal" onClick={handlePopupButtonClick} />
+        <Button id="popup-in-modal" text="Popup In Modal" onClick={handlePopupButtonClick} aria-haspopup />
         <br />
         <br />
         <Button className="close-disclosure" text="Close Disclosure" onClick={disclosureManager.closeDisclosure} />

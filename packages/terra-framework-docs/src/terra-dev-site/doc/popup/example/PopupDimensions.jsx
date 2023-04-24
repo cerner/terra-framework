@@ -86,7 +86,7 @@ function PopupDimensions() {
         >
           <PopupContent contentStyle={contentStyle} />
         </Popup>
-        <Button id="popup-dimensions" text={`${popupContentHeight || 'Default'} x ${popupContentWidth || 'Default'} Popup`} onClick={handleButtonClick} />
+        <Button id="popup-dimensions" text={`${popupContentHeight || 'Default'} x ${popupContentWidth || 'Default'} Popup`} onClick={handleButtonClick} aria-haspopup />
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ function PopupArrow() {
 
   return (
     <React.Fragment>
-      <Button text="Show More Options" onClick={handleButtonClick} refCallback={setButtonNode} />
+      <Button text="Show More Options" onClick={handleButtonClick} refCallback={setButtonNode} aria-haspopup />
       <Popup
         isOpen={open}
         onRequestClose={handleRequestClose}

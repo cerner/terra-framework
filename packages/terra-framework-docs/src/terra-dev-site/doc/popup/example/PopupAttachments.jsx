@@ -63,6 +63,7 @@ function PopupAttachment() {
           text="Open Popup"
           onClick={handleButtonClick}
           refCallback={setButtonNode}
+          aria-haspopup
         />
       </div>
       <Popup

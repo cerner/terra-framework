@@ -38,7 +38,7 @@ function PopupBounded() {
         className={cx('content-wrapper')}
         ref={setParentNode}
       >
-        <Button text="Bounded Popup" onClick={handleButtonClick} refCallback={setButtonNode} />
+        <Button text="Bounded Popup" onClick={handleButtonClick} refCallback={setButtonNode} aria-haspopup />
         <Popup
           boundingRef={getParentNode}
           classNameArrow="test-arrow"

@@ -58,7 +58,7 @@ function PopupNoHeader() {
         >
           <PopupContent title="Popup Content" handleRequestClose={handleRequestClose} />
         </Popup>
-        <Button id="popup-no-header" text="No Header Popup" onClick={handleButtonClick} />
+        <Button id="popup-no-header" text="No Header Popup" onClick={handleButtonClick} aria-haspopup />
       </div>
     </React.Fragment>
   );
