@@ -278,6 +278,7 @@ class MenuItem extends React.Component {
       attributes.onClick = this.wrapOnClick;
       attributes.onKeyDown = this.wrapOnKeyDown(attributes.onKeyDown);
       attributes.onKeyUp = this.wrapOnKeyUp(attributes.Up);
+      attributes['data-terra-menu-interactive-item'] = true;
     }
 
     const markAsToggled = this.state.isToggled || (isGroupItem && toggled);
@@ -362,7 +363,6 @@ class MenuItem extends React.Component {
             ref={this.setItemNode}
             role={role}
             aria-checked={markAsToggled}
-            data-menuitem="true"
           >
             {content}
           </li>

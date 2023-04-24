@@ -129,7 +129,10 @@ class MenuContent extends React.Component {
 
   componentDidMount() {
     // Set focus to first focusable menu item
-    this.contentNode.querySelectorAll('li[class*="item"][data-menuitem="true"][tabindex="0"]')[0].focus();
+    const items = this.contentNode.querySelectorAll('li[data-terra-menu-interactive-item="true"]');
+    if (items.length) {
+      items[0].focus();
+    }
   }
 
   componentDidUpdate(prevProps) {
