@@ -322,7 +322,7 @@ class MenuContent extends React.Component {
       );
     } else if (this.props.headerTitle.length > 0) {
       header = (
-        <h1 className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
+        <h1 id={menuHeaderId} className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
       );
     }
 
@@ -362,11 +362,6 @@ class MenuContent extends React.Component {
           itemIndex,
           intl: this.props.intl,
         });
-        // If the menu is first-tier and is provided with `headerTitle` prop, terra-menu should render a header.
-        // Also the first-tier menu to have a header should possess at least one menu-item that drills-in to a sub-menu with sub-menu items.
-        if (this.props.headerTitle.length > 0 && item.props.subMenuItems && item.props.subMenuItems.length > 0) {
-          shouldDisplayMainMenuHeader = true;
-        }
         // If the child has children then it is an item group, so iterate through it's children
       } else if (item.props.children) {
         const children = item.props.children ? [] : undefined;
@@ -412,7 +407,7 @@ class MenuContent extends React.Component {
     );
 
     let header;
-    if (isFullScreen || isSubMenu || shouldDisplayMainMenuHeader) {
+    if (this.props.boundingRef || isSubMenu) {
       header = this.buildHeader(isFullScreen);
     }
     const contentHeight = this.props.isHeightBounded ? '100%' : this.props.fixedHeight;
