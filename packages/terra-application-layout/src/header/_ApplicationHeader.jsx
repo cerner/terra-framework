@@ -120,7 +120,7 @@ class ApplicationHeader extends React.Component {
   renderToggle() {
     const { layoutConfig, intl } = this.props;
 
-    if (layoutConfig.toggleMenu) {
+    if (layoutConfig.toggleMenu) { 
       return (
         <div className={cx('navbar-toggle')}>
           <button
