@@ -356,7 +356,14 @@ class MenuItem extends React.Component {
     return (
       <ThemeContext.Consumer>
         { theme => (
-          <li {...attributes} className={classNames(itemClassNames, cx(theme.className))} ref={this.setItemNode} role={role} aria-checked={markAsToggled}>
+          <li
+            {...attributes}
+            className={classNames(itemClassNames, cx(theme.className))}
+            ref={this.setItemNode}
+            role={role}
+            aria-checked={markAsToggled}
+            data-menuitem="true"
+          >
             {content}
           </li>
         )}

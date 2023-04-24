@@ -61,7 +61,7 @@ class MenuWithInstructionsForUse extends React.Component {
   render() {
     return (
       <div>
-        <div className={cx('menu-wrapper')} ref={this.setButtonNode}>
+        <div className={cx('menu-wrapper')}>
           <Menu
             isOpen={this.state.open}
             targetRef={this.getButtonNode}
@@ -89,7 +89,7 @@ class MenuWithInstructionsForUse extends React.Component {
               onClick={this.handleCloseOnClick}
             />
           </Menu>
-          <Button onClick={this.handleButtonClick} text="Help" aria-haspopup icon={<IconCaretDown />} isReversed />
+          <Button onClick={this.handleButtonClick} text="Help" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
         </div>
         <br />
         <p>

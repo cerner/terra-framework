@@ -3,9 +3,6 @@ import Menu from 'terra-menu';
 import Button from 'terra-button';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import classNames from 'classnames/bind';
-import styles from './TestMenu.module.scss';
-
-const cx = classNames.bind(styles);
 
 class DefaultMenu extends React.Component {
   constructor(props) {
@@ -58,7 +55,7 @@ class DefaultMenu extends React.Component {
 
   render() {
     return (
-      <div className={cx('menu-wrapper')} ref={this.setButtonNode}>
+      <div>
         <Menu
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
@@ -70,7 +67,7 @@ class DefaultMenu extends React.Component {
             ))
           }
         </Menu>
-        <Button id="default-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed />
+        <Button id="default-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
         <br />
         <button type="button" id="add-button" onClick={this.addMenuItems}>
           Add Menu Item

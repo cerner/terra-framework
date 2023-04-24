@@ -67,7 +67,7 @@ class MenuWithCustomIcons extends React.Component {
   render() {
     return (
       <div>
-        <div className={cx('menu-wrapper')} ref={this.setButtonNode}>
+        <div className={cx('menu-wrapper')}>
           <Menu
             isOpen={this.state.open}
             targetRef={this.getButtonNode}
@@ -113,7 +113,7 @@ class MenuWithCustomIcons extends React.Component {
               icon={<IconPrinter />}
             />
           </Menu>
-          <Button onClick={this.handleButtonClick} text="Click Me" aria-haspopup icon={<IconCaretDown />} isReversed />
+          <Button onClick={this.handleButtonClick} text="Click Me" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
         </div>
       </div>
     );

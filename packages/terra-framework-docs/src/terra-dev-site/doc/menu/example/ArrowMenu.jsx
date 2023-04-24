@@ -79,7 +79,7 @@ class BasicMenu extends React.Component {
   render() {
     return (
       <div>
-        <div className={cx('menu-wrapper')} ref={this.setButtonNode}>
+        <div className={cx('menu-wrapper')}>
           <Menu
             isOpen={this.state.open}
             targetRef={this.getButtonNode}
@@ -141,7 +141,7 @@ class BasicMenu extends React.Component {
               <Menu.Item text="Patient Resources" key="GroupItem3" isSelected={this.state.groupSelectedIndex === 2} isDisabled />
             </Menu.ItemGroup>
           </Menu>
-          <Button onClick={this.handleButtonClick} text="Hospital Details" aria-haspopup icon={<IconCaretDown />} isReversed />
+          <Button onClick={this.handleButtonClick} text="Hospital Details" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
         </div>
         <br />
         <p>

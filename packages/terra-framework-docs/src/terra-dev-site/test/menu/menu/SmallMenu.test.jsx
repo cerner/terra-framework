@@ -2,10 +2,6 @@ import React from 'react';
 import Menu from 'terra-menu';
 import Button from 'terra-button';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import classNames from 'classnames/bind';
-import styles from './TestMenu.module.scss';
-
-const cx = classNames.bind(styles);
 
 class SmallMenu extends React.Component {
   constructor(props) {
@@ -43,17 +39,15 @@ class SmallMenu extends React.Component {
         <div>
           This menu should have a small height. And all items should be visible without scrolling.
         </div>
-        <div className={cx('menu-wrapper')} ref={this.setButtonNode}>
-          <Menu
-            isOpen={this.state.open}
-            targetRef={this.getButtonNode}
-            onRequestClose={this.handleRequestClose}
-          >
-            <Menu.Item text="Default 1" key="1" className="TestFirstItem" />
-            <Menu.Item text="Default 2" key="2" className="TestLastItem" />
-          </Menu>
-          <Button id="small-menu-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed />
-        </div>
+        <Menu
+          isOpen={this.state.open}
+          targetRef={this.getButtonNode}
+          onRequestClose={this.handleRequestClose}
+        >
+          <Menu.Item text="Default 1" key="1" className="TestFirstItem" />
+          <Menu.Item text="Default 2" key="2" className="TestLastItem" />
+        </Menu>
+        <Button id="small-menu-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
       </div>
     );
   }

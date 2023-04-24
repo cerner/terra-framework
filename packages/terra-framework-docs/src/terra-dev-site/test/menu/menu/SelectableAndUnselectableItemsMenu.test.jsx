@@ -2,10 +2,6 @@ import React from 'react';
 import Menu from 'terra-menu';
 import Button from 'terra-button';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import classNames from 'classnames/bind';
-import styles from './TestMenu.module.scss';
-
-const cx = classNames.bind(styles);
 
 class SelectableMenu extends React.Component {
   constructor(props) {
@@ -49,28 +45,26 @@ class SelectableMenu extends React.Component {
         <div>
           This menu contains a selectable item and an unselectable item. All items in the menu should have the same spacing on the left to allow for a checkmark.
         </div>
-        <div className={cx('menu-wrapper')} ref={this.setButtonNode}>
-          <Menu
-            isOpen={this.state.open}
-            targetRef={this.getButtonNode}
-            onRequestClose={this.handleRequestClose}
-          >
-            <Menu.Item
-              text="Default 1"
-              key="1"
-              className="TestNonSelectableItem"
-            />
-            <Menu.Item
-              text="Default 2"
-              key="2"
-              isSelectable
-              className="TestSelectableItem"
-              isSelected={this.state.isSelected}
-              onClick={this.handleItemClick}
-            />
-          </Menu>
-          <Button id="default-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed />
-        </div>
+        <Menu
+          isOpen={this.state.open}
+          targetRef={this.getButtonNode}
+          onRequestClose={this.handleRequestClose}
+        >
+          <Menu.Item
+            text="Default 1"
+            key="1"
+            className="TestNonSelectableItem"
+          />
+          <Menu.Item
+            text="Default 2"
+            key="2"
+            isSelectable
+            className="TestSelectableItem"
+            isSelected={this.state.isSelected}
+            onClick={this.handleItemClick}
+          />
+        </Menu>
+        <Button id="default-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
       </div>
     );
   }

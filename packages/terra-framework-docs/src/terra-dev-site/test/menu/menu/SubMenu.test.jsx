@@ -2,10 +2,6 @@ import React from 'react';
 import Menu from 'terra-menu';
 import Button from 'terra-button';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import classNames from 'classnames/bind';
-import styles from './TestMenu.module.scss';
-
-const cx = classNames.bind(styles);
 
 class SubMenu extends React.Component {
   constructor(props) {
@@ -44,28 +40,26 @@ class SubMenu extends React.Component {
           This menu has a nested submenu. When the Nested Menu item is clicked as submenu should replace the initial menu.
           There should be a header with a back button and a title of Nested Menu.
         </div>
-        <div className={cx('menu-wrapper')} ref={this.setButtonNode}>
-          <Menu
-            isOpen={this.state.open}
-            targetRef={this.getButtonNode}
-            onRequestClose={this.handleRequestClose}
-            headerTitle="Sample header"
-          >
-            <Menu.Item text="Default 1" key="1" className="TestInitialMenuContent" />
-            <Menu.Item
-              text="Nested Menu"
-              key="2"
-              className="TestNestedMenu"
-              subMenuItems={[
-                <Menu.Item text="Default 2.1" key="2.1" className="TestNestedMenuContent" />,
-              ]}
-            />
-            <Menu.Item text="Default 3" key="3" />
-            <Menu.Item text="Default 4" key="4" />
-            <Menu.Item text="Default 5" key="5" />
-          </Menu>
-          <Button id="sub-menu-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed />
-        </div>
+        <Menu
+          isOpen={this.state.open}
+          targetRef={this.getButtonNode}
+          onRequestClose={this.handleRequestClose}
+          headerTitle="Sample header"
+        >
+          <Menu.Item text="Default 1" key="1" className="TestInitialMenuContent" />
+          <Menu.Item
+            text="Nested Menu"
+            key="2"
+            className="TestNestedMenu"
+            subMenuItems={[
+              <Menu.Item text="Default 2.1" key="2.1" className="TestNestedMenuContent" />,
+            ]}
+          />
+          <Menu.Item text="Default 3" key="3" />
+          <Menu.Item text="Default 4" key="4" />
+          <Menu.Item text="Default 5" key="5" />
+        </Menu>
+        <Button id="sub-menu-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
       </div>
     );
   }
