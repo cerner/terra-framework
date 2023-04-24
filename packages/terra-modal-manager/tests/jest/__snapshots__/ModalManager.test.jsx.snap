@@ -192,6 +192,10 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                     tabindex="0"
                   >
                     <span
+                      data-terra-abstract-modal-begin="true"
+                      tabindex="-1"
+                    />
+                    <span
                       class="visually-hidden-text"
                       data-terra-abstract-modal-begin="true"
                       tabindex="-1"
@@ -271,6 +275,10 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                   role="dialog"
                   tabIndex="0"
                 >
+                  <span
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  />
                   <FormattedMessage
                     id="Terra.AbstractModal.BeginModalDialog"
                     values={Object {}}
