@@ -2,9 +2,6 @@
 
 ## Unreleased
 
-* Changed
-  * Replaced aria-label attribute with a11yLabel attribute in IconMenu found in _ApplicationHeader.jsx
-
 ## 5.67.1 - (April 12, 2023)
 
 * Changed
