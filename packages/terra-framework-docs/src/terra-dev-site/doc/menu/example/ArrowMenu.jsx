@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
 import Menu from 'terra-menu';
+import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import classNames from 'classnames/bind';
 import styles from './BasicMenu.module.scss';
 
@@ -78,7 +79,7 @@ class BasicMenu extends React.Component {
   render() {
     return (
       <div>
-        <div className={cx('menu-wrapper')} ref={this.setButtonNode}>
+        <div className={cx('menu-wrapper')}>
           <Menu
             isOpen={this.state.open}
             targetRef={this.getButtonNode}
@@ -88,21 +89,21 @@ class BasicMenu extends React.Component {
             boundingRef={this.props.boundingRef}
           >
             <Menu.Item
-              text="Toggle Item 1 - Closes Menu"
+              text="Close Hospital Details"
               key="Toggle1"
               isSelected={this.state.toggle1Selected}
               onClick={this.handleToggle1OnClick}
               isSelectable
             />
             <Menu.Item
-              text="Toggle Item 2"
+              text="Hospital events"
               key="Toggle2"
               isSelected={this.state.toggle2Selected}
               onClick={this.handleToggle2OnClick}
               isSelectable
             />
             <Menu.Item
-              text="Disabled Item 1"
+              text="Hospital Accommodations"
               key="Disabled1"
               isSelected={this.state.toggle1Selected}
               onClick={this.handleToggle1OnClick}
@@ -110,20 +111,18 @@ class BasicMenu extends React.Component {
             />
             <Menu.Divider key="Divider1" />
             <Menu.Item
-              text="Nested Menu 1"
+              text="Hospital services"
               key="Nested1"
               subMenuItems={[
-                <Menu.Item text="Action 1.1" key="1.1" onClick={this.handleAction} />,
-                <Menu.Item text="Action 1.2" key="1.2" onClick={this.handleAction} />,
-                <Menu.Item text="Action 1.3" key="1.3" onClick={this.handleAction} />,
+                <Menu.Item text="Imaging" key="1.1" onClick={this.handleAction} />,
+                <Menu.Item text="Laboratory" key="1.2" onClick={this.handleAction} />,
+                <Menu.Item text="Rehabilitation services" key="1.3" onClick={this.handleAction} />,
                 <Menu.Divider key="Divider1.1" />,
-                <Menu.Item text="Close Action 1.1" key="1.4" onClick={this.handleCloseOnClick} />,
-                <Menu.Item text="Close Action 1.2" key="1.5" onClick={this.handleCloseOnClick} />,
-                <Menu.Item text="Close Action 1.3" key="1.6" onClick={this.handleCloseOnClick} />,
+                <Menu.Item text="Close Hospital Services" key="1.4" onClick={this.handleCloseOnClick} />,
               ]}
             />
             <Menu.Item
-              text="Nested Menu 2 has a long title that will wrap and a truncated title when clicked"
+              text="View information on patient rights, privacy policies and insurance information"
               key="Nested2"
               isDisabled
               subMenuItems={[
@@ -133,16 +132,16 @@ class BasicMenu extends React.Component {
               ]}
             />
             <Menu.Divider key="Divider2" />
-            <Menu.Item text="Close Action" key="Action2" onClick={this.handleCloseOnClick} />
-            <Menu.Item text="Action" key="Action1" onClick={this.handleAction} />
+            <Menu.Item text="Close Hospital Details" key="Action2" onClick={this.handleCloseOnClick} />
+            <Menu.Item text="Patient Feedback" key="Action1" onClick={this.handleAction} />
             <Menu.Divider key="Divider3" />
             <Menu.ItemGroup key="Group" onChange={this.handleOnChange}>
-              <Menu.Item text="Group Item 1" key="GroupItem1" isSelected={this.state.groupSelectedIndex === 0} />
-              <Menu.Item text="Group Item 2" key="GroupItem2" isSelected={this.state.groupSelectedIndex === 1} />
-              <Menu.Item text="Group Item 3" key="GroupItem3" isSelected={this.state.groupSelectedIndex === 2} isDisabled />
+              <Menu.Item text="Hospital Careers" key="GroupItem1" isSelected={this.state.groupSelectedIndex === 0} />
+              <Menu.Item text="Patient Forms" key="GroupItem2" isSelected={this.state.groupSelectedIndex === 1} />
+              <Menu.Item text="Patient Resources" key="GroupItem3" isSelected={this.state.groupSelectedIndex === 2} isDisabled />
             </Menu.ItemGroup>
           </Menu>
-          <Button onClick={this.handleButtonClick} text="Click Me" />
+          <Button onClick={this.handleButtonClick} text="Hospital Details" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
         </div>
         <br />
         <p>

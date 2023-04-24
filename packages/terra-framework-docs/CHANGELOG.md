@@ -5,6 +5,7 @@
 * Changed
   * Updated `notification-dialog` and `tabs` examples.
   * Updated examples for `terra-slide-panel-manager`.
+  * Updated menu button to use down caret for visual context
 
 * Added
   * Added a `terra-slide-panel` example where the panel is open on page load and fullscreen.

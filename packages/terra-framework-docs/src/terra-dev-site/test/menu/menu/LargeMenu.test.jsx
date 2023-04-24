@@ -1,6 +1,8 @@
 import React from 'react';
 import Menu from 'terra-menu';
 import IconPrinter from 'terra-icon/lib/icon/IconPrinter';
+import Button from 'terra-button';
+import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
 class LargeMenu extends React.Component {
   constructor(props) {
@@ -82,9 +84,7 @@ class LargeMenu extends React.Component {
           <Menu.Divider key="Divider4" />
           <Menu.Item text="Default 16" key="16" className="TestLastItem" />
         </Menu>
-        <button type="button" id="large-menu-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
-          Default Menu
-        </button>
+        <Button id="large-menu-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
       </div>
     );
   }

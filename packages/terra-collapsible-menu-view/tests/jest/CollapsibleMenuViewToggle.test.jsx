@@ -34,22 +34,22 @@ describe('CollapsibleMenuViewToggle', () => {
   describe('Collapsible Menu Context', () => {
     it('should render a selectable menu item', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(<CollapsibleMenuViewToggle text="Testing" />, { context });
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewToggle text="Testing" />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
     it('should set selected prop on menu item', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(<CollapsibleMenuViewToggle text="Testing" isSelected />, { context });
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewToggle text="Testing" isSelected />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
     it('should set isSelectable prop on menu item to false', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(<CollapsibleMenuViewToggle text="Testing" isSelectable={false} />, { context });
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewToggle text="Testing" isSelectable={false} />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
     it('should set isDisabled prop on menu item', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(<CollapsibleMenuViewToggle text="Testing" isDisabled />, { context });
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewToggle text="Testing" isDisabled />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
   });

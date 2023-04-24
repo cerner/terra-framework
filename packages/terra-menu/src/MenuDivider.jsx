@@ -5,7 +5,7 @@ import styles from './Menu.module.scss';
 const cx = classNames.bind(styles);
 
 const MenuDivider = () => (
-  <li className={cx('divider')} role="separator" />
+  <li className={cx('divider')} role="presentation" />
 );
 
 export default MenuDivider;

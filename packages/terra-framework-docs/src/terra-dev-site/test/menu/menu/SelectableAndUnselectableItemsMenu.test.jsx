@@ -1,5 +1,7 @@
 import React from 'react';
 import Menu from 'terra-menu';
+import Button from 'terra-button';
+import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
 class SelectableMenu extends React.Component {
   constructor(props) {
@@ -62,9 +64,7 @@ class SelectableMenu extends React.Component {
             onClick={this.handleItemClick}
           />
         </Menu>
-        <button type="button" id="default-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
-          Default Menu
-        </button>
+        <Button id="default-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
       </div>
     );
   }

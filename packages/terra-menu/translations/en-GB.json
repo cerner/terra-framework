@@ -1,4 +1,9 @@
 {
   "Terra.menu.back": "Back",
-  "Terra.menu.close": "Close"
+  "Terra.menu.close": "Close",
+  "Terra.menu.exitSubmenu": "to exit submenu press Left Arrow or navigate to Back button",
+  "Terra.menu.selected": ",selected",
+  "Terra.menu.unselected": ",unselected",
+  "Terra.menu.itemWithSubmenu": ",with submenu items",
+  "Terra.menu.index": "({index} of {totalItems})"
 }

@@ -127,6 +127,14 @@ class MenuContent extends React.Component {
     return { isToggleableMenu: this.isToggleable(), shouldReserveSpaceForIcon: this.shouldReserveSpaceForIcon() };
   }
 
+  componentDidMount() {
+    // Set focus to first focusable menu item
+    const items = this.contentNode.querySelectorAll('[data-terra-menu-interactive-item="true"]');
+    if (items.length) {
+      items[0].focus();
+    }
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.isFocused) {
       this.needsFocus = this.needsFocus || this.props.isFocused !== prevProps.isFocused;
@@ -148,12 +156,12 @@ class MenuContent extends React.Component {
   onKeyDown(event) {
     const focusableMenuItems = this.contentNode.querySelectorAll('li[tabindex="0"]');
 
-    if (event.nativeEvent.keyCode === KeyCode.KEY_UP) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_UP || event.nativeEvent.keyCode === KeyCode.KEY_END) {
       // Shift focus to last focusable menu item
       focusableMenuItems[focusableMenuItems.length - 1].focus();
     }
 
-    if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN || event.nativeEvent.keyCode === KeyCode.KEY_HOME) {
       // Shift focus to first focusable menu item
       focusableMenuItems[0].focus();
     }
@@ -255,6 +263,7 @@ class MenuContent extends React.Component {
       if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
         if (item.props.subMenuItems && item.props.subMenuItems.length > 0) {
           this.props.onRequestNext(item);
+          this.setState({ focusIndex: index });
         }
       } else if (event.nativeEvent.keyCode === KeyCode.KEY_RIGHT) {
         if (item.props.subMenuItems && item.props.subMenuItems.length > 0) {
@@ -329,6 +338,8 @@ class MenuContent extends React.Component {
 
   render() {
     let index = -1;
+    const totalItems = MenuUtils.totalItems(this.props.children);
+    let itemIndex = -1;
     let shouldDisplayMainMenuHeader;
     const items = this.props.children ? [] : undefined;
 
@@ -339,6 +350,7 @@ class MenuContent extends React.Component {
       // Check if child is an enabled Menu.Item
       if (item.props.text && !item.props.isDisabled) {
         index += 1;
+        itemIndex += 1;
         const onKeyDown = this.wrapOnKeyDown(item, index);
         const isActive = this.state.focusIndex === index;
 
@@ -346,6 +358,9 @@ class MenuContent extends React.Component {
           onClick,
           onKeyDown,
           isActive,
+          totalItems,
+          itemIndex,
+          intl: this.props.intl,
         });
         // If the menu is first-tier and is provided with `headerTitle` prop, terra-menu should render a header.
         // Also the first-tier menu to have a header should possess at least one menu-item that drills-in to a sub-menu with sub-menu items.
@@ -358,9 +373,13 @@ class MenuContent extends React.Component {
         React.Children.forEach(item.props.children, (child) => {
           if (!child.props.isDisabled) {
             index += 1;
+            itemIndex += 1;
             const clonedElement = React.cloneElement(child, {
               onKeyDown: this.wrapOnKeyDown(child, index),
               isActive: index === this.state.focusIndex,
+              totalItems,
+              itemIndex,
+              intl: this.props.intl,
             });
             children.push(clonedElement);
           } else {
@@ -368,6 +387,9 @@ class MenuContent extends React.Component {
           }
         });
         newItem = React.cloneElement(item, {}, children);
+        // Increment item index count for disabled items
+      } else if (item.props.text && item.props.isDisabled) {
+        itemIndex += 1;
       }
 
       items.push(newItem);
@@ -408,7 +430,7 @@ class MenuContent extends React.Component {
         onKeyDown={this.onKeyDown}
       >
         <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
-          <List className={cx('list')} role="menu">
+          <List className={cx('list')} role="menu" data-submenu={isSubMenu}>
             {items}
           </List>
         </ContentContainer>

@@ -1,6 +1,8 @@
 import React from 'react';
+import Button from 'terra-button';
 import classNames from 'classnames/bind';
 import Menu from 'terra-menu';
+import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import styles from './BoundedMenu.test.module.scss';
 
 const cx = classNames.bind(styles);
@@ -64,7 +66,7 @@ class BoundedMenu extends React.Component {
             key="2"
             className="TestNestedMenu"
             subMenuItems={[
-              <Menu.Item text="Default 2.1" key="2.1" />,
+              <Menu.Item text="Default 2.1" key="2.1" className="TestNestedMenuContent" />,
               <Menu.Item text="Default 2.2" key="2.2" />,
               <Menu.Item text="Default 2.3" key="2.3" />,
             ]}
@@ -80,9 +82,7 @@ class BoundedMenu extends React.Component {
           <Menu.Item text="Default 7" key="7" />
           <Menu.Item text="Default 8" key="8" />
         </Menu>
-        <button type="button" id="bounded-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
-          Default Menu
-        </button>
+        <Button id="bounded-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
       </div>
     );
   }

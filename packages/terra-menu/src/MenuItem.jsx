@@ -1,4 +1,6 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import Arrange from 'terra-arrange';
 import CheckIcon from 'terra-icon/lib/icon/IconCheckmark';
@@ -7,8 +9,10 @@ import InstructionsForUseIcon from 'terra-icon/lib/icon/IconConsultInstructionsF
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import * as KeyCode from 'keycode-js';
 import styles from './MenuItem.module.scss';
+import MenuUtils from './_MenuUtils';
 
 const cx = classNamesBind.bind(styles);
 
@@ -104,6 +108,21 @@ const propTypes = {
    * Indicates if the item should display with a highlighted background. Reserved for Terra higher-order component approved usage only.
    */
   isHighlighted: PropTypes.bool,
+  /**
+   * @private
+   * The index of the menu item.
+   */
+  itemIndex: PropTypes.number,
+  /**
+   * @private
+   * Number of items in the menu.
+   */
+  totalItems: PropTypes.number,
+  /**
+   * @private
+   * The intl object to be injected for translations. Provided by the injectIntl function.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -228,6 +247,9 @@ class MenuItem extends React.Component {
       isActive,
       icon,
       isHighlighted,
+      itemIndex,
+      totalItems,
+      intl,
       ...customProps
     } = this.props;
 
@@ -256,6 +278,7 @@ class MenuItem extends React.Component {
       attributes.onClick = this.wrapOnClick;
       attributes.onKeyDown = this.wrapOnKeyDown(attributes.onKeyDown);
       attributes.onKeyUp = this.wrapOnKeyUp(attributes.Up);
+      attributes['data-terra-menu-interactive-item'] = true;
     }
 
     const markAsToggled = this.state.isToggled || (isGroupItem && toggled);
@@ -275,6 +298,19 @@ class MenuItem extends React.Component {
     ]);
 
     let content = textContainer;
+
+    const screenReaderResponse = (
+      <>
+        { MenuUtils.isMac() && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.index' }, { index: itemIndex + 1, totalItems })} /> }
+        { MenuUtils.isMac() && (isGroupItem || toggleable) && <VisuallyHiddenText text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
+        {/* Adds context for item with submenu-items */}
+        { subMenuItems.length > 0 && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.itemWithSubmenu' })} /> }
+        {/* Adds context for navigating back to parent menu from submenu */}
+        { this.itemNode && this.itemNode.parentNode.getAttribute('data-submenu') === 'true'
+            && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.exitSubmenu' })} /> }
+      </>
+    );
+
     if (hasChevron || toggleableMenu || isInstructionsForUse || icon || shouldReserveSpaceForIcon) {
       let fitStartIcon = null;
       if (isInstructionsForUse) {
@@ -292,12 +328,22 @@ class MenuItem extends React.Component {
       }
 
       content = (
-        <Arrange
-          fitStart={fitStartIcon}
-          fill={textContainer}
-          fitEnd={hasChevron ? <ChevronIcon className={cx('chevron')} /> : null}
-          align="center"
-        />
+        <>
+          <Arrange
+            fitStart={fitStartIcon}
+            fill={textContainer}
+            fitEnd={hasChevron ? <ChevronIcon className={cx('chevron')} /> : null}
+            align="center"
+          />
+          {screenReaderResponse}
+        </>
+      );
+    } else {
+      content = (
+        <>
+          {textContainer}
+          {screenReaderResponse}
+        </>
       );
     }
 
@@ -311,7 +357,13 @@ class MenuItem extends React.Component {
     return (
       <ThemeContext.Consumer>
         { theme => (
-          <li {...attributes} className={classNames(itemClassNames, cx(theme.className))} ref={this.setItemNode} role={role} aria-checked={markAsToggled}>
+          <li
+            {...attributes}
+            className={classNames(itemClassNames, cx(theme.className))}
+            ref={this.setItemNode}
+            role={role}
+            aria-checked={markAsToggled}
+          >
             {content}
           </li>
         )}
@@ -324,4 +376,4 @@ MenuItem.propTypes = propTypes;
 MenuItem.defaultProps = defaultProps;
 MenuItem.contextTypes = contextTypes;
 
-export default MenuItem;
+export default injectIntl(MenuItem);

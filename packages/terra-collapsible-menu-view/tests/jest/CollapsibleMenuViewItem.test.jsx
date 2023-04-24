@@ -69,37 +69,37 @@ describe('CollapsibleMenuViewItem', () => {
   describe('Collapsible Menu Context', () => {
     it('should render a menu item', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" />, { context });
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
 
     it('should not set selected prop on menu item outside of item group', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isSelected />, { context });
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isSelected />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
 
     it('should set selected prop on menu item when inside item group', () => {
       const context = { isCollapsibleMenuItem: true, isCollapsibleGroupItem: true };
-      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isSelected />, { context });
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isSelected />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
 
     it('should not set icon prop menu item, but should render text', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" icon={<IconTrash />} />, { context });
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" icon={<IconTrash />} />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
 
     it('should not set isReversed prop on menu item', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" icon={<IconTrash />} isReversed />, { context });
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" icon={<IconTrash />} isReversed />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
 
     it('should not set icon on menu item when isIconOnly is set, but should set the text', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" icon={<IconTrash />} isIconOnly />, { context });
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" icon={<IconTrash />} isIconOnly />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
 
@@ -112,13 +112,13 @@ describe('CollapsibleMenuViewItem', () => {
             subMenuItems={[<CollapsibleMenuViewItem text="Menu Item" key="1" />]}
           />
         ), { context },
-      );
+      ).dive();
       expect(wrapper).toMatchSnapshot();
     });
 
     it('should render a disabled menu item when isDisabled is set', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isDisabled />, { context });
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isDisabled />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
 

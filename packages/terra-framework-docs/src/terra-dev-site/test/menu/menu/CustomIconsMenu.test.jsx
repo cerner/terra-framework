@@ -1,10 +1,12 @@
 import React from 'react';
 import Menu from 'terra-menu';
+import Button from 'terra-button';
 import IconWarning from 'terra-icon/lib/icon/IconWarning';
 import IconError from 'terra-icon/lib/icon/IconError';
 import IconAlert from 'terra-icon/lib/icon/IconAlert';
 import IconHelp from 'terra-icon/lib/icon/IconHelp';
 import IconRequired from 'terra-icon/lib/icon/IconRequired';
+import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
 class CustomIconsMenu extends React.Component {
   constructor(props) {
@@ -66,9 +68,7 @@ class CustomIconsMenu extends React.Component {
             icon={<IconRequired />}
           />
         </Menu>
-        <button type="button" id="custom-icons-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
-          Custom Icons Menu
-        </button>
+        <Button id="custom-icons-button" type="button" onClick={this.handleButtonClick} text="Custom Icons Menu" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
       </div>
     );
   }
