@@ -313,7 +313,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
     });
 
     describe('Modal Focus', () => {
-      it(' is on the first element when modal when opened', () => {
+      it('is on the first element when modal when opened', () => {
         $('#root-component .disclose-small').click();
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
 
