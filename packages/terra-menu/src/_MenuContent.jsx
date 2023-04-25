@@ -87,7 +87,7 @@ const propTypes = {
    * Header Title for main-menu(first-tier).
    * Header Title will only be visible if the main-menu contains at least one sub-menu.
    */
-  headerTitle: PropTypes.string,
+  headerTitle: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
@@ -96,7 +96,6 @@ const defaultProps = {
   isWidthBounded: false,
   isHeightBounded: false,
   isHidden: false,
-  headerTitle: '',
 };
 
 const childContextTypes = {
@@ -340,7 +339,6 @@ class MenuContent extends React.Component {
     let index = -1;
     const totalItems = MenuUtils.totalItems(this.props.children);
     let itemIndex = -1;
-    let shouldDisplayMainMenuHeader;
     const items = this.props.children ? [] : undefined;
 
     React.Children.map(this.props.children, (item) => {
@@ -361,6 +359,7 @@ class MenuContent extends React.Component {
           totalItems,
           itemIndex,
           intl: this.props.intl,
+          'aria-describedby': !MenuUtils.isMac() && index === 0 ? menuHeaderId : undefined,
         });
         // If the child has children then it is an item group, so iterate through it's children
       } else if (item.props.children) {
@@ -375,6 +374,7 @@ class MenuContent extends React.Component {
               totalItems,
               itemIndex,
               intl: this.props.intl,
+              'aria-describedby': !MenuUtils.isMac() && index === 0 ? menuHeaderId : undefined,
             });
             children.push(clonedElement);
           } else {
