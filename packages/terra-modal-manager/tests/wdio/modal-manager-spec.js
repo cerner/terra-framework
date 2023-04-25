@@ -321,7 +321,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         expect(firstElementWithModalBeginAttribute.getText()).toBe('');
 
         const expectedParentElement = $('[aria-modal="true"][role="dialog"]');
-        expect(firstElementWithModalBeginAttribute.parentElement().getHTML() === expectedParentElement.getHTML()).toEqual(true);
+        expect(firstElementWithModalBeginAttribute.parentElement().getHTML()).toBe(expectedParentElement.getHTML());
 
         Terra.validates.element('modal is focused', { selector });
         browser.keys('Escape');
