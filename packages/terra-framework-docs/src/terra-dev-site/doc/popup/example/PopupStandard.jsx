@@ -36,13 +36,15 @@ function PopupStandard() {
         isContentFocusDisabled
       >
         <List role="listbox" aria-label="example-label">
-          <Item className={cx('list-item')}
+          <Item
+            className={cx('list-item')}
             key="listitem"
             isSelectable
           >
             Lisinopril
           </Item>
-          <Item className={cx('list-item')}
+          <Item
+            className={cx('list-item')}
             key="selected"
             isSelectable
             isSelected
