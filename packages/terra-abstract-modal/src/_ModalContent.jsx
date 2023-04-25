@@ -138,9 +138,8 @@ const ModalContent = forwardRef((props, ref) => {
         ref={ref}
       >
         {
-          /* UXPLATFORM-8733: Adding an empty span with data-terra-abstract-modal-begin attribute
-             to receive focus when the dialog is opened.
-          */
+          // This empty span with data-terra-abstract-modal-begin attribute
+          //  receives focus when the dialog is opened.
         }
         <span data-terra-abstract-modal-begin tabIndex="-1" />
         <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
