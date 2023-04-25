@@ -40,6 +40,7 @@ class DefaultMenu extends React.Component {
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
+          headerTitle="Sample Header"
         >
           <Menu.Item text="Default Menu" id="TestContent" />
         </Menu>

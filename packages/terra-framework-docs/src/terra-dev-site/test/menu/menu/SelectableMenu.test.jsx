@@ -39,6 +39,7 @@ class SelectableMenu extends React.Component {
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
+          headerTitle="Sample Header"
         >
           <Menu.ItemGroup className="TestGroup" onChange={this.handleSelection} key="selectable-group">
             <Menu.Item text="Group Item 1" key="1" className="TestGroupItem1" />
