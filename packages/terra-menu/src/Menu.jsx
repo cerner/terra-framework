@@ -57,14 +57,13 @@ const propTypes = {
    * Header Title for main-menu(first-tier).
    * Header Title will only be visible if the main-menu contains at least one sub-menu.
    */
-  headerTitle: PropTypes.string,
+  headerTitle: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
   isArrowDisplayed: false,
   isOpen: false,
   contentWidth: '240',
-  headerTitle: '',
 };
 
 class Menu extends React.Component {
