@@ -2,6 +2,10 @@ import React, { useRef, useState } from 'react';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
 import List, { Item } from 'terra-list/lib/index';
+import classNames from 'classnames/bind';
+import styles from './PopupDocCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 function PopupStandard() {
   const buttonElement = useRef();
@@ -32,13 +36,13 @@ function PopupStandard() {
         isContentFocusDisabled
       >
         <List role="listbox" aria-label="example-label">
-          <Item
+          <Item className={cx('list-item')}
             key="listitem"
             isSelectable
           >
             Lisinopril
           </Item>
-          <Item
+          <Item className={cx('list-item')}
             key="selected"
             isSelectable
             isSelected
