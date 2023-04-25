@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated Jest snapshots for terra-popup changes.
+  
 ## 6.64.0 - (March 29, 2023)
 
 * Changed
