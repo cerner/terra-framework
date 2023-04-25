@@ -318,7 +318,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
 
         const firstElementWithModalBeginAttribute = $('[aria-modal="true"][role="dialog"] [data-terra-abstract-modal-begin="true"]');
-        expect(firstElementWithModalBeginAttribute.getText() === '').toEqual(true);
+        expect(firstElementWithModalBeginAttribute.getText()).toBe('');
 
         const expectedParentElement = $('[aria-modal="true"][role="dialog"]');
         expect(firstElementWithModalBeginAttribute.parentElement().getHTML() === expectedParentElement.getHTML()).toEqual(true);
