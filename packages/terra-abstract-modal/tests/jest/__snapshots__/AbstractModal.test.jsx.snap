@@ -89,6 +89,10 @@ exports[`correctly applies the theme context className 1`] = `
                 tabindex="0"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -200,6 +204,10 @@ exports[`correctly applies the theme context className 1`] = `
               role="dialog"
               tabIndex="0"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}
@@ -347,6 +355,10 @@ exports[`should mount an open modal 1`] = `
                 tabindex="0"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -458,6 +470,10 @@ exports[`should mount an open modal 1`] = `
               role="dialog"
               tabIndex="0"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}
@@ -606,6 +622,10 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                 tabindex="0"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -717,6 +737,10 @@ exports[`should mount an open modal 7000 z-index 1`] = `
               role="dialog"
               tabIndex="0"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}
@@ -865,6 +889,10 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                 tabindex="0"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -976,6 +1004,10 @@ exports[`should mount an open modal 8000 z-index 1`] = `
               role="dialog"
               tabIndex="0"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}
@@ -1124,6 +1156,10 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                 tabindex="0"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -1235,6 +1271,10 @@ exports[`should mount an open modal 9000 z-index 1`] = `
               role="dialog"
               tabIndex="0"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}
@@ -1383,6 +1423,10 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                 tabindex="0"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -1494,6 +1538,10 @@ exports[`should mount an open modal set to fullscreen 1`] = `
               role="dialog"
               tabIndex="0"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}
@@ -1644,6 +1692,10 @@ exports[`should mount an open modal with custom props 1`] = `
                 tabindex="0"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -1757,6 +1809,10 @@ exports[`should mount an open modal with custom props 1`] = `
               role="dialog"
               tabIndex="0"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}
@@ -1905,6 +1961,10 @@ exports[`should mount an open modal with modal class name 1`] = `
                 tabindex="0"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -2016,6 +2076,10 @@ exports[`should mount an open modal with modal class name 1`] = `
               role="dialog"
               tabIndex="0"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}
@@ -2164,6 +2228,10 @@ exports[`should mount an open modal with overlay class name 1`] = `
                 tabindex="0"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -2275,6 +2343,10 @@ exports[`should mount an open modal with overlay class name 1`] = `
               role="dialog"
               tabIndex="0"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}
@@ -2423,6 +2495,10 @@ exports[`should mount an open modal with role 1`] = `
                 tabindex="0"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -2534,6 +2610,10 @@ exports[`should mount an open modal with role 1`] = `
               role="alertdialog"
               tabIndex="0"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}
@@ -2681,6 +2761,10 @@ exports[`should render the correct snapshot for iPads 1`] = `
                 tabindex="-1"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -2792,6 +2876,10 @@ exports[`should render the correct snapshot for iPads 1`] = `
               role="dialog"
               tabIndex="-1"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}
@@ -2939,6 +3027,10 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                 tabindex="-1"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -3050,6 +3142,10 @@ exports[`should render the correct snapshot for iPhones 1`] = `
               role="dialog"
               tabIndex="-1"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}
@@ -3197,6 +3293,10 @@ exports[`should render the correct snapshot for iPods 1`] = `
                 tabindex="-1"
               >
                 <span
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                />
+                <span
                   class="visually-hidden-text"
                   data-terra-abstract-modal-begin="true"
                   tabindex="-1"
@@ -3308,6 +3408,10 @@ exports[`should render the correct snapshot for iPods 1`] = `
               role="dialog"
               tabIndex="-1"
             >
+              <span
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
+              />
               <FormattedMessage
                 id="Terra.AbstractModal.BeginModalDialog"
                 values={Object {}}

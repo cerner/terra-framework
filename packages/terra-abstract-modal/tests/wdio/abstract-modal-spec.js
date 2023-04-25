@@ -23,7 +23,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
       $('[aria-modal="true"][role="dialog"]').waitForDisplayed();
       expect($('#root').getAttribute('inert')).toEqual('true');
       expect($('#root').getAttribute('aria-hidden')).toEqual('true');
-      expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeTruthy();
+      expect($('[aria-modal="true"][role="dialog"] [data-terra-abstract-modal-begin="true"]').isFocused()).toBeTruthy();
     });
 
     it('closes modal on ESC', () => {
@@ -56,7 +56,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
       $('[role="dialog"]').waitForDisplayed();
       expect($('#root').getAttribute('inert')).toEqual('true');
       expect($('#root').getAttribute('aria-hidden')).toEqual('true');
-      expect($('[role="dialog"]').isFocused()).toBeTruthy();
+      expect($('[role="dialog"] [data-terra-abstract-modal-begin="true"]').isFocused()).toBeTruthy();
     });
 
     it('closes modal on ESC', () => {
@@ -105,7 +105,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
       });
 
       it('focuses on the modal when opened', () => {
-        expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeTruthy();
+        expect($('[aria-modal="true"][role="dialog"] [data-terra-abstract-modal-begin="true"]').isFocused()).toBeTruthy();
         Terra.validates.element('modal focused', { selector });
       });
 
@@ -146,7 +146,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
     describe('No Focusable Content', () => {
       it('does focus on the modal when opened', () => {
         browser.url('/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-no-focusable-content');
-        expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeTruthy();
+        expect($('[aria-modal="true"][role="dialog"] [data-terra-abstract-modal-begin="true"]').isFocused()).toBeTruthy();
         Terra.validates.element('focus on modal', { selector });
       });
     });

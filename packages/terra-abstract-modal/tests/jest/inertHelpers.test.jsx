@@ -5,8 +5,13 @@ describe('showModalDomUpdates', () => {
   const mockGetAttribute = jest.fn();
   const mockSetAttribute = jest.fn();
   const mockModalElementFocus = jest.fn();
+  const mockChildElementFocus = jest.fn();
   const mockModalElement = {
-    querySelector: jest.fn().mockReturnValue({ focus: mockModalElementFocus }),
+    querySelector: jest.fn().mockReturnValue({ focus: mockChildElementFocus }),
+    focus: mockModalElementFocus,
+  };
+  const mockModalElementWithoutAbstractModalBeginAttribute = {
+    querySelector: jest.fn().mockReturnValue(null),
     focus: mockModalElementFocus,
   };
 
@@ -49,7 +54,7 @@ describe('showModalDomUpdates', () => {
     });
 
     it('sets focus to modal when on browser', () => {
-      showModalDomUpdates(mockModalElement, '#root');
+      showModalDomUpdates(mockModalElementWithoutAbstractModalBeginAttribute, '#root');
       expect(mockModalElementFocus).toHaveBeenCalled();
     });
 
@@ -57,8 +62,13 @@ describe('showModalDomUpdates', () => {
       const defaultOnTouchStart = window.ontouchstart;
       window.ontouchstart = true;
       showModalDomUpdates(mockModalElement, '#root');
-      expect(mockModalElementFocus).toHaveBeenCalled();
+      expect(mockChildElementFocus).toHaveBeenCalled();
       window.ontouchstart = defaultOnTouchStart;
+    });
+
+    it('sets focus to first element in dialog with data-terra-abstract-modal-begin attribute', () => {
+      showModalDomUpdates(mockModalElement, '#root');
+      expect(mockChildElementFocus).toHaveBeenCalled();
     });
   });
 });

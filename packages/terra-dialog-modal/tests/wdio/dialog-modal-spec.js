@@ -34,7 +34,7 @@ describe('Dialog Modal', () => {
     it('focuses on the modal when opened', () => {
       browser.url('/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal');
       $('#trigger-dialog-modal').click();
-      expect($('[aria-modal="true"][role="dialog"]').isFocused()).toEqual(true);
+      expect($('[aria-modal="true"][role="dialog"] [data-terra-abstract-modal-begin="true"]').isFocused()).toEqual(true);
       Terra.validates.element('modal is focused on open', { selector: '#root' });
     });
 

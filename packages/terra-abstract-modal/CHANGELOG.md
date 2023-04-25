@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+  * Added
+    * Added screen reader support to read the title of the modal when it is open.
+
 ## 3.39.0 - (February 14, 2023)
 
 * Changed
