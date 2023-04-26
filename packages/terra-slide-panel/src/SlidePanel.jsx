@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { injectIntl } from 'react-intl';
 import styles from './SlidePanel.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -69,6 +70,12 @@ const propTypes = {
    * Callback function to set the slide panel ref.
    */
   setSlidePanelRef: PropTypes.func,
+
+  /**
+   * @private
+   * Intl object injected from injectIntl
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }),
 };
 
 const defaultProps = {
@@ -84,6 +91,7 @@ class SlidePanel extends React.Component {
     this.mainNode = React.createRef();
     this.setLastClicked = this.setLastClicked.bind(this);
     this.setDisclosingNode = this.setDisclosingNode.bind(this);
+    this.mainAriaDescribedByID = 'detail-panel-warning';
   }
 
   componentDidUpdate(prevProps) {
@@ -126,16 +134,17 @@ class SlidePanel extends React.Component {
 
   render() {
     const {
-      panelAriaLabel,
+      intl,
+      isFullscreen,
+      isOpen,
+      fill,
       mainAriaLabel,
       mainContent,
+      panelAriaLabel,
       panelContent,
       panelBehavior,
       panelPosition,
       panelSize,
-      isFullscreen,
-      isOpen,
-      fill,
       setSlidePanelRef,
       ...customProps
     } = this.props;
@@ -156,13 +165,13 @@ class SlidePanel extends React.Component {
         className={cx(['panel'])}
         key="panel"
         tabIndex="-1"
-        aria-label={panelAriaLabel}
+        aria-label={panelAriaLabel || intl.formatMessage({ id: 'Terra.slidePanel.defaultPanelLabel' })}
         aria-hidden={!isOpen ? 'true' : 'false'}
         role="region"
         ref={this.setPanelNode}
       >
         <VisuallyHiddenText
-          text={panelAriaLabel}
+          text={panelAriaLabel || intl.formatMessage({ id: 'Terra.slidePanel.defaultPanelLabel' })}
         />
         {panelContent}
       </div>
@@ -175,12 +184,18 @@ class SlidePanel extends React.Component {
         key="main"
         tabIndex="-1"
         aria-label={mainAriaLabel}
+        aria-describedby={this.mainAriaDescribedByID}
         aria-hidden={isOpen && isFullscreen ? 'true' : 'false'}
         ref={this.mainNode}
         role="main"
         onClick={this.setLastClicked}
         onKeyUp={this.setLastClicked}
       >
+        <VisuallyHiddenText
+          tabIndex="-1"
+          id={this.mainAriaDescribedByID}
+          text={intl.formatMessage({ id: 'Terra.slidePanel.discloseWarning' })}
+        />
         {mainContent}
       </div>
     );
@@ -215,5 +230,5 @@ SlidePanel.propTypes = propTypes;
 SlidePanel.defaultProps = defaultProps;
 SlidePanel.contextType = ThemeContext;
 
-export default SlidePanel;
+export default injectIntl(SlidePanel);
 export { SlidePanelPositions };

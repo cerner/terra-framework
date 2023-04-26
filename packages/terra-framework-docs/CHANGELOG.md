@@ -27,7 +27,6 @@
   * Updated doc and added test for terra-collapsible-menu-view
 
 * Added
-  * Added package-lock.json
   * Added test for `terra-slide-panel`.
   * Added test for `terra-slide-panel-manager`.
 
