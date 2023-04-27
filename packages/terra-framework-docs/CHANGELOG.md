@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.20.0 - (April 27, 2023)
+
 * Changed
   * Updated `notification-dialog` and `tabs` examples.
   * Updated examples for `terra-slide-panel-manager`.
