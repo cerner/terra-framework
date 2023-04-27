@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.40.0 - (April 27, 2023)
+
   * Added
     * Added screen reader support to read the title of the modal when it is open.
 
