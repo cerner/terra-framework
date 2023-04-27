@@ -267,13 +267,13 @@
         color: var(--terra-time-input-meridiem-button-hover-color, #000);
       }
 
-      &[aria-pressed='true'] {
+      &[aria-checked='true'] {
         background-color: var(--terra-time-input-meridiem-button-selected-background-color, #52585b);
         border-color: var(--terra-time-input-meridiem-button-selected-border-color, #52585b);
         color: var(--terra-time-input-meridiem-button-selected-color, #fff);
       }
 
-      &[aria-pressed='true']:hover {
+      &[aria-checked='true']:hover {
         background-color: var(--terra-time-input-meridiem-button-selected-hover-background-color, #40474a);
         border-color: var(--terra-time-input-meridiem-button-selected-hover-border-color, #40474a);
         color: var(--terra-time-input-meridiem-button-selected-hover-color, #fff);
