@@ -4,6 +4,7 @@
 
 * Changed
   * Updated Jest snapshots for terra-popup changes.
+  * Updated close handler to return focus to target object upon pop-up closure. 
   
 ## 6.64.0 - (March 29, 2023)
 
