@@ -1,7 +1,5 @@
 import React, { useRef, useState } from 'react';
-import Button from 'terra-button';
 import Popup from 'terra-popup';
-import List, { Item } from 'terra-list/lib/index';
 import classNames from 'classnames/bind';
 import styles from './PopupDocCommon.module.scss';
 
@@ -27,31 +25,14 @@ function PopupStandard() {
 
   return (
     <React.Fragment>
-      <Button text="Medications" onClick={handleButtonClick} refCallback={setButtonNode} aria-haspopup />
+      <button type="button" className={cx('popup-button')} onClick={handleButtonClick} ref={setButtonNode} aria-haspopup>Medications</button>
       <Popup
         isOpen={open}
         targetRef={getButtonNode}
         onRequestClose={handleRequestClose}
         isHeaderDisabled={false}
-        isContentFocusDisabled
       >
-        <List role="listbox" aria-label="example-label">
-          <Item
-            className={cx('list-item')}
-            key="listitem"
-            isSelectable
-          >
-            Lisinopril
-          </Item>
-          <Item
-            className={cx('list-item')}
-            key="selected"
-            isSelectable
-            isSelected
-          >
-            Amoxicillin
-          </Item>
-        </List>
+        <label htmlFor="html">Medications for patient John Doe</label>
       </Popup>
     </React.Fragment>
   );

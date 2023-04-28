@@ -5,8 +5,14 @@
     overflow: hidden;
     width: 200px;
   }
-
-  .list-item {
-    padding-top: 0.5rem;
+  
+  .popup-button {
+    display: block;
+    font-size: 1rem;
+    height: 30px;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
