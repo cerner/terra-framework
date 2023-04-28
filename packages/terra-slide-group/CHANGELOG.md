@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.31.0 - (April 27, 2023)
+
 * Added
   * Added programmatic context when opening and closing slides.
   * Added focus for disclosed (nested) slides.

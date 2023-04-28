@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.39.0 - (April 27, 2023)
+
 * Added
   * Added roles and visually hidden text to slide panel.
   * Added built-in text for screen readers to communicate that a slide panel may be present and interactable.
