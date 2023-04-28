@@ -18,6 +18,7 @@ import styles from './Menu.module.scss';
 const cx = classNames.bind(styles);
 const menuHeaderId = `terra-menu-headertitle-${uuidv4()}`;
 const menuTopHeaderId = `terra-menu-headertitle-${uuidv4()}`;
+let headerContent;
 
 const propTypes = {
   /**
@@ -89,6 +90,10 @@ const propTypes = {
    * Header Title will only be visible if the main-menu contains at least one sub-menu.
    */
   headerTitle: PropTypes.string.isRequired,
+  /**
+   * Target element for the menu to anchor to.
+   */
+  targetRef: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -117,6 +122,7 @@ class MenuContent extends React.Component {
     this.validateFocus = this.validateFocus.bind(this);
     this.needsFocus = props.isFocused;
     this.handleContainerRef = this.handleContainerRef.bind(this);
+    this.isButtonHidden = this.isButtonHidden.bind(this);
 
     this.state = {
       focusIndex: -1,
@@ -150,6 +156,10 @@ class MenuContent extends React.Component {
       this.props.refCallback(node);
     }
     this.contentNode = node;
+    // Adding header when menu button is invisible
+    if (this.isButtonHidden()) {
+      headerContent = this.buildHeader();
+    }
     this.validateFocus(node);
   }
 
@@ -336,6 +346,13 @@ class MenuContent extends React.Component {
     );
   }
 
+  isButtonHidden() {
+    const buttonRect = this.props.targetRef().getBoundingClientRect();
+    const popupRect = this.contentNode && this.contentNode.parentNode.getBoundingClientRect();
+    return !!(buttonRect && popupRect && buttonRect.top > popupRect.top && buttonRect.bottom < popupRect.bottom
+        && buttonRect.left > popupRect.left && buttonRect.right < popupRect.right);
+  }
+
   render() {
     let index = -1;
     const totalItems = MenuUtils.totalItems(this.props.children);
@@ -407,9 +424,9 @@ class MenuContent extends React.Component {
       theme.className,
     );
 
-    let header;
+    // Adding header for bounded and sub-menu
     if (this.props.boundingRef || isSubMenu) {
-      header = this.buildHeader(isFullScreen);
+      headerContent = this.buildHeader(isFullScreen);
     }
     const contentHeight = this.props.isHeightBounded ? '100%' : this.props.fixedHeight;
     const contentPosition = this.props.isHeightBounded ? 'relative' : 'static';
@@ -425,7 +442,7 @@ class MenuContent extends React.Component {
         role="dialog"
         onKeyDown={this.onKeyDown}
       >
-        <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
+        <ContentContainer header={headerContent} fill={this.props.isHeightBounded || this.props.index > 0}>
           <List className={cx('list')} role="menu" data-submenu={isSubMenu}>
             {items}
           </List>

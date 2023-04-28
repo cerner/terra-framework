@@ -150,6 +150,7 @@ class Menu extends React.Component {
         boundingRef={boundingRef}
         isFocused={index === visiblePage}
         headerTitle={this.props.headerTitle}
+        targetRef={targetRef}
       >
         {item.props.children || item.props.subMenuItems}
       </MenuContent>
