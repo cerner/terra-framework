@@ -53,6 +53,11 @@ class ModalManager extends React.Component {
     super(props);
 
     this.renderModal = this.renderModal.bind(this);
+    this.setModalFocusElementRef = this.setModalFocusElementRef.bind(this);
+  }
+
+  setModalFocusElementRef(node) {
+    this.modalElementRef = node;
   }
 
   renderModal(manager) {
@@ -94,6 +99,7 @@ class ModalManager extends React.Component {
           closeOnEsc
           closeOnOutsideClick={false}
           ariaLabel={headerDataForPresentedComponent?.title || 'Modal'}
+          setModalFocusElementRef={this.setModalFocusElementRef}
         >
           <ContentContainer
             fill
@@ -112,7 +118,7 @@ class ModalManager extends React.Component {
               </React.Fragment>
             )}
           >
-            <SlideGroup items={manager.disclosure.components} isAnimated={!isFullscreen} />
+            <SlideGroup items={manager.disclosure.components} isAnimated={!isFullscreen} focusRef={this.modalElementRef} />
           </ContentContainer>
         </AbstractModal>
       </div>

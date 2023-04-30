@@ -1,7 +1,9 @@
 # Changelog
 
 ## Unreleased
-
+  * Changed
+    * Added Accessibility support for nested ModalManager disclosures.
+    
 ## 3.40.0 - (April 27, 2023)
 
   * Added
