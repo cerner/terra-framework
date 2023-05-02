@@ -3,7 +3,7 @@
 ## Unreleased
 
   * Changed
-    * Added Accessibility support for nested ModalManager disclosures.
+    * Added screen reader support to read the title of the modal when it is open for nested ModalManager disclosures.
 
 ## 6.61.0 - (April 27, 2023)
 
