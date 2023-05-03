@@ -18,7 +18,6 @@ import styles from './Menu.module.scss';
 const cx = classNames.bind(styles);
 const menuHeaderId = `terra-menu-headertitle-${uuidv4()}`;
 const menuTopHeaderId = `terra-menu-headertitle-${uuidv4()}`;
-let headerContent;
 
 const propTypes = {
   /**
@@ -91,9 +90,10 @@ const propTypes = {
    */
   headerTitle: PropTypes.string.isRequired,
   /**
-   * Target element for the menu to anchor to.
+   * @private
+   * Should the menu display Header Title (first-tier).
    */
-  targetRef: PropTypes.func.isRequired,
+  showHeader: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -122,7 +122,6 @@ class MenuContent extends React.Component {
     this.validateFocus = this.validateFocus.bind(this);
     this.needsFocus = props.isFocused;
     this.handleContainerRef = this.handleContainerRef.bind(this);
-    this.isButtonHidden = this.isButtonHidden.bind(this);
 
     this.state = {
       focusIndex: -1,
@@ -156,10 +155,6 @@ class MenuContent extends React.Component {
       this.props.refCallback(node);
     }
     this.contentNode = node;
-    // Adding header when menu button is invisible
-    if (this.isButtonHidden()) {
-      headerContent = this.buildHeader();
-    }
     this.validateFocus(node);
   }
 
@@ -330,7 +325,7 @@ class MenuContent extends React.Component {
           </div>
         </>
       );
-    } else if (this.props.headerTitle.length > 0) {
+    } else if (this.props.headerTitle && this.props.headerTitle.length > 0) {
       header = (
         <h1 id={menuTopHeaderId} className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
       );
@@ -344,13 +339,6 @@ class MenuContent extends React.Component {
         align="center"
       />
     );
-  }
-
-  isButtonHidden() {
-    const buttonRect = this.props.targetRef().getBoundingClientRect();
-    const popupRect = this.contentNode && this.contentNode.parentNode.getBoundingClientRect();
-    return !!(buttonRect && popupRect && buttonRect.top > popupRect.top && buttonRect.bottom < popupRect.bottom
-        && buttonRect.left > popupRect.left && buttonRect.right < popupRect.right);
   }
 
   render() {
@@ -424,9 +412,9 @@ class MenuContent extends React.Component {
       theme.className,
     );
 
-    // Adding header for bounded and sub-menu
-    if (this.props.boundingRef || isSubMenu) {
-      headerContent = this.buildHeader(isFullScreen);
+    let header;
+    if (this.props.showHeader || isSubMenu) {
+      header = this.buildHeader(isFullScreen);
     }
     const contentHeight = this.props.isHeightBounded ? '100%' : this.props.fixedHeight;
     const contentPosition = this.props.isHeightBounded ? 'relative' : 'static';
@@ -442,7 +430,7 @@ class MenuContent extends React.Component {
         role="dialog"
         onKeyDown={this.onKeyDown}
       >
-        <ContentContainer header={headerContent} fill={this.props.isHeightBounded || this.props.index > 0}>
+        <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
           <List className={cx('list')} role="menu" data-submenu={isSubMenu}>
             {items}
           </List>

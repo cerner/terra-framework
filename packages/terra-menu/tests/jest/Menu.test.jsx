@@ -19,6 +19,7 @@ describe('Menu', () => {
           isOpen
           targetRef={jest.fn()}
           onRequestClose={jest.fn()}
+          headerTitle="Sample header"
         >
           <Menu.Item key="abc" text="testing" />
         </Menu>
