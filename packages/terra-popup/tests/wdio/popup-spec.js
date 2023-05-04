@@ -14,8 +14,9 @@ Terra.describeViewports('Popup', ['medium'], () => {
       Terra.validates.element('default', { selector });
     });
 
-    it('closes on ESC', () => {
+    it('closes on ESC and focuses on button', () => {
       browser.keys('Escape');
+      expect($('#default-button').isFocused()).toBeFalsy();
       expect($('.test-content').isExisting()).toBeFalsy();
     });
 
