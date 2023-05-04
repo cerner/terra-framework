@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+* Added
+  * Added `showHeader` prop to control display of header title
+
+* Fixed
+  * Header context for JAWS
+
 ## 6.66.0 - (April 27, 2023)
 
 * Changed
