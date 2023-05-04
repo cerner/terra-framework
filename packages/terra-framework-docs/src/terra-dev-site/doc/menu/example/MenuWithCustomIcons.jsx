@@ -75,7 +75,6 @@ class MenuWithCustomIcons extends React.Component {
             contentWidth={this.props.contentWidth}
             isArrowDisplayed={this.props.isArrowDisplayed}
             boundingRef={this.props.boundingRef}
-            headerTitle="Sample Header"
           >
             <Menu.Item
               text="Search Icon"

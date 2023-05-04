@@ -57,7 +57,7 @@ const propTypes = {
    * Header Title for main-menu(first-tier).
    * Header Title will only be visible if the main-menu contains at least one sub-menu.
    */
-  headerTitle: PropTypes.string.isRequired,
+  headerTitle: PropTypes.string,
   /**
    * Should the menu display Header Title (first-tier).
    */
@@ -68,6 +68,7 @@ const defaultProps = {
   isArrowDisplayed: false,
   isOpen: false,
   contentWidth: '240',
+  headerTitle: '',
   showHeader: true,
 };
 
