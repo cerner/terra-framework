@@ -10,13 +10,13 @@ Terra.describeViewports('Popup', ['medium'], () => {
     it('validates popup does not have an arrow', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/popup/default-popup');
       $('.test-content').waitForDisplayed();
-      expect($('.test-arrow').isExisting()).toBeTruthy();
+      expect($('.test-arrow').isExisting()).toBeFalsy();
       Terra.validates.element('default', { selector });
     });
 
     it('closes on ESC and focuses on button', () => {
       browser.keys('Escape');
-      expect($('#default-button').isFocused()).toBeFalsy();
+      expect($('#default-button').isFocused()).toBeTruthy();
       expect($('.test-content').isExisting()).toBeFalsy();
     });
 
