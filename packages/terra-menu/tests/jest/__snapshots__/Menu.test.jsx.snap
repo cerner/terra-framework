@@ -237,7 +237,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                 role="menu"
                               >
                                 <li
-                                  aria-describedby="terra-menu-headertitle-86167246-57f7-42ed-a4df-b5fa5fff56ab"
+                                  aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
                                   aria-disabled="false"
                                   class="item orion-fusion-theme"
                                   data-terra-menu-interactive-item="true"
@@ -515,7 +515,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                 role="menu"
                                               >
                                                 <InjectIntl(MenuItem)
-                                                  aria-describedby="terra-menu-headertitle-86167246-57f7-42ed-a4df-b5fa5fff56ab"
+                                                  aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
                                                   intl={
                                                     Object {
                                                       "defaultFormats": Object {},
@@ -552,7 +552,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                   totalItems={1}
                                                 >
                                                   <MenuItem
-                                                    aria-describedby="terra-menu-headertitle-86167246-57f7-42ed-a4df-b5fa5fff56ab"
+                                                    aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
                                                     intl={
                                                       Object {
                                                         "defaultFormats": Object {},
@@ -593,7 +593,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                     totalItems={1}
                                                   >
                                                     <li
-                                                      aria-describedby="terra-menu-headertitle-86167246-57f7-42ed-a4df-b5fa5fff56ab"
+                                                      aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
                                                       aria-disabled={false}
                                                       className="item orion-fusion-theme"
                                                       data-terra-menu-interactive-item={true}
