@@ -366,7 +366,7 @@ class MenuContent extends React.Component {
           totalItems,
           itemIndex,
           intl: this.props.intl,
-          'aria-describedby': !MenuUtils.isMac() && index === 0 ? menuTopHeaderId : undefined,
+          'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuTopHeaderId : undefined,
         });
         // If the child has children then it is an item group, so iterate through it's children
       } else if (item.props.children) {
@@ -381,7 +381,7 @@ class MenuContent extends React.Component {
               totalItems,
               itemIndex,
               intl: this.props.intl,
-              'aria-describedby': !MenuUtils.isMac() && index === 0 ? menuTopHeaderId : undefined,
+              'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuTopHeaderId : undefined,
             });
             children.push(clonedElement);
           } else {
