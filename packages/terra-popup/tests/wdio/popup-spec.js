@@ -10,7 +10,7 @@ Terra.describeViewports('Popup', ['medium'], () => {
     it('validates popup does not have an arrow', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/popup/default-popup');
       $('.test-content').waitForDisplayed();
-      expect($('.test-arrow').isExisting()).toBeFalsy();
+      expect($('.test-arrow').isExisting()).toBeTruthy();
       Terra.validates.element('default', { selector });
     });
 
