@@ -47,8 +47,13 @@ exports[`Menu correctly applies the theme context className 1`] = `
         "calls": Array [
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -82,8 +87,13 @@ exports[`Menu correctly applies the theme context className 1`] = `
           "calls": Array [
             Array [],
             Array [],
+            Array [],
           ],
           "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
             Object {
               "type": "return",
               "value": undefined,
@@ -163,8 +173,13 @@ exports[`Menu correctly applies the theme context className 1`] = `
             "calls": Array [
               Array [],
               Array [],
+              Array [],
             ],
             "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
               Object {
                 "type": "return",
                 "value": undefined,
@@ -273,7 +288,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
               isHeightAutomatic={true}
               isWidthAutomatic={false}
               onContentResize={[Function]}
-              onRequestClose={[MockFunction]}
+              onRequestClose={[Function]}
               onResize={[Function]}
               popupContentRole="dialog"
               refCallback={[Function]}
@@ -302,7 +317,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                     }
                     excludeScrollbar={false}
                     onContentResize={[Function]}
-                    onEsc={[MockFunction]}
+                    onEsc={[Function]}
                     onResize={[Function]}
                     outsideClickIgnoreClass="ignore-react-onclickoutside"
                     preventDefault={false}
@@ -323,7 +338,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                         ]
                       }
                       onContentResize={[Function]}
-                      onEsc={[MockFunction]}
+                      onEsc={[Function]}
                       onResize={[Function]}
                       outsideClickIgnoreClass="ignore-react-onclickoutside"
                       preventDefault={false}

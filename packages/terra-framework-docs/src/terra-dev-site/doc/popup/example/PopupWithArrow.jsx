@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
-import { Placeholder } from '@cerner/terra-docs';
 
 function PopupArrow() {
   const buttonElement = useRef();
@@ -23,14 +22,21 @@ function PopupArrow() {
 
   return (
     <React.Fragment>
-      <Button text="Arrow Popup" onClick={handleButtonClick} refCallback={setButtonNode} />
+      <Button text="Show More Options" onClick={handleButtonClick} refCallback={setButtonNode} />
       <Popup
         isOpen={open}
         onRequestClose={handleRequestClose}
         targetRef={getButtonNode}
         isArrowDisplayed
       >
-        <Placeholder title="Popup Content" />
+
+        <a href="https://www.refseek.com/directory/health_medical.html">Health and Medical sites</a>
+        <br />
+        <a href="https://www.northeaststate.edu/Campus-Life/Health-and-Wellness/Health-Related-Links/
+        "
+        >
+          Health Related Links
+        </a>
       </Popup>
     </React.Fragment>
   );
