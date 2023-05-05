@@ -17,7 +17,6 @@ import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 const menuHeaderId = `terra-menu-headertitle-${uuidv4()}`;
-const menuTopHeaderId = `terra-menu-headertitle-${uuidv4()}`;
 
 const propTypes = {
   /**
@@ -328,7 +327,7 @@ class MenuContent extends React.Component {
       );
     } else if (this.props.headerTitle && this.props.headerTitle.length > 0) {
       header = (
-        <h1 id={menuTopHeaderId} className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
+        <h1 id={menuHeaderId} className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
       );
     }
 
@@ -366,7 +365,7 @@ class MenuContent extends React.Component {
           totalItems,
           itemIndex,
           intl: this.props.intl,
-          'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuTopHeaderId : undefined,
+          'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuHeaderId : undefined,
         });
         // If the child has children then it is an item group, so iterate through it's children
       } else if (item.props.children) {
@@ -381,7 +380,7 @@ class MenuContent extends React.Component {
               totalItems,
               itemIndex,
               intl: this.props.intl,
-              'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuTopHeaderId : undefined,
+              'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuHeaderId : undefined,
             });
             children.push(clonedElement);
           } else {
