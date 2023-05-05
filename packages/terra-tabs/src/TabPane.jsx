@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
@@ -62,6 +62,7 @@ const TabPane = ({
   isIconOnly,
   isActive,
   showIcon,
+  onClosedClicked,
   ...customProps
 }) => {
   const paneRef = React.useRef(null);
@@ -99,12 +100,26 @@ const TabPane = ({
   attributes.onKeyDown = handleKeyDown;
   attributes.onMouseDown = handleMouseDown;
   attributes.onBlur = handleBlur;
+  
+  const handleClose=(id)=>{
+    onClosedClicked(id)
+  }
 
   return (
     <div {...attributes} ref={paneRef} data-terra-tabs-show-focus-styles={!isDisabled} data-terra-tab-pane role="tab" className={paneClassNames}>
       {customDisplay}
       {customDisplay ? null : icon}
       {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
+
+  <button
+      className={cx('pill-remove-button')}
+      type="button"
+      aria-label="Close Tab"
+      onClick={()=>handleClose(customProps.index)}
+    >
+      <span className={cx('clear-icon')} />
+    </button>
+        
     </div>
   );
 };

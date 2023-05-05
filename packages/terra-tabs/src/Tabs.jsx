@@ -83,11 +83,14 @@ class Tabs extends React.Component {
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleTruncationChange = this.handleTruncationChange.bind(this);
     this.wrapPaneOnClick = this.wrapPaneOnClick.bind(this);
+    this.wrapPaneOnClose = this.wrapPaneOnClose.bind(this);
     this.setTabs = this.setTabs.bind(this);
     this.state = {
       activeKey: this.getInitialState(),
       isLabelTruncated: false,
       showCollapsedTabs: false,
+      clonedPanesClosed: [],
+      childrenArrayState:this.props.children,
     };
   }
 
@@ -99,12 +102,47 @@ class Tabs extends React.Component {
   }
 
   handleOnChange(event, selectedPane) {
+    if(!isNaN(event)) //only check when called from wrapPaneOnClose()-->TabsPane.jsx
+    {
+      if(this.state.activeKey === selectedPane.key){
+        if (event <= this.state.childrenArrayState.length - 1) {
+            if(this.state.childrenArrayState[event + 1] != undefined){
+
+            let nextPane = this.state.childrenArrayState[event + 1];
+            if(nextPane.key==="DisabledTab"){
+              let nextPane = this.state.childrenArrayState[event + 2];
+              this.setState({ activeKey: nextPane.key })
+            }
+          else
+             { this.setState({ activeKey: nextPane.key })}
+            }
+
+            else if(this.state.childrenArrayState[event - 1] != undefined){
+              let prevPane = this.state.childrenArrayState[event - 1];
+              if(prevPane.key==="DisabledTab"){
+                let prevPane = this.state.childrenArrayState[event - 2];
+                this.setState({ activeKey: prevPane.key })
+              }
+              else {this.setState({ activeKey: prevPane.key })}
+              
+            }
+            else{
+            this.setState({ activeKey: selectedPane.key });
+            }
+          }
+        }
+    }
+    
     if (!selectedPane.props.isDisabled) {
       if (this.props.onChange) {
         this.props.onChange(event, selectedPane.key);
       }
       if (!this.props.activeKey && TabUtils.shouldHandleSelection(this.state.activeKey, selectedPane.key)) {
-        this.setState({ activeKey: selectedPane.key });
+        setTimeout(() => {                          
+          if (!this.state.clonedPanesClosed.includes(selectedPane.key)) {
+            this.setState({ activeKey: selectedPane.key });
+          }
+        }, 50);
       }
     }
   }
@@ -142,6 +180,19 @@ class Tabs extends React.Component {
       }
     };
   }
+    wrapPaneOnClose(pane) {
+    return (event) => {
+      this.handleOnChange(event,pane)
+      console.log("CHECK THIS EVENT",event)
+      this.setState({
+        clonedPanesClosed: [...this.state.clonedPanesClosed, pane.key],
+        childrenArrayState:this.state.childrenArrayState.filter(item => item.key !== pane.key)
+    }); 
+      if (pane.props.onClosedClicked) {
+        pane.props.onClosedClicked(event);
+      }
+    };
+  }
 
   render() {
     const {
@@ -170,7 +221,7 @@ class Tabs extends React.Component {
     let content = null;
     let isIconOnly = false;
     const clonedPanes = [];
-    React.Children.forEach(children, (child, index) => {
+    React.Children.forEach(this.state.childrenArrayState, (child, index) => {
       let isActive = false;
       if (child.key === this.state.activeKey || child.key === activeKey) {
         isActive = true;
@@ -180,12 +231,16 @@ class Tabs extends React.Component {
       if (child.props.isIconOnly) {
         isIconOnly = true;
       }
-      clonedPanes.push(React.cloneElement(child, {
-        className: cx({ 'is-active': isActive }, child.props.className),
-        onClick: this.wrapPaneOnClick(child),
-        isActive,
-        index,
-      }));
+      if (!this.state.clonedPanesClosed.includes(child.key)) {
+        clonedPanes.push(
+          React.cloneElement(child, {
+            className: cx({ "is-active": isActive }, child.props.className),
+            onClosedClicked: this.wrapPaneOnClose(child),
+            onClick: this.wrapPaneOnClick(child),
+            isActive,
+            index,
+          }));
+      }
     });
 
     content = React.Children.map(content, contentItem => (
