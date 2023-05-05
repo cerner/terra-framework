@@ -58,6 +58,10 @@ const propTypes = {
    * Header Title will only be visible if the main-menu contains at least one sub-menu.
    */
   headerTitle: PropTypes.string,
+  /**
+   * Should the menu display Header Title (first-tier).
+   */
+  showHeader: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -65,6 +69,7 @@ const defaultProps = {
   isOpen: false,
   contentWidth: '240',
   headerTitle: '',
+  showHeader: true,
 };
 
 class Menu extends React.Component {
@@ -125,6 +130,7 @@ class Menu extends React.Component {
       targetRef,
       isArrowDisplayed,
       contentWidth,
+      showHeader,
       ...customProps
     } = this.props;
     const arrowClass = cx([
@@ -151,6 +157,7 @@ class Menu extends React.Component {
         boundingRef={boundingRef}
         isFocused={index === visiblePage}
         headerTitle={this.props.headerTitle}
+        showHeader={showHeader}
       >
         {item.props.children || item.props.subMenuItems}
       </MenuContent>

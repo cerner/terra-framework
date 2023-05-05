@@ -17,6 +17,7 @@ import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 const menuHeaderId = `terra-menu-headertitle-${uuidv4()}`;
+const menuTopHeaderId = `terra-menu-headertitle-${uuidv4()}`;
 
 const propTypes = {
   /**
@@ -88,6 +89,11 @@ const propTypes = {
    * Header Title will only be visible if the main-menu contains at least one sub-menu.
    */
   headerTitle: PropTypes.string,
+  /**
+   * @private
+   * Should the menu display Header Title (first-tier).
+   */
+  showHeader: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -95,8 +101,8 @@ const defaultProps = {
   title: '',
   isWidthBounded: false,
   isHeightBounded: false,
-  isHidden: false,
   headerTitle: '',
+  isHidden: false,
 };
 
 const childContextTypes = {
@@ -320,9 +326,9 @@ class MenuContent extends React.Component {
           </div>
         </>
       );
-    } else if (this.props.headerTitle.length > 0) {
+    } else if (this.props.headerTitle && this.props.headerTitle.length > 0) {
       header = (
-        <h1 className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
+        <h1 id={menuTopHeaderId} className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>
       );
     }
 
@@ -340,7 +346,6 @@ class MenuContent extends React.Component {
     let index = -1;
     const totalItems = MenuUtils.totalItems(this.props.children);
     let itemIndex = -1;
-    let shouldDisplayMainMenuHeader;
     const items = this.props.children ? [] : undefined;
 
     React.Children.map(this.props.children, (item) => {
@@ -361,12 +366,8 @@ class MenuContent extends React.Component {
           totalItems,
           itemIndex,
           intl: this.props.intl,
+          'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuTopHeaderId : undefined,
         });
-        // If the menu is first-tier and is provided with `headerTitle` prop, terra-menu should render a header.
-        // Also the first-tier menu to have a header should possess at least one menu-item that drills-in to a sub-menu with sub-menu items.
-        if (this.props.headerTitle.length > 0 && item.props.subMenuItems && item.props.subMenuItems.length > 0) {
-          shouldDisplayMainMenuHeader = true;
-        }
         // If the child has children then it is an item group, so iterate through it's children
       } else if (item.props.children) {
         const children = item.props.children ? [] : undefined;
@@ -380,6 +381,7 @@ class MenuContent extends React.Component {
               totalItems,
               itemIndex,
               intl: this.props.intl,
+              'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuTopHeaderId : undefined,
             });
             children.push(clonedElement);
           } else {
@@ -412,7 +414,7 @@ class MenuContent extends React.Component {
     );
 
     let header;
-    if (isFullScreen || isSubMenu || shouldDisplayMainMenuHeader) {
+    if (this.props.showHeader || isSubMenu) {
       header = this.buildHeader(isFullScreen);
     }
     const contentHeight = this.props.isHeightBounded ? '100%' : this.props.fixedHeight;
