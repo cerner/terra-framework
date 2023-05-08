@@ -22,7 +22,7 @@ function PopupArrow() {
 
   return (
     <React.Fragment>
-      <Button text="Show More Options" onClick={handleButtonClick} refCallback={setButtonNode} />
+      <Button text="Medicaton Links" onClick={handleButtonClick} refCallback={setButtonNode} />
       <Popup
         isOpen={open}
         onRequestClose={handleRequestClose}
