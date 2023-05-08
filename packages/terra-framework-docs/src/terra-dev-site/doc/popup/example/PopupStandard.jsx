@@ -1,7 +1,9 @@
 import React, { useRef, useState } from 'react';
-import Button from 'terra-button';
 import Popup from 'terra-popup';
-import { Placeholder } from '@cerner/terra-docs';
+import classNames from 'classnames/bind';
+import styles from './PopupDocCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 function PopupStandard() {
   const buttonElement = useRef();
@@ -23,13 +25,14 @@ function PopupStandard() {
 
   return (
     <React.Fragment>
-      <Button text="Default Popup" onClick={handleButtonClick} refCallback={setButtonNode} />
+      <button type="button" className={cx('popup-button')} onClick={handleButtonClick} ref={setButtonNode}>Medications</button>
       <Popup
         isOpen={open}
         targetRef={getButtonNode}
         onRequestClose={handleRequestClose}
+        isHeaderDisabled={false}
       >
-        <Placeholder title="Popup Content" />
+        <label htmlFor="html">Medications for patient John Doe</label>
       </Popup>
     </React.Fragment>
   );

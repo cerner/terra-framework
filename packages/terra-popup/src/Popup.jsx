@@ -126,6 +126,14 @@ class Popup extends React.Component {
     this.isContentSized = props.contentHeight !== 'auto' && props.contentWidth !== 'auto';
     this.contentHeight = PopupHeights[props.contentHeight];
     this.contentWidth = PopupWidths[props.contentWidth];
+    this.handleRequestClose = this.handleRequestClose.bind(this);
+  }
+
+  componentDidMount() {
+    const { targetRef } = this.props;
+    if (targetRef()) {
+      targetRef().setAttribute('aria-haspopup', 'true');
+    }
   }
 
   shouldComponentUpdate(nextProps) {
@@ -133,6 +141,12 @@ class Popup extends React.Component {
     this.contentHeight = PopupHeights[nextProps.contentHeight];
     this.contentWidth = PopupWidths[nextProps.contentWidth];
     return true;
+  }
+
+  handleRequestClose() {
+    const { targetRef } = this.props;
+    targetRef().focus();
+    this.props.onRequestClose();
   }
 
   handleOnPosition(event, positions) {
@@ -225,7 +239,7 @@ class Popup extends React.Component {
         arrow={arrow}
         classNameInner={this.props.classNameContent}
         isHeaderDisabled={this.props.isHeaderDisabled}
-        onRequestClose={this.props.onRequestClose}
+        onRequestClose={this.handleRequestClose}
         onContentResize={this.handleOnContentResize}
         onResize={this.handleOnResize}
         popupContentRole={this.props.popupContentRole}
