@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.67.0 - (May 9, 2023)
+
 * Added
   * Added `showHeader` prop to control display of header title
 
