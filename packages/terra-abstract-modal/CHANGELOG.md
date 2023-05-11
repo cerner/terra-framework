@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 3.41.0 - (May 11, 2023)
+
   * Added
     * Added screen reader support to read the title of the modal when it is open for nested ModalManager disclosures.
     
