@@ -1,0 +1,23 @@
+@import '../clinical-lowlight-theme/Tabs.module';
+@import '../orion-fusion-theme/Tabs.module';
+
+:local {
+  .tab-container {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    height: var(--terra-application-workspace-tab-container-height, 33px);
+    justify-content: flex-start;
+    margin-bottom: var(--terra-application-workspace-tab-container-margin-bottom, 0);
+    padding: 0;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &[data-tab-is-calculating='true'] {
+      visibility: hidden;
+    }
+  }
+}
