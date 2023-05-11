@@ -257,7 +257,7 @@ class MenuContent extends React.Component {
     };
   }
 
-  wrapOnKeyDown(item, index) {
+  wrapOnKeyDown(item, index, isDisabled) {
     const { onKeyDown } = item.props;
     return ((event) => {
       const shiftTabClicked = (event.shiftKey && event.nativeEvent.keyCode === KeyCode.KEY_TAB);
@@ -266,16 +266,16 @@ class MenuContent extends React.Component {
         event.preventDefault();
       }
 
-      if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
+      if (!isDisabled && (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE)) {
         if (item.props.subMenuItems && item.props.subMenuItems.length > 0) {
           this.props.onRequestNext(item);
           this.setState({ focusIndex: index });
         }
-      } else if (event.nativeEvent.keyCode === KeyCode.KEY_RIGHT) {
+      } else if (!isDisabled && event.nativeEvent.keyCode === KeyCode.KEY_RIGHT) {
         if (item.props.subMenuItems && item.props.subMenuItems.length > 0) {
           this.props.onRequestNext(item);
         }
-      } else if (event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
+      } else if (!isDisabled && event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
         this.props.onRequestBack();
       } else if (event.nativeEvent.keyCode === KeyCode.KEY_UP) {
         this.setState({ focusIndex: index - 1 });
@@ -345,7 +345,6 @@ class MenuContent extends React.Component {
   render() {
     let index = -1;
     const totalItems = MenuUtils.totalItems(this.props.children);
-    let itemIndex = -1;
     const items = this.props.children ? [] : undefined;
 
     React.Children.map(this.props.children, (item) => {
@@ -353,10 +352,9 @@ class MenuContent extends React.Component {
       let newItem = item;
 
       // Check if child is an enabled Menu.Item
-      if (item.props.text && !item.props.isDisabled) {
+      if (item.props.text) {
         index += 1;
-        itemIndex += 1;
-        const onKeyDown = this.wrapOnKeyDown(item, index);
+        const onKeyDown = this.wrapOnKeyDown(item, index, item.props.isDisabled);
         const isActive = this.state.focusIndex === index;
 
         newItem = React.cloneElement(item, {
@@ -364,7 +362,7 @@ class MenuContent extends React.Component {
           onKeyDown,
           isActive,
           totalItems,
-          itemIndex,
+          index,
           intl: this.props.intl,
           'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuTopHeaderId : undefined,
         });
@@ -372,26 +370,18 @@ class MenuContent extends React.Component {
       } else if (item.props.children) {
         const children = item.props.children ? [] : undefined;
         React.Children.forEach(item.props.children, (child) => {
-          if (!child.props.isDisabled) {
-            index += 1;
-            itemIndex += 1;
-            const clonedElement = React.cloneElement(child, {
-              onKeyDown: this.wrapOnKeyDown(child, index),
-              isActive: index === this.state.focusIndex,
-              totalItems,
-              itemIndex,
-              intl: this.props.intl,
-              'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuTopHeaderId : undefined,
-            });
-            children.push(clonedElement);
-          } else {
-            children.push(child);
-          }
+          index += 1;
+          const clonedElement = React.cloneElement(child, {
+            onKeyDown: this.wrapOnKeyDown(child, index, child.props.isDisabled),
+            isActive: index === this.state.focusIndex,
+            totalItems,
+            index,
+            intl: this.props.intl,
+            'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuTopHeaderId : undefined,
+          });
+          children.push(clonedElement);
         });
         newItem = React.cloneElement(item, {}, children);
-        // Increment item index count for disabled items
-      } else if (item.props.text && item.props.isDisabled) {
-        itemIndex += 1;
       }
 
       items.push(newItem);
