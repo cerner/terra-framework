@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Changed
+  * Allow navigation to disabled items
+  * Updated submenu exit context to first item
+
 ## 6.67.0 - (May 11, 2023)
 
 * Added
