@@ -1,0 +1,24 @@
+:local {
+  .orion-fusion-theme {
+    // Grid
+    --terra-grid-border: 2px solid #020005;
+
+    // Row Headers
+    --terra-grid-row-header-text-color: #595f62;
+    --terra-grid-row-header-background-color: #fff;
+    --terra-grid-row-header-border: 1px solid #c8cacb;
+    --terra-grid-row-header-cell-border: 1px solid #c8cacb;
+    --terra-grid-row-striped-background-color: #f4f4f4;
+
+    // Column Headers
+    --terra-grid-column-header-text-color: #595f62;
+    --terra-grid-column-header-background-color: #fff;
+    --terra-grid-column-header-border: 1px solid #c8cacb;
+
+    // Cells
+    --terra-grid-cell-border: 1px solid #c8cacb;
+    --terra-grid-cell-focus-background-color: transparent;
+    --terra-grid-cell-selected-background-color: #cbe7fa;
+    --terra-grid-cell-focus-box-shadow: inset 0 0 0 1px rgba(38, 162, 229, 0.5), inset 0 0 0 4px rgba(76, 178, 233, 0.2);
+  }
+}

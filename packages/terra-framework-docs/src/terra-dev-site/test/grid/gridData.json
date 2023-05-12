@@ -1,0 +1,355 @@
+{ "cols": {
+  "height": "100px",
+  "pinnedColumns": [
+    { "id": "Column-0", "displayName": " Vitals"},
+    { "id": "Column-1", "displayName": "March 16" },
+    { "id": "Column-2", "displayName": "March 17" },
+    { "id": "Column-3", "displayName": "March 18" },
+    { "id": "Column-4", "displayName": "March 19" },
+    { "id": "Column-5", "displayName": "March 20" },
+    { "id": "Column-6", "displayName": "March 21" },
+    { "id": "Column-7", "displayName": "March 22" },
+    { "id": "Column-8", "displayName": "March 23" },
+    { "id": "Column-9", "displayName": "March 24" }
+  ]
+},
+"rows": [
+      {
+        "cells": [
+          { "cellContent": "Heart Rate Monitored (bpm)"},
+          { "cellContent": "68"},
+          { "cellContent": "66"},
+          { "cellContent": "67"},
+          { "cellContent": "120"},
+          { "cellContent": "69"},
+          { "cellContent": "52"},
+          { "cellContent": "67"},
+          { "cellContent": "72"},
+          { "cellContent": "70"}
+        ]
+      },
+      {
+        "height": "150px",
+        "cells": [
+          { "cellContent": "Temperature Oral (degC)"},
+          { "cellContent": "36.7" },
+          { "cellContent": "36.9" },
+          { "cellContent": "37" },
+          { "cellContent": "35.2" },
+          { "cellContent": "35" },
+          { "cellContent": "36" },
+          { "cellContent": "35.8" },
+          { "cellContent": "36.7" },
+          { "cellContent": "35.6" }
+        ]
+      },
+      {
+        "cells": [
+          { "cellContent": "Cardiac Index (L/min/m2)"},
+          { "cellContent": "2.25" },
+          { "cellContent": "2.28" },
+          { "cellContent": "2.8" },
+          { "cellContent": "3.0" },
+          { "cellContent": "2.25" },
+          { "cellContent": "3.1" },
+          { "cellContent": "2.9" },
+          { "cellContent": "2.8" },
+          { "cellContent": "3.1" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "ICP (mmHg)"},
+          { "cellContent": "11" },
+          { "cellContent": "11" },
+          { "cellContent": "12" },
+          { "cellContent": "13" },
+          { "cellContent": "14" },
+          { "cellContent": "12.5" },
+          { "cellContent": "11.2" },
+          { "cellContent": "12.8" },
+          { "cellContent": "10.9" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "CPP (mmHg)"},
+          { "cellContent": "63" },
+          { "cellContent": "47" },
+          { "cellContent": "48" },
+          { "cellContent": "49" },
+          { "cellContent": "50" },
+          { "cellContent": "51" },
+          { "cellContent": "51" },
+          { "cellContent": "53" },
+          { "cellContent": "54" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "Oxygen Flow Rate (L/min)"},
+          { "cellContent": "2.0" },
+          { "cellContent": "6.5" },
+          { "cellContent": "7.2" },
+          { "cellContent": "2.3" },
+          { "cellContent": "8.4" },
+          { "cellContent": "--"  },
+          { "cellContent": "9.9" },
+          { "cellContent": "11.0" },
+          { "cellContent": "2.5" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "SpO2 (%)"},
+          { "cellContent": "97" },
+          { "cellContent": "97.2" },
+          { "cellContent": "96.3" },
+          { "cellContent": "97.4" },
+          { "cellContent": "98.5" },
+          { "cellContent": "97.6" },
+          { "cellContent": "96.7" },
+          { "cellContent": "97.8" },
+          { "cellContent": "96.9" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "FIO2 (%)"},
+          { "cellContent": "45" },
+          { "cellContent": "43" },
+          { "cellContent": "44" },
+          { "cellContent": "45" },
+          { "cellContent": "44" },
+          { "cellContent": "43" },
+          { "cellContent": "42" },
+          { "cellContent": "44" },
+          { "cellContent": "45" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "pO2 Arterial (mmHg)"},
+          { "cellContent": "92.3" },
+          { "cellContent": "91.5" },
+          { "cellContent": "92.4" },
+          { "cellContent": "93.5" },
+          { "cellContent": "92.6" },
+          { "cellContent": "91.5" },
+          { "cellContent": "92.5" },
+          { "cellContent": "91.6" },
+          { "cellContent": "92.5" }
+        ]
+      },
+      {
+          "cells": [
+            {"cellContent": "pCO2 Arterial(mmHg)"},
+            { "cellContent": "48.3" },
+            { "cellContent": "44.7" },
+            { "cellContent": "43.1" },
+            { "cellContent": "46.4" },
+            { "cellContent": "49.1" },
+            { "cellContent": "42.7" },
+            { "cellContent": "45.8" },
+            { "cellContent": "48.4" },
+            { "cellContent": "45.3" }
+          ]
+        },
+        {
+          "cells": [
+            {"cellContent": "pH Arterial(mmHg)"},
+            { "cellContent": "7.33" },
+            { "cellContent": "7.36" },
+            { "cellContent": "7.24" },
+            { "cellContent": "7.47" },
+            { "cellContent": "7.89" },
+            { "cellContent": "7.56" },
+            { "cellContent": "7.37" },
+            { "cellContent": "7.43" },
+            { "cellContent": "7.59" }
+          ]
+        },
+        {
+          "cells": [
+            {"cellContent": "Bicarbonate(mEq/L)"},
+            { "cellContent": "34.8" },
+            { "cellContent": "-27.6" },
+            { "cellContent": "32.3" },
+            { "cellContent": "31.8" },
+            { "cellContent": "33.5" },
+            { "cellContent": "34.4" },
+            { "cellContent": "35.9" },
+            { "cellContent": "33.7" },
+            { "cellContent": "32.8" }
+          ]
+        },
+        {
+          "cells": [
+            {"cellContent": "Lactate (mmol/L)"},
+            { "cellContent": "0.1" },
+            { "cellContent": "0.3" },
+            { "cellContent": "0.7" },
+            { "cellContent": "0.2" },
+            { "cellContent": "0.5" },
+            { "cellContent": "0.9" },
+            { "cellContent": "0.3" },
+            { "cellContent": "0.6" },
+            { "cellContent": "0.8" }
+          ]
+        },
+        {
+          "cells": [
+            {"cellContent": "Weight (kg)"},
+            { "cellContent": "58.8" },
+            { "cellContent": "59" },
+            { "cellContent": "55.1" },
+            { "cellContent": "52.6" },
+            { "cellContent": "57" },
+            { "cellContent": "59.5" },
+            { "cellContent": "53.2" },
+            { "cellContent": "56" },
+            { "cellContent": "55.7" }
+          ]
+        },
+      {
+        "cells": [
+          {"cellContent": "Hemoglobin (g/dL)"},
+          { "cellContent": "18" },
+          { "cellContent": "--" },
+          { "cellContent": "--" },
+          { "cellContent": "19" },
+          { "cellContent": "17" },
+          { "cellContent": "21" },
+          { "cellContent": "18" },
+          { "cellContent": "--" },
+          { "cellContent": "20" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "Platelets (billion/L)"},
+          { "cellContent": "461" },
+          { "cellContent": "475" },
+          { "cellContent": "--" },
+          { "cellContent": "412" },
+          { "cellContent": "392" },
+          { "cellContent": "421" },
+          { "cellContent": "418" },
+          { "cellContent": "428" },
+          { "cellContent": "418" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "WBCs (billion/L)"},
+          { "cellContent": "12.2" },
+          { "cellContent": "11.9" },
+          { "cellContent": "--" },
+          { "cellContent": "12" },
+          { "cellContent": "10.8" },
+          { "cellContent": "11.2" },
+          { "cellContent": "12.1" },
+          { "cellContent": "11.7" },
+          { "cellContent": "12.1" }
+        ]
+      },
+      {
+        "cells": [
+          { "cellContent": "C-Reactive Protein  (mg/L)"},
+          { "cellContent": "120" },
+          { "cellContent": "98" },
+          { "cellContent": "--" },
+          { "cellContent": "108" },
+          { "cellContent": "103" },
+          { "cellContent": "112" },
+          { "cellContent": "121" },
+          { "cellContent": "117" },
+          { "cellContent": "121" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "Activated PTT  (seconds)"},
+          { "cellContent": "101" },
+          { "cellContent": "97" },
+          { "cellContent": "--" },
+          { "cellContent": "94" },
+          { "cellContent": "85" },
+          { "cellContent": "100" },
+          { "cellContent": "95" },
+          { "cellContent": "98" },
+          { "cellContent": "102" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "INR"},
+          { "cellContent": "1.97" },
+          { "cellContent": "--" },
+          { "cellContent": "--" },
+          { "cellContent": "2.34" },
+          { "cellContent": "--" },
+          { "cellContent": "--" },
+          { "cellContent": "2.09" },
+          { "cellContent": "--" },
+          { "cellContent": "1.95" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "Creatinine mg/dL"},
+          { "cellContent": "0.76" },
+          { "cellContent": "--" },
+          { "cellContent": "--" },
+          { "cellContent": "0.78" },
+          { "cellContent": "--" },
+          { "cellContent": "--" },
+          { "cellContent": "0.73" },
+          { "cellContent": "--" },
+          { "cellContent": "0/85" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "Potassium mEq/L"},
+          { "cellContent": "4.5" },
+          { "cellContent": "--" },
+          { "cellContent": "--" },
+          { "cellContent": "4.5" },
+          { "cellContent": "--" },
+          { "cellContent": "4.9" },
+          { "cellContent": "--" },
+          { "cellContent": "--" },
+          { "cellContent": "4.6" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "Troponin ng/mL"},
+          { "cellContent": "0.03" },
+          { "cellContent": "--" },
+          { "cellContent": "--" },
+          { "cellContent": "0.04" },
+          { "cellContent": "--" },
+          { "cellContent": "--" },
+          { "cellContent": "0.04" },
+          { "cellContent": "--" },
+          { "cellContent": "0.03" }
+        ]
+      },
+      {
+        "cells": [
+          {"cellContent": "Glucose mg/dL"},
+          { "cellContent": "161" },
+          { "cellContent": "--" },
+          { "cellContent": "--" },
+          { "cellContent": "162" },
+          { "cellContent": "--" },
+          { "cellContent": "179" },
+          { "cellContent": "--" },
+          { "cellContent": "--" },
+          { "cellContent": "176" }
+        ]
+      }
+    ]
+}
