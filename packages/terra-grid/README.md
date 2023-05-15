@@ -1,17 +1,17 @@
 # Terra Date Input
 
-[![NPM version](https://badgen.net/npm/v/terra-navigatable-grid)](https://www.npmjs.com/package/terra-navigatable-grid)
+[![NPM version](https://badgen.net/npm/v/terra-grid)](https://www.npmjs.com/package/terra-grid)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
-The NavigatableGrid allows for easy .... TODO: Need to complete
+The Terra Grid is a container that enables users to navigate the grid information using directional navigation keys.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-navigatable-grid/navigatable-grid/navigatable-grid)
+- [Documentation](https://engineering.cerner.com/terra-framework/components/cerner-terra-framework-docs/grid/grid)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-navigatable-grid`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-grid`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
 ## Peer Dependencies

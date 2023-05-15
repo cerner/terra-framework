@@ -2,7 +2,7 @@
   "name": "terra-grid",
   "main": "lib/Grid.js",
   "version": "1.36.0",
-  "description": "The Grid is a grid that allows......TODO: Need to complete the description ",
+  "description": "The Terra Grid is a container that enables users to navigate the grid information using directional navigation keys.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",

@@ -6,6 +6,10 @@ Terra.describeViewports('Grid', ['tiny', 'medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/grid/default-grid');
     });
 
+    afterEach(async () => {
+      await expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
     it('tab into the grid', () => {
       browser.keys(new Array(1).fill('Tab'));
       Terra.validates.element('first-cell-in-grid-selected', { selector });
