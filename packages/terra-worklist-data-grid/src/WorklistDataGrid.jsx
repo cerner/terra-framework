@@ -161,8 +161,9 @@ class WorklistDataGrid extends React.Component {
   }
 
   getCellData(cell, cellColumnIndex) {
+    const cellClassName = { className: classNames(cx(this.props.rowHeaderIndex === cellColumnIndex ? 'worklist-data-grid-row-header' : 'worklist-data-grid-cell-data')) };
     const tabIndex = { tabIndex: '-1' };
-    return this.props.rowHeaderIndex === cellColumnIndex ? (<th {...tabIndex} role="rowheader">{cell.cellContent}</th>) : (<td {...tabIndex}>{cell.cellContent}</td>);
+    return this.props.rowHeaderIndex === cellColumnIndex ? (<th {...tabIndex} {...cellClassName} role="rowheader">{cell.cellContent}</th>) : (<td {...tabIndex} {...cellClassName}>{cell.cellContent}</td>);
   }
 
   buildColumnHeaders(colHeader) {
@@ -179,9 +180,10 @@ class WorklistDataGrid extends React.Component {
   buildSingleColumnHeading(columnData) {
     const width = columnData.width || this.props.columnHeaderDefaultWidth;
     const height = columnData.height || this.props.columnHeaderHeight;
+    const columnHeaderClassName = classNames(cx('worklist-data-grid-column-header'));
     return (
       /* eslint-disable react/forbid-dom-props */
-      <th id={columnData.id} role="columnheader" tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
+      <th id={columnData.id} role="columnheader" className={columnHeaderClassName} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
     );
   }
 
@@ -215,7 +217,7 @@ class WorklistDataGrid extends React.Component {
 
     const theme = this.context;
 
-    const gridClassNames = classNames(cx('data', theme.className), customProps.className);
+    const gridClassNames = classNames(cx('worklist-data-grid', theme.className), customProps.className);
 
     return (
       <div className={cx(['container'])}>
