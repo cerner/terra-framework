@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added documentation and tests for `terra-worklist-data-grid`.
+
 ## 1.21.0 - (May 11, 2023)
 
 * Changed

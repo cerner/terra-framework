@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import * as KeyCode from 'keycode-js';
 import columnHeaderShape from './proptypes/columnHeaderShape';
 import rowShape from './proptypes/rowShape';
-import WorklistDataGridUtil from './WorklistDataGridUtil';
 import styles from './WorklistDataGrid.module.scss';
 
 const cx = classNames.bind(styles);
@@ -92,25 +92,25 @@ class WorklistDataGrid extends React.Component {
 
     const key = event.keyCode;
     switch (key) {
-      case WorklistDataGridUtil.KEY_CODES.UP_ARROW:
+      case KeyCode.KEY_UP:
         nextRow -= 1;
         break;
-      case WorklistDataGridUtil.KEY_CODES.DOWN_ARROW:
+      case KeyCode.KEY_DOWN:
         nextRow += 1;
         break;
-      case WorklistDataGridUtil.KEY_CODES.LEFT_ARROW:
+      case KeyCode.KEY_LEFT:
         nextCol -= 1;
         break;
-      case WorklistDataGridUtil.KEY_CODES.RIGHT_ARROW:
+      case KeyCode.KEY_RIGHT:
         nextCol += 1;
         break;
-      case WorklistDataGridUtil.KEY_CODES.HOME:
+      case KeyCode.KEY_HOME:
         nextCol = 0;
         if (event.ctrlKey) {
           nextRow = this.getNumberOfHeaderRows();
         }
         break;
-      case WorklistDataGridUtil.KEY_CODES.END:
+      case KeyCode.KEY_END:
         nextCol = this.props.rows[0].cells.length - 1;
         if (event.ctrlKey) {
           nextRow = (this.props.rows.length - 1) + this.getNumberOfHeaderRows();
