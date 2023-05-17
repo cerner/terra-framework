@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import * as KeyCode from 'keycode-js';
-import columnHeaderShape from './proptypes/columnHeaderShape';
-import rowShape from './proptypes/rowShape';
+import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import styles from './WorklistDataGrid.module.scss';
 
 const cx = classNames.bind(styles);
@@ -26,11 +25,11 @@ const propTypes = {
   /**
    * Data for column headers. Columns will be presented in the order given.
    */
-  columnHeaders: PropTypes.shape(columnHeaderShape),
+  columnHeaders: WorklistDataGridPropTypes.columnHeaderShape,
   /**
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
-  rows: PropTypes.arrayOf(rowShape),
+  rows: PropTypes.arrayOf(WorklistDataGridPropTypes.rowShape),
   /**
    * String that specifies the default column width. Any valid CSS width value is accepted.
    * This value will be used if no overriding width value is provided on a per-column basis.
@@ -163,7 +162,7 @@ class WorklistDataGrid extends React.Component {
   getCellData(cell, cellColumnIndex) {
     const cellClassName = { className: classNames(cx(this.props.rowHeaderIndex === cellColumnIndex ? 'worklist-data-grid-row-header' : 'worklist-data-grid-cell-data')) };
     const tabIndex = { tabIndex: '-1' };
-    return this.props.rowHeaderIndex === cellColumnIndex ? (<th {...tabIndex} {...cellClassName} role="rowheader">{cell.cellContent}</th>) : (<td {...tabIndex} {...cellClassName}>{cell.cellContent}</td>);
+    return this.props.rowHeaderIndex === cellColumnIndex ? (<th key={cellColumnIndex} {...tabIndex} {...cellClassName} role="rowheader">{cell.cellContent}</th>) : (<td key={cellColumnIndex} {...tabIndex} {...cellClassName}>{cell.cellContent}</td>);
   }
 
   buildColumnHeaders(colHeader) {
@@ -183,14 +182,14 @@ class WorklistDataGrid extends React.Component {
     const columnHeaderClassName = classNames(cx('worklist-data-grid-column-header'));
     return (
       /* eslint-disable react/forbid-dom-props */
-      <th id={columnData.id} role="columnheader" className={columnHeaderClassName} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
+      <th key={columnData.id} id={columnData.id} role="columnheader" className={columnHeaderClassName} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
     );
   }
 
   buildSingleRow(row, rowIndex) {
     const backgroundClassName = classNames(cx({ striped: !!(rowIndex % 2) }));
     return (
-      <tr className={backgroundClassName} height={row.height || this.props.rowDefaultHeight}>
+      <tr key={rowIndex} className={backgroundClassName} height={row.height || this.props.rowDefaultHeight}>
         {row.cells.map((cell, cellColumnIndex) => (
           this.getCellData(cell, cellColumnIndex)
         ))}
