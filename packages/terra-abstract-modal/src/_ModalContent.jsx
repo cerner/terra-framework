@@ -147,32 +147,34 @@ const ModalContent = forwardRef((props, ref) => {
           // This empty span with data-terra-abstract-modal-begin attribute
           //  receives focus when the dialog is opened.
         }
-        <span ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1" />
-        <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
-          {text => {
-            // In the latest version of react-intl this param is an array, when previous versions it was a string.
-            let useText = text;
-            if (Array.isArray(text)) {
-              useText = text.join('');
-            }
-            return (
-              <VisuallyHiddenText data-terra-abstract-modal-begin tabIndex="-1" text={useText} />
-            );
-          }}
-        </FormattedMessage>
-        {children}
-        <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
-          {text => {
-            // In the latest version of react-intl this param is an array, when previous versions it was a string.
-            let useText = text;
-            if (Array.isArray(text)) {
-              useText = text.join('');
-            }
-            return (
-              <VisuallyHiddenText text={useText} />
-            );
-          }}
-        </FormattedMessage>
+        {/* <span ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1" /> */}
+        <div ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
+          <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
+            {text => {
+              // In the latest version of react-intl this param is an array, when previous versions it was a string.
+              let useText = text;
+              if (Array.isArray(text)) {
+                useText = text.join('');
+              }
+              return (
+                <VisuallyHiddenText text={useText} />
+              );
+            }}
+          </FormattedMessage>
+          {children}
+          <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
+            {text => {
+              // In the latest version of react-intl this param is an array, when previous versions it was a string.
+              let useText = text;
+              if (Array.isArray(text)) {
+                useText = text.join('');
+              }
+              return (
+                <VisuallyHiddenText text={useText} />
+              );
+            }}
+          </FormattedMessage>
+        </div>
       </div>
     </React.Fragment>
   );
