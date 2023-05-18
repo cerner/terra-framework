@@ -40,7 +40,7 @@ class MenuItemGroup extends React.Component {
   }
 
   handleItemToggled(event, metaData) {
-    if (this.state.toggledIndex !== metaData.index) {
+    if (this.state.toggledIndex !== metaData.index && !metaData.isDisabled) {
       event.preventDefault();
       this.setState({ toggledIndex: metaData.index });
       if (this.props.onChange) {
@@ -58,8 +58,8 @@ class MenuItemGroup extends React.Component {
       return React.cloneElement(child, {
         isToggleable,
         isToggled: this.state.toggledIndex === index,
-        onClick: Utils.wrappedOnClickForItem(child.props.onClick, this.handleItemToggled, { index }),
-        onKeyDown: Utils.wrappedOnKeyDownForItem(child.props.onKeyDown, this.handleItemToggled, { index }),
+        onClick: Utils.wrappedOnClickForItem(child.props.onClick, this.handleItemToggled, { index, isDisabled: child.props.isDisabled }),
+        onKeyDown: Utils.wrappedOnKeyDownForItem(child.props.onKeyDown, this.handleItemToggled, { index, isDisabled: child.props.isDisabled }),
       });
     });
   }

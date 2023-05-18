@@ -42,7 +42,7 @@ class DisabledMenuChildren extends React.Component {
           onRequestClose={this.handleRequestClose}
         >
           <Menu.Item text="Default Item 1" id="TestContent1" />
-          <Menu.Item text="Default Item 2" id="TestContent2" isDisabled />
+          <Menu.Item text="Default Item 2" id="TestContent2" isDisabled onClick={() => { alert('Disabled item was clicked !'); }} />
         </Menu>
         <Button id="default-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
       </div>
