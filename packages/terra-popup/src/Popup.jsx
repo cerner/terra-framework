@@ -70,7 +70,7 @@ const propTypes = {
    * A string representation of the width in px, limited to:
    * 160, 240, 320, 640, 960, 1280, 1760 or auto.
    */
-  contentWidth: PropTypes.oneOf(['160', '240', '320', '640', '960', '1280', '1760', 'auto']),
+  contentWidth: PropTypes.oneOf(['160', '240', '320', '400', '640', '960', '1280', '1760', 'auto']),
   /**
    * Should an arrow be placed at the attachment point.
    */
