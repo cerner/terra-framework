@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed a11y bug where multiple slide panels shared same ID for visually hidden text.
+
 ## 3.39.0 - (April 27, 2023)
 
 * Added
