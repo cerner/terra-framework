@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added a `terra-slide-panel` test containing multiple slide panels.
+
 ## 1.21.0 - (May 11, 2023)
 
 * Changed
