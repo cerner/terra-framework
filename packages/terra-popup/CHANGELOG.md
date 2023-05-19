@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.66.0 - (May 11, 2023)
+
+* Changed
+  * Updated close handler to return focus to target object upon pop-up closure. 
+  
 ## 6.65.0 - (April 27, 2023)
 
 * Changed

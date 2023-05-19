@@ -2,9 +2,15 @@
 
 ## Unreleased
 
+## 1.21.0 - (May 11, 2023)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.20.0 - (April 27, 2023)
 
 * Changed
+  * Updated examples for `terra-popup`.
   * Updated `notification-dialog` and `tabs` examples.
   * Updated examples for `terra-slide-panel-manager`.
   * Updated menu button to use down caret for visual context

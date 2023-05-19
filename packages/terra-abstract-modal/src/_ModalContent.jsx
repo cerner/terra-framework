@@ -58,6 +58,11 @@ const propTypes = {
    * Z-Index layer to apply to the ModalContent and ModalOverlay.
    */
   zIndex: PropTypes.oneOf(zIndexes),
+  /**
+   * @private
+   * Callback function to set the reference of the element that will receive focus when the Slide content is visible.
+   */
+  setModalFocusElementRef: PropTypes.func,
 };
 
 const defaultProps = {
@@ -84,6 +89,7 @@ const ModalContent = forwardRef((props, ref) => {
     isScrollable,
     rootSelector,
     zIndex,
+    setModalFocusElementRef,
     ...customProps
   } = props;
 
@@ -141,7 +147,7 @@ const ModalContent = forwardRef((props, ref) => {
           // This empty span with data-terra-abstract-modal-begin attribute
           //  receives focus when the dialog is opened.
         }
-        <span data-terra-abstract-modal-begin tabIndex="-1" />
+        <span ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1" />
         <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
           {text => {
             // In the latest version of react-intl this param is an array, when previous versions it was a string.
