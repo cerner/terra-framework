@@ -148,7 +148,7 @@ const ModalContent = forwardRef((props, ref) => {
           //  receives focus when the dialog is opened.
         }
         {/* <span ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1" /> */}
-        <div ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
+        <div style={{ height: "100%" }} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
           <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
             {text => {
               // In the latest version of react-intl this param is an array, when previous versions it was a string.
