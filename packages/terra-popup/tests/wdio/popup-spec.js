@@ -61,6 +61,22 @@ Terra.describeViewports('Popup', ['medium'], () => {
     });
   });
 
+  describe('Popup with contentWidth', () => {
+    it('opens popup', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/popup/popup-with-content-width');
+      $('#default-button').waitForDisplayed();
+      $('#default-button').click();
+      $('.test-content').waitForDisplayed();
+      Terra.validates.element('popup with width', { selector });
+    });
+
+    it('closes on ESC', () => {
+      browser.keys('Escape');
+      expect($('.test-content').isExisting()).toBeFalsy();
+    });
+
+  });
+
   describe('Bounded popup', () => {
     it('validates popup with a header', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/popup/bounded-popup');
