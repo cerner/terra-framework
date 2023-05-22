@@ -23,27 +23,27 @@ const propTypes = {
    */
   id: PropTypes.string.isRequired,
   /**
-   * Data for column headers. Columns will be presented in the order given.
+   * Data for columns. By default, columns will be presented in the order given.
    */
-  columnHeaders: WorklistDataGridPropTypes.columnHeaderShape,
+  columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
   /**
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
   rows: PropTypes.arrayOf(WorklistDataGridPropTypes.rowShape),
   /**
-   * String that specifies the default column width. Any valid CSS width value is accepted.
-   * This value will be used if no overriding width value is provided on a per-column basis.
+   * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
+   * To override the default value, provide width for the column that needs to be overridden.
    */
-  columnHeaderDefaultWidth: PropTypes.string,
-  /**
-   * String that specifies the default row height. Any valid CSS width value is accepted.
-   * This value will be used if no overriding height value is provided on a per-row basis.
-   */
-  rowDefaultHeight: PropTypes.string,
+  columnWidth: PropTypes.string,
   /**
    * String that specifies the column height. Any valid CSS height value is accepted.
    */
-  columnHeaderHeight: PropTypes.string,
+  columnHeight: PropTypes.string,
+  /**
+   * String that specifies the default height for rows in the grid. Any valid CSS width value is accepted.
+   * To override the default value, provide height for the row that needs to be overridden.
+   */
+  rowHeight: PropTypes.string,
   /**
    * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the grid.
    */
@@ -52,9 +52,6 @@ const propTypes = {
 
 const defaultProps = {
   rowHeaderIndex: 0,
-  columnHeaderDefaultWidth: '200px',
-  columnHeaderHeight: '2.5rem',
-  rowDefaultHeight: '2.5rem',
 };
 
 class WorklistDataGrid extends React.Component {
@@ -63,31 +60,23 @@ class WorklistDataGrid extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.focussedRow = 0;
-    this.focussedCol = 0;
+    this.focusedRow = 0;
+    this.focusedCol = 0;
   }
 
   componentDidMount() {
-    this.grid = document.querySelector(`#${this.props.id}`);
+    this.grid = document.getElementById(`${this.props.id}`);
 
-    const focussedCell = this.grid.rows[this.focussedRow].cells[this.focussedCol];
-    focussedCell.setAttribute('tabIndex', '0');
-
-    // add event listeners to handle user key events in the grid.
-    this.grid.addEventListener('keydown', this.handleKeyDown);
-    this.grid.addEventListener('click', this.handleClick);
+    const focusedCell = this.grid.rows[this.focusedRow].cells[this.focusedCol];
+    focusedCell.tabIndex = 0;
   }
 
   handleKeyDown(event) {
-    if (event.target?.parentNode?.parentNode?.parentNode?.id !== this.props.id) {
-      return;
-    }
+    const currentFocusedRow = event.target.parentElement.rowIndex;
+    const currentFocusedCol = event.target.cellIndex;
 
-    const currentFocussedRow = event.target.parentElement.rowIndex;
-    const currentFocussedCol = event.target.cellIndex;
-
-    let nextRow = currentFocussedRow;
-    let nextCol = currentFocussedCol;
+    let nextRow = currentFocusedRow;
+    let nextCol = currentFocusedCol;
 
     const key = event.keyCode;
     switch (key) {
@@ -129,67 +118,60 @@ class WorklistDataGrid extends React.Component {
 
     // Remove the ability to receive visible focus as only one cell should be able to receive tab focus.
     // This is also how tabbing back to the grid ensures the grid last cell with the focus will be re-entered.
-    this.grid.rows[currentFocussedRow].cells[currentFocussedCol].setAttribute('tabIndex', '-1');
+    this.grid.rows[currentFocusedRow].cells[currentFocusedCol].tabIndex = -1;
 
-    this.focussedRow = nextRow;
-    this.focussedCol = nextCol;
+    this.focusedRow = nextRow;
+    this.focusedCol = nextCol;
 
     const elementWithTabStop = this.grid.rows[nextRow].cells[nextCol];
-    elementWithTabStop.setAttribute('tabIndex', '0');
+    elementWithTabStop.tabIndex = 0;
     elementWithTabStop.focus();
     event.preventDefault();
   }
 
   handleClick(event) {
-    // Is this event for something that is on the grid
-    if (event.target?.parentNode?.parentNode?.parentNode?.id !== this.props.id) {
-      return;
-    }
     // Remove Tab stop from previous cell in table that has focus and set it to the cell that was clicked.
-    this.grid.rows[this.focussedRow].cells[this.focussedCol].setAttribute('tabIndex', '-1');
-    this.focussedRow = event.target.parentElement.rowIndex;
-    this.focussedCol = event.target.cellIndex;
+    this.grid.rows[this.focusedRow].cells[this.focusedCol].tabIndex = -1;
+    this.focusedRow = event.target.parentElement.rowIndex;
+    this.focusedCol = event.target.cellIndex;
     const clickedCell = event.target;
-    clickedCell.setAttribute('tabIndex', '0');
+    clickedCell.tabIndex = 0;
     clickedCell.focus();
     event.preventDefault();
   }
 
   getNumberOfHeaderRows() {
-    return this.props.columnHeaders?.pinnedColumns?.length > 0 ? 1 : 0;
+    return this.props.columns?.length > 0 ? 1 : 0;
   }
 
   getCellData(cell, cellColumnIndex) {
-    const cellClassName = { className: classNames(cx(this.props.rowHeaderIndex === cellColumnIndex ? 'worklist-data-grid-row-header' : 'worklist-data-grid-cell-data')) };
     const tabIndex = { tabIndex: '-1' };
-    return this.props.rowHeaderIndex === cellColumnIndex ? (<th key={cellColumnIndex} {...tabIndex} {...cellClassName} role="rowheader">{cell.cellContent}</th>) : (<td key={cellColumnIndex} {...tabIndex} {...cellClassName}>{cell.cellContent}</td>);
+    return this.props.rowHeaderIndex === cellColumnIndex ? (<th key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-row-header')} role="rowheader">{cell.content}</th>) : (<td key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-cell-data')}>{cell.content}</td>);
   }
 
-  buildColumnHeaders(colHeader) {
-    if (colHeader?.pinnedColumns?.length > 0) {
+  buildColumns(colHeader) {
+    if (colHeader?.length > 0) {
       return (
-        <tr height={this.props.columnHeaderHeight}>
-          {colHeader.pinnedColumns.map(columnData => (this.buildSingleColumnHeading(columnData)))}
+        <tr height={this.props.columnHeight}>
+          {colHeader.map(columnData => (this.buildColumn(columnData)))}
         </tr>
       );
     }
     return undefined;
   }
 
-  buildSingleColumnHeading(columnData) {
-    const width = columnData.width || this.props.columnHeaderDefaultWidth;
-    const height = columnData.height || this.props.columnHeaderHeight;
-    const columnHeaderClassName = classNames(cx('worklist-data-grid-column-header'));
+  buildColumn(columnData) {
+    const width = columnData.width || this.props.columnWidth;
+    const height = this.props.columnHeight;
     return (
       /* eslint-disable react/forbid-dom-props */
-      <th key={columnData.id} id={columnData.id} role="columnheader" className={columnHeaderClassName} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
+      <th key={columnData.id} role="columnheader" className={cx('worklist-data-grid-column-header')} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
     );
   }
 
-  buildSingleRow(row, rowIndex) {
-    const backgroundClassName = classNames(cx({ striped: !!(rowIndex % 2) }));
+  buildRow(row) {
     return (
-      <tr key={rowIndex} className={backgroundClassName} height={row.height || this.props.rowDefaultHeight}>
+      <tr key={row.id} className={cx('worklist-data-grid-row')} height={row.height || this.props.rowHeight}>
         {row.cells.map((cell, cellColumnIndex) => (
           this.getCellData(cell, cellColumnIndex)
         ))}
@@ -199,7 +181,7 @@ class WorklistDataGrid extends React.Component {
 
   buildRows(rows) {
     return (
-      rows.map((element, index) => (this.buildSingleRow(element, index)))
+      rows.map((row) => (this.buildRow(row)))
     );
   }
 
@@ -208,31 +190,29 @@ class WorklistDataGrid extends React.Component {
       id,
       ariaLabelledby,
       ariaLabel,
-      columnHeaders,
+      columns,
       rows,
-      columnHeaderDefaultWidth,
-      ...customProps
     } = this.props;
 
     const theme = this.context;
 
-    const gridClassNames = classNames(cx('worklist-data-grid', theme.className), customProps.className);
+    const gridClassNames = cx('worklist-data-grid', theme.className);
 
     return (
-      <div className={cx(['container'])}>
-        <table
-          id={id}
-          role="grid"
-          aria-labelledby={ariaLabelledby}
-          aria-label={ariaLabel}
-          className={gridClassNames}
-        >
-          <tbody>
-            {this.buildColumnHeaders(columnHeaders)}
-            {this.buildRows(rows)}
-          </tbody>
-        </table>
-      </div>
+      <table
+        id={id}
+        role="grid"
+        aria-labelledby={ariaLabelledby}
+        aria-label={ariaLabel}
+        className={gridClassNames}
+        onClick={this.handleClick}
+        onKeyDown={this.handleKeyDown}
+      >
+        <tbody>
+          {this.buildColumns(columns)}
+          {this.buildRows(rows)}
+        </tbody>
+      </table>
     );
   }
 }

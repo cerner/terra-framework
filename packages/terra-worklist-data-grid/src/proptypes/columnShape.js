@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
-const columnHeaderCellShape = PropTypes.shape({
+const columnShape = PropTypes.shape({
   /**
-   * String representing a unique identifier for the column header cell.
+   * Required string representing a unique identifier for the column header cell.
    */
   id: PropTypes.string.isRequired,
   /**
@@ -15,4 +15,4 @@ const columnHeaderCellShape = PropTypes.shape({
   acceptsFocus: PropTypes.bool,
 });
 
-export default columnHeaderCellShape;
+export default columnShape;

@@ -1,10 +1,9 @@
-import cellShape from './cellShape';
 import rowShape from './rowShape';
-import columnHeaderShape from './columnHeaderShape';
-import columnHeaderCellShape from './columnHeaderCellShape';
+import cellShape from './cellShape';
+import columnShape from './columnShape';
 
 const WorklistDataGridPropTypes = {
-  cellShape, columnHeaderShape, columnHeaderCellShape, rowShape,
+  cellShape, columnShape, rowShape,
 };
 
 export default WorklistDataGridPropTypes;

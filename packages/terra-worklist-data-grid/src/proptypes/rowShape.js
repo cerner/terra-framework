@@ -3,6 +3,10 @@ import cellShape from './cellShape';
 
 const rowShape = PropTypes.shape({
   /**
+   * An identifier to uniquely identify the row within the grid.
+   */
+  id: PropTypes.string.isRequired,
+  /**
    * String that specifies the row height. Any valid CSS height value is accepted.
    */
   height: PropTypes.string,

@@ -10,12 +10,12 @@ const DefaultWorklistDataGrid = () => {
     <React.Fragment>
       <WorklistDataGrid
         id="default-terra-worklist-data-grid"
-        columnHeaders={cols}
+        columns={cols}
         rows={rows}
         rowHeaderIndex={rowHeaderIndex}
-        rowDefaultHeight="50px"
-        columnHeaderDefaultWidth="50px"
-        columnHeaderHeight="50px"
+        rowHeight="50px"
+        columnWidth="50px"
+        columnHeight="50px"
         ariaLabel="aria label"
       />
     </React.Fragment>
