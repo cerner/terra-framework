@@ -44,7 +44,7 @@ class PopupWithContentWidth extends React.Component {
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
-          contentWidth='400'
+          contentWidth="400"
         >
           <p>This is a popup with contentWidth as 400px </p>
         </Popup>

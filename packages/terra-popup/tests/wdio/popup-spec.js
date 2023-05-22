@@ -74,7 +74,6 @@ Terra.describeViewports('Popup', ['medium'], () => {
       browser.keys('Escape');
       expect($('.test-content').isExisting()).toBeFalsy();
     });
-
   });
 
   describe('Bounded popup', () => {
