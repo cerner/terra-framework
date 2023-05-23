@@ -3,6 +3,9 @@
 ## Unreleased
   * Added test for `terra-popup`.
 
+* Added
+  * Added example for `terra-menu` with disabled item.
+
 ## 1.21.0 - (May 11, 2023)
 
 * Changed

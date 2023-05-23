@@ -170,4 +170,13 @@ Terra.describeViewports('Menu', ['medium'], () => {
       Terra.validates.element('shows custom icons in the menu', { selector: '#root' });
     });
   });
+
+  it('focuses on a disabled item', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/disabled-menu-children');
+    $('#default-button').click();
+    expect($('li:first-child[role="menuitem"]').isFocused()).toBeTruthy();
+    browser.keys(['ArrowDown']);
+    expect($('#TestContent2').isFocused()).toBeTruthy();
+    Terra.validates.element('navigated to disabled item', { selector: '#root' });
+  });
 });
