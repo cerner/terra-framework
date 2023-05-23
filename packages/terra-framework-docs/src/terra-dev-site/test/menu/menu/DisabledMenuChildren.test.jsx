@@ -13,10 +13,6 @@ class DisabledMenuChildren extends React.Component {
     this.state = { open: false };
   }
 
-  componentDidMount() {
-    this.forceUpdate();
-  }
-
   handleButtonClick() {
     this.setState({ open: true });
   }

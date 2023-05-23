@@ -261,9 +261,6 @@ class MenuItem extends React.Component {
     } = this.context;
     const attributes = { ...customProps };
 
-    attributes.tabIndex = '0';
-    attributes['aria-disabled'] = isDisabled;
-
     const toggled = (isToggled || isSelected);
     const toggleable = (isToggleable || isSelectable);
     const toggleableMenu = (isToggleableMenu || isSelectableMenu);
@@ -353,6 +350,8 @@ class MenuItem extends React.Component {
       role = 'menuitemcheckbox';
     }
 
+    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+    /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
     return (
       <ThemeContext.Consumer>
         { theme => (
@@ -362,6 +361,8 @@ class MenuItem extends React.Component {
             ref={this.setItemNode}
             role={role}
             aria-checked={markAsToggled}
+            tabIndex="0"
+            aria-disabled={isDisabled}
           >
             {content}
           </li>
