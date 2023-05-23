@@ -101,7 +101,7 @@ class PopupWithContentWidth extends Component {
             targetRef={this.getButtonNode}
             onRequestClose={this.handleRequestClose}
           >
-            <p>This is a popup with contentWidth as 400px</p>
+            <p>This is a popup with custom contentWidth and contentHeight</p>
           </Popup>
         </div>
         <button
