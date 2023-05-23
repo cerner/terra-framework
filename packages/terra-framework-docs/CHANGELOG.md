@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+  * Added test for `terra-popup`.
 
 ## 1.21.0 - (May 11, 2023)
 

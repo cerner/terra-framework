@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+  * Updated contentWidth with value 400.
 
 ## 6.66.0 - (May 11, 2023)
 
