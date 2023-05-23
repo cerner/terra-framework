@@ -16,7 +16,7 @@ const DefaultWorklistDataGrid = () => {
         rowHeight="50px"
         columnWidth="50px"
         columnHeight="50px"
-        ariaLabel="ariaLabel"
+        ariaLabel="Worklist Data Grid"
       />
     </React.Fragment>
   );
