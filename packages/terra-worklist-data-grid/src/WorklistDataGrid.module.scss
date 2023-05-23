@@ -24,11 +24,12 @@
     color: var(--terra-worklist-data-grid-column-header-text-color);
   }
 
-  .worklist-data-grid-row-header, .worklist-data-grid-cell-data {
+  .worklist-data-grid-row-header,
+  .worklist-data-grid-cell-data {
     border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
+    font-weight: normal;
     height: 100%;
     position: relative;
-    font-weight: normal;
   }
 
   .worklist-data-grid-row:nth-child(odd) {
