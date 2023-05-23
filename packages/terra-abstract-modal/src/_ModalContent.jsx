@@ -115,6 +115,7 @@ const ModalContent = forwardRef((props, ref) => {
     theme.className,
   ),
   classNameModal);
+  const modalContainerClassName = classNames(cx('abstract-modal-container'));
 
   // Delete the closePortal prop that comes from react-portal.
   delete customProps.closePortal;
@@ -147,8 +148,7 @@ const ModalContent = forwardRef((props, ref) => {
           // This empty span with data-terra-abstract-modal-begin attribute
           //  receives focus when the dialog is opened.
         }
-        {/* <span ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1" /> */}
-        <div style={{ height: "100%" }} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
+        <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
           <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
             {text => {
               // In the latest version of react-intl this param is an array, when previous versions it was a string.
