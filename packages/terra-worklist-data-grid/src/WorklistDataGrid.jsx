@@ -145,7 +145,7 @@ function WorklistDataGrid(props) {
 
   const getCellData = (cell, cellColumnIndex) => {
     const tabIndex = { tabIndex: '-1' };
-    return props.rowHeaderIndex === cellColumnIndex ? (<th key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-row-header')} role="rowheader">{cell.content}</th>) : (<td key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-cell-data')}>{cell.content}</td>);
+    return props.rowHeaderIndex === cellColumnIndex ? (<th key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-row-header')}>{cell.content}</th>) : (<td key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-cell-data')}>{cell.content}</td>);
   };
 
   const buildColumn = (columnData) => {
@@ -153,7 +153,7 @@ function WorklistDataGrid(props) {
     const height = props.columnHeight;
     return (
       /* eslint-disable react/forbid-dom-props */
-      <th key={columnData.id} role="columnheader" className={cx('worklist-data-grid-column-header')} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
+      <th key={columnData.id} className={cx('worklist-data-grid-column-header')} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
     );
   };
 
@@ -168,13 +168,16 @@ function WorklistDataGrid(props) {
     return undefined;
   };
 
-  const buildRow = (row) => (
-    <tr key={row.id} className={cx('worklist-data-grid-row')} height={row.height || props.rowHeight}>
-      {row.cells.map((cell, cellColumnIndex) => (
-        getCellData(cell, cellColumnIndex)
-      ))}
-    </tr>
-  );
+  const buildRow = (row) => {
+    const height = row.height || props.rowHeight;
+    return (
+      <tr key={row.id} className={cx('worklist-data-grid-row')} style={{ height }}>
+        {row.cells.map((cell, cellColumnIndex) => (
+          getCellData(cell, cellColumnIndex)
+        ))}
+      </tr>
+    );
+  };
 
   const buildRows = (allRows) => (
     allRows.map((row) => (buildRow(row)))
