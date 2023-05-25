@@ -22,7 +22,7 @@ function PopupArrow() {
 
   return (
     <React.Fragment>
-      <Button text="Medicaton Links" onClick={handleButtonClick} refCallback={setButtonNode} />
+      <Button text="Medication Links" onClick={handleButtonClick} refCallback={setButtonNode} />
       <Popup
         isOpen={open}
         onRequestClose={handleRequestClose}
@@ -30,10 +30,12 @@ function PopupArrow() {
         isArrowDisplayed
       >
 
-        <a href="https://www.refseek.com/directory/health_medical.html">Health and Medical sites</a>
+        <a href="https://www.refseek.com/directory/health_medical.html" target="_blank" rel="noreferrer">Health and Medical sites</a>
         <br />
-        <a href="https://www.northeaststate.edu/Campus-Life/Health-and-Wellness/Health-Related-Links/
-        "
+        <a
+          href="https://www.happiesthealth.com/?utm_source=google&utm_medium=cpc-hp"
+          target="_blank"
+          rel="noreferrer"
         >
           Health Related Links
         </a>
