@@ -33,7 +33,7 @@
     "prop-types": "^15.5.8",
     "terra-abstract-modal": "^3.41.0",
     "terra-button": "^3.3.0",
-    "terra-date-picker": "^4.82.0",
+    "terra-date-picker": "^4.81.0",
     "terra-theme-context": "^1.8.0",
     "terra-time-input": "^4.49.0"
   },
