@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+  * Updated example for `terra-popup`.
   * Added test for `terra-popup`.
 
 * Added
@@ -18,6 +19,7 @@
   * Updated `notification-dialog` and `tabs` examples.
   * Updated examples for `terra-slide-panel-manager`.
   * Updated menu button to use down caret for visual context
+  * Added test for `terra-popup`.
 
 * Added
   * Added a `terra-slide-panel` example where the panel is open on page load and fullscreen.
