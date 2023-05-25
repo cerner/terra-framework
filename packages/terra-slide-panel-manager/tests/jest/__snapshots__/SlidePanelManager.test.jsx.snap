@@ -348,7 +348,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
             data-slide-panel-panel-size="large"
           >
             <div
-              aria-describedby="detail-panel-warning"
+              aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
               aria-hidden="false"
               className="main"
               key="main"
@@ -358,13 +358,13 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
               tabIndex="-1"
             >
               <VisuallyHiddenText
-                id="detail-panel-warning"
+                id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
                 tabIndex="-1"
                 text="Terra.slidePanel.discloseWarning"
               >
                 <span
                   className="visually-hidden-text"
-                  id="detail-panel-warning"
+                  id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
                   tabIndex="-1"
                 >
                   Terra.slidePanel.discloseWarning
@@ -823,7 +823,7 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
             id="my-slide-panel-manager"
           >
             <div
-              aria-describedby="detail-panel-warning"
+              aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
               aria-hidden="false"
               className="main"
               key="main"
@@ -833,13 +833,13 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
               tabIndex="-1"
             >
               <VisuallyHiddenText
-                id="detail-panel-warning"
+                id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
                 tabIndex="-1"
                 text="Terra.slidePanel.discloseWarning"
               >
                 <span
                   className="visually-hidden-text"
-                  id="detail-panel-warning"
+                  id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
                   tabIndex="-1"
                 >
                   Terra.slidePanel.discloseWarning
@@ -1087,7 +1087,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
             id="my-slide-panel-manager"
           >
             <div
-              aria-describedby="detail-panel-warning"
+              aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
               aria-hidden="false"
               className="main"
               key="main"
@@ -1097,13 +1097,13 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
               tabIndex="-1"
             >
               <VisuallyHiddenText
-                id="detail-panel-warning"
+                id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
                 tabIndex="-1"
                 text="Terra.slidePanel.discloseWarning"
               >
                 <span
                   className="visually-hidden-text"
-                  id="detail-panel-warning"
+                  id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
                   tabIndex="-1"
                 >
                   Terra.slidePanel.discloseWarning
@@ -1344,7 +1344,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
             data-slide-panel-panel-size="small"
           >
             <div
-              aria-describedby="detail-panel-warning"
+              aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
               aria-hidden="false"
               className="main"
               key="main"
@@ -1354,13 +1354,13 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
               tabIndex="-1"
             >
               <VisuallyHiddenText
-                id="detail-panel-warning"
+                id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
                 tabIndex="-1"
                 text="Terra.slidePanel.discloseWarning"
               >
                 <span
                   className="visually-hidden-text"
-                  id="detail-panel-warning"
+                  id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
                   tabIndex="-1"
                 >
                   Terra.slidePanel.discloseWarning
@@ -1601,7 +1601,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
             data-slide-panel-panel-size="small"
           >
             <div
-              aria-describedby="detail-panel-warning"
+              aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
               aria-hidden="false"
               className="main"
               key="main"
@@ -1611,13 +1611,13 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
               tabIndex="-1"
             >
               <VisuallyHiddenText
-                id="detail-panel-warning"
+                id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
                 tabIndex="-1"
                 text="Terra.slidePanel.discloseWarning"
               >
                 <span
                   className="visually-hidden-text"
-                  id="detail-panel-warning"
+                  id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
                   tabIndex="-1"
                 >
                   Terra.slidePanel.discloseWarning
