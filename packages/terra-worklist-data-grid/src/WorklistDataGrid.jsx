@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useRef } from 'react';
+import React, { useContext, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -38,7 +38,7 @@ const propTypes = {
   /**
    * String that specifies the column height. Any valid CSS height value is accepted.
    */
-  columnHeight: PropTypes.string,
+  columnHeaderHeight: PropTypes.string,
   /**
    * String that specifies the default height for rows in the grid. Any valid CSS width value is accepted.
    * To override the default value, provide height for the row that needs to be overridden.
@@ -67,12 +67,11 @@ function WorklistDataGrid(props) {
   const focusedCol = useRef(0);
   const grid = useRef();
 
-  useEffect(() => {
-    grid.current = document.getElementById(`${props.id}`);
-
+  const gridRef = useCallback((node) => {
+    grid.current = node;
     const focusedCell = grid.current.rows[focusedRow.current].cells[focusedCol.current];
     focusedCell.tabIndex = 0;
-  }, [props.id]);
+  }, []);
 
   const handleKeyDown = (event) => {
     const currentFocusedRow = event.target.parentElement.rowIndex;
@@ -150,7 +149,7 @@ function WorklistDataGrid(props) {
 
   const buildColumn = (columnData) => {
     const width = columnData.width || props.columnWidth;
-    const height = props.columnHeight;
+    const height = props.columnHeaderHeight;
     return (
       /* eslint-disable react/forbid-dom-props */
       <th key={columnData.id} className={cx('worklist-data-grid-column-header')} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
@@ -160,7 +159,7 @@ function WorklistDataGrid(props) {
   const buildColumns = (allColumns) => {
     if (allColumns?.length > 0) {
       return (
-        <tr height={props.columnHeight}>
+        <tr height={props.columnHeaderHeight}>
           {allColumns.map(columnData => (buildColumn(columnData)))}
         </tr>
       );
@@ -189,6 +188,7 @@ function WorklistDataGrid(props) {
 
   return (
     <table
+      ref={gridRef}
       id={id}
       role="grid"
       aria-labelledby={ariaLabelledby}
