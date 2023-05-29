@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import * as KeyCode from 'keycode-js';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
+import './_elementPolyfill';
 import styles from './WorklistDataGrid.module.scss';
 
 const cx = classNames.bind(styles);
@@ -132,11 +133,16 @@ function WorklistDataGrid(props) {
   };
 
   const handleClick = (event) => {
+    const clickedCell = event.target.closest('td,th') || document.activeElement.closest('td,th');
+    if (!clickedCell) {
+      event.preventDefault();
+      return;
+    }
     // Remove Tab stop from previous cell in table that has focus and set it to the cell that was clicked.
     grid.current.rows[focusedRow.current].cells[focusedCol.current].tabIndex = -1;
-    focusedRow.current = event.target.parentElement.rowIndex;
-    focusedCol.current = event.target.cellIndex;
-    const clickedCell = event.target;
+    focusedRow.current = clickedCell.parentElement.rowIndex;
+    focusedCol.current = clickedCell.cellIndex;
+
     clickedCell.tabIndex = 0;
     clickedCell.focus();
     event.preventDefault();
