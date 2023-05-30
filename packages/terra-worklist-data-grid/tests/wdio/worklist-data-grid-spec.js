@@ -22,7 +22,7 @@ Terra.describeViewports('WorklistDataGrid', ['tiny', 'medium', 'large'], () => {
     });
 
     it('tab forward out of the grid', () => {
-      browser.keys(new Array(2).fill('Tab'));
+      browser.keys(['Tab', 'Tab']);
 
       Terra.validates.element('tab-selection-off-grid', { selector });
     });
