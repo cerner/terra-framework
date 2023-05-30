@@ -11,7 +11,7 @@ Terra.describeViewports('WorklistDataGrid', ['tiny', 'medium', 'large'], () => {
     });
 
     it('tab into the grid', () => {
-      browser.keys(new Array(1).fill('Tab'));
+      browser.keys(['Tab']);
       Terra.validates.element('first-cell-in-grid-selected', { selector });
     });
 
