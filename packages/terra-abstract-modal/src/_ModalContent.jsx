@@ -144,10 +144,6 @@ const ModalContent = forwardRef((props, ref) => {
         role={role}
         ref={ref}
       >
-        {
-          // This empty span with data-terra-abstract-modal-begin attribute
-          //  receives focus when the dialog is opened.
-        }
         <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
           <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
             {text => {
