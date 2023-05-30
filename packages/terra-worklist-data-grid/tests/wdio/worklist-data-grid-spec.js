@@ -16,7 +16,7 @@ Terra.describeViewports('WorklistDataGrid', ['tiny', 'medium', 'large'], () => {
     });
 
     it('tab back out of the grid', () => {
-      browser.keys(['Tab'].concat(['Shift']).concat(new Array(1).fill('Tab')).concat(['Shift']));
+      browser.keys(['Tab', 'Shift', 'Tab', 'Shift']);
 
       Terra.validates.element('tab-selection-off-grid', { selector });
     });
