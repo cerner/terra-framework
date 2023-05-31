@@ -14,6 +14,9 @@
 * Added
   * Added documentation and tests for `terra-worklist-data-grid`.
 
+* Changed
+  * Updated example for `terra-menu`
+
 ## 1.21.0 - (May 11, 2023)
 
 * Changed

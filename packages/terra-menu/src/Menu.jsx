@@ -69,7 +69,7 @@ const defaultProps = {
   isOpen: false,
   contentWidth: '240',
   headerTitle: '',
-  showHeader: true,
+  showHeader: false,
 };
 
 class Menu extends React.Component {

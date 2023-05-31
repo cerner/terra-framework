@@ -346,6 +346,14 @@ class MenuContent extends React.Component {
     let index = -1;
     const totalItems = MenuUtils.totalItems(this.props.children);
     const items = this.props.children ? [] : undefined;
+    const boundingFrame = this.props.boundingRef ? this.props.boundingRef() : undefined;
+    const isFullScreen = MenuUtils.isFullScreen(
+      this.props.isHeightBounded,
+      this.props.isWidthBounded,
+      boundingFrame,
+      this.props.contentWidth,
+    );
+    const isSubMenu = this.props.index > 0;
 
     React.Children.map(this.props.children, (item) => {
       const onClick = this.wrapOnClick(item);
@@ -364,7 +372,7 @@ class MenuContent extends React.Component {
           totalItems,
           index,
           intl: this.props.intl,
-          'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuTopHeaderId : undefined,
+          'aria-describedby': !MenuUtils.isMac() && !this.props.index && (this.props.showHeader || isSubMenu || isFullScreen) && index === 0 ? menuTopHeaderId : undefined,
         });
         // If the child has children then it is an item group, so iterate through it's children
       } else if (item.props.children) {
@@ -377,7 +385,7 @@ class MenuContent extends React.Component {
             totalItems,
             index,
             intl: this.props.intl,
-            'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? menuTopHeaderId : undefined,
+            'aria-describedby': !MenuUtils.isMac() && !this.props.index && (this.props.showHeader || isSubMenu || isFullScreen) && index === 0 ? menuTopHeaderId : undefined,
           });
           children.push(clonedElement);
         });
@@ -386,15 +394,8 @@ class MenuContent extends React.Component {
 
       items.push(newItem);
     });
-    const boundingFrame = this.props.boundingRef ? this.props.boundingRef() : undefined;
-    const isFullScreen = MenuUtils.isFullScreen(
-      this.props.isHeightBounded,
-      this.props.isWidthBounded,
-      boundingFrame,
-      this.props.contentWidth,
-    );
+
     const theme = this.context;
-    const isSubMenu = this.props.index > 0;
     const contentClass = cx(
       'content',
       { submenu: isSubMenu },
@@ -404,7 +405,7 @@ class MenuContent extends React.Component {
     );
 
     let header;
-    if (this.props.showHeader || isSubMenu) {
+    if (this.props.showHeader || isSubMenu || isFullScreen) {
       header = this.buildHeader(isFullScreen);
     }
     const contentHeight = this.props.isHeightBounded ? '100%' : this.props.fixedHeight;
