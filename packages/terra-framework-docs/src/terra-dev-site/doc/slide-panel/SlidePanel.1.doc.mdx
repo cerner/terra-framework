@@ -68,5 +68,6 @@ Terra Slide Panel uses `uuid` to dynamically generate the component's descriptio
 If teams are using `shallow` for the tests then the mock is not required. But if the tests use `mount`, then the teams must use the mock as given below.
 
 ```js
-jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+const mockUUID = '00000000-0000-0000-0000-000000000000';
+jest.mock('uuid', () => ({ v4: () => mockUUID }));
 ```
