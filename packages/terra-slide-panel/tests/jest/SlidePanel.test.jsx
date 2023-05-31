@@ -6,8 +6,8 @@ import { IntlProvider } from 'react-intl';
 import SlidePanel from '../../src/SlidePanel';
 import translationsFile from '../../translations/en.json';
 
-const mockUUID = '00000000-0000-0000-0000-000000000000';
-jest.mock('uuid', () => ({ v4: () => mockUUID }));
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+
 
 describe('When a SlidePanel is rendered', () => {
   it('should render a default SlidePanel with no props', () => {

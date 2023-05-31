@@ -12,8 +12,8 @@ const mockEvent = {
   preventDefault: jest.fn(),
 };
 
-const mockUUID = '00000000-0000-0000-0000-000000000000';
-jest.mock('uuid', () => ({ v4: () => mockUUID }));
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+
 
 beforeEach(() => {
   mockEvent.preventDefault.mockClear();
