@@ -1,9 +1,10 @@
 # Changelog
 
 ## Unreleased
+
   * Added
-    * Added screen reader support to read the title of the modal when it is open for nested ModalManager disclosures.
-    
+    * Added screen reader support to read the title and contents of the modal when it is opened for nested ModalManager disclosures.
+
 ## 3.40.0 - (April 27, 2023)
 
   * Added
@@ -12,7 +13,7 @@
 ## 3.39.0 - (February 14, 2023)
 
 * Changed
-  * Updated WDIO test and screenshots due to webpack-config-terra and 
+  * Updated WDIO test and screenshots due to webpack-config-terra and
   terra-functional-testing upgrade
 
 ## 3.38.1 - (March 15, 2022)
