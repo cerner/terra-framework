@@ -6,6 +6,8 @@ import { IntlProvider } from 'react-intl';
 import SlidePanel from '../../src/SlidePanel';
 import translationsFile from '../../translations/en.json';
 
+jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+
 describe('When a SlidePanel is rendered', () => {
   it('should render a default SlidePanel with no props', () => {
     const slidePanel = <SlidePanel />;
@@ -158,7 +160,7 @@ describe('When a SlidePanel is rendered', () => {
     const slidePanel = <SlidePanel />;
     const wrapper = shallowWithIntl(slidePanel).dive();
 
-    const mainDiv = wrapper.find('#detail-panel-warning').prop('text');
+    const mainDiv = wrapper.find('#detail-panel-warning-00000000-0000-0000-0000-000000000000').prop('text');
     expect(mainDiv).toEqual('Terra.slidePanel.discloseWarning');
   });
 
@@ -166,7 +168,7 @@ describe('When a SlidePanel is rendered', () => {
     const slidePanel = <IntlProvider locale="en" messages={translationsFile}><SlidePanel /></IntlProvider>;
     const wrapper = shallowWithIntl(slidePanel).dive().dive();
 
-    const mainDiv = wrapper.find('#detail-panel-warning').prop('text');
+    const mainDiv = wrapper.find('#detail-panel-warning-00000000-0000-0000-0000-000000000000').prop('text');
     expect(mainDiv).toEqual(translationsFile['Terra.slidePanel.discloseWarning']);
   });
 });

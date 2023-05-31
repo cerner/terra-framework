@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.49.0 - (May 25, 2023)
+
+* Fixed
+  * Fixed selection styles not getting applied on AM/PM button.
+
 ## 4.48.0 - (March 29, 2023)
 
 * Changed

@@ -112,7 +112,7 @@ const propTypes = {
    * @private
    * The index of the menu item.
    */
-  itemIndex: PropTypes.number,
+  index: PropTypes.number,
   /**
    * @private
    * Number of items in the menu.
@@ -247,7 +247,7 @@ class MenuItem extends React.Component {
       isActive,
       icon,
       isHighlighted,
-      itemIndex,
+      index,
       totalItems,
       intl,
       ...customProps
@@ -261,9 +261,6 @@ class MenuItem extends React.Component {
     } = this.context;
     const attributes = { ...customProps };
 
-    attributes.tabIndex = isDisabled ? '-1' : '0';
-    attributes['aria-disabled'] = isDisabled;
-
     const toggled = (isToggled || isSelected);
     const toggleable = (isToggleable || isSelectable);
     const toggleableMenu = (isToggleableMenu || isSelectableMenu);
@@ -273,7 +270,6 @@ class MenuItem extends React.Component {
 
     if (isDisabled) {
       delete attributes.onClick;
-      delete attributes.onKeyDown;
     } else {
       attributes.onClick = this.wrapOnClick;
       attributes.onKeyDown = this.wrapOnKeyDown(attributes.onKeyDown);
@@ -281,7 +277,7 @@ class MenuItem extends React.Component {
       attributes['data-terra-menu-interactive-item'] = true;
     }
 
-    const markAsToggled = this.state.isToggled || (isGroupItem && toggled);
+    const markAsToggled = this.state.isToggled || (isGroupItem && toggled && !isDisabled);
     const textContainer = <div className={cx('text')}>{text}</div>;
     const hasChevron = subMenuItems.length > 0;
 
@@ -301,12 +297,12 @@ class MenuItem extends React.Component {
 
     const screenReaderResponse = (
       <>
-        { MenuUtils.isMac() && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.index' }, { index: itemIndex + 1, totalItems })} /> }
+        { MenuUtils.isMac() && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.index' }, { index: index + 1, totalItems })} /> }
         { MenuUtils.isMac() && (isGroupItem || toggleable) && <VisuallyHiddenText text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
         {/* Adds context for item with submenu-items */}
         { subMenuItems.length > 0 && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.itemWithSubmenu' })} /> }
         {/* Adds context for navigating back to parent menu from submenu */}
-        { this.itemNode && this.itemNode.parentNode.getAttribute('data-submenu') === 'true'
+        { this.itemNode && this.itemNode.parentNode.getAttribute('data-submenu') === 'true' && index === 0
             && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.exitSubmenu' })} /> }
       </>
     );
@@ -354,6 +350,8 @@ class MenuItem extends React.Component {
       role = 'menuitemcheckbox';
     }
 
+    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+    /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
     return (
       <ThemeContext.Consumer>
         { theme => (
@@ -363,6 +361,8 @@ class MenuItem extends React.Component {
             ref={this.setItemNode}
             role={role}
             aria-checked={markAsToggled}
+            tabIndex="0"
+            aria-disabled={isDisabled}
           >
             {content}
           </li>

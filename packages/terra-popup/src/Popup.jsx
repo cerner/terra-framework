@@ -68,9 +68,9 @@ const propTypes = {
   contentHeight: PropTypes.oneOf(['40', '80', '120', '160', '240', '320', '400', '480', '560', '640', '720', '800', '880', 'auto']),
   /**
    * A string representation of the width in px, limited to:
-   * 160, 240, 320, 640, 960, 1280, 1760 or auto.
+   * 160, 240, 320, 400, 640, 960, 1280, 1760 or auto.
    */
-  contentWidth: PropTypes.oneOf(['160', '240', '320', '640', '960', '1280', '1760', 'auto']),
+  contentWidth: PropTypes.oneOf(['160', '240', '320', '400', '640', '960', '1280', '1760', 'auto']),
   /**
    * Should an arrow be placed at the attachment point.
    */

@@ -4,6 +4,8 @@ import { withDisclosureManager } from 'terra-disclosure-manager';
 import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import SlidePanelManager from '../../src/SlidePanelManager';
 
+jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+
 const TestContainer = withDisclosureManager(({ id }) => (
   <div id={id}>Hello World</div>
 ));

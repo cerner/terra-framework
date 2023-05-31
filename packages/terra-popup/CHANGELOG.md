@@ -1,7 +1,9 @@
 # Changelog
 
 ## Unreleased
+  * Updated contentWidth with value 400.
 
+## 6.66.0 - (May 11, 2023)
 
 * Changed
   * Updated close handler to return focus to target object upon pop-up closure. 

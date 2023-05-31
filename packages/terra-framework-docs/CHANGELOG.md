@@ -1,6 +1,18 @@
 # Changelog
 
 ## Unreleased
+  * Added test for `terra-popup`.
+
+* Added
+  * Added example for `terra-menu` with disabled item.
+
+* Added
+  * Added a `terra-slide-panel` test containing multiple slide panels.
+
+## 1.21.0 - (May 11, 2023)
+
+* Changed
+  * Minor dependency version bump
 
 ## 1.20.0 - (April 27, 2023)
 
