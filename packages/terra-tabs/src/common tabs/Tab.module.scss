@@ -47,6 +47,10 @@
       color: var(--terra-application-workspace-tab-icon-color, #7a7f82);
     }
 
+    .custom-display-content {
+      margin-right: 15px;
+    }
+
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
       &:hover {
         background-color: var(--terra-application-workspace-tab-hover-background-color, transparent);
