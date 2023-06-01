@@ -1,13 +1,15 @@
 # Changelog
 
 ## Unreleased
+
+* Added
   * Added test for `terra-popup`.
-
-* Added
   * Added example for `terra-menu` with disabled item.
-
-* Added
   * Added a `terra-slide-panel` test containing multiple slide panels.
+  * Added testing sections to `terra-menu`, `terra-navigation-prompt`, `terra-pills` and `terra-tabs` documentation.
+
+* Changed
+  * Updated testing sections for `terra-date-input`, `terra-date-picker`, `terra-slide-panel`, and `terra-time-input` documentation.
 
 ## 1.21.0 - (May 11, 2023)
 
