@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
 
@@ -20,6 +20,15 @@ function PopupArrow() {
     setOpen(false);
   };
 
+  useEffect(() => {
+    if (open) {
+      const firstLink = document.querySelector('.terra-popup-content a');
+      if (firstLink) {
+        firstLink.focus();
+      }
+    }
+  }, [open]);
+
   return (
     <React.Fragment>
       <Button text="Medication Links" onClick={handleButtonClick} refCallback={setButtonNode} />
@@ -29,16 +38,23 @@ function PopupArrow() {
         targetRef={getButtonNode}
         isArrowDisplayed
       >
-
-        <a href="https://www.refseek.com/directory/health_medical.html" target="_blank" rel="noreferrer">Health and Medical sites</a>
-        <br />
-        <a
-          href="https://www.happiesthealth.com/?utm_source=google&utm_medium=cpc-hp"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Health Related Links
-        </a>
+        <div className="terra-popup-content">
+          <a
+            href="https://www.refseek.com/directory/health_medical.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Health and Medical sites
+          </a>
+          <br />
+          <a
+            href="https://www.happiesthealth.com/?utm_source=google&utm_medium=cpc-hp"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Health Related Links
+          </a>
+        </div>
       </Popup>
     </React.Fragment>
   );
