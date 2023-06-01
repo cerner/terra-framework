@@ -237,6 +237,7 @@ class Tabs extends React.Component {
     const visibleTabs = [];
     const hiddenTabs = [];
     let isHiddenSelected = false;
+    let isIconOnly = false;
 
     tabData.forEach((tab, index) => {
       if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
@@ -246,8 +247,11 @@ class Tabs extends React.Component {
             key={tab.id}
             index={index}
             tabIds={ids}
+            icon={tab.icon}
+            customDisplay={tab.customDisplay}
             onSelect={this.wrapOnSelect(tab.onSelect)}
             zIndex={tab.isSelected ? tabData.length : tabData.length - index}
+            isIconOnly={tab.isIconOnly}
           />,
         );
       } else {
