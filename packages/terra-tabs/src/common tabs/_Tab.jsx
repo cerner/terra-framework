@@ -19,9 +19,18 @@ const propTypes = {
    */
   id: PropTypes.string.isRequired,
   /**
+  * Icon to be displayed on the tab.
+  */
+  icon: PropTypes.element,
+  /**
+  /**
    * The id of the tab pane element associated to this tab.
    */
   associatedPanelId: PropTypes.string.isRequired,
+  /**
+   * A custom display for the tab. Component will fallback to label text when collapsed into the menu.
+   */
+  customDisplay: PropTypes.node,
   /**
    * Index value to use for navigation.
    */
@@ -54,15 +63,23 @@ const propTypes = {
    * The z-index style to apply to the tab based upon order and state.
    */
   zIndex: PropTypes.number,
+  /**
+   * Indicates if the pane label should only display the icon. When tab collapses into menu the label text will be used.
+   */
+  isIconOnly: PropTypes.bool,
 };
 
 const defaultProps = {
   isSelected: false,
+  isIconOnly: false,
 };
 
 const Tab = ({
   id,
+  icon,
+  isIconOnly,
   associatedPanelId,
+  customDisplay,
   itemKey,
   index,
   isSelected,
@@ -77,8 +94,14 @@ const Tab = ({
   const tabClassNames = cx(
     'tab',
     { 'is-active': isSelected },
+    { 'is-icon-only': isIconOnly },
+    { 'is-text-only': !icon },
     theme.className,
   );
+
+  if (isIconOnly) {
+    attributes['aria-label'] = label;
+  }
 
   function onKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
@@ -113,9 +136,9 @@ const Tab = ({
       title={label}
     >
       <div className={cx('inner')}>
-        <div className={cx('label')}>
-          {label}
-        </div>
+        {customDisplay}
+        {customDisplay ? null : icon}
+        {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
       </div>
     </div>
   );
