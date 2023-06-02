@@ -237,7 +237,6 @@ class Tabs extends React.Component {
     const visibleTabs = [];
     const hiddenTabs = [];
     let isHiddenSelected = false;
-    let isIconOnly = false;
 
     tabData.forEach((tab, index) => {
       if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
