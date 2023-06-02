@@ -133,9 +133,11 @@ function WorklistDataGrid(props) {
   };
 
   const handleClick = (event) => {
+    // Determine which cell was clicked. In the event that the user holds the mouse across multiple cells,
+    // the originating cell is the clicked cell/active element.
     const clickedCell = event.target.closest('td,th') || document.activeElement.closest('td,th');
     if (!clickedCell) {
-      event.preventDefault();
+      // If anything other than a table data or table header cell is clicked, ignore the click.
       return;
     }
     // Remove Tab stop from previous cell in table that has focus and set it to the cell that was clicked.
