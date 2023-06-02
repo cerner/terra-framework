@@ -1,31 +1,16 @@
+/* eslint-disable react/jsx-first-prop-new-line */
 import React from 'react';
 import Workspace from 'terra-tabs/src/Workspace';
 import classNamesBind from 'classnames/bind';
 import WorkspaceItem from 'terra-tabs/src/WorkspaceItem';
 import styles from 'terra-tabs/src/Workspace.module.scss';
-
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 
 const cx = classNamesBind.bind(styles);
 
-const sizeMap = {
-  small: '320px',
-  medium: '500px',
-  large: '1000px',
-};
-
 const WorkspaceExample = () => {
   const [activeItemKey, setActiveItemKey] = React.useState('tab-1');
-  const [workspaceSize, setWorkspaceSize] = React.useState('large');
-
-  const onRequestSizeChange = (size) => {
-    setWorkspaceSize(size);
-  };
-
-  const onRequestClose = () => {
-    console.log('onRequestClose'); // eslint-disable-line no-console
-  };
 
   return (
     <Workspace
