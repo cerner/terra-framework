@@ -19,6 +19,8 @@
     min-width: 0;
     outline: none;
     position: relative;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     
     .inner {
       align-items: center;
