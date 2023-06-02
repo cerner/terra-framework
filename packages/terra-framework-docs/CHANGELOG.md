@@ -9,6 +9,9 @@
 * Added
   * Added a `terra-slide-panel` test containing multiple slide panels.
 
+* Added
+  * Added documentation and tests for `terra-worklist-data-grid`.
+
 ## 1.21.0 - (May 11, 2023)
 
 * Changed
