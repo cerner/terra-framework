@@ -5,6 +5,11 @@
         margin-right: 15px;
    }
 
+   .custom-display {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
   .workspace-container {
     background: var(--terra-application-workspace-workspace-container-background, linear-gradient(to bottom, #f4f4f4, #e8e9ea));
     box-shadow: var(--terra-application-workspace-workspace-container-box-shadow, inset 1px 0 0 0 #fff, inset 2px 0 0 0 #c8cacb);
