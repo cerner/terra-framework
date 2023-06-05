@@ -2,7 +2,8 @@
 target
 reports
 tests/**/__snapshots__/
-aggregate_translations
+aggregated-translations
 dev-site-config
 screenshots
 errorScreenshots
+generated-themes

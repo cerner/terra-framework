@@ -11,6 +11,9 @@
 * Changed
   * Updated testing sections for `terra-date-input`, `terra-date-picker`, `terra-slide-panel`, and `terra-time-input` documentation.
 
+* Added
+  * Added documentation and tests for `terra-worklist-data-grid`.
+
 ## 1.21.0 - (May 11, 2023)
 
 * Changed

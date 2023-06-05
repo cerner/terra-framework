@@ -313,15 +313,12 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
     });
 
     describe('Modal Focus', () => {
-      it('is on the first element when modal when opened', () => {
+      it('is on the modal when opened', () => {
         $('#root-component .disclose-small').click();
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
 
-        const firstElementWithModalBeginAttribute = $('[aria-modal="true"][role="dialog"] [data-terra-abstract-modal-begin="true"]');
-        expect(firstElementWithModalBeginAttribute.getText()).toBe('');
-
-        const expectedParentElement = $('[aria-modal="true"][role="dialog"]');
-        expect(firstElementWithModalBeginAttribute.parentElement().getHTML()).toBe(expectedParentElement.getHTML());
+        const firstElementWithModalBeginAttribute = $('[data-terra-abstract-modal-begin="true"]');
+        expect(firstElementWithModalBeginAttribute.isFocused()).toEqual(true);
 
         Terra.validates.element('modal is focused', { selector });
         browser.keys('Escape');
