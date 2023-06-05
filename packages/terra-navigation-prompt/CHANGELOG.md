@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `uuid` to `v8` for consistency with other components.
+
 ## 1.69.0 - (May 11, 2023)
 
 * Changed

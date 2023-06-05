@@ -5,7 +5,7 @@ import { mountWithIntl } from 'terra-enzyme-intl';
 import Menu from '../../src/Menu';
 import DefaultMenu from './DefaultMenuExample';
 
-jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
 
 describe('Menu', () => {
   // Snapshot Tests

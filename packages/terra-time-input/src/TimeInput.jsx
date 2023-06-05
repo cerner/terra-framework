@@ -5,7 +5,7 @@ import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ButtonGroup from 'terra-button-group';
 import { injectIntl } from 'react-intl';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 
 import * as KeyCode from 'keycode-js';
 import TimeUtil from './TimeUtil';
