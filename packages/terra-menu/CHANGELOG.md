@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.68.0 - (June 5, 2023)
+
 * Changed
   * Allow navigation to disabled items
   * Updated submenu exit context to first item

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.40.0 - (June 5, 2023)
+
 * Added
   * Added missing translations.
 
