@@ -4,7 +4,7 @@ const cellShape = PropTypes.shape({
   /**
    * String indicating content to be displayed for the cell.
    */
-  content: PropTypes.string,
+  content: PropTypes.node,
 });
 
 export default cellShape;

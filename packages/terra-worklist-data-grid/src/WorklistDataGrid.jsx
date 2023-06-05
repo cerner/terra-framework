@@ -1,4 +1,6 @@
-import React, { useContext, useRef, useCallback } from 'react';
+import React, {
+  useContext, useRef, useCallback, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -49,6 +51,10 @@ const propTypes = {
    * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the grid.
    */
   rowHeaderIndex: PropTypes.number,
+  /**
+   * Function that is called when a selectable cell is selected. Parameters: `onCellSelect(rowId, columnId)`
+   */
+  onCellSelect: PropTypes.func,
 };
 
 const defaultProps = {
@@ -62,17 +68,51 @@ function WorklistDataGrid(props) {
     ariaLabel,
     columns,
     rows,
+    onCellSelect,
   } = props;
 
   const focusedRow = useRef(0);
   const focusedCol = useRef(0);
   const grid = useRef();
+  const [currentSelectedCell, setCurrentSelectedCell] = useState(null);
 
   const gridRef = useCallback((node) => {
     grid.current = node;
     const focusedCell = grid.current.rows[focusedRow.current].cells[focusedCol.current];
     focusedCell.tabIndex = 0;
   }, []);
+
+  const selectCell = (event, rowIndex, columnIndex) => {
+    // If current cell is selected, do nothing. TODO: confirm assumption
+    if (currentSelectedCell
+      && currentSelectedCell.rowId === grid.current.rows[rowIndex].id
+      && currentSelectedCell.columnId === columns[columnIndex].id) {
+      event.preventDefault();
+      return;
+    }
+
+    // Make note of cell that is currently selected.
+    setCurrentSelectedCell({
+      rowId: grid.current.rows[rowIndex].id,
+      columnId: columns[columnIndex].id,
+    });
+
+    event.preventDefault();
+
+    if (onCellSelect) {
+      onCellSelect(grid.current.rows[rowIndex].id, columns[columnIndex].id);
+    }
+  };
+
+  const handleCellCopy = () => {
+    const cellContent = grid.current.rows[focusedRow.current].cells[focusedCol.current].textContent;
+
+    if ('clipboard' in navigator) {
+      return navigator.clipboard.writeText(cellContent);
+    }
+
+    return document.execCommand('copy', true, cellContent);
+  };
 
   const handleKeyDown = (event) => {
     const currentFocusedRow = event.target.parentElement.rowIndex;
@@ -107,6 +147,9 @@ function WorklistDataGrid(props) {
           nextRow = props.rows.length;
         }
         break;
+      case KeyCode.KEY_SPACE:
+        selectCell(event, currentFocusedRow, currentFocusedCol);
+        return;
       default:
         return;
     }
@@ -146,13 +189,47 @@ function WorklistDataGrid(props) {
     focusedCol.current = clickedCell.cellIndex;
 
     clickedCell.tabIndex = 0;
-    clickedCell.focus();
-    event.preventDefault();
+
+    selectCell(event, focusedRow.current, focusedCol.current);
   };
 
-  const getCellData = (cell, cellColumnIndex) => {
-    const tabIndex = { tabIndex: '-1' };
-    return props.rowHeaderIndex === cellColumnIndex ? (<th key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-row-header')}>{cell.content}</th>) : (<td key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-cell-data')}>{cell.content}</td>);
+  const getCellData = (cellRowIndex, cellColumnIndex, cell, rowId) => {
+    const tabIndex = { tabIndex: (focusedCol === cellColumnIndex && focusedRow === cellRowIndex) ? '0' : '-1' };
+    const columnId = columns[cellColumnIndex].id;
+    const cellId = `${rowId}_${columnId}`;
+    const isSelected = currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId;
+
+    return props.rowHeaderIndex === cellColumnIndex
+      ? (
+        <th
+          key={cellColumnIndex}
+          id={cellId}
+          aria-selected={isSelected ? true : undefined}
+          {...tabIndex}
+          className={
+            cx(['worklist-data-grid-row-header',
+              { 'worklist-data-grid-cell-selected': isSelected }])
+          }
+          onCopy={handleCellCopy}
+        >
+          {cell.content}
+        </th>
+      )
+      : (
+        <td
+          key={cellColumnIndex}
+          id={cellId}
+          aria-selected={isSelected ? true : undefined}
+          {...tabIndex}
+          className={
+            cx(['worklist-data-grid-cell-data',
+              { 'worklist-data-grid-cell-selected': isSelected }])
+            }
+          onCopy={handleCellCopy}
+        >
+          {cell.content}
+        </td>
+      );
   };
 
   const buildColumn = (columnData) => {
@@ -160,7 +237,7 @@ function WorklistDataGrid(props) {
     const height = props.columnHeaderHeight;
     return (
       /* eslint-disable react/forbid-dom-props */
-      <th key={columnData.id} className={cx('worklist-data-grid-column-header')} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
+      <th key={columnData.id} className={cx('worklist-data-grid-column-header')} tabIndex="-1" style={{ width, height }} onCopy={handleCellCopy}>{columnData.displayName}</th>
     );
   };
 
@@ -175,19 +252,19 @@ function WorklistDataGrid(props) {
     return undefined;
   };
 
-  const buildRow = (row) => {
+  const buildRow = (row, rowIndex) => {
     const height = row.height || props.rowHeight;
     return (
-      <tr key={row.id} className={cx('worklist-data-grid-row')} style={{ height }}>
+      <tr key={row.id} id={row.id} className={cx('worklist-data-grid-row')} style={{ height }}>
         {row.cells.map((cell, cellColumnIndex) => (
-          getCellData(cell, cellColumnIndex)
+          getCellData(rowIndex, cellColumnIndex, cell, row.id)
         ))}
       </tr>
     );
   };
 
   const buildRows = (allRows) => (
-    allRows.map((row) => (buildRow(row)))
+    allRows.map((row, index) => (buildRow(row, index)))
   );
 
   const theme = useContext(ThemeContext);
