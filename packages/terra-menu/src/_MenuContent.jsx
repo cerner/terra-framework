@@ -354,6 +354,7 @@ class MenuContent extends React.Component {
       this.props.contentWidth,
     );
     const isSubMenu = this.props.index > 0;
+    let shouldDisplayMainMenuHeader;
 
     React.Children.map(this.props.children, (item) => {
       const onClick = this.wrapOnClick(item);
@@ -374,6 +375,11 @@ class MenuContent extends React.Component {
           intl: this.props.intl,
           'aria-describedby': !MenuUtils.isMac() && !this.props.index && (this.props.showHeader || isSubMenu || isFullScreen) && index === 0 ? menuTopHeaderId : undefined,
         });
+        // If the menu is first-tier and is provided with `headerTitle` prop, terra-menu should render a header.
+        // Also the first-tier menu to have a header should possess at least one menu-item that drills-in to a sub-menu with sub-menu items.
+        if (this.props.headerTitle.length > 0 && item.props.subMenuItems && item.props.subMenuItems.length > 0) {
+          shouldDisplayMainMenuHeader = true;
+        }
         // If the child has children then it is an item group, so iterate through it's children
       } else if (item.props.children) {
         const children = item.props.children ? [] : undefined;
@@ -405,7 +411,7 @@ class MenuContent extends React.Component {
     );
 
     let header;
-    if (this.props.showHeader || isSubMenu || isFullScreen) {
+    if (isFullScreen || isSubMenu || (this.props.showHeader && shouldDisplayMainMenuHeader)) {
       header = this.buildHeader(isFullScreen);
     }
     const contentHeight = this.props.isHeightBounded ? '100%' : this.props.fixedHeight;
