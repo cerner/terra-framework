@@ -118,7 +118,6 @@ Terra.describeViewports('WorklistDataGrid', ['tiny', 'medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-masked-cell');
 
       Terra.validates.element('masked-cell', { selector });
-
     });
   });
 });
