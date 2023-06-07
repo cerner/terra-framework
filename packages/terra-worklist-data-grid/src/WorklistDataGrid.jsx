@@ -152,7 +152,16 @@ function WorklistDataGrid(props) {
 
   const getCellData = (cell, cellColumnIndex) => {
     const tabIndex = { tabIndex: '-1' };
-    return props.rowHeaderIndex === cellColumnIndex ? (<th key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-row-header')}>{cell.content}</th>) : (<td key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-cell-data')}>{cell.content}</td>);
+
+    // Determine whether cell is a header or grid cell
+    const WorklistCellTag = props.rowHeaderIndex === cellColumnIndex ? "th" : "td";
+
+    return (
+      // Return worklist data grid cell component
+      <WorklistCellTag key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-row-header', { masked:cell.isMasked })}>
+        <div className={cx('cell-content')}>{cell.content}</div>
+      </WorklistCellTag>
+    );
   };
 
   const buildColumn = (columnData) => {

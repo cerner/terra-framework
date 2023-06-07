@@ -35,4 +35,18 @@
   .worklist-data-grid-row:nth-child(odd) {
     background-color: var(--terra-worklist-data-grid-row-striped-background-color, #f0f0f0);
   }
+
+  .cell-content {
+    height: 100%;
+    width: 100%;
+  }
+  
+  // Create gradient background for masked cells
+  .masked
+  {
+    background: repeating-linear-gradient(-45deg, #dedfe0, #dedfe0 3px, transparent 3px, transparent 6px);
+    .cell-content {
+      display: none;
+    }
+  }
 }
