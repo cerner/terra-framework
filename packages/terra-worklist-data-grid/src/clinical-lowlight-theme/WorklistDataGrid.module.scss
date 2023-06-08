@@ -13,7 +13,8 @@
 
     // Cells
     --terra-worklist-data-grid-cell-border: 1px solid #181b1d;
-    --terra-worklist-data-grid-cell-focus-background-color: #1e3a49;
-    --terra-worklist-data-grid-cell-focus-box-shadow: inset 0 0 0 1px #004c76, inset 0 0 0 4px #004c76;
+    --terra-worklist-data-grid-cell-focus-background-color: #232a2d;
+    --terra-worklist-data-grid-cell-focus-outline: 2px dashed #fff;
+    --terra-worklist-data-grid-cell-focus-outline-offset: -2px;
   }
 }
