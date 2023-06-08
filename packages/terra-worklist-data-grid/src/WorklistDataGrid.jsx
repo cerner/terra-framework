@@ -4,6 +4,8 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
+import IconUp from 'terra-icon/lib/icon/IconUp';
+import IconDown from 'terra-icon/lib/icon/IconDown';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import './_elementPolyfill';
 import styles from './WorklistDataGrid.module.scss';
@@ -174,12 +176,23 @@ function WorklistDataGrid(props) {
     );
   };
 
-  const buildColumn = (columnData) => {
-    const width = columnData.width || props.columnWidth;
+  const buildColumn = (column) => {
+    const width = column.width || props.columnWidth;
     const height = props.columnHeaderHeight;
     return (
       /* eslint-disable react/forbid-dom-props */
-      <th key={columnData.id} className={cx('worklist-data-grid-column-header')} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
+      <th 
+        key={column.id} 
+        className={cx('worklist-data-grid-column-header')} 
+        tabIndex="-1"
+        role="columnheader" 
+        scope="col"
+        aria-sort='ascending'
+        style={{ width, height }}>
+        <button style={{ width:'100%', height:'100%' }}>
+          {column.displayName}
+        </button>
+      </th>
     );
   };
 
