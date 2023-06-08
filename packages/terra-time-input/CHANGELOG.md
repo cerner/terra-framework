@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * fixed linter warning
+
 ## 4.50.0 - (June 5, 2023)
 
 * Changed

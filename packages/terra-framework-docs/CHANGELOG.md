@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `terra-worklist-data-grid` component to dependency list.
+
 ## 1.22.0 - (June 5, 2023)
 
 * Added

@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React from 'react';
 import Menu from 'terra-menu';
 import Button from 'terra-button';
