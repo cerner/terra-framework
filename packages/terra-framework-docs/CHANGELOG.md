@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Updated examples and tests for `terra-worklist-data-grid` to remove row height
 
 ## 1.22.0 - (June 5, 2023)
 
