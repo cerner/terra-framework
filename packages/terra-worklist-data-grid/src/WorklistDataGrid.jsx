@@ -2,6 +2,7 @@ import React, { useContext, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import './_elementPolyfill';
@@ -49,6 +50,11 @@ const propTypes = {
    * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the grid.
    */
   rowHeaderIndex: PropTypes.number,
+  /**
+   * @private
+   * Object containing intl APIs
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {
@@ -62,6 +68,7 @@ function WorklistDataGrid(props) {
     ariaLabel,
     columns,
     rows,
+    intl,
   } = props;
 
   const focusedRow = useRef(0);
@@ -158,7 +165,10 @@ function WorklistDataGrid(props) {
 
     return (
       // Return worklist data grid cell component
-      <WorklistCellTag key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-row-header', { masked: cell.isMasked })}>
+      <WorklistCellTag key={cellColumnIndex} {...tabIndex} 
+        className={cx('worklist-data-grid-row-header', { masked: cell.isMasked })} 
+        aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined }
+      >
         <div className={cx('cell-content')}>{cell.content}</div>
       </WorklistCellTag>
     );
@@ -225,4 +235,4 @@ function WorklistDataGrid(props) {
 WorklistDataGrid.propTypes = propTypes;
 WorklistDataGrid.defaultProps = defaultProps;
 
-export default WorklistDataGrid;
+export default injectIntl(WorklistDataGrid);
