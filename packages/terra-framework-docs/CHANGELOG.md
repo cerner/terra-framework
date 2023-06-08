@@ -23,6 +23,9 @@
 * Added
   * Added documentation and tests for `terra-worklist-data-grid`.
 
+* Added
+  * Added example and test for masked cell feature for `terra-worklist-data-grid`.
+
 ## 1.21.0 - (May 11, 2023)
 
 * Changed
