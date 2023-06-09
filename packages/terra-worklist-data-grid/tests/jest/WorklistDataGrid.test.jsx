@@ -35,7 +35,7 @@ describe('WorklistDataGrid', () => {
     expect(column.key()).toEqual('Column-0');
   });
 
-  it('fails if the id prop is not provided', () => {
+  it('fails if the id prop is not set', () => {
     jest.spyOn(console, 'error').mockImplementation();
 
     // eslint-disable-next-line no-unused-vars
