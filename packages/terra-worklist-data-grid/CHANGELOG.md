@@ -4,4 +4,5 @@
 * Changed
   * Removed ability to set variable row heights
 
-* Initial stable release
+## 0.1
+  * Initial stable release
