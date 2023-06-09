@@ -5,7 +5,6 @@ import RollupPill from '../../src/subcomponents/_RollupPill';
 
 jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
 
-
 describe('Rollup Pill', () => {
   it('should render rollup pill with the label "4 more"', () => {
     const wrapper = mountWithIntl(<RollupPill isCollapsed rollupCount={4} />);
