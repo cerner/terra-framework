@@ -7,11 +7,6 @@
     outline: var(--terra-worklist-data-grid-cell-focus-outline, 2px dashed #000);
     outline-offset: var(--terra-data-grid-cell-focus-outline-offset, -2px);
     z-index: 1;
-
-    // background-color: var(--terra-table-row-focus-background-color);
-    // outline: var(--terra-table-row-focus-outline, 2px dashed #000);
-    // outline-offset: var(--terra-table-row-focus-outline-offset, -2px);
-    // z-index: 1;
   }
 
   .worklist-data-grid {
