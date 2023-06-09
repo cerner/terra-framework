@@ -1,3 +1,4 @@
+// eslint-disable no-console
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import WorklistDataGrid from '../../src/WorklistDataGrid';
@@ -37,8 +38,8 @@ describe('WorklistDataGrid', () => {
   it('fails if the id prop is not provided', () => {
     jest.spyOn(console, 'error').mockImplementation();
 
+    // eslint-disable-next-line no-unused-vars
     const wrapper = (<WorklistDataGrid />);
-
     expect(console.error).toHaveBeenCalledWith(expect.stringContaining('The prop `id` is marked as required'));
 
     console.error.mockRestore();
