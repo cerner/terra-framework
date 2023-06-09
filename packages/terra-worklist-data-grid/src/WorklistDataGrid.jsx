@@ -165,9 +165,11 @@ function WorklistDataGrid(props) {
 
     return (
       // Return worklist data grid cell component
-      <WorklistCellTag key={cellColumnIndex} {...tabIndex} 
-        className={cx('worklist-data-grid-row-header', { masked: cell.isMasked })} 
-        aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined }
+      <WorklistCellTag
+        key={cellColumnIndex}
+        {...tabIndex}
+        className={cx('worklist-data-grid-row-header', { masked: cell.isMasked })}
+        aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined}
       >
         <div className={cx('cell-content')}>{cell.content}</div>
       </WorklistCellTag>
