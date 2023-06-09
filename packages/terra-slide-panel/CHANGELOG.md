@@ -11,7 +11,7 @@
   * Fixed a11y bug where multiple slide panels shared same ID for visually hidden text. (This fix requires updates to Jest snapshots and requires UUID to be mocked on consuming applications)
 
 * Changed
-  * Updated `uuid` to `v8` for consistency with other components.
+  * Updated `uuid` to `v8.2.0` for consistency with other components.
 
 ## 3.39.0 - (April 27, 2023)
 
