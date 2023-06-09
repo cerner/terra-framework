@@ -179,6 +179,15 @@ function WorklistDataGrid(props) {
   const buildColumn = (column) => {
     const width = column.width || props.columnWidth;
     const height = props.columnHeaderHeight;
+    let sortIndicatorIcon;
+
+    if (column.sortIndicator === WorklistDataGridPropTypes.SortIndicators.ASCENDING) {
+      sortIndicatorIcon = <IconUp />;
+    }
+    else if (column.sortIndicator === WorklistDataGridPropTypes.SortIndicators.DESCENDING) {
+      sortIndicatorIcon = <IconDown />;
+    }
+
     return (
       /* eslint-disable react/forbid-dom-props */
       <th 
@@ -189,9 +198,12 @@ function WorklistDataGrid(props) {
         scope="col"
         aria-sort='ascending'
         style={{ width, height }}>
-        <button style={{ width:'100%', height:'100%' }}>
-          {column.displayName}
-        </button>
+        <div className={cx('header-container')}>
+          <button>
+            {column.displayName}
+          </button>
+          {sortIndicatorIcon}
+        </div>
       </th>
     );
   };

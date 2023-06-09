@@ -25,4 +25,4 @@ const columnShape = PropTypes.shape({
   acceptsFocus: PropTypes.bool,
 });
 
-export default columnShape;
+export { columnShape, SortIndicators };
