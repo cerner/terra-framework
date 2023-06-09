@@ -34,7 +34,7 @@
     "terra-form-input": "^4.4.0",
     "terra-theme-context": "^1.8.0",
     "terra-visually-hidden-text": "^2.35.0",
-    "uuid": "^8.3.2"
+    "uuid": "8.2.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
