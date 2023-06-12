@@ -39,6 +39,7 @@
   .cell-content {
     height: 100%;
     width: 100%;
+    padding: var(--terra-worklist-data-grid-cell-content-padding, 7px);;
   }
 
   // Create gradient background for masked cells
