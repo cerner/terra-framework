@@ -4,4 +4,5 @@
 * Added
   * Added masked cell support.
 
-* Initial stable release
+## 0.1
+  * Initial stable release
