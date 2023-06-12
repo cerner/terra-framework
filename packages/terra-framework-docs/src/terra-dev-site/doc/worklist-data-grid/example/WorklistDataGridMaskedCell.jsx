@@ -9,7 +9,7 @@ const WorklistDataGridMaskedCell = () => {
   return (
     <React.Fragment>
       <WorklistDataGrid
-        id="default-terra-worklist-data-grid"
+        id="terra-worklist-data-grid-masked-cell"
         columns={cols}
         rows={rows}
         rowHeaderIndex={rowHeaderIndex}
