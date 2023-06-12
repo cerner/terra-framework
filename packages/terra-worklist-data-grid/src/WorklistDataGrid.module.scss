@@ -29,9 +29,11 @@
     border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
     font-weight: normal;
     position: relative;
+    height: 100%;
   }
 
   .worklist-data-grid-row:nth-child(odd) {
     background-color: var(--terra-worklist-data-grid-row-striped-background-color, #f0f0f0);
   }
+
 }
