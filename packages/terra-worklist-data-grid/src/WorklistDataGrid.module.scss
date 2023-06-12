@@ -13,7 +13,6 @@
     // Style for the grid itself
     border: var(--terra-worklist-data-grid-border, 1px solid #dedfe0);
     border-collapse: collapse;
-    height: 100%;
     margin: 1em auto;
     width: 100%;
   }
@@ -24,8 +23,7 @@
     color: var(--terra-worklist-data-grid-column-header-text-color);
   }
 
-  .worklist-data-grid-row-header,
-  .worklist-data-grid-cell-data {
+  .worklist-data-grid-cell {
     border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
     font-weight: normal;
     height: 100%;
@@ -36,6 +34,12 @@
     background-color: var(--terra-worklist-data-grid-row-striped-background-color, #f0f0f0);
   }
 
+  // Hover state for selectable elements
+  .selectable:hover {
+    background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
+    cursor: pointer;
+  }
+  
   .cell-content {
     height: 100%;
     width: 100%;

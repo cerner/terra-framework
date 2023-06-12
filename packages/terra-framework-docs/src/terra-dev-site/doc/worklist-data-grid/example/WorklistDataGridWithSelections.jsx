@@ -1,15 +1,15 @@
 import React from 'react';
 import WorklistDataGrid from 'terra-worklist-data-grid';
-import gridDataJSON from './gridMaskedCellData.json';
+import gridDataJSON from './gridDataWithSelections.json';
 
-const WorklistDataGridMaskedCell = () => {
+const WorklistDataGridWithSelections = () => {
   const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
 
   return (
     <React.Fragment>
       <WorklistDataGrid
-        id="terra-worklist-data-grid-masked-cell"
+        id="terra-worklist-data-grid-with-selections"
         columns={cols}
         rows={rows}
         rowHeaderIndex={rowHeaderIndex}
@@ -22,4 +22,4 @@ const WorklistDataGridMaskedCell = () => {
   );
 };
 
-export default WorklistDataGridMaskedCell;
+export default WorklistDataGridWithSelections;
