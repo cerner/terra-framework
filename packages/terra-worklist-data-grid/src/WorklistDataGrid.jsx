@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useCallback } from 'react';
+import React, { useState, useContext, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -64,6 +64,8 @@ function WorklistDataGrid(props) {
     rows,
   } = props;
 
+  const [selectedRow, setSelectedRow] = useState();
+  const [selectedCol, setSelectedCol] = useState();
   const focusedRow = useRef(0);
   const focusedCol = useRef(0);
   const grid = useRef();
@@ -83,6 +85,10 @@ function WorklistDataGrid(props) {
 
     const key = event.keyCode;
     switch (key) {
+      case KeyCode.KEY_SPACE:
+        setSelectedRow(currentFocusedRow - 1);
+        setSelectedCol(currentFocusedCol);
+        break;
       case KeyCode.KEY_UP:
         nextRow -= 1;
         break;
@@ -129,6 +135,7 @@ function WorklistDataGrid(props) {
     const elementWithTabStop = grid.current.rows[nextRow].cells[nextCol];
     elementWithTabStop.tabIndex = 0;
     elementWithTabStop.focus();
+
     event.preventDefault();
   };
 
@@ -142,17 +149,47 @@ function WorklistDataGrid(props) {
     }
     // Remove Tab stop from previous cell in table that has focus and set it to the cell that was clicked.
     grid.current.rows[focusedRow.current].cells[focusedCol.current].tabIndex = -1;
-    focusedRow.current = clickedCell.parentElement.rowIndex;
+    focusedRow.current = clickedCell.parentElement.rowIndex - 1;
     focusedCol.current = clickedCell.cellIndex;
+    setSelectedRow(clickedCell.parentElement.rowIndex - 1);
+    setSelectedCol(clickedCell.cellIndex);
 
     clickedCell.tabIndex = 0;
     clickedCell.focus();
     event.preventDefault();
   };
 
-  const getCellData = (cell, cellColumnIndex) => {
+  const getCellData = (cell, cellRowIndex, cellColumnIndex) => {
     const tabIndex = { tabIndex: '-1' };
-    return props.rowHeaderIndex === cellColumnIndex ? (<th key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-row-header')}>{cell.content}</th>) : (<td key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-cell-data')}>{cell.content}</td>);
+    if (props.rowHeaderIndex === cellColumnIndex) {
+      return (
+        <th
+          key={cellColumnIndex}
+          className={cx('worklist-data-grid-row-header')}
+          {...tabIndex}
+        >
+          {cell.content}
+        </th>
+      );
+    }
+
+    const isCellSelected = (cellRowIndex === selectedRow) && (cellColumnIndex === selectedCol);
+    console.log(isCellSelected);
+
+    return (
+      <td
+        key={cellColumnIndex}
+        className={
+          cx(
+            { 'is-selected': isCellSelected },
+            'worklist-data-grid-cell-data',
+          )
+        }
+        {...tabIndex}
+      >
+        {cell.content}
+      </td>
+    );
   };
 
   const buildColumn = (columnData) => {
@@ -175,19 +212,19 @@ function WorklistDataGrid(props) {
     return undefined;
   };
 
-  const buildRow = (row) => {
+  const buildRow = (row, cellRowIndex) => {
     const height = row.height || props.rowHeight;
     return (
       <tr key={row.id} className={cx('worklist-data-grid-row')} style={{ height }}>
         {row.cells.map((cell, cellColumnIndex) => (
-          getCellData(cell, cellColumnIndex)
+          getCellData(cell, cellRowIndex, cellColumnIndex)
         ))}
       </tr>
     );
   };
 
   const buildRows = (allRows) => (
-    allRows.map((row) => (buildRow(row)))
+    allRows.map((row, cellRowIndex) => (buildRow(row, cellRowIndex)))
   );
 
   const theme = useContext(ThemeContext);

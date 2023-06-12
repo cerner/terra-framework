@@ -30,6 +30,12 @@
     font-weight: normal;
     height: 100%;
     position: relative;
+
+    &.is-selected {
+      background-color: var(--terra-worklist-data-grid-cell-focus-background-color, #cbe7fa);
+      box-shadow: var(--terra-worklist-data-grid-cell-focus-box-shadow, inset 0 0 0 1px rgba(38, 162, 229, 0.5), inset 0 0 0 4px rgba(76, 178, 233, 0.2));
+      outline: none;
+    }
   }
 
   .worklist-data-grid-row:nth-child(odd) {
