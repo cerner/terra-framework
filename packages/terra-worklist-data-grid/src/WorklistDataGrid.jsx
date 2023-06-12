@@ -53,9 +53,6 @@ const propTypes = {
 
 const defaultProps = {
   rowHeaderIndex: 0,
-  rowHeight: "2.5rem",
-  columnWidth: "200px",
-  columnHeaderHeight: "2.5rem"
 };
 
 function WorklistDataGrid(props) {
