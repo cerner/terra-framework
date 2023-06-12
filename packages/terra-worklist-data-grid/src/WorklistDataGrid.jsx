@@ -86,7 +86,7 @@ function WorklistDataGrid(props) {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_SPACE:
-        setSelectedRow(currentFocusedRow - 1);
+        setSelectedRow(currentFocusedRow);
         setSelectedCol(currentFocusedCol);
         break;
       case KeyCode.KEY_UP:
@@ -149,9 +149,9 @@ function WorklistDataGrid(props) {
     }
     // Remove Tab stop from previous cell in table that has focus and set it to the cell that was clicked.
     grid.current.rows[focusedRow.current].cells[focusedCol.current].tabIndex = -1;
-    focusedRow.current = clickedCell.parentElement.rowIndex - 1;
+    focusedRow.current = clickedCell.parentElement.rowIndex;
     focusedCol.current = clickedCell.cellIndex;
-    setSelectedRow(clickedCell.parentElement.rowIndex - 1);
+    setSelectedRow(clickedCell.parentElement.rowIndex);
     setSelectedCol(clickedCell.cellIndex);
 
     clickedCell.tabIndex = 0;
@@ -161,20 +161,23 @@ function WorklistDataGrid(props) {
 
   const getCellData = (cell, cellRowIndex, cellColumnIndex) => {
     const tabIndex = { tabIndex: '-1' };
+    const isCellSelected = (cellRowIndex === selectedRow) && (cellColumnIndex === selectedCol);
     if (props.rowHeaderIndex === cellColumnIndex) {
       return (
         <th
           key={cellColumnIndex}
-          className={cx('worklist-data-grid-row-header')}
+          className={
+            cx(
+              { 'is-selected': isCellSelected },
+              'worklist-data-grid-row-header',
+            )
+          }
           {...tabIndex}
         >
           {cell.content}
         </th>
       );
     }
-
-    const isCellSelected = (cellRowIndex === selectedRow) && (cellColumnIndex === selectedCol);
-    console.log(isCellSelected);
 
     return (
       <td
@@ -224,7 +227,7 @@ function WorklistDataGrid(props) {
   };
 
   const buildRows = (allRows) => (
-    allRows.map((row, cellRowIndex) => (buildRow(row, cellRowIndex)))
+    allRows.map((row, cellRowIndex) => (buildRow(row, cellRowIndex + 1)))
   );
 
   const theme = useContext(ThemeContext);
