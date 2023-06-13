@@ -27,8 +27,8 @@
       ]
     },
     {
-      "id": "2",
       "height": "150px",
+      "id": "2",
       "cells": [
         { "content": "Temperature Oral (degC)"},
         { "content": "36.7" },
