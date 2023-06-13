@@ -4,8 +4,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
-import IconUp from 'terra-icon/lib/icon/IconUp';
-import IconDown from 'terra-icon/lib/icon/IconDown';
+import HeaderCell from './HeaderCell';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import './_elementPolyfill';
 import styles from './WorklistDataGrid.module.scss';
@@ -53,6 +52,10 @@ const propTypes = {
    */
   rowHeaderIndex: PropTypes.number,
   /**
+   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   */
+  onColumnSelect: PropTypes.func,
+  /**
    * @private
    * Object containing intl APIs
    */
@@ -70,6 +73,8 @@ function WorklistDataGrid(props) {
     ariaLabel,
     columns,
     rows,
+    columnHeaderHeight,
+    onColumnSelect,
     intl,
   } = props;
 
@@ -167,51 +172,30 @@ function WorklistDataGrid(props) {
 
     return (
       // Return worklist data grid cell component
-      <WorklistCellTag key={cellColumnIndex} {...tabIndex} 
-        className={cx('worklist-data-grid-row-header', { masked: cell.isMasked })} 
-        aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined }
+      <WorklistCellTag
+        key={cellColumnIndex}
+        {...tabIndex}
+        className={cx('worklist-data-grid-row-header', { masked: cell.isMasked })}
+        aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined}
       >
         <div className={cx('cell-content')}>{cell.content}</div>
       </WorklistCellTag>
     );
   };
 
-  const buildColumn = (column) => {
-    const width = column.width || props.columnWidth;
-    const height = props.columnHeaderHeight;
-    let sortIndicatorIcon;
-
-    if (column.sortIndicator === WorklistDataGridPropTypes.SortIndicators.ASCENDING) {
-      sortIndicatorIcon = <IconUp />;
-    }
-    else if (column.sortIndicator === WorklistDataGridPropTypes.SortIndicators.DESCENDING) {
-      sortIndicatorIcon = <IconDown />;
-    }
-
-    return (
-      /* eslint-disable react/forbid-dom-props */
-      <th 
-        key={column.id} 
-        className={cx('worklist-data-grid-column-header')} 
-        tabIndex="-1"
-        role="columnheader" 
-        scope="col"
-        aria-sort='ascending'
-        style={{ width, height }}>
-        <div className={cx('header-container')}>
-          <button>
-            {column.displayName}
-          </button>
-          {sortIndicatorIcon}
-        </div>
-      </th>
-    );
-  };
+  const buildColumn = (column) => (
+    <HeaderCell
+      column={column}
+      width={column.width || props.columnWidth}
+      headerHeight={columnHeaderHeight}
+      onColumnSelect={onColumnSelect}
+    />
+  );
 
   const buildColumns = (allColumns) => {
     if (allColumns?.length > 0) {
       return (
-        <tr height={props.columnHeaderHeight}>
+        <tr>
           {allColumns.map(columnData => (buildColumn(columnData)))}
         </tr>
       );
@@ -219,16 +203,13 @@ function WorklistDataGrid(props) {
     return undefined;
   };
 
-  const buildRow = (row) => {
-    const height = row.height || props.rowHeight;
-    return (
-      <tr key={row.id} className={cx('worklist-data-grid-row')} style={{ height }}>
-        {row.cells.map((cell, cellColumnIndex) => (
-          getCellData(cell, cellColumnIndex)
-        ))}
-      </tr>
-    );
-  };
+  const buildRow = (row) => (
+    <tr key={row.id} className={cx('worklist-data-grid-row')}>
+      {row.cells.map((cell, cellColumnIndex) => (
+        getCellData(cell, cellColumnIndex)
+      ))}
+    </tr>
+  );
 
   const buildRows = (allRows) => (
     allRows.map((row) => (buildRow(row)))

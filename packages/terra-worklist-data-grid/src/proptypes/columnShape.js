@@ -20,9 +20,13 @@ const columnShape = PropTypes.shape({
    */
   sortIndicator: PropTypes.oneOf(Object.values(SortIndicators)),
   /**
-   * Boolean value indicating whether or not the cell can accept focus.
+   * Boolean value indicating whether or not the column has an error in the data
    */
-  acceptsFocus: PropTypes.bool,
+  hasError: PropTypes.bool,
+  /**
+   * Boolean value indicating whether or not the column header is selectable.
+   */
+  isSelectable: PropTypes.bool,
 });
 
 export { columnShape, SortIndicators };
