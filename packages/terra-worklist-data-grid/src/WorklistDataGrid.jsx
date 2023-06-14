@@ -199,7 +199,7 @@ function WorklistDataGrid(props) {
   };
 
   const buildRow = (row) => {
-    const height = row.height || props.rowHeight;
+    const height = props.rowHeight;
     return (
       <tr key={row.id} className={cx('worklist-data-grid-row')} style={{ height }}>
         {row.cells.map((cell, cellColumnIndex) => (

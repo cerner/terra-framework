@@ -42,6 +42,7 @@
   
   .cell-content {
     height: 100%;
+    padding: var(--terra-worklist-data-grid-cell-content-padding, 7px);
     width: 100%;
   }
 

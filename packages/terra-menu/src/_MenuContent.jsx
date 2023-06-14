@@ -10,7 +10,7 @@ import Arrange from 'terra-arrange';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import MenuUtils from './_MenuUtils';
 import MenuItem from './MenuItem';
 import styles from './Menu.module.scss';

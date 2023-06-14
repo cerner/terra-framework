@@ -7,7 +7,7 @@ import DateInput from '../../src/DateInput';
 import DateInputField from '../../src/DateInputField';
 import DateInputUtil from '../../lib/DateInputUtil';
 
-jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
 
 describe('DateInput', () => {
   const defaultRender = <DateInput name="date-input" />;

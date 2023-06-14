@@ -4,7 +4,7 @@ import { injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import IconError from 'terra-icon/lib/icon/IconError';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 

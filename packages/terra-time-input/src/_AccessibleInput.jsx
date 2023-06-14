@@ -2,7 +2,7 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Input from 'terra-form-input';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 
 const propTypes = {
   /**
