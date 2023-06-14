@@ -1,0 +1,5 @@
+{
+  "Terra.worklist-data-grid.row-selection-template": "Select: {rowDescription}",
+  "Terra.worklist-data-grid.navigate": "Navigate to data grid",
+  "Terra.worklist-data-grid.cell.selected": "The current cell is selected"
+}

@@ -13,6 +13,11 @@ const columnShape = PropTypes.shape({
    * Boolean value indicating whether or not the cell can accept focus.
    */
   acceptsFocus: PropTypes.bool,
+
+  /**
+   * A number (in px) specifying the width of the column. If not provided, the DataGrid's default column width will be used.
+   */
+  width: PropTypes.number,
 });
 
 export default columnShape;
