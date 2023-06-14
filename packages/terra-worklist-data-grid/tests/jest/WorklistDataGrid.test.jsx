@@ -21,9 +21,15 @@ describe('WorklistDataGrid', () => {
     // Test masked cells
     const maskedCells = wrapper.find('.masked');
 
+    // Test selectable cells for hover and selection actions
+    const selectableCells = wrapper.find('.selectable');
+    const selectableMaskedCells = wrapper.find('.masked.selectable');
+
     expect(columnHeaders).toHaveLength(3);
     expect(rowHeaders).toHaveLength(9);
     expect(maskedCells).toHaveLength(3);
+    expect(selectableCells).toHaveLength(8);
+    expect(selectableMaskedCells).toHaveLength(0);
     expect(wrapper).toMatchSnapshot();
   });
 
