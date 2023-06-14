@@ -60,25 +60,38 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
       }
     >
       <th
-        className="worklist-data-grid-row-header"
+        className="worklist-data-grid-cell"
         key="0"
         tabIndex="-1"
       >
-        Heart Rate Monitored (bpm)
+        <div
+          className="cell-content"
+        >
+          Heart Rate Monitored (bpm)
+        </div>
       </th>
       <td
-        className="worklist-data-grid-cell-data"
+        className="worklist-data-grid-cell"
         key="1"
         tabIndex="-1"
       >
-        68
+        <div
+          className="cell-content"
+        >
+          68
+        </div>
       </td>
       <td
-        className="worklist-data-grid-cell-data"
+        aria-label="Terra.worklistDataGrid.maskedCell"
+        className="worklist-data-grid-cell masked"
         key="2"
         tabIndex="-1"
       >
-        66
+        <div
+          className="cell-content"
+        >
+          66
+        </div>
       </td>
     </tr>
     <tr
@@ -91,25 +104,38 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
       }
     >
       <th
-        className="worklist-data-grid-row-header"
+        className="worklist-data-grid-cell"
         key="0"
         tabIndex="-1"
       >
-        Temperature Oral (degC)
+        <div
+          className="cell-content"
+        >
+          Temperature Oral (degC)
+        </div>
       </th>
       <td
-        className="worklist-data-grid-cell-data"
+        className="worklist-data-grid-cell"
         key="1"
         tabIndex="-1"
       >
-        36.7
+        <div
+          className="cell-content"
+        >
+          36.7
+        </div>
       </td>
       <td
-        className="worklist-data-grid-cell-data"
+        aria-label="Terra.worklistDataGrid.maskedCell"
+        className="worklist-data-grid-cell masked"
         key="2"
         tabIndex="-1"
       >
-        36.9
+        <div
+          className="cell-content"
+        >
+          36.9
+        </div>
       </td>
     </tr>
     <tr
@@ -122,25 +148,38 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
       }
     >
       <th
-        className="worklist-data-grid-row-header"
+        className="worklist-data-grid-cell"
         key="0"
         tabIndex="-1"
       >
-        Cardiac Index (L/min/m2)
+        <div
+          className="cell-content"
+        >
+          Cardiac Index (L/min/m2)
+        </div>
       </th>
       <td
-        className="worklist-data-grid-cell-data"
+        className="worklist-data-grid-cell"
         key="1"
         tabIndex="-1"
       >
-        2.25
+        <div
+          className="cell-content"
+        >
+          2.25
+        </div>
       </td>
       <td
-        className="worklist-data-grid-cell-data"
+        aria-label="Terra.worklistDataGrid.maskedCell"
+        className="worklist-data-grid-cell masked"
         key="2"
         tabIndex="-1"
       >
-        2.28
+        <div
+          className="cell-content"
+        >
+          2.28
+        </div>
       </td>
     </tr>
   </tbody>

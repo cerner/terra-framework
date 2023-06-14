@@ -168,7 +168,7 @@ function WorklistDataGrid(props) {
       <WorklistCellTag
         key={cellColumnIndex}
         {...tabIndex}
-        className={cx('worklist-data-grid-row-header', { masked: cell.isMasked })}
+        className={cx('worklist-data-grid-cell', { masked: cell.isMasked })}
         aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined}
       >
         <div className={cx('cell-content')}>{cell.content}</div>
