@@ -18,6 +18,9 @@ function PopupArrow() {
   };
 
   const handleRequestClose = () => {
+    if (open) {
+      setFocusedIndex(0);
+    }
     setOpen(false);
     buttonElement.current.focus(); // Return focus to the button when the popup closes
   };
@@ -32,17 +35,10 @@ function PopupArrow() {
     }
   };
 
-  useEffect(() => {
-    if (open) {
-      setFocusedIndex(0);
-    }
-  }, [open]);
-
 
   useEffect(() => {
     if (open && focusedIndex !== -1) {
       const listItems = document.querySelectorAll('.terra-popup-content a');
-      console.log("CHEKING ",listItems)
       if (listItems.length > 0) {
         listItems[focusedIndex].focus();
       }
@@ -51,7 +47,7 @@ function PopupArrow() {
 
   return (
     <React.Fragment>
-      <Button text="Medication Links" onClick={handleButtonClick} refCallback={setButtonNode} aria-label="Medication Links" />
+      <Button text="Medication Links" onClick={handleButtonClick} refCallback={setButtonNode}/>
       <Popup
         isOpen={open}
         onRequestClose={handleRequestClose}
