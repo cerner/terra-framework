@@ -1,30 +1,30 @@
 { "cols": [
-  { "id": "Column-0", "displayName": " Vitals"},
-  { "id": "Column-1", "displayName": "March 16" },
+  { "id": "Column-0", "displayName": " Vitals", "isSelectable":true},
+  { "id": "Column-1", "displayName": "March 16", "isSelectable":true },
   { "id": "Column-2", "displayName": "March 17" }
 ],
 "rows": [
     {
       "id": "1",
       "cells": [
-        { "content": "Heart Rate Monitored (bpm)"},
-        { "content": "68"},
-        { "content": "66", "isMasked":true }
+        { "content": "Heart Rate Monitored (bpm)", "isSelectable":true},
+        { "content": "68", "isSelectable":true},
+        { "content": "66", "isMasked":true, "isSelectable":true }
       ]
     },
     {
       "id": "2",
       "cells": [
-        { "content": "Temperature Oral (degC)"},
-        { "content": "36.7" },
-        { "content": "36.9", "isMasked":true }
+        { "content": "Temperature Oral (degC)", "isSelectable":true},
+        { "content": "36.7", "isSelectable":true },
+        { "content": "36.9", "isMasked":true, "isSelectable":true }
       ]
     },
     {
       "id": "3",
       "cells": [
-        { "content": "Cardiac Index (L/min/m2)"},
-        { "content": "2.25" },
+        { "content": "Cardiac Index (L/min/m2)", "isSelectable":true},
+        { "content": "2.25", "isSelectable":true },
         { "content": "2.28", "isMasked":true }
       ]
     }

@@ -11,7 +11,7 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
   <tbody>
     <tr>
       <th
-        className="worklist-data-grid-column-header"
+        className="worklist-data-grid-column-header selectable"
         key="Column-0"
         style={
           Object {
@@ -24,7 +24,7 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
          Vitals
       </th>
       <th
-        className="worklist-data-grid-column-header"
+        className="worklist-data-grid-column-header selectable"
         key="Column-1"
         style={
           Object {
@@ -60,7 +60,7 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
       }
     >
       <th
-        className="worklist-data-grid-cell"
+        className="worklist-data-grid-cell selectable"
         key="0"
         tabIndex="-1"
       >
@@ -71,7 +71,7 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
         </div>
       </th>
       <td
-        className="worklist-data-grid-cell"
+        className="worklist-data-grid-cell selectable"
         key="1"
         tabIndex="-1"
       >
@@ -104,7 +104,7 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
       }
     >
       <th
-        className="worklist-data-grid-cell"
+        className="worklist-data-grid-cell selectable"
         key="0"
         tabIndex="-1"
       >
@@ -115,7 +115,7 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
         </div>
       </th>
       <td
-        className="worklist-data-grid-cell"
+        className="worklist-data-grid-cell selectable"
         key="1"
         tabIndex="-1"
       >
@@ -148,7 +148,7 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
       }
     >
       <th
-        className="worklist-data-grid-cell"
+        className="worklist-data-grid-cell selectable"
         key="0"
         tabIndex="-1"
       >
@@ -159,7 +159,7 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
         </div>
       </th>
       <td
-        className="worklist-data-grid-cell"
+        className="worklist-data-grid-cell selectable"
         key="1"
         tabIndex="-1"
       >
