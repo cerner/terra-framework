@@ -6,7 +6,6 @@ import DateInput from '../../lib/DateInput';
 
 jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
 
-
 it('should render a default date input', () => {
   const dateInput = renderWithIntl(<DateInput />);
   expect(dateInput).toMatchSnapshot();
