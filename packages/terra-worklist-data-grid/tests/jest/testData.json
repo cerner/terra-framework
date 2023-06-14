@@ -9,7 +9,7 @@
       "cells": [
         { "content": "Heart Rate Monitored (bpm)"},
         { "content": "68"},
-        { "content": "66"}
+        { "content": "66", "isMasked":true }
       ]
     },
     {
@@ -17,7 +17,7 @@
       "cells": [
         { "content": "Temperature Oral (degC)"},
         { "content": "36.7" },
-        { "content": "36.9" }
+        { "content": "36.9", "isMasked":true }
       ]
     },
     {
@@ -25,7 +25,7 @@
       "cells": [
         { "content": "Cardiac Index (L/min/m2)"},
         { "content": "2.25" },
-        { "content": "2.28" }
+        { "content": "2.28", "isMasked":true }
       ]
     }
   ]
