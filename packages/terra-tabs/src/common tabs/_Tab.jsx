@@ -10,6 +10,9 @@ import {
 } from './_TabUtils';
 
 import styles from './Tab.module.scss';
+import terraStyles from './TerraTabs.module.scss';
+
+const cy = classNames.bind(terraStyles);
 
 const cx = classNames.bind(styles);
 
@@ -67,6 +70,11 @@ const propTypes = {
    * Indicates if the pane label should only display the icon. When tab collapses into menu the label text will be used.
    */
   isIconOnly: PropTypes.bool,
+  /**
+   *  @private
+   * The style to be applied to the tabs
+   */
+  variant: PropTypes.oneOf(['workspace', 'framework']),
 };
 
 const defaultProps = {
@@ -88,6 +96,7 @@ const Tab = ({
   onSelect,
   tabIds,
   zIndex,
+  variant,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -98,6 +107,13 @@ const Tab = ({
     { 'is-text-only': !icon },
     theme.className,
   );
+  const paneClassNames = classNames(cy(
+    'tab',
+    { 'is-icon-only': isIconOnly },
+    { 'is-text-only': !icon },
+    { 'is-active': isSelected },
+    theme.className,
+  ));
 
   if (isIconOnly) {
     attributes['aria-label'] = label;
@@ -132,8 +148,9 @@ const Tab = ({
       id={id}
       aria-controls={associatedPanelId}
       role="tab"
-      className={tabClassNames}
+      className={variant === 'framework' ? paneClassNames : tabClassNames}
       title={label}
+      data-terra-tabs-show-focus-styles
     >
       <div className={cx('inner')}>
         {customDisplay}
