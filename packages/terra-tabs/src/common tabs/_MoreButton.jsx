@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import {
   handleMoreButtonArrows,
 } from './_TabUtils';
 
 import styles from './Tab.module.scss';
+import terraStyles from './TerraTabs.module.scss';
 
 const cx = classNames.bind(styles);
+const cy = classNames.bind(terraStyles);
 
 const propTypes = {
   /**
@@ -44,6 +47,11 @@ const propTypes = {
    * The z-index style to apply to the button based upon order and state.
    */
   zIndex: PropTypes.number,
+  /**
+   *  @private
+   * The style to be applied to the tabs
+   */
+  variant: PropTypes.oneOf(['workspace', 'framework']),
 };
 
 const setFocus = event => {
@@ -64,6 +72,7 @@ const MoreButton = ({
   refCallback,
   tabIds,
   zIndex,
+  variant,
 }) => {
   const theme = React.useContext(ThemeContext);
 
@@ -84,6 +93,7 @@ const MoreButton = ({
       onBlur(event);
     }
   };
+  const buttonClass = variant === 'framework' ? cy('tab-menu', theme.className) : cx('tab-menu', { 'is-active': isOpen || isActive }, { 'is-open': isOpen }, theme.className);
 
   /* eslint-disable react/forbid-dom-props */
   return (
@@ -95,10 +105,15 @@ const MoreButton = ({
       onKeyDown={handleOnKeyDown}
       onBlur={handleOnBlur}
       onMouseDown={handleOnMouseDown}
-      className={cx('tab-menu', { 'is-active': isOpen || isActive }, { 'is-open': isOpen }, theme.className)}
+      className={buttonClass}
       style={{ zIndex: isOpen ? '100' : zIndex }}
       data-testid="workspace-tabs-more-button"
     >
+      <FormattedMessage id="Terra.tabs.more">
+        {menuToggleText => (
+          <span>{menuToggleText}</span>
+        )}
+      </FormattedMessage>
       <div className={cx('inner')}>
         <div className={cx('icon')}>
           <IconCaretDown />
@@ -111,4 +126,4 @@ const MoreButton = ({
 
 MoreButton.propTypes = propTypes;
 
-export default MoreButton;
+export default injectIntl(MoreButton);
