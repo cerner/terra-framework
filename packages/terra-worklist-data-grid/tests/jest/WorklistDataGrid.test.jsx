@@ -6,7 +6,7 @@ import WorklistDataGrid from '../../src/WorklistDataGrid';
 import dataFile from './testData.json';
 
 describe('WorklistDataGrid', () => {
-  it('renders a grid with 3 columns and 3 data rows', () => {
+  it('renders a grid with 3 columns and 3 data rows and 9 cells', () => {
     const wrapper = shallowWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
@@ -25,6 +25,22 @@ describe('WorklistDataGrid', () => {
     expect(columnHeaders).toHaveLength(3);
     expect(rowHeaderCells).toHaveLength(3);
     expect(dataGridCells).toHaveLength(9);
+    expect(maskedCells).toHaveLength(3);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('test masked cells', () => {
+    const wrapper = shallowWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        columns={dataFile.cols}
+        rows={dataFile.rows}
+      />,
+    ).dive();
+
+    // Test masked cells
+    const maskedCells = wrapper.find('.masked');
+
     expect(maskedCells).toHaveLength(3);
     expect(wrapper).toMatchSnapshot();
   });
