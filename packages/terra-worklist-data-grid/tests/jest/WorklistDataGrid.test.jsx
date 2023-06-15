@@ -16,13 +16,15 @@ describe('WorklistDataGrid', () => {
     ).dive();
 
     const columnHeaders = wrapper.find('.worklist-data-grid-column-header');
-    const rowHeaders = wrapper.find('.worklist-data-grid-cell');
+    const rowHeaderCells = wrapper.find('th.worklist-data-grid-cell');
+    const dataGridCells = wrapper.find('.worklist-data-grid-cell');
 
     // Test masked cells
     const maskedCells = wrapper.find('.masked');
 
     expect(columnHeaders).toHaveLength(3);
-    expect(rowHeaders).toHaveLength(9);
+    expect(rowHeaderCells).toHaveLength(3);
+    expect(dataGridCells).toHaveLength(9);
     expect(maskedCells).toHaveLength(3);
     expect(wrapper).toMatchSnapshot();
   });
