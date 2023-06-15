@@ -1,4 +1,6 @@
-import React, { useState, useContext, useRef, useCallback } from 'react';
+import React, {
+  useState, useContext, useRef, useCallback,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
