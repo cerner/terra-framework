@@ -109,11 +109,14 @@ const MoreButton = ({
       style={{ zIndex: isOpen ? '100' : zIndex }}
       data-testid="workspace-tabs-more-button"
     >
-      <FormattedMessage id="Terra.tabs.more">
-        {menuToggleText => (
-          <span>{menuToggleText}</span>
-        )}
-      </FormattedMessage>
+      {variant === 'framework'
+        ? (
+          <FormattedMessage id="Terra.tabs.more">
+            {menuToggleText => (
+              <span>{menuToggleText}</span>
+            )}
+          </FormattedMessage>
+        ) : null}
       <div className={cx('inner')}>
         <div className={cx('icon')}>
           <IconCaretDown />
