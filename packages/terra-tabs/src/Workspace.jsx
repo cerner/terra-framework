@@ -1,18 +1,18 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-
-import { useIntl } from 'react-intl';
 
 import usePortalManager, { getPortalElement } from './usePortalManager';
 
 import Tabs from './common tabs/_Tabs';
 
 import styles from './Workspace.module.scss';
+import TerraStyles from './common tabs/TerraTabs.module.scss';
 
 const cx = classNamesBind.bind(styles);
+const cy = classNamesBind.bind(TerraStyles);
 
 const propTypes = {
   /**
@@ -35,13 +35,17 @@ const propTypes = {
    * The function callback triggering when a item is selected.
    * Returns the associated itemKey and metaData. e.g. onRequestActivate(itemKey, metaData)
    */
-  onRequestActivate: PropTypes.func.isRequired
+  onRequestActivate: PropTypes.func.isRequired,
+  /**
+   *  @private
+   * The style to be applied to the tabs
+   */
+  variant: PropTypes.oneOf(['workspace', 'framework']),
 };
 
 const getTabId = (id, itemKey) => `${id}-${itemKey}`;
 
 const getAssociatedPanelId = (id, itemKey) => `${getTabId(id, itemKey)}-panel`;
-
 
 const Workspace = ({
   id,
@@ -49,13 +53,14 @@ const Workspace = ({
   activeSize,
   children,
   onRequestActivate,
+  variant,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
 
   const [workspaceContainerRef, workspacePortalsRef] = usePortalManager(activeItemKey);
 
-  const ariaLabel = "workspace"
+  const ariaLabel = 'workspace';
 
   const tabData = React.Children.map(children, child => ({
     id: getTabId(id, child.props.itemKey),
@@ -70,48 +75,49 @@ const Workspace = ({
     metaData: child.props.metaData,
   }));
 
-  const containerClassNames = classNames(
-    cx(
-      'workspace-container',
-      theme.className,
-    )
-  );
+  const tabsClassNames = classNames(cy(
+    // 'tabs-container',
+    // { 'tab-fill': tabFill },
+    'structural',
+    theme.className,
+  ),
+  customProps.className);
 
   return (
-      <div
-        className={cx('workspace')}
-        role="none"
-      >
-        <div aria-hidden className={cx('body-shadow-container')}>
-          <div className={cx('body-shadow')} />
-        </div>
-        <div role="none" className={cx('tab-header')}>
-          <Tabs ariaLabel={ariaLabel} tabData={tabData} />
-        </div>
-        <div role="none" className={cx('body')} ref={workspaceContainerRef}>
-          {React.Children.map(children, child => {
-            let portalElement = workspacePortalsRef.current[child.props.itemKey]?.element;
-            if (!portalElement) {
-              portalElement = getPortalElement();
-              portalElement.setAttribute('role', 'none');
-
-              workspacePortalsRef.current[child.props.itemKey] = {
-                element: portalElement,
-              };
-            }
-
-            return (
-              React.cloneElement(child, {
-                key: child.props.itemKey,
-                id: getTabId(id, child.props.itemKey),
-                associatedPanelId: getAssociatedPanelId(id, child.props.itemKey),
-                isActive: child.props.itemKey === activeItemKey,
-                portalElement,
-              })
-            );
-          })}
-        </div>
+    <div
+      className={variant === 'framework' ? tabsClassNames : cx('workspace')}
+      role="none"
+    >
+      <div aria-hidden className={cx('body-shadow-container')}>
+        <div className={cx('body-shadow')} />
       </div>
+      <div role="none" className={cx('tab-header')}>
+        <Tabs variant={variant} ariaLabel={ariaLabel} tabData={tabData} />
+      </div>
+      <div role="none" className={cx('body')} ref={workspaceContainerRef}>
+        {React.Children.map(children, child => {
+          let portalElement = workspacePortalsRef.current[child.props.itemKey]?.element;
+          if (!portalElement) {
+            portalElement = getPortalElement();
+            portalElement.setAttribute('role', 'none');
+
+            workspacePortalsRef.current[child.props.itemKey] = {
+              element: portalElement,
+            };
+          }
+
+          return (
+            React.cloneElement(child, {
+              key: child.props.itemKey,
+              id: getTabId(id, child.props.itemKey),
+              associatedPanelId: getAssociatedPanelId(id, child.props.itemKey),
+              isActive: child.props.itemKey === activeItemKey,
+              portalElement,
+            })
+          );
+        })}
+      </div>
+    </div>
   );
 };
 
