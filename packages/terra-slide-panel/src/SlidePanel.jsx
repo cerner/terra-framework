@@ -5,6 +5,7 @@ import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { injectIntl } from 'react-intl';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './SlidePanel.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -91,7 +92,7 @@ class SlidePanel extends React.Component {
     this.mainNode = React.createRef();
     this.setLastClicked = this.setLastClicked.bind(this);
     this.setDisclosingNode = this.setDisclosingNode.bind(this);
-    this.mainAriaDescribedByID = 'detail-panel-warning';
+    this.mainAriaDescribedByID = `detail-panel-warning-${uuidv4()}`;
   }
 
   componentDidUpdate(prevProps) {

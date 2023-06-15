@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
+<table
+  className="worklist-data-grid"
+  id="test-terra-worklist-data-grid"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="grid"
+>
+  <tbody>
+    <tr>
+      <th
+        className="worklist-data-grid-column-header"
+        key="Column-0"
+        style={
+          Object {
+            "height": undefined,
+            "width": undefined,
+          }
+        }
+        tabIndex="-1"
+      >
+         Vitals
+      </th>
+      <th
+        className="worklist-data-grid-column-header"
+        key="Column-1"
+        style={
+          Object {
+            "height": undefined,
+            "width": undefined,
+          }
+        }
+        tabIndex="-1"
+      >
+        March 16
+      </th>
+      <th
+        className="worklist-data-grid-column-header"
+        key="Column-2"
+        style={
+          Object {
+            "height": undefined,
+            "width": undefined,
+          }
+        }
+        tabIndex="-1"
+      >
+        March 17
+      </th>
+    </tr>
+    <tr
+      className="worklist-data-grid-row"
+      key="1"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      <th
+        className="worklist-data-grid-row-header"
+        key="0"
+        tabIndex="-1"
+      >
+        Heart Rate Monitored (bpm)
+      </th>
+      <td
+        className="worklist-data-grid-cell-data"
+        key="1"
+        tabIndex="-1"
+      >
+        68
+      </td>
+      <td
+        className="worklist-data-grid-cell-data"
+        key="2"
+        tabIndex="-1"
+      >
+        66
+      </td>
+    </tr>
+    <tr
+      className="worklist-data-grid-row"
+      key="2"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      <th
+        className="worklist-data-grid-row-header"
+        key="0"
+        tabIndex="-1"
+      >
+        Temperature Oral (degC)
+      </th>
+      <td
+        className="worklist-data-grid-cell-data"
+        key="1"
+        tabIndex="-1"
+      >
+        36.7
+      </td>
+      <td
+        className="worklist-data-grid-cell-data"
+        key="2"
+        tabIndex="-1"
+      >
+        36.9
+      </td>
+    </tr>
+    <tr
+      className="worklist-data-grid-row"
+      key="3"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      <th
+        className="worklist-data-grid-row-header"
+        key="0"
+        tabIndex="-1"
+      >
+        Cardiac Index (L/min/m2)
+      </th>
+      <td
+        className="worklist-data-grid-cell-data"
+        key="1"
+        tabIndex="-1"
+      >
+        2.25
+      </td>
+      <td
+        className="worklist-data-grid-cell-data"
+        key="2"
+        tabIndex="-1"
+      >
+        2.28
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

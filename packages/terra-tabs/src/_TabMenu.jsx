@@ -7,7 +7,7 @@ import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import * as KeyCode from 'keycode-js';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);

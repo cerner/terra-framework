@@ -100,12 +100,14 @@ import DatePicker from 'terra-date-picker';
 ## Testing
 
 ### uuid
-The Date Picker uses `uuid` which changes the component's description id dynamically. To mock it in jest test teams can use `jest.mock`.
+Date Picker uses `uuid` which changes the component's description id dynamically. To mock it with the Jest testing library, `jest.mock` can be used.
 
-If teams are using `shallow` for the tests then the mock is not required. But if using `mount` then the teams must use the mock as given below.
+If Enzyme `shallow` rendering is being used for the tests then the mock may not be required. However, if `mount` is used then uuid should be mocked as shown below.
 
 ```js
-jest.mock('uuid/v4', () => () => '00000000-0000-0000-0000-000000000000');
+// using a variable may result in failures. For best results, hardcode the mock return value.
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+
 ```
 
 ### Date Picker's Inputs

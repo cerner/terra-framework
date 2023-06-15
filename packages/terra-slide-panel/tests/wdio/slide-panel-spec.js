@@ -51,6 +51,11 @@ Terra.describeViewports('Slide panel', ['large'], () => {
     Terra.validates.element('large squish');
   });
 
+  it('displays multiple slide panels', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-multiple-panels');
+    Terra.validates.element('multiple panels');
+  });
+
   it('Toggles the slide panel and hidden styles', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggle');
     $('#test-slide [aria-label="Panel content area"][aria-hidden="true"]').waitForExist();

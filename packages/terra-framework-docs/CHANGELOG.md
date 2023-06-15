@@ -4,11 +4,26 @@
 
 * Changed
    * Updated example for `terra-popup`.
- 
-  * Added test for `terra-popup`.
+   * Updated examples and tests for `terra-worklist-data-grid` to remove row height
+
+## 1.23.0 - (June 12, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.22.0 - (June 5, 2023)
 
 * Added
+  * Added test for `terra-popup`.
   * Added example for `terra-menu` with disabled item.
+  * Added a `terra-slide-panel` test containing multiple slide panels.
+  * Added testing sections to `terra-menu`, `terra-navigation-prompt`, `terra-pills` and `terra-tabs` documentation.
+
+* Changed
+  * Updated testing sections for `terra-date-input`, `terra-date-picker`, `terra-slide-panel`, and `terra-time-input` documentation.
+
+* Added
+  * Added documentation and tests for `terra-worklist-data-grid`.
 
 ## 1.21.0 - (May 11, 2023)
 
