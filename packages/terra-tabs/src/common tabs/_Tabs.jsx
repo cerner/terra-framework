@@ -7,7 +7,7 @@ import MoreButton from './_MoreButton';
 import TabDropDown from './_TabDropDown';
 import Tab from './_Tab';
 import HiddenTab from './_HiddenTab';
-import styles from './Tabs.module.scss';
+import styles from './WorkspaceTabs.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -46,6 +46,11 @@ const propTypes = {
      */
     metaData: PropTypes.object,
   })).isRequired,
+  /**
+   *  @private
+   * The style to be applied to the tabs
+   */
+  variant: PropTypes.oneOf(['workspace', 'framework']),
 };
 
 class Tabs extends React.Component {
@@ -230,14 +235,13 @@ class Tabs extends React.Component {
   }
 
   render() {
-    const { tabData, ariaLabel } = this.props;
+    const { tabData, ariaLabel, variant } = this.props;
     const theme = this.context;
     const ids = tabData.map(tab => tab.id);
     const hiddenIds = [];
     const visibleTabs = [];
     const hiddenTabs = [];
     let isHiddenSelected = false;
-    let isIconOnly = false;
 
     tabData.forEach((tab, index) => {
       if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
@@ -252,6 +256,7 @@ class Tabs extends React.Component {
             onSelect={this.wrapOnSelect(tab.onSelect)}
             zIndex={tab.isSelected ? tabData.length : tabData.length - index}
             isIconOnly={tab.isIconOnly}
+            variant={variant}
           />,
         );
       } else {
@@ -284,11 +289,12 @@ class Tabs extends React.Component {
         'data-tab-is-calculating': 'true',
       };
     }
+    const workspaceTabsClassNames = cx('tab-container', theme.className);
 
     return (
       <div
         {...attrs}
-        className={cx('tab-container', theme.className)}
+        className={workspaceTabsClassNames}
         ref={this.containerRef}
         role="tablist"
         aria-label={ariaLabel}
@@ -306,6 +312,7 @@ class Tabs extends React.Component {
             onSelect={this.handleMoreButtonSelect}
             refCallback={node => { this.moreButtonRef.current = node; }}
             tabIds={ids}
+            variant={variant}
           />
         ) : undefined}
         <TabDropDown
