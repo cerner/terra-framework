@@ -1,7 +1,10 @@
 # Changelog
 
 ## Unreleased
-  * Updated example for `terra-popup`.
+
+* Changed
+   * Updated example for `terra-popup`.
+ 
   * Added test for `terra-popup`.
 
 * Added
