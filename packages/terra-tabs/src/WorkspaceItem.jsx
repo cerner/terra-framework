@@ -71,13 +71,13 @@ const WorkspaceItem = ({
     customDisplay,
     panelId: associatedPanelId,
     label,
-    isIconOnly
-  }), [associatedPanelId, id, label]);
+    isIconOnly,
+  }), [associatedPanelId, customDisplay, icon, id, isIconOnly, label]);
 
   return (
     ReactDOM.createPortal((
       <TabContext.Provider value={tabContextValue}>
-          {render()}
+        {render()}
       </TabContext.Provider>
     ), portalElement)
   );

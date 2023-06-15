@@ -11,6 +11,7 @@
     margin-bottom: var(--terra-application-workspace-tab-container-margin-bottom, 0);
     padding: 0;
     width: 100%;
+    position: relative;
 
     &:focus {
       outline: none;
