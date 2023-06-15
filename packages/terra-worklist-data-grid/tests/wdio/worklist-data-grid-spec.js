@@ -123,17 +123,17 @@ Terra.describeViewports('WorklistDataGrid', ['tiny', 'medium', 'large'], () => {
     it('hover over selectable cell in worklist data grid', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-selections');
 
-      browser.$$('.worklist-data-grid-cell.selectable')[0].moveTo();
+      browser.$$('td[class*="worklist-data-grid-cell"][class*="selectable"]')[0].moveTo();
       browser.pause(2000);
-      Terra.validates.element('selections', '#terra-worklist-data-grid-with-selections');
+      Terra.validates.element('hover-selectable-cell', '#terra-worklist-data-grid-with-selections');
     });
 
     it('hover over non-selectable cell in worklist data grid', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-selections');
 
-      browser.$$('.worklist-data-grid-cell:not(.selectable)')[0].moveTo();
+      browser.$$('td[class*="worklist-data-grid-cell"]:not([class*="selectable"])')[0].moveTo();
       browser.pause(2000);
-      Terra.validates.element('selections', '#terra-worklist-data-grid-with-selections');
+      Terra.validates.element('hover-non-selectable-cell', '#terra-worklist-data-grid-with-selections');
     });
   });
 });
