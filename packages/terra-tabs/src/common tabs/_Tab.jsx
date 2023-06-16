@@ -71,12 +71,17 @@ const propTypes = {
    * Indicates if the pane should be disabled.
    */
   isDisabled: PropTypes.bool,
+  /**
+   * If enabled, this prop will show the icon on the tab and also in the menu if pane is collapsed.
+   */
+  showIcon: PropTypes.bool,
 };
 
 const defaultProps = {
   isSelected: false,
   isIconOnly: false,
   isDisabled: false,
+  showIcon: false,
 };
 
 const Tab = ({

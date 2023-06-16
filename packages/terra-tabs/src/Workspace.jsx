@@ -35,7 +35,11 @@ const propTypes = {
    * The function callback triggering when a item is selected.
    * Returns the associated itemKey and metaData. e.g. onRequestActivate(itemKey, metaData)
    */
-  onRequestActivate: PropTypes.func.isRequired
+  onRequestActivate: PropTypes.func.isRequired,
+  /**
+   * Indicates if tabs should fill the width available in the tab bar.
+   */
+  tabFill: PropTypes.bool,
 };
 
 const getTabId = (id, itemKey) => `${id}-${itemKey}`;
