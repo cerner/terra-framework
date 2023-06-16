@@ -16,7 +16,7 @@
       "cells": [
         { "content": "Heart Rate Monitored (bpm)", "isSelectable":true},
         { "content": "68", "isSelectable":true},
-        { "content": "66", "isSelectable":true},
+        { "isSelectable":true},
         { "content": "67", "isSelectable":true},
         { "content": "120", "isSelectable":true},
         { "content": "69", "isSelectable":true},

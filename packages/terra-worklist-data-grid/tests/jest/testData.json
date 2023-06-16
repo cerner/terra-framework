@@ -16,7 +16,7 @@
       "id": "2",
       "cells": [
         { "content": "Temperature Oral (degC)", "isSelectable":true},
-        { "content": "36.7", "isSelectable":true },
+        { "isSelectable":true },
         { "content": "36.9", "isMasked":true, "isSelectable":true }
       ]
     },
@@ -24,7 +24,7 @@
       "id": "3",
       "cells": [
         { "content": "Cardiac Index (L/min/m2)", "isSelectable":true},
-        { "content": "2.25", "isSelectable":true },
+        { "content": "", "isSelectable":true },
         { "content": "2.28", "isMasked":true }
       ]
     }

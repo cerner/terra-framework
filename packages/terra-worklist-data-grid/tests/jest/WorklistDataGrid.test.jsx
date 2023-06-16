@@ -55,4 +55,18 @@ describe('WorklistDataGrid', () => {
 
     console.error.mockRestore();
   });
+
+  it('test blank cells', () => {
+    const wrapper = shallowWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        columns={dataFile.cols}
+        rows={dataFile.rows}
+      />,
+    ).dive();
+
+    const blankCells = wrapper.find('.blank');
+    expect(blankCells).toHaveLength(2);
+    expect(blankCells.first().children()).toHaveLength(0);
+  });
 });
