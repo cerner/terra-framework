@@ -57,6 +57,7 @@ function Row(props) {
     switch (key) {
       case KeyCode.KEY_A:
         if (!isRowSelectionModeEnabled) return false;
+
         if (event.ctrlKey || event.metaKey) {
           if (onRowSelect) {
             onRowSelect(null, true);

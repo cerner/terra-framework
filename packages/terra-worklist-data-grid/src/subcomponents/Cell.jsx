@@ -71,7 +71,7 @@ const defaultProps = {
   isRowHeader: false,
 };
 
-function DataCell(props) {
+function Cell(props) {
   const {
     rowId,
     columnId,
@@ -171,20 +171,42 @@ function DataCell(props) {
         nextRow += 1;
         break;
       case KeyCode.KEY_LEFT:
-        nextCol -= 1;
+        if (event.metaKey) {
+          // Cmd + Left = Home
+          nextCol = 0;
+
+          if (event.ctrlKey) {
+            // Ctrl + Cmd + Left = Ctrl + Home
+            nextRow = WorklistDataGridUtils.FIRST_NON_HEADER_ROW;
+          }
+        } else {
+          // Left key
+          nextCol -= 1;
+        }
         break;
       case KeyCode.KEY_RIGHT:
-        nextCol += 1;
+        if (event.metaKey) {
+          // Cmd + Right = End
+          nextCol = customProps.columnsLength - 1;
+
+          if (event.ctrlKey) {
+            // Ctrl + Cmd + Right = Ctrl + End
+            nextRow = customProps.rowsLength;
+          }
+        } else {
+          // Right key
+          nextCol += 1;
+        }
         break;
       case KeyCode.KEY_HOME:
         nextCol = 0;
-        if (event.ctrlKey || event.metaKey) {
-          nextRow = 1; // Assumption is that the first row is the column Heading.
+        if (event.ctrlKey) {
+          nextRow = WorklistDataGridUtils.FIRST_NON_HEADER_ROW; // Assumption is that the first row is the column Heading.
         }
         break;
       case KeyCode.KEY_END:
         nextCol = customProps.columnsLength - 1; // Col are zero based.
-        if (event.ctrlKey || event.metaKey) {
+        if (event.ctrlKey) {
           // Though rows are zero based, the header is the first row so the rowsLength will
           // always be one more than then actual number of data rows.
           nextRow = customProps.rowsLength;
@@ -241,7 +263,7 @@ function DataCell(props) {
       // aria-description={isSelected ? intl.formatMessage({ id: 'Terra.worklist-data-grid.cell.selected' }) : undefined}
       tabIndex={acceptsFocus ? 0 : -1}
       className={className}
-      onCopy={WorklistDataGridUtils.copyCellContent}
+      onCopy={!isRowSelectionModeEnabled ? WorklistDataGridUtils.copyCellContent : undefined}
       onClick={handleClick}
       onKeyUp={handleKeyUp}
       onKeyDown={handleKeyDown}
@@ -251,7 +273,7 @@ function DataCell(props) {
   );
 }
 
-DataCell.propTypes = propTypes;
-DataCell.defaultProps = defaultProps;
+Cell.propTypes = propTypes;
+Cell.defaultProps = defaultProps;
 
-export default DataCell;
+export default Cell;

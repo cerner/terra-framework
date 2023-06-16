@@ -6,13 +6,11 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-
 import styles from './WorklistDataGrid.module.scss';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
-
 import Row from './subcomponents/Row';
-import DataCell from './subcomponents/DataCell';
+import Cell from './subcomponents/Cell';
 import RowSelectionCell from './subcomponents/RowSelectionCell';
 import ColumnHeaderCell from './subcomponents/ColumnHeaderCell';
 
@@ -206,7 +204,7 @@ function WorklistDataGrid(props) {
     const isSelected = currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId;
     const isRowHeader = cellColumnIndex === (props.rowHeaderIndex + hasSelectableRows ? 1 : 0);
     return (
-      <DataCell
+      <Cell
         rowId={rowId}
         columnId={columnId}
         coordinates={{ x: cellRowIndex, y: cellColumnIndex }}
@@ -229,7 +227,7 @@ function WorklistDataGrid(props) {
         isNavigationEnabled={isNavigationEnabled}
       >
         {cell?.content}
-      </DataCell>
+      </Cell>
     );
   };
 

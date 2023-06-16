@@ -6,6 +6,8 @@ const ROW_SELECTION_COLUMN = {
   width: 40,
 };
 
+const FIRST_NON_HEADER_ROW = 1;
+
 const copyCellContent = (event) => {
   // Use the rendered elements to get the cell content to copy to the clipboard.
   const currentCell = event.target.closest('td,th') || document.activeElement.closest('td,th');
@@ -19,6 +21,7 @@ const copyCellContent = (event) => {
 
 const WorklistDataGridUtils = {
   ROW_SELECTION_COLUMN,
+  FIRST_NON_HEADER_ROW,
   copyCellContent,
 };
 

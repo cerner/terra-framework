@@ -5,7 +5,7 @@ import '../_elementPolyfill';
 import { injectIntl } from 'react-intl';
 import ThemeContext from 'terra-theme-context';
 import styles from '../WorklistDataGrid.module.scss';
-import DataCell from './DataCell';
+import Cell from './Cell';
 
 const cx = classNames.bind(styles);
 
@@ -70,7 +70,7 @@ function RowSelectionCell(props) {
   const theme = useContext(ThemeContext);
 
   return (
-    <DataCell
+    <Cell
       rowId={rowId}
       columnId={columnId}
       coordinates={coordinates}
@@ -98,7 +98,7 @@ function RowSelectionCell(props) {
         aria-checked={isSelected}
         className={cx(['selectable-centered', theme.className])}
       />
-    </DataCell>
+    </Cell>
   );
 }
 
