@@ -4,7 +4,7 @@
 
 :local {
   .worklist-data-grid [tabIndex='0']:focus {
-    outline: var(--terra-worklist-data-grid-cell-focus-outline, 2px dashed #000);
+    outline: var(--terra-worklist-data-grid-cell-focus-outline, 3px dashed #000);
     outline-offset: var(--terra-worklist-data-grid-cell-focus-outline-offset, -2px);
   }
 
