@@ -68,6 +68,7 @@ const Workspace = ({
     isSelected: child.props.itemKey === activeItemKey,
     onSelect: onRequestActivate,
     metaData: child.props.metaData,
+    isDisabled: child.props.isDisabled,
   }));
 
   const containerClassNames = classNames(

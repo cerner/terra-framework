@@ -232,19 +232,24 @@ class Tabs extends React.Component {
   render() {
     const { tabData, ariaLabel } = this.props;
     const theme = this.context;
-    const ids = tabData.map(tab => tab.id);
+    const enabledTabs = tabData.filter(tab => !tab.isDisabled);
+    const ids = enabledTabs.map(tab => tab.id);
     const hiddenIds = [];
     const visibleTabs = [];
     const hiddenTabs = [];
     let isHiddenSelected = false;
 
+    let enabledTabsIndex = -1;
     tabData.forEach((tab, index) => {
+      if (!tab.isDisabled) {
+        enabledTabsIndex += 1;
+      }
       if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
         visibleTabs.push(
           <Tab
             {...tab}
             key={tab.id}
-            index={index}
+            index={!tab.isDisabled ? enabledTabsIndex : -1}
             tabIds={ids}
             icon={tab.icon}
             customDisplay={tab.customDisplay}
@@ -258,7 +263,7 @@ class Tabs extends React.Component {
           <HiddenTab
             {...tab}
             key={tab.id}
-            index={index}
+            index={!tab.isDisabled ? enabledTabsIndex : -1}
             tabIds={ids}
             onSelect={this.wrapOnSelectHidden(tab.onSelect)}
             onFocus={this.handleHiddenFocus}

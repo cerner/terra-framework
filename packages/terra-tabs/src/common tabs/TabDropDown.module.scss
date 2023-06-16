@@ -8,7 +8,7 @@
     border-top-right-radius: 0;
     height: 1px;
     margin: -1px;
-    max-height: calc(100% - var(--terra-application-workspace-tab-drop-down-max-height, 49px));
+    //max-height: calc(100% - var(--terra-application-workspace-tab-drop-down-max-height, 49px));
     max-width: var(--terra-application-workspace-tab-drop-down-max-width, 187px);
     min-width: var(--terra-application-workspace-tab-drop-down-min-width, 150px);
     opacity: 0;

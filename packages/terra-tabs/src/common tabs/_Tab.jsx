@@ -67,11 +67,16 @@ const propTypes = {
    * Indicates if the pane label should only display the icon. When tab collapses into menu the label text will be used.
    */
   isIconOnly: PropTypes.bool,
+  /**
+   * Indicates if the pane should be disabled.
+   */
+  isDisabled: PropTypes.bool,
 };
 
 const defaultProps = {
   isSelected: false,
   isIconOnly: false,
+  isDisabled: false,
 };
 
 const Tab = ({
@@ -88,6 +93,7 @@ const Tab = ({
   onSelect,
   tabIds,
   zIndex,
+  isDisabled,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -122,7 +128,7 @@ const Tab = ({
   attributes.onKeyDown = onKeyDown;
   attributes.onBlur = enableFocusStyles;
   attributes.onMouseDown = disableFocusStyles;
-  attributes['data-focus-styles-enabled'] = true;
+  attributes['data-focus-styles-enabled'] = !isDisabled;
   attributes['aria-selected'] = isSelected;
   attributes.style = { zIndex };
 
