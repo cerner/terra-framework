@@ -13,6 +13,7 @@
 "rows": [
     {
       "id": "ROW1",
+      "ariaLabel": "Heart Rate Monitored (bpm)",
       "cells": [
         { "content": "Heart Rate Monitored (bpm)"},
         { "content": "68"},
@@ -28,6 +29,7 @@
     },
     {
       "height": "150px",
+      "ariaLabel": "Temperature Oral (degC)",
       "id": "ROW2",
       "cells": [
         { "content": "Temperature Oral (degC)"},

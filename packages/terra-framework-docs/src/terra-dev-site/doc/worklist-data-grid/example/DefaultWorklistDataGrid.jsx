@@ -68,7 +68,7 @@ const DefaultWorklistDataGrid = () => {
         columnHeaderHeight="50px"
         ariaLabel="Worklist Data Grid"
         hasSelectableRows={hasSelectableRows}
-        onRowSelect={(selectAllRows, rowId) => {
+        onRowSelect={(rowId, selectAllRows) => {
           if (!selectAllRows) {
             const selectedRow = rows.find(e => e.id === rowId);
             selectedRow.isSelected = !selectedRow.isSelected;
@@ -82,6 +82,10 @@ const DefaultWorklistDataGrid = () => {
             }
           });
           setSelectedRows(determineSelectedRows(selectAllRows, newRows));
+        }}
+        onCellSelect={(rowId, columnId) => {
+          console.log(`Selected cell: ${rowId} ${columnId}`);
+          // TODO: Implement Slidepanel in Cell selection story.
         }}
         onClearSelectedRows={() => {
           clearRowSelection();

@@ -1,4 +1,4 @@
 {
-  "Terra.worklist-data-grid.row-selection-template": "Wählen: {rowDescription}",
+  "Terra.worklist-data-grid.row-selection-template": "Wählen {rowDescription}",
   "Terra.worklist-data-grid.navigate": "Zu Datenraster navigieren"
 }
