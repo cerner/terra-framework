@@ -55,6 +55,10 @@ const propTypes = {
    */
   defaultActiveKey: PropTypes.string,
   /**
+   * Whether or not the tab is closable.
+   */
+  isClosable: PropTypes.bool,
+  /**
    * Whether or not the tab is draggable.
    */
   isDraggable: PropTypes.bool,
@@ -62,6 +66,10 @@ const propTypes = {
    * Callback function triggered when tab is drag and dropped.
    */
   onTabOrderChange: PropTypes.func,
+  /**
+   * A callback function triggered when a tab is closed.
+   */
+  onTabClose: PropTypes.func,
 };
 
 const defaultProps = {
@@ -76,6 +84,7 @@ class Tabs extends React.Component {
     this.getInitialState = this.getInitialState.bind(this);
     this.state = {
       activeKey: this.getInitialState(),
+      activeAfterClosed: '',
     };
   }
 
@@ -84,6 +93,13 @@ class Tabs extends React.Component {
       return this.props.activeKey;
     }
     return TabUtils.initialSelectedTabKey(this.props.children, this.props.defaultActiveKey);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.activeKey !== prevProps.activeKey) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ activeKey: this.props.activeKey });
+    }
   }
 
   render() {
@@ -119,16 +135,40 @@ class Tabs extends React.Component {
           showIcon={child.props.showIcon}
           render={() => tabContent}
           isDisabled={child.props.isDisabled}
+          isClosable={this.props.isClosable !== undefined ? this.props.isClosable : false}
           variant="framework"
         />,
       );
     });
+    const handleTabsStateChange = (newValue, itemKey, event) => {
+      if (newValue.length > 0) {
+        let activeAfterClosed = '';
+        for (let i = 0; i < newValue.length; i += 1) {
+          if (newValue[i].isSelected === true) {
+            activeAfterClosed = newValue[i].itemKey;
+            break;
+          }
+        }
+        this.setState({ activeAfterClosed });
+      } else if (newValue.length === 0) {
+        this.setState({ activeAfterClosed: '' });
+      }
+      return this.props.onTabClose && this.props.onTabClose(newValue, itemKey, event);
+    };
 
     return (
       <CommonTabs
         id={customProps.id}
         activeItemKey={this.state.activeKey}
         onRequestActivate={key => this.setState({ activeKey: key })}
+        onClosingkey={(key) => {
+          if (this.state.activeKey === key) {
+            setTimeout(() => {
+              this.setState((prevState) => ({ activeKey: prevState.activeAfterClosed }));
+            }, 100);
+          }
+        }}
+        onClosingTab={handleTabsStateChange}
         onChange={onChange}
         variant="framework"
         isDraggable={isDraggable}
