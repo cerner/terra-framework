@@ -169,6 +169,8 @@ function WorklistDataGrid(props) {
   }, [hasSelectableRows]);
 
   const handleNavigationModeChange = (isGridNavigationEnabled) => {
+    ariaLiveMsg.current = intl.formatMessage({ id: isGridNavigationEnabled ? 'Terra.worklist-data-grid.navigation.enabled' : 'Terra.worklist-data-grid.navigation.disabled' });
+
     setIsNavigationEnabled(isGridNavigationEnabled);
   };
 
