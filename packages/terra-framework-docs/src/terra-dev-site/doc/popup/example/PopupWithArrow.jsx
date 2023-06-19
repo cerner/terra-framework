@@ -47,7 +47,7 @@ function PopupArrow() {
 
   return (
     <React.Fragment>
-      <Button text="Medication Links" onClick={handleButtonClick} refCallback={setButtonNode}/>
+      <Button text="Medication Links" onClick={handleButtonClick} refCallback={setButtonNode} />
       <Popup
         isOpen={open}
         onRequestClose={handleRequestClose}
@@ -55,7 +55,7 @@ function PopupArrow() {
         isArrowDisplayed
         tabIndex={-1} // Prevent the popup from receiving focus
       >
-        <ul style={{listStyleType:'none',padding:0,margin:0}} className="terra-popup-content" onKeyDown={handleKeyDown} role="menu">
+        <ul style={{ listStyleType: 'none', padding: '5px', margin: '5px' }} className="terra-popup-content" onKeyDown={handleKeyDown} role="menu">
           <li tabIndex={0} aria-selected={focusedIndex === 0} role="menuitem">
             <a
               href="https://www.refseek.com/directory/health_medical.html"
