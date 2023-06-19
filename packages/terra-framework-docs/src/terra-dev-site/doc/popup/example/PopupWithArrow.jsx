@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-dom-props */
 import React, { useRef, useState, useEffect } from 'react';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
@@ -18,9 +19,6 @@ function PopupArrow() {
   };
 
   const handleRequestClose = () => {
-    if (open) {
-      setFocusedIndex(0);
-    }
     setOpen(false);
     buttonElement.current.focus(); // Return focus to the button when the popup closes
   };
@@ -34,6 +32,11 @@ function PopupArrow() {
       setFocusedIndex((prevIndex) => (prevIndex - 1 + 2) % 2);
     }
   };
+  useEffect(() => {
+    if (open) {
+      setFocusedIndex(0);
+    }
+  }, [open]);
 
 
   useEffect(() => {
@@ -56,7 +59,7 @@ function PopupArrow() {
         tabIndex={-1} // Prevent the popup from receiving focus
       >
         <ul style={{ listStyleType: 'none', padding: '5px', margin: '5px' }} className="terra-popup-content" onKeyDown={handleKeyDown} role="menu">
-          <li tabIndex={0} aria-selected={focusedIndex === 0} role="menuitem">
+          <li tabIndex={0} role="menuitem">
             <a
               href="https://www.refseek.com/directory/health_medical.html"
               target="_blank"
@@ -65,7 +68,7 @@ function PopupArrow() {
               Health and Medical sites
             </a>
           </li>
-          <li tabIndex={0} aria-selected={focusedIndex === 1} role="menuitem">
+          <li tabIndex={0} role="menuitem">
             <a
               href="https://www.happiesthealth.com/?utm_source=google&utm_medium=cpc-hp"
               target="_blank"
