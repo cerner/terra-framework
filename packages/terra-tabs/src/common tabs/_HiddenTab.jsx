@@ -61,6 +61,12 @@ const propTypes = {
    * The function callback when an event occurs.
    */
   onFocus: PropTypes.func.isRequired,
+  /**
+   * @private
+   * Callback function when selection has changed.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onChange: PropTypes.func,
 };
 
 const defaultProps = {
@@ -79,6 +85,7 @@ const HiddenTab = ({
   onFocus,
   onSelect,
   tabIds,
+  onChange,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -94,6 +101,7 @@ const HiddenTab = ({
 
     enableFocusStyles(event);
     onSelect(itemKey, metaData);
+    onChange(event, itemKey);
   };
 
   const onKeyDown = (event) => {
