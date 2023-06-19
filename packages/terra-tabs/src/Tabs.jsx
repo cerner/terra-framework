@@ -57,19 +57,11 @@ const propTypes = {
    * Key of the pane that should be open initially.
    */
   defaultActiveKey: PropTypes.string,
-
-  /**
-   * The viewport the element will be responsive to. One of `window`, `parent` or `none`.
-   * Note: If the responsive viewport is set to `none`, then tabs never _completely_
-   * collapse into a menu.
-   */
-  responsiveTo: PropTypes.oneOf(['window', 'parent', 'none']),
 };
 
 const defaultProps = {
   tabFill: false,
   fill: false,
-  responsiveTo: 'parent',
 };
 
 class Tabs extends React.Component {
@@ -96,7 +88,6 @@ class Tabs extends React.Component {
       children,
       activeKey,
       defaultActiveKey,
-      responsiveTo,
       ...customProps
     } = this.props;
 
