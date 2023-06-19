@@ -128,6 +128,7 @@ class Tabs extends React.Component {
         id="terra-common-tabs"
         activeItemKey={this.state.activeKey}
         onRequestActivate={key => this.setState({ activeKey: key })}
+        onChange={onChange}
       >
         {workSpaceItems}
       </Workspace>

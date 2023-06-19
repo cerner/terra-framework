@@ -46,6 +46,11 @@ const propTypes = {
      */
     metaData: PropTypes.object,
   })).isRequired,
+  /**
+   * Callback function when selection has changed.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onChange: PropTypes.func,
 };
 
 class Tabs extends React.Component {
@@ -230,7 +235,7 @@ class Tabs extends React.Component {
   }
 
   render() {
-    const { tabData, ariaLabel } = this.props;
+    const { tabData, ariaLabel, onChange } = this.props;
     const theme = this.context;
     const enabledTabs = tabData.filter(tab => !tab.isDisabled);
     const ids = enabledTabs.map(tab => tab.id);
@@ -256,6 +261,7 @@ class Tabs extends React.Component {
             onSelect={this.wrapOnSelect(tab.onSelect)}
             zIndex={tab.isSelected ? tabData.length : tabData.length - index}
             isIconOnly={tab.isIconOnly}
+            onChange={onChange}
           />,
         );
       } else {
@@ -268,6 +274,7 @@ class Tabs extends React.Component {
             onSelect={this.wrapOnSelectHidden(tab.onSelect)}
             onFocus={this.handleHiddenFocus}
             onBlur={this.handleHiddenBlur}
+            onChange={onChange}
           />,
         );
         hiddenIds.push(tab.id);

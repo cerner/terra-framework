@@ -40,6 +40,11 @@ const propTypes = {
    * Indicates if tabs should fill the width available in the tab bar.
    */
   tabFill: PropTypes.bool,
+  /**
+   * Callback function when selection has changed.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onChange: PropTypes.func,
 };
 
 const getTabId = (id, itemKey) => `${id}-${itemKey}`;
@@ -53,6 +58,7 @@ const Workspace = ({
   activeSize,
   children,
   onRequestActivate,
+  onChange,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -91,7 +97,7 @@ const Workspace = ({
           <div className={cx('body-shadow')} />
         </div>
         <div role="none" className={cx('tab-header')}>
-          <Tabs ariaLabel={ariaLabel} tabData={tabData} />
+          <Tabs ariaLabel={ariaLabel} tabData={tabData} onChange={onChange} />
         </div>
         <div role="none" className={cx('body')} ref={workspaceContainerRef}>
           {React.Children.map(children, child => {

@@ -75,6 +75,12 @@ const propTypes = {
    * If enabled, this prop will show the icon on the tab and also in the menu if pane is collapsed.
    */
   showIcon: PropTypes.bool,
+  /**
+   * @private
+   * Callback function when selection has changed.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onChange: PropTypes.func,
 };
 
 const defaultProps = {
@@ -99,6 +105,7 @@ const Tab = ({
   tabIds,
   zIndex,
   isDisabled,
+  onChange,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -119,6 +126,7 @@ const Tab = ({
       event.preventDefault();
       event.stopPropagation();
       onSelect(itemKey, metaData);
+      onChange(event, itemKey);
     } else {
       handleArrows(event, index, tabIds);
     }
