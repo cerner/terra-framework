@@ -41,6 +41,15 @@ const propTypes = {
    * The style to be applied to the tabs
    */
   variant: PropTypes.oneOf(['workspace', 'framework']),
+  /**
+   * Indicates if tabs should fill the width available in the tab bar.
+   */
+  tabFill: PropTypes.bool,
+  /**
+   * Callback function when selection has changed.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onChange: PropTypes.func,
 };
 
 const getTabId = (id, itemKey) => `${id}-${itemKey}`;
@@ -54,6 +63,7 @@ const Workspace = ({
   children,
   onRequestActivate,
   variant,
+  onChange,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -73,6 +83,7 @@ const Workspace = ({
     isSelected: child.props.itemKey === activeItemKey,
     onSelect: onRequestActivate,
     metaData: child.props.metaData,
+    isDisabled: child.props.isDisabled,
   }));
 
   const tabsClassNames = classNames(cy(
@@ -92,7 +103,7 @@ const Workspace = ({
         <div className={cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
-        <Tabs variant={variant} ariaLabel={ariaLabel} tabData={tabData} />
+        <Tabs variant={variant} ariaLabel={ariaLabel} tabData={tabData} onChange={onChange} />
       </div>
       <div role="none" className={cx('body')} ref={workspaceContainerRef}>
         {React.Children.map(children, child => {
