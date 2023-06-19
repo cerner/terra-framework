@@ -40,6 +40,10 @@ const propTypes = {
    * The html element to be hold the portaled item content.
    */
   portalElement: PropTypes.instanceOf(HTMLElement),
+  /**
+   * Indicates if the pane should be disabled.
+   */
+  isDisabled: PropTypes.bool,
 };
 
 /**
@@ -64,6 +68,7 @@ const WorkspaceItem = ({
    */
   itemKey, // eslint-disable-line no-unused-vars
   metaData, // eslint-disable-line no-unused-vars
+  isDisabled, // eslint-disable-line no-unused-vars
 }) => {
   const tabContextValue = React.useMemo(() => ({
     tabId: id,

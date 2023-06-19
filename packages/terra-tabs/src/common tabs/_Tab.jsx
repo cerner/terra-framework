@@ -75,11 +75,27 @@ const propTypes = {
    * The style to be applied to the tabs
    */
   variant: PropTypes.oneOf(['workspace', 'framework']),
+  /**
+   * Indicates if the pane should be disabled.
+   */
+  isDisabled: PropTypes.bool,
+  /**
+   * If enabled, this prop will show the icon on the tab and also in the menu if pane is collapsed.
+   */
+  showIcon: PropTypes.bool,
+  /**
+   * @private
+   * Callback function when selection has changed.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onChange: PropTypes.func,
 };
 
 const defaultProps = {
   isSelected: false,
   isIconOnly: false,
+  isDisabled: false,
+  showIcon: false,
 };
 
 const Tab = ({
@@ -97,6 +113,8 @@ const Tab = ({
   tabIds,
   zIndex,
   variant,
+  isDisabled,
+  onChange,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -124,6 +142,7 @@ const Tab = ({
       event.preventDefault();
       event.stopPropagation();
       onSelect(itemKey, metaData);
+      onChange(event, itemKey);
     } else {
       handleArrows(event, index, tabIds);
     }
@@ -138,7 +157,7 @@ const Tab = ({
   attributes.onKeyDown = onKeyDown;
   attributes.onBlur = enableFocusStyles;
   attributes.onMouseDown = disableFocusStyles;
-  attributes['data-focus-styles-enabled'] = true;
+  attributes['data-focus-styles-enabled'] = !isDisabled;
   attributes['aria-selected'] = isSelected;
   attributes.style = { zIndex };
 
