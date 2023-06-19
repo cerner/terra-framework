@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import classNamesBind from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
-import styles from './Tabs.module.scss';
+import Tab from './common tabs/_Tab';
 
-const cx = classNamesBind.bind(styles);
 const propTypes = {
   /**
    * Icon to be displayed on the tab.
@@ -63,51 +59,17 @@ const TabPane = ({
   isActive,
   showIcon,
   ...customProps
-}) => {
-  const paneRef = React.useRef(null);
-  const handleKeyDown = () => {
-    paneRef.current.setAttribute('data-terra-tabs-show-focus-styles', 'true');
-  };
-
-  const handleMouseDown = (event) => {
-    paneRef.current.setAttribute('data-terra-tabs-show-focus-styles', 'false');
-    if (isDisabled) {
-      event.preventDefault();
-    }
-  };
-
-  const handleBlur = () => {
-    paneRef.current.setAttribute('data-terra-tabs-show-focus-styles', `${!isDisabled}`);
-  };
-
-  const attributes = { ...customProps };
-  const theme = React.useContext(ThemeContext);
-  const paneClassNames = classNames(cx(
-    'tab',
-    { 'is-disabled': isDisabled },
-    { 'is-icon-only': isIconOnly },
-    { 'is-text-only': !icon },
-    theme.className,
-  ),
-  attributes.className);
-
-  if (isIconOnly) {
-    attributes['aria-label'] = label;
-  }
-  attributes['aria-selected'] = isActive;
-  attributes.tabIndex = isActive ? 0 : -1;
-  attributes.onKeyDown = handleKeyDown;
-  attributes.onMouseDown = handleMouseDown;
-  attributes.onBlur = handleBlur;
-
-  return (
-    <div {...attributes} ref={paneRef} data-terra-tabs-show-focus-styles={!isDisabled} data-terra-tab-pane role="tab" className={paneClassNames}>
-      {customDisplay}
-      {customDisplay ? null : icon}
-      {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
-    </div>
-  );
-};
+}) => (
+  <Tab
+    label={label}
+    isSelected={isActive}
+    customDisplay={customDisplay}
+    isIconOnly={isIconOnly}
+    icon={icon}
+    isDisabled={isDisabled}
+    {...customProps}
+  />
+);
 
 TabPane.propTypes = propTypes;
 TabPane.defaultProps = defaultProps;
