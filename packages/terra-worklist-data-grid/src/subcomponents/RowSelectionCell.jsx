@@ -20,8 +20,8 @@ const propTypes = {
    */
   columnId: PropTypes.string.isRequired,
   coordinates: PropTypes.shape({
-    x: PropTypes.number,
-    y: PropTypes.number,
+    row: PropTypes.number,
+    col: PropTypes.number,
   }),
 
   /**
@@ -68,6 +68,7 @@ function RowSelectionCell(props) {
   } = props;
 
   const theme = useContext(ThemeContext);
+  const rowLabel = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-index' }, { row: coordinates.row });
 
   return (
     <Cell
@@ -80,11 +81,6 @@ function RowSelectionCell(props) {
       onCellSelectionChange={onCellSelectionChange}
       onMoveCellFocus={onMoveCellFocus}
       isRowSelectionModeEnabled={isRowSelectionModeEnabled}
-      ariaLabel={intl.formatMessage({
-        id: 'Terra.worklist-data-grid.row-selection-template',
-      }, {
-        rowDescription: ariaLabel,
-      })}
       className={cx(['selectable', theme.className])}
       isNavigationEnabled={isNavigationEnabled}
       rowsLength={customProps.rowsLength}
@@ -92,10 +88,11 @@ function RowSelectionCell(props) {
     >
       <input
         type="checkbox"
+        aria-label={rowLabel}
+        aria-checked={isSelected}
         id={`${rowId}_${columnId}_rowselect`}
         tabIndex={acceptsFocus ? 0 : -1}
         checked={isSelected}
-        aria-checked={isSelected}
         className={cx(['selectable-centered', theme.className])}
       />
     </Cell>

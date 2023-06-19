@@ -14,8 +14,8 @@ const propTypes = {
    */
   columnId: PropTypes.string.isRequired,
   coordinates: PropTypes.shape({
-    x: PropTypes.number,
-    y: PropTypes.number,
+    row: PropTypes.number,
+    col: PropTypes.number,
   }),
   /**
    * Boolean value to indicate if the cell can accept focus.
@@ -57,8 +57,8 @@ function ColumnHeaderCell(props) {
   };
 
   const handleKeyDown = (event) => {
-    let nextRow = coordinates.x;
-    let nextCol = coordinates.y;
+    let nextRow = coordinates.row;
+    let nextCol = coordinates.col;
 
     const key = event.keyCode;
     switch (key) {
@@ -107,7 +107,7 @@ function ColumnHeaderCell(props) {
       return;
     }
     if (onMoveCellFocus) {
-      onMoveCellFocus(coordinates, { x: nextRow, y: nextCol });
+      onMoveCellFocus(coordinates, { row: nextRow, col: nextCol });
     }
     event.preventDefault();
   };

@@ -16,8 +16,8 @@ const propTypes = {
   columnId: PropTypes.string.isRequired,
 
   coordinates: PropTypes.shape({
-    x: PropTypes.number,
-    y: PropTypes.number,
+    row: PropTypes.number,
+    col: PropTypes.number,
   }),
 
   /**
@@ -159,8 +159,8 @@ function Cell(props) {
       return;
     }
 
-    let nextRow = coordinates.x;
-    let nextCol = coordinates.y;
+    let nextRow = coordinates.row;
+    let nextCol = coordinates.col;
 
     const key = event.keyCode;
     switch (key) {
@@ -238,7 +238,7 @@ function Cell(props) {
       default:
         return;
     }
-    if (nextRow > customProps.rowsLength || nextCol > customProps.columnsLength) {
+    if (nextRow > customProps.rowsLength || nextCol >= customProps.columnsLength) {
       event.preventDefault();
       return;
     }
@@ -247,7 +247,7 @@ function Cell(props) {
       return;
     }
     if (onMoveCellFocus) {
-      onMoveCellFocus(coordinates, { x: nextRow, y: nextCol });
+      onMoveCellFocus(coordinates, { row: nextRow, col: nextCol });
     }
     event.preventDefault();
   };
@@ -260,7 +260,6 @@ function Cell(props) {
       id={`${rowId}_${columnId}`}
       aria-selected={isSelected ? true : undefined}
       aria-label={ariaLabel}
-      // aria-description={isSelected ? intl.formatMessage({ id: 'Terra.worklist-data-grid.cell.selected' }) : undefined}
       tabIndex={acceptsFocus ? 0 : -1}
       className={className}
       onCopy={!isRowSelectionModeEnabled ? WorklistDataGridUtils.copyCellContent : undefined}

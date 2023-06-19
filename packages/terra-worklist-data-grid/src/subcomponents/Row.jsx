@@ -50,6 +50,7 @@ function Row(props) {
     onRowSelect,
     onClearRowSelection,
     children,
+    ...customProps
   } = props;
 
   const selectAllRows = (event) => {
@@ -87,7 +88,7 @@ function Row(props) {
         return;
       case KeyCode.KEY_SPACE:
         if (onRowSelect) {
-          onRowSelect(id, false);
+          onRowSelect(id, false, customProps.rowIndex);
         }
         event.preventDefault();
         break;
@@ -108,7 +109,7 @@ function Row(props) {
       return;
     }
     if (onRowSelect) {
-      onRowSelect(id, false);
+      onRowSelect(id, false, customProps.rowIndex);
     }
   };
 
