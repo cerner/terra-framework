@@ -51,6 +51,11 @@ const propTypes = {
    * The style to be applied to the tabs
    */
   variant: PropTypes.oneOf(['workspace', 'framework']),
+  /**
+   * Callback function when selection has changed.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onChange: PropTypes.func,
 };
 
 class Tabs extends React.Component {
@@ -235,21 +240,26 @@ class Tabs extends React.Component {
   }
 
   render() {
-    const { tabData, ariaLabel, variant } = this.props;
+    const { tabData, ariaLabel, variant, onChange } = this.props;
     const theme = this.context;
-    const ids = tabData.map(tab => tab.id);
+    const enabledTabs = tabData.filter(tab => !tab.isDisabled);
+    const ids = enabledTabs.map(tab => tab.id);
     const hiddenIds = [];
     const visibleTabs = [];
     const hiddenTabs = [];
     let isHiddenSelected = false;
 
+    let enabledTabsIndex = -1;
     tabData.forEach((tab, index) => {
+      if (!tab.isDisabled) {
+        enabledTabsIndex += 1;
+      }
       if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
         visibleTabs.push(
           <Tab
             {...tab}
             key={tab.id}
-            index={index}
+            index={!tab.isDisabled ? enabledTabsIndex : -1}
             tabIds={ids}
             icon={tab.icon}
             customDisplay={tab.customDisplay}
@@ -257,6 +267,7 @@ class Tabs extends React.Component {
             zIndex={tab.isSelected ? tabData.length : tabData.length - index}
             isIconOnly={tab.isIconOnly}
             variant={variant}
+            onChange={onChange}
           />,
         );
       } else {
@@ -264,11 +275,12 @@ class Tabs extends React.Component {
           <HiddenTab
             {...tab}
             key={tab.id}
-            index={index}
+            index={!tab.isDisabled ? enabledTabsIndex : -1}
             tabIds={ids}
             onSelect={this.wrapOnSelectHidden(tab.onSelect)}
             onFocus={this.handleHiddenFocus}
             onBlur={this.handleHiddenBlur}
+            onChange={onChange}
           />,
         );
         hiddenIds.push(tab.id);
