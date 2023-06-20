@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import WorkspaceItem from './WorkspaceItem';
-import Workspace from './Workspace';
-import styles from './Workspace.module.scss';
+import WorkspaceItem from './common tabs/WorkspaceItem';
+import Workspace from './common tabs/Workspace';
 import TabPane from './TabPane';
 import TabUtils from './TabUtils';
-
-const cx = classNamesBind.bind(styles);
 
 /**
 NOTE: This is being commented out until discussions have been resolved around if modular tabs should be removed.
@@ -91,8 +87,6 @@ class Tabs extends React.Component {
       ...customProps
     } = this.props;
 
-    const theme = this.context;
-
     const workSpaceItems = [];
 
     React.Children.forEach(children, child => {
@@ -120,6 +114,7 @@ class Tabs extends React.Component {
         activeItemKey={this.state.activeKey}
         onRequestActivate={key => this.setState({ activeKey: key })}
         onChange={onChange}
+        variant="framework"
       >
         {workSpaceItems}
       </Workspace>
