@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 6.69.0 - (June 12, 2023)
+
+* Changed
+  * Locked `uuid` version to `8.2.0`.
+
+## 6.68.0 - (June 5, 2023)
+
 * Changed
   * Allow navigation to disabled items
   * Updated submenu exit context to first item

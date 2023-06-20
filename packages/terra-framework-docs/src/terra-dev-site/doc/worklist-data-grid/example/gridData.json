@@ -28,9 +28,8 @@
       ]
     },
     {
-      "height": "150px",
-      "ariaLabel": "Temperature Oral (degC)",
       "id": "ROW2",
+      "ariaLabel": "Temperature Oral (degC)",
       "cells": [
         { "content": "Temperature Oral (degC)"},
         { "content": "36.7" },
