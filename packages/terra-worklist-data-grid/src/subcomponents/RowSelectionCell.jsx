@@ -88,7 +88,7 @@ function RowSelectionCell(props) {
     >
       <input
         type="checkbox"
-        aria-label={rowLabel}
+        aria-label={ariaLabel || rowLabel}
         aria-checked={isSelected}
         id={`${rowId}_${columnId}_rowselect`}
         tabIndex={acceptsFocus ? 0 : -1}

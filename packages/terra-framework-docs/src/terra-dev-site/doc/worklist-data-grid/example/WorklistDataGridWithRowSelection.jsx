@@ -40,7 +40,7 @@ const WorklistDataGridWithRowSelection = () => {
 
   return (
     <WorklistDataGrid
-      id="default-terra-worklist-data-grid"
+      id="worklist-data-grid-row-selection"
       columns={cols}
       rows={[...rows]}
       rowHeaderIndex={rowHeaderIndex}
