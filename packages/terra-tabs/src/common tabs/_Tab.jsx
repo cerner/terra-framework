@@ -149,7 +149,9 @@ const Tab = ({
   }
 
   function onClick() {
-    onSelect(itemKey, metaData);
+    if (!isDisabled) {
+      onSelect(itemKey, metaData);
+    }
   }
 
   attributes.tabIndex = isSelected ? 0 : -1;
