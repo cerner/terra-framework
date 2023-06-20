@@ -43,7 +43,7 @@
 
   // Create gradient background for masked cells
   .masked {
-    background: var(--terra-worklist-data-grid-mask, repeating-linear-gradient(-45deg, #dedfe0, #dedfe0 3px, transparent 3px, transparent 6px));
+    background: var(--terra-worklist-data-grid-mask-background, repeating-linear-gradient(-45deg, #dedfe0, #dedfe0 3px, transparent 3px, transparent 6px));
 
     .cell-content {
       display: none;
