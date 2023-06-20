@@ -6,10 +6,10 @@ import ThemeContext from 'terra-theme-context';
 
 import usePortalManager, { getPortalElement } from './usePortalManager';
 
-import Tabs from './common tabs/_Tabs';
+import Tabs from './_Tabs';
 
 import styles from './Workspace.module.scss';
-import TerraStyles from './common tabs/TerraTabs.module.scss';
+import TerraStyles from './TerraTabs.module.scss';
 
 const cx = classNamesBind.bind(styles);
 const cy = classNamesBind.bind(TerraStyles);
