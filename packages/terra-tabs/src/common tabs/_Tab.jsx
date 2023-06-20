@@ -127,6 +127,7 @@ const Tab = ({
   );
   const paneClassNames = classNames(cy(
     'tab',
+    { 'is-disabled': isDisabled },
     { 'is-icon-only': isIconOnly },
     { 'is-text-only': !icon },
     { 'is-active': isSelected },

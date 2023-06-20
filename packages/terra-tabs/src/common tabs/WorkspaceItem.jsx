@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import TabContext from './common tabs/_TabContext';
+import TabContext from './_TabContext';
 
 const propTypes = {
   /**

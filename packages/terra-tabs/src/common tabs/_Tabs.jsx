@@ -240,7 +240,9 @@ class Tabs extends React.Component {
   }
 
   render() {
-    const { tabData, ariaLabel, variant, onChange } = this.props;
+    const {
+      tabData, ariaLabel, variant, onChange,
+    } = this.props;
     const theme = this.context;
     const enabledTabs = tabData.filter(tab => !tab.isDisabled);
     const ids = enabledTabs.map(tab => tab.id);
