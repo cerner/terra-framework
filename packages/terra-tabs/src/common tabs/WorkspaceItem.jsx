@@ -56,7 +56,6 @@ const WorkspaceItem = ({
   icon,
   customDisplay,
   associatedPanelId,
-  isActive,
   label,
   render,
   portalElement,
@@ -69,6 +68,7 @@ const WorkspaceItem = ({
   itemKey, // eslint-disable-line no-unused-vars
   metaData, // eslint-disable-line no-unused-vars
   isDisabled, // eslint-disable-line no-unused-vars
+  isActive, // eslint-disable-line no-unused-vars
 }) => {
   const tabContextValue = React.useMemo(() => ({
     tabId: id,
