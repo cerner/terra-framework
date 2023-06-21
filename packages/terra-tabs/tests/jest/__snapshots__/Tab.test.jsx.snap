@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab correctly applies the theme context className 1`] = `
+<div
+  aria-selected={false}
+  className="tab is-text-only orion-fusion-theme"
+  data-focus-styles-enabled={true}
+  data-terra-tabs-show-focus-styles={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="tab"
+  style={
+    Object {
+      "zIndex": undefined,
+    }
+  }
+  tabIndex={-1}
+  title="Default"
+>
+  <div
+    className="inner"
+  >
+    <span
+      className="label"
+    >
+      Default
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Tab should render a common tab as disabled when indicated 1`] = `
+<div
+  aria-selected={false}
+  className="tab is-disabled is-text-only"
+  data-focus-styles-enabled={false}
+  data-terra-tabs-show-focus-styles={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="tab"
+  style={
+    Object {
+      "zIndex": undefined,
+    }
+  }
+  tabIndex={-1}
+  title="Label"
+>
+  <div
+    className="inner"
+  >
+    <span
+      className="label"
+    >
+      Label
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Tab should render a common tab with custom props 1`] = `
+<div
+  aria-selected={false}
+  className="tab is-text-only"
+  data-focus-styles-enabled={true}
+  data-terra-tabs-show-focus-styles={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="tab"
+  style={
+    Object {
+      "zIndex": undefined,
+    }
+  }
+  tabIndex={-1}
+  title="Default"
+>
+  <div
+    className="inner"
+  >
+    <span
+      className="label"
+    >
+      Default
+    </span>
+  </div>
+</div>
+`;
