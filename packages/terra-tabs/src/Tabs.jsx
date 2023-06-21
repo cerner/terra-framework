@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ThemeContext from 'terra-theme-context';
-import WorkspaceItem from './common tabs/WorkspaceItem';
-import Workspace from './common tabs/Workspace';
+import WorkspaceItem from './common-tabs/WorkspaceItem';
+import Workspace from './common-tabs/Workspace';
 import TabPane from './TabPane';
 import TabUtils from './TabUtils';
 
