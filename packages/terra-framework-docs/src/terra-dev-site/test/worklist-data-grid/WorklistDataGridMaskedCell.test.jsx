@@ -1,8 +1,8 @@
 import React from 'react';
 import WorklistDataGrid from 'terra-worklist-data-grid';
-import gridDataJSON from './gridData.json';
+import gridDataJSON from './gridMaskedCellData.json';
 
-const DefaultWorklistDataGrid = () => {
+const WorklistDataGridMaskedCell = () => {
   const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
 
@@ -13,6 +13,8 @@ const DefaultWorklistDataGrid = () => {
         columns={cols}
         rows={rows}
         rowHeaderIndex={rowHeaderIndex}
+        rowHeight="50px"
+        columnWidth="50px"
         columnHeaderHeight="50px"
         ariaLabel="Worklist Data Grid"
       />
@@ -20,4 +22,4 @@ const DefaultWorklistDataGrid = () => {
   );
 };
 
-export default DefaultWorklistDataGrid;
+export default WorklistDataGridMaskedCell;
