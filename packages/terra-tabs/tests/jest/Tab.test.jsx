@@ -1,5 +1,5 @@
 import React from 'react';
-import Tab from '../../src/common tabs/_Tab';
+import Tab from '../../src/common-tabs/_Tab';
 
 describe('Tab', () => {
   it('should render a common tab as disabled when indicated', () => {
