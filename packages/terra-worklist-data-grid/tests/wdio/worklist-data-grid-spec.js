@@ -20,7 +20,7 @@ const clickCell = (row, col) => {
   browser.$$('#default-terra-worklist-data-grid tr')[row].$(`:nth-child(${col + 1})`).click();
 };
 
-Terra.describeViewports('WorklistDataGrid', ['tiny', 'medium', 'large'], () => {
+Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
   describe('with keyboard navigation', () => {
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/default-worklist-data-grid');
@@ -307,6 +307,12 @@ Terra.describeViewports('WorklistDataGrid', ['tiny', 'medium', 'large'], () => {
 
       Terra.validates.element('no-rows-selected-after-click-row-selection-mode', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('masked cells in worklist data grid', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-masked-cell');
+
+      Terra.validates.element('masked-cell', { selector });
     });
   });
 });

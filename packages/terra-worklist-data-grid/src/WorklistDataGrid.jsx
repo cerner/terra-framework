@@ -252,11 +252,8 @@ function WorklistDataGrid(props) {
         coordinates={{ row: cellRowIndex, col: cellColumnIndex }}
         acceptsFocus={acceptsFocus}
         isSelected={isSelected}
-        className={isRowHeader
-          ? cx(['worklist-data-grid-row-header',
-            { 'worklist-data-grid-cell-selected': isSelected }])
-          : cx(['worklist-data-grid-cell-data',
-            { 'worklist-data-grid-cell-selected': isSelected }])}
+        className={cx(['worklist-data-grid-cell', { masked: cell.isMasked }, { 'worklist-data-grid-cell-selected': isSelected }])}
+        aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined} // TODO: Move this to the cell. IF mask then add a label as there is no content
         onCellSelect={onCellSelect}
         onCellSelectionChange={handleCellSelectionChange}
         onMoveCellFocus={handleMoveCellFocus}
@@ -267,7 +264,7 @@ function WorklistDataGrid(props) {
         isRowHeader={isRowHeader}
         isNavigationEnabled={isNavigationEnabled}
       >
-        {cell?.content}
+        <div className={cx('cell-content')}>{cell?.content}</div>
       </Cell>
     );
   };
