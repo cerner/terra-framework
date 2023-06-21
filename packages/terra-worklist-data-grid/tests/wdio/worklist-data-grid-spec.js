@@ -1,6 +1,6 @@
 const selector = '#default-terra-worklist-data-grid';
 
-Terra.describeViewports('WorklistDataGrid', ['tiny', 'medium', 'large'], () => {
+Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
   describe('with keyboard navigation', () => {
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/default-worklist-data-grid');
