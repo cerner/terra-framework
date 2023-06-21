@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tab from './common tabs/_Tab';
+import Tab from './common-tabs/_Tab';
 
 const propTypes = {
   /**
