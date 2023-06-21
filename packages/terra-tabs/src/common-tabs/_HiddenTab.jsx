@@ -4,6 +4,8 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+import IconClose from 'terra-icon/lib/icon/IconClose';
+import { injectIntl } from 'react-intl';
 import {
   enableFocusStyles,
   disableFocusStyles,
@@ -76,6 +78,14 @@ const propTypes = {
    */
   showIcon: PropTypes.bool,
   /**
+   * If enabled, this prop will show the add icon in the tab dropdown.
+   */
+  showAddButton: PropTypes.bool,
+
+  onClosingTab: PropTypes.func,
+  isClosable: PropTypes.bool,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
    * Indicates if the pane should be disabled.
    */
   isDisabled: PropTypes.bool,
@@ -84,6 +94,7 @@ const propTypes = {
 const defaultProps = {
   isSelected: false,
   showIcon: false,
+  showAddButton: false,
   isDisabled: false,
 };
 
@@ -102,6 +113,10 @@ const HiddenTab = ({
   onChange,
   icon,
   showIcon,
+  showAddButton,
+  onClosingTab,
+  isClosable,
+  intl,
   isDisabled,
 }) => {
   const attributes = {};
@@ -112,6 +127,7 @@ const HiddenTab = ({
     { 'is-disabled': isDisabled },
     theme.className,
   );
+  const tabDeleteLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.removable' })}`;
 
   const handleOnSelect = (event) => {
     event.preventDefault();
@@ -119,17 +135,26 @@ const HiddenTab = ({
 
     enableFocusStyles(event);
     onSelect(itemKey, metaData);
-    onChange(event, itemKey);
+    if (onChange) {
+      onChange(event, itemKey);
+    }
   };
 
   const onKeyDown = (event) => {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       handleOnSelect(event);
-      onChange(event, itemKey);
+      if (onChange) {
+        onChange(event, itemKey);
+      }
     } else {
       handleArrows(event, index, tabIds);
     }
   };
+  function onCloseClick(event) {
+    event.stopPropagation();
+    // setIsClosed(true);
+    onClosingTab(itemKey, metaData);
+  }
 
   function onClick(e) {
     if (!isDisabled) {
@@ -153,13 +178,23 @@ const HiddenTab = ({
       {...attributes}
       id={id}
       aria-controls={associatedPanelId}
-      role="tab"
+      role={showAddButton ? 'button' : 'tab'}
       className={hiddenClassNames}
       aria-disabled={isDisabled}
     >
       <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>
-      {showIcon && <div>{icon}</div>}
+      {showIcon && icon}
       <div className={cx('label', { 'with-icon': showIcon })}>{label}</div>
+      {isClosable && (
+      <button
+        className={cx('tabs-remove-button')}
+        type="button"
+        aria-label={tabDeleteLabel}
+        onClick={onCloseClick}
+      >
+        <IconClose a11yLabel="Close Button" />
+      </button>
+      )}
     </div>
   );
 };
@@ -167,4 +202,4 @@ const HiddenTab = ({
 HiddenTab.propTypes = propTypes;
 HiddenTab.defaultProps = defaultProps;
 
-export default HiddenTab;
+export default injectIntl(HiddenTab);

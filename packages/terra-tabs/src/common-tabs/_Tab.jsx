@@ -2,19 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
-import { Draggable } from 'react-beautiful-dnd';
-import IconKnurling from 'terra-icon/lib/icon/IconKnurling';
+import IconClose from 'terra-icon/lib/icon/IconClose';
+import {
+  KEY_SPACE, KEY_RETURN, KEY_DELETE, KEY_BACK_SPACE,
+} from 'keycode-js';
+
+import { injectIntl } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { v4 as uuidv4 } from 'uuid';
+import { Draggable } from 'react-beautiful-dnd';
+import IconKnurling from 'terra-icon/lib/icon/IconKnurling';
+import terraStyles from './TerraTabs.module.scss';
+import styles from './Tab.module.scss';
 import {
   enableFocusStyles,
   disableFocusStyles,
   handleArrows,
 } from './_TabUtils';
-
-import styles from './Tab.module.scss';
-import terraStyles from './TerraTabs.module.scss';
 
 const cy = classNames.bind(terraStyles);
 
@@ -94,9 +98,22 @@ const propTypes = {
    */
   onChange: PropTypes.func,
   /**
+   * Indicates if the tab can be closed.
+   */
+  isClosable: PropTypes.bool,
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
    * Whether or not the tab is draggable.
    */
   isDraggable: PropTypes.bool,
+  /**
+   * A callback function triggered when the tab is being closed. It takes three parameters.
+   */
+  onClosingTab: PropTypes.func,
 };
 
 const defaultProps = {
@@ -124,6 +141,9 @@ const Tab = ({
   variant,
   isDisabled,
   onChange,
+  isClosable,
+  onClosingTab,
+  intl,
   isDraggable,
 }) => {
   const attributes = {};
@@ -149,15 +169,23 @@ const Tab = ({
     attributes['aria-label'] = label;
   }
 
+  const tabDeleteLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.removable' })}`;
   function onKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_RETURN || (event.nativeEvent.keyCode === KEY_SPACE && !isDraggable)) {
       event.preventDefault();
       event.stopPropagation();
       onSelect(itemKey, metaData);
       onChange(event, itemKey);
+    }
+    if (event.nativeEvent.keyCode === KEY_DELETE || event.nativeEvent.keyCode === KEY_BACK_SPACE) {
+      event.preventDefault();
+      event.stopPropagation();
+      onClosingTab(itemKey, metaData);
+      const deleteTabLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed' })}`;
+      handleArrows(event, index, tabIds, label, deleteTabLabel);
     } else {
       const isDragging = !document.querySelectorAll('[data-terra-drag-focus="true"]').length && isDraggable;
-      handleArrows(event, index, tabIds, isDragging);
+      handleArrows(event, index, tabIds, label, '', isDragging);
     }
   }
 
@@ -169,7 +197,19 @@ const Tab = ({
       }
     }
   }
-
+  function onCloseClick(event) {
+    event.stopPropagation();
+    onClosingTab(itemKey, metaData, event);
+    const deleteTabLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed' })}`;
+    const element = document.getElementById(tabIds[index - 1]);
+    const ariaLabel = label ? `${label} ${deleteTabLabel}` : '';
+    element.setAttribute('aria-label', ariaLabel);
+    element.focus();
+    element.addEventListener('blur', () => {
+      element.removeAttribute('aria-label');
+    });
+  }
+  attributes.tabIndex = isSelected ? 0 : -1;
   attributes.onClick = onClick;
   attributes.onKeyDown = onKeyDown;
   attributes.onBlur = enableFocusStyles;
@@ -208,6 +248,16 @@ const Tab = ({
               {customDisplay || icon}
               {(!customDisplay && !isIconOnly) && <span className={cx('label')}>{label}</span>}
             </div>
+            {isClosable && (
+            <button
+              className={cx('tabs-remove-button')}
+              type="button"
+              aria-label={tabDeleteLabel}
+              onClick={onCloseClick}
+            >
+              <IconClose a11yLabel="Close Button" />
+            </button>
+            )}
           </div>
         )}
       </Draggable>
@@ -230,6 +280,16 @@ const Tab = ({
         {customDisplay || icon}
         {(!customDisplay && !isIconOnly) && <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
       </div>
+      {isClosable && (
+      <button
+        className={cx('tabs-remove-button')}
+        type="button"
+        aria-label={tabDeleteLabel}
+        onClick={onCloseClick}
+      >
+        <IconClose a11yLabel="Close Button" />
+      </button>
+      )}
     </div>
   );
 };
@@ -237,4 +297,4 @@ const Tab = ({
 Tab.propTypes = propTypes;
 Tab.defaultProps = defaultProps;
 
-export default Tab;
+export default injectIntl(Tab);
