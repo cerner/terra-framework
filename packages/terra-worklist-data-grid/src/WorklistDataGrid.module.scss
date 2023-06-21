@@ -5,11 +5,9 @@
 @import './clinical-lowlight-theme/WorklistDataGrid.module';
 
 :local {
-  .worklist-data-grid [tabIndex='0']:focus{
-    outline: var(--terra-worklist-data-grid-active-cell-outline-color, #000);
-    outline-style: dashed;
-    outline-width: 3px;
-    outline-offset: -2px;
+  .worklist-data-grid [tabIndex='0']:focus {
+    outline: var(--terra-worklist-data-grid-cell-focus-outline, 3px dashed #000);
+    outline-offset: var(--terra-worklist-data-grid-cell-focus-outline-offset, -2px);
   }
 
   .worklist-data-grid {

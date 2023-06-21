@@ -2,7 +2,8 @@
 
 ## Unreleased
 * Changed
-  * Removed ability to set variable row heights
+  * Removed ability to set variable row heights.
+  * Updated styling on cell focus.
 
 * Added
     * Initial stable release
