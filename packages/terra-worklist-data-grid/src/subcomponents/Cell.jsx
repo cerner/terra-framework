@@ -31,6 +31,11 @@ const propTypes = {
   isSelected: PropTypes.bool,
 
   /**
+   * Boolean indicating if the Cell is masked.
+   */
+  isMasked: PropTypes.bool,
+
+  /**
    * @private
    * Boolean indicating whether the cell is a row selection cell.
    */
@@ -78,6 +83,7 @@ function Cell(props) {
     coordinates,
     acceptsFocus,
     isSelected,
+    isMasked,
     isRowSelectionCell,
     ariaLabel,
     className,
@@ -94,7 +100,7 @@ function Cell(props) {
 
   const selectCell = (event) => {
     // If current cell is selected, do nothing.
-    if (isSelected) {
+    if (isSelected || isMasked) {
       event.preventDefault();
       return;
     }

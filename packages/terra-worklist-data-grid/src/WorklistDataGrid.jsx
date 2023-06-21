@@ -166,6 +166,7 @@ function WorklistDataGrid(props) {
     if (currentSelectedCell != null) {
       setCurrentSelectedCell(null);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
 
   const handleNavigationModeChange = (isGridNavigationEnabled) => {
@@ -252,8 +253,9 @@ function WorklistDataGrid(props) {
         coordinates={{ row: cellRowIndex, col: cellColumnIndex }}
         acceptsFocus={acceptsFocus}
         isSelected={isSelected}
-        className={cx(['worklist-data-grid-cell', { masked: cell.isMasked }, { 'worklist-data-grid-cell-selected': isSelected }])}
-        aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined} // TODO: Move this to the cell. IF mask then add a label as there is no content
+        masked={cell.isMasked}
+        className={cx(['worklist-data-grid-cell', { masked: cell.isMasked }, { 'worklist-data-grid-cell-selected': isSelected && !cell.isMasked }])}
+        aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined}
         onCellSelect={onCellSelect}
         onCellSelectionChange={handleCellSelectionChange}
         onMoveCellFocus={handleMoveCellFocus}
