@@ -110,11 +110,12 @@ class Tabs extends React.Component {
 
     return (
       <Workspace
-        id="terra-common-tabs"
+        id={customProps.id || 'terra-common-tabs'}
         activeItemKey={this.state.activeKey}
         onRequestActivate={key => this.setState({ activeKey: key })}
         onChange={onChange}
         variant="framework"
+        {...customProps}
       >
         {workSpaceItems}
       </Workspace>
