@@ -1,6 +1,164 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows 1`] = `
+exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 cells 1`] = `
+<table
+  className="worklist-data-grid"
+  id="test-terra-worklist-data-grid"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="grid"
+>
+  <tbody>
+    <tr>
+      <th
+        className="worklist-data-grid-column-header selectable"
+        key="Column-0"
+        style={
+          Object {
+            "height": undefined,
+            "width": undefined,
+          }
+        }
+        tabIndex="-1"
+      >
+         Vitals
+      </th>
+      <th
+        className="worklist-data-grid-column-header selectable"
+        key="Column-1"
+        style={
+          Object {
+            "height": undefined,
+            "width": undefined,
+          }
+        }
+        tabIndex="-1"
+      >
+        March 16
+      </th>
+      <th
+        className="worklist-data-grid-column-header"
+        key="Column-2"
+        style={
+          Object {
+            "height": undefined,
+            "width": undefined,
+          }
+        }
+        tabIndex="-1"
+      >
+        March 17
+      </th>
+    </tr>
+    <tr
+      className="worklist-data-grid-row"
+      key="1"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      <th
+        className="worklist-data-grid-cell selectable"
+        key="0"
+        tabIndex="-1"
+      >
+        <div
+          className="cell-content"
+        >
+          Heart Rate Monitored (bpm)
+        </div>
+      </th>
+      <td
+        className="worklist-data-grid-cell selectable"
+        key="1"
+        tabIndex="-1"
+      >
+        <div
+          className="cell-content"
+        >
+          68
+        </div>
+      </td>
+      <td
+        aria-label="Terra.worklistDataGrid.maskedCell"
+        className="worklist-data-grid-cell masked"
+        key="2"
+        tabIndex="-1"
+      />
+    </tr>
+    <tr
+      className="worklist-data-grid-row"
+      key="2"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      <th
+        className="worklist-data-grid-cell selectable"
+        key="0"
+        tabIndex="-1"
+      >
+        <div
+          className="cell-content"
+        >
+          Temperature Oral (degC)
+        </div>
+      </th>
+      <td
+        aria-label="Terra.worklistDataGrid.blank"
+        className="worklist-data-grid-cell selectable blank"
+        key="1"
+        tabIndex="-1"
+      />
+      <td
+        aria-label="Terra.worklistDataGrid.maskedCell"
+        className="worklist-data-grid-cell masked"
+        key="2"
+        tabIndex="-1"
+      />
+    </tr>
+    <tr
+      className="worklist-data-grid-row"
+      key="3"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      <th
+        className="worklist-data-grid-cell selectable"
+        key="0"
+        tabIndex="-1"
+      >
+        <div
+          className="cell-content"
+        >
+          Cardiac Index (L/min/m2)
+        </div>
+      </th>
+      <td
+        aria-label="Terra.worklistDataGrid.blank"
+        className="worklist-data-grid-cell selectable blank"
+        key="1"
+        tabIndex="-1"
+      />
+      <td
+        aria-label="Terra.worklistDataGrid.maskedCell"
+        className="worklist-data-grid-cell masked"
+        key="2"
+        tabIndex="-1"
+      />
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`WorklistDataGrid test masked cells 1`] = `
 <table
   className="worklist-data-grid"
   id="test-terra-worklist-data-grid"
