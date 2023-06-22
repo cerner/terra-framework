@@ -1,4 +1,4 @@
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 
 function getOverflowDataForElement(overflowElement) {
   let overflowId = overflowElement.getAttribute('data-persistent-overflow-id');
