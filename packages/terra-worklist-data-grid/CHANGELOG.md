@@ -3,6 +3,7 @@
 ## Unreleased
 * Added
   * Added masked cell support.
+  * Added blank cell support.
 
 * Changed
   * Removed ability to set variable row heights.
