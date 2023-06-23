@@ -186,7 +186,7 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 ce
 </table>
 `;
 
-exports[`WorklistDataGrid test masked cells 1`] = `
+exports[`WorklistDataGrid renders a grid with selectable cells 1`] = `
 <table
   className="worklist-data-grid"
   id="test-terra-worklist-data-grid"
@@ -372,7 +372,7 @@ exports[`WorklistDataGrid test masked cells 1`] = `
 </table>
 `;
 
-exports[`WorklistDataGrid test selectable cells 1`] = `
+exports[`WorklistDataGrid test masked cells 1`] = `
 <table
   className="worklist-data-grid"
   id="test-terra-worklist-data-grid"
