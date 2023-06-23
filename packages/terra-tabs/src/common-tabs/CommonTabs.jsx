@@ -51,6 +51,23 @@ const propTypes = {
    */
   onChange: PropTypes.func,
   /**
+   * Callback function when add button selection has changed.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onSelectAddButton: PropTypes.func,
+  /**
+   * The label to set on the add icon element.
+   */
+  ariaLabelAddTab: PropTypes.string,
+  /**
+   * Callback function triggered when a tab is closing. It receives the itemKey associated with the closing tab.
+   */
+  onClosingkey: PropTypes.func.isRequired,
+  /**
+   * Callback function when a tab is closing. It receives three parameters.
+   */
+  onClosingTab: PropTypes.func,
+  /**
    * Whether or not the tab is draggable.
    */
   isDraggable: PropTypes.bool,
@@ -72,6 +89,10 @@ const CommonTabs = ({
   onRequestActivate,
   variant,
   onChange,
+  onSelectAddButton,
+  ariaLabelAddTab,
+  onClosingkey,
+  onClosingTab,
   isDraggable,
   onTabOrderChange,
   ...customProps
@@ -93,6 +114,8 @@ const CommonTabs = ({
     metaData: child.props.metaData,
     isDisabled: child.props.isDisabled,
     showIcon: child.props.showIcon,
+    onClose: onClosingkey,
+    isClosable: child.props.isClosable,
   }));
 
   const tabsClassNames = classNames(cy(
@@ -103,6 +126,10 @@ const CommonTabs = ({
   ),
   customProps.className);
 
+  const handleCommonTabsStateChange = (value, itemKey, event) => {
+    onClosingTab(value, itemKey, event);
+  };
+
   return (
     <div
       className={variant === 'framework' ? tabsClassNames : cx('workspace')}
@@ -112,7 +139,7 @@ const CommonTabs = ({
         <div className={cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
-        <Tabs isDraggable={isDraggable} onTabOrderChange={onTabOrderChange} variant={variant} tabData={tabData} onChange={onChange} />
+        <Tabs isDraggable={isDraggable} onTabOrderChange={onTabOrderChange} variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab} onTabStateChange={handleCommonTabsStateChange} />
       </div>
       <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {
