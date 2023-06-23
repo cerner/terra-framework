@@ -13,8 +13,8 @@
     // Style for the grid itself
     border: var(--terra-worklist-data-grid-border, 1px solid #dedfe0);
     border-collapse: collapse;
-    margin: 1em auto;
-    // table-layout: fixed;
+    // margin: 1em auto;
+    table-layout: fixed;
     width: 100%;
     height: 100%;
   }

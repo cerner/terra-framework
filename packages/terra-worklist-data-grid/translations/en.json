@@ -1,4 +1,4 @@
 {
   "Terra.worklistDataGrid.maskedCell": "Masked data",
-  "Terra.worklistDataGrid.error": "Error"
+  "Terra.worklistDataGrid.columnError": "Errors associated with column"
 }

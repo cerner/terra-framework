@@ -49,7 +49,7 @@ const HeaderCell = (props) => {
   let errorIcon;
 
   if (column.hasError) {
-    errorIcon = <IconError a11yLabel={intl.formatMessage({ id: 'Terra.worklistDataGrid.error' })} />;
+    errorIcon = <IconError a11yLabel={intl.formatMessage({ id: 'Terra.worklistDataGrid.columnError' })} />;
   }
 
   if (column.sortIndicator === WorklistDataGridPropTypes.SortIndicators.ASCENDING) {
@@ -72,9 +72,9 @@ const HeaderCell = (props) => {
     >
       <div className={cx('header-container')}>
         {errorIcon}
-        <button type="button" tabIndex={-1}>
+        <span role="button">
           {column.displayName}
-        </button>
+        </span>
         {sortIndicatorIcon}
       </div>
     </th>
