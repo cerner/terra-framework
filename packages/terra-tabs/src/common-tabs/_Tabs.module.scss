@@ -6,12 +6,12 @@
     display: flex;
     flex: 1 1 auto;
     flex-wrap: nowrap;
-    height: var(--terra-application-workspace-tab-container-height, 33px);
+    height: var(--terra-tabs-workspace-tab-container-height, 33px);
     justify-content: flex-start;
-    margin-bottom: var(--terra-application-workspace-tab-container-margin-bottom, 0);
+    margin-bottom: var(--terra-tabs-workspace-tab-container-margin-bottom, 0);
     padding: 0;
-    width: 100%;
     position: relative;
+    width: 100%;
 
     &:focus {
       outline: none;
