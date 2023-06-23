@@ -73,7 +73,7 @@ describe('WorklistDataGrid', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('test selectable cells', () => {
+  it('renders a grid with selectable cells', () => {
     const wrapper = shallowWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
