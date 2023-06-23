@@ -8,7 +8,7 @@ import usePortalManager, { getPortalElement } from './usePortalManager';
 
 import Tabs from './_Tabs';
 
-import styles from './Workspace.module.scss';
+import styles from './CommonTabs.module.scss';
 import TerraStyles from './TerraTabs.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -16,7 +16,7 @@ const cy = classNamesBind.bind(TerraStyles);
 
 const propTypes = {
   /**
-   * The itemKey associated to the active WorkspaceItem.
+   * The itemKey associated to the active CommonTabItem.
    */
   activeItemKey: PropTypes.string.isRequired,
   /**
@@ -24,7 +24,7 @@ const propTypes = {
    */
   activeSize: PropTypes.string,
   /**
-   * The child WorkspaceItems.
+   * The child CommonTabItems.
    */
   children: PropTypes.node.isRequired,
   /**
@@ -56,7 +56,7 @@ const getTabId = (id, itemKey) => `${id}-${itemKey}`;
 
 const getAssociatedPanelId = (id, itemKey) => `${getTabId(id, itemKey)}-panel`;
 
-const Workspace = ({
+const CommonTabs = ({
   id,
   activeItemKey,
   activeSize,
@@ -68,7 +68,7 @@ const Workspace = ({
 }) => {
   const theme = React.useContext(ThemeContext);
 
-  const [workspaceContainerRef, workspacePortalsRef] = usePortalManager(activeItemKey);
+  const [commonTabsContainerRef, commonTabsPortalsRef] = usePortalManager(activeItemKey);
 
   const ariaLabel = 'workspace';
 
@@ -105,14 +105,14 @@ const Workspace = ({
       <div role="none" className={cx('tab-header')}>
         <Tabs variant={variant} ariaLabel={ariaLabel} tabData={tabData} onChange={onChange} />
       </div>
-      <div role="none" className={cx('body')} ref={workspaceContainerRef}>
+      <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {
-          let portalElement = workspacePortalsRef.current[child.props.itemKey]?.element;
+          let portalElement = commonTabsPortalsRef.current[child.props.itemKey]?.element;
           if (!portalElement) {
             portalElement = getPortalElement();
             portalElement.setAttribute('role', 'none');
 
-            workspacePortalsRef.current[child.props.itemKey] = {
+            commonTabsPortalsRef.current[child.props.itemKey] = {
               element: portalElement,
             };
           }
@@ -132,6 +132,6 @@ const Workspace = ({
   );
 };
 
-Workspace.propTypes = propTypes;
+CommonTabs.propTypes = propTypes;
 
-export default Workspace;
+export default CommonTabs;

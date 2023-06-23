@@ -7,7 +7,7 @@ import MoreButton from './_MoreButton';
 import TabDropDown from './_TabDropDown';
 import Tab from './_Tab';
 import HiddenTab from './_HiddenTab';
-import styles from './WorkspaceTabs.module.scss';
+import styles from './_Tabs.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -199,17 +199,17 @@ class Tabs extends React.Component {
     if (!this.dropdownRef.current || !this.moreButtonRef.current) {
       return;
     }
-    const workspaceStyle = window.getComputedStyle(this.containerRef.current.parentNode.parentNode, null);
-    const workspaceLeftBorderWidth = parseInt(workspaceStyle.getPropertyValue('border-left-width'), 10);
+    const CommonTabsStyle = window.getComputedStyle(this.containerRef.current.parentNode.parentNode, null);
+    const CommonTabsLeftBorderWidth = parseInt(CommonTabsStyle.getPropertyValue('border-left-width'), 10);
 
     const moreRect = this.moreButtonRef.current.getBoundingClientRect();
     const dropdownRect = this.dropdownRef.current.getBoundingClientRect();
     const containerRect = this.containerRef.current.getBoundingClientRect();
-    const workspaceRect = this.containerRef.current.parentNode.parentNode.getBoundingClientRect();
+    const CommonTabsRect = this.containerRef.current.parentNode.parentNode.getBoundingClientRect();
 
     // calculate Offset
-    const parentOffset = containerRect.left - workspaceRect.left;
-    const leftEdge = moreRect.left - containerRect.left - workspaceLeftBorderWidth;
+    const parentOffset = containerRect.left - CommonTabsRect.left;
+    const leftEdge = moreRect.left - containerRect.left - CommonTabsLeftBorderWidth;
 
     let offset;
     const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
@@ -303,12 +303,12 @@ class Tabs extends React.Component {
         'data-tab-is-calculating': 'true',
       };
     }
-    const workspaceTabsClassNames = cx('tab-container', theme.className);
+    const commonTabsClassNames = cx('tab-container', theme.className);
 
     return (
       <div
         {...attrs}
-        className={workspaceTabsClassNames}
+        className={commonTabsClassNames}
         ref={this.containerRef}
         role="tablist"
         aria-label={ariaLabel}
