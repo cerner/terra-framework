@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { injectIntl } from 'react-intl';
 import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
@@ -28,6 +29,11 @@ const propTypes = {
      * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
      */
   onColumnSelect: PropTypes.func,
+  /**
+   * @private
+   * Object containing intl APIs
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const HeaderCell = (props) => {
@@ -36,13 +42,14 @@ const HeaderCell = (props) => {
     width,
     headerHeight,
     onColumnSelect,
+    intl,
   } = props;
 
   let sortIndicatorIcon;
   let errorIcon;
 
   if (column.hasError) {
-    errorIcon = <IconError />;
+    errorIcon = <IconError a11yLabel={intl.formatMessage({ id: 'Terra.worklistDataGrid.error' })} />;
   }
 
   if (column.sortIndicator === WorklistDataGridPropTypes.SortIndicators.ASCENDING) {
@@ -65,7 +72,7 @@ const HeaderCell = (props) => {
     >
       <div className={cx('header-container')}>
         {errorIcon}
-        <button type="button">
+        <button type="button" tabIndex={-1}>
           {column.displayName}
         </button>
         {sortIndicatorIcon}
@@ -75,4 +82,4 @@ const HeaderCell = (props) => {
 };
 
 HeaderCell.propTypes = propTypes;
-export default HeaderCell;
+export default injectIntl(HeaderCell);
