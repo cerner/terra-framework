@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import '../_elementPolyfill';
 import { injectIntl } from 'react-intl';
 import ThemeContext from 'terra-theme-context';
-import styles from '../WorklistDataGrid.module.scss';
+import styles from './RowSelectionCell.module.scss';
 import Cell from './Cell';
 
 const cx = classNames.bind(styles);
@@ -19,18 +19,22 @@ const propTypes = {
    * String identifier of the column in which the Cell will be rendered.
    */
   columnId: PropTypes.string.isRequired,
+
+  /**
+   * The coordinates of the cell within the grid.
+   */
   coordinates: PropTypes.shape({
     row: PropTypes.number,
     col: PropTypes.number,
   }),
 
   /**
-   * Boolean value to indicate if the cell can accept focus.
+   * Boolean value to indicate if the cell is the tab stop on the grid. The grid will have only one tab stop.
    */
   acceptsFocus: PropTypes.bool,
 
   /**
-   * Boolean indicating whether the Cell is actively selected.
+   * Boolean indicating whether the cell is currently selected.
    */
   isSelected: PropTypes.bool,
 
@@ -39,10 +43,19 @@ const propTypes = {
    */
   ariaLabel: PropTypes.string,
 
+  /**
+   * Callback function that is called when cell selection changes.
+   */
   onCellSelectionChange: PropTypes.func,
+  /**
+   * Callback function that is called when focus moves from one cell to another.
+   */
   onMoveCellFocus: PropTypes.func,
+
+  /**
+   * Boolean indicating if grid navigation is enabled. When grid navigation is disabled, navigation is restricted to the cell.
+   */
   isNavigationEnabled: PropTypes.bool,
-  isRowSelectionModeEnabled: PropTypes.bool,
 
   /**
    * @private
@@ -62,7 +75,6 @@ function RowSelectionCell(props) {
     onCellSelectionChange,
     onMoveCellFocus,
     isNavigationEnabled,
-    isRowSelectionModeEnabled,
     intl,
     ...customProps
   } = props;
@@ -80,8 +92,7 @@ function RowSelectionCell(props) {
       isRowSelectionCell
       onCellSelectionChange={onCellSelectionChange}
       onMoveCellFocus={onMoveCellFocus}
-      isRowSelectionModeEnabled={isRowSelectionModeEnabled}
-      className={cx(['selectable', theme.className])}
+      isRowSelectionModeEnabled
       isNavigationEnabled={isNavigationEnabled}
       rowsLength={customProps.rowsLength}
       columnsLength={customProps.columnsLength}
@@ -90,7 +101,6 @@ function RowSelectionCell(props) {
         type="checkbox"
         aria-label={ariaLabel || rowLabel}
         aria-checked={isSelected}
-        id={`${rowId}_${columnId}_rowselect`}
         tabIndex={acceptsFocus ? 0 : -1}
         checked={isSelected}
         className={cx(['selectable-centered', theme.className])}

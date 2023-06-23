@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import * as KeyCode from 'keycode-js';
+import ThemeContext from 'terra-theme-context';
 import classNames from 'classnames/bind';
 import '../_elementPolyfill';
-import styles from '../WorklistDataGrid.module.scss';
+import styles from './Row.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +18,7 @@ const propTypes = {
    */
   height: PropTypes.string,
   /**
-   * Boolean indicating whether the row is actively selected.
+   * Boolean indicating whether the row is currently selected.
    */
   isSelected: PropTypes.bool,
   /**
@@ -26,10 +27,13 @@ const propTypes = {
    */
   isRowSelectionModeEnabled: PropTypes.bool,
   /**
-   * Function that will be called when a row is selected. Parameters: `onRowSelect(rowId)`
+   * Callback function that will be called when a row is selected. Parameters: `onRowSelect(rowId)`
    */
   onRowSelect: PropTypes.func,
 
+  /**
+   * Callback function that will be called when a rows are de-selected. Parameters: `onClearRowSelection(rowId)`
+   */
   onClearRowSelection: PropTypes.func,
   /**
    * Content that will rendered within the row.
@@ -52,6 +56,8 @@ function Row(props) {
     children,
     ...customProps
   } = props;
+
+  const theme = useContext(ThemeContext);
 
   const selectAllRows = (event) => {
     const key = event.keyCode;
@@ -115,11 +121,7 @@ function Row(props) {
 
   return (
     <tr
-      key={id}
-      id={id}
-      className={
-        cx([isSelected ? 'worklist-data-grid-row-selected' : 'worklist-data-grid-row'])
-      }
+      className={cx([isSelected ? 'worklist-data-grid-row-selected' : 'worklist-data-grid-row', theme.className])}
       onKeyUp={handleKeyUp}
       onKeyDown={handleKeyDown}
       onClick={handleClick}

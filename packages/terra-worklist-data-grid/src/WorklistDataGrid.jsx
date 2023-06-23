@@ -19,20 +19,20 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * String representing an attribute which identifies the element (or elements) that labels the grid.
+   * String representing an attribute which identifies the element that labels the grid.
    */
   ariaLabelledby: PropTypes.string,
   /**
-   * String that labels the grid for accessibility.
+   * String that labels the grid for accessibility. If ariaLabelledby is specified, ariaLabel will not be used.
    */
   ariaLabel: PropTypes.string,
   /**
-   * String that will be used to identify the Grid. This value will be used as the id attribute of the overall grid container,
-   * and it will be used to prefix other id attributes used for internal componentry.
+   * String that will be used to identify the Grid. If multiple grids are on the same page, each grid should have
+   * a unique id.
    */
   id: PropTypes.string.isRequired,
   /**
-   * Data for columns. By default, columns will be presented in the order given.
+   * Data for columns. Columns will be presented in the order given.
    */
   columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
   /**
@@ -49,8 +49,7 @@ const propTypes = {
    */
   columnHeaderHeight: PropTypes.string,
   /**
-   * String that specifies the default height for rows in the grid. Any valid CSS width value is accepted.
-   * To override the default value, provide height for the row that needs to be overridden.
+   * String that specifies the height for the rows in the grid. Any valid CSS width value is accepted.
    */
   rowHeight: PropTypes.string,
   /**
@@ -58,21 +57,21 @@ const propTypes = {
    */
   rowHeaderIndex: PropTypes.number,
   /**
-   * Function that is called when a selectable cell is selected. Parameters: `onCellSelect(rowId, columnId)`
+   * Callback function that is called when a selectable cell is selected. Parameters: `onRowSelect(rowId, columnId)`.
    */
   onCellSelect: PropTypes.func,
   /**
-   * Function that will be called when a row is selected. Parameters: `onRowSelect(rowId)`
+   * Callback function that will be called when a row is selected. Parameters: `onRowSelect(rowId)`.
    */
   onRowSelect: PropTypes.func,
   /**
-   * Function that is called when all selected rows need to be cleared.
+   * Callback function that is called when all selected rows need to be unselected.
    */
   onClearSelectedRows: PropTypes.func,
   /**
-   * Function that is called when no row is selected and the row selection mode needs to be deactivated.
+   * Callback function that is called when no row is selected and the row selection mode needs to turned off.
    */
-  onClearRowSelectionMode: PropTypes.func,
+  onDisableSelectableRows: PropTypes.func,
   /**
    * Boolean indicating whether or not the DataGrid should allow entire rows to be selectable. An additional column will be
    * rendered to allow for row selection to occur.
@@ -99,7 +98,7 @@ function WorklistDataGrid(props) {
     onCellSelect,
     onRowSelect,
     onClearSelectedRows,
-    onClearRowSelectionMode,
+    onDisableSelectableRows,
     hasSelectableRows,
     intl,
   } = props;
@@ -187,9 +186,9 @@ function WorklistDataGrid(props) {
       if (onClearSelectedRows) {
         onClearSelectedRows();
       }
-    } else if (onClearRowSelectionMode) {
+    } else if (onDisableSelectableRows) {
       ariaLiveMsg.current = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-mode-disabled' });
-      onClearRowSelectionMode();
+      onDisableSelectableRows();
     }
   };
   const handleRowSelection = (rowId, selectAllRows, rowIndex) => {
@@ -234,7 +233,6 @@ function WorklistDataGrid(props) {
       ariaLabel={row.ariaLabel}
       onCellSelectionChange={handleCellSelectionChange}
       onMoveCellFocus={handleMoveCellFocus}
-      isRowSelectionModeEnabled={hasSelectableRows}
       isNavigationEnabled={isNavigationEnabled}
       rowsLength={rows.length}
       columnsLength={displayedColumns.length}
@@ -246,16 +244,17 @@ function WorklistDataGrid(props) {
     const columnId = displayedColumns[cellColumnIndex].id;
     const isSelected = currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId;
     const isRowHeader = cellColumnIndex === (props.rowHeaderIndex + hasSelectableRows ? 1 : 0);
+
     return (
       <Cell
         rowId={rowId}
         columnId={columnId}
         coordinates={{ row: cellRowIndex, col: cellColumnIndex }}
+        key={`${rowId}_${columnId}`}
         acceptsFocus={acceptsFocus}
         isSelected={isSelected}
-        masked={cell.isMasked}
-        className={cx(['worklist-data-grid-cell', { masked: cell.isMasked }, { 'worklist-data-grid-cell-selected': isSelected && !cell.isMasked }])}
-        aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined}
+        isMasked={cell.isMasked}
+        ariaLabel={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined}
         onCellSelect={onCellSelect}
         onCellSelectionChange={handleCellSelectionChange}
         onMoveCellFocus={handleMoveCellFocus}
@@ -266,7 +265,7 @@ function WorklistDataGrid(props) {
         isRowHeader={isRowHeader}
         isNavigationEnabled={isNavigationEnabled}
       >
-        <div className={cx('cell-content')}>{cell?.content}</div>
+        {cell?.content}
       </Cell>
     );
   };
@@ -277,8 +276,9 @@ function WorklistDataGrid(props) {
     const height = props.columnHeaderHeight;
     return (
       <ColumnHeaderCell
-        columnId={`${columnData.id}`}
+        columnId={columnData.id}
         coordinates={{ row: 0, col: columnIndex }}
+        key={columnData.id}
         acceptsFocus={acceptsFocus}
         width={width}
         height={height}
@@ -310,6 +310,7 @@ function WorklistDataGrid(props) {
       <Row
         id={row.id}
         rowIndex={rowIndex}
+        key={row.id}
         height={props.rowHeight}
         isSelected={row.isSelected}
         isRowSelectionModeEnabled={hasSelectableRows}

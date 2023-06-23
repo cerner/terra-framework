@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import * as KeyCode from 'keycode-js';
 import '../_elementPolyfill';
+import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
+import styles from './Cell.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -14,32 +19,28 @@ const propTypes = {
    * String identifier of the column in which the Cell will be rendered.
    */
   columnId: PropTypes.string.isRequired,
-
+  /**
+   * The coordinates of the cell within the grid.
+   */
   coordinates: PropTypes.shape({
     row: PropTypes.number,
     col: PropTypes.number,
   }),
 
   /**
-   * Boolean value to indicate if the cell can accept focus.
+   * Boolean value to indicate if the cell is the tab stop on the grid. The grid will have only one tab stop.
    */
   acceptsFocus: PropTypes.bool,
 
   /**
-   * Boolean indicating whether the Cell is actively selected.
+   * Boolean indicating whether the Cell is currently selected.
    */
   isSelected: PropTypes.bool,
 
   /**
-   * Boolean indicating if the Cell is masked.
+   * Boolean indicating if the cell is masked.
    */
   isMasked: PropTypes.bool,
-
-  /**
-   * @private
-   * Boolean indicating whether the cell is a row selection cell.
-   */
-  isRowSelectionCell: PropTypes.bool,
 
   /**
    * String that labels the cell for accessibility.
@@ -47,27 +48,44 @@ const propTypes = {
   ariaLabel: PropTypes.string,
 
   /**
-   * Class name for the cell.
-   */
-  className: PropTypes.string,
-
-  /**
    * Function that is called when a selectable cell is selected. Parameters: `onCellSelect(rowId, columnId)`
    */
   onCellSelect: PropTypes.func,
 
-  onCellSelectionChange: PropTypes.func,
-  onMoveCellFocus: PropTypes.func,
   onNavigationModeChange: PropTypes.func,
 
-  isRowSelectionModeEnabled: PropTypes.bool,
-  isRowHeader: PropTypes.bool,
+  /**
+     * Callback function that is called when cell selection changes.
+     */
+  onCellSelectionChange: PropTypes.func,
+  /**
+   * Callback function that is called when focus moves from one cell to another.
+   */
+  onMoveCellFocus: PropTypes.func,
+
+  /**
+   * Boolean indicating if grid navigation is enabled. When grid navigation is disabled, navigation is restricted to the cell.
+   */
   isNavigationEnabled: PropTypes.bool,
 
+  /**
+     * Boolean indicating whether or not the DataGrid should allow entire rows to be selectable. An additional column will be
+     * rendered to allow for row selection to occur.
+     */
+  isRowSelectionModeEnabled: PropTypes.bool,
+  /**
+   * Boolean indicating that the cell is a row header
+   */
+  isRowHeader: PropTypes.bool,
   /**
    * Content that will rendered within the Cell.
    */
   children: PropTypes.node,
+  /**
+   * Boolean indicating whether the cell is a row selection cell.
+   */
+  isRowSelectionCell: PropTypes.bool,
+
 };
 
 const defaultProps = {
@@ -86,7 +104,6 @@ function Cell(props) {
     isMasked,
     isRowSelectionCell,
     ariaLabel,
-    className,
     onCellSelectionChange,
     onCellSelect,
     onMoveCellFocus,
@@ -97,6 +114,8 @@ function Cell(props) {
     isNavigationEnabled,
     ...customProps
   } = props;
+
+  const theme = useContext(ThemeContext);
 
   const selectCell = (event) => {
     // If current cell is selected, do nothing.
@@ -258,22 +277,21 @@ function Cell(props) {
     event.preventDefault();
   };
 
+  const className = isRowSelectionCell ? 'selectable' : ['worklist-data-grid-cell', { 'worklist-data-grid-cell-selected': (isSelected && !isMasked) }, { masked: isMasked }];
   const CellTag = isRowHeader ? 'th' : 'td';
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <CellTag
-      key={`${rowId}_${columnId}`}
-      id={`${rowId}_${columnId}`}
       aria-selected={isSelected ? true : undefined}
       aria-label={ariaLabel}
       tabIndex={acceptsFocus ? 0 : -1}
-      className={className}
+      className={cx(className, theme.className)}
       onCopy={!isRowSelectionModeEnabled ? WorklistDataGridUtils.copyCellContent : undefined}
       onClick={handleClick}
       onKeyUp={handleKeyUp}
       onKeyDown={handleKeyDown}
     >
-      {children}
+      {isRowSelectionCell ? children : <div className={cx('cell-content', theme.className)}>{children}</div>}
     </CellTag>
   );
 }

@@ -33,7 +33,7 @@ const WorklistDataGridWithRowSelection = () => {
     setSelectedRows([]);
   };
 
-  const setRowSelectionMode = () => {
+  const disableSelectableRows = () => {
     setHasSelectableRows(false);
     clearRowSelection();
   };
@@ -71,8 +71,8 @@ const WorklistDataGridWithRowSelection = () => {
       onClearSelectedRows={() => {
         clearRowSelection();
       }}
-      onClearRowSelectionMode={() => {
-        setRowSelectionMode();
+      onDisableSelectableRows={() => {
+        disableSelectableRows();
       }}
     />
   );
