@@ -47,11 +47,11 @@ const propTypes = {
 };
 
 /**
- * The WorkspaceItem component represents a tab within the Workspace, defining
- * its labels and content. The WorkspaceItem component must only be used as an
- * immediate child of the Workspace component.
+ * The CommonTabItem component represents a tab within the CommonTabs, defining
+ * its labels and content. The CommonTabItem component must only be used as an
+ * immediate child of the CommonTabs component.
  */
-const WorkspaceItem = ({
+const CommonTabItem = ({
   id,
   icon,
   customDisplay,
@@ -61,8 +61,8 @@ const WorkspaceItem = ({
   portalElement,
   isIconOnly,
   /**
-   * The itemKey and metaData props are not used by the WorkspaceItem component.
-   * However, the Workspace component will read those prop values and use those values to
+   * The itemKey and metaData props are not used by the CommonTabItem component.
+   * However, the CommonTabs component will read those prop values and use those values to
    * build its tab structure.
    */
   itemKey, // eslint-disable-line no-unused-vars
@@ -88,6 +88,6 @@ const WorkspaceItem = ({
   );
 };
 
-WorkspaceItem.propTypes = propTypes;
+CommonTabItem.propTypes = propTypes;
 
-export default WorkspaceItem;
+export default CommonTabItem;
