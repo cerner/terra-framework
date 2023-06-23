@@ -5,7 +5,7 @@ import ThemeContext from 'terra-theme-context';
 
 import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from './_TabUtils';
 
-import styles from './WorkspaceButton.module.scss';
+import styles from './CommonTabButton.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -36,7 +36,7 @@ const propTypes = {
   testId: PropTypes.string,
 };
 
-const WorkspaceButton = ({
+const CommonTabButton = ({
   ariaLabel,
   icon,
   isActive,
@@ -78,6 +78,6 @@ const WorkspaceButton = ({
   );
 };
 
-WorkspaceButton.propTypes = propTypes;
+CommonTabButton.propTypes = propTypes;
 
-export default WorkspaceButton;
+export default CommonTabButton;
