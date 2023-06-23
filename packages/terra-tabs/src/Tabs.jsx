@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ThemeContext from 'terra-theme-context';
-import WorkspaceItem from './common-tabs/WorkspaceItem';
-import Workspace from './common-tabs/Workspace';
+import CommonTabItem from './common-tabs/CommonTabItem';
+import CommonTabs from './common-tabs/CommonTabs';
 import TabPane from './TabPane';
 import TabUtils from './TabUtils';
 
@@ -87,7 +87,7 @@ class Tabs extends React.Component {
       ...customProps
     } = this.props;
 
-    const workSpaceItems = [];
+    const commonTabItems = [];
 
     React.Children.forEach(children, child => {
       let content;
@@ -96,8 +96,8 @@ class Tabs extends React.Component {
           React.cloneElement(contentItem)
         ));
       }
-      workSpaceItems.push(
-        <WorkspaceItem
+      commonTabItems.push(
+        <CommonTabItem
           itemKey={child.key}
           label={child.props.label}
           icon={child.props.icon}
@@ -109,7 +109,7 @@ class Tabs extends React.Component {
     });
 
     return (
-      <Workspace
+      <CommonTabs
         id={customProps.id || 'terra-common-tabs'}
         activeItemKey={this.state.activeKey}
         onRequestActivate={key => this.setState({ activeKey: key })}
@@ -117,8 +117,8 @@ class Tabs extends React.Component {
         variant="framework"
         {...customProps}
       >
-        {workSpaceItems}
-      </Workspace>
+        {commonTabItems}
+      </CommonTabs>
     );
   }
 }

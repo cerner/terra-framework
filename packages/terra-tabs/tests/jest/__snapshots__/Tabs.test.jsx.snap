@@ -238,10 +238,10 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                 />
               }
             />
-          </WorkspaceItem>
+          </CommonTabItem>
         </div>
       </div>
-    </Workspace>
+    </CommonTabs>
   </Tabs>
 </ThemeContextProvider>
 `;
@@ -424,7 +424,7 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the windo
     className="body"
     role="none"
   >
-    <WorkspaceItem
+    <CommonTabItem
       associatedPanelId="terra-common-tabs-default-panel"
       id="terra-common-tabs-default"
       isActive={false}
@@ -668,7 +668,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
     className="body"
     role="none"
   >
-    <WorkspaceItem
+    <CommonTabItem
       associatedPanelId="terra-common-tabs-default-panel"
       id="terra-common-tabs-default"
       isActive={true}
@@ -816,7 +816,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
     className="body"
     role="none"
   >
-    <WorkspaceItem
+    <CommonTabItem
       associatedPanelId="application-id-default-panel"
       id="application-id-default"
       isActive={true}
@@ -932,7 +932,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
     className="body"
     role="none"
   >
-    <WorkspaceItem
+    <CommonTabItem
       associatedPanelId="terra-common-tabs-default-panel"
       id="terra-common-tabs-default"
       isActive={true}
@@ -954,7 +954,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
 `;
 
 exports[`Tabs should render with content filled when indicated 1`] = `
-<Workspace
+<CommonTabs
   activeItemKey="default"
   id="terra-common-tabs"
   intl={
@@ -986,18 +986,18 @@ exports[`Tabs should render with content filled when indicated 1`] = `
   }
   setFocusOnContainer={false}
 >
-  <WorkspaceItem
+  <CommonTabItem
     isDisabled={false}
     isIconOnly={false}
     itemKey="default"
     label="Default"
     render={[Function]}
   />
-</Workspace>
+</CommonTabs>
 `;
 
 exports[`Tabs should render with tabs filled when indicated 1`] = `
-<Workspace
+<CommonTabs
   activeItemKey="default"
   id="terra-common-tabs"
   intl={
@@ -1030,18 +1030,18 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
   setFocusOnContainer={false}
   tabsFill={true}
 >
-  <WorkspaceItem
+  <CommonTabItem
     isDisabled={false}
     isIconOnly={false}
     itemKey="default"
     label="Default"
     render={[Function]}
   />
-</Workspace>
+</CommonTabs>
 `;
 
 exports[`Tabs should set custom props 1`] = `
-<Workspace
+<CommonTabs
   activeItemKey="default"
   className="customClass"
   id="terra-common-tabs"
@@ -1074,14 +1074,14 @@ exports[`Tabs should set custom props 1`] = `
   }
   setFocusOnContainer={false}
 >
-  <WorkspaceItem
+  <CommonTabItem
     isDisabled={false}
     isIconOnly={false}
     itemKey="default"
     label="Default"
     render={[Function]}
   />
-</Workspace>
+</CommonTabs>
 `;
 
 exports[`Tabs should set custom props for child Tab Pane 1`] = `
@@ -1178,7 +1178,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
     className="body"
     role="none"
   >
-    <WorkspaceItem
+    <CommonTabItem
       associatedPanelId="terra-common-tabs-default-panel"
       id="terra-common-tabs-default"
       isActive={true}
