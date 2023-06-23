@@ -51,11 +51,11 @@ const propTypes = {
    */
   onSelect: PropTypes.func.isRequired,
   /**
-   * Identifier for the workspace item represented by the Tab. Returned with onSelect.
+   * Identifier for the CommonTab item represented by the Tab. Returned with onSelect.
    */
   itemKey: PropTypes.string,
   /**
-   * Data for the workspace item represented by the Tab. Returned with onSelect.
+   * Data for the CommonTab item represented by the Tab. Returned with onSelect.
    */
   metaData: PropTypes.object,
   /**
