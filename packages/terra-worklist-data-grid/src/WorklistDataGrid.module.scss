@@ -8,10 +8,10 @@
     outline-offset: var(--terra-worklist-data-grid-cell-focus-outline-offset, -2px);
   }
 
-  .worklist-data-grid-container {
+  .worklist-data-grid-container { 
+    height: 100%;
     overflow-x: scroll;
     width: 100%;
-    height: 100%;
   }
 
   .worklist-data-grid {
@@ -30,8 +30,8 @@
 
   .worklist-data-grid-cell {
     border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
-    padding: var(--terra-worklist-data-grid-cell-content-padding, 7px);
     font-weight: normal;
+    padding: var(--terra-worklist-data-grid-cell-content-padding, 7px);
     position: relative;
   }
 
@@ -46,8 +46,8 @@
   }
   
   .cell-content {
-    overflow-wrap: break-word;
     overflow: hidden;
+    overflow-wrap: break-word;
   }
 
   // Create gradient background for masked cells

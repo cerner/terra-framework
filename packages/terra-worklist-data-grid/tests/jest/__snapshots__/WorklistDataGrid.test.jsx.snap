@@ -1,490 +1,583 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 cells 1`] = `
-<table
-  className="worklist-data-grid"
-  id="test-terra-worklist-data-grid"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  role="grid"
+<div
+  className="worklist-data-grid-container"
 >
-  <tbody>
-    <tr>
-      <th
-        className="worklist-data-grid-column-header selectable"
-        key="Column-0"
+  <table
+    className="worklist-data-grid"
+    id="test-terra-worklist-data-grid"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="grid"
+  >
+    <tbody>
+      <tr
+        height="2.5rem"
+      >
+        <th
+          className="worklist-data-grid-column-header selectable"
+          key="Column-0"
+          style={
+            Object {
+              "height": "2.5rem",
+              "width": "200px",
+            }
+          }
+          tabIndex="-1"
+        >
+           Vitals
+        </th>
+        <th
+          className="worklist-data-grid-column-header selectable"
+          key="Column-1"
+          style={
+            Object {
+              "height": "2.5rem",
+              "width": "200px",
+            }
+          }
+          tabIndex="-1"
+        >
+          March 16
+        </th>
+        <th
+          className="worklist-data-grid-column-header"
+          key="Column-2"
+          style={
+            Object {
+              "height": "2.5rem",
+              "width": "200px",
+            }
+          }
+          tabIndex="-1"
+        >
+          March 17
+        </th>
+      </tr>
+      <tr
+        className="worklist-data-grid-row"
+        key="1"
         style={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "height": "2.5rem",
           }
         }
-        tabIndex="-1"
       >
-         Vitals
-      </th>
-      <th
-        className="worklist-data-grid-column-header selectable"
-        key="Column-1"
+        <th
+          className="worklist-data-grid-cell selectable"
+          key="0"
+          tabIndex="-1"
+        >
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            Heart Rate Monitored (bpm)
+          </div>
+        </th>
+        <td
+          aria-label="Terra.worklistDataGrid.blank"
+          className="worklist-data-grid-cell selectable blank"
+          key="1"
+          tabIndex="-1"
+        />
+        <td
+          aria-label="Terra.worklistDataGrid.maskedCell"
+          className="worklist-data-grid-cell masked"
+          key="2"
+          tabIndex="-1"
+        />
+      </tr>
+      <tr
+        className="worklist-data-grid-row"
+        key="2"
         style={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "height": "2.5rem",
           }
         }
-        tabIndex="-1"
       >
-        March 16
-      </th>
-      <th
-        className="worklist-data-grid-column-header"
-        key="Column-2"
+        <th
+          className="worklist-data-grid-cell selectable"
+          key="0"
+          tabIndex="-1"
+        >
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            Temperature Oral (degC)
+          </div>
+        </th>
+        <td
+          className="worklist-data-grid-cell selectable"
+          key="1"
+          tabIndex="-1"
+        >
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            36.7
+          </div>
+        </td>
+        <td
+          aria-label="Terra.worklistDataGrid.maskedCell"
+          className="worklist-data-grid-cell masked"
+          key="2"
+          tabIndex="-1"
+        />
+      </tr>
+      <tr
+        className="worklist-data-grid-row"
+        key="3"
         style={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "height": "2.5rem",
           }
         }
-        tabIndex="-1"
       >
-        March 17
-      </th>
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="1"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell selectable"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
+        <th
+          className="worklist-data-grid-cell selectable"
+          key="0"
+          tabIndex="-1"
         >
-          Heart Rate Monitored (bpm)
-        </div>
-      </th>
-      <td
-        aria-label="Terra.worklistDataGrid.blank"
-        className="worklist-data-grid-cell selectable blank"
-        key="1"
-        tabIndex="-1"
-      />
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      />
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="2"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell selectable"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            Cardiac Index (L/min/m2)
+          </div>
+        </th>
+        <td
+          className="worklist-data-grid-cell selectable"
+          key="1"
+          tabIndex="-1"
         >
-          Temperature Oral (degC)
-        </div>
-      </th>
-      <td
-        className="worklist-data-grid-cell selectable"
-        key="1"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          36.7
-        </div>
-      </td>
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      />
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="3"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell selectable"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          Cardiac Index (L/min/m2)
-        </div>
-      </th>
-      <td
-        className="worklist-data-grid-cell selectable"
-        key="1"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          2.25
-        </div>
-      </td>
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      />
-    </tr>
-  </tbody>
-</table>
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            2.25
+          </div>
+        </td>
+        <td
+          aria-label="Terra.worklistDataGrid.maskedCell"
+          className="worklist-data-grid-cell masked"
+          key="2"
+          tabIndex="-1"
+        />
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`WorklistDataGrid renders a grid with selectable cells 1`] = `
-<table
-  className="worklist-data-grid"
-  id="test-terra-worklist-data-grid"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  role="grid"
+<div
+  className="worklist-data-grid-container"
 >
-  <tbody>
-    <tr>
-      <th
-        className="worklist-data-grid-column-header selectable"
-        key="Column-0"
+  <table
+    className="worklist-data-grid"
+    id="test-terra-worklist-data-grid"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="grid"
+  >
+    <tbody>
+      <tr
+        height="2.5rem"
+      >
+        <th
+          className="worklist-data-grid-column-header selectable"
+          key="Column-0"
+          style={
+            Object {
+              "height": "2.5rem",
+              "width": "200px",
+            }
+          }
+          tabIndex="-1"
+        >
+           Vitals
+        </th>
+        <th
+          className="worklist-data-grid-column-header selectable"
+          key="Column-1"
+          style={
+            Object {
+              "height": "2.5rem",
+              "width": "200px",
+            }
+          }
+          tabIndex="-1"
+        >
+          March 16
+        </th>
+        <th
+          className="worklist-data-grid-column-header"
+          key="Column-2"
+          style={
+            Object {
+              "height": "2.5rem",
+              "width": "200px",
+            }
+          }
+          tabIndex="-1"
+        >
+          March 17
+        </th>
+      </tr>
+      <tr
+        className="worklist-data-grid-row"
+        key="1"
         style={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "height": "2.5rem",
           }
         }
-        tabIndex="-1"
       >
-         Vitals
-      </th>
-      <th
-        className="worklist-data-grid-column-header selectable"
-        key="Column-1"
+        <th
+          className="worklist-data-grid-cell selectable"
+          key="0"
+          tabIndex="-1"
+        >
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            Heart Rate Monitored (bpm)
+          </div>
+        </th>
+        <td
+          aria-label="Terra.worklistDataGrid.blank"
+          className="worklist-data-grid-cell selectable blank"
+          key="1"
+          tabIndex="-1"
+        />
+        <td
+          aria-label="Terra.worklistDataGrid.maskedCell"
+          className="worklist-data-grid-cell masked"
+          key="2"
+          tabIndex="-1"
+        />
+      </tr>
+      <tr
+        className="worklist-data-grid-row"
+        key="2"
         style={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "height": "2.5rem",
           }
         }
-        tabIndex="-1"
       >
-        March 16
-      </th>
-      <th
-        className="worklist-data-grid-column-header"
-        key="Column-2"
+        <th
+          className="worklist-data-grid-cell selectable"
+          key="0"
+          tabIndex="-1"
+        >
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            Temperature Oral (degC)
+          </div>
+        </th>
+        <td
+          className="worklist-data-grid-cell selectable"
+          key="1"
+          tabIndex="-1"
+        >
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            36.7
+          </div>
+        </td>
+        <td
+          aria-label="Terra.worklistDataGrid.maskedCell"
+          className="worklist-data-grid-cell masked"
+          key="2"
+          tabIndex="-1"
+        />
+      </tr>
+      <tr
+        className="worklist-data-grid-row"
+        key="3"
         style={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "height": "2.5rem",
           }
         }
-        tabIndex="-1"
       >
-        March 17
-      </th>
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="1"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell selectable"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
+        <th
+          className="worklist-data-grid-cell selectable"
+          key="0"
+          tabIndex="-1"
         >
-          Heart Rate Monitored (bpm)
-        </div>
-      </th>
-      <td
-        aria-label="Terra.worklistDataGrid.blank"
-        className="worklist-data-grid-cell selectable blank"
-        key="1"
-        tabIndex="-1"
-      />
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      />
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="2"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell selectable"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            Cardiac Index (L/min/m2)
+          </div>
+        </th>
+        <td
+          className="worklist-data-grid-cell selectable"
+          key="1"
+          tabIndex="-1"
         >
-          Temperature Oral (degC)
-        </div>
-      </th>
-      <td
-        className="worklist-data-grid-cell selectable"
-        key="1"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          36.7
-        </div>
-      </td>
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      />
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="3"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell selectable"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          Cardiac Index (L/min/m2)
-        </div>
-      </th>
-      <td
-        className="worklist-data-grid-cell selectable"
-        key="1"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          2.25
-        </div>
-      </td>
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      />
-    </tr>
-  </tbody>
-</table>
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            2.25
+          </div>
+        </td>
+        <td
+          aria-label="Terra.worklistDataGrid.maskedCell"
+          className="worklist-data-grid-cell masked"
+          key="2"
+          tabIndex="-1"
+        />
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`WorklistDataGrid test masked cells 1`] = `
-<table
-  className="worklist-data-grid"
-  id="test-terra-worklist-data-grid"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  role="grid"
+<div
+  className="worklist-data-grid-container"
 >
-  <tbody>
-    <tr>
-      <th
-        className="worklist-data-grid-column-header selectable"
-        key="Column-0"
+  <table
+    className="worklist-data-grid"
+    id="test-terra-worklist-data-grid"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="grid"
+  >
+    <tbody>
+      <tr
+        height="2.5rem"
+      >
+        <th
+          className="worklist-data-grid-column-header selectable"
+          key="Column-0"
+          style={
+            Object {
+              "height": "2.5rem",
+              "width": "200px",
+            }
+          }
+          tabIndex="-1"
+        >
+           Vitals
+        </th>
+        <th
+          className="worklist-data-grid-column-header selectable"
+          key="Column-1"
+          style={
+            Object {
+              "height": "2.5rem",
+              "width": "200px",
+            }
+          }
+          tabIndex="-1"
+        >
+          March 16
+        </th>
+        <th
+          className="worklist-data-grid-column-header"
+          key="Column-2"
+          style={
+            Object {
+              "height": "2.5rem",
+              "width": "200px",
+            }
+          }
+          tabIndex="-1"
+        >
+          March 17
+        </th>
+      </tr>
+      <tr
+        className="worklist-data-grid-row"
+        key="1"
         style={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "height": "2.5rem",
           }
         }
-        tabIndex="-1"
       >
-         Vitals
-      </th>
-      <th
-        className="worklist-data-grid-column-header selectable"
-        key="Column-1"
+        <th
+          className="worklist-data-grid-cell selectable"
+          key="0"
+          tabIndex="-1"
+        >
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            Heart Rate Monitored (bpm)
+          </div>
+        </th>
+        <td
+          aria-label="Terra.worklistDataGrid.blank"
+          className="worklist-data-grid-cell selectable blank"
+          key="1"
+          tabIndex="-1"
+        />
+        <td
+          aria-label="Terra.worklistDataGrid.maskedCell"
+          className="worklist-data-grid-cell masked"
+          key="2"
+          tabIndex="-1"
+        />
+      </tr>
+      <tr
+        className="worklist-data-grid-row"
+        key="2"
         style={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "height": "2.5rem",
           }
         }
-        tabIndex="-1"
       >
-        March 16
-      </th>
-      <th
-        className="worklist-data-grid-column-header"
-        key="Column-2"
+        <th
+          className="worklist-data-grid-cell selectable"
+          key="0"
+          tabIndex="-1"
+        >
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            Temperature Oral (degC)
+          </div>
+        </th>
+        <td
+          className="worklist-data-grid-cell selectable"
+          key="1"
+          tabIndex="-1"
+        >
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            36.7
+          </div>
+        </td>
+        <td
+          aria-label="Terra.worklistDataGrid.maskedCell"
+          className="worklist-data-grid-cell masked"
+          key="2"
+          tabIndex="-1"
+        />
+      </tr>
+      <tr
+        className="worklist-data-grid-row"
+        key="3"
         style={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "height": "2.5rem",
           }
         }
-        tabIndex="-1"
       >
-        March 17
-      </th>
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="1"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell selectable"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
+        <th
+          className="worklist-data-grid-cell selectable"
+          key="0"
+          tabIndex="-1"
         >
-          Heart Rate Monitored (bpm)
-        </div>
-      </th>
-      <td
-        aria-label="Terra.worklistDataGrid.blank"
-        className="worklist-data-grid-cell selectable blank"
-        key="1"
-        tabIndex="-1"
-      />
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      />
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="2"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell selectable"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            Cardiac Index (L/min/m2)
+          </div>
+        </th>
+        <td
+          className="worklist-data-grid-cell selectable"
+          key="1"
+          tabIndex="-1"
         >
-          Temperature Oral (degC)
-        </div>
-      </th>
-      <td
-        className="worklist-data-grid-cell selectable"
-        key="1"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          36.7
-        </div>
-      </td>
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      />
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="3"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell selectable"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          Cardiac Index (L/min/m2)
-        </div>
-      </th>
-      <td
-        className="worklist-data-grid-cell selectable"
-        key="1"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          2.25
-        </div>
-      </td>
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      />
-    </tr>
-  </tbody>
-</table>
+          <div
+            className="cell-content"
+            style={
+              Object {
+                "height": "2.5rem",
+              }
+            }
+          >
+            2.25
+          </div>
+        </td>
+        <td
+          aria-label="Terra.worklistDataGrid.maskedCell"
+          className="worklist-data-grid-cell masked"
+          key="2"
+          tabIndex="-1"
+        />
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
