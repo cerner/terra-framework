@@ -43,7 +43,7 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
       $('[role="button"][aria-label="Back"]').click();
       $('.subMenu2').click();
       expect($('li:first-child[aria-checked="true"][role="menuitemcheckbox"]').isFocused()).toBeTruthy();
-    })
+    });
   });
 
   describe('Menu Item-Icon', () => {
