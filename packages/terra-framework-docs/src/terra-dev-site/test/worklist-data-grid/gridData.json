@@ -16,7 +16,7 @@
       "cells": [
         { "content": "Heart Rate Monitored (bpm)"},
         { "content": "68"},
-        { "content": "66"},
+        { },
         { "content": "67"},
         { "content": "120"},
         { "content": "69"},
@@ -31,7 +31,7 @@
       "cells": [
         { "content": "Temperature Oral (degC)"},
         { "content": "36.7" },
-        { "content": "36.9" },
+        { },
         { "content": "37" },
         { "content": "35.2" },
         { "content": "35" },
