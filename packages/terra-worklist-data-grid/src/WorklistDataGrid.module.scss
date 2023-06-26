@@ -39,6 +39,12 @@
     background-color: var(--terra-worklist-data-grid-row-striped-background-color, #f0f0f0);
   }
 
+  // Hover state for selectable elements
+  .selectable:hover {
+    background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
+    cursor: pointer;
+  }
+  
   .cell-content {
     overflow-wrap: break-word;
     overflow: hidden;
