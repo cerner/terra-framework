@@ -76,6 +76,7 @@ class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.setPageDimensions = this.setPageDimensions.bind(this);
+    this.recursiveFunction = this.recursiveFunction.bind(this);
     this.push = this.push.bind(this);
     this.pop = this.pop.bind(this);
     this.state = { stack: [this] };
@@ -113,9 +114,29 @@ class Menu extends React.Component {
   push(item) {
     this.setState((prevState) => {
       const newStack = prevState.stack.slice();
-      newStack.push(item);
+      let newValue = {};
+      if (newStack.length - 1 >= 1) {
+        newValue = newStack[0].props.children.filter((list) => list.props.subMenuItems && !list.props.isDisabled);
+        newValue = this.recursiveFunction(newValue, item.key);
+      } else newValue = item;
+      newStack.push(newValue);
       return { stack: newStack };
     });
+  }
+
+  recursiveFunction(newValue, key) {
+    for (let i = 0; i < newValue.length; i += 1) {
+      if (newValue[i].key === key) {
+        return newValue[i];
+      }
+      if (newValue[i].props.subMenuItems) {
+        const result = this.recursiveFunction(newValue[i].props.subMenuItems, key);
+        if (result) {
+          return result;
+        }
+      }
+    }
+    return null;
   }
 
   render() {
