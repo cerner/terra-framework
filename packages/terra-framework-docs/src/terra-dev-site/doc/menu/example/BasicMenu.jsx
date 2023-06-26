@@ -200,9 +200,9 @@ class BasicMenu extends React.Component {
             <Menu.Item text="Action" key="Action1" onClick={this.handleAction} />
             <Menu.Divider key="Divider3" />
             <Menu.ItemGroup key="Group" onChange={this.handleOnChange}>
-              <Menu.Item text="Group Item 1" key="GroupItem1" isToggled={this.state.groupSelectedIndex === 0} />
-              <Menu.Item text="Group Item 2" key="GroupItem2" isToggled={this.state.groupSelectedIndex === 1} />
-              <Menu.Item text="Group Item 3" key="GroupItem3" isToggled={this.state.groupSelectedIndex === 2} isDisabled />
+              <Menu.Item text="Group Item 1" key="GroupItem1" isSelected={this.state.groupSelectedIndex === 0} />
+              <Menu.Item text="Group Item 2" key="GroupItem2" isSelected={this.state.groupSelectedIndex === 1} />
+              <Menu.Item text="Group Item 3" key="GroupItem3" isSelected={this.state.groupSelectedIndex === 2} isDisabled />
             </Menu.ItemGroup>
           </Menu>
           <Button onClick={this.handleButtonClick} text="Click Me" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
