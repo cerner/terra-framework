@@ -193,7 +193,7 @@ function WorklistDataGrid(props) {
     const height = props.columnHeaderHeight;
     return (
       /* eslint-disable react/forbid-dom-props */
-      <th key={column.id} className={cx('worklist-data-grid-column-header', { selectable: column.isSelectable })} tabIndex="-1" style={{ width, height }}>{column.displayName}</th>
+      <th key={column.id} className={cx('worklist-data-grid-column-header', { selectable: !(column.isSelectable === false) })} tabIndex="-1" style={{ width, height }}>{column.displayName}</th>
     );
   };
 
