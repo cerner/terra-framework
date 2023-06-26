@@ -223,21 +223,23 @@ function WorklistDataGrid(props) {
   const gridClassNames = cx('worklist-data-grid', theme.className);
 
   return (
-    <table
-      ref={gridRef}
-      id={id}
-      role="grid"
-      aria-labelledby={ariaLabelledby}
-      aria-label={ariaLabel}
-      className={gridClassNames}
-      onClick={handleClick}
-      onKeyDown={handleKeyDown}
-    >
-      <tbody>
-        {buildColumns(columns)}
-        {buildRows(rows)}
-      </tbody>
-    </table>
+    <div className={cx('worklist-data-grid-container')}>
+      <table
+        ref={gridRef}
+        id={id}
+        role="grid"
+        aria-labelledby={ariaLabelledby}
+        aria-label={ariaLabel}
+        className={gridClassNames}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
+      >
+        <tbody>
+          {buildColumns(columns)}
+          {buildRows(rows)}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

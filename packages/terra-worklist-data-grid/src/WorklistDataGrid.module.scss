@@ -8,12 +8,18 @@
     outline-offset: var(--terra-worklist-data-grid-cell-focus-outline-offset, -2px);
   }
 
+  .worklist-data-grid-container {
+    overflow-x: scroll;
+    width: 100%;
+    height: 100%;
+  }
+
   .worklist-data-grid {
     // Style for the grid itself
     border: var(--terra-worklist-data-grid-border, 1px solid #dedfe0);
     border-collapse: collapse;
     table-layout: fixed;
-    width: 1px
+    width: 1px;
   }
 
   .worklist-data-grid-column-header {

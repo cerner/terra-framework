@@ -61,7 +61,7 @@ const WorklistDataGridMaskedCell = () => {
         columns={cols}
         rows={rows}
         rowHeight="50px"
-        columnWidth="50px"
+        columnWidth="100px"
         columnHeaderHeight="50px"
         ariaLabel="Worklist Data Grid"
       />
