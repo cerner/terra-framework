@@ -9,9 +9,10 @@ class SelectableMenu extends React.Component {
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.handleItemClick = this.handleItemClick.bind(this);
+    this.handleNestedItemClick = this.handleNestedItemClick.bind(this);
     this.setButtonNode = this.setButtonNode.bind(this);
     this.getButtonNode = this.getButtonNode.bind(this);
-    this.state = { open: false, isSelected: false };
+    this.state = { open: false, isSelected: false, isToggled: false };
   }
 
   componentDidMount() {
@@ -29,6 +30,10 @@ class SelectableMenu extends React.Component {
   handleItemClick() {
     this.setState(prevState => ({ isSelected: !prevState.isSelected }));
     this.handleRequestClose();
+  }
+
+  handleNestedItemClick() {
+    this.setState(prevState => ({ isToggled: !prevState.isToggled }));
   }
 
   setButtonNode(node) {
@@ -62,6 +67,33 @@ class SelectableMenu extends React.Component {
             className="TestSelectableItem"
             isSelected={this.state.isSelected}
             onClick={this.handleItemClick}
+          />
+          <Menu.Item
+            text="Default 3"
+            key="3"
+            className="subMenu1"
+            subMenuItems={[
+              <Menu.Item
+                text="Default 4"
+                key="4"
+                className="testNestedItem1"
+              />,
+              <Menu.Item
+                text="Default 5"
+                key="5"
+                className="subMenu2"
+                subMenuItems={[
+                  <Menu.Item
+                    text="Default 6"
+                    key="6"
+                    className="testNestedItem2"
+                    isToggled={this.state.isToggled}
+                    onClick={this.handleNestedItemClick}
+                    isToggleable
+                  />,
+                ]}
+              />,
+            ]}
           />
         </Menu>
         <Button id="default-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />

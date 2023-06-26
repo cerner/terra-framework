@@ -33,15 +33,14 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
 
   describe('Menu Navigate to nested sub menu when click', () => {
     it('Selected item on nested menus are retained while navigating back and forth between them', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item/menu-item-selectable');
-      $('.TestSelectableItem').click();
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/selectable-and-unselectable-items-menu');
+      $('.subMenu1').click();
       expect($('.testNestedItem1').isFocused());
       $('.subMenu2').click();
       expect($('.testNestedItem2').isFocused());
       $('.testNestedItem2').click();
       Terra.validates.element('selected via click');
       $('[role="button"][aria-label="Back"]').click();
-      expect($('.testNestedItem1').isFocused());
       $('.subMenu2').click();
       expect($('li:first-child[aria-checked="true"][role="menuitemcheckbox"]').isFocused()).toBeTruthy();
     })
