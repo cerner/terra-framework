@@ -179,7 +179,7 @@ function WorklistDataGrid(props) {
       <WorklistCellTag
         key={cellColumnIndex}
         {...tabIndex}
-        className={cx('worklist-data-grid-cell', { masked: cell.isMasked, selectable: (!cell.isMasked && cell.isSelectable), blank: !cell.content })}
+        className={cx('worklist-data-grid-cell', { masked: cell.isMasked, selectable: !(cell.isMasked || cell.isSelectable === false), blank: !cell.content })}
         aria-label={cellAriaLabel}
       >
         {!cell.isMasked && cell.content

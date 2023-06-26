@@ -16,7 +16,7 @@ const dataFile = {
       id: '1',
       cells: [
         { content: 'Heart Rate Monitored (bpm)' },
-        { content: '68' },
+        { content: '' },
         { content: '66', isMasked: true },
       ],
     },
@@ -124,7 +124,7 @@ describe('WorklistDataGrid', () => {
     ).dive();
 
     const blankCells = wrapper.find('.blank');
-    expect(blankCells).toHaveLength(2);
+    expect(blankCells).toHaveLength(1);
     expect(blankCells.first().children()).toHaveLength(0);
   });
 });

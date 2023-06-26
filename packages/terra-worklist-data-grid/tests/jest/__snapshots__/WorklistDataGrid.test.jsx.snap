@@ -71,28 +71,17 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 ce
         </div>
       </th>
       <td
-        className="worklist-data-grid-cell selectable"
+        aria-label="Terra.worklistDataGrid.blank"
+        className="worklist-data-grid-cell selectable blank"
         key="1"
         tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          68
-        </div>
-      </td>
+      />
       <td
         aria-label="Terra.worklistDataGrid.maskedCell"
         className="worklist-data-grid-cell masked"
         key="2"
         tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          66
-        </div>
-      </td>
+      />
     </tr>
     <tr
       className="worklist-data-grid-row"
@@ -130,13 +119,7 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 ce
         className="worklist-data-grid-cell masked"
         key="2"
         tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          36.9
-        </div>
-      </td>
+      />
     </tr>
     <tr
       className="worklist-data-grid-row"
@@ -174,13 +157,7 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 ce
         className="worklist-data-grid-cell masked"
         key="2"
         tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          2.28
-        </div>
-      </td>
+      />
     </tr>
   </tbody>
 </table>
@@ -257,16 +234,11 @@ exports[`WorklistDataGrid renders a grid with selectable cells 1`] = `
         </div>
       </th>
       <td
-        className="worklist-data-grid-cell selectable"
+        aria-label="Terra.worklistDataGrid.blank"
+        className="worklist-data-grid-cell selectable blank"
         key="1"
         tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          68
-        </div>
-      </td>
+      />
       <td
         aria-label="Terra.worklistDataGrid.maskedCell"
         className="worklist-data-grid-cell masked"
@@ -295,11 +267,16 @@ exports[`WorklistDataGrid renders a grid with selectable cells 1`] = `
         </div>
       </th>
       <td
-        aria-label="Terra.worklistDataGrid.blank"
-        className="worklist-data-grid-cell selectable blank"
+        className="worklist-data-grid-cell selectable"
         key="1"
         tabIndex="-1"
-      />
+      >
+        <div
+          className="cell-content"
+        >
+          36.7
+        </div>
+      </td>
       <td
         aria-label="Terra.worklistDataGrid.maskedCell"
         className="worklist-data-grid-cell masked"
@@ -328,11 +305,16 @@ exports[`WorklistDataGrid renders a grid with selectable cells 1`] = `
         </div>
       </th>
       <td
-        aria-label="Terra.worklistDataGrid.blank"
-        className="worklist-data-grid-cell selectable blank"
+        className="worklist-data-grid-cell selectable"
         key="1"
         tabIndex="-1"
-      />
+      >
+        <div
+          className="cell-content"
+        >
+          2.25
+        </div>
+      </td>
       <td
         aria-label="Terra.worklistDataGrid.maskedCell"
         className="worklist-data-grid-cell masked"
@@ -415,16 +397,11 @@ exports[`WorklistDataGrid test masked cells 1`] = `
         </div>
       </th>
       <td
-        className="worklist-data-grid-cell selectable"
+        aria-label="Terra.worklistDataGrid.blank"
+        className="worklist-data-grid-cell selectable blank"
         key="1"
         tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          68
-        </div>
-      </td>
+      />
       <td
         aria-label="Terra.worklistDataGrid.maskedCell"
         className="worklist-data-grid-cell masked"
@@ -453,11 +430,16 @@ exports[`WorklistDataGrid test masked cells 1`] = `
         </div>
       </th>
       <td
-        aria-label="Terra.worklistDataGrid.blank"
-        className="worklist-data-grid-cell selectable blank"
+        className="worklist-data-grid-cell selectable"
         key="1"
         tabIndex="-1"
-      />
+      >
+        <div
+          className="cell-content"
+        >
+          36.7
+        </div>
+      </td>
       <td
         aria-label="Terra.worklistDataGrid.maskedCell"
         className="worklist-data-grid-cell masked"
@@ -486,11 +468,16 @@ exports[`WorklistDataGrid test masked cells 1`] = `
         </div>
       </th>
       <td
-        aria-label="Terra.worklistDataGrid.blank"
-        className="worklist-data-grid-cell selectable blank"
+        className="worklist-data-grid-cell selectable"
         key="1"
         tabIndex="-1"
-      />
+      >
+        <div
+          className="cell-content"
+        >
+          2.25
+        </div>
+      </td>
       <td
         aria-label="Terra.worklistDataGrid.maskedCell"
         className="worklist-data-grid-cell masked"
