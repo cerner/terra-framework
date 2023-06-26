@@ -12,9 +12,8 @@
     // Style for the grid itself
     border: var(--terra-worklist-data-grid-border, 1px solid #dedfe0);
     border-collapse: collapse;
-    height: 100%;
-    margin: 1em auto;
-    width: 100%;
+    table-layout: fixed;
+    width: 1px
   }
 
   .worklist-data-grid-column-header {
@@ -25,8 +24,8 @@
 
   .worklist-data-grid-cell {
     border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
+    padding: var(--terra-worklist-data-grid-cell-content-padding, 7px);
     font-weight: normal;
-    height: 100%;
     position: relative;
   }
 
@@ -35,9 +34,8 @@
   }
 
   .cell-content {
-    height: 100%;
-    padding: var(--terra-worklist-data-grid-cell-content-padding, 7px);
-    width: 100%;
+    overflow-wrap: break-word;
+    overflow: hidden;
   }
 
   // Create gradient background for masked cells

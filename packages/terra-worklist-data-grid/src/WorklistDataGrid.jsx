@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-dom-props */
 import React, {
   useContext, useRef, useCallback,
 } from 'react';
@@ -61,6 +62,9 @@ const propTypes = {
 
 const defaultProps = {
   rowHeaderIndex: 0,
+  columnWidth: '200px',
+  columnHeaderHeight: '2.5rem',
+  rowHeight: '2.5rem',
 };
 
 function WorklistDataGrid(props) {
@@ -164,6 +168,7 @@ function WorklistDataGrid(props) {
 
     // Determine whether cell is a header or grid cell
     const WorklistCellTag = props.rowHeaderIndex === cellColumnIndex ? 'th' : 'td';
+    const height = props.rowHeight;
 
     return (
       // Return worklist data grid cell component
@@ -173,7 +178,7 @@ function WorklistDataGrid(props) {
         className={cx('worklist-data-grid-cell', { masked: cell.isMasked })}
         aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined}
       >
-        <div className={cx('cell-content')}>{cell.content}</div>
+        <div className={cx('cell-content')} style={{ height }}>{cell.content}</div>
       </WorklistCellTag>
     );
   };
