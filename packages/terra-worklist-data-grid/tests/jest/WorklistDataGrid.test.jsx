@@ -114,7 +114,7 @@ describe('WorklistDataGrid', () => {
     console.error.mockRestore();
   });
 
-  it('test blank cells', () => {
+  it('sets the .blank class to an empty cell', () => {
     const wrapper = shallowWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
