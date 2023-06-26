@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Fixed
-  * Added logic to valitate toggled item on nested menus are retained while navigating back and forth between them.
+  * Added logic to validate toggled item on nested menus are retained while navigating back and forth between them.
 
 * Changed
   * Updated examples and tests for `terra-worklist-data-grid` to remove row height
