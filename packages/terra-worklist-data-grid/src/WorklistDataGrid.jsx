@@ -119,6 +119,7 @@ function WorklistDataGrid(props) {
       default:
         return;
     }
+
     if (nextRow >= grid.current.rows.length || nextCol >= grid.current.rows[0].cells.length) {
       event.preventDefault();
       return;
@@ -145,8 +146,9 @@ function WorklistDataGrid(props) {
     // Determine which cell was clicked. In the event that the user holds the mouse across multiple cells,
     // the originating cell is the clicked cell/active element.
     const clickedCell = event.target.closest('td,th') || document.activeElement.closest('td,th');
+
+    // Ensure that the cell is focusable and is a valid cell
     if (!clickedCell) {
-      // If anything other than a table data or table header cell is clicked, ignore the click.
       return;
     }
     // Remove Tab stop from previous cell in table that has focus and set it to the cell that was clicked.
@@ -170,7 +172,7 @@ function WorklistDataGrid(props) {
       <WorklistCellTag
         key={cellColumnIndex}
         {...tabIndex}
-        className={cx('worklist-data-grid-cell', { masked: cell.isMasked })}
+        className={cx('worklist-data-grid-cell', { masked: cell.isMasked, selectable: !(cell.isMasked || cell.isSelectable === false) })}
         aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined}
       >
         <div className={cx('cell-content')}>{cell.content}</div>
@@ -178,12 +180,12 @@ function WorklistDataGrid(props) {
     );
   };
 
-  const buildColumn = (columnData) => {
-    const width = columnData.width || props.columnWidth;
+  const buildColumn = (column) => {
+    const width = column.width || props.columnWidth;
     const height = props.columnHeaderHeight;
     return (
       /* eslint-disable react/forbid-dom-props */
-      <th key={columnData.id} className={cx('worklist-data-grid-column-header')} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
+      <th key={column.id} className={cx('worklist-data-grid-column-header', { selectable: !(column.isSelectable === false) })} tabIndex="-1" style={{ width, height }}>{column.displayName}</th>
     );
   };
 
@@ -191,7 +193,7 @@ function WorklistDataGrid(props) {
     if (allColumns?.length > 0) {
       return (
         <tr height={props.columnHeaderHeight}>
-          {allColumns.map(columnData => (buildColumn(columnData)))}
+          {allColumns.map(column => (buildColumn(column)))}
         </tr>
       );
     }
