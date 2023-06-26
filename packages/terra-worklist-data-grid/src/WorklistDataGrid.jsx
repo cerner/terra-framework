@@ -171,16 +171,24 @@ function WorklistDataGrid(props) {
     // Determine whether cell is a header or grid cell
     const WorklistCellTag = props.rowHeaderIndex === cellColumnIndex ? 'th' : 'td';
     const height = props.rowHeight;
+    let cellAriaLabel;
+
+    if (cell.isMasked) {
+      cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' });
+    } else if (!cell.content) {
+      cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' });
+    }
 
     return (
       // Return worklist data grid cell component
       <WorklistCellTag
         key={cellColumnIndex}
         {...tabIndex}
-        className={cx('worklist-data-grid-cell', { masked: cell.isMasked, selectable: !(cell.isMasked || cell.isSelectable === false) })}
-        aria-label={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined}
+        className={cx('worklist-data-grid-cell', { masked: cell.isMasked, selectable: !(cell.isMasked || cell.isSelectable === false), blank: !cell.content })}
+        aria-label={cellAriaLabel}
       >
-        <div className={cx('cell-content')} style={{ height }}>{cell.content}</div>
+        {!cell.isMasked && cell.content
+          && <div className={cx('cell-content')} style={{ height }}>{cell.content}</div>}
       </WorklistCellTag>
     );
   };

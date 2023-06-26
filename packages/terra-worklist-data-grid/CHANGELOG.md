@@ -7,6 +7,7 @@
 * Added
   * Added masked cell support.
   * Added hover state for selectable cells.
+  * Added blank cell support.
 
 ## 0.1
   * Initial stable release.

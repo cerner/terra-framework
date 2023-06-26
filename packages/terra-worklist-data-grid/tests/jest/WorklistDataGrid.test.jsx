@@ -16,7 +16,7 @@ const dataFile = {
       id: '1',
       cells: [
         { content: 'Heart Rate Monitored (bpm)' },
-        { content: '68' },
+        { content: '' },
         { content: '66', isMasked: true },
       ],
     },
@@ -112,5 +112,19 @@ describe('WorklistDataGrid', () => {
     expect(console.error).toHaveBeenCalledWith(expect.stringContaining('The prop `id` is marked as required'));
 
     console.error.mockRestore();
+  });
+
+  it('sets the .blank class to an empty cell', () => {
+    const wrapper = shallowWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        columns={dataFile.cols}
+        rows={dataFile.rows}
+      />,
+    ).dive();
+
+    const blankCells = wrapper.find('.blank');
+    expect(blankCells).toHaveLength(1);
+    expect(blankCells.first().children()).toHaveLength(0);
   });
 });
