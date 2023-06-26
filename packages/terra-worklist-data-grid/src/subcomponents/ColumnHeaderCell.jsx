@@ -24,109 +24,62 @@ const propTypes = {
   /**
    * Boolean value to indicate if the cell is the tab stop on the grid. The grid will have only one tab stop.
    */
-  acceptsFocus: PropTypes.bool,
+  isTabStop: PropTypes.bool,
   /**
    * String that specifies the width of the column. Any valid CSS width value is accepted.
    */
   width: PropTypes.string,
   /**
-   * Callback function that is called when cell selection changes.
-   */
-  onCellSelectionChange: PropTypes.func,
-  /**
-     * Callback function that is called when focus moves from one cell to another.
-     */
-  onMoveCellFocus: PropTypes.func,
-
-  /**
    * Content that will rendered within the Cell.
    */
   children: PropTypes.node,
+  /**
+   * Callback function that is called when a column is selected.
+   */
+  onColumnSelect: PropTypes.func,
 };
 
 const defaultProps = {
-  acceptsFocus: false,
+  isTabStop: false,
 };
 
 function ColumnHeaderCell(props) {
   const {
     columnId,
     coordinates,
-    acceptsFocus,
+    isTabStop,
     width,
-    onMoveCellFocus,
-    onCellSelectionChange,
+    onColumnSelect,
     children,
-    ...customProps
   } = props;
 
   const theme = useContext(ThemeContext);
-  const handleClick = () => {
-    if (onCellSelectionChange) {
-      onCellSelectionChange(null, null, coordinates);
+
+  const handleClick = (event) => {
+    if (onColumnSelect) {
+      onColumnSelect(columnId, coordinates);
+      event.stopPropagation();
     }
   };
 
   const handleKeyDown = (event) => {
-    let nextRow = coordinates.row;
-    let nextCol = coordinates.col;
-
     const key = event.keyCode;
     switch (key) {
-      case KeyCode.KEY_UP:
-        nextRow -= 1;
-        break;
-      case KeyCode.KEY_DOWN:
-        nextRow += 1;
-        break;
-      case KeyCode.KEY_LEFT:
-        nextCol -= 1;
-        break;
-      case KeyCode.KEY_RIGHT:
-        nextCol += 1;
-        break;
-      case KeyCode.KEY_HOME:
-        nextCol = 0;
-        if (event.ctrlKey) {
-          nextRow = 1; // Assumption is that the first row is the column Heading.
-        }
-        break;
-      case KeyCode.KEY_END:
-        nextCol = customProps.columnsLength - 1; // Col are zero based.
-        if (event.ctrlKey) {
-          // Though rows are zero based, the header is the first row so the rowsLength will
-          // always be one more than then actual number of data rows.
-          nextRow = customProps.rowsLength;
-        }
-        break;
       case KeyCode.KEY_SPACE:
-        // Default behavior of scrolling by space key needs to be prevented.
-        event.preventDefault();
-        return;
-      case KeyCode.KEY_ESCAPE:
-        event.preventDefault();
+        if (onColumnSelect) {
+          onColumnSelect(columnId, coordinates);
+          event.stopPropagation();
+          event.preventDefault(); // prevent the default scrolling
+        }
         break;
       default:
-        return;
     }
-    if (nextRow > customProps.rowsLength || nextCol > customProps.columnsLength) {
-      event.preventDefault();
-      return;
-    }
-    if (nextCol < 0 || nextRow < 0) {
-      event.preventDefault();
-      return;
-    }
-    if (onMoveCellFocus) {
-      onMoveCellFocus(coordinates, { row: nextRow, col: nextCol });
-    }
-    event.preventDefault();
   };
 
   return (
     <th
       className={cx('worklist-data-grid-column-header', theme.className)}
-      tabIndex={acceptsFocus ? 0 : -1}
+      tabIndex={isTabStop ? 0 : -1}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ width }}
       onClick={handleClick}

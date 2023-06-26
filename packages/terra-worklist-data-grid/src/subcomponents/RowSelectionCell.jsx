@@ -1,13 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
 import '../_elementPolyfill';
 import { injectIntl } from 'react-intl';
-import ThemeContext from 'terra-theme-context';
-import styles from './RowSelectionCell.module.scss';
 import Cell from './Cell';
-
-const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -31,7 +26,7 @@ const propTypes = {
   /**
    * Boolean value to indicate if the cell is the tab stop on the grid. The grid will have only one tab stop.
    */
-  acceptsFocus: PropTypes.bool,
+  isTabStop: PropTypes.bool,
 
   /**
    * Boolean indicating whether the cell is currently selected.
@@ -42,21 +37,10 @@ const propTypes = {
    * String that labels the cell for accessibility.
    */
   ariaLabel: PropTypes.string,
-
   /**
-   * Callback function that is called when cell selection changes.
+   * Callback function that will be called when this cell is selected.
    */
-  onCellSelectionChange: PropTypes.func,
-  /**
-   * Callback function that is called when focus moves from one cell to another.
-   */
-  onMoveCellFocus: PropTypes.func,
-
-  /**
-   * Boolean indicating if grid navigation is enabled. When grid navigation is disabled, navigation is restricted to the cell.
-   */
-  isNavigationEnabled: PropTypes.bool,
-
+  onCellSelect: PropTypes.func,
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
@@ -69,41 +53,32 @@ function RowSelectionCell(props) {
     rowId,
     columnId,
     coordinates,
-    acceptsFocus,
+    isTabStop,
     isSelected,
     ariaLabel,
-    onCellSelectionChange,
-    onMoveCellFocus,
-    isNavigationEnabled,
+    onCellSelect,
     intl,
-    ...customProps
   } = props;
 
-  const theme = useContext(ThemeContext);
   const rowLabel = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-index' }, { row: coordinates.row });
 
   return (
     <Cell
       rowId={rowId}
       columnId={columnId}
+      key={`${rowId}_${columnId}`}
       coordinates={coordinates}
-      acceptsFocus={false}
+      isTabStop={false}
       isSelected={isSelected}
       isRowSelectionCell
-      onCellSelectionChange={onCellSelectionChange}
-      onMoveCellFocus={onMoveCellFocus}
-      isRowSelectionModeEnabled
-      isNavigationEnabled={isNavigationEnabled}
-      rowsLength={customProps.rowsLength}
-      columnsLength={customProps.columnsLength}
+      onCellSelect={onCellSelect}
     >
       <input
         type="checkbox"
         aria-label={ariaLabel || rowLabel}
         aria-checked={isSelected}
-        tabIndex={acceptsFocus ? 0 : -1}
+        tabIndex={isTabStop ? 0 : -1}
         checked={isSelected}
-        className={cx(['selectable-centered', theme.className])}
       />
     </Cell>
   );

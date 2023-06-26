@@ -10,9 +10,9 @@ const columnShape = PropTypes.shape({
    */
   displayName: PropTypes.string,
   /**
-   * Boolean value indicating whether or not the cell can accept focus.
+   * Boolean value indicating whether or not the cell is tab stop for the grid.
    */
-  acceptsFocus: PropTypes.bool,
+  isTabStop: PropTypes.bool,
 
   /**
    * A number (in px) specifying the width of the column. If not provided, the DataGrid's default column width will be used.

@@ -49,20 +49,21 @@ const WorklistDataGridWithRowSelection = () => {
       columnHeaderHeight="50px"
       ariaLabel="Worklist Data Grid"
       hasSelectableRows={hasSelectableRows}
-      onRowSelect={(rowId, selectAllRows) => {
-        if (!selectAllRows) {
-          const selectedRow = rows.find(e => e.id === rowId);
-          selectedRow.isSelected = !selectedRow.isSelected;
-        } else {
-          rows.forEach(e => { e.isSelected = true; });
-        }
+      onRowSelect={(rowId) => {
         const newRows = [];
+        const selectedRow = rows.find(e => e.id === rowId);
+        selectedRow.isSelected = !selectedRow.isSelected;
         rows.forEach(element => {
           if (element.isSelected) {
             newRows.push(element.id);
           }
         });
-        setSelectedRows(determineSelectedRows(selectAllRows, newRows));
+        setSelectedRows(determineSelectedRows(false, newRows));
+      }}
+      onRowSelectAll={() => {
+        const newRows = [];
+        rows.forEach(e => { e.isSelected = true; newRows.push(e.id); });
+        setSelectedRows(determineSelectedRows(true, newRows));
       }}
       onCellSelect={(rowId, columnId) => {
         console.log(`Selected cell: ${rowId} ${columnId}`);
