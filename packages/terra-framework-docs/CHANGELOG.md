@@ -1,16 +1,30 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Updated examples and tests for `terra-worklist-data-grid` to remove row height
+  * Updated examples and tests for `terra-worklist-data-grid` for blank cell accessibility
+  * Updated examples and tests for `terra-worklist-data-grid` to show masked cells and hover states
+
+## 1.23.0 - (June 12, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.22.0 - (June 5, 2023)
+
+* Added
   * Added test for `terra-popup`.
-
-* Added
   * Added example for `terra-menu` with disabled item.
-
-* Added
   * Added a `terra-slide-panel` test containing multiple slide panels.
+  * Added testing sections to `terra-menu`, `terra-navigation-prompt`, `terra-pills` and `terra-tabs` documentation.
+
+* Changed
+  * Updated testing sections for `terra-date-input`, `terra-date-picker`, `terra-slide-panel`, and `terra-time-input` documentation.
 
 * Added
   * Added documentation and tests for `terra-worklist-data-grid`.
+  * Added example and test for masked cell feature for `terra-worklist-data-grid`.
 
 * Added
   * Added example and test for masked cell feature for `terra-worklist-data-grid`.

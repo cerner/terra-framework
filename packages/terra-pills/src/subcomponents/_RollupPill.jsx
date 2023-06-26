@@ -8,7 +8,7 @@ import { injectIntl } from 'react-intl';
 import classNamesBind from 'classnames/bind';
 import PropTypes from 'prop-types';
 import ThemeContext from 'terra-theme-context';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './Pill.module.scss';
 

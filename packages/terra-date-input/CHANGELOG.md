@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 1.39.0 - (June 12, 2023)
+
+* Changed
+  * Locked `uuid` version to `8.2.0`.
+
+## 1.38.0 - (June 5, 2023)
+
+* Changed
+  * Updated `uuid` to `v8` for consistency with other components.
+
 ## 1.37.0 - (May 25, 2023)
 
 * Changed

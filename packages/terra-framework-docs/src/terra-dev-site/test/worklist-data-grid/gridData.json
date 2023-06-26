@@ -1,5 +1,5 @@
 { "cols": [
-  { "id": "Column-0", "displayName": " Vitals", "sortIndicator":"ascending"},
+  { "id": "Column-0", "displayName": " Vitals", "isSelectable":false, "sortIndicator":"ascending"},
   { "id": "Column-1", "displayName": "March 16" },
   { "id": "Column-2", "displayName": "March 17" },
   { "id": "Column-3", "displayName": "March 18" },
@@ -16,7 +16,7 @@
       "cells": [
         { "content": "Heart Rate Monitored (bpm)"},
         { "content": "68"},
-        { "content": "66"},
+        { },
         { "content": "67"},
         { "content": "120"},
         { "content": "69"},
@@ -27,12 +27,11 @@
       ]
     },
     {
-      "height": "150px",
       "id": "2",
       "cells": [
         { "content": "Temperature Oral (degC)"},
         { "content": "36.7" },
-        { "content": "36.9" },
+        { },
         { "content": "37" },
         { "content": "35.2" },
         { "content": "35" },
