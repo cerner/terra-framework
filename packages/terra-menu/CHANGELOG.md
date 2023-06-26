@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Added logic to valitate toggled item on nested menus are retained while navigating back and forth between them.
+
 ## 6.69.0 - (June 12, 2023)
 
 * Changed
