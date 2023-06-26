@@ -1,7 +1,10 @@
-/* eslint-disable react/forbid-dom-props */
 import React, { useRef, useState, useEffect } from 'react';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
+import classNames from 'classnames/bind';
+import styles from './PopupDocCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 function PopupArrow() {
   const buttonElement = useRef();
@@ -41,9 +44,9 @@ function PopupArrow() {
 
   useEffect(() => {
     if (open && focusedIndex !== -1) {
-      const listItems = document.querySelectorAll('.terra-popup-content a');
-      if (listItems.length > 0) {
-        listItems[focusedIndex].focus();
+      const activeMenuItem = document.getElementById('activeMenuItem');
+      if (activeMenuItem) {
+        activeMenuItem.focus();
       }
     }
   }, [open, focusedIndex]);
@@ -56,14 +59,14 @@ function PopupArrow() {
         onRequestClose={handleRequestClose}
         targetRef={getButtonNode}
         isArrowDisplayed
-        tabIndex={-1} // Prevent the popup from receiving focus
       >
-        <ul style={{ listStyleType: 'none', padding: '5px', margin: '5px' }} className="terra-popup-content" onKeyDown={handleKeyDown} role="menu">
+        <ul className={cx('terra-popup-content')} onKeyDown={handleKeyDown} role="menu">
           <li tabIndex={0} role="menuitem">
             <a
               href="https://www.refseek.com/directory/health_medical.html"
               target="_blank"
               rel="noreferrer"
+              id={focusedIndex === 0 ? 'activeMenuItem' : null}
             >
               Health and Medical sites
             </a>
@@ -73,6 +76,7 @@ function PopupArrow() {
               href="https://www.happiesthealth.com/?utm_source=google&utm_medium=cpc-hp"
               target="_blank"
               rel="noreferrer"
+              id={focusedIndex === 1 ? 'activeMenuItem' : null}
             >
               Health Related Links
             </a>
