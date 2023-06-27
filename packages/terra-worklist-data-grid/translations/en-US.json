@@ -1,5 +1,6 @@
 {
   "Terra.worklistDataGrid.maskedCell": "Masked data",
+  "Terra.worklistDataGrid.blank": "Blank",
   "Terra.worklist-data-grid.navigate": "Navigate to data grid",
   "Terra.worklist-data-grid.cell.selected": "The current cell is selected",
   "Terra.worklist-data-grid.cell-selection-template": "Row {row} Column {column} selected",

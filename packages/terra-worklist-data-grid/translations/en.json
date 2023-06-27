@@ -12,6 +12,6 @@
   "Terra.worklist-data-grid.row-index" : "Row {row}",
   "Terra.worklist-data-grid.navigation.enabled" : "Grid Navigation enabled.",
   "Terra.worklist-data-grid.navigation.disabled" : "Grid Navigation disabled. To enable, press the Escape.",
-  "Terra.worklistDataGrid.maskedCell": "Masked data"
-
+  "Terra.worklistDataGrid.maskedCell": "Masked data",
+  "Terra.worklistDataGrid.blank": "Blank"
 }

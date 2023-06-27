@@ -37,6 +37,8 @@ const propTypes = {
    * Callback function that is called when a column is selected.
    */
   onColumnSelect: PropTypes.func,
+
+  isSelectable: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -51,6 +53,7 @@ function ColumnHeaderCell(props) {
     width,
     onColumnSelect,
     children,
+    isSelectable,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -78,7 +81,7 @@ function ColumnHeaderCell(props) {
 
   return (
     <th
-      className={cx('worklist-data-grid-column-header', theme.className)}
+      className={cx('worklist-data-grid-column-header', { selectable: !(isSelectable === false) }, theme.className)}
       tabIndex={isTabStop ? 0 : -1}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ width }}

@@ -143,6 +143,7 @@ function Row(props) {
         isTabStop={isTabStop(cellRowIndex, cellColumnIndex)}
         isSelected={isCellSelected(rowId, columnId)}
         isMasked={cell.isMasked}
+        isSelectable={cell.isSelectable}
         ariaLabel={cell.isMasked ? intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' }) : undefined}
         isRowHeader={isRowHeader}
         onCellSelect={onCellSelect}
@@ -172,4 +173,5 @@ function Row(props) {
 
 Row.propTypes = propTypes;
 Row.defaultProps = defaultProps;
+
 export default injectIntl(Row);

@@ -10,6 +10,10 @@ const columnShape = PropTypes.shape({
    */
   displayName: PropTypes.string,
   /**
+   * Boolean value indicating whether or not the column header is selectable.
+  */
+  isSelectable: PropTypes.bool,
+  /**
    * Boolean value indicating whether or not the cell is tab stop for the grid.
    */
   isTabStop: PropTypes.bool,

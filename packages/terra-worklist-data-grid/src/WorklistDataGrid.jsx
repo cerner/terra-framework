@@ -382,23 +382,24 @@ function WorklistDataGrid(props) {
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
 
-  const buildColumn = (columnData, columnIndex) => {
+  const buildColumn = (column, columnIndex) => {
     const acceptsFocus = focusedRow.current === 0 && focusedCol.current === columnIndex;
-    const width = (columnData.width || props.columnWidth) ? `${columnData.width || props.columnWidth}px` : undefined;
+    const width = (column.width || props.columnWidth) ? `${column.width || props.columnWidth}px` : undefined;
     const height = props.columnHeaderHeight;
     return (
       <ColumnHeaderCell
-        columnId={columnData.id}
+        columnId={column.id}
         coordinates={{ row: 0, col: columnIndex }}
-        key={columnData.id}
+        key={column.id}
         acceptsFocus={acceptsFocus}
         width={width}
         height={height}
         rowsLength={rows.length}
         columnsLength={displayedColumns.length}
         onColumnSelect={handleColumnSelect}
+        isSelectable={column.isSelectable}
       >
-        {columnData.displayName}
+        {column.displayName}
       </ColumnHeaderCell>
     );
   };
@@ -407,7 +408,7 @@ function WorklistDataGrid(props) {
     if (allColumns?.length > 0) {
       return (
         <tr height={props.columnHeaderHeight}>
-          {allColumns.map((columnData, columnIndex) => (buildColumn(columnData, columnIndex)))}
+          {allColumns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
         </tr>
       );
     }

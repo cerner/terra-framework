@@ -8,7 +8,7 @@
   { "id": "Column-6", "displayName": "March 21" },
   { "id": "Column-7", "displayName": "March 22" },
   { "id": "Column-8", "displayName": "March 23" },
-  { "id": "Column-9", "displayName": "March 24" }
+  { "id": "Column-9", "displayName": "March 24", "isSelectable":false }
 ],
 "rows": [
     {
@@ -16,7 +16,7 @@
       "cells": [
         { "content": "Heart Rate Monitored (bpm)"},
         { "content": "68"},
-        { "content": "66"},
+        { },
         { "content": "67"},
         { "content": "120"},
         { "content": "69"},
@@ -240,136 +240,136 @@
     {
       "id": "16",
       "cells": [
-        { "content": "Platelets (billion/L)"},
-        { "content": "461" },
-        { "content": "475" },
-        { "content": "--" },
-        { "content": "412" },
-        { "content": "392" },
-        { "content": "421" },
-        { "content": "418" },
-        { "content": "428" },
-        { "content": "418" }
+        { "content": "Platelets (billion/L)", "isSelectable":false },
+        { "content": "461", "isSelectable":false },
+        { "content": "475", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "412", "isSelectable":false },
+        { "content": "392", "isSelectable":false },
+        { "content": "421", "isSelectable":false },
+        { "content": "418", "isSelectable":false },
+        { "content": "428", "isSelectable":false },
+        { "content": "418", "isSelectable":false }
       ]
     },
     {
       "id": "17",
       "cells": [
-        { "content": "WBCs (billion/L)"},
-        { "content": "12.2" },
-        { "content": "11.9" },
-        { "content": "--" },
-        { "content": "12" },
-        { "content": "10.8" },
-        { "content": "11.2" },
-        { "content": "12.1" },
-        { "content": "11.7" },
-        { "content": "12.1" }
+        { "content": "WBCs (billion/L)", "isSelectable":false },
+        { "content": "12.2", "isSelectable":false },
+        { "content": "11.9", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "12", "isSelectable":false },
+        { "content": "10.8", "isSelectable":false },
+        { "content": "11.2", "isSelectable":false },
+        { "content": "12.1", "isSelectable":false },
+        { "content": "11.7", "isSelectable":false },
+        { "content": "12.1", "isSelectable":false }
       ]
     },
     {
       "id": "18",
       "cells": [
-        { "content": "C-Reactive Protein  (mg/L)"},
-        { "content": "120" },
-        { "content": "98" },
-        { "content": "--" },
-        { "content": "108" },
-        { "content": "103" },
-        { "content": "112" },
-        { "content": "121" },
-        { "content": "117" },
-        { "content": "121" }
+        { "content": "C-Reactive Protein  (mg/L)", "isSelectable":false },
+        { "content": "120", "isSelectable":false },
+        { "content": "98", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "108", "isSelectable":false },
+        { "content": "103", "isSelectable":false },
+        { "content": "112", "isSelectable":false },
+        { "content": "121", "isSelectable":false },
+        { "content": "117", "isSelectable":false },
+        { "content": "121", "isSelectable":false }
       ]
     },
     {
       "id": "19",
       "cells": [
-        { "content": "Activated PTT  (seconds)"},
-        { "content": "101" },
-        { "content": "97" },
-        { "content": "--" },
-        { "content": "94" },
-        { "content": "85" },
-        { "content": "100" },
-        { "content": "95" },
-        { "content": "98" },
-        { "content": "102" }
+        { "content": "Activated PTT  (seconds)", "isSelectable":false },
+        { "content": "101", "isSelectable":false },
+        { "content": "97", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "94", "isSelectable":false },
+        { "content": "85", "isSelectable":false },
+        { "content": "100", "isSelectable":false },
+        { "content": "95", "isSelectable":false },
+        { "content": "98", "isSelectable":false },
+        { "content": "102", "isSelectable":false }
       ]
     },
     {
       "id": "20",
       "cells": [
-        { "content": "INR"},
-        { "content": "1.97" },
-        { "content": "--" },
-        { "content": "--" },
-        { "content": "2.34" },
-        { "content": "--" },
-        { "content": "--" },
-        { "content": "2.09" },
-        { "content": "--" },
-        { "content": "1.95" }
+        { "content": "INR", "isSelectable":false },
+        { "content": "1.97", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "2.34", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "2.09", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "1.95", "isSelectable":false }
       ]
     },
     {
       "id": "21",
       "cells": [
-        { "content": "Creatinine mg/dL"},
-        { "content": "0.76" },
-        { "content": "--" },
-        { "content": "--" },
-        { "content": "0.78" },
-        { "content": "--" },
-        { "content": "--" },
-        { "content": "0.73" },
-        { "content": "--" },
-        { "content": "0/85" }
+        { "content": "Creatinine mg/dL", "isSelectable":false },
+        { "content": "0.76", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "0.78", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "0.73", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "0/85", "isSelectable":false }
       ]
     },
     {
       "id": "22",
       "cells": [
-        { "content": "Potassium mEq/L"},
-        { "content": "4.5" },
-        { "content": "--" },
-        { "content": "--" },
-        { "content": "4.5" },
-        { "content": "--" },
-        { "content": "4.9" },
-        { "content": "--" },
-        { "content": "--" },
-        { "content": "4.6" }
+        { "content": "Potassium mEq/L", "isSelectable":false },
+        { "content": "4.5", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "4.5", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "4.9", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "4.6", "isSelectable":false }
       ]
     },
     {
       "id": "23",
       "cells": [
-        { "content": "Troponin ng/mL"},
-        { "content": "0.03" },
-        { "content": "--" },
-        { "content": "--" },
-        { "content": "0.04" },
-        { "content": "--" },
-        { "content": "--" },
-        { "content": "0.04" },
-        { "content": "--" },
-        { "content": "0.03" }
+        { "content": "Troponin ng/mL", "isSelectable":false },
+        { "content": "0.03", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "0.04", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "0.04", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "0.03", "isSelectable":false }
       ]
     },
     {
       "id": "24",
       "cells": [
-        { "content": "Glucose mg/dL"},
-        { "content": "161" },
-        { "content": "--" },
-        { "content": "--" },
-        { "content": "162" },
-        { "content": "--" },
-        { "content": "179" },
-        { "content": "--" },
-        { "content": "--" },
-        { "content": "176" }
+        { "content": "Glucose mg/dL", "isSelectable":false },
+        { "content": "161", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "162", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "179", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "--", "isSelectable":false },
+        { "content": "176", "isSelectable":false }
       ]
     }
   ]

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import * as KeyCode from 'keycode-js';
 import '../_elementPolyfill';
+import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
@@ -63,6 +64,13 @@ const propTypes = {
    * Callback function that will be called when this cell is selected.
    */
   onCellSelect: PropTypes.func,
+
+  isSelectable: PropTypes.bool,
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -84,6 +92,8 @@ function Cell(props) {
     isRowHeader,
     children,
     onCellSelect,
+    isSelectable,
+    intl,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -109,11 +119,18 @@ function Cell(props) {
     }
   };
 
+  let cellAriaLabel = ariaLabel;
+  if (isMasked) {
+    cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' });
+  } else if (!children) {
+    cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' });
+  }
+
   const className = isRowSelectionCell ? 'row-selection-cell'
-    : [
-      'worklist-data-grid-cell',
+    : ['worklist-data-grid-cell',
+      { masked: isMasked, selectable: !(isMasked || isSelectable === false) },
       { 'worklist-data-grid-cell-selected': (isSelected && !isMasked) },
-      { masked: isMasked },
+      { blank: !children },
     ];
 
   const CellTag = isRowHeader ? 'th' : 'td';
@@ -121,18 +138,19 @@ function Cell(props) {
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <CellTag
       aria-selected={isSelected ? true : undefined}
-      aria-label={ariaLabel}
+      aria-label={cellAriaLabel}
       tabIndex={isTabStop ? 0 : -1}
       className={cx(className, theme.className)}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
       onCopy={!isRowSelectionCell ? WorklistDataGridUtils.copyCellContent : undefined}
     >
-      {isRowSelectionCell ? children : <div className={cx('cell-content', theme.className)}>{children}</div>}
+      {isRowSelectionCell ? children : (!isMasked && children && <div className={cx('cell-content', theme.className)}>{children}</div>)}
     </CellTag>
   );
 }
 
 Cell.propTypes = propTypes;
 Cell.defaultProps = defaultProps;
-export default Cell;
+
+export default injectIntl(Cell);

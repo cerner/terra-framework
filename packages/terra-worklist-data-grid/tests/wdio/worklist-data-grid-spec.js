@@ -179,7 +179,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     it('mouse click on a cell, moves selection and focus to that cell', () => {
       clickCell(3, 1);
 
-      Terra.validates.element('selection-3-1-focus-3-1', { selector });
+      Terra.validates.element('selection-3-1-focus-3-1-with-hover', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
@@ -312,7 +312,23 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     it('masked cells in worklist data grid', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-masked-cell');
 
-      Terra.validates.element('masked-cell', { selector });
+      Terra.validates.element('masked-cell', '#terra-worklist-data-grid-masked-cell');
+    });
+
+    it('hover over selectable cell in worklist data grid', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-selections');
+
+      browser.$$('td[class*="worklist-data-grid-cell"][class*="selectable"]')[0].moveTo();
+      browser.pause(2000);
+      Terra.validates.element('hover-selectable-cell', '#terra-worklist-data-grid-with-selections');
+    });
+
+    it('hover over non-selectable cell in worklist data grid', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-selections');
+
+      browser.$$('td[class*="worklist-data-grid-cell"]:not([class*="selectable"])')[0].moveTo();
+      browser.pause(2000);
+      Terra.validates.element('hover-non-selectable-cell', '#terra-worklist-data-grid-with-selections');
     });
   });
 });

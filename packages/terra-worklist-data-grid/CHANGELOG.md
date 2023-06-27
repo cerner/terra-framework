@@ -1,12 +1,13 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Removed ability to set variable row heights
+  * Updated styling on cell focus.
 * Added
   * Added masked cell support.
-
-* Changed
-  * Removed ability to set variable row heights.
-  * Updated styling on cell focus.
+  * Added hover state for selectable cells.
+  * Added blank cell support.
 
 * Added
     * Initial stable release
