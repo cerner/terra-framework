@@ -7,6 +7,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
+import cellShape from '../proptypes/cellShape';
 
 const cx = classNames.bind(styles);
 
@@ -29,6 +30,10 @@ const propTypes = {
   }),
 
   /**
+   * The information about the cell.
+   */
+  cell: cellShape.isRequired,
+  /**
    * Boolean value to indicate if the cell is the tab stop on the grid. At any given time, the grid has only one tab stop.
    */
   isTabStop: PropTypes.bool,
@@ -37,25 +42,14 @@ const propTypes = {
    * Boolean indicating whether the Cell is currently selected.
    */
   isSelected: PropTypes.bool,
-
-  /**
-   * Boolean indicating if the cell is masked.
-   */
-  isMasked: PropTypes.bool,
-
   /**
    * String that labels the cell for accessibility.
    */
   ariaLabel: PropTypes.string,
-
   /**
    * Boolean indicating that the cell is a row header
    */
   isRowHeader: PropTypes.bool,
-  /**
-   * Content that will rendered within the Cell.
-   */
-  children: PropTypes.node,
   /**
    * Boolean indicating whether the cell is a row selection cell.
    */
@@ -64,8 +58,6 @@ const propTypes = {
    * Callback function that will be called when this cell is selected.
    */
   onCellSelect: PropTypes.func,
-
-  isSelectable: PropTypes.bool,
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
@@ -85,14 +77,12 @@ function Cell(props) {
     columnId,
     coordinates,
     isTabStop,
-    isSelected,
-    isMasked,
-    isRowSelectionCell,
     ariaLabel,
+    isRowSelectionCell,
     isRowHeader,
-    children,
+    isSelected,
+    cell,
     onCellSelect,
-    isSelectable,
     intl,
   } = props;
 
@@ -119,33 +109,37 @@ function Cell(props) {
     }
   };
 
+  const handleCopy = (event) => {
+    WorklistDataGridUtils.writeToClipboard(event.target.textContent);
+  };
+
   let cellAriaLabel = ariaLabel;
-  if (isMasked) {
+  if (cell.isMasked) {
     cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' });
-  } else if (!children) {
+  } else if (!cell.content) {
     cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' });
   }
 
   const className = isRowSelectionCell ? 'row-selection-cell'
     : ['worklist-data-grid-cell',
-      { masked: isMasked, selectable: !(isMasked || isSelectable === false) },
-      { 'worklist-data-grid-cell-selected': (isSelected && !isMasked) },
-      { blank: !children },
+      { masked: cell.isMasked, selectable: !(cell.isMasked || cell.isSelectable === false) },
+      { 'worklist-data-grid-cell-selected': (isSelected && !cell.isMasked) },
+      { blank: !cell.content },
     ];
 
   const CellTag = isRowHeader ? 'th' : 'td';
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <CellTag
-      aria-selected={isSelected ? true : undefined}
+      aria-selected={isSelected}
       aria-label={cellAriaLabel}
       tabIndex={isTabStop ? 0 : -1}
       className={cx(className, theme.className)}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      onCopy={!isRowSelectionCell ? WorklistDataGridUtils.copyCellContent : undefined}
+      onCopy={!isRowSelectionCell ? handleCopy : undefined}
     >
-      {isRowSelectionCell ? children : (!isMasked && children && <div className={cx('cell-content', theme.className)}>{children}</div>)}
+      {isRowSelectionCell ? cell.content : (!cell.isMasked && cell.content && <div className={cx('cell-content', theme.className)}>{cell.content}</div>)}
     </CellTag>
   );
 }

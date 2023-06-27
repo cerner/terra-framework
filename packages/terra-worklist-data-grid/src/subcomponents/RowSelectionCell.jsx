@@ -34,7 +34,7 @@ const propTypes = {
   isSelected: PropTypes.bool,
 
   /**
-   * String that labels the cell for accessibility.
+   * String that labels the Row for accessibility. When a row is selected, this is the label that will be read.
    */
   ariaLabel: PropTypes.string,
   /**
@@ -62,6 +62,16 @@ function RowSelectionCell(props) {
 
   const rowLabel = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-index' }, { row: coordinates.row });
 
+  const selectionCheckbox = (
+    <input
+      type="checkbox"
+      aria-label={ariaLabel || rowLabel}
+      aria-checked={isSelected}
+      tabIndex={isTabStop ? 0 : -1}
+      checked={isSelected}
+    />
+  );
+
   return (
     <Cell
       rowId={rowId}
@@ -72,15 +82,10 @@ function RowSelectionCell(props) {
       isSelected={isSelected}
       isRowSelectionCell
       onCellSelect={onCellSelect}
-    >
-      <input
-        type="checkbox"
-        aria-label={ariaLabel || rowLabel}
-        aria-checked={isSelected}
-        tabIndex={isTabStop ? 0 : -1}
-        checked={isSelected}
-      />
-    </Cell>
+      cell={{
+        isSelectable: true, isMasked: false, content: selectionCheckbox,
+      }}
+    />
   );
 }
 

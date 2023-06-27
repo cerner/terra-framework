@@ -6,14 +6,15 @@ import '../_elementPolyfill';
 import * as KeyCode from 'keycode-js';
 import styles from './ColumnHeaderCell.module.scss';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
+import columnShape from '../proptypes/columnShape';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * String identifier of the column in which the Cell will be rendered.
+   * The information for the column.
    */
-  columnId: PropTypes.string.isRequired,
+  column: columnShape.isRequired,
   /**
    * The coordinates of the cell within the grid.
    */
@@ -26,19 +27,14 @@ const propTypes = {
    */
   isTabStop: PropTypes.bool,
   /**
-   * String that specifies the width of the column. Any valid CSS width value is accepted.
-   */
-  width: PropTypes.string,
-  /**
-   * Content that will rendered within the Cell.
-   */
-  children: PropTypes.node,
-  /**
    * Callback function that is called when a column is selected.
    */
   onColumnSelect: PropTypes.func,
-
-  isSelectable: PropTypes.bool,
+  /**
+   * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
+   * To override the default value, provide width for the column that needs to be overridden.
+   */
+  defaultWidth: PropTypes.string,
 };
 
 const defaultProps = {
@@ -47,20 +43,18 @@ const defaultProps = {
 
 function ColumnHeaderCell(props) {
   const {
-    columnId,
     coordinates,
     isTabStop,
-    width,
     onColumnSelect,
-    children,
-    isSelectable,
+    column,
+    defaultWidth,
   } = props;
 
   const theme = useContext(ThemeContext);
 
   const handleClick = (event) => {
     if (onColumnSelect) {
-      onColumnSelect(columnId, coordinates);
+      onColumnSelect(column.id, coordinates);
       event.stopPropagation();
     }
   };
@@ -70,7 +64,7 @@ function ColumnHeaderCell(props) {
     switch (key) {
       case KeyCode.KEY_SPACE:
         if (onColumnSelect) {
-          onColumnSelect(columnId, coordinates);
+          onColumnSelect(column.id, coordinates);
           event.stopPropagation();
           event.preventDefault(); // prevent the default scrolling
         }
@@ -79,17 +73,22 @@ function ColumnHeaderCell(props) {
     }
   };
 
+  const handleCopy = (event) => {
+    WorklistDataGridUtils.writeToClipboard(event.target.textContent);
+  };
+
+  const width = (column.width || defaultWidth) ? `${column.width || defaultWidth}px` : undefined;
   return (
     <th
-      className={cx('worklist-data-grid-column-header', { selectable: !(isSelectable === false) }, theme.className)}
+      className={cx('worklist-data-grid-column-header', { selectable: !(column.isSelectable === false) }, theme.className)}
       tabIndex={isTabStop ? 0 : -1}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ width }}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      onCopy={WorklistDataGridUtils.copyCellContent}
+      onCopy={handleCopy}
     >
-      {children}
+      {column.displayName}
     </th>
   );
 }

@@ -14,11 +14,6 @@ const columnShape = PropTypes.shape({
   */
   isSelectable: PropTypes.bool,
   /**
-   * Boolean value indicating whether or not the cell is tab stop for the grid.
-   */
-  isTabStop: PropTypes.bool,
-
-  /**
    * A number (in px) specifying the width of the column. If not provided, the DataGrid's default column width will be used.
    */
   width: PropTypes.number,

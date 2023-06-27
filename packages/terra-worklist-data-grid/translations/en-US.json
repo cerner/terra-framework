@@ -11,7 +11,5 @@
   "Terra.worklist-data-grid.row-selection-mode-disabled": "Row Selection Mode disabled",
   "Terra.worklist-data-grid.all-rows-selected" : "All rows selected",
   "Terra.worklist-data-grid.all-rows-unselected" : "All rows unselected",
-  "Terra.worklist-data-grid.row-index" : "Row {row}",
-  "Terra.worklist-data-grid.navigation.enabled" : "Grid Navigation enabled.",
-  "Terra.worklist-data-grid.navigation.disabled" : "Grid Navigation disabled. To enable, press the Escape."
+  "Terra.worklist-data-grid.row-index" : "Row {row}"
 }
