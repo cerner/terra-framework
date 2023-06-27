@@ -114,23 +114,23 @@ class Menu extends React.Component {
   push(item) {
     this.setState((prevState) => {
       const newStack = prevState.stack.slice();
-      let newValue = {};
+      let updatedStack = {};
       if (newStack.length - 1 >= 1) {
-        newValue = newStack[0].props.children.filter((list) => list.props.subMenuItems && !list.props.isDisabled);
-        newValue = this.recursiveFunction(newValue, item.key);
-      } else newValue = item;
-      newStack.push(newValue);
+        updatedStack = newStack[0].props.children.filter((list) => list.props.subMenuItems && !list.props.isDisabled);
+        updatedStack = this.recursiveFunction(updatedStack, item.key);
+      } else updatedStack = item;
+      newStack.push(updatedStack);
       return { stack: newStack };
     });
   }
 
-  recursiveFunction(newValue, key) {
-    for (let i = 0; i < newValue.length; i += 1) {
-      if (newValue[i].key === key) {
-        return newValue[i];
+  recursiveFunction(updatedStack, key) {
+    for (let i = 0; i < updatedStack.length; i += 1) {
+      if (updatedStack[i].key === key) {
+        return updatedStack[i];
       }
-      if (newValue[i].props.subMenuItems) {
-        const result = this.recursiveFunction(newValue[i].props.subMenuItems, key);
+      if (updatedStack[i].props.subMenuItems) {
+        const result = this.recursiveFunction(updatedStack[i].props.subMenuItems, key);
         if (result) {
           return result;
         }

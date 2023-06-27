@@ -31,17 +31,17 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
     });
   });
 
-  describe('Menu Navigate to nested sub menu when click', () => {
-    it('Selected item on nested menus are retained while navigating back and forth between them', () => {
+  describe('Menu navigation to nested sub menu when clicked', () => {
+    it('retains selected item on nested menus while navigating back and forth between them', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/selectable-and-unselectable-items-menu');
-      $('.subMenu1').click();
-      expect($('.testNestedItem1').isFocused());
-      $('.subMenu2').click();
-      expect($('.testNestedItem2').isFocused());
-      $('.testNestedItem2').click();
+      $('[class*=subMenu1]').click();
+      expect($('.testNestedItem1').isFocused()).toBeTruthy();
+      $('[class*=subMenu2]').click();
+      expect($('.testNestedItem2').isFocused()).toBeTruthy();
+      $('[class*=testNestedItem2]').click();
       Terra.validates.element('selected via click');
       $('[role="button"][aria-label="Back"]').click();
-      $('.subMenu2').click();
+      $('[class*=subMenu2]').click();
       expect($('li:first-child[aria-checked="true"][role="menuitemcheckbox"]').isFocused()).toBeTruthy();
     });
   });
