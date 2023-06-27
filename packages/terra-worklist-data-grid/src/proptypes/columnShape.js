@@ -10,9 +10,9 @@ const columnShape = PropTypes.shape({
    */
   displayName: PropTypes.string,
   /**
-   * Boolean value indicating whether or not the cell can accept focus.
+   * Boolean value indicating whether or not the column header is selectable.
    */
-  acceptsFocus: PropTypes.bool,
+  isSelectable: PropTypes.bool,
 });
 
 export default columnShape;

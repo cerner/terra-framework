@@ -16,7 +16,7 @@
       "cells": [
         { "content": "Heart Rate Monitored (bpm)"},
         { "content": "68"},
-        { "content": "66"},
+        { },
         { "content": "67"},
         { "content": "120"},
         { "content": "69"},
@@ -27,18 +27,19 @@
       ]
     },
     {
+      "height": "150px",
       "id": "2",
       "cells": [
         { "content": "Temperature Oral (degC)"},
-        { "content": "36.7" },
-        { "content": "36.9" },
-        { "content": "37" },
-        { "content": "35.2" },
-        { "content": "35" },
-        { "content": "36" },
-        { "content": "35.8" },
-        { "content": "36.7" },
-        { "content": "35.6" }
+        { "content": "36.7", "isMasked":true },
+        { "content": "36.9", "isMasked":true },
+        { "content": "37", "isMasked":true },
+        { "content": "35.2", "isMasked":true },
+        { "content": "35", "isMasked":true },
+        { "content": "36", "isMasked":true },
+        { "content": "35.8", "isMasked":true },
+        { "content": "36.7", "isMasked":true },
+        { "content": "35.6", "isMasked":true }
       ]
     },
     {
@@ -59,7 +60,7 @@
     {
       "id": "4",
       "cells": [
-        { "content": "ICP (mmHg)"},
+        { "content": "ICP (mmHg)", "isMasked":true},
         { "content": "11" },
         { "content": "11" },
         { "content": "12" },
@@ -105,15 +106,15 @@
       "id": "7",
       "cells": [
         { "content": "SpO2 (%)"},
-        { "content": "97" },
-        { "content": "97.2" },
-        { "content": "96.3" },
-        { "content": "97.4" },
-        { "content": "98.5" },
-        { "content": "97.6" },
-        { "content": "96.7" },
-        { "content": "97.8" },
-        { "content": "96.9" }
+        { "content": "97", "isMasked":true },
+        { "content": "97.2", "isMasked":true },
+        { "content": "96.3", "isMasked":true },
+        { "content": "97.4", "isMasked":true },
+        { "content": "98.5", "isMasked":true },
+        { "content": "97.6", "isMasked":true },
+        { "content": "96.7", "isMasked":true },
+        { "content": "97.8", "isMasked":true },
+        { "content": "96.9", "isMasked":true }
       ]
     },
     {
