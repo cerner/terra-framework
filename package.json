@@ -64,7 +64,7 @@
     "jest:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "jest:coverage": "jest --coverage",
     "lint": "npm run lint:js && npm run lint:scss && npm run lint:package-json",
-    "lint:js": "eslint --ext .js,.jsx .",
+    "lint:js": "eslint --ext .js,.jsx . --max-warnings 0",
     "lint:js:fix": "eslint --ext .js,.jsx . --fix",
     "lint:package-json": "terra package-json-lint",
     "lint:scss": "stylelint 'packages/**/src/**/*.scss' --syntax scss",
