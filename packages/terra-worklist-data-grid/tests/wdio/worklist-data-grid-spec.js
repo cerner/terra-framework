@@ -33,6 +33,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowUp'))
         .concat(new Array(2).fill('ArrowLeft')));
 
+      browser.pause(150);
       Terra.validates.element('arrow-key-navigation', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -42,6 +43,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(1).fill('ArrowDown'))
         .concat(new Array(3).fill('ArrowUp')));
 
+      browser.pause(150);
       Terra.validates.element('first-cell-in-grid-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -52,6 +54,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowUp'))
         .concat(new Array(3).fill('ArrowLeft')));
 
+      browser.pause(150);
       Terra.validates.element('first-cell-in-grid-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -62,6 +65,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowRight'))
         .concat(['Control', 'Home', 'Control']));
 
+      browser.pause(150);
       Terra.validates.element('first-non-column-header-cell-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -72,6 +76,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowRight'))
         .concat(['Home']));
 
+      browser.pause(150);
       Terra.validates.element('first-cell-in-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -82,6 +87,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowRight'))
         .concat(['End']));
 
+      browser.pause(150);
       Terra.validates.element('last-cell-in-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -92,6 +98,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowRight'))
         .concat(['Control', 'End', 'Control']));
 
+      browser.pause(150);
       Terra.validates.element('last-cell-in-last-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -101,6 +108,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(['Control', 'End', 'Control'])
         .concat(new Array(3).fill('ArrowDown')));
 
+      browser.pause(150);
       Terra.validates.element('last-cell-in-last-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -110,6 +118,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(['Control', 'End', 'Control'])
         .concat(new Array(3).fill('ArrowRight')));
 
+      browser.pause(150);
       Terra.validates.element('last-cell-in-last-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
