@@ -1,6 +1,6 @@
 // Themes
-@import './orion-fusion-theme/HeaderCell.module';
-@import './clinical-lowlight-theme/HeaderCell.module';
+@import './orion-fusion-theme/ColumnHeaderCell.module';
+@import './clinical-lowlight-theme/ColumnHeaderCell.module';
 
 :local {
   .column-header {
@@ -26,5 +26,11 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+  }
+
+  // Hover state for selectable elements
+  .selectable:hover {
+    background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
+    cursor: pointer;
   }
 }

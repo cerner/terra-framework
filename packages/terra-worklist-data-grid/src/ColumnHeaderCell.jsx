@@ -7,7 +7,7 @@ import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import './_elementPolyfill';
-import styles from './HeaderCell.module.scss';
+import styles from './ColumnHeaderCell.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -36,7 +36,7 @@ const propTypes = {
   intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
-const HeaderCell = (props) => {
+const ColumnHeaderCell = (props) => {
   const {
     column,
     width,
@@ -62,12 +62,12 @@ const HeaderCell = (props) => {
   /* eslint-disable react/forbid-dom-props */
     <th
       key={column.id}
-      className={cx('column-header')}
+      className={cx('column-header', { selectable: !(column.isSelectable === false) })}
       tabIndex="-1"
       role="columnheader"
       scope="col"
       aria-sort={column.sortIndicator}
-      {...(column.isSelectable && onColumnSelect && { onClick: () => { onColumnSelect(column.id); } })}
+      {...(!(column.isSelectable === false) && onColumnSelect && { onClick: () => { onColumnSelect(column.id); } })}
       style={{ width, height: headerHeight }}
     >
       <div className={cx('header-container')}>
@@ -81,5 +81,5 @@ const HeaderCell = (props) => {
   );
 };
 
-HeaderCell.propTypes = propTypes;
-export default injectIntl(HeaderCell);
+ColumnHeaderCell.propTypes = propTypes;
+export default injectIntl(ColumnHeaderCell);

@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
-import HeaderCell from './HeaderCell';
+import ColumnHeaderCell from './ColumnHeaderCell';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import './_elementPolyfill';
 import styles from './WorklistDataGrid.module.scss';
@@ -195,17 +195,8 @@ function WorklistDataGrid(props) {
     );
   };
 
-  // const buildColumn = (column) => {
-  //   const width = column.width || props.columnWidth;
-  //   const height = props.columnHeaderHeight;
-  //   return (
-  //     /* eslint-disable react/forbid-dom-props */
-  //     <th key={column.id} className={cx('worklist-data-grid-column-header', { selectable: !(column.isSelectable === false) })} tabIndex="-1" style={{ width, height }}>{column.displayName}</th>
-  //   );
-  // };
-
   const buildColumn = (column) => (
-    <HeaderCell
+    <ColumnHeaderCell
       column={column}
       width={column.width || props.columnWidth}
       headerHeight={columnHeaderHeight}
@@ -216,7 +207,7 @@ function WorklistDataGrid(props) {
   const buildColumns = (allColumns) => {
     if (allColumns?.length > 0) {
       return (
-        <tr height={props.columnHeaderHeight}>
+        <tr key={`${id}-column-header`} height={props.columnHeaderHeight}>
           {allColumns.map(column => (buildColumn(column)))}
         </tr>
       );

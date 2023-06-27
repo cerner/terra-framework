@@ -17,31 +17,6 @@
     height: 100%;
   }
 
-  .worklist-data-grid-column-header {
-    background-color: var(--terra-worklist-data-grid-column-header-background-color, #dedfe0);
-    border: var(--terra-worklist-data-grid-column-header-border, 1px solid #000);
-    color: var(--terra-worklist-data-grid-column-header-text-color);
-
-    .header-container {
-      display: flex;
-      align-items: center;
-      width:100%;
-      height: 100%;
-      padding: var(--terra-worklist-data-grid-header-padding, 5px);
-    }
-
-    button {
-      flex: 1;
-      font-weight: normal;
-      background: transparent;
-      outline: none;
-      border: none;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
-
   .worklist-data-grid-cell {
     border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
     font-weight: normal;
