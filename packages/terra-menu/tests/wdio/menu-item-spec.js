@@ -34,6 +34,7 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
   describe('Menu navigation to nested sub menu when clicked', () => {
     it('retains selected item on nested menus while navigating back and forth between them', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/selectable-and-unselectable-items-menu');
+      $('#default-button').click();
       $('[class*=subMenu1]').click();
       expect($('.testNestedItem1').isFocused()).toBeTruthy();
       $('[class*=subMenu2]').click();
