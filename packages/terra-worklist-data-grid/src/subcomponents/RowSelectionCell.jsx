@@ -82,9 +82,7 @@ function RowSelectionCell(props) {
       isSelected={isSelected}
       isRowSelectionCell
       onCellSelect={onCellSelect}
-      cell={{
-        isSelectable: true, isMasked: false, content: selectionCheckbox,
-      }}
+      cell={{ content: selectionCheckbox }}
     />
   );
 }

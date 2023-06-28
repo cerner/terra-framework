@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell renders a blank cell 1`] = `
+<td
+  aria-label="Terra.worklistDataGrid.blank"
+  aria-selected={false}
+  className="worklist-data-grid-cell selectable blank"
+  onCopy={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  tabIndex={-1}
+/>
+`;
+
+exports[`Cell renders a mask cell 1`] = `
+<td
+  aria-label="Terra.worklistDataGrid.maskedCell"
+  aria-selected={false}
+  className="worklist-data-grid-cell masked"
+  onCopy={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  tabIndex={-1}
+/>
+`;
+
+exports[`Cell renders a non row header cell 1`] = `
+<td
+  aria-selected={false}
+  className="worklist-data-grid-cell selectable"
+  onCopy={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  tabIndex={-1}
+>
+  <div
+    className="cell-content"
+  >
+    Data in cell
+  </div>
+</td>
+`;
+
+exports[`Cell renders a row header cell 1`] = `
+<th
+  aria-selected={false}
+  className="worklist-data-grid-cell selectable"
+  onCopy={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  tabIndex={-1}
+>
+  <div
+    className="cell-content"
+  >
+    Data in cell
+  </div>
+</th>
+`;
+
+exports[`Cell renders a selectable cell 1`] = `
+<td
+  aria-selected={false}
+  className="worklist-data-grid-cell selectable"
+  onCopy={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  tabIndex={-1}
+>
+  <div
+    className="cell-content"
+  >
+    Data in cell
+  </div>
+</td>
+`;

@@ -1,373 +1,592 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 cells 1`] = `
-<table
-  className="worklist-data-grid"
-  id="test-terra-worklist-data-grid"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  role="grid"
->
-  <tbody>
-    <tr>
-      <th
-        className="worklist-data-grid-column-header"
-        key="Column-0"
-        style={
+exports[`WorklistDataGrid renders a grid with 1 header row with 3 columns and 3 data rows each with 3 cells 1`] = `
+<Fragment>
+  <table
+    className="worklist-data-grid"
+    id="test-terra-worklist-data-grid"
+    onKeyDown={[Function]}
+    role="grid"
+  >
+    <tbody>
+      <tr>
+        <ColumnHeaderCell
+          column={
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            }
+          }
+          coordinates={
+            Object {
+              "col": 0,
+              "row": 0,
+            }
+          }
+          isTabStop={true}
+          key="Column-0"
+          onColumnSelect={[Function]}
+        />
+        <ColumnHeaderCell
+          column={
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            }
+          }
+          coordinates={
+            Object {
+              "col": 1,
+              "row": 0,
+            }
+          }
+          isTabStop={false}
+          key="Column-1"
+          onColumnSelect={[Function]}
+        />
+        <ColumnHeaderCell
+          column={
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            }
+          }
+          coordinates={
+            Object {
+              "col": 2,
+              "row": 0,
+            }
+          }
+          isTabStop={false}
+          key="Column-2"
+          onColumnSelect={[Function]}
+        />
+      </tr>
+      <Row
+        displayedColumns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            },
+          ]
+        }
+        hasSelectableRows={false}
+        key="1"
+        onCellSelect={[Function]}
+        onRowSelect={[Function]}
+        row={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "cells": Array [
+              Object {
+                "content": "Heart Rate Monitored (bpm)",
+              },
+              Object {
+                "content": "",
+              },
+              Object {
+                "content": "66",
+                "isMasked": true,
+              },
+            ],
+            "id": "1",
           }
         }
-        tabIndex="-1"
-      >
-         Vitals
-      </th>
-      <th
-        className="worklist-data-grid-column-header"
-        key="Column-1"
-        style={
+        rowHeaderIndex={0}
+        rowIndex={1}
+      />
+      <Row
+        displayedColumns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            },
+          ]
+        }
+        hasSelectableRows={false}
+        key="2"
+        onCellSelect={[Function]}
+        onRowSelect={[Function]}
+        row={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "cells": Array [
+              Object {
+                "content": "Temperature Oral (degC)",
+              },
+              Object {
+                "content": "36.7",
+              },
+              Object {
+                "content": "36.9",
+                "isMasked": true,
+              },
+            ],
+            "id": "2",
           }
         }
-        tabIndex="-1"
-      >
-        March 16
-      </th>
-      <th
-        className="worklist-data-grid-column-header"
-        key="Column-2"
-        style={
+        rowHeaderIndex={0}
+        rowIndex={2}
+      />
+      <Row
+        displayedColumns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            },
+          ]
+        }
+        hasSelectableRows={false}
+        key="3"
+        onCellSelect={[Function]}
+        onRowSelect={[Function]}
+        row={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "cells": Array [
+              Object {
+                "content": "Cardiac Index (L/min/m2)",
+              },
+              Object {
+                "content": "2.25",
+              },
+              Object {
+                "content": "2.28",
+                "isMasked": true,
+              },
+            ],
+            "id": "3",
           }
         }
-        tabIndex="-1"
-      >
-        March 17
-      </th>
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="1"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          Heart Rate Monitored (bpm)
-        </div>
-      </th>
-      <td
-        className="worklist-data-grid-cell"
-        key="1"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          68
-        </div>
-      </td>
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          66
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="2"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          Temperature Oral (degC)
-        </div>
-      </th>
-      <td
-        className="worklist-data-grid-cell"
-        key="1"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          36.7
-        </div>
-      </td>
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          36.9
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="3"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          Cardiac Index (L/min/m2)
-        </div>
-      </th>
-      <td
-        className="worklist-data-grid-cell"
-        key="1"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          2.25
-        </div>
-      </td>
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          2.28
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        rowHeaderIndex={0}
+        rowIndex={3}
+      />
+    </tbody>
+  </table>
+  <VisuallyHiddenText
+    aria-live="polite"
+  />
+</Fragment>
 `;
 
-exports[`WorklistDataGrid test masked cells 1`] = `
-<table
-  className="worklist-data-grid"
-  id="test-terra-worklist-data-grid"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  role="grid"
->
-  <tbody>
-    <tr>
-      <th
-        className="worklist-data-grid-column-header"
-        key="Column-0"
-        style={
+exports[`WorklistDataGrid verifies props 1`] = `
+<Fragment>
+  <table
+    className="worklist-data-grid"
+    id="test-terra-worklist-data-grid"
+    onKeyDown={[Function]}
+    role="grid"
+  >
+    <tbody>
+      <tr>
+        <ColumnHeaderCell
+          column={
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            }
+          }
+          coordinates={
+            Object {
+              "col": 0,
+              "row": 0,
+            }
+          }
+          isTabStop={true}
+          key="Column-0"
+          onColumnSelect={[Function]}
+        />
+        <ColumnHeaderCell
+          column={
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            }
+          }
+          coordinates={
+            Object {
+              "col": 1,
+              "row": 0,
+            }
+          }
+          isTabStop={false}
+          key="Column-1"
+          onColumnSelect={[Function]}
+        />
+        <ColumnHeaderCell
+          column={
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            }
+          }
+          coordinates={
+            Object {
+              "col": 2,
+              "row": 0,
+            }
+          }
+          isTabStop={false}
+          key="Column-2"
+          onColumnSelect={[Function]}
+        />
+      </tr>
+      <Row
+        displayedColumns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            },
+          ]
+        }
+        hasSelectableRows={false}
+        key="1"
+        onCellSelect={[Function]}
+        onRowSelect={[Function]}
+        row={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "cells": Array [
+              Object {
+                "content": "Heart Rate Monitored (bpm)",
+              },
+              Object {
+                "content": "",
+              },
+              Object {
+                "content": "66",
+                "isMasked": true,
+              },
+            ],
+            "id": "1",
           }
         }
-        tabIndex="-1"
-      >
-         Vitals
-      </th>
-      <th
-        className="worklist-data-grid-column-header"
-        key="Column-1"
-        style={
+        rowHeaderIndex={0}
+        rowIndex={1}
+      />
+      <Row
+        displayedColumns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            },
+          ]
+        }
+        hasSelectableRows={false}
+        key="2"
+        onCellSelect={[Function]}
+        onRowSelect={[Function]}
+        row={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "cells": Array [
+              Object {
+                "content": "Temperature Oral (degC)",
+              },
+              Object {
+                "content": "36.7",
+              },
+              Object {
+                "content": "36.9",
+                "isMasked": true,
+              },
+            ],
+            "id": "2",
           }
         }
-        tabIndex="-1"
-      >
-        March 16
-      </th>
-      <th
-        className="worklist-data-grid-column-header"
-        key="Column-2"
-        style={
+        rowHeaderIndex={0}
+        rowIndex={2}
+      />
+      <Row
+        displayedColumns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            },
+          ]
+        }
+        hasSelectableRows={false}
+        key="3"
+        onCellSelect={[Function]}
+        onRowSelect={[Function]}
+        row={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "cells": Array [
+              Object {
+                "content": "Cardiac Index (L/min/m2)",
+              },
+              Object {
+                "content": "2.25",
+              },
+              Object {
+                "content": "2.28",
+                "isMasked": true,
+              },
+            ],
+            "id": "3",
           }
         }
-        tabIndex="-1"
-      >
-        March 17
-      </th>
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="1"
-      style={
-        Object {
-          "height": undefined,
+        rowHeaderIndex={0}
+        rowIndex={3}
+      />
+    </tbody>
+  </table>
+  <VisuallyHiddenText
+    aria-live="polite"
+  />
+</Fragment>
+`;
+
+exports[`WorklistDataGrid verifies the row is created with the right props 1`] = `
+<Fragment>
+  <table
+    className="worklist-data-grid"
+    id="test-terra-worklist-data-grid"
+    onKeyDown={[Function]}
+    role="grid"
+  >
+    <tbody>
+      <tr>
+        <ColumnHeaderCell
+          column={
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            }
+          }
+          coordinates={
+            Object {
+              "col": 0,
+              "row": 0,
+            }
+          }
+          isTabStop={true}
+          key="Column-0"
+          onColumnSelect={[Function]}
+        />
+        <ColumnHeaderCell
+          column={
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            }
+          }
+          coordinates={
+            Object {
+              "col": 1,
+              "row": 0,
+            }
+          }
+          isTabStop={false}
+          key="Column-1"
+          onColumnSelect={[Function]}
+        />
+        <ColumnHeaderCell
+          column={
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            }
+          }
+          coordinates={
+            Object {
+              "col": 2,
+              "row": 0,
+            }
+          }
+          isTabStop={false}
+          key="Column-2"
+          onColumnSelect={[Function]}
+        />
+      </tr>
+      <Row
+        displayedColumns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            },
+          ]
         }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          Heart Rate Monitored (bpm)
-        </div>
-      </th>
-      <td
-        className="worklist-data-grid-cell"
+        hasSelectableRows={false}
         key="1"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          68
-        </div>
-      </td>
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          66
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="2"
-      style={
-        Object {
-          "height": undefined,
+        onCellSelect={[Function]}
+        onRowSelect={[Function]}
+        row={
+          Object {
+            "cells": Array [
+              Object {
+                "content": "Heart Rate Monitored (bpm)",
+              },
+              Object {
+                "content": "",
+              },
+              Object {
+                "content": "66",
+                "isMasked": true,
+              },
+            ],
+            "id": "1",
+          }
         }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          Temperature Oral (degC)
-        </div>
-      </th>
-      <td
-        className="worklist-data-grid-cell"
-        key="1"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          36.7
-        </div>
-      </td>
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
-        key="2"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          36.9
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="3"
-      style={
-        Object {
-          "height": undefined,
+        rowHeaderIndex={0}
+        rowIndex={1}
+      />
+      <Row
+        displayedColumns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            },
+          ]
         }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell"
-        key="0"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          Cardiac Index (L/min/m2)
-        </div>
-      </th>
-      <td
-        className="worklist-data-grid-cell"
-        key="1"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          2.25
-        </div>
-      </td>
-      <td
-        aria-label="Terra.worklistDataGrid.maskedCell"
-        className="worklist-data-grid-cell masked"
+        hasSelectableRows={false}
         key="2"
-        tabIndex="-1"
-      >
-        <div
-          className="cell-content"
-        >
-          2.28
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        onCellSelect={[Function]}
+        onRowSelect={[Function]}
+        row={
+          Object {
+            "cells": Array [
+              Object {
+                "content": "Temperature Oral (degC)",
+              },
+              Object {
+                "content": "36.7",
+              },
+              Object {
+                "content": "36.9",
+                "isMasked": true,
+              },
+            ],
+            "id": "2",
+          }
+        }
+        rowHeaderIndex={0}
+        rowIndex={2}
+      />
+      <Row
+        displayedColumns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            },
+          ]
+        }
+        hasSelectableRows={false}
+        key="3"
+        onCellSelect={[Function]}
+        onRowSelect={[Function]}
+        row={
+          Object {
+            "cells": Array [
+              Object {
+                "content": "Cardiac Index (L/min/m2)",
+              },
+              Object {
+                "content": "2.25",
+              },
+              Object {
+                "content": "2.28",
+                "isMasked": true,
+              },
+            ],
+            "id": "3",
+          }
+        }
+        rowHeaderIndex={0}
+        rowIndex={3}
+      />
+    </tbody>
+  </table>
+  <VisuallyHiddenText
+    aria-live="polite"
+  />
+</Fragment>
 `;

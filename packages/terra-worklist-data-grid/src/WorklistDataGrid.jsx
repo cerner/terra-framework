@@ -127,7 +127,6 @@ function WorklistDataGrid(props) {
     hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
   );
 
-  const isTabStop = (rowIndex, colIndex) => (rowIndex === focusedRow.current && colIndex === focusedCol.current);
   const isCellSelected = (rowId, columnId) => (currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId);
 
   const setFocus = (rowIndex, colIndex, makeActive) => {
@@ -385,8 +384,8 @@ function WorklistDataGrid(props) {
       rowHeaderIndex={rowHeaderIndex}
       onCellSelect={handleCellSelection}
       onRowSelect={handleRowSelection}
-      isTabStop={isTabStop}
-      isCellSelected={isCellSelected}
+      tabStopColumnIndex={focusedRow.current === rowIndex ? focusedCol.current : undefined}
+      selectedCellColumnId={(currentSelectedCell?.rowId === row.id) ? currentSelectedCell?.columnId : undefined}
     />
   );
 

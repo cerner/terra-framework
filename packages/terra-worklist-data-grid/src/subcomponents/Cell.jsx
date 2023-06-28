@@ -16,7 +16,6 @@ const propTypes = {
    * String identifier of the row in which the Cell will be rendered.
    */
   rowId: PropTypes.string.isRequired,
-
   /**
    * String identifier of the column in which the Cell will be rendered.
    */
@@ -28,7 +27,6 @@ const propTypes = {
     row: PropTypes.number,
     col: PropTypes.number,
   }),
-
   /**
    * The information about the cell.
    */
@@ -37,7 +35,6 @@ const propTypes = {
    * Boolean value to indicate if the cell is the tab stop on the grid. At any given time, the grid has only one tab stop.
    */
   isTabStop: PropTypes.bool,
-
   /**
    * Boolean indicating whether the Cell is currently selected.
    */
@@ -69,6 +66,7 @@ const defaultProps = {
   isTabStop: false,
   isRowSelectionCell: false,
   isRowHeader: false,
+  isSelected: false,
 };
 
 function Cell(props) {
@@ -88,8 +86,11 @@ function Cell(props) {
 
   const theme = useContext(ThemeContext);
 
-  const handleClick = (event) => {
-    if (onCellSelect) {
+  const handleMouseDown = (event) => {
+    if (cell.isMasked || cell.isSelectable === false) {
+      event.stopPropagation();
+      event.preventDefault();
+    } else if (onCellSelect) {
       onCellSelect({ rowId, columnId }, coordinates);
       event.stopPropagation();
     }
@@ -99,7 +100,10 @@ function Cell(props) {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_SPACE:
-        if (onCellSelect) {
+        if (cell.isMasked || cell.isSelectable === false) {
+          event.stopPropagation();
+          event.preventDefault();
+        } else if (onCellSelect) {
           onCellSelect({ rowId, columnId }, coordinates);
           event.stopPropagation();
           event.preventDefault(); // prevent the default scrolling
@@ -120,12 +124,13 @@ function Cell(props) {
     cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' });
   }
 
-  const className = isRowSelectionCell ? 'row-selection-cell'
-    : ['worklist-data-grid-cell',
-      { masked: cell.isMasked, selectable: !(cell.isMasked || cell.isSelectable === false) },
-      { 'worklist-data-grid-cell-selected': (isSelected && !cell.isMasked) },
-      { blank: !cell.content },
-    ];
+  const className = cx('worklist-data-grid-cell', {
+    'row-selection-cell': isRowSelectionCell,
+    masked: cell.isMasked,
+    selectable: !(cell.isMasked || cell.isSelectable === false),
+    selected: (isSelected && !cell.isMasked),
+    blank: !cell.content,
+  }, theme.className);
 
   const CellTag = isRowHeader ? 'th' : 'td';
   return (
@@ -135,7 +140,7 @@ function Cell(props) {
       aria-label={cellAriaLabel}
       tabIndex={isTabStop ? 0 : -1}
       className={cx(className, theme.className)}
-      onClick={handleClick}
+      onMouseDown={handleMouseDown}
       onKeyDown={handleKeyDown}
       onCopy={!isRowSelectionCell ? handleCopy : undefined}
     >

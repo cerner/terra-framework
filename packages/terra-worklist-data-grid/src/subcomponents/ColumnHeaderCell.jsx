@@ -52,7 +52,7 @@ function ColumnHeaderCell(props) {
 
   const theme = useContext(ThemeContext);
 
-  const handleClick = (event) => {
+  const handleMouseDown = (event) => {
     if (onColumnSelect) {
       onColumnSelect(column.id, coordinates);
       event.stopPropagation();
@@ -84,7 +84,7 @@ function ColumnHeaderCell(props) {
       tabIndex={isTabStop ? 0 : -1}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ width }}
-      onClick={handleClick}
+      onMouseDown={handleMouseDown}
       onKeyDown={handleKeyDown}
       onCopy={handleCopy}
     >

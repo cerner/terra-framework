@@ -42,17 +42,18 @@ const propTypes = {
    */
   onCellSelect: PropTypes.func,
   /**
-   * Function to determine if a given Grid coordinates is the current tab stop on the Grid.
-   */
-  isTabStop: PropTypes.func,
-  /**
-   * Function used by the row to determine if a given cell in the row is currently selected.
-   */
-  isCellSelected: PropTypes.func,
-  /**
    * A number indicating which column represents the row header. This is zero based.
    */
   rowHeaderIndex: PropTypes.number,
+  /**
+   * Id of the column in the row that is selected.
+   */
+  selectedCellColumnId: PropTypes.string,
+  /**
+   * Column index of the column in that has focus.
+   */
+  tabStopColumnIndex: PropTypes.number,
+
 };
 
 const defaultProps = {
@@ -69,8 +70,8 @@ function Row(props) {
     rowHeaderIndex,
     onRowSelect,
     onCellSelect,
-    isTabStop,
-    isCellSelected,
+    selectedCellColumnId,
+    tabStopColumnIndex,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -95,8 +96,8 @@ function Row(props) {
         columnId={columnId}
         coordinates={{ row: cellRowIndex, col: cellColumnIndex }}
         key={`${rowId}_${columnId}`}
-        isTabStop={isTabStop(cellRowIndex, cellColumnIndex)}
-        isSelected={isCellSelected(rowId, columnId)}
+        isTabStop={tabStopColumnIndex === cellColumnIndex}
+        isSelected={selectedCellColumnId === columnId}
         cell={cell}
         isRowHeader={isRowHeader}
         onCellSelect={handleCellSelect}
@@ -107,7 +108,7 @@ function Row(props) {
   const columnIndexOffSet = hasSelectableRows ? 1 : 0;
   return (
     <tr
-      className={cx([row.isSelected ? 'worklist-data-grid-row-selected' : 'worklist-data-grid-row', theme.className])}
+      className={cx([row.isSelected ? 'row-selected' : 'worklist-data-grid-row', theme.className])}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ height }}
     >
@@ -116,7 +117,7 @@ function Row(props) {
           rowId={row.id}
           columnId={displayedColumns[0].id}
           coordinates={{ row: rowIndex, col: 0 }}
-          isTabStop={isTabStop(rowIndex, 0)}
+          isTabStop={tabStopColumnIndex === 0}
           isSelected={row.isSelected}
           ariaLabel={row.ariaLabel}
           onCellSelect={handleCellSelect}
