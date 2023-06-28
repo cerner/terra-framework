@@ -3,6 +3,11 @@
 @import './clinical-lowlight-theme/WorklistDataGrid.module';
 
 :local {
+  // .grid-wrapper {
+  //   border-radius: 6px;
+  //   overflow: hidden; /* Clips any scrollbars that appear */
+  // }
+
   .worklist-data-grid [tabIndex='0']:focus {
     outline: var(--terra-worklist-data-grid-cell-focus-outline, 3px dashed #000);
     outline-offset: var(--terra-worklist-data-grid-cell-focus-outline-offset, -2px);
@@ -16,6 +21,7 @@
 
   .worklist-data-grid {
     // Style for the grid itself
+    table-layout: fixed;
     border: var(--terra-worklist-data-grid-border, 1px solid #dedfe0);
     border-collapse: collapse;
     table-layout: fixed;
@@ -26,6 +32,7 @@
     background-color: var(--terra-worklist-data-grid-column-header-background-color, #dedfe0);
     border: var(--terra-worklist-data-grid-column-header-border, 1px solid #000);
     color: var(--terra-worklist-data-grid-column-header-text-color);
+    position: relative;
   }
 
   .worklist-data-grid-cell {
@@ -53,5 +60,24 @@
   // Create gradient background for masked cells
   .masked {
     background: var(--terra-worklist-data-grid-mask-background, repeating-linear-gradient(-45deg, #dedfe0, #dedfe0 3px, transparent 3px, transparent 6px));
+  }
+  
+  .resize-handle {
+    display: block;
+    position: absolute;
+    cursor: col-resize;
+    width: 10px;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    border-right: 2px solid transparent;
+  }
+  
+  .resize-handle:hover {
+    border-color: #ccc;
+  }
+  
+  .resize-handle.active {
+    border-color: #517ea5;
   }
 }
