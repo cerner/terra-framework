@@ -28,6 +28,8 @@ const propTypes = {
    * Title the should be displayed in header.
    */
   title: PropTypes.string,
+
+  id: PropTypes.string,
   /**
    * Callback function for when back button is clicked.
    */
@@ -103,6 +105,7 @@ const defaultProps = {
   isHeightBounded: false,
   headerTitle: '',
   isHidden: false,
+  id: '',
 };
 
 const childContextTypes = {
@@ -306,7 +309,7 @@ class MenuContent extends React.Component {
 
     const backIcon = <IconLeft />;
     let header = <div />;
-
+    const headerId = this.props.id;
     if (this.props.index > 0) {
       header = (
         <>
@@ -318,11 +321,11 @@ class MenuContent extends React.Component {
               onKeyDown={this.onKeyDownBackButton}
               tabIndex="0"
               aria-label={backBtnText}
-              aria-describedby={menuHeaderId}
+              aria-describedby={headerId !== '' ? headerId : menuHeaderId}
             >
               {backIcon}
             </div>
-            <h2 id={menuHeaderId} className={cx('header-title')}>{this.props.title}</h2>
+            <h2 id={headerId !== '' ? headerId : menuHeaderId} className={cx('header-title')}>{this.props.title}</h2>
           </div>
         </>
       );

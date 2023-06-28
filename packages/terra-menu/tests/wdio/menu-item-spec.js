@@ -37,10 +37,12 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
       $('#default-button').click();
       $('[class*=subMenu1]').click();
       expect($('.testNestedItem1').isFocused()).toBeTruthy();
-      $('[class*=testNestedItem1]').click();
+      $('[class*=subMenu2]').click();
+      expect($('.testNestedItem2').isFocused()).toBeTruthy();
+      $('[class*=testNestedItem2]').click();
       Terra.validates.element('selected via click');
       $('[role="button"][aria-label="Back"]').click();
-      $('[class*=subMenu1]').click();
+      $('[class*=subMenu2]').click();
       expect($('li:first-child[aria-checked="true"][role="menuitemcheckbox"]').isFocused()).toBeTruthy();
     });
   });
