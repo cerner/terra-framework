@@ -1,9 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 // eslint-disable no-console
 import React from 'react';
 import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import ColumnHeaderCell from '../../src/ColumnHeaderCell';
 
@@ -54,9 +54,6 @@ describe('WorklistDataGrid', () => {
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
-
-    console.log(columnHeader.props());
-
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
@@ -179,14 +176,14 @@ describe('WorklistDataGrid', () => {
       hasError: true,
     };
 
-    const onColumnSelect = () => {};
+    const mockClick = jest.fn();
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
         column={column}
         width="100px"
         headerHeight="150px"
-        onColumnSelect={onColumnSelect}
+        onColumnSelect={mockClick}
       />,
     ).dive();
 

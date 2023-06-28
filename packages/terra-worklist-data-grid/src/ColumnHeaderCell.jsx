@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
+import ThemeContext from 'terra-theme-context';
 import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
@@ -47,21 +48,26 @@ const ColumnHeaderCell = (props) => {
   let sortIndicatorIcon;
   let errorIcon;
 
+  // Add error icon when column error exists
   if (column.hasError) {
     errorIcon = <IconError a11yLabel={intl.formatMessage({ id: 'Terra.worklistDataGrid.columnError' })} />;
   }
 
+  // Add the sort indicator based on the sort direction
   if (column.sortIndicator === WorklistDataGridPropTypes.SortIndicators.ASCENDING) {
     sortIndicatorIcon = <IconUp />;
   } else if (column.sortIndicator === WorklistDataGridPropTypes.SortIndicators.DESCENDING) {
     sortIndicatorIcon = <IconDown />;
   }
 
+  // Retrieve current theme from context
+  const theme = useContext(ThemeContext);
+
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
       key={column.id}
-      className={cx('column-header', { selectable: !(column.isSelectable === false) })}
+      className={cx('column-header', theme.className, { selectable: !(column.isSelectable === false) })}
       tabIndex="-1"
       role="columnheader"
       scope="col"
