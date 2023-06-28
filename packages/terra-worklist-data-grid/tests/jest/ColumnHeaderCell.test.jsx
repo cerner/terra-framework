@@ -7,7 +7,7 @@ import IconError from 'terra-icon/lib/icon/IconError';
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import ColumnHeaderCell from '../../src/ColumnHeaderCell';
 
-describe('WorklistDataGrid', () => {
+describe('ColumnHeaderCell', () => {
   it('render default column header cell', () => {
     const column = {
       id: 'Column-0',
