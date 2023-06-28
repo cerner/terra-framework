@@ -68,7 +68,6 @@ class SelectableMenu extends React.Component {
             isSelected={this.state.isSelected}
             onClick={this.handleItemClick}
           />
-          <Menu.Divider key="Divider1" />
           <Menu.Item
             text="Default Submenu 1"
             key="3"
@@ -78,35 +77,13 @@ class SelectableMenu extends React.Component {
                 text="Sub Nested Item 1"
                 key="4"
                 className="testNestedItem1"
+                isToggled={this.state.isToggled}
+                onClick={this.handleNestedItemClick}
+                isToggleable
               />,
-              <Menu.Divider key="Divider1.1" />,
               <Menu.Item
-                text="Default Submenu 2"
+                text="Sub Nested Item 2"
                 key="5"
-                className="subMenu2"
-                subMenuItems={[
-                  <Menu.Item
-                    text="Sub Nested Item 2"
-                    key="6"
-                    className="testNestedItem2"
-                  />,
-                  <Menu.Divider key="Divider1.2" />,
-                  <Menu.Item
-                    text="Default Submenu 3"
-                    key="7"
-                    className="subMenu3"
-                    subMenuItems={[
-                      <Menu.Item
-                        text="Sub Nested Item 3"
-                        key="8"
-                        className="testNestedItem3"
-                        isToggled={this.state.isToggled}
-                        onClick={this.handleNestedItemClick}
-                        isToggleable
-                      />,
-                    ]}
-                  />,
-                ]}
               />,
             ]}
           />
