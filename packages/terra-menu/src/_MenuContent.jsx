@@ -323,7 +323,7 @@ class MenuContent extends React.Component {
               onKeyDown={this.onKeyDownBackButton}
               tabIndex="0"
               aria-label={backBtnText}
-              aria-describedby={headerId !== '' ? headerId : menuHeaderId}
+              aria-describedby={menuHeaderId}
             >
               {backIcon}
             </div>
