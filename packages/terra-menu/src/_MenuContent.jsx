@@ -28,7 +28,9 @@ const propTypes = {
    * Title the should be displayed in header.
    */
   title: PropTypes.string,
-
+  /**
+   * Id used to specify a unique identifier.
+   */
   id: PropTypes.string,
   /**
    * Callback function for when back button is clicked.
