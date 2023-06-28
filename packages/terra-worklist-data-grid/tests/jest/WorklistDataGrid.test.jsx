@@ -92,20 +92,6 @@ describe('WorklistDataGrid', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  // it('sets the key prop for columns', () => {
-  //   const wrapper = shallowWithIntl(
-  //     <WorklistDataGrid
-  //       id="test-terra-worklist-data-grid"
-  //       columns={dataFile.cols}
-  //       rows={dataFile.rows}
-  //     />,
-  //   ).dive();
-
-  //   const column = wrapper.find(ColumnHeaderCell).first();
-  //   console.log(column.props());
-  //   // expect(column.key()).toEqual('Column-0');
-  // });
-
   it('fails if the id prop is not set', () => {
     jest.spyOn(console, 'error').mockImplementation();
 

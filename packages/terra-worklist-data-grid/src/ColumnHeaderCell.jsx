@@ -15,19 +15,18 @@ const propTypes = {
   /**
    * Data for columns. By default, columns will be presented in the order given.
    */
-  column: WorklistDataGridPropTypes.columnShape,
+  column: WorklistDataGridPropTypes.columnShape.isRequired,
   /**
    * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
-   * To override the default value, provide width for the column that needs to be overridden.
    */
-  width: PropTypes.string,
+  width: PropTypes.string.isRequired,
   /**
-     * String that specifies the column height. Any valid CSS height value is accepted.
-     */
-  headerHeight: PropTypes.string,
+   * String that specifies the column height. Any valid CSS height value is accepted.
+  */
+  headerHeight: PropTypes.string.isRequired,
   /**
-     * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
-     */
+   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   */
   onColumnSelect: PropTypes.func,
   /**
    * @private
@@ -72,9 +71,7 @@ const ColumnHeaderCell = (props) => {
     >
       <div className={cx('header-container')}>
         {errorIcon}
-        <span role="button">
-          {column.displayName}
-        </span>
+        <span role="button">{column.displayName}</span>
         {sortIndicatorIcon}
       </div>
     </th>

@@ -207,7 +207,7 @@ function WorklistDataGrid(props) {
   const buildColumns = (allColumns) => {
     if (allColumns?.length > 0) {
       return (
-        <tr key={`${id}-column-header`} height={props.columnHeaderHeight}>
+        <tr height={props.columnHeaderHeight}>
           {allColumns.map(column => (buildColumn(column)))}
         </tr>
       );
