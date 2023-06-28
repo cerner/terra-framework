@@ -33,6 +33,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowUp'))
         .concat(new Array(2).fill('ArrowLeft')));
 
+      browser.waitUntil(() => browser.$('[role="grid"] [tabIndex="0"]').isDisplayedInViewport() === true);
       browser.pause(1000);
       Terra.validates.element('arrow-key-navigation', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
@@ -87,6 +88,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowRight'))
         .concat(['End']));
 
+      browser.waitUntil(() => browser.$('[role="grid"] [tabIndex="0"]').isDisplayedInViewport() === true);
       browser.pause(1000);
       Terra.validates.element('last-cell-in-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
@@ -98,6 +100,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowRight'))
         .concat(['Control', 'End', 'Control']));
 
+      browser.waitUntil(() => browser.$('[role="grid"] [tabIndex="0"]').isDisplayedInViewport() === true);
       browser.pause(1000);
       Terra.validates.element('last-cell-in-last-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
@@ -108,6 +111,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(['Control', 'End', 'Control'])
         .concat(new Array(3).fill('ArrowDown')));
 
+      browser.waitUntil(() => browser.$('[role="grid"] [tabIndex="0"]').isDisplayedInViewport() === true);
       browser.pause(1000);
       Terra.validates.element('last-cell-in-last-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
@@ -118,6 +122,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(['Control', 'End', 'Control'])
         .concat(new Array(3).fill('ArrowRight')));
 
+      browser.waitUntil(() => browser.$('[role="grid"] [tabIndex="0"]').isDisplayedInViewport() === true);
       browser.pause(1000);
       Terra.validates.element('last-cell-in-last-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
