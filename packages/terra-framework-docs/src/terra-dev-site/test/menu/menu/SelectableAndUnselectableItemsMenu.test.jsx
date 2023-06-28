@@ -82,7 +82,7 @@ class SelectableMenu extends React.Component {
                 text="Default Submenu 2"
                 key="5"
                 className="subMenu2"
-                id="submenu2"
+                id="default-item-submenu2"
                 subMenuItems={[
                   <Menu.Item
                     text="Sub Nested Item 2"
