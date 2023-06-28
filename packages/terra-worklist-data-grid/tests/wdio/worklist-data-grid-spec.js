@@ -33,7 +33,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowUp'))
         .concat(new Array(2).fill('ArrowLeft')));
 
-      browser.pause(150);
+      browser.pause(500);
       Terra.validates.element('arrow-key-navigation', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -87,7 +87,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowRight'))
         .concat(['End']));
 
-      browser.pause(150);
+      browser.pause(500);
       Terra.validates.element('last-cell-in-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
