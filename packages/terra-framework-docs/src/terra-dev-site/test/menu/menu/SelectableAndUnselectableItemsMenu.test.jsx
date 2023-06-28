@@ -12,7 +12,7 @@ class SelectableMenu extends React.Component {
     this.handleNestedItemClick = this.handleNestedItemClick.bind(this);
     this.setButtonNode = this.setButtonNode.bind(this);
     this.getButtonNode = this.getButtonNode.bind(this);
-    this.state = { open: false, isSelected: false, isToggled: false, isToggled1: false };
+    this.state = { open: false, isSelected: false, isToggled: false };
   }
 
   componentDidMount() {
@@ -34,10 +34,6 @@ class SelectableMenu extends React.Component {
 
   handleNestedItemClick() {
     this.setState(prevState => ({ isToggled: !prevState.isToggled }));
-  }
-
-  handleNestedItem1Click() {
-    this.setState(prevState => ({ isToggled1: !prevState.isToggled1 }));
   }
 
   setButtonNode(node) {
@@ -93,19 +89,20 @@ class SelectableMenu extends React.Component {
                     text="Sub Nested Item 2"
                     key="6"
                     className="testNestedItem2"
-                    isToggled={this.state.isToggled}
-                    onClick={this.handleNestedItemClick}
-                    isToggleable
                   />,
                   <Menu.Divider key="Divider1.2" />,
                   <Menu.Item
                     text="Default Submenu 3"
                     key="7"
+                    className="subMenu3"
                     subMenuItems={[
                       <Menu.Item
                         text="Sub Nested Item 3"
                         key="8"
                         className="testNestedItem3"
+                        isToggled={this.state.isToggled}
+                        onClick={this.handleNestedItemClick}
+                        isToggleable
                       />,
                     ]}
                   />,
