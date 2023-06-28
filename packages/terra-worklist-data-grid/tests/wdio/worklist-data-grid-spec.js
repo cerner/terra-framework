@@ -33,7 +33,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowUp'))
         .concat(new Array(2).fill('ArrowLeft')));
 
-      browser.pause(500);
+      browser.pause(1000);
       Terra.validates.element('arrow-key-navigation', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -87,7 +87,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowRight'))
         .concat(['End']));
 
-      browser.pause(500);
+      browser.pause(1000);
       Terra.validates.element('last-cell-in-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -98,7 +98,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowRight'))
         .concat(['Control', 'End', 'Control']));
 
-      browser.pause(150);
+      browser.pause(1000);
       Terra.validates.element('last-cell-in-last-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -108,7 +108,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(['Control', 'End', 'Control'])
         .concat(new Array(3).fill('ArrowDown')));
 
-      browser.pause(150);
+      browser.pause(1000);
       Terra.validates.element('last-cell-in-last-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
@@ -118,7 +118,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(['Control', 'End', 'Control'])
         .concat(new Array(3).fill('ArrowRight')));
 
-      browser.pause(150);
+      browser.pause(1000);
       Terra.validates.element('last-cell-in-last-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
