@@ -119,11 +119,13 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
 
     it('right arrow cannot navigate outside grid', () => {
       browser.keys(['Tab']
-        .concat(['Control', 'End', 'Control'])
-        .concat(new Array(3).fill('ArrowRight')));
+        .concat(['Control', 'End', 'Control']));
 
       browser.waitUntil(() => browser.$('[role="grid"] [tabIndex="0"]').isDisplayedInViewport() === true);
       browser.pause(1000);
+
+      browser.keys(new Array(3).fill('ArrowRight'));
+
       Terra.validates.element('last-cell-in-last-row-selected', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
