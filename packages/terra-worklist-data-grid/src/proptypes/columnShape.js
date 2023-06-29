@@ -17,6 +17,10 @@ const columnShape = PropTypes.shape({
    * Boolean value indicating whether or not the column header is selectable.
    */
   isSelectable: PropTypes.bool,
+  /**
+   * A boolean indicating whether or not the column header is resizable.
+   */
+  isResizable: PropTypes.bool,
 });
 
 export default columnShape;

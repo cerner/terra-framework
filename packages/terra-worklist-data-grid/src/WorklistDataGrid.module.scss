@@ -8,7 +8,7 @@
   //   overflow: hidden; /* Clips any scrollbars that appear */
   // }
 
-  .worklist-data-grid [tabIndex='0']:focus {
+  .worklist-data-grid :not(.resize-handle)[tabIndex='0']:focus {
     outline: var(--terra-worklist-data-grid-cell-focus-outline, 3px dashed #000);
     outline-offset: var(--terra-worklist-data-grid-cell-focus-outline-offset, -2px);
   }
@@ -77,7 +77,8 @@
     border-color: #ccc;
   }
   
-  .resize-handle.active {
+  .resize-handle.active, .resize-handle:focus {
     border-color: #517ea5;
+    outline: none;
   }
 }

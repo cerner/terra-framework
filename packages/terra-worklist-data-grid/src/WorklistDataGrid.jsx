@@ -55,6 +55,10 @@ const propTypes = {
    */
   rowHeaderIndex: PropTypes.number,
   /**
+   * Function that is called when a resizable column is resized. Parameters: `onRequestColumnResize(columnId, requestedWidth)`
+   */
+  onColumnResize: PropTypes.func,
+  /**
    * @private
    * Object containing intl APIs
    */
@@ -75,6 +79,7 @@ function WorklistDataGrid(props) {
     ariaLabel,
     columns,
     rows,
+    onColumnResize,
     intl,
   } = props;
 
@@ -180,13 +185,20 @@ function WorklistDataGrid(props) {
     tableWidth.current = grid.current.offsetWidth;
     activeColumnPageX.current = event.pageX;
     activeColumnWidth.current = columnRefs.current[index].offsetWidth;
-    console.log(`Column Width: ${activeColumnWidth.current}`);
     setActiveIndex(index);
+    event.stopPropagation();
+    event.preventDefault();
   };
 
-  const onMouseUp = useCallback(() => {
+  const onMouseUp = () => {
+    alert(`${columns[activeIndex].id}:${columnRefs.current[activeIndex].style.width}`);
+
+    if (onColumnResize) {
+      onColumnResize(columns[activeIndex].id, columnRefs.current[activeIndex].style.width);
+    }
+
     setActiveIndex(null);
-  }, [setActiveIndex]);
+  };
 
   const onMouseMove = useCallback((e) => {
     if (activeIndex == null) {
@@ -194,46 +206,9 @@ function WorklistDataGrid(props) {
     }
 
     const diffX = e.pageX - activeColumnPageX.current;
-    console.log(`Width Diff: ${activeColumnWidth.current + diffX}`);
     columnRefs.current[activeIndex].style.width = `${activeColumnWidth.current + diffX}px`;
     grid.current.style.width = `${tableWidth + diffX}px`;
-    // const width = (e.clientX - 313) - columnRefs.current[activeIndex].offsetLeft;
-    // console.log(`Width: ${width} Column: ${columnRefs.current[activeIndex]}`);
-    // columnRefs.current[activeIndex].style.width = `${width}px`;
-    // const gridColumns = columns.map((col, i) => {
-    //   if (i === activeIndex) {
-    //     // Calculate the column width
-    //     const width = e.clientX - col.ref.current.offsetLeft;
-
-    //     if (width >= minCellWidth) {
-    //       return `${width}px`;
-    //     }
-    //   }
-
-    //   // Otherwise return the previous width (no changes)
-    //   return `${col.ref.current.offsetWidth}px`;
-    // });
-
-    // // Assign the px values to the table
-    // tableElement.current.style.gridTemplateColumns =
-    //   `${gridColumns.join(' ')}`;
   }, [activeIndex]);
-
-  // const removeListeners = useCallback(() => {
-  //   window.removeEventListener('mousemove', onMouseMove);
-  //   window.removeEventListener('mouseup', onMouseUp);
-  // }, [onMouseMove, onMouseUp]);
-
-  // useEffect(() => {
-  //   if (activeIndex !== null) {
-  //     window.addEventListener('mousemove', onMouseMove);
-  //     window.addEventListener('mouseup', onMouseUp);
-  //   }
-
-  //   return () => {
-  //     removeListeners();
-  //   };
-  // }, [activeIndex, onMouseMove, onMouseUp, removeListeners]);
 
   const getCellData = (cell, cellColumnIndex) => {
     const tabIndex = { tabIndex: '-1' };
@@ -269,7 +244,6 @@ function WorklistDataGrid(props) {
     return (
       /* eslint-disable react/forbid-dom-props */
       /* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */
-      // <th key={columnData.id} ref={(header) => (columnRefs.current[columnData.id] = header)} className={cx('worklist-data-grid-column-header')} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
       <th
         key={column.id}
         ref={(el) => (columnRefs.current[columnIndex] = el)}
@@ -278,12 +252,16 @@ function WorklistDataGrid(props) {
         style={{ width, height }}
       >
         {column.displayName}
+        { !(column.isResizable === false) && (
         <div
           role="separator"
           style={{ height: tableHeight }}
+          tabIndex={0}
           onMouseDown={event => onMouseDown(event, columnIndex)}
+          onClick={event => { event.stopPropagation(); }}
           className={cx('resize-handle', { active: activeIndex === columnIndex })}
         />
+        )}
       </th>
     );
   };
