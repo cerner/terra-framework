@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added sizes `'fusion-small'`, `'fusion-medium'`, and `'fusion-large'`.
+
 ## 6.63.0 - (June 5, 2023)
 
 * Changed
