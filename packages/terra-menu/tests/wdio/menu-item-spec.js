@@ -47,6 +47,22 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
     });
   });
 
+  describe('Menu-Selectable with Varying Items', () => {
+    it('displays a selectable menu with varying items', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/selectable-and-unselectable-items-menu');
+      $('#default-button').click();
+      Terra.validates.element('with varying items', { selector: '#root' });
+    });
+
+    it('selects an item and maintains selection after menu has been reopened', () => {
+      $('.TestSelectableItem').click();
+      expect($('#default-button').isFocused()).toBeTruthy();
+      $('#default-button').click();
+      expect($('li:first-child[role="menuitem"]').isFocused()).toBeTruthy();
+      Terra.validates.element('maintained selection after reopen', { selector: '#root' });
+    });
+  });
+
   describe('Menu Item-Icon', () => {
     it('displays Menu Items with icon', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu-item/menu-items-with-icons');
