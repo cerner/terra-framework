@@ -365,7 +365,6 @@ exports[`Menu correctly applies the theme context className 1`] = `
                           <InjectIntl(MenuContent)
                             contentWidth={240}
                             headerTitle=""
-                            id=""
                             index={0}
                             isFocused={true}
                             isHeightBounded={false}
@@ -380,7 +379,6 @@ exports[`Menu correctly applies the theme context className 1`] = `
                             <MenuContent
                               contentWidth={240}
                               headerTitle=""
-                              id=""
                               index={0}
                               intl={
                                 Object {
