@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WorklistDataGrid render column header cell with ascending sort 1`] = `
+exports[`ColumnHeaderCell render column header cell with ascending sort 1`] = `
 <th
   aria-sort="ascending"
   className="column-header selectable"
@@ -32,7 +32,7 @@ exports[`WorklistDataGrid render column header cell with ascending sort 1`] = `
 </th>
 `;
 
-exports[`WorklistDataGrid render column header cell with ascending sort and error 1`] = `
+exports[`ColumnHeaderCell render column header cell with ascending sort and error 1`] = `
 <th
   aria-sort="ascending"
   className="column-header selectable"
@@ -52,6 +52,7 @@ exports[`WorklistDataGrid render column header cell with ascending sort and erro
   >
     <IconError
       a11yLabel="Terra.worklistDataGrid.columnError"
+      className="error-icon"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
@@ -69,7 +70,7 @@ exports[`WorklistDataGrid render column header cell with ascending sort and erro
 </th>
 `;
 
-exports[`WorklistDataGrid render column header cell with descending sort 1`] = `
+exports[`ColumnHeaderCell render column header cell with descending sort 1`] = `
 <th
   aria-sort="descending"
   className="column-header selectable"
@@ -101,7 +102,7 @@ exports[`WorklistDataGrid render column header cell with descending sort 1`] = `
 </th>
 `;
 
-exports[`WorklistDataGrid render column header cell with error 1`] = `
+exports[`ColumnHeaderCell render column header cell with error 1`] = `
 <th
   className="column-header selectable"
   key="Column-0"
@@ -120,6 +121,7 @@ exports[`WorklistDataGrid render column header cell with error 1`] = `
   >
     <IconError
       a11yLabel="Terra.worklistDataGrid.columnError"
+      className="error-icon"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
@@ -132,7 +134,7 @@ exports[`WorklistDataGrid render column header cell with error 1`] = `
 </th>
 `;
 
-exports[`WorklistDataGrid render column header cell with onColumnSelect callback 1`] = `
+exports[`ColumnHeaderCell render column header cell with onColumnSelect callback 1`] = `
 <th
   aria-sort="ascending"
   className="column-header selectable"
@@ -153,6 +155,7 @@ exports[`WorklistDataGrid render column header cell with onColumnSelect callback
   >
     <IconError
       a11yLabel="Terra.worklistDataGrid.columnError"
+      className="error-icon"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
@@ -170,7 +173,7 @@ exports[`WorklistDataGrid render column header cell with onColumnSelect callback
 </th>
 `;
 
-exports[`WorklistDataGrid render column header cell with onColumnSelect callback but not selectable 1`] = `
+exports[`ColumnHeaderCell render column header cell with onColumnSelect callback but not selectable 1`] = `
 <th
   aria-sort="ascending"
   className="column-header"
@@ -190,6 +193,7 @@ exports[`WorklistDataGrid render column header cell with onColumnSelect callback
   >
     <IconError
       a11yLabel="Terra.worklistDataGrid.columnError"
+      className="error-icon"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
@@ -207,7 +211,7 @@ exports[`WorklistDataGrid render column header cell with onColumnSelect callback
 </th>
 `;
 
-exports[`WorklistDataGrid render default column header cell 1`] = `
+exports[`ColumnHeaderCell render default column header cell 1`] = `
 <th
   className="column-header selectable"
   key="Column-0"
