@@ -22,7 +22,7 @@ const propTypes = {
    */
   width: PropTypes.string.isRequired,
   /**
-   * String that specifies the column height. Any valid CSS height value is accepted.
+   * String that specifies the column height. Any valid CSS height value accepted.
   */
   headerHeight: PropTypes.string.isRequired,
   /**
