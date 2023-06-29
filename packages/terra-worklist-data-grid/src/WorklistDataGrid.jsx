@@ -6,6 +6,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
+import ColumnHeaderCell from './ColumnHeaderCell';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import './_elementPolyfill';
 import styles from './WorklistDataGrid.module.scss';
@@ -53,6 +54,10 @@ const propTypes = {
    */
   rowHeaderIndex: PropTypes.number,
   /**
+   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   */
+  onColumnSelect: PropTypes.func,
+  /**
    * @private
    * Object containing intl APIs
    */
@@ -70,6 +75,8 @@ function WorklistDataGrid(props) {
     ariaLabel,
     columns,
     rows,
+    columnHeaderHeight,
+    onColumnSelect,
     intl,
   } = props;
 
@@ -188,14 +195,14 @@ function WorklistDataGrid(props) {
     );
   };
 
-  const buildColumn = (column) => {
-    const width = column.width || props.columnWidth;
-    const height = props.columnHeaderHeight;
-    return (
-      /* eslint-disable react/forbid-dom-props */
-      <th key={column.id} className={cx('worklist-data-grid-column-header', { selectable: !(column.isSelectable === false) })} tabIndex="-1" style={{ width, height }}>{column.displayName}</th>
-    );
-  };
+  const buildColumn = (column) => (
+    <ColumnHeaderCell
+      column={column}
+      width={column.width || props.columnWidth}
+      headerHeight={columnHeaderHeight}
+      onColumnSelect={onColumnSelect}
+    />
+  );
 
   const buildColumns = (allColumns) => {
     if (allColumns?.length > 0) {
@@ -211,6 +218,7 @@ function WorklistDataGrid(props) {
   const buildRow = (row) => {
     const height = props.rowHeight;
     return (
+      // eslint-disable-next-line react/forbid-dom-props
       <tr key={row.id} className={cx('worklist-data-grid-row')} style={{ height }}>
         {row.cells.map((cell, cellColumnIndex) => (
           getCellData(cell, cellColumnIndex)
