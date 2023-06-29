@@ -45,6 +45,11 @@ const ColumnHeaderCell = (props) => {
     intl,
   } = props;
 
+  // Handle column header selection
+  const onHeaderSelect = () => {
+    onColumnSelect(column.id);
+  };
+
   let sortIndicatorIcon;
   let errorIcon;
 
@@ -72,7 +77,7 @@ const ColumnHeaderCell = (props) => {
       role="columnheader"
       scope="col"
       aria-sort={column.sortIndicator}
-      {...(!(column.isSelectable === false) && onColumnSelect && { onClick: () => { onColumnSelect(column.id); } })}
+      onClick={(!(column.isSelectable === false) && onColumnSelect) ? onHeaderSelect : undefined}
       style={{ width, height: headerHeight }}
     >
       <div className={cx('header-container')}>
