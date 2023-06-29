@@ -166,7 +166,6 @@ class Menu extends React.Component {
         // eslint-disable-next-line react/no-array-index-key
         key={`MenuPage-${index}`}
         title={item.props.text}
-        id={item.props.id ? item.props.id : ''}
         onRequestNext={this.push}
         onRequestBack={this.pop}
         onRequestClose={this.props.onRequestClose}
