@@ -20,7 +20,7 @@ const columnShape = PropTypes.shape({
    */
   sortIndicator: PropTypes.oneOf(Object.values(SortIndicators)),
   /**
-   * Boolean value indicating whether or not the column has an error in the data
+   * Boolean value indicating whether or not the column has an error in the data.
    */
   hasError: PropTypes.bool,
   /**
