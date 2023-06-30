@@ -22,12 +22,6 @@
     width: 1px;
   }
 
-  .worklist-data-grid-column-header {
-    background-color: var(--terra-worklist-data-grid-column-header-background-color, #dedfe0);
-    border: var(--terra-worklist-data-grid-column-header-border, 1px solid #000);
-    color: var(--terra-worklist-data-grid-column-header-text-color);
-  }
-
   .worklist-data-grid-cell {
     border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
     font-weight: normal;

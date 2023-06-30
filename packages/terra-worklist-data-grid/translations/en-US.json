@@ -1,4 +1,5 @@
 {
   "Terra.worklistDataGrid.maskedCell": "Masked data",
+  "Terra.worklistDataGrid.columnError": "Errors associated with column",
   "Terra.worklistDataGrid.blank": "Blank"
 }
