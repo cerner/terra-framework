@@ -4,50 +4,62 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 ce
 <div
   className="worklist-data-grid-container"
 >
-  <tbody>
-    <tr>
-      <InjectIntl(ColumnHeaderCell)
-        column={
-          Object {
-            "displayName": " Vitals",
-            "id": "Column-0",
-          }
-        }
-      />
-      <InjectIntl(ColumnHeaderCell)
-        column={
-          Object {
-            "displayName": "March 16",
-            "id": "Column-1",
-          }
-        }
-      />
-      <InjectIntl(ColumnHeaderCell)
-        column={
-          Object {
-            "displayName": "March 17",
-            "id": "Column-2",
-            "isSelectable": false,
-          }
-        }
-      />
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="1"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell selectable"
-        key="0"
-        tabIndex="-1"
+  <table
+    className="worklist-data-grid"
+    id="test-terra-worklist-data-grid"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="grid"
+  >
+    <tbody>
+      <tr
+        height="2.5rem"
       >
-        <div
-          className="cell-content"
+        <InjectIntl(ColumnHeaderCell)
+          column={
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            }
+          }
+          headerHeight="2.5rem"
+          width="200px"
+        />
+        <InjectIntl(ColumnHeaderCell)
+          column={
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            }
+          }
+          headerHeight="2.5rem"
+          width="200px"
+        />
+        <InjectIntl(ColumnHeaderCell)
+          column={
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            }
+          }
+          headerHeight="2.5rem"
+          width="200px"
+        />
+      </tr>
+      <tr
+        className="worklist-data-grid-row"
+        key="1"
+        style={
+          Object {
+            "height": "2.5rem",
+          }
+        }
+      >
+        <th
+          className="worklist-data-grid-cell selectable"
+          key="0"
+          tabIndex="-1"
         >
           <div
             className="cell-content"
@@ -178,50 +190,62 @@ exports[`WorklistDataGrid renders a grid with selectable cells 1`] = `
 <div
   className="worklist-data-grid-container"
 >
-  <tbody>
-    <tr>
-      <InjectIntl(ColumnHeaderCell)
-        column={
-          Object {
-            "displayName": " Vitals",
-            "id": "Column-0",
-          }
-        }
-      />
-      <InjectIntl(ColumnHeaderCell)
-        column={
-          Object {
-            "displayName": "March 16",
-            "id": "Column-1",
-          }
-        }
-      />
-      <InjectIntl(ColumnHeaderCell)
-        column={
-          Object {
-            "displayName": "March 17",
-            "id": "Column-2",
-            "isSelectable": false,
-          }
-        }
-      />
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="1"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell selectable"
-        key="0"
-        tabIndex="-1"
+  <table
+    className="worklist-data-grid"
+    id="test-terra-worklist-data-grid"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="grid"
+  >
+    <tbody>
+      <tr
+        height="2.5rem"
       >
-        <div
-          className="cell-content"
+        <InjectIntl(ColumnHeaderCell)
+          column={
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            }
+          }
+          headerHeight="2.5rem"
+          width="200px"
+        />
+        <InjectIntl(ColumnHeaderCell)
+          column={
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            }
+          }
+          headerHeight="2.5rem"
+          width="200px"
+        />
+        <InjectIntl(ColumnHeaderCell)
+          column={
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            }
+          }
+          headerHeight="2.5rem"
+          width="200px"
+        />
+      </tr>
+      <tr
+        className="worklist-data-grid-row"
+        key="1"
+        style={
+          Object {
+            "height": "2.5rem",
+          }
+        }
+      >
+        <th
+          className="worklist-data-grid-cell selectable"
+          key="0"
+          tabIndex="-1"
         >
           <div
             className="cell-content"
@@ -352,50 +376,62 @@ exports[`WorklistDataGrid test masked cells 1`] = `
 <div
   className="worklist-data-grid-container"
 >
-  <tbody>
-    <tr>
-      <InjectIntl(ColumnHeaderCell)
-        column={
-          Object {
-            "displayName": " Vitals",
-            "id": "Column-0",
-          }
-        }
-      />
-      <InjectIntl(ColumnHeaderCell)
-        column={
-          Object {
-            "displayName": "March 16",
-            "id": "Column-1",
-          }
-        }
-      />
-      <InjectIntl(ColumnHeaderCell)
-        column={
-          Object {
-            "displayName": "March 17",
-            "id": "Column-2",
-            "isSelectable": false,
-          }
-        }
-      />
-    </tr>
-    <tr
-      className="worklist-data-grid-row"
-      key="1"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      <th
-        className="worklist-data-grid-cell selectable"
-        key="0"
-        tabIndex="-1"
+  <table
+    className="worklist-data-grid"
+    id="test-terra-worklist-data-grid"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="grid"
+  >
+    <tbody>
+      <tr
+        height="2.5rem"
       >
-        <div
-          className="cell-content"
+        <InjectIntl(ColumnHeaderCell)
+          column={
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+            }
+          }
+          headerHeight="2.5rem"
+          width="200px"
+        />
+        <InjectIntl(ColumnHeaderCell)
+          column={
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+            }
+          }
+          headerHeight="2.5rem"
+          width="200px"
+        />
+        <InjectIntl(ColumnHeaderCell)
+          column={
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+            }
+          }
+          headerHeight="2.5rem"
+          width="200px"
+        />
+      </tr>
+      <tr
+        className="worklist-data-grid-row"
+        key="1"
+        style={
+          Object {
+            "height": "2.5rem",
+          }
+        }
+      >
+        <th
+          className="worklist-data-grid-cell selectable"
+          key="0"
+          tabIndex="-1"
         >
           <div
             className="cell-content"
