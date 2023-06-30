@@ -170,6 +170,7 @@ const Tab = ({
       id={id}
       aria-controls={associatedPanelId}
       role="tab"
+      aria-disabled={isDisabled}
       className={variant === 'framework' ? paneClassNames : tabClassNames}
       title={label}
       data-terra-tabs-show-focus-styles
