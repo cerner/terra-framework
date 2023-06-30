@@ -2,8 +2,8 @@
 
 ## Unreleased
 
-* Fixed
-  * Fixed issue where toggled item on nested menus was being reset while navigating back and forth between them.
+* Updated
+  * Updated examples and tests for `terra-menu`.
 
 * Changed
   * Updated examples and tests for `terra-worklist-data-grid` to remove row height
