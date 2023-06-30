@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+## 3.41.0 - (June 12, 2023)
+
+* Changed
+  * Locked `uuid` version to `8.2.0`.
+
+## 3.40.0 - (June 5, 2023)
+
+* Added
+  * Added missing translations.
+
+* Fixed
+  * Fixed a11y bug where multiple slide panels shared same ID for visually hidden text. (This fix requires updates to Jest snapshots and requires UUID to be mocked on consuming applications)
+
+* Changed
+  * Updated `uuid` to `v8` for consistency with other components.
+
 ## 3.39.0 - (April 27, 2023)
 
 * Added

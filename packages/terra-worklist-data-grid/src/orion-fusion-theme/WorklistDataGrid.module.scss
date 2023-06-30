@@ -1,0 +1,19 @@
+:local {
+  .orion-fusion-theme {
+    // Grid
+    --terra-worklist-data-grid-border: 2px solid #020005;
+
+    // Rows
+    --terra-worklist-data-grid-row-striped-background-color: #f4f4f4;
+
+    // Columns
+    --terra-worklist-data-grid-column-header-text-color: #595f62;
+    --terra-worklist-data-grid-column-header-background-color: #fff;
+    --terra-worklist-data-grid-column-header-border: 1px solid #c8cacb;
+
+    // Cells
+    --terra-worklist-data-grid-cell-border: 1px solid #c8cacb;
+    --terra-worklist-data-grid-cell-focus-outline: 2px dashed #000;
+    --terra-worklist-data-grid-cell-focus-outline-offset: -2px;
+  }
+}

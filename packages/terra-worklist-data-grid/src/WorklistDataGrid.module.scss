@@ -1,0 +1,37 @@
+// Themes
+@import './orion-fusion-theme/WorklistDataGrid.module';
+@import './clinical-lowlight-theme/WorklistDataGrid.module';
+
+:local {
+  .worklist-data-grid [tabIndex='0']:focus {
+    outline: var(--terra-worklist-data-grid-cell-focus-outline, 3px dashed #000);
+    outline-offset: var(--terra-worklist-data-grid-cell-focus-outline-offset, -2px);
+  }
+
+  .worklist-data-grid {
+    // Style for the grid itself
+    border: var(--terra-worklist-data-grid-border, 1px solid #dedfe0);
+    border-collapse: collapse;
+    height: 100%;
+    margin: 1em auto;
+    width: 100%;
+  }
+
+  .worklist-data-grid-column-header {
+    background-color: var(--terra-worklist-data-grid-column-header-background-color, #dedfe0);
+    border: var(--terra-worklist-data-grid-column-header-border, 1px solid #000);
+    color: var(--terra-worklist-data-grid-column-header-text-color);
+  }
+
+  .worklist-data-grid-row-header,
+  .worklist-data-grid-cell-data {
+    border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
+    font-weight: normal;
+    height: 100%;
+    position: relative;
+  }
+
+  .worklist-data-grid-row:nth-child(odd) {
+    background-color: var(--terra-worklist-data-grid-row-striped-background-color, #f0f0f0);
+  }
+}

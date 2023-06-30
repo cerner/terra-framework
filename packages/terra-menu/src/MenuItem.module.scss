@@ -53,8 +53,6 @@
   }
 
   .is-disabled {
-    outline: 0;
-
     .text {
       opacity: var(--terra-menu-item-disabled-text-opacity, 0.25);
     }

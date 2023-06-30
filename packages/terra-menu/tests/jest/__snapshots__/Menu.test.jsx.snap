@@ -531,6 +531,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                               >
                                                 <InjectIntl(MenuItem)
                                                   aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
+                                                  index={0}
                                                   intl={
                                                     Object {
                                                       "defaultFormats": Object {},
@@ -559,7 +560,6 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                     }
                                                   }
                                                   isActive={false}
-                                                  itemIndex={0}
                                                   key="abc"
                                                   onClick={[Function]}
                                                   onKeyDown={[Function]}
@@ -568,6 +568,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                 >
                                                   <MenuItem
                                                     aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
+                                                    index={0}
                                                     intl={
                                                       Object {
                                                         "defaultFormats": Object {},
@@ -600,7 +601,6 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                     isHighlighted={false}
                                                     isInstructionsForUse={false}
                                                     isToggled={false}
-                                                    itemIndex={0}
                                                     onClick={[Function]}
                                                     onKeyDown={[Function]}
                                                     subMenuItems={Array []}

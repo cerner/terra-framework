@@ -15,7 +15,7 @@ import PropTypes from 'prop-types';
 import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PillsUtils from './PillsUtils';
 import RollUpPill from './subcomponents/_RollupPill';
