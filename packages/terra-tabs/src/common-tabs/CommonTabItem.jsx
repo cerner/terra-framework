@@ -44,6 +44,14 @@ const propTypes = {
    * Indicates if the pane should be disabled.
    */
   isDisabled: PropTypes.bool,
+  /**
+   * Icon to be displayed on the tab.
+   */
+  icon: PropTypes.element,
+  /**
+   * Indicates if the pane label should only display the icon. When tab collapses into menu the label text will be used.
+   */
+  isIconOnly: PropTypes.bool,
 };
 
 /**
