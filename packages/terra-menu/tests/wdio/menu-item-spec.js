@@ -38,7 +38,7 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
       $('[class*=subMenu1]').click();
       expect($('.testNestedItem1').isFocused()).toBeTruthy();
       $('[class*=testNestedItem1]').click();
-      Terra.validates.element('selected via click');
+      Terra.validates.element('nested menu selected via click');
       $('[role="button"][aria-label="Back"]').click();
       $('[class*=subMenu1]').click();
       expect($('li:first-child[aria-checked="true"][role="menuitemcheckbox"]').isFocused()).toBeTruthy();
