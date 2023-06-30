@@ -1,7 +1,14 @@
 # Terra Worklist Data Grid
 
-[![NPM version](https://badgen.net/npm/v/terra-grid)](https://www.npmjs.com/package/terra-grid)
+[![NPM version](https://badgen.net/npm/v/terra-grid)](https://www.npmjs.com/package/terra-worklist-data-grid)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
+
+---
+### Notice
+
+> Terra Worklist Data Grid is currently under alpha release. There may be breaking changes between releases until it is stable at v1.0.
+
+---
 
 The Terra Worklist Data Grid is a container that enables users to navigate the grid information using directional navigation keys.
 
