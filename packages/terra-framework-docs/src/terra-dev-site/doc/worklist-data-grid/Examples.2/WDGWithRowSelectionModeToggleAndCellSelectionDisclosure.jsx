@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import WorklistDataGrid from 'terra-worklist-data-grid';
+import { DisclosureManagerContext } from 'terra-disclosure-manager';
+import DisclosureComponent from './disclosure/DisclosureComponent';
 
 const gridDataJSON = {
   cols: [
@@ -51,12 +53,14 @@ const gridDataJSON = {
   ],
 };
 
-const WorklistDataGridWithRowSelectionConsumer = () => {
+const WDGWithRowSelectionModeToggleAndCellSelectionDisclosure = () => {
   const rowSelectionModeRef = useRef();
   const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
   const [selectedRows, setSelectedRows] = useState([]);
   const [hasSelectableRows, setHasSelectableRows] = useState(false);
+
+  const disclosureManager = React.useContext(DisclosureManagerContext);
 
   const determineSelectedRows = (allRowsSelected, userSelectedRow) => {
     if (!userSelectedRow) {
@@ -96,6 +100,27 @@ const WorklistDataGridWithRowSelectionConsumer = () => {
     setHasSelectableRows(event.target.checked);
   };
 
+  const onCellSelect = (rowId, columnId) => {
+    if (rowId && columnId) {
+      const rowIndex = rows.findIndex(e => e.id === rowId);
+      const colIndex = cols.findIndex(e => e.id === columnId);
+      disclosureManager.disclose({
+        preferredType: 'panel',
+        size: 'tiny',
+        content: {
+          component: (
+            <DisclosureComponent
+              columnHeader={cols[colIndex].displayName}
+              rowHeader={rows[rowIndex].cells[0].content}
+              content={rows[rowIndex].cells[colIndex].content}
+              name={cols[colIndex].displayName}
+            />
+          ),
+        },
+      });
+    }
+  };
+
   return (
     <React.Fragment>
       <div>
@@ -133,6 +158,7 @@ const WorklistDataGridWithRowSelectionConsumer = () => {
           rows.forEach(e => { e.isSelected = true; newRows.push(e.id); });
           setSelectedRows(determineSelectedRows(true, newRows));
         }}
+        onCellSelect={onCellSelect}
         onClearSelectedRows={() => {
           clearRowSelection();
         }}
@@ -144,4 +170,4 @@ const WorklistDataGridWithRowSelectionConsumer = () => {
   );
 };
 
-export default WorklistDataGridWithRowSelectionConsumer;
+export default WDGWithRowSelectionModeToggleAndCellSelectionDisclosure;
