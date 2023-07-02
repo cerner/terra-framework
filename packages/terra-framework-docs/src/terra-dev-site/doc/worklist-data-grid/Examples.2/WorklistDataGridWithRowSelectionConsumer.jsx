@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import WorklistDataGrid from 'terra-worklist-data-grid';
+
 const gridDataJSON = {
   cols: [
     { id: 'Column-0', displayName: 'Patient' },
@@ -131,10 +132,6 @@ const WorklistDataGridWithRowSelectionConsumer = () => {
           const newRows = [];
           rows.forEach(e => { e.isSelected = true; newRows.push(e.id); });
           setSelectedRows(determineSelectedRows(true, newRows));
-        }}
-        onCellSelect={(rowId, columnId) => {
-          console.log(`Selected cell: ${rowId} ${columnId}`);
-          // TODO: Implement Slidepanel in Cell selection story.
         }}
         onClearSelectedRows={() => {
           clearRowSelection();
