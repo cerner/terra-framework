@@ -130,13 +130,13 @@ function WorklistDataGrid(props) {
 
   const isCellSelected = (rowId, columnId) => (currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId);
 
-  const setFocus = (rowIndex, colIndex, makeActive) => {
+  const setFocus = (rowIndex, colIndex, makeActiveElement) => {
     let focusedCell = grid.current.rows[rowIndex].cells[colIndex];
     if (isRowSelectionCell(colIndex) && focusedCell.firstChild) {
       focusedCell = focusedCell.firstChild;
     }
     focusedCell.tabIndex = 0;
-    if (makeActive && focusedCell.focus) {
+    if (makeActiveElement && focusedCell.focus) {
       focusedCell.focus();
     }
   };
@@ -152,11 +152,11 @@ function WorklistDataGrid(props) {
     }
   };
 
-  const setFocusedRowCol = (newRowIndex, newColIndex, makeActive) => {
+  const setFocusedRowCol = (newRowIndex, newColIndex, makeActiveElement) => {
     removeTabStop(focusedRow.current, focusedCol.current);
     focusedRow.current = newRowIndex;
     focusedCol.current = newColIndex;
-    setFocus(newRowIndex, newColIndex, makeActive);
+    setFocus(newRowIndex, newColIndex, makeActiveElement);
   };
 
   useEffect(() => {
@@ -199,12 +199,14 @@ function WorklistDataGrid(props) {
   };
 
   const selectRows = (selectAllRows, rowId, rowIndex) => {
+    let rowLabel;
     let msgId = 'Terra.worklist-data-grid.all-rows-selected';
     if (!selectAllRows) {
       const isSelectAction = !rows[rowIndex - 1].isSelected; // Determine if this is select or unselected.
       msgId = isSelectAction ? 'Terra.worklist-data-grid.row-selection-template' : 'Terra.worklist-data-grid.row-selection-cleared-template';
+      rowLabel = rows[rowIndex - 1].ariaLabel || rowIndex;
     }
-    ariaLiveMsg.current = intl.formatMessage({ id: msgId }, { row: rowIndex });
+    ariaLiveMsg.current = intl.formatMessage({ id: msgId }, { row: rowLabel });
     if (selectAllRows && onRowSelectAll) {
       onRowSelectAll();
     } else if (onRowSelect) {
@@ -218,12 +220,11 @@ function WorklistDataGrid(props) {
   };
 
   const handleCellSelectionChange = (rowId, columnId, cellCoordinates) => {
-    ariaLiveMsg.current = intl.formatMessage({
-      id: rowId ? 'Terra.worklist-data-grid.cell-selection-template' : 'Terra.worklist-data-grid.cell-selection-cleared',
-    }, {
-      row: cellCoordinates.row,
-      column: cellCoordinates.col,
-    });
+    if (!hasSelectableRows) {
+      ariaLiveMsg.current = intl.formatMessage({
+        id: rowId ? 'Terra.worklist-data-grid.cell-selection-template' : 'Terra.worklist-data-grid.cell-selection-cleared',
+      }, { row: cellCoordinates.row, column: cellCoordinates.col });
+    }
     setFocusedRowCol(cellCoordinates.row, cellCoordinates.col, true);
     setCurrentSelectedCell((rowId && columnId) ? { rowId, columnId } : null);
   };
