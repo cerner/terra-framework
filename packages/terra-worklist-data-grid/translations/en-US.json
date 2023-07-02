@@ -1,5 +1,6 @@
 {
   "Terra.worklistDataGrid.maskedCell": "Masked data",
+  "Terra.worklistDataGrid.columnError": "Errors associated with column",
   "Terra.worklistDataGrid.blank": "Blank",
   "Terra.worklist-data-grid.navigate": "Navigate to data grid",
   "Terra.worklist-data-grid.cell.selected": "The current cell is selected",

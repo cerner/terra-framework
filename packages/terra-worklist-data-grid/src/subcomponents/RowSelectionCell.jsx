@@ -79,7 +79,7 @@ function RowSelectionCell(props) {
       key={`${rowId}_${columnId}`}
       coordinates={coordinates}
       isTabStop={false}
-      isSelected={isSelected}
+      isSelected={false}
       isRowSelectionCell
       onCellSelect={onCellSelect}
       cell={{ content: selectionCheckbox }}

@@ -41,7 +41,7 @@ const dataFile = {
   ],
 };
 describe('WorklistDataGrid', () => {
-  it('renders a grid with 1 header row with 3 columns and 3 data rows each with 3 cells', () => {
+  it('renders a grid with 1 header row and 3 data rows', () => {
     const wrapper = shallowWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"

@@ -1,20 +1,36 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { injectIntl } from 'react-intl';
 import ThemeContext from 'terra-theme-context';
-import '../_elementPolyfill';
+import IconUp from 'terra-icon/lib/icon/IconUp';
+import IconDown from 'terra-icon/lib/icon/IconDown';
+import IconError from 'terra-icon/lib/icon/IconError';
 import * as KeyCode from 'keycode-js';
+import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
+import '../_elementPolyfill';
 import styles from './ColumnHeaderCell.module.scss';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
-import columnShape from '../proptypes/columnShape';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The information for the column.
+   * Data for columns. By default, columns will be presented in the order given.
    */
-  column: columnShape.isRequired,
+  column: WorklistDataGridPropTypes.columnShape.isRequired,
+  /**
+   * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
+   */
+  width: PropTypes.string.isRequired,
+  /**
+   * String that specifies the column height. Any valid CSS height value accepted.
+  */
+  headerHeight: PropTypes.string.isRequired,
+  /**
+   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   */
+  onColumnSelect: PropTypes.func,
   /**
    * The coordinates of the cell within the grid.
    */
@@ -26,39 +42,36 @@ const propTypes = {
    * Boolean value to indicate if the cell is the tab stop on the grid. The grid will have only one tab stop.
    */
   isTabStop: PropTypes.bool,
+
   /**
-   * Callback function that is called when a column is selected.
+   * @private
+   * Object containing intl APIs
    */
-  onColumnSelect: PropTypes.func,
-  /**
-   * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
-   * To override the default value, provide width for the column that needs to be overridden.
-   */
-  defaultWidth: PropTypes.string,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {
   isTabStop: false,
 };
 
-function ColumnHeaderCell(props) {
+const ColumnHeaderCell = (props) => {
   const {
+    column,
+    width,
+    headerHeight,
+    onColumnSelect,
+    intl,
     coordinates,
     isTabStop,
-    onColumnSelect,
-    column,
-    defaultWidth,
   } = props;
 
-  const theme = useContext(ThemeContext);
-
+  // Handle column header selection via the mouse click.
   const handleMouseDown = (event) => {
-    if (onColumnSelect) {
-      onColumnSelect(column.id, coordinates);
-      event.stopPropagation();
-    }
+    onColumnSelect(column.id, coordinates);
+    event.stopPropagation();
   };
 
+  // Handle column header selection via the space bar.
   const handleKeyDown = (event) => {
     const key = event.keyCode;
     switch (key) {
@@ -77,22 +90,47 @@ function ColumnHeaderCell(props) {
     WorklistDataGridUtils.writeToClipboard(event.target.textContent);
   };
 
-  const width = (column.width || defaultWidth) ? `${column.width || defaultWidth}px` : undefined;
+  let sortIndicatorIcon;
+  let errorIcon;
+
+  // Add error icon when column error exists
+  if (column.hasError) {
+    errorIcon = <IconError a11yLabel={intl.formatMessage({ id: 'Terra.worklistDataGrid.columnError' })} className={cx('error-icon')} />;
+  }
+
+  // Add the sort indicator based on the sort direction
+  if (column.sortIndicator === WorklistDataGridPropTypes.SortIndicators.ASCENDING) {
+    sortIndicatorIcon = <IconUp />;
+  } else if (column.sortIndicator === WorklistDataGridPropTypes.SortIndicators.DESCENDING) {
+    sortIndicatorIcon = <IconDown />;
+  }
+
+  // Retrieve current theme from context
+  const theme = useContext(ThemeContext);
+
   return (
+  /* eslint-disable react/forbid-dom-props */
     <th
-      className={cx('worklist-data-grid-column-header', { selectable: !(column.isSelectable === false) }, theme.className)}
+      key={column.id}
+      className={cx('column-header', theme.className, { selectable: !(column.isSelectable === false) })}
       tabIndex={isTabStop ? 0 : -1}
-      // eslint-disable-next-line react/forbid-dom-props
-      style={{ width }}
-      onMouseDown={handleMouseDown}
-      onKeyDown={handleKeyDown}
+      role="columnheader"
+      scope="col"
+      aria-sort={column.sortIndicator}
+      onMouseDown={(!(column.isSelectable === false) && onColumnSelect) ? handleMouseDown : undefined}
+      onKeyDown={(!(column.isSelectable === false) && onColumnSelect) ? handleKeyDown : undefined}
       onCopy={handleCopy}
+      style={{ width: column.width || width, height: headerHeight }}
     >
-      {column.displayName}
+      <div className={cx('header-container')}>
+        {errorIcon}
+        <span role={column.displayName && 'button'}>{column.displayName}</span>
+        {sortIndicatorIcon}
+      </div>
     </th>
   );
-}
+};
 
 ColumnHeaderCell.propTypes = propTypes;
 ColumnHeaderCell.defaultProps = defaultProps;
-export default ColumnHeaderCell;
+export default injectIntl(ColumnHeaderCell);

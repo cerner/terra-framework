@@ -128,7 +128,7 @@ function Cell(props) {
     'row-selection-cell': isRowSelectionCell,
     masked: cell.isMasked,
     selectable: !(cell.isMasked || cell.isSelectable === false),
-    selected: (isSelected && !cell.isMasked),
+    selected: isSelected && !cell.isMasked,
     blank: !cell.content,
   }, theme.className);
 
@@ -139,7 +139,7 @@ function Cell(props) {
       aria-selected={isSelected}
       aria-label={cellAriaLabel}
       tabIndex={isTabStop ? 0 : -1}
-      className={cx(className, theme.className)}
+      className={className}
       onMouseDown={handleMouseDown}
       onKeyDown={handleKeyDown}
       onCopy={!isRowSelectionCell ? handleCopy : undefined}

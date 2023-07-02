@@ -6,8 +6,8 @@ import '../_elementPolyfill';
 import styles from './Row.module.scss';
 import RowSelectionCell from './RowSelectionCell';
 import Cell from './Cell';
-import columnShape from '../proptypes/columnShape';
 import rowShape from '../proptypes/rowShape';
+import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
 
 const cx = classNames.bind(styles);
 
@@ -36,7 +36,7 @@ const propTypes = {
   /**
    * All columns currently displayed.
    */
-  displayedColumns: PropTypes.arrayOf(columnShape),
+  displayedColumns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
   /**
    * Callback function that will be called when a cell in the row is selected.
    */
@@ -97,7 +97,7 @@ function Row(props) {
         coordinates={{ row: cellRowIndex, col: cellColumnIndex }}
         key={`${rowId}_${columnId}`}
         isTabStop={tabStopColumnIndex === cellColumnIndex}
-        isSelected={selectedCellColumnId === columnId}
+        isSelected={!hasSelectableRows && selectedCellColumnId === columnId}
         cell={cell}
         isRowHeader={isRowHeader}
         onCellSelect={handleCellSelect}

@@ -11,5 +11,6 @@
   "Terra.worklist-data-grid.all-rows-unselected" : "All rows unselected",
   "Terra.worklist-data-grid.row-index" : "Row {row}",
   "Terra.worklistDataGrid.maskedCell": "Masked data",
+  "Terra.worklistDataGrid.columnError": "Errors associated with column",
   "Terra.worklistDataGrid.blank": "Blank"
 }

@@ -18,6 +18,7 @@ const gridDataJSON = {
   rows: [
     {
       id: '1',
+      ariaLabel: 'First Row',
       cells: [
         { content: 'Fleck, Arthur' },
         { content: '1007-MTN' },
@@ -34,6 +35,7 @@ const gridDataJSON = {
     },
     {
       id: '2',
+      ariaLabel: 'Second Row',
       cells: [
         { content: 'Wayne, Bruce' },
         { content: '1007-MTN-DR' },

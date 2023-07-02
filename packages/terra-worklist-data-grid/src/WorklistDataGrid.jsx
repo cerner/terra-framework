@@ -60,7 +60,7 @@ const propTypes = {
    */
   onCellSelect: PropTypes.func,
   /**
-   * Callback function that will be called when a row is selected. Parameters: `onRowSelect(rowId)`.
+   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
    */
   onRowSelect: PropTypes.func,
   /**
@@ -102,10 +102,11 @@ function WorklistDataGrid(props) {
     ariaLabel,
     columns,
     rows,
+    columnHeaderHeight,
+    onColumnSelect,
     onCellSelect,
     onRowSelect,
     onRowSelectAll,
-    onColumnSelect,
     onClearSelectedRows,
     onDisableSelectableRows,
     hasSelectableRows,
@@ -354,11 +355,12 @@ function WorklistDataGrid(props) {
   const buildColumn = (column, columnIndex) => (
     <ColumnHeaderCell
       key={column.id}
+      column={column}
+      width={props.columnWidth}
+      headerHeight={columnHeaderHeight}
+      onColumnSelect={handleColumnSelect}
       coordinates={{ row: 0, col: columnIndex }}
       isTabStop={focusedRow.current === 0 && focusedCol.current === columnIndex}
-      defaultWidth={props.columnWidth}
-      onColumnSelect={handleColumnSelect}
-      column={column}
     />
   );
 
