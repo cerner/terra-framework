@@ -55,7 +55,7 @@ const IconsOnlyAndInMenuTabs = (props) => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs responsiveTo={props.responsiveTo}>
+      <Tabs responsiveTo={props.responsiveTo} id="icons-only">
         {searchTab}
         {briefcaseTab}
         {bookmarkTab}

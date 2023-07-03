@@ -4,6 +4,7 @@
 
 * Changed
   * Updated example for `terra-menu`.
+  * Updated examples for `terra-tabs` with conflicting ids
 
 * Added
   * Added alpha release disclaimer for `terra-worklist-data-grid`.

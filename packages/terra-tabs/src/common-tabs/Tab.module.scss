@@ -38,6 +38,7 @@
       color: var(--terra-tabs-workspace-tab-label-color, #595f62);
       flex: 0 1 auto;
       line-height: 1.21428;
+      margin-left: var(--terra-tabs-workspace-label-next-to-icon-margin-left, 0.357rem);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
