@@ -7,6 +7,7 @@ import MenuItem from './MenuItem';
 import MenuItemGroup from './MenuItemGroup';
 import MenuDivider from './MenuDivider';
 import styles from './Menu.module.scss';
+import MenuUtils from './_MenuUtils';
 
 const cx = classNames.bind(styles);
 
@@ -76,7 +77,6 @@ class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.setPageDimensions = this.setPageDimensions.bind(this);
-    this.recursiveFunction = this.recursiveFunction.bind(this);
     this.push = this.push.bind(this);
     this.pop = this.pop.bind(this);
     this.state = { stack: [this] };
@@ -114,29 +114,16 @@ class Menu extends React.Component {
   push(item) {
     this.setState((prevState) => {
       const newStack = prevState.stack.slice();
-      let updatedStack = {};
-      if (newStack.length - 1 >= 1) {
+      let updatedStack = [];
+      if (newStack.length - 1) {
         updatedStack = newStack[0].props.children.filter((list) => list.props.subMenuItems && !list.props.isDisabled);
-        updatedStack = this.recursiveFunction(updatedStack, item.key);
-      } else updatedStack = item;
+        updatedStack = MenuUtils.findMenuItem(updatedStack, item.key);
+      } else {
+        updatedStack = item;
+      }
       newStack.push(updatedStack);
       return { stack: newStack };
     });
-  }
-
-  recursiveFunction(updatedStack, key) {
-    for (let i = 0; i < updatedStack.length; i += 1) {
-      if (updatedStack[i].key === key) {
-        return updatedStack[i];
-      }
-      if (updatedStack[i].props.subMenuItems) {
-        const result = this.recursiveFunction(updatedStack[i].props.subMenuItems, key);
-        if (result) {
-          return result;
-        }
-      }
-    }
-    return null;
   }
 
   render() {
