@@ -61,7 +61,7 @@ function PopupArrow() {
         isArrowDisplayed
       >
         <ul className={cx('terra-popup-content')} onKeyDown={handleKeyDown} role="menu">
-          <li tabIndex={0} role="menuitem">
+          <li role="menuitem">
             <a
               href="https://www.refseek.com/directory/health_medical.html"
               target="_blank"
@@ -71,7 +71,7 @@ function PopupArrow() {
               Health and Medical sites
             </a>
           </li>
-          <li tabIndex={0} role="menuitem">
+          <li role="menuitem">
             <a
               href="https://www.happiesthealth.com/?utm_source=google&utm_medium=cpc-hp"
               target="_blank"
