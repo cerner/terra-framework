@@ -40,10 +40,7 @@ const findMenuItem = (updatedStack, key) => {
       return updatedStack[i];
     }
     if (updatedStack[i].props.subMenuItems) {
-      const result = findMenuItem(updatedStack[i].props.subMenuItems, key);
-      if (result) {
-        return result;
-      }
+      return findMenuItem(updatedStack[i].props.subMenuItems, key);
     }
   }
   return undefined;

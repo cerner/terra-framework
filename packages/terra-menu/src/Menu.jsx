@@ -114,14 +114,12 @@ class Menu extends React.Component {
   push(item) {
     this.setState((prevState) => {
       const newStack = prevState.stack.slice();
-      let updatedStack = [];
+      let updatedStack;
       if (newStack.length - 1) {
         updatedStack = newStack[0].props.children.filter((list) => list.props.subMenuItems && !list.props.isDisabled);
         updatedStack = MenuUtils.findMenuItem(updatedStack, item.key);
-      } else {
-        updatedStack = item;
       }
-      newStack.push(updatedStack);
+      newStack.push(updatedStack || item);
       return { stack: newStack };
     });
   }
