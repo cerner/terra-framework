@@ -52,6 +52,11 @@ const propTypes = {
    * Indicates if the pane label should only display the icon. When tab collapses into menu the label text will be used.
    */
   isIconOnly: PropTypes.bool,
+  /**
+   *  @private
+   * The style to be applied to the tabs
+   */
+  variant: PropTypes.oneOf(['workspace', 'framework']),
 };
 
 /**
@@ -68,6 +73,7 @@ const CommonTabItem = ({
   render,
   portalElement,
   isIconOnly,
+  variant,
   /**
    * The itemKey and metaData props are not used by the CommonTabItem component.
    * However, the CommonTabs component will read those prop values and use those values to
@@ -86,6 +92,14 @@ const CommonTabItem = ({
     label,
     isIconOnly,
   }), [associatedPanelId, customDisplay, icon, id, isIconOnly, label]);
+
+  if (variant === 'framework') {
+    return (
+      <TabContext.Provider value={tabContextValue}>
+        {render()}
+      </TabContext.Provider>
+    );
+  }
 
   return (
     ReactDOM.createPortal((

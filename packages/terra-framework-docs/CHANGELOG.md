@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Updated
+  * Updated examples for `terra-tabs` with conflicting ids
+
 ## 1.24.0 - (July 4, 2023)
 
 * Updated
