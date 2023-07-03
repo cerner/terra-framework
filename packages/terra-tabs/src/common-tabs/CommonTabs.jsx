@@ -121,7 +121,8 @@ const CommonTabs = ({
               id: getTabId(id, child.props.itemKey),
               associatedPanelId: getAssociatedPanelId(id, child.props.itemKey),
               isActive: child.props.itemKey === activeItemKey,
-              portalElement,
+              portalElement: variant === 'framework' ? null : portalElement,
+              variant,
             })
           );
         })}

@@ -228,6 +228,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
               />
             }
             render={[Function]}
+            variant="modular-left-aligned"
           >
             <Portal
               containerInfo={
@@ -822,13 +823,9 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
       itemKey="default"
       key="default/.0"
       label="Default"
-      portalElement={
-        <div
-          role="none"
-          style="position: relative; height: 100%; width: 100%;"
-        />
-      }
+      portalElement={null}
       render={[Function]}
+      variant="framework"
     />
   </div>
 </div>
@@ -937,13 +934,9 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
       itemKey="default"
       key="default/.0"
       label="Default"
-      portalElement={
-        <div
-          role="none"
-          style="position: relative; height: 100%; width: 100%;"
-        />
-      }
+      portalElement={null}
       render={[Function]}
+      variant="framework"
     />
   </div>
 </div>
@@ -1182,13 +1175,9 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
       itemKey="default"
       key="default/.0"
       label="Default"
-      portalElement={
-        <div
-          role="none"
-          style="position: relative; height: 100%; width: 100%;"
-        />
-      }
+      portalElement={null}
       render={[Function]}
+      variant="framework"
     />
   </div>
 </div>
