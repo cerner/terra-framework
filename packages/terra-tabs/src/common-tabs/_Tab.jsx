@@ -178,7 +178,7 @@ const Tab = ({
       <div className={cx('inner')}>
         {customDisplay}
         {customDisplay ? null : icon}
-        {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
+        {customDisplay || isIconOnly ? null : <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
       </div>
     </div>
   );
