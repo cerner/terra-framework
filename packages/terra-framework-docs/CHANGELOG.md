@@ -15,6 +15,7 @@
   * Updated the path name for the examples in doc site for `terra-embedded-content-consumer` to resolve missing files.
   * Minor formatting changes in the `uuid` testing section for several packages.
   * Updates tests amd examples for `terra-worklist-data-grid` to show resize capability.
+  * Updated examples for `terra-tabs` with conflicting ids.
 
 * Added
   * Added alpha release disclaimer for `terra-worklist-data-grid`.
