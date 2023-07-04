@@ -123,6 +123,7 @@ const Tab = ({
     { 'is-active': isSelected },
     { 'is-icon-only': isIconOnly },
     { 'is-text-only': !icon },
+    { 'is-disabled': isDisabled },
     theme.className,
   );
   const paneClassNames = classNames(cy(
