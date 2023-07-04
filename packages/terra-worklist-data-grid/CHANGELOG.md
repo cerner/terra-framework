@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 0.2.0 - (July 4, 2023)
+
 * Changed
   * Removed ability to set variable row heights
   * Updated styling on cell focus.
