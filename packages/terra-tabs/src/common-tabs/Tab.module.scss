@@ -102,6 +102,20 @@
         color: var(--terra-tabs-workspace-tab-is-active-label-color, #434a4d);
       }
     }
+
+    &.is-disabled {
+      background-color: var(--terra-tabs-structural-disabled-background-color, #fff);
+      background-size: 0 0;
+      color: var(--terra-tabs-structural-disabled-color, rgba(28, 31, 33, 0.2));
+      cursor: default;
+      opacity: var(--terra-tabs-structural-disabled-opacity, 1);
+    }
+
+    &.is-disabled .label,
+    &.is-disabled svg {
+      color: var(--terra-tabs-structural-disabled-label-color, rgba(28, 31, 33, 0.7));
+      opacity: var(--terra-tabs-structural-disabled-label-opacity, 0.3);
+    }
   }
 
   .tab {
