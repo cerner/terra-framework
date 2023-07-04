@@ -8,10 +8,10 @@ class SelectableMenu extends React.Component {
     super(props);
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
-    this.handleItemClick = this.handleItemClick.bind(this);
+    this.handleNestedItemClick = this.handleNestedItemClick.bind(this);
     this.setButtonNode = this.setButtonNode.bind(this);
     this.getButtonNode = this.getButtonNode.bind(this);
-    this.state = { open: false, isSelected: false };
+    this.state = { open: false, isToggled: false };
   }
 
   componentDidMount() {
@@ -26,9 +26,8 @@ class SelectableMenu extends React.Component {
     this.setState({ open: false });
   }
 
-  handleItemClick() {
-    this.setState(prevState => ({ isSelected: !prevState.isSelected }));
-    this.handleRequestClose();
+  handleNestedItemClick() {
+    this.setState(prevState => ({ isToggled: !prevState.isToggled }));
   }
 
   setButtonNode(node) {
@@ -58,10 +57,26 @@ class SelectableMenu extends React.Component {
           <Menu.Item
             text="Default 2"
             key="2"
-            isSelectable
-            className="TestSelectableItem"
-            isSelected={this.state.isSelected}
-            onClick={this.handleItemClick}
+          />
+          <Menu.Item
+            text="Default Submenu 1"
+            key="3"
+            className="subMenu1"
+            subMenuItems={[
+              <Menu.Item
+                text="Sub Nested Item1"
+                key="4"
+                className="testNestedItem1"
+                isToggled={this.state.isToggled}
+                onClick={this.handleNestedItemClick}
+                isToggleable
+              />,
+              <Menu.Item
+                text="Default Submenu 2"
+                key="5"
+                className="subMenu2"
+              />,
+            ]}
           />
         </Menu>
         <Button id="default-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
