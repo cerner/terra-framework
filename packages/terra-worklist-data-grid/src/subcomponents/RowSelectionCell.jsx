@@ -16,12 +16,13 @@ const propTypes = {
   columnId: PropTypes.string.isRequired,
 
   /**
-   * The coordinates of the cell within the grid.
+   * The cell's row position in the grid. This is zero based.
    */
-  coordinates: PropTypes.shape({
-    row: PropTypes.number,
-    col: PropTypes.number,
-  }),
+  rowIndex: PropTypes.number,
+  /**
+   * The cell's column position in the grid. This is zero based.
+   */
+  columnIndex: PropTypes.number,
 
   /**
    * Boolean value to indicate if the cell is the tab stop on the grid. The grid will have only one tab stop.
@@ -52,7 +53,8 @@ function RowSelectionCell(props) {
   const {
     rowId,
     columnId,
-    coordinates,
+    rowIndex,
+    columnIndex,
     isTabStop,
     isSelected,
     ariaLabel,
@@ -60,7 +62,7 @@ function RowSelectionCell(props) {
     intl,
   } = props;
 
-  const rowLabel = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-index' }, { row: coordinates.row });
+  const rowLabel = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-index' }, { row: rowIndex });
 
   const selectionCheckbox = (
     <input
@@ -77,7 +79,8 @@ function RowSelectionCell(props) {
       rowId={rowId}
       columnId={columnId}
       key={`${rowId}_${columnId}`}
-      coordinates={coordinates}
+      rowIndex={rowIndex}
+      columnIndex={columnIndex}
       isTabStop={false}
       isSelected={false}
       isRowSelectionCell

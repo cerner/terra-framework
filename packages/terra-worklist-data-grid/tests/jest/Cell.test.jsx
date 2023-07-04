@@ -4,12 +4,13 @@ import { shallowWithIntl } from 'terra-enzyme-intl';
 import Cell from '../../src/subcomponents/Cell';
 
 describe('Cell', () => {
-  it('renders a row header cell', () => {
+  it('verifies that only a row header cell(TH) is created when isRowHeader prop is true', () => {
     const wrapper = shallowWithIntl(
       <Cell
         rowId="RowID"
         columnId="ColumnId"
-        coordinates={{ row: 1, col: 2 }}
+        rowIndex={1}
+        columnIndex={2}
         key="key"
         isTabStop={false}
         isSelected={false}
@@ -28,36 +29,13 @@ describe('Cell', () => {
     expect(cellContent.text()).toEqual('Data in cell');
   });
 
-  it('renders a row header cell', () => {
+  it('verifies that only a regular cell(TD) is created when isRowHeader prop is false', () => {
     const wrapper = shallowWithIntl(
       <Cell
         rowId="RowID"
         columnId="ColumnId"
-        coordinates={{ row: 1, col: 2 }}
-        key="key"
-        isTabStop={false}
-        isSelected={false}
-        cell={{ content: 'Data in cell' }}
-        isRowHeader
-        onCellSelect={jest.fn}
-      />,
-    ).dive();
-
-    expect(wrapper.find('th')).toHaveLength(1); // Th when row header.
-    expect(wrapper.find('td')).toHaveLength(0); // There should be no th since this is row header.
-    expect(wrapper).toMatchSnapshot();
-
-    const cellContent = wrapper.find('th').find('div');
-    expect(cellContent).toHaveLength(1);
-    expect(cellContent.text()).toEqual('Data in cell');
-  });
-
-  it('renders a regular(non row header) cell', () => {
-    const wrapper = shallowWithIntl(
-      <Cell
-        rowId="RowID"
-        columnId="ColumnId"
-        coordinates={{ row: 1, col: 2 }}
+        rowIndex={1}
+        columnIndex={2}
         key="key"
         isTabStop={false}
         isSelected={false}
@@ -77,12 +55,13 @@ describe('Cell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders a selectable cell', () => {
+  it('verifies that the cell rendered is marked selectable when isSelectable prop is true', () => {
     const wrapper = shallowWithIntl(
       <Cell
         rowId="RowID"
         columnId="ColumnId"
-        coordinates={{ row: 1, col: 2 }}
+        rowIndex={1}
+        columnIndex={2}
         key="key"
         cell={{ isSelectable: true, content: 'Data in cell' }}
         onCellSelect={jest.fn}
@@ -99,12 +78,13 @@ describe('Cell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders a blank cell', () => {
+  it('verifies that the cell rendered is marked blank when the cell content is empty', () => {
     const wrapper = shallowWithIntl(
       <Cell
         rowId="RowID"
         columnId="ColumnId"
-        coordinates={{ row: 1, col: 2 }}
+        rowIndex={1}
+        columnIndex={2}
         key="key"
         cell={{ content: '' }}
         onCellSelect={jest.fn}
@@ -120,13 +100,14 @@ describe('Cell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders a selected cell', () => {
+  it('verifies that a selected cell has the correct styles when isSelected prop is true', () => {
     const wrapper = shallowWithIntl(
       <Cell
         rowId="RowID"
         columnId="ColumnId"
         ariaLabel="Some Label Here"
-        coordinates={{ row: 1, col: 2 }}
+        rowIndex={1}
+        columnIndex={2}
         key="key"
         isSelected
         cell={{ content: 'Data in cell' }}
@@ -147,13 +128,14 @@ describe('Cell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders a mask cell', () => {
+  it('verifies that a cell has the correct styles and no content when isMasked prop is true', () => {
     const wrapper = shallowWithIntl(
       <Cell
         rowId="RowID"
         columnId="ColumnId"
         ariaLabel="Some Label Here"
-        coordinates={{ row: 1, col: 2 }}
+        rowIndex={1}
+        columnIndex={2}
         key="key"
         cell={{ isMasked: true, content: 'Data in cell' }}
         onCellSelect={jest.fn}
@@ -177,7 +159,8 @@ describe('Cell', () => {
         rowId="RowID"
         columnId="ColumnId"
         ariaLabel="Some Label Here"
-        coordinates={{ row: 1, col: 2 }}
+        rowIndex={1}
+        columnIndex={2}
         key="key"
         isSelected
         cell={{

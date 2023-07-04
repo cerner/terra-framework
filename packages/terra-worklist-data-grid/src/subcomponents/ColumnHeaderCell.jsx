@@ -32,12 +32,13 @@ const propTypes = {
    */
   onColumnSelect: PropTypes.func,
   /**
-   * The coordinates of the cell within the grid.
+   * The cell's row position in the grid. This is zero based.
    */
-  coordinates: PropTypes.shape({
-    row: PropTypes.number,
-    col: PropTypes.number,
-  }),
+  rowIndex: PropTypes.number,
+  /**
+   * The cell's column position in the grid. This is zero based.
+   */
+  columnIndex: PropTypes.number,
   /**
    * Boolean value to indicate if the cell is the tab stop on the grid. The grid will have only one tab stop.
    */
@@ -61,13 +62,14 @@ const ColumnHeaderCell = (props) => {
     headerHeight,
     onColumnSelect,
     intl,
-    coordinates,
+    rowIndex,
+    columnIndex,
     isTabStop,
   } = props;
 
   // Handle column header selection via the mouse click.
   const handleMouseDown = (event) => {
-    onColumnSelect(column.id, coordinates);
+    onColumnSelect(column.id, { row: rowIndex, col: columnIndex });
     event.stopPropagation();
   };
 
@@ -77,7 +79,7 @@ const ColumnHeaderCell = (props) => {
     switch (key) {
       case KeyCode.KEY_SPACE:
         if (onColumnSelect) {
-          onColumnSelect(column.id, coordinates);
+          onColumnSelect(column.id, { row: rowIndex, col: columnIndex });
           event.stopPropagation();
           event.preventDefault(); // prevent the default scrolling
         }

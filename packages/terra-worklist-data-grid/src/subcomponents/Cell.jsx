@@ -21,12 +21,13 @@ const propTypes = {
    */
   columnId: PropTypes.string.isRequired,
   /**
-   * The coordinates of the cell within the grid.
+   * The cell's row position in the grid. This is zero based.
    */
-  coordinates: PropTypes.shape({
-    row: PropTypes.number,
-    col: PropTypes.number,
-  }),
+  rowIndex: PropTypes.number,
+  /**
+   * The cell's column position in the grid. This is zero based.
+   */
+  columnIndex: PropTypes.number,
   /**
    * The information about the cell.
    */
@@ -73,7 +74,8 @@ function Cell(props) {
   const {
     rowId,
     columnId,
-    coordinates,
+    rowIndex,
+    columnIndex,
     isTabStop,
     ariaLabel,
     isRowSelectionCell,
@@ -91,7 +93,7 @@ function Cell(props) {
       event.stopPropagation();
       event.preventDefault();
     } else if (onCellSelect) {
-      onCellSelect({ rowId, columnId }, coordinates);
+      onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
       event.stopPropagation();
     }
   };
@@ -104,7 +106,7 @@ function Cell(props) {
           event.stopPropagation();
           event.preventDefault();
         } else if (onCellSelect) {
-          onCellSelect({ rowId, columnId }, coordinates);
+          onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
           event.stopPropagation();
           event.preventDefault(); // prevent the default scrolling
         }

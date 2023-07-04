@@ -94,7 +94,8 @@ function Row(props) {
       <Cell
         rowId={rowId}
         columnId={columnId}
-        coordinates={{ row: cellRowIndex, col: cellColumnIndex }}
+        rowIndex={cellRowIndex}
+        columnIndex={cellColumnIndex}
         key={`${rowId}_${columnId}`}
         isTabStop={tabStopColumnIndex === cellColumnIndex}
         isSelected={!hasSelectableRows && selectedCellColumnId === columnId}
@@ -116,7 +117,8 @@ function Row(props) {
         <RowSelectionCell
           rowId={row.id}
           columnId={displayedColumns[0].id}
-          coordinates={{ row: rowIndex, col: 0 }}
+          rowIndex={rowIndex}
+          columnIndex={0}
           isTabStop={tabStopColumnIndex === 0}
           isSelected={row.isSelected}
           ariaLabel={row.ariaLabel}

@@ -41,7 +41,7 @@ const dataFile = {
   ],
 };
 describe('WorklistDataGrid', () => {
-  it('renders a grid with 1 header row and 3 data rows', () => {
+  it('verifies that the grid created is consistent with the rows and columns props', () => {
     const wrapper = shallowWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
@@ -62,7 +62,7 @@ describe('WorklistDataGrid', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('verifies the row is created with the right props', () => {
+  it('verifies the rows are created with the right props', () => {
     const verifyRow = (rowIndex, row, data, columns) => {
       expect(row.props.row).toEqual(data);
       expect(row.props.displayedColumns).toEqual(columns);

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WorklistDataGrid renders a grid with 1 header row and 3 data rows 1`] = `
+exports[`WorklistDataGrid verifies that the grid created is consistent with the rows and columns props 1`] = `
 <Fragment>
   <table
     className="worklist-data-grid"
@@ -17,15 +17,11 @@ exports[`WorklistDataGrid renders a grid with 1 header row and 3 data rows 1`] =
               "id": "Column-0",
             }
           }
-          coordinates={
-            Object {
-              "col": 0,
-              "row": 0,
-            }
-          }
+          columnIndex={0}
           isTabStop={true}
           key="Column-0"
           onColumnSelect={[Function]}
+          rowIndex={0}
         />
         <InjectIntl(ColumnHeaderCell)
           column={
@@ -34,15 +30,11 @@ exports[`WorklistDataGrid renders a grid with 1 header row and 3 data rows 1`] =
               "id": "Column-1",
             }
           }
-          coordinates={
-            Object {
-              "col": 1,
-              "row": 0,
-            }
-          }
+          columnIndex={1}
           isTabStop={false}
           key="Column-1"
           onColumnSelect={[Function]}
+          rowIndex={0}
         />
         <InjectIntl(ColumnHeaderCell)
           column={
@@ -52,15 +44,11 @@ exports[`WorklistDataGrid renders a grid with 1 header row and 3 data rows 1`] =
               "isSelectable": false,
             }
           }
-          coordinates={
-            Object {
-              "col": 2,
-              "row": 0,
-            }
-          }
+          columnIndex={2}
           isTabStop={false}
           key="Column-2"
           onColumnSelect={[Function]}
+          rowIndex={0}
         />
       </tr>
       <Row
@@ -197,7 +185,7 @@ exports[`WorklistDataGrid renders a grid with 1 header row and 3 data rows 1`] =
 </Fragment>
 `;
 
-exports[`WorklistDataGrid verifies the row is created with the right props 1`] = `
+exports[`WorklistDataGrid verifies the rows are created with the right props 1`] = `
 <Fragment>
   <table
     className="worklist-data-grid"
@@ -214,15 +202,11 @@ exports[`WorklistDataGrid verifies the row is created with the right props 1`] =
               "id": "Column-0",
             }
           }
-          coordinates={
-            Object {
-              "col": 0,
-              "row": 0,
-            }
-          }
+          columnIndex={0}
           isTabStop={true}
           key="Column-0"
           onColumnSelect={[Function]}
+          rowIndex={0}
         />
         <InjectIntl(ColumnHeaderCell)
           column={
@@ -231,15 +215,11 @@ exports[`WorklistDataGrid verifies the row is created with the right props 1`] =
               "id": "Column-1",
             }
           }
-          coordinates={
-            Object {
-              "col": 1,
-              "row": 0,
-            }
-          }
+          columnIndex={1}
           isTabStop={false}
           key="Column-1"
           onColumnSelect={[Function]}
+          rowIndex={0}
         />
         <InjectIntl(ColumnHeaderCell)
           column={
@@ -249,15 +229,11 @@ exports[`WorklistDataGrid verifies the row is created with the right props 1`] =
               "isSelectable": false,
             }
           }
-          coordinates={
-            Object {
-              "col": 2,
-              "row": 0,
-            }
-          }
+          columnIndex={2}
           isTabStop={false}
           key="Column-2"
           onColumnSelect={[Function]}
+          rowIndex={0}
         />
       </tr>
       <Row

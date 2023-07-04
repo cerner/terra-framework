@@ -26,28 +26,28 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/default-worklist-data-grid');
     });
 
-    it('tab into the grid', () => {
+    it('tabs into the grid', () => {
       browser.keys(['Tab']);
 
       Terra.validates.element('first-cell-in-grid-focused', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('tab back out of the grid', () => {
+    it('tabs in and shift tab out of the grid', () => {
       browser.keys(['Tab', 'Shift', 'Tab', 'Shift']);
 
       Terra.validates.element('tab-selection-off-grid', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('tab forward out of the grid', () => {
+    it('tabs forward out of the grid', () => {
       browser.keys(['Tab', 'Tab']);
 
       Terra.validates.element('tab-selection-off-grid', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('arrow keys', () => {
+    it('uses arrow keys to navigate', () => {
       browser.keys(['Tab']
         .concat(new Array(5).fill('ArrowDown'))
         .concat(new Array(6).fill('ArrowRight'))
@@ -58,7 +58,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('up arrow key cannot navigate outside grid', () => {
+    it('validates that the up arrow key cannot navigate outside the grid', () => {
       browser.keys(['Tab']
         .concat(new Array(1).fill('ArrowDown'))
         .concat(new Array(3).fill('ArrowUp')));
@@ -67,7 +67,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('left arrow key cannot navigate outside grid', () => {
+    it('validates that the left arrow key cannot navigate outside the grid', () => {
       browser.keys(['Tab']
         .concat(new Array(1).fill('ArrowDown'))
         .concat(new Array(3).fill('ArrowUp'))
@@ -77,7 +77,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('control with home key', () => {
+    it('validates that Control + Home goes to first non-header cell', () => {
       browser.keys(['Tab']
         .concat(new Array(4).fill('ArrowDown'))
         .concat(new Array(3).fill('ArrowRight'))
@@ -87,7 +87,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('home key', () => {
+    it('validates that the Home key goes to the first cell in current row', () => {
       browser.keys(['Tab']
         .concat(new Array(4).fill('ArrowDown'))
         .concat(new Array(3).fill('ArrowRight'))
@@ -97,7 +97,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('end key', () => {
+    it('validates that the End key goes to the last cell in current row', () => {
       browser.keys(['Tab']
         .concat(new Array(4).fill('ArrowDown'))
         .concat(new Array(3).fill('ArrowRight'))
@@ -107,7 +107,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('control with end key', () => {
+    it('validates that Control + End key goes to the last cell in the grid', () => {
       browser.keys(['Tab']
         .concat(new Array(4).fill('ArrowDown'))
         .concat(new Array(3).fill('ArrowRight'))
@@ -117,7 +117,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('down arrow cannot navigate outside grid', () => {
+    it('validates that the down arrow key cannot navigate outside the grid', () => {
       browser.keys(['Tab']
         .concat(['Control', 'End', 'Control'])
         .concat(new Array(3).fill('ArrowDown')));
@@ -126,7 +126,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('right arrow cannot navigate outside grid', () => {
+    it('validates that the right arrow key cannot navigate outside the grid', () => {
       browser.keys(['Tab']
         .concat(['Control', 'End', 'Control'])
         .concat(new Array(3).fill('ArrowRight')));
@@ -136,12 +136,12 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
   });
 
-  describe('cell selection : ', () => {
+  describe('Cell selection : ', () => {
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/default-worklist-data-grid');
     });
 
-    it('spacebar selects a cell', () => {
+    it('selects the current cell with spacebar', () => {
       navigateToCell(1, 1);
       browser.keys(['Space']);
 
@@ -149,7 +149,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('selecting an already selected cell has no effect', () => {
+    it('validates that selecting an already selected cell has no effect', () => {
       navigateToCell(1, 1);
       browser.keys(['Space', 'Space']);
 
@@ -157,7 +157,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('navigating does not move selected cell', () => {
+    it('validates that navigating the grid does not change the selected cell', () => {
       navigateToCell(1, 1);
       browser.keys(['Space']);
       moveCurrentPositionBy(2, 0);
@@ -166,7 +166,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('selecting another cell moves the selection and focus', () => {
+    it('validates that selecting another cell moves the selection and focus to current cell', () => {
       navigateToCell(1, 1);
       browser.keys(['Space']);
       moveCurrentPositionBy(2, 0);
@@ -176,14 +176,14 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('mouse click on a cell, moves selection and focus to that cell', () => {
+    it('validates that clicking on a cell, moves selection and focus to that cell', () => {
       clickCell(3, 1);
 
       Terra.validates.element('selection-3-1-focus-3-1-with-hover', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('mouse click and navigate to another', () => {
+    it('validates that navigation does not change cell selected via mouse click', () => {
       clickCell(3, 1);
       moveCurrentPositionBy(-2, -1);
 
@@ -191,7 +191,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('mouse click moves selection and focus to that cell', () => {
+    it('validates that mouse click moves selection and focus to clicked cell', () => {
       clickCell(3, 1); // Selection and Focus is on (3,1)
       clickCell(4, 2); // Selection and Focus should move to (4,2)
 
@@ -199,7 +199,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('esc clears cell selection', () => {
+    it('clears selection with Esc key', () => {
       clickCell(3, 1);
       browser.keys(['Escape']);
 
@@ -208,19 +208,19 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
   });
 
-  describe('with row selection', () => {
+  describe('With row selection', () => {
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-row-selection');
     });
 
-    it('first tab into grid, focuses on the checkbox', () => {
+    it('verifies that first tab into grid focuses on the checkbox', () => {
       browser.keys(['Tab']);
 
       Terra.validates.element('row-1-checkbox-focused-row-selection-mode', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('control with end key', () => {
+    it('navigates to last cell with Control + End key', () => {
       rowSelectionNavigateToCell(4, 3);
       browser.keys(['Control', 'End', 'Control']);
 
@@ -228,7 +228,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('control with home key', () => {
+    it('navigates to first non-header cell with Control + Home key', () => {
       rowSelectionNavigateToCell(4, 3);
       browser.keys(['Control', 'Home', 'Control']);
 
@@ -236,7 +236,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('spacebar selects row', () => {
+    it('selects the entire row with spacebar', () => {
       rowSelectionNavigateToCell(4, 3);
       browser.keys(['Space']);
 
@@ -244,7 +244,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('spacebar unselects selected row', () => {
+    it('unselects an already selected row with spacebar', () => {
       rowSelectionNavigateToCell(1, 3);
       browser.keys(['Space']); // Row 1 now selected
       moveCurrentPositionBy(3, 2); // Cell (4,5)
@@ -258,7 +258,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('navigate while row is selected', () => {
+    it('can still navigate when a row is selected', () => {
       rowSelectionNavigateToCell(1, 3);
       browser.keys(['Space']); // Row 1 now selected
       moveCurrentPositionBy(3, 2); // Cell (4,5)
@@ -267,7 +267,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('select all rows', () => {
+    it('selects all rows with Control + A', () => {
       rowSelectionNavigateToCell(3, 2);
       browser.keys(['Control', 'A', 'Control']);
 
@@ -275,7 +275,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('esc clears selected rows', () => {
+    it('clears all selected rows with Esc', () => {
       rowSelectionNavigateToCell(1, 2);
       browser.keys(['Space']); // Row 1 selected
       moveCurrentPositionBy(1, 0);
@@ -286,7 +286,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('esc clears row selection mode when no rows selected', () => {
+    it('clears row selection mode when no rows are selected', () => {
       rowSelectionNavigateToCell(4, 1);
       browser.keys(['Escape']); // clears row selection mode
 
@@ -294,14 +294,14 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('clicking cell selects row', () => {
+    it('selects a row by clicking inside that row', () => {
       clickCell(3, 1);
 
       Terra.validates.element('row-3-selected-row-selection-mode', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('clicking on selected row, unselects the row', () => {
+    it('unselects a selected row by clicking in that row', () => {
       clickCell(3, 2);
       clickCell(3, 6);
 
@@ -309,13 +309,13 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('masked cells in worklist data grid', () => {
+    it('adds correct styles to masked cells', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-masked-cell');
 
       Terra.validates.element('masked-cell', '#terra-worklist-data-grid-masked-cell');
     });
 
-    it('hover over selectable cell in worklist data grid', () => {
+    it('hovers over selectable cell in worklist data grid', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-selections');
 
       browser.$$('td[class*="worklist-data-grid-cell"][class*="selectable"]')[0].moveTo();
@@ -323,7 +323,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('hover-selectable-cell', '#terra-worklist-data-grid-with-selections');
     });
 
-    it('hover over non-selectable cell in worklist data grid', () => {
+    it('hovers over non-selectable cell in worklist data grid', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-selections');
 
       browser.$$('td[class*="worklist-data-grid-cell"]:not([class*="selectable"])')[0].moveTo();

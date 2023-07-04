@@ -40,7 +40,7 @@ const dataFile = {
 };
 
 describe('Row', () => {
-  it('renders a row', () => {
+  it('creates a row with the correct number of cells', () => {
     const rowData = dataFile.rows[0];
 
     const wrapper = shallowWithIntl(
@@ -74,7 +74,8 @@ describe('Row', () => {
       expect(cell.props.cell.content).toEqual(expectedCell.content);
       expect(cell.props.columnId).toEqual(columnId);
       expect(cell.props.rowId).toEqual(rowId);
-      expect(cell.props.coordinates).toEqual({ row: rowIndex, col: cellIndex });
+      expect(cell.props.rowIndex).toEqual(rowIndex);
+      expect(cell.props.columnIndex).toEqual(cellIndex);
       expect(cell.props.isRowHeader).toEqual(isRowHeader);
       expect(cell.props.isSelected).toEqual(false);
       expect(cell.props.isTabStop).toEqual(false);
