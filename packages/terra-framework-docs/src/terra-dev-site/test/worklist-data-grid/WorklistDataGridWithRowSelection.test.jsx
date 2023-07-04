@@ -65,10 +65,6 @@ const WorklistDataGridWithRowSelection = () => {
         rows.forEach(e => { e.isSelected = true; newRows.push(e.id); });
         setSelectedRows(determineSelectedRows(true, newRows));
       }}
-      onCellSelect={(rowId, columnId) => {
-        console.log(`Selected cell: ${rowId} ${columnId}`);
-        // TODO: Implement Slidepanel in Cell selection story.
-      }}
       onClearSelectedRows={() => {
         clearRowSelection();
       }}

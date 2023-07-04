@@ -148,7 +148,7 @@ function WorklistDataGrid(props) {
     // cell that was clicked.
     cell.tabIndex = -1;
     if (isRowSelectionCell(colIndex) && cell.getElementsByTagName('input').length > 0) {
-      // For row selection cell, the tabstop won't be on the cell itself but the 
+      // For row selection cell, the tabstop won't be on the cell itself but the
       // inner input element so remove it from the input element.
       cell.getElementsByTagName('input')[0].tabIndex = -1;
     }
