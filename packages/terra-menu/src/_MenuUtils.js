@@ -34,10 +34,23 @@ const totalItems = (children) => {
   return count;
 };
 
+const findMenuItem = (updatedStack, key) => {
+  for (let i = 0; i < updatedStack.length; i += 1) {
+    if (updatedStack[i].key === key) {
+      return updatedStack[i];
+    }
+    if (updatedStack[i].props.subMenuItems) {
+      return findMenuItem(updatedStack[i].props.subMenuItems, key);
+    }
+  }
+  return undefined;
+};
+
 const MenuUtils = {
   isFullScreen,
   isMac,
   totalItems,
+  findMenuItem,
 };
 
 export default MenuUtils;

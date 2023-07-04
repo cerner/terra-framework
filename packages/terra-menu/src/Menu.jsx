@@ -7,6 +7,7 @@ import MenuItem from './MenuItem';
 import MenuItemGroup from './MenuItemGroup';
 import MenuDivider from './MenuDivider';
 import styles from './Menu.module.scss';
+import MenuUtils from './_MenuUtils';
 
 const cx = classNames.bind(styles);
 
@@ -113,7 +114,12 @@ class Menu extends React.Component {
   push(item) {
     this.setState((prevState) => {
       const newStack = prevState.stack.slice();
-      newStack.push(item);
+      let updatedStack;
+      if (newStack.length - 1) {
+        updatedStack = newStack[0].props.children.filter((list) => list.props.subMenuItems && !list.props.isDisabled);
+        updatedStack = MenuUtils.findMenuItem(updatedStack, item.key);
+      }
+      newStack.push(updatedStack || item);
       return { stack: newStack };
     });
   }

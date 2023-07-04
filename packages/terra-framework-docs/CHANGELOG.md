@@ -2,11 +2,15 @@
 
 ## Unreleased
 
+* Updated
+  * Updated examples and tests for `terra-menu`.
+
 * Changed
   * Updated example for `terra-popup`.
   * Updated examples and tests for `terra-worklist-data-grid` to remove row height
   * Updated examples and tests for `terra-worklist-data-grid` for blank cell accessibility
   * Updated examples and tests for `terra-worklist-data-grid` to show masked cells and hover states
+  * Updated examples and tests for `terra-worklist-data-grid` to show column sort and error indicators
 
 ## 1.23.0 - (June 12, 2023)
 
@@ -27,6 +31,7 @@
 * Added
   * Added documentation and tests for `terra-worklist-data-grid`.
   * Added example and test for masked cell feature for `terra-worklist-data-grid`.
+
 
 ## 1.21.0 - (May 11, 2023)
 

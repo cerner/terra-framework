@@ -30,6 +30,9 @@ class BasicMenu extends React.Component {
       open: false,
       toggle1Selected: false,
       toggle2Selected: false,
+      toggle21Selected: false,
+      toggle31Selected: false,
+      toggle41Selected: false,
       groupSelectedIndex: undefined,
       actionClickCount: 0,
     };
@@ -55,6 +58,18 @@ class BasicMenu extends React.Component {
 
   handleToggle2OnClick() {
     this.setState(prevState => ({ toggle2Selected: !prevState.toggle2Selected }));
+  }
+
+  handleToggle21OnClick = () => {
+    this.setState(prevState => ({ toggle21Selected: !prevState.toggle21Selected }));
+  }
+
+  handleToggle31OnClick = () => {
+    this.setState(prevState => ({ toggle31Selected: !prevState.toggle31Selected }));
+  }
+
+  handleToggle41OnClick = () => {
+    this.setState(prevState => ({ toggle41Selected: !prevState.toggle41Selected }));
   }
 
   handleOnChange(event, index) {
@@ -118,15 +133,61 @@ class BasicMenu extends React.Component {
                 <Menu.Item text="Action 1.1" key="1.1" onClick={this.handleAction} />,
                 <Menu.Item text="Action 1.2" key="1.2" onClick={this.handleAction} />,
                 <Menu.Item text="Action 1.3" key="1.3" onClick={this.handleAction} />,
+                <Menu.Item
+                  text="Toggle Item 21"
+                  key="Toggle21"
+                  isToggled={this.state.toggle21Selected}
+                  onClick={this.handleToggle21OnClick}
+                  isToggleable
+                />,
                 <Menu.Divider key="Divider1.1" />,
                 <Menu.Item text="Close Action 1.1" key="1.4" onClick={this.handleCloseOnClick} />,
                 <Menu.Item text="Close Action 1.2" key="1.5" onClick={this.handleCloseOnClick} />,
                 <Menu.Item text="Close Action 1.3" key="1.6" onClick={this.handleCloseOnClick} />,
+                <Menu.Item
+                  text="Nested Menu 2"
+                  key="Nested2"
+                  subMenuItems={[
+                    <Menu.Item text="Action 1.1" key="1.1" onClick={this.handleAction} />,
+                    <Menu.Item text="Action 1.2" key="1.2" onClick={this.handleAction} />,
+                    <Menu.Item text="Action 1.3" key="1.3" onClick={this.handleAction} />,
+                    <Menu.Item
+                      text="Toggle Item 31"
+                      key="Toggle31"
+                      isToggled={this.state.toggle31Selected}
+                      onClick={this.handleToggle31OnClick}
+                      isToggleable
+                    />,
+                    <Menu.Divider key="Divider1.1" />,
+                    <Menu.Item text="Close Action 1.1" key="1.4" onClick={this.handleCloseOnClick} />,
+                    <Menu.Item text="Close Action 1.2" key="1.5" onClick={this.handleCloseOnClick} />,
+                    <Menu.Item
+                      text="Nested Menu 3"
+                      key="Nested3"
+                      subMenuItems={[
+                        <Menu.Item text="Action 1.1" key="1.1" onClick={this.handleAction} />,
+                        <Menu.Item text="Action 1.2" key="1.2" onClick={this.handleAction} />,
+                        <Menu.Item text="Action 1.3" key="1.3" onClick={this.handleAction} />,
+                        <Menu.Item
+                          text="Toggle Item 41"
+                          key="Toggle41"
+                          isToggled={this.state.toggle41Selected}
+                          onClick={this.handleToggle41OnClick}
+                          isToggleable
+                        />,
+                        <Menu.Divider key="Divider1.1" />,
+                        <Menu.Item text="Close Action 1.1" key="1.4" onClick={this.handleCloseOnClick} />,
+                        <Menu.Item text="Close Action 1.2" key="1.5" onClick={this.handleCloseOnClick} />,
+                        <Menu.Item text="Close Action 1.3" key="1.6" onClick={this.handleCloseOnClick} />,
+                      ]}
+                    />,
+                  ]}
+                />,
               ]}
             />
             <Menu.Item
               text="Nested Menu 2 has a long title that will wrap and a truncated title when clicked"
-              key="Nested2"
+              key="Nested2 disabled"
               isDisabled
               subMenuItems={[
                 <Menu.Item text="Default 2.1" key="2.1" />,
