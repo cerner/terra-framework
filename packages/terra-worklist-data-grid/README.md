@@ -6,7 +6,7 @@
 ---
 ### Notice
 
-> Terra Worklist Data Grid is currently under alpha release. There may be breaking changes between releases until it is stable at v1.0.
+> Terra Worklist Data Grid is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
 
 ---
 
