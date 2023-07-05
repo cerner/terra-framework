@@ -59,7 +59,7 @@ exports[`Cell verifies that only a regular cell(TD) is created when isRowHeader 
 </td>
 `;
 
-exports[`Cell verifies that only a row header cell(TH) is created when isRowHeader prop is true 1`] = `
+exports[`Cell verifies that only a row header cell (<th>) is created when isRowHeader prop is true 1`] = `
 <th
   aria-selected={false}
   className="worklist-data-grid-cell selectable"

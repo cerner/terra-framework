@@ -76,6 +76,8 @@ function Row(props) {
 
   const theme = useContext(ThemeContext);
 
+  const columnIndexOffSet = hasSelectableRows ? 1 : 0;
+
   const handleCellSelect = (rowIdColId, coordinates) => {
     if (hasSelectableRows) {
       if (onRowSelect) {
@@ -88,7 +90,7 @@ function Row(props) {
 
   const getCellData = (cellRowIndex, cellColumnIndex, cell, rowId) => {
     const columnId = displayedColumns[cellColumnIndex].id;
-    const isRowHeader = cellColumnIndex === (rowHeaderIndex + hasSelectableRows ? 1 : 0);
+    const isRowHeader = cellColumnIndex === rowHeaderIndex + columnIndexOffSet;
 
     return (
       <Cell
@@ -106,25 +108,26 @@ function Row(props) {
     );
   };
 
-  const columnIndexOffSet = hasSelectableRows ? 1 : 0;
+  const rowSelectionCell = hasSelectableRows ? (
+    <RowSelectionCell
+      rowId={row.id}
+      columnId={displayedColumns[0].id}
+      rowIndex={rowIndex}
+      columnIndex={0}
+      isTabStop={tabStopColumnIndex === 0}
+      isSelected={row.isSelected}
+      ariaLabel={row.ariaLabel}
+      onCellSelect={handleCellSelect}
+    />
+  ) : null;
+
   return (
     <tr
       className={cx([row.isSelected ? 'row-selected' : 'worklist-data-grid-row', theme.className])}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ height }}
     >
-      {hasSelectableRows && (
-        <RowSelectionCell
-          rowId={row.id}
-          columnId={displayedColumns[0].id}
-          rowIndex={rowIndex}
-          columnIndex={0}
-          isTabStop={tabStopColumnIndex === 0}
-          isSelected={row.isSelected}
-          ariaLabel={row.ariaLabel}
-          onCellSelect={handleCellSelect}
-        />
-      )}
+      {rowSelectionCell}
       {row.cells.map((cell, cellColumnIndex) => (
         getCellData(rowIndex, cellColumnIndex + columnIndexOffSet, cell, row.id)
       ))}
