@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added alpha release disclaimer for `terra-worklist-data-grid`.
+
 ## 1.24.0 - (July 4, 2023)
 
 * Updated
@@ -17,7 +20,7 @@
 ## 1.23.0 - (June 12, 2023)
 
 * Changed
-  * Minor dependency version bump
+  * Minor dependency version bump.
 
 ## 1.22.0 - (June 5, 2023)
 
