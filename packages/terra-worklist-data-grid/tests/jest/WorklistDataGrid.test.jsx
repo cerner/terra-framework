@@ -63,15 +63,15 @@ describe('WorklistDataGrid', () => {
   });
 
   it('verifies the rows are created with the right props', () => {
-    const verifyRow = (rowIndex, row, data, columns) => {
-      expect(row.props.row).toEqual(data);
-      expect(row.props.displayedColumns).toEqual(columns);
-      expect(row.props.hasSelectableRows).toBe(false);
-      expect(row.key).toEqual(data.id);
-      expect(row.props.onCellSelect).toBeDefined();
-      expect(row.props.onRowSelect).toBeDefined();
-      expect(row.props.rowHeaderIndex).toEqual(0);
-      expect(row.props.rowIndex).toEqual(rowIndex + 1);
+    const verifyRow = (rowIndex, rowComponent, data, columns) => {
+      expect(rowComponent.props.displayedColumns).toEqual(columns);
+      expect(rowComponent.props.hasRowSelection).toBe(false);
+      expect(rowComponent.key).toEqual(data.id);
+      expect(rowComponent.props.onCellSelect).toBeDefined();
+      expect(rowComponent.props.onRowSelect).toBeDefined();
+      expect(rowComponent.props.rowHeaderIndex).toEqual(0);
+      expect(rowComponent.props.rowIndex).toEqual(rowIndex + 1);
+      expect(rowComponent.props.cells).toEqual(data.cells);
     };
 
     const wrapper = shallowWithIntl(

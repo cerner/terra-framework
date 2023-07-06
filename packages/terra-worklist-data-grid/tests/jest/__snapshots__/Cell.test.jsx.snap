@@ -5,7 +5,6 @@ exports[`Cell renders cell as mask only even if cell is selectable and selected 
   aria-label="Terra.worklistDataGrid.maskedCell"
   aria-selected={true}
   className="worklist-data-grid-cell masked"
-  onCopy={[Function]}
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   tabIndex={-1}
@@ -17,7 +16,6 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
   aria-label="Terra.worklistDataGrid.maskedCell"
   aria-selected={false}
   className="worklist-data-grid-cell masked"
-  onCopy={[Function]}
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   tabIndex={-1}
@@ -29,7 +27,6 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
   aria-label="Some Label Here"
   aria-selected={true}
   className="worklist-data-grid-cell selectable selected"
-  onCopy={[Function]}
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   tabIndex={-1}
@@ -46,7 +43,6 @@ exports[`Cell verifies that only a regular cell(TD) is created when isRowHeader 
 <td
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
-  onCopy={[Function]}
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   tabIndex={-1}
@@ -63,7 +59,6 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
 <th
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
-  onCopy={[Function]}
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   tabIndex={-1}
@@ -81,7 +76,6 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
   aria-label="Terra.worklistDataGrid.blank"
   aria-selected={false}
   className="worklist-data-grid-cell selectable blank"
-  onCopy={[Function]}
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   tabIndex={-1}
@@ -92,7 +86,6 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
 <td
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
-  onCopy={[Function]}
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   tabIndex={-1}

@@ -14,10 +14,11 @@ describe('Cell', () => {
         key="key"
         isTabStop={false}
         isSelected={false}
-        cell={{ content: 'Data in cell' }}
         isRowHeader
         onCellSelect={jest.fn}
-      />,
+      >
+        Data in cell
+      </Cell>,
     ).dive();
 
     expect(wrapper.find('th')).toHaveLength(1); // Th when row header.
@@ -39,10 +40,11 @@ describe('Cell', () => {
         key="key"
         isTabStop={false}
         isSelected={false}
-        cell={{ content: 'Data in cell' }}
         isRowHeader={false}
         onCellSelect={jest.fn}
-      />,
+      >
+        Data in cell
+      </Cell>,
     ).dive();
 
     const normalCell = wrapper.find('td');
@@ -63,9 +65,11 @@ describe('Cell', () => {
         rowIndex={1}
         columnIndex={2}
         key="key"
-        cell={{ isSelectable: true, content: 'Data in cell' }}
+        isSelectable
         onCellSelect={jest.fn}
-      />,
+      >
+        Data in cell
+      </Cell>,
     ).dive();
 
     const selectableCell = wrapper.find('td.selectable');
@@ -86,7 +90,6 @@ describe('Cell', () => {
         rowIndex={1}
         columnIndex={2}
         key="key"
-        cell={{ content: '' }}
         onCellSelect={jest.fn}
       />,
     ).dive();
@@ -110,9 +113,10 @@ describe('Cell', () => {
         columnIndex={2}
         key="key"
         isSelected
-        cell={{ content: 'Data in cell' }}
         onCellSelect={jest.fn}
-      />,
+      >
+        Data in cell
+      </Cell>,
     ).dive();
 
     const selectedCell = wrapper.find('td.selected');
@@ -137,9 +141,11 @@ describe('Cell', () => {
         rowIndex={1}
         columnIndex={2}
         key="key"
-        cell={{ isMasked: true, content: 'Data in cell' }}
+        isMasked
         onCellSelect={jest.fn}
-      />,
+      >
+        Data in cell
+      </Cell>,
     ).dive();
 
     const maskedCell = wrapper.find('td.masked');
@@ -163,11 +169,12 @@ describe('Cell', () => {
         columnIndex={2}
         key="key"
         isSelected
-        cell={{
-          isMasked: true, isSelectable: true, content: 'Data in cell',
-        }}
+        isMasked
+        isSelectable
         onCellSelect={jest.fn}
-      />,
+      >
+        Data in cell
+      </Cell>,
     ).dive();
 
     const maskedCell = wrapper.find('td.masked');

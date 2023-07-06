@@ -83,10 +83,10 @@ function RowSelectionCell(props) {
       columnIndex={columnIndex}
       isTabStop={false}
       isSelected={false}
-      isRowSelectionCell
       onCellSelect={onCellSelect}
-      cell={{ content: selectionCheckbox }}
-    />
+    >
+      {selectionCheckbox}
+    </Cell>
   );
 }
 

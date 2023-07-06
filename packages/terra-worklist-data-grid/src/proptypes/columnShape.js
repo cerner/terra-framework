@@ -28,9 +28,9 @@ const columnShape = PropTypes.shape({
   */
   isSelectable: PropTypes.bool,
   /**
-   * A number (in px) specifying the width of the column. If not provided, the DataGrid's default column width will be used.
+   * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
    */
-  width: PropTypes.number,
+  width: PropTypes.string,
 });
 
 export { columnShape, SortIndicators };

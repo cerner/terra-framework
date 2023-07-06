@@ -7,7 +7,6 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
-import cellShape from '../proptypes/cellShape';
 
 const cx = classNames.bind(styles);
 
@@ -29,9 +28,17 @@ const propTypes = {
    */
   columnIndex: PropTypes.number,
   /**
-   * The information about the cell.
+   * Content that will rendered within the Cell.
    */
-  cell: cellShape.isRequired,
+  children: PropTypes.node,
+  /**
+   *  Boolean indicating if cell contents are masked.
+   */
+  isMasked: PropTypes.bool,
+  /**
+   * Boolean value indicating whether or not the column header is selectable.
+   */
+  isSelectable: PropTypes.bool,
   /**
    * Boolean value to indicate if the cell is the tab stop on the grid. At any given time, the grid has only one tab stop.
    */
@@ -49,10 +56,6 @@ const propTypes = {
    */
   isRowHeader: PropTypes.bool,
   /**
-   * Boolean indicating whether the cell is a row selection cell.
-   */
-  isRowSelectionCell: PropTypes.bool,
-  /**
    * Callback function that will be called when this cell is selected.
    */
   onCellSelect: PropTypes.func,
@@ -65,9 +68,11 @@ const propTypes = {
 
 const defaultProps = {
   isTabStop: false,
-  isRowSelectionCell: false,
   isRowHeader: false,
   isSelected: false,
+  isSelectable: true,
+  isMasked: false,
+
 };
 
 function Cell(props) {
@@ -78,10 +83,11 @@ function Cell(props) {
     columnIndex,
     isTabStop,
     ariaLabel,
-    isRowSelectionCell,
     isRowHeader,
     isSelected,
-    cell,
+    isMasked,
+    isSelectable,
+    children,
     onCellSelect,
     intl,
   } = props;
@@ -89,7 +95,7 @@ function Cell(props) {
   const theme = useContext(ThemeContext);
 
   const handleMouseDown = (event) => {
-    if (cell.isMasked || cell.isSelectable === false) {
+    if (isMasked || !isSelectable) {
       event.stopPropagation();
       event.preventDefault();
     } else if (onCellSelect) {
@@ -102,7 +108,7 @@ function Cell(props) {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_SPACE:
-        if (cell.isMasked || cell.isSelectable === false) {
+        if (isMasked || !isSelectable) {
           event.stopPropagation();
           event.preventDefault();
         } else if (onCellSelect) {
@@ -111,27 +117,27 @@ function Cell(props) {
           event.preventDefault(); // prevent the default scrolling
         }
         break;
+      case KeyCode.KEY_C:
+        if (event.ctrlKey || event.metaKey) {
+          WorklistDataGridUtils.writeToClipboard(event.target.textContent);
+        }
+        break;
       default:
     }
   };
 
-  const handleCopy = (event) => {
-    WorklistDataGridUtils.writeToClipboard(event.target.textContent);
-  };
-
   let cellAriaLabel = ariaLabel;
-  if (cell.isMasked) {
+  if (isMasked) {
     cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' });
-  } else if (!cell.content) {
+  } else if (!children) {
     cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' });
   }
 
   const className = cx('worklist-data-grid-cell', {
-    'row-selection-cell': isRowSelectionCell,
-    masked: cell.isMasked,
-    selectable: !(cell.isMasked || cell.isSelectable === false),
-    selected: isSelected && !cell.isMasked,
-    blank: !cell.content,
+    masked: isMasked,
+    selectable: isSelectable && !isMasked,
+    selected: isSelected && !isMasked,
+    blank: !children,
   }, theme.className);
 
   const CellTag = isRowHeader ? 'th' : 'td';
@@ -144,9 +150,8 @@ function Cell(props) {
       className={className}
       onMouseDown={handleMouseDown}
       onKeyDown={handleKeyDown}
-      onCopy={!isRowSelectionCell ? handleCopy : undefined}
     >
-      {isRowSelectionCell ? cell.content : (!cell.isMasked && cell.content && <div className={cx('cell-content', theme.className)}>{cell.content}</div>)}
+      {!isMasked && children && <div className={cx('cell-content', theme.className)}>{children}</div>}
     </CellTag>
   );
 }

@@ -33,7 +33,7 @@ const dataFile = {
       cells: [
         { content: 'Cardiac Index (L/min/m2)' },
         { content: '2.25' },
-        { content: '2.28', isMasked: true },
+        { content: '2.28', isMasked: false },
       ],
     },
   ],
@@ -47,9 +47,10 @@ describe('Row', () => {
       <Row
         rowIndex={99}
         key={12}
+        id={rowData.id}
         height="25"
-        row={rowData}
-        hasSelectableRows={dataFile.rows[0].hasSelectableRows}
+        cells={rowData.cells}
+        hasRowSelection={dataFile.rows[0].hasSelectableRows}
         displayedColumns={dataFile.cols}
         rowHeaderIndex={0}
         onCellSelect={jest.fn}
@@ -69,27 +70,32 @@ describe('Row', () => {
     const rowIndex = 2;
 
     const verifyCell = (cellIndex, cells, expectedCells, columnId, rowId, isRowHeader) => {
-      const cell = cells.get(cellIndex);
       const expectedCell = expectedCells[cellIndex];
-      expect(cell.props.cell.content).toEqual(expectedCell.content);
+
+      const cell = cells.get(cellIndex);
+      expect(cell.props.children).toEqual(expectedCell.content);
       expect(cell.props.columnId).toEqual(columnId);
       expect(cell.props.rowId).toEqual(rowId);
       expect(cell.props.rowIndex).toEqual(rowIndex);
       expect(cell.props.columnIndex).toEqual(cellIndex);
       expect(cell.props.isRowHeader).toEqual(isRowHeader);
       expect(cell.props.isSelected).toEqual(false);
+      expect(cell.props.isMasked).toEqual(expectedCell.isMasked);
       expect(cell.props.isTabStop).toEqual(false);
       expect(cell.props.onCellSelect).toBeDefined();
       expect(cell.key).toEqual(`${rowId}_${columnId}`);
     };
 
+    const rowData = dataFile.rows[rowIndex];
+
     const wrapper = shallowWithIntl(
       <Row
         rowIndex={rowIndex}
         key={rowIndex}
+        id={rowData.id}
         height="25"
-        row={dataFile.rows[rowIndex]}
-        hasSelectableRows={dataFile.rows[0].hasSelectableRows}
+        cells={rowData.cells}
+        isSelectable={rowData.isSelectable}
         displayedColumns={dataFile.cols}
         rowHeaderIndex={0}
         onCellSelect={jest.fn}
@@ -97,13 +103,11 @@ describe('Row', () => {
       />,
     );
 
-    const rowData = dataFile.rows[rowIndex];
-
-    const cells = wrapper.find(Cell);
-    expect(cells).toHaveLength(rowData.cells.length);
-    verifyCell(0, cells, rowData.cells, dataFile.cols[0].id, rowData.id, true);
-    verifyCell(1, cells, rowData.cells, dataFile.cols[1].id, rowData.id, false);
-    verifyCell(2, cells, rowData.cells, dataFile.cols[2].id, rowData.id, false);
+    const renderedCells = wrapper.find(Cell);
+    expect(renderedCells).toHaveLength(rowData.cells.length);
+    verifyCell(0, renderedCells, rowData.cells, dataFile.cols[0].id, rowData.id, true);
+    verifyCell(1, renderedCells, rowData.cells, dataFile.cols[1].id, rowData.id, false);
+    verifyCell(2, renderedCells, rowData.cells, dataFile.cols[2].id, rowData.id, false);
 
     expect(wrapper).toMatchSnapshot();
   });

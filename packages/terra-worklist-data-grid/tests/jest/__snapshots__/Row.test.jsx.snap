@@ -10,11 +10,6 @@ exports[`Row creates a row with the correct number of cells 1`] = `
   }
 >
   <InjectIntl(Cell)
-    cell={
-      Object {
-        "content": "Heart Rate Monitored (bpm)",
-      }
-    }
     columnId="Column-0"
     columnIndex={0}
     isRowHeader={true}
@@ -24,13 +19,10 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     onCellSelect={[Function]}
     rowId="1"
     rowIndex={99}
-  />
+  >
+    Heart Rate Monitored (bpm)
+  </InjectIntl(Cell)>
   <InjectIntl(Cell)
-    cell={
-      Object {
-        "content": "",
-      }
-    }
     columnId="Column-1"
     columnIndex={1}
     isRowHeader={false}
@@ -42,14 +34,9 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     rowIndex={99}
   />
   <InjectIntl(Cell)
-    cell={
-      Object {
-        "content": "66",
-        "isMasked": true,
-      }
-    }
     columnId="Column-2"
     columnIndex={2}
+    isMasked={true}
     isRowHeader={false}
     isSelected={false}
     isTabStop={false}
@@ -57,7 +44,9 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     onCellSelect={[Function]}
     rowId="1"
     rowIndex={99}
-  />
+  >
+    66
+  </InjectIntl(Cell)>
 </tr>
 `;
 
@@ -71,11 +60,6 @@ exports[`Row verifies the cell is created with the right props 1`] = `
   }
 >
   <InjectIntl(Cell)
-    cell={
-      Object {
-        "content": "Cardiac Index (L/min/m2)",
-      }
-    }
     columnId="Column-0"
     columnIndex={0}
     isRowHeader={true}
@@ -85,13 +69,10 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     onCellSelect={[Function]}
     rowId="3"
     rowIndex={2}
-  />
+  >
+    Cardiac Index (L/min/m2)
+  </InjectIntl(Cell)>
   <InjectIntl(Cell)
-    cell={
-      Object {
-        "content": "2.25",
-      }
-    }
     columnId="Column-1"
     columnIndex={1}
     isRowHeader={false}
@@ -101,16 +82,13 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     onCellSelect={[Function]}
     rowId="3"
     rowIndex={2}
-  />
+  >
+    2.25
+  </InjectIntl(Cell)>
   <InjectIntl(Cell)
-    cell={
-      Object {
-        "content": "2.28",
-        "isMasked": true,
-      }
-    }
     columnId="Column-2"
     columnIndex={2}
+    isMasked={false}
     isRowHeader={false}
     isSelected={false}
     isTabStop={false}
@@ -118,6 +96,8 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     onCellSelect={[Function]}
     rowId="3"
     rowIndex={2}
-  />
+  >
+    2.28
+  </InjectIntl(Cell)>
 </tr>
 `;

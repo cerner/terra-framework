@@ -8,6 +8,13 @@
     font-weight: normal;
     height: 100%;
     position: relative;
+
+    input {
+      display: flex;
+      height: 16px;
+      margin: auto;
+      width: 16px;
+    }
   }
 
   .selected {
@@ -26,14 +33,6 @@
     width: 100%;
   }
 
-  .row-selection-cell {
-    input {
-      display: flex;
-      height: 16px;
-      margin: auto;
-      width: 16px;
-    }
-  }
 
   // Hover state for selectable elements
   .selectable:hover {

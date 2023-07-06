@@ -48,7 +48,7 @@ const propTypes = {
    */
   columnHeaderHeight: PropTypes.string,
   /**
-   * String that specifies the height for the rows in the grid. Any valid CSS width value is accepted.
+   * String that specifies the height for the rows in the grid. Any valid CSS value is accepted.
    */
   rowHeight: PropTypes.string,
   /**
@@ -133,8 +133,8 @@ function WorklistDataGrid(props) {
 
   const setFocus = (rowIndex, colIndex, makeActiveElement) => {
     let focusedCell = grid.current.rows[rowIndex].cells[colIndex];
-    if (isRowSelectionCell(colIndex) && focusedCell.firstChild) {
-      focusedCell = focusedCell.firstChild;
+    if (isRowSelectionCell(colIndex) && focusedCell.getElementsByTagName('input').length > 0) {
+      [focusedCell] = focusedCell.getElementsByTagName('input');
     }
     focusedCell.tabIndex = 0;
     if (makeActiveElement && focusedCell.focus) {
@@ -362,8 +362,12 @@ function WorklistDataGrid(props) {
   const buildColumn = (column, columnIndex) => (
     <ColumnHeaderCell
       key={column.id}
-      column={column}
-      width={props.columnWidth}
+      id={column.id}
+      displayName={column.displayName}
+      sortIndicator={column.sortIndicator}
+      hasError={column.hasError}
+      isSelectable={column.isSelectable}
+      width={column.width || props.columnWidth}
       headerHeight={columnHeaderHeight}
       onColumnSelect={handleColumnSelect}
       rowIndex={0}
@@ -388,8 +392,11 @@ function WorklistDataGrid(props) {
       rowIndex={rowIndex}
       key={row.id}
       height={props.rowHeight}
-      row={row}
-      hasSelectableRows={hasSelectableRows}
+      id={row.id}
+      isSelected={row.isSelected}
+      cells={row.cells}
+      ariaLabel={row.ariaLabel}
+      hasRowSelection={hasSelectableRows}
       displayedColumns={displayedColumns}
       rowHeaderIndex={rowHeaderIndex}
       onCellSelect={handleCellSelection}

@@ -16,9 +16,26 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Data for columns. By default, columns will be presented in the order given.
+   * Required string representing a unique identifier for the column header cell.
    */
-  column: WorklistDataGridPropTypes.columnShape.isRequired,
+  id: PropTypes.string.isRequired,
+  /**
+   * String of text to render within the column header cell.
+   */
+  displayName: PropTypes.string,
+  /**
+   * A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
+   * If a `component` value is specified, `sortIndicator` will be ignored. One of `ascending`, `descending`.
+   */
+  sortIndicator: PropTypes.oneOf(Object.values(WorklistDataGridPropTypes.SortIndicators)),
+  /**
+   * Boolean value indicating whether or not the column has an error in the data.
+   */
+  hasError: PropTypes.bool,
+  /**
+   * Boolean value indicating whether or not the column header is selectable.
+  */
+  isSelectable: PropTypes.bool,
   /**
    * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
    */
@@ -53,11 +70,17 @@ const propTypes = {
 
 const defaultProps = {
   isTabStop: false,
+  hasError: false,
+  isSelectable: true,
 };
 
 const ColumnHeaderCell = (props) => {
   const {
-    column,
+    id,
+    displayName,
+    sortIndicator,
+    hasError,
+    isSelectable,
     width,
     headerHeight,
     onColumnSelect,
@@ -69,7 +92,7 @@ const ColumnHeaderCell = (props) => {
 
   // Handle column header selection via the mouse click.
   const handleMouseDown = (event) => {
-    onColumnSelect(column.id, { row: rowIndex, col: columnIndex });
+    onColumnSelect(id, { row: rowIndex, col: columnIndex });
     event.stopPropagation();
   };
 
@@ -79,31 +102,32 @@ const ColumnHeaderCell = (props) => {
     switch (key) {
       case KeyCode.KEY_SPACE:
         if (onColumnSelect) {
-          onColumnSelect(column.id, { row: rowIndex, col: columnIndex });
+          onColumnSelect(id, { row: rowIndex, col: columnIndex });
           event.stopPropagation();
           event.preventDefault(); // prevent the default scrolling
+        }
+        break;
+      case KeyCode.KEY_C:
+        if (event.ctrlKey || event.metaKey) {
+          WorklistDataGridUtils.writeToClipboard(event.target.textContent);
         }
         break;
       default:
     }
   };
 
-  const handleCopy = (event) => {
-    WorklistDataGridUtils.writeToClipboard(event.target.textContent);
-  };
-
   let sortIndicatorIcon;
   let errorIcon;
 
   // Add error icon when column error exists
-  if (column.hasError) {
+  if (hasError) {
     errorIcon = <IconError a11yLabel={intl.formatMessage({ id: 'Terra.worklistDataGrid.columnError' })} className={cx('error-icon')} />;
   }
 
   // Add the sort indicator based on the sort direction
-  if (column.sortIndicator === WorklistDataGridPropTypes.SortIndicators.ASCENDING) {
+  if (sortIndicator === WorklistDataGridPropTypes.SortIndicators.ASCENDING) {
     sortIndicatorIcon = <IconUp />;
-  } else if (column.sortIndicator === WorklistDataGridPropTypes.SortIndicators.DESCENDING) {
+  } else if (sortIndicator === WorklistDataGridPropTypes.SortIndicators.DESCENDING) {
     sortIndicatorIcon = <IconDown />;
   }
 
@@ -113,20 +137,19 @@ const ColumnHeaderCell = (props) => {
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
-      key={column.id}
-      className={cx('column-header', theme.className, { selectable: !(column.isSelectable === false) })}
+      key={id}
+      className={cx('column-header', theme.className, { selectable: isSelectable })}
       tabIndex={isTabStop ? 0 : -1}
       role="columnheader"
       scope="col"
-      aria-sort={column.sortIndicator}
-      onMouseDown={(!(column.isSelectable === false) && onColumnSelect) ? handleMouseDown : undefined}
-      onKeyDown={(!(column.isSelectable === false) && onColumnSelect) ? handleKeyDown : undefined}
-      onCopy={handleCopy}
-      style={{ width: column.width || width, height: headerHeight }}
+      aria-sort={sortIndicator}
+      onMouseDown={(isSelectable && onColumnSelect) ? handleMouseDown : undefined}
+      onKeyDown={(isSelectable && onColumnSelect) ? handleKeyDown : undefined}
+      style={{ width, height: headerHeight }}
     >
       <div className={cx('header-container')}>
         {errorIcon}
-        <span role={column.displayName && 'button'}>{column.displayName}</span>
+        <span role={displayName && 'button'}>{displayName}</span>
         {sortIndicatorIcon}
       </div>
     </th>

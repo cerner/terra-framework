@@ -6,12 +6,16 @@ import '../_elementPolyfill';
 import styles from './Row.module.scss';
 import RowSelectionCell from './RowSelectionCell';
 import Cell from './Cell';
-import rowShape from '../proptypes/rowShape';
+import cellShape from '../proptypes/cellShape';
 import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * An identifier to uniquely identify the row within the grid.
+   */
+  id: PropTypes.string.isRequired,
   /**
    * The row's position in the Grid. This is zero based.
    */
@@ -21,14 +25,23 @@ const propTypes = {
   */
   height: PropTypes.string,
   /**
-   * The information about the Row.
+   * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
    */
-  row: rowShape.isRequired,
+  cells: PropTypes.arrayOf(cellShape),
   /**
-   * Boolean indicating whether or not the DataGrid should allow entire rows to be selectable. An additional column will be
-   * rendered to allow for row selection to occur.
+   * A boolean indicating whether or not the row should render as selected.
    */
-  hasSelectableRows: PropTypes.bool,
+  isSelected: PropTypes.bool,
+  /**
+   * A string identifier used to describe the row contents. This value will be used to construct additional labels
+   * for internal controls (e.g. row selection cells).
+   */
+  ariaLabel: PropTypes.string,
+  /**
+   * Boolean indicating whether or not the DataGrid allows a row to be selected. If true, an additional
+   * column containing a checkbox is rendered to indicate when when the row is selected.
+   */
+  hasRowSelection: PropTypes.bool,
   /**
    * Callback function that will be called when a row is selected. Parameters: `onRowSelect(rowId)`
    */
@@ -57,15 +70,20 @@ const propTypes = {
 };
 
 const defaultProps = {
-  hasSelectableRows: false,
+  hasRowSelection: false,
+  rowHeaderIndex: 0,
+  isSelected: false,
 };
 
 function Row(props) {
   const {
     rowIndex,
     height,
-    hasSelectableRows,
-    row,
+    hasRowSelection,
+    id,
+    isSelected,
+    cells,
+    ariaLabel,
     displayedColumns,
     rowHeaderIndex,
     onRowSelect,
@@ -76,10 +94,10 @@ function Row(props) {
 
   const theme = useContext(ThemeContext);
 
-  const columnIndexOffSet = hasSelectableRows ? 1 : 0;
+  const columnIndexOffSet = hasRowSelection ? 1 : 0;
 
   const handleCellSelect = (rowIdColId, coordinates) => {
-    if (hasSelectableRows) {
+    if (hasRowSelection) {
       if (onRowSelect) {
         onRowSelect(rowIdColId.rowId, rowIndex, coordinates);
       }
@@ -88,7 +106,7 @@ function Row(props) {
     }
   };
 
-  const getCellData = (cellRowIndex, cellColumnIndex, cell, rowId) => {
+  const getCellData = (cellRowIndex, cellColumnIndex, cellData, rowId) => {
     const columnId = displayedColumns[cellColumnIndex].id;
     const isRowHeader = cellColumnIndex === rowHeaderIndex + columnIndexOffSet;
 
@@ -100,36 +118,39 @@ function Row(props) {
         columnIndex={cellColumnIndex}
         key={`${rowId}_${columnId}`}
         isTabStop={tabStopColumnIndex === cellColumnIndex}
-        isSelected={!hasSelectableRows && selectedCellColumnId === columnId}
-        cell={cell}
+        isSelected={!hasRowSelection && selectedCellColumnId === columnId}
+        isMasked={cellData.isMasked}
+        isSelectable={cellData.isSelectable}
         isRowHeader={isRowHeader}
         onCellSelect={handleCellSelect}
-      />
+      >
+        {cellData.content}
+      </Cell>
     );
   };
 
-  const rowSelectionCell = hasSelectableRows ? (
+  const rowSelectionCell = hasRowSelection ? (
     <RowSelectionCell
-      rowId={row.id}
+      rowId={id}
       columnId={displayedColumns[0].id}
       rowIndex={rowIndex}
       columnIndex={0}
       isTabStop={tabStopColumnIndex === 0}
-      isSelected={row.isSelected}
-      ariaLabel={row.ariaLabel}
+      isSelected={isSelected}
+      ariaLabel={ariaLabel}
       onCellSelect={handleCellSelect}
     />
   ) : null;
 
   return (
     <tr
-      className={cx([row.isSelected ? 'row-selected' : 'worklist-data-grid-row', theme.className])}
+      className={cx([isSelected ? 'row-selected' : 'worklist-data-grid-row', theme.className])}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ height }}
     >
       {rowSelectionCell}
-      {row.cells.map((cell, cellColumnIndex) => (
-        getCellData(rowIndex, cellColumnIndex + columnIndexOffSet, cell, row.id)
+      {cells.map((cellData, cellColumnIndex) => (
+        getCellData(rowIndex, cellColumnIndex + columnIndexOffSet, cellData, id)
       ))}
     </tr>
   );

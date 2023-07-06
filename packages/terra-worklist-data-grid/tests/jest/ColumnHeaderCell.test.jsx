@@ -16,7 +16,7 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
+        {...column}
         width="100px"
         headerHeight="150px"
       />,
@@ -47,7 +47,7 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
+        {...column}
         width="100px"
         headerHeight="150px"
       />,
@@ -79,7 +79,7 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
+        {...column}
         width="100px"
         headerHeight="150px"
       />,
@@ -111,7 +111,7 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
+        {...column}
         width="100px"
         headerHeight="150px"
       />,
@@ -144,7 +144,7 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
+        {...column}
         width="100px"
         headerHeight="150px"
       />,
@@ -180,7 +180,7 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
+        {...column}
         width="100px"
         headerHeight="150px"
         onColumnSelect={mockClick}
@@ -219,7 +219,7 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
+        {...column}
         width="100px"
         headerHeight="150px"
         onColumnSelect={onColumnSelect}
