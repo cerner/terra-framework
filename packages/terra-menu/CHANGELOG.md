@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+ * Updated menu example to be more accessible and realistic.
+
 ## 6.70.0 - (July 4, 2023)
 
 * Fixed
