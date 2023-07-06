@@ -253,7 +253,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
             "id": "terra-common-tabs-default",
             "isDisabled": false,
             "isIconOnly": false,
-            "isSelected": false,
+            "isSelected": true,
             "itemKey": "default",
             "label": "Default",
             "metaData": undefined,
@@ -271,7 +271,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
     <CommonTabItem
       associatedPanelId="terra-common-tabs-default-panel"
       id="terra-common-tabs-default"
-      isActive={false}
+      isActive={true}
       isDisabled={false}
       isIconOnly={false}
       itemKey="default"
