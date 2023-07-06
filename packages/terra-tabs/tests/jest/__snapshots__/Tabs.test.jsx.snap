@@ -426,7 +426,7 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the windo
     <CommonTabItem
       associatedPanelId="terra-common-tabs-default-panel"
       id="terra-common-tabs-default"
-      isActive={false}
+      isActive={true}
       isDisabled={false}
       isIconOnly={false}
       itemKey="default"
