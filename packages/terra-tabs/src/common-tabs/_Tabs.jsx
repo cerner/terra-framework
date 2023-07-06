@@ -256,7 +256,7 @@ class Tabs extends React.Component {
       if (!tab.isDisabled) {
         enabledTabsIndex += 1;
       }
-      if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
+      if (enabledTabsIndex < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
         visibleTabs.push(
           <Tab
             {...tab}
