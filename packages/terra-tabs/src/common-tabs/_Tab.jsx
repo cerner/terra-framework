@@ -176,7 +176,7 @@ const Tab = ({
       title={label}
       data-terra-tabs-show-focus-styles
     >
-      <div className={cx('inner')}>
+      <div className={variant === 'framework' ? cy('inner') : cx('inner')}>
         {customDisplay}
         {customDisplay ? null : icon}
         {customDisplay || isIconOnly ? null : <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
