@@ -71,7 +71,7 @@ class Tabs extends React.Component {
 
   getInitialState() {
     if (this.props.activeKey) {
-      return null;
+      return this.props.activeKey;
     }
     return TabUtils.initialSelectedTabKey(this.props.children, this.props.defaultActiveKey);
   }
