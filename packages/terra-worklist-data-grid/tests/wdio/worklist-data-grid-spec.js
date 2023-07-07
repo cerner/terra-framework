@@ -109,8 +109,8 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
 
     it('right arrow cannot navigate outside grid', () => {
       browser.keys(['Tab']
-        .concat(['Control', 'End', 'Control']))
-        .concat(new Array(2).fill('ArrowRight'));
+        .concat(['Control', 'End', 'Control'])
+        .concat(new Array(2).fill('ArrowRight')));
 
       browser.pause(150);
       Terra.validates.element('last-cell-in-last-row-selected', { selector });
