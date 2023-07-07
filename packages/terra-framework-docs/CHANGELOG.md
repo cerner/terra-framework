@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated example for `terra-menu`.
+
 * Added
   * Added alpha release disclaimer for `terra-worklist-data-grid`.
 
