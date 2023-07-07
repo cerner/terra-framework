@@ -8,6 +8,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
+import ColumnResizeHandle, { ColumnResizeContext } from './ColumnResizeHandle';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import './_elementPolyfill';
 import styles from './WorklistDataGrid.module.scss';
@@ -85,11 +86,12 @@ function WorklistDataGrid(props) {
 
   const [tableHeight, setTableHeight] = useState('auto');
   const [activeIndex, setActiveIndex] = useState(null);
+  const [activeResizeWidth, setActiveResizeWidth] = useState(200);
 
   const focusedRow = useRef(0);
   const focusedCol = useRef(0);
   const activeColumnPageX = useRef(0);
-  const activeColumnWidth = useRef(0);
+  const activeColumnWidth = useRef(200);
   const tableWidth = useRef(0);
   const grid = useRef();
   const columnRefs = useRef(new Array(columns.length));
@@ -182,22 +184,15 @@ function WorklistDataGrid(props) {
   };
 
   const onMouseDown = (event, index) => {
+    // Store current table and column values for resize calculations
     tableWidth.current = grid.current.offsetWidth;
     activeColumnPageX.current = event.pageX;
     activeColumnWidth.current = columnRefs.current[index].offsetWidth;
+
+    // Set the active index to the selected column
     setActiveIndex(index);
     event.stopPropagation();
     event.preventDefault();
-  };
-
-  const onMouseUp = () => {
-    alert(`${columns[activeIndex].id}:${columnRefs.current[activeIndex].style.width}`);
-
-    if (onColumnResize) {
-      onColumnResize(columns[activeIndex].id, columnRefs.current[activeIndex].style.width);
-    }
-
-    setActiveIndex(null);
   };
 
   const onMouseMove = useCallback((e) => {
@@ -205,10 +200,46 @@ function WorklistDataGrid(props) {
       return;
     }
 
+    // Ensure the new column width falls within the range of the minimum and maximum values
     const diffX = e.pageX - activeColumnPageX.current;
-    columnRefs.current[activeIndex].style.width = `${activeColumnWidth.current + diffX}px`;
-    grid.current.style.width = `${tableWidth + diffX}px`;
-  }, [activeIndex]);
+    const minimumWidth = columns[activeIndex].minimumWidth || 60;
+    const maximumWidth = columns[activeIndex].maximumWidth || 300;
+    const newColumnWidth = Math.min(Math.max(activeColumnWidth.current + diffX, minimumWidth), maximumWidth);
+
+    // Update the column and table width
+    columnRefs.current[activeIndex].style.width = `${newColumnWidth}px`;
+    grid.current.style.width = `${tableWidth + (newColumnWidth - activeColumnWidth.current)}px`;
+
+    setActiveResizeWidth(columnRefs.current[activeIndex].style.width);
+  }, [activeIndex, columns]);
+
+  const onMouseUp = () => {
+    // Notify consumers of the new column width
+    if (onColumnResize) {
+      onColumnResize(columns[activeIndex].id, columnRefs.current[activeIndex].style.width);
+    }
+
+    setActiveIndex(null);
+  };
+
+  const onColumnResizeHandleChange = (columnIndex, resizeIncrement) => {
+    // Ensure the new column width falls within the range of the minimum and maximum values
+    const minimumWidth = columns[columnIndex].minimumWidth || 60;
+    const maximumWidth = columns[columnIndex].maximumWidth || 300;
+    const currentColumnWidth = parseInt(columnRefs.current[columnIndex].style.width, 10);
+    const newColumnWidth = Math.min(Math.max((currentColumnWidth + resizeIncrement), minimumWidth), maximumWidth);
+
+    // Update the column and table width
+    columnRefs.current[columnIndex].style.width = `${newColumnWidth}px`;
+    grid.current.style.width = `${parseInt(grid.current.style.width, 10) + (newColumnWidth - currentColumnWidth)}px`;
+
+    // Notify consumers of the new column width
+    if (onColumnResize) {
+      onColumnResize(columns[activeIndex].id, columnRefs.current[columnIndex].style.width);
+    }
+
+    setActiveResizeWidth(columnRefs.current[columnIndex].style.width);
+  };
 
   const getCellData = (cell, cellColumnIndex) => {
     const tabIndex = { tabIndex: '-1' };
@@ -243,9 +274,9 @@ function WorklistDataGrid(props) {
     const height = props.columnHeaderHeight;
     return (
       /* eslint-disable react/forbid-dom-props */
-      /* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */
       <th
         key={column.id}
+        // eslint-disable-next-line no-return-assign
         ref={(el) => (columnRefs.current[columnIndex] = el)}
         className={cx('worklist-data-grid-column-header', { selectable: !(column.isSelectable === false) })}
         tabIndex="-1"
@@ -253,14 +284,7 @@ function WorklistDataGrid(props) {
       >
         {column.displayName}
         { !(column.isResizable === false) && (
-        <div
-          role="separator"
-          style={{ height: tableHeight }}
-          tabIndex={0}
-          onMouseDown={event => onMouseDown(event, columnIndex)}
-          onClick={event => { event.stopPropagation(); }}
-          className={cx('resize-handle', { active: activeIndex === columnIndex })}
-        />
+          <ColumnResizeHandle columnIndex={columnIndex} height={`${tableHeight}px`} />
         )}
       </th>
     );
@@ -294,27 +318,30 @@ function WorklistDataGrid(props) {
 
   const theme = useContext(ThemeContext);
 
-  const gridClassNames = cx('worklist-data-grid', theme.className);
-
   return (
-    <div className={cx('worklist-data-grid-container')}>
-      <table
-        ref={gridRef}
-        id={id}
-        role="grid"
-        aria-labelledby={ariaLabelledby}
-        aria-label={ariaLabel}
-        className={gridClassNames}
-        onClick={handleClick}
-        onKeyDown={handleKeyDown}
-        {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
-      >
-        <tbody>
-          {buildColumns(columns)}
-          {buildRows(rows)}
-        </tbody>
-      </table>
-    </div>
+    <ColumnResizeContext.Provider value={{
+      activeIndex, activeResizeWidth, onMouseDown, onColumnResizeHandleChange,
+    }}
+    >
+      <div className={cx('worklist-data-grid-container')}>
+        <table
+          ref={gridRef}
+          id={id}
+          role="grid"
+          aria-labelledby={ariaLabelledby}
+          aria-label={ariaLabel}
+          className={cx('worklist-data-grid', theme.className)}
+          onClick={handleClick}
+          onKeyDown={handleKeyDown}
+          {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
+        >
+          <tbody>
+            {buildColumns(columns)}
+            {buildRows(rows)}
+          </tbody>
+        </table>
+      </div>
+    </ColumnResizeContext.Provider>
   );
 }
 

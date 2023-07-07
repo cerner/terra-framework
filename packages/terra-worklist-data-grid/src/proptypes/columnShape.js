@@ -14,6 +14,14 @@ const columnShape = PropTypes.shape({
    */
   width: PropTypes.string,
   /**
+   * String that specifies the minimum column width in pixels
+   */
+  minimumWidth: PropTypes.string,
+  /**
+   * String that specifies the minimum column width in pixels
+   */
+  maximumWidth: PropTypes.string,
+  /**
    * Boolean value indicating whether or not the column header is selectable.
    */
   isSelectable: PropTypes.bool,
