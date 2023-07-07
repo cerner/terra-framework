@@ -42,7 +42,7 @@ const propTypes = {
    */
   onCellSelect: PropTypes.func,
   /**
-   * A number indicating which column represents the row header. This is zero based.
+   * A zero-based index indicating which column represents the row header.
    */
   rowHeaderIndex: PropTypes.number,
   /**
