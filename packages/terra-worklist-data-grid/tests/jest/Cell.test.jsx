@@ -4,7 +4,7 @@ import { shallowWithIntl } from 'terra-enzyme-intl';
 import Cell from '../../src/subcomponents/Cell';
 
 describe('Cell', () => {
-  it('verifies that only a row header cell(TH) is created when isRowHeader prop is true', () => {
+  it('verifies that only a row header cell (<th>) is created when isRowHeader prop is true', () => {
     const wrapper = shallowWithIntl(
       <Cell
         rowId="RowID"
