@@ -12,19 +12,11 @@
     // Style for the grid itself
     border: var(--terra-worklist-data-grid-border, 1px solid #dedfe0);
     border-collapse: collapse;
-    height: 100%;
-    margin: 1em auto;
+    table-layout: fixed;
     width: 100%;
   }
 
-  .worklist-data-grid-column-header {
-    background-color: var(--terra-worklist-data-grid-column-header-background-color, #dedfe0);
-    border: var(--terra-worklist-data-grid-column-header-border, 1px solid #000);
-    color: var(--terra-worklist-data-grid-column-header-text-color);
-  }
-
-  .worklist-data-grid-row-header,
-  .worklist-data-grid-cell-data {
+  .worklist-data-grid-cell {
     border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
     font-weight: normal;
     height: 100%;
@@ -33,5 +25,22 @@
 
   .worklist-data-grid-row:nth-child(odd) {
     background-color: var(--terra-worklist-data-grid-row-striped-background-color, #f0f0f0);
+  }
+
+  // Hover state for selectable elements
+  .selectable:hover {
+    background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
+    cursor: pointer;
+  }
+  
+  .cell-content {
+    height: 100%;
+    padding: var(--terra-worklist-data-grid-cell-content-padding, 7px);
+    width: 100%;
+  }
+
+  // Create gradient background for masked cells
+  .masked {
+    background: var(--terra-worklist-data-grid-mask-background, repeating-linear-gradient(-45deg, #dedfe0, #dedfe0 3px, transparent 3px, transparent 6px));
   }
 }

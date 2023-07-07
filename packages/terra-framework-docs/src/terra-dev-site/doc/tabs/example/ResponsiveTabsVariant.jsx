@@ -13,7 +13,7 @@ const TabsColorVariants = ({
     return (<IconOnlyTabs {...props} />);
   }
 
-  return (<TabsTemplate {...props} />);
+  return (<TabsTemplate {...props} id="responsive" />);
 };
 
 TabsColorVariants.propTypes = propTypes;

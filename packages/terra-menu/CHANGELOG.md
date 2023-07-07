@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.70.0 - (July 4, 2023)
+
+* Fixed
+  * Fixed issue where toggled item on nested menus was being reset while navigating back and forth between them.
+
 ## 6.69.0 - (June 12, 2023)
 
 * Changed

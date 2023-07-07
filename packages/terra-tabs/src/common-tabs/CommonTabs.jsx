@@ -70,8 +70,6 @@ const CommonTabs = ({
 
   const [commonTabsContainerRef, commonTabsPortalsRef] = usePortalManager(activeItemKey);
 
-  const ariaLabel = 'workspace';
-
   const tabData = React.Children.map(children, child => ({
     id: getTabId(id, child.props.itemKey),
     itemKey: child.props.itemKey,
@@ -103,7 +101,7 @@ const CommonTabs = ({
         <div className={cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
-        <Tabs variant={variant} ariaLabel={ariaLabel} tabData={tabData} onChange={onChange} />
+        <Tabs variant={variant} tabData={tabData} onChange={onChange} />
       </div>
       <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {
@@ -123,7 +121,8 @@ const CommonTabs = ({
               id: getTabId(id, child.props.itemKey),
               associatedPanelId: getAssociatedPanelId(id, child.props.itemKey),
               isActive: child.props.itemKey === activeItemKey,
-              portalElement,
+              portalElement: variant === 'framework' ? null : portalElement,
+              variant,
             })
           );
         })}

@@ -122,5 +122,13 @@
       height: 100%;
     }
   }
+
+  .inner {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+    word-wrap: normal;
+  }
 }
 

@@ -4,7 +4,9 @@ import React, {
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
+import ColumnHeaderCell from './ColumnHeaderCell';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import './_elementPolyfill';
 import styles from './WorklistDataGrid.module.scss';
@@ -51,6 +53,15 @@ const propTypes = {
    * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the grid.
    */
   rowHeaderIndex: PropTypes.number,
+  /**
+   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   */
+  onColumnSelect: PropTypes.func,
+  /**
+   * @private
+   * Object containing intl APIs
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {
@@ -64,6 +75,9 @@ function WorklistDataGrid(props) {
     ariaLabel,
     columns,
     rows,
+    columnHeaderHeight,
+    onColumnSelect,
+    intl,
   } = props;
 
   const focusedRow = useRef(0);
@@ -112,6 +126,7 @@ function WorklistDataGrid(props) {
       default:
         return;
     }
+
     if (nextRow >= grid.current.rows.length || nextCol >= grid.current.rows[0].cells.length) {
       event.preventDefault();
       return;
@@ -138,8 +153,9 @@ function WorklistDataGrid(props) {
     // Determine which cell was clicked. In the event that the user holds the mouse across multiple cells,
     // the originating cell is the clicked cell/active element.
     const clickedCell = event.target.closest('td,th') || document.activeElement.closest('td,th');
+
+    // Ensure that the cell is focusable and is a valid cell
     if (!clickedCell) {
-      // If anything other than a table data or table header cell is clicked, ignore the click.
       return;
     }
     // Remove Tab stop from previous cell in table that has focus and set it to the cell that was clicked.
@@ -154,23 +170,45 @@ function WorklistDataGrid(props) {
 
   const getCellData = (cell, cellColumnIndex) => {
     const tabIndex = { tabIndex: '-1' };
-    return props.rowHeaderIndex === cellColumnIndex ? (<th key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-row-header')}>{cell.content}</th>) : (<td key={cellColumnIndex} {...tabIndex} className={cx('worklist-data-grid-cell-data')}>{cell.content}</td>);
-  };
 
-  const buildColumn = (columnData) => {
-    const width = columnData.width || props.columnWidth;
-    const height = props.columnHeaderHeight;
+    // Determine whether cell is a header or grid cell
+    const WorklistCellTag = props.rowHeaderIndex === cellColumnIndex ? 'th' : 'td';
+    let cellAriaLabel;
+
+    if (cell.isMasked) {
+      cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' });
+    } else if (!cell.content) {
+      cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' });
+    }
+
     return (
-      /* eslint-disable react/forbid-dom-props */
-      <th key={columnData.id} className={cx('worklist-data-grid-column-header')} tabIndex="-1" style={{ width, height }}>{columnData.displayName}</th>
+      // Return worklist data grid cell component
+      <WorklistCellTag
+        key={cellColumnIndex}
+        {...tabIndex}
+        className={cx('worklist-data-grid-cell', { masked: cell.isMasked, selectable: !(cell.isMasked || cell.isSelectable === false), blank: !cell.content })}
+        aria-label={cellAriaLabel}
+      >
+        {!cell.isMasked && cell.content
+          && <div className={cx('cell-content')}>{cell.content}</div>}
+      </WorklistCellTag>
     );
   };
+
+  const buildColumn = (column) => (
+    <ColumnHeaderCell
+      column={column}
+      width={column.width || props.columnWidth}
+      headerHeight={columnHeaderHeight}
+      onColumnSelect={onColumnSelect}
+    />
+  );
 
   const buildColumns = (allColumns) => {
     if (allColumns?.length > 0) {
       return (
         <tr height={props.columnHeaderHeight}>
-          {allColumns.map(columnData => (buildColumn(columnData)))}
+          {allColumns.map(column => (buildColumn(column)))}
         </tr>
       );
     }
@@ -180,6 +218,7 @@ function WorklistDataGrid(props) {
   const buildRow = (row) => {
     const height = props.rowHeight;
     return (
+      // eslint-disable-next-line react/forbid-dom-props
       <tr key={row.id} className={cx('worklist-data-grid-row')} style={{ height }}>
         {row.cells.map((cell, cellColumnIndex) => (
           getCellData(cell, cellColumnIndex)
@@ -218,4 +257,4 @@ function WorklistDataGrid(props) {
 WorklistDataGrid.propTypes = propTypes;
 WorklistDataGrid.defaultProps = defaultProps;
 
-export default WorklistDataGrid;
+export default injectIntl(WorklistDataGrid);

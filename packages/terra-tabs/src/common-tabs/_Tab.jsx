@@ -123,6 +123,7 @@ const Tab = ({
     { 'is-active': isSelected },
     { 'is-icon-only': isIconOnly },
     { 'is-text-only': !icon },
+    { 'is-disabled': isDisabled },
     theme.className,
   );
   const paneClassNames = classNames(cy(
@@ -170,14 +171,15 @@ const Tab = ({
       id={id}
       aria-controls={associatedPanelId}
       role="tab"
+      aria-disabled={isDisabled}
       className={variant === 'framework' ? paneClassNames : tabClassNames}
       title={label}
       data-terra-tabs-show-focus-styles
     >
-      <div className={cx('inner')}>
+      <div className={variant === 'framework' ? cy('inner') : cx('inner')}>
         {customDisplay}
         {customDisplay ? null : icon}
-        {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
+        {customDisplay || isIconOnly ? null : <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
       </div>
     </div>
   );
