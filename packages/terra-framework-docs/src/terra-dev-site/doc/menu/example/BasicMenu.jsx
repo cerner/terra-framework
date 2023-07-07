@@ -54,7 +54,6 @@ class BasicMenu extends React.Component {
 
   handleToggle1OnClick() {
     this.setState(prevState => ({ toggle1Selected: !prevState.toggle1Selected }));
-    // this.handleRequestClose();
   }
 
   handleToggle2OnClick() {
