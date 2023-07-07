@@ -80,6 +80,7 @@ function WorklistDataGrid(props) {
     columns,
     rows,
     columnHeaderHeight,
+    rowHeight,
     onColumnSelect,
     intl,
   } = props;
@@ -177,7 +178,6 @@ function WorklistDataGrid(props) {
 
     // Determine whether cell is a header or grid cell
     const WorklistCellTag = props.rowHeaderIndex === cellColumnIndex ? 'th' : 'td';
-    const height = props.rowHeight;
     let cellAriaLabel;
 
     if (cell.isMasked) {
@@ -195,7 +195,7 @@ function WorklistDataGrid(props) {
         aria-label={cellAriaLabel}
       >
         {!cell.isMasked && cell.content
-          && <div className={cx('cell-content')} style={{ height }}>{cell.content}</div>}
+          && <div className={cx('cell-content')} style={{ height: rowHeight }}>{cell.content}</div>}
       </WorklistCellTag>
     );
   };

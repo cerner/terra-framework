@@ -2,9 +2,9 @@
 
 ## Unreleased
 * Changed
-  * Removed ability to set variable row heights
+  * Removed ability to set variable row heights.
   * Updated styling on cell focus.
-  * Updates data grid to honor the column and row widths specified by consumers
+  * Updated data grid to honor the column and row widths specified by consumers.
 * Added
   * Added masked cell support.
   * Added hover state for selectable cells.

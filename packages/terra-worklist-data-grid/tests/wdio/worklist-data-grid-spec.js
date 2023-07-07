@@ -79,9 +79,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
 
     it('end key', () => {
-      browser.keys(['Tab']
-        .concat(new Array(1).fill('ArrowDown'))
-        .concat(['End']));
+      browser.keys(['Tab', 'ArrowDown', 'End']);
 
       browser.pause(150);
       Terra.validates.element('last-cell-in-row-selected', { selector });
