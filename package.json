@@ -119,7 +119,7 @@
     "react-dom": "^16.8.5",
     "react-intl": "^2.9.0",
     "regenerator-runtime": "^0.13.2",
-    "stylelint": "^13.0.0",
+    "stylelint": "^15.10.1",
     "terra-aggregate-translations": "^1.0.0",
     "terra-application": "^1.48.0",
     "terra-disclosure-manager": "^4.9.0",
