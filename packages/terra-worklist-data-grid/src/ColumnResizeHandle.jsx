@@ -62,10 +62,11 @@ const ColumnResizeHandle = (props) => {
 
   // Mouse down event listener to give focus to resize handler and notify the provider
   const onMouseDown = (event) => {
+    resizeHandle.current.tabIndex = 0;
     resizeHandle.current.focus();
 
     if (onResizeMouseDown) {
-      onResizeMouseDown(event, columnIndex);
+      onResizeMouseDown(event);
     }
 
     event.stopPropagation();

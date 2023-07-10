@@ -93,7 +93,7 @@ function WorklistDataGrid(props) {
 
   const [tableHeight, setTableHeight] = useState('auto');
   const [activeIndex, setActiveIndex] = useState(null);
-  // const [activeResizeWidth, setActiveResizeWidth] = useState(200);
+  const [columnHeaderWidths, setColumnHeaderWidths] = useState(columns.map(column => parseInt((column.width || props.columnWidth), 10)));
 
   const focusedRow = useRef(0);
   const focusedCol = useRef(0);
@@ -190,11 +190,11 @@ function WorklistDataGrid(props) {
     event.preventDefault();
   };
 
-  const onResizeMouseDown = (event, index) => {
+  const onResizeMouseDown = (event, index, columnWidth) => {
     // Store current table and column values for resize calculations
     tableWidth.current = grid.current.offsetWidth;
     activeColumnPageX.current = event.pageX;
-    activeColumnWidth.current = columnRefs.current[index].offsetWidth;
+    activeColumnWidth.current = columnWidth;
 
     // Set the active index to the selected column
     setActiveIndex(index);
@@ -213,12 +213,16 @@ function WorklistDataGrid(props) {
     const maximumWidth = columns[activeIndex].maximumWidth || 300;
     const newColumnWidth = Math.min(Math.max(activeColumnWidth.current + diffX, minimumWidth), maximumWidth);
 
+    const newColumnHeaderWidths = [...columnHeaderWidths];
+    newColumnHeaderWidths[activeIndex] = newColumnWidth;
+    setColumnHeaderWidths(newColumnHeaderWidths);
+
     // Update the column and table width
-    columnRefs.current[activeIndex].style.width = `${newColumnWidth}px`;
+    // columnRefs.current[activeIndex].style.width = `${newColumnWidth}px`;
     grid.current.style.width = `${tableWidth + (newColumnWidth - activeColumnWidth.current)}px`;
 
     // setActiveResizeWidth(columnRefs.current[activeIndex].style.width);
-  }, [activeIndex, columns]);
+  }, [activeIndex, columnHeaderWidths, columns]);
 
   const onMouseUp = () => {
     // Notify consumers of the new column width
@@ -262,8 +266,10 @@ function WorklistDataGrid(props) {
       activeResizeColumn={activeIndex === columnIndex}
       column={column}
       columnIndex={columnIndex}
-      width={column.width || props.columnWidth}
+      width={columnHeaderWidths[columnIndex]}
       headerHeight={columnHeaderHeight}
+      isResizable={column.isResizable}
+      isSelectable={column.isSelectable}
       tableHeight={tableHeight}
       onColumnSelect={onColumnSelect}
       onResizeMouseDown={onResizeMouseDown}

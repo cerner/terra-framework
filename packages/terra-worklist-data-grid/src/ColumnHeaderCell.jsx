@@ -29,21 +29,29 @@ const propTypes = {
   /**
    * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
    */
-  width: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
   /**
    * String that specifies the column height. Any valid CSS height value accepted.
    */
   headerHeight: PropTypes.string.isRequired,
   /**
+   * A boolean indicating whether or not the column header is resizable.
+   */
+  isResizable: PropTypes.bool,
+  /**
+   * Boolean value indicating whether or not the column header is selectable.
+   */
+  isSelectable: PropTypes.bool,
+  /**
    * Height of the parent table
    */
   tableHeight: PropTypes.string.isRequired,
   /**
-   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`.
    */
   onColumnSelect: PropTypes.func,
   /**
-   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   * Function that is called when the mouse down event is triggered on the column resize handle.
    */
   onResizeMouseDown: PropTypes.func,
   /**
@@ -53,6 +61,11 @@ const propTypes = {
   intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
+const defaultProps = {
+  isSelectable: true,
+  isResizable: true,
+};
+
 const ColumnHeaderCell = (props) => {
   const {
     activeResizeColumn,
@@ -60,6 +73,8 @@ const ColumnHeaderCell = (props) => {
     columnIndex,
     width,
     headerHeight,
+    isResizable,
+    isSelectable,
     tableHeight,
     onColumnSelect,
     onResizeMouseDown,
@@ -75,6 +90,12 @@ const ColumnHeaderCell = (props) => {
   // Handle column header selection
   const onHeaderSelect = () => {
     onColumnSelect(column.id);
+  };
+
+  const onResizeHandleMouseDown = (event) => {
+    if (onResizeMouseDown) {
+      onResizeMouseDown(event, columnIndex, columnHeaderCell.current.offsetWidth);
+    }
   };
 
   let sortIndicatorIcon;
@@ -100,29 +121,29 @@ const ColumnHeaderCell = (props) => {
     <th
       ref={(columnHeaderCellRef)}
       key={column.id}
-      className={cx('column-header', theme.className, { selectable: !(column.isSelectable === false) })}
+      className={cx('column-header', theme.className, { selectable: isSelectable })}
       tabIndex="-1"
       // role="columnheader"
       // scope="col"
       aria-sort={column.sortIndicator}
       onClick={(!(column.isSelectable === false) && onColumnSelect) ? onHeaderSelect : undefined}
-      style={{ width, height: headerHeight }}
+      style={{ width: `${width}px`, height: headerHeight }}
     >
       <div className={cx('header-container')}>
         {errorIcon}
         <span role="button">{column.displayName}</span>
         {sortIndicatorIcon}
       </div>
-      { !(column.isResizable === false) && (
+      { isResizable && (
       <ColumnResizeHandle
         active={activeResizeColumn}
         columnIndex={columnIndex}
         columnText={column.displayName}
-        columnWidth={parseInt(width, 10)}
+        columnWidth={width}
         height={tableHeight}
         minimumWidth={column.minimumWidth || 60}
         maximumWidth={column.maximumWidth || 300}
-        onResizeMouseDown={onResizeMouseDown}
+        onResizeMouseDown={onResizeHandleMouseDown}
       />
       )}
     </th>
@@ -130,4 +151,5 @@ const ColumnHeaderCell = (props) => {
 };
 
 ColumnHeaderCell.propTypes = propTypes;
+ColumnHeaderCell.defaultProps = defaultProps;
 export default injectIntl(ColumnHeaderCell);
