@@ -116,12 +116,7 @@ const ColumnHeaderCell = (props) => {
   };
 
   let sortIndicatorIcon;
-  let errorIcon;
-
-  // Add error icon when column error exists
-  if (hasError) {
-    errorIcon = <IconError a11yLabel={intl.formatMessage({ id: 'Terra.worklistDataGrid.columnError' })} className={cx('error-icon')} />;
-  }
+  const errorIcon = hasError && <IconError a11yLabel={intl.formatMessage({ id: 'Terra.worklistDataGrid.columnError' })} className={cx('error-icon')} />;
 
   // Add the sort indicator based on the sort direction
   if (sortIndicator === WorklistDataGridPropTypes.SortIndicators.ASCENDING) {
