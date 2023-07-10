@@ -10,45 +10,31 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 ce
 >
   <tbody>
     <tr>
-      <th
-        className="worklist-data-grid-column-header selectable"
-        key="Column-0"
-        style={
+      <InjectIntl(ColumnHeaderCell)
+        column={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "displayName": " Vitals",
+            "id": "Column-0",
           }
         }
-        tabIndex="-1"
-      >
-         Vitals
-      </th>
-      <th
-        className="worklist-data-grid-column-header selectable"
-        key="Column-1"
-        style={
+      />
+      <InjectIntl(ColumnHeaderCell)
+        column={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "displayName": "March 16",
+            "id": "Column-1",
           }
         }
-        tabIndex="-1"
-      >
-        March 16
-      </th>
-      <th
-        className="worklist-data-grid-column-header"
-        key="Column-2"
-        style={
+      />
+      <InjectIntl(ColumnHeaderCell)
+        column={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
           }
         }
-        tabIndex="-1"
-      >
-        March 17
-      </th>
+      />
     </tr>
     <tr
       className="worklist-data-grid-row"
@@ -173,45 +159,31 @@ exports[`WorklistDataGrid renders a grid with selectable cells 1`] = `
 >
   <tbody>
     <tr>
-      <th
-        className="worklist-data-grid-column-header selectable"
-        key="Column-0"
-        style={
+      <InjectIntl(ColumnHeaderCell)
+        column={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "displayName": " Vitals",
+            "id": "Column-0",
           }
         }
-        tabIndex="-1"
-      >
-         Vitals
-      </th>
-      <th
-        className="worklist-data-grid-column-header selectable"
-        key="Column-1"
-        style={
+      />
+      <InjectIntl(ColumnHeaderCell)
+        column={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "displayName": "March 16",
+            "id": "Column-1",
           }
         }
-        tabIndex="-1"
-      >
-        March 16
-      </th>
-      <th
-        className="worklist-data-grid-column-header"
-        key="Column-2"
-        style={
+      />
+      <InjectIntl(ColumnHeaderCell)
+        column={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
           }
         }
-        tabIndex="-1"
-      >
-        March 17
-      </th>
+      />
     </tr>
     <tr
       className="worklist-data-grid-row"
@@ -336,45 +308,31 @@ exports[`WorklistDataGrid test masked cells 1`] = `
 >
   <tbody>
     <tr>
-      <th
-        className="worklist-data-grid-column-header selectable"
-        key="Column-0"
-        style={
+      <InjectIntl(ColumnHeaderCell)
+        column={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "displayName": " Vitals",
+            "id": "Column-0",
           }
         }
-        tabIndex="-1"
-      >
-         Vitals
-      </th>
-      <th
-        className="worklist-data-grid-column-header selectable"
-        key="Column-1"
-        style={
+      />
+      <InjectIntl(ColumnHeaderCell)
+        column={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "displayName": "March 16",
+            "id": "Column-1",
           }
         }
-        tabIndex="-1"
-      >
-        March 16
-      </th>
-      <th
-        className="worklist-data-grid-column-header"
-        key="Column-2"
-        style={
+      />
+      <InjectIntl(ColumnHeaderCell)
+        column={
           Object {
-            "height": undefined,
-            "width": undefined,
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
           }
         }
-        tabIndex="-1"
-      >
-        March 17
-      </th>
+      />
     </tr>
     <tr
       className="worklist-data-grid-row"

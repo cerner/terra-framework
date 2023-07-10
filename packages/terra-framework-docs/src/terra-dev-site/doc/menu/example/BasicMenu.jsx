@@ -30,6 +30,10 @@ class BasicMenu extends React.Component {
       open: false,
       toggle1Selected: false,
       toggle2Selected: false,
+      toggle21Selected: false,
+      toggle31Selected: false,
+      toggle41Selected: false,
+      toggle51Selected: false,
       groupSelectedIndex: undefined,
       actionClickCount: 0,
     };
@@ -50,11 +54,26 @@ class BasicMenu extends React.Component {
 
   handleToggle1OnClick() {
     this.setState(prevState => ({ toggle1Selected: !prevState.toggle1Selected }));
-    this.handleRequestClose();
   }
 
   handleToggle2OnClick() {
     this.setState(prevState => ({ toggle2Selected: !prevState.toggle2Selected }));
+  }
+
+  handleToggle21OnClick = () => {
+    this.setState(prevState => ({ toggle21Selected: !prevState.toggle21Selected }));
+  }
+
+  handleToggle31OnClick = () => {
+    this.setState(prevState => ({ toggle31Selected: !prevState.toggle31Selected }));
+  }
+
+  handleToggle41OnClick = () => {
+    this.setState(prevState => ({ toggle41Selected: !prevState.toggle41Selected }));
+  }
+
+  handleToggle51OnClick = () => {
+    this.setState(prevState => ({ toggle51Selected: !prevState.toggle51Selected }));
   }
 
   handleOnChange(event, index) {
@@ -87,46 +106,73 @@ class BasicMenu extends React.Component {
             contentWidth={this.props.contentWidth}
             isArrowDisplayed={this.props.isArrowDisplayed}
             boundingRef={this.props.boundingRef}
-            headerTitle="Sample Header"
+            headerTitle="Clinical Solution"
           >
             <Menu.Item
-              text="Toggle Item 1 - Closes Menu"
+              text="Hospital Details"
               key="Toggle1"
               isSelected={this.state.toggle1Selected}
               onClick={this.handleToggle1OnClick}
               isSelectable
             />
             <Menu.Item
-              text="Toggle Item 2"
+              text="Hospitals & Health Systems"
               key="Toggle2"
               isSelected={this.state.toggle2Selected}
               onClick={this.handleToggle2OnClick}
               isSelectable
             />
             <Menu.Item
-              text="Disabled Item 1"
-              key="Disabled1"
+              text="Health System Operations"
+              key="Toggle3"
               isSelected={this.state.toggle1Selected}
               onClick={this.handleToggle1OnClick}
               isDisabled
             />
             <Menu.Divider key="Divider1" />
             <Menu.Item
-              text="Nested Menu 1"
-              key="Nested1"
+              text="Our Offerings"
+              key="Offers"
               subMenuItems={[
-                <Menu.Item text="Action 1.1" key="1.1" onClick={this.handleAction} />,
-                <Menu.Item text="Action 1.2" key="1.2" onClick={this.handleAction} />,
-                <Menu.Item text="Action 1.3" key="1.3" onClick={this.handleAction} />,
-                <Menu.Divider key="Divider1.1" />,
-                <Menu.Item text="Close Action 1.1" key="1.4" onClick={this.handleCloseOnClick} />,
-                <Menu.Item text="Close Action 1.2" key="1.5" onClick={this.handleCloseOnClick} />,
-                <Menu.Item text="Close Action 1.3" key="1.6" onClick={this.handleCloseOnClick} />,
+                <Menu.Item
+                  text="Policies and Guidelines"
+                  key="Policies"
+                  isToggled={this.state.toggle21Selected}
+                  onClick={this.handleToggle21OnClick}
+                  isToggleable
+                />,
+                <Menu.Item
+                  text="Population Health Management"
+                  key="Population"
+                  isToggled={this.state.toggle51Selected}
+                  onClick={this.handleToggle51OnClick}
+                  isToggleable
+                />,
+                <Menu.Item
+                  text="Clinical Solutions"
+                  key="Clinical"
+                  subMenuItems={[
+                    <Menu.Item
+                      text="Clinical Communication & Collaboration"
+                      key="Communication"
+                      isToggled={this.state.toggle31Selected}
+                      onClick={this.handleToggle31OnClick}
+                      isToggleable
+                    />,
+                    <Menu.Item
+                      text="Community, Critical Access & Specialty Hospital"
+                      key="Community"
+                      isToggled={this.state.toggle41Selected}
+                      onClick={this.handleToggle41OnClick}
+                      isToggleable
+                    />,
+                  ]}
+                />,
               ]}
             />
             <Menu.Item
-              text="Nested Menu 2 has a long title that will wrap and a truncated title when clicked"
-              key="Nested2"
+              text="Community, Critical Access & Specialty Hospital"
+              key="Nested2 disabled"
               isDisabled
               subMenuItems={[
                 <Menu.Item text="Default 2.1" key="2.1" />,
@@ -134,26 +180,15 @@ class BasicMenu extends React.Component {
                 <Menu.Item text="Default 2.3" key="2.3" />,
               ]}
             />
-            <Menu.Divider key="Divider2" />
-            <Menu.Item text="Close Action" key="Action2" onClick={this.handleCloseOnClick} />
-            <Menu.Item text="Action" key="Action1" onClick={this.handleAction} />
             <Menu.Divider key="Divider3" />
             <Menu.ItemGroup key="Group" onChange={this.handleOnChange}>
-              <Menu.Item text="Group Item 1" key="GroupItem1" isSelected={this.state.groupSelectedIndex === 0} />
-              <Menu.Item text="Group Item 2" key="GroupItem2" isSelected={this.state.groupSelectedIndex === 1} />
-              <Menu.Item text="Group Item 3" key="GroupItem3" isSelected={this.state.groupSelectedIndex === 2} isDisabled />
+              <Menu.Item text="Behavioral Health" key="GroupItem1" isSelected={this.state.groupSelectedIndex === 0} />
+              <Menu.Item text="Ambulatory Surgery Center" key="GroupItem2" isSelected={this.state.groupSelectedIndex === 1} />
+              <Menu.Item text="Critical Care" key="GroupItem3" isSelected={this.state.groupSelectedIndex === 2} isDisabled />
             </Menu.ItemGroup>
           </Menu>
-          <Button onClick={this.handleButtonClick} text="Click Me" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
+          <Button onClick={this.handleButtonClick} text="Explore Clinical Solution" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />
         </div>
-        <br />
-        <p>
-          Action button has been clicked
-          {' '}
-          {this.state.actionClickCount}
-          {' '}
-          times.
-        </p>
       </div>
     );
   }
