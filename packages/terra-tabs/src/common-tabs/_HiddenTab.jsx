@@ -107,6 +107,7 @@ const HiddenTab = ({
   const onKeyDown = (event) => {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       handleOnSelect(event);
+      onChange(event, itemKey);
     } else {
       handleArrows(event, index, tabIds);
     }
