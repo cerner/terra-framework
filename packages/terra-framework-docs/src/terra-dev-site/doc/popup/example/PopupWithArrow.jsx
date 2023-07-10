@@ -41,7 +41,6 @@ function PopupArrow() {
     }
   }, [open]);
 
-
   useEffect(() => {
     if (open && focusedIndex !== -1) {
       const activeMenuItem = document.getElementById('activeMenuItem');
