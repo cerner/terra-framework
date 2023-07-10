@@ -11,7 +11,7 @@ const cellShape = PropTypes.shape({
   isMasked: PropTypes.bool,
   /**
    * Boolean value indicating whether or not the column header is selectable.
-  */
+   */
   isSelectable: PropTypes.bool,
 });
 

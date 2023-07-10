@@ -1,40 +1,57 @@
 import React, { useContext, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
 import styles from './ColumnResizeHandle.module.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  active: PropTypes.bool,
   /**
-   * Data for columns. By default, columns will be presented in the order given.
+   * Index of the column associated with the divider
    */
   columnIndex: PropTypes.number.isRequired,
+  /**
+   * Text of the column associated with the divider
+   */
+  columnText: PropTypes.string,
+  /**
+   * Width of the column associated with the divider
+   */
+  columnWidth: PropTypes.number.isRequired,
   /**
    * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
    */
   height: PropTypes.string.isRequired,
   /**
-   * Number that specifies the pixel change during keyboard resizing.
+   * String that specifies the minimum column width in pixels
    */
-  resizeIncrement: PropTypes.number.isRequired,
+  minimumWidth: PropTypes.number,
+  /**
+   * String that specifies the minimum column width in pixels
+   */
+  maximumWidth: PropTypes.number,
+  /**
+   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   */
+  onResizeMouseDown: PropTypes.func,
 };
-
-const ColumnResizeContext = React.createContext();
 
 const ColumnResizeHandle = (props) => {
   const {
+    active,
     columnIndex,
+    columnText,
+    columnWidth,
     height,
-    resizeIncrement,
+    minimumWidth,
+    maximumWidth,
+    onResizeMouseDown,
   } = props;
 
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);
-  // Retrieve column resize context
-  const columnResizeContext = useContext(ColumnResizeContext);
   // Ref variable for native resize handle element
   const resizeHandle = useRef();
 
@@ -46,23 +63,9 @@ const ColumnResizeHandle = (props) => {
   // Mouse down event listener to give focus to resize handler and notify the provider
   const onMouseDown = (event) => {
     resizeHandle.current.focus();
-    columnResizeContext.onMouseDown(event, columnIndex);
-    event.stopPropagation();
-    event.preventDefault();
-  };
 
-  // Key event listener to communicate column width increment change
-  const onKeyDown = (event) => {
-    const key = event.keyCode;
-    switch (key) {
-      case KeyCode.KEY_LEFT:
-        columnResizeContext.onColumnResizeHandleChange(columnIndex, -resizeIncrement);
-        break;
-      case KeyCode.KEY_RIGHT:
-        columnResizeContext.onColumnResizeHandleChange(columnIndex, resizeIncrement);
-        break;
-      default:
-        return;
+    if (onResizeMouseDown) {
+      onResizeMouseDown(event, columnIndex);
     }
 
     event.stopPropagation();
@@ -76,23 +79,21 @@ const ColumnResizeHandle = (props) => {
 
   return (
   /* eslint-disable react/forbid-dom-props */
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus
     <div
       ref={resizeHandleRef}
       role="slider"
-      aria-valuemin="60"
-      aria-valuenow={columnResizeContext.activeResizeWidth}
-      aria-valuemax="300"
-      aria-label="Vitals"
-      tabIndex={0}
+      aria-valuemin={minimumWidth}
+      aria-valuenow={columnWidth}
+      aria-valuemax={maximumWidth}
+      aria-label={columnText}
       style={{ height }}
       onMouseDown={onMouseDown}
       onClick={onClick}
-      onKeyDown={onKeyDown}
-      className={cx('resize-handle', theme.className, { active: (columnResizeContext.activeIndex === columnIndex) })}
+      className={cx('resize-handle', theme.className, { active })}
     />
   );
 };
 
 ColumnResizeHandle.propTypes = propTypes;
 export default ColumnResizeHandle;
-export { ColumnResizeContext };

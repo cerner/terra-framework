@@ -15,45 +15,37 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 ce
       <tr
         height="2.5rem"
       >
-        <th
-          className="worklist-data-grid-column-header selectable"
-          key="Column-0"
-          style={
+        <InjectIntl(ColumnHeaderCell)
+          column={
             Object {
-              "height": "2.5rem",
-              "width": "200px",
+              "displayName": " Vitals",
+              "id": "Column-0",
             }
           }
-          tabIndex="-1"
-        >
-           Vitals
-        </th>
-        <th
-          className="worklist-data-grid-column-header selectable"
-          key="Column-1"
-          style={
+          headerHeight="2.5rem"
+          width="200px"
+        />
+        <InjectIntl(ColumnHeaderCell)
+          column={
             Object {
-              "height": "2.5rem",
-              "width": "200px",
+              "displayName": "March 16",
+              "id": "Column-1",
             }
           }
-          tabIndex="-1"
-        >
-          March 16
-        </th>
-        <th
-          className="worklist-data-grid-column-header"
-          key="Column-2"
-          style={
+          headerHeight="2.5rem"
+          width="200px"
+        />
+        <InjectIntl(ColumnHeaderCell)
+          column={
             Object {
-              "height": "2.5rem",
-              "width": "200px",
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
             }
           }
-          tabIndex="-1"
-        >
-          March 17
-        </th>
+          headerHeight="2.5rem"
+          width="200px"
+        />
       </tr>
       <tr
         className="worklist-data-grid-row"
@@ -209,45 +201,37 @@ exports[`WorklistDataGrid renders a grid with selectable cells 1`] = `
       <tr
         height="2.5rem"
       >
-        <th
-          className="worklist-data-grid-column-header selectable"
-          key="Column-0"
-          style={
+        <InjectIntl(ColumnHeaderCell)
+          column={
             Object {
-              "height": "2.5rem",
-              "width": "200px",
+              "displayName": " Vitals",
+              "id": "Column-0",
             }
           }
-          tabIndex="-1"
-        >
-           Vitals
-        </th>
-        <th
-          className="worklist-data-grid-column-header selectable"
-          key="Column-1"
-          style={
+          headerHeight="2.5rem"
+          width="200px"
+        />
+        <InjectIntl(ColumnHeaderCell)
+          column={
             Object {
-              "height": "2.5rem",
-              "width": "200px",
+              "displayName": "March 16",
+              "id": "Column-1",
             }
           }
-          tabIndex="-1"
-        >
-          March 16
-        </th>
-        <th
-          className="worklist-data-grid-column-header"
-          key="Column-2"
-          style={
+          headerHeight="2.5rem"
+          width="200px"
+        />
+        <InjectIntl(ColumnHeaderCell)
+          column={
             Object {
-              "height": "2.5rem",
-              "width": "200px",
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
             }
           }
-          tabIndex="-1"
-        >
-          March 17
-        </th>
+          headerHeight="2.5rem"
+          width="200px"
+        />
       </tr>
       <tr
         className="worklist-data-grid-row"
@@ -403,45 +387,37 @@ exports[`WorklistDataGrid test masked cells 1`] = `
       <tr
         height="2.5rem"
       >
-        <th
-          className="worklist-data-grid-column-header selectable"
-          key="Column-0"
-          style={
+        <InjectIntl(ColumnHeaderCell)
+          column={
             Object {
-              "height": "2.5rem",
-              "width": "200px",
+              "displayName": " Vitals",
+              "id": "Column-0",
             }
           }
-          tabIndex="-1"
-        >
-           Vitals
-        </th>
-        <th
-          className="worklist-data-grid-column-header selectable"
-          key="Column-1"
-          style={
+          headerHeight="2.5rem"
+          width="200px"
+        />
+        <InjectIntl(ColumnHeaderCell)
+          column={
             Object {
-              "height": "2.5rem",
-              "width": "200px",
+              "displayName": "March 16",
+              "id": "Column-1",
             }
           }
-          tabIndex="-1"
-        >
-          March 16
-        </th>
-        <th
-          className="worklist-data-grid-column-header"
-          key="Column-2"
-          style={
+          headerHeight="2.5rem"
+          width="200px"
+        />
+        <InjectIntl(ColumnHeaderCell)
+          column={
             Object {
-              "height": "2.5rem",
-              "width": "200px",
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
             }
           }
-          tabIndex="-1"
-        >
-          March 17
-        </th>
+          headerHeight="2.5rem"
+          width="200px"
+        />
       </tr>
       <tr
         className="worklist-data-grid-row"

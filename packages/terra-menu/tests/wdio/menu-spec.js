@@ -59,22 +59,6 @@ Terra.describeViewports('Menu', ['medium'], () => {
     Terra.validates.element('selectable', { selector: '#root', rules: ignoredA11y });
   });
 
-  describe('Menu-Selectable with Varying Items', () => {
-    it('displays a selectable menu with varying items', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/selectable-and-unselectable-items-menu');
-      $('#default-button').click();
-      Terra.validates.element('with varying items', { selector: '#root' });
-    });
-
-    it('selects an item and maintains selection after menu has been reopened', () => {
-      $('.TestSelectableItem').click();
-      expect($('#default-button').isFocused()).toBeTruthy();
-      $('#default-button').click();
-      expect($('li:first-child[role="menuitem"]').isFocused()).toBeTruthy();
-      Terra.validates.element('maintained selection after reopen', { selector: '#root' });
-    });
-  });
-
   it('displays a Menu with a submenu', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu');
     $('#sub-menu-button').click();

@@ -1,0 +1,44 @@
+// Themes
+@import './orion-fusion-theme/ColumnHeaderCell.module';
+@import './clinical-lowlight-theme/ColumnHeaderCell.module';
+
+:local {
+  .column-header {
+    background-color: var(--terra-worklist-data-grid-column-header-background-color, #dedfe0);
+    border: var(--terra-worklist-data-grid-column-header-border, 1px solid #000);
+    color: var(--terra-worklist-data-grid-column-header-text-color);
+    position: relative;
+
+    .header-container {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      padding: var(--terra-worklist-data-grid-header-cell-padding, 5px);
+      width: 100%;
+    }
+
+    // Add right margin for error icon
+    .error-icon {
+      margin-right: var(--terra-worklist-data-grid-error-icon-margin-right, 5px);
+    }
+
+    // Style column header text
+    span {
+      background: transparent;
+      border: 0;
+      flex: 1;
+      font-weight: normal;
+      outline: none;
+      overflow: hidden;
+      text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  // Hover state for selectable elements
+  .selectable:hover {
+    background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
+    cursor: pointer;
+  }
+}
