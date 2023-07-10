@@ -15,7 +15,10 @@ const columnShape = PropTypes.shape({
    */
   displayName: PropTypes.string,
   /**
-   * A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
+   * String that specifies the column width. Any valid CSS width value is accepted.
+   */
+  width: PropTypes.string,
+  /* A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
    * If a `component` value is specified, `sortIndicator` will be ignored. One of `ascending`, `descending`.
    */
   sortIndicator: PropTypes.oneOf(Object.values(SortIndicators)),
