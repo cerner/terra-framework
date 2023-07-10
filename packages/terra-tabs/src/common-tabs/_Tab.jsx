@@ -150,9 +150,12 @@ const Tab = ({
     }
   }
 
-  function onClick() {
+  function onClick(event) {
     if (!isDisabled) {
       onSelect(itemKey, metaData);
+      if (onChange) {
+        onChange(event, itemKey);
+      }
     }
   }
 
