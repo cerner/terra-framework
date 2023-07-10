@@ -30,7 +30,7 @@ describe('Cell', () => {
     expect(cellContent.text()).toEqual('Data in cell');
   });
 
-  it('verifies that only a regular cell(TD) is created when isRowHeader prop is false', () => {
+  it('verifies that only a regular cell(<td>) is created when isRowHeader prop is false', () => {
     const wrapper = shallowWithIntl(
       <Cell
         rowId="RowID"
@@ -159,7 +159,7 @@ describe('Cell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders cell as mask only even if cell is selectable and selected', () => {
+  it('verifies mask takes precedence when cell is masked, selectable and selected', () => {
     const wrapper = shallowWithIntl(
       <Cell
         rowId="RowID"

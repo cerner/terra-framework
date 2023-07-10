@@ -101,11 +101,10 @@ const ColumnHeaderCell = (props) => {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_SPACE:
-        if (onColumnSelect) {
-          onColumnSelect(id, { row: rowIndex, col: columnIndex });
-          event.stopPropagation();
-          event.preventDefault(); // prevent the default scrolling
-        }
+      case KeyCode.KEY_RETURN:
+        onColumnSelect(id, { row: rowIndex, col: columnIndex });
+        event.stopPropagation();
+        event.preventDefault(); // prevent the default scrolling
         break;
       case KeyCode.KEY_C:
         if (event.ctrlKey || event.metaKey) {

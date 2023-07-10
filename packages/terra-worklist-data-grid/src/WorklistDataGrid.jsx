@@ -18,7 +18,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * String representing an attribute which identifies the element that labels the grid.
+   * String that identifies the element (or elements) that labels the grid.
    */
   ariaLabelledby: PropTypes.string,
   /**
@@ -56,31 +56,31 @@ const propTypes = {
    */
   rowHeaderIndex: PropTypes.number,
   /**
-   * Callback function that is called when a selectable cell is selected. Parameters: `onRowSelect(rowId, columnId)`.
+   * Callback function that is called when a selectable cell is selected. Parameters: `function(rowId, columnId)`.
    */
   onCellSelect: PropTypes.func,
   /**
-   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   * Callback function that is called when a row is selected. Parameters: `function(rowId)`
    */
   onRowSelect: PropTypes.func,
   /**
-   * Callback function that will be called when all rows are selected. Parameters: `onSelectAllRows()`.
+   * Callback function that is called when all rows are selected. Parameters: `function()`.
    */
   onRowSelectAll: PropTypes.func,
   /**
-   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   * Callback function that is called when a selectable column is selected. Parameters: `function(columnId)`
    */
   onColumnSelect: PropTypes.func,
   /**
-   * Callback function that is called when all selected rows need to be unselected.
+   * Callback function that is called when all selected rows need to be unselected. Parameters: `function()`
    */
   onClearSelectedRows: PropTypes.func,
   /**
-   * Callback function that is called when no row is selected and the row selection mode needs to turned off.
+   * Callback function that is called when no row is selected and the row selection mode needs to be disabled. Parameters: `function()`
    */
   onDisableSelectableRows: PropTypes.func,
   /**
-   * Boolean indicating whether or not the DataGrid should allow entire rows to be selectable. An additional column will be
+   * Boolean indicating whether or not the DataGrid should allow entire rows to be selected. An additional column will be
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
@@ -131,17 +131,6 @@ function WorklistDataGrid(props) {
 
   const isCellSelected = (rowId, columnId) => (currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId);
 
-  const setFocus = (rowIndex, colIndex, makeActiveElement) => {
-    let focusedCell = grid.current.rows[rowIndex].cells[colIndex];
-    if (isRowSelectionCell(colIndex) && focusedCell.getElementsByTagName('input').length > 0) {
-      [focusedCell] = focusedCell.getElementsByTagName('input');
-    }
-    focusedCell.tabIndex = 0;
-    if (makeActiveElement && focusedCell.focus) {
-      focusedCell.focus();
-    }
-  };
-
   const removeTabStop = (rowIndex, colIndex) => {
     const cell = grid.current.rows[rowIndex].cells[colIndex];
     // Remove Tab stop from previous cell in table that has focus and set it to the
@@ -158,7 +147,14 @@ function WorklistDataGrid(props) {
     removeTabStop(focusedRow.current, focusedCol.current);
     focusedRow.current = newRowIndex;
     focusedCol.current = newColIndex;
-    setFocus(newRowIndex, newColIndex, makeActiveElement);
+    let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
+    if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
+      [focusedCell] = focusedCell.getElementsByTagName('input');
+    }
+    focusedCell.tabIndex = 0;
+    if (makeActiveElement && focusedCell.focus) {
+      focusedCell.focus();
+    }
   };
 
   useEffect(() => {
@@ -290,11 +286,11 @@ function WorklistDataGrid(props) {
         break;
       case KeyCode.KEY_LEFT:
         if (event.metaKey) {
-          // Cmd + Left = Home
+          // Cmd + Left on Mac is equivalent to the Home Key in Windows
           nextCol = 0;
 
           if (event.ctrlKey) {
-            // Ctrl + Cmd + Left = Ctrl + Home
+            // Ctrl + Cmd + Left on Mac is equivalent to the Ctrl + Home in Windows
             nextRow = WorklistDataGridUtils.FIRST_NON_HEADER_ROW;
           }
         } else {
@@ -304,11 +300,11 @@ function WorklistDataGrid(props) {
         break;
       case KeyCode.KEY_RIGHT:
         if (event.metaKey) {
-          // Cmd + Right = End
+          // Cmd + Right on Mac is equivalent to the End key in Windows
           nextCol = displayedColumns.length - 1;
 
           if (event.ctrlKey) {
-            // Ctrl + Cmd + Right = Ctrl + End
+            // Ctrl + Cmd + Right on Mac is equivalent to the Ctrl + End in Windows
             nextRow = rows.length;
           }
         } else {

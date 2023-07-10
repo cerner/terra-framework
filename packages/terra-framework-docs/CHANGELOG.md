@@ -7,6 +7,8 @@
 
 * Added
   * Added alpha release disclaimer for `terra-worklist-data-grid`.
+  * Added documentation and tests for additional keyboard navigation in `terra-worklist-data-grid`.
+
 
 ## 1.24.0 - (July 4, 2023)
 
@@ -33,7 +35,6 @@
   * Added a `terra-slide-panel` test containing multiple slide panels.
   * Added testing sections to `terra-menu`, `terra-navigation-prompt`, `terra-pills` and `terra-tabs` documentation.
   * Added documentation and tests for `terra-worklist-data-grid`.
-  * Added documentation and tests for additional keyboard navigation in `terra-worklist-data-grid`.
 
 * Changed
   * Updated testing sections for `terra-date-input`, `terra-date-picker`, `terra-slide-panel`, and `terra-time-input` documentation.

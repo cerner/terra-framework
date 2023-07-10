@@ -28,7 +28,7 @@ const propTypes = {
    */
   columnIndex: PropTypes.number,
   /**
-   * Content that will rendered within the Cell.
+   * Content that will be rendered within the Cell.
    */
   children: PropTypes.node,
   /**
@@ -72,7 +72,6 @@ const defaultProps = {
   isSelected: false,
   isSelectable: true,
   isMasked: false,
-
 };
 
 function Cell(props) {
