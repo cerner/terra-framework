@@ -5,6 +5,7 @@
 * Changed
   * Updated example for `terra-menu`.
   * Updated tests for `terra-worklist-data-grid` to account for row height and column width being honored.
+  * Updated the path name for the examples in doc site for `terra-embedded-content-consumer` to resolve missing files.
 
 * Added
   * Added alpha release disclaimer for `terra-worklist-data-grid`.
