@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import FocusLock from 'react-focus-lock';
 import ModalOverlay from './_ModalOverlay';
 import { hideModalDomUpdates, showModalDomUpdates } from './inertHelpers';
 import styles from './ModalContent.module.scss';
@@ -59,6 +60,10 @@ const propTypes = {
    */
   zIndex: PropTypes.oneOf(zIndexes),
   /**
+   * If set to true, the focus will be trapped within the modal content when the modal is open.
+   */
+  trapFocus: PropTypes.bool,
+  /**
    * @private
    * Callback function to set the reference of the element that will receive focus when the Slide content is visible.
    */
@@ -73,8 +78,19 @@ const defaultProps = {
   isScrollable: false,
   role: 'dialog',
   rootSelector: '#root',
+  trapFocus: false,
   zIndex: '6000',
 };
+
+/**
+ * Use react-focus-lock library due to inability of focus-trap-react to handle children
+ * within a React Portal: https://github.com/focus-trap/focus-trap-react/issues/27.
+ */
+// eslint-disable-next-line react/prop-types
+const FocusTrapWrapper = ({ trapFocus, children }) => (trapFocus
+  ? <FocusLock as="div" className={cx('modal-content-focus-trap-container')}>{children}</FocusLock>
+  : children
+);
 
 const ModalContent = forwardRef((props, ref) => {
   const {
@@ -90,6 +106,7 @@ const ModalContent = forwardRef((props, ref) => {
     rootSelector,
     zIndex,
     setModalFocusElementRef,
+    trapFocus,
     ...customProps
   } = props;
 
@@ -144,33 +161,35 @@ const ModalContent = forwardRef((props, ref) => {
         role={role}
         ref={ref}
       >
-        <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
-          <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
-            {text => {
-              // In the latest version of react-intl this param is an array, when previous versions it was a string.
-              let useText = text;
-              if (Array.isArray(text)) {
-                useText = text.join('');
-              }
-              return (
-                <VisuallyHiddenText text={useText} />
-              );
-            }}
-          </FormattedMessage>
-          {children}
-          <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
-            {text => {
-              // In the latest version of react-intl this param is an array, when previous versions it was a string.
-              let useText = text;
-              if (Array.isArray(text)) {
-                useText = text.join('');
-              }
-              return (
-                <VisuallyHiddenText text={useText} />
-              );
-            }}
-          </FormattedMessage>
-        </div>
+        <FocusTrapWrapper trapFocus={trapFocus}>
+          <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
+            <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
+              {text => {
+                // In the latest version of react-intl this param is an array, when previous versions it was a string.
+                let useText = text;
+                if (Array.isArray(text)) {
+                  useText = text.join('');
+                }
+                return (
+                  <VisuallyHiddenText text={useText} />
+                );
+              }}
+            </FormattedMessage>
+            {children}
+            <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
+              {text => {
+                // In the latest version of react-intl this param is an array, when previous versions it was a string.
+                let useText = text;
+                if (Array.isArray(text)) {
+                  useText = text.join('');
+                }
+                return (
+                  <VisuallyHiddenText text={useText} />
+                );
+              }}
+            </FormattedMessage>
+          </div>
+        </FocusTrapWrapper>
       </div>
     </React.Fragment>
   );

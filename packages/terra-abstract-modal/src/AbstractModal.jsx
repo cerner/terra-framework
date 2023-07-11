@@ -61,6 +61,10 @@ const propTypes = {
    */
   zIndex: PropTypes.oneOf(zIndexes),
   /**
+   * If set to true, the focus will be trapped within the modal content when the modal is open.
+   */
+  trapFocus: PropTypes.bool,
+  /**
    * @private
    * Callback function to set the reference of the element that will receive focus when the Slide content is visible.
    */
@@ -76,6 +80,7 @@ const defaultProps = {
   role: 'dialog',
   rootSelector: '#root',
   zIndex: '6000',
+  trapFocus: false,
 };
 
 const AbstractModal = (props) => {
@@ -92,6 +97,7 @@ const AbstractModal = (props) => {
     rootSelector,
     onRequestClose,
     zIndex,
+    trapFocus,
     ...customProps
   } = props;
 
@@ -154,6 +160,7 @@ const AbstractModal = (props) => {
         aria-modal="true"
         ref={modalElementRef}
         onKeyDown={handleKeydown}
+        trapFocus={trapFocus}
       >
         {children}
       </ModalContent>

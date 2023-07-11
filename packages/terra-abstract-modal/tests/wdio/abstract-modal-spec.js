@@ -150,6 +150,38 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
         Terra.validates.element('focus on modal', { selector });
       });
     });
+
+    describe('Focus Trapped Content', () => {
+      it('clicks to open modal', () => {
+        browser.url('/raw/tests/terra-abstract-modal/abstract-modal/focus-trapped-abstract-modal');
+        $('button').click();
+      });
+
+      it('focuses on the modal when opened', () => {
+        expect($('[aria-modal="true"][role="dialog"] [data-terra-abstract-modal-begin="true"]').isFocused()).toBeTruthy();
+      });
+
+      it('focuses on interactive elements within the modal', () => {
+        browser.keys(['Tab']);
+        expect($('#modal-button').isFocused()).toBeTruthy();
+      });
+
+      it('prevents shift focus forward out of modal dialog', () => {
+        browser.keys(['Tab']);
+        expect($('#modal-button').isFocused()).toBeTruthy();
+        expect($('#modal-open-button').isFocused()).toBeFalsy();
+        expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeFalsy();
+        Terra.validates.element('focus trapped from moving forward', { selector });
+      });
+
+      it('prevents shift focus back out of modal dialog', () => {
+        browser.keys(['Shift', 'Tab']);
+        expect($('#modal-button').isFocused()).toBeTruthy();
+        expect($('#modal-open-button').isFocused()).toBeFalsy();
+        expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeFalsy();
+        Terra.validates.element('focus trapped from moving back', { selector });
+      });
+    });
   });
 });
 

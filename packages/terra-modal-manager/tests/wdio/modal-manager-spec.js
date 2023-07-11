@@ -336,18 +336,8 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
       });
     });
 
-    describe('Outside Focus Handling Before Modal', () => {
-      it('shifts focus before modal', () => {
-        $('#root-component .disclose-small').click();
-        $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
-        browser.keys(['Shift', 'Tab']); // Shift tab focus backward outside of modal
-        Terra.validates.element('focused shifted before modal', { selector });
-        browser.keys('Escape');
-      });
-    });
-
-    describe('Outside Focus Handling After Modal', () => {
-      it('shifts focus after the modal', () => {
+    describe('Modal Content Focus Order', () => {
+      it('shifts focus back to first element in modal content after the last element', () => {
         $('#root-component .disclose-small').click();
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
         // eslint-disable-next-line prefer-arrow-callback
@@ -355,8 +345,8 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
           document.querySelector('#DemoContainer-1 .maximize').focus();
         });
         browser.keys(['Shift']); // Release shift key
-        browser.keys(['Tab']); // Shift tab focus forward outside of modal
-        Terra.validates.element('focused shifted after modal', { selector });
+        browser.keys(['Tab']); // Shift tab focus forward
+        Terra.validates.element('focused shifted back to first', { selector });
         browser.keys('Escape');
       });
     });
