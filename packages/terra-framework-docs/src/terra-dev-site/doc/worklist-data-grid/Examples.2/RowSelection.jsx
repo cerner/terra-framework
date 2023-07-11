@@ -112,9 +112,7 @@ const RowSelection = () => {
         columns={cols}
         rows={[...rows]}
         rowHeaderIndex={rowHeaderIndex}
-        rowHeight="50px"
-        columnWidth="50px"
-        columnHeaderHeight="50px"
+        columnWidth="180px"
         ariaLabel="Worklist Data Grid"
         hasSelectableRows={hasSelectableRows}
         onRowSelect={(rowId) => {

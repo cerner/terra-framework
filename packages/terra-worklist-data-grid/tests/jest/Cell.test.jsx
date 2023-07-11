@@ -16,6 +16,7 @@ describe('Cell', () => {
         isSelected={false}
         isRowHeader
         onCellSelect={jest.fn}
+        height="50px"
       >
         Data in cell
       </Cell>,

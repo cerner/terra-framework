@@ -1,6 +1,6 @@
 # Terra Worklist Data Grid
 
-[![NPM version](https://badgen.net/npm/v/terra-grid)](https://www.npmjs.com/package/terra-worklist-data-grid)
+[![NPM version](https://badgen.net/npm/v/terra-worklist-data-grid)](https://www.npmjs.com/package/terra-worklist-data-grid)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 ---

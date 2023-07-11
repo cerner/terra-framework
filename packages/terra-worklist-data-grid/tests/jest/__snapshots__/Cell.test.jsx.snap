@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cell renders cell as mask only even if cell is selectable and selected 1`] = `
+exports[`Cell verifies mask takes precedence when cell is masked, selectable and selected 1`] = `
 <td
   aria-label="Terra.worklistDataGrid.maskedCell"
   aria-selected={true}
@@ -33,13 +33,18 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
 >
   <div
     className="cell-content"
+    style={
+      Object {
+        "height": undefined,
+      }
+    }
   >
     Data in cell
   </div>
 </td>
 `;
 
-exports[`Cell verifies that only a regular cell(TD) is created when isRowHeader prop is false 1`] = `
+exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeader prop is false 1`] = `
 <td
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
@@ -49,6 +54,11 @@ exports[`Cell verifies that only a regular cell(TD) is created when isRowHeader 
 >
   <div
     className="cell-content"
+    style={
+      Object {
+        "height": undefined,
+      }
+    }
   >
     Data in cell
   </div>
@@ -65,6 +75,11 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
 >
   <div
     className="cell-content"
+    style={
+      Object {
+        "height": "50px",
+      }
+    }
   >
     Data in cell
   </div>
@@ -92,6 +107,11 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
 >
   <div
     className="cell-content"
+    style={
+      Object {
+        "height": undefined,
+      }
+    }
   >
     Data in cell
   </div>

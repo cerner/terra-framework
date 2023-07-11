@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-dom-props */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import * as KeyCode from 'keycode-js';
@@ -60,6 +61,10 @@ const propTypes = {
    */
   onCellSelect: PropTypes.func,
   /**
+   * String that specifies the height of the cell. Any valid CSS value is accepted.
+   */
+  height: PropTypes.string,
+  /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
@@ -88,6 +93,7 @@ function Cell(props) {
     isSelectable,
     children,
     onCellSelect,
+    height,
     intl,
   } = props;
 
@@ -150,7 +156,7 @@ function Cell(props) {
       onMouseDown={handleMouseDown}
       onKeyDown={handleKeyDown}
     >
-      {!isMasked && children && <div className={cx('cell-content', theme.className)}>{children}</div>}
+      {!isMasked && children && <div className={cx('cell-content', theme.className)} style={{ height }}>{children}</div>}
     </CellTag>
   );
 }

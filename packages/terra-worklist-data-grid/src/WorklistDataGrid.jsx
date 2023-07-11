@@ -93,6 +93,9 @@ const propTypes = {
 
 const defaultProps = {
   rowHeaderIndex: 0,
+  columnWidth: '200px',
+  columnHeaderHeight: '2.5rem',
+  rowHeight: '2.5rem',
 };
 
 function WorklistDataGrid(props) {
@@ -103,6 +106,7 @@ function WorklistDataGrid(props) {
     columns,
     rows,
     columnHeaderHeight,
+    rowHeight,
     onColumnSelect,
     onCellSelect,
     onRowSelect,
@@ -204,7 +208,7 @@ function WorklistDataGrid(props) {
     if (!selectAllRows) {
       const isSelectAction = !rows[rowIndex - 1].isSelected; // Determine if this is select or unselected.
       msgId = isSelectAction ? 'Terra.worklist-data-grid.row-selection-template' : 'Terra.worklist-data-grid.row-selection-cleared-template';
-      rowLabel = rows[rowIndex - 1].ariaLabel || rowIndex;
+      rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
     }
     ariaLiveMsg.current = intl.formatMessage({ id: msgId }, { row: rowLabel });
     if (selectAllRows && onRowSelectAll) {
@@ -223,7 +227,7 @@ function WorklistDataGrid(props) {
     if (!hasSelectableRows) {
       ariaLiveMsg.current = intl.formatMessage({
         id: rowId ? 'Terra.worklist-data-grid.cell-selection-template' : 'Terra.worklist-data-grid.cell-selection-cleared',
-      }, { row: cellCoordinates.row, column: cellCoordinates.col });
+      }, { row: cellCoordinates.row + 1, column: cellCoordinates.col + 1 });
     }
     setFocusedRowCol(cellCoordinates.row, cellCoordinates.col, true);
     if ((rowId !== currentSelectedCell?.rowId) || (columnId !== currentSelectedCell?.columnId)) {
@@ -387,7 +391,7 @@ function WorklistDataGrid(props) {
     <Row
       rowIndex={rowIndex}
       key={row.id}
-      height={props.rowHeight}
+      height={rowHeight}
       id={row.id}
       isSelected={row.isSelected}
       cells={row.cells}
@@ -410,7 +414,7 @@ function WorklistDataGrid(props) {
 
   const gridClassNames = cx('worklist-data-grid', theme.className);
   return (
-    <>
+    <div className={cx('worklist-data-grid-container')}>
       <table
         ref={grid}
         id={id}
@@ -426,7 +430,7 @@ function WorklistDataGrid(props) {
         </tbody>
       </table>
       <VisuallyHiddenText aria-live="polite" text={ariaLiveMsg.current} />
-    </>
+    </div>
   );
 }
 

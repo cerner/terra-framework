@@ -123,6 +123,7 @@ function Row(props) {
         isSelectable={cellData.isSelectable}
         isRowHeader={isRowHeader}
         onCellSelect={handleCellSelect}
+        height={height}
       >
         {cellData.content}
       </Cell>

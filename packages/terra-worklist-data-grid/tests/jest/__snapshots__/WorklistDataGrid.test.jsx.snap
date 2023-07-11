@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WorklistDataGrid verifies that the grid created is consistent with the rows and columns props 1`] = `
-<Fragment>
+<div
+  className="worklist-data-grid-container"
+>
   <table
     className="worklist-data-grid"
     id="test-terra-worklist-data-grid"
@@ -9,34 +11,42 @@ exports[`WorklistDataGrid verifies that the grid created is consistent with the 
     role="grid"
   >
     <tbody>
-      <tr>
+      <tr
+        height="2.5rem"
+      >
         <InjectIntl(ColumnHeaderCell)
           columnIndex={0}
           displayName=" Vitals"
+          headerHeight="2.5rem"
           id="Column-0"
           isTabStop={true}
           key="Column-0"
           onColumnSelect={[Function]}
           rowIndex={0}
+          width="200px"
         />
         <InjectIntl(ColumnHeaderCell)
           columnIndex={1}
           displayName="March 16"
+          headerHeight="2.5rem"
           id="Column-1"
           isTabStop={false}
           key="Column-1"
           onColumnSelect={[Function]}
           rowIndex={0}
+          width="200px"
         />
         <InjectIntl(ColumnHeaderCell)
           columnIndex={2}
           displayName="March 17"
+          headerHeight="2.5rem"
           id="Column-2"
           isSelectable={false}
           isTabStop={false}
           key="Column-2"
           onColumnSelect={[Function]}
           rowIndex={0}
+          width="200px"
         />
       </tr>
       <Row
@@ -72,6 +82,7 @@ exports[`WorklistDataGrid verifies that the grid created is consistent with the 
           ]
         }
         hasRowSelection={false}
+        height="2.5rem"
         id="1"
         isSelected={false}
         key="1"
@@ -113,6 +124,7 @@ exports[`WorklistDataGrid verifies that the grid created is consistent with the 
           ]
         }
         hasRowSelection={false}
+        height="2.5rem"
         id="2"
         isSelected={false}
         key="2"
@@ -154,6 +166,7 @@ exports[`WorklistDataGrid verifies that the grid created is consistent with the 
           ]
         }
         hasRowSelection={false}
+        height="2.5rem"
         id="3"
         isSelected={false}
         key="3"
@@ -167,11 +180,13 @@ exports[`WorklistDataGrid verifies that the grid created is consistent with the 
   <VisuallyHiddenText
     aria-live="polite"
   />
-</Fragment>
+</div>
 `;
 
 exports[`WorklistDataGrid verifies the rows are created with the right props 1`] = `
-<Fragment>
+<div
+  className="worklist-data-grid-container"
+>
   <table
     className="worklist-data-grid"
     id="test-terra-worklist-data-grid"
@@ -179,34 +194,42 @@ exports[`WorklistDataGrid verifies the rows are created with the right props 1`]
     role="grid"
   >
     <tbody>
-      <tr>
+      <tr
+        height="2.5rem"
+      >
         <InjectIntl(ColumnHeaderCell)
           columnIndex={0}
           displayName=" Vitals"
+          headerHeight="2.5rem"
           id="Column-0"
           isTabStop={true}
           key="Column-0"
           onColumnSelect={[Function]}
           rowIndex={0}
+          width="200px"
         />
         <InjectIntl(ColumnHeaderCell)
           columnIndex={1}
           displayName="March 16"
+          headerHeight="2.5rem"
           id="Column-1"
           isTabStop={false}
           key="Column-1"
           onColumnSelect={[Function]}
           rowIndex={0}
+          width="200px"
         />
         <InjectIntl(ColumnHeaderCell)
           columnIndex={2}
           displayName="March 17"
+          headerHeight="2.5rem"
           id="Column-2"
           isSelectable={false}
           isTabStop={false}
           key="Column-2"
           onColumnSelect={[Function]}
           rowIndex={0}
+          width="200px"
         />
       </tr>
       <Row
@@ -242,6 +265,7 @@ exports[`WorklistDataGrid verifies the rows are created with the right props 1`]
           ]
         }
         hasRowSelection={false}
+        height="2.5rem"
         id="1"
         isSelected={false}
         key="1"
@@ -283,6 +307,7 @@ exports[`WorklistDataGrid verifies the rows are created with the right props 1`]
           ]
         }
         hasRowSelection={false}
+        height="2.5rem"
         id="2"
         isSelected={false}
         key="2"
@@ -324,6 +349,7 @@ exports[`WorklistDataGrid verifies the rows are created with the right props 1`]
           ]
         }
         hasRowSelection={false}
+        height="2.5rem"
         id="3"
         isSelected={false}
         key="3"
@@ -337,5 +363,5 @@ exports[`WorklistDataGrid verifies the rows are created with the right props 1`]
   <VisuallyHiddenText
     aria-live="polite"
   />
-</Fragment>
+</div>
 `;

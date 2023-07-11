@@ -5,13 +5,14 @@ exports[`Row creates a row with the correct number of cells 1`] = `
   className="worklist-data-grid-row"
   style={
     Object {
-      "height": "25",
+      "height": "25px",
     }
   }
 >
   <InjectIntl(Cell)
     columnId="Column-0"
     columnIndex={0}
+    height="25px"
     isRowHeader={true}
     isSelected={false}
     isTabStop={false}
@@ -25,6 +26,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
   <InjectIntl(Cell)
     columnId="Column-1"
     columnIndex={1}
+    height="25px"
     isRowHeader={false}
     isSelected={true}
     isTabStop={true}
@@ -36,6 +38,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
   <InjectIntl(Cell)
     columnId="Column-2"
     columnIndex={2}
+    height="25px"
     isMasked={true}
     isRowHeader={false}
     isSelected={false}
@@ -55,13 +58,14 @@ exports[`Row verifies the cell is created with the right props 1`] = `
   className="worklist-data-grid-row"
   style={
     Object {
-      "height": "25",
+      "height": "25px",
     }
   }
 >
   <InjectIntl(Cell)
     columnId="Column-0"
     columnIndex={0}
+    height="25px"
     isRowHeader={true}
     isSelected={false}
     isTabStop={false}
@@ -75,6 +79,7 @@ exports[`Row verifies the cell is created with the right props 1`] = `
   <InjectIntl(Cell)
     columnId="Column-1"
     columnIndex={1}
+    height="25px"
     isRowHeader={false}
     isSelected={false}
     isTabStop={false}
@@ -88,6 +93,7 @@ exports[`Row verifies the cell is created with the right props 1`] = `
   <InjectIntl(Cell)
     columnId="Column-2"
     columnIndex={2}
+    height="25px"
     isMasked={false}
     isRowHeader={false}
     isSelected={false}

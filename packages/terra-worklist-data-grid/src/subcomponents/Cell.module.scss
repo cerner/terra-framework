@@ -6,7 +6,7 @@
   .worklist-data-grid-cell {
     border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
     font-weight: normal;
-    height: 100%;
+    padding: var(--terra-worklist-data-grid-cell-content-padding, 7px);
     position: relative;
 
     input {
@@ -28,9 +28,8 @@
   }
 
   .cell-content {
-    height: 100%;
-    padding: var(--terra-worklist-data-grid-cell-content-padding, 7px);
-    width: 100%;
+    overflow: hidden;
+    overflow-wrap: break-word;
   }
 
 

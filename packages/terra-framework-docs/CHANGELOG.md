@@ -4,11 +4,10 @@
 
 * Changed
   * Updated example for `terra-menu`.
+  * Updated tests for `terra-worklist-data-grid` to account for row height and column width being honored.
 
 * Added
   * Added alpha release disclaimer for `terra-worklist-data-grid`.
-  * Added documentation and tests for additional keyboard navigation in `terra-worklist-data-grid`.
-
 
 ## 1.24.0 - (July 4, 2023)
 
