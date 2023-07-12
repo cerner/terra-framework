@@ -4,7 +4,8 @@
 
 * Changed
   * Updated example for `terra-menu`.
-  * Updated examples for `terra-tabs` with conflicting ids
+  * Updated tests for `terra-worklist-data-grid` to account for row height and column width being honored.
+  * Updated examples for `terra-tabs` with conflicting ids.
 
 * Added
   * Added alpha release disclaimer for `terra-worklist-data-grid`.

@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-dom-props */
 import React, {
   useContext, useRef, useCallback,
 } from 'react';
@@ -66,6 +67,9 @@ const propTypes = {
 
 const defaultProps = {
   rowHeaderIndex: 0,
+  columnWidth: '200px',
+  columnHeaderHeight: '2.5rem',
+  rowHeight: '2.5rem',
 };
 
 function WorklistDataGrid(props) {
@@ -76,6 +80,7 @@ function WorklistDataGrid(props) {
     columns,
     rows,
     columnHeaderHeight,
+    rowHeight,
     onColumnSelect,
     intl,
   } = props;
@@ -190,7 +195,7 @@ function WorklistDataGrid(props) {
         aria-label={cellAriaLabel}
       >
         {!cell.isMasked && cell.content
-          && <div className={cx('cell-content')}>{cell.content}</div>}
+          && <div className={cx('cell-content')} style={{ height: rowHeight }}>{cell.content}</div>}
       </WorklistCellTag>
     );
   };
@@ -236,21 +241,23 @@ function WorklistDataGrid(props) {
   const gridClassNames = cx('worklist-data-grid', theme.className);
 
   return (
-    <table
-      ref={gridRef}
-      id={id}
-      role="grid"
-      aria-labelledby={ariaLabelledby}
-      aria-label={ariaLabel}
-      className={gridClassNames}
-      onClick={handleClick}
-      onKeyDown={handleKeyDown}
-    >
-      <tbody>
-        {buildColumns(columns)}
-        {buildRows(rows)}
-      </tbody>
-    </table>
+    <div className={cx('worklist-data-grid-container')}>
+      <table
+        ref={gridRef}
+        id={id}
+        role="grid"
+        aria-labelledby={ariaLabelledby}
+        aria-label={ariaLabel}
+        className={gridClassNames}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
+      >
+        <tbody>
+          {buildColumns(columns)}
+          {buildRows(rows)}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

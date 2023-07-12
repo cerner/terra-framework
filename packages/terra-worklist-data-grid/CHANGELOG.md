@@ -1,11 +1,13 @@
 # Changelog
 
 ## Unreleased
-
+* Changed
+  * Updated data grid to honor the column and row widths specified by consumers.
+  
 ## 0.2.0 - (July 4, 2023)
 
 * Changed
-  * Removed ability to set variable row heights
+  * Removed ability to set variable row heights.
   * Updated styling on cell focus.
 * Added
   * Added masked cell support.

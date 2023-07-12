@@ -97,7 +97,7 @@ const DefaultWorklistDataGrid = () => {
         rows={gridRows}
         rowHeaderIndex={rowHeaderIndex}
         rowHeight="50px"
-        columnWidth="50px"
+        columnWidth="100px"
         columnHeaderHeight="50px"
         onColumnSelect={onColumnSelect}
         ariaLabel="Worklist Data Grid"
