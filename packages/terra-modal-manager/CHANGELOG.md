@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Opened modal now traps focus within its content for improved keyboard accessibility.
+
 ## 6.63.0 - (June 5, 2023)
 
 * Changed
