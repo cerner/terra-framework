@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+import { KEY_SPACE, KEY_RETURN, KEY_RIGHT } from 'keycode-js';
 import {
   enableFocusStyles,
   disableFocusStyles,
@@ -89,6 +89,16 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  /**
+   * @private
+   * Callback function toggle dropdown open state.
+   */
+  setDropdownOpen: PropTypes.func,
+  /**
+   * @private
+   * Index value of first hidden tab.
+   */
+  hiddenStartIndex: PropTypes.number,
 };
 
 const defaultProps = {
@@ -115,6 +125,8 @@ const Tab = ({
   variant,
   isDisabled,
   onChange,
+  setDropdownOpen,
+  hiddenStartIndex,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -145,6 +157,8 @@ const Tab = ({
       event.stopPropagation();
       onSelect(itemKey, metaData);
       onChange(event, itemKey);
+    } else if (index === hiddenStartIndex - 1 && event.nativeEvent.keyCode === KEY_RIGHT) {
+      setDropdownOpen();
     } else {
       handleArrows(event, index, tabIds);
     }
