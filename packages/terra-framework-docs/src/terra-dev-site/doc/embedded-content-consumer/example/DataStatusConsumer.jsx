@@ -39,7 +39,7 @@ const onAuthorize = () => {
 
 const DataStatusConsumer = () => (
   <EmbeddedContentConsumer
-    src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/data-status-provider"
+    src="/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/data-status-provider"
     onMount={onMount}
     onLaunch={onLaunch}
     onAuthorize={onAuthorize}
