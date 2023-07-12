@@ -89,6 +89,24 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  /**
+   * @private
+   * Callback function when dragging of pane starts.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  handleDragStart: PropTypes.func,
+  /**
+   * @private
+   * Callback function when pane is dragged over the list.
+   * Parameters: 1. Event.
+   */
+  handleDragOver: PropTypes.func,
+  /**
+   * @private
+   * Callback function when pane is dropped.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  handleDrop: PropTypes.func,
 };
 
 const defaultProps = {
@@ -115,6 +133,9 @@ const Tab = ({
   variant,
   isDisabled,
   onChange,
+  handleDragStart,
+  handleDragOver,
+  handleDrop,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -123,7 +144,6 @@ const Tab = ({
     { 'is-active': isSelected },
     { 'is-icon-only': isIconOnly },
     { 'is-text-only': !icon },
-    { 'is-disabled': isDisabled },
     theme.className,
   );
   const paneClassNames = classNames(cy(
@@ -150,12 +170,9 @@ const Tab = ({
     }
   }
 
-  function onClick(event) {
+  function onClick() {
     if (!isDisabled) {
       onSelect(itemKey, metaData);
-      if (onChange) {
-        onChange(event, itemKey);
-      }
     }
   }
 
@@ -167,6 +184,9 @@ const Tab = ({
   attributes['data-focus-styles-enabled'] = !isDisabled;
   attributes['aria-selected'] = isSelected;
   attributes.style = { zIndex };
+  attributes.onDragStart = (e) => handleDragStart(e, id);
+  attributes.onDragOver = (e) => handleDragOver(e);
+  attributes.onDrop = (e) => handleDrop(e, id);
 
   return (
     <div
@@ -174,15 +194,18 @@ const Tab = ({
       id={id}
       aria-controls={associatedPanelId}
       role="tab"
-      aria-disabled={isDisabled}
       className={variant === 'framework' ? paneClassNames : tabClassNames}
       title={label}
+      draggable
+      // onDragStart={(e) => handleDragStart(e, id)}
+      // onDragOver={(e) => handleDragOver(e)}
+      // onDrop={(e) => handleDrop(e, id)}
       data-terra-tabs-show-focus-styles
     >
-      <div className={variant === 'framework' ? cy('inner') : cx('inner')}>
+      <div className={cx('inner')}>
         {customDisplay}
         {customDisplay ? null : icon}
-        {customDisplay || isIconOnly ? null : <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
+        {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -76,7 +77,14 @@ class Tabs extends React.Component {
     this.wrapOnSelect = this.wrapOnSelect.bind(this);
     this.wrapOnSelectHidden = this.wrapOnSelectHidden.bind(this);
     this.positionDropDown = this.positionDropDown.bind(this);
+    this.handleDragOver = this.handleDragOver.bind(this);
+    this.handleDragStart = this.handleDragStart.bind(this);
+    this.handleDrop = this.handleDrop.bind(this);
     this.resetCache();
+    // this.visibleTabs = [];
+    this.state = {
+      visibleTabData: this.props.tabData,
+    };
   }
 
   componentDidMount() {
@@ -182,10 +190,38 @@ class Tabs extends React.Component {
     this.setIsOpen(false);
   }
 
+  handleDragStart(e, id) {
+    e.dataTransfer.setData('tabId', id);
+  }
+
+  handleDragOver(e) {
+    e.preventDefault();
+  }
+
   setIsOpen(value) {
     this.isOpen = value;
     this.forceUpdate();
   }
+
+  handleDrop = (e, targetTabId) => {
+    e.preventDefault();
+    const sourceTabId = e.dataTransfer.getData('tabId');
+
+    const sourceTabIndex = this.state.visibleTabData.findIndex((tab) => tab.id.toString() === sourceTabId);
+    const targetTabIndex = this.state.visibleTabData.findIndex((tab) => tab.id.toString() === targetTabId);
+
+    if (sourceTabIndex !== targetTabIndex) {
+      this.setState((prevState) => {
+        const updatedTabData = [...prevState.visibleTabData];
+        if (sourceTabIndex > -1 && targetTabIndex > -1) {
+          const movedTab = updatedTabData[sourceTabIndex];
+          updatedTabData[sourceTabIndex] = updatedTabData[targetTabIndex];
+          updatedTabData[targetTabIndex] = movedTab;
+        }
+        return { visibleTabData: updatedTabData };
+      });
+    }
+  };
 
   resetCache() {
     this.animationFrameID = null;
@@ -244,7 +280,7 @@ class Tabs extends React.Component {
       tabData, ariaLabel, variant, onChange,
     } = this.props;
     const theme = this.context;
-    const enabledTabs = tabData.filter(tab => !tab.isDisabled);
+    const enabledTabs = this.state.visibleTabData.filter(tab => !tab.isDisabled);
     const ids = enabledTabs.map(tab => tab.id);
     const hiddenIds = [];
     const visibleTabs = [];
@@ -252,11 +288,11 @@ class Tabs extends React.Component {
     let isHiddenSelected = false;
 
     let enabledTabsIndex = -1;
-    tabData.forEach((tab, index) => {
+    this.state.visibleTabData.forEach((tab, index) => {
       if (!tab.isDisabled) {
         enabledTabsIndex += 1;
       }
-      if (enabledTabsIndex < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
+      if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
         visibleTabs.push(
           <Tab
             {...tab}
@@ -266,10 +302,13 @@ class Tabs extends React.Component {
             icon={tab.icon}
             customDisplay={tab.customDisplay}
             onSelect={this.wrapOnSelect(tab.onSelect)}
-            zIndex={tab.isSelected ? tabData.length : tabData.length - index}
+            zIndex={tab.isSelected ? tabData.length : tabData - index}
             isIconOnly={tab.isIconOnly}
             variant={variant}
             onChange={onChange}
+            handleDragStart={(e) => this.handleDragStart(e, tab.id.toString())}
+            handleDragOver={this.handleDragOver}
+            handleDrop={(e) => this.handleDrop(e, tab.id.toString())}
           />,
         );
       } else {
