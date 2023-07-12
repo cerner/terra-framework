@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
+import Hookshot from 'terra-hookshot';
 import AddButton from './_AddButton';
 import MoreButton from './_MoreButton';
 import TabDropDown from './_TabDropDown';
@@ -248,6 +249,8 @@ class Tabs extends React.Component {
             isIconOnly={tab.isIconOnly}
             variant={variant}
             onChange={onChange}
+            setDropdownOpen={this.handleHiddenFocus}
+            hiddenStartIndex={this.hiddenStartIndex}
           />,
         );
       } else {
@@ -312,15 +315,26 @@ class Tabs extends React.Component {
             variant={variant}
           />
         ) : undefined}
-        <TabDropDown
-          onFocus={this.handleHiddenFocus}
-          onBlur={this.handleHiddenBlur}
+        <Hookshot
           isOpen={this.isOpen}
-          onRequestClose={this.handleOutsideClick}
-          refCallback={node => { this.dropdownRef.current = node; }}
+          isEnabled
+          targetRef={() => this.moreButtonRef.current}
+          attachmentBehavior="flip"
+          contentAttachment={{ vertical: 'bottom', horizontal: 'center' }}
+          targetAttachment={{ vertical: 'top', horizontal: 'start' }}
         >
-          {hiddenTabs}
-        </TabDropDown>
+          <Hookshot.Content>
+            <TabDropDown
+              onFocus={this.handleHiddenFocus}
+              onBlur={this.handleHiddenBlur}
+              isOpen={this.isOpen}
+              onRequestClose={this.handleOutsideClick}
+              refCallback={node => { this.dropdownRef.current = node; }}
+            >
+              {hiddenTabs}
+            </TabDropDown>
+          </Hookshot.Content>
+        </Hookshot>
       </div>
     );
   }
