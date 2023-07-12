@@ -8,7 +8,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
-import ColumnHeaderCell from './ColumnHeaderCell';
+import ColumnHeader from './ColumnHeader';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import './_elementPolyfill';
 import styles from './WorklistDataGrid.module.scss';
@@ -85,15 +85,17 @@ function WorklistDataGrid(props) {
     columns,
     rows,
     onColumnResize,
+    columnWidth,
     columnHeaderHeight,
     rowHeight,
     onColumnSelect,
     intl,
   } = props;
 
+  const fontSize = parseInt(getComputedStyle(document.documentElement).fontSize, 10);
   const [tableHeight, setTableHeight] = useState('auto');
   const [activeIndex, setActiveIndex] = useState(null);
-  const [columnHeaderWidths, setColumnHeaderWidths] = useState(columns.map(column => parseInt((column.width || props.columnWidth), 10)));
+  const [columnHeaderWidths, setColumnHeaderWidths] = useState(columns.map(column => (column.width || columnWidth)));
 
   const focusedRow = useRef(0);
   const focusedCol = useRef(0);
@@ -190,11 +192,11 @@ function WorklistDataGrid(props) {
     event.preventDefault();
   };
 
-  const onResizeMouseDown = (event, index, columnWidth) => {
+  const onResizeMouseDown = (event, index, resizeColumnWidth) => {
     // Store current table and column values for resize calculations
     tableWidth.current = grid.current.offsetWidth;
     activeColumnPageX.current = event.pageX;
-    activeColumnWidth.current = columnWidth;
+    activeColumnWidth.current = resizeColumnWidth;
 
     // Set the active index to the selected column
     setActiveIndex(index);
@@ -214,15 +216,12 @@ function WorklistDataGrid(props) {
     const newColumnWidth = Math.min(Math.max(activeColumnWidth.current + diffX, minimumWidth), maximumWidth);
 
     const newColumnHeaderWidths = [...columnHeaderWidths];
-    newColumnHeaderWidths[activeIndex] = newColumnWidth;
+    newColumnHeaderWidths[activeIndex] = `${(newColumnWidth / fontSize).toFixed(2)}rem`;
     setColumnHeaderWidths(newColumnHeaderWidths);
 
     // Update the column and table width
-    // columnRefs.current[activeIndex].style.width = `${newColumnWidth}px`;
     grid.current.style.width = `${tableWidth + (newColumnWidth - activeColumnWidth.current)}px`;
-
-    // setActiveResizeWidth(columnRefs.current[activeIndex].style.width);
-  }, [activeIndex, columnHeaderWidths, columns]);
+  }, [activeIndex, columnHeaderWidths, columns, fontSize]);
 
   const onMouseUp = () => {
     // Notify consumers of the new column width
@@ -260,32 +259,32 @@ function WorklistDataGrid(props) {
     );
   };
 
-  const buildColumn = (column, columnIndex) => (
-    <ColumnHeaderCell
-      key={`column-header-${column.id}`}
-      activeResizeColumn={activeIndex === columnIndex}
-      column={column}
-      columnIndex={columnIndex}
-      width={columnHeaderWidths[columnIndex]}
-      headerHeight={columnHeaderHeight}
-      isResizable={column.isResizable}
-      isSelectable={column.isSelectable}
-      tableHeight={tableHeight}
-      onColumnSelect={onColumnSelect}
-      onResizeMouseDown={onResizeMouseDown}
-    />
-  );
+  // const buildColumn = (column, columnIndex) => (
+  //   <ColumnHeaderCell
+  //     key={`column-header-${column.id}`}
+  //     activeResizeColumn={activeIndex === columnIndex}
+  //     column={column}
+  //     columnIndex={columnIndex}
+  //     width={columnHeaderWidths[columnIndex]}
+  //     headerHeight={columnHeaderHeight}
+  //     isResizable={column.isResizable}
+  //     isSelectable={column.isSelectable}
+  //     tableHeight={tableHeight}
+  //     onColumnSelect={onColumnSelect}
+  //     onResizeMouseDown={onResizeMouseDown}
+  //   />
+  // );
 
-  const buildColumns = (allColumns) => {
-    if (allColumns?.length > 0) {
-      return (
-        <tr className={cx('column-header-row')} height={props.columnHeaderHeight}>
-          {allColumns.map((columnData, columnIndex) => (buildColumn(columnData, columnIndex)))}
-        </tr>
-      );
-    }
-    return undefined;
-  };
+  // const buildColumns = (allColumns) => {
+  //   if (allColumns?.length > 0) {
+  //     return (
+  //       <tr className={cx('column-header-row')} height={props.columnHeaderHeight}>
+  //         {allColumns.map((columnData, columnIndex) => (buildColumn(columnData, columnIndex)))}
+  //       </tr>
+  //     );
+  //   }
+  //   return undefined;
+  // };
 
   const buildRow = (row) => {
     const height = props.rowHeight;
@@ -318,8 +317,19 @@ function WorklistDataGrid(props) {
         onKeyDown={handleKeyDown}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
+        <thead>
+          <ColumnHeader
+            activeResizeIndex={activeIndex}
+            columns={columns}
+            columnWidths={columnHeaderWidths}
+            headerHeight={columnHeaderHeight}
+            tableHeight={tableHeight}
+            onColumnSelect={onColumnSelect}
+            onResizeMouseDown={onResizeMouseDown}
+          />
+        </thead>
         <tbody>
-          {buildColumns(columns)}
+          {/* {buildColumns(columns)} */}
           {buildRows(rows)}
         </tbody>
       </table>

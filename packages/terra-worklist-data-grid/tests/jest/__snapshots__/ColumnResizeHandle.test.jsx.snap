@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColumnResizeHandle render a default column resize handle 1`] = `
+<InjectIntl(ColumnResizeHandle)
+  columnIndex={0}
+  columnText="Vitals"
+  columnWidth={200}
+  height="500px"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  maximumWidth={300}
+  minimumWidth={60}
+  onResizeMouseDown={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "preventDefault": [Function],
+            "stopPropagation": [Function],
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+>
+  <ColumnResizeHandle
+    columnIndex={0}
+    columnText="Vitals"
+    columnWidth={200}
+    height="500px"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    maximumWidth={300}
+    minimumWidth={60}
+    onResizeMouseDown={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "preventDefault": [Function],
+              "stopPropagation": [Function],
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    <div
+      aria-label="Vitals"
+      aria-valuemax={300}
+      aria-valuemin={60}
+      aria-valuenow={200}
+      aria-valuetext="200 pixels column width"
+      className="resize-handle"
+      draggable={true}
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      role="slider"
+      style={
+        Object {
+          "height": "500px",
+        }
+      }
+    />
+  </ColumnResizeHandle>
+</InjectIntl(ColumnResizeHandle)>
+`;
+
+exports[`ColumnResizeHandle render an active column resize handle 1`] = `
+<div
+  aria-label="Vitals"
+  aria-valuemax={300}
+  aria-valuemin={60}
+  aria-valuenow={200}
+  aria-valuetext="200 pixels column width"
+  className="resize-handle active"
+  draggable={true}
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  role="slider"
+  style={
+    Object {
+      "height": "500px",
+    }
+  }
+/>
+`;

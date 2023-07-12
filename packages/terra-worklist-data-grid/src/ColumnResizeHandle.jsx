@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './ColumnResizeHandle.module.scss';
@@ -9,13 +10,9 @@ const cx = classNames.bind(styles);
 const propTypes = {
   active: PropTypes.bool,
   /**
-   * Index of the column associated with the divider
-   */
-  columnIndex: PropTypes.number.isRequired,
-  /**
    * Text of the column associated with the divider
    */
-  columnText: PropTypes.string,
+  columnText: PropTypes.string.isRequired,
   /**
    * Width of the column associated with the divider
    */
@@ -35,13 +32,12 @@ const propTypes = {
   /**
    * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
    */
-  onResizeMouseDown: PropTypes.func,
+  onResizeMouseDown: PropTypes.func.isRequired,
 };
 
 const ColumnResizeHandle = (props) => {
   const {
     active,
-    columnIndex,
     columnText,
     columnWidth,
     height,
@@ -65,9 +61,7 @@ const ColumnResizeHandle = (props) => {
     resizeHandle.current.tabIndex = 0;
     resizeHandle.current.focus();
 
-    if (onResizeMouseDown) {
-      onResizeMouseDown(event);
-    }
+    onResizeMouseDown(event);
 
     event.stopPropagation();
     event.preventDefault();
@@ -83,11 +77,13 @@ const ColumnResizeHandle = (props) => {
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus
     <div
       ref={resizeHandleRef}
+      draggable
       role="slider"
       aria-valuemin={minimumWidth}
       aria-valuenow={columnWidth}
       aria-valuemax={maximumWidth}
       aria-label={columnText}
+      aria-valuetext={`${columnWidth} pixels column width`}
       style={{ height }}
       onMouseDown={onMouseDown}
       onClick={onClick}
@@ -97,4 +93,4 @@ const ColumnResizeHandle = (props) => {
 };
 
 ColumnResizeHandle.propTypes = propTypes;
-export default ColumnResizeHandle;
+export default injectIntl(ColumnResizeHandle);

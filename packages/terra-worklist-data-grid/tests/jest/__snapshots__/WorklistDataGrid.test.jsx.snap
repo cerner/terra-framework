@@ -11,42 +11,39 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 ce
     onKeyDown={[Function]}
     role="grid"
   >
-    <tbody>
-      <tr
-        height="2.5rem"
-      >
-        <InjectIntl(ColumnHeaderCell)
-          column={
+    <thead>
+      <InjectIntl(ColumnHeader)
+        activeResizeIndex={null}
+        columnWidths={
+          Array [
+            "200px",
+            "200px",
+            "200px",
+          ]
+        }
+        columns={
+          Array [
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
-            }
-          }
-          headerHeight="2.5rem"
-          width="200px"
-        />
-        <InjectIntl(ColumnHeaderCell)
-          column={
+            },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
-            }
-          }
-          headerHeight="2.5rem"
-          width="200px"
-        />
-        <InjectIntl(ColumnHeaderCell)
-          column={
+            },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
-            }
-          }
-          headerHeight="2.5rem"
-          width="200px"
-        />
-      </tr>
+            },
+          ]
+        }
+        headerHeight="2.5rem"
+        onResizeMouseDown={[Function]}
+        tableHeight="auto"
+      />
+    </thead>
+    <tbody>
       <tr
         className="worklist-data-grid-row"
         key="1"
@@ -197,42 +194,39 @@ exports[`WorklistDataGrid renders a grid with selectable cells 1`] = `
     onKeyDown={[Function]}
     role="grid"
   >
-    <tbody>
-      <tr
-        height="2.5rem"
-      >
-        <InjectIntl(ColumnHeaderCell)
-          column={
+    <thead>
+      <InjectIntl(ColumnHeader)
+        activeResizeIndex={null}
+        columnWidths={
+          Array [
+            "200px",
+            "200px",
+            "200px",
+          ]
+        }
+        columns={
+          Array [
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
-            }
-          }
-          headerHeight="2.5rem"
-          width="200px"
-        />
-        <InjectIntl(ColumnHeaderCell)
-          column={
+            },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
-            }
-          }
-          headerHeight="2.5rem"
-          width="200px"
-        />
-        <InjectIntl(ColumnHeaderCell)
-          column={
+            },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
-            }
-          }
-          headerHeight="2.5rem"
-          width="200px"
-        />
-      </tr>
+            },
+          ]
+        }
+        headerHeight="2.5rem"
+        onResizeMouseDown={[Function]}
+        tableHeight="auto"
+      />
+    </thead>
+    <tbody>
       <tr
         className="worklist-data-grid-row"
         key="1"
@@ -383,42 +377,39 @@ exports[`WorklistDataGrid test masked cells 1`] = `
     onKeyDown={[Function]}
     role="grid"
   >
-    <tbody>
-      <tr
-        height="2.5rem"
-      >
-        <InjectIntl(ColumnHeaderCell)
-          column={
+    <thead>
+      <InjectIntl(ColumnHeader)
+        activeResizeIndex={null}
+        columnWidths={
+          Array [
+            "200px",
+            "200px",
+            "200px",
+          ]
+        }
+        columns={
+          Array [
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
-            }
-          }
-          headerHeight="2.5rem"
-          width="200px"
-        />
-        <InjectIntl(ColumnHeaderCell)
-          column={
+            },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
-            }
-          }
-          headerHeight="2.5rem"
-          width="200px"
-        />
-        <InjectIntl(ColumnHeaderCell)
-          column={
+            },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
-            }
-          }
-          headerHeight="2.5rem"
-          width="200px"
-        />
-      </tr>
+            },
+          ]
+        }
+        headerHeight="2.5rem"
+        onResizeMouseDown={[Function]}
+        tableHeight="auto"
+      />
+    </thead>
+    <tbody>
       <tr
         className="worklist-data-grid-row"
         key="1"

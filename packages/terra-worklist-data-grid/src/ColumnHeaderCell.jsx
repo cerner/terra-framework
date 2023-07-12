@@ -8,7 +8,6 @@ import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
 import ColumnResizeHandle from './ColumnResizeHandle';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
-import './_elementPolyfill';
 import styles from './ColumnHeaderCell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -29,7 +28,7 @@ const propTypes = {
   /**
    * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
    */
-  width: PropTypes.number.isRequired,
+  width: PropTypes.string.isRequired,
   /**
    * String that specifies the column height. Any valid CSS height value accepted.
    */
@@ -45,7 +44,7 @@ const propTypes = {
   /**
    * Height of the parent table
    */
-  tableHeight: PropTypes.string.isRequired,
+  tableHeight: PropTypes.string,
   /**
    * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`.
    */
@@ -82,19 +81,34 @@ const ColumnHeaderCell = (props) => {
   } = props;
 
   const columnHeaderCell = useRef();
+  const titleContainer = useRef();
 
   const columnHeaderCellRef = useCallback((node) => {
     columnHeaderCell.current = node;
   }, []);
 
+  const titleContainerRef = useCallback((node) => {
+    titleContainer.current = node;
+  }, []);
+
   // Handle column header selection
-  const onHeaderSelect = () => {
-    onColumnSelect(column.id);
+  const onHeaderSelect = (event) => {
+    titleContainer.current.tabIndex = 0;
+    titleContainer.current.focus();
+
+    if (onColumnSelect) {
+      onColumnSelect(column.id);
+    }
+
+    event.stopPropagation();
+    event.preventDefault();
   };
 
   const onResizeHandleMouseDown = (event) => {
+    titleContainer.current.tabIndex = -1;
+
     if (onResizeMouseDown) {
-      onResizeMouseDown(event, columnIndex, columnHeaderCell.current.offsetWidth);
+      onResizeMouseDown(event, columnIndex, parseInt(getComputedStyle(columnHeaderCell.current).width, 10));
     }
   };
 
@@ -123,15 +137,15 @@ const ColumnHeaderCell = (props) => {
       key={column.id}
       className={cx('column-header', theme.className, { selectable: isSelectable })}
       tabIndex="-1"
-      // role="columnheader"
-      // scope="col"
+      role="columnheader"
+      scope="col"
       aria-sort={column.sortIndicator}
-      onClick={(!(column.isSelectable === false) && onColumnSelect) ? onHeaderSelect : undefined}
-      style={{ width: `${width}px`, height: headerHeight }}
+      onMouseDown={(isSelectable) ? onHeaderSelect : undefined}
+      style={{ width, height: headerHeight }}
     >
-      <div className={cx('header-container')}>
+      <div className={cx('header-container')} ref={titleContainerRef} role="button">
         {errorIcon}
-        <span role="button">{column.displayName}</span>
+        <span>{column.displayName}</span>
         {sortIndicatorIcon}
       </div>
       { isResizable && (
@@ -139,7 +153,7 @@ const ColumnHeaderCell = (props) => {
         active={activeResizeColumn}
         columnIndex={columnIndex}
         columnText={column.displayName}
-        columnWidth={width}
+        columnWidth={parseInt(width, 10)}
         height={tableHeight}
         minimumWidth={column.minimumWidth || 60}
         maximumWidth={column.maximumWidth || 300}

@@ -3,7 +3,7 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import WorklistDataGrid from '../../src/WorklistDataGrid';
-import ColumnHeaderCell from '../../src/ColumnHeaderCell';
+import ColumnHeader from '../../src/ColumnHeader';
 
 // Source data for tests
 const dataFile = {
@@ -50,10 +50,10 @@ describe('WorklistDataGrid', () => {
       />,
     ).dive();
 
-    const columnHeaders = wrapper.find(ColumnHeaderCell);
+    const columnHeader = wrapper.find(ColumnHeader);
     const dataGridCells = wrapper.find('.worklist-data-grid-cell');
 
-    expect(columnHeaders).toHaveLength(3);
+    expect(columnHeader).toHaveLength(1);
     expect(dataGridCells).toHaveLength(9);
     expect(wrapper).toMatchSnapshot();
   });
