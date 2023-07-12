@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
+import AddButton from './_AddButton';
 import MoreButton from './_MoreButton';
 import TabDropDown from './_TabDropDown';
 import Tab from './_Tab';
@@ -56,6 +57,11 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  /**
+   * Callback function when add button selection has changed.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onSelectAddButton: PropTypes.func,
 };
 
 class Tabs extends React.Component {
@@ -241,11 +247,12 @@ class Tabs extends React.Component {
 
   render() {
     const {
-      tabData, ariaLabel, variant, onChange,
+      tabData, ariaLabel, variant, onChange, onSelectAddButton,
     } = this.props;
     const theme = this.context;
     const enabledTabs = tabData.filter(tab => !tab.isDisabled);
     const ids = enabledTabs.map(tab => tab.id);
+    ids.push('tab-add-button');
     const hiddenIds = [];
     const visibleTabs = [];
     const hiddenTabs = [];
@@ -316,6 +323,15 @@ class Tabs extends React.Component {
         aria-owns={hiddenIds.join(' ')}
       >
         {visibleTabs}
+        {onSelectAddButton ? (
+          <AddButton
+            aria-label="Add Tab"
+            index={tabData.length}
+            onSelect={onSelectAddButton}
+            tabIds={ids}
+            isSelected={false}
+          />
+        ) : undefined}
         {this.showMoreButton ? (
           <MoreButton
             isOpen={this.isOpen}
