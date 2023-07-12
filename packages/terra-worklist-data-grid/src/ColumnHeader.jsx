@@ -19,17 +19,13 @@ const propTypes = {
    */
   columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape).isRequired,
   /**
-   * Data for columns. By default, columns will be presented in the order given.
-   */
-  columnWidths: PropTypes.array.isRequired,
-  /**
    * String that specifies the column height. Any valid CSS height value accepted.
    */
   headerHeight: PropTypes.string.isRequired,
   /**
-   * Height of the parent table
+   * A number (in px) specifying the height of the data grid.
    */
-  tableHeight: PropTypes.string.isRequired,
+  tableHeight: PropTypes.number,
   /**
    * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`.
    */
@@ -44,7 +40,6 @@ const ColumnHeader = (props) => {
   const {
     activeResizeIndex,
     columns,
-    columnWidths,
     headerHeight,
     tableHeight,
     onColumnSelect,
@@ -60,7 +55,9 @@ const ColumnHeader = (props) => {
       activeResizeColumn={activeResizeIndex === columnIndex}
       column={column}
       columnIndex={columnIndex}
-      width={columnWidths[columnIndex]}
+      width={column.width}
+      minimumWidth={column.minimumWidth}
+      maximumWidth={column.maximumWidth}
       headerHeight={headerHeight}
       isResizable={column.isResizable}
       isSelectable={column.isSelectable}

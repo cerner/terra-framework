@@ -14,33 +14,35 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 ce
     <thead>
       <InjectIntl(ColumnHeader)
         activeResizeIndex={null}
-        columnWidths={
-          Array [
-            "200px",
-            "200px",
-            "200px",
-          ]
-        }
         columns={
           Array [
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
           ]
         }
         headerHeight="2.5rem"
         onResizeMouseDown={[Function]}
-        tableHeight="auto"
+        tableHeight={0}
       />
     </thead>
     <tbody>
@@ -197,33 +199,35 @@ exports[`WorklistDataGrid renders a grid with selectable cells 1`] = `
     <thead>
       <InjectIntl(ColumnHeader)
         activeResizeIndex={null}
-        columnWidths={
-          Array [
-            "200px",
-            "200px",
-            "200px",
-          ]
-        }
         columns={
           Array [
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
           ]
         }
         headerHeight="2.5rem"
         onResizeMouseDown={[Function]}
-        tableHeight="auto"
+        tableHeight={0}
       />
     </thead>
     <tbody>
@@ -380,33 +384,35 @@ exports[`WorklistDataGrid test masked cells 1`] = `
     <thead>
       <InjectIntl(ColumnHeader)
         activeResizeIndex={null}
-        columnWidths={
-          Array [
-            "200px",
-            "200px",
-            "200px",
-          ]
-        }
         columns={
           Array [
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
           ]
         }
         headerHeight="2.5rem"
         onResizeMouseDown={[Function]}
-        tableHeight="auto"
+        tableHeight={0}
       />
     </thead>
     <tbody>

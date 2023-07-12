@@ -28,7 +28,7 @@ const propTypes = {
   /**
    * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
    */
-  width: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
   /**
    * String that specifies the column height. Any valid CSS height value accepted.
    */
@@ -44,7 +44,7 @@ const propTypes = {
   /**
    * Height of the parent table
    */
-  tableHeight: PropTypes.string,
+  tableHeight: PropTypes.number,
   /**
    * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`.
    */
@@ -108,7 +108,7 @@ const ColumnHeaderCell = (props) => {
     titleContainer.current.tabIndex = -1;
 
     if (onResizeMouseDown) {
-      onResizeMouseDown(event, columnIndex, parseInt(getComputedStyle(columnHeaderCell.current).width, 10));
+      onResizeMouseDown(event, columnIndex, columnHeaderCell.current.offsetWidth);
     }
   };
 
@@ -141,7 +141,7 @@ const ColumnHeaderCell = (props) => {
       scope="col"
       aria-sort={column.sortIndicator}
       onMouseDown={(isSelectable) ? onHeaderSelect : undefined}
-      style={{ width, height: headerHeight }}
+      style={{ width: `${width}px`, height: headerHeight }}
     >
       <div className={cx('header-container')} ref={titleContainerRef} role="button">
         {errorIcon}
@@ -153,10 +153,10 @@ const ColumnHeaderCell = (props) => {
         active={activeResizeColumn}
         columnIndex={columnIndex}
         columnText={column.displayName}
-        columnWidth={parseInt(width, 10)}
+        columnWidth={width}
         height={tableHeight}
-        minimumWidth={column.minimumWidth || 60}
-        maximumWidth={column.maximumWidth || 300}
+        minimumWidth={column.minimumWidth}
+        maximumWidth={column.maximumWidth}
         onResizeMouseDown={onResizeHandleMouseDown}
       />
       )}

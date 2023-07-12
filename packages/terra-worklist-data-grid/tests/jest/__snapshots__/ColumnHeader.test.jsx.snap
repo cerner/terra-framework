@@ -1,5 +1,111 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ColumnHeader render a column header with an active resize column 1`] = `
+<tr
+  className="column-header-row"
+  height="3rem"
+>
+  <InjectIntl(ColumnHeaderCell)
+    activeResizeColumn={true}
+    column={
+      Object {
+        "displayName": " Vitals",
+        "id": "Column-0",
+      }
+    }
+    columnIndex={0}
+    headerHeight="3rem"
+    key="Column-0"
+    tableHeight={500}
+  />
+  <InjectIntl(ColumnHeaderCell)
+    activeResizeColumn={false}
+    column={
+      Object {
+        "displayName": " Patient",
+        "id": "Column-1",
+      }
+    }
+    columnIndex={1}
+    headerHeight="3rem"
+    key="Column-1"
+    tableHeight={500}
+  />
+</tr>
+`;
+
+exports[`ColumnHeader render a column header with callbacks 1`] = `
+<tr
+  className="column-header-row"
+  height="3rem"
+>
+  <InjectIntl(ColumnHeaderCell)
+    activeResizeColumn={false}
+    column={
+      Object {
+        "displayName": " Vitals",
+        "id": "Column-0",
+      }
+    }
+    columnIndex={0}
+    headerHeight="3rem"
+    key="Column-0"
+    onColumnSelect={[MockFunction]}
+    onResizeMouseDown={[MockFunction]}
+    tableHeight={500}
+  />
+  <InjectIntl(ColumnHeaderCell)
+    activeResizeColumn={false}
+    column={
+      Object {
+        "displayName": " Patient",
+        "id": "Column-1",
+      }
+    }
+    columnIndex={1}
+    headerHeight="3rem"
+    key="Column-1"
+    onColumnSelect={[MockFunction]}
+    onResizeMouseDown={[MockFunction]}
+    tableHeight={500}
+  />
+</tr>
+`;
+
+exports[`ColumnHeader render a column header with tableHeight prop 1`] = `
+<tr
+  className="column-header-row"
+  height="3rem"
+>
+  <InjectIntl(ColumnHeaderCell)
+    activeResizeColumn={false}
+    column={
+      Object {
+        "displayName": " Vitals",
+        "id": "Column-0",
+      }
+    }
+    columnIndex={0}
+    headerHeight="3rem"
+    key="Column-0"
+    tableHeight={500}
+  />
+  <InjectIntl(ColumnHeaderCell)
+    activeResizeColumn={false}
+    column={
+      Object {
+        "displayName": " Patient",
+        "id": "Column-1",
+      }
+    }
+    columnIndex={1}
+    headerHeight="3rem"
+    key="Column-1"
+    tableHeight={500}
+  />
+</tr>
+`;
+
 exports[`ColumnHeader render a default column header 1`] = `
 <tr
   className="column-header-row"
@@ -16,8 +122,6 @@ exports[`ColumnHeader render a default column header 1`] = `
     columnIndex={0}
     headerHeight="3rem"
     key="Column-0"
-    tableHeight="500px"
-    width="2.5rem"
   />
   <InjectIntl(ColumnHeaderCell)
     activeResizeColumn={false}
@@ -30,8 +134,6 @@ exports[`ColumnHeader render a default column header 1`] = `
     columnIndex={1}
     headerHeight="3rem"
     key="Column-1"
-    tableHeight="500px"
-    width="2.5rem"
   />
 </tr>
 `;

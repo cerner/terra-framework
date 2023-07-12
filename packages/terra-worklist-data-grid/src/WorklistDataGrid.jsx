@@ -38,10 +38,9 @@ const propTypes = {
    */
   rows: PropTypes.arrayOf(WorklistDataGridPropTypes.rowShape),
   /**
-   * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
-   * To override the default value, provide width for the column that needs to be overridden.
+   * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
    */
-  columnWidth: PropTypes.string,
+  defaultColumnWidth: PropTypes.number,
   /**
    * String that specifies the column height. Any valid CSS height value is accepted.
    */
@@ -72,7 +71,7 @@ const propTypes = {
 
 const defaultProps = {
   rowHeaderIndex: 0,
-  columnWidth: '200px',
+  defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
   rowHeight: '2.5rem',
 };
@@ -85,17 +84,25 @@ function WorklistDataGrid(props) {
     columns,
     rows,
     onColumnResize,
-    columnWidth,
+    defaultColumnWidth,
     columnHeaderHeight,
     rowHeight,
     onColumnSelect,
     intl,
   } = props;
 
-  const fontSize = parseInt(getComputedStyle(document.documentElement).fontSize, 10);
-  const [tableHeight, setTableHeight] = useState('auto');
+  const [tableHeight, setTableHeight] = useState(0);
   const [activeIndex, setActiveIndex] = useState(null);
-  const [columnHeaderWidths, setColumnHeaderWidths] = useState(columns.map(column => (column.width || columnWidth)));
+
+  const initializeColumn = (column) => {
+    const newColumn = { ...column };
+    newColumn.width = column.width || defaultColumnWidth;
+    newColumn.minimumWidth = column.minimumWidth || 60;
+    newColumn.maximumWidth = column.maximumWidth || 300;
+
+    return newColumn;
+  };
+  const [dataGridColumns, setDataGridColumns] = useState(columns.map((column) => initializeColumn(column)));
 
   const focusedRow = useRef(0);
   const focusedCol = useRef(0);
@@ -108,7 +115,7 @@ function WorklistDataGrid(props) {
   const gridRef = useCallback((node) => {
     grid.current = node;
 
-    setTableHeight(`${grid.current.offsetHeight}px`);
+    setTableHeight(grid.current.offsetHeight - 1);
 
     const focusedCell = grid.current.rows[focusedRow.current].cells[focusedCol.current];
     focusedCell.tabIndex = 0;
@@ -211,17 +218,16 @@ function WorklistDataGrid(props) {
 
     // Ensure the new column width falls within the range of the minimum and maximum values
     const diffX = e.pageX - activeColumnPageX.current;
-    const minimumWidth = columns[activeIndex].minimumWidth || 60;
-    const maximumWidth = columns[activeIndex].maximumWidth || 300;
+    const { minimumWidth, maximumWidth } = dataGridColumns[activeIndex];
     const newColumnWidth = Math.min(Math.max(activeColumnWidth.current + diffX, minimumWidth), maximumWidth);
 
-    const newColumnHeaderWidths = [...columnHeaderWidths];
-    newColumnHeaderWidths[activeIndex] = `${(newColumnWidth / fontSize).toFixed(2)}rem`;
-    setColumnHeaderWidths(newColumnHeaderWidths);
+    const newGridColumns = [...dataGridColumns];
+    newGridColumns[activeIndex].width = newColumnWidth;
+    setDataGridColumns(newGridColumns);
 
     // Update the column and table width
     grid.current.style.width = `${tableWidth + (newColumnWidth - activeColumnWidth.current)}px`;
-  }, [activeIndex, columnHeaderWidths, columns, fontSize]);
+  }, [activeIndex, dataGridColumns]);
 
   const onMouseUp = () => {
     // Notify consumers of the new column width
@@ -259,33 +265,6 @@ function WorklistDataGrid(props) {
     );
   };
 
-  // const buildColumn = (column, columnIndex) => (
-  //   <ColumnHeaderCell
-  //     key={`column-header-${column.id}`}
-  //     activeResizeColumn={activeIndex === columnIndex}
-  //     column={column}
-  //     columnIndex={columnIndex}
-  //     width={columnHeaderWidths[columnIndex]}
-  //     headerHeight={columnHeaderHeight}
-  //     isResizable={column.isResizable}
-  //     isSelectable={column.isSelectable}
-  //     tableHeight={tableHeight}
-  //     onColumnSelect={onColumnSelect}
-  //     onResizeMouseDown={onResizeMouseDown}
-  //   />
-  // );
-
-  // const buildColumns = (allColumns) => {
-  //   if (allColumns?.length > 0) {
-  //     return (
-  //       <tr className={cx('column-header-row')} height={props.columnHeaderHeight}>
-  //         {allColumns.map((columnData, columnIndex) => (buildColumn(columnData, columnIndex)))}
-  //       </tr>
-  //     );
-  //   }
-  //   return undefined;
-  // };
-
   const buildRow = (row) => {
     const height = props.rowHeight;
     return (
@@ -320,8 +299,7 @@ function WorklistDataGrid(props) {
         <thead>
           <ColumnHeader
             activeResizeIndex={activeIndex}
-            columns={columns}
-            columnWidths={columnHeaderWidths}
+            columns={dataGridColumns}
             headerHeight={columnHeaderHeight}
             tableHeight={tableHeight}
             onColumnSelect={onColumnSelect}
@@ -329,7 +307,6 @@ function WorklistDataGrid(props) {
           />
         </thead>
         <tbody>
-          {/* {buildColumns(columns)} */}
           {buildRows(rows)}
         </tbody>
       </table>

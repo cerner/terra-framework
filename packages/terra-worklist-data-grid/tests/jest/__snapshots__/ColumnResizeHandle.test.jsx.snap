@@ -5,7 +5,7 @@ exports[`ColumnResizeHandle render a default column resize handle 1`] = `
   columnIndex={0}
   columnText="Vitals"
   columnWidth={200}
-  height="500px"
+  height={500}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -58,7 +58,7 @@ exports[`ColumnResizeHandle render a default column resize handle 1`] = `
     columnIndex={0}
     columnText="Vitals"
     columnWidth={200}
-    height="500px"
+    height={500}
     intl={
       Object {
         "defaultFormats": Object {},

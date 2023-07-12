@@ -33,8 +33,6 @@ exports[`ColumnHeaderCell render column header cell with ascending sort 1`] = `
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
-    maximumWidth={300}
-    minimumWidth={60}
     onResizeMouseDown={[Function]}
   />
 </th>
@@ -79,8 +77,6 @@ exports[`ColumnHeaderCell render column header cell with ascending sort and erro
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
-    maximumWidth={300}
-    minimumWidth={60}
     onResizeMouseDown={[Function]}
   />
 </th>
@@ -119,8 +115,6 @@ exports[`ColumnHeaderCell render column header cell with descending sort 1`] = `
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
-    maximumWidth={300}
-    minimumWidth={60}
     onResizeMouseDown={[Function]}
   />
 </th>
@@ -159,8 +153,6 @@ exports[`ColumnHeaderCell render column header cell with error 1`] = `
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
-    maximumWidth={300}
-    minimumWidth={60}
     onResizeMouseDown={[Function]}
   />
 </th>
@@ -205,8 +197,6 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
-    maximumWidth={300}
-    minimumWidth={60}
     onResizeMouseDown={[Function]}
   />
 </th>
@@ -251,8 +241,6 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
-    maximumWidth={300}
-    minimumWidth={60}
     onResizeMouseDown={[Function]}
   />
 </th>
@@ -285,8 +273,6 @@ exports[`ColumnHeaderCell render default column header cell 1`] = `
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
-    maximumWidth={300}
-    minimumWidth={60}
     onResizeMouseDown={[Function]}
   />
 </th>

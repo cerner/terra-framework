@@ -18,7 +18,7 @@ describe('ColumnHeaderCell', () => {
       <ColumnHeaderCell
         column={column}
         columnIndex={0}
-        width="100px"
+        width={100}
         headerHeight="150px"
       />,
     ).dive();
@@ -50,7 +50,7 @@ describe('ColumnHeaderCell', () => {
       <ColumnHeaderCell
         column={column}
         columnIndex={0}
-        width="100px"
+        width={100}
         headerHeight="150px"
       />,
     ).dive();
@@ -83,7 +83,7 @@ describe('ColumnHeaderCell', () => {
       <ColumnHeaderCell
         column={column}
         columnIndex={0}
-        width="100px"
+        width={100}
         headerHeight="150px"
       />,
     ).dive();
@@ -116,7 +116,7 @@ describe('ColumnHeaderCell', () => {
       <ColumnHeaderCell
         column={column}
         columnIndex={0}
-        width="100px"
+        width={100}
         headerHeight="150px"
       />,
     ).dive();
@@ -150,7 +150,7 @@ describe('ColumnHeaderCell', () => {
       <ColumnHeaderCell
         column={column}
         columnIndex={0}
-        width="100px"
+        width={100}
         headerHeight="150px"
       />,
     ).dive();
@@ -187,7 +187,7 @@ describe('ColumnHeaderCell', () => {
       <ColumnHeaderCell
         column={column}
         columnIndex={0}
-        width="100px"
+        width={100}
         headerHeight="150px"
         onColumnSelect={mockClick}
       />,
@@ -227,7 +227,7 @@ describe('ColumnHeaderCell', () => {
       <ColumnHeaderCell
         column={column}
         columnIndex={0}
-        width="100px"
+        width={100}
         headerHeight="150px"
         onColumnSelect={onColumnSelect}
       />,

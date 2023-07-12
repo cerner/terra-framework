@@ -20,15 +20,15 @@ const propTypes = {
   /**
    * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
    */
-  height: PropTypes.string.isRequired,
+  height: PropTypes.number.isRequired,
   /**
    * String that specifies the minimum column width in pixels
    */
-  minimumWidth: PropTypes.number,
+  minimumWidth: PropTypes.number.isRequired,
   /**
    * String that specifies the minimum column width in pixels
    */
-  maximumWidth: PropTypes.number,
+  maximumWidth: PropTypes.number.isRequired,
   /**
    * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
    */
@@ -84,7 +84,7 @@ const ColumnResizeHandle = (props) => {
       aria-valuemax={maximumWidth}
       aria-label={columnText}
       aria-valuetext={`${columnWidth} pixels column width`}
-      style={{ height }}
+      style={{ height: `${height}px` }}
       onMouseDown={onMouseDown}
       onClick={onClick}
       className={cx('resize-handle', theme.className, { active })}
