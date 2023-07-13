@@ -337,7 +337,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
     });
 
     describe('Modal Content Focus Shift Back', () => {
-      it('shifts focus to last element in modal content when shifting back from the first element', () => {
+      it('shifts focus to the last element in modal content when shifting back from the first element', () => {
         $('#root-component .disclose-small').click();
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
         browser.keys(['Tab']); // Shift tab focus onto modal content
@@ -350,7 +350,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
     });
 
     describe('Modal Content Focus Shift Forward', () => {
-      it('shifts focus to first element in modal content when shifting forward from the last element', () => {
+      it('shifts focus to the first element in modal content when shifting forward from the last element', () => {
         $('#root-component .disclose-small').click();
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
         // eslint-disable-next-line prefer-arrow-callback
