@@ -1,35 +1,37 @@
-/* eslint-disable react/forbid-dom-props */
 import React, {
-  useContext, useRef, useCallback,
+  useContext, useRef, useState, useEffect,
 } from 'react';
+import './_elementPolyfill';
 import PropTypes from 'prop-types';
+import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
-import ColumnHeaderCell from './ColumnHeaderCell';
-import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
-import './_elementPolyfill';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './WorklistDataGrid.module.scss';
+import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
+import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
+import Row from './subcomponents/Row';
+import ColumnHeaderCell from './subcomponents/ColumnHeaderCell';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * String representing an attribute which identifies the element (or elements) that labels the grid.
+   * String that identifies the element (or elements) that labels the grid.
    */
   ariaLabelledby: PropTypes.string,
   /**
-   * String that labels the grid for accessibility.
+   * String that labels the grid for accessibility. If ariaLabelledby is specified, ariaLabel will not be used.
    */
   ariaLabel: PropTypes.string,
   /**
-   * String that will be used to identify the Grid. This value will be used as the id attribute of the overall grid container,
-   * and it will be used to prefix other id attributes used for internal componentry.
+   * String that will be used to identify the Grid. If multiple grids are on the same page, each grid should have
+   * a unique id.
    */
   id: PropTypes.string.isRequired,
   /**
-   * Data for columns. By default, columns will be presented in the order given.
+   * Data for columns. Columns will be presented in the order given.
    */
   columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
   /**
@@ -46,8 +48,7 @@ const propTypes = {
    */
   columnHeaderHeight: PropTypes.string,
   /**
-   * String that specifies the default height for rows in the grid. Any valid CSS width value is accepted.
-   * To override the default value, provide height for the row that needs to be overridden.
+   * String that specifies the height for the rows in the grid. Any valid CSS value is accepted.
    */
   rowHeight: PropTypes.string,
   /**
@@ -55,14 +56,39 @@ const propTypes = {
    */
   rowHeaderIndex: PropTypes.number,
   /**
-   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   * Callback function that is called when a selectable cell is selected. Parameters: `function(rowId, columnId)`.
+   */
+  onCellSelect: PropTypes.func,
+  /**
+   * Callback function that is called when a row is selected. Parameters: `function(rowId)`
+   */
+  onRowSelect: PropTypes.func,
+  /**
+   * Callback function that is called when all rows are selected. Parameters: `function()`.
+   */
+  onRowSelectAll: PropTypes.func,
+  /**
+   * Callback function that is called when a selectable column is selected. Parameters: `function(columnId)`
    */
   onColumnSelect: PropTypes.func,
   /**
-   * @private
-   * Object containing intl APIs
+   * Callback function that is called when all selected rows need to be unselected. Parameters: `function()`
    */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
+  onClearSelectedRows: PropTypes.func,
+  /**
+   * Callback function that is called when no row is selected and the row selection mode needs to be disabled. Parameters: `function()`
+   */
+  onDisableSelectableRows: PropTypes.func,
+  /**
+   * Boolean indicating whether or not the DataGrid should allow entire rows to be selected. An additional column will be
+   * rendered to allow for row selection to occur.
+   */
+  hasSelectableRows: PropTypes.bool,
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -82,25 +108,177 @@ function WorklistDataGrid(props) {
     columnHeaderHeight,
     rowHeight,
     onColumnSelect,
+    onCellSelect,
+    onRowSelect,
+    onRowSelectAll,
+    onClearSelectedRows,
+    onDisableSelectableRows,
+    hasSelectableRows,
     intl,
+    rowHeaderIndex,
   } = props;
 
+  const grid = useRef();
   const focusedRow = useRef(0);
   const focusedCol = useRef(0);
-  const grid = useRef();
+  const ariaLiveMsg = useRef();
 
-  const gridRef = useCallback((node) => {
-    grid.current = node;
-    const focusedCell = grid.current.rows[focusedRow.current].cells[focusedCol.current];
+  const [currentSelectedCell, setCurrentSelectedCell] = useState(null);
+  const [, setRowSelectionModeMessage] = useState();
+  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(columns);
+
+  const theme = useContext(ThemeContext);
+
+  const isRowSelectionCell = (columnIndex) => (
+    hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
+  );
+
+  const isCellSelected = (rowId, columnId) => (currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId);
+
+  const removeTabStop = (rowIndex, colIndex) => {
+    const cell = grid.current.rows[rowIndex].cells[colIndex];
+    // Remove Tab stop from previous cell in table that has focus and set it to the
+    // cell that was clicked.
+    cell.tabIndex = -1;
+    if (isRowSelectionCell(colIndex) && cell.getElementsByTagName('input').length > 0) {
+      // For row selection cell, the tabstop won't be on the cell itself but the
+      // inner input element so remove it from the input element.
+      cell.getElementsByTagName('input')[0].tabIndex = -1;
+    }
+  };
+
+  const setFocusedRowCol = (newRowIndex, newColIndex, makeActiveElement) => {
+    removeTabStop(focusedRow.current, focusedCol.current);
+    focusedRow.current = newRowIndex;
+    focusedCol.current = newColIndex;
+    let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
+    if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
+      [focusedCell] = focusedCell.getElementsByTagName('input');
+    }
     focusedCell.tabIndex = 0;
-  }, []);
+    if (makeActiveElement && focusedCell.focus) {
+      focusedCell.focus();
+    }
+  };
+
+  useEffect(() => {
+    // When row selection mode is turned on or off a row selection column is added or removed.
+    // Therefore, shift the focused cell to the left or right.
+    let newFocusCell = { row: focusedRow.current, col: (focusedCol.current + (hasSelectableRows ? 1 : -1)) };
+
+    if (hasSelectableRows && focusedRow.current === 0 && focusedCol.current === 0) {
+      // When row selection is turned on for the first time, default to the first row selection cell.
+      newFocusCell = { row: 1, col: 0 };
+    } else if (!hasSelectableRows && focusedCol.current === 0) {
+      // When row selection is turned off, if a cell in the row selection had focus, then
+      // refocus on the first cell in that row.
+      newFocusCell = { row: focusedRow.current, col: 0 };
+    }
+    setFocusedRowCol(newFocusCell.row, newFocusCell.col, false);
+    if (currentSelectedCell != null) {
+      setCurrentSelectedCell(null);
+    }
+    // Since the row selection mode has changed, the row selection mode needs to be updated.
+    ariaLiveMsg.current = intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' });
+    setRowSelectionModeMessage(ariaLiveMsg.current);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hasSelectableRows]);
+
+  const isAnyRowSelected = () => (
+    rows.find(r => r.isSelected === true)
+  );
+
+  const handleClearRowSelection = () => {
+    ariaLiveMsg.current = '';
+    if (isAnyRowSelected()) {
+      ariaLiveMsg.current = intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-unselected' });
+      // Esc (while in row selection mode and rows are selected): Clear selection
+      if (onClearSelectedRows) {
+        onClearSelectedRows();
+      }
+    } else if (onDisableSelectableRows) {
+      ariaLiveMsg.current = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-mode-disabled' });
+      onDisableSelectableRows();
+    }
+  };
+
+  const selectRows = (selectAllRows, rowId, rowIndex) => {
+    let rowLabel;
+    let msgId = 'Terra.worklist-data-grid.all-rows-selected';
+    if (!selectAllRows) {
+      const isSelectAction = !rows[rowIndex - 1].isSelected; // Determine if this is select or unselected.
+      msgId = isSelectAction ? 'Terra.worklist-data-grid.row-selection-template' : 'Terra.worklist-data-grid.row-selection-cleared-template';
+      rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
+    }
+    ariaLiveMsg.current = intl.formatMessage({ id: msgId }, { row: rowLabel });
+    if (selectAllRows && onRowSelectAll) {
+      onRowSelectAll();
+    } else if (onRowSelect) {
+      onRowSelect(rowId);
+    }
+  };
+
+  const handleMoveCellFocus = (fromCell, toCell) => {
+    removeTabStop(fromCell.row, fromCell.col);
+    setFocusedRowCol(toCell.row, toCell.col, true);
+  };
+
+  const handleCellSelectionChange = (rowId, columnId, cellCoordinates) => {
+    if (!hasSelectableRows) {
+      ariaLiveMsg.current = intl.formatMessage({
+        id: rowId ? 'Terra.worklist-data-grid.cell-selection-template' : 'Terra.worklist-data-grid.cell-selection-cleared',
+      }, { row: cellCoordinates.row + 1, column: cellCoordinates.col + 1 });
+    }
+    setFocusedRowCol(cellCoordinates.row, cellCoordinates.col, true);
+    if ((rowId !== currentSelectedCell?.rowId) || (columnId !== currentSelectedCell?.columnId)) {
+      setCurrentSelectedCell((rowId && columnId) ? { rowId, columnId } : null);
+    }
+  };
+
+  const mapGridCellToDataCell = (cellGridCoordinates) => (
+    // The grid has an additional row for the heading and
+    // may have an additional column when when selection is active.
+    { row: cellGridCoordinates.row - 1, col: cellGridCoordinates.col + (hasSelectableRows ? -1 : 0) }
+  );
+
+  const selectCell = (cellRowIdColId, cellGridCoordinates) => {
+    // If current cell is selected, do nothing.
+    if (isCellSelected(cellGridCoordinates.row, cellGridCoordinates.col)) {
+      return;
+    }
+    // Determine if the cell selection should proceed.
+    const cellDataCoordinates = mapGridCellToDataCell(cellGridCoordinates);
+    const cell = rows[cellDataCoordinates.row].cells[cellDataCoordinates.col];
+    if ((cell.isSelectable === false) || cell.isMasked) {
+      return;
+    }
+    // Make note of cell that is currently selected.
+    handleCellSelectionChange(cellRowIdColId.rowId, cellRowIdColId.columnId, cellGridCoordinates);
+    if (onCellSelect) {
+      onCellSelect(cellRowIdColId.rowId, cellRowIdColId.columnId);
+    }
+  };
+
+  const handleColumnSelect = (columnId, cellCoordinates) => {
+    handleCellSelectionChange(null, null, cellCoordinates);
+    if (onColumnSelect && !(hasSelectableRows && cellCoordinates.col === 0)) {
+      onColumnSelect(columnId);
+    }
+  };
+
+  const handleCellSelection = (cellRowIdColId, cellCoordinates) => {
+    selectCell(cellRowIdColId, cellCoordinates);
+  };
+
+  const handleRowSelection = (rowId, rowIndex, selectedCellCoordinates) => {
+    handleCellSelectionChange(null, null, selectedCellCoordinates);
+    selectRows(false, rowId, rowIndex);
+  };
 
   const handleKeyDown = (event) => {
-    const currentFocusedRow = event.target.parentElement.rowIndex;
-    const currentFocusedCol = event.target.cellIndex;
-
-    let nextRow = currentFocusedRow;
-    let nextCol = currentFocusedCol;
+    const cellCoordinates = { row: focusedRow.current, col: focusedCol.current };
+    let nextRow = cellCoordinates.row;
+    let nextCol = cellCoordinates.col;
 
     const key = event.keyCode;
     switch (key) {
@@ -111,101 +289,90 @@ function WorklistDataGrid(props) {
         nextRow += 1;
         break;
       case KeyCode.KEY_LEFT:
-        nextCol -= 1;
+        if (event.metaKey) {
+          // Cmd + Left on Mac is equivalent to the Home Key in Windows
+          nextCol = 0;
+
+          if (event.ctrlKey) {
+            // Ctrl + Cmd + Left on Mac is equivalent to the Ctrl + Home in Windows
+            nextRow = WorklistDataGridUtils.FIRST_NON_HEADER_ROW;
+          }
+        } else {
+          // Left key
+          nextCol -= 1;
+        }
         break;
       case KeyCode.KEY_RIGHT:
-        nextCol += 1;
+        if (event.metaKey) {
+          // Cmd + Right on Mac is equivalent to the End key in Windows
+          nextCol = displayedColumns.length - 1;
+
+          if (event.ctrlKey) {
+            // Ctrl + Cmd + Right on Mac is equivalent to the Ctrl + End in Windows
+            nextRow = rows.length;
+          }
+        } else {
+          // Right key
+          nextCol += 1;
+        }
         break;
       case KeyCode.KEY_HOME:
         nextCol = 0;
         if (event.ctrlKey) {
-          nextRow = 1; // Assumption is that the first row is the column Heading.
+          nextRow = WorklistDataGridUtils.FIRST_NON_HEADER_ROW; // Assumption is that the first row is the column Heading.
         }
         break;
       case KeyCode.KEY_END:
-        nextCol = props.rows[0].cells.length - 1;
+        nextCol = displayedColumns.length - 1; // Col are zero based.
         if (event.ctrlKey) {
-          nextRow = props.rows.length;
+          // Though rows are zero based, the header is the first row so the rowsLength will
+          // always be one more than then actual number of data rows.
+          nextRow = rows.length;
         }
         break;
+      case KeyCode.KEY_ESCAPE:
+        if (!hasSelectableRows) {
+          handleCellSelectionChange(null, null, cellCoordinates);
+        } else {
+          handleClearRowSelection();
+        }
+        event.preventDefault();
+        break;
+      case KeyCode.KEY_A:
+        if (hasSelectableRows && (event.ctrlKey || event.metaKey)) {
+          selectRows(true, null, null);
+          event.preventDefault(); // prevent the default selection of everything on the page.
+        }
+        return;
       default:
         return;
     }
-
-    if (nextRow >= grid.current.rows.length || nextCol >= grid.current.rows[0].cells.length) {
-      event.preventDefault();
+    if (nextRow > rows.length || nextCol >= displayedColumns.length) {
+      event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
     if (nextCol < 0 || nextRow < 0) {
-      event.preventDefault();
+      event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
-
-    // Remove the ability to receive visible focus as only one cell should be able to receive tab focus.
-    // This also ensures that tabbing back into the grid focuses on the cell that last had focus.
-    grid.current.rows[currentFocusedRow].cells[currentFocusedCol].tabIndex = -1;
-
-    focusedRow.current = nextRow;
-    focusedCol.current = nextCol;
-
-    const elementWithTabStop = grid.current.rows[nextRow].cells[nextCol];
-    elementWithTabStop.tabIndex = 0;
-    elementWithTabStop.focus();
-    event.preventDefault();
+    handleMoveCellFocus(cellCoordinates, { row: nextRow, col: nextCol });
+    event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
 
-  const handleClick = (event) => {
-    // Determine which cell was clicked. In the event that the user holds the mouse across multiple cells,
-    // the originating cell is the clicked cell/active element.
-    const clickedCell = event.target.closest('td,th') || document.activeElement.closest('td,th');
-
-    // Ensure that the cell is focusable and is a valid cell
-    if (!clickedCell) {
-      return;
-    }
-    // Remove Tab stop from previous cell in table that has focus and set it to the cell that was clicked.
-    grid.current.rows[focusedRow.current].cells[focusedCol.current].tabIndex = -1;
-    focusedRow.current = clickedCell.parentElement.rowIndex;
-    focusedCol.current = clickedCell.cellIndex;
-
-    clickedCell.tabIndex = 0;
-    clickedCell.focus();
-    event.preventDefault();
-  };
-
-  const getCellData = (cell, cellColumnIndex) => {
-    const tabIndex = { tabIndex: '-1' };
-
-    // Determine whether cell is a header or grid cell
-    const WorklistCellTag = props.rowHeaderIndex === cellColumnIndex ? 'th' : 'td';
-    let cellAriaLabel;
-
-    if (cell.isMasked) {
-      cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' });
-    } else if (!cell.content) {
-      cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' });
-    }
-
-    return (
-      // Return worklist data grid cell component
-      <WorklistCellTag
-        key={cellColumnIndex}
-        {...tabIndex}
-        className={cx('worklist-data-grid-cell', { masked: cell.isMasked, selectable: !(cell.isMasked || cell.isSelectable === false), blank: !cell.content })}
-        aria-label={cellAriaLabel}
-      >
-        {!cell.isMasked && cell.content
-          && <div className={cx('cell-content')} style={{ height: rowHeight }}>{cell.content}</div>}
-      </WorklistCellTag>
-    );
-  };
-
-  const buildColumn = (column) => (
+  const buildColumn = (column, columnIndex) => (
     <ColumnHeaderCell
-      column={column}
+      key={column.id}
+      id={column.id}
+      displayName={column.displayName}
+      sortIndicator={column.sortIndicator}
+      hasError={column.hasError}
+      isSelectable={column.isSelectable}
       width={column.width || props.columnWidth}
       headerHeight={columnHeaderHeight}
-      onColumnSelect={onColumnSelect}
+      onColumnSelect={handleColumnSelect}
+      rowIndex={0}
+      columnIndex={columnIndex}
+      isTabStop={focusedRow.current === 0 && focusedCol.current === columnIndex}
     />
   );
 
@@ -213,50 +380,56 @@ function WorklistDataGrid(props) {
     if (allColumns?.length > 0) {
       return (
         <tr height={props.columnHeaderHeight}>
-          {allColumns.map(column => (buildColumn(column)))}
+          {allColumns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
         </tr>
       );
     }
     return undefined;
   };
 
-  const buildRow = (row) => {
-    const height = props.rowHeight;
-    return (
-      // eslint-disable-next-line react/forbid-dom-props
-      <tr key={row.id} className={cx('worklist-data-grid-row')} style={{ height }}>
-        {row.cells.map((cell, cellColumnIndex) => (
-          getCellData(cell, cellColumnIndex)
-        ))}
-      </tr>
-    );
-  };
-
-  const buildRows = (allRows) => (
-    allRows.map((row) => (buildRow(row)))
+  const buildRow = (row, rowIndex) => (
+    <Row
+      rowIndex={rowIndex}
+      key={row.id}
+      height={rowHeight}
+      id={row.id}
+      isSelected={row.isSelected}
+      cells={row.cells}
+      ariaLabel={row.ariaLabel}
+      hasRowSelection={hasSelectableRows}
+      displayedColumns={displayedColumns}
+      rowHeaderIndex={rowHeaderIndex}
+      onCellSelect={handleCellSelection}
+      onRowSelect={handleRowSelection}
+      tabStopColumnIndex={focusedRow.current === rowIndex ? focusedCol.current : undefined}
+      selectedCellColumnId={(currentSelectedCell?.rowId === row.id) ? currentSelectedCell?.columnId : undefined}
+    />
   );
 
-  const theme = useContext(ThemeContext);
+  const buildRows = (allRows) => {
+    const rowData = allRows.map((row, index) => (buildRow(row, index + 1))); // One row is used for the Header.
+
+    return rowData;
+  };
 
   const gridClassNames = cx('worklist-data-grid', theme.className);
-
   return (
     <div className={cx('worklist-data-grid-container')}>
       <table
-        ref={gridRef}
+        ref={grid}
         id={id}
         role="grid"
         aria-labelledby={ariaLabelledby}
         aria-label={ariaLabel}
         className={gridClassNames}
-        onClick={handleClick}
         onKeyDown={handleKeyDown}
       >
         <tbody>
-          {buildColumns(columns)}
+          {buildColumns(displayedColumns)}
           {buildRows(rows)}
         </tbody>
       </table>
+      <VisuallyHiddenText aria-live="polite" text={ariaLiveMsg.current} />
     </div>
   );
 }

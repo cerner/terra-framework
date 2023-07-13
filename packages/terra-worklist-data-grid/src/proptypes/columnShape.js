@@ -14,10 +14,6 @@ const columnShape = PropTypes.shape({
    * String of text to render within the column header cell.
    */
   displayName: PropTypes.string,
-  /**
-   * String that specifies the column width. Any valid CSS width value is accepted.
-   */
-  width: PropTypes.string,
   /* A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
    * If a `component` value is specified, `sortIndicator` will be ignored. One of `ascending`, `descending`.
    */
@@ -28,8 +24,12 @@ const columnShape = PropTypes.shape({
   hasError: PropTypes.bool,
   /**
    * Boolean value indicating whether or not the column header is selectable.
-   */
+  */
   isSelectable: PropTypes.bool,
+  /**
+ * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
+ */
+  width: PropTypes.string,
 });
 
 export { columnShape, SortIndicators };

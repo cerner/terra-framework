@@ -13,7 +13,7 @@ exports[`ColumnHeaderCell render column header cell with ascending sort 1`] = `
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
@@ -45,7 +45,7 @@ exports[`ColumnHeaderCell render column header cell with ascending sort and erro
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
@@ -83,7 +83,7 @@ exports[`ColumnHeaderCell render column header cell with descending sort 1`] = `
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
@@ -114,7 +114,7 @@ exports[`ColumnHeaderCell render column header cell with error 1`] = `
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
@@ -139,7 +139,8 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
   aria-sort="ascending"
   className="column-header selectable"
   key="Column-0"
-  onClick={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -148,7 +149,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
@@ -186,7 +187,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
@@ -223,7 +224,7 @@ exports[`ColumnHeaderCell render default column header cell 1`] = `
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"

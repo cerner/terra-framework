@@ -9,6 +9,8 @@
 
 * Added
   * Added alpha release disclaimer for `terra-worklist-data-grid`.
+  * Added documentation and tests for additional keyboard navigation in `terra-worklist-data-grid`.
+  * Added Cell Selection example for `terra-worklist-data-grid`.
 
 ## 1.24.0 - (July 4, 2023)
 

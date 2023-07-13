@@ -1,9 +1,13 @@
 # Changelog
 
 ## Unreleased
+Added
+ * Added additional keyboard navigation in `terra-worklist-data-grid`.
+ * Added support for cell selection.
+
 * Changed
   * Updated data grid to honor the column and row widths specified by consumers.
-  
+
 ## 0.2.0 - (July 4, 2023)
 
 * Changed
