@@ -23,10 +23,12 @@ describe('ColumnHeader', () => {
       />,
     ).dive();
 
+    // Validate column header row container
     const columnHeader = wrapper.find('.column-header-row');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.props().height).toBe('3rem');
 
+    //  Validate ColumnHeaderCell React component
     const columnHeaderCells = columnHeader.find(ColumnHeaderCell);
     expect(columnHeaderCells).toHaveLength(2);
 
@@ -51,14 +53,14 @@ describe('ColumnHeader', () => {
       />,
     ).dive();
 
+    // Validate column header row container
     const columnHeader = wrapper.find('.column-header-row');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.props().height).toBe('3rem');
 
+    // Validate ColumnHeaderCell React component
     const columnHeaderCells = columnHeader.find(ColumnHeaderCell);
     expect(columnHeaderCells).toHaveLength(2);
-    expect(columnHeaderCells.first().props().activeResizeColumn).toBeTruthy();
-    expect(columnHeaderCells.at(1).props().activeResizeColumn).toBeFalsy();
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -80,10 +82,12 @@ describe('ColumnHeader', () => {
       />,
     ).dive();
 
+    // Validate column header row container
     const columnHeader = wrapper.find('.column-header-row');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.props().height).toBe('3rem');
 
+    // Validate ColumnHeaderCell React component
     const columnHeaderCells = columnHeader.find(ColumnHeaderCell);
     expect(columnHeaderCells.first().props().tableHeight).toBe(500);
 
@@ -99,6 +103,7 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
+    // Create mock callback functions for testing
     const mockColumnSelect = jest.fn();
     const mockResizeMouseDown = jest.fn();
 
@@ -112,10 +117,12 @@ describe('ColumnHeader', () => {
       />,
     ).dive();
 
+    // Validate column header row container
     const columnHeader = wrapper.find('.column-header-row');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.props().height).toBe('3rem');
 
+    // Validate ColumnHeaderCell React component
     const columnHeaderCell = columnHeader.find(ColumnHeaderCell).first();
     expect(columnHeaderCell.props().tableHeight).toBe(500);
     expect(columnHeaderCell.props().onColumnSelect).toBe(mockColumnSelect);

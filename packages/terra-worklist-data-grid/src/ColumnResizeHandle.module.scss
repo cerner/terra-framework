@@ -1,25 +1,25 @@
 // Themes
-@import './orion-fusion-theme/WorklistDataGrid.module';
-@import './clinical-lowlight-theme/WorklistDataGrid.module';
+@import './orion-fusion-theme/ColumnResizeHandle.module';
+@import './clinical-lowlight-theme/ColumnResizeHandle.module';
 
 :local {
   .resize-handle {
+    border-right: 2px solid transparent;
+    cursor: col-resize;
     display: block;
     position: absolute;
-    cursor: col-resize;
-    width: 24px;
     right: 0;
     top: 0;
+    width: 24px;
     z-index: 1;
-    border-right: 2px solid transparent;
-  }
-  
-  .resize-handle:hover {
-    border-color: var(--terra-worklist-data-grid-resize-handle-border-color, #E4F1F7);
-  }
-  
-  .resize-handle.active, .resize-handle:focus {
-    border-color: var(--terra-worklist-data-grid-resize-handle-active-border-color, #517ea5);
-    outline: 0 !important;
+    
+    &:focus {
+      border-color: var(--terra-worklist-data-grid-resize-handle-focus-border-color, #517ea5) !important; 
+      outline: 0 !important;
+    }
+
+    &:hover {
+      border-color: var(--terra-worklist-data-grid-resize-handle-hover-border-color, #e4f1f7);
+    }
   }
 }

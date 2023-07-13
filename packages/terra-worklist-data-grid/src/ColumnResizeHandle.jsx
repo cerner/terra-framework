@@ -8,36 +8,34 @@ import styles from './ColumnResizeHandle.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  active: PropTypes.bool,
   /**
-   * Text of the column associated with the divider
+   * Text of the column associated with the divider.
    */
   columnText: PropTypes.string.isRequired,
   /**
-   * Width of the column associated with the divider
+   * Number that specifies the Width of the associated column in pixels.
    */
   columnWidth: PropTypes.number.isRequired,
   /**
-   * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
+   * Number that specifies the height of the resize handle in pixels.
    */
   height: PropTypes.number.isRequired,
   /**
-   * String that specifies the minimum column width in pixels
+   * Number that specifies the minimum column width in pixels.
    */
   minimumWidth: PropTypes.number.isRequired,
   /**
-   * String that specifies the minimum column width in pixels
+   * Number that specifies the maximum column width in pixels.
    */
   maximumWidth: PropTypes.number.isRequired,
   /**
-   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   * Function that is called when onMouseDown event is triggered for the resize handle
    */
   onResizeMouseDown: PropTypes.func.isRequired,
 };
 
 const ColumnResizeHandle = (props) => {
   const {
-    active,
     columnText,
     columnWidth,
     height,
@@ -58,11 +56,13 @@ const ColumnResizeHandle = (props) => {
 
   // Mouse down event listener to give focus to resize handler and notify the provider
   const onMouseDown = (event) => {
-    resizeHandle.current.tabIndex = 0;
+    // Set focus to resize handle DOM element
     resizeHandle.current.focus();
 
+    // Execute callback function to notify consumer of mouse down event
     onResizeMouseDown(event);
 
+    // Prevent event bubbling since necessary actions are handled by this component
     event.stopPropagation();
     event.preventDefault();
   };
@@ -79,6 +79,7 @@ const ColumnResizeHandle = (props) => {
       ref={resizeHandleRef}
       draggable
       role="slider"
+      tabIndex={-1}
       aria-valuemin={minimumWidth}
       aria-valuenow={columnWidth}
       aria-valuemax={maximumWidth}
@@ -87,7 +88,7 @@ const ColumnResizeHandle = (props) => {
       style={{ height: `${height}px` }}
       onMouseDown={onMouseDown}
       onClick={onClick}
-      className={cx('resize-handle', theme.className, { active })}
+      className={cx('resize-handle', theme.className)}
     />
   );
 };

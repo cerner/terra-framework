@@ -16,10 +16,6 @@ const propTypes = {
   /**
    * Data for columns. By default, columns will be presented in the order given.
    */
-  activeResizeColumn: PropTypes.bool,
-  /**
-   * Data for columns. By default, columns will be presented in the order given.
-   */
   column: WorklistDataGridPropTypes.columnShape.isRequired,
   /**
    * Data for columns. By default, columns will be presented in the order given.
@@ -67,7 +63,6 @@ const defaultProps = {
 
 const ColumnHeaderCell = (props) => {
   const {
-    activeResizeColumn,
     column,
     columnIndex,
     width,
@@ -150,7 +145,6 @@ const ColumnHeaderCell = (props) => {
       </div>
       { isResizable && (
       <ColumnResizeHandle
-        active={activeResizeColumn}
         columnIndex={columnIndex}
         columnText={column.displayName}
         columnWidth={width}

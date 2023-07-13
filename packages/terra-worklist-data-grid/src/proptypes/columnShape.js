@@ -7,7 +7,7 @@ const SortIndicators = {
 
 const columnShape = PropTypes.shape({
   /**
-   * Required string representing a unique identifier for the column header cell.
+   * Required string representing a unique identifier for the column.
    */
   id: PropTypes.string.isRequired,
   /**
@@ -19,7 +19,7 @@ const columnShape = PropTypes.shape({
    */
   width: PropTypes.number,
   /* A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
-   * If a `component` value is specified, `sortIndicator` will be ignored. One of `ascending`, `descending`.
+   * One of `ascending`, `descending`.
    */
   sortIndicator: PropTypes.oneOf(Object.values(SortIndicators)),
   /**
@@ -27,11 +27,11 @@ const columnShape = PropTypes.shape({
    */
   hasError: PropTypes.bool,
   /**
-   * String that specifies the minimum column width in pixels
+   * Number that specifies the minimum column width in pixels.
    */
   minimumWidth: PropTypes.number,
   /**
-   * String that specifies the minimum column width in pixels
+   * Number that specifies the maximum column width in pixels.
    */
   maximumWidth: PropTypes.number,
   /**
@@ -39,7 +39,7 @@ const columnShape = PropTypes.shape({
    */
   isSelectable: PropTypes.bool,
   /**
-   * A boolean indicating whether or not the column header is resizable.
+   * Boolean value indicating whether or not the column header is resizable.
    */
   isResizable: PropTypes.bool,
 });

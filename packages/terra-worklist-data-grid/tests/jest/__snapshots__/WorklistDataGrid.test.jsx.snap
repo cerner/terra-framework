@@ -11,40 +11,37 @@ exports[`WorklistDataGrid renders a grid with 3 columns and 3 data rows and 9 ce
     onKeyDown={[Function]}
     role="grid"
   >
-    <thead>
-      <InjectIntl(ColumnHeader)
-        activeResizeIndex={null}
-        columns={
-          Array [
-            Object {
-              "displayName": " Vitals",
-              "id": "Column-0",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
-              "width": 200,
-            },
-            Object {
-              "displayName": "March 16",
-              "id": "Column-1",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
-              "width": 200,
-            },
-            Object {
-              "displayName": "March 17",
-              "id": "Column-2",
-              "isSelectable": false,
-              "maximumWidth": 300,
-              "minimumWidth": 60,
-              "width": 200,
-            },
-          ]
-        }
-        headerHeight="2.5rem"
-        onResizeMouseDown={[Function]}
-        tableHeight={0}
-      />
-    </thead>
+    <InjectIntl(ColumnHeader)
+      columns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+            "maximumWidth": 300,
+            "minimumWidth": 60,
+            "width": 200,
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+            "maximumWidth": 300,
+            "minimumWidth": 60,
+            "width": 200,
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+            "maximumWidth": 300,
+            "minimumWidth": 60,
+            "width": 200,
+          },
+        ]
+      }
+      headerHeight="2.5rem"
+      onResizeMouseDown={[Function]}
+      tableHeight={0}
+    />
     <tbody>
       <tr
         className="worklist-data-grid-row"
@@ -196,40 +193,37 @@ exports[`WorklistDataGrid renders a grid with selectable cells 1`] = `
     onKeyDown={[Function]}
     role="grid"
   >
-    <thead>
-      <InjectIntl(ColumnHeader)
-        activeResizeIndex={null}
-        columns={
-          Array [
-            Object {
-              "displayName": " Vitals",
-              "id": "Column-0",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
-              "width": 200,
-            },
-            Object {
-              "displayName": "March 16",
-              "id": "Column-1",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
-              "width": 200,
-            },
-            Object {
-              "displayName": "March 17",
-              "id": "Column-2",
-              "isSelectable": false,
-              "maximumWidth": 300,
-              "minimumWidth": 60,
-              "width": 200,
-            },
-          ]
-        }
-        headerHeight="2.5rem"
-        onResizeMouseDown={[Function]}
-        tableHeight={0}
-      />
-    </thead>
+    <InjectIntl(ColumnHeader)
+      columns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+            "maximumWidth": 300,
+            "minimumWidth": 60,
+            "width": 200,
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+            "maximumWidth": 300,
+            "minimumWidth": 60,
+            "width": 200,
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+            "maximumWidth": 300,
+            "minimumWidth": 60,
+            "width": 200,
+          },
+        ]
+      }
+      headerHeight="2.5rem"
+      onResizeMouseDown={[Function]}
+      tableHeight={0}
+    />
     <tbody>
       <tr
         className="worklist-data-grid-row"
@@ -381,40 +375,37 @@ exports[`WorklistDataGrid test masked cells 1`] = `
     onKeyDown={[Function]}
     role="grid"
   >
-    <thead>
-      <InjectIntl(ColumnHeader)
-        activeResizeIndex={null}
-        columns={
-          Array [
-            Object {
-              "displayName": " Vitals",
-              "id": "Column-0",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
-              "width": 200,
-            },
-            Object {
-              "displayName": "March 16",
-              "id": "Column-1",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
-              "width": 200,
-            },
-            Object {
-              "displayName": "March 17",
-              "id": "Column-2",
-              "isSelectable": false,
-              "maximumWidth": 300,
-              "minimumWidth": 60,
-              "width": 200,
-            },
-          ]
-        }
-        headerHeight="2.5rem"
-        onResizeMouseDown={[Function]}
-        tableHeight={0}
-      />
-    </thead>
+    <InjectIntl(ColumnHeader)
+      columns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+            "maximumWidth": 300,
+            "minimumWidth": 60,
+            "width": 200,
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+            "maximumWidth": 300,
+            "minimumWidth": 60,
+            "width": 200,
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+            "maximumWidth": 300,
+            "minimumWidth": 60,
+            "width": 200,
+          },
+        ]
+      }
+      headerHeight="2.5rem"
+      onResizeMouseDown={[Function]}
+      tableHeight={0}
+    />
     <tbody>
       <tr
         className="worklist-data-grid-row"

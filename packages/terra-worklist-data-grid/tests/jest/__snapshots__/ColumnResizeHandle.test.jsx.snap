@@ -123,27 +123,8 @@ exports[`ColumnResizeHandle render a default column resize handle 1`] = `
           "height": "500px",
         }
       }
+      tabIndex={-1}
     />
   </ColumnResizeHandle>
 </InjectIntl(ColumnResizeHandle)>
-`;
-
-exports[`ColumnResizeHandle render an active column resize handle 1`] = `
-<div
-  aria-label="Vitals"
-  aria-valuemax={300}
-  aria-valuemin={60}
-  aria-valuenow={200}
-  aria-valuetext="200 pixels column width"
-  className="resize-handle active"
-  draggable={true}
-  onClick={[Function]}
-  onMouseDown={[Function]}
-  role="slider"
-  style={
-    Object {
-      "height": "500px",
-    }
-  }
-/>
 `;

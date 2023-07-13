@@ -91,30 +91,36 @@ function WorklistDataGrid(props) {
     intl,
   } = props;
 
-  const [tableHeight, setTableHeight] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(null);
+  // Default column size constraints
+  const defaultColumnMinimumWidth = 60;
+  const defaultColumnMaximumWidth = 300;
 
+  // Initialize column width properties
   const initializeColumn = (column) => {
     const newColumn = { ...column };
     newColumn.width = column.width || defaultColumnWidth;
-    newColumn.minimumWidth = column.minimumWidth || 60;
-    newColumn.maximumWidth = column.maximumWidth || 300;
+    newColumn.minimumWidth = column.minimumWidth || defaultColumnMinimumWidth;
+    newColumn.maximumWidth = column.maximumWidth || defaultColumnMaximumWidth;
 
     return newColumn;
   };
   const [dataGridColumns, setDataGridColumns] = useState(columns.map((column) => initializeColumn(column)));
 
-  const focusedRow = useRef(0);
-  const focusedCol = useRef(0);
+  // Manage column resize
+  const [tableHeight, setTableHeight] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
   const activeColumnPageX = useRef(0);
   const activeColumnWidth = useRef(200);
   const tableWidth = useRef(0);
+
+  const focusedRow = useRef(0);
+  const focusedCol = useRef(0);
   const grid = useRef();
-  const columnRefs = useRef(new Array(columns.length));
 
   const gridRef = useCallback((node) => {
     grid.current = node;
 
+    // Update table height state variable
     setTableHeight(grid.current.offsetHeight - 1);
 
     const focusedCell = grid.current.rows[focusedRow.current].cells[focusedCol.current];
@@ -207,34 +213,34 @@ function WorklistDataGrid(props) {
 
     // Set the active index to the selected column
     setActiveIndex(index);
-    event.stopPropagation();
-    event.preventDefault();
   };
 
-  const onMouseMove = useCallback((e) => {
+  const onMouseMove = (event) => {
     if (activeIndex == null) {
       return;
     }
 
     // Ensure the new column width falls within the range of the minimum and maximum values
-    const diffX = e.pageX - activeColumnPageX.current;
+    const diffX = event.pageX - activeColumnPageX.current;
     const { minimumWidth, maximumWidth } = dataGridColumns[activeIndex];
     const newColumnWidth = Math.min(Math.max(activeColumnWidth.current + diffX, minimumWidth), maximumWidth);
 
+    // Update the width for the column in the state variable
     const newGridColumns = [...dataGridColumns];
     newGridColumns[activeIndex].width = newColumnWidth;
     setDataGridColumns(newGridColumns);
 
     // Update the column and table width
     grid.current.style.width = `${tableWidth + (newColumnWidth - activeColumnWidth.current)}px`;
-  }, [activeIndex, dataGridColumns]);
+  };
 
   const onMouseUp = () => {
     // Notify consumers of the new column width
     if (onColumnResize) {
-      onColumnResize(columns[activeIndex].id, columnRefs.current[activeIndex].style.width);
+      onColumnResize(dataGridColumns[activeIndex].id, dataGridColumns[activeIndex].width);
     }
 
+    // Remove active index
     setActiveIndex(null);
   };
 
@@ -296,16 +302,13 @@ function WorklistDataGrid(props) {
         onKeyDown={handleKeyDown}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
-        <thead>
-          <ColumnHeader
-            activeResizeIndex={activeIndex}
-            columns={dataGridColumns}
-            headerHeight={columnHeaderHeight}
-            tableHeight={tableHeight}
-            onColumnSelect={onColumnSelect}
-            onResizeMouseDown={onResizeMouseDown}
-          />
-        </thead>
+        <ColumnHeader
+          columns={dataGridColumns}
+          headerHeight={columnHeaderHeight}
+          tableHeight={tableHeight}
+          onColumnSelect={onColumnSelect}
+          onResizeMouseDown={onResizeMouseDown}
+        />
         <tbody>
           {buildRows(rows)}
         </tbody>

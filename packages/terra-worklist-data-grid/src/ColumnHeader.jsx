@@ -13,17 +13,13 @@ const propTypes = {
   /**
    * Data for columns. By default, columns will be presented in the order given.
    */
-  activeResizeIndex: PropTypes.number,
-  /**
-   * Data for columns. By default, columns will be presented in the order given.
-   */
   columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape).isRequired,
   /**
-   * String that specifies the column height. Any valid CSS height value accepted.
+   * String that specifies the column header height. Any valid CSS height value accepted.
    */
   headerHeight: PropTypes.string.isRequired,
   /**
-   * A number (in px) specifying the height of the data grid.
+   * Number that specifies the height of the data grid in pixels.
    */
   tableHeight: PropTypes.number,
   /**
@@ -38,7 +34,6 @@ const propTypes = {
 
 const ColumnHeader = (props) => {
   const {
-    activeResizeIndex,
     columns,
     headerHeight,
     tableHeight,
@@ -49,10 +44,10 @@ const ColumnHeader = (props) => {
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);
 
+  // Create ColumnHeaderCell component for each column
   const buildColumn = (column, columnIndex) => (
     <ColumnHeaderCell
       key={column.id}
-      activeResizeColumn={activeResizeIndex === columnIndex}
       column={column}
       columnIndex={columnIndex}
       width={column.width}
@@ -68,10 +63,11 @@ const ColumnHeader = (props) => {
   );
 
   return (
-  /* eslint-disable react/forbid-dom-props */
-    <tr className={cx('column-header-row', theme.className)} height={headerHeight}>
-      {columns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
-    </tr>
+    <thead>
+      <tr className={cx('column-header-row', theme.className)} height={headerHeight}>
+        {columns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
+      </tr>
+    </thead>
   );
 };
 
