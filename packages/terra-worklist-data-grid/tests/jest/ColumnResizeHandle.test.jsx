@@ -28,7 +28,6 @@ describe('ColumnResizeHandle', () => {
     expect(resizeHandle.props()['aria-valuenow']).toBe(200);
     expect(resizeHandle.props()['aria-valuemin']).toBe(60);
     expect(resizeHandle.props()['aria-valuemax']).toBe(300);
-    expect(resizeHandle.props().onClick).toBeDefined();
     expect(resizeHandle.props().style.height).toBe('500px');
 
     // Simulate onMouseDown event

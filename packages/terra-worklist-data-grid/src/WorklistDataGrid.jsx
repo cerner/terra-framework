@@ -201,8 +201,6 @@ function WorklistDataGrid(props) {
     focusedCol.current = clickedCell.cellIndex;
 
     clickedCell.tabIndex = 0;
-    clickedCell.focus();
-    event.preventDefault();
   };
 
   const onResizeMouseDown = (event, index, resizeColumnWidth) => {

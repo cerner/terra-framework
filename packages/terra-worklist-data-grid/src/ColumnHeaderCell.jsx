@@ -87,21 +87,13 @@ const ColumnHeaderCell = (props) => {
   }, []);
 
   // Handle column header selection
-  const onHeaderSelect = (event) => {
-    titleContainer.current.tabIndex = 0;
-    titleContainer.current.focus();
-
+  const onHeaderSelect = () => {
     if (onColumnSelect) {
       onColumnSelect(column.id);
     }
-
-    event.stopPropagation();
-    event.preventDefault();
   };
 
   const onResizeHandleMouseDown = (event) => {
-    titleContainer.current.tabIndex = -1;
-
     if (onResizeMouseDown) {
       onResizeMouseDown(event, columnIndex, columnHeaderCell.current.offsetWidth);
     }

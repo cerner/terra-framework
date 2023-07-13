@@ -64,16 +64,12 @@ const ColumnResizeHandle = (props) => {
 
     // Prevent event bubbling since necessary actions are handled by this component
     event.stopPropagation();
-    event.preventDefault();
-  };
-
-  const onClick = (event) => {
-    event.stopPropagation();
+    // Prevent default dragging behavior
     event.preventDefault();
   };
 
   return (
-  /* eslint-disable react/forbid-dom-props */
+    /* eslint-disable react/forbid-dom-props */
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus
     <div
       ref={resizeHandleRef}
@@ -87,7 +83,6 @@ const ColumnResizeHandle = (props) => {
       aria-valuetext={`${columnWidth} pixels column width`}
       style={{ height: `${height}px` }}
       onMouseDown={onMouseDown}
-      onClick={onClick}
       className={cx('resize-handle', theme.className)}
     />
   );

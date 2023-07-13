@@ -115,7 +115,6 @@ exports[`ColumnResizeHandle render a default column resize handle 1`] = `
       aria-valuetext="200 pixels column width"
       className="resize-handle"
       draggable={true}
-      onClick={[Function]}
       onMouseDown={[Function]}
       role="slider"
       style={
