@@ -97,9 +97,9 @@ describe('WorklistDataGrid', () => {
 
     // eslint-disable-next-line no-unused-vars
     const wrapper = shallowWithIntl(<WorklistDataGrid />);
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining('The prop `id` is marked as required'));
+    expect(console.error).toHaveBeenCalledWith(expect.stringContaining('The prop `id` is marked as required')); // eslint-disable-line no-console
 
-    console.error.mockRestore();
+    console.error.mockRestore(); // eslint-disable-line no-console
   });
 
   it('sets the .blank class to an empty cell', () => {
