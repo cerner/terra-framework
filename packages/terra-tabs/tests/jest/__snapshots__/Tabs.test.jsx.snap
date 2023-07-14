@@ -143,37 +143,49 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                   </div>
                 </div>
               </Tab>
-              <Hookshot
-                attachmentBehavior="flip"
-                attachmentMargin={0}
-                contentAttachment={
-                  Object {
-                    "horizontal": "center",
-                    "vertical": "bottom",
-                  }
+              <OnClickOutside(TabDropDown)
+                eventTypes={
+                  Array [
+                    "mousedown",
+                    "touchstart",
+                  ]
                 }
-                contentOffset={
-                  Object {
-                    "horizontal": 0,
-                    "vertical": 0,
-                  }
-                }
-                isEnabled={true}
+                excludeScrollbar={false}
                 isOpen={false}
-                targetAttachment={
-                  Object {
-                    "horizontal": "start",
-                    "vertical": "top",
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onRequestClose={[Function]}
+                outsideClickIgnoreClass="ignore-react-onclickoutside"
+                preventDefault={false}
+                refCallback={[Function]}
+                stopPropagation={false}
+              >
+                <TabDropDown
+                  disableOnClickOutside={[Function]}
+                  enableOnClickOutside={[Function]}
+                  eventTypes={
+                    Array [
+                      "mousedown",
+                      "touchstart",
+                    ]
                   }
-                }
-                targetOffset={
-                  Object {
-                    "horizontal": 0,
-                    "vertical": 0,
-                  }
-                }
-                targetRef={[Function]}
-              />
+                  isOpen={false}
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onRequestClose={[Function]}
+                  outsideClickIgnoreClass="ignore-react-onclickoutside"
+                  preventDefault={false}
+                  refCallback={[Function]}
+                  stopPropagation={false}
+                  wrappedRef={[Function]}
+                >
+                  <div
+                    className="drop-down orion-fusion-theme"
+                    onMouseDown={[Function]}
+                    role="none"
+                  />
+                </TabDropDown>
+              </OnClickOutside(TabDropDown)>
             </div>
           </Tabs>
         </div>
