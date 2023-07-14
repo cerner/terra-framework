@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
-import Hookshot from 'terra-hookshot';
 import MoreButton from './_MoreButton';
 import TabDropDown from './_TabDropDown';
 import Tab from './_Tab';
@@ -195,6 +194,34 @@ class Tabs extends React.Component {
     this.isOpen = false;
   }
 
+  positionDropDown() {
+    if (!this.dropdownRef.current || !this.moreButtonRef.current) {
+      return;
+    }
+    const CommonTabsStyle = window.getComputedStyle(this.containerRef.current.parentNode.parentNode, null);
+    const CommonTabsLeftBorderWidth = parseInt(CommonTabsStyle.getPropertyValue('border-left-width'), 10);
+
+    const moreRect = this.moreButtonRef.current.getBoundingClientRect();
+    const dropdownRect = this.dropdownRef.current.getBoundingClientRect();
+    const containerRect = this.containerRef.current.getBoundingClientRect();
+    const CommonTabsRect = this.containerRef.current.parentNode.parentNode.getBoundingClientRect();
+
+    // calculate Offset
+    const parentOffset = containerRect.left - CommonTabsRect.left;
+    const leftEdge = moreRect.left - containerRect.left - CommonTabsLeftBorderWidth;
+
+    let offset;
+    const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
+    if (isRTL) {
+      offset = parentOffset + leftEdge;
+    } else {
+      const widthDelta = moreRect.width - dropdownRect.width;
+      offset = parentOffset + leftEdge + widthDelta;
+    }
+
+    this.dropdownRef.current.style.left = `${offset}px`;
+  }
+
   wrapOnSelect(onSelect) {
     return (itemKey, metaData) => {
       this.setIsOpen(false);
@@ -267,6 +294,10 @@ class Tabs extends React.Component {
       }
     });
 
+    if (this.showMoreButton && this.dropdownRef.current) {
+      this.positionDropDown();
+    }
+
     let attrs;
     if (this.isCalculating) {
       attrs = {
@@ -299,26 +330,15 @@ class Tabs extends React.Component {
             variant={variant}
           />
         ) : undefined}
-        <Hookshot
+        <TabDropDown
+          onFocus={this.handleHiddenFocus}
+          onBlur={this.handleHiddenBlur}
           isOpen={this.isOpen}
-          isEnabled
-          targetRef={() => this.moreButtonRef.current}
-          attachmentBehavior="flip"
-          contentAttachment={{ vertical: 'bottom', horizontal: 'center' }}
-          targetAttachment={{ vertical: 'top', horizontal: 'start' }}
+          onRequestClose={this.handleOutsideClick}
+          refCallback={node => { this.dropdownRef.current = node; }}
         >
-          <Hookshot.Content>
-            <TabDropDown
-              onFocus={this.handleHiddenFocus}
-              onBlur={this.handleHiddenBlur}
-              isOpen={this.isOpen}
-              onRequestClose={this.handleOutsideClick}
-              refCallback={node => { this.dropdownRef.current = node; }}
-            >
-              {hiddenTabs}
-            </TabDropDown>
-          </Hookshot.Content>
-        </Hookshot>
+          {hiddenTabs}
+        </TabDropDown>
       </div>
     );
   }
