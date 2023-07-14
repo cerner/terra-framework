@@ -2,8 +2,8 @@
 // eslint-disable no-console
 import React from 'react';
 import { shallowWithIntl } from 'terra-enzyme-intl';
-import ColumnHeader from '../../src/ColumnHeader';
-import ColumnHeaderCell from '../../src/ColumnHeaderCell';
+import ColumnHeader from '../../src/subcomponents/ColumnHeader';
+import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 
 describe('ColumnHeader', () => {
   it('render a default column header', () => {

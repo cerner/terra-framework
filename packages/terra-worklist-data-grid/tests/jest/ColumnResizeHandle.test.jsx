@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { mountWithIntl } from 'terra-enzyme-intl';
-import ColumnResizeHandle from '../../src/ColumnResizeHandle';
+import ColumnResizeHandle from '../../src/subcomponents/ColumnResizeHandle';
 
 describe('ColumnResizeHandle', () => {
   it('render a default column resize handle', () => {

@@ -5,7 +5,6 @@ exports[`ColumnHeaderCell render column header cell with ascending sort 1`] = `
   aria-sort="ascending"
   className="column-header selectable"
   key="Column-0"
-  onMouseDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -14,7 +13,7 @@ exports[`ColumnHeaderCell render column header cell with ascending sort 1`] = `
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
@@ -43,7 +42,6 @@ exports[`ColumnHeaderCell render column header cell with ascending sort and erro
   aria-sort="ascending"
   className="column-header selectable"
   key="Column-0"
-  onMouseDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -52,7 +50,7 @@ exports[`ColumnHeaderCell render column header cell with ascending sort and erro
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
@@ -87,7 +85,6 @@ exports[`ColumnHeaderCell render column header cell with descending sort 1`] = `
   aria-sort="descending"
   className="column-header selectable"
   key="Column-0"
-  onMouseDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -96,7 +93,7 @@ exports[`ColumnHeaderCell render column header cell with descending sort 1`] = `
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
@@ -124,7 +121,6 @@ exports[`ColumnHeaderCell render column header cell with error 1`] = `
 <th
   className="column-header selectable"
   key="Column-0"
-  onMouseDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -133,7 +129,7 @@ exports[`ColumnHeaderCell render column header cell with error 1`] = `
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
@@ -163,6 +159,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
   aria-sort="ascending"
   className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   onMouseDown={[Function]}
   role="columnheader"
   scope="col"
@@ -172,7 +169,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
@@ -205,9 +202,8 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
 exports[`ColumnHeaderCell render column header cell with onColumnSelect callback but not selectable 1`] = `
 <th
   aria-sort="ascending"
-  className="column-header selectable"
+  className="column-header"
   key="Column-0"
-  onMouseDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -216,7 +212,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
@@ -250,7 +246,6 @@ exports[`ColumnHeaderCell render default column header cell 1`] = `
 <th
   className="column-header selectable"
   key="Column-0"
-  onMouseDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -259,7 +254,7 @@ exports[`ColumnHeaderCell render default column header cell 1`] = `
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"

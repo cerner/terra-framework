@@ -15,17 +15,17 @@ const columnShape = PropTypes.shape({
    */
   displayName: PropTypes.string,
   /**
-   * A number (in px) specifying the width of the column. If not provided, the DataGrid's default column width will be used.
-   */
-  width: PropTypes.number,
-  /* A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
-   * One of `ascending`, `descending`.
-   */
-  sortIndicator: PropTypes.oneOf(Object.values(SortIndicators)),
-  /**
    * Boolean value indicating whether or not the column has an error in the data.
    */
   hasError: PropTypes.bool,
+  /**
+   * Boolean value indicating whether or not the column header is resizable.
+   */
+  isResizable: PropTypes.bool,
+  /**
+   * Boolean value indicating whether or not the column header is selectable.
+   */
+  isSelectable: PropTypes.bool,
   /**
    * Number that specifies the minimum column width in pixels.
    */
@@ -35,13 +35,13 @@ const columnShape = PropTypes.shape({
    */
   maximumWidth: PropTypes.number,
   /**
-   * Boolean value indicating whether or not the column header is selectable.
+   * A number (in px) specifying the width of the column. If not provided, the DataGrid's default column width will be used.
    */
-  isSelectable: PropTypes.bool,
-  /**
-   * Boolean value indicating whether or not the column header is resizable.
+  width: PropTypes.number,
+  /* A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
+   * One of `ascending`, `descending`.
    */
-  isResizable: PropTypes.bool,
+  sortIndicator: PropTypes.oneOf(Object.values(SortIndicators)),
 });
 
 export { columnShape, SortIndicators };

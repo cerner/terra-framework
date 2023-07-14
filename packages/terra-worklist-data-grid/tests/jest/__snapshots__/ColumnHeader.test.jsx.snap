@@ -7,27 +7,23 @@ exports[`ColumnHeader render a column header with an active resize column 1`] = 
     height="3rem"
   >
     <InjectIntl(ColumnHeaderCell)
-      column={
-        Object {
-          "displayName": " Vitals",
-          "id": "Column-0",
-        }
-      }
       columnIndex={0}
+      displayName=" Vitals"
       headerHeight="3rem"
+      id="Column-0"
+      isTabStop={false}
       key="Column-0"
+      rowIndex={0}
       tableHeight={500}
     />
     <InjectIntl(ColumnHeaderCell)
-      column={
-        Object {
-          "displayName": " Patient",
-          "id": "Column-1",
-        }
-      }
       columnIndex={1}
+      displayName=" Patient"
       headerHeight="3rem"
+      id="Column-1"
+      isTabStop={false}
       key="Column-1"
+      rowIndex={0}
       tableHeight={500}
     />
   </tr>
@@ -41,31 +37,27 @@ exports[`ColumnHeader render a column header with callbacks 1`] = `
     height="3rem"
   >
     <InjectIntl(ColumnHeaderCell)
-      column={
-        Object {
-          "displayName": " Vitals",
-          "id": "Column-0",
-        }
-      }
       columnIndex={0}
+      displayName=" Vitals"
       headerHeight="3rem"
+      id="Column-0"
+      isTabStop={false}
       key="Column-0"
       onColumnSelect={[MockFunction]}
       onResizeMouseDown={[MockFunction]}
+      rowIndex={0}
       tableHeight={500}
     />
     <InjectIntl(ColumnHeaderCell)
-      column={
-        Object {
-          "displayName": " Patient",
-          "id": "Column-1",
-        }
-      }
       columnIndex={1}
+      displayName=" Patient"
       headerHeight="3rem"
+      id="Column-1"
+      isTabStop={false}
       key="Column-1"
       onColumnSelect={[MockFunction]}
       onResizeMouseDown={[MockFunction]}
+      rowIndex={0}
       tableHeight={500}
     />
   </tr>
@@ -79,27 +71,23 @@ exports[`ColumnHeader render a column header with tableHeight prop 1`] = `
     height="3rem"
   >
     <InjectIntl(ColumnHeaderCell)
-      column={
-        Object {
-          "displayName": " Vitals",
-          "id": "Column-0",
-        }
-      }
       columnIndex={0}
+      displayName=" Vitals"
       headerHeight="3rem"
+      id="Column-0"
+      isTabStop={false}
       key="Column-0"
+      rowIndex={0}
       tableHeight={500}
     />
     <InjectIntl(ColumnHeaderCell)
-      column={
-        Object {
-          "displayName": " Patient",
-          "id": "Column-1",
-        }
-      }
       columnIndex={1}
+      displayName=" Patient"
       headerHeight="3rem"
+      id="Column-1"
+      isTabStop={false}
       key="Column-1"
+      rowIndex={0}
       tableHeight={500}
     />
   </tr>
@@ -113,26 +101,22 @@ exports[`ColumnHeader render a default column header 1`] = `
     height="3rem"
   >
     <InjectIntl(ColumnHeaderCell)
-      column={
-        Object {
-          "displayName": " Vitals",
-          "id": "Column-0",
-        }
-      }
       columnIndex={0}
+      displayName=" Vitals"
       headerHeight="3rem"
+      id="Column-0"
+      isTabStop={false}
       key="Column-0"
+      rowIndex={0}
     />
     <InjectIntl(ColumnHeaderCell)
-      column={
-        Object {
-          "displayName": " Patient",
-          "id": "Column-1",
-        }
-      }
       columnIndex={1}
+      displayName=" Patient"
       headerHeight="3rem"
+      id="Column-1"
+      isTabStop={false}
       key="Column-1"
+      rowIndex={0}
     />
   </tr>
 </thead>

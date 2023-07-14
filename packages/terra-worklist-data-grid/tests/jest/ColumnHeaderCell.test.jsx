@@ -5,7 +5,7 @@ import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
 import { shallowWithIntl } from 'terra-enzyme-intl';
-import ColumnHeaderCell from '../../src/ColumnHeaderCell';
+import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 
 describe('ColumnHeaderCell', () => {
   it('render default column header cell', () => {
@@ -16,10 +16,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
         columnIndex={0}
         width={100}
         headerHeight="150px"
+        {...column}
       />,
     ).dive();
 
@@ -28,7 +28,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toBe('-1');
+    expect(columnHeader.props().tabIndex).toEqual(-1);
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
@@ -48,10 +48,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
         columnIndex={0}
         width={100}
         headerHeight="150px"
+        {...column}
       />,
     ).dive();
 
@@ -60,7 +60,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toBe('-1');
+    expect(columnHeader.props().tabIndex).toEqual(-1);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
@@ -81,10 +81,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
         columnIndex={0}
         width={100}
         headerHeight="150px"
+        {...column}
       />,
     ).dive();
 
@@ -93,7 +93,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toBe('-1');
+    expect(columnHeader.props().tabIndex).toEqual(-1);
     expect(columnHeader.props()['aria-sort']).toBe('descending');
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
@@ -114,10 +114,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
         columnIndex={0}
         width={100}
         headerHeight="150px"
+        {...column}
       />,
     ).dive();
 
@@ -126,7 +126,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toBe('-1');
+    expect(columnHeader.props().tabIndex).toEqual(-1);
     expect(columnHeader.props()['aria-sort']).toBeUndefined();
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
@@ -148,10 +148,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
         columnIndex={0}
         width={100}
         headerHeight="150px"
+        {...column}
       />,
     ).dive();
 
@@ -160,7 +160,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toBe('-1');
+    expect(columnHeader.props().tabIndex).toEqual(-1);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
@@ -185,10 +185,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
         columnIndex={0}
         width={100}
         headerHeight="150px"
+        {...column}
         onColumnSelect={mockClick}
       />,
     ).dive();
@@ -198,7 +198,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toBe('-1');
+    expect(columnHeader.props().tabIndex).toEqual(-1);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().onMouseDown).toBeDefined();
     expect(columnHeader.props().style.width).toBe('100px');
@@ -225,10 +225,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        column={column}
         columnIndex={0}
         width={100}
         headerHeight="150px"
+        {...column}
         onColumnSelect={onColumnSelect}
       />,
     ).dive();
@@ -238,9 +238,9 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toBe('-1');
+    expect(columnHeader.props().tabIndex).toEqual(-1);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
-    expect(columnHeader.props().onMouseDown).toBeDefined();
+    expect(columnHeader.props().onMouseDown).toBeUndefined();
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
