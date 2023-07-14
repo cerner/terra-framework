@@ -4,6 +4,7 @@
 Added
  * Added additional keyboard navigation in `terra-worklist-data-grid`.
  * Added support for cell selection.
+ * Added ability to resize columns via mouse.
 
 * Changed
   * Updated data grid to honor the column and row widths specified by consumers.

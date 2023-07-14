@@ -23,7 +23,6 @@ describe('ColumnResizeHandle', () => {
     // Validate resize handle component
     const resizeHandle = wrapper.find('.resize-handle');
     expect(resizeHandle).toHaveLength(1);
-    expect(resizeHandle.props()['aria-valuetext']).toBe('200 pixels column width');
     expect(resizeHandle.props()['aria-label']).toBe('Vitals');
     expect(resizeHandle.props()['aria-valuenow']).toBe(200);
     expect(resizeHandle.props()['aria-valuemin']).toBe(60);

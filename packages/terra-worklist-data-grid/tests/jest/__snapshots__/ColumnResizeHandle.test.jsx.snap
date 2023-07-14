@@ -108,13 +108,16 @@ exports[`ColumnResizeHandle render a default column resize handle 1`] = `
     }
   >
     <div
+      aria-hidden={true}
       aria-label="Vitals"
       aria-valuemax={300}
       aria-valuemin={60}
       aria-valuenow={200}
-      aria-valuetext="200 pixels column width"
+      aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
       className="resize-handle"
       draggable={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
       onMouseDown={[Function]}
       role="slider"
       style={
