@@ -14,12 +14,12 @@
     z-index: 1;
     
     &:focus {
-      border-color: var(--terra-worklist-data-grid-resize-handle-focus-border-color, #517ea5) !important;
+      border-color: var(--terra-worklist-data-grid-resize-handle-focus-border-color, rgba(34, 42, 46, 1)) !important;
       outline: 0 !important;
     }
 
     &:hover {
-      border-color: var(--terra-worklist-data-grid-resize-handle-hover-border-color, #e4f1f7);
+      border-color: var(--terra-worklist-data-grid-resize-handle-hover-border-color, rgba(34, 42, 46, 0.6));
     }
   }
 }

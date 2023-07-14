@@ -1,4 +1,6 @@
-import React, { useContext, useRef, useCallback } from 'react';
+import React, {
+  useContext, useRef, useCallback, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
@@ -32,6 +34,11 @@ const propTypes = {
    * Function that is called when onMouseDown event is triggered for the resize handle
    */
   onResizeMouseDown: PropTypes.func.isRequired,
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const ColumnResizeHandle = (props) => {
@@ -42,7 +49,11 @@ const ColumnResizeHandle = (props) => {
     minimumWidth,
     maximumWidth,
     onResizeMouseDown,
+    intl,
   } = props;
+
+  // State variable to control screen reader visibility
+  const [isActive, setActive] = useState(false);
 
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);
@@ -76,13 +87,17 @@ const ColumnResizeHandle = (props) => {
       draggable
       role="slider"
       tabIndex={-1}
+      aria-hidden={!isActive}
       aria-valuemin={minimumWidth}
       aria-valuenow={columnWidth}
       aria-valuemax={maximumWidth}
       aria-label={columnText}
-      aria-valuetext={`${columnWidth} pixels column width`}
+      // aria-valuetext={`${columnWidth} pixels column width`}
+      aria-valuetext={intl.formatMessage({ id: 'Terra.worklist-data-grid.resizeHandleValueText' }, { columnWidth })}
       style={{ height: `${height}px` }}
       onMouseDown={onMouseDown}
+      onFocus={() => setActive(true)}
+      onBlur={() => setActive(false)}
       className={cx('resize-handle', theme.className)}
     />
   );
