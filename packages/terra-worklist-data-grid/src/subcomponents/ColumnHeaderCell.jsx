@@ -88,7 +88,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  // isTabStop: false,
+  isTabStop: false,
   hasError: false,
   isSelectable: true,
   isResizable: true,
@@ -179,7 +179,7 @@ const ColumnHeaderCell = (props) => {
       onKeyDown={(isSelectable && onColumnSelect) ? handleKeyDown : undefined}
       style={{ width: `${width}px`, height: headerHeight }}
     >
-      <div className={cx('header-container')} role="button">
+      <div className={cx('header-container')} role={displayName && 'button'}>
         {errorIcon}
         <span>{displayName}</span>
         {sortIndicatorIcon}

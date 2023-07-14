@@ -138,7 +138,9 @@ function WorklistDataGrid(props) {
 
     return newColumn;
   };
-  const [dataGridColumns, setDataGridColumns] = useState(columns.map((column) => initializeColumn(column)));
+
+  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(columns);
+  const [dataGridColumns, setDataGridColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
   // Manage column resize
   const [tableHeight, setTableHeight] = useState(0);
@@ -154,7 +156,6 @@ function WorklistDataGrid(props) {
 
   const [currentSelectedCell, setCurrentSelectedCell] = useState(null);
   const [, setRowSelectionModeMessage] = useState();
-  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(columns);
 
   const theme = useContext(ThemeContext);
 
@@ -167,9 +168,6 @@ function WorklistDataGrid(props) {
 
     // Update table height state variable
     setTableHeight(grid.current.offsetHeight - 1);
-
-    const focusedCell = grid.current.rows[focusedRow.current].cells[focusedCol.current];
-    focusedCell.tabIndex = 0;
   }, []);
 
   const isCellSelected = (rowId, columnId) => (currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId);
@@ -220,6 +218,8 @@ function WorklistDataGrid(props) {
     // Since the row selection mode has changed, the row selection mode needs to be updated.
     ariaLiveMsg.current = intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' });
     setRowSelectionModeMessage(ariaLiveMsg.current);
+
+    setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
 
