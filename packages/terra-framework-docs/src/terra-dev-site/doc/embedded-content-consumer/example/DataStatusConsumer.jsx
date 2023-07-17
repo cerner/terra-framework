@@ -23,7 +23,7 @@ const appendLifeCycleStatuses = (statuses) => {
   }
 };
 
-const options = { secret: 'OAuth Secret', iframeAttrs: { title: 'Embedded application lifecycle example', id: 'data-embedded-consumer-data-status' } };
+const options = { secret: 'OAuth Secret', iframeAttrs: { title: 'Embedded application lifecycle example', id: 'data-embedded-consumer-data-status', width: '100%', frameborder: '0' } };
 
 const onMount = () => {
   setTimeout(() => { appendLifeCycleStatuses(['Mounted']); }, 2000);

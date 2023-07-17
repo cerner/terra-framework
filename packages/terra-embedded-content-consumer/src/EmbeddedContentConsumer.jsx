@@ -22,7 +22,27 @@ const propTypes = {
   onAuthorize: PropTypes.func,
   /**
    * The component can be configured with consumer frame options.
+   *
+   * Example `options.iframeAttrs` object:
+   *
+   * ```
+   * options = {{
+   *   iframeAttrs:
+   *     {
+   *       id: 'iframe-id', // Sets iframe id
+   *       title: 'Frame Title', // Required - Sets frame title for better accessibility
+   *       srcdoc: '', // Optional - Inline HTML to embed, overriding the `src` attribute
+   *       width: '100%', // Optional - Sets the width to 100%
+   *       height: '400px', // Optional - Sets the height to 400px; must not be 100%
+   *       frameborder: '0', // Optional - '0' Disable frame border, '1' Sets frame border
+   *     }
+   * }}
+   * ```
+   *
    * See xfc consumer configuration for details: https://github.com/cerner/xfc
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that the
+   * title of the iframe is set to a meaningful title for the content inside the iframe.
    */
   options: PropTypes.object,
   /**
