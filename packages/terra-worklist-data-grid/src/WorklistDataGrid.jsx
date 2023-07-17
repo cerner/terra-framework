@@ -60,7 +60,6 @@ const propTypes = {
    */
   onColumnResize: PropTypes.func,
   /**
-   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
    * Callback function that is called when a selectable cell is selected. Parameters: `function(rowId, columnId)`.
    */
   onCellSelect: PropTypes.func,
@@ -403,7 +402,7 @@ function WorklistDataGrid(props) {
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
 
-  const onResizeMouseDown = (event, index, resizeColumnWidth) => {
+  const onResizeMouseDown = useCallback((event, index, resizeColumnWidth) => {
     // Store current table and column values for resize calculations
     tableWidth.current = grid.current.offsetWidth;
     activeColumnPageX.current = event.pageX;
@@ -411,7 +410,7 @@ function WorklistDataGrid(props) {
 
     // Set the active index to the selected column
     setActiveIndex(index);
-  };
+  }, []);
 
   const onMouseMove = (event) => {
     if (activeIndex == null) {

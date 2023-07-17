@@ -121,11 +121,11 @@ const ColumnHeaderCell = (props) => {
     columnHeaderCell.current = node;
   }, []);
 
-  const onResizeHandleMouseDown = (event) => {
+  const onResizeHandleMouseDown = useCallback((event) => {
     if (onResizeMouseDown) {
       onResizeMouseDown(event, columnIndex, columnHeaderCell.current.offsetWidth);
     }
-  };
+  }, [columnIndex, onResizeMouseDown]);
 
   // Handle column header selection via the mouse click.
   const handleMouseDown = (event) => {
