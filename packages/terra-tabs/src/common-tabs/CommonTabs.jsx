@@ -52,7 +52,7 @@ const propTypes = {
   onChange: PropTypes.func,
 };
 
-const getTabId = (id, itemKey) => `${id}-${itemKey}`;
+const getTabId = (id, itemKey) => `${id || 'terra-common-tabs'}-${itemKey}`;
 
 const getAssociatedPanelId = (id, itemKey) => `${getTabId(id, itemKey)}-panel`;
 
