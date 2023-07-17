@@ -223,6 +223,11 @@ function WorklistDataGrid(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
 
+  useEffect(() => {
+    setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [columns]);
+
   const isAnyRowSelected = () => (
     rows.find(r => r.isSelected === true)
   );
