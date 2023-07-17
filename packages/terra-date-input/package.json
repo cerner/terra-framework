@@ -37,7 +37,7 @@
     "terra-theme-context": "^1.8.0",
     "terra-time-input": "^4.52.0",
     "terra-visually-hidden-text": "^2.0.0",
-    "uuid": "8.2.0"
+    "uuid": "7.0.3"
   },
   "devDependencies": {
     "terra-form-checkbox": "^4.16.0",
