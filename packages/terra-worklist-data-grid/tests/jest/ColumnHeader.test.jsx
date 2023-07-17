@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // eslint-disable no-console
 import React from 'react';
-import { shallowWithIntl } from 'terra-enzyme-intl';
+// import { shallow } from 'terra-enzyme-intl';
 import ColumnHeader from '../../src/subcomponents/ColumnHeader';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 
@@ -15,13 +15,13 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallowWithIntl(
+    const wrapper = shallow(
       <ColumnHeader
         columns={columns}
         columnWidths={['2.5rem', '2.5rem']}
         headerHeight="3rem"
       />,
-    ).dive();
+    );
 
     // Validate column header row container
     const columnHeader = wrapper.find('.column-header-row');
@@ -44,14 +44,14 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallowWithIntl(
+    const wrapper = shallow(
       <ColumnHeader
         activeResizeIndex={0}
         columns={columns}
         headerHeight="3rem"
         tableHeight={500}
       />,
-    ).dive();
+    );
 
     // Validate column header row container
     const columnHeader = wrapper.find('.column-header-row');
@@ -74,13 +74,13 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallowWithIntl(
+    const wrapper = shallow(
       <ColumnHeader
         columns={columns}
         headerHeight="3rem"
         tableHeight={500}
       />,
-    ).dive();
+    );
 
     // Validate column header row container
     const columnHeader = wrapper.find('.column-header-row');
@@ -107,7 +107,7 @@ describe('ColumnHeader', () => {
     const mockColumnSelect = jest.fn();
     const mockResizeMouseDown = jest.fn();
 
-    const wrapper = shallowWithIntl(
+    const wrapper = shallow(
       <ColumnHeader
         columns={columns}
         headerHeight="3rem"
@@ -115,7 +115,7 @@ describe('ColumnHeader', () => {
         onColumnSelect={mockColumnSelect}
         onResizeMouseDown={mockResizeMouseDown}
       />,
-    ).dive();
+    );
 
     // Validate column header row container
     const columnHeader = wrapper.find('.column-header-row');

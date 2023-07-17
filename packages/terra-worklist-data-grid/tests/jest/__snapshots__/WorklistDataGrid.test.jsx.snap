@@ -10,7 +10,7 @@ exports[`WorklistDataGrid verifies that the grid created is consistent with the 
     onKeyDown={[Function]}
     role="grid"
   >
-    <InjectIntl(ColumnHeader)
+    <ColumnHeader
       columns={
         Array [
           Object {
@@ -188,7 +188,7 @@ exports[`WorklistDataGrid verifies the rows are created with the right props 1`]
     onKeyDown={[Function]}
     role="grid"
   >
-    <InjectIntl(ColumnHeader)
+    <ColumnHeader
       columns={
         Array [
           Object {

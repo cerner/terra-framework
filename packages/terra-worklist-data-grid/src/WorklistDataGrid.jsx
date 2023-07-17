@@ -56,7 +56,7 @@ const propTypes = {
    */
   rowHeaderIndex: PropTypes.number,
   /**
-   * Function that is called when a resizable column is resized. Parameters: `onRequestColumnResize(columnId, requestedWidth)`
+   * Function that is called when a resizable column is resized. Parameters: `function(columnId, requestedWidth)`
    */
   onColumnResize: PropTypes.func,
   /**

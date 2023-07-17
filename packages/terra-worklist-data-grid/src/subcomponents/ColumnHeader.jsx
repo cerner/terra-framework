@@ -1,13 +1,8 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
-import { injectIntl } from 'react-intl';
 import ThemeContext from 'terra-theme-context';
 import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
 import ColumnHeaderCell from './ColumnHeaderCell';
-import styles from './ColumnHeader.module.scss';
-
-const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -23,7 +18,7 @@ const propTypes = {
    */
   tableHeight: PropTypes.number,
   /**
-   * Column index for cell that can receive tab focus
+   * Column index for cell that can receive tab focus.
    */
   tabStopColumnIndex: PropTypes.number,
   /**
@@ -46,15 +41,14 @@ const ColumnHeader = (props) => {
     onResizeMouseDown,
   } = props;
 
-  // Retrieve current theme from context
-  const theme = useContext(ThemeContext);
-
   // Create ColumnHeaderCell component for each column
   const buildColumn = (column, columnIndex) => (
     <ColumnHeaderCell
       key={column.id}
+      id={column.id}
       rowIndex={0}
       columnIndex={columnIndex}
+      displayName={column.displayName}
       width={column.width}
       minimumWidth={column.minimumWidth}
       maximumWidth={column.maximumWidth}
@@ -63,7 +57,9 @@ const ColumnHeader = (props) => {
       isSelectable={column.isSelectable}
       tableHeight={tableHeight}
       isTabStop={tabStopColumnIndex === columnIndex}
-      {...column}
+      hasError={column.hasError}
+      sortIndicator={column.sortIndicator}
+      // {...column}
       onColumnSelect={onColumnSelect}
       onResizeMouseDown={onResizeMouseDown}
     />
@@ -71,7 +67,7 @@ const ColumnHeader = (props) => {
 
   return (
     <thead>
-      <tr className={cx('column-header-row', theme.className)} height={headerHeight}>
+      <tr className="column-header-row" height={headerHeight}>
         {columns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
       </tr>
     </thead>
@@ -79,4 +75,4 @@ const ColumnHeader = (props) => {
 };
 
 ColumnHeader.propTypes = propTypes;
-export default injectIntl(ColumnHeader);
+export default ColumnHeader;
