@@ -28,17 +28,17 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
 
 // Only test viewports that have collapsed tabs
 Terra.describeViewports('Responsive Hidden Open', ['tiny', 'small', 'medium', 'large'], () => {
-  before(() => {
+  it('should open menu when More button is clicked', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/default-tabs');
     browser.refresh();
+    $('[data-testid]').waitForDisplayed();
+    $('[data-testid]').click();
+
+    Terra.validates.element('0', { selector: '#root' });
   });
 
   it('should close menu when tab is selected', () => {
-    $('[data-terra-tabs-menu]').waitForDisplayed();
-    $('[data-terra-tabs-menu]').click();
-
-    Terra.validates.element('0', { selector: '#root' });
-    $('#tab12').click();
+    $('#terra-common-tabs-Tab12').click();
 
     Terra.validates.element('1', { selector: '#root' });
   });
@@ -55,8 +55,8 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
 
     describe('Collapsible active focus', () => {
       it('Collapsible active focus', () => {
-        $('#tab2').waitForDisplayed();
-        $('#tab2').click();
+        $('#terra-common-tabs-Tab2').waitForDisplayed();
+        $('#terra-common-tabs-Tab2').click();
         Terra.validates.element('Collapsible active focus');
       });
     });
@@ -100,16 +100,22 @@ Terra.describeViewports('Tabs - Uncollapsed', ['tiny'], () => {
 });
 
 Terra.describeViewports('Tabs - Icons in Menu', ['tiny'], () => {
-  it('displays Tabs With Icons In Menu', () => {
+  it('displays Tabs With Icons', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/tabs-with-icons-in-menu');
+    $('[data-testid]').waitForDisplayed();
 
-    $('[data-terra-tabs-menu]').waitForDisplayed();
     Terra.validates.element('displays tabs with icons', { selector: '#tabsWithIconsInMenu' });
+  });
 
-    $('[data-terra-tabs-menu]').click();
+  it('displays Tabs With Icons in Menu', () => {
+    $('[data-testid]').click();
+
     Terra.validates.element('displays tabs with icons in menu', { selector: '#tabsWithIconsInMenu' });
+  });
 
-    $('#error').click();
+  it('selects error icon item in Menu', () => {
+    $('#terra-common-tabs-Error').click();
+
     Terra.validates.element('error icon list item selected', { selector: '#tabsWithIconsInMenu' });
   });
 });
@@ -123,12 +129,17 @@ Terra.describeViewports('Tabs - Responsive to Window', ['tiny', 'small', 'medium
 });
 
 Terra.describeViewports('Tabs - Responsive to Parent', ['huge'], () => {
-  it('Responsive to Parent', () => {
+  it('Responsive to Parent before', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/tabs-responsive-to-parent');
-    Terra.validates.element('responsive to parent before');
+
+    Terra.validates.element('responsive to parent before', { selector: '#responsiveToParent' });
+  });
+
+  it('Responsive to Parent After', () => {
     $('button').click();
     $('[class*="tab-content"]').moveTo();
-    Terra.validates.element('responsive to parent after');
+
+    Terra.validates.element('responsive to parent after', { selector: '#responsiveToParent' });
   });
 });
 
