@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import ThemeContext from 'terra-theme-context';
 import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
 import ColumnHeaderCell from './ColumnHeaderCell';
 
@@ -59,7 +58,6 @@ const ColumnHeader = (props) => {
       isTabStop={tabStopColumnIndex === columnIndex}
       hasError={column.hasError}
       sortIndicator={column.sortIndicator}
-      // {...column}
       onColumnSelect={onColumnSelect}
       onResizeMouseDown={onResizeMouseDown}
     />
