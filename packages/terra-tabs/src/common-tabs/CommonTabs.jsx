@@ -50,11 +50,6 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
-  /**
-   * Callback function when add button selection has changed.
-   * Parameters: 1. Event 2. Selected pane's key
-   */
-  onSelectAddButton: PropTypes.func,
 };
 
 const getTabId = (id, itemKey) => `${id}-${itemKey}`;
@@ -69,7 +64,6 @@ const CommonTabs = ({
   onRequestActivate,
   variant,
   onChange,
-  onSelectAddButton,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -107,7 +101,7 @@ const CommonTabs = ({
         <div className={cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
-        <Tabs variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} />
+        <Tabs variant={variant} tabData={tabData} onChange={onChange} />
       </div>
       <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {

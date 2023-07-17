@@ -1,3 +1,5 @@
+@import '~terra-mixins/lib/Mixins';
+
 // Themes
 @import './orion-fusion-theme/WorklistDataGrid.module';
 @import './clinical-lowlight-theme/WorklistDataGrid.module';
@@ -8,7 +10,7 @@
     outline-offset: var(--terra-worklist-data-grid-cell-focus-outline-offset, -2px);
   }
 
-  .worklist-data-grid-container { 
+  .worklist-data-grid-container {
     height: 100%;
     overflow-x: scroll;
     width: 100%;
@@ -22,30 +24,4 @@
     width: 1px;
   }
 
-  .worklist-data-grid-cell {
-    border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
-    font-weight: normal;
-    padding: var(--terra-worklist-data-grid-cell-content-padding, 7px);
-    position: relative;
-  }
-
-  .worklist-data-grid-row:nth-child(odd) {
-    background-color: var(--terra-worklist-data-grid-row-striped-background-color, #f0f0f0);
-  }
-
-  // Hover state for selectable elements
-  .selectable:hover {
-    background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
-    cursor: pointer;
-  }
-  
-  .cell-content {
-    overflow: hidden;
-    overflow-wrap: break-word;
-  }
-
-  // Create gradient background for masked cells
-  .masked {
-    background: var(--terra-worklist-data-grid-mask-background, repeating-linear-gradient(-45deg, #dedfe0, #dedfe0 3px, transparent 3px, transparent 6px));
-  }
 }
