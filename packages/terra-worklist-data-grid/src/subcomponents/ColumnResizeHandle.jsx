@@ -92,7 +92,6 @@ const ColumnResizeHandle = (props) => {
       aria-valuenow={columnWidth}
       aria-valuemax={maximumWidth}
       aria-label={columnText}
-      // aria-valuetext={`${columnWidth} pixels column width`}
       aria-valuetext={intl.formatMessage({ id: 'Terra.worklist-data-grid.resizeHandleValueText' }, { columnWidth })}
       style={{ height: `${height}px` }}
       onMouseDown={onMouseDown}
