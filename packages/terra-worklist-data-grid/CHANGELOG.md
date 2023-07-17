@@ -1,10 +1,14 @@
 # Changelog
 
 ## Unreleased
+* Breaking Change
+  * Renamed `columnWidth` to `defaultColumnWidth`.
+  
 Added
  * Added additional keyboard navigation in `terra-worklist-data-grid`.
  * Added support for cell selection.
  * Added ability to resize columns via mouse.
+ * Added `onColumnResize` prop to notify consumer of a column resize
 
 * Changed
   * Updated data grid to honor the column and row widths specified by consumers.
