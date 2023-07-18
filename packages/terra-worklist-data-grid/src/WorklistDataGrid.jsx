@@ -19,75 +19,92 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * String that identifies the element (or elements) that labels the grid.
-   */
-  ariaLabelledby: PropTypes.string,
-  /**
-   * String that labels the grid for accessibility. If ariaLabelledby is specified, ariaLabel will not be used.
-   */
-  ariaLabel: PropTypes.string,
-  /**
    * String that will be used to identify the Grid. If multiple grids are on the same page, each grid should have
    * a unique id.
    */
   id: PropTypes.string.isRequired,
+
+  /**
+   * String that labels the grid for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
+   */
+  ariaLabel: PropTypes.string,
+
+  /**
+   * String that identifies the element (or elements) that labels the grid.
+   */
+  ariaLabelledBy: PropTypes.string,
+
   /**
    * Data for columns. Columns will be presented in the order given.
    */
   columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
+
   /**
-   * Data for content in the body of the Grid. Rows will be rendered in the order given.
-   */
-  rows: PropTypes.arrayOf(WorklistDataGridPropTypes.rowShape),
-  /**
-   * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
-   */
-  defaultColumnWidth: PropTypes.number,
-  /**
-   * String that specifies the column height. Any valid CSS height value is accepted.
-   */
+     * String that specifies the column height. Any valid CSS height value is accepted.
+     */
   columnHeaderHeight: PropTypes.string,
+
   /**
-   * String that specifies the height for the rows in the grid. Any valid CSS value is accepted.
-   */
-  rowHeight: PropTypes.string,
-  /**
-   * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the grid.
-   */
-  rowHeaderIndex: PropTypes.number,
+ * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
+ */
+  defaultColumnWidth: PropTypes.number,
+
   /**
    * Function that is called when a resizable column is resized. Parameters: `function(columnId, requestedWidth)`
    */
   onColumnResize: PropTypes.func,
-  /**
-   * Callback function that is called when a selectable cell is selected. Parameters: `function(rowId, columnId)`.
-   */
-  onCellSelect: PropTypes.func,
-  /**
-   * Callback function that is called when a row is selected. Parameters: `function(rowId)`
-   */
-  onRowSelect: PropTypes.func,
-  /**
-   * Callback function that is called when all rows are selected. Parameters: `function()`.
-   */
-  onRowSelectAll: PropTypes.func,
+
   /**
    * Callback function that is called when a selectable column is selected. Parameters: `function(columnId)`
    */
   onColumnSelect: PropTypes.func,
+
   /**
-   * Callback function that is called when all selected rows need to be unselected. Parameters: `function()`
+   * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
-  onClearSelectedRows: PropTypes.func,
+  rows: PropTypes.arrayOf(WorklistDataGridPropTypes.rowShape),
+
   /**
-   * Callback function that is called when no row is selected and the row selection mode needs to be disabled. Parameters: `function()`
+   * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the grid.
    */
-  onDisableSelectableRows: PropTypes.func,
+  rowHeaderIndex: PropTypes.number,
+
+  /**
+   * String that specifies the height for the rows in the grid. Any valid CSS value is accepted.
+   */
+  rowHeight: PropTypes.string,
+
   /**
    * Boolean indicating whether or not the DataGrid should allow entire rows to be selected. An additional column will be
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
+
+  /**
+   * Callback function that is called when all selected rows need to be unselected. Parameters: `function()`
+   */
+  onClearSelectedRows: PropTypes.func,
+
+  /**
+   * Callback function that is called when no row is selected and the row selection mode needs to be disabled. Parameters: `function()`
+   */
+  onDisableSelectableRows: PropTypes.func,
+
+  /**
+   * Callback function that is called when a row is selected. Parameters: `function(rowId)`
+   */
+  onRowSelect: PropTypes.func,
+
+  /**
+   * Callback function that is called when all rows are selected. Parameters: `function()`.
+   */
+  onRowSelectAll: PropTypes.func,
+
+  /**
+   * Callback function that is called when a selectable cell is selected. Parameters: `function(rowId, columnId)`.
+   */
+  onCellSelect: PropTypes.func,
+
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
@@ -105,23 +122,23 @@ const defaultProps = {
 function WorklistDataGrid(props) {
   const {
     id,
-    ariaLabelledby,
     ariaLabel,
+    ariaLabelledBy,
     columns,
-    rows,
-    onColumnResize,
-    defaultColumnWidth,
     columnHeaderHeight,
-    rowHeight,
+    defaultColumnWidth,
+    onColumnResize,
     onColumnSelect,
-    onCellSelect,
-    onRowSelect,
-    onRowSelectAll,
+    rows,
+    rowHeaderIndex,
+    rowHeight,
+    hasSelectableRows,
     onClearSelectedRows,
     onDisableSelectableRows,
-    hasSelectableRows,
+    onRowSelect,
+    onRowSelectAll,
+    onCellSelect,
     intl,
-    rowHeaderIndex,
   } = props;
 
   // Default column size constraints
@@ -197,6 +214,7 @@ function WorklistDataGrid(props) {
     }
   };
 
+  // useEffect for row selection
   useEffect(() => {
     // When row selection mode is turned on or off a row selection column is added or removed.
     // Therefore, shift the focused cell to the left or right.
@@ -222,6 +240,7 @@ function WorklistDataGrid(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
 
+  // useEffect for row displayed columns
   useEffect(() => {
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -333,11 +352,13 @@ function WorklistDataGrid(props) {
         break;
       case KeyCode.KEY_LEFT:
         if (event.metaKey) {
-          // Cmd + Left on Mac is equivalent to the Home Key in Windows
+          // Mac: Cmd + Left
+          // Win: Home
           nextCol = 0;
 
           if (event.ctrlKey) {
-            // Ctrl + Cmd + Left on Mac is equivalent to the Ctrl + Home in Windows
+            // Mac: Ctrl + Cmd + Left
+            // Win: Ctrl + Home
             nextRow = WorklistDataGridUtils.FIRST_NON_HEADER_ROW;
           }
         } else {
@@ -347,11 +368,13 @@ function WorklistDataGrid(props) {
         break;
       case KeyCode.KEY_RIGHT:
         if (event.metaKey) {
-          // Cmd + Right on Mac is equivalent to the End key in Windows
+          // Mac: Cmd + Right
+          // Win: End
           nextCol = displayedColumns.length - 1;
 
           if (event.ctrlKey) {
-            // Ctrl + Cmd + Right on Mac is equivalent to the Ctrl + End in Windows
+            // Mac: Ctrl + Cmd + Right
+            // Windows: Ctrl + End
             nextRow = rows.length;
           }
         } else {
@@ -443,20 +466,20 @@ function WorklistDataGrid(props) {
 
   const buildRow = (row, rowIndex) => (
     <Row
+      id={row.id}
       rowIndex={rowIndex}
       key={row.id}
-      height={rowHeight}
-      id={row.id}
-      isSelected={row.isSelected}
-      cells={row.cells}
       ariaLabel={row.ariaLabel}
-      hasRowSelection={hasSelectableRows}
+      cells={row.cells}
       displayedColumns={displayedColumns}
-      rowHeaderIndex={rowHeaderIndex}
+      hasRowSelection={hasSelectableRows}
+      height={rowHeight}
+      isSelected={row.isSelected}
       onCellSelect={handleCellSelection}
       onRowSelect={handleRowSelection}
-      tabStopColumnIndex={focusedRow.current === rowIndex ? focusedCol.current : undefined}
+      rowHeaderIndex={rowHeaderIndex}
       selectedCellColumnId={(currentSelectedCell?.rowId === row.id) ? currentSelectedCell?.columnId : undefined}
+      tabStopColumnIndex={focusedRow.current === rowIndex ? focusedCol.current : undefined}
     />
   );
 
@@ -469,12 +492,12 @@ function WorklistDataGrid(props) {
   return (
     <div className={cx('worklist-data-grid-container')}>
       <table
-        ref={gridRef}
         id={id}
-        role="grid"
-        aria-labelledby={ariaLabelledby}
         aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
         className={cx('worklist-data-grid', theme.className)}
+        ref={gridRef}
+        role="grid"
         onKeyDown={handleKeyDown}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >

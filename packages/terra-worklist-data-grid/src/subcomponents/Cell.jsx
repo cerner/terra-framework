@@ -13,57 +13,70 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * String that labels the cell for accessibility.
+   */
+  ariaLabel: PropTypes.string,
+
+  /**
    * String identifier of the row in which the Cell will be rendered.
    */
   rowId: PropTypes.string.isRequired,
-  /**
-   * String identifier of the column in which the Cell will be rendered.
-   */
-  columnId: PropTypes.string.isRequired,
+
   /**
    * The cell's row position in the grid. This is zero based.
    */
   rowIndex: PropTypes.number,
+
+  /**
+   * String identifier of the column in which the Cell will be rendered.
+   */
+  columnId: PropTypes.string.isRequired,
+
   /**
    * The cell's column position in the grid. This is zero based.
    */
   columnIndex: PropTypes.number,
+
   /**
    * Content that will be rendered within the Cell.
    */
   children: PropTypes.node,
-  /**
-   *  Boolean indicating if cell contents are masked.
-   */
-  isMasked: PropTypes.bool,
-  /**
-   * Boolean value indicating whether or not the column header is selectable.
-   */
-  isSelectable: PropTypes.bool,
-  /**
-   * Boolean value to indicate if the cell is the tab stop on the grid. At any given time, the grid has only one tab stop.
-   */
-  isTabStop: PropTypes.bool,
-  /**
-   * Boolean indicating whether the Cell is currently selected.
-   */
-  isSelected: PropTypes.bool,
-  /**
-   * String that labels the cell for accessibility.
-   */
-  ariaLabel: PropTypes.string,
-  /**
-   * Boolean indicating that the cell is a row header
-   */
-  isRowHeader: PropTypes.bool,
-  /**
-   * Callback function that will be called when this cell is selected.
-   */
-  onCellSelect: PropTypes.func,
+
   /**
    * String that specifies the height of the cell. Any valid CSS value is accepted.
    */
   height: PropTypes.string,
+
+  /**
+   *  Boolean indicating if cell contents are masked.
+   */
+  isMasked: PropTypes.bool,
+
+  /**
+   * Boolean indicating that the cell is a row header
+   */
+  isRowHeader: PropTypes.bool,
+
+  /**
+   * Boolean value indicating whether or not the column header is selectable.
+   */
+  isSelectable: PropTypes.bool,
+
+  /**
+   * Boolean indicating whether the Cell is currently selected.
+   */
+  isSelected: PropTypes.bool,
+
+  /**
+   * Boolean value to indicate if the cell is the tab stop on the grid. At any given time, the grid has only one tab stop.
+   */
+  isTabStop: PropTypes.bool,
+
+  /**
+   * Callback function that will be called when this cell is selected.
+   */
+  onCellSelect: PropTypes.func,
+
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
@@ -81,19 +94,19 @@ const defaultProps = {
 
 function Cell(props) {
   const {
-    rowId,
-    columnId,
-    rowIndex,
-    columnIndex,
-    isTabStop,
     ariaLabel,
+    rowId,
+    rowIndex,
+    columnId,
+    columnIndex,
+    children,
+    height,
+    isMasked,
     isRowHeader,
     isSelected,
-    isMasked,
     isSelectable,
-    children,
+    isTabStop,
     onCellSelect,
-    height,
     intl,
   } = props;
 

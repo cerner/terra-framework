@@ -1,28 +1,32 @@
 # Changelog
 
 ## Unreleased
-* Breaking Change
-  * Renamed `columnWidth` to `defaultColumnWidth`.
-  
-Added
- * Added additional keyboard navigation in `terra-worklist-data-grid`.
- * Added support for cell selection.
- * Added ability to resize columns via mouse.
- * Added `onColumnResize` prop to notify consumer of a column resize
+
+* Breaking Changes
+  * Removed `columnWidth` prop in favor of the new `defaultColumnWidth` prop.
+  * Renamed `ariaLabelledby` prop to `ariaLabelledBy` to follow proper camelCasing and for consistency with other Terra components.
+
+* Added
+  * Added additional keyboard navigation shortcuts.
+  * Added support for cell selection.
+  * Added ability to resize columns via mouse.
+  * Added `defaultColumnWidth` prop to set the default column width if it is not set per column.
+  * Added `onColumnResize` prop to receive a callback function for notifying consumers of a column resize.
 
 * Changed
   * Updated data grid to honor the column and row widths specified by consumers.
 
 ## 0.2.0 - (July 4, 2023)
 
-* Changed
-  * Removed ability to set variable row heights.
-  * Updated styling on cell focus.
 * Added
   * Added masked cell support.
   * Added hover state for selectable cells.
   * Added blank cell support.
   * Added ability to allow consumers to specify the sort indicator and error state for columns.
+
+* Changed
+  * Removed ability to set variable row heights.
+  * Updated styling on cell focus.
 
 ## 0.1
   * Initial stable release.

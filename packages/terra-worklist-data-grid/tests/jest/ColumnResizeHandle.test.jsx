@@ -4,7 +4,7 @@ import { mountWithIntl } from 'terra-enzyme-intl';
 import ColumnResizeHandle from '../../src/subcomponents/ColumnResizeHandle';
 
 describe('ColumnResizeHandle', () => {
-  it('render a default column resize handle', () => {
+  it('renders a default column resize handle', () => {
     const mockResizeMouseDown = jest.fn();
 
     // Mount component in test to allow event simulation
