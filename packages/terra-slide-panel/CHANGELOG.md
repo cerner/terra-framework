@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added check for focus on the disclosing node before calling focus.
+
 ## 3.43.0 - (July 19, 2023)
 
 * Changed
