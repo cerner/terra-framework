@@ -99,7 +99,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
 
   describe('Modal Focus Handling', () => {
     describe('Focusable Content', () => {
-      it('clicks to open modal', () => {
+      before(() => {
         browser.url('/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal');
         $('button').click();
       });
@@ -152,7 +152,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
     });
 
     describe('Focus Trapped Content', () => {
-      it('clicks to open modal', () => {
+      before(() => {
         browser.url('/raw/tests/terra-abstract-modal/abstract-modal/focus-trapped-abstract-modal');
         $('button').click();
       });
