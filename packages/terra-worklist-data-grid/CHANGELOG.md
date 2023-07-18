@@ -15,6 +15,7 @@
 
 * Changed
   * Updated data grid to honor the column and row widths specified by consumers.
+  * Optimized package size by excluding tests.
 
 ## 0.2.0 - (July 4, 2023)
 
