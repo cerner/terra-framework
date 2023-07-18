@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
-import AddButton from './_AddButton';
 import MoreButton from './_MoreButton';
 import TabDropDown from './_TabDropDown';
 import Tab from './_Tab';
@@ -57,11 +56,6 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
-  /**
-   * Callback function when add button selection has changed.
-   * Parameters: 1. Event 2. Selected pane's key
-   */
-  onSelectAddButton: PropTypes.func,
 };
 
 class Tabs extends React.Component {
@@ -246,7 +240,7 @@ class Tabs extends React.Component {
 
   render() {
     const {
-      tabData, ariaLabel, variant, onChange, onSelectAddButton,
+      tabData, ariaLabel, variant, onChange,
     } = this.props;
     const theme = this.context;
     const enabledTabs = tabData.filter(tab => !tab.isDisabled);
@@ -254,8 +248,6 @@ class Tabs extends React.Component {
     const hiddenIds = [];
     const visibleTabs = [];
     const hiddenTabs = [];
-    const moreIds = ids;
-    moreIds.push('tab-add-button');
     let isHiddenSelected = false;
 
     let enabledTabsIndex = -1;
@@ -299,22 +291,6 @@ class Tabs extends React.Component {
         if (tab.isSelected) {
           isHiddenSelected = true;
         }
-        if (index === tabData.length - 1 && onSelectAddButton) {
-          hiddenTabs.push(
-            <HiddenTab
-              id="tab-add-button"
-              data-focus-styles-enabled
-              key="tab-add-button"
-              label="Add"
-              index={tabData.length}
-              tabIds={moreIds}
-              onSelect={onSelectAddButton}
-              onFocus={this.handleHiddenFocus}
-              onBlur={this.handleHiddenBlur}
-              onChange={onChange}
-            />,
-          );
-        }
       }
     });
 
@@ -329,32 +305,6 @@ class Tabs extends React.Component {
       };
     }
     const commonTabsClassNames = cx('tab-container', theme.className);
-    let innerDiv;
-    if (this.showMoreButton) {
-      innerDiv = (
-        <MoreButton
-          isOpen={this.isOpen}
-          hiddenIndex={this.hiddenStartIndex}
-          isActive={isHiddenSelected}
-          zIndex={tabData.length - this.hiddenStartIndex}
-          onBlur={this.handleMoreButtonBlur}
-          onSelect={this.handleMoreButtonSelect}
-          refCallback={node => { this.moreButtonRef.current = node; }}
-          tabIds={moreIds}
-          variant={variant}
-        />
-      );
-    } else if (onSelectAddButton) {
-      innerDiv = (
-        <AddButton
-          aria-label="Add Tab"
-          index={tabData.length}
-          onSelect={onSelectAddButton}
-          tabIds={ids}
-          isSelected={false}
-        />
-      );
-    }
 
     return (
       <div
@@ -367,7 +317,19 @@ class Tabs extends React.Component {
         aria-owns={hiddenIds.join(' ')}
       >
         {visibleTabs}
-        {innerDiv}
+        {this.showMoreButton ? (
+          <MoreButton
+            isOpen={this.isOpen}
+            hiddenIndex={this.hiddenStartIndex}
+            isActive={isHiddenSelected}
+            zIndex={tabData.length - this.hiddenStartIndex}
+            onBlur={this.handleMoreButtonBlur}
+            onSelect={this.handleMoreButtonSelect}
+            refCallback={node => { this.moreButtonRef.current = node; }}
+            tabIds={ids}
+            variant={variant}
+          />
+        ) : undefined}
         <TabDropDown
           onFocus={this.handleHiddenFocus}
           onBlur={this.handleHiddenBlur}

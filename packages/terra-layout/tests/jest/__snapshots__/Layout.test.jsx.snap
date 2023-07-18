@@ -16,6 +16,7 @@ exports[`Layout Menu Disabled should render a Layout when huge 1`] = `
       Test Header
     </div>
   }
+  setFocusOnContainer={false}
 >
   <LayoutSlidePanel
     isAnimated={true}
@@ -30,6 +31,7 @@ exports[`Layout Menu Disabled should render a Layout when huge 1`] = `
       className="content-container"
       fill={true}
       header={false}
+      setFocusOnContainer={false}
     >
       <div
         layoutConfig={
@@ -63,6 +65,7 @@ exports[`Layout Menu Disabled should render a Layout when large 1`] = `
       Test Header
     </div>
   }
+  setFocusOnContainer={false}
 >
   <LayoutSlidePanel
     isAnimated={true}
@@ -77,6 +80,7 @@ exports[`Layout Menu Disabled should render a Layout when large 1`] = `
       className="content-container"
       fill={true}
       header={false}
+      setFocusOnContainer={false}
     >
       <div
         layoutConfig={
@@ -110,6 +114,7 @@ exports[`Layout Menu Disabled should render a Layout when medium 1`] = `
       Test Header
     </div>
   }
+  setFocusOnContainer={false}
 >
   <LayoutSlidePanel
     isAnimated={true}
@@ -124,6 +129,7 @@ exports[`Layout Menu Disabled should render a Layout when medium 1`] = `
       className="content-container"
       fill={true}
       header={false}
+      setFocusOnContainer={false}
     >
       <div
         layoutConfig={
@@ -145,6 +151,7 @@ exports[`Layout Menu Disabled should render a Layout when small 1`] = `
 <ContentContainer
   fill={true}
   header={false}
+  setFocusOnContainer={false}
 >
   <LayoutSlidePanel
     isAnimated={true}
@@ -171,6 +178,7 @@ exports[`Layout Menu Disabled should render a Layout when small 1`] = `
           Test Header
         </div>
       }
+      setFocusOnContainer={false}
     >
       <div
         layoutConfig={
@@ -192,6 +200,7 @@ exports[`Layout Menu Disabled should render a Layout when tiny 1`] = `
 <ContentContainer
   fill={true}
   header={false}
+  setFocusOnContainer={false}
 >
   <LayoutSlidePanel
     isAnimated={true}
@@ -218,6 +227,7 @@ exports[`Layout Menu Disabled should render a Layout when tiny 1`] = `
           Test Header
         </div>
       }
+      setFocusOnContainer={false}
     >
       <div
         layoutConfig={
@@ -251,6 +261,7 @@ exports[`Layout Menu Enabled should render a Layout when huge 1`] = `
       Test Header
     </div>
   }
+  setFocusOnContainer={false}
 >
   <LayoutSlidePanel
     isAnimated={true}
@@ -279,6 +290,7 @@ exports[`Layout Menu Enabled should render a Layout when huge 1`] = `
       className="content-container"
       fill={true}
       header={false}
+      setFocusOnContainer={false}
     >
       <div
         layoutConfig={
@@ -312,6 +324,7 @@ exports[`Layout Menu Enabled should render a Layout when large 1`] = `
       Test Header
     </div>
   }
+  setFocusOnContainer={false}
 >
   <LayoutSlidePanel
     isAnimated={true}
@@ -340,6 +353,7 @@ exports[`Layout Menu Enabled should render a Layout when large 1`] = `
       className="content-container"
       fill={true}
       header={false}
+      setFocusOnContainer={false}
     >
       <div
         layoutConfig={
@@ -373,6 +387,7 @@ exports[`Layout Menu Enabled should render a Layout when medium 1`] = `
       Test Header
     </div>
   }
+  setFocusOnContainer={false}
 >
   <LayoutSlidePanel
     isAnimated={true}
@@ -401,6 +416,7 @@ exports[`Layout Menu Enabled should render a Layout when medium 1`] = `
       className="content-container"
       fill={true}
       header={false}
+      setFocusOnContainer={false}
     >
       <div
         layoutConfig={
@@ -422,6 +438,7 @@ exports[`Layout Menu Enabled should render a Layout when small 1`] = `
 <ContentContainer
   fill={true}
   header={false}
+  setFocusOnContainer={false}
 >
   <LayoutSlidePanel
     isAnimated={true}
@@ -462,6 +479,7 @@ exports[`Layout Menu Enabled should render a Layout when small 1`] = `
           Test Header
         </div>
       }
+      setFocusOnContainer={false}
     >
       <div
         layoutConfig={
@@ -483,6 +501,7 @@ exports[`Layout Menu Enabled should render a Layout when tiny 1`] = `
 <ContentContainer
   fill={true}
   header={false}
+  setFocusOnContainer={false}
 >
   <LayoutSlidePanel
     isAnimated={true}
@@ -523,6 +542,7 @@ exports[`Layout Menu Enabled should render a Layout when tiny 1`] = `
           Test Header
         </div>
       }
+      setFocusOnContainer={false}
     >
       <div
         layoutConfig={
@@ -545,6 +565,7 @@ exports[`Layout should render a Layout with custom props 1`] = `
   data-test-attr="test-val"
   fill={true}
   header={false}
+  setFocusOnContainer={false}
 >
   <LayoutSlidePanel
     isAnimated={true}
@@ -559,6 +580,7 @@ exports[`Layout should render a Layout with custom props 1`] = `
       className="content-container"
       fill={true}
       header={null}
+      setFocusOnContainer={false}
     />
   </LayoutSlidePanel>
 </ContentContainer>
@@ -568,6 +590,7 @@ exports[`Layout should render a Layout without optional props 1`] = `
 <ContentContainer
   fill={true}
   header={false}
+  setFocusOnContainer={false}
 >
   <LayoutSlidePanel
     isAnimated={true}
@@ -582,6 +605,7 @@ exports[`Layout should render a Layout without optional props 1`] = `
       className="content-container"
       fill={true}
       header={null}
+      setFocusOnContainer={false}
     />
   </LayoutSlidePanel>
 </ContentContainer>
