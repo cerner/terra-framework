@@ -87,7 +87,7 @@ const CellSelection = () => {
       rows={[...rows]}
       rowHeaderIndex={rowHeaderIndex}
       rowHeight="50px"
-      columnWidth="100px"
+      defaultColumnWidth={100}
       columnHeaderHeight="100px"
       ariaLabel="Worklist Data Grid With Cell Selection"
       onCellSelect={onCellSelect}

@@ -17,10 +17,9 @@ exports[`ColumnHeaderCell render column header cell with ascending sort 1`] = `
 >
   <div
     className="header-container"
+    role="button"
   >
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
     <IconUp
@@ -29,6 +28,12 @@ exports[`ColumnHeaderCell render column header cell with ascending sort 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     />
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;
 
@@ -49,6 +54,7 @@ exports[`ColumnHeaderCell render column header cell with ascending sort and erro
 >
   <div
     className="header-container"
+    role="button"
   >
     <IconError
       a11yLabel="Terra.worklistDataGrid.columnError"
@@ -56,9 +62,7 @@ exports[`ColumnHeaderCell render column header cell with ascending sort and erro
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
     <IconUp
@@ -67,6 +71,12 @@ exports[`ColumnHeaderCell render column header cell with ascending sort and erro
       xmlns="http://www.w3.org/2000/svg"
     />
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;
 
@@ -87,10 +97,9 @@ exports[`ColumnHeaderCell render column header cell with descending sort 1`] = `
 >
   <div
     className="header-container"
+    role="button"
   >
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
     <IconDown
@@ -99,6 +108,12 @@ exports[`ColumnHeaderCell render column header cell with descending sort 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     />
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;
 
@@ -118,6 +133,7 @@ exports[`ColumnHeaderCell render column header cell with error 1`] = `
 >
   <div
     className="header-container"
+    role="button"
   >
     <IconError
       a11yLabel="Terra.worklistDataGrid.columnError"
@@ -125,12 +141,16 @@ exports[`ColumnHeaderCell render column header cell with error 1`] = `
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;
 
@@ -153,6 +173,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
 >
   <div
     className="header-container"
+    role="button"
   >
     <IconError
       a11yLabel="Terra.worklistDataGrid.columnError"
@@ -160,9 +181,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
     <IconUp
@@ -171,6 +190,12 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       xmlns="http://www.w3.org/2000/svg"
     />
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;
 
@@ -191,6 +216,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
 >
   <div
     className="header-container"
+    role="button"
   >
     <IconError
       a11yLabel="Terra.worklistDataGrid.columnError"
@@ -198,9 +224,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
     <IconUp
@@ -209,6 +233,12 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       xmlns="http://www.w3.org/2000/svg"
     />
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;
 
@@ -228,12 +258,17 @@ exports[`ColumnHeaderCell render default column header cell 1`] = `
 >
   <div
     className="header-container"
+    role="button"
   >
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;

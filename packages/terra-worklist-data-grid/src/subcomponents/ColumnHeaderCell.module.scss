@@ -7,6 +7,7 @@
     background-color: var(--terra-worklist-data-grid-column-header-background-color, #dedfe0);
     border: var(--terra-worklist-data-grid-column-header-border, 1px solid #000);
     color: var(--terra-worklist-data-grid-column-header-text-color);
+    position: relative;
 
     .header-container {
       align-items: center;

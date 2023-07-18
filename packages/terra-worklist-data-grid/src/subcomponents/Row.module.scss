@@ -3,7 +3,7 @@
 @import '../clinical-lowlight-theme/Row.module';
 
 :local {
-  .worklist-data-grid-row:nth-child(odd) {
+  .worklist-data-grid-row:nth-child(even) {
     background-color: var(--terra-worklist-data-grid-row-striped-background-color, #f0f0f0);
   }
 

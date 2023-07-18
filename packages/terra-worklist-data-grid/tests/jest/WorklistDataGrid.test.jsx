@@ -3,7 +3,7 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import WorklistDataGrid from '../../src/WorklistDataGrid';
-import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
+import ColumnHeader from '../../src/subcomponents/ColumnHeader';
 import Row from '../../src/subcomponents/Row';
 
 // Source data for tests
@@ -51,10 +51,8 @@ describe('WorklistDataGrid', () => {
     ).dive();
 
     // One row used for the header.
-    const columnHeader = wrapper.find('tr');
+    const columnHeader = wrapper.find(ColumnHeader);
     expect(columnHeader).toHaveLength(1);
-    // Within the header row expect 3 cells.
-    expect(columnHeader.find(ColumnHeaderCell)).toHaveLength(3);
 
     // The number of rows should match the given data.
     expect(wrapper.find(Row)).toHaveLength(dataFile.rows.length);

@@ -3,8 +3,9 @@
  */
 const ROW_SELECTION_COLUMN = {
   id: 'WorklistDataGrid-rowSelectionColumn',
-  width: '40px',
+  width: 40,
   isSelectable: false,
+  isResizable: false,
 };
 
 const FIRST_NON_HEADER_ROW = 1;

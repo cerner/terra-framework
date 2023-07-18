@@ -16,9 +16,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        {...column}
-        width="100px"
+        columnIndex={0}
+        width={100}
         headerHeight="150px"
+        {...column}
       />,
     ).dive();
 
@@ -31,9 +32,9 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
-    const headerContainer = columnHeader.find('.header-container');
+    const headerContainer = columnHeader.find('.header-container[role="button"]');
     expect(headerContainer.children()).toHaveLength(1);
-    expect(headerContainer.find('span[role="button"]').text().trim()).toBe('Vitals');
+    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -47,9 +48,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        {...column}
-        width="100px"
+        columnIndex={0}
+        width={100}
         headerHeight="150px"
+        {...column}
       />,
     ).dive();
 
@@ -63,8 +65,8 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
-    const headerContainer = columnHeader.find('.header-container');
-    expect(headerContainer.find('span[role="button"]').text().trim()).toBe('Vitals');
+    const headerContainer = columnHeader.find('.header-container[role="button"]');
+    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
 
     expect(wrapper).toMatchSnapshot();
@@ -79,9 +81,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        {...column}
-        width="100px"
+        columnIndex={0}
+        width={100}
         headerHeight="150px"
+        {...column}
       />,
     ).dive();
 
@@ -95,8 +98,8 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
-    const headerContainer = columnHeader.find('.header-container');
-    expect(headerContainer.find('span[role="button"]').text().trim()).toBe('Vitals');
+    const headerContainer = columnHeader.find('.header-container[role="button"]');
+    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconDown)).toHaveLength(1);
 
     expect(wrapper).toMatchSnapshot();
@@ -111,9 +114,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        {...column}
-        width="100px"
+        columnIndex={0}
+        width={100}
         headerHeight="150px"
+        {...column}
       />,
     ).dive();
 
@@ -127,8 +131,8 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
-    const headerContainer = columnHeader.find('.header-container');
-    expect(headerContainer.find('span[role="button"]').text().trim()).toBe('Vitals');
+    const headerContainer = columnHeader.find('.header-container[role="button"]');
+    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconError)).toHaveLength(1);
 
     expect(wrapper).toMatchSnapshot();
@@ -144,9 +148,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        {...column}
-        width="100px"
+        columnIndex={0}
+        width={100}
         headerHeight="150px"
+        {...column}
       />,
     ).dive();
 
@@ -160,8 +165,8 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
-    const headerContainer = columnHeader.find('.header-container');
-    expect(headerContainer.find('span[role="button"]').text().trim()).toBe('Vitals');
+    const headerContainer = columnHeader.find('.header-container[role="button"]');
+    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
 
@@ -180,9 +185,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        {...column}
-        width="100px"
+        columnIndex={0}
+        width={100}
         headerHeight="150px"
+        {...column}
         onColumnSelect={mockClick}
       />,
     ).dive();
@@ -198,8 +204,8 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
-    const headerContainer = columnHeader.find('.header-container');
-    expect(headerContainer.find('span[role="button"]').text().trim()).toBe('Vitals');
+    const headerContainer = columnHeader.find('.header-container[role="button"]');
+    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
 
@@ -219,9 +225,10 @@ describe('ColumnHeaderCell', () => {
 
     const wrapper = shallowWithIntl(
       <ColumnHeaderCell
-        {...column}
-        width="100px"
+        columnIndex={0}
+        width={100}
         headerHeight="150px"
+        {...column}
         onColumnSelect={onColumnSelect}
       />,
     ).dive();
@@ -237,8 +244,8 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
-    const headerContainer = columnHeader.find('.header-container');
-    expect(headerContainer.find('span[role="button"]').text().trim()).toBe('Vitals');
+    const headerContainer = columnHeader.find('.header-container[role="button"]');
+    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
 

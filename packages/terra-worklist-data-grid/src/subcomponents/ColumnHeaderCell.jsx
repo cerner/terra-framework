@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
@@ -8,9 +8,9 @@ import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
 import * as KeyCode from 'keycode-js';
 import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
-import '../_elementPolyfill';
 import styles from './ColumnHeaderCell.module.scss';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
+import ColumnResizeHandle from './ColumnResizeHandle';
 
 const cx = classNames.bind(styles);
 
@@ -33,21 +33,33 @@ const propTypes = {
    */
   hasError: PropTypes.bool,
   /**
+   * Number that specifies the minimum column width in pixels.
+   */
+  minimumWidth: PropTypes.number,
+  /**
+   * Number that specifies the maximum column width in pixels.
+   */
+  maximumWidth: PropTypes.number,
+  /**
    * Boolean value indicating whether or not the column header is selectable.
   */
   isSelectable: PropTypes.bool,
   /**
+   * Boolean value indicating whether or not the column header is resizable.
+   */
+  isResizable: PropTypes.bool,
+  /**
+   * Height of the parent table
+   */
+  tableHeight: PropTypes.number,
+  /**
    * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
    */
-  width: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
   /**
    * String that specifies the column height. Any valid CSS height value accepted.
   */
   headerHeight: PropTypes.string.isRequired,
-  /**
-   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
-   */
-  onColumnSelect: PropTypes.func,
   /**
    * The cell's row position in the grid. This is zero based.
    */
@@ -60,7 +72,14 @@ const propTypes = {
    * Boolean value to indicate if the cell is the tab stop on the grid. The grid will have only one tab stop.
    */
   isTabStop: PropTypes.bool,
-
+  /**
+   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
+   */
+  onColumnSelect: PropTypes.func,
+  /**
+   * Function that is called when the mouse down event is triggered on the column resize handle.
+   */
+  onResizeMouseDown: PropTypes.func,
   /**
    * @private
    * Object containing intl APIs
@@ -72,6 +91,7 @@ const defaultProps = {
   isTabStop: false,
   hasError: false,
   isSelectable: true,
+  isResizable: true,
 };
 
 const ColumnHeaderCell = (props) => {
@@ -81,14 +101,31 @@ const ColumnHeaderCell = (props) => {
     sortIndicator,
     hasError,
     isSelectable,
+    isResizable,
+    tableHeight,
     width,
+    minimumWidth,
+    maximumWidth,
     headerHeight,
     onColumnSelect,
     intl,
     rowIndex,
     columnIndex,
+    onResizeMouseDown,
     isTabStop,
   } = props;
+
+  const columnHeaderCell = useRef();
+
+  const columnHeaderCellRef = useCallback((node) => {
+    columnHeaderCell.current = node;
+  }, []);
+
+  const onResizeHandleMouseDown = useCallback((event) => {
+    if (onResizeMouseDown) {
+      onResizeMouseDown(event, columnIndex, columnHeaderCell.current.offsetWidth);
+    }
+  }, [columnIndex, onResizeMouseDown]);
 
   // Handle column header selection via the mouse click.
   const handleMouseDown = (event) => {
@@ -131,6 +168,7 @@ const ColumnHeaderCell = (props) => {
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
+      ref={(columnHeaderCellRef)}
       key={id}
       className={cx('column-header', theme.className, { selectable: isSelectable })}
       tabIndex={isTabStop ? 0 : -1}
@@ -139,13 +177,24 @@ const ColumnHeaderCell = (props) => {
       aria-sort={sortIndicator}
       onMouseDown={(isSelectable && onColumnSelect) ? handleMouseDown : undefined}
       onKeyDown={(isSelectable && onColumnSelect) ? handleKeyDown : undefined}
-      style={{ width, height: headerHeight }}
+      style={{ width: `${width}px`, height: headerHeight }}
     >
-      <div className={cx('header-container')}>
+      <div className={cx('header-container')} role={displayName && 'button'}>
         {errorIcon}
-        <span role={displayName && 'button'}>{displayName}</span>
+        <span>{displayName}</span>
         {sortIndicatorIcon}
       </div>
+      { isResizable && (
+      <ColumnResizeHandle
+        columnIndex={columnIndex}
+        columnText={displayName}
+        columnWidth={width}
+        height={tableHeight}
+        minimumWidth={minimumWidth}
+        maximumWidth={maximumWidth}
+        onResizeMouseDown={onResizeHandleMouseDown}
+      />
+      )}
     </th>
   );
 };

@@ -1,18 +1,19 @@
+/* eslint-disable react/forbid-dom-props */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, {
-  useContext, useRef, useState, useEffect,
+  useState, useContext, useRef, useCallback, useEffect,
 } from 'react';
-import './_elementPolyfill';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import * as KeyCode from 'keycode-js';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import ColumnHeader from './subcomponents/ColumnHeader';
+import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import styles from './WorklistDataGrid.module.scss';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
-import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import Row from './subcomponents/Row';
-import ColumnHeaderCell from './subcomponents/ColumnHeaderCell';
 
 const cx = classNames.bind(styles);
 
@@ -39,10 +40,9 @@ const propTypes = {
    */
   rows: PropTypes.arrayOf(WorklistDataGridPropTypes.rowShape),
   /**
-   * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
-   * To override the default value, provide width for the column that needs to be overridden.
+   * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
    */
-  columnWidth: PropTypes.string,
+  defaultColumnWidth: PropTypes.number,
   /**
    * String that specifies the column height. Any valid CSS height value is accepted.
    */
@@ -55,6 +55,10 @@ const propTypes = {
    * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the grid.
    */
   rowHeaderIndex: PropTypes.number,
+  /**
+   * Function that is called when a resizable column is resized. Parameters: `function(columnId, requestedWidth)`
+   */
+  onColumnResize: PropTypes.func,
   /**
    * Callback function that is called when a selectable cell is selected. Parameters: `function(rowId, columnId)`.
    */
@@ -93,7 +97,7 @@ const propTypes = {
 
 const defaultProps = {
   rowHeaderIndex: 0,
-  columnWidth: '200px',
+  defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
   rowHeight: '2.5rem',
 };
@@ -105,6 +109,8 @@ function WorklistDataGrid(props) {
     ariaLabel,
     columns,
     rows,
+    onColumnResize,
+    defaultColumnWidth,
     columnHeaderHeight,
     rowHeight,
     onColumnSelect,
@@ -118,6 +124,30 @@ function WorklistDataGrid(props) {
     rowHeaderIndex,
   } = props;
 
+  // Default column size constraints
+  const defaultColumnMinimumWidth = 60;
+  const defaultColumnMaximumWidth = 300;
+
+  // Initialize column width properties
+  const initializeColumn = (column) => {
+    const newColumn = { ...column };
+    newColumn.width = column.width || defaultColumnWidth;
+    newColumn.minimumWidth = column.minimumWidth || defaultColumnMinimumWidth;
+    newColumn.maximumWidth = column.maximumWidth || defaultColumnMaximumWidth;
+
+    return newColumn;
+  };
+
+  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(columns);
+  const [dataGridColumns, setDataGridColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
+
+  // Manage column resize
+  const [tableHeight, setTableHeight] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const activeColumnPageX = useRef(0);
+  const activeColumnWidth = useRef(200);
+  const tableWidth = useRef(0);
+
   const grid = useRef();
   const focusedRow = useRef(0);
   const focusedCol = useRef(0);
@@ -125,13 +155,19 @@ function WorklistDataGrid(props) {
 
   const [currentSelectedCell, setCurrentSelectedCell] = useState(null);
   const [, setRowSelectionModeMessage] = useState();
-  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(columns);
 
   const theme = useContext(ThemeContext);
 
   const isRowSelectionCell = (columnIndex) => (
     hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
   );
+
+  const gridRef = useCallback((node) => {
+    grid.current = node;
+
+    // Update table height state variable
+    setTableHeight(grid.current.offsetHeight - 1);
+  }, []);
 
   const isCellSelected = (rowId, columnId) => (currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId);
 
@@ -181,8 +217,15 @@ function WorklistDataGrid(props) {
     // Since the row selection mode has changed, the row selection mode needs to be updated.
     ariaLiveMsg.current = intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' });
     setRowSelectionModeMessage(ariaLiveMsg.current);
+
+    setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
+
+  useEffect(() => {
+    setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [columns]);
 
   const isAnyRowSelected = () => (
     rows.find(r => r.isSelected === true)
@@ -359,32 +402,43 @@ function WorklistDataGrid(props) {
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
 
-  const buildColumn = (column, columnIndex) => (
-    <ColumnHeaderCell
-      key={column.id}
-      id={column.id}
-      displayName={column.displayName}
-      sortIndicator={column.sortIndicator}
-      hasError={column.hasError}
-      isSelectable={column.isSelectable}
-      width={column.width || props.columnWidth}
-      headerHeight={columnHeaderHeight}
-      onColumnSelect={handleColumnSelect}
-      rowIndex={0}
-      columnIndex={columnIndex}
-      isTabStop={focusedRow.current === 0 && focusedCol.current === columnIndex}
-    />
-  );
+  const onResizeMouseDown = useCallback((event, index, resizeColumnWidth) => {
+    // Store current table and column values for resize calculations
+    tableWidth.current = grid.current.offsetWidth;
+    activeColumnPageX.current = event.pageX;
+    activeColumnWidth.current = resizeColumnWidth;
 
-  const buildColumns = (allColumns) => {
-    if (allColumns?.length > 0) {
-      return (
-        <tr height={props.columnHeaderHeight}>
-          {allColumns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
-        </tr>
-      );
+    // Set the active index to the selected column
+    setActiveIndex(index);
+  }, []);
+
+  const onMouseMove = (event) => {
+    if (activeIndex == null) {
+      return;
     }
-    return undefined;
+
+    // Ensure the new column width falls within the range of the minimum and maximum values
+    const diffX = event.pageX - activeColumnPageX.current;
+    const { minimumWidth, maximumWidth } = dataGridColumns[activeIndex];
+    const newColumnWidth = Math.min(Math.max(activeColumnWidth.current + diffX, minimumWidth), maximumWidth);
+
+    // Update the width for the column in the state variable
+    const newGridColumns = [...dataGridColumns];
+    newGridColumns[activeIndex].width = newColumnWidth;
+    setDataGridColumns(newGridColumns);
+
+    // Update the column and table width
+    grid.current.style.width = `${tableWidth + (newColumnWidth - activeColumnWidth.current)}px`;
+  };
+
+  const onMouseUp = () => {
+    // Notify consumers of the new column width
+    if (onColumnResize) {
+      onColumnResize(dataGridColumns[activeIndex].id, dataGridColumns[activeIndex].width);
+    }
+
+    // Remove active index
+    setActiveIndex(null);
   };
 
   const buildRow = (row, rowIndex) => (
@@ -412,20 +466,27 @@ function WorklistDataGrid(props) {
     return rowData;
   };
 
-  const gridClassNames = cx('worklist-data-grid', theme.className);
   return (
     <div className={cx('worklist-data-grid-container')}>
       <table
-        ref={grid}
+        ref={gridRef}
         id={id}
         role="grid"
         aria-labelledby={ariaLabelledby}
         aria-label={ariaLabel}
-        className={gridClassNames}
+        className={cx('worklist-data-grid', theme.className)}
         onKeyDown={handleKeyDown}
+        {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
+        <ColumnHeader
+          columns={dataGridColumns}
+          headerHeight={columnHeaderHeight}
+          tableHeight={tableHeight}
+          tabStopColumnIndex={focusedRow.current === 0 ? focusedCol.current : undefined}
+          onColumnSelect={handleColumnSelect}
+          onResizeMouseDown={onResizeMouseDown}
+        />
         <tbody>
-          {buildColumns(displayedColumns)}
           {buildRows(rows)}
         </tbody>
       </table>
