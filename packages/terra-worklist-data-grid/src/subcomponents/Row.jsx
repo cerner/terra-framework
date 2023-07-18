@@ -43,7 +43,7 @@ const propTypes = {
    */
   hasRowSelection: PropTypes.bool,
   /**
-   * Callback function that will be called when a row is selected. Parameters: `onRowSelect(rowId)`
+   * Callback function that will be called when a row is selected. Parameters: `function(rowId)`
    */
   onRowSelect: PropTypes.func,
   /**

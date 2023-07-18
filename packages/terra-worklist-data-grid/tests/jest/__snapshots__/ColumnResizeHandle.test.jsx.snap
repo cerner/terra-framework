@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ColumnResizeHandle render a default column resize handle 1`] = `
+exports[`ColumnResizeHandle renders a default column resize handle 1`] = `
 <InjectIntl(ColumnResizeHandle)
   columnIndex={0}
   columnText="Vitals"

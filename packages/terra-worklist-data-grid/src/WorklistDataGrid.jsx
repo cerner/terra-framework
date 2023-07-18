@@ -197,6 +197,7 @@ function WorklistDataGrid(props) {
     }
   };
 
+  // useEffect for row selection
   useEffect(() => {
     // When row selection mode is turned on or off a row selection column is added or removed.
     // Therefore, shift the focused cell to the left or right.
@@ -222,6 +223,7 @@ function WorklistDataGrid(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
 
+    // useEffect for row displayed columns
   useEffect(() => {
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -333,11 +335,13 @@ function WorklistDataGrid(props) {
         break;
       case KeyCode.KEY_LEFT:
         if (event.metaKey) {
-          // Cmd + Left on Mac is equivalent to the Home Key in Windows
+          // Mac: Ctrl + Cmd + Left
+          // Win: Ctrl + Home
           nextCol = 0;
 
           if (event.ctrlKey) {
-            // Ctrl + Cmd + Left on Mac is equivalent to the Ctrl + Home in Windows
+            // Mac: Ctrl + Cmd + Right
+            // Windows: Ctrl + End
             nextRow = WorklistDataGridUtils.FIRST_NON_HEADER_ROW;
           }
         } else {
@@ -347,11 +351,13 @@ function WorklistDataGrid(props) {
         break;
       case KeyCode.KEY_RIGHT:
         if (event.metaKey) {
-          // Cmd + Right on Mac is equivalent to the End key in Windows
+          // Mac: Cmd + Right
+          // Win: End
           nextCol = displayedColumns.length - 1;
 
           if (event.ctrlKey) {
-            // Ctrl + Cmd + Right on Mac is equivalent to the Ctrl + End in Windows
+            // Mac: Ctrl + Cmd + Right
+            // Windows: Ctrl + End
             nextRow = rows.length;
           }
         } else {

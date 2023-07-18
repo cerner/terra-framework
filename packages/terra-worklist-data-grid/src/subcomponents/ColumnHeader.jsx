@@ -21,7 +21,7 @@ const propTypes = {
    */
   tabStopColumnIndex: PropTypes.number,
   /**
-   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`.
+   * Function that is called when a selectable header cell is selected. Parameters: `function(columnId)`.
    */
   onColumnSelect: PropTypes.func,
   /**
