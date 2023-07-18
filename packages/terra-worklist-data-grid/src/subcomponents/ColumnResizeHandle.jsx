@@ -31,7 +31,7 @@ const propTypes = {
    */
   maximumWidth: PropTypes.number.isRequired,
   /**
-   * Function that is called when onMouseDown event is triggered for the resize handle
+   * Function that is called when onMouseDown event is triggered for the resize handle.
    */
   onResizeMouseDown: PropTypes.func.isRequired,
   /**

@@ -56,31 +56,37 @@ const propTypes = {
    */
   rowHeaderIndex: PropTypes.number,
   /**
-   * Function that is called when a resizable column is resized. Parameters: `function(columnId, requestedWidth)`
+   * Function that is called when a resizable column is resized. Parameters:
+   * @param {string} columnId columnId
+   * @param {string} requestedWidth requestedWidth
    */
   onColumnResize: PropTypes.func,
   /**
-   * Callback function that is called when a selectable cell is selected. Parameters: `function(rowId, columnId)`.
+   * Callback function that is called when a selectable cell is selected. Parameters:
+   * @param {string} rowId rowId
+   * @param {string} columnId columnId
    */
   onCellSelect: PropTypes.func,
   /**
-   * Callback function that is called when a row is selected. Parameters: `function(rowId)`
+   * Callback function that is called when a row is selected. Parameters:
+   * @param {string} rowId rowId
    */
   onRowSelect: PropTypes.func,
   /**
-   * Callback function that is called when all rows are selected. Parameters: `function()`.
+   * Callback function that is called when all rows are selected. Parameters: none.
    */
   onRowSelectAll: PropTypes.func,
   /**
-   * Callback function that is called when a selectable column is selected. Parameters: `function(columnId)`
+   * Callback function that is called when a selectable column is selected. Parameters:
+   *  @param {string} columnId columnId
    */
   onColumnSelect: PropTypes.func,
   /**
-   * Callback function that is called when all selected rows need to be unselected. Parameters: `function()`
+   * Callback function that is called when all selected rows need to be unselected. Parameters: none.
    */
   onClearSelectedRows: PropTypes.func,
   /**
-   * Callback function that is called when no row is selected and the row selection mode needs to be disabled. Parameters: `function()`
+   * Callback function that is called when no row is selected and the row selection mode needs to be disabled. Parameters: none.
    */
   onDisableSelectableRows: PropTypes.func,
   /**

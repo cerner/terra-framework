@@ -43,7 +43,8 @@ const propTypes = {
    */
   hasRowSelection: PropTypes.bool,
   /**
-   * Callback function that will be called when a row is selected. Parameters: `function(rowId)`
+   * Callback function that will be called when a row is selected. Parameters:
+   * @param {string} rowId rowId
    */
   onRowSelect: PropTypes.func,
   /**
@@ -52,6 +53,8 @@ const propTypes = {
   displayedColumns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
   /**
    * Callback function that will be called when a cell in the row is selected.
+   * @param {string} rowId rowId
+   * @param {string} columnId columnId
    */
   onCellSelect: PropTypes.func,
   /**
@@ -66,7 +69,6 @@ const propTypes = {
    * Column index of the column in that has focus.
    */
   tabStopColumnIndex: PropTypes.number,
-
 };
 
 const defaultProps = {
