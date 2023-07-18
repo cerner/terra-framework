@@ -40,10 +40,7 @@ const IconOnlyTabs = (props) => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs
-        responsiveTo={props.responsiveTo}
-        onSelectAddButton={() => alert('hi')}
-      >
+      <Tabs responsiveTo={props.responsiveTo}>
         {searchTab}
         {briefcaseTab}
         {bookmarkTab}

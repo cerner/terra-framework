@@ -56,8 +56,7 @@ const AddButton = ({
   const attributes = {};
   const theme = React.useContext(ThemeContext);
   const tabClassNames = cx(
-    'tab',
-    { 'is-icon-only': true },
+    'addButton',
     theme.className,
   );
 
@@ -89,10 +88,8 @@ const AddButton = ({
       onKeyDown={event => keyDown(event, index, tabIds)}
       aria-selected={isSelected}
     >
-      <div className={cx('inner')}>
-        <div className={cx('icon')}>
-          <IconAdd a11yLabel="add tab" />
-        </div>
+      <div className={cx('addicon')}>
+        <IconAdd a11yLabel="add tab" />
       </div>
     </div>
   );
@@ -102,4 +99,3 @@ const AddButton = ({
 AddButton.propTypes = propTypes;
 
 export default injectIntl(AddButton);
-
