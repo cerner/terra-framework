@@ -40,33 +40,9 @@ exports[`Tabs correctly applies the theme context className 1`] = `
     tabFill={false}
     variant="modular-left-aligned"
   >
-    <ContentContainer
-      className="tabs-container structural orion-fusion-theme"
-      fill={false}
-      header={
-        <ResponsiveElement
-          onChange={[Function]}
-          responsiveTo="parent"
-        >
-          <CollapsedTabs
-            activeIndex={0}
-            activeKey="default"
-            onTruncationChange={[Function]}
-          >
-            <TabPane
-              className="is-active"
-              index={0}
-              isActive={true}
-              isDisabled={false}
-              isIconOnly={false}
-              label="Default"
-              onClick={[Function]}
-              showIcon={false}
-            />
-          </CollapsedTabs>
-        </ResponsiveElement>
-      }
-      setFocusOnContainer={false}
+    <CommonTabs
+      activeItemKey="default"
+      onRequestActivate={[Function]}
       variant="modular-left-aligned"
     >
       <div
@@ -216,14 +192,16 @@ exports[`Tabs correctly applies the theme context className 1`] = `
           className="body"
           role="none"
         >
-          <Scroll
-            className="normalizer orion-fusion-theme light"
-            tabIndex="-1"
-          >
-            <div
-              className="scroll normalizer orion-fusion-theme light"
-              tabIndex="-1"
-            >
+          <CommonTabItem
+            associatedPanelId="terra-common-tabs-default-panel"
+            id="terra-common-tabs-default"
+            isActive={true}
+            isDisabled={false}
+            isIconOnly={false}
+            itemKey="default"
+            key="default/.0"
+            label="Default"
+            portalElement={
               <div
                 role="none"
                 style="position: relative; height: 100%; width: 100%;"
@@ -356,179 +334,45 @@ exports[`Tabs correctly applies the theme context className 1`] = `
 </ThemeContextProvider>
 `;
 
-exports[`Tabs Responsiveness should render tabs that are responsive to the parent node viewport by default 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsibleTabs
-        activeIndex={0}
-        activeKey="default"
-        onChange={[Function]}
-        onTruncationChange={[Function]}
-        variant="structural"
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsibleTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
+exports[`Tabs should render a controlled component when onChange and activeKey are set 1`] = `
+<div
+  className="structural"
+  role="none"
 >
   <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
-`;
-
-exports[`Tabs Responsiveness should render tabs that are responsive to the window viewport 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="window"
-    >
-      <CollapsibleTabs
-        activeIndex={0}
-        activeKey="default"
-        onChange={[Function]}
-        onTruncationChange={[Function]}
-        variant="structural"
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsibleTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
->
+    aria-hidden={true}
+    className="body-shadow-container"
+  >
+    <div
+      className="body-shadow"
+    />
+  </div>
   <div
     className="tab-header"
     role="none"
   >
     <Tabs
       onChange={[Function]}
-      onTruncationChange={[Function]}
-      variant="structural"
-    >
-      <TabPane
-        className="is-active"
-        index={0}
-        isActive={true}
-        isDisabled={false}
-        isIconOnly={false}
-        label="Default"
-        onClick={[Function]}
-        showIcon={false}
-      />
-    </CollapsibleTabs>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
->
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "terra-common-tabs-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "terra-common-tabs-default",
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+          },
+        ]
+      }
+      variant="framework"
+    />
+  </div>
   <div
     className="body"
     role="none"
@@ -542,237 +386,52 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the windo
       itemKey="default"
       key="default/.0"
       label="Default"
-      portalElement={
-        <div
-          role="none"
-          style="position: relative; height: 100%; width: 100%;"
-        />
-      </CollapsibleTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
-  variant="modular-centered"
->
-  <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
+      portalElement={null}
+      render={[Function]}
+      variant="framework"
+    />
+  </div>
+</div>
 `;
 
-exports[`Tabs Variants should render modular-left-aligned tabs 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
-  variant="modular-left-aligned"
+exports[`Tabs should render a default component 1`] = `
+<div
+  className="structural"
+  role="none"
 >
   <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
-`;
-
-exports[`Tabs Variants should render structural tabs 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
-  variant="structural"
->
+    aria-hidden={true}
+    className="body-shadow-container"
+  >
+    <div
+      className="body-shadow"
+    />
+  </div>
   <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
-`;
-
-exports[`Tabs should render a controlled component when onChange and activeKey are set 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsibleTabs
-        activeIndex={0}
-        activeKey="default"
-        onChange={[Function]}
-        onTruncationChange={[Function]}
-        variant="structural"
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsibleTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
->
+    className="tab-header"
+    role="none"
+  >
+    <Tabs
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "terra-common-tabs-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "terra-common-tabs-default",
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+          },
+        ]
+      }
+      variant="framework"
+    />
+  </div>
   <div
     className="body"
     role="none"
@@ -786,106 +445,18 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
       itemKey="default"
       key="default/.0"
       label="Default"
-      portalElement={
-        <div
-          role="none"
-          style="position: relative; height: 100%; width: 100%;"
-        />
-      </CollapsibleTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
->
-  <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
+      portalElement={null}
+      render={[Function]}
+      variant="framework"
+    />
+  </div>
+</div>
 `;
 
 exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active customClass"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
-  id="application-id"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
+<div
+  className="structural"
+  role="none"
 >
   <div
     aria-hidden={true}
@@ -942,61 +513,9 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
 `;
 
 exports[`Tabs should render an uncontrolled component when defaultActiveKey is set 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  defaultKey="default"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
+<div
+  className="structural"
+  role="none"
 >
   <div
     aria-hidden={true}
@@ -1082,7 +601,8 @@ exports[`Tabs should render with content filled when indicated 1`] = `
       "timeZone": null,
     }
   }
-  setFocusOnContainer={false}
+  onRequestActivate={[Function]}
+  variant="framework"
 >
   <CommonTabItem
     isDisabled={false}
@@ -1124,8 +644,8 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
       "timeZone": null,
     }
   }
-  setFocusOnContainer={false}
-  tabsFill={true}
+  onRequestActivate={[Function]}
+  variant="framework"
 >
   <CommonTabItem
     isDisabled={false}
@@ -1168,7 +688,8 @@ exports[`Tabs should set custom props 1`] = `
       "timeZone": null,
     }
   }
-  setFocusOnContainer={false}
+  onRequestActivate={[Function]}
+  variant="framework"
 >
   <CommonTabItem
     isDisabled={false}
@@ -1181,60 +702,9 @@ exports[`Tabs should set custom props 1`] = `
 `;
 
 exports[`Tabs should set custom props for child Tab Pane 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active customClass"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
+<div
+  className="structural"
+  role="none"
 >
   <div
     aria-hidden={true}
