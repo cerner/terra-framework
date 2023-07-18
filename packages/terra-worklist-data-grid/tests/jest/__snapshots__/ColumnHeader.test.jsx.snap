@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ColumnHeader render a column header with an active resize column 1`] = `
+exports[`ColumnHeader renders a column header with an active resize column 1`] = `
 <thead>
   <tr
     className="column-header-row"
@@ -30,7 +30,7 @@ exports[`ColumnHeader render a column header with an active resize column 1`] = 
 </thead>
 `;
 
-exports[`ColumnHeader render a column header with callbacks 1`] = `
+exports[`ColumnHeader renders a column header with callbacks 1`] = `
 <thead>
   <tr
     className="column-header-row"
@@ -64,7 +64,7 @@ exports[`ColumnHeader render a column header with callbacks 1`] = `
 </thead>
 `;
 
-exports[`ColumnHeader render a column header with tableHeight prop 1`] = `
+exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
 <thead>
   <tr
     className="column-header-row"
@@ -94,7 +94,7 @@ exports[`ColumnHeader render a column header with tableHeight prop 1`] = `
 </thead>
 `;
 
-exports[`ColumnHeader render a default column header 1`] = `
+exports[`ColumnHeader renders a default column header 1`] = `
 <thead>
   <tr
     className="column-header-row"
