@@ -19,69 +19,85 @@ const propTypes = {
    * Required string representing a unique identifier for the column header cell.
    */
   id: PropTypes.string.isRequired,
+
   /**
    * String of text to render within the column header cell.
    */
   displayName: PropTypes.string,
+
   /**
    * A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
    * If a `component` value is specified, `sortIndicator` will be ignored. One of `ascending`, `descending`.
    */
   sortIndicator: PropTypes.oneOf(Object.values(WorklistDataGridPropTypes.SortIndicators)),
+
   /**
    * Boolean value indicating whether or not the column has an error in the data.
    */
   hasError: PropTypes.bool,
+
   /**
    * Number that specifies the minimum column width in pixels.
    */
   minimumWidth: PropTypes.number,
+
   /**
    * Number that specifies the maximum column width in pixels.
    */
   maximumWidth: PropTypes.number,
+
   /**
    * Boolean value indicating whether or not the column header is selectable.
   */
   isSelectable: PropTypes.bool,
+
   /**
    * Boolean value indicating whether or not the column header is resizable.
    */
   isResizable: PropTypes.bool,
+
   /**
-   * Height of the parent table
+   * Height of the parent table.
    */
   tableHeight: PropTypes.number,
+
   /**
    * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
    */
   width: PropTypes.number.isRequired,
+
   /**
    * String that specifies the column height. Any valid CSS height value accepted.
   */
   headerHeight: PropTypes.string.isRequired,
+
   /**
    * The cell's row position in the grid. This is zero based.
    */
   rowIndex: PropTypes.number,
+
   /**
    * The cell's column position in the grid. This is zero based.
    */
   columnIndex: PropTypes.number,
+
   /**
    * Boolean value to indicate if the cell is the tab stop on the grid. The grid will have only one tab stop.
    */
   isTabStop: PropTypes.bool,
+
   /**
    * Function that is called when a selectable header cell is selected. Parameters:
    * @param {string} rowId rowId
    * @param {string} columnId columnId
    */
   onColumnSelect: PropTypes.func,
+
   /**
    * Function that is called when the mouse down event is triggered on the column resize handle.
    */
   onResizeMouseDown: PropTypes.func,
+
   /**
    * @private
    * Object containing intl APIs

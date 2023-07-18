@@ -16,55 +16,67 @@ const propTypes = {
    * An identifier to uniquely identify the row within the grid.
    */
   id: PropTypes.string.isRequired,
+
   /**
    * The row's position in the Grid. This is zero based.
    */
   rowIndex: PropTypes.number,
+
   /**
    * String that specifies height of the row. Any valid CSS width value is accepted.
   */
   height: PropTypes.string,
+
   /**
    * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
    */
   cells: PropTypes.arrayOf(cellShape),
+
   /**
    * A boolean indicating whether or not the row should render as selected.
    */
   isSelected: PropTypes.bool,
+
   /**
    * A string identifier used to describe the row contents. This value will be used to construct additional labels
    * for internal controls (e.g. row selection cells).
    */
   ariaLabel: PropTypes.string,
+
   /**
    * Boolean indicating whether or not the DataGrid allows a row to be selected. If true, an additional
    * column containing a checkbox is rendered to indicate when when the row is selected.
    */
   hasRowSelection: PropTypes.bool,
+
   /**
    * Callback function that will be called when a row is selected. Parameters:
    * @param {string} rowId rowId
    */
   onRowSelect: PropTypes.func,
+
   /**
    * All columns currently displayed.
    */
   displayedColumns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
+
   /**
    * Callback function that will be called when a cell in the row is selected.
    * @param {string} rowId rowId
    * @param {string} columnId columnId
    */
   onCellSelect: PropTypes.func,
+
   /**
    * A zero-based index indicating which column represents the row header.
    */
   rowHeaderIndex: PropTypes.number,
+
   /**
    * Id of the column in the row that is selected.
    */
   selectedCellColumnId: PropTypes.string,
+
   /**
    * Column index of the column in that has focus.
    */

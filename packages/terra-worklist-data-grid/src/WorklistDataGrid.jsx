@@ -22,78 +22,95 @@ const propTypes = {
    * String that identifies the element (or elements) that labels the grid.
    */
   ariaLabelledBy: PropTypes.string,
+
   /**
    * String that labels the grid for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
    */
   ariaLabel: PropTypes.string,
+
   /**
    * String that will be used to identify the Grid. If multiple grids are on the same page, each grid should have
    * a unique id.
    */
   id: PropTypes.string.isRequired,
+
   /**
    * Data for columns. Columns will be presented in the order given.
    */
   columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
+
   /**
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
   rows: PropTypes.arrayOf(WorklistDataGridPropTypes.rowShape),
+
   /**
    * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
    */
   defaultColumnWidth: PropTypes.number,
+
   /**
    * String that specifies the column height. Any valid CSS height value is accepted.
    */
   columnHeaderHeight: PropTypes.string,
+
   /**
    * String that specifies the height for the rows in the grid. Any valid CSS value is accepted.
    */
   rowHeight: PropTypes.string,
+
   /**
    * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the grid.
    */
   rowHeaderIndex: PropTypes.number,
+
   /**
    * Function that is called when a resizable column is resized. Parameters:
    * @param {string} columnId columnId
    * @param {string} requestedWidth requestedWidth
    */
   onColumnResize: PropTypes.func,
+
   /**
    * Callback function that is called when a selectable cell is selected. Parameters:
    * @param {string} rowId rowId
    * @param {string} columnId columnId
    */
   onCellSelect: PropTypes.func,
+
   /**
    * Callback function that is called when a row is selected. Parameters:
    * @param {string} rowId rowId
    */
   onRowSelect: PropTypes.func,
+
   /**
    * Callback function that is called when all rows are selected. Parameters: none.
    */
   onRowSelectAll: PropTypes.func,
+
   /**
    * Callback function that is called when a selectable column is selected. Parameters:
    *  @param {string} columnId columnId
    */
   onColumnSelect: PropTypes.func,
+
   /**
    * Callback function that is called when all selected rows need to be unselected. Parameters: none.
    */
   onClearSelectedRows: PropTypes.func,
+
   /**
    * Callback function that is called when no row is selected and the row selection mode needs to be disabled. Parameters: none.
    */
   onDisableSelectableRows: PropTypes.func,
+
   /**
    * Boolean indicating whether or not the DataGrid should allow entire rows to be selected. An additional column will be
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
+
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.

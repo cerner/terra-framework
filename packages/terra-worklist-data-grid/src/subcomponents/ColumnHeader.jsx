@@ -8,23 +8,28 @@ const propTypes = {
    * Data for columns. By default, columns will be presented in the order given.
    */
   columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape).isRequired,
+
   /**
    * String that specifies the column header height. Any valid CSS height value accepted.
    */
   headerHeight: PropTypes.string.isRequired,
+
   /**
    * Number that specifies the height of the data grid in pixels.
    */
   tableHeight: PropTypes.number,
+
   /**
    * Column index for cell that can receive tab focus.
    */
   tabStopColumnIndex: PropTypes.number,
+
   /**
    * Function that is called when a selectable header cell is selected. Parameters:
    * @param {string} columnId columnId
    */
   onColumnSelect: PropTypes.func,
+  
   /**
    * Function that is called when the mouse down event is triggered on the column resize handle.
    */

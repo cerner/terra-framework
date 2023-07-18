@@ -14,26 +14,32 @@ const propTypes = {
    * Text of the column associated with the divider.
    */
   columnText: PropTypes.string.isRequired,
+
   /**
    * Number that specifies the Width of the associated column in pixels.
    */
   columnWidth: PropTypes.number.isRequired,
+
   /**
    * Number that specifies the height of the resize handle in pixels.
    */
   height: PropTypes.number.isRequired,
+
   /**
    * Number that specifies the minimum column width in pixels.
    */
   minimumWidth: PropTypes.number.isRequired,
+
   /**
    * Number that specifies the maximum column width in pixels.
    */
   maximumWidth: PropTypes.number.isRequired,
+
   /**
    * Function that is called when onMouseDown event is triggered for the resize handle.
    */
   onResizeMouseDown: PropTypes.func.isRequired,
+
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
