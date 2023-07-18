@@ -76,7 +76,7 @@ const propTypes = {
    * String that specifies the height of the cell. Any valid CSS value is accepted.
    */
   height: PropTypes.string,
-  
+
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.

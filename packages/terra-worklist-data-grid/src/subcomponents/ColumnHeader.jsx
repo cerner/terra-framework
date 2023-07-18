@@ -29,7 +29,7 @@ const propTypes = {
    * @param {string} columnId columnId
    */
   onColumnSelect: PropTypes.func,
-  
+
   /**
    * Function that is called when the mouse down event is triggered on the column resize handle.
    */
