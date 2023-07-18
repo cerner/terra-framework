@@ -21,9 +21,9 @@ const propTypes = {
   /**
    * String that identifies the element (or elements) that labels the grid.
    */
-  ariaLabelledby: PropTypes.string,
+  ariaLabelledBy: PropTypes.string,
   /**
-   * String that labels the grid for accessibility. If ariaLabelledby is specified, ariaLabel will not be used.
+   * String that labels the grid for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
    */
   ariaLabel: PropTypes.string,
   /**
@@ -105,7 +105,7 @@ const defaultProps = {
 function WorklistDataGrid(props) {
   const {
     id,
-    ariaLabelledby,
+    ariaLabelledBy,
     ariaLabel,
     columns,
     rows,
@@ -478,7 +478,7 @@ function WorklistDataGrid(props) {
         ref={gridRef}
         id={id}
         role="grid"
-        aria-labelledby={ariaLabelledby}
+        aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         className={cx('worklist-data-grid', theme.className)}
         onKeyDown={handleKeyDown}
