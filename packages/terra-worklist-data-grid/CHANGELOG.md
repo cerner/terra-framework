@@ -11,7 +11,7 @@
   * Added support for cell selection.
   * Added ability to resize columns via mouse.
   * Added `defaultColumnWidth` prop to set the default column width if it is not set per column.
-  * Added `onColumnResize` prop to receive a callback function for notifying consumers of a column resize.
+  * Added `onColumnResize` prop for notifying consumers of a column resize.
 
 * Changed
   * Updated data grid to honor the column and row widths specified by consumers.
