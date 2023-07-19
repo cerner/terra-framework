@@ -59,7 +59,8 @@ const PinnedColumns = () => {
     <React.Fragment>
       <WorklistDataGrid
         id="default-terra-worklist-data-grid"
-        columns={cols}
+        pinnedColumns={cols.slice(0, 3)}
+        overflowColumns={cols.slice(3)}
         rows={rows}
         rowHeaderIndex={rowHeaderIndex}
         ariaLabel="Worklist Data Grid"

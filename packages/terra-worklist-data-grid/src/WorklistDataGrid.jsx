@@ -37,14 +37,21 @@ const propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
-   * Data for columns. Columns will be presented in the order given.
-   */
-  columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
-
-  /**
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
   rows: PropTypes.arrayOf(WorklistDataGridPropTypes.rowShape),
+
+  /**
+   * Data for pinned columns. Pinned columns are the stickied leftmost columns of the grid.
+   * Columns will be presented in the order given.
+   */
+  pinnedColumns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
+
+  /**
+   * Data for overflow columns. Overflow columns are rendered in the Worklist Data Grid's horizontal overflow.
+   * Columns will be presented in the order given.
+   */
+  overflowColumns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
 
   /**
    * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
@@ -125,6 +132,8 @@ const defaultProps = {
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
   rowHeight: '2.5rem',
+  pinnedColumns: [],
+  overflowColumns: []
 };
 
 function WorklistDataGrid(props) {
@@ -132,8 +141,9 @@ function WorklistDataGrid(props) {
     id,
     ariaLabelledBy,
     ariaLabel,
-    columns,
     rows,
+    pinnedColumns,
+    overflowColumns,
     onColumnResize,
     defaultColumnWidth,
     columnHeaderHeight,
@@ -163,7 +173,7 @@ function WorklistDataGrid(props) {
     return newColumn;
   };
 
-  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(columns);
+  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
   const [dataGridColumns, setDataGridColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
   // Manage column resize
@@ -252,7 +262,7 @@ function WorklistDataGrid(props) {
   useEffect(() => {
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [columns]);
+  }, [pinnedColumns, overflowColumns]);
 
   const isAnyRowSelected = () => (
     rows.find(r => r.isSelected === true)

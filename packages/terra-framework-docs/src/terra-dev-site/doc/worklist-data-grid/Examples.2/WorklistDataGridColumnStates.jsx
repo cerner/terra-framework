@@ -93,7 +93,7 @@ const DefaultWorklistDataGrid = () => {
     <React.Fragment>
       <WorklistDataGrid
         id="default-terra-worklist-data-grid"
-        columns={gridColumns}
+        overflowColumns={gridColumns}
         rows={gridRows}
         rowHeaderIndex={rowHeaderIndex}
         rowHeight="50px"
