@@ -1,0 +1,13 @@
+1. replaced columns prop with pinned columns and overflows
+2. overflow colums are the "basic" columns
+3. build pinned columns and overflow columns
+4. add horizontal scrolling
+5. add sticky to pinned columns CSS
+
+----
+
+future:
+6. fix border issue
+7. fix css glitches
+8. accessibility (screen reader) testing
+9. add tests (jest/wdio)
