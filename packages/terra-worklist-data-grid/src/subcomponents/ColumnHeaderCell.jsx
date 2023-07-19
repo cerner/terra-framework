@@ -47,6 +47,11 @@ const propTypes = {
   maximumWidth: PropTypes.number,
 
   /**
+   * Boolean value indicating whether or not the column header cell is pinned.
+  */
+  isPinned: PropTypes.bool,
+
+  /**
    * Boolean value indicating whether or not the column header is selectable.
   */
   isSelectable: PropTypes.bool,
@@ -110,6 +115,7 @@ const defaultProps = {
   hasError: false,
   isSelectable: true,
   isResizable: true,
+  isPinned: false,
 };
 
 const ColumnHeaderCell = (props) => {
@@ -118,6 +124,7 @@ const ColumnHeaderCell = (props) => {
     displayName,
     sortIndicator,
     hasError,
+    isPinned,
     isSelectable,
     isResizable,
     tableHeight,
@@ -188,7 +195,7 @@ const ColumnHeaderCell = (props) => {
     <th
       ref={(columnHeaderCellRef)}
       key={id}
-      className={cx('column-header', theme.className, { selectable: isSelectable })}
+      className={cx('column-header', theme.className, { selectable: isSelectable, pinned: isPinned })}
       tabIndex={isTabStop ? 0 : -1}
       role="columnheader"
       scope="col"

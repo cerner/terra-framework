@@ -33,12 +33,10 @@
   }
 
   .pinned {
-    // border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
-    // background-color: pink;
-    // font-weight: normal;
-    // height: 100%;
+    background-color: pink;
     position: sticky;
     z-index: 1;
+    left: 0; // for testing postition sticky
   }
 
   // Hover state for selectable elements

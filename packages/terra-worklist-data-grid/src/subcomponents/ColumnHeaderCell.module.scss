@@ -41,5 +41,11 @@
     background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
     cursor: pointer;
   }
-}
 
+  .pinned {
+    // background-color: aqua;
+    position: sticky;
+    z-index: 1;
+    left: 0;
+  }
+}

@@ -1,12 +1,14 @@
 DONE 1. replaced columns prop with pinned columns and overflows
 DONE 2. overflow colums are the "basic" columns
 DONE 3. build pinned columns and overflow columns
-4. add horizontal scrolling
+DONE 4. add horizontal scrolling
+
 5. add sticky to pinned columns CSS
 
 ----
 
 future:
+5.1. fix cell selection issue
 6. fix border issue
 7. fix css glitches
 8. accessibility (screen reader) testing

@@ -60,7 +60,7 @@ const ColumnHeader = (props) => {
   } = props;
 
   // Create ColumnHeaderCell component for each column
-  const buildColumn = (column, columnIndex) => (
+  const buildColumn = (column, columnIndex, isPinned = false) => (
     <ColumnHeaderCell
       key={column.id}
       id={column.id}
@@ -71,6 +71,7 @@ const ColumnHeader = (props) => {
       minimumWidth={column.minimumWidth}
       maximumWidth={column.maximumWidth}
       headerHeight={headerHeight}
+      isPinned={isPinned}
       isResizable={column.isResizable}
       isSelectable={column.isSelectable}
       tableHeight={tableHeight}
@@ -85,7 +86,7 @@ const ColumnHeader = (props) => {
   return (
     <thead>
       <tr className="column-header-row" height={headerHeight}>
-        {pinnedColumns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
+        {pinnedColumns.map((column, columnIndex) => (buildColumn(column, columnIndex, true)))}
         {overflowColumns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
       </tr>
     </thead>
