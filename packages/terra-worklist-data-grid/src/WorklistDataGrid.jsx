@@ -6,14 +6,16 @@ import React, {
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
 import * as KeyCode from 'keycode-js';
+
+import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+
 import ColumnHeader from './subcomponents/ColumnHeader';
-import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
-import styles from './WorklistDataGrid.module.scss';
-import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
 import Row from './subcomponents/Row';
+import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
+import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
+import styles from './WorklistDataGrid.module.scss';
 
 const cx = classNames.bind(styles);
 
