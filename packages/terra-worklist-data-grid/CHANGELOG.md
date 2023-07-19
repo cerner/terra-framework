@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.3.0 - (July 19, 2023)
+
 * Breaking Changes
   * Removed `columnWidth` prop in favor of the new `defaultColumnWidth` prop.
   * Renamed `ariaLabelledby` prop to `ariaLabelledBy` to follow proper camelCasing and for consistency with other Terra components.

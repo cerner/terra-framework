@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.25.0 - (July 19, 2023)
+
 * Changed
   * Updated example for `terra-menu`.
   * Updated tests for `terra-worklist-data-grid` to account for row height and column width being honored.
