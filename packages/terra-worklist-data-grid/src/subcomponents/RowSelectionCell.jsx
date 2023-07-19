@@ -19,6 +19,7 @@ const propTypes = {
    * The cell's row position in the grid. This is zero based.
    */
   rowIndex: PropTypes.number,
+
   /**
    * The cell's column position in the grid. This is zero based.
    */
@@ -38,10 +39,12 @@ const propTypes = {
    * String that labels the Row for accessibility. When a row is selected, this is the label that will be read.
    */
   ariaLabel: PropTypes.string,
+
   /**
    * Callback function that will be called when this cell is selected.
    */
   onCellSelect: PropTypes.func,
+
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.

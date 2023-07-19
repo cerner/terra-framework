@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ColumnHeaderCell render column header cell with ascending sort 1`] = `
+exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] = `
 <th
   aria-sort="ascending"
   className="column-header selectable"
@@ -37,7 +37,7 @@ exports[`ColumnHeaderCell render column header cell with ascending sort 1`] = `
 </th>
 `;
 
-exports[`ColumnHeaderCell render column header cell with ascending sort and error 1`] = `
+exports[`ColumnHeaderCell renders a column header cell with ascending sort and error 1`] = `
 <th
   aria-sort="ascending"
   className="column-header selectable"
@@ -80,7 +80,7 @@ exports[`ColumnHeaderCell render column header cell with ascending sort and erro
 </th>
 `;
 
-exports[`ColumnHeaderCell render column header cell with descending sort 1`] = `
+exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] = `
 <th
   aria-sort="descending"
   className="column-header selectable"
@@ -117,7 +117,7 @@ exports[`ColumnHeaderCell render column header cell with descending sort 1`] = `
 </th>
 `;
 
-exports[`ColumnHeaderCell render column header cell with error 1`] = `
+exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
 <th
   className="column-header selectable"
   key="Column-0"
@@ -154,7 +154,7 @@ exports[`ColumnHeaderCell render column header cell with error 1`] = `
 </th>
 `;
 
-exports[`ColumnHeaderCell render column header cell with onColumnSelect callback 1`] = `
+exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callback 1`] = `
 <th
   aria-sort="ascending"
   className="column-header selectable"
@@ -199,7 +199,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
 </th>
 `;
 
-exports[`ColumnHeaderCell render column header cell with onColumnSelect callback but not selectable 1`] = `
+exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callback but not selectable 1`] = `
 <th
   aria-sort="ascending"
   className="column-header"
@@ -242,7 +242,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
 </th>
 `;
 
-exports[`ColumnHeaderCell render default column header cell 1`] = `
+exports[`ColumnHeaderCell renders a default column header cell 1`] = `
 <th
   className="column-header selectable"
   key="Column-0"
