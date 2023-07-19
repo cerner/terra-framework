@@ -132,6 +132,7 @@ const defaultProps = {
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
   rowHeight: '2.5rem',
+  pinnedColumns:[],
   overflowColumns: [],
 };
 
@@ -141,6 +142,7 @@ function WorklistDataGrid(props) {
     ariaLabelledBy,
     ariaLabel,
     rows,
+    pinnedColumns,
     overflowColumns,
     onColumnResize,
     defaultColumnWidth,
@@ -171,6 +173,7 @@ function WorklistDataGrid(props) {
     return newColumn;
   };
 
+  // const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(overflowColumns);
   const [dataGridColumns, setDataGridColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
@@ -488,6 +491,8 @@ function WorklistDataGrid(props) {
       id={row.id}
       isSelected={row.isSelected}
       cells={row.cells}
+      pinnedCells={row.cells.slice(0, pinnedColumns.length)}
+      overflowCells={row.cells.slice(pinnedColumns.length)}
       ariaLabel={row.ariaLabel}
       hasRowSelection={hasSelectableRows}
       displayedColumns={displayedColumns}
@@ -518,6 +523,7 @@ function WorklistDataGrid(props) {
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
         <ColumnHeader
+          // pinnedColumns={pinnedColumns}
           overflowColumns={dataGridColumns}
           headerHeight={columnHeaderHeight}
           tableHeight={tableHeight}

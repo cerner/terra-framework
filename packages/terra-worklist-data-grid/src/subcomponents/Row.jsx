@@ -33,6 +33,16 @@ const propTypes = {
   cells: PropTypes.arrayOf(cellShape),
 
   /**
+   * Data to be displayed in the pinned cells of the row. Cells will be rendered in the row in the order given.
+   */
+  pinnedCells: PropTypes.arrayOf(cellShape),
+
+  /**
+   * Data to be displayed in the overflow cells of the row. Cells will be rendered in the row in the order given.
+   */
+  overflowCells: PropTypes.arrayOf(cellShape),
+
+  /**
    * A boolean indicating whether or not the row should render as selected.
    */
   isSelected: PropTypes.bool,
@@ -97,6 +107,8 @@ function Row(props) {
     id,
     isSelected,
     cells,
+    pinnedCells,
+    overflowCells,
     ariaLabel,
     displayedColumns,
     rowHeaderIndex,
@@ -121,6 +133,8 @@ function Row(props) {
   };
 
   const getCellData = (cellRowIndex, cellColumnIndex, cellData, rowId) => {
+    console.log(displayedColumns.length);
+    console.log(displayedColumns[cellColumnIndex]);
     const columnId = displayedColumns[cellColumnIndex].id;
     const isRowHeader = cellColumnIndex === rowHeaderIndex + columnIndexOffSet;
 

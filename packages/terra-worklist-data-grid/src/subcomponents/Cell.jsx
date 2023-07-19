@@ -1,13 +1,15 @@
 /* eslint-disable react/forbid-dom-props */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import * as KeyCode from 'keycode-js';
-import '../_elementPolyfill';
 import { injectIntl } from 'react-intl';
+import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
+
 import ThemeContext from 'terra-theme-context';
+
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
+import '../_elementPolyfill';
 
 const cx = classNames.bind(styles);
 
@@ -41,6 +43,11 @@ const propTypes = {
    *  Boolean indicating if cell contents are masked.
    */
   isMasked: PropTypes.bool,
+
+  /**
+   *  Boolean indicating if cell is pinned.
+   */
+  isPinned: PropTypes.bool,
 
   /**
    * Boolean value indicating whether or not the column header is selectable.
@@ -90,6 +97,7 @@ const defaultProps = {
   isSelected: false,
   isSelectable: true,
   isMasked: false,
+  isPinned: false,
 };
 
 function Cell(props) {
@@ -100,10 +108,11 @@ function Cell(props) {
     columnIndex,
     isTabStop,
     ariaLabel,
-    isRowHeader,
-    isSelected,
     isMasked,
+    isPinned,
+    isRowHeader,
     isSelectable,
+    isSelected,
     children,
     onCellSelect,
     height,

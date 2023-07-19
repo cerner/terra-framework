@@ -43,8 +43,14 @@ const propTypes = {
   onResizeMouseDown: PropTypes.func,
 };
 
+const defaultProps = {
+  pinnedColumns:[],
+  overflowColumns: [],
+};
+
 const ColumnHeader = (props) => {
   const {
+    pinnedColumns,
     overflowColumns,
     headerHeight,
     tableHeight,
@@ -79,6 +85,7 @@ const ColumnHeader = (props) => {
   return (
     <thead>
       <tr className="column-header-row" height={headerHeight}>
+        {/* {pinnedColumns.map((column, columnIndex) => (buildColumn(column, columnIndex)))} */}
         {overflowColumns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
       </tr>
     </thead>
@@ -86,4 +93,6 @@ const ColumnHeader = (props) => {
 };
 
 ColumnHeader.propTypes = propTypes;
+ColumnHeader.defaultProps = defaultProps;
+
 export default ColumnHeader;
