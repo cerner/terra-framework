@@ -85,7 +85,7 @@ const ColumnHeader = (props) => {
   return (
     <thead>
       <tr className="column-header-row" height={headerHeight}>
-        {/* {pinnedColumns.map((column, columnIndex) => (buildColumn(column, columnIndex)))} */}
+        {pinnedColumns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
         {overflowColumns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
       </tr>
     </thead>
