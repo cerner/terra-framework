@@ -33,7 +33,7 @@
   }
 
   .pinned {
-    background-color: pink;
+    background-color: inherit;
     position: sticky;
     z-index: 1;
     left: 0; // for testing postition sticky
