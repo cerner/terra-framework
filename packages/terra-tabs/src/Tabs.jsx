@@ -92,12 +92,12 @@ class Tabs extends React.Component {
 
     React.Children.forEach(children, child => {
       let content;
-      let workspaceContent;
+      let tabContent;
       if (child.key === this.state.activeKey) {
         content = React.Children.map(child.props.children, contentItem => (
           React.cloneElement(contentItem)
         ));
-        workspaceContent = <CommonTabContent>{content}</CommonTabContent>;
+        tabContent = <CommonTabContent>{content}</CommonTabContent>;
       }
       commonTabItems.push(
         <CommonTabItem
@@ -105,7 +105,7 @@ class Tabs extends React.Component {
           label={child.props.label}
           icon={child.props.icon}
           isIconOnly={child.props.isIconOnly}
-          render={() => workspaceContent}
+          render={() => tabContent}
           isDisabled={child.props.isDisabled}
         />,
       );
