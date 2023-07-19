@@ -5,9 +5,16 @@ import ColumnHeaderCell from './ColumnHeaderCell';
 
 const propTypes = {
   /**
-   * Data for columns. By default, columns will be presented in the order given.
+   * Data for pinned columns. Pinned columns are the stickied leftmost columns of the grid.
+   * Columns will be presented in the order given.
    */
-  columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape).isRequired,
+  pinnedColumns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
+
+  /**
+   * Data for overflow columns. Overflow columns are rendered in the Worklist Data Grid's horizontal overflow.
+   * Columns will be presented in the order given.
+   */
+  overflowColumns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
 
   /**
    * String that specifies the column header height. Any valid CSS height value accepted.
@@ -38,7 +45,7 @@ const propTypes = {
 
 const ColumnHeader = (props) => {
   const {
-    columns,
+    overflowColumns,
     headerHeight,
     tableHeight,
     tabStopColumnIndex,
@@ -72,7 +79,7 @@ const ColumnHeader = (props) => {
   return (
     <thead>
       <tr className="column-header-row" height={headerHeight}>
-        {columns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
+        {overflowColumns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
       </tr>
     </thead>
   );

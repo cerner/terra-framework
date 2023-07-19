@@ -132,7 +132,6 @@ const defaultProps = {
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
   rowHeight: '2.5rem',
-  pinnedColumns: [],
   overflowColumns: [],
 };
 
@@ -142,7 +141,6 @@ function WorklistDataGrid(props) {
     ariaLabelledBy,
     ariaLabel,
     rows,
-    pinnedColumns,
     overflowColumns,
     onColumnResize,
     defaultColumnWidth,
@@ -173,7 +171,7 @@ function WorklistDataGrid(props) {
     return newColumn;
   };
 
-  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
+  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(overflowColumns);
   const [dataGridColumns, setDataGridColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
   // Manage column resize
@@ -262,7 +260,7 @@ function WorklistDataGrid(props) {
   useEffect(() => {
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pinnedColumns, overflowColumns]);
+  }, [overflowColumns]);
 
   const isAnyRowSelected = () => (
     rows.find(r => r.isSelected === true)
@@ -520,7 +518,7 @@ function WorklistDataGrid(props) {
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
         <ColumnHeader
-          columns={dataGridColumns}
+          overflowColumns={dataGridColumns}
           headerHeight={columnHeaderHeight}
           tableHeight={tableHeight}
           tabStopColumnIndex={focusedRow.current === 0 ? focusedCol.current : undefined}
