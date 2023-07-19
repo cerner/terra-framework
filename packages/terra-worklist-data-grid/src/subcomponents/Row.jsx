@@ -132,9 +132,7 @@ function Row(props) {
     }
   };
 
-  const getCellData = (cellRowIndex, cellColumnIndex, cellData, rowId) => {
-    console.log(displayedColumns.length);
-    console.log(displayedColumns[cellColumnIndex]);
+  const getCellData = (cellRowIndex, cellColumnIndex, cellData, rowId, isPinned = false) => {
     const columnId = displayedColumns[cellColumnIndex].id;
     const isRowHeader = cellColumnIndex === rowHeaderIndex + columnIndexOffSet;
 
@@ -145,11 +143,12 @@ function Row(props) {
         rowIndex={cellRowIndex}
         columnIndex={cellColumnIndex}
         key={`${rowId}_${columnId}`}
-        isTabStop={tabStopColumnIndex === cellColumnIndex}
-        isSelected={!hasRowSelection && selectedCellColumnId === columnId}
         isMasked={cellData.isMasked}
-        isSelectable={cellData.isSelectable}
+        isPinned={isPinned}
         isRowHeader={isRowHeader}
+        isSelectable={cellData.isSelectable}
+        isSelected={!hasRowSelection && selectedCellColumnId === columnId}
+        isTabStop={tabStopColumnIndex === cellColumnIndex}
         onCellSelect={handleCellSelect}
         height={height}
       >
@@ -178,7 +177,10 @@ function Row(props) {
       style={{ height }}
     >
       {rowSelectionCell}
-      {cells.map((cellData, cellColumnIndex) => (
+      {pinnedCells.map((cellData, cellColumnIndex) => (
+        getCellData(rowIndex, cellColumnIndex + columnIndexOffSet, cellData, id, true)
+      ))}
+      {overflowCells.map((cellData, cellColumnIndex) => (
         getCellData(rowIndex, cellColumnIndex + columnIndexOffSet, cellData, id)
       ))}
     </tr>

@@ -32,6 +32,14 @@
     overflow-wrap: break-word;
   }
 
+  .pinned {
+    // border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
+    // background-color: pink;
+    // font-weight: normal;
+    // height: 100%;
+    position: sticky;
+    z-index: 1;
+  }
 
   // Hover state for selectable elements
   .selectable:hover {

@@ -173,8 +173,7 @@ function WorklistDataGrid(props) {
     return newColumn;
   };
 
-  // const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
-  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(overflowColumns);
+  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
   const [dataGridColumns, setDataGridColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
   // Manage column resize
@@ -523,8 +522,8 @@ function WorklistDataGrid(props) {
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
         <ColumnHeader
-          // pinnedColumns={pinnedColumns}
-          overflowColumns={dataGridColumns}
+          pinnedColumns={dataGridColumns.slice(0, pinnedColumns.length)}
+          overflowColumns={dataGridColumns.slice(pinnedColumns.length)}
           headerHeight={columnHeaderHeight}
           tableHeight={tableHeight}
           tabStopColumnIndex={focusedRow.current === 0 ? focusedCol.current : undefined}

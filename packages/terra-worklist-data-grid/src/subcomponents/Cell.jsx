@@ -162,6 +162,7 @@ function Cell(props) {
 
   const className = cx('worklist-data-grid-cell', {
     masked: isMasked,
+    pinned: isPinned,
     selectable: isSelectable && !isMasked,
     selected: isSelected && !isMasked,
     blank: !children,
