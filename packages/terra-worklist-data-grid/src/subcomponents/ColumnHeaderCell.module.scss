@@ -45,5 +45,11 @@
   .pinned {
     position: sticky;
     z-index: 2;
+
+    box-shadow: inset 1px 0px black;
+    border-width:  1px 0 1px 0;
+    border: inherit, 1px solid black;
+
+    // 
   }
 }
