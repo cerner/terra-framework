@@ -131,7 +131,7 @@ function WorklistDataGrid(props) {
 
   // Default column size constraints
   const defaultColumnMinimumWidth = 100;
-  const defaultColumnMaximumWidth = 300;
+  const defaultColumnMaximumWidth = 500;
 
   // Initialize column width properties
   const initializeColumn = (column) => {
@@ -171,10 +171,6 @@ function WorklistDataGrid(props) {
 
   const theme = useContext(ThemeContext);
 
-  // const isRowSelectionCell = (columnIndex) => (
-  //   hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
-  // );
-
   useEffect(() => {
     // When row selection mode is turned on or off a row selection column is added or removed.
     // Therefore, shift the focused cell to the left or right.
@@ -189,6 +185,9 @@ function WorklistDataGrid(props) {
       newFocusCell = { row: focusedCell.row, col: 0 };
     }
 
+    if (newFocusCell.row !== 0 && (!hasSelectableRows || newFocusCell.col !== 0)) {
+      gridRef.current.rows[newFocusCell.row].cells[newFocusCell.col].focus();
+    }
     setFocusedCell(newFocusCell);
     setCurrentSelectedCell(null);
 
@@ -245,6 +244,7 @@ function WorklistDataGrid(props) {
     setAriaLiveMsg(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-template' }, { row: cellGridCoordinates.row + 1, column: cellGridCoordinates.col + 1 }));
 
     // Make note of cell that is currently selected.
+    gridRef.current.rows[cellGridCoordinates.row].cells[cellGridCoordinates.col].focus();
     setFocusedCell(cellGridCoordinates);
     setCurrentSelectedCell({ rowId: cellRowIdColId.rowId, columnId: cellRowIdColId.columnId });
 
@@ -271,6 +271,7 @@ function WorklistDataGrid(props) {
     setAriaLiveMsg(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
 
     // Select row
+    gridRef.current.rows[selectedCellCoordinates.row].cells[selectedCellCoordinates.col].focus();
     setFocusedCell(selectedCellCoordinates);
     setCurrentSelectedCell(null);
     selectRow(rowId, selectedCellCoordinates.row);
@@ -308,7 +309,7 @@ function WorklistDataGrid(props) {
       case KeyCode.KEY_RIGHT:
         if (event.metaKey) {
           // Cmd + Right on Mac is equivalent to the End key in Windows
-          nextCol = dataGridColumns.length - 1;
+          nextCol = dataGridColumns.columns.length - 1;
 
           if (event.ctrlKey) {
             // Ctrl + Cmd + Right on Mac is equivalent to the Ctrl + End in Windows
@@ -326,7 +327,7 @@ function WorklistDataGrid(props) {
         }
         break;
       case KeyCode.KEY_END:
-        nextCol = dataGridColumns.length - 1; // Col are zero based.
+        nextCol = dataGridColumns.columns.length - 1; // Col are zero based.
         if (event.ctrlKey) {
           // Though rows are zero based, the header is the first row so the rowsLength will
           // always be one more than then actual number of data rows.
@@ -335,6 +336,7 @@ function WorklistDataGrid(props) {
         break;
       case KeyCode.KEY_ESCAPE:
         if (!hasSelectableRows) {
+          gridRef.current.rows[cellCoordinates.row].cells[cellCoordinates.col].focus();
           setFocusedCell(cellCoordinates);
           setCurrentSelectedCell(null);
         } else {
@@ -351,7 +353,7 @@ function WorklistDataGrid(props) {
       default:
         return;
     }
-    if (nextRow > rows.length || nextCol >= dataGridColumns.length) {
+    if (nextRow > rows.length || nextCol >= dataGridColumns.columns.length) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
@@ -360,6 +362,9 @@ function WorklistDataGrid(props) {
       return;
     }
 
+    if (nextRow !== 0 && (!hasSelectableRows || nextCol !== 0)) {
+      gridRef.current.rows[nextRow].cells[nextCol].focus();
+    }
     setFocusedCell({ row: nextRow, col: nextCol, checkResizable });
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
@@ -375,12 +380,12 @@ function WorklistDataGrid(props) {
   }, []);
 
   const onResizeHandleChange = useCallback((columnIndex, increment) => {
-    const { minimumWidth, maximumWidth } = dataGridColumns[columnIndex];
-    const newColumnWidth = Math.min(Math.max(dataGridColumns[columnIndex].width + increment, minimumWidth), maximumWidth);
+    const { minimumWidth, maximumWidth, width } = dataGridColumns.columns[columnIndex];
+    const newColumnWidth = Math.min(Math.max(width + increment, minimumWidth), maximumWidth);
 
     // Update the width for the column in the state variable
-    const newGridColumns = [...dataGridColumns];
-    newGridColumns[columnIndex].width = newColumnWidth;
+    const newGridColumns = { ...dataGridColumns };
+    newGridColumns.columns[columnIndex].width = newColumnWidth;
     setDataGridColumns(newGridColumns);
 
     // Update the column and table width
@@ -388,7 +393,7 @@ function WorklistDataGrid(props) {
 
     // Notify consumers of the new column width
     if (onColumnResize) {
-      onColumnResize(dataGridColumns[columnIndex].id, dataGridColumns[columnIndex].width);
+      onColumnResize(dataGridColumns.columns[columnIndex].id, dataGridColumns.columns[columnIndex].width);
     }
   }, [dataGridColumns, onColumnResize]);
 
@@ -399,12 +404,12 @@ function WorklistDataGrid(props) {
 
     // Ensure the new column width falls within the range of the minimum and maximum values
     const diffX = event.pageX - activeColumnPageX.current;
-    const { minimumWidth, maximumWidth } = dataGridColumns[activeIndex];
+    const { minimumWidth, maximumWidth } = dataGridColumns.columns[activeIndex];
     const newColumnWidth = Math.min(Math.max(activeColumnWidth.current + diffX, minimumWidth), maximumWidth);
 
     // Update the width for the column in the state variable
-    const newGridColumns = [...dataGridColumns];
-    newGridColumns[activeIndex].width = newColumnWidth;
+    const newGridColumns = { ...dataGridColumns };
+    newGridColumns.columns[activeIndex].width = newColumnWidth;
     setDataGridColumns(newGridColumns);
 
     // Update the column and table width

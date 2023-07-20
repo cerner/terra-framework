@@ -1,7 +1,5 @@
 /* eslint-disable react/forbid-dom-props */
-import React, {
-  useContext, useRef, useEffect, useCallback,
-} from 'react';
+import React, { useContext, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import * as KeyCode from 'keycode-js';
 import { injectIntl } from 'react-intl';
@@ -98,14 +96,7 @@ function Cell(props) {
     intl,
   } = props;
 
-  const cellRef = useRef();
   const theme = useContext(ThemeContext);
-
-  useEffect(() => {
-    if (isTabStop) {
-      cellRef.current.focus();
-    }
-  }, [isTabStop]);
 
   const onClick = useCallback(() => {
     onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
@@ -157,7 +148,6 @@ function Cell(props) {
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <CellTag
-      ref={cellRef}
       aria-selected={isSelected}
       aria-label={ariaLabel}
       tabIndex={isTabStop ? 0 : -1}

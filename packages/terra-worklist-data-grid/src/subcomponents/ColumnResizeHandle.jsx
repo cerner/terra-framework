@@ -13,6 +13,10 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * The cell's column position in the grid. This is zero based.
+   */
+  columnIndex: PropTypes.number,
+  /**
    * Text of the column associated with the divider.
    */
   columnText: PropTypes.string.isRequired,
@@ -57,6 +61,7 @@ const defaultProps = {
 
 const ColumnResizeHandle = (props) => {
   const {
+    columnIndex,
     columnText,
     columnWidth,
     columnResizeIncrement,
@@ -130,13 +135,13 @@ const ColumnResizeHandle = (props) => {
       case KeyCode.KEY_RIGHT:
         if (onResizeHandleChange && !isNavigationEnabled) {
           // Increase column width
-          onResizeHandleChange(0, columnResizeIncrement);
+          onResizeHandleChange(columnIndex, columnResizeIncrement);
         }
         break;
       case KeyCode.KEY_LEFT:
         if (onResizeHandleChange && !isNavigationEnabled) {
           // Decrease column width
-          onResizeHandleChange(0, -columnResizeIncrement);
+          onResizeHandleChange(columnIndex, -columnResizeIncrement);
         }
         break;
       default:
@@ -166,8 +171,8 @@ const ColumnResizeHandle = (props) => {
       aria-valuemin={minimumWidth}
       aria-valuenow={columnWidth}
       aria-valuemax={maximumWidth}
-      aria-label={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
-      // aria-valuetext={intl.formatMessage({ id: 'Terra.worklist-data-grid.resizeHandleValueText' }, { columnWidth })}
+      // aria-label={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
+      aria-valuetext={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
       onMouseDown={onMouseDown}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
