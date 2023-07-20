@@ -4,13 +4,14 @@
 
 :local {
   .resize-handle {
-    border-right: 2px solid transparent;
+    border-right: 4px solid transparent;
     cursor: col-resize;
     display: block;
+    height: 100%;
     position: absolute;
     right: 0;
     top: 0;
-    width: 24px;
+    width: 8px;
     z-index: 1;
     
     &:focus {

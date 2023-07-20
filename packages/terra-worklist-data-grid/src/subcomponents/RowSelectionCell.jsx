@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import '../_elementPolyfill';
 import { injectIntl } from 'react-intl';
@@ -62,12 +62,19 @@ function RowSelectionCell(props) {
     intl,
   } = props;
 
-  const rowLabel = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-index' }, { row: rowIndex });
+  const rowSelectionRef = useRef();
+
+  useEffect(() => {
+    if (isTabStop) {
+      rowSelectionRef.current.focus();
+    }
+  }, [isTabStop]);
 
   const selectionCheckbox = (
     <input
+      ref={rowSelectionRef}
       type="checkbox"
-      aria-label={ariaLabel || rowLabel}
+      aria-label={ariaLabel || intl.formatMessage({ id: 'Terra.worklist-data-grid.row-index' }, { row: rowIndex })}
       aria-checked={isSelected}
       tabIndex={isTabStop ? 0 : -1}
       checked={isSelected}
@@ -92,4 +99,4 @@ function RowSelectionCell(props) {
 
 RowSelectionCell.propTypes = propTypes;
 
-export default injectIntl(RowSelectionCell);
+export default React.memo(injectIntl(RowSelectionCell));

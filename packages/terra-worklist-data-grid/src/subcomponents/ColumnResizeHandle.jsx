@@ -1,10 +1,12 @@
 import React, {
-  useContext, useRef, useCallback, useState,
+  useContext, useRef, useEffect, useState,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
+import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import '../_elementPolyfill';
 import styles from './ColumnResizeHandle.module.scss';
 
 const cx = classNames.bind(styles);
@@ -19,9 +21,13 @@ const propTypes = {
    */
   columnWidth: PropTypes.number.isRequired,
   /**
-   * Number that specifies the height of the resize handle in pixels.
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard
    */
-  height: PropTypes.number.isRequired,
+  columnResizeIncrement: PropTypes.number,
+  /**
+   * Control is the active element
+   */
+  isActive: PropTypes.bool,
   /**
    * Number that specifies the minimum column width in pixels.
    */
@@ -35,40 +41,52 @@ const propTypes = {
    */
   onResizeMouseDown: PropTypes.func.isRequired,
   /**
+   * Function that is called when the the keyboard is used to adjust the column size
+   */
+  onResizeHandleChange: PropTypes.func,
+  /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
+const defaultProps = {
+  columnResizeIncrement: 10,
+};
+
 const ColumnResizeHandle = (props) => {
   const {
     columnText,
     columnWidth,
-    height,
+    columnResizeIncrement,
+    isActive,
     minimumWidth,
     maximumWidth,
     onResizeMouseDown,
+    onResizeHandleChange,
     intl,
   } = props;
-
-  // State variable to control screen reader visibility
-  const [isActive, setActive] = useState(false);
 
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);
   // Ref variable for native resize handle element
-  const resizeHandle = useRef();
+  const resizeHandleRef = useRef();
 
-  // Ref callback to obtain the native resize handle element
-  const resizeHandleRef = useCallback((node) => {
-    resizeHandle.current = node;
-  }, []);
+  const [isNavigationEnabled, setNavigationEnabled] = useState(true);
+
+  useEffect(() => {
+    if (isActive) {
+      resizeHandleRef.current.focus();
+    } else {
+      resizeHandleRef.current.blur();
+    }
+  }, [isActive]);
 
   // Mouse down event listener to give focus to resize handler and notify the provider
   const onMouseDown = (event) => {
     // Set focus to resize handle DOM element
-    resizeHandle.current.focus();
+    resizeHandleRef.current.focus();
 
     // Execute callback function to notify consumer of mouse down event
     onResizeMouseDown(event);
@@ -79,28 +97,87 @@ const ColumnResizeHandle = (props) => {
     event.preventDefault();
   };
 
+  const onMouseEnter = () => {
+    // Find parent table element
+    const parentTable = resizeHandleRef.current.closest('table');
+
+    // Update resize handle height to match parent table height
+    if (parentTable) {
+      resizeHandleRef.current.style.height = `${parentTable.offsetHeight}px`;
+    }
+  };
+
+  const onMouseLeave = () => {
+    resizeHandleRef.current.style.height = '100%';
+  };
+
+  // Handle column resize handle keyboard navigation
+  const onKeyDown = (event) => {
+    const key = event.keyCode;
+    switch (key) {
+      case KeyCode.KEY_SPACE:
+      case KeyCode.KEY_RETURN:
+        // Lock focus into component
+        resizeHandleRef.current.focus();
+        setNavigationEnabled(false);
+        event.stopPropagation();
+        event.preventDefault();
+        break;
+      case KeyCode.KEY_ESCAPE:
+        // Release focus lock
+        setNavigationEnabled(true);
+        break;
+      case KeyCode.KEY_RIGHT:
+        if (onResizeHandleChange && !isNavigationEnabled) {
+          // Increase column width
+          onResizeHandleChange(0, columnResizeIncrement);
+        }
+        break;
+      case KeyCode.KEY_LEFT:
+        if (onResizeHandleChange && !isNavigationEnabled) {
+          // Decrease column width
+          onResizeHandleChange(0, -columnResizeIncrement);
+        }
+        break;
+      default:
+    }
+
+    if (!isNavigationEnabled) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  };
+
+  // Prevent click event propagation
+  const onClick = (event) => {
+    // Prevent event bubbling since necessary actions are handled by this component
+    event.stopPropagation();
+  };
+
   return (
-    /* eslint-disable react/forbid-dom-props */
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <div
       ref={resizeHandleRef}
       draggable
-      role="slider"
-      tabIndex={-1}
+      role="separator"
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={isActive ? 0 : -1}
       aria-hidden={!isActive}
       aria-valuemin={minimumWidth}
       aria-valuenow={columnWidth}
       aria-valuemax={maximumWidth}
-      aria-label={columnText}
-      aria-valuetext={intl.formatMessage({ id: 'Terra.worklist-data-grid.resizeHandleValueText' }, { columnWidth })}
-      style={{ height: `${height}px` }}
+      aria-label={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
+      // aria-valuetext={intl.formatMessage({ id: 'Terra.worklist-data-grid.resizeHandleValueText' }, { columnWidth })}
       onMouseDown={onMouseDown}
-      onFocus={() => setActive(true)}
-      onBlur={() => setActive(false)}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onKeyDown={onKeyDown}
+      onClick={onClick}
       className={cx('resize-handle', theme.className)}
     />
   );
 };
 
 ColumnResizeHandle.propTypes = propTypes;
+ColumnResizeHandle.defaultProps = defaultProps;
 export default injectIntl(ColumnResizeHandle);

@@ -1,4 +1,6 @@
-import React, { useContext, useRef, useCallback } from 'react';
+import React, {
+  useContext, useRef, useEffect, useCallback, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
@@ -49,9 +51,13 @@ const propTypes = {
    */
   isResizable: PropTypes.bool,
   /**
-   * Height of the parent table
+   * Boolean value indicating whether or not the column header is resizable.
    */
-  tableHeight: PropTypes.number,
+  isResizeActive: PropTypes.bool,
+  /**
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard
+   */
+  columnResizeIncrement: PropTypes.number,
   /**
    * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
    */
@@ -81,6 +87,10 @@ const propTypes = {
    */
   onResizeMouseDown: PropTypes.func,
   /**
+   * Function that is called when the the keyboard is used to adjust the column size
+   */
+  onResizeHandleChange: PropTypes.func,
+  /**
    * @private
    * Object containing intl APIs
    */
@@ -102,7 +112,8 @@ const ColumnHeaderCell = (props) => {
     hasError,
     isSelectable,
     isResizable,
-    tableHeight,
+    isResizeActive,
+    columnResizeIncrement,
     width,
     minimumWidth,
     maximumWidth,
@@ -112,25 +123,34 @@ const ColumnHeaderCell = (props) => {
     rowIndex,
     columnIndex,
     onResizeMouseDown,
+    onResizeHandleChange,
     isTabStop,
   } = props;
 
-  const columnHeaderCell = useRef();
+  const [isResizeHandleActive, setResizeHandleActive] = useState(false);
+  const columnHeaderCellRef = useRef();
 
-  const columnHeaderCellRef = useCallback((node) => {
-    columnHeaderCell.current = node;
-  }, []);
+  useEffect(() => {
+    if (isTabStop) {
+      if (isResizeActive) {
+        setResizeHandleActive(true);
+      } else {
+        columnHeaderCellRef.current.focus();
+      }
+    } else {
+      setResizeHandleActive(false);
+    }
+  }, [columnIndex, isResizeActive, isTabStop]);
 
   const onResizeHandleMouseDown = useCallback((event) => {
     if (onResizeMouseDown) {
-      onResizeMouseDown(event, columnIndex, columnHeaderCell.current.offsetWidth);
+      onResizeMouseDown(event, columnIndex, columnHeaderCellRef.current.offsetWidth);
     }
   }, [columnIndex, onResizeMouseDown]);
 
   // Handle column header selection via the mouse click.
-  const handleMouseDown = (event) => {
+  const onMouseDown = () => {
     onColumnSelect(id, { row: rowIndex, col: columnIndex });
-    event.stopPropagation();
   };
 
   // Handle column header selection via the space bar.
@@ -142,6 +162,22 @@ const ColumnHeaderCell = (props) => {
         onColumnSelect(id, { row: rowIndex, col: columnIndex });
         event.stopPropagation();
         event.preventDefault(); // prevent the default scrolling
+        break;
+      case KeyCode.KEY_LEFT:
+        if (isResizeHandleActive) {
+          columnHeaderCellRef.current.focus();
+          setResizeHandleActive(false);
+
+          event.stopPropagation();
+          event.preventDefault(); // prevent the default scrolling
+        }
+        break;
+      case KeyCode.KEY_RIGHT:
+        if (isResizable && !isResizeHandleActive) {
+          setResizeHandleActive(true);
+          event.stopPropagation();
+          event.preventDefault(); // prevent the default scrolling
+        }
         break;
       case KeyCode.KEY_C:
         if (event.ctrlKey || event.metaKey) {
@@ -175,7 +211,7 @@ const ColumnHeaderCell = (props) => {
       role="columnheader"
       scope="col"
       aria-sort={sortIndicator}
-      onMouseDown={(isSelectable && onColumnSelect) ? handleMouseDown : undefined}
+      onMouseDown={(isSelectable && onColumnSelect) ? onMouseDown : undefined}
       onKeyDown={(isSelectable && onColumnSelect) ? handleKeyDown : undefined}
       style={{ width: `${width}px`, height: headerHeight }}
     >
@@ -189,10 +225,12 @@ const ColumnHeaderCell = (props) => {
         columnIndex={columnIndex}
         columnText={displayName}
         columnWidth={width}
-        height={tableHeight}
+        columnResizeIncrement={columnResizeIncrement}
+        isActive={isResizeHandleActive}
         minimumWidth={minimumWidth}
         maximumWidth={maximumWidth}
         onResizeMouseDown={onResizeHandleMouseDown}
+        onResizeHandleChange={onResizeHandleChange}
       />
       )}
     </th>
@@ -201,4 +239,4 @@ const ColumnHeaderCell = (props) => {
 
 ColumnHeaderCell.propTypes = propTypes;
 ColumnHeaderCell.defaultProps = defaultProps;
-export default injectIntl(ColumnHeaderCell);
+export default React.memo(injectIntl(ColumnHeaderCell));

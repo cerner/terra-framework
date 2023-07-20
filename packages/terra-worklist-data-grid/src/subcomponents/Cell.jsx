@@ -1,8 +1,9 @@
 /* eslint-disable react/forbid-dom-props */
-import React, { useContext } from 'react';
+import React, {
+  useContext, useRef, useEffect, useCallback,
+} from 'react';
 import PropTypes from 'prop-types';
 import * as KeyCode from 'keycode-js';
-import '../_elementPolyfill';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -97,30 +98,27 @@ function Cell(props) {
     intl,
   } = props;
 
+  const cellRef = useRef();
   const theme = useContext(ThemeContext);
 
-  const handleMouseDown = (event) => {
-    if (isMasked || !isSelectable) {
-      event.stopPropagation();
-      event.preventDefault();
-    } else if (onCellSelect) {
-      onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
-      event.stopPropagation();
+  useEffect(() => {
+    if (isTabStop) {
+      cellRef.current.focus();
     }
-  };
+  }, [isTabStop]);
+
+  const onClick = useCallback(() => {
+    onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
+  }, [columnId, columnIndex, rowId, rowIndex, onCellSelect]);
 
   const handleKeyDown = (event) => {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_SPACE:
-        if (isMasked || !isSelectable) {
-          event.stopPropagation();
-          event.preventDefault();
-        } else if (onCellSelect) {
+        if (!isMasked && isSelectable && onCellSelect) {
           onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
-          event.stopPropagation();
-          event.preventDefault(); // prevent the default scrolling
         }
+        event.preventDefault(); // prevent the default scrolling
         break;
       case KeyCode.KEY_C:
         if (event.ctrlKey || event.metaKey) {
@@ -131,11 +129,21 @@ function Cell(props) {
     }
   };
 
-  let cellAriaLabel = ariaLabel;
+  let cellContent;
   if (isMasked) {
-    cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' });
+    cellContent = (
+      <span className={cx('no-data-cell', theme.className)}>
+        {intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' })}
+      </span>
+    );
   } else if (!children) {
-    cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' });
+    cellContent = (
+      <span className={cx('no-data-cell', theme.className)}>
+        {intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' })}
+      </span>
+    );
+  } else {
+    cellContent = children;
   }
 
   const className = cx('worklist-data-grid-cell', {
@@ -149,14 +157,15 @@ function Cell(props) {
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <CellTag
+      ref={cellRef}
       aria-selected={isSelected}
-      aria-label={cellAriaLabel}
+      aria-label={ariaLabel}
       tabIndex={isTabStop ? 0 : -1}
       className={className}
-      onMouseDown={handleMouseDown}
+      onClick={!isMasked && isSelectable && onCellSelect ? onClick : undefined}
       onKeyDown={handleKeyDown}
     >
-      {!isMasked && children && <div className={cx('cell-content', theme.className)} style={{ height }}>{children}</div>}
+      <div className={cx('cell-content', theme.className)} style={{ height }}>{cellContent}</div>
     </CellTag>
   );
 }
@@ -164,4 +173,4 @@ function Cell(props) {
 Cell.propTypes = propTypes;
 Cell.defaultProps = defaultProps;
 
-export default injectIntl(Cell);
+export default React.memo(injectIntl(Cell));
