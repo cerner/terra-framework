@@ -165,6 +165,7 @@ function WorklistDataGrid(props) {
   const defaultColumnMaximumWidth = 300;
 
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
+  const [pinnedColumnsTotalWidth, setPinnedColumnsTotalWidth] = useState(0);
 
   const calculateOffsets = () => {
     let cumulativeOffset = 0;
@@ -173,8 +174,9 @@ function WorklistDataGrid(props) {
     dataGridColumns.slice(0, pinnedColumns.length - 1).map((pinnedCol)=>{
       cumulativeOffset += pinnedCol.width;
       offsetArray.push(cumulativeOffset);
-    })
-    
+    });
+
+    setPinnedColumnsTotalWidth(cumulativeOffset + dataGridColumns[pinnedColumns.length - 1].width);
     setPinnedColumnOffsets(offsetArray);
   }
 
@@ -563,7 +565,13 @@ function WorklistDataGrid(props) {
         onKeyDown={handleKeyDown}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
-        <ColumnContext.Provider value={{ pinnedColumnOffsets, pinnedColumnsLength: pinnedColumns.length }}>
+        <ColumnContext.Provider
+          value={{
+            pinnedColumnsLength: pinnedColumns.length,
+            pinnedColumnOffsets,
+            pinnedColumnsTotalWidth
+          }}
+        >
           <ColumnHeader
             columns={dataGridColumns}
             headerHeight={columnHeaderHeight}

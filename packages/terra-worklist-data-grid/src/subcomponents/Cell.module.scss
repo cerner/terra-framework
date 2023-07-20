@@ -36,8 +36,7 @@
   .pinned {
     background-color: inherit;
     position: sticky;
-    z-index: 1;
-    left: 0; // for testing postition sticky
+    z-index: 2;
   }
 
   // Hover state for selectable elements
