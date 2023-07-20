@@ -4,6 +4,7 @@
 
 * Added
   * Added examples for `terra-worklist-data-grid` when using pinned columns.
+  * Added `terra-worklist-data-grid` as dependency.
 
 ## 1.27.0 - (July 25, 2023)
 
