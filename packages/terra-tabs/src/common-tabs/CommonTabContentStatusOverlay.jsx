@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import StatusLayout from './StatusLayout';
 
-import WorkspaceContentStatusOverlayButton from './CommonTabContentStatusOverlayButton';
+import CommonTabContentStatusOverlayButton from './CommonTabContentStatusOverlayButton';
 
 import styles from './CommonTabContentStatusOverlay.module.scss';
 
@@ -27,7 +27,7 @@ const propTypes = {
     if (props[propName]) {
       let errorString;
       React.Children.forEach(props[propName], (child) => {
-        if (child.type !== WorkspaceContentStatusOverlayButton) {
+        if (child.type !== CommonTabContentStatusOverlayButton) {
           errorString = `Invalid prop \`${propName}\` supplied to \`${componentName}\`. Child must be of type WorkspaceContent.StatusOverlay.Button.`;
         }
       });
@@ -59,6 +59,6 @@ const CommonTabContentStatusOverlay = ({ variant, message, children }) => {
 
 CommonTabContentStatusOverlay.propTypes = propTypes;
 
-CommonTabContentStatusOverlay.Button = WorkspaceContentStatusOverlayButton;
+CommonTabContentStatusOverlay.Button = CommonTabContentStatusOverlayButton;
 
 export default CommonTabContentStatusOverlay;
