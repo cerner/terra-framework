@@ -1,18 +1,19 @@
 import React, { useContext, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
+import * as KeyCode from 'keycode-js';
+import classNames from 'classnames/bind';
+
 import ThemeContext from 'terra-theme-context';
 import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
-import * as KeyCode from 'keycode-js';
-import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
-import styles from './ColumnHeaderCell.module.scss';
-import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
-import ColumnResizeHandle from './ColumnResizeHandle';
 
+import ColumnResizeHandle from './ColumnResizeHandle';
+import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
+import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import ColumnContext from '../utils/ColumnContext';
+import styles from './ColumnHeaderCell.module.scss';
 
 const cx = classNames.bind(styles);
 

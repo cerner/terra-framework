@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../_elementPolyfill';
 import { injectIntl } from 'react-intl';
+
 import Cell from './Cell';
+import '../_elementPolyfill';
 
 const propTypes = {
   /**

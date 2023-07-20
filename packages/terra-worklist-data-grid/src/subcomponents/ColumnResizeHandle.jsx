@@ -4,7 +4,9 @@ import React, {
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
+
 import ThemeContext from 'terra-theme-context';
+
 import styles from './ColumnResizeHandle.module.scss';
 
 const cx = classNames.bind(styles);

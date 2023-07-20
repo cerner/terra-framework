@@ -133,7 +133,7 @@ const defaultProps = {
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
   rowHeight: '2.5rem',
-  pinnedColumns:[],
+  pinnedColumns: [],
   overflowColumns: [],
 };
 
@@ -524,7 +524,7 @@ function WorklistDataGrid(props) {
         onKeyDown={handleKeyDown}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
-        <ColumnContext.Provider value={ { pinnedColumnOffsets, pinnedColumnsLength: pinnedColumns.length} }>
+        <ColumnContext.Provider value={{ pinnedColumnOffsets, pinnedColumnsLength: pinnedColumns.length }}>
           <ColumnHeader
             columns={dataGridColumns}
             headerHeight={columnHeaderHeight}

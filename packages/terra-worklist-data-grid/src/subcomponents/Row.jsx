@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import ThemeContext from 'terra-theme-context';
 import classNames from 'classnames/bind';
-import '../_elementPolyfill';
-import styles from './Row.module.scss';
-import RowSelectionCell from './RowSelectionCell';
+
+import ThemeContext from 'terra-theme-context';
+
 import Cell from './Cell';
+import RowSelectionCell from './RowSelectionCell';
 import cellShape from '../proptypes/cellShape';
 import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
+import styles from './Row.module.scss';
+import '../_elementPolyfill';
 
 const cx = classNames.bind(styles);
 
