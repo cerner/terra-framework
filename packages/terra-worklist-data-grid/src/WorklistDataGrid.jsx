@@ -170,8 +170,9 @@ function WorklistDataGrid(props) {
   const calculateOffsets = () => {
     let cumulativeOffset = 0;
     let offsetArray = [0];
+    let totalPinnedColumnsCount = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
 
-    dataGridColumns.slice(0, pinnedColumns.length - 1).map((pinnedCol)=>{
+    dataGridColumns.slice(0, totalPinnedColumnsCount).map((pinnedCol)=>{
       cumulativeOffset += pinnedCol.width;
       offsetArray.push(cumulativeOffset);
     });
@@ -567,7 +568,7 @@ function WorklistDataGrid(props) {
       >
         <ColumnContext.Provider
           value={{
-            pinnedColumnsLength: pinnedColumns.length,
+            pinnedColumnsLength: hasSelectableRows ? pinnedColumns.length + 1 : pinnedColumns.length,
             pinnedColumnOffsets,
             pinnedColumnsTotalWidth
           }}
