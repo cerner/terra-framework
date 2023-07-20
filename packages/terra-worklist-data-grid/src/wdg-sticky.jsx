@@ -117,15 +117,15 @@ const WorklistDataGrid = (props) => {
         //   horizontalScrollRef.current.scrollLeft -= overflowColumnsRef.current[leftmostOverflowColumnIndex-1]?.getBoundingClientRect().width;
         // }
         nextCol -= 1;
-        const currentColLeftEdge = overflowColumnsRef.current[nextCol- pinnedColumns.length]?.getBoundingClientRect().left;
+        const currentColLeftEdge = overflowColumnsRef.current[nextCol - pinnedColumns.length]?.getBoundingClientRect().left;
         const pinnedColRightEdge = lastPinnedColumnRef.current.getBoundingClientRect().right;
         // scrolltype 1
         // if(currentColLeftEdge < pinnedColRightEdge ){
         //   horizontalScrollRef.current.scrollLeft -= overflowColumnsRef.current[nextCol]?.getBoundingClientRect().width;
         // }
         // scrolltype 2
-        if(currentColLeftEdge < pinnedColRightEdge ){
-          horizontalScrollRef.current.scrollLeft -= pinnedColRightEdge-currentColLeftEdge;
+        if (currentColLeftEdge < pinnedColRightEdge) {
+          horizontalScrollRef.current.scrollLeft -= pinnedColRightEdge - currentColLeftEdge;
         }
         // scrolltype 2 with animation
         // if(currentColLeftEdge < pinnedColRightEdge ){

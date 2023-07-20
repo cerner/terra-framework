@@ -3,12 +3,72 @@ DONE 2. overflow colums are the "basic" columns
 DONE 3. build pinned columns and overflow columns
 DONE 4. add horizontal scrolling
 
-5. add sticky to pinned columns CSS
+DONE 5. add sticky to pinned columns CSS
+
+create a variable/state variable to store pinnedColumnOffsets (an array of the offset for each pinned column)
+create an "offset" prop to cells
+
+offsetContext = {
+    offset/pinned columns data
+}
+
+initialize it on the WDG level
+
+in Cell,
+
+import offsetContext from context
+
+const offsetContext = useContext(offsetContext)
+
+---
+
+what data does the Cell/Row/Header Cell/etc need access to?
+
+- indexes of the pinned columns/length of pinned columns
+- indexes/length of overflow columns
+- pinned column offsets
+
+Cell needs:
+- if the column is pinned or not.
+
+Row needs:
+- NOTHING
+- only passes through isPinned to the Cells, so it doesn't need info about pinned/overflow columns
+
+ColumnHeader needs:
+- NOTHING
+- only passes through isPinned to the ColumnHeaderCells, so it doesn't need info about pinned/overflow columns
+
+ColumnHeaderCell needs:
+- if the column is pinned or not.
+- the column header data to display.
+
+ColumnResizeHandle needs:
+- nothing atm.
+
+RowSelectionCell needs:
+- not sure yet. needs to be pinned though.
+
+----
+
+ex 3 pinned columns, widths are 5px, 10px, 5px
+
+offset array: [0, 5, 15]
+
+also need to account for row selection cell.
 
 ----
 
 future:
-5.1. fix cell selection issue
+DONE 5.1. fix cell selection issue
+5.2. Fix resize handle offset/fix being able to resize behind pinned columns
+
+issues:
+1. pinned columns are transparent on hover because the background-color is transparent.
+2. resize handle can be accessed on overflow columns that are behind pinned columns.
+
+5.3 Keyboard magic <- move to separate Jira
+
 6. fix border issue
 7. fix css glitches
 8. accessibility (screen reader) testing
