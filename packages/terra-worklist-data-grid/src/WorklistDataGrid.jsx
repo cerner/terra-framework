@@ -169,17 +169,17 @@ function WorklistDataGrid(props) {
 
   const calculateOffsets = () => {
     let cumulativeOffset = 0;
-    let offsetArray = [0];
-    let totalPinnedColumnsCount = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
+    const offsetArray = [0];
+    const totalPinnedColumnsCount = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
 
-    dataGridColumns.slice(0, totalPinnedColumnsCount).map((pinnedCol)=>{
+    dataGridColumns.slice(0, totalPinnedColumnsCount).map((pinnedCol) => {
       cumulativeOffset += pinnedCol.width;
       offsetArray.push(cumulativeOffset);
     });
 
     setPinnedColumnsTotalWidth(cumulativeOffset + dataGridColumns[pinnedColumns.length - 1].width);
     setPinnedColumnOffsets(offsetArray);
-  }
+  };
 
   // Initialize column width properties
   const initializeColumn = (column) => {
@@ -293,7 +293,7 @@ function WorklistDataGrid(props) {
 
   // useEffect for pinned column offset
   useEffect(() => {
-    if(pinnedColumns.length > 0){
+    if (pinnedColumns.length > 0) {
       calculateOffsets();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -570,7 +570,7 @@ function WorklistDataGrid(props) {
           value={{
             pinnedColumnsLength: hasSelectableRows ? pinnedColumns.length + 1 : pinnedColumns.length,
             pinnedColumnOffsets,
-            pinnedColumnsTotalWidth
+            pinnedColumnsTotalWidth,
           }}
         >
           <ColumnHeader

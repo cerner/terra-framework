@@ -200,7 +200,7 @@ const ColumnHeaderCell = (props) => {
       aria-sort={sortIndicator}
       onMouseDown={(isSelectable && onColumnSelect) ? handleMouseDown : undefined}
       onKeyDown={(isSelectable && onColumnSelect) ? handleKeyDown : undefined}
-      style={{ width: `${width}px`, height: headerHeight, left: columnContext.pinnedColumnOffsets[columnIndex]  }}
+      style={{ width: `${width}px`, height: headerHeight, left: columnContext.pinnedColumnOffsets[columnIndex] }}
     >
       <div className={cx('header-container')} role={displayName && 'button'}>
         {errorIcon}
