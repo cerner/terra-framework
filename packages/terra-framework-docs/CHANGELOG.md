@@ -4,6 +4,7 @@
 
 * Added
   * Added `terra-worklist-data-grid` as dependency.
+  * Added example to test toggling and focusing disclosing node for `terra-slide-panel`.
 
 ## 1.25.0 - (July 19, 2023)
 
