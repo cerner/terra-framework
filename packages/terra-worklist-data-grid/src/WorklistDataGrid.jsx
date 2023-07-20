@@ -15,6 +15,7 @@ import ColumnHeader from './subcomponents/ColumnHeader';
 import Row from './subcomponents/Row';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
+import ColumnContext from './utils/ColumnContext';
 import styles from './WorklistDataGrid.module.scss';
 
 const cx = classNames.bind(styles);
@@ -162,6 +163,8 @@ function WorklistDataGrid(props) {
   // Default column size constraints
   const defaultColumnMinimumWidth = 60;
   const defaultColumnMaximumWidth = 300;
+
+  const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
 
   // Initialize column width properties
   const initializeColumn = (column) => {
@@ -521,18 +524,19 @@ function WorklistDataGrid(props) {
         onKeyDown={handleKeyDown}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
-        <ColumnHeader
-          pinnedColumns={dataGridColumns.slice(0, pinnedColumns.length)}
-          overflowColumns={dataGridColumns.slice(pinnedColumns.length)}
-          headerHeight={columnHeaderHeight}
-          tableHeight={tableHeight}
-          tabStopColumnIndex={focusedRow.current === 0 ? focusedCol.current : undefined}
-          onColumnSelect={handleColumnSelect}
-          onResizeMouseDown={onResizeMouseDown}
-        />
-        <tbody>
-          {buildRows(rows)}
-        </tbody>
+        <ColumnContext.Provider value={ { pinnedColumnOffsets, pinnedColumnsLength: pinnedColumns.length} }>
+          <ColumnHeader
+            columns={dataGridColumns}
+            headerHeight={columnHeaderHeight}
+            tableHeight={tableHeight}
+            tabStopColumnIndex={focusedRow.current === 0 ? focusedCol.current : undefined}
+            onColumnSelect={handleColumnSelect}
+            onResizeMouseDown={onResizeMouseDown}
+          />
+          <tbody>
+            {buildRows(rows)}
+          </tbody>
+        </ColumnContext.Provider>
       </table>
       <VisuallyHiddenText aria-live="polite" text={ariaLiveMsg.current} />
     </div>

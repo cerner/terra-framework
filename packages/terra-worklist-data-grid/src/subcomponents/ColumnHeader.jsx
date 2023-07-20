@@ -5,16 +5,10 @@ import ColumnHeaderCell from './ColumnHeaderCell';
 
 const propTypes = {
   /**
-   * Data for pinned columns. Pinned columns are the stickied leftmost columns of the grid.
+   * Data for columns.
    * Columns will be presented in the order given.
    */
-  pinnedColumns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
-
-  /**
-   * Data for overflow columns. Overflow columns are rendered in the Worklist Data Grid's horizontal overflow.
-   * Columns will be presented in the order given.
-   */
-  overflowColumns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
+  columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
 
   /**
    * String that specifies the column header height. Any valid CSS height value accepted.
@@ -50,8 +44,7 @@ const defaultProps = {
 
 const ColumnHeader = (props) => {
   const {
-    pinnedColumns,
-    overflowColumns,
+    columns,
     headerHeight,
     tableHeight,
     tabStopColumnIndex,
@@ -60,7 +53,7 @@ const ColumnHeader = (props) => {
   } = props;
 
   // Create ColumnHeaderCell component for each column
-  const buildColumn = (column, columnIndex, isPinned = false) => (
+  const buildColumn = (column, columnIndex) => (
     <ColumnHeaderCell
       key={column.id}
       id={column.id}
@@ -71,7 +64,6 @@ const ColumnHeader = (props) => {
       minimumWidth={column.minimumWidth}
       maximumWidth={column.maximumWidth}
       headerHeight={headerHeight}
-      isPinned={isPinned}
       isResizable={column.isResizable}
       isSelectable={column.isSelectable}
       tableHeight={tableHeight}
@@ -86,8 +78,7 @@ const ColumnHeader = (props) => {
   return (
     <thead>
       <tr className="column-header-row" height={headerHeight}>
-        {pinnedColumns.map((column, columnIndex) => (buildColumn(column, columnIndex, true)))}
-        {overflowColumns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
+        {columns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
       </tr>
     </thead>
   );

@@ -9,6 +9,7 @@ import ThemeContext from 'terra-theme-context';
 
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
+import ColumnContext from '../utils/ColumnContext';
 import '../_elementPolyfill';
 
 const cx = classNames.bind(styles);
@@ -43,11 +44,6 @@ const propTypes = {
    *  Boolean indicating if cell contents are masked.
    */
   isMasked: PropTypes.bool,
-
-  /**
-   *  Boolean indicating if cell is pinned.
-   */
-  isPinned: PropTypes.bool,
 
   /**
    * Boolean value indicating whether or not the column header is selectable.
@@ -109,7 +105,6 @@ function Cell(props) {
     isTabStop,
     ariaLabel,
     isMasked,
-    isPinned,
     isRowHeader,
     isSelectable,
     isSelected,
@@ -120,6 +115,8 @@ function Cell(props) {
   } = props;
 
   const theme = useContext(ThemeContext);
+
+  const columnContext = useContext(ColumnContext);
 
   const handleMouseDown = (event) => {
     if (isMasked || !isSelectable) {
@@ -162,7 +159,7 @@ function Cell(props) {
 
   const className = cx('worklist-data-grid-cell', {
     masked: isMasked,
-    pinned: isPinned,
+    pinned: columnIndex < columnContext.pinnedColumnsLength,
     selectable: isSelectable && !isMasked,
     selected: isSelected && !isMasked,
     blank: !children,

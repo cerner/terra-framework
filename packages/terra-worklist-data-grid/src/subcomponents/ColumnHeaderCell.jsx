@@ -12,6 +12,8 @@ import styles from './ColumnHeaderCell.module.scss';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import ColumnResizeHandle from './ColumnResizeHandle';
 
+import ColumnContext from '../utils/ColumnContext';
+
 const cx = classNames.bind(styles);
 
 const propTypes = {
@@ -45,11 +47,6 @@ const propTypes = {
    * Number that specifies the maximum column width in pixels.
    */
   maximumWidth: PropTypes.number,
-
-  /**
-   * Boolean value indicating whether or not the column header cell is pinned.
-  */
-  isPinned: PropTypes.bool,
 
   /**
    * Boolean value indicating whether or not the column header is selectable.
@@ -115,7 +112,6 @@ const defaultProps = {
   hasError: false,
   isSelectable: true,
   isResizable: true,
-  isPinned: false,
 };
 
 const ColumnHeaderCell = (props) => {
@@ -124,7 +120,6 @@ const ColumnHeaderCell = (props) => {
     displayName,
     sortIndicator,
     hasError,
-    isPinned,
     isSelectable,
     isResizable,
     tableHeight,
@@ -141,6 +136,9 @@ const ColumnHeaderCell = (props) => {
   } = props;
 
   const columnHeaderCell = useRef();
+
+  const columnContext = useContext(ColumnContext);
+  console.log(columnContext);
 
   const columnHeaderCellRef = useCallback((node) => {
     columnHeaderCell.current = node;
@@ -195,7 +193,7 @@ const ColumnHeaderCell = (props) => {
     <th
       ref={(columnHeaderCellRef)}
       key={id}
-      className={cx('column-header', theme.className, { selectable: isSelectable, pinned: isPinned })}
+      className={cx('column-header', theme.className, { selectable: isSelectable, pinned: columnIndex < columnContext.pinnedColumnsLength })}
       tabIndex={isTabStop ? 0 : -1}
       role="columnheader"
       scope="col"

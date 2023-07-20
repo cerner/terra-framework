@@ -33,16 +33,6 @@ const propTypes = {
   cells: PropTypes.arrayOf(cellShape),
 
   /**
-   * Data to be displayed in the pinned cells of the row. Cells will be rendered in the row in the order given.
-   */
-  pinnedCells: PropTypes.arrayOf(cellShape),
-
-  /**
-   * Data to be displayed in the overflow cells of the row. Cells will be rendered in the row in the order given.
-   */
-  overflowCells: PropTypes.arrayOf(cellShape),
-
-  /**
    * A boolean indicating whether or not the row should render as selected.
    */
   isSelected: PropTypes.bool,
@@ -107,8 +97,6 @@ function Row(props) {
     id,
     isSelected,
     cells,
-    pinnedCells,
-    overflowCells,
     ariaLabel,
     displayedColumns,
     rowHeaderIndex,
@@ -132,7 +120,7 @@ function Row(props) {
     }
   };
 
-  const getCellData = (cellRowIndex, cellColumnIndex, cellData, rowId, isPinned = false) => {
+  const getCellData = (cellRowIndex, cellColumnIndex, cellData, rowId) => {
     const columnId = displayedColumns[cellColumnIndex].id;
     const isRowHeader = cellColumnIndex === rowHeaderIndex + columnIndexOffSet;
 
@@ -144,7 +132,6 @@ function Row(props) {
         columnIndex={cellColumnIndex}
         key={`${rowId}_${columnId}`}
         isMasked={cellData.isMasked}
-        isPinned={isPinned}
         isRowHeader={isRowHeader}
         isSelectable={cellData.isSelectable}
         isSelected={!hasRowSelection && selectedCellColumnId === columnId}
@@ -177,10 +164,7 @@ function Row(props) {
       style={{ height }}
     >
       {rowSelectionCell}
-      {pinnedCells.map((cellData, cellColumnIndex) => (
-        getCellData(rowIndex, cellColumnIndex + columnIndexOffSet, cellData, id, true)
-      ))}
-      {overflowCells.map((cellData, cellColumnIndex) => (
+      {cells.map((cellData, cellColumnIndex) => (
         getCellData(rowIndex, cellColumnIndex + columnIndexOffSet, cellData, id)
       ))}
     </tr>
