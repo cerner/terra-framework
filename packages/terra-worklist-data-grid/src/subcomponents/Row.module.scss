@@ -3,6 +3,11 @@
 @import '../clinical-lowlight-theme/Row.module';
 
 :local {
+  tr.selectable:hover {
+    background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
+    cursor: pointer;
+  }
+
   .worklist-data-grid-row:nth-child(even) {
     background-color: var(--terra-worklist-data-grid-row-striped-background-color, #f0f0f0);
   }
@@ -10,5 +15,6 @@
   .row-selected {
     background-color: var(--terra-worklist-data-grid-row-selected-background-color, #cbe7fa);
     box-shadow: var(--terra-worklist-data-grid-row-selected-box-shadow, inset 0 1px 0 0 #0092e0, inset 0 -1px 0 0 #0092e0);
+    border-right: 1px solid #0092e0;
   }
 }

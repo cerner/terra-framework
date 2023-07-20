@@ -6,6 +6,8 @@
   "Terra.worklist-data-grid.row-selection-cleared-template" : "Row {row} unselected",
   "Terra.worklist-data-grid.row-selection-mode-enabled": "Row Selection Mode enabled",
   "Terra.worklist-data-grid.row-selection-mode-disabled": "Row Selection Mode disabled",
+  "Terra.worklist-data-grid.row-selection-mode-enabled-row-selected":  "Row Selection Mode enabled with {row} selected",
+  "Terra.worklist-data-grid.row-selection-mode-enabled-multiple-rows-selected": "Row Selection Mode enabled with multiple rows selected",
   "Terra.worklist-data-grid.all-rows-selected" : "All rows selected",
   "Terra.worklist-data-grid.all-rows-unselected" : "All rows unselected",
   "Terra.worklist-data-grid.row-index" : "Row {row}",

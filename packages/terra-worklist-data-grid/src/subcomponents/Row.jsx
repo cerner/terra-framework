@@ -110,10 +110,10 @@ function Row(props) {
 
   const columnIndexOffSet = hasRowSelection ? 1 : 0;
 
-  const handleCellSelect = (rowIdColId, coordinates) => {
-    if (hasRowSelection) {
+  const handleCellSelect = (rowIdColId, coordinates, isShiftKeyPressed, isCellSelectedFromKeyboard) => {
+    if (hasRowSelection || isShiftKeyPressed) {
       if (onRowSelect) {
-        onRowSelect(rowIdColId.rowId, rowIndex, coordinates);
+        onRowSelect(rowIdColId.rowId, rowIndex, coordinates, isShiftKeyPressed, isCellSelectedFromKeyboard);
       }
     } else if (onCellSelect) {
       onCellSelect(rowIdColId, coordinates);
@@ -159,7 +159,7 @@ function Row(props) {
 
   return (
     <tr
-      className={cx([isSelected ? 'row-selected' : 'worklist-data-grid-row', theme.className])}
+      className={cx([isSelected ? 'row-selected' : 'worklist-data-grid-row', hasRowSelection ? 'selectable' : null, theme.className])}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ height }}
     >

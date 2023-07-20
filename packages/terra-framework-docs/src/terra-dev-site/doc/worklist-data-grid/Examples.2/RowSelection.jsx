@@ -10,10 +10,6 @@ const gridDataJSON = {
     { id: 'Column-4', displayName: 'Allergy' },
     { id: 'Column-5', displayName: 'Primary Contact' },
     { id: 'Column-6', displayName: 'Generic Order Counts' },
-    { id: 'Column-7', displayName: 'Patient Age' },
-    { id: 'Column-8', displayName: 'Medication History' },
-    { id: 'Column-9', displayName: 'My Relationship' },
-    { id: 'Column-10', displayName: 'Not Selectable', isSelectable: false },
   ],
   rows: [
     {
@@ -25,11 +21,7 @@ const gridDataJSON = {
         { content: 'Inpatient, 2 months' },
         { content: '' },
         { content: 'Quinzell, Harleen' },
-        { content: '' },
-        { isMasked: true },
-        { isMasked: true },
-        { content: 'Admitting Physician' },
-        { content: '', isSelectable: false },
+        { content: '', isMasked: true },
       ],
     },
     {
@@ -42,10 +34,80 @@ const gridDataJSON = {
         { content: 'Phytochemicals' },
         { content: 'Grayson, Richard' },
         { content: '' },
+
+      ],
+    },
+    {
+      id: '3',
+      cells: [
+        { content: 'Doe, John' },
+        { content: '1007-MTN' },
+        { content: 'Unstable' },
+        { content: 'Inpatient, 2 months' },
         { content: '' },
-        { isMasked: true },
-        { content: 'Admitting Physician' },
-        { content: '', isSelectable: false },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+
+      ],
+    },
+    {
+      id: '4',
+      cells: [
+        { content: 'Doe, Mary' },
+        { content: '1007-MTN', isMasked: true },
+        { content: 'Unstable' },
+        { content: 'Inpatient, 2 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '5',
+      cells: [
+        { content: 'Doe, Arthur' },
+        { content: '1007-MTN' },
+        { content: 'Unstable', isMasked: true },
+        { content: 'Inpatient, 2 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '6',
+      cells: [
+        { content: 'Doe, Alex' },
+        { content: '1007-MTN' },
+        { content: 'Unstable' },
+        { content: 'Inpatient, 2 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '7',
+      cells: [
+        { content: 'Doe, Test7' },
+        { content: '1007-MTN' },
+        { content: 'Unstable' },
+        { content: 'Inpatient, 2 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '8',
+      cells: [
+        { content: 'Doe, Test8' },
+        { content: '1007-MTN' },
+        { content: 'Unstable' },
+        { content: 'Inpatient, 2 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
       ],
     },
   ],
@@ -81,6 +143,16 @@ const RowSelection = () => {
     // eslint-disable-next-line no-param-reassign
     rows.forEach(r => { if (r.isSelected) { r.isSelected = false; } });
     setSelectedRows([]);
+  };
+
+  const enableSelectableRows = (rowIds) => {
+    const rowsToSelect = rows.filter(e => rowIds.indexOf(e.id) >= 0);
+    if (!rowSelectionModeRef.current.checked) {
+      rowSelectionModeRef.current.checked = true;
+    }
+    rowsToSelect.forEach(r => { r.isSelected = true; });
+    setHasSelectableRows(true);
+    setSelectedRows(rowsToSelect.map(r => r.id));
   };
 
   const disableSelectableRows = () => {
@@ -136,6 +208,12 @@ const RowSelection = () => {
         }}
         onDisableSelectableRows={() => {
           disableSelectableRows();
+        }}
+        onEnableSelectableRows={(selectedRowIds, unSelectedRowIds) => {
+          if (unSelectedRowIds) {
+            rows.forEach(r => { if (unSelectedRowIds.indexOf(r.id) >= 0) { r.isSelected = false; } });
+          }
+          enableSelectableRows(selectedRowIds);
         }}
       />
     </React.Fragment>
