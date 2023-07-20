@@ -139,7 +139,6 @@ const ColumnHeaderCell = (props) => {
   const columnHeaderCell = useRef();
 
   const columnContext = useContext(ColumnContext);
-  console.log(columnContext);
 
   const columnHeaderCellRef = useCallback((node) => {
     columnHeaderCell.current = node;
@@ -201,7 +200,7 @@ const ColumnHeaderCell = (props) => {
       aria-sort={sortIndicator}
       onMouseDown={(isSelectable && onColumnSelect) ? handleMouseDown : undefined}
       onKeyDown={(isSelectable && onColumnSelect) ? handleKeyDown : undefined}
-      style={{ width: `${width}px`, height: headerHeight }}
+      style={{ width: `${width}px`, height: headerHeight, left: columnContext.pinnedColumnOffsets[columnIndex]  }}
     >
       <div className={cx('header-container')} role={displayName && 'button'}>
         {errorIcon}

@@ -175,6 +175,7 @@ function Cell(props) {
       className={className}
       onMouseDown={handleMouseDown}
       onKeyDown={handleKeyDown}
+      style={{ left: columnContext.pinnedColumnOffsets[columnIndex] }}
     >
       {!isMasked && children && <div className={cx('cell-content', theme.className)} style={{ height }}>{children}</div>}
     </CellTag>

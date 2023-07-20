@@ -166,6 +166,18 @@ function WorklistDataGrid(props) {
 
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
 
+  const calculateOffsets = () => {
+    let cumulativeOffset = 0;
+    let offsetArray = [0];
+
+    dataGridColumns.slice(0, pinnedColumns.length - 1).map((pinnedCol)=>{
+      cumulativeOffset += pinnedCol.width;
+      offsetArray.push(cumulativeOffset);
+    })
+    
+    setPinnedColumnOffsets(offsetArray);
+  }
+
   // Initialize column width properties
   const initializeColumn = (column) => {
     const newColumn = { ...column };
@@ -235,6 +247,9 @@ function WorklistDataGrid(props) {
     }
   };
 
+  // -------------------------------------
+  // useEffect Hooks
+
   // useEffect for row selection
   useEffect(() => {
     // When row selection mode is turned on or off a row selection column is added or removed.
@@ -265,7 +280,15 @@ function WorklistDataGrid(props) {
   useEffect(() => {
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [overflowColumns]);
+  }, [pinnedColumns, overflowColumns]);
+
+  // useEffect for pinned column offset
+  useEffect(() => {
+    if(pinnedColumns.length > 0){
+      calculateOffsets();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dataGridColumns]);
 
   const isAnyRowSelected = () => (
     rows.find(r => r.isSelected === true)
