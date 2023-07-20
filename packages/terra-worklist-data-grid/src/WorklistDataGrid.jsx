@@ -208,16 +208,12 @@ function WorklistDataGrid(props) {
 
   const theme = useContext(ThemeContext);
 
+  // -------------------------------------
+  // functions
+
   const isRowSelectionCell = (columnIndex) => (
     hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
   );
-
-  const gridRef = useCallback((node) => {
-    grid.current = node;
-
-    // Update table height state variable
-    setTableHeight(grid.current.offsetHeight - 1);
-  }, []);
 
   const isCellSelected = (rowId, columnId) => (currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId);
 
@@ -246,6 +242,16 @@ function WorklistDataGrid(props) {
       focusedCell.focus();
     }
   };
+
+  // -------------------------------------
+  // callback Hooks
+
+  const gridRef = useCallback((node) => {
+    grid.current = node;
+
+    // Update table height state variable
+    setTableHeight(grid.current.offsetHeight - 1);
+  }, []);
 
   // -------------------------------------
   // useEffect Hooks
@@ -289,6 +295,8 @@ function WorklistDataGrid(props) {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataGridColumns]);
+
+  // -------------------------------------
 
   const isAnyRowSelected = () => (
     rows.find(r => r.isSelected === true)
@@ -380,6 +388,9 @@ function WorklistDataGrid(props) {
     handleCellSelectionChange(null, null, selectedCellCoordinates);
     selectRows(false, rowId, rowIndex);
   };
+
+  // -------------------------------------
+  // event handlers
 
   const handleKeyDown = (event) => {
     const cellCoordinates = { row: focusedRow.current, col: focusedCol.current };
@@ -508,6 +519,9 @@ function WorklistDataGrid(props) {
     setActiveIndex(null);
   };
 
+  // -------------------------------------
+  // builder functions
+
   const buildRow = (row, rowIndex) => (
     <Row
       rowIndex={rowIndex}
@@ -534,6 +548,8 @@ function WorklistDataGrid(props) {
 
     return rowData;
   };
+
+  // -------------------------------------
 
   return (
     <div className={cx('worklist-data-grid-container')}>
