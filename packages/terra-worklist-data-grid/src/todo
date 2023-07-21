@@ -67,7 +67,16 @@ issues:
 1. pinned columns are transparent on hover because the background-color is transparent.
 2. resize handle can be accessed on overflow columns that are behind pinned columns.
 
+^ both of these are fixed by making the background opaque.
+
 5.3 Keyboard magic <- move to separate Jira
+
+5.4 fix the resize handle disappearing on pinned columns
+    -> z-index?
+
+5.5 add border/box shadow to right side of pinned columns.
+
+5.6 validate that row headers are always pinned columns.
 
 6. fix border issue
 7. fix css glitches

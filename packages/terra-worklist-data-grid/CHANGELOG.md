@@ -8,6 +8,7 @@
 * Added
   * Added `pinnedColumns` prop for columns that will be pinned.
   * Added `overflowColumns` prop for columns that are scrollable.
+  * Added support for pinned columns.
 
 ## 0.3.0 - (July 19, 2023)
 
