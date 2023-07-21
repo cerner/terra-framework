@@ -244,7 +244,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                             class="main"
                           >
                             <div
-                              class="scroll normalizer orion-fusion-theme"
+                              class="scroll normalizer orion-fusion-theme light"
+                              tabindex="-1"
                             >
                               <ul
                                 class="list orion-fusion-theme list"
@@ -479,10 +480,12 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                       className="main"
                                     >
                                       <Scroll
-                                        className="normalizer orion-fusion-theme"
+                                        className="normalizer orion-fusion-theme light"
+                                        tabIndex="-1"
                                       >
                                         <div
-                                          className="scroll normalizer orion-fusion-theme"
+                                          className="scroll normalizer orion-fusion-theme light"
+                                          tabIndex="-1"
                                         >
                                           <InjectIntl(List)
                                             className="list"

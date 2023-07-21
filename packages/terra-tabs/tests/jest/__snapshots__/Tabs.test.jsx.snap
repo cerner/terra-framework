@@ -192,12 +192,16 @@ exports[`Tabs correctly applies the theme context className 1`] = `
           className="body"
           role="none"
         >
-          <Scroll
-            className="normalizer orion-fusion-theme"
-          >
-            <div
-              className="scroll normalizer orion-fusion-theme"
-            >
+          <CommonTabItem
+            associatedPanelId="terra-common-tabs-default-panel"
+            id="terra-common-tabs-default"
+            isActive={true}
+            isDisabled={false}
+            isIconOnly={false}
+            itemKey="default"
+            key="default/.0"
+            label="Default"
+            portalElement={
               <div
                 role="none"
                 style="position: relative; height: 100%; width: 100%;"

@@ -475,10 +475,12 @@ exports[`Layout correctly applies the theme context className 1`] = `
             className="main"
           >
             <Scroll
-              className="normalizer orion-fusion-theme"
+              className="normalizer orion-fusion-theme light"
+              tabIndex="-1"
             >
               <div
-                className="scroll normalizer orion-fusion-theme"
+                className="scroll normalizer orion-fusion-theme light"
+                tabIndex="-1"
               >
                 <nav
                   role="navigation"
