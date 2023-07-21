@@ -26,6 +26,10 @@
       word-break: break-word;
     }
 
+    .with-icon {
+      margin-left: var(--terra-tabs-label-next-to-icon-margin-left, 0.357rem);
+    }
+
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
       &:hover {
         background-color: var(--terra-tabs-workspace-hidden-tab-hidden-hover-background-color, #ebf6fd);

@@ -82,6 +82,7 @@ const CommonTabs = ({
     onSelect: onRequestActivate,
     metaData: child.props.metaData,
     isDisabled: child.props.isDisabled,
+    showIcon: child.props.showIcon,
   }));
 
   const tabsClassNames = classNames(cy(

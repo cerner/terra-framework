@@ -76,6 +76,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                   "label": "Default",
                   "metaData": undefined,
                   "onSelect": [Function],
+                  "showIcon": false,
                 },
               ]
             }
@@ -242,6 +243,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
               </div>
             }
             render={[Function]}
+            showIcon={false}
             variant="modular-left-aligned"
           >
             <Portal
@@ -367,6 +369,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
             "label": "Default",
             "metaData": undefined,
             "onSelect": [Function],
+            "showIcon": false,
           },
         ]
       }
@@ -388,6 +391,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
       label="Default"
       portalElement={null}
       render={[Function]}
+      showIcon={false}
       variant="framework"
     />
   </div>
@@ -426,6 +430,7 @@ exports[`Tabs should render a default component 1`] = `
             "label": "Default",
             "metaData": undefined,
             "onSelect": [Function],
+            "showIcon": false,
           },
         ]
       }
@@ -447,6 +452,7 @@ exports[`Tabs should render a default component 1`] = `
       label="Default"
       portalElement={null}
       render={[Function]}
+      showIcon={false}
       variant="framework"
     />
   </div>
@@ -485,6 +491,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
             "label": "Default",
             "metaData": undefined,
             "onSelect": [Function],
+            "showIcon": false,
           },
         ]
       }
@@ -506,6 +513,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
       label="Default"
       portalElement={null}
       render={[Function]}
+      showIcon={false}
       variant="framework"
     />
   </div>
@@ -544,6 +552,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
             "label": "Default",
             "metaData": undefined,
             "onSelect": [Function],
+            "showIcon": false,
           },
         ]
       }
@@ -565,6 +574,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
       label="Default"
       portalElement={null}
       render={[Function]}
+      showIcon={false}
       variant="framework"
     />
   </div>
@@ -610,6 +620,7 @@ exports[`Tabs should render with content filled when indicated 1`] = `
     itemKey="default"
     label="Default"
     render={[Function]}
+    showIcon={false}
   />
 </CommonTabs>
 `;
@@ -653,6 +664,7 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
     itemKey="default"
     label="Default"
     render={[Function]}
+    showIcon={false}
   />
 </CommonTabs>
 `;
@@ -697,6 +709,7 @@ exports[`Tabs should set custom props 1`] = `
     itemKey="default"
     label="Default"
     render={[Function]}
+    showIcon={false}
   />
 </CommonTabs>
 `;
@@ -733,6 +746,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
             "label": "Default",
             "metaData": undefined,
             "onSelect": [Function],
+            "showIcon": false,
           },
         ]
       }
@@ -754,6 +768,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
       label="Default"
       portalElement={null}
       render={[Function]}
+      showIcon={false}
       variant="framework"
     />
   </div>

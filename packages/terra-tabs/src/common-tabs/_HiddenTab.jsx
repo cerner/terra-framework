@@ -67,10 +67,19 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  /**
+   * Icon to be displayed on the tab.
+   */
+  icon: PropTypes.element,
+  /**
+   * If enabled, this prop will show the icon on the tab and also in the menu if pane is collapsed.
+   */
+  showIcon: PropTypes.bool,
 };
 
 const defaultProps = {
   isSelected: false,
+  showIcon: false,
 };
 
 const HiddenTab = ({
@@ -86,6 +95,8 @@ const HiddenTab = ({
   onSelect,
   tabIds,
   onChange,
+  icon,
+  showIcon,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -131,7 +142,8 @@ const HiddenTab = ({
       className={hiddenClassNames}
     >
       <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>
-      <div className={cx('label')}>{label}</div>
+      {showIcon && icon}
+      <div className={cx('label', { 'with-icon': showIcon })}>{label}</div>
     </div>
   );
 };
