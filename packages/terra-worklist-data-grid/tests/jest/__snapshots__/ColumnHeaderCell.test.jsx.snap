@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ColumnHeaderCell render column header cell with ascending sort 1`] = `
+exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] = `
 <th
   aria-sort="ascending"
   className="column-header selectable"
@@ -13,14 +13,13 @@ exports[`ColumnHeaderCell render column header cell with ascending sort 1`] = `
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
+    role="button"
   >
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
     <IconUp
@@ -29,10 +28,16 @@ exports[`ColumnHeaderCell render column header cell with ascending sort 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     />
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;
 
-exports[`ColumnHeaderCell render column header cell with ascending sort and error 1`] = `
+exports[`ColumnHeaderCell renders a column header cell with ascending sort and error 1`] = `
 <th
   aria-sort="ascending"
   className="column-header selectable"
@@ -45,10 +50,11 @@ exports[`ColumnHeaderCell render column header cell with ascending sort and erro
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
+    role="button"
   >
     <IconError
       a11yLabel="Terra.worklistDataGrid.columnError"
@@ -56,9 +62,7 @@ exports[`ColumnHeaderCell render column header cell with ascending sort and erro
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
     <IconUp
@@ -67,10 +71,16 @@ exports[`ColumnHeaderCell render column header cell with ascending sort and erro
       xmlns="http://www.w3.org/2000/svg"
     />
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;
 
-exports[`ColumnHeaderCell render column header cell with descending sort 1`] = `
+exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] = `
 <th
   aria-sort="descending"
   className="column-header selectable"
@@ -83,14 +93,13 @@ exports[`ColumnHeaderCell render column header cell with descending sort 1`] = `
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
+    role="button"
   >
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
     <IconDown
@@ -99,10 +108,16 @@ exports[`ColumnHeaderCell render column header cell with descending sort 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     />
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;
 
-exports[`ColumnHeaderCell render column header cell with error 1`] = `
+exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
 <th
   className="column-header selectable"
   key="Column-0"
@@ -114,10 +129,11 @@ exports[`ColumnHeaderCell render column header cell with error 1`] = `
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
+    role="button"
   >
     <IconError
       a11yLabel="Terra.worklistDataGrid.columnError"
@@ -125,21 +141,26 @@ exports[`ColumnHeaderCell render column header cell with error 1`] = `
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;
 
-exports[`ColumnHeaderCell render column header cell with onColumnSelect callback 1`] = `
+exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callback 1`] = `
 <th
   aria-sort="ascending"
   className="column-header selectable"
   key="Column-0"
-  onClick={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -148,10 +169,11 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
+    role="button"
   >
     <IconError
       a11yLabel="Terra.worklistDataGrid.columnError"
@@ -159,9 +181,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
     <IconUp
@@ -170,10 +190,16 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       xmlns="http://www.w3.org/2000/svg"
     />
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;
 
-exports[`ColumnHeaderCell render column header cell with onColumnSelect callback but not selectable 1`] = `
+exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callback but not selectable 1`] = `
 <th
   aria-sort="ascending"
   className="column-header"
@@ -186,10 +212,11 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
+    role="button"
   >
     <IconError
       a11yLabel="Terra.worklistDataGrid.columnError"
@@ -197,9 +224,7 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
     <IconUp
@@ -208,10 +233,16 @@ exports[`ColumnHeaderCell render column header cell with onColumnSelect callback
       xmlns="http://www.w3.org/2000/svg"
     />
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;
 
-exports[`ColumnHeaderCell render default column header cell 1`] = `
+exports[`ColumnHeaderCell renders a default column header cell 1`] = `
 <th
   className="column-header selectable"
   key="Column-0"
@@ -223,16 +254,21 @@ exports[`ColumnHeaderCell render default column header cell 1`] = `
       "width": "100px",
     }
   }
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="header-container"
+    role="button"
   >
-    <span
-      role="button"
-    >
+    <span>
        Vitals
     </span>
   </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
 </th>
 `;

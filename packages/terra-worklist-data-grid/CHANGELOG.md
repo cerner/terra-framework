@@ -1,19 +1,35 @@
 # Changelog
 
 ## Unreleased
-* Changed
-  * Updated data grid to honor the column and row widths specified by consumers.
-  
-## 0.2.0 - (July 4, 2023)
+
+## 0.3.0 - (July 19, 2023)
+
+* Breaking Changes
+  * Removed `columnWidth` prop in favor of the new `defaultColumnWidth` prop.
+  * Renamed `ariaLabelledby` prop to `ariaLabelledBy` to follow proper camelCasing and for consistency with other Terra components.
+
+* Added
+  * Added additional keyboard navigation shortcuts.
+  * Added support for cell selection.
+  * Added ability to resize columns via mouse.
+  * Added `defaultColumnWidth` prop to set the default column width if it is not set per column.
+  * Added `onColumnResize` prop for notifying consumers of a column resize.
 
 * Changed
-  * Removed ability to set variable row heights.
-  * Updated styling on cell focus.
+  * Updated data grid to honor the column and row widths specified by consumers.
+  * Optimized package size by excluding tests.
+
+## 0.2.0 - (July 4, 2023)
+
 * Added
   * Added masked cell support.
   * Added hover state for selectable cells.
   * Added blank cell support.
   * Added ability to allow consumers to specify the sort indicator and error state for columns.
+
+* Changed
+  * Removed ability to set variable row heights.
+  * Updated styling on cell focus.
 
 ## 0.1
   * Initial stable release.

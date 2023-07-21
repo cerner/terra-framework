@@ -12,4 +12,4 @@ runs:
       run: npm run clean
     - name: Install Dependencies
       shell: bash
-      run: npm install
+      run: npm ci

@@ -3,7 +3,8 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import WorklistDataGrid from '../../src/WorklistDataGrid';
-import ColumnHeaderCell from '../../src/ColumnHeaderCell';
+import ColumnHeader from '../../src/subcomponents/ColumnHeader';
+import Row from '../../src/subcomponents/Row';
 
 // Source data for tests
 const dataFile = {
@@ -39,9 +40,8 @@ const dataFile = {
     },
   ],
 };
-
 describe('WorklistDataGrid', () => {
-  it('renders a grid with 3 columns and 3 data rows and 9 cells', () => {
+  it('verifies that the grid created is consistent with the rows and columns props', () => {
     const wrapper = shallowWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
@@ -50,15 +50,28 @@ describe('WorklistDataGrid', () => {
       />,
     ).dive();
 
-    const columnHeaders = wrapper.find(ColumnHeaderCell);
-    const dataGridCells = wrapper.find('.worklist-data-grid-cell');
+    // One row used for the header.
+    const columnHeader = wrapper.find(ColumnHeader);
+    expect(columnHeader).toHaveLength(1);
 
-    expect(columnHeaders).toHaveLength(3);
-    expect(dataGridCells).toHaveLength(9);
+    // The number of rows should match the given data.
+    expect(wrapper.find(Row)).toHaveLength(dataFile.rows.length);
+
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('test masked cells', () => {
+  it('verifies the rows are created with the right props', () => {
+    const verifyRow = (rowIndex, rowComponent, data, columns) => {
+      expect(rowComponent.props.displayedColumns).toEqual(columns);
+      expect(rowComponent.props.hasRowSelection).toBe(false);
+      expect(rowComponent.key).toEqual(data.id);
+      expect(rowComponent.props.onCellSelect).toBeDefined();
+      expect(rowComponent.props.onRowSelect).toBeDefined();
+      expect(rowComponent.props.rowHeaderIndex).toEqual(0);
+      expect(rowComponent.props.rowIndex).toEqual(rowIndex + 1);
+      expect(rowComponent.props.cells).toEqual(data.cells);
+    };
+
     const wrapper = shallowWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
@@ -67,52 +80,12 @@ describe('WorklistDataGrid', () => {
       />,
     ).dive();
 
-    // Test masked cells
-    const maskedCells = wrapper.find('.masked');
+    const rows = wrapper.find(Row);
+    expect(rows).toHaveLength(dataFile.rows.length);
+    verifyRow(0, rows.get(0), dataFile.rows[0], dataFile.cols);
+    verifyRow(1, rows.get(1), dataFile.rows[1], dataFile.cols);
+    verifyRow(2, rows.get(2), dataFile.rows[2], dataFile.cols);
 
-    expect(maskedCells).toHaveLength(3);
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it('renders a grid with selectable cells', () => {
-    const wrapper = shallowWithIntl(
-      <WorklistDataGrid
-        id="test-terra-worklist-data-grid"
-        columns={dataFile.cols}
-        rows={dataFile.rows}
-      />,
-    ).dive();
-
-    // Test selectable cells for hover and selection actions
-    const selectableCells = wrapper.find('.selectable');
-    const selectableMaskedCells = wrapper.find('.masked.selectable');
-
-    expect(selectableCells).toHaveLength(6);
-    expect(selectableMaskedCells).toHaveLength(0);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('fails if the id prop is not set', () => {
-    jest.spyOn(console, 'error').mockImplementation();
-
-    // eslint-disable-next-line no-unused-vars
-    const wrapper = shallowWithIntl(<WorklistDataGrid />);
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining('The prop `id` is marked as required')); // eslint-disable-line no-console
-
-    console.error.mockRestore(); // eslint-disable-line no-console
-  });
-
-  it('sets the .blank class to an empty cell', () => {
-    const wrapper = shallowWithIntl(
-      <WorklistDataGrid
-        id="test-terra-worklist-data-grid"
-        columns={dataFile.cols}
-        rows={dataFile.rows}
-      />,
-    ).dive();
-
-    const blankCells = wrapper.find('.blank');
-    expect(blankCells).toHaveLength(1);
-    expect(blankCells.first().children()).toHaveLength(0);
   });
 });
