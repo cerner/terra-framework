@@ -21,7 +21,7 @@ class TabsResponsiveToParent extends React.Component {
     return (
       <div id="responsiveToParent">
         <button type="button" onClick={this.handleOnButtonClick}>Set Container Width to 600 px</button>
-        <TabsTemplate responsiveTo="parent" containerClassName={this.state.containerClassName} />
+        <TabsTemplate containerClassName={this.state.containerClassName} />
       </div>
     );
   }
