@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added examples for `terra-worklist-data-grid` when using pinned columns.
+
 ## 1.27.0 - (July 25, 2023)
 
 * Changed
