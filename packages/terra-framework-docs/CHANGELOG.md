@@ -33,6 +33,9 @@
   * Updated examples and tests for `terra-worklist-data-grid` to show masked cells and hover states
   * Updated examples and tests for `terra-worklist-data-grid` to show column sort and error indicators
 
+* Added
+  * Added test for `terra-modal-manager` to disclose modal using Fusion sizes.
+
 ## 1.23.0 - (June 12, 2023)
 
 * Changed
