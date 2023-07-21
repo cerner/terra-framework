@@ -75,6 +75,15 @@ issues:
     -> z-index?
 
 5.5 add border/box shadow to right side of pinned columns.
+    Tried:
+        - using CSS pseudo-classes (.pinned last-child, last-of-type, first-child, first-of-type) to select the last pinned column.
+            this is not possible (CSS limitation, cannot select last of class).
+        - adding a second class '.last-pinned' to the last pinned column. this works to apply box shadow, but cannot change
+            border style of a cell.
+
+    Other options:
+        - create an extra pinned column with a small width and set the 'box shadow' background on it.
+        - create a div the width and height of pinned columns with a lower z-index (so it is behind pinned columns) and set box shadow on it.
 
 5.6 validate that row headers are always pinned columns.
 
