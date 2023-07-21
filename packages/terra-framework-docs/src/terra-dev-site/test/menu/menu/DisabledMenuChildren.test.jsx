@@ -38,6 +38,7 @@ class DisabledMenuChildren extends React.Component {
           onRequestClose={this.handleRequestClose}
         >
           <Menu.Item text="Default Item 1" id="TestContent1" />
+          {/* eslint-disable-next-line no-alert */}
           <Menu.Item text="Default Item 2" id="TestContent2" isDisabled onClick={() => { alert('Disabled item was clicked !'); }} />
         </Menu>
         <Button id="default-button" type="button" onClick={this.handleButtonClick} text="Default Menu" aria-haspopup icon={<IconCaretDown />} isReversed refCallback={this.setButtonNode} />

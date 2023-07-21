@@ -185,6 +185,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
             "timeZone": null,
           }
         }
+        setFocusOnContainer={false}
       >
         <div
           className="content-container-fill side-menu-content-container orion-fusion-theme"
@@ -474,10 +475,10 @@ exports[`Layout correctly applies the theme context className 1`] = `
             className="main"
           >
             <Scroll
-              className="normalizer"
+              className="normalizer orion-fusion-theme"
             >
               <div
-                className="scroll normalizer"
+                className="scroll normalizer orion-fusion-theme"
               >
                 <nav
                   role="navigation"

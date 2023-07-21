@@ -48,6 +48,7 @@ Cerner Corporation
 - Andrew Tran [@trandrew1023]
 - Steven Mason [@smason0]
 - Alla Doroshkevych [@adoroshk]
+- Kol Kheang [@kolkheang]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -97,3 +98,4 @@ Cerner Corporation
 [@trandrew1023]: https://github.com/trandrew1023
 [@smason0]: https://github.com/smason0
 [@adoroshk]: https://github.com/adoroshk
+[@kolkheang]: https://github.com/kolkheang

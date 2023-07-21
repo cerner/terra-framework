@@ -1,4 +1,16 @@
 {
   "Terra.worklistDataGrid.maskedCell": "Masked data",
-  "Terra.worklistDataGrid.blank": "Blank"
+  "Terra.worklistDataGrid.columnError": "Errors associated with column",
+  "Terra.worklistDataGrid.blank": "Blank",
+  "Terra.worklist-data-grid.navigate": "Navigate to data grid",
+  "Terra.worklist-data-grid.cell-selection-template": "Row {row} Column {column} selected",
+  "Terra.worklist-data-grid.cell-selection-cleared": "Selected cell cleared",
+  "Terra.worklist-data-grid.row-selection-template" : "Row {row} selected",
+  "Terra.worklist-data-grid.row-selection-cleared-template" : "Row {row} unselected",
+  "Terra.worklist-data-grid.row-selection-mode-enabled": "Row Selection Mode enabled",
+  "Terra.worklist-data-grid.row-selection-mode-disabled": "Row Selection Mode disabled",
+  "Terra.worklist-data-grid.all-rows-selected" : "All rows selected",
+  "Terra.worklist-data-grid.all-rows-unselected" : "All rows unselected",
+  "Terra.worklist-data-grid.row-index" : "Row {row}",
+  "Terra.worklist-data-grid.resizeHandleValueText": "{columnWidth} pixels column width"
 }

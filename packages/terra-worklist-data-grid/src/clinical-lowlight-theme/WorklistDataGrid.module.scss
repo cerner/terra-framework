@@ -1,22 +1,7 @@
 :local {
   .clinical-lowlight-theme {
-    // Grid
-    --terra-worklist-data-grid-border: 2px solid #020005;
-
-    // Rows
-    --terra-worklist-data-grid-row-striped-background-color: #2d3539;
-
-    // Columns
-    --terra-worklist-data-grid-column-header-text-color: #b2b5b6;
-    --terra-worklist-data-grid-column-header-background-color: #6e6f71;
-    --terra-worklist-data-grid-column-header-border: 1px solid #181b1d;
-
-    // Cells
-    --terra-worklist-data-grid-cell-border: 1px solid #181b1d;
-    --terra-worklist-data-grid-cell-focus-outline: 2px dashed #fff;
+    --terra-worklist-data-grid-border: 1px solid #181b1d;
+    --terra-worklist-data-grid-cell-focus-outline: 3px dashed #fff;
     --terra-worklist-data-grid-cell-focus-outline-offset: -2px;
-
-    // Maksed Cell Pattern
-    --terra-worklist-data-grid-mask-background: repeating-linear-gradient(-45deg, #434647, #434647 3px, transparent 3px, transparent 6px);
   }
 }

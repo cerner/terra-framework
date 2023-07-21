@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 6.71.0 - (July 19, 2023)
+
+* Changed
+  * Locked `uuid` dependency to `7.0.3` for consistency across Terra packages.
+
+## 6.70.0 - (July 4, 2023)
+
+* Fixed
+  * Fixed issue where toggled item on nested menus was being reset while navigating back and forth between them.
+
 ## 6.69.0 - (June 12, 2023)
 
 * Changed

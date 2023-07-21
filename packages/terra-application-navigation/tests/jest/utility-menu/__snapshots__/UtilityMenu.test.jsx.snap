@@ -50,6 +50,7 @@ exports[`UtilityMenu should render default element 1`] = `
           title="Terra.applicationNavigation.utilityMenu.headerTitle"
         />
       }
+      setFocusOnContainer={false}
     >
       <div
         className="content-container-static container"
@@ -398,6 +399,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
           title="Terra.applicationNavigation.utilityMenu.headerTitle"
         />
       }
+      setFocusOnContainer={false}
     >
       <div
         className="content-container-static container"
@@ -1072,6 +1074,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
           title="Terra.applicationNavigation.utilityMenu.headerTitle"
         />
       }
+      setFocusOnContainer={false}
     >
       <div
         className="content-container-static container"

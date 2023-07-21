@@ -244,7 +244,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                             class="main"
                           >
                             <div
-                              class="scroll normalizer"
+                              class="scroll normalizer orion-fusion-theme"
                             >
                               <ul
                                 class="list orion-fusion-theme list"
@@ -442,6 +442,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                       fitEnd={<div />}
                                     />
                                   }
+                                  setFocusOnContainer={false}
                                 >
                                   <div
                                     className="content-container-static"
@@ -478,10 +479,10 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                       className="main"
                                     >
                                       <Scroll
-                                        className="normalizer"
+                                        className="normalizer orion-fusion-theme"
                                       >
                                         <div
-                                          className="scroll normalizer"
+                                          className="scroll normalizer orion-fusion-theme"
                                         >
                                           <InjectIntl(List)
                                             className="list"

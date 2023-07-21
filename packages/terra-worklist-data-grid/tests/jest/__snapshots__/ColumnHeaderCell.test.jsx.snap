@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] = `
+<th
+  aria-sort="ascending"
+  className="column-header selectable"
+  key="Column-0"
+  role="columnheader"
+  scope="col"
+  style={
+    Object {
+      "height": "150px",
+      "width": "100px",
+    }
+  }
+  tabIndex={-1}
+>
+  <div
+    className="header-container"
+    role="button"
+  >
+    <span>
+       Vitals
+    </span>
+    <IconUp
+      data-name="Layer 1"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
+</th>
+`;
+
+exports[`ColumnHeaderCell renders a column header cell with ascending sort and error 1`] = `
+<th
+  aria-sort="ascending"
+  className="column-header selectable"
+  key="Column-0"
+  role="columnheader"
+  scope="col"
+  style={
+    Object {
+      "height": "150px",
+      "width": "100px",
+    }
+  }
+  tabIndex={-1}
+>
+  <div
+    className="header-container"
+    role="button"
+  >
+    <IconError
+      a11yLabel="Terra.worklistDataGrid.columnError"
+      className="error-icon"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+    <span>
+       Vitals
+    </span>
+    <IconUp
+      data-name="Layer 1"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
+</th>
+`;
+
+exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] = `
+<th
+  aria-sort="descending"
+  className="column-header selectable"
+  key="Column-0"
+  role="columnheader"
+  scope="col"
+  style={
+    Object {
+      "height": "150px",
+      "width": "100px",
+    }
+  }
+  tabIndex={-1}
+>
+  <div
+    className="header-container"
+    role="button"
+  >
+    <span>
+       Vitals
+    </span>
+    <IconDown
+      data-name="Layer 1"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
+</th>
+`;
+
+exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
+<th
+  className="column-header selectable"
+  key="Column-0"
+  role="columnheader"
+  scope="col"
+  style={
+    Object {
+      "height": "150px",
+      "width": "100px",
+    }
+  }
+  tabIndex={-1}
+>
+  <div
+    className="header-container"
+    role="button"
+  >
+    <IconError
+      a11yLabel="Terra.worklistDataGrid.columnError"
+      className="error-icon"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+    <span>
+       Vitals
+    </span>
+  </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
+</th>
+`;
+
+exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callback 1`] = `
+<th
+  aria-sort="ascending"
+  className="column-header selectable"
+  key="Column-0"
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="columnheader"
+  scope="col"
+  style={
+    Object {
+      "height": "150px",
+      "width": "100px",
+    }
+  }
+  tabIndex={-1}
+>
+  <div
+    className="header-container"
+    role="button"
+  >
+    <IconError
+      a11yLabel="Terra.worklistDataGrid.columnError"
+      className="error-icon"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+    <span>
+       Vitals
+    </span>
+    <IconUp
+      data-name="Layer 1"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
+</th>
+`;
+
+exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callback but not selectable 1`] = `
+<th
+  aria-sort="ascending"
+  className="column-header"
+  key="Column-0"
+  role="columnheader"
+  scope="col"
+  style={
+    Object {
+      "height": "150px",
+      "width": "100px",
+    }
+  }
+  tabIndex={-1}
+>
+  <div
+    className="header-container"
+    role="button"
+  >
+    <IconError
+      a11yLabel="Terra.worklistDataGrid.columnError"
+      className="error-icon"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+    <span>
+       Vitals
+    </span>
+    <IconUp
+      data-name="Layer 1"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
+</th>
+`;
+
+exports[`ColumnHeaderCell renders a default column header cell 1`] = `
+<th
+  className="column-header selectable"
+  key="Column-0"
+  role="columnheader"
+  scope="col"
+  style={
+    Object {
+      "height": "150px",
+      "width": "100px",
+    }
+  }
+  tabIndex={-1}
+>
+  <div
+    className="header-container"
+    role="button"
+  >
+    <span>
+       Vitals
+    </span>
+  </div>
+  <InjectIntl(ColumnResizeHandle)
+    columnIndex={0}
+    columnText=" Vitals"
+    columnWidth={100}
+    onResizeMouseDown={[Function]}
+  />
+</th>
+`;

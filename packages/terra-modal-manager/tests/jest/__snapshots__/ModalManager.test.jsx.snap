@@ -300,6 +300,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                     <ContentContainer
                       fill={true}
                       header={<React.Fragment />}
+                      setFocusOnContainer={false}
                     >
                       <div
                         className="content-container-fill"

@@ -156,7 +156,7 @@ Consumers should be aware to not intentionally create the above situation.
 
 Pills uses `uuid` which changes the component's description id dynamically. To mock it with the Jest testing library, `jest.mock` can be used.
 
-If Enzyme `shallow` rendering is being used for the tests then the mock may not be required. However, if `mount` is used then uuid should be mocked as shown below.
+If Enzyme `shallow` rendering is being used for the tests then the mock may not be required. However, if `mount` is used then `uuid` should be mocked as shown below:
 
 ```js
 // using a variable may result in failures. For best results, hardcode the mock return value.
