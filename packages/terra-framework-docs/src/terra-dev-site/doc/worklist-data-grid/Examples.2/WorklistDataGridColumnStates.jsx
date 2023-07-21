@@ -90,19 +90,17 @@ const DefaultWorklistDataGrid = () => {
   };
 
   return (
-    <React.Fragment>
-      <WorklistDataGrid
-        id="default-terra-worklist-data-grid"
-        overflowColumns={gridColumns}
-        rows={gridRows}
-        rowHeaderIndex={rowHeaderIndex}
-        rowHeight="50px"
-        defaultColumnWidth={100}
-        columnHeaderHeight="50px"
-        onColumnSelect={onColumnSelect}
-        ariaLabel="Worklist Data Grid"
-      />
-    </React.Fragment>
+    <WorklistDataGrid
+      id="default-terra-worklist-data-grid"
+      overflowColumns={gridColumns}
+      rows={gridRows}
+      rowHeaderIndex={rowHeaderIndex}
+      rowHeight="50px"
+      defaultColumnWidth={100}
+      columnHeaderHeight="50px"
+      onColumnSelect={onColumnSelect}
+      ariaLabel="Worklist Data Grid"
+    />
   );
 };
 

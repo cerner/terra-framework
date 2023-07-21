@@ -56,16 +56,14 @@ const PinnedColumns = () => {
   const { cols, rows } = gridDataJSON;
 
   return (
-    <React.Fragment>
-      <WorklistDataGrid
-        id="default-terra-worklist-data-grid"
-        pinnedColumns={cols.slice(0, 3)}
-        overflowColumns={cols.slice(3)}
-        rows={rows}
-        rowHeaderIndex={rowHeaderIndex}
-        ariaLabel="Worklist Data Grid"
-      />
-    </React.Fragment>
+    <WorklistDataGrid
+    id="default-terra-worklist-data-grid"
+    pinnedColumns={cols.slice(0, 3)}
+    overflowColumns={cols.slice(3)}
+    rows={rows}
+    rowHeaderIndex={rowHeaderIndex}
+    ariaLabel="Worklist Data Grid"
+    />
   );
 };
 
