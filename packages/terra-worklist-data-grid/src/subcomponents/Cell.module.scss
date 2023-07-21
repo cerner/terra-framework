@@ -44,7 +44,7 @@
 
   // Hover state for selectable elements
   .selectable:hover {
-    background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
+    background-color: var(--terra-worklist-data-grid-hover-background-color, #D8E5ED);
     cursor: pointer;
   }
 }
