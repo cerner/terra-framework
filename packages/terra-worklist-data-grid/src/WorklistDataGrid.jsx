@@ -283,12 +283,12 @@ function WorklistDataGrid(props) {
       let cumulativeOffset = 0;
       const offsetArray = [0];
       const totalPinnedColumnsCount = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
-  
+
       dataGridColumns.slice(0, totalPinnedColumnsCount).map((pinnedCol) => {
         cumulativeOffset += pinnedCol.width;
         offsetArray.push(cumulativeOffset);
       });
-  
+
       setPinnedColumnsTotalWidth(cumulativeOffset + dataGridColumns[pinnedColumns.length - 1].width);
       setPinnedColumnOffsets(offsetArray);
     }

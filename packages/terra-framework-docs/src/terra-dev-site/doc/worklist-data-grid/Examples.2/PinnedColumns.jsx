@@ -57,12 +57,12 @@ const PinnedColumns = () => {
 
   return (
     <WorklistDataGrid
-    id="default-terra-worklist-data-grid"
-    pinnedColumns={cols.slice(0, 3)}
-    overflowColumns={cols.slice(3)}
-    rows={rows}
-    rowHeaderIndex={rowHeaderIndex}
-    ariaLabel="Worklist Data Grid"
+      id="default-terra-worklist-data-grid"
+      pinnedColumns={cols.slice(0, 3)}
+      overflowColumns={cols.slice(3)}
+      rows={rows}
+      rowHeaderIndex={rowHeaderIndex}
+      ariaLabel="Worklist Data Grid"
     />
   );
 };
