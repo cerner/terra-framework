@@ -11,7 +11,7 @@ import TabContent from './TabContentTemplate';
 
 const TabsWithIconsInMenu = () => (
   <div id="tabsWithIconsInMenu">
-    <Tabs responsiveTo="parent">
+    <Tabs>
       <Tabs.Pane id="search" label="Search" icon={<IconSearch />} key="Search">
         <TabContent label="Search Icon" />
       </Tabs.Pane>
