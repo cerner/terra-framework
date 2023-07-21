@@ -529,8 +529,6 @@ function WorklistDataGrid(props) {
       id={row.id}
       isSelected={row.isSelected}
       cells={row.cells}
-      pinnedCells={row.cells.slice(0, pinnedColumns.length)}
-      overflowCells={row.cells.slice(pinnedColumns.length)}
       ariaLabel={row.ariaLabel}
       hasRowSelection={hasSelectableRows}
       displayedColumns={displayedColumns}
