@@ -213,7 +213,8 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                           class="main"
                         >
                           <div
-                            class="scroll normalizer"
+                            class="scroll normalizer light"
+                            tabindex="-1"
                           >
                             <div
                               class="slide-group"
@@ -312,10 +313,12 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                           className="main"
                         >
                           <Scroll
-                            className="normalizer"
+                            className="normalizer light"
+                            tabIndex="-1"
                           >
                             <div
-                              className="scroll normalizer"
+                              className="scroll normalizer light"
+                              tabIndex="-1"
                             >
                               <SlideGroup
                                 isAnimated={true}

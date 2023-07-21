@@ -207,10 +207,12 @@ exports[`UtilityMenu should render default element 1`] = `
           className="main"
         >
           <Scroll
-            className="normalizer"
+            className="normalizer light"
+            tabIndex="-1"
           >
             <div
-              className="scroll normalizer"
+              className="scroll normalizer light"
+              tabIndex="-1"
             >
               <div
                 className="content"
@@ -556,10 +558,12 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
           className="main"
         >
           <Scroll
-            className="normalizer"
+            className="normalizer light"
+            tabIndex="-1"
           >
             <div
-              className="scroll normalizer"
+              className="scroll normalizer light"
+              tabIndex="-1"
             >
               <div
                 className="content"
@@ -1231,10 +1235,12 @@ exports[`UtilityMenu should render with skip callback 1`] = `
           className="main"
         >
           <Scroll
-            className="normalizer"
+            className="normalizer light"
+            tabIndex="-1"
           >
             <div
-              className="scroll normalizer"
+              className="scroll normalizer light"
+              tabIndex="-1"
             >
               <div
                 className="content"

@@ -296,7 +296,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                   class="main"
                 >
                   <div
-                    class="scroll normalizer"
+                    class="scroll normalizer light"
+                    tabindex="-1"
                   >
                     <div>
                       children node(s)
@@ -419,7 +420,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                         class="main"
                       >
                         <div
-                          class="scroll normalizer"
+                          class="scroll normalizer light"
+                          tabindex="-1"
                         >
                           <div>
                             children node(s)
@@ -534,7 +536,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                           class="main"
                         >
                           <div
-                            class="scroll normalizer"
+                            class="scroll normalizer light"
+                            tabindex="-1"
                           >
                             <div>
                               children node(s)
@@ -679,10 +682,12 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                     className="main"
                   >
                     <Scroll
-                      className="normalizer"
+                      className="normalizer light"
+                      tabIndex="-1"
                     >
                       <div
-                        className="scroll normalizer"
+                        className="scroll normalizer light"
+                        tabIndex="-1"
                       >
                         <div
                           key=".0"
