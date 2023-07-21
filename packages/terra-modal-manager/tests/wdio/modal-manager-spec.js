@@ -484,3 +484,91 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
     });
   });
 });
+
+Terra.describeViewports('ModalManager - Fusion Sizes', ['tiny', 'large'], () => {
+  before(() => {
+    browser.url('/#/raw/tests/cerner-terra-framework-docs/modal-manager/modal-manager-with-fusion-sizes');
+    browser.refresh();
+  });
+
+  afterEach(() => {
+    browser.keys('Escape');
+  });
+
+  describe('Size Props', () => {
+    it('Disclose Fusion Small', () => {
+      $('#root-component .disclose-fusion-small').click();
+      Terra.validates.element('disclose fusion-small', { selector });
+    });
+
+    it('Disclose Fusion Medium', () => {
+      $('#root-component .disclose-fusion-medium').click();
+      Terra.validates.element('disclose fusion-medium', { selector });
+    });
+
+    it('Disclose Fusion Large', () => {
+      $('#root-component .disclose-fusion-large').click();
+      Terra.validates.element('disclose fusion-large', { selector });
+    });
+  });
+
+  describe('Dimensions Props', () => {
+    it('Disclose Width-400', () => {
+      $('#disclosureDimensions-width-0').click();
+      $('#width-400-0').click();
+      $('#root-component #disclose-dimension-0').click();
+      $('#DemoContainer-1 .disclose-fusion-small').moveTo();
+
+      Terra.validates.element('disclose width-400', { selector });
+    });
+
+    it('Disclose Width-600', () => {
+      $('#disclosureDimensions-width-0').click();
+      $('#width-600-0').click();
+      $('#root-component #disclose-dimension-0').click();
+      $('#DemoContainer-1 .disclose-fusion-small').moveTo();
+
+      Terra.validates.element('disclose width-600', { selector });
+    });
+
+    it('Disclose Width-700', () => {
+      $('#disclosureDimensions-width-0').click();
+      $('#width-700-0').click();
+      $('#root-component #disclose-dimension-0').click();
+      $('#DemoContainer-1 .disclose-fusion-small').moveTo();
+
+      Terra.validates.element('disclose width-700', { selector });
+    });
+
+    it('Disclose Height-280', () => {
+      // reset width
+      $('#disclosureDimensions-width-0').click();
+      $('#width-320-0').click();
+
+      $('#disclosureDimensions-height-0').click();
+      $('#height-280-0').click();
+      $('#root-component #disclose-dimension-0').click();
+      $('#DemoContainer-1 .disclose-fusion-small').moveTo();
+
+      Terra.validates.element('disclose height-280', { selector });
+    });
+
+    it('Disclose Height-380', () => {
+      $('#disclosureDimensions-height-0').click();
+      $('#height-380-0').click();
+      $('#root-component #disclose-dimension-0').click();
+      $('#DemoContainer-1 .disclose-fusion-small').moveTo();
+
+      Terra.validates.element('disclose height-380', { selector });
+    });
+
+    it('Disclose Height-460', () => {
+      $('#disclosureDimensions-height-0').click();
+      $('#height-460-0').click();
+      $('#root-component #disclose-dimension-0').click();
+      $('#DemoContainer-1 .disclose-fusion-small').moveTo();
+
+      Terra.validates.element('disclose height-460', { selector });
+    });
+  });
+});

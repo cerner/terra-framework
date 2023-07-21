@@ -1,5 +1,5 @@
 import React from 'react';
-import DisclosureManager, { withDisclosureManager, DisclosureManagerHeaderAdapter } from '../../src/DisclosureManager';
+import DisclosureManager, { withDisclosureManager, DisclosureManagerHeaderAdapter, availableDisclosureSizes } from '../../src/DisclosureManager';
 
 const TestChild = withDisclosureManager(({ id }) => <div id={id} />);
 
@@ -155,6 +155,198 @@ describe('DisclosureManager', () => {
 
     return triggerChildDisclose(wrapper).then(() => {
       expect(wrapper.exists('#disclosure-container')).toBe(true);
+    });
+  });
+
+  it('renders disclosed content in the disclosure wrapper with default size of "small" when none provided', () => {
+    const triggerChildDiscloseDefaultSize = (wrapper) => (
+      new Promise((resolve, reject) => {
+        const childDisclosureManager1 = wrapper.find('#child1').getElements()[1].props.disclosureManager;
+        childDisclosureManager1.disclose({
+          preferredType: 'test',
+          size: null,
+          content: {
+            key: 'DISCLOSE_KEY',
+            component: <TestChild id="disclosure-component" />,
+          },
+        }).then(resolve).catch(reject);
+      })
+        .then(() => {
+          wrapper.update();
+        })
+    );
+
+    const wrapper = mount(
+      <DisclosureManager.WrappedComponent
+        render={(manager) => (
+          <div id="content">
+            {manager.children.components}
+            {manager.disclosure.components}
+          </div>
+        )}
+        withDisclosureContainer={(content) => (
+          <div id="disclosure-container">
+            {content}
+          </div>
+        )}
+        supportedDisclosureTypes={['test']}
+      >
+        <TestChild id="child1" />
+        <TestChild id="child2" />
+      </DisclosureManager.WrappedComponent>,
+    );
+
+    validateInitialState(wrapper);
+    validateChildDelegate(wrapper);
+
+    return triggerChildDiscloseDefaultSize(wrapper).then(() => {
+      expect(wrapper.exists('#disclosure-container')).toBe(true);
+      expect(wrapper.state().disclosureSize).toBe('small');
+    });
+  });
+
+  it('renders disclosed content in the disclosure wrapper with a "fusion" size when provided', () => {
+    const triggerChildDiscloseFusionSize = (wrapper) => (
+      new Promise((resolve, reject) => {
+        const childDisclosureManager1 = wrapper.find('#child1').getElements()[1].props.disclosureManager;
+        childDisclosureManager1.disclose({
+          preferredType: 'test',
+          size: availableDisclosureSizes.FUSION_MEDIUM,
+          content: {
+            key: 'DISCLOSE_KEY',
+            component: <TestChild id="disclosure-component" />,
+          },
+        }).then(resolve).catch(reject);
+      })
+        .then(() => {
+          wrapper.update();
+        })
+    );
+
+    const wrapper = mount(
+      <DisclosureManager.WrappedComponent
+        render={(manager) => (
+          <div id="content">
+            {manager.children.components}
+            {manager.disclosure.components}
+          </div>
+        )}
+        withDisclosureContainer={(content) => (
+          <div id="disclosure-container">
+            {content}
+          </div>
+        )}
+        supportedDisclosureTypes={['test']}
+      >
+        <TestChild id="child1" />
+        <TestChild id="child2" />
+      </DisclosureManager.WrappedComponent>,
+    );
+
+    validateInitialState(wrapper);
+    validateChildDelegate(wrapper);
+
+    return triggerChildDiscloseFusionSize(wrapper).then(() => {
+      expect(wrapper.exists('#disclosure-container')).toBe(true);
+      expect(wrapper.state().disclosureSize).toBe('fusion-medium');
+    });
+  });
+
+  it('renders disclosed content in the disclosure wrapper with default dimensions when invalid height is provided', () => {
+    const defaultHeight = 690;
+    const defaultWidth = 1120;
+    const triggerChildDiscloseInvalidHeight = (wrapper) => (
+      new Promise((resolve, reject) => {
+        const childDisclosureManager1 = wrapper.find('#child1').getElements()[1].props.disclosureManager;
+        childDisclosureManager1.disclose({
+          preferredType: 'test',
+          dimensions: { height: 1234, width: 560 },
+          content: {
+            key: 'DISCLOSE_KEY',
+            component: <TestChild id="disclosure-component" />,
+          },
+        }).then(resolve).catch(reject);
+      })
+        .then(() => {
+          wrapper.update();
+        })
+    );
+
+    const wrapper = mount(
+      <DisclosureManager.WrappedComponent
+        render={(manager) => (
+          <div id="content">
+            {manager.children.components}
+            {manager.disclosure.components}
+          </div>
+        )}
+        withDisclosureContainer={(content) => (
+          <div id="disclosure-container">
+            {content}
+          </div>
+        )}
+        supportedDisclosureTypes={['test']}
+      >
+        <TestChild id="child1" />
+        <TestChild id="child2" />
+      </DisclosureManager.WrappedComponent>,
+    );
+
+    validateInitialState(wrapper);
+    validateChildDelegate(wrapper);
+
+    return triggerChildDiscloseInvalidHeight(wrapper).then(() => {
+      expect(wrapper.exists('#disclosure-container')).toBe(true);
+      expect(wrapper.state().disclosureDimensions).toEqual({ height: defaultHeight, width: defaultWidth });
+    });
+  });
+
+  it('renders disclosed content in the disclosure wrapper with default dimensions when invalid width is provided', () => {
+    const defaultHeight = 690;
+    const defaultWidth = 1120;
+    const triggerChildDiscloseInvalidWidth = (wrapper) => (
+      new Promise((resolve, reject) => {
+        const childDisclosureManager1 = wrapper.find('#child1').getElements()[1].props.disclosureManager;
+        childDisclosureManager1.disclose({
+          preferredType: 'test',
+          dimensions: { height: 380, width: 1234 },
+          content: {
+            key: 'DISCLOSE_KEY',
+            component: <TestChild id="disclosure-component" />,
+          },
+        }).then(resolve).catch(reject);
+      })
+        .then(() => {
+          wrapper.update();
+        })
+    );
+
+    const wrapper = mount(
+      <DisclosureManager.WrappedComponent
+        render={(manager) => (
+          <div id="content">
+            {manager.children.components}
+            {manager.disclosure.components}
+          </div>
+        )}
+        withDisclosureContainer={(content) => (
+          <div id="disclosure-container">
+            {content}
+          </div>
+        )}
+        supportedDisclosureTypes={['test']}
+      >
+        <TestChild id="child1" />
+        <TestChild id="child2" />
+      </DisclosureManager.WrappedComponent>,
+    );
+
+    validateInitialState(wrapper);
+    validateChildDelegate(wrapper);
+
+    return triggerChildDiscloseInvalidWidth(wrapper).then(() => {
+      expect(wrapper.exists('#disclosure-container')).toBe(true);
+      expect(wrapper.state().disclosureDimensions).toEqual({ height: defaultHeight, width: defaultWidth });
     });
   });
 

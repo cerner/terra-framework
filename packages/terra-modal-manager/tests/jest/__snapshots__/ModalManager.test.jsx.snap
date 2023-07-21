@@ -47,7 +47,7 @@ exports[`ModalManager correctly applies the theme context className 1`] = `
           </withDisclosureManager(Component)>
           <AbstractModal
             ariaLabel="Modal"
-            classNameModal="modal-manager"
+            classNameModal="modal-manager orion-fusion-theme"
             classNameOverlay={null}
             closeOnEsc={true}
             closeOnOutsideClick={false}

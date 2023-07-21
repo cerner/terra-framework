@@ -614,6 +614,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                     </FormattedMessage>
                   </div>
                 }
+                setFocusOnContainer={false}
               >
                 <div
                   className="content-container-fill"
@@ -784,6 +785,7 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
               </FormattedMessage>
             </div>
           }
+          setFocusOnContainer={false}
         >
           <div
             key=".0"
