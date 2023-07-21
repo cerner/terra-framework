@@ -102,7 +102,7 @@ const ColumnResizeHandle = (props) => {
     event.preventDefault();
   };
 
-  const onMouseEnter = () => {
+  const fitToTable = () => {
     // Find parent table element
     const parentTable = resizeHandleRef.current.closest('table');
 
@@ -113,7 +113,9 @@ const ColumnResizeHandle = (props) => {
   };
 
   const onMouseLeave = () => {
-    resizeHandleRef.current.style.height = '100%';
+    if (document.activeElement !== resizeHandleRef.current) {
+      resizeHandleRef.current.style.height = '100%';
+    }
   };
 
   // Handle column resize handle keyboard navigation
@@ -174,10 +176,11 @@ const ColumnResizeHandle = (props) => {
       aria-label={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
       // aria-valuetext={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
       onMouseDown={onMouseDown}
-      onMouseEnter={onMouseEnter}
+      onMouseEnter={fitToTable}
       onMouseLeave={onMouseLeave}
       onKeyDown={onKeyDown}
       onClick={onClick}
+      onFocus={fitToTable}
       onBlur={() => { setNavigationEnabled(true); }}
       className={cx('resize-handle', theme.className)}
     />
