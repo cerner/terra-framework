@@ -93,7 +93,6 @@ const defaultProps = {
   isSelected: false,
   isSelectable: true,
   isMasked: false,
-  isPinned: false,
 };
 
 function Cell(props) {
