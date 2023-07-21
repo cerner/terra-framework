@@ -167,20 +167,6 @@ function WorklistDataGrid(props) {
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
   const [pinnedColumnsTotalWidth, setPinnedColumnsTotalWidth] = useState(0);
 
-  const calculateOffsets = () => {
-    let cumulativeOffset = 0;
-    const offsetArray = [0];
-    const totalPinnedColumnsCount = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
-
-    dataGridColumns.slice(0, totalPinnedColumnsCount).map((pinnedCol) => {
-      cumulativeOffset += pinnedCol.width;
-      offsetArray.push(cumulativeOffset);
-    });
-
-    setPinnedColumnsTotalWidth(cumulativeOffset + dataGridColumns[pinnedColumns.length - 1].width);
-    setPinnedColumnOffsets(offsetArray);
-  };
-
   // Initialize column width properties
   const initializeColumn = (column) => {
     const newColumn = { ...column };
@@ -291,10 +277,20 @@ function WorklistDataGrid(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pinnedColumns, overflowColumns]);
 
-  // useEffect for pinned column offset
+  // useEffect to calculate pinned column offsets
   useEffect(() => {
     if (pinnedColumns.length > 0) {
-      calculateOffsets();
+      let cumulativeOffset = 0;
+      const offsetArray = [0];
+      const totalPinnedColumnsCount = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
+  
+      dataGridColumns.slice(0, totalPinnedColumnsCount).map((pinnedCol) => {
+        cumulativeOffset += pinnedCol.width;
+        offsetArray.push(cumulativeOffset);
+      });
+  
+      setPinnedColumnsTotalWidth(cumulativeOffset + dataGridColumns[pinnedColumns.length - 1].width);
+      setPinnedColumnOffsets(offsetArray);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataGridColumns]);
