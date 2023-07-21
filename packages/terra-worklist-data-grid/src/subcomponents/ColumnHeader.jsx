@@ -6,10 +6,9 @@ import ColumnHeaderCell from './ColumnHeaderCell';
 
 const propTypes = {
   /**
-   * Data for columns.
-   * Columns will be presented in the order given.
+   * Data for columns. By default, columns will be presented in the order given.
    */
-  columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
+  columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape).isRequired,
 
   /**
    * String that specifies the column header height. Any valid CSS height value accepted.
@@ -36,11 +35,6 @@ const propTypes = {
    * Function that is called when the mouse down event is triggered on the column resize handle.
    */
   onResizeMouseDown: PropTypes.func,
-};
-
-const defaultProps = {
-  pinnedColumns: [],
-  overflowColumns: [],
 };
 
 const ColumnHeader = (props) => {
@@ -86,6 +80,4 @@ const ColumnHeader = (props) => {
 };
 
 ColumnHeader.propTypes = propTypes;
-ColumnHeader.defaultProps = defaultProps;
-
 export default ColumnHeader;
