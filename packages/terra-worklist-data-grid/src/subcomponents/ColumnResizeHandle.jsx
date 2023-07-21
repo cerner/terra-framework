@@ -164,20 +164,21 @@ const ColumnResizeHandle = (props) => {
     <div
       ref={resizeHandleRef}
       draggable
-      role="separator"
+      role="slider"
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={isActive ? 0 : -1}
       aria-hidden={!isActive}
       aria-valuemin={minimumWidth}
       aria-valuenow={columnWidth}
       aria-valuemax={maximumWidth}
-      // aria-label={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
-      aria-valuetext={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
+      aria-label={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
+      // aria-valuetext={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
       onMouseDown={onMouseDown}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onKeyDown={onKeyDown}
       onClick={onClick}
+      onBlur={() => { setNavigationEnabled(true); }}
       className={cx('resize-handle', theme.className)}
     />
   );
