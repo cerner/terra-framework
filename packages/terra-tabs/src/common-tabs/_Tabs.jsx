@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import MoreButton from './_MoreButton';
 import TabDropDown from './_TabDropDown';
 import Tab from './_Tab';
@@ -77,9 +78,8 @@ class Tabs extends React.Component {
     this.wrapOnSelect = this.wrapOnSelect.bind(this);
     this.wrapOnSelectHidden = this.wrapOnSelectHidden.bind(this);
     this.positionDropDown = this.positionDropDown.bind(this);
-    this.handleDragOver = this.handleDragOver.bind(this);
-    this.handleDragStart = this.handleDragStart.bind(this);
-    this.handleDrop = this.handleDrop.bind(this);
+    this.handleDragEnd = this.handleDragEnd.bind(this);
+    this.reorder = this.reorder.bind(this);
     this.resetCache();
     // this.visibleTabs = [];
     this.state = {
@@ -190,12 +190,18 @@ class Tabs extends React.Component {
     this.setIsOpen(false);
   }
 
-  handleDragStart(e, id) {
-    e.dataTransfer.setData('tabId', id);
-  }
-
-  handleDragOver(e) {
-    e.preventDefault();
+  handleDragEnd(result) {
+    if (!result.destination) {
+      return;
+    }
+    this.setState((prevState) => {
+      const items = this.reorder(
+        prevState.visibleTabData,
+        result.source.index,
+        result.destination.index,
+      );
+      return { visibleTabData: items };
+    });
   }
 
   setIsOpen(value) {
@@ -203,24 +209,12 @@ class Tabs extends React.Component {
     this.forceUpdate();
   }
 
-  handleDrop = (e, targetTabId) => {
-    e.preventDefault();
-    const sourceTabId = e.dataTransfer.getData('tabId');
+  reorder = (list, startIndex, endIndex) => {
+    const result = Array.from(list);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
 
-    const sourceTabIndex = this.state.visibleTabData.findIndex((tab) => tab.id.toString() === sourceTabId);
-    const targetTabIndex = this.state.visibleTabData.findIndex((tab) => tab.id.toString() === targetTabId);
-
-    if (sourceTabIndex !== targetTabIndex) {
-      this.setState((prevState) => {
-        const updatedTabData = [...prevState.visibleTabData];
-        if (sourceTabIndex > -1 && targetTabIndex > -1) {
-          const movedTab = updatedTabData[sourceTabIndex];
-          updatedTabData[sourceTabIndex] = updatedTabData[targetTabIndex];
-          updatedTabData[targetTabIndex] = movedTab;
-        }
-        return { visibleTabData: updatedTabData };
-      });
-    }
+    return result;
   };
 
   resetCache() {
@@ -306,9 +300,6 @@ class Tabs extends React.Component {
             isIconOnly={tab.isIconOnly}
             variant={variant}
             onChange={onChange}
-            handleDragStart={(e) => this.handleDragStart(e, tab.id.toString())}
-            handleDragOver={this.handleDragOver}
-            handleDrop={(e) => this.handleDrop(e, tab.id.toString())}
           />,
         );
       } else {
@@ -345,39 +336,49 @@ class Tabs extends React.Component {
     const commonTabsClassNames = cx('tab-container', theme.className);
 
     return (
-      <div
-        {...attrs}
-        className={commonTabsClassNames}
-        ref={this.containerRef}
-        role="tablist"
-        aria-label={ariaLabel}
-        aria-orientation="horizontal"
-        aria-owns={hiddenIds.join(' ')}
-      >
-        {visibleTabs}
-        {this.showMoreButton ? (
-          <MoreButton
-            isOpen={this.isOpen}
-            hiddenIndex={this.hiddenStartIndex}
-            isActive={isHiddenSelected}
-            zIndex={tabData.length - this.hiddenStartIndex}
-            onBlur={this.handleMoreButtonBlur}
-            onSelect={this.handleMoreButtonSelect}
-            refCallback={node => { this.moreButtonRef.current = node; }}
-            tabIds={ids}
-            variant={variant}
-          />
-        ) : undefined}
-        <TabDropDown
-          onFocus={this.handleHiddenFocus}
-          onBlur={this.handleHiddenBlur}
-          isOpen={this.isOpen}
-          onRequestClose={this.handleOutsideClick}
-          refCallback={node => { this.dropdownRef.current = node; }}
-        >
-          {hiddenTabs}
-        </TabDropDown>
-      </div>
+      <DragDropContext onDragEnd={this.handleDragEnd}>
+        <Droppable className={commonTabsClassNames} droppableId="tab-list" direction="horizontal">
+          {(provided) => (
+            <div
+              {...attrs}
+              {...provided.droppableProps}
+              ref={(el) => {
+                provided.innerRef(el);
+                this.containerRef.current = el; // Store the reference to the container element
+              }}
+              className={commonTabsClassNames}
+              role="tablist"
+              aria-label={ariaLabel}
+              aria-orientation="horizontal"
+              aria-owns={hiddenIds.join(' ')}
+            >
+              {visibleTabs}
+              {this.showMoreButton ? (
+                <MoreButton
+                  isOpen={this.isOpen}
+                  hiddenIndex={this.hiddenStartIndex}
+                  isActive={isHiddenSelected}
+                  zIndex={tabData.length - this.hiddenStartIndex}
+                  onBlur={this.handleMoreButtonBlur}
+                  onSelect={this.handleMoreButtonSelect}
+                  refCallback={node => { this.moreButtonRef.current = node; }}
+                  tabIds={ids}
+                  variant={variant}
+                />
+              ) : undefined}
+              <TabDropDown
+                onFocus={this.handleHiddenFocus}
+                onBlur={this.handleHiddenBlur}
+                isOpen={this.isOpen}
+                onRequestClose={this.handleOutsideClick}
+                refCallback={node => { this.dropdownRef.current = node; }}
+              >
+                {hiddenTabs}
+              </TabDropDown>
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
     );
   }
 }

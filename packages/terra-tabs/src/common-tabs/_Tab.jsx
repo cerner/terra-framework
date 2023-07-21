@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+import { Draggable } from 'react-beautiful-dnd';
 import {
   enableFocusStyles,
   disableFocusStyles,
@@ -89,24 +90,6 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
-  /**
-   * @private
-   * Callback function when dragging of pane starts.
-   * Parameters: 1. Event 2. Selected pane's key
-   */
-  handleDragStart: PropTypes.func,
-  /**
-   * @private
-   * Callback function when pane is dragged over the list.
-   * Parameters: 1. Event.
-   */
-  handleDragOver: PropTypes.func,
-  /**
-   * @private
-   * Callback function when pane is dropped.
-   * Parameters: 1. Event 2. Selected pane's key
-   */
-  handleDrop: PropTypes.func,
 };
 
 const defaultProps = {
@@ -133,9 +116,6 @@ const Tab = ({
   variant,
   isDisabled,
   onChange,
-  handleDragStart,
-  handleDragOver,
-  handleDrop,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -184,30 +164,30 @@ const Tab = ({
   attributes['data-focus-styles-enabled'] = !isDisabled;
   attributes['aria-selected'] = isSelected;
   attributes.style = { zIndex };
-  attributes.onDragStart = (e) => handleDragStart(e, id);
-  attributes.onDragOver = (e) => handleDragOver(e);
-  attributes.onDrop = (e) => handleDrop(e, id);
 
   return (
-    <div
-      {...attributes}
-      id={id}
-      aria-controls={associatedPanelId}
-      role="tab"
-      className={variant === 'framework' ? paneClassNames : tabClassNames}
-      title={label}
-      draggable
-      // onDragStart={(e) => handleDragStart(e, id)}
-      // onDragOver={(e) => handleDragOver(e)}
-      // onDrop={(e) => handleDrop(e, id)}
-      data-terra-tabs-show-focus-styles
-    >
-      <div className={cx('inner')}>
-        {customDisplay}
-        {customDisplay ? null : icon}
-        {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
-      </div>
-    </div>
+    <Draggable key={id} draggableId={id} index={index}>
+      {(provided) => (
+        <div
+          {...attributes}
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          id={id}
+          aria-controls={associatedPanelId}
+          role="tab"
+          className={variant === 'framework' ? paneClassNames : tabClassNames}
+          title={label}
+          data-terra-tabs-show-focus-styles
+        >
+          <div className={cx('inner')}>
+            {customDisplay}
+            {customDisplay ? null : icon}
+            {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
+          </div>
+        </div>
+      )}
+    </Draggable>
   );
 };
 
