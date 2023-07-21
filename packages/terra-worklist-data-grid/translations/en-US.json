@@ -12,5 +12,6 @@
   "Terra.worklist-data-grid.all-rows-selected" : "All rows selected",
   "Terra.worklist-data-grid.all-rows-unselected" : "All rows unselected",
   "Terra.worklist-data-grid.row-index" : "Row {row}",
-  "Terra.worklist-data-grid.resize-handle-template": "Column resize handle for ${columnText}. Press Enter to use."
+  "Terra.worklist-data-grid.resize-handle-template": "Column resize handle for ${columnText}. Press Enter to use.",
+  "Terra.worklist-data-grid.resizeHandleValueText": "{columnWidth} pixels column width"
 }

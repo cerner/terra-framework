@@ -21,23 +21,28 @@ const propTypes = {
    * Required string representing a unique identifier for the column header cell.
    */
   id: PropTypes.string.isRequired,
+
   /**
    * String of text to render within the column header cell.
    */
   displayName: PropTypes.string,
+
   /**
    * A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
    * If a `component` value is specified, `sortIndicator` will be ignored. One of `ascending`, `descending`.
    */
   sortIndicator: PropTypes.oneOf(Object.values(WorklistDataGridPropTypes.SortIndicators)),
+
   /**
    * Boolean value indicating whether or not the column has an error in the data.
    */
   hasError: PropTypes.bool,
+
   /**
    * Number that specifies the minimum column width in pixels.
    */
   minimumWidth: PropTypes.number,
+
   /**
    * Number that specifies the maximum column width in pixels.
    */
@@ -46,10 +51,12 @@ const propTypes = {
    * Boolean value indicating whether or not the column header is selectable.
   */
   isSelectable: PropTypes.bool,
+
   /**
    * Boolean value indicating whether or not the column header is resizable.
    */
   isResizable: PropTypes.bool,
+
   /**
    * Boolean value indicating whether or not the column header is resizable.
    */
@@ -70,10 +77,12 @@ const propTypes = {
    * The cell's row position in the grid. This is zero based.
    */
   rowIndex: PropTypes.number,
+
   /**
    * The cell's column position in the grid. This is zero based.
    */
   columnIndex: PropTypes.number,
+
   /**
    * Boolean value to indicate if the cell is the tab stop on the grid. The grid will have only one tab stop.
    */
@@ -90,6 +99,7 @@ const propTypes = {
    * Function that is called when the the keyboard is used to adjust the column size
    */
   onResizeHandleChange: PropTypes.func,
+
   /**
    * @private
    * Object containing intl APIs

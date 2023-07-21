@@ -8,7 +8,7 @@ import { shallowWithIntl } from 'terra-enzyme-intl';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 
 describe('ColumnHeaderCell', () => {
-  it('render default column header cell', () => {
+  it('renders a default column header cell', () => {
     const column = {
       id: 'Column-0',
       displayName: ' Vitals',
@@ -39,7 +39,7 @@ describe('ColumnHeaderCell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('render column header cell with ascending sort', () => {
+  it('renders a column header cell with ascending sort', () => {
     const column = {
       id: 'Column-0',
       displayName: ' Vitals',
@@ -72,7 +72,7 @@ describe('ColumnHeaderCell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('render column header cell with descending sort', () => {
+  it('renders a column header cell with descending sort', () => {
     const column = {
       id: 'Column-0',
       displayName: ' Vitals',
@@ -105,7 +105,7 @@ describe('ColumnHeaderCell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('render column header cell with error', () => {
+  it('renders a column header cell with error', () => {
     const column = {
       id: 'Column-0',
       displayName: ' Vitals',
@@ -138,7 +138,7 @@ describe('ColumnHeaderCell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('render column header cell with ascending sort and error', () => {
+  it('renders a column header cell with ascending sort and error', () => {
     const column = {
       id: 'Column-0',
       displayName: ' Vitals',
@@ -173,7 +173,7 @@ describe('ColumnHeaderCell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('render column header cell with onColumnSelect callback', () => {
+  it('renders a column header cell with onColumnSelect callback', () => {
     const column = {
       id: 'Column-0',
       displayName: ' Vitals',
@@ -212,7 +212,7 @@ describe('ColumnHeaderCell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('render column header cell with onColumnSelect callback but not selectable', () => {
+  it('renders a column header cell with onColumnSelect callback but not selectable', () => {
     const column = {
       id: 'Column-0',
       displayName: ' Vitals',

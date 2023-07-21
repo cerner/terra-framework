@@ -5,7 +5,7 @@ import ColumnHeader from '../../src/subcomponents/ColumnHeader';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 
 describe('ColumnHeader', () => {
-  it('render a default column header', () => {
+  it('renders a default column header', () => {
     const columns = [{
       id: 'Column-0',
       displayName: ' Vitals',
@@ -34,7 +34,7 @@ describe('ColumnHeader', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('render a column header with an active resize column', () => {
+  it('renders a column header with an active resize column', () => {
     const columns = [{
       id: 'Column-0',
       displayName: ' Vitals',
@@ -64,7 +64,7 @@ describe('ColumnHeader', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('render a column header with tableHeight prop', () => {
+  it('renders a column header with tableHeight prop', () => {
     const columns = [{
       id: 'Column-0',
       displayName: ' Vitals',
@@ -93,7 +93,7 @@ describe('ColumnHeader', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('render a column header with callbacks', () => {
+  it('renders a column header with callbacks', () => {
     const columns = [{
       id: 'Column-0',
       displayName: ' Vitals',

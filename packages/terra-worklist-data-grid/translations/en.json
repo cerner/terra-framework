@@ -12,5 +12,6 @@
   "Terra.worklistDataGrid.maskedCell": "Masked data",
   "Terra.worklistDataGrid.columnError": "Errors associated with column",
   "Terra.worklistDataGrid.blank": "Blank",
-  "Terra.worklist-data-grid.resize-handle-template": "Column resize handle for ${columnText}. Press Enter to use."
+  "Terra.worklist-data-grid.resize-handle-template": "Column resize handle for ${columnText}. Press Enter to use.",
+  "Terra.worklist-data-grid.resizeHandleValueText": "{columnWidth} pixels column width"
 }
