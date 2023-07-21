@@ -152,7 +152,8 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                       class="main"
                     >
                       <div
-                        class="scroll normalizer"
+                        class="scroll normalizer light"
+                        tabindex="-1"
                       >
                         <div
                           class="slide-group"
@@ -284,7 +285,8 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                         class="main"
                       >
                         <div
-                          class="scroll normalizer"
+                          class="scroll normalizer light"
+                          tabindex="-1"
                         >
                           <div
                             class="slide-group"
@@ -423,10 +425,12 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                     className="main"
                   >
                     <Scroll
-                      className="normalizer"
+                      className="normalizer light"
+                      tabIndex="-1"
                     >
                       <div
-                        className="scroll normalizer"
+                        className="scroll normalizer light"
+                        tabIndex="-1"
                       >
                         <SlideGroup
                           focusRef={
@@ -452,7 +456,8 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                                   class="main"
                                 >
                                   <div
-                                    class="scroll normalizer"
+                                    class="scroll normalizer light"
+                                    tabindex="-1"
                                   >
                                     <div
                                       class="slide-group"
@@ -573,7 +578,8 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                                             class="main"
                                           >
                                             <div
-                                              class="scroll normalizer"
+                                              class="scroll normalizer light"
+                                              tabindex="-1"
                                             >
                                               <div
                                                 class="slide-group"
@@ -896,10 +902,12 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
                     className="main"
                   >
                     <Scroll
-                      className="normalizer"
+                      className="normalizer light"
+                      tabIndex="-1"
                     >
                       <div
-                        className="scroll normalizer"
+                        className="scroll normalizer light"
+                        tabIndex="-1"
                       >
                         <SlideGroup
                           isAnimated={true}
@@ -1163,10 +1171,12 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
                     className="main"
                   >
                     <Scroll
-                      className="normalizer"
+                      className="normalizer light"
+                      tabIndex="-1"
                     >
                       <div
-                        className="scroll normalizer"
+                        className="scroll normalizer light"
+                        tabIndex="-1"
                       >
                         <SlideGroup
                           isAnimated={true}
@@ -1423,10 +1433,12 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
                     className="main"
                   >
                     <Scroll
-                      className="normalizer"
+                      className="normalizer light"
+                      tabIndex="-1"
                     >
                       <div
-                        className="scroll normalizer"
+                        className="scroll normalizer light"
+                        tabIndex="-1"
                       >
                         <SlideGroup
                           isAnimated={true}
@@ -1683,10 +1695,12 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
                     className="main"
                   >
                     <Scroll
-                      className="normalizer"
+                      className="normalizer light"
+                      tabIndex="-1"
                     >
                       <div
-                        className="scroll normalizer"
+                        className="scroll normalizer light"
+                        tabIndex="-1"
                       >
                         <SlideGroup
                           isAnimated={true}
