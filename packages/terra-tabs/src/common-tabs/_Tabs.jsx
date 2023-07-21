@@ -271,6 +271,7 @@ class Tabs extends React.Component {
             onChange={onChange}
             setDropdownOpen={this.handleHiddenFocus}
             hiddenStartIndex={this.hiddenStartIndex}
+            showIcon={tab.showIcon}
           />,
         );
       } else {
@@ -284,6 +285,8 @@ class Tabs extends React.Component {
             onFocus={this.handleHiddenFocus}
             onBlur={this.handleHiddenBlur}
             onChange={onChange}
+            icon={tab.icon}
+            showIcon={tab.showIcon}
           />,
         );
         hiddenIds.push(tab.id);

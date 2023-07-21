@@ -105,6 +105,7 @@ class Tabs extends React.Component {
           label={child.props.label}
           icon={child.props.icon}
           isIconOnly={child.props.isIconOnly}
+          showIcon={child.props.showIcon}
           render={() => tabContent}
           isDisabled={child.props.isDisabled}
         />,
