@@ -72,6 +72,11 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
+   * Callback function that will be called when the cell receives focus
+  */
+  onFocus: PropTypes.func,
+
+  /**
    * String that specifies the height of the cell. Any valid CSS value is accepted.
    */
   height: PropTypes.string,
@@ -106,6 +111,7 @@ function Cell(props) {
     children,
     onCellSelect,
     height,
+    onFocus,
     intl,
   } = props;
 
@@ -166,6 +172,7 @@ function Cell(props) {
       tabIndex={isTabStop ? 0 : -1}
       className={className}
       onClick={!isMasked && isSelectable && onCellSelect ? onClick : undefined}
+      onFocus={onFocus}
       onKeyDown={handleKeyDown}
     >
       <div className={cx('cell-content', theme.className)} style={{ height }}>{cellContent}</div>

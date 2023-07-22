@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import '../_elementPolyfill';
 import { injectIntl } from 'react-intl';
@@ -67,11 +67,9 @@ function RowSelectionCell(props) {
 
   const rowSelectionRef = useRef();
 
-  useEffect(() => {
-    if (isTabStop) {
-      rowSelectionRef.current.focus();
-    }
-  }, [isTabStop]);
+  const onFocus = useCallback(() => {
+    rowSelectionRef.current.focus();
+  }, []);
 
   const selectionCheckbox = (
     <input
@@ -94,6 +92,7 @@ function RowSelectionCell(props) {
       isTabStop={false}
       isSelected={false}
       onCellSelect={onCellSelect}
+      onFocus={onFocus}
     >
       {selectionCheckbox}
     </Cell>
