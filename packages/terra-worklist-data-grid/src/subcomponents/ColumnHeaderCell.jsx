@@ -144,8 +144,6 @@ const ColumnHeaderCell = (props) => {
     if (isTabStop) {
       if (isResizeActive) {
         setResizeHandleActive(true);
-      } else {
-        columnHeaderCellRef.current.focus();
       }
     } else {
       setResizeHandleActive(false);
@@ -169,12 +167,14 @@ const ColumnHeaderCell = (props) => {
     switch (key) {
       case KeyCode.KEY_SPACE:
       case KeyCode.KEY_RETURN:
-        onColumnSelect(id, { row: rowIndex, col: columnIndex });
+        if (isSelectable && onColumnSelect) {
+          onColumnSelect(id, { row: rowIndex, col: columnIndex });
+        }
         event.stopPropagation();
         event.preventDefault(); // prevent the default scrolling
         break;
       case KeyCode.KEY_LEFT:
-        if (isResizeHandleActive) {
+        if (isResizable && isResizeHandleActive) {
           columnHeaderCellRef.current.focus();
           setResizeHandleActive(false);
 
@@ -217,12 +217,12 @@ const ColumnHeaderCell = (props) => {
       ref={(columnHeaderCellRef)}
       key={id}
       className={cx('column-header', theme.className, { selectable: isSelectable })}
-      tabIndex={isTabStop ? 0 : -1}
+      tabIndex={isTabStop && !isResizeHandleActive ? 0 : -1}
       role="columnheader"
       scope="col"
       aria-sort={sortIndicator}
       onMouseDown={(isSelectable && onColumnSelect) ? onMouseDown : undefined}
-      onKeyDown={(isSelectable && onColumnSelect) ? handleKeyDown : undefined}
+      onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       style={{ width: `${width}px`, height: headerHeight }}
     >
       <div className={cx('header-container')} role={displayName && 'button'}>

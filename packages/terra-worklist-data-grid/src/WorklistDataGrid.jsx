@@ -207,9 +207,6 @@ function WorklistDataGrid(props) {
       newFocusCell = { row: focusedCell.row, col: 0 };
     }
 
-    if (newFocusCell.row !== 0 && (!hasSelectableRows || newFocusCell.col !== 0)) {
-      gridRef.current.rows[newFocusCell.row].cells[newFocusCell.col].focus();
-    }
     setFocusedCell(newFocusCell);
     setCurrentSelectedCell(null);
 
@@ -280,6 +277,7 @@ function WorklistDataGrid(props) {
     setAriaLiveMsg(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
 
     // Select column header
+    gridRef.current.rows[0].cells[cellCoordinates.col].focus();
     setFocusedCell(cellCoordinates);
     setCurrentSelectedCell(null);
 
@@ -387,9 +385,7 @@ function WorklistDataGrid(props) {
       return;
     }
 
-    if (nextRow !== 0 && (!hasSelectableRows || nextCol !== 0)) {
-      gridRef.current.rows[nextRow].cells[nextCol].focus();
-    }
+    gridRef.current.rows[nextRow].cells[nextCol].focus();
     setFocusedCell({ row: nextRow, col: nextCol, checkResizable });
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
