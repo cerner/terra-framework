@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import '../_elementPolyfill';
 import { injectIntl } from 'react-intl';
@@ -77,6 +77,7 @@ function RowSelectionCell(props) {
       type="checkbox"
       aria-label={ariaLabel || intl.formatMessage({ id: 'Terra.worklist-data-grid.row-index' }, { row: rowIndex })}
       aria-checked={isSelected}
+      readOnly
       tabIndex={isTabStop ? 0 : -1}
       checked={isSelected}
     />

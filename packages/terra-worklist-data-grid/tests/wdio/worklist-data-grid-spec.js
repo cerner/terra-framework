@@ -306,6 +306,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       clickCell(3, 2);
       clickCell(3, 4);
 
+      browser.pause(250);
       Terra.validates.element('no-rows-selected-after-click-row-selection-mode', { selector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
