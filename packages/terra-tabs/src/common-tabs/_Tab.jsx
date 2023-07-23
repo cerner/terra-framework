@@ -144,7 +144,9 @@ const Tab = ({
       event.preventDefault();
       event.stopPropagation();
       onSelect(itemKey, metaData);
-      onChange(event, itemKey);
+      if (onChange) {
+        onChange(event, itemKey);
+      }
     } else {
       handleArrows(event, index, tabIds);
     }

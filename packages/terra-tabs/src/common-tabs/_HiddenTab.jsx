@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
+import IconAdd from 'terra-icon/lib/icon/IconAdd';
+import Button from 'terra-button';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import {
   enableFocusStyles,
@@ -67,6 +69,10 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  /**
+   * Whether or not the add tab icon is added.
+   */
+  addButton: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -76,6 +82,7 @@ const defaultProps = {
 const HiddenTab = ({
   id,
   associatedPanelId,
+  addButton,
   index,
   isSelected,
   label,
@@ -113,6 +120,8 @@ const HiddenTab = ({
     }
   };
 
+  const addTabIcon = <IconAdd a11yLabel="add tab" />;
+
   attributes.tabIndex = isSelected ? 0 : -1;
   attributes.onClick = e => { e.preventDefault(); e.stopPropagation(); handleOnSelect(e); };
   attributes.onKeyDown = onKeyDown;
@@ -131,7 +140,16 @@ const HiddenTab = ({
       className={hiddenClassNames}
     >
       <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>
-      <div className={cx('label')}>{label}</div>
+      <div className={cx('label')}>
+        {addButton ? (
+          <Button
+            icon={addTabIcon}
+            text={label}
+            variant="de-emphasis"
+            className={cx('button')}
+          />
+        ) : label }
+      </div>
     </div>
   );
 };

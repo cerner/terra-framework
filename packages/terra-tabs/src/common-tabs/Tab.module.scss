@@ -127,11 +127,10 @@
     }
   }
 
-  .addButton:focus {
-    background-color: var(--terra-tabs-addButton-focus-background-color, #fff);
-    background-image: var(--terra-tabs-addButton-focus-background-image);
-    color: var(--terra-tabs-addButton-focus-color, inherit);
+  .button:focus {
     outline: none;
+    box-shadow: none;
+    background-color:none;
 
     &[data-terra-tabs-show-focus-styles='true'] {
       outline: var(--terra-tabs-addButton-focus-outline, 2px dashed #000);
@@ -139,17 +138,10 @@
     }
   }
 
-  .addicon {
-    flex: 0 0 auto;
-    min-width: 2.571rem;
-    padding: 0.5rem 0;
-    text-align:center;
-
-    &[data-terra-tabs-show-focus-styles='true'] {
-      outline: var(--terra-tabs-structural-focus-outline, 2px dashed #000);
-      outline-offset: var(--terra-tabs-structural-focus-outline-offset, -5px);
-    }
+  .button:active {
+    background-color:none;
   }
+
 
   .tab-menu {
     display: flex;

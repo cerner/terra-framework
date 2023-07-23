@@ -55,6 +55,10 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onSelectAddButton: PropTypes.func,
+  /**
+   * The label to set on the add icon element.
+   */
+  ariaLabelAddTab: PropTypes.string,
 };
 
 const getTabId = (id, itemKey) => `${id || 'terra-common-tabs'}-${itemKey}`;
@@ -70,6 +74,7 @@ const CommonTabs = ({
   variant,
   onChange,
   onSelectAddButton,
+  ariaLabelAddTab,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -107,7 +112,7 @@ const CommonTabs = ({
         <div className={cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
-        <Tabs variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} />
+        <Tabs variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab} />
       </div>
       <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {
