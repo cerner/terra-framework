@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
+import { v4 as uuid } from 'uuid';
+import IconAdd from 'terra-icon/lib/icon/IconAdd';
+import AddButton from './_AddButton';
 import MoreButton from './_MoreButton';
 import TabDropDown from './_TabDropDown';
 import Tab from './_Tab';
@@ -16,6 +19,10 @@ const propTypes = {
    * The label to set on the tablist element.
    */
   ariaLabel: PropTypes.string.isRequired,
+  /**
+   * The label to set on the add icon element.
+   */
+  ariaLabelAddTab: PropTypes.string,
   /**
    * Currently active Tabs.Pane content to be displayed.
    */
@@ -56,7 +63,14 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  /**
+   * Callback function when add button selection has changed.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onSelectAddButton: PropTypes.func,
 };
+
+let addTabId;
 
 class Tabs extends React.Component {
   constructor(props) {
@@ -239,8 +253,9 @@ class Tabs extends React.Component {
   }
 
   render() {
+    addTabId = uuid();
     const {
-      tabData, ariaLabel, variant, onChange,
+      tabData, ariaLabel, variant, onChange, onSelectAddButton, ariaLabelAddTab,
     } = this.props;
     const theme = this.context;
     const enabledTabs = tabData.filter(tab => !tab.isDisabled);
@@ -248,6 +263,8 @@ class Tabs extends React.Component {
     const hiddenIds = [];
     const visibleTabs = [];
     const hiddenTabs = [];
+    const moreIds = ids;
+    if (onSelectAddButton) { moreIds.push(addTabId); }
     let isHiddenSelected = false;
 
     let enabledTabsIndex = -1;
@@ -294,6 +311,24 @@ class Tabs extends React.Component {
         if (tab.isSelected) {
           isHiddenSelected = true;
         }
+        if (index === tabData.length - 1 && onSelectAddButton) {
+          hiddenTabs.push(
+            <HiddenTab
+              id={addTabId}
+              data-focus-styles-enabled
+              itemKey={addTabId}
+              label={ariaLabelAddTab}
+              index={tabData.length}
+              showIcon
+              icon={<IconAdd a11yLabel={ariaLabelAddTab} />}
+              tabIds={moreIds}
+              onSelect={onSelectAddButton}
+              onFocus={this.handleHiddenFocus}
+              onBlur={this.handleHiddenBlur}
+              onChange={onChange}
+            />,
+          );
+        }
       }
     });
 
@@ -308,40 +343,53 @@ class Tabs extends React.Component {
       };
     }
     const commonTabsClassNames = cx('tab-container', theme.className);
+    const commonTabsContainerClassNames = cx('container', theme.className);
 
     return (
-      <div
-        {...attrs}
-        className={commonTabsClassNames}
-        ref={this.containerRef}
-        role="tablist"
-        aria-label={ariaLabel}
-        aria-orientation="horizontal"
-        aria-owns={hiddenIds.join(' ')}
-      >
-        {visibleTabs}
-        {this.showMoreButton ? (
-          <MoreButton
-            isOpen={this.isOpen}
-            hiddenIndex={this.hiddenStartIndex}
-            isActive={isHiddenSelected}
-            zIndex={tabData.length - this.hiddenStartIndex}
-            onBlur={this.handleMoreButtonBlur}
-            onSelect={this.handleMoreButtonSelect}
-            refCallback={node => { this.moreButtonRef.current = node; }}
-            tabIds={ids}
-            variant={variant}
-          />
-        ) : undefined}
-        <TabDropDown
-          onFocus={this.handleHiddenFocus}
-          onBlur={this.handleHiddenBlur}
-          isOpen={this.isOpen}
-          onRequestClose={this.handleOutsideClick}
-          refCallback={node => { this.dropdownRef.current = node; }}
+      <div className={commonTabsContainerClassNames}>
+        <div
+          {...attrs}
+          className={commonTabsClassNames}
+          ref={this.containerRef}
+          role="tablist"
+          aria-label={ariaLabel}
+          aria-orientation="horizontal"
+          aria-owns={hiddenIds.join(' ')}
         >
-          {hiddenTabs}
-        </TabDropDown>
+          {visibleTabs}
+          {this.showMoreButton ? (
+            <MoreButton
+              isOpen={this.isOpen}
+              hiddenIndex={this.hiddenStartIndex}
+              isActive={isHiddenSelected}
+              zIndex={tabData.length - this.hiddenStartIndex}
+              onBlur={this.handleMoreButtonBlur}
+              onSelect={this.handleMoreButtonSelect}
+              refCallback={node => { this.moreButtonRef.current = node; }}
+              tabIds={ids}
+              variant={variant}
+            />
+          ) : undefined}
+          <TabDropDown
+            onFocus={this.handleHiddenFocus}
+            onBlur={this.handleHiddenBlur}
+            isOpen={this.isOpen}
+            onRequestClose={this.handleOutsideClick}
+            refCallback={node => { this.dropdownRef.current = node; }}
+          >
+            {hiddenTabs}
+          </TabDropDown>
+        </div>
+        {(!this.showMoreButton && onSelectAddButton) && (
+        <AddButton
+          id={addTabId}
+          addAriaLabel={ariaLabelAddTab}
+          index={enabledTabsIndex + 1}
+          onSelect={onSelectAddButton}
+          tabIds={moreIds}
+          isSelected={false}
+        />
+        )}
       </div>
     );
   }
