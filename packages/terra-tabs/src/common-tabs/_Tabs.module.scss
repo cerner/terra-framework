@@ -4,7 +4,7 @@
 :local {
   .tab-container {
     display: flex;
-    flex: 1 1 auto;
+    flex: 1 0 auto;
     flex-wrap: nowrap;
     height: var(--terra-tabs-workspace-tab-container-height, 33px);
     justify-content: flex-start;
@@ -20,5 +20,19 @@
     &[data-tab-is-calculating='true'] {
       visibility: hidden;
     }
+  }
+  .container {
+    display: flex;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    height: var(--terra-tabs-workspace-container-height, 33px);
+    justify-content: flex-start;
+    margin-bottom: var(--terra-tabs-workspace-container-margin-bottom, 0);
+    padding: 0;
   }
 }
