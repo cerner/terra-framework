@@ -1,6 +1,7 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
+import { IntlProvider } from 'react-intl';
 import Row from '../../src/subcomponents/Row';
 import Cell from '../../src/subcomponents/Cell';
 
@@ -44,21 +45,23 @@ describe('Row', () => {
     const rowData = dataFile.rows[0];
 
     const wrapper = shallowWithIntl(
-      <Row
-        rowIndex={99}
-        key={12}
-        id={rowData.id}
-        height="25px"
-        cells={rowData.cells}
-        hasRowSelection={dataFile.rows[0].hasSelectableRows}
-        displayedColumns={dataFile.cols}
-        rowHeaderIndex={0}
-        onCellSelect={jest.fn}
-        onRowSelect={jest.fn}
-        tabStopColumnIndex={1}
-        selectedCellColumnId="Column-1"
-      />,
-    );
+      <IntlProvider locale="en">
+        <Row
+          rowIndex={99}
+          key={12}
+          id={rowData.id}
+          height="25px"
+          cells={rowData.cells}
+          hasRowSelection={dataFile.rows[0].hasSelectableRows}
+          displayedColumns={dataFile.cols}
+          rowHeaderIndex={0}
+          onCellSelect={jest.fn}
+          onRowSelect={jest.fn}
+          tabStopColumnIndex={1}
+          selectedCellColumnId="Column-1"
+        />
+      </IntlProvider>,
+    ).dive();
 
     const tableRow = wrapper.find('tr.worklist-data-grid-row');
     expect(tableRow).toHaveLength(1);
@@ -89,19 +92,21 @@ describe('Row', () => {
     const rowData = dataFile.rows[rowIndex];
 
     const wrapper = shallowWithIntl(
-      <Row
-        rowIndex={rowIndex}
-        key={rowIndex}
-        id={rowData.id}
-        height="25px"
-        cells={rowData.cells}
-        isSelectable={rowData.isSelectable}
-        displayedColumns={dataFile.cols}
-        rowHeaderIndex={0}
-        onCellSelect={jest.fn}
-        onRowSelect={jest.fn}
-      />,
-    );
+      <IntlProvider locale="en">
+        <Row
+          rowIndex={rowIndex}
+          key={rowIndex}
+          id={rowData.id}
+          height="25px"
+          cells={rowData.cells}
+          isSelectable={rowData.isSelectable}
+          displayedColumns={dataFile.cols}
+          rowHeaderIndex={0}
+          onCellSelect={jest.fn}
+          onRowSelect={jest.fn}
+        />
+      </IntlProvider>,
+    ).dive();
 
     const renderedCells = wrapper.find(Cell);
     expect(renderedCells).toHaveLength(rowData.cells.length);

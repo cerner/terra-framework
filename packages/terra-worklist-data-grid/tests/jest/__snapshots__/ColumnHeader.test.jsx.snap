@@ -6,25 +6,25 @@ exports[`ColumnHeader renders a column header with an active resize column 1`] =
     className="column-header-row"
     height="3rem"
   >
-    <InjectIntl(ColumnHeaderCell)
+    <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={0}
       displayName=" Vitals"
       headerHeight="3rem"
       id="Column-0"
+      isResizeActive={false}
       isTabStop={false}
       key="Column-0"
       rowIndex={0}
-      tableHeight={500}
     />
-    <InjectIntl(ColumnHeaderCell)
+    <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={1}
       displayName=" Patient"
       headerHeight="3rem"
       id="Column-1"
+      isResizeActive={false}
       isTabStop={false}
       key="Column-1"
       rowIndex={0}
-      tableHeight={500}
     />
   </tr>
 </thead>
@@ -36,29 +36,29 @@ exports[`ColumnHeader renders a column header with callbacks 1`] = `
     className="column-header-row"
     height="3rem"
   >
-    <InjectIntl(ColumnHeaderCell)
+    <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={0}
       displayName=" Vitals"
       headerHeight="3rem"
       id="Column-0"
+      isResizeActive={false}
       isTabStop={false}
       key="Column-0"
       onColumnSelect={[MockFunction]}
       onResizeMouseDown={[MockFunction]}
       rowIndex={0}
-      tableHeight={500}
     />
-    <InjectIntl(ColumnHeaderCell)
+    <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={1}
       displayName=" Patient"
       headerHeight="3rem"
       id="Column-1"
+      isResizeActive={false}
       isTabStop={false}
       key="Column-1"
       onColumnSelect={[MockFunction]}
       onResizeMouseDown={[MockFunction]}
       rowIndex={0}
-      tableHeight={500}
     />
   </tr>
 </thead>
@@ -70,25 +70,25 @@ exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
     className="column-header-row"
     height="3rem"
   >
-    <InjectIntl(ColumnHeaderCell)
+    <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={0}
       displayName=" Vitals"
       headerHeight="3rem"
       id="Column-0"
+      isResizeActive={false}
       isTabStop={false}
       key="Column-0"
       rowIndex={0}
-      tableHeight={500}
     />
-    <InjectIntl(ColumnHeaderCell)
+    <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={1}
       displayName=" Patient"
       headerHeight="3rem"
       id="Column-1"
+      isResizeActive={false}
       isTabStop={false}
       key="Column-1"
       rowIndex={0}
-      tableHeight={500}
     />
   </tr>
 </thead>
@@ -100,20 +100,22 @@ exports[`ColumnHeader renders a default column header 1`] = `
     className="column-header-row"
     height="3rem"
   >
-    <InjectIntl(ColumnHeaderCell)
+    <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={0}
       displayName=" Vitals"
       headerHeight="3rem"
       id="Column-0"
+      isResizeActive={false}
       isTabStop={false}
       key="Column-0"
       rowIndex={0}
     />
-    <InjectIntl(ColumnHeaderCell)
+    <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={1}
       displayName=" Patient"
       headerHeight="3rem"
       id="Column-1"
+      isResizeActive={false}
       isTabStop={false}
       key="Column-1"
       rowIndex={0}

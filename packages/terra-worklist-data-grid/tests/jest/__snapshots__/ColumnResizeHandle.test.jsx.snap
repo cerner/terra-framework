@@ -5,7 +5,6 @@ exports[`ColumnResizeHandle renders a default column resize handle 1`] = `
   columnIndex={0}
   columnText="Vitals"
   columnWidth={200}
-  height={500}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -56,9 +55,9 @@ exports[`ColumnResizeHandle renders a default column resize handle 1`] = `
 >
   <ColumnResizeHandle
     columnIndex={0}
+    columnResizeIncrement={10}
     columnText="Vitals"
     columnWidth={200}
-    height={500}
     intl={
       Object {
         "defaultFormats": Object {},
@@ -109,22 +108,20 @@ exports[`ColumnResizeHandle renders a default column resize handle 1`] = `
   >
     <div
       aria-hidden={true}
-      aria-label="Vitals"
+      aria-label="Terra.worklist-data-grid.resize-handle-template"
       aria-valuemax={300}
       aria-valuemin={60}
       aria-valuenow={200}
-      aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
       className="resize-handle"
       draggable={true}
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
+      onKeyDown={[Function]}
       onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       role="slider"
-      style={
-        Object {
-          "height": "500px",
-        }
-      }
       tabIndex={-1}
     />
   </ColumnResizeHandle>

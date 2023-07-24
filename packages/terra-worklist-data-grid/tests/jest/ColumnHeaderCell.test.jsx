@@ -5,6 +5,7 @@ import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
 import { shallowWithIntl } from 'terra-enzyme-intl';
+import { IntlProvider } from 'react-intl';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 
 describe('ColumnHeaderCell', () => {
@@ -15,13 +16,15 @@ describe('ColumnHeaderCell', () => {
     };
 
     const wrapper = shallowWithIntl(
-      <ColumnHeaderCell
-        columnIndex={0}
-        width={100}
-        headerHeight="150px"
-        {...column}
-      />,
-    ).dive();
+      <IntlProvider locale="en">
+        <ColumnHeaderCell
+          columnIndex={0}
+          width={100}
+          headerHeight="150px"
+          {...column}
+        />
+      </IntlProvider>,
+    ).dive().dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
@@ -47,13 +50,15 @@ describe('ColumnHeaderCell', () => {
     };
 
     const wrapper = shallowWithIntl(
-      <ColumnHeaderCell
-        columnIndex={0}
-        width={100}
-        headerHeight="150px"
-        {...column}
-      />,
-    ).dive();
+      <IntlProvider locale="en">
+        <ColumnHeaderCell
+          columnIndex={0}
+          width={100}
+          headerHeight="150px"
+          {...column}
+        />
+      </IntlProvider>,
+    ).dive().dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
@@ -80,13 +85,15 @@ describe('ColumnHeaderCell', () => {
     };
 
     const wrapper = shallowWithIntl(
-      <ColumnHeaderCell
-        columnIndex={0}
-        width={100}
-        headerHeight="150px"
-        {...column}
-      />,
-    ).dive();
+      <IntlProvider locale="en">
+        <ColumnHeaderCell
+          columnIndex={0}
+          width={100}
+          headerHeight="150px"
+          {...column}
+        />
+      </IntlProvider>,
+    ).dive().dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
@@ -113,13 +120,15 @@ describe('ColumnHeaderCell', () => {
     };
 
     const wrapper = shallowWithIntl(
-      <ColumnHeaderCell
-        columnIndex={0}
-        width={100}
-        headerHeight="150px"
-        {...column}
-      />,
-    ).dive();
+      <IntlProvider locale="en">
+        <ColumnHeaderCell
+          columnIndex={0}
+          width={100}
+          headerHeight="150px"
+          {...column}
+        />
+      </IntlProvider>,
+    ).dive().dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
@@ -147,13 +156,15 @@ describe('ColumnHeaderCell', () => {
     };
 
     const wrapper = shallowWithIntl(
-      <ColumnHeaderCell
-        columnIndex={0}
-        width={100}
-        headerHeight="150px"
-        {...column}
-      />,
-    ).dive();
+      <IntlProvider locale="en">
+        <ColumnHeaderCell
+          columnIndex={0}
+          width={100}
+          headerHeight="150px"
+          {...column}
+        />
+      </IntlProvider>,
+    ).dive().dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
@@ -184,14 +195,16 @@ describe('ColumnHeaderCell', () => {
     const mockClick = jest.fn();
 
     const wrapper = shallowWithIntl(
-      <ColumnHeaderCell
-        columnIndex={0}
-        width={100}
-        headerHeight="150px"
-        {...column}
-        onColumnSelect={mockClick}
-      />,
-    ).dive();
+      <IntlProvider locale="en">
+        <ColumnHeaderCell
+          columnIndex={0}
+          width={100}
+          headerHeight="150px"
+          {...column}
+          onColumnSelect={mockClick}
+        />
+      </IntlProvider>,
+    ).dive().dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
@@ -224,14 +237,16 @@ describe('ColumnHeaderCell', () => {
     const onColumnSelect = () => {};
 
     const wrapper = shallowWithIntl(
-      <ColumnHeaderCell
-        columnIndex={0}
-        width={100}
-        headerHeight="150px"
-        {...column}
-        onColumnSelect={onColumnSelect}
-      />,
-    ).dive();
+      <IntlProvider locale="en">
+        <ColumnHeaderCell
+          columnIndex={0}
+          width={100}
+          headerHeight="150px"
+          {...column}
+          onColumnSelect={onColumnSelect}
+        />
+      </IntlProvider>,
+    ).dive().dive();
 
     const columnHeader = wrapper.find('.column-header:not(selectable)');
     expect(columnHeader).toHaveLength(1);

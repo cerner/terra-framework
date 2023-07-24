@@ -327,4 +327,79 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('hover-non-selectable-cell', '#terra-worklist-data-grid-with-selections');
     });
   });
+  describe('Column Resize Navigation : ', () => {
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-column-resizing');
+    });
+
+    it('selects resize handle of first column', () => {
+      browser.keys(['Tab', 'ArrowRight']);
+
+      Terra.validates.element('first-column-resize-handle-select', { selector });
+      expect(browser.$$('div[role="slider"]:focus')).toBeElementsArrayOfSize(1);
+    });
+
+    it('selects second column header', () => {
+      browser.keys(['Tab', 'ArrowRight', 'ArrowRight']);
+
+      Terra.validates.element('second-column-header', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('selects resize handle of previous resizable column on left navigation', () => {
+      browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'ArrowLeft']);
+
+      Terra.validates.element('first-column-resize-handle-select-left-navigation', { selector });
+      expect(browser.$$('div[role="slider"]:focus')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates that the second column does not have a resize handle', () => {
+      browser.keys(['Tab'].concat(new Array(3).fill('ArrowRight')));
+
+      Terra.validates.element('second-column-not-resizable', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates that the column header recieves focus navigating left from a resize handle', () => {
+      browser.keys(['Tab', 'ArrowRight', 'ArrowLeft']);
+
+      Terra.validates.element('first-column-header select', { selector });
+      expect(browser.$$('div[role="slider"]:focus')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates down arrow action when resize handle selected', () => {
+      browser.keys(['Tab', 'ArrowRight', 'ArrowDown']);
+
+      Terra.validates.element('resize-handle-navigate-down', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates up arrow action when resize handle selected', () => {
+      browser.keys(['Tab', 'ArrowRight', 'ArrowUp']);
+
+      Terra.validates.element('resize-handle-navigate-up', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates resizing first column with right arrow key', () => {
+      browser.keys(['Tab', 'ArrowRight', 'Enter'].concat(new Array(3).fill('ArrowRight')));
+
+      Terra.validates.element('resize-column-right-arrow', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates resizing first column with left arrow key', () => {
+      browser.keys(['Tab', 'ArrowRight', 'Enter'].concat(new Array(3).fill('ArrowLeft')));
+
+      Terra.validates.element('resize-column-left-arrow', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates resuming navigation after diving into resize handle', () => {
+      browser.keys(['Tab', 'ArrowRight', 'Enter', 'Escape', 'ArrowRight']);
+
+      Terra.validates.element('resize-handle-reenable-navigation', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+  });
 });

@@ -77,7 +77,6 @@ describe('ColumnHeader', () => {
       <ColumnHeader
         columns={columns}
         headerHeight="3rem"
-        tableHeight={500}
       />,
     );
 
@@ -85,10 +84,6 @@ describe('ColumnHeader', () => {
     const columnHeader = wrapper.find('.column-header-row');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.props().height).toBe('3rem');
-
-    // Validate ColumnHeaderCell React component
-    const columnHeaderCells = columnHeader.find(ColumnHeaderCell);
-    expect(columnHeaderCells.first().props().tableHeight).toBe(500);
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -123,7 +118,6 @@ describe('ColumnHeader', () => {
 
     // Validate ColumnHeaderCell React component
     const columnHeaderCell = columnHeader.find(ColumnHeaderCell).first();
-    expect(columnHeaderCell.props().tableHeight).toBe(500);
     expect(columnHeaderCell.props().onColumnSelect).toBe(mockColumnSelect);
     expect(columnHeaderCell.props().onResizeMouseDown).toBe(mockResizeMouseDown);
 

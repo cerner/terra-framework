@@ -5,6 +5,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
   aria-sort="ascending"
   className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -32,6 +33,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
   />
 </th>
@@ -42,6 +44,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
   aria-sort="ascending"
   className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -75,6 +78,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
   />
 </th>
@@ -85,6 +89,7 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
   aria-sort="descending"
   className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -112,6 +117,7 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
   />
 </th>
@@ -121,6 +127,7 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
 <th
   className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -149,6 +156,7 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
   />
 </th>
@@ -194,6 +202,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
   />
 </th>
@@ -204,6 +213,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
   aria-sort="ascending"
   className="column-header"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -237,6 +247,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
   />
 </th>
@@ -246,6 +257,7 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
 <th
   className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -268,6 +280,7 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
   />
 </th>

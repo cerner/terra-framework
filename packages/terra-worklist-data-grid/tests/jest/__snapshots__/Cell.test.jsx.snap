@@ -2,24 +2,50 @@
 
 exports[`Cell verifies mask takes precedence when cell is masked, selectable and selected 1`] = `
 <td
-  aria-label="Terra.worklistDataGrid.maskedCell"
   aria-selected={true}
   className="worklist-data-grid-cell masked"
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   tabIndex={-1}
-/>
+>
+  <div
+    className="cell-content"
+    style={
+      Object {
+        "height": undefined,
+      }
+    }
+  >
+    <span
+      className="no-data-cell"
+    >
+      Terra.worklistDataGrid.maskedCell
+    </span>
+  </div>
+</td>
 `;
 
 exports[`Cell verifies that a cell has the correct styles and no content when isMasked prop is true 1`] = `
 <td
-  aria-label="Terra.worklistDataGrid.maskedCell"
   aria-selected={false}
   className="worklist-data-grid-cell masked"
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   tabIndex={-1}
-/>
+>
+  <div
+    className="cell-content"
+    style={
+      Object {
+        "height": undefined,
+      }
+    }
+  >
+    <span
+      className="no-data-cell"
+    >
+      Terra.worklistDataGrid.maskedCell
+    </span>
+  </div>
+</td>
 `;
 
 exports[`Cell verifies that a selected cell has the correct styles when isSelected prop is true 1`] = `
@@ -27,8 +53,8 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
   aria-label="Some Label Here"
   aria-selected={true}
   className="worklist-data-grid-cell selectable selected"
+  onClick={[Function]}
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   tabIndex={-1}
 >
   <div
@@ -48,8 +74,8 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
 <td
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
+  onClick={[Function]}
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   tabIndex={-1}
 >
   <div
@@ -69,8 +95,8 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
 <th
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
+  onClick={[Function]}
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   tabIndex={-1}
 >
   <div
@@ -88,21 +114,35 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
 
 exports[`Cell verifies that the cell rendered is marked blank when the cell content is empty 1`] = `
 <td
-  aria-label="Terra.worklistDataGrid.blank"
   aria-selected={false}
   className="worklist-data-grid-cell selectable blank"
+  onClick={[Function]}
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   tabIndex={-1}
-/>
+>
+  <div
+    className="cell-content"
+    style={
+      Object {
+        "height": undefined,
+      }
+    }
+  >
+    <span
+      className="no-data-cell"
+    >
+      Terra.worklistDataGrid.blank
+    </span>
+  </div>
+</td>
 `;
 
 exports[`Cell verifies that the cell rendered is marked selectable when isSelectable prop is true 1`] = `
 <td
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
+  onClick={[Function]}
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   tabIndex={-1}
 >
   <div
