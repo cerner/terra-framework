@@ -396,9 +396,13 @@ function WorklistDataGrid(props) {
     activeColumnPageX.current = event.pageX;
     activeColumnWidth.current = resizeColumnWidth;
 
+    setAriaLiveMsg(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
+    setFocusedCell({ row: 0, col: index, checkResizable: true });
+    setCurrentSelectedCell(null);
+
     // Set the active index to the selected column
     setActiveIndex(index);
-  }, []);
+  }, [intl]);
 
   const onResizeHandleChange = useCallback((columnIndex, increment) => {
     const { minimumWidth, maximumWidth, width } = dataGridColumns.columns[columnIndex];
@@ -442,6 +446,8 @@ function WorklistDataGrid(props) {
     if (onColumnResize) {
       onColumnResize(dataGridColumns[activeIndex].id, dataGridColumns[activeIndex].width);
     }
+
+    setFocusedCell({ row: 0, col: activeIndex, checkResizable: false });
 
     // Remove active index
     setActiveIndex(null);
