@@ -1,7 +1,7 @@
 // eslint-disable no-console
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import WorklistDataGrid from '../../src/WorklistDataGrid';
 import ColumnHeader from '../../src/subcomponents/ColumnHeader';
 import Row from '../../src/subcomponents/Row';
@@ -43,49 +43,98 @@ const dataFile = {
   ],
 };
 
-describe('WorklistDataGrid', () => {
-  it('verifies that the grid created is consistent with the rows and overflowColumns props', () => {
-    const wrapper = shallowWithIntl(
-      <WorklistDataGrid
-        id="test-terra-worklist-data-grid"
-        overflowColumns={dataFile.cols}
-        rows={dataFile.rows}
-      />,
-    ).dive();
-
-    // One row used for the header.
-    const columnHeader = wrapper.find(ColumnHeader);
-    expect(columnHeader).toHaveLength(1);
-
-    // The number of rows should match the given data.
-    expect(wrapper.find(Row)).toHaveLength(dataFile.rows.length);
-
-    expect(wrapper).toMatchSnapshot();
+// describe('WorklistDataGrid', () => {
+  describe('basic grid', () => {
+    it('verifies that the grid created is consistent with the rows and overflowColumns props', () => {
+      // jest.spyOn(console, "error").mockImplementation();
+      const wrapper = shallowWithIntl(
+        <WorklistDataGrid
+          id="test-terra-worklist-data-grid"
+          overflowColumns={dataFile.cols}
+          rows={dataFile.rows}
+        />,
+      ).dive();
+  
+      // One row used for the header.
+      const columnHeader = wrapper.find(ColumnHeader);
+      expect(columnHeader).toHaveLength(1);
+  
+      // The number of rows should match the given data.
+      expect(wrapper.find(Row)).toHaveLength(dataFile.rows.length);
+  
+      expect(wrapper).toMatchSnapshot();
+      // console.error.mockRestore();
+    });
   });
 
   describe('with pinned columns', () => {
-    it('pins row header column', () => {
-      // expect pinned columns length === 1
+    it('sets pinnedColumns as pinned', () => {
+      const wrapper = mountWithIntl(
+        <WorklistDataGrid
+          id="test-terra-worklist-data-grid"
+          pinnedColumns={dataFile.cols.slice(0,2)}
+          overflowColumns={dataFile.cols.slice(2)}
+          rows={dataFile.rows}
+        />,
+      );
+
+      const pinnedColumnHeaderCells = wrapper.find('.pinned');
+      
+      expect(pinnedColumnHeaderCells).toHaveLength(2 * 4);
     });
 
-    it('pins both the row header column and row selection column', () => {
-      // expect pinned columns length === 2
+    it('sets row selection column as pinned', () => {
+      // to suppress console warnings in the test output
+      jest.spyOn(console, 'error').mockImplementation();
+
+      const wrapper = mountWithIntl(
+        <WorklistDataGrid
+          id="test-terra-worklist-data-grid"
+          pinnedColumns={dataFile.cols.slice(0,2)}
+          overflowColumns={dataFile.cols.slice(2)}
+          rows={dataFile.rows}
+          hasSelectableRows={true}
+        />,
+      );
+
+      const pinnedColumnHeaderCells = wrapper.find('.pinned');
+      
+      expect(pinnedColumnHeaderCells).toHaveLength(3 * 4);
+
+      console.error.mockRestore();
     });
 
-    it('pins all pinnedColumns when row selection mode is off', () => {
-      // expect pinned columns length === pinnedColumns + 1
-    });
+    it('pins row selection column if pinnedColumns is undefined', () => {
+      // to suppress console warnings in the test output
+      jest.spyOn(console, 'error').mockImplementation();
 
-    it('pins all pinnedColumns when row selection mode is on', () => {
-      // expect pinned columns length === pinnedColumns + 2
+      const wrapper = mountWithIntl(
+        <WorklistDataGrid
+          id="test-terra-worklist-data-grid"
+          overflowColumns={dataFile.cols}
+          rows={dataFile.rows}
+          hasSelectableRows={true}
+        />,
+      );
+
+      const pinnedColumnHeaderCells = wrapper.find('.pinned');
+      
+      expect(pinnedColumnHeaderCells).toHaveLength(1 * 4);
+
+      console.error.mockRestore();
     });
   });
 
-  fdescribe('Error handling - prop types', () => {
-    beforeAll(()=>{
+  describe('Error handling - prop types', () => {
+    beforeEach(() => {
       jest.spyOn(console, "error").mockImplementation();
-    })
-    afterAll(()=>{
+    });
+
+    afterEach(() => {
+      console.error.mockClear();
+    });
+
+    afterAll(() => {
       console.error.mockRestore();
     });
 
@@ -93,8 +142,8 @@ describe('WorklistDataGrid', () => {
       shallowWithIntl(
         <WorklistDataGrid
           id="test-terra-worklist-data-grid"
-          rowHeaderIndex="2"
           rows={dataFile.rows}
+          rowHeaderIndex="2"
         />,
       ).dive();
 
@@ -105,8 +154,8 @@ describe('WorklistDataGrid', () => {
       shallowWithIntl(
         <WorklistDataGrid
           id="test-terra-worklist-data-grid"
-          rowHeaderIndex={-1}
           rows={dataFile.rows}
+          rowHeaderIndex={-1}
         />,
       ).dive();
 
@@ -117,9 +166,9 @@ describe('WorklistDataGrid', () => {
       shallowWithIntl(
         <WorklistDataGrid
           id="test-terra-worklist-data-grid"
-          rowHeaderIndex={2}
           pinnedColumns={dataFile.cols.slice(0,2)}
           overflowColumns={dataFile.cols.slice(2)}
+          rowHeaderIndex={2}
           rows={dataFile.rows}
         />,
       ).dive();
@@ -127,4 +176,4 @@ describe('WorklistDataGrid', () => {
       expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_EXCEEDS_PINNED));
     });
   });
-});
+// });
