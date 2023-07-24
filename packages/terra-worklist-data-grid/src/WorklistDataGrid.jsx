@@ -16,7 +16,7 @@ import Row from './subcomponents/Row';
 import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
 import ColumnContext from './utils/ColumnContext';
-import validateRowHeader from './proptypes/validators';
+import validateRowHeaderIndex from './proptypes/validators';
 import styles from './WorklistDataGrid.module.scss';
 
 const cx = classNames.bind(styles);
@@ -73,7 +73,7 @@ const propTypes = {
   /**
    * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the grid.
    */
-  rowHeaderIndex: validateRowHeader,
+  rowHeaderIndex: validateRowHeaderIndex,
 
   /**
    * Function that is called when a resizable column is resized. Parameters:
