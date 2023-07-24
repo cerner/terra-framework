@@ -224,46 +224,4 @@ describe('ColumnHeaderCell', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
-
-  it('renders a column header cell with onColumnSelect callback but not selectable', () => {
-    const column = {
-      id: 'Column-0',
-      displayName: ' Vitals',
-      sortIndicator: 'ascending',
-      hasError: true,
-      isSelectable: false,
-    };
-
-    const onColumnSelect = () => {};
-
-    const wrapper = shallowWithIntl(
-      <IntlProvider locale="en">
-        <ColumnHeaderCell
-          columnIndex={0}
-          width={100}
-          headerHeight="150px"
-          {...column}
-          onColumnSelect={onColumnSelect}
-        />
-      </IntlProvider>,
-    ).dive().dive();
-
-    const columnHeader = wrapper.find('.column-header:not(selectable)');
-    expect(columnHeader).toHaveLength(1);
-    expect(columnHeader.key()).toBe('Column-0');
-    expect(columnHeader.props().role).toBe('columnheader');
-    expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toEqual(-1);
-    expect(columnHeader.props()['aria-sort']).toBe('ascending');
-    expect(columnHeader.props().onMouseDown).toBeUndefined();
-    expect(columnHeader.props().style.width).toBe('100px');
-    expect(columnHeader.props().style.height).toBe('150px');
-
-    const headerContainer = columnHeader.find('.header-container[role="button"]');
-    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
-    expect(headerContainer.find(IconUp)).toHaveLength(1);
-    expect(headerContainer.find(IconError)).toHaveLength(1);
-
-    expect(wrapper).toMatchSnapshot();
-  });
 });

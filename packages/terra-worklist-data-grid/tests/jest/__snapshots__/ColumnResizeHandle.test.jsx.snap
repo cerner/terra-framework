@@ -121,6 +121,7 @@ exports[`ColumnResizeHandle renders a default column resize handle 1`] = `
       onMouseDown={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
+      onMouseUp={[Function]}
       role="slider"
       tabIndex={-1}
     />

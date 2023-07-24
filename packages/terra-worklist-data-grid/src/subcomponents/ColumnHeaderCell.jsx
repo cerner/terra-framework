@@ -227,7 +227,7 @@ const ColumnHeaderCell = (props) => {
       role="columnheader"
       scope="col"
       aria-sort={sortIndicator}
-      onMouseDown={((isSelectable || isResizable) && onColumnSelect) ? onMouseDown : undefined}
+      onMouseDown={onColumnSelect ? onMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       style={{ width: `${width}px`, height: headerHeight }}
     >
