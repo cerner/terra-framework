@@ -31,6 +31,7 @@ const propTypes = {
    * Indicates if the tab is currently selected.
    */
   isSelected: PropTypes.bool,
+  onClosingTab:PropTypes.func,
   /**
    * Text to be displayed on the tab.
    */
@@ -86,6 +87,7 @@ const HiddenTab = ({
   onSelect,
   tabIds,
   onChange,
+  onClosingTab,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -112,6 +114,11 @@ const HiddenTab = ({
       handleArrows(event, index, tabIds);
     }
   };
+  function onCloseClick(event) {
+    event.stopPropagation();
+   // setIsClosed(true);
+    onClosingTab(itemKey, metaData)
+  }
 
   attributes.tabIndex = isSelected ? 0 : -1;
   attributes.onClick = e => { e.preventDefault(); e.stopPropagation(); handleOnSelect(e); };
@@ -132,6 +139,13 @@ const HiddenTab = ({
     >
       <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>
       <div className={cx('label')}>{label}</div>
+      <a
+            
+            class={cx('pill-remove-button')}
+            type="button"
+            aria-label="Close Tab"
+            onClick={onCloseClick}
+          >x</a>
     </div>
   );
 };

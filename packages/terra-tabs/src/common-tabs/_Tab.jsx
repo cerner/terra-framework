@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -50,6 +50,7 @@ const propTypes = {
    * Callback function triggering on selection. onSelect(itemKey, metaData)
    */
   onSelect: PropTypes.func.isRequired,
+  onClosingTab:PropTypes.func,
   /**
    * Identifier for the CommonTab item represented by the Tab. Returned with onSelect.
    */
@@ -89,6 +90,9 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+
+  isClosable: PropTypes.bool,
+
 };
 
 const defaultProps = {
@@ -115,7 +119,10 @@ const Tab = ({
   variant,
   isDisabled,
   onChange,
+  isClosable,
+  onClosingTab,
 }) => {
+  const [isClosed, setIsClosed] = useState(false);
   const attributes = {};
   const theme = React.useContext(ThemeContext);
   const tabClassNames = cx(
@@ -140,7 +147,10 @@ const Tab = ({
   }
 
   function onKeyDown(event) {
-    if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
+    if (
+      event.nativeEvent.keyCode === KEY_RETURN ||
+      event.nativeEvent.keyCode === KEY_SPACE
+    ) {
       event.preventDefault();
       event.stopPropagation();
       onSelect(itemKey, metaData);
@@ -159,13 +169,24 @@ const Tab = ({
     }
   }
 
+  function onCloseClick(event) {
+    event.stopPropagation();
+   // setIsClosed(true);
+    onClosingTab(itemKey, metaData)
+  }
+
+  // if (isClosed) {
+  //   return null;
+  // }
+
   attributes.tabIndex = isSelected ? 0 : -1;
   attributes.onClick = onClick;
+  attributes.onCloseClick=onCloseClick;
   attributes.onKeyDown = onKeyDown;
   attributes.onBlur = enableFocusStyles;
   attributes.onMouseDown = disableFocusStyles;
-  attributes['data-focus-styles-enabled'] = !isDisabled;
-  attributes['aria-selected'] = isSelected;
+  attributes["data-focus-styles-enabled"] = !isDisabled;
+  attributes["aria-selected"] = isSelected;
   attributes.style = { zIndex };
 
   return (
@@ -182,7 +203,47 @@ const Tab = ({
       <div className={variant === 'framework' ? cy('inner') : cx('inner')}>
         {customDisplay}
         {customDisplay ? null : icon}
-        {customDisplay || isIconOnly ? null : <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
+        {customDisplay || isIconOnly ? 
+         (isClosable && (
+          //   <a
+          //   href="#"
+          //   className={cx('close-link')} // Add a custom CSS class for the anchor tag
+          //   onClick={}
+          //   title="Close"
+          //   aria-label="Close"
+          // >
+          //   <span className={cx('close-icon')}>&times;</span> {/* Add a span for the close icon */}
+          // </a>
+          <a
+          
+            class={cx('pill-remove-button')}
+            type="button"
+            aria-label="Close Tab"
+            onClick={onCloseClick}
+          ></a>
+          ) ): (
+          <span className={variant === 'framework' ? cy('label') : cx('label')}>
+            {label}
+            {isClosable && (
+            //   <a
+            //   href="#"
+            //   className={cx('close-link')} // Add a custom CSS class for the anchor tag
+            //   onClick={}
+            //   title="Close"
+            //   aria-label="Close"
+            // >
+            //   <span className={cx('close-icon')}>&times;</span> {/* Add a span for the close icon */}
+            // </a>
+            <a
+            
+              class={cx('pill-remove-button')}
+              type="button"
+              aria-label="Close Tab"
+              onClick={onCloseClick}
+            ></a>
+            )}
+          </span>
+        )}
       </div>
     </div>
   );

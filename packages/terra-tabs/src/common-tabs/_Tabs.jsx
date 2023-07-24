@@ -41,6 +41,9 @@ const propTypes = {
      * Returns the event and metaData e.g. onSelect(event, metaData).
      */
     onSelect: PropTypes.func,
+    onClosingTab: PropTypes.func,
+    isClosable: PropTypes.bool.isRequired,
+    onClose:PropTypes.func,
     /**
      * The metaData to return with the onSelect callback.
      */
@@ -56,6 +59,7 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  onTabStateChange: PropTypes.func
 };
 
 class Tabs extends React.Component {
@@ -64,7 +68,9 @@ class Tabs extends React.Component {
     this.containerRef = React.createRef();
     this.dropdownRef = React.createRef();
     this.moreButtonRef = React.createRef();
-
+    this.state = {
+      tabData: props.tabData,
+    };
     this.setIsOpen = this.setIsOpen.bind(this);
     this.resetCache = this.resetCache.bind(this);
     this.handleResize = this.handleResize.bind(this);
@@ -75,6 +81,7 @@ class Tabs extends React.Component {
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
     this.wrapOnSelect = this.wrapOnSelect.bind(this);
     this.wrapOnSelectHidden = this.wrapOnSelectHidden.bind(this);
+    this.wrapOnClose = this.wrapOnClose.bind(this);
     this.positionDropDown = this.positionDropDown.bind(this);
     this.resetCache();
   }
@@ -123,7 +130,7 @@ class Tabs extends React.Component {
     const availableWidth = width - moreButtonWidth;
 
     // Calculate hidden index
-    const tabCount = this.props.tabData.length;
+    const tabCount = this.state.tabData.length;
     let newHideIndex = tabCount;
     let calcMinWidth = 0;
     let showMoreButton = false;
@@ -134,7 +141,7 @@ class Tabs extends React.Component {
       const tabMarginRight = parseFloat(tabStyle.getPropertyValue('margin-right'));
       const tabMinWidth = parseFloat(tabStyle.getPropertyValue('min-width'));
 
-      calcMinWidth += (tabMinWidth + tabMarginLeft + tabMarginRight);
+      calcMinWidth += tabMinWidth + tabMarginLeft + tabMarginRight;
       if (calcMinWidth > availableWidth && !(i === tabCount - 1 && calcMinWidth <= width)) {
         newHideIndex = i;
         showMoreButton = true;
@@ -154,7 +161,6 @@ class Tabs extends React.Component {
   }
 
   handleHiddenBlur(event) {
-    // The check for dropdown.contains(activeElement) is necessary to prevent IE11 from closing dropdown on click of scroll bar in certain contexts.
     if (this.dropdownRef.current && this.dropdownRef.current.contains(document.activeElement)) {
       if (this.dropdownRef.current === document.activeElement) {
         event.currentTarget.focus();
@@ -176,7 +182,10 @@ class Tabs extends React.Component {
   }
 
   handleOutsideClick(event) {
-    if (event.type === 'mousedown' && (this.moreButtonRef.current === event.currentTarget || this.moreButtonRef.current.contains(event.currentTarget))) {
+    if (
+      event.type === 'mousedown' &&
+      (this.moreButtonRef.current === event.currentTarget || this.moreButtonRef.current.contains(event.currentTarget))
+    ) {
       return;
     }
     this.setIsOpen(false);
@@ -222,29 +231,83 @@ class Tabs extends React.Component {
 
     this.dropdownRef.current.style.left = `${offset}px`;
   }
+  // wrapOnSelect(onSelect) {
+  //   return (itemKey, metaData) => {
+  //     this.setIsOpen(false);
+  //     onSelect(itemKey, metaData);
+  //   };
+  // }
+  // wrapOnSelectHidden(onSelect) {
+  //   return (itemKey, metaData) => {
+  //     if (this.isOpen) {
+  //       onSelect(itemKey, metaData);
+  //     }
+  //     this.setIsOpen(!this.isOpen);
+  //   };
+  // }
 
+  
   wrapOnSelect(onSelect) {
     return (itemKey, metaData) => {
-      this.setIsOpen(false);
-      onSelect(itemKey, metaData);
+
+      const updatedTabData = this.state.tabData.map((tab) => ({
+        ...tab,
+        isSelected: tab.itemKey === itemKey,
+      }));
+      this.setState({ tabData: updatedTabData }, () => {
+        this.setIsOpen(false);
+        onSelect(itemKey, metaData);
+      });
     };
   }
-
+  
   wrapOnSelectHidden(onSelect) {
     return (itemKey, metaData) => {
       if (this.isOpen) {
-        onSelect(itemKey, metaData);
+        const updatedTabData = this.state.tabData.map((tab) => ({
+          ...tab,
+          isSelected: tab.id === itemKey,
+        }));
+        this.setState({ tabData: updatedTabData }, () => {
+          onSelect(itemKey, metaData);
+          this.setIsOpen(!this.isOpen);
+        });
       }
-      this.setIsOpen(!this.isOpen);
+    };
+  }
+
+
+  wrapOnClose(onClose) {
+    return (itemKey, metaData) => {
+      this.setIsOpen(false);
+       // const updatedTabData = this.state.tabData.filter(tab => tab.id !== "undefined-"+itemKey);
+      var selectKey=false;
+      const updatedTabData = this.state.tabData
+        .filter((tab) => tab.itemKey !== itemKey)
+        .map((tab, index) => {
+          if (tab.isSelected===true) {
+            selectKey=true
+          }
+          return {
+            ...tab
+          };
+        });
+  
+      if(!selectKey){
+        updatedTabData[0].isSelected=true
+      }
+     this.props.onTabStateChange(updatedTabData);
+      this.setState({ tabData: updatedTabData });
+      onClose(itemKey, metaData);
     };
   }
 
   render() {
     const {
-      tabData, ariaLabel, variant, onChange,
+      ariaLabel, variant,onChange
     } = this.props;
     const theme = this.context;
-    const enabledTabs = tabData.filter(tab => !tab.isDisabled);
+    const enabledTabs = this.state.tabData.filter(tab => !tab.isDisabled);
     const ids = enabledTabs.map(tab => tab.id);
     const hiddenIds = [];
     const visibleTabs = [];
@@ -252,7 +315,7 @@ class Tabs extends React.Component {
     let isHiddenSelected = false;
 
     let enabledTabsIndex = -1;
-    tabData.forEach((tab, index) => {
+    this.state.tabData.forEach((tab, index) => {
       if (!tab.isDisabled) {
         enabledTabsIndex += 1;
       }
@@ -266,10 +329,12 @@ class Tabs extends React.Component {
             icon={tab.icon}
             customDisplay={tab.customDisplay}
             onSelect={this.wrapOnSelect(tab.onSelect)}
-            zIndex={tab.isSelected ? tabData.length : tabData.length - index}
+            zIndex={tab.isSelected ? this.state.tabData.length : this.state.tabData.length - index}
             isIconOnly={tab.isIconOnly}
             variant={variant}
             onChange={onChange}
+            //isClosable={true}
+            onClosingTab={this.wrapOnClose(tab.onClose)}
           />,
         );
       } else {
@@ -283,6 +348,7 @@ class Tabs extends React.Component {
             onFocus={this.handleHiddenFocus}
             onBlur={this.handleHiddenBlur}
             onChange={onChange}
+            onClosingTab={this.wrapOnClose(tab.onClose)}
           />,
         );
         hiddenIds.push(tab.id);
@@ -321,7 +387,7 @@ class Tabs extends React.Component {
             isOpen={this.isOpen}
             hiddenIndex={this.hiddenStartIndex}
             isActive={isHiddenSelected}
-            zIndex={tabData.length - this.hiddenStartIndex}
+            zIndex={this.state.tabData.length - this.hiddenStartIndex}
             onBlur={this.handleMoreButtonBlur}
             onSelect={this.handleMoreButtonSelect}
             refCallback={node => { this.moreButtonRef.current = node; }}

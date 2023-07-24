@@ -50,6 +50,14 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+
+  // * The function callback triggering when a item is selected.
+  // * Returns the associated itemKey and metaData. e.g. onRequestActivate(itemKey, metaData)
+  // */
+ onClosingkey: PropTypes.func.isRequired,
+
+ onClosingTab:PropTypes.func,
+
 };
 
 const getTabId = (id, itemKey) => `${id}-${itemKey}`;
@@ -62,8 +70,10 @@ const CommonTabs = ({
   activeSize,
   children,
   onRequestActivate,
+  onClosingkey,
   variant,
   onChange,
+  onClosingTab,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -82,6 +92,8 @@ const CommonTabs = ({
     onSelect: onRequestActivate,
     metaData: child.props.metaData,
     isDisabled: child.props.isDisabled,
+    onClose: onClosingkey,
+    isClosable: child.props.isClosable,
   }));
 
   const tabsClassNames = classNames(cy(
@@ -92,6 +104,10 @@ const CommonTabs = ({
   ),
   customProps.className);
 
+  const handleCommonTabsStateChange=(value)=>{
+    console.log("CommonTabs props",value)
+    onClosingTab(value)
+  }
   return (
     <div
       className={variant === 'framework' ? tabsClassNames : cx('workspace')}
@@ -101,7 +117,7 @@ const CommonTabs = ({
         <div className={cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
-        <Tabs variant={variant} tabData={tabData} onChange={onChange} />
+        <Tabs variant={variant} tabData={tabData} onChange={onChange}   onTabStateChange={handleCommonTabsStateChange}/>
       </div>
       <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {

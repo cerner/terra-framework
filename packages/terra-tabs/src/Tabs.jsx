@@ -53,6 +53,9 @@ const propTypes = {
    * Key of the pane that should be open initially.
    */
   defaultActiveKey: PropTypes.string,
+
+  isClosable: PropTypes.bool,
+
 };
 
 const defaultProps = {
@@ -66,6 +69,8 @@ class Tabs extends React.Component {
     this.getInitialState = this.getInitialState.bind(this);
     this.state = {
       activeKey: this.getInitialState(),
+      activeAfterClosed:'',
+      closedKeySelected:''
     };
   }
 
@@ -104,17 +109,29 @@ class Tabs extends React.Component {
           isIconOnly={child.props.isIconOnly}
           render={() => content}
           isDisabled={child.props.isDisabled}
+          isClosable={this.props.isClosable !== undefined ? this.props.isClosable : false}
         />,
       );
     });
-
+const handleTabsStateChange=(newValue)=>{
+  this.setState({activeAfterClosed:newValue[0].itemKey})
+}
     return (
       <CommonTabs
         id={customProps.id || 'terra-common-tabs'}
         activeItemKey={this.state.activeKey}
-        onRequestActivate={key => this.setState({ activeKey: key })}
+        onRequestActivate={key => 
+        this.setState({ activeKey: key })}
+        onClosingkey={(key) => {
+          if (this.state.activeKey === key) {
+           setTimeout(() => {
+            this.setState({ activeKey: this.state.activeAfterClosed });
+          }, 100);
+          }
+        }}
         onChange={onChange}
         variant="framework"
+        onClosingTab={handleTabsStateChange}
         {...customProps}
       >
         {commonTabItems}
