@@ -75,11 +75,16 @@ const propTypes = {
    * If enabled, this prop will show the icon on the tab and also in the menu if pane is collapsed.
    */
   showIcon: PropTypes.bool,
+  /**
+   * If enabled, this prop will show the add icon in the tab dropdown.
+   */
+  showAddButton: PropTypes.bool,
 };
 
 const defaultProps = {
   isSelected: false,
   showIcon: false,
+  showAddButton: false,
 };
 
 const HiddenTab = ({
@@ -97,6 +102,7 @@ const HiddenTab = ({
   onChange,
   icon,
   showIcon,
+  showAddButton,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -138,7 +144,7 @@ const HiddenTab = ({
       {...attributes}
       id={id}
       aria-controls={associatedPanelId}
-      role="tab"
+      role={showAddButton ? 'button' : 'tab'}
       className={hiddenClassNames}
     >
       <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>

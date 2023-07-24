@@ -78,6 +78,7 @@ class Tabs extends React.Component {
     this.containerRef = React.createRef();
     this.dropdownRef = React.createRef();
     this.moreButtonRef = React.createRef();
+    this.addButtonRef = React.createRef();
 
     this.setIsOpen = this.setIsOpen.bind(this);
     this.resetCache = this.resetCache.bind(this);
@@ -103,6 +104,7 @@ class Tabs extends React.Component {
       }
     });
     this.resizeObserver.observe(this.containerRef.current);
+    this.resizeObserver.observe(this.containerRef.current.parentNode);
     this.handleResize();
   }
 
@@ -128,12 +130,13 @@ class Tabs extends React.Component {
 
     // NOTE: get width from bounding client rect instead of resize observer, zoom throws off safari.
     const { width } = this.containerRef.current.parentNode.getBoundingClientRect();
+    const addtab = this.addButtonRef.current.getBoundingClientRect().width;
 
     const moreStyle = window.getComputedStyle(this.moreButtonRef.current, null);
     const moreMarginLeft = parseInt(moreStyle.getPropertyValue('margin-left'), 10);
     const moreMarginRight = parseInt(moreStyle.getPropertyValue('margin-right'), 10);
     const moreButtonWidth = this.moreButtonRef.current.getBoundingClientRect().width + moreMarginLeft + moreMarginRight;
-    const availableWidth = width - moreButtonWidth;
+    const availableWidth = width - moreButtonWidth - addtab;
 
     // Calculate hidden index
     const tabCount = this.props.tabData.length;
@@ -326,6 +329,7 @@ class Tabs extends React.Component {
               onFocus={this.handleHiddenFocus}
               onBlur={this.handleHiddenBlur}
               onChange={onChange}
+              showAddButton
             />,
           );
         }
@@ -344,6 +348,7 @@ class Tabs extends React.Component {
     }
     const commonTabsClassNames = cx('tab-container', theme.className);
     const commonTabsContainerClassNames = cx('container', theme.className);
+    const commonDivClassNames = cx('divcontainer', theme.className);
 
     return (
       <div className={commonTabsContainerClassNames}>
@@ -380,16 +385,19 @@ class Tabs extends React.Component {
             {hiddenTabs}
           </TabDropDown>
         </div>
-        {(!this.showMoreButton && onSelectAddButton) && (
-        <AddButton
-          id={addTabId}
-          addAriaLabel={ariaLabelAddTab}
-          index={enabledTabsIndex + 1}
-          onSelect={onSelectAddButton}
-          tabIds={moreIds}
-          isSelected={false}
-        />
-        )}
+        <div className={commonDivClassNames} ref={this.addButtonRef}>
+          {(!this.showMoreButton && onSelectAddButton) && (
+          <AddButton
+            id={addTabId}
+            addAriaLabel={ariaLabelAddTab}
+            index={enabledTabsIndex + 1}
+            onSelect={onSelectAddButton}
+            tabIds={moreIds}
+            isSelected={false}
+          />
+          )}
+
+        </div>
       </div>
     );
   }
