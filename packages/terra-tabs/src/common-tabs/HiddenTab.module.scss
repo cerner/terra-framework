@@ -83,6 +83,30 @@
         border-width: 0;
       }
     }
+
+    &.is-disabled {
+      background-color: var(--terra-tabs-structural-disabled-background-color, #fff);
+      background-size: 0 0;
+      color: var(--terra-tabs-structural-disabled-color, rgba(28, 31, 33, 0.2));
+      cursor: default;
+      opacity: var(--terra-tabs-structural-disabled-opacity, 1);
+    }
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+      &.is-disabled:hover {
+        background-color: var(--terra-tabs-structural-disabled-hover-background-color, #fff);
+        background-size: 0 0;
+        color: var(--terra-tabs-structural-disabled-hover-color, rgba(28, 31, 33, 0.2));
+        cursor: default;
+        opacity: var(--terra-tabs-structural-disabled-hover-opacity, 1);
+      }
+    }
+
+    &.is-disabled .label,
+    &.is-disabled svg {
+      color: var(--terra-tabs-structural-disabled-label-color, rgba(28, 31, 33, 0.7));
+      opacity: var(--terra-tabs-structural-disabled-label-opacity, 0.3);
+    }
   }
 
   .checkbox {

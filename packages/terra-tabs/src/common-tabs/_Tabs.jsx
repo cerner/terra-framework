@@ -287,6 +287,7 @@ class Tabs extends React.Component {
             onChange={onChange}
             icon={tab.icon}
             showIcon={tab.showIcon}
+            isDisabled={tab.isDisabled}
           />,
         );
         hiddenIds.push(tab.id);
