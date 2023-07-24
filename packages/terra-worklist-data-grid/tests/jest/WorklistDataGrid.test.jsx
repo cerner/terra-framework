@@ -41,11 +41,11 @@ const dataFile = {
   ],
 };
 describe('WorklistDataGrid', () => {
-  it('verifies that the grid created is consistent with the rows and columns props', () => {
+  it('verifies that the grid created is consistent with the rows and overflowColumns props', () => {
     const wrapper = shallowWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
-        columns={dataFile.cols}
+        overflowColumns={dataFile.cols}
         rows={dataFile.rows}
       />,
     ).dive();
@@ -61,8 +61,8 @@ describe('WorklistDataGrid', () => {
   });
 
   it('verifies the rows are created with the right props', () => {
-    const verifyRow = (rowIndex, rowComponent, data, columns) => {
-      expect(rowComponent.props.displayedColumns).toEqual(columns);
+    const verifyRow = (rowIndex, rowComponent, data, overflowColumns) => {
+      expect(rowComponent.props.displayedColumns).toEqual(overflowColumns);
       expect(rowComponent.props.hasRowSelection).toBe(false);
       expect(rowComponent.key).toEqual(data.id);
       expect(rowComponent.props.onCellSelect).toBeDefined();
@@ -75,7 +75,7 @@ describe('WorklistDataGrid', () => {
     const wrapper = shallowWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
-        columns={dataFile.cols}
+        overflowColumns={dataFile.cols}
         rows={dataFile.rows}
       />,
     ).dive();
@@ -87,5 +87,23 @@ describe('WorklistDataGrid', () => {
     verifyRow(2, rows.get(2), dataFile.rows[2], dataFile.cols);
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  describe('with pinned columns', () => {
+    it('pins row header column', () => {
+      // expect pinned columns length === 1
+    });
+
+    it('pins both the row header column and row selection column', () => {
+      // expect pinned columns length === 2
+    });
+
+    it('pins all pinnedColumns when row selection mode is off', () => {
+      // expect pinned columns length === pinnedColumns + 1
+    });
+
+    it('pins all pinnedColumns when row selection mode is on', () => {
+      // expect pinned columns length === pinnedColumns + 2
+    });
   });
 });

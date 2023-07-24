@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WorklistDataGrid verifies that the grid created is consistent with the rows and columns props 1`] = `
+exports[`WorklistDataGrid verifies that the grid created is consistent with the rows and overflowColumns props 1`] = `
 <div
   className="worklist-data-grid-container"
 >
@@ -10,167 +10,179 @@ exports[`WorklistDataGrid verifies that the grid created is consistent with the 
     onKeyDown={[Function]}
     role="grid"
   >
-    <ColumnHeader
-      columns={
-        Array [
-          Object {
-            "displayName": " Vitals",
-            "id": "Column-0",
-            "maximumWidth": 300,
-            "minimumWidth": 60,
-            "width": 200,
-          },
-          Object {
-            "displayName": "March 16",
-            "id": "Column-1",
-            "maximumWidth": 300,
-            "minimumWidth": 60,
-            "width": 200,
-          },
-          Object {
-            "displayName": "March 17",
-            "id": "Column-2",
-            "isSelectable": false,
-            "maximumWidth": 300,
-            "minimumWidth": 60,
-            "width": 200,
-          },
-        ]
+    <ContextProvider
+      value={
+        Object {
+          "pinnedColumnOffsets": Array [
+            0,
+          ],
+          "pinnedColumnsLength": 0,
+          "pinnedColumnsTotalWidth": 0,
+        }
       }
-      headerHeight="2.5rem"
-      onColumnSelect={[Function]}
-      onResizeMouseDown={[Function]}
-      tabStopColumnIndex={0}
-      tableHeight={0}
-    />
-    <tbody>
-      <Row
-        cells={
-          Array [
-            Object {
-              "content": "Heart Rate Monitored (bpm)",
-            },
-            Object {
-              "content": "",
-            },
-            Object {
-              "content": "66",
-              "isMasked": true,
-            },
-          ]
-        }
-        displayedColumns={
+    >
+      <ColumnHeader
+        columns={
           Array [
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
           ]
         }
-        hasRowSelection={false}
-        height="2.5rem"
-        id="1"
-        isSelected={false}
-        key="1"
-        onCellSelect={[Function]}
-        onRowSelect={[Function]}
-        rowHeaderIndex={0}
-        rowIndex={1}
+        headerHeight="2.5rem"
+        onColumnSelect={[Function]}
+        onResizeMouseDown={[Function]}
+        tabStopColumnIndex={0}
+        tableHeight={0}
       />
-      <Row
-        cells={
-          Array [
-            Object {
-              "content": "Temperature Oral (degC)",
-            },
-            Object {
-              "content": "36.7",
-            },
-            Object {
-              "content": "36.9",
-              "isMasked": true,
-            },
-          ]
-        }
-        displayedColumns={
-          Array [
-            Object {
-              "displayName": " Vitals",
-              "id": "Column-0",
-            },
-            Object {
-              "displayName": "March 16",
-              "id": "Column-1",
-            },
-            Object {
-              "displayName": "March 17",
-              "id": "Column-2",
-              "isSelectable": false,
-            },
-          ]
-        }
-        hasRowSelection={false}
-        height="2.5rem"
-        id="2"
-        isSelected={false}
-        key="2"
-        onCellSelect={[Function]}
-        onRowSelect={[Function]}
-        rowHeaderIndex={0}
-        rowIndex={2}
-      />
-      <Row
-        cells={
-          Array [
-            Object {
-              "content": "Cardiac Index (L/min/m2)",
-            },
-            Object {
-              "content": "2.25",
-            },
-            Object {
-              "content": "2.28",
-              "isMasked": true,
-            },
-          ]
-        }
-        displayedColumns={
-          Array [
-            Object {
-              "displayName": " Vitals",
-              "id": "Column-0",
-            },
-            Object {
-              "displayName": "March 16",
-              "id": "Column-1",
-            },
-            Object {
-              "displayName": "March 17",
-              "id": "Column-2",
-              "isSelectable": false,
-            },
-          ]
-        }
-        hasRowSelection={false}
-        height="2.5rem"
-        id="3"
-        isSelected={false}
-        key="3"
-        onCellSelect={[Function]}
-        onRowSelect={[Function]}
-        rowHeaderIndex={0}
-        rowIndex={3}
-      />
-    </tbody>
+      <tbody>
+        <Row
+          cells={
+            Array [
+              Object {
+                "content": "Heart Rate Monitored (bpm)",
+              },
+              Object {
+                "content": "",
+              },
+              Object {
+                "content": "66",
+                "isMasked": true,
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          hasRowSelection={false}
+          height="2.5rem"
+          id="1"
+          isSelected={false}
+          key="1"
+          onCellSelect={[Function]}
+          onRowSelect={[Function]}
+          rowHeaderIndex={0}
+          rowIndex={1}
+        />
+        <Row
+          cells={
+            Array [
+              Object {
+                "content": "Temperature Oral (degC)",
+              },
+              Object {
+                "content": "36.7",
+              },
+              Object {
+                "content": "36.9",
+                "isMasked": true,
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          hasRowSelection={false}
+          height="2.5rem"
+          id="2"
+          isSelected={false}
+          key="2"
+          onCellSelect={[Function]}
+          onRowSelect={[Function]}
+          rowHeaderIndex={0}
+          rowIndex={2}
+        />
+        <Row
+          cells={
+            Array [
+              Object {
+                "content": "Cardiac Index (L/min/m2)",
+              },
+              Object {
+                "content": "2.25",
+              },
+              Object {
+                "content": "2.28",
+                "isMasked": true,
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          hasRowSelection={false}
+          height="2.5rem"
+          id="3"
+          isSelected={false}
+          key="3"
+          onCellSelect={[Function]}
+          onRowSelect={[Function]}
+          rowHeaderIndex={0}
+          rowIndex={3}
+        />
+      </tbody>
+    </ContextProvider>
   </table>
   <VisuallyHiddenText
     aria-live="polite"
@@ -188,167 +200,179 @@ exports[`WorklistDataGrid verifies the rows are created with the right props 1`]
     onKeyDown={[Function]}
     role="grid"
   >
-    <ColumnHeader
-      columns={
-        Array [
-          Object {
-            "displayName": " Vitals",
-            "id": "Column-0",
-            "maximumWidth": 300,
-            "minimumWidth": 60,
-            "width": 200,
-          },
-          Object {
-            "displayName": "March 16",
-            "id": "Column-1",
-            "maximumWidth": 300,
-            "minimumWidth": 60,
-            "width": 200,
-          },
-          Object {
-            "displayName": "March 17",
-            "id": "Column-2",
-            "isSelectable": false,
-            "maximumWidth": 300,
-            "minimumWidth": 60,
-            "width": 200,
-          },
-        ]
+    <ContextProvider
+      value={
+        Object {
+          "pinnedColumnOffsets": Array [
+            0,
+          ],
+          "pinnedColumnsLength": 0,
+          "pinnedColumnsTotalWidth": 0,
+        }
       }
-      headerHeight="2.5rem"
-      onColumnSelect={[Function]}
-      onResizeMouseDown={[Function]}
-      tabStopColumnIndex={0}
-      tableHeight={0}
-    />
-    <tbody>
-      <Row
-        cells={
-          Array [
-            Object {
-              "content": "Heart Rate Monitored (bpm)",
-            },
-            Object {
-              "content": "",
-            },
-            Object {
-              "content": "66",
-              "isMasked": true,
-            },
-          ]
-        }
-        displayedColumns={
+    >
+      <ColumnHeader
+        columns={
           Array [
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
             },
           ]
         }
-        hasRowSelection={false}
-        height="2.5rem"
-        id="1"
-        isSelected={false}
-        key="1"
-        onCellSelect={[Function]}
-        onRowSelect={[Function]}
-        rowHeaderIndex={0}
-        rowIndex={1}
+        headerHeight="2.5rem"
+        onColumnSelect={[Function]}
+        onResizeMouseDown={[Function]}
+        tabStopColumnIndex={0}
+        tableHeight={0}
       />
-      <Row
-        cells={
-          Array [
-            Object {
-              "content": "Temperature Oral (degC)",
-            },
-            Object {
-              "content": "36.7",
-            },
-            Object {
-              "content": "36.9",
-              "isMasked": true,
-            },
-          ]
-        }
-        displayedColumns={
-          Array [
-            Object {
-              "displayName": " Vitals",
-              "id": "Column-0",
-            },
-            Object {
-              "displayName": "March 16",
-              "id": "Column-1",
-            },
-            Object {
-              "displayName": "March 17",
-              "id": "Column-2",
-              "isSelectable": false,
-            },
-          ]
-        }
-        hasRowSelection={false}
-        height="2.5rem"
-        id="2"
-        isSelected={false}
-        key="2"
-        onCellSelect={[Function]}
-        onRowSelect={[Function]}
-        rowHeaderIndex={0}
-        rowIndex={2}
-      />
-      <Row
-        cells={
-          Array [
-            Object {
-              "content": "Cardiac Index (L/min/m2)",
-            },
-            Object {
-              "content": "2.25",
-            },
-            Object {
-              "content": "2.28",
-              "isMasked": true,
-            },
-          ]
-        }
-        displayedColumns={
-          Array [
-            Object {
-              "displayName": " Vitals",
-              "id": "Column-0",
-            },
-            Object {
-              "displayName": "March 16",
-              "id": "Column-1",
-            },
-            Object {
-              "displayName": "March 17",
-              "id": "Column-2",
-              "isSelectable": false,
-            },
-          ]
-        }
-        hasRowSelection={false}
-        height="2.5rem"
-        id="3"
-        isSelected={false}
-        key="3"
-        onCellSelect={[Function]}
-        onRowSelect={[Function]}
-        rowHeaderIndex={0}
-        rowIndex={3}
-      />
-    </tbody>
+      <tbody>
+        <Row
+          cells={
+            Array [
+              Object {
+                "content": "Heart Rate Monitored (bpm)",
+              },
+              Object {
+                "content": "",
+              },
+              Object {
+                "content": "66",
+                "isMasked": true,
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          hasRowSelection={false}
+          height="2.5rem"
+          id="1"
+          isSelected={false}
+          key="1"
+          onCellSelect={[Function]}
+          onRowSelect={[Function]}
+          rowHeaderIndex={0}
+          rowIndex={1}
+        />
+        <Row
+          cells={
+            Array [
+              Object {
+                "content": "Temperature Oral (degC)",
+              },
+              Object {
+                "content": "36.7",
+              },
+              Object {
+                "content": "36.9",
+                "isMasked": true,
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          hasRowSelection={false}
+          height="2.5rem"
+          id="2"
+          isSelected={false}
+          key="2"
+          onCellSelect={[Function]}
+          onRowSelect={[Function]}
+          rowHeaderIndex={0}
+          rowIndex={2}
+        />
+        <Row
+          cells={
+            Array [
+              Object {
+                "content": "Cardiac Index (L/min/m2)",
+              },
+              Object {
+                "content": "2.25",
+              },
+              Object {
+                "content": "2.28",
+                "isMasked": true,
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          hasRowSelection={false}
+          height="2.5rem"
+          id="3"
+          isSelected={false}
+          key="3"
+          onCellSelect={[Function]}
+          onRowSelect={[Function]}
+          rowHeaderIndex={0}
+          rowIndex={3}
+        />
+      </tbody>
+    </ContextProvider>
   </table>
   <VisuallyHiddenText
     aria-live="polite"
