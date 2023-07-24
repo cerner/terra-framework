@@ -150,7 +150,7 @@ const RowSelection = () => {
     if (!rowSelectionModeRef.current.checked) {
       rowSelectionModeRef.current.checked = true;
     }
-    rowsToSelect.forEach(r => { r.isSelected = true; });
+    rowsToSelect.forEach((r, index) => { rowsToSelect[index].isSelected = true; });
     setHasSelectableRows(true);
     setSelectedRows(rowsToSelect.map(r => r.id));
   };
@@ -211,7 +211,7 @@ const RowSelection = () => {
         }}
         onEnableSelectableRows={(selectedRowIds, unSelectedRowIds) => {
           if (unSelectedRowIds) {
-            rows.forEach(r => { if (unSelectedRowIds.indexOf(r.id) >= 0) { r.isSelected = false; } });
+            rows.forEach((r, index) => { if (unSelectedRowIds.indexOf(r.id) >= 0) { rows[index].isSelected = false; } });
           }
           enableSelectableRows(selectedRowIds);
         }}

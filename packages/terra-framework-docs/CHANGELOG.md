@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added example and tests for `terra-worklist-data-grid` to select rows via mouse and keyboard.
+
 ## 1.26.0 - (July 20, 2023)
 
 * Added

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added ability to select rows via mouse and keyboard.
+
 ## 0.3.0 - (July 19, 2023)
 
 * Breaking Changes

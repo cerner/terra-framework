@@ -2,6 +2,11 @@
 @import '../orion-fusion-theme/Cell.module';
 @import '../clinical-lowlight-theme/Cell.module';
 
+@mixin terra-worklist-data-grid-selectable-hover {
+  background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
+  cursor: pointer;
+}
+
 :local {
   .worklist-data-grid-cell {
     border: var(--terra-worklist-data-grid-cell-border, 1px solid #dedfe0);
@@ -24,8 +29,7 @@
 
   // Create gradient background for masked cells
   .masked {
-    // background: var(--terra-worklist-data-grid-mask-background, repeating-linear-gradient(-45deg, #dedfe0, #dedfe0 3px, transparent 3px, transparent 6px));
-    background: var(--terra-worklist-data-grid-mask-background, repeating-linear-gradient(-45deg, #cfd2d3, #cfd2d3 3px, transparent 3px, transparent 6px));
+    background: var(--terra-worklist-data-grid-mask-background, repeating-linear-gradient(-45deg, #dedfe0, #dedfe0 3px, transparent 3px, transparent 6px));
   }
 
   .cell-content {
@@ -33,10 +37,8 @@
     overflow-wrap: break-word;
   }
 
-
   // Hover state for selectable elements
   .selectable:hover {
-    background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
-    cursor: pointer;
+    @include terra-worklist-data-grid-selectable-hover;
   }
 }

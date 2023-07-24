@@ -159,7 +159,10 @@ function Row(props) {
 
   return (
     <tr
-      className={cx([isSelected ? 'row-selected' : 'worklist-data-grid-row', hasRowSelection ? 'selectable' : null, theme.className])}
+      className={cx('worklist-data-grid-row', {
+        'row-selected': isSelected,
+        selectable: hasRowSelection,
+      }, theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ height }}
     >

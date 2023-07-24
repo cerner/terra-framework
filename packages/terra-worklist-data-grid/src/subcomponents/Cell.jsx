@@ -119,7 +119,6 @@ function Cell(props) {
     } else if (onCellSelect) {
       onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex }, !!event.shiftKey, false);
       event.stopPropagation();
-      event.preventDefault();
     }
   };
 

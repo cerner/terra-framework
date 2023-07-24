@@ -21,6 +21,7 @@
     border: var(--terra-worklist-data-grid-border, 1px solid #dedfe0);
     border-collapse: collapse;
     table-layout: fixed;
+    user-select: none;
     width: 1px;
   }
 

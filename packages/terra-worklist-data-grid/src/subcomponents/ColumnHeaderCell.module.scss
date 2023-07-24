@@ -1,4 +1,5 @@
 // Themes
+@use './Cell.module';
 @import '../orion-fusion-theme/ColumnHeaderCell.module';
 @import '../clinical-lowlight-theme/ColumnHeaderCell.module';
 
@@ -38,8 +39,7 @@
 
   // Hover state for selectable elements
   .selectable:hover {
-    background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
-    cursor: pointer;
+    @include Cell.terra-worklist-data-grid-selectable-hover;
   }
 }
 
