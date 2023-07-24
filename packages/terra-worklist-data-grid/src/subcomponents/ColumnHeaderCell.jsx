@@ -156,9 +156,15 @@ const ColumnHeaderCell = (props) => {
     }
   }, [columnIndex, onResizeMouseDown]);
 
+  // Restore focus to column header after resize action is completed.
+  const onResizeHandleMouseUp = useCallback(() => {
+    columnHeaderCellRef.current.focus();
+    setResizeHandleActive(false);
+  }, []);
+
   // Handle column header selection via the mouse click.
   const onMouseDown = () => {
-    onColumnSelect(id, { row: rowIndex, col: columnIndex });
+    onColumnSelect(id, { row: rowIndex, col: columnIndex }, isSelectable);
   };
 
   // Handle column header selection via the space bar.
@@ -168,7 +174,7 @@ const ColumnHeaderCell = (props) => {
       case KeyCode.KEY_SPACE:
       case KeyCode.KEY_RETURN:
         if (isSelectable && onColumnSelect) {
-          onColumnSelect(id, { row: rowIndex, col: columnIndex });
+          onColumnSelect(id, { row: rowIndex, col: columnIndex }, isSelectable);
         }
         event.stopPropagation();
         event.preventDefault(); // prevent the default scrolling
@@ -179,14 +185,14 @@ const ColumnHeaderCell = (props) => {
           setResizeHandleActive(false);
 
           event.stopPropagation();
-          event.preventDefault(); // prevent the default scrolling
+          event.preventDefault();
         }
         break;
       case KeyCode.KEY_RIGHT:
         if (isResizable && !isResizeHandleActive) {
           setResizeHandleActive(true);
           event.stopPropagation();
-          event.preventDefault(); // prevent the default scrolling
+          event.preventDefault();
         }
         break;
       case KeyCode.KEY_C:
@@ -221,7 +227,7 @@ const ColumnHeaderCell = (props) => {
       role="columnheader"
       scope="col"
       aria-sort={sortIndicator}
-      onMouseDown={(isSelectable && onColumnSelect) ? onMouseDown : undefined}
+      onMouseDown={((isSelectable || isResizable) && onColumnSelect) ? onMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       style={{ width: `${width}px`, height: headerHeight }}
     >
@@ -240,6 +246,7 @@ const ColumnHeaderCell = (props) => {
         minimumWidth={minimumWidth}
         maximumWidth={maximumWidth}
         onResizeMouseDown={onResizeHandleMouseDown}
+        onResizeMouseUp={onResizeHandleMouseUp}
         onResizeHandleChange={onResizeHandleChange}
       />
       )}

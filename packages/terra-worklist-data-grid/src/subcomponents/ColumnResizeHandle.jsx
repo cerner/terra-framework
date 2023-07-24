@@ -45,6 +45,10 @@ const propTypes = {
    */
   onResizeMouseDown: PropTypes.func.isRequired,
   /**
+   * Function that is called when onMouseDown event is triggered for the resize handle
+   */
+  onResizeMouseUp: PropTypes.func.isRequired,
+  /**
    * Function that is called when the the keyboard is used to adjust the column size
    */
   onResizeHandleChange: PropTypes.func,
@@ -69,6 +73,7 @@ const ColumnResizeHandle = (props) => {
     minimumWidth,
     maximumWidth,
     onResizeMouseDown,
+    onResizeMouseUp,
     onResizeHandleChange,
     intl,
   } = props;
@@ -100,6 +105,10 @@ const ColumnResizeHandle = (props) => {
     event.stopPropagation();
     // Prevent default dragging behavior
     event.preventDefault();
+  };
+
+  const onMouseUp = () => {
+    onResizeMouseUp();
   };
 
   const fitToTable = () => {
@@ -176,6 +185,7 @@ const ColumnResizeHandle = (props) => {
       aria-label={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
       // aria-valuetext={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
       onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
       onMouseEnter={fitToTable}
       onMouseLeave={onMouseLeave}
       onKeyDown={onKeyDown}

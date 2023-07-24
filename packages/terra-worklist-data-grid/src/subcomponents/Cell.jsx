@@ -118,8 +118,8 @@ function Cell(props) {
   const theme = useContext(ThemeContext);
 
   const onClick = useCallback(() => {
-    onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
-  }, [columnId, columnIndex, rowId, rowIndex, onCellSelect]);
+    onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex }, isSelectable);
+  }, [onCellSelect, rowId, columnId, rowIndex, columnIndex, isSelectable]);
 
   const handleKeyDown = (event) => {
     const key = event.keyCode;
@@ -171,7 +171,7 @@ function Cell(props) {
       aria-label={ariaLabel}
       tabIndex={isTabStop ? 0 : -1}
       className={className}
-      onClick={!isMasked && isSelectable && onCellSelect ? onClick : undefined}
+      onClick={onCellSelect ? onClick : undefined}
       onFocus={onFocus}
       onKeyDown={handleKeyDown}
     >

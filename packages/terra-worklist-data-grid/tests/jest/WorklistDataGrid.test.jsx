@@ -61,7 +61,7 @@ describe('WorklistDataGrid', () => {
   });
 
   it('verifies the rows are created with the right props', () => {
-    const verifyRow = (rowIndex, rowComponent, data, columns) => {
+    const verifyRow = (rowIndex, rowComponent, data) => {
       // expect(rowComponent.props.displayedColumns).toEqual(columns);
       expect(rowComponent.props.hasRowSelection).toBe(false);
       expect(rowComponent.key).toEqual(data.id);
@@ -82,9 +82,9 @@ describe('WorklistDataGrid', () => {
 
     const rows = wrapper.find(Row);
     expect(rows).toHaveLength(dataFile.rows.length);
-    verifyRow(0, rows.get(0), dataFile.rows[0], dataFile.cols);
-    verifyRow(1, rows.get(1), dataFile.rows[1], dataFile.cols);
-    verifyRow(2, rows.get(2), dataFile.rows[2], dataFile.cols);
+    verifyRow(0, rows.get(0), dataFile.rows[0]);
+    verifyRow(1, rows.get(1), dataFile.rows[1]);
+    verifyRow(2, rows.get(2), dataFile.rows[2]);
 
     expect(wrapper).toMatchSnapshot();
   });

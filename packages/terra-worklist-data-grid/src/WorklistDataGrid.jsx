@@ -259,7 +259,7 @@ function WorklistDataGrid(props) {
     }
   }, [intl, onRowSelect, rows]);
 
-  const handleCellSelection = useCallback((cellRowIdColId, cellGridCoordinates) => {
+  const handleCellSelection = useCallback((cellRowIdColId, cellGridCoordinates, isSelectable) => {
     setAriaLiveMsg(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-template' }, { row: cellGridCoordinates.row + 1, column: cellGridCoordinates.col + 1 }));
 
     // Make note of cell that is currently selected.
@@ -268,12 +268,12 @@ function WorklistDataGrid(props) {
     setCurrentSelectedCell({ rowId: cellRowIdColId.rowId, columnId: cellRowIdColId.columnId });
 
     // Notify consumers of the cell selection
-    if (onCellSelect) {
+    if (isSelectable && onCellSelect) {
       onCellSelect(cellRowIdColId.rowId, cellRowIdColId.columnId);
     }
   }, [intl, onCellSelect]);
 
-  const handleColumnSelect = useCallback((columnId, cellCoordinates) => {
+  const handleColumnSelect = useCallback((columnId, cellCoordinates, isSelectable) => {
     setAriaLiveMsg(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
 
     // Select column header
@@ -282,7 +282,7 @@ function WorklistDataGrid(props) {
     setCurrentSelectedCell(null);
 
     // Notify consumers of column header selection
-    if (onColumnSelect) {
+    if (isSelectable && onColumnSelect) {
       onColumnSelect(columnId);
     }
   }, [intl, onColumnSelect]);
@@ -446,8 +446,6 @@ function WorklistDataGrid(props) {
     if (onColumnResize) {
       onColumnResize(dataGridColumns[activeIndex].id, dataGridColumns[activeIndex].width);
     }
-
-    setFocusedCell({ row: 0, col: activeIndex, checkResizable: false });
 
     // Remove active index
     setActiveIndex(null);
