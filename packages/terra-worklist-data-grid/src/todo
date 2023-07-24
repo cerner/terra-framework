@@ -87,7 +87,29 @@ issues:
 
 5.6 validate that row headers are always pinned columns.
 
+5.7 fix rows erroring on undefined since it's an optional prop.
+
 6. fix border issue
 7. fix css glitches
 8. accessibility (screen reader) testing
 9. add tests (jest/wdio)
+
+
+----
+
+pinned columns and row header cases:
+
+1. pinned columns: [], rowHeaderIndex: 0
+    VALID
+2. pinned columns: [], rowHeaderIndex: >0
+    INVALID
+3. pinned columns: [], rowHeaderIndex: <0
+    INVALID
+4. pinned columns: [1, 2, 3], rowHeaderIndex: 0
+    VALID
+5. pinned columns: [1, 2, 3], rowHeaderIndex: 2
+    VALID
+6. pinned columns: [1, 2, 3], rowHeaderIndex: 4
+    INVALID
+
+rowHeaderIndex MUST be a positive integer.
