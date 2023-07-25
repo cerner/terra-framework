@@ -45,13 +45,13 @@
   .pinned {
     border: inherit, 1px solid #fff;
     border-width: 1px 0;
-    box-shadow: inset 1px 0 #fff;
+    box-shadow: inset 1px 0 #000;
     position: sticky;
     z-index: 2;
   }
 
   .pinned-columns-divider {
-    background-color: #fff;
+    background-color: #808080;
     box-shadow: 4px -1px 6px #808080;
     position: absolute;
     top: 0;
