@@ -110,7 +110,7 @@ Terra.describeViewports('Tabs - Icons in Menu', ['tiny'], () => {
   it('displays Tabs With Icons in Menu', () => {
     $('[data-testid]').click();
 
-    Terra.validates.element('displays tabs with icons in menu', { rules: { 'color-contrast': { enabled: false } } }, { selector: '#tabsWithIconsInMenu' });
+    Terra.validates.element('displays tabs with icons in menu', { selector: '#tabsWithIconsInMenu' });
   });
 
   it('selects error icon item in Menu', () => {

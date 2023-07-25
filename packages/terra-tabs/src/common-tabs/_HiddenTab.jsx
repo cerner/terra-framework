@@ -155,6 +155,7 @@ const HiddenTab = ({
       aria-controls={associatedPanelId}
       role="tab"
       className={hiddenClassNames}
+      aria-disabled={isDisabled}
     >
       <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>
       {showIcon && <div>{icon}</div>}
