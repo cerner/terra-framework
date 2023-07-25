@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tabs Responsiveness correctly applies the theme context className 1`] = `
+exports[`Tabs correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   intl={
     Object {
@@ -37,910 +37,553 @@ exports[`Tabs Responsiveness correctly applies the theme context className 1`] =
 >
   <Tabs
     fill={false}
-    responsiveTo="parent"
     tabFill={false}
     variant="modular-left-aligned"
   >
-    <ContentContainer
-      className="tabs-container structural orion-fusion-theme"
-      fill={false}
-      header={
-        <ResponsiveElement
-          onChange={[Function]}
-          responsiveTo="parent"
-        >
-          <CollapsedTabs
-            activeIndex={0}
-            activeKey="default"
-            onTruncationChange={[Function]}
-          >
-            <TabPane
-              className="is-active"
-              index={0}
-              isActive={true}
-              isDisabled={false}
-              isIconOnly={false}
-              label="Default"
-              onClick={[Function]}
-              showIcon={false}
-            />
-          </CollapsedTabs>
-        </ResponsiveElement>
-      }
-      setFocusOnContainer={false}
+    <CommonTabs
+      activeItemKey="default"
+      onRequestActivate={[Function]}
       variant="modular-left-aligned"
     >
       <div
-        className="content-container-static tabs-container structural orion-fusion-theme"
-        variant="modular-left-aligned"
+        className="workspace"
+        role="none"
       >
         <div
-          className="header"
+          aria-hidden={true}
+          className="body-shadow-container"
         >
-          <ResponsiveElement
-            onChange={[Function]}
-            responsiveTo="parent"
-          >
-            <CollapsedTabs
-              activeIndex={0}
-              activeKey="default"
-              onTruncationChange={[Function]}
-            >
-              <div
-                className="collapsed-tabs-container orion-fusion-theme"
-                role="tablist"
-              >
-                <InjectIntl(TabMenu)
-                  activeKey="default"
-                  selectedTab={
-                    <TabPane
-                      className="is-active"
-                      index={0}
-                      isActive={true}
-                      isDisabled={false}
-                      isIconOnly={false}
-                      label="Default"
-                      onClick={[Function]}
-                      showIcon={false}
-                    />
-                  }
-                >
-                  <TabMenu
-                    activeKey="default"
-                    intl={
-                      Object {
-                        "defaultFormats": Object {},
-                        "defaultLocale": "en",
-                        "formatDate": [Function],
-                        "formatHTMLMessage": [Function],
-                        "formatMessage": [Function],
-                        "formatNumber": [Function],
-                        "formatPlural": [Function],
-                        "formatRelative": [Function],
-                        "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
-                          "getDateTimeFormat": [Function],
-                          "getMessageFormat": [Function],
-                          "getNumberFormat": [Function],
-                          "getPluralFormat": [Function],
-                          "getRelativeFormat": [Function],
-                        },
-                        "locale": "en",
-                        "messages": null,
-                        "now": [Function],
-                        "onError": [Function],
-                        "textComponent": "span",
-                        "timeZone": null,
-                      }
-                    }
-                    selectedTab={
-                      <TabPane
-                        className="is-active"
-                        index={0}
-                        isActive={true}
-                        isDisabled={false}
-                        isIconOnly={false}
-                        label="Default"
-                        onClick={[Function]}
-                        showIcon={false}
-                      />
-                    }
-                  >
-                    <div
-                      aria-describedby="terra-tabs-button-interaction-hint-00000000-0000-0000-0000-000000000000"
-                      aria-selected={true}
-                      className="tab-menu is-active orion-fusion-theme"
-                      data-terra-tabs-menu={true}
-                      data-terra-tabs-show-focus-styles={true}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      onMouseDown={[Function]}
-                      role="tab"
-                      tabIndex="0"
-                    >
-                      <FormattedMessage
-                        id="Terra.tabs.more"
-                        values={Object {}}
-                      >
-                        <span>
-                          Default
-                        </span>
-                      </FormattedMessage>
-                      <IconCaretDown
-                        className=""
-                        isBidi={true}
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <IconBase
-                          className=""
-                          focusable="false"
-                          height="1em"
-                          isBidi={true}
-                          isSpin={false}
-                          viewBox="0 0 48 48"
-                          width="1em"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <svg
-                            className="tui-Icon icon is-bidi"
-                            focusable="false"
-                            height="1em"
-                            role="presentation"
-                            viewBox="0 0 48 48"
-                            width="1em"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M48 12L24 36 0 12h48z"
-                            />
-                          </svg>
-                        </IconBase>
-                      </IconCaretDown>
-                      <Menu
-                        contentWidth="240"
-                        headerTitle=""
-                        isArrowDisplayed={false}
-                        isOpen={false}
-                        onRequestClose={[Function]}
-                        showHeader={true}
-                        targetRef={[Function]}
-                      >
-                        <Popup
-                          attachmentBehavior="flip"
-                          boundingRef={null}
-                          classNameArrow="arrow"
-                          classNameContent={null}
-                          classNameOverlay={null}
-                          contentAttachment="top right"
-                          contentHeight="auto"
-                          contentWidth="240"
-                          headerTitle=""
-                          isArrowDisplayed={false}
-                          isContentFocusDisabled={true}
-                          isHeaderDisabled={true}
-                          isOpen={false}
-                          onRequestClose={[Function]}
-                          popupContentRole="dialog"
-                          targetRef={[Function]}
-                        />
-                      </Menu>
-                    </div>
-                    <VisuallyHiddenText
-                      aria-hidden="true"
-                      aria-live="polite"
-                      id="terra-tabs-button-interaction-hint-00000000-0000-0000-0000-000000000000"
-                      role="tab"
-                      text="Terra.tabs.hint.tabMenu"
-                    >
-                      <span
-                        aria-hidden="true"
-                        aria-live="polite"
-                        className="visually-hidden-text"
-                        id="terra-tabs-button-interaction-hint-00000000-0000-0000-0000-000000000000"
-                        role="tab"
-                      >
-                        Terra.tabs.hint.tabMenu
-                      </span>
-                    </VisuallyHiddenText>
-                  </TabMenu>
-                </InjectIntl(TabMenu)>
-              </div>
-            </CollapsedTabs>
-          </ResponsiveElement>
+          <div
+            className="body-shadow"
+          />
         </div>
         <div
-          className="main"
+          className="tab-header"
+          role="none"
         >
-          <Scroll
-            className="normalizer orion-fusion-theme"
+          <Tabs
+            tabData={
+              Array [
+                Object {
+                  "associatedPanelId": "terra-common-tabs-default-panel",
+                  "customDisplay": undefined,
+                  "icon": undefined,
+                  "id": "terra-common-tabs-default",
+                  "isDisabled": false,
+                  "isIconOnly": false,
+                  "isSelected": true,
+                  "itemKey": "default",
+                  "label": "Default",
+                  "metaData": undefined,
+                  "onSelect": [Function],
+                  "showIcon": false,
+                },
+              ]
+            }
+            variant="modular-left-aligned"
           >
             <div
-              className="scroll normalizer orion-fusion-theme"
+              aria-orientation="horizontal"
+              aria-owns=""
+              className="tab-container orion-fusion-theme"
+              data-tab-is-calculating="true"
+              role="tablist"
             >
-              <div
-                className="pane-content"
-                role="tabpanel"
-              />
+              <Tab
+                associatedPanelId="terra-common-tabs-default-panel"
+                hiddenStartIndex={1}
+                id="terra-common-tabs-default"
+                index={0}
+                isDisabled={false}
+                isIconOnly={false}
+                isSelected={true}
+                itemKey="default"
+                key="terra-common-tabs-default"
+                label="Default"
+                onSelect={[Function]}
+                setDropdownOpen={[Function]}
+                showIcon={false}
+                tabIds={
+                  Array [
+                    "terra-common-tabs-default",
+                  ]
+                }
+                variant="modular-left-aligned"
+                zIndex={1}
+              >
+                <div
+                  aria-controls="terra-common-tabs-default-panel"
+                  aria-disabled={false}
+                  aria-selected={true}
+                  className="tab is-active is-text-only orion-fusion-theme"
+                  data-focus-styles-enabled={true}
+                  data-terra-tabs-show-focus-styles={true}
+                  id="terra-common-tabs-default"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  role="tab"
+                  style={
+                    Object {
+                      "zIndex": 1,
+                    }
+                  }
+                  tabIndex={0}
+                  title="Default"
+                >
+                  <div
+                    className="inner"
+                  >
+                    <span
+                      className="label"
+                    >
+                      Default
+                    </span>
+                  </div>
+                </div>
+              </Tab>
+              <OnClickOutside(TabDropDown)
+                eventTypes={
+                  Array [
+                    "mousedown",
+                    "touchstart",
+                  ]
+                }
+                excludeScrollbar={false}
+                isOpen={false}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onRequestClose={[Function]}
+                outsideClickIgnoreClass="ignore-react-onclickoutside"
+                preventDefault={false}
+                refCallback={[Function]}
+                stopPropagation={false}
+              >
+                <TabDropDown
+                  disableOnClickOutside={[Function]}
+                  enableOnClickOutside={[Function]}
+                  eventTypes={
+                    Array [
+                      "mousedown",
+                      "touchstart",
+                    ]
+                  }
+                  isOpen={false}
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onRequestClose={[Function]}
+                  outsideClickIgnoreClass="ignore-react-onclickoutside"
+                  preventDefault={false}
+                  refCallback={[Function]}
+                  stopPropagation={false}
+                  wrappedRef={[Function]}
+                >
+                  <div
+                    className="drop-down orion-fusion-theme"
+                    onMouseDown={[Function]}
+                    role="none"
+                  />
+                </TabDropDown>
+              </OnClickOutside(TabDropDown)>
             </div>
-          </Scroll>
+          </Tabs>
+        </div>
+        <div
+          className="body"
+          role="none"
+        >
+          <CommonTabItem
+            associatedPanelId="terra-common-tabs-default-panel"
+            id="terra-common-tabs-default"
+            isActive={true}
+            isDisabled={false}
+            isIconOnly={false}
+            itemKey="default"
+            key="default/.0"
+            label="Default"
+            portalElement={
+              <div
+                role="none"
+                style="position: relative; height: 100%; width: 100%;"
+              >
+                <div
+                  class="panel orion-fusion-theme"
+                  role="none"
+                >
+                  <div
+                    class="panel-header"
+                    data-testid="workspace-content-heading"
+                    role="none"
+                  />
+                  <div
+                    class="panel-content"
+                    role="none"
+                  >
+                    <div
+                      aria-labelledby="terra-common-tabs-default"
+                      class="panel-overflow"
+                      data-application-overflow-container="true"
+                      id="terra-common-tabs-default-panel"
+                      role="tabpanel"
+                      tabindex="0"
+                    >
+                      <div
+                        class="outer-container"
+                        data-testid="dynamic-overlay-container"
+                        tabindex="-1"
+                      >
+                        <div
+                          class="content-container"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+            render={[Function]}
+            showIcon={false}
+            variant="modular-left-aligned"
+          >
+            <Portal
+              containerInfo={
+                <div
+                  role="none"
+                  style="position: relative; height: 100%; width: 100%;"
+                >
+                  <div
+                    class="panel orion-fusion-theme"
+                    role="none"
+                  >
+                    <div
+                      class="panel-header"
+                      data-testid="workspace-content-heading"
+                      role="none"
+                    />
+                    <div
+                      class="panel-content"
+                      role="none"
+                    >
+                      <div
+                        aria-labelledby="terra-common-tabs-default"
+                        class="panel-overflow"
+                        data-application-overflow-container="true"
+                        id="terra-common-tabs-default-panel"
+                        role="tabpanel"
+                        tabindex="0"
+                      >
+                        <div
+                          class="outer-container"
+                          data-testid="dynamic-overlay-container"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="content-container"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+            >
+              <CommonTabContent>
+                <div
+                  className="panel orion-fusion-theme"
+                  role="none"
+                >
+                  <div
+                    className="panel-header"
+                    data-testid="workspace-content-heading"
+                    role="none"
+                  />
+                  <div
+                    className="panel-content"
+                    role="none"
+                  >
+                    <div
+                      aria-labelledby="terra-common-tabs-default"
+                      className="panel-overflow"
+                      data-application-overflow-container={true}
+                      id="terra-common-tabs-default-panel"
+                      role="tabpanel"
+                      tabIndex="0"
+                    >
+                      <DynamicOverlayContainer
+                        overlays={Array []}
+                      >
+                        <div
+                          className="outer-container"
+                          data-testid="dynamic-overlay-container"
+                          tabIndex="-1"
+                        >
+                          <div
+                            className="content-container"
+                          />
+                        </div>
+                      </DynamicOverlayContainer>
+                    </div>
+                  </div>
+                </div>
+              </CommonTabContent>
+            </Portal>
+          </CommonTabItem>
         </div>
       </div>
-    </ContentContainer>
+    </CommonTabs>
   </Tabs>
 </ThemeContextProvider>
 `;
 
-exports[`Tabs Responsiveness should render tabs that are responsive to the parent node viewport by default 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsibleTabs
-        activeIndex={0}
-        activeKey="default"
-        onChange={[Function]}
-        onTruncationChange={[Function]}
-        variant="structural"
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsibleTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
->
-  <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
-`;
-
-exports[`Tabs Responsiveness should render tabs that are responsive to the window viewport 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="window"
-    >
-      <CollapsibleTabs
-        activeIndex={0}
-        activeKey="default"
-        onChange={[Function]}
-        onTruncationChange={[Function]}
-        variant="structural"
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsibleTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
->
-  <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
-`;
-
-exports[`Tabs Responsiveness should render tabs that do not completely collapse into a menu 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <CollapsibleTabs
-      activeIndex={0}
-      activeKey="default"
-      onChange={[Function]}
-      onTruncationChange={[Function]}
-      variant="structural"
-    >
-      <TabPane
-        className="is-active"
-        index={0}
-        isActive={true}
-        isDisabled={false}
-        isIconOnly={false}
-        label="Default"
-        onClick={[Function]}
-        showIcon={false}
-      />
-    </CollapsibleTabs>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
->
-  <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
-`;
-
-exports[`Tabs Variants should render modular-centered tabs 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsibleTabs
-        activeIndex={0}
-        activeKey="default"
-        onChange={[Function]}
-        onTruncationChange={[Function]}
-        variant="structural"
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsibleTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
-  variant="modular-centered"
->
-  <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
-`;
-
-exports[`Tabs Variants should render modular-left-aligned tabs 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
-  variant="modular-left-aligned"
->
-  <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
-`;
-
-exports[`Tabs Variants should render structural tabs 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
-  variant="structural"
->
-  <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
-`;
-
 exports[`Tabs should render a controlled component when onChange and activeKey are set 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsibleTabs
-        activeIndex={0}
-        activeKey="default"
-        onChange={[Function]}
-        onTruncationChange={[Function]}
-        variant="structural"
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsibleTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
+<div
+  className="structural"
+  role="none"
 >
   <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
+    aria-hidden={true}
+    className="body-shadow-container"
+  >
+    <div
+      className="body-shadow"
+    />
+  </div>
+  <div
+    className="tab-header"
+    role="none"
+  >
+    <Tabs
+      onChange={[Function]}
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "terra-common-tabs-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "terra-common-tabs-default",
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+            "showIcon": false,
+          },
+        ]
+      }
+      variant="framework"
+    />
+  </div>
+  <div
+    className="body"
+    role="none"
+  >
+    <CommonTabItem
+      associatedPanelId="terra-common-tabs-default-panel"
+      id="terra-common-tabs-default"
+      isActive={true}
+      isDisabled={false}
+      isIconOnly={false}
+      itemKey="default"
+      key="default/.0"
+      label="Default"
+      portalElement={null}
+      render={[Function]}
+      showIcon={false}
+      variant="framework"
+    />
+  </div>
+</div>
 `;
 
 exports[`Tabs should render a default component 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsibleTabs
-        activeIndex={0}
-        activeKey="default"
-        onChange={[Function]}
-        onTruncationChange={[Function]}
-        variant="structural"
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsibleTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
+<div
+  className="structural"
+  role="none"
 >
   <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
+    aria-hidden={true}
+    className="body-shadow-container"
+  >
+    <div
+      className="body-shadow"
+    />
+  </div>
+  <div
+    className="tab-header"
+    role="none"
+  >
+    <Tabs
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "terra-common-tabs-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "terra-common-tabs-default",
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+            "showIcon": false,
+          },
+        ]
+      }
+      variant="framework"
+    />
+  </div>
+  <div
+    className="body"
+    role="none"
+  >
+    <CommonTabItem
+      associatedPanelId="terra-common-tabs-default-panel"
+      id="terra-common-tabs-default"
+      isActive={true}
+      isDisabled={false}
+      isIconOnly={false}
+      itemKey="default"
+      key="default/.0"
+      label="Default"
+      portalElement={null}
+      render={[Function]}
+      showIcon={false}
+      variant="framework"
+    />
+  </div>
+</div>
 `;
 
 exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active customClass"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
-  id="application-id"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
+<div
+  className="structural"
+  role="none"
 >
   <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
+    aria-hidden={true}
+    className="body-shadow-container"
+  >
+    <div
+      className="body-shadow"
+    />
+  </div>
+  <div
+    className="tab-header"
+    role="none"
+  >
+    <Tabs
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "application-id-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "application-id-default",
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+            "showIcon": false,
+          },
+        ]
+      }
+      variant="framework"
+    />
+  </div>
+  <div
+    className="body"
+    role="none"
+  >
+    <CommonTabItem
+      associatedPanelId="application-id-default-panel"
+      id="application-id-default"
+      isActive={true}
+      isDisabled={false}
+      isIconOnly={false}
+      itemKey="default"
+      key="default/.0"
+      label="Default"
+      portalElement={null}
+      render={[Function]}
+      showIcon={false}
+      variant="framework"
+    />
+  </div>
+</div>
 `;
 
 exports[`Tabs should render an uncontrolled component when defaultActiveKey is set 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  defaultKey="default"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
+<div
+  className="structural"
+  role="none"
 >
   <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
+    aria-hidden={true}
+    className="body-shadow-container"
+  >
+    <div
+      className="body-shadow"
+    />
+  </div>
+  <div
+    className="tab-header"
+    role="none"
+  >
+    <Tabs
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "terra-common-tabs-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "terra-common-tabs-default",
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+            "showIcon": false,
+          },
+        ]
+      }
+      variant="framework"
+    />
+  </div>
+  <div
+    className="body"
+    role="none"
+  >
+    <CommonTabItem
+      associatedPanelId="terra-common-tabs-default-panel"
+      id="terra-common-tabs-default"
+      isActive={true}
+      isDisabled={false}
+      isIconOnly={false}
+      itemKey="default"
+      key="default/.0"
+      label="Default"
+      portalElement={null}
+      render={[Function]}
+      showIcon={false}
+      variant="framework"
+    />
+  </div>
+</div>
 `;
 
 exports[`Tabs should render with content filled when indicated 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={true}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
+<CommonTabs
+  activeItemKey="default"
   intl={
     Object {
       "defaultFormats": Object {},
@@ -968,42 +611,23 @@ exports[`Tabs should render with content filled when indicated 1`] = `
       "timeZone": null,
     }
   }
-  setFocusOnContainer={false}
+  onRequestActivate={[Function]}
+  variant="framework"
 >
-  <div
-    className="pane-content fill-parent"
-    role="tabpanel"
+  <CommonTabItem
+    isDisabled={false}
+    isIconOnly={false}
+    itemKey="default"
+    label="Default"
+    render={[Function]}
+    showIcon={false}
   />
-</ContentContainer>
+</CommonTabs>
 `;
 
 exports[`Tabs should render with tabs filled when indicated 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
+<CommonTabs
+  activeItemKey="default"
   intl={
     Object {
       "defaultFormats": Object {},
@@ -1031,43 +655,24 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
       "timeZone": null,
     }
   }
-  setFocusOnContainer={false}
-  tabsFill={true}
+  onRequestActivate={[Function]}
+  variant="framework"
 >
-  <div
-    className="pane-content"
-    role="tabpanel"
+  <CommonTabItem
+    isDisabled={false}
+    isIconOnly={false}
+    itemKey="default"
+    label="Default"
+    render={[Function]}
+    showIcon={false}
   />
-</ContentContainer>
+</CommonTabs>
 `;
 
 exports[`Tabs should set custom props 1`] = `
-<ContentContainer
-  className="tabs-container structural customClass"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
+<CommonTabs
+  activeItemKey="default"
+  className="customClass"
   intl={
     Object {
       "defaultFormats": Object {},
@@ -1095,74 +700,77 @@ exports[`Tabs should set custom props 1`] = `
       "timeZone": null,
     }
   }
-  setFocusOnContainer={false}
+  onRequestActivate={[Function]}
+  variant="framework"
 >
-  <div
-    className="pane-content"
-    role="tabpanel"
+  <CommonTabItem
+    isDisabled={false}
+    isIconOnly={false}
+    itemKey="default"
+    label="Default"
+    render={[Function]}
+    showIcon={false}
   />
-</ContentContainer>
+</CommonTabs>
 `;
 
 exports[`Tabs should set custom props for child Tab Pane 1`] = `
-<ContentContainer
-  className="tabs-container structural"
-  fill={false}
-  header={
-    <ResponsiveElement
-      onChange={[Function]}
-      responsiveTo="parent"
-    >
-      <CollapsedTabs
-        activeIndex={0}
-        activeKey="default"
-        onTruncationChange={[Function]}
-      >
-        <TabPane
-          className="is-active customClass"
-          index={0}
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          label="Default"
-          onClick={[Function]}
-          showIcon={false}
-        />
-      </CollapsedTabs>
-    </ResponsiveElement>
-  }
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  setFocusOnContainer={false}
+<div
+  className="structural"
+  role="none"
 >
   <div
-    className="pane-content"
-    role="tabpanel"
-  />
-</ContentContainer>
+    aria-hidden={true}
+    className="body-shadow-container"
+  >
+    <div
+      className="body-shadow"
+    />
+  </div>
+  <div
+    className="tab-header"
+    role="none"
+  >
+    <Tabs
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "terra-common-tabs-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "terra-common-tabs-default",
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+            "showIcon": false,
+          },
+        ]
+      }
+      variant="framework"
+    />
+  </div>
+  <div
+    className="body"
+    role="none"
+  >
+    <CommonTabItem
+      associatedPanelId="terra-common-tabs-default-panel"
+      id="terra-common-tabs-default"
+      isActive={true}
+      isDisabled={false}
+      isIconOnly={false}
+      itemKey="default"
+      key="default/.0"
+      label="Default"
+      portalElement={null}
+      render={[Function]}
+      showIcon={false}
+      variant="framework"
+    />
+  </div>
+</div>
 `;

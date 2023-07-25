@@ -8,25 +8,18 @@ import styles from './TabsTemplate.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  fill: PropTypes.bool,
-  tabFill: PropTypes.bool,
   id: PropTypes.string,
   containerClassName: PropTypes.string,
-  responsiveTo: PropTypes.string,
 };
 
 const defaultProps = {
   containerClassName: 'content-wrapper-default',
-  responsiveTo: 'parent',
 };
 
 const TabsTemplate = props => (
   <div className={cx(props.containerClassName)} id="tabs-container">
     <Tabs
-      tabFill={props.tabFill}
-      fill={props.fill}
       id={props.id}
-      responsiveTo={props.responsiveTo}
     >
       <Tabs.Pane label="Tab 1" key="Tab1" id="tab1">
         <TabContent label="Tab 1" id="tab1Content" />
