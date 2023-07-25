@@ -38,8 +38,7 @@
 
   // Hover state for selectable elements
   .selectable:hover {
-    /* stylelint-disable-next-line terra/custom-property-no-duplicate-declaration */
-    background-color: var(--terra-worklist-data-grid-hover-background-color, #e4f2f9);
+    background-color: var(--terra-worklist-data-grid-header-hover-background-color, #e4f2f9);
     cursor: pointer;
   }
 
