@@ -162,7 +162,7 @@ function WorklistDataGrid(props) {
     rowHeaderIndex,
   } = props;
 
-  if(pinnedColumns.length == 0) {
+  if (pinnedColumns.length == 0) {
     console.warn(ERRORS.PINNED_COLUMNS_UNDEFINED);
   }
 

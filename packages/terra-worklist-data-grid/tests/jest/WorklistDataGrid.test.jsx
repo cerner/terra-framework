@@ -51,7 +51,6 @@ beforeAll(() => {
 afterEach(() => {
   console.error.mockClear();
   console.warn.mockClear();
-
 });
 
 afterAll(() => {
@@ -76,6 +75,35 @@ describe('basic grid', () => {
 
     // The number of rows should match the given data.
     expect(wrapper.find(Row)).toHaveLength(dataFile.rows.length);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies the rows are created with the right props', () => {
+    const verifyRow = (rowIndex, rowComponent, data, overflowColumns) => {
+      expect(rowComponent.props.displayedColumns).toEqual(overflowColumns);
+      expect(rowComponent.props.hasRowSelection).toBe(false);
+      expect(rowComponent.key).toEqual(data.id);
+      expect(rowComponent.props.onCellSelect).toBeDefined();
+      expect(rowComponent.props.onRowSelect).toBeDefined();
+      expect(rowComponent.props.rowHeaderIndex).toEqual(0);
+      expect(rowComponent.props.rowIndex).toEqual(rowIndex + 1);
+      expect(rowComponent.props.cells).toEqual(data.cells);
+    };
+
+    const wrapper = shallowWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        overflowColumns={dataFile.cols}
+        rows={dataFile.rows}
+      />,
+    ).dive();
+
+    const rows = wrapper.find(Row);
+    expect(rows).toHaveLength(dataFile.rows.length);
+    verifyRow(0, rows.get(0), dataFile.rows[0], dataFile.cols);
+    verifyRow(1, rows.get(1), dataFile.rows[1], dataFile.cols);
+    verifyRow(2, rows.get(2), dataFile.rows[2], dataFile.cols);
+
     expect(wrapper).toMatchSnapshot();
   });
 });
