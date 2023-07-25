@@ -1,4 +1,4 @@
-// eslint-disable no-console
+/* eslint-disable no-console */
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';

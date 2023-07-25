@@ -191,7 +191,7 @@ const ColumnHeaderCell = (props) => {
     ? (
       <div
         className={cx('last-pinned')}
-        style={{ height: tableHeight, left: width - 2 }}
+        style={{ height: tableHeight, left: width - 1 }} // eslint-disable-line react/forbid-dom-props
       />
     )
     : null;
@@ -208,7 +208,7 @@ const ColumnHeaderCell = (props) => {
       aria-sort={sortIndicator}
       onMouseDown={(isSelectable && onColumnSelect) ? handleMouseDown : undefined}
       onKeyDown={(isSelectable && onColumnSelect) ? handleKeyDown : undefined}
-      style={{ width: `${width}px`, height: headerHeight, left: columnContext.pinnedColumnOffsets[columnIndex] }}
+      style={{ width: `${width}px`, height: headerHeight, left: columnContext.pinnedColumnOffsets[columnIndex] }} // eslint-disable-line react/forbid-dom-props
     >
       <div className={cx('header-container')} role={displayName && 'button'}>
         {errorIcon}

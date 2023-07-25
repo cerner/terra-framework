@@ -163,7 +163,7 @@ function WorklistDataGrid(props) {
   } = props;
 
   if (pinnedColumns.length === 0) {
-    //eslint-disable-next-line no-console
+    // eslint-disable-next-line no-console
     console.warn(ERRORS.PINNED_COLUMNS_UNDEFINED);
   }
 
