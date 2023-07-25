@@ -113,6 +113,11 @@ class Tabs extends React.Component {
     const prevTab = prevProps.tabData.find((tab) => tab.isSelected === true);
     const currTab = this.props.tabData.find((tab) => tab.isSelected === true);
 
+    if (this.state.visibleTabData.length !== this.props.tabData.length) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ visibleTabData: this.props.tabData });
+    }
+
     if (prevTab.id !== currTab.id) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState(prevArray => {

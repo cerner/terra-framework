@@ -39,6 +39,7 @@
     "terra-visually-hidden-text": "^2.36.0",
     "uuid": "7.0.3",
     "react-onclickoutside": "^6.7.1",
+    "react-beautiful-dnd": "^13.1.1",
     "terra-button": "^3.42.0",
     "terra-divider": "^3.33.0"
   },
