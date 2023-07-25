@@ -60,7 +60,7 @@ const propTypes = {
   onTabOrderChange: PropTypes.func,
 };
 
-const getTabId = (id, itemKey) => `${id}-${itemKey}`;
+const getTabId = (id, itemKey) => `${id || 'terra-common-tabs'}-${itemKey}`;
 
 const getAssociatedPanelId = (id, itemKey) => `${getTabId(id, itemKey)}-panel`;
 
@@ -92,6 +92,7 @@ const CommonTabs = ({
     onSelect: onRequestActivate,
     metaData: child.props.metaData,
     isDisabled: child.props.isDisabled,
+    showIcon: child.props.showIcon,
   }));
 
   const tabsClassNames = classNames(cy(

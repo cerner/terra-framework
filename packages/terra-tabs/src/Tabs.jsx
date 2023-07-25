@@ -5,6 +5,7 @@ import CommonTabItem from './common-tabs/CommonTabItem';
 import CommonTabs from './common-tabs/CommonTabs';
 import TabPane from './TabPane';
 import TabUtils from './TabUtils';
+import CommonTabContent from './common-tabs/CommonTabContent';
 
 /**
 NOTE: This is being commented out until discussions have been resolved around if modular tabs should be removed.
@@ -102,10 +103,12 @@ class Tabs extends React.Component {
 
     React.Children.forEach(children, child => {
       let content;
+      let tabContent;
       if (child.key === this.state.activeKey) {
         content = React.Children.map(child.props.children, contentItem => (
           React.cloneElement(contentItem)
         ));
+        tabContent = <CommonTabContent>{content}</CommonTabContent>;
       }
       commonTabItems.push(
         <CommonTabItem
@@ -113,7 +116,8 @@ class Tabs extends React.Component {
           label={child.props.label}
           icon={child.props.icon}
           isIconOnly={child.props.isIconOnly}
-          render={() => content}
+          showIcon={child.props.showIcon}
+          render={() => tabContent}
           isDisabled={child.props.isDisabled}
         />,
       );
@@ -121,7 +125,7 @@ class Tabs extends React.Component {
 
     return (
       <CommonTabs
-        id={customProps.id || 'terra-common-tabs'}
+        id={customProps.id}
         activeItemKey={this.state.activeKey}
         onRequestActivate={key => this.setState({ activeKey: key })}
         onChange={onChange}

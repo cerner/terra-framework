@@ -10,6 +10,7 @@ exports[`PopupMenu should render default element 1`] = `
       aria-hidden={true}
     />
   }
+  setFocusOnContainer={false}
 >
   <div
     className="content"
@@ -54,6 +55,7 @@ exports[`PopupMenu should render prop data 1`] = `
       title="my-header"
     />
   }
+  setFocusOnContainer={false}
 >
   <div
     className="content"
@@ -113,6 +115,7 @@ exports[`PopupMenu should render with height bounded 1`] = `
       title="my-header"
     />
   }
+  setFocusOnContainer={false}
 >
   <div
     className="content"

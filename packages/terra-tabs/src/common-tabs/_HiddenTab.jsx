@@ -67,10 +67,24 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  /**
+   * Icon to be displayed on the tab.
+   */
+  icon: PropTypes.element,
+  /**
+   * If enabled, this prop will show the icon on the tab and also in the menu if pane is collapsed.
+   */
+  showIcon: PropTypes.bool,
+  /**
+   * Indicates if the pane should be disabled.
+   */
+  isDisabled: PropTypes.bool,
 };
 
 const defaultProps = {
   isSelected: false,
+  showIcon: false,
+  isDisabled: false,
 };
 
 const HiddenTab = ({
@@ -86,12 +100,16 @@ const HiddenTab = ({
   onSelect,
   tabIds,
   onChange,
+  icon,
+  showIcon,
+  isDisabled,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
   const hiddenClassNames = cx(
     'hidden',
     { 'is-active': isSelected },
+    { 'is-disabled': isDisabled },
     theme.className,
   );
 
@@ -113,8 +131,16 @@ const HiddenTab = ({
     }
   };
 
+  function onClick(e) {
+    if (!isDisabled) {
+      e.preventDefault();
+      e.stopPropagation();
+      handleOnSelect(e);
+    }
+  }
+
   attributes.tabIndex = isSelected ? 0 : -1;
-  attributes.onClick = e => { e.preventDefault(); e.stopPropagation(); handleOnSelect(e); };
+  attributes.onClick = onClick;
   attributes.onKeyDown = onKeyDown;
   attributes.onBlur = e => { enableFocusStyles(e); onBlur(e); };
   attributes.onFocus = onFocus;
@@ -129,9 +155,11 @@ const HiddenTab = ({
       aria-controls={associatedPanelId}
       role="tab"
       className={hiddenClassNames}
+      aria-disabled={isDisabled}
     >
       <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>
-      <div className={cx('label')}>{label}</div>
+      {showIcon && <div>{icon}</div>}
+      <div className={cx('label', { 'with-icon': showIcon })}>{label}</div>
     </div>
   );
 };

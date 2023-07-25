@@ -321,10 +321,13 @@ class Tabs extends React.Component {
             icon={tab.icon}
             customDisplay={tab.customDisplay}
             onSelect={this.wrapOnSelect(tab.onSelect)}
-            zIndex={tab.isSelected ? tabData.length : tabData - index}
+            zIndex={tab.isSelected ? tabData.length : tabData.length - index}
             isIconOnly={tab.isIconOnly}
             variant={variant}
             onChange={onChange}
+            setDropdownOpen={this.handleHiddenFocus}
+            hiddenStartIndex={this.hiddenStartIndex}
+            showIcon={tab.showIcon}
             isDraggable={isDraggable}
           />,
         );
@@ -339,6 +342,9 @@ class Tabs extends React.Component {
             onFocus={this.handleHiddenFocus}
             onBlur={this.handleHiddenBlur}
             onChange={onChange}
+            icon={tab.icon}
+            showIcon={tab.showIcon}
+            isDisabled={tab.isDisabled}
           />,
         );
         hiddenIds.push(tab.id);

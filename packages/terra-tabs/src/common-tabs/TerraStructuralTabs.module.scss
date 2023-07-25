@@ -8,6 +8,7 @@
 :local {
   .structural {
     background-color: var(--terra-tabs-structural-container-background-color, #fff);
+    height: 100%;
 
     // Content div of content container component
     > :nth-child(2) {
@@ -198,7 +199,6 @@
       background-image: var(--terra-tabs-structural-focus-background-image);
       color: var(--terra-tabs-structural-focus-color, inherit);
       outline: none;
-  
       &[data-terra-tabs-show-focus-styles='true'] {
         outline: var(--terra-tabs-structural-focus-outline, 2px dashed #000);
         outline-offset: var(--terra-tabs-structural-focus-outline-offset, -5px);

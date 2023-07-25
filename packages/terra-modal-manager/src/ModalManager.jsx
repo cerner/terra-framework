@@ -38,6 +38,9 @@ const heightFromSize = {
   medium: 600,
   large: 870,
   huge: 960,
+  'fusion-small': 280,
+  'fusion-medium': 380,
+  'fusion-large': 460,
 };
 
 const widthFromSize = {
@@ -46,6 +49,9 @@ const widthFromSize = {
   medium: 960,
   large: 1280,
   huge: 1600,
+  'fusion-small': 400,
+  'fusion-medium': 600,
+  'fusion-large': 700,
 };
 
 class ModalManager extends React.Component {
@@ -72,7 +78,7 @@ class ModalManager extends React.Component {
     ),
     customProps.className);
 
-    const classArray = ['modal-manager'];
+    const classArray = ['modal-manager', theme.className];
     const isFullscreen = manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
     if (!isFullscreen) {
       if (manager.disclosure.dimensions) {

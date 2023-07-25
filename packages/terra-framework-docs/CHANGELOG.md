@@ -2,12 +2,25 @@
 
 ## Unreleased
 
+## 1.26.0 - (July 20, 2023)
+
+* Added
+  * Added `terra-worklist-data-grid` as dependency.
+
+## 1.25.0 - (July 19, 2023)
+
 * Changed
   * Updated example for `terra-menu`.
-  * Updated examples for `terra-tabs` with conflicting ids
+  * Updated tests for `terra-worklist-data-grid` to account for row height and column width being honored.
+  * Updated the path name for the examples in doc site for `terra-embedded-content-consumer` to resolve missing files.
+  * Minor formatting changes in the `uuid` testing section for several packages.
+  * Updates tests amd examples for `terra-worklist-data-grid` to show resize capability.
+  * Updated examples for `terra-tabs` with conflicting ids.
 
 * Added
   * Added alpha release disclaimer for `terra-worklist-data-grid`.
+  * Added documentation and tests for additional keyboard navigation in `terra-worklist-data-grid`.
+  * Added Cell Selection example for `terra-worklist-data-grid`.
 
 ## 1.24.0 - (July 4, 2023)
 
@@ -20,6 +33,9 @@
   * Updated examples and tests for `terra-worklist-data-grid` for blank cell accessibility
   * Updated examples and tests for `terra-worklist-data-grid` to show masked cells and hover states
   * Updated examples and tests for `terra-worklist-data-grid` to show column sort and error indicators
+
+* Added
+  * Added test for `terra-modal-manager` to disclose modal using Fusion sizes.
 
 ## 1.23.0 - (June 12, 2023)
 

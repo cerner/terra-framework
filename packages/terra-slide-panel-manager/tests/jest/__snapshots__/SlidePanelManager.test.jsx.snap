@@ -126,6 +126,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
           <ContentContainer
             fill={true}
             header={<React.Fragment />}
+            setFocusOnContainer={false}
           >
             <SlideGroup
               focusRef={
@@ -257,6 +258,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
             <ContentContainer
               fill={true}
               header={<React.Fragment />}
+              setFocusOnContainer={false}
             >
               <SlideGroup
                 focusRef={
@@ -409,6 +411,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
               <ContentContainer
                 fill={true}
                 header={<React.Fragment />}
+                setFocusOnContainer={false}
               >
                 <div
                   className="content-container-fill"
@@ -747,6 +750,7 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
           <ContentContainer
             fill={true}
             header={<React.Fragment />}
+            setFocusOnContainer={false}
           >
             <SlideGroup
               isAnimated={true}
@@ -804,6 +808,7 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
             <ContentContainer
               fill={true}
               header={<React.Fragment />}
+              setFocusOnContainer={false}
             >
               <SlideGroup
                 isAnimated={true}
@@ -879,6 +884,7 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
               <ContentContainer
                 fill={true}
                 header={<React.Fragment />}
+                setFocusOnContainer={false}
               >
                 <div
                   className="content-container-fill"
@@ -1011,6 +1017,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
           <ContentContainer
             fill={true}
             header={<React.Fragment />}
+            setFocusOnContainer={false}
           >
             <SlideGroup
               isAnimated={true}
@@ -1068,6 +1075,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
             <ContentContainer
               fill={true}
               header={<React.Fragment />}
+              setFocusOnContainer={false}
             >
               <SlideGroup
                 isAnimated={true}
@@ -1143,6 +1151,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
               <ContentContainer
                 fill={true}
                 header={<React.Fragment />}
+                setFocusOnContainer={false}
               >
                 <div
                   className="content-container-fill"
@@ -1271,6 +1280,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
           <ContentContainer
             fill={true}
             header={<React.Fragment />}
+            setFocusOnContainer={false}
           >
             <SlideGroup
               isAnimated={true}
@@ -1326,6 +1336,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
             <ContentContainer
               fill={true}
               header={<React.Fragment />}
+              setFocusOnContainer={false}
             >
               <SlideGroup
                 isAnimated={true}
@@ -1400,6 +1411,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
               <ContentContainer
                 fill={true}
                 header={<React.Fragment />}
+                setFocusOnContainer={false}
               >
                 <div
                   className="content-container-fill"
@@ -1528,6 +1540,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
           <ContentContainer
             fill={true}
             header={<React.Fragment />}
+            setFocusOnContainer={false}
           >
             <SlideGroup
               isAnimated={true}
@@ -1583,6 +1596,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
             <ContentContainer
               fill={true}
               header={<React.Fragment />}
+              setFocusOnContainer={false}
             >
               <SlideGroup
                 isAnimated={true}
@@ -1657,6 +1671,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
               <ContentContainer
                 fill={true}
                 header={<React.Fragment />}
+                setFocusOnContainer={false}
               >
                 <div
                   className="content-container-fill"

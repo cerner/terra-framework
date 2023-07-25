@@ -42,7 +42,6 @@ exports[`Tabs correctly applies the theme context className 1`] = `
   >
     <CommonTabs
       activeItemKey="default"
-      id="terra-common-tabs"
       onRequestActivate={[Function]}
       variant="modular-left-aligned"
     >
@@ -77,6 +76,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                   "label": "Default",
                   "metaData": undefined,
                   "onSelect": [Function],
+                  "showIcon": false,
                 },
               ]
             }
@@ -91,6 +91,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
             >
               <Tab
                 associatedPanelId="terra-common-tabs-default-panel"
+                hiddenStartIndex={1}
                 id="terra-common-tabs-default"
                 index={0}
                 isDisabled={false}
@@ -100,6 +101,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                 key="terra-common-tabs-default"
                 label="Default"
                 onSelect={[Function]}
+                setDropdownOpen={[Function]}
                 showIcon={false}
                 tabIds={
                   Array [
@@ -204,9 +206,44 @@ exports[`Tabs correctly applies the theme context className 1`] = `
               <div
                 role="none"
                 style="position: relative; height: 100%; width: 100%;"
-              />
+              >
+                <div
+                  class="panel orion-fusion-theme"
+                  role="none"
+                >
+                  <div
+                    class="panel-header"
+                    data-testid="workspace-content-heading"
+                    role="none"
+                  />
+                  <div
+                    class="panel-content"
+                    role="none"
+                  >
+                    <div
+                      aria-labelledby="terra-common-tabs-default"
+                      class="panel-overflow"
+                      data-application-overflow-container="true"
+                      id="terra-common-tabs-default-panel"
+                      role="tabpanel"
+                      tabindex="0"
+                    >
+                      <div
+                        class="outer-container"
+                        data-testid="dynamic-overlay-container"
+                        tabindex="-1"
+                      >
+                        <div
+                          class="content-container"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             }
             render={[Function]}
+            showIcon={false}
             variant="modular-left-aligned"
           >
             <Portal
@@ -214,9 +251,83 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                 <div
                   role="none"
                   style="position: relative; height: 100%; width: 100%;"
-                />
+                >
+                  <div
+                    class="panel orion-fusion-theme"
+                    role="none"
+                  >
+                    <div
+                      class="panel-header"
+                      data-testid="workspace-content-heading"
+                      role="none"
+                    />
+                    <div
+                      class="panel-content"
+                      role="none"
+                    >
+                      <div
+                        aria-labelledby="terra-common-tabs-default"
+                        class="panel-overflow"
+                        data-application-overflow-container="true"
+                        id="terra-common-tabs-default-panel"
+                        role="tabpanel"
+                        tabindex="0"
+                      >
+                        <div
+                          class="outer-container"
+                          data-testid="dynamic-overlay-container"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="content-container"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               }
-            />
+            >
+              <CommonTabContent>
+                <div
+                  className="panel orion-fusion-theme"
+                  role="none"
+                >
+                  <div
+                    className="panel-header"
+                    data-testid="workspace-content-heading"
+                    role="none"
+                  />
+                  <div
+                    className="panel-content"
+                    role="none"
+                  >
+                    <div
+                      aria-labelledby="terra-common-tabs-default"
+                      className="panel-overflow"
+                      data-application-overflow-container={true}
+                      id="terra-common-tabs-default-panel"
+                      role="tabpanel"
+                      tabIndex="0"
+                    >
+                      <DynamicOverlayContainer
+                        overlays={Array []}
+                      >
+                        <div
+                          className="outer-container"
+                          data-testid="dynamic-overlay-container"
+                          tabIndex="-1"
+                        >
+                          <div
+                            className="content-container"
+                          />
+                        </div>
+                      </DynamicOverlayContainer>
+                    </div>
+                  </div>
+                </div>
+              </CommonTabContent>
+            </Portal>
           </CommonTabItem>
         </div>
       </div>
@@ -258,6 +369,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
             "label": "Default",
             "metaData": undefined,
             "onSelect": [Function],
+            "showIcon": false,
           },
         ]
       }
@@ -279,6 +391,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
       label="Default"
       portalElement={null}
       render={[Function]}
+      showIcon={false}
       variant="framework"
     />
   </div>
@@ -317,6 +430,7 @@ exports[`Tabs should render a default component 1`] = `
             "label": "Default",
             "metaData": undefined,
             "onSelect": [Function],
+            "showIcon": false,
           },
         ]
       }
@@ -338,6 +452,7 @@ exports[`Tabs should render a default component 1`] = `
       label="Default"
       portalElement={null}
       render={[Function]}
+      showIcon={false}
       variant="framework"
     />
   </div>
@@ -376,6 +491,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
             "label": "Default",
             "metaData": undefined,
             "onSelect": [Function],
+            "showIcon": false,
           },
         ]
       }
@@ -397,6 +513,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
       label="Default"
       portalElement={null}
       render={[Function]}
+      showIcon={false}
       variant="framework"
     />
   </div>
@@ -435,6 +552,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
             "label": "Default",
             "metaData": undefined,
             "onSelect": [Function],
+            "showIcon": false,
           },
         ]
       }
@@ -456,6 +574,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
       label="Default"
       portalElement={null}
       render={[Function]}
+      showIcon={false}
       variant="framework"
     />
   </div>
@@ -465,7 +584,6 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
 exports[`Tabs should render with content filled when indicated 1`] = `
 <CommonTabs
   activeItemKey="default"
-  id="terra-common-tabs"
   intl={
     Object {
       "defaultFormats": Object {},
@@ -502,6 +620,7 @@ exports[`Tabs should render with content filled when indicated 1`] = `
     itemKey="default"
     label="Default"
     render={[Function]}
+    showIcon={false}
   />
 </CommonTabs>
 `;
@@ -509,7 +628,6 @@ exports[`Tabs should render with content filled when indicated 1`] = `
 exports[`Tabs should render with tabs filled when indicated 1`] = `
 <CommonTabs
   activeItemKey="default"
-  id="terra-common-tabs"
   intl={
     Object {
       "defaultFormats": Object {},
@@ -546,6 +664,7 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
     itemKey="default"
     label="Default"
     render={[Function]}
+    showIcon={false}
   />
 </CommonTabs>
 `;
@@ -554,7 +673,6 @@ exports[`Tabs should set custom props 1`] = `
 <CommonTabs
   activeItemKey="default"
   className="customClass"
-  id="terra-common-tabs"
   intl={
     Object {
       "defaultFormats": Object {},
@@ -591,6 +709,7 @@ exports[`Tabs should set custom props 1`] = `
     itemKey="default"
     label="Default"
     render={[Function]}
+    showIcon={false}
   />
 </CommonTabs>
 `;
@@ -627,6 +746,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
             "label": "Default",
             "metaData": undefined,
             "onSelect": [Function],
+            "showIcon": false,
           },
         ]
       }
@@ -648,6 +768,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
       label="Default"
       portalElement={null}
       render={[Function]}
+      showIcon={false}
       variant="framework"
     />
   </div>

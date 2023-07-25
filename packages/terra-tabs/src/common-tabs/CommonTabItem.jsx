@@ -93,21 +93,13 @@ const CommonTabItem = ({
     isIconOnly,
   }), [associatedPanelId, customDisplay, icon, id, isIconOnly, label]);
 
-  if (variant === 'framework') {
-    return (
-      <TabContext.Provider value={tabContextValue}>
-        {render()}
-      </TabContext.Provider>
-    );
-  }
-
-  return (
-    ReactDOM.createPortal((
-      <TabContext.Provider value={tabContextValue}>
-        {render()}
-      </TabContext.Provider>
-    ), portalElement)
+  const commonTabsItem = (
+    <TabContext.Provider value={tabContextValue}>
+      {render()}
+    </TabContext.Provider>
   );
+
+  return variant === 'framework' ? commonTabsItem : ReactDOM.createPortal(commonTabsItem, portalElement);
 };
 
 CommonTabItem.propTypes = propTypes;
