@@ -20,7 +20,7 @@ Terra.describeViewports('Slide Group', ['medium'], () => {
 
       browser.keys(['Enter']);
       Terra.validates.element('slide 2 non animated');
-      
+
       browser.keys(['Tab', 'Tab']);
       expect($('#decrement-2').isFocused()).toBeTruthy();
       Terra.validates.element('slide 2 non animated decrement focused');
@@ -52,7 +52,7 @@ Terra.describeViewports('Slide Group', ['medium'], () => {
       browser.keys(['Enter']);
       browser.pause(350);
       Terra.validates.element('slide 2 animated');
-      
+
       browser.keys(['Tab', 'Tab']);
       expect($('#decrement-2').isFocused()).toBeTruthy();
       Terra.validates.element('slide 2 animated decrement focused');
