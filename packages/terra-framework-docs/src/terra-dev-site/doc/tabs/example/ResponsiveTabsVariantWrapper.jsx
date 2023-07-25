@@ -10,7 +10,6 @@ function ResponsiveTabsVariantsWrapper(WrappedComponent) {
       super(props);
       this.handleOnSelect = this.handleOnSelect.bind(this);
       this.state = {
-        responsiveTabsVariant: 'parent',
         containerClassName: 'parent-container-650',
         renderIconTabs: false,
       };
@@ -19,7 +18,6 @@ function ResponsiveTabsVariantsWrapper(WrappedComponent) {
     handleOnSelect(event) {
       this.setState({
         renderIconTabs: (event.target.value.split('-')[0] !== 'default'),
-        responsiveTabsVariant: event.target.value.split('-')[1],
         containerClassName: event.target.value,
       });
     }
@@ -29,7 +27,6 @@ function ResponsiveTabsVariantsWrapper(WrappedComponent) {
         <div className={cx(this.state.containerClassName)}>
           <WrappedComponent
             renderIconTabs={this.state.renderIconTabs}
-            responsiveTo={this.state.responsiveTabsVariant}
             {...this.props}
           />
           <div className={cx('options-container')}>

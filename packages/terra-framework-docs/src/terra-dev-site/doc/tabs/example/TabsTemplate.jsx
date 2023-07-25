@@ -10,7 +10,7 @@ import styles from './common/TabExample.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  tabFill: PropTypes.bool,
+  id: PropTypes.string,
 };
 
 const TabsTemplate = (props) => {
@@ -61,7 +61,7 @@ const TabsTemplate = (props) => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs defaultActiveKey="LabelTab" tabFill={props.tabFill}>
+      <Tabs defaultActiveKey="LabelTab" id={props.id}>
         {labelTab}
         {iconTab}
         {customTab}
