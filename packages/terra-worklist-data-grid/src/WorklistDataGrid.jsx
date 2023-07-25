@@ -18,6 +18,7 @@ import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
 import ColumnContext from './utils/ColumnContext';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './WorklistDataGrid.module.scss';
+import ERRORS from './utils/constants';
 
 const cx = classNames.bind(styles);
 
@@ -134,7 +135,6 @@ const defaultProps = {
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
   rowHeight: '2.5rem',
-  // rows: [],
   pinnedColumns: [],
   overflowColumns: [],
 };
@@ -161,6 +161,10 @@ function WorklistDataGrid(props) {
     intl,
     rowHeaderIndex,
   } = props;
+
+  if(pinnedColumns.length == 0) {
+    console.warn(ERRORS.PINNED_COLUMNS_UNDEFINED);
+  }
 
   // Default column size constraints
   const defaultColumnMinimumWidth = 60;
