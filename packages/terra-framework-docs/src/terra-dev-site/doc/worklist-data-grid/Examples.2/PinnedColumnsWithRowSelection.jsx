@@ -67,7 +67,7 @@ const RowSelection = () => {
     if (allRowsSelected) {
       remainingSelectedRow = userSelectedRow;
     } else if (selectedRows.includes(userSelectedRow[0])) {
-      // Row Deselect so remove this rowId.
+      // Row Deselected so remove this rowId.
       remainingSelectedRow = selectedRows.filter(e => (e !== userSelectedRow[0]));
     } else {
       // Row Selected so add this rowId.
