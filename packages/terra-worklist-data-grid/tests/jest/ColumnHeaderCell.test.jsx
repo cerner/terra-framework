@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-// eslint-disable no-console
 import React from 'react';
 import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
@@ -254,7 +252,7 @@ describe('ColumnHeaderCell', () => {
   });
 
   it('renders a pinned column header cell', () => {
-    jest.spyOn(console, 'error').mockImplementation();
+    jest.spyOn(console, 'error').mockImplementation(); // eslint-disable-line no-console
 
     const column = {
       id: 'Column-0',
@@ -262,12 +260,6 @@ describe('ColumnHeaderCell', () => {
       sortIndicator: 'ascending',
       hasError: true,
     };
-
-    const columnContextValues = {
-      pinnedColumnsLength: 1,
-      pinnedColumnOffsets: [0],
-      pinnedColumnsTotalWidth: 100,
-    }
 
     const wrapper = mountWithIntl(
       <ColumnContext.Provider value={{
@@ -287,6 +279,6 @@ describe('ColumnHeaderCell', () => {
     expect(wrapper.find('.pinned')).toHaveLength(1);
     expect(wrapper).toMatchSnapshot();
 
-    console.error.mockRestore();
+    console.error.mockRestore(); // eslint-disable-line no-console
   });
 });

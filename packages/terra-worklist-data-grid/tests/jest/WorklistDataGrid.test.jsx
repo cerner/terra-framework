@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
@@ -49,13 +48,13 @@ beforeAll(() => {
 });
 
 afterEach(() => {
-  console.error.mockClear();
-  console.warn.mockClear();
+  console.error.mockClear(); // eslint-disable-line no-console
+  console.warn.mockClear(); // eslint-disable-line no-console
 });
 
 afterAll(() => {
-  console.error.mockRestore();
-  console.warn.mockRestore();
+  console.error.mockRestore(); // eslint-disable-line no-console
+  console.warn.mockRestore(); // eslint-disable-line no-console
 });
 
 describe('basic grid', () => {
@@ -153,7 +152,7 @@ describe('with pinned columns', () => {
     const pinnedColumnHeaderCells = wrapper.find('.pinned');
 
     expect(pinnedColumnHeaderCells).toHaveLength(1 * 4);
-    expect(console.warn).toHaveBeenCalledWith(expect.stringContaining(ERRORS.PINNED_COLUMNS_UNDEFINED));
+    expect(console.warn).toHaveBeenCalledWith(expect.stringContaining(ERRORS.PINNED_COLUMNS_UNDEFINED)); // eslint-disable-line no-console
   });
 });
 
@@ -167,7 +166,7 @@ describe('Error handling - prop types', () => {
       />,
     ).dive();
 
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_NOT_AN_INTEGER));
+    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_NOT_AN_INTEGER)); // eslint-disable-line no-console
   });
 
   it('throws an error if rowHeaderIndex is not a positive integer', () => {
@@ -179,7 +178,7 @@ describe('Error handling - prop types', () => {
       />,
     ).dive();
 
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_LESS_THAN_ZERO));
+    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_LESS_THAN_ZERO)); // eslint-disable-line no-console
   });
 
   it('throws an error if rowHeaderIndex is greater than the length of pinned columns', () => {
@@ -193,6 +192,6 @@ describe('Error handling - prop types', () => {
       />,
     ).dive();
 
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_EXCEEDS_PINNED));
+    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_EXCEEDS_PINNED)); // eslint-disable-line no-console
   });
 });

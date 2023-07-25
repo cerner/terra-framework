@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { mountWithIntl } from 'terra-enzyme-intl';
 import ColumnResizeHandle from '../../src/subcomponents/ColumnResizeHandle';
