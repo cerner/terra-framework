@@ -90,6 +90,10 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  /**
+   * Whether or not the tab is draggable.
+   */
+  isDraggable: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -97,6 +101,7 @@ const defaultProps = {
   isIconOnly: false,
   isDisabled: false,
   showIcon: false,
+  isDraggable: false,
 };
 
 const Tab = ({
@@ -116,6 +121,7 @@ const Tab = ({
   variant,
   isDisabled,
   onChange,
+  isDraggable,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -165,29 +171,49 @@ const Tab = ({
   attributes['aria-selected'] = isSelected;
   attributes.style = { zIndex };
 
-  return (
-    <Draggable key={id} draggableId={id} index={index}>
-      {(provided) => (
-        <div
-          {...attributes}
-          ref={provided.innerRef}
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          id={id}
-          aria-controls={associatedPanelId}
-          role="tab"
-          className={variant === 'framework' ? paneClassNames : tabClassNames}
-          title={label}
-          data-terra-tabs-show-focus-styles
-        >
-          <div className={cx('inner')}>
-            {customDisplay}
-            {customDisplay ? null : icon}
-            {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
+  if (isDraggable) {
+    return (
+      <Draggable key={id} draggableId={id} index={index}>
+        {(provided) => (
+          <div
+            {...attributes}
+            ref={provided.innerRef}
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            id={id}
+            aria-controls={associatedPanelId}
+            role="tab"
+            className={variant === 'framework' ? paneClassNames : tabClassNames}
+            title={label}
+            data-terra-tabs-show-focus-styles
+          >
+            <div className={cx('inner')}>
+              {customDisplay}
+              {customDisplay ? null : icon}
+              {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
+            </div>
           </div>
-        </div>
-      )}
-    </Draggable>
+        )}
+      </Draggable>
+    );
+  }
+
+  return (
+    <div
+      {...attributes}
+      id={id}
+      aria-controls={associatedPanelId}
+      role="tab"
+      className={variant === 'framework' ? paneClassNames : tabClassNames}
+      title={label}
+      data-terra-tabs-show-focus-styles
+    >
+      <div className={cx('inner')}>
+        {customDisplay}
+        {customDisplay ? null : icon}
+        {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
+      </div>
+    </div>
   );
 };
 

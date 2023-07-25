@@ -50,6 +50,14 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  /**
+   * Whether or not the tab is draggable.
+   */
+  isDraggable: PropTypes.bool,
+  /**
+     * Callback function triggered when tab is drag and dropped .
+     */
+  onTabOrderChange: PropTypes.func,
 };
 
 const getTabId = (id, itemKey) => `${id}-${itemKey}`;
@@ -64,6 +72,8 @@ const CommonTabs = ({
   onRequestActivate,
   variant,
   onChange,
+  isDraggable,
+  onTabOrderChange,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -101,7 +111,7 @@ const CommonTabs = ({
         <div className={cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
-        <Tabs variant={variant} tabData={tabData} onChange={onChange} />
+        <Tabs isDraggable={isDraggable} onTabOrderChange={onTabOrderChange} variant={variant} tabData={tabData} onChange={onChange} />
       </div>
       <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {

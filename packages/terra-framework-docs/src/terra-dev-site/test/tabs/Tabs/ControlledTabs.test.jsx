@@ -42,7 +42,7 @@ class ControlledTabs extends React.Component {
             {this.state.activeKey}
           </p>
         </div>
-        <Tabs id="controlledTabs" onChange={this.handleSelection} activeKey={this.state.activeKey}>
+        <Tabs isDraggable onTabOrderChange={(result) => console.log(result)} id="controlledTabs" onChange={this.handleSelection} activeKey={this.state.activeKey}>
           {tab1}
           {tab2}
           {tab3}

@@ -58,6 +58,14 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  /**
+   * Whether or not the tab is draggable.
+   */
+  isDraggable: PropTypes.bool,
+  /**
+  * Callback function triggered when tab is drag and dropped .
+   */
+  onTabOrderChange: PropTypes.func,
 };
 
 class Tabs extends React.Component {
@@ -102,6 +110,20 @@ class Tabs extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    const prevTab = prevProps.tabData.find((tab) => tab.isSelected === true);
+    const currTab = this.props.tabData.find((tab) => tab.isSelected === true);
+
+    if (prevTab.id !== currTab.id) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState(prevArray => {
+        const newArray = [...prevArray.visibleTabData];
+        const prevTabData = newArray.find(tab => tab.id === prevTab.id);
+        const currTabData = newArray.find(tab => tab.id === currTab.id);
+        prevTabData.isSelected = false;
+        currTabData.isSelected = true;
+        return { visibleTabData: newArray };
+      });
+    }
     if (this.isCalculating) {
       this.isCalculating = false;
       this.handleResize(this.contentWidth);
@@ -202,6 +224,9 @@ class Tabs extends React.Component {
       );
       return { visibleTabData: items };
     });
+    if (this.props.onTabOrderChange) {
+      this.props.onTabOrderChange(result);
+    }
   }
 
   setIsOpen(value) {
@@ -271,7 +296,7 @@ class Tabs extends React.Component {
 
   render() {
     const {
-      tabData, ariaLabel, variant, onChange,
+      tabData, ariaLabel, variant, onChange, isDraggable,
     } = this.props;
     const theme = this.context;
     const enabledTabs = this.state.visibleTabData.filter(tab => !tab.isDisabled);
@@ -300,6 +325,7 @@ class Tabs extends React.Component {
             isIconOnly={tab.isIconOnly}
             variant={variant}
             onChange={onChange}
+            isDraggable={isDraggable}
           />,
         );
       } else {
@@ -335,50 +361,88 @@ class Tabs extends React.Component {
     }
     const commonTabsClassNames = cx('tab-container', theme.className);
 
-    return (
-      <DragDropContext onDragEnd={this.handleDragEnd}>
-        <Droppable className={commonTabsClassNames} droppableId="tab-list" direction="horizontal">
-          {(provided) => (
-            <div
-              {...attrs}
-              {...provided.droppableProps}
-              ref={(el) => {
-                provided.innerRef(el);
-                this.containerRef.current = el; // Store the reference to the container element
-              }}
-              className={commonTabsClassNames}
-              role="tablist"
-              aria-label={ariaLabel}
-              aria-orientation="horizontal"
-              aria-owns={hiddenIds.join(' ')}
-            >
-              {visibleTabs}
-              {this.showMoreButton ? (
-                <MoreButton
-                  isOpen={this.isOpen}
-                  hiddenIndex={this.hiddenStartIndex}
-                  isActive={isHiddenSelected}
-                  zIndex={tabData.length - this.hiddenStartIndex}
-                  onBlur={this.handleMoreButtonBlur}
-                  onSelect={this.handleMoreButtonSelect}
-                  refCallback={node => { this.moreButtonRef.current = node; }}
-                  tabIds={ids}
-                  variant={variant}
-                />
-              ) : undefined}
-              <TabDropDown
-                onFocus={this.handleHiddenFocus}
-                onBlur={this.handleHiddenBlur}
-                isOpen={this.isOpen}
-                onRequestClose={this.handleOutsideClick}
-                refCallback={node => { this.dropdownRef.current = node; }}
+    if (isDraggable) {
+      return (
+        <DragDropContext onDragEnd={this.handleDragEnd}>
+          <Droppable className={commonTabsClassNames} droppableId="tab-list" direction="horizontal">
+            {(provided) => (
+              <div
+                {...attrs}
+                {...provided.droppableProps}
+                ref={(el) => {
+                  provided.innerRef(el);
+                  this.containerRef.current = el; // Store the reference to the container element
+                }}
+                className={commonTabsClassNames}
+                role="tablist"
+                aria-label={ariaLabel}
+                aria-orientation="horizontal"
+                aria-owns={hiddenIds.join(' ')}
               >
-                {hiddenTabs}
-              </TabDropDown>
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
+                {visibleTabs}
+                {this.showMoreButton ? (
+                  <MoreButton
+                    isOpen={this.isOpen}
+                    hiddenIndex={this.hiddenStartIndex}
+                    isActive={isHiddenSelected}
+                    zIndex={tabData.length - this.hiddenStartIndex}
+                    onBlur={this.handleMoreButtonBlur}
+                    onSelect={this.handleMoreButtonSelect}
+                    refCallback={node => { this.moreButtonRef.current = node; }}
+                    tabIds={ids}
+                    variant={variant}
+                  />
+                ) : undefined}
+                <TabDropDown
+                  onFocus={this.handleHiddenFocus}
+                  onBlur={this.handleHiddenBlur}
+                  isOpen={this.isOpen}
+                  onRequestClose={this.handleOutsideClick}
+                  refCallback={node => { this.dropdownRef.current = node; }}
+                >
+                  {hiddenTabs}
+                </TabDropDown>
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
+      );
+    }
+
+    return (
+      <div
+        {...attrs}
+        ref={this.containerRef}
+        className={commonTabsClassNames}
+        role="tablist"
+        aria-label={ariaLabel}
+        aria-orientation="horizontal"
+        aria-owns={hiddenIds.join(' ')}
+      >
+        {visibleTabs}
+        {this.showMoreButton ? (
+          <MoreButton
+            isOpen={this.isOpen}
+            hiddenIndex={this.hiddenStartIndex}
+            isActive={isHiddenSelected}
+            zIndex={tabData.length - this.hiddenStartIndex}
+            onBlur={this.handleMoreButtonBlur}
+            onSelect={this.handleMoreButtonSelect}
+            refCallback={node => { this.moreButtonRef.current = node; }}
+            tabIds={ids}
+            variant={variant}
+          />
+        ) : undefined}
+        <TabDropDown
+          onFocus={this.handleHiddenFocus}
+          onBlur={this.handleHiddenBlur}
+          isOpen={this.isOpen}
+          onRequestClose={this.handleOutsideClick}
+          refCallback={node => { this.dropdownRef.current = node; }}
+        >
+          {hiddenTabs}
+        </TabDropDown>
+      </div>
     );
   }
 }
