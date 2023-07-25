@@ -187,10 +187,10 @@ const ColumnHeaderCell = (props) => {
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);
 
-  const border = columnIndex === columnContext.pinnedColumnsLength - 1
+  const pinnedColumnsDivider = columnIndex === columnContext.pinnedColumnsLength - 1
     ? (
       <div
-        className={cx('last-pinned')}
+        className={cx('pinned-columns-divider')}
         style={{ height: tableHeight, left: width - 1 }} // eslint-disable-line react/forbid-dom-props
       />
     )
@@ -226,7 +226,7 @@ const ColumnHeaderCell = (props) => {
         onResizeMouseDown={onResizeHandleMouseDown}
       />
       )}
-      {border}
+      {pinnedColumnsDivider}
     </th>
   );
 };

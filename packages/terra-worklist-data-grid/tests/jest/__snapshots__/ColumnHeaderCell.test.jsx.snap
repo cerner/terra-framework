@@ -482,7 +482,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
         </ColumnResizeHandle>
       </InjectIntl(ColumnResizeHandle)>
       <div
-        className="last-pinned"
+        className="pinned-columns-divider"
         style={
           Object {
             "height": undefined,
