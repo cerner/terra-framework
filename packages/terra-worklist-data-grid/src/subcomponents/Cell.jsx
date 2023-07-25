@@ -174,7 +174,7 @@ function Cell(props) {
       className={className}
       onMouseDown={handleMouseDown}
       onKeyDown={handleKeyDown}
-      style={{ left: columnContext.pinnedColumnOffsets[columnIndex] || null}} // eslint-disable-line react/forbid-component-props
+      style={{ left: columnContext.pinnedColumnOffsets[columnIndex] }} // eslint-disable-line react/forbid-component-props
     >
       {!isMasked && children && <div className={cx('cell-content', theme.className)} style={{ height }}>{children}</div>}
     </CellTag>

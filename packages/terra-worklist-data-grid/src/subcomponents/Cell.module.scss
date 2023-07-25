@@ -35,16 +35,16 @@
 
   .pinned {
     background-color: inherit;
+    border: inherit, 1px solid #dedfe0;
+    border-width: 1px 0;
+    box-shadow: inset 1px 0 #dedfe0;
     position: sticky;
     z-index: 1;
-    box-shadow: inset 1px 0px #dedfe0;
-    border-width:  1px 0 1px 0;
-    border: inherit, 1px solid #dedfe0;
   }
 
   // Hover state for selectable elements
   .selectable:hover {
-    background-color: var(--terra-worklist-data-grid-hover-background-color, #D8E5ED);
+    background-color: var(--terra-worklist-data-grid-hover-background-color, #d8e5ed);
     cursor: pointer;
   }
 }
