@@ -60,7 +60,7 @@ exports[`Cell renders a pinned cell 1`] = `
       onMouseDown={[Function]}
       style={
         Object {
-          "left": null,
+          "left": 0,
         }
       }
       tabIndex={-1}
@@ -89,7 +89,7 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
   onMouseDown={[Function]}
   style={
     Object {
-      "left": null,
+      "left": undefined,
     }
   }
   tabIndex={-1}
@@ -105,7 +105,7 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
   onMouseDown={[Function]}
   style={
     Object {
-      "left": null,
+      "left": undefined,
     }
   }
   tabIndex={-1}
@@ -121,7 +121,7 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
   onMouseDown={[Function]}
   style={
     Object {
-      "left": null,
+      "left": undefined,
     }
   }
   tabIndex={-1}
@@ -147,7 +147,7 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
   onMouseDown={[Function]}
   style={
     Object {
-      "left": null,
+      "left": undefined,
     }
   }
   tabIndex={-1}
@@ -173,7 +173,7 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
   onMouseDown={[Function]}
   style={
     Object {
-      "left": null,
+      "left": undefined,
     }
   }
   tabIndex={-1}
@@ -200,7 +200,7 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
   onMouseDown={[Function]}
   style={
     Object {
-      "left": null,
+      "left": undefined,
     }
   }
   tabIndex={-1}
@@ -215,7 +215,7 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
   onMouseDown={[Function]}
   style={
     Object {
-      "left": null,
+      "left": undefined,
     }
   }
   tabIndex={-1}

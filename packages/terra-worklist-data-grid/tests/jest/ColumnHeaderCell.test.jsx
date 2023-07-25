@@ -2,6 +2,7 @@ import React from 'react';
 import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 import ColumnContext from '../../src/utils/ColumnContext';
@@ -19,7 +20,7 @@ describe('ColumnHeaderCell', () => {
         width={100}
         headerHeight="150px"
         {...column}
-      />
+      />,
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
@@ -51,7 +52,7 @@ describe('ColumnHeaderCell', () => {
         width={100}
         headerHeight="150px"
         {...column}
-      />
+      />,
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
@@ -84,7 +85,7 @@ describe('ColumnHeaderCell', () => {
         width={100}
         headerHeight="150px"
         {...column}
-      />
+      />,
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
@@ -117,7 +118,7 @@ describe('ColumnHeaderCell', () => {
         width={100}
         headerHeight="150px"
         {...column}
-      />
+      />,
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
@@ -151,7 +152,7 @@ describe('ColumnHeaderCell', () => {
         width={100}
         headerHeight="150px"
         {...column}
-      />
+      />,
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
@@ -189,7 +190,7 @@ describe('ColumnHeaderCell', () => {
         headerHeight="150px"
         {...column}
         onColumnSelect={mockClick}
-      />
+      />,
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
@@ -229,7 +230,7 @@ describe('ColumnHeaderCell', () => {
         headerHeight="150px"
         {...column}
         onColumnSelect={onColumnSelect}
-      />
+      />,
     ).dive();
 
     const columnHeader = wrapper.find('.column-header:not(selectable)');
@@ -266,14 +267,15 @@ describe('ColumnHeaderCell', () => {
         pinnedColumnsLength: 1,
         pinnedColumnOffsets: [0],
         pinnedColumnsTotalWidth: 100,
-      }}>
+      }}
+      >
         <ColumnHeaderCell
           columnIndex={0}
           width={100}
           headerHeight="150px"
           {...column}
         />
-      </ColumnContext.Provider>
+      </ColumnContext.Provider>,
     );
 
     expect(wrapper.find('.pinned')).toHaveLength(1);

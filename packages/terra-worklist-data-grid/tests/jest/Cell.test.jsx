@@ -203,7 +203,8 @@ describe('Cell', () => {
         pinnedColumnsLength: 1,
         pinnedColumnOffsets: [0],
         pinnedColumnsTotalWidth: 100,
-      }}>
+      }}
+      >
         <Cell
           rowId="RowID"
           columnId="ColumnId"
@@ -218,7 +219,7 @@ describe('Cell', () => {
         >
           Pinned cell data
         </Cell>
-      </ColumnContext.Provider>
+      </ColumnContext.Provider>,
     );
 
     expect(wrapper.find('.pinned')).toHaveLength(1);
