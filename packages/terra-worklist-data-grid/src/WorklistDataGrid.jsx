@@ -425,6 +425,10 @@ function WorklistDataGrid(props) {
       multiRowSelectionWithLastSelected.current = { anchorRow: rowIndex };
       handleEnableSelectableRows(rowIndex, multiRowSelectionWithLastSelected.current);
       multiRowSelectionWithLastSelected.current.previousSelectionEndRow = rowIndex;
+    } else {
+      // Shift + Click
+      handleEnableSelectableRows(rowIndex, selectionData);
+      selectionData.previousSelectionEndRow = rowIndex;
     }
   };
 
