@@ -20,7 +20,7 @@ describe('ColumnHeaderCell', () => {
         width={100}
         headerHeight="150px"
         {...column}
-      />,
+      />
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
