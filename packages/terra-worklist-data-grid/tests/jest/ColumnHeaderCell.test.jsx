@@ -4,8 +4,9 @@ import React from 'react';
 import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
+import ColumnContext from '../../src/utils/ColumnContext';
 
 describe('ColumnHeaderCell', () => {
   it('renders a default column header cell', () => {
@@ -52,7 +53,7 @@ describe('ColumnHeaderCell', () => {
         width={100}
         headerHeight="150px"
         {...column}
-      />,
+      />
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
@@ -85,7 +86,7 @@ describe('ColumnHeaderCell', () => {
         width={100}
         headerHeight="150px"
         {...column}
-      />,
+      />
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
@@ -118,7 +119,7 @@ describe('ColumnHeaderCell', () => {
         width={100}
         headerHeight="150px"
         {...column}
-      />,
+      />
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
@@ -152,7 +153,7 @@ describe('ColumnHeaderCell', () => {
         width={100}
         headerHeight="150px"
         {...column}
-      />,
+      />
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
@@ -190,7 +191,7 @@ describe('ColumnHeaderCell', () => {
         headerHeight="150px"
         {...column}
         onColumnSelect={mockClick}
-      />,
+      />
     ).dive();
 
     const columnHeader = wrapper.find('.column-header.selectable');
@@ -230,7 +231,7 @@ describe('ColumnHeaderCell', () => {
         headerHeight="150px"
         {...column}
         onColumnSelect={onColumnSelect}
-      />,
+      />
     ).dive();
 
     const columnHeader = wrapper.find('.column-header:not(selectable)');
@@ -250,5 +251,42 @@ describe('ColumnHeaderCell', () => {
     expect(headerContainer.find(IconError)).toHaveLength(1);
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders a pinned column header cell', () => {
+    jest.spyOn(console, 'error').mockImplementation();
+
+    const column = {
+      id: 'Column-0',
+      displayName: ' Vitals',
+      sortIndicator: 'ascending',
+      hasError: true,
+    };
+
+    const columnContextValues = {
+      pinnedColumnsLength: 1,
+      pinnedColumnOffsets: [0],
+      pinnedColumnsTotalWidth: 100,
+    }
+
+    const wrapper = mountWithIntl(
+      <ColumnContext.Provider value={{
+        pinnedColumnsLength: 1,
+        pinnedColumnOffsets: [0],
+        pinnedColumnsTotalWidth: 100,
+      }}>
+        <ColumnHeaderCell
+          columnIndex={0}
+          width={100}
+          headerHeight="150px"
+          {...column}
+        />
+      </ColumnContext.Provider>
+    );
+
+    expect(wrapper.find('.pinned')).toHaveLength(1);
+    expect(wrapper).toMatchSnapshot();
+
+    console.error.mockRestore();
   });
 });
