@@ -187,12 +187,14 @@ const ColumnHeaderCell = (props) => {
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);
 
-  const border = columnIndex === columnContext.pinnedColumnsLength - 1 ?
-  <div 
-    className={cx('last-pinned')}
-    style={{height: tableHeight, left: width-2}}
-  /> :
-  null ;
+  const border = columnIndex === columnContext.pinnedColumnsLength - 1
+    ? (
+      <div
+        className={cx('last-pinned')}
+        style={{ height: tableHeight, left: width - 2 }}
+      />
+    )
+    : null;
 
   return (
   /* eslint-disable react/forbid-dom-props */
