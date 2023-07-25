@@ -1,6 +1,7 @@
+
 import ERRORS from '../utils/constants';
 
-const validateRowHeaderIndex = (props, propName, componentName) => {
+const validateRowHeaderIndex = (props) => {
   if (!Number.isInteger(props.rowHeaderIndex)) {
     return new Error(ERRORS.ROW_HEADER_INDEX_NOT_AN_INTEGER);
   }
@@ -12,6 +13,8 @@ const validateRowHeaderIndex = (props, propName, componentName) => {
   if (props.pinnedColumns.length && props.rowHeaderIndex >= props.pinnedColumns.length) {
     return new Error(ERRORS.ROW_HEADER_INDEX_EXCEEDS_PINNED);
   }
+
+  return;
 };
 
 export default validateRowHeaderIndex;

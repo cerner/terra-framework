@@ -4,11 +4,11 @@
 
 :local {
   .worklist-data-grid-row:nth-child(even) {
-    background-color: var(--terra-worklist-data-grid-row-striped-background-color, #f0f0f0);
+    background-color: var(--terra-worklist-data-grid-row-striped-background-color-even, #f0f0f0);
   }
 
   .worklist-data-grid-row:nth-child(odd) {
-    background-color: var(--terra-worklist-data-grid-row-striped-background-color, white);
+    background-color: var(--terra-worklist-data-grid-row-striped-background-color-odd, white);
   }
 
   .row-selected {

@@ -162,7 +162,8 @@ function WorklistDataGrid(props) {
     rowHeaderIndex,
   } = props;
 
-  if (pinnedColumns.length == 0) {
+  if (pinnedColumns.length === 0) {
+    //eslint-disable-next-line no-console
     console.warn(ERRORS.PINNED_COLUMNS_UNDEFINED);
   }
 
@@ -290,6 +291,7 @@ function WorklistDataGrid(props) {
       const offsetArray = [0];
       const totalPinnedColumnsCount = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
 
+      // eslint-disable-next-line array-callback-return
       dataGridColumns.slice(0, totalPinnedColumnsCount).map((pinnedCol) => {
         cumulativeOffset += pinnedCol.width;
         offsetArray.push(cumulativeOffset);

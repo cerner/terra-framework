@@ -51,10 +51,10 @@
   }
 
   .last-pinned {
-    background-color: red;
-    width: 3px;
+    background-color: black;
+    width: 2px;
     position: absolute;
     top: 0;
-    box-shadow: 4px -1px 6px black;
+    box-shadow: 4px -1px 6px grey;
   }
 }
