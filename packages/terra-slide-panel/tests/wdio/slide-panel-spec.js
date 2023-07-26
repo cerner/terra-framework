@@ -107,7 +107,7 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       browser.pause(150);
 
       expect($('#test-toggle').isFocused()).toBeTruthy();
-      Terra.validates.element('toggle button focused', { selector: '#root' });
+      Terra.validates.element('toggle button focused mouse', { selector: '#root' });
     });
     it('Closes panel and focuses on toggle button with multiple buttons with keyboard controls', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-multiple-buttons-toggle');
@@ -149,7 +149,7 @@ Terra.describeViewports('Slide panel', ['large'], () => {
 
       expect($('#test-toggle').isFocused()).toBeTruthy();
 
-      Terra.validates.element('toggle button focused with multiple buttons', { selector: '#root' });
+      Terra.validates.element('toggle button focused with multiple buttons mouse', { selector: '#root' });
     });
   });
 
