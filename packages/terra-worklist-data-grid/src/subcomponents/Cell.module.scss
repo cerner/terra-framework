@@ -44,11 +44,7 @@
 
   // Hover state for selectable elements
   .selectable:hover {
-    background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
-
-    // NOTE: Temporarily keeping the older background-color to not break wdio tests.
-    // It will be replaced by the one below once wdio tests can be updated.
-    // background-color: var(--terra-worklist-data-grid-hover-background-color, #d8e5ed);
+    background-color: var(--terra-worklist-data-grid-hover-background-color, #d8e5ed);
     cursor: pointer;
   }
 }
