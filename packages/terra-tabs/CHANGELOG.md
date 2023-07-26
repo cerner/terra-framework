@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+## 7.0.0 - (July 25, 2023)
+
+* Breaking Change
+  * Removed `responsiveTo` prop as common tabs is responsive to parent
+   container & window
+
+* Added
+  * Added Common tabs component under terra-tabs
+  * Introduced `variant` prop to switch between framework and workspace styles
+
+* Changed
+  * Updated framework tabs to consume common tabs 
+  * Updated styles to accommodate both framework and workspace styles
+
 ## 6.72.0 - (July 19, 2023)
 
 * Changed

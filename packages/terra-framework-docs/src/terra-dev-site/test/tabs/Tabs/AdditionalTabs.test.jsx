@@ -36,9 +36,11 @@ class AdditionalTabsTest extends React.Component {
         <button type="button" onClick={this.addMoreTabPanes}>
           Add Tabs
         </button>
-        <Tabs id={tabsWrapperId}>
-          {this.createTabPanes()}
-        </Tabs>
+        <div id={tabsWrapperId}>
+          <Tabs>
+            {this.createTabPanes()}
+          </Tabs>
+        </div>
       </div>
     );
   }

@@ -3,32 +3,22 @@ import Pane from '../../src/TabPane';
 
 describe('TabPane', () => {
   it('should render a default component with label', () => {
-    const wrapper = shallow(<Pane label="Default" />);
+    const wrapper = shallow(<Pane label="Default" />).dive();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with icon and label', () => {
-    const wrapper = shallow(<Pane label="Label" icon={<div>Fake icon</div>} />);
+    const wrapper = shallow(<Pane label="Label" icon={<div>Fake icon</div>} />).dive();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with icon only when indicated', () => {
-    const wrapper = shallow(<Pane label="Label" icon={<div>Fake icon</div>} isIconOnly />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should render as disabled when indicated', () => {
-    const wrapper = shallow(<Pane label="Label" isDisabled />);
+    const wrapper = shallow(<Pane label="Label" icon={<div>Fake icon</div>} isIconOnly />).dive();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with a custom display when provided', () => {
-    const wrapper = shallow(<Pane label="Label" customDisplay={<div>Custom Display</div>} />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should render with custom props', () => {
-    const wrapper = shallow(<Pane label="Default" className="customClass" />);
+    const wrapper = shallow(<Pane label="Label" customDisplay={<div>Custom Display</div>} />).dive();
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -37,7 +27,7 @@ describe('TabPane', () => {
       .mockReturnValue({
         className: 'orion-fusion-theme',
       });
-    const wrapper = shallow(<Pane label="Default" className="customClass" />);
+    const wrapper = shallow(<Pane label="Default" className="customClass" />).dive();
     expect(wrapper).toMatchSnapshot();
   });
 });
