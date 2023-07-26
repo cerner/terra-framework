@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 7.0.0 - (July 25, 2023)
+
 * Breaking Change
   * Removed `responsiveTo` prop as common tabs is responsive to parent
    container & window
