@@ -7,9 +7,6 @@
 * Added
   * Added sizes `'fusion-small'`, `'fusion-medium'`, and `'fusion-large'`.
 
-* Changed
-  * Opened modal now traps focus within its content for improved keyboard accessibility.
-
 ## 6.64.0 - (July 19, 2023)
 
 * Changed

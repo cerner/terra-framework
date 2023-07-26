@@ -2,8 +2,8 @@
 
 ## Unreleased
 
-  * Added
-    * Added `trapFocus` prop to allow an open modal to trap focus within its content.
+  * Changed
+    * Focus is now locked within modal content when modal is open for improved keyboard accessibility.
 
 ## 3.42.0 - (June 5, 2023)
 

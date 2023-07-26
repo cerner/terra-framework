@@ -106,7 +106,6 @@ class ModalManager extends React.Component {
           closeOnOutsideClick={false}
           ariaLabel={headerDataForPresentedComponent?.title || 'Modal'}
           setModalFocusElementRef={this.setModalFocusElementRef}
-          trapFocus
         >
           <ContentContainer
             fill

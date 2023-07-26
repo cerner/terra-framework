@@ -73,12 +73,6 @@ it('should mount an open modal with custom props', () => {
   expect(modal).toMatchSnapshot();
 });
 
-it('should mount an open modal with trapFocus set to true', () => {
-  const modal = mountWithIntl(<AbstractModalExample trapFocus />);
-  expect(modal.find('FocusTrapWrapper').prop('trapFocus')).toBe(true);
-  expect(modal).toMatchSnapshot();
-});
-
 it('should render the correct snapshot for iPhones', () => {
   Object.defineProperty(global.navigator, 'platform', { value: 'iPhone', writable: 'true' });
 
