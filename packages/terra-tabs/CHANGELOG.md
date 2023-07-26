@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+ * Added `isDraggable` and `onTabOrderChange` props to support drag and drop feature in tabs.
+
 ## 7.0.0 - (July 25, 2023)
 
 * Breaking Change
