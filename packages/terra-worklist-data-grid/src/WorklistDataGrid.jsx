@@ -292,8 +292,8 @@ function WorklistDataGrid(props) {
       const lastPinnedColumnIndex = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
 
       // eslint-disable-next-line array-callback-return
-      dataGridColumns.slice(0, lastPinnedColumnIndex).map((pinnedCol) => {
-        cumulativeOffset += pinnedCol.width;
+      dataGridColumns.slice(0, lastPinnedColumnIndex).map((pinnedColumn) => {
+        cumulativeOffset += pinnedColumn.width;
         offsetArray.push(cumulativeOffset);
       });
 
