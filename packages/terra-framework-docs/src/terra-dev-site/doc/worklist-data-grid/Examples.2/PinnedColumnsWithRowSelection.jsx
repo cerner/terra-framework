@@ -68,7 +68,7 @@ const RowSelection = () => {
       remainingSelectedRow = userSelectedRow;
     } else if (selectedRows.includes(userSelectedRow[0])) {
       // Row Deselected so remove this rowId.
-      remainingSelectedRow = selectedRows.filter(e => (e !== userSelectedRow[0]));
+      remainingSelectedRow = selectedRows.filter(row => (row !== userSelectedRow[0]));
     } else {
       // Row Selected so add this rowId.
       remainingSelectedRow = remainingSelectedRow.concat(selectedRows);
@@ -108,17 +108,17 @@ const RowSelection = () => {
         />
       </div>
       <WorklistDataGrid
-        id="default-terra-worklist-data-grid"
+        id="pinned-columns-with-row-selection"
         pinnedColumns={cols.slice(0, 3)}
         overflowColumns={cols.slice(3)}
         rows={[...rows]}
         rowHeaderIndex={rowHeaderIndex}
         columnWidth="180px"
-        ariaLabel="Worklist Data Grid"
+        ariaLabel="Worklist Data Grid with Pinned Columns and Row Selection"
         hasSelectableRows={hasSelectableRows}
         onRowSelect={(rowId) => {
           const newRows = [];
-          const selectedRow = rows.find(e => e.id === rowId);
+          const selectedRow = rows.find(row => row.id === rowId);
           selectedRow.isSelected = !selectedRow.isSelected;
           rows.forEach(element => {
             if (element.isSelected) {
@@ -129,7 +129,7 @@ const RowSelection = () => {
         }}
         onRowSelectAll={() => {
           const newRows = [];
-          rows.forEach(e => { e.isSelected = true; newRows.push(e.id); });
+          rows.forEach(row => { row.isSelected = true; newRows.push(row.id); });
           setSelectedRows(determineSelectedRows(true, newRows));
         }}
         onClearSelectedRows={() => {
