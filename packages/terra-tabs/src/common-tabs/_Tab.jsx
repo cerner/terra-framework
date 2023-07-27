@@ -175,9 +175,6 @@ const Tab = ({
     onClosingTab(itemKey, metaData)
   }
 
-  // if (isClosed) {
-  //   return null;
-  // }
 
   attributes.tabIndex = isSelected ? 0 : -1;
   attributes.onClick = onClick;
@@ -203,44 +200,37 @@ const Tab = ({
       <div className={variant === 'framework' ? cy('inner') : cx('inner')}>
         {customDisplay}
         {customDisplay ? null : icon}
-        {customDisplay || isIconOnly ? 
-         (isClosable && (
-          //   <a
-          //   href="#"
-          //   className={cx('close-link')} // Add a custom CSS class for the anchor tag
-          //   onClick={}
-          //   title="Close"
-          //   aria-label="Close"
-          // >
-          //   <span className={cx('close-icon')}>&times;</span> {/* Add a span for the close icon */}
-          // </a>
-          <a
-          
-            class={cx('pill-remove-button')}
-            type="button"
-            aria-label="Close Tab"
-            onClick={onCloseClick}
-          ></a>
-          ) ): (
+        {customDisplay || isIconOnly ? (
+          isClosable && (
+            <div
+              className={cx('pill-remove-button')}
+              role="button"
+              tabIndex="0"
+              aria-label="Close Tab"
+              onClick={onCloseClick}
+              onKeyDown={(event) => {
+                if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
+                  onCloseClick(event);
+                }
+              }}
+            ></div>
+          )
+        ) : (
           <span className={variant === 'framework' ? cy('label') : cx('label')}>
             {label}
             {isClosable && (
-            //   <a
-            //   href="#"
-            //   className={cx('close-link')} // Add a custom CSS class for the anchor tag
-            //   onClick={}
-            //   title="Close"
-            //   aria-label="Close"
-            // >
-            //   <span className={cx('close-icon')}>&times;</span> {/* Add a span for the close icon */}
-            // </a>
-            <a
-            
-              class={cx('pill-remove-button')}
-              type="button"
-              aria-label="Close Tab"
-              onClick={onCloseClick}
-            ></a>
+              <div
+                className={cx('pill-remove-button')}
+                role="button"
+                tabIndex="0"
+                aria-label="Close Tab"
+                onClick={onCloseClick}
+                onKeyDown={(event) => {
+                  if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
+                    onCloseClick(event);
+                  }
+                }}
+              ></div>
             )}
           </span>
         )}

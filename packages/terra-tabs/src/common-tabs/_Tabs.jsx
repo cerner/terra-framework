@@ -231,20 +231,7 @@ class Tabs extends React.Component {
 
     this.dropdownRef.current.style.left = `${offset}px`;
   }
-  // wrapOnSelect(onSelect) {
-  //   return (itemKey, metaData) => {
-  //     this.setIsOpen(false);
-  //     onSelect(itemKey, metaData);
-  //   };
-  // }
-  // wrapOnSelectHidden(onSelect) {
-  //   return (itemKey, metaData) => {
-  //     if (this.isOpen) {
-  //       onSelect(itemKey, metaData);
-  //     }
-  //     this.setIsOpen(!this.isOpen);
-  //   };
-  // }
+ 
 
   
   wrapOnSelect(onSelect) {
@@ -280,21 +267,27 @@ class Tabs extends React.Component {
   wrapOnClose(onClose) {
     return (itemKey, metaData) => {
       this.setIsOpen(false);
-       // const updatedTabData = this.state.tabData.filter(tab => tab.id !== "undefined-"+itemKey);
-      var selectKey=false;
+      let removedTabIndex = -1;
       const updatedTabData = this.state.tabData
+        .map((tab, index) => {
+          if (tab.itemKey === itemKey && tab.isSelected === true) {
+            removedTabIndex = index;
+          }
+          return { ...tab, originalIndex: index };
+        })
         .filter((tab) => tab.itemKey !== itemKey)
         .map((tab, index) => {
-          if (tab.isSelected===true) {
-            selectKey=true
+          if (tab.isSelected === true) {
           }
           return {
-            ...tab
+            ...tab,
           };
         });
   
-      if(!selectKey){
-        updatedTabData[0].isSelected=true
+      if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex!=0) {
+        updatedTabData[removedTabIndex-1].isSelected = true;
+      } else if (removedTabIndex >= 0 && removedTabIndex < updatedTabData.length) {
+        updatedTabData[removedTabIndex].isSelected = true;
       }
      this.props.onTabStateChange(updatedTabData);
       this.setState({ tabData: updatedTabData });

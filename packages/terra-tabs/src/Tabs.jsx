@@ -113,9 +113,20 @@ class Tabs extends React.Component {
         />,
       );
     });
-const handleTabsStateChange=(newValue)=>{
-  this.setState({activeAfterClosed:newValue[0].itemKey})
-}
+    const handleTabsStateChange = (newValue) => {
+      if (newValue.length > 0) {
+        let activeAfterClosed = '';
+        for (let i = 0; i < newValue.length; i++) {
+          if (newValue[i].isSelected === true) {
+            activeAfterClosed = newValue[i].itemKey;
+            break;
+          }
+        }
+        this.setState({ activeAfterClosed: activeAfterClosed });
+      } else if (newValue.length === 0) {
+        this.setState({ activeAfterClosed: '' });
+      }
+    };
     return (
       <CommonTabs
         id={customProps.id || 'terra-common-tabs'}
