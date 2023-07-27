@@ -1,15 +1,13 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
-
 import ThemeContext from 'terra-theme-context';
-
-import Cell from './Cell';
+import classNames from 'classnames/bind';
+import '../_elementPolyfill';
+import styles from './Row.module.scss';
 import RowSelectionCell from './RowSelectionCell';
+import Cell from './Cell';
 import cellShape from '../proptypes/cellShape';
 import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
-import styles from './Row.module.scss';
-import '../_elementPolyfill';
 
 const cx = classNames.bind(styles);
 
@@ -133,11 +131,11 @@ function Row(props) {
         rowIndex={cellRowIndex}
         columnIndex={cellColumnIndex}
         key={`${rowId}_${columnId}`}
-        isMasked={cellData.isMasked}
-        isRowHeader={isRowHeader}
-        isSelectable={cellData.isSelectable}
-        isSelected={!hasRowSelection && selectedCellColumnId === columnId}
         isTabStop={tabStopColumnIndex === cellColumnIndex}
+        isSelected={!hasRowSelection && selectedCellColumnId === columnId}
+        isMasked={cellData.isMasked}
+        isSelectable={cellData.isSelectable}
+        isRowHeader={isRowHeader}
         onCellSelect={handleCellSelect}
         height={height}
       >
