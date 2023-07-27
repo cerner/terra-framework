@@ -162,6 +162,7 @@ Terra.describeViewports('Tabs - Drag and Drop', ['medium'], () => {
   });
   it('should perform drag and drop operation', () => {
     browser.keys(['Tab', 'Space', 'ArrowRight', 'Space']);
+    browser.pause(500);
     Terra.validates.element('After Drag and Drop', { selector: '#root' });
   });
 });
