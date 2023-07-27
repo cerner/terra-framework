@@ -288,7 +288,7 @@ function WorklistDataGrid(props) {
   useEffect(() => {
     if (pinnedColumns.length > 0) {
       let cumulativeOffset = 0;
-      const offsetArray = [0];
+      const offsetArray = [cumulativeOffset];
       const lastPinnedColumnIndex = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
 
       // eslint-disable-next-line array-callback-return
