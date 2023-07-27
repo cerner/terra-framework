@@ -10,7 +10,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
   style={
     Object {
       "height": "150px",
-      "left": undefined,
+      "left": null,
       "width": "100px",
     }
   }
@@ -48,7 +48,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
   style={
     Object {
       "height": "150px",
-      "left": undefined,
+      "left": null,
       "width": "100px",
     }
   }
@@ -92,7 +92,7 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
   style={
     Object {
       "height": "150px",
-      "left": undefined,
+      "left": null,
       "width": "100px",
     }
   }
@@ -129,7 +129,7 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
   style={
     Object {
       "height": "150px",
-      "left": undefined,
+      "left": null,
       "width": "100px",
     }
   }
@@ -170,7 +170,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
   style={
     Object {
       "height": "150px",
-      "left": undefined,
+      "left": null,
       "width": "100px",
     }
   }
@@ -214,7 +214,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
   style={
     Object {
       "height": "150px",
-      "left": undefined,
+      "left": null,
       "width": "100px",
     }
   }
@@ -257,7 +257,7 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
   style={
     Object {
       "height": "150px",
-      "left": undefined,
+      "left": null,
       "width": "100px",
     }
   }

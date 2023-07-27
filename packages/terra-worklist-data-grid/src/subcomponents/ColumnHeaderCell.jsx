@@ -187,11 +187,14 @@ const ColumnHeaderCell = (props) => {
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);
 
+  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnsLength) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
+  const dividerLeftEdge = width - 1;
+
   const pinnedColumnsDivider = columnIndex === columnContext.pinnedColumnsLength - 1
     ? (
       <div
         className={cx('pinned-columns-divider')}
-        style={{ height: tableHeight, left: width - 1 }} // eslint-disable-line react/forbid-dom-props
+        style={{ height: tableHeight, left: dividerLeftEdge }} // eslint-disable-line react/forbid-dom-props
       />
     )
     : null;
@@ -208,7 +211,7 @@ const ColumnHeaderCell = (props) => {
       aria-sort={sortIndicator}
       onMouseDown={(isSelectable && onColumnSelect) ? handleMouseDown : undefined}
       onKeyDown={(isSelectable && onColumnSelect) ? handleKeyDown : undefined}
-      style={{ width: `${width}px`, height: headerHeight, left: columnContext.pinnedColumnOffsets[columnIndex] }} // eslint-disable-line react/forbid-dom-props
+      style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
     >
       <div className={cx('header-container')} role={displayName && 'button'}>
         {errorIcon}
