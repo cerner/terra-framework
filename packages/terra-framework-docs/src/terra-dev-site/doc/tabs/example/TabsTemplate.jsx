@@ -61,7 +61,7 @@ const TabsTemplate = (props) => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs defaultActiveKey="LabelTab" id={props.id}>
+      <Tabs defaultActiveKey="LabelTab" id={props.id} onSelectAddButton={() => alert('hi')}>
         {labelTab}
         {iconTab}
         {customTab}

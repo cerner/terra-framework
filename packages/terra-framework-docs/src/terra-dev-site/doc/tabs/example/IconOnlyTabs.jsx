@@ -9,42 +9,73 @@ import TabContent from './TabContentTemplate';
 import styles from './common/TabExample.module.scss';
 
 const cx = classNames.bind(styles);
+let i = -1;
+const hiddenTabs = [];
+class IconOnlyTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    hiddenTabs.push(
+      <Tabs.Pane label="Search" icon={<IconSearch />} isIconOnly key="Search">
+        <TabContent label="Search" />
+      </Tabs.Pane>,
+    );
 
-const IconOnlyTabs = () => {
-  const searchTab = (
-    <Tabs.Pane label="Search" icon={<IconSearch />} isIconOnly key="Search">
-      <TabContent label="Search" />
-    </Tabs.Pane>
-  );
+    hiddenTabs.push(
+      <Tabs.Pane label="Briefcase" icon={<IconBriefcase />} isIconOnly key="Briefcase">
+        <TabContent label="Briefcase" />
+      </Tabs.Pane>,
+    );
 
-  const briefcaseTab = (
-    <Tabs.Pane label="Briefcase" icon={<IconBriefcase />} isIconOnly key="Briefcase">
-      <TabContent label="Briefcase" />
-    </Tabs.Pane>
-  );
+    hiddenTabs.push(
+      <Tabs.Pane label="Bookmark" icon={<IconBookmark />} isIconOnly key="Bookmark">
+        <TabContent label="Bookmark" />
+      </Tabs.Pane>,
+    );
 
-  const bookmarkTab = (
-    <Tabs.Pane label="Bookmark" icon={<IconBookmark />} isIconOnly key="Bookmark">
-      <TabContent label="Bookmark" />
-    </Tabs.Pane>
-  );
+    hiddenTabs.push(
+      <Tabs.Pane label="Calendar" icon={<IconCalendar />} isIconOnly key="Calendar">
+        <TabContent label="Calendar" />
+      </Tabs.Pane>,
+    );
+    this.state = {
+      tabKeys: hiddenTabs,
+      activeKey: 'Bookmark',
+    };
 
-  const calendarTab = (
-    <Tabs.Pane label="Calendar" icon={<IconCalendar />} isIconOnly key="Calendar">
-      <TabContent label="Calendar" />
-    </Tabs.Pane>
-  );
+    this.addMoreTabPanes = this.addMoreTabPanes.bind(this);
+  }
 
-  return (
-    <div className={cx('content-wrapper')}>
-      <Tabs onSelectAddButton={() => alert('hi')} ariaLabelAddTab="Add Tab">
-        {searchTab}
-        {briefcaseTab}
-        {bookmarkTab}
-        {calendarTab}
-      </Tabs>
-    </div>
-  );
-};
+  createTabPanes() {
+    const tabPanes = this.state.tabKeys.map((tabKey) => (
+      tabKey
+    ));
+
+    return tabPanes;
+  }
+
+  addMoreTabPanes() {
+    i += 1;
+    hiddenTabs.push(
+      <Tabs.Pane label={`Tab_${i}`} icon={<IconCalendar />} isIconOnly key={`Tab_${i}`} id={`Tab_${i}`} isActive>
+        <TabContent label={`Tab_${i}`} id={`TabContent_${i}`} />
+      </Tabs.Pane>,
+    );
+    this.setState({
+      tabKeys: hiddenTabs,
+      activeKey: `Tab_${i}`,
+    });
+  }
+
+  render() {
+    // eslint-disable-next-line no-nested-ternary
+    return (
+      <div className={cx('content-wrapper')}>
+        <Tabs activeKey={this.state.activeKey} onSelectAddButton={this.addMoreTabPanes(this.state.activeKey)} ariaLabelAddTab="Add Tab">
+          {this.state.tabKeys}
+        </Tabs>
+      </div>
+    );
+  }
+}
 
 export default IconOnlyTabs;
