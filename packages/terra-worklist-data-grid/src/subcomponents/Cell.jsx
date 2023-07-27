@@ -164,6 +164,8 @@ function Cell(props) {
     blank: !children,
   }, theme.className);
 
+  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnsLength) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
+
   const CellTag = isRowHeader ? 'th' : 'td';
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
@@ -174,7 +176,7 @@ function Cell(props) {
       className={className}
       onMouseDown={handleMouseDown}
       onKeyDown={handleKeyDown}
-      style={{ left: columnContext.pinnedColumnOffsets[columnIndex] }} // eslint-disable-line react/forbid-component-props
+      style={{ left: cellLeftEdge }} // eslint-disable-line react/forbid-component-props
     >
       {!isMasked && children && <div className={cx('cell-content', theme.className)} style={{ height }}>{children}</div>}
     </CellTag>
