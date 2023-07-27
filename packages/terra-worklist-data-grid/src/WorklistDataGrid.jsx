@@ -311,14 +311,14 @@ function WorklistDataGrid(props) {
       // The range extends upward from the anchor row
       if (newEndRowIndex > selectionData.previousSelectionEndRow) {
         // The range was moved down towards the anchor so rows that no longer qualify for the range need to be unselected.
-        const rowsToUnselect = rows.slice(selectionData.previousSelectionEndRow - 1, selectionData.anchorRow - 1);
+        const rowsToUnselect = rows.slice(selectionData.previousSelectionEndRow - 1, newEndRowIndex);
         rowIdsToUnselect = rowsToUnselect.map(r => ({ rowId: r.id, isSelected: false }));
       }
     } else if (selectionData.anchorRow < selectionData.previousSelectionEndRow) {
       // The range extends downward from the anchor row
       if (newEndRowIndex < selectionData.previousSelectionEndRow) {
         // The range was moved up towards the anchor so rows that no longer qualify for the range need to be unselected       // New endRangeIndex becomes ordered End
-        const rowsToUnselect = rows.slice(selectionData.anchorRow, selectionData.previousSelectionEndRow);
+        const rowsToUnselect = rows.slice(newEndRowIndex - 1, selectionData.previousSelectionEndRow);
         rowIdsToUnselect = rowsToUnselect.map(r => ({ rowId: r.id, isSelected: false }));
       }
     }

@@ -239,8 +239,17 @@ const RowSelection = () => {
         hasSelectableRows={hasSelectableRows}
         onRowSelect={(toggledRows) => {
           toggledRows.forEach((toggledRow) => {
-            const row = rows.find(e => e.id === toggledRow.rowId);
-            row.isSelected = toggledRow.isSelected;
+            if (!toggledRow.isSelected) {
+              const row = rows.find(e => e.id === toggledRow.rowId);
+              row.isSelected = false;
+            }
+          });
+
+          toggledRows.forEach((toggledRow) => {
+            if (toggledRow.isSelected) {
+              const row = rows.find(e => e.id === toggledRow.rowId);
+              row.isSelected = true;
+            }
           });
 
           const rowIdsToSelect = [];
