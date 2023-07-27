@@ -161,7 +161,8 @@ Terra.describeViewports('Tabs - Drag and Drop', ['medium'], () => {
     Terra.validates.element('Before Drag and Drop', { selector: '#root' });
   });
   it('should perform drag and drop operation', () => {
-    browser.keys(['Tab', 'Space', 'ArrowRight', 'Space', 'Space']);
+    browser.keys(['Tab', 'Space', 'ArrowRight', 'Space']);
+    $('#controlledTabs-Tab2').click();
     browser.pause(3000);
     Terra.validates.element('After Drag and Drop', { selector: '#root' });
   });
