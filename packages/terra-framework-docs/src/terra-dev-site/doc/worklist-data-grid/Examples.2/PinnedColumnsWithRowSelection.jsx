@@ -129,7 +129,7 @@ const RowSelection = () => {
         }}
         onRowSelectAll={() => {
           const newRows = [];
-          // eslint-ignore-next-line no-param-reassign
+          // eslint-disable-next-line no-param-reassign
           rows.forEach(row => { row.isSelected = true; newRows.push(row.id); });
           setSelectedRows(determineSelectedRows(true, newRows));
         }}
