@@ -110,13 +110,13 @@ function Row(props) {
 
   const columnIndexOffSet = hasRowSelection ? 1 : 0;
 
-  const handleCellSelect = (rowIdColId, coordinates, isShiftKeyPressed, isCellSelectedFromKeyboard) => {
-    if (hasRowSelection || isShiftKeyPressed) {
+  const handleCellSelect = (selectionDetails) => {
+    if (hasRowSelection || selectionDetails.multiSelect) {
       if (onRowSelect) {
-        onRowSelect(rowIdColId.rowId, rowIndex, coordinates, isShiftKeyPressed, isCellSelectedFromKeyboard);
+        onRowSelect(selectionDetails);
       }
     } else if (onCellSelect) {
-      onCellSelect(rowIdColId, coordinates);
+      onCellSelect(selectionDetails);
     }
   };
 

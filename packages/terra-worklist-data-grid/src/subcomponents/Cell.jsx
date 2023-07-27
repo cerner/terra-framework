@@ -117,7 +117,9 @@ function Cell(props) {
       event.stopPropagation();
       event.preventDefault();
     } else if (onCellSelect) {
-      onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex }, !!event.shiftKey, false);
+      onCellSelect({
+        rowId, columnId, rowIndex, columnIndex, multiSelect: !!event.shiftKey, selectedByKeyboard: false,
+      });
       event.stopPropagation();
     }
   };
@@ -130,7 +132,9 @@ function Cell(props) {
           event.stopPropagation();
           event.preventDefault();
         } else if (onCellSelect) {
-          onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex }, !!event.shiftKey, true);
+          onCellSelect({
+            rowId, columnId, rowIndex, columnIndex, multiSelect: !!event.shiftKey, selectedByKeyboard: true,
+          });
           event.stopPropagation();
           event.preventDefault(); // prevent the default scrolling
         }

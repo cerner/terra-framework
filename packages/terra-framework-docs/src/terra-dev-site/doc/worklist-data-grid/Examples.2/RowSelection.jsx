@@ -28,7 +28,7 @@ const gridDataJSON = {
       id: '2',
       cells: [
         { content: 'Wayne, Bruce' },
-        { content: '1007-MTN-DR' },
+        { content: '1107-MTN-DR' },
         { content: 'Stable' },
         { content: 'Outpatient, 2 days' },
         { content: 'Phytochemicals' },
@@ -40,10 +40,10 @@ const gridDataJSON = {
     {
       id: '3',
       cells: [
-        { content: 'Doe, John' },
+        { content: 'Carr, Alicia' },
         { content: '1007-MTN' },
         { content: 'Unstable' },
-        { content: 'Inpatient, 2 months' },
+        { content: 'Inpatient, 3 months' },
         { content: '' },
         { content: 'Quinzell, Harleen' },
         { content: '' },
@@ -53,10 +53,10 @@ const gridDataJSON = {
     {
       id: '4',
       cells: [
-        { content: 'Doe, Mary' },
-        { content: '1007-MTN', isMasked: true },
-        { content: 'Unstable' },
-        { content: 'Inpatient, 2 months' },
+        { content: 'McMurphy, Donald' },
+        { content: '1024-MTN', isMasked: true },
+        { content: 'Stable' },
+        { content: 'Inpatient, 5 months' },
         { content: '' },
         { content: 'Quinzell, Harleen' },
         { content: '' },
@@ -65,10 +65,10 @@ const gridDataJSON = {
     {
       id: '5',
       cells: [
-        { content: 'Doe, Arthur' },
-        { content: '1007-MTN' },
+        { content: 'Peters, Timothy' },
+        { content: '1207-MTN' },
         { content: 'Unstable', isMasked: true },
-        { content: 'Inpatient, 2 months' },
+        { content: 'Outpatient, 15 days' },
         { content: '' },
         { content: 'Quinzell, Harleen' },
         { content: '' },
@@ -77,7 +77,7 @@ const gridDataJSON = {
     {
       id: '6',
       cells: [
-        { content: 'Doe, Alex' },
+        { content: 'Jones, Becky' },
         { content: '1007-MTN' },
         { content: 'Unstable' },
         { content: 'Inpatient, 2 months' },
@@ -89,10 +89,10 @@ const gridDataJSON = {
     {
       id: '7',
       cells: [
-        { content: 'Doe, Test7' },
-        { content: '1007-MTN' },
+        { content: 'Williams, Peter' },
+        { content: '1002-KTN' },
         { content: 'Unstable' },
-        { content: 'Inpatient, 2 months' },
+        { content: 'Outpatient, 9 days' },
         { content: '' },
         { content: 'Quinzell, Harleen' },
         { content: '' },
@@ -101,10 +101,70 @@ const gridDataJSON = {
     {
       id: '8',
       cells: [
-        { content: 'Doe, Test8' },
-        { content: '1007-MTN' },
+        { content: 'Pratt, Michaela' },
+        { content: '2108-NTN' },
+        { content: 'Stable' },
+        { content: 'Outpatient, 45 days' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '9',
+      cells: [
+        { content: 'Styris, Scott' },
+        { content: '1007-MTN', isMasked: true },
         { content: 'Unstable' },
         { content: 'Inpatient, 2 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '10',
+      cells: [
+        { content: 'Cook, Allan' },
+        { content: '1700-SKB' },
+        { content: 'Stable' },
+        { content: 'Inpatient, 4 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '11',
+      cells: [
+        { content: 'Lahey, Nathaniel' },
+        { content: '1348-DRS' },
+        { content: 'Unstable' },
+        { content: 'Inpatient, 1 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '12',
+      cells: [
+        { content: 'Harris, Isabella' },
+        { content: '1809-MTN' },
+        { content: 'Stable' },
+        { content: 'Inpatient, 6 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '13',
+      cells: [
+        { content: 'Millstone, Asher' },
+        { content: '4133-MZN' },
+        { content: 'Unstable' },
+        { content: 'Inpatient, 9 months' },
         { content: '' },
         { content: 'Quinzell, Harleen' },
         { content: '' },
@@ -145,16 +205,6 @@ const RowSelection = () => {
     setSelectedRows([]);
   };
 
-  const enableSelectableRows = (rowIds) => {
-    const rowsToSelect = rows.filter(e => rowIds.indexOf(e.id) >= 0);
-    if (!rowSelectionModeRef.current.checked) {
-      rowSelectionModeRef.current.checked = true;
-    }
-    rowsToSelect.forEach((r, index) => { rowsToSelect[index].isSelected = true; });
-    setHasSelectableRows(true);
-    setSelectedRows(rowsToSelect.map(r => r.id));
-  };
-
   const disableSelectableRows = () => {
     rowSelectionModeRef.current.checked = false;
     setHasSelectableRows(false);
@@ -187,16 +237,20 @@ const RowSelection = () => {
         columnWidth="180px"
         ariaLabel="Worklist Data Grid"
         hasSelectableRows={hasSelectableRows}
-        onRowSelect={(rowId) => {
-          const newRows = [];
-          const selectedRow = rows.find(e => e.id === rowId);
-          selectedRow.isSelected = !selectedRow.isSelected;
+        onRowSelect={(toggledRows) => {
+          toggledRows.forEach((toggledRow) => {
+            const row = rows.find(e => e.id === toggledRow.rowId);
+            row.isSelected = toggledRow.isSelected;
+          });
+
+          const rowIdsToSelect = [];
           rows.forEach(element => {
             if (element.isSelected) {
-              newRows.push(element.id);
+              rowIdsToSelect.push(element.id);
             }
           });
-          setSelectedRows(determineSelectedRows(false, newRows));
+
+          setSelectedRows(determineSelectedRows(false, rowIdsToSelect));
         }}
         onRowSelectAll={() => {
           const newRows = [];
@@ -209,11 +263,8 @@ const RowSelection = () => {
         onDisableSelectableRows={() => {
           disableSelectableRows();
         }}
-        onEnableSelectableRows={(selectedRowIds, unSelectedRowIds) => {
-          if (unSelectedRowIds) {
-            rows.forEach((r, index) => { if (unSelectedRowIds.indexOf(r.id) >= 0) { rows[index].isSelected = false; } });
-          }
-          enableSelectableRows(selectedRowIds);
+        onEnableRowSelection={() => {
+          setHasSelectableRows(true);
         }}
       />
     </React.Fragment>
