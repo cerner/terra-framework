@@ -59,6 +59,10 @@ const propTypes = {
    * The label to set on the add icon element.
    */
   ariaLabelAddTab: PropTypes.string,
+  onClosingkey: PropTypes.func.isRequired,
+
+  onClosingTab:PropTypes.func,
+ 
 };
 
 const getTabId = (id, itemKey) => `${id || 'terra-common-tabs'}-${itemKey}`;
@@ -75,6 +79,8 @@ const CommonTabs = ({
   onChange,
   onSelectAddButton,
   ariaLabelAddTab,
+  onClosingkey,
+  onClosingTab,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -94,6 +100,8 @@ const CommonTabs = ({
     metaData: child.props.metaData,
     isDisabled: child.props.isDisabled,
     showIcon: child.props.showIcon,
+    onClose: onClosingkey,
+    isClosable: child.props.isClosable,
   }));
 
   const tabsClassNames = classNames(cy(
@@ -104,6 +112,11 @@ const CommonTabs = ({
   ),
   customProps.className);
 
+  const handleCommonTabsStateChange=(value)=>{
+    console.log("CommonTabs props",value)
+    onClosingTab(value)
+  }
+
   return (
     <div
       className={variant === 'framework' ? tabsClassNames : cx('workspace')}
@@ -113,7 +126,7 @@ const CommonTabs = ({
         <div className={cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
-        <Tabs variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab} />
+        <Tabs variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab}   onTabStateChange={handleCommonTabsStateChange}/>
       </div>
       <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {

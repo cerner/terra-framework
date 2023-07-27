@@ -54,11 +54,13 @@ const propTypes = {
    * Key of the pane that should be open initially.
    */
   defaultActiveKey: PropTypes.string,
+  isClosable: PropTypes.bool,
 };
 
 const defaultProps = {
   tabFill: false,
   fill: false,
+  
 };
 
 class Tabs extends React.Component {
@@ -67,6 +69,8 @@ class Tabs extends React.Component {
     this.getInitialState = this.getInitialState.bind(this);
     this.state = {
       activeKey: this.getInitialState(),
+      activeAfterClosed:'',
+      closedKeySelected:''
     };
   }
 
@@ -85,6 +89,7 @@ class Tabs extends React.Component {
       });
     }
   }
+  
 
   render() {
     const {
@@ -117,15 +122,37 @@ class Tabs extends React.Component {
           showIcon={child.props.showIcon}
           render={() => tabContent}
           isDisabled={child.props.isDisabled}
+          isClosable={this.props.isClosable !== undefined ? this.props.isClosable : false}
         />,
       );
     });
-
+    const handleTabsStateChange = (newValue) => {
+      if (newValue.length > 0) {
+        let activeAfterClosed = '';
+        for (let i = 0; i < newValue.length; i++) {
+          if (newValue[i].isSelected === true) {
+            activeAfterClosed = newValue[i].itemKey;
+            break;
+          }
+        }
+        this.setState({ activeAfterClosed: activeAfterClosed });
+      } else if (newValue.length === 0) {
+        this.setState({ activeAfterClosed: '' });
+      }
+    };
     return (
       <CommonTabs
         id={customProps.id}
         activeItemKey={this.state.activeKey}
         onRequestActivate={key => this.setState({ activeKey: key })}
+        onClosingkey={(key) => {
+          if (this.state.activeKey === key) {
+           setTimeout(() => {
+            this.setState({ activeKey: this.state.activeAfterClosed });
+          }, 100);
+          }
+        }}
+        onClosingTab={handleTabsStateChange}
         onChange={onChange}
         variant="framework"
         {...customProps}

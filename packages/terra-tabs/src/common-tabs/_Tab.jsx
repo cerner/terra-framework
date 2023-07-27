@@ -89,6 +89,8 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+
+  isClosable: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -115,6 +117,8 @@ const Tab = ({
   variant,
   isDisabled,
   onChange,
+  isClosable,
+  onClosingTab,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -158,7 +162,11 @@ const Tab = ({
       }
     }
   }
-
+  function onCloseClick(event) {
+    event.stopPropagation();
+   // setIsClosed(true);
+    onClosingTab(itemKey, metaData)
+  }
   attributes.tabIndex = isSelected ? 0 : -1;
   attributes.onClick = onClick;
   attributes.onKeyDown = onKeyDown;
@@ -182,7 +190,30 @@ const Tab = ({
       <div className={variant === 'framework' ? cy('inner') : cx('inner')}>
         {customDisplay}
         {customDisplay ? null : icon}
-        {customDisplay || isIconOnly ? null : <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
+        {customDisplay || isIconOnly ? (
+          isClosable && (
+            <div
+              className={cx('pill-remove-button')}
+              role="button"
+              tabIndex="0"
+              aria-label="Close Tab"
+              onClick={onCloseClick}
+            ></div>
+          )
+        ) : (
+          <span className={variant === 'framework' ? cy('label') : cx('label')}>
+            {label}
+            {isClosable && (
+              <div
+                className={cx('pill-remove-button')}
+                role="button"
+                tabIndex="0"
+                aria-label="Close Tab"
+                onClick={onCloseClick}
+              ></div>
+            )}
+          </span>
+        )}
       </div>
     </div>
   );

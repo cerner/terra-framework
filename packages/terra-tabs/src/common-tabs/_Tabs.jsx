@@ -68,6 +68,10 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onSelectAddButton: PropTypes.func,
+  onClosingTab: PropTypes.func,
+  isClosable: PropTypes.bool.isRequired,
+  onClose:PropTypes.func,
+  onTabStateChange: PropTypes.func
 };
 
 let addTabId;
@@ -79,6 +83,9 @@ class Tabs extends React.Component {
     this.dropdownRef = React.createRef();
     this.moreButtonRef = React.createRef();
     this.addButtonRef = React.createRef();
+    this.state = {
+      tabData: this.props.tabData,
+    };
 
     this.setIsOpen = this.setIsOpen.bind(this);
     this.resetCache = this.resetCache.bind(this);
@@ -90,6 +97,7 @@ class Tabs extends React.Component {
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
     this.wrapOnSelect = this.wrapOnSelect.bind(this);
     this.wrapOnSelectHidden = this.wrapOnSelectHidden.bind(this);
+    this.wrapOnClose = this.wrapOnClose.bind(this);
     this.resetCache();
   }
 
@@ -139,7 +147,7 @@ class Tabs extends React.Component {
     const availableWidth = width - moreButtonWidth - addtab;
 
     // Calculate hidden index
-    const tabCount = this.props.tabData.length;
+    const tabCount = this.state.tabData.length;
     let newHideIndex = tabCount;
     let calcMinWidth = 0;
     let showMoreButton = false;
@@ -241,27 +249,79 @@ class Tabs extends React.Component {
 
   wrapOnSelect(onSelect) {
     return (itemKey, metaData) => {
-      this.setIsOpen(false);
-      onSelect(itemKey, metaData);
+
+      const updatedTabData = this.state.tabData.map((tab) => ({
+        ...tab,
+        isSelected: tab.itemKey === itemKey,
+      }));
+      this.setState({ tabData: updatedTabData }, () => {
+        this.setIsOpen(false);
+        onSelect(itemKey, metaData);
+      });
     };
   }
 
   wrapOnSelectHidden(onSelect) {
     return (itemKey, metaData) => {
       if (this.isOpen) {
-        onSelect(itemKey, metaData);
+        const updatedTabData = this.state.tabData.map((tab) => ({
+          ...tab,
+          isSelected: tab.id === itemKey,
+        }));
+        this.setState({ tabData: updatedTabData }, () => {
+          onSelect(itemKey, metaData);
+          this.setIsOpen(!this.isOpen);
+        });
       }
-      this.setIsOpen(!this.isOpen);
     };
   }
 
+  wrapOnClose(onClose) {
+    return (itemKey, metaData) => {
+      console.log("CHECKING THIS ",itemKey)
+      this.setIsOpen(false);
+      let removedTabIndex = -1;
+      const updatedTabData = this.state.tabData
+        .map((tab, index) => {
+          if (tab.itemKey === itemKey && tab.isSelected === true) {
+            removedTabIndex = index;
+          }
+          return { ...tab, originalIndex: index };
+        })
+        .filter((tab) => tab.itemKey !== itemKey)
+        .map((tab, index) => {
+          if (tab.isSelected === true) {
+          }
+          return {
+            ...tab,
+          };
+        });
+  
+      if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex!=0 && updatedTabData[removedTabIndex-1].itemKey!="DisabledTab") {
+       console.log("CHECKING THIS1")
+        updatedTabData[removedTabIndex-1].isSelected = true;
+      } 
+      else if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex!=0 && updatedTabData[removedTabIndex-1].itemKey==="DisabledTab") {
+       console.log("CHECKING THIS 2")
+       if(updatedTabData[removedTabIndex-2].isSelected!= undefined){
+        updatedTabData[removedTabIndex-2].isSelected = true;
+       }
+      }
+      else if (removedTabIndex >= 0 && removedTabIndex < updatedTabData.length) {
+        updatedTabData[removedTabIndex].isSelected = true;
+      }
+     this.props.onTabStateChange(updatedTabData);
+      this.setState({ tabData: updatedTabData });
+      onClose(itemKey, metaData);
+    };
+  }
   render() {
     addTabId = uuid();
     const {
-      tabData, ariaLabel, variant, onChange, onSelectAddButton, ariaLabelAddTab,
+     ariaLabel, variant, onChange, onSelectAddButton, ariaLabelAddTab,
     } = this.props;
     const theme = this.context;
-    const enabledTabs = tabData.filter(tab => !tab.isDisabled);
+    const enabledTabs = this.state.tabData.filter(tab => !tab.isDisabled);
     const ids = enabledTabs.map(tab => tab.id);
     const hiddenIds = [];
     const visibleTabs = [];
@@ -271,7 +331,7 @@ class Tabs extends React.Component {
     let isHiddenSelected = false;
 
     let enabledTabsIndex = -1;
-    tabData.forEach((tab, index) => {
+    this.state.tabData.forEach((tab, index) => {
       if (!tab.isDisabled) {
         enabledTabsIndex += 1;
       }
@@ -285,13 +345,14 @@ class Tabs extends React.Component {
             icon={tab.icon}
             customDisplay={tab.customDisplay}
             onSelect={this.wrapOnSelect(tab.onSelect)}
-            zIndex={tab.isSelected ? tabData.length : tabData.length - index}
+            zIndex={tab.isSelected ? this.state.tabData.length : this.state.tabData.length - index}
             isIconOnly={tab.isIconOnly}
             variant={variant}
             onChange={onChange}
             setDropdownOpen={this.handleHiddenFocus}
             hiddenStartIndex={this.hiddenStartIndex}
             showIcon={tab.showIcon}
+            onClosingTab={this.wrapOnClose(tab.onClose)}
           />,
         );
       } else {
@@ -307,6 +368,7 @@ class Tabs extends React.Component {
             onChange={onChange}
             icon={tab.icon}
             showIcon={tab.showIcon}
+            onClosingTab={this.wrapOnClose(tab.onClose)}
           />,
         );
         hiddenIds.push(tab.id);
@@ -314,14 +376,14 @@ class Tabs extends React.Component {
         if (tab.isSelected) {
           isHiddenSelected = true;
         }
-        if (index === tabData.length - 1 && onSelectAddButton) {
+        if (index === this.state.tabData.length - 1 && onSelectAddButton) {
           hiddenTabs.push(
             <HiddenTab
               id={addTabId}
               data-focus-styles-enabled
               itemKey={addTabId}
               label={ariaLabelAddTab}
-              index={tabData.length}
+              index={this.state.tabData.length}
               showIcon
               icon={<IconAdd a11yLabel={ariaLabelAddTab} />}
               tabIds={moreIds}
@@ -367,7 +429,7 @@ class Tabs extends React.Component {
               isOpen={this.isOpen}
               hiddenIndex={this.hiddenStartIndex}
               isActive={isHiddenSelected}
-              zIndex={tabData.length - this.hiddenStartIndex}
+              zIndex={this.state.tabData.length - this.hiddenStartIndex}
               onBlur={this.handleMoreButtonBlur}
               onSelect={this.handleMoreButtonSelect}
               refCallback={node => { this.moreButtonRef.current = node; }}

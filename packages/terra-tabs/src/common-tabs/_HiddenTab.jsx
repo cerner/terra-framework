@@ -79,6 +79,8 @@ const propTypes = {
    * If enabled, this prop will show the add icon in the tab dropdown.
    */
   showAddButton: PropTypes.bool,
+
+  onClosingTab:PropTypes.func,
 };
 
 const defaultProps = {
@@ -103,6 +105,7 @@ const HiddenTab = ({
   icon,
   showIcon,
   showAddButton,
+  onClosingTab,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -129,7 +132,11 @@ const HiddenTab = ({
       handleArrows(event, index, tabIds);
     }
   };
-
+  function onCloseClick(event) {
+    event.stopPropagation();
+   // setIsClosed(true);
+    onClosingTab(itemKey, metaData)
+  }
   attributes.tabIndex = isSelected ? 0 : -1;
   attributes.onClick = e => { e.preventDefault(); e.stopPropagation(); handleOnSelect(e); };
   attributes.onKeyDown = onKeyDown;
@@ -150,6 +157,14 @@ const HiddenTab = ({
       <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>
       {showIcon && icon}
       <div className={cx('label', { 'with-icon': showIcon })}>{label}</div>
+      {isClosable && (
+               <a
+               class={cx('pill-remove-button')}
+               type="button"
+               aria-label="Close Tab"
+               onClick={onCloseClick}
+             >x</a>
+            )}
     </div>
   );
 };
