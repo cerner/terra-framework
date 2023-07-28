@@ -127,6 +127,14 @@
     }
   }
 
+
+  .button:focus {
+    &[data-terra-tabs-show-focus-styles='true'] {
+      outline: var(--terra-tabs-addButton-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-tabs-addButton-focus-outline-offset, -5px);
+    }
+  }
+
   .tab-menu {
     display: flex;
     flex: 0 0 auto;

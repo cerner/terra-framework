@@ -79,12 +79,17 @@ const propTypes = {
    * Indicates if the pane should be disabled.
    */
   isDisabled: PropTypes.bool,
+  /**
+   * If enabled, this prop will show the add icon in the tab dropdown.
+   */
+  showAddButton: PropTypes.bool,
 };
 
 const defaultProps = {
   isSelected: false,
   showIcon: false,
   isDisabled: false,
+  showAddButton: false,
 };
 
 const HiddenTab = ({
@@ -103,6 +108,7 @@ const HiddenTab = ({
   icon,
   showIcon,
   isDisabled,
+  showAddButton,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -153,7 +159,7 @@ const HiddenTab = ({
       {...attributes}
       id={id}
       aria-controls={associatedPanelId}
-      role="tab"
+      role={showAddButton ? 'button' : 'tab'}
       className={hiddenClassNames}
       aria-disabled={isDisabled}
     >

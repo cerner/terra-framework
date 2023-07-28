@@ -58,6 +58,15 @@ const propTypes = {
      * Callback function triggered when tab is drag and dropped .
      */
   onTabOrderChange: PropTypes.func,
+  /**
+   * Callback function when add button selection has changed.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onSelectAddButton: PropTypes.func,
+  /**
+   * The label to set on the add icon element.
+   */
+  ariaLabelAddTab: PropTypes.string,
 };
 
 const getTabId = (id, itemKey) => `${id || 'terra-common-tabs'}-${itemKey}`;
@@ -74,6 +83,8 @@ const CommonTabs = ({
   onChange,
   isDraggable,
   onTabOrderChange,
+  onSelectAddButton,
+  ariaLabelAddTab,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -112,7 +123,7 @@ const CommonTabs = ({
         <div className={cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
-        <Tabs isDraggable={isDraggable} onTabOrderChange={onTabOrderChange} variant={variant} tabData={tabData} onChange={onChange} />
+        <Tabs isDraggable={isDraggable} onTabOrderChange={onTabOrderChange} variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab} />
       </div>
       <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {

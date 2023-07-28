@@ -62,6 +62,24 @@ describe('Tabs', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render with add icon', () => {
+    const defaultRender = mountWithIntl(
+      <Tabs id="application-id" onSelectAddButton={() => alert('hi')} ariaLabelAddTab="Add Tab">
+        <Tabs.Pane label="Default" key="default" className="customClass" />
+      </Tabs>,
+    );
+    expect(defaultRender).toMatchSnapshot();
+  });
+
+  it('should not render add icon if onSelectAddButton is passed as null', () => {
+    const defaultRender = mountWithIntl(
+      <Tabs id="application-id">
+        <Tabs.Pane label="Default" key="default" className="customClass" />
+      </Tabs>,
+    );
+    expect(defaultRender).toMatchSnapshot();
+  });
+
   it('correctly applies the theme context className', () => {
     const tabs = mountWithIntl(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
