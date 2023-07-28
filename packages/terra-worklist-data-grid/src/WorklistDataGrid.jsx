@@ -318,8 +318,10 @@ function WorklistDataGrid(props) {
     const cellDataCoordinates = mapGridCellToDataCell(cellGridCoordinates);
     const cell = rows[cellDataCoordinates.row].cells[cellDataCoordinates.col];
     if ((cell.isSelectable === false) || cell.isMasked) {
+      setFocusedRowCol(cellGridCoordinates.row, cellGridCoordinates.col, true);
       return;
     }
+
     // Make note of cell that is currently selected.
     handleCellSelectionChange(cellRowIdColId.rowId, cellRowIdColId.columnId, cellGridCoordinates);
     if (onCellSelect) {

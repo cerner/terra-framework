@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Added
+  * Added ability to dive into cells with focusable elements.
 
 ## 0.3.0 - (July 19, 2023)
 

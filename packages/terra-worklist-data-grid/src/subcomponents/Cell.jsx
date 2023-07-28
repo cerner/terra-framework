@@ -1,11 +1,14 @@
-/* eslint-disable react/forbid-dom-props */
-import React, { useContext } from 'react';
+import React, {
+  useContext, useCallback, useState, useRef, useEffect,
+} from 'react';
 import PropTypes from 'prop-types';
 import * as KeyCode from 'keycode-js';
 import '../_elementPolyfill';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import FocusTrap from 'focus-trap-react';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
 
@@ -110,45 +113,103 @@ function Cell(props) {
     intl,
   } = props;
 
+  const cellRef = useRef();
+  const [isFocusTrapEnabled, setFocusTrapEnabled] = useState(false);
+  const [ariaLiveText, setAriaLiveText] = useState(null);
   const theme = useContext(ThemeContext);
 
-  const handleMouseDown = (event) => {
-    if (isMasked || !isSelectable) {
-      event.stopPropagation();
-      event.preventDefault();
-    } else if (onCellSelect) {
-      onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
-      event.stopPropagation();
-    }
+  /**
+   * Determine if cell has focusable elements
+   */
+  const hasFocusableElements = () => {
+    const focusableElements = [...cellRef.current.querySelectorAll(
+      'a[href], button, input, textarea, select, details,[tabindex]:not([tabindex="-1"])',
+    )].filter(el => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden'));
+
+    return focusableElements.length > 0;
   };
 
+  useEffect(() => {
+    if (hasFocusableElements()) {
+      setAriaLiveText(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-interactable' }));
+    }
+  }, [intl]);
+
+  /**
+   * Handles click event for cell
+   */
+  const onClick = useCallback(() => {
+    if (!isFocusTrapEnabled) {
+      onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
+    }
+  }, [isFocusTrapEnabled, onCellSelect, rowId, columnId, rowIndex, columnIndex]);
+
+  /**
+   * Hnadles the onDeactivate callback for FocusTrap component
+   */
+  const deactiveFocusTrap = () => {
+    setFocusTrapEnabled(false);
+    setAriaLiveText(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-interactable' }));
+  };
+
+  /**
+   * Keyboard event handler
+   */
   const handleKeyDown = (event) => {
     const key = event.keyCode;
-    switch (key) {
-      case KeyCode.KEY_SPACE:
-        if (isMasked || !isSelectable) {
-          event.stopPropagation();
-          event.preventDefault();
-        } else if (onCellSelect) {
-          onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
-          event.stopPropagation();
+
+    if (isFocusTrapEnabled) {
+      switch (key) {
+        case KeyCode.KEY_ESCAPE:
+          deactiveFocusTrap();
+          break;
+        default:
+      }
+
+      event.stopPropagation();
+    } else {
+      switch (key) {
+        case KeyCode.KEY_RETURN:
+          // Lock focus into component
+          if (hasFocusableElements()) {
+            setFocusTrapEnabled(true);
+            setAriaLiveText(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-focus-trapped' }));
+            event.stopPropagation();
+            event.preventDefault();
+          }
+          break;
+        case KeyCode.KEY_SPACE:
+          if (!isMasked && isSelectable && onCellSelect) {
+            onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
+          }
           event.preventDefault(); // prevent the default scrolling
-        }
-        break;
-      case KeyCode.KEY_C:
-        if (event.ctrlKey || event.metaKey) {
-          WorklistDataGridUtils.writeToClipboard(event.target.textContent);
-        }
-        break;
-      default:
+          break;
+        case KeyCode.KEY_C:
+          if (event.ctrlKey || event.metaKey) {
+            WorklistDataGridUtils.writeToClipboard(event.target.textContent);
+          }
+          break;
+        default:
+      }
     }
   };
 
-  let cellAriaLabel = ariaLabel;
+  // Create cell content for masked and blank cells
+  let cellContent;
   if (isMasked) {
-    cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' });
+    cellContent = (
+      <span className={cx('no-data-cell', theme.className)}>
+        {intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' })}
+      </span>
+    );
   } else if (!children) {
-    cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' });
+    cellContent = (
+      <span className={cx('no-data-cell', theme.className)}>
+        {intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' })}
+      </span>
+    );
+  } else {
+    cellContent = children;
   }
 
   const className = cx('worklist-data-grid-cell', {
@@ -162,14 +223,26 @@ function Cell(props) {
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <CellTag
+      ref={cellRef}
       aria-selected={isSelected}
-      aria-label={cellAriaLabel}
+      aria-label={ariaLabel}
       tabIndex={isTabStop ? 0 : -1}
       className={className}
-      onMouseDown={handleMouseDown}
+      {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
+      onClick={onCellSelect ? onClick : undefined}
       onKeyDown={handleKeyDown}
     >
-      {!isMasked && children && <div className={cx('cell-content', theme.className)} style={{ height }}>{children}</div>}
+      {/* Wrap cell content with focus trap */}
+      <FocusTrap
+        active={isFocusTrapEnabled}
+        focusTrapOptions={{
+          returnFocusOnDeactivate: true, clickOutsideDeactivates: true, escapeDeactivates: false, onDeactivate: deactiveFocusTrap,
+        }}
+      >
+        {/* eslint-disable-next-line react/forbid-dom-props */}
+        <div className={cx('cell-content', theme.className)} style={{ height }}>{cellContent}</div>
+      </FocusTrap>
+      <VisuallyHiddenText aria-live="polite" text={ariaLiveText} />
     </CellTag>
   );
 }

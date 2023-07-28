@@ -30,6 +30,12 @@
   .cell-content {
     overflow: hidden;
     overflow-wrap: break-word;
+
+    // Blank and masked cell styles
+    .no-data-cell {
+      // Text is transparent so that it is only visible to screen readers
+      color: transparent;
+    }
   }
 
 

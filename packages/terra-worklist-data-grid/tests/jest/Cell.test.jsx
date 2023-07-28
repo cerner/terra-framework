@@ -99,7 +99,7 @@ describe('Cell', () => {
     expect(blankCell).toHaveLength(1);
 
     const cellContent = blankCell.find('div');
-    expect(cellContent).toHaveLength(0);
+    expect(cellContent.text()).toBe('Terra.worklistDataGrid.blank');
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -152,10 +152,9 @@ describe('Cell', () => {
     const maskedCell = wrapper.find('td.masked');
     expect(maskedCell).toHaveLength(1);
 
-    expect(wrapper.find('td').prop('aria-label')).toBe('Terra.worklistDataGrid.maskedCell');
-
     const cellContent = maskedCell.find('div');
-    expect(cellContent).toHaveLength(0); // Masked cell should have no content.
+    expect(cellContent.text()).toBe('Terra.worklistDataGrid.maskedCell');
+    expect(cellContent).toHaveLength(1);
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -181,10 +180,8 @@ describe('Cell', () => {
     const maskedCell = wrapper.find('td.masked');
     expect(maskedCell).toHaveLength(1);
 
-    expect(maskedCell.prop('aria-label')).toBe('Terra.worklistDataGrid.maskedCell');
-
     const cellContent = maskedCell.find('div');
-    expect(cellContent).toHaveLength(0); // Masked cell should have no content.
+    expect(cellContent.text()).toBe('Terra.worklistDataGrid.maskedCell');
 
     // Verify other styles not applied.
     expect(wrapper.find('td.selected')).toHaveLength(0); // Cell should not be styled selected since it is masked.
