@@ -113,7 +113,7 @@ const RowSelection = () => {
         overflowColumns={cols.slice(3)}
         rows={[...rows]}
         rowHeaderIndex={rowHeaderIndex}
-        defaultColumnWidth="180px"
+        defaultColumnWidth={180}
         ariaLabel="Worklist Data Grid with Pinned Columns and Row Selection"
         hasSelectableRows={hasSelectableRows}
         onRowSelect={(rowId) => {
