@@ -273,6 +273,9 @@ const RowSelection = () => {
           disableSelectableRows();
         }}
         onEnableRowSelection={() => {
+          if (!rowSelectionModeRef.current.checked) {
+            rowSelectionModeRef.current.checked = true;
+          }
           setHasSelectableRows(true);
         }}
       />

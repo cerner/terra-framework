@@ -179,9 +179,7 @@ function WorklistDataGrid(props) {
   const grid = useRef();
   const focusedRow = useRef(0);
   const focusedCol = useRef(0);
-  const multiRowSelection = useRef(null);
-  const multiRowSelectionWithLastSelected = useRef(null);
-  const isRowSelectionEnabledByGrid = useRef(false);
+  const rowSelection = useRef({ isRowSelectionEnabledByGrid: false });
 
   const [currentSelectedCell, setCurrentSelectedCell] = useState(null);
   const [ariaLiveMsg, setAriaLiveMsg] = useState();
@@ -247,15 +245,15 @@ function WorklistDataGrid(props) {
     }
 
     if (!hasSelectableRows) {
-      multiRowSelection.current = null;
-      multiRowSelectionWithLastSelected.current = null;
+      rowSelection.current.focussedRow = null;
+      rowSelection.current.lastIndividuallySelectedRow = null;
     }
 
     // Since the row selection mode has changed, the row selection mode needs to be updated.
-    if (!isRowSelectionEnabledByGrid.current) {
+    if (!rowSelection.current.isRowSelectionEnabledByGrid) {
       setAriaLiveMsg(intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' }));
     }
-    isRowSelectionEnabledByGrid.current = false;
+    rowSelection.current.isRowSelectionEnabledByGrid = false;
 
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -273,7 +271,7 @@ function WorklistDataGrid(props) {
 
   const handleClearRowSelection = () => {
     let message = '';
-    multiRowSelectionWithLastSelected.current = null;
+    rowSelection.current.lastIndividuallySelectedRow = null;
     if (isAnyRowSelected()) {
       message = intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-unselected' });
       // Esc (while in row selection mode and rows are selected): Clear selection
@@ -281,7 +279,7 @@ function WorklistDataGrid(props) {
         onClearSelectedRows();
       }
     } else if (onDisableSelectableRows) {
-      multiRowSelection.current = null;
+      rowSelection.current.focussedRow = null;
       message = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-mode-disabled' });
       onDisableSelectableRows();
     }
@@ -332,11 +330,11 @@ function WorklistDataGrid(props) {
     let isSelectAction = true;
     let msgId = 'Terra.worklist-data-grid.all-rows-selected';
     // Reset last selected row when all rows are selected.
-    multiRowSelectionWithLastSelected.current = null;
+    rowSelection.current.lastIndividuallySelectedRow = null;
     if (!selectAllRows) {
       isSelectAction = !rows[rowIndex - 1].isSelected; // Determine if this is select or unselected.
       // Remember the last selected row
-      multiRowSelectionWithLastSelected.current = { anchorRow: rowIndex };
+      rowSelection.current.lastIndividuallySelectedRow = { anchorRow: rowIndex };
       if (isSelectAction) {
         msgId = 'Terra.worklist-data-grid.row-selection-template';
       } else {
@@ -407,7 +405,7 @@ function WorklistDataGrid(props) {
 
   const handleRowSelection = (selectionDetails) => {
     handleCellSelectionChange(null, null, { row: selectionDetails.rowIndex, col: selectionDetails.columnIndex });
-    const selectionData = selectionDetails.selectedByKeyboard ? multiRowSelectionWithLastSelected?.current : multiRowSelection?.current;
+    const selectionData = selectionDetails.selectedByKeyboard ? rowSelection.current.lastIndividuallySelectedRow : rowSelection?.current?.focussedRow;
 
     // TODO: Clean up the if condition.
     if (!selectionDetails.multiSelect) {
@@ -427,10 +425,10 @@ function WorklistDataGrid(props) {
       }
     } else if (selectionDetails.selectedByKeyboard) {
       // Shift + Space
-      isRowSelectionEnabledByGrid.current = !hasSelectableRows;
-      multiRowSelectionWithLastSelected.current = { anchorRow: selectionDetails.rowIndex };
-      handleEnableSelectableRows(selectionDetails.rowIndex, multiRowSelectionWithLastSelected.current);
-      multiRowSelectionWithLastSelected.current.previousSelectionEndRow = selectionDetails.rowIndex;
+      rowSelection.current.isRowSelectionEnabledByGrid = !hasSelectableRows;
+      rowSelection.current.lastIndividuallySelectedRow = { anchorRow: selectionDetails.rowIndex };
+      handleEnableSelectableRows(selectionDetails.rowIndex, rowSelection.current.lastIndividuallySelectedRow);
+      rowSelection.current.lastIndividuallySelectedRow.previousSelectionEndRow = selectionDetails.rowIndex;
     } else {
       // Shift + Click
       handleEnableSelectableRows(selectionDetails.rowIndex, selectionData);
@@ -442,7 +440,7 @@ function WorklistDataGrid(props) {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_SHIFT:
-        multiRowSelection.current = null;
+        rowSelection.current.focussedRow = null;
         break;
       default:
         break;
@@ -469,8 +467,8 @@ function WorklistDataGrid(props) {
         nextRow += 1;
         break;
       case KeyCode.KEY_SHIFT:
-        if (cellCoordinates.row !== 0 && !multiRowSelection?.current?.anchorRow) {
-          multiRowSelection.current = { anchorRow: cellCoordinates.row, previousSelectionEndRow: cellCoordinates.row };
+        if (cellCoordinates.row !== 0 && !rowSelection?.current?.focussedRow?.anchorRow) {
+          rowSelection.current.focussedRow = { anchorRow: cellCoordinates.row, previousSelectionEndRow: cellCoordinates.row };
         }
         break;
       case KeyCode.KEY_LEFT:
@@ -543,9 +541,9 @@ function WorklistDataGrid(props) {
       } else if (nextRow <= 0) {
         nextRow = 1; // Only non-header rows can be selected.
       }
-      isRowSelectionEnabledByGrid.current = !hasSelectableRows;
-      handleEnableSelectableRows(nextRow, multiRowSelection.current);
-      multiRowSelection.current.previousSelectionEndRow = nextRow;
+      rowSelection.current.isRowSelectionEnabledByGrid = !hasSelectableRows;
+      handleEnableSelectableRows(nextRow, rowSelection.current.focussedRow);
+      rowSelection.current.focussedRow.previousSelectionEndRow = nextRow;
     }
     // Handle the normal case
     if (nextRow > rows.length || nextCol >= displayedColumns.length) {
