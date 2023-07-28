@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import { Draggable } from 'react-beautiful-dnd';
+import IconKnurling from 'terra-icon/lib/icon/IconKnurling';
 import {
   enableFocusStyles,
   disableFocusStyles,
@@ -190,8 +191,10 @@ const Tab = ({
             className={variant === 'framework' ? paneClassNames : tabClassNames}
             title={label}
             data-terra-tabs-show-focus-styles
+            data-terra-tab-draggable
           >
-            <div className={cx('inner')}>
+            <div>
+              <IconKnurling className={cx('icon-knurling')} />
               {customDisplay}
               {customDisplay ? null : icon}
               {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}

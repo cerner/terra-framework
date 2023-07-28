@@ -75,6 +75,11 @@
       padding: var(--terra-tabs-text-only-padding, 0.643rem 1.071rem);
     }
 
+    &[data-terra-tab-draggable='true'] {
+      padding: var(--terra-tabs-text-only-draggable-padding, 0.643rem 0.25rem);
+      text-align: start;
+    }
+
     .label:nth-child(2) {
       margin-left: var(--terra-tabs-label-next-to-icon-margin-left, 0.357rem);
     }
