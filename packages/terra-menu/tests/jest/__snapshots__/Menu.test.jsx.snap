@@ -252,6 +252,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                 role="menu"
                               >
                                 <li
+                                  aria-checked="false"
                                   aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
                                   aria-disabled="false"
                                   class="item orion-fusion-theme"
@@ -608,6 +609,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                     totalItems={1}
                                                   >
                                                     <li
+                                                      aria-checked={false}
                                                       aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
                                                       aria-disabled={false}
                                                       className="item orion-fusion-theme"
