@@ -296,7 +296,6 @@ class Tabs extends React.Component {
 
   wrapOnClose(onClose) {
     return (itemKey, metaData) => {
-      console.log("CHECKING THIS ",itemKey)
       this.setIsOpen(false);
       let removedTabIndex = -1;
       const updatedTabData = this.state.tabData
@@ -315,16 +314,18 @@ class Tabs extends React.Component {
           };
         });
   
-      if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex!=0 && updatedTabData[removedTabIndex-1].itemKey!="DisabledTab") {
-        updatedTabData[removedTabIndex-1].isSelected = true;
-      } 
-      else if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex!=0 && updatedTabData[removedTabIndex-1].itemKey==="DisabledTab") {
-       if(updatedTabData[removedTabIndex-2].isSelected!= undefined){
-        updatedTabData[removedTabIndex-2].isSelected = true;
-       }
-      }
-      else if (removedTabIndex >= 0 && removedTabIndex < updatedTabData.length) {
-        updatedTabData[removedTabIndex].isSelected = true;
+      if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex !== 0 && updatedTabData[removedTabIndex - 1].isDisabled != true) {
+        if (updatedTabData[removedTabIndex - 1].isSelected !== undefined) {
+          updatedTabData[removedTabIndex - 1].isSelected = true;
+        }
+      } else if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex !== 0 && updatedTabData[removedTabIndex - 1].isDisabled == true) {
+        if (updatedTabData[removedTabIndex - 2]?.isSelected !== undefined) {
+          updatedTabData[removedTabIndex - 2].isSelected = true;
+        }
+      } else if (removedTabIndex >= 0 && removedTabIndex < updatedTabData.length) {
+        if (updatedTabData[removedTabIndex]?.isSelected !== undefined) {
+          updatedTabData[removedTabIndex].isSelected = true;
+        }
       }
      this.props.onTabStateChange(updatedTabData);
       this.setState({ tabData: updatedTabData });
