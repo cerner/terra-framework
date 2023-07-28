@@ -35,9 +35,9 @@
 
   .pinned {
     background-color: inherit;
-    border:  var(--terra-worklist-data-grid-pinned-columns-cell-border-color, 1px solid #dedfe0);
+    border: var(--terra-worklist-data-grid-pinned-columns-cell-border, 1px solid #dedfe0);
     border-width: 1px 0;
-    box-shadow:  var(--terra-worklist-data-grid-pinned-columns-cell-box-shadow, inset 1px 0 #dedfe0);
+    box-shadow: var(--terra-worklist-data-grid-pinned-columns-cell-box-shadow, inset 1px 0 #dedfe0);
     position: sticky;
     z-index: 1;
   }

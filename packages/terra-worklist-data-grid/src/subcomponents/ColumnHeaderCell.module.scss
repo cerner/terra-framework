@@ -47,9 +47,9 @@
   }
 
   .pinned {
-    border: var(--terra-worklist-data-grid-pinned-columns-header-border-color, 1px solid #000);
+    border: var(--terra-worklist-data-grid-pinned-columns-header-border, 1px solid #000);
     border-width: 1px 0;
-    box-shadow:inset var(--terra-worklist-data-grid-pinned-columns-header-box-shadow, 1px 0 #000);
+    box-shadow: inset var(--terra-worklist-data-grid-pinned-columns-header-box-shadow, 1px 0 #000);
     position: sticky;
     z-index: 2;
   }
