@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added keyboard navigation instructions for `terra-menu`.
+
 * Changed
   * Updated example for `terra-menu`.
   * Updated tests for `terra-worklist-data-grid` to account for row height and column width being honored.

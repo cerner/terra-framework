@@ -299,8 +299,9 @@ class MenuItem extends React.Component {
       <>
         { MenuUtils.isMac() && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.index' }, { index: index + 1, totalItems })} /> }
         { MenuUtils.isMac() && (isGroupItem || toggleable) && <VisuallyHiddenText text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
+        { !MenuUtils.isMac() && (isGroupItem || toggleable) && <VisuallyHiddenText aria-live={markAsToggled ? 'polite' : ''} text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
         {/* Adds context to Use the up and down arrows to navigate the options */}
-        { this.itemNode && this.itemNode.parentNode.getAttribute('data-submenu') === 'true' && index === 0 && MenuUtils.isMac()
+        { this.itemNode && this.itemNode.parentNode.getAttribute('data-submenu') === 'true' && index === 0 && totalItems !== 1 && !MenuUtils.isMac()
           && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.navigateMenuItem' })} /> }
         {/* Adds context for item with submenu-items */}
         { subMenuItems.length > 0 && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.itemWithSubmenu' })} /> }
@@ -362,8 +363,8 @@ class MenuItem extends React.Component {
             {...attributes}
             className={classNames(itemClassNames, cx(theme.className))}
             ref={this.setItemNode}
-            role={role}
-            aria-checked={markAsToggled}
+            role={MenuUtils.isMac() ? role : 'menuitem'}
+            aria-checked={MenuUtils.isMac() && markAsToggled}
             tabIndex="0"
             aria-disabled={isDisabled}
           >

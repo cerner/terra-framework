@@ -2,9 +2,9 @@
   "Terra.menu.back": "Back",
   "Terra.menu.close": "Close",
   "Terra.menu.exitSubmenu": ". To exit submenu press Left Arrow or navigate to Back button",
-  "Terra.menu.navigateMenuItem": ". Use the up and down arrows to navigate the options",
   "Terra.menu.selected": ",selected",
   "Terra.menu.unselected": ",unselected",
   "Terra.menu.itemWithSubmenu": ",with submenu items",
-  "Terra.menu.index": "({index} of {totalItems})"
+  "Terra.menu.index": "({index} of {totalItems})",
+  "Terra.menu.navigateMenuItem": ". To move through items press up and down arrow"
 }
