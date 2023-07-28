@@ -68,10 +68,28 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onSelectAddButton: PropTypes.func,
+  /**
+   * Callback function when a tab is closing.
+   * It receives two parameters: 1. Item key of the tab to close. 2. MetaData associated with the tab.
+   */
   onClosingTab: PropTypes.func,
+
+  /**
+   * Indicates whether the tabs are closable, allowing the user to close tabs.
+   */
   isClosable: PropTypes.bool.isRequired,
-  onClose:PropTypes.func,
-  onTabStateChange: PropTypes.func
+
+  /**
+   * Callback function when a tab is closed.
+   * It receives two parameters: 1. Item key of the closed tab. 2. MetaData associated with the closed tab.
+   */
+  onClose: PropTypes.func,
+
+  /**
+   * Callback function to handle changes in the tab state.
+   * It receives the updated tab data after a tab is closed.
+   */
+  onTabStateChange: PropTypes.func,
 };
 
 let addTabId;
@@ -298,11 +316,9 @@ class Tabs extends React.Component {
         });
   
       if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex!=0 && updatedTabData[removedTabIndex-1].itemKey!="DisabledTab") {
-       console.log("CHECKING THIS1")
         updatedTabData[removedTabIndex-1].isSelected = true;
       } 
       else if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex!=0 && updatedTabData[removedTabIndex-1].itemKey==="DisabledTab") {
-       console.log("CHECKING THIS 2")
        if(updatedTabData[removedTabIndex-2].isSelected!= undefined){
         updatedTabData[removedTabIndex-2].isSelected = true;
        }

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+import { KEY_SPACE, KEY_RETURN, KEY_DELETE, KEY_BACK_SPACE } from 'keycode-js';
 import {
   enableFocusStyles,
   disableFocusStyles,
@@ -149,7 +149,13 @@ const Tab = ({
       event.stopPropagation();
       onSelect(itemKey, metaData);
       onChange(event, itemKey);
-    } else {
+    } 
+    if(event.nativeEvent.keyCode === KEY_DELETE || event.nativeEvent.keyCode === KEY_BACK_SPACE){
+      event.preventDefault();
+      event.stopPropagation();
+      onClosingTab(itemKey, metaData);
+    }
+    else {
       handleArrows(event, index, tabIds);
     }
   }
