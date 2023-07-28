@@ -172,7 +172,6 @@ function WorklistDataGrid(props) {
   const defaultColumnMaximumWidth = 300;
 
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
-  const [pinnedColumnsTotalWidth, setPinnedColumnsTotalWidth] = useState(0);
 
   // Initialize column width properties
   const initializeColumn = (column) => {
@@ -297,7 +296,6 @@ function WorklistDataGrid(props) {
         offsetArray.push(cumulativeOffset);
       });
 
-      setPinnedColumnsTotalWidth(cumulativeOffset + dataGridColumns[pinnedColumns.length - 1].width);
       setPinnedColumnOffsets(offsetArray);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -572,7 +570,6 @@ function WorklistDataGrid(props) {
           value={{
             pinnedColumnsLength: hasSelectableRows ? pinnedColumns.length + 1 : pinnedColumns.length,
             pinnedColumnOffsets,
-            pinnedColumnsTotalWidth,
           }}
         >
           <ColumnHeader
