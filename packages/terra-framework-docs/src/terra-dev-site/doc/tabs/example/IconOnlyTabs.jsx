@@ -70,7 +70,7 @@ class IconOnlyTabs extends React.Component {
     // eslint-disable-next-line no-nested-ternary
     return (
       <div className={cx('content-wrapper')}>
-        <Tabs activeKey={this.state.activeKey} onSelectAddButton={this.addMoreTabPanes} ariaLabelAddTab="Add Tab">
+        <Tabs isDraggable activeKey={this.state.activeKey} onSelectAddButton={this.addMoreTabPanes} ariaLabelAddTab="Add Tab">
           {this.state.tabKeys}
         </Tabs>
       </div>

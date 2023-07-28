@@ -418,49 +418,63 @@ class Tabs extends React.Component {
 
     if (isDraggable) {
       return (
-        <DragDropContext onDragEnd={this.handleDragEnd}>
-          <Droppable className={commonTabsClassNames} droppableId="tab-list" direction="horizontal">
-            {(provided) => (
-              <div
-                {...attrs}
-                {...provided.droppableProps}
-                ref={(el) => {
-                  provided.innerRef(el);
-                  this.containerRef.current = el; // Store the reference to the container element
-                }}
-                className={commonTabsClassNames}
-                role="tablist"
-                aria-label={ariaLabel}
-                aria-orientation="horizontal"
-                aria-owns={hiddenIds.join(' ')}
-              >
-                {visibleTabs}
-                {this.showMoreButton ? (
-                  <MoreButton
-                    isOpen={this.isOpen}
-                    hiddenIndex={this.hiddenStartIndex}
-                    isActive={isHiddenSelected}
-                    zIndex={tabData.length - this.hiddenStartIndex}
-                    onBlur={this.handleMoreButtonBlur}
-                    onSelect={this.handleMoreButtonSelect}
-                    refCallback={node => { this.moreButtonRef.current = node; }}
-                    tabIds={ids}
-                    variant={variant}
-                  />
-                ) : undefined}
-                <TabDropDown
-                  onFocus={this.handleHiddenFocus}
-                  onBlur={this.handleHiddenBlur}
-                  isOpen={this.isOpen}
-                  onRequestClose={this.handleOutsideClick}
-                  refCallback={node => { this.dropdownRef.current = node; }}
+        <div className={commonTabsContainerClassNames}>
+          <DragDropContext onDragEnd={this.handleDragEnd}>
+            <Droppable className={commonTabsClassNames} droppableId="tab-list" direction="horizontal">
+              {(provided) => (
+                <div
+                  {...attrs}
+                  {...provided.droppableProps}
+                  ref={(el) => {
+                    provided.innerRef(el);
+                    this.containerRef.current = el; // Store the reference to the container element
+                  }}
+                  className={commonTabsClassNames}
+                  role="tablist"
+                  aria-label={ariaLabel}
+                  aria-orientation="horizontal"
+                  aria-owns={hiddenIds.join(' ')}
                 >
-                  {hiddenTabs}
-                </TabDropDown>
-              </div>
+                  {visibleTabs}
+                  {this.showMoreButton ? (
+                    <MoreButton
+                      isOpen={this.isOpen}
+                      hiddenIndex={this.hiddenStartIndex}
+                      isActive={isHiddenSelected}
+                      zIndex={tabData.length - this.hiddenStartIndex}
+                      onBlur={this.handleMoreButtonBlur}
+                      onSelect={this.handleMoreButtonSelect}
+                      refCallback={node => { this.moreButtonRef.current = node; }}
+                      tabIds={ids}
+                      variant={variant}
+                    />
+                  ) : undefined}
+                  <TabDropDown
+                    onFocus={this.handleHiddenFocus}
+                    onBlur={this.handleHiddenBlur}
+                    isOpen={this.isOpen}
+                    onRequestClose={this.handleOutsideClick}
+                    refCallback={node => { this.dropdownRef.current = node; }}
+                  >
+                    {hiddenTabs}
+                  </TabDropDown>
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
+          <div className={commonDivClassNames} ref={this.addButtonRef}>
+            {(!this.showMoreButton && onSelectAddButton) && (
+            <AddButton
+              id={addTabId}
+              addAriaLabel={ariaLabelAddTab}
+              index={enabledTabsIndex + 1}
+              onSelect={onSelectAddButton}
+              tabIds={moreIds}
+              isSelected={false}
+            />
             )}
-          </Droppable>
-        </DragDropContext>
+          </div>
+        </div>
       );
     }
 
