@@ -23,7 +23,7 @@ const appendLifeCycleStatuses = (statuses) => {
   }
 };
 
-const options = { secret: 'OAuth Secret', iframeAttrs: { title: 'Embedded application lifecycle example', id: 'data-embedded-consumer-data-status', width: '100%', frameborder: '0' } };
+const options = { secret: 'OAuth Secret', iframeAttrs: { id: 'data-embedded-consumer-data-status', frameborder: '1' } };
 
 const onMount = () => {
   setTimeout(() => { appendLifeCycleStatuses(['Mounted']); }, 2000);
@@ -40,6 +40,7 @@ const onAuthorize = () => {
 const DataStatusConsumer = () => (
   <EmbeddedContentConsumer
     src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/data-status-provider"
+    title="Embedded application lifecycle example"
     onMount={onMount}
     onLaunch={onLaunch}
     onAuthorize={onAuthorize}
