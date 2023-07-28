@@ -299,7 +299,6 @@ class MenuItem extends React.Component {
       <>
         { MenuUtils.isMac() && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.index' }, { index: index + 1, totalItems })} /> }
         { MenuUtils.isMac() && (isGroupItem || toggleable) && <VisuallyHiddenText text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
-        { !MenuUtils.isMac() && (isGroupItem || toggleable) && <VisuallyHiddenText aria-live={markAsToggled ? 'polite' : ''} text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
         {/* Adds context to Use the up and down arrows to navigate the options */}
         { this.itemNode && this.itemNode.parentNode.getAttribute('data-submenu') === 'true' && index === 0 && totalItems !== 1 && !MenuUtils.isMac()
           && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.navigateMenuItem' })} /> }
@@ -308,6 +307,9 @@ class MenuItem extends React.Component {
         {/* Adds context for navigating back to parent menu from submenu */}
         { this.itemNode && this.itemNode.parentNode.getAttribute('data-submenu') === 'true' && index === 0
             && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.exitSubmenu' })} /> }
+        {/* Adds context for selected and unselected state */}    
+        { !MenuUtils.isMac() && toggleable && !isGroupItem && <VisuallyHiddenText aria-live='polite' text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
+        { !MenuUtils.isMac() && isGroupItem &&  <VisuallyHiddenText aria-live={markAsToggled ? 'polite' : ''} text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} />}    
       </>
     );
 
