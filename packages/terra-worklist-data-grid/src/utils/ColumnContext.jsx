@@ -1,8 +1,5 @@
 import React from 'react';
 
-const ColumnContext = React.createContext({
-  pinnedColumnsLength: 0,
-  pinnedColumnOffsets: [],
-});
+const ColumnContext = React.createContext({pinnedColumnOffsets: []});
 
 export default ColumnContext;

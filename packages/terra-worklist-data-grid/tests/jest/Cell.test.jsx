@@ -199,12 +199,7 @@ describe('Cell', () => {
     jest.spyOn(console, 'error').mockImplementation(); // eslint-disable-line no-console
 
     const wrapper = mountWithIntl(
-      <ColumnContext.Provider value={{
-        pinnedColumnsLength: 1,
-        pinnedColumnOffsets: [0],
-        pinnedColumnsTotalWidth: 100,
-      }}
-      >
+      <ColumnContext.Provider value={{pinnedColumnOffsets: [0]}}>
         <Cell
           rowId="RowID"
           columnId="ColumnId"

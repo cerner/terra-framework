@@ -285,20 +285,30 @@ function WorklistDataGrid(props) {
 
   // useEffect to calculate pinned column offsets
   useEffect(() => {
-    if (pinnedColumns.length > 0) {
-      let cumulativeOffset = 0;
-      const offsetArray = [cumulativeOffset];
-      const lastPinnedColumnIndex = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
+    const offsetArray = [];
+    let cumulativeOffset = 0;
+    let lastPinnedColumnIndex;
 
-      // eslint-disable-next-line array-callback-return
+    // if grid has selecteable rows but no pinned columns, then set the offset of the first column to 0
+    if(hasSelectableRows && pinnedColumns.length == 0){
+      lastPinnedColumnIndex = 0 ;
+      offsetArray.push(cumulativeOffset);
+      setPinnedColumnOffsets(offsetArray);
+      return;
+    }
+
+    if(pinnedColumns.length > 0){
+      offsetArray.push(cumulativeOffset);
+      
+      lastPinnedColumnIndex = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1
+
       dataGridColumns.slice(0, lastPinnedColumnIndex).map((pinnedColumn) => {
         cumulativeOffset += pinnedColumn.width;
         offsetArray.push(cumulativeOffset);
       });
-
-      setPinnedColumnOffsets(offsetArray);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    
+    setPinnedColumnOffsets(offsetArray);
   }, [dataGridColumns]);
 
   // -------------------------------------
@@ -567,10 +577,7 @@ function WorklistDataGrid(props) {
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
         <ColumnContext.Provider
-          value={{
-            pinnedColumnsLength: hasSelectableRows ? pinnedColumns.length + 1 : pinnedColumns.length,
-            pinnedColumnOffsets,
-          }}
+          value={{pinnedColumnOffsets}}
         >
           <ColumnHeader
             columns={dataGridColumns}

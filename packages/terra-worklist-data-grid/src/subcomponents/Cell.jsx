@@ -158,13 +158,13 @@ function Cell(props) {
 
   const className = cx('worklist-data-grid-cell', {
     masked: isMasked,
-    pinned: columnIndex < columnContext.pinnedColumnsLength,
+    pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
     selectable: isSelectable && !isMasked,
     selected: isSelected && !isMasked,
     blank: !children,
   }, theme.className);
 
-  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnsLength) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
+  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
 
   const CellTag = isRowHeader ? 'th' : 'td';
   return (

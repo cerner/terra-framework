@@ -187,10 +187,10 @@ const ColumnHeaderCell = (props) => {
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);
 
-  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnsLength) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
+  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
   const dividerLeftEdge = width - 1;
 
-  const pinnedColumnsDivider = columnIndex === columnContext.pinnedColumnsLength - 1
+  const pinnedColumnsDivider = columnIndex === columnContext.pinnedColumnOffsets.length - 1
     ? (
       <div
         className={cx('pinned-columns-divider')}
@@ -204,7 +204,7 @@ const ColumnHeaderCell = (props) => {
     <th
       ref={(columnHeaderCellRef)}
       key={id}
-      className={cx('column-header', theme.className, { selectable: isSelectable, pinned: columnIndex < columnContext.pinnedColumnsLength })}
+      className={cx('column-header', theme.className, { selectable: isSelectable, pinned: columnIndex < columnContext.pinnedColumnOffsets.length })}
       tabIndex={isTabStop ? 0 : -1}
       role="columnheader"
       scope="col"

@@ -263,12 +263,7 @@ describe('ColumnHeaderCell', () => {
     };
 
     const wrapper = mountWithIntl(
-      <ColumnContext.Provider value={{
-        pinnedColumnsLength: 1,
-        pinnedColumnOffsets: [0],
-        pinnedColumnsTotalWidth: 100,
-      }}
-      >
+      <ColumnContext.Provider value={{pinnedColumnOffsets: [0]}}>
         <ColumnHeaderCell
           columnIndex={0}
           width={100}
