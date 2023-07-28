@@ -284,9 +284,16 @@ class Tabs extends React.Component {
           };
         });
   
-      if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex!=0) {
+      if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex!=0 && updatedTabData[removedTabIndex-1].itemKey!="DisabledTab") {
         updatedTabData[removedTabIndex-1].isSelected = true;
-      } else if (removedTabIndex >= 0 && removedTabIndex < updatedTabData.length) {
+      } 
+      else if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex!=0 && updatedTabData[removedTabIndex-1].itemKey==="DisabledTab") {
+       if(updatedTabData[removedTabIndex-2].isSelected!= undefined){
+        updatedTabData[removedTabIndex-2].isSelected = true;
+       }
+
+      }
+      else if (removedTabIndex >= 0 && removedTabIndex < updatedTabData.length) {
         updatedTabData[removedTabIndex].isSelected = true;
       }
      this.props.onTabStateChange(updatedTabData);
