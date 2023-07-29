@@ -5,10 +5,25 @@
 * Added
   * Added keyboard navigation instructions for `terra-menu`.
 
+## 1.27.0 - (July 25, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.26.0 - (July 20, 2023)
+
+* Added
+  * Added `terra-worklist-data-grid` as dependency.
+
+## 1.25.0 - (July 19, 2023)
+
 * Changed
   * Updated example for `terra-menu`.
   * Updated tests for `terra-worklist-data-grid` to account for row height and column width being honored.
   * Updated the path name for the examples in doc site for `terra-embedded-content-consumer` to resolve missing files.
+  * Minor formatting changes in the `uuid` testing section for several packages.
+  * Updates tests amd examples for `terra-worklist-data-grid` to show resize capability.
+  * Updated examples for `terra-tabs` with conflicting ids.
 
 * Added
   * Added alpha release disclaimer for `terra-worklist-data-grid`.
