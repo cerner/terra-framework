@@ -87,6 +87,7 @@ class Tabs extends React.Component {
     this.wrapOnSelectHidden = this.wrapOnSelectHidden.bind(this);
     this.positionDropDown = this.positionDropDown.bind(this);
     this.handleDragEnd = this.handleDragEnd.bind(this);
+    this.handleDragStart = this.handleDragStart.bind(this);
     this.reorder = this.reorder.bind(this);
     this.resetCache();
     this.state = {
@@ -218,7 +219,18 @@ class Tabs extends React.Component {
     this.setIsOpen(false);
   }
 
+  handleDragStart() {
+    const tablist = document.querySelectorAll('[data-terra-drag-focus="true"]');
+    tablist.forEach((list) => {
+      list.setAttribute('data-terra-drag-focus', 'false');
+    });
+  }
+
   handleDragEnd(result) {
+    const tablist = document.querySelectorAll('[data-terra-drag-focus="false"]');
+    tablist.forEach((list) => {
+      list.setAttribute('data-terra-drag-focus', 'true');
+    });
     if (!result.destination) {
       return;
     }
@@ -375,7 +387,7 @@ class Tabs extends React.Component {
 
     if (isDraggable) {
       return (
-        <DragDropContext onDragEnd={this.handleDragEnd}>
+        <DragDropContext onDragStart={this.handleDragStart} onDragEnd={this.handleDragEnd}>
           <Droppable className={commonTabsClassNames} droppableId="tab-list" direction="horizontal">
             {(provided) => (
               <div
@@ -390,6 +402,7 @@ class Tabs extends React.Component {
                 aria-label={ariaLabel}
                 aria-orientation="horizontal"
                 aria-owns={hiddenIds.join(' ')}
+                data-terra-drag-focus
               >
                 {visibleTabs}
                 {this.showMoreButton ? (
