@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-// eslint-disable no-console
 import React from 'react';
 import ColumnHeader from '../../src/subcomponents/ColumnHeader';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';

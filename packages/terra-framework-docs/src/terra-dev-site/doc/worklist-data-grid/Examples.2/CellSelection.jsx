@@ -83,7 +83,7 @@ const CellSelection = () => {
   return (
     <WorklistDataGrid
       id="worklist-data-grid-row-selection"
-      columns={cols}
+      overflowColumns={cols}
       rows={[...rows]}
       rowHeaderIndex={rowHeaderIndex}
       rowHeight="50px"
