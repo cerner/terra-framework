@@ -76,7 +76,7 @@
     "start-static": "npm run compile:prod && terra express-server --site build",
     "test": "npm run lint && npm run jest && npm run wdio",
     "test:docker": "npm run lint && npm run jest && npm run wdio:docker",
-    "wdio-default": "WDIO_EXTERNAL_HOST='10.189.209.180' terra wdio --gridUrl grid314.test.devcernerpowerchart.com --browsers chrome --themes terra-default-theme --spec /packages/terra-menu/tests/wdio/menu-item-spec.js",
+    "wdio-default": "terra wdio",
     "wdio-lowlight": "NODE_OPTIONS=--max-old-space-size=2048 terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "terra wdio --themes orion-fusion-theme",
     "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme",
