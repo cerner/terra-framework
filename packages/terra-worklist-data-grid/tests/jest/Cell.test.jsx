@@ -1,6 +1,8 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+
+import ColumnContext from '../../src/utils/ColumnContext';
 import Cell from '../../src/subcomponents/Cell';
 
 describe('Cell', () => {
@@ -188,6 +190,34 @@ describe('Cell', () => {
     expect(wrapper.find('td.selectable')).toHaveLength(0); // Cell should not be styled selectable since it is masked.
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders a pinned cell', () => {
+    jest.spyOn(console, 'error').mockImplementation(); // eslint-disable-line no-console
+
+    const wrapper = mountWithIntl(
+      <ColumnContext.Provider value={{ pinnedColumnOffsets: [0] }}>
+        <Cell
+          rowId="RowID"
+          columnId="ColumnId"
+          rowIndex={1}
+          columnIndex={0}
+          key="key"
+          isTabStop={false}
+          isSelected={false}
+          isRowHeader
+          onCellSelect={jest.fn}
+          height="50px"
+        >
+          Pinned cell data
+        </Cell>
+      </ColumnContext.Provider>,
+    );
+
+    expect(wrapper.find('.pinned')).toHaveLength(1);
+    expect(wrapper).toMatchSnapshot();
+
+    console.error.mockRestore(); // eslint-disable-line no-console
   });
 });
 

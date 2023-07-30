@@ -4,6 +4,17 @@
 * Added
   * Added ability to dive into cells with focusable elements.
 
+* Breaking Changes
+  * Removed `columns` prop in favor of the new `pinnedColumns` and `overflowColumns` props.
+
+* Added
+  * Added `pinnedColumns` prop for columns that will be pinned.
+  * Added `overflowColumns` prop for columns that are scrollable.
+  * Added support for pinned columns.
+ 
+* Fixed
+  * Text alignment of the row header column.
+
 ## 0.3.0 - (July 19, 2023)
 
 * Breaking Changes

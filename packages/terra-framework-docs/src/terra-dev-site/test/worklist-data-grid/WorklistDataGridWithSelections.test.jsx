@@ -10,7 +10,7 @@ const WorklistDataGridWithSelections = () => {
     <React.Fragment>
       <WorklistDataGrid
         id="terra-worklist-data-grid-with-selections"
-        columns={cols}
+        overflowColumns={cols}
         rows={rows}
         rowHeaderIndex={rowHeaderIndex}
         rowHeight="50px"

@@ -4,6 +4,12 @@
 * Added
   * Added examples and tests for `terra-worklist-data-grid` to interact with cells containing focusable elements.
 
+## 1.26.0 - (July 20, 2023)
+
+* Added
+  * Added examples for `terra-worklist-data-grid` when using pinned columns.
+  * Added `terra-worklist-data-grid` as dependency.
+
 ## 1.27.0 - (July 25, 2023)
 
 * Changed

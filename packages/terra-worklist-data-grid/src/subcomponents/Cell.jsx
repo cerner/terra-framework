@@ -2,15 +2,17 @@ import React, {
   useContext, useCallback, useState, useRef, useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
-import * as KeyCode from 'keycode-js';
-import '../_elementPolyfill';
 import { injectIntl } from 'react-intl';
+import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
+
 import ThemeContext from 'terra-theme-context';
 import FocusTrap from 'focus-trap-react';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
+import ColumnContext from '../utils/ColumnContext';
+import '../_elementPolyfill';
 
 const cx = classNames.bind(styles);
 
@@ -103,10 +105,10 @@ function Cell(props) {
     columnIndex,
     isTabStop,
     ariaLabel,
-    isRowHeader,
-    isSelected,
     isMasked,
+    isRowHeader,
     isSelectable,
+    isSelected,
     children,
     onCellSelect,
     height,
@@ -117,6 +119,7 @@ function Cell(props) {
   const [isFocusTrapEnabled, setFocusTrapEnabled] = useState(false);
   const [ariaLiveText, setAriaLiveText] = useState(null);
   const theme = useContext(ThemeContext);
+  const columnContext = useContext(ColumnContext);
 
   /**
    * Determine if cell has focusable elements
@@ -214,10 +217,13 @@ function Cell(props) {
 
   const className = cx('worklist-data-grid-cell', {
     masked: isMasked,
+    pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
     selectable: isSelectable && !isMasked,
     selected: isSelected && !isMasked,
     blank: !children,
   }, theme.className);
+
+  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
 
   const CellTag = isRowHeader ? 'th' : 'td';
   return (
@@ -230,6 +236,7 @@ function Cell(props) {
       {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
       onClick={onCellSelect ? onClick : undefined}
       onKeyDown={handleKeyDown}
+      style={{ left: cellLeftEdge }} // eslint-disable-line react/forbid-component-props
     >
       {/* Wrap cell content with focus trap */}
       <FocusTrap
