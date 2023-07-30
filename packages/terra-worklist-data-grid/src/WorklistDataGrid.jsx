@@ -322,15 +322,15 @@ function WorklistDataGrid(props) {
     }
 
     let ariaMessage = intl.formatMessage({
-      id: hasSelectableRows ? 
-          'Terra.worklist-data-grid.row-selection-multiple-rows-selected' : 
-          'Terra.worklist-data-grid.row-selection-mode-enabled'
+      id: hasSelectableRows
+        ? 'Terra.worklist-data-grid.row-selection-multiple-rows-selected'
+        : 'Terra.worklist-data-grid.row-selection-mode-enabled',
     });
-    
+
     ariaMessage += intl.formatMessage({
-      id: rowIdsToSelect.length === 1 ? 
-          'Terra.worklist-data-grid.row-selection-template' : 
-          'Terra.worklist-data-grid.row-selection-selected-rows-range'
+      id: rowIdsToSelect.length === 1
+        ? 'Terra.worklist-data-grid.row-selection-template'
+        : 'Terra.worklist-data-grid.row-selection-selected-rows-range',
     }, { row: selectionData.anchorRow, endRow: newEndRowIndex });
 
     setAriaLiveMsg(ariaMessage);
