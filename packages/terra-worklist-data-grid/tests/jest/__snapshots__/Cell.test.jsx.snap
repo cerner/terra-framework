@@ -56,8 +56,10 @@ exports[`Cell renders a pinned cell 1`] = `
     <th
       aria-selected={false}
       className="worklist-data-grid-cell pinned selectable"
+      onClick={[Function]}
       onKeyDown={[Function]}
-      onMouseDown={[Function]}
+      role="rowheader"
+      scope="row"
       style={
         Object {
           "left": 0,
@@ -65,16 +67,39 @@ exports[`Cell renders a pinned cell 1`] = `
       }
       tabIndex={-1}
     >
-      <div
-        className="cell-content"
-        style={
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={false}
+        focusTrapOptions={
           Object {
-            "height": "50px",
+            "clickOutsideDeactivates": true,
+            "escapeDeactivates": false,
+            "onDeactivate": [Function],
+            "returnFocusOnDeactivate": true,
           }
         }
+        paused={false}
       >
-        Pinned cell data
-      </div>
+        <div
+          className="cell-content"
+          style={
+            Object {
+              "height": "50px",
+            }
+          }
+        >
+          Pinned cell data
+        </div>
+      </FocusTrap>
+      <VisuallyHiddenText
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
     </th>
   </Cell>
 </InjectIntl(Cell)>
@@ -87,15 +112,11 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
   className="worklist-data-grid-cell masked"
   onClick={[Function]}
   onKeyDown={[Function]}
-<<<<<<< HEAD
-=======
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
     }
   }
->>>>>>> 4c7cd4f6a507db9acc4c54820bb1f5e7df9b434f
   tabIndex={-1}
 >
   <FocusTrap
@@ -140,15 +161,11 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
   className="worklist-data-grid-cell masked"
   onClick={[Function]}
   onKeyDown={[Function]}
-<<<<<<< HEAD
-=======
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
     }
   }
->>>>>>> 4c7cd4f6a507db9acc4c54820bb1f5e7df9b434f
   tabIndex={-1}
 >
   <FocusTrap
@@ -193,15 +210,11 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
   className="worklist-data-grid-cell selectable selected"
   onClick={[Function]}
   onKeyDown={[Function]}
-<<<<<<< HEAD
-=======
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
     }
   }
->>>>>>> 4c7cd4f6a507db9acc4c54820bb1f5e7df9b434f
   tabIndex={-1}
 >
   <FocusTrap
@@ -241,15 +254,11 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
   className="worklist-data-grid-cell selectable"
   onClick={[Function]}
   onKeyDown={[Function]}
-<<<<<<< HEAD
-=======
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
     }
   }
->>>>>>> 4c7cd4f6a507db9acc4c54820bb1f5e7df9b434f
   tabIndex={-1}
 >
   <FocusTrap
@@ -289,17 +298,13 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
   className="worklist-data-grid-cell selectable"
   onClick={[Function]}
   onKeyDown={[Function]}
-<<<<<<< HEAD
   role="rowheader"
   scope="row"
-=======
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
     }
   }
->>>>>>> 4c7cd4f6a507db9acc4c54820bb1f5e7df9b434f
   tabIndex={-1}
 >
   <FocusTrap
@@ -339,15 +344,11 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
   className="worklist-data-grid-cell selectable blank"
   onClick={[Function]}
   onKeyDown={[Function]}
-<<<<<<< HEAD
-=======
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
     }
   }
->>>>>>> 4c7cd4f6a507db9acc4c54820bb1f5e7df9b434f
   tabIndex={-1}
 >
   <FocusTrap
@@ -391,15 +392,11 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
   className="worklist-data-grid-cell selectable"
   onClick={[Function]}
   onKeyDown={[Function]}
-<<<<<<< HEAD
-=======
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
     }
   }
->>>>>>> 4c7cd4f6a507db9acc4c54820bb1f5e7df9b434f
   tabIndex={-1}
 >
   <FocusTrap
