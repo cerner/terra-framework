@@ -149,7 +149,7 @@ function Cell(props) {
    */
   const deactiveFocusTrap = () => {
     setFocusTrapEnabled(false);
-    setAriaLiveText(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-interactable' }));
+    setAriaLiveText(intl.formatMessage({ id: 'Resume grid navigation' }));
   };
 
   /**
@@ -221,7 +221,6 @@ function Cell(props) {
 
   const CellTag = isRowHeader ? 'th' : 'td';
   return (
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <CellTag
       ref={cellRef}
       aria-selected={isSelected}

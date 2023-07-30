@@ -172,8 +172,8 @@ function WorklistDataGrid(props) {
   const tableWidth = useRef(0);
 
   const grid = useRef();
-  const focusedRow = useRef(0);
-  const focusedCol = useRef(0);
+  const [focusedRow, setFocusedRow] = useState(0);
+  const [focusedCol, setFocusedCol] = useState(0);
   const ariaLiveMsg = useRef();
 
   const [currentSelectedCell, setCurrentSelectedCell] = useState(null);
@@ -207,9 +207,9 @@ function WorklistDataGrid(props) {
   };
 
   const setFocusedRowCol = (newRowIndex, newColIndex, makeActiveElement) => {
-    removeTabStop(focusedRow.current, focusedCol.current);
-    focusedRow.current = newRowIndex;
-    focusedCol.current = newColIndex;
+    removeTabStop(focusedRow, focusedCol);
+    setFocusedRow(newRowIndex);
+    setFocusedCol(newColIndex);
     let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
     if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
       [focusedCell] = focusedCell.getElementsByTagName('input');
@@ -224,15 +224,15 @@ function WorklistDataGrid(props) {
   useEffect(() => {
     // When row selection mode is turned on or off a row selection column is added or removed.
     // Therefore, shift the focused cell to the left or right.
-    let newFocusCell = { row: focusedRow.current, col: (focusedCol.current + (hasSelectableRows ? 1 : -1)) };
+    let newFocusCell = { row: focusedRow, col: (focusedCol + (hasSelectableRows ? 1 : -1)) };
 
-    if (hasSelectableRows && focusedRow.current === 0 && focusedCol.current === 0) {
+    if (hasSelectableRows && focusedRow === 0 && focusedCol === 0) {
       // When row selection is turned on for the first time, default to the first row selection cell.
       newFocusCell = { row: 1, col: 0 };
-    } else if (!hasSelectableRows && focusedCol.current === 0) {
+    } else if (!hasSelectableRows && focusedCol === 0) {
       // When row selection is turned off, if a cell in the row selection had focus, then
       // refocus on the first cell in that row.
-      newFocusCell = { row: focusedRow.current, col: 0 };
+      newFocusCell = { row: focusedRow, col: 0 };
     }
     setFocusedRowCol(newFocusCell.row, newFocusCell.col, false);
     if (currentSelectedCell != null) {
@@ -346,7 +346,7 @@ function WorklistDataGrid(props) {
   };
 
   const handleKeyDown = (event) => {
-    const cellCoordinates = { row: focusedRow.current, col: focusedCol.current };
+    const cellCoordinates = { row: focusedRow, col: focusedCol };
     let nextRow = cellCoordinates.row;
     let nextCol = cellCoordinates.col;
 
@@ -486,7 +486,7 @@ function WorklistDataGrid(props) {
       rowHeaderIndex={rowHeaderIndex}
       onCellSelect={handleCellSelection}
       onRowSelect={handleRowSelection}
-      tabStopColumnIndex={focusedRow.current === rowIndex ? focusedCol.current : undefined}
+      tabStopColumnIndex={focusedRow === rowIndex ? focusedCol : undefined}
       selectedCellColumnId={(currentSelectedCell?.rowId === row.id) ? currentSelectedCell?.columnId : undefined}
     />
   );
@@ -513,7 +513,7 @@ function WorklistDataGrid(props) {
           columns={dataGridColumns}
           headerHeight={columnHeaderHeight}
           tableHeight={tableHeight}
-          tabStopColumnIndex={focusedRow.current === 0 ? focusedCol.current : undefined}
+          tabStopColumnIndex={focusedRow === 0 ? focusedCol : undefined}
           onColumnSelect={handleColumnSelect}
           onResizeMouseDown={onResizeMouseDown}
         />
