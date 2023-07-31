@@ -38,11 +38,11 @@
 
   // Hover state for selectable elements
   .selectable:hover {
-    background-color: var(--terra-worklist-data-grid-header-hover-background-color, rgba(0, 146, 224, 0.12));
+    // background-color: var(--terra-worklist-data-grid-header-hover-background-color, rgba(0, 146, 224, 0.12));
 
     // NOTE: Temporarily keeping the older background-color as changes breaks styling in multiple places.
     // It will be replaced once an update strategy is finalized with UX.
-    // background-color: var(--terra-worklist-data-grid-header-hover-background-color, #e4f2f9);
+    background-color: var(--terra-worklist-data-grid-header-hover-background-color, #e4f2f9);
     cursor: pointer;
   }
 
@@ -51,7 +51,7 @@
     border-width: 1px 0;
     box-shadow: inset var(--terra-worklist-data-grid-pinned-columns-header-box-shadow, 1px 0 #000);
     position: sticky;
-    z-index: 2;
+    z-index: 10;
   }
 
   .pinned-columns-divider {
@@ -60,5 +60,14 @@
     position: absolute;
     top: 0;
     width: 2px;
+  }
+  .pinned-columns-background {
+    height: 100px;
+    width: 20px;
+    position: absolute;
+    z-index: 2;
+
+    top: 0;
+    background-color: yellow;
   }
 }
