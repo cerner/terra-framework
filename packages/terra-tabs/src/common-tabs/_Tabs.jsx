@@ -384,6 +384,7 @@ class Tabs extends React.Component {
       };
     }
     const commonTabsClassNames = cx('tab-container', theme.className);
+    window['__react-beautiful-dnd-disable-dev-warnings'] = true;
 
     if (isDraggable) {
       return (
@@ -405,6 +406,7 @@ class Tabs extends React.Component {
                 data-terra-drag-focus
               >
                 {visibleTabs}
+                {provided.placeholder}
                 {this.showMoreButton ? (
                   <MoreButton
                     isOpen={this.isOpen}
