@@ -158,7 +158,6 @@ const Tab = ({
       event.preventDefault();
       event.stopPropagation();
       onClosingTab(itemKey, metaData);
-      setIsTabRemoved(true)
       handleArrows(event, index, tabIds);
     }
     else {
