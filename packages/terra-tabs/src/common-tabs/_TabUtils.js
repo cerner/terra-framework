@@ -134,9 +134,9 @@ const handleArrows = (event, index, ids, isDragging = false) => {
   const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
   const nextKey = !isRTL ? KEY_RIGHT : KEY_LEFT;
   const previousKey = !isRTL ? KEY_LEFT : KEY_RIGHT;
-  if (event.nativeEvent.keyCode === nextKey || event.nativeEvent.keyCode === KEY_DOWN) {
+  if ((event.nativeEvent.keyCode === nextKey || event.nativeEvent.keyCode === KEY_DOWN) && !isDragging) {
     nextFocus(event, index, ids, isDragging);
-  } else if (event.nativeEvent.keyCode === previousKey || event.nativeEvent.keyCode === KEY_UP) {
+  } else if ((event.nativeEvent.keyCode === previousKey || event.nativeEvent.keyCode === KEY_UP) && !isDragging) {
     previousFocus(event, index, ids, isDragging);
   } else if (event.nativeEvent.keyCode === KEY_HOME) {
     firstFocus(event, index, ids);
