@@ -47,6 +47,7 @@
     border-width: 1px 0;
     box-shadow: inset var(--terra-worklist-data-grid-pinned-columns-header-box-shadow, 1px 0 #000);
     position: sticky;
+    z-index: 2;
   }
 
   .pinned-columns-divider {
