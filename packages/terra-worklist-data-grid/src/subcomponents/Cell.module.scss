@@ -39,6 +39,7 @@
     border-width: 1px 0;
     box-shadow: var(--terra-worklist-data-grid-pinned-columns-cell-box-shadow, inset 1px 0 #dedfe0);
     position: sticky;
+    z-index: 1;
   }
 
   // Hover state for selectable elements
