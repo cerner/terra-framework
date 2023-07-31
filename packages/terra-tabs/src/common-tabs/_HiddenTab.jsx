@@ -127,7 +127,7 @@ const HiddenTab = ({
       handleOnSelect(event);
       onChange(event, itemKey);
     } else {
-      handleArrows(event, index, tabIds, false, false, true);
+      handleArrows(event, index, tabIds);
     }
   };
 

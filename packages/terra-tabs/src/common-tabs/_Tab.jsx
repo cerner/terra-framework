@@ -156,8 +156,8 @@ const Tab = ({
       onSelect(itemKey, metaData);
       onChange(event, itemKey);
     } else {
-      const isDragging = !document.querySelectorAll('[data-terra-drag-focus="true"]').length;
-      handleArrows(event, index, tabIds, isDragging, isDraggable);
+      const isDragging = !document.querySelectorAll('[data-terra-drag-focus="true"]').length && isDraggable;
+      handleArrows(event, index, tabIds, isDragging);
     }
   }
 
