@@ -91,15 +91,6 @@ exports[`Cell renders a pinned cell 1`] = `
           Pinned cell data
         </div>
       </FocusTrap>
-      <VisuallyHiddenText
-        aria-live="polite"
-        text={null}
-      >
-        <span
-          aria-live="polite"
-          className="visually-hidden-text"
-        />
-      </VisuallyHiddenText>
     </th>
   </Cell>
 </InjectIntl(Cell)>
@@ -147,10 +138,6 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
       </span>
     </div>
   </FocusTrap>
-  <VisuallyHiddenText
-    aria-live="polite"
-    text={null}
-  />
 </td>
 `;
 
@@ -196,10 +183,6 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
       </span>
     </div>
   </FocusTrap>
-  <VisuallyHiddenText
-    aria-live="polite"
-    text={null}
-  />
 </td>
 `;
 
@@ -241,10 +224,6 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
       Data in cell
     </div>
   </FocusTrap>
-  <VisuallyHiddenText
-    aria-live="polite"
-    text={null}
-  />
 </td>
 `;
 
@@ -285,10 +264,6 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
       Data in cell
     </div>
   </FocusTrap>
-  <VisuallyHiddenText
-    aria-live="polite"
-    text={null}
-  />
 </td>
 `;
 
@@ -331,10 +306,6 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
       Data in cell
     </div>
   </FocusTrap>
-  <VisuallyHiddenText
-    aria-live="polite"
-    text={null}
-  />
 </th>
 `;
 
@@ -379,10 +350,6 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
       </span>
     </div>
   </FocusTrap>
-  <VisuallyHiddenText
-    aria-live="polite"
-    text={null}
-  />
 </td>
 `;
 
@@ -423,9 +390,5 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
       Data in cell
     </div>
   </FocusTrap>
-  <VisuallyHiddenText
-    aria-live="polite"
-    text={null}
-  />
 </td>
 `;

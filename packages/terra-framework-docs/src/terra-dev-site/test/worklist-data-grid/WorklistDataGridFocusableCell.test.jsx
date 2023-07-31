@@ -81,7 +81,7 @@ const WorklistDataGridFocusableCell = () => {
       )}
       <WorklistDataGrid
         id="default-terra-worklist-data-grid-focusable-cell"
-        columns={cols}
+        overflowColumns={cols}
         defaultColumnWidth={170}
         rows={rows}
         rowHeaderIndex={rowHeaderIndex}

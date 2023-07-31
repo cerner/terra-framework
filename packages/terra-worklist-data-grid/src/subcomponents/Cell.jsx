@@ -8,11 +8,9 @@ import classNames from 'classnames/bind';
 
 import ThemeContext from 'terra-theme-context';
 import FocusTrap from 'focus-trap-react';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
 import ColumnContext from '../utils/ColumnContext';
-import '../_elementPolyfill';
 
 const cx = classNames.bind(styles);
 
@@ -117,7 +115,6 @@ function Cell(props) {
 
   const cellRef = useRef();
   const [isFocusTrapEnabled, setFocusTrapEnabled] = useState(false);
-  const [ariaLiveText, setAriaLiveText] = useState(null);
   const theme = useContext(ThemeContext);
   const columnContext = useContext(ColumnContext);
 
@@ -133,10 +130,11 @@ function Cell(props) {
   };
 
   useEffect(() => {
-    if (hasFocusableElements()) {
-      setAriaLiveText(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-interactable' }));
+    if (isTabStop && hasFocusableElements()) {
+      columnContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-interactable' }));
     }
-  }, [intl]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [intl, isTabStop]);
 
   /**
    * Handles click event for cell
@@ -152,7 +150,7 @@ function Cell(props) {
    */
   const deactiveFocusTrap = () => {
     setFocusTrapEnabled(false);
-    setAriaLiveText(intl.formatMessage({ id: 'Resume grid navigation' }));
+    columnContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.resume-navigation' }));
   };
 
   /**
@@ -176,7 +174,7 @@ function Cell(props) {
           // Lock focus into component
           if (hasFocusableElements()) {
             setFocusTrapEnabled(true);
-            setAriaLiveText(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-focus-trapped' }));
+            columnContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-focus-trapped' }));
             event.stopPropagation();
             event.preventDefault();
           }
@@ -248,7 +246,6 @@ function Cell(props) {
         {/* eslint-disable-next-line react/forbid-dom-props */}
         <div className={cx('cell-content', theme.className)} style={{ height }}>{cellContent}</div>
       </FocusTrap>
-      <VisuallyHiddenText aria-live="polite" text={ariaLiveText} />
     </CellTag>
   );
 }

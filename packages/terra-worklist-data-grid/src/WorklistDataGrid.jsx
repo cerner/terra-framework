@@ -196,10 +196,10 @@ function WorklistDataGrid(props) {
   const grid = useRef();
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
-  const ariaLiveMsg = useRef();
+  const [ariaLiveMessage, setAriaLiveMessage] = useState(null);
+  const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
 
   const [currentSelectedCell, setCurrentSelectedCell] = useState(null);
-  const [, setRowSelectionModeMessage] = useState();
 
   const theme = useContext(ThemeContext);
 
@@ -222,6 +222,8 @@ function WorklistDataGrid(props) {
       // inner input element so remove it from the input element.
       cell.getElementsByTagName('input')[0].tabIndex = -1;
     }
+
+    setCellAriaLiveMessage(null);
   };
 
   const setFocusedRowCol = (newRowIndex, newColIndex, makeActiveElement) => {
@@ -270,8 +272,7 @@ function WorklistDataGrid(props) {
       setCurrentSelectedCell(null);
     }
     // Since the row selection mode has changed, the row selection mode needs to be updated.
-    ariaLiveMsg.current = intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' });
-    setRowSelectionModeMessage(ariaLiveMsg.current);
+    setAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' }));
 
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -319,15 +320,14 @@ function WorklistDataGrid(props) {
   );
 
   const handleClearRowSelection = () => {
-    ariaLiveMsg.current = '';
     if (isAnyRowSelected()) {
-      ariaLiveMsg.current = intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-unselected' });
+      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-unselected' }));
       // Esc (while in row selection mode and rows are selected): Clear selection
       if (onClearSelectedRows) {
         onClearSelectedRows();
       }
     } else if (onDisableSelectableRows) {
-      ariaLiveMsg.current = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-mode-disabled' });
+      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-mode-disabled' }));
       onDisableSelectableRows();
     }
   };
@@ -340,7 +340,7 @@ function WorklistDataGrid(props) {
       msgId = isSelectAction ? 'Terra.worklist-data-grid.row-selection-template' : 'Terra.worklist-data-grid.row-selection-cleared-template';
       rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
     }
-    ariaLiveMsg.current = intl.formatMessage({ id: msgId }, { row: rowLabel });
+    setAriaLiveMessage(intl.formatMessage({ id: msgId }, { row: rowLabel }));
     if (selectAllRows && onRowSelectAll) {
       onRowSelectAll();
     } else if (onRowSelect) {
@@ -355,9 +355,9 @@ function WorklistDataGrid(props) {
 
   const handleCellSelectionChange = (rowId, columnId, cellCoordinates) => {
     if (!hasSelectableRows) {
-      ariaLiveMsg.current = intl.formatMessage({
+      setAriaLiveMessage(intl.formatMessage({
         id: rowId ? 'Terra.worklist-data-grid.cell-selection-template' : 'Terra.worklist-data-grid.cell-selection-cleared',
-      }, { row: cellCoordinates.row + 1, column: cellCoordinates.col + 1 });
+      }, { row: cellCoordinates.row + 1, column: cellCoordinates.col + 1 }));
     }
     setFocusedRowCol(cellCoordinates.row, cellCoordinates.col, true);
     if ((rowId !== currentSelectedCell?.rowId) || (columnId !== currentSelectedCell?.columnId)) {
@@ -580,7 +580,7 @@ function WorklistDataGrid(props) {
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
         <ColumnContext.Provider
-          value={{ pinnedColumnOffsets }}
+          value={{ pinnedColumnOffsets, setCellAriaLiveMessage }}
         >
           <ColumnHeader
             columns={dataGridColumns}
@@ -595,7 +595,8 @@ function WorklistDataGrid(props) {
           </tbody>
         </ColumnContext.Provider>
       </table>
-      <VisuallyHiddenText aria-live="polite" text={ariaLiveMsg.current} />
+      <VisuallyHiddenText aria-live="polite" text={ariaLiveMessage} />
+      {cellAriaLiveMessage && <VisuallyHiddenText aria-live="polite" aria-relevant="all" aria-atomic="true" text={cellAriaLiveMessage} />}
     </div>
   );
 }
