@@ -6,14 +6,19 @@ import React, {
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
 import * as KeyCode from 'keycode-js';
+
+import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+
 import ColumnHeader from './subcomponents/ColumnHeader';
-import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
-import styles from './WorklistDataGrid.module.scss';
-import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
 import Row from './subcomponents/Row';
+import WorklistDataGridPropTypes from './proptypes/WorklistDataGridPropTypes';
+import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
+import ColumnContext from './utils/ColumnContext';
+import validateRowHeaderIndex from './proptypes/validators';
+import styles from './WorklistDataGrid.module.scss';
+import ERRORS from './utils/constants';
 
 const cx = classNames.bind(styles);
 
@@ -35,14 +40,21 @@ const propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
-   * Data for columns. Columns will be presented in the order given.
-   */
-  columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
-
-  /**
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
   rows: PropTypes.arrayOf(WorklistDataGridPropTypes.rowShape),
+
+  /**
+   * Data for pinned columns. Pinned columns are the stickied leftmost columns of the grid.
+   * Columns will be presented in the order given.
+   */
+  pinnedColumns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
+
+  /**
+   * Data for overflow columns. Overflow columns are rendered in the Worklist Data Grid's horizontal overflow.
+   * Columns will be presented in the order given.
+   */
+  overflowColumns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
 
   /**
    * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
@@ -62,7 +74,7 @@ const propTypes = {
   /**
    * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the grid.
    */
-  rowHeaderIndex: PropTypes.number,
+  rowHeaderIndex: validateRowHeaderIndex,
 
   /**
    * Function that is called when a resizable column is resized. Parameters:
@@ -123,6 +135,8 @@ const defaultProps = {
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
   rowHeight: '2.5rem',
+  pinnedColumns: [],
+  overflowColumns: [],
 };
 
 function WorklistDataGrid(props) {
@@ -130,8 +144,9 @@ function WorklistDataGrid(props) {
     id,
     ariaLabelledBy,
     ariaLabel,
-    columns,
     rows,
+    pinnedColumns,
+    overflowColumns,
     onColumnResize,
     defaultColumnWidth,
     columnHeaderHeight,
@@ -147,9 +162,16 @@ function WorklistDataGrid(props) {
     rowHeaderIndex,
   } = props;
 
+  if (pinnedColumns.length === 0) {
+    // eslint-disable-next-line no-console
+    console.warn(ERRORS.PINNED_COLUMNS_UNDEFINED);
+  }
+
   // Default column size constraints
   const defaultColumnMinimumWidth = 60;
   const defaultColumnMaximumWidth = 300;
+
+  const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
 
   // Initialize column width properties
   const initializeColumn = (column) => {
@@ -161,7 +183,7 @@ function WorklistDataGrid(props) {
     return newColumn;
   };
 
-  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(columns);
+  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
   const [dataGridColumns, setDataGridColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
   // Manage column resize
@@ -181,16 +203,12 @@ function WorklistDataGrid(props) {
 
   const theme = useContext(ThemeContext);
 
+  // -------------------------------------
+  // functions
+
   const isRowSelectionCell = (columnIndex) => (
     hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
   );
-
-  const gridRef = useCallback((node) => {
-    grid.current = node;
-
-    // Update table height state variable
-    setTableHeight(grid.current.offsetHeight - 1);
-  }, []);
 
   const isCellSelected = (rowId, columnId) => (currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId);
 
@@ -219,6 +237,19 @@ function WorklistDataGrid(props) {
       focusedCell.focus();
     }
   };
+
+  // -------------------------------------
+  // callback Hooks
+
+  const gridRef = useCallback((node) => {
+    grid.current = node;
+
+    // Update table height state variable
+    setTableHeight(grid.current.offsetHeight - 1);
+  }, []);
+
+  // -------------------------------------
+  // useEffect Hooks
 
   // useEffect for row selection
   useEffect(() => {
@@ -250,7 +281,38 @@ function WorklistDataGrid(props) {
   useEffect(() => {
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [columns]);
+  }, [pinnedColumns, overflowColumns]);
+
+  // useEffect to calculate pinned column offsets
+  useEffect(() => {
+    const offsetArray = [];
+    let cumulativeOffset = 0;
+    let lastPinnedColumnIndex;
+
+    // if grid has selecteable rows but no pinned columns, then set the offset of the first column to 0
+    if (hasSelectableRows && pinnedColumns.length === 0) {
+      lastPinnedColumnIndex = 0;
+      offsetArray.push(cumulativeOffset);
+      setPinnedColumnOffsets(offsetArray);
+      return;
+    }
+
+    if (pinnedColumns.length > 0) {
+      offsetArray.push(cumulativeOffset);
+
+      lastPinnedColumnIndex = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
+
+      // eslint-disable-next-line array-callback-return
+      dataGridColumns.slice(0, lastPinnedColumnIndex).map((pinnedColumn) => {
+        cumulativeOffset += pinnedColumn.width;
+        offsetArray.push(cumulativeOffset);
+      });
+    }
+    setPinnedColumnOffsets(offsetArray);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dataGridColumns]);
+
+  // -------------------------------------
 
   const isAnyRowSelected = () => (
     rows.find(r => r.isSelected === true)
@@ -342,6 +404,9 @@ function WorklistDataGrid(props) {
     handleCellSelectionChange(null, null, selectedCellCoordinates);
     selectRows(false, rowId, rowIndex);
   };
+
+  // -------------------------------------
+  // event handlers
 
   const handleKeyDown = (event) => {
     const cellCoordinates = { row: focusedRow.current, col: focusedCol.current };
@@ -470,6 +535,9 @@ function WorklistDataGrid(props) {
     setActiveIndex(null);
   };
 
+  // -------------------------------------
+  // builder functions
+
   const buildRow = (row, rowIndex) => (
     <Row
       rowIndex={rowIndex}
@@ -495,6 +563,8 @@ function WorklistDataGrid(props) {
     return rowData;
   };
 
+  // -------------------------------------
+
   return (
     <div className={cx('worklist-data-grid-container')}>
       <table
@@ -507,17 +577,21 @@ function WorklistDataGrid(props) {
         onKeyDown={handleKeyDown}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
-        <ColumnHeader
-          columns={dataGridColumns}
-          headerHeight={columnHeaderHeight}
-          tableHeight={tableHeight}
-          tabStopColumnIndex={focusedRow.current === 0 ? focusedCol.current : undefined}
-          onColumnSelect={handleColumnSelect}
-          onResizeMouseDown={onResizeMouseDown}
-        />
-        <tbody>
-          {buildRows(rows)}
-        </tbody>
+        <ColumnContext.Provider
+          value={{ pinnedColumnOffsets }}
+        >
+          <ColumnHeader
+            columns={dataGridColumns}
+            headerHeight={columnHeaderHeight}
+            tableHeight={tableHeight}
+            tabStopColumnIndex={focusedRow.current === 0 ? focusedCol.current : undefined}
+            onColumnSelect={handleColumnSelect}
+            onResizeMouseDown={onResizeMouseDown}
+          />
+          <tbody>
+            {buildRows(rows)}
+          </tbody>
+        </ColumnContext.Provider>
       </table>
       <VisuallyHiddenText aria-live="polite" text={ariaLiveMsg.current} />
     </div>

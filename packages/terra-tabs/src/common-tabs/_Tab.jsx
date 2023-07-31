@@ -4,6 +4,9 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import { Draggable } from 'react-beautiful-dnd';
+import IconKnurling from 'terra-icon/lib/icon/IconKnurling';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { v4 as uuidv4 } from 'uuid';
 import {
   enableFocusStyles,
   disableFocusStyles,
@@ -153,7 +156,8 @@ const Tab = ({
       onSelect(itemKey, metaData);
       onChange(event, itemKey);
     } else {
-      handleArrows(event, index, tabIds);
+      const isDragging = !document.querySelectorAll('[data-terra-drag-focus="true"]').length;
+      handleArrows(event, index, tabIds, isDragging);
     }
   }
 
@@ -175,6 +179,10 @@ const Tab = ({
   attributes['aria-selected'] = isSelected;
   attributes.style = { zIndex };
 
+  // TBD: Add Translations
+  const onFocusResponse = 'Press Enter to activate a tab, or Press space bar to start a drag. When dragging you can use the arrow keys to move the item around and escape to cancel. Ensure your screen reader is in focus mode or forms mode';
+  const responseId = `terra-tab-pane-response=${uuidv4()}`;
+
   if (isDraggable) {
     return (
       <Draggable key={id} draggableId={id} index={index}>
@@ -189,9 +197,14 @@ const Tab = ({
             role="tab"
             className={variant === 'framework' ? paneClassNames : tabClassNames}
             title={label}
+            aria-describedby={responseId}
             data-terra-tabs-show-focus-styles
+            data-terra-tab-draggable
           >
-            <div className={cx('inner')}>
+            <div>
+
+              <IconKnurling className={cx('icon-knurling')} />
+              <VisuallyHiddenText aria-hidden id={responseId} text={onFocusResponse} />
               {customDisplay}
               {customDisplay ? null : icon}
               {customDisplay || isIconOnly ? null : <span className={cx('label')}>{label}</span>}
