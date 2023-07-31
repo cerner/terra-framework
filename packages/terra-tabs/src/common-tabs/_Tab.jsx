@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -11,6 +11,7 @@ import {
 
 import styles from './Tab.module.scss';
 import terraStyles from './TerraTabs.module.scss';
+import { injectIntl } from 'react-intl';
 
 const cy = classNames.bind(terraStyles);
 
@@ -91,6 +92,7 @@ const propTypes = {
   onChange: PropTypes.func,
 
   isClosable: PropTypes.bool,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -119,6 +121,7 @@ const Tab = ({
   onChange,
   isClosable,
   onClosingTab,
+  intl,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -143,6 +146,7 @@ const Tab = ({
     attributes['aria-label'] = label;
   }
 
+  let tabDeleteLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.removable' })}`
   function onKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       event.preventDefault();
@@ -154,6 +158,8 @@ const Tab = ({
       event.preventDefault();
       event.stopPropagation();
       onClosingTab(itemKey, metaData);
+      setIsTabRemoved(true)
+      handleArrows(event, index, tabIds);
     }
     else {
       handleArrows(event, index, tabIds);
@@ -201,8 +207,7 @@ const Tab = ({
             <div
               className={cx('pill-remove-button')}
               role="button"
-              tabIndex="0"
-              aria-label="Close Tab"
+              aria-label={tabDeleteLabel}
               onClick={onCloseClick}
             ></div>
           )
@@ -213,8 +218,7 @@ const Tab = ({
               <div
                 className={cx('pill-remove-button')}
                 role="button"
-                tabIndex="0"
-                aria-label="Close Tab"
+                aria-label={tabDeleteLabel}
                 onClick={onCloseClick}
               ></div>
             )}
@@ -228,4 +232,4 @@ const Tab = ({
 Tab.propTypes = propTypes;
 Tab.defaultProps = defaultProps;
 
-export default Tab;
+export default injectIntl(Tab);

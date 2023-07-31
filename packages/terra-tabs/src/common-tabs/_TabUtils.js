@@ -7,6 +7,8 @@ import {
   KEY_END,
   KEY_RETURN,
   KEY_SPACE,
+  KEY_DELETE,
+  KEY_BACK_SPACE,
 } from 'keycode-js';
 
 /**
@@ -121,6 +123,30 @@ const lastFocus = (event, index, ids) => {
     }
   }
 };
+/**
+ * The default event handler for navigational arrow keys.
+ * @param {object} event The triggering event.
+ * @param {number} index The index of the current element.
+ * @param {array} ids The array of id strings.
+ */
+const deletefocus = (event, index, ids) => {
+  event.preventDefault();
+  event.stopPropagation();
+
+  if (index < 0) {
+    const element = document.getElementById(ids[0]);
+    if (element) {
+      element.focus();
+    }
+    return;
+  }
+
+  const newIndex = index - 1 >= ids.length ? 0 : index - 1;
+  const element = document.getElementById(ids[newIndex]);
+  if (element) {
+    element.focus();
+  }
+};
 
 /**
  * The default event handler for navigational arrow keys.
@@ -140,6 +166,9 @@ const handleArrows = (event, index, ids) => {
     firstFocus(event, index, ids);
   } else if (event.nativeEvent.keyCode === KEY_END) {
     lastFocus(event, index, ids);
+  }
+  else if (event.nativeEvent.keyCode === KEY_DELETE || event.nativeEvent.keyCode === KEY_BACK_SPACE ) {
+    deletefocus(event,index, ids)
   }
 };
 

@@ -81,6 +81,7 @@ const propTypes = {
   showAddButton: PropTypes.bool,
 
   onClosingTab:PropTypes.func,
+  isClosable:PropTypes.func
 };
 
 const defaultProps = {
@@ -106,6 +107,7 @@ const HiddenTab = ({
   showIcon,
   showAddButton,
   onClosingTab,
+  isClosable
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
