@@ -172,7 +172,6 @@ function WorklistDataGrid(props) {
   const defaultColumnMaximumWidth = 300;
 
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
-  const [pinnedColumnsTotalWidth, setPinnedColumnsTotalWidth] = useState(0);
 
   // Initialize column width properties
   const initializeColumn = (column) => {
