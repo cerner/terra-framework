@@ -1,16 +1,19 @@
 import React, { useContext, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
+import * as KeyCode from 'keycode-js';
+import classNames from 'classnames/bind';
+
 import ThemeContext from 'terra-theme-context';
 import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
-import * as KeyCode from 'keycode-js';
-import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
-import styles from './ColumnHeaderCell.module.scss';
-import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
+
 import ColumnResizeHandle from './ColumnResizeHandle';
+import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
+import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
+import ColumnContext from '../utils/ColumnContext';
+import styles from './ColumnHeaderCell.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -133,6 +136,7 @@ const ColumnHeaderCell = (props) => {
     isTabStop,
   } = props;
 
+  const columnContext = useContext(ColumnContext);
   const columnHeaderCell = useRef();
 
   const columnHeaderCellRef = useCallback((node) => {
@@ -183,19 +187,31 @@ const ColumnHeaderCell = (props) => {
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);
 
+  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
+  const dividerLeftEdge = width - 1;
+
+  const pinnedColumnsDivider = columnIndex === columnContext.pinnedColumnOffsets.length - 1
+    ? (
+      <div
+        className={cx('pinned-columns-divider')}
+        style={{ height: tableHeight, left: dividerLeftEdge }} // eslint-disable-line react/forbid-dom-props
+      />
+    )
+    : null;
+
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
       ref={(columnHeaderCellRef)}
       key={id}
-      className={cx('column-header', theme.className, { selectable: isSelectable })}
+      className={cx('column-header', theme.className, { selectable: isSelectable, pinned: columnIndex < columnContext.pinnedColumnOffsets.length })}
       tabIndex={isTabStop ? 0 : -1}
       role="columnheader"
       scope="col"
       aria-sort={sortIndicator}
       onMouseDown={(isSelectable && onColumnSelect) ? handleMouseDown : undefined}
       onKeyDown={(isSelectable && onColumnSelect) ? handleKeyDown : undefined}
-      style={{ width: `${width}px`, height: headerHeight }}
+      style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
     >
       <div className={cx('header-container')} role={displayName && 'button'}>
         {errorIcon}
@@ -213,6 +229,7 @@ const ColumnHeaderCell = (props) => {
         onResizeMouseDown={onResizeHandleMouseDown}
       />
       )}
+      {pinnedColumnsDivider}
     </th>
   );
 };

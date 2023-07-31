@@ -1,11 +1,11 @@
-/* eslint-disable import/no-extraneous-dependencies */
-// eslint-disable no-console
 import React from 'react';
 import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
-import { shallowWithIntl } from 'terra-enzyme-intl';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
+import ColumnContext from '../../src/utils/ColumnContext';
 
 describe('ColumnHeaderCell', () => {
   it('renders a default column header cell', () => {
@@ -250,5 +250,32 @@ describe('ColumnHeaderCell', () => {
     expect(headerContainer.find(IconError)).toHaveLength(1);
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders a pinned column header cell', () => {
+    jest.spyOn(console, 'error').mockImplementation(); // eslint-disable-line no-console
+
+    const column = {
+      id: 'Column-0',
+      displayName: ' Vitals',
+      sortIndicator: 'ascending',
+      hasError: true,
+    };
+
+    const wrapper = mountWithIntl(
+      <ColumnContext.Provider value={{ pinnedColumnOffsets: [0] }}>
+        <ColumnHeaderCell
+          columnIndex={0}
+          width={100}
+          headerHeight="150px"
+          {...column}
+        />
+      </ColumnContext.Provider>,
+    );
+
+    expect(wrapper.find('.pinned')).toHaveLength(1);
+    expect(wrapper).toMatchSnapshot();
+
+    console.error.mockRestore(); // eslint-disable-line no-console
   });
 });

@@ -1,5 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Cell renders a pinned cell 1`] = `
+<InjectIntl(Cell)
+  columnId="ColumnId"
+  columnIndex={0}
+  height="50px"
+  isRowHeader={true}
+  isSelected={false}
+  isTabStop={false}
+  key="key"
+  onCellSelect={[Function]}
+  rowId="RowID"
+  rowIndex={1}
+>
+  <Cell
+    columnId="ColumnId"
+    columnIndex={0}
+    height="50px"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isMasked={false}
+    isRowHeader={true}
+    isSelectable={true}
+    isSelected={false}
+    isTabStop={false}
+    onCellSelect={[Function]}
+    rowId="RowID"
+    rowIndex={1}
+  >
+    <th
+      aria-selected={false}
+      className="worklist-data-grid-cell pinned selectable"
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      style={
+        Object {
+          "left": 0,
+        }
+      }
+      tabIndex={-1}
+    >
+      <div
+        className="cell-content"
+        style={
+          Object {
+            "height": "50px",
+          }
+        }
+      >
+        Pinned cell data
+      </div>
+    </th>
+  </Cell>
+</InjectIntl(Cell)>
+`;
+
 exports[`Cell verifies mask takes precedence when cell is masked, selectable and selected 1`] = `
 <td
   aria-label="Terra.worklistDataGrid.maskedCell"
@@ -7,6 +87,11 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
   className="worklist-data-grid-cell masked"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
+  style={
+    Object {
+      "left": null,
+    }
+  }
   tabIndex={-1}
 />
 `;
@@ -18,6 +103,11 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
   className="worklist-data-grid-cell masked"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
+  style={
+    Object {
+      "left": null,
+    }
+  }
   tabIndex={-1}
 />
 `;
@@ -29,6 +119,11 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
   className="worklist-data-grid-cell selectable selected"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
+  style={
+    Object {
+      "left": null,
+    }
+  }
   tabIndex={-1}
 >
   <div
@@ -50,6 +145,11 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
   className="worklist-data-grid-cell selectable"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
+  style={
+    Object {
+      "left": null,
+    }
+  }
   tabIndex={-1}
 >
   <div
@@ -71,6 +171,11 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
   className="worklist-data-grid-cell selectable"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
+  style={
+    Object {
+      "left": null,
+    }
+  }
   tabIndex={-1}
 >
   <div
@@ -93,6 +198,11 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
   className="worklist-data-grid-cell selectable blank"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
+  style={
+    Object {
+      "left": null,
+    }
+  }
   tabIndex={-1}
 />
 `;
@@ -103,6 +213,11 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
   className="worklist-data-grid-cell selectable"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
+  style={
+    Object {
+      "left": null,
+    }
+  }
   tabIndex={-1}
 >
   <div
