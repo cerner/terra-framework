@@ -199,15 +199,6 @@ const ColumnHeaderCell = (props) => {
     )
     : null;
 
-    const pinnedColumnsBackground = columnIndex < columnContext.pinnedColumnOffsets.length
-    ? (
-      <div 
-      className={cx('pinned-columns-background')}
-      style={{width: width, height: tableHeight}}
-      />
-    )
-    : null;
-
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
