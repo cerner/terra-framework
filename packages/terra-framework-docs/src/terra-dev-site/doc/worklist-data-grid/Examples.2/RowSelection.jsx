@@ -109,7 +109,7 @@ const RowSelection = () => {
       </div>
       <WorklistDataGrid
         id="default-terra-worklist-data-grid"
-        columns={cols}
+        overflowColumns={cols}
         rows={[...rows]}
         rowHeaderIndex={rowHeaderIndex}
         columnWidth="180px"
