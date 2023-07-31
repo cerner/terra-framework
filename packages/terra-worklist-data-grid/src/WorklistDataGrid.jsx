@@ -308,9 +308,7 @@ function WorklistDataGrid(props) {
         offsetArray.push(cumulativeOffset);
       });
     }
-
     setPinnedColumnOffsets(offsetArray);
-    setPinnedColumnsTotalWidth(cumulativeOffset + dataGridColumns[pinnedColumns.length - 1].width);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataGridColumns]);
 
