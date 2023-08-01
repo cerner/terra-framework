@@ -2,7 +2,10 @@
 
 ## Unreleased
 
-## 1.26.0 - (July 20, 2023)
+## 1.28.0 - (July 31, 2023)
+
+* Changed
+  * Minor dependency version bump
 
 * Added
   * Added examples for `terra-worklist-data-grid` when using pinned columns.
