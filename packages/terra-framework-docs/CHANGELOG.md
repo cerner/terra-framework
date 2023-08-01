@@ -11,8 +11,7 @@
   * Minor dependency version bump
 
 * Added
-  * Added examples for `terra-worklist-data-grid` when using pinned columns.
-  * Added `terra-worklist-data-grid` as dependency.
+  * Added example to test toggling and focusing disclosing node for `terra-slide-panel`.
 
 ## 1.27.0 - (July 25, 2023)
 
@@ -22,8 +21,8 @@
 ## 1.26.0 - (July 20, 2023)
 
 * Added
+  * Added examples for `terra-worklist-data-grid` when using pinned columns.
   * Added `terra-worklist-data-grid` as dependency.
-  * Added example to test toggling and focusing disclosing node for `terra-slide-panel`.
 
 ## 1.25.0 - (July 19, 2023)
 
