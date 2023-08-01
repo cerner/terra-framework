@@ -1,15 +1,19 @@
 :local {
   .clinical-lowlight-theme {
-    // Columns
+    // Columns Headers
     --terra-worklist-data-grid-column-header-text-color: #b2b5b6;
-    --terra-worklist-data-grid-column-header-background-color: #6e6f71;
+    --terra-worklist-data-grid-column-header-background-color: #151719;
     --terra-worklist-data-grid-column-header-border: 1px solid #181b1d;
-    --terra-worklist-data-grid-hover-background-color: #1c303d;
+    
+    // Pinned Columns
     --terra-worklist-data-grid-pinned-columns-header-border: 1px solid #181b1d;
     --terra-worklist-data-grid-pinned-columns-header-box-shadow: 1px 0 #181b1d;
 
-    // Styles pending UX input
-    // --terra-worklist-data-grid-pinned-columns-divider-background-color
-    // --terra-worklist-data-grid-pinned-columns-divider-box-shadow
+    // Pinned Columns divider
+    --terra-worklist-data-grid-pinned-columns-divider-background-color: #181b1d;
+    --terra-worklist-data-grid-pinned-columns-divider-box-shadow: 4px -1px 6px #181b1d;
+
+    // Hover 
+    --terra-worklist-data-grid-hover-background-color: #1c303d;
   }
 }
