@@ -58,10 +58,15 @@ const TabsTemplate = (props) => {
   const disabledTab = (
     <Tabs.Pane label="Disabled Tab" icon={<IconSearch />} isDisabled key="DisabledTab" />
   );
+  const handleTabClose = (tabdata,itemKey,event) => {
+    console.log('Closed Tabdata:', tabdata);
+    console.log('Closed Tab ID2:', itemKey);
+    console.log('Closed Tab eventD3:', event);
 
+  };
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs isClosable={true}  defaultActiveKey="LabelTab" id={props.id} >
+      <Tabs isClosable={true} onTabClose={handleTabClose} defaultActiveKey="LabelTab" id={props.id} >
         {labelTab}
         {iconTab}
         {customTab}
