@@ -112,9 +112,9 @@ const CommonTabs = ({
   ),
   customProps.className);
 
-  const handleCommonTabsStateChange=(value)=>{
-    console.log("CommonTabs props",value)
-    onClosingTab(value)
+  const handleCommonTabsStateChange=(value,itemKey,event)=>{
+    onClosingTab(value,itemKey,event)
+    
   }
 
   return (
@@ -126,7 +126,7 @@ const CommonTabs = ({
         <div className={cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
-        <Tabs variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab}   onTabStateChange={handleCommonTabsStateChange}/>
+        <Tabs variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab} onTabStateChange={handleCommonTabsStateChange}/>
       </div>
       <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {

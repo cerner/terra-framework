@@ -14,6 +14,7 @@ import terraStyles from './TerraTabs.module.scss';
 import { injectIntl } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { v4 as uuidv4 } from 'uuid';
+import IconClose from 'terra-icon/lib/icon/IconClose';
 
 const cy = classNames.bind(terraStyles);
 
@@ -178,7 +179,7 @@ const Tab = ({
   }
   function onCloseClick(event) {
     event.stopPropagation();
-    onClosingTab(itemKey, metaData)
+    onClosingTab(itemKey, metaData,event)
     let deleteTabLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed'})}`
     const element = document.getElementById(tabIds[index-1]);
     const ariaLabel = label ? `${label} ${deleteTabLabel}` : '';
@@ -214,23 +215,25 @@ const Tab = ({
         {customDisplay ? null : icon}
         {customDisplay || isIconOnly ? (
           isClosable && (
-            <div
-              className={cx('pill-remove-button')}
-              role="button"
-              aria-label={tabDeleteLabel}
-              onClick={onCloseClick}
-            ></div>
+            <button
+            className={cx('pill-remove-button')}
+            role="button"
+            aria-label={tabDeleteLabel}
+            onClick={onCloseClick}
+          ><IconClose a11yLabel={'Closed CLICKED'} />              
+          </button>
           )
         ) : (
           <span className={variant === 'framework' ? cy('label') : cx('label')}>
             {label}
             {isClosable && (
-              <div
+              <button
                 className={cx('pill-remove-button')}
                 role="button"
                 aria-label={tabDeleteLabel}
                 onClick={onCloseClick}
-              ></div>
+              ><IconClose a11yLabel={'Closed CLICKED'} />              
+              </button>
             )}
           </span>
         )}

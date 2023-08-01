@@ -295,7 +295,7 @@ class Tabs extends React.Component {
   }
 
   wrapOnClose(onClose) {
-    return (itemKey, metaData) => {
+    return (itemKey, metaData,event) => {
       this.setIsOpen(false);
       let removedTabIndex = -1;
       const updatedTabData = this.state.tabData
@@ -327,7 +327,7 @@ class Tabs extends React.Component {
           updatedTabData[removedTabIndex].isSelected = true;
         }
       }
-     this.props.onTabStateChange(updatedTabData);
+     this.props.onTabStateChange(updatedTabData,itemKey,event);
       this.setState({ tabData: updatedTabData });
       onClose(itemKey, metaData);
     };

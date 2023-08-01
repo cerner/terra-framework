@@ -161,15 +161,15 @@
   }
   .pill-remove-button {
     background-color: #fff;
-    background-image: inline-svg('<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#4d5153" d="M28.2 24L42.9 9.1 40.8 7l-1.7-1.6-.4-.5L24 19.7 9.4 4.9 7.2 7 5.6 8.6l-.5.5L19.8 24 5.1 38.9 7.2 41l1.7 1.6.5.5L24 28.3l14.7 14.8.4-.5 1.7-1.6 2.1-2.1L28.2 24z"></path></svg>');
+  //  background-image: inline-svg('<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#4d5153" d="M28.2 24L42.9 9.1 40.8 7l-1.7-1.6-.4-.5L24 19.7 9.4 4.9 7.2 7 5.6 8.6l-.5.5L19.8 24 5.1 38.9 7.2 41l1.7 1.6.5.5L24 28.3l14.7 14.8.4-.5 1.7-1.6 2.1-2.1L28.2 24z"></path></svg>');
     border: 0;
     border-radius: 0.5714rem;
     color: #595f62;
     cursor: pointer;
     display: inline-block;
     font-family: inherit;
-    font-size: 0.5714rem; /* Adjust the font size to make it smaller */
-    height: 1.02857rem; /* Adjust the height to make it smaller */
+    font-size: 1rem; /* Adjust the font size to make it smaller */
+    height: 1rem; /* Adjust the height to make it smaller */
     line-height: 1; /* Adjust the line-height to align text vertically */
     margin: 0;
     margin-left: 10px;

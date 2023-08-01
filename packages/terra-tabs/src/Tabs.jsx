@@ -126,7 +126,7 @@ class Tabs extends React.Component {
         />,
       );
     });
-    const handleTabsStateChange = (newValue) => {
+    const handleTabsStateChange = (newValue,itemKey,event) => {
       if (newValue.length > 0) {
         let activeAfterClosed = '';
         for (let i = 0; i < newValue.length; i++) {
@@ -139,6 +139,7 @@ class Tabs extends React.Component {
       } else if (newValue.length === 0) {
         this.setState({ activeAfterClosed: '' });
       }
+      this.props.onTabClose && this.props.onTabClose(newValue,itemKey,event);
     };
     return (
       <CommonTabs

@@ -11,6 +11,8 @@ import {
 } from './_TabUtils';
 
 import styles from './HiddenTab.module.scss';
+import IconClose from 'terra-icon/lib/icon/IconClose';
+import { injectIntl } from 'react-intl';
 
 const cx = classNames.bind(styles);
 
@@ -81,7 +83,9 @@ const propTypes = {
   showAddButton: PropTypes.bool,
 
   onClosingTab:PropTypes.func,
-  isClosable:PropTypes.func
+  isClosable:PropTypes.func,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+
 };
 
 const defaultProps = {
@@ -107,7 +111,8 @@ const HiddenTab = ({
   showIcon,
   showAddButton,
   onClosingTab,
-  isClosable
+  isClosable,
+  intl
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -116,6 +121,7 @@ const HiddenTab = ({
     { 'is-active': isSelected },
     theme.className,
   );
+  let tabDeleteLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.removable'})}`
 
   const handleOnSelect = (event) => {
     event.preventDefault();
@@ -160,12 +166,13 @@ const HiddenTab = ({
       {showIcon && icon}
       <div className={cx('label', { 'with-icon': showIcon })}>{label}</div>
       {isClosable && (
-               <a
-               class={cx('pill-remove-button')}
-               type="button"
-               aria-label="Close Tab"
+               <button
+               className={cx('pill-remove-button')}
+               role="button"
+               aria-label={tabDeleteLabel}
                onClick={onCloseClick}
-             >x</a>
+             ><IconClose a11yLabel={'Closed CLICKED'} />              
+             </button>
             )}
     </div>
   );
@@ -174,4 +181,4 @@ const HiddenTab = ({
 HiddenTab.propTypes = propTypes;
 HiddenTab.defaultProps = defaultProps;
 
-export default HiddenTab;
+export default injectIntl(HiddenTab);
