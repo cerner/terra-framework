@@ -70,6 +70,6 @@
     "terra-theme-provider": "^4.13.0",
     "terra-time-input": "^4.54.0",
     "terra-toolbar": "^1.27.0",
-    "terra-worklist-data-grid": "^0.4.0"
+    "terra-worklist-data-grid": "^0.3.0"
   }
 }
