@@ -4,6 +4,9 @@
 * Added
   * Added examples and tests for `terra-worklist-data-grid` to interact with cells containing focusable elements.
 
+* Changed
+  * Updated tests for `terra-worklist-data-grid` to verify focusable cell elements do not receive focus on tab key press.
+
 ## 1.26.0 - (July 20, 2023)
 
 * Added
