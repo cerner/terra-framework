@@ -150,7 +150,7 @@ const Tab = ({
   }
 
   function onKeyDown(event) {
-    if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
+    if (event.nativeEvent.keyCode === KEY_RETURN || (event.nativeEvent.keyCode === KEY_SPACE && !isDraggable)) {
       event.preventDefault();
       event.stopPropagation();
       onSelect(itemKey, metaData);
@@ -170,7 +170,6 @@ const Tab = ({
     }
   }
 
-  attributes.tabIndex = isSelected ? 0 : -1;
   attributes.onClick = onClick;
   attributes.onKeyDown = onKeyDown;
   attributes.onBlur = enableFocusStyles;
@@ -198,6 +197,7 @@ const Tab = ({
             className={variant === 'framework' ? paneClassNames : tabClassNames}
             title={label}
             aria-describedby={responseId}
+            tabIndex={isSelected ? 0 : -1}
             data-terra-tabs-show-focus-styles
             data-terra-tab-draggable
           >
@@ -224,6 +224,7 @@ const Tab = ({
       aria-disabled={isDisabled}
       className={variant === 'framework' ? paneClassNames : tabClassNames}
       title={label}
+      tabIndex={isSelected ? 0 : -1}
       data-terra-tabs-show-focus-styles
     >
       <div className={variant === 'framework' ? cy('inner') : cx('inner')}>
