@@ -139,6 +139,8 @@ class Tabs extends React.Component {
       this.isCalculating = false;
       this.handleResize(this.contentWidth);
     } else if (this.props.tabData.length !== prevProps.tabData.length) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ tabData: this.props.tabData });
       this.resetCache();
       this.forceUpdate();
     }
