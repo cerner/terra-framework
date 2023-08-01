@@ -129,24 +129,27 @@ const lastFocus = (event, index, ids) => {
  * @param {number} index The index of the current element.
  * @param {array} ids The array of id strings.
  */
-const deletefocus = (event, index, ids) => {
+const deletefocus = (event, index, ids, label, deleteTabLabel) => {
   event.preventDefault();
   event.stopPropagation();
-
   if (index < 0) {
-    const element = document.getElementById(ids[0]);
-    if (element) {
-      element.focus();
-    }
     return;
   }
-
-  const newIndex = index - 1 >= ids.length ? 0 : index - 1;
-  const element = document.getElementById(ids[newIndex]);
+  const newIds = ids.slice();
+  newIds.splice(index, 1);
+  const newIndex = index === 0 ? 0 : Math.min(index - 1, newIds.length - 1);
+  const element = document.getElementById(newIds[newIndex]);
   if (element) {
+    const ariaLabel = label ? `${label} ${deleteTabLabel}` : '';
+    element.setAttribute('aria-label', ariaLabel);
     element.focus();
+    element.addEventListener('blur', () => {
+      element.removeAttribute('aria-label');
+    });
   }
 };
+
+
 
 /**
  * The default event handler for navigational arrow keys.
@@ -154,7 +157,7 @@ const deletefocus = (event, index, ids) => {
  * @param {number} index The index of the current element.
  * @param {array} ids The array of id strings.
  */
-const handleArrows = (event, index, ids) => {
+const handleArrows = (event, index, ids,label,deleteTabLabel) => {
   const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
   const nextKey = !isRTL ? KEY_RIGHT : KEY_LEFT;
   const previousKey = !isRTL ? KEY_LEFT : KEY_RIGHT;
@@ -168,7 +171,7 @@ const handleArrows = (event, index, ids) => {
     lastFocus(event, index, ids);
   }
   else if (event.nativeEvent.keyCode === KEY_DELETE || event.nativeEvent.keyCode === KEY_BACK_SPACE ) {
-    deletefocus(event,index, ids)
+    deletefocus(event,index, ids,label,deleteTabLabel)
   }
 };
 

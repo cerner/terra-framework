@@ -3,5 +3,6 @@
   "Terra.tabs.hint.tabList": "Contains {numberOfTabs} items",
   "Terra.tabs.hint.hiddenTabs": "{hiddenTabs} items are not displayed",
   "Terra.tabs.hint.tabMenu": "{hiddenTabs} items are hidden. Select to display {hiddenTabs} hidden items",
-  "Terra.tabs.hint.removable":". Tabs is closable via Delete or Back Space key "
+  "Terra.tabs.hint.removable":". item is removable via Delete or Back Space key",
+  "Terra.tabs.hint.currentTabClosed":" Removed"
 }

@@ -12,6 +12,8 @@ import {
 import styles from './Tab.module.scss';
 import terraStyles from './TerraTabs.module.scss';
 import { injectIntl } from 'react-intl';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { v4 as uuidv4 } from 'uuid';
 
 const cy = classNames.bind(terraStyles);
 
@@ -146,7 +148,7 @@ const Tab = ({
     attributes['aria-label'] = label;
   }
 
-  let tabDeleteLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.removable' })}`
+  let tabDeleteLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.removable'})}`
   function onKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       event.preventDefault();
@@ -158,10 +160,11 @@ const Tab = ({
       event.preventDefault();
       event.stopPropagation();
       onClosingTab(itemKey, metaData);
-      handleArrows(event, index, tabIds);
+      let deleteTabLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed'})}`
+      handleArrows(event, index, tabIds,label,deleteTabLabel);
     }
     else {
-      handleArrows(event, index, tabIds);
+      handleArrows(event, index, tabIds,label);
     }
   }
 
@@ -175,8 +178,16 @@ const Tab = ({
   }
   function onCloseClick(event) {
     event.stopPropagation();
-   // setIsClosed(true);
     onClosingTab(itemKey, metaData)
+    let deleteTabLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed'})}`
+    const element = document.getElementById(tabIds[index-1]);
+    const ariaLabel = label ? `${label} ${deleteTabLabel}` : '';
+    element.setAttribute('aria-label', ariaLabel);
+    element.focus();
+    element.addEventListener('blur', () => {
+    element.removeAttribute('aria-label');
+    });
+  
   }
   attributes.tabIndex = isSelected ? 0 : -1;
   attributes.onClick = onClick;

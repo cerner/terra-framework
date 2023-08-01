@@ -2,5 +2,7 @@
   "Terra.tabs.more": "Más",
   "Terra.tabs.hint.tabList": "Contiene {numberOfTabs} elementos",
   "Terra.tabs.hint.hiddenTabs": "No se muestran {hiddenTabs} elementos.",
-  "Terra.tabs.hint.tabMenu": "{hiddenTabs} elementos están ocultos. Seleccionar para mostrar {hiddenTabs} elementos ocultos."
+  "Terra.tabs.hint.tabMenu": "{hiddenTabs} elementos están ocultos. Seleccionar para mostrar {hiddenTabs} elementos ocultos.",
+  "Terra.tabs.hint.removable":"El elemento se puede quitar mediante la tecla Supr o Retroceso.",
+  "Terra.tabs.hint.currentTabClosed":" Se quitó"
 }
