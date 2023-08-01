@@ -2,5 +2,7 @@
   "Terra.tabs.more": "Meer",
   "Terra.tabs.hint.tabList": "Bevat {numberOfTabs} items",
   "Terra.tabs.hint.hiddenTabs": "{hiddenTabs} items worden niet weergegeven",
-  "Terra.tabs.hint.tabMenu": "{hiddenTabs} items zijn verborgen. Selecteer om {hiddenTabs} verborgen items weer te geven"
+  "Terra.tabs.hint.tabMenu": "{hiddenTabs} items zijn verborgen. Selecteer om {hiddenTabs} verborgen items weer te geven",
+  "Terra.tabs.hint.removable":"kan verwijderd worden via de toets Delete of de toets Backspace",
+  "Terra.tabs.hint.currentTabClosed":" verwijderd"
 }
