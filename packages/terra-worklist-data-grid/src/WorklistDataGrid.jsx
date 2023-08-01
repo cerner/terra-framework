@@ -589,7 +589,6 @@ function WorklistDataGrid(props) {
             onResizeMouseDown={onResizeMouseDown}
           />
           <tbody>
-
             {buildRows(rows)}
           </tbody>
         </ColumnContext.Provider>
