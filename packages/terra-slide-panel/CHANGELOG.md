@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 3.44.0 - (July 31, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+* Added
+  * Added check for focus on the disclosing node before calling focus.
+
 ## 3.43.0 - (July 19, 2023)
 
 * Changed

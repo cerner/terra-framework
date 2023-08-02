@@ -195,4 +195,32 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       expect($('#toggle-panel-button').isFocused()).toBeFalsy();
     });
   });
+
+  describe('Non-focusable element used to disclose slide panel', () => {
+    it('does not focus SVG when it is the disclosing node', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-svg-toggle');
+      $('#test-click-svg').moveTo();
+      $('#test-click-svg').click();
+      $('#test-slide [aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
+      browser.keys(['Tab']);
+      expect($('#focus-button').isFocused()).toBeTruthy();
+      browser.keys(['Enter']);
+
+      expect($('body').isFocused()).toBeTruthy();
+      expect($('#test-click-svg').isFocused()).toBeFalsy();
+    });
+
+    it('focuses main node when disclosing node has undefined focus', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-svg-toggle');
+      $('#test-p-click').moveTo();
+      $('#test-p-click').click();
+      $('#test-slide [aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
+      browser.keys(['Tab']);
+      expect($('#focus-button').isFocused()).toBeTruthy();
+      browser.keys(['Enter']);
+
+      expect($('[aria-label="Main content area"]').isFocused()).toBeTruthy();
+      expect($('#test-click-svg').isFocused()).toBeFalsy();
+    });
+  });
 });

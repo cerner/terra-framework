@@ -5,7 +5,10 @@
 * Added
   * Added tests for draggable tabs.
 
-## 1.26.0 - (July 20, 2023)
+## 1.28.0 - (July 31, 2023)
+
+* Changed
+  * Minor dependency version bump
 
 * Added
   * Added examples for `terra-worklist-data-grid` when using pinned columns.
@@ -20,6 +23,7 @@
 
 * Added
   * Added `terra-worklist-data-grid` as dependency.
+  * Added example to test toggling and focusing disclosing node for `terra-slide-panel`.
 
 ## 1.25.0 - (July 19, 2023)
 
