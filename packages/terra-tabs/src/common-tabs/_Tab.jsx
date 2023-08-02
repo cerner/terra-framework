@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+import { Draggable } from 'react-beautiful-dnd';
+import IconKnurling from 'terra-icon/lib/icon/IconKnurling';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { v4 as uuidv4 } from 'uuid';
 import {
   enableFocusStyles,
   disableFocusStyles,
@@ -89,6 +93,10 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  /**
+   * Whether or not the tab is draggable.
+   */
+  isDraggable: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -96,6 +104,7 @@ const defaultProps = {
   isIconOnly: false,
   isDisabled: false,
   showIcon: false,
+  isDraggable: false,
 };
 
 const Tab = ({
@@ -115,6 +124,7 @@ const Tab = ({
   variant,
   isDisabled,
   onChange,
+  isDraggable,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -140,13 +150,14 @@ const Tab = ({
   }
 
   function onKeyDown(event) {
-    if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
+    if (event.nativeEvent.keyCode === KEY_RETURN || (event.nativeEvent.keyCode === KEY_SPACE && !isDraggable)) {
       event.preventDefault();
       event.stopPropagation();
       onSelect(itemKey, metaData);
       onChange(event, itemKey);
     } else {
-      handleArrows(event, index, tabIds);
+      const isDragging = !document.querySelectorAll('[data-terra-drag-focus="true"]').length && isDraggable;
+      handleArrows(event, index, tabIds, isDragging);
     }
   }
 
@@ -159,7 +170,6 @@ const Tab = ({
     }
   }
 
-  attributes.tabIndex = isSelected ? 0 : -1;
   attributes.onClick = onClick;
   attributes.onKeyDown = onKeyDown;
   attributes.onBlur = enableFocusStyles;
@@ -167,6 +177,42 @@ const Tab = ({
   attributes['data-focus-styles-enabled'] = !isDisabled;
   attributes['aria-selected'] = isSelected;
   attributes.style = { zIndex };
+
+  // TBD: Add Translations
+  const onFocusResponse = 'Press Enter to activate a tab, or Press space bar to start a drag. When dragging you can use the arrow keys to move the item around, space bar to drop and escape to cancel. Ensure your screen reader is in focus mode or forms mode';
+  const responseId = `terra-tab-pane-response=${uuidv4()}`;
+
+  if (isDraggable) {
+    return (
+      <Draggable key={id} draggableId={id} index={index}>
+        {(provided) => (
+          <div
+            {...attributes}
+            ref={provided.innerRef}
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            id={id}
+            aria-controls={associatedPanelId}
+            role="tab"
+            className={variant === 'framework' ? paneClassNames : tabClassNames}
+            title={label}
+            aria-describedby={responseId}
+            tabIndex={isSelected ? 0 : -1}
+            data-terra-tabs-show-focus-styles
+            data-terra-tab-draggable
+          >
+            <div>
+
+              <IconKnurling className={cx('icon-knurling')} />
+              <VisuallyHiddenText aria-hidden id={responseId} text={onFocusResponse} />
+              {customDisplay || icon}
+              {(!customDisplay && !isIconOnly) && <span className={cx('label')}>{label}</span>}
+            </div>
+          </div>
+        )}
+      </Draggable>
+    );
+  }
 
   return (
     <div
@@ -177,12 +223,12 @@ const Tab = ({
       aria-disabled={isDisabled}
       className={variant === 'framework' ? paneClassNames : tabClassNames}
       title={label}
+      tabIndex={isSelected ? 0 : -1}
       data-terra-tabs-show-focus-styles
     >
       <div className={variant === 'framework' ? cy('inner') : cx('inner')}>
-        {customDisplay}
-        {customDisplay ? null : icon}
-        {customDisplay || isIconOnly ? null : <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
+        {customDisplay || icon}
+        {(!customDisplay && !isIconOnly) && <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
       </div>
     </div>
   );
