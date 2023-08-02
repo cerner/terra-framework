@@ -5,5 +5,6 @@
   "Terra.menu.selected": ",seleccionado",
   "Terra.menu.unselected": ",no seleccionado",
   "Terra.menu.itemWithSubmenu": ",con elementos del submenú",
-  "Terra.menu.index": "({index} de {totalItems})"
+  "Terra.menu.index": "({index} de {totalItems})",
+  "Terra.menu.navigateMenuItem": ". Para desplazarse por los elementos, presione las flechas arriba y abajo"
 }

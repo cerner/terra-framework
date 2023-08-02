@@ -294,16 +294,23 @@ class MenuItem extends React.Component {
     ]);
 
     let content = textContainer;
+    const ariaLiveAttribute = markAsToggled && { 'aria-live': 'polite' };
 
     const screenReaderResponse = (
       <>
         { MenuUtils.isMac() && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.index' }, { index: index + 1, totalItems })} /> }
         { MenuUtils.isMac() && (isGroupItem || toggleable) && <VisuallyHiddenText text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
+        {/* Adds context to Use the up and down arrows to navigate the options */}
+        { this.itemNode && this.itemNode.parentNode.getAttribute('data-submenu') === 'true' && index === 0 && totalItems !== 1 && !MenuUtils.isMac()
+          && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.navigateMenuItem' })} /> }
         {/* Adds context for item with submenu-items */}
         { subMenuItems.length > 0 && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.itemWithSubmenu' })} /> }
         {/* Adds context for navigating back to parent menu from submenu */}
         { this.itemNode && this.itemNode.parentNode.getAttribute('data-submenu') === 'true' && index === 0
             && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.exitSubmenu' })} /> }
+        {/* Adds context for selected and unselected state */}
+        { !MenuUtils.isMac() && toggleable && !isGroupItem && <VisuallyHiddenText aria-live="polite" text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
+        { !MenuUtils.isMac() && isGroupItem && <VisuallyHiddenText {...ariaLiveAttribute} text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} />}
       </>
     );
 
@@ -349,7 +356,8 @@ class MenuItem extends React.Component {
     } else if (toggleable) {
       role = 'menuitemcheckbox';
     }
-
+    const selectAttribute = (MenuUtils.isMac() && toggleable) ? { 'aria-selected': markAsToggled } : '';
+    const menuRole = MenuUtils.isMac() ? role : 'menuitem';
     /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
     return (
@@ -359,8 +367,8 @@ class MenuItem extends React.Component {
             {...attributes}
             className={classNames(itemClassNames, cx(theme.className))}
             ref={this.setItemNode}
-            role={role}
-            aria-checked={markAsToggled}
+            role={menuRole}
+            {...selectAttribute}
             tabIndex="0"
             aria-disabled={isDisabled}
           >
