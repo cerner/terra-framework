@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added tests for draggable tabs.
+
 ## 1.28.0 - (July 31, 2023)
 
 * Changed

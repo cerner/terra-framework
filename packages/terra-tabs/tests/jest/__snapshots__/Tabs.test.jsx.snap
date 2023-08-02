@@ -37,11 +37,13 @@ exports[`Tabs correctly applies the theme context className 1`] = `
 >
   <Tabs
     fill={false}
+    isDraggable={false}
     tabFill={false}
     variant="modular-left-aligned"
   >
     <CommonTabs
       activeItemKey="default"
+      isDraggable={false}
       onRequestActivate={[Function]}
       variant="modular-left-aligned"
     >
@@ -62,6 +64,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
           role="none"
         >
           <Tabs
+            isDraggable={false}
             tabData={
               Array [
                 Object {
@@ -95,6 +98,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                 id="terra-common-tabs-default"
                 index={0}
                 isDisabled={false}
+                isDraggable={false}
                 isIconOnly={false}
                 isSelected={true}
                 itemKey="default"
@@ -212,7 +216,6 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                   role="none"
                 >
                   <div
-                    class="panel-header"
                     data-testid="workspace-content-heading"
                     role="none"
                   />
@@ -257,7 +260,6 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                     role="none"
                   >
                     <div
-                      class="panel-header"
                       data-testid="workspace-content-heading"
                       role="none"
                     />
@@ -288,13 +290,14 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                 </div>
               }
             >
-              <CommonTabContent>
+              <CommonTabContent
+                variant="framework"
+              >
                 <div
                   className="panel orion-fusion-theme"
                   role="none"
                 >
                   <div
-                    className="panel-header"
                     data-testid="workspace-content-heading"
                     role="none"
                   />
@@ -354,6 +357,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
     role="none"
   >
     <Tabs
+      isDraggable={false}
       onChange={[Function]}
       tabData={
         Array [
@@ -416,6 +420,70 @@ exports[`Tabs should render a default component 1`] = `
     role="none"
   >
     <Tabs
+      isDraggable={false}
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "terra-common-tabs-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "terra-common-tabs-default",
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+            "showIcon": false,
+          },
+        ]
+      }
+      variant="framework"
+    />
+  </div>
+  <div
+    className="body"
+    role="none"
+  >
+    <CommonTabItem
+      associatedPanelId="terra-common-tabs-default-panel"
+      id="terra-common-tabs-default"
+      isActive={true}
+      isDisabled={false}
+      isIconOnly={false}
+      itemKey="default"
+      key="default/.0"
+      label="Default"
+      portalElement={null}
+      render={[Function]}
+      showIcon={false}
+      variant="framework"
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs should render a draggable tabs component 1`] = `
+<div
+  className="structural"
+  role="none"
+>
+  <div
+    aria-hidden={true}
+    className="body-shadow-container"
+  >
+    <div
+      className="body-shadow"
+    />
+  </div>
+  <div
+    className="tab-header"
+    role="none"
+  >
+    <Tabs
+      isDraggable={true}
+      onTabOrderChange={[MockFunction]}
       tabData={
         Array [
           Object {
@@ -477,6 +545,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
     role="none"
   >
     <Tabs
+      isDraggable={false}
       tabData={
         Array [
           Object {
@@ -538,6 +607,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
     role="none"
   >
     <Tabs
+      isDraggable={false}
       tabData={
         Array [
           Object {
@@ -611,6 +681,7 @@ exports[`Tabs should render with content filled when indicated 1`] = `
       "timeZone": null,
     }
   }
+  isDraggable={false}
   onRequestActivate={[Function]}
   variant="framework"
 >
@@ -621,6 +692,7 @@ exports[`Tabs should render with content filled when indicated 1`] = `
     label="Default"
     render={[Function]}
     showIcon={false}
+    variant="framework"
   />
 </CommonTabs>
 `;
@@ -655,6 +727,7 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
       "timeZone": null,
     }
   }
+  isDraggable={false}
   onRequestActivate={[Function]}
   variant="framework"
 >
@@ -665,6 +738,7 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
     label="Default"
     render={[Function]}
     showIcon={false}
+    variant="framework"
   />
 </CommonTabs>
 `;
@@ -700,6 +774,7 @@ exports[`Tabs should set custom props 1`] = `
       "timeZone": null,
     }
   }
+  isDraggable={false}
   onRequestActivate={[Function]}
   variant="framework"
 >
@@ -710,6 +785,7 @@ exports[`Tabs should set custom props 1`] = `
     label="Default"
     render={[Function]}
     showIcon={false}
+    variant="framework"
   />
 </CommonTabs>
 `;
@@ -732,6 +808,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
     role="none"
   >
     <Tabs
+      isDraggable={false}
       tabData={
         Array [
           Object {
