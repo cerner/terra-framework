@@ -213,31 +213,21 @@ const Tab = ({
       <div className={variant === 'framework' ? cy('inner') : cx('inner')}>
         {customDisplay}
         {customDisplay ? null : icon}
-        {customDisplay || isIconOnly ? (
-          isClosable && (
+        {customDisplay || isIconOnly ? null : (
+          <span className={variant === 'framework' ? cy('label') : cx('label')}>
+            {label}</span>
+        )}
+        </div>  
+          {isClosable && (
             <button
             className={cx('pill-remove-button')}
             role="button"
             aria-label={tabDeleteLabel}
             onClick={onCloseClick}
-          ><IconClose a11yLabel={'Closed CLICKED'} />              
+          ><IconClose a11yLabel={'Closed CLICKED'} />
           </button>
-          )
-        ) : (
-          <span className={variant === 'framework' ? cy('label') : cx('label')}>
-            {label}
-            {isClosable && (
-              <button
-                className={cx('pill-remove-button')}
-                role="button"
-                aria-label={tabDeleteLabel}
-                onClick={onCloseClick}
-              ><IconClose a11yLabel={'Closed CLICKED'} />              
-              </button>
-            )}
-          </span>
-        )}
-      </div>
+            )
+          }
     </div>
   );
 };

@@ -308,13 +308,6 @@ class Tabs extends React.Component {
           return { ...tab, originalIndex: index };
         })
         .filter((tab) => tab.itemKey !== itemKey)
-        .map((tab, index) => {
-          if (tab.isSelected === true) {
-          }
-          return {
-            ...tab,
-          };
-        });
   
       if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex !== 0 && updatedTabData[removedTabIndex - 1].isDisabled != true) {
         if (updatedTabData[removedTabIndex - 1].isSelected !== undefined) {
