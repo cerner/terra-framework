@@ -314,7 +314,7 @@ class Tabs extends React.Component {
 
   render() {
     const {
-      tabData, ariaLabel, variant, onChange, isDraggable,
+      ariaLabel, variant, onChange, isDraggable,
     } = this.props;
     const theme = this.context;
     const enabledTabs = this.state.visibleTabData.filter(tab => !tab.isDisabled);
@@ -339,7 +339,7 @@ class Tabs extends React.Component {
             icon={tab.icon}
             customDisplay={tab.customDisplay}
             onSelect={this.wrapOnSelect(tab.onSelect)}
-            zIndex={tab.isSelected ? tabData.length : tabData.length - index}
+            zIndex={tab.isSelected ? this.state.visibleTabData.length : this.state.visibleTabData.length - index}
             isIconOnly={tab.isIconOnly}
             variant={variant}
             onChange={onChange}
@@ -412,7 +412,7 @@ class Tabs extends React.Component {
                     isOpen={this.isOpen}
                     hiddenIndex={this.hiddenStartIndex}
                     isActive={isHiddenSelected}
-                    zIndex={tabData.length - this.hiddenStartIndex}
+                    zIndex={this.state.visibleTabData.length - this.hiddenStartIndex}
                     onBlur={this.handleMoreButtonBlur}
                     onSelect={this.handleMoreButtonSelect}
                     refCallback={node => { this.moreButtonRef.current = node; }}
@@ -452,7 +452,7 @@ class Tabs extends React.Component {
             isOpen={this.isOpen}
             hiddenIndex={this.hiddenStartIndex}
             isActive={isHiddenSelected}
-            zIndex={tabData.length - this.hiddenStartIndex}
+            zIndex={this.state.visibleTabData.length - this.hiddenStartIndex}
             onBlur={this.handleMoreButtonBlur}
             onSelect={this.handleMoreButtonSelect}
             refCallback={node => { this.moreButtonRef.current = node; }}
