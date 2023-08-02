@@ -131,9 +131,6 @@ class Popup extends React.Component {
 
   componentDidMount() {
     const { targetRef } = this.props;
-    if (this.props.isOpen) {
-      document.querySelector('#root').setAttribute('inert', 'true');
-    }
     if (targetRef()) {
       targetRef().setAttribute('aria-haspopup', 'true');
     }
@@ -146,8 +143,19 @@ class Popup extends React.Component {
     return true;
   }
 
-  componentWillUnmount() {
-    document.querySelector('#root').removeAttribute('inert');
+  componentDidUpdate(prevProps) {
+    const { isOpen } = this.props;
+    if (isOpen !== prevProps.isOpen) {
+      if (isOpen) {
+        this.addInertAttribute();
+      } else {
+        this.removeInertAttribute();
+      }
+    }
+    if (isOpen !== prevProps.isOpen && !isOpen) {
+      const { targetRef } = this.props;
+      targetRef().focus(); // Maintain focus on the button after the popup is closed
+    }
   }
 
   handleRequestClose() {
@@ -202,6 +210,14 @@ class Popup extends React.Component {
   setArrowNode(node) {
     this.arrowNode = node;
   }
+
+  addInertAttribute = () => {
+    document.querySelector('#root').setAttribute('inert', 'true');
+  };
+
+  removeInertAttribute = () => {
+    document.querySelector('#root').removeAttribute('inert');
+  };
 
   validateContentNode(node) {
     if (node) {
