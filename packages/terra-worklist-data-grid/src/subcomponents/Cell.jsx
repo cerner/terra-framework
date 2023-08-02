@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
-
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ThemeContext from 'terra-theme-context';
 import FocusTrap from 'focus-trap-react';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
@@ -115,6 +115,7 @@ function Cell(props) {
 
   const cellRef = useRef();
   const [isFocusTrapEnabled, setFocusTrapEnabled] = useState(false);
+  const [isInteractable, setInteractable] = useState(false);
   const theme = useContext(ThemeContext);
   const columnContext = useContext(ColumnContext);
 
@@ -122,19 +123,18 @@ function Cell(props) {
    * Determine if cell has focusable elements
    */
   const hasFocusableElements = () => {
-    const focusableElements = [...cellRef.current.querySelectorAll(
-      'a[href], button, input, textarea, select, details,[tabindex]:not([tabindex="-1"])',
-    )].filter(el => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden'));
+    const focusableElementSelector = "a[href]:not([tabindex='-1']), area[href]:not([tabindex='-1']), input:not([disabled]):not([tabindex='-1']), "
+    + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
+    + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1'])";
+
+    const focusableElements = [...cellRef.current.querySelectorAll(`${focusableElementSelector}`)].filter(el => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden'));
 
     return focusableElements.length > 0;
   };
 
   useEffect(() => {
-    if (isTabStop && hasFocusableElements()) {
-      columnContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-interactable' }));
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [intl, isTabStop]);
+    setInteractable(hasFocusableElements());
+  }, []);
 
   /**
    * Handles click event for cell
@@ -246,6 +246,7 @@ function Cell(props) {
         {/* eslint-disable-next-line react/forbid-dom-props */}
         <div className={cx('cell-content', theme.className)} style={{ height }}>{cellContent}</div>
       </FocusTrap>
+      {isInteractable && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-interactable' })} />}
     </CellTag>
   );
 }
