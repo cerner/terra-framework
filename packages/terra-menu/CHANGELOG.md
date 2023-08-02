@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  Updated jest test case
+
 ## 6.73.0 - (July 31, 2023)
 
 * Changed

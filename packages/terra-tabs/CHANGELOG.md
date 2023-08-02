@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  Updated jest test case
+
 * Added
  * Added `isDraggable` and `onTabOrderChange` props to support drag and drop feature in tabs.
 

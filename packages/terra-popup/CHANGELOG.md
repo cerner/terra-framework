@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Fix for keyboard navigation
+  
 ## 6.70.0 - (July 31, 2023)
 
 * Changed
