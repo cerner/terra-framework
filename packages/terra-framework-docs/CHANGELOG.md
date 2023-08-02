@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.29.0 - (August 2, 2023)
+
 * Added
   * Added tests for draggable tabs.
 
