@@ -356,7 +356,7 @@ class MenuItem extends React.Component {
     } else if (toggleable) {
       role = 'menuitemcheckbox';
     }
-    const selectAttribute = (MenuUtils.isMac() && toggleable) ? { 'aria-selected': markAsToggled } : '';
+    const selectAttribute = MenuUtils.isMac() && toggleable && { 'aria-selected': markAsToggled };
     const menuRole = MenuUtils.isMac() ? role : 'menuitem';
     /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
