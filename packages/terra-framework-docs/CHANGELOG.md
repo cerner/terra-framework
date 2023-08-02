@@ -4,6 +4,10 @@
 
 * Added
   * Added keyboard navigation instructions for `terra-menu`.
+
+## 1.29.0 - (August 2, 2023)
+
+* Added
   * Added tests for draggable tabs.
 
 ## 1.28.0 - (July 31, 2023)
