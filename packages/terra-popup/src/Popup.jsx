@@ -131,6 +131,9 @@ class Popup extends React.Component {
 
   componentDidMount() {
     const { targetRef } = this.props;
+    if (this.props.isOpen) {
+      document.querySelector('#root').setAttribute('inert', 'true');
+    }
     if (targetRef()) {
       targetRef().setAttribute('aria-haspopup', 'true');
     }
@@ -141,6 +144,10 @@ class Popup extends React.Component {
     this.contentHeight = PopupHeights[nextProps.contentHeight];
     this.contentWidth = PopupWidths[nextProps.contentWidth];
     return true;
+  }
+
+  componentWillUnmount() {
+    document.querySelector('#root').removeAttribute('inert');
   }
 
   handleRequestClose() {
@@ -276,10 +283,8 @@ class Popup extends React.Component {
     /* eslint-enable no-unused-vars */
 
     if (!isOpen) {
-      document.querySelector('#root').removeAttribute('inert');
       return null;
     }
-    document.querySelector('#root').setAttribute('inert', 'true');
 
     let tAttachment;
     const cAttachment = PopupUtils.parseAttachment(contentAttachment);

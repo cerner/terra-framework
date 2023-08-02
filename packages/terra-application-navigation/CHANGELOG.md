@@ -1,8 +1,5 @@
 # Changelog
 
-* Changed
-  Updated jest test case
-  
 ## Unreleased
 
 ## 1.70.0 - (July 31, 2023)
