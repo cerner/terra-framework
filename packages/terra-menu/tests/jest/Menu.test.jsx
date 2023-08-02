@@ -7,6 +7,10 @@ import DefaultMenu from './DefaultMenuExample';
 
 jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
 
+const mockRootElement = document.createElement('div');
+mockRootElement.setAttribute('id', 'root');
+document.body.appendChild(mockRootElement);
+
 describe('Menu', () => {
   // Snapshot Tests
   it('should render a default component', () => {

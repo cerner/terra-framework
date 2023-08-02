@@ -2,6 +2,9 @@ import React from 'react';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import PopupDefaultExample from './PopupDefaultExample';
 
+const mockRootElement = document.createElement('div');
+mockRootElement.setAttribute('id', 'root');
+document.body.appendChild(mockRootElement);
 // Snapshot Tests
 it('should shallow a default component', () => {
   const popup = shallow(<PopupDefaultExample />);

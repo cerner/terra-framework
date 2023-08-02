@@ -276,8 +276,10 @@ class Popup extends React.Component {
     /* eslint-enable no-unused-vars */
 
     if (!isOpen) {
+      document.querySelector('#root').removeAttribute('inert');
       return null;
     }
+    document.querySelector('#root').setAttribute('inert', 'true');
 
     let tAttachment;
     const cAttachment = PopupUtils.parseAttachment(contentAttachment);

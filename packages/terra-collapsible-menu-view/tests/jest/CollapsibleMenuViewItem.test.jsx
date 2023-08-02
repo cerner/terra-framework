@@ -5,6 +5,10 @@ import IconTrash from 'terra-icon/lib/icon/IconTrash';
 /* eslint-enable import/no-extraneous-dependencies, import/no-extraneous-dependencies */
 import CollapsibleMenuViewItem from '../../src/CollapsibleMenuViewItem';
 
+const mockRootElement = document.createElement('div');
+mockRootElement.setAttribute('id', 'root');
+document.body.appendChild(mockRootElement);
+
 describe('CollapsibleMenuViewItem', () => {
   // Snapshot Tests
   it('should render a default component', () => {

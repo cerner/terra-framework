@@ -5,6 +5,10 @@ import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import { mountWithIntl } from 'terra-enzyme-intl';
 import ApplicationNavigation from '../../src/ApplicationNavigation';
 
+const mockRootElement = document.createElement('div');
+mockRootElement.setAttribute('id', 'root');
+document.body.appendChild(mockRootElement);
+
 describe('ApplicationNavigation', () => {
   let reactUseContext;
   let breakpointContextValue;

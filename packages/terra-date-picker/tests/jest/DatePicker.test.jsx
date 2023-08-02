@@ -15,6 +15,10 @@ DateUtil.filterInvalidDates.mockImplementation(() => [moment.utc('2017-01-01')])
 
 jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
 
+const mockRootElement = document.createElement('div');
+mockRootElement.setAttribute('id', 'root');
+document.body.appendChild(mockRootElement);
+
 it('should render a default date input and date picker', () => {
   const datePicker = shallowWithIntl(<DatePicker name="date-input" />);
   const wrapper = datePicker.dive();

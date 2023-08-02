@@ -3,6 +3,10 @@ import React from 'react';
 import { mountWithIntl } from 'terra-enzyme-intl';
 import CompactHeader from '../../../src/header/_CompactHeader';
 
+const mockRootElement = document.createElement('div');
+mockRootElement.setAttribute('id', 'root');
+document.body.appendChild(mockRootElement);
+
 describe('CompactHeader', () => {
   it('should render default element', () => {
     const mountComponent = mountWithIntl(
