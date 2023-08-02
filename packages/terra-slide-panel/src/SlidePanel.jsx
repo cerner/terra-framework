@@ -172,6 +172,7 @@ class SlidePanel extends React.Component {
         ref={this.setPanelNode}
       >
         <VisuallyHiddenText
+          aria-live="polite"
           text={panelAriaLabel || intl.formatMessage({ id: 'Terra.slidePanel.defaultPanelLabel' })}
         />
         {panelContent}
