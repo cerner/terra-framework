@@ -108,7 +108,7 @@ class Tabs extends React.Component {
         content = React.Children.map(child.props.children, contentItem => (
           React.cloneElement(contentItem)
         ));
-        tabContent = <CommonTabContent>{content}</CommonTabContent>;
+        tabContent = <CommonTabContent variant="framework">{content}</CommonTabContent>;
       }
       commonTabItems.push(
         <CommonTabItem
@@ -119,6 +119,7 @@ class Tabs extends React.Component {
           showIcon={child.props.showIcon}
           render={() => tabContent}
           isDisabled={child.props.isDisabled}
+          variant="framework"
         />,
       );
     });

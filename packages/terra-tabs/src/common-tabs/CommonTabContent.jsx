@@ -25,12 +25,18 @@ const propTypes = {
    * A CommonTabContent.ActivityOverlay component instance to be rendered on top of the provided children.
    */
   activityOverlay: PropTypes.element,
+  /**
+   *  @private
+   * The style to be applied to the tabs
+   */
+  variant: PropTypes.oneOf(['workspace', 'framework']),
 };
 
 const CommonTabContent = ({
   children,
   statusOverlay,
   activityOverlay,
+  variant,
 }) => {
   const theme = React.useContext(ThemeContext);
   const { panelId, tabId } = React.useContext(TabContext);
@@ -61,7 +67,7 @@ const CommonTabContent = ({
       role="none"
     >
       <div
-        className={cx('panel-header')}
+        className={variant === 'framework' ? undefined : cx('panel-header')}
         role="none"
         data-testid="workspace-content-heading"
       />

@@ -216,7 +216,6 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                   role="none"
                 >
                   <div
-                    class="panel-header"
                     data-testid="workspace-content-heading"
                     role="none"
                   />
@@ -261,7 +260,6 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                     role="none"
                   >
                     <div
-                      class="panel-header"
                       data-testid="workspace-content-heading"
                       role="none"
                     />
@@ -292,13 +290,14 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                 </div>
               }
             >
-              <CommonTabContent>
+              <CommonTabContent
+                variant="framework"
+              >
                 <div
                   className="panel orion-fusion-theme"
                   role="none"
                 >
                   <div
-                    className="panel-header"
                     data-testid="workspace-content-heading"
                     role="none"
                   />
@@ -693,6 +692,7 @@ exports[`Tabs should render with content filled when indicated 1`] = `
     label="Default"
     render={[Function]}
     showIcon={false}
+    variant="framework"
   />
 </CommonTabs>
 `;
@@ -738,6 +738,7 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
     label="Default"
     render={[Function]}
     showIcon={false}
+    variant="framework"
   />
 </CommonTabs>
 `;
@@ -784,6 +785,7 @@ exports[`Tabs should set custom props 1`] = `
     label="Default"
     render={[Function]}
     showIcon={false}
+    variant="framework"
   />
 </CommonTabs>
 `;
