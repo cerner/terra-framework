@@ -38,24 +38,16 @@ const IconOnlyTabs = () => {
       label: 'Tab with Text',
       isIconOnly: false,
       key: 'TabWithText',
-      content: 'label',
+      content: 'Tab with Text',
     },
   );
   const handleTabClose = (tabdata, itemKey) => {
-    const tabsArray = tabs;
-    tabsArray.splice(itemKey, 1);
-    console.log('tabsArray', tabsArray);
-    setTabs([...tabsArray]);
-  };
-
-  const createTabPanes = () => {
-    const tabPanes = tabs.map((tabKey) => (
-      <Tabs.Pane label={`Tab ${tabKey}`} key={tabKey} id={tabKey}>
-        <TabContent label={`Tab ${tabKey}`} id={`Tab ${tabKey}`} />
-      </Tabs.Pane>
-    ));
-
-    return tabPanes;
+    const tabsArray = [...tabs];
+    const indexToRemove = tabsArray.findIndex(tab => tab.key === itemKey);
+    if (indexToRemove !== -1) {
+      tabsArray.splice(indexToRemove, 1);
+      setTabs(tabsArray);
+    }
   };
 
   const addMoreTabPanes = () => {
@@ -68,21 +60,18 @@ const IconOnlyTabs = () => {
         isIconOnly: false,
         key: `Tab_${i}`,
         content: `Tab_${i}`,
+        isActive: true,
       },
     );
-    setTabs(tabsArray);
     setActiveKey(`Tab_${i}`);
+    setTabs(tabsArray);
   };
-
-  useEffect(() => {
-    console.log('After', tabs);
-  }, [tabs]);
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs activeKey={activeKey} onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" isClosable onTabClose={handleTabClose}>
-        {tabs.map((tab) => (
-          <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} icon={tab.icon} key={tab.key} id={tab.key} isActive>
+      <Tabs activeKey={activeKey} isClosable onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
+        { tabs.map((tab) => (
+          <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} icon={tab.icon} key={tab.key} id={tab.key} isActive={TabContent.isActive}>
             <TabContent label={tab.content} id={`TabContent_${tab.key}`} />
           </Tabs.Pane>
         ))}
