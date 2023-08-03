@@ -93,6 +93,7 @@ class SlidePanel extends React.Component {
     this.setLastClicked = this.setLastClicked.bind(this);
     this.setDisclosingNode = this.setDisclosingNode.bind(this);
     this.mainAriaDescribedByID = `detail-panel-warning-${uuidv4()}`;
+    this.testId = `myid-${uuidv4()}`;
   }
 
   componentDidUpdate(prevProps) {
@@ -173,6 +174,7 @@ class SlidePanel extends React.Component {
       >
         <VisuallyHiddenText
           aria-live="polite"
+          role="presentation"
           text={panelAriaLabel || intl.formatMessage({ id: 'Terra.slidePanel.defaultPanelLabel' })}
         />
         {panelContent}

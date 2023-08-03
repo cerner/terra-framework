@@ -140,6 +140,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                   <span
                     aria-live="polite"
                     class="visually-hidden-text"
+                    role="presentation"
                   >
                     Terra.slidePanel.defaultPanelLabel
                   </span>
@@ -273,6 +274,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                     <span
                       aria-live="polite"
                       class="visually-hidden-text"
+                      role="presentation"
                     >
                       Terra.slidePanel.defaultPanelLabel
                     </span>
@@ -403,11 +405,13 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
             >
               <VisuallyHiddenText
                 aria-live="polite"
+                role="presentation"
                 text="Terra.slidePanel.defaultPanelLabel"
               >
                 <span
                   aria-live="polite"
                   className="visually-hidden-text"
+                  role="presentation"
                 >
                   Terra.slidePanel.defaultPanelLabel
                 </span>
@@ -444,6 +448,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                               <span
                                 aria-live="polite"
                                 class="visually-hidden-text"
+                                role="presentation"
                               >
                                 Terra.slidePanel.defaultPanelLabel
                               </span>
@@ -566,6 +571,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                                         <span
                                           aria-live="polite"
                                           class="visually-hidden-text"
+                                          role="presentation"
                                         >
                                           Terra.slidePanel.defaultPanelLabel
                                         </span>
@@ -880,11 +886,13 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
             >
               <VisuallyHiddenText
                 aria-live="polite"
+                role="presentation"
                 text="Terra.slidePanel.defaultPanelLabel"
               >
                 <span
                   aria-live="polite"
                   className="visually-hidden-text"
+                  role="presentation"
                 >
                   Terra.slidePanel.defaultPanelLabel
                 </span>
@@ -1149,11 +1157,13 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
             >
               <VisuallyHiddenText
                 aria-live="polite"
+                role="presentation"
                 text="Terra.slidePanel.defaultPanelLabel"
               >
                 <span
                   aria-live="polite"
                   className="visually-hidden-text"
+                  role="presentation"
                 >
                   Terra.slidePanel.defaultPanelLabel
                 </span>
@@ -1411,11 +1421,13 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
             >
               <VisuallyHiddenText
                 aria-live="polite"
+                role="presentation"
                 text="Terra.slidePanel.defaultPanelLabel"
               >
                 <span
                   aria-live="polite"
                   className="visually-hidden-text"
+                  role="presentation"
                 >
                   Terra.slidePanel.defaultPanelLabel
                 </span>
@@ -1673,11 +1685,13 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
             >
               <VisuallyHiddenText
                 aria-live="polite"
+                role="presentation"
                 text="Terra.slidePanel.defaultPanelLabel"
               >
                 <span
                   aria-live="polite"
                   className="visually-hidden-text"
+                  role="presentation"
                 >
                   Terra.slidePanel.defaultPanelLabel
                 </span>
