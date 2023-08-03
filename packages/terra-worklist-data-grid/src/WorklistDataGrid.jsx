@@ -210,8 +210,6 @@ function WorklistDataGrid(props) {
     hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
   );
 
-  const isCellSelected = (rowId, columnId) => (currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId);
-
   const removeTabStop = (rowIndex, colIndex) => {
     const cell = grid.current.rows[rowIndex].cells[colIndex];
     // Remove Tab stop from previous cell in table that has focus and set it to the
@@ -356,25 +354,13 @@ function WorklistDataGrid(props) {
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
 
-  const handleCellSelectionChange = (rowId, columnId, cellCoordinates) => {
-    if (!hasSelectableRows) {
-      setAriaLiveMessage(intl.formatMessage({
-        id: rowId ? 'Terra.worklist-data-grid.cell-selection-template' : 'Terra.worklist-data-grid.cell-selection-cleared',
-      }, { row: cellCoordinates.row + 1, column: cellCoordinates.col + 1 }));
-    }
-    setFocusedRowCol(cellCoordinates.row, cellCoordinates.col, true);
-    if ((rowId !== currentSelectedCell?.rowId) || (columnId !== currentSelectedCell?.columnId)) {
-      setCurrentSelectedCell((rowId && columnId) ? { rowId, columnId } : null);
-    }
-  };
-
   const mapGridCellToDataCell = (cellGridCoordinates) => (
     // The grid has an additional row for the heading and
     // may have an additional column when when selection is active.
     { row: cellGridCoordinates.row - 1, col: cellGridCoordinates.col + (hasSelectableRows ? -1 : 0) }
   );
 
-  const handleColumnSelect = useCallback((columnId, cellCoordinates) => {
+  const handleColumnSelect = (columnId, cellCoordinates) => {
     if (!hasSelectableRows) {
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
     }
@@ -386,11 +372,13 @@ function WorklistDataGrid(props) {
     if (onColumnSelect && !(hasSelectableRows && cellCoordinates.col === 0)) {
       onColumnSelect(columnId);
     }
-  }, [hasSelectableRows, intl, onColumnSelect]);
+  };
 
   const handleCellSelection = (cellRowIdColId, cellCoordinates) => {
-    setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-template' },
-      { row: cellCoordinates.row + 1, column: cellCoordinates.col + 1 }));
+    if (!hasSelectableRows) {
+      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-template' },
+        { row: cellCoordinates.row + 1, column: cellCoordinates.col + 1 }));
+    }
 
     setFocusedRow(cellCoordinates.row);
     setFocusedCol(cellCoordinates.col);
@@ -405,7 +393,6 @@ function WorklistDataGrid(props) {
   };
 
   const handleRowSelection = (rowId, rowIndex, selectedCellCoordinates) => {
-    handleCellSelectionChange(null, null, selectedCellCoordinates);
     if (!hasSelectableRows) {
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
     }
@@ -481,12 +468,18 @@ function WorklistDataGrid(props) {
         break;
       case KeyCode.KEY_ESCAPE:
         if (!hasSelectableRows) {
-          handleCellSelectionChange(null, null, cellCoordinates);
+          if (!hasSelectableRows) {
+            setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
+          }
+
+          setFocusedRow(cellCoordinates.row);
+          setFocusedCol(cellCoordinates.col);
+          setCurrentSelectedCell(null);
         } else {
           handleClearRowSelection();
         }
         event.preventDefault();
-        break;
+        return;
       case KeyCode.KEY_A:
         if (hasSelectableRows && (event.ctrlKey || event.metaKey)) {
           selectAllRows();
