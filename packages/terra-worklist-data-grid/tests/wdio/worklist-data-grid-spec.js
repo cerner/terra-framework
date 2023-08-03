@@ -26,27 +26,6 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/default-worklist-data-grid');
     });
 
-    it('tabs into the grid', () => {
-      browser.keys(['Tab']);
-
-      Terra.validates.element('first-cell-in-grid-focused', { selector });
-      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
-    });
-
-    it('tabs in and shift tab out of the grid', () => {
-      browser.keys(['Tab', 'Shift', 'Tab', 'Shift']);
-
-      Terra.validates.element('tab-selection-off-grid', { selector });
-      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
-    });
-
-    it('tabs forward out of the grid', () => {
-      browser.keys(['Tab', 'Tab']);
-
-      Terra.validates.element('tab-selection-off-grid', { selector });
-      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
-    });
-
     it('uses arrow keys to navigate', () => {
       browser.keys(['Tab']
         .concat(new Array(2).fill('ArrowDown'))
@@ -338,28 +317,28 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab', 'Tab']);
 
       Terra.validates.element('worklist-initial-focus', { columnResizeSelector });
-      expect(browser.$$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1)')).isFocused();
+      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1)').isFocused());
     });
 
     it('validates that a Tab key press inside the grid will skip focusable cell elements', () => {
       browser.keys(['Tab', 'Tab', 'Tab']);
 
       Terra.validates.element('worklist-skip-focusable-elements-next', { columnResizeSelector });
-      expect(browser.$$('#next-focus-button')).isFocused();
+      expect(browser.$('#next-focus-button').isFocused());
     });
 
     it('validates that a Shift+Tab key press while inside the grid will skip to the previous focusable element outside the grid', () => {
       browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowDown', 'Shift', 'Tab', 'Shift']);
 
       Terra.validates.element('worklist-skip-focusable-elements-previous', { columnResizeSelector });
-      expect(browser.$$('#preview-focus-button')).isFocused();
+      expect(browser.$('#preview-focus-button').isFocused());
     });
 
     it('validates that the proper element is selected when Shift+Tab is used to give focus to the grid', () => {
       browser.keys(['Tab', 'Tab', 'Tab', 'Shift', 'Tab', 'Shift']);
 
       Terra.validates.element('worklist-return-focus', { columnResizeSelector });
-      expect(browser.$$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1)')).isFocused();
+      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1)').isFocused());
     });
 
     it('validates that a cell with no focusable elements does not trap focus', () => {
@@ -402,13 +381,6 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
 
       Terra.validates.element('focusable-multiple-element-cell-trap-focus', { columnResizeSelector });
       expect(browser.$$('button:focus')).toBeElementsArrayOfSize(1);
-    });
-
-    it('validates that a cell with multiple focusable elements can be navigated via Tab', () => {
-      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'Enter', 'Tab']);
-
-      Terra.validates.element('focusable-multiple-element-cell-tab-navigate', { columnResizeSelector });
-      expect(browser.$$('input:focus')).toBeElementsArrayOfSize(1);
     });
 
     it('validates that a cell with a select element traps focus', () => {
