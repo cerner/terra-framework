@@ -54,12 +54,22 @@ const propTypes = {
    * Key of the pane that should be open initially.
    */
   defaultActiveKey: PropTypes.string,
+  
   isClosable: PropTypes.bool,
+  /**
+   * Whether or not the tab is draggable.
+   */
+  isDraggable: PropTypes.bool,
+  /**
+   * Callback function triggered when tab is drag and dropped.
+   */
+  onTabOrderChange: PropTypes.func,
 };
 
 const defaultProps = {
   tabFill: false,
   fill: false,
+  isDraggable: false,
 };
 
 class Tabs extends React.Component {
@@ -83,14 +93,8 @@ class Tabs extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.activeKey !== prevProps.activeKey) {
       // eslint-disable-next-line react/no-did-update-set-state
-      this.openAddBoardModal();
+      this.setState({ activeKey: this.props.activeKey });
     }
-    console.log(this.state.activeKey);
-  }
-
-  async openAddBoardModal() {
-    await this.setState({ activeKey: this.props.activeKey });
-    console.log(this.state.activeKey);
   }
 
   render() {
@@ -101,6 +105,8 @@ class Tabs extends React.Component {
       children,
       activeKey,
       defaultActiveKey,
+      isDraggable,
+      onTabOrderChange,
       ...customProps
     } = this.props;
 
@@ -113,7 +119,7 @@ class Tabs extends React.Component {
         content = React.Children.map(child.props.children, contentItem => (
           React.cloneElement(contentItem)
         ));
-        tabContent = <CommonTabContent>{content}</CommonTabContent>;
+        tabContent = <CommonTabContent variant="framework">{content}</CommonTabContent>;
       }
       commonTabItems.push(
         <CommonTabItem
@@ -125,6 +131,7 @@ class Tabs extends React.Component {
           render={() => tabContent}
           isDisabled={child.props.isDisabled}
           isClosable={this.props.isClosable !== undefined ? this.props.isClosable : false}
+          variant="framework"
         />,
       );
     });
@@ -143,6 +150,7 @@ class Tabs extends React.Component {
       }
       this.props.onTabClose && this.props.onTabClose(newValue, itemKey, event);
     };
+
     return (
       <CommonTabs
         id={customProps.id}
@@ -158,6 +166,8 @@ class Tabs extends React.Component {
         onClosingTab={handleTabsStateChange}
         onChange={onChange}
         variant="framework"
+        isDraggable={isDraggable}
+        onTabOrderChange={onTabOrderChange}
         {...customProps}
       >
         {commonTabItems}

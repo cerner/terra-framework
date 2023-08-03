@@ -159,3 +159,14 @@ Terra.describeViewports('Tabs - Keyboard Navigation', ['medium'], () => {
     Terra.validates.element('Navigate and activate using keyboard', { selector: '#root' });
   });
 });
+
+Terra.describeViewports('Tabs - Drag and Drop', ['medium'], () => {
+  it('displays tab before drag and drop', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/controlled-tabs');
+    Terra.validates.element('Before Drag and Drop', { selector: '#root' });
+  });
+  it('should perform drag and drop operation', () => {
+    browser.keys(['Tab', 'Space', 'ArrowRight', 'Space']);
+    Terra.validates.element('After Drag and Drop', { selector: '#root' });
+  });
+});

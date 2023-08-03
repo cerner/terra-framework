@@ -62,7 +62,14 @@ const propTypes = {
   onClosingkey: PropTypes.func.isRequired,
 
   onClosingTab: PropTypes.func,
-
+  /**
+   * Whether or not the tab is draggable.
+   */
+  isDraggable: PropTypes.bool,
+  /**
+   * Callback function triggered when tab is drag and dropped .
+   */
+  onTabOrderChange: PropTypes.func,
 };
 
 const getTabId = (id, itemKey) => `${id || 'terra-common-tabs'}-${itemKey}`;
@@ -81,6 +88,8 @@ const CommonTabs = ({
   ariaLabelAddTab,
   onClosingkey,
   onClosingTab,
+  isDraggable,
+  onTabOrderChange,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -125,7 +134,7 @@ const CommonTabs = ({
         <div className={cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
-        <Tabs variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab} onTabStateChange={handleCommonTabsStateChange} />
+        <Tabs isDraggable={isDraggable} onTabOrderChange={onTabOrderChange} variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab} onTabStateChange={handleCommonTabsStateChange} />
       </div>
       <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {

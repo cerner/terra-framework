@@ -4,6 +4,8 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+import IconClose from 'terra-icon/lib/icon/IconClose';
+import { injectIntl } from 'react-intl';
 import {
   enableFocusStyles,
   disableFocusStyles,
@@ -11,8 +13,6 @@ import {
 } from './_TabUtils';
 
 import styles from './HiddenTab.module.scss';
-import IconClose from 'terra-icon/lib/icon/IconClose';
-import { injectIntl } from 'react-intl';
 
 const cx = classNames.bind(styles);
 
@@ -82,16 +82,20 @@ const propTypes = {
    */
   showAddButton: PropTypes.bool,
 
-  onClosingTab:PropTypes.func,
-  isClosable:PropTypes.bool,
+  onClosingTab: PropTypes.func,
+  isClosable: PropTypes.bool,
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
-
+  /**
+   * Indicates if the pane should be disabled.
+   */
+  isDisabled: PropTypes.bool,
 };
 
 const defaultProps = {
   isSelected: false,
   showIcon: false,
   showAddButton: false,
+  isDisabled: false,
 };
 
 const HiddenTab = ({
@@ -112,16 +116,18 @@ const HiddenTab = ({
   showAddButton,
   onClosingTab,
   isClosable,
-  intl
+  intl,
+  isDisabled,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
   const hiddenClassNames = cx(
     'hidden',
     { 'is-active': isSelected },
+    { 'is-disabled': isDisabled },
     theme.className,
   );
-  let tabDeleteLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.removable'})}`
+  const tabDeleteLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.removable' })}`;
 
   const handleOnSelect = (event) => {
     event.preventDefault();
@@ -142,11 +148,20 @@ const HiddenTab = ({
   };
   function onCloseClick(event) {
     event.stopPropagation();
-   // setIsClosed(true);
-    onClosingTab(itemKey, metaData)
+    // setIsClosed(true);
+    onClosingTab(itemKey, metaData);
   }
+
+  function onClick(e) {
+    if (!isDisabled) {
+      e.preventDefault();
+      e.stopPropagation();
+      handleOnSelect(e);
+    }
+  }
+
   attributes.tabIndex = isSelected ? 0 : -1;
-  attributes.onClick = e => { e.preventDefault(); e.stopPropagation(); handleOnSelect(e); };
+  attributes.onClick = onClick;
   attributes.onKeyDown = onKeyDown;
   attributes.onBlur = e => { enableFocusStyles(e); onBlur(e); };
   attributes.onFocus = onFocus;
@@ -161,19 +176,21 @@ const HiddenTab = ({
       aria-controls={associatedPanelId}
       role={showAddButton ? 'button' : 'tab'}
       className={hiddenClassNames}
+      aria-disabled={isDisabled}
     >
       <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>
       {showIcon && icon}
       <div className={cx('label', { 'with-icon': showIcon })}>{label}</div>
       {isClosable && (
-               <button
-               className={cx('pill-remove-button')}
-               role="button"
-               aria-label={tabDeleteLabel}
-               onClick={onCloseClick}
-             ><IconClose a11yLabel={'Closed CLICKED'} />              
-             </button>
-            )}
+      <button
+        className={cx('pill-remove-button')}
+        type="button"
+        aria-label={tabDeleteLabel}
+        onClick={onCloseClick}
+      >
+        <IconClose a11yLabel="Closed CLICKED" />
+      </button>
+      )}
     </div>
   );
 };

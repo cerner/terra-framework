@@ -14,18 +14,21 @@ const availableDisclosureSizes = {
   LARGE: 'large',
   HUGE: 'huge',
   FULLSCREEN: 'fullscreen',
+  FUSION_SMALL: 'fusion-small',
+  FUSION_MEDIUM: 'fusion-medium',
+  FUSION_LARGE: 'fusion-large',
 };
 
 const arrayReducer = (mappingObject, value) => ({ [`${value}`]: value, ...mappingObject });
-const availableDisclosureHeights = [240, 420, 600, 690, 780, 870, 960, 1140].reduce(arrayReducer, {});
-const availableDisclosureWidths = [320, 480, 560, 640, 800, 960, 1120, 1280, 1440, 1600, 1760, 1920].reduce(arrayReducer, {});
+const availableDisclosureHeights = [240, 280, 380, 420, 460, 600, 690, 780, 870, 960, 1140].reduce(arrayReducer, {});
+const availableDisclosureWidths = [320, 400, 480, 560, 600, 640, 700, 800, 960, 1120, 1280, 1440, 1600, 1760, 1920].reduce(arrayReducer, {});
 
 const defaultDimensions = { height: availableDisclosureHeights['690'], width: availableDisclosureWidths['1120'] };
 const defaultSize = availableDisclosureSizes.SMALL;
 
 const isValidDimensions = dimensions => availableDisclosureHeights[dimensions.height] && availableDisclosureWidths[dimensions.width];
 
-const isValidSize = size => !!availableDisclosureSizes[size.toUpperCase()];
+const isValidSize = size => !!availableDisclosureSizes[size.toUpperCase().replace(/-/g, '_')];
 
 export { availableDisclosureSizes, availableDisclosureHeights, availableDisclosureWidths };
 

@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import FocusLock from 'react-focus-lock';
 import ModalOverlay from './_ModalOverlay';
 import { hideModalDomUpdates, showModalDomUpdates } from './inertHelpers';
 import styles from './ModalContent.module.scss';
@@ -144,33 +145,41 @@ const ModalContent = forwardRef((props, ref) => {
         role={role}
         ref={ref}
       >
-        <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
-          <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
-            {text => {
-              // In the latest version of react-intl this param is an array, when previous versions it was a string.
-              let useText = text;
-              if (Array.isArray(text)) {
-                useText = text.join('');
-              }
-              return (
-                <VisuallyHiddenText text={useText} />
-              );
-            }}
-          </FormattedMessage>
-          {children}
-          <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
-            {text => {
-              // In the latest version of react-intl this param is an array, when previous versions it was a string.
-              let useText = text;
-              if (Array.isArray(text)) {
-                useText = text.join('');
-              }
-              return (
-                <VisuallyHiddenText text={useText} />
-              );
-            }}
-          </FormattedMessage>
-        </div>
+        {
+          /**
+           * Use react-focus-lock library due to inability of focus-trap-react to handle children
+           * within a React Portal: https://github.com/focus-trap/focus-trap-react/issues/27.
+           */
+        }
+        <FocusLock as="div" className={cx('modal-content-focus-trap-container')}>
+          <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
+            <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
+              {text => {
+                // In the latest version of react-intl this param is an array, when previous versions it was a string.
+                let useText = text;
+                if (Array.isArray(text)) {
+                  useText = text.join('');
+                }
+                return (
+                  <VisuallyHiddenText text={useText} />
+                );
+              }}
+            </FormattedMessage>
+            {children}
+            <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
+              {text => {
+                // In the latest version of react-intl this param is an array, when previous versions it was a string.
+                let useText = text;
+                if (Array.isArray(text)) {
+                  useText = text.join('');
+                }
+                return (
+                  <VisuallyHiddenText text={useText} />
+                );
+              }}
+            </FormattedMessage>
+          </div>
+        </FocusLock>
       </div>
     </React.Fragment>
   );

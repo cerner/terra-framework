@@ -55,6 +55,13 @@ describe('Tabs', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render a draggable tabs component', () => {
+    const mockCallBack = jest.fn();
+    const defaultRender = <Tabs isDraggable onTabOrderChange={mockCallBack}><Tabs.Pane label="Default" key="default" /></Tabs>;
+    const wrapper = shallowWithIntl(defaultRender).dive();
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('correctly applies the theme context className', () => {
     const tabs = mountWithIntl(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
@@ -62,23 +69,5 @@ describe('Tabs', () => {
       </ThemeContextProvider>,
     );
     expect(tabs).toMatchSnapshot();
-  });
-
-  it('should render with add icon', () => {
-    const defaultRender = mountWithIntl(
-      <Tabs id="application-id" onSelectAddButton={() => alert('hi')} ariaLabelAddTab="Add Tab">
-        <Tabs.Pane label="Default" key="default" className="customClass" />
-      </Tabs>,
-    );
-    expect(defaultRender).toMatchSnapshot();
-  });
-
-  it('should not render add icon if onSelectAddButton is passed as null', () => {
-    const defaultRender = mountWithIntl(
-      <Tabs id="application-id">
-        <Tabs.Pane label="Default" key="default" className="customClass" />
-      </Tabs>,
-    );
-    expect(defaultRender).toMatchSnapshot();
   });
 });

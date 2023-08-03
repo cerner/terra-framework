@@ -37,11 +37,13 @@ exports[`Tabs correctly applies the theme context className 1`] = `
 >
   <Tabs
     fill={false}
+    isDraggable={false}
     tabFill={false}
     variant="modular-left-aligned"
   >
     <CommonTabs
       activeItemKey="default"
+      isDraggable={false}
       onRequestActivate={[Function]}
       variant="modular-left-aligned"
     >
@@ -62,6 +64,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
           role="none"
         >
           <Tabs
+            isDraggable={false}
             tabData={
               Array [
                 Object {
@@ -83,406 +86,43 @@ exports[`Tabs correctly applies the theme context className 1`] = `
             variant="modular-left-aligned"
           >
             <div
-              className="container orion-fusion-theme"
-            >
-              <div
-                aria-orientation="horizontal"
-                aria-owns=""
-                className="tab-container orion-fusion-theme"
-                data-tab-is-calculating="true"
-                role="tablist"
-              >
-                <Tab
-                  associatedPanelId="terra-common-tabs-default-panel"
-                  hiddenStartIndex={1}
-                  id="terra-common-tabs-default"
-                  index={0}
-                  isDisabled={false}
-                  isIconOnly={false}
-                  isSelected={true}
-                  itemKey="default"
-                  key="terra-common-tabs-default"
-                  label="Default"
-                  onSelect={[Function]}
-                  setDropdownOpen={[Function]}
-                  showIcon={false}
-                  tabIds={
-                    Array [
-                      "terra-common-tabs-default",
-                    ]
-                  }
-                  variant="modular-left-aligned"
-                  zIndex={1}
-                >
-                  <div
-                    aria-controls="terra-common-tabs-default-panel"
-                    aria-disabled={false}
-                    aria-selected={true}
-                    className="tab is-active is-text-only orion-fusion-theme"
-                    data-focus-styles-enabled={true}
-                    data-terra-tabs-show-focus-styles={true}
-                    id="terra-common-tabs-default"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseDown={[Function]}
-                    role="tab"
-                    style={
-                      Object {
-                        "zIndex": 1,
-                      }
-                    }
-                    tabIndex={0}
-                    title="Default"
-                  >
-                    <div
-                      className="inner"
-                    >
-                      <span
-                        className="label"
-                      >
-                        Default
-                      </span>
-                    </div>
-                  </div>
-                </Tab>
-                <OnClickOutside(TabDropDown)
-                  eventTypes={
-                    Array [
-                      "mousedown",
-                      "touchstart",
-                    ]
-                  }
-                  excludeScrollbar={false}
-                  isOpen={false}
-                  onBlur={[Function]}
-                  onFocus={[Function]}
-                  onRequestClose={[Function]}
-                  outsideClickIgnoreClass="ignore-react-onclickoutside"
-                  preventDefault={false}
-                  refCallback={[Function]}
-                  stopPropagation={false}
-                >
-                  <TabDropDown
-                    disableOnClickOutside={[Function]}
-                    enableOnClickOutside={[Function]}
-                    eventTypes={
-                      Array [
-                        "mousedown",
-                        "touchstart",
-                      ]
-                    }
-                    isOpen={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                    onRequestClose={[Function]}
-                    outsideClickIgnoreClass="ignore-react-onclickoutside"
-                    preventDefault={false}
-                    refCallback={[Function]}
-                    stopPropagation={false}
-                    wrappedRef={[Function]}
-                  >
-                    <div
-                      className="drop-down orion-fusion-theme"
-                      onMouseDown={[Function]}
-                      role="none"
-                    />
-                  </TabDropDown>
-                </OnClickOutside(TabDropDown)>
-              </div>
-            </div>
-          </Tabs>
-        </div>
-        <div
-          className="body"
-          role="none"
-        >
-          <CommonTabItem
-            associatedPanelId="terra-common-tabs-default-panel"
-            id="terra-common-tabs-default"
-            isActive={true}
-            isDisabled={false}
-            isIconOnly={false}
-            itemKey="default"
-            key="default/.0"
-            label="Default"
-            portalElement={
-              <div
-                role="none"
-                style="position: relative; height: 100%; width: 100%;"
-              >
-                <div
-                  class="panel orion-fusion-theme"
-                  role="none"
-                >
-                  <div
-                    class="panel-header"
-                    data-testid="workspace-content-heading"
-                    role="none"
-                  />
-                  <div
-                    class="panel-content"
-                    role="none"
-                  >
-                    <div
-                      aria-labelledby="terra-common-tabs-default"
-                      class="panel-overflow"
-                      data-application-overflow-container="true"
-                      id="terra-common-tabs-default-panel"
-                      role="tabpanel"
-                      tabindex="0"
-                    >
-                      <div
-                        class="outer-container"
-                        data-testid="dynamic-overlay-container"
-                        tabindex="-1"
-                      >
-                        <div
-                          class="content-container"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            }
-            render={[Function]}
-            showIcon={false}
-            variant="modular-left-aligned"
-          >
-            <Portal
-              containerInfo={
-                <div
-                  role="none"
-                  style="position: relative; height: 100%; width: 100%;"
-                >
-                  <div
-                    class="panel orion-fusion-theme"
-                    role="none"
-                  >
-                    <div
-                      class="panel-header"
-                      data-testid="workspace-content-heading"
-                      role="none"
-                    />
-                    <div
-                      class="panel-content"
-                      role="none"
-                    >
-                      <div
-                        aria-labelledby="terra-common-tabs-default"
-                        class="panel-overflow"
-                        data-application-overflow-container="true"
-                        id="terra-common-tabs-default-panel"
-                        role="tabpanel"
-                        tabindex="0"
-                      >
-                        <div
-                          class="outer-container"
-                          data-testid="dynamic-overlay-container"
-                          tabindex="-1"
-                        >
-                          <div
-                            class="content-container"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              }
-            >
-              <CommonTabContent>
-                <div
-                  className="panel orion-fusion-theme"
-                  role="none"
-                >
-                  <div
-                    className="panel-header"
-                    data-testid="workspace-content-heading"
-                    role="none"
-                  />
-                  <div
-                    className="panel-content"
-                    role="none"
-                  >
-                    <div
-                      aria-labelledby="terra-common-tabs-default"
-                      className="panel-overflow"
-                      data-application-overflow-container={true}
-                      id="terra-common-tabs-default-panel"
-                      role="tabpanel"
-                      tabIndex="0"
-                    >
-                      <DynamicOverlayContainer
-                        overlays={Array []}
-                      >
-                        <div
-                          className="outer-container"
-                          data-testid="dynamic-overlay-container"
-                          tabIndex="-1"
-                        >
-                          <div
-                            className="content-container"
-                          />
-                        </div>
-                      </DynamicOverlayContainer>
-                    </div>
-                  </div>
-                </div>
-              </CommonTabContent>
-            </Portal>
-          </CommonTabItem>
-        </div>
-      </div>
-    </CommonTabs>
-  </Tabs>
-</ThemeContextProvider>
-`;
-
-exports[`Tabs should not render add icon if onSelectAddButton is passed as null 1`] = `
-<Tabs
-  fill={false}
-  id="application-id"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  tabFill={false}
->
-  <CommonTabs
-    activeItemKey="default"
-    id="application-id"
-    intl={
-      Object {
-        "defaultFormats": Object {},
-        "defaultLocale": "en",
-        "formatDate": [Function],
-        "formatHTMLMessage": [Function],
-        "formatMessage": [Function],
-        "formatNumber": [Function],
-        "formatPlural": [Function],
-        "formatRelative": [Function],
-        "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
-          "getDateTimeFormat": [Function],
-          "getMessageFormat": [Function],
-          "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
-        },
-        "locale": "en",
-        "messages": null,
-        "now": [Function],
-        "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
-      }
-    }
-    onRequestActivate={[Function]}
-    variant="framework"
-  >
-    <div
-      className="structural"
-      role="none"
-    >
-      <div
-        aria-hidden={true}
-        className="body-shadow-container"
-      >
-        <div
-          className="body-shadow"
-        />
-      </div>
-      <div
-        className="tab-header"
-        role="none"
-      >
-        <Tabs
-          tabData={
-            Array [
-              Object {
-                "associatedPanelId": "application-id-default-panel",
-                "customDisplay": undefined,
-                "icon": undefined,
-                "id": "application-id-default",
-                "isDisabled": false,
-                "isIconOnly": false,
-                "isSelected": true,
-                "itemKey": "default",
-                "label": "Default",
-                "metaData": undefined,
-                "onSelect": [Function],
-                "showIcon": false,
-              },
-            ]
-          }
-          variant="framework"
-        >
-          <div
-            className="container"
-          >
-            <div
               aria-orientation="horizontal"
               aria-owns=""
-              className="tab-container"
+              className="tab-container orion-fusion-theme"
               data-tab-is-calculating="true"
               role="tablist"
             >
               <Tab
-                associatedPanelId="application-id-default-panel"
+                associatedPanelId="terra-common-tabs-default-panel"
                 hiddenStartIndex={1}
-                id="application-id-default"
+                id="terra-common-tabs-default"
                 index={0}
                 isDisabled={false}
+                isDraggable={false}
                 isIconOnly={false}
                 isSelected={true}
                 itemKey="default"
-                key="application-id-default"
+                key="terra-common-tabs-default"
                 label="Default"
                 onSelect={[Function]}
                 setDropdownOpen={[Function]}
                 showIcon={false}
                 tabIds={
                   Array [
-                    "application-id-default",
+                    "terra-common-tabs-default",
                   ]
                 }
-                variant="framework"
+                variant="modular-left-aligned"
                 zIndex={1}
               >
                 <div
-                  aria-controls="application-id-default-panel"
+                  aria-controls="terra-common-tabs-default-panel"
                   aria-disabled={false}
                   aria-selected={true}
-                  className="tab is-text-only is-active"
+                  className="tab is-active is-text-only orion-fusion-theme"
                   data-focus-styles-enabled={true}
                   data-terra-tabs-show-focus-styles={true}
-                  id="application-id-default"
+                  id="terra-common-tabs-default"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -544,78 +184,159 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                   wrappedRef={[Function]}
                 >
                   <div
-                    className="drop-down"
+                    className="drop-down orion-fusion-theme"
                     onMouseDown={[Function]}
                     role="none"
                   />
                 </TabDropDown>
               </OnClickOutside(TabDropDown)>
             </div>
-          </div>
-        </Tabs>
-      </div>
-      <div
-        className="body"
-        role="none"
-      >
-        <CommonTabItem
-          associatedPanelId="application-id-default-panel"
-          id="application-id-default"
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          itemKey="default"
-          key="default/.0"
-          label="Default"
-          portalElement={null}
-          render={[Function]}
-          showIcon={false}
-          variant="framework"
+          </Tabs>
+        </div>
+        <div
+          className="body"
+          role="none"
         >
-          <CommonTabContent>
-            <div
-              className="panel"
-              role="none"
-            >
+          <CommonTabItem
+            associatedPanelId="terra-common-tabs-default-panel"
+            id="terra-common-tabs-default"
+            isActive={true}
+            isDisabled={false}
+            isIconOnly={false}
+            itemKey="default"
+            key="default/.0"
+            label="Default"
+            portalElement={
               <div
-                className="panel-header"
-                data-testid="workspace-content-heading"
                 role="none"
-              />
-              <div
-                className="panel-content"
-                role="none"
+                style="position: relative; height: 100%; width: 100%;"
               >
                 <div
-                  aria-labelledby="application-id-default"
-                  className="panel-overflow"
-                  data-application-overflow-container={true}
-                  id="application-id-default-panel"
-                  role="tabpanel"
-                  tabIndex="0"
+                  class="panel orion-fusion-theme"
+                  role="none"
                 >
-                  <DynamicOverlayContainer
-                    overlays={Array []}
+                  <div
+                    data-testid="workspace-content-heading"
+                    role="none"
+                  />
+                  <div
+                    class="panel-content"
+                    role="none"
                   >
                     <div
-                      className="outer-container"
-                      data-testid="dynamic-overlay-container"
-                      tabIndex="-1"
+                      aria-labelledby="terra-common-tabs-default"
+                      class="panel-overflow"
+                      data-application-overflow-container="true"
+                      id="terra-common-tabs-default-panel"
+                      role="tabpanel"
+                      tabindex="0"
                     >
                       <div
-                        className="content-container"
-                      />
+                        class="outer-container"
+                        data-testid="dynamic-overlay-container"
+                        tabindex="-1"
+                      >
+                        <div
+                          class="content-container"
+                        />
+                      </div>
                     </div>
-                  </DynamicOverlayContainer>
+                  </div>
                 </div>
               </div>
-            </div>
-          </CommonTabContent>
-        </CommonTabItem>
+            }
+            render={[Function]}
+            showIcon={false}
+            variant="modular-left-aligned"
+          >
+            <Portal
+              containerInfo={
+                <div
+                  role="none"
+                  style="position: relative; height: 100%; width: 100%;"
+                >
+                  <div
+                    class="panel orion-fusion-theme"
+                    role="none"
+                  >
+                    <div
+                      data-testid="workspace-content-heading"
+                      role="none"
+                    />
+                    <div
+                      class="panel-content"
+                      role="none"
+                    >
+                      <div
+                        aria-labelledby="terra-common-tabs-default"
+                        class="panel-overflow"
+                        data-application-overflow-container="true"
+                        id="terra-common-tabs-default-panel"
+                        role="tabpanel"
+                        tabindex="0"
+                      >
+                        <div
+                          class="outer-container"
+                          data-testid="dynamic-overlay-container"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="content-container"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+            >
+              <CommonTabContent
+                variant="framework"
+              >
+                <div
+                  className="panel orion-fusion-theme"
+                  role="none"
+                >
+                  <div
+                    data-testid="workspace-content-heading"
+                    role="none"
+                  />
+                  <div
+                    className="panel-content"
+                    role="none"
+                  >
+                    <div
+                      aria-labelledby="terra-common-tabs-default"
+                      className="panel-overflow"
+                      data-application-overflow-container={true}
+                      id="terra-common-tabs-default-panel"
+                      role="tabpanel"
+                      tabIndex="0"
+                    >
+                      <DynamicOverlayContainer
+                        overlays={Array []}
+                      >
+                        <div
+                          className="outer-container"
+                          data-testid="dynamic-overlay-container"
+                          tabIndex="-1"
+                        >
+                          <div
+                            className="content-container"
+                          />
+                        </div>
+                      </DynamicOverlayContainer>
+                    </div>
+                  </div>
+                </div>
+              </CommonTabContent>
+            </Portal>
+          </CommonTabItem>
+        </div>
       </div>
-    </div>
-  </CommonTabs>
-</Tabs>
+    </CommonTabs>
+  </Tabs>
+</ThemeContextProvider>
 `;
 
 exports[`Tabs should render a controlled component when onChange and activeKey are set 1`] = `
@@ -636,6 +357,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
     role="none"
   >
     <Tabs
+      isDraggable={false}
       onChange={[Function]}
       tabData={
         Array [
@@ -698,6 +420,70 @@ exports[`Tabs should render a default component 1`] = `
     role="none"
   >
     <Tabs
+      isDraggable={false}
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "terra-common-tabs-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "terra-common-tabs-default",
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+            "showIcon": false,
+          },
+        ]
+      }
+      variant="framework"
+    />
+  </div>
+  <div
+    className="body"
+    role="none"
+  >
+    <CommonTabItem
+      associatedPanelId="terra-common-tabs-default-panel"
+      id="terra-common-tabs-default"
+      isActive={true}
+      isDisabled={false}
+      isIconOnly={false}
+      itemKey="default"
+      key="default/.0"
+      label="Default"
+      portalElement={null}
+      render={[Function]}
+      showIcon={false}
+      variant="framework"
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs should render a draggable tabs component 1`] = `
+<div
+  className="structural"
+  role="none"
+>
+  <div
+    aria-hidden={true}
+    className="body-shadow-container"
+  >
+    <div
+      className="body-shadow"
+    />
+  </div>
+  <div
+    className="tab-header"
+    role="none"
+  >
+    <Tabs
+      isDraggable={true}
+      onTabOrderChange={[MockFunction]}
       tabData={
         Array [
           Object {
@@ -759,6 +545,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
     role="none"
   >
     <Tabs
+      isDraggable={false}
       tabData={
         Array [
           Object {
@@ -820,6 +607,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
     role="none"
   >
     <Tabs
+      isDraggable={false}
       tabData={
         Array [
           Object {
@@ -863,434 +651,6 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
 </div>
 `;
 
-exports[`Tabs should render with add icon 1`] = `
-<Tabs
-  ariaLabelAddTab="Add Tab"
-  fill={false}
-  id="application-id"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  onSelectAddButton={[Function]}
-  tabFill={false}
->
-  <CommonTabs
-    activeItemKey="default"
-    ariaLabelAddTab="Add Tab"
-    id="application-id"
-    intl={
-      Object {
-        "defaultFormats": Object {},
-        "defaultLocale": "en",
-        "formatDate": [Function],
-        "formatHTMLMessage": [Function],
-        "formatMessage": [Function],
-        "formatNumber": [Function],
-        "formatPlural": [Function],
-        "formatRelative": [Function],
-        "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
-          "getDateTimeFormat": [Function],
-          "getMessageFormat": [Function],
-          "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
-        },
-        "locale": "en",
-        "messages": null,
-        "now": [Function],
-        "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
-      }
-    }
-    onRequestActivate={[Function]}
-    onSelectAddButton={[Function]}
-    variant="framework"
-  >
-    <div
-      className="structural"
-      role="none"
-    >
-      <div
-        aria-hidden={true}
-        className="body-shadow-container"
-      >
-        <div
-          className="body-shadow"
-        />
-      </div>
-      <div
-        className="tab-header"
-        role="none"
-      >
-        <Tabs
-          ariaLabelAddTab="Add Tab"
-          onSelectAddButton={[Function]}
-          tabData={
-            Array [
-              Object {
-                "associatedPanelId": "application-id-default-panel",
-                "customDisplay": undefined,
-                "icon": undefined,
-                "id": "application-id-default",
-                "isDisabled": false,
-                "isIconOnly": false,
-                "isSelected": true,
-                "itemKey": "default",
-                "label": "Default",
-                "metaData": undefined,
-                "onSelect": [Function],
-                "showIcon": false,
-              },
-            ]
-          }
-          variant="framework"
-        >
-          <div
-            className="container"
-          >
-            <div
-              aria-orientation="horizontal"
-              aria-owns=""
-              className="tab-container"
-              data-tab-is-calculating="true"
-              role="tablist"
-            >
-              <Tab
-                associatedPanelId="application-id-default-panel"
-                hiddenStartIndex={1}
-                id="application-id-default"
-                index={0}
-                isDisabled={false}
-                isIconOnly={false}
-                isSelected={true}
-                itemKey="default"
-                key="application-id-default"
-                label="Default"
-                onSelect={[Function]}
-                setDropdownOpen={[Function]}
-                showIcon={false}
-                tabIds={
-                  Array [
-                    "application-id-default",
-                    "00000000-0000-0000-0000-000000000000",
-                  ]
-                }
-                variant="framework"
-                zIndex={1}
-              >
-                <div
-                  aria-controls="application-id-default-panel"
-                  aria-disabled={false}
-                  aria-selected={true}
-                  className="tab is-text-only is-active"
-                  data-focus-styles-enabled={true}
-                  data-terra-tabs-show-focus-styles={true}
-                  id="application-id-default"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseDown={[Function]}
-                  role="tab"
-                  style={
-                    Object {
-                      "zIndex": 1,
-                    }
-                  }
-                  tabIndex={0}
-                  title="Default"
-                >
-                  <div
-                    className="inner"
-                  >
-                    <span
-                      className="label"
-                    >
-                      Default
-                    </span>
-                  </div>
-                </div>
-              </Tab>
-              <OnClickOutside(TabDropDown)
-                eventTypes={
-                  Array [
-                    "mousedown",
-                    "touchstart",
-                  ]
-                }
-                excludeScrollbar={false}
-                isOpen={false}
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onRequestClose={[Function]}
-                outsideClickIgnoreClass="ignore-react-onclickoutside"
-                preventDefault={false}
-                refCallback={[Function]}
-                stopPropagation={false}
-              >
-                <TabDropDown
-                  disableOnClickOutside={[Function]}
-                  enableOnClickOutside={[Function]}
-                  eventTypes={
-                    Array [
-                      "mousedown",
-                      "touchstart",
-                    ]
-                  }
-                  isOpen={false}
-                  onBlur={[Function]}
-                  onFocus={[Function]}
-                  onRequestClose={[Function]}
-                  outsideClickIgnoreClass="ignore-react-onclickoutside"
-                  preventDefault={false}
-                  refCallback={[Function]}
-                  stopPropagation={false}
-                  wrappedRef={[Function]}
-                >
-                  <div
-                    className="drop-down"
-                    onMouseDown={[Function]}
-                    role="none"
-                  />
-                </TabDropDown>
-              </OnClickOutside(TabDropDown)>
-            </div>
-            <InjectIntl(AddButton)
-              addAriaLabel="Add Tab"
-              id="00000000-0000-0000-0000-000000000000"
-              index={1}
-              isSelected={false}
-              onSelect={[Function]}
-              tabIds={
-                Array [
-                  "application-id-default",
-                  "00000000-0000-0000-0000-000000000000",
-                ]
-              }
-            >
-              <AddButton
-                addAriaLabel="Add Tab"
-                id="00000000-0000-0000-0000-000000000000"
-                index={1}
-                intl={
-                  Object {
-                    "defaultFormats": Object {},
-                    "defaultLocale": "en",
-                    "formatDate": [Function],
-                    "formatHTMLMessage": [Function],
-                    "formatMessage": [Function],
-                    "formatNumber": [Function],
-                    "formatPlural": [Function],
-                    "formatRelative": [Function],
-                    "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
-                      "getDateTimeFormat": [Function],
-                      "getMessageFormat": [Function],
-                      "getNumberFormat": [Function],
-                      "getPluralFormat": [Function],
-                      "getRelativeFormat": [Function],
-                    },
-                    "locale": "en",
-                    "messages": null,
-                    "now": [Function],
-                    "onError": [Function],
-                    "textComponent": "span",
-                    "timeZone": null,
-                  }
-                }
-                isSelected={false}
-                onSelect={[Function]}
-                tabIds={
-                  Array [
-                    "application-id-default",
-                    "00000000-0000-0000-0000-000000000000",
-                  ]
-                }
-              >
-                <Button
-                  className="button"
-                  data-terra-tabs-show-focus-styles={true}
-                  icon={
-                    <IconAdd
-                      a11yLabel="Add Tab"
-                      data-name="Layer 1"
-                      viewBox="0 0 48 48"
-                      xmlns="http://www.w3.org/2000/svg"
-                    />
-                  }
-                  id="00000000-0000-0000-0000-000000000000"
-                  index={1}
-                  isBlock={false}
-                  isCompact={false}
-                  isDisabled={false}
-                  isIconOnly={true}
-                  isReversed={false}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  text="Add Tab"
-                  type="button"
-                  variant="de-emphasis"
-                >
-                  <button
-                    aria-disabled={false}
-                    aria-label="Add Tab"
-                    className="button de-emphasis button"
-                    data-terra-tabs-show-focus-styles={true}
-                    disabled={false}
-                    id="00000000-0000-0000-0000-000000000000"
-                    index={1}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    title="Add Tab"
-                    type="button"
-                  >
-                    <span
-                      className="button-label icon-only"
-                    >
-                      <span
-                        className="icon"
-                      >
-                        <IconAdd
-                          a11yLabel="Add Tab"
-                          className="icon-svg"
-                          data-name="Layer 1"
-                          viewBox="0 0 48 48"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <IconBase
-                            a11yLabel="Add Tab"
-                            className="icon-svg"
-                            data-name="Layer 1"
-                            focusable="false"
-                            height="1em"
-                            isBidi={false}
-                            isSpin={false}
-                            viewBox="0 0 48 48"
-                            width="1em"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <svg
-                              className="tui-Icon icon icon-svg"
-                              data-name="Layer 1"
-                              focusable="false"
-                              height="1em"
-                              viewBox="0 0 48 48"
-                              width="1em"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <title>
-                                Add Tab
-                              </title>
-                              <path
-                                d="M48 21H27V0h-6v21H0v6h21v21h6V27h21z"
-                              />
-                            </svg>
-                          </IconBase>
-                        </IconAdd>
-                      </span>
-                    </span>
-                  </button>
-                </Button>
-              </AddButton>
-            </InjectIntl(AddButton)>
-          </div>
-        </Tabs>
-      </div>
-      <div
-        className="body"
-        role="none"
-      >
-        <CommonTabItem
-          associatedPanelId="application-id-default-panel"
-          id="application-id-default"
-          isActive={true}
-          isDisabled={false}
-          isIconOnly={false}
-          itemKey="default"
-          key="default/.0"
-          label="Default"
-          portalElement={null}
-          render={[Function]}
-          showIcon={false}
-          variant="framework"
-        >
-          <CommonTabContent>
-            <div
-              className="panel"
-              role="none"
-            >
-              <div
-                className="panel-header"
-                data-testid="workspace-content-heading"
-                role="none"
-              />
-              <div
-                className="panel-content"
-                role="none"
-              >
-                <div
-                  aria-labelledby="application-id-default"
-                  className="panel-overflow"
-                  data-application-overflow-container={true}
-                  id="application-id-default-panel"
-                  role="tabpanel"
-                  tabIndex="0"
-                >
-                  <DynamicOverlayContainer
-                    overlays={Array []}
-                  >
-                    <div
-                      className="outer-container"
-                      data-testid="dynamic-overlay-container"
-                      tabIndex="-1"
-                    >
-                      <div
-                        className="content-container"
-                      />
-                    </div>
-                  </DynamicOverlayContainer>
-                </div>
-              </div>
-            </div>
-          </CommonTabContent>
-        </CommonTabItem>
-      </div>
-    </div>
-  </CommonTabs>
-</Tabs>
-`;
-
 exports[`Tabs should render with content filled when indicated 1`] = `
 <CommonTabs
   activeItemKey="default"
@@ -1321,6 +681,7 @@ exports[`Tabs should render with content filled when indicated 1`] = `
       "timeZone": null,
     }
   }
+  isDraggable={false}
   onRequestActivate={[Function]}
   variant="framework"
 >
@@ -1331,6 +692,7 @@ exports[`Tabs should render with content filled when indicated 1`] = `
     label="Default"
     render={[Function]}
     showIcon={false}
+    variant="framework"
   />
 </CommonTabs>
 `;
@@ -1365,6 +727,7 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
       "timeZone": null,
     }
   }
+  isDraggable={false}
   onRequestActivate={[Function]}
   variant="framework"
 >
@@ -1375,6 +738,7 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
     label="Default"
     render={[Function]}
     showIcon={false}
+    variant="framework"
   />
 </CommonTabs>
 `;
@@ -1410,6 +774,7 @@ exports[`Tabs should set custom props 1`] = `
       "timeZone": null,
     }
   }
+  isDraggable={false}
   onRequestActivate={[Function]}
   variant="framework"
 >
@@ -1420,6 +785,7 @@ exports[`Tabs should set custom props 1`] = `
     label="Default"
     render={[Function]}
     showIcon={false}
+    variant="framework"
   />
 </CommonTabs>
 `;
@@ -1442,6 +808,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
     role="none"
   >
     <Tabs
+      isDraggable={false}
       tabData={
         Array [
           Object {

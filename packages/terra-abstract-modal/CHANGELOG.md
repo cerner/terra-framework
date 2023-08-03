@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 3.43.0 - (July 31, 2023)
+
+  * Changed
+    * Focus is now locked within modal content when modal is open for improved keyboard accessibility.
+
 ## 3.42.0 - (June 5, 2023)
 
   * Changed

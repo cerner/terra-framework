@@ -44,7 +44,7 @@ const disableFocusStyles = (event) => {
  * @param {number} index The index of the current element.
  * @param {array} ids The array of id strings.
  */
-const nextFocus = (event, index, ids) => {
+const nextFocus = (event, index, ids, isDragging) => {
   event.preventDefault();
   event.stopPropagation();
 
@@ -55,9 +55,8 @@ const nextFocus = (event, index, ids) => {
     }
     return;
   }
-
   const newIndex = index + 1 >= ids.length ? 0 : index + 1;
-  const element = document.getElementById(ids[newIndex]);
+  const element = isDragging ? document.getElementById(ids[index]) : document.getElementById(ids[newIndex]);
   if (element) {
     element.focus();
   }
@@ -69,7 +68,7 @@ const nextFocus = (event, index, ids) => {
  * @param {number} index The index of the current element.
  * @param {array} ids The array of id strings.
  */
-const previousFocus = (event, index, ids) => {
+const previousFocus = (event, index, ids, isDragging) => {
   event.preventDefault();
   event.stopPropagation();
 
@@ -82,7 +81,7 @@ const previousFocus = (event, index, ids) => {
   }
 
   const newIndex = index - 1 < 0 ? ids.length - 1 : index - 1;
-  const element = document.getElementById(ids[newIndex]);
+  const element = isDragging ? document.getElementById(ids[index]) : document.getElementById(ids[newIndex]);
   if (element) {
     element.focus();
   }
@@ -149,29 +148,26 @@ const deletefocus = (event, index, ids, label, deleteTabLabel) => {
   }
 };
 
-
-
 /**
  * The default event handler for navigational arrow keys.
  * @param {object} event The triggering event.
  * @param {number} index The index of the current element.
  * @param {array} ids The array of id strings.
  */
-const handleArrows = (event, index, ids,label,deleteTabLabel) => {
+const handleArrows = (event, index, ids, label, deleteTabLabel, isDragging = false) => {
   const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
   const nextKey = !isRTL ? KEY_RIGHT : KEY_LEFT;
   const previousKey = !isRTL ? KEY_LEFT : KEY_RIGHT;
   if (event.nativeEvent.keyCode === nextKey || event.nativeEvent.keyCode === KEY_DOWN) {
-    nextFocus(event, index, ids);
+    nextFocus(event, index, ids, isDragging);
   } else if (event.nativeEvent.keyCode === previousKey || event.nativeEvent.keyCode === KEY_UP) {
-    previousFocus(event, index, ids);
+    previousFocus(event, index, ids, isDragging);
   } else if (event.nativeEvent.keyCode === KEY_HOME) {
     firstFocus(event, index, ids);
   } else if (event.nativeEvent.keyCode === KEY_END) {
     lastFocus(event, index, ids);
-  }
-  else if (event.nativeEvent.keyCode === KEY_DELETE || event.nativeEvent.keyCode === KEY_BACK_SPACE ) {
-    deletefocus(event,index, ids,label,deleteTabLabel)
+  } else if (event.nativeEvent.keyCode === KEY_DELETE || event.nativeEvent.keyCode === KEY_BACK_SPACE) {
+    deletefocus(event, index, ids, label, deleteTabLabel);
   }
 };
 

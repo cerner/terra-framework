@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import IconClose from 'terra-icon/lib/icon/IconClose';
-import Button from 'terra-button/lib/Button';
 import {
   KEY_SPACE, KEY_RETURN, KEY_DELETE, KEY_BACK_SPACE,
 } from 'keycode-js';
@@ -11,6 +10,8 @@ import {
 import { injectIntl } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { v4 as uuidv4 } from 'uuid';
+import { Draggable } from 'react-beautiful-dnd';
+import IconKnurling from 'terra-icon/lib/icon/IconKnurling';
 import terraStyles from './TerraTabs.module.scss';
 import styles from './Tab.module.scss';
 import {
@@ -99,6 +100,11 @@ const propTypes = {
 
   isClosable: PropTypes.bool,
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
+   * Whether or not the tab is draggable.
+   */
+  isDraggable: PropTypes.bool,
+  onClosingTab: PropTypes.func,
 };
 
 const defaultProps = {
@@ -106,6 +112,7 @@ const defaultProps = {
   isIconOnly: false,
   isDisabled: false,
   showIcon: false,
+  isDraggable: false,
 };
 
 const Tab = ({
@@ -128,6 +135,7 @@ const Tab = ({
   isClosable,
   onClosingTab,
   intl,
+  isDraggable,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -154,7 +162,7 @@ const Tab = ({
 
   const tabDeleteLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.removable' })}`;
   function onKeyDown(event) {
-    if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
+    if (event.nativeEvent.keyCode === KEY_RETURN || (event.nativeEvent.keyCode === KEY_SPACE && !isDraggable)) {
       event.preventDefault();
       event.stopPropagation();
       onSelect(itemKey, metaData);
@@ -167,7 +175,8 @@ const Tab = ({
       const deleteTabLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed' })}`;
       handleArrows(event, index, tabIds, label, deleteTabLabel);
     } else {
-      handleArrows(event, index, tabIds, label);
+      const isDragging = !document.querySelectorAll('[data-terra-drag-focus="true"]').length && isDraggable;
+      handleArrows(event, index, tabIds, label, '', isDragging);
     }
   }
 
@@ -200,6 +209,42 @@ const Tab = ({
   attributes['aria-selected'] = isSelected;
   attributes.style = { zIndex };
 
+  // TBD: Add Translations
+  const onFocusResponse = 'Press Enter to activate a tab, or Press space bar to start a drag. When dragging you can use the arrow keys to move the item around, space bar to drop and escape to cancel. Ensure your screen reader is in focus mode or forms mode';
+  const responseId = `terra-tab-pane-response=${uuidv4()}`;
+
+  if (isDraggable) {
+    return (
+      <Draggable key={id} draggableId={id} index={index}>
+        {(provided) => (
+          <div
+            {...attributes}
+            ref={provided.innerRef}
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            id={id}
+            aria-controls={associatedPanelId}
+            role="tab"
+            className={variant === 'framework' ? paneClassNames : tabClassNames}
+            title={label}
+            aria-describedby={responseId}
+            tabIndex={isSelected ? 0 : -1}
+            data-terra-tabs-show-focus-styles
+            data-terra-tab-draggable
+          >
+            <div>
+
+              <IconKnurling className={cx('icon-knurling')} />
+              <VisuallyHiddenText aria-hidden id={responseId} text={onFocusResponse} />
+              {customDisplay || icon}
+              {(!customDisplay && !isIconOnly) && <span className={cx('label')}>{label}</span>}
+            </div>
+          </div>
+        )}
+      </Draggable>
+    );
+  }
+
   return (
     <div
       {...attributes}
@@ -209,26 +254,23 @@ const Tab = ({
       aria-disabled={isDisabled}
       className={variant === 'framework' ? paneClassNames : tabClassNames}
       title={label}
+      tabIndex={isSelected ? 0 : -1}
       data-terra-tabs-show-focus-styles
     >
       <div className={variant === 'framework' ? cy('inner') : cx('inner')}>
-        {customDisplay}
-        {customDisplay ? null : icon}
-        {customDisplay || isIconOnly ? null : (
-          <span className={variant === 'framework' ? cy('label') : cx('label')}>
-            {label}</span>
-        )}
-        </div>  
-          {isClosable && (
-            <button
-            className={cx('pill-remove-button')}
-            role="button"
-            aria-label={tabDeleteLabel}
-            onClick={onCloseClick}
-          ><IconClose a11yLabel={'Closed CLICKED'} />
-          </button>
-            )
-          }
+        {customDisplay || icon}
+        {(!customDisplay && !isIconOnly) && <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
+      </div>
+      {isClosable && (
+      <button
+        className={cx('pill-remove-button')}
+        type="button"
+        aria-label={tabDeleteLabel}
+        onClick={onCloseClick}
+      >
+        <IconClose a11yLabel="Closed CLICKED" />
+      </button>
+      )}
     </div>
   );
 };
