@@ -60,7 +60,6 @@ const propTypes = {
 const defaultProps = {
   tabFill: false,
   fill: false,
-  
 };
 
 class Tabs extends React.Component {
@@ -69,8 +68,8 @@ class Tabs extends React.Component {
     this.getInitialState = this.getInitialState.bind(this);
     this.state = {
       activeKey: this.getInitialState(),
-      activeAfterClosed:'',
-      closedKeySelected:''
+      activeAfterClosed: '',
+      closedKeySelected: '',
     };
   }
 
@@ -84,12 +83,15 @@ class Tabs extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.activeKey !== prevProps.activeKey) {
       // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({
-        activeKey: this.props.activeKey,
-      });
+      this.openAddBoardModal();
     }
+    console.log(this.state.activeKey);
   }
-  
+
+  async openAddBoardModal() {
+    await this.setState({ activeKey: this.props.activeKey });
+    console.log(this.state.activeKey);
+  }
 
   render() {
     const {
@@ -126,7 +128,7 @@ class Tabs extends React.Component {
         />,
       );
     });
-    const handleTabsStateChange = (newValue,itemKey,event) => {
+    const handleTabsStateChange = (newValue, itemKey, event) => {
       if (newValue.length > 0) {
         let activeAfterClosed = '';
         for (let i = 0; i < newValue.length; i++) {
@@ -135,11 +137,11 @@ class Tabs extends React.Component {
             break;
           }
         }
-        this.setState({ activeAfterClosed: activeAfterClosed });
+        this.setState({ activeAfterClosed });
       } else if (newValue.length === 0) {
         this.setState({ activeAfterClosed: '' });
       }
-      this.props.onTabClose && this.props.onTabClose(newValue,itemKey,event);
+      this.props.onTabClose && this.props.onTabClose(newValue, itemKey, event);
     };
     return (
       <CommonTabs
@@ -148,9 +150,9 @@ class Tabs extends React.Component {
         onRequestActivate={key => this.setState({ activeKey: key })}
         onClosingkey={(key) => {
           if (this.state.activeKey === key) {
-           setTimeout(() => {
-            this.setState({ activeKey: this.state.activeAfterClosed });
-          }, 100);
+            setTimeout(() => {
+              this.setState({ activeKey: this.state.activeAfterClosed });
+            }, 100);
           }
         }}
         onClosingTab={handleTabsStateChange}

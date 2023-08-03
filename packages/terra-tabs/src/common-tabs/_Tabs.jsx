@@ -116,6 +116,7 @@ class Tabs extends React.Component {
     this.wrapOnSelect = this.wrapOnSelect.bind(this);
     this.wrapOnSelectHidden = this.wrapOnSelectHidden.bind(this);
     this.wrapOnClose = this.wrapOnClose.bind(this);
+    this.wrapOnAddButton = this.wrapOnAddButton.bind(this);
     this.resetCache();
   }
 
@@ -135,9 +136,16 @@ class Tabs extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    const newActiveKey = this.props.tabData.map(child => child.isSelected);
+    const prevActiveKey = prevProps.tabData.map(child => child.isSelected);
+    const isActiveKeyUpdate = JSON.stringify(newActiveKey) !== JSON.stringify(prevActiveKey);
     if (this.isCalculating) {
       this.isCalculating = false;
       this.handleResize(this.contentWidth);
+      if (isActiveKeyUpdate) {
+        // eslint-disable-next-line react/no-did-update-set-state
+        this.setState({ tabData: this.props.tabData });
+      }
     } else if (this.props.tabData.length !== prevProps.tabData.length) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ tabData: this.props.tabData });
@@ -269,7 +277,6 @@ class Tabs extends React.Component {
 
   wrapOnSelect(onSelect) {
     return (itemKey, metaData) => {
-
       const updatedTabData = this.state.tabData.map((tab) => ({
         ...tab,
         isSelected: tab.itemKey === itemKey,
@@ -296,8 +303,19 @@ class Tabs extends React.Component {
     };
   }
 
+  wrapOnAddButton() {
+    console.log('Sam Text', this.state.tabData);
+    console.log('hiddenStartIndex', this.hiddenStartIndex);
+    // const element = document.getElementById(this.state.tabData.id[this.state.tabData.id.length - 1]);
+    // element.focus();
+    if (this.props.onSelectAddButton) {
+      this.props.onSelectAddButton();
+    }
+    console.log('Sam Text', this.state.tabData);
+  }
+
   wrapOnClose(onClose) {
-    return (itemKey, metaData,event) => {
+    return (itemKey, metaData, event) => {
       this.setIsOpen(false);
       let removedTabIndex = -1;
       const updatedTabData = this.state.tabData
@@ -315,7 +333,7 @@ class Tabs extends React.Component {
             ...tab,
           };
         });
-  
+
       if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex !== 0 && updatedTabData[removedTabIndex - 1].isDisabled != true) {
         if (updatedTabData[removedTabIndex - 1].isSelected !== undefined) {
           updatedTabData[removedTabIndex - 1].isSelected = true;
@@ -329,15 +347,16 @@ class Tabs extends React.Component {
           updatedTabData[removedTabIndex].isSelected = true;
         }
       }
-     this.props.onTabStateChange(updatedTabData,itemKey,event);
+      this.props.onTabStateChange(updatedTabData, itemKey, event);
       this.setState({ tabData: updatedTabData });
       onClose(itemKey, metaData);
     };
   }
+
   render() {
     addTabId = uuid();
     const {
-     ariaLabel, variant, onChange, onSelectAddButton, ariaLabelAddTab,
+      ariaLabel, variant, onChange, onSelectAddButton, ariaLabelAddTab,
     } = this.props;
     const theme = this.context;
     const enabledTabs = this.state.tabData.filter(tab => !tab.isDisabled);
@@ -406,7 +425,7 @@ class Tabs extends React.Component {
               showIcon
               icon={<IconAdd a11yLabel={ariaLabelAddTab} />}
               tabIds={moreIds}
-              onSelect={onSelectAddButton}
+              onSelect={this.wrapOnAddButton}
               onFocus={this.handleHiddenFocus}
               onBlur={this.handleHiddenBlur}
               onChange={onChange}
@@ -472,7 +491,7 @@ class Tabs extends React.Component {
             id={addTabId}
             addAriaLabel={ariaLabelAddTab}
             index={enabledTabsIndex + 1}
-            onSelect={onSelectAddButton}
+            onSelect={this.wrapOnAddButton}
             tabIds={moreIds}
             isSelected={false}
           />

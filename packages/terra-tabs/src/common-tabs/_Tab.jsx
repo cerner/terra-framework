@@ -1,20 +1,23 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import { KEY_SPACE, KEY_RETURN, KEY_DELETE, KEY_BACK_SPACE } from 'keycode-js';
+import IconClose from 'terra-icon/lib/icon/IconClose';
+import Button from 'terra-button/lib/Button';
+import {
+  KEY_SPACE, KEY_RETURN, KEY_DELETE, KEY_BACK_SPACE,
+} from 'keycode-js';
+
+import { injectIntl } from 'react-intl';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { v4 as uuidv4 } from 'uuid';
+import terraStyles from './TerraTabs.module.scss';
+import styles from './Tab.module.scss';
 import {
   enableFocusStyles,
   disableFocusStyles,
   handleArrows,
 } from './_TabUtils';
-
-import styles from './Tab.module.scss';
-import terraStyles from './TerraTabs.module.scss';
-import { injectIntl } from 'react-intl';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
-import { v4 as uuidv4 } from 'uuid';
-import IconClose from 'terra-icon/lib/icon/IconClose';
 
 const cy = classNames.bind(terraStyles);
 
@@ -149,23 +152,22 @@ const Tab = ({
     attributes['aria-label'] = label;
   }
 
-  let tabDeleteLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.removable'})}`
+  const tabDeleteLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.removable' })}`;
   function onKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       event.preventDefault();
       event.stopPropagation();
       onSelect(itemKey, metaData);
       onChange(event, itemKey);
-    } 
-    if(event.nativeEvent.keyCode === KEY_DELETE || event.nativeEvent.keyCode === KEY_BACK_SPACE){
+    }
+    if (event.nativeEvent.keyCode === KEY_DELETE || event.nativeEvent.keyCode === KEY_BACK_SPACE) {
       event.preventDefault();
       event.stopPropagation();
       onClosingTab(itemKey, metaData);
-      let deleteTabLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed'})}`
-      handleArrows(event, index, tabIds,label,deleteTabLabel);
-    }
-    else {
-      handleArrows(event, index, tabIds,label);
+      const deleteTabLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed' })}`;
+      handleArrows(event, index, tabIds, label, deleteTabLabel);
+    } else {
+      handleArrows(event, index, tabIds, label);
     }
   }
 
@@ -179,16 +181,15 @@ const Tab = ({
   }
   function onCloseClick(event) {
     event.stopPropagation();
-    onClosingTab(itemKey, metaData,event)
-    let deleteTabLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed'})}`
-    const element = document.getElementById(tabIds[index-1]);
+    onClosingTab(itemKey, metaData, event);
+    const deleteTabLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed' })}`;
+    const element = document.getElementById(tabIds[index - 1]);
     const ariaLabel = label ? `${label} ${deleteTabLabel}` : '';
     element.setAttribute('aria-label', ariaLabel);
     element.focus();
     element.addEventListener('blur', () => {
-    element.removeAttribute('aria-label');
+      element.removeAttribute('aria-label');
     });
-  
   }
   attributes.tabIndex = isSelected ? 0 : -1;
   attributes.onClick = onClick;
