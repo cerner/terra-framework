@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated toggle examples for `terra-collapsible-menu-view`.
+
 ## 1.31.0 - (August 4, 2023)
 
 * Added
