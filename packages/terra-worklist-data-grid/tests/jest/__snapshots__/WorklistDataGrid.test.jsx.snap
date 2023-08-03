@@ -8,6 +8,7 @@ exports[`WorklistDataGrid verifies that the grid created is consistent with the 
     className="worklist-data-grid"
     id="test-terra-worklist-data-grid"
     onKeyDown={[Function]}
+    onKeyUp={[Function]}
     role="grid"
   >
     <ColumnHeader
@@ -186,6 +187,7 @@ exports[`WorklistDataGrid verifies the rows are created with the right props 1`]
     className="worklist-data-grid"
     id="test-terra-worklist-data-grid"
     onKeyDown={[Function]}
+    onKeyUp={[Function]}
     role="grid"
   >
     <ColumnHeader

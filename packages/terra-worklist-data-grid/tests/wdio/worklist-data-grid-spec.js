@@ -1,5 +1,21 @@
 const selector = '#default-terra-worklist-data-grid';
 
+const holdDownShiftKey = () => {
+  browser.performActions([{
+    type: 'key',
+    id: 'keyboard',
+    actions: [{ type: 'keyDown', value: '\uE008' }],
+  }]);
+};
+
+const releaseKey = () => {
+  browser.performActions([{
+    type: 'key',
+    id: 'keyboard',
+    actions: [{ type: 'keyUp', value: '\uE008' }],
+  }]);
+};
+
 const moveCurrentPositionBy = (row, col) => browser.keys(
   new Array(Math.abs(row)).fill(row > 0 ? 'ArrowDown' : 'ArrowUp')
     .concat(new Array(Math.abs(col)).fill(col > 0 ? 'ArrowRight' : 'ArrowLeft')),
@@ -18,6 +34,12 @@ const rowSelectionNavigateToCell = (row, col) => {
 
 const clickCell = (row, col) => {
   browser.$$('#default-terra-worklist-data-grid tr')[row].$(`:nth-child(${col + 1})`).click();
+};
+
+const shiftClickCell = (row, col) => {
+  holdDownShiftKey();
+  clickCell(row, col);
+  releaseKey();
 };
 
 Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
@@ -324,6 +346,142 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.$$('td[class*="worklist-data-grid-cell"]:not([class*="selectable"])')[0].moveTo();
       browser.pause(2000);
       Terra.validates.element('hover-non-selectable-cell', '#terra-worklist-data-grid-with-selections');
+    });
+
+    // Shift + Space
+    it('enables row selection mode by Shift+Space when turned off', () => {
+      browser.keys(['Tab', 'Escape']);
+      rowSelectionNavigateToCell(3, 0);
+      browser.keys(['Shift', 'Space', 'Shift']);
+
+      Terra.validates.element('row-3-selected-without-hover-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('selects multiple rows after moving downwards from anchor row', () => {
+      rowSelectionNavigateToCell(3, 2);
+      browser.keys(['Shift', 'Space', 'Shift']);
+      moveCurrentPositionBy(2, -1);
+      browser.keys(['Shift', 'Space', 'Shift']);
+
+      Terra.validates.element('row-3-to-5-selected-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('selects multiple rows after moving upwards from anchor row', () => {
+      rowSelectionNavigateToCell(7, 2);
+      browser.keys(['Shift', 'Space', 'Shift']);
+      moveCurrentPositionBy(-4, 2);
+      browser.keys(['Shift', 'Space', 'Shift']);
+
+      Terra.validates.element('row-7-to-3-selected-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('selects rows only between anchor row and Shift + space row', () => {
+      rowSelectionNavigateToCell(5, 2);
+      browser.keys(['Shift', 'Space', 'Shift']);
+      moveCurrentPositionBy(-2, 0);
+      browser.keys(['Shift', 'Space', 'Shift']);
+      moveCurrentPositionBy(5, 1);
+      browser.keys(['Shift', 'Space', 'Shift']);
+
+      Terra.validates.element('row-5-to-8-selected-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('anchor row changes when a new row is selected individually', () => {
+      rowSelectionNavigateToCell(5, 2);
+      browser.keys(['Shift', 'Space', 'Shift']);
+      moveCurrentPositionBy(-2, 0);
+      browser.keys(['Shift', 'Space', 'Shift']);
+      moveCurrentPositionBy(4, -1);
+      browser.keys(['Space']);
+      moveCurrentPositionBy(2, 2);
+      browser.keys(['Shift', 'Space', 'Shift']);
+
+      Terra.validates.element('row-multiple-ranges-selected-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    // Shift + Up/Down
+    it('enables row selection mode by Shift+Up when turned off', () => {
+      browser.keys(['Tab', 'Escape']);
+      rowSelectionNavigateToCell(3, 2);
+      browser.keys(['Shift', 'ArrowUp', 'Shift']);
+
+      Terra.validates.element('row-3-to-2-selected-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('enables row selection mode by Shift+Down when turned off', () => {
+      browser.keys(['Tab', 'Escape']);
+      rowSelectionNavigateToCell(3, 0);
+      browser.keys(['Shift', 'ArrowDown', 'ArrowDown', 'Shift']);
+
+      Terra.validates.element('row-3-to-5-selected-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('selects multiple batches of rows using Shift + up/down keys', () => {
+      rowSelectionNavigateToCell(5, 1);
+      browser.keys(['Shift', 'ArrowUp', 'ArrowUp', 'Shift']);
+      moveCurrentPositionBy(4, 1);
+      browser.keys(['Shift', 'ArrowDown', 'ArrowDown', 'Shift']);
+
+      Terra.validates.element('multiple-ranges-selected-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('unselects rows when moving towards or across anchor row', () => {
+      rowSelectionNavigateToCell(5, 1);
+      browser.keys(['Shift', 'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowDown', 'ArrowDown', 'Shift']);
+
+      Terra.validates.element('moving-towards-anchor-unselects-rows-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    // Shift + Click
+    it('enables row selection mode by Shift+Click when turned off', () => {
+      browser.keys(['Tab', 'Escape']);
+      clickCell(3, 3);
+      shiftClickCell(5, 1);
+
+      Terra.validates.element('row-3-to-5-selected-with-hover-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('select rows upwards of anchor row by Shift+Click', () => {
+      clickCell(6, 4);
+      shiftClickCell(4, 2);
+
+      Terra.validates.element('row-4-to-6-selected-with-hover-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('select multiple batches of rows by Shift+Click', () => {
+      clickCell(5, 2);
+      shiftClickCell(3, 1);
+
+      clickCell(7, 2);
+      shiftClickCell(9, 3);
+
+      Terra.validates.element('multiple-ranges-selected-with-hover-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('unselects rows when moving towards or across anchor row', () => {
+      clickCell(5, 3);
+
+      holdDownShiftKey();
+
+      clickCell(3, 4);
+      clickCell(9, 1);
+
+      releaseKey();
+
+      Terra.validates.element('row-5-to-9-selected-with-hover-row-selection-mode', { selector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
   });
 });
