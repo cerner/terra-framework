@@ -569,7 +569,7 @@ function WorklistDataGrid(props) {
   const onFocus = (event) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
-      grid.current.rows[focusedRow].cells[focusedCol].focus();
+      setFocusedRowCol(focusedRow, focusedCol, true);
     }
   };
 
