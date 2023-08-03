@@ -103,6 +103,8 @@ const propTypes = {
 };
 
 let addTabId;
+let addButtonToggle = false;
+let closeButtonToggle = false;
 
 class Tabs extends React.Component {
   constructor(props) {
@@ -121,7 +123,7 @@ class Tabs extends React.Component {
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
     this.wrapOnSelect = this.wrapOnSelect.bind(this);
     this.wrapOnSelectHidden = this.wrapOnSelectHidden.bind(this);
-    this.wrapOnClose = this.wrapOnClose.bind(this);
+    this.wrapOnSelectHidden = this.wrapOnSelectHidden.bind(this);
     this.wrapOnAddButton = this.wrapOnAddButton.bind(this);
     this.positionDropDown = this.positionDropDown.bind(this);
     this.handleDragEnd = this.handleDragEnd.bind(this);
@@ -157,9 +159,8 @@ class Tabs extends React.Component {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ visibleTabData: this.props.tabData });
     }
-
     // Allow Active Styles to be applied when tab is selected.
-    if (prevTab.id !== currTab.id) {
+    if (prevTab && currTab && prevTab.id !== currTab.id) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState(prevArray => {
         const newArray = [...prevArray.visibleTabData];
@@ -169,6 +170,11 @@ class Tabs extends React.Component {
         currTabData.isSelected = true;
         return { visibleTabData: newArray };
       });
+      const element = document.getElementById(currTab.id);
+      if (element && addButtonToggle) {
+        element.focus();
+        addButtonToggle = false;
+      }
     }
     if (this.isCalculating) {
       this.isCalculating = false;
@@ -191,13 +197,12 @@ class Tabs extends React.Component {
 
     // NOTE: get width from bounding client rect instead of resize observer, zoom throws off safari.
     const { width } = this.containerRef.current.parentNode.getBoundingClientRect();
-    const addtab = this.addButtonRef.current.getBoundingClientRect().width;
 
     const moreStyle = window.getComputedStyle(this.moreButtonRef.current, null);
     const moreMarginLeft = parseInt(moreStyle.getPropertyValue('margin-left'), 10);
     const moreMarginRight = parseInt(moreStyle.getPropertyValue('margin-right'), 10);
     const moreButtonWidth = this.moreButtonRef.current.getBoundingClientRect().width + moreMarginLeft + moreMarginRight;
-    const availableWidth = width - moreButtonWidth - addtab;
+    const availableWidth = width - moreButtonWidth;
 
     // Calculate hidden index
     const tabCount = this.state.visibleTabData.length;
@@ -377,11 +382,11 @@ class Tabs extends React.Component {
         })
         .filter((tab) => tab.itemKey !== itemKey);
 
-      if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex !== 0 && updatedTabData[removedTabIndex - 1].isDisabled != true) {
+      if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex !== 0 && updatedTabData[removedTabIndex - 1].isDisabled !== true) {
         if (updatedTabData[removedTabIndex - 1].isSelected !== undefined) {
           updatedTabData[removedTabIndex - 1].isSelected = true;
         }
-      } else if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex !== 0 && updatedTabData[removedTabIndex - 1].isDisabled == true) {
+      } else if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex !== 0 && updatedTabData[removedTabIndex - 1].isDisabled === true) {
         if (updatedTabData[removedTabIndex - 2]?.isSelected !== undefined) {
           updatedTabData[removedTabIndex - 2].isSelected = true;
         }
@@ -391,9 +396,17 @@ class Tabs extends React.Component {
         }
       }
       this.props.onTabStateChange(updatedTabData, itemKey, event);
+      closeButtonToggle = true;
       this.setState({ visibleTabData: updatedTabData });
       onClose(itemKey, metaData);
     };
+  }
+
+  wrapOnAddButton() {
+    if (this.props.onSelectAddButton) {
+      addButtonToggle = true;
+      this.props.onSelectAddButton();
+    }
   }
 
   render() {
@@ -588,7 +601,7 @@ class Tabs extends React.Component {
             id={addTabId}
             addAriaLabel={ariaLabelAddTab}
             index={enabledTabsIndex + 1}
-            onSelect={onSelectAddButton}
+            onSelect={this.wrapOnAddButton}
             tabIds={moreIds}
             isSelected={false}
           />

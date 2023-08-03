@@ -42,6 +42,7 @@ const IconOnlyTabs = () => {
     },
   );
   const handleTabClose = (tabdata, itemKey) => {
+    console.log('After Delete', tabdata);
     const tabsArray = [...tabs];
     const indexToRemove = tabsArray.findIndex(tab => tab.key === itemKey);
     if (indexToRemove !== -1) {
@@ -69,7 +70,7 @@ const IconOnlyTabs = () => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs activeKey={activeKey} onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
+      <Tabs activeKey={activeKey} onSelectAddButton={addMoreTabPanes} isClosable ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
         { tabs.map((tab) => (
           <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} icon={tab.icon} key={tab.key} id={tab.key} isActive={TabContent.isActive}>
             <TabContent label={tab.content} id={`TabContent_${tab.key}`} />
