@@ -6,15 +6,12 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
       browser.url('/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal');
       $('button').click();
       expect($('#root').getAttribute('inert')).toEqual('true');
-      expect($('#root').getAttribute('aria-hidden')).toEqual('true');
       Terra.validates.element('open default modal', { selector });
     });
 
     it('clicks outside to close modal', () => {
       $('[class*="ModalOverlay"]').click({ x: 235, y: 5 });
       Terra.validates.element('closed default modal');
-      expect($('#root').getAttribute('inert')).toEqual('false');
-      expect($('#root').getAttribute('aria-hidden')).toEqual(null);
       expect($('#modal-open-button').isFocused()).toBeTruthy();
     });
 
@@ -22,14 +19,11 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
       browser.keys('Enter');
       $('[aria-modal="true"][role="dialog"]').waitForDisplayed();
       expect($('#root').getAttribute('inert')).toEqual('true');
-      expect($('#root').getAttribute('aria-hidden')).toEqual('true');
       expect($('[aria-modal="true"][role="dialog"] [data-terra-abstract-modal-begin="true"]').isFocused()).toBeTruthy();
     });
 
     it('closes modal on ESC', () => {
       browser.keys('Escape');
-      expect($('#root').getAttribute('inert')).toEqual('false');
-      expect($('#root').getAttribute('aria-hidden')).toEqual(null);
       expect($('#modal-open-button').isFocused()).toBeTruthy();
     });
   });
@@ -39,15 +33,12 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
       browser.url('/raw/tests/terra-abstract-modal/abstract-modal/fullscreen-abstract-modal');
       $('button').click();
       expect($('#root').getAttribute('inert')).toEqual('true');
-      expect($('#root').getAttribute('aria-hidden')).toEqual('true');
       Terra.validates.element('open fullscreen modal', { selector });
     });
 
     it('clicks outside to close modal', () => {
       $('[class*="ModalOverlay"]').click({ x: 410, y: 5 });
       Terra.validates.element('closed fullscreen modal');
-      expect($('#root').getAttribute('inert')).toEqual('false');
-      expect($('#root').getAttribute('aria-hidden')).toEqual(null);
       expect($('#modal-open-button').isFocused()).toBeTruthy();
     });
 
@@ -55,13 +46,11 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
       browser.keys('Enter');
       $('[role="dialog"]').waitForDisplayed();
       expect($('#root').getAttribute('inert')).toEqual('true');
-      expect($('#root').getAttribute('aria-hidden')).toEqual('true');
       expect($('[role="dialog"] [data-terra-abstract-modal-begin="true"]').isFocused()).toBeTruthy();
     });
 
     it('closes modal on ESC', () => {
       browser.keys('Escape');
-      expect($('#root').getAttribute('inert')).toEqual('false');
       expect($('#root').getAttribute('aria-hidden')).toEqual(null);
       expect($('#modal-open-button').isFocused()).toBeTruthy();
     });
@@ -99,7 +88,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
 
   describe('Modal Focus Handling', () => {
     describe('Focusable Content', () => {
-      it('clicks to open modal', () => {
+      before(() => {
         browser.url('/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal');
         $('button').click();
       });
@@ -115,31 +104,20 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
         Terra.validates.element('modal button focused', { selector });
       });
 
-      it('shifts focus forward away from the modal dialog', () => {
+      it('prevents shift focus forward out of modal dialog', () => {
         browser.keys(['Tab']);
-        expect($('#modal-button').isFocused()).toBeFalsy();
+        expect($('#modal-button').isFocused()).toBeTruthy();
         expect($('#modal-open-button').isFocused()).toBeFalsy();
         expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeFalsy();
-        Terra.validates.element('focused shifted outside the end of the modal', { selector });
+        Terra.validates.element('focus trapped from moving forward', { selector });
       });
 
-      it('shifts focus back onto interactive elements within the modal', () => {
+      it('prevents shift focus back out of modal dialog', () => {
         browser.keys(['Shift', 'Tab']);
         expect($('#modal-button').isFocused()).toBeTruthy();
-        Terra.validates.element('modal button focused again', { selector });
-      });
-
-      it('shifts focus back onto the modal dialog', () => {
-        browser.keys(['Shift', 'Tab']);
-        expect($('#modal-button').isFocused()).toBeFalsy();
         expect($('#modal-open-button').isFocused()).toBeFalsy();
-        expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeTruthy();
-        Terra.validates.element('focused shifted back to the modal', { selector });
-      });
-
-      it('shifts focus backwards away from the modal dialog', () => {
-        browser.keys(['Shift', 'Tab']);
         expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeFalsy();
+        Terra.validates.element('focus trapped from moving back', { selector });
       });
     });
 

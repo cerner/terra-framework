@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.43.0 - (July 25, 2023)
+
+* Added
+  * Added heights `'280'`, `'380'`, `'460'` and widths `'400'`, `'600'`, `'700'`.
+
 ## 4.42.0 - (March 15, 2022)
 
 * Added

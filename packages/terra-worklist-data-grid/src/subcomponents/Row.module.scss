@@ -10,7 +10,11 @@
     }
 
     &:nth-child(even) {
-      background-color: var(--terra-worklist-data-grid-row-striped-background-color, #f0f0f0);
+      background-color: var(--terra-worklist-data-grid-row-striped-even-background-color, #f0f0f0);
+    }
+
+    &:nth-child(odd) {
+      background-color: var(--terra-worklist-data-grid-row-striped-odd-background-color, #fff);
     }
 
     &.row-selected {

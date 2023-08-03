@@ -2,6 +2,38 @@
 
 ## Unreleased
 
+## 7.3.0 - (August 2, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+## 7.2.0 - (August 2, 2023)
+
+* Added
+ * Added `isDraggable` and `onTabOrderChange` props to support drag and drop feature in tabs.
+
+* Changed
+  * Locked `uuid` dependency to `3.4.0` for consistency across Terra packages.
+
+## 7.1.0 - (July 31, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+## 7.0.0 - (July 25, 2023)
+
+* Breaking Change
+  * Removed `responsiveTo` prop as common tabs is responsive to parent
+   container & window
+
+* Added
+  * Added Common tabs component under terra-tabs
+  * Introduced `variant` prop to switch between framework and workspace styles
+
+* Changed
+  * Updated framework tabs to consume common tabs 
+  * Updated styles to accommodate both framework and workspace styles
+
 ## 6.72.0 - (July 19, 2023)
 
 * Changed

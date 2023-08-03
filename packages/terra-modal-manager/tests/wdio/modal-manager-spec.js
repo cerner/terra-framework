@@ -336,18 +336,21 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
       });
     });
 
-    describe('Outside Focus Handling Before Modal', () => {
-      it('shifts focus before modal', () => {
+    describe('Modal Content Focus Shift Back', () => {
+      it('shifts focus to the last element in modal content when shifting back from the first element', () => {
         $('#root-component .disclose-small').click();
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
-        browser.keys(['Shift', 'Tab']); // Shift tab focus backward outside of modal
-        Terra.validates.element('focused shifted before modal', { selector });
+        browser.keys(['Tab']); // Shift tab focus onto modal content
+        expect($('[class*="slide-group"] #DemoContainer-1 .disclose').isFocused()).toEqual(true);
+        browser.keys(['Shift', 'Tab']); // Shift tab focus backward
+        expect($('#DemoContainer-1 .maximize').isFocused()).toEqual(true);
+        Terra.validates.element('focused shifted to last', { selector });
         browser.keys('Escape');
       });
     });
 
-    describe('Outside Focus Handling After Modal', () => {
-      it('shifts focus after the modal', () => {
+    describe('Modal Content Focus Shift Forward', () => {
+      it('shifts focus to the first element in modal content when shifting forward from the last element', () => {
         $('#root-component .disclose-small').click();
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
         // eslint-disable-next-line prefer-arrow-callback
@@ -355,8 +358,9 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
           document.querySelector('#DemoContainer-1 .maximize').focus();
         });
         browser.keys(['Shift']); // Release shift key
-        browser.keys(['Tab']); // Shift tab focus forward outside of modal
-        Terra.validates.element('focused shifted after modal', { selector });
+        browser.keys(['Tab']); // Shift tab focus forward
+        expect($('[class*="slide-group"] #DemoContainer-1 .disclose').isFocused()).toEqual(true);
+        Terra.validates.element('focused shifted back to first', { selector });
         browser.keys('Escape');
       });
     });
@@ -477,6 +481,94 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
       expect($('[data-disclosure-container="true"]').isExisting()).toBeTruthy();
       Terra.validates.element('nested disclosure container', { selector, axeRules: ignoredA11y });
       $('[class*="slide-group"] #DemoContainer-2 .close-disclosure').click();
+    });
+  });
+});
+
+Terra.describeViewports('ModalManager - Fusion Sizes', ['tiny', 'large'], () => {
+  before(() => {
+    browser.url('/#/raw/tests/cerner-terra-framework-docs/modal-manager/modal-manager-with-fusion-sizes');
+    browser.refresh();
+  });
+
+  afterEach(() => {
+    browser.keys('Escape');
+  });
+
+  describe('Size Props', () => {
+    it('Disclose Fusion Small', () => {
+      $('#root-component .disclose-fusion-small').click();
+      Terra.validates.element('disclose fusion-small', { selector });
+    });
+
+    it('Disclose Fusion Medium', () => {
+      $('#root-component .disclose-fusion-medium').click();
+      Terra.validates.element('disclose fusion-medium', { selector });
+    });
+
+    it('Disclose Fusion Large', () => {
+      $('#root-component .disclose-fusion-large').click();
+      Terra.validates.element('disclose fusion-large', { selector });
+    });
+  });
+
+  describe('Dimensions Props', () => {
+    it('Disclose Width-400', () => {
+      $('#disclosureDimensions-width-0').click();
+      $('#width-400-0').click();
+      $('#root-component #disclose-dimension-0').click();
+      $('#DemoContainer-1 .disclose-fusion-small').moveTo();
+
+      Terra.validates.element('disclose width-400', { selector });
+    });
+
+    it('Disclose Width-600', () => {
+      $('#disclosureDimensions-width-0').click();
+      $('#width-600-0').click();
+      $('#root-component #disclose-dimension-0').click();
+      $('#DemoContainer-1 .disclose-fusion-small').moveTo();
+
+      Terra.validates.element('disclose width-600', { selector });
+    });
+
+    it('Disclose Width-700', () => {
+      $('#disclosureDimensions-width-0').click();
+      $('#width-700-0').click();
+      $('#root-component #disclose-dimension-0').click();
+      $('#DemoContainer-1 .disclose-fusion-small').moveTo();
+
+      Terra.validates.element('disclose width-700', { selector });
+    });
+
+    it('Disclose Height-280', () => {
+      // reset width
+      $('#disclosureDimensions-width-0').click();
+      $('#width-320-0').click();
+
+      $('#disclosureDimensions-height-0').click();
+      $('#height-280-0').click();
+      $('#root-component #disclose-dimension-0').click();
+      $('#DemoContainer-1 .disclose-fusion-small').moveTo();
+
+      Terra.validates.element('disclose height-280', { selector });
+    });
+
+    it('Disclose Height-380', () => {
+      $('#disclosureDimensions-height-0').click();
+      $('#height-380-0').click();
+      $('#root-component #disclose-dimension-0').click();
+      $('#DemoContainer-1 .disclose-fusion-small').moveTo();
+
+      Terra.validates.element('disclose height-380', { selector });
+    });
+
+    it('Disclose Height-460', () => {
+      $('#disclosureDimensions-height-0').click();
+      $('#height-460-0').click();
+      $('#root-component #disclose-dimension-0').click();
+      $('#DemoContainer-1 .disclose-fusion-small').moveTo();
+
+      Terra.validates.element('disclose height-460', { selector });
     });
   });
 });

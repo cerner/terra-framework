@@ -40,6 +40,24 @@
   // Hover state for selectable elements
   .selectable:hover {
     @include Cell.terra-worklist-data-grid-selectable-hover;
+    // NOTE: Temporarily keeping the older background-color as changes breaks styling in multiple places.
+    // It will be replaced once an update strategy is finalized with UX.
+    // background-color: var(--terra-worklist-data-grid-header-hover-background-color, #e4f2f9);
+  }
+
+  .pinned {
+    border: var(--terra-worklist-data-grid-pinned-columns-header-border, 1px solid #000);
+    border-width: 1px 0;
+    box-shadow: inset var(--terra-worklist-data-grid-pinned-columns-header-box-shadow, 1px 0 #000);
+    position: sticky;
+    z-index: 2;
+  }
+
+  .pinned-columns-divider {
+    background-color: var(--terra-worklist-data-grid-pinned-columns-divider-background-color, #808080);
+    box-shadow: var(--terra-worklist-data-grid-pinned-columns-divider-box-shadow, 4px -1px 6px #808080);
+    position: absolute;
+    top: 0;
+    width: 2px;
   }
 }
-

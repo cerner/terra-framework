@@ -5,10 +5,35 @@
 * Added
   * Added example and tests for `terra-worklist-data-grid` to select rows via mouse and keyboard.
 
+## 1.30.0 - (August 2, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+## 1.29.0 - (August 2, 2023)
+
+* Added
+  * Added tests for draggable tabs.
+
+## 1.28.0 - (July 31, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+* Added
+  * Added examples for `terra-worklist-data-grid` when using pinned columns.
+  * Added `terra-worklist-data-grid` as dependency.
+
+## 1.27.0 - (July 25, 2023)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.26.0 - (July 20, 2023)
 
 * Added
   * Added `terra-worklist-data-grid` as dependency.
+  * Added example to test toggling and focusing disclosing node for `terra-slide-panel`.
 
 ## 1.25.0 - (July 19, 2023)
 
@@ -18,6 +43,7 @@
   * Updated the path name for the examples in doc site for `terra-embedded-content-consumer` to resolve missing files.
   * Minor formatting changes in the `uuid` testing section for several packages.
   * Updates tests amd examples for `terra-worklist-data-grid` to show resize capability.
+  * Updated examples for `terra-tabs` with conflicting ids.
 
 * Added
   * Added alpha release disclaimer for `terra-worklist-data-grid`.
@@ -35,6 +61,9 @@
   * Updated examples and tests for `terra-worklist-data-grid` for blank cell accessibility
   * Updated examples and tests for `terra-worklist-data-grid` to show masked cells and hover states
   * Updated examples and tests for `terra-worklist-data-grid` to show column sort and error indicators
+
+* Added
+  * Added test for `terra-modal-manager` to disclose modal using Fusion sizes.
 
 ## 1.23.0 - (June 12, 2023)
 

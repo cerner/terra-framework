@@ -56,15 +56,13 @@ const DefaultWorklistDataGrid = () => {
   const { cols, rows } = gridDataJSON;
 
   return (
-    <React.Fragment>
-      <WorklistDataGrid
-        id="default-terra-worklist-data-grid"
-        columns={cols}
-        rows={rows}
-        rowHeaderIndex={rowHeaderIndex}
-        ariaLabel="Worklist Data Grid"
-      />
-    </React.Fragment>
+    <WorklistDataGrid
+      id="default-terra-worklist-data-grid"
+      overflowColumns={cols}
+      rows={rows}
+      rowHeaderIndex={rowHeaderIndex}
+      ariaLabel="Worklist Data Grid"
+    />
   );
 };
 

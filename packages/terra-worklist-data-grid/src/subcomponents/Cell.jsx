@@ -1,13 +1,16 @@
 /* eslint-disable react/forbid-dom-props */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import * as KeyCode from 'keycode-js';
-import '../_elementPolyfill';
 import { injectIntl } from 'react-intl';
+import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
+
 import ThemeContext from 'terra-theme-context';
+
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
+import ColumnContext from '../utils/ColumnContext';
+import '../_elementPolyfill';
 
 const cx = classNames.bind(styles);
 
@@ -100,10 +103,10 @@ function Cell(props) {
     columnIndex,
     isTabStop,
     ariaLabel,
-    isRowHeader,
-    isSelected,
     isMasked,
+    isRowHeader,
     isSelectable,
+    isSelected,
     children,
     onCellSelect,
     height,
@@ -111,6 +114,8 @@ function Cell(props) {
   } = props;
 
   const theme = useContext(ThemeContext);
+
+  const columnContext = useContext(ColumnContext);
 
   const handleMouseDown = (event) => {
     if (isMasked || !isSelectable) {
@@ -157,10 +162,13 @@ function Cell(props) {
 
   const className = cx('worklist-data-grid-cell', {
     masked: isMasked,
+    pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
     selectable: isSelectable && !isMasked,
     selected: isSelected && !isMasked,
     blank: !children,
   }, theme.className);
+
+  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
 
   const CellTag = isRowHeader ? 'th' : 'td';
   return (
@@ -172,6 +180,7 @@ function Cell(props) {
       className={className}
       onMouseDown={handleMouseDown}
       onKeyDown={handleKeyDown}
+      style={{ left: cellLeftEdge }} // eslint-disable-line react/forbid-component-props
     >
       {!isMasked && children && <div className={cx('cell-content', theme.className)} style={{ height }}>{children}</div>}
     </CellTag>

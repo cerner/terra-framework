@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 6.66.0 - (July 31, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.65.0 - (July 25, 2023)
+
+* Added
+  * Added sizes `'fusion-small'`, `'fusion-medium'`, and `'fusion-large'`.
+
 ## 6.64.0 - (July 19, 2023)
 
 * Changed
