@@ -15,13 +15,13 @@ const WorklistDataGridFocusableCell = () => {
     setIsOpen(true);
   };
 
-  const buttonCell = <button type="button" onClick={handleButtonOpenModal}>Alert</button>;
+  const buttonCell = <button type="button" aria-label="Button Element" onClick={handleButtonOpenModal}>Alert</button>;
   // eslint-disable-next-line react/forbid-dom-props
-  const inputCell = <input type="text" style={{ width: '100px', height: '25px', display: 'inline' }} />;
-  const anchorCell = <a href="https://www.oracle.com/">Visit Oracle</a>;
-  const textAreaCell = <textarea name="textArea" readOnly rows="1" cols="15" value="Text Area" />;
+  const inputCell = <input type="text" aria-label="Text Input Element" style={{ width: '100px', height: '25px', display: 'inline' }} />;
+  const anchorCell = <a href="https://www.oracle.com/" aria-label="Anchor Element">Visit Oracle</a>;
+  const textAreaCell = <textarea name="textArea" aria-label="Text Area Element" readOnly rows="1" cols="15" value="Text Area" />;
   const selectCell = (
-    <select name="specialties" id="specialties">
+    <select name="specialties" id="specialties" aria-label="Select Element">
       <option value="ambulatory">Ambulatory</option>
       <option value="cardiology">Cardiology</option>
       <option value="radiology">Radiology</option>
@@ -32,16 +32,22 @@ const WorklistDataGridFocusableCell = () => {
   const gridDataJSON = {
     cols: [
       { id: 'Column-0', displayName: 'Patient' },
-      { id: 'Column-1', displayName: 'Location' },
-      { id: 'Column-2', displayName: 'Illness Severity' },
-      { id: 'Column-3', displayName: 'Visit' },
+      { id: 'Column-1', displayName: 'Column 1' },
+      { id: 'Column-2', displayName: 'Column 2' },
+      { id: 'Column-3', displayName: 'Column 3' },
     ],
     rows: [
       {
         id: '1',
         cells: [
           { content: 'Fleck, Arthur' },
-          { content: buttonCell },
+          {
+            content: <>
+              {buttonCell}
+              <div>Non-Focusable Text</div>
+              {/* eslint-disable-next-line react/jsx-closing-tag-location */}
+            </>,
+          },
           { content: inputCell },
           { content: anchorCell },
         ],
@@ -85,6 +91,7 @@ const WorklistDataGridFocusableCell = () => {
         defaultColumnWidth={170}
         rows={rows}
         rowHeaderIndex={rowHeaderIndex}
+        rowHeight="50px"
         ariaLabel="Worklist Data Grid"
       />
     </>
