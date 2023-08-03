@@ -332,19 +332,22 @@ function WorklistDataGrid(props) {
     }
   };
 
-  const selectRows = (selectAllRows, rowId, rowIndex) => {
-    let rowLabel;
-    let msgId = 'Terra.worklist-data-grid.all-rows-selected';
-    if (!selectAllRows) {
-      const isSelectAction = !rows[rowIndex - 1].isSelected; // Determine if this is select or unselected.
-      msgId = isSelectAction ? 'Terra.worklist-data-grid.row-selection-template' : 'Terra.worklist-data-grid.row-selection-cleared-template';
-      rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
-    }
-    setAriaLiveMessage(intl.formatMessage({ id: msgId }, { row: rowLabel }));
-    if (selectAllRows && onRowSelectAll) {
-      onRowSelectAll();
-    } else if (onRowSelect) {
+  const selectRows = (rowId, rowIndex) => {
+    const rowSelectionMessageId = !rows[rowIndex - 1].isSelected ? 'Terra.worklist-data-grid.row-selection-template' : 'Terra.worklist-data-grid.row-selection-cleared-template';
+    const rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
+
+    setAriaLiveMessage(intl.formatMessage({ id: rowSelectionMessageId }, { row: rowLabel }));
+
+    if (onRowSelect) {
       onRowSelect(rowId);
+    }
+  };
+
+  const selectAllRows = () => {
+    setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-selected' }));
+
+    if (onRowSelectAll) {
+      onRowSelectAll();
     }
   };
 
@@ -371,40 +374,47 @@ function WorklistDataGrid(props) {
     { row: cellGridCoordinates.row - 1, col: cellGridCoordinates.col + (hasSelectableRows ? -1 : 0) }
   );
 
-  const selectCell = (cellRowIdColId, cellGridCoordinates) => {
-    // If current cell is selected, do nothing.
-    if (isCellSelected(cellGridCoordinates.row, cellGridCoordinates.col)) {
-      return;
-    }
-    // Determine if the cell selection should proceed.
-    const cellDataCoordinates = mapGridCellToDataCell(cellGridCoordinates);
-    const cell = rows[cellDataCoordinates.row].cells[cellDataCoordinates.col];
-    if ((cell.isSelectable === false) || cell.isMasked) {
-      setFocusedRowCol(cellGridCoordinates.row, cellGridCoordinates.col, true);
-      return;
+  const handleColumnSelect = useCallback((columnId, cellCoordinates) => {
+    if (!hasSelectableRows) {
+      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
     }
 
-    // Make note of cell that is currently selected.
-    handleCellSelectionChange(cellRowIdColId.rowId, cellRowIdColId.columnId, cellGridCoordinates);
-    if (onCellSelect) {
+    setFocusedRow(cellCoordinates.row);
+    setFocusedCol(cellCoordinates.col);
+    setCurrentSelectedCell(null);
+
+    if (onColumnSelect && !(hasSelectableRows && cellCoordinates.col === 0)) {
+      onColumnSelect(columnId);
+    }
+  }, [hasSelectableRows, intl, onColumnSelect]);
+
+  const handleCellSelection = (cellRowIdColId, cellCoordinates) => {
+    setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-template' },
+      { row: cellCoordinates.row + 1, column: cellCoordinates.col + 1 }));
+
+    setFocusedRow(cellCoordinates.row);
+    setFocusedCol(cellCoordinates.col);
+    setCurrentSelectedCell({ rowId: cellRowIdColId.rowId, columnId: cellRowIdColId.columnId });
+
+    // Determine if the cell selection should proceed.
+    const cellDataCoordinates = mapGridCellToDataCell(cellCoordinates);
+    const cell = rows[cellDataCoordinates.row].cells[cellDataCoordinates.col];
+    if (cell.isSelectable !== false && onCellSelect) {
       onCellSelect(cellRowIdColId.rowId, cellRowIdColId.columnId);
     }
   };
 
-  const handleColumnSelect = (columnId, cellCoordinates) => {
-    handleCellSelectionChange(null, null, cellCoordinates);
-    if (onColumnSelect && !(hasSelectableRows && cellCoordinates.col === 0)) {
-      onColumnSelect(columnId);
-    }
-  };
-
-  const handleCellSelection = (cellRowIdColId, cellCoordinates) => {
-    selectCell(cellRowIdColId, cellCoordinates);
-  };
-
   const handleRowSelection = (rowId, rowIndex, selectedCellCoordinates) => {
     handleCellSelectionChange(null, null, selectedCellCoordinates);
-    selectRows(false, rowId, rowIndex);
+    if (!hasSelectableRows) {
+      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
+    }
+
+    setFocusedRow(selectedCellCoordinates.row);
+    setFocusedCol(selectedCellCoordinates.col);
+    setCurrentSelectedCell(null);
+
+    selectRows(rowId, rowIndex);
   };
 
   // -------------------------------------
@@ -479,7 +489,7 @@ function WorklistDataGrid(props) {
         break;
       case KeyCode.KEY_A:
         if (hasSelectableRows && (event.ctrlKey || event.metaKey)) {
-          selectRows(true, null, null);
+          selectAllRows();
           event.preventDefault(); // prevent the default selection of everything on the page.
         }
         return;
