@@ -33,7 +33,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with a fullscr
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
@@ -73,7 +73,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with an open s
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
@@ -113,7 +113,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with fill 1`] 
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
@@ -156,7 +156,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with main cont
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
@@ -199,7 +199,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with main cont
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
     <p>
@@ -242,7 +242,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panel con
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
     <p>
@@ -286,7 +286,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelAria
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Panel content area"
     />
   </div>
@@ -326,7 +326,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelBeha
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
@@ -366,7 +366,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelBeha
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
@@ -406,7 +406,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelPosi
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
@@ -430,7 +430,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelPosi
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
@@ -486,7 +486,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelSize
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
@@ -526,7 +526,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelSize
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
@@ -568,7 +568,7 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with the given
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
@@ -718,13 +718,13 @@ exports[`When custom props are used correctly applies the theme context classNam
         >
           <VisuallyHiddenText
             aria-live="polite"
-            role="presentation"
+            tabIndex="-1"
             text="Terra.slidePanel.defaultPanelLabel"
           >
             <span
               aria-live="polite"
               className="visually-hidden-text"
-              role="presentation"
+              tabIndex="-1"
             >
               Terra.slidePanel.defaultPanelLabel
             </span>
@@ -769,7 +769,7 @@ exports[`When custom props are used sets aria-hidden to true on main content div
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
@@ -810,7 +810,7 @@ exports[`When custom props are used should override user provided attributes tha
   >
     <VisuallyHiddenText
       aria-live="polite"
-      role="presentation"
+      tabIndex="-1"
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
