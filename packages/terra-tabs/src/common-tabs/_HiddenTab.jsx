@@ -83,7 +83,7 @@ const propTypes = {
   showAddButton: PropTypes.bool,
 
   onClosingTab:PropTypes.func,
-  isClosable:PropTypes.func,
+  isClosable:PropTypes.bool,
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 
 };

@@ -121,7 +121,7 @@
   .tab {
     flex: 0 1 auto;
     min-width: var(--terra-tabs-workspace-tab-min-width, 76px);
-
+    display: inline-flex;
     .inner {
       text-align: center;
     }
