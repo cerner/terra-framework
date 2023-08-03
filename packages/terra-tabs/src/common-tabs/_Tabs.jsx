@@ -170,12 +170,15 @@ class Tabs extends React.Component {
         currTabData.isSelected = true;
         return { visibleTabData: newArray };
       });
+    }
+
+    if (currTab && addButtonToggle && !this.moreButtonRef.current) {
       const element = document.getElementById(currTab.id);
       if (element && addButtonToggle) {
         element.focus();
-        addButtonToggle = false;
       }
     }
+
     if (this.isCalculating) {
       this.isCalculating = false;
       this.handleResize(this.contentWidth);
@@ -505,6 +508,9 @@ class Tabs extends React.Component {
       };
     }
     const commonTabsClassNames = cx('tab-container', theme.className);
+    const commonTabsContainerClassNames = cx('container', theme.className);
+    const commonDivClassNames = cx('divcontainer', theme.className);
+
     window['__react-beautiful-dnd-disable-dev-warnings'] = true;
 
     if (isDraggable) {
@@ -512,53 +518,64 @@ class Tabs extends React.Component {
         <DragDropContext onDragStart={this.handleDragStart} onDragEnd={this.handleDragEnd}>
           <Droppable className={commonTabsClassNames} droppableId="tab-list" direction="horizontal">
             {(provided) => (
-              <div
-                {...attrs}
-                {...provided.droppableProps}
-                ref={(el) => {
-                  provided.innerRef(el);
-                  this.containerRef.current = el; // Store the reference to the container element
-                }}
-                className={commonTabsClassNames}
-                role="tablist"
-                aria-label={ariaLabel}
-                aria-orientation="horizontal"
-                aria-owns={hiddenIds.join(' ')}
-                data-terra-drag-focus
-              >
-                {visibleTabs}
-                {provided.placeholder}
-                {this.showMoreButton ? (
-                  <MoreButton
-                    isOpen={this.isOpen}
-                    hiddenIndex={this.hiddenStartIndex}
-                    isActive={isHiddenSelected}
-                    zIndex={this.state.visibleTabData.length - this.hiddenStartIndex}
-                    onBlur={this.handleMoreButtonBlur}
-                    onSelect={this.handleMoreButtonSelect}
-                    refCallback={node => { this.moreButtonRef.current = node; }}
-                    tabIds={ids}
-                    variant={variant}
-                  />
-                ) : undefined}
-                <TabDropDown
-                  onFocus={this.handleHiddenFocus}
-                  onBlur={this.handleHiddenBlur}
-                  isOpen={this.isOpen}
-                  onRequestClose={this.handleOutsideClick}
-                  refCallback={node => { this.dropdownRef.current = node; }}
+              <div className={commonTabsContainerClassNames}>
+                <div
+                  {...attrs}
+                  {...provided.droppableProps}
+                  ref={(el) => {
+                    provided.innerRef(el);
+                    this.containerRef.current = el; // Store the reference to the container element
+                  }}
+                  className={commonTabsClassNames}
+                  role="tablist"
+                  aria-label={ariaLabel}
+                  aria-orientation="horizontal"
+                  aria-owns={hiddenIds.join(' ')}
+                  data-terra-drag-focus
                 >
-                  {hiddenTabs}
-                </TabDropDown>
+                  {visibleTabs}
+                  {provided.placeholder}
+                  {this.showMoreButton ? (
+                    <MoreButton
+                      isOpen={this.isOpen}
+                      hiddenIndex={this.hiddenStartIndex}
+                      isActive={isHiddenSelected}
+                      zIndex={this.state.visibleTabData.length - this.hiddenStartIndex}
+                      onBlur={this.handleMoreButtonBlur}
+                      onSelect={this.handleMoreButtonSelect}
+                      refCallback={node => { this.moreButtonRef.current = node; }}
+                      tabIds={ids}
+                      variant={variant}
+                    />
+                  ) : undefined}
+                  <TabDropDown
+                    onFocus={this.handleHiddenFocus}
+                    onBlur={this.handleHiddenBlur}
+                    isOpen={this.isOpen}
+                    onRequestClose={this.handleOutsideClick}
+                    refCallback={node => { this.dropdownRef.current = node; }}
+                  >
+                    {hiddenTabs}
+                  </TabDropDown>
+                </div>
+                <div className={commonDivClassNames} ref={this.addButtonRef}>
+                  {(!this.showMoreButton && onSelectAddButton) && (
+                  <AddButton
+                    id={addTabId}
+                    addAriaLabel={ariaLabelAddTab}
+                    index={enabledTabsIndex + 1}
+                    onSelect={this.wrapOnAddButton}
+                    tabIds={moreIds}
+                    isSelected={false}
+                  />
+                  )}
+                </div>
               </div>
             )}
           </Droppable>
         </DragDropContext>
       );
     }
-
-    const commonTabsContainerClassNames = cx('container', theme.className);
-    const commonDivClassNames = cx('divcontainer', theme.className);
 
     return (
       <div className={commonTabsContainerClassNames}>

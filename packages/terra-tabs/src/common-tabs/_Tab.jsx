@@ -239,6 +239,16 @@ const Tab = ({
               {customDisplay || icon}
               {(!customDisplay && !isIconOnly) && <span className={cx('label')}>{label}</span>}
             </div>
+            {isClosable && (
+            <button
+              className={cx('pill-remove-button')}
+              type="button"
+              aria-label={tabDeleteLabel}
+              onClick={onCloseClick}
+            >
+              <IconClose a11yLabel="Closed CLICKED" />
+            </button>
+            )}
           </div>
         )}
       </Draggable>
