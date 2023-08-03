@@ -8,9 +8,21 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
   constructor(props) {
     super(props);
     this.handleDisplayTypeChange = this.handleDisplayTypeChange.bind(this);
+    this.handleToggleOneOnChange = this.handleToggleOneOnChange.bind(this);
+    this.handleToggleTwoOnChange = this.handleToggleTwoOnChange.bind(this);
     this.state = {
+      toggle1Selection: false,
+      toggle2Selection: false,
       displayType: 'tableView',
     };
+  }
+
+  handleToggleOneOnChange(event, isSelected) {
+    this.setState({ toggle1Selection: isSelected });
+  }
+
+  handleToggleTwoOnChange(event, isSelected) {
+    this.setState({ toggle2Selection: isSelected });
   }
 
   handleDisplayTypeChange(event, selectedKey) {
@@ -24,6 +36,19 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
           <CollapsibleMenuView.Item text="Always Collapsed Button 1" key="collapsedButton1" />,
           <CollapsibleMenuView.Item text="Always Collapsed Button 2" key="collapsedButton2" />,
           <CollapsibleMenuView.Item text="Always Collapsed Button 3" key="collapsedButton3" />,
+          <CollapsibleMenuView.Toggle
+            text="Always Collapsed Toggle 1"
+            key="toggle1"
+            shouldCloseOnClick={false}
+            onChange={this.handleToggleOneOnChange}
+            isSelected={this.state.toggle1Selection}
+          />,
+          <CollapsibleMenuView.Toggle
+            text="Always Collapsed Toggle 2"
+            key="toggle2"
+            onChange={this.handleToggleTwoOnChange}
+            isSelected={this.state.toggle2Selection}
+          />,
         ]}
       >
         <CollapsibleMenuView.Item text="Collapsible Button 1" key="button1" />
