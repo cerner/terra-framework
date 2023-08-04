@@ -225,7 +225,7 @@ function Cell(props) {
       tabIndex={-1}
       className={className}
       {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
-      onClick={onCellSelect ? onClick : undefined}
+      onMouseDown={onCellSelect ? onClick : undefined}
       onKeyDown={handleKeyDown}
       style={{ left: cellLeftEdge }} // eslint-disable-line react/forbid-component-props
     >

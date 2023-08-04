@@ -388,22 +388,24 @@ function WorklistDataGrid(props) {
    */
   const moveFocusFromGrid = (moveForward) => {
     // add all elements we want to include in our selection
-    const focusableElements = [...document.body.querySelectorAll(
-      'a[href], button, input, textarea, select, details,[tabindex]:not([tabindex="-1"]',
-    )].filter(
+    const focusableElementSelector = `#${id}, a[href]:not([tabindex='-1']), area[href]:not([tabindex='-1']), input:not([disabled]):not([tabindex='-1']), `
+    + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
+    + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1'])";
+
+    const focusableElements = [...document.body.querySelectorAll(`${focusableElementSelector}`)].filter(
       element => !element.hasAttribute('disabled')
       && !element.getAttribute('aria-hidden')
-      && (document.activeElement === element || !grid.current.contains(element)),
+      && (element.id === id || !grid.current.contains(element)),
     );
 
     // Identify index of the active element in the DOM excluding worklist data grid children
-    const index = focusableElements.indexOf(document.activeElement);
+    const index = focusableElements.indexOf(grid.current);
     if (index > -1) {
       // Move focus outside worklist data grid
       const indexOffset = moveForward ? 1 : -1;
-      const nextElement = focusableElements[index + indexOffset];
-      if (nextElement) {
-        nextElement.focus();
+      const newFocusElement = focusableElements[index + indexOffset];
+      if (newFocusElement) {
+        newFocusElement.focus();
       }
     }
   };
@@ -593,6 +595,7 @@ function WorklistDataGrid(props) {
         className={cx('worklist-data-grid', theme.className)}
         onKeyDown={handleKeyDown}
         onFocus={onFocus}
+        tabIndex={0}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
         <ColumnContext.Provider
