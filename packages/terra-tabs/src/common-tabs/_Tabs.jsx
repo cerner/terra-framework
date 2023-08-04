@@ -105,6 +105,7 @@ const propTypes = {
 
 let addTabId;
 let addButtonToggle = false;
+let loaded = true;
 
 class Tabs extends React.Component {
   constructor(props) {
