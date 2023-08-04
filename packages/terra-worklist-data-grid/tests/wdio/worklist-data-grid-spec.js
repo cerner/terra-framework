@@ -331,7 +331,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowDown', 'Shift', 'Tab', 'Shift']);
 
       Terra.validates.element('worklist-skip-focusable-elements-previous', { columnResizeSelector });
-      expect(browser.$('#preview-focus-button').isFocused());
+      expect(browser.$('#previous-focus-button').isFocused());
     });
 
     it('validates that the proper element is selected when Shift+Tab is used to give focus to the grid', () => {
