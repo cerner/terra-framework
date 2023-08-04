@@ -555,4 +555,75 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('textarea:focus')).toBeElementsArrayOfSize(1);
     });
   });
+
+  describe('Focusable Cell Navigation : ', () => {
+    const columnResizeSelector = '#terra-worklist-data-grid-focusable-cell';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-focusable-cell');
+    });
+
+    it('validates that a cell with no focusable elements does not trap focus', () => {
+      browser.keys(['Tab', 'ArrowDown', 'Enter', 'ArrowRight']);
+
+      Terra.validates.element('non-focusable-cell-no-trap', { columnResizeSelector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates that a cell with a button element traps focus', () => {
+      browser.keys(['Tab', 'ArrowDown', 'ArrowRight', 'Enter', 'ArrowRight']);
+
+      Terra.validates.element('focusable-button-cell-trap-focus', { columnResizeSelector });
+      expect(browser.$$('button:focus')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates that Escape can be used to release a focus trap', () => {
+      browser.keys(['Tab', 'ArrowDown', 'ArrowRight', 'Enter', 'Escape']);
+
+      Terra.validates.element('focusable-button-cell-escape-trap', { columnResizeSelector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates that a cell with an input element traps focus', () => {
+      browser.keys(['Tab', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'Enter', 'ArrowRight']);
+
+      Terra.validates.element('focusable-input-cell-trap-focus', { columnResizeSelector });
+      expect(browser.$$('input:focus')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates that a cell with an anchor element with href traps focus', () => {
+      browser.keys(['Tab', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'Enter', 'ArrowRight']);
+
+      Terra.validates.element('focusable-anchor-cell-trap-focus', { columnResizeSelector });
+      expect(browser.$$('a:focus')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates that acell with multiple focusable elements traps focus', () => {
+      browser.keys(['Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'Enter', 'ArrowRight']);
+
+      Terra.validates.element('focusable-multiple-element-cell-trap-focus', { columnResizeSelector });
+      expect(browser.$$('button:focus')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates that a cell with multiple focusable elements can be navigated via Tab', () => {
+      browser.keys(['Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'Enter', 'Tab']);
+
+      Terra.validates.element('focusable-multiple-element-cell-tab-navigate', { columnResizeSelector });
+      expect(browser.$$('input:focus')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates that a cell with a select element traps focus', () => {
+      browser.keys(['Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'Enter', 'ArrowRight']);
+
+      Terra.validates.element('focusable-select-cell-trap-focus', { columnResizeSelector });
+      expect(browser.$$('select:focus')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates that a cell with a text area element traps focus', () => {
+      browser.keys(['Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'Enter', 'ArrowRight']);
+
+      Terra.validates.element('focusable-textarea-cell-trap-focus', { columnResizeSelector });
+      expect(browser.$$('textarea:focus')).toBeElementsArrayOfSize(1);
+    });
+  });
 });
