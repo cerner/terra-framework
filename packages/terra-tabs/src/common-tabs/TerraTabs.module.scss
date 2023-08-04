@@ -58,7 +58,7 @@
     min-width: 8.357rem;
     text-align: center;
      display: inline-flex;
-
+    align-items: center;
     @media (max-width: 768px) {
       min-width: 5rem; /* Reduce the minimum width of the tabs */
       padding: 0.643rem 0.5rem; /* Adjust padding for smaller screens */
