@@ -397,4 +397,10 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('textarea:focus')).toBeElementsArrayOfSize(1);
     });
   });
+  describe('with pinned columns',()=>{
+    it('adds pinned columns',()=>{});
+    it('keeps pinned columns stickied when scrolling',()=>{});
+    it('keeps pinned columns stickied when scrolling',()=>{});
+    it('selects the whole row with pinned columns',()=>{});
+  })
 });
