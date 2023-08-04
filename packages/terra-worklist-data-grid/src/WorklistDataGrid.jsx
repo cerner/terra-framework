@@ -633,7 +633,7 @@ function WorklistDataGrid(props) {
         </ColumnContext.Provider>
       </table>
       <VisuallyHiddenText aria-live="polite" text={ariaLiveMessage} />
-      {cellAriaLiveMessage && <VisuallyHiddenText aria-live="polite" aria-relevant="all" aria-atomic="true" text={cellAriaLiveMessage} />}
+      <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />
     </div>
   );
 }

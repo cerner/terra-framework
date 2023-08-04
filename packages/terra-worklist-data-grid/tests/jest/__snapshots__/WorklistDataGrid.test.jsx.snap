@@ -7,6 +7,7 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
   <table
     className="worklist-data-grid"
     id="test-terra-worklist-data-grid"
+    onFocus={[Function]}
     onKeyDown={[Function]}
     role="grid"
   >
@@ -187,6 +188,11 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
     aria-live="polite"
     text={null}
   />
+  <VisuallyHiddenText
+    aria-atomic="true"
+    aria-live="polite"
+    text={null}
+  />
 </div>
 `;
 
@@ -197,6 +203,7 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
   <table
     className="worklist-data-grid"
     id="test-terra-worklist-data-grid"
+    onFocus={[Function]}
     onKeyDown={[Function]}
     role="grid"
   >
@@ -374,6 +381,11 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
     </ContextProvider>
   </table>
   <VisuallyHiddenText
+    aria-live="polite"
+    text={null}
+  />
+  <VisuallyHiddenText
+    aria-atomic="true"
     aria-live="polite"
     text={null}
   />
