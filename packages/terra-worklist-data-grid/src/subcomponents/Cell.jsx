@@ -51,11 +51,6 @@ const propTypes = {
   isSelectable: PropTypes.bool,
 
   /**
-   * Boolean value to indicate if the cell is the tab stop on the grid. At any given time, the grid has only one tab stop.
-   */
-  isTabStop: PropTypes.bool,
-
-  /**
    * Boolean indicating whether the Cell is currently selected.
    */
   isSelected: PropTypes.bool,
@@ -88,7 +83,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  isTabStop: false,
   isRowHeader: false,
   isSelected: false,
   isSelectable: true,
@@ -101,7 +95,6 @@ function Cell(props) {
     columnId,
     rowIndex,
     columnIndex,
-    isTabStop,
     ariaLabel,
     isMasked,
     isRowHeader,
@@ -229,7 +222,7 @@ function Cell(props) {
       ref={cellRef}
       aria-selected={isSelected}
       aria-label={ariaLabel}
-      tabIndex={isTabStop ? 0 : -1}
+      tabIndex={-1}
       className={className}
       {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
       onClick={onCellSelect ? onClick : undefined}

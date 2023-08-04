@@ -21,11 +21,6 @@ const propTypes = {
   tableHeight: PropTypes.number,
 
   /**
-   * Column index for cell that can receive tab focus.
-   */
-  tabStopColumnIndex: PropTypes.number,
-
-  /**
    * Function that is called when a selectable header cell is selected. Parameters:
    * @param {string} columnId columnId
    */
@@ -42,7 +37,6 @@ const ColumnHeader = (props) => {
     columns,
     headerHeight,
     tableHeight,
-    tabStopColumnIndex,
     onColumnSelect,
     onResizeMouseDown,
   } = props;
@@ -62,7 +56,6 @@ const ColumnHeader = (props) => {
       isResizable={column.isResizable}
       isSelectable={column.isSelectable}
       tableHeight={tableHeight}
-      isTabStop={tabStopColumnIndex === columnIndex}
       hasError={column.hasError}
       sortIndicator={column.sortIndicator}
       onColumnSelect={onColumnSelect}

@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import ThemeContext from 'terra-theme-context';
 import classNames from 'classnames/bind';
-import '../_elementPolyfill';
 import styles from './Row.module.scss';
 import RowSelectionCell from './RowSelectionCell';
 import Cell from './Cell';
@@ -76,11 +75,6 @@ const propTypes = {
    * Id of the column in the row that is selected.
    */
   selectedCellColumnId: PropTypes.string,
-
-  /**
-   * Column index of the column in that has focus.
-   */
-  tabStopColumnIndex: PropTypes.number,
 };
 
 const defaultProps = {
@@ -103,7 +97,6 @@ function Row(props) {
     onRowSelect,
     onCellSelect,
     selectedCellColumnId,
-    tabStopColumnIndex,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -131,7 +124,6 @@ function Row(props) {
         rowIndex={cellRowIndex}
         columnIndex={cellColumnIndex}
         key={`${rowId}_${columnId}`}
-        isTabStop={tabStopColumnIndex === cellColumnIndex}
         isSelected={!hasRowSelection && selectedCellColumnId === columnId}
         isMasked={cellData.isMasked}
         isSelectable={cellData.isSelectable}
@@ -150,7 +142,6 @@ function Row(props) {
       columnId={displayedColumns[0].id}
       rowIndex={rowIndex}
       columnIndex={0}
-      isTabStop={tabStopColumnIndex === 0}
       isSelected={isSelected}
       ariaLabel={ariaLabel}
       onCellSelect={handleCellSelect}

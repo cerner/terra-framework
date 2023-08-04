@@ -26,11 +26,6 @@ const propTypes = {
   columnIndex: PropTypes.number,
 
   /**
-   * Boolean value to indicate if the cell is the tab stop on the grid. The grid will have only one tab stop.
-   */
-  isTabStop: PropTypes.bool,
-
-  /**
    * Boolean indicating whether the cell is currently selected.
    */
   isSelected: PropTypes.bool,
@@ -58,7 +53,6 @@ function RowSelectionCell(props) {
     columnId,
     rowIndex,
     columnIndex,
-    isTabStop,
     isSelected,
     ariaLabel,
     onCellSelect,
@@ -72,7 +66,7 @@ function RowSelectionCell(props) {
       type="checkbox"
       aria-label={ariaLabel || rowLabel}
       aria-checked={isSelected}
-      tabIndex={isTabStop ? 0 : -1}
+      tabIndex={-1}
       checked={isSelected}
     />
   );
@@ -84,7 +78,6 @@ function RowSelectionCell(props) {
       key={`${rowId}_${columnId}`}
       rowIndex={rowIndex}
       columnIndex={columnIndex}
-      isTabStop={false}
       isSelected={false}
       onCellSelect={onCellSelect}
     >
