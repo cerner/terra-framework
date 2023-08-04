@@ -65,7 +65,7 @@ const TabsTemplate = (props) => {
   };
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs isClosable onTabClose={handleTabClose} defaultActiveKey="LabelTab" id={props.id}>
+      <Tabs onTabClose={handleTabClose} defaultActiveKey="LabelTab" id={props.id}>
         {labelTab}
         {iconTab}
         {customTab}
