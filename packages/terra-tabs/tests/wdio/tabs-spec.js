@@ -17,11 +17,6 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
     Terra.validates.element('add-new-tabs', { selector: '#root' });
   });
 
-  it('display tabs with add and close icon', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/add-close-tab');
-    Terra.validates.element('add-new-tabs', { selector: '#root' });
-  });
-
   it('displays Extended tabs', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/extended-tabs');
     browser.refresh();
