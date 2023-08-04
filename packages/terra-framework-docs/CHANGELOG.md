@@ -2,9 +2,6 @@
 
 ## Unreleased
 
-* Added
-  * Added keyboard navigation instructions for `terra-menu`.
-
 ## 1.29.0 - (August 2, 2023)
 
 * Added
