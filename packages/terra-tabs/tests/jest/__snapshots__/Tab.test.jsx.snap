@@ -1,97 +1,120 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tab correctly applies the theme context className 1`] = `
-<div
-  aria-disabled={false}
-  aria-selected={false}
-  className="tab is-text-only orion-fusion-theme"
-  data-focus-styles-enabled={true}
-  data-terra-tabs-show-focus-styles={true}
-  onBlur={[Function]}
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  onMouseDown={[Function]}
-  role="tab"
-  style={
+<Tab
+  className="customClass"
+  intl={
     Object {
-      "zIndex": undefined,
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
     }
   }
-  tabIndex={-1}
-  title="Default"
->
-  <div
-    className="inner"
-  >
-    <span
-      className="label"
-    >
-      Default
-    </span>
-  </div>
-</div>
+  isDisabled={false}
+  isDraggable={false}
+  isIconOnly={false}
+  isSelected={false}
+  label="Default"
+  showIcon={false}
+  variant="framework"
+/>
 `;
 
 exports[`Tab should render a common tab as disabled when indicated 1`] = `
-<div
-  aria-disabled={true}
-  aria-selected={false}
-  className="tab is-disabled is-text-only"
-  data-focus-styles-enabled={false}
-  data-terra-tabs-show-focus-styles={true}
-  onBlur={[Function]}
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  onMouseDown={[Function]}
-  role="tab"
-  style={
+<Tab
+  intl={
     Object {
-      "zIndex": undefined,
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
     }
   }
-  tabIndex={-1}
-  title="Label"
->
-  <div
-    className="inner"
-  >
-    <span
-      className="label"
-    >
-      Label
-    </span>
-  </div>
-</div>
+  isDisabled={true}
+  isDraggable={false}
+  isIconOnly={false}
+  isSelected={false}
+  label="Label"
+  showIcon={false}
+  variant="framework"
+/>
 `;
 
 exports[`Tab should render a common tab with custom props 1`] = `
-<div
-  aria-disabled={false}
-  aria-selected={false}
-  className="tab is-text-only"
-  data-focus-styles-enabled={true}
-  data-terra-tabs-show-focus-styles={true}
-  onBlur={[Function]}
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  onMouseDown={[Function]}
-  role="tab"
-  style={
+<Tab
+  className="customClass"
+  intl={
     Object {
-      "zIndex": undefined,
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
     }
   }
-  tabIndex={-1}
-  title="Default"
->
-  <div
-    className="inner"
-  >
-    <span
-      className="label"
-    >
-      Default
-    </span>
-  </div>
-</div>
+  isDisabled={false}
+  isDraggable={false}
+  isIconOnly={false}
+  isSelected={false}
+  label="Default"
+  showIcon={false}
+  variant="framework"
+/>
 `;
