@@ -1,16 +1,16 @@
-/* eslint-disable react/forbid-dom-props */
-import React, { useContext } from 'react';
+import React, {
+  useContext, useCallback, useState, useRef, useEffect,
+} from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
-
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ThemeContext from 'terra-theme-context';
-
+import FocusTrap from 'focus-trap-react';
 import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
 import ColumnContext from '../utils/ColumnContext';
-import '../_elementPolyfill';
 
 const cx = classNames.bind(styles);
 
@@ -113,51 +113,108 @@ function Cell(props) {
     intl,
   } = props;
 
+  const cellRef = useRef();
+  const [isFocusTrapEnabled, setFocusTrapEnabled] = useState(false);
+  const [isInteractable, setInteractable] = useState(false);
   const theme = useContext(ThemeContext);
-
   const columnContext = useContext(ColumnContext);
 
-  const handleMouseDown = (event) => {
-    if (isMasked || !isSelectable) {
-      event.stopPropagation();
-      event.preventDefault();
-    } else if (onCellSelect) {
+  /**
+   * Determine if cell has focusable elements
+   */
+  const hasFocusableElements = () => {
+    const focusableElementSelector = "a[href]:not([tabindex='-1']), area[href]:not([tabindex='-1']), input:not([disabled]):not([tabindex='-1']), "
+    + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
+    + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1'])";
+
+    const focusableElements = [...cellRef.current.querySelectorAll(`${focusableElementSelector}`)].filter(el => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden'));
+
+    return focusableElements.length > 0;
+  };
+
+  useEffect(() => {
+    setInteractable(hasFocusableElements());
+  }, []);
+
+  /**
+   * Handles the onDeactivate callback for FocusTrap component
+   */
+  const deactiveFocusTrap = () => {
+    setFocusTrapEnabled(false);
+    columnContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.resume-navigation' }));
+  };
+
+  /**
+   * Handles mouse down event for cell
+   */
+  const onMouseDown = useCallback((event) => {
+    if (!isFocusTrapEnabled) {
       onCellSelect({
         rowId, columnId, rowIndex, columnIndex, multiSelect: !!event.shiftKey, selectedByKeyboard: false,
       });
-      event.stopPropagation();
     }
-  };
+  }, [isFocusTrapEnabled, onCellSelect, rowId, columnId, rowIndex, columnIndex]);
 
+  /**
+   * Keyboard event handler
+   */
   const handleKeyDown = (event) => {
     const key = event.keyCode;
-    switch (key) {
-      case KeyCode.KEY_SPACE:
-        if (isMasked || !isSelectable) {
-          event.stopPropagation();
-          event.preventDefault();
-        } else if (onCellSelect) {
-          onCellSelect({
-            rowId, columnId, rowIndex, columnIndex, multiSelect: !!event.shiftKey, selectedByKeyboard: true,
-          });
-          event.stopPropagation();
+
+    if (isFocusTrapEnabled) {
+      switch (key) {
+        case KeyCode.KEY_ESCAPE:
+          deactiveFocusTrap();
+          break;
+        default:
+      }
+
+      event.stopPropagation();
+    } else {
+      switch (key) {
+        case KeyCode.KEY_RETURN:
+          // Lock focus into component
+          if (hasFocusableElements()) {
+            setFocusTrapEnabled(true);
+            columnContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-focus-trapped' }));
+            event.stopPropagation();
+            event.preventDefault();
+          }
+          break;
+        case KeyCode.KEY_SPACE:
+          if (!isMasked && isSelectable && onCellSelect) {
+            onCellSelect({
+              rowId, columnId, rowIndex, columnIndex, multiSelect: !!event.shiftKey, selectedByKeyboard: true,
+            });
+          }
           event.preventDefault(); // prevent the default scrolling
-        }
-        break;
-      case KeyCode.KEY_C:
-        if (event.ctrlKey || event.metaKey) {
-          WorklistDataGridUtils.writeToClipboard(event.target.textContent);
-        }
-        break;
-      default:
+          break;
+        case KeyCode.KEY_C:
+          if (event.ctrlKey || event.metaKey) {
+            WorklistDataGridUtils.writeToClipboard(event.target.textContent);
+          }
+          break;
+        default:
+      }
     }
   };
 
-  let cellAriaLabel = ariaLabel;
+  // Create cell content for masked and blank cells
+  let cellContent;
   if (isMasked) {
-    cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' });
+    cellContent = (
+      <span className={cx('no-data-cell', theme.className)}>
+        {intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' })}
+      </span>
+    );
   } else if (!children) {
-    cellAriaLabel = intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' });
+    cellContent = (
+      <span className={cx('no-data-cell', theme.className)}>
+        {intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' })}
+      </span>
+    );
+  } else {
+    cellContent = children;
   }
 
   const className = cx('worklist-data-grid-cell', {
@@ -172,17 +229,28 @@ function Cell(props) {
 
   const CellTag = isRowHeader ? 'th' : 'td';
   return (
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <CellTag
+      ref={cellRef}
       aria-selected={isSelected}
-      aria-label={cellAriaLabel}
+      aria-label={ariaLabel}
       tabIndex={isTabStop ? 0 : -1}
       className={className}
-      onMouseDown={handleMouseDown}
+      {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
       onKeyDown={handleKeyDown}
+      onMouseDown={onCellSelect ? onMouseDown : undefined}
       style={{ left: cellLeftEdge }} // eslint-disable-line react/forbid-component-props
     >
-      {!isMasked && children && <div className={cx('cell-content', theme.className)} style={{ height }}>{children}</div>}
+      {/* Wrap cell content with focus trap */}
+      <FocusTrap
+        active={isFocusTrapEnabled}
+        focusTrapOptions={{
+          returnFocusOnDeactivate: true, clickOutsideDeactivates: true, escapeDeactivates: false, onDeactivate: deactiveFocusTrap,
+        }}
+      >
+        {/* eslint-disable-next-line react/forbid-dom-props */}
+        <div className={cx('cell-content', theme.className)} style={{ height }}>{cellContent}</div>
+      </FocusTrap>
+      {isInteractable && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-interactable' })} />}
     </CellTag>
   );
 }

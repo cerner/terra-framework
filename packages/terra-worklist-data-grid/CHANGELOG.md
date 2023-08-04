@@ -9,6 +9,7 @@
   * Added `pinnedColumns` prop for columns that will be pinned.
   * Added `overflowColumns` prop for columns that are scrollable.
   * Added support for pinned columns.
+  * Added ability to dive into cells with focusable elements.
   * Added ability to select rows via mouse and keyboard.
 
 * Fixed

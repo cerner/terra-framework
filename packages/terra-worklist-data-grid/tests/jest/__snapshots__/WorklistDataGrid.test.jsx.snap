@@ -17,6 +17,7 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
           "pinnedColumnOffsets": Array [
             0,
           ],
+          "setCellAriaLiveMessage": [Function],
         }
       }
     >
@@ -185,6 +186,12 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
   </table>
   <VisuallyHiddenText
     aria-live="polite"
+    text={null}
+  />
+  <VisuallyHiddenText
+    aria-atomic="true"
+    aria-live="polite"
+    text={null}
   />
 </div>
 `;
@@ -206,6 +213,7 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
           "pinnedColumnOffsets": Array [
             0,
           ],
+          "setCellAriaLiveMessage": [Function],
         }
       }
     >
@@ -374,6 +382,12 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
   </table>
   <VisuallyHiddenText
     aria-live="polite"
+    text={null}
+  />
+  <VisuallyHiddenText
+    aria-atomic="true"
+    aria-live="polite"
+    text={null}
   />
 </div>
 `;
