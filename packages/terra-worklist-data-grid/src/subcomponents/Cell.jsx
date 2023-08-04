@@ -1,5 +1,5 @@
 import React, {
-  useContext, useCallback, useState, useRef, useEffect,
+  useContext, useState, useRef, useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -132,11 +132,11 @@ function Cell(props) {
   /**
    * Handles click event for cell
    */
-  const onClick = useCallback(() => {
+  const onClick = () => {
     if (!isFocusTrapEnabled) {
-      onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
+      onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex }, (!isMasked && isSelectable));
     }
-  }, [isFocusTrapEnabled, onCellSelect, rowId, columnId, rowIndex, columnIndex]);
+  };
 
   /**
    * Hnadles the onDeactivate callback for FocusTrap component

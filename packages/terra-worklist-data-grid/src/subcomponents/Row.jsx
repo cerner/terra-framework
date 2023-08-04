@@ -103,13 +103,13 @@ function Row(props) {
 
   const columnIndexOffSet = hasRowSelection ? 1 : 0;
 
-  const handleCellSelect = (rowIdColId, coordinates) => {
+  const handleCellSelect = (rowIdColId, coordinates, cellSelectable = true) => {
     if (hasRowSelection) {
       if (onRowSelect) {
         onRowSelect(rowIdColId.rowId, rowIndex, coordinates);
       }
     } else if (onCellSelect) {
-      onCellSelect(rowIdColId, coordinates);
+      onCellSelect(rowIdColId, coordinates, cellSelectable);
     }
   };
 

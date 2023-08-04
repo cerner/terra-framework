@@ -339,12 +339,6 @@ function WorklistDataGrid(props) {
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
 
-  const mapGridCellToDataCell = (cellGridCoordinates) => (
-    // The grid has an additional row for the heading and
-    // may have an additional column when when selection is active.
-    { row: cellGridCoordinates.row - 1, col: cellGridCoordinates.col + (hasSelectableRows ? -1 : 0) }
-  );
-
   const handleColumnSelect = (columnId, cellCoordinates) => {
     if (!hasSelectableRows) {
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
@@ -359,7 +353,7 @@ function WorklistDataGrid(props) {
     }
   };
 
-  const handleCellSelection = (cellRowIdColId, cellCoordinates) => {
+  const handleCellSelection = (cellRowIdColId, cellCoordinates, cellSelectable) => {
     if (!hasSelectableRows) {
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-template' },
         { row: cellCoordinates.row + 1, column: cellCoordinates.col + 1 }));
@@ -369,10 +363,7 @@ function WorklistDataGrid(props) {
     setFocusedCol(cellCoordinates.col);
     setCurrentSelectedCell({ rowId: cellRowIdColId.rowId, columnId: cellRowIdColId.columnId });
 
-    // Determine if the cell selection should proceed.
-    const cellDataCoordinates = mapGridCellToDataCell(cellCoordinates);
-    const cell = rows[cellDataCoordinates.row].cells[cellDataCoordinates.col];
-    if (cell.isSelectable !== false && onCellSelect) {
+    if (cellSelectable && onCellSelect) {
       onCellSelect(cellRowIdColId.rowId, cellRowIdColId.columnId);
     }
   };
