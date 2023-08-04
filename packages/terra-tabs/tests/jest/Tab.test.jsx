@@ -1,14 +1,16 @@
 import React from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
+import { shallowWithIntl } from 'terra-enzyme-intl';
 import Tab from '../../src/common-tabs/_Tab';
 
 describe('Tab', () => {
   it('should render a common tab as disabled when indicated', () => {
-    const wrapper = shallow(<Tab label="Label" isDisabled variant="framework" />);
+    const wrapper = shallowWithIntl(<Tab label="Label" isDisabled variant="framework" />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render a common tab with custom props', () => {
-    const wrapper = shallow(<Tab label="Default" className="customClass" variant="framework" />);
+    const wrapper = shallowWithIntl(<Tab label="Default" className="customClass" variant="framework" />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -17,7 +19,7 @@ describe('Tab', () => {
       .mockReturnValue({
         className: 'orion-fusion-theme',
       });
-    const wrapper = shallow(<Tab label="Default" className="customClass" variant="framework" />);
+    const wrapper = shallowWithIntl(<Tab label="Default" className="customClass" variant="framework" />);
     expect(wrapper).toMatchSnapshot();
   });
 });

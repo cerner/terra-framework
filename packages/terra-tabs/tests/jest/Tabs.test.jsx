@@ -19,6 +19,26 @@ describe('Tabs', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render with add icon', () => {
+    const mockFunctionCall = jest.fn();
+    const defaultRender = mountWithIntl(
+      <Tabs id="application-id" onSelectAddButton={mockFunctionCall} ariaLabelAddTab="Add Tab">
+        <Tabs.Pane label="Default" key="default" className="customClass" />
+      </Tabs>,
+    );
+    expect(defaultRender).toMatchSnapshot();
+  });
+
+  it('should render with close icon', () => {
+    const mockCallBack = jest.fn();
+    const defaultRender = mountWithIntl(
+      <Tabs id="application-id" isclosable onTabClose={mockCallBack}>
+        <Tabs.Pane label="Default" key="default" className="customClass" />
+      </Tabs>,
+    );
+    expect(defaultRender).toMatchSnapshot();
+  });
+
   it('should render with content filled when indicated', () => {
     const defaultRender = <Tabs fill><Tabs.Pane label="Default" key="default" /></Tabs>;
     const wrapper = shallowWithIntl(defaultRender);

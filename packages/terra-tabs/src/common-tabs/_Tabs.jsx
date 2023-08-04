@@ -104,6 +104,7 @@ const propTypes = {
 
 let addTabId;
 let addButtonToggle = false;
+let loaded = true;
 
 class Tabs extends React.Component {
   constructor(props) {
@@ -147,6 +148,7 @@ class Tabs extends React.Component {
     this.resizeObserver.observe(this.containerRef.current);
     this.resizeObserver.observe(this.containerRef.current.parentNode);
     this.handleResize();
+    addTabId = uuid();
   }
 
   componentDidUpdate(prevProps) {
@@ -411,7 +413,6 @@ class Tabs extends React.Component {
   }
 
   render() {
-    addTabId = uuid();
     const {
       ariaLabel, variant, onChange, onSelectAddButton, ariaLabelAddTab, isDraggable,
     } = this.props;
@@ -480,9 +481,9 @@ class Tabs extends React.Component {
               data-focus-styles-enabled
               itemKey={addTabId}
               label={ariaLabelAddTab}
-              index={this.state.visibleTabData.length}
+              index={this.state.visibleTabData.length - 1}
               showIcon
-              icon={<IconAdd a11yLabel={ariaLabelAddTab} />}
+              icon={<IconAdd />}
               tabIds={moreIds}
               onSelect={this.wrapOnAddButton}
               onFocus={this.handleHiddenFocus}
@@ -565,6 +566,7 @@ class Tabs extends React.Component {
                     onSelect={this.wrapOnAddButton}
                     tabIds={moreIds}
                     isSelected={false}
+                    title={ariaLabelAddTab}
                   />
                   )}
                 </div>
@@ -619,6 +621,7 @@ class Tabs extends React.Component {
             onSelect={this.wrapOnAddButton}
             tabIds={moreIds}
             isSelected={false}
+            title={ariaLabelAddTab}
           />
           )}
         </div>

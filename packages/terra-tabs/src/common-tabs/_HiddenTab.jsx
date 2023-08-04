@@ -135,13 +135,17 @@ const HiddenTab = ({
 
     enableFocusStyles(event);
     onSelect(itemKey, metaData);
-    onChange(event, itemKey);
+    if (onChange) {
+      onChange(event, itemKey);
+    }
   };
 
   const onKeyDown = (event) => {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       handleOnSelect(event);
-      onChange(event, itemKey);
+      if (onChange) {
+        onChange(event, itemKey);
+      }
     } else {
       handleArrows(event, index, tabIds);
     }

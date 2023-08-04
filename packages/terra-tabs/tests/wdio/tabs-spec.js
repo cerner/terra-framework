@@ -8,8 +8,18 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
   });
 
   it('display tabs with add icon', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/default-tabs-with-add-icon');
-    Terra.validates.element('default_add_icon', { selector: '#root' });
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/add-new-tabs');
+    Terra.validates.element('add-new-tabs', { selector: '#root' });
+  });
+
+  it('display tabs with close icon', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/closable-tab');
+    Terra.validates.element('add-new-tabs', { selector: '#root' });
+  });
+
+  it('display tabs with add and close icon', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/add-close-tab');
+    Terra.validates.element('add-new-tabs', { selector: '#root' });
   });
 
   it('displays Extended tabs', () => {
