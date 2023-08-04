@@ -10,6 +10,7 @@
   * Added `overflowColumns` prop for columns that are scrollable.
   * Added support for pinned columns.
   * Added ability to dive into cells with focusable elements.
+  * Added ability to treat the `terra-worklist-data-grid` component as a single tabstop.
  
 * Fixed
   * Text alignment of the row header column.

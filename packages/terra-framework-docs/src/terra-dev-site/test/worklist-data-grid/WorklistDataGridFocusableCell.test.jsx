@@ -79,14 +79,19 @@ const WorklistDataGridFocusableCell = () => {
         }}
       />
       )}
-      <WorklistDataGrid
-        id="default-terra-worklist-data-grid-focusable-cell"
-        overflowColumns={cols}
-        defaultColumnWidth={170}
-        rows={rows}
-        rowHeaderIndex={rowHeaderIndex}
-        ariaLabel="Worklist Data Grid"
-      />
+      <button id="previous-focus-button" type="button" aria-label="Previous Element">Test Previous</button>
+      {/* eslint-disable-next-line react/forbid-dom-props */}
+      <div style={{ margin: '10px' }}>
+        <WorklistDataGrid
+          id="default-terra-worklist-data-grid-focusable-cell"
+          overflowColumns={cols}
+          defaultColumnWidth={170}
+          rows={rows}
+          rowHeaderIndex={rowHeaderIndex}
+          ariaLabel="Worklist Data Grid"
+        />
+      </div>
+      <button id="next-focus-button" type="button" aria-label="Next Element">Test Next</button>
     </>
   );
 };

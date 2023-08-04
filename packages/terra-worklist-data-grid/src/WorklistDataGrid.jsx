@@ -383,6 +383,31 @@ function WorklistDataGrid(props) {
   // -------------------------------------
   // event handlers
 
+  /**
+   * Move focus to next focusable element outside the worklist data grid
+   */
+  const moveFocusFromGrid = (moveForward) => {
+    // add all elements we want to include in our selection
+    const focusableElements = [...document.body.querySelectorAll(
+      'a[href], button, input, textarea, select, details,[tabindex]:not([tabindex="-1"]',
+    )].filter(
+      element => !element.hasAttribute('disabled')
+      && !element.getAttribute('aria-hidden')
+      && (document.activeElement === element || !grid.current.contains(element)),
+    );
+
+    // Identify index of the active element in the DOM excluding worklist data grid children
+    const index = focusableElements.indexOf(document.activeElement);
+    if (index > -1) {
+      // Move focus outside worklist data grid
+      const indexOffset = moveForward ? 1 : -1;
+      const nextElement = focusableElements[index + indexOffset];
+      if (nextElement) {
+        nextElement.focus();
+      }
+    }
+  };
+
   const handleKeyDown = (event) => {
     const cellCoordinates = { row: focusedRow, col: focusedCol };
     let nextRow = cellCoordinates.row;
@@ -462,6 +487,10 @@ function WorklistDataGrid(props) {
           event.preventDefault(); // prevent the default selection of everything on the page.
         }
         return;
+      case KeyCode.KEY_TAB:
+        moveFocusFromGrid(!event.shiftKey);
+        event.preventDefault();
+        return;
       default:
         return;
     }
@@ -516,6 +545,13 @@ function WorklistDataGrid(props) {
     setActiveIndex(null);
   };
 
+  const onFocus = (event) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      // Not triggered when swapping focus between children
+      setFocusedRowCol(focusedRow, focusedCol, true);
+    }
+  };
+
   // -------------------------------------
   // builder functions
 
@@ -556,6 +592,7 @@ function WorklistDataGrid(props) {
         aria-label={ariaLabel}
         className={cx('worklist-data-grid', theme.className)}
         onKeyDown={handleKeyDown}
+        onFocus={onFocus}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
         <ColumnContext.Provider
