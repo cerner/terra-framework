@@ -294,7 +294,6 @@ class MenuItem extends React.Component {
     ]);
 
     let content = textContainer;
-    const ariaLiveAttribute = markAsToggled && { 'aria-live': 'polite' };
 
     const screenReaderResponse = (
       <>
@@ -310,7 +309,7 @@ class MenuItem extends React.Component {
             && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.exitSubmenu' })} /> }
         {/* Adds context for selected and unselected state */}
         { !MenuUtils.isMac() && toggleable && !isGroupItem && <VisuallyHiddenText aria-live="polite" text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
-        { !MenuUtils.isMac() && isGroupItem && <VisuallyHiddenText {...ariaLiveAttribute} text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} />}
+        { !MenuUtils.isMac() && isGroupItem && <VisuallyHiddenText aria-live={markAsToggled ? 'polite' : undefined} text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} />}
       </>
     );
 
@@ -356,7 +355,6 @@ class MenuItem extends React.Component {
     } else if (toggleable) {
       role = 'menuitemcheckbox';
     }
-    const selectAttribute = MenuUtils.isMac() && toggleable && { 'aria-selected': markAsToggled };
     const menuRole = MenuUtils.isMac() ? role : 'menuitem';
     /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
@@ -368,7 +366,7 @@ class MenuItem extends React.Component {
             className={classNames(itemClassNames, cx(theme.className))}
             ref={this.setItemNode}
             role={menuRole}
-            {...selectAttribute}
+            aria-selected={(MenuUtils.isMac() && toggleable) ? markAsToggled : undefined}
             tabIndex="0"
             aria-disabled={isDisabled}
           >
