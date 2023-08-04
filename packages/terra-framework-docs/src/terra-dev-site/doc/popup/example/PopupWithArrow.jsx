@@ -38,6 +38,9 @@ function PopupArrow() {
   useEffect(() => {
     if (open) {
       setFocusedIndex(0);
+      document.querySelector('#root').setAttribute('inert', 'true');
+    } else {
+      document.querySelector('#root').removeAttribute('inert');
     }
   }, [open]);
 
