@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+* Updated
+  * Examples with inert attribute to ensure accessibility when  arrow keys are used for `terra-popup`.
+
 * Added
   * Added examples and tests for `terra-worklist-data-grid` to interact with cells containing focusable elements.
 
