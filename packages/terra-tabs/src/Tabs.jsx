@@ -54,11 +54,20 @@ const propTypes = {
    * Key of the pane that should be open initially.
    */
   defaultActiveKey: PropTypes.string,
+  /**
+   * Whether or not the tab is draggable.
+   */
+  isDraggable: PropTypes.bool,
+  /**
+   * Callback function triggered when tab is drag and dropped.
+   */
+  onTabOrderChange: PropTypes.func,
 };
 
 const defaultProps = {
   tabFill: false,
   fill: false,
+  isDraggable: false,
 };
 
 class Tabs extends React.Component {
@@ -85,6 +94,8 @@ class Tabs extends React.Component {
       children,
       activeKey,
       defaultActiveKey,
+      isDraggable,
+      onTabOrderChange,
       ...customProps
     } = this.props;
 
@@ -97,7 +108,7 @@ class Tabs extends React.Component {
         content = React.Children.map(child.props.children, contentItem => (
           React.cloneElement(contentItem)
         ));
-        tabContent = <CommonTabContent>{content}</CommonTabContent>;
+        tabContent = <CommonTabContent variant="framework">{content}</CommonTabContent>;
       }
       commonTabItems.push(
         <CommonTabItem
@@ -108,6 +119,7 @@ class Tabs extends React.Component {
           showIcon={child.props.showIcon}
           render={() => tabContent}
           isDisabled={child.props.isDisabled}
+          variant="framework"
         />,
       );
     });
@@ -119,6 +131,8 @@ class Tabs extends React.Component {
         onRequestActivate={key => this.setState({ activeKey: key })}
         onChange={onChange}
         variant="framework"
+        isDraggable={isDraggable}
+        onTabOrderChange={onTabOrderChange}
         {...customProps}
       >
         {commonTabItems}

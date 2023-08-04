@@ -55,6 +55,13 @@ describe('Tabs', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render a draggable tabs component', () => {
+    const mockCallBack = jest.fn();
+    const defaultRender = <Tabs isDraggable onTabOrderChange={mockCallBack}><Tabs.Pane label="Default" key="default" /></Tabs>;
+    const wrapper = shallowWithIntl(defaultRender).dive();
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('correctly applies the theme context className', () => {
     const tabs = mountWithIntl(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>

@@ -1,8 +1,10 @@
+/* eslint-disable class-methods-use-this */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ResizeObserver from 'resize-observer-polyfill';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import MoreButton from './_MoreButton';
 import TabDropDown from './_TabDropDown';
 import Tab from './_Tab';
@@ -56,6 +58,14 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
+  /**
+   * Whether or not the tab is draggable.
+   */
+  isDraggable: PropTypes.bool,
+  /**
+  * Callback function triggered when tab is drag and dropped .
+   */
+  onTabOrderChange: PropTypes.func,
 };
 
 class Tabs extends React.Component {
@@ -75,7 +85,14 @@ class Tabs extends React.Component {
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
     this.wrapOnSelect = this.wrapOnSelect.bind(this);
     this.wrapOnSelectHidden = this.wrapOnSelectHidden.bind(this);
+    this.positionDropDown = this.positionDropDown.bind(this);
+    this.handleDragEnd = this.handleDragEnd.bind(this);
+    this.handleDragStart = this.handleDragStart.bind(this);
+    this.reorder = this.reorder.bind(this);
     this.resetCache();
+    this.state = {
+      visibleTabData: this.props.tabData,
+    };
   }
 
   componentDidMount() {
@@ -93,6 +110,27 @@ class Tabs extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    const prevTab = prevProps.tabData.find((tab) => tab.isSelected === true);
+    const currTab = this.props.tabData.find((tab) => tab.isSelected === true);
+
+    // Allow dynamic addition of tabs.
+    if (this.state.visibleTabData.length !== this.props.tabData.length) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ visibleTabData: this.props.tabData });
+    }
+
+    // Allow Active Styles to be applied when tab is selected.
+    if (prevTab.id !== currTab.id) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState(prevArray => {
+        const newArray = [...prevArray.visibleTabData];
+        const prevTabData = newArray.find(tab => tab.id === prevTab.id);
+        const currTabData = newArray.find(tab => tab.id === currTab.id);
+        prevTabData.isSelected = false;
+        currTabData.isSelected = true;
+        return { visibleTabData: newArray };
+      });
+    }
     if (this.isCalculating) {
       this.isCalculating = false;
       this.handleResize(this.contentWidth);
@@ -181,10 +219,46 @@ class Tabs extends React.Component {
     this.setIsOpen(false);
   }
 
+  handleDragStart() {
+    const tablist = document.querySelectorAll('[data-terra-drag-focus="true"]');
+    tablist.forEach((list) => {
+      list.setAttribute('data-terra-drag-focus', 'false');
+    });
+  }
+
+  handleDragEnd(result) {
+    const tablist = document.querySelectorAll('[data-terra-drag-focus="false"]');
+    tablist.forEach((list) => {
+      list.setAttribute('data-terra-drag-focus', 'true');
+    });
+    if (!result.destination) {
+      return;
+    }
+    this.setState((prevState) => {
+      const items = this.reorder(
+        prevState.visibleTabData,
+        result.source.index,
+        result.destination.index,
+      );
+      return { visibleTabData: items };
+    });
+    if (this.props.onTabOrderChange) {
+      this.props.onTabOrderChange(result);
+    }
+  }
+
   setIsOpen(value) {
     this.isOpen = value;
     this.forceUpdate();
   }
+
+  reorder = (list, startIndex, endIndex) => {
+    const result = Array.from(list);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+
+    return result;
+  };
 
   resetCache() {
     this.animationFrameID = null;
@@ -240,10 +314,10 @@ class Tabs extends React.Component {
 
   render() {
     const {
-      tabData, ariaLabel, variant, onChange,
+      ariaLabel, variant, onChange, isDraggable,
     } = this.props;
     const theme = this.context;
-    const enabledTabs = tabData.filter(tab => !tab.isDisabled);
+    const enabledTabs = this.state.visibleTabData.filter(tab => !tab.isDisabled);
     const ids = enabledTabs.map(tab => tab.id);
     const hiddenIds = [];
     const visibleTabs = [];
@@ -251,11 +325,11 @@ class Tabs extends React.Component {
     let isHiddenSelected = false;
 
     let enabledTabsIndex = -1;
-    tabData.forEach((tab, index) => {
+    this.state.visibleTabData.forEach((tab, index) => {
       if (!tab.isDisabled) {
         enabledTabsIndex += 1;
       }
-      if (enabledTabsIndex < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
+      if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
         visibleTabs.push(
           <Tab
             {...tab}
@@ -265,13 +339,14 @@ class Tabs extends React.Component {
             icon={tab.icon}
             customDisplay={tab.customDisplay}
             onSelect={this.wrapOnSelect(tab.onSelect)}
-            zIndex={tab.isSelected ? tabData.length : tabData.length - index}
+            zIndex={tab.isSelected ? this.state.visibleTabData.length : this.state.visibleTabData.length - index}
             isIconOnly={tab.isIconOnly}
             variant={variant}
             onChange={onChange}
             setDropdownOpen={this.handleHiddenFocus}
             hiddenStartIndex={this.hiddenStartIndex}
             showIcon={tab.showIcon}
+            isDraggable={isDraggable}
           />,
         );
       } else {
@@ -309,12 +384,63 @@ class Tabs extends React.Component {
       };
     }
     const commonTabsClassNames = cx('tab-container', theme.className);
+    window['__react-beautiful-dnd-disable-dev-warnings'] = true;
+
+    if (isDraggable) {
+      return (
+        <DragDropContext onDragStart={this.handleDragStart} onDragEnd={this.handleDragEnd}>
+          <Droppable className={commonTabsClassNames} droppableId="tab-list" direction="horizontal">
+            {(provided) => (
+              <div
+                {...attrs}
+                {...provided.droppableProps}
+                ref={(el) => {
+                  provided.innerRef(el);
+                  this.containerRef.current = el; // Store the reference to the container element
+                }}
+                className={commonTabsClassNames}
+                role="tablist"
+                aria-label={ariaLabel}
+                aria-orientation="horizontal"
+                aria-owns={hiddenIds.join(' ')}
+                data-terra-drag-focus
+              >
+                {visibleTabs}
+                {provided.placeholder}
+                {this.showMoreButton ? (
+                  <MoreButton
+                    isOpen={this.isOpen}
+                    hiddenIndex={this.hiddenStartIndex}
+                    isActive={isHiddenSelected}
+                    zIndex={this.state.visibleTabData.length - this.hiddenStartIndex}
+                    onBlur={this.handleMoreButtonBlur}
+                    onSelect={this.handleMoreButtonSelect}
+                    refCallback={node => { this.moreButtonRef.current = node; }}
+                    tabIds={ids}
+                    variant={variant}
+                  />
+                ) : undefined}
+                <TabDropDown
+                  onFocus={this.handleHiddenFocus}
+                  onBlur={this.handleHiddenBlur}
+                  isOpen={this.isOpen}
+                  onRequestClose={this.handleOutsideClick}
+                  refCallback={node => { this.dropdownRef.current = node; }}
+                >
+                  {hiddenTabs}
+                </TabDropDown>
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
+      );
+    }
 
     return (
       <div
         {...attrs}
-        className={commonTabsClassNames}
         ref={this.containerRef}
+        className={commonTabsClassNames}
         role="tablist"
         aria-label={ariaLabel}
         aria-orientation="horizontal"
@@ -326,7 +452,7 @@ class Tabs extends React.Component {
             isOpen={this.isOpen}
             hiddenIndex={this.hiddenStartIndex}
             isActive={isHiddenSelected}
-            zIndex={tabData.length - this.hiddenStartIndex}
+            zIndex={this.state.visibleTabData.length - this.hiddenStartIndex}
             onBlur={this.handleMoreButtonBlur}
             onSelect={this.handleMoreButtonSelect}
             refCallback={node => { this.moreButtonRef.current = node; }}

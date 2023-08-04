@@ -9,6 +9,7 @@ import TabsWithFilledContent from './example/TabsWithFilledContent?dev-site-exam
 import IconOnlyTabs from './example/IconOnlyTabs?dev-site-example';
 import ResponsiveTabsVariant from './example/ResponsiveTabsVariant?dev-site-example';
 import IconsInMenuTabs from './example/IconsInMenuTabs?dev-site-example';
+import DraggableTabs from './example/DraggableTabs?dev-site-example';
 
 <Badge />
 
@@ -53,6 +54,16 @@ Uncontrolled tabs is the default mode of terra-tabs. In this mode the tabs will 
 
 In controlled mode terra-tabs does not handle any of the selection state internally, it is left up to the consumer. This mode is enabled by setting the `activeKey` prop on the `<Tabs />` component. A handler is needed for `onChange` to be notified of user selection and update the state. If both `activeKey` and `defaultActiveKey` are set, then `defaultActiveKey` will have no effect.
 
+### Keyboard Navigation Guide
+
+#### Performing Drag and Drop  
+
+When a draggable tab has focus press the `Spacebar` key to start the drag. Once a drag is started, the following keyboard shortcuts can be used:
+* `Spacebar` - Drop the tab
+* `Escape` - Cancel the drag
+* `Left arrow` - move the tab to the left.
+* `Right arrow` - move the tab to the right.
+
 ```jsx
 import Tabs from 'terra-tabs';
 ```
@@ -73,6 +84,7 @@ import Tabs from 'terra-tabs';
 <IconsInMenuTabs title='Will Display Icons in Menu When Collapsed' />
 <TabsWithFilledContent title='Fill Parent Container' />
 <ResponsiveTabsVariant title='Toggle responsiveTo Variants' />
+<DraggableTabs title='Draggable Tabs' />
 
 ## Tabs Props Table 
 <TabsPropsTable />

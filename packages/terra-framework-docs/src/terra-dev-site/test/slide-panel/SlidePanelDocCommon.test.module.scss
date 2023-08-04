@@ -30,4 +30,16 @@
   .button {
     background-color: #008a00;
   }
+
+  .circle-svg {
+    overflow: visible;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  .p-clickable:hover {
+    cursor: pointer;
+  }
 }
