@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 1.31.0 - (August 4, 2023)
+
 * Added
   * Added examples and tests for `terra-worklist-data-grid` to interact with cells containing focusable elements.
 
