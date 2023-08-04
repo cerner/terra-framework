@@ -7,16 +7,6 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
     Terra.validates.element('default', { selector: '#root' });
   });
 
-  it('display tabs with add icon', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/add-new-tabs');
-    Terra.validates.element('add-new-tabs', { selector: '#root' });
-  });
-
-  it('display tabs with close icon', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/closable-tab');
-    Terra.validates.element('add-new-tabs', { selector: '#root' });
-  });
-
   it('displays Extended tabs', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/extended-tabs');
     browser.refresh();
@@ -173,5 +163,27 @@ Terra.describeViewports('Tabs - Drag and Drop', ['medium'], () => {
   it('should perform drag and drop operation', () => {
     browser.keys(['Tab', 'Space', 'ArrowRight', 'Space']);
     Terra.validates.element('After Drag and Drop', { selector: '#root' });
+  });
+});
+
+Terra.describeViewports('Tabs - Add and Close', ['medium'], () => {
+  it('display tabs with add icon', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/add-close-tab');
+    Terra.validates.element('Tabs with Add', { selector: '#root' });
+  });
+
+  it('After Adding New Tabs', () => {
+    $('button').click();
+    Terra.validates.element('New Tab Added', { selector: '#root' });
+  });
+
+  it('display tabs with add and close icon', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/add-close-tab');
+    Terra.validates.element('Tabs with close', { selector: '#root' });
+  });
+
+  it('display closable tabs', () => {
+    browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'Delete']);
+    Terra.validates.element('Tab after close', { selector: '#root' });
   });
 });
