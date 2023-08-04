@@ -104,7 +104,6 @@ const propTypes = {
 
 let addTabId;
 let addButtonToggle = false;
-let closeButtonToggle = false;
 
 class Tabs extends React.Component {
   constructor(props) {
@@ -399,7 +398,6 @@ class Tabs extends React.Component {
         }
       }
       this.props.onTabStateChange(updatedTabData, itemKey, event);
-      closeButtonToggle = true;
       this.setState({ visibleTabData: updatedTabData });
       onClose(itemKey, metaData);
     };

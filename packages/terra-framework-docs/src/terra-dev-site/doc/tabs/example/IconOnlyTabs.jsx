@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
@@ -70,7 +70,7 @@ const IconOnlyTabs = () => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs activeKey={activeKey} isClosable onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
+      <Tabs activeKey={activeKey} isDraggable isClosable onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
         { tabs.map((tab) => (
           <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} icon={tab.icon} key={tab.key} id={tab.key} isActive={TabContent.isActive}>
             <TabContent label={tab.content} id={`TabContent_${tab.key}`} />
