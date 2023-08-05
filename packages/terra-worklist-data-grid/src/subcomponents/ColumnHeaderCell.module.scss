@@ -1,5 +1,4 @@
 // Themes
-@use './Cell.module';
 @import '../orion-fusion-theme/ColumnHeaderCell.module';
 @import '../clinical-lowlight-theme/ColumnHeaderCell.module';
 
@@ -39,10 +38,8 @@
 
   // Hover state for selectable elements
   .selectable:hover {
-    @include Cell.terra-worklist-data-grid-selectable-hover;
-    // NOTE: Temporarily keeping the older background-color as changes breaks styling in multiple places.
-    // It will be replaced once an update strategy is finalized with UX.
-    // background-color: var(--terra-worklist-data-grid-header-hover-background-color, #e4f2f9);
+    background-color: var(--terra-worklist-data-grid-header-hover-background-color, #daecf6);
+    cursor: pointer;
   }
 
   .pinned {

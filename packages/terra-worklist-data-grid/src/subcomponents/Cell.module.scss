@@ -3,7 +3,7 @@
 @import '../clinical-lowlight-theme/Cell.module';
 
 @mixin terra-worklist-data-grid-selectable-hover {
-  background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
+  background-color: var(--terra-worklist-data-grid-hover-background-color, #d8e5ed);
   cursor: pointer;
 }
 
@@ -56,8 +56,5 @@
   // Hover state for selectable elements
   .selectable:hover {
     @include terra-worklist-data-grid-selectable-hover;
-    // NOTE: Temporarily keeping the older background-color as changes breaks styling in multiple places.
-    // It will be replaced once an update strategy is finalized with UX.
-    // background-color: var(--terra-worklist-data-grid-hover-background-color, #d8e5ed);
   }
 }
