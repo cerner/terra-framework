@@ -241,12 +241,12 @@ const Tab = ({
             </div>
             {isClosable && (
             <button
-              className={cx('pill-remove-button')}
+              className={cx('tabs-remove-button')}
               type="button"
               aria-label={tabDeleteLabel}
               onClick={onCloseClick}
             >
-              <IconClose a11yLabel="Closed CLICKED" />
+              <IconClose a11yLabel="Close Button" />
             </button>
             )}
           </div>
@@ -273,12 +273,12 @@ const Tab = ({
       </div>
       {isClosable && (
       <button
-        className={cx('pill-remove-button')}
+        className={cx('tabs-remove-button')}
         type="button"
         aria-label={tabDeleteLabel}
         onClick={onCloseClick}
       >
-        <IconClose a11yLabel="Closed CLICKED" />
+        <IconClose a11yLabel="Close Button" />
       </button>
       )}
     </div>
