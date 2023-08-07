@@ -299,7 +299,7 @@ class MenuItem extends React.Component {
 
     if (this.itemNode && index === 0 && totalItems !== 1) {
       navigationContent = intl.formatMessage({ id: 'Terra.menu.navigateMenuItem' });
-      if (!MenuUtils.isMac() && this.itemNode.parentNode.getAttribute('data-submenu') === 'false') {
+      if (!MenuUtils.isMac() && this.itemNode.parentNode.getAttribute('data-submenu') !== 'true') {
         navigationContent = '';
       }
     }
