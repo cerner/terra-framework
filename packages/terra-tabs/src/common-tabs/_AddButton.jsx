@@ -50,13 +50,13 @@ const AddButton = ({
 }) => {
   const AddTabIcon = <IconAdd a11yLabel={addAriaLabel} />;
 
-  const keyDown = (event, indextab, ids) => {
+  const keyDown = (event, indexTab, ids) => {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       event.preventDefault();
       event.stopPropagation();
       onSelect();
     } else {
-      handleArrows(event, indextab, ids);
+      handleArrows(event, indexTab, ids);
     }
   };
 
@@ -73,6 +73,7 @@ const AddButton = ({
       onKeyDown={event => keyDown(event, index, tabIds)}
       ref={refCallback}
       onClick={onSelect}
+      data-terra-tab-add-btn
     />
   );
 };

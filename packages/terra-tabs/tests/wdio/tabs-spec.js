@@ -173,7 +173,7 @@ Terra.describeViewports('Tabs - Add and Close', ['medium'], () => {
   });
 
   it('After Adding New Tabs', () => {
-    $('button').click();
+    $('[data-terra-tab-add-btn="true"]').click();
     Terra.validates.element('New Tab Added', { selector: '#root' });
   });
 
