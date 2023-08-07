@@ -63,7 +63,7 @@ const CommonTabContent = ({
 
   return (
     <div
-      className={cx('panel', theme.className)}
+      className={variant === 'framework' ? undefined : cx('panel', theme.className)}
       role="none"
     >
       <div
