@@ -58,14 +58,14 @@ const propTypes = {
    * ![IMPORTANT](https://badgen.net/badge/prop/Important/red)
    * Header Title for main-menu(first-tier).
    * Header Title will only be visible if the main-menu contains at least one sub-menu.
-   * It is expected for the user to pass in the headerTitle as it could possibly be used in cases of responsive
-   * behaviour wherein menu goes bounded/fullscreen.
+   * `headerTitle` is expected to be provided as it is used in cases of responsive
+   * behavior when Menu is bounded/fullscreen.
    */
   headerTitle: PropTypes.string,
   /**
    * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue)
-   * Should the menu display Header Title (first-tier).
-   * showHeader default value will be updated to false in the next MVB
+   * Toggle for the menu display Header Title (first-tier).
+   * The default value will be updated to `false` in the next major release.
    */
   showHeader: PropTypes.bool,
 };
