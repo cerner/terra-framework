@@ -360,9 +360,9 @@ class MenuItem extends React.Component {
     let role = 'menuitem';
     const isMacOs = MenuUtils.isMac();
     if (isGroupItem && isMacOs) {
-    role = 'menuitemradio';
+      role = 'menuitemradio';
     } else if (toggleable && isMacOs) {
-    role = 'menuitemcheckbox';
+      role = 'menuitemcheckbox';
     }
     /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
