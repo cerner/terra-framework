@@ -1,3 +1,4 @@
+/* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable class-methods-use-this */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -104,7 +105,6 @@ const propTypes = {
 
 let addTabId;
 let addButtonToggle = false;
-let loaded = true;
 
 class Tabs extends React.Component {
   constructor(props) {

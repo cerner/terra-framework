@@ -59,8 +59,13 @@ const propTypes = {
    * The label to set on the add icon element.
    */
   ariaLabelAddTab: PropTypes.string,
+  /**
+   * Callback function triggered when a tab is closing. It receives the itemKey associated with the closing tab.
+   */
   onClosingkey: PropTypes.func.isRequired,
-
+  /**
+   * Callback function when a tab is closing. It receives three parameters.
+   */
   onClosingTab: PropTypes.func,
   /**
    * Whether or not the tab is draggable.

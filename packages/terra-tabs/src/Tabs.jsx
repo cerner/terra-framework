@@ -54,7 +54,9 @@ const propTypes = {
    * Key of the pane that should be open initially.
    */
   defaultActiveKey: PropTypes.string,
-  
+  /**
+   * Whether or not the tab is closable.
+   */
   isClosable: PropTypes.bool,
   /**
    * Whether or not the tab is draggable.
@@ -64,6 +66,10 @@ const propTypes = {
    * Callback function triggered when tab is drag and dropped.
    */
   onTabOrderChange: PropTypes.func,
+  /**
+   * A callback function triggered when a tab is closed.
+   */
+  onTabClose: PropTypes.func,
 };
 
 const defaultProps = {
@@ -79,7 +85,6 @@ class Tabs extends React.Component {
     this.state = {
       activeKey: this.getInitialState(),
       activeAfterClosed: '',
-      closedKeySelected: '',
     };
   }
 
@@ -138,7 +143,7 @@ class Tabs extends React.Component {
     const handleTabsStateChange = (newValue, itemKey, event) => {
       if (newValue.length > 0) {
         let activeAfterClosed = '';
-        for (let i = 0; i < newValue.length; i++) {
+        for (let i = 0; i < newValue.length; i += 1) {
           if (newValue[i].isSelected === true) {
             activeAfterClosed = newValue[i].itemKey;
             break;
@@ -148,7 +153,7 @@ class Tabs extends React.Component {
       } else if (newValue.length === 0) {
         this.setState({ activeAfterClosed: '' });
       }
-      this.props.onTabClose && this.props.onTabClose(newValue, itemKey, event);
+      return this.props.onTabClose && this.props.onTabClose(newValue, itemKey, event);
     };
 
     return (
@@ -159,7 +164,7 @@ class Tabs extends React.Component {
         onClosingkey={(key) => {
           if (this.state.activeKey === key) {
             setTimeout(() => {
-              this.setState({ activeKey: this.state.activeAfterClosed });
+              this.setState((prevState) => ({ activeKey: prevState.activeAfterClosed }));
             }, 100);
           }
         }}

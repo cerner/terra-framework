@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import Tabs from 'terra-tabs';
+import IconSearch from 'terra-icon/lib/icon/IconSearch';
+import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import TabContentTemplate from './TabContentTemplate';
 import styles from './common/TabExample.module.scss';
-import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
-import IconSearch from 'terra-icon/lib/icon/IconSearch';
 
 const cx = classNames.bind(styles);
 

@@ -97,13 +97,22 @@ const propTypes = {
    * Parameters: 1. Event 2. Selected pane's key
    */
   onChange: PropTypes.func,
-
+  /**
+   * Indicates if the tab can be closed.
+   */
   isClosable: PropTypes.bool,
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
    * Whether or not the tab is draggable.
    */
   isDraggable: PropTypes.bool,
+  /**
+   * A callback function triggered when the tab is being closed. It takes three parameters.
+   */
   onClosingTab: PropTypes.func,
 };
 
