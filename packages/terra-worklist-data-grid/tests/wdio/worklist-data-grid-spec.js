@@ -409,21 +409,21 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
       navigateToCell(2, 1);
       moveCurrentPositionBy(0, 9);
-      Terra.validates.element('pinned-columns-scroll', '#pinned-columns');
+      Terra.validates.element('pinned-columns-scroll', { selector });
     });
 
     it('keeps row selection column stickied when scrolling', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns-with-row-selection');
       navigateToCell(2, 1);
       moveCurrentPositionBy(0, 9);
-      Terra.validates.element('pinned-columns-with-row-selection-scroll', '#pinned-columns-with-row-selection');
+      Terra.validates.element('pinned-columns-with-row-selection-scroll', { selector });
     });
 
     it('selects the whole row with pinned columns', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns-with-row-selection');
 
       clickCell(2, 0);
-      Terra.validates.element('pinned-columns-with-row-selection-select', '#pinned-columns-with-row-selection');
+      Terra.validates.element('pinned-columns-with-row-selection-select', { selector });
     });
   });
 });
