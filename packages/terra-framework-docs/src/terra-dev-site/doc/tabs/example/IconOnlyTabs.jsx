@@ -42,7 +42,6 @@ const IconOnlyTabs = () => {
     },
   );
   const handleTabClose = (tabdata, itemKey) => {
-    console.log('After Delete', tabdata);
     const tabsArray = [...tabs];
     const indexToRemove = tabsArray.findIndex(tab => tab.key === itemKey);
     if (indexToRemove !== -1) {
@@ -53,7 +52,6 @@ const IconOnlyTabs = () => {
 
   const addMoreTabPanes = () => {
     i += 1;
-    console.log('Before', tabs);
     const tabsArray = tabs;
     tabsArray.push(
       {
