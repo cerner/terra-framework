@@ -2,8 +2,13 @@
 
 ## Unreleased
 
+<<<<<<< HEAD
 * Updated
   * Updated terra-popup examples with inert attribute to demonstrate focus trap when using virtual cursor of Jaws for navigation within popup.
+=======
+* Added
+  * Added tests for `terra-worklist-data-grid` when using pinned columns.
+>>>>>>> 151f591c0 (Update CHANGELOG)
 
 * Changed
   * Updated toggle examples for `terra-collapsible-menu-view` to include selectable toggles and toggles within a collapsed menu.
