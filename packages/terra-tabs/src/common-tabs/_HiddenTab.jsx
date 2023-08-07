@@ -4,6 +4,11 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+import { Draggable } from 'react-beautiful-dnd';
+import IconKnurling from 'terra-icon/lib/icon/IconKnurling';
+import { injectIntl } from 'react-intl';
+import { v4 as uuidv4 } from 'uuid';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import {
   enableFocusStyles,
   disableFocusStyles,
@@ -79,12 +84,21 @@ const propTypes = {
    * Indicates if the pane should be disabled.
    */
   isDisabled: PropTypes.bool,
+  /**
+   * Whether or not the tab is draggable.
+   */
+  isDraggable: PropTypes.bool,
+  /**
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
   isSelected: false,
   showIcon: false,
   isDisabled: false,
+  isDraggable: false,
 };
 
 const HiddenTab = ({
@@ -103,6 +117,8 @@ const HiddenTab = ({
   icon,
   showIcon,
   isDisabled,
+  isDraggable,
+  intl,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -123,11 +139,12 @@ const HiddenTab = ({
   };
 
   const onKeyDown = (event) => {
-    if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
+    if (event.nativeEvent.keyCode === KEY_RETURN || (event.nativeEvent.keyCode === KEY_SPACE && !isDraggable)) {
       handleOnSelect(event);
       onChange(event, itemKey);
     } else {
-      handleArrows(event, index, tabIds);
+      const isDragging = !!document.querySelectorAll('[data-terra-menu-drag-focus="true"]').length && isDraggable;
+      handleArrows(event, index, tabIds, isDragging);
     }
   };
 
@@ -148,6 +165,36 @@ const HiddenTab = ({
   attributes['data-focus-styles-enabled'] = true;
   attributes['aria-selected'] = isSelected;
 
+  const onFocusResponse = intl.formatMessage({ id: 'Terra.tabs.focus' });
+  const responseId = `terra-hidden-tab-pane-response=${uuidv4()}`;
+
+  if (isDraggable) {
+    return (
+      <Draggable key={id} draggableId={id} index={index}>
+        {(provided) => (
+          <div
+            {...attributes}
+            ref={provided.innerRef}
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            id={id}
+            aria-controls={associatedPanelId}
+            role="tab"
+            className={hiddenClassNames}
+            aria-disabled={isDisabled}
+            aria-describedby={responseId}
+          >
+            <VisuallyHiddenText aria-hidden id={responseId} text={onFocusResponse} />
+            <IconKnurling />
+            <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>
+            {showIcon && <div>{icon}</div>}
+            <div className={cx('label', { 'with-icon': showIcon })}>{label}</div>
+          </div>
+        )}
+      </Draggable>
+    );
+  }
+
   return (
     <div
       {...attributes}
@@ -167,4 +214,4 @@ const HiddenTab = ({
 HiddenTab.propTypes = propTypes;
 HiddenTab.defaultProps = defaultProps;
 
-export default HiddenTab;
+export default injectIntl(HiddenTab);

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+   * Added drag and drop to tab menu and internationalization support for the same.
+
 ## 7.3.0 - (August 2, 2023)
 
 * Changed

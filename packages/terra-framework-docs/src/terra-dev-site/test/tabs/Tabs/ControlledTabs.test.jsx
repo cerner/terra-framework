@@ -46,6 +46,35 @@ class ControlledTabs extends React.Component {
         </p>
       </Tabs.Pane>
     );
+    const tab4 = (
+      <Tabs.Pane label="Orthopaedics" key="Orthopaedics" id="tab4">
+        <p id="tab4">
+          Orthopaedic surgery refers to surgical intervention in the case of diseases or injuries concerning the musculoskeletal system.
+          After proper diagnoses and consultation, orthopaedic surgeons treat several conditions that affect the bones, joints, ligaments, nerves and muscles.
+        </p>
+      </Tabs.Pane>
+    );
+
+    const tab5 = (
+      <Tabs.Pane label="Paediatrics" key="Paediatrics" id="tab5">
+        <p id="tab5">
+          Pediatrics is the branch of medicine dealing with the health and medical care of infants, children, and adolescents from birth up to the age of 18.
+          The word “paediatrics” means “healer of children”; they are derived from two Greek words: (pais = child) and (iatros = doctor or healer).
+          Paediatrics is a relatively new medical specialty, developing only in the mid-19th century. Abraham Jacobi (1830–1919) is known as the father of paediatrics.
+        </p>
+      </Tabs.Pane>
+    );
+
+    const tab6 = (
+      <Tabs.Pane label="Oncology" key="Oncology" id="tab6">
+        <p id="tab6">
+          Oncology is the study of cancer.
+          An oncologist is a doctor who treats cancer and provides medical care for a person diagnosed with cancer.
+          An oncologist may also be called a cancer specialist.
+          The field of oncology has 3 major areas based on treatments: medical oncology, radiation oncology, and surgical oncology.
+        </p>
+      </Tabs.Pane>
+    );
 
     return (
       <div>
@@ -59,6 +88,9 @@ class ControlledTabs extends React.Component {
           {tab1}
           {tab2}
           {tab3}
+          {tab4}
+          {tab5}
+          {tab6}
         </Tabs>
       </div>
     );

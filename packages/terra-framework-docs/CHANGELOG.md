@@ -1,8 +1,10 @@
 # Changelog
 
 ## Unreleased
+
 * Added
   * Added examples and tests for `terra-worklist-data-grid` to interact with cells containing focusable elements.
+  * Updated tests for `terra-tabs` drag and drop in tab-menu.
 
 ## 1.30.0 - (August 2, 2023)
 

@@ -4,7 +4,8 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import onClickOutside from 'react-onclickoutside';
 import { KEY_ESCAPE } from 'keycode-js';
-
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import { injectIntl } from 'react-intl';
 import styles from './TabDropDown.module.scss';
 
 const cx = classNames.bind(styles);
@@ -37,6 +38,18 @@ const propTypes = {
    * The function callback for enable.
    */
   enableOnClickOutside: PropTypes.func,
+  /**
+   * Whether or not the tab is draggable.
+   */
+  isDraggable: PropTypes.bool,
+  /**
+    * Callback function triggered when tab is drag and dropped .
+     */
+  onTabOrderChange: PropTypes.func,
+  /**
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const TabDropDown = ({
@@ -46,6 +59,9 @@ const TabDropDown = ({
   refCallback,
   disableOnClickOutside,
   enableOnClickOutside,
+  isDraggable,
+  onTabOrderChange,
+  intl,
 }) => {
   const dropDownRef = useRef();
   const handleKeyDown = useCallback(event => {
@@ -72,12 +88,53 @@ const TabDropDown = ({
 
   TabDropDown.handleClickOutside = event => onRequestClose(event);
 
+  const handleDragEnd = (result, provided) => {
+    if (!result.destination) {
+      provided.announce(intl.formatMessage({ id: 'Terra.tabs.cancelDrag' }, { startPosition: result.source.index }));
+      return;
+    }
+    dropDownRef.current.setAttribute('data-terra-menu-drag-focus', 'false');
+    provided.announce(intl.formatMessage({ id: 'Terra.tabs.drop' }, { startPosition: result.source.index, endPosition: result.destination.index }));
+    if (onTabOrderChange) {
+      onTabOrderChange(result);
+    }
+  };
+
+  const handleDragStart = (start, provided) => {
+    provided.announce(intl.formatMessage({ id: 'Terra.tabs.lift' }, { startPosition: start.source.index }));
+    dropDownRef.current.setAttribute('data-terra-menu-drag-focus', 'true');
+  };
+
+  const handleDragUpdate = (update, provided) => {
+    provided.announce(intl.formatMessage({ id: 'Terra.tabs.drag' }, { startPosition: update.source.index, endPosition: update.destination.index }));
+  };
+
   const theme = React.useContext(ThemeContext);
   const dropDownClassNames = cx(
     'drop-down',
     { 'is-open': isOpen },
     theme.className,
   );
+  if (isDraggable) {
+    return (
+      <DragDropContext onDragStart={handleDragStart} onDragUpdate={handleDragUpdate} onDragEnd={handleDragEnd}>
+        <Droppable className={dropDownClassNames} droppableId="tab-list" direction="vertical">
+          {(provided) => (
+            <div
+              {...provided.droppableProps}
+              ref={node => { provided.innerRef(node); dropDownRef.current = node; refCallback(node); }}
+              role="none"
+              className={dropDownClassNames}
+              onMouseDown={e => { e.preventDefault(); }}
+            >
+              {children}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
+    );
+  }
 
   return (
     <div
@@ -96,5 +153,5 @@ TabDropDown.propTypes = propTypes;
 const clickOutsideConfig = {
   handleClickOutside: () => TabDropDown.handleClickOutside,
 };
-
-export default onClickOutside(TabDropDown, clickOutsideConfig);
+const wrappedTabDropDown = injectIntl(TabDropDown);
+export default onClickOutside(wrappedTabDropDown, clickOutsideConfig);

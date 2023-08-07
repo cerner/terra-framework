@@ -165,3 +165,15 @@ Terra.describeViewports('Tabs - Drag and Drop', ['medium'], () => {
     Terra.validates.element('After Drag and Drop', { selector: '#root' });
   });
 });
+
+Terra.describeViewports('Tabs - Drag and Drop', ['tiny'], () => {
+  it('displays tab before drag and drop', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/controlled-tabs');
+    browser.keys(['Tab', 'ArrowRight', 'ArrowRight']);
+    Terra.validates.element('Before Drag and Drop', { selector: '#root' });
+  });
+  it('should perform drag and drop operation', () => {
+    browser.keys(['Space', 'ArrowDown', 'Space']);
+    Terra.validates.element('After Drag and Drop', { selector: '#root' });
+  });
+});

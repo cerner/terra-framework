@@ -63,7 +63,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
           className="tab-header"
           role="none"
         >
-          <Tabs
+          <InjectIntl(Tabs)
             isDraggable={false}
             tabData={
               Array [
@@ -85,94 +85,176 @@ exports[`Tabs correctly applies the theme context className 1`] = `
             }
             variant="modular-left-aligned"
           >
-            <div
-              aria-orientation="horizontal"
-              aria-owns=""
-              className="tab-container orion-fusion-theme"
-              data-tab-is-calculating="true"
-              role="tablist"
+            <Tabs
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
+              isDraggable={false}
+              tabData={
+                Array [
+                  Object {
+                    "associatedPanelId": "terra-common-tabs-default-panel",
+                    "customDisplay": undefined,
+                    "icon": undefined,
+                    "id": "terra-common-tabs-default",
+                    "isDisabled": false,
+                    "isIconOnly": false,
+                    "isSelected": true,
+                    "itemKey": "default",
+                    "label": "Default",
+                    "metaData": undefined,
+                    "onSelect": [Function],
+                    "showIcon": false,
+                  },
+                ]
+              }
+              variant="modular-left-aligned"
             >
-              <Tab
-                associatedPanelId="terra-common-tabs-default-panel"
-                hiddenStartIndex={1}
-                id="terra-common-tabs-default"
-                index={0}
-                isDisabled={false}
-                isDraggable={false}
-                isIconOnly={false}
-                isSelected={true}
-                itemKey="default"
-                key="terra-common-tabs-default"
-                label="Default"
-                onSelect={[Function]}
-                setDropdownOpen={[Function]}
-                showIcon={false}
-                tabIds={
-                  Array [
-                    "terra-common-tabs-default",
-                  ]
-                }
-                variant="modular-left-aligned"
-                zIndex={1}
+              <div
+                aria-orientation="horizontal"
+                aria-owns=""
+                className="tab-container orion-fusion-theme"
+                data-tab-is-calculating="true"
+                role="tablist"
               >
-                <div
-                  aria-controls="terra-common-tabs-default-panel"
-                  aria-disabled={false}
-                  aria-selected={true}
-                  className="tab is-active is-text-only orion-fusion-theme"
-                  data-focus-styles-enabled={true}
-                  data-terra-tabs-show-focus-styles={true}
+                <InjectIntl(Tab)
+                  associatedPanelId="terra-common-tabs-default-panel"
+                  hiddenStartIndex={1}
                   id="terra-common-tabs-default"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseDown={[Function]}
-                  role="tab"
-                  style={
-                    Object {
-                      "zIndex": 1,
-                    }
+                  index={0}
+                  isDisabled={false}
+                  isDraggable={false}
+                  isIconOnly={false}
+                  isSelected={true}
+                  itemKey="default"
+                  key="terra-common-tabs-default"
+                  label="Default"
+                  onSelect={[Function]}
+                  setDropdownOpen={[Function]}
+                  showIcon={false}
+                  tabIds={
+                    Array [
+                      "terra-common-tabs-default",
+                    ]
                   }
-                  tabIndex={0}
-                  title="Default"
+                  variant="modular-left-aligned"
+                  zIndex={1}
                 >
-                  <div
-                    className="inner"
+                  <Tab
+                    associatedPanelId="terra-common-tabs-default-panel"
+                    hiddenStartIndex={1}
+                    id="terra-common-tabs-default"
+                    index={0}
+                    intl={
+                      Object {
+                        "defaultFormats": Object {},
+                        "defaultLocale": "en",
+                        "formatDate": [Function],
+                        "formatHTMLMessage": [Function],
+                        "formatMessage": [Function],
+                        "formatNumber": [Function],
+                        "formatPlural": [Function],
+                        "formatRelative": [Function],
+                        "formatTime": [Function],
+                        "formats": Object {},
+                        "formatters": Object {
+                          "getDateTimeFormat": [Function],
+                          "getMessageFormat": [Function],
+                          "getNumberFormat": [Function],
+                          "getPluralFormat": [Function],
+                          "getRelativeFormat": [Function],
+                        },
+                        "locale": "en",
+                        "messages": null,
+                        "now": [Function],
+                        "onError": [Function],
+                        "textComponent": "span",
+                        "timeZone": null,
+                      }
+                    }
+                    isDisabled={false}
+                    isDraggable={false}
+                    isIconOnly={false}
+                    isSelected={true}
+                    itemKey="default"
+                    label="Default"
+                    onSelect={[Function]}
+                    setDropdownOpen={[Function]}
+                    showIcon={false}
+                    tabIds={
+                      Array [
+                        "terra-common-tabs-default",
+                      ]
+                    }
+                    variant="modular-left-aligned"
+                    zIndex={1}
                   >
-                    <span
-                      className="label"
+                    <div
+                      aria-controls="terra-common-tabs-default-panel"
+                      aria-disabled={false}
+                      aria-selected={true}
+                      className="tab is-active is-text-only orion-fusion-theme"
+                      data-focus-styles-enabled={true}
+                      data-terra-tabs-show-focus-styles={true}
+                      id="terra-common-tabs-default"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      role="tab"
+                      style={
+                        Object {
+                          "zIndex": 1,
+                        }
+                      }
+                      tabIndex={0}
+                      title="Default"
                     >
-                      Default
-                    </span>
-                  </div>
-                </div>
-              </Tab>
-              <OnClickOutside(TabDropDown)
-                eventTypes={
-                  Array [
-                    "mousedown",
-                    "touchstart",
-                  ]
-                }
-                excludeScrollbar={false}
-                isOpen={false}
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onRequestClose={[Function]}
-                outsideClickIgnoreClass="ignore-react-onclickoutside"
-                preventDefault={false}
-                refCallback={[Function]}
-                stopPropagation={false}
-              >
-                <TabDropDown
-                  disableOnClickOutside={[Function]}
-                  enableOnClickOutside={[Function]}
+                      <div
+                        className="inner"
+                      >
+                        <span
+                          className="label"
+                        >
+                          Default
+                        </span>
+                      </div>
+                    </div>
+                  </Tab>
+                </InjectIntl(Tab)>
+                <OnClickOutside(InjectIntl(TabDropDown))
                   eventTypes={
                     Array [
                       "mousedown",
                       "touchstart",
                     ]
                   }
+                  excludeScrollbar={false}
+                  isDraggable={false}
                   isOpen={false}
                   onBlur={[Function]}
                   onFocus={[Function]}
@@ -181,17 +263,83 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                   preventDefault={false}
                   refCallback={[Function]}
                   stopPropagation={false}
-                  wrappedRef={[Function]}
                 >
-                  <div
-                    className="drop-down orion-fusion-theme"
-                    onMouseDown={[Function]}
-                    role="none"
-                  />
-                </TabDropDown>
-              </OnClickOutside(TabDropDown)>
-            </div>
-          </Tabs>
+                  <InjectIntl(TabDropDown)
+                    disableOnClickOutside={[Function]}
+                    enableOnClickOutside={[Function]}
+                    eventTypes={
+                      Array [
+                        "mousedown",
+                        "touchstart",
+                      ]
+                    }
+                    isDraggable={false}
+                    isOpen={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    onRequestClose={[Function]}
+                    outsideClickIgnoreClass="ignore-react-onclickoutside"
+                    preventDefault={false}
+                    refCallback={[Function]}
+                    stopPropagation={false}
+                  >
+                    <TabDropDown
+                      disableOnClickOutside={[Function]}
+                      enableOnClickOutside={[Function]}
+                      eventTypes={
+                        Array [
+                          "mousedown",
+                          "touchstart",
+                        ]
+                      }
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isDraggable={false}
+                      isOpen={false}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onRequestClose={[Function]}
+                      outsideClickIgnoreClass="ignore-react-onclickoutside"
+                      preventDefault={false}
+                      refCallback={[Function]}
+                      stopPropagation={false}
+                    >
+                      <div
+                        className="drop-down orion-fusion-theme"
+                        onMouseDown={[Function]}
+                        role="none"
+                      />
+                    </TabDropDown>
+                  </InjectIntl(TabDropDown)>
+                </OnClickOutside(InjectIntl(TabDropDown))>
+              </div>
+            </Tabs>
+          </InjectIntl(Tabs)>
         </div>
         <div
           className="body"
@@ -212,7 +360,6 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                 style="position: relative; height: 100%; width: 100%;"
               >
                 <div
-                  class="panel orion-fusion-theme"
                   role="none"
                 >
                   <div
@@ -256,7 +403,6 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                   style="position: relative; height: 100%; width: 100%;"
                 >
                   <div
-                    class="panel orion-fusion-theme"
                     role="none"
                   >
                     <div
@@ -294,7 +440,6 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                 variant="framework"
               >
                 <div
-                  className="panel orion-fusion-theme"
                   role="none"
                 >
                   <div
@@ -356,7 +501,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
     className="tab-header"
     role="none"
   >
-    <Tabs
+    <InjectIntl(Tabs)
       isDraggable={false}
       onChange={[Function]}
       tabData={
@@ -419,7 +564,7 @@ exports[`Tabs should render a default component 1`] = `
     className="tab-header"
     role="none"
   >
-    <Tabs
+    <InjectIntl(Tabs)
       isDraggable={false}
       tabData={
         Array [
@@ -481,7 +626,7 @@ exports[`Tabs should render a draggable tabs component 1`] = `
     className="tab-header"
     role="none"
   >
-    <Tabs
+    <InjectIntl(Tabs)
       isDraggable={true}
       onTabOrderChange={[MockFunction]}
       tabData={
@@ -544,7 +689,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
     className="tab-header"
     role="none"
   >
-    <Tabs
+    <InjectIntl(Tabs)
       isDraggable={false}
       tabData={
         Array [
@@ -606,7 +751,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
     className="tab-header"
     role="none"
   >
-    <Tabs
+    <InjectIntl(Tabs)
       isDraggable={false}
       tabData={
         Array [
@@ -807,7 +952,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
     className="tab-header"
     role="none"
   >
-    <Tabs
+    <InjectIntl(Tabs)
       isDraggable={false}
       tabData={
         Array [
