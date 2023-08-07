@@ -6,5 +6,5 @@
   "Terra.menu.unselected": ",unselected",
   "Terra.menu.itemWithSubmenu": ",with submenu items",
   "Terra.menu.index": "({index} of {totalItems})",
-  "Terra.menu.navigateMenuItem": ". To move through items press up and down arrow"
+  "Terra.menu.navigateMenuItem": "To move through items press up and down arrow"
 }

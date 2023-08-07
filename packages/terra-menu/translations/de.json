@@ -6,5 +6,5 @@
   "Terra.menu.unselected": ",Auswahl aufgehoben",
   "Terra.menu.itemWithSubmenu": ",mit Elementen des Untermenüs",
   "Terra.menu.index": "({index} von {totalItems})",
-  "Terra.menu.navigateMenuItem": ". Pfeiltasten verwenden, um zwischen den Elementen zu navigieren."
+  "Terra.menu.navigateMenuItem": "Pfeiltasten verwenden, um zwischen den Elementen zu navigieren."
 }
