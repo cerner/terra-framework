@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Updated
-  * Examples with inert attribute to ensure accessibility when  arrow keys are used for `terra-popup`.
+  * Examples with inert attribute to ensure accessibility when arrow keys are used for `terra-popup`.
 
 ## 1.31.0 - (August 4, 2023)
 
