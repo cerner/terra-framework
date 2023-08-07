@@ -99,6 +99,7 @@ const RowSelection = () => {
 
   const onColumnSelect = (columnId) => {
     if (columnId === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id) {
+      // eslint-disable-next-line no-alert
       alert('Row Selection Header Clicked');
     }
   };
