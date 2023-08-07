@@ -10,6 +10,7 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
     onFocus={[Function]}
     onKeyDown={[Function]}
     role="grid"
+    tabIndex={0}
   >
     <ContextProvider
       value={
@@ -51,7 +52,6 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
         onResizeMouseDown={[Function]}
-        tabStopColumnIndex={0}
         tableHeight={0}
       />
       <tbody>
@@ -206,6 +206,7 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     role="grid"
+    tabIndex={0}
   >
     <ContextProvider
       value={
@@ -247,7 +248,6 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
         onResizeMouseDown={[Function]}
-        tabStopColumnIndex={0}
         tableHeight={0}
       />
       <tbody>
