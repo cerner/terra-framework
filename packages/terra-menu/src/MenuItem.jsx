@@ -294,22 +294,30 @@ class MenuItem extends React.Component {
     ]);
 
     let content = textContainer;
+    let navigationContent;
+    let ariaLiveValue = 'polite';
+
+    if (this.itemNode && index === 0 && totalItems !== 1) {
+      navigationContent = intl.formatMessage({ id: 'Terra.menu.navigateMenuItem' });
+      if (!MenuUtils.isMac() && this.itemNode.parentNode.getAttribute('data-submenu') === 'false') {
+        navigationContent = '';
+      }
+    }
+
+    if (isGroupItem && !markAsToggled) {
+      ariaLiveValue = undefined;
+    }
 
     const screenReaderResponse = (
       <>
         { MenuUtils.isMac() && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.index' }, { index: index + 1, totalItems })} /> }
-        { MenuUtils.isMac() && (isGroupItem || toggleable) && <VisuallyHiddenText text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
-        {/* Adds context to Use the up and down arrows to navigate the options */}
-        { this.itemNode && this.itemNode.parentNode.getAttribute('data-submenu') === 'true' && index === 0 && totalItems !== 1 && !MenuUtils.isMac()
-          && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.navigateMenuItem' })} /> }
+        {(isGroupItem || toggleable) && <VisuallyHiddenText aria-live={ariaLiveValue} text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
+        <VisuallyHiddenText text={navigationContent} />
         {/* Adds context for item with submenu-items */}
         { subMenuItems.length > 0 && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.itemWithSubmenu' })} /> }
         {/* Adds context for navigating back to parent menu from submenu */}
         { this.itemNode && this.itemNode.parentNode.getAttribute('data-submenu') === 'true' && index === 0
             && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.exitSubmenu' })} /> }
-        {/* Adds context for selected and unselected state */}
-        { !MenuUtils.isMac() && toggleable && !isGroupItem && <VisuallyHiddenText aria-live="polite" text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
-        { !MenuUtils.isMac() && isGroupItem && <VisuallyHiddenText aria-live={markAsToggled ? 'polite' : undefined} text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} />}
       </>
     );
 
@@ -350,12 +358,12 @@ class MenuItem extends React.Component {
     }
 
     let role = 'menuitem';
-    if (isGroupItem) {
-      role = 'menuitemradio';
-    } else if (toggleable) {
-      role = 'menuitemcheckbox';
+    const isMacOs = MenuUtils.isMac();
+    if (isGroupItem && isMacOs) {
+    role = 'menuitemradio';
+    } else if (toggleable && isMacOs) {
+    role = 'menuitemcheckbox';
     }
-    const menuRole = MenuUtils.isMac() ? role : 'menuitem';
     /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
     return (
@@ -365,7 +373,7 @@ class MenuItem extends React.Component {
             {...attributes}
             className={classNames(itemClassNames, cx(theme.className))}
             ref={this.setItemNode}
-            role={menuRole}
+            role={role}
             aria-selected={(MenuUtils.isMac() && toggleable) ? markAsToggled : undefined}
             tabIndex="0"
             aria-disabled={isDisabled}
