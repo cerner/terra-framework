@@ -398,34 +398,32 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
   });
 
-  // describe('with pinned columns',()=>{
-  //   it('adds pinned columns', () => {
-  //     browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+  describe('with pinned columns',()=>{
+    it('adds pinned columns', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
 
-  //     Terra.validates.element('pinned-columns', '#pinned-columns');
-  //   });
+      Terra.validates.element('pinned-columns', { selector });
+    });
 
-  //   it('keeps pinned columns stickied when scrolling', () => {
-  //     browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+    it('keeps pinned columns stickied when scrolling', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+      navigateToCell(2, 1);
+      moveCurrentPositionBy(0, 9);
+      Terra.validates.element('pinned-columns-scroll', '#pinned-columns');
+    });
 
-  //     navigateToCell(2, 1);
-  //     browser.keys(new Array().fill('ArrowRight', 9));
-  //     Terra.validates.element('pinned-columns-scroll', '#pinned-columns');
-  //   });
+    it('keeps row selection column stickied when scrolling', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns-with-row-selection');
+      navigateToCell(2, 1);
+      moveCurrentPositionBy(0, 9);
+      Terra.validates.element('pinned-columns-with-row-selection-scroll', '#pinned-columns-with-row-selection');
+    });
 
-  //   it('keeps row selection column stickied when scrolling', () => {
-  //     browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns-with-row-selection');
+    it('selects the whole row with pinned columns', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns-with-row-selection');
 
-  //     navigateToCell(2, 1);
-  //     browser.keys(new Array().fill('ArrowRight', 9));
-  //     Terra.validates.element('pinned-columns-with-row-selection-scroll', '#pinned-columns-with-row-selection');
-  //   });
-
-  //   it('selects the whole row with pinned columns', () => {
-  //     browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns-with-row-selection');
-
-  //     clickCell(2, 1);
-  //     Terra.validates.element('pinned-columns-with-row-selection-select', '#pinned-columns-with-row-selection');
-  //   });
-  // });
+      clickCell(2, 0);
+      Terra.validates.element('pinned-columns-with-row-selection-select', '#pinned-columns-with-row-selection');
+    });
+  });
 });

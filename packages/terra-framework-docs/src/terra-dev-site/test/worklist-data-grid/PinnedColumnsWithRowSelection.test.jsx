@@ -98,7 +98,7 @@ const RowSelection = () => {
 
   return (
     <React.Fragment>
-      <div>
+      {/* <div>
         <label htmlFor="rowSelectionMode"><b>Row Selection Mode</b></label>
         <input
           id="rowSelectionMode"
@@ -106,16 +106,16 @@ const RowSelection = () => {
           ref={rowSelectionModeRef}
           onChange={onRowSelectionModeChange}
         />
-      </div>
+      </div> */}
       <WorklistDataGrid
-        id="pinned-columns-with-row-selection"
+        id="default-terra-worklist-data-grid"
         pinnedColumns={cols.slice(0, 3)}
         overflowColumns={cols.slice(3)}
         rows={[...rows]}
         rowHeaderIndex={rowHeaderIndex}
         defaultColumnWidth={180}
         ariaLabel="Worklist Data Grid with Pinned Columns and Row Selection"
-        hasSelectableRows={hasSelectableRows}
+        hasSelectableRows={true}
         onRowSelect={(rowId) => {
           const newRows = [];
           const selectedRow = rows.find(row => row.id === rowId);
