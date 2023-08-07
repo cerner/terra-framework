@@ -9,10 +9,10 @@
     height: var(--terra-tabs-workspace-tab-container-height, 33px);
     justify-content: flex-start;
     margin-bottom: var(--terra-tabs-workspace-tab-container-margin-bottom, 0);
+    max-width: 100%;
     padding: 0;
     position: relative;
-    width:fit-content;
-    max-width: 100%;
+    width: fit-content;
 
     &:focus {
       outline: none;
@@ -23,11 +23,11 @@
     }
   }
 
-  .container{
-    display:-webkit-box;
+  .container {
+    display: flex;
   }
 
-  .divcontainer{
+  .divcontainer {
     max-width: 40px;
   }
 }

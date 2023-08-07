@@ -17,8 +17,6 @@ const TabsCloseFunc = (props) => {
   const [tabs, setTabs] = useState([]);
 
   const handleTabClose = (tabdata, itemKey) => {
-    console.log('Closed Tabdata:', tabdata);
-    console.log('Closed Tab ID2:', itemKey);
     const updatedTabs = tabs.filter((tab) => tab.key !== itemKey);
     setTabs(updatedTabs);
   };

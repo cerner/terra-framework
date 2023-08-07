@@ -1,6 +1,13 @@
 @import '~terra-mixins/lib/Mixins';
 
 :local {
+  .button:focus {
+    &[data-terra-tabs-show-focus-styles='true'] {
+      outline: var(--terra-tabs-add-button-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-tabs-add-button-focus-outline-offset, -5px);
+    }
+  }
+  
   .clinical-lowlight-theme {
     --terra-tabs-workspace-tab-background-color: #1e2427;
     --terra-tabs-workspace-tab-background-image: none;
