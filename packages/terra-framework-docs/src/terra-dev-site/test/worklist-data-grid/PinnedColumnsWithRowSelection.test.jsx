@@ -89,58 +89,40 @@ const RowSelection = () => {
     clearRowSelection();
   };
 
-  const onRowSelectionModeChange = (event) => {
-    if (!event.target.checked) {
-      clearRowSelection();
-    }
-    setHasSelectableRows(event.target.checked);
-  };
-
   return (
-    <React.Fragment>
-      {/* <div>
-        <label htmlFor="rowSelectionMode"><b>Row Selection Mode</b></label>
-        <input
-          id="rowSelectionMode"
-          type="checkbox"
-          ref={rowSelectionModeRef}
-          onChange={onRowSelectionModeChange}
-        />
-      </div> */}
-      <WorklistDataGrid
-        id="default-terra-worklist-data-grid"
-        pinnedColumns={cols.slice(0, 3)}
-        overflowColumns={cols.slice(3)}
-        rows={[...rows]}
-        rowHeaderIndex={rowHeaderIndex}
-        defaultColumnWidth={180}
-        ariaLabel="Worklist Data Grid with Pinned Columns and Row Selection"
-        hasSelectableRows={true}
-        onRowSelect={(rowId) => {
-          const newRows = [];
-          const selectedRow = rows.find(row => row.id === rowId);
-          selectedRow.isSelected = !selectedRow.isSelected;
-          rows.forEach(element => {
-            if (element.isSelected) {
-              newRows.push(element.id);
-            }
-          });
-          setSelectedRows(determineSelectedRows(false, newRows));
-        }}
-        onRowSelectAll={() => {
-          const newRows = [];
-          // eslint-disable-next-line no-param-reassign
-          rows.forEach(row => { row.isSelected = true; newRows.push(row.id); });
-          setSelectedRows(determineSelectedRows(true, newRows));
-        }}
-        onClearSelectedRows={() => {
-          clearRowSelection();
-        }}
-        onDisableSelectableRows={() => {
-          disableSelectableRows();
-        }}
-      />
-    </React.Fragment>
+    <WorklistDataGrid
+      id="default-terra-worklist-data-grid"
+      pinnedColumns={cols.slice(0, 3)}
+      overflowColumns={cols.slice(3)}
+      rows={[...rows]}
+      rowHeaderIndex={rowHeaderIndex}
+      defaultColumnWidth={180}
+      ariaLabel="Worklist Data Grid with Pinned Columns and Row Selection"
+      hasSelectableRows={hasSelectableRows}
+      onRowSelect={(rowId) => {
+        const newRows = [];
+        const selectedRow = rows.find(row => row.id === rowId);
+        selectedRow.isSelected = !selectedRow.isSelected;
+        rows.forEach(element => {
+          if (element.isSelected) {
+            newRows.push(element.id);
+          }
+        });
+        setSelectedRows(determineSelectedRows(false, newRows));
+      }}
+      onRowSelectAll={() => {
+        const newRows = [];
+        // eslint-disable-next-line no-param-reassign
+        rows.forEach(row => { row.isSelected = true; newRows.push(row.id); });
+        setSelectedRows(determineSelectedRows(true, newRows));
+      }}
+      onClearSelectedRows={() => {
+        clearRowSelection();
+      }}
+      onDisableSelectableRows={() => {
+        disableSelectableRows();
+      }}
+    />
   );
 };
 

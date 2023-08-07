@@ -398,7 +398,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
   });
 
-  describe('with pinned columns',()=>{
+  describe('with pinned columns', () => {
     it('adds pinned columns', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
 
