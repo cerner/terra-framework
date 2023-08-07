@@ -374,7 +374,7 @@ class MenuItem extends React.Component {
             className={classNames(itemClassNames, cx(theme.className))}
             ref={this.setItemNode}
             role={role}
-            aria-selected={(MenuUtils.isMac() && toggleable) ? markAsToggled : undefined}
+            aria-selected={(isMacOs && toggleable) ? markAsToggled : undefined}
             tabIndex="0"
             aria-disabled={isDisabled}
           >
