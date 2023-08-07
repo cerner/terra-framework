@@ -1,7 +1,7 @@
 {
   "name": "terra-abstract-modal",
   "main": "lib/AbstractModal.js",
-  "version": "3.43.0",
+  "version": "3.43.1",
   "description": "The abstract modal is a structural component that provides the ability to display portal'd content in a layer above the app.",
   "repository": {
     "type": "git",
@@ -32,7 +32,6 @@
     "keycode-js": "^3.1.0",
     "mutationobserver-shim": "<=0.3.3",
     "prop-types": "^15.5.8",
-    "react-focus-lock": "^2.0.0",
     "react-portal": "^4.1.2",
     "terra-theme-context": "^1.8.0",
     "terra-visually-hidden-text": "^2.0.0",

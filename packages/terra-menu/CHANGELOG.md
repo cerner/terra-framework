@@ -5,6 +5,19 @@
 * Added
   * Added context for menu item selected/unselected state and sub menu keyboard navigation instructions.
 
+* Changed
+  * Updated props description for `headerTitle` & `showHeader`.
+
+## 6.74.1 - (August 4, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.74.0 - (August 2, 2023)
+
+* Changed
+  * Locked `uuid` dependency to `3.4.0` for consistency across Terra packages.
+
 ## 6.73.0 - (July 31, 2023)
 
 * Changed
