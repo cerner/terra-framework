@@ -56,8 +56,10 @@ exports[`Cell renders a pinned cell 1`] = `
     <th
       aria-selected={false}
       className="worklist-data-grid-cell pinned selectable"
+      onClick={[Function]}
       onKeyDown={[Function]}
-      onMouseDown={[Function]}
+      role="rowheader"
+      scope="row"
       style={
         Object {
           "left": 0,
@@ -65,16 +67,30 @@ exports[`Cell renders a pinned cell 1`] = `
       }
       tabIndex={-1}
     >
-      <div
-        className="cell-content"
-        style={
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={false}
+        focusTrapOptions={
           Object {
-            "height": "50px",
+            "clickOutsideDeactivates": true,
+            "escapeDeactivates": false,
+            "onDeactivate": [Function],
+            "returnFocusOnDeactivate": true,
           }
         }
+        paused={false}
       >
-        Pinned cell data
-      </div>
+        <div
+          className="cell-content"
+          style={
+            Object {
+              "height": "50px",
+            }
+          }
+        >
+          Pinned cell data
+        </div>
+      </FocusTrap>
     </th>
   </Cell>
 </InjectIntl(Cell)>
@@ -82,34 +98,92 @@ exports[`Cell renders a pinned cell 1`] = `
 
 exports[`Cell verifies mask takes precedence when cell is masked, selectable and selected 1`] = `
 <td
-  aria-label="Terra.worklistDataGrid.maskedCell"
+  aria-label="Some Label Here"
   aria-selected={true}
   className="worklist-data-grid-cell masked"
+  onClick={[Function]}
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
     }
   }
   tabIndex={-1}
-/>
+>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={false}
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+        "escapeDeactivates": false,
+        "onDeactivate": [Function],
+        "returnFocusOnDeactivate": true,
+      }
+    }
+    paused={false}
+  >
+    <div
+      className="cell-content"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      <span
+        className="no-data-cell"
+      >
+        Terra.worklistDataGrid.maskedCell
+      </span>
+    </div>
+  </FocusTrap>
+</td>
 `;
 
 exports[`Cell verifies that a cell has the correct styles and no content when isMasked prop is true 1`] = `
 <td
-  aria-label="Terra.worklistDataGrid.maskedCell"
+  aria-label="Some Label Here"
   aria-selected={false}
   className="worklist-data-grid-cell masked"
+  onClick={[Function]}
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
     }
   }
   tabIndex={-1}
-/>
+>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={false}
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+        "escapeDeactivates": false,
+        "onDeactivate": [Function],
+        "returnFocusOnDeactivate": true,
+      }
+    }
+    paused={false}
+  >
+    <div
+      className="cell-content"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      <span
+        className="no-data-cell"
+      >
+        Terra.worklistDataGrid.maskedCell
+      </span>
+    </div>
+  </FocusTrap>
+</td>
 `;
 
 exports[`Cell verifies that a selected cell has the correct styles when isSelected prop is true 1`] = `
@@ -117,8 +191,8 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
   aria-label="Some Label Here"
   aria-selected={true}
   className="worklist-data-grid-cell selectable selected"
+  onClick={[Function]}
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
@@ -126,16 +200,30 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
   }
   tabIndex={-1}
 >
-  <div
-    className="cell-content"
-    style={
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={false}
+    focusTrapOptions={
       Object {
-        "height": undefined,
+        "clickOutsideDeactivates": true,
+        "escapeDeactivates": false,
+        "onDeactivate": [Function],
+        "returnFocusOnDeactivate": true,
       }
     }
+    paused={false}
   >
-    Data in cell
-  </div>
+    <div
+      className="cell-content"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      Data in cell
+    </div>
+  </FocusTrap>
 </td>
 `;
 
@@ -143,8 +231,8 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
 <td
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
+  onClick={[Function]}
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
@@ -152,16 +240,30 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
   }
   tabIndex={-1}
 >
-  <div
-    className="cell-content"
-    style={
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={false}
+    focusTrapOptions={
       Object {
-        "height": undefined,
+        "clickOutsideDeactivates": true,
+        "escapeDeactivates": false,
+        "onDeactivate": [Function],
+        "returnFocusOnDeactivate": true,
       }
     }
+    paused={false}
   >
-    Data in cell
-  </div>
+    <div
+      className="cell-content"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      Data in cell
+    </div>
+  </FocusTrap>
 </td>
 `;
 
@@ -169,8 +271,10 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
 <th
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
+  onClick={[Function]}
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
+  role="rowheader"
+  scope="row"
   style={
     Object {
       "left": null,
@@ -178,41 +282,83 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
   }
   tabIndex={-1}
 >
-  <div
-    className="cell-content"
-    style={
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={false}
+    focusTrapOptions={
       Object {
-        "height": "50px",
+        "clickOutsideDeactivates": true,
+        "escapeDeactivates": false,
+        "onDeactivate": [Function],
+        "returnFocusOnDeactivate": true,
       }
     }
+    paused={false}
   >
-    Data in cell
-  </div>
+    <div
+      className="cell-content"
+      style={
+        Object {
+          "height": "50px",
+        }
+      }
+    >
+      Data in cell
+    </div>
+  </FocusTrap>
 </th>
 `;
 
 exports[`Cell verifies that the cell rendered is marked blank when the cell content is empty 1`] = `
 <td
-  aria-label="Terra.worklistDataGrid.blank"
   aria-selected={false}
   className="worklist-data-grid-cell selectable blank"
+  onClick={[Function]}
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
     }
   }
   tabIndex={-1}
-/>
+>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={false}
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+        "escapeDeactivates": false,
+        "onDeactivate": [Function],
+        "returnFocusOnDeactivate": true,
+      }
+    }
+    paused={false}
+  >
+    <div
+      className="cell-content"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      <span
+        className="no-data-cell"
+      >
+        Terra.worklistDataGrid.blank
+      </span>
+    </div>
+  </FocusTrap>
+</td>
 `;
 
 exports[`Cell verifies that the cell rendered is marked selectable when isSelectable prop is true 1`] = `
 <td
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
+  onClick={[Function]}
   onKeyDown={[Function]}
-  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
@@ -220,15 +366,29 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
   }
   tabIndex={-1}
 >
-  <div
-    className="cell-content"
-    style={
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={false}
+    focusTrapOptions={
       Object {
-        "height": undefined,
+        "clickOutsideDeactivates": true,
+        "escapeDeactivates": false,
+        "onDeactivate": [Function],
+        "returnFocusOnDeactivate": true,
       }
     }
+    paused={false}
   >
-    Data in cell
-  </div>
+    <div
+      className="cell-content"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      Data in cell
+    </div>
+  </FocusTrap>
 </td>
 `;

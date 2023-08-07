@@ -31,6 +31,12 @@
     overflow: hidden;
     overflow-wrap: break-word;
     text-align: left;
+
+    // Blank and masked cell styles
+    .no-data-cell {
+      // Text is transparent so that it is only visible to screen readers
+      color: transparent;
+    }
   }
 
   .pinned {
@@ -44,11 +50,7 @@
 
   // Hover state for selectable elements
   .selectable:hover {
-    background-color: var(--terra-worklist-data-grid-hover-background-color, rgba(0, 146, 224, 0.12));
-
-    // NOTE: Temporarily keeping the older background-color as changes breaks styling in multiple places.
-    // It will be replaced once an update strategy is finalized with UX.
-    // background-color: var(--terra-worklist-data-grid-hover-background-color, #d8e5ed);
+    background-color: var(--terra-worklist-data-grid-hover-background-color, #d8e5ed);
     cursor: pointer;
   }
 }

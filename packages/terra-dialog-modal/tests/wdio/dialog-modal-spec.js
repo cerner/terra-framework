@@ -43,6 +43,29 @@ describe('Dialog Modal', () => {
       expect($('[type="button"][data-terra-action-header]').isFocused()).toEqual(true);
       Terra.validates.element('modal button focused', { selector: '#root' });
     });
+
+    it('does not focus on interactive content within the app when the modal is open - tab cycle forward', () => {
+      browser.keys(['Tab']);
+      Terra.validates.element('focused shifted outside the end of the modal on tab cycle', { selector: '#root' });
+    });
+
+    it('shifts focus back onto interactive elements within the modal', () => {
+      browser.keys(['Shift', 'Tab']);
+      expect($('[type="button"][data-terra-action-header]').isFocused()).toEqual(true);
+      Terra.validates.element('modal button focused again', { selector: '#root' });
+    });
+  });
+
+  describe('Outside Modal Focus Handling', () => {
+    it('does not focus on interactive content within the app when modal is open and focus is shifted backwards from the modal dialog', () => {
+      browser.keys(['Shift', 'Tab']);
+      Terra.validates.element('focused shifted outside the beginning of the modal', { selector: '#root' });
+    });
+
+    it('does not focus on interactive content within the app when modal is open and focus is shifted forwards from the modal dialog', () => {
+      browser.keys(['Tab', 'Tab', 'Tab']);
+      Terra.validates.element('focused shifted outside the end of the modal', { selector: '#root' });
+    });
   });
 
   describe('Closing Select inside modal using escape', () => {

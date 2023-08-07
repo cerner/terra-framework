@@ -89,46 +89,31 @@ exports[`correctly applies the theme context className 1`] = `
                 tabindex="0"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -219,220 +204,51 @@ exports[`correctly applies the theme context className 1`] = `
               role="dialog"
               tabIndex="0"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
@@ -537,46 +353,31 @@ exports[`should mount an open modal 1`] = `
                 tabindex="0"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -667,220 +468,51 @@ exports[`should mount an open modal 1`] = `
               role="dialog"
               tabIndex="0"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
@@ -986,46 +618,31 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                 tabindex="0"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -1116,220 +733,51 @@ exports[`should mount an open modal 7000 z-index 1`] = `
               role="dialog"
               tabIndex="0"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
@@ -1435,46 +883,31 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                 tabindex="0"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -1565,220 +998,51 @@ exports[`should mount an open modal 8000 z-index 1`] = `
               role="dialog"
               tabIndex="0"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
@@ -1884,46 +1148,31 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                 tabindex="0"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -2014,220 +1263,51 @@ exports[`should mount an open modal 9000 z-index 1`] = `
               role="dialog"
               tabIndex="0"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
@@ -2333,46 +1413,31 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                 tabindex="0"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -2463,220 +1528,51 @@ exports[`should mount an open modal set to fullscreen 1`] = `
               role="dialog"
               tabIndex="0"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
@@ -2784,46 +1680,31 @@ exports[`should mount an open modal with custom props 1`] = `
                 tabindex="0"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -2916,220 +1797,51 @@ exports[`should mount an open modal with custom props 1`] = `
               role="dialog"
               tabIndex="0"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
@@ -3235,46 +1947,31 @@ exports[`should mount an open modal with modal class name 1`] = `
                 tabindex="0"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -3365,220 +2062,51 @@ exports[`should mount an open modal with modal class name 1`] = `
               role="dialog"
               tabIndex="0"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
@@ -3684,46 +2212,31 @@ exports[`should mount an open modal with overlay class name 1`] = `
                 tabindex="0"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -3814,220 +2327,51 @@ exports[`should mount an open modal with overlay class name 1`] = `
               role="dialog"
               tabIndex="0"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
@@ -4133,46 +2477,31 @@ exports[`should mount an open modal with role 1`] = `
                 tabindex="0"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -4263,220 +2592,51 @@ exports[`should mount an open modal with role 1`] = `
               role="alertdialog"
               tabIndex="0"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
@@ -4581,46 +2741,31 @@ exports[`should render the correct snapshot for iPads 1`] = `
                 tabindex="-1"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -4711,220 +2856,51 @@ exports[`should render the correct snapshot for iPads 1`] = `
               role="dialog"
               tabIndex="-1"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
@@ -5029,46 +3005,31 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                 tabindex="-1"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -5159,220 +3120,51 @@ exports[`should render the correct snapshot for iPhones 1`] = `
               role="dialog"
               tabIndex="-1"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
@@ -5477,46 +3269,31 @@ exports[`should render the correct snapshot for iPods 1`] = `
                 tabindex="-1"
               >
                 <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
-                <div
-                  class="modal-content-focus-trap-container"
-                  data-focus-lock-disabled="false"
+                  class="abstract-modal-container"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
                 >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
+                  <span
+                    class="visually-hidden-text"
                   >
-                    <span
-                      class="visually-hidden-text"
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                  <div>
+                    <h1>
+                      Terra Modal
+                    </h1>
+                    <button
+                      type="button"
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
+                      Close Modal
+                    </button>
                   </div>
+                  <span
+                    class="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
                 </div>
-                <div
-                  data-focus-guard="true"
-                  style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                  tabindex="0"
-                />
               </div>
             </div>
           }
@@ -5607,220 +3384,51 @@ exports[`should render the correct snapshot for iPods 1`] = `
               role="dialog"
               tabIndex="-1"
             >
-              <ForwardRef(FocusLockUICombination)
-                as="div"
-                className="modal-content-focus-trap-container"
+              <div
+                className="abstract-modal-container"
+                data-terra-abstract-modal-begin={true}
+                tabIndex="-1"
               >
-                <ForwardRef(FocusLockUI)
-                  as="div"
-                  autoFocus={true}
-                  className="modal-content-focus-trap-container"
-                  crossFrame={true}
-                  disabled={false}
-                  lockProps={Object {}}
-                  noFocusGuards={false}
-                  persistentFocus={false}
-                  returnFocus={false}
-                  sideCar={[Function]}
+                <FormattedMessage
+                  id="Terra.AbstractModal.BeginModalDialog"
+                  values={Object {}}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        class="modal-content-focus-trap-container"
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          class="abstract-modal-container"
-                          data-terra-abstract-modal-begin="true"
-                          tabindex="-1"
-                        >
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <span
-                            class="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.BeginModalDialog"
                   >
-                    <FocusWatcher
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          class="modal-content-focus-trap-container"
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    className="modal-content-focus-trap-container"
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      className="abstract-modal-container"
-                      data-terra-abstract-modal-begin={true}
-                      tabIndex="-1"
+                    <span
+                      className="visually-hidden-text"
                     >
-                      <FormattedMessage
-                        id="Terra.AbstractModal.BeginModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.BeginModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.BeginModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                      <div>
-                        <h1>
-                          Terra Modal
-                        </h1>
-                        <button
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          Close Modal
-                        </button>
-                      </div>
-                      <FormattedMessage
-                        id="Terra.AbstractModal.EndModalDialog"
-                        values={Object {}}
-                      >
-                        <VisuallyHiddenText
-                          text="Terra.AbstractModal.EndModalDialog"
-                        >
-                          <span
-                            className="visually-hidden-text"
-                          >
-                            Terra.AbstractModal.EndModalDialog
-                          </span>
-                        </VisuallyHiddenText>
-                      </FormattedMessage>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+                <FormattedMessage
+                  id="Terra.AbstractModal.EndModalDialog"
+                  values={Object {}}
+                >
+                  <VisuallyHiddenText
+                    text="Terra.AbstractModal.EndModalDialog"
+                  >
+                    <span
+                      className="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
+                  </VisuallyHiddenText>
+                </FormattedMessage>
+              </div>
             </div>
           </ForwardRef>
         </Portal>
