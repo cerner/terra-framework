@@ -93,6 +93,7 @@ describe('Tabs', () => {
 
   it('should render with add icon', () => {
     const defaultRender = mountWithIntl(
+      // eslint-disable-next-line no-alert
       <Tabs id="application-id" onSelectAddButton={() => alert('hi')} ariaLabelAddTab="Add Tab">
         <Tabs.Pane label="Default" key="default" className="customClass" />
       </Tabs>,
