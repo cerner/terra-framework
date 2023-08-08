@@ -393,7 +393,7 @@ function WorklistDataGrid(props) {
 
   const handleColumnSelect = (columnId, cellCoordinates) => {
     handleCellSelectionChange(null, null, cellCoordinates);
-    if (onColumnSelect && !(hasSelectableRows && cellCoordinates.col === 0)) {
+    if (onColumnSelect) {
       onColumnSelect(columnId);
     }
   };
