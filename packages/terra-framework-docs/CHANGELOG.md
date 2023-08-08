@@ -4,6 +4,9 @@
 
 * Changed
   * Updated toggle examples for `terra-collapsible-menu-view` to include selectable toggles and toggles within a collapsed menu.
+  
+* Added
+  * Added examples and tests for Add & Close functionality of tabs.
 
 ## 1.31.0 - (August 4, 2023)
 
