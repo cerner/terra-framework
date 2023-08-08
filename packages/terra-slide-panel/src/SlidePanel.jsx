@@ -171,9 +171,9 @@ class SlidePanel extends React.Component {
         role="region"
         ref={this.setPanelNode}
       >
-        {/* <VisuallyHiddenText
+        <VisuallyHiddenText
           text={panelAriaLabel || intl.formatMessage({ id: 'Terra.slidePanel.defaultPanelLabel' })}
-        /> */}
+        />
         {panelContent}
       </div>
     );

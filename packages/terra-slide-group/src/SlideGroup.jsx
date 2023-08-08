@@ -42,7 +42,6 @@ class SlideGroup extends React.Component {
   static hidePreviousSlide(enteredElement) {
     if (enteredElement.previousSibling) {
       enteredElement.previousSibling.setAttribute('aria-hidden', true);
-      console.log(enteredElement)
     }
   }
 
