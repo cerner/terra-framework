@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './Slide.module.scss';
 
 const cx = classNames.bind(styles);
@@ -73,6 +74,11 @@ const Slide = ({
       onKeyUp={handleClick}
       role={enteredAfterHidden ? 'region' : undefined}
     >
+      <VisuallyHiddenText
+        aria-live="polite"
+        aria-hidden={isHidden || enteredAfterHidden}
+        text={slideAriaLabel}
+      />
       <div className={cx('slide-shadow')} />
       {children}
     </div>
