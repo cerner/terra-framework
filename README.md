@@ -185,6 +185,10 @@ npm run test
         "wdio-fusion": "terra wdio --disableSeleniumService=true --themes orion-fusion-theme",
         }
        ```
+    - If any of the compose files were to be changed, you must refresh the docker container by deleting the corresponding existing docker images, then running the following command:
+      ```sh
+        docker compose -f <changed compose file name>.yml up
+      ```
 7. To terminate a dev container:
     - Use command line or Rancher/Docker Desktop OR
     - Using Visual Studio Code
@@ -202,16 +206,6 @@ npm run test
       - Use the Remote Explorer icon in the Activity Bar or View -> Command Palette and run **Remote Explorer: Focus on Containers View** to view containers
       - Locate the **terra-framework_devcontainer** under "Dev Containers"
       - Hover over the dev container and click the Folder icon labelled **Open Folder in Container** or by right clicking and selecting **Open Folder in Container**
-
-<h3>
-  Refreshing the container
-</h3>
-
-If any of the compose files were to be changed, you must refresh the docker container by running the following command:
-
-```sh
-  docker compose -f <changed compose file name>.yml up
-```
 
 <h2 id="license">
   LICENSE
