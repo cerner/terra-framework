@@ -203,6 +203,16 @@ npm run test
       - Locate the **terra-framework_devcontainer** under "Dev Containers"
       - Hover over the dev container and click the Folder icon labelled **Open Folder in Container** or by right clicking and selecting **Open Folder in Container**
 
+<h3>
+  Refreshing the container
+</h3>
+
+If any of the compose files were to be changed, you must refresh the docker container by running the following command:
+
+```sh
+  docker compose -f <changed compose file name>.yml up
+```
+
 <h2 id="license">
   LICENSE
 </h2>
