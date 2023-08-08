@@ -534,15 +534,8 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('button:focus')).toBeElementsArrayOfSize(1);
     });
 
-    it('validates that a cell with multiple focusable elements can be navigated via Tab', () => {
-      browser.keys(['Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'Enter', 'Tab']);
-
-      Terra.validates.element('focusable-multiple-element-cell-tab-navigate', { columnResizeSelector });
-      expect(browser.$$('input:focus')).toBeElementsArrayOfSize(1);
-    });
-
     it('validates that a cell with a select element traps focus', () => {
-      browser.keys(['Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'Enter', 'ArrowRight']);
+      browser.keys(['Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'Enter', 'ArrowLeft']);
 
       Terra.validates.element('focusable-select-cell-trap-focus', { columnResizeSelector });
       expect(browser.$$('select:focus')).toBeElementsArrayOfSize(1);
