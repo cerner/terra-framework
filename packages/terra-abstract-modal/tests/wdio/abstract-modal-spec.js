@@ -88,7 +88,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
 
   describe('Modal Focus Handling', () => {
     describe('Focusable Content', () => {
-      before(() => {
+      it('clicks to open modal', () => {
         browser.url('/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal');
         $('button').click();
       });
@@ -104,20 +104,31 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
         Terra.validates.element('modal button focused', { selector });
       });
 
-      it('prevents shift focus forward out of modal dialog', () => {
+      it('shifts focus forward away from the modal dialog', () => {
         browser.keys(['Tab']);
-        expect($('#modal-button').isFocused()).toBeTruthy();
+        expect($('#modal-button').isFocused()).toBeFalsy();
         expect($('#modal-open-button').isFocused()).toBeFalsy();
         expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeFalsy();
-        Terra.validates.element('focus trapped from moving forward', { selector });
+        Terra.validates.element('focused shifted outside the end of the modal', { selector });
       });
 
-      it('prevents shift focus back out of modal dialog', () => {
+      it('shifts focus back onto interactive elements within the modal', () => {
         browser.keys(['Shift', 'Tab']);
         expect($('#modal-button').isFocused()).toBeTruthy();
+        Terra.validates.element('modal button focused again', { selector });
+      });
+
+      it('shifts focus back onto the modal dialog', () => {
+        browser.keys(['Shift', 'Tab']);
+        expect($('#modal-button').isFocused()).toBeFalsy();
         expect($('#modal-open-button').isFocused()).toBeFalsy();
+        expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeTruthy();
+        Terra.validates.element('focused shifted back to the modal', { selector });
+      });
+
+      it('shifts focus backwards away from the modal dialog', () => {
+        browser.keys(['Shift', 'Tab']);
         expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeFalsy();
-        Terra.validates.element('focus trapped from moving back', { selector });
       });
     });
 

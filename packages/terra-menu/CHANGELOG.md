@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+* Changed
+  * Updated props description for `headerTitle` & `showHeader`.
+
+## 6.74.1 - (August 4, 2023)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.74.0 - (August 2, 2023)
 
 * Changed
