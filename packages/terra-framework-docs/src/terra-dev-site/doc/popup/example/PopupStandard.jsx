@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import Popup from 'terra-popup';
 import classNames from 'classnames/bind';
 import styles from './PopupDocCommon.module.scss';
@@ -16,20 +16,17 @@ function PopupStandard() {
   const getButtonNode = () => buttonElement.current;
 
   const handleButtonClick = () => {
+    if (!open) {
+      document.querySelector('#root').setAttribute('inert', 'true');
+    }
     setOpen(true);
   };
 
   const handleRequestClose = () => {
     setOpen(false);
+    document.querySelector('#root').removeAttribute('inert');
+    buttonElement.current.focus();
   };
-
-  useEffect(() => {
-    if (open) {
-      document.querySelector('#root').setAttribute('inert', 'true');
-    } else {
-      document.querySelector('#root').removeAttribute('inert');
-    }
-  }, [open]);
 
   return (
     <React.Fragment>
