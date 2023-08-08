@@ -376,7 +376,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('a:focus')).toBeElementsArrayOfSize(1);
     });
 
-    it('validates that acell with multiple focusable elements traps focus', () => {
+    it('validates that a cell with multiple focusable elements traps focus', () => {
       browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'Enter', 'ArrowRight']);
 
       Terra.validates.element('focusable-multiple-element-cell-trap-focus', { columnResizeSelector });
@@ -384,7 +384,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
 
     it('validates that a cell with a select element traps focus', () => {
-      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'Enter', 'ArrowRight']);
+      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'Enter', 'ArrowLeft']);
 
       Terra.validates.element('focusable-select-cell-trap-focus', { columnResizeSelector });
       expect(browser.$$('select:focus')).toBeElementsArrayOfSize(1);
