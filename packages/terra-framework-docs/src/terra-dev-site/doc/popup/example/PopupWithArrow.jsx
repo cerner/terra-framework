@@ -18,11 +18,15 @@ function PopupArrow() {
   const getButtonNode = () => buttonElement.current;
 
   const handleButtonClick = () => {
+    if (!open) {
+      document.querySelector('#root').setAttribute('inert', 'true');
+    }
     setOpen(true);
   };
 
   const handleRequestClose = () => {
     setOpen(false);
+    document.querySelector('#root').removeAttribute('inert');
     buttonElement.current.focus(); // Return focus to the button when the popup closes
   };
 
