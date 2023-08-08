@@ -14,9 +14,11 @@ class CollapsibleMenuViewDemo extends React.Component {
     this.handleDisplayTypeChange = this.handleDisplayTypeChange.bind(this);
     this.handleToggleOneOnChange = this.handleToggleOneOnChange.bind(this);
     this.handleToggleTwoOnChange = this.handleToggleTwoOnChange.bind(this);
+    this.handleToggleThreeOnChange = this.handleToggleThreeOnChange.bind(this);
     this.state = {
       toggle1Selection: false,
       toggle2Selection: false,
+      toggle3Selection: false,
       displayType: 'tableView',
     };
   }
@@ -27,6 +29,10 @@ class CollapsibleMenuViewDemo extends React.Component {
 
   handleToggleTwoOnChange(event, isSelected) {
     this.setState({ toggle2Selection: isSelected });
+  }
+
+  handleToggleThreeOnChange(event, isSelected) {
+    this.setState({ toggle3Selection: isSelected });
   }
 
   handleDisplayTypeChange(event, selectedKey) {
@@ -42,7 +48,6 @@ class CollapsibleMenuViewDemo extends React.Component {
           shouldCloseOnClick={false}
           onChange={this.handleToggleOneOnChange}
           isSelected={this.state.toggle1Selection}
-          isSelectable={false}
         />
         <CollapsibleMenuView.Toggle
           text="Toggle Item 2"
@@ -50,6 +55,14 @@ class CollapsibleMenuViewDemo extends React.Component {
           shouldCloseOnClick={false}
           onChange={this.handleToggleTwoOnChange}
           isSelected={this.state.toggle2Selection}
+          isSelectable={false}
+        />
+        <CollapsibleMenuView.Toggle
+          text="Toggle Item 3"
+          key="toggle3"
+          shouldCloseOnClick={false}
+          onChange={this.handleToggleThreeOnChange}
+          isSelected={this.state.toggle3Selection}
           isDisabled
         />
         <CollapsibleMenuView.Divider key="Divider1" />
