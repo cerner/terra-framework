@@ -56,7 +56,7 @@ const RowSelection = () => {
   const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
   const [selectedRows, setSelectedRows] = useState([]);
-  const [hasSelectableRows, setHasSelectableRows] = useState(false);
+  const [hasSelectableRows, setHasSelectableRows] = useState(true);
 
   const determineSelectedRows = (allRowsSelected, userSelectedRow) => {
     if (!userSelectedRow) {
