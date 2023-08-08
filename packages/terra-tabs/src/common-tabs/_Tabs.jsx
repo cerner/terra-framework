@@ -80,7 +80,7 @@ const propTypes = {
   /**
    * Indicates whether the tabs are closable, allowing the user to close tabs.
    */
-  isClosable: PropTypes.bool.isRequired,
+  isClosable: PropTypes.bool,
 
   /**
    * Callback function when a tab is closed.

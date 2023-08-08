@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+import {
+  KEY_SPACE, KEY_RETURN,
+  KEY_DELETE, KEY_BACK_SPACE,
+} from 'keycode-js';
 import IconClose from 'terra-icon/lib/icon/IconClose';
 import { injectIntl } from 'react-intl';
 import {
@@ -81,9 +84,18 @@ const propTypes = {
    * If enabled, this prop will show the add icon in the tab dropdown.
    */
   showAddButton: PropTypes.bool,
-
+  /**
+   * A callback function triggered when the tab is being closed. It takes three parameters.
+   */
   onClosingTab: PropTypes.func,
+  /**
+   * Indicates if the tab can be closed.
+   */
   isClosable: PropTypes.bool,
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
    * Indicates if the pane should be disabled.
@@ -96,6 +108,7 @@ const defaultProps = {
   showIcon: false,
   showAddButton: false,
   isDisabled: false,
+  isClosable: false,
 };
 
 const HiddenTab = ({
@@ -127,7 +140,7 @@ const HiddenTab = ({
     { 'is-disabled': isDisabled },
     theme.className,
   );
-  const tabDeleteLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.removable' })}`;
+  const tabDeleteLabel = intl.formatMessage({ id: 'Terra.tabs.hint.removable' });
 
   const handleOnSelect = (event) => {
     event.preventDefault();
@@ -140,21 +153,33 @@ const HiddenTab = ({
     }
   };
 
+  function onCloseClick(event) {
+    event.stopPropagation();
+    onClosingTab(itemKey, metaData, event);
+    const deleteTabLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed' })}`;
+    const element = document.getElementById(tabIds[index - 1]);
+    const ariaLabel = label ? `${label} ${deleteTabLabel}` : '';
+    element.setAttribute('aria-label', ariaLabel);
+    element.focus();
+    element.addEventListener('blur', () => {
+      element.removeAttribute('aria-label');
+    });
+  }
   const onKeyDown = (event) => {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       handleOnSelect(event);
       if (onChange) {
         onChange(event, itemKey);
       }
+    }
+    if (event.nativeEvent.keyCode === KEY_DELETE || event.nativeEvent.keyCode === KEY_BACK_SPACE) {
+      event.preventDefault();
+      event.stopPropagation();
+      onCloseClick(event);
     } else {
       handleArrows(event, index, tabIds);
     }
   };
-  function onCloseClick(event) {
-    event.stopPropagation();
-    // setIsClosed(true);
-    onClosingTab(itemKey, metaData);
-  }
 
   function onClick(e) {
     if (!isDisabled) {
