@@ -4,6 +4,7 @@
 
 * Changed
    * Added drag and drop to tab menu and internationalization support for the same.
+   * Updated styles for tab content panel.
 
 ## 7.3.0 - (August 2, 2023)
 
