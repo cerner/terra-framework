@@ -243,6 +243,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
       <table
         className="worklist-data-grid"
         id="test-terra-worklist-data-grid"
+        onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
       >
