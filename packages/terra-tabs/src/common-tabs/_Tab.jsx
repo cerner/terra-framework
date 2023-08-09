@@ -149,6 +149,7 @@ const Tab = ({
   intl,
   isDraggable,
 }) => {
+  const tabDeleteLabel = intl.formatMessage({ id: 'Terra.tabs.hint.removable' });
   const attributes = {};
   const theme = React.useContext(ThemeContext);
   const tabClassNames = cx(
@@ -170,9 +171,10 @@ const Tab = ({
 
   if (isIconOnly) {
     attributes['aria-label'] = label;
+    if (isClosable) {
+      attributes['aria-label'] = `${label} ${tabDeleteLabel}`;
+    }
   }
-
-  const tabDeleteLabel = intl.formatMessage({ id: 'Terra.tabs.hint.removable' });
 
   function onCloseClick(event) {
     event.stopPropagation();
