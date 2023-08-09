@@ -5,5 +5,6 @@
   "Terra.menu.selected": "geselecteerd",
   "Terra.menu.unselected": "niet geselecteerd",
   "Terra.menu.itemWithSubmenu": "met submenu-items",
-  "Terra.menu.index": "({index} van {totalItems})"
+  "Terra.menu.index": "({index} van {totalItems})",
+  "Terra.menu.navigateMenuItem": "Gebruik de pijl omhoog of omlaag om door items te bladeren"
 }
