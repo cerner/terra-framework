@@ -5,5 +5,6 @@
   "Terra.menu.selected": "valt",
   "Terra.menu.unselected": "ej valt",
   "Terra.menu.itemWithSubmenu": "med undermenykommandon",
-  "Terra.menu.index": "({index} av {totalItems})"
+  "Terra.menu.index": "({index} av {totalItems})",
+  "Terra.menu.navigateMenuItem": "Tryck på uppåtpilen och nedåtpilen för att navigera mellan kommandon"
 }

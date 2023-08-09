@@ -10,6 +10,10 @@
 
 * Changed
   * Updated toggle examples for `terra-collapsible-menu-view` to include selectable toggles and toggles within a collapsed menu.
+  * Updated row selection example for `terra-worklist-data-grid` to show ability to select the row selection column header.
+
+* Changed
+ * Locked `terra-arrange` to `3.51.0` temporarily.
 
 ## 1.31.0 - (August 4, 2023)
 

@@ -2,8 +2,14 @@
 
 ## Unreleased
 
+* Added
+  * Added context for menu item selected/unselected state and sub menu keyboard navigation instructions.
+
 * Changed
   * Updated props description for `headerTitle` & `showHeader`.
+
+* Changed
+ * Locked `terra-arrange` to `3.51.0` temporarily.
 
 ## 6.74.1 - (August 4, 2023)
 

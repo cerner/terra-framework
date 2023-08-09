@@ -2,9 +2,10 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import WorklistDataGrid from '../../src/WorklistDataGrid';
+import WorklistDataGridUtils from '../../src/utils/WorklistDataGridUtils';
+import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 import ColumnHeader from '../../src/subcomponents/ColumnHeader';
 import Row from '../../src/subcomponents/Row';
-
 import ERRORS from '../../src/utils/constants';
 
 // Source data for tests
@@ -102,6 +103,32 @@ describe('basic grid', () => {
     verifyRow(0, rows.get(0), dataFile.rows[0], dataFile.cols);
     verifyRow(1, rows.get(1), dataFile.rows[1], dataFile.cols);
     verifyRow(2, rows.get(2), dataFile.rows[2], dataFile.cols);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies row selection column header selection', () => {
+    const mockColumnSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        pinnedColumns={dataFile.cols.slice(0, 2)}
+        overflowColumns={dataFile.cols.slice(2)}
+        hasSelectableRows
+        rows={dataFile.rows}
+        onColumnSelect={mockColumnSelect}
+      />,
+    );
+
+    // Find column headers
+    const columnHeader = wrapper.find(ColumnHeaderCell);
+
+    // Simulate onMouseDown event on row selection column header
+    columnHeader.at(0).simulate('mouseDown');
+
+    // Validate mock function was called from simulated click event
+    expect(mockColumnSelect).toHaveBeenCalledWith(WorklistDataGridUtils.ROW_SELECTION_COLUMN.id);
 
     expect(wrapper).toMatchSnapshot();
   });
