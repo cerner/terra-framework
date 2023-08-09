@@ -37,6 +37,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
 >
   <Tabs
     fill={false}
+    isClosable={false}
     isDraggable={false}
     tabFill={false}
     variant="modular-left-aligned"
@@ -436,6 +437,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
       "timeZone": null,
     }
   }
+  isClosable={false}
   isDraggable={false}
   tabFill={false}
 >
@@ -1116,6 +1118,7 @@ exports[`Tabs should render with add icon 1`] = `
       "timeZone": null,
     }
   }
+  isClosable={false}
   isDraggable={false}
   onSelectAddButton={[MockFunction]}
   tabFill={false}
@@ -1619,6 +1622,7 @@ exports[`Tabs should render with add icon 2`] = `
       "timeZone": null,
     }
   }
+  isClosable={false}
   isDraggable={false}
   onSelectAddButton={[Function]}
   tabFill={false}
@@ -2121,6 +2125,7 @@ exports[`Tabs should render with close icon 1`] = `
       "timeZone": null,
     }
   }
+  isClosable={false}
   isDraggable={false}
   isclosable={true}
   onTabClose={[MockFunction]}

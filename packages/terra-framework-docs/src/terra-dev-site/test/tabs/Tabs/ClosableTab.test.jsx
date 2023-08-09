@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import PropTypes from 'prop-types';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import Tabs from 'terra-tabs';
@@ -9,15 +8,7 @@ import styles from './TabsTemplate.module.scss';
 
 const cx = classNames.bind(styles);
 
-const propTypes = {
-  containerClassName: PropTypes.string,
-};
-
-const defaultProps = {
-  containerClassName: 'content-wrapper-default',
-};
-
-const ClosableTab = (props) => {
+const ClosableTab = () => {
   const tabsExample = [];
   const [tabs, setTabs] = useState(tabsExample);
   const [activeKey] = useState();
@@ -74,7 +65,7 @@ const ClosableTab = (props) => {
     },
   );
 
-  const handleTabClose = (tabdata, itemKey) => {
+  const handleTabClose = (itemKey) => {
     const tabsArray = [...tabs];
     const indexToRemove = tabsArray.findIndex(tab => tab.key === itemKey);
     if (indexToRemove !== -1) {
@@ -84,7 +75,7 @@ const ClosableTab = (props) => {
   };
 
   return (
-    <div className={cx(props.containerClassName)} id="tabs-container">
+    <div className={cx('content-wrapper-default')} id="tabs-container">
       <Tabs activeKey={activeKey} isClosable ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
         { tabs.map((tab) => (
           <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} customDisplay={tab.customDisplay} isDisabled={tab.isDisabled} icon={tab.icon} key={tab.key} id={tab.key}>
@@ -96,6 +87,4 @@ const ClosableTab = (props) => {
   );
 };
 
-ClosableTab.propTypes = propTypes;
-ClosableTab.defaultProps = defaultProps;
 export default ClosableTab;

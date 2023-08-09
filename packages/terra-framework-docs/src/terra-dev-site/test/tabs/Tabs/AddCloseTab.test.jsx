@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import PropTypes from 'prop-types';
 import IconAddPerson from 'terra-icon/lib/icon/IconAddPerson';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import Tabs from 'terra-tabs';
@@ -9,17 +8,8 @@ import styles from './TabsTemplate.module.scss';
 
 const cx = classNames.bind(styles);
 
-const propTypes = {
-  containerClassName: PropTypes.string,
-};
-
-const defaultProps = {
-  containerClassName: 'content-wrapper-default',
-};
-
-let i = -1;
-
-const AddTabandCloseTab = (props) => {
+function AddTabandCloseTab() {
+  let i = -1;
   const tabsExample = [];
   const [tabs, setTabs] = useState(tabsExample);
   const [activeKey, setActiveKey] = useState();
@@ -102,7 +92,7 @@ const AddTabandCloseTab = (props) => {
   };
 
   return (
-    <div className={cx(props.containerClassName)} id="tabs-container">
+    <div className={cx('content-wrapper-default')} id="tabs-container">
       <Tabs activeKey={activeKey} isClosable onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
         { tabs.map((tab) => (
           <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} customDisplay={tab.customDisplay} isDisabled={tab.isDisabled} icon={tab.icon} key={tab.key} id={tab.key}>
@@ -112,8 +102,6 @@ const AddTabandCloseTab = (props) => {
       </Tabs>
     </div>
   );
-};
+}
 
-AddTabandCloseTab.propTypes = propTypes;
-AddTabandCloseTab.defaultProps = defaultProps;
 export default AddTabandCloseTab;

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import PropTypes from 'prop-types';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import Tabs from 'terra-tabs';
@@ -9,17 +8,9 @@ import styles from './TabsTemplate.module.scss';
 
 const cx = classNames.bind(styles);
 
-const propTypes = {
-  containerClassName: PropTypes.string,
-};
-
-const defaultProps = {
-  containerClassName: 'content-wrapper-default',
-};
-
 let i = -1;
 
-const AddNewTabs = props => {
+const AddNewTabs = () => {
   const tabsExample = [];
   const [tabs, setTabs] = useState(tabsExample);
   const [activeKey, setActiveKey] = useState();
@@ -93,7 +84,7 @@ const AddNewTabs = props => {
   };
 
   return (
-    <div className={cx(props.containerClassName)} id="tabs-container">
+    <div className={cx('content-wrapper-default')} id="tabs-container">
       <Tabs activeKey={activeKey} onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab">
         { tabs.map((tab) => (
           <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} customDisplay={tab.customDisplay} isDisabled={tab.isDisabled} icon={tab.icon} key={tab.key} id={tab.key}>
@@ -105,6 +96,4 @@ const AddNewTabs = props => {
   );
 };
 
-AddNewTabs.propTypes = propTypes;
-AddNewTabs.defaultProps = defaultProps;
 export default AddNewTabs;

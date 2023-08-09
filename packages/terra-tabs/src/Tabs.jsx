@@ -85,6 +85,7 @@ const defaultProps = {
   tabFill: false,
   fill: false,
   isDraggable: false,
+  isClosable: false,
 };
 
 class Tabs extends React.Component {
@@ -121,6 +122,7 @@ class Tabs extends React.Component {
       defaultActiveKey,
       isDraggable,
       onTabOrderChange,
+      isClosable,
       ...customProps
     } = this.props;
 
@@ -144,7 +146,7 @@ class Tabs extends React.Component {
           showIcon={child.props.showIcon}
           render={() => tabContent}
           isDisabled={child.props.isDisabled}
-          isClosable={this.props.isClosable !== undefined ? this.props.isClosable : false}
+          isClosable={isClosable}
           variant="framework"
         />,
       );
