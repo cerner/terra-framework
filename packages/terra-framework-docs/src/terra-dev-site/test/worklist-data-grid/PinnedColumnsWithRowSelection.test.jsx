@@ -91,7 +91,7 @@ const RowSelection = () => {
 
   return (
     <WorklistDataGrid
-      id="default-terra-worklist-data-grid"
+      id="pinned-columns-with-row-selection"
       pinnedColumns={cols.slice(0, 3)}
       overflowColumns={cols.slice(3)}
       rows={[...rows]}
