@@ -7,6 +7,13 @@
 * Added
   * Added example and tests for `terra-worklist-data-grid` to select rows via mouse and keyboard.
 
+* Updated
+  * Updated terra-popup examples with inert attribute to demonstrate focus trap when using virtual cursor of Jaws for navigation within popup.
+
+* Changed
+  * Updated toggle examples for `terra-collapsible-menu-view` to include selectable toggles and toggles within a collapsed menu.
+  * Updated row selection example for `terra-worklist-data-grid` to show ability to select the row selection column header.
+
 ## 1.31.0 - (August 4, 2023)
 
 * Added
