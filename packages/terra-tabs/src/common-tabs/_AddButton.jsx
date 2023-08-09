@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The label to set on the tablist element.
+   * The label to set on the add button.
    */
   addAriaLabel: PropTypes.string.isRequired,
   /**

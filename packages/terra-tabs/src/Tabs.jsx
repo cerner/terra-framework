@@ -70,6 +70,15 @@ const propTypes = {
    * A callback function triggered when a tab is closed.
    */
   onTabClose: PropTypes.func,
+  /**
+   * Callback function when add button selection has changed.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onSelectAddButton: PropTypes.func,
+  /**
+   * The label to set on the add icon element.
+   */
+  ariaLabelAddTab: PropTypes.string,
 };
 
 const defaultProps = {

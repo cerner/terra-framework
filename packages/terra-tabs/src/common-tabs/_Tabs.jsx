@@ -103,10 +103,11 @@ const propTypes = {
   onTabOrderChange: PropTypes.func,
 };
 
-let addTabId;
-let addButtonToggle = false;
-
 class Tabs extends React.Component {
+  addTabId = null;
+
+  addButtonToggle = false;
+
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
@@ -148,7 +149,7 @@ class Tabs extends React.Component {
     this.resizeObserver.observe(this.containerRef.current);
     this.resizeObserver.observe(this.containerRef.current.parentNode);
     this.handleResize();
-    addTabId = uuid();
+    this.addTabId = uuid();
   }
 
   componentDidUpdate(prevProps) {
@@ -173,9 +174,9 @@ class Tabs extends React.Component {
       });
     }
 
-    if (currTab && addButtonToggle && !this.moreButtonRef.current) {
+    if (currTab && this.addButtonToggle && !this.moreButtonRef.current) {
       const element = document.getElementById(currTab.id);
-      if (element && addButtonToggle) {
+      if (element && this.addButtonToggle) {
         element.focus();
       }
     }
@@ -407,7 +408,7 @@ class Tabs extends React.Component {
 
   wrapOnAddButton() {
     if (this.props.onSelectAddButton) {
-      addButtonToggle = true;
+      this.addButtonToggle = true;
       this.props.onSelectAddButton();
     }
   }
@@ -423,7 +424,7 @@ class Tabs extends React.Component {
     const visibleTabs = [];
     const hiddenTabs = [];
     const moreIds = ids;
-    if (onSelectAddButton) { moreIds.push(addTabId); }
+    if (onSelectAddButton) { moreIds.push(this.addTabId); }
     let isHiddenSelected = false;
 
     let enabledTabsIndex = -1;
@@ -477,9 +478,9 @@ class Tabs extends React.Component {
         if (index === this.state.visibleTabData.length - 1 && onSelectAddButton) {
           hiddenTabs.push(
             <HiddenTab
-              id={addTabId}
+              id={this.addTabId}
               data-focus-styles-enabled
-              itemKey={addTabId}
+              itemKey={this.addTabId}
               label={ariaLabelAddTab}
               index={this.state.visibleTabData.length - 1}
               showIcon
@@ -560,7 +561,7 @@ class Tabs extends React.Component {
                 <div className={commonDivClassNames} ref={this.addButtonRef}>
                   {(!this.showMoreButton && onSelectAddButton) && (
                   <AddButton
-                    id={addTabId}
+                    id={this.addTabId}
                     addAriaLabel={ariaLabelAddTab}
                     index={enabledTabsIndex + 1}
                     onSelect={this.wrapOnAddButton}
@@ -615,7 +616,7 @@ class Tabs extends React.Component {
         <div className={commonDivClassNames} ref={this.addButtonRef}>
           {(!this.showMoreButton && onSelectAddButton) && (
           <AddButton
-            id={addTabId}
+            id={this.addTabId}
             addAriaLabel={ariaLabelAddTab}
             index={enabledTabsIndex + 1}
             onSelect={this.wrapOnAddButton}
