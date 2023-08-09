@@ -226,6 +226,24 @@ const RowSelection = () => {
     }
   };
 
+  const onRowSelect = (rowIdsToSelect, rowIdsToUnselect) => {
+    if (rowIdsToUnselect) {
+      rows.forEach((r, index) => { if (rowIdsToUnselect.indexOf(r.id) >= 0) { rows[index].isSelected = false; } });
+    }
+
+    if (rowIdsToSelect) {
+      rows.forEach((r, index) => { if (rowIdsToSelect.indexOf(r.id) >= 0) { rows[index].isSelected = true; } });
+      setSelectedRows(rowIdsToSelect);
+    }
+  };
+
+  const enableRowSelection = () => {
+    if (!rowSelectionModeRef.current.checked) {
+      rowSelectionModeRef.current.checked = true;
+    }
+    setHasSelectableRows(true);
+  };
+
   return (
     <React.Fragment>
       <div>
@@ -245,30 +263,7 @@ const RowSelection = () => {
         columnWidth="180px"
         ariaLabel="Worklist Data Grid"
         hasSelectableRows={hasSelectableRows}
-        onRowSelect={(toggledRows) => {
-          toggledRows.forEach((toggledRow) => {
-            if (!toggledRow.isSelected) {
-              const row = rows.find(e => e.id === toggledRow.rowId);
-              row.isSelected = false;
-            }
-          });
-
-          toggledRows.forEach((toggledRow) => {
-            if (toggledRow.isSelected) {
-              const row = rows.find(e => e.id === toggledRow.rowId);
-              row.isSelected = true;
-            }
-          });
-
-          const rowIdsToSelect = [];
-          rows.forEach(element => {
-            if (element.isSelected) {
-              rowIdsToSelect.push(element.id);
-            }
-          });
-
-          setSelectedRows(determineSelectedRows(false, rowIdsToSelect));
-        }}
+        onRowSelect={onRowSelect}
         onRowSelectAll={() => {
           const newRows = [];
           rows.forEach(e => { e.isSelected = true; newRows.push(e.id); });
@@ -281,12 +276,7 @@ const RowSelection = () => {
           disableSelectableRows();
         }}
         onColumnSelect={onColumnSelect}
-        onEnableRowSelection={() => {
-          if (!rowSelectionModeRef.current.checked) {
-            rowSelectionModeRef.current.checked = true;
-          }
-          setHasSelectableRows(true);
-        }}
+        onEnableRowSelection={enableRowSelection}
       />
     </React.Fragment>
   );

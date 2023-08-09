@@ -38,6 +38,17 @@ const WorklistDataGridWithRowSelection = () => {
     clearRowSelection();
   };
 
+  const onRowSelect = (rowIdsToSelect, rowIdsToUnselect) => {
+    if (rowIdsToUnselect) {
+      rows.forEach((r, index) => { if (rowIdsToUnselect.indexOf(r.id) >= 0) { rows[index].isSelected = false; } });
+    }
+
+    if (rowIdsToSelect) {
+      rows.forEach((r, index) => { if (rowIdsToSelect.indexOf(r.id) >= 0) { rows[index].isSelected = true; } });
+      setSelectedRows(rowIdsToSelect);
+    }
+  };
+
   return (
     <WorklistDataGrid
       id="default-terra-worklist-data-grid"
@@ -46,30 +57,7 @@ const WorklistDataGridWithRowSelection = () => {
       rowHeaderIndex={rowHeaderIndex}
       ariaLabel="Worklist Data Grid"
       hasSelectableRows={hasSelectableRows}
-      onRowSelect={(toggledRows) => {
-        toggledRows.forEach((toggledRow) => {
-          if (!toggledRow.isSelected) {
-            const row = rows.find(e => e.id === toggledRow.rowId);
-            row.isSelected = false;
-          }
-        });
-
-        toggledRows.forEach((toggledRow) => {
-          if (toggledRow.isSelected) {
-            const row = rows.find(e => e.id === toggledRow.rowId);
-            row.isSelected = true;
-          }
-        });
-
-        const rowIdsToSelect = [];
-        rows.forEach(element => {
-          if (element.isSelected) {
-            rowIdsToSelect.push(element.id);
-          }
-        });
-
-        setSelectedRows(determineSelectedRows(false, rowIdsToSelect));
-      }}
+      onRowSelect={onRowSelect}
       onRowSelectAll={() => {
         const newRows = [];
         rows.forEach(e => { e.isSelected = true; newRows.push(e.id); });

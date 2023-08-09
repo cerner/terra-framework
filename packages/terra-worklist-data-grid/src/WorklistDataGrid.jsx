@@ -92,7 +92,8 @@ const propTypes = {
 
   /**
    * Callback function that is called when a row is selected. Parameters:
-   * @param {string} rowId rowId
+   * @param {arrayOf(string)} rowIdsToSelect rowIdsToSelect
+   * @param {arrayOf(string)} rowIdsToUnselect rowIdsToUnselect
    */
   onRowSelect: PropTypes.func,
 
@@ -118,7 +119,7 @@ const propTypes = {
   onDisableSelectableRows: PropTypes.func,
 
   /**
-   * Callback function to enable row selection mode. Parameters: `function()`
+   * Callback function to enable row selection mode. Parameters: `none`
    */
   onEnableRowSelection: PropTypes.func,
   /**
@@ -203,7 +204,7 @@ function WorklistDataGrid(props) {
   const [focusedCol, setFocusedCol] = useState(0);
   const [ariaLiveMessage, setAriaLiveMessage] = useState(null);
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
-  const rowSelection = useRef({ isRowSelectionEnabledByGrid: false });
+  const rowSelection = useRef({ isRowSelectionModeToggledByGrid: false });
   const [currentSelectedCell, setCurrentSelectedCell] = useState(null);
 
   const theme = useContext(ThemeContext);
@@ -283,10 +284,10 @@ function WorklistDataGrid(props) {
     }
 
     // Since the row selection mode has changed, the row selection mode needs to be updated.
-    if (!rowSelection.current.isRowSelectionEnabledByGrid) {
+    if (!rowSelection.current.isRowSelectionModeToggledByGrid) {
       setAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' }));
     }
-    rowSelection.current.isRowSelectionEnabledByGrid = false;
+    rowSelection.current.isRowSelectionModeToggledByGrid = false;
 
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -364,8 +365,7 @@ function WorklistDataGrid(props) {
     const selectionEndRowIndex = Math.max(selectionData.anchorRow, newEndRowIndex);
 
     // We are subtracting 1 to accommodate for the column header in the grid.
-    const rowsToSelect = rows.slice(selectionStartRowIndex - 1, selectionEndRowIndex);
-    const rowIdsToSelect = rowsToSelect.map(r => ({ rowId: r.id, isSelected: true }));
+    const rowIdsToSelect = rows.slice(selectionStartRowIndex - 1, selectionEndRowIndex).map(row => row.id);
 
     // Determine if there are rows that are no longer in range that need to be unselected.
     let rowIdsToUnselect = [];
@@ -373,32 +373,28 @@ function WorklistDataGrid(props) {
       // The range extends upward from the anchor row
       if (newEndRowIndex > selectionData.previousSelectionEndRow) {
         // The range was moved down towards the anchor so rows that no longer qualify for the range need to be unselected.
-        const rowsToUnselect = rows.slice(selectionData.previousSelectionEndRow - 1, newEndRowIndex);
-        rowIdsToUnselect = rowsToUnselect.map(r => ({ rowId: r.id, isSelected: false }));
+        rowIdsToUnselect = rows.slice(selectionData.previousSelectionEndRow - 1, Math.min(newEndRowIndex, selectionData.anchorRow)).map(row => row.id);
       }
     } else if (selectionData.anchorRow < selectionData.previousSelectionEndRow) {
       // The range extends downward from the anchor row
       if (newEndRowIndex < selectionData.previousSelectionEndRow) {
-        // The range was moved up towards the anchor so rows that no longer qualify for the range need to be unselected       // New endRangeIndex becomes ordered End
-        const rowsToUnselect = rows.slice(newEndRowIndex - 1, selectionData.previousSelectionEndRow);
-        rowIdsToUnselect = rowsToUnselect.map(r => ({ rowId: r.id, isSelected: false }));
+        // The range was moved up towards the anchor so rows that no longer qualify for the range need to be unselected. New endRangeIndex becomes ordered End
+        rowIdsToUnselect = rows.slice(Math.max(selectionData.anchorRow, newEndRowIndex), selectionData.previousSelectionEndRow).map(row => row.id);
       }
     }
 
-    let ariaMessage = intl.formatMessage({
+    const ariaMessage = `${intl.formatMessage({
       id: hasSelectableRows
         ? 'Terra.worklist-data-grid.row-selection-multiple-rows-selected'
         : 'Terra.worklist-data-grid.row-selection-mode-enabled',
-    });
-
-    ariaMessage += intl.formatMessage({
+    })}. ${intl.formatMessage({
       id: rowIdsToSelect.length === 1
         ? 'Terra.worklist-data-grid.row-selection-template'
         : 'Terra.worklist-data-grid.row-selection-selected-rows-range',
-    }, { row: selectionData.anchorRow, endRow: newEndRowIndex });
+    }, { row: selectionData.anchorRow, endRow: newEndRowIndex })}`;
 
     setAriaLiveMessage(ariaMessage);
-    onRowSelect(rowIdsToSelect.concat(rowIdsToUnselect));
+    onRowSelect(rowIdsToSelect, rowIdsToUnselect);
   };
 
   const selectRows = (selectAllRows, rowId, rowIndex) => {
@@ -422,7 +418,11 @@ function WorklistDataGrid(props) {
     if (selectAllRows && onRowSelectAll) {
       onRowSelectAll();
     } else if (onRowSelect) {
-      onRowSelect([{ rowId, isSelected: isSelectAction }]);
+      if (isSelectAction) {
+        onRowSelect([rowId]);
+      } else {
+        onRowSelect(null, [rowId]);
+      }
     }
   };
 
@@ -502,7 +502,7 @@ function WorklistDataGrid(props) {
       }
     } else if (selectionDetails.selectedByKeyboard) {
       // Shift + Space
-      rowSelection.current.isRowSelectionEnabledByGrid = !hasSelectableRows;
+      rowSelection.current.isRowSelectionModeToggledByGrid = !hasSelectableRows;
       rowSelection.current.lastIndividuallySelectedRow = { anchorRow: selectionDetails.rowIndex };
       selectMultipleRows(selectionDetails.rowIndex, rowSelection.current.lastIndividuallySelectedRow);
       rowSelection.current.lastIndividuallySelectedRow.previousSelectionEndRow = selectionDetails.rowIndex;
@@ -621,7 +621,7 @@ function WorklistDataGrid(props) {
       } else if (nextRow <= 0) {
         nextRow = 1; // Only non-header rows can be selected.
       }
-      rowSelection.current.isRowSelectionEnabledByGrid = !hasSelectableRows;
+      rowSelection.current.isRowSelectionModeToggledByGrid = !hasSelectableRows;
       selectMultipleRows(nextRow, rowSelection.current.focussedRow);
       rowSelection.current.focussedRow.previousSelectionEndRow = nextRow;
     }

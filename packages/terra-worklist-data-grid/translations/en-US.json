@@ -10,7 +10,7 @@
   "Terra.worklist-data-grid.row-selection-mode-enabled": "Row Selection Mode enabled",
   "Terra.worklist-data-grid.row-selection-mode-disabled": "Row Selection Mode disabled",
   "Terra.worklist-data-grid.row-selection-multiple-rows-selected": "Multiple rows selected",
-  "Terra.worklist-data-grid.row-selection-selected-rows-range": " Currently selected rows range from row {row} to row {endRow}",
+  "Terra.worklist-data-grid.row-selection-selected-rows-range": "Currently selected rows range from row {row} to row {endRow}",
   "Terra.worklist-data-grid.all-rows-selected" : "All rows selected",
   "Terra.worklist-data-grid.all-rows-unselected" : "All rows unselected",
   "Terra.worklist-data-grid.row-index" : "Row {row}",

@@ -3,8 +3,6 @@
 ## Unreleased
 * Added
   * Added examples and tests for `terra-worklist-data-grid` to interact with cells containing focusable elements.
-
-* Added
   * Added example and tests for `terra-worklist-data-grid` to select rows via mouse and keyboard.
 
 * Updated

@@ -1,11 +1,8 @@
+@use './Mixins';
+
 // Themes
 @import '../orion-fusion-theme/Cell.module';
 @import '../clinical-lowlight-theme/Cell.module';
-
-@mixin terra-worklist-data-grid-selectable-hover {
-  background-color: var(--terra-worklist-data-grid-hover-background-color, #d8e5ed);
-  cursor: pointer;
-}
 
 :local {
   .worklist-data-grid-cell {
@@ -55,6 +52,6 @@
 
   // Hover state for selectable elements
   .selectable:hover {
-    @include terra-worklist-data-grid-selectable-hover;
+    @include Mixins.terra-worklist-data-grid-selectable-hover;
   }
 }

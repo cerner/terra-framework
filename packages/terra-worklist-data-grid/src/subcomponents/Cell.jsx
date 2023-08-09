@@ -150,7 +150,7 @@ function Cell(props) {
   const onMouseDown = useCallback((event) => {
     if (!isFocusTrapEnabled) {
       onCellSelect({
-        rowId, columnId, rowIndex, columnIndex, multiSelect: !!event.shiftKey, selectedByKeyboard: false,
+        rowId, columnId, rowIndex, columnIndex, multiSelect: event.shiftKey, selectedByKeyboard: false,
       });
     }
   }, [isFocusTrapEnabled, onCellSelect, rowId, columnId, rowIndex, columnIndex]);
