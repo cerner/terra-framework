@@ -8,6 +8,9 @@
 * Changed
   * Updated props description for `headerTitle` & `showHeader`.
 
+* Changed
+ * Locked `terra-arrange` to `3.51.0` temporarily.
+
 ## 6.74.1 - (August 4, 2023)
 
 * Changed
