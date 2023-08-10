@@ -44,7 +44,7 @@ const propTypes = {
   isDraggable: PropTypes.bool,
   /**
     * Callback function triggered when tab is drag and dropped .
-     */
+    */
   onTabOrderChange: PropTypes.func,
   /**
    * @private
@@ -107,7 +107,9 @@ const TabDropDown = ({
   };
 
   const handleDragUpdate = (update, provided) => {
-    provided.announce(intl.formatMessage({ id: 'Terra.tabs.drag' }, { startPosition: update.source.index, endPosition: update.destination.index }));
+    if (update.destination) {
+      provided.announce(intl.formatMessage({ id: 'Terra.tabs.drag' }, { startPosition: update.source.index, endPosition: update.destination.index }));
+    }
   };
 
   const theme = React.useContext(ThemeContext);

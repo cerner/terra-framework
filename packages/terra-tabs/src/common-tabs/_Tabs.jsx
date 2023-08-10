@@ -240,7 +240,9 @@ class Tabs extends React.Component {
   }
 
   handleDragUpdate(update, provided) {
-    provided.announce(this.props.intl.formatMessage({ id: 'Terra.tabs.drag' }, { startPosition: update.source.index, endPosition: update.destination.index }));
+    if (update.destination) {
+      provided.announce(this.props.intl.formatMessage({ id: 'Terra.tabs.drag' }, { startPosition: update.source.index, endPosition: update.destination.index }));
+    }
   }
 
   handleDragEnd(result, provided) {

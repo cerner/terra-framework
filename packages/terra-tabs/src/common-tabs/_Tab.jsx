@@ -207,12 +207,11 @@ const Tab = ({
             data-terra-tabs-show-focus-styles
             data-terra-tab-draggable
           >
-            <div>
-
-              <IconKnurling className={cx('icon-knurling')} />
+            <div className={variant === 'framework' ? cy('inner', 'draggable-inner') : cx('inner')}>
+              <IconKnurling />
               <VisuallyHiddenText aria-hidden id={responseId} text={onFocusResponse} />
               {customDisplay || icon}
-              {(!customDisplay && !isIconOnly) && <span className={cx('label')}>{label}</span>}
+              {(!customDisplay && !isIconOnly) && <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
             </div>
           </div>
         )}
