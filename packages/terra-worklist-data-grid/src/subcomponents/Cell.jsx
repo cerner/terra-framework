@@ -184,7 +184,7 @@ function Cell(props) {
         case KeyCode.KEY_SPACE:
           if (!isMasked && isSelectable && onCellSelect) {
             onCellSelect({
-              rowId, columnId, rowIndex, columnIndex, multiSelect: !!event.shiftKey, selectedByKeyboard: true,
+              rowId, columnId, rowIndex, columnIndex, multiSelect: event.shiftKey, selectedByKeyboard: true,
             });
           }
           event.preventDefault(); // prevent the default scrolling

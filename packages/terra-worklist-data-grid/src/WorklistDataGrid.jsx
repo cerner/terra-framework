@@ -279,8 +279,8 @@ function WorklistDataGrid(props) {
     }
 
     if (!hasSelectableRows) {
-      rowSelection.current.focussedRow = null;
-      rowSelection.current.lastIndividuallySelectedRow = null;
+      rowSelection.current.rangeUsingFocusedRow = null;
+      rowSelection.current.rangeUsingLastIndividuallySelectedRow = null;
     }
 
     // Since the row selection mode has changed, the row selection mode needs to be updated.
@@ -336,7 +336,7 @@ function WorklistDataGrid(props) {
 
   const handleClearRowSelection = () => {
     let message = '';
-    rowSelection.current.lastIndividuallySelectedRow = null;
+    rowSelection.current.rangeUsingLastIndividuallySelectedRow = null;
     if (isAnyRowSelected()) {
       message = intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-unselected' });
       // Esc (while in row selection mode and rows are selected): Clear selection
@@ -344,15 +344,15 @@ function WorklistDataGrid(props) {
         onClearSelectedRows();
       }
     } else if (onDisableSelectableRows) {
-      rowSelection.current.focussedRow = null;
+      rowSelection.current.rangeUsingFocusedRow = null;
       message = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-mode-disabled' });
       onDisableSelectableRows();
     }
     setAriaLiveMessage(message);
   };
 
-  const selectMultipleRows = (newEndRowIndex, selectionData) => {
-    if (!onRowSelect || !selectionData) {
+  const selectMultipleRows = (newEndRowIndex, rangeInfo) => {
+    if (!onRowSelect || !rangeInfo) {
       return;
     }
 
@@ -361,25 +361,25 @@ function WorklistDataGrid(props) {
     }
 
     // Rows in range to remain selected
-    const selectionStartRowIndex = Math.min(selectionData.anchorRow, newEndRowIndex);
-    const selectionEndRowIndex = Math.max(selectionData.anchorRow, newEndRowIndex);
+    const selectionStartRowIndex = Math.min(rangeInfo.anchorRow, newEndRowIndex);
+    const selectionEndRowIndex = Math.max(rangeInfo.anchorRow, newEndRowIndex);
 
     // We are subtracting 1 to accommodate for the column header in the grid.
     const rowIdsToSelect = rows.slice(selectionStartRowIndex - 1, selectionEndRowIndex).map(row => row.id);
 
     // Determine if there are rows that are no longer in range that need to be unselected.
     let rowIdsToUnselect = [];
-    if (selectionData.anchorRow > selectionData.previousSelectionEndRow) {
+    if (rangeInfo.anchorRow > rangeInfo.previousSelectionEndRow) {
       // The range extends upward from the anchor row
-      if (newEndRowIndex > selectionData.previousSelectionEndRow) {
+      if (newEndRowIndex > rangeInfo.previousSelectionEndRow) {
         // The range was moved down towards the anchor so rows that no longer qualify for the range need to be unselected.
-        rowIdsToUnselect = rows.slice(selectionData.previousSelectionEndRow - 1, Math.min(newEndRowIndex, selectionData.anchorRow)).map(row => row.id);
+        rowIdsToUnselect = rows.slice(rangeInfo.previousSelectionEndRow - 1, Math.min(newEndRowIndex, rangeInfo.anchorRow)).map(row => row.id);
       }
-    } else if (selectionData.anchorRow < selectionData.previousSelectionEndRow) {
+    } else if (rangeInfo.anchorRow < rangeInfo.previousSelectionEndRow) {
       // The range extends downward from the anchor row
-      if (newEndRowIndex < selectionData.previousSelectionEndRow) {
+      if (newEndRowIndex < rangeInfo.previousSelectionEndRow) {
         // The range was moved up towards the anchor so rows that no longer qualify for the range need to be unselected. New endRangeIndex becomes ordered End
-        rowIdsToUnselect = rows.slice(Math.max(selectionData.anchorRow, newEndRowIndex), selectionData.previousSelectionEndRow).map(row => row.id);
+        rowIdsToUnselect = rows.slice(Math.max(rangeInfo.anchorRow, newEndRowIndex), rangeInfo.previousSelectionEndRow).map(row => row.id);
       }
     }
 
@@ -391,7 +391,7 @@ function WorklistDataGrid(props) {
       id: rowIdsToSelect.length === 1
         ? 'Terra.worklist-data-grid.row-selection-template'
         : 'Terra.worklist-data-grid.row-selection-selected-rows-range',
-    }, { row: selectionData.anchorRow, endRow: newEndRowIndex })}`;
+    }, { row: rangeInfo.anchorRow, endRow: newEndRowIndex })}`;
 
     setAriaLiveMessage(ariaMessage);
     onRowSelect(rowIdsToSelect, rowIdsToUnselect);
@@ -402,11 +402,11 @@ function WorklistDataGrid(props) {
     let isSelectAction = true;
     let msgId = 'Terra.worklist-data-grid.all-rows-selected';
     // Reset last selected row when all rows are selected.
-    rowSelection.current.lastIndividuallySelectedRow = null;
+    rowSelection.current.rangeUsingLastIndividuallySelectedRow = null;
     if (!selectAllRows) {
       isSelectAction = !rows[rowIndex - 1].isSelected; // Determine if this is select or unselected.
       // Remember the last selected row
-      rowSelection.current.lastIndividuallySelectedRow = { anchorRow: rowIndex };
+      rowSelection.current.rangeUsingLastIndividuallySelectedRow = { anchorRow: rowIndex };
       if (isSelectAction) {
         msgId = 'Terra.worklist-data-grid.row-selection-template';
       } else {
@@ -421,7 +421,7 @@ function WorklistDataGrid(props) {
       if (isSelectAction) {
         onRowSelect([rowId]);
       } else {
-        onRowSelect(null, [rowId]);
+        onRowSelect([], [rowId]);
       }
     }
   };
@@ -483,7 +483,7 @@ function WorklistDataGrid(props) {
 
   const handleRowSelection = (selectionDetails) => {
     handleCellSelectionChange(null, null, { row: selectionDetails.rowIndex, col: selectionDetails.columnIndex });
-    const selectionData = selectionDetails.selectedByKeyboard ? rowSelection.current.lastIndividuallySelectedRow : rowSelection?.current?.focussedRow;
+    const rangeInfo = selectionDetails.selectedByKeyboard ? rowSelection.current.rangeUsingLastIndividuallySelectedRow : rowSelection?.current?.rangeUsingFocusedRow;
 
     if (!selectionDetails.multiSelect) {
       if (hasSelectableRows) {
@@ -492,10 +492,10 @@ function WorklistDataGrid(props) {
       }
     } else if (hasSelectableRows) {
       // Shift key is pressed
-      if (selectionData?.anchorRow) {
+      if (rangeInfo?.anchorRow) {
         // ACTION: select multiple rows based on anchor
-        selectMultipleRows(selectionDetails.rowIndex, selectionData);
-        selectionData.previousSelectionEndRow = selectionDetails.rowIndex;
+        selectMultipleRows(selectionDetails.rowIndex, rangeInfo);
+        rangeInfo.previousSelectionEndRow = selectionDetails.rowIndex;
       } else {
         // no anchor row
         selectRows(false, selectionDetails.rowId, selectionDetails.rowIndex);
@@ -503,13 +503,13 @@ function WorklistDataGrid(props) {
     } else if (selectionDetails.selectedByKeyboard) {
       // Shift + Space
       rowSelection.current.isRowSelectionModeToggledByGrid = !hasSelectableRows;
-      rowSelection.current.lastIndividuallySelectedRow = { anchorRow: selectionDetails.rowIndex };
-      selectMultipleRows(selectionDetails.rowIndex, rowSelection.current.lastIndividuallySelectedRow);
-      rowSelection.current.lastIndividuallySelectedRow.previousSelectionEndRow = selectionDetails.rowIndex;
+      rowSelection.current.rangeUsingLastIndividuallySelectedRow = { anchorRow: selectionDetails.rowIndex };
+      selectMultipleRows(selectionDetails.rowIndex, rowSelection.current.rangeUsingLastIndividuallySelectedRow);
+      rowSelection.current.rangeUsingLastIndividuallySelectedRow.previousSelectionEndRow = selectionDetails.rowIndex;
     } else {
       // Shift + Click
-      selectMultipleRows(selectionDetails.rowIndex, selectionData);
-      selectionData.previousSelectionEndRow = selectionDetails.rowIndex;
+      selectMultipleRows(selectionDetails.rowIndex, rangeInfo);
+      rangeInfo.previousSelectionEndRow = selectionDetails.rowIndex;
     }
   };
 
@@ -517,7 +517,7 @@ function WorklistDataGrid(props) {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_SHIFT:
-        rowSelection.current.focussedRow = null;
+        rowSelection.current.rangeUsingFocusedRow = null;
         break;
       default:
         break;
@@ -547,8 +547,8 @@ function WorklistDataGrid(props) {
         nextRow += 1;
         break;
       case KeyCode.KEY_SHIFT:
-        if (cellCoordinates.row !== 0 && !rowSelection?.current?.focussedRow?.anchorRow) {
-          rowSelection.current.focussedRow = { anchorRow: cellCoordinates.row, previousSelectionEndRow: cellCoordinates.row };
+        if (cellCoordinates.row !== 0 && !rowSelection?.current?.rangeUsingFocusedRow?.anchorRow) {
+          rowSelection.current.rangeUsingFocusedRow = { anchorRow: cellCoordinates.row, previousSelectionEndRow: cellCoordinates.row };
         }
         break;
       case KeyCode.KEY_LEFT:
@@ -622,8 +622,8 @@ function WorklistDataGrid(props) {
         nextRow = 1; // Only non-header rows can be selected.
       }
       rowSelection.current.isRowSelectionModeToggledByGrid = !hasSelectableRows;
-      selectMultipleRows(nextRow, rowSelection.current.focussedRow);
-      rowSelection.current.focussedRow.previousSelectionEndRow = nextRow;
+      selectMultipleRows(nextRow, rowSelection.current.rangeUsingFocusedRow);
+      rowSelection.current.rangeUsingFocusedRow.previousSelectionEndRow = nextRow;
     }
     // Handle the normal case
     if (nextRow > rows.length || nextCol >= displayedColumns.length) {
