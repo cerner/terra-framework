@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.32.0 - (August 10, 2023)
+
 * Updated
   * Updated terra-popup examples with inert attribute to demonstrate focus trap when using virtual cursor of Jaws for navigation within popup.
 
