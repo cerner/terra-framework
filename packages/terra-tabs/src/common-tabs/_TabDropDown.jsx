@@ -47,8 +47,9 @@ const propTypes = {
      */
   onTabOrderChange: PropTypes.func,
   /**
+   * @private
    * intl object programmatically imported through injectIntl from react-intl.
-   * */
+   */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 

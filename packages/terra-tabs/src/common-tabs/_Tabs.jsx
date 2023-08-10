@@ -68,8 +68,9 @@ const propTypes = {
    */
   onTabOrderChange: PropTypes.func,
   /**
+   * @private
    * intl object programmatically imported through injectIntl from react-intl.
-   * */
+   */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
@@ -127,14 +128,18 @@ class Tabs extends React.Component {
     }
 
     // Allow Active Styles to be applied when tab is selected.
-    if (prevTab.id !== currTab.id) {
+    if (prevTab && currTab && prevTab.id !== currTab.id) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState(prevArray => {
         const newArray = [...prevArray.visibleTabData];
         const prevTabData = newArray.find(tab => tab.id === prevTab.id);
         const currTabData = newArray.find(tab => tab.id === currTab.id);
-        prevTabData.isSelected = false;
-        currTabData.isSelected = true;
+        if (prevTabData) {
+          prevTabData.isSelected = false;
+        }
+        if (currTabData) {
+          currTabData.isSelected = true;
+        }
         return { visibleTabData: newArray };
       });
     }
