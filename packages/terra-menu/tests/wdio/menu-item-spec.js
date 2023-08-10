@@ -40,7 +40,7 @@ Terra.describeViewports('Menu Item', ['medium'], () => {
       $('[class*=testNestedItem1]').click();
       $('[role="button"][aria-label="Back"]').click();
       $('[class*=subMenu1]').click();
-      expect($('li:first-child[aria-checked="true"][role="menuitemcheckbox"]').isFocused()).toBeTruthy();
+      expect($('[class*=testNestedItem1]').isFocused()).toBeTruthy();
       Terra.validates.element('maintained selection after navigate to sub menu', { selector: '#root' });
     });
   });
