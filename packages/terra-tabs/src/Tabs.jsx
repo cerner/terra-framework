@@ -164,6 +164,12 @@ class Tabs extends React.Component {
       } else if (newValue.length === 0) {
         this.setState({ activeAfterClosed: '' });
       }
+
+      if (this.state.activeKey === itemKey) {
+        setTimeout(() => {
+          this.setState((prevState) => ({ activeKey: prevState.activeAfterClosed }));
+        }, 50);
+      }
       return this.props.onTabClose && this.props.onTabClose(newValue, itemKey, event);
     };
 
@@ -172,13 +178,6 @@ class Tabs extends React.Component {
         id={customProps.id}
         activeItemKey={this.state.activeKey}
         onRequestActivate={key => this.setState({ activeKey: key })}
-        onClosingkey={(key) => {
-          if (this.state.activeKey === key) {
-            setTimeout(() => {
-              this.setState((prevState) => ({ activeKey: prevState.activeAfterClosed }));
-            }, 100);
-          }
-        }}
         onClosingTab={handleTabsStateChange}
         onChange={onChange}
         variant="framework"

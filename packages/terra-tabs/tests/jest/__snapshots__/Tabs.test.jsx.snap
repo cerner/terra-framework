@@ -46,7 +46,6 @@ exports[`Tabs correctly applies the theme context className 1`] = `
       activeItemKey="default"
       isDraggable={false}
       onClosingTab={[Function]}
-      onClosingkey={[Function]}
       onRequestActivate={[Function]}
       variant="modular-left-aligned"
     >
@@ -83,7 +82,6 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                   "itemKey": "default",
                   "label": "Default",
                   "metaData": undefined,
-                  "onClose": [Function],
                   "onSelect": [Function],
                   "showIcon": false,
                 },
@@ -114,7 +112,6 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                   itemKey="default"
                   key="terra-common-tabs-default"
                   label="Default"
-                  onClose={[Function]}
                   onClosingTab={[Function]}
                   onSelect={[Function]}
                   setDropdownOpen={[Function]}
@@ -166,7 +163,6 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                     isSelected={true}
                     itemKey="default"
                     label="Default"
-                    onClose={[Function]}
                     onClosingTab={[Function]}
                     onSelect={[Function]}
                     setDropdownOpen={[Function]}
@@ -473,7 +469,6 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
     }
     isDraggable={false}
     onClosingTab={[Function]}
-    onClosingkey={[Function]}
     onRequestActivate={[Function]}
     variant="framework"
   >
@@ -510,7 +505,6 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                 "itemKey": "default",
                 "label": "Default",
                 "metaData": undefined,
-                "onClose": [Function],
                 "onSelect": [Function],
                 "showIcon": false,
               },
@@ -541,7 +535,6 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                 itemKey="default"
                 key="application-id-default"
                 label="Default"
-                onClose={[Function]}
                 onClosingTab={[Function]}
                 onSelect={[Function]}
                 setDropdownOpen={[Function]}
@@ -593,7 +586,6 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                   isSelected={true}
                   itemKey="default"
                   label="Default"
-                  onClose={[Function]}
                   onClosingTab={[Function]}
                   onSelect={[Function]}
                   setDropdownOpen={[Function]}
@@ -789,7 +781,6 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
             "itemKey": "default",
             "label": "Default",
             "metaData": undefined,
-            "onClose": [Function],
             "onSelect": [Function],
             "showIcon": false,
           },
@@ -855,7 +846,6 @@ exports[`Tabs should render a default component 1`] = `
             "itemKey": "default",
             "label": "Default",
             "metaData": undefined,
-            "onClose": [Function],
             "onSelect": [Function],
             "showIcon": false,
           },
@@ -922,7 +912,6 @@ exports[`Tabs should render a draggable tabs component 1`] = `
             "itemKey": "default",
             "label": "Default",
             "metaData": undefined,
-            "onClose": [Function],
             "onSelect": [Function],
             "showIcon": false,
           },
@@ -988,7 +977,6 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
             "itemKey": "default",
             "label": "Default",
             "metaData": undefined,
-            "onClose": [Function],
             "onSelect": [Function],
             "showIcon": false,
           },
@@ -1054,7 +1042,6 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
             "itemKey": "default",
             "label": "Default",
             "metaData": undefined,
-            "onClose": [Function],
             "onSelect": [Function],
             "showIcon": false,
           },
@@ -1156,7 +1143,6 @@ exports[`Tabs should render with add icon 1`] = `
     }
     isDraggable={false}
     onClosingTab={[Function]}
-    onClosingkey={[Function]}
     onRequestActivate={[Function]}
     onSelectAddButton={[MockFunction]}
     variant="framework"
@@ -1196,7 +1182,6 @@ exports[`Tabs should render with add icon 1`] = `
                 "itemKey": "default",
                 "label": "Default",
                 "metaData": undefined,
-                "onClose": [Function],
                 "onSelect": [Function],
                 "showIcon": false,
               },
@@ -1227,7 +1212,6 @@ exports[`Tabs should render with add icon 1`] = `
                 itemKey="default"
                 key="application-id-default"
                 label="Default"
-                onClose={[Function]}
                 onClosingTab={[Function]}
                 onSelect={[Function]}
                 setDropdownOpen={[Function]}
@@ -1280,7 +1264,6 @@ exports[`Tabs should render with add icon 1`] = `
                   isSelected={true}
                   itemKey="default"
                   label="Default"
-                  onClose={[Function]}
                   onClosingTab={[Function]}
                   onSelect={[Function]}
                   setDropdownOpen={[Function]}
@@ -1660,7 +1643,6 @@ exports[`Tabs should render with add icon 2`] = `
     }
     isDraggable={false}
     onClosingTab={[Function]}
-    onClosingkey={[Function]}
     onRequestActivate={[Function]}
     onSelectAddButton={[Function]}
     variant="framework"
@@ -1700,7 +1682,6 @@ exports[`Tabs should render with add icon 2`] = `
                 "itemKey": "default",
                 "label": "Default",
                 "metaData": undefined,
-                "onClose": [Function],
                 "onSelect": [Function],
                 "showIcon": false,
               },
@@ -1731,7 +1712,6 @@ exports[`Tabs should render with add icon 2`] = `
                 itemKey="default"
                 key="application-id-default"
                 label="Default"
-                onClose={[Function]}
                 onClosingTab={[Function]}
                 onSelect={[Function]}
                 setDropdownOpen={[Function]}
@@ -1784,7 +1764,6 @@ exports[`Tabs should render with add icon 2`] = `
                   isSelected={true}
                   itemKey="default"
                   label="Default"
-                  onClose={[Function]}
                   onClosingTab={[Function]}
                   onSelect={[Function]}
                   setDropdownOpen={[Function]}
@@ -2164,7 +2143,6 @@ exports[`Tabs should render with close icon 1`] = `
     isDraggable={false}
     isclosable={true}
     onClosingTab={[Function]}
-    onClosingkey={[Function]}
     onRequestActivate={[Function]}
     onTabClose={[MockFunction]}
     variant="framework"
@@ -2202,7 +2180,6 @@ exports[`Tabs should render with close icon 1`] = `
                 "itemKey": "default",
                 "label": "Default",
                 "metaData": undefined,
-                "onClose": [Function],
                 "onSelect": [Function],
                 "showIcon": false,
               },
@@ -2233,7 +2210,6 @@ exports[`Tabs should render with close icon 1`] = `
                 itemKey="default"
                 key="application-id-default"
                 label="Default"
-                onClose={[Function]}
                 onClosingTab={[Function]}
                 onSelect={[Function]}
                 setDropdownOpen={[Function]}
@@ -2285,7 +2261,6 @@ exports[`Tabs should render with close icon 1`] = `
                   isSelected={true}
                   itemKey="default"
                   label="Default"
-                  onClose={[Function]}
                   onClosingTab={[Function]}
                   onSelect={[Function]}
                   setDropdownOpen={[Function]}
@@ -2478,7 +2453,6 @@ exports[`Tabs should render with content filled when indicated 1`] = `
   }
   isDraggable={false}
   onClosingTab={[Function]}
-  onClosingkey={[Function]}
   onRequestActivate={[Function]}
   variant="framework"
 >
@@ -2527,7 +2501,6 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
   }
   isDraggable={false}
   onClosingTab={[Function]}
-  onClosingkey={[Function]}
   onRequestActivate={[Function]}
   variant="framework"
 >
@@ -2577,7 +2550,6 @@ exports[`Tabs should set custom props 1`] = `
   }
   isDraggable={false}
   onClosingTab={[Function]}
-  onClosingkey={[Function]}
   onRequestActivate={[Function]}
   variant="framework"
 >
@@ -2628,7 +2600,6 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
             "itemKey": "default",
             "label": "Default",
             "metaData": undefined,
-            "onClose": [Function],
             "onSelect": [Function],
             "showIcon": false,
           },

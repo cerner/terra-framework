@@ -143,10 +143,10 @@
   }
   
   .tabs-remove-button {
-    background-color: #fff;
+    background-color: var(--terra-tabs-close-tab-background-color, transparent);
     border: 0;
     border-radius: 0.5714rem;
-    color: #595f62;
+    color: var(--terra-tabs-remove-button-color, #595f62);
     cursor: pointer;
     display: inline-block;
     font-family: inherit;

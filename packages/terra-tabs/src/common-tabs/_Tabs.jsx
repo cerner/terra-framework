@@ -83,12 +83,6 @@ const propTypes = {
   isClosable: PropTypes.bool,
 
   /**
-   * Callback function when a tab is closed.
-   * It receives two parameters: 1. Item key of the closed tab. 2. MetaData associated with the closed tab.
-   */
-  onClose: PropTypes.func,
-
-  /**
    * Callback function to handle changes in the tab state.
    * It receives the updated tab data after a tab is closed.
    */
@@ -374,8 +368,8 @@ class Tabs extends React.Component {
     };
   }
 
-  wrapOnClose(onClose) {
-    return (itemKey, metaData, event) => {
+  wrapOnClose() {
+    return (itemKey, event) => {
       this.setIsOpen(false);
       let removedTabIndex = -1;
       const updatedTabData = this.state.visibleTabData
@@ -402,7 +396,6 @@ class Tabs extends React.Component {
       }
       this.props.onTabStateChange(updatedTabData, itemKey, event);
       this.setState({ visibleTabData: updatedTabData });
-      onClose(itemKey, metaData);
     };
   }
 
@@ -449,7 +442,7 @@ class Tabs extends React.Component {
             setDropdownOpen={this.handleHiddenFocus}
             hiddenStartIndex={this.hiddenStartIndex}
             showIcon={tab.showIcon}
-            onClosingTab={this.wrapOnClose(tab.onClose)}
+            onClosingTab={this.wrapOnClose()}
             isDraggable={isDraggable}
           />,
         );
@@ -466,7 +459,7 @@ class Tabs extends React.Component {
             onChange={onChange}
             icon={tab.icon}
             showIcon={tab.showIcon}
-            onClosingTab={this.wrapOnClose(tab.onClose)}
+            onClosingTab={this.wrapOnClose()}
             isDisabled={tab.isDisabled}
           />,
         );

@@ -60,10 +60,6 @@ const propTypes = {
    */
   ariaLabelAddTab: PropTypes.string,
   /**
-   * Callback function triggered when a tab is closing. It receives the itemKey associated with the closing tab.
-   */
-  onClosingkey: PropTypes.func.isRequired,
-  /**
    * Callback function when a tab is closing. It receives three parameters.
    */
   onClosingTab: PropTypes.func,
@@ -91,7 +87,6 @@ const CommonTabs = ({
   onChange,
   onSelectAddButton,
   ariaLabelAddTab,
-  onClosingkey,
   onClosingTab,
   isDraggable,
   onTabOrderChange,
@@ -114,7 +109,6 @@ const CommonTabs = ({
     metaData: child.props.metaData,
     isDisabled: child.props.isDisabled,
     showIcon: child.props.showIcon,
-    onClose: onClosingkey,
     isClosable: child.props.isClosable,
   }));
 
