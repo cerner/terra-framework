@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import WorklistDataGrid from 'terra-worklist-data-grid';
+import WorklistDataGridUtils from 'terra-worklist-data-grid/src/utils/WorklistDataGridUtils';
 
 const gridDataJSON = {
   cols: [
@@ -96,6 +97,13 @@ const RowSelection = () => {
     setHasSelectableRows(event.target.checked);
   };
 
+  const onColumnSelect = (columnId) => {
+    if (columnId === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id) {
+      // eslint-disable-next-line no-alert
+      alert('Row Selection Header Clicked');
+    }
+  };
+
   return (
     <React.Fragment>
       <div>
@@ -137,6 +145,7 @@ const RowSelection = () => {
         onDisableSelectableRows={() => {
           disableSelectableRows();
         }}
+        onColumnSelect={onColumnSelect}
       />
     </React.Fragment>
   );

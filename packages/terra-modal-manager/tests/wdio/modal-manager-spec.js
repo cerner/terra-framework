@@ -336,21 +336,18 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
       });
     });
 
-    describe('Modal Content Focus Shift Back', () => {
-      it('shifts focus to the last element in modal content when shifting back from the first element', () => {
+    describe('Outside Focus Handling Before Modal', () => {
+      it('shifts focus before modal', () => {
         $('#root-component .disclose-small').click();
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
-        browser.keys(['Tab']); // Shift tab focus onto modal content
-        expect($('[class*="slide-group"] #DemoContainer-1 .disclose').isFocused()).toEqual(true);
-        browser.keys(['Shift', 'Tab']); // Shift tab focus backward
-        expect($('#DemoContainer-1 .maximize').isFocused()).toEqual(true);
-        Terra.validates.element('focused shifted to last', { selector });
+        browser.keys(['Shift', 'Tab']); // Shift tab focus backward outside of modal
+        Terra.validates.element('focused shifted before modal', { selector });
         browser.keys('Escape');
       });
     });
 
-    describe('Modal Content Focus Shift Forward', () => {
-      it('shifts focus to the first element in modal content when shifting forward from the last element', () => {
+    describe('Outside Focus Handling After Modal', () => {
+      it('shifts focus after the modal', () => {
         $('#root-component .disclose-small').click();
         $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
         // eslint-disable-next-line prefer-arrow-callback
@@ -358,9 +355,8 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
           document.querySelector('#DemoContainer-1 .maximize').focus();
         });
         browser.keys(['Shift']); // Release shift key
-        browser.keys(['Tab']); // Shift tab focus forward
-        expect($('[class*="slide-group"] #DemoContainer-1 .disclose').isFocused()).toEqual(true);
-        Terra.validates.element('focused shifted back to first', { selector });
+        browser.keys(['Tab']); // Shift tab focus forward outside of modal
+        Terra.validates.element('focused shifted after modal', { selector });
         browser.keys('Escape');
       });
     });

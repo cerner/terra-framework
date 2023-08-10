@@ -348,7 +348,7 @@ function WorklistDataGrid(props) {
     setFocusedCol(cellCoordinates.col);
     setCurrentSelectedCell(null);
 
-    if (onColumnSelect && !(hasSelectableRows && cellCoordinates.col === 0)) {
+    if (onColumnSelect) {
       onColumnSelect(columnId);
     }
   };

@@ -4,7 +4,7 @@
 const ROW_SELECTION_COLUMN = {
   id: 'WorklistDataGrid-rowSelectionColumn',
   width: 40,
-  isSelectable: false,
+  isSelectable: true,
   isResizable: false,
 };
 

@@ -49,6 +49,7 @@ Cerner Corporation
 - Steven Mason [@smason0]
 - Alla Doroshkevych [@adoroshk]
 - Kol Kheang [@kolkheang]
+- Aaron Johnson [@zxeleven]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -99,3 +100,4 @@ Cerner Corporation
 [@smason0]: https://github.com/smason0
 [@adoroshk]: https://github.com/adoroshk
 [@kolkheang]: https://github.com/kolkheang
+[@zxeleven]: https://github.com/zxeleven
