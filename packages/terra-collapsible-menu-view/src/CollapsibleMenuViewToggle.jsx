@@ -81,8 +81,7 @@ class CollapsibleMenuViewToggle extends React.Component {
           {...customProps}
           text={text}
           isSelected={isSelected}
-          isSelectable={isSelectable}
-          isDisabled={isDisabled}
+          isDisabled={isDisabled || !isSelectable}
           onChange={onChange}
         />
       );
