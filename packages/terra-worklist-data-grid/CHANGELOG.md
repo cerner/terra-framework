@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.4.0 - (August 10, 2023)
+
 * Breaking Changes
   * Removed `columns` prop in favor of the new `pinnedColumns` and `overflowColumns` props.
 

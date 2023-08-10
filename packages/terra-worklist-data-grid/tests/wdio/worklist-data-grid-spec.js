@@ -1,4 +1,4 @@
-const selector = '#default-terra-worklist-data-grid';
+const defaultSelector = '#default-terra-worklist-data-grid';
 
 const moveCurrentPositionBy = (row, col) => browser.keys(
   new Array(Math.abs(row)).fill(row > 0 ? 'ArrowDown' : 'ArrowUp')
@@ -16,8 +16,8 @@ const rowSelectionNavigateToCell = (row, col) => {
   moveCurrentPositionBy(row > 0 ? row - 1 : 0, col);
 };
 
-const clickCell = (row, col) => {
-  browser.$$('#default-terra-worklist-data-grid tr')[row].$(`:nth-child(${col + 1})`).click();
+const clickCell = (row, col, selector) => {
+  browser.$$(`${selector} tr`)[row].$(`:nth-child(${col + 1})`).click();
 };
 
 Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
@@ -34,7 +34,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(1).fill('ArrowLeft')));
 
       browser.pause(150);
-      Terra.validates.element('arrow-key-navigation', { selector });
+      Terra.validates.element('arrow-key-navigation', { selector: defaultSelector });
     });
 
     it('validates that the up arrow key cannot navigate outside the grid', () => {
@@ -42,7 +42,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(3).fill('ArrowUp')));
 
       browser.pause(150);
-      Terra.validates.element('first-cell-in-grid-focused', { selector });
+      Terra.validates.element('first-cell-in-grid-focused', { selector: defaultSelector });
     });
 
     it('validates that the left arrow key cannot navigate outside the grid', () => {
@@ -50,7 +50,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(2).fill('ArrowLeft')));
 
       browser.pause(150);
-      Terra.validates.element('first-cell-in-grid-focused', { selector });
+      Terra.validates.element('first-cell-in-grid-focused', { selector: defaultSelector });
     });
 
     it('validates that Control + Home goes to first non-header cell', () => {
@@ -60,7 +60,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(['Control', 'Home', 'Control']));
 
       browser.pause(150);
-      Terra.validates.element('first-non-column-header-cell-focused', { selector });
+      Terra.validates.element('first-non-column-header-cell-focused', { selector: defaultSelector });
     });
 
     it('validates that the Home key goes to the first cell in current row', () => {
@@ -70,14 +70,14 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(['Home']));
 
       browser.pause(150);
-      Terra.validates.element('first-cell-in-row-focused', { selector });
+      Terra.validates.element('first-cell-in-row-focused', { selector: defaultSelector });
     });
 
     it('validates that the End key goes to the last cell in current row', () => {
       browser.keys(['Tab', 'ArrowDown', 'End']);
 
       browser.pause(150);
-      Terra.validates.element('last-cell-in-row-focused', { selector });
+      Terra.validates.element('last-cell-in-row-focused', { selector: defaultSelector });
     });
 
     it('validates that Control + End key goes to the last cell in the grid', () => {
@@ -85,7 +85,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(['Control', 'End', 'Control']));
 
       browser.pause(150);
-      Terra.validates.element('last-cell-in-last-row-focused', { selector });
+      Terra.validates.element('last-cell-in-last-row-focused', { selector: defaultSelector });
     });
 
     it('validates that the down arrow key cannot navigate outside the grid', () => {
@@ -94,7 +94,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(2).fill('ArrowDown')));
 
       browser.pause(150);
-      Terra.validates.element('last-cell-in-last-row-focused', { selector });
+      Terra.validates.element('last-cell-in-last-row-focused', { selector: defaultSelector });
     });
 
     it('validates that the right arrow key cannot navigate outside the grid', () => {
@@ -103,7 +103,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
         .concat(new Array(2).fill('ArrowRight')));
 
       browser.pause(150);
-      Terra.validates.element('last-cell-in-last-row-focused', { selector });
+      Terra.validates.element('last-cell-in-last-row-focused', { selector: defaultSelector });
     });
   });
 
@@ -116,14 +116,14 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       navigateToCell(1, 1);
       browser.keys(['Space']);
 
-      Terra.validates.element('selection-and-focus-on-1-1', { selector });
+      Terra.validates.element('selection-and-focus-on-1-1', { selector: defaultSelector });
     });
 
     it('validates that selecting an already selected cell has no effect', () => {
       navigateToCell(1, 1);
       browser.keys(['Space', 'Space']);
 
-      Terra.validates.element('selection-and-focus-on-1-1', { selector });
+      Terra.validates.element('selection-and-focus-on-1-1', { selector: defaultSelector });
     });
 
     it('validates that navigating the grid does not change the selected cell', () => {
@@ -131,7 +131,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.keys(['Space']);
       moveCurrentPositionBy(2, 0);
 
-      Terra.validates.element('selection-1-1-focus-3-1', { selector });
+      Terra.validates.element('selection-1-1-focus-3-1', { selector: defaultSelector });
     });
 
     it('validates that selecting another cell moves the selection and focus to current cell', () => {
@@ -140,34 +140,34 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       moveCurrentPositionBy(2, 0);
       browser.keys(['Space']);
 
-      Terra.validates.element('selection-3-1-focus-3-1', { selector });
+      Terra.validates.element('selection-3-1-focus-3-1', { selector: defaultSelector });
     });
 
     it('validates that clicking on a cell, moves selection and focus to that cell', () => {
-      clickCell(3, 1);
+      clickCell(3, 1, defaultSelector);
 
-      Terra.validates.element('selection-3-1-focus-3-1-with-hover', { selector });
+      Terra.validates.element('selection-3-1-focus-3-1-with-hover', { selector: defaultSelector });
     });
 
     it('validates that navigation does not change cell selected via mouse click', () => {
-      clickCell(3, 1);
+      clickCell(3, 1, defaultSelector);
       moveCurrentPositionBy(-2, -1);
 
-      Terra.validates.element('selection-3-1-focus-1-0', { selector });
+      Terra.validates.element('selection-3-1-focus-1-0', { selector: defaultSelector });
     });
 
     it('validates that mouse click moves selection and focus to clicked cell', () => {
-      clickCell(3, 1); // Selection and Focus is on (3,1)
-      clickCell(4, 2); // Selection and Focus should move to (4,2)
+      clickCell(3, 1, defaultSelector); // Selection and Focus is on (3,1)
+      clickCell(4, 2, defaultSelector); // Selection and Focus should move to (4,2)
 
-      Terra.validates.element('selection-4-2-focus-4-2', { selector });
+      Terra.validates.element('selection-4-2-focus-4-2', { selector: defaultSelector });
     });
 
     it('clears selection with Esc key', () => {
-      clickCell(3, 1);
+      clickCell(3, 1, defaultSelector);
       browser.keys(['Escape']);
 
-      Terra.validates.element('cell-3-1-focused', { selector });
+      Terra.validates.element('cell-3-1-focused', { selector: defaultSelector });
     });
   });
 
@@ -179,28 +179,28 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     it('verifies that first tab into grid focuses on the checkbox', () => {
       browser.keys(['Tab']);
 
-      Terra.validates.element('row-1-checkbox-focused-row-selection-mode', { selector });
+      Terra.validates.element('row-1-checkbox-focused-row-selection-mode', { selector: defaultSelector });
     });
 
     it('navigates to last cell with Control + End key', () => {
       rowSelectionNavigateToCell(4, 3);
       browser.keys(['Control', 'End', 'Control']);
 
-      Terra.validates.element('last-cell-focused-row-selection-mode', { selector });
+      Terra.validates.element('last-cell-focused-row-selection-mode', { selector: defaultSelector });
     });
 
     it('navigates to first non-header cell with Control + Home key', () => {
       rowSelectionNavigateToCell(4, 3);
       browser.keys(['Control', 'Home', 'Control']);
 
-      Terra.validates.element('row-1-checkbox-focused-row-selection-mode', { selector });
+      Terra.validates.element('row-1-checkbox-focused-row-selection-mode', { selector: defaultSelector });
     });
 
     it('selects the entire row with spacebar', () => {
       rowSelectionNavigateToCell(4, 3);
       browser.keys(['Space']);
 
-      Terra.validates.element('row-4-selected-row-selection-mode', { selector });
+      Terra.validates.element('row-4-selected-row-selection-mode', { selector: defaultSelector });
     });
 
     it('unselects an already selected row with spacebar', () => {
@@ -213,7 +213,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       moveCurrentPositionBy(-3, -2);
       browser.keys(['Space']); // unselect row 1
 
-      Terra.validates.element('row-4-selected-after-unselect-row-selection-mode', { selector });
+      Terra.validates.element('row-4-selected-after-unselect-row-selection-mode', { selector: defaultSelector });
     });
 
     it('can still navigate when a row is selected', () => {
@@ -221,14 +221,14 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.keys(['Space']); // Row 1 now selected
       moveCurrentPositionBy(3, 2); // Cell (4,5)
 
-      Terra.validates.element('row-1-selected-cell-4-5-focused-row-selection-mode', { selector });
+      Terra.validates.element('row-1-selected-cell-4-5-focused-row-selection-mode', { selector: defaultSelector });
     });
 
     it('selects all rows with Control + A', () => {
       rowSelectionNavigateToCell(3, 2);
       browser.keys(['Control', 'A', 'Control']);
 
-      Terra.validates.element('all-rows-selected-row-selection-mode', { selector });
+      Terra.validates.element('all-rows-selected-row-selection-mode', { selector: defaultSelector });
     });
 
     it('clears all selected rows with Esc', () => {
@@ -238,27 +238,27 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.keys(['Space']); // Row 2 selected
       browser.keys(['Escape']); // clear both selected rows
 
-      Terra.validates.element('no-rows-selected-row-selection-mode', { selector });
+      Terra.validates.element('no-rows-selected-row-selection-mode', { selector: defaultSelector });
     });
 
     it('clears row selection mode when no rows are selected', () => {
       rowSelectionNavigateToCell(4, 1);
       browser.keys(['Escape']); // clears row selection mode
 
-      Terra.validates.element('row-selection-mode-off-cell-4-1-focused', { selector });
+      Terra.validates.element('row-selection-mode-off-cell-4-1-focused', { selector: defaultSelector });
     });
 
     it('selects a row by clicking inside that row', () => {
-      clickCell(3, 1);
+      clickCell(3, 1, defaultSelector);
 
-      Terra.validates.element('row-3-selected-row-selection-mode', { selector });
+      Terra.validates.element('row-3-selected-row-selection-mode', { selector: defaultSelector });
     });
 
     it('unselects a selected row by clicking in that row', () => {
-      clickCell(3, 2);
-      clickCell(3, 4);
+      clickCell(3, 2, defaultSelector);
+      clickCell(3, 4, defaultSelector);
 
-      Terra.validates.element('no-rows-selected-after-click-row-selection-mode', { selector });
+      Terra.validates.element('no-rows-selected-after-click-row-selection-mode', { selector: defaultSelector });
     });
 
     it('hovers over selectable cell in worklist data grid', () => {
@@ -354,7 +354,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
 
     it('validates that a cell with a select element traps focus', () => {
-      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'Enter', 'ArrowRight']);
+      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'Enter', 'ArrowLeft']);
 
       Terra.validates.element('focusable-select-cell-trap-focus', { columnResizeSelector });
       expect(browser.$$('select:focus')).toBeElementsArrayOfSize(1);
@@ -365,6 +365,38 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
 
       Terra.validates.element('focusable-textarea-cell-trap-focus', { columnResizeSelector });
       expect(browser.$$('textarea:focus')).toBeElementsArrayOfSize(1);
+    });
+  });
+
+  describe('with pinned columns', () => {
+    const pinnedColumnsSelector = '#pinned-columns';
+    const pinnedColumnsWithRowSelectionSelector = '#pinned-columns-with-row-selection';
+
+    it('adds pinned columns', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+
+      Terra.validates.element('pinned-columns', { selector: pinnedColumnsSelector });
+    });
+
+    it('keeps pinned columns stickied when scrolling', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+      navigateToCell(2, 1);
+      moveCurrentPositionBy(0, 9);
+      Terra.validates.element('pinned-columns-scroll', { selector: pinnedColumnsSelector });
+    });
+
+    it('keeps row selection column stickied when scrolling', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns-with-row-selection');
+      navigateToCell(2, 1);
+      moveCurrentPositionBy(0, 9);
+      Terra.validates.element('pinned-columns-with-row-selection-scroll', { selector: pinnedColumnsWithRowSelectionSelector });
+    });
+
+    it('selects the whole row with pinned columns', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns-with-row-selection');
+
+      clickCell(2, 0, pinnedColumnsWithRowSelectionSelector);
+      Terra.validates.element('pinned-columns-with-row-selection-select', { selector: pinnedColumnsWithRowSelectionSelector });
     });
   });
 });
