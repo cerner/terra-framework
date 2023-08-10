@@ -12,6 +12,9 @@
 * Changed
  * Locked `terra-arrange` to `3.51.0` temporarily.
 
+* Added
+  * Updated tests for `terra-tabs` drag and drop in tab-menu.
+
 ## 1.31.0 - (August 4, 2023)
 
 * Added

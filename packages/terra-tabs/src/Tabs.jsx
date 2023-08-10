@@ -86,6 +86,17 @@ class Tabs extends React.Component {
     return TabUtils.initialSelectedTabKey(this.props.children, this.props.defaultActiveKey);
   }
 
+  componentDidUpdate() {
+    const tabKeys = [];
+    this.props.children.forEach(child => {
+      tabKeys.push(child.key);
+    });
+    if (tabKeys.indexOf(this.state.activeKey) === -1) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ activeKey: this.getInitialState() });
+    }
+  }
+
   render() {
     const {
       tabFill,

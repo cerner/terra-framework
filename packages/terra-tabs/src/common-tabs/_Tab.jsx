@@ -7,6 +7,7 @@ import { Draggable } from 'react-beautiful-dnd';
 import IconKnurling from 'terra-icon/lib/icon/IconKnurling';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { v4 as uuidv4 } from 'uuid';
+import { injectIntl } from 'react-intl';
 import {
   enableFocusStyles,
   disableFocusStyles,
@@ -97,6 +98,11 @@ const propTypes = {
    * Whether or not the tab is draggable.
    */
   isDraggable: PropTypes.bool,
+  /**
+   * @private
+   * intl object programmatically imported through injectIntl from react-intl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -125,6 +131,7 @@ const Tab = ({
   isDisabled,
   onChange,
   isDraggable,
+  intl,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -178,8 +185,7 @@ const Tab = ({
   attributes['aria-selected'] = isSelected;
   attributes.style = { zIndex };
 
-  // TBD: Add Translations
-  const onFocusResponse = 'Press Enter to activate a tab, or Press space bar to start a drag. When dragging you can use the arrow keys to move the item around, space bar to drop and escape to cancel. Ensure your screen reader is in focus mode or forms mode';
+  const onFocusResponse = intl.formatMessage({ id: 'Terra.tabs.focus' });
   const responseId = `terra-tab-pane-response=${uuidv4()}`;
 
   if (isDraggable) {
@@ -201,12 +207,11 @@ const Tab = ({
             data-terra-tabs-show-focus-styles
             data-terra-tab-draggable
           >
-            <div>
-
-              <IconKnurling className={cx('icon-knurling')} />
+            <div className={variant === 'framework' ? cy('inner', 'draggable-inner') : cx('inner')}>
+              <IconKnurling />
               <VisuallyHiddenText aria-hidden id={responseId} text={onFocusResponse} />
               {customDisplay || icon}
-              {(!customDisplay && !isIconOnly) && <span className={cx('label')}>{label}</span>}
+              {(!customDisplay && !isIconOnly) && <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
             </div>
           </div>
         )}
@@ -237,4 +242,4 @@ const Tab = ({
 Tab.propTypes = propTypes;
 Tab.defaultProps = defaultProps;
 
-export default Tab;
+export default injectIntl(Tab);
