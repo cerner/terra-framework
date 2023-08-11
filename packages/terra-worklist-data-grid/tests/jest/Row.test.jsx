@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import Row from '../../src/subcomponents/Row';
 import Cell from '../../src/subcomponents/Cell';
 
@@ -43,7 +41,7 @@ describe('Row', () => {
   it('creates a row with the correct number of cells', () => {
     const rowData = dataFile.rows[0];
 
-    const wrapper = shallowWithIntl(
+    const wrapper = shallow(
       <Row
         rowIndex={99}
         key={12}
@@ -87,7 +85,7 @@ describe('Row', () => {
 
     const rowData = dataFile.rows[rowIndex];
 
-    const wrapper = shallowWithIntl(
+    const wrapper = shallow(
       <Row
         rowIndex={rowIndex}
         key={rowIndex}

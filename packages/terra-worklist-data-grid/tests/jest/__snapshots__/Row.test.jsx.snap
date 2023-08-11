@@ -9,7 +9,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     }
   }
 >
-  <InjectIntl(Cell)
+  <Memo(InjectIntl(Cell))
     columnId="Column-0"
     columnIndex={0}
     height="25px"
@@ -21,8 +21,8 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     rowIndex={99}
   >
     Heart Rate Monitored (bpm)
-  </InjectIntl(Cell)>
-  <InjectIntl(Cell)
+  </Memo(InjectIntl(Cell))>
+  <Memo(InjectIntl(Cell))
     columnId="Column-1"
     columnIndex={1}
     height="25px"
@@ -33,7 +33,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     rowId="1"
     rowIndex={99}
   />
-  <InjectIntl(Cell)
+  <Memo(InjectIntl(Cell))
     columnId="Column-2"
     columnIndex={2}
     height="25px"
@@ -46,7 +46,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     rowIndex={99}
   >
     66
-  </InjectIntl(Cell)>
+  </Memo(InjectIntl(Cell))>
 </tr>
 `;
 
@@ -59,7 +59,7 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     }
   }
 >
-  <InjectIntl(Cell)
+  <Memo(InjectIntl(Cell))
     columnId="Column-0"
     columnIndex={0}
     height="25px"
@@ -71,8 +71,8 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     rowIndex={2}
   >
     Cardiac Index (L/min/m2)
-  </InjectIntl(Cell)>
-  <InjectIntl(Cell)
+  </Memo(InjectIntl(Cell))>
+  <Memo(InjectIntl(Cell))
     columnId="Column-1"
     columnIndex={1}
     height="25px"
@@ -84,8 +84,8 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     rowIndex={2}
   >
     2.25
-  </InjectIntl(Cell)>
-  <InjectIntl(Cell)
+  </Memo(InjectIntl(Cell))>
+  <Memo(InjectIntl(Cell))
     columnId="Column-2"
     columnIndex={2}
     height="25px"
@@ -98,6 +98,6 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     rowIndex={2}
   >
     2.28
-  </InjectIntl(Cell)>
+  </Memo(InjectIntl(Cell))>
 </tr>
 `;
