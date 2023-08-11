@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoreButton should render a more button with provided props and selection handling 1`] = `
+<IntlProvider
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <InjectIntl(MoreButton)
+    hiddenIndex={1}
+    onBlur={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Class {
+              "_dispatchInstances": null,
+              "_dispatchListeners": null,
+              "_targetInst": null,
+              "bubbles": null,
+              "cancelable": null,
+              "currentTarget": [Function],
+              "defaultPrevented": null,
+              "detail": null,
+              "dispatchConfig": null,
+              "eventPhase": null,
+              "isDefaultPrevented": [Function],
+              "isPropagationStopped": [Function],
+              "isTrusted": null,
+              "nativeEvent": null,
+              "relatedTarget": null,
+              "target": null,
+              "timeStamp": [Function],
+              "type": null,
+              "view": null,
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    onSelect={[MockFunction]}
+    tabIds={
+      Array [
+        "tab-1",
+        "tab-2",
+        "tab-3",
+      ]
+    }
+    zIndex={0}
+  >
+    <MoreButton
+      hiddenIndex={1}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      onBlur={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Class {
+                "_dispatchInstances": null,
+                "_dispatchListeners": null,
+                "_targetInst": null,
+                "bubbles": null,
+                "cancelable": null,
+                "currentTarget": [Function],
+                "defaultPrevented": null,
+                "detail": null,
+                "dispatchConfig": null,
+                "eventPhase": null,
+                "isDefaultPrevented": [Function],
+                "isPropagationStopped": [Function],
+                "isTrusted": null,
+                "nativeEvent": null,
+                "relatedTarget": null,
+                "target": null,
+                "timeStamp": [Function],
+                "type": null,
+                "view": null,
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+      onSelect={[MockFunction]}
+      tabIds={
+        Array [
+          "tab-1",
+          "tab-2",
+          "tab-3",
+        ]
+      }
+      zIndex={0}
+    >
+      <div
+        aria-hidden={true}
+        className="tab-menu"
+        data-testid="workspace-tabs-more-button"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          className="inner"
+        >
+          <div
+            className="icon"
+          >
+            <IconCaretDown
+              className=""
+              isBidi={true}
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <IconBase
+                className=""
+                focusable="false"
+                height="1em"
+                isBidi={true}
+                isSpin={false}
+                viewBox="0 0 48 48"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <svg
+                  className="tui-Icon icon is-bidi"
+                  focusable="false"
+                  height="1em"
+                  role="presentation"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M48 12L24 36 0 12h48z"
+                  />
+                </svg>
+              </IconBase>
+            </IconCaretDown>
+          </div>
+        </div>
+      </div>
+    </MoreButton>
+  </InjectIntl(MoreButton)>
+</IntlProvider>
+`;
