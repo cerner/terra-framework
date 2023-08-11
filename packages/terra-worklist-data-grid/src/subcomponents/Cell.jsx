@@ -173,8 +173,8 @@ function Cell(props) {
           }
           break;
         case KeyCode.KEY_SPACE:
-          if (!isMasked && isSelectable && onCellSelect) {
-            onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
+          if (onCellSelect) {
+            onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex }, (!isMasked && isSelectable));
           }
           event.preventDefault(); // prevent the default scrolling
           break;
