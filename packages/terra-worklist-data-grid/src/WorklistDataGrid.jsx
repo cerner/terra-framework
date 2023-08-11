@@ -1,7 +1,7 @@
 /* eslint-disable react/forbid-dom-props */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, {
-  useState, useContext, useRef, useCallback, useEffect,
+  useState, useContext, useRef, useCallback, useEffect, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -201,6 +201,9 @@ function WorklistDataGrid(props) {
 
   const [currentSelectedCell, setCurrentSelectedCell] = useState(null);
 
+  // Define ColumnContext Provider value object
+  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setCellAriaLiveMessage }), [pinnedColumnOffsets]);
+
   const theme = useContext(ThemeContext);
 
   // -------------------------------------
@@ -299,12 +302,12 @@ function WorklistDataGrid(props) {
 
   // -------------------------------------
 
-  const isAnyRowSelected = () => (
-    rows.find(r => r.isSelected === true)
+  const isRowSelected = () => (
+    rows.find(row => row.isSelected === true)
   );
 
   const handleClearRowSelection = () => {
-    if (isAnyRowSelected()) {
+    if (isRowSelected()) {
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-unselected' }));
       // Esc (while in row selection mode and rows are selected): Clear selection
       if (onClearSelectedRows) {
@@ -315,17 +318,6 @@ function WorklistDataGrid(props) {
       onDisableSelectableRows();
     }
   };
-
-  const selectRows = useCallback((rowId, rowIndex) => {
-    const rowSelectionMessageId = !rows[rowIndex - 1].isSelected ? 'Terra.worklist-data-grid.row-selection-template' : 'Terra.worklist-data-grid.row-selection-cleared-template';
-    const rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
-
-    setAriaLiveMessage(intl.formatMessage({ id: rowSelectionMessageId }, { row: rowLabel }));
-
-    if (onRowSelect) {
-      onRowSelect(rowId);
-    }
-  }, [intl, onRowSelect, rows]);
 
   const selectAllRows = () => {
     setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-selected' }));
@@ -339,7 +331,7 @@ function WorklistDataGrid(props) {
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
 
-  const handleColumnSelect = (columnId, cellCoordinates) => {
+  const handleColumnSelect = useCallback((columnId, cellCoordinates) => {
     if (!hasSelectableRows) {
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
     }
@@ -351,7 +343,7 @@ function WorklistDataGrid(props) {
     if (onColumnSelect) {
       onColumnSelect(columnId);
     }
-  };
+  }, [hasSelectableRows, intl, onColumnSelect]);
 
   const handleCellSelection = useCallback((cellRowIdColId, cellCoordinates, cellSelectable) => {
     if (!hasSelectableRows) {
@@ -369,16 +361,19 @@ function WorklistDataGrid(props) {
   }, [hasSelectableRows, intl, onCellSelect]);
 
   const handleRowSelection = useCallback((rowId, rowIndex, selectedCellCoordinates) => {
-    if (!hasSelectableRows) {
-      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
-    }
+    const rowSelectionMessageId = !rows[rowIndex - 1].isSelected ? 'Terra.worklist-data-grid.row-selection-template' : 'Terra.worklist-data-grid.row-selection-cleared-template';
+    const rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
+
+    setAriaLiveMessage(intl.formatMessage({ id: rowSelectionMessageId }, { row: rowLabel }));
 
     setFocusedRow(selectedCellCoordinates.row);
     setFocusedCol(selectedCellCoordinates.col);
     setCurrentSelectedCell(null);
 
-    selectRows(rowId, rowIndex);
-  }, [hasSelectableRows, intl, selectRows]);
+    if (onRowSelect) {
+      onRowSelect(rowId);
+    }
+  }, [intl, onRowSelect, rows]);
 
   // -------------------------------------
   // event handlers
@@ -571,7 +566,6 @@ function WorklistDataGrid(props) {
       rowHeaderIndex={rowHeaderIndex}
       onCellSelect={handleCellSelection}
       onRowSelect={handleRowSelection}
-      activeColumnIndex={focusedRow === rowIndex ? focusedCol : undefined}
       selectedCellColumnId={(currentSelectedCell?.rowId === row.id) ? currentSelectedCell?.columnId : undefined}
     />
   );
@@ -583,7 +577,6 @@ function WorklistDataGrid(props) {
   };
 
   // -------------------------------------
-
   return (
     <div className={cx('worklist-data-grid-container')}>
       <table
@@ -599,7 +592,7 @@ function WorklistDataGrid(props) {
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
         <ColumnContext.Provider
-          value={{ pinnedColumnOffsets, setCellAriaLiveMessage }}
+          value={columnContextValue}
         >
           <ColumnHeader
             columns={dataGridColumns}
