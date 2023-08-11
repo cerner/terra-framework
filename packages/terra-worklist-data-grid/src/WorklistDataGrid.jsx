@@ -316,7 +316,7 @@ function WorklistDataGrid(props) {
     }
   };
 
-  const selectRows = (rowId, rowIndex) => {
+  const selectRows = useCallback((rowId, rowIndex) => {
     const rowSelectionMessageId = !rows[rowIndex - 1].isSelected ? 'Terra.worklist-data-grid.row-selection-template' : 'Terra.worklist-data-grid.row-selection-cleared-template';
     const rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
 
@@ -325,7 +325,7 @@ function WorklistDataGrid(props) {
     if (onRowSelect) {
       onRowSelect(rowId);
     }
-  };
+  }, [intl, onRowSelect, rows]);
 
   const selectAllRows = () => {
     setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-selected' }));
@@ -353,7 +353,7 @@ function WorklistDataGrid(props) {
     }
   };
 
-  const handleCellSelection = (cellRowIdColId, cellCoordinates, cellSelectable) => {
+  const handleCellSelection = useCallback((cellRowIdColId, cellCoordinates, cellSelectable) => {
     if (!hasSelectableRows) {
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-template' },
         { row: cellCoordinates.row + 1, column: cellCoordinates.col + 1 }));
@@ -366,9 +366,9 @@ function WorklistDataGrid(props) {
     if (cellSelectable && onCellSelect) {
       onCellSelect(cellRowIdColId.rowId, cellRowIdColId.columnId);
     }
-  };
+  }, [hasSelectableRows, intl, onCellSelect]);
 
-  const handleRowSelection = (rowId, rowIndex, selectedCellCoordinates) => {
+  const handleRowSelection = useCallback((rowId, rowIndex, selectedCellCoordinates) => {
     if (!hasSelectableRows) {
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
     }
@@ -378,7 +378,7 @@ function WorklistDataGrid(props) {
     setCurrentSelectedCell(null);
 
     selectRows(rowId, rowIndex);
-  };
+  }, [hasSelectableRows, intl, selectRows]);
 
   // -------------------------------------
   // event handlers

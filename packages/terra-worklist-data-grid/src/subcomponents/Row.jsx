@@ -165,4 +165,4 @@ function Row(props) {
 Row.propTypes = propTypes;
 Row.defaultProps = defaultProps;
 
-export default Row;
+export default React.memo(Row);

@@ -88,4 +88,4 @@ function RowSelectionCell(props) {
 
 RowSelectionCell.propTypes = propTypes;
 
-export default injectIntl(RowSelectionCell);
+export default React.memo(injectIntl(RowSelectionCell));
