@@ -1,26 +1,26 @@
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import Pane from '../../src/TabPane';
 
 describe('TabPane', () => {
   it('should render a default component with label', () => {
-    const wrapper = shallowWithIntl(<Pane label="Default" />).dive();
+    const wrapper = shallowWithIntl(<Pane label="Default" />).dive().dive();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with icon and label', () => {
-    const wrapper = shallowWithIntl(<Pane label="Label" icon={<div>Fake icon</div>} />).dive();
+    const wrapper = shallowWithIntl(<Pane label="Label" icon={<div>Fake icon</div>} />).dive().dive();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with icon only when indicated', () => {
-    const wrapper = shallowWithIntl(<Pane label="Label" icon={<div>Fake icon</div>} isIconOnly />).dive();
+    const wrapper = shallowWithIntl(<Pane label="Label" icon={<div>Fake icon</div>} isIconOnly />).dive().dive();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with a custom display when provided', () => {
-    const wrapper = shallowWithIntl(<Pane label="Label" customDisplay={<div>Custom Display</div>} />).dive();
+    const wrapper = shallowWithIntl(<Pane label="Label" customDisplay={<div>Custom Display</div>} />).dive().dive();
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -29,7 +29,7 @@ describe('TabPane', () => {
       .mockReturnValue({
         className: 'orion-fusion-theme',
       });
-    const wrapper = shallowWithIntl(<Pane label="Default" className="customClass" />).dive();
+    const wrapper = shallowWithIntl(<Pane label="Default" className="customClass" />).dive().dive();
     expect(wrapper).toMatchSnapshot();
   });
 });

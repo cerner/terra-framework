@@ -8,6 +8,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import { v4 as uuid } from 'uuid';
 import IconAdd from 'terra-icon/lib/icon/IconAdd';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import { injectIntl } from 'react-intl';
 import AddButton from './_AddButton';
 import MoreButton from './_MoreButton';
 import TabDropDown from './_TabDropDown';
@@ -95,6 +96,11 @@ const propTypes = {
   * Callback function triggered when tab is drag and dropped .
   */
   onTabOrderChange: PropTypes.func,
+  /**
+   * @private
+   * intl object programmatically imported through injectIntl from react-intl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 class Tabs extends React.Component {
@@ -123,6 +129,8 @@ class Tabs extends React.Component {
     this.positionDropDown = this.positionDropDown.bind(this);
     this.handleDragEnd = this.handleDragEnd.bind(this);
     this.handleDragStart = this.handleDragStart.bind(this);
+    this.handleTabOrderChange = this.handleTabOrderChange.bind(this);
+    this.handleDragUpdate = this.handleDragUpdate.bind(this);
     this.reorder = this.reorder.bind(this);
     this.resetCache();
     this.state = {
@@ -162,8 +170,12 @@ class Tabs extends React.Component {
         const newArray = [...prevArray.visibleTabData];
         const prevTabData = newArray.find(tab => tab.id === prevTab.id);
         const currTabData = newArray.find(tab => tab.id === currTab.id);
-        prevTabData.isSelected = false;
-        currTabData.isSelected = true;
+        if (prevTabData) {
+          prevTabData.isSelected = false;
+        }
+        if (currTabData) {
+          currTabData.isSelected = true;
+        }
         return { visibleTabData: newArray };
       });
     }
@@ -263,18 +275,44 @@ class Tabs extends React.Component {
     this.setIsOpen(false);
   }
 
-  handleDragStart() {
+  handleDragStart(start, provided) {
+    provided.announce(this.props.intl.formatMessage({ id: 'Terra.tabs.lift' }, { startPosition: start.source.index }));
     const tablist = document.querySelectorAll('[data-terra-drag-focus="true"]');
     tablist.forEach((list) => {
       list.setAttribute('data-terra-drag-focus', 'false');
     });
   }
 
-  handleDragEnd(result) {
+  handleDragUpdate(update, provided) {
+    if (update.destination) {
+      provided.announce(this.props.intl.formatMessage({ id: 'Terra.tabs.drag' }, { startPosition: update.source.index, endPosition: update.destination.index }));
+    }
+  }
+
+  handleDragEnd(result, provided) {
+    if (!result.destination) {
+      provided.announce(this.props.intl.formatMessage({ id: 'Terra.tabs.cancelDrag' }, { startPosition: result.source.index }));
+      return;
+    }
     const tablist = document.querySelectorAll('[data-terra-drag-focus="false"]');
     tablist.forEach((list) => {
       list.setAttribute('data-terra-drag-focus', 'true');
     });
+    this.setState((prevState) => {
+      const items = this.reorder(
+        prevState.visibleTabData,
+        result.source.index,
+        result.destination.index,
+      );
+      return { visibleTabData: items };
+    });
+    provided.announce(this.props.intl.formatMessage({ id: 'Terra.tabs.drop' }, { startPosition: result.source.index, endPosition: result.destination.index }));
+    if (this.props.onTabOrderChange) {
+      this.props.onTabOrderChange(result);
+    }
+  }
+
+  handleTabOrderChange(result) {
     if (!result.destination) {
       return;
     }
@@ -461,6 +499,7 @@ class Tabs extends React.Component {
             showIcon={tab.showIcon}
             onClosingTab={this.wrapOnClose()}
             isDisabled={tab.isDisabled}
+            isDraggable={isDraggable}
           />,
         );
         hiddenIds.push(tab.id);
@@ -508,7 +547,7 @@ class Tabs extends React.Component {
 
     if (isDraggable) {
       return (
-        <DragDropContext onDragStart={this.handleDragStart} onDragEnd={this.handleDragEnd}>
+        <DragDropContext onDragStart={this.handleDragStart} onDragUpdate={this.handleDragUpdate} onDragEnd={this.handleDragEnd}>
           <Droppable className={commonTabsClassNames} droppableId="tab-list" direction="horizontal">
             {(provided) => (
               <div className={commonTabsContainerClassNames}>
@@ -627,4 +666,4 @@ class Tabs extends React.Component {
 Tabs.propTypes = propTypes;
 Tabs.contextType = ThemeContext;
 
-export default Tabs;
+export default injectIntl(Tabs);

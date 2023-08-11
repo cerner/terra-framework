@@ -65,7 +65,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
           className="tab-header"
           role="none"
         >
-          <Tabs
+          <InjectIntl(Tabs)
             isDraggable={false}
             onTabStateChange={[Function]}
             tabData={
@@ -763,7 +763,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
     className="tab-header"
     role="none"
   >
-    <Tabs
+    <InjectIntl(Tabs)
       isDraggable={false}
       onChange={[Function]}
       onTabStateChange={[Function]}
@@ -829,7 +829,7 @@ exports[`Tabs should render a default component 1`] = `
     className="tab-header"
     role="none"
   >
-    <Tabs
+    <InjectIntl(Tabs)
       isDraggable={false}
       onTabStateChange={[Function]}
       tabData={
@@ -894,7 +894,7 @@ exports[`Tabs should render a draggable tabs component 1`] = `
     className="tab-header"
     role="none"
   >
-    <Tabs
+    <InjectIntl(Tabs)
       isDraggable={true}
       onTabOrderChange={[MockFunction]}
       onTabStateChange={[Function]}
@@ -960,7 +960,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
     className="tab-header"
     role="none"
   >
-    <Tabs
+    <InjectIntl(Tabs)
       isDraggable={false}
       onTabStateChange={[Function]}
       tabData={
@@ -1025,7 +1025,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
     className="tab-header"
     role="none"
   >
-    <Tabs
+    <InjectIntl(Tabs)
       isDraggable={false}
       onTabStateChange={[Function]}
       tabData={
@@ -2583,7 +2583,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
     className="tab-header"
     role="none"
   >
-    <Tabs
+    <InjectIntl(Tabs)
       isDraggable={false}
       onTabStateChange={[Function]}
       tabData={

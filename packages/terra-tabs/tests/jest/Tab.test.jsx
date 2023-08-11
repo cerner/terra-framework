@@ -1,5 +1,5 @@
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import Tab from '../../src/common-tabs/_Tab';
 

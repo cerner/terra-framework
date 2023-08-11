@@ -6,6 +6,12 @@
   * Added `isClosable` and `onTabClose` props to support close functionality in tabs.
   * Added `onSelectAddButton` and `ariaLabelAddTab` props to support Add functionality in tabs.
 
+## 7.4.0 - (August 10, 2023)
+
+* Changed
+   * Added drag and drop to tab menu and internationalization support for the same.
+   * Updated styles for tab content panel.
+
 ## 7.3.1 - (August 4, 2023)
 
 * Changed

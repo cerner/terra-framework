@@ -106,9 +106,17 @@ class Tabs extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    const tabKeys = [];
+    this.props.children.forEach(child => {
+      tabKeys.push(child.key);
+    });
     if (this.props.activeKey !== prevProps.activeKey) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ activeKey: this.props.activeKey });
+    }
+    if (tabKeys.indexOf(this.state.activeKey) === -1) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ activeKey: this.getInitialState() });
     }
   }
 

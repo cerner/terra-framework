@@ -4,5 +4,10 @@
   "Terra.tabs.hint.hiddenTabs": "{hiddenTabs} items worden niet weergegeven",
   "Terra.tabs.hint.tabMenu": "{hiddenTabs} items zijn verborgen. Selecteer om {hiddenTabs} verborgen items weer te geven",
   "Terra.tabs.hint.removable":"kan verwijderd worden via de toets Delete of de toets Backspace",
-  "Terra.tabs.hint.currentTabClosed":" verwijderd"
+  "Terra.tabs.hint.currentTabClosed":" verwijderd",
+  "Terra.tabs.lift": "U heeft een tabblad op positie {startPosition} geselecteerd voor verplaatsing. Gebruik de pijltoetsen om het tabblad naar een nieuwe positie te slepen. U kunt het tabblad niet voorbij de eerste of laatste positie slepen. Druk op de spatiebalk om het tabblad neer te zetten of op Escape om te annuleren.",
+  "Terra.tabs.drag": "U heeft het tabblad van positie {startPosition} naar positie {endPosition} verplaatst",
+  "Terra.tabs.cancelDrag": "Verplaatsing geannuleerd. Het tabblad is teruggezet naar startpositie {startPosition}",
+  "Terra.tabs.drop": "U heeft het tabblad neergezet. Het tabblad is verplaatst van positie {startPosition} naar {endPosition}.",
+  "Terra.tabs.focus": "Druk op Enter om een tabblad te activeren of druk op de spatiebalk om een sleepactie te starten. Zorg dat de schermlezer in de focus- of formulierenmodus is."
 }

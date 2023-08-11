@@ -4,5 +4,10 @@
   "Terra.tabs.hint.hiddenTabs": "{hiddenTabs} objekt visas inte",
   "Terra.tabs.hint.tabMenu": "{hiddenTabs} objekt är dolda. Välj för att visa {hiddenTabs} dolda objekt",
   "Terra.tabs.hint.removable":"objektet kan tas bort med Delete-tangenten eller Backstegstangenten",
-  "Terra.tabs.hint.currentTabClosed":" har tagits bort"
+  "Terra.tabs.hint.currentTabClosed":" har tagits bort",
+  "Terra.tabs.lift": "Du har lyft en flik på plats {startPosition}. Använd piltangenterna för att dra fliken till en ny plats. Du kan inte flytta fliken förbi första eller sista platsen. Tryck på blankstegstangenten för att släppa fliken eller Esc-tangenten för att avbryta.",
+  "Terra.tabs.drag": "Du har flyttat fliken från platsen {startPosition} till platsen {endPosition}",
+  "Terra.tabs.cancelDrag": "Förflyttning avbröts. Fliken har återgått till startplatsen {startPosition}",
+  "Terra.tabs.drop": "Du har tappat fliken. Den har flyttats från platsen {startPosition} till {endPosition}",
+  "Terra.tabs.focus": "Tryck på Retur-tangenten för att aktivera en flik eller tryck på blankstegstangenten för att börja dra. Säkerställ att din skärmläsare är i fokusläge eller formulärläge"
 }
