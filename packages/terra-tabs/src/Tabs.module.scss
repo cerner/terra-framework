@@ -61,7 +61,7 @@
     &[data-terra-tabs-show-focus-styles='true']:focus {
       box-shadow: var(--terra-tabs-focus-box-shadow, none);
       outline: var(--terra-tabs-focus-outline, 2px dashed #000);
-      outline-offset: var(--terra-tabs-focus-outline-offset, -5px);
+      outline-offset: var(--terra-tabs-focus-outline-offset, -2px);
     }
 
     &.is-icon-only {

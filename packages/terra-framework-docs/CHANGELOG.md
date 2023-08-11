@@ -2,12 +2,23 @@
 
 ## Unreleased
 
+## 1.32.0 - (August 10, 2023)
+
 * Updated
   * Updated terra-popup examples with inert attribute to demonstrate focus trap when using virtual cursor of Jaws for navigation within popup.
+ 
+* Added
+  * Added tests for `terra-worklist-data-grid` when using pinned columns.
 
 * Changed
   * Updated toggle examples for `terra-collapsible-menu-view` to include selectable toggles and toggles within a collapsed menu.
   * Updated row selection example for `terra-worklist-data-grid` to show ability to select the row selection column header.
+
+* Changed
+ * Locked `terra-arrange` to `3.51.0` temporarily.
+
+* Added
+  * Updated tests for `terra-tabs` drag and drop in tab-menu.
 
 ## 1.31.0 - (August 4, 2023)
 

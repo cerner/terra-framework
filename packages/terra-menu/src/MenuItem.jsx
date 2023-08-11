@@ -294,11 +294,25 @@ class MenuItem extends React.Component {
     ]);
 
     let content = textContainer;
+    let navigationContent;
+    let ariaLiveValue = 'polite';
+
+    if (this.itemNode && index === 0 && totalItems !== 1) {
+      navigationContent = `. ${intl.formatMessage({ id: 'Terra.menu.navigateMenuItem' })}`;
+      if (!MenuUtils.isMac() && this.itemNode.parentNode.getAttribute('data-submenu') !== 'true') {
+        navigationContent = '';
+      }
+    }
+
+    if (isGroupItem && !markAsToggled) {
+      ariaLiveValue = undefined;
+    }
 
     const screenReaderResponse = (
       <>
         { MenuUtils.isMac() && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.index' }, { index: index + 1, totalItems })} /> }
-        { MenuUtils.isMac() && (isGroupItem || toggleable) && <VisuallyHiddenText text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
+        {(isGroupItem || toggleable) && <VisuallyHiddenText aria-live={ariaLiveValue} text={markAsToggled ? intl.formatMessage({ id: 'Terra.menu.selected' }) : intl.formatMessage({ id: 'Terra.menu.unselected' })} /> }
+        <VisuallyHiddenText text={navigationContent} />
         {/* Adds context for item with submenu-items */}
         { subMenuItems.length > 0 && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.menu.itemWithSubmenu' })} /> }
         {/* Adds context for navigating back to parent menu from submenu */}
@@ -344,12 +358,12 @@ class MenuItem extends React.Component {
     }
 
     let role = 'menuitem';
-    if (isGroupItem) {
+    const isMacOs = MenuUtils.isMac();
+    if (isGroupItem && isMacOs) {
       role = 'menuitemradio';
-    } else if (toggleable) {
+    } else if (toggleable && isMacOs) {
       role = 'menuitemcheckbox';
     }
-
     /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
     return (
@@ -360,7 +374,7 @@ class MenuItem extends React.Component {
             className={classNames(itemClassNames, cx(theme.className))}
             ref={this.setItemNode}
             role={role}
-            aria-checked={markAsToggled}
+            aria-selected={(isMacOs && toggleable) ? markAsToggled : undefined}
             tabIndex="0"
             aria-disabled={isDisabled}
           >
