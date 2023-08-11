@@ -348,13 +348,12 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('hover-non-selectable-cell', '#terra-worklist-data-grid-with-selections');
     });
 
-    // Shift + Space
     it('enables row selection mode by Shift+Space when turned off', () => {
       browser.keys(['Tab', 'Escape']);
       rowSelectionNavigateToCell(3, 0);
       browser.keys(['Shift', 'Space', 'Shift']);
 
-      Terra.validates.element('row-3-selected-without-hover-row-selection-mode', { selector });
+      Terra.validates.element('row-3-selected-without-hover-row-selection-mode', '#default-terra-worklist-data-grid');
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
@@ -404,7 +403,6 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    // Shift + Up/Down
     it('enables row selection mode by Shift+Up when turned off', () => {
       browser.keys(['Tab', 'Escape']);
       rowSelectionNavigateToCell(3, 2);
@@ -441,7 +439,6 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    // Shift + Click
     it('enables row selection mode by Shift+Click when turned off', () => {
       browser.keys(['Tab', 'Escape']);
       clickCell(3, 3);
