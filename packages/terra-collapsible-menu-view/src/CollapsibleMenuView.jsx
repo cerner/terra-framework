@@ -182,6 +182,7 @@ class CollapsibleMenuView extends React.Component {
         <div className={menuButtonClassName} ref={this.setMenuButton}>
           <CollapsibleMenuViewItem
             data-collapsible-menu-toggle
+            aria-haspopup="dialog"
             icon={<span className={cx('menu-button-icon')} />}
             subMenuItems={hiddenChildren}
             boundingRef={boundingRef}
