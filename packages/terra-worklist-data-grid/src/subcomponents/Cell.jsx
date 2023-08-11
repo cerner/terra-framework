@@ -132,7 +132,7 @@ function Cell(props) {
   /**
    * Handles click event for cell
    */
-  const onClick = () => {
+  const onMouseDown = () => {
     if (!isFocusTrapEnabled) {
       onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex }, (!isMasked && isSelectable));
     }
@@ -225,7 +225,7 @@ function Cell(props) {
       tabIndex={-1}
       className={className}
       {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
-      onMouseDown={onCellSelect ? onClick : undefined}
+      onMouseDown={onCellSelect ? onMouseDown : undefined}
       onKeyDown={handleKeyDown}
       style={{ left: cellLeftEdge }} // eslint-disable-line react/forbid-component-props
     >
