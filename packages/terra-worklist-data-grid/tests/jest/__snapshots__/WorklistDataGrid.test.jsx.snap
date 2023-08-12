@@ -245,6 +245,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
         id="test-terra-worklist-data-grid"
         onFocus={[Function]}
         onKeyDown={[Function]}
+        onMouseDown={[Function]}
         role="grid"
         tabIndex={0}
       >
@@ -2288,6 +2289,7 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
     id="test-terra-worklist-data-grid"
     onFocus={[Function]}
     onKeyDown={[Function]}
+    onMouseDown={[Function]}
     role="grid"
     tabIndex={0}
   >
@@ -2484,6 +2486,7 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
     id="test-terra-worklist-data-grid"
     onFocus={[Function]}
     onKeyDown={[Function]}
+    onMouseDown={[Function]}
     role="grid"
     tabIndex={0}
   >
