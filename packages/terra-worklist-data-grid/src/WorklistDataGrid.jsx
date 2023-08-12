@@ -194,6 +194,7 @@ function WorklistDataGrid(props) {
   const tableWidth = useRef(0);
 
   const grid = useRef();
+  const handleFocus = useRef(true);
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
   const [ariaLiveMessage, setAriaLiveMessage] = useState(null);
@@ -539,11 +540,20 @@ function WorklistDataGrid(props) {
     setActiveIndex(null);
   };
 
+  const onMouseDown = () => {
+    // Prevent focus event updates when triggered by mouse
+    handleFocus.current = false;
+  };
+
   const onFocus = (event) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
-      setFocusedRowCol(focusedRow, focusedCol, true);
+      if (handleFocus.current) {
+        setFocusedRowCol(focusedRow, focusedCol, true);
+      }
     }
+
+    handleFocus.current = true;
   };
 
   // -------------------------------------
@@ -586,6 +596,7 @@ function WorklistDataGrid(props) {
         className={cx('worklist-data-grid', theme.className)}
         onKeyDown={handleKeyDown}
         onFocus={onFocus}
+        onMouseDown={onMouseDown}
         tabIndex={0}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >

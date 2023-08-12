@@ -8,7 +8,6 @@ import classNames from 'classnames/bind';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ThemeContext from 'terra-theme-context';
 import FocusTrap from 'focus-trap-react';
-import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
 import ColumnContext from '../utils/ColumnContext';
 
@@ -177,11 +176,6 @@ function Cell(props) {
             onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
           }
           event.preventDefault(); // prevent the default scrolling
-          break;
-        case KeyCode.KEY_C:
-          if (event.ctrlKey || event.metaKey) {
-            WorklistDataGridUtils.writeToClipboard(event.target.textContent);
-          }
           break;
         default:
       }
