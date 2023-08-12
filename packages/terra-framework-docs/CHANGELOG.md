@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Updated focusable cell example for `terra-worklist-data-grid` to allow text area to be editable.
 
 ## 1.32.0 - (August 10, 2023)
 
