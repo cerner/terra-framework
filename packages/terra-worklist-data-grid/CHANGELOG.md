@@ -17,6 +17,7 @@
  
 * Fixed
   * Text alignment of the row header column.
+  * Removed roving tabIndex and resolved focus management issues within cells.
 
 ## 0.3.0 - (July 19, 2023)
 

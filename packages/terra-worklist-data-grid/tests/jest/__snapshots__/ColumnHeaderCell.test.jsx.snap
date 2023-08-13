@@ -325,7 +325,6 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
     }
     isResizable={true}
     isSelectable={true}
-    isTabStop={false}
     sortIndicator="ascending"
     width={100}
   >

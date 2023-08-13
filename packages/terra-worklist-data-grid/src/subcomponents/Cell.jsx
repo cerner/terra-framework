@@ -1,5 +1,5 @@
 import React, {
-  useContext, useCallback, useState, useRef, useEffect,
+  useContext, useState, useRef, useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -8,7 +8,6 @@ import classNames from 'classnames/bind';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ThemeContext from 'terra-theme-context';
 import FocusTrap from 'focus-trap-react';
-import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
 import ColumnContext from '../utils/ColumnContext';
 
@@ -51,11 +50,6 @@ const propTypes = {
   isSelectable: PropTypes.bool,
 
   /**
-   * Boolean value to indicate if the cell is the tab stop on the grid. At any given time, the grid has only one tab stop.
-   */
-  isTabStop: PropTypes.bool,
-
-  /**
    * Boolean indicating whether the Cell is currently selected.
    */
   isSelected: PropTypes.bool,
@@ -88,7 +82,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  isTabStop: false,
   isRowHeader: false,
   isSelected: false,
   isSelectable: true,
@@ -101,7 +94,6 @@ function Cell(props) {
     columnId,
     rowIndex,
     columnIndex,
-    isTabStop,
     ariaLabel,
     isMasked,
     isRowHeader,
@@ -139,11 +131,11 @@ function Cell(props) {
   /**
    * Handles click event for cell
    */
-  const onClick = useCallback(() => {
+  const onMouseDown = () => {
     if (!isFocusTrapEnabled) {
-      onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex });
+      onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex }, (!isMasked && isSelectable));
     }
-  }, [isFocusTrapEnabled, onCellSelect, rowId, columnId, rowIndex, columnIndex]);
+  };
 
   /**
    * Hnadles the onDeactivate callback for FocusTrap component
@@ -185,11 +177,6 @@ function Cell(props) {
           }
           event.preventDefault(); // prevent the default scrolling
           break;
-        case KeyCode.KEY_C:
-          if (event.ctrlKey || event.metaKey) {
-            WorklistDataGridUtils.writeToClipboard(event.target.textContent);
-          }
-          break;
         default:
       }
     }
@@ -229,10 +216,10 @@ function Cell(props) {
       ref={cellRef}
       aria-selected={isSelected}
       aria-label={ariaLabel}
-      tabIndex={isTabStop ? 0 : -1}
+      tabIndex={-1}
       className={className}
       {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
-      onClick={onCellSelect ? onClick : undefined}
+      onMouseDown={onCellSelect ? onMouseDown : undefined}
       onKeyDown={handleKeyDown}
       style={{ left: cellLeftEdge }} // eslint-disable-line react/forbid-component-props
     >
