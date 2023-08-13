@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { IntlProvider } from 'react-intl';
 import { mountWithIntl } from 'terra-enzyme-intl';
