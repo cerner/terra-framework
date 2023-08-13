@@ -44,10 +44,9 @@ const AddTab = () => {
 
   tabsExample.push(
     {
-      label: 'Disabled Tab',
+      label: 'Pharmacy',
       key: 'AddDisabledTab',
       icon: <IconBriefcase />,
-      isDisabled: true,
     },
   );
 
@@ -85,7 +84,7 @@ const AddTab = () => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs activeKey={activeKey} onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab">
+      <Tabs isDraggable activeKey={activeKey} onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab">
         { tabs.map((tab) => (
           <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} customDisplay={tab.customDisplay} isDisabled={tab.isDisabled} icon={tab.icon} key={tab.key} id={tab.key}>
             <TabContentTemplate label={tab.content} />

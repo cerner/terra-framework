@@ -269,7 +269,7 @@ class Tabs extends React.Component {
   }
 
   handleOutsideClick(event) {
-    if (event.type === 'mousedown' && (this.moreButtonRef.current === event.currentTarget || this.moreButtonRef.current.contains(event.currentTarget))) {
+    if (this.moreButtonRef.current && event.type === 'mousedown' && (this.moreButtonRef.current === event.currentTarget || this.moreButtonRef.current.contains(event.currentTarget))) {
       return;
     }
     this.setIsOpen(false);
@@ -338,7 +338,6 @@ class Tabs extends React.Component {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
-
     return result;
   };
 
@@ -514,7 +513,7 @@ class Tabs extends React.Component {
               data-focus-styles-enabled
               itemKey={this.addTabId}
               label={ariaLabelAddTab}
-              index={this.state.visibleTabData.length - 1}
+              index={this.state.visibleTabData.length}
               showIcon
               icon={<IconAdd />}
               tabIds={moreIds}
@@ -576,7 +575,7 @@ class Tabs extends React.Component {
                       onBlur={this.handleMoreButtonBlur}
                       onSelect={this.handleMoreButtonSelect}
                       refCallback={node => { this.moreButtonRef.current = node; }}
-                      tabIds={ids}
+                      tabIds={onSelectAddButton ? moreIds : ids}
                       variant={variant}
                     />
                   ) : undefined}
@@ -586,6 +585,8 @@ class Tabs extends React.Component {
                     isOpen={this.isOpen}
                     onRequestClose={this.handleOutsideClick}
                     refCallback={node => { this.dropdownRef.current = node; }}
+                    isDraggable={isDraggable}
+                    onTabOrderChange={this.handleTabOrderChange}
                   >
                     {hiddenTabs}
                   </TabDropDown>

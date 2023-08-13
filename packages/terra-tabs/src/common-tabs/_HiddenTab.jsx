@@ -109,11 +109,6 @@ const propTypes = {
    * Whether or not the tab is draggable.
    */
   isDraggable: PropTypes.bool,
-  /**
-   * @private
-   * intl object programmatically imported through injectIntl from react-intl.
-   */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -146,7 +141,6 @@ const HiddenTab = ({
   intl,
   isDisabled,
   isDraggable,
-  intl,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -229,7 +223,7 @@ const HiddenTab = ({
             {...provided.dragHandleProps}
             id={id}
             aria-controls={associatedPanelId}
-            role="tab"
+            role={showAddButton ? 'button' : 'tab'}
             className={hiddenClassNames}
             aria-disabled={isDisabled}
             aria-describedby={responseId}
