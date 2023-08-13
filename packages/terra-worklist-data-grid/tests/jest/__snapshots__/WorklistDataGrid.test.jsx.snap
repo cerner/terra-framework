@@ -217,6 +217,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
         id="test-terra-worklist-data-grid"
         onFocus={[Function]}
         onKeyDown={[Function]}
+        onMouseDown={[Function]}
         role="grid"
         tabIndex={0}
       >
@@ -723,7 +724,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
         </ColumnHeader>
         <tbody>
           <Row
-            activeColumnIndex={2}
             cells={
               Array [
                 Object {
@@ -1954,6 +1954,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
         id="test-terra-worklist-data-grid"
         onFocus={[Function]}
         onKeyDown={[Function]}
+        onMouseDown={[Function]}
         role="grid"
         tabIndex={0}
       >
@@ -2460,7 +2461,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
         </ColumnHeader>
         <tbody>
           <Row
-            activeColumnIndex={1}
             cells={
               Array [
                 Object {
@@ -3721,6 +3721,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
         id="test-terra-worklist-data-grid"
         onFocus={[Function]}
         onKeyDown={[Function]}
+        onMouseDown={[Function]}
         role="grid"
         tabIndex={0}
       >
@@ -6004,6 +6005,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
         id="test-terra-worklist-data-grid"
         onFocus={[Function]}
         onKeyDown={[Function]}
+        onMouseDown={[Function]}
         role="grid"
         tabIndex={0}
       >
@@ -6599,7 +6601,6 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
         </ColumnHeader>
         <tbody>
           <Row
-            activeColumnIndex={3}
             cells={
               Array [
                 Object {
@@ -8884,7 +8885,6 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
         </ColumnHeader>
         <tbody>
           <Row
-            activeColumnIndex={0}
             cells={
               Array [
                 Object {
@@ -9131,7 +9131,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                 >
                   <th
                     aria-selected={false}
-                    className="worklist-data-grid-cell pinned selectable"
+                    className="worklist-data-grid-cell pinned"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
                     role="rowheader"
