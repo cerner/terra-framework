@@ -194,6 +194,7 @@ function WorklistDataGrid(props) {
   const tableWidth = useRef(0);
 
   const grid = useRef();
+  const handleFocus = useRef(true);
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
   const [ariaLiveMessage, setAriaLiveMessage] = useState(null);
@@ -316,17 +317,6 @@ function WorklistDataGrid(props) {
     }
   };
 
-  const selectRows = (rowId, rowIndex) => {
-    const rowSelectionMessageId = !rows[rowIndex - 1].isSelected ? 'Terra.worklist-data-grid.row-selection-template' : 'Terra.worklist-data-grid.row-selection-cleared-template';
-    const rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
-
-    setAriaLiveMessage(intl.formatMessage({ id: rowSelectionMessageId }, { row: rowLabel }));
-
-    if (onRowSelect) {
-      onRowSelect(rowId);
-    }
-  };
-
   const selectAllRows = () => {
     setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-selected' }));
 
@@ -369,15 +359,18 @@ function WorklistDataGrid(props) {
   };
 
   const handleRowSelection = (rowId, rowIndex, selectedCellCoordinates) => {
-    if (!hasSelectableRows) {
-      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
-    }
+    const rowSelectionMessageId = !rows[rowIndex - 1].isSelected ? 'Terra.worklist-data-grid.row-selection-template' : 'Terra.worklist-data-grid.row-selection-cleared-template';
+    const rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
+
+    setAriaLiveMessage(intl.formatMessage({ id: rowSelectionMessageId }, { row: rowLabel }));
 
     setFocusedRow(selectedCellCoordinates.row);
     setFocusedCol(selectedCellCoordinates.col);
     setCurrentSelectedCell(null);
 
-    selectRows(rowId, rowIndex);
+    if (onRowSelect) {
+      onRowSelect(rowId);
+    }
   };
 
   // -------------------------------------
@@ -547,11 +540,20 @@ function WorklistDataGrid(props) {
     setActiveIndex(null);
   };
 
+  const onMouseDown = () => {
+    // Prevent focus event updates when triggered by mouse
+    handleFocus.current = false;
+  };
+
   const onFocus = (event) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
-      setFocusedRowCol(focusedRow, focusedCol, true);
+      if (handleFocus.current) {
+        setFocusedRowCol(focusedRow, focusedCol, true);
+      }
     }
+
+    handleFocus.current = true;
   };
 
   // -------------------------------------
@@ -571,7 +573,6 @@ function WorklistDataGrid(props) {
       rowHeaderIndex={rowHeaderIndex}
       onCellSelect={handleCellSelection}
       onRowSelect={handleRowSelection}
-      activeColumnIndex={focusedRow === rowIndex ? focusedCol : undefined}
       selectedCellColumnId={(currentSelectedCell?.rowId === row.id) ? currentSelectedCell?.columnId : undefined}
     />
   );
@@ -595,6 +596,7 @@ function WorklistDataGrid(props) {
         className={cx('worklist-data-grid', theme.className)}
         onKeyDown={handleKeyDown}
         onFocus={onFocus}
+        onMouseDown={onMouseDown}
         tabIndex={0}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >

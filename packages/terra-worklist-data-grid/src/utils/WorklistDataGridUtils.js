@@ -10,18 +10,9 @@ const ROW_SELECTION_COLUMN = {
 
 const FIRST_NON_HEADER_ROW = 1;
 
-const writeToClipboard = (cellContent) => {
-  if ('clipboard' in navigator) {
-    navigator.clipboard.writeText(cellContent);
-  } else {
-    document.execCommand('copy', true, cellContent);
-  }
-};
-
 const WorklistDataGridUtils = {
   ROW_SELECTION_COLUMN,
   FIRST_NON_HEADER_ROW,
-  writeToClipboard,
 };
 
 export default WorklistDataGridUtils;

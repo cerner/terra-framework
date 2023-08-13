@@ -11,7 +11,6 @@ import IconError from 'terra-icon/lib/icon/IconError';
 
 import ColumnResizeHandle from './ColumnResizeHandle';
 import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
-import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import ColumnContext from '../utils/ColumnContext';
 import styles from './ColumnHeaderCell.module.scss';
 
@@ -157,11 +156,6 @@ const ColumnHeaderCell = (props) => {
         onColumnSelect(id, { row: rowIndex, col: columnIndex });
         event.stopPropagation();
         event.preventDefault(); // prevent the default scrolling
-        break;
-      case KeyCode.KEY_C:
-        if (event.ctrlKey || event.metaKey) {
-          WorklistDataGridUtils.writeToClipboard(event.target.textContent);
-        }
         break;
       default:
     }

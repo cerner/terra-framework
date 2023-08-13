@@ -8,7 +8,6 @@ import classNames from 'classnames/bind';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ThemeContext from 'terra-theme-context';
 import FocusTrap from 'focus-trap-react';
-import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
 import ColumnContext from '../utils/ColumnContext';
 
@@ -132,7 +131,7 @@ function Cell(props) {
   /**
    * Handles click event for cell
    */
-  const onClick = () => {
+  const onMouseDown = () => {
     if (!isFocusTrapEnabled) {
       onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex }, (!isMasked && isSelectable));
     }
@@ -178,11 +177,6 @@ function Cell(props) {
           }
           event.preventDefault(); // prevent the default scrolling
           break;
-        case KeyCode.KEY_C:
-          if (event.ctrlKey || event.metaKey) {
-            WorklistDataGridUtils.writeToClipboard(event.target.textContent);
-          }
-          break;
         default:
       }
     }
@@ -225,7 +219,7 @@ function Cell(props) {
       tabIndex={-1}
       className={className}
       {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
-      onMouseDown={onCellSelect ? onClick : undefined}
+      onMouseDown={onCellSelect ? onMouseDown : undefined}
       onKeyDown={handleKeyDown}
       style={{ left: cellLeftEdge }} // eslint-disable-line react/forbid-component-props
     >
