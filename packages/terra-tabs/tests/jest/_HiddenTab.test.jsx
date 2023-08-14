@@ -8,8 +8,6 @@ import '@testing-library/jest-dom/extend-expect';
 
 import HiddenTab from '../../src/common-tabs/_HiddenTab';
 
-import * as TabUtils from '../../src/common-tabs/_TabUtils';
-
 jest.mock('../../src/common-tabs/_TabUtils', () => ({
   handleArrows: jest.fn(),
   enableFocusStyles: jest.fn(),
