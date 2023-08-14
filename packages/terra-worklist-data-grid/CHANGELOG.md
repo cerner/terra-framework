@@ -1,7 +1,9 @@
 # Changelog
 
 ## Unreleased
-* Added
+* Fixed
+  * Removed roving tabIndex and resolved focus management issues within cells.
+  * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.
   * Added ability to use spacebar on masked and non-selectable cells to select rows.
 
 ## 0.4.0 - (August 10, 2023)
@@ -19,7 +21,6 @@
  
 * Fixed
   * Text alignment of the row header column.
-  * Removed roving tabIndex and resolved focus management issues within cells.
 
 ## 0.3.0 - (July 19, 2023)
 

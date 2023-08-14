@@ -73,4 +73,4 @@ const ColumnHeader = (props) => {
 };
 
 ColumnHeader.propTypes = propTypes;
-export default ColumnHeader;
+export default React.memo(ColumnHeader);

@@ -241,4 +241,4 @@ function Cell(props) {
 Cell.propTypes = propTypes;
 Cell.defaultProps = defaultProps;
 
-export default injectIntl(Cell);
+export default React.memo(injectIntl(Cell));

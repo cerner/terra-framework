@@ -221,7 +221,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
         role="grid"
         tabIndex={0}
       >
-        <ColumnHeader
+        <Memo(ColumnHeader)
           columns={
             Array [
               Object {
@@ -721,7 +721,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
               </InjectIntl(ColumnHeaderCell)>
             </tr>
           </thead>
-        </ColumnHeader>
+        </Memo(ColumnHeader)>
         <tbody>
           <Row
             cells={
@@ -756,10 +756,8 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 },
               ]
             }
-            hasRowSelection={false}
             height="2.5rem"
             id="1"
-            isSelected={false}
             key="1"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -1088,10 +1086,8 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 },
               ]
             }
-            hasRowSelection={false}
             height="2.5rem"
             id="2"
-            isSelected={false}
             key="2"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -1414,10 +1410,8 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 },
               ]
             }
-            hasRowSelection={false}
             height="2.5rem"
             id="3"
-            isSelected={false}
             key="3"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -1958,7 +1952,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
         role="grid"
         tabIndex={0}
       >
-        <ColumnHeader
+        <Memo(ColumnHeader)
           columns={
             Array [
               Object {
@@ -2458,7 +2452,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
               </InjectIntl(ColumnHeaderCell)>
             </tr>
           </thead>
-        </ColumnHeader>
+        </Memo(ColumnHeader)>
         <tbody>
           <Row
             cells={
@@ -2493,10 +2487,8 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 },
               ]
             }
-            hasRowSelection={false}
             height="2.5rem"
             id="1"
-            isSelected={false}
             key="1"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -2825,10 +2817,8 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 },
               ]
             }
-            hasRowSelection={false}
             height="2.5rem"
             id="2"
-            isSelected={false}
             key="2"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -3151,10 +3141,8 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 },
               ]
             }
-            hasRowSelection={false}
             height="2.5rem"
             id="3"
-            isSelected={false}
             key="3"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -3725,7 +3713,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
         role="grid"
         tabIndex={0}
       >
-        <ColumnHeader
+        <Memo(ColumnHeader)
           columns={
             Array [
               Object {
@@ -4314,7 +4302,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
               </InjectIntl(ColumnHeaderCell)>
             </tr>
           </thead>
-        </ColumnHeader>
+        </Memo(ColumnHeader)>
         <tbody>
           <Row
             cells={
@@ -4358,7 +4346,6 @@ exports[`basic grid verifies row selection column header selection 1`] = `
             hasRowSelection={true}
             height="2.5rem"
             id="1"
-            isSelected={false}
             key="1"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -4832,7 +4819,6 @@ exports[`basic grid verifies row selection column header selection 1`] = `
             hasRowSelection={true}
             height="2.5rem"
             id="2"
-            isSelected={false}
             key="2"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -5301,7 +5287,6 @@ exports[`basic grid verifies row selection column header selection 1`] = `
             hasRowSelection={true}
             height="2.5rem"
             id="3"
-            isSelected={false}
             key="3"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -6009,7 +5994,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
         role="grid"
         tabIndex={0}
       >
-        <ColumnHeader
+        <Memo(ColumnHeader)
           columns={
             Array [
               Object {
@@ -6598,7 +6583,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
               </InjectIntl(ColumnHeaderCell)>
             </tr>
           </thead>
-        </ColumnHeader>
+        </Memo(ColumnHeader)>
         <tbody>
           <Row
             cells={
@@ -6642,7 +6627,6 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
             hasRowSelection={true}
             height="2.5rem"
             id="1"
-            isSelected={false}
             key="1"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -7116,7 +7100,6 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
             hasRowSelection={true}
             height="2.5rem"
             id="2"
-            isSelected={false}
             key="2"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -7585,7 +7568,6 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
             hasRowSelection={true}
             height="2.5rem"
             id="3"
-            isSelected={false}
             key="3"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -8293,7 +8275,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
         role="grid"
         tabIndex={0}
       >
-        <ColumnHeader
+        <Memo(ColumnHeader)
           columns={
             Array [
               Object {
@@ -8882,7 +8864,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
               </InjectIntl(ColumnHeaderCell)>
             </tr>
           </thead>
-        </ColumnHeader>
+        </Memo(ColumnHeader)>
         <tbody>
           <Row
             cells={
@@ -8926,7 +8908,6 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
             hasRowSelection={true}
             height="2.5rem"
             id="1"
-            isSelected={false}
             key="1"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -9400,7 +9381,6 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
             hasRowSelection={true}
             height="2.5rem"
             id="2"
-            isSelected={false}
             key="2"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -9869,7 +9849,6 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
             hasRowSelection={true}
             height="2.5rem"
             id="3"
-            isSelected={false}
             key="3"
             onCellSelect={[Function]}
             onRowSelect={[Function]}
@@ -10349,7 +10328,7 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
         }
       }
     >
-      <ColumnHeader
+      <Memo(ColumnHeader)
         columns={
           Array [
             Object {
@@ -10382,7 +10361,7 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
         tableHeight={0}
       />
       <tbody>
-        <Row
+        <Memo(Row)
           cells={
             Array [
               Object {
@@ -10415,17 +10394,15 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
               },
             ]
           }
-          hasRowSelection={false}
           height="2.5rem"
           id="1"
-          isSelected={false}
           key="1"
           onCellSelect={[Function]}
           onRowSelect={[Function]}
           rowHeaderIndex={0}
           rowIndex={1}
         />
-        <Row
+        <Memo(Row)
           cells={
             Array [
               Object {
@@ -10457,17 +10434,15 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
               },
             ]
           }
-          hasRowSelection={false}
           height="2.5rem"
           id="2"
-          isSelected={false}
           key="2"
           onCellSelect={[Function]}
           onRowSelect={[Function]}
           rowHeaderIndex={0}
           rowIndex={2}
         />
-        <Row
+        <Memo(Row)
           cells={
             Array [
               Object {
@@ -10499,10 +10474,8 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
               },
             ]
           }
-          hasRowSelection={false}
           height="2.5rem"
           id="3"
-          isSelected={false}
           key="3"
           onCellSelect={[Function]}
           onRowSelect={[Function]}
@@ -10547,7 +10520,7 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
         }
       }
     >
-      <ColumnHeader
+      <Memo(ColumnHeader)
         columns={
           Array [
             Object {
@@ -10580,7 +10553,7 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
         tableHeight={0}
       />
       <tbody>
-        <Row
+        <Memo(Row)
           cells={
             Array [
               Object {
@@ -10613,17 +10586,15 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
               },
             ]
           }
-          hasRowSelection={false}
           height="2.5rem"
           id="1"
-          isSelected={false}
           key="1"
           onCellSelect={[Function]}
           onRowSelect={[Function]}
           rowHeaderIndex={0}
           rowIndex={1}
         />
-        <Row
+        <Memo(Row)
           cells={
             Array [
               Object {
@@ -10655,17 +10626,15 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
               },
             ]
           }
-          hasRowSelection={false}
           height="2.5rem"
           id="2"
-          isSelected={false}
           key="2"
           onCellSelect={[Function]}
           onRowSelect={[Function]}
           rowHeaderIndex={0}
           rowIndex={2}
         />
-        <Row
+        <Memo(Row)
           cells={
             Array [
               Object {
@@ -10697,10 +10666,8 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
               },
             ]
           }
-          hasRowSelection={false}
           height="2.5rem"
           id="3"
-          isSelected={false}
           key="3"
           onCellSelect={[Function]}
           onRowSelect={[Function]}
