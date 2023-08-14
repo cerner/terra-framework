@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Added
+  * Added ability to use spacebar on masked and non-selectable cells to select rows.
 
 ## 0.4.0 - (August 10, 2023)
 
@@ -14,7 +16,6 @@
   * Added ability to dive into cells with focusable elements.
   * Added ability to treat the `terra-worklist-data-grid` component as a single tabstop.
   * Added ability to select the row selection column header to allow sorting by consumers.
-  * Added ability to use spacebar on masked and non-selectable cells to select rows.
  
 * Fixed
   * Text alignment of the row header column.
