@@ -18,7 +18,7 @@
 * Fixed
   * Text alignment of the row header column.
   * Removed roving tabIndex and resolved focus management issues within cells.
-  * Reduceed number of unnecessary rerenders in the `terra-worklist-data-grid` component.
+  * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.
 
 ## 0.3.0 - (July 19, 2023)
 
