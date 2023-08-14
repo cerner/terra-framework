@@ -7,12 +7,17 @@ class DraggableTabs extends React.Component {
     super(props);
     this.state = { activeKey: 'Hematology' };
     this.handleSelection = this.handleSelection.bind(this);
+    this.handleTabActivation = this.handleTabActivation.bind(this);
   }
 
   handleSelection(event, selectedKey) {
     if (selectedKey !== this.state.activeKey) {
       this.setState({ activeKey: selectedKey });
     }
+  }
+
+  handleTabActivation() {
+    this.setState({ activeKey: 'Radiology' });
   }
 
   render() {
@@ -79,6 +84,7 @@ class DraggableTabs extends React.Component {
 
     return (
       <div>
+        <button id="activate-tab" type="button" onClick={this.handleTabActivation}>Activate Tab</button>
         <div id="current-selection">
           <p>
             Last Triggered Tab:

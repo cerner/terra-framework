@@ -115,7 +115,7 @@ class Tabs extends React.Component {
     React.Children.forEach(children, child => {
       let content;
       let tabContent;
-      if (child.key === this.state.activeKey) {
+      if (child.key === this.props.activeKey || (!this.props.activeKey && child.key === this.state.activeKey)) {
         content = React.Children.map(child.props.children, contentItem => (
           React.cloneElement(contentItem)
         ));
@@ -138,7 +138,7 @@ class Tabs extends React.Component {
     return (
       <CommonTabs
         id={customProps.id}
-        activeItemKey={this.state.activeKey}
+        activeItemKey={this.props.activeKey || this.state.activeKey}
         onRequestActivate={key => this.setState({ activeKey: key })}
         onChange={onChange}
         variant="framework"
