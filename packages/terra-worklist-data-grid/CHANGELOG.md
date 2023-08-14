@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+* Added
+  * Added ability to treat the `terra-worklist-data-grid` component as a single tabstop.
+  
+* Fixed
+  * Removed roving tabIndex and resolved focus management issues within cells.
+  * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.
 
 ## 0.4.0 - (August 10, 2023)
 
@@ -17,8 +23,6 @@
  
 * Fixed
   * Text alignment of the row header column.
-  * Removed roving tabIndex and resolved focus management issues within cells.
-  * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.
 
 ## 0.3.0 - (July 19, 2023)
 
