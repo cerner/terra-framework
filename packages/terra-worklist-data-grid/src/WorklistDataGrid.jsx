@@ -195,6 +195,7 @@ function WorklistDataGrid(props) {
 
   const grid = useRef();
   const handleFocus = useRef(true);
+  const selectedRows = useRef([]);
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
   const [ariaLiveMessage, setAriaLiveMessage] = useState(null);
@@ -247,10 +248,14 @@ function WorklistDataGrid(props) {
     if (hasSelectableRows && focusedRow === 0 && focusedCol === 0) {
       // When row selection is turned on for the first time, default to the first row selection cell.
       newFocusCell = { row: 1, col: 0 };
-    } else if (!hasSelectableRows && focusedCol === 0) {
+    } else if (!hasSelectableRows) {
       // When row selection is turned off, if a cell in the row selection had focus, then
       // refocus on the first cell in that row.
-      newFocusCell = { row: focusedRow, col: 0 };
+      if (focusedCol === 0) {
+        newFocusCell = { row: focusedRow, col: 0 };
+      }
+
+      selectedRows.current = [];
     }
     setFocusedRowCol(newFocusCell.row, newFocusCell.col, false);
     if (currentSelectedCell != null) {
@@ -297,6 +302,27 @@ function WorklistDataGrid(props) {
     setPinnedColumnOffsets(offsetArray);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataGridColumns]);
+
+  // useEffect for row updates
+  useEffect(() => {
+    const previousSelectedRows = [...selectedRows.current];
+    selectedRows.current = rows.filter((row) => row.isSelected);
+
+    const rowSelectionsAdded = selectedRows.current.filter(row => !previousSelectedRows.includes(row));
+    const rowSelectionsRemoved = previousSelectedRows.filter(row => !selectedRows.current.includes(row));
+
+    if (rowSelectionsAdded.length > 1) {
+      alert(`${rowSelectionsAdded.length} rows selected.`);
+    } else if (rowSelectionsAdded.length === 1) {
+      alert('row selected.');
+    }
+
+    if (rowSelectionsRemoved.length > 1) {
+      alert(`${rowSelectionsRemoved.length} rows deselected.`);
+    } else if (rowSelectionsRemoved.length === 1) {
+      alert('row deselected.');
+    }
+  }, [rows]);
 
   // -------------------------------------
 
