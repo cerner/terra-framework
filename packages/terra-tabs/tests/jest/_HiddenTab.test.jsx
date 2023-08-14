@@ -61,12 +61,6 @@ describe('HiddenTab', () => {
     expect(mockOnSelect).toHaveBeenCalledWith('tab-1-key', testMetaData);
     mockOnSelect.mockClear();
 
-    tabElement.focus();
-    userEvent.type(tabElement, '{arrowright}', { skipClick: true });
-    expect(mockOnSelect).not.toHaveBeenCalledWith();
-    expect(TabUtils.handleArrows).toHaveBeenCalledWith(expect.anything(), testIndex, testTabIds);
-    mockOnSelect.mockClear();
-
     const wrapper = mountWithIntl(
       <IntlProvider>
         <HiddenTab

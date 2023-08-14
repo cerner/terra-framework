@@ -89,79 +89,79 @@ exports[`Tabs correctly applies the theme context className 1`] = `
             }
             variant="modular-left-aligned"
           >
-            <div
-              className="container orion-fusion-theme"
+            <Tabs
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
+              isDraggable={false}
+              onTabStateChange={[Function]}
+              tabData={
+                Array [
+                  Object {
+                    "associatedPanelId": "terra-common-tabs-default-panel",
+                    "customDisplay": undefined,
+                    "icon": undefined,
+                    "id": "terra-common-tabs-default",
+                    "isClosable": false,
+                    "isDisabled": false,
+                    "isIconOnly": false,
+                    "isSelected": true,
+                    "itemKey": "default",
+                    "label": "Default",
+                    "metaData": undefined,
+                    "onSelect": [Function],
+                    "showIcon": false,
+                  },
+                ]
+              }
+              variant="modular-left-aligned"
             >
               <div
-                aria-orientation="horizontal"
-                aria-owns=""
-                className="tab-container orion-fusion-theme"
-                data-tab-is-calculating="true"
-                role="tablist"
+                className="container orion-fusion-theme"
               >
-                <InjectIntl(Tab)
-                  associatedPanelId="terra-common-tabs-default-panel"
-                  hiddenStartIndex={1}
-                  id="terra-common-tabs-default"
-                  index={0}
-                  isClosable={false}
-                  isDisabled={false}
-                  isDraggable={false}
-                  isIconOnly={false}
-                  isSelected={true}
-                  itemKey="default"
-                  key="terra-common-tabs-default"
-                  label="Default"
-                  onClosingTab={[Function]}
-                  onSelect={[Function]}
-                  setDropdownOpen={[Function]}
-                  showIcon={false}
-                  tabIds={
-                    Array [
-                      "terra-common-tabs-default",
-                    ]
-                  }
-                  variant="modular-left-aligned"
-                  zIndex={1}
+                <div
+                  aria-orientation="horizontal"
+                  aria-owns=""
+                  className="tab-container orion-fusion-theme"
+                  data-tab-is-calculating="true"
+                  role="tablist"
                 >
-                  <Tab
+                  <InjectIntl(Tab)
                     associatedPanelId="terra-common-tabs-default-panel"
                     hiddenStartIndex={1}
                     id="terra-common-tabs-default"
                     index={0}
-                    intl={
-                      Object {
-                        "defaultFormats": Object {},
-                        "defaultLocale": "en",
-                        "formatDate": [Function],
-                        "formatHTMLMessage": [Function],
-                        "formatMessage": [Function],
-                        "formatNumber": [Function],
-                        "formatPlural": [Function],
-                        "formatRelative": [Function],
-                        "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
-                          "getDateTimeFormat": [Function],
-                          "getMessageFormat": [Function],
-                          "getNumberFormat": [Function],
-                          "getPluralFormat": [Function],
-                          "getRelativeFormat": [Function],
-                        },
-                        "locale": "en",
-                        "messages": null,
-                        "now": [Function],
-                        "onError": [Function],
-                        "textComponent": "span",
-                        "timeZone": null,
-                      }
-                    }
                     isClosable={false}
                     isDisabled={false}
                     isDraggable={false}
                     isIconOnly={false}
                     isSelected={true}
                     itemKey="default"
+                    key="terra-common-tabs-default"
                     label="Default"
                     onClosingTab={[Function]}
                     onSelect={[Function]}
@@ -175,65 +175,98 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                     variant="modular-left-aligned"
                     zIndex={1}
                   >
-                    <div
-                      aria-controls="terra-common-tabs-default-panel"
-                      aria-disabled={false}
-                      aria-selected={true}
-                      className="tab is-active is-text-only orion-fusion-theme"
-                      data-focus-styles-enabled={true}
-                      data-terra-tabs-show-focus-styles={true}
+                    <Tab
+                      associatedPanelId="terra-common-tabs-default-panel"
+                      hiddenStartIndex={1}
                       id="terra-common-tabs-default"
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      onMouseDown={[Function]}
-                      role="tab"
-                      style={
+                      index={0}
+                      intl={
                         Object {
-                          "zIndex": 1,
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
                         }
                       }
-                      tabIndex={0}
-                      title="Default"
+                      isClosable={false}
+                      isDisabled={false}
+                      isDraggable={false}
+                      isIconOnly={false}
+                      isSelected={true}
+                      itemKey="default"
+                      label="Default"
+                      onClosingTab={[Function]}
+                      onSelect={[Function]}
+                      setDropdownOpen={[Function]}
+                      showIcon={false}
+                      tabIds={
+                        Array [
+                          "terra-common-tabs-default",
+                        ]
+                      }
+                      variant="modular-left-aligned"
+                      zIndex={1}
                     >
                       <div
-                        className="inner"
+                        aria-controls="terra-common-tabs-default-panel"
+                        aria-disabled={false}
+                        aria-selected={true}
+                        className="tab is-active is-text-only orion-fusion-theme"
+                        data-focus-styles-enabled={true}
+                        data-terra-tabs-show-focus-styles={true}
+                        id="terra-common-tabs-default"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseDown={[Function]}
+                        role="tab"
+                        style={
+                          Object {
+                            "zIndex": 1,
+                          }
+                        }
+                        tabIndex={0}
+                        title="Default"
                       >
-                        <span
-                          className="label"
+                        <div
+                          className="inner"
                         >
-                          Default
-                        </span>
+                          <span
+                            className="label"
+                          >
+                            Default
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </Tab>
-                </InjectIntl(Tab)>
-                <OnClickOutside(TabDropDown)
-                  eventTypes={
-                    Array [
-                      "mousedown",
-                      "touchstart",
-                    ]
-                  }
-                  excludeScrollbar={false}
-                  isOpen={false}
-                  onBlur={[Function]}
-                  onFocus={[Function]}
-                  onRequestClose={[Function]}
-                  outsideClickIgnoreClass="ignore-react-onclickoutside"
-                  preventDefault={false}
-                  refCallback={[Function]}
-                  stopPropagation={false}
-                >
-                  <TabDropDown
-                    disableOnClickOutside={[Function]}
-                    enableOnClickOutside={[Function]}
+                    </Tab>
+                  </InjectIntl(Tab)>
+                  <OnClickOutside(InjectIntl(TabDropDown))
                     eventTypes={
                       Array [
                         "mousedown",
                         "touchstart",
                       ]
                     }
+                    excludeScrollbar={false}
                     isOpen={false}
                     onBlur={[Function]}
                     onFocus={[Function]}
@@ -242,21 +275,85 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                     preventDefault={false}
                     refCallback={[Function]}
                     stopPropagation={false}
-                    wrappedRef={[Function]}
                   >
-                    <div
-                      className="drop-down orion-fusion-theme"
-                      onMouseDown={[Function]}
-                      role="none"
-                    />
-                  </TabDropDown>
-                </OnClickOutside(TabDropDown)>
+                    <InjectIntl(TabDropDown)
+                      disableOnClickOutside={[Function]}
+                      enableOnClickOutside={[Function]}
+                      eventTypes={
+                        Array [
+                          "mousedown",
+                          "touchstart",
+                        ]
+                      }
+                      isOpen={false}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onRequestClose={[Function]}
+                      outsideClickIgnoreClass="ignore-react-onclickoutside"
+                      preventDefault={false}
+                      refCallback={[Function]}
+                      stopPropagation={false}
+                    >
+                      <TabDropDown
+                        disableOnClickOutside={[Function]}
+                        enableOnClickOutside={[Function]}
+                        eventTypes={
+                          Array [
+                            "mousedown",
+                            "touchstart",
+                          ]
+                        }
+                        intl={
+                          Object {
+                            "defaultFormats": Object {},
+                            "defaultLocale": "en",
+                            "formatDate": [Function],
+                            "formatHTMLMessage": [Function],
+                            "formatMessage": [Function],
+                            "formatNumber": [Function],
+                            "formatPlural": [Function],
+                            "formatRelative": [Function],
+                            "formatTime": [Function],
+                            "formats": Object {},
+                            "formatters": Object {
+                              "getDateTimeFormat": [Function],
+                              "getMessageFormat": [Function],
+                              "getNumberFormat": [Function],
+                              "getPluralFormat": [Function],
+                              "getRelativeFormat": [Function],
+                            },
+                            "locale": "en",
+                            "messages": null,
+                            "now": [Function],
+                            "onError": [Function],
+                            "textComponent": "span",
+                            "timeZone": null,
+                          }
+                        }
+                        isOpen={false}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        onRequestClose={[Function]}
+                        outsideClickIgnoreClass="ignore-react-onclickoutside"
+                        preventDefault={false}
+                        refCallback={[Function]}
+                        stopPropagation={false}
+                      >
+                        <div
+                          className="drop-down orion-fusion-theme"
+                          onMouseDown={[Function]}
+                          role="none"
+                        />
+                      </TabDropDown>
+                    </InjectIntl(TabDropDown)>
+                  </OnClickOutside(InjectIntl(TabDropDown))>
+                </div>
+                <div
+                  className="divcontainer orion-fusion-theme"
+                />
               </div>
-              <div
-                className="divcontainer orion-fusion-theme"
-              />
-            </div>
-          </Tabs>
+            </Tabs>
+          </InjectIntl(Tabs)>
         </div>
         <div
           className="body"
@@ -488,7 +585,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
         className="tab-header"
         role="none"
       >
-        <Tabs
+        <InjectIntl(Tabs)
           isDraggable={false}
           onTabStateChange={[Function]}
           tabData={
@@ -512,79 +609,79 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
           }
           variant="framework"
         >
-          <div
-            className="container"
+          <Tabs
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDraggable={false}
+            onTabStateChange={[Function]}
+            tabData={
+              Array [
+                Object {
+                  "associatedPanelId": "application-id-default-panel",
+                  "customDisplay": undefined,
+                  "icon": undefined,
+                  "id": "application-id-default",
+                  "isClosable": false,
+                  "isDisabled": false,
+                  "isIconOnly": false,
+                  "isSelected": true,
+                  "itemKey": "default",
+                  "label": "Default",
+                  "metaData": undefined,
+                  "onSelect": [Function],
+                  "showIcon": false,
+                },
+              ]
+            }
+            variant="framework"
           >
             <div
-              aria-orientation="horizontal"
-              aria-owns=""
-              className="tab-container"
-              data-tab-is-calculating="true"
-              role="tablist"
+              className="container"
             >
-              <InjectIntl(Tab)
-                associatedPanelId="application-id-default-panel"
-                hiddenStartIndex={1}
-                id="application-id-default"
-                index={0}
-                isClosable={false}
-                isDisabled={false}
-                isDraggable={false}
-                isIconOnly={false}
-                isSelected={true}
-                itemKey="default"
-                key="application-id-default"
-                label="Default"
-                onClosingTab={[Function]}
-                onSelect={[Function]}
-                setDropdownOpen={[Function]}
-                showIcon={false}
-                tabIds={
-                  Array [
-                    "application-id-default",
-                  ]
-                }
-                variant="framework"
-                zIndex={1}
+              <div
+                aria-orientation="horizontal"
+                aria-owns=""
+                className="tab-container"
+                data-tab-is-calculating="true"
+                role="tablist"
               >
-                <Tab
+                <InjectIntl(Tab)
                   associatedPanelId="application-id-default-panel"
                   hiddenStartIndex={1}
                   id="application-id-default"
                   index={0}
-                  intl={
-                    Object {
-                      "defaultFormats": Object {},
-                      "defaultLocale": "en",
-                      "formatDate": [Function],
-                      "formatHTMLMessage": [Function],
-                      "formatMessage": [Function],
-                      "formatNumber": [Function],
-                      "formatPlural": [Function],
-                      "formatRelative": [Function],
-                      "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
-                        "getDateTimeFormat": [Function],
-                        "getMessageFormat": [Function],
-                        "getNumberFormat": [Function],
-                        "getPluralFormat": [Function],
-                        "getRelativeFormat": [Function],
-                      },
-                      "locale": "en",
-                      "messages": null,
-                      "now": [Function],
-                      "onError": [Function],
-                      "textComponent": "span",
-                      "timeZone": null,
-                    }
-                  }
                   isClosable={false}
                   isDisabled={false}
                   isDraggable={false}
                   isIconOnly={false}
                   isSelected={true}
                   itemKey="default"
+                  key="application-id-default"
                   label="Default"
                   onClosingTab={[Function]}
                   onSelect={[Function]}
@@ -598,65 +695,98 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                   variant="framework"
                   zIndex={1}
                 >
-                  <div
-                    aria-controls="application-id-default-panel"
-                    aria-disabled={false}
-                    aria-selected={true}
-                    className="tab is-text-only is-active"
-                    data-focus-styles-enabled={true}
-                    data-terra-tabs-show-focus-styles={true}
+                  <Tab
+                    associatedPanelId="application-id-default-panel"
+                    hiddenStartIndex={1}
                     id="application-id-default"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseDown={[Function]}
-                    role="tab"
-                    style={
+                    index={0}
+                    intl={
                       Object {
-                        "zIndex": 1,
+                        "defaultFormats": Object {},
+                        "defaultLocale": "en",
+                        "formatDate": [Function],
+                        "formatHTMLMessage": [Function],
+                        "formatMessage": [Function],
+                        "formatNumber": [Function],
+                        "formatPlural": [Function],
+                        "formatRelative": [Function],
+                        "formatTime": [Function],
+                        "formats": Object {},
+                        "formatters": Object {
+                          "getDateTimeFormat": [Function],
+                          "getMessageFormat": [Function],
+                          "getNumberFormat": [Function],
+                          "getPluralFormat": [Function],
+                          "getRelativeFormat": [Function],
+                        },
+                        "locale": "en",
+                        "messages": null,
+                        "now": [Function],
+                        "onError": [Function],
+                        "textComponent": "span",
+                        "timeZone": null,
                       }
                     }
-                    tabIndex={0}
-                    title="Default"
+                    isClosable={false}
+                    isDisabled={false}
+                    isDraggable={false}
+                    isIconOnly={false}
+                    isSelected={true}
+                    itemKey="default"
+                    label="Default"
+                    onClosingTab={[Function]}
+                    onSelect={[Function]}
+                    setDropdownOpen={[Function]}
+                    showIcon={false}
+                    tabIds={
+                      Array [
+                        "application-id-default",
+                      ]
+                    }
+                    variant="framework"
+                    zIndex={1}
                   >
                     <div
-                      className="inner"
+                      aria-controls="application-id-default-panel"
+                      aria-disabled={false}
+                      aria-selected={true}
+                      className="tab is-text-only is-active"
+                      data-focus-styles-enabled={true}
+                      data-terra-tabs-show-focus-styles={true}
+                      id="application-id-default"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      role="tab"
+                      style={
+                        Object {
+                          "zIndex": 1,
+                        }
+                      }
+                      tabIndex={0}
+                      title="Default"
                     >
-                      <span
-                        className="label"
+                      <div
+                        className="inner"
                       >
-                        Default
-                      </span>
+                        <span
+                          className="label"
+                        >
+                          Default
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </Tab>
-              </InjectIntl(Tab)>
-              <OnClickOutside(TabDropDown)
-                eventTypes={
-                  Array [
-                    "mousedown",
-                    "touchstart",
-                  ]
-                }
-                excludeScrollbar={false}
-                isOpen={false}
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onRequestClose={[Function]}
-                outsideClickIgnoreClass="ignore-react-onclickoutside"
-                preventDefault={false}
-                refCallback={[Function]}
-                stopPropagation={false}
-              >
-                <TabDropDown
-                  disableOnClickOutside={[Function]}
-                  enableOnClickOutside={[Function]}
+                  </Tab>
+                </InjectIntl(Tab)>
+                <OnClickOutside(InjectIntl(TabDropDown))
                   eventTypes={
                     Array [
                       "mousedown",
                       "touchstart",
                     ]
                   }
+                  excludeScrollbar={false}
                   isOpen={false}
                   onBlur={[Function]}
                   onFocus={[Function]}
@@ -665,21 +795,85 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                   preventDefault={false}
                   refCallback={[Function]}
                   stopPropagation={false}
-                  wrappedRef={[Function]}
                 >
-                  <div
-                    className="drop-down"
-                    onMouseDown={[Function]}
-                    role="none"
-                  />
-                </TabDropDown>
-              </OnClickOutside(TabDropDown)>
+                  <InjectIntl(TabDropDown)
+                    disableOnClickOutside={[Function]}
+                    enableOnClickOutside={[Function]}
+                    eventTypes={
+                      Array [
+                        "mousedown",
+                        "touchstart",
+                      ]
+                    }
+                    isOpen={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    onRequestClose={[Function]}
+                    outsideClickIgnoreClass="ignore-react-onclickoutside"
+                    preventDefault={false}
+                    refCallback={[Function]}
+                    stopPropagation={false}
+                  >
+                    <TabDropDown
+                      disableOnClickOutside={[Function]}
+                      enableOnClickOutside={[Function]}
+                      eventTypes={
+                        Array [
+                          "mousedown",
+                          "touchstart",
+                        ]
+                      }
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isOpen={false}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onRequestClose={[Function]}
+                      outsideClickIgnoreClass="ignore-react-onclickoutside"
+                      preventDefault={false}
+                      refCallback={[Function]}
+                      stopPropagation={false}
+                    >
+                      <div
+                        className="drop-down"
+                        onMouseDown={[Function]}
+                        role="none"
+                      />
+                    </TabDropDown>
+                  </InjectIntl(TabDropDown)>
+                </OnClickOutside(InjectIntl(TabDropDown))>
+              </div>
+              <div
+                className="divcontainer"
+              />
             </div>
-            <div
-              className="divcontainer"
-            />
-          </div>
-        </Tabs>
+          </Tabs>
+        </InjectIntl(Tabs)>
       </div>
       <div
         className="body"
@@ -1163,7 +1357,7 @@ exports[`Tabs should render with add icon 1`] = `
         className="tab-header"
         role="none"
       >
-        <Tabs
+        <InjectIntl(Tabs)
           ariaLabelAddTab="Add Tab"
           isDraggable={false}
           onSelectAddButton={[MockFunction]}
@@ -1189,80 +1383,81 @@ exports[`Tabs should render with add icon 1`] = `
           }
           variant="framework"
         >
-          <div
-            className="container"
+          <Tabs
+            ariaLabelAddTab="Add Tab"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDraggable={false}
+            onSelectAddButton={[MockFunction]}
+            onTabStateChange={[Function]}
+            tabData={
+              Array [
+                Object {
+                  "associatedPanelId": "application-id-default-panel",
+                  "customDisplay": undefined,
+                  "icon": undefined,
+                  "id": "application-id-default",
+                  "isClosable": false,
+                  "isDisabled": false,
+                  "isIconOnly": false,
+                  "isSelected": true,
+                  "itemKey": "default",
+                  "label": "Default",
+                  "metaData": undefined,
+                  "onSelect": [Function],
+                  "showIcon": false,
+                },
+              ]
+            }
+            variant="framework"
           >
             <div
-              aria-orientation="horizontal"
-              aria-owns=""
-              className="tab-container"
-              data-tab-is-calculating="true"
-              role="tablist"
+              className="container"
             >
-              <InjectIntl(Tab)
-                associatedPanelId="application-id-default-panel"
-                hiddenStartIndex={1}
-                id="application-id-default"
-                index={0}
-                isClosable={false}
-                isDisabled={false}
-                isDraggable={false}
-                isIconOnly={false}
-                isSelected={true}
-                itemKey="default"
-                key="application-id-default"
-                label="Default"
-                onClosingTab={[Function]}
-                onSelect={[Function]}
-                setDropdownOpen={[Function]}
-                showIcon={false}
-                tabIds={
-                  Array [
-                    "application-id-default",
-                    "00000000-0000-0000-0000-000000000000",
-                  ]
-                }
-                variant="framework"
-                zIndex={1}
+              <div
+                aria-orientation="horizontal"
+                aria-owns=""
+                className="tab-container"
+                data-tab-is-calculating="true"
+                role="tablist"
               >
-                <Tab
+                <InjectIntl(Tab)
                   associatedPanelId="application-id-default-panel"
                   hiddenStartIndex={1}
                   id="application-id-default"
                   index={0}
-                  intl={
-                    Object {
-                      "defaultFormats": Object {},
-                      "defaultLocale": "en",
-                      "formatDate": [Function],
-                      "formatHTMLMessage": [Function],
-                      "formatMessage": [Function],
-                      "formatNumber": [Function],
-                      "formatPlural": [Function],
-                      "formatRelative": [Function],
-                      "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
-                        "getDateTimeFormat": [Function],
-                        "getMessageFormat": [Function],
-                        "getNumberFormat": [Function],
-                        "getPluralFormat": [Function],
-                        "getRelativeFormat": [Function],
-                      },
-                      "locale": "en",
-                      "messages": null,
-                      "now": [Function],
-                      "onError": [Function],
-                      "textComponent": "span",
-                      "timeZone": null,
-                    }
-                  }
                   isClosable={false}
                   isDisabled={false}
                   isDraggable={false}
                   isIconOnly={false}
                   isSelected={true}
                   itemKey="default"
+                  key="application-id-default"
                   label="Default"
                   onClosingTab={[Function]}
                   onSelect={[Function]}
@@ -1277,65 +1472,99 @@ exports[`Tabs should render with add icon 1`] = `
                   variant="framework"
                   zIndex={1}
                 >
-                  <div
-                    aria-controls="application-id-default-panel"
-                    aria-disabled={false}
-                    aria-selected={true}
-                    className="tab is-text-only is-active"
-                    data-focus-styles-enabled={true}
-                    data-terra-tabs-show-focus-styles={true}
+                  <Tab
+                    associatedPanelId="application-id-default-panel"
+                    hiddenStartIndex={1}
                     id="application-id-default"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseDown={[Function]}
-                    role="tab"
-                    style={
+                    index={0}
+                    intl={
                       Object {
-                        "zIndex": 1,
+                        "defaultFormats": Object {},
+                        "defaultLocale": "en",
+                        "formatDate": [Function],
+                        "formatHTMLMessage": [Function],
+                        "formatMessage": [Function],
+                        "formatNumber": [Function],
+                        "formatPlural": [Function],
+                        "formatRelative": [Function],
+                        "formatTime": [Function],
+                        "formats": Object {},
+                        "formatters": Object {
+                          "getDateTimeFormat": [Function],
+                          "getMessageFormat": [Function],
+                          "getNumberFormat": [Function],
+                          "getPluralFormat": [Function],
+                          "getRelativeFormat": [Function],
+                        },
+                        "locale": "en",
+                        "messages": null,
+                        "now": [Function],
+                        "onError": [Function],
+                        "textComponent": "span",
+                        "timeZone": null,
                       }
                     }
-                    tabIndex={0}
-                    title="Default"
+                    isClosable={false}
+                    isDisabled={false}
+                    isDraggable={false}
+                    isIconOnly={false}
+                    isSelected={true}
+                    itemKey="default"
+                    label="Default"
+                    onClosingTab={[Function]}
+                    onSelect={[Function]}
+                    setDropdownOpen={[Function]}
+                    showIcon={false}
+                    tabIds={
+                      Array [
+                        "application-id-default",
+                        "00000000-0000-0000-0000-000000000000",
+                      ]
+                    }
+                    variant="framework"
+                    zIndex={1}
                   >
                     <div
-                      className="inner"
+                      aria-controls="application-id-default-panel"
+                      aria-disabled={false}
+                      aria-selected={true}
+                      className="tab is-text-only is-active"
+                      data-focus-styles-enabled={true}
+                      data-terra-tabs-show-focus-styles={true}
+                      id="application-id-default"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      role="tab"
+                      style={
+                        Object {
+                          "zIndex": 1,
+                        }
+                      }
+                      tabIndex={0}
+                      title="Default"
                     >
-                      <span
-                        className="label"
+                      <div
+                        className="inner"
                       >
-                        Default
-                      </span>
+                        <span
+                          className="label"
+                        >
+                          Default
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </Tab>
-              </InjectIntl(Tab)>
-              <OnClickOutside(TabDropDown)
-                eventTypes={
-                  Array [
-                    "mousedown",
-                    "touchstart",
-                  ]
-                }
-                excludeScrollbar={false}
-                isOpen={false}
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onRequestClose={[Function]}
-                outsideClickIgnoreClass="ignore-react-onclickoutside"
-                preventDefault={false}
-                refCallback={[Function]}
-                stopPropagation={false}
-              >
-                <TabDropDown
-                  disableOnClickOutside={[Function]}
-                  enableOnClickOutside={[Function]}
+                  </Tab>
+                </InjectIntl(Tab)>
+                <OnClickOutside(InjectIntl(TabDropDown))
                   eventTypes={
                     Array [
                       "mousedown",
                       "touchstart",
                     ]
                   }
+                  excludeScrollbar={false}
                   isOpen={false}
                   onBlur={[Function]}
                   onFocus={[Function]}
@@ -1344,64 +1573,86 @@ exports[`Tabs should render with add icon 1`] = `
                   preventDefault={false}
                   refCallback={[Function]}
                   stopPropagation={false}
-                  wrappedRef={[Function]}
                 >
-                  <div
-                    className="drop-down"
-                    onMouseDown={[Function]}
-                    role="none"
-                  />
-                </TabDropDown>
-              </OnClickOutside(TabDropDown)>
-            </div>
-            <div
-              className="divcontainer"
-            >
-              <InjectIntl(AddButton)
-                addAriaLabel="Add Tab"
-                id="00000000-0000-0000-0000-000000000000"
-                index={1}
-                isSelected={false}
-                onSelect={[Function]}
-                tabIds={
-                  Array [
-                    "application-id-default",
-                    "00000000-0000-0000-0000-000000000000",
-                  ]
-                }
-                title="Add Tab"
+                  <InjectIntl(TabDropDown)
+                    disableOnClickOutside={[Function]}
+                    enableOnClickOutside={[Function]}
+                    eventTypes={
+                      Array [
+                        "mousedown",
+                        "touchstart",
+                      ]
+                    }
+                    isOpen={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    onRequestClose={[Function]}
+                    outsideClickIgnoreClass="ignore-react-onclickoutside"
+                    preventDefault={false}
+                    refCallback={[Function]}
+                    stopPropagation={false}
+                  >
+                    <TabDropDown
+                      disableOnClickOutside={[Function]}
+                      enableOnClickOutside={[Function]}
+                      eventTypes={
+                        Array [
+                          "mousedown",
+                          "touchstart",
+                        ]
+                      }
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isOpen={false}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onRequestClose={[Function]}
+                      outsideClickIgnoreClass="ignore-react-onclickoutside"
+                      preventDefault={false}
+                      refCallback={[Function]}
+                      stopPropagation={false}
+                    >
+                      <div
+                        className="drop-down"
+                        onMouseDown={[Function]}
+                        role="none"
+                      />
+                    </TabDropDown>
+                  </InjectIntl(TabDropDown)>
+                </OnClickOutside(InjectIntl(TabDropDown))>
+              </div>
+              <div
+                className="divcontainer"
               >
-                <AddButton
+                <InjectIntl(AddButton)
                   addAriaLabel="Add Tab"
                   id="00000000-0000-0000-0000-000000000000"
                   index={1}
-                  intl={
-                    Object {
-                      "defaultFormats": Object {},
-                      "defaultLocale": "en",
-                      "formatDate": [Function],
-                      "formatHTMLMessage": [Function],
-                      "formatMessage": [Function],
-                      "formatNumber": [Function],
-                      "formatPlural": [Function],
-                      "formatRelative": [Function],
-                      "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
-                        "getDateTimeFormat": [Function],
-                        "getMessageFormat": [Function],
-                        "getNumberFormat": [Function],
-                        "getPluralFormat": [Function],
-                        "getRelativeFormat": [Function],
-                      },
-                      "locale": "en",
-                      "messages": null,
-                      "now": [Function],
-                      "onError": [Function],
-                      "textComponent": "span",
-                      "timeZone": null,
-                    }
-                  }
                   isSelected={false}
                   onSelect={[Function]}
                   tabIds={
@@ -1412,101 +1663,143 @@ exports[`Tabs should render with add icon 1`] = `
                   }
                   title="Add Tab"
                 >
-                  <Button
-                    className="button"
-                    data-terra-tab-add-btn={true}
-                    data-terra-tabs-show-focus-styles={true}
-                    icon={
-                      <IconAdd
-                        a11yLabel="Add Tab"
-                        data-name="Layer 1"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg"
-                      />
-                    }
+                  <AddButton
+                    addAriaLabel="Add Tab"
                     id="00000000-0000-0000-0000-000000000000"
                     index={1}
-                    isBlock={false}
-                    isCompact={false}
-                    isDisabled={false}
-                    isIconOnly={true}
-                    isReversed={false}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    text="Add Tab"
-                    type="button"
-                    variant="de-emphasis"
+                    intl={
+                      Object {
+                        "defaultFormats": Object {},
+                        "defaultLocale": "en",
+                        "formatDate": [Function],
+                        "formatHTMLMessage": [Function],
+                        "formatMessage": [Function],
+                        "formatNumber": [Function],
+                        "formatPlural": [Function],
+                        "formatRelative": [Function],
+                        "formatTime": [Function],
+                        "formats": Object {},
+                        "formatters": Object {
+                          "getDateTimeFormat": [Function],
+                          "getMessageFormat": [Function],
+                          "getNumberFormat": [Function],
+                          "getPluralFormat": [Function],
+                          "getRelativeFormat": [Function],
+                        },
+                        "locale": "en",
+                        "messages": null,
+                        "now": [Function],
+                        "onError": [Function],
+                        "textComponent": "span",
+                        "timeZone": null,
+                      }
+                    }
+                    isSelected={false}
+                    onSelect={[Function]}
+                    tabIds={
+                      Array [
+                        "application-id-default",
+                        "00000000-0000-0000-0000-000000000000",
+                      ]
+                    }
+                    title="Add Tab"
                   >
-                    <button
-                      aria-disabled={false}
-                      aria-label="Add Tab"
-                      className="button de-emphasis button"
+                    <Button
+                      className="button"
                       data-terra-tab-add-btn={true}
                       data-terra-tabs-show-focus-styles={true}
-                      disabled={false}
+                      icon={
+                        <IconAdd
+                          a11yLabel="Add Tab"
+                          data-name="Layer 1"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg"
+                        />
+                      }
                       id="00000000-0000-0000-0000-000000000000"
                       index={1}
-                      onBlur={[Function]}
+                      isBlock={false}
+                      isCompact={false}
+                      isDisabled={false}
+                      isIconOnly={true}
+                      isReversed={false}
                       onClick={[Function]}
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
-                      onKeyUp={[Function]}
-                      onMouseDown={[Function]}
-                      title="Add Tab"
+                      text="Add Tab"
                       type="button"
+                      variant="de-emphasis"
                     >
-                      <span
-                        className="button-label icon-only"
+                      <button
+                        aria-disabled={false}
+                        aria-label="Add Tab"
+                        className="button de-emphasis button"
+                        data-terra-tab-add-btn={true}
+                        data-terra-tabs-show-focus-styles={true}
+                        disabled={false}
+                        id="00000000-0000-0000-0000-000000000000"
+                        index={1}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        title="Add Tab"
+                        type="button"
                       >
                         <span
-                          className="icon"
+                          className="button-label icon-only"
                         >
-                          <IconAdd
-                            a11yLabel="Add Tab"
-                            className="icon-svg"
-                            data-name="Layer 1"
-                            viewBox="0 0 48 48"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            className="icon"
                           >
-                            <IconBase
+                            <IconAdd
                               a11yLabel="Add Tab"
                               className="icon-svg"
                               data-name="Layer 1"
-                              focusable="false"
-                              height="1em"
-                              isBidi={false}
-                              isSpin={false}
                               viewBox="0 0 48 48"
-                              width="1em"
                               xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                className="tui-Icon icon icon-svg"
+                              <IconBase
+                                a11yLabel="Add Tab"
+                                className="icon-svg"
                                 data-name="Layer 1"
                                 focusable="false"
                                 height="1em"
+                                isBidi={false}
+                                isSpin={false}
                                 viewBox="0 0 48 48"
                                 width="1em"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  Add Tab
-                                </title>
-                                <path
-                                  d="M48 21H27V0h-6v21H0v6h21v21h6V27h21z"
-                                />
-                              </svg>
-                            </IconBase>
-                          </IconAdd>
+                                <svg
+                                  className="tui-Icon icon icon-svg"
+                                  data-name="Layer 1"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="0 0 48 48"
+                                  width="1em"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <title>
+                                    Add Tab
+                                  </title>
+                                  <path
+                                    d="M48 21H27V0h-6v21H0v6h21v21h6V27h21z"
+                                  />
+                                </svg>
+                              </IconBase>
+                            </IconAdd>
+                          </span>
                         </span>
-                      </span>
-                    </button>
-                  </Button>
-                </AddButton>
-              </InjectIntl(AddButton)>
+                      </button>
+                    </Button>
+                  </AddButton>
+                </InjectIntl(AddButton)>
+              </div>
             </div>
-          </div>
-        </Tabs>
+          </Tabs>
+        </InjectIntl(Tabs)>
       </div>
       <div
         className="body"
@@ -1663,7 +1956,7 @@ exports[`Tabs should render with add icon 2`] = `
         className="tab-header"
         role="none"
       >
-        <Tabs
+        <InjectIntl(Tabs)
           ariaLabelAddTab="Add Tab"
           isDraggable={false}
           onSelectAddButton={[Function]}
@@ -1689,80 +1982,81 @@ exports[`Tabs should render with add icon 2`] = `
           }
           variant="framework"
         >
-          <div
-            className="container"
+          <Tabs
+            ariaLabelAddTab="Add Tab"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDraggable={false}
+            onSelectAddButton={[Function]}
+            onTabStateChange={[Function]}
+            tabData={
+              Array [
+                Object {
+                  "associatedPanelId": "application-id-default-panel",
+                  "customDisplay": undefined,
+                  "icon": undefined,
+                  "id": "application-id-default",
+                  "isClosable": false,
+                  "isDisabled": false,
+                  "isIconOnly": false,
+                  "isSelected": true,
+                  "itemKey": "default",
+                  "label": "Default",
+                  "metaData": undefined,
+                  "onSelect": [Function],
+                  "showIcon": false,
+                },
+              ]
+            }
+            variant="framework"
           >
             <div
-              aria-orientation="horizontal"
-              aria-owns=""
-              className="tab-container"
-              data-tab-is-calculating="true"
-              role="tablist"
+              className="container"
             >
-              <InjectIntl(Tab)
-                associatedPanelId="application-id-default-panel"
-                hiddenStartIndex={1}
-                id="application-id-default"
-                index={0}
-                isClosable={false}
-                isDisabled={false}
-                isDraggable={false}
-                isIconOnly={false}
-                isSelected={true}
-                itemKey="default"
-                key="application-id-default"
-                label="Default"
-                onClosingTab={[Function]}
-                onSelect={[Function]}
-                setDropdownOpen={[Function]}
-                showIcon={false}
-                tabIds={
-                  Array [
-                    "application-id-default",
-                    "00000000-0000-0000-0000-000000000000",
-                  ]
-                }
-                variant="framework"
-                zIndex={1}
+              <div
+                aria-orientation="horizontal"
+                aria-owns=""
+                className="tab-container"
+                data-tab-is-calculating="true"
+                role="tablist"
               >
-                <Tab
+                <InjectIntl(Tab)
                   associatedPanelId="application-id-default-panel"
                   hiddenStartIndex={1}
                   id="application-id-default"
                   index={0}
-                  intl={
-                    Object {
-                      "defaultFormats": Object {},
-                      "defaultLocale": "en",
-                      "formatDate": [Function],
-                      "formatHTMLMessage": [Function],
-                      "formatMessage": [Function],
-                      "formatNumber": [Function],
-                      "formatPlural": [Function],
-                      "formatRelative": [Function],
-                      "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
-                        "getDateTimeFormat": [Function],
-                        "getMessageFormat": [Function],
-                        "getNumberFormat": [Function],
-                        "getPluralFormat": [Function],
-                        "getRelativeFormat": [Function],
-                      },
-                      "locale": "en",
-                      "messages": null,
-                      "now": [Function],
-                      "onError": [Function],
-                      "textComponent": "span",
-                      "timeZone": null,
-                    }
-                  }
                   isClosable={false}
                   isDisabled={false}
                   isDraggable={false}
                   isIconOnly={false}
                   isSelected={true}
                   itemKey="default"
+                  key="application-id-default"
                   label="Default"
                   onClosingTab={[Function]}
                   onSelect={[Function]}
@@ -1777,65 +2071,99 @@ exports[`Tabs should render with add icon 2`] = `
                   variant="framework"
                   zIndex={1}
                 >
-                  <div
-                    aria-controls="application-id-default-panel"
-                    aria-disabled={false}
-                    aria-selected={true}
-                    className="tab is-text-only is-active"
-                    data-focus-styles-enabled={true}
-                    data-terra-tabs-show-focus-styles={true}
+                  <Tab
+                    associatedPanelId="application-id-default-panel"
+                    hiddenStartIndex={1}
                     id="application-id-default"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseDown={[Function]}
-                    role="tab"
-                    style={
+                    index={0}
+                    intl={
                       Object {
-                        "zIndex": 1,
+                        "defaultFormats": Object {},
+                        "defaultLocale": "en",
+                        "formatDate": [Function],
+                        "formatHTMLMessage": [Function],
+                        "formatMessage": [Function],
+                        "formatNumber": [Function],
+                        "formatPlural": [Function],
+                        "formatRelative": [Function],
+                        "formatTime": [Function],
+                        "formats": Object {},
+                        "formatters": Object {
+                          "getDateTimeFormat": [Function],
+                          "getMessageFormat": [Function],
+                          "getNumberFormat": [Function],
+                          "getPluralFormat": [Function],
+                          "getRelativeFormat": [Function],
+                        },
+                        "locale": "en",
+                        "messages": null,
+                        "now": [Function],
+                        "onError": [Function],
+                        "textComponent": "span",
+                        "timeZone": null,
                       }
                     }
-                    tabIndex={0}
-                    title="Default"
+                    isClosable={false}
+                    isDisabled={false}
+                    isDraggable={false}
+                    isIconOnly={false}
+                    isSelected={true}
+                    itemKey="default"
+                    label="Default"
+                    onClosingTab={[Function]}
+                    onSelect={[Function]}
+                    setDropdownOpen={[Function]}
+                    showIcon={false}
+                    tabIds={
+                      Array [
+                        "application-id-default",
+                        "00000000-0000-0000-0000-000000000000",
+                      ]
+                    }
+                    variant="framework"
+                    zIndex={1}
                   >
                     <div
-                      className="inner"
+                      aria-controls="application-id-default-panel"
+                      aria-disabled={false}
+                      aria-selected={true}
+                      className="tab is-text-only is-active"
+                      data-focus-styles-enabled={true}
+                      data-terra-tabs-show-focus-styles={true}
+                      id="application-id-default"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      role="tab"
+                      style={
+                        Object {
+                          "zIndex": 1,
+                        }
+                      }
+                      tabIndex={0}
+                      title="Default"
                     >
-                      <span
-                        className="label"
+                      <div
+                        className="inner"
                       >
-                        Default
-                      </span>
+                        <span
+                          className="label"
+                        >
+                          Default
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </Tab>
-              </InjectIntl(Tab)>
-              <OnClickOutside(TabDropDown)
-                eventTypes={
-                  Array [
-                    "mousedown",
-                    "touchstart",
-                  ]
-                }
-                excludeScrollbar={false}
-                isOpen={false}
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onRequestClose={[Function]}
-                outsideClickIgnoreClass="ignore-react-onclickoutside"
-                preventDefault={false}
-                refCallback={[Function]}
-                stopPropagation={false}
-              >
-                <TabDropDown
-                  disableOnClickOutside={[Function]}
-                  enableOnClickOutside={[Function]}
+                  </Tab>
+                </InjectIntl(Tab)>
+                <OnClickOutside(InjectIntl(TabDropDown))
                   eventTypes={
                     Array [
                       "mousedown",
                       "touchstart",
                     ]
                   }
+                  excludeScrollbar={false}
                   isOpen={false}
                   onBlur={[Function]}
                   onFocus={[Function]}
@@ -1844,64 +2172,86 @@ exports[`Tabs should render with add icon 2`] = `
                   preventDefault={false}
                   refCallback={[Function]}
                   stopPropagation={false}
-                  wrappedRef={[Function]}
                 >
-                  <div
-                    className="drop-down"
-                    onMouseDown={[Function]}
-                    role="none"
-                  />
-                </TabDropDown>
-              </OnClickOutside(TabDropDown)>
-            </div>
-            <div
-              className="divcontainer"
-            >
-              <InjectIntl(AddButton)
-                addAriaLabel="Add Tab"
-                id="00000000-0000-0000-0000-000000000000"
-                index={1}
-                isSelected={false}
-                onSelect={[Function]}
-                tabIds={
-                  Array [
-                    "application-id-default",
-                    "00000000-0000-0000-0000-000000000000",
-                  ]
-                }
-                title="Add Tab"
+                  <InjectIntl(TabDropDown)
+                    disableOnClickOutside={[Function]}
+                    enableOnClickOutside={[Function]}
+                    eventTypes={
+                      Array [
+                        "mousedown",
+                        "touchstart",
+                      ]
+                    }
+                    isOpen={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    onRequestClose={[Function]}
+                    outsideClickIgnoreClass="ignore-react-onclickoutside"
+                    preventDefault={false}
+                    refCallback={[Function]}
+                    stopPropagation={false}
+                  >
+                    <TabDropDown
+                      disableOnClickOutside={[Function]}
+                      enableOnClickOutside={[Function]}
+                      eventTypes={
+                        Array [
+                          "mousedown",
+                          "touchstart",
+                        ]
+                      }
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isOpen={false}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onRequestClose={[Function]}
+                      outsideClickIgnoreClass="ignore-react-onclickoutside"
+                      preventDefault={false}
+                      refCallback={[Function]}
+                      stopPropagation={false}
+                    >
+                      <div
+                        className="drop-down"
+                        onMouseDown={[Function]}
+                        role="none"
+                      />
+                    </TabDropDown>
+                  </InjectIntl(TabDropDown)>
+                </OnClickOutside(InjectIntl(TabDropDown))>
+              </div>
+              <div
+                className="divcontainer"
               >
-                <AddButton
+                <InjectIntl(AddButton)
                   addAriaLabel="Add Tab"
                   id="00000000-0000-0000-0000-000000000000"
                   index={1}
-                  intl={
-                    Object {
-                      "defaultFormats": Object {},
-                      "defaultLocale": "en",
-                      "formatDate": [Function],
-                      "formatHTMLMessage": [Function],
-                      "formatMessage": [Function],
-                      "formatNumber": [Function],
-                      "formatPlural": [Function],
-                      "formatRelative": [Function],
-                      "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
-                        "getDateTimeFormat": [Function],
-                        "getMessageFormat": [Function],
-                        "getNumberFormat": [Function],
-                        "getPluralFormat": [Function],
-                        "getRelativeFormat": [Function],
-                      },
-                      "locale": "en",
-                      "messages": null,
-                      "now": [Function],
-                      "onError": [Function],
-                      "textComponent": "span",
-                      "timeZone": null,
-                    }
-                  }
                   isSelected={false}
                   onSelect={[Function]}
                   tabIds={
@@ -1912,101 +2262,143 @@ exports[`Tabs should render with add icon 2`] = `
                   }
                   title="Add Tab"
                 >
-                  <Button
-                    className="button"
-                    data-terra-tab-add-btn={true}
-                    data-terra-tabs-show-focus-styles={true}
-                    icon={
-                      <IconAdd
-                        a11yLabel="Add Tab"
-                        data-name="Layer 1"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg"
-                      />
-                    }
+                  <AddButton
+                    addAriaLabel="Add Tab"
                     id="00000000-0000-0000-0000-000000000000"
                     index={1}
-                    isBlock={false}
-                    isCompact={false}
-                    isDisabled={false}
-                    isIconOnly={true}
-                    isReversed={false}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    text="Add Tab"
-                    type="button"
-                    variant="de-emphasis"
+                    intl={
+                      Object {
+                        "defaultFormats": Object {},
+                        "defaultLocale": "en",
+                        "formatDate": [Function],
+                        "formatHTMLMessage": [Function],
+                        "formatMessage": [Function],
+                        "formatNumber": [Function],
+                        "formatPlural": [Function],
+                        "formatRelative": [Function],
+                        "formatTime": [Function],
+                        "formats": Object {},
+                        "formatters": Object {
+                          "getDateTimeFormat": [Function],
+                          "getMessageFormat": [Function],
+                          "getNumberFormat": [Function],
+                          "getPluralFormat": [Function],
+                          "getRelativeFormat": [Function],
+                        },
+                        "locale": "en",
+                        "messages": null,
+                        "now": [Function],
+                        "onError": [Function],
+                        "textComponent": "span",
+                        "timeZone": null,
+                      }
+                    }
+                    isSelected={false}
+                    onSelect={[Function]}
+                    tabIds={
+                      Array [
+                        "application-id-default",
+                        "00000000-0000-0000-0000-000000000000",
+                      ]
+                    }
+                    title="Add Tab"
                   >
-                    <button
-                      aria-disabled={false}
-                      aria-label="Add Tab"
-                      className="button de-emphasis button"
+                    <Button
+                      className="button"
                       data-terra-tab-add-btn={true}
                       data-terra-tabs-show-focus-styles={true}
-                      disabled={false}
+                      icon={
+                        <IconAdd
+                          a11yLabel="Add Tab"
+                          data-name="Layer 1"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg"
+                        />
+                      }
                       id="00000000-0000-0000-0000-000000000000"
                       index={1}
-                      onBlur={[Function]}
+                      isBlock={false}
+                      isCompact={false}
+                      isDisabled={false}
+                      isIconOnly={true}
+                      isReversed={false}
                       onClick={[Function]}
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
-                      onKeyUp={[Function]}
-                      onMouseDown={[Function]}
-                      title="Add Tab"
+                      text="Add Tab"
                       type="button"
+                      variant="de-emphasis"
                     >
-                      <span
-                        className="button-label icon-only"
+                      <button
+                        aria-disabled={false}
+                        aria-label="Add Tab"
+                        className="button de-emphasis button"
+                        data-terra-tab-add-btn={true}
+                        data-terra-tabs-show-focus-styles={true}
+                        disabled={false}
+                        id="00000000-0000-0000-0000-000000000000"
+                        index={1}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        title="Add Tab"
+                        type="button"
                       >
                         <span
-                          className="icon"
+                          className="button-label icon-only"
                         >
-                          <IconAdd
-                            a11yLabel="Add Tab"
-                            className="icon-svg"
-                            data-name="Layer 1"
-                            viewBox="0 0 48 48"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            className="icon"
                           >
-                            <IconBase
+                            <IconAdd
                               a11yLabel="Add Tab"
                               className="icon-svg"
                               data-name="Layer 1"
-                              focusable="false"
-                              height="1em"
-                              isBidi={false}
-                              isSpin={false}
                               viewBox="0 0 48 48"
-                              width="1em"
                               xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                className="tui-Icon icon icon-svg"
+                              <IconBase
+                                a11yLabel="Add Tab"
+                                className="icon-svg"
                                 data-name="Layer 1"
                                 focusable="false"
                                 height="1em"
+                                isBidi={false}
+                                isSpin={false}
                                 viewBox="0 0 48 48"
                                 width="1em"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  Add Tab
-                                </title>
-                                <path
-                                  d="M48 21H27V0h-6v21H0v6h21v21h6V27h21z"
-                                />
-                              </svg>
-                            </IconBase>
-                          </IconAdd>
+                                <svg
+                                  className="tui-Icon icon icon-svg"
+                                  data-name="Layer 1"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="0 0 48 48"
+                                  width="1em"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <title>
+                                    Add Tab
+                                  </title>
+                                  <path
+                                    d="M48 21H27V0h-6v21H0v6h21v21h6V27h21z"
+                                  />
+                                </svg>
+                              </IconBase>
+                            </IconAdd>
+                          </span>
                         </span>
-                      </span>
-                    </button>
-                  </Button>
-                </AddButton>
-              </InjectIntl(AddButton)>
+                      </button>
+                    </Button>
+                  </AddButton>
+                </InjectIntl(AddButton)>
+              </div>
             </div>
-          </div>
-        </Tabs>
+          </Tabs>
+        </InjectIntl(Tabs)>
       </div>
       <div
         className="body"
@@ -2163,7 +2555,7 @@ exports[`Tabs should render with close icon 1`] = `
         className="tab-header"
         role="none"
       >
-        <Tabs
+        <InjectIntl(Tabs)
           isDraggable={false}
           onTabStateChange={[Function]}
           tabData={
@@ -2187,79 +2579,79 @@ exports[`Tabs should render with close icon 1`] = `
           }
           variant="framework"
         >
-          <div
-            className="container"
+          <Tabs
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDraggable={false}
+            onTabStateChange={[Function]}
+            tabData={
+              Array [
+                Object {
+                  "associatedPanelId": "application-id-default-panel",
+                  "customDisplay": undefined,
+                  "icon": undefined,
+                  "id": "application-id-default",
+                  "isClosable": false,
+                  "isDisabled": false,
+                  "isIconOnly": false,
+                  "isSelected": true,
+                  "itemKey": "default",
+                  "label": "Default",
+                  "metaData": undefined,
+                  "onSelect": [Function],
+                  "showIcon": false,
+                },
+              ]
+            }
+            variant="framework"
           >
             <div
-              aria-orientation="horizontal"
-              aria-owns=""
-              className="tab-container"
-              data-tab-is-calculating="true"
-              role="tablist"
+              className="container"
             >
-              <InjectIntl(Tab)
-                associatedPanelId="application-id-default-panel"
-                hiddenStartIndex={1}
-                id="application-id-default"
-                index={0}
-                isClosable={false}
-                isDisabled={false}
-                isDraggable={false}
-                isIconOnly={false}
-                isSelected={true}
-                itemKey="default"
-                key="application-id-default"
-                label="Default"
-                onClosingTab={[Function]}
-                onSelect={[Function]}
-                setDropdownOpen={[Function]}
-                showIcon={false}
-                tabIds={
-                  Array [
-                    "application-id-default",
-                  ]
-                }
-                variant="framework"
-                zIndex={1}
+              <div
+                aria-orientation="horizontal"
+                aria-owns=""
+                className="tab-container"
+                data-tab-is-calculating="true"
+                role="tablist"
               >
-                <Tab
+                <InjectIntl(Tab)
                   associatedPanelId="application-id-default-panel"
                   hiddenStartIndex={1}
                   id="application-id-default"
                   index={0}
-                  intl={
-                    Object {
-                      "defaultFormats": Object {},
-                      "defaultLocale": "en",
-                      "formatDate": [Function],
-                      "formatHTMLMessage": [Function],
-                      "formatMessage": [Function],
-                      "formatNumber": [Function],
-                      "formatPlural": [Function],
-                      "formatRelative": [Function],
-                      "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
-                        "getDateTimeFormat": [Function],
-                        "getMessageFormat": [Function],
-                        "getNumberFormat": [Function],
-                        "getPluralFormat": [Function],
-                        "getRelativeFormat": [Function],
-                      },
-                      "locale": "en",
-                      "messages": null,
-                      "now": [Function],
-                      "onError": [Function],
-                      "textComponent": "span",
-                      "timeZone": null,
-                    }
-                  }
                   isClosable={false}
                   isDisabled={false}
                   isDraggable={false}
                   isIconOnly={false}
                   isSelected={true}
                   itemKey="default"
+                  key="application-id-default"
                   label="Default"
                   onClosingTab={[Function]}
                   onSelect={[Function]}
@@ -2273,65 +2665,98 @@ exports[`Tabs should render with close icon 1`] = `
                   variant="framework"
                   zIndex={1}
                 >
-                  <div
-                    aria-controls="application-id-default-panel"
-                    aria-disabled={false}
-                    aria-selected={true}
-                    className="tab is-text-only is-active"
-                    data-focus-styles-enabled={true}
-                    data-terra-tabs-show-focus-styles={true}
+                  <Tab
+                    associatedPanelId="application-id-default-panel"
+                    hiddenStartIndex={1}
                     id="application-id-default"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseDown={[Function]}
-                    role="tab"
-                    style={
+                    index={0}
+                    intl={
                       Object {
-                        "zIndex": 1,
+                        "defaultFormats": Object {},
+                        "defaultLocale": "en",
+                        "formatDate": [Function],
+                        "formatHTMLMessage": [Function],
+                        "formatMessage": [Function],
+                        "formatNumber": [Function],
+                        "formatPlural": [Function],
+                        "formatRelative": [Function],
+                        "formatTime": [Function],
+                        "formats": Object {},
+                        "formatters": Object {
+                          "getDateTimeFormat": [Function],
+                          "getMessageFormat": [Function],
+                          "getNumberFormat": [Function],
+                          "getPluralFormat": [Function],
+                          "getRelativeFormat": [Function],
+                        },
+                        "locale": "en",
+                        "messages": null,
+                        "now": [Function],
+                        "onError": [Function],
+                        "textComponent": "span",
+                        "timeZone": null,
                       }
                     }
-                    tabIndex={0}
-                    title="Default"
+                    isClosable={false}
+                    isDisabled={false}
+                    isDraggable={false}
+                    isIconOnly={false}
+                    isSelected={true}
+                    itemKey="default"
+                    label="Default"
+                    onClosingTab={[Function]}
+                    onSelect={[Function]}
+                    setDropdownOpen={[Function]}
+                    showIcon={false}
+                    tabIds={
+                      Array [
+                        "application-id-default",
+                      ]
+                    }
+                    variant="framework"
+                    zIndex={1}
                   >
                     <div
-                      className="inner"
+                      aria-controls="application-id-default-panel"
+                      aria-disabled={false}
+                      aria-selected={true}
+                      className="tab is-text-only is-active"
+                      data-focus-styles-enabled={true}
+                      data-terra-tabs-show-focus-styles={true}
+                      id="application-id-default"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      role="tab"
+                      style={
+                        Object {
+                          "zIndex": 1,
+                        }
+                      }
+                      tabIndex={0}
+                      title="Default"
                     >
-                      <span
-                        className="label"
+                      <div
+                        className="inner"
                       >
-                        Default
-                      </span>
+                        <span
+                          className="label"
+                        >
+                          Default
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </Tab>
-              </InjectIntl(Tab)>
-              <OnClickOutside(TabDropDown)
-                eventTypes={
-                  Array [
-                    "mousedown",
-                    "touchstart",
-                  ]
-                }
-                excludeScrollbar={false}
-                isOpen={false}
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onRequestClose={[Function]}
-                outsideClickIgnoreClass="ignore-react-onclickoutside"
-                preventDefault={false}
-                refCallback={[Function]}
-                stopPropagation={false}
-              >
-                <TabDropDown
-                  disableOnClickOutside={[Function]}
-                  enableOnClickOutside={[Function]}
+                  </Tab>
+                </InjectIntl(Tab)>
+                <OnClickOutside(InjectIntl(TabDropDown))
                   eventTypes={
                     Array [
                       "mousedown",
                       "touchstart",
                     ]
                   }
+                  excludeScrollbar={false}
                   isOpen={false}
                   onBlur={[Function]}
                   onFocus={[Function]}
@@ -2340,21 +2765,85 @@ exports[`Tabs should render with close icon 1`] = `
                   preventDefault={false}
                   refCallback={[Function]}
                   stopPropagation={false}
-                  wrappedRef={[Function]}
                 >
-                  <div
-                    className="drop-down"
-                    onMouseDown={[Function]}
-                    role="none"
-                  />
-                </TabDropDown>
-              </OnClickOutside(TabDropDown)>
+                  <InjectIntl(TabDropDown)
+                    disableOnClickOutside={[Function]}
+                    enableOnClickOutside={[Function]}
+                    eventTypes={
+                      Array [
+                        "mousedown",
+                        "touchstart",
+                      ]
+                    }
+                    isOpen={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    onRequestClose={[Function]}
+                    outsideClickIgnoreClass="ignore-react-onclickoutside"
+                    preventDefault={false}
+                    refCallback={[Function]}
+                    stopPropagation={false}
+                  >
+                    <TabDropDown
+                      disableOnClickOutside={[Function]}
+                      enableOnClickOutside={[Function]}
+                      eventTypes={
+                        Array [
+                          "mousedown",
+                          "touchstart",
+                        ]
+                      }
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isOpen={false}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onRequestClose={[Function]}
+                      outsideClickIgnoreClass="ignore-react-onclickoutside"
+                      preventDefault={false}
+                      refCallback={[Function]}
+                      stopPropagation={false}
+                    >
+                      <div
+                        className="drop-down"
+                        onMouseDown={[Function]}
+                        role="none"
+                      />
+                    </TabDropDown>
+                  </InjectIntl(TabDropDown)>
+                </OnClickOutside(InjectIntl(TabDropDown))>
+              </div>
+              <div
+                className="divcontainer"
+              />
             </div>
-            <div
-              className="divcontainer"
-            />
-          </div>
-        </Tabs>
+          </Tabs>
+        </InjectIntl(Tabs)>
       </div>
       <div
         className="body"

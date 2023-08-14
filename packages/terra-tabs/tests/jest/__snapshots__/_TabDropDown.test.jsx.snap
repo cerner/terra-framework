@@ -30,7 +30,7 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
     }
   }
 >
-  <OnClickOutside(TabDropDown)
+  <OnClickOutside(InjectIntl(TabDropDown))
     eventTypes={
       Array [
         "mousedown",
@@ -43,7 +43,7 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
     refCallback={[Function]}
     stopPropagation={false}
   >
-    <TabDropDown
+    <InjectIntl(TabDropDown)
       disableOnClickOutside={[Function]}
       enableOnClickOutside={[Function]}
       eventTypes={
@@ -56,70 +56,62 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
       preventDefault={false}
       refCallback={[Function]}
       stopPropagation={false}
-      wrappedRef={[Function]}
     >
-      <div
-        className="drop-down"
-        onMouseDown={[Function]}
-        role="none"
-      >
-        <InjectIntl(HiddenTab)
-          associatedPanelId="panel-1"
-          id="tab-1"
-          index={0}
-          itemKey="tab-1-key"
-          label="Tab 1 Label"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onSelect={[MockFunction]}
-          tabIds={
-            Array [
-              "tab-1",
-              "tab-2",
-            ]
+      <TabDropDown
+        disableOnClickOutside={[Function]}
+        enableOnClickOutside={[Function]}
+        eventTypes={
+          Array [
+            "mousedown",
+            "touchstart",
+          ]
+        }
+        intl={
+          Object {
+            "defaultFormats": Object {},
+            "defaultLocale": "en",
+            "formatDate": [Function],
+            "formatHTMLMessage": [Function],
+            "formatMessage": [Function],
+            "formatNumber": [Function],
+            "formatPlural": [Function],
+            "formatRelative": [Function],
+            "formatTime": [Function],
+            "formats": Object {},
+            "formatters": Object {
+              "getDateTimeFormat": [Function],
+              "getMessageFormat": [Function],
+              "getNumberFormat": [Function],
+              "getPluralFormat": [Function],
+              "getRelativeFormat": [Function],
+            },
+            "locale": "en",
+            "messages": null,
+            "now": [Function],
+            "onError": [Function],
+            "textComponent": "span",
+            "timeZone": null,
           }
+        }
+        outsideClickIgnoreClass="ignore-react-onclickoutside"
+        preventDefault={false}
+        refCallback={[Function]}
+        stopPropagation={false}
+      >
+        <div
+          className="drop-down"
+          onMouseDown={[Function]}
+          role="none"
         >
-          <HiddenTab
+          <InjectIntl(HiddenTab)
             associatedPanelId="panel-1"
             id="tab-1"
             index={0}
-            intl={
-              Object {
-                "defaultFormats": Object {},
-                "defaultLocale": "en",
-                "formatDate": [Function],
-                "formatHTMLMessage": [Function],
-                "formatMessage": [Function],
-                "formatNumber": [Function],
-                "formatPlural": [Function],
-                "formatRelative": [Function],
-                "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
-                  "getDateTimeFormat": [Function],
-                  "getMessageFormat": [Function],
-                  "getNumberFormat": [Function],
-                  "getPluralFormat": [Function],
-                  "getRelativeFormat": [Function],
-                },
-                "locale": "en",
-                "messages": null,
-                "now": [Function],
-                "onError": [Function],
-                "textComponent": "span",
-                "timeZone": null,
-              }
-            }
-            isClosable={false}
-            isDisabled={false}
-            isSelected={false}
             itemKey="tab-1-key"
             label="Tab 1 Label"
             onBlur={[Function]}
             onFocus={[Function]}
             onSelect={[MockFunction]}
-            showAddButton={false}
-            showIcon={false}
             tabIds={
               Array [
                 "tab-1",
@@ -127,89 +119,90 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
               ]
             }
           >
-            <div
-              aria-controls="panel-1"
-              aria-disabled={false}
-              aria-selected={false}
-              className="hidden"
-              data-focus-styles-enabled={true}
+            <HiddenTab
+              associatedPanelId="panel-1"
               id="tab-1"
+              index={0}
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
+              isClosable={false}
+              isDisabled={false}
+              isDraggable={false}
+              isSelected={false}
+              itemKey="tab-1-key"
+              label="Tab 1 Label"
               onBlur={[Function]}
-              onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseDown={[Function]}
-              role="tab"
-              tabIndex={-1}
+              onSelect={[MockFunction]}
+              showAddButton={false}
+              showIcon={false}
+              tabIds={
+                Array [
+                  "tab-1",
+                  "tab-2",
+                ]
+              }
             >
               <div
-                className="checkbox"
-              />
-              <div
-                className="label"
+                aria-controls="panel-1"
+                aria-disabled={false}
+                aria-selected={false}
+                className="hidden"
+                data-focus-styles-enabled={true}
+                id="tab-1"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                role="tab"
+                tabIndex={-1}
               >
-                Tab 1 Label
+                <div
+                  className="checkbox"
+                />
+                <div
+                  className="label"
+                >
+                  Tab 1 Label
+                </div>
               </div>
-            </div>
-          </HiddenTab>
-        </InjectIntl(HiddenTab)>
-        <InjectIntl(HiddenTab)
-          associatedPanelId="panel-2"
-          id="tab-2"
-          index={0}
-          itemKey="tab-2-key"
-          label="Tab 2 Label"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onSelect={[MockFunction]}
-          tabIds={
-            Array [
-              "tab-1",
-              "tab-2",
-            ]
-          }
-        >
-          <HiddenTab
+            </HiddenTab>
+          </InjectIntl(HiddenTab)>
+          <InjectIntl(HiddenTab)
             associatedPanelId="panel-2"
             id="tab-2"
             index={0}
-            intl={
-              Object {
-                "defaultFormats": Object {},
-                "defaultLocale": "en",
-                "formatDate": [Function],
-                "formatHTMLMessage": [Function],
-                "formatMessage": [Function],
-                "formatNumber": [Function],
-                "formatPlural": [Function],
-                "formatRelative": [Function],
-                "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
-                  "getDateTimeFormat": [Function],
-                  "getMessageFormat": [Function],
-                  "getNumberFormat": [Function],
-                  "getPluralFormat": [Function],
-                  "getRelativeFormat": [Function],
-                },
-                "locale": "en",
-                "messages": null,
-                "now": [Function],
-                "onError": [Function],
-                "textComponent": "span",
-                "timeZone": null,
-              }
-            }
-            isClosable={false}
-            isDisabled={false}
-            isSelected={false}
             itemKey="tab-2-key"
             label="Tab 2 Label"
             onBlur={[Function]}
             onFocus={[Function]}
             onSelect={[MockFunction]}
-            showAddButton={false}
-            showIcon={false}
             tabIds={
               Array [
                 "tab-1",
@@ -217,34 +210,84 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
               ]
             }
           >
-            <div
-              aria-controls="panel-2"
-              aria-disabled={false}
-              aria-selected={false}
-              className="hidden"
-              data-focus-styles-enabled={true}
+            <HiddenTab
+              associatedPanelId="panel-2"
               id="tab-2"
+              index={0}
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
+              isClosable={false}
+              isDisabled={false}
+              isDraggable={false}
+              isSelected={false}
+              itemKey="tab-2-key"
+              label="Tab 2 Label"
               onBlur={[Function]}
-              onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseDown={[Function]}
-              role="tab"
-              tabIndex={-1}
+              onSelect={[MockFunction]}
+              showAddButton={false}
+              showIcon={false}
+              tabIds={
+                Array [
+                  "tab-1",
+                  "tab-2",
+                ]
+              }
             >
               <div
-                className="checkbox"
-              />
-              <div
-                className="label"
+                aria-controls="panel-2"
+                aria-disabled={false}
+                aria-selected={false}
+                className="hidden"
+                data-focus-styles-enabled={true}
+                id="tab-2"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                role="tab"
+                tabIndex={-1}
               >
-                Tab 2 Label
+                <div
+                  className="checkbox"
+                />
+                <div
+                  className="label"
+                >
+                  Tab 2 Label
+                </div>
               </div>
-            </div>
-          </HiddenTab>
-        </InjectIntl(HiddenTab)>
-      </div>
-    </TabDropDown>
-  </OnClickOutside(TabDropDown)>
+            </HiddenTab>
+          </InjectIntl(HiddenTab)>
+        </div>
+      </TabDropDown>
+    </InjectIntl(TabDropDown)>
+  </OnClickOutside(InjectIntl(TabDropDown))>
 </IntlProvider>
 `;

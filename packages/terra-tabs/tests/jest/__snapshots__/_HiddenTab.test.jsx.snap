@@ -84,6 +84,7 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
       }
       isClosable={false}
       isDisabled={false}
+      isDraggable={false}
       isSelected={false}
       itemKey="tab-1-key"
       label="Tab 1 Label"
