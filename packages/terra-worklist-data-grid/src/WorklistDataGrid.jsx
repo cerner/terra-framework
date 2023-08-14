@@ -209,6 +209,9 @@ function WorklistDataGrid(props) {
   // Define ColumnContext Provider value object
   const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setCellAriaLiveMessage }), [pinnedColumnOffsets]);
 
+  // Define ColumnContext Provider value object
+  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setCellAriaLiveMessage }), [pinnedColumnOffsets]);
+
   const theme = useContext(ThemeContext);
 
   // -------------------------------------
