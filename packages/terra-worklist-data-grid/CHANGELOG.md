@@ -1,12 +1,10 @@
 # Changelog
 
 ## Unreleased
-* Added
-  * Added ability to treat the `terra-worklist-data-grid` component as a single tabstop.
-  
 * Fixed
   * Removed roving tabIndex and resolved focus management issues within cells.
   * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.
+  * Added ability to use spacebar on masked and non-selectable cells to select rows.
 
 ## 0.4.0 - (August 10, 2023)
 
