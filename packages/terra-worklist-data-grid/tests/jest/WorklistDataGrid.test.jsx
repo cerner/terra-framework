@@ -19,7 +19,7 @@ const dataFile = {
     {
       id: '1',
       cells: [
-        { content: 'Heart Rate Monitored (bpm)' },
+        { content: 'Heart Rate Monitored (bpm)', isSelectable: false },
         { content: '' },
         { content: '66', isMasked: true },
       ],
@@ -129,6 +129,108 @@ describe('basic grid', () => {
 
     // Validate mock function was called from simulated click event
     expect(mockColumnSelect).toHaveBeenCalledWith(WorklistDataGridUtils.ROW_SELECTION_COLUMN.id);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies row selection when space is pressed on a masked cell', () => {
+    const mockRowSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        pinnedColumns={dataFile.cols.slice(0, 2)}
+        overflowColumns={dataFile.cols.slice(2)}
+        hasSelectableRows
+        rows={dataFile.rows}
+        onRowSelect={mockRowSelect}
+      />,
+    );
+
+    // Find column headers
+    const maskedCell = wrapper.find(Row).at(0).find('.masked');
+
+    // Simulate onMouseDown event on row selection column header
+    maskedCell.at(0).simulate('keydown', { keyCode: 32 });
+
+    // Validate mock function was called from simulated click event
+    expect(mockRowSelect).toHaveBeenCalledWith(['1']);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies onCellSelect callback is not triggered when space is pressed on a masked cell', () => {
+    const mockCellSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        pinnedColumns={dataFile.cols.slice(0, 2)}
+        overflowColumns={dataFile.cols.slice(2)}
+        rows={dataFile.rows}
+        onCellSelect={mockCellSelect}
+      />,
+    );
+
+    // Find column headers
+    const maskedCell = wrapper.find(Row).at(0).find('.masked');
+
+    // Simulate onMouseDown event on row selection column header
+    maskedCell.at(0).simulate('keydown', { keyCode: 32 });
+
+    // Validate mock function was called from simulated click event
+    expect(mockCellSelect).not.toHaveBeenCalled();
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies row selection when space is pressed on a non-selectable cell', () => {
+    const mockRowSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        pinnedColumns={dataFile.cols.slice(0, 2)}
+        overflowColumns={dataFile.cols.slice(2)}
+        hasSelectableRows
+        rows={dataFile.rows}
+        onRowSelect={mockRowSelect}
+      />,
+    );
+
+    // Find column headers
+    const nonSelectableCell = wrapper.find(Row).at(0).find('th:not(.selectable)');
+
+    // Simulate onMouseDown event on row selection column header
+    nonSelectableCell.at(0).simulate('keydown', { keyCode: 32 });
+
+    // Validate mock function was called from simulated click event
+    expect(mockRowSelect).toHaveBeenCalledWith(['1']);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies onCellSelect callback is not triggered when space is pressed on a non-selectable cell', () => {
+    const mockCellSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        pinnedColumns={dataFile.cols.slice(0, 2)}
+        overflowColumns={dataFile.cols.slice(2)}
+        rows={dataFile.rows}
+        onRowSelect={mockCellSelect}
+      />,
+    );
+
+    // Find column headers
+    const nonSelectableCell = wrapper.find(Row).at(0).find('.selectable');
+
+    // Simulate onMouseDown event on row selection column header
+    nonSelectableCell.at(0).simulate('keydown', { keyCode: 32 });
+
+    // Validate mock function was called from simulated click event
+    expect(mockCellSelect).not.toHaveBeenCalled();
 
     expect(wrapper).toMatchSnapshot();
   });

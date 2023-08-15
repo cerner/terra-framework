@@ -1,5 +1,5 @@
 import React, {
-  useContext, useCallback, useState, useRef, useEffect,
+  useContext, useState, useRef, useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -8,7 +8,6 @@ import classNames from 'classnames/bind';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ThemeContext from 'terra-theme-context';
 import FocusTrap from 'focus-trap-react';
-import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import styles from './Cell.module.scss';
 import ColumnContext from '../utils/ColumnContext';
 
@@ -51,11 +50,6 @@ const propTypes = {
   isSelectable: PropTypes.bool,
 
   /**
-   * Boolean value to indicate if the cell is the tab stop on the grid. At any given time, the grid has only one tab stop.
-   */
-  isTabStop: PropTypes.bool,
-
-  /**
    * Boolean indicating whether the Cell is currently selected.
    */
   isSelected: PropTypes.bool,
@@ -88,7 +82,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  isTabStop: false,
   isRowHeader: false,
   isSelected: false,
   isSelectable: true,
@@ -101,7 +94,6 @@ function Cell(props) {
     columnId,
     rowIndex,
     columnIndex,
-    isTabStop,
     ariaLabel,
     isMasked,
     isRowHeader,
@@ -147,13 +139,13 @@ function Cell(props) {
   /**
    * Handles mouse down event for cell
    */
-  const onMouseDown = useCallback((event) => {
+  const onMouseDown = ((event) => {
     if (!isFocusTrapEnabled) {
       onCellSelect({
-        rowId, columnId, rowIndex, columnIndex, multiSelect: event.shiftKey, selectedByKeyboard: false,
+        rowId, columnId, rowIndex, columnIndex, multiSelect: event.shiftKey, selectedByKeyboard: false, isCellSelectable: (!isMasked && isSelectable),
       });
     }
-  }, [isFocusTrapEnabled, onCellSelect, rowId, columnId, rowIndex, columnIndex]);
+  });
 
   /**
    * Keyboard event handler
@@ -182,17 +174,12 @@ function Cell(props) {
           }
           break;
         case KeyCode.KEY_SPACE:
-          if (!isMasked && isSelectable && onCellSelect) {
+          if (onCellSelect) {
             onCellSelect({
-              rowId, columnId, rowIndex, columnIndex, multiSelect: event.shiftKey, selectedByKeyboard: true,
+              rowId, columnId, rowIndex, columnIndex, multiSelect: event.shiftKey, selectedByKeyboard: true, isCellSelectable: (!isMasked && isSelectable),
             });
           }
           event.preventDefault(); // prevent the default scrolling
-          break;
-        case KeyCode.KEY_C:
-          if (event.ctrlKey || event.metaKey) {
-            WorklistDataGridUtils.writeToClipboard(event.target.textContent);
-          }
           break;
         default:
       }
@@ -233,11 +220,11 @@ function Cell(props) {
       ref={cellRef}
       aria-selected={isSelected}
       aria-label={ariaLabel}
-      tabIndex={isTabStop ? 0 : -1}
+      tabIndex={-1}
       className={className}
       {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
-      onKeyDown={handleKeyDown}
       onMouseDown={onCellSelect ? onMouseDown : undefined}
+      onKeyDown={handleKeyDown}
       style={{ left: cellLeftEdge }} // eslint-disable-line react/forbid-component-props
     >
       {/* Wrap cell content with focus trap */}
@@ -258,4 +245,4 @@ function Cell(props) {
 Cell.propTypes = propTypes;
 Cell.defaultProps = defaultProps;
 
-export default injectIntl(Cell);
+export default React.memo(injectIntl(Cell));

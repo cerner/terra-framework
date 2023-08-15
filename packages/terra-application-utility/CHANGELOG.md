@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.53.0 - (August 10, 2023)
+
 * Changed
  * Locked `terra-arrange` to `3.51.0` temporarily.
 

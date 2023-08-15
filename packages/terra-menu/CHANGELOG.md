@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.75.0 - (August 10, 2023)
+
 * Added
   * Added context for menu item selected/unselected state and sub menu keyboard navigation instructions.
 

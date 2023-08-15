@@ -2,11 +2,18 @@
 
 ## Unreleased
 * Added
-  * Added examples and tests for `terra-worklist-data-grid` to interact with cells containing focusable elements.
   * Added example and tests for `terra-worklist-data-grid` to select rows via mouse and keyboard.
+
+* Changed
+  * Updated focusable cell example for `terra-worklist-data-grid` to allow text area to be editable.
+
+## 1.32.0 - (August 10, 2023)
 
 * Updated
   * Updated terra-popup examples with inert attribute to demonstrate focus trap when using virtual cursor of Jaws for navigation within popup.
+
+* Added
+  * Added tests for `terra-worklist-data-grid` when using pinned columns.
 
 * Changed
   * Updated toggle examples for `terra-collapsible-menu-view` to include selectable toggles and toggles within a collapsed menu.
@@ -15,10 +22,16 @@
 * Changed
  * Locked `terra-arrange` to `3.51.0` temporarily.
 
+* Added
+  * Updated tests for `terra-tabs` drag and drop in tab-menu.
+
 ## 1.31.0 - (August 4, 2023)
 
 * Added
   * Added examples and tests for `terra-worklist-data-grid` to interact with cells containing focusable elements.
+
+* Changed
+  * Updated tests for `terra-worklist-data-grid` to verify focusable cell elements do not receive focus on tab key press.
 
 ## 1.30.0 - (August 2, 2023)
 

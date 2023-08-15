@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import WorklistDataGrid from 'terra-worklist-data-grid';
 import WorklistDataGridUtils from 'terra-worklist-data-grid/src/utils/WorklistDataGridUtils';
 
@@ -226,16 +226,17 @@ const RowSelection = () => {
     }
   };
 
-  const onRowSelect = (rowIdsToSelect, rowIdsToUnselect) => {
-    if (rowIdsToUnselect) {
-      rows.forEach((r, index) => { if (rowIdsToUnselect.indexOf(r.id) >= 0) { rows[index].isSelected = false; } });
-    }
+  const onRowSelect = useCallback((rowIdsToSelect, rowIdsToUnselect) => {
+    rows.forEach((row, index) => {
+      if (rowIdsToUnselect && rowIdsToUnselect.indexOf(row.id) >= 0) {
+        rows[index].isSelected = false;
+      }
 
-    if (rowIdsToSelect) {
-      rows.forEach((r, index) => { if (rowIdsToSelect.indexOf(r.id) >= 0) { rows[index].isSelected = true; } });
-      setSelectedRows(rowIdsToSelect);
-    }
-  };
+      if (rowIdsToSelect && rowIdsToSelect.indexOf(row.id) >= 0) {
+        rows[index].isSelected = true;
+      }
+    });
+  }, [rows]);
 
   const enableRowSelection = () => {
     if (!rowSelectionModeRef.current.checked) {

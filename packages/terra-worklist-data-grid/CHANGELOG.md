@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+* Fixed
+  * Removed roving tabIndex and resolved focus management issues within cells.
+  * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.
+  * Added ability to use spacebar on masked and non-selectable cells to select rows.
+
+## 0.4.0 - (August 10, 2023)
 
 * Breaking Changes
   * Removed `columns` prop in favor of the new `pinnedColumns` and `overflowColumns` props.
@@ -10,6 +16,7 @@
   * Added `overflowColumns` prop for columns that are scrollable.
   * Added support for pinned columns.
   * Added ability to dive into cells with focusable elements.
+  * Added ability to treat the `terra-worklist-data-grid` component as a single tabstop.
   * Added ability to select the row selection column header to allow sorting by consumers.
   * Added ability to select rows via mouse and keyboard.
 
