@@ -763,7 +763,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
             onRowSelect={[Function]}
             rowHeaderIndex={0}
             rowIndex={1}
-            selectedCellColumnId="Column-2"
           >
             <tr
               className="worklist-data-grid-row"
@@ -779,7 +778,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 height="2.5rem"
                 isRowHeader={true}
                 isSelectable={false}
-                isSelected={false}
                 key="1_Column-0"
                 onCellSelect={[Function]}
                 rowId="1"
@@ -870,7 +868,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 columnIndex={1}
                 height="2.5rem"
                 isRowHeader={false}
-                isSelected={false}
                 key="1_Column-1"
                 onCellSelect={[Function]}
                 rowId="1"
@@ -964,7 +961,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 height="2.5rem"
                 isMasked={true}
                 isRowHeader={false}
-                isSelected={true}
                 key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
@@ -1004,13 +1000,13 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                   isMasked={true}
                   isRowHeader={false}
                   isSelectable={true}
-                  isSelected={true}
+                  isSelected={false}
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
                 >
                   <td
-                    aria-selected={true}
+                    aria-selected={false}
                     className="worklist-data-grid-cell masked"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -1107,7 +1103,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 columnIndex={0}
                 height="2.5rem"
                 isRowHeader={true}
-                isSelected={false}
                 key="2_Column-0"
                 onCellSelect={[Function]}
                 rowId="2"
@@ -1198,7 +1193,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 columnIndex={1}
                 height="2.5rem"
                 isRowHeader={false}
-                isSelected={false}
                 key="2_Column-1"
                 onCellSelect={[Function]}
                 rowId="2"
@@ -1288,7 +1282,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 height="2.5rem"
                 isMasked={true}
                 isRowHeader={false}
-                isSelected={false}
                 key="2_Column-2"
                 onCellSelect={[Function]}
                 rowId="2"
@@ -1431,7 +1424,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 columnIndex={0}
                 height="2.5rem"
                 isRowHeader={true}
-                isSelected={false}
                 key="3_Column-0"
                 onCellSelect={[Function]}
                 rowId="3"
@@ -1522,7 +1514,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 columnIndex={1}
                 height="2.5rem"
                 isRowHeader={false}
-                isSelected={false}
                 key="3_Column-1"
                 onCellSelect={[Function]}
                 rowId="3"
@@ -1612,7 +1603,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 height="2.5rem"
                 isMasked={true}
                 isRowHeader={false}
-                isSelected={false}
                 key="3_Column-2"
                 onCellSelect={[Function]}
                 rowId="3"
@@ -2494,7 +2484,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
             onRowSelect={[Function]}
             rowHeaderIndex={0}
             rowIndex={1}
-            selectedCellColumnId="Column-1"
           >
             <tr
               className="worklist-data-grid-row"
@@ -2510,7 +2499,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 height="2.5rem"
                 isRowHeader={true}
                 isSelectable={false}
-                isSelected={false}
                 key="1_Column-0"
                 onCellSelect={[Function]}
                 rowId="1"
@@ -2601,7 +2589,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 columnIndex={1}
                 height="2.5rem"
                 isRowHeader={false}
-                isSelected={true}
                 key="1_Column-1"
                 onCellSelect={[Function]}
                 rowId="1"
@@ -2641,14 +2628,14 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                   isMasked={false}
                   isRowHeader={false}
                   isSelectable={true}
-                  isSelected={true}
+                  isSelected={false}
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
                 >
                   <td
-                    aria-selected={true}
-                    className="worklist-data-grid-cell pinned selectable selected blank"
+                    aria-selected={false}
+                    className="worklist-data-grid-cell pinned selectable blank"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
                     style={
@@ -2695,7 +2682,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 height="2.5rem"
                 isMasked={true}
                 isRowHeader={false}
-                isSelected={false}
                 key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
@@ -2838,7 +2824,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 columnIndex={0}
                 height="2.5rem"
                 isRowHeader={true}
-                isSelected={false}
                 key="2_Column-0"
                 onCellSelect={[Function]}
                 rowId="2"
@@ -2929,7 +2914,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 columnIndex={1}
                 height="2.5rem"
                 isRowHeader={false}
-                isSelected={false}
                 key="2_Column-1"
                 onCellSelect={[Function]}
                 rowId="2"
@@ -3019,7 +3003,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 height="2.5rem"
                 isMasked={true}
                 isRowHeader={false}
-                isSelected={false}
                 key="2_Column-2"
                 onCellSelect={[Function]}
                 rowId="2"
@@ -3162,7 +3145,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 columnIndex={0}
                 height="2.5rem"
                 isRowHeader={true}
-                isSelected={false}
                 key="3_Column-0"
                 onCellSelect={[Function]}
                 rowId="3"
@@ -3253,7 +3235,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 columnIndex={1}
                 height="2.5rem"
                 isRowHeader={false}
-                isSelected={false}
                 key="3_Column-1"
                 onCellSelect={[Function]}
                 rowId="3"
@@ -3343,7 +3324,6 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 height="2.5rem"
                 isMasked={true}
                 isRowHeader={false}
-                isSelected={false}
                 key="3_Column-2"
                 onCellSelect={[Function]}
                 rowId="3"
