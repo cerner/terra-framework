@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Disabled unselectable menu item toggles to make them consistent with face-up toggles.
+
 ## 6.77.0 - (August 10, 2023)
 
 * Changed

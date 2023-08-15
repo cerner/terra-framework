@@ -26,6 +26,14 @@ Terra.describeViewports('Collapsible Menu With Item Before Divider', ['tiny', 's
   });
 });
 
+Terra.describeViewports('Collapsible Menu With Unselectable Toggle', ['tiny', 'small', 'medium', 'large'], () => {
+  it('should display an unselectable toggle', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/collapsible-menu-view-unselectable-toggle');
+    $('[data-collapsible-menu-toggle]').click();
+    Terra.validates.element('collapsible menu with unselectable toggle', { selector: '[data-terra-popup-content]', rules: ignoredA11y });
+  });
+});
+
 Terra.describeViewports('First hidden item visible when isIconOnly', ['medium'], () => {
   it('should display First hidden item visible when isIconOnly', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/first-hidden-item-is-icon');
@@ -68,6 +76,13 @@ Terra.describeViewports('Start Aligned', ['tiny', 'small', 'medium', 'huge', 'la
   it('should display start aligned', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/collapsible-menu-view-start-alignment');
     Terra.validates.element('start aligned');
+  });
+});
+
+Terra.describeViewports('Unselectable Toggle', ['tiny', 'small', 'medium', 'huge', 'large', 'enormous'], () => {
+  it('should display an unselectable toggle', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/unselectable-toggle');
+    Terra.validates.element('unselectable toggle');
   });
 });
 
