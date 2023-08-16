@@ -66,7 +66,6 @@ const DefaultWorklistDataGrid = () => {
 
       if (column.id === columnId) {
         newColumn.sortIndicator = column.sortIndicator === 'ascending' ? 'descending' : 'ascending';
-
         const newGridRows = [...gridRows];
         newGridRows.sort((rowA, rowB) => {
           const firstRowContent = rowA.cells[columnIndex].content || '';

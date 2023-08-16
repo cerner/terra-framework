@@ -222,36 +222,37 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
         tabIndex={0}
       >
         <Memo(ColumnHeader)
+          activeColumnResizing={false}
           columns={
             Array [
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
               Object {
                 "displayName": "March 16",
                 "id": "Column-1",
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
               Object {
                 "displayName": "March 17",
                 "id": "Column-2",
                 "isSelectable": false,
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
             ]
           }
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
-          tableHeight={-1}
         >
           <thead>
             <tr
@@ -263,13 +264,15 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 displayName=" Vitals"
                 headerHeight="2.5rem"
                 id="Column-0"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-0"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -305,14 +308,16 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
@@ -343,16 +348,18 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       columnIndex={0}
                       columnText=" Vitals"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={0}
+                        columnResizeIncrement={10}
                         columnText=" Vitals"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -380,28 +387,30 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label=" Vitals"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -414,13 +423,15 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 displayName="March 16"
                 headerHeight="2.5rem"
                 id="Column-1"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-1"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -456,14 +467,16 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
@@ -494,16 +507,18 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       columnIndex={1}
                       columnText="March 16"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={1}
+                        columnResizeIncrement={10}
                         columnText="March 16"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -531,28 +546,30 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="March 16"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -561,7 +578,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       className="pinned-columns-divider"
                       style={
                         Object {
-                          "height": -1,
+                          "height": "0px",
                           "left": 199,
                         }
                       }
@@ -574,14 +591,16 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 displayName="March 17"
                 headerHeight="2.5rem"
                 id="Column-2"
+                isActive={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -617,19 +636,23 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={false}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
                     className="column-header"
                     key="Column-2"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -653,16 +676,18 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       columnIndex={2}
                       columnText="March 17"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={2}
+                        columnResizeIncrement={10}
                         columnText="March 17"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -690,28 +715,30 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="March 17"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -1953,36 +1980,37 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
         tabIndex={0}
       >
         <Memo(ColumnHeader)
+          activeColumnResizing={false}
           columns={
             Array [
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
               Object {
                 "displayName": "March 16",
                 "id": "Column-1",
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
               Object {
                 "displayName": "March 17",
                 "id": "Column-2",
                 "isSelectable": false,
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
             ]
           }
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
-          tableHeight={-1}
         >
           <thead>
             <tr
@@ -1994,13 +2022,15 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 displayName=" Vitals"
                 headerHeight="2.5rem"
                 id="Column-0"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-0"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -2036,14 +2066,16 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
@@ -2074,16 +2106,18 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       columnIndex={0}
                       columnText=" Vitals"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={0}
+                        columnResizeIncrement={10}
                         columnText=" Vitals"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2111,28 +2145,30 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label=" Vitals"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -2145,13 +2181,15 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 displayName="March 16"
                 headerHeight="2.5rem"
                 id="Column-1"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-1"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -2187,14 +2225,16 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
@@ -2225,16 +2265,18 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       columnIndex={1}
                       columnText="March 16"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={1}
+                        columnResizeIncrement={10}
                         columnText="March 16"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2262,28 +2304,30 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="March 16"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -2292,7 +2336,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       className="pinned-columns-divider"
                       style={
                         Object {
-                          "height": -1,
+                          "height": "0px",
                           "left": 199,
                         }
                       }
@@ -2305,14 +2349,16 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 displayName="March 17"
                 headerHeight="2.5rem"
                 id="Column-2"
+                isActive={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -2348,19 +2394,23 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={false}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
                     className="column-header"
                     key="Column-2"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -2384,16 +2434,18 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                       columnIndex={2}
                       columnText="March 17"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={2}
+                        columnResizeIncrement={10}
                         columnText="March 17"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2421,28 +2473,30 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="March 17"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -3714,44 +3768,46 @@ exports[`basic grid verifies row selection column header selection 1`] = `
         tabIndex={0}
       >
         <Memo(ColumnHeader)
+          activeColumnIndex={0}
+          activeColumnResizing={false}
           columns={
             Array [
               Object {
                 "id": "WorklistDataGrid-rowSelectionColumn",
                 "isResizable": false,
                 "isSelectable": true,
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 40,
               },
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
               Object {
                 "displayName": "March 16",
                 "id": "Column-1",
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
               Object {
                 "displayName": "March 17",
                 "id": "Column-2",
                 "isSelectable": false,
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
             ]
           }
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
-          tableHeight={-1}
         >
           <thead>
             <tr
@@ -3762,15 +3818,17 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                 columnIndex={0}
                 headerHeight="2.5rem"
                 id="WorklistDataGrid-rowSelectionColumn"
+                isActive={true}
                 isResizable={false}
+                isResizeActive={false}
                 isSelectable={true}
                 key="WorklistDataGrid-rowSelectionColumn"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={40}
               >
                 <ColumnHeaderCell
@@ -3805,14 +3863,16 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={true}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={40}
                 >
                   <th
@@ -3844,13 +3904,15 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                 displayName=" Vitals"
                 headerHeight="2.5rem"
                 id="Column-0"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-0"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -3886,14 +3948,16 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
@@ -3924,16 +3988,18 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                       columnIndex={1}
                       columnText=" Vitals"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={1}
+                        columnResizeIncrement={10}
                         columnText=" Vitals"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -3961,28 +4027,30 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label=" Vitals"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -3995,13 +4063,15 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                 displayName="March 16"
                 headerHeight="2.5rem"
                 id="Column-1"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-1"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -4037,14 +4107,16 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
@@ -4075,16 +4147,18 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                       columnIndex={2}
                       columnText="March 16"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={2}
+                        columnResizeIncrement={10}
                         columnText="March 16"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4112,28 +4186,30 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="March 16"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -4142,7 +4218,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                       className="pinned-columns-divider"
                       style={
                         Object {
-                          "height": -1,
+                          "height": "0px",
                           "left": 199,
                         }
                       }
@@ -4155,14 +4231,16 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                 displayName="March 17"
                 headerHeight="2.5rem"
                 id="Column-2"
+                isActive={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -4198,19 +4276,23 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={false}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
                     className="column-header"
                     key="Column-2"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -4234,16 +4316,18 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                       columnIndex={3}
                       columnText="March 17"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={3}
+                        columnResizeIncrement={10}
                         columnText="March 17"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4271,28 +4355,30 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="March 17"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -5995,44 +6081,45 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
         tabIndex={0}
       >
         <Memo(ColumnHeader)
+          activeColumnResizing={false}
           columns={
             Array [
               Object {
                 "id": "WorklistDataGrid-rowSelectionColumn",
                 "isResizable": false,
                 "isSelectable": true,
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 40,
               },
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
               Object {
                 "displayName": "March 16",
                 "id": "Column-1",
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
               Object {
                 "displayName": "March 17",
                 "id": "Column-2",
                 "isSelectable": false,
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
             ]
           }
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
-          tableHeight={-1}
         >
           <thead>
             <tr
@@ -6043,15 +6130,17 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                 columnIndex={0}
                 headerHeight="2.5rem"
                 id="WorklistDataGrid-rowSelectionColumn"
+                isActive={false}
                 isResizable={false}
+                isResizeActive={false}
                 isSelectable={true}
                 key="WorklistDataGrid-rowSelectionColumn"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={40}
               >
                 <ColumnHeaderCell
@@ -6086,14 +6175,16 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={40}
                 >
                   <th
@@ -6125,13 +6216,15 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                 displayName=" Vitals"
                 headerHeight="2.5rem"
                 id="Column-0"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-0"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -6167,14 +6260,16 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
@@ -6205,16 +6300,18 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                       columnIndex={1}
                       columnText=" Vitals"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={1}
+                        columnResizeIncrement={10}
                         columnText=" Vitals"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -6242,28 +6339,30 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label=" Vitals"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -6276,13 +6375,15 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                 displayName="March 16"
                 headerHeight="2.5rem"
                 id="Column-1"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-1"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -6318,14 +6419,16 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
@@ -6356,16 +6459,18 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                       columnIndex={2}
                       columnText="March 16"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={2}
+                        columnResizeIncrement={10}
                         columnText="March 16"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -6393,28 +6498,30 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="March 16"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -6423,7 +6530,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                       className="pinned-columns-divider"
                       style={
                         Object {
-                          "height": -1,
+                          "height": "0px",
                           "left": 199,
                         }
                       }
@@ -6436,14 +6543,16 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                 displayName="March 17"
                 headerHeight="2.5rem"
                 id="Column-2"
+                isActive={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -6479,19 +6588,23 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={false}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
                     className="column-header"
                     key="Column-2"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -6515,16 +6628,18 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                       columnIndex={3}
                       columnText="March 17"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={3}
+                        columnResizeIncrement={10}
                         columnText="March 17"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -6552,28 +6667,30 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="March 17"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -8276,44 +8393,45 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
         tabIndex={0}
       >
         <Memo(ColumnHeader)
+          activeColumnResizing={false}
           columns={
             Array [
               Object {
                 "id": "WorklistDataGrid-rowSelectionColumn",
                 "isResizable": false,
                 "isSelectable": true,
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 40,
               },
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
               Object {
                 "displayName": "March 16",
                 "id": "Column-1",
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
               Object {
                 "displayName": "March 17",
                 "id": "Column-2",
                 "isSelectable": false,
-                "maximumWidth": 300,
-                "minimumWidth": 60,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
                 "width": 200,
               },
             ]
           }
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
-          tableHeight={-1}
         >
           <thead>
             <tr
@@ -8324,15 +8442,17 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                 columnIndex={0}
                 headerHeight="2.5rem"
                 id="WorklistDataGrid-rowSelectionColumn"
+                isActive={false}
                 isResizable={false}
+                isResizeActive={false}
                 isSelectable={true}
                 key="WorklistDataGrid-rowSelectionColumn"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={40}
               >
                 <ColumnHeaderCell
@@ -8367,14 +8487,16 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={40}
                 >
                   <th
@@ -8406,13 +8528,15 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                 displayName=" Vitals"
                 headerHeight="2.5rem"
                 id="Column-0"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-0"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -8448,14 +8572,16 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
@@ -8486,16 +8612,18 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                       columnIndex={1}
                       columnText=" Vitals"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={1}
+                        columnResizeIncrement={10}
                         columnText=" Vitals"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8523,28 +8651,30 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label=" Vitals"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -8557,13 +8687,15 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                 displayName="March 16"
                 headerHeight="2.5rem"
                 id="Column-1"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-1"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -8599,14 +8731,16 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
@@ -8637,16 +8771,18 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                       columnIndex={2}
                       columnText="March 16"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={2}
+                        columnResizeIncrement={10}
                         columnText="March 16"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8674,28 +8810,30 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="March 16"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -8704,7 +8842,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                       className="pinned-columns-divider"
                       style={
                         Object {
-                          "height": -1,
+                          "height": "0px",
                           "left": 199,
                         }
                       }
@@ -8717,14 +8855,16 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                 displayName="March 17"
                 headerHeight="2.5rem"
                 id="Column-2"
+                isActive={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
-                maximumWidth={300}
-                minimumWidth={60}
+                maximumWidth={500}
+                minimumWidth={100}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
-                tableHeight={-1}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -8760,19 +8900,23 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={true}
+                  isResizeActive={false}
                   isSelectable={false}
-                  maximumWidth={300}
-                  minimumWidth={60}
+                  maximumWidth={500}
+                  minimumWidth={100}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={-1}
                   width={200}
                 >
                   <th
                     className="column-header"
                     key="Column-2"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -8796,16 +8940,18 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                       columnIndex={3}
                       columnText="March 17"
                       columnWidth={200}
-                      height={-1}
-                      maximumWidth={300}
-                      minimumWidth={60}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
                     >
                       <ColumnResizeHandle
                         columnIndex={3}
+                        columnResizeIncrement={10}
                         columnText="March 17"
                         columnWidth={200}
-                        height={-1}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8833,28 +8979,30 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                             "timeZone": null,
                           }
                         }
-                        maximumWidth={300}
-                        minimumWidth={60}
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="March 17"
-                          aria-valuemax={300}
-                          aria-valuemin={60}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
                           aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resizeHandleValueText"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
+                          onClick={[Function]}
                           onFocus={[Function]}
+                          onKeyDown={[Function]}
                           onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
                           role="slider"
-                          style={
-                            Object {
-                              "height": "-1px",
-                            }
-                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -10329,36 +10477,38 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
       }
     >
       <Memo(ColumnHeader)
+        activeColumnIndex={0}
+        activeColumnResizing={false}
         columns={
           Array [
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
+              "maximumWidth": 500,
+              "minimumWidth": 100,
               "width": 200,
             },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
+              "maximumWidth": 500,
+              "minimumWidth": 100,
               "width": 200,
             },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
-              "maximumWidth": 300,
-              "minimumWidth": 60,
+              "maximumWidth": 500,
+              "minimumWidth": 100,
               "width": 200,
             },
           ]
         }
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
+        onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
-        tableHeight={0}
       />
       <tbody>
         <Memo(Row)
@@ -10521,36 +10671,38 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
       }
     >
       <Memo(ColumnHeader)
+        activeColumnIndex={0}
+        activeColumnResizing={false}
         columns={
           Array [
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
+              "maximumWidth": 500,
+              "minimumWidth": 100,
               "width": 200,
             },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
+              "maximumWidth": 500,
+              "minimumWidth": 100,
               "width": 200,
             },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
-              "maximumWidth": 300,
-              "minimumWidth": 60,
+              "maximumWidth": 500,
+              "minimumWidth": 100,
               "width": 200,
             },
           ]
         }
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
+        onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
-        tableHeight={0}
       />
       <tbody>
         <Memo(Row)

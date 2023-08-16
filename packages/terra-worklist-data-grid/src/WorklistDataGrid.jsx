@@ -60,12 +60,15 @@ const propTypes = {
    * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
    */
   defaultColumnWidth: PropTypes.number,
-
   /**
    * String that specifies the column height. Any valid CSS height value is accepted.
    */
   columnHeaderHeight: PropTypes.string,
 
+  /**
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard
+   */
+  columnResizeIncrement: PropTypes.number,
   /**
    * String that specifies the height for the rows in the grid. Any valid CSS value is accepted.
    */
@@ -150,6 +153,7 @@ function WorklistDataGrid(props) {
     onColumnResize,
     defaultColumnWidth,
     columnHeaderHeight,
+    columnResizeIncrement,
     rowHeight,
     onColumnSelect,
     onCellSelect,
@@ -168,8 +172,8 @@ function WorklistDataGrid(props) {
   }
 
   // Default column size constraints
-  const defaultColumnMinimumWidth = 60;
-  const defaultColumnMaximumWidth = 300;
+  const defaultColumnMinimumWidth = 100;
+  const defaultColumnMaximumWidth = 500;
 
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
 
@@ -187,23 +191,28 @@ function WorklistDataGrid(props) {
   const [dataGridColumns, setDataGridColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
   // Manage column resize
-  const [tableHeight, setTableHeight] = useState(0);
   const [activeIndex, setActiveIndex] = useState(null);
   const activeColumnPageX = useRef(0);
   const activeColumnWidth = useRef(200);
   const tableWidth = useRef(0);
 
+  // Reference variable for WorklistDataGrid table element
   const grid = useRef();
+
+  const [checkResizable, setCheckResizable] = useState(false);
   const handleFocus = useRef(true);
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
+
+  // Aria live region message management
   const [ariaLiveMessage, setAriaLiveMessage] = useState(null);
+  const [columnHeaderAriaLiveMessage, setColumnHeaderAriaLiveMessage] = useState(null);
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
 
   const [currentSelectedCell, setCurrentSelectedCell] = useState(null);
 
   // Define ColumnContext Provider value object
-  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setCellAriaLiveMessage }), [pinnedColumnOffsets]);
+  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setColumnHeaderAriaLiveMessage, setCellAriaLiveMessage }), [pinnedColumnOffsets]);
 
   const theme = useContext(ThemeContext);
 
@@ -233,9 +242,6 @@ function WorklistDataGrid(props) {
 
   const gridRef = useCallback((node) => {
     grid.current = node;
-
-    // Update table height state variable
-    setTableHeight(grid.current.offsetHeight - 1);
   }, []);
 
   // -------------------------------------
@@ -259,6 +265,7 @@ function WorklistDataGrid(props) {
     if (currentSelectedCell != null) {
       setCurrentSelectedCell(null);
     }
+
     // Since the row selection mode has changed, the row selection mode needs to be updated.
     setAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' }));
 
@@ -266,7 +273,6 @@ function WorklistDataGrid(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
 
-  // useEffect for row displayed columns
   useEffect(() => {
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -328,11 +334,7 @@ function WorklistDataGrid(props) {
     }
   };
 
-  const handleMoveCellFocus = (fromCell, toCell) => {
-    setFocusedRowCol(toCell.row, toCell.col, true);
-  };
-
-  const handleColumnSelect = useCallback((columnId, cellCoordinates) => {
+  const handleColumnSelect = useCallback((columnId, cellCoordinates, isSelectable) => {
     if (!hasSelectableRows) {
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
     }
@@ -341,7 +343,8 @@ function WorklistDataGrid(props) {
     setFocusedCol(cellCoordinates.col);
     setCurrentSelectedCell(null);
 
-    if (onColumnSelect) {
+    // Notify consumers of column header selection
+    if (isSelectable && onColumnSelect) {
       onColumnSelect(columnId);
     }
   }, [hasSelectableRows, intl, onColumnSelect]);
@@ -410,6 +413,7 @@ function WorklistDataGrid(props) {
     const cellCoordinates = { row: focusedRow, col: focusedCol };
     let nextRow = cellCoordinates.row;
     let nextCol = cellCoordinates.col;
+    setCheckResizable(false);
 
     const key = event.keyCode;
     switch (key) {
@@ -433,6 +437,7 @@ function WorklistDataGrid(props) {
         } else {
           // Left key
           nextCol -= 1;
+          setCheckResizable(cellCoordinates.row === 0);
         }
         break;
       case KeyCode.KEY_RIGHT:
@@ -500,7 +505,8 @@ function WorklistDataGrid(props) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
-    handleMoveCellFocus(cellCoordinates, { row: nextRow, col: nextCol });
+
+    setFocusedRowCol(nextRow, nextCol, true);
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
 
@@ -510,9 +516,30 @@ function WorklistDataGrid(props) {
     activeColumnPageX.current = event.pageX;
     activeColumnWidth.current = resizeColumnWidth;
 
+    setFocusedRow(0);
+    setFocusedCol(index);
+
     // Set the active index to the selected column
     setActiveIndex(index);
   }, []);
+
+  const onResizeHandleChange = useCallback((columnIndex, increment) => {
+    const { minimumWidth, maximumWidth, width } = dataGridColumns[columnIndex];
+    const newColumnWidth = Math.min(Math.max(width + increment, minimumWidth), maximumWidth);
+
+    // Update the width for the column in the state variable
+    const newGridColumns = [...dataGridColumns];
+    newGridColumns[columnIndex].width = newColumnWidth;
+    setDataGridColumns(newGridColumns);
+
+    // Update the column and table width
+    grid.current.style.width = `${grid.current.offsetWidth + increment}px`;
+
+    // Notify consumers of the new column width
+    if (onColumnResize) {
+      onColumnResize(dataGridColumns[columnIndex].id, dataGridColumns[columnIndex].width);
+    }
+  }, [dataGridColumns, onColumnResize]);
 
   const onMouseMove = (event) => {
     if (activeIndex == null) {
@@ -548,6 +575,10 @@ function WorklistDataGrid(props) {
     handleFocus.current = false;
   };
 
+  /**
+   * Establishes selection state when the WorklistDataGrid gains focus
+   * @param {*} event focus event data
+   */
   const onFocus = (event) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
@@ -608,9 +639,12 @@ function WorklistDataGrid(props) {
           <ColumnHeader
             columns={dataGridColumns}
             headerHeight={columnHeaderHeight}
-            tableHeight={tableHeight}
+            activeColumnIndex={focusedRow === 0 ? focusedCol : undefined}
+            activeColumnResizing={focusedRow === 0 && checkResizable}
+            columnResizeIncrement={columnResizeIncrement}
             onColumnSelect={handleColumnSelect}
             onResizeMouseDown={onResizeMouseDown}
+            onResizeHandleChange={onResizeHandleChange}
           />
           <tbody>
             {buildRows(rows)}
@@ -618,6 +652,7 @@ function WorklistDataGrid(props) {
         </ColumnContext.Provider>
       </table>
       <VisuallyHiddenText aria-live="polite" text={ariaLiveMessage} />
+      <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />
     </div>
   );

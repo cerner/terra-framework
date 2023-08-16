@@ -20,6 +20,8 @@
     // Style for the grid itself
     border: var(--terra-worklist-data-grid-border, 1px solid #dedfe0);
     border-collapse: collapse;
+    // Allow for resizing of last grid column
+    margin-right: 30px;
     table-layout: fixed;
     width: 1px;
   }

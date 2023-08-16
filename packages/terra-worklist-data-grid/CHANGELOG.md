@@ -5,6 +5,7 @@
 * Added
   * Added ability to use spacebar on masked and non-selectable cells to select rows.
   * Added ability to treat the `terra-worklist-data-grid` component as a single tabstop.
+  * Added ability to resize columns via keyboard.
 
 * Changed
   * Removed roving tabIndex and resolved focus management issues within cells.

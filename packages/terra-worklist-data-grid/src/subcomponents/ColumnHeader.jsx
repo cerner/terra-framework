@@ -9,36 +9,46 @@ const propTypes = {
    * Data for columns. By default, columns will be presented in the order given.
    */
   columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape).isRequired,
-
   /**
    * String that specifies the column header height. Any valid CSS height value accepted.
    */
   headerHeight: PropTypes.string.isRequired,
-
   /**
-   * Number that specifies the height of the data grid in pixels.
+   * Column index for cell that can receive tab focus.
    */
-  tableHeight: PropTypes.number,
-
+  activeColumnIndex: PropTypes.number,
   /**
-   * Function that is called when a selectable header cell is selected. Parameters:
-   * @param {string} columnId columnId
+   * Specifies if resize handle should be active
+   */
+  activeColumnResizing: PropTypes.bool,
+  /**
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard
+   */
+  columnResizeIncrement: PropTypes.number,
+  /**
+   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`.
    */
   onColumnSelect: PropTypes.func,
-
   /**
    * Function that is called when the mouse down event is triggered on the column resize handle.
    */
   onResizeMouseDown: PropTypes.func,
+  /**
+   * Function that is called when the the keyboard is used to adjust the column size
+   */
+  onResizeHandleChange: PropTypes.func,
 };
 
 const ColumnHeader = (props) => {
   const {
     columns,
     headerHeight,
-    tableHeight,
+    activeColumnIndex,
+    activeColumnResizing,
+    columnResizeIncrement,
     onColumnSelect,
     onResizeMouseDown,
+    onResizeHandleChange,
   } = props;
 
   // Create ColumnHeaderCell component for each column
@@ -55,11 +65,14 @@ const ColumnHeader = (props) => {
       headerHeight={headerHeight}
       isResizable={column.isResizable}
       isSelectable={column.isSelectable}
-      tableHeight={tableHeight}
+      isActive={activeColumnIndex === columnIndex}
+      isResizeActive={activeColumnIndex === columnIndex && activeColumnResizing}
+      columnResizeIncrement={columnResizeIncrement}
       hasError={column.hasError}
       sortIndicator={column.sortIndicator}
       onColumnSelect={onColumnSelect}
       onResizeMouseDown={onResizeMouseDown}
+      onResizeHandleChange={onResizeHandleChange}
     />
   );
 
