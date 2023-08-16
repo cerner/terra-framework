@@ -11,7 +11,7 @@
 
 * Fixed
   * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.
-  * Updated cells to honor the value of props passed by consumers.
+  * Fixed cells not honoring the value of props passed by consumers.
 
 ## 0.4.0 - (August 10, 2023)
 
