@@ -38,6 +38,11 @@ const propTypes = {
    * Array of id strings,
    */
   tabIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+  /**
+   * @private
+   * intl object programmatically imported through injectIntl from react-intl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const AddButton = ({
@@ -47,8 +52,11 @@ const AddButton = ({
   index,
   id,
   tabIds,
+  intl,
 }) => {
-  const AddTabIcon = <IconAdd a11yLabel={addAriaLabel} />;
+  const buttonsuggestion = intl.formatMessage({ id: 'Terra.tabs.addbutton.focus' });
+  const ariaLabelAddTabWithSuggestion = `${addAriaLabel} ${buttonsuggestion}`;
+  const AddTabIcon = <IconAdd a11yLabel={ariaLabelAddTabWithSuggestion} />;
 
   const keyDown = (event, indexTab, ids) => {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {

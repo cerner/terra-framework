@@ -520,7 +520,7 @@ class Tabs extends React.Component {
               data-focus-styles-enabled
               itemKey={this.addTabId}
               label={ariaLabelAddTab}
-              index={this.state.visibleTabData.length}
+              index={enabledTabsIndex + 1}
               showIcon
               icon={<IconAdd />}
               tabIds={moreIds}

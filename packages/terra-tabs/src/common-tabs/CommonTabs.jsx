@@ -51,7 +51,7 @@ const propTypes = {
    */
   onChange: PropTypes.func,
   /**
-   * Callback function when add button selection has changed.
+   * Callback function triggered on add button click..
    * Parameters: 1. Event 2. Selected pane's key
    */
   onSelectAddButton: PropTypes.func,
@@ -61,6 +61,7 @@ const propTypes = {
   ariaLabelAddTab: PropTypes.string,
   /**
    * Callback function when a tab is closing. It receives three parameters.
+   * Parameters: 1. label of the closing tab 2. Selected pane's key 3. Event
    */
   onClosingTab: PropTypes.func,
   /**

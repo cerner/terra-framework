@@ -9,5 +9,6 @@
   "Terra.tabs.drag": "You have moved the tab from position {startPosition} to position {endPosition}",
   "Terra.tabs.cancelDrag": "Movement cancelled. The tab has returned to its starting position of {startPosition}",
   "Terra.tabs.drop": "You have dropped the tab. It has moved from position {startPosition} to {endPosition}",
-  "Terra.tabs.focus": "Press ENTER to activate a tab, or Press SPACE to start a drag. Ensure your screen reader is in focus mode or forms mode"
+  "Terra.tabs.focus": "Press ENTER to activate a tab, or Press SPACE to start a drag. Ensure your screen reader is in focus mode or forms mode",
+  "Terra.tabs.addbutton.focus":"press ENTER or SPACE to add new tab"
 }

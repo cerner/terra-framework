@@ -1,79 +1,47 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
+import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
+import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Tabs from 'terra-tabs';
 import TabContent from './TabContentTemplate';
 import styles from './common/TabExample.module.scss';
 
 const cx = classNames.bind(styles);
 
-let i = -1;
 const IconOnlyTabs = () => {
-  const tabsExample = [];
-  const [tabs, setTabs] = useState(tabsExample);
-  const [activeKey, setActiveKey] = useState();
-
-  tabsExample.push(
-    {
-      label: 'Search',
-      icon: <IconSearch />,
-      isIconOnly: true,
-      key: 'Search',
-      content: 'label',
-    },
-  );
-  tabsExample.push(
-    {
-      label: 'Briefcase',
-      icon: <IconBriefcase />,
-      isIconOnly: true,
-      key: 'Briefcase',
-      content: 'label',
-    },
+  const searchTab = (
+    <Tabs.Pane label="Search" icon={<IconSearch />} isIconOnly key="Search">
+      <TabContent label="Search" />
+    </Tabs.Pane>
   );
 
-  tabsExample.push(
-    {
-      label: 'Tab with Text',
-      isIconOnly: false,
-      key: 'TabWithText',
-      content: 'Tab with Text',
-    },
+  const briefcaseTab = (
+    <Tabs.Pane label="Briefcase" icon={<IconBriefcase />} isIconOnly key="Briefcase">
+      <TabContent label="Briefcase" />
+    </Tabs.Pane>
   );
-  const handleTabClose = (tabdata, itemKey) => {
-    const tabsArray = [...tabs];
-    const indexToRemove = tabsArray.findIndex(tab => tab.key === itemKey);
-    if (indexToRemove !== -1) {
-      tabsArray.splice(indexToRemove, 1);
-      setTabs(tabsArray);
-    }
-  };
 
-  const addMoreTabPanes = () => {
-    i += 1;
-    const tabsArray = tabs;
-    tabsArray.push(
-      {
-        label: `Tab_${i}`,
-        isIconOnly: false,
-        key: `Tab_${i}`,
-        content: `Tab_${i}`,
-        isActive: true,
-      },
-    );
-    setActiveKey(`Tab_${i}`);
-    setTabs(tabsArray);
-  };
+  const bookmarkTab = (
+    <Tabs.Pane label="Bookmark" icon={<IconBookmark />} isIconOnly key="Bookmark">
+      <TabContent label="Bookmark" />
+    </Tabs.Pane>
+  );
+
+  const calendarTab = (
+    <Tabs.Pane label="Calendar" icon={<IconCalendar />} isIconOnly key="Calendar">
+      <TabContent label="Calendar" />
+    </Tabs.Pane>
+  );
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs activeKey={activeKey} isDraggable isClosable onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
-        { tabs.map((tab) => (
-          <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} icon={tab.icon} key={tab.key} id={tab.key} isActive={TabContent.isActive}>
-            <TabContent label={tab.content} id={`TabContent_${tab.key}`} />
-          </Tabs.Pane>
-        ))}
+      <Tabs>
+        {searchTab}
+        {briefcaseTab}
+        {bookmarkTab}
+        {calendarTab}
       </Tabs>
     </div>
   );

@@ -210,7 +210,9 @@ const HiddenTab = ({
   attributes['aria-selected'] = isSelected;
 
   const onFocusResponse = intl.formatMessage({ id: 'Terra.tabs.focus' });
+  const addTabWithSuggestion = intl.formatMessage({ id: 'Terra.tabs.addbutton.focus' });
   const responseId = `terra-hidden-tab-pane-response=${uuidv4()}`;
+  const addbuttonresponseId = `terra-hidden-tab-pane-response=${uuidv4()}`;
 
   if (isDraggable) {
     return (
@@ -247,7 +249,9 @@ const HiddenTab = ({
       role={showAddButton ? 'button' : 'tab'}
       className={hiddenClassNames}
       aria-disabled={isDisabled}
+      aria-describedby={addbuttonresponseId}
     >
+      <VisuallyHiddenText aria-hidden id={addbuttonresponseId} text={addTabWithSuggestion} />
       <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>
       {showIcon && icon}
       <div className={cx('label', { 'with-icon': showIcon })}>{label}</div>

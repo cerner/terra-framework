@@ -170,6 +170,7 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
             >
               <div
                 aria-controls="panel-1"
+                aria-describedby="terra-hidden-tab-pane-response=6f8fab47-40d4-4c3f-849a-89b74318464d"
                 aria-disabled={false}
                 aria-selected={false}
                 className="hidden"
@@ -183,6 +184,19 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
                 role="tab"
                 tabIndex={-1}
               >
+                <VisuallyHiddenText
+                  aria-hidden={true}
+                  id="terra-hidden-tab-pane-response=6f8fab47-40d4-4c3f-849a-89b74318464d"
+                  text="Terra.tabs.addbutton.focus"
+                >
+                  <span
+                    aria-hidden={true}
+                    className="visually-hidden-text"
+                    id="terra-hidden-tab-pane-response=6f8fab47-40d4-4c3f-849a-89b74318464d"
+                  >
+                    Terra.tabs.addbutton.focus
+                  </span>
+                </VisuallyHiddenText>
                 <div
                   className="checkbox"
                 />
@@ -261,6 +275,7 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
             >
               <div
                 aria-controls="panel-2"
+                aria-describedby="terra-hidden-tab-pane-response=a268ed01-d8b2-451f-ba76-8a6b00049b25"
                 aria-disabled={false}
                 aria-selected={false}
                 className="hidden"
@@ -274,6 +289,19 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
                 role="tab"
                 tabIndex={-1}
               >
+                <VisuallyHiddenText
+                  aria-hidden={true}
+                  id="terra-hidden-tab-pane-response=a268ed01-d8b2-451f-ba76-8a6b00049b25"
+                  text="Terra.tabs.addbutton.focus"
+                >
+                  <span
+                    aria-hidden={true}
+                    className="visually-hidden-text"
+                    id="terra-hidden-tab-pane-response=a268ed01-d8b2-451f-ba76-8a6b00049b25"
+                  >
+                    Terra.tabs.addbutton.focus
+                  </span>
+                </VisuallyHiddenText>
                 <div
                   className="checkbox"
                 />

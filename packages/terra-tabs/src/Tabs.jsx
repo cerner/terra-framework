@@ -67,7 +67,7 @@ const propTypes = {
    */
   onTabOrderChange: PropTypes.func,
   /**
-   * A callback function triggered when a tab is closed.
+   * A callback function triggered when a tab is closed. will be available only when `isClosable` is set to true.
    */
   onTabClose: PropTypes.func,
   /**

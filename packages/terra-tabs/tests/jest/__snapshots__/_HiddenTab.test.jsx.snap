@@ -107,6 +107,7 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
     >
       <div
         aria-controls="panel-1"
+        aria-describedby="terra-hidden-tab-pane-response=2a274978-eb4a-412d-be3e-43e7dd4414d5"
         aria-disabled={false}
         aria-selected={false}
         className="hidden"
@@ -169,6 +170,19 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
         role="tab"
         tabIndex={-1}
       >
+        <VisuallyHiddenText
+          aria-hidden={true}
+          id="terra-hidden-tab-pane-response=2a274978-eb4a-412d-be3e-43e7dd4414d5"
+          text="Terra.tabs.addbutton.focus"
+        >
+          <span
+            aria-hidden={true}
+            className="visually-hidden-text"
+            id="terra-hidden-tab-pane-response=2a274978-eb4a-412d-be3e-43e7dd4414d5"
+          >
+            Terra.tabs.addbutton.focus
+          </span>
+        </VisuallyHiddenText>
         <div
           className="checkbox"
         />
