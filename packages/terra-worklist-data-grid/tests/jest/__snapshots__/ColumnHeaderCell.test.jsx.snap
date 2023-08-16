@@ -493,6 +493,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
             aria-hidden={true}
             aria-label="Terra.worklist-data-grid.resize-handle-template"
             aria-valuenow={100}
+            aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
             className="resize-handle"
             draggable={true}
             onBlur={[Function]}

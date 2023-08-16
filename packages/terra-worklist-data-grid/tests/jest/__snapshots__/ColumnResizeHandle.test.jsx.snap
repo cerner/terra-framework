@@ -112,6 +112,7 @@ exports[`ColumnResizeHandle renders a default column resize handle 1`] = `
       aria-valuemax={300}
       aria-valuemin={60}
       aria-valuenow={200}
+      aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
       className="resize-handle"
       draggable={true}
       onBlur={[Function]}

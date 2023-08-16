@@ -400,6 +400,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -559,6 +560,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -728,6 +730,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -1753,6 +1756,17 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
           className="visually-hidden-text"
         />
       </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
     </div>
   </WorklistDataGrid>
 </InjectIntl(WorklistDataGrid)>
@@ -2158,6 +2172,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -2317,6 +2332,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -2486,6 +2502,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -3511,6 +3528,17 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
           className="visually-hidden-text"
         />
       </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
     </div>
   </WorklistDataGrid>
 </InjectIntl(WorklistDataGrid)>
@@ -4040,6 +4068,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -4199,6 +4228,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -4368,6 +4398,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -5824,6 +5855,17 @@ exports[`basic grid verifies row selection column header selection 1`] = `
           className="visually-hidden-text"
         />
       </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
     </div>
   </WorklistDataGrid>
 </InjectIntl(WorklistDataGrid)>
@@ -6352,6 +6394,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -6511,6 +6554,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -6680,6 +6724,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -8124,6 +8169,17 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
         >
           Terra.worklist-data-grid.row-selection-template
         </span>
+      </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
       </VisuallyHiddenText>
       <VisuallyHiddenText
         aria-atomic="true"
@@ -8664,6 +8720,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -8823,6 +8880,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -8992,6 +9050,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                           aria-valuemax={500}
                           aria-valuemin={100}
                           aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -10448,6 +10507,17 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
           className="visually-hidden-text"
         />
       </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
     </div>
   </WorklistDataGrid>
 </InjectIntl(WorklistDataGrid)>
@@ -10473,6 +10543,7 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
             0,
           ],
           "setCellAriaLiveMessage": [Function],
+          "setColumnHeaderAriaLiveMessage": [Function],
         }
       }
     >
@@ -10644,6 +10715,11 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
     aria-live="polite"
     text={null}
   />
+  <VisuallyHiddenText
+    aria-atomic="true"
+    aria-live="polite"
+    text={null}
+  />
 </div>
 `;
 
@@ -10667,6 +10743,7 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
             0,
           ],
           "setCellAriaLiveMessage": [Function],
+          "setColumnHeaderAriaLiveMessage": [Function],
         }
       }
     >
@@ -10830,6 +10907,11 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
     </ContextProvider>
   </table>
   <VisuallyHiddenText
+    aria-live="polite"
+    text={null}
+  />
+  <VisuallyHiddenText
+    aria-atomic="true"
     aria-live="polite"
     text={null}
   />
