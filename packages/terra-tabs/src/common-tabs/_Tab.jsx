@@ -115,6 +115,7 @@ const propTypes = {
   isDraggable: PropTypes.bool,
   /**
    * A callback function triggered when the tab is being closed. It takes three parameters.
+   * Parameters: 1. label of the closing tab 2. Selected pane's key 3. Event
    */
   onClosingTab: PropTypes.func,
 };

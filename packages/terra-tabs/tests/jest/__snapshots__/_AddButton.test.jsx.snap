@@ -31,6 +31,7 @@ exports[`MoreButton should render a add button with provided props and selection
   }
 >
   <InjectIntl(AddButton)
+    addAriaLabel="add tab"
     id="addbtn"
     index={5}
     isSelected={false}
@@ -45,6 +46,7 @@ exports[`MoreButton should render a add button with provided props and selection
     }
   >
     <AddButton
+      addAriaLabel="add tab"
       id="addbtn"
       index={5}
       intl={
@@ -91,7 +93,7 @@ exports[`MoreButton should render a add button with provided props and selection
         data-terra-tabs-show-focus-styles={true}
         icon={
           <IconAdd
-            a11yLabel="undefined Terra.tabs.addbutton.focus"
+            a11yLabel="add tab Terra.tabs.addbutton.focus"
             data-name="Layer 1"
             viewBox="0 0 48 48"
             xmlns="http://www.w3.org/2000/svg"
@@ -106,12 +108,13 @@ exports[`MoreButton should render a add button with provided props and selection
         isReversed={false}
         onClick={[MockFunction]}
         onKeyDown={[Function]}
+        text="add tab"
         type="button"
         variant="de-emphasis"
       >
         <button
           aria-disabled={false}
-          aria-label="undefined Terra.tabs.addbutton.focus"
+          aria-label="add tab Terra.tabs.addbutton.focus"
           className="button de-emphasis button"
           data-terra-tab-add-btn={true}
           data-terra-tabs-show-focus-styles={true}
@@ -124,7 +127,7 @@ exports[`MoreButton should render a add button with provided props and selection
           onKeyDown={[Function]}
           onKeyUp={[Function]}
           onMouseDown={[Function]}
-          title="undefined Terra.tabs.addbutton.focus"
+          title="add tab Terra.tabs.addbutton.focus"
           type="button"
         >
           <span
@@ -134,14 +137,14 @@ exports[`MoreButton should render a add button with provided props and selection
               className="icon"
             >
               <IconAdd
-                a11yLabel="undefined Terra.tabs.addbutton.focus"
+                a11yLabel="add tab Terra.tabs.addbutton.focus"
                 className="icon-svg"
                 data-name="Layer 1"
                 viewBox="0 0 48 48"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <IconBase
-                  a11yLabel="undefined Terra.tabs.addbutton.focus"
+                  a11yLabel="add tab Terra.tabs.addbutton.focus"
                   className="icon-svg"
                   data-name="Layer 1"
                   focusable="false"
@@ -162,7 +165,7 @@ exports[`MoreButton should render a add button with provided props and selection
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <title>
-                      undefined Terra.tabs.addbutton.focus
+                      add tab Terra.tabs.addbutton.focus
                     </title>
                     <path
                       d="M48 21H27V0h-6v21H0v6h21v21h6V27h21z"

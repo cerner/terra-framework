@@ -18,6 +18,7 @@ describe('MoreButton', () => {
           onSelect={mockOnSelect}
           tabIds={testTabIds}
           isSelected={false}
+          addAriaLabel="add tab"
         />
       </IntlProvider>,
     );
