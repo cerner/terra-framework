@@ -183,8 +183,14 @@ class Tabs extends React.Component {
     if (currTab && this.addButtonToggle && !this.moreButtonRef.current) {
       const element = document.getElementById(currTab.id);
       if (element && this.addButtonToggle) {
+        this.addButtonToggle = false;
         element.focus();
       }
+    }
+
+    const element = document.getElementById(this.addTabId);
+    if (this.state.visibleTabData.length === 0 && element) {
+      element.focus();
     }
 
     if (this.isCalculating) {
@@ -418,11 +424,11 @@ class Tabs extends React.Component {
         })
         .filter((tab) => tab.itemKey !== itemKey);
 
-      if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex !== 0 && updatedTabData[removedTabIndex - 1].isDisabled !== true) {
+      if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex !== 0 && updatedTabData[removedTabIndex - 1] !== undefined && updatedTabData[removedTabIndex - 1].isDisabled !== true) {
         if (updatedTabData[removedTabIndex - 1].isSelected !== undefined) {
           updatedTabData[removedTabIndex - 1].isSelected = true;
         }
-      } else if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex !== 0 && updatedTabData[removedTabIndex - 1].isDisabled === true) {
+      } else if (!updatedTabData.some((tab) => tab.isSelected === true) && updatedTabData.length > 0 && removedTabIndex !== 0 && updatedTabData[removedTabIndex - 1] !== undefined && updatedTabData[removedTabIndex - 1].isDisabled === true) {
         if (updatedTabData[removedTabIndex - 2]?.isSelected !== undefined) {
           updatedTabData[removedTabIndex - 2].isSelected = true;
         }

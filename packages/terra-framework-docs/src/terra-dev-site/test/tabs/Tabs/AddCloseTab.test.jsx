@@ -8,8 +8,8 @@ import styles from './TabsTemplate.module.scss';
 
 const cx = classNames.bind(styles);
 
+let i = -1;
 function AddTabandCloseTab() {
-  let i = -1;
   const tabsExample = [];
   const [tabs, setTabs] = useState(tabsExample);
   const [activeKey, setActiveKey] = useState();

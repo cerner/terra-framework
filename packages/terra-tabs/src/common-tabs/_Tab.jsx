@@ -180,13 +180,18 @@ const Tab = ({
     event.stopPropagation();
     onClosingTab(itemKey, metaData, event);
     const deleteTabLabel = intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed' });
-    const element = document.getElementById(tabIds[index - 1]);
+    let element = document.getElementById(tabIds[index - 1]);
+    if (index === 0) {
+      element = document.getElementById(tabIds[index + 1]);
+    }
     const ariaLabel = label ? `${label} ${deleteTabLabel}` : '';
-    element.setAttribute('aria-label', ariaLabel);
-    element.focus();
-    element.addEventListener('blur', () => {
-      element.removeAttribute('aria-label');
-    });
+    if (element) {
+      element.setAttribute('aria-label', ariaLabel);
+      element.focus();
+      element.addEventListener('blur', () => {
+        element.removeAttribute('aria-label');
+      });
+    }
   }
   function onKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_RETURN || (event.nativeEvent.keyCode === KEY_SPACE && !isDraggable)) {
