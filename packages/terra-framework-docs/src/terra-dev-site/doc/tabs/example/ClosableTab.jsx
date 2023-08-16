@@ -11,7 +11,6 @@ const cx = classNames.bind(styles);
 const ClosableTab = () => {
   const tabsExample = [];
   const [tabs, setTabs] = useState(tabsExample);
-  const [activeKey] = useState();
 
   tabsExample.push(
     {
@@ -76,7 +75,7 @@ const ClosableTab = () => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs activeKey={activeKey} isClosable ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
+      <Tabs isClosable ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
         { tabs.map((tab) => (
           <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} customDisplay={tab.customDisplay} isDisabled={tab.isDisabled} icon={tab.icon} key={tab.key} id={tab.key}>
             <TabContentTemplate label={tab.content} />
