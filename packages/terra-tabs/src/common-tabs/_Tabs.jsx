@@ -321,6 +321,7 @@ class Tabs extends React.Component {
     if (!result.destination) {
       return;
     }
+    this.addButtonToggle = false;
     this.setState((prevState) => {
       const items = this.reorder(
         prevState.visibleTabData,
@@ -412,6 +413,7 @@ class Tabs extends React.Component {
 
   wrapOnClose() {
     return (itemKey, event) => {
+      this.addButtonToggle = false;
       this.setIsOpen(false);
       let removedTabIndex = -1;
       const updatedTabData = this.state.visibleTabData
