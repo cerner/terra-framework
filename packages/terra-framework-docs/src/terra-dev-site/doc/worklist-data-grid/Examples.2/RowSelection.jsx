@@ -200,31 +200,31 @@ const RowSelection = () => {
     return remainingSelectedRow;
   };
 
-  const clearRowSelection = () => {
+  const clearRowSelection = useCallback(() => {
     // eslint-disable-next-line no-param-reassign
     rows.forEach(r => { if (r.isSelected) { r.isSelected = false; } });
     setSelectedRows([]);
-  };
+  }, [rows]);
 
-  const disableSelectableRows = () => {
+  const disableSelectableRows = useCallback(() => {
     rowSelectionModeRef.current.checked = false;
     setHasSelectableRows(false);
     clearRowSelection();
-  };
+  }, [clearRowSelection]);
 
-  const onRowSelectionModeChange = (event) => {
+  const onRowSelectionModeChange = useCallback((event) => {
     if (!event.target.checked) {
       clearRowSelection();
     }
     setHasSelectableRows(event.target.checked);
-  };
+  }, [clearRowSelection]);
 
-  const onColumnSelect = (columnId) => {
+  const onColumnSelect = useCallback((columnId) => {
     if (columnId === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id) {
       // eslint-disable-next-line no-alert
       alert('Row Selection Header Clicked');
     }
-  };
+  }, []);
 
   const onRowSelect = useCallback((rowIdsToSelect, rowIdsToUnselect) => {
     rows.forEach((row, index) => {
@@ -238,12 +238,12 @@ const RowSelection = () => {
     });
   }, [rows]);
 
-  const enableRowSelection = () => {
+  const enableRowSelection = useCallback(() => {
     if (!rowSelectionModeRef.current.checked) {
       rowSelectionModeRef.current.checked = true;
     }
     setHasSelectableRows(true);
-  };
+  }, []);
 
   return (
     <React.Fragment>
@@ -270,12 +270,8 @@ const RowSelection = () => {
           rows.forEach(e => { e.isSelected = true; newRows.push(e.id); });
           setSelectedRows(determineSelectedRows(true, newRows));
         }}
-        onClearSelectedRows={() => {
-          clearRowSelection();
-        }}
-        onDisableSelectableRows={() => {
-          disableSelectableRows();
-        }}
+        onClearSelectedRows={clearRowSelection}
+        onDisableSelectableRows={disableSelectableRows}
         onColumnSelect={onColumnSelect}
         onEnableRowSelection={enableRowSelection}
       />

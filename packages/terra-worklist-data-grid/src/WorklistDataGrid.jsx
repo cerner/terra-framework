@@ -220,8 +220,6 @@ function WorklistDataGrid(props) {
     hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
   ), [displayedColumns, hasSelectableRows]);
 
-  const isCellSelected = useCallback((rowId, columnId) => (currentSelectedCell && currentSelectedCell.rowId === rowId && currentSelectedCell.columnId === columnId), [currentSelectedCell]);
-
   const setFocusedRowCol = useCallback((newRowIndex, newColIndex, makeActiveElement) => {
     setCellAriaLiveMessage(null);
     setFocusedRow(newRowIndex);
@@ -379,11 +377,23 @@ function WorklistDataGrid(props) {
       }
     }
 
-    const ariaMessage = `${intl.formatMessage({
+    // const ariaMessage = `${intl.formatMessage({
+    //   id: hasSelectableRows
+    //     ? 'Terra.worklist-data-grid.row-selection-multiple-rows-selected'
+    //     : 'Terra.worklist-data-grid.row-selection-mode-enabled',
+    // })}. ${intl.formatMessage({
+    //   id: rowIdsToSelect.length === 1
+    //     ? 'Terra.worklist-data-grid.row-selection-template'
+    //     : 'Terra.worklist-data-grid.row-selection-selected-rows-range',
+    // }, { row: rangeInfo.anchorRow, endRow: newEndRowIndex })}`;
+
+    let ariaMessage = intl.formatMessage({
       id: hasSelectableRows
         ? 'Terra.worklist-data-grid.row-selection-multiple-rows-selected'
         : 'Terra.worklist-data-grid.row-selection-mode-enabled',
-    })}. ${intl.formatMessage({
+    });
+
+    ariaMessage += ` ${intl.formatMessage({
       id: rowIdsToSelect.length === 1
         ? 'Terra.worklist-data-grid.row-selection-template'
         : 'Terra.worklist-data-grid.row-selection-selected-rows-range',
@@ -393,29 +403,22 @@ function WorklistDataGrid(props) {
     onRowSelect(rowIdsToSelect, rowIdsToUnselect);
   }, [hasSelectableRows, intl, onEnableRowSelection, onRowSelect, rows]);
 
-  const selectRows = useCallback((rowId, rowIndex) => {
-    let isSelectAction = true;
-    let msgId = 'Terra.worklist-data-grid.all-rows-selected';
-    // Reset last selected row when all rows are selected.
-    rowSelection.current.rangeUsingLastIndividuallySelectedRow = null;
-
-    isSelectAction = !rows[rowIndex - 1].isSelected; // Determine if this is select or unselected.
-    // Remember the last selected row
+  const selectRow = useCallback((rowId, rowIndex) => {
+    const rowsToSelect = [];
+    const rowsToUnSelect = [];
     rowSelection.current.rangeUsingLastIndividuallySelectedRow = { anchorRow: rowIndex };
-    if (isSelectAction) {
-      msgId = 'Terra.worklist-data-grid.row-selection-template';
-    } else {
-      msgId = 'Terra.worklist-data-grid.row-selection-cleared-template';
-    }
     const rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
 
-    setAriaLiveMessage(intl.formatMessage({ id: msgId }, { row: rowLabel }));
+    if (!rows[rowIndex - 1].isSelected) {
+      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-template' }, { row: rowLabel }));
+      rowsToSelect.push(rowId);
+    } else {
+      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-cleared-template' }, { row: rowLabel }));
+      rowsToUnSelect.push(rowId);
+    }
+
     if (onRowSelect) {
-      if (isSelectAction) {
-        onRowSelect([rowId]);
-      } else {
-        onRowSelect([], [rowId]);
-      }
+      onRowSelect(rowsToSelect, rowsToUnSelect);
     }
   }, [intl, onRowSelect, rows]);
 
@@ -437,60 +440,31 @@ function WorklistDataGrid(props) {
     }
   }, [hasSelectableRows, intl, onColumnSelect]);
 
-  const handleCellSelectionChange = useCallback((rowId, columnId, cellCoordinates) => {
-    if (!hasSelectableRows) {
-      setAriaLiveMessage(intl.formatMessage({
-        id: rowId ? 'Terra.worklist-data-grid.cell-selection-template' : 'Terra.worklist-data-grid.cell-selection-cleared',
-      }, { row: cellCoordinates.row + 1, column: cellCoordinates.col + 1 }));
-    }
-    setFocusedRowCol(cellCoordinates.row, cellCoordinates.col, true);
-    if ((rowId !== currentSelectedCell?.rowId) || (columnId !== currentSelectedCell?.columnId)) {
-      setCurrentSelectedCell((rowId && columnId) ? { rowId, columnId } : null);
-    }
-  }, [currentSelectedCell?.columnId, currentSelectedCell?.rowId, hasSelectableRows, intl, setFocusedRowCol]);
-
-  const mapGridCellToDataCell = useCallback((cellGridCoordinates) => (
-    // The grid has an additional row for the heading and
-    // may have an additional column when when selection is active.
-    { row: cellGridCoordinates.row - 1, col: cellGridCoordinates.col + (hasSelectableRows ? -1 : 0) }
-  ), [hasSelectableRows]);
-
   const handleCellSelection = useCallback((selectionDetails) => {
-    if (!selectionDetails?.selectedByKeyboard) {
-      handleFocus.current = false;
+    if (!hasSelectableRows && selectionDetails.isCellSelectable) {
+      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-template' },
+        { row: selectionDetails.rowIndex + 1, column: selectionDetails.columnIndex + 1 }));
     }
 
-    const cellGridCoordinates = { row: selectionDetails.rowIndex, col: selectionDetails.columnIndex };
-    // If current cell is selected, do nothing.
-    if (isCellSelected(cellGridCoordinates.row, cellGridCoordinates.col)) {
-      return;
-    }
-    // Determine if the cell selection should proceed.
-    const cellDataCoordinates = mapGridCellToDataCell(cellGridCoordinates);
-    const cell = rows[cellDataCoordinates.row].cells[cellDataCoordinates.col];
-    if ((cell.isSelectable === false) || cell.isMasked) {
-      setFocusedRowCol(cellGridCoordinates.row, cellGridCoordinates.col, true);
-      return;
-    }
+    setFocusedRow(selectionDetails.rowIndex);
+    setFocusedCol(selectionDetails.columnIndex);
+    setCurrentSelectedCell({ rowId: selectionDetails.rowId, columnId: selectionDetails.columnId });
 
-    // Make note of cell that is currently selected.
-    handleCellSelectionChange(selectionDetails.rowId, selectionDetails.columnId, cellGridCoordinates);
     if (selectionDetails.isCellSelectable && onCellSelect) {
       onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
     }
-  }, [handleCellSelectionChange, isCellSelected, mapGridCellToDataCell, onCellSelect, rows, setFocusedRowCol]);
+  }, [hasSelectableRows, intl, onCellSelect]);
 
   const handleRowSelection = useCallback((selectionDetails) => {
-    if (!selectionDetails?.selectedByKeyboard) {
-      handleFocus.current = false;
-    }
+    setFocusedRow(selectionDetails.rowIndex);
+    setFocusedCol(selectionDetails.columnIndex);
+    setCurrentSelectedCell(null);
 
-    handleCellSelectionChange(null, null, { row: selectionDetails.rowIndex, col: selectionDetails.columnIndex });
     const rangeInfo = selectionDetails.selectedByKeyboard ? rowSelection.current.rangeUsingLastIndividuallySelectedRow : rowSelection?.current?.rangeUsingFocusedRow;
     if (!selectionDetails.multiSelect) {
       if (hasSelectableRows) {
         // regular click or space key
-        selectRows(selectionDetails.rowId, selectionDetails.rowIndex);
+        selectRow(selectionDetails.rowId, selectionDetails.rowIndex);
       }
     } else if (hasSelectableRows) {
       // Shift key is pressed
@@ -500,7 +474,7 @@ function WorklistDataGrid(props) {
         rangeInfo.previousSelectionEndRow = selectionDetails.rowIndex;
       } else {
         // no anchor row
-        selectRows(selectionDetails.rowId, selectionDetails.rowIndex);
+        selectRow(selectionDetails.rowId, selectionDetails.rowIndex);
       }
     } else if (selectionDetails.selectedByKeyboard) {
       // Shift + Space
@@ -514,7 +488,7 @@ function WorklistDataGrid(props) {
       selectMultipleRows(selectionDetails.rowIndex, rangeInfo);
       rangeInfo.previousSelectionEndRow = selectionDetails.rowIndex;
     }
-  }, [handleCellSelectionChange, hasSelectableRows, selectMultipleRows, selectRows]);
+  }, [hasSelectableRows, selectMultipleRows, selectRow]);
 
   const handleKeyUp = (event) => {
     const key = event.keyCode;
@@ -577,7 +551,7 @@ function WorklistDataGrid(props) {
         nextRow += 1;
         break;
       case KeyCode.KEY_SHIFT:
-        if (cellCoordinates.row !== 0 && !rowSelection?.current?.rangeUsingFocusedRow?.anchorRow) {
+        if (cellCoordinates.row !== 0 && !rowSelection.current?.rangeUsingFocusedRow?.anchorRow) {
           rowSelection.current.rangeUsingFocusedRow = { anchorRow: cellCoordinates.row, previousSelectionEndRow: cellCoordinates.row };
         }
         break;
