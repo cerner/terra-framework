@@ -252,7 +252,7 @@ const Tab = ({
             <div className={variant === 'framework' ? cy('inner', 'draggable-inner') : cx('inner')}>
               <IconKnurling />
               <VisuallyHiddenText aria-hidden id={responseId} text={onFocusResponse} />
-              {customDisplay || icon}
+              <div className={cy('draggable-icon')}>{customDisplay || icon}</div>
               {(!customDisplay && !isIconOnly) && <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
             </div>
             {isClosable && (

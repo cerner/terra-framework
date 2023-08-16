@@ -166,7 +166,14 @@
 
   .draggable-inner {
     align-items: center;
-    display: flex;
+    display: inline-block;
     justify-content: space-around;
   }
+  
+  .draggable-icon {
+    display: inline;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
 }
