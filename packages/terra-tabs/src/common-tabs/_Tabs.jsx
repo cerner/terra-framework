@@ -183,7 +183,6 @@ class Tabs extends React.Component {
     if (currTab && this.addButtonToggle && !this.moreButtonRef.current) {
       const element = document.getElementById(currTab.id);
       if (element && this.addButtonToggle) {
-        this.addButtonToggle = false;
         element.focus();
       }
     }
