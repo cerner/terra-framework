@@ -114,10 +114,11 @@ class Tabs extends React.Component {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ activeKey: this.props.activeKey });
     }
-    if (tabKeys.length > 0 && tabKeys.indexOf(this.state.activeKey) === -1) {
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ activeKey: this.getInitialState() });
-    }
+
+    // if (tabKeys.length > 0 && tabKeys.indexOf(this.state.activeKey) === -1) {
+    //   // eslint-disable-next-line react/no-did-update-set-state
+    //   this.setState({ activeKey: this.getInitialState() });
+    // }
   }
 
   render() {
@@ -139,7 +140,7 @@ class Tabs extends React.Component {
     React.Children.forEach(children, child => {
       let content;
       let tabContent;
-      if (child.key === this.state.activeKey) {
+      if (child.key === this.props.activeKey || (!this.props.activeKey && child.key === this.state.activeKey)) {
         content = React.Children.map(child.props.children, contentItem => (
           React.cloneElement(contentItem)
         ));
@@ -184,7 +185,7 @@ class Tabs extends React.Component {
     return (
       <CommonTabs
         id={customProps.id}
-        activeItemKey={this.state.activeKey}
+        activeItemKey={this.props.activeKey || this.state.activeKey}
         onRequestActivate={key => this.setState({ activeKey: key })}
         onClosingTab={handleTabsStateChange}
         onChange={onChange}

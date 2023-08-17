@@ -157,11 +157,33 @@ class Tabs extends React.Component {
   componentDidUpdate(prevProps) {
     const prevTab = prevProps.tabData.find((tab) => tab.isSelected === true);
     const currTab = this.props.tabData.find((tab) => tab.isSelected === true);
+    const prevtabKeys = [];
+    prevProps.tabData.forEach(child => {
+      prevtabKeys.push(child.id);
+    });
+    const curtabKeys = [];
+    this.props.tabData.forEach(child => {
+      curtabKeys.push(child.id);
+    });
 
     // Allow dynamic addition of tabs.
     if (this.state.visibleTabData.length !== this.props.tabData.length) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ visibleTabData: this.props.tabData });
+    } else {
+      let isTabEqual = false;
+      for (let i = 0; i < curtabKeys.length; i += 1) {
+        const prevKey = prevtabKeys[i];
+        const curKey = curtabKeys[i];
+        // Compare the specific property (e.g., id or name)
+        if (prevKey !== curKey) {
+          isTabEqual = true;
+        }
+      }
+      if (isTabEqual) {
+        // eslint-disable-next-line react/no-did-update-set-state
+        this.setState({ visibleTabData: this.props.tabData });
+      }
     }
     // Allow Active Styles to be applied when tab is selected.
     if (prevTab && currTab && prevTab.id !== currTab.id) {

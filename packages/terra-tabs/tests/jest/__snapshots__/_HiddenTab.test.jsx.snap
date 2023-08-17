@@ -107,7 +107,7 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
     >
       <div
         aria-controls="panel-1"
-        aria-describedby="terra-hidden-tab-pane-response=57aa8f72-f9bb-41ae-b572-633f870f7e82"
+        aria-describedby="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
         aria-disabled={false}
         aria-selected={false}
         className="hidden"
@@ -172,13 +172,13 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
       >
         <VisuallyHiddenText
           aria-hidden={true}
-          id="terra-hidden-tab-pane-response=57aa8f72-f9bb-41ae-b572-633f870f7e82"
+          id="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
           text="Terra.tabs.addbutton.focus"
         >
           <span
             aria-hidden={true}
             className="visually-hidden-text"
-            id="terra-hidden-tab-pane-response=57aa8f72-f9bb-41ae-b572-633f870f7e82"
+            id="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
           >
             Terra.tabs.addbutton.focus
           </span>

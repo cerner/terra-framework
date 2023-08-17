@@ -14,6 +14,8 @@ jest.mock('../../src/common-tabs/_TabUtils', () => ({
   disableFocusStyles: jest.fn(),
 }));
 
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+
 describe('HiddenTab', () => {
   test('should render a hidden tab with provided props and selection handling', () => {
     const mockOnSelect = jest.fn();

@@ -170,7 +170,7 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
             >
               <div
                 aria-controls="panel-1"
-                aria-describedby="terra-hidden-tab-pane-response=202e137b-101f-40ac-bbb2-1756ee5c9ca4"
+                aria-describedby="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
                 aria-disabled={false}
                 aria-selected={false}
                 className="hidden"
@@ -186,13 +186,13 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
               >
                 <VisuallyHiddenText
                   aria-hidden={true}
-                  id="terra-hidden-tab-pane-response=202e137b-101f-40ac-bbb2-1756ee5c9ca4"
+                  id="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
                   text="Terra.tabs.addbutton.focus"
                 >
                   <span
                     aria-hidden={true}
                     className="visually-hidden-text"
-                    id="terra-hidden-tab-pane-response=202e137b-101f-40ac-bbb2-1756ee5c9ca4"
+                    id="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
                   >
                     Terra.tabs.addbutton.focus
                   </span>
@@ -275,7 +275,7 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
             >
               <div
                 aria-controls="panel-2"
-                aria-describedby="terra-hidden-tab-pane-response=483286e0-290c-431c-9431-72809932acfe"
+                aria-describedby="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
                 aria-disabled={false}
                 aria-selected={false}
                 className="hidden"
@@ -291,13 +291,13 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
               >
                 <VisuallyHiddenText
                   aria-hidden={true}
-                  id="terra-hidden-tab-pane-response=483286e0-290c-431c-9431-72809932acfe"
+                  id="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
                   text="Terra.tabs.addbutton.focus"
                 >
                   <span
                     aria-hidden={true}
                     className="visually-hidden-text"
-                    id="terra-hidden-tab-pane-response=483286e0-290c-431c-9431-72809932acfe"
+                    id="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
                   >
                     Terra.tabs.addbutton.focus
                   </span>
