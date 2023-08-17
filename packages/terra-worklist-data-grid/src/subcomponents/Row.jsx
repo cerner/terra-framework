@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
 import ThemeContext from 'terra-theme-context';
 import classNames from 'classnames/bind';
@@ -103,7 +103,7 @@ function Row(props) {
 
   const columnIndexOffSet = hasRowSelection ? 1 : 0;
 
-  const handleCellSelect = (selectionDetails) => {
+  const handleCellSelect = useCallback((selectionDetails) => {
     if (hasRowSelection || selectionDetails.multiSelect) {
       if (onRowSelect) {
         onRowSelect(selectionDetails);
@@ -111,7 +111,7 @@ function Row(props) {
     } else if (onCellSelect) {
       onCellSelect(selectionDetails);
     }
-  };
+  }, [hasRowSelection, onCellSelect, onRowSelect]);
 
   const getCellData = (cellRowIndex, cellColumnIndex, cellData, rowId) => {
     const columnId = displayedColumns[cellColumnIndex].id;
