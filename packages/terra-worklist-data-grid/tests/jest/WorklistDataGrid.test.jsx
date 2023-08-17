@@ -154,7 +154,7 @@ describe('basic grid', () => {
     maskedCell.at(0).simulate('keydown', { keyCode: 32 });
 
     // Validate mock function was called from simulated click event
-    expect(mockRowSelect).toHaveBeenCalledWith(['1']);
+    expect(mockRowSelect).toHaveBeenCalledWith(['1'], []);
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -205,7 +205,7 @@ describe('basic grid', () => {
     nonSelectableCell.at(0).simulate('keydown', { keyCode: 32 });
 
     // Validate mock function was called from simulated click event
-    expect(mockRowSelect).toHaveBeenCalledWith(['1']);
+    expect(mockRowSelect).toHaveBeenCalledWith(['1'], []);
 
     expect(wrapper).toMatchSnapshot();
   });

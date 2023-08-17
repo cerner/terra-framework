@@ -764,6 +764,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
             onRowSelect={[Function]}
             rowHeaderIndex={0}
             rowIndex={1}
+            selectedCellColumnId="Column-2"
           >
             <tr
               className="worklist-data-grid-row"
@@ -964,7 +965,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                 height="2.5rem"
                 isMasked={true}
                 isRowHeader={false}
-                isSelected={false}
+                isSelected={true}
                 key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
@@ -1004,13 +1005,13 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
                   isMasked={true}
                   isRowHeader={false}
                   isSelectable={true}
-                  isSelected={false}
+                  isSelected={true}
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
                 >
                   <td
-                    aria-selected={false}
+                    aria-selected={true}
                     className="worklist-data-grid-cell masked"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -5783,6 +5784,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
           Array [
             "1",
           ],
+          Array [],
         ],
       ],
       "results": Array [
@@ -5904,6 +5906,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
             Array [
               "1",
             ],
+            Array [],
           ],
         ],
         "results": Array [
@@ -8069,6 +8072,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
           Array [
             "1",
           ],
+          Array [],
         ],
       ],
       "results": Array [
@@ -8190,6 +8194,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
             Array [
               "1",
             ],
+            Array [],
           ],
         ],
         "results": Array [
