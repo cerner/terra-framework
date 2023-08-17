@@ -3,6 +3,7 @@
 ## Unreleased
 * Changed
   * Updated focusable cell example for `terra-worklist-data-grid` to allow text area to be editable.
+  * Updated programmatic activation test and examples for `terra-tabs`.
 
 ## 1.32.0 - (August 10, 2023)
 

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added support for programmatic activation of tabs.
+
 ## 7.4.0 - (August 10, 2023)
 
 * Changed
