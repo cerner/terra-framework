@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+* Added
+  * Added example and tests for `terra-worklist-data-grid` to select rows via mouse and keyboard.
+
 * Changed
   * Updated focusable cell example for `terra-worklist-data-grid` to allow text area to be editable.
   * Updated programmatic activation test and examples for `terra-tabs`.
@@ -9,7 +12,7 @@
 
 * Updated
   * Updated terra-popup examples with inert attribute to demonstrate focus trap when using virtual cursor of Jaws for navigation within popup.
- 
+
 * Added
   * Added tests for `terra-worklist-data-grid` when using pinned columns.
 
