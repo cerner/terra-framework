@@ -131,11 +131,12 @@ class Tabs extends React.Component {
     } = this.props;
 
     const commonTabItems = [];
+    const activeTabKey = this.props.activeKey || this.state.activeKey;
 
     React.Children.forEach(children, child => {
       let content;
       let tabContent;
-      if (child.key === this.props.activeKey || (!this.props.activeKey && child.key === this.state.activeKey)) {
+      if (child.key === activeTabKey) {
         content = React.Children.map(child.props.children, contentItem => (
           React.cloneElement(contentItem)
         ));
@@ -178,7 +179,7 @@ class Tabs extends React.Component {
     return (
       <CommonTabs
         id={customProps.id}
-        activeItemKey={this.props.activeKey || this.state.activeKey}
+        activeItemKey={activeTabKey}
         onRequestActivate={key => this.setState({ activeKey: key })}
         onClosingTab={handleTabsStateChange}
         onChange={onChange}

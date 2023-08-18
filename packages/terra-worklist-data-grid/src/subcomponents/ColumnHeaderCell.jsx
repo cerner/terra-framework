@@ -223,4 +223,4 @@ const ColumnHeaderCell = (props) => {
 
 ColumnHeaderCell.propTypes = propTypes;
 ColumnHeaderCell.defaultProps = defaultProps;
-export default injectIntl(ColumnHeaderCell);
+export default React.memo(injectIntl(ColumnHeaderCell));

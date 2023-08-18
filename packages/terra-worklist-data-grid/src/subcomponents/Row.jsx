@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
 import ThemeContext from 'terra-theme-context';
 import classNames from 'classnames/bind';
@@ -103,7 +103,7 @@ function Row(props) {
 
   const columnIndexOffSet = hasRowSelection ? 1 : 0;
 
-  const handleCellSelect = (rowIdColId, coordinates, cellSelectable = true) => {
+  const handleCellSelect = useCallback((rowIdColId, coordinates, cellSelectable = true) => {
     if (hasRowSelection) {
       if (onRowSelect) {
         onRowSelect(rowIdColId.rowId, rowIndex, coordinates);
@@ -111,7 +111,7 @@ function Row(props) {
     } else if (onCellSelect) {
       onCellSelect(rowIdColId, coordinates, cellSelectable);
     }
-  };
+  }, [hasRowSelection, onCellSelect, onRowSelect, rowIndex]);
 
   const getCellData = (cellRowIndex, cellColumnIndex, cellData, rowId) => {
     const columnId = displayedColumns[cellColumnIndex].id;
@@ -165,4 +165,4 @@ function Row(props) {
 Row.propTypes = propTypes;
 Row.defaultProps = defaultProps;
 
-export default Row;
+export default React.memo(Row);
