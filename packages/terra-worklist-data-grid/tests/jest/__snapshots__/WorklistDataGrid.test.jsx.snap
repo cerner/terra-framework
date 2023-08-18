@@ -217,6 +217,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
         id="test-terra-worklist-data-grid"
         onFocus={[Function]}
         onKeyDown={[Function]}
+        onKeyUp={[Function]}
         onMouseDown={[Function]}
         role="grid"
         tabIndex={0}
@@ -1706,13 +1707,13 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.cell-selection-template"
+        text="Terra.worklist-data-grid.row-selection-mode-disabled"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.cell-selection-template
+          Terra.worklist-data-grid.row-selection-mode-disabled
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -1948,6 +1949,7 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
         id="test-terra-worklist-data-grid"
         onFocus={[Function]}
         onKeyDown={[Function]}
+        onKeyUp={[Function]}
         onMouseDown={[Function]}
         role="grid"
         tabIndex={0}
@@ -3709,6 +3711,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
         id="test-terra-worklist-data-grid"
         onFocus={[Function]}
         onKeyDown={[Function]}
+        onKeyUp={[Function]}
         onMouseDown={[Function]}
         role="grid"
         tabIndex={0}
@@ -4353,7 +4356,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
             rowIndex={1}
           >
             <tr
-              className="worklist-data-grid-row"
+              className="worklist-data-grid-row selectable"
               style={
                 Object {
                   "height": "2.5rem",
@@ -4826,7 +4829,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
             rowIndex={2}
           >
             <tr
-              className="worklist-data-grid-row"
+              className="worklist-data-grid-row selectable"
               style={
                 Object {
                   "height": "2.5rem",
@@ -5294,7 +5297,7 @@ exports[`basic grid verifies row selection column header selection 1`] = `
             rowIndex={3}
           >
             <tr
-              className="worklist-data-grid-row"
+              className="worklist-data-grid-row selectable"
               style={
                 Object {
                   "height": "2.5rem",
@@ -5778,7 +5781,10 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
     [MockFunction] {
       "calls": Array [
         Array [
-          "1",
+          Array [
+            "1",
+          ],
+          Array [],
         ],
       ],
       "results": Array [
@@ -5897,7 +5903,10 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
       [MockFunction] {
         "calls": Array [
           Array [
-            "1",
+            Array [
+              "1",
+            ],
+            Array [],
           ],
         ],
         "results": Array [
@@ -5990,6 +5999,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
         id="test-terra-worklist-data-grid"
         onFocus={[Function]}
         onKeyDown={[Function]}
+        onKeyUp={[Function]}
         onMouseDown={[Function]}
         role="grid"
         tabIndex={0}
@@ -6634,7 +6644,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
             rowIndex={1}
           >
             <tr
-              className="worklist-data-grid-row"
+              className="worklist-data-grid-row selectable"
               style={
                 Object {
                   "height": "2.5rem",
@@ -7107,7 +7117,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
             rowIndex={2}
           >
             <tr
-              className="worklist-data-grid-row"
+              className="worklist-data-grid-row selectable"
               style={
                 Object {
                   "height": "2.5rem",
@@ -7575,7 +7585,7 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
             rowIndex={3}
           >
             <tr
-              className="worklist-data-grid-row"
+              className="worklist-data-grid-row selectable"
               style={
                 Object {
                   "height": "2.5rem",
@@ -8059,7 +8069,10 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
     [MockFunction] {
       "calls": Array [
         Array [
-          "1",
+          Array [
+            "1",
+          ],
+          Array [],
         ],
       ],
       "results": Array [
@@ -8178,7 +8191,10 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
       [MockFunction] {
         "calls": Array [
           Array [
-            "1",
+            Array [
+              "1",
+            ],
+            Array [],
           ],
         ],
         "results": Array [
@@ -8271,6 +8287,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
         id="test-terra-worklist-data-grid"
         onFocus={[Function]}
         onKeyDown={[Function]}
+        onKeyUp={[Function]}
         onMouseDown={[Function]}
         role="grid"
         tabIndex={0}
@@ -8915,7 +8932,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
             rowIndex={1}
           >
             <tr
-              className="worklist-data-grid-row"
+              className="worklist-data-grid-row selectable"
               style={
                 Object {
                   "height": "2.5rem",
@@ -9388,7 +9405,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
             rowIndex={2}
           >
             <tr
-              className="worklist-data-grid-row"
+              className="worklist-data-grid-row selectable"
               style={
                 Object {
                   "height": "2.5rem",
@@ -9856,7 +9873,7 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
             rowIndex={3}
           >
             <tr
-              className="worklist-data-grid-row"
+              className="worklist-data-grid-row selectable"
               style={
                 Object {
                   "height": "2.5rem",
@@ -10314,6 +10331,7 @@ exports[`basic grid verifies that the grid created is consistent with the rows a
     id="test-terra-worklist-data-grid"
     onFocus={[Function]}
     onKeyDown={[Function]}
+    onKeyUp={[Function]}
     onMouseDown={[Function]}
     role="grid"
     tabIndex={0}
@@ -10506,6 +10524,7 @@ exports[`basic grid verifies the rows are created with the right props 1`] = `
     id="test-terra-worklist-data-grid"
     onFocus={[Function]}
     onKeyDown={[Function]}
+    onKeyUp={[Function]}
     onMouseDown={[Function]}
     role="grid"
     tabIndex={0}

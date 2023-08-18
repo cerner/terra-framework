@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import WorklistDataGrid from 'terra-worklist-data-grid';
 
 const gridDataJSON = {
@@ -58,7 +58,7 @@ const RowSelection = () => {
   const [selectedRows, setSelectedRows] = useState([]);
   const [hasSelectableRows, setHasSelectableRows] = useState(false);
 
-  const determineSelectedRows = (allRowsSelected, userSelectedRow) => {
+  const determineSelectedRows = useCallback((allRowsSelected, userSelectedRow) => {
     if (!userSelectedRow) {
       return [];
     }
@@ -75,19 +75,38 @@ const RowSelection = () => {
       remainingSelectedRow.push(userSelectedRow[0]);
     }
     return remainingSelectedRow;
-  };
+  }, [selectedRows]);
 
-  const clearRowSelection = () => {
+  const clearRowSelection = useCallback(() => {
     // eslint-disable-next-line no-param-reassign
     rows.forEach(r => { if (r.isSelected) { r.isSelected = false; } });
     setSelectedRows([]);
-  };
+  }, [rows]);
 
-  const disableSelectableRows = () => {
+  const disableSelectableRows = useCallback(() => {
     rowSelectionModeRef.current.checked = false;
     setHasSelectableRows(false);
     clearRowSelection();
-  };
+  }, [clearRowSelection]);
+
+  const onRowSelect = useCallback((rowIdsToSelect, rowIdsToUnselect) => {
+    rows.forEach((row, index) => {
+      if (rowIdsToUnselect && rowIdsToUnselect.indexOf(row.id) >= 0) {
+        rows[index].isSelected = false;
+      }
+
+      if (rowIdsToSelect && rowIdsToSelect.indexOf(row.id) >= 0) {
+        rows[index].isSelected = true;
+      }
+    });
+  }, [rows]);
+
+  const onRowSelectAll = useCallback(() => {
+    const newRows = [];
+    // eslint-disable-next-line no-param-reassign
+    rows.forEach(row => { row.isSelected = true; newRows.push(row.id); });
+    setSelectedRows(determineSelectedRows(true, newRows));
+  }, [determineSelectedRows, rows]);
 
   const onRowSelectionModeChange = (event) => {
     if (!event.target.checked) {
@@ -95,6 +114,13 @@ const RowSelection = () => {
     }
     setHasSelectableRows(event.target.checked);
   };
+
+  const enableRowSelection = useCallback(() => {
+    if (!rowSelectionModeRef.current.checked) {
+      rowSelectionModeRef.current.checked = true;
+    }
+    setHasSelectableRows(true);
+  }, []);
 
   return (
     <React.Fragment>
@@ -116,29 +142,11 @@ const RowSelection = () => {
         defaultColumnWidth={180}
         ariaLabel="Worklist Data Grid with Pinned Columns and Row Selection"
         hasSelectableRows={hasSelectableRows}
-        onRowSelect={(rowId) => {
-          const newRows = [];
-          const selectedRow = rows.find(row => row.id === rowId);
-          selectedRow.isSelected = !selectedRow.isSelected;
-          rows.forEach(element => {
-            if (element.isSelected) {
-              newRows.push(element.id);
-            }
-          });
-          setSelectedRows(determineSelectedRows(false, newRows));
-        }}
-        onRowSelectAll={() => {
-          const newRows = [];
-          // eslint-disable-next-line no-param-reassign
-          rows.forEach(row => { row.isSelected = true; newRows.push(row.id); });
-          setSelectedRows(determineSelectedRows(true, newRows));
-        }}
-        onClearSelectedRows={() => {
-          clearRowSelection();
-        }}
-        onDisableSelectableRows={() => {
-          disableSelectableRows();
-        }}
+        onRowSelect={onRowSelect}
+        onRowSelectAll={onRowSelectAll}
+        onClearSelectedRows={clearRowSelection}
+        onDisableSelectableRows={disableSelectableRows}
+        onEnableRowSelection={enableRowSelection}
       />
     </React.Fragment>
   );

@@ -154,7 +154,7 @@ describe('basic grid', () => {
     maskedCell.at(0).simulate('keydown', { keyCode: 32 });
 
     // Validate mock function was called from simulated click event
-    expect(mockRowSelect).toHaveBeenCalledWith('1');
+    expect(mockRowSelect).toHaveBeenCalledWith(['1'], []);
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -199,13 +199,13 @@ describe('basic grid', () => {
     );
 
     // Find column headers
-    const nonSelectableCell = wrapper.find(Row).at(0).find('.selectable');
+    const nonSelectableCell = wrapper.find(Row).at(0).find('th:not(.selectable)');
 
     // Simulate onMouseDown event on row selection column header
     nonSelectableCell.at(0).simulate('keydown', { keyCode: 32 });
 
     // Validate mock function was called from simulated click event
-    expect(mockRowSelect).toHaveBeenCalledWith('1');
+    expect(mockRowSelect).toHaveBeenCalledWith(['1'], []);
 
     expect(wrapper).toMatchSnapshot();
   });

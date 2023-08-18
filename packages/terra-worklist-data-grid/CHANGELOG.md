@@ -23,7 +23,8 @@
   * Added support for pinned columns.
   * Added ability to dive into cells with focusable elements.
   * Added ability to select the row selection column header to allow sorting by consumers.
- 
+  * Added ability to select rows via mouse and keyboard.
+
 * Fixed
   * Text alignment of the row header column.
 
