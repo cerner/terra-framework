@@ -216,11 +216,11 @@ function WorklistDataGrid(props) {
   // -------------------------------------
   // functions
 
-  const isRowSelectionCell = useCallback((columnIndex) => (
+  const isRowSelectionCell = (columnIndex) => (
     hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
-  ), [displayedColumns, hasSelectableRows]);
+  );
 
-  const setFocusedRowCol = useCallback((newRowIndex, newColIndex, makeActiveElement) => {
+  const setFocusedRowCol = (newRowIndex, newColIndex, makeActiveElement) => {
     setCellAriaLiveMessage(null);
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
@@ -232,7 +232,7 @@ function WorklistDataGrid(props) {
     if (makeActiveElement) {
       focusedCell.focus();
     }
-  }, [isRowSelectionCell]);
+  };
 
   // -------------------------------------
   // callback Hooks
@@ -376,16 +376,6 @@ function WorklistDataGrid(props) {
         rowIdsToUnselect = rows.slice(Math.max(rangeInfo.anchorRow, newEndRowIndex), rangeInfo.previousSelectionEndRow).map(row => row.id);
       }
     }
-
-    // const ariaMessage = `${intl.formatMessage({
-    //   id: hasSelectableRows
-    //     ? 'Terra.worklist-data-grid.row-selection-multiple-rows-selected'
-    //     : 'Terra.worklist-data-grid.row-selection-mode-enabled',
-    // })}. ${intl.formatMessage({
-    //   id: rowIdsToSelect.length === 1
-    //     ? 'Terra.worklist-data-grid.row-selection-template'
-    //     : 'Terra.worklist-data-grid.row-selection-selected-rows-range',
-    // }, { row: rangeInfo.anchorRow, endRow: newEndRowIndex })}`;
 
     let ariaMessage = intl.formatMessage({
       id: hasSelectableRows
