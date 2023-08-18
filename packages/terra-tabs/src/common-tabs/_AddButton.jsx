@@ -27,9 +27,9 @@ const propTypes = {
    */
   index: PropTypes.number.isRequired,
   /**
-   * Selection callback function.
-   */
-  onSelect: PropTypes.func,
+   *  Callback function triggered when add button is clicked.
+  */
+  onAddClick: PropTypes.func,
   /**
    * Ref callback for button.
    */
@@ -47,7 +47,7 @@ const propTypes = {
 
 const AddButton = ({
   addAriaLabel,
-  onSelect,
+  onAddClick,
   refCallback,
   index,
   id,
@@ -55,14 +55,19 @@ const AddButton = ({
   intl,
 }) => {
   const buttonsuggestion = intl.formatMessage({ id: 'Terra.tabs.addbutton.focus' });
-  const ariaLabelAddTabWithSuggestion = `${addAriaLabel} ${buttonsuggestion}`;
+  // const ariaLabelAddTabWithSuggestion = `${addAriaLabel}`;
+  let ariaLabelAddTabWithSuggestion = `${buttonsuggestion}`;
+
+  if (addAriaLabel) {
+    ariaLabelAddTabWithSuggestion = `${addAriaLabel} ${buttonsuggestion}`;
+  }
   const AddTabIcon = <IconAdd a11yLabel={ariaLabelAddTabWithSuggestion} />;
 
   const keyDown = (event, indexTab, ids) => {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       event.preventDefault();
       event.stopPropagation();
-      onSelect();
+      onAddClick();
     } else {
       handleArrows(event, indexTab, ids);
     }
@@ -80,7 +85,7 @@ const AddButton = ({
       className={cx('button')}
       onKeyDown={event => keyDown(event, index, tabIds)}
       ref={refCallback}
-      onClick={onSelect}
+      onClick={onAddClick}
       data-terra-tab-add-btn
     />
   );

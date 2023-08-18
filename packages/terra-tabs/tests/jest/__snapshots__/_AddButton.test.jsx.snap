@@ -106,7 +106,6 @@ exports[`MoreButton should render a add button with provided props and selection
         isDisabled={false}
         isIconOnly={true}
         isReversed={false}
-        onClick={[MockFunction]}
         onKeyDown={[Function]}
         text="add tab"
         type="button"

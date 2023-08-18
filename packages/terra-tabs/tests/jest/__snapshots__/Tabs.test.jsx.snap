@@ -1654,7 +1654,7 @@ exports[`Tabs should render with add icon 1`] = `
                   id="00000000-0000-0000-0000-000000000000"
                   index={1}
                   isSelected={false}
-                  onSelect={[Function]}
+                  onAddClick={[Function]}
                   tabIds={
                     Array [
                       "application-id-default",
@@ -1695,7 +1695,7 @@ exports[`Tabs should render with add icon 1`] = `
                       }
                     }
                     isSelected={false}
-                    onSelect={[Function]}
+                    onAddClick={[Function]}
                     tabIds={
                       Array [
                         "application-id-default",
@@ -2253,7 +2253,7 @@ exports[`Tabs should render with add icon 2`] = `
                   id="00000000-0000-0000-0000-000000000000"
                   index={1}
                   isSelected={false}
-                  onSelect={[Function]}
+                  onAddClick={[Function]}
                   tabIds={
                     Array [
                       "application-id-default",
@@ -2294,7 +2294,7 @@ exports[`Tabs should render with add icon 2`] = `
                       }
                     }
                     isSelected={false}
-                    onSelect={[Function]}
+                    onAddClick={[Function]}
                     tabIds={
                       Array [
                         "application-id-default",

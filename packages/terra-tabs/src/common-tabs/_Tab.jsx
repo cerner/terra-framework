@@ -172,34 +172,40 @@ const Tab = ({
 
   if (isIconOnly) {
     attributes['aria-label'] = label;
-    if (isClosable) {
-      attributes['aria-label'] = `${label} ${tabDeleteLabel}`;
+    if (isClosable && label) {
+      attributes['aria-label'] = `${label} . ${tabDeleteLabel}`;
     }
   }
 
   function onCloseClick(event) {
-    event.stopPropagation();
-    onClosingTab(itemKey, metaData, event);
-    const deleteTabLabel = intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed' });
-    let element = document.getElementById(tabIds[index - 1]);
-    if (index === 0) {
-      element = document.getElementById(tabIds[index + 1]);
-    }
-    const ariaLabel = label ? `${label} ${deleteTabLabel}` : '';
-    if (element) {
-      element.setAttribute('aria-label', ariaLabel);
-      element.focus();
-      element.addEventListener('blur', () => {
-        element.removeAttribute('aria-label');
-      });
+    if (!isDisabled) {
+      event.stopPropagation();
+      onClosingTab(itemKey, metaData, event);
+      const deleteTabLabel = intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed' });
+      let element = document.getElementById(tabIds[index - 1]);
+      if (index === 0) {
+        element = document.getElementById(tabIds[index + 1]);
+      }
+      const ariaLabel = label ? `${label} ${deleteTabLabel}` : '';
+      if (element) {
+        element.setAttribute('aria-label', ariaLabel);
+        element.focus();
+        element.addEventListener('blur', () => {
+          element.removeAttribute('aria-label');
+        });
+      }
     }
   }
   function onKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_RETURN || (event.nativeEvent.keyCode === KEY_SPACE && !isDraggable)) {
       event.preventDefault();
       event.stopPropagation();
-      onSelect(itemKey, metaData);
-      onChange(event, itemKey);
+      if (onSelect) {
+        onSelect(itemKey, metaData);
+      }
+      if (onChange) {
+        onChange(event, itemKey);
+      }
     }
     if (event.nativeEvent.keyCode === KEY_DELETE || event.nativeEvent.keyCode === KEY_BACK_SPACE) {
       event.preventDefault();
@@ -260,7 +266,7 @@ const Tab = ({
             <div
               className={cx('tabs-remove-button')}
               type="button"
-              aria-label={tabDeleteLabel}
+              aria-label={`. ${tabDeleteLabel}`}
               onClick={onCloseClick}
             >
               <IconClose a11yLabel="Close Button" />
@@ -292,7 +298,7 @@ const Tab = ({
       <div
         className={cx('tabs-remove-button')}
         type="button"
-        aria-label={tabDeleteLabel}
+        aria-label={`. ${tabDeleteLabel}`}
         onClick={onCloseClick}
       >
         <IconClose a11yLabel="Close Button" />

@@ -120,12 +120,6 @@ const lastFocus = (event, index, ids) => {
     }
   }
 };
-/**
- * The default event handler for navigational arrow keys.
- * @param {object} event The triggering event.
- * @param {number} index The index of the current element.
- * @param {array} ids The array of id strings.
- */
 
 /**
  * The default event handler for navigational arrow keys.

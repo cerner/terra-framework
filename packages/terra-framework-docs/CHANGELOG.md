@@ -3,6 +3,7 @@
 ## Unreleased
 * Changed
   * Updated focusable cell example for `terra-worklist-data-grid` to allow text area to be editable.
+  * Added examples and tests for Add & Close functionality of tabs.
 
 ## 1.32.0 - (August 10, 2023)
 
@@ -16,7 +17,6 @@
   * Updated toggle examples for `terra-collapsible-menu-view` to include selectable toggles and toggles within a collapsed menu.
   
 * Added
-  * Added examples and tests for Add & Close functionality of tabs.
   * Updated row selection example for `terra-worklist-data-grid` to show ability to select the row selection column header.
 
 * Changed

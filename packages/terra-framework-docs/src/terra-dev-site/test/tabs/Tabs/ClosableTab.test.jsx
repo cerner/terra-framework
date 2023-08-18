@@ -64,7 +64,7 @@ const ClosableTab = () => {
     },
   );
 
-  const handleTabClose = (itemKey) => {
+  const handleTabClose = (tabdata, itemKey) => {
     const tabsArray = [...tabs];
     const indexToRemove = tabsArray.findIndex(tab => tab.key === itemKey);
     if (indexToRemove !== -1) {

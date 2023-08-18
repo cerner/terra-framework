@@ -71,7 +71,7 @@ const propTypes = {
    */
   onTabClose: PropTypes.func,
   /**
-   * Callback function when add button selection has changed.
+   * Callback function triggered when add button is clicked.
    * Parameters: 1. Event 2. Selected pane's key
    */
   onSelectAddButton: PropTypes.func,
@@ -114,11 +114,6 @@ class Tabs extends React.Component {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ activeKey: this.props.activeKey });
     }
-
-    // if (tabKeys.length > 0 && tabKeys.indexOf(this.state.activeKey) === -1) {
-    //   // eslint-disable-next-line react/no-did-update-set-state
-    //   this.setState({ activeKey: this.getInitialState() });
-    // }
   }
 
   render() {
@@ -175,9 +170,7 @@ class Tabs extends React.Component {
       }
 
       if (this.state.activeKey === itemKey) {
-        setTimeout(() => {
-          this.setState((prevState) => ({ activeKey: prevState.activeAfterClosed }));
-        }, 50);
+        this.setState((prevState) => ({ activeKey: prevState.activeAfterClosed }));
       }
       return this.props.onTabClose && this.props.onTabClose(newValue, itemKey, event);
     };

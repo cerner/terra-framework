@@ -73,7 +73,7 @@ const propTypes = {
    */
   onSelectAddButton: PropTypes.func,
   /**
-   * Callback function when a tab is closing.
+   * Callback function triggered when close button clicked.
    * It receives two parameters: 1. Item key of the tab to close. 2. MetaData associated with the tab.
    */
   onClosingTab: PropTypes.func,
@@ -104,10 +104,6 @@ const propTypes = {
 };
 
 class Tabs extends React.Component {
-  addTabId = null;
-
-  addButtonToggle = false;
-
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
@@ -175,7 +171,6 @@ class Tabs extends React.Component {
       for (let i = 0; i < curtabKeys.length; i += 1) {
         const prevKey = prevtabKeys[i];
         const curKey = curtabKeys[i];
-        // Compare the specific property (e.g., id or name)
         if (prevKey !== curKey) {
           isTabEqual = true;
         }
@@ -202,16 +197,16 @@ class Tabs extends React.Component {
       });
     }
 
-    if (currTab && this.addButtonToggle && !this.moreButtonRef.current) {
+    if (currTab && !this.moreButtonRef.current) {
       const element = document.getElementById(currTab.id);
       if (element && this.addButtonToggle) {
         element.focus();
       }
-    }
-
-    const element = document.getElementById(this.addTabId);
-    if (this.state.visibleTabData.length === 0 && element) {
-      element.focus();
+    } else if (this.state.visibleTabData.length === 0) {
+      const element = document.getElementById(this.addTabId);
+      if (element) {
+        element.focus();
+      }
     }
 
     if (this.isCalculating) {
@@ -626,7 +621,7 @@ class Tabs extends React.Component {
                     id={this.addTabId}
                     addAriaLabel={ariaLabelAddTab}
                     index={enabledTabsIndex + 1}
-                    onSelect={this.wrapOnAddButton}
+                    onAddClick={this.wrapOnAddButton}
                     tabIds={moreIds}
                     isSelected={false}
                     title={ariaLabelAddTab}
@@ -681,7 +676,7 @@ class Tabs extends React.Component {
             id={this.addTabId}
             addAriaLabel={ariaLabelAddTab}
             index={enabledTabsIndex + 1}
-            onSelect={this.wrapOnAddButton}
+            onAddClick={this.wrapOnAddButton}
             tabIds={moreIds}
             isSelected={false}
             title={ariaLabelAddTab}
