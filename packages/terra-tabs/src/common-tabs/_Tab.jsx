@@ -269,7 +269,7 @@ const Tab = ({
               aria-label={`. ${tabDeleteLabel}`}
               onClick={onCloseClick}
             >
-              <IconClose a11yLabel="Close Button" />
+              <IconClose />
             </div>
             )}
           </div>
@@ -301,7 +301,7 @@ const Tab = ({
         aria-label={`. ${tabDeleteLabel}`}
         onClick={onCloseClick}
       >
-        <IconClose a11yLabel="Close Button" />
+        <IconClose />
       </div>
       )}
     </div>

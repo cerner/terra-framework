@@ -266,7 +266,7 @@ const HiddenTab = ({
         aria-label={tabDeleteLabel}
         onClick={onCloseClick}
       >
-        <IconClose a11yLabel="Close Button" />
+        <IconClose />
       </button>
       )}
     </div>
