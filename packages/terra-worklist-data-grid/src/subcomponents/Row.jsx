@@ -70,11 +70,6 @@ const propTypes = {
    * A zero-based index indicating which column represents the row header.
    */
   rowHeaderIndex: PropTypes.number,
-
-  /**
-   * Id of the column in the row that is selected.
-   */
-  selectedCellColumnId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -96,7 +91,6 @@ function Row(props) {
     rowHeaderIndex,
     onRowSelect,
     onCellSelect,
-    selectedCellColumnId,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -124,7 +118,7 @@ function Row(props) {
         rowIndex={cellRowIndex}
         columnIndex={cellColumnIndex}
         key={`${rowId}_${columnId}`}
-        isSelected={!hasRowSelection && selectedCellColumnId === columnId}
+        isSelected={!hasRowSelection && cellData.isSelected}
         isMasked={cellData.isMasked}
         isSelectable={cellData.isSelectable}
         isRowHeader={isRowHeader}

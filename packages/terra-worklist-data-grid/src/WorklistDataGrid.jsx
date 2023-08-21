@@ -114,6 +114,11 @@ const propTypes = {
   onClearSelectedRows: PropTypes.func,
 
   /**
+   * Callback function that is called when all selected cells need to be unselected. Parameters: none.
+   */
+  onClearSelectedCells: PropTypes.func,
+
+  /**
    * Callback function that is called when no row is selected and the row selection mode needs to be disabled. Parameters: none.
    */
   onDisableSelectableRows: PropTypes.func,
@@ -161,6 +166,7 @@ function WorklistDataGrid(props) {
     onRowSelect,
     onRowSelectAll,
     onClearSelectedRows,
+    onClearSelectedCells,
     onDisableSelectableRows,
     onEnableRowSelection,
     hasSelectableRows,
@@ -206,7 +212,6 @@ function WorklistDataGrid(props) {
   const [ariaLiveMessage, setAriaLiveMessage] = useState(null);
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
   const rowSelection = useRef({ isRowSelectionModeToggledByGrid: false });
-  const [currentSelectedCell, setCurrentSelectedCell] = useState(null);
 
   // Define ColumnContext Provider value object
   const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setCellAriaLiveMessage }), [pinnedColumnOffsets]);
@@ -262,9 +267,6 @@ function WorklistDataGrid(props) {
       newFocusCell = { row: focusedRow, col: 0 };
     }
     setFocusedRowCol(newFocusCell.row, newFocusCell.col, false);
-    if (currentSelectedCell != null) {
-      setCurrentSelectedCell(null);
-    }
 
     if (!hasSelectableRows) {
       rowSelection.current.rangeUsingFocusedRow = null;
@@ -423,7 +425,6 @@ function WorklistDataGrid(props) {
 
     setFocusedRow(cellCoordinates.row);
     setFocusedCol(cellCoordinates.col);
-    setCurrentSelectedCell(null);
 
     if (onColumnSelect) {
       onColumnSelect(columnId);
@@ -438,7 +439,6 @@ function WorklistDataGrid(props) {
 
     setFocusedRow(selectionDetails.rowIndex);
     setFocusedCol(selectionDetails.columnIndex);
-    setCurrentSelectedCell({ rowId: selectionDetails.rowId, columnId: selectionDetails.columnId });
 
     if (selectionDetails.isCellSelectable && onCellSelect) {
       onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
@@ -448,7 +448,6 @@ function WorklistDataGrid(props) {
   const handleRowSelection = useCallback((selectionDetails) => {
     setFocusedRow(selectionDetails.rowIndex);
     setFocusedCol(selectionDetails.columnIndex);
-    setCurrentSelectedCell(null);
 
     const rangeInfo = selectionDetails.selectedByKeyboard ? rowSelection.current.rangeUsingLastIndividuallySelectedRow : rowSelection?.current?.rangeUsingFocusedRow;
     if (!selectionDetails.multiSelect) {
@@ -597,9 +596,12 @@ function WorklistDataGrid(props) {
             setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-selection-cleared' }));
           }
 
+          if (onClearSelectedCells) {
+            onClearSelectedCells();
+          }
+
           setFocusedRow(cellCoordinates.row);
           setFocusedCol(cellCoordinates.col);
-          setCurrentSelectedCell(null);
         } else {
           handleClearRowSelection();
         }
@@ -714,7 +716,6 @@ function WorklistDataGrid(props) {
       rowHeaderIndex={rowHeaderIndex}
       onCellSelect={handleCellSelection}
       onRowSelect={handleRowSelection}
-      selectedCellColumnId={(currentSelectedCell?.rowId === row.id) ? currentSelectedCell?.columnId : undefined}
     />
   );
 

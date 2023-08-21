@@ -141,13 +141,6 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('selection-and-focus-on-1-1', { selector: defaultSelector });
     });
 
-    it('validates that selecting an already selected cell has no effect', () => {
-      navigateToCell(1, 1);
-      browser.keys(['Space', 'Space']);
-
-      Terra.validates.element('selection-and-focus-on-1-1', { selector: defaultSelector });
-    });
-
     it('validates that navigating the grid does not change the selected cell', () => {
       navigateToCell(1, 1);
       browser.keys(['Space']);
