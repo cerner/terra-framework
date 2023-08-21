@@ -243,10 +243,20 @@ function WorklistDataGrid(props) {
   // callback Hooks
 
   const gridRef = useCallback((node) => {
+    if (!node) {
+      return;
+    }
+
     grid.current = node;
 
-    // Update table height state variable
-    setTableHeight(grid.current.offsetHeight - 1);
+    // eslint-disable-next-line compat/compat
+    const resizeObserver = new ResizeObserver(() => {
+      // Update table height state variable
+      setTableHeight(grid.current.offsetHeight - 1);
+    });
+
+    // Register resize observer to detect size changes
+    resizeObserver.observe(node);
   }, []);
 
   // -------------------------------------

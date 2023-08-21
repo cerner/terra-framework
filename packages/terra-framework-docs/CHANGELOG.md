@@ -9,6 +9,9 @@
   * Updated examples and tests for `terra-worklist-data-grid` to account for cell selection state being controlled by consumers.
   * Updated programmatic activation test and examples for `terra-tabs`.
 
+* Fixed
+  * Fixed last pinned column border not adjusting to table height changes.
+
 ## 1.32.0 - (August 10, 2023)
 
 * Updated
