@@ -129,21 +129,23 @@ function Cell(props) {
   }, []);
 
   /**
-   * Handles click event for cell
-   */
-  const onMouseDown = () => {
-    if (!isFocusTrapEnabled) {
-      onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex }, (!isMasked && isSelectable));
-    }
-  };
-
-  /**
-   * Hnadles the onDeactivate callback for FocusTrap component
+   * Handles the onDeactivate callback for FocusTrap component
    */
   const deactiveFocusTrap = () => {
     setFocusTrapEnabled(false);
     columnContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.resume-navigation' }));
   };
+
+  /**
+   * Handles mouse down event for cell
+   */
+  const onMouseDown = ((event) => {
+    if (!isFocusTrapEnabled) {
+      onCellSelect({
+        rowId, columnId, rowIndex, columnIndex, multiSelect: event.shiftKey, selectedByKeyboard: false, isCellSelectable: (!isMasked && isSelectable),
+      });
+    }
+  });
 
   /**
    * Keyboard event handler
@@ -173,7 +175,9 @@ function Cell(props) {
           break;
         case KeyCode.KEY_SPACE:
           if (onCellSelect) {
-            onCellSelect({ rowId, columnId }, { row: rowIndex, col: columnIndex }, (!isMasked && isSelectable));
+            onCellSelect({
+              rowId, columnId, rowIndex, columnIndex, multiSelect: event.shiftKey, selectedByKeyboard: true, isCellSelectable: (!isMasked && isSelectable),
+            });
           }
           event.preventDefault(); // prevent the default scrolling
           break;
