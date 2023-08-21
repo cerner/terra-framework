@@ -94,7 +94,7 @@ class Tabs extends React.Component {
     this.getInitialState = this.getInitialState.bind(this);
     this.state = {
       activeKey: this.getInitialState(),
-      activeAfterClosed: '',
+      activeTab: '',
     };
   }
 
@@ -158,20 +158,20 @@ class Tabs extends React.Component {
     });
     const handleTabsStateChange = (newValue, itemKey, event) => {
       if (newValue.length > 0) {
-        let activeAfterClosed = '';
+        let activeTab = '';
         for (let i = 0; i < newValue.length; i += 1) {
           if (newValue[i].isSelected === true) {
-            activeAfterClosed = newValue[i].itemKey;
+            activeTab = newValue[i].itemKey;
             break;
           }
         }
-        this.setState({ activeAfterClosed });
+        this.setState({ activeTab });
       } else if (newValue.length === 0) {
-        this.setState({ activeAfterClosed: '' });
+        this.setState({ activeTab: '' });
       }
 
       if (this.state.activeKey === itemKey) {
-        this.setState((prevState) => ({ activeKey: prevState.activeAfterClosed }));
+        this.setState((prevState) => ({ activeKey: prevState.activeTab }));
       }
       return this.props.onTabClose && this.props.onTabClose(newValue, itemKey, event);
     };
