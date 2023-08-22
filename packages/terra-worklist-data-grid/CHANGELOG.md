@@ -12,6 +12,7 @@
 * Fixed
   * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.
   * Fixed cells not honoring the value of props passed by consumers.
+  * Fixed pinned column separator not adjusting size when the table height changes.
 
 ## 0.4.0 - (August 10, 2023)
 

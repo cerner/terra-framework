@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
+import ResizeObserver from 'resize-observer-polyfill';
 
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
@@ -243,10 +244,19 @@ function WorklistDataGrid(props) {
   // callback Hooks
 
   const gridRef = useCallback((node) => {
+    if (!node) {
+      return;
+    }
+
     grid.current = node;
 
-    // Update table height state variable
-    setTableHeight(grid.current.offsetHeight - 1);
+    const resizeObserver = new ResizeObserver(() => {
+      // Update table height state variable
+      setTableHeight(grid.current.offsetHeight - 1);
+    });
+
+    // Register resize observer to detect size changes
+    resizeObserver.observe(node);
   }, []);
 
   // -------------------------------------
