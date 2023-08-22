@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
+import ResizeObserver from 'resize-observer-polyfill';
 
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
@@ -249,7 +250,6 @@ function WorklistDataGrid(props) {
 
     grid.current = node;
 
-    // eslint-disable-next-line compat/compat
     const resizeObserver = new ResizeObserver(() => {
       // Update table height state variable
       setTableHeight(grid.current.offsetHeight - 1);
