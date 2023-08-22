@@ -9,5 +9,6 @@
   "Terra.tabs.drag": "Ha movido la ficha de la posición {startPosition} a la posición {endPosition}.",
   "Terra.tabs.cancelDrag": "Se canceló el movimiento. La ficha ha vuelto a su posición inicial {startPosition}.",
   "Terra.tabs.drop": "Ha soltado la ficha. Se ha movido de la posición {startPosition} a la posición {endPosition}.",
-  "Terra.tabs.focus": "Presione Entrar para activar una ficha, o presione la barra espaciadora para comenzar a arrastrar. Asegúrese de que su lector de pantalla esté en el modo de enfoque o el modo formularios."
+  "Terra.tabs.focus": "Presione Entrar para activar una ficha, o presione la barra espaciadora para comenzar a arrastrar. Asegúrese de que su lector de pantalla esté en el modo de enfoque o el modo formularios.",
+  "Terra.tabs.addbutton.focus": "Presione Entrar o la barra espaciadora para agregar una nueva ficha."
 }
