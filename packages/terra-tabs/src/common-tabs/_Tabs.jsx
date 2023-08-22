@@ -132,6 +132,7 @@ class Tabs extends React.Component {
     this.state = {
       visibleTabData: this.props.tabData,
     };
+    this.isNewTabCreated = false;
   }
 
   componentDidMount() {
@@ -199,7 +200,7 @@ class Tabs extends React.Component {
 
     if (currTab && !this.moreButtonRef.current) {
       const element = document.getElementById(currTab.id);
-      if (element && this.addButtonToggle) {
+      if (element && this.isNewTabCreated) {
         element.focus();
       }
     } else if (this.state.visibleTabData.length === 0) {
@@ -338,7 +339,7 @@ class Tabs extends React.Component {
     if (!result.destination) {
       return;
     }
-    this.addButtonToggle = false;
+    this.isNewTabCreated = false;
     this.setState((prevState) => {
       const items = this.reorder(
         prevState.visibleTabData,
@@ -430,7 +431,7 @@ class Tabs extends React.Component {
 
   wrapOnClose() {
     return (itemKey, event) => {
-      this.addButtonToggle = false;
+      this.isNewTabCreated = false;
       this.setIsOpen(false);
       let removedTabIndex = -1;
       const updatedTabData = this.state.visibleTabData
@@ -462,7 +463,7 @@ class Tabs extends React.Component {
 
   wrapOnAddButton() {
     if (this.props.onSelectAddButton) {
-      this.addButtonToggle = true;
+      this.isNewTabCreated = true;
       this.props.onSelectAddButton();
     }
   }
