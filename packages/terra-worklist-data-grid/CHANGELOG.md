@@ -11,6 +11,7 @@
 
 * Fixed
   * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.
+  * Fixed cells not honoring the value of props passed by consumers.
 
 ## 0.4.0 - (August 10, 2023)
 
@@ -23,7 +24,8 @@
   * Added support for pinned columns.
   * Added ability to dive into cells with focusable elements.
   * Added ability to select the row selection column header to allow sorting by consumers.
- 
+  * Added ability to select rows via mouse and keyboard.
+
 * Fixed
   * Text alignment of the row header column.
 

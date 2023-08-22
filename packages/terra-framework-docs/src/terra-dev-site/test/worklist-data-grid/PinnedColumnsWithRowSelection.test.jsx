@@ -99,16 +99,16 @@ const RowSelection = () => {
       defaultColumnWidth={180}
       ariaLabel="Worklist Data Grid with Pinned Columns and Row Selection"
       hasSelectableRows={hasSelectableRows}
-      onRowSelect={(rowId) => {
-        const newRows = [];
-        const selectedRow = rows.find(row => row.id === rowId);
-        selectedRow.isSelected = !selectedRow.isSelected;
-        rows.forEach(element => {
-          if (element.isSelected) {
-            newRows.push(element.id);
+      onRowSelect={(rowIdsToSelect, rowIdsToUnselect) => {
+        rows.forEach((row, index) => {
+          if (rowIdsToUnselect && rowIdsToUnselect.indexOf(row.id) >= 0) {
+            rows[index].isSelected = false;
+          }
+
+          if (rowIdsToSelect && rowIdsToSelect.indexOf(row.id) >= 0) {
+            rows[index].isSelected = true;
           }
         });
-        setSelectedRows(determineSelectedRows(false, newRows));
       }}
       onRowSelectAll={() => {
         const newRows = [];

@@ -1,18 +1,27 @@
+@use './Mixins';
+
 // Themes
 @import '../orion-fusion-theme/Row.module';
 @import '../clinical-lowlight-theme/Row.module';
 
 :local {
-  .worklist-data-grid-row:nth-child(even) {
-    background-color: var(--terra-worklist-data-grid-row-striped-even-background-color, #f0f0f0);
-  }
+  .worklist-data-grid-row {
+    &.selectable:hover {
+      @include Mixins.terra-worklist-data-grid-selectable-hover;
+    }
 
-  .worklist-data-grid-row:nth-child(odd) {
-    background-color: var(--terra-worklist-data-grid-row-striped-odd-background-color, #fff);
-  }
+    &:nth-child(even) {
+      background-color: var(--terra-worklist-data-grid-row-striped-even-background-color, #f0f0f0);
+    }
 
-  .row-selected {
-    background-color: var(--terra-worklist-data-grid-row-selected-background-color, #cbe7fa);
-    box-shadow: var(--terra-worklist-data-grid-row-selected-box-shadow, inset 0 1px 0 0 #0092e0, inset 0 -1px 0 0 #0092e0);
+    &:nth-child(odd) {
+      background-color: var(--terra-worklist-data-grid-row-striped-odd-background-color, #fff);
+    }
+
+    &.selected {
+      background-color: var(--terra-worklist-data-grid-row-selected-background-color, #cbe7fa);
+      border-right: 1px solid #0092e0;
+      box-shadow: var(--terra-worklist-data-grid-row-selected-box-shadow, inset 0 1px 0 0 #0092e0, inset 0 -1px 0 0 #0092e0);
+    }
   }
 }
