@@ -56,7 +56,7 @@ const PinnedColumns = () => {
   const { cols } = gridDataJSON;
   const [rows, setRows] = useState([]);
 
-  // Change row data for data grid
+  // Change row data for data grid to validate that pinned column border resizes correctly.
   useEffect(() => {
     setRows(gridDataJSON.rows);
   }, []);
