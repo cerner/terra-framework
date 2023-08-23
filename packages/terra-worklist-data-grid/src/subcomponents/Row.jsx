@@ -98,7 +98,7 @@ function Row(props) {
   const columnIndexOffSet = hasRowSelection ? 1 : 0;
 
   const handleCellSelect = useCallback((selectionDetails) => {
-    if (hasRowSelection || selectionDetails.multiSelect) {
+    if (hasRowSelection || selectionDetails.isShiftKeyPressed) {
       if (onRowSelect) {
         onRowSelect(selectionDetails);
       }

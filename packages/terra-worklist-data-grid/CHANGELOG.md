@@ -10,6 +10,7 @@
 
 * Changed
   * Removed roving tabIndex and resolved focus management issues within cells.
+  * Updated the functionality for selecting a range of rows.
 
 * Fixed
   * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.

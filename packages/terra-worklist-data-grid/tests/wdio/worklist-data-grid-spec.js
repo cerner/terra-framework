@@ -333,13 +333,11 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('anchor row changes when a new row is selected individually', () => {
+    it('validates that anchor row changes when a new row is selected individually via space', () => {
       rowSelectionNavigateToCell(5, 2);
-      browser.keys(['Shift', 'Space', 'Shift']);
-      moveCurrentPositionBy(-2, 0);
-      browser.keys(['Shift', 'Space', 'Shift']);
-      moveCurrentPositionBy(4, -1);
       browser.keys(['Space']);
+      shiftClickCell(3, 0, defaultSelector);
+      clickCell(7, 1, defaultSelector);
       moveCurrentPositionBy(2, 2);
       browser.keys(['Shift', 'Space', 'Shift']);
 
@@ -347,6 +345,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
+    // Shift Up/Down
     it('enables row selection mode by Shift+Up when turned off', () => {
       browser.keys(['Tab', 'Escape']);
       rowSelectionNavigateToCell(3, 2);
@@ -365,7 +364,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('selects multiple batches of rows using Shift + up/down keys', () => {
+    it('validates that shift Up/Down establishes new anchor each time after the shift key is released.', () => {
       rowSelectionNavigateToCell(5, 1);
       browser.keys(['Shift', 'ArrowUp', 'ArrowUp', 'Shift']);
       moveCurrentPositionBy(4, 1);
@@ -375,7 +374,29 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
-    it('unselects rows when moving towards or across anchor row', () => {
+    it('validates that shift Up/Down establishes an anchor that can be used by subsequent shift+Space.', () => {
+      rowSelectionNavigateToCell(4, 1);
+      browser.keys(['Shift', 'ArrowDown', 'Shift']);
+      moveCurrentPositionBy(3, 1);
+      browser.keys(['Shift', 'Space', 'Shift']);
+
+      Terra.validates.element('row-4-to-8-selected', { selector: defaultSelector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates that shift Up/Down replaces existing anchor.', () => {
+      browser.keys(['Tab']);
+      clickCell(2, 3, defaultSelector);
+      moveCurrentPositionBy(2, 0);
+      browser.keys(['Shift', 'ArrowDown', 'Shift']);
+      moveCurrentPositionBy(3, 0);
+      browser.keys(['Shift', 'Space', 'Shift']);
+
+      Terra.validates.element('row-2-and-rows-4-to-8-selected', { selector: defaultSelector });
+      expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+
+    it('selects row when moving away from anchor and unselects rows when moving towards anchor', () => {
       rowSelectionNavigateToCell(5, 1);
       browser.keys(['Shift', 'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowDown', 'ArrowDown', 'Shift']);
 
@@ -383,12 +404,13 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
+    // Shift Click
     it('enables row selection mode by Shift+Click when turned off', () => {
       browser.keys(['Tab', 'Escape']);
       clickCell(3, 3, defaultSelector);
       shiftClickCell(5, 1, defaultSelector);
 
-      Terra.validates.element('row-3-to-5-selected-with-hover-row-selection-mode', { selector: defaultSelector });
+      Terra.validates.element('only-row-5-selected', { selector: defaultSelector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
     });
 
