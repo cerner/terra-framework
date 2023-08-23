@@ -13,7 +13,7 @@
     position: relative;
 
     &:first-child {
-      border-left: var(--terra-worklist-data-grid-cell-border-left, 1px solid #000);
+      border-left: var(--terra-worklist-data-grid-cell-border-left, 1px solid #dedfe0);
     }
 
     input {
