@@ -130,7 +130,9 @@
   }
 
   .button:focus {
-    box-shadow: var(--terra-tabs-add-button-focus-box-shadow, none);
+    background-color: var(--terra-tabs-addbutton-focus-background-color, #fff);
+    background-image: var(--terra-tabs-addbutton-focus-background-image, none);
+    box-shadow: none;
    
     &[data-terra-tabs-show-focus-styles='true'] {
       outline: var(--terra-tabs-add-button-focus-outline, 2px dashed #000);
@@ -188,5 +190,4 @@
       flex: 0 0 auto;
     }
   }
-
 }
