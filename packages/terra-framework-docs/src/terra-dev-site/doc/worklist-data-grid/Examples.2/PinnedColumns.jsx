@@ -96,7 +96,7 @@ const PinnedColumns = () => {
       id="default-terra-worklist-data-grid"
       pinnedColumns={cols.slice(0, 3)}
       overflowColumns={cols.slice(3)}
-      rows={rows}
+      rows={rowData}
       rowHeaderIndex={rowHeaderIndex}
       ariaLabel="Worklist Data Grid"
       onCellSelect={onCellSelect}
