@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import WorklistDataGrid from 'terra-worklist-data-grid';
 
 const gridDataJSON = {
@@ -53,7 +53,13 @@ const gridDataJSON = {
 
 const PinnedColumns = () => {
   const rowHeaderIndex = 0;
-  const { cols, rows } = gridDataJSON;
+  const { cols } = gridDataJSON;
+  const [rows, setRows] = useState([]);
+
+  // Change row data for data grid to validate that pinned column border resizes correctly.
+  useEffect(() => {
+    setRows(gridDataJSON.rows);
+  }, []);
 
   return (
     <WorklistDataGrid
