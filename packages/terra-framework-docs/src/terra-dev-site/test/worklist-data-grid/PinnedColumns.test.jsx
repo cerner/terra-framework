@@ -54,14 +54,12 @@ const gridDataJSON = {
 const PinnedColumns = () => {
   const rowHeaderIndex = 0;
   const { cols } = gridDataJSON;
-  const [rows, setRows] = useState([]);
+  const [rowData, setRowData] = useState([]);
 
   // Change row data for data grid to validate that pinned column border resizes correctly.
   useEffect(() => {
-    setRows(gridDataJSON.rows);
+    setRowData(gridDataJSON.rows);
   }, []);
-
-  const [rowData, setRowData] = useState(rows);
 
   const onCellSelect = useCallback((rowId, columnId) => {
     if (rowId && columnId) {
@@ -102,7 +100,7 @@ const PinnedColumns = () => {
       id="pinned-columns"
       pinnedColumns={cols.slice(0, 3)}
       overflowColumns={cols.slice(3)}
-      rows={rows}
+      rows={rowData}
       rowHeaderIndex={rowHeaderIndex}
       onCellSelect={onCellSelect}
       onClearSelectedCells={onClearSelectedCells}
