@@ -9,6 +9,7 @@
   * Updated examples and tests for `terra-worklist-data-grid` to account for cell selection state being controlled by consumers.
   * Updated programmatic activation test and examples for `terra-tabs`.
   * Updated pinned column test for `terra-worklist-data-grid` to test the divider when the table height changes.
+  * Updated examples and tests for `terra-worklist-data-grid` to handle cell selection for pinned columns.
 
 ## 1.32.0 - (August 10, 2023)
 
