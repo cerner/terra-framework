@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added aria-haspopup attribute to menu buttons.
+
 ## 6.77.0 - (August 10, 2023)
 
 * Changed
