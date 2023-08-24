@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import WorklistDataGrid from 'terra-worklist-data-grid';
 import WorklistDataGridUtils from 'terra-worklist-data-grid/src/utils/WorklistDataGridUtils';
 
@@ -11,10 +11,6 @@ const gridDataJSON = {
     { id: 'Column-4', displayName: 'Allergy' },
     { id: 'Column-5', displayName: 'Primary Contact' },
     { id: 'Column-6', displayName: 'Generic Order Counts' },
-    { id: 'Column-7', displayName: 'Patient Age' },
-    { id: 'Column-8', displayName: 'Medication History' },
-    { id: 'Column-9', displayName: 'My Relationship' },
-    { id: 'Column-10', displayName: 'Not Selectable', isSelectable: false },
   ],
   rows: [
     {
@@ -26,27 +22,153 @@ const gridDataJSON = {
         { content: 'Inpatient, 2 months' },
         { content: '' },
         { content: 'Quinzell, Harleen' },
-        { content: '' },
-        { isMasked: true },
-        { isMasked: true },
-        { content: 'Admitting Physician' },
-        { content: '', isSelectable: false },
+        { content: '', isMasked: true },
       ],
     },
     {
       id: '2',
       cells: [
         { content: 'Wayne, Bruce' },
-        { content: '1007-MTN-DR' },
+        { content: '1107-MTN-DR' },
         { content: 'Stable' },
         { content: 'Outpatient, 2 days' },
         { content: 'Phytochemicals' },
         { content: 'Grayson, Richard' },
         { content: '' },
+
+      ],
+    },
+    {
+      id: '3',
+      cells: [
+        { content: 'Carr, Alicia' },
+        { content: '1007-MTN' },
+        { content: 'Unstable' },
+        { content: 'Inpatient, 3 months' },
         { content: '' },
-        { isMasked: true },
-        { content: 'Admitting Physician' },
-        { content: '', isSelectable: false },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+
+      ],
+    },
+    {
+      id: '4',
+      cells: [
+        { content: 'McMurphy, Donald' },
+        { content: '1024-MTN', isMasked: true },
+        { content: 'Stable' },
+        { content: 'Inpatient, 5 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '5',
+      cells: [
+        { content: 'Peters, Timothy' },
+        { content: '1207-MTN' },
+        { content: 'Unstable', isMasked: true },
+        { content: 'Outpatient, 15 days' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '6',
+      cells: [
+        { content: 'Jones, Becky' },
+        { content: '1007-MTN' },
+        { content: 'Unstable' },
+        { content: 'Inpatient, 2 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '7',
+      cells: [
+        { content: 'Williams, Peter' },
+        { content: '1002-KTN' },
+        { content: 'Unstable' },
+        { content: 'Outpatient, 9 days' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '8',
+      cells: [
+        { content: 'Pratt, Michaela' },
+        { content: '2108-NTN' },
+        { content: 'Stable' },
+        { content: 'Outpatient, 45 days' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '9',
+      cells: [
+        { content: 'Styris, Scott' },
+        { content: '1007-MTN', isMasked: true },
+        { content: 'Unstable' },
+        { content: 'Inpatient, 2 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '10',
+      cells: [
+        { content: 'Cook, Allan' },
+        { content: '1700-SKB' },
+        { content: 'Stable' },
+        { content: 'Inpatient, 4 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '11',
+      cells: [
+        { content: 'Lahey, Nathaniel' },
+        { content: '1348-DRS' },
+        { content: 'Unstable' },
+        { content: 'Inpatient, 1 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '12',
+      cells: [
+        { content: 'Harris, Isabella' },
+        { content: '1809-MTN' },
+        { content: 'Stable' },
+        { content: 'Inpatient, 6 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
+      ],
+    },
+    {
+      id: '13',
+      cells: [
+        { content: 'Millstone, Asher' },
+        { content: '4133-MZN' },
+        { content: 'Unstable' },
+        { content: 'Inpatient, 9 months' },
+        { content: '' },
+        { content: 'Quinzell, Harleen' },
+        { content: '' },
       ],
     },
   ],
@@ -78,31 +200,50 @@ const RowSelection = () => {
     return remainingSelectedRow;
   };
 
-  const clearRowSelection = () => {
+  const clearRowSelection = useCallback(() => {
     // eslint-disable-next-line no-param-reassign
     rows.forEach(r => { if (r.isSelected) { r.isSelected = false; } });
     setSelectedRows([]);
-  };
+  }, [rows]);
 
-  const disableSelectableRows = () => {
+  const disableSelectableRows = useCallback(() => {
     rowSelectionModeRef.current.checked = false;
     setHasSelectableRows(false);
     clearRowSelection();
-  };
+  }, [clearRowSelection]);
 
-  const onRowSelectionModeChange = (event) => {
+  const onRowSelectionModeChange = useCallback((event) => {
     if (!event.target.checked) {
       clearRowSelection();
     }
     setHasSelectableRows(event.target.checked);
-  };
+  }, [clearRowSelection]);
 
-  const onColumnSelect = (columnId) => {
+  const onColumnSelect = useCallback((columnId) => {
     if (columnId === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id) {
       // eslint-disable-next-line no-alert
       alert('Row Selection Header Clicked');
     }
-  };
+  }, []);
+
+  const onRowSelect = useCallback((rowIdsToSelect, rowIdsToUnselect) => {
+    rows.forEach((row, index) => {
+      if (rowIdsToUnselect && rowIdsToUnselect.indexOf(row.id) >= 0) {
+        rows[index].isSelected = false;
+      }
+
+      if (rowIdsToSelect && rowIdsToSelect.indexOf(row.id) >= 0) {
+        rows[index].isSelected = true;
+      }
+    });
+  }, [rows]);
+
+  const enableRowSelection = useCallback(() => {
+    if (!rowSelectionModeRef.current.checked) {
+      rowSelectionModeRef.current.checked = true;
+    }
+    setHasSelectableRows(true);
+  }, []);
 
   return (
     <React.Fragment>
@@ -123,29 +264,16 @@ const RowSelection = () => {
         columnWidth="180px"
         ariaLabel="Worklist Data Grid"
         hasSelectableRows={hasSelectableRows}
-        onRowSelect={(rowId) => {
-          const newRows = [];
-          const selectedRow = rows.find(e => e.id === rowId);
-          selectedRow.isSelected = !selectedRow.isSelected;
-          rows.forEach(element => {
-            if (element.isSelected) {
-              newRows.push(element.id);
-            }
-          });
-          setSelectedRows(determineSelectedRows(false, newRows));
-        }}
+        onRowSelect={onRowSelect}
         onRowSelectAll={() => {
           const newRows = [];
           rows.forEach(e => { e.isSelected = true; newRows.push(e.id); });
           setSelectedRows(determineSelectedRows(true, newRows));
         }}
-        onClearSelectedRows={() => {
-          clearRowSelection();
-        }}
-        onDisableSelectableRows={() => {
-          disableSelectableRows();
-        }}
+        onClearSelectedRows={clearRowSelection}
+        onDisableSelectableRows={disableSelectableRows}
         onColumnSelect={onColumnSelect}
+        onEnableRowSelection={enableRowSelection}
       />
     </React.Fragment>
   );

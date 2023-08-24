@@ -1,3 +1,5 @@
+@use './Mixins';
+
 // Themes
 @import '../orion-fusion-theme/Cell.module';
 @import '../clinical-lowlight-theme/Cell.module';
@@ -40,7 +42,6 @@
   }
 
   .pinned {
-    background-color: inherit;
     border: var(--terra-worklist-data-grid-pinned-columns-cell-border, 1px solid #dedfe0);
     border-width: 1px 0;
     box-shadow: var(--terra-worklist-data-grid-pinned-columns-cell-box-shadow, inset 1px 0 #dedfe0);
@@ -48,9 +49,12 @@
     z-index: 1;
   }
 
+  .pinned:not(.selected) {
+    background-color: inherit;
+  }
+
   // Hover state for selectable elements
   .selectable:hover {
-    background-color: var(--terra-worklist-data-grid-hover-background-color, #d8e5ed);
-    cursor: pointer;
+    @include Mixins.terra-worklist-data-grid-selectable-hover;
   }
 }

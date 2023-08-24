@@ -77,7 +77,6 @@ describe('Row', () => {
       expect(cell.props.rowIndex).toEqual(rowIndex);
       expect(cell.props.columnIndex).toEqual(cellIndex);
       expect(cell.props.isRowHeader).toEqual(isRowHeader);
-      expect(cell.props.isSelected).toEqual(false);
       expect(cell.props.isMasked).toEqual(expectedCell.isMasked);
       expect(cell.props.onCellSelect).toBeDefined();
       expect(cell.key).toEqual(`${rowId}_${columnId}`);
