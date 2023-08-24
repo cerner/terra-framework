@@ -680,7 +680,7 @@ const DatePickerInput = (props) => {
       pattern="\d*"
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
-      aria-describedby={ariaDescriptionIds}
+      aria-describedby={`${ dateFormatOrder === DateUtil.dateOrder.DMY ? `name-label ${ariaDescriptionIds}` : ariaDescriptionIds}`}
       id={dayInputId}
     />
   );
@@ -691,32 +691,29 @@ const DatePickerInput = (props) => {
   ]);
 
   const dateMonthInput = (
-    <>
-      <VisuallyHiddenText id="month-details-announce" text={name}/>
-      <Input
-        {...additionalInputProps}
-        // Both 'ref' and 'refCallback' are required here because:
-        // 'refCallback' returns the DOM element of the HTML input element
-        // 'ref' when used on a class component returns the mounted instance of the component
-        refCallback={(node) => { monthInputRef = node; }}
-        ref={dateFormatOrder === DateUtil.dateOrder.MDY ? firstInputRefCallback : undefined}
-        className={monthInputClasses}
-        type="text"
-        name={`terra-date-month-${name}`}
-        value={date.month}
-        onChange={handleMonthChange}
-        onFocus={(e) => handleOnInputFocus(e, DateUtil.inputType.MONTH)}
-        onBlur={(e) => handleOnInputBlur(e, DateUtil.inputType.MONTH)}
-        onKeyDown={(e) => handleInputKeydown(e, DateUtil.inputType.MONTH)}
-        maxLength="2"
-        size="2"
-        pattern="\d*"
-        aria-required={required}
-        aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
-        aria-describedby={`month-details-announce ${ariaDescriptionIds}`}
-        id={monthInputId}
-      />
-    </>
+    <Input
+      {...additionalInputProps}
+      // Both 'ref' and 'refCallback' are required here because:
+      // 'refCallback' returns the DOM element of the HTML input element
+      // 'ref' when used on a class component returns the mounted instance of the component
+      refCallback={(node) => { monthInputRef = node; }}
+      ref={dateFormatOrder === DateUtil.dateOrder.MDY ? firstInputRefCallback : undefined}
+      className={monthInputClasses}
+      type="text"
+      name={`terra-date-month-${name}`}
+      value={date.month}
+      onChange={handleMonthChange}
+      onFocus={(e) => handleOnInputFocus(e, DateUtil.inputType.MONTH)}
+      onBlur={(e) => handleOnInputBlur(e, DateUtil.inputType.MONTH)}
+      onKeyDown={(e) => handleInputKeydown(e, DateUtil.inputType.MONTH)}
+      maxLength="2"
+      size="2"
+      pattern="\d*"
+      aria-required={required}
+      aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
+      aria-describedby={`${ dateFormatOrder === DateUtil.dateOrder.MDY ? `name-label ${ariaDescriptionIds}` : ariaDescriptionIds}`}
+      id={monthInputId}
+    />
   );
 
   const yearInputClasses = cx([
@@ -745,7 +742,7 @@ const DatePickerInput = (props) => {
       pattern="\d*"
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
-      aria-describedby={ariaDescriptionIds}
+      aria-describedby={`${ dateFormatOrder === DateUtil.dateOrder.YMD ? `name-label ${ariaDescriptionIds}` : ariaDescriptionIds}`}
       id={yearInputId}
     />
   );
@@ -784,6 +781,7 @@ const DatePickerInput = (props) => {
             value={dateValue}
           />
           <VisuallyHiddenText text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}` : label} />
+          <VisuallyHiddenText id="name-label" text={name}/>
           <DateInputLayout
             dateFormatOrder={dateFormatOrder}
             separator={dateSpacer}
