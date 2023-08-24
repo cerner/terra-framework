@@ -47,9 +47,13 @@
   }
 
   .pinned {
-    background-color: inherit;
+    box-shadow: var(--terra-worklist-data-grid-pinned-columns-cell-box-shadow, inset 1px 0 #dedfe0);
     position: sticky;
     z-index: 1;
+  }
+
+  .pinned:not(.selected) {
+    background-color: inherit;
   }
 
   // Hover state for selectable elements
