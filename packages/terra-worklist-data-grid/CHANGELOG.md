@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Added
+  * Added box shadow for pinned columns in fusion theme.
   * Added ability to use spacebar on masked and non-selectable cells to select rows.
   * Added ability to treat the `terra-worklist-data-grid` component as a single tabstop.
   * Added a sticky column header feature to `terra-worklist-data-grid`
