@@ -7,7 +7,8 @@
 :local {
   .worklist-data-grid-row {
     &.selectable:hover {
-      @include Mixins.terra-worklist-data-grid-selectable-hover;
+      background-color: var(--terra-worklist-data-grid-row-hover-background-color, #e2f2fc);
+      cursor: pointer;
     }
 
     &:nth-child(even) {

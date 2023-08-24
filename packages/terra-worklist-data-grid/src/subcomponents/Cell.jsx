@@ -65,6 +65,11 @@ const propTypes = {
   isRowHeader: PropTypes.bool,
 
   /**
+   * Boolean indicating that the cell is has been highlighted.
+   */
+  isHighlighted: PropTypes.bool,
+
+  /**
    * Callback function that will be called when this cell is selected.
    */
   onCellSelect: PropTypes.func,
@@ -99,6 +104,7 @@ function Cell(props) {
     isRowHeader,
     isSelectable,
     isSelected,
+    isHighlighted,
     children,
     onCellSelect,
     height,
@@ -209,6 +215,7 @@ function Cell(props) {
     pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
     selectable: isSelectable && !isMasked,
     selected: isSelected && !isMasked,
+    highlighted: isHighlighted,
     blank: !children,
   }, theme.className);
 
