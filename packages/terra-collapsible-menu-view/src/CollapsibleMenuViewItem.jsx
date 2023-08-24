@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import Button from 'terra-button';
 import ButtonGroup from 'terra-button-group';
 import Menu from './_CollapsibleMenu';
+import Hyperlink from 'terra-hyperlink';
 import styles from './CollapsibleMenuView.module.scss';
 
 const cx = classNames.bind(styles);
@@ -153,13 +154,16 @@ class CollapsibleMenuViewItem extends React.Component {
     } else {
       item = (
         <div className={cx('face-up-item')}>
-          <Button
+          {/* <Button
             {...attributes}
             icon={icon}
             text={text}
             isReversed={isReversed}
             isDisabled={isDisabled}
             isIconOnly={isIconOnly}
+          /> */}
+          <Hyperlink
+            text={text}
           />
         </div>
       );

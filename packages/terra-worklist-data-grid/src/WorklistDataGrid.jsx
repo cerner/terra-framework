@@ -263,13 +263,13 @@ function WorklistDataGrid(props) {
     setAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' }));
 
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
 
   // useEffect for row displayed columns
   useEffect(() => {
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pinnedColumns, overflowColumns]);
 
   // useEffect to calculate pinned column offsets
@@ -385,13 +385,13 @@ function WorklistDataGrid(props) {
   const moveFocusFromGrid = (moveForward) => {
     // add all elements we want to include in our selection
     const focusableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
-    + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
-    + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1'])";
+      + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
+      + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1'])";
 
     const focusableElements = [...document.body.querySelectorAll(`${focusableElementSelector}`)].filter(
       element => !element.hasAttribute('disabled')
-      && !element.getAttribute('aria-hidden')
-      && (element.id === id || !grid.current.contains(element)),
+        && !element.getAttribute('aria-hidden')
+        && (element.id === id || !grid.current.contains(element)),
     );
 
     // Identify index of the active element in the DOM excluding worklist data grid children
@@ -562,23 +562,53 @@ function WorklistDataGrid(props) {
   // -------------------------------------
   // builder functions
 
-  const buildRow = (row, rowIndex) => (
-    <Row
-      rowIndex={rowIndex}
-      key={row.id}
-      height={rowHeight}
-      id={row.id}
-      isSelected={row.isSelected}
-      cells={row.cells}
-      ariaLabel={row.ariaLabel}
-      hasRowSelection={hasSelectableRows}
-      displayedColumns={displayedColumns}
-      rowHeaderIndex={rowHeaderIndex}
-      onCellSelect={handleCellSelection}
-      onRowSelect={handleRowSelection}
-      selectedCellColumnId={(currentSelectedCell?.rowId === row.id) ? currentSelectedCell?.columnId : undefined}
-    />
-  );
+  const buildRow = (row, rowIndex) => {
+    if (rowIndex === 3) {
+      return (
+        <>
+          <div
+            style={{
+              width: "100px",
+              height: "100px"
+            }}
+          />
+          <Row
+            rowIndex={rowIndex}
+            key={row.id}
+            height={rowHeight}
+            id={row.id}
+            isSelected={row.isSelected}
+            cells={row.cells}
+            ariaLabel={row.ariaLabel}
+            hasRowSelection={hasSelectableRows}
+            displayedColumns={displayedColumns}
+            rowHeaderIndex={rowHeaderIndex}
+            onCellSelect={handleCellSelection}
+            onRowSelect={handleRowSelection}
+            selectedCellColumnId={(currentSelectedCell?.rowId === row.id) ? currentSelectedCell?.columnId : undefined}
+          />
+        </>
+      );
+    }
+
+    return (
+      <Row
+        rowIndex={rowIndex}
+        key={row.id}
+        height={rowHeight}
+        id={row.id}
+        isSelected={row.isSelected}
+        cells={row.cells}
+        ariaLabel={row.ariaLabel}
+        hasRowSelection={hasSelectableRows}
+        displayedColumns={displayedColumns}
+        rowHeaderIndex={rowHeaderIndex}
+        onCellSelect={handleCellSelection}
+        onRowSelect={handleRowSelection}
+        selectedCellColumnId={(currentSelectedCell?.rowId === row.id) ? currentSelectedCell?.columnId : undefined}
+      />
+    );
+  };
 
   const buildRows = (allRows) => {
     const rowData = allRows.map((row, index) => (buildRow(row, index + 1))); // One row is used for the Header.

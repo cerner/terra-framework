@@ -16,7 +16,9 @@ const CollapsibleMenuViewDivider = (props, { isCollapsibleMenuItem }) => {
   if (isCollapsibleMenuItem) {
     return <Menu.Divider />;
   }
-  return <div className={cx(['divider', 'face-up-item', theme.className])} />;
+  return <div className={cx(['divider', 'face-up-item', theme.className])}>
+    {">"}
+  </div>;
 };
 
 CollapsibleMenuViewDivider.contextTypes = contextTypes;
