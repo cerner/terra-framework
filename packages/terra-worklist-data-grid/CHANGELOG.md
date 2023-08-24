@@ -6,6 +6,7 @@
   * Added box shadow for pinned columns in fusion theme.
   * Added ability to use spacebar on masked and non-selectable cells to select rows.
   * Added ability to treat the `terra-worklist-data-grid` component as a single tabstop.
+  * Added a sticky column header feature to `terra-worklist-data-grid`
 
 * Changed
   * Removed roving tabIndex and resolved focus management issues within cells.
@@ -15,6 +16,7 @@
   * Fixed cells not honoring the value of props passed by consumers.
   * Fixed pinned column separator not adjusting size when the table height changes.
   * Fixed pinned column cells not being selectable.
+  * Fixed pinned column border issues during scrolling.
 
 ## 0.4.0 - (August 10, 2023)
 
