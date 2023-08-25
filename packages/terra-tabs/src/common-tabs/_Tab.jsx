@@ -178,7 +178,7 @@ const Tab = ({
   }
 
   function onCloseClick(event) {
-    if (!isDisabled) {
+    if (!isDisabled && isClosable) {
       event.stopPropagation();
       onClosingTab(itemKey, metaData, event);
       const deleteTabLabel = intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed' });
