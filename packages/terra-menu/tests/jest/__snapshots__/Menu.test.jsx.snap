@@ -222,23 +222,23 @@ exports[`Menu correctly applies the theme context className 1`] = `
                           <div
                             class="header"
                           >
-                            <div
+                            <span
                               class="arrange header"
                             >
-                              <div
-                                class="fit center"
+                              <span
+                                class="fit center fit-block"
                               />
-                              <div
-                                class="fill center"
+                              <span
+                                class="fill center fill-block"
                               >
                                 <div />
-                              </div>
-                              <div
+                              </span>
+                              <span
                                 class="fit center"
                               >
                                 <div />
-                              </div>
-                            </div>
+                              </span>
+                            </span>
                           </div>
                           <div
                             class="main"
@@ -459,23 +459,23 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                         fill={<div />}
                                         fitEnd={<div />}
                                       >
-                                        <div
+                                        <span
                                           className="arrange header"
                                         >
-                                          <div
-                                            className="fit center"
+                                          <span
+                                            className="fit center fit-block"
                                           />
-                                          <div
-                                            className="fill center"
+                                          <span
+                                            className="fill center fill-block"
                                           >
                                             <div />
-                                          </div>
-                                          <div
+                                          </span>
+                                          <span
                                             className="fit center"
                                           >
                                             <div />
-                                          </div>
-                                        </div>
+                                          </span>
+                                        </span>
                                       </Arrange>
                                     </div>
                                     <div
