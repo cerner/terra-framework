@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added aria-haspopup attribute to menu buttons.
+  * Added aria-haspopup attribute to menu buttons so screen reader users are provided the context that they will open a dialog popup.
 
 ## 6.77.0 - (August 10, 2023)
 
