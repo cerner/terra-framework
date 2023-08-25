@@ -680,7 +680,7 @@ const DatePickerInput = (props) => {
       pattern="\d*"
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
-      aria-describedby={`${ dateFormatOrder === DateUtil.dateOrder.DMY ? `name-label ${ariaDescriptionIds}` : ariaDescriptionIds}`}
+      aria-describedby={`${dateFormatOrder === DateUtil.dateOrder.DMY ? `name-label ${ariaDescriptionIds}` : ariaDescriptionIds}`}
       id={dayInputId}
     />
   );
@@ -711,7 +711,7 @@ const DatePickerInput = (props) => {
       pattern="\d*"
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
-      aria-describedby={`${ dateFormatOrder === DateUtil.dateOrder.MDY ? `name-label ${ariaDescriptionIds}` : ariaDescriptionIds}`}
+      aria-describedby={`${dateFormatOrder === DateUtil.dateOrder.MDY ? `name-label ${ariaDescriptionIds}` : ariaDescriptionIds}`}
       id={monthInputId}
     />
   );
@@ -742,7 +742,7 @@ const DatePickerInput = (props) => {
       pattern="\d*"
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
-      aria-describedby={`${ dateFormatOrder === DateUtil.dateOrder.YMD ? `name-label ${ariaDescriptionIds}` : ariaDescriptionIds}`}
+      aria-describedby={`${dateFormatOrder === DateUtil.dateOrder.YMD ? `name-label ${ariaDescriptionIds}` : ariaDescriptionIds}`}
       id={yearInputId}
     />
   );
@@ -781,7 +781,7 @@ const DatePickerInput = (props) => {
             value={dateValue}
           />
           <VisuallyHiddenText text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}` : label} />
-          <VisuallyHiddenText id="name-label" text={name}/>
+          <VisuallyHiddenText id="name-label" text={name} />
           <DateInputLayout
             dateFormatOrder={dateFormatOrder}
             separator={dateSpacer}
