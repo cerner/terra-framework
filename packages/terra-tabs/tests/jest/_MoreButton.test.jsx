@@ -15,6 +15,20 @@ jest.mock('../../src/common-tabs/_TabUtils', () => ({
 }));
 
 describe('MoreButton', () => {
+  test('should render a more button with provided props', () => {
+    const testTabIds = ['tab-1', 'tab-2', 'tab-3'];
+    const wrapper = mountWithIntl(
+      <IntlProvider>
+        <MoreButton
+          hiddenIndex={1}
+          tabIds={testTabIds}
+          zIndex={0}
+        />
+      </IntlProvider>,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
   test('should render a more button with provided props and selection handling', () => {
     const mockOnSelect = jest.fn();
     const mockOnBlur = jest.fn();
@@ -49,19 +63,6 @@ describe('MoreButton', () => {
 
     buttonElement.blur();
     expect(mockOnBlur).toHaveBeenCalled();
-
-    const wrapper = mountWithIntl(
-      <IntlProvider>
-        <MoreButton
-          hiddenIndex={1}
-          onBlur={mockOnBlur}
-          onSelect={mockOnSelect}
-          tabIds={testTabIds}
-          zIndex={0}
-        />
-      </IntlProvider>,
-    );
-    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render a more button when active and open', () => {

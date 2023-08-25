@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MoreButton should render a more button with provided props and selection handling 1`] = `
+exports[`MoreButton should render a more button with provided props 1`] = `
 <IntlProvider
   intl={
     Object {
@@ -32,42 +32,6 @@ exports[`MoreButton should render a more button with provided props and selectio
 >
   <InjectIntl(MoreButton)
     hiddenIndex={1}
-    onBlur={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            Class {
-              "_dispatchInstances": null,
-              "_dispatchListeners": null,
-              "_targetInst": null,
-              "bubbles": null,
-              "cancelable": null,
-              "currentTarget": [Function],
-              "defaultPrevented": null,
-              "detail": null,
-              "dispatchConfig": null,
-              "eventPhase": null,
-              "isDefaultPrevented": [Function],
-              "isPropagationStopped": [Function],
-              "isTrusted": null,
-              "nativeEvent": null,
-              "relatedTarget": null,
-              "target": null,
-              "timeStamp": [Function],
-              "type": null,
-              "view": null,
-            },
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    }
-    onSelect={[MockFunction]}
     tabIds={
       Array [
         "tab-1",
@@ -106,42 +70,6 @@ exports[`MoreButton should render a more button with provided props and selectio
           "timeZone": null,
         }
       }
-      onBlur={
-        [MockFunction] {
-          "calls": Array [
-            Array [
-              Class {
-                "_dispatchInstances": null,
-                "_dispatchListeners": null,
-                "_targetInst": null,
-                "bubbles": null,
-                "cancelable": null,
-                "currentTarget": [Function],
-                "defaultPrevented": null,
-                "detail": null,
-                "dispatchConfig": null,
-                "eventPhase": null,
-                "isDefaultPrevented": [Function],
-                "isPropagationStopped": [Function],
-                "isTrusted": null,
-                "nativeEvent": null,
-                "relatedTarget": null,
-                "target": null,
-                "timeStamp": [Function],
-                "type": null,
-                "view": null,
-              },
-            ],
-          ],
-          "results": Array [
-            Object {
-              "type": "return",
-              "value": undefined,
-            },
-          ],
-        }
-      }
-      onSelect={[MockFunction]}
       tabIds={
         Array [
           "tab-1",
