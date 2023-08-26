@@ -101,23 +101,20 @@ exports[`MoreButton should render a more button with provided props 1`] = `
             className="icon"
           >
             <IconCaretDown
-              className=""
-              isBidi={true}
               viewBox="0 0 48 48"
               xmlns="http://www.w3.org/2000/svg"
             >
               <IconBase
-                className=""
                 focusable="false"
                 height="1em"
-                isBidi={true}
+                isBidi={false}
                 isSpin={false}
                 viewBox="0 0 48 48"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <svg
-                  className="tui-Icon icon is-bidi"
+                  className="tui-Icon icon"
                   focusable="false"
                   height="1em"
                   role="presentation"
@@ -126,7 +123,7 @@ exports[`MoreButton should render a more button with provided props 1`] = `
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M48 12L24 36 0 12h48z"
+                    d="M48 12 24 36 0 12h48z"
                   />
                 </svg>
               </IconBase>
