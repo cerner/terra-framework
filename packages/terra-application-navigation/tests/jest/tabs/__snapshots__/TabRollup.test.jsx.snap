@@ -27,7 +27,6 @@ exports[`TabRollup should render default element 1`] = `
       />
       <IconCaretDown
         className="tab-rollup-icon"
-        isBidi={true}
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -73,7 +72,6 @@ exports[`TabRollup should render prop data 1`] = `
       </span>
       <IconCaretDown
         className="tab-rollup-icon"
-        isBidi={true}
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -109,7 +107,6 @@ exports[`TabRollup should render with function callbacks 1`] = `
       />
       <IconCaretDown
         className="tab-rollup-icon"
-        isBidi={true}
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -147,7 +144,6 @@ exports[`TabRollup should render with selection callback 1`] = `
       />
       <IconCaretDown
         className="tab-rollup-icon"
-        isBidi={true}
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
