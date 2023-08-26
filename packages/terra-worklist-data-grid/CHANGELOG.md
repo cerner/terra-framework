@@ -10,7 +10,7 @@
 
 * Changed
   * Removed roving tabIndex and resolved focus management issues within cells.
-  * Updated the functionality for selecting a range of rows.
+  * Updated the functionality for selecting a range of rows. Updated `onRowSelect` prop to take only one array parameter.
 
 * Fixed
   * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.

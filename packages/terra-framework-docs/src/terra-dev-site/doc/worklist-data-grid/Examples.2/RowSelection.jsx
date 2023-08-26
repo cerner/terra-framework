@@ -226,14 +226,11 @@ const RowSelection = () => {
     }
   }, []);
 
-  const onRowSelect = useCallback((rowIdsToSelect, rowIdsToUnselect) => {
-    rows.forEach((row, index) => {
-      if (rowIdsToUnselect && rowIdsToUnselect.indexOf(row.id) >= 0) {
-        rows[index].isSelected = false;
-      }
-
-      if (rowIdsToSelect && rowIdsToSelect.indexOf(row.id) >= 0) {
-        rows[index].isSelected = true;
+  const onRowSelect = useCallback((rowsToSelectAndUnSelect) => {
+    rowsToSelectAndUnSelect.forEach((changedRow) => {
+      const dataRowToUpdate = rows.find(row => row.id === changedRow.id);
+      if (dataRowToUpdate) {
+        dataRowToUpdate.isSelected = changedRow.selected;
       }
     });
   }, [rows]);

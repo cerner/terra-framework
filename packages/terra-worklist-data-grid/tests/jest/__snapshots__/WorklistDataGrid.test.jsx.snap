@@ -49,9 +49,11 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
       "calls": Array [
         Array [
           Array [
-            "3",
+            Object {
+              "id": "3",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -199,9 +201,11 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
         "calls": Array [
           Array [
             Array [
-              "3",
+              Object {
+                "id": "3",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -2168,17 +2172,27 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
       "calls": Array [
         Array [
           Array [
-            "1",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
         Array [
           Array [
-            "1",
-            "2",
-            "3",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
+            Object {
+              "id": "2",
+              "selected": true,
+            },
+            Object {
+              "id": "3",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -2319,17 +2333,27 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
         "calls": Array [
           Array [
             Array [
-              "1",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
           Array [
             Array [
-              "1",
-              "2",
-              "3",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
+              Object {
+                "id": "2",
+                "selected": true,
+              },
+              Object {
+                "id": "3",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -4977,17 +5001,27 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
       "calls": Array [
         Array [
           Array [
-            "1",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
         Array [
           Array [
-            "1",
-            "2",
-            "3",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
+            Object {
+              "id": "2",
+              "selected": true,
+            },
+            Object {
+              "id": "3",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -5128,17 +5162,27 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
         "calls": Array [
           Array [
             Array [
-              "1",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
           Array [
             Array [
-              "1",
-              "2",
-              "3",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
+              Object {
+                "id": "2",
+                "selected": true,
+              },
+              Object {
+                "id": "3",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -7797,9 +7841,11 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
       "calls": Array [
         Array [
           Array [
-            "3",
+            Object {
+              "id": "3",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -7947,9 +7993,11 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
         "calls": Array [
           Array [
             Array [
-              "3",
+              Object {
+                "id": "3",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -9916,17 +9964,27 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
       "calls": Array [
         Array [
           Array [
-            "1",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
         Array [
           Array [
-            "1",
-            "2",
-            "3",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
+            Object {
+              "id": "2",
+              "selected": true,
+            },
+            Object {
+              "id": "3",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -10067,17 +10125,27 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
         "calls": Array [
           Array [
             Array [
-              "1",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
           Array [
             Array [
-              "1",
-              "2",
-              "3",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
+              Object {
+                "id": "2",
+                "selected": true,
+              },
+              Object {
+                "id": "3",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -12725,17 +12793,27 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
       "calls": Array [
         Array [
           Array [
-            "1",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
         Array [
           Array [
-            "1",
-            "2",
-            "3",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
+            Object {
+              "id": "2",
+              "selected": true,
+            },
+            Object {
+              "id": "3",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -12876,17 +12954,27 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
         "calls": Array [
           Array [
             Array [
-              "1",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
           Array [
             Array [
-              "1",
-              "2",
-              "3",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
+              Object {
+                "id": "2",
+                "selected": true,
+              },
+              Object {
+                "id": "3",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -15534,26 +15622,46 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
       "calls": Array [
         Array [
           Array [
-            "1",
-            "2",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
+            Object {
+              "id": "2",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
         Array [
           Array [
-            "1",
-            "2",
-            "3",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
+            Object {
+              "id": "2",
+              "selected": true,
+            },
+            Object {
+              "id": "3",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
         Array [
           Array [
-            "1",
-            "2",
-          ],
-          Array [
-            "3",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
+            Object {
+              "id": "2",
+              "selected": true,
+            },
+            Object {
+              "id": "3",
+              "selected": false,
+            },
           ],
         ],
       ],
@@ -15699,26 +15807,46 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
         "calls": Array [
           Array [
             Array [
-              "1",
-              "2",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
+              Object {
+                "id": "2",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
           Array [
             Array [
-              "1",
-              "2",
-              "3",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
+              Object {
+                "id": "2",
+                "selected": true,
+              },
+              Object {
+                "id": "3",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
           Array [
             Array [
-              "1",
-              "2",
-            ],
-            Array [
-              "3",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
+              Object {
+                "id": "2",
+                "selected": true,
+              },
+              Object {
+                "id": "3",
+                "selected": false,
+              },
             ],
           ],
         ],
@@ -18371,10 +18499,15 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
       "calls": Array [
         Array [
           Array [
-            "1",
-            "2",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
+            Object {
+              "id": "2",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -18511,10 +18644,15 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         "calls": Array [
           Array [
             Array [
-              "1",
-              "2",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
+              Object {
+                "id": "2",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -21184,10 +21322,15 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
       "calls": Array [
         Array [
           Array [
-            "1",
-            "2",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
+            Object {
+              "id": "2",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -21350,10 +21493,15 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         "calls": Array [
           Array [
             Array [
-              "1",
-              "2",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
+              Object {
+                "id": "2",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -23320,18 +23468,31 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
       "calls": Array [
         Array [
           Array [
-            "1",
-            "2",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
+            Object {
+              "id": "2",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
         Array [
           Array [
-            "1",
-            "2",
-            "3",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
+            Object {
+              "id": "2",
+              "selected": true,
+            },
+            Object {
+              "id": "3",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -23472,18 +23633,31 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
         "calls": Array [
           Array [
             Array [
-              "1",
-              "2",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
+              Object {
+                "id": "2",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
           Array [
             Array [
-              "1",
-              "2",
-              "3",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
+              Object {
+                "id": "2",
+                "selected": true,
+              },
+              Object {
+                "id": "3",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -26131,17 +26305,27 @@ exports[`Row selection verifies multiple independent ranges can be created with 
       "calls": Array [
         Array [
           Array [
-            "1",
-            "2",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
+            Object {
+              "id": "2",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
         Array [
           Array [
-            "3",
-            "4",
+            Object {
+              "id": "3",
+              "selected": true,
+            },
+            Object {
+              "id": "4",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -26282,17 +26466,27 @@ exports[`Row selection verifies multiple independent ranges can be created with 
         "calls": Array [
           Array [
             Array [
-              "1",
-              "2",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
+              Object {
+                "id": "2",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
           Array [
             Array [
-              "3",
-              "4",
+              Object {
+                "id": "3",
+                "selected": true,
+              },
+              Object {
+                "id": "4",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -28940,9 +29134,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
       "calls": Array [
         Array [
           Array [
-            "3",
+            Object {
+              "id": "3",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -29079,9 +29275,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         "calls": Array [
           Array [
             Array [
-              "3",
+              Object {
+                "id": "3",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -31724,9 +31922,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
     [MockFunction] {
       "calls": Array [
         Array [
-          Array [],
           Array [
-            "4",
+            Object {
+              "id": "4",
+              "selected": false,
+            },
           ],
         ],
       ],
@@ -31863,9 +32063,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
       [MockFunction] {
         "calls": Array [
           Array [
-            Array [],
             Array [
-              "4",
+              Object {
+                "id": "4",
+                "selected": false,
+              },
             ],
           ],
         ],
@@ -34510,9 +34712,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
       "calls": Array [
         Array [
           Array [
-            "3",
+            Object {
+              "id": "3",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -34649,9 +34853,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         "calls": Array [
           Array [
             Array [
-              "3",
+              Object {
+                "id": "3",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -37294,9 +37500,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
     [MockFunction] {
       "calls": Array [
         Array [
-          Array [],
           Array [
-            "4",
+            Object {
+              "id": "4",
+              "selected": false,
+            },
           ],
         ],
       ],
@@ -37433,9 +37641,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
       [MockFunction] {
         "calls": Array [
           Array [
-            Array [],
             Array [
-              "4",
+              Object {
+                "id": "4",
+                "selected": false,
+              },
             ],
           ],
         ],
@@ -46989,9 +47199,11 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
       "calls": Array [
         Array [
           Array [
-            "1",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -47126,9 +47338,11 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
         "calls": Array [
           Array [
             Array [
-              "1",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [
@@ -49770,9 +49984,11 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
       "calls": Array [
         Array [
           Array [
-            "1",
+            Object {
+              "id": "1",
+              "selected": true,
+            },
           ],
-          Array [],
         ],
       ],
       "results": Array [
@@ -49907,9 +50123,11 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
         "calls": Array [
           Array [
             Array [
-              "1",
+              Object {
+                "id": "1",
+                "selected": true,
+              },
             ],
-            Array [],
           ],
         ],
         "results": Array [

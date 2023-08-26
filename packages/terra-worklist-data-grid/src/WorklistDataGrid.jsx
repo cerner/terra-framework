@@ -92,9 +92,8 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
-   * Callback function that is called when a row is selected. Parameters:
-   * @param {arrayOf(string)} rowIdsToSelect rowIdsToSelect
-   * @param {arrayOf(string)} rowIdsToUnselect rowIdsToUnselect
+   * Callback function that is called when one or more rows are selected or unselected. Parameters:
+   * @param {arrayOf({string, boolean})} rowsToSelectAndUnSelect rowsToSelectAndUnSelect
    */
   onRowSelect: PropTypes.func,
 
@@ -357,30 +356,30 @@ function WorklistDataGrid(props) {
     }
   };
 
-  const getRowsInRangeToUnselect = useCallback((startOfRange, prevEndOfRange, newEndOfRange) => {
+  const getRowsInRangeToUnselect = useCallback((newEndOfRange) => {
     let rowIdsToUnselect = [];
-    if (!prevEndOfRange) {
+    if (!multiSelectRange.current.end) {
       // short-circuit since there was no previous range, there is nothing to unselect.
       return rowIdsToUnselect;
     }
 
-    if (startOfRange > prevEndOfRange) {
+    if (multiSelectRange.current.start > multiSelectRange.current.end) {
       // The range extends upward from the anchor row
-      if (newEndOfRange > prevEndOfRange) {
+      if (newEndOfRange > multiSelectRange.current.end) {
         // The range was moved down towards the anchor so rows that no longer qualify for the range need to be unselected.
-        rowIdsToUnselect = rows.slice(prevEndOfRange - 1, Math.min(newEndOfRange, startOfRange)).map(row => row.id);
+        rowIdsToUnselect = rows.slice(multiSelectRange.current.end - 1, Math.min(newEndOfRange, multiSelectRange.current.start) - 1).map(row => ({ id: row.id, selected: false }));
       }
-    } else if (startOfRange < prevEndOfRange) {
+    } else if (multiSelectRange.current.start < multiSelectRange.current.end) {
       // The range extends downward from the anchor row
-      if (newEndOfRange < prevEndOfRange) {
+      if (newEndOfRange < multiSelectRange.current.end) {
         // The range was moved up towards the anchor so rows that no longer qualify for the range need to be unselected. New endRangeIndex becomes ordered End
-        rowIdsToUnselect = rows.slice(Math.max(startOfRange, newEndOfRange), prevEndOfRange).map(row => row.id);
+        rowIdsToUnselect = rows.slice(Math.max(multiSelectRange.current.start, newEndOfRange), multiSelectRange.current.end).map(row => ({ id: row.id, selected: false }));
       }
     }
     return rowIdsToUnselect;
   }, [rows]);
 
-  const selectMultipleRows = useCallback((startOfRange, prevEndOfRange, newEndOfRange) => {
+  const selectMultipleRows = useCallback((newEndOfRange) => {
     if (!hasSelectableRows) {
       onEnableRowSelection();
     }
@@ -389,14 +388,15 @@ function WorklistDataGrid(props) {
     }
 
     // Rows in range to remain selected
-    const selectionStartRowIndex = Math.min(startOfRange, newEndOfRange);
-    const selectionEndRowIndex = Math.max(startOfRange, newEndOfRange);
+    const selectionStartRowIndex = Math.min(multiSelectRange.current.start, newEndOfRange);
+    const selectionEndRowIndex = Math.max(multiSelectRange.current.start, newEndOfRange);
 
     // We are subtracting 1 to accommodate for the column header in the grid.
-    const rowIdsToSelect = rows.slice(selectionStartRowIndex - 1, selectionEndRowIndex).map(row => row.id);
+    let rowsToSelectAndUnSelect = rows.slice(selectionStartRowIndex - 1, selectionEndRowIndex).map(row => ({ id: row.id, selected: true }));
+    const isSingleRowSelected = rowsToSelectAndUnSelect.length === 1;
 
     // Determine if there are rows that are no longer in range that need to be unselected.
-    const rowIdsToUnselect = getRowsInRangeToUnselect(startOfRange, prevEndOfRange, newEndOfRange);
+    rowsToSelectAndUnSelect = rowsToSelectAndUnSelect.concat(getRowsInRangeToUnselect(newEndOfRange));
 
     let ariaMessage = intl.formatMessage({
       id: hasSelectableRows
@@ -405,35 +405,35 @@ function WorklistDataGrid(props) {
     });
 
     ariaMessage += ` ${intl.formatMessage({
-      id: rowIdsToSelect.length === 1
+      id: isSingleRowSelected
         ? 'Terra.worklist-data-grid.row-selection-template'
         : 'Terra.worklist-data-grid.row-selection-selected-rows-range',
-    }, { row: startOfRange, endRow: newEndOfRange })}`;
+    }, { row: multiSelectRange.current.start, endRow: newEndOfRange })}`;
 
     setAriaLiveMessage(ariaMessage);
-    onRowSelect(rowIdsToSelect, rowIdsToUnselect);
+    onRowSelect(rowsToSelectAndUnSelect);
+    multiSelectRange.current.end = newEndOfRange;
   }, [hasSelectableRows, intl, onEnableRowSelection, onRowSelect, rows, getRowsInRangeToUnselect]);
 
   const selectRow = useCallback((rowId, rowIndex) => {
-    const rowsToSelect = [];
-    const rowsToUnSelect = [];
+    const rowsToSelectAndUnSelect = [];
     const rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
 
     if (!rows[rowIndex - 1].isSelected) {
       multiSelectRange.current = { start: rowIndex, end: null }; // Establish new starting point for future range.
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-template' }, { row: rowLabel }));
-      rowsToSelect.push(rowId);
+      rowsToSelectAndUnSelect.push({ id: rowId, selected: true });
     } else {
-      if (rowIndex === multiSelectRange.current?.start) {
+      if (rowIndex === multiSelectRange.current.start) {
         // The row that denotes the start for multiselect has been cleared.
         multiSelectRange.current = {};
       }
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-cleared-template' }, { row: rowLabel }));
-      rowsToUnSelect.push(rowId);
+      rowsToSelectAndUnSelect.push({ id: rowId, selected: false });
     }
 
     if (onRowSelect) {
-      onRowSelect(rowsToSelect, rowsToUnSelect);
+      onRowSelect(rowsToSelectAndUnSelect);
     }
   }, [intl, onRowSelect, rows]);
 
@@ -473,17 +473,15 @@ function WorklistDataGrid(props) {
     setFocusedCol(selectionDetails.columnIndex);
 
     if (!hasSelectableRows) {
-      if (selectionDetails.isShiftKeyPressed) {
+      if (selectionDetails.isShiftPressed) {
         // Shift+Space, Shift+Click, Shift+Up, Shift+Down
         isRowSelectionModeToggledByGrid.current = !hasSelectableRows;
         multiSelectRange.current = { start: selectionDetails.rowIndex, end: null };
-        selectMultipleRows(multiSelectRange.current.start, multiSelectRange.current.end, selectionDetails.rowIndex);
-        multiSelectRange.current.end = selectionDetails.rowIndex;
+        selectMultipleRows(selectionDetails.rowIndex);
       }
-    } else if (selectionDetails.isShiftKeyPressed && multiSelectRange.current?.start) {
+    } else if (selectionDetails.isShiftPressed && multiSelectRange.current.start) {
       // Select multiple rows based on previously established anchor.
-      selectMultipleRows(multiSelectRange.current.start, multiSelectRange.current.end, selectionDetails.rowIndex);
-      multiSelectRange.current.end = selectionDetails.rowIndex;
+      selectMultipleRows(selectionDetails.rowIndex);
     } else {
       // There is no anchor or the shift key is not pressed so select the row and establish an anchor.
       selectRow(selectionDetails.rowId, selectionDetails.rowIndex);
@@ -638,8 +636,7 @@ function WorklistDataGrid(props) {
         multiSelectRange.current = { start: cellCoordinates.row, end: null };
       }
       isRowSelectionModeToggledByGrid.current = !hasSelectableRows;
-      selectMultipleRows(multiSelectRange.current.start, multiSelectRange.current.end, nextRow);
-      multiSelectRange.current.end = nextRow;
+      selectMultipleRows(nextRow);
     }
     // Handle the normal case
     if (nextRow > rows.length || nextCol >= displayedColumns.length) {
