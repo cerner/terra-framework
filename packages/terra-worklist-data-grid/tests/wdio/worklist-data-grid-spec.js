@@ -613,4 +613,15 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('pinned-columns-with-row-selection-select', { selector: pinnedColumnsWithRowSelectionSelector });
     });
   });
+
+  describe('with sticky column header', () => {
+    const stickyHeaderSelector = '#terra-worklist-data-grid-sticky';
+
+    it('verifies that the table column header is fixed when scrolling', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-sticky-header');
+      navigateToCell(2, 1);
+      moveCurrentPositionBy(6, 0);
+      Terra.validates.element('sticky-header-scroll', { selector: stickyHeaderSelector });
+    });
+  });
 });

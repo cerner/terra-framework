@@ -5,9 +5,17 @@
 :local {
   .column-header {
     background-color: var(--terra-worklist-data-grid-column-header-background-color, #dedfe0);
-    border: var(--terra-worklist-data-grid-column-header-border, 1px solid #000);
+    border-bottom: var(--terra-worklist-data-grid-column-header-border-bottom, 1px solid #000);
+    border-right: var(--terra-worklist-data-grid-column-header-border-right, 1px solid #000);
+    border-top: var(--terra-worklist-data-grid-column-header-border-top, 1px solid #000);
     color: var(--terra-worklist-data-grid-column-header-text-color);
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    &:first-child {
+      border-left: var(--terra-worklist-data-grid-column-header-border-left, 1px solid #000);
+    }
 
     .header-container {
       align-items: center;
@@ -43,11 +51,8 @@
   }
 
   .pinned {
-    border: var(--terra-worklist-data-grid-pinned-columns-header-border, 1px solid #000);
-    border-width: 1px 0;
-    box-shadow: inset var(--terra-worklist-data-grid-pinned-columns-header-box-shadow, 1px 0 #000);
     position: sticky;
-    z-index: 2;
+    z-index: 2 !important;
   }
 
   .pinned-columns-divider {
