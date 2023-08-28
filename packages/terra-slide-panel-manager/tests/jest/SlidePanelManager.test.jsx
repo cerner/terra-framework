@@ -2,15 +2,24 @@ import React from 'react';
 import { withDisclosureManager } from 'terra-disclosure-manager';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { v4 as uuidv4 } from 'uuid';
 import SlidePanelManager from '../../src/SlidePanelManager';
-
-jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
 
 const TestContainer = withDisclosureManager(({ id }) => (
   <div id={id}>Hello World</div>
 ));
 
 describe('SlidePanelManager', () => {
+  let mockSpyUuid;
+  beforeAll(() => {
+    mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockImplementation(() => '00000000-0000-0000-0000-000000000000');
+  });
+
+  afterAll(() => {
+    mockSpyUuid.mockRestore();
+  });
+
   it('should render the SlidePanelManager with defaults', () => {
     const slidePanelManager = (
       <SlidePanelManager>

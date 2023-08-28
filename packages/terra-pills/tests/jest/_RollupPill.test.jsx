@@ -1,11 +1,19 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { mountWithIntl } from 'terra-enzyme-intl';
+import { v4 as uuidv4 } from 'uuid';
 import RollupPill from '../../src/subcomponents/_RollupPill';
 
-jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
-
 describe('Rollup Pill', () => {
+  let mockSpyUuid;
+  beforeAll(() => {
+    mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockImplementation(() => '00000000-0000-0000-0000-000000000000');
+  });
+
+  afterAll(() => {
+    mockSpyUuid.mockRestore();
+  });
+
   it('should render rollup pill with the label "4 more"', () => {
     const wrapper = mountWithIntl(<RollupPill isCollapsed rollupCount={4} />);
     expect(wrapper).toMatchSnapshot();

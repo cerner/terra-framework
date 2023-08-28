@@ -2,6 +2,7 @@ import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
+import { v4 as uuidv4 } from 'uuid';
 import moment from 'moment-timezone';
 import DatePicker from '../../lib/DatePicker';
 import DateUtil from '../../lib/DateUtil';
@@ -13,7 +14,14 @@ DateUtil.filterInvalidDates = jest.fn();
 DateUtil.createSafeDate.mockImplementation(() => moment.utc('2017-01-01'));
 DateUtil.filterInvalidDates.mockImplementation(() => [moment.utc('2017-01-01')]);
 
-jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+let mockSpyUuid;
+beforeAll(() => {
+  mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockImplementation(() => '00000000-0000-0000-0000-000000000000');
+});
+
+afterAll(() => {
+  mockSpyUuid.mockRestore();
+});
 
 it('should render a default date input and date picker', () => {
   const datePicker = shallowWithIntl(<DatePicker name="date-input" />);

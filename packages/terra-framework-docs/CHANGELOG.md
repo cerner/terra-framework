@@ -4,6 +4,7 @@
 * Added
   * Added example and tests for `terra-worklist-data-grid` to select rows via mouse and keyboard.
   * Added test to `terra-worklist-data-grid` for sticky column header feature.
+  * Updated testing recommendations to use `jest.spyOn` instead of `jest.mock`.
 
 * Changed
   * Updated focusable cell example for `terra-worklist-data-grid` to allow text area to be editable.

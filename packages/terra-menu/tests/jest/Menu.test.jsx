@@ -2,12 +2,20 @@ import React from 'react';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { mountWithIntl } from 'terra-enzyme-intl';
+import { v4 as uuidv4 } from 'uuid';
 import Menu from '../../src/Menu';
 import DefaultMenu from './DefaultMenuExample';
 
-jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
-
 describe('Menu', () => {
+  let mockSpyUuid;
+  beforeAll(() => {
+    mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockImplementation(() => '00000000-0000-0000-0000-000000000000');
+  });
+
+  afterAll(() => {
+    mockSpyUuid.mockRestore();
+  });
+
   // Snapshot Tests
   it('should render a default component', () => {
     const wrapper = shallow(<DefaultMenu />);
