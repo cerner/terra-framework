@@ -30,6 +30,12 @@ const propTypes = {
    * The aria label for the Slide.
    */
   slideAriaLabel: PropTypes.string,
+
+  /**
+   * @private
+   * Indicates if the slide is nested within a SlideGroup.
+   */
+  isNested: PropTypes.func,
 };
 
 const defaultProps = {
@@ -41,6 +47,7 @@ const Slide = ({
   focusRef,
   isHidden,
   slideAriaLabel,
+  isNested,
 }) => {
   const [lastClicked, setLastClicked] = useState(null);
   // used for assistive technology to provide context when returning to the slide
@@ -76,7 +83,7 @@ const Slide = ({
     >
       <VisuallyHiddenText
         aria-live="polite"
-        aria-hidden={isHidden || enteredAfterHidden}
+        aria-hidden={isHidden || !isNested}
         text={slideAriaLabel}
       />
       <div className={cx('slide-shadow')} />
