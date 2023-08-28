@@ -5,6 +5,9 @@
 * Added
   * Added aria-haspopup attribute to menu buttons so screen reader users are provided the context that they will open a dialog popup.
 
+* Changed
+  * Disabled unselectable menu item toggles to make them consistent with face-up toggles.
+
 ## 6.77.0 - (August 10, 2023)
 
 * Changed

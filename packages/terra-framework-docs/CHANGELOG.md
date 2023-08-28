@@ -1,9 +1,11 @@
 # Changelog
 
 ## Unreleased
+
 * Added
   * Added example and tests for `terra-worklist-data-grid` to select rows via mouse and keyboard.
   * Added test to `terra-worklist-data-grid` for sticky column header feature.
+  * Added tests for unselectable toggles in `terra-collapsible-menu-view`.
 
 * Changed
   * Updated focusable cell example for `terra-worklist-data-grid` to allow text area to be editable.
