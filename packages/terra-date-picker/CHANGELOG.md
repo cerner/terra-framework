@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+* Updated
+  * Screen reader announcement for visual label.
+
+* Changed
+  * Visual focus changed to dashed lines for individual fields.
+
 ## 4.87.1 - (August 4, 2023)
 
 * Changed
