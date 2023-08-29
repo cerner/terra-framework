@@ -13,7 +13,7 @@ const TestContainer = withDisclosureManager(({ id }) => (
 describe('SlidePanelManager', () => {
   let mockSpyUuid;
   beforeAll(() => {
-    mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockImplementation(() => '00000000-0000-0000-0000-000000000000');
+    mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockReturnValue('00000000-0000-0000-0000-000000000000');
   });
 
   afterAll(() => {

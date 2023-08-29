@@ -7,16 +7,16 @@ import DateInput from '../../src/DateInput';
 import DateInputField from '../../src/DateInputField';
 import DateInputUtil from '../../lib/DateInputUtil';
 
+let mockSpyUuid;
+beforeAll(() => {
+  mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockReturnValue('00000000-0000-0000-0000-000000000000');
+});
+
+afterAll(() => {
+  mockSpyUuid.mockRestore();
+});
+
 describe('DateInput', () => {
-  let mockSpyUuid;
-  beforeAll(() => {
-    mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockImplementation(() => '00000000-0000-0000-0000-000000000000');
-  });
-
-  afterAll(() => {
-    mockSpyUuid.mockRestore();
-  });
-
   const defaultRender = <DateInput name="date-input" />;
 
   // Snapshot Tests
@@ -262,15 +262,6 @@ describe('DateInput', () => {
 });
 
 describe('DateInputField', () => {
-  let mockSpyUuid;
-  beforeAll(() => {
-    mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockImplementation(() => '00000000-0000-0000-0000-000000000000');
-  });
-
-  afterAll(() => {
-    mockSpyUuid.mockRestore();
-  });
-
   it('correctly applies the theme context className', () => {
     const date = mountWithIntl(
       <ThemeContextProvider theme={{ className: 'clinical-lowlight-theme' }}>
