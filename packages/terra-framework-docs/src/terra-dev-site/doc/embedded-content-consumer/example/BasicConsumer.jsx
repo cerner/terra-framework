@@ -10,7 +10,7 @@ const BasicConsumer = () => (
     src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
     title="Basic content example"
     options={{
-      resizeConfig: { scrolling: true },
+      resizeConfig: { scrolling: true, fixedWidth: '100%', fixedHeight: '120px' }
     }}
   />
 );

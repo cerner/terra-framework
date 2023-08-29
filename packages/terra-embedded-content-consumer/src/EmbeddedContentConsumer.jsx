@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Consumer } from 'xfc';
+import { Consumer } from '../../../../xfc/src';
+
+import './ProviderIframe.module.scss';
 
 const propTypes = {
   /**
@@ -77,6 +79,10 @@ const propTypes = {
   })),
 };
 
+const defaultProps = {
+  scrolling: true,
+};
+
 class EmbeddedContentConsumer extends React.Component {
   componentDidMount() {
     // Merging the iframe options props
@@ -93,6 +99,8 @@ class EmbeddedContentConsumer extends React.Component {
     if (this.props.title) {
       Object.assign(frameOptions.iframeAttrs, { title: this.props.title });
     }
+
+    frameOptions.focusIndicator = { focusStyleStr: 'outline: 2px dashed blue;', blurStyleStr: 'outline: 0px;' };
 
     // Mount the provided source as the application into the content wrapper.
     this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, frameOptions);
@@ -142,5 +150,6 @@ class EmbeddedContentConsumer extends React.Component {
 }
 
 EmbeddedContentConsumer.propTypes = propTypes;
+EmbeddedContentConsumer.defaultProps = defaultProps;
 
 export default EmbeddedContentConsumer;
