@@ -13,6 +13,7 @@
   * Updated programmatic activation test and examples for `terra-tabs`.
   * Updated pinned column test for `terra-worklist-data-grid` to test the divider when the table height changes.
   * Updated examples and tests for `terra-worklist-data-grid` to handle cell selection for pinned columns.
+  * Updated testing recommendations to use `jest.spyOn` instead of `jest.mock`.
 
 ## 1.32.0 - (August 10, 2023)
 
