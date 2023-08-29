@@ -42,15 +42,19 @@ const onAuthorize = () => {
 };
 
 const DataStatusConsumer = () => (
-  <EmbeddedContentConsumer
-    className={cx('iframe')}
-    src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/data-status-provider"
-    onMount={onMount}
-    onLaunch={onLaunch}
-    onAuthorize={onAuthorize}
-    title="Embedded application lifecycle example"
-    options={options}
-  />
+  <div className={cx('consumer-content-wrapper')}>
+    <h2>Embedded Content</h2>
+    <p>The following is an embedded content within an iframe.</p>
+    <EmbeddedContentConsumer
+      className={cx('iframe')}
+      src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/data-status-provider"
+      onMount={onMount}
+      onLaunch={onLaunch}
+      onAuthorize={onAuthorize}
+      title="Embedded application lifecycle example"
+      options={options}
+    />
+  </div>
 );
 
 export default DataStatusConsumer;

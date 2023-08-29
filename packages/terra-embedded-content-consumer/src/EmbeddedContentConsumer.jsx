@@ -2,10 +2,8 @@ import React from 'react';
 import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-
 import { Consumer } from 'xfc';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-
 import styles from './EmbeddedContentConsumer.module.scss';
 
 const cx = classNames.bind(styles);
@@ -107,6 +105,11 @@ class EmbeddedContentConsumer extends React.Component {
       Object.assign(frameOptions.iframeAttrs, { title: this.props.title });
     }
 
+    frameOptions.focusIndicator = {
+      classNameFocusStyle: cx('iframe-focus-style'),
+      classNameBlurStyle: cx('iframe-blur-style'),
+    };
+
     // Mount the provided source as the application into the content wrapper.
     this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, frameOptions);
 
@@ -115,12 +118,80 @@ class EmbeddedContentConsumer extends React.Component {
       this.props.onMount(this.xfcFrame);
     }
 
+    // Handle srcdoc use case since xfc doesn't support srcdoc
+    // and no postMessage between consumer and provider content
+    if (frameOptions.iframeAttrs.srcdoc) {
+      this.setupEventListenersForFrameSrcDoc();
+    }
+
     // Attach the event handlers to the xfc frame.
     this.addEventListener('xfc.launched', this.props.onLaunch);
     this.addEventListener('xfc.authorized', this.props.onAuthorize);
 
     // Attach custom event handlers to the xfc frame.
     this.addEventListeners(this.props.eventHandlers);
+  }
+
+  setupEventListenersForFrameSrcDoc() {
+    const focusableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
+      + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
+      + "[contentEditable=true]:not([tabindex='-1'])";
+
+    const isContentScrollable = () => {
+      const doc = this.xfcFrame?.iframe?.contentWindow?.document;
+      return (doc.documentElement.scrollHeight > doc.documentElement.clientHeight
+        || doc.body.scrollHeight > doc.body.clientHeight
+        || doc.documentElement.scrollWidth > doc.documentElement.clientWidth
+        || doc.body.scrollWidth > doc.body.clientWidth);
+    };
+
+    const scrollingEnabled = () => {
+      if (this.xfcFrame?.iframe?.getAttribute('scrolling') === 'no') {
+        return false;
+      }
+      return true;
+    };
+
+    window.onload = () => {
+      this.hasFocusableElement = [...this.xfcFrame?.iframe?.contentWindow?.document.body.querySelectorAll(`${focusableElementSelector}`)].some(
+        (element) => !element.hasAttribute('disabled')
+          && !element.getAttribute('aria-hidden')
+          && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
+          && window.getComputedStyle(element).visibility !== 'hidden'
+          && element.closest('[inert]') === null,
+      );
+
+      if (scrollingEnabled() && isContentScrollable() && this.hasFocusableElement === false) {
+        // Set tabIndex="0" so focus can go into the document when
+        // using tab key when scrolling is enabled
+        this.xfcFrame.iframe.contentWindow.document.body.tabIndex = 0;
+      }
+    };
+
+    window.onresize = () => {
+      if (scrollingEnabled() && isContentScrollable() && this.hasFocusableElement === false) {
+        // Set tabIndex="0" so focus can go into the document when
+        // using tab key when scrolling is enabled
+        this.xfcFrame.iframe.contentWindow.document.body.tabIndex = 0;
+      } else if (this.xfcFrame?.iframe?.contentWindow?.document.body.getAttribute('tabIndex') === '0') {
+        this.xfcFrame.iframe.contentWindow.document.body.removeAttribute('tabIndex');
+      }
+    };
+
+    this.xfcFrame?.iframe?.contentWindow?.addEventListener('focus', () => {
+      if (this.hasFocusableElement === true || !isContentScrollable()) {
+        return;
+      }
+
+      if (scrollingEnabled() && isContentScrollable() && this.hasFocusableElement === false) {
+        this.xfcFrame.iframe.className = cx('iframe-focus-style');
+      }
+    }, true);
+
+    // Listen for blur event and callback function to apply the style
+    this.xfcFrame?.iframe?.contentWindow?.addEventListener('blur', () => {
+      this.xfcFrame.iframe.className = cx('iframe-blur-style');
+    }, true);
   }
 
   addEventListener(eventName, eventHandler) {

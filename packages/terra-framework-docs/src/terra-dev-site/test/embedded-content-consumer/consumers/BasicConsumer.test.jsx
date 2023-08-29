@@ -9,12 +9,16 @@ const cx = classNames.bind(styles);
 Consumer.init();
 
 const BasicConsumer = () => (
-  <EmbeddedContentConsumer
-    className={cx('iframe')}
-    options={{}}
-    title="Basic Consumer"
-    src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
-  />
+  <div className={cx('consumer-content-wrapper')}>
+    <h2>Embedded Content</h2>
+    <p>The following is an embedded content within an iframe.</p>
+    <EmbeddedContentConsumer
+      className={cx('iframe')}
+      options={{ iframeAttrs: { id: 'basic-consumer-frame' }, resizeConfig: { scrolling: true, fixedWidth: '100%', fixedHeight: '200px' } }}
+      title="Basic Consumer"
+      src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
+    />
+  </div>
 );
 
 export default BasicConsumer;

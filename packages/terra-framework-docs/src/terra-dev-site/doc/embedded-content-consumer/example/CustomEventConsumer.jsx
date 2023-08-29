@@ -17,9 +17,6 @@ const CustomEventConsumer = () => (
     <EmbeddedContentConsumer
       src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-event-provider"
       title="Custom Event Example"
-      options={{
-        resizeConfig: { scrolling: true },
-      }}
       eventHandlers={eventHandlers}
     />
   </div>

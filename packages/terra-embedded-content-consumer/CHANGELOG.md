@@ -4,6 +4,7 @@
 
 * Added
   * Added screenreader support to announce context of embedded iframe content.
+  * Added visual focus indicator on the iframe when the content doesn't have any inteactable element, iframe is scrollable, and content is scrollable for keyboard only users
 
 ## 3.39.0 - (October 3, 2023)
 

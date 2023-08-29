@@ -9,21 +9,25 @@ const cx = classNames.bind(styles);
 Consumer.init();
 
 const BasicConsumerWithScrolling = () => (
-  <EmbeddedContentConsumer
-    className={cx('iframe')}
-    src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"
-    title="Basic Consumer with Scrolling"
-    options={{
-      iframeAttrs: {
-        id: 'basic-consumer-with-scrolling',
-      },
-      resizeConfig: {
-        fixedHeight: '50px',
-        fixedWidth: '100%',
-        scrolling: true,
-      },
-    }}
-  />
+  <div className={cx('consumer-content-wrapper')}>
+    <h2>Embedded Content</h2>
+    <p>The following is an embedded content within an iframe.</p>
+    <EmbeddedContentConsumer
+      className={cx('iframe')}
+      src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider-with-scrolling"
+      title="Basic Consumer with Scrolling"
+      options={{
+        iframeAttrs: {
+          id: 'basic-consumer-with-scrolling',
+        },
+        resizeConfig: {
+          fixedHeight: '100px',
+          fixedWidth: '100%',
+          scrolling: true,
+        },
+      }}
+    />
+  </div>
 );
 
 export default BasicConsumerWithScrolling;

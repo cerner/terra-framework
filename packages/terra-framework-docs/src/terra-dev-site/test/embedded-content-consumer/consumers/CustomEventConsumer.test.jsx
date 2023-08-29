@@ -16,14 +16,18 @@ const eventHandlers = [{
 }];
 
 const CustomEventConsumer = () => (
-  <div id="CustomEvent">
-    <EmbeddedContentConsumer
-      className={cx('iframe')}
-      src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-event-provider"
-      eventHandlers={eventHandlers}
-      title="Basic Consumer"
-      options={{}}
-    />
+  <div className={cx('consumer-content-wrapper')}>
+    <h2>Embedded Content</h2>
+    <p>The following is an embedded content within an iframe.</p>
+    <div id="CustomEvent">
+      <EmbeddedContentConsumer
+        className={cx('iframe')}
+        src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-event-provider"
+        eventHandlers={eventHandlers}
+        title="Basic Consumer"
+        options={{ iframeAttrs: { id: 'custom-event-consumer-frame' } }}
+      />
+    </div>
   </div>
 );
 

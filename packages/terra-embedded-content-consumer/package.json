@@ -25,7 +25,7 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-intl": ">=2.8.0, <6.0.0",
-    "xfc": "^1.2.1"
+    "xfc": "git+https://github.com/kolkheang/xfc.git#display-frame-focus-indicator"
   },
   "dependencies": {
     "classnames": "^2.2.5",
