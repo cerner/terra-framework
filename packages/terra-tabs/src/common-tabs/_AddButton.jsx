@@ -55,7 +55,6 @@ const AddButton = ({
   intl,
 }) => {
   const buttonsuggestion = intl.formatMessage({ id: 'Terra.tabs.addbutton.focus' });
-  // const ariaLabelAddTabWithSuggestion = `${addAriaLabel}`;
   let ariaLabelAddTabWithSuggestion = `${buttonsuggestion}`;
 
   if (addAriaLabel) {
@@ -78,6 +77,7 @@ const AddButton = ({
       icon={AddTabIcon}
       isIconOnly
       id={id}
+      tabindex="-1"
       index={index}
       text={addAriaLabel}
       variant="de-emphasis"
