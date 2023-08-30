@@ -221,6 +221,11 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                               <div
                                 class="slide"
                               >
+                                <span
+                                  aria-hidden="true"
+                                  aria-live="polite"
+                                  class="visually-hidden-text"
+                                />
                                 <div
                                   class="slide-shadow"
                                 />
@@ -402,6 +407,16 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                             onClick={[Function]}
                                             onKeyUp={[Function]}
                                           >
+                                            <VisuallyHiddenText
+                                              aria-hidden={true}
+                                              aria-live="polite"
+                                            >
+                                              <span
+                                                aria-hidden={true}
+                                                aria-live="polite"
+                                                className="visually-hidden-text"
+                                              />
+                                            </VisuallyHiddenText>
                                             <div
                                               className="slide-shadow"
                                             />

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './Slide.module.scss';
 
 const cx = classNames.bind(styles);
@@ -29,6 +30,12 @@ const propTypes = {
    * The aria label for the Slide.
    */
   slideAriaLabel: PropTypes.string,
+
+  /**
+   * @private
+   * Indicates if the slide is nested within a SlideGroup.
+   */
+  isNested: PropTypes.func,
 };
 
 const defaultProps = {
@@ -40,6 +47,7 @@ const Slide = ({
   focusRef,
   isHidden,
   slideAriaLabel,
+  isNested,
 }) => {
   const [lastClicked, setLastClicked] = useState(null);
   // used for assistive technology to provide context when returning to the slide
@@ -73,6 +81,7 @@ const Slide = ({
       onKeyUp={handleClick}
       role={enteredAfterHidden ? 'region' : undefined}
     >
+      <VisuallyHiddenText aria-hidden={!isNested} aria-live="polite" text={slideAriaLabel} />
       <div className={cx('slide-shadow')} />
       {children}
     </div>
