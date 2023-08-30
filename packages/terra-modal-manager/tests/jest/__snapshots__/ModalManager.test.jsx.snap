@@ -400,6 +400,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                         <Slide
                                           id="shmmoop"
                                           isHidden={false}
+                                          isNested={false}
                                         >
                                           <div
                                             aria-hidden={null}

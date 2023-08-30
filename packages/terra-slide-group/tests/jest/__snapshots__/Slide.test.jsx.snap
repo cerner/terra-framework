@@ -59,3 +59,23 @@ exports[`should render a hidden Slide 1`] = `
   </div>
 </div>
 `;
+
+exports[`should render a nested Slide 1`] = `
+<div
+  aria-hidden={null}
+  className="slide"
+  onClick={[Function]}
+  onKeyUp={[Function]}
+>
+  <VisuallyHiddenText
+    aria-hidden={false}
+    aria-live="polite"
+  />
+  <div
+    className="slide-shadow"
+  />
+  <div>
+    Slide Content
+  </div>
+</div>
+`;

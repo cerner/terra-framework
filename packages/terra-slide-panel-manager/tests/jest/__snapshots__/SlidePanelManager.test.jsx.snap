@@ -618,6 +618,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                                     }
                                     id="shmmoop"
                                     isHidden={false}
+                                    isNested={false}
                                   >
                                     <div
                                       aria-hidden={null}

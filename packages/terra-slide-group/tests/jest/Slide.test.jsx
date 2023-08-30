@@ -19,6 +19,15 @@ it('should render a hidden Slide', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('should render a nested Slide', () => {
+  const wrapper = shallow((
+    <Slide isNested>
+      <div>Slide Content</div>
+    </Slide>
+  ));
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('correctly applies the theme context className', () => {
   jest.spyOn(React, 'useContext')
     .mockReturnValue({
