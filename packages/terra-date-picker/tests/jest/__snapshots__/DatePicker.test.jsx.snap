@@ -312,12 +312,12 @@ exports[`correctly applies the theme context className 1`] = `
                             </span>
                           </VisuallyHiddenText>
                           <VisuallyHiddenText
-                            id="name-label"
+                            id="name-label-00000000-0000-0000-0000-000000000000"
                             text="date-input"
                           >
                             <span
                               className="visually-hidden-text"
-                              id="name-label"
+                              id="name-label-00000000-0000-0000-0000-000000000000"
                             >
                               date-input
                             </span>
@@ -349,7 +349,7 @@ exports[`correctly applies the theme context className 1`] = `
                             }
                             month={
                               <Input
-                                aria-describedby="name-label terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                                 aria-label="Terra.datePicker.monthLabel"
                                 aria-required={false}
                                 className="date-input-month"
@@ -402,7 +402,7 @@ exports[`correctly applies the theme context className 1`] = `
                             }
                           >
                             <Input
-                              aria-describedby="name-label terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                              aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                               aria-label="Terra.datePicker.monthLabel"
                               aria-required={false}
                               className="date-input-month"
@@ -423,7 +423,7 @@ exports[`correctly applies the theme context className 1`] = `
                               value="01"
                             >
                               <input
-                                aria-describedby="name-label terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                                 aria-label="Terra.datePicker.monthLabel"
                                 aria-required={false}
                                 className="form-input orion-fusion-theme date-input-month"
