@@ -80,7 +80,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     });
   });
 
-  describe('consumer with srcdoc prop', () => {
+  describe('consumer with srcdoc', () => {
     it('renders content inside of an iframe using content set in srcdoc', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/embedded-content-consumer/consumers/basic-consumer-with-srcdoc');
       $('iframe[id="iframe-with-srcdoc"]').waitForDisplayed();

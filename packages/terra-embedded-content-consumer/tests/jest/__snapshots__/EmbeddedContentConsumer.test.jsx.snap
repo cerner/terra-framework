@@ -34,8 +34,12 @@ exports[`should render the embedded content consumer container 1`] = `<div />`;
 exports[`EmbeddedContentConsumer should render the embedded content consumer container 1`] = `
 <div>
   <EmbeddedContentConsumer
+    onMount={[Function]}
     src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
-  />
+    title="basic provider"
+  >
+    <div />
+  </EmbeddedContentConsumer>
 </div>
 `;
 
@@ -43,48 +47,21 @@ exports[`EmbeddedContentConsumer should render the embedded content consumer wit
 <div>
   <EmbeddedContentConsumer
     className="container"
+    onMount={[Function]}
     src="https://www.cdc.gov/"
-  />
+    title="custom class name"
+  >
+    <div
+      className="container"
+    />
+  </EmbeddedContentConsumer>
 </div>
 `;
 
-exports[`EmbeddedContentConsumer should render the embedded content consumer with title prop 1`] = `
+exports[`EmbeddedContentConsumer should render the embedded content consumer with options attributes 1`] = `
 <div>
   <EmbeddedContentConsumer
-    src="https://www.cdc.gov/"
-    title="title for the frame content"
-  />
-</div>
-`;
-
-exports[`EmbeddedContentConsumer should render the embedded content consumer with title prop and options prop 1`] = `
-<div>
-  <EmbeddedContentConsumer
-    options={
-      Object {
-        "iframeAttrs": Object {
-          "title": "title of content set from options.iframeAttrs",
-        },
-      }
-    }
-    src="https://www.cdc.gov/"
-    title="title that will be used for the frame content"
-  />
-</div>
-`;
-
-exports[`EmbeddedContentConsumer should set title using value from title prop into the frame 1`] = `
-<div>
-  <EmbeddedContentConsumer
-    src="https://www.cdc.gov/"
-    title="title for the frame content"
-  />
-</div>
-`;
-
-exports[`should render the embedded content consumer with options attributes 1`] = `
-<div>
-  <EmbeddedContentConsumer
+    onMount={[Function]}
     options={
       Object {
         "iframeAttrs": Object {
@@ -95,6 +72,41 @@ exports[`should render the embedded content consumer with options attributes 1`]
         },
       }
     }
-  />
+    src=""
+    title="inline html content"
+  >
+    <div />
+  </EmbeddedContentConsumer>
+</div>
+`;
+
+exports[`EmbeddedContentConsumer should render the embedded content consumer with title prop 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    onMount={[Function]}
+    src="https://www.cdc.gov/"
+    title="title for the frame content"
+  >
+    <div />
+  </EmbeddedContentConsumer>
+</div>
+`;
+
+exports[`EmbeddedContentConsumer should render the embedded content consumer with title prop and options prop 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    onMount={[Function]}
+    options={
+      Object {
+        "iframeAttrs": Object {
+          "title": "title that will be used for the frame content",
+        },
+      }
+    }
+    src="https://www.cdc.gov/"
+    title="title that will be used for the frame content"
+  >
+    <div />
+  </EmbeddedContentConsumer>
 </div>
 `;
