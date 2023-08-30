@@ -17,6 +17,7 @@
   * Fixed pinned column separator not adjusting size when the table height changes.
   * Fixed pinned column cells not being selectable.
   * Fixed pinned column border issues during scrolling.
+  * Fixed hover/background colors for alternating rows.
 
 ## 0.4.0 - (August 10, 2023)
 
