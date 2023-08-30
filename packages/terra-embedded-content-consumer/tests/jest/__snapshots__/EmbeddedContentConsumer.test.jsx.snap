@@ -31,11 +31,61 @@ exports[`sets appropriate config option when resizeConfig.scrolling is true 1`] 
 `;
 
 exports[`should render the embedded content consumer container 1`] = `<div />`;
+exports[`EmbeddedContentConsumer should render the embedded content consumer container 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
+  />
+</div>
+`;
 
-exports[`should render the embedded content consumer with custom class names 1`] = `
-<div
-  class="container"
-/>
+exports[`EmbeddedContentConsumer should render the embedded content consumer with custom class names 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    className="container"
+    src="https://www.cdc.gov/"
+  />
+</div>
+`;
+
+exports[`EmbeddedContentConsumer should set title using value from options iframeAttrs into the frame 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    options={
+      Object {
+        "iframeAttrs": Object {
+          "title": "title of content set from options.iframeAttrs",
+        },
+      }
+    }
+    src="https://www.cdc.gov/"
+  />
+</div>
+`;
+
+exports[`EmbeddedContentConsumer should set title using value from props when both titles are provided 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    options={
+      Object {
+        "iframeAttrs": Object {
+          "title": "title of content set from options.iframeAttrs",
+        },
+      }
+    }
+    src="https://www.cdc.gov/"
+    title="title that will be used for the frame content"
+  />
+</div>
+`;
+
+exports[`EmbeddedContentConsumer should set title using value from title prop into the frame 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    src="https://www.cdc.gov/"
+    title="title for the frame content"
+  />
+</div>
 `;
 
 exports[`should render the embedded content consumer with options attributes 1`] = `
