@@ -629,6 +629,7 @@ exports[`CollapsibleMenuViewItem should render a menu when subMenuItems are give
 <CollapsibleMenu
   button={
     <Button
+      aria-haspopup="dialog"
       intl={
         Object {
           "defaultFormats": Object {},

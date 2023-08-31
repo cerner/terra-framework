@@ -55,6 +55,20 @@ describe('CollapsibleMenuViewItem', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should set aria-haspopup attribute on menu button', () => {
+    const wrapper = mountWithIntl(<CollapsibleMenuViewItem
+      text="Menu Button 1"
+      key="MenuButton1"
+      className="MenuButton1"
+      shouldCloseOnClick={false}
+      subMenuItems={[
+        <CollapsibleMenuViewItem text="Default Item 1" key="defaultItem1" />,
+        <CollapsibleMenuViewItem text="Default Item 2" key="defaultItem2" />,
+      ]}
+    />);
+    expect(wrapper.find('Button').prop('aria-haspopup')).toEqual('dialog');
+  });
+
   it('should render a disabled button when isDisabled is set', () => {
     const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isDisabled />);
     expect(wrapper).toMatchSnapshot();
