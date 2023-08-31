@@ -8,6 +8,8 @@ Terra.describeViewports('Date Picker', ['tiny', 'small', 'medium'], () => {
     });
 
     it('sets the date', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
+      $('input[name="terra-date-month-date-input"]').waitForDisplayed();
       $('input[name="terra-date-month-date-input"]').setValue('06');
       $('input[name="terra-date-day-date-input"]').setValue('01');
       $('input[name="terra-date-year-date-input"]').setValue('2017');
