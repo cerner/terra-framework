@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
+import styles from './FilePath.module.scss';
 
 const cx = classNames.bind(styles);
 
