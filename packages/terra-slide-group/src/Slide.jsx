@@ -35,7 +35,7 @@ const propTypes = {
    * @private
    * Indicates if the slide is nested within a SlideGroup.
    */
-  isNested: PropTypes.func,
+  isNested: PropTypes.bool,
 };
 
 const defaultProps = {
