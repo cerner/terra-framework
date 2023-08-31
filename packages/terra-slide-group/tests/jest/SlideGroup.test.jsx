@@ -17,20 +17,19 @@ it('should render a default SlideGroup', () => {
 
   const cssTransitions = wrapper.find('CSSTransition');
   expect(cssTransitions.at(0).key()).toBe('1');
-  expect(cssTransitions.at(0).prop('enter')).toBe(false);
-  expect(cssTransitions.at(0).prop('enter')).toBe(false);
   expect(cssTransitions.at(1).key()).toBe('2');
-  expect(cssTransitions.at(1).prop('enter')).toBe(false);
-  expect(cssTransitions.at(1).prop('enter')).toBe(false);
   expect(cssTransitions.at(2).key()).toBe('3');
+  expect(cssTransitions.at(0).prop('enter')).toBe(false);
+  expect(cssTransitions.at(1).prop('enter')).toBe(false);
   expect(cssTransitions.at(2).prop('enter')).toBe(false);
-  expect(cssTransitions.at(2).prop('enter')).toBe(false);
-
+  expect(cssTransitions.at(0).prop('exit')).toBe(false);
+  expect(cssTransitions.at(1).prop('exit')).toBe(false);
+  expect(cssTransitions.at(2).prop('exit')).toBe(false);
   expect(cssTransitions.at(0).find('Slide').prop('isHidden')).toBe(true);
-  expect(cssTransitions.at(0).find('Slide').prop('isNested')).toBe(false);
   expect(cssTransitions.at(1).find('Slide').prop('isHidden')).toBe(true);
-  expect(cssTransitions.at(1).find('Slide').prop('isNested')).toBe(true);
   expect(cssTransitions.at(2).find('Slide').prop('isHidden')).toBe(false);
+  expect(cssTransitions.at(0).find('Slide').prop('isNested')).toBe(false);
+  expect(cssTransitions.at(1).find('Slide').prop('isNested')).toBe(true);
   expect(cssTransitions.at(2).find('Slide').prop('isNested')).toBe(true);
 
   expect(wrapper).toMatchSnapshot();
@@ -41,11 +40,11 @@ it('should render a SlideGroup with animation enabled', () => {
 
   const cssTransitions = wrapper.find('CSSTransition');
   expect(cssTransitions.at(0).prop('enter')).toBe(true);
-  expect(cssTransitions.at(0).prop('enter')).toBe(true);
-  expect(cssTransitions.at(1).prop('enter')).toBe(true);
   expect(cssTransitions.at(1).prop('enter')).toBe(true);
   expect(cssTransitions.at(2).prop('enter')).toBe(true);
-  expect(cssTransitions.at(2).prop('enter')).toBe(true);
+  expect(cssTransitions.at(0).prop('exit')).toBe(true);
+  expect(cssTransitions.at(1).prop('exit')).toBe(true);
+  expect(cssTransitions.at(2).prop('exit')).toBe(true);
 
   expect(wrapper).toMatchSnapshot();
 });
