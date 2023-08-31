@@ -8,6 +8,7 @@
 
 :local {
   .react-datepicker {
+    align-self: flex-start;
     background-color: #fff;
     color: $datepicker-text-color;
     display: inline-flex;
@@ -392,6 +393,7 @@
     justify-content: center;
     left: 0;
     outline: 0;
+    overflow: scroll;
     position: fixed;
     top: 0;
     width: 100vw;
