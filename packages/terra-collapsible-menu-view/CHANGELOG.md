@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.78.0 - (August 31, 2023)
+
 * Added
   * Added aria-haspopup attribute to menu buttons so screen reader users are provided the context that they will open a dialog popup.
 
