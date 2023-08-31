@@ -32,8 +32,7 @@ const propTypes = {
   slideAriaLabel: PropTypes.string,
 
   /**
-   * @private
-   * Indicates if the slide is nested within a SlideGroup.
+   * If true, the Slide is nested within a SlideGroup.
    */
   isNested: PropTypes.bool,
 };
