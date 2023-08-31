@@ -63,12 +63,23 @@ import SlidePanel from 'terra-slide-panel';
 
 ## Testing
 
-Terra Slide Panel uses `uuid` to dynamically generate the component's description id. It can be mocked in Jest though `jest.mock`. An example is given below.
+Terra Slide Panel uses `uuid` to dynamically generate the component's description id. To mock the return value with the Jest testing library, `jest.spyOn` can be used.
 
 If Enzyme `shallow` rendering is being used for the tests then the mock may not be required. But if the tests use `mount`, then the teams must use the mock as given below.
 
 ```js
-// using a variable may result in failures. For best results, hardcode the mock return value.
-jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+import { v4 as uuidv4 } from 'uuid';
+
+let mockSpyUuid;
+
+// using a variable may result in failures. For best results, mock return value.
+beforeAll(() => {
+  mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockReturnValue('00000000-0000-0000-0000-000000000000');
+});
+
+// restore the mock
+afterAll(() => {
+  mockSpyUuid.mockRestore();
+});
 
 ```

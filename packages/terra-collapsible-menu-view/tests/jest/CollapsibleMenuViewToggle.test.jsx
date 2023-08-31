@@ -42,7 +42,7 @@ describe('CollapsibleMenuViewToggle', () => {
       const wrapper = shallowWithIntl(<CollapsibleMenuViewToggle text="Testing" isSelected />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
-    it('should set isSelectable prop on menu item to false', () => {
+    it('should disable menu item when isSelectable is false', () => {
       const context = { isCollapsibleMenuItem: true };
       const wrapper = shallowWithIntl(<CollapsibleMenuViewToggle text="Testing" isSelectable={false} />, { context }).dive();
       expect(wrapper).toMatchSnapshot();

@@ -148,7 +148,7 @@ function Cell(props) {
   const onMouseDown = ((event) => {
     if (!isFocusTrapEnabled) {
       onCellSelect({
-        rowId, columnId, rowIndex, columnIndex, multiSelect: event.shiftKey, selectedByKeyboard: false, isCellSelectable: (!isMasked && isSelectable),
+        rowId, columnId, rowIndex, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
       });
     }
   });
@@ -182,7 +182,7 @@ function Cell(props) {
         case KeyCode.KEY_SPACE:
           if (onCellSelect) {
             onCellSelect({
-              rowId, columnId, rowIndex, columnIndex, multiSelect: event.shiftKey, selectedByKeyboard: true, isCellSelectable: (!isMasked && isSelectable),
+              rowId, columnId, rowIndex, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
             });
           }
           event.preventDefault(); // prevent the default scrolling

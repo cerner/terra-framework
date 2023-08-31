@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.5.0 - (August 31, 2023)
+
 * Added
   * Added box shadow for pinned columns in fusion theme.
   * Added ability to use spacebar on masked and non-selectable cells to select rows.
@@ -10,6 +12,7 @@
 
 * Changed
   * Removed roving tabIndex and resolved focus management issues within cells.
+  * Updated the functionality for selecting a range of rows. Updated `onRowSelect` prop to take only one array parameter.
 
 * Fixed
   * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.
