@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.5.0 - (August 31, 2023)
+
 * Added
   * Added box shadow for pinned columns in fusion theme.
   * Added ability to use spacebar on masked and non-selectable cells to select rows.
