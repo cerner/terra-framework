@@ -1,7 +1,9 @@
 @import '~terra-mixins/lib/Mixins';
 
-:local {
+:local {  
   .orion-fusion-theme {
+    --terra-tabs-add-button-focus-outline: 2px dashed #000;
+    --terra-tabs-add-button-focus-outline-offset: -2px;
     --terra-tabs-workspace-tab-background-color: #f4f4f4;
     --terra-tabs-workspace-tab-background-image: none;
     --terra-tabs-workspace-tab-border: 1px solid #868a8c;
