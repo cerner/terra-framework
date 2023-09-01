@@ -12,6 +12,20 @@ const navigateToCell = (row, col) => {
 };
 
 Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
+  describe('Empty DataGrid', () => {
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-with-no-rows');
+    });
+
+    it('renders with no data rows', () => {
+      browser.keys(['Tab']); // Cell 0,0 gets focus
+      browser.keys(['ArrowDown']); // Down Arrow should have no effect since there are no data rows.
+      browser.keys(['ArrowRight']); // Cell 0,1 gets focus
+      browser.pause(150);
+      Terra.validates.element('second-column-cell-focused-in-empty-grid', '#terra-data-grid-with-no-rows');
+    });
+  });
+
   describe('with keyboard navigation', () => {
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/default-data-grid');
