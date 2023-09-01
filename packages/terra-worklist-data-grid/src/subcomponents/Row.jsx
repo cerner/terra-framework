@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
 import ThemeContext from 'terra-theme-context';
 import classNames from 'classnames/bind';
-import '../_elementPolyfill';
 import styles from './Row.module.scss';
 import RowSelectionCell from './RowSelectionCell';
 import Cell from './Cell';
@@ -71,16 +70,6 @@ const propTypes = {
    * A zero-based index indicating which column represents the row header.
    */
   rowHeaderIndex: PropTypes.number,
-
-  /**
-   * Id of the column in the row that is selected.
-   */
-  selectedCellColumnId: PropTypes.string,
-
-  /**
-   * Column index of the column in that has focus.
-   */
-  tabStopColumnIndex: PropTypes.number,
 };
 
 const defaultProps = {
@@ -102,23 +91,21 @@ function Row(props) {
     rowHeaderIndex,
     onRowSelect,
     onCellSelect,
-    selectedCellColumnId,
-    tabStopColumnIndex,
   } = props;
 
   const theme = useContext(ThemeContext);
 
   const columnIndexOffSet = hasRowSelection ? 1 : 0;
 
-  const handleCellSelect = (rowIdColId, coordinates) => {
-    if (hasRowSelection) {
+  const handleCellSelect = useCallback((selectionDetails) => {
+    if (hasRowSelection || selectionDetails.isShiftPressed) {
       if (onRowSelect) {
-        onRowSelect(rowIdColId.rowId, rowIndex, coordinates);
+        onRowSelect(selectionDetails);
       }
     } else if (onCellSelect) {
-      onCellSelect(rowIdColId, coordinates);
+      onCellSelect(selectionDetails);
     }
-  };
+  }, [hasRowSelection, onCellSelect, onRowSelect]);
 
   const getCellData = (cellRowIndex, cellColumnIndex, cellData, rowId) => {
     const columnId = displayedColumns[cellColumnIndex].id;
@@ -131,8 +118,7 @@ function Row(props) {
         rowIndex={cellRowIndex}
         columnIndex={cellColumnIndex}
         key={`${rowId}_${columnId}`}
-        isTabStop={tabStopColumnIndex === cellColumnIndex}
-        isSelected={!hasRowSelection && selectedCellColumnId === columnId}
+        isSelected={!hasRowSelection && cellData.isSelected}
         isMasked={cellData.isMasked}
         isSelectable={cellData.isSelectable}
         isRowHeader={isRowHeader}
@@ -150,7 +136,6 @@ function Row(props) {
       columnId={displayedColumns[0].id}
       rowIndex={rowIndex}
       columnIndex={0}
-      isTabStop={tabStopColumnIndex === 0}
       isSelected={isSelected}
       ariaLabel={ariaLabel}
       onCellSelect={handleCellSelect}
@@ -159,7 +144,10 @@ function Row(props) {
 
   return (
     <tr
-      className={cx([isSelected ? 'row-selected' : 'worklist-data-grid-row', theme.className])}
+      className={cx('worklist-data-grid-row', {
+        selected: isSelected,
+        selectable: hasRowSelection,
+      }, theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ height }}
     >
@@ -174,4 +162,4 @@ function Row(props) {
 Row.propTypes = propTypes;
 Row.defaultProps = defaultProps;
 
-export default Row;
+export default React.memo(Row);

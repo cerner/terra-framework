@@ -56,8 +56,8 @@ exports[`Cell renders a pinned cell 1`] = `
     <th
       aria-selected={false}
       className="worklist-data-grid-cell pinned selectable"
-      onClick={[Function]}
       onKeyDown={[Function]}
+      onMouseDown={[Function]}
       role="rowheader"
       scope="row"
       style={
@@ -101,8 +101,8 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
   aria-label="Some Label Here"
   aria-selected={true}
   className="worklist-data-grid-cell masked"
-  onClick={[Function]}
   onKeyDown={[Function]}
+  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
@@ -146,8 +146,8 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
   aria-label="Some Label Here"
   aria-selected={false}
   className="worklist-data-grid-cell masked"
-  onClick={[Function]}
   onKeyDown={[Function]}
+  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
@@ -191,8 +191,8 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
   aria-label="Some Label Here"
   aria-selected={true}
   className="worklist-data-grid-cell selectable selected"
-  onClick={[Function]}
   onKeyDown={[Function]}
+  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
@@ -231,8 +231,8 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
 <td
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
-  onClick={[Function]}
   onKeyDown={[Function]}
+  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
@@ -271,8 +271,8 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
 <th
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
-  onClick={[Function]}
   onKeyDown={[Function]}
+  onMouseDown={[Function]}
   role="rowheader"
   scope="row"
   style={
@@ -313,8 +313,8 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
 <td
   aria-selected={false}
   className="worklist-data-grid-cell selectable blank"
-  onClick={[Function]}
   onKeyDown={[Function]}
+  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
@@ -357,8 +357,8 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
 <td
   aria-selected={false}
   className="worklist-data-grid-cell selectable"
-  onClick={[Function]}
   onKeyDown={[Function]}
+  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
