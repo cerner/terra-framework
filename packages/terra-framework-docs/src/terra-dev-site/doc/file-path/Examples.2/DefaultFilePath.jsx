@@ -1,10 +1,8 @@
 import React from 'react';
 import FilePath from 'terra-file-path';
 
-const DefaultFilePath = () => {
-  return (
-    <FilePath />
-  );
-};
+const DefaultFilePath = () => (
+  <FilePath />
+);
 
 export default DefaultFilePath;

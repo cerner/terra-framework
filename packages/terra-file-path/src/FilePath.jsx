@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
-import classNames from 'classnames/bind';
-import styles from './FilePath.module.scss';
+// import classNames from 'classnames/bind';
+// import styles from './FilePath.module.scss';
 
-const cx = classNames.bind(styles);
+// const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -16,13 +16,9 @@ const propTypes = {
 
 const defaultProps = {};
 
-function FilePath(props) {
-  const { } = props;
-
-  return (
-    <div></div>
-  );
-}
+const FilePath = () => (
+  <div>test</div>
+);
 
 FilePath.propTypes = propTypes;
 FilePath.defaultProps = defaultProps;

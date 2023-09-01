@@ -1,5 +1,3 @@
-const defaultSelector = '#default-terra-file-path';
-
 Terra.describeViewports('FilePath', ['medium', 'large'], () => {
   describe('placeholder', () => {
     beforeEach(() => {
@@ -7,7 +5,7 @@ Terra.describeViewports('FilePath', ['medium', 'large'], () => {
     });
 
     it('placeholder', () => {
-      Terra.validates.element('placeholder', { selector: defaultSelector });
+      Terra.validates.element('placeholder');
     });
   });
 });
