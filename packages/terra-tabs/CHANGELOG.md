@@ -2,8 +2,11 @@
 
 ## Unreleased
 
+## 7.5.0 - (August 31, 2023)
+
 * Added
   * Added support for programmatic activation of tabs.
+  * Removed additional focus border for tab.
 
 ## 7.4.0 - (August 10, 2023)
 
