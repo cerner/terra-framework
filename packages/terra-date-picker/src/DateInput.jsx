@@ -358,7 +358,6 @@ const DatePickerInput = (props) => {
       }
     }
 
-    SetInvalidDay(false);
     handleDateChange(event, inputValue, DateUtil.inputType.DAY);
   };
 
@@ -416,7 +415,6 @@ const DatePickerInput = (props) => {
       return;
     }
 
-    SetInvalidYear(false);
     handleDateChange(event, inputValue, DateUtil.inputType.YEAR);
   };
 
@@ -688,7 +686,6 @@ const DatePickerInput = (props) => {
     { 'initial-focus': dayInitialFocused },
   ]);
 
-  // TODO: Added aria-invalid to indicate wrong input
   const dateDayInput = (
     <Input
       {...additionalInputProps}
@@ -712,7 +709,6 @@ const DatePickerInput = (props) => {
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
       aria-describedby={dateFormatOrder === DateUtil.dateOrder.DMY ? `${nameLabelId} ${ariaDescriptionIds}` : ariaDescriptionIds}
       id={dayInputId}
-      aria-invalid={invalidDay}
     />
   );
 
@@ -744,7 +740,6 @@ const DatePickerInput = (props) => {
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
       aria-describedby={dateFormatOrder === DateUtil.dateOrder.MDY ? `${nameLabelId} ${ariaDescriptionIds}` : ariaDescriptionIds}
       id={monthInputId}
-      aria-invalid={invalidMonth}
     />
   );
 
@@ -776,7 +771,6 @@ const DatePickerInput = (props) => {
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
       aria-describedby={dateFormatOrder === DateUtil.dateOrder.YMD ? `${nameLabelId} ${ariaDescriptionIds}` : ariaDescriptionIds}
       id={yearInputId}
-      aria-invalid={invalidYear}
     />
   );
 
