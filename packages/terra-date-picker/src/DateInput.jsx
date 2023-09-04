@@ -166,16 +166,14 @@ const DatePickerInput = (props) => {
   const [monthInitialFocused, setMonthInitialFocused] = useState(false);
   const [yearInitialFocused, setYearInitialFocused] = useState(false);
   // TODO:  Added below states for invalid input message for SR
-  const [invalidDay, SetInvalidDay] = useState(false);
-  const [invalidMonth, SetInvalidMonth] = useState(false);
-  const [invalidYear, SetInvalidYear] = useState(false);
+  const [invalidInput, SetInvalidInput] = useState(false);
   const editOnkeyDown = useRef(false);
   const theme = React.useContext(ThemeContext);
   // variables to store ref's for day, month and year input
   let dayInputRef;
   let monthInputRef;
   let yearInputRef;
-
+  let visuallyHiddenComponent = null;
   const { onCalendarButtonClick, shouldShowPicker } = customProps;
   delete customProps.onCalendarButtonClick;
   delete customProps.shouldShowPicker;
@@ -274,6 +272,18 @@ const DatePickerInput = (props) => {
     }
   };
 
+  const handleInvalidInputChange = (val) => {
+    visuallyHiddenComponent.innerText = '';
+    SetInvalidInput(val);
+    if (val) {
+      visuallyHiddenComponent.innerText = 'Please enter a valid Date';
+    }
+  };
+
+  const setVisuallyHiddenComponent = (node) => {
+    visuallyHiddenComponent = node;
+  };
+
   /**
    * Sets the day, month and year based on input values, formats them
    * based on the date format variant, and passes the formatted date to onChange.
@@ -316,14 +326,14 @@ const DatePickerInput = (props) => {
         onChange(event, dateString);
       }
     }
-
     setDate(event, inputValue, type);
+    SetInvalidInput(false);
   };
 
   const handleDayChange = (event) => {
     let inputValue = event.target.value;
     if (!DateUtil.validDateInput(inputValue)) {
-      SetInvalidDay(true);
+      handleInvalidInputChange(true);
       return;
     }
 
@@ -332,7 +342,7 @@ const DatePickerInput = (props) => {
     // check the length of inputValue to make sure that it is less then 2.
     if (inputValue === date.day || inputValue.length > 2 || Number(inputValue) > 31 || inputValue === '00') {
       // TODO: Added below to set invalid day
-      SetInvalidDay(true);
+      handleInvalidInputChange(true);
       return;
     }
 
@@ -346,14 +356,13 @@ const DatePickerInput = (props) => {
       }
     }
 
-    SetInvalidDay(false);
     handleDateChange(event, inputValue, DateUtil.inputType.DAY);
   };
 
   const handleMonthChange = (event) => {
     let inputValue = event.target.value;
     if (!DateUtil.validDateInput(inputValue)) {
-      SetInvalidMonth(true);
+      handleInvalidInputChange(true);
       return;
     }
 
@@ -361,7 +370,7 @@ const DatePickerInput = (props) => {
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have to
     // check the length of inputValue to make sure that it is less then 2.
     if (inputValue === date.month || inputValue.length > 2 || Number(inputValue) > 12 || inputValue === '00') {
-      SetInvalidMonth(true);
+      handleInvalidInputChange(true);
       return;
     }
 
@@ -374,15 +383,13 @@ const DatePickerInput = (props) => {
         inputValue = `0${inputValue}`;
       }
     }
-
-    SetInvalidMonth(false);
     handleDateChange(event, inputValue, DateUtil.inputType.MONTH);
   };
 
   const handleYearChange = (event) => {
     const inputValue = event.target.value;
     if (!DateUtil.validDateInput(inputValue)) {
-      SetInvalidYear(true);
+      handleInvalidInputChange(true);
       return;
     }
 
@@ -390,23 +397,22 @@ const DatePickerInput = (props) => {
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have to
     // check the length of inputValue to make sure that it is less then 4.
     if (inputValue === date.year || inputValue.length > 4) {
-      SetInvalidYear(true);
+      handleInvalidInputChange(true);
       return;
     }
 
     // Ignore the 3rd entry if the first two digits are not 19, 20 or 21
     if (inputValue.length === 3 && (Number(inputValue) < 190 || Number(inputValue) > 210)) {
-      SetInvalidYear(true);
+      handleInvalidInputChange(true);
       return;
     }
 
     // Ignore the 4th entry if the year value is not between MIN_YEAR and MAX_YEAR
     if (inputValue.length === 4 && (Number(inputValue) < Number(DateUtil.MIN_YEAR) || Number(inputValue) > Number(DateUtil.MAX_YEAR))) {
-      SetInvalidYear(true);
+      handleInvalidInputChange(true);
       return;
     }
 
-    SetInvalidYear(false);
     handleDateChange(event, inputValue, DateUtil.inputType.YEAR);
   };
 
@@ -531,9 +537,7 @@ const DatePickerInput = (props) => {
 
     // set date to today
     if (event.key === 't' || event.key === 'T') {
-      SetInvalidDay(false);
-      SetInvalidMonth(false);
-      SetInvalidYear(false);
+      SetInvalidInput(false);
       inputDate = DateUtil.getCurrentDate();
       formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
       if (onChange) {
@@ -679,7 +683,6 @@ const DatePickerInput = (props) => {
     { 'initial-focus': dayInitialFocused },
   ]);
 
-  // TODO: Added aria-invalid to indicate wrong input
   const dateDayInput = (
     <Input
       {...additionalInputProps}
@@ -703,7 +706,6 @@ const DatePickerInput = (props) => {
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
       aria-describedby={ariaDescriptionIds}
       id={dayInputId}
-      aria-invalid={invalidDay}
     />
   );
 
@@ -735,7 +737,6 @@ const DatePickerInput = (props) => {
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
       aria-describedby={ariaDescriptionIds}
       id={monthInputId}
-      aria-invalid={invalidMonth}
     />
   );
 
@@ -767,7 +768,6 @@ const DatePickerInput = (props) => {
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
       aria-describedby={ariaDescriptionIds}
       id={yearInputId}
-      aria-invalid={invalidYear}
     />
   );
 
@@ -808,8 +808,12 @@ const DatePickerInput = (props) => {
             value={dateValue}
           />
           <VisuallyHiddenText text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}` : label} />
-          {/* TODO: Error indication using aria-live*/}
-          {/*<VisuallyHiddenText text={invalidDate ? 'Please enter a valid Date' : ''} aria-live="assertive" />*/}
+          <VisuallyHiddenText
+            refCallback={setVisuallyHiddenComponent}
+            aria-atomic="true"
+            aria-relevant="all"
+            aria-live={(invalidInput) ? 'assertive' : 'polite'}
+          />
           <DateInputLayout
             dateFormatOrder={dateFormatOrder}
             separator={dateSpacer}
