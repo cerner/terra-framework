@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Fixed
+  * Fixed scroll issues releated to pinned columns and fixed column header row.
 
 ## 0.5.0 - (August 31, 2023)
 
