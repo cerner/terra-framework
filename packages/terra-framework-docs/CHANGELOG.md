@@ -2,16 +2,35 @@
 
 ## Unreleased
 
+## 1.33.0 - (August 31, 2023)
+
+* Added
+  * Added example and tests for `terra-worklist-data-grid` to select rows via mouse and keyboard.
+  * Added test to `terra-worklist-data-grid` for sticky column header feature.
+  * Added tests for unselectable toggles in `terra-collapsible-menu-view`.
+
+* Changed
+  * Updated focusable cell example for `terra-worklist-data-grid` to allow text area to be editable.
+  * Added examples and tests for Add & Close functionality of tabs.
+  * Updated examples and tests for `terra-worklist-data-grid` to account for cell selection state being controlled by consumers.
+  * Updated programmatic activation test and examples for `terra-tabs`.
+  * Updated pinned column test for `terra-worklist-data-grid` to test the divider when the table height changes.
+  * Updated examples and tests for `terra-worklist-data-grid` to handle cell selection for pinned columns.
+  * Updated examples and tests for `terra-worklist-data-grid` to match the new signature for the `onRowSelect` callback prop as it now expects one array.
+  * Updated testing recommendations to use `jest.spyOn` instead of `jest.mock`.
+
 ## 1.32.0 - (August 10, 2023)
 
 * Updated
   * Updated terra-popup examples with inert attribute to demonstrate focus trap when using virtual cursor of Jaws for navigation within popup.
- 
+
 * Added
   * Added tests for `terra-worklist-data-grid` when using pinned columns.
 
 * Changed
   * Updated toggle examples for `terra-collapsible-menu-view` to include selectable toggles and toggles within a collapsed menu.
+  
+* Added
   * Updated row selection example for `terra-worklist-data-grid` to show ability to select the row selection column header.
 
 * Changed
@@ -24,6 +43,9 @@
 
 * Added
   * Added examples and tests for `terra-worklist-data-grid` to interact with cells containing focusable elements.
+
+* Changed
+  * Updated tests for `terra-worklist-data-grid` to verify focusable cell elements do not receive focus on tab key press.
 
 ## 1.30.0 - (August 2, 2023)
 

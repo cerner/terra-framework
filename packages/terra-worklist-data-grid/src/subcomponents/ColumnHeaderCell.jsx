@@ -11,7 +11,6 @@ import IconError from 'terra-icon/lib/icon/IconError';
 
 import ColumnResizeHandle from './ColumnResizeHandle';
 import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
-import WorklistDataGridUtils from '../utils/WorklistDataGridUtils';
 import ColumnContext from '../utils/ColumnContext';
 import styles from './ColumnHeaderCell.module.scss';
 
@@ -85,11 +84,6 @@ const propTypes = {
   columnIndex: PropTypes.number,
 
   /**
-   * Boolean value to indicate if the cell is the tab stop on the grid. The grid will have only one tab stop.
-   */
-  isTabStop: PropTypes.bool,
-
-  /**
    * Function that is called when a selectable header cell is selected. Parameters:
    * @param {string} rowId rowId
    * @param {string} columnId columnId
@@ -109,7 +103,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  isTabStop: false,
   hasError: false,
   isSelectable: true,
   isResizable: true,
@@ -133,7 +126,6 @@ const ColumnHeaderCell = (props) => {
     rowIndex,
     columnIndex,
     onResizeMouseDown,
-    isTabStop,
   } = props;
 
   const columnContext = useContext(ColumnContext);
@@ -164,11 +156,6 @@ const ColumnHeaderCell = (props) => {
         onColumnSelect(id, { row: rowIndex, col: columnIndex });
         event.stopPropagation();
         event.preventDefault(); // prevent the default scrolling
-        break;
-      case KeyCode.KEY_C:
-        if (event.ctrlKey || event.metaKey) {
-          WorklistDataGridUtils.writeToClipboard(event.target.textContent);
-        }
         break;
       default:
     }
@@ -205,7 +192,7 @@ const ColumnHeaderCell = (props) => {
       ref={(columnHeaderCellRef)}
       key={id}
       className={cx('column-header', theme.className, { selectable: isSelectable, pinned: columnIndex < columnContext.pinnedColumnOffsets.length })}
-      tabIndex={isTabStop ? 0 : -1}
+      tabIndex={-1}
       role="columnheader"
       scope="col"
       aria-sort={sortIndicator}
@@ -236,4 +223,4 @@ const ColumnHeaderCell = (props) => {
 
 ColumnHeaderCell.propTypes = propTypes;
 ColumnHeaderCell.defaultProps = defaultProps;
-export default injectIntl(ColumnHeaderCell);
+export default React.memo(injectIntl(ColumnHeaderCell));

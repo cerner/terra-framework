@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "description": "terra-framework",
   "engines": {
-    "node": "^10.0.0 || ^12.0.0 || ^14.0.0"
+    "node": "10 || 12 || 14",
+    "npm": "6 || 9"
   },
   "repository": {
     "type": "git",
@@ -103,6 +104,9 @@
     "@cerner/terra-functional-testing": "^4.0.0",
     "@cerner/terra-open-source-scripts": "^1.1.0",
     "@cerner/webpack-config-terra": "^3.0.1",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^10.0.4",
+    "@testing-library/user-event": "^12.6.0",
     "core-js": "^3.1.3",
     "danger": "^11.2.3",
     "enzyme": "^3.3.0",

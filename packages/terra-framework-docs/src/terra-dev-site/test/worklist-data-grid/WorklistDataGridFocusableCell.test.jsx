@@ -19,7 +19,7 @@ const WorklistDataGridFocusableCell = () => {
   // eslint-disable-next-line react/forbid-dom-props
   const inputCell = <input type="text" aria-label="Text Input" style={{ width: '100px', height: '25px', display: 'inline' }} />;
   const anchorCell = <a href="https://www.oracle.com/" aria-label="Visit Oracle">Visit Oracle</a>;
-  const textAreaCell = <textarea name="textArea" aria-label="Text Area" readOnly rows="1" cols="15" value="Text Area" />;
+  const textAreaCell = <textarea name="textArea" aria-label="Text Area" rows="1" cols="15" value="Text Area" />;
   const selectCell = (
     <select name="specialties" id="specialties" aria-label="Select Specialty">
       <option value="ambulatory">Ambulatory</option>
@@ -79,14 +79,19 @@ const WorklistDataGridFocusableCell = () => {
         }}
       />
       )}
-      <WorklistDataGrid
-        id="default-terra-worklist-data-grid-focusable-cell"
-        overflowColumns={cols}
-        defaultColumnWidth={170}
-        rows={rows}
-        rowHeaderIndex={rowHeaderIndex}
-        ariaLabel="Worklist Data Grid"
-      />
+      <button id="previous-focus-button" type="button" aria-label="Previous Element">Test Previous</button>
+      {/* eslint-disable-next-line react/forbid-dom-props */}
+      <div style={{ margin: '10px' }}>
+        <WorklistDataGrid
+          id="default-terra-worklist-data-grid-focusable-cell"
+          overflowColumns={cols}
+          defaultColumnWidth={170}
+          rows={rows}
+          rowHeaderIndex={rowHeaderIndex}
+          ariaLabel="Worklist Data Grid"
+        />
+      </div>
+      <button id="next-focus-button" type="button" aria-label="Next Element">Test Next</button>
     </>
   );
 };

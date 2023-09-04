@@ -5,6 +5,7 @@ import React from 'react';
 import { shallowWithIntl, mountWithIntl, renderWithIntl } from 'terra-enzyme-intl';
 import * as KeyCode from 'keycode-js';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
+import { v4 as uuidv4 } from 'uuid';
 import TimeInput from '../../lib/TimeInput';
 import TimeUtil from '../../lib/TimeUtil';
 
@@ -12,10 +13,17 @@ const mockEvent = {
   preventDefault: jest.fn(),
 };
 
-jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+let mockSpyUuid;
+beforeAll(() => {
+  mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockReturnValue('00000000-0000-0000-0000-000000000000');
+});
 
 beforeEach(() => {
   mockEvent.preventDefault.mockClear();
+});
+
+afterAll(() => {
+  mockSpyUuid.mockRestore();
 });
 
 it('should render a default time input', () => {

@@ -1,8 +1,14 @@
 {
   "Terra.tabs.more": "Más",
+  "Terra.tabs.hint.tabList": "Contiene {numberOfTabs} elementos",
+  "Terra.tabs.hint.hiddenTabs": "No se muestran {hiddenTabs} elementos.",
+  "Terra.tabs.hint.tabMenu": "{hiddenTabs} elementos están ocultos. Seleccionar para mostrar {hiddenTabs} elementos ocultos.",
+  "Terra.tabs.hint.removable":"El elemento se puede quitar mediante la tecla Supr o Retroceso.",
+  "Terra.tabs.hint.currentTabClosed":" Se quitó",
   "Terra.tabs.lift": "Ha seleccionado una ficha en la posición {startPosition}. Use las teclas de flecha para arrastrar la ficha a una nueva posición. No es posible moverla más allá de la primera o última posición. Presione la barra espaciadora para colocar la ficha o presione la tecla Esc para cancelar.",
   "Terra.tabs.drag": "Ha movido la ficha de la posición {startPosition} a la posición {endPosition}.",
   "Terra.tabs.cancelDrag": "Se canceló el movimiento. La ficha ha vuelto a su posición inicial {startPosition}.",
   "Terra.tabs.drop": "Ha soltado la ficha. Se ha movido de la posición {startPosition} a la posición {endPosition}.",
-  "Terra.tabs.focus": "Presione Entrar para activar una ficha, o presione la barra espaciadora para comenzar a arrastrar. Asegúrese de que su lector de pantalla esté en el modo de enfoque o el modo formularios."
+  "Terra.tabs.focus": "Presione Entrar para activar una ficha, o presione la barra espaciadora para comenzar a arrastrar. Asegúrese de que su lector de pantalla esté en el modo de enfoque o el modo formularios.",
+  "Terra.tabs.addbutton.focus": "Presione Entrar o la barra espaciadora para agregar una nueva ficha."
 }

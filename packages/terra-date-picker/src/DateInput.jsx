@@ -850,8 +850,11 @@ const DatePickerInput = (props) => {
         />
       </div>
       {!useExternalFormatMask && (
-        <div id={formatDescriptionId} className={cx('format-text')} aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}`}>
-          {`(${format})`}
+        <div id={formatDescriptionId} className={cx('format-text')}>
+          <VisuallyHiddenText text={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}`} />
+          <div aria-hidden="true">
+            {`(${format})`}
+          </div>
         </div>
       )}
     </div>
