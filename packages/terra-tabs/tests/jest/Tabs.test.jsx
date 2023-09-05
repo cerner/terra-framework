@@ -27,6 +27,26 @@ describe('Tabs', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render with add icon', () => {
+    const mockFunctionCall = jest.fn();
+    const defaultRender = mountWithIntl(
+      <Tabs id="application-id" onSelectAddButton={mockFunctionCall} ariaLabelAddTab="Add Tab">
+        <Tabs.Pane label="Default" key="default" className="customClass" />
+      </Tabs>,
+    );
+    expect(defaultRender).toMatchSnapshot();
+  });
+
+  it('should render with close icon', () => {
+    const mockCallBack = jest.fn();
+    const defaultRender = mountWithIntl(
+      <Tabs id="application-id" isclosable onTabClose={mockCallBack}>
+        <Tabs.Pane label="Default" key="default" className="customClass" />
+      </Tabs>,
+    );
+    expect(defaultRender).toMatchSnapshot();
+  });
+
   it('should render with content filled when indicated', () => {
     const defaultRender = <Tabs fill><Tabs.Pane label="Default" key="default" /></Tabs>;
     const wrapper = shallowWithIntl(defaultRender);
@@ -77,5 +97,24 @@ describe('Tabs', () => {
       </ThemeContextProvider>,
     );
     expect(tabs).toMatchSnapshot();
+  });
+
+  it('should render with add icon', () => {
+    const defaultRender = mountWithIntl(
+      // eslint-disable-next-line no-alert
+      <Tabs id="application-id" onSelectAddButton={() => alert('hi')} ariaLabelAddTab="Add Tab">
+        <Tabs.Pane label="Default" key="default" className="customClass" />
+      </Tabs>,
+    );
+    expect(defaultRender).toMatchSnapshot();
+  });
+
+  it('should not render add icon if onSelectAddButton is passed as null', () => {
+    const defaultRender = mountWithIntl(
+      <Tabs id="application-id">
+        <Tabs.Pane label="Default" key="default" className="customClass" />
+      </Tabs>,
+    );
+    expect(defaultRender).toMatchSnapshot();
   });
 });

@@ -166,6 +166,28 @@ Terra.describeViewports('Tabs - Drag and Drop', ['medium'], () => {
   });
 });
 
+Terra.describeViewports('Tabs - Add and Close', ['medium'], () => {
+  it('display tabs with add icon', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/add-close-tab');
+    Terra.validates.element('Tabs with Add', { selector: '#root' });
+  });
+
+  it('After Adding New Tabs', () => {
+    $('[data-terra-tab-add-btn="true"]').click();
+    Terra.validates.element('New Tab Added', { selector: '#root' });
+  });
+
+  it('display tabs with add and close icon', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/add-close-tab');
+    Terra.validates.element('Tabs with close', { selector: '#root' });
+  });
+
+  it('display closable tabs', () => {
+    browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'Delete']);
+    Terra.validates.element('Tab after close', { selector: '#root' });
+  });
+});
+
 Terra.describeViewports('Tabs - Drag and Drop', ['tiny'], () => {
   it('displays tab before drag and drop', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/controlled-tabs');

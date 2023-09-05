@@ -2,6 +2,9 @@
 
 :local {
   .clinical-lowlight-theme {
+    --terra-tabs-add-button-focus-box-shadow: none;
+    --terra-tabs-add-button-focus-outline: 2px dashed #000;
+    --terra-tabs-add-button-focus-outline-offset: -2px;
     --terra-tabs-workspace-tab-background-color: #1e2427;
     --terra-tabs-workspace-tab-background-image: none;
     --terra-tabs-workspace-tab-border: 1px solid #6f7477;

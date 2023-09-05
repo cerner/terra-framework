@@ -1,6 +1,7 @@
 :local {
   .orion-fusion-theme {
     // Common
+    --terra-tabs-remove-button-color: #006fc3;
     --terra-tabs-font-size: 1rem;
     --terra-tabs-font-weight: 400;
     --terra-tabs-focus-box-shadow: none;
@@ -97,6 +98,12 @@
 
     --terra-tabs-menu-icon-margin-right: 0.25rem;
     --terra-tabs-menu-icon-font-size: 1rem;
+
+    --terra-tabs-addbutton-focus-background-color: #fff;
+    --terra-tabs-addbutton-focus-background-image: none;
+    --terra-tabs-addButton-focus-color: #1c1f21;
+    --terra-tabs-addButton-focus-outline: 2px dashed #000;
+    --terra-tabs-addButton-focus-outline-offset: -2px;
 
     /* NOTE: This is being commented out until discussions have been resolved around if modular tabs should be removed.
 

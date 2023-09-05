@@ -5,6 +5,8 @@
 ## 7.5.0 - (August 31, 2023)
 
 * Added
+  * Added `isClosable` and `onTabClose` props to support close functionality in tabs.
+  * Added `onSelectAddButton` and `ariaLabelAddTab` props to support Add functionality in tabs.
   * Added support for programmatic activation of tabs.
   * Removed additional focus border for tab.
 

@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+import {
+  KEY_SPACE, KEY_RETURN,
+  KEY_DELETE, KEY_BACK_SPACE,
+} from 'keycode-js';
+import IconClose from 'terra-icon/lib/icon/IconClose';
+import { injectIntl } from 'react-intl';
 import { Draggable } from 'react-beautiful-dnd';
 import IconKnurling from 'terra-icon/lib/icon/IconKnurling';
-import { injectIntl } from 'react-intl';
 import { v4 as uuidv4 } from 'uuid';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import {
@@ -81,6 +85,23 @@ const propTypes = {
    */
   showIcon: PropTypes.bool,
   /**
+   * If enabled, this prop will show the add icon in the tab dropdown.
+   */
+  showAddButton: PropTypes.bool,
+  /**
+   * A callback function triggered when the tab is being closed. It takes three parameters.
+   */
+  onClosingTab: PropTypes.func,
+  /**
+   * Indicates if the tab can be closed.
+   */
+  isClosable: PropTypes.bool,
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
    * Indicates if the pane should be disabled.
    */
   isDisabled: PropTypes.bool,
@@ -88,17 +109,14 @@ const propTypes = {
    * Whether or not the tab is draggable.
    */
   isDraggable: PropTypes.bool,
-  /**
-   * @private
-   * intl object programmatically imported through injectIntl from react-intl.
-   */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
   isSelected: false,
   showIcon: false,
+  showAddButton: false,
   isDisabled: false,
+  isClosable: false,
   isDraggable: false,
 };
 
@@ -117,9 +135,12 @@ const HiddenTab = ({
   onChange,
   icon,
   showIcon,
+  showAddButton,
+  onClosingTab,
+  isClosable,
+  intl,
   isDisabled,
   isDraggable,
-  intl,
 }) => {
   const attributes = {};
   const theme = React.useContext(ThemeContext);
@@ -129,20 +150,46 @@ const HiddenTab = ({
     { 'is-disabled': isDisabled },
     theme.className,
   );
+  const tabDeleteLabel = intl.formatMessage({ id: 'Terra.tabs.hint.removable' });
 
   const handleOnSelect = (event) => {
     event.preventDefault();
     event.stopPropagation();
 
     enableFocusStyles(event);
-    onSelect(itemKey, metaData);
-    onChange(event, itemKey);
+    if (onSelect) {
+      onSelect(itemKey, metaData);
+    }
+    if (onChange) {
+      onChange(event, itemKey);
+    }
   };
 
+  function onCloseClick(event) {
+    if (!isDisabled) {
+      event.stopPropagation();
+      onClosingTab(itemKey, metaData, event);
+      const deleteTabLabel = `${intl.formatMessage({ id: 'Terra.tabs.hint.currentTabClosed' })}`;
+      const element = document.getElementById(tabIds[index - 1]);
+      const ariaLabel = label ? `${label} ${deleteTabLabel}` : '';
+      element.setAttribute('aria-label', ariaLabel);
+      element.focus();
+      element.addEventListener('blur', () => {
+        element.removeAttribute('aria-label');
+      });
+    }
+  }
   const onKeyDown = (event) => {
     if (event.nativeEvent.keyCode === KEY_RETURN || (event.nativeEvent.keyCode === KEY_SPACE && !isDraggable)) {
       handleOnSelect(event);
-      onChange(event, itemKey);
+      if (onChange) {
+        onChange(event, itemKey);
+      }
+    }
+    if (event.nativeEvent.keyCode === KEY_DELETE || event.nativeEvent.keyCode === KEY_BACK_SPACE) {
+      event.preventDefault();
+      event.stopPropagation();
+      onCloseClick(event);
     } else {
       const isDragging = !!document.querySelectorAll('[data-terra-menu-drag-focus="true"]').length && isDraggable;
       handleArrows(event, index, tabIds, isDragging);
@@ -167,7 +214,9 @@ const HiddenTab = ({
   attributes['aria-selected'] = isSelected;
 
   const onFocusResponse = intl.formatMessage({ id: 'Terra.tabs.focus' });
+  const addTabWithSuggestion = intl.formatMessage({ id: 'Terra.tabs.addbutton.focus' });
   const responseId = `terra-hidden-tab-pane-response=${uuidv4()}`;
+  const addbuttonresponseId = `terra-hidden-tab-pane-response=${uuidv4()}`;
 
   if (isDraggable) {
     return (
@@ -180,7 +229,7 @@ const HiddenTab = ({
             {...provided.dragHandleProps}
             id={id}
             aria-controls={associatedPanelId}
-            role="tab"
+            role={showAddButton ? 'button' : 'tab'}
             className={hiddenClassNames}
             aria-disabled={isDisabled}
             aria-describedby={responseId}
@@ -201,13 +250,25 @@ const HiddenTab = ({
       {...attributes}
       id={id}
       aria-controls={associatedPanelId}
-      role="tab"
+      role={showAddButton ? 'button' : 'tab'}
       className={hiddenClassNames}
       aria-disabled={isDisabled}
+      aria-describedby={addbuttonresponseId}
     >
+      <VisuallyHiddenText aria-hidden id={addbuttonresponseId} text={addTabWithSuggestion} />
       <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>
-      {showIcon && <div>{icon}</div>}
+      {showIcon && icon}
       <div className={cx('label', { 'with-icon': showIcon })}>{label}</div>
+      {isClosable && (
+      <button
+        className={cx('tabs-remove-button')}
+        type="button"
+        aria-label={tabDeleteLabel}
+        onClick={onCloseClick}
+      >
+        <IconClose />
+      </button>
+      )}
     </div>
   );
 };

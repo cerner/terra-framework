@@ -387,11 +387,23 @@ exports[`correctly applies the theme context className 1`] = `
           </Button>
         </div>
         <div
-          aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
           className="format-text"
           id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         >
-          (Terra.datePicker.dateFormat)
+          <VisuallyHiddenText
+            text="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
+          >
+            <span
+              className="visually-hidden-text"
+            >
+              Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+            </span>
+          </VisuallyHiddenText>
+          <div
+            aria-hidden="true"
+          >
+            (Terra.datePicker.dateFormat)
+          </div>
         </div>
       </div>
     </DatePickerInput>
@@ -839,11 +851,23 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       </Button>
     </div>
     <div
-      aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
       className="format-text"
       id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
     >
-      (Terra.datePicker.dateFormat)
+      <VisuallyHiddenText
+        text="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
+      >
+        <span
+          className="visually-hidden-text"
+        >
+          Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+        </span>
+      </VisuallyHiddenText>
+      <div
+        aria-hidden="true"
+      >
+        (Terra.datePicker.dateFormat)
+      </div>
     </div>
   </div>
 </DatePickerInput>
@@ -951,11 +975,19 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
     </button>
   </div>
   <div
-    aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
     class="format-text"
     id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
   >
-    (Terra.datePicker.dateFormat)
+    <span
+      class="visually-hidden-text"
+    >
+      Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+    </span>
+    <div
+      aria-hidden="true"
+    >
+      (Terra.datePicker.dateFormat)
+    </div>
   </div>
 </div>
 `;
@@ -1062,11 +1094,19 @@ exports[`should render a date input with isInvalid prop 1`] = `
     </button>
   </div>
   <div
-    aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
     class="format-text"
     id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
   >
-    (Terra.datePicker.dateFormat)
+    <span
+      class="visually-hidden-text"
+    >
+      Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+    </span>
+    <div
+      aria-hidden="true"
+    >
+      (Terra.datePicker.dateFormat)
+    </div>
   </div>
 </div>
 `;
@@ -1173,11 +1213,19 @@ exports[`should render a default date input 1`] = `
     </button>
   </div>
   <div
-    aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
     class="format-text"
     id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
   >
-    (Terra.datePicker.dateFormat)
+    <span
+      class="visually-hidden-text"
+    >
+      Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+    </span>
+    <div
+      aria-hidden="true"
+    >
+      (Terra.datePicker.dateFormat)
+    </div>
   </div>
 </div>
 `;
@@ -1649,11 +1697,23 @@ exports[`should render a default date input with all props 1`] = `
       </Button>
     </div>
     <div
-      aria-label="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
       className="format-text"
       id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
     >
-      (Terra.datePicker.dateFormat)
+      <VisuallyHiddenText
+        text="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
+      >
+        <span
+          className="visually-hidden-text"
+        >
+          Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+        </span>
+      </VisuallyHiddenText>
+      <div
+        aria-hidden="true"
+      >
+        (Terra.datePicker.dateFormat)
+      </div>
     </div>
   </div>
 </DatePickerInput>
