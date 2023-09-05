@@ -26,6 +26,21 @@ it('should render the embedded content consumer with custom class names', () => 
   expect(wrapper).toMatchSnapshot();
 });
 
+it('should render the embedded content consumer with `srcdoc` option', () => {
+  const frameOptions = { iframeAttrs: { title: 'inline html content', width: '100%', height: '100px' } };
+  const embeddedContentConsumer = (
+    <div>
+      <EmbeddedContentConsumer
+        srcdoc="<p><b>Inline HTML Content</b></p><p>This is an inline html content that can be used to render the content into the frame.</p>"
+        options={frameOptions}
+      />
+    </div>
+  );
+
+  const wrapper = shallow(embeddedContentConsumer);
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('should validate the inputs', () => {
   const src = 'https://www.google.com/';
   let frame;

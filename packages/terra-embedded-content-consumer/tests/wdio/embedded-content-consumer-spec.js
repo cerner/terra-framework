@@ -79,4 +79,13 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
       expect($('#Authorized').isExisting());
     });
   });
+
+  describe('consumer with srcdoc prop', () => {
+    it('renders content inside of an iframe using content sets in srcdoc', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/embedded-content-consumer/consumers/basic-consumer-with-srcdoc');
+      $('iframe[id="iframe-with-srcdoc"]').waitForDisplayed();
+
+      Terra.validates.element('consumer with srcdoc');
+    });
+  });
 });

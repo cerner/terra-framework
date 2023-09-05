@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `srcdoc` prop to allow inline html content to render inside the iframe.
+
 ## 3.37.0 - (July 31, 2023)
 
 * Changed
