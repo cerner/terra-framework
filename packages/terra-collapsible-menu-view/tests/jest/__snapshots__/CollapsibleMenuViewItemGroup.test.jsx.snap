@@ -236,6 +236,7 @@ exports[`CollapsibleMenuViewItemGroup should merge custom props 1`] = `
   }
   isBlock={false}
   isMultiSelect={false}
+  onChange={[Function]}
   selectedKeys={Array []}
 >
   <CollapsibleMenuViewItem
@@ -287,6 +288,7 @@ exports[`CollapsibleMenuViewItemGroup should render a default component 1`] = `
   }
   isBlock={false}
   isMultiSelect={false}
+  onChange={[Function]}
   selectedKeys={Array []}
 >
   <CollapsibleMenuViewItem
@@ -338,6 +340,7 @@ exports[`CollapsibleMenuViewItemGroup should render a selectable button group 1`
   }
   isBlock={false}
   isMultiSelect={false}
+  onChange={[Function]}
   selectedKeys={
     Array [
       "key1",
