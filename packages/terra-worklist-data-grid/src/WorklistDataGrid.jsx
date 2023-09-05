@@ -336,28 +336,30 @@ function WorklistDataGrid(props) {
 
     if (previousSelectedRows.length > 0 && selectedRows.current.length === 0) {
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-unselected' }));
-    }
-    if (selectedRows.current.length === rows.length) {
+    } else if (selectedRows.current.length === rows.length) {
       setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-selected' }));
-    }
+    } else {
+      const rowSelectionsAdded = selectedRows.current.filter(row => !previousSelectedRows.includes(row));
+      const rowSelectionsRemoved = previousSelectedRows.filter(row => !selectedRows.current.includes(row));
+      let selectionUpdateAriaMessage = '';
 
-    const rowSelectionsAdded = selectedRows.current.filter(row => !previousSelectedRows.includes(row));
-    const rowSelectionsRemoved = previousSelectedRows.filter(row => !selectedRows.current.includes(row));
+      if (rowSelectionsAdded.length === 1) {
+        const newRowIndex = rows.findIndex(row => row.id === rowSelectionsAdded[0]);
+        const selectedRowLabel = rows[newRowIndex].ariaLabel || newRowIndex + 1;
+        selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-template' }, { row: selectedRowLabel });
+      } else if (rowSelectionsAdded.length > 1) {
+        selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.worklist-data-grid.multiple-rows-selected' }, { rowCount: rowSelectionsAdded.length });
+      }
 
-    if (rowSelectionsAdded.length === 1) {
-      const newRowIndex = rows.findIndex(row => row.id === rowSelectionsAdded[0]);
-      const selectedRowLabel = rows[newRowIndex].ariaLabel || newRowIndex + 1;
-      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-template' }, { row: selectedRowLabel }));
-    } else if (rowSelectionsAdded.length > 1) {
-      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.multiple-rows-selected' }, { rowCount: rowSelectionsAdded.length }));
-    }
+      if (rowSelectionsRemoved.length === 1) {
+        const removedRowIndex = rows.findIndex(row => row.id === rowSelectionsRemoved[0]);
+        const unselectedRowLabel = rows[removedRowIndex].ariaLabel || removedRowIndex + 1;
+        selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-cleared-template' }, { row: unselectedRowLabel });
+      } else if (rowSelectionsRemoved.length > 1) {
+        selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.worklist-data-grid.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
+      }
 
-    if (rowSelectionsRemoved.length === 1) {
-      const removedRowIndex = rows.findIndex(row => row.id === rowSelectionsRemoved[0]);
-      const unselectedRowLabel = rows[removedRowIndex].ariaLabel || removedRowIndex + 1;
-      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-cleared-template' }, { row: unselectedRowLabel }));
-    } else if (rowSelectionsRemoved.length > 1) {
-      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length }));
+      setAriaLiveMessage(selectionUpdateAriaMessage);
     }
   }, [intl, rows]);
 
