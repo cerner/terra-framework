@@ -439,8 +439,6 @@ function WorklistDataGrid(props) {
   }, [intl, onRowSelect, rows]);
 
   const handleMoveCellFocus = (fromCell, toCell) => {
-    setFocusedRowCol(toCell.row, toCell.col, true);
-
     // Obtain coordinate rectangles for grid container, column header, and new cell selection
     const gridContainerRect = gridContainerRef.current.getBoundingClientRect();
     const columnHeaderRect = grid.current.rows[0].cells[toCell.col].getBoundingClientRect();
@@ -453,8 +451,10 @@ function WorklistDataGrid(props) {
       // Calculate horizontal scroll offset for left boundary
       let scrollOffsetX = 0;
       if (pinnedColumnOffsets.length > 0) {
-        const lastPinnedColumnRect = grid.current.rows[toCell.row].cells[pinnedColumnOffsets.length - 1].getBoundingClientRect();
-        scrollOffsetX = nextCellRect.left - lastPinnedColumnRect.right;
+        if (toCell.col > pinnedColumnOffsets.length - 1) {
+          const lastPinnedColumnRect = grid.current.rows[toCell.row].cells[pinnedColumnOffsets.length - 1].getBoundingClientRect();
+          scrollOffsetX = nextCellRect.left - lastPinnedColumnRect.right;
+        }
       } else {
         scrollOffsetX = nextCellRect.left - gridContainerRect.left;
       }
@@ -469,6 +469,8 @@ function WorklistDataGrid(props) {
     if (scrollOffsetY < 0) {
       gridContainerRef.current.scrollBy(0, scrollOffsetY);
     }
+
+    setFocusedRowCol(toCell.row, toCell.col, true);
   };
 
   const handleColumnSelect = useCallback((columnId, cellCoordinates) => {
