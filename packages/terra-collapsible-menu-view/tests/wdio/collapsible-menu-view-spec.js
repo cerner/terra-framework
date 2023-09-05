@@ -86,6 +86,20 @@ Terra.describeViewports('Unselectable Toggle', ['tiny', 'small', 'medium', 'huge
   });
 });
 
+Terra.describeViewports('Multi Select Menu Item', ['tiny', 'small', 'medium'], () => {
+  it('Button-Group-Multi-Select', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/collapsible-menu-view-start-alignment');
+    $('[data-collapsible-menu-toggle]').click();
+    Terra.validates.element('multi select menuitem-selected', { selector: '#root' });
+  });
+});
+Terra.describeViewports('Multi Select Button Group', ['huge', 'large', 'enormous'], () => {
+  it('Button-Group-Multi-Select', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/collapsible-menu-view-start-alignment');
+    Terra.validates.element('multi select button-selected', { selector: '#root' });
+  });
+});
+
 // Only test viewports that have collapsed menu items
 Terra.describeViewports('Start Aligned Hidden Open', ['tiny', 'small', 'medium', 'large'], () => {
   it('should display start aligned with menu open', () => {

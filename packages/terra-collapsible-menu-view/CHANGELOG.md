@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Added support for multi select in item group
+
 ## 6.78.0 - (August 31, 2023)
 
 * Added
@@ -75,7 +78,7 @@
 * Added
   * Added `isStartAligned` prop
   * Added new Jest test and snapshots
-  
+
 ## 6.65.0 - (March 29, 2023)
 
 * Changed

@@ -19,7 +19,7 @@ class CollapsibleMenuViewStartAligned extends React.Component {
       toggle1Selection: false,
       toggle2Selection: false,
       toggle3Selection: false,
-      displayType: 'tableView',
+      displayType: ['tableView'],
     };
   }
 
@@ -86,14 +86,15 @@ class CollapsibleMenuViewStartAligned extends React.Component {
           ]}
         />
         <CollapsibleMenuView.Divider key="Divider2" />
-        <CollapsibleMenuView.ItemGroup key="ViewTypeSelection" selectedKeys={[this.state.displayType]} onChange={this.handleDisplayTypeChange}>
+        <CollapsibleMenuView.ItemGroup key="ViewTypeSelection" isMultiSelect selectedKeys={this.state.displayType} onChange={this.handleDisplayTypeChange}>
           <CollapsibleMenuView.Item
             icon={<IconTable />}
             text="Table View"
             key="tableView"
             isIconOnly
             shouldCloseOnClick={false}
-            isSelected={this.state.displayType === 'tableView'}
+            isSelected={(this.state.displayType).includes('tableView')}
+            isMultiSelect
           />
           <CollapsibleMenuView.Item
             icon={<IconFlowsheet />}
@@ -101,7 +102,8 @@ class CollapsibleMenuViewStartAligned extends React.Component {
             key="expandedView"
             isIconOnly
             shouldCloseOnClick={false}
-            isSelected={this.state.displayType === 'expandedView'}
+            isSelected={(this.state.displayType).includes('expandedView')}
+            isMultiSelect
           />
           <CollapsibleMenuView.Item
             icon={<IconVisualization />}
@@ -109,8 +111,9 @@ class CollapsibleMenuViewStartAligned extends React.Component {
             key="trendingView"
             isIconOnly
             shouldCloseOnClick={false}
-            isSelected={this.state.displayType === 'trendingView'}
+            isSelected={(this.state.displayType).includes('trendingView')}
             isDisabled
+            isMultiSelect
           />
         </CollapsibleMenuView.ItemGroup>
         <CollapsibleMenuView.Divider key="Divider3" />

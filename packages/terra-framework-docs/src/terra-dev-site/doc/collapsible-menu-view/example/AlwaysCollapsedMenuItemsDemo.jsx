@@ -13,7 +13,7 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
     this.state = {
       toggle1Selection: false,
       toggle2Selection: false,
-      displayType: 'tableView',
+      displayType: ['tableView'],
     };
   }
 
@@ -54,14 +54,14 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
         <CollapsibleMenuView.Item text="Collapsible Button 1" key="button1" />
         <CollapsibleMenuView.Item text="Collapsible Button 2" key="button2" />
         <CollapsibleMenuView.Divider key="divider1" />
-        <CollapsibleMenuView.ItemGroup key="ViewTypeSelection" selectedKeys={[this.state.displayType]} onChange={this.handleDisplayTypeChange}>
+        <CollapsibleMenuView.ItemGroup key="ViewTypeSelection" selectedKeys={this.state.displayType} onChange={this.handleDisplayTypeChange}>
           <CollapsibleMenuView.Item
             icon={<IconTable />}
             text="Table View"
             key="tableView"
             isIconOnly
             shouldCloseOnClick={false}
-            isSelected={this.state.displayType === 'tableView'}
+            isSelected={(this.state.displayType).includes('tableView')}
           />
           <CollapsibleMenuView.Item
             icon={<IconFlowsheet />}
@@ -69,7 +69,7 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
             key="expandedView"
             isIconOnly
             shouldCloseOnClick={false}
-            isSelected={this.state.displayType === 'expandedView'}
+            isSelected={(this.state.displayType).includes('expandedView')}
           />
           <CollapsibleMenuView.Item
             icon={<IconVisualization />}
@@ -77,7 +77,8 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
             key="trendingView"
             isIconOnly
             shouldCloseOnClick={false}
-            isSelected={this.state.displayType === 'trendingView'}
+            isSelected={(this.state.displayType).includes('trendingView')}
+            isDisabled
           />
         </CollapsibleMenuView.ItemGroup>
       </CollapsibleMenuView>

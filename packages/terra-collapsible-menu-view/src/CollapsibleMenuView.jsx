@@ -9,6 +9,7 @@ import CollapsibleMenuViewItem from './CollapsibleMenuViewItem';
 import CollapsibleMenuViewItemGroup from './CollapsibleMenuViewItemGroup';
 import CollapsibleMenuViewToggle from './CollapsibleMenuViewToggle';
 import CollapsibleMenuViewDivider from './CollapsibleMenuViewDivider';
+import CollapsibleMenuViewUtils from './CollapsibleMenuViewUtils';
 import styles from './CollapsibleMenuView.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -200,6 +201,7 @@ CollapsibleMenuView.Item = CollapsibleMenuViewItem;
 CollapsibleMenuView.ItemGroup = CollapsibleMenuViewItemGroup;
 CollapsibleMenuView.Toggle = CollapsibleMenuViewToggle;
 CollapsibleMenuView.Divider = CollapsibleMenuViewDivider;
+CollapsibleMenuView.Utils = CollapsibleMenuViewUtils;
 
 CollapsibleMenuView.propTypes = propTypes;
 CollapsibleMenuView.contextType = ThemeContext;
