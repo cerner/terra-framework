@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import WorklistDataGrid from 'terra-worklist-data-grid';
 import gridDataJSON from './gridDataWithRowSelection.json';
 
 const WorklistDataGridWithRowSelection = () => {
   const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
+  const [rowData, setRowData] = useState(rows);
   const [selectedRows, setSelectedRows] = useState([]);
   const [hasSelectableRows, setHasSelectableRows] = useState(true);
 
@@ -38,20 +39,25 @@ const WorklistDataGridWithRowSelection = () => {
     clearRowSelection();
   };
 
-  const onRowSelect = (rowsToSelectAndUnSelect) => {
-    rowsToSelectAndUnSelect.forEach((changedRow) => {
-      const dataRowToUpdate = rows.find(row => row.id === changedRow.id);
+  const onRowSelect = useCallback((rowsToSelectAndUnSelect) => {
+    // Remove current selections
+    const newRowData = [...rowData];
+
+    rowsToSelectAndUnSelect.forEach((updatedRow) => {
+      const dataRowToUpdate = newRowData.find(row => row.id === updatedRow.id);
       if (dataRowToUpdate) {
-        dataRowToUpdate.isSelected = changedRow.selected;
+        dataRowToUpdate.isSelected = updatedRow.selected;
       }
     });
-  };
+
+    setRowData(newRowData);
+  }, [rowData]);
 
   return (
     <WorklistDataGrid
       id="default-terra-worklist-data-grid"
       overflowColumns={cols}
-      rows={[...rows]}
+      rows={rowData}
       rowHeaderIndex={rowHeaderIndex}
       ariaLabel="Worklist Data Grid"
       hasSelectableRows={hasSelectableRows}

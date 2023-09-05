@@ -178,6 +178,7 @@ const RowSelection = () => {
   const rowSelectionModeRef = useRef();
   const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
+  const [rowData, setRowData] = useState(rows);
   const [selectedRows, setSelectedRows] = useState([]);
   const [hasSelectableRows, setHasSelectableRows] = useState(false);
 
@@ -227,13 +228,18 @@ const RowSelection = () => {
   }, []);
 
   const onRowSelect = useCallback((rowsToSelectAndUnSelect) => {
-    rowsToSelectAndUnSelect.forEach((changedRow) => {
-      const dataRowToUpdate = rows.find(row => row.id === changedRow.id);
+    // Remove current selections
+    const newRowData = [...rowData];
+
+    rowsToSelectAndUnSelect.forEach((updatedRow) => {
+      const dataRowToUpdate = newRowData.find(row => row.id === updatedRow.id);
       if (dataRowToUpdate) {
-        dataRowToUpdate.isSelected = changedRow.selected;
+        dataRowToUpdate.isSelected = updatedRow.selected;
       }
     });
-  }, [rows]);
+
+    setRowData(newRowData);
+  }, [rowData]);
 
   const enableRowSelection = useCallback(() => {
     if (!rowSelectionModeRef.current.checked) {
@@ -256,7 +262,7 @@ const RowSelection = () => {
       <WorklistDataGrid
         id="default-terra-worklist-data-grid"
         overflowColumns={cols}
-        rows={[...rows]}
+        rows={rowData}
         rowHeaderIndex={rowHeaderIndex}
         columnWidth="180px"
         ariaLabel="Worklist Data Grid"
