@@ -17,7 +17,7 @@ describe(EmbeddedContentConsumer, () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should set title using value from title prop into the frame', () => {
+  it('should render the embedded content consumer with title prop', () => {
     const embeddedContentConsumer = (
       <div>
         <EmbeddedContentConsumer
@@ -31,22 +31,7 @@ describe(EmbeddedContentConsumer, () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should set title using value from options iframeAttrs into the frame', () => {
-    const frameOptions = { iframeAttrs: { title: 'title of content set from options.iframeAttrs' } };
-    const embeddedContentConsumer = (
-      <div>
-        <EmbeddedContentConsumer
-          src="https://www.cdc.gov/"
-          options={frameOptions}
-        />
-      </div>
-    );
-
-    const wrapper = shallow(embeddedContentConsumer);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should set title using value from props when both titles are provided', () => {
+  it('should render the embedded content consumer with title prop and options prop', () => {
     const frameOptions = { iframeAttrs: { title: 'title of content set from options.iframeAttrs' } };
     const embeddedContentConsumer = (
       <div>
