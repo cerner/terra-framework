@@ -161,19 +161,52 @@ Terra.describeViewports('Tabs - Drag and Drop', ['medium'], () => {
     Terra.validates.element('Before Drag and Drop', { selector: '#root' });
   });
   it('should perform drag and drop operation', () => {
-    browser.keys(['Tab', 'Space', 'ArrowRight', 'Space']);
+    browser.keys(['Tab', 'Tab', 'Space', 'ArrowRight', 'Space']);
     Terra.validates.element('After Drag and Drop', { selector: '#root' });
+  });
+});
+
+Terra.describeViewports('Tabs - Add and Close', ['medium'], () => {
+  it('display tabs with add icon', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/add-close-tab');
+    Terra.validates.element('Tabs with Add', { selector: '#root' });
+  });
+
+  it('After Adding New Tabs', () => {
+    $('[data-terra-tab-add-btn="true"]').click();
+    Terra.validates.element('New Tab Added', { selector: '#root' });
+  });
+
+  it('display tabs with add and close icon', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/add-close-tab');
+    Terra.validates.element('Tabs with close', { selector: '#root' });
+  });
+
+  it('display closable tabs', () => {
+    browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'Delete']);
+    Terra.validates.element('Tab after close', { selector: '#root' });
   });
 });
 
 Terra.describeViewports('Tabs - Drag and Drop', ['tiny'], () => {
   it('displays tab before drag and drop', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/controlled-tabs');
-    browser.keys(['Tab', 'ArrowRight', 'ArrowRight']);
+    browser.keys(['Tab', 'Tab', 'ArrowRight', 'ArrowRight', 'ArrowRight']);
     Terra.validates.element('Before Drag and Drop', { selector: '#root' });
   });
   it('should perform drag and drop operation', () => {
     browser.keys(['Space', 'ArrowDown', 'Space']);
     Terra.validates.element('After Drag and Drop', { selector: '#root' });
+  });
+});
+
+Terra.describeViewports('Tabs - Programmatic Activation', ['medium'], () => {
+  it('displays tab before programmatic activation', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/controlled-tabs');
+    Terra.validates.element('Before Programmatic Activation', { selector: '#root' });
+  });
+  it('should perform drag and drop operation', () => {
+    $('#activate-tab').click();
+    Terra.validates.element('After Programmatic Activation', { selector: '#root' });
   });
 });

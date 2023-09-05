@@ -1,5 +1,10 @@
 {
   "Terra.tabs.more": "Plus",
+  "Terra.tabs.hint.tabList": "Contient {numberOfTabs} éléments",
+  "Terra.tabs.hint.hiddenTabs": "{hiddenTabs} éléments ne sont pas affichés",
+  "Terra.tabs.hint.tabMenu": "{hiddenTabs} éléments sont masqués. Sélectionnez pour afficher {hiddenTabs} éléments masqués",
+  "Terra.tabs.hint.removable":"Vous pouvez supprimer cet élément avec la touche Supprimer ou Retour arrière",
+  "Terra.tabs.hint.currentTabClosed":" supprimé",
   "Terra.tabs.lift": "Vous avez soulevé un onglet en position {startPosition}. Utilisez les touches fléchées pour faire glisser l'onglet vers une nouvelle position. Vous ne pouvez pas le déplacer au-delà de la première ou de la dernière position. Appuyez sur la barre d'espace pour déposer l'onglet ou sur la touche Échappement pour annuler.",
   "Terra.tabs.drag": "Vous avez déplacé l'onglet de la position {startPosition} à {endPosition}",
   "Terra.tabs.cancelDrag": "Déplacement annulé. L'onglet est revenu à sa position initiale ({startPosition})",

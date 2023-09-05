@@ -2,6 +2,25 @@
 
 ## Unreleased
 
+## 0.5.0 - (August 31, 2023)
+
+* Added
+  * Added box shadow for pinned columns in fusion theme.
+  * Added ability to use spacebar on masked and non-selectable cells to select rows.
+  * Added ability to treat the `terra-worklist-data-grid` component as a single tabstop.
+  * Added a sticky column header feature to `terra-worklist-data-grid`
+
+* Changed
+  * Removed roving tabIndex and resolved focus management issues within cells.
+  * Updated the functionality for selecting a range of rows. Updated `onRowSelect` prop to take only one array parameter.
+
+* Fixed
+  * Reduced number of unnecessary rerenders in the `terra-worklist-data-grid` component.
+  * Fixed cells not honoring the value of props passed by consumers.
+  * Fixed pinned column separator not adjusting size when the table height changes.
+  * Fixed pinned column cells not being selectable.
+  * Fixed pinned column border issues during scrolling.
+
 ## 0.4.0 - (August 10, 2023)
 
 * Breaking Changes
@@ -13,11 +32,10 @@
   * Added support for pinned columns.
   * Added ability to dive into cells with focusable elements.
   * Added ability to select the row selection column header to allow sorting by consumers.
-  * Added ability to treat the `terra-worklist-data-grid` component as a single tabstop.
- 
+  * Added ability to select rows via mouse and keyboard.
+
 * Fixed
   * Text alignment of the row header column.
-  * Removed roving tabIndex and resolved focus management issues within cells.
 
 ## 0.3.0 - (July 19, 2023)
 

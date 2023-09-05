@@ -72,10 +72,7 @@ exports[`InfiniteList should render with initial children 1`] = `
   paddingStyle="none"
   role="none"
 >
-  <ListItem
-    hasChevron={false}
-    isSelectable={false}
-    isSelected={false}
+  <InjectIntl(ListItem)
     key="item-1"
   >
     <div
@@ -83,11 +80,8 @@ exports[`InfiniteList should render with initial children 1`] = `
     >
       item 1
     </div>
-  </ListItem>
-  <ListItem
-    hasChevron={false}
-    isSelectable={false}
-    isSelected={false}
+  </InjectIntl(ListItem)>
+  <InjectIntl(ListItem)
     key="item-2"
   >
     <div
@@ -95,11 +89,8 @@ exports[`InfiniteList should render with initial children 1`] = `
     >
       item 2
     </div>
-  </ListItem>
-  <ListItem
-    hasChevron={false}
-    isSelectable={false}
-    isSelected={false}
+  </InjectIntl(ListItem)>
+  <InjectIntl(ListItem)
     key="item-3"
   >
     <div
@@ -107,11 +98,8 @@ exports[`InfiniteList should render with initial children 1`] = `
     >
       item 3
     </div>
-  </ListItem>
-  <ListItem
-    hasChevron={false}
-    isSelectable={false}
-    isSelected={false}
+  </InjectIntl(ListItem)>
+  <InjectIntl(ListItem)
     key="item-4"
   >
     <div
@@ -119,7 +107,7 @@ exports[`InfiniteList should render with initial children 1`] = `
     >
       item 4
     </div>
-  </ListItem>
+  </InjectIntl(ListItem)>
 </InfiniteList>
 `;
 
@@ -159,10 +147,8 @@ exports[`InfiniteList should render with list props 1`] = `
   progressiveLoadingMessage="Loading allergies..."
   role="listbox"
 >
-  <ListItem
-    hasChevron={false}
+  <InjectIntl(ListItem)
     isSelectable={true}
-    isSelected={false}
     key="item-1"
   >
     <div
@@ -170,9 +156,8 @@ exports[`InfiniteList should render with list props 1`] = `
     >
       item 1
     </div>
-  </ListItem>
-  <ListItem
-    hasChevron={false}
+  </InjectIntl(ListItem)>
+  <InjectIntl(ListItem)
     isSelectable={true}
     isSelected={true}
     key="item-2"
@@ -182,11 +167,9 @@ exports[`InfiniteList should render with list props 1`] = `
     >
       item 2
     </div>
-  </ListItem>
-  <ListItem
-    hasChevron={false}
+  </InjectIntl(ListItem)>
+  <InjectIntl(ListItem)
     isSelectable={true}
-    isSelected={false}
     key="item-3"
   >
     <div
@@ -194,11 +177,9 @@ exports[`InfiniteList should render with list props 1`] = `
     >
       item 3
     </div>
-  </ListItem>
-  <ListItem
-    hasChevron={false}
+  </InjectIntl(ListItem)>
+  <InjectIntl(ListItem)
     isSelectable={true}
-    isSelected={false}
     key="item-4"
   >
     <div
@@ -206,7 +187,7 @@ exports[`InfiniteList should render with list props 1`] = `
     >
       item 4
     </div>
-  </ListItem>
+  </InjectIntl(ListItem)>
 </InfiniteList>
 `;
 
@@ -245,11 +226,9 @@ exports[`InfiniteList should render with list with style props 1`] = `
   paddingStyle="standard"
   role="listbox"
 >
-  <ListItem
+  <InjectIntl(ListItem)
     className="item1"
-    hasChevron={false}
     isSelectable={true}
-    isSelected={false}
     key="item-1"
   >
     <div
@@ -257,10 +236,9 @@ exports[`InfiniteList should render with list with style props 1`] = `
     >
       item 1
     </div>
-  </ListItem>
-  <ListItem
+  </InjectIntl(ListItem)>
+  <InjectIntl(ListItem)
     className="item2"
-    hasChevron={false}
     isSelectable={true}
     isSelected={true}
     key="item-2"
@@ -270,12 +248,10 @@ exports[`InfiniteList should render with list with style props 1`] = `
     >
       item 2
     </div>
-  </ListItem>
-  <ListItem
+  </InjectIntl(ListItem)>
+  <InjectIntl(ListItem)
     className="item3"
-    hasChevron={false}
     isSelectable={true}
-    isSelected={false}
     key="item-3"
   >
     <div
@@ -283,12 +259,10 @@ exports[`InfiniteList should render with list with style props 1`] = `
     >
       item 3
     </div>
-  </ListItem>
-  <ListItem
+  </InjectIntl(ListItem)>
+  <InjectIntl(ListItem)
     className="item4"
-    hasChevron={false}
     isSelectable={true}
-    isSelected={false}
     key="item-4"
   >
     <div
@@ -296,7 +270,7 @@ exports[`InfiniteList should render with list with style props 1`] = `
     >
       item 4
     </div>
-  </ListItem>
+  </InjectIntl(ListItem)>
 </InfiniteList>
 `;
 

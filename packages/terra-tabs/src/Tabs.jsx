@@ -55,6 +55,10 @@ const propTypes = {
    */
   defaultActiveKey: PropTypes.string,
   /**
+   * Whether or not the tab is closable.
+   */
+  isClosable: PropTypes.bool,
+  /**
    * Whether or not the tab is draggable.
    */
   isDraggable: PropTypes.bool,
@@ -62,12 +66,26 @@ const propTypes = {
    * Callback function triggered when tab is drag and dropped.
    */
   onTabOrderChange: PropTypes.func,
+  /**
+   * Callback function triggered on close button click. will be available only when `isClosable` is set to true.
+   */
+  onTabClose: PropTypes.func,
+  /**
+   * Callback function triggered when add button is clicked.
+   * Parameters: 1. Event 2. Selected pane's key
+   */
+  onSelectAddButton: PropTypes.func,
+  /**
+   * The label to set on the add icon element.
+   */
+  ariaLabelAddTab: PropTypes.string,
 };
 
 const defaultProps = {
   tabFill: false,
   fill: false,
   isDraggable: false,
+  isClosable: false,
 };
 
 class Tabs extends React.Component {
@@ -76,6 +94,7 @@ class Tabs extends React.Component {
     this.getInitialState = this.getInitialState.bind(this);
     this.state = {
       activeKey: this.getInitialState(),
+      activeTab: '',
     };
   }
 
@@ -86,14 +105,14 @@ class Tabs extends React.Component {
     return TabUtils.initialSelectedTabKey(this.props.children, this.props.defaultActiveKey);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     const tabKeys = [];
     this.props.children.forEach(child => {
       tabKeys.push(child.key);
     });
-    if (tabKeys.indexOf(this.state.activeKey) === -1) {
+    if (this.props.activeKey !== prevProps.activeKey) {
       // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ activeKey: this.getInitialState() });
+      this.setState({ activeKey: this.props.activeKey });
     }
   }
 
@@ -107,15 +126,17 @@ class Tabs extends React.Component {
       defaultActiveKey,
       isDraggable,
       onTabOrderChange,
+      isClosable,
       ...customProps
     } = this.props;
 
     const commonTabItems = [];
+    const activeTabKey = this.state.activeKey || this.props.activeKey;
 
     React.Children.forEach(children, child => {
       let content;
       let tabContent;
-      if (child.key === this.state.activeKey) {
+      if (child.key === activeTabKey) {
         content = React.Children.map(child.props.children, contentItem => (
           React.cloneElement(contentItem)
         ));
@@ -130,16 +151,37 @@ class Tabs extends React.Component {
           showIcon={child.props.showIcon}
           render={() => tabContent}
           isDisabled={child.props.isDisabled}
+          isClosable={isClosable}
           variant="framework"
         />,
       );
     });
+    const handleTabsStateChange = (newValue, itemKey, event) => {
+      if (newValue.length > 0) {
+        let activeTab = '';
+        for (let i = 0; i < newValue.length; i += 1) {
+          if (newValue[i].isSelected === true) {
+            activeTab = newValue[i].itemKey;
+            break;
+          }
+        }
+        this.setState({ activeTab });
+      } else if (newValue.length === 0) {
+        this.setState({ activeTab: '' });
+      }
+
+      if (this.state.activeKey === itemKey) {
+        this.setState((prevState) => ({ activeKey: prevState.activeTab }));
+      }
+      return this.props.onTabClose && this.props.onTabClose(newValue, itemKey, event);
+    };
 
     return (
       <CommonTabs
         id={customProps.id}
-        activeItemKey={this.state.activeKey}
+        activeItemKey={activeTabKey}
         onRequestActivate={key => this.setState({ activeKey: key })}
+        onClosingTab={handleTabsStateChange}
         onChange={onChange}
         variant="framework"
         isDraggable={isDraggable}

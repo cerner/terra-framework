@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import WorklistDataGrid from 'terra-worklist-data-grid';
-import gridDataJSON from './gridData.json';
+import gridDataJSON from './gridDataWithRowSelection.json';
 
 const WorklistDataGridWithRowSelection = () => {
   const rowHeaderIndex = 0;
@@ -38,6 +38,15 @@ const WorklistDataGridWithRowSelection = () => {
     clearRowSelection();
   };
 
+  const onRowSelect = (rowsToSelectAndUnSelect) => {
+    rowsToSelectAndUnSelect.forEach((changedRow) => {
+      const dataRowToUpdate = rows.find(row => row.id === changedRow.id);
+      if (dataRowToUpdate) {
+        dataRowToUpdate.isSelected = changedRow.selected;
+      }
+    });
+  };
+
   return (
     <WorklistDataGrid
       id="default-terra-worklist-data-grid"
@@ -46,17 +55,7 @@ const WorklistDataGridWithRowSelection = () => {
       rowHeaderIndex={rowHeaderIndex}
       ariaLabel="Worklist Data Grid"
       hasSelectableRows={hasSelectableRows}
-      onRowSelect={(rowId) => {
-        const newRows = [];
-        const selectedRow = rows.find(e => e.id === rowId);
-        selectedRow.isSelected = !selectedRow.isSelected;
-        rows.forEach(element => {
-          if (element.isSelected) {
-            newRows.push(element.id);
-          }
-        });
-        setSelectedRows(determineSelectedRows(false, newRows));
-      }}
+      onRowSelect={onRowSelect}
       onRowSelectAll={() => {
         const newRows = [];
         rows.forEach(e => { e.isSelected = true; newRows.push(e.id); });
@@ -67,6 +66,9 @@ const WorklistDataGridWithRowSelection = () => {
       }}
       onDisableSelectableRows={() => {
         disableSelectableRows();
+      }}
+      onEnableRowSelection={() => {
+        setHasSelectableRows(true);
       }}
     />
 

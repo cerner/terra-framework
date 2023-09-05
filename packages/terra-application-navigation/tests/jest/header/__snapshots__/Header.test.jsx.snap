@@ -1097,7 +1097,6 @@ exports[`Header should render with function callbacks 1`] = `
               </div>
               <IconCaretDown
                 className="caret-icon"
-                isBidi={true}
                 viewBox="0 0 48 48"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -1105,14 +1104,14 @@ exports[`Header should render with function callbacks 1`] = `
                   className="caret-icon"
                   focusable="false"
                   height="1em"
-                  isBidi={true}
+                  isBidi={false}
                   isSpin={false}
                   viewBox="0 0 48 48"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <svg
-                    className="tui-Icon icon is-bidi caret-icon"
+                    className="tui-Icon icon caret-icon"
                     focusable="false"
                     height="1em"
                     role="presentation"
@@ -1121,7 +1120,7 @@ exports[`Header should render with function callbacks 1`] = `
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M48 12L24 36 0 12h48z"
+                      d="M48 12 24 36 0 12h48z"
                     />
                   </svg>
                 </IconBase>
@@ -1918,7 +1917,6 @@ exports[`Header should render with navigation and extension item ids 1`] = `
               </div>
               <IconCaretDown
                 className="caret-icon"
-                isBidi={true}
                 viewBox="0 0 48 48"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -1926,14 +1924,14 @@ exports[`Header should render with navigation and extension item ids 1`] = `
                   className="caret-icon"
                   focusable="false"
                   height="1em"
-                  isBidi={true}
+                  isBidi={false}
                   isSpin={false}
                   viewBox="0 0 48 48"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <svg
-                    className="tui-Icon icon is-bidi caret-icon"
+                    className="tui-Icon icon caret-icon"
                     focusable="false"
                     height="1em"
                     role="presentation"
@@ -1942,7 +1940,7 @@ exports[`Header should render with navigation and extension item ids 1`] = `
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M48 12L24 36 0 12h48z"
+                      d="M48 12 24 36 0 12h48z"
                     />
                   </svg>
                 </IconBase>

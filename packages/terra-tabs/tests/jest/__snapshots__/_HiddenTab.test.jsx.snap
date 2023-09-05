@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HiddenTab should render a hidden tab with provided props and selection handling 1`] = `
+<IntlProvider
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <InjectIntl(HiddenTab)
+    associatedPanelId="panel-1"
+    id="tab-1"
+    index={10}
+    itemKey="tab-1-key"
+    label="Tab 1 Label"
+    metaData={
+      Object {
+        "data": "test",
+      }
+    }
+    onBlur={[MockFunction]}
+    onFocus={[MockFunction]}
+    onSelect={[MockFunction]}
+    tabIds={
+      Array [
+        "tab-1",
+        "tab-2",
+      ]
+    }
+  >
+    <HiddenTab
+      associatedPanelId="panel-1"
+      id="tab-1"
+      index={10}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      isClosable={false}
+      isDisabled={false}
+      isDraggable={false}
+      isSelected={false}
+      itemKey="tab-1-key"
+      label="Tab 1 Label"
+      metaData={
+        Object {
+          "data": "test",
+        }
+      }
+      onBlur={[MockFunction]}
+      onFocus={[MockFunction]}
+      onSelect={[MockFunction]}
+      showAddButton={false}
+      showIcon={false}
+      tabIds={
+        Array [
+          "tab-1",
+          "tab-2",
+        ]
+      }
+    >
+      <div
+        aria-controls="panel-1"
+        aria-describedby="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
+        aria-disabled={false}
+        aria-selected={false}
+        className="hidden"
+        data-focus-styles-enabled={true}
+        id="tab-1"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[MockFunction]}
+        onKeyDown={[Function]}
+        onMouseDown={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Class {
+                  "_dispatchInstances": null,
+                  "_dispatchListeners": null,
+                  "_targetInst": null,
+                  "altKey": null,
+                  "bubbles": null,
+                  "button": null,
+                  "buttons": null,
+                  "cancelable": null,
+                  "clientX": null,
+                  "clientY": null,
+                  "ctrlKey": null,
+                  "currentTarget": [Function],
+                  "defaultPrevented": null,
+                  "detail": null,
+                  "dispatchConfig": null,
+                  "eventPhase": null,
+                  "getModifierState": [Function],
+                  "isDefaultPrevented": [Function],
+                  "isPropagationStopped": [Function],
+                  "isTrusted": null,
+                  "metaKey": null,
+                  "movementX": [Function],
+                  "movementY": [Function],
+                  "nativeEvent": null,
+                  "pageX": null,
+                  "pageY": null,
+                  "relatedTarget": [Function],
+                  "screenX": null,
+                  "screenY": null,
+                  "shiftKey": null,
+                  "target": null,
+                  "timeStamp": [Function],
+                  "type": null,
+                  "view": null,
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+        role="tab"
+        tabIndex={-1}
+      >
+        <VisuallyHiddenText
+          aria-hidden={true}
+          id="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
+          text="Terra.tabs.addbutton.focus"
+        >
+          <span
+            aria-hidden={true}
+            className="visually-hidden-text"
+            id="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
+          >
+            Terra.tabs.addbutton.focus
+          </span>
+        </VisuallyHiddenText>
+        <div
+          className="checkbox"
+        />
+        <div
+          className="label"
+        >
+          Tab 1 Label
+        </div>
+      </div>
+    </HiddenTab>
+  </InjectIntl(HiddenTab)>
+</IntlProvider>
+`;

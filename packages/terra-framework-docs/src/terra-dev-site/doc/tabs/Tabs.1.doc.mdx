@@ -10,6 +10,9 @@ import IconOnlyTabs from './example/IconOnlyTabs?dev-site-example';
 import ResponsiveTabsVariant from './example/ResponsiveTabsVariant?dev-site-example';
 import IconsInMenuTabs from './example/IconsInMenuTabs?dev-site-example';
 import DraggableTabs from './example/DraggableTabs?dev-site-example';
+import AddTab from './example/AddTab?dev-site-example'
+import ClosableTab from './example/ClosableTab?dev-site-example'
+import AddCloseTab from './example/AddCloseTab?dev-site-example'
 
 <Badge />
 
@@ -85,6 +88,9 @@ import Tabs from 'terra-tabs';
 <TabsWithFilledContent title='Fill Parent Container' />
 <ResponsiveTabsVariant title='Toggle responsiveTo Variants' />
 <DraggableTabs title='Draggable Tabs' />
+<AddTab title='Add New Tab'/>
+<ClosableTab title='Closable Tabs'/>
+<AddCloseTab title='Add and Close Tab'/>
 
 ## Tabs Props Table 
 <TabsPropsTable />
@@ -94,12 +100,23 @@ import Tabs from 'terra-tabs';
 
 ## Testing
 
-Tabs uses `uuid` which changes the component's description id dynamically. To mock it with the Jest testing library, `jest.mock` can be used.
+Tabs uses `uuid` which changes the component's description id dynamically. To mock the return value with the Jest testing library, `jest.spyOn` can be used.
 
 If Enzyme `shallow` rendering is being used for the tests then the mock may not be required. However, if `mount` is used then `uuid` should be mocked as shown below:
 
 ```js
-// using a variable may result in failures. For best results, hardcode the mock return value.
-jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+import { v4 as uuidv4 } from 'uuid';
+
+let mockSpyUuid;
+
+// using a variable may result in failures. For best results, mock return value.
+beforeAll(() => {
+  mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockReturnValue('00000000-0000-0000-0000-000000000000');
+});
+
+// restore the mock
+afterAll(() => {
+  mockSpyUuid.mockRestore();
+});
 
 ```
