@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.89.0 - (September 5, 2023)
+
 * Changed
   * Fixed the date format being read 3 times when using SR
 
