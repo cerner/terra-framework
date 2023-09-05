@@ -5,6 +5,8 @@
 * Updated
   * Screen reader announcement for visual label.
 
+## 4.89.0 - (September 5, 2023)
+
 * Changed
   * Visual focus changed to dashed lines for individual fields.
   * Fixed the date format being read 3 times when using SR

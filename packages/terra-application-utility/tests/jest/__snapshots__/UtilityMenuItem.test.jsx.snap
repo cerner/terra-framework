@@ -39,21 +39,21 @@ exports[`UtilityMenuItem correctly applies the theme context className 1`] = `
         fitEnd={null}
         fitStart={null}
       >
-        <div
+        <span
           className="arrange default-left-inset default-right-inset"
         >
-          <div
-            className="fit center"
+          <span
+            className="fit center fit-block"
           />
-          <div
-            className="fill center menu-item-fill"
+          <span
+            className="fill center menu-item-fill fill-block"
           >
             <div />
-          </div>
-          <div
+          </span>
+          <span
             className="fit center"
           />
-        </div>
+        </span>
       </Arrange>
     </div>
   </UtilityMenuItem>
