@@ -124,4 +124,23 @@
       width: 100%;
     }
   }
+
+  .tabs-remove-button {
+    background-color: #fff;
+    border: 0;
+    border-radius: 0.85714rem;
+    color: #585d5f;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1rem;
+    height: 1rem;
+    line-height: 1;
+    margin: 0;
+    margin-left: 10px;
+    min-width: 1.22857rem;
+    outline: none;
+    padding: 0;
+    right: 0;
+  }
 }

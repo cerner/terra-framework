@@ -1,8 +1,14 @@
 {
   "Terra.tabs.more": "More",
+  "Terra.tabs.hint.tabList": "Contains {numberOfTabs} items",
+  "Terra.tabs.hint.hiddenTabs": "{hiddenTabs} items are not displayed",
+  "Terra.tabs.hint.tabMenu": "{hiddenTabs} items are hidden. Select to display {hiddenTabs} hidden items",
+  "Terra.tabs.hint.removable":"item is removable via Delete or Back Space key",
+  "Terra.tabs.hint.currentTabClosed":"Removed",
   "Terra.tabs.lift": "You have lifted a tab in position {startPosition}. Use the arrow keys to drag the tab to a new position. You cannot move it past the first or last position. Press SPACE to place the tab or ESCAPE to cancel.",
   "Terra.tabs.drag": "You have moved the tab from position {startPosition} to position {endPosition}",
   "Terra.tabs.cancelDrag": "Movement cancelled. The tab has returned to its starting position of {startPosition}",
   "Terra.tabs.drop": "You have dropped the tab. It has moved from position {startPosition} to {endPosition}",
-  "Terra.tabs.focus": "Press ENTER to activate a tab, or Press SPACE to start a drag. Ensure your screen reader is in focus mode or forms mode"
+  "Terra.tabs.focus": "Press ENTER to activate a tab, or Press SPACE to start a drag. Ensure your screen reader is in focus mode or forms mode",
+  "Terra.tabs.addbutton.focus":"press ENTER or SPACE to add new tab"
 }

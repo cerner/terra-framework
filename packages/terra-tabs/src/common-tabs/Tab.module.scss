@@ -119,11 +119,24 @@
   }
 
   .tab {
+    align-items: center;
+    display: inline-flex;
     flex: 0 1 auto;
     min-width: var(--terra-tabs-workspace-tab-min-width, 76px);
 
     .inner {
       text-align: center;
+    }
+  }
+
+  .button:focus {
+    background-color: var(--terra-tabs-addbutton-focus-background-color, #fff);
+    background-image: var(--terra-tabs-addbutton-focus-background-image, none);
+    box-shadow: none;
+   
+    &[data-terra-tabs-show-focus-styles='true'] {
+      outline: var(--terra-tabs-add-button-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-tabs-add-button-focus-outline-offset, -2px);
     }
   }
 
@@ -151,6 +164,25 @@
         }
       }
     }
+  }
+
+  .tabs-remove-button {
+    background-color: var(--terra-tabs-close-tab-background-color, transparent);
+    border: 0;
+    border-radius: 0.5714rem;
+    color: var(--terra-tabs-remove-button-color, #595f62);
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1rem;
+    height: 1rem;
+    line-height: 1;
+    margin: 0;
+    margin-left: 10px;
+    min-width: 1.02857rem;
+    outline: none;
+    padding: 0;
+    right: 0;
   }
 
   [data-tab-is-calculating='true'] {
