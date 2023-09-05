@@ -165,7 +165,7 @@ const DatePickerInput = (props) => {
   const [dayInitialFocused, setDayInitialFocused] = useState(false);
   const [monthInitialFocused, setMonthInitialFocused] = useState(false);
   const [yearInitialFocused, setYearInitialFocused] = useState(false);
-  // TODO:  Added below states for invalid input message for SR
+  // Added below state for invalid input message for SR
   const [invalidInput, SetInvalidInput] = useState(false);
   const editOnkeyDown = useRef(false);
   const theme = React.useContext(ThemeContext);
@@ -219,12 +219,6 @@ const DatePickerInput = (props) => {
     }
   }, [shouldShowPicker, onClick]);
 
-  const setFocus = (node) => {
-    if (node) {
-      node.focus();
-    }
-  };
-
   /**
    * Moves focus to the correct input depending on date ordering. Focus changing is
    * disabled if a complete date has been entered in order to make single input
@@ -236,16 +230,9 @@ const DatePickerInput = (props) => {
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
       if (inputValue.length === 2) {
         if (type === DateUtil.inputType.MONTH) {
-          // TODO: Commented below to prevent focus shft to allow VO+Chrome read second digit
-          const dayfocus = dayInputRef;
-          setTimeout(() => {
-            setFocus(dayfocus);
-          }, 500);
+          dayInputRef.focus();
         } else {
-          const yearfocus = yearInputRef;
-          setTimeout(() => {
-            setFocus(yearfocus);
-          }, 500);
+          yearInputRef.focus();
         }
       }
     } else if (dateFormatOrder === DateUtil.dateOrder.DMY) {
@@ -340,7 +327,9 @@ const DatePickerInput = (props) => {
       }
     }
     setDate(event, inputValue, type);
-    SetInvalidInput(false);
+    if (invalidInput) {
+      SetInvalidInput(false);
+    }
   };
 
   const handleDayChange = (event) => {
@@ -354,7 +343,6 @@ const DatePickerInput = (props) => {
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have to
     // check the length of inputValue to make sure that it is less then 2.
     if (inputValue === date.day || inputValue.length > 2 || Number(inputValue) > 31 || inputValue === '00') {
-      // TODO: Added below to set invalid day
       handleInvalidInputChange(true);
       return;
     }
@@ -550,6 +538,7 @@ const DatePickerInput = (props) => {
 
     // set date to today
     if (event.key === 't' || event.key === 'T') {
+      // Added this state change for invalid input entry
       SetInvalidInput(false);
       inputDate = DateUtil.getCurrentDate();
       formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
@@ -801,7 +790,7 @@ const DatePickerInput = (props) => {
     { 'is-invalid': isInvalid },
   ]);
 
-  // TODO: Indicates selected date from calendar popup
+  // Indicates selected date from calendar popup for SR
   const calendarDate = DateUtil.isValidDate(value, momentDateFormat) ? `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })} is selected` : label;
 
   return (
@@ -826,7 +815,7 @@ const DatePickerInput = (props) => {
             refCallback={setVisuallyHiddenComponent}
             aria-atomic="true"
             aria-relevant="all"
-            aria-live={(invalidInput) ? 'assertive' : 'polite'}
+            aria-live="assertive"
           />
           <DateInputLayout
             dateFormatOrder={dateFormatOrder}
