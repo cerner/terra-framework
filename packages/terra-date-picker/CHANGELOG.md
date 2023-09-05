@@ -1,8 +1,8 @@
 # Changelog
 
 ## Unreleased
-* Added
-  * Responsive DatePicker Fix on zooming
+* Fixed
+  * Fixed DatePicker scroll on smaller viewports.
 
 ## 4.87.1 - (August 4, 2023)
 
