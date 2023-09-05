@@ -791,7 +791,7 @@ const DatePickerInput = (props) => {
   ]);
 
   // Indicates selected date from calendar popup for SR
-  const calendarDate = DateUtil.isValidDate(value, momentDateFormat) ? `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })} is selected` : label;
+  const calendarDate = DateUtil.isValidDate(value, momentDateFormat) ? `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })} ${intl.formatMessage({ id: 'Terra.datePicker.selected' })}` : label;
 
   return (
     <div className={cx(theme.className)}>
