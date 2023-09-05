@@ -82,6 +82,10 @@ const propTypes = {
    * The function returning the frame html reference.
    */
   refCallback: PropTypes.func,
+  /**
+   * The text label read by screenreaders.
+   */
+  ariaLabel: PropTypes.string,
 };
 
 const defaultProps = {
@@ -223,29 +227,40 @@ class PopupContent extends React.Component {
 
     const heightData = isHeightAutomatic ? { 'data-terra-popup-automatic-height': true } : {};
     const widthData = isWidthAutomatic ? { 'data-terra-popup-automatic-width': true } : {};
+    let consumerAriaLabel = '';
+    const modifiedCustomProps = { ...customProps };
+    if (modifiedCustomProps && modifiedCustomProps.ariaLabel) {
+      consumerAriaLabel = modifiedCustomProps.ariaLabel;
+      delete modifiedCustomProps.ariaLabel;
+    }
 
     return (
-      <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
-        <div>
-          <Hookshot.Content
-            {...customProps}
-            className={contentClassNames}
-            tabIndex={isFocusedDisabled ? null : '0'}
-            data-terra-popup-content
-            onContentResize={(isHeightAutomatic || isWidthAutomatic) ? onContentResize : undefined}
-            onEsc={onRequestClose}
-            onResize={this.handleOnResize}
-            refCallback={refCallback}
-            role={popupContentRole || null}
-          >
-            {arrowContent}
-            {/* eslint-disable-next-line react/forbid-dom-props */}
-            <div {...heightData} {...widthData} className={innerClassNames} style={contentStyle}>
-              {content}
+      <FormattedMessage id="Terra.popup.escapeInstruction">
+        {escText => (
+          <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
+            <div>
+              <Hookshot.Content
+                {...modifiedCustomProps}
+                className={contentClassNames}
+                tabIndex={isFocusedDisabled ? null : '0'}
+                data-terra-popup-content
+                onContentResize={(isHeightAutomatic || isWidthAutomatic) ? onContentResize : undefined}
+                onEsc={onRequestClose}
+                onResize={this.handleOnResize}
+                refCallback={refCallback}
+                role={popupContentRole || null}
+                aria-label={onRequestClose ? `${consumerAriaLabel || ''} ${escText}` : ''}
+              >
+                {arrowContent}
+                {/* eslint-disable-next-line react/forbid-dom-props */}
+                <div {...heightData} {...widthData} className={innerClassNames} style={contentStyle}>
+                  {content}
+                </div>
+              </Hookshot.Content>
             </div>
-          </Hookshot.Content>
-        </div>
-      </FocusTrap>
+          </FocusTrap>
+        )}
+      </FormattedMessage>
     );
   }
 }

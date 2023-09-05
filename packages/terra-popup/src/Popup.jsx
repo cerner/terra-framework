@@ -97,6 +97,10 @@ const propTypes = {
    * Prop to set role on popup content container
    */
   popupContentRole: PropTypes.string,
+  /**
+   * The text label read by screenreaders.
+   */
+  ariaLabel: PropTypes.string,
 };
 
 const defaultProps = {
@@ -247,6 +251,7 @@ class Popup extends React.Component {
         isHeightAutomatic={this.props.contentHeight === 'auto'}
         isWidthAutomatic={this.props.contentWidth === 'auto'}
         isFocusedDisabled={this.props.isContentFocusDisabled}
+        ariaLabel={this.props.ariaLabel}
       >
         {this.props.children}
       </PopupContent>
