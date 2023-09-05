@@ -219,12 +219,6 @@ const DatePickerInput = (props) => {
     }
   }, [shouldShowPicker, onClick]);
 
-  const setFocus = (node) => {
-    if (node) {
-      node.focus();
-    }
-  };
-
   /**
    * Moves focus to the correct input depending on date ordering. Focus changing is
    * disabled if a complete date has been entered in order to make single input
@@ -236,16 +230,9 @@ const DatePickerInput = (props) => {
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
       if (inputValue.length === 2) {
         if (type === DateUtil.inputType.MONTH) {
-          // TODO: Commented below to prevent focus shft to allow VO+Chrome read second digit
-          const dayfocus = dayInputRef;
-          setTimeout(() => {
-            setFocus(dayfocus);
-          }, 500);
+          dayInputRef.focus();
         } else {
-          const yearfocus = yearInputRef;
-          setTimeout(() => {
-            setFocus(yearfocus);
-          }, 500);
+          yearInputRef.focus();
         }
       }
     } else if (dateFormatOrder === DateUtil.dateOrder.DMY) {
