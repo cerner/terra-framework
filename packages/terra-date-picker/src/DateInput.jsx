@@ -276,7 +276,7 @@ const DatePickerInput = (props) => {
     visuallyHiddenComponent.innerText = '';
     SetInvalidInput(val);
     if (val) {
-      visuallyHiddenComponent.innerText = 'Please enter a valid Date';
+      visuallyHiddenComponent.innerText = intl.formatMessage({ id: 'Terra.datePicker.invalidDate' });
     }
   };
 
