@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added support for multi select in `terra-collapsible-menu`.
+
 ## 1.34.0 - (September 5, 2023)
 
 * Changed
@@ -35,7 +38,7 @@
 
 * Changed
   * Updated toggle examples for `terra-collapsible-menu-view` to include selectable toggles and toggles within a collapsed menu.
-  
+
 * Added
   * Updated row selection example for `terra-worklist-data-grid` to show ability to select the row selection column header.
 
