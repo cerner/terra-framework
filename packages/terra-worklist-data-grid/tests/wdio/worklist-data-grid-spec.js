@@ -542,6 +542,20 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     const pinnedColumnsSelector = '#pinned-columns';
     const pinnedColumnsWithRowSelectionSelector = '#pinned-columns-with-row-selection';
 
+    it('validates that focused cells scroll into view when pinned columns exist', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+
+      browser.keys(['Tab', 'ArrowDown', 'ArrowRight', 'ArrowRight']);
+
+      const testScript = 'document.querySelector(\'div[class*="worklist-data-grid-container"\').scrollBy(450,0)';
+      browser.execute(testScript);
+
+      browser.keys(['ArrowRight']);
+
+      browser.pause(150);
+      Terra.validates.element('pinned-column-scroll-fix', { selector: pinnedColumnsSelector });
+    });
+
     it('adds pinned columns', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
 
@@ -620,6 +634,20 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       navigateToCell(2, 1);
       moveCurrentPositionBy(6, 0);
       Terra.validates.element('sticky-header-scroll', { selector: stickyHeaderSelector });
+    });
+
+    it('validates that focused cells scroll into view when beneath sticky column header', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-sticky-header');
+
+      browser.keys(['Tab']);
+
+      const testScript = 'document.querySelector(\'div[class*="worklist-data-grid-container"\').scrollBy(0,25)';
+      browser.execute(testScript);
+
+      browser.keys(['ArrowDown']);
+
+      browser.pause(250);
+      Terra.validates.element('sticky-header-scroll-fix', { selector: stickyHeaderSelector });
     });
   });
 });
