@@ -2,8 +2,8 @@
 
 ## Unreleased
 
-* Fixed
-  * Added support for multi select in item group
+* Added
+  * Added support for multi select in item group.
 
 ## 6.78.0 - (August 31, 2023)
 
