@@ -552,13 +552,13 @@ exports[`correctly applies the theme context className 1`] = `
                           onFocus={[Function]}
                           onKeyDown={[Function]}
                           refCallback={[Function]}
-                          text="Sunday, January 1, 2017 is selected Terra.datePicker.openCalendar"
+                          text="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                           type="button"
                           variant="neutral"
                         >
                           <button
                             aria-disabled={false}
-                            aria-label="Sunday, January 1, 2017 is selected Terra.datePicker.openCalendar"
+                            aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                             className="button neutral compact orion-fusion-theme button"
                             data-terra-open-calendar-button={true}
                             disabled={false}
@@ -568,7 +568,7 @@ exports[`correctly applies the theme context className 1`] = `
                             onKeyDown={[Function]}
                             onKeyUp={[Function]}
                             onMouseDown={[Function]}
-                            title="Sunday, January 1, 2017 is selected Terra.datePicker.openCalendar"
+                            title="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                             type="button"
                           >
                             <span

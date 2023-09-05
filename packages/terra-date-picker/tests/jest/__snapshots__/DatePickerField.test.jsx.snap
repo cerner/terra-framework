@@ -854,13 +854,13 @@ exports[`should render a DatePickerField with props 1`] = `
                                 onFocus={[Function]}
                                 onKeyDown={[Function]}
                                 refCallback={[Function]}
-                                text="Sunday, January 1, 2017 is selected Terra.datePicker.openCalendar"
+                                text="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                                 type="button"
                                 variant="neutral"
                               >
                                 <button
                                   aria-disabled={true}
-                                  aria-label="Sunday, January 1, 2017 is selected Terra.datePicker.openCalendar"
+                                  aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                                   className="button neutral is-disabled compact button is-invalid"
                                   data-terra-open-calendar-button={true}
                                   disabled={true}
@@ -871,7 +871,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   onKeyUp={[Function]}
                                   onMouseDown={[Function]}
                                   tabIndex="-1"
-                                  title="Sunday, January 1, 2017 is selected Terra.datePicker.openCalendar"
+                                  title="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                                   type="button"
                                 >
                                   <span
@@ -1673,13 +1673,13 @@ exports[`should render a default DatePickerField component 1`] = `
                                 onFocus={[Function]}
                                 onKeyDown={[Function]}
                                 refCallback={[Function]}
-                                text="Sunday, January 1, 2017 is selected Terra.datePicker.openCalendar"
+                                text="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                                 type="button"
                                 variant="neutral"
                               >
                                 <button
                                   aria-disabled={false}
-                                  aria-label="Sunday, January 1, 2017 is selected Terra.datePicker.openCalendar"
+                                  aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                                   className="button neutral compact button"
                                   data-terra-open-calendar-button={true}
                                   disabled={false}
@@ -1689,7 +1689,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   onKeyDown={[Function]}
                                   onKeyUp={[Function]}
                                   onMouseDown={[Function]}
-                                  title="Sunday, January 1, 2017 is selected Terra.datePicker.openCalendar"
+                                  title="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                                   type="button"
                                 >
                                   <span
@@ -2600,13 +2600,13 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                 onFocus={[Function]}
                                 onKeyDown={[Function]}
                                 refCallback={[Function]}
-                                text="Sunday, January 1, 2017 is selected Terra.datePicker.openCalendar"
+                                text="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                                 type="button"
                                 variant="neutral"
                               >
                                 <button
                                   aria-disabled={true}
-                                  aria-label="Sunday, January 1, 2017 is selected Terra.datePicker.openCalendar"
+                                  aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                                   className="button neutral is-disabled compact button"
                                   data-terra-open-calendar-button={true}
                                   disabled={true}
@@ -2617,7 +2617,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   onKeyUp={[Function]}
                                   onMouseDown={[Function]}
                                   tabIndex="-1"
-                                  title="Sunday, January 1, 2017 is selected Terra.datePicker.openCalendar"
+                                  title="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                                   type="button"
                                 >
                                   <span
