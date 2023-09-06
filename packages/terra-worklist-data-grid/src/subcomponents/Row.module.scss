@@ -22,16 +22,21 @@
       border-right: 1px solid #0092e0;
 
       // Add bottom border to cells in a selected row
-      td, th {
+      td,
+      th {
         border-bottom: var(--terra-worklist-data-grid-row-highlight-border-bottom, 1px solid #0092e0);
       }
     }
   }
 
   // Add top border for first selected row or when not adjacent to a selected row
-  .worklist-data-grid-row.selected:first-child, .worklist-data-grid-row:not(.selected) + .worklist-data-grid-row.selected {
-    td, th {
+  /* stylelint-disable selector-max-compound-selectors */
+  .worklist-data-grid-row.selected:first-child,
+  .worklist-data-grid-row:not(.selected) + .worklist-data-grid-row.selected {
+    td,
+    th {
       border-top: var(--terra-worklist-data-grid-row-highlight-border-top, 1px solid #0092e0);
     }
   }
+  /* stylelint-enable selector-max-compound-selectors */
 }
