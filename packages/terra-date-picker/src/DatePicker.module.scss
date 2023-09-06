@@ -118,8 +118,8 @@
       }
 
       &.initial-focus {
-        background-color: var(--terra-date-picker-input-date-component-initial-focus-background-color, rgba(139, 194, 249, 0.3));
-        border: 0;
+        background-color: transparent;
+        border: var(--terra-date-picker-input-date-component-initial-focus-border, 2px dashed #000);
         box-shadow: none;
       }
     }
