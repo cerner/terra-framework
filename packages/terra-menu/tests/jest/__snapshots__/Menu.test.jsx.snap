@@ -200,6 +200,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
               <div>
                 <div>
                   <div
+                    aria-label=" Terra.popup.escapeInstructions"
                     class="content content orion-fusion-theme"
                     data-terra-popup-content="true"
                     role="dialog"
@@ -296,50 +297,34 @@ exports[`Menu correctly applies the theme context className 1`] = `
               popupContentRole="dialog"
               refCallback={[Function]}
             >
-              <FocusTrap
-                _createFocusTrap={[Function]}
-                active={true}
-                focusTrapOptions={
-                  Object {
-                    "clickOutsideDeactivates": true,
-                    "returnFocusOnDeactivate": true,
-                  }
-                }
-                paused={false}
+              <FormattedMessage
+                id="Terra.popup.escapeInstructions"
+                values={Object {}}
               >
-                <div>
-                  <OnClickOutside(HookshotContent)
-                    className="content orion-fusion-theme"
-                    data-terra-popup-content={true}
-                    disableOnClickOutside={true}
-                    eventTypes={
-                      Array [
-                        "mousedown",
-                        "touchstart",
-                      ]
+                <FocusTrap
+                  _createFocusTrap={[Function]}
+                  active={true}
+                  focusTrapOptions={
+                    Object {
+                      "clickOutsideDeactivates": true,
+                      "returnFocusOnDeactivate": true,
                     }
-                    excludeScrollbar={false}
-                    onContentResize={[Function]}
-                    onEsc={[Function]}
-                    onResize={[Function]}
-                    outsideClickIgnoreClass="ignore-react-onclickoutside"
-                    preventDefault={false}
-                    refCallback={[Function]}
-                    role="dialog"
-                    stopPropagation={false}
-                    tabIndex={null}
-                  >
-                    <HookshotContent
+                  }
+                  paused={false}
+                >
+                  <div>
+                    <OnClickOutside(HookshotContent)
+                      aria-label=" Terra.popup.escapeInstructions"
                       className="content orion-fusion-theme"
                       data-terra-popup-content={true}
-                      disableOnClickOutside={[Function]}
-                      enableOnClickOutside={[Function]}
+                      disableOnClickOutside={true}
                       eventTypes={
                         Array [
                           "mousedown",
                           "touchstart",
                         ]
                       }
+                      excludeScrollbar={false}
                       onContentResize={[Function]}
                       onEsc={[Function]}
                       onResize={[Function]}
@@ -350,227 +335,213 @@ exports[`Menu correctly applies the theme context className 1`] = `
                       stopPropagation={false}
                       tabIndex={null}
                     >
-                      <div
-                        className="content content orion-fusion-theme"
+                      <HookshotContent
+                        aria-label=" Terra.popup.escapeInstructions"
+                        className="content orion-fusion-theme"
                         data-terra-popup-content={true}
+                        disableOnClickOutside={[Function]}
+                        enableOnClickOutside={[Function]}
+                        eventTypes={
+                          Array [
+                            "mousedown",
+                            "touchstart",
+                          ]
+                        }
+                        onContentResize={[Function]}
+                        onEsc={[Function]}
+                        onResize={[Function]}
+                        outsideClickIgnoreClass="ignore-react-onclickoutside"
+                        preventDefault={false}
+                        refCallback={[Function]}
                         role="dialog"
+                        stopPropagation={false}
                         tabIndex={null}
                       >
                         <div
-                          className="inner"
-                          data-terra-popup-automatic-height={true}
-                          style={
-                            Object {
-                              "width": "240px",
-                            }
-                          }
+                          aria-label=" Terra.popup.escapeInstructions"
+                          className="content content orion-fusion-theme"
+                          data-terra-popup-content={true}
+                          role="dialog"
+                          tabIndex={null}
                         >
-                          <InjectIntl(MenuContent)
-                            contentWidth={240}
-                            headerTitle=""
-                            index={0}
-                            isFocused={true}
-                            isHeightBounded={false}
-                            isHidden={false}
-                            key=".$MenuPage-0"
-                            onRequestBack={[Function]}
-                            onRequestClose={[MockFunction]}
-                            onRequestNext={[Function]}
-                            refCallback={[Function]}
-                            showHeader={true}
+                          <div
+                            className="inner"
+                            data-terra-popup-automatic-height={true}
+                            style={
+                              Object {
+                                "width": "240px",
+                              }
+                            }
                           >
-                            <MenuContent
+                            <InjectIntl(MenuContent)
                               contentWidth={240}
                               headerTitle=""
                               index={0}
-                              intl={
-                                Object {
-                                  "defaultFormats": Object {},
-                                  "defaultLocale": "en",
-                                  "formatDate": [Function],
-                                  "formatHTMLMessage": [Function],
-                                  "formatMessage": [Function],
-                                  "formatNumber": [Function],
-                                  "formatPlural": [Function],
-                                  "formatRelative": [Function],
-                                  "formatTime": [Function],
-                                  "formats": Object {},
-                                  "formatters": Object {
-                                    "getDateTimeFormat": [Function],
-                                    "getMessageFormat": [Function],
-                                    "getNumberFormat": [Function],
-                                    "getPluralFormat": [Function],
-                                    "getRelativeFormat": [Function],
-                                  },
-                                  "locale": "en",
-                                  "messages": null,
-                                  "now": [Function],
-                                  "onError": [Function],
-                                  "textComponent": "span",
-                                  "timeZone": null,
-                                }
-                              }
                               isFocused={true}
                               isHeightBounded={false}
                               isHidden={false}
-                              isWidthBounded={false}
+                              key=".$MenuPage-0"
                               onRequestBack={[Function]}
                               onRequestClose={[MockFunction]}
                               onRequestNext={[Function]}
                               refCallback={[Function]}
                               showHeader={true}
-                              title=""
                             >
-                              <div
-                                aria-modal="true"
-                                className="content orion-fusion-theme"
-                                onKeyDown={[Function]}
-                                role="dialog"
-                                style={
+                              <MenuContent
+                                contentWidth={240}
+                                headerTitle=""
+                                index={0}
+                                intl={
                                   Object {
-                                    "height": undefined,
-                                    "position": "static",
-                                    "width": undefined,
+                                    "defaultFormats": Object {},
+                                    "defaultLocale": "en",
+                                    "formatDate": [Function],
+                                    "formatHTMLMessage": [Function],
+                                    "formatMessage": [Function],
+                                    "formatNumber": [Function],
+                                    "formatPlural": [Function],
+                                    "formatRelative": [Function],
+                                    "formatTime": [Function],
+                                    "formats": Object {},
+                                    "formatters": Object {
+                                      "getDateTimeFormat": [Function],
+                                      "getMessageFormat": [Function],
+                                      "getNumberFormat": [Function],
+                                      "getPluralFormat": [Function],
+                                      "getRelativeFormat": [Function],
+                                    },
+                                    "locale": "en",
+                                    "messages": null,
+                                    "now": [Function],
+                                    "onError": [Function],
+                                    "textComponent": "span",
+                                    "timeZone": null,
                                   }
                                 }
-                                tabIndex="-1"
+                                isFocused={true}
+                                isHeightBounded={false}
+                                isHidden={false}
+                                isWidthBounded={false}
+                                onRequestBack={[Function]}
+                                onRequestClose={[MockFunction]}
+                                onRequestNext={[Function]}
+                                refCallback={[Function]}
+                                showHeader={true}
+                                title=""
                               >
-                                <ContentContainer
-                                  fill={false}
-                                  header={
-                                    <Arrange
-                                      align="center"
-                                      className="header"
-                                      fill={<div />}
-                                      fitEnd={<div />}
-                                    />
+                                <div
+                                  aria-modal="true"
+                                  className="content orion-fusion-theme"
+                                  onKeyDown={[Function]}
+                                  role="dialog"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "position": "static",
+                                      "width": undefined,
+                                    }
                                   }
-                                  setFocusOnContainer={false}
+                                  tabIndex="-1"
                                 >
-                                  <div
-                                    className="content-container-static"
-                                  >
-                                    <div
-                                      className="header"
-                                    >
+                                  <ContentContainer
+                                    fill={false}
+                                    header={
                                       <Arrange
                                         align="center"
                                         className="header"
                                         fill={<div />}
                                         fitEnd={<div />}
-                                      >
-                                        <span
-                                          className="arrange header"
-                                        >
-                                          <span
-                                            className="fit center fit-block"
-                                          />
-                                          <span
-                                            className="fill center fill-block"
-                                          >
-                                            <div />
-                                          </span>
-                                          <span
-                                            className="fit center"
-                                          >
-                                            <div />
-                                          </span>
-                                        </span>
-                                      </Arrange>
-                                    </div>
+                                      />
+                                    }
+                                    setFocusOnContainer={false}
+                                  >
                                     <div
-                                      className="main"
+                                      className="content-container-static"
                                     >
-                                      <Scroll
-                                        className="normalizer orion-fusion-theme"
+                                      <div
+                                        className="header"
                                       >
-                                        <div
-                                          className="scroll normalizer orion-fusion-theme"
+                                        <Arrange
+                                          align="center"
+                                          className="header"
+                                          fill={<div />}
+                                          fitEnd={<div />}
                                         >
-                                          <InjectIntl(List)
-                                            className="list"
-                                            data-submenu={false}
-                                            role="menu"
+                                          <span
+                                            className="arrange header"
                                           >
-                                            <List
-                                              ariaSelectionStyle="none"
+                                            <span
+                                              className="fit center fit-block"
+                                            />
+                                            <span
+                                              className="fill center fill-block"
+                                            >
+                                              <div />
+                                            </span>
+                                            <span
+                                              className="fit center"
+                                            >
+                                              <div />
+                                            </span>
+                                          </span>
+                                        </Arrange>
+                                      </div>
+                                      <div
+                                        className="main"
+                                      >
+                                        <Scroll
+                                          className="normalizer orion-fusion-theme"
+                                        >
+                                          <div
+                                            className="scroll normalizer orion-fusion-theme"
+                                          >
+                                            <InjectIntl(List)
                                               className="list"
                                               data-submenu={false}
-                                              dividerStyle="none"
-                                              intl={
-                                                Object {
-                                                  "defaultFormats": Object {},
-                                                  "defaultLocale": "en",
-                                                  "formatDate": [Function],
-                                                  "formatHTMLMessage": [Function],
-                                                  "formatMessage": [Function],
-                                                  "formatNumber": [Function],
-                                                  "formatPlural": [Function],
-                                                  "formatRelative": [Function],
-                                                  "formatTime": [Function],
-                                                  "formats": Object {},
-                                                  "formatters": Object {
-                                                    "getDateTimeFormat": [Function],
-                                                    "getMessageFormat": [Function],
-                                                    "getNumberFormat": [Function],
-                                                    "getPluralFormat": [Function],
-                                                    "getRelativeFormat": [Function],
-                                                  },
-                                                  "locale": "en",
-                                                  "messages": null,
-                                                  "now": [Function],
-                                                  "onError": [Function],
-                                                  "textComponent": "span",
-                                                  "timeZone": null,
-                                                }
-                                              }
-                                              paddingStyle="none"
                                               role="menu"
                                             >
-                                              <ul
-                                                className="list orion-fusion-theme list"
+                                              <List
+                                                ariaSelectionStyle="none"
+                                                className="list"
                                                 data-submenu={false}
-                                                onKeyDown={[Function]}
+                                                dividerStyle="none"
+                                                intl={
+                                                  Object {
+                                                    "defaultFormats": Object {},
+                                                    "defaultLocale": "en",
+                                                    "formatDate": [Function],
+                                                    "formatHTMLMessage": [Function],
+                                                    "formatMessage": [Function],
+                                                    "formatNumber": [Function],
+                                                    "formatPlural": [Function],
+                                                    "formatRelative": [Function],
+                                                    "formatTime": [Function],
+                                                    "formats": Object {},
+                                                    "formatters": Object {
+                                                      "getDateTimeFormat": [Function],
+                                                      "getMessageFormat": [Function],
+                                                      "getNumberFormat": [Function],
+                                                      "getPluralFormat": [Function],
+                                                      "getRelativeFormat": [Function],
+                                                    },
+                                                    "locale": "en",
+                                                    "messages": null,
+                                                    "now": [Function],
+                                                    "onError": [Function],
+                                                    "textComponent": "span",
+                                                    "timeZone": null,
+                                                  }
+                                                }
+                                                paddingStyle="none"
                                                 role="menu"
                                               >
-                                                <InjectIntl(MenuItem)
-                                                  aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
-                                                  index={0}
-                                                  intl={
-                                                    Object {
-                                                      "defaultFormats": Object {},
-                                                      "defaultLocale": "en",
-                                                      "formatDate": [Function],
-                                                      "formatHTMLMessage": [Function],
-                                                      "formatMessage": [Function],
-                                                      "formatNumber": [Function],
-                                                      "formatPlural": [Function],
-                                                      "formatRelative": [Function],
-                                                      "formatTime": [Function],
-                                                      "formats": Object {},
-                                                      "formatters": Object {
-                                                        "getDateTimeFormat": [Function],
-                                                        "getMessageFormat": [Function],
-                                                        "getNumberFormat": [Function],
-                                                        "getPluralFormat": [Function],
-                                                        "getRelativeFormat": [Function],
-                                                      },
-                                                      "locale": "en",
-                                                      "messages": null,
-                                                      "now": [Function],
-                                                      "onError": [Function],
-                                                      "textComponent": "span",
-                                                      "timeZone": null,
-                                                    }
-                                                  }
-                                                  isActive={false}
-                                                  key="abc"
-                                                  onClick={[Function]}
+                                                <ul
+                                                  className="list orion-fusion-theme list"
+                                                  data-submenu={false}
                                                   onKeyDown={[Function]}
-                                                  text="testing"
-                                                  totalItems={1}
+                                                  role="menu"
                                                 >
-                                                  <MenuItem
+                                                  <InjectIntl(MenuItem)
                                                     aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
                                                     index={0}
                                                     intl={
@@ -601,57 +572,95 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                       }
                                                     }
                                                     isActive={false}
-                                                    isDisabled={false}
-                                                    isHighlighted={false}
-                                                    isInstructionsForUse={false}
-                                                    isToggled={false}
+                                                    key="abc"
                                                     onClick={[Function]}
                                                     onKeyDown={[Function]}
-                                                    subMenuItems={Array []}
                                                     text="testing"
                                                     totalItems={1}
                                                   >
-                                                    <li
+                                                    <MenuItem
                                                       aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
-                                                      aria-disabled={false}
-                                                      className="item orion-fusion-theme"
-                                                      data-terra-menu-interactive-item={true}
+                                                      index={0}
+                                                      intl={
+                                                        Object {
+                                                          "defaultFormats": Object {},
+                                                          "defaultLocale": "en",
+                                                          "formatDate": [Function],
+                                                          "formatHTMLMessage": [Function],
+                                                          "formatMessage": [Function],
+                                                          "formatNumber": [Function],
+                                                          "formatPlural": [Function],
+                                                          "formatRelative": [Function],
+                                                          "formatTime": [Function],
+                                                          "formats": Object {},
+                                                          "formatters": Object {
+                                                            "getDateTimeFormat": [Function],
+                                                            "getMessageFormat": [Function],
+                                                            "getNumberFormat": [Function],
+                                                            "getPluralFormat": [Function],
+                                                            "getRelativeFormat": [Function],
+                                                          },
+                                                          "locale": "en",
+                                                          "messages": null,
+                                                          "now": [Function],
+                                                          "onError": [Function],
+                                                          "textComponent": "span",
+                                                          "timeZone": null,
+                                                        }
+                                                      }
+                                                      isActive={false}
+                                                      isDisabled={false}
+                                                      isHighlighted={false}
+                                                      isInstructionsForUse={false}
+                                                      isToggled={false}
                                                       onClick={[Function]}
                                                       onKeyDown={[Function]}
-                                                      onKeyUp={[Function]}
-                                                      role="menuitem"
-                                                      tabIndex="0"
+                                                      subMenuItems={Array []}
+                                                      text="testing"
+                                                      totalItems={1}
                                                     >
-                                                      <div
-                                                        className="text"
+                                                      <li
+                                                        aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
+                                                        aria-disabled={false}
+                                                        className="item orion-fusion-theme"
+                                                        data-terra-menu-interactive-item={true}
+                                                        onClick={[Function]}
+                                                        onKeyDown={[Function]}
+                                                        onKeyUp={[Function]}
+                                                        role="menuitem"
+                                                        tabIndex="0"
                                                       >
-                                                        testing
-                                                      </div>
-                                                      <VisuallyHiddenText>
-                                                        <span
-                                                          className="visually-hidden-text"
-                                                        />
-                                                      </VisuallyHiddenText>
-                                                    </li>
-                                                  </MenuItem>
-                                                </InjectIntl(MenuItem)>
-                                              </ul>
-                                            </List>
-                                          </InjectIntl(List)>
-                                        </div>
-                                      </Scroll>
+                                                        <div
+                                                          className="text"
+                                                        >
+                                                          testing
+                                                        </div>
+                                                        <VisuallyHiddenText>
+                                                          <span
+                                                            className="visually-hidden-text"
+                                                          />
+                                                        </VisuallyHiddenText>
+                                                      </li>
+                                                    </MenuItem>
+                                                  </InjectIntl(MenuItem)>
+                                                </ul>
+                                              </List>
+                                            </InjectIntl(List)>
+                                          </div>
+                                        </Scroll>
+                                      </div>
                                     </div>
-                                  </div>
-                                </ContentContainer>
-                              </div>
-                            </MenuContent>
-                          </InjectIntl(MenuContent)>
+                                  </ContentContainer>
+                                </div>
+                              </MenuContent>
+                            </InjectIntl(MenuContent)>
+                          </div>
                         </div>
-                      </div>
-                    </HookshotContent>
-                  </OnClickOutside(HookshotContent)>
-                </div>
-              </FocusTrap>
+                      </HookshotContent>
+                    </OnClickOutside(HookshotContent)>
+                  </div>
+                </FocusTrap>
+              </FormattedMessage>
             </PopupContent>
           </Portal>
         </Portal>
