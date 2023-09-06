@@ -65,7 +65,7 @@ const propTypes = {
   isRowHeader: PropTypes.bool,
 
   /**
-   * Boolean indicating that the cell is has been highlighted.
+   * Boolean indicating that the cell has been highlighted.
    */
   isHighlighted: PropTypes.bool,
 
