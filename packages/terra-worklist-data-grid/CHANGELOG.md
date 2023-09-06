@@ -5,6 +5,9 @@
   * Fixed scroll issues for pinned columns.
   * Fixed scroll issues for fixed column header row.
 
+* Changed
+  * Updated the `terra-worklist-data-grid` component to provide row selection assistive technology messages based on the properties provided by the consumer.
+
 ## 0.5.0 - (August 31, 2023)
 
 * Added
