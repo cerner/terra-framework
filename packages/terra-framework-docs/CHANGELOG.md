@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated examples and tests for `terra-worklist-data-grid` to properly update row selection data.
+
 ## 1.34.0 - (September 5, 2023)
 
 * Changed
