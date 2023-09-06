@@ -624,6 +624,19 @@ exports[`should render a DatePickerField with props 1`] = `
                                     test-date-picker
                                   </span>
                                 </VisuallyHiddenText>
+                                <VisuallyHiddenText
+                                  aria-atomic="true"
+                                  aria-live="assertive"
+                                  aria-relevant="all"
+                                  refCallback={[Function]}
+                                >
+                                  <span
+                                    aria-atomic="true"
+                                    aria-live="assertive"
+                                    aria-relevant="all"
+                                    className="visually-hidden-text"
+                                  />
+                                </VisuallyHiddenText>
                                 <DateInputLayout
                                   dateFormatOrder="MDY"
                                   day={
@@ -1442,6 +1455,19 @@ exports[`should render a default DatePickerField component 1`] = `
                                   >
                                     test-date-picker
                                   </span>
+                                </VisuallyHiddenText>
+                                <VisuallyHiddenText
+                                  aria-atomic="true"
+                                  aria-live="assertive"
+                                  aria-relevant="all"
+                                  refCallback={[Function]}
+                                >
+                                  <span
+                                    aria-atomic="true"
+                                    aria-live="assertive"
+                                    aria-relevant="all"
+                                    className="visually-hidden-text"
+                                  />
                                 </VisuallyHiddenText>
                                 <DateInputLayout
                                   dateFormatOrder="MDY"
@@ -2369,6 +2395,19 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   >
                                     test-date-picker
                                   </span>
+                                </VisuallyHiddenText>
+                                <VisuallyHiddenText
+                                  aria-atomic="true"
+                                  aria-live="assertive"
+                                  aria-relevant="all"
+                                  refCallback={[Function]}
+                                >
+                                  <span
+                                    aria-atomic="true"
+                                    aria-live="assertive"
+                                    aria-relevant="all"
+                                    className="visually-hidden-text"
+                                  />
                                 </VisuallyHiddenText>
                                 <DateInputLayout
                                   dateFormatOrder="MDY"

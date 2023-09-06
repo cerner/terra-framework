@@ -99,6 +99,19 @@ exports[`correctly applies the theme context className 1`] = `
                 id="name-label-00000000-0000-0000-0000-000000000000"
               />
             </VisuallyHiddenText>
+            <VisuallyHiddenText
+              aria-atomic="true"
+              aria-live="assertive"
+              aria-relevant="all"
+              refCallback={[Function]}
+            >
+              <span
+                aria-atomic="true"
+                aria-live="assertive"
+                aria-relevant="all"
+                className="visually-hidden-text"
+              />
+            </VisuallyHiddenText>
             <DateInputLayout
               dateFormatOrder="MDY"
               day={
@@ -519,6 +532,19 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
             id="name-label-00000000-0000-0000-0000-000000000000"
           />
         </VisuallyHiddenText>
+        <VisuallyHiddenText
+          aria-atomic="true"
+          aria-live="assertive"
+          aria-relevant="all"
+          refCallback={[Function]}
+        >
+          <span
+            aria-atomic="true"
+            aria-live="assertive"
+            aria-relevant="all"
+            className="visually-hidden-text"
+          />
+        </VisuallyHiddenText>
         <DateInputLayout
           dateFormatOrder="MDY"
           day={
@@ -896,6 +922,12 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
         class="visually-hidden-text"
         id="name-label-00000000-0000-0000-0000-000000000000"
       />
+      <span
+        aria-atomic="true"
+        aria-live="assertive"
+        aria-relevant="all"
+        class="visually-hidden-text"
+      />
       <input
         aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.monthLabel"
@@ -1015,6 +1047,12 @@ exports[`should render a date input with isInvalid prop 1`] = `
         class="visually-hidden-text"
         id="name-label-00000000-0000-0000-0000-000000000000"
       />
+      <span
+        aria-atomic="true"
+        aria-live="assertive"
+        aria-relevant="all"
+        class="visually-hidden-text"
+      />
       <input
         aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.monthLabel"
@@ -1133,6 +1171,12 @@ exports[`should render a default date input 1`] = `
       <span
         class="visually-hidden-text"
         id="name-label-00000000-0000-0000-0000-000000000000"
+      />
+      <span
+        aria-atomic="true"
+        aria-live="assertive"
+        aria-relevant="all"
+        class="visually-hidden-text"
       />
       <input
         aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
@@ -1353,6 +1397,19 @@ exports[`should render a default date input with all props 1`] = `
           >
             date-input
           </span>
+        </VisuallyHiddenText>
+        <VisuallyHiddenText
+          aria-atomic="true"
+          aria-live="assertive"
+          aria-relevant="all"
+          refCallback={[Function]}
+        >
+          <span
+            aria-atomic="true"
+            aria-live="assertive"
+            aria-relevant="all"
+            className="visually-hidden-text"
+          />
         </VisuallyHiddenText>
         <DateInputLayout
           dateFormatOrder="MDY"
