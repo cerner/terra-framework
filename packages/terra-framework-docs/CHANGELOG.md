@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added example for `terra-tabs` to test the focus traverse with interactive element within the tab content.
+
 ## 1.34.0 - (September 5, 2023)
 
 * Changed
