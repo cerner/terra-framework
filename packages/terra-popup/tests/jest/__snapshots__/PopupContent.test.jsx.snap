@@ -49,47 +49,33 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
     onResize={[MockFunction]}
     popupContentRole="dialog"
   >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={true}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "returnFocusOnDeactivate": true,
-        }
-      }
-      paused={false}
+    <FormattedMessage
+      id="Terra.popup.escapeInstruction"
+      values={Object {}}
     >
-      <div>
-        <OnClickOutside(HookshotContent)
-          className="content orion-fusion-theme"
-          data-terra-popup-content={true}
-          eventTypes={
-            Array [
-              "mousedown",
-              "touchstart",
-            ]
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={true}
+        focusTrapOptions={
+          Object {
+            "clickOutsideDeactivates": true,
+            "returnFocusOnDeactivate": true,
           }
-          excludeScrollbar={false}
-          onEsc={[MockFunction]}
-          onResize={[Function]}
-          outsideClickIgnoreClass="ignore-react-onclickoutside"
-          preventDefault={false}
-          role="dialog"
-          stopPropagation={false}
-          tabIndex="0"
-        >
-          <HookshotContent
+        }
+        paused={false}
+      >
+        <div>
+          <OnClickOutside(HookshotContent)
+            aria-label=" Terra.popup.escapeInstruction"
             className="content orion-fusion-theme"
             data-terra-popup-content={true}
-            disableOnClickOutside={[Function]}
-            enableOnClickOutside={[Function]}
             eventTypes={
               Array [
                 "mousedown",
                 "touchstart",
               ]
             }
+            excludeScrollbar={false}
             onEsc={[MockFunction]}
             onResize={[Function]}
             outsideClickIgnoreClass="ignore-react-onclickoutside"
@@ -98,112 +84,65 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
             stopPropagation={false}
             tabIndex="0"
           >
-            <div
-              className="content content orion-fusion-theme"
+            <HookshotContent
+              aria-label=" Terra.popup.escapeInstruction"
+              className="content orion-fusion-theme"
               data-terra-popup-content={true}
+              disableOnClickOutside={[Function]}
+              enableOnClickOutside={[Function]}
+              eventTypes={
+                Array [
+                  "mousedown",
+                  "touchstart",
+                ]
+              }
+              onEsc={[MockFunction]}
+              onResize={[Function]}
+              outsideClickIgnoreClass="ignore-react-onclickoutside"
+              preventDefault={false}
               role="dialog"
+              stopPropagation={false}
               tabIndex="0"
             >
               <div
-                className="inner"
-                style={
-                  Object {
-                    "height": "640px",
-                    "width": "640px",
-                  }
-                }
+                aria-label=" Terra.popup.escapeInstruction"
+                className="content content orion-fusion-theme"
+                data-terra-popup-content={true}
+                role="dialog"
+                tabIndex="0"
               >
                 <div
-                  key=".0"
+                  className="inner"
+                  style={
+                    Object {
+                      "height": "640px",
+                      "width": "640px",
+                    }
+                  }
                 >
-                  children node(s)
+                  <div
+                    key=".0"
+                  >
+                    children node(s)
+                  </div>
                 </div>
               </div>
-            </div>
-          </HookshotContent>
-        </OnClickOutside(HookshotContent)>
-      </div>
-    </FocusTrap>
+            </HookshotContent>
+          </OnClickOutside(HookshotContent)>
+        </div>
+      </FocusTrap>
+    </FormattedMessage>
   </PopupContent>
 </ThemeContextProvider>
 `;
 
 exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
-<FocusTrap
-  _createFocusTrap={[Function]}
-  active={true}
-  focusTrapOptions={
-    Object {
-      "clickOutsideDeactivates": true,
-      "returnFocusOnDeactivate": true,
-    }
-  }
-  paused={false}
+<FormattedMessage
+  id="Terra.popup.escapeInstruction"
+  values={Object {}}
 >
-  <div>
-    <OnClickOutside(HookshotContent)
-      className="content"
-      data-terra-popup-content={true}
-      eventTypes={
-        Array [
-          "mousedown",
-          "touchstart",
-        ]
-      }
-      excludeScrollbar={false}
-      intl={
-        Object {
-          "defaultFormats": Object {},
-          "defaultLocale": "en",
-          "formatDate": [Function],
-          "formatHTMLMessage": [Function],
-          "formatMessage": [Function],
-          "formatNumber": [Function],
-          "formatPlural": [Function],
-          "formatRelative": [Function],
-          "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
-            "getDateTimeFormat": [Function],
-            "getMessageFormat": [Function],
-            "getNumberFormat": [Function],
-            "getPluralFormat": [Function],
-            "getRelativeFormat": [Function],
-          },
-          "locale": "en",
-          "messages": null,
-          "now": [Function],
-          "onError": [Function],
-          "textComponent": "span",
-          "timeZone": null,
-        }
-      }
-      onEsc={[MockFunction]}
-      onResize={[Function]}
-      outsideClickIgnoreClass="ignore-react-onclickoutside"
-      preventDefault={false}
-      role="dialog"
-      stopPropagation={false}
-      tabIndex="0"
-    >
-      <div
-        className="inner"
-        style={
-          Object {
-            "height": "640px",
-            "width": "640px",
-          }
-        }
-      >
-        <div
-          key=".0"
-        >
-          children node(s)
-        </div>
-      </div>
-    </OnClickOutside(HookshotContent)>
-  </div>
-</FocusTrap>
+  <Component />
+</FormattedMessage>
 `;
 
 exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
@@ -252,6 +191,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
       "calls": Array [
         Array [
           <div
+            aria-label=" Terra.popup.escapeInstruction"
             class="content content"
             data-terra-popup-content="true"
             intl="[object Object]"
@@ -317,143 +257,33 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
     }
   }
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": true,
-        "returnFocusOnDeactivate": true,
-      }
-    }
-    paused={false}
+  <FormattedMessage
+    id="Terra.popup.escapeInstruction"
+    values={Object {}}
   >
-    <div>
-      <OnClickOutside(HookshotContent)
-        className="content"
-        data-terra-popup-content={true}
-        eventTypes={
-          Array [
-            "mousedown",
-            "touchstart",
-          ]
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={true}
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+          "returnFocusOnDeactivate": true,
         }
-        excludeScrollbar={false}
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
-        }
-        onEsc={[MockFunction]}
-        onResize={[Function]}
-        outsideClickIgnoreClass="ignore-react-onclickoutside"
-        preventDefault={false}
-        refCallback={
-          [MockFunction] {
-            "calls": Array [
-              Array [
-                <div
-                  class="content content"
-                  data-terra-popup-content="true"
-                  intl="[object Object]"
-                  role="dialog"
-                  tabindex="0"
-                >
-                  <div
-                    class="inner is-full-screen"
-                    style="height: 640px; width: 640px;"
-                  >
-                    <div
-                      class="content-container-fill"
-                    >
-                      <div
-                        class="header"
-                      >
-                        <div
-                          class="header"
-                        >
-                          <button
-                            aria-disabled="false"
-                            aria-label="Terra.popup.header.close"
-                            class="button utility"
-                            title="Terra.popup.header.close"
-                            type="button"
-                          >
-                            <span
-                              class="button-label icon-only"
-                            >
-                              <span
-                                class="icon"
-                              >
-                                <span
-                                  class="close-icon icon-svg"
-                                />
-                              </span>
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-                      <div
-                        class="main"
-                      >
-                        <div
-                          class="scroll normalizer"
-                        >
-                          <div>
-                            children node(s)
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>,
-              ],
-            ],
-            "results": Array [
-              Object {
-                "type": "return",
-                "value": undefined,
-              },
-            ],
-          }
-        }
-        role="dialog"
-        stopPropagation={false}
-        tabIndex="0"
-      >
-        <HookshotContent
+      }
+      paused={false}
+    >
+      <div>
+        <OnClickOutside(HookshotContent)
+          aria-label=" Terra.popup.escapeInstruction"
           className="content"
           data-terra-popup-content={true}
-          disableOnClickOutside={[Function]}
-          enableOnClickOutside={[Function]}
           eventTypes={
             Array [
               "mousedown",
               "touchstart",
             ]
           }
+          excludeScrollbar={false}
           intl={
             Object {
               "defaultFormats": Object {},
@@ -490,6 +320,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
               "calls": Array [
                 Array [
                   <div
+                    aria-label=" Terra.popup.escapeInstruction"
                     class="content content"
                     data-terra-popup-content="true"
                     intl="[object Object]"
@@ -558,9 +389,18 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
           stopPropagation={false}
           tabIndex="0"
         >
-          <div
-            className="content content"
+          <HookshotContent
+            aria-label=" Terra.popup.escapeInstruction"
+            className="content"
             data-terra-popup-content={true}
+            disableOnClickOutside={[Function]}
+            enableOnClickOutside={[Function]}
+            eventTypes={
+              Array [
+                "mousedown",
+                "touchstart",
+              ]
+            }
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -588,40 +428,130 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                 "timeZone": null,
               }
             }
+            onEsc={[MockFunction]}
+            onResize={[Function]}
+            outsideClickIgnoreClass="ignore-react-onclickoutside"
+            preventDefault={false}
+            refCallback={
+              [MockFunction] {
+                "calls": Array [
+                  Array [
+                    <div
+                      aria-label=" Terra.popup.escapeInstruction"
+                      class="content content"
+                      data-terra-popup-content="true"
+                      intl="[object Object]"
+                      role="dialog"
+                      tabindex="0"
+                    >
+                      <div
+                        class="inner is-full-screen"
+                        style="height: 640px; width: 640px;"
+                      >
+                        <div
+                          class="content-container-fill"
+                        >
+                          <div
+                            class="header"
+                          >
+                            <div
+                              class="header"
+                            >
+                              <button
+                                aria-disabled="false"
+                                aria-label="Terra.popup.header.close"
+                                class="button utility"
+                                title="Terra.popup.header.close"
+                                type="button"
+                              >
+                                <span
+                                  class="button-label icon-only"
+                                >
+                                  <span
+                                    class="icon"
+                                  >
+                                    <span
+                                      class="close-icon icon-svg"
+                                    />
+                                  </span>
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                          <div
+                            class="main"
+                          >
+                            <div
+                              class="scroll normalizer"
+                            >
+                              <div>
+                                children node(s)
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>,
+                  ],
+                ],
+                "results": Array [
+                  Object {
+                    "type": "return",
+                    "value": undefined,
+                  },
+                ],
+              }
+            }
             role="dialog"
+            stopPropagation={false}
             tabIndex="0"
           >
             <div
-              className="inner is-full-screen"
-              style={
+              aria-label=" Terra.popup.escapeInstruction"
+              className="content content"
+              data-terra-popup-content={true}
+              intl={
                 Object {
-                  "height": "640px",
-                  "width": "640px",
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
                 }
               }
+              role="dialog"
+              tabIndex="0"
             >
-              <ContentContainer
-                fill={true}
-                header={
-                  <div
-                    className="header"
-                  >
-                    <FormattedMessage
-                      id="Terra.popup.header.close"
-                      values={Object {}}
-                    >
-                      [Function]
-                    </FormattedMessage>
-                  </div>
+              <div
+                className="inner is-full-screen"
+                style={
+                  Object {
+                    "height": "640px",
+                    "width": "640px",
+                  }
                 }
-                setFocusOnContainer={false}
               >
-                <div
-                  className="content-container-fill"
-                >
-                  <div
-                    className="header"
-                  >
+                <ContentContainer
+                  fill={true}
+                  header={
                     <div
                       className="header"
                     >
@@ -629,174 +559,107 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                         id="Terra.popup.header.close"
                         values={Object {}}
                       >
-                        <Button
-                          icon={
-                            <span
-                              className="close-icon"
-                            />
-                          }
-                          isBlock={false}
-                          isCompact={false}
-                          isDisabled={false}
-                          isIconOnly={true}
-                          isReversed={false}
-                          onClick={[MockFunction]}
-                          text="Terra.popup.header.close"
-                          type="button"
-                          variant="utility"
-                        >
-                          <button
-                            aria-disabled={false}
-                            aria-label="Terra.popup.header.close"
-                            className="button utility"
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseDown={[Function]}
-                            title="Terra.popup.header.close"
-                            type="button"
-                          >
-                            <span
-                              className="button-label icon-only"
-                            >
-                              <span
-                                className="icon"
-                              >
-                                <span
-                                  className="close-icon icon-svg"
-                                />
-                              </span>
-                            </span>
-                          </button>
-                        </Button>
+                        [Function]
                       </FormattedMessage>
                     </div>
-                  </div>
+                  }
+                  setFocusOnContainer={false}
+                >
                   <div
-                    className="main"
+                    className="content-container-fill"
                   >
-                    <Scroll
-                      className="normalizer"
+                    <div
+                      className="header"
                     >
                       <div
-                        className="scroll normalizer"
+                        className="header"
+                      >
+                        <FormattedMessage
+                          id="Terra.popup.header.close"
+                          values={Object {}}
+                        >
+                          <Button
+                            icon={
+                              <span
+                                className="close-icon"
+                              />
+                            }
+                            isBlock={false}
+                            isCompact={false}
+                            isDisabled={false}
+                            isIconOnly={true}
+                            isReversed={false}
+                            onClick={[MockFunction]}
+                            text="Terra.popup.header.close"
+                            type="button"
+                            variant="utility"
+                          >
+                            <button
+                              aria-disabled={false}
+                              aria-label="Terra.popup.header.close"
+                              className="button utility"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseDown={[Function]}
+                              title="Terra.popup.header.close"
+                              type="button"
+                            >
+                              <span
+                                className="button-label icon-only"
+                              >
+                                <span
+                                  className="icon"
+                                >
+                                  <span
+                                    className="close-icon icon-svg"
+                                  />
+                                </span>
+                              </span>
+                            </button>
+                          </Button>
+                        </FormattedMessage>
+                      </div>
+                    </div>
+                    <div
+                      className="main"
+                    >
+                      <Scroll
+                        className="normalizer"
                       >
                         <div
-                          key=".0"
+                          className="scroll normalizer"
                         >
-                          children node(s)
+                          <div
+                            key=".0"
+                          >
+                            children node(s)
+                          </div>
                         </div>
-                      </div>
-                    </Scroll>
+                      </Scroll>
+                    </div>
                   </div>
-                </div>
-              </ContentContainer>
+                </ContentContainer>
+              </div>
             </div>
-          </div>
-        </HookshotContent>
-      </OnClickOutside(HookshotContent)>
-    </div>
-  </FocusTrap>
+          </HookshotContent>
+        </OnClickOutside(HookshotContent)>
+      </div>
+    </FocusTrap>
+  </FormattedMessage>
 </PopupContent>
 `;
 
 exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = `
-<FocusTrap
-  _createFocusTrap={[Function]}
-  active={true}
-  focusTrapOptions={
-    Object {
-      "clickOutsideDeactivates": true,
-      "returnFocusOnDeactivate": true,
-    }
-  }
-  paused={false}
+<FormattedMessage
+  id="Terra.popup.escapeInstruction"
+  values={Object {}}
 >
-  <div>
-    <OnClickOutside(HookshotContent)
-      className="content"
-      data-terra-popup-content={true}
-      eventTypes={
-        Array [
-          "mousedown",
-          "touchstart",
-        ]
-      }
-      excludeScrollbar={false}
-      intl={
-        Object {
-          "defaultFormats": Object {},
-          "defaultLocale": "en",
-          "formatDate": [Function],
-          "formatHTMLMessage": [Function],
-          "formatMessage": [Function],
-          "formatNumber": [Function],
-          "formatPlural": [Function],
-          "formatRelative": [Function],
-          "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
-            "getDateTimeFormat": [Function],
-            "getMessageFormat": [Function],
-            "getNumberFormat": [Function],
-            "getPluralFormat": [Function],
-            "getRelativeFormat": [Function],
-          },
-          "locale": "en",
-          "messages": null,
-          "now": [Function],
-          "onError": [Function],
-          "textComponent": "span",
-          "timeZone": null,
-        }
-      }
-      onEsc={[MockFunction]}
-      onResize={[Function]}
-      outsideClickIgnoreClass="ignore-react-onclickoutside"
-      preventDefault={false}
-      refCallback={[MockFunction]}
-      role="dialog"
-      stopPropagation={false}
-      tabIndex="0"
-    >
-      <div
-        className="inner is-full-screen"
-        style={
-          Object {
-            "height": "640px",
-            "width": "640px",
-          }
-        }
-      >
-        <ContentContainer
-          fill={true}
-          header={
-            <div
-              className="header"
-            >
-              <FormattedMessage
-                id="Terra.popup.header.close"
-                values={Object {}}
-              >
-                [Function]
-              </FormattedMessage>
-            </div>
-          }
-          setFocusOnContainer={false}
-        >
-          <div
-            key=".0"
-          >
-            children node(s)
-          </div>
-        </ContentContainer>
-      </div>
-    </OnClickOutside(HookshotContent)>
-  </div>
-</FocusTrap>
+  <Component />
+</FormattedMessage>
 `;
 
 exports[`PopupContentExports should match the snapshot 1`] = `

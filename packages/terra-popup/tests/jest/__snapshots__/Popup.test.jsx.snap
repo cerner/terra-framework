@@ -2,6 +2,33 @@
 
 exports[`correctly applies the theme context className 1`] = `
 <ThemeContextProvider
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   theme={
     Object {
       "className": "orion-fusion-theme",
@@ -101,6 +128,7 @@ exports[`correctly applies the theme context className 1`] = `
                 <div>
                   <div>
                     <div
+                      aria-label=" Terra.popup.escapeInstruction"
                       class="content content orion-fusion-theme"
                       data-terra-popup-content="true"
                       role="dialog"
@@ -137,49 +165,34 @@ exports[`correctly applies the theme context className 1`] = `
                 popupContentRole="dialog"
                 refCallback={[Function]}
               >
-                <FocusTrap
-                  _createFocusTrap={[Function]}
-                  active={true}
-                  focusTrapOptions={
-                    Object {
-                      "clickOutsideDeactivates": true,
-                      "returnFocusOnDeactivate": true,
-                    }
-                  }
-                  paused={false}
+                <FormattedMessage
+                  id="Terra.popup.escapeInstruction"
+                  values={Object {}}
                 >
-                  <div>
-                    <OnClickOutside(HookshotContent)
-                      className="content orion-fusion-theme"
-                      data-terra-popup-content={true}
-                      disableOnClickOutside={true}
-                      eventTypes={
-                        Array [
-                          "mousedown",
-                          "touchstart",
-                        ]
+                  <FocusTrap
+                    _createFocusTrap={[Function]}
+                    active={true}
+                    focusTrapOptions={
+                      Object {
+                        "clickOutsideDeactivates": true,
+                        "returnFocusOnDeactivate": true,
                       }
-                      excludeScrollbar={false}
-                      onEsc={[Function]}
-                      onResize={[Function]}
-                      outsideClickIgnoreClass="ignore-react-onclickoutside"
-                      preventDefault={false}
-                      refCallback={[Function]}
-                      role="dialog"
-                      stopPropagation={false}
-                      tabIndex="0"
-                    >
-                      <HookshotContent
+                    }
+                    paused={false}
+                  >
+                    <div>
+                      <OnClickOutside(HookshotContent)
+                        aria-label=" Terra.popup.escapeInstruction"
                         className="content orion-fusion-theme"
                         data-terra-popup-content={true}
-                        disableOnClickOutside={[Function]}
-                        enableOnClickOutside={[Function]}
+                        disableOnClickOutside={true}
                         eventTypes={
                           Array [
                             "mousedown",
                             "touchstart",
                           ]
                         }
+                        excludeScrollbar={false}
                         onEsc={[Function]}
                         onResize={[Function]}
                         outsideClickIgnoreClass="ignore-react-onclickoutside"
@@ -189,32 +202,55 @@ exports[`correctly applies the theme context className 1`] = `
                         stopPropagation={false}
                         tabIndex="0"
                       >
-                        <div
-                          className="content content orion-fusion-theme"
+                        <HookshotContent
+                          aria-label=" Terra.popup.escapeInstruction"
+                          className="content orion-fusion-theme"
                           data-terra-popup-content={true}
+                          disableOnClickOutside={[Function]}
+                          enableOnClickOutside={[Function]}
+                          eventTypes={
+                            Array [
+                              "mousedown",
+                              "touchstart",
+                            ]
+                          }
+                          onEsc={[Function]}
+                          onResize={[Function]}
+                          outsideClickIgnoreClass="ignore-react-onclickoutside"
+                          preventDefault={false}
+                          refCallback={[Function]}
                           role="dialog"
+                          stopPropagation={false}
                           tabIndex="0"
                         >
                           <div
-                            className="inner"
-                            style={
-                              Object {
-                                "height": "80px",
-                                "width": "240px",
-                              }
-                            }
+                            aria-label=" Terra.popup.escapeInstruction"
+                            className="content content orion-fusion-theme"
+                            data-terra-popup-content={true}
+                            role="dialog"
+                            tabIndex="0"
                           >
-                            <p
-                              key=".0"
+                            <div
+                              className="inner"
+                              style={
+                                Object {
+                                  "height": "80px",
+                                  "width": "240px",
+                                }
+                              }
                             >
-                              this is popup content
-                            </p>
+                              <p
+                                key=".0"
+                              >
+                                this is popup content
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      </HookshotContent>
-                    </OnClickOutside(HookshotContent)>
-                  </div>
-                </FocusTrap>
+                        </HookshotContent>
+                      </OnClickOutside(HookshotContent)>
+                    </div>
+                  </FocusTrap>
+                </FormattedMessage>
               </PopupContent>
             </Portal>
           </Portal>
@@ -239,6 +275,33 @@ exports[`should renders with custom arrow class name 1`] = `
     contentAttachment="top center"
     contentHeight="80"
     contentWidth="240"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isArrowDisplayed={false}
     isContentFocusDisabled={false}
     isHeaderDisabled={false}
@@ -268,6 +331,33 @@ exports[`should renders with custom content class name 1`] = `
     contentAttachment="top center"
     contentHeight="80"
     contentWidth="240"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isArrowDisplayed={false}
     isContentFocusDisabled={false}
     isHeaderDisabled={false}
@@ -297,6 +387,33 @@ exports[`should renders with custom overlay class name 1`] = `
     contentAttachment="top center"
     contentHeight="80"
     contentWidth="240"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isArrowDisplayed={false}
     isContentFocusDisabled={false}
     isHeaderDisabled={false}
@@ -326,6 +443,33 @@ exports[`should shallow a default component 1`] = `
     contentAttachment="top center"
     contentHeight="80"
     contentWidth="240"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isArrowDisplayed={false}
     isContentFocusDisabled={false}
     isHeaderDisabled={false}
@@ -355,6 +499,33 @@ exports[`should shallow render a component with push attachment behavior 1`] = `
     contentAttachment="top center"
     contentHeight="80"
     contentWidth="240"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isArrowDisplayed={false}
     isContentFocusDisabled={false}
     isHeaderDisabled={false}
