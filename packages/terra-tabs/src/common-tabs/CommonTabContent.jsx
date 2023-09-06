@@ -75,7 +75,7 @@ const CommonTabContent = ({
         <div
           className={cx('panel-overflow', { 'disable-overflow': overlays.length })}
           role="tabpanel"
-          tabIndex="0"
+          tabIndex={children ? 0 : -1}
           id={panelId}
           aria-labelledby={tabId}
           data-application-overflow-container

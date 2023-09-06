@@ -7,7 +7,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import IconClose from 'terra-icon/lib/icon/IconClose';
 import {
-  KEY_SPACE, KEY_RETURN, KEY_DELETE, KEY_BACK_SPACE,
+  KEY_SPACE, KEY_RETURN, KEY_DELETE, KEY_BACK_SPACE, KEY_TAB,
 } from 'keycode-js';
 
 import { injectIntl } from 'react-intl';
@@ -197,6 +197,22 @@ const Tab = ({
     }
   }
   function onKeyDown(event) {
+    const shiftTabClicked = (event.shiftKey && event.nativeEvent.keyCode === KEY_TAB);
+    const tabClicked = (event.nativeEvent.keyCode === KEY_TAB);
+    if (!(shiftTabClicked) && tabClicked) {
+      const div = document.getElementById(associatedPanelId);
+
+      if (div) {
+        const firstInteractiveElement = div.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"]');
+
+        if (firstInteractiveElement) {
+          event.preventDefault();
+          document.getElementById(associatedPanelId).tabIndex = -1;
+          firstInteractiveElement.focus();
+        }
+      }
+    }
+
     if (event.nativeEvent.keyCode === KEY_RETURN || (event.nativeEvent.keyCode === KEY_SPACE && !isDraggable)) {
       event.preventDefault();
       event.stopPropagation();
