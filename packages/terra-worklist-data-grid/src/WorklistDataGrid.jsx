@@ -206,6 +206,7 @@ function WorklistDataGrid(props) {
   const tableWidth = useRef(0);
 
   const grid = useRef();
+  const gridContainerRef = useRef();
   const handleFocus = useRef(true);
   const selectedRows = useRef([]);
   const [focusedRow, setFocusedRow] = useState(0);
@@ -454,6 +455,37 @@ function WorklistDataGrid(props) {
   }, [onRowSelect, rows]);
 
   const handleMoveCellFocus = (fromCell, toCell) => {
+    // Obtain coordinate rectangles for grid container, column header, and new cell selection
+    const gridContainerRect = gridContainerRef.current.getBoundingClientRect();
+    const columnHeaderRect = grid.current.rows[0].cells[toCell.col].getBoundingClientRect();
+    const nextCellRect = grid.current.rows[toCell.row].cells[toCell.col].getBoundingClientRect();
+
+    // Calculate horizontal scroll offset for right boundary
+    if (nextCellRect.right > gridContainerRect.right) {
+      gridContainerRef.current.scrollBy(nextCellRect.right - gridContainerRect.right, 0);
+    } else {
+      // Calculate horizontal scroll offset for left boundary
+      let scrollOffsetX = 0;
+      if (pinnedColumnOffsets.length > 0) {
+        if (toCell.col > pinnedColumnOffsets.length - 1) {
+          const lastPinnedColumnRect = grid.current.rows[toCell.row].cells[pinnedColumnOffsets.length - 1].getBoundingClientRect();
+          scrollOffsetX = nextCellRect.left - lastPinnedColumnRect.right;
+        }
+      } else {
+        scrollOffsetX = nextCellRect.left - gridContainerRect.left;
+      }
+
+      if (scrollOffsetX < 0) {
+        gridContainerRef.current.scrollBy(scrollOffsetX, 0);
+      }
+    }
+
+    // Calculate vertical scroll offset
+    const scrollOffsetY = nextCellRect.top - columnHeaderRect.bottom;
+    if (scrollOffsetY < 0) {
+      gridContainerRef.current.scrollBy(0, scrollOffsetY);
+    }
+
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
 
@@ -735,7 +767,7 @@ function WorklistDataGrid(props) {
 
   // -------------------------------------
   return (
-    <div className={cx('worklist-data-grid-container')}>
+    <div ref={gridContainerRef} className={cx('worklist-data-grid-container')}>
       <table
         ref={gridRef}
         id={id}

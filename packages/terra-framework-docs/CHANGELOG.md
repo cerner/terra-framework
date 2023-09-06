@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.34.0 - (September 5, 2023)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.33.0 - (August 31, 2023)
 
 * Added
@@ -10,6 +15,7 @@
   * Added tests for unselectable toggles in `terra-collapsible-menu-view`.
 
 * Changed
+  * Updated `terra-arrange` from `v3.51.0` to `v3.53.0`.
   * Updated focusable cell example for `terra-worklist-data-grid` to allow text area to be editable.
   * Added examples and tests for Add & Close functionality of tabs.
   * Updated examples and tests for `terra-worklist-data-grid` to account for cell selection state being controlled by consumers.

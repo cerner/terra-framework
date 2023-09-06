@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+* Fixed
+  * Fixed scroll issues for pinned columns.
+  * Fixed scroll issues for fixed column header row.
 
 ## 0.5.0 - (August 31, 2023)
 
@@ -20,6 +23,7 @@
   * Fixed pinned column separator not adjusting size when the table height changes.
   * Fixed pinned column cells not being selectable.
   * Fixed pinned column border issues during scrolling.
+  * Fixed hover/background colors for alternating rows.
 
 ## 0.4.0 - (August 10, 2023)
 

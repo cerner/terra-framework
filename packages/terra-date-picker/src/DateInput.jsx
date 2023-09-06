@@ -193,6 +193,7 @@ const DatePickerInput = (props) => {
 
   const additionalInputProps = { ...customProps, ...inputAttributes };
   const momentDateFormat = useMemo(() => DateUtil.getFormatByLocale(intl.locale), [intl.locale]);
+  const nameLabelId = `name-label-${uuidv4()}`;
   const dateValue = useMemo(() => (DateUtil.convertToISO8601(value, momentDateFormat)), [momentDateFormat, value]);
   const dateFormatOrder = DateUtil.getDateFormatOrder(momentDateFormat);
   const separator = DateUtil.getDateSeparator(intl.locale);
@@ -680,7 +681,7 @@ const DatePickerInput = (props) => {
       pattern="\d*"
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
-      aria-describedby={ariaDescriptionIds}
+      aria-describedby={dateFormatOrder === DateUtil.dateOrder.DMY ? `${nameLabelId} ${ariaDescriptionIds}` : ariaDescriptionIds}
       id={dayInputId}
     />
   );
@@ -711,7 +712,7 @@ const DatePickerInput = (props) => {
       pattern="\d*"
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
-      aria-describedby={ariaDescriptionIds}
+      aria-describedby={dateFormatOrder === DateUtil.dateOrder.MDY ? `${nameLabelId} ${ariaDescriptionIds}` : ariaDescriptionIds}
       id={monthInputId}
     />
   );
@@ -742,7 +743,7 @@ const DatePickerInput = (props) => {
       pattern="\d*"
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
-      aria-describedby={ariaDescriptionIds}
+      aria-describedby={dateFormatOrder === DateUtil.dateOrder.YMD ? `${nameLabelId} ${ariaDescriptionIds}` : ariaDescriptionIds}
       id={yearInputId}
     />
   );
@@ -781,6 +782,7 @@ const DatePickerInput = (props) => {
             value={dateValue}
           />
           <VisuallyHiddenText text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}` : label} />
+          <VisuallyHiddenText id={nameLabelId} text={name} />
           <DateInputLayout
             dateFormatOrder={dateFormatOrder}
             separator={dateSpacer}
