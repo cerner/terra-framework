@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import IconAddPerson from 'terra-icon/lib/icon/IconAddPerson';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import Tabs from 'terra-tabs';
+import TabContentTemplate from './TabContentTemplate';
 import styles from './common/TabExample.module.scss';
 
 const cx = classNames.bind(styles);
@@ -95,7 +96,9 @@ const AddCloseTab = () => {
     <div className={cx('content-wrapper')}>
       <Tabs activeKey={activeKey} isClosable onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
         { tabs.map((tab) => (
-          <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} customDisplay={tab.customDisplay} isDisabled={tab.isDisabled} icon={tab.icon} key={tab.key} id={tab.key} />
+          <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} customDisplay={tab.customDisplay} isDisabled={tab.isDisabled} icon={tab.icon} key={tab.key} id={tab.key}>
+            <TabContentTemplate label={tab.content} />
+          </Tabs.Pane>
         ))}
       </Tabs>
     </div>
