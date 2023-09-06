@@ -79,13 +79,12 @@ class EmbeddedContentConsumer extends React.Component {
     // Merging the iframe options props
     const frameOptions = { ...this.props.options };
 
-    if (frameOptions.iframeAttrs == null) {
-      frameOptions.iframeAttrs = {};
-    }
-
     if (this.props.title) {
-      Object.assign(frameOptions.iframeAttrs, { title: this.props.title });
+      if (frameOptions.iframeAttrs == null) {
+        frameOptions.iframeAttrs = {};
+      }
 
+      Object.assign(frameOptions.iframeAttrs, { title: this.props.title });
       Object.keys(frameOptions.iframeAttrs).forEach(key => {
         if (frameOptions.iframeAttrs[key] == null) {
           delete frameOptions.iframeAttrs[key];
