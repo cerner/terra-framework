@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added aria-label prop for terra-popup to announce the close instruction.
+
 ## 6.70.1 - (August 4, 2023)
 
 * Changed
