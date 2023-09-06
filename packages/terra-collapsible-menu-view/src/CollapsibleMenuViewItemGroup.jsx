@@ -17,6 +17,10 @@ const propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
+   * Whether or not it is a multi select CollapsibleMenuView.Items group.
+   */
+  isMultiSelect: PropTypes.bool,
+  /**
    * A list of keys of the CollapsibleMenuView.Items that should be selected.
    */
   selectedKeys: PropTypes.arrayOf(PropTypes.string),
@@ -24,10 +28,12 @@ const propTypes = {
 
 const defaultProps = {
   selectedKeys: [],
+  isMultiSelect: false,
 };
 
 const childContextTypes = {
   isCollapsibleGroupItem: PropTypes.bool,
+  isMultiSelect: PropTypes.bool,
 };
 
 const contextTypes = {
@@ -37,14 +43,16 @@ const contextTypes = {
 class CollapsibleMenuViewItemGroup extends React.Component {
   constructor(props) {
     super(props);
-    this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleMenuOnChange = this.handleMenuOnChange.bind(this);
+    this.handleButtonOnChange = this.handleButtonOnChange.bind(this);
+    this.state = { selectedKeys: this.props.selectedKeys };
   }
 
   getChildContext() {
-    return { isCollapsibleGroupItem: true };
+    return { isCollapsibleGroupItem: true, isMultiSelect: this.props.isMultiSelect };
   }
 
-  handleOnChange(event, selectedIndex) {
+  handleMenuOnChange(event, selectedIndex) {
     if (this.props.onChange) {
       let selectedKey = selectedIndex;
       React.Children.forEach(this.props.children, (child, index) => {
@@ -57,10 +65,22 @@ class CollapsibleMenuViewItemGroup extends React.Component {
     }
   }
 
+  handleButtonOnChange(event, selectedKey) {
+    if (this.props.onChange) {
+      this.props.onChange(event, selectedKey);
+    }
+
+    // ensures only one item is selected when isMultiselect is not specified.
+    if (!this.props.isMultiSelect) {
+      this.setState({ selectedKeys: [selectedKey] });
+    }
+  }
+
   render() {
     const {
       children,
       onChange,
+      isMultiSelect,
       selectedKeys,
       ...customProps
     } = this.props;
@@ -70,7 +90,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
     if (isCollapsibleMenuItem && selectedKeys.length) {
       return (
         <li role="none">
-          <Menu.ItemGroup {...customProps} onChange={this.handleOnChange}>
+          <Menu.ItemGroup {...customProps} onChange={this.handleMenuOnChange}>
             {children}
           </Menu.ItemGroup>
         </li>
@@ -89,7 +109,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
     ]);
 
     return (
-      <ButtonGroup {...customProps} onChange={onChange} className={buttonGroupClassNames} selectedKeys={selectedKeys}>
+      <ButtonGroup {...customProps} isMultiSelect={isMultiSelect} onChange={this.handleButtonOnChange} className={buttonGroupClassNames} selectedKeys={this.state.selectedKeys}>
         {children}
       </ButtonGroup>
     );
