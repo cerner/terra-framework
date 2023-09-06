@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import ThemeContext from 'terra-theme-context';
 import classNames from 'classnames/bind';
@@ -95,6 +95,8 @@ function Row(props) {
 
   const theme = useContext(ThemeContext);
 
+  const [isHovered, setHovered] = useState(false);
+
   const columnIndexOffSet = hasRowSelection ? 1 : 0;
 
   const handleCellSelect = useCallback((selectionDetails) => {
@@ -122,6 +124,7 @@ function Row(props) {
         isMasked={cellData.isMasked}
         isSelectable={cellData.isSelectable}
         isRowHeader={isRowHeader}
+        isHighlighted={isHovered || isSelected}
         onCellSelect={handleCellSelect}
         height={height}
       >
@@ -150,6 +153,8 @@ function Row(props) {
       }, theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ height }}
+      onMouseEnter={hasRowSelection ? () => { setHovered(true); } : null}
+      onMouseLeave={hasRowSelection ? () => { setHovered(false); } : null}
     >
       {rowSelectionCell}
       {cells.map((cellData, cellColumnIndex) => (

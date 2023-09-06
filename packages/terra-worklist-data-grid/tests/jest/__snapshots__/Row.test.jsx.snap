@@ -3,6 +3,8 @@
 exports[`Row creates a row with the correct number of cells 1`] = `
 <tr
   className="worklist-data-grid-row"
+  onMouseEnter={null}
+  onMouseLeave={null}
   style={
     Object {
       "height": "25px",
@@ -13,6 +15,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     columnId="Column-0"
     columnIndex={0}
     height="25px"
+    isHighlighted={false}
     isRowHeader={true}
     key="1_Column-0"
     onCellSelect={[Function]}
@@ -25,6 +28,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     columnId="Column-1"
     columnIndex={1}
     height="25px"
+    isHighlighted={false}
     isRowHeader={false}
     key="1_Column-1"
     onCellSelect={[Function]}
@@ -35,6 +39,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     columnId="Column-2"
     columnIndex={2}
     height="25px"
+    isHighlighted={false}
     isMasked={true}
     isRowHeader={false}
     key="1_Column-2"
@@ -50,6 +55,8 @@ exports[`Row creates a row with the correct number of cells 1`] = `
 exports[`Row verifies the cell is created with the right props 1`] = `
 <tr
   className="worklist-data-grid-row"
+  onMouseEnter={null}
+  onMouseLeave={null}
   style={
     Object {
       "height": "25px",
@@ -60,6 +67,7 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     columnId="Column-0"
     columnIndex={0}
     height="25px"
+    isHighlighted={false}
     isRowHeader={true}
     key="3_Column-0"
     onCellSelect={[Function]}
@@ -72,6 +80,7 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     columnId="Column-1"
     columnIndex={1}
     height="25px"
+    isHighlighted={false}
     isRowHeader={false}
     key="3_Column-1"
     onCellSelect={[Function]}
@@ -84,6 +93,7 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     columnId="Column-2"
     columnIndex={2}
     height="25px"
+    isHighlighted={false}
     isMasked={false}
     isRowHeader={false}
     key="3_Column-2"
