@@ -6,33 +6,14 @@ const WorklistDataGridWithRowSelection = () => {
   const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
   const [rowData, setRowData] = useState(rows);
-  const [selectedRows, setSelectedRows] = useState([]);
   const [hasSelectableRows, setHasSelectableRows] = useState(true);
 
-  const determineSelectedRows = (allRowsSelected, userSelectedRow) => {
-    if (!userSelectedRow) {
-      return [];
-    }
-
-    let remainingSelectedRow = [];
-    if (allRowsSelected) {
-      remainingSelectedRow = userSelectedRow;
-    } else if (selectedRows.includes(userSelectedRow[0])) {
-      // Row Deselect so remove this rowId.
-      remainingSelectedRow = selectedRows.filter(e => (e !== userSelectedRow[0]));
-    } else {
-      // Row Selected so add this rowId.
-      remainingSelectedRow = remainingSelectedRow.concat(selectedRows);
-      remainingSelectedRow.push(userSelectedRow[0]);
-    }
-    return remainingSelectedRow;
-  };
-
-  const clearRowSelection = () => {
-    // eslint-disable-next-line no-param-reassign
-    rows.forEach(r => { if (r.isSelected) { r.isSelected = false; } });
-    setSelectedRows([]);
-  };
+  const clearRowSelection = useCallback(() => {
+    const newRowData = [...rowData];
+    // eslint-disable-next-line no-return-assign, no-param-reassign
+    newRowData.forEach(row => (row.isSelected = false));
+    setRowData(newRowData);
+  }, [rowData]);
 
   const disableSelectableRows = () => {
     setHasSelectableRows(false);
@@ -53,6 +34,13 @@ const WorklistDataGridWithRowSelection = () => {
     setRowData(newRowData);
   }, [rowData]);
 
+  const onRowSelectAll = useCallback(() => {
+    const newRowData = [...rowData];
+    // eslint-disable-next-line no-return-assign, no-param-reassign
+    newRowData.forEach(row => (row.isSelected = true));
+    setRowData(newRowData);
+  }, [rowData]);
+
   return (
     <WorklistDataGrid
       id="default-terra-worklist-data-grid"
@@ -62,17 +50,9 @@ const WorklistDataGridWithRowSelection = () => {
       ariaLabel="Worklist Data Grid"
       hasSelectableRows={hasSelectableRows}
       onRowSelect={onRowSelect}
-      onRowSelectAll={() => {
-        const newRows = [];
-        rows.forEach(e => { e.isSelected = true; newRows.push(e.id); });
-        setSelectedRows(determineSelectedRows(true, newRows));
-      }}
-      onClearSelectedRows={() => {
-        clearRowSelection();
-      }}
-      onDisableSelectableRows={() => {
-        disableSelectableRows();
-      }}
+      onRowSelectAll={onRowSelectAll}
+      onClearSelectedRows={clearRowSelection}
+      onDisableSelectableRows={disableSelectableRows}
       onEnableRowSelection={() => {
         setHasSelectableRows(true);
       }}
