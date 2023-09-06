@@ -2141,13 +2141,13 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-mode-enabled Terra.worklist-data-grid.row-selection-template"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-mode-enabled Terra.worklist-data-grid.row-selection-template
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -3275,9 +3275,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -3756,9 +3756,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -4232,9 +4232,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -4708,9 +4708,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -5002,13 +5002,13 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -6136,9 +6136,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -6617,9 +6617,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -7093,9 +7093,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -7569,9 +7569,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -7863,13 +7863,13 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -10029,13 +10029,13 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-mode-enabled Terra.worklist-data-grid.row-selection-template"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-mode-enabled Terra.worklist-data-grid.row-selection-template
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -11163,9 +11163,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -11644,9 +11644,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -12120,9 +12120,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -12596,9 +12596,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -12890,13 +12890,13 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -14024,9 +14024,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -14505,9 +14505,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -14981,9 +14981,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -15457,9 +15457,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -15751,13 +15751,13 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -16933,9 +16933,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -17414,9 +17414,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -17890,9 +17890,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -18366,9 +18366,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -18660,13 +18660,13 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -19762,9 +19762,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -20243,9 +20243,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -20719,9 +20719,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -21195,9 +21195,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -21489,13 +21489,13 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -23693,13 +23693,13 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-mode-enabled Terra.worklist-data-grid.row-selection-selected-rows-range"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-mode-enabled Terra.worklist-data-grid.row-selection-selected-rows-range
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -24835,9 +24835,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -25316,9 +25316,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -25792,9 +25792,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -26268,9 +26268,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -26562,13 +26562,13 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -27696,9 +27696,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -28177,9 +28177,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -28653,9 +28653,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -29129,9 +29129,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -29423,13 +29423,13 @@ exports[`Row selection verifies multiple independent ranges can be created with 
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-multiple-rows-selected Terra.worklist-data-grid.row-selection-selected-rows-range
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -30517,9 +30517,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -30998,9 +30998,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -31474,9 +31474,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -31950,9 +31950,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -33338,9 +33338,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -33819,9 +33819,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -34295,9 +34295,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -34771,9 +34771,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -35065,13 +35065,13 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-cleared-template"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-cleared-template
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -36159,9 +36159,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -36640,9 +36640,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -37116,9 +37116,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -37592,9 +37592,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -38980,9 +38980,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -39461,9 +39461,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -39937,9 +39937,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -40413,9 +40413,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -40707,13 +40707,13 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-cleared-template"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-cleared-template
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -42807,13 +42807,13 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-mode-disabled"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-mode-disabled
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -44907,13 +44907,13 @@ exports[`basic grid verifies onCellSelect callback is not triggered when space i
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.cell-selection-template"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.cell-selection-template
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -45987,9 +45987,9 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -46468,9 +46468,9 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -46944,9 +46944,9 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -47420,9 +47420,9 @@ exports[`basic grid verifies row selection column header selection 1`] = `
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -47714,13 +47714,13 @@ exports[`basic grid verifies row selection column header selection 1`] = `
       </table>
       <VisuallyHiddenText
         aria-live="polite"
-        text="Terra.worklist-data-grid.row-selection-mode-enabled"
+        text="Terra.worklist-data-grid.row-selection-template"
       >
         <span
           aria-live="polite"
           className="visually-hidden-text"
         >
-          Terra.worklist-data-grid.row-selection-mode-enabled
+          Terra.worklist-data-grid.row-selection-template
         </span>
       </VisuallyHiddenText>
       <VisuallyHiddenText
@@ -48804,9 +48804,9 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -49285,9 +49285,9 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -49761,9 +49761,9 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -50237,9 +50237,9 @@ exports[`basic grid verifies row selection when space is pressed on a masked cel
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -51621,9 +51621,9 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -52102,9 +52102,9 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -52578,9 +52578,9 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                             }
                           >
                             <input
-                              aria-checked={false}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={false}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
@@ -53054,9 +53054,9 @@ exports[`basic grid verifies row selection when space is pressed on a non-select
                             }
                           >
                             <input
-                              aria-checked={true}
                               aria-label="Terra.worklist-data-grid.row-index"
                               checked={true}
+                              readOnly={true}
                               tabIndex={-1}
                               type="checkbox"
                             />
