@@ -200,7 +200,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
               <div>
                 <div>
                   <div
-                    aria-label=" Terra.popup.escapeInstructions"
+                    aria-label=" Terra.popup.escapeInstruction"
                     class="content content orion-fusion-theme"
                     data-terra-popup-content="true"
                     role="dialog"
@@ -298,7 +298,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
               refCallback={[Function]}
             >
               <FormattedMessage
-                id="Terra.popup.escapeInstructions"
+                id="Terra.popup.escapeInstruction"
                 values={Object {}}
               >
                 <FocusTrap
@@ -314,7 +314,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                 >
                   <div>
                     <OnClickOutside(HookshotContent)
-                      aria-label=" Terra.popup.escapeInstructions"
+                      aria-label=" Terra.popup.escapeInstruction"
                       className="content orion-fusion-theme"
                       data-terra-popup-content={true}
                       disableOnClickOutside={true}
@@ -336,7 +336,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                       tabIndex={null}
                     >
                       <HookshotContent
-                        aria-label=" Terra.popup.escapeInstructions"
+                        aria-label=" Terra.popup.escapeInstruction"
                         className="content orion-fusion-theme"
                         data-terra-popup-content={true}
                         disableOnClickOutside={[Function]}
@@ -358,7 +358,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                         tabIndex={null}
                       >
                         <div
-                          aria-label=" Terra.popup.escapeInstructions"
+                          aria-label=" Terra.popup.escapeInstruction"
                           className="content content orion-fusion-theme"
                           data-terra-popup-content={true}
                           role="dialog"
