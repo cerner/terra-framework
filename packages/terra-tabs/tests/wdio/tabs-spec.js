@@ -210,3 +210,12 @@ Terra.describeViewports('Tabs - Programmatic Activation', ['medium'], () => {
     Terra.validates.element('After Programmatic Activation', { selector: '#root' });
   });
 });
+
+Terra.describeViewports('Tabs - Keyboard Focus with interactive element', ['medium'], () => {
+  it('displays tab with keyboard focus with interactive element within the tab content', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/add-close-interactive-tab');
+    browser.keys('Tab');
+    browser.keys('Tab');
+    Terra.validates.element('Keyboard Focus on First Interactive Element', { selector: '#root' });
+  });
+});
