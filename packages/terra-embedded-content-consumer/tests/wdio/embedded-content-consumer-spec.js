@@ -102,7 +102,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
 
       browser.switchToParentFrame();
 
-      Terra.validates.element('Scroll content intoto view');
+      Terra.validates.element('Scroll content into view');
     });
   });
 });
