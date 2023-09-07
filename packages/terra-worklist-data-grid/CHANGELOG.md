@@ -4,6 +4,7 @@
 * Fixed
   * Fixed scroll issues for pinned columns.
   * Fixed scroll issues for fixed column header row.
+  * Fixed border issues for selected rows
 
 ## 0.5.0 - (August 31, 2023)
 
