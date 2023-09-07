@@ -207,6 +207,8 @@ function WorklistDataGrid(props) {
 
   const grid = useRef();
   const gridContainerRef = useRef();
+
+  const rowSelectionEffectTriggered = useRef(false);
   const handleFocus = useRef(true);
   const selectedRows = useRef([]);
   const [focusedRow, setFocusedRow] = useState(0);
@@ -288,6 +290,11 @@ function WorklistDataGrid(props) {
       multiSelectRange.current = {};
     }
 
+    if (!rowSelectionEffectTriggered.current) {
+      rowSelectionEffectTriggered.current = true;
+      return;
+    }
+
     // Since the row selection mode has changed, the row selection mode needs to be updated.
     setAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' }));
 
@@ -360,7 +367,9 @@ function WorklistDataGrid(props) {
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.worklist-data-grid.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
       }
 
-      setAriaLiveMessage(selectionUpdateAriaMessage);
+      if (selectionUpdateAriaMessage) {
+        setAriaLiveMessage(selectionUpdateAriaMessage);
+      }
     }
   }, [intl, rows]);
 
