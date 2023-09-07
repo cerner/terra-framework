@@ -40,6 +40,7 @@
 
 * Updated
   * Updated example for `terra-date-picker` with isInvalid prop.
+  * Updated examples and tests to add support for content scrolling within the iframe.
 
 ## 1.34.0 - (September 5, 2023)
 
