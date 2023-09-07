@@ -207,6 +207,8 @@ function WorklistDataGrid(props) {
 
   const grid = useRef();
   const gridContainerRef = useRef();
+
+  const rowSelectionEffectTriggered = useRef(false);
   const handleFocus = useRef(true);
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
@@ -266,17 +268,21 @@ function WorklistDataGrid(props) {
 
   // useEffect for row selection
   useEffect(() => {
+    if (!rowSelectionEffectTriggered.current) {
+      rowSelectionEffectTriggered.current = true;
+      return;
+    }
+
     // When row selection mode is turned on or off a row selection column is added or removed.
     // Therefore, shift the focused cell to the left or right.
-    let newFocusCell = { row: focusedRow, col: (focusedCol + (hasSelectableRows ? 1 : -1)) };
+    let newFocusCell = { row: focusedRow, col: focusedCol };
 
-    if (hasSelectableRows && focusedRow === 0 && focusedCol === 0) {
-      // When row selection is turned on for the first time, default to the first row selection cell.
-      newFocusCell = { row: 1, col: 0 };
-    } else if (!hasSelectableRows && focusedCol === 0) {
+    if (!hasSelectableRows && focusedCol === 0) {
       // When row selection is turned off, if a cell in the row selection had focus, then
       // refocus on the first cell in that row.
       newFocusCell = { row: focusedRow, col: 0 };
+    } else if (focusedRow !== 0) {
+      newFocusCell = { row: focusedRow, col: (focusedCol + (hasSelectableRows ? 1 : -1)) };
     }
     setFocusedRowCol(newFocusCell.row, newFocusCell.col, false);
 
