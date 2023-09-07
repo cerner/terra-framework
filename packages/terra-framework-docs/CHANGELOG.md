@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated examples and tests for `terra-worklist-data-grid` to properly update row selection data.
+
 * Updated
   * Updated example for `terra-date-picker` with isInvalid prop.
   
