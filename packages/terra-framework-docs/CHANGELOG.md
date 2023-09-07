@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Updated
+  * Updated example for `terra-date-picker` with isInvalid prop.
+  
 ## 1.34.0 - (September 5, 2023)
 
 * Changed
