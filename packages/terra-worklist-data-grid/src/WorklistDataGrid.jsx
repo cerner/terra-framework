@@ -445,7 +445,6 @@ function WorklistDataGrid(props) {
 
   const selectRow = useCallback((rowId, rowIndex) => {
     const rowsToSelectAndUnSelect = [];
-    // const rowLabel = rows[rowIndex - 1].ariaLabel || (rowIndex + 1);
 
     if (!rows[rowIndex - 1].isSelected) {
       multiSelectRange.current = { start: rowIndex, end: null }; // Establish new starting point for future range.
