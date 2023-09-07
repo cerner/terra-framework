@@ -8,6 +8,13 @@ const propTypes = {
    */
   src: PropTypes.string.isRequired,
   /**
+   * Scrolling is default to `true` and allows content inside of the iframe to be scrolled if needed.
+   * When set to `false`, scrolling is disabled. Regardless of the option, there is a logic to resize
+   * the content within the iframe (within [xfc](https://github.com/cerner/xfc#iframe-resizing-config) library)
+   * to be fully visible so that scrolling is not needed.
+   */
+  scrolling: PropTypes.bool,
+  /**
    * Notifies the component that the container has been mounted. Provides a reference
    * to this component to allow triggering messages on the embedded application.
    */
@@ -60,8 +67,31 @@ const propTypes = {
   })),
 };
 
+const defaultProps = {
+  scrolling: true,
+};
+
 class EmbeddedContentConsumer extends React.Component {
   componentDidMount() {
+    // Merging the iframe options props
+    const frameOptions = { ...this.props.options };
+
+    if (frameOptions.resizeConfig == null) {
+      frameOptions.resizeConfig = {};
+    }
+
+    if (frameOptions.iframeAttrs == null) {
+      frameOptions.iframeAttrs = {};
+    }
+
+    if (this.props.scrolling === false) {
+      Object.assign(frameOptions.resizeConfig, { scrolling: false });
+      Object.assign(frameOptions.iframeAttrs, { scrolling: 'no' });
+    } else {
+      Object.assign(frameOptions.resizeConfig, { scrolling: true });
+      Object.assign(frameOptions.iframeAttrs, { scrolling: 'yes' });
+    }
+
     // Mount the provided source as the application into the content wrapper.
     this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, this.props.options);
 
@@ -91,6 +121,7 @@ class EmbeddedContentConsumer extends React.Component {
   render() {
     const {
       src,
+      scrolling,
       onMount,
       onLaunch,
       onAuthorize,
@@ -109,5 +140,6 @@ class EmbeddedContentConsumer extends React.Component {
 }
 
 EmbeddedContentConsumer.propTypes = propTypes;
+EmbeddedContentConsumer.defaultProps = defaultProps;
 
 export default EmbeddedContentConsumer;

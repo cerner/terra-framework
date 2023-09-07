@@ -81,3 +81,31 @@ it('should validate the inputs', () => {
   expect(wrapper.instance().props.options.resizeConfig).toBe(resizeConfig);
   expect(wrapper.instance().props.eventHandlers).toBe(customEvents);
 });
+
+it('sets appropriate config option when scrolling is true', () => {
+  const embeddedContentConsumer = (
+    <div>
+      <EmbeddedContentConsumer
+        src="https://www.google.com/"
+        scrolling
+      />
+    </div>
+  );
+
+  const wrapper = shallow(embeddedContentConsumer);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('sets appropriate config option when scrolling is false', () => {
+  const embeddedContentConsumer = (
+    <div>
+      <EmbeddedContentConsumer
+        src="https://www.google.com/"
+        scrolling={false}
+      />
+    </div>
+  );
+
+  const wrapper = shallow(embeddedContentConsumer);
+  expect(wrapper).toMatchSnapshot();
+});
