@@ -213,7 +213,8 @@ function WorklistDataGrid(props) {
   const selectedRows = useRef([]);
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
-  const [ariaLiveMessage, setAriaLiveMessage] = useState(null);
+  const [rowSelectionAriaLiveMessage, setRowSelectionAriaLiveMessage] = useState(null);
+  const [rowSelectionModeAriaLiveMessage, setRowSelectionModeAriaLiveMessage] = useState(null);
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
   const inShiftUpDownMode = useRef(false);
   const multiSelectRange = useRef({ start: null, end: null });
@@ -296,7 +297,7 @@ function WorklistDataGrid(props) {
     }
 
     // Since the row selection mode has changed, the row selection mode needs to be updated.
-    setAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' }));
+    setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' }));
 
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -343,9 +344,9 @@ function WorklistDataGrid(props) {
     selectedRows.current = rows.filter((row) => row.isSelected).map(row => (row.id));
 
     if (previousSelectedRows.length > 0 && selectedRows.current.length === 0) {
-      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-unselected' }));
+      setRowSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-unselected' }));
     } else if (selectedRows.current.length === rows.length) {
-      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-selected' }));
+      setRowSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-selected' }));
     } else {
       const rowSelectionsAdded = selectedRows.current.filter(row => !previousSelectedRows.includes(row));
       const rowSelectionsRemoved = previousSelectedRows.filter(row => !selectedRows.current.includes(row));
@@ -368,7 +369,7 @@ function WorklistDataGrid(props) {
       }
 
       if (selectionUpdateAriaMessage) {
-        setAriaLiveMessage(selectionUpdateAriaMessage);
+        setRowSelectionAriaLiveMessage(selectionUpdateAriaMessage);
       }
     }
   }, [intl, rows]);
@@ -387,7 +388,6 @@ function WorklistDataGrid(props) {
         onClearSelectedRows();
       }
     } else if (onDisableSelectableRows) {
-      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-mode-disabled' }));
       onDisableSelectableRows();
     }
   };
@@ -806,7 +806,8 @@ function WorklistDataGrid(props) {
           </tbody>
         </ColumnContext.Provider>
       </table>
-      <VisuallyHiddenText aria-live="polite" text={ariaLiveMessage} />
+      <VisuallyHiddenText aria-live="polite" text={rowSelectionModeAriaLiveMessage} />
+      <VisuallyHiddenText aria-live="polite" text={rowSelectionAriaLiveMessage} />
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />
     </div>
   );
