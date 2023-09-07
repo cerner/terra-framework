@@ -8,11 +8,6 @@ beforeAll(() => {
   jest.spyOn(console, 'warn').mockImplementation();
 });
 
-afterEach(() => {
-  console.error.mockClear(); // eslint-disable-line no-console
-  console.warn.mockClear(); // eslint-disable-line no-console
-});
-
 afterAll(() => {
   console.error.mockRestore(); // eslint-disable-line no-console
   console.warn.mockRestore(); // eslint-disable-line no-console
