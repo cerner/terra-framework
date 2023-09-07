@@ -55,33 +55,15 @@ const RowSelection = () => {
   const rowSelectionModeRef = useRef();
   const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
-  const [selectedRows, setSelectedRows] = useState([]);
+  const [rowData, setRowData] = useState(rows);
   const [hasSelectableRows, setHasSelectableRows] = useState(false);
 
-  const determineSelectedRows = useCallback((allRowsSelected, userSelectedRow) => {
-    if (!userSelectedRow) {
-      return [];
-    }
-
-    let remainingSelectedRow = [];
-    if (allRowsSelected) {
-      remainingSelectedRow = userSelectedRow;
-    } else if (selectedRows.includes(userSelectedRow[0])) {
-      // Row Deselected so remove this rowId.
-      remainingSelectedRow = selectedRows.filter(row => (row !== userSelectedRow[0]));
-    } else {
-      // Row Selected so add this rowId.
-      remainingSelectedRow = remainingSelectedRow.concat(selectedRows);
-      remainingSelectedRow.push(userSelectedRow[0]);
-    }
-    return remainingSelectedRow;
-  }, [selectedRows]);
-
   const clearRowSelection = useCallback(() => {
-    // eslint-disable-next-line no-param-reassign
-    rows.forEach(r => { if (r.isSelected) { r.isSelected = false; } });
-    setSelectedRows([]);
-  }, [rows]);
+    const newRowData = [...rowData];
+    // eslint-disable-next-line no-return-assign, no-param-reassign
+    newRowData.forEach(row => (row.isSelected = false));
+    setRowData(newRowData);
+  }, [rowData]);
 
   const disableSelectableRows = useCallback(() => {
     rowSelectionModeRef.current.checked = false;
@@ -90,20 +72,25 @@ const RowSelection = () => {
   }, [clearRowSelection]);
 
   const onRowSelect = useCallback((rowsToSelectAndUnSelect) => {
-    rowsToSelectAndUnSelect.forEach((changedRow) => {
-      const dataRowToUpdate = rows.find(row => row.id === changedRow.id);
+    // Remove current selections
+    const newRowData = [...rowData];
+
+    rowsToSelectAndUnSelect.forEach((updatedRow) => {
+      const dataRowToUpdate = newRowData.find(row => row.id === updatedRow.id);
       if (dataRowToUpdate) {
-        dataRowToUpdate.isSelected = changedRow.selected;
+        dataRowToUpdate.isSelected = updatedRow.selected;
       }
     });
-  }, [rows]);
+
+    setRowData(newRowData);
+  }, [rowData]);
 
   const onRowSelectAll = useCallback(() => {
-    const newRows = [];
-    // eslint-disable-next-line no-param-reassign
-    rows.forEach(row => { row.isSelected = true; newRows.push(row.id); });
-    setSelectedRows(determineSelectedRows(true, newRows));
-  }, [determineSelectedRows, rows]);
+    const newRowData = [...rowData];
+    // eslint-disable-next-line no-return-assign, no-param-reassign
+    newRowData.forEach(row => (row.isSelected = true));
+    setRowData(newRowData);
+  }, [rowData]);
 
   const onRowSelectionModeChange = (event) => {
     if (!event.target.checked) {
@@ -134,7 +121,7 @@ const RowSelection = () => {
         id="pinned-columns-with-row-selection"
         pinnedColumns={cols.slice(0, 3)}
         overflowColumns={cols.slice(3)}
-        rows={[...rows]}
+        rows={rowData}
         rowHeaderIndex={rowHeaderIndex}
         defaultColumnWidth={180}
         ariaLabel="Worklist Data Grid with Pinned Columns and Row Selection"
