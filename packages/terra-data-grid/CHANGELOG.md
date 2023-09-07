@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+
+* Breaking Changes
+  * Renamed `terra-worklist-data-grid` package to `terra-data-grid`.
+  * Changed WorklistDataGrid component from default to named export.
+
 * Fixed
   * Fixed scroll issues for pinned columns.
   * Fixed scroll issues for fixed column header row.

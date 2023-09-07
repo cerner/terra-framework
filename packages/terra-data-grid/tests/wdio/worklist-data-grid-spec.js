@@ -45,7 +45,7 @@ const shiftClickCell = (row, col, selector) => {
 Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
   describe('with keyboard navigation', () => {
     beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/default-worklist-data-grid');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/default-worklist-data-grid');
     });
 
     it('uses arrow keys to navigate', () => {
@@ -131,7 +131,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
 
   describe('Cell selection : ', () => {
     beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/default-worklist-data-grid');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/default-worklist-data-grid');
     });
 
     it('selects the current cell with spacebar', () => {
@@ -200,7 +200,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
 
   describe('With row selection', () => {
     beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-row-selection');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-with-row-selection');
     });
 
     it('verifies that first tab into grid focuses on the checkbox', () => {
@@ -289,7 +289,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
 
     it('hovers over selectable cell in worklist data grid', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-selections');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-with-selections');
 
       browser.$$('td[class*="worklist-data-grid-cell"][class*="selectable"]')[0].moveTo();
       browser.pause(2000);
@@ -297,7 +297,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
 
     it('hovers over selectable cell in worklist data grid', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-selections');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-with-selections');
 
       browser.$$('td[class*="worklist-data-grid-cell"][class*="selectable"]')[0].moveTo();
       browser.pause(2000);
@@ -476,7 +476,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     const columnResizeSelector = '#terra-worklist-data-grid-focusable-cell';
 
     beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-focusable-cell');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-focusable-cell');
     });
 
     it('validates that the proper grid element is selected when Tab is used to give initial focus to the grid', () => {
@@ -567,7 +567,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     const pinnedColumnsWithRowSelectionSelector = '#pinned-columns-with-row-selection';
 
     it('validates that focused cells scroll into view when pinned columns exist', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/pinned-columns');
 
       browser.keys(['Tab', 'ArrowDown', 'ArrowRight', 'ArrowRight']);
 
@@ -581,20 +581,20 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
 
     it('adds pinned columns', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/pinned-columns');
 
       Terra.validates.element('pinned-columns', { selector: pinnedColumnsSelector });
     });
 
     it('keeps pinned columns stickied when scrolling', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/pinned-columns');
       navigateToCell(2, 1);
       moveCurrentPositionBy(0, 9);
       Terra.validates.element('pinned-columns-scroll', { selector: pinnedColumnsSelector });
     });
 
     it('selects the current cell with spacebar', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/pinned-columns');
       navigateToCell(1, 1);
       browser.keys(['Space']);
 
@@ -602,7 +602,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
 
     it('validates that navigating the grid does not change the selected cell', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/pinned-columns');
       navigateToCell(1, 1);
       browser.keys(['Space']);
       moveCurrentPositionBy(1, 0);
@@ -611,7 +611,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
 
     it('validates that selecting another cell moves the selection and focus to current cell', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/pinned-columns');
       navigateToCell(1, 1);
       browser.keys(['Space']);
       moveCurrentPositionBy(1, 0);
@@ -621,14 +621,14 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
 
     it('validates that clicking on a cell, moves selection and focus to that cell', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/pinned-columns');
       clickCell(1, 1, pinnedColumnsSelector);
 
       Terra.validates.element('pinned-columns-selection-1-1-focus-1-1-with-hover', { selector: pinnedColumnsSelector });
     });
 
     it('validates that mouse click moves selection and focus to clicked cell', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/pinned-columns');
       clickCell(0, 1, pinnedColumnsSelector); // Selection and Focus is on (0,1)
       clickCell(1, 2, pinnedColumnsSelector); // Selection and Focus should move to (1,2)
 
@@ -636,14 +636,14 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
 
     it('keeps row selection column stickied when scrolling', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns-with-row-selection');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/pinned-columns-with-row-selection');
       navigateToCell(2, 1);
       moveCurrentPositionBy(0, 9);
       Terra.validates.element('pinned-columns-with-row-selection-scroll', { selector: pinnedColumnsWithRowSelectionSelector });
     });
 
     it('selects the whole row with pinned columns', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/pinned-columns-with-row-selection');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/pinned-columns-with-row-selection');
 
       clickCell(2, 0, pinnedColumnsWithRowSelectionSelector);
       Terra.validates.element('pinned-columns-with-row-selection-select', { selector: pinnedColumnsWithRowSelectionSelector });
@@ -654,14 +654,14 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     const stickyHeaderSelector = '#terra-worklist-data-grid-sticky';
 
     it('verifies that the table column header is fixed when scrolling', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-sticky-header');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-sticky-header');
       navigateToCell(2, 1);
       moveCurrentPositionBy(6, 0);
       Terra.validates.element('sticky-header-scroll', { selector: stickyHeaderSelector });
     });
 
     it('validates that focused cells scroll into view when beneath sticky column header', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-sticky-header');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-sticky-header');
 
       browser.keys(['Tab']);
 

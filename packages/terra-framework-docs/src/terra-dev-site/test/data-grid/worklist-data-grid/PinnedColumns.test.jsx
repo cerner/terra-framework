@@ -1,7 +1,5 @@
-import React, { useState, useCallback } from 'react';
-import { DisclosureManagerContext } from 'terra-disclosure-manager';
-import WorklistDataGrid from 'terra-worklist-data-grid';
-import DisclosureComponent from './disclosure/DisclosureComponent';
+import React, { useState, useCallback, useEffect } from 'react';
+import { WorklistDataGrid } from 'terra-data-grid';
 
 const gridDataJSON = {
   cols: [
@@ -20,7 +18,6 @@ const gridDataJSON = {
   rows: [
     {
       id: '1',
-      ariaLabel: 'First Row',
       cells: [
         { content: 'Fleck, Arthur' },
         { content: '1007-MTN' },
@@ -37,7 +34,6 @@ const gridDataJSON = {
     },
     {
       id: '2',
-      ariaLabel: 'Second Row',
       cells: [
         { content: 'Wayne, Bruce' },
         { content: '1007-MTN-DR' },
@@ -54,17 +50,21 @@ const gridDataJSON = {
     },
   ],
 };
-const CellSelection = () => {
-  const rowHeaderIndex = 0;
-  const { cols, rows } = gridDataJSON;
-  const disclosureManager = React.useContext(DisclosureManagerContext);
 
-  const [rowData, setRowData] = useState(rows);
+const PinnedColumns = () => {
+  const rowHeaderIndex = 0;
+  const { cols } = gridDataJSON;
+  const [rowData, setRowData] = useState([]);
+
+  // Change row data for data grid to validate that pinned column border resizes correctly.
+  useEffect(() => {
+    setRowData(gridDataJSON.rows);
+  }, []);
 
   const onCellSelect = useCallback((rowId, columnId) => {
     if (rowId && columnId) {
-      const rowIndex = rowData.findIndex(e => e.id === rowId);
-      const columnIndex = cols.findIndex(e => e.id === columnId);
+      const rowIndex = rowData.findIndex(row => row.id === rowId);
+      const columnIndex = cols.findIndex(column => column.id === columnId);
 
       // Remove current selections
       const newRowData = [...rowData];
@@ -80,23 +80,8 @@ const CellSelection = () => {
       // Toggle selection state of selected cell
       newRowData[rowIndex].cells[columnIndex].isSelected = !rowData[rowIndex].cells[columnIndex].isSelected;
       setRowData(newRowData);
-
-      disclosureManager.disclose({
-        preferredType: 'panel',
-        size: 'tiny',
-        content: {
-          component: (
-            <DisclosureComponent
-              columnHeader={cols[columnIndex].displayName}
-              rowHeader={rowData[rowIndex].cells[0].content}
-              content={rowData[rowIndex].cells[columnIndex].content}
-              name={cols[columnIndex].displayName}
-            />
-          ),
-        },
-      });
     }
-  }, [cols, disclosureManager, rowData]);
+  }, [cols, rowData]);
 
   const onClearSelectedCells = useCallback(() => {
     // Remove current selections
@@ -112,18 +97,16 @@ const CellSelection = () => {
 
   return (
     <WorklistDataGrid
-      id="worklist-data-grid-row-selection"
-      overflowColumns={cols}
+      id="pinned-columns"
+      pinnedColumns={cols.slice(0, 3)}
+      overflowColumns={cols.slice(3)}
       rows={rowData}
       rowHeaderIndex={rowHeaderIndex}
-      rowHeight="50px"
-      defaultColumnWidth={100}
-      columnHeaderHeight="100px"
-      ariaLabel="Worklist Data Grid With Cell Selection"
       onCellSelect={onCellSelect}
       onClearSelectedCells={onClearSelectedCells}
+      ariaLabel="Worklist Data Grid"
     />
   );
 };
 
-export default CellSelection;
+export default PinnedColumns;

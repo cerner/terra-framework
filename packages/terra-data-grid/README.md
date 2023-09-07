@@ -1,24 +1,27 @@
-# Terra Worklist Data Grid
+# Terra Data Grid
 
-[![NPM version](https://badgen.net/npm/v/terra-worklist-data-grid)](https://www.npmjs.com/package/terra-worklist-data-grid)
+[![NPM version](https://badgen.net/npm/v/terra-data-grid)](https://www.npmjs.com/package/terra-data-grid)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 ---
 ### Notice
 
-> Terra Worklist Data Grid is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
+> Terra Data Grid is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
 
 ---
 
-The Terra Worklist Data Grid is a container that enables users to navigate the grid information using directional navigation keys.
+The terra-data-grid package contains the following components:
+
+**Worklist Data Grid** is a container that enables users to navigate the grid information using directional navigation keys.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://engineering.cerner.com/terra-framework/components/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid)
+- Documentation
+  - [Worklist Data Grid](https://engineering.cerner.com/terra-framework/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-worklist-data-grid`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-data-grid`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
 ## Peer Dependencies

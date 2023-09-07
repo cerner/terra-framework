@@ -1,5 +1,5 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import WorklistDataGrid from 'terra-worklist-data-grid';
+import React, { useCallback, useState } from 'react';
+import { WorklistDataGrid } from 'terra-data-grid';
 
 const gridDataJSON = {
   cols: [
@@ -53,13 +53,9 @@ const gridDataJSON = {
 
 const PinnedColumns = () => {
   const rowHeaderIndex = 0;
-  const { cols } = gridDataJSON;
-  const [rowData, setRowData] = useState([]);
+  const { cols, rows } = gridDataJSON;
 
-  // Change row data for data grid to validate that pinned column border resizes correctly.
-  useEffect(() => {
-    setRowData(gridDataJSON.rows);
-  }, []);
+  const [rowData, setRowData] = useState(rows);
 
   const onCellSelect = useCallback((rowId, columnId) => {
     if (rowId && columnId) {
@@ -97,14 +93,14 @@ const PinnedColumns = () => {
 
   return (
     <WorklistDataGrid
-      id="pinned-columns"
+      id="default-terra-worklist-data-grid"
       pinnedColumns={cols.slice(0, 3)}
       overflowColumns={cols.slice(3)}
       rows={rowData}
       rowHeaderIndex={rowHeaderIndex}
+      ariaLabel="Worklist Data Grid"
       onCellSelect={onCellSelect}
       onClearSelectedCells={onClearSelectedCells}
-      ariaLabel="Worklist Data Grid"
     />
   );
 };
