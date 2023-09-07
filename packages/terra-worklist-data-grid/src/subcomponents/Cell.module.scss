@@ -1,5 +1,3 @@
-@use './Mixins';
-
 // Themes
 @import '../orion-fusion-theme/Cell.module';
 @import '../clinical-lowlight-theme/Cell.module';
@@ -34,6 +32,10 @@
     background: var(--terra-worklist-data-grid-mask-background, repeating-linear-gradient(-45deg, #dedfe0, #dedfe0 3px, transparent 3px, transparent 6px));
   }
 
+  .masked.highlighted {
+    background: var(--terra-worklist-data-grid-highlight-mask-background, repeating-linear-gradient(-45deg, #cfd2d3, #cfd2d3 3px, #cbe7fa 3px, #cbe7fa 6px));
+  }
+
   .cell-content {
     overflow: hidden;
     overflow-wrap: break-word;
@@ -57,7 +59,13 @@
   }
 
   // Hover state for selectable elements
-  .selectable:hover {
-    @include Mixins.terra-worklist-data-grid-selectable-hover;
+  tr:nth-child(odd) .selectable:hover {
+    background-color: var(--terra-worklist-data-grid-odd-row-hover-background-color, #e0f2fb);
+    cursor: pointer;
+  }
+
+  tr:nth-child(even) .selectable:hover {
+    background-color: var(--terra-worklist-data-grid-even-row-hover-background-color, #d3e5ee);
+    cursor: pointer;
   }
 }

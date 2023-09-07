@@ -184,6 +184,18 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
 
       Terra.validates.element('cell-3-1-focused', { selector: defaultSelector });
     });
+
+    it('hovers over selectable cell on an even row', () => {
+      browser.$$('tbody tr')[0].$$('td')[0].moveTo();
+      browser.pause(2000);
+      Terra.validates.element('hover-odd-row-cell-selection', { selector: defaultSelector });
+    });
+
+    it('hovers over selectable cell on an even row', () => {
+      browser.$$('tbody tr')[3].$$('td')[0].moveTo();
+      browser.pause(2000);
+      Terra.validates.element('hover-even-row-cell-selection', { selector: defaultSelector });
+    });
   });
 
   describe('With row selection', () => {
@@ -284,12 +296,24 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('hover-selectable-cell', '#terra-worklist-data-grid-with-selections');
     });
 
-    it('hovers over non-selectable cell in worklist data grid', () => {
+    it('hovers over selectable cell in worklist data grid', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-selections');
 
-      browser.$$('td[class*="worklist-data-grid-cell"]:not([class*="selectable"])')[0].moveTo();
+      browser.$$('td[class*="worklist-data-grid-cell"][class*="selectable"]')[0].moveTo();
       browser.pause(2000);
-      Terra.validates.element('hover-non-selectable-cell', '#terra-worklist-data-grid-with-selections');
+      Terra.validates.element('hover-selectable-cell', '#terra-worklist-data-grid-with-selections');
+    });
+
+    it('hovers over selectable cell on an even row', () => {
+      browser.$$('tbody tr')[0].$$('td')[0].moveTo();
+      browser.pause(2000);
+      Terra.validates.element('hover-odd-row-selection', { selector: defaultSelector });
+    });
+
+    it('hovers over selectable cell on an even row', () => {
+      browser.$$('tbody tr')[3].$$('td')[0].moveTo();
+      browser.pause(2000);
+      Terra.validates.element('hover-even-row-selection', { selector: defaultSelector });
     });
 
     it('enables row selection mode by Shift+Space when turned off', () => {
