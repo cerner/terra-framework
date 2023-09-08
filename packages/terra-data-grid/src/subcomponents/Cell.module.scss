@@ -1,3 +1,4 @@
+/* stylelint-disable terra/custom-property-namespace */
 // Themes
 @import '../orion-fusion-theme/Cell.module';
 @import '../clinical-lowlight-theme/Cell.module';
@@ -67,3 +68,4 @@
     cursor: pointer;
   }
 }
+/* stylelint-enable terra/custom-property-namespace */

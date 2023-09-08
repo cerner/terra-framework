@@ -1,3 +1,4 @@
+/* stylelint-disable terra/custom-property-namespace */
 // Themes
 @import '../orion-fusion-theme/ColumnResizeHandle.module';
 @import '../clinical-lowlight-theme/ColumnResizeHandle.module';
@@ -23,3 +24,4 @@
     }
   }
 }
+/* stylelint-enable terra/custom-property-namespace */

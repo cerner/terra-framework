@@ -1,3 +1,4 @@
+/* stylelint-disable terra/custom-property-namespace */
 // Themes
 @import '../orion-fusion-theme/Row.module';
 @import '../clinical-lowlight-theme/Row.module';
@@ -40,3 +41,4 @@
   }
   /* stylelint-enable selector-max-compound-selectors */
 }
+/* stylelint-enable terra/custom-property-namespace */
