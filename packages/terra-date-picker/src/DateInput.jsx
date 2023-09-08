@@ -272,12 +272,9 @@ const DatePickerInput = (props) => {
     }
   };
 
-  const handleInvalidInputChange = (val) => {
-    visuallyHiddenComponent.innerText = '';
-    SetInvalidInput(val);
-    if (val) {
-      visuallyHiddenComponent.innerText = intl.formatMessage({ id: 'Terra.datePicker.invalidDate' });
-    }
+  const handleInvalidInputChange = () => {
+    SetInvalidInput(true);
+    visuallyHiddenComponent.innerText = intl.formatMessage({ id: 'Terra.datePicker.invalidDate' });
   };
 
   const setVisuallyHiddenComponent = (node) => {
@@ -335,7 +332,7 @@ const DatePickerInput = (props) => {
   const handleDayChange = (event) => {
     let inputValue = event.target.value;
     if (!DateUtil.validDateInput(inputValue)) {
-      handleInvalidInputChange(true);
+      handleInvalidInputChange();
       return;
     }
 
@@ -343,7 +340,7 @@ const DatePickerInput = (props) => {
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have to
     // check the length of inputValue to make sure that it is less then 2.
     if (inputValue === date.day || inputValue.length > 2 || Number(inputValue) > 31 || inputValue === '00') {
-      handleInvalidInputChange(true);
+      handleInvalidInputChange();
       return;
     }
 
@@ -363,7 +360,7 @@ const DatePickerInput = (props) => {
   const handleMonthChange = (event) => {
     let inputValue = event.target.value;
     if (!DateUtil.validDateInput(inputValue)) {
-      handleInvalidInputChange(true);
+      handleInvalidInputChange();
       return;
     }
 
@@ -371,7 +368,7 @@ const DatePickerInput = (props) => {
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have to
     // check the length of inputValue to make sure that it is less then 2.
     if (inputValue === date.month || inputValue.length > 2 || Number(inputValue) > 12 || inputValue === '00') {
-      handleInvalidInputChange(true);
+      handleInvalidInputChange();
       return;
     }
 
@@ -390,7 +387,7 @@ const DatePickerInput = (props) => {
   const handleYearChange = (event) => {
     const inputValue = event.target.value;
     if (!DateUtil.validDateInput(inputValue)) {
-      handleInvalidInputChange(true);
+      handleInvalidInputChange();
       return;
     }
 
@@ -398,19 +395,19 @@ const DatePickerInput = (props) => {
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have to
     // check the length of inputValue to make sure that it is less then 4.
     if (inputValue === date.year || inputValue.length > 4) {
-      handleInvalidInputChange(true);
+      handleInvalidInputChange();
       return;
     }
 
     // Ignore the 3rd entry if the first two digits are not 19, 20 or 21
     if (inputValue.length === 3 && (Number(inputValue) < 190 || Number(inputValue) > 210)) {
-      handleInvalidInputChange(true);
+      handleInvalidInputChange();
       return;
     }
 
     // Ignore the 4th entry if the year value is not between MIN_YEAR and MAX_YEAR
     if (inputValue.length === 4 && (Number(inputValue) < Number(DateUtil.MIN_YEAR) || Number(inputValue) > Number(DateUtil.MAX_YEAR))) {
-      handleInvalidInputChange(true);
+      handleInvalidInputChange();
       return;
     }
 
