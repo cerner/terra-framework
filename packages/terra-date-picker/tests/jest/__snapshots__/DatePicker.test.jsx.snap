@@ -630,12 +630,12 @@ exports[`correctly applies the theme context className 1`] = `
                         id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                       >
                         <VisuallyHiddenText
-                          text="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
+                          text="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017"
                         >
                           <span
                             className="visually-hidden-text"
                           >
-                            Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+                            Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017
                           </span>
                         </VisuallyHiddenText>
                         <div

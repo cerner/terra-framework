@@ -792,6 +792,7 @@ const DatePickerInput = (props) => {
 
   // Indicates selected date from calendar popup for SR
   const calendarDate = DateUtil.isValidDate(value, momentDateFormat) ? `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })} ${intl.formatMessage({ id: 'Terra.datePicker.selected' })}` : label;
+  const inputDate = DateUtil.isValidDate(value, momentDateFormat) ? `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}` : '';
 
   return (
     <div className={cx(theme.className)}>
@@ -842,7 +843,7 @@ const DatePickerInput = (props) => {
       </div>
       {!useExternalFormatMask && (
         <div id={formatDescriptionId} className={cx('format-text')}>
-          <VisuallyHiddenText text={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}`} />
+          <VisuallyHiddenText text={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format} ${inputDate}`} />
           <div aria-hidden="true">
             {`(${format})`}
           </div>
