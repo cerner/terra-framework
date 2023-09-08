@@ -128,7 +128,7 @@ exports[`correctly applies the theme context className 1`] = `
                 <div>
                   <div>
                     <div
-                      aria-label=" Terra.popup.escapeInstruction"
+                      aria-label=""
                       class="content content orion-fusion-theme"
                       data-terra-popup-content="true"
                       role="dialog"
@@ -165,34 +165,51 @@ exports[`correctly applies the theme context className 1`] = `
                 popupContentRole="dialog"
                 refCallback={[Function]}
               >
-                <FormattedMessage
-                  id="Terra.popup.escapeInstruction"
-                  values={Object {}}
-                >
-                  <FocusTrap
-                    _createFocusTrap={[Function]}
-                    active={true}
-                    focusTrapOptions={
-                      Object {
-                        "clickOutsideDeactivates": true,
-                        "returnFocusOnDeactivate": true,
-                      }
+                <FocusTrap
+                  _createFocusTrap={[Function]}
+                  active={true}
+                  focusTrapOptions={
+                    Object {
+                      "clickOutsideDeactivates": true,
+                      "returnFocusOnDeactivate": true,
                     }
-                    paused={false}
-                  >
-                    <div>
-                      <OnClickOutside(HookshotContent)
-                        aria-label=" Terra.popup.escapeInstruction"
+                  }
+                  paused={false}
+                >
+                  <div>
+                    <OnClickOutside(HookshotContent)
+                      aria-label=""
+                      className="content orion-fusion-theme"
+                      data-terra-popup-content={true}
+                      disableOnClickOutside={true}
+                      eventTypes={
+                        Array [
+                          "mousedown",
+                          "touchstart",
+                        ]
+                      }
+                      excludeScrollbar={false}
+                      onEsc={[Function]}
+                      onResize={[Function]}
+                      outsideClickIgnoreClass="ignore-react-onclickoutside"
+                      preventDefault={false}
+                      refCallback={[Function]}
+                      role="dialog"
+                      stopPropagation={false}
+                      tabIndex="0"
+                    >
+                      <HookshotContent
+                        aria-label=""
                         className="content orion-fusion-theme"
                         data-terra-popup-content={true}
-                        disableOnClickOutside={true}
+                        disableOnClickOutside={[Function]}
+                        enableOnClickOutside={[Function]}
                         eventTypes={
                           Array [
                             "mousedown",
                             "touchstart",
                           ]
                         }
-                        excludeScrollbar={false}
                         onEsc={[Function]}
                         onResize={[Function]}
                         outsideClickIgnoreClass="ignore-react-onclickoutside"
@@ -202,55 +219,33 @@ exports[`correctly applies the theme context className 1`] = `
                         stopPropagation={false}
                         tabIndex="0"
                       >
-                        <HookshotContent
-                          aria-label=" Terra.popup.escapeInstruction"
-                          className="content orion-fusion-theme"
+                        <div
+                          aria-label=""
+                          className="content content orion-fusion-theme"
                           data-terra-popup-content={true}
-                          disableOnClickOutside={[Function]}
-                          enableOnClickOutside={[Function]}
-                          eventTypes={
-                            Array [
-                              "mousedown",
-                              "touchstart",
-                            ]
-                          }
-                          onEsc={[Function]}
-                          onResize={[Function]}
-                          outsideClickIgnoreClass="ignore-react-onclickoutside"
-                          preventDefault={false}
-                          refCallback={[Function]}
                           role="dialog"
-                          stopPropagation={false}
                           tabIndex="0"
                         >
                           <div
-                            aria-label=" Terra.popup.escapeInstruction"
-                            className="content content orion-fusion-theme"
-                            data-terra-popup-content={true}
-                            role="dialog"
-                            tabIndex="0"
-                          >
-                            <div
-                              className="inner"
-                              style={
-                                Object {
-                                  "height": "80px",
-                                  "width": "240px",
-                                }
+                            className="inner"
+                            style={
+                              Object {
+                                "height": "80px",
+                                "width": "240px",
                               }
+                            }
+                          >
+                            <p
+                              key=".0"
                             >
-                              <p
-                                key=".0"
-                              >
-                                this is popup content
-                              </p>
-                            </div>
+                              this is popup content
+                            </p>
                           </div>
-                        </HookshotContent>
-                      </OnClickOutside(HookshotContent)>
-                    </div>
-                  </FocusTrap>
-                </FormattedMessage>
+                        </div>
+                      </HookshotContent>
+                    </OnClickOutside(HookshotContent)>
+                  </div>
+                </FocusTrap>
               </PopupContent>
             </Portal>
           </Portal>
