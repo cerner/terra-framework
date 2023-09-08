@@ -67,7 +67,7 @@ const TabsWithFilledContent = () => {
 
   return (
     <div className={cx('content-container')}>
-      <Tabs fill>
+      <Tabs setFocusOnContent fill>
         {tab1}
         {tab2}
       </Tabs>

@@ -30,6 +30,10 @@ const propTypes = {
    * The style to be applied to the tabs
    */
   variant: PropTypes.oneOf(['workspace', 'framework']),
+  /**
+   * Sets focus on content when set to `true`.
+   */
+  setFocusOnContent: PropTypes.bool,
 };
 
 const CommonTabContent = ({
@@ -37,6 +41,7 @@ const CommonTabContent = ({
   statusOverlay,
   activityOverlay,
   variant,
+  setFocusOnContent,
 }) => {
   const theme = React.useContext(ThemeContext);
   const { panelId, tabId } = React.useContext(TabContext);
@@ -75,7 +80,7 @@ const CommonTabContent = ({
         <div
           className={cx('panel-overflow', { 'disable-overflow': overlays.length })}
           role="tabpanel"
-          tabIndex={children ? 0 : -1}
+          tabIndex={setFocusOnContent ? 0 : -1}
           id={panelId}
           aria-labelledby={tabId}
           data-application-overflow-container
