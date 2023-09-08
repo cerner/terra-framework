@@ -29,7 +29,7 @@ const navigateToCell = (row, col) => {
 
 const rowSelectionNavigateToCell = (row, col) => {
   browser.keys(['Tab']);
-  moveCurrentPositionBy(row > 0 ? row - 1 : 0, col);
+  moveCurrentPositionBy(row > 0 ? row : 0, col);
 };
 
 const clickCell = (row, col, selector) => {
@@ -203,10 +203,10 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/worklist-data-grid/worklist-data-grid-with-row-selection');
     });
 
-    it('verifies that first tab into grid focuses on the checkbox', () => {
+    it('verifies that first tab into grid focuses on the row selection column header', () => {
       browser.keys(['Tab']);
 
-      Terra.validates.element('row-1-checkbox-focused-row-selection-mode', { selector: defaultSelector });
+      Terra.validates.element('row-selection-header-focused-row-selection-mode', { selector: defaultSelector });
     });
 
     it('navigates to last cell with Control + End key', () => {
