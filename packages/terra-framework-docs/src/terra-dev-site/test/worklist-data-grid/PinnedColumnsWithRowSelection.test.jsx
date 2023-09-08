@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import WorklistDataGrid from 'terra-worklist-data-grid';
 
 const gridDataJSON = {
@@ -55,70 +55,57 @@ const RowSelection = () => {
   const rowSelectionModeRef = useRef();
   const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
-  const [selectedRows, setSelectedRows] = useState([]);
+  const [rowData, setRowData] = useState(rows);
   const [hasSelectableRows, setHasSelectableRows] = useState(true);
 
-  const determineSelectedRows = (allRowsSelected, userSelectedRow) => {
-    if (!userSelectedRow) {
-      return [];
-    }
+  const clearRowSelection = useCallback(() => {
+    const newRowData = [...rowData];
+    // eslint-disable-next-line no-return-assign, no-param-reassign
+    newRowData.forEach(row => (row.isSelected = false));
+    setRowData(newRowData);
+  }, [rowData]);
 
-    let remainingSelectedRow = [];
-    if (allRowsSelected) {
-      remainingSelectedRow = userSelectedRow;
-    } else if (selectedRows.includes(userSelectedRow[0])) {
-      // Row Deselected so remove this rowId.
-      remainingSelectedRow = selectedRows.filter(row => (row !== userSelectedRow[0]));
-    } else {
-      // Row Selected so add this rowId.
-      remainingSelectedRow = remainingSelectedRow.concat(selectedRows);
-      remainingSelectedRow.push(userSelectedRow[0]);
-    }
-    return remainingSelectedRow;
-  };
-
-  const clearRowSelection = () => {
-    // eslint-disable-next-line no-param-reassign
-    rows.forEach(r => { if (r.isSelected) { r.isSelected = false; } });
-    setSelectedRows([]);
-  };
-
-  const disableSelectableRows = () => {
+  const disableSelectableRows = useCallback(() => {
     rowSelectionModeRef.current.checked = false;
     setHasSelectableRows(false);
     clearRowSelection();
-  };
+  }, [clearRowSelection]);
+
+  const onRowSelect = useCallback((rowsToSelectAndUnSelect) => {
+    // Remove current selections
+    const newRowData = [...rowData];
+
+    rowsToSelectAndUnSelect.forEach((updatedRow) => {
+      const dataRowToUpdate = newRowData.find(row => row.id === updatedRow.id);
+      if (dataRowToUpdate) {
+        dataRowToUpdate.isSelected = updatedRow.selected;
+      }
+    });
+
+    setRowData(newRowData);
+  }, [rowData]);
+
+  const onRowSelectAll = useCallback(() => {
+    const newRowData = [...rowData];
+    // eslint-disable-next-line no-return-assign, no-param-reassign
+    newRowData.forEach(row => (row.isSelected = true));
+    setRowData(newRowData);
+  }, [rowData]);
 
   return (
     <WorklistDataGrid
       id="pinned-columns-with-row-selection"
       pinnedColumns={cols.slice(0, 3)}
       overflowColumns={cols.slice(3)}
-      rows={[...rows]}
+      rows={rowData}
       rowHeaderIndex={rowHeaderIndex}
       defaultColumnWidth={180}
       ariaLabel="Worklist Data Grid with Pinned Columns and Row Selection"
       hasSelectableRows={hasSelectableRows}
-      onRowSelect={(rowsToSelectAndUnSelect) => {
-        rowsToSelectAndUnSelect.forEach((changedRow) => {
-          const dataRowToUpdate = rows.find(row => row.id === changedRow.id);
-          if (dataRowToUpdate) {
-            dataRowToUpdate.isSelected = changedRow.selected;
-          }
-        });
-      }}
-      onRowSelectAll={() => {
-        const newRows = [];
-        // eslint-disable-next-line no-param-reassign
-        rows.forEach(row => { row.isSelected = true; newRows.push(row.id); });
-        setSelectedRows(determineSelectedRows(true, newRows));
-      }}
-      onClearSelectedRows={() => {
-        clearRowSelection();
-      }}
-      onDisableSelectableRows={() => {
-        disableSelectableRows();
-      }}
+      onRowSelect={onRowSelect}
+      onRowSelectAll={onRowSelectAll}
+      onClearSelectedRows={clearRowSelection}
+      onDisableSelectableRows={disableSelectableRows}
     />
   );
 };
