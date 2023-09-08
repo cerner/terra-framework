@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added aria-label prop for terra-popup to announce the close instruction.
+
 * Changed
   * Updated examples and tests for `terra-worklist-data-grid` to properly update row selection data.
 
