@@ -62,7 +62,6 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
     >
       <div>
         <OnClickOutside(HookshotContent)
-          aria-label=""
           className="content orion-fusion-theme"
           data-terra-popup-content={true}
           eventTypes={
@@ -81,7 +80,6 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
           tabIndex="0"
         >
           <HookshotContent
-            aria-label=""
             className="content orion-fusion-theme"
             data-terra-popup-content={true}
             disableOnClickOutside={[Function]}
@@ -101,7 +99,6 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
             tabIndex="0"
           >
             <div
-              aria-label=""
               className="content content orion-fusion-theme"
               data-terra-popup-content={true}
               role="dialog"
@@ -145,7 +142,6 @@ exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
 >
   <div>
     <OnClickOutside(HookshotContent)
-      aria-label=""
       className="content"
       data-terra-popup-content={true}
       eventTypes={
@@ -256,7 +252,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
       "calls": Array [
         Array [
           <div
-            aria-label=""
             class="content content"
             data-terra-popup-content="true"
             intl="[object Object]"
@@ -335,7 +330,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
   >
     <div>
       <OnClickOutside(HookshotContent)
-        aria-label=""
         className="content"
         data-terra-popup-content={true}
         eventTypes={
@@ -381,7 +375,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
             "calls": Array [
               Array [
                 <div
-                  aria-label=""
                   class="content content"
                   data-terra-popup-content="true"
                   intl="[object Object]"
@@ -451,7 +444,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
         tabIndex="0"
       >
         <HookshotContent
-          aria-label=""
           className="content"
           data-terra-popup-content={true}
           disableOnClickOutside={[Function]}
@@ -498,7 +490,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
               "calls": Array [
                 Array [
                   <div
-                    aria-label=""
                     class="content content"
                     data-terra-popup-content="true"
                     intl="[object Object]"
@@ -568,7 +559,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
           tabIndex="0"
         >
           <div
-            aria-label=""
             className="content content"
             data-terra-popup-content={true}
             intl={
@@ -727,7 +717,6 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
 >
   <div>
     <OnClickOutside(HookshotContent)
-      aria-label=""
       className="content"
       data-terra-popup-content={true}
       eventTypes={

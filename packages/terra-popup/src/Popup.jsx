@@ -241,7 +241,7 @@ class Popup extends React.Component {
       <PopupContent
         {...boundsProps}
         arrow={arrow}
-        ariaLabel={this.props.ariaLabel}
+        aria-label={this.props.ariaLabel}
         classNameInner={this.props.classNameContent}
         isHeaderDisabled={this.props.isHeaderDisabled}
         onRequestClose={this.handleRequestClose}
