@@ -33,7 +33,7 @@ function PopupStandard() {
       <div>
         To prevent focus from shifting with up/down arrow keys when virtual cursor mode is on in Jaws use inert attribute as shown in the example.
         Using inert makes the content outside the popup inaccessible to screen readers and keyboard interactions while the popup is active, ensuring keyboard focus is trapped within the popup for better accessibility.
-        <p>This example shows how to pass custom aria label for screen readers</p>
+        <p>This example shows how to pass custom aria label for screen readers.</p>
       </div>
       <button type="button" className={cx('popup-button')} onClick={handleButtonClick} ref={setButtonNode}>Medications</button>
       <Popup
