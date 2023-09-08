@@ -14,6 +14,9 @@
 * Changed
   * Updated the `terra-worklist-data-grid` component to provide row selection assistive technology messages based on the properties provided by the consumer.
 
+___
+All release notes below apply to `terra-worklist-data-grid` package (renamed with following release).
+
 ## 0.5.0 - (August 31, 2023)
 
 * Added
