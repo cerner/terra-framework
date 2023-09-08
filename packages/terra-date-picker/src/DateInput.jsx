@@ -788,8 +788,11 @@ const DatePickerInput = (props) => {
   ]);
 
   // Indicates selected date from calendar popup for SR
-  const calendarDate = DateUtil.isValidDate(value, momentDateFormat) ? `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })} ${intl.formatMessage({ id: 'Terra.datePicker.selected' })}` : label;
-  const inputDate = DateUtil.isValidDate(value, momentDateFormat) ? `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}` : '';
+  let inputDate;
+  if (DateUtil.isValidDate(value, momentDateFormat)) {
+    inputDate = `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}`;
+  }
+  const calendarDate = inputDate ? `${inputDate} ${intl.formatMessage({ id: 'Terra.datePicker.selected' })}` : label;
 
   return (
     <div className={cx(theme.className)}>
@@ -826,7 +829,7 @@ const DatePickerInput = (props) => {
         <Button
           data-terra-open-calendar-button
           className={buttonClasses}
-          text={`${calendarDate} ${intl.formatMessage({ id: 'Terra.datePicker.openCalendar' })}`}
+          text={intl.formatMessage({ id: 'Terra.datePicker.openCalendar' })}
           onClick={handleOnButtonClick}
           onKeyDown={handleOnButtonKeyDown}
           icon={<IconCalendar />}
@@ -836,11 +839,12 @@ const DatePickerInput = (props) => {
           onBlur={onBlur}
           onFocus={onButtonFocus}
           refCallback={buttonRefCallback}
+          aria-label={`${calendarDate} ${intl.formatMessage({ id: 'Terra.datePicker.openCalendar' })}`}
         />
       </div>
       {!useExternalFormatMask && (
         <div id={formatDescriptionId} className={cx('format-text')}>
-          <VisuallyHiddenText text={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format} ${inputDate}`} />
+          <VisuallyHiddenText text={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format} ${inputDate || ''}`} />
           <div aria-hidden="true">
             {`(${format})`}
           </div>
