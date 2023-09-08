@@ -1,7 +1,9 @@
 # Changelog
 
 ## Unreleased
-
+* Fixed
+  * Fixed DatePicker scroll on smaller viewports.
+  
 * Updated
   * Screen reader announcement for visual label.
 
