@@ -235,32 +235,28 @@ class PopupContent extends React.Component {
     }
 
     return (
-      <FormattedMessage id="Terra.popup.escapeInstruction">
-        {escText => (
-          <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
-            <div>
-              <Hookshot.Content
-                {...modifiedCustomProps}
-                className={contentClassNames}
-                tabIndex={isFocusedDisabled ? null : '0'}
-                data-terra-popup-content
-                onContentResize={(isHeightAutomatic || isWidthAutomatic) ? onContentResize : undefined}
-                onEsc={onRequestClose}
-                onResize={this.handleOnResize}
-                refCallback={refCallback}
-                role={popupContentRole || null}
-                aria-label={onRequestClose ? `${consumerAriaLabel || ''} ${escText}` : ''}
-              >
-                {arrowContent}
-                {/* eslint-disable-next-line react/forbid-dom-props */}
-                <div {...heightData} {...widthData} className={innerClassNames} style={contentStyle}>
-                  {content}
-                </div>
-              </Hookshot.Content>
+      <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
+        <div>
+          <Hookshot.Content
+            {...modifiedCustomProps}
+            className={contentClassNames}
+            tabIndex={isFocusedDisabled ? null : '0'}
+            data-terra-popup-content
+            onContentResize={(isHeightAutomatic || isWidthAutomatic) ? onContentResize : undefined}
+            onEsc={onRequestClose}
+            onResize={this.handleOnResize}
+            refCallback={refCallback}
+            role={popupContentRole || null}
+            aria-label={consumerAriaLabel}
+          >
+            {arrowContent}
+            {/* eslint-disable-next-line react/forbid-dom-props */}
+            <div {...heightData} {...widthData} className={innerClassNames} style={contentStyle}>
+              {content}
             </div>
-          </FocusTrap>
-        )}
-      </FormattedMessage>
+          </Hookshot.Content>
+        </div>
+      </FocusTrap>
     );
   }
 }
