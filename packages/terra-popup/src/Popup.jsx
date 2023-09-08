@@ -98,7 +98,7 @@ const propTypes = {
    */
   popupContentRole: PropTypes.string,
   /**
-   * The text label read by screenreaders.
+   * String that labels the popup for screen readers.
    */
   ariaLabel: PropTypes.string,
 };
@@ -241,6 +241,7 @@ class Popup extends React.Component {
       <PopupContent
         {...boundsProps}
         arrow={arrow}
+        ariaLabel={this.props.ariaLabel}
         classNameInner={this.props.classNameContent}
         isHeaderDisabled={this.props.isHeaderDisabled}
         onRequestClose={this.handleRequestClose}
@@ -251,7 +252,6 @@ class Popup extends React.Component {
         isHeightAutomatic={this.props.contentHeight === 'auto'}
         isWidthAutomatic={this.props.contentWidth === 'auto'}
         isFocusedDisabled={this.props.isContentFocusDisabled}
-        ariaLabel={this.props.ariaLabel}
       >
         {this.props.children}
       </PopupContent>

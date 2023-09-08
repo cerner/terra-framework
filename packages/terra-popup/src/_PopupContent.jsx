@@ -82,8 +82,8 @@ const propTypes = {
    * The function returning the frame html reference.
    */
   refCallback: PropTypes.func,
-  /**
-   * The text label read by screenreaders.
+  /*
+   * String that labels the popup for screen readers.
    */
   ariaLabel: PropTypes.string,
 };
