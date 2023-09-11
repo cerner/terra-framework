@@ -82,12 +82,12 @@ it('should validate the inputs', () => {
   expect(wrapper.instance().props.eventHandlers).toBe(customEvents);
 });
 
-it('sets appropriate config option when scrolling is true', () => {
+it('sets appropriate config option when isScrollable is true', () => {
   const embeddedContentConsumer = (
     <div>
       <EmbeddedContentConsumer
         src="https://www.google.com/"
-        scrolling
+        isScrollable
       />
     </div>
   );
@@ -96,12 +96,12 @@ it('sets appropriate config option when scrolling is true', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('sets appropriate config option when scrolling is false', () => {
+it('sets appropriate config option when isScrollable is false', () => {
   const embeddedContentConsumer = (
     <div>
       <EmbeddedContentConsumer
         src="https://www.google.com/"
-        scrolling={false}
+        isScrollable={false}
       />
     </div>
   );

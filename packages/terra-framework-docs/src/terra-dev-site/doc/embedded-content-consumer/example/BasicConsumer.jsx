@@ -8,7 +8,7 @@ Consumer.init();
 const BasicConsumer = () => (
   <EmbeddedContentConsumer
     src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
-    scrolling
+    isScrollable
     options={{ iframeAttrs: { title: 'Basic content example' } }}
   />
 );

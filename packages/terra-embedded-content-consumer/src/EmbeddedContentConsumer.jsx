@@ -8,12 +8,12 @@ const propTypes = {
    */
   src: PropTypes.string.isRequired,
   /**
-   * Scrolling is default to `true` and allows content inside of the iframe to be scrolled if needed.
-   * When set to `false`, scrolling is disabled. Regardless of the option, there is a logic to resize
-   * the content within the iframe (within [xfc](https://github.com/cerner/xfc#iframe-resizing-config) library)
-   * to be fully visible so that scrolling is not needed.
+   * Indicates whether the content inside of the iframe should be scrollable or not. Scrolling is default to `true`.
+   * When set to `false`, scrolling is disabled.
+   * When scrolling is enabled, it is possible to use keyboard navigation to scroll the content even when there is no
+   * interactable element inside the content.
    */
-  scrolling: PropTypes.bool,
+  isScrollable: PropTypes.bool,
   /**
    * Notifies the component that the container has been mounted. Provides a reference
    * to this component to allow triggering messages on the embedded application.
@@ -68,7 +68,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  scrolling: true,
+  isScrollable: true,
 };
 
 class EmbeddedContentConsumer extends React.Component {
@@ -86,7 +86,7 @@ class EmbeddedContentConsumer extends React.Component {
       frameOptions.resizeConfig = {};
     }
 
-    if (this.props.scrolling === false) {
+    if (this.props.isScrollable === false) {
       Object.assign(frameOptions.resizeConfig, { scrolling: false });
       Object.assign(frameOptions.iframeAttrs, { scrolling: 'no' });
     } else {
@@ -123,7 +123,7 @@ class EmbeddedContentConsumer extends React.Component {
   render() {
     const {
       src,
-      scrolling,
+      isScrollable,
       onMount,
       onLaunch,
       onAuthorize,
