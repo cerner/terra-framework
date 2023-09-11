@@ -41,6 +41,7 @@
     "terra-button": "^3.3.0",
     "terra-collapsible-menu-view": "^6.78.0",
     "terra-content-container": "^3.0.0",
+    "terra-data-grid": "^0.5.0",
     "terra-date-input": "^1.44.0",
     "terra-date-picker": "^4.89.0",
     "terra-date-time-picker": "^4.94.0",
@@ -72,7 +73,6 @@
     "terra-theme-context": "^1.8.0",
     "terra-theme-provider": "^4.13.0",
     "terra-time-input": "^4.56.0",
-    "terra-toolbar": "^1.27.0",
-    "terra-worklist-data-grid": "^0.5.0"
+    "terra-toolbar": "^1.27.0"
   }
 }
