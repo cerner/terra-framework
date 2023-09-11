@@ -16,6 +16,17 @@ it('should render a hidden Slide', () => {
       <div>Slide Content</div>
     </Slide>
   ));
+  expect(wrapper.prop('aria-hidden')).toBe(true);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render a nested Slide', () => {
+  const wrapper = shallow((
+    <Slide isNested>
+      <div>Slide Content</div>
+    </Slide>
+  ));
+  expect(wrapper.find('VisuallyHiddenText').prop('aria-hidden')).toBe(false);
   expect(wrapper).toMatchSnapshot();
 });
 

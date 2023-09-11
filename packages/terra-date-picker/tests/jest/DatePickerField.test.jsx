@@ -6,6 +6,8 @@ import { mountWithIntl } from 'terra-enzyme-intl';
 import DateUtil from '../../lib/DateUtil';
 import DatePickerField from '../../lib/DatePickerField';
 
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+
 // Mock the following functions so that they always return a consistent date.
 // Otherwise, a date with a different offset would be created based on the the timezone where the tests are executed.
 DateUtil.createSafeDate = jest.fn();
