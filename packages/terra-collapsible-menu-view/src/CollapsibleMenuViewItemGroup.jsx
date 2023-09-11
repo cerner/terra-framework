@@ -65,16 +65,18 @@ class CollapsibleMenuViewItemGroup extends React.Component {
   }
 
   handleDisplayTypeChange(event, selectedKey) {
-    if (this.props.isMultiSelect) {
-      event.preventDefault();
-      this.setState(prevState => ({ updatedKeys: CollapsibleMenuView.Utils.handleMultiSelectedKeys(prevState.updatedKeys, selectedKey) }), () => {
-        this.props.onChange(event, this.state.updatedKeys);
-      });
-    } else if (CollapsibleMenuView.Utils.shouldHandleSingleSelection(this.state.updatedKeys, selectedKey)) {
-      event.preventDefault();
-      this.setState({ updatedKeys: [selectedKey] }, () => {
-        this.props.onChange(event, this.state.updatedKeys);
-      });
+    if (this.props.onChange) {
+      if (this.props.isMultiSelect) {
+        event.preventDefault();
+        this.setState(prevState => ({ updatedKeys: CollapsibleMenuView.Utils.handleMultiSelectedKeys(prevState.updatedKeys, selectedKey) }), () => {
+          this.props.onChange(event, this.state.updatedKeys);
+        });
+      } else if (CollapsibleMenuView.Utils.shouldHandleSingleSelection(this.state.updatedKeys, selectedKey)) {
+        event.preventDefault();
+        this.setState({ updatedKeys: [selectedKey] }, () => {
+          this.props.onChange(event, this.state.updatedKeys);
+        });
+      }
     }
   }
 
