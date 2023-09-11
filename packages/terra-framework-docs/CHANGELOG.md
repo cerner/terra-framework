@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Added
+  * Added aria-label prop for terra-popup to announce the close instruction.
   * Added example for `terra-tabs` to test the focus traverse with interactive element within the tab content.
 
 * Changed
