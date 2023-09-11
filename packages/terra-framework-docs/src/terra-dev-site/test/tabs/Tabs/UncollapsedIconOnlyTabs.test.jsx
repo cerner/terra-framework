@@ -19,7 +19,7 @@ const createTabPanes = () => {
 
 const IconOnlyTabs = () => (
   <div id="iconOnlyTabs">
-    <Tabs>
+    <Tabs setFocusOnContent>
       {createTabPanes()}
     </Tabs>
   </div>

@@ -71,6 +71,7 @@ exports[`correctly applies the theme context className 1`] = `
             <Slide
               id="shmmoop"
               isHidden={true}
+              isNested={false}
             >
               <div
                 aria-hidden={true}
@@ -78,6 +79,16 @@ exports[`correctly applies the theme context className 1`] = `
                 onClick={[Function]}
                 onKeyUp={[Function]}
               >
+                <VisuallyHiddenText
+                  aria-hidden={true}
+                  aria-live="polite"
+                >
+                  <span
+                    aria-hidden={true}
+                    aria-live="polite"
+                    className="visually-hidden-text"
+                  />
+                </VisuallyHiddenText>
                 <div
                   className="slide-shadow"
                 />
@@ -128,6 +139,7 @@ exports[`correctly applies the theme context className 1`] = `
             <Slide
               id="shmmoop"
               isHidden={true}
+              isNested={true}
             >
               <div
                 aria-hidden={true}
@@ -135,6 +147,16 @@ exports[`correctly applies the theme context className 1`] = `
                 onClick={[Function]}
                 onKeyUp={[Function]}
               >
+                <VisuallyHiddenText
+                  aria-hidden={false}
+                  aria-live="polite"
+                >
+                  <span
+                    aria-hidden={false}
+                    aria-live="polite"
+                    className="visually-hidden-text"
+                  />
+                </VisuallyHiddenText>
                 <div
                   className="slide-shadow"
                 />
@@ -185,6 +207,7 @@ exports[`correctly applies the theme context className 1`] = `
             <Slide
               id="shmmoop"
               isHidden={false}
+              isNested={true}
             >
               <div
                 aria-hidden={null}
@@ -192,6 +215,16 @@ exports[`correctly applies the theme context className 1`] = `
                 onClick={[Function]}
                 onKeyUp={[Function]}
               >
+                <VisuallyHiddenText
+                  aria-hidden={false}
+                  aria-live="polite"
+                >
+                  <span
+                    aria-hidden={false}
+                    aria-live="polite"
+                    className="visually-hidden-text"
+                  />
+                </VisuallyHiddenText>
                 <div
                   className="slide-shadow"
                 />
@@ -236,6 +269,7 @@ exports[`should render a SlideGroup with animation enabled 1`] = `
   >
     <Slide
       isHidden={true}
+      isNested={false}
     >
       <div
         key="1"
@@ -263,6 +297,7 @@ exports[`should render a SlideGroup with animation enabled 1`] = `
   >
     <Slide
       isHidden={true}
+      isNested={true}
     >
       <div
         key="2"
@@ -290,6 +325,7 @@ exports[`should render a SlideGroup with animation enabled 1`] = `
   >
     <Slide
       isHidden={false}
+      isNested={true}
     >
       <div
         key="3"
@@ -327,6 +363,7 @@ exports[`should render a default SlideGroup 1`] = `
   >
     <Slide
       isHidden={true}
+      isNested={false}
     >
       <div
         key="1"
@@ -354,6 +391,7 @@ exports[`should render a default SlideGroup 1`] = `
   >
     <Slide
       isHidden={true}
+      isNested={true}
     >
       <div
         key="2"
@@ -381,6 +419,7 @@ exports[`should render a default SlideGroup 1`] = `
   >
     <Slide
       isHidden={false}
+      isNested={true}
     >
       <div
         key="3"

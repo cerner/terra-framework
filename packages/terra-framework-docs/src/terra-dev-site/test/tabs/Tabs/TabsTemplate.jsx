@@ -19,6 +19,7 @@ const defaultProps = {
 const TabsTemplate = props => (
   <div className={cx(props.containerClassName)} id="tabs-container">
     <Tabs
+      setFocusOnContent
       id={props.id}
     >
       <Tabs.Pane label="Tab 1" key="Tab1" id="tab1">
