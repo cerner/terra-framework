@@ -76,12 +76,14 @@ class EmbeddedContentConsumer extends React.Component {
     // Merging the iframe options props
     const frameOptions = { ...this.props.options };
 
-    if (frameOptions.resizeConfig == null) {
-      frameOptions.resizeConfig = {};
+    if (frameOptions.iframeAttrs === null
+      || frameOptions.iframeAttrs === undefined) {
+      frameOptions.iframeAttrs = {};
     }
 
-    if (frameOptions.iframeAttrs == null) {
-      frameOptions.iframeAttrs = {};
+    if (frameOptions.resizeConfig === null
+      || frameOptions.resizeConfig === undefined) {
+      frameOptions.resizeConfig = {};
     }
 
     if (this.props.scrolling === false) {
