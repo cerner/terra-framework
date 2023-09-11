@@ -3,6 +3,10 @@ import classNames from 'classnames/bind';
 import IconAddPerson from 'terra-icon/lib/icon/IconAddPerson';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import Tabs from 'terra-tabs';
+import Radio from 'terra-form-radio';
+import Field from 'terra-form-field';
+import Input from 'terra-form-input';
+import Fieldset from 'terra-form-fieldset';
 import TabContentTemplate from './TabContentTemplate';
 import styles from './common/TabExample.module.scss';
 
@@ -10,7 +14,7 @@ const cx = classNames.bind(styles);
 
 let i = -1;
 
-const AddCloseTab = () => {
+const AddCloseTabInteractive = () => {
   const tabsExample = [];
   const [tabs, setTabs] = useState(tabsExample);
   const [activeKey, setActiveKey] = useState();
@@ -18,8 +22,13 @@ const AddCloseTab = () => {
   tabsExample.push(
     {
       label: 'Patient Information',
-      key: 'AddcloseLabelTab',
+      key: 'AddcloseInteractiveLabelTab',
       content: 'Patient Information',
+      children:
+  <>
+    <Radio id="default-radio" labelText="Default Radio" name="default" disabled />
+    <Radio id="default1-radio" labelText="Default Radio" name="default" />
+  </>,
     },
   );
 
@@ -28,8 +37,30 @@ const AddCloseTab = () => {
       label: 'Add Patient',
       icon: <IconAddPerson />,
       isIconOnly: true,
-      key: 'AddcloseIconTab',
-      content: 'Add Patient',
+      key: 'AddcloseInteractiveIconTab',
+      children:
+  <>
+    <div>
+      <Fieldset
+        type="checkbox"
+        legend="Give your full name here"
+        name="children_present"
+        value="children_present"
+        error="All fields must be filled out"
+        required
+      >
+        <Field label="First" isInline required htmlFor="first">
+          <Input id="first" type="text" name="first" defaultValue="" />
+        </Field>
+        <Field label="Middle" isInline required htmlFor="middle">
+          <Input id="middle" type="text" name="middle" defaultValue="" />
+        </Field>
+        <Field label="Last" isInline required htmlFor="last">
+          <Input id="last" type="text" name="last" defaultValue="" />
+        </Field>
+      </Fieldset>
+    </div>
+  </>,
     },
   );
 
@@ -37,15 +68,20 @@ const AddCloseTab = () => {
     {
       label: 'TPA & Insurance',
       customDisplay: <div className={cx('custom-display')}>TPA & Insurance</div>,
-      key: 'AddcloseCustomTab',
+      key: 'AddcloseInteractiveCustomTab',
       content: 'TPA & Insurance',
+      children:
+  <>
+    <Radio id="default-radio" labelText="Default Radio" name="default" disabled />
+    <Radio id="default1-radio" labelText="Default Radio" name="default" />
+  </>,
     },
   );
 
   tabsExample.push(
     {
       label: 'Disabled Tab',
-      key: 'AddcloseDisabledTab',
+      key: 'AddcloseInteractiveDisabledTab',
       icon: <IconSearch />,
       isDisabled: true,
     },
@@ -54,7 +90,7 @@ const AddCloseTab = () => {
   tabsExample.push(
     {
       label: 'List of Out-Patient Details Department Wise',
-      key: 'AddcloselongLabel',
+      key: 'AddcloseInteractivelongLabel',
       content: 'List of Out-Patient Details Department Wise',
     },
   );
@@ -62,7 +98,7 @@ const AddCloseTab = () => {
   tabsExample.push(
     {
       label: 'Ambulance Service',
-      key: 'AddcloselastTab',
+      key: 'AddcloseInteractivelastTab',
       content: 'Ambulance Service',
     },
   );
@@ -83,21 +119,23 @@ const AddCloseTab = () => {
       {
         label: `Added New Tab_${i}`,
         isIconOnly: false,
-        key: `AddcloseTab_${i}`,
+        key: `AddcloseInteractiveTab_${i}`,
         content: `Added New Tab_${i}`,
         isActive: true,
       },
     );
-    setActiveKey(`AddcloseTab_${i}`);
+    setActiveKey(`AddcloseInteractiveTab_${i}`);
     setTabs(tabsArray);
   };
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs activeKey={activeKey} setFocusOnContent isClosable onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
+      <Tabs activeKey={activeKey} isClosable onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
         { tabs.map((tab) => (
           <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} customDisplay={tab.customDisplay} isDisabled={tab.isDisabled} icon={tab.icon} key={tab.key} id={tab.key}>
-            <TabContentTemplate label={tab.content} />
+            <TabContentTemplate label={tab.content}>
+              {tab.children}
+            </TabContentTemplate>
           </Tabs.Pane>
         ))}
       </Tabs>
@@ -105,4 +143,4 @@ const AddCloseTab = () => {
   );
 };
 
-export default AddCloseTab;
+export default AddCloseTabInteractive;

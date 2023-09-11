@@ -2,12 +2,15 @@
 
 ## Unreleased
 
+* Added
+  * Added example for `terra-tabs` to test the focus traverse with interactive element within the tab content.
+
 * Changed
   * Updated examples and tests for `terra-worklist-data-grid` to properly update row selection data.
 
 * Updated
   * Updated example for `terra-date-picker` with isInvalid prop.
-  
+
 ## 1.34.0 - (September 5, 2023)
 
 * Changed

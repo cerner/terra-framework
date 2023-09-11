@@ -61,7 +61,7 @@ const TabsTemplate = (props) => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs defaultActiveKey="LabelTab" tabFill={props.tabFill} id="icon-in-menu">
+      <Tabs setFocusOnContent defaultActiveKey="LabelTab" tabFill={props.tabFill} id="icon-in-menu">
         {labelTab}
         {iconTab}
         {customTab}

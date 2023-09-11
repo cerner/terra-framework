@@ -91,7 +91,7 @@ class DraggableTabs extends React.Component {
             {this.state.activeKey}
           </p>
         </div>
-        <Tabs isDraggable id="controlledTabs" onChange={this.handleSelection} activeKey={this.state.activeKey}>
+        <Tabs setFocusOnContent isDraggable id="controlledTabs" onChange={this.handleSelection} activeKey={this.state.activeKey}>
           {tab1}
           {tab2}
           {tab3}
