@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { WorklistDataGrid } from 'terra-data-grid';
-import WorklistDataGridUtils from 'terra-worklist-data-grid/src/utils/WorklistDataGridUtils';
+import WorklistDataGridUtils from 'terra-data-grid/src/utils/WorklistDataGridUtils';
 
 const gridDataJSON = {
   cols: [
