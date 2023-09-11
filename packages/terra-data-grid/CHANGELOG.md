@@ -4,7 +4,7 @@
 
 * Breaking Changes
   * Renamed `terra-worklist-data-grid` package to `terra-data-grid`.
-  * Changed WorklistDataGrid component from default to named export.
+  * Changed WorklistDataGrid component from default to named export. WorklistDataGrid can now be imported as `import { WorklistDataGrid } from 'terra-data-grid'`.
 
 * Fixed
   * Fixed scroll issues for pinned columns.
@@ -15,7 +15,7 @@
   * Updated the `terra-worklist-data-grid` component to provide row selection assistive technology messages based on the properties provided by the consumer.
 
 ___
-All release notes below apply to `terra-worklist-data-grid` package (renamed with following release).
+All release notes below apply to `terra-worklist-data-grid` package (renamed with the 0.6 release).
 
 ## 0.5.0 - (August 31, 2023)
 

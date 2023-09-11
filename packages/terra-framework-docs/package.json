@@ -71,7 +71,6 @@
     "terra-theme-context": "^1.8.0",
     "terra-theme-provider": "^4.13.0",
     "terra-time-input": "^4.56.0",
-    "terra-toolbar": "^1.27.0",
-    "terra-worklist-data-grid": "^0.5.0"
+    "terra-toolbar": "^1.27.0"
   }
 }
