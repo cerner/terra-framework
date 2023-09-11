@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider should render a default slider 1`] = `
+<div
+  className="slider"
+>
+  <label
+    aria-label="label"
+    className="label"
+  >
+    Label
+  </label>
+  <input
+    aria-label="slider"
+    disabled={false}
+    max="100"
+    min="0"
+    name="slider"
+    step="any"
+    type="range"
+  />
+</div>
+`;
+
+exports[`Slider should render a disabled slider 1`] = `
+<div
+  className="slider"
+>
+  <label
+    aria-label="label"
+    className="label"
+  >
+    Label
+  </label>
+  <input
+    aria-label="slider"
+    disabled="true"
+    max="100"
+    min="0"
+    name="slider"
+    step="any"
+    type="range"
+  />
+</div>
+`;
