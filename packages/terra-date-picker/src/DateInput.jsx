@@ -165,8 +165,6 @@ const DatePickerInput = (props) => {
   const [dayInitialFocused, setDayInitialFocused] = useState(false);
   const [monthInitialFocused, setMonthInitialFocused] = useState(false);
   const [yearInitialFocused, setYearInitialFocused] = useState(false);
-  // Added below state for invalid input message for SR
-  const [invalidInput, SetInvalidInput] = useState(false);
   const editOnkeyDown = useRef(false);
   const theme = React.useContext(ThemeContext);
   // variables to store ref's for day, month and year input
@@ -273,7 +271,6 @@ const DatePickerInput = (props) => {
   };
 
   const handleInvalidInputChange = () => {
-    SetInvalidInput(true);
     visuallyHiddenComponent.innerText = intl.formatMessage({ id: 'Terra.datePicker.invalidDate' });
   };
 
@@ -324,9 +321,6 @@ const DatePickerInput = (props) => {
       }
     }
     setDate(event, inputValue, type);
-    if (invalidInput) {
-      SetInvalidInput(false);
-    }
   };
 
   const handleDayChange = (event) => {
@@ -535,8 +529,6 @@ const DatePickerInput = (props) => {
 
     // set date to today
     if (event.key === 't' || event.key === 'T') {
-      // Added this state change for invalid input entry
-      SetInvalidInput(false);
       inputDate = DateUtil.getCurrentDate();
       formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
       if (onChange) {
