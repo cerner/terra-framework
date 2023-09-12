@@ -166,11 +166,8 @@ const NotificationDialog = (props) => {
   if (variant === undefined) {
     throw new Error('The variant must be provided to the Notification dialog');
   }
-
-  // (sUsrAg.indexOf("Edge") > -1 || sUsrAg.indexOf("Chrome") > -1)
-
+  
   const signalWord = variant === 'custom' ? custom.signalWord : intl.formatMessage({ id: `Terra.notification.dialog.${variant}` });
-  const isEdgeOrChrome = (sUsrAg.indexOf("Edge") > -1 || sUsrAg.indexOf("Chrome") > -1);
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
