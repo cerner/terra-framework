@@ -166,7 +166,7 @@ const NotificationDialog = (props) => {
   if (variant === undefined) {
     throw new Error('The variant must be provided to the Notification dialog');
   }
-  
+
   const signalWord = variant === 'custom' ? custom.signalWord : intl.formatMessage({ id: `Terra.notification.dialog.${variant}` });
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
