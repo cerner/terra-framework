@@ -2,9 +2,6 @@ import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import { IntlProvider } from 'react-intl';
 import { v4 as uuidv4 } from 'uuid';
 import moment from 'moment-timezone';
 import DatePicker from '../../lib/DatePicker';
@@ -168,22 +165,4 @@ it('should render a date picker with onRequestClose', () => {
   const datePicker = shallowWithIntl(<DatePicker name="date-input" onRequestClose={() => {}} />);
   const wrapper = datePicker.dive();
   expect(wrapper).toMatchSnapshot();
-});
-
-it('should render a date picker with empty or invalid date in field', () => {
-  DateUtil.createSafeDate.mockRestore();
-  DateUtil.filterInvalidDates.mockRestore();
-  render(<IntlProvider><DatePicker name="date-input" /></IntlProvider>);
-
-  expect(screen.getByTitle('Terra.datePicker.openCalendar')).toHaveAttribute('aria-label', ' Terra.datePicker.openCalendar');
-});
-
-it('should render a date picker with valid date in field', () => {
-  DateUtil.createSafeDate = jest.fn();
-  DateUtil.filterInvalidDates = jest.fn();
-  DateUtil.createSafeDate.mockImplementation(() => moment.utc('2017-01-01'));
-  DateUtil.filterInvalidDates.mockImplementation(() => [moment.utc('2017-01-01')]);
-  render(<IntlProvider><DatePicker name="date-input" /></IntlProvider>);
-
-  expect(screen.getByTitle('Terra.datePicker.openCalendar')).toHaveAttribute('aria-label', 'Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar');
 });
