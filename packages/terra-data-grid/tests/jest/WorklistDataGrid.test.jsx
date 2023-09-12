@@ -491,6 +491,9 @@ describe('Row selection', () => {
       />,
     );
 
+    const rowSelectionHeader = wrapper.find(ColumnHeaderCell).at(0);
+    rowSelectionHeader.at(0).simulate('keydown', { keyCode: 40 });
+
     const selectableCell = wrapper.find(Row).at(0).find('td.selectable');
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 40 });
 
@@ -514,6 +517,9 @@ describe('Row selection', () => {
         onCellSelect={mockOnCellSelect}
       />,
     );
+
+    const rowSelectionHeader = wrapper.find(ColumnHeaderCell).at(0);
+    rowSelectionHeader.at(0).simulate('keydown', { keyCode: 40 });
 
     const selectableCell = wrapper.find(Row).at(0).find('td.selectable');
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 40 });
@@ -540,6 +546,9 @@ describe('Row selection', () => {
         onCellSelect={mockOnCellSelect}
       />,
     );
+
+    const rowSelectionHeader = wrapper.find(ColumnHeaderCell).at(0);
+    rowSelectionHeader.at(0).simulate('keydown', { keyCode: 40 });
 
     // Find a cell on row 1 and use Shift+Down to create a selected range of rows.
     let selectableCell = wrapper.find(Row).at(0).find('td.selectable');
@@ -574,6 +583,9 @@ describe('Row selection', () => {
         onCellSelect={mockOnCellSelect}
       />,
     );
+
+    const rowSelectionHeader = wrapper.find(ColumnHeaderCell).at(0);
+    rowSelectionHeader.at(0).simulate('keydown', { keyCode: 40 });
 
     const selectableCell = wrapper.find(Row).at(0).find('td.selectable');
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 40 }); // Shift+Down starts the range

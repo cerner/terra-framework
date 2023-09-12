@@ -13,6 +13,7 @@
 
 * Changed
   * Updated the `terra-worklist-data-grid` component to provide row selection assistive technology messages based on the properties provided by the consumer.
+  * Updated the `terra-worklist-data-grid` component to set initial focus to the row selection header when row selection mode is enabled.
 
 ___
 All release notes below apply to `terra-worklist-data-grid` package (renamed with the 0.6 release).
