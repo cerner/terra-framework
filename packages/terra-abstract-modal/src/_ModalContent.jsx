@@ -63,6 +63,10 @@ const propTypes = {
    * Callback function to set the reference of the element that will receive focus when the Slide content is visible.
    */
   setModalFocusElementRef: PropTypes.func,
+  /**
+   * If set to true, the AbstractModal is rendered inside a NotificationDialog.
+   */
+  isCalledFromNotificationDialog: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -90,6 +94,7 @@ const ModalContent = forwardRef((props, ref) => {
     rootSelector,
     zIndex,
     setModalFocusElementRef,
+    isCalledFromNotificationDialog,
     ...customProps
   } = props;
 
@@ -136,40 +141,45 @@ const ModalContent = forwardRef((props, ref) => {
           the aria-label value when the modal is opened
         */
       }
+
       <div
         {...customProps}
-        tabIndex={platformIsiOS ? '-1' : '0'}
+        tabIndex={platformIsiOS || isCalledFromNotificationDialog ? '-1' : '0'}
         aria-label={ariaLabel}
         className={modalClassName}
         role={role}
         ref={ref}
       >
         <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
-          <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
-            {text => {
-              // In the latest version of react-intl this param is an array, when previous versions it was a string.
-              let useText = text;
-              if (Array.isArray(text)) {
-                useText = text.join('');
-              }
-              return (
-                <VisuallyHiddenText text={useText} />
-              );
-            }}
-          </FormattedMessage>
+          {(!isCalledFromNotificationDialog && isCalledFromNotificationDialog !== undefined) && (
+            <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
+              {text => {
+                // In the latest version of react-intl this param is an array, when previous versions it was a string.
+                let useText = text;
+                if (Array.isArray(text)) {
+                  useText = text.join('');
+                }
+                return (
+                  <VisuallyHiddenText text={useText} />
+                );
+              }}
+            </FormattedMessage>
+          )}
           {children}
-          <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
-            {text => {
-              // In the latest version of react-intl this param is an array, when previous versions it was a string.
-              let useText = text;
-              if (Array.isArray(text)) {
-                useText = text.join('');
-              }
-              return (
-                <VisuallyHiddenText text={useText} />
-              );
-            }}
-          </FormattedMessage>
+          {(!isCalledFromNotificationDialog && isCalledFromNotificationDialog !== undefined) && (
+            <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
+              {text => {
+                // In the latest version of react-intl this param is an array, when previous versions it was a string.
+                let useText = text;
+                if (Array.isArray(text)) {
+                  useText = text.join('');
+                }
+                return (
+                  <VisuallyHiddenText text={useText} />
+                );
+              }}
+            </FormattedMessage>
+          )}
         </div>
       </div>
     </React.Fragment>

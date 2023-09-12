@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
-import FocusTrap from 'focus-trap-react';
 import Button from 'terra-button';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
@@ -30,8 +29,9 @@ const propTypes = {
    */
   variant: PropTypes.oneOf(variants).isRequired,
   /**
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue)
    * The title to describe the high-level overview of why the notification-dialog is being displayed to the user. Use a title that relates directly to the
-   * message/actions provided in the dialog.
+   * message/actions provided in the dialog. Adding a title, while optional, is always best practice.
    */
   dialogTitle: PropTypes.string,
   /**
@@ -46,6 +46,10 @@ const propTypes = {
    *  The content to be inserted after `startMessage` and/or before `endMessage` to provide more details to the user in the dialog body. Don’t repeat the title verbatim.
    */
   content: PropTypes.node,
+  /**
+   * The method to close the dialog.
+   */
+  onRequestClose: PropTypes.func,
   /**
    * The button text and onclick values of the accept button.
    */
@@ -127,12 +131,24 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
 
 const NotificationDialog = (props) => {
   const theme = React.useContext(ThemeContext);
+  // const sBrowser;
+  const sUsrAg = navigator.userAgent;
+  const notificationDialogRef = useRef();
+
+  const setNotificationDialogRef = (node) => {
+    notificationDialogRef.current = node;
+  };
+
+  useEffect(() => {
+    notificationDialogRef.current.focus();
+  }, []);
 
   const {
     dialogTitle,
     startMessage,
     endMessage,
     content,
+    onRequestClose,
     acceptAction,
     rejectAction,
     variant,
@@ -151,54 +167,54 @@ const NotificationDialog = (props) => {
     throw new Error('The variant must be provided to the Notification dialog');
   }
 
+  // (sUsrAg.indexOf("Edge") > -1 || sUsrAg.indexOf("Chrome") > -1)
+
   const signalWord = variant === 'custom' ? custom.signalWord : intl.formatMessage({ id: `Terra.notification.dialog.${variant}` });
+  const isEdgeOrChrome = (sUsrAg.indexOf("Edge") > -1 || sUsrAg.indexOf("Chrome") > -1);
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
     <AbstractModal
-      ariaLabel={signalWord}
-      aria-labelledby="notification-dialog-signal-word"
-      aria-describedby={dialogTitle ? 'notification-dialog-title' : 'notification-dialog-signal-word'}
-      role="alertdialog"
+      ariaLabel={isEdgeOrChrome ? " " : dialogTitle}
+      role={signalWord === 'Alert' ? 'alertdialog' : 'dialog'}
       classNameModal={classNames(cx('notification-dialog', theme.className), customProps.className)}
       isOpen
-      onRequestClose={() => {}}
-      closeOnEsc={false}
+      onRequestClose={onRequestClose}
+      closeOnEsc
       closeOnOutsideClick={false}
       zIndex="9000"
+      isCalledFromNotificationDialog
     >
-      <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
-        <div className={cx('notification-dialog-inner-wrapper')}>
-          <div className={cx('notification-dialog-container')} tabIndex="0" data-terra-notification-dialog>
-            <div className={cx(['floating-header-background', variant])} />
-            <div className={cx(['header'])}>
-              <div className={cx(['header-content'])}>
-                <NotificationIcon variant={variant} iconClassName={custom.iconClassName} />
-                <div className={cx('header-container')}>
-                  <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
-                  <div id="notification-dialog-title" className={cx('title')}>{dialogTitle}</div>
-                </div>
+      <div className={cx('notification-dialog-inner-wrapper')}>
+        <div className={cx('notification-dialog-container')} tabIndex="0" ref={setNotificationDialogRef} data-terra-notification-dialog>
+          <div className={cx(['floating-header-background', variant])} />
+          <div className={cx(['header'])}>
+            <div className={cx(['header-content'])}>
+              <NotificationIcon variant={variant} iconClassName={custom.iconClassName} />
+              <div className={cx('header-container')}>
+                <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
+                <div id="notification-dialog-title" className={cx('title')}>{dialogTitle}</div>
               </div>
             </div>
-            <div className={cx('body')}>
-              {(startMessage)
-                && <div className={cx('message')}>{(startMessage)}</div>}
-              {content
-                && <div className={cx('message')}>{content}</div>}
-              {endMessage
-                && <div className={cx('message')}>{endMessage}</div>}
-            </div>
-            <div className={cx('footer')}>
-              {actionSection(
-                acceptAction,
-                rejectAction,
-                buttonOrder,
-                emphasizedAction,
-              )}
-            </div>
+          </div>
+          <div id="dialogBody" className={cx('body')}>
+            {(startMessage)
+              && <div className={cx('message')}>{(startMessage)}</div>}
+            {content
+              && <div className={cx('message')}>{content}</div>}
+            {endMessage
+              && <div className={cx('message')}>{endMessage}</div>}
+          </div>
+          <div className={cx('footer')}>
+            {actionSection(
+              acceptAction,
+              rejectAction,
+              buttonOrder,
+              emphasizedAction,
+            )}
           </div>
         </div>
-      </FocusTrap>
+      </div>
     </AbstractModal>
   );
   /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
