@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * Added doc and test example for `collapsible-menu-view` multi-select group items.
+  * Added aria-label prop for `collapsible-menu-view` to announce group information.
+
 ## 1.35.0 - (September 14, 2023)
 
 * Added
@@ -50,7 +54,7 @@
 
 * Changed
   * Updated toggle examples for `terra-collapsible-menu-view` to include selectable toggles and toggles within a collapsed menu.
-  
+
 * Added
   * Updated row selection example for `terra-worklist-data-grid` to show ability to select the row selection column header.
 
