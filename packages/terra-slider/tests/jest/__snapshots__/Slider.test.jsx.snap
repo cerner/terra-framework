@@ -5,11 +5,8 @@ exports[`Slider should render a default slider 1`] = `
   className="slider"
 >
   <label
-    aria-label="label"
     className="label"
-  >
-    Label
-  </label>
+  />
   <input
     aria-label="slider"
     disabled={false}
@@ -27,11 +24,8 @@ exports[`Slider should render a disabled slider 1`] = `
   className="slider"
 >
   <label
-    aria-label="label"
     className="label"
-  >
-    Label
-  </label>
+  />
   <input
     aria-label="slider"
     disabled="true"
