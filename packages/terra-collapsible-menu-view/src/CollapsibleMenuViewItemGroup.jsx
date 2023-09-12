@@ -17,7 +17,9 @@ const propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * Whether or not it is a multi select CollapsibleMenuView.Items group.
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) For best practices, ensure to use `isMultiSelect`
+   * in collapsibleMenuViewItemGroup element when creating multi select group items. This ensures collapsibleMenuItem's are rendered with role `checkbox` for face up group items and
+   * role `menuItemCheckBox` for collapsed group items.
    */
   isMultiSelect: PropTypes.bool,
   /**
@@ -33,7 +35,6 @@ const defaultProps = {
 
 const childContextTypes = {
   isCollapsibleGroupItem: PropTypes.bool,
-  isMultiSelect: PropTypes.bool,
 };
 
 const contextTypes = {
@@ -44,12 +45,10 @@ class CollapsibleMenuViewItemGroup extends React.Component {
   constructor(props) {
     super(props);
     this.handleMenuOnChange = this.handleMenuOnChange.bind(this);
-    this.handleButtonOnChange = this.handleButtonOnChange.bind(this);
-    this.state = { selectedKeys: this.props.selectedKeys };
   }
 
   getChildContext() {
-    return { isCollapsibleGroupItem: true, isMultiSelect: this.props.isMultiSelect };
+    return { isCollapsibleGroupItem: true };
   }
 
   handleMenuOnChange(event, selectedIndex) {
@@ -65,17 +64,6 @@ class CollapsibleMenuViewItemGroup extends React.Component {
     }
   }
 
-  handleButtonOnChange(event, selectedKey) {
-    if (this.props.onChange) {
-      this.props.onChange(event, selectedKey);
-    }
-
-    // ensures only one item is selected when isMultiselect is not specified.
-    if (!this.props.isMultiSelect) {
-      this.setState({ selectedKeys: [selectedKey] });
-    }
-  }
-
   render() {
     const {
       children,
@@ -87,19 +75,37 @@ class CollapsibleMenuViewItemGroup extends React.Component {
 
     const { isCollapsibleMenuItem } = this.context;
 
-    if (isCollapsibleMenuItem && selectedKeys.length) {
+    if (isCollapsibleMenuItem) {
+      if (isMultiSelect) {
+        const cloneChildren = [];
+        React.Children.forEach(children, (item, index) => {
+          let clonedElement = item;
+          clonedElement = React.cloneElement(item, { onChange: (e) => this.handleMenuOnChange(e, index), isToggleable: true, isToggled: item.isToggled });
+          cloneChildren.push(clonedElement);
+        });
+        return (
+          <li role="none">
+            <div {...customProps} role="group">
+              {cloneChildren}
+            </div>
+          </li>
+        );
+      }
+      if (onChange) {
+        return (
+          <li role="none">
+            <Menu.ItemGroup {...customProps} onChange={this.handleMenuOnChange}>
+              {children}
+            </Menu.ItemGroup>
+          </li>
+        );
+      }
       return (
         <li role="none">
-          <Menu.ItemGroup {...customProps} onChange={this.handleMenuOnChange}>
+          <div {...customProps} role="group">
             {children}
-          </Menu.ItemGroup>
+          </div>
         </li>
-      );
-    } if (isCollapsibleMenuItem) {
-      return (
-        <div {...customProps}>
-          { children }
-        </div>
       );
     }
 
@@ -109,7 +115,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
     ]);
 
     return (
-      <ButtonGroup {...customProps} isMultiSelect={isMultiSelect} onChange={this.handleButtonOnChange} className={buttonGroupClassNames} selectedKeys={this.state.selectedKeys}>
+      <ButtonGroup {...customProps} isMultiSelect={isMultiSelect} onChange={onChange} className={buttonGroupClassNames} selectedKeys={selectedKeys}>
         {children}
       </ButtonGroup>
     );

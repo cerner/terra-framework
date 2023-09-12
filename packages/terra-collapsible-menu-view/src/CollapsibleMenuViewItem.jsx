@@ -69,7 +69,6 @@ const propTypes = {
 const contextTypes = {
   isCollapsibleGroupItem: PropTypes.bool,
   isCollapsibleMenuItem: PropTypes.bool,
-  isMultiSelect: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -109,7 +108,7 @@ class CollapsibleMenuViewItem extends React.Component {
       ...customProps
     } = this.props;
 
-    const { isCollapsibleGroupItem, isCollapsibleMenuItem, isMultiSelect } = this.context;
+    const { isCollapsibleGroupItem, isCollapsibleMenuItem } = this.context;
     const attributes = { ...customProps };
     let item;
 
@@ -118,8 +117,7 @@ class CollapsibleMenuViewItem extends React.Component {
         <Menu.Item
           {...attributes}
           text={text}
-          isSelected={isSelected && isCollapsibleGroupItem}
-          isSelectable={isCollapsibleGroupItem && isMultiSelect}
+          isToggled={isSelected && isCollapsibleGroupItem}
           isDisabled={isDisabled}
           subMenuItems={subMenuItems}
         />

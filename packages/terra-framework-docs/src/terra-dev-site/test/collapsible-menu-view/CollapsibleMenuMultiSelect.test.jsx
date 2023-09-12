@@ -5,7 +5,7 @@ import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
 import IconSend from 'terra-icon/lib/icon/IconSend';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
-class CollapsibleMenuViewWithMultiSelectItems extends React.Component {
+class CollapsibleMenuMultiSelect extends React.Component {
   constructor(props) {
     super(props);
     this.handleDisplayTypeChange = this.handleDisplayTypeChange.bind(this);
@@ -82,6 +82,7 @@ class CollapsibleMenuViewWithMultiSelectItems extends React.Component {
             icon={<IconTable />}
             text="Table View"
             key="tableView"
+            id="tableView"
             isIconOnly
             shouldCloseOnClick={false}
             isSelected={this.state.selectedKeys.includes('tableView')}
@@ -98,6 +99,7 @@ class CollapsibleMenuViewWithMultiSelectItems extends React.Component {
             icon={<IconVisualization />}
             text="Trending View"
             key="trendingView"
+            id="trendingView"
             isIconOnly
             shouldCloseOnClick={false}
             isSelected={this.state.selectedKeys.includes('trendingView')}
@@ -110,4 +112,4 @@ class CollapsibleMenuViewWithMultiSelectItems extends React.Component {
   }
 }
 
-export default CollapsibleMenuViewWithMultiSelectItems;
+export default CollapsibleMenuMultiSelect;
