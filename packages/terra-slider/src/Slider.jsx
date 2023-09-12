@@ -24,6 +24,11 @@ const propTypes = {
   maximumValue: PropTypes.number.isRequired,
 
   /**
+  * Slider label value.
+  */
+  labelName: PropTypes.string.isRequired,
+
+  /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
@@ -31,18 +36,22 @@ const propTypes = {
 };
 
 const defaultProps = {
-  isDisabled: false
+  isDisabled: false,
 };
 
+/* eslint-disable-next-line react/prefer-stateless-function */
 class Slider extends React.Component {
+  /* eslint-disable-next-line  no-useless-constructor */
   constructor(props) {
     super(props);
   }
+
   render() {
     const {
       isDisabled,
       minimumValue,
       maximumValue,
+      labelName,
     } = this.props;
 
     const theme = this.context;
@@ -54,7 +63,7 @@ class Slider extends React.Component {
 
     return (
       <div className={sliderClassNames}>
-        <label className={cx('label')} aria-label="label">Label</label>
+        <label className={cx('label')} aria-label={labelName}>{labelName}</label>
         <input type="range" name="slider" aria-label="slider" disabled={isDisabled} min={minimumValue} max={maximumValue} step="any" />
       </div>
     );

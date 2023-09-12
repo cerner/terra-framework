@@ -16,14 +16,14 @@ afterAll(() => {
 describe('Slider', () => {
   it('should render a default slider', () => {
     const wrapper = shallowWithIntl(
-      <Slider minimumValue="0" maximumValue="100"/>,
+      <Slider minimumValue="0" maximumValue="100" />,
     ).dive();
 
     expect(wrapper).toMatchSnapshot();
   });
   it('should render a disabled slider', () => {
     const wrapper = shallowWithIntl(
-      <Slider isDisabled="true" minimumValue="0" maximumValue="100"/>,
+      <Slider isDisabled="true" minimumValue="0" maximumValue="100" />,
     ).dive();
 
     expect(wrapper).toMatchSnapshot();
