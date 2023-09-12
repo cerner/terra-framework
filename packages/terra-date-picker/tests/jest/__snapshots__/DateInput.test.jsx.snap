@@ -324,7 +324,7 @@ exports[`correctly applies the theme context className 1`] = `
             </DateInputLayout>
           </div>
           <Button
-            aria-label="Terra.datePicker.date Terra.datePicker.openCalendar"
+            aria-label=" Terra.datePicker.openCalendar"
             className="button"
             data-terra-open-calendar-button={true}
             icon={
@@ -346,7 +346,7 @@ exports[`correctly applies the theme context className 1`] = `
           >
             <button
               aria-disabled={false}
-              aria-label="Terra.datePicker.date Terra.datePicker.openCalendar"
+              aria-label=" Terra.datePicker.openCalendar"
               className="button neutral compact orion-fusion-theme button"
               data-terra-open-calendar-button={true}
               disabled={false}
@@ -433,7 +433,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         Array [
           <button
             aria-disabled="false"
-            aria-label="Terra.datePicker.date Terra.datePicker.openCalendar"
+            aria-label=" Terra.datePicker.openCalendar"
             class="button neutral compact button"
             data-terra-open-calendar-button="true"
             title="Terra.datePicker.openCalendar"
@@ -758,7 +758,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         </DateInputLayout>
       </div>
       <Button
-        aria-label="Terra.datePicker.date Terra.datePicker.openCalendar"
+        aria-label=" Terra.datePicker.openCalendar"
         className="button"
         data-terra-open-calendar-button={true}
         icon={
@@ -780,7 +780,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
               Array [
                 <button
                   aria-disabled="false"
-                  aria-label="Terra.datePicker.date Terra.datePicker.openCalendar"
+                  aria-label=" Terra.datePicker.openCalendar"
                   class="button neutral compact button"
                   data-terra-open-calendar-button="true"
                   title="Terra.datePicker.openCalendar"
@@ -824,7 +824,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       >
         <button
           aria-disabled={false}
-          aria-label="Terra.datePicker.date Terra.datePicker.openCalendar"
+          aria-label=" Terra.datePicker.openCalendar"
           className="button neutral compact button"
           data-terra-open-calendar-button={true}
           disabled={false}
@@ -979,7 +979,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
     </div>
     <button
       aria-disabled="false"
-      aria-label="Terra.datePicker.date Terra.datePicker.openCalendar"
+      aria-label=" Terra.datePicker.openCalendar"
       class="button neutral compact button"
       data-terra-open-calendar-button="true"
       title="Terra.datePicker.openCalendar"
@@ -1104,7 +1104,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
     </div>
     <button
       aria-disabled="false"
-      aria-label="Terra.datePicker.date Terra.datePicker.openCalendar"
+      aria-label=" Terra.datePicker.openCalendar"
       class="button neutral compact button is-invalid"
       data-terra-open-calendar-button="true"
       title="Terra.datePicker.openCalendar"
@@ -1229,7 +1229,7 @@ exports[`should render a default date input 1`] = `
     </div>
     <button
       aria-disabled="false"
-      aria-label="Terra.datePicker.date Terra.datePicker.openCalendar"
+      aria-label=" Terra.datePicker.openCalendar"
       class="button neutral compact button"
       data-terra-open-calendar-button="true"
       title="Terra.datePicker.openCalendar"

@@ -792,7 +792,7 @@ const DatePickerInput = (props) => {
   if (DateUtil.isValidDate(value, momentDateFormat)) {
     inputDate = `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}`;
   }
-  const calendarDate = inputDate ? `${inputDate} ${intl.formatMessage({ id: 'Terra.datePicker.selected' })}` : label;
+  const calendarDate = inputDate ? `${inputDate} ${intl.formatMessage({ id: 'Terra.datePicker.selected' })}` : '';
 
   return (
     <div className={cx(theme.className)}>
