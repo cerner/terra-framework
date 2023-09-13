@@ -4,7 +4,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
 <li
   role="none"
 >
-  <MenuItemGroup
+  <div
     className="Testing"
     intl={
       Object {
@@ -33,7 +33,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
         "timeZone": null,
       }
     }
-    onChange={[Function]}
+    role="group"
   >
     <CollapsibleMenuViewItem
       isIconOnly={false}
@@ -49,7 +49,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
       shouldCloseOnClick={true}
       text="Testing"
     />
-  </MenuItemGroup>
+  </div>
 </li>
 `;
 
@@ -57,7 +57,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
 <li
   role="none"
 >
-  <MenuItemGroup
+  <div
     className="Testing"
     intl={
       Object {
@@ -86,7 +86,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
         "timeZone": null,
       }
     }
-    onChange={[Function]}
+    role="group"
   >
     <CollapsibleMenuViewItem
       isIconOnly={false}
@@ -104,7 +104,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
       shouldCloseOnClick={true}
       text="Testing"
     />
-  </MenuItemGroup>
+  </div>
 </li>
 `;
 
@@ -112,7 +112,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a m
 <li
   role="none"
 >
-  <MenuItemGroup
+  <div
     intl={
       Object {
         "defaultFormats": Object {},
@@ -140,7 +140,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a m
         "timeZone": null,
       }
     }
-    onChange={[Function]}
+    role="group"
   >
     <CollapsibleMenuViewItem
       isIconOnly={false}
@@ -158,7 +158,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a m
       shouldCloseOnClick={true}
       text="Testing"
     />
-  </MenuItemGroup>
+  </div>
 </li>
 `;
 
@@ -166,7 +166,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render men
 <li
   role="none"
 >
-  <MenuItemGroup
+  <div
     intl={
       Object {
         "defaultFormats": Object {},
@@ -194,7 +194,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render men
         "timeZone": null,
       }
     }
-    onChange={[Function]}
+    role="group"
   >
     <CollapsibleMenuViewItem
       isIconOnly={false}
@@ -210,7 +210,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render men
       shouldCloseOnClick={true}
       text="Testing"
     />
-  </MenuItemGroup>
+  </div>
 </li>
 `;
 
