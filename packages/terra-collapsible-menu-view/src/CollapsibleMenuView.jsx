@@ -30,11 +30,6 @@ const propTypes = {
    * Bounding container for the menu, will use window if no value provided.
    */
   boundingRef: PropTypes.func,
-  /**
-   * @private
-   * Object containing intl APIs
-   */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 
   /**
    *  Puts items under the collapsed (more) menu. More button will be always shown if at least one item is populated here.
@@ -45,6 +40,18 @@ const propTypes = {
    * Aligns the menu to the start of the container
    */
   isStartAligned: PropTypes.bool,
+
+  /**
+   * @private
+   * Switches to using horizontal ellipses instead of vertical ones when menu items are truncated.
+   */
+  useHorizontalIcon: PropTypes.bool,
+
+  /**
+   * @private
+   * Object containing intl APIs
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {
@@ -149,7 +156,14 @@ class CollapsibleMenuView extends React.Component {
 
   render() {
     const {
-      children, boundingRef, menuWidth, intl, alwaysCollapsedMenuItems, isStartAligned, ...customProps
+      children,
+      boundingRef,
+      menuWidth,
+      intl,
+      alwaysCollapsedMenuItems,
+      isStartAligned,
+      useHorizontalIcon,
+      ...customProps
     } = this.props;
     const theme = this.context;
 
@@ -176,13 +190,18 @@ class CollapsibleMenuView extends React.Component {
         : visibleChildren.splice(this.hiddenStartIndex).concat(hiddenChildren);
     }
 
+    const iconClassName = classNames(cx(
+      'menu-button-icon',
+      { 'horizontal-icon': useHorizontalIcon },
+    ));
+
     return (
       <div {...customProps} className={collapsibleMenuViewClassName} ref={this.setContainer}>
         {visibleChildren}
         <div className={menuButtonClassName} ref={this.setMenuButton}>
           <CollapsibleMenuViewItem
             data-collapsible-menu-toggle
-            icon={<span className={cx('menu-button-icon')} />}
+            icon={<span className={iconClassName} />}
             subMenuItems={hiddenChildren}
             boundingRef={boundingRef}
             menuWidth={menuWidth}
