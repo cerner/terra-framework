@@ -131,8 +131,6 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
 
 const NotificationDialog = (props) => {
   const theme = React.useContext(ThemeContext);
-  // const sBrowser;
-  // const sUsrAg = navigator.userAgent;
   const notificationDialogRef = useRef();
 
   const setNotificationDialogRef = (node) => {
@@ -176,7 +174,9 @@ const NotificationDialog = (props) => {
       role={signalWord === 'Alert' ? 'alertdialog' : 'dialog'}
       classNameModal={classNames(cx('notification-dialog', theme.className), customProps.className)}
       isOpen
-      onRequestClose={() => {onRequestClose()}}
+      onRequestClose={() => {
+        onRequestClose();
+      }}
       closeOnEsc
       closeOnOutsideClick={false}
       zIndex="9000"
