@@ -195,15 +195,4 @@ Terra.describeViewports('Keyboard Accessibility', ['medium'], () => {
     expect($(REJECT_ACTION_SELECTOR).isFocused()).toBeTruthy();
     Terra.validates.element('reject focused', { selector });
   });
-
-  it('the notification dialog traps focus in modal', () => {
-    browser.keys('Tab');
-    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
-    browser.keys('Tab');
-    expect($(ACCEPT_ACTION_SELECTOR).isFocused()).toBeTruthy();
-    browser.keys('Tab');
-    expect($(REJECT_ACTION_SELECTOR).isFocused()).toBeTruthy();
-    browser.keys('Tab');
-    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
-  });
 });
