@@ -4,6 +4,15 @@
 
 * Added
   * Added an example and test for `terra-embedded-content-consumer` to enable inline html content to be set in `srcdoc` frame attribute.
+  * Added aria-label prop for terra-popup to announce the close instruction.
+  * Added example for `terra-tabs` to test the focus traverse with interactive element within the tab content.
+
+* Changed
+  * Updated examples and tests for `terra-worklist-data-grid` to properly update row selection data.
+  * Migrated `terra-worklist-data-grid` docs/tests to new `terra-data-grid`.
+
+* Updated
+  * Updated example for `terra-date-picker` with isInvalid prop.
 
 ## 1.34.0 - (September 5, 2023)
 

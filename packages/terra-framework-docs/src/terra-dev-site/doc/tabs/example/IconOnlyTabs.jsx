@@ -37,7 +37,7 @@ const IconOnlyTabs = () => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs>
+      <Tabs setFocusOnContent>
         {searchTab}
         {briefcaseTab}
         {bookmarkTab}

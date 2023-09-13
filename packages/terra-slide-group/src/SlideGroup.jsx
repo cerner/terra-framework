@@ -107,7 +107,7 @@ class SlideGroup extends React.Component {
             key={item.key}
             id="shmmoop"
           >
-            <Slide isHidden={index !== itemCount} focusRef={focusRef} slideAriaLabel={slideAriaLabel}>
+            <Slide isHidden={index !== itemCount} focusRef={focusRef} slideAriaLabel={slideAriaLabel} isNested={index > 0}>
               {item}
             </Slide>
           </CSSTransition>

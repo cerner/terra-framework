@@ -431,6 +431,14 @@
     }
   }
 
+  // Allows calendar to scroll on smaller viewports
+  @media (max-width: 320px), (max-height: 256px) {
+    .react-datepicker-portal {
+      align-items: flex-start;
+      overflow: auto;
+    }
+  }
+
   .react-datepicker-navigation--previous,
   .react-datepicker-navigation--next {
     background-color: transparent;

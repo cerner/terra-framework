@@ -39,6 +39,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
     fill={false}
     isClosable={false}
     isDraggable={false}
+    setFocusOnContent={false}
     tabFill={false}
     variant="modular-left-aligned"
   >
@@ -391,7 +392,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                       data-application-overflow-container="true"
                       id="terra-common-tabs-default-panel"
                       role="tabpanel"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <div
                         class="outer-container"
@@ -434,7 +435,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                         data-application-overflow-container="true"
                         id="terra-common-tabs-default-panel"
                         role="tabpanel"
-                        tabindex="0"
+                        tabindex="-1"
                       >
                         <div
                           class="outer-container"
@@ -452,6 +453,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
               }
             >
               <CommonTabContent
+                setFocusOnContent={false}
                 variant="framework"
               >
                 <div
@@ -471,7 +473,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                       data-application-overflow-container={true}
                       id="terra-common-tabs-default-panel"
                       role="tabpanel"
-                      tabIndex="0"
+                      tabIndex={-1}
                     >
                       <DynamicOverlayContainer
                         overlays={Array []}
@@ -532,6 +534,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
   }
   isClosable={false}
   isDraggable={false}
+  setFocusOnContent={false}
   tabFill={false}
 >
   <CommonTabs
@@ -895,6 +898,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
           variant="framework"
         >
           <CommonTabContent
+            setFocusOnContent={false}
             variant="framework"
           >
             <div
@@ -914,7 +918,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                   data-application-overflow-container={true}
                   id="application-id-default-panel"
                   role="tabpanel"
-                  tabIndex="0"
+                  tabIndex={-1}
                 >
                   <DynamicOverlayContainer
                     overlays={Array []}
@@ -1302,6 +1306,7 @@ exports[`Tabs should render with add icon 1`] = `
   isClosable={false}
   isDraggable={false}
   onSelectAddButton={[MockFunction]}
+  setFocusOnContent={false}
   tabFill={false}
 >
   <CommonTabs
@@ -1823,6 +1828,7 @@ exports[`Tabs should render with add icon 1`] = `
           variant="framework"
         >
           <CommonTabContent
+            setFocusOnContent={false}
             variant="framework"
           >
             <div
@@ -1842,7 +1848,7 @@ exports[`Tabs should render with add icon 1`] = `
                   data-application-overflow-container={true}
                   id="application-id-default-panel"
                   role="tabpanel"
-                  tabIndex="0"
+                  tabIndex={-1}
                 >
                   <DynamicOverlayContainer
                     overlays={Array []}
@@ -1903,6 +1909,7 @@ exports[`Tabs should render with add icon 2`] = `
   isClosable={false}
   isDraggable={false}
   onSelectAddButton={[Function]}
+  setFocusOnContent={false}
   tabFill={false}
 >
   <CommonTabs
@@ -2424,6 +2431,7 @@ exports[`Tabs should render with add icon 2`] = `
           variant="framework"
         >
           <CommonTabContent
+            setFocusOnContent={false}
             variant="framework"
           >
             <div
@@ -2443,7 +2451,7 @@ exports[`Tabs should render with add icon 2`] = `
                   data-application-overflow-container={true}
                   id="application-id-default-panel"
                   role="tabpanel"
-                  tabIndex="0"
+                  tabIndex={-1}
                 >
                   <DynamicOverlayContainer
                     overlays={Array []}
@@ -2504,6 +2512,7 @@ exports[`Tabs should render with close icon 1`] = `
   isDraggable={false}
   isclosable={true}
   onTabClose={[MockFunction]}
+  setFocusOnContent={false}
   tabFill={false}
 >
   <CommonTabs
@@ -2869,6 +2878,7 @@ exports[`Tabs should render with close icon 1`] = `
           variant="framework"
         >
           <CommonTabContent
+            setFocusOnContent={false}
             variant="framework"
           >
             <div
@@ -2888,7 +2898,7 @@ exports[`Tabs should render with close icon 1`] = `
                   data-application-overflow-container={true}
                   id="application-id-default-panel"
                   role="tabpanel"
-                  tabIndex="0"
+                  tabIndex={-1}
                 >
                   <DynamicOverlayContainer
                     overlays={Array []}

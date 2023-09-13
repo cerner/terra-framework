@@ -52,7 +52,7 @@ const IconsOnlyAndInMenuTabs = () => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs id="icons-only">
+      <Tabs setFocusOnContent id="icons-only">
         {searchTab}
         {briefcaseTab}
         {bookmarkTab}
