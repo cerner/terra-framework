@@ -116,6 +116,26 @@ const propTypes = {
    * The selected or entered date value to display in the date input.
    */
   value: PropTypes.string,
+  /**
+   * @private
+   * An array of ISO 8601 string representation of the dates to disable in the picker. The values must be in the `YYYY-MM-DD` format.
+   */
+  excludeDates: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * @private
+   * An array of ISO 8601 string representation of the dates to enable in the picker. All Other dates will be disabled. The values must be in the `YYYY-MM-DD` format.
+   */
+  includeDates: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * @private
+   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
+   */
+  maxDate: PropTypes.string,
+  /**
+   * @private
+   * An ISO 8601 string representation of the minimum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or after `01/01/1900`
+   */
+  minDate: PropTypes.string,
 };
 
 const defaultProps = {
@@ -135,6 +155,10 @@ const defaultProps = {
   required: false,
   useExternalFormatMask: false,
   value: undefined,
+  excludeDates: undefined,
+  includeDates: undefined,
+  maxDate: '2100-12-31',
+  minDate: '1900-01-01',
 };
 
 const DatePickerInput = (props) => {
@@ -158,6 +182,10 @@ const DatePickerInput = (props) => {
     required,
     useExternalFormatMask,
     value,
+    excludeDates,
+    includeDates,
+    maxDate,
+    minDate,
     ...customProps
   } = props;
 
@@ -786,7 +814,16 @@ const DatePickerInput = (props) => {
   if (DateUtil.isValidDate(value, momentDateFormat)) {
     inputDate = `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}`;
   }
-  const calendarDate = inputDate ? `${inputDate} ${intl.formatMessage({ id: 'Terra.datePicker.selected' })}` : '';
+  let calendarDate = inputDate ? `${inputDate} ${intl.formatMessage({ id: 'Terra.datePicker.selected' })}` : '';
+
+  // Check if date is excluded or out or range or not included
+  let invalidEntry = '';
+  if (DateUtil.isDateExcluded(DateUtil.createSafeDate(dateValue, initialTimeZone), props.excludeDates)
+      || DateUtil.isDateOutOfRange(DateUtil.createSafeDate(dateValue, initialTimeZone), DateUtil.createSafeDate(DateUtil.getMinDate(props.minDate), initialTimeZone), DateUtil.createSafeDate(DateUtil.getMaxDate(props.maxDate), initialTimeZone))
+      || DateUtil.isDateNotIncluded(DateUtil.createSafeDate(dateValue, initialTimeZone), props.includeDates)) {
+    invalidEntry = intl.formatMessage({ id: 'Terra.datePicker.invalidDate' });
+    calendarDate = '';
+  }
 
   return (
     <div className={cx(theme.className)}>
@@ -838,7 +875,7 @@ const DatePickerInput = (props) => {
       </div>
       {!useExternalFormatMask && (
         <div id={formatDescriptionId} className={cx('format-text')}>
-          <VisuallyHiddenText text={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format} ${inputDate || ''}`} />
+          <VisuallyHiddenText text={`${invalidEntry} ${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format} ${inputDate || ''} `} />
           <div aria-hidden="true">
             {`(${format})`}
           </div>

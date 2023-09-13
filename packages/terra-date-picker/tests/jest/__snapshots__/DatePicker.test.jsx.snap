@@ -89,8 +89,20 @@ exports[`correctly applies the theme context className 1`] = `
             customInput={
               <InjectIntl(DatePickerInput)
                 buttonRefCallback={[Function]}
+                excludeDates={
+                  Array [
+                    "2017-01-01T00:00:00.000Z",
+                  ]
+                }
+                includeDates={
+                  Array [
+                    "2017-01-01T00:00:00.000Z",
+                  ]
+                }
                 isIncomplete={false}
                 isInvalid={false}
+                maxDate={"2017-01-01T00:00:00.000Z"}
+                minDate={"2017-01-01T00:00:00.000Z"}
                 onButtonFocus={[Function]}
                 onCalendarButtonClick={[Function]}
                 required={false}
@@ -139,8 +151,20 @@ exports[`correctly applies the theme context className 1`] = `
               customInput={
                 <InjectIntl(DatePickerInput)
                   buttonRefCallback={[Function]}
+                  excludeDates={
+                    Array [
+                      "2017-01-01T00:00:00.000Z",
+                    ]
+                  }
+                  includeDates={
+                    Array [
+                      "2017-01-01T00:00:00.000Z",
+                    ]
+                  }
                   isIncomplete={false}
                   isInvalid={false}
+                  maxDate={"2017-01-01T00:00:00.000Z"}
+                  minDate={"2017-01-01T00:00:00.000Z"}
                   onButtonFocus={[Function]}
                   onCalendarButtonClick={[Function]}
                   required={false}
@@ -223,9 +247,21 @@ exports[`correctly applies the theme context className 1`] = `
                   buttonRefCallback={[Function]}
                   className=""
                   disabled={false}
+                  excludeDates={
+                    Array [
+                      "2017-01-01T00:00:00.000Z",
+                    ]
+                  }
                   firstInputRefCallback={[Function]}
+                  includeDates={
+                    Array [
+                      "2017-01-01T00:00:00.000Z",
+                    ]
+                  }
                   isIncomplete={false}
                   isInvalid={false}
+                  maxDate={"2017-01-01T00:00:00.000Z"}
+                  minDate={"2017-01-01T00:00:00.000Z"}
                   name="date-input"
                   onBlur={[Function]}
                   onButtonFocus={[Function]}
@@ -243,7 +279,17 @@ exports[`correctly applies the theme context className 1`] = `
                     buttonRefCallback={[Function]}
                     className=""
                     disabled={false}
+                    excludeDates={
+                      Array [
+                        "2017-01-01T00:00:00.000Z",
+                      ]
+                    }
                     firstInputRefCallback={[Function]}
+                    includeDates={
+                      Array [
+                        "2017-01-01T00:00:00.000Z",
+                      ]
+                    }
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -273,6 +319,8 @@ exports[`correctly applies the theme context className 1`] = `
                     }
                     isIncomplete={false}
                     isInvalid={false}
+                    maxDate={"2017-01-01T00:00:00.000Z"}
+                    minDate={"2017-01-01T00:00:00.000Z"}
                     name="date-input"
                     onBlur={[Function]}
                     onButtonFocus={[Function]}
@@ -547,7 +595,7 @@ exports[`correctly applies the theme context className 1`] = `
                           </DateInputLayout>
                         </div>
                         <Button
-                          aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
+                          aria-label=" Terra.datePicker.openCalendar"
                           className="button"
                           data-terra-open-calendar-button={true}
                           icon={
@@ -572,7 +620,7 @@ exports[`correctly applies the theme context className 1`] = `
                         >
                           <button
                             aria-disabled={false}
-                            aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
+                            aria-label=" Terra.datePicker.openCalendar"
                             className="button neutral compact orion-fusion-theme button"
                             data-terra-open-calendar-button={true}
                             disabled={false}
@@ -631,12 +679,12 @@ exports[`correctly applies the theme context className 1`] = `
                         id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                       >
                         <VisuallyHiddenText
-                          text="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017"
+                          text="Terra.datePicker.invalidDate Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017 "
                         >
                           <span
                             className="visually-hidden-text"
                           >
-                            Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017
+                            Terra.datePicker.invalidDate Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017 
                           </span>
                         </VisuallyHiddenText>
                         <div
@@ -671,8 +719,20 @@ exports[`should render a controlled date picker 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -734,8 +794,20 @@ exports[`should render a date picker with disabled dates 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -796,8 +868,20 @@ exports[`should render a date picker with filtered dates 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -858,8 +942,20 @@ exports[`should render a date picker with included dates 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -920,8 +1016,20 @@ exports[`should render a date picker with min and max dates 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -982,8 +1090,20 @@ exports[`should render a date picker with onBlur 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -1044,8 +1164,20 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -1106,8 +1238,20 @@ exports[`should render a date picker with onChange 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -1168,8 +1312,20 @@ exports[`should render a date picker with onChangeRaw 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -1230,8 +1386,20 @@ exports[`should render a date picker with onFocus 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -1292,8 +1460,20 @@ exports[`should render a date picker with onRequestClose 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -1355,8 +1535,20 @@ exports[`should render a date picker with onSelect 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -1417,8 +1609,20 @@ exports[`should render a default date input and date picker 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -1479,6 +1683,16 @@ exports[`should render a default date input with custom input attributes 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           inputAttributes={
             Object {
               "id": "terra-date-input",
@@ -1486,6 +1700,8 @@ exports[`should render a default date input with custom input attributes 1`] = `
           }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -1546,8 +1762,20 @@ exports[`should render a disabled date picker 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={false}
@@ -1608,8 +1836,20 @@ exports[`should render a required date input and date picker 1`] = `
       customInput={
         <InjectIntl(DatePickerInput)
           buttonRefCallback={[Function]}
+          excludeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
+          includeDates={
+            Array [
+              "2017-01-01T00:00:00.000Z",
+            ]
+          }
           isIncomplete={false}
           isInvalid={false}
+          maxDate={"2017-01-01T00:00:00.000Z"}
+          minDate={"2017-01-01T00:00:00.000Z"}
           onButtonFocus={[Function]}
           onCalendarButtonClick={[Function]}
           required={true}

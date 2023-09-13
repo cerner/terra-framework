@@ -355,6 +355,16 @@ exports[`should render a DatePickerField with props 1`] = `
                     <InjectIntl(DatePickerInput)
                       ariaLabel="Label Test"
                       buttonRefCallback={[Function]}
+                      excludeDates={
+                        Array [
+                          "2017-01-01T00:00:00.000Z",
+                        ]
+                      }
+                      includeDates={
+                        Array [
+                          "2017-01-01T00:00:00.000Z",
+                        ]
+                      }
                       inputAttributes={
                         Object {
                           "aria-describedby": "test-date-picker-error test-date-picker-help",
@@ -363,6 +373,8 @@ exports[`should render a DatePickerField with props 1`] = `
                       }
                       isIncomplete={false}
                       isInvalid={true}
+                      maxDate={"2017-01-01T00:00:00.000Z"}
+                      minDate={"2017-01-01T00:00:00.000Z"}
                       onButtonFocus={[Function]}
                       onCalendarButtonClick={[Function]}
                       required={true}
@@ -415,6 +427,16 @@ exports[`should render a DatePickerField with props 1`] = `
                       <InjectIntl(DatePickerInput)
                         ariaLabel="Label Test"
                         buttonRefCallback={[Function]}
+                        excludeDates={
+                          Array [
+                            "2017-01-01T00:00:00.000Z",
+                          ]
+                        }
+                        includeDates={
+                          Array [
+                            "2017-01-01T00:00:00.000Z",
+                          ]
+                        }
                         inputAttributes={
                           Object {
                             "aria-describedby": "test-date-picker-error test-date-picker-help",
@@ -423,6 +445,8 @@ exports[`should render a DatePickerField with props 1`] = `
                         }
                         isIncomplete={false}
                         isInvalid={true}
+                        maxDate={"2017-01-01T00:00:00.000Z"}
+                        minDate={"2017-01-01T00:00:00.000Z"}
                         onButtonFocus={[Function]}
                         onCalendarButtonClick={[Function]}
                         required={true}
@@ -509,8 +533,18 @@ exports[`should render a DatePickerField with props 1`] = `
                         buttonRefCallback={[Function]}
                         className=""
                         disabled={true}
+                        excludeDates={
+                          Array [
+                            "2017-01-01T00:00:00.000Z",
+                          ]
+                        }
                         firstInputRefCallback={[Function]}
                         id="test-date-picker"
+                        includeDates={
+                          Array [
+                            "2017-01-01T00:00:00.000Z",
+                          ]
+                        }
                         inputAttributes={
                           Object {
                             "aria-describedby": "test-date-picker-error test-date-picker-help",
@@ -519,6 +553,8 @@ exports[`should render a DatePickerField with props 1`] = `
                         }
                         isIncomplete={false}
                         isInvalid={true}
+                        maxDate={"2017-01-01T00:00:00.000Z"}
+                        minDate={"2017-01-01T00:00:00.000Z"}
                         name="test-date-picker"
                         onBlur={[Function]}
                         onButtonFocus={[Function]}
@@ -537,8 +573,18 @@ exports[`should render a DatePickerField with props 1`] = `
                           buttonRefCallback={[Function]}
                           className=""
                           disabled={true}
+                          excludeDates={
+                            Array [
+                              "2017-01-01T00:00:00.000Z",
+                            ]
+                          }
                           firstInputRefCallback={[Function]}
                           id="test-date-picker"
+                          includeDates={
+                            Array [
+                              "2017-01-01T00:00:00.000Z",
+                            ]
+                          }
                           inputAttributes={
                             Object {
                               "aria-describedby": "test-date-picker-error test-date-picker-help",
@@ -574,6 +620,8 @@ exports[`should render a DatePickerField with props 1`] = `
                           }
                           isIncomplete={false}
                           isInvalid={true}
+                          maxDate={"2017-01-01T00:00:00.000Z"}
+                          minDate={"2017-01-01T00:00:00.000Z"}
                           name="test-date-picker"
                           onBlur={[Function]}
                           onButtonFocus={[Function]}
@@ -849,7 +897,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                 </DateInputLayout>
                               </div>
                               <Button
-                                aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
+                                aria-label=" Terra.datePicker.openCalendar"
                                 className="button is-invalid"
                                 data-terra-open-calendar-button={true}
                                 icon={
@@ -874,7 +922,7 @@ exports[`should render a DatePickerField with props 1`] = `
                               >
                                 <button
                                   aria-disabled={true}
-                                  aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
+                                  aria-label=" Terra.datePicker.openCalendar"
                                   className="button neutral is-disabled compact button is-invalid"
                                   data-terra-open-calendar-button={true}
                                   disabled={true}
@@ -1196,6 +1244,16 @@ exports[`should render a default DatePickerField component 1`] = `
                     <InjectIntl(DatePickerInput)
                       ariaLabel="Label"
                       buttonRefCallback={[Function]}
+                      excludeDates={
+                        Array [
+                          "2017-01-01T00:00:00.000Z",
+                        ]
+                      }
+                      includeDates={
+                        Array [
+                          "2017-01-01T00:00:00.000Z",
+                        ]
+                      }
                       inputAttributes={
                         Object {
                           "aria-describedby": "test-date-picker-help",
@@ -1203,6 +1261,8 @@ exports[`should render a default DatePickerField component 1`] = `
                       }
                       isIncomplete={false}
                       isInvalid={false}
+                      maxDate={"2017-01-01T00:00:00.000Z"}
+                      minDate={"2017-01-01T00:00:00.000Z"}
                       onButtonFocus={[Function]}
                       onCalendarButtonClick={[Function]}
                       required={false}
@@ -1253,6 +1313,16 @@ exports[`should render a default DatePickerField component 1`] = `
                       <InjectIntl(DatePickerInput)
                         ariaLabel="Label"
                         buttonRefCallback={[Function]}
+                        excludeDates={
+                          Array [
+                            "2017-01-01T00:00:00.000Z",
+                          ]
+                        }
+                        includeDates={
+                          Array [
+                            "2017-01-01T00:00:00.000Z",
+                          ]
+                        }
                         inputAttributes={
                           Object {
                             "aria-describedby": "test-date-picker-help",
@@ -1260,6 +1330,8 @@ exports[`should render a default DatePickerField component 1`] = `
                         }
                         isIncomplete={false}
                         isInvalid={false}
+                        maxDate={"2017-01-01T00:00:00.000Z"}
+                        minDate={"2017-01-01T00:00:00.000Z"}
                         onButtonFocus={[Function]}
                         onCalendarButtonClick={[Function]}
                         required={false}
@@ -1344,8 +1416,18 @@ exports[`should render a default DatePickerField component 1`] = `
                         buttonRefCallback={[Function]}
                         className=""
                         disabled={false}
+                        excludeDates={
+                          Array [
+                            "2017-01-01T00:00:00.000Z",
+                          ]
+                        }
                         firstInputRefCallback={[Function]}
                         id="test-date-picker"
+                        includeDates={
+                          Array [
+                            "2017-01-01T00:00:00.000Z",
+                          ]
+                        }
                         inputAttributes={
                           Object {
                             "aria-describedby": "test-date-picker-help",
@@ -1353,6 +1435,8 @@ exports[`should render a default DatePickerField component 1`] = `
                         }
                         isIncomplete={false}
                         isInvalid={false}
+                        maxDate={"2017-01-01T00:00:00.000Z"}
+                        minDate={"2017-01-01T00:00:00.000Z"}
                         name="test-date-picker"
                         onBlur={[Function]}
                         onButtonFocus={[Function]}
@@ -1371,8 +1455,18 @@ exports[`should render a default DatePickerField component 1`] = `
                           buttonRefCallback={[Function]}
                           className=""
                           disabled={false}
+                          excludeDates={
+                            Array [
+                              "2017-01-01T00:00:00.000Z",
+                            ]
+                          }
                           firstInputRefCallback={[Function]}
                           id="test-date-picker"
+                          includeDates={
+                            Array [
+                              "2017-01-01T00:00:00.000Z",
+                            ]
+                          }
                           inputAttributes={
                             Object {
                               "aria-describedby": "test-date-picker-help",
@@ -1407,6 +1501,8 @@ exports[`should render a default DatePickerField component 1`] = `
                           }
                           isIncomplete={false}
                           isInvalid={false}
+                          maxDate={"2017-01-01T00:00:00.000Z"}
+                          minDate={"2017-01-01T00:00:00.000Z"}
                           name="test-date-picker"
                           onBlur={[Function]}
                           onButtonFocus={[Function]}
@@ -1682,7 +1778,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                 </DateInputLayout>
                               </div>
                               <Button
-                                aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
+                                aria-label=" Terra.datePicker.openCalendar"
                                 className="button"
                                 data-terra-open-calendar-button={true}
                                 icon={
@@ -1707,7 +1803,7 @@ exports[`should render a default DatePickerField component 1`] = `
                               >
                                 <button
                                   aria-disabled={false}
-                                  aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
+                                  aria-label=" Terra.datePicker.openCalendar"
                                   className="button neutral compact button"
                                   data-terra-open-calendar-button={true}
                                   disabled={false}
@@ -2133,6 +2229,16 @@ exports[`should render a valid DatePickerField with props 1`] = `
                     <InjectIntl(DatePickerInput)
                       ariaLabel="Label Test"
                       buttonRefCallback={[Function]}
+                      excludeDates={
+                        Array [
+                          "2017-01-01T00:00:00.000Z",
+                        ]
+                      }
+                      includeDates={
+                        Array [
+                          "2017-01-01T00:00:00.000Z",
+                        ]
+                      }
                       inputAttributes={
                         Object {
                           "aria-describedby": "test-date-picker-help",
@@ -2141,6 +2247,8 @@ exports[`should render a valid DatePickerField with props 1`] = `
                       }
                       isIncomplete={false}
                       isInvalid={false}
+                      maxDate={"2017-01-01T00:00:00.000Z"}
+                      minDate={"2017-01-01T00:00:00.000Z"}
                       onButtonFocus={[Function]}
                       onCalendarButtonClick={[Function]}
                       required={true}
@@ -2191,6 +2299,16 @@ exports[`should render a valid DatePickerField with props 1`] = `
                       <InjectIntl(DatePickerInput)
                         ariaLabel="Label Test"
                         buttonRefCallback={[Function]}
+                        excludeDates={
+                          Array [
+                            "2017-01-01T00:00:00.000Z",
+                          ]
+                        }
+                        includeDates={
+                          Array [
+                            "2017-01-01T00:00:00.000Z",
+                          ]
+                        }
                         inputAttributes={
                           Object {
                             "aria-describedby": "test-date-picker-help",
@@ -2199,6 +2317,8 @@ exports[`should render a valid DatePickerField with props 1`] = `
                         }
                         isIncomplete={false}
                         isInvalid={false}
+                        maxDate={"2017-01-01T00:00:00.000Z"}
+                        minDate={"2017-01-01T00:00:00.000Z"}
                         onButtonFocus={[Function]}
                         onCalendarButtonClick={[Function]}
                         required={true}
@@ -2283,8 +2403,18 @@ exports[`should render a valid DatePickerField with props 1`] = `
                         buttonRefCallback={[Function]}
                         className=""
                         disabled={true}
+                        excludeDates={
+                          Array [
+                            "2017-01-01T00:00:00.000Z",
+                          ]
+                        }
                         firstInputRefCallback={[Function]}
                         id="test-date-picker"
+                        includeDates={
+                          Array [
+                            "2017-01-01T00:00:00.000Z",
+                          ]
+                        }
                         inputAttributes={
                           Object {
                             "aria-describedby": "test-date-picker-help",
@@ -2293,6 +2423,8 @@ exports[`should render a valid DatePickerField with props 1`] = `
                         }
                         isIncomplete={false}
                         isInvalid={false}
+                        maxDate={"2017-01-01T00:00:00.000Z"}
+                        minDate={"2017-01-01T00:00:00.000Z"}
                         name="test-date-picker"
                         onBlur={[Function]}
                         onButtonFocus={[Function]}
@@ -2311,8 +2443,18 @@ exports[`should render a valid DatePickerField with props 1`] = `
                           buttonRefCallback={[Function]}
                           className=""
                           disabled={true}
+                          excludeDates={
+                            Array [
+                              "2017-01-01T00:00:00.000Z",
+                            ]
+                          }
                           firstInputRefCallback={[Function]}
                           id="test-date-picker"
+                          includeDates={
+                            Array [
+                              "2017-01-01T00:00:00.000Z",
+                            ]
+                          }
                           inputAttributes={
                             Object {
                               "aria-describedby": "test-date-picker-help",
@@ -2348,6 +2490,8 @@ exports[`should render a valid DatePickerField with props 1`] = `
                           }
                           isIncomplete={false}
                           isInvalid={false}
+                          maxDate={"2017-01-01T00:00:00.000Z"}
+                          minDate={"2017-01-01T00:00:00.000Z"}
                           name="test-date-picker"
                           onBlur={[Function]}
                           onButtonFocus={[Function]}
@@ -2623,7 +2767,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                 </DateInputLayout>
                               </div>
                               <Button
-                                aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
+                                aria-label=" Terra.datePicker.openCalendar"
                                 className="button"
                                 data-terra-open-calendar-button={true}
                                 icon={
@@ -2648,7 +2792,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                               >
                                 <button
                                   aria-disabled={true}
-                                  aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
+                                  aria-label=" Terra.datePicker.openCalendar"
                                   className="button neutral is-disabled compact button"
                                   data-terra-open-calendar-button={true}
                                   disabled={true}

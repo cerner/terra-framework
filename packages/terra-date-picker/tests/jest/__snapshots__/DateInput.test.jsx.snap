@@ -66,6 +66,8 @@ exports[`correctly applies the theme context className 1`] = `
       }
       isIncomplete={false}
       isInvalid={false}
+      maxDate="2100-12-31"
+      minDate="1900-01-01"
       required={false}
       useExternalFormatMask={false}
     >
@@ -405,12 +407,12 @@ exports[`correctly applies the theme context className 1`] = `
           id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         >
           <VisuallyHiddenText
-            text="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat "
+            text=" Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  "
           >
             <span
               className="visually-hidden-text"
             >
-              Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat 
+               Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
             </span>
           </VisuallyHiddenText>
           <div
@@ -500,6 +502,8 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
   }
   isIncomplete={false}
   isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   required={false}
   useExternalFormatMask={false}
 >
@@ -883,12 +887,12 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
     >
       <VisuallyHiddenText
-        text="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat "
+        text=" Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  "
       >
         <span
           className="visually-hidden-text"
         >
-          Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat 
+           Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
         </span>
       </VisuallyHiddenText>
       <div
@@ -1015,7 +1019,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
     <span
       class="visually-hidden-text"
     >
-      Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat 
+       Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
     </span>
     <div
       aria-hidden="true"
@@ -1140,7 +1144,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
     <span
       class="visually-hidden-text"
     >
-      Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat 
+       Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
     </span>
     <div
       aria-hidden="true"
@@ -1265,7 +1269,7 @@ exports[`should render a default date input 1`] = `
     <span
       class="visually-hidden-text"
     >
-      Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat 
+       Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
     </span>
     <div
       aria-hidden="true"
@@ -1353,6 +1357,8 @@ exports[`should render a default date input with all props 1`] = `
   }
   isIncomplete={false}
   isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-input"
   onBlur={[Function]}
   onButtonFocus={[Function]}
@@ -1761,12 +1767,12 @@ exports[`should render a default date input with all props 1`] = `
       id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
     >
       <VisuallyHiddenText
-        text="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017"
+        text=" Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017 "
       >
         <span
           className="visually-hidden-text"
         >
-          Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017
+           Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017 
         </span>
       </VisuallyHiddenText>
       <div

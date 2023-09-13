@@ -8,7 +8,7 @@
 * Changed
   * Visual focus changed to dashed lines for individual fields.
   * Screen reader announcement for visual label.
-  * Updated screen response to announce when invalid characters
+  * Updated screen response to announce when invalid dates
     are entered.
   * Updated screen response to announce when calendar popup dates
     are selected.
