@@ -2,12 +2,19 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl, renderWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
-
+import { v4 as uuidv4 } from 'uuid';
 import DateInput from '../../src/DateInput';
 import DateInputField from '../../src/DateInputField';
 import DateInputUtil from '../../lib/DateInputUtil';
 
-jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+let mockSpyUuid;
+beforeAll(() => {
+  mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockReturnValue('00000000-0000-0000-0000-000000000000');
+});
+
+afterAll(() => {
+  mockSpyUuid.mockRestore();
+});
 
 describe('DateInput', () => {
   const defaultRender = <DateInput name="date-input" />;

@@ -1,5 +1,6 @@
 :local {
   .clinical-lowlight-theme {
+    --terra-tabs-remove-button-color: #006fc3;
     --terra-tabs-keyboard-focus-ltr-box-shadow: 0 0 1px 3px #4a90e2, 0 0 7px 4px #4a90e2;
     --terra-tabs-keyboard-focus-rtl-box-shadow: 0 0 1px 3px #4a90e2, 0 0 7px 4px #4a90e2;
     --terra-tabs-font-size: 1rem;
@@ -54,6 +55,12 @@
     --terra-tabs-structural-focus-color: initial;
     --terra-tabs-structural-focus-outline: 2px dashed #c8cacb;
     --terra-tabs-structural-focus-outline-offset: -5px;
+
+    --terra-tabs-addbutton-focus-background-color: #222a2e;
+    --terra-tabs-addbutton-focus-background-image: none;
+    --terra-tabs-addButton-focus-color: initial;
+    --terra-tabs-addButton-focus-outline: 2px dashed #c8cacb;
+    --terra-tabs-addButton-focus-outline-offset: -2px;
 
     --terra-tabs-structural-hover-background-color: #222a2e;
     --terra-tabs-structural-hover-background-image: linear-gradient(to bottom, #111212, #111212);
@@ -123,4 +130,5 @@
     */
 
   }
+
 }

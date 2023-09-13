@@ -11,7 +11,7 @@ import TabContent from './TabContentTemplate';
 
 const TabsWithIconsInMenu = () => (
   <div id="tabsWithIconsInMenu">
-    <Tabs>
+    <Tabs setFocusOnContent>
       <Tabs.Pane id="search" label="Search" icon={<IconSearch />} key="Search">
         <TabContent label="Search Icon" />
       </Tabs.Pane>
@@ -29,6 +29,12 @@ const TabsWithIconsInMenu = () => (
       </Tabs.Pane>
       <Tabs.Pane id="information" label="Information" isDisabled icon={<IconInformation />} showIcon key="Information">
         <TabContent label="Information Icon, Disabled, Show in Tab and Menu" />
+      </Tabs.Pane>
+      <Tabs.Pane id="information-1" label="Information Text" icon={<IconInformation />} showIcon key="InformationText">
+        <TabContent label="Information Icon, Show in Tab and Menu" />
+      </Tabs.Pane>
+      <Tabs.Pane id="information-2" label="Information Label" icon={<IconInformation />} showIcon key="InformationLabel">
+        <TabContent label="Information Icon" />
       </Tabs.Pane>
     </Tabs>
   </div>

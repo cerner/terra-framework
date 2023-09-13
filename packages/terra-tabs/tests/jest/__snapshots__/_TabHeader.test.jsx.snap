@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabHeader should render a heading with provided title 1`] = `
+<TabHeader
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  title="Test Title"
+>
+  <div
+    className="header"
+  >
+    <VisuallyHiddenText
+      aria-level="2"
+      role="heading"
+      tabIndex="-1"
+      text="Test Title"
+    >
+      <span
+        aria-level="2"
+        className="visually-hidden-text"
+        role="heading"
+        tabIndex="-1"
+      >
+        Test Title
+      </span>
+    </VisuallyHiddenText>
+    <div
+      aria-hidden="true"
+      className="title"
+    >
+      Test Title
+    </div>
+  </div>
+</TabHeader>
+`;

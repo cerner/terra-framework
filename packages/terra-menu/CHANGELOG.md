@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-arrange` from `v3.51.0` to `v3.53.0`.
+
+## 6.76.0 - (August 31, 2023)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.75.0 - (August 10, 2023)
 
 * Added

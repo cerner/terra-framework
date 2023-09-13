@@ -37,7 +37,7 @@ class AdditionalTabsTest extends React.Component {
           Add Tabs
         </button>
         <div id={tabsWrapperId}>
-          <Tabs>
+          <Tabs setFocusOnContent>
             {this.createTabPanes()}
           </Tabs>
         </div>
