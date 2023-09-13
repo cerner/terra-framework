@@ -5,18 +5,18 @@
 * Fixed
   * Fixed DatePicker scroll on smaller viewports.
 
-* Updated
+* Changed
+  * Visual focus changed to dashed lines for individual fields.
   * Screen reader announcement for visual label.
+  * Updated screen response to announce when invalid characters
+    are entered.
+  * Updated screen response to announce when calendar popup dates
+    are selected.
 
 ## 4.89.0 - (September 5, 2023)
 
 * Changed
-  * Visual focus changed to dashed lines for individual fields.
   * Fixed the date format being read 3 times when using SR
-  * Updated screen response to announce when invalid characters 
-    are entered.
-  * Updated screen response to announce when calendar popup dates 
-    are selected.
 
 ## 4.88.0 - (August 31, 2023)
 
