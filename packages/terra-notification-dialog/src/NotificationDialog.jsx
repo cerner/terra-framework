@@ -176,7 +176,7 @@ const NotificationDialog = (props) => {
       role={signalWord === 'Alert' ? 'alertdialog' : 'dialog'}
       classNameModal={classNames(cx('notification-dialog', theme.className), customProps.className)}
       isOpen
-      onRequestClose={onRequestClose}
+      onRequestClose={() => {onRequestClose()}}
       closeOnEsc
       closeOnOutsideClick={false}
       zIndex="9000"
