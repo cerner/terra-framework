@@ -164,13 +164,13 @@ Terra.describeViewports('Menu', ['medium'], () => {
     Terra.validates.element('navigated to disabled item', { selector: '#root' });
   });
 
-  it('the click event on disabled should be absorbed',async () => {
+  it('the click event on disabled should be absorbed',() => {
     browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/disabled-menu-item-click-event');
     $('#no-actions').click();
     Terra.validates.element('Before disabled click action');
     $('#actions').click();
-    const disabledButton = await $('#care-plans-rollup-modifyItem')
-    disabledButton.click();
-    Terra.validates.element('After disabled click action');
+    $('#care-plans-rollup-modifyItem').waitForDisplayed();
+    $('#care-plans-rollup-modifyItem').click();
+    Terra.validates.element('After disabled click action', { selector: '#root' });
   });
 });
