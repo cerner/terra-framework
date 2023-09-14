@@ -9,6 +9,7 @@
 * Changed
   * Updated examples and tests for `terra-worklist-data-grid` to properly update row selection data.
   * Migrated `terra-worklist-data-grid` docs/tests to new `terra-data-grid`.
+  * Updated add tabs examples to be controlled tabs.
 
 * Updated
   * Updated example for `terra-date-picker` with isInvalid prop.

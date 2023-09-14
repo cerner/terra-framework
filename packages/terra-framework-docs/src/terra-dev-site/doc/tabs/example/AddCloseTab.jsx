@@ -92,9 +92,15 @@ const AddCloseTab = () => {
     setTabs(tabsArray);
   };
 
+  const handleSelection = (event, selectedKey) => {
+    if (selectedKey !== activeKey) {
+      setActiveKey(selectedKey);
+    }
+  };
+
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs activeKey={activeKey} setFocusOnContent isClosable onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
+      <Tabs onChange={handleSelection} activeKey={activeKey} setFocusOnContent isClosable onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
         { tabs.map((tab) => (
           <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} customDisplay={tab.customDisplay} isDisabled={tab.isDisabled} icon={tab.icon} key={tab.key} id={tab.key}>
             <TabContentTemplate label={tab.content} />
