@@ -1,7 +1,7 @@
 {
   "name": "terra-data-grid",
   "main": "lib/index.js",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Package containing Terra WorklistDataGrid: A container that enables users to navigate the grid information using directional navigation keys.",
   "repository": {
     "type": "git",
