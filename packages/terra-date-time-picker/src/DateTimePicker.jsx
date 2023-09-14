@@ -809,7 +809,7 @@ class DateTimePicker extends React.Component {
             atMinDate={atMinDate}
           />
 
-          {this.state.isAmbiguousTime ? this.renderTimeClarification() : null}
+          {this.state.isAmbiguousTime && this.state.dateTime ? this.renderTimeClarification() : null}
         </div>
       </div>
     );
