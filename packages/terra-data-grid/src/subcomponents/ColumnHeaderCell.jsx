@@ -10,7 +10,7 @@ import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
 
 import ColumnResizeHandle from './ColumnResizeHandle';
-import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
+import DataGridPropTypes from '../proptypes/DataGridPropTypes';
 import ColumnContext from '../utils/ColumnContext';
 import styles from './ColumnHeaderCell.module.scss';
 
@@ -31,7 +31,7 @@ const propTypes = {
    * A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
    * If a `component` value is specified, `sortIndicator` will be ignored. One of `ascending`, `descending`.
    */
-  sortIndicator: PropTypes.oneOf(Object.values(WorklistDataGridPropTypes.SortIndicators)),
+  sortIndicator: PropTypes.oneOf(Object.values(DataGridPropTypes.SortIndicators)),
 
   /**
    * Boolean value indicating whether or not the column has an error in the data.
@@ -162,12 +162,12 @@ const ColumnHeaderCell = (props) => {
   };
 
   let sortIndicatorIcon;
-  const errorIcon = hasError && <IconError a11yLabel={intl.formatMessage({ id: 'Terra.worklistDataGrid.columnError' })} className={cx('error-icon')} />;
+  const errorIcon = hasError && <IconError a11yLabel={intl.formatMessage({ id: 'Terra.data-grid.columnError' })} className={cx('error-icon')} />;
 
   // Add the sort indicator based on the sort direction
-  if (sortIndicator === WorklistDataGridPropTypes.SortIndicators.ASCENDING) {
+  if (sortIndicator === DataGridPropTypes.SortIndicators.ASCENDING) {
     sortIndicatorIcon = <IconUp />;
-  } else if (sortIndicator === WorklistDataGridPropTypes.SortIndicators.DESCENDING) {
+  } else if (sortIndicator === DataGridPropTypes.SortIndicators.DESCENDING) {
     sortIndicatorIcon = <IconDown />;
   }
 

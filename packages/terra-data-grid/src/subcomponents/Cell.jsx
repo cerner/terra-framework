@@ -139,7 +139,7 @@ function Cell(props) {
    */
   const deactiveFocusTrap = () => {
     setFocusTrapEnabled(false);
-    columnContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.resume-navigation' }));
+    columnContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.data-grid.resume-navigation' }));
   };
 
   /**
@@ -174,7 +174,7 @@ function Cell(props) {
           // Lock focus into component
           if (hasFocusableElements()) {
             setFocusTrapEnabled(true);
-            columnContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-focus-trapped' }));
+            columnContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.data-grid.cell-focus-trapped' }));
             event.stopPropagation();
             event.preventDefault();
           }
@@ -197,20 +197,20 @@ function Cell(props) {
   if (isMasked) {
     cellContent = (
       <span className={cx('no-data-cell', theme.className)}>
-        {intl.formatMessage({ id: 'Terra.worklistDataGrid.maskedCell' })}
+        {intl.formatMessage({ id: 'Terra.data-grid.maskedCell' })}
       </span>
     );
   } else if (!children) {
     cellContent = (
       <span className={cx('no-data-cell', theme.className)}>
-        {intl.formatMessage({ id: 'Terra.worklistDataGrid.blank' })}
+        {intl.formatMessage({ id: 'Terra.data-grid.blank' })}
       </span>
     );
   } else {
     cellContent = children;
   }
 
-  const className = cx('worklist-data-grid-cell', {
+  const className = cx('data-grid-cell', {
     masked: isMasked,
     pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
     selectable: isSelectable && !isMasked,
@@ -244,7 +244,7 @@ function Cell(props) {
         {/* eslint-disable-next-line react/forbid-dom-props */}
         <div className={cx('cell-content', theme.className)} style={{ height }}>{cellContent}</div>
       </FocusTrap>
-      {isInteractable && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-interactable' })} />}
+      {isInteractable && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.data-grid.cell-interactable' })} />}
     </CellTag>
   );
 }

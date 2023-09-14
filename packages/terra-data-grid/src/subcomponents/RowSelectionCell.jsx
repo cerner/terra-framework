@@ -59,7 +59,7 @@ function RowSelectionCell(props) {
     intl,
   } = props;
 
-  const rowLabel = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-index' }, { row: rowIndex });
+  const rowLabel = intl.formatMessage({ id: 'Terra.data-grid.row-index' }, { row: rowIndex });
 
   const selectionCheckbox = (
     <input

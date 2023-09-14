@@ -2,7 +2,7 @@
 
 exports[`Row creates a row with the correct number of cells 1`] = `
 <tr
-  className="worklist-data-grid-row"
+  className="data-grid-row"
   onMouseEnter={null}
   onMouseLeave={null}
   style={
@@ -54,7 +54,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
 
 exports[`Row verifies the cell is created with the right props 1`] = `
 <tr
-  className="worklist-data-grid-row"
+  className="data-grid-row"
   onMouseEnter={null}
   onMouseLeave={null}
   style={

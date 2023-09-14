@@ -5,6 +5,7 @@
 * Added
   * Added aria-label prop for terra-popup to announce the close instruction.
   * Added example for `terra-tabs` to test the focus traverse with interactive element within the tab content.
+  * Added tests for the new `terra-data-grid` component.
 
 * Changed
   * Updated examples and tests for `terra-worklist-data-grid` to properly update row selection data.

@@ -2,8 +2,8 @@ import rowShape from './rowShape';
 import cellShape from './cellShape';
 import { columnShape, SortIndicators } from './columnShape';
 
-const WorklistDataGridPropTypes = {
+const DataGridPropTypes = {
   cellShape, columnShape, rowShape, SortIndicators,
 };
 
-export default WorklistDataGridPropTypes;
+export default DataGridPropTypes;
