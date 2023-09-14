@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed error when time transitions from DST to ST
+
 ## 4.95.0 - (September 19, 2023)
 
 * Changed
