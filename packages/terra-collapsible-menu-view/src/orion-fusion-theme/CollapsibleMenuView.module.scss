@@ -2,18 +2,11 @@
 
 :local {
   .orion-fusion-theme {
-    --terra-collapsible-menu-view-menu-button-padding-left: 0.5rem;
-    --terra-collapsible-menu-view-item-padding-left: 0.5rem;
+    --terra-collapsible-menu-view-chevron-right-margin-left: 0.5rem;
+    --terra-collapsible-menu-view-control-margin-left: 0.10141rem;
     --terra-collapsible-menu-view-divider-border-right: 1px solid #868a8c;
     --terra-collapsible-menu-view-divider-height: 2rem;
-    --terra-collapsible-menu-view-menu-button-icon-top: 0;
-    --terra-collapsible-menu-view-menu-button-icon-vertical-align: -0.1428571rem;
-    --terra-collapsible-menu-view-menu-button-icon-ms-height: 1rem;
-    --terra-collapsible-menu-view-menu-button-icon-ms-vertical-align: -0.1728571rem;
-    --terra-collapsible-menu-view-control-margin-left: 0.10141rem;
-
-    @include terra-inline-svg-var('--terra-collapsible-menu-view-menu-button-icon-background', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#1c1f21" d="M18.6 24c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4-2.4 5.4-5.4 5.4c-3 0-5.4-2.4-5.4-5.4zm0-18.6C18.6 2.4 21 0 24 0c3 0 5.4 2.4 5.4 5.4 0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4zm0 37.2c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4z"/></svg>');
-
-    @include terra-inline-svg-var('--terra-collapsible-menu-view-menu-button-icon-background-horizontal', '<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 48 48"><path fill="#1c1f21" d="M24 18.6a5.4 5.4 0 1 1-5.4 5.4 5.38 5.38 0 0 1 5.4-5.4zm18.6 0a5.4 5.4 0 1 1-5.4 5.4 5.38 5.38 0 0 1 5.4-5.4zm-37.2 0A5.4 5.4 0 1 1 0 24a5.38 5.38 0 0 1 5.4-5.4z"/></svg>');
+    --terra-collapsible-menu-view-item-padding-left: 0.5rem;
+    --terra-collapsible-menu-view-menu-button-padding-left: 0.5rem;
   }
 }

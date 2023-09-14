@@ -22,6 +22,10 @@
     justify-content: flex-start;
   }
 
+  .vertical-icon {
+    transform: rotate(90deg);
+  }
+
   .menu-button {
     align-items: center;
     display: flex;
@@ -31,28 +35,6 @@
     &.hidden {
       display: none;
       width: 0;
-    }
-
-    .menu-button-icon {
-      background: var(--terra-collapsible-menu-view-menu-button-icon-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#{var(--terra-collapsible-menu-view-menu-button-icon-background-color, #1c1f21)}" d="M18.6 24c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4-2.4 5.4-5.4 5.4c-3 0-5.4-2.4-5.4-5.4zm0-18.6C18.6 2.4 21 0 24 0c3 0 5.4 2.4 5.4 5.4 0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4zm0 37.2c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4z"/></svg>'));
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: auto;
-      display: inline-block;
-      position: relative;
-      top: var(--terra-collapsible-menu-view-menu-button-icon-top, 0);
-      vertical-align: var(--terra-collapsible-menu-view-menu-button-icon-vertical-align, -0.14285rem);
-
-      @media screen and (-ms-high-contrast: active),
-      (-ms-high-contrast: none) {
-        // -ms needed for icon alignment in IE
-        height: var(--terra-collapsible-menu-view-menu-button-icon-ms-height, 1rem);
-        vertical-align: var(--terra-collapsible-menu-view-menu-button-icon-ms-vertical-align, -0.17285rem);
-      }
-    }
-
-    .horizontal-icon {
-      background: var(--terra-collapsible-menu-view-menu-button-icon-background-horizontal, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 48 48"><path fill="#1c1f21" d="M24 18.6a5.4 5.4 0 1 1-5.4 5.4 5.38 5.38 0 0 1 5.4-5.4zm18.6 0a5.4 5.4 0 1 1-5.4 5.4 5.38 5.38 0 0 1 5.4-5.4zm-37.2 0A5.4 5.4 0 1 1 0 24a5.38 5.38 0 0 1 5.4-5.4z"/></svg>'));
     }
   }
 
@@ -78,6 +60,11 @@
   .divider {
     border-right: var(--terra-collapsible-menu-view-divider-border-right, 1px solid #dedfe0);
     height: var(--terra-collapsible-menu-view-divider-height, 2.143rem);
+  }
+
+  .chevron-right {
+    padding: 0;
+    margin-left: var(--terra-collapsible-menu-view-chevron-right-margin-left, 0.714rem);
   }
 
   .is-calculating {

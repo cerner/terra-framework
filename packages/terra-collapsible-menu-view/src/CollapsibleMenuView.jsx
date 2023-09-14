@@ -9,6 +9,7 @@ import CollapsibleMenuViewItem from './CollapsibleMenuViewItem';
 import CollapsibleMenuViewItemGroup from './CollapsibleMenuViewItemGroup';
 import CollapsibleMenuViewToggle from './CollapsibleMenuViewToggle';
 import CollapsibleMenuViewDivider from './CollapsibleMenuViewDivider';
+import IconEllipses from 'terra-icon/lib/icon/IconEllipses';
 import styles from './CollapsibleMenuView.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -190,10 +191,7 @@ class CollapsibleMenuView extends React.Component {
         : visibleChildren.splice(this.hiddenStartIndex).concat(hiddenChildren);
     }
 
-    const iconClassName = classNames(cx(
-      'menu-button-icon',
-      { 'horizontal-icon': useHorizontalIcon },
-    ));
+    const icon = useHorizontalIcon ? <IconEllipses /> : <IconEllipses className={cx('vertical-icon')} />;
 
     return (
       <div {...customProps} className={collapsibleMenuViewClassName} ref={this.setContainer}>
@@ -201,7 +199,7 @@ class CollapsibleMenuView extends React.Component {
         <div className={menuButtonClassName} ref={this.setMenuButton}>
           <CollapsibleMenuViewItem
             data-collapsible-menu-toggle
-            icon={<span className={iconClassName} />}
+            icon={icon}
             subMenuItems={hiddenChildren}
             boundingRef={boundingRef}
             menuWidth={menuWidth}
