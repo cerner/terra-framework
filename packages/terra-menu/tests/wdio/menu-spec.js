@@ -164,7 +164,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
     Terra.validates.element('navigated to disabled item', { selector: '#root' });
   });
 
-  it('the click event on disabled should be absorbed',() => {
+  it('the click event on disabled should be absorbed', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/disabled-menu-item-click-event');
     $('#no-actions').click();
     Terra.validates.element('Before disabled click action');

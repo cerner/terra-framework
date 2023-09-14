@@ -56,7 +56,7 @@ export default class AppPlan extends React.Component {
             <Menu.Divider key="Divider1" />
             <Menu.Item text="Modify" isDisabled key="modify" id="care-plans-rollup-modifyItem" />
           </Menu>
-          <Button onClick={this.handleButtonClick} id='actions' text="Actions" />
+          <Button onClick={this.handleButtonClick} id="actions" text="Actions" />
         </div>
 
       );
@@ -104,7 +104,7 @@ export default class AppPlan extends React.Component {
         title: 'michael.smith@gmail.com',
       }, {
         key: 'unique-1-3',
-        title: <div id='no-actions'>No Actions</div>,
+        title: <div id="no-actions">No Actions</div>,
       }],
     }];
 

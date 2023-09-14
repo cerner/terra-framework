@@ -191,7 +191,7 @@ class MenuItem extends React.Component {
   }
 
   wrapOnClick(event) {
-    if(this.props.isDisabled) {
+    if (this.props.isDisabled) {
       event.stopPropagation();
     } else {
       this.handleToggled(event);
@@ -200,7 +200,6 @@ class MenuItem extends React.Component {
         this.props.onClick(event);
       }
     }
-
   }
 
   wrapOnKeyDown(onKeyDown) {
