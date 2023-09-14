@@ -498,6 +498,7 @@ class DatePicker extends React.Component {
                 includeDates={DateUtil.filterInvalidDates(includeDates)}
                 maxDate={DateUtil.createSafeDate(DateUtil.getMaxDate(maxDate), initialTimeZone)}
                 minDate={DateUtil.createSafeDate(DateUtil.getMinDate(minDate), initialTimeZone)}
+                filterDate={this.handleFilterDate}
               />
             )}
             customInputRef="firstInputRefCallback"

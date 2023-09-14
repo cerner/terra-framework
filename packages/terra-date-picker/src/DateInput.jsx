@@ -136,6 +136,11 @@ const propTypes = {
    * An ISO 8601 string representation of the minimum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or after `01/01/1900`
    */
   minDate: PropTypes.string,
+  /**
+   * A function that gets called for each date in the picker to evaluate which date should be disabled.
+   * A return value of true will be enabled and false will be disabled.
+   */
+  filterDate: PropTypes.func,
 };
 
 const defaultProps = {
@@ -159,6 +164,7 @@ const defaultProps = {
   includeDates: undefined,
   maxDate: '2100-12-31',
   minDate: '1900-01-01',
+  filterDate: undefined,
 };
 
 const DatePickerInput = (props) => {
@@ -186,6 +192,7 @@ const DatePickerInput = (props) => {
     includeDates,
     maxDate,
     minDate,
+    filterDate,
     ...customProps
   } = props;
 
@@ -816,11 +823,12 @@ const DatePickerInput = (props) => {
   }
   let calendarDate = inputDate ? `${inputDate} ${intl.formatMessage({ id: 'Terra.datePicker.selected' })}` : '';
 
-  // Check if date is excluded or out or range or not included
+  // Check if date is excluded or out of range or not included or filtered
   let invalidEntry = '';
   if (DateUtil.isDateExcluded(DateUtil.createSafeDate(dateValue, initialTimeZone), props.excludeDates)
       || DateUtil.isDateOutOfRange(DateUtil.createSafeDate(dateValue, initialTimeZone), DateUtil.createSafeDate(DateUtil.getMinDate(props.minDate), initialTimeZone), DateUtil.createSafeDate(DateUtil.getMaxDate(props.maxDate), initialTimeZone))
-      || DateUtil.isDateNotIncluded(DateUtil.createSafeDate(dateValue, initialTimeZone), props.includeDates)) {
+      || DateUtil.isDateNotIncluded(DateUtil.createSafeDate(dateValue, initialTimeZone), props.includeDates)
+      || (props.filterDate && !props.filterDate(DateUtil.createSafeDate(dateValue, initialTimeZone)))) {
     invalidEntry = intl.formatMessage({ id: 'Terra.datePicker.invalidDate' });
     calendarDate = '';
   }

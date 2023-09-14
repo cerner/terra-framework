@@ -360,6 +360,7 @@ exports[`should render a DatePickerField with props 1`] = `
                           "2017-01-01T00:00:00.000Z",
                         ]
                       }
+                      filterDate={[Function]}
                       includeDates={
                         Array [
                           "2017-01-01T00:00:00.000Z",
@@ -432,6 +433,7 @@ exports[`should render a DatePickerField with props 1`] = `
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
+                        filterDate={[Function]}
                         includeDates={
                           Array [
                             "2017-01-01T00:00:00.000Z",
@@ -538,6 +540,7 @@ exports[`should render a DatePickerField with props 1`] = `
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
+                        filterDate={[Function]}
                         firstInputRefCallback={[Function]}
                         id="test-date-picker"
                         includeDates={
@@ -578,6 +581,7 @@ exports[`should render a DatePickerField with props 1`] = `
                               "2017-01-01T00:00:00.000Z",
                             ]
                           }
+                          filterDate={[Function]}
                           firstInputRefCallback={[Function]}
                           id="test-date-picker"
                           includeDates={
@@ -1249,6 +1253,7 @@ exports[`should render a default DatePickerField component 1`] = `
                           "2017-01-01T00:00:00.000Z",
                         ]
                       }
+                      filterDate={[Function]}
                       includeDates={
                         Array [
                           "2017-01-01T00:00:00.000Z",
@@ -1318,6 +1323,7 @@ exports[`should render a default DatePickerField component 1`] = `
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
+                        filterDate={[Function]}
                         includeDates={
                           Array [
                             "2017-01-01T00:00:00.000Z",
@@ -1421,6 +1427,7 @@ exports[`should render a default DatePickerField component 1`] = `
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
+                        filterDate={[Function]}
                         firstInputRefCallback={[Function]}
                         id="test-date-picker"
                         includeDates={
@@ -1460,6 +1467,7 @@ exports[`should render a default DatePickerField component 1`] = `
                               "2017-01-01T00:00:00.000Z",
                             ]
                           }
+                          filterDate={[Function]}
                           firstInputRefCallback={[Function]}
                           id="test-date-picker"
                           includeDates={
@@ -2234,6 +2242,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                           "2017-01-01T00:00:00.000Z",
                         ]
                       }
+                      filterDate={[Function]}
                       includeDates={
                         Array [
                           "2017-01-01T00:00:00.000Z",
@@ -2304,6 +2313,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
+                        filterDate={[Function]}
                         includeDates={
                           Array [
                             "2017-01-01T00:00:00.000Z",
@@ -2408,6 +2418,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
+                        filterDate={[Function]}
                         firstInputRefCallback={[Function]}
                         id="test-date-picker"
                         includeDates={
@@ -2448,6 +2459,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                               "2017-01-01T00:00:00.000Z",
                             ]
                           }
+                          filterDate={[Function]}
                           firstInputRefCallback={[Function]}
                           id="test-date-picker"
                           includeDates={
