@@ -2,6 +2,9 @@
 
 exports[`Notification Dialog correctly applies the theme context className 1`] = `
 <AbstractModal
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog orion-fusion-theme"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -20,7 +23,7 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
     <div
       className="notification-dialog-container"
       data-terra-notification-dialog={true}
-      tabIndex="0"
+      tabIndex="-1"
     >
       <div
         className="floating-header-background hazard-high"
@@ -36,6 +39,7 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
           />
           <div
             className="header-container"
+            id="header-container"
           >
             <div
               className="signal-word"
@@ -66,19 +70,21 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
         <div
           className="actions"
         >
-          <Button
-            data-terra-notification-dialog-button="reject"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="reject"
-            onClick={[MockFunction]}
-            text="reject"
-            type="button"
-            variant="neutral"
-          />
+          <span>
+            <Button
+              data-terra-notification-dialog-button="reject"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="reject"
+              onClick={[MockFunction]}
+              text="reject"
+              type="button"
+              variant="neutral"
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -130,7 +136,9 @@ exports[`Notification Dialog functions as expected should open the dialog 1`] = 
 
 exports[`Notification Dialog shallow renders an custom notification-dialog 1`] = `
 <AbstractModal
-  ariaLabel="Test"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -149,7 +157,7 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
     <div
       className="notification-dialog-container"
       data-terra-notification-dialog={true}
-      tabIndex="0"
+      tabIndex="-1"
     >
       <div
         className="floating-header-background custom"
@@ -166,6 +174,7 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
           />
           <div
             className="header-container"
+            id="header-container"
           >
             <div
               className="signal-word"
@@ -198,32 +207,36 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
         <div
           className="actions"
         >
-          <Button
-            data-terra-notification-dialog-button="accept"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="accept"
-            onClick={[Function]}
-            text="accept"
-            type="button"
-            variant="neutral"
-          />
-          <Button
-            data-terra-notification-dialog-button="reject"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="reject"
-            onClick={[Function]}
-            text="reject"
-            type="button"
-            variant="neutral"
-          />
+          <span>
+            <Button
+              data-terra-notification-dialog-button="accept"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="accept"
+              onClick={[Function]}
+              refCallback={[Function]}
+              tabIndex="0"
+              text="accept"
+              type="button"
+              variant="neutral"
+            />
+            <Button
+              data-terra-notification-dialog-button="reject"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="reject"
+              onClick={[Function]}
+              text="reject"
+              type="button"
+              variant="neutral"
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -233,7 +246,9 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
 
 exports[`Notification Dialog shallow renders an error notification-dialog 1`] = `
 <AbstractModal
-  ariaLabel="Test"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -252,7 +267,7 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
     <div
       className="notification-dialog-container"
       data-terra-notification-dialog={true}
-      tabIndex="0"
+      tabIndex="-1"
     >
       <div
         className="floating-header-background error"
@@ -268,6 +283,7 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
           />
           <div
             className="header-container"
+            id="header-container"
           >
             <div
               className="signal-word"
@@ -300,32 +316,36 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
         <div
           className="actions"
         >
-          <Button
-            data-terra-notification-dialog-button="accept"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="accept"
-            onClick={[Function]}
-            text="accept"
-            type="button"
-            variant="neutral"
-          />
-          <Button
-            data-terra-notification-dialog-button="reject"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="reject"
-            onClick={[Function]}
-            text="reject"
-            type="button"
-            variant="neutral"
-          />
+          <span>
+            <Button
+              data-terra-notification-dialog-button="accept"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="accept"
+              onClick={[Function]}
+              refCallback={[Function]}
+              tabIndex="0"
+              text="accept"
+              type="button"
+              variant="neutral"
+            />
+            <Button
+              data-terra-notification-dialog-button="reject"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="reject"
+              onClick={[Function]}
+              text="reject"
+              type="button"
+              variant="neutral"
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -335,7 +355,9 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
 
 exports[`Notification Dialog shallow renders an hazard-high notification-dialog 1`] = `
 <AbstractModal
-  ariaLabel="Test"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -354,7 +376,7 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
     <div
       className="notification-dialog-container"
       data-terra-notification-dialog={true}
-      tabIndex="0"
+      tabIndex="-1"
     >
       <div
         className="floating-header-background hazard-high"
@@ -370,6 +392,7 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
           />
           <div
             className="header-container"
+            id="header-container"
           >
             <div
               className="signal-word"
@@ -402,32 +425,36 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
         <div
           className="actions"
         >
-          <Button
-            data-terra-notification-dialog-button="accept"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="accept"
-            onClick={[Function]}
-            text="accept"
-            type="button"
-            variant="neutral"
-          />
-          <Button
-            data-terra-notification-dialog-button="reject"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="reject"
-            onClick={[Function]}
-            text="reject"
-            type="button"
-            variant="neutral"
-          />
+          <span>
+            <Button
+              data-terra-notification-dialog-button="accept"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="accept"
+              onClick={[Function]}
+              refCallback={[Function]}
+              tabIndex="0"
+              text="accept"
+              type="button"
+              variant="neutral"
+            />
+            <Button
+              data-terra-notification-dialog-button="reject"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="reject"
+              onClick={[Function]}
+              text="reject"
+              type="button"
+              variant="neutral"
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -437,7 +464,9 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
 
 exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1`] = `
 <AbstractModal
-  ariaLabel="Test"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -456,7 +485,7 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
     <div
       className="notification-dialog-container"
       data-terra-notification-dialog={true}
-      tabIndex="0"
+      tabIndex="-1"
     >
       <div
         className="floating-header-background hazard-low"
@@ -472,6 +501,7 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
           />
           <div
             className="header-container"
+            id="header-container"
           >
             <div
               className="signal-word"
@@ -504,32 +534,36 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
         <div
           className="actions"
         >
-          <Button
-            data-terra-notification-dialog-button="accept"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="accept"
-            onClick={[Function]}
-            text="accept"
-            type="button"
-            variant="neutral"
-          />
-          <Button
-            data-terra-notification-dialog-button="reject"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="reject"
-            onClick={[Function]}
-            text="reject"
-            type="button"
-            variant="neutral"
-          />
+          <span>
+            <Button
+              data-terra-notification-dialog-button="accept"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="accept"
+              onClick={[Function]}
+              refCallback={[Function]}
+              tabIndex="0"
+              text="accept"
+              type="button"
+              variant="neutral"
+            />
+            <Button
+              data-terra-notification-dialog-button="reject"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="reject"
+              onClick={[Function]}
+              text="reject"
+              type="button"
+              variant="neutral"
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -539,7 +573,9 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
 
 exports[`Notification Dialog shallow renders an hazard-medium notification-dialog 1`] = `
 <AbstractModal
-  ariaLabel="Test"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -558,7 +594,7 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
     <div
       className="notification-dialog-container"
       data-terra-notification-dialog={true}
-      tabIndex="0"
+      tabIndex="-1"
     >
       <div
         className="floating-header-background hazard-medium"
@@ -574,6 +610,7 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
           />
           <div
             className="header-container"
+            id="header-container"
           >
             <div
               className="signal-word"
@@ -606,32 +643,36 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
         <div
           className="actions"
         >
-          <Button
-            data-terra-notification-dialog-button="accept"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="accept"
-            onClick={[Function]}
-            text="accept"
-            type="button"
-            variant="neutral"
-          />
-          <Button
-            data-terra-notification-dialog-button="reject"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="reject"
-            onClick={[Function]}
-            text="reject"
-            type="button"
-            variant="neutral"
-          />
+          <span>
+            <Button
+              data-terra-notification-dialog-button="accept"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="accept"
+              onClick={[Function]}
+              refCallback={[Function]}
+              tabIndex="0"
+              text="accept"
+              type="button"
+              variant="neutral"
+            />
+            <Button
+              data-terra-notification-dialog-button="reject"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="reject"
+              onClick={[Function]}
+              text="reject"
+              type="button"
+              variant="neutral"
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -641,7 +682,9 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
 
 exports[`Notification Dialog shallow renders dialog with reject button first 1`] = `
 <AbstractModal
-  ariaLabel="Test"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -660,7 +703,7 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
     <div
       className="notification-dialog-container"
       data-terra-notification-dialog={true}
-      tabIndex="0"
+      tabIndex="-1"
     >
       <div
         className="floating-header-background hazard-high"
@@ -676,6 +719,7 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
           />
           <div
             className="header-container"
+            id="header-container"
           >
             <div
               className="signal-word"
@@ -708,32 +752,36 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
         <div
           className="actions"
         >
-          <Button
-            data-terra-notification-dialog-button="reject"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="reject"
-            onClick={[MockFunction]}
-            text="reject"
-            type="button"
-            variant="neutral"
-          />
-          <Button
-            data-terra-notification-dialog-button="accept"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="accept"
-            onClick={[MockFunction]}
-            text="accept"
-            type="button"
-            variant="neutral"
-          />
+          <span>
+            <Button
+              data-terra-notification-dialog-button="reject"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="reject"
+              onClick={[MockFunction]}
+              text="reject"
+              type="button"
+              variant="neutral"
+            />
+            <Button
+              data-terra-notification-dialog-button="accept"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="accept"
+              onClick={[MockFunction]}
+              refCallback={[Function]}
+              tabIndex="0"
+              text="accept"
+              type="button"
+              variant="neutral"
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -743,7 +791,9 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
 
 exports[`Notification Dialog shallow renders dialog with startMessage, content, and endMessage 1`] = `
 <AbstractModal
-  ariaLabel="Test"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -762,7 +812,7 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
     <div
       className="notification-dialog-container"
       data-terra-notification-dialog={true}
-      tabIndex="0"
+      tabIndex="-1"
     >
       <div
         className="floating-header-background hazard-high"
@@ -778,6 +828,7 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
           />
           <div
             className="header-container"
+            id="header-container"
           >
             <div
               className="signal-word"
@@ -817,32 +868,36 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
         <div
           className="actions"
         >
-          <Button
-            data-terra-notification-dialog-button="accept"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="accept"
-            onClick={[Function]}
-            text="accept"
-            type="button"
-            variant="neutral"
-          />
-          <Button
-            data-terra-notification-dialog-button="reject"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            key="reject"
-            onClick={[Function]}
-            text="reject"
-            type="button"
-            variant="neutral"
-          />
+          <span>
+            <Button
+              data-terra-notification-dialog-button="accept"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="accept"
+              onClick={[Function]}
+              refCallback={[Function]}
+              tabIndex="0"
+              text="accept"
+              type="button"
+              variant="neutral"
+            />
+            <Button
+              data-terra-notification-dialog-button="reject"
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              key="reject"
+              onClick={[Function]}
+              text="reject"
+              type="button"
+              variant="neutral"
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -952,6 +1007,9 @@ exports[`correctly applies the theme context className 1`] = `
       variant="hazard-high"
     >
       <AbstractModal
+        ariaDescribedBy="dialogBody"
+        ariaLabel=""
+        ariaLabelledBy="header-container"
         classNameModal="notification-dialog orion-fusion-theme"
         classNameOverlay={null}
         closeOnEsc={true}
@@ -974,6 +1032,9 @@ exports[`correctly applies the theme context className 1`] = `
                   class="overlay layer-9000 orion-fusion-theme"
                 />
                 <div
+                  aria-describedby="dialogBody"
+                  aria-label=""
+                  aria-labelledby="header-container"
                   aria-modal="true"
                   class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
                   role="dialog"
@@ -990,7 +1051,7 @@ exports[`correctly applies the theme context className 1`] = `
                       <div
                         class="notification-dialog-container"
                         data-terra-notification-dialog="true"
-                        tabindex="0"
+                        tabindex="-1"
                       >
                         <div
                           class="floating-header-background hazard-high"
@@ -1010,6 +1071,7 @@ exports[`correctly applies the theme context className 1`] = `
                             </div>
                             <div
                               class="header-container"
+                              id="header-container"
                             >
                               <div
                                 class="signal-word"
@@ -1040,38 +1102,41 @@ exports[`correctly applies the theme context className 1`] = `
                           <div
                             class="actions"
                           >
-                            <button
-                              aria-disabled="false"
-                              class="button emphasis orion-fusion-theme"
-                              data-terra-notification-dialog-button="accept"
-                              type="button"
-                            >
-                              <span
-                                class="button-label text-only"
+                            <span>
+                              <button
+                                aria-disabled="false"
+                                class="button emphasis is-focused orion-fusion-theme"
+                                data-terra-notification-dialog-button="accept"
+                                tabindex="0"
+                                type="button"
                               >
                                 <span
-                                  class=""
+                                  class="button-label text-only"
                                 >
-                                  Confirm
+                                  <span
+                                    class=""
+                                  >
+                                    Confirm
+                                  </span>
                                 </span>
-                              </span>
-                            </button>
-                            <button
-                              aria-disabled="false"
-                              class="button neutral orion-fusion-theme"
-                              data-terra-notification-dialog-button="reject"
-                              type="button"
-                            >
-                              <span
-                                class="button-label text-only"
+                              </button>
+                              <button
+                                aria-disabled="false"
+                                class="button neutral orion-fusion-theme"
+                                data-terra-notification-dialog-button="reject"
+                                type="button"
                               >
                                 <span
-                                  class=""
+                                  class="button-label text-only"
                                 >
-                                  Close
+                                  <span
+                                    class=""
+                                  >
+                                    Close
+                                  </span>
                                 </span>
-                              </span>
-                            </button>
+                              </button>
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -1083,6 +1148,9 @@ exports[`correctly applies the theme context className 1`] = `
           >
             <ForwardRef
               aria-modal="true"
+              ariaDescribedBy="dialogBody"
+              ariaLabel=""
+              ariaLabelledBy="header-container"
               classNameModal="notification-dialog orion-fusion-theme"
               classNameOverlay={null}
               closeOnOutsideClick={false}
@@ -1106,6 +1174,9 @@ exports[`correctly applies the theme context className 1`] = `
                 />
               </ModalOverlay>
               <div
+                aria-describedby="dialogBody"
+                aria-label=""
+                aria-labelledby="header-container"
                 aria-modal="true"
                 className="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
                 onKeyDown={[Function]}
@@ -1123,7 +1194,7 @@ exports[`correctly applies the theme context className 1`] = `
                     <div
                       className="notification-dialog-container"
                       data-terra-notification-dialog={true}
-                      tabIndex="0"
+                      tabIndex="-1"
                     >
                       <div
                         className="floating-header-background hazard-high"
@@ -1147,6 +1218,7 @@ exports[`correctly applies the theme context className 1`] = `
                           </NotificationDialogIcon>
                           <div
                             className="header-container"
+                            id="header-container"
                           >
                             <div
                               className="signal-word"
@@ -1177,80 +1249,85 @@ exports[`correctly applies the theme context className 1`] = `
                         <div
                           className="actions"
                         >
-                          <Button
-                            data-terra-notification-dialog-button="accept"
-                            isBlock={false}
-                            isCompact={false}
-                            isDisabled={false}
-                            isIconOnly={false}
-                            isReversed={false}
-                            key="accept"
-                            onClick={[Function]}
-                            text="Confirm"
-                            type="button"
-                            variant="emphasis"
-                          >
-                            <button
-                              aria-disabled={false}
-                              className="button emphasis orion-fusion-theme"
+                          <span>
+                            <Button
                               data-terra-notification-dialog-button="accept"
-                              disabled={false}
-                              onBlur={[Function]}
+                              isBlock={false}
+                              isCompact={false}
+                              isDisabled={false}
+                              isIconOnly={false}
+                              isReversed={false}
+                              key="accept"
                               onClick={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
+                              refCallback={[Function]}
+                              tabIndex="0"
+                              text="Confirm"
                               type="button"
+                              variant="emphasis"
                             >
-                              <span
-                                className="button-label text-only"
+                              <button
+                                aria-disabled={false}
+                                className="button emphasis is-focused orion-fusion-theme"
+                                data-terra-notification-dialog-button="accept"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseDown={[Function]}
+                                tabIndex="0"
+                                type="button"
                               >
                                 <span
-                                  className=""
+                                  className="button-label text-only"
                                 >
-                                  Confirm
+                                  <span
+                                    className=""
+                                  >
+                                    Confirm
+                                  </span>
                                 </span>
-                              </span>
-                            </button>
-                          </Button>
-                          <Button
-                            data-terra-notification-dialog-button="reject"
-                            isBlock={false}
-                            isCompact={false}
-                            isDisabled={false}
-                            isIconOnly={false}
-                            isReversed={false}
-                            key="reject"
-                            onClick={[Function]}
-                            text="Close"
-                            type="button"
-                            variant="neutral"
-                          >
-                            <button
-                              aria-disabled={false}
-                              className="button neutral orion-fusion-theme"
+                              </button>
+                            </Button>
+                            <Button
                               data-terra-notification-dialog-button="reject"
-                              disabled={false}
-                              onBlur={[Function]}
+                              isBlock={false}
+                              isCompact={false}
+                              isDisabled={false}
+                              isIconOnly={false}
+                              isReversed={false}
+                              key="reject"
                               onClick={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
+                              text="Close"
                               type="button"
+                              variant="neutral"
                             >
-                              <span
-                                className="button-label text-only"
+                              <button
+                                aria-disabled={false}
+                                className="button neutral orion-fusion-theme"
+                                data-terra-notification-dialog-button="reject"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseDown={[Function]}
+                                type="button"
                               >
                                 <span
-                                  className=""
+                                  className="button-label text-only"
                                 >
-                                  Close
+                                  <span
+                                    className=""
+                                  >
+                                    Close
+                                  </span>
                                 </span>
-                              </span>
-                            </button>
-                          </Button>
+                              </button>
+                            </Button>
+                          </span>
                         </div>
                       </div>
                     </div>
