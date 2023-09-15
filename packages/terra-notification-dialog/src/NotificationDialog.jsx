@@ -110,9 +110,7 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
     return null;
   }
 
-  debugger;
   const actionButtons = [];
-  //refCallback={refCallback}
   if (acceptAction) {
     const buttonVariant = emphasizedAction === 'accept' ? { variant: 'emphasis' } : {};
     actionButtons.push(<Button {...buttonVariant} refCallback={refCallback} tabIndex="0" data-terra-notification-dialog-button="accept" key="accept" text={acceptAction.text} onClick={acceptAction.onClick} />);
@@ -122,7 +120,7 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
     const buttonVariant = emphasizedAction === 'reject' ? { variant: 'emphasis' } : {};
     actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
   }
-  
+
   return (
     <div className={cx('actions')}>
       <span>
@@ -141,7 +139,6 @@ const NotificationDialog = (props) => {
   };
 
   useEffect(() => {
-    debugger;
     notificationDialogRef.current.focus();
   }, []);
 
@@ -170,7 +167,7 @@ const NotificationDialog = (props) => {
   }
 
   const signalWord = variant === 'custom' ? custom.signalWord : intl.formatMessage({ id: `Terra.notification.dialog.${variant}` });
-  const ariaLabel = `${signalWord}, ${dialogTitle}, ${startMessage ? startMessage : ""} ${content ? content : ""} ${endMessage ? endMessage : ""}`;
+  // const ariaLabel = `${signalWord}, ${dialogTitle}, ${startMessage ? startMessage : ""} ${content ? content : ""} ${endMessage ? endMessage : ""}`;
   // const ariaLabel = `${signalWord}, ${dialogTitle}`;
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
@@ -216,7 +213,7 @@ const NotificationDialog = (props) => {
               rejectAction,
               buttonOrder,
               emphasizedAction,
-              setNotificationDialogRef
+              setNotificationDialogRef,
             )}
           </div>
         </div>
