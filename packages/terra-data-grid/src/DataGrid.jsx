@@ -10,7 +10,8 @@ import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import Row from './subcomponents/Row';
-import DataGridPropTypes from './proptypes/DataGridPropTypes';
+import rowShape from './proptypes/rowShape';
+import { columnShape } from './proptypes/columnShape';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
 import ColumnContext from './utils/ColumnContext';
 import validateRowHeaderIndex from './proptypes/validators';
@@ -39,19 +40,19 @@ const propTypes = {
   /**
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
-  rows: PropTypes.arrayOf(DataGridPropTypes.rowShape),
+  rows: PropTypes.arrayOf(rowShape),
 
   /**
    * Data for pinned columns. Pinned columns are the stickied leftmost columns of the grid.
    * Columns will be presented in the order given.
    */
-  pinnedColumns: PropTypes.arrayOf(DataGridPropTypes.columnShape),
+  pinnedColumns: PropTypes.arrayOf(columnShape),
 
   /**
    * Data for overflow columns. Overflow columns are rendered in the Data Grid's horizontal overflow.
    * Columns will be presented in the order given.
    */
-  overflowColumns: PropTypes.arrayOf(DataGridPropTypes.columnShape),
+  overflowColumns: PropTypes.arrayOf(columnShape),
 
   /**
    * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
@@ -100,9 +101,9 @@ const propTypes = {
 
   /**
    * Callback function that is called when a range selection occurs. Parameters:
-   * @param {number} rowIndex rowIndex
-   * @param {number} columnIndex columnIndex
-   * @param {number} direction direction
+   * @param {number} rowIndex RowIndex of the cell from which the range selection was triggered.
+   * @param {number} columnIndex ColumnIndex of the cell from which the range selection was triggered.
+   * @param {number} direction Direction keycode representing the direction of the selection.
    */
   onRangeSelection: PropTypes.func,
 
@@ -154,14 +155,12 @@ function DataGrid(props) {
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
 
   // Initialize column width properties
-  const initializeColumn = (column) => {
-    const newColumn = { ...column };
-    newColumn.width = column.width || defaultColumnWidth;
-    newColumn.minimumWidth = column.minimumWidth || defaultColumnMinimumWidth;
-    newColumn.maximumWidth = column.maximumWidth || defaultColumnMaximumWidth;
-
-    return newColumn;
-  };
+  const initializeColumn = (column) => ({
+    ...column,
+    width: column.width || defaultColumnWidth,
+    minimumWidth: column.minimumWidth || defaultColumnMinimumWidth,
+    maximumWidth: column.maximumWidth || defaultColumnMaximumWidth,
+  });
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
   const [dataGridColumns, setDataGridColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
@@ -516,31 +515,6 @@ function DataGrid(props) {
   };
 
   // -------------------------------------
-  // builder functions
-
-  const buildRow = (row, rowIndex) => (
-    <Row
-      rowIndex={rowIndex}
-      key={row.id}
-      height={rowHeight}
-      id={row.id}
-      isSelected={row.isSelected}
-      cells={row.cells}
-      ariaLabel={row.ariaLabel}
-      hasRowSelection={hasSelectableRows}
-      displayedColumns={displayedColumns}
-      rowHeaderIndex={rowHeaderIndex}
-      onCellSelect={handleCellSelection}
-    />
-  );
-
-  const buildRows = (allRows) => {
-    const rowData = allRows.map((row, index) => (buildRow(row, index + 1))); // One row is used for the Header.
-
-    return rowData;
-  };
-
-  // -------------------------------------
 
   return (
     <div ref={gridContainerRef} className={cx('data-grid-container')}>
@@ -568,7 +542,21 @@ function DataGrid(props) {
             onResizeMouseDown={onResizeMouseDown}
           />
           <tbody>
-            {buildRows(rows)}
+            {rows.map((row, index) => (
+              <Row
+                rowIndex={index + 1}
+                key={row.id}
+                height={rowHeight}
+                id={row.id}
+                isSelected={row.isSelected}
+                cells={row.cells}
+                ariaLabel={row.ariaLabel}
+                hasRowSelection={hasSelectableRows}
+                displayedColumns={displayedColumns}
+                rowHeaderIndex={rowHeaderIndex}
+                onCellSelect={handleCellSelection}
+              />
+            ))}
           </tbody>
         </ColumnContext.Provider>
       </table>

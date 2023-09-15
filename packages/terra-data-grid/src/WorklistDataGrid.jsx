@@ -8,7 +8,8 @@ import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import DataGridPropTypes from './proptypes/DataGridPropTypes';
+import rowShape from './proptypes/rowShape';
+import { columnShape } from './proptypes/columnShape';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './WorklistDataGrid.module.scss';
 import DataGrid from './DataGrid';
@@ -35,19 +36,19 @@ const propTypes = {
   /**
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
-  rows: PropTypes.arrayOf(DataGridPropTypes.rowShape),
+  rows: PropTypes.arrayOf(rowShape),
 
   /**
    * Data for pinned columns. Pinned columns are the stickied leftmost columns of the grid.
    * Columns will be presented in the order given.
    */
-  pinnedColumns: PropTypes.arrayOf(DataGridPropTypes.columnShape),
+  pinnedColumns: PropTypes.arrayOf(columnShape),
 
   /**
    * Data for overflow columns. Overflow columns are rendered in the Worklist Data Grid's horizontal overflow.
    * Columns will be presented in the order given.
    */
-  overflowColumns: PropTypes.arrayOf(DataGridPropTypes.columnShape),
+  overflowColumns: PropTypes.arrayOf(columnShape),
 
   /**
    * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
@@ -189,7 +190,7 @@ function WorklistDataGrid(props) {
     }
 
     // Since the row selection mode has changed, the row selection mode needs to be updated.
-    setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklist-data-grid.row-selection-mode-enabled' : 'Terra.worklist-data-grid.row-selection-mode-disabled' }));
+    setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklistDataGrid.row-selection-mode-enabled' : 'Terra.worklistDataGrid.row-selection-mode-disabled' }));
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
@@ -200,9 +201,9 @@ function WorklistDataGrid(props) {
     selectedRows.current = rows.filter((row) => row.isSelected).map(row => (row.id));
 
     if (previousSelectedRows.length > 0 && selectedRows.current.length === 0) {
-      setRowSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-unselected' }));
+      setRowSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklistDataGrid.all-rows-unselected' }));
     } else if (selectedRows.current.length === rows.length) {
-      setRowSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.all-rows-selected' }));
+      setRowSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklistDataGrid.all-rows-selected' }));
     } else {
       const rowSelectionsAdded = selectedRows.current.filter(row => !previousSelectedRows.includes(row));
       const rowSelectionsRemoved = previousSelectedRows.filter(row => !selectedRows.current.includes(row));
@@ -211,17 +212,17 @@ function WorklistDataGrid(props) {
       if (rowSelectionsAdded.length === 1) {
         const newRowIndex = rows.findIndex(row => row.id === rowSelectionsAdded[0]);
         const selectedRowLabel = rows[newRowIndex].ariaLabel || newRowIndex + 1;
-        selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-template' }, { row: selectedRowLabel });
+        selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.worklistDataGrid.row-selection-template' }, { row: selectedRowLabel });
       } else if (rowSelectionsAdded.length > 1) {
-        selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.worklist-data-grid.multiple-rows-selected' }, { rowCount: rowSelectionsAdded.length });
+        selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.worklistDataGrid.multiple-rows-selected' }, { rowCount: rowSelectionsAdded.length });
       }
 
       if (rowSelectionsRemoved.length === 1) {
         const removedRowIndex = rows.findIndex(row => row.id === rowSelectionsRemoved[0]);
         const unselectedRowLabel = rows[removedRowIndex].ariaLabel || removedRowIndex + 1;
-        selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.worklist-data-grid.row-selection-cleared-template' }, { row: unselectedRowLabel });
+        selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.worklistDataGrid.row-selection-cleared-template' }, { row: unselectedRowLabel });
       } else if (rowSelectionsRemoved.length > 1) {
-        selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.worklist-data-grid.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
+        selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.worklistDataGrid.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
       }
 
       if (selectionUpdateAriaMessage) {
@@ -237,7 +238,7 @@ function WorklistDataGrid(props) {
       }
     } else {
       multiSelectRange.current = {}; // Clear the information used for selecting multiple rows.
-      if (rows.find(row => row.isSelected)) {
+      if (rows.some(row => row.isSelected)) {
         // Esc (while in row selection mode and rows are selected): Clear selection
         if (onClearSelectedRows) {
           onClearSelectedRows();
@@ -321,15 +322,21 @@ function WorklistDataGrid(props) {
   const onRangeSelection = useCallback((rowIndex, columnIndex, direction) => {
     let nextRow = rowIndex;
     if (direction === KeyCode.KEY_UP) {
+      // Since range is being extended upward, row above the starting row should now
+      // be added to the range of selected rows.
       nextRow -= 1;
       if (nextRow === 0) {
+        // If the row above is the header, do not extend the range.
         nextRow = 1;
       }
     } else if (direction === KeyCode.KEY_DOWN) {
+      // Since range is being extended downward, row below the starting row should now
+      // be added to the range of selected rows.
       nextRow += 1;
     }
 
     if (!inShiftUpDownMode.current) {
+      // Start of range selection using Shift+Up/Down so save this as the anchor/start for the range.
       inShiftUpDownMode.current = true;
       multiSelectRange.current = { start: rowIndex, end: null };
     }
@@ -367,7 +374,6 @@ function WorklistDataGrid(props) {
         inShiftUpDownMode.current = false;
         break;
       default:
-        break;
     }
   };
 

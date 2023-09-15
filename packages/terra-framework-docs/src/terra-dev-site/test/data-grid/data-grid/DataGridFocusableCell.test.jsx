@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DataGrid } from 'terra-data-grid';
+import DataGrid from 'terra-data-grid/lib/DataGrid';
 import NotificationDialog from 'terra-notification-dialog';
 
 const DataGridFocusableCell = () => {

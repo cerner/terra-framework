@@ -59,7 +59,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
     role="button"
   >
     <IconError
-      a11yLabel="Terra.data-grid.columnError"
+      a11yLabel="Terra.dataGrid.columnError"
       className="error-icon"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +140,7 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
     role="button"
   >
     <IconError
-      a11yLabel="Terra.data-grid.columnError"
+      a11yLabel="Terra.dataGrid.columnError"
       className="error-icon"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
@@ -181,7 +181,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
     role="button"
   >
     <IconError
-      a11yLabel="Terra.data-grid.columnError"
+      a11yLabel="Terra.dataGrid.columnError"
       className="error-icon"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
@@ -225,7 +225,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
     role="button"
   >
     <IconError
-      a11yLabel="Terra.data-grid.columnError"
+      a11yLabel="Terra.dataGrid.columnError"
       className="error-icon"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
@@ -348,13 +348,13 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
         role="button"
       >
         <IconError
-          a11yLabel="Terra.data-grid.columnError"
+          a11yLabel="Terra.dataGrid.columnError"
           className="error-icon"
           viewBox="0 0 48 48"
           xmlns="http://www.w3.org/2000/svg"
         >
           <IconBase
-            a11yLabel="Terra.data-grid.columnError"
+            a11yLabel="Terra.dataGrid.columnError"
             className="IconError error-icon"
             focusable="false"
             height="1em"
@@ -373,7 +373,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             >
               <title>
-                Terra.data-grid.columnError
+                Terra.dataGrid.columnError
               </title>
               <path
                 d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
@@ -464,7 +464,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
             aria-hidden={true}
             aria-label=" Vitals"
             aria-valuenow={100}
-            aria-valuetext="Terra.data-grid.resizeHandleValueText"
+            aria-valuetext="Terra.dataGrid.resizeHandleValueText"
             className="resize-handle"
             draggable={true}
             onBlur={[Function]}

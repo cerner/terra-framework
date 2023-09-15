@@ -6,7 +6,7 @@ import styles from './Row.module.scss';
 import RowSelectionCell from './RowSelectionCell';
 import Cell from './Cell';
 import cellShape from '../proptypes/cellShape';
-import DataGridPropTypes from '../proptypes/DataGridPropTypes';
+import { columnShape } from '../proptypes/columnShape';
 
 const cx = classNames.bind(styles);
 
@@ -51,7 +51,7 @@ const propTypes = {
   /**
    * All columns currently displayed.
    */
-  displayedColumns: PropTypes.arrayOf(DataGridPropTypes.columnShape),
+  displayedColumns: PropTypes.arrayOf(columnShape),
 
   /**
    * Callback function that will be called when a cell in the row is selected.
@@ -130,7 +130,7 @@ function Row(props) {
 
   return (
     <tr
-      className={cx('data-grid-row', {
+      className={cx('row', {
         selected: isSelected,
         selectable: hasRowSelection,
       }, theme.className)}

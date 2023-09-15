@@ -55,7 +55,7 @@ exports[`Cell renders a pinned cell 1`] = `
   >
     <th
       aria-selected={false}
-      className="data-grid-cell pinned selectable"
+      className="cell pinned selectable"
       onKeyDown={[Function]}
       onMouseDown={[Function]}
       role="rowheader"
@@ -100,7 +100,7 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
 <td
   aria-label="Some Label Here"
   aria-selected={true}
-  className="data-grid-cell masked"
+  className="cell masked"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
@@ -134,7 +134,7 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
       <span
         className="no-data-cell"
       >
-        Terra.data-grid.maskedCell
+        Terra.dataGrid.maskedCell
       </span>
     </div>
   </FocusTrap>
@@ -145,7 +145,7 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
 <td
   aria-label="Some Label Here"
   aria-selected={false}
-  className="data-grid-cell masked"
+  className="cell masked"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
@@ -179,7 +179,7 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
       <span
         className="no-data-cell"
       >
-        Terra.data-grid.maskedCell
+        Terra.dataGrid.maskedCell
       </span>
     </div>
   </FocusTrap>
@@ -190,7 +190,7 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
 <td
   aria-label="Some Label Here"
   aria-selected={true}
-  className="data-grid-cell selectable selected"
+  className="cell selectable selected"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
@@ -230,7 +230,7 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
 exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeader prop is false 1`] = `
 <td
   aria-selected={false}
-  className="data-grid-cell selectable"
+  className="cell selectable"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
@@ -270,7 +270,7 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
 exports[`Cell verifies that only a row header cell (<th>) is created when isRowHeader prop is true 1`] = `
 <th
   aria-selected={false}
-  className="data-grid-cell selectable"
+  className="cell selectable"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   role="rowheader"
@@ -312,7 +312,7 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
 exports[`Cell verifies that the cell rendered is marked blank when the cell content is empty 1`] = `
 <td
   aria-selected={false}
-  className="data-grid-cell selectable blank"
+  className="cell selectable blank"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
@@ -346,7 +346,7 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
       <span
         className="no-data-cell"
       >
-        Terra.data-grid.blank
+        Terra.dataGrid.blank
       </span>
     </div>
   </FocusTrap>
@@ -356,7 +356,7 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
 exports[`Cell verifies that the cell rendered is marked selectable when isSelectable prop is true 1`] = `
 <td
   aria-selected={false}
-  className="data-grid-cell selectable"
+  className="cell selectable"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={

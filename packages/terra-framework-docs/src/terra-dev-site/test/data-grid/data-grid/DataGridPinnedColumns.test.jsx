@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { DataGrid } from 'terra-data-grid';
+import DataGrid from 'terra-data-grid/lib/DataGrid';
 
 const gridDataJSON = {
   cols: [

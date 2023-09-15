@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
+import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 
 import Cell from './Cell';
+import styles from './RowSelectionCell.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -59,7 +64,8 @@ function RowSelectionCell(props) {
     intl,
   } = props;
 
-  const rowLabel = intl.formatMessage({ id: 'Terra.data-grid.row-index' }, { row: rowIndex });
+  const theme = useContext(ThemeContext);
+  const rowLabel = intl.formatMessage({ id: 'Terra.dataGrid.row-index' }, { row: rowIndex });
 
   const selectionCheckbox = (
     <input
@@ -68,6 +74,7 @@ function RowSelectionCell(props) {
       readOnly
       tabIndex={-1}
       checked={isSelected}
+      className={cx('input', theme.className)}
     />
   );
 

@@ -1,10 +1,9 @@
-/* stylelint-disable terra/custom-property-namespace */
 // Themes
 @import '../orion-fusion-theme/Cell.module';
 @import '../clinical-lowlight-theme/Cell.module';
 
 :local {
-  .data-grid-cell {
+  .cell {
     border-bottom: var(--terra-data-grid-cell-border-bottom, 1px solid #dedfe0);
     border-right: var(--terra-data-grid-cell-border-right, 1px solid #dedfe0);
     font-weight: normal;
@@ -13,13 +12,6 @@
 
     &:first-child {
       border-left: var(--terra-data-grid-cell-border-left, 1px solid #dedfe0);
-    }
-
-    input {
-      display: flex;
-      height: 16px;
-      margin: auto;
-      width: 16px;
     }
   }
 
@@ -68,4 +60,3 @@
     cursor: pointer;
   }
 }
-/* stylelint-enable terra/custom-property-namespace */

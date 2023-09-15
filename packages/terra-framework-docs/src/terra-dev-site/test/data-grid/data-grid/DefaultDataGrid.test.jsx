@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataGrid } from 'terra-data-grid';
+import DataGrid from 'terra-data-grid/lib/DataGrid';
 
 const DefaultDataGrid = () => {
   const gridDataJSON = {

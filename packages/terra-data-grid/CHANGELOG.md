@@ -6,9 +6,6 @@
   * Renamed `terra-worklist-data-grid` package to `terra-data-grid`.
   * Changed WorklistDataGrid component from default to named export. WorklistDataGrid can now be imported as `import { WorklistDataGrid } from 'terra-data-grid'`.
 
-* Added
-  * Added DataGrid component in `terra-data-grid` package.
-
 * Fixed
   * Fixed scroll issues for pinned columns.
   * Fixed scroll issues for fixed column header row.
@@ -17,7 +14,6 @@
 * Changed
   * Updated the `terra-worklist-data-grid` component to provide row selection assistive technology messages based on the properties provided by the consumer.
   * Updated the `terra-worklist-data-grid` component to set initial focus to the row selection header when row selection mode is enabled.
-  * Updated WorklistDataGrid component in `terra-data-grid` package to use DataGrid component.
 
 ___
 All release notes below apply to `terra-worklist-data-grid` package (renamed with the 0.6 release).
