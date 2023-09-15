@@ -105,26 +105,29 @@ const defaultProps = {
   custom: {},
 };
 
-const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction) => {
+const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction, refCallback) => {
   if (!acceptAction && !rejectAction) {
     return null;
   }
 
+  debugger;
   const actionButtons = [];
-
+  //refCallback={refCallback}
   if (acceptAction) {
     const buttonVariant = emphasizedAction === 'accept' ? { variant: 'emphasis' } : {};
-    actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="accept" key="accept" text={acceptAction.text} onClick={acceptAction.onClick} />);
+    actionButtons.push(<Button {...buttonVariant} refCallback={refCallback} tabIndex="0" data-terra-notification-dialog-button="accept" key="accept" text={acceptAction.text} onClick={acceptAction.onClick} />);
   }
 
   if (rejectAction) {
     const buttonVariant = emphasizedAction === 'reject' ? { variant: 'emphasis' } : {};
     actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
   }
-
+  
   return (
     <div className={cx('actions')}>
-      {buttonOrder === 'acceptFirst' ? actionButtons : actionButtons.reverse()}
+      <span>
+        {buttonOrder === 'acceptFirst' ? actionButtons : actionButtons.reverse()}
+      </span>
     </div>
   );
 };
@@ -138,6 +141,7 @@ const NotificationDialog = (props) => {
   };
 
   useEffect(() => {
+    debugger;
     notificationDialogRef.current.focus();
   }, []);
 
@@ -166,11 +170,15 @@ const NotificationDialog = (props) => {
   }
 
   const signalWord = variant === 'custom' ? custom.signalWord : intl.formatMessage({ id: `Terra.notification.dialog.${variant}` });
+  const ariaLabel = `${signalWord}, ${dialogTitle}, ${startMessage ? startMessage : ""} ${content ? content : ""} ${endMessage ? endMessage : ""}`;
+  // const ariaLabel = `${signalWord}, ${dialogTitle}`;
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
     <AbstractModal
-      ariaLabel={dialogTitle}
+      ariaLabel=""
+      ariaLabelledBy="header-container"
+      ariaDescribedBy="dialogBody"
       role={signalWord === 'Alert' ? 'alertdialog' : 'dialog'}
       classNameModal={classNames(cx('notification-dialog', theme.className), customProps.className)}
       isOpen
@@ -183,12 +191,12 @@ const NotificationDialog = (props) => {
       isCalledFromNotificationDialog
     >
       <div className={cx('notification-dialog-inner-wrapper')}>
-        <div className={cx('notification-dialog-container')} tabIndex="0" ref={setNotificationDialogRef} data-terra-notification-dialog>
+        <div className={cx('notification-dialog-container')} tabIndex="-1" data-terra-notification-dialog>
           <div className={cx(['floating-header-background', variant])} />
           <div className={cx(['header'])}>
             <div className={cx(['header-content'])}>
               <NotificationIcon variant={variant} iconClassName={custom.iconClassName} />
-              <div className={cx('header-container')}>
+              <div id="header-container" className={cx('header-container')}>
                 <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
                 <div id="notification-dialog-title" className={cx('title')}>{dialogTitle}</div>
               </div>
@@ -208,6 +216,7 @@ const NotificationDialog = (props) => {
               rejectAction,
               buttonOrder,
               emphasizedAction,
+              setNotificationDialogRef
             )}
           </div>
         </div>

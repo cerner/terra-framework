@@ -19,6 +19,14 @@ const propTypes = {
    */
   ariaLabel: PropTypes.string.isRequired,
   /**
+   * String that labels the modal for screen readers.
+   */
+  ariaLabelledBy: PropTypes.string,
+  /**
+   * String that labels the modal for screen readers.
+   */
+  ariaDescribedBy: PropTypes.string,
+  /**
    * Content inside the modal dialog.
    */
   children: PropTypes.node.isRequired,
@@ -83,6 +91,8 @@ const defaultProps = {
 const ModalContent = forwardRef((props, ref) => {
   const {
     ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     children,
     classNameModal,
     classNameOverlay,
@@ -141,11 +151,12 @@ const ModalContent = forwardRef((props, ref) => {
           the aria-label value when the modal is opened
         */
       }
-
       <div
         {...customProps}
         tabIndex={platformIsiOS || isCalledFromNotificationDialog ? '-1' : '0'}
         aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+        aria-describedby={ariaDescribedBy}
         className={modalClassName}
         role={role}
         ref={ref}

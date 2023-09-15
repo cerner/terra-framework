@@ -17,6 +17,14 @@ const propTypes = {
    */
   ariaLabel: PropTypes.string.isRequired,
   /**
+   * String that labels the modal for screen readers.
+   */
+  ariaLabelledBy: PropTypes.string,
+  /**
+   * String that labels the modal for screen readers.
+   */
+  ariaDescribedBy: PropTypes.string,
+  /**
    * Content inside the modal dialog.
    */
   children: PropTypes.node.isRequired,
@@ -85,6 +93,8 @@ const defaultProps = {
 const AbstractModal = (props) => {
   const {
     ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     children,
     classNameModal,
     classNameOverlay,
@@ -148,6 +158,8 @@ const AbstractModal = (props) => {
         {...customProps}
         closeOnOutsideClick={closeOnOutsideClick}
         ariaLabel={ariaLabel}
+        ariaLabelledBy={ariaLabelledBy}
+        ariaDescribedBy={ariaDescribedBy}
         classNameModal={classNameModal}
         classNameOverlay={classNameOverlay}
         role={role}
