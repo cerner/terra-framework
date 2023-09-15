@@ -26,6 +26,10 @@ const propTypes = {
    * A list of keys of the CollapsibleMenuView.Items that should be selected.
    */
   selectedKeys: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * String that labels the group for accessibility.
+   */
+  ariaLabel: PropTypes.string,
 };
 
 const defaultProps = {
