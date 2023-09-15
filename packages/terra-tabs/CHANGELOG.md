@@ -4,7 +4,9 @@
 
 * Added
   * Added prop to support the focus traverse within the tab content.
-  * Fix for Active Key Style issue.
+
+* Fixed
+  * Fixed Active Key Style issue.
 
 ## 7.6.0 - (September 5, 2023)
 
