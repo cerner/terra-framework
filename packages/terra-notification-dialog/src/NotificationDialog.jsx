@@ -123,9 +123,7 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
 
   return (
     <div className={cx('actions')}>
-      <span>
         {buttonOrder === 'acceptFirst' ? actionButtons : actionButtons.reverse()}
-      </span>
     </div>
   );
 };
