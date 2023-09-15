@@ -830,7 +830,7 @@ const DatePickerInput = (props) => {
       || DateUtil.isDateOutOfRange(DateUtil.createSafeDate(dateValue, initialTimeZone), DateUtil.createSafeDate(DateUtil.getMinDate(props.minDate), initialTimeZone), DateUtil.createSafeDate(DateUtil.getMaxDate(props.maxDate), initialTimeZone))
       || DateUtil.isDateNotIncluded(DateUtil.createSafeDate(dateValue, initialTimeZone), props.includeDates)
       || (props.filterDate && !props.filterDate(DateUtil.createSafeDate(dateValue, initialTimeZone)))) {
-    invalidEntry = intl.formatMessage({ id: 'Terra.datePicker.invalidDate' });
+    invalidEntry = `${intl.formatMessage({ id: 'Terra.datePicker.invalidDate' })}.`;
     calendarDate = '';
   }
 
