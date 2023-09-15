@@ -407,9 +407,11 @@ exports[`correctly applies the theme context className 1`] = `
           id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         >
           <VisuallyHiddenText
+            aria-live="off"
             text=" Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  "
           >
             <span
+              aria-live="off"
               className="visually-hidden-text"
             >
                Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
@@ -887,9 +889,11 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
     >
       <VisuallyHiddenText
+        aria-live="off"
         text=" Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  "
       >
         <span
+          aria-live="off"
           className="visually-hidden-text"
         >
            Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
@@ -1017,6 +1021,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
     id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
   >
     <span
+      aria-live="off"
       class="visually-hidden-text"
     >
        Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
@@ -1142,6 +1147,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
     id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
   >
     <span
+      aria-live="off"
       class="visually-hidden-text"
     >
        Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
@@ -1267,6 +1273,7 @@ exports[`should render a default date input 1`] = `
     id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
   >
     <span
+      aria-live="off"
       class="visually-hidden-text"
     >
        Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
@@ -1767,9 +1774,11 @@ exports[`should render a default date input with all props 1`] = `
       id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
     >
       <VisuallyHiddenText
+        aria-live="off"
         text=" Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017 "
       >
         <span
+          aria-live="off"
           className="visually-hidden-text"
         >
            Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017 
