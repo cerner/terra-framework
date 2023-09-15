@@ -78,20 +78,10 @@ class EmbeddedContentConsumer extends React.Component {
   componentDidMount() {
     // Merging the iframe options props
     const frameOptions = { ...this.props.options };
+    frameOptions.iframeAttrs = frameOptions.iframeAttrs ? frameOptions.iframeAttrs : {};
 
     if (this.props.title) {
-      if (frameOptions.iframeAttrs === null
-        || frameOptions.iframeAttrs === undefined) {
-        frameOptions.iframeAttrs = {};
-      }
-
       Object.assign(frameOptions.iframeAttrs, { title: this.props.title });
-      Object.keys(frameOptions.iframeAttrs).forEach(key => {
-        if (frameOptions.iframeAttrs[key] === null
-          || frameOptions.iframeAttrs[key] === undefined) {
-          delete frameOptions.iframeAttrs[key];
-        }
-      });
     }
 
     // Mount the provided source as the application into the content wrapper.
