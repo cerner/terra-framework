@@ -54,7 +54,7 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
         <CollapsibleMenuView.Item text="Collapsible Button 1" key="button1" />
         <CollapsibleMenuView.Item text="Collapsible Button 2" key="button2" />
         <CollapsibleMenuView.Divider key="divider1" />
-        <CollapsibleMenuView.ItemGroup key="ViewTypeSelection" selectedKeys={[this.state.displayType]} onChange={this.handleDisplayTypeChange}>
+        <CollapsibleMenuView.ItemGroup ariaLabel="View Type Single Selection" key="ViewTypeSelection" selectedKeys={[this.state.displayType]} onChange={this.handleDisplayTypeChange}>
           <CollapsibleMenuView.Item
             icon={<IconTable />}
             text="Table View"

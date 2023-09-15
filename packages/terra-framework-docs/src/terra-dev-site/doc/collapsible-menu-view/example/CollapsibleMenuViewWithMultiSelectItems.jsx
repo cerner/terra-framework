@@ -77,7 +77,7 @@ class CollapsibleMenuViewWithMultiSelectItems extends React.Component {
           ]}
         />
         <CollapsibleMenuView.Divider key="Divider2" />
-        <CollapsibleMenuView.ItemGroup key="ViewTypeSelection" isMultiSelect selectedKeys={this.state.selectedKeys} onChange={this.handleDisplayTypeChange}>
+        <CollapsibleMenuView.ItemGroup ariaLabel="View Type Multi Selection" key="ViewTypeSelection" isMultiSelect selectedKeys={this.state.selectedKeys} onChange={this.handleDisplayTypeChange}>
           <CollapsibleMenuView.Item
             icon={<IconTable />}
             text="Table View"

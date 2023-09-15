@@ -70,6 +70,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
       onChange,
       isMultiSelect,
       selectedKeys,
+      ariaLabel,
       ...customProps
     } = this.props;
 
@@ -94,7 +95,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
       if (onChange) {
         return (
           <li role="none">
-            <Menu.ItemGroup {...customProps} onChange={this.handleMenuOnChange}>
+            <Menu.ItemGroup {...customProps} onChange={this.handleMenuOnChange} aria-label={ariaLabel}>
               {children}
             </Menu.ItemGroup>
           </li>
@@ -115,7 +116,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
     ]);
 
     return (
-      <ButtonGroup {...customProps} isMultiSelect={isMultiSelect} onChange={onChange} className={buttonGroupClassNames} selectedKeys={selectedKeys}>
+      <ButtonGroup {...customProps} isMultiSelect={isMultiSelect} onChange={onChange} className={buttonGroupClassNames} selectedKeys={selectedKeys} aria-label={ariaLabel}>
         {children}
       </ButtonGroup>
     );
