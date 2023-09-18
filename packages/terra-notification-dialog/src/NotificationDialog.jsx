@@ -113,18 +113,23 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
   const actionButtons = [];
   if (acceptAction) {
     const buttonVariant = emphasizedAction === 'accept' ? { variant: 'emphasis' } : {};
-    actionButtons.push(<Button {...buttonVariant} refCallback={refCallback} tabIndex="0" data-terra-notification-dialog-button="accept" key="accept" text={acceptAction.text} onClick={acceptAction.onClick} />);
+    if (buttonOrder === 'acceptFirst' || !rejectAction) {
+      actionButtons.push(<Button {...buttonVariant} refCallback={refCallback} tabIndex="0" data-terra-notification-dialog-button="accept" key="accept" text={acceptAction.text} onClick={acceptAction.onClick} />);
+    } else {
+      actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="accept" key="accept" text={acceptAction.text} onClick={acceptAction.onClick} />);
+    }
   }
 
   if (rejectAction) {
     const buttonVariant = emphasizedAction === 'reject' ? { variant: 'emphasis' } : {};
-    if (acceptAction) {
+    if (acceptAction && buttonOrder === 'acceptFirst') {
       actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
     } else {
       actionButtons.push(<Button refCallback={refCallback} tabIndex="0" {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
     }
   }
 
+  debugger;
   return (
     <div className={cx('actions')}>
       {buttonOrder === 'acceptFirst' ? actionButtons : actionButtons.reverse()}
