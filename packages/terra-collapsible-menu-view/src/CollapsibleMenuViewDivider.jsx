@@ -22,16 +22,20 @@ const contextTypes = {
 
 const CollapsibleMenuViewDivider = ({ useChevronRightIcon }, { isCollapsibleMenuItem }) => {
   const theme = React.useContext(ThemeContext);
-  if (isCollapsibleMenuItem) {
-    return <Menu.Divider />;
-  }
-
   if (useChevronRightIcon) {
+    if (isCollapsibleMenuItem) {
+      return null;
+    }
+
     return (
       <div className={cx(['chevron-right', 'face-up-item', theme.className])}>
         <IconChevronRight />
       </div>
     );
+  }
+
+  if (isCollapsibleMenuItem) {
+    return <Menu.Divider />;
   }
 
   return <div className={cx(['divider', 'face-up-item', theme.className])} />;
