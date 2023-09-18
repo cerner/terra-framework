@@ -129,7 +129,6 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
     }
   }
 
-  debugger;
   return (
     <div className={cx('actions')}>
       {buttonOrder === 'acceptFirst' ? actionButtons : actionButtons.reverse()}
@@ -174,8 +173,6 @@ const NotificationDialog = (props) => {
   }
 
   const signalWord = variant === 'custom' ? custom.signalWord : intl.formatMessage({ id: `Terra.notification.dialog.${variant}` });
-  // const ariaLabel = `${signalWord}, ${dialogTitle}, ${startMessage ? startMessage : ""} ${content ? content : ""} ${endMessage ? endMessage : ""}`;
-  // const ariaLabel = `${signalWord}, ${dialogTitle}`;
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
