@@ -5,11 +5,12 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
+import IconEllipses from 'terra-icon/lib/icon/IconEllipses';
 import CollapsibleMenuViewItem from './CollapsibleMenuViewItem';
 import CollapsibleMenuViewItemGroup from './CollapsibleMenuViewItemGroup';
 import CollapsibleMenuViewToggle from './CollapsibleMenuViewToggle';
 import CollapsibleMenuViewDivider from './CollapsibleMenuViewDivider';
-import IconEllipses from 'terra-icon/lib/icon/IconEllipses';
+import CollapsibleMenuViewHyperlink from './CollapsibleMenuViewHyperlink';
 import styles from './CollapsibleMenuView.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -47,6 +48,12 @@ const propTypes = {
    * Switches to using horizontal ellipses instead of vertical ones when menu items are truncated.
    */
   useHorizontalIcon: PropTypes.bool,
+
+  /**
+   * @private
+   * Reverses the order of the rendered items.
+   */
+  isReversed: PropTypes.bool,
 
   /**
    * @private
@@ -164,6 +171,7 @@ class CollapsibleMenuView extends React.Component {
       alwaysCollapsedMenuItems,
       isStartAligned,
       useHorizontalIcon,
+      isReversed,
       ...customProps
     } = this.props;
     const theme = this.context;
@@ -173,6 +181,7 @@ class CollapsibleMenuView extends React.Component {
       { 'is-calculating': this.isCalculating },
       { 'collapsible-menu-view-flex-end': !isStartAligned },
       { 'collapsible-menu-view-flex-start': isStartAligned },
+      { reverse: isReversed },
       theme.className,
     ),
 
@@ -216,6 +225,7 @@ class CollapsibleMenuView extends React.Component {
 CollapsibleMenuView.Item = CollapsibleMenuViewItem;
 CollapsibleMenuView.ItemGroup = CollapsibleMenuViewItemGroup;
 CollapsibleMenuView.Toggle = CollapsibleMenuViewToggle;
+CollapsibleMenuView.Hyperlink = CollapsibleMenuViewHyperlink;
 CollapsibleMenuView.Divider = CollapsibleMenuViewDivider;
 
 CollapsibleMenuView.propTypes = propTypes;

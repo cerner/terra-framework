@@ -27,7 +27,11 @@ const CollapsibleMenuViewDivider = ({ useChevronRightIcon }, { isCollapsibleMenu
   }
 
   if (useChevronRightIcon) {
-    return <IconChevronRight className={cx(['chevron-right', 'face-up-item', theme.className])} />;
+    return (
+      <div className={cx(['chevron-right', 'face-up-item', theme.className])}>
+        <IconChevronRight />
+      </div>
+    );
   }
 
   return <div className={cx(['divider', 'face-up-item', theme.className])} />;
