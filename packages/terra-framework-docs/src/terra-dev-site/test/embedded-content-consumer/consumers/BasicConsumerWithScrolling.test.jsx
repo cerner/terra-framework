@@ -19,10 +19,10 @@ const BasicConsumerWithScrolling = () => (
       resizeConfig: {
         fixedHeight: '50px',
         fixedWidth: '100%',
+        scrolling: true,
       },
     }}
     src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"
-    scrolling
   />
 );
 

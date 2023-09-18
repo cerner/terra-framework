@@ -8,13 +8,6 @@ const propTypes = {
    */
   src: PropTypes.string.isRequired,
   /**
-   * Indicates whether the content inside of the iframe should be scrollable or not. Scrolling is default to `true`.
-   * When set to `false`, scrolling is disabled.
-   * When scrolling is enabled, it is possible to use keyboard navigation to scroll the content even when there is no
-   * interactable element inside the content.
-   */
-  isScrollable: PropTypes.bool,
-  /**
    * Notifies the component that the container has been mounted. Provides a reference
    * to this component to allow triggering messages on the embedded application.
    */
@@ -53,6 +46,10 @@ const propTypes = {
    * of the content of the iframe even if `resizeConfig` option is set. It's
    * important to specify the `width` and `height` of the frame.
    *
+   * `resizeConfig.scrolling` - Indicates whether the content inside of the iframe should be scrollable or not. The default is false.
+   * When scrolling is enabled, it is possible to use keyboard navigation to scroll the content even when there is no
+   * interactable element inside the content. When using `srcdoc` attribute, `scrolling` can be set to `'yes'` or `'no'` within `iframeAttrs`.
+   *
    * See xfc consumer configuration for details: https://github.com/cerner/xfc
    *
    */
@@ -67,35 +64,24 @@ const propTypes = {
   })),
 };
 
-const defaultProps = {
-  isScrollable: true,
-};
-
 class EmbeddedContentConsumer extends React.Component {
   componentDidMount() {
     // Merging the iframe options props
     const frameOptions = { ...this.props.options };
 
-    if (frameOptions.iframeAttrs === null
-      || frameOptions.iframeAttrs === undefined) {
-      frameOptions.iframeAttrs = {};
-    }
-
-    if (frameOptions.resizeConfig === null
-      || frameOptions.resizeConfig === undefined) {
-      frameOptions.resizeConfig = {};
-    }
-
-    if (this.props.isScrollable === false) {
-      Object.assign(frameOptions.resizeConfig, { scrolling: false });
-      Object.assign(frameOptions.iframeAttrs, { scrolling: 'no' });
-    } else {
-      Object.assign(frameOptions.resizeConfig, { scrolling: true });
+    frameOptions.iframeAttrs = frameOptions.iframeAttrs ? frameOptions.iframeAttrs : {};
+    if (Object.keys(frameOptions.iframeAttrs)?.includes('srcdoc')
+      && !Object.keys(frameOptions.iframeAttrs)?.includes('scrolling')) {
       Object.assign(frameOptions.iframeAttrs, { scrolling: 'yes' });
     }
 
+    frameOptions.resizeConfig = frameOptions.resizeConfig ? frameOptions.resizeConfig : {};
+    if (!Object.keys(frameOptions.resizeConfig)?.includes('scrolling')) {
+      Object.assign(frameOptions.resizeConfig, { scrolling: true });
+    }
+
     // Mount the provided source as the application into the content wrapper.
-    this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, this.props.options);
+    this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, frameOptions);
 
     // Notify that the consumer frame has mounted.
     if (this.props.onMount) {
@@ -123,7 +109,6 @@ class EmbeddedContentConsumer extends React.Component {
   render() {
     const {
       src,
-      isScrollable,
       onMount,
       onLaunch,
       onAuthorize,
@@ -142,6 +127,5 @@ class EmbeddedContentConsumer extends React.Component {
 }
 
 EmbeddedContentConsumer.propTypes = propTypes;
-EmbeddedContentConsumer.defaultProps = defaultProps;
 
 export default EmbeddedContentConsumer;

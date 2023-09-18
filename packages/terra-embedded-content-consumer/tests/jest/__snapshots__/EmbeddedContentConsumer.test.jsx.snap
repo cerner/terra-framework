@@ -1,18 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sets appropriate config option when isScrollable is false 1`] = `
+exports[`sets appropriate config option when resizeConfig.scrolling is false 1`] = `
 <div>
   <EmbeddedContentConsumer
-    isScrollable={false}
+    options={
+      Object {
+        "resizeConfig": Object {
+          "scrolling": false,
+        },
+      }
+    }
     src="https://www.google.com/"
   />
 </div>
 `;
 
-exports[`sets appropriate config option when isScrollable is true 1`] = `
+exports[`sets appropriate config option when resizeConfig.scrolling is true 1`] = `
 <div>
   <EmbeddedContentConsumer
-    isScrollable={true}
+    options={
+      Object {
+        "resizeConfig": Object {
+          "scrolling": true,
+        },
+      }
+    }
     src="https://www.google.com/"
   />
 </div>

@@ -7,8 +7,10 @@ Consumer.init();
 const BasicConsumerNoScrolling = () => (
   <EmbeddedContentConsumer
     src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
-    isScrollable={false}
-    options={{ iframeAttrs: { title: 'Basic content example' } }}
+    options={{
+      iframeAttrs: { title: 'Basic content example no scroll' },
+      resizeConfig: { scrolling: false },
+    }}
   />
 );
 
