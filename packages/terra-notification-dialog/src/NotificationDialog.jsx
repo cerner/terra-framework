@@ -118,7 +118,11 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
 
   if (rejectAction) {
     const buttonVariant = emphasizedAction === 'reject' ? { variant: 'emphasis' } : {};
-    actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
+    if (acceptAction) {
+      actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
+    } else {
+      actionButtons.push(<Button refCallback={refCallback} tabIndex="0" {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
+    }
   }
 
   return (
