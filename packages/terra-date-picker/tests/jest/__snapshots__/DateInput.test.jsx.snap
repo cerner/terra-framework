@@ -66,6 +66,8 @@ exports[`correctly applies the theme context className 1`] = `
       }
       isIncomplete={false}
       isInvalid={false}
+      maxDate="2100-12-31"
+      minDate="1900-01-01"
       required={false}
       useExternalFormatMask={false}
     >
@@ -97,6 +99,19 @@ exports[`correctly applies the theme context className 1`] = `
               <span
                 className="visually-hidden-text"
                 id="name-label-00000000-0000-0000-0000-000000000000"
+              />
+            </VisuallyHiddenText>
+            <VisuallyHiddenText
+              aria-atomic="true"
+              aria-live="assertive"
+              aria-relevant="all"
+              refCallback={[Function]}
+            >
+              <span
+                aria-atomic="true"
+                aria-live="assertive"
+                aria-relevant="all"
+                className="visually-hidden-text"
               />
             </VisuallyHiddenText>
             <DateInputLayout
@@ -311,6 +326,7 @@ exports[`correctly applies the theme context className 1`] = `
             </DateInputLayout>
           </div>
           <Button
+            aria-label=" Terra.datePicker.openCalendar"
             className="button"
             data-terra-open-calendar-button={true}
             icon={
@@ -332,7 +348,7 @@ exports[`correctly applies the theme context className 1`] = `
           >
             <button
               aria-disabled={false}
-              aria-label="Terra.datePicker.openCalendar"
+              aria-label=" Terra.datePicker.openCalendar"
               className="button neutral compact orion-fusion-theme button"
               data-terra-open-calendar-button={true}
               disabled={false}
@@ -391,12 +407,14 @@ exports[`correctly applies the theme context className 1`] = `
           id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         >
           <VisuallyHiddenText
-            text="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
+            aria-live="off"
+            text=" Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  "
           >
             <span
+              aria-live="off"
               className="visually-hidden-text"
             >
-              Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+               Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
             </span>
           </VisuallyHiddenText>
           <div
@@ -419,7 +437,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         Array [
           <button
             aria-disabled="false"
-            aria-label="Terra.datePicker.openCalendar"
+            aria-label=" Terra.datePicker.openCalendar"
             class="button neutral compact button"
             data-terra-open-calendar-button="true"
             title="Terra.datePicker.openCalendar"
@@ -486,6 +504,8 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
   }
   isIncomplete={false}
   isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   required={false}
   useExternalFormatMask={false}
 >
@@ -517,6 +537,19 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           <span
             className="visually-hidden-text"
             id="name-label-00000000-0000-0000-0000-000000000000"
+          />
+        </VisuallyHiddenText>
+        <VisuallyHiddenText
+          aria-atomic="true"
+          aria-live="assertive"
+          aria-relevant="all"
+          refCallback={[Function]}
+        >
+          <span
+            aria-atomic="true"
+            aria-live="assertive"
+            aria-relevant="all"
+            className="visually-hidden-text"
           />
         </VisuallyHiddenText>
         <DateInputLayout
@@ -731,6 +764,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         </DateInputLayout>
       </div>
       <Button
+        aria-label=" Terra.datePicker.openCalendar"
         className="button"
         data-terra-open-calendar-button={true}
         icon={
@@ -752,7 +786,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
               Array [
                 <button
                   aria-disabled="false"
-                  aria-label="Terra.datePicker.openCalendar"
+                  aria-label=" Terra.datePicker.openCalendar"
                   class="button neutral compact button"
                   data-terra-open-calendar-button="true"
                   title="Terra.datePicker.openCalendar"
@@ -796,7 +830,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       >
         <button
           aria-disabled={false}
-          aria-label="Terra.datePicker.openCalendar"
+          aria-label=" Terra.datePicker.openCalendar"
           className="button neutral compact button"
           data-terra-open-calendar-button={true}
           disabled={false}
@@ -855,12 +889,14 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
     >
       <VisuallyHiddenText
-        text="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
+        aria-live="off"
+        text=" Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  "
       >
         <span
+          aria-live="off"
           className="visually-hidden-text"
         >
-          Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+           Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
         </span>
       </VisuallyHiddenText>
       <div
@@ -896,6 +932,12 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
         class="visually-hidden-text"
         id="name-label-00000000-0000-0000-0000-000000000000"
       />
+      <span
+        aria-atomic="true"
+        aria-live="assertive"
+        aria-relevant="all"
+        class="visually-hidden-text"
+      />
       <input
         aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.monthLabel"
@@ -945,7 +987,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
     </div>
     <button
       aria-disabled="false"
-      aria-label="Terra.datePicker.openCalendar"
+      aria-label=" Terra.datePicker.openCalendar"
       class="button neutral compact button"
       data-terra-open-calendar-button="true"
       title="Terra.datePicker.openCalendar"
@@ -979,9 +1021,10 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
     id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
   >
     <span
+      aria-live="off"
       class="visually-hidden-text"
     >
-      Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+       Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
     </span>
     <div
       aria-hidden="true"
@@ -1015,6 +1058,12 @@ exports[`should render a date input with isInvalid prop 1`] = `
         class="visually-hidden-text"
         id="name-label-00000000-0000-0000-0000-000000000000"
       />
+      <span
+        aria-atomic="true"
+        aria-live="assertive"
+        aria-relevant="all"
+        class="visually-hidden-text"
+      />
       <input
         aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.monthLabel"
@@ -1064,7 +1113,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
     </div>
     <button
       aria-disabled="false"
-      aria-label="Terra.datePicker.openCalendar"
+      aria-label=" Terra.datePicker.openCalendar"
       class="button neutral compact button is-invalid"
       data-terra-open-calendar-button="true"
       title="Terra.datePicker.openCalendar"
@@ -1098,9 +1147,10 @@ exports[`should render a date input with isInvalid prop 1`] = `
     id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
   >
     <span
+      aria-live="off"
       class="visually-hidden-text"
     >
-      Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+       Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
     </span>
     <div
       aria-hidden="true"
@@ -1133,6 +1183,12 @@ exports[`should render a default date input 1`] = `
       <span
         class="visually-hidden-text"
         id="name-label-00000000-0000-0000-0000-000000000000"
+      />
+      <span
+        aria-atomic="true"
+        aria-live="assertive"
+        aria-relevant="all"
+        class="visually-hidden-text"
       />
       <input
         aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
@@ -1183,7 +1239,7 @@ exports[`should render a default date input 1`] = `
     </div>
     <button
       aria-disabled="false"
-      aria-label="Terra.datePicker.openCalendar"
+      aria-label=" Terra.datePicker.openCalendar"
       class="button neutral compact button"
       data-terra-open-calendar-button="true"
       title="Terra.datePicker.openCalendar"
@@ -1217,9 +1273,10 @@ exports[`should render a default date input 1`] = `
     id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
   >
     <span
+      aria-live="off"
       class="visually-hidden-text"
     >
-      Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+       Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
     </span>
     <div
       aria-hidden="true"
@@ -1239,7 +1296,7 @@ exports[`should render a default date input with all props 1`] = `
         Array [
           <button
             aria-disabled="false"
-            aria-label="Terra.datePicker.openCalendar"
+            aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
             class="button neutral compact button"
             data-terra-open-calendar-button="true"
             title="Terra.datePicker.openCalendar"
@@ -1307,6 +1364,8 @@ exports[`should render a default date input with all props 1`] = `
   }
   isIncomplete={false}
   isInvalid={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
   name="date-input"
   onBlur={[Function]}
   onButtonFocus={[Function]}
@@ -1353,6 +1412,19 @@ exports[`should render a default date input with all props 1`] = `
           >
             date-input
           </span>
+        </VisuallyHiddenText>
+        <VisuallyHiddenText
+          aria-atomic="true"
+          aria-live="assertive"
+          aria-relevant="all"
+          refCallback={[Function]}
+        >
+          <span
+            aria-atomic="true"
+            aria-live="assertive"
+            aria-relevant="all"
+            className="visually-hidden-text"
+          />
         </VisuallyHiddenText>
         <DateInputLayout
           dateFormatOrder="MDY"
@@ -1575,6 +1647,7 @@ exports[`should render a default date input with all props 1`] = `
         </DateInputLayout>
       </div>
       <Button
+        aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
         className="button"
         data-terra-open-calendar-button={true}
         icon={
@@ -1598,7 +1671,7 @@ exports[`should render a default date input with all props 1`] = `
               Array [
                 <button
                   aria-disabled="false"
-                  aria-label="Terra.datePicker.openCalendar"
+                  aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
                   class="button neutral compact button"
                   data-terra-open-calendar-button="true"
                   title="Terra.datePicker.openCalendar"
@@ -1642,7 +1715,7 @@ exports[`should render a default date input with all props 1`] = `
       >
         <button
           aria-disabled={false}
-          aria-label="Terra.datePicker.openCalendar"
+          aria-label="Sunday, January 1, 2017 Terra.datePicker.selected Terra.datePicker.openCalendar"
           className="button neutral compact button"
           data-terra-open-calendar-button={true}
           disabled={false}
@@ -1701,12 +1774,14 @@ exports[`should render a default date input with all props 1`] = `
       id="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
     >
       <VisuallyHiddenText
-        text="Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat"
+        aria-live="off"
+        text=" Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017 "
       >
         <span
+          aria-live="off"
           className="visually-hidden-text"
         >
-          Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat
+           Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017 
         </span>
       </VisuallyHiddenText>
       <div

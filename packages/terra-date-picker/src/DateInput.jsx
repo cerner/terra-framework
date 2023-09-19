@@ -116,6 +116,31 @@ const propTypes = {
    * The selected or entered date value to display in the date input.
    */
   value: PropTypes.string,
+  /**
+   * @private
+   * An array of ISO 8601 string representation of the dates to disable in the picker. The values must be in the `YYYY-MM-DD` format.
+   */
+  excludeDates: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * @private
+   * An array of ISO 8601 string representation of the dates to enable in the picker. All Other dates will be disabled. The values must be in the `YYYY-MM-DD` format.
+   */
+  includeDates: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * @private
+   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
+   */
+  maxDate: PropTypes.string,
+  /**
+   * @private
+   * An ISO 8601 string representation of the minimum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or after `01/01/1900`
+   */
+  minDate: PropTypes.string,
+  /**
+   * A function that gets called for each date in the picker to evaluate which date should be disabled.
+   * A return value of true will be enabled and false will be disabled.
+   */
+  filterDate: PropTypes.func,
 };
 
 const defaultProps = {
@@ -135,6 +160,11 @@ const defaultProps = {
   required: false,
   useExternalFormatMask: false,
   value: undefined,
+  excludeDates: undefined,
+  includeDates: undefined,
+  maxDate: '2100-12-31',
+  minDate: '1900-01-01',
+  filterDate: undefined,
 };
 
 const DatePickerInput = (props) => {
@@ -158,6 +188,11 @@ const DatePickerInput = (props) => {
     required,
     useExternalFormatMask,
     value,
+    excludeDates,
+    includeDates,
+    maxDate,
+    minDate,
+    filterDate,
     ...customProps
   } = props;
 
@@ -171,7 +206,7 @@ const DatePickerInput = (props) => {
   let dayInputRef;
   let monthInputRef;
   let yearInputRef;
-
+  let visuallyHiddenComponent = null;
   const { onCalendarButtonClick, shouldShowPicker } = customProps;
   delete customProps.onCalendarButtonClick;
   delete customProps.shouldShowPicker;
@@ -270,6 +305,17 @@ const DatePickerInput = (props) => {
     }
   };
 
+  const handleInvalidInputChange = (inputValue) => {
+    if (visuallyHiddenComponent && inputValue !== '+' && inputValue !== '=' && inputValue !== '-'
+        && inputValue !== '_' && inputValue !== 't' && inputValue !== 'T') {
+      visuallyHiddenComponent.innerText = intl.formatMessage({ id: 'Terra.datePicker.invalidDate' });
+    }
+  };
+
+  const setVisuallyHiddenComponent = (node) => {
+    visuallyHiddenComponent = node;
+  };
+
   /**
    * Sets the day, month and year based on input values, formats them
    * based on the date format variant, and passes the formatted date to onChange.
@@ -312,13 +358,13 @@ const DatePickerInput = (props) => {
         onChange(event, dateString);
       }
     }
-
     setDate(event, inputValue, type);
   };
 
   const handleDayChange = (event) => {
     let inputValue = event.target.value;
     if (!DateUtil.validDateInput(inputValue)) {
+      handleInvalidInputChange(inputValue);
       return;
     }
 
@@ -326,6 +372,7 @@ const DatePickerInput = (props) => {
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have to
     // check the length of inputValue to make sure that it is less then 2.
     if (inputValue === date.day || inputValue.length > 2 || Number(inputValue) > 31 || inputValue === '00') {
+      handleInvalidInputChange(inputValue);
       return;
     }
 
@@ -345,6 +392,7 @@ const DatePickerInput = (props) => {
   const handleMonthChange = (event) => {
     let inputValue = event.target.value;
     if (!DateUtil.validDateInput(inputValue)) {
+      handleInvalidInputChange(inputValue);
       return;
     }
 
@@ -352,6 +400,7 @@ const DatePickerInput = (props) => {
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have to
     // check the length of inputValue to make sure that it is less then 2.
     if (inputValue === date.month || inputValue.length > 2 || Number(inputValue) > 12 || inputValue === '00') {
+      handleInvalidInputChange(inputValue);
       return;
     }
 
@@ -364,13 +413,13 @@ const DatePickerInput = (props) => {
         inputValue = `0${inputValue}`;
       }
     }
-
     handleDateChange(event, inputValue, DateUtil.inputType.MONTH);
   };
 
   const handleYearChange = (event) => {
     const inputValue = event.target.value;
     if (!DateUtil.validDateInput(inputValue)) {
+      handleInvalidInputChange(inputValue);
       return;
     }
 
@@ -378,16 +427,19 @@ const DatePickerInput = (props) => {
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have to
     // check the length of inputValue to make sure that it is less then 4.
     if (inputValue === date.year || inputValue.length > 4) {
+      handleInvalidInputChange(inputValue);
       return;
     }
 
     // Ignore the 3rd entry if the first two digits are not 19, 20 or 21
     if (inputValue.length === 3 && (Number(inputValue) < 190 || Number(inputValue) > 210)) {
+      handleInvalidInputChange(inputValue);
       return;
     }
 
     // Ignore the 4th entry if the year value is not between MIN_YEAR and MAX_YEAR
     if (inputValue.length === 4 && (Number(inputValue) < Number(DateUtil.MIN_YEAR) || Number(inputValue) > Number(DateUtil.MAX_YEAR))) {
+      handleInvalidInputChange(inputValue);
       return;
     }
 
@@ -765,6 +817,23 @@ const DatePickerInput = (props) => {
     { 'is-invalid': isInvalid },
   ]);
 
+  // Indicates selected date from calendar popup for SR
+  let inputDate;
+  if (DateUtil.isValidDate(value, momentDateFormat)) {
+    inputDate = `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}`;
+  }
+  let calendarDate = inputDate ? `${inputDate} ${intl.formatMessage({ id: 'Terra.datePicker.selected' })}` : '';
+
+  // Check if date is excluded or out of range or not included or filtered
+  let invalidEntry = '';
+  if (DateUtil.isDateExcluded(DateUtil.createSafeDate(dateValue, initialTimeZone), props.excludeDates)
+      || DateUtil.isDateOutOfRange(DateUtil.createSafeDate(dateValue, initialTimeZone), DateUtil.createSafeDate(DateUtil.getMinDate(props.minDate), initialTimeZone), DateUtil.createSafeDate(DateUtil.getMaxDate(props.maxDate), initialTimeZone))
+      || DateUtil.isDateNotIncluded(DateUtil.createSafeDate(dateValue, initialTimeZone), props.includeDates)
+      || (props.filterDate && !props.filterDate(DateUtil.createSafeDate(dateValue, initialTimeZone)))) {
+    invalidEntry = `${intl.formatMessage({ id: 'Terra.datePicker.invalidDate' })}.`;
+    calendarDate = '';
+  }
+
   return (
     <div className={cx(theme.className)}>
       <div className={cx('date-input-container')}>
@@ -783,6 +852,12 @@ const DatePickerInput = (props) => {
           />
           <VisuallyHiddenText text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}` : label} />
           <VisuallyHiddenText id={nameLabelId} text={name} />
+          <VisuallyHiddenText
+            refCallback={setVisuallyHiddenComponent}
+            aria-atomic="true"
+            aria-relevant="all"
+            aria-live="assertive"
+          />
           <DateInputLayout
             dateFormatOrder={dateFormatOrder}
             separator={dateSpacer}
@@ -804,11 +879,12 @@ const DatePickerInput = (props) => {
           onBlur={onBlur}
           onFocus={onButtonFocus}
           refCallback={buttonRefCallback}
+          aria-label={`${calendarDate} ${intl.formatMessage({ id: 'Terra.datePicker.openCalendar' })}`}
         />
       </div>
       {!useExternalFormatMask && (
         <div id={formatDescriptionId} className={cx('format-text')}>
-          <VisuallyHiddenText text={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}`} />
+          <VisuallyHiddenText aria-live={DateUtil.isMac() ? 'polite' : 'off'} text={`${invalidEntry} ${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format} ${inputDate || ''} `} />
           <div aria-hidden="true">
             {`(${format})`}
           </div>
