@@ -751,6 +751,8 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
             isReversed={false}
             key="reject"
             onClick={[MockFunction]}
+            refCallback={[Function]}
+            tabIndex="0"
             text="reject"
             type="button"
             variant="neutral"
@@ -764,8 +766,6 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
             isReversed={false}
             key="accept"
             onClick={[MockFunction]}
-            refCallback={[Function]}
-            tabIndex="0"
             text="accept"
             type="button"
             variant="neutral"
