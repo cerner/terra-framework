@@ -89,12 +89,25 @@ const CollapsibleMenuViewHyperlink = ({
   ...customProps
 },
 { isCollapsibleMenuItem }) => {
+  const handleOnClick = (event) => {
+    if (href) {
+      window.location.href = href;
+    } else {
+      onClick(event);
+    }
+  };
+
   if (isCollapsibleMenuItem) {
     return (
       <Menu.Item
         {...customProps}
         text={text}
-        onClick={() => { window.location.href(href); }}
+        onClick={(event) => handleOnClick(event)}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        onKeyDown={onKeyDown}
+        onKeyUp={onKeyUp}
+        onMouseDown={onMouseDown}
       />
     );
   }

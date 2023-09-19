@@ -86,6 +86,15 @@ Terra.describeViewports('Unselectable Toggle', ['tiny', 'small', 'medium', 'huge
   });
 });
 
+Terra.describeViewports('Filepath Specific Props', ['tiny', 'small'], () => {
+  it('should display hyperlinks and chevron right icons', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/filepath');
+    Terra.validates.element('default filepath');
+    $('[data-collapsible-menu-toggle]').click();
+    Terra.validates.element('default filepath menu open', { selector: '#root', rules: ignoredA11y });
+  });
+});
+
 // Only test viewports that have collapsed menu items
 Terra.describeViewports('Start Aligned Hidden Open', ['tiny', 'small', 'medium', 'large'], () => {
   it('should display start aligned with menu open', () => {
