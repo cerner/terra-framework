@@ -44,6 +44,11 @@ export default class AppPlan extends React.Component {
 
   createCell(cell) {
     if (cell.title === '123-456-7890') {
+      /* eslint-disable no-alert */
+      const addAlert = () => {
+        alert('Menu item is clicked');
+      };
+      /* eslint-enable no-alert */
       const menu = (
         <div className="wrapper" ref={this.setButtonNode}>
           <Menu
@@ -52,9 +57,9 @@ export default class AppPlan extends React.Component {
             onRequestClose={this.handleRequestClose}
             isArrowDisplayed
           >
-            <Menu.Item text="Manage" key="manage-in-new-tab" className="CarePlanMenu" id="care-plans-rollup-ManageItem" />
+            <Menu.Item text="Manage" key="manage-in-new-tab" className="CarePlanMenu" id="care-plans-rollup-ManageItem" onClick={addAlert} />
             <Menu.Divider key="Divider1" />
-            <Menu.Item text="Modify" isDisabled key="modify" id="care-plans-rollup-modifyItem" />
+            <Menu.Item text="Modify" isDisabled key="modify" id="care-plans-rollup-modifyItem" onClick={addAlert} />
           </Menu>
           <Button onClick={this.handleButtonClick} id="actions" text="Actions" />
         </div>

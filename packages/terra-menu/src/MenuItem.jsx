@@ -191,9 +191,8 @@ class MenuItem extends React.Component {
   }
 
   wrapOnClick(event) {
-    if (this.props.isDisabled) {
-      event.stopPropagation();
-    } else {
+    event.stopPropagation();
+    if (!this.props.isDisabled) {
       this.handleToggled(event);
 
       if (this.props.onClick) {
