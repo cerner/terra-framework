@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added documentation for hyperlinks in `terra-collapsible-menu-view`.
+
 * Changed
   * Updated examples and tests for `terra-worklist-data-grid` to properly update row selection data.
 
