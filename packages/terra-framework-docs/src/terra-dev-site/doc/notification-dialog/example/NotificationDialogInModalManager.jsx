@@ -28,6 +28,7 @@ const ModalContent = () => {
 
   const handleOpenModal = () => {
     setIsOpen(true);
+    document.querySelector('#root').setAttribute('inert');
   };
 
   const handleCloseModal = () => {
