@@ -8,15 +8,22 @@ const cx = classNames.bind(styles);
 const propTypes = {
   isLabelHidden: PropTypes.bool,
   label: PropTypes.string,
+  children: PropTypes.node,
   id: PropTypes.string,
 };
 
-const TabContentTemplate = ({ isLabelHidden, label, id }) => (
+const TabContentTemplate = ({
+  isLabelHidden, label, id, children,
+}) => (
   <div className={cx('tab-content')} id={id}>
     {isLabelHidden ? <h3 className="truncationHeader">{label}</h3> : null}
-    Content for
-    {' '}
-    <i>{label}</i>
+    {children || (
+      <div>
+        Content for
+        {' '}
+        <i>{label}</i>
+      </div>
+    )}
   </div>
 );
 

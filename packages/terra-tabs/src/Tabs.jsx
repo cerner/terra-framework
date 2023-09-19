@@ -79,6 +79,10 @@ const propTypes = {
    * The label to set on the add icon element.
    */
   ariaLabelAddTab: PropTypes.string,
+  /**
+   * Sets focus on content when set to `true`.
+   */
+  setFocusOnContent: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -86,6 +90,7 @@ const defaultProps = {
   fill: false,
   isDraggable: false,
   isClosable: false,
+  setFocusOnContent: false,
 };
 
 class Tabs extends React.Component {
@@ -127,11 +132,14 @@ class Tabs extends React.Component {
       isDraggable,
       onTabOrderChange,
       isClosable,
+      setFocusOnContent,
       ...customProps
     } = this.props;
 
     const commonTabItems = [];
-    const activeTabKey = this.state.activeKey || this.props.activeKey;
+
+    const foundActiveTabKey = React.Children.toArray(this.props.children).filter(child => child.key === this.props.activeKey);
+    const activeTabKey = foundActiveTabKey.length > 0 ? this.props.activeKey : this.state.activeKey;
 
     React.Children.forEach(children, child => {
       let content;
@@ -140,7 +148,7 @@ class Tabs extends React.Component {
         content = React.Children.map(child.props.children, contentItem => (
           React.cloneElement(contentItem)
         ));
-        tabContent = <CommonTabContent variant="framework">{content}</CommonTabContent>;
+        tabContent = <CommonTabContent setFocusOnContent={setFocusOnContent} variant="framework">{content}</CommonTabContent>;
       }
       commonTabItems.push(
         <CommonTabItem
