@@ -36,6 +36,20 @@ exports[`CollapsibleMenuViewDivider correctly applies the theme context classNam
 </CollapsibleMenuViewDivider>
 `;
 
+exports[`CollapsibleMenuViewDivider should not render a menu divider if using the chevron right icon in the context of the collapsible menu 1`] = `""`;
+
+exports[`CollapsibleMenuViewDivider should render a chevron right icon 1`] = `
+<div
+  className="chevron-right face-up-item"
+>
+  <IconChevronRight
+    data-name="Layer 1"
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</div>
+`;
+
 exports[`CollapsibleMenuViewDivider should render a default component 1`] = `
 <div
   className="divider face-up-item"

@@ -64,11 +64,6 @@ const propTypes = {
    * Sets the hyperlink variant. One of `default`, `external`, `image`, `video`, `audio`, `document`.
    */
   variant: PropTypes.oneOf(['default', 'external', 'image', 'video', 'audio', 'document']),
-  /**
-   * @private
-   * The intl object to be injected for translations.
-   */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {

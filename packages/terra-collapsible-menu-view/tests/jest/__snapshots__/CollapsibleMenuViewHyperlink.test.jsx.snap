@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollapsibleMenuViewHyperlink Collapsible Menu Context should render a menu item 1`] = `
+<MenuItem
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isActive={false}
+  isDisabled={false}
+  isHighlighted={false}
+  isInstructionsForUse={false}
+  isToggled={false}
+  onClick={[Function]}
+  subMenuItems={Array []}
+  text="Testing"
+/>
+`;
+
+exports[`CollapsibleMenuViewHyperlink should merge custom props 1`] = `
+<div
+  className="face-up-item"
+>
+  <InjectIntl(Hyperlink)
+    href="https://www.oracle.com/"
+    text="Testing"
+    variant="default"
+  />
+</div>
+`;
+
+exports[`CollapsibleMenuViewHyperlink should render a default component 1`] = `
+<div
+  className="face-up-item"
+>
+  <InjectIntl(Hyperlink)
+    href="https://www.oracle.com/"
+    text="Testing"
+    variant="default"
+  />
+</div>
+`;
