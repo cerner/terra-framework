@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import ThemeContext from 'terra-theme-context';
 import classNames from 'classnames/bind';
@@ -6,7 +6,7 @@ import styles from './Row.module.scss';
 import RowSelectionCell from './RowSelectionCell';
 import Cell from './Cell';
 import cellShape from '../proptypes/cellShape';
-import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
+import { columnShape } from '../proptypes/columnShape';
 
 const cx = classNames.bind(styles);
 
@@ -49,15 +49,9 @@ const propTypes = {
   hasRowSelection: PropTypes.bool,
 
   /**
-   * Callback function that will be called when a row is selected. Parameters:
-   * @param {string} rowId rowId
-   */
-  onRowSelect: PropTypes.func,
-
-  /**
    * All columns currently displayed.
    */
-  displayedColumns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape),
+  displayedColumns: PropTypes.arrayOf(columnShape),
 
   /**
    * Callback function that will be called when a cell in the row is selected.
@@ -89,7 +83,6 @@ function Row(props) {
     ariaLabel,
     displayedColumns,
     rowHeaderIndex,
-    onRowSelect,
     onCellSelect,
   } = props;
 
@@ -98,16 +91,6 @@ function Row(props) {
   const [isHovered, setHovered] = useState(false);
 
   const columnIndexOffSet = hasRowSelection ? 1 : 0;
-
-  const handleCellSelect = useCallback((selectionDetails) => {
-    if (hasRowSelection || selectionDetails.isShiftPressed) {
-      if (onRowSelect) {
-        onRowSelect(selectionDetails);
-      }
-    } else if (onCellSelect) {
-      onCellSelect(selectionDetails);
-    }
-  }, [hasRowSelection, onCellSelect, onRowSelect]);
 
   const getCellData = (cellRowIndex, cellColumnIndex, cellData, rowId) => {
     const columnId = displayedColumns[cellColumnIndex].id;
@@ -125,7 +108,7 @@ function Row(props) {
         isSelectable={cellData.isSelectable}
         isRowHeader={isRowHeader}
         isHighlighted={isHovered || isSelected}
-        onCellSelect={handleCellSelect}
+        onCellSelect={onCellSelect}
         height={height}
       >
         {cellData.content}
@@ -141,13 +124,13 @@ function Row(props) {
       columnIndex={0}
       isSelected={isSelected}
       ariaLabel={ariaLabel}
-      onCellSelect={handleCellSelect}
+      onCellSelect={onCellSelect}
     />
   ) : null;
 
   return (
     <tr
-      className={cx('worklist-data-grid-row', {
+      className={cx('row', {
         selected: isSelected,
         selectable: hasRowSelection,
       }, theme.className)}
