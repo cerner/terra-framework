@@ -13,5 +13,6 @@
   "Terra.datePicker.calendarInstructions": "Använd piltangenterna för att ändra urval. Tryck Enter för att välja ett datum. Tryck Escape för att stänga Datumväljaren.",
   "Terra.datePicker.dateFormatLabel": "Datumformat:",
   "Terra.datePicker.selected": "valt.",
-  "Terra.datePicker.invalidDate": "Ange ett giltigt datum"
+  "Terra.datePicker.invalidDate": "Ange ett giltigt datum",
+  "Terra.datePicker.hotKey": "Tryck på T för att ange aktuellt datum, plus-tangenten för nästa datum och minus-tangenten för föregående datum"
 }

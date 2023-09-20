@@ -885,7 +885,12 @@ const DatePickerInput = (props) => {
       </div>
       {!useExternalFormatMask && (
         <div id={formatDescriptionId} className={cx('format-text')}>
-          <VisuallyHiddenText aria-live={DateUtil.isMac() ? 'polite' : 'off'} text={`${invalidEntry} ${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format} ${inputDate || ''} `} />
+          <VisuallyHiddenText
+            aria-live={DateUtil.isMac() ? 'polite' : 'off'}
+            text={`${invalidEntry} 
+            ${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} 
+            ${format}. ${inputDate || ''}. ${intl.formatMessage({ id: 'Terra.datePicker.hotKey' })} `}
+          />
           <div aria-hidden="true">
             {`(${format})`}
           </div>
