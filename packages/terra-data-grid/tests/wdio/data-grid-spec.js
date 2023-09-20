@@ -18,6 +18,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
     });
 
     it('renders with no data rows', () => {
+      browser.$$('thead tr')[0].$$('th')[0].moveTo(); // Explicitly hover over the first column to generate consistent screenshots.
       browser.keys(['Tab']); // Cell 0,0 gets focus
       browser.keys(['ArrowDown']); // Down Arrow should have no effect since there are no data rows.
       browser.keys(['ArrowRight']); // Cell 0,1 gets focus
