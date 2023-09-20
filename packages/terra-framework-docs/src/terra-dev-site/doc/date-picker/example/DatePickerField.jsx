@@ -7,14 +7,17 @@ const cx = classNames.bind(styles);
 
 const DatePickerFieldExample = () => {
   const [date, setDate] = useState('');
+  const [invalid, setInValid] = useState(false);
 
   const handleDateChange = (event, dateValue) => {
     setDate(dateValue);
+    setInValid(false);
   };
 
   const handleDateChangeRaw = (event, dateValue, metadata) => {
-    if (!metadata.isValidValue) {
+    if (!metadata.isValidValue && metadata.inputValue.length === 10) {
       setDate(null);
+      setInValid(true);
     }
   };
 
@@ -30,6 +33,8 @@ const DatePickerFieldExample = () => {
         datePickerId="default-field"
         onChange={handleDateChange}
         onChangeRaw={handleDateChangeRaw}
+        isInvalid={invalid}
+        error={<p>Enter valid date</p>}
       />
     </div>
   );
