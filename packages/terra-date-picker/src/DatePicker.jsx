@@ -494,6 +494,11 @@ class DatePicker extends React.Component {
                 ariaLabel={ariaLabel}
                 useExternalFormatMask={useExternalFormatMask}
                 initialTimeZone={initialTimeZone}
+                excludeDates={DateUtil.filterInvalidDates(excludeDates)}
+                includeDates={DateUtil.filterInvalidDates(includeDates)}
+                maxDate={DateUtil.createSafeDate(DateUtil.getMaxDate(maxDate), initialTimeZone)}
+                minDate={DateUtil.createSafeDate(DateUtil.getMinDate(minDate), initialTimeZone)}
+                filterDate={this.handleFilterDate}
               />
             )}
             customInputRef="firstInputRefCallback"

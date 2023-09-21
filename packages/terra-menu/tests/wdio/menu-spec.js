@@ -163,4 +163,24 @@ Terra.describeViewports('Menu', ['medium'], () => {
     expect($('#TestContent2').isFocused()).toBeTruthy();
     Terra.validates.element('navigated to disabled item', { selector: '#root' });
   });
+
+  it('the click event on disabled should be absorbed', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/disabled-menu-item-click-event');
+    $('#no-actions').click();
+    Terra.validates.element('Before disabled click action');
+    $('#actions').click();
+    $('#care-plans-rollup-modifyItem').waitForDisplayed();
+    $('#care-plans-rollup-modifyItem').click();
+    Terra.validates.element('After disabled click action', { selector: '#root' });
+  });
+
+  it('the click event on menu item should be absorbed', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/disabled-menu-item-click-event');
+    $('#no-actions').click();
+    Terra.validates.element('Before menu click action');
+    $('#actions').click();
+    $('#care-plans-rollup-ManageItem').waitForDisplayed();
+    $('#care-plans-rollup-ManageItem').click();
+    Terra.validates.element('After menu click action', { selector: '#root' });
+  });
 });

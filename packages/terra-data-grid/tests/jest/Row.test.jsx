@@ -58,7 +58,7 @@ describe('Row', () => {
       />,
     );
 
-    const tableRow = wrapper.find('tr.worklist-data-grid-row');
+    const tableRow = wrapper.find('tr.row');
     expect(tableRow).toHaveLength(1);
     expect(tableRow.find(Cell)).toHaveLength(3);
     expect(wrapper).toMatchSnapshot();

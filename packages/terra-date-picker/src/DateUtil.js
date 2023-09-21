@@ -126,6 +126,30 @@ class DateUtil {
   }
 
   /**
+   * Determines if a date matched the year, month, and day of any dates in the list.
+   * @param {object} sourceDate - The moment date to check for match.
+   * @param {array} includedDates - An array of moment dates to check for.
+   * @return {boolean} - True if the sourceDate is found in the list. False, otherwise.
+   */
+  static isDateNotIncluded(sourceDate, includedDates) {
+    if (!sourceDate || !sourceDate.isValid() || !includedDates) {
+      return false;
+    }
+
+    const includeMomentDates = DateUtil.filterInvalidDates(includedDates);
+
+    if (includeMomentDates) {
+      for (let index = 0; index < includeMomentDates.length; index += 1) {
+        if (sourceDate.isSame(includeMomentDates[index], 'day')) {
+          return false;
+        }
+      }
+    }
+
+    return true;
+  }
+
+  /**
    * Converts a date string in the given format to the ISO format with only the date part.
    * @param {string} date - The date string to convert.
    * @param {string} format - The format of the date string.
@@ -558,6 +582,13 @@ class DateUtil {
     }
     return momentDate.format('YYYY-MM-DD');
   }
+
+  /**
+   * Util to determine if the user agent indicates that it is macOS
+   * @return {boolean}
+   */
+
+  static isMac = () => navigator.userAgent.indexOf('Mac') !== -1 && navigator.userAgent.indexOf('Win') === -1;
 }
 
 DateUtil.inputType = {
