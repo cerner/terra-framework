@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Modified code for tab active indicator issue.
+
 ## 7.7.0 - (September 19, 2023)
 
 * Added
