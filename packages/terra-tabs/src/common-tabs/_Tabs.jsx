@@ -101,6 +101,10 @@ const propTypes = {
    * intl object programmatically imported through injectIntl from react-intl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
+   * Whether tab is vertical or horizontal orientation.
+   */
+  verticalOrientation: PropTypes.bool,
 };
 
 class Tabs extends React.Component {
@@ -262,6 +266,19 @@ class Tabs extends React.Component {
       this.showMoreButton = showMoreButton;
       this.hiddenStartIndex = newHideIndex;
       this.forceUpdate();
+    }
+
+    if (this.props.verticalOrientation) {
+    // const tablist = document.querySelectorAll('[data-terra-drag-focus="false"]');
+      const tabButtons = document.querySelectorAll('[role="tab"]');
+      const tabContent = document.querySelector('[role="tabpanel"]');
+      console.log(tabButtons);
+      console.log(tabContent);
+    // let totalheight = 0;
+    // tabButtons.forEach((button, index) => {
+    // totalheight += button[index].getBoundingClientRect().height;
+    // });
+    // tabContent.style.height = `${totalheight}px`;
     }
   }
 
@@ -470,7 +487,7 @@ class Tabs extends React.Component {
 
   render() {
     const {
-      ariaLabel, variant, onChange, onSelectAddButton, ariaLabelAddTab, isDraggable,
+      ariaLabel, variant, onChange, onSelectAddButton, ariaLabelAddTab, isDraggable, verticalOrientation,
     } = this.props;
     const theme = this.context;
     const enabledTabs = this.state.visibleTabData.filter(tab => !tab.isDisabled);
@@ -563,8 +580,8 @@ class Tabs extends React.Component {
         'data-tab-is-calculating': 'true',
       };
     }
-    const commonTabsClassNames = cx('tab-container', theme.className);
-    const commonTabsContainerClassNames = cx('container', theme.className);
+    const commonTabsClassNames = verticalOrientation ? cx('tab-container-vertical', theme.className) : cx('tab-container', theme.className);
+    const commonTabsContainerClassNames = verticalOrientation ? cx('container-vertical', theme.className) : cx('container', theme.className);
     const commonDivClassNames = cx('divcontainer', theme.className);
 
     window['__react-beautiful-dnd-disable-dev-warnings'] = true;
@@ -585,7 +602,7 @@ class Tabs extends React.Component {
                   className={commonTabsClassNames}
                   role="tablist"
                   aria-label={ariaLabel}
-                  aria-orientation="horizontal"
+                  aria-orientation={verticalOrientation ? 'vertical' : 'horizontal'}
                   aria-owns={hiddenIds.join(' ')}
                   data-terra-drag-focus
                 >
@@ -644,7 +661,7 @@ class Tabs extends React.Component {
           className={commonTabsClassNames}
           role="tablist"
           aria-label={ariaLabel}
-          aria-orientation="horizontal"
+          aria-orientation={verticalOrientation ? 'vertical' : 'horizontal'}
           aria-owns={hiddenIds.join(' ')}
         >
           {visibleTabs}

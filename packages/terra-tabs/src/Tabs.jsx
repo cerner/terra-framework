@@ -79,6 +79,10 @@ const propTypes = {
    * The label to set on the add icon element.
    */
   ariaLabelAddTab: PropTypes.string,
+  /**
+   * Whether tab is vertical or horizontal orientation.
+   */
+  verticalOrientation: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -127,6 +131,7 @@ class Tabs extends React.Component {
       isDraggable,
       onTabOrderChange,
       isClosable,
+      verticalOrientation,
       ...customProps
     } = this.props;
 
@@ -186,6 +191,7 @@ class Tabs extends React.Component {
         variant="framework"
         isDraggable={isDraggable}
         onTabOrderChange={onTabOrderChange}
+        verticalOrientation={verticalOrientation}
         {...customProps}
       >
         {commonTabItems}
