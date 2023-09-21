@@ -82,9 +82,15 @@ const AddTab = () => {
     setTabs(tabsArray);
   };
 
+  const handleSelection = (event, selectedKey) => {
+    if (selectedKey !== activeKey) {
+      setActiveKey(selectedKey);
+    }
+  };
+
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs isDraggable activeKey={activeKey} onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab">
+      <Tabs onChange={handleSelection} isDraggable setFocusOnContent activeKey={activeKey} onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab">
         { tabs.map((tab) => (
           <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} customDisplay={tab.customDisplay} isDisabled={tab.isDisabled} icon={tab.icon} key={tab.key} id={tab.key}>
             <TabContentTemplate label={tab.content} />

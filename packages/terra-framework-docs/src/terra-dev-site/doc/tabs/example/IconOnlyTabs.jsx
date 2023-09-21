@@ -37,8 +37,6 @@ const IconOnlyTabs = () => {
     </Tabs.Pane>
   );
 
-
-
   const briefcaseTab1 = (
     <Tabs.Pane label="Briefcase1" icon={<IconBriefcase />} isIconOnly key="Briefcase1">
       <TabContent label="Briefcase" />
@@ -58,8 +56,8 @@ const IconOnlyTabs = () => {
   );
 
   return (
-    <div className={cx('content-container')}>
-      <Tabs fill verticalOrientation>
+    <div className={cx('content-wrapper')}>
+      <Tabs fill verticalOrientation setFocusOnContent>
         {searchTab}
         {briefcaseTab}
         {bookmarkTab}

@@ -2,6 +2,28 @@
 
 ## Unreleased
 
+## 1.36.0 - (September 19, 2023)
+
+* Updated
+  * Updated example for `terra-date-picker` with isInvalid prop and error message.
+
+## 1.35.0 - (September 14, 2023)
+
+* Added
+  * Added aria-label prop for terra-popup to announce the close instruction.
+  * Added example for `terra-tabs` to test the focus traverse with interactive element within the tab content.
+  * Added `terra-brand-footer` as a dependency.
+  * Added `terra-file-path` as a dependency.
+  * Added a test case for menu item click event bleed through example
+
+* Changed
+  * Updated examples and tests for `terra-worklist-data-grid` to properly update row selection data.
+  * Migrated `terra-worklist-data-grid` docs/tests to new `terra-data-grid`.
+  * Updated add tabs examples to be controlled tabs.
+
+* Updated
+  * Updated example for `terra-date-picker` with isInvalid prop.
+
 ## 1.34.0 - (September 5, 2023)
 
 * Changed
