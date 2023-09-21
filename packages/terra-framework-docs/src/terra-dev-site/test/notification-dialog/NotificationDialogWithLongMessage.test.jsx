@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Button from 'terra-button';
 import NotificationDialog from 'terra-notification-dialog';
 
@@ -84,6 +84,11 @@ turpis nisi pulvinar neque, ut lacinia urna purus sit amet elit.`;
 
 const CompleteNotificationDialogWithLongMessage = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonElement = useRef();
+
+  const setButtonNode = (node) => {
+    buttonElement.current = node;
+  };
 
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -91,6 +96,8 @@ const CompleteNotificationDialogWithLongMessage = () => {
 
   const handleCloseModal = () => {
     setIsOpen(false);
+    document.querySelector('#root').removeAttribute('inert');
+    buttonElement.current.focus();
   };
 
   return (
@@ -100,6 +107,7 @@ const CompleteNotificationDialogWithLongMessage = () => {
           variant="hazard-high"
           dialogTitle="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
           startMessage={message}
+          onRequestClose={handleCloseModal}
           acceptAction={{
             text: 'accept',
             onClick: handleCloseModal,
@@ -112,7 +120,7 @@ const CompleteNotificationDialogWithLongMessage = () => {
           emphasizedAction="accept"
         />
       )}
-      <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} />
+      <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} refCallback={setButtonNode} />
     </>
   );
 };

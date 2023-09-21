@@ -1090,13 +1090,13 @@ exports[`correctly applies the theme context className 1`] = `
                           >
                             <button
                               aria-disabled="false"
-                              class="button emphasis is-focused orion-fusion-theme"
+                              class="button emphasis is-focused"
                               data-terra-notification-dialog-button="accept"
                               tabindex="0"
                               type="button"
                             >
                               <span
-                                class="button-label text-only"
+                                class="button-label-win text-only"
                               >
                                 <span
                                   class=""
@@ -1107,12 +1107,12 @@ exports[`correctly applies the theme context className 1`] = `
                             </button>
                             <button
                               aria-disabled="false"
-                              class="button neutral orion-fusion-theme"
+                              class="button neutral"
                               data-terra-notification-dialog-button="reject"
                               type="button"
                             >
                               <span
-                                class="button-label text-only"
+                                class="button-label-win text-only"
                               >
                                 <span
                                   class=""
@@ -1250,7 +1250,7 @@ exports[`correctly applies the theme context className 1`] = `
                           >
                             <button
                               aria-disabled={false}
-                              className="button emphasis is-focused orion-fusion-theme"
+                              className="button emphasis is-focused"
                               data-terra-notification-dialog-button="accept"
                               disabled={false}
                               onBlur={[Function]}
@@ -1263,7 +1263,7 @@ exports[`correctly applies the theme context className 1`] = `
                               type="button"
                             >
                               <span
-                                className="button-label text-only"
+                                className="button-label-win text-only"
                               >
                                 <span
                                   className=""
@@ -1288,7 +1288,7 @@ exports[`correctly applies the theme context className 1`] = `
                           >
                             <button
                               aria-disabled={false}
-                              className="button neutral orion-fusion-theme"
+                              className="button neutral"
                               data-terra-notification-dialog-button="reject"
                               disabled={false}
                               onBlur={[Function]}
@@ -1300,7 +1300,7 @@ exports[`correctly applies the theme context className 1`] = `
                               type="button"
                             >
                               <span
-                                className="button-label text-only"
+                                className="button-label-win text-only"
                               >
                                 <span
                                   className=""
