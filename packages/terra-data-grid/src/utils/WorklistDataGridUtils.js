@@ -8,11 +8,8 @@ const ROW_SELECTION_COLUMN = {
   isResizable: false,
 };
 
-const FIRST_NON_HEADER_ROW = 1;
-
 const WorklistDataGridUtils = {
   ROW_SELECTION_COLUMN,
-  FIRST_NON_HEADER_ROW,
 };
 
 export default WorklistDataGridUtils;

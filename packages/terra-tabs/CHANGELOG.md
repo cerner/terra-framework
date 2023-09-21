@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 7.7.0 - (September 19, 2023)
+
 * Added
   * Added prop to support the focus traverse within the tab content.
 
