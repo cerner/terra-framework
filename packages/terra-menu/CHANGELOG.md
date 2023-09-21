@@ -4,6 +4,7 @@
 
 * Added
   * Fixed the disabled menu item click event bleed through to other controls
+  * Added outline style for sub menu header back button
 
 * Changed
   * Updated `terra-arrange` from `v3.51.0` to `v3.53.0`.
@@ -81,9 +82,9 @@
 
 ## 6.65.1 - (April 12, 2023)
 
-* Fixed 
+* Fixed
   * Fixed issue of navigation on menu header click.
-  
+
 * Added
   * Allow screen readers to recognise as menu button
   * Added context for menu item index, item with submenu and selected/unselected state
@@ -97,7 +98,7 @@
 
 * Changed
   * Allow existing classnames on icon to be retained
-  
+
 ## 6.63.0 - (February 14, 2023)
 
 * Changed
