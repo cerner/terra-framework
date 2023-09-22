@@ -116,25 +116,50 @@ class CollapsibleMenuView extends React.Component {
     let calcWidth = 0;
     let menuHidden = true;
 
-    for (let i = 0; i < React.Children.count(this.props.children); i += 1) {
-      const child = this.container.children[i];
-      const childWidth = child.getBoundingClientRect().width;
-      calcWidth += childWidth;
+    if (this.props.isReversed) {
+      for (let i = React.Children.count(this.props.children) - 1; i >= 0; i -= 1) {
+        const child = this.container.children[i];
+        const childWidth = child.getBoundingClientRect().width;
+        calcWidth += childWidth;
 
-      if (calcWidth > availableWidth) {
-        // If last child fits in the available space, leave it face up
-        if (!this.collapsedMenuAlwaysShown && i === this.props.children.length - 1 && calcWidth <= width) {
+        if (calcWidth > availableWidth) {
+          // If last child fits in the available space, leave it face up
+          if (!this.collapsedMenuAlwaysShown && i === this.props.children.length - 1 && calcWidth <= width) {
+            break;
+          }
+
+          // If divider is the last element to be hidden on collapse menu, leave it face up
+          if (React.Children.count(this.props.children) > 1 && this.props.children[i].type !== CollapsibleMenuViewDivider) {
+            hiddenStartIndex = i + 1;
+          } else {
+            hiddenStartIndex = i;
+          }
+
+          menuHidden = false;
           break;
         }
+      }
+    } else {
+      for (let i = 0; i < React.Children.count(this.props.children); i += 1) {
+        const child = this.container.children[i];
+        const childWidth = child.getBoundingClientRect().width;
+        calcWidth += childWidth;
 
-        // If divider is the last element to be hidden on collapse menu, leave it face up
-        if (React.Children.count(this.props.children) > 1 && this.props.children[i].type === CollapsibleMenuViewDivider) {
-          hiddenStartIndex = i - 1;
-        } else {
-          hiddenStartIndex = i;
+        if (calcWidth > availableWidth) {
+          // If last child fits in the available space, leave it face up
+          if (!this.collapsedMenuAlwaysShown && i === this.props.children.length - 1 && calcWidth <= width) {
+            break;
+          }
+
+          // If divider is the last element to be hidden on collapse menu, leave it face up
+          if (React.Children.count(this.props.children) > 1 && this.props.children[i].type === CollapsibleMenuViewDivider) {
+            hiddenStartIndex = i - 1;
+          } else {
+            hiddenStartIndex = i;
+          }
+          menuHidden = false;
+          break;
         }
-        menuHidden = false;
-        break;
       }
     }
 
@@ -181,7 +206,6 @@ class CollapsibleMenuView extends React.Component {
       { 'is-calculating': this.isCalculating },
       { 'collapsible-menu-view-flex-end': !isStartAligned },
       { 'collapsible-menu-view-flex-start': isStartAligned },
-      { reverse: isReversed },
       theme.className,
     ),
 
@@ -195,28 +219,46 @@ class CollapsibleMenuView extends React.Component {
 
     if (this.hiddenStartIndex >= 0) {
       visibleChildren = React.Children.toArray(children);
-      hiddenChildren = this.collapsedMenuAlwaysShown
-        ? visibleChildren.splice(this.hiddenStartIndex).concat(prepopulatedBaseDivider).concat(hiddenChildren)
-        : visibleChildren.splice(this.hiddenStartIndex).concat(hiddenChildren);
+
+      if (this.props.isReversed) {
+        hiddenChildren = visibleChildren.splice(0, this.hiddenStartIndex + 2).concat(hiddenChildren);
+      } else {
+        hiddenChildren = this.collapsedMenuAlwaysShown
+          ? visibleChildren.splice(this.hiddenStartIndex).concat(prepopulatedBaseDivider).concat(hiddenChildren)
+          : visibleChildren.splice(this.hiddenStartIndex).concat(hiddenChildren);
+      }
     }
 
     const icon = useHorizontalIcon ? <IconEllipses /> : <IconEllipses className={cx('vertical-icon')} />;
 
+    const menuIcon = (
+      <div className={menuButtonClassName} ref={this.setMenuButton}>
+        <CollapsibleMenuViewItem
+          data-collapsible-menu-toggle
+          icon={icon}
+          subMenuItems={hiddenChildren}
+          boundingRef={boundingRef}
+          menuWidth={menuWidth}
+          isIconOnly
+          text={intl.formatMessage({ id: 'Terra.collapsibleMenuView.more' })}
+          variant="utility"
+        />
+      </div>
+    );
+
+    if (isReversed) {
+      return (
+        <div {...customProps} className={collapsibleMenuViewClassName} ref={this.setContainer}>
+          {menuIcon}
+          {visibleChildren}
+        </div>
+      );
+    }
+
     return (
       <div {...customProps} className={collapsibleMenuViewClassName} ref={this.setContainer}>
         {visibleChildren}
-        <div className={menuButtonClassName} ref={this.setMenuButton}>
-          <CollapsibleMenuViewItem
-            data-collapsible-menu-toggle
-            icon={icon}
-            subMenuItems={hiddenChildren}
-            boundingRef={boundingRef}
-            menuWidth={menuWidth}
-            isIconOnly
-            text={intl.formatMessage({ id: 'Terra.collapsibleMenuView.more' })}
-            variant="utility"
-          />
-        </div>
+        {menuIcon}
       </div>
     );
   }

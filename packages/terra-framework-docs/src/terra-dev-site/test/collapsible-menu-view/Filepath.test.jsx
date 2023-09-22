@@ -2,7 +2,8 @@ import React from 'react';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
 const FilepathTestDemo = () => (
-  <CollapsibleMenuView isReversed useHorizontalIcon>
+  <CollapsibleMenuView isReversed useHorizontalIcon isStartAligned>
+    <CollapsibleMenuView.Divider useChevronRightIcon key="Divider0" />
     <CollapsibleMenuView.Hyperlink
       key="link-0"
       text="Link 0"

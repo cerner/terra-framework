@@ -80,22 +80,4 @@
       padding-bottom: 0;
     }
   }
-
-  .reverse {
-    flex-direction: row-reverse;
-
-    .menu-button {
-      padding-left: 0;
-    }
-
-    .face-up-item {
-      &:first-child {
-        padding-left: var(--terra-collapsible-menu-view-item-padding-left, 0.714rem);
-      }
-
-      &:last-child {
-        padding-left: 0;
-      }
-    }
-  }
 }
