@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## 4.96.0 - (September 21, 2023)
+
+* Fixed
+  * Fixed error that occurs when date format is called upon null reference 
+    when time transitions from DST to ST.
+
+## 4.95.0 - (September 19, 2023)
+
+* Changed
+  * Minor dependency version bump
+
 ## 4.94.0 - (September 5, 2023)
 
 * Changed

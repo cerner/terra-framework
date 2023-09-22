@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import WorklistDataGridPropTypes from '../proptypes/WorklistDataGridPropTypes';
+import { columnShape } from '../proptypes/columnShape';
 import ColumnHeaderCell from './ColumnHeaderCell';
 
 const propTypes = {
   /**
    * Data for columns. By default, columns will be presented in the order given.
    */
-  columns: PropTypes.arrayOf(WorklistDataGridPropTypes.columnShape).isRequired,
+  columns: PropTypes.arrayOf(columnShape).isRequired,
 
   /**
    * String that specifies the column header height. Any valid CSS height value accepted.

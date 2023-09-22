@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.6.0 - (September 14, 2023)
+
 * Breaking Changes
   * Renamed `terra-worklist-data-grid` package to `terra-data-grid`.
   * Changed WorklistDataGrid component from default to named export. WorklistDataGrid can now be imported as `import { WorklistDataGrid } from 'terra-data-grid'`.
@@ -16,7 +18,7 @@
   * Updated the `terra-worklist-data-grid` component to set initial focus to the row selection header when row selection mode is enabled.
 
 ___
-All release notes below apply to `terra-worklist-data-grid` package (renamed with the 0.6 release).
+All release notes below apply to the `terra-worklist-data-grid` package (renamed to `terra-data-grid` the 0.6 release above).
 
 ## 0.5.0 - (August 31, 2023)
 

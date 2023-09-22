@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.77.0 - (September 21, 2023)
+
+* Added
+  * Fixed the disabled menu item click event bleed through to other controls
+
 * Changed
   * Updated `terra-arrange` from `v3.51.0` to `v3.53.0`.
 

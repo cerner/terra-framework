@@ -137,7 +137,15 @@ class Tabs extends React.Component {
     } = this.props;
 
     const commonTabItems = [];
-    const activeTabKey = this.state.activeKey || this.props.activeKey;
+    const tabKeys = [];
+
+    if (this.props.children && this.props.children.length > 0) {
+      this.props.children.forEach(child => {
+        tabKeys.push(child.key);
+      });
+    }
+    const foundActiveTabKey = tabKeys.find(element => element === this.props.activeKey);
+    const activeTabKey = foundActiveTabKey ? this.props.activeKey : this.state.activeKey;
 
     React.Children.forEach(children, child => {
       let content;
