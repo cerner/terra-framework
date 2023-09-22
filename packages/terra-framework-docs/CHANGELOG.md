@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated examples and tests for `terra-notification-dialog` to close the Notification Dialog on pressing the esc key.
+
 ## 1.37.0 - (September 21, 2023)
 
 * Changed

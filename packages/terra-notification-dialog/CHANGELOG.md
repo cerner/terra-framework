@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+* Added
+  * Added a new function prop - `onRequestClose`.
+
+* Changed
+  * Changed to close the dialog on pressing the esc key.
+  * Changed to set the focus on the first button when dialog opens.
+  * Changed the ariaLabelledBy and ariaDescribedBy to properly read the dialog content.
+
+* Removed
+  * Removed the focus trap, to be able to navigate between the Notification Dialog and the browser controlls.
+
 ## 4.33.1 - (August 4, 2023)
 
 * Changed

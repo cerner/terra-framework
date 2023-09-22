@@ -50,6 +50,7 @@ Cerner Corporation
 - Alla Doroshkevych [@adoroshk]
 - Kol Kheang [@kolkheang]
 - Aaron Johnson [@zxeleven]
+- Madalina Stelea [@MadalinaStelea]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -101,3 +102,4 @@ Cerner Corporation
 [@adoroshk]: https://github.com/adoroshk
 [@kolkheang]: https://github.com/kolkheang
 [@zxeleven]: https://github.com/zxeleven
+[@MadalinaStelea]: https://github.com/MadalinaStelea

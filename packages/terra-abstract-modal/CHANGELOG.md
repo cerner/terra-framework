@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+  * Added
+    * Added three new props on the AbstractModal.jsx and _ModalContent.jsx - `ariaLabelledBy`, `ariaDescribedBy` and `isCalledFromNotificationDialog`.
+    * Added the aria-labelledby and aria-describedBy props on the `<div>` element returned by _ModalContent.jsx.
+
+  * Changed
+    * Changed _ModalContent.jsx to set the tabIndex to -1 on the returned `div` element when the component is called from `terra-notification-dialog`.
+    * Changed _ModalContent.jsx to exclude the BeginModalDialog and EndModalDialog messages from the returned html when the component is called from `terra-notification-dialog`.
+
+
 ## 3.43.1 - (August 4, 2023)
 
   * Changed
