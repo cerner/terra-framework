@@ -31,16 +31,16 @@
       }
     }
 
-      /* stylelint-enable max-nesting-depth */
-      &:focus {
-        background-color: var(--terra-menu-item-focus-background-color, #ebf6fd);
-        outline: var(--terra-menu-item-focus-outline, -webkit-focus-ring-color solid 2px); // Browser default fallback. if no fallback is provided, outline does not render.
-        outline-offset: var(--terra-menu-item-focus-outline-offset, -2px);
-      }
+    /* stylelint-enable max-nesting-depth */
+    &:focus {
+      background-color: var(--terra-menu-item-focus-background-color, #ebf6fd);
+      outline: var(--terra-menu-item-focus-outline, -webkit-focus-ring-color solid 2px); // Browser default fallback. if no fallback is provided, outline does not render.
+      outline-offset: var(--terra-menu-item-focus-outline-offset, -2px);
+    }
 
-      &:focus .chevron {
-        color: var(--terra-menu-item-chevron-focus-icon-color, rgba(28, 31, 33, 1));
-      }
+    &:focus .chevron {
+      color: var(--terra-menu-item-chevron-focus-icon-color, rgba(28, 31, 33, 1));
+    }
   }
 
   .item:active:not(.is-disabled),
