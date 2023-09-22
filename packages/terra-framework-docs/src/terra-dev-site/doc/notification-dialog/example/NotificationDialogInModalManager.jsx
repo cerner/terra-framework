@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import classNames from 'classnames/bind';
 
 import Button from 'terra-button';
@@ -20,13 +20,21 @@ const cx = classNames.bind(styles);
 
 const ModalContent = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonElement = useRef();
+
+  const setButtonNode = (node) => {
+    buttonElement.current = node;
+  };
 
   const handleOpenModal = () => {
     setIsOpen(true);
+    document.querySelector('#root').setAttribute('inert');
   };
 
   const handleCloseModal = () => {
     setIsOpen(false);
+    document.querySelector('#root').removeAttribute('inert');
+    buttonElement.current.focus();
   };
 
   return (
@@ -37,6 +45,7 @@ const ModalContent = () => {
           dialogTitle="Use a Title That Relates Directly to the Actions"
           startMessage="The message should clearly provide a contextual description of the issue concisely, and include a resolution statement that explains how to resolve the issue or what steps to take next."
           endMessage="If further action is needed, provide relevant actions and ask the user to confirm how to proceed."
+          onRequestClose={handleCloseModal}
           acceptAction={{
             text: 'Emphasized Accept Action',
             onClick: handleCloseModal,
@@ -49,7 +58,7 @@ const ModalContent = () => {
           emphasizedAction="accept"
         />
       )}
-      <Button text="Trigger Notification Dialog" onClick={handleOpenModal} />
+      <Button text="Trigger Notification Dialog" onClick={handleOpenModal} refCallback={setButtonNode} />
     </>
   );
 };

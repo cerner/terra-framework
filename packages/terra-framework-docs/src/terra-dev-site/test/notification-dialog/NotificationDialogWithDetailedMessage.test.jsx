@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Button from 'terra-button';
 import NotificationDialog, { ContentLayoutAsList } from 'terra-notification-dialog';
 
@@ -8,6 +8,11 @@ const clickConfirm = () => {
 
 const CompleteNotificationDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonElement = useRef();
+
+  const setButtonNode = (node) => {
+    buttonElement.current = node;
+  };
 
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -15,6 +20,8 @@ const CompleteNotificationDialog = () => {
 
   const handleCloseModal = () => {
     setIsOpen(false);
+    document.querySelector('#root').removeAttribute('inert');
+    buttonElement.current.focus();
   };
 
   return (
@@ -26,6 +33,7 @@ const CompleteNotificationDialog = () => {
           startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
           content={(<ContentLayoutAsList items={['item1', 'item2']} />)}
           endMessage="The End Message is text used to provide any other additional info."
+          onRequestClose={handleCloseModal}
           acceptAction={{
             text: 'accept',
             onClick: clickConfirm,
@@ -38,7 +46,7 @@ const CompleteNotificationDialog = () => {
           emphasizedAction="accept"
         />
       )}
-      <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} />
+      <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} refCallback={setButtonNode} />
     </>
   );
 };

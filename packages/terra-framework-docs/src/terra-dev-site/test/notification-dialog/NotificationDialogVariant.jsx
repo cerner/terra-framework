@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
 import NotificationDialog from 'terra-notification-dialog';
@@ -15,6 +15,11 @@ const propTypes = {
 
 const NotificationDialogVariant = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonElement = useRef();
+
+  const setButtonNode = (node) => {
+    buttonElement.current = node;
+  };
 
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -22,6 +27,8 @@ const NotificationDialogVariant = (props) => {
 
   const handleCloseModal = () => {
     setIsOpen(false);
+    document.querySelector('#root').removeAttribute('inert');
+    buttonElement.current.focus();
   };
 
   const { variant, ...customProps } = props;
@@ -34,6 +41,7 @@ const NotificationDialogVariant = (props) => {
           variant={variant}
           dialogTitle="The title relates directly to the choices."
           startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+          onRequestClose={handleCloseModal}
           acceptAction={{
             text: 'Confirm',
             onClick: handleCloseModal,
@@ -46,7 +54,7 @@ const NotificationDialogVariant = (props) => {
           emphasizedAction="accept"
         />
       )}
-      <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} />
+      <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} refCallback={setButtonNode} />
     </>
   );
 };

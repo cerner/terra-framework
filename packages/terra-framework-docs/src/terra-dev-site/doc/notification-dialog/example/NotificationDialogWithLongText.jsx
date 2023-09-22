@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Button from 'terra-button';
 import NotificationDialog from 'terra-notification-dialog';
 
 const NotificationDialogWithLongText = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonElement = useRef();
+
+  const setButtonNode = (node) => {
+    buttonElement.current = node;
+  };
 
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -11,6 +16,8 @@ const NotificationDialogWithLongText = () => {
 
   const handleCloseModal = () => {
     setIsOpen(false);
+    document.querySelector('#root').removeAttribute('inert');
+    buttonElement.current.focus();
   };
 
   const message = `Users need to know what is going on, and get appropriate feedback during interaction. For example, users need confirmation messages when actions are completed, such as when forms are submitted. Also, error messages must provide clear directions rather than confuse users.
@@ -49,6 +56,7 @@ const NotificationDialogWithLongText = () => {
           variant="hazard-medium"
           dialogTitle="Use a Title That Relates Directly to the Actions - Long Titles Should Be Avoided When Possible"
           startMessage={message}
+          onRequestClose={handleCloseModal}
           acceptAction={{
             text: 'Emphasized Accept Action',
             onClick: handleCloseModal,
@@ -61,7 +69,7 @@ const NotificationDialogWithLongText = () => {
           emphasizedAction="accept"
         />
       )}
-      <Button text="Trigger Notification Dialog" onClick={handleOpenModal} />
+      <Button text="Trigger Notification Dialog" onClick={handleOpenModal} refCallback={setButtonNode} />
     </>
   );
 };

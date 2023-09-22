@@ -2,101 +2,93 @@
 
 exports[`Notification Dialog correctly applies the theme context className 1`] = `
 <AbstractModal
-  aria-describedby="notification-dialog-signal-word"
-  aria-labelledby="notification-dialog-signal-word"
-  ariaLabel="Terra.notification.dialog.hazard-high"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog orion-fusion-theme"
   classNameOverlay={null}
-  closeOnEsc={false}
+  closeOnEsc={true}
   closeOnOutsideClick={false}
+  isCalledFromNotificationDialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
-  role="alertdialog"
+  role="dialog"
   rootSelector="#root"
   zIndex="9000"
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": false,
-        "escapeDeactivates": false,
-        "returnFocusOnDeactivate": true,
-      }
-    }
-    paused={false}
+  <div
+    className="notification-dialog-inner-wrapper"
   >
     <div
-      className="notification-dialog-inner-wrapper"
+      className="notification-dialog-container"
+      data-terra-notification-dialog={true}
+      tabIndex="-1"
     >
       <div
-        className="notification-dialog-container"
-        data-terra-notification-dialog={true}
-        tabIndex="0"
+        className="floating-header-background hazard-high"
+      />
+      <div
+        className="header"
       >
         <div
-          className="floating-header-background hazard-high"
-        />
-        <div
-          className="header"
+          className="header-content"
         >
+          <NotificationDialogIcon
+            variant="hazard-high"
+          />
           <div
-            className="header-content"
+            className="header-container"
+            id="header-container"
           >
-            <NotificationDialogIcon
-              variant="hazard-high"
-            />
             <div
-              className="header-container"
+              className="signal-word"
+              id="notification-dialog-signal-word"
             >
-              <div
-                className="signal-word"
-                id="notification-dialog-signal-word"
-              >
-                Terra.notification.dialog.hazard-high
-              </div>
-              <div
-                className="title"
-                id="notification-dialog-title"
-              />
+              Terra.notification.dialog.hazard-high
             </div>
-          </div>
-        </div>
-        <div
-          className="body"
-        >
-          <div
-            className="message"
-          >
-            This text is used to provide more details.
-          </div>
-        </div>
-        <div
-          className="footer"
-        >
-          <div
-            className="actions"
-          >
-            <Button
-              data-terra-notification-dialog-button="reject"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="reject"
-              onClick={[MockFunction]}
-              text="reject"
-              type="button"
-              variant="neutral"
+            <div
+              className="title"
+              id="notification-dialog-title"
             />
           </div>
         </div>
       </div>
+      <div
+        className="body"
+        id="dialogBody"
+      >
+        <div
+          className="message"
+        >
+          This text is used to provide more details.
+        </div>
+      </div>
+      <div
+        className="footer"
+      >
+        <div
+          className="actions"
+        >
+          <Button
+            data-terra-notification-dialog-button="reject"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="reject"
+            onClick={[MockFunction]}
+            refCallback={[Function]}
+            tabIndex="0"
+            text="reject"
+            type="button"
+            variant="neutral"
+          />
+        </div>
+      </div>
     </div>
-  </FocusTrap>
+  </div>
 </AbstractModal>
 `;
 
@@ -144,814 +136,758 @@ exports[`Notification Dialog functions as expected should open the dialog 1`] = 
 
 exports[`Notification Dialog shallow renders an custom notification-dialog 1`] = `
 <AbstractModal
-  aria-describedby="notification-dialog-title"
-  aria-labelledby="notification-dialog-signal-word"
-  ariaLabel="Custom"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
-  closeOnEsc={false}
+  closeOnEsc={true}
   closeOnOutsideClick={false}
+  isCalledFromNotificationDialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
-  role="alertdialog"
+  role="dialog"
   rootSelector="#root"
   zIndex="9000"
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": false,
-        "escapeDeactivates": false,
-        "returnFocusOnDeactivate": true,
-      }
-    }
-    paused={false}
+  <div
+    className="notification-dialog-inner-wrapper"
   >
     <div
-      className="notification-dialog-inner-wrapper"
+      className="notification-dialog-container"
+      data-terra-notification-dialog={true}
+      tabIndex="-1"
     >
       <div
-        className="notification-dialog-container"
-        data-terra-notification-dialog={true}
-        tabIndex="0"
+        className="floating-header-background custom"
+      />
+      <div
+        className="header"
       >
         <div
-          className="floating-header-background custom"
-        />
-        <div
-          className="header"
+          className="header-content"
         >
+          <NotificationDialogIcon
+            iconClassName="custom-icon"
+            variant="custom"
+          />
           <div
-            className="header-content"
+            className="header-container"
+            id="header-container"
           >
-            <NotificationDialogIcon
-              iconClassName="custom-icon"
-              variant="custom"
-            />
             <div
-              className="header-container"
+              className="signal-word"
+              id="notification-dialog-signal-word"
             >
-              <div
-                className="signal-word"
-                id="notification-dialog-signal-word"
-              >
-                Custom
-              </div>
-              <div
-                className="title"
-                id="notification-dialog-title"
-              >
-                Test
-              </div>
+              Custom
+            </div>
+            <div
+              className="title"
+              id="notification-dialog-title"
+            >
+              Test
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="body"
+        id="dialogBody"
+      >
         <div
-          className="body"
+          className="message"
         >
-          <div
-            className="message"
-          >
-            This text is used to provide more details.
-          </div>
+          This text is used to provide more details.
         </div>
+      </div>
+      <div
+        className="footer"
+      >
         <div
-          className="footer"
+          className="actions"
         >
-          <div
-            className="actions"
-          >
-            <Button
-              data-terra-notification-dialog-button="accept"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="accept"
-              onClick={[Function]}
-              text="accept"
-              type="button"
-              variant="neutral"
-            />
-            <Button
-              data-terra-notification-dialog-button="reject"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="reject"
-              onClick={[Function]}
-              text="reject"
-              type="button"
-              variant="neutral"
-            />
-          </div>
+          <Button
+            data-terra-notification-dialog-button="accept"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="accept"
+            onClick={[Function]}
+            refCallback={[Function]}
+            tabIndex="0"
+            text="accept"
+            type="button"
+            variant="neutral"
+          />
+          <Button
+            data-terra-notification-dialog-button="reject"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="reject"
+            onClick={[Function]}
+            text="reject"
+            type="button"
+            variant="neutral"
+          />
         </div>
       </div>
     </div>
-  </FocusTrap>
+  </div>
 </AbstractModal>
 `;
 
 exports[`Notification Dialog shallow renders an error notification-dialog 1`] = `
 <AbstractModal
-  aria-describedby="notification-dialog-title"
-  aria-labelledby="notification-dialog-signal-word"
-  ariaLabel="Terra.notification.dialog.error"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
-  closeOnEsc={false}
+  closeOnEsc={true}
   closeOnOutsideClick={false}
+  isCalledFromNotificationDialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
-  role="alertdialog"
+  role="dialog"
   rootSelector="#root"
   zIndex="9000"
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": false,
-        "escapeDeactivates": false,
-        "returnFocusOnDeactivate": true,
-      }
-    }
-    paused={false}
+  <div
+    className="notification-dialog-inner-wrapper"
   >
     <div
-      className="notification-dialog-inner-wrapper"
+      className="notification-dialog-container"
+      data-terra-notification-dialog={true}
+      tabIndex="-1"
     >
       <div
-        className="notification-dialog-container"
-        data-terra-notification-dialog={true}
-        tabIndex="0"
+        className="floating-header-background error"
+      />
+      <div
+        className="header"
       >
         <div
-          className="floating-header-background error"
-        />
-        <div
-          className="header"
+          className="header-content"
         >
+          <NotificationDialogIcon
+            variant="error"
+          />
           <div
-            className="header-content"
+            className="header-container"
+            id="header-container"
           >
-            <NotificationDialogIcon
-              variant="error"
-            />
             <div
-              className="header-container"
+              className="signal-word"
+              id="notification-dialog-signal-word"
             >
-              <div
-                className="signal-word"
-                id="notification-dialog-signal-word"
-              >
-                Terra.notification.dialog.error
-              </div>
-              <div
-                className="title"
-                id="notification-dialog-title"
-              >
-                Test
-              </div>
+              Terra.notification.dialog.error
+            </div>
+            <div
+              className="title"
+              id="notification-dialog-title"
+            >
+              Test
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="body"
+        id="dialogBody"
+      >
         <div
-          className="body"
+          className="message"
         >
-          <div
-            className="message"
-          >
-            This text is used to provide more details.
-          </div>
+          This text is used to provide more details.
         </div>
+      </div>
+      <div
+        className="footer"
+      >
         <div
-          className="footer"
+          className="actions"
         >
-          <div
-            className="actions"
-          >
-            <Button
-              data-terra-notification-dialog-button="accept"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="accept"
-              onClick={[Function]}
-              text="accept"
-              type="button"
-              variant="neutral"
-            />
-            <Button
-              data-terra-notification-dialog-button="reject"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="reject"
-              onClick={[Function]}
-              text="reject"
-              type="button"
-              variant="neutral"
-            />
-          </div>
+          <Button
+            data-terra-notification-dialog-button="accept"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="accept"
+            onClick={[Function]}
+            refCallback={[Function]}
+            tabIndex="0"
+            text="accept"
+            type="button"
+            variant="neutral"
+          />
+          <Button
+            data-terra-notification-dialog-button="reject"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="reject"
+            onClick={[Function]}
+            text="reject"
+            type="button"
+            variant="neutral"
+          />
         </div>
       </div>
     </div>
-  </FocusTrap>
+  </div>
 </AbstractModal>
 `;
 
 exports[`Notification Dialog shallow renders an hazard-high notification-dialog 1`] = `
 <AbstractModal
-  aria-describedby="notification-dialog-title"
-  aria-labelledby="notification-dialog-signal-word"
-  ariaLabel="Terra.notification.dialog.hazard-high"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
-  closeOnEsc={false}
+  closeOnEsc={true}
   closeOnOutsideClick={false}
+  isCalledFromNotificationDialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
-  role="alertdialog"
+  role="dialog"
   rootSelector="#root"
   zIndex="9000"
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": false,
-        "escapeDeactivates": false,
-        "returnFocusOnDeactivate": true,
-      }
-    }
-    paused={false}
+  <div
+    className="notification-dialog-inner-wrapper"
   >
     <div
-      className="notification-dialog-inner-wrapper"
+      className="notification-dialog-container"
+      data-terra-notification-dialog={true}
+      tabIndex="-1"
     >
       <div
-        className="notification-dialog-container"
-        data-terra-notification-dialog={true}
-        tabIndex="0"
+        className="floating-header-background hazard-high"
+      />
+      <div
+        className="header"
       >
         <div
-          className="floating-header-background hazard-high"
-        />
-        <div
-          className="header"
+          className="header-content"
         >
+          <NotificationDialogIcon
+            variant="hazard-high"
+          />
           <div
-            className="header-content"
+            className="header-container"
+            id="header-container"
           >
-            <NotificationDialogIcon
-              variant="hazard-high"
-            />
             <div
-              className="header-container"
+              className="signal-word"
+              id="notification-dialog-signal-word"
             >
-              <div
-                className="signal-word"
-                id="notification-dialog-signal-word"
-              >
-                Terra.notification.dialog.hazard-high
-              </div>
-              <div
-                className="title"
-                id="notification-dialog-title"
-              >
-                Test
-              </div>
+              Terra.notification.dialog.hazard-high
+            </div>
+            <div
+              className="title"
+              id="notification-dialog-title"
+            >
+              Test
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="body"
+        id="dialogBody"
+      >
         <div
-          className="body"
+          className="message"
         >
-          <div
-            className="message"
-          >
-            This text is used to provide more details.
-          </div>
+          This text is used to provide more details.
         </div>
+      </div>
+      <div
+        className="footer"
+      >
         <div
-          className="footer"
+          className="actions"
         >
-          <div
-            className="actions"
-          >
-            <Button
-              data-terra-notification-dialog-button="accept"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="accept"
-              onClick={[Function]}
-              text="accept"
-              type="button"
-              variant="neutral"
-            />
-            <Button
-              data-terra-notification-dialog-button="reject"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="reject"
-              onClick={[Function]}
-              text="reject"
-              type="button"
-              variant="neutral"
-            />
-          </div>
+          <Button
+            data-terra-notification-dialog-button="accept"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="accept"
+            onClick={[Function]}
+            refCallback={[Function]}
+            tabIndex="0"
+            text="accept"
+            type="button"
+            variant="neutral"
+          />
+          <Button
+            data-terra-notification-dialog-button="reject"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="reject"
+            onClick={[Function]}
+            text="reject"
+            type="button"
+            variant="neutral"
+          />
         </div>
       </div>
     </div>
-  </FocusTrap>
+  </div>
 </AbstractModal>
 `;
 
 exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1`] = `
 <AbstractModal
-  aria-describedby="notification-dialog-title"
-  aria-labelledby="notification-dialog-signal-word"
-  ariaLabel="Terra.notification.dialog.hazard-low"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
-  closeOnEsc={false}
+  closeOnEsc={true}
   closeOnOutsideClick={false}
+  isCalledFromNotificationDialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
-  role="alertdialog"
+  role="dialog"
   rootSelector="#root"
   zIndex="9000"
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": false,
-        "escapeDeactivates": false,
-        "returnFocusOnDeactivate": true,
-      }
-    }
-    paused={false}
+  <div
+    className="notification-dialog-inner-wrapper"
   >
     <div
-      className="notification-dialog-inner-wrapper"
+      className="notification-dialog-container"
+      data-terra-notification-dialog={true}
+      tabIndex="-1"
     >
       <div
-        className="notification-dialog-container"
-        data-terra-notification-dialog={true}
-        tabIndex="0"
+        className="floating-header-background hazard-low"
+      />
+      <div
+        className="header"
       >
         <div
-          className="floating-header-background hazard-low"
-        />
-        <div
-          className="header"
+          className="header-content"
         >
+          <NotificationDialogIcon
+            variant="hazard-low"
+          />
           <div
-            className="header-content"
+            className="header-container"
+            id="header-container"
           >
-            <NotificationDialogIcon
-              variant="hazard-low"
-            />
             <div
-              className="header-container"
+              className="signal-word"
+              id="notification-dialog-signal-word"
             >
-              <div
-                className="signal-word"
-                id="notification-dialog-signal-word"
-              >
-                Terra.notification.dialog.hazard-low
-              </div>
-              <div
-                className="title"
-                id="notification-dialog-title"
-              >
-                Test
-              </div>
+              Terra.notification.dialog.hazard-low
+            </div>
+            <div
+              className="title"
+              id="notification-dialog-title"
+            >
+              Test
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="body"
+        id="dialogBody"
+      >
         <div
-          className="body"
+          className="message"
         >
-          <div
-            className="message"
-          >
-            This text is used to provide more details.
-          </div>
+          This text is used to provide more details.
         </div>
+      </div>
+      <div
+        className="footer"
+      >
         <div
-          className="footer"
+          className="actions"
         >
-          <div
-            className="actions"
-          >
-            <Button
-              data-terra-notification-dialog-button="accept"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="accept"
-              onClick={[Function]}
-              text="accept"
-              type="button"
-              variant="neutral"
-            />
-            <Button
-              data-terra-notification-dialog-button="reject"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="reject"
-              onClick={[Function]}
-              text="reject"
-              type="button"
-              variant="neutral"
-            />
-          </div>
+          <Button
+            data-terra-notification-dialog-button="accept"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="accept"
+            onClick={[Function]}
+            refCallback={[Function]}
+            tabIndex="0"
+            text="accept"
+            type="button"
+            variant="neutral"
+          />
+          <Button
+            data-terra-notification-dialog-button="reject"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="reject"
+            onClick={[Function]}
+            text="reject"
+            type="button"
+            variant="neutral"
+          />
         </div>
       </div>
     </div>
-  </FocusTrap>
+  </div>
 </AbstractModal>
 `;
 
 exports[`Notification Dialog shallow renders an hazard-medium notification-dialog 1`] = `
 <AbstractModal
-  aria-describedby="notification-dialog-title"
-  aria-labelledby="notification-dialog-signal-word"
-  ariaLabel="Terra.notification.dialog.hazard-medium"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
-  closeOnEsc={false}
+  closeOnEsc={true}
   closeOnOutsideClick={false}
+  isCalledFromNotificationDialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
-  role="alertdialog"
+  role="dialog"
   rootSelector="#root"
   zIndex="9000"
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": false,
-        "escapeDeactivates": false,
-        "returnFocusOnDeactivate": true,
-      }
-    }
-    paused={false}
+  <div
+    className="notification-dialog-inner-wrapper"
   >
     <div
-      className="notification-dialog-inner-wrapper"
+      className="notification-dialog-container"
+      data-terra-notification-dialog={true}
+      tabIndex="-1"
     >
       <div
-        className="notification-dialog-container"
-        data-terra-notification-dialog={true}
-        tabIndex="0"
+        className="floating-header-background hazard-medium"
+      />
+      <div
+        className="header"
       >
         <div
-          className="floating-header-background hazard-medium"
-        />
-        <div
-          className="header"
+          className="header-content"
         >
+          <NotificationDialogIcon
+            variant="hazard-medium"
+          />
           <div
-            className="header-content"
+            className="header-container"
+            id="header-container"
           >
-            <NotificationDialogIcon
-              variant="hazard-medium"
-            />
             <div
-              className="header-container"
+              className="signal-word"
+              id="notification-dialog-signal-word"
             >
-              <div
-                className="signal-word"
-                id="notification-dialog-signal-word"
-              >
-                Terra.notification.dialog.hazard-medium
-              </div>
-              <div
-                className="title"
-                id="notification-dialog-title"
-              >
-                Test
-              </div>
+              Terra.notification.dialog.hazard-medium
+            </div>
+            <div
+              className="title"
+              id="notification-dialog-title"
+            >
+              Test
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="body"
+        id="dialogBody"
+      >
         <div
-          className="body"
+          className="message"
         >
-          <div
-            className="message"
-          >
-            This text is used to provide more details.
-          </div>
+          This text is used to provide more details.
         </div>
+      </div>
+      <div
+        className="footer"
+      >
         <div
-          className="footer"
+          className="actions"
         >
-          <div
-            className="actions"
-          >
-            <Button
-              data-terra-notification-dialog-button="accept"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="accept"
-              onClick={[Function]}
-              text="accept"
-              type="button"
-              variant="neutral"
-            />
-            <Button
-              data-terra-notification-dialog-button="reject"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="reject"
-              onClick={[Function]}
-              text="reject"
-              type="button"
-              variant="neutral"
-            />
-          </div>
+          <Button
+            data-terra-notification-dialog-button="accept"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="accept"
+            onClick={[Function]}
+            refCallback={[Function]}
+            tabIndex="0"
+            text="accept"
+            type="button"
+            variant="neutral"
+          />
+          <Button
+            data-terra-notification-dialog-button="reject"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="reject"
+            onClick={[Function]}
+            text="reject"
+            type="button"
+            variant="neutral"
+          />
         </div>
       </div>
     </div>
-  </FocusTrap>
+  </div>
 </AbstractModal>
 `;
 
 exports[`Notification Dialog shallow renders dialog with reject button first 1`] = `
 <AbstractModal
-  aria-describedby="notification-dialog-title"
-  aria-labelledby="notification-dialog-signal-word"
-  ariaLabel="Terra.notification.dialog.hazard-high"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
-  closeOnEsc={false}
+  closeOnEsc={true}
   closeOnOutsideClick={false}
+  isCalledFromNotificationDialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
-  role="alertdialog"
+  role="dialog"
   rootSelector="#root"
   zIndex="9000"
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": false,
-        "escapeDeactivates": false,
-        "returnFocusOnDeactivate": true,
-      }
-    }
-    paused={false}
+  <div
+    className="notification-dialog-inner-wrapper"
   >
     <div
-      className="notification-dialog-inner-wrapper"
+      className="notification-dialog-container"
+      data-terra-notification-dialog={true}
+      tabIndex="-1"
     >
       <div
-        className="notification-dialog-container"
-        data-terra-notification-dialog={true}
-        tabIndex="0"
+        className="floating-header-background hazard-high"
+      />
+      <div
+        className="header"
       >
         <div
-          className="floating-header-background hazard-high"
-        />
-        <div
-          className="header"
+          className="header-content"
         >
+          <NotificationDialogIcon
+            variant="hazard-high"
+          />
           <div
-            className="header-content"
+            className="header-container"
+            id="header-container"
           >
-            <NotificationDialogIcon
-              variant="hazard-high"
-            />
             <div
-              className="header-container"
+              className="signal-word"
+              id="notification-dialog-signal-word"
             >
-              <div
-                className="signal-word"
-                id="notification-dialog-signal-word"
-              >
-                Terra.notification.dialog.hazard-high
-              </div>
-              <div
-                className="title"
-                id="notification-dialog-title"
-              >
-                Test
-              </div>
+              Terra.notification.dialog.hazard-high
+            </div>
+            <div
+              className="title"
+              id="notification-dialog-title"
+            >
+              Test
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="body"
+        id="dialogBody"
+      >
         <div
-          className="body"
+          className="message"
         >
-          <div
-            className="message"
-          >
-            This text is used to provide more details.
-          </div>
+          This text is used to provide more details.
         </div>
+      </div>
+      <div
+        className="footer"
+      >
         <div
-          className="footer"
+          className="actions"
         >
-          <div
-            className="actions"
-          >
-            <Button
-              data-terra-notification-dialog-button="reject"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="reject"
-              onClick={[MockFunction]}
-              text="reject"
-              type="button"
-              variant="neutral"
-            />
-            <Button
-              data-terra-notification-dialog-button="accept"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="accept"
-              onClick={[MockFunction]}
-              text="accept"
-              type="button"
-              variant="neutral"
-            />
-          </div>
+          <Button
+            data-terra-notification-dialog-button="reject"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="reject"
+            onClick={[MockFunction]}
+            refCallback={[Function]}
+            tabIndex="0"
+            text="reject"
+            type="button"
+            variant="neutral"
+          />
+          <Button
+            data-terra-notification-dialog-button="accept"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="accept"
+            onClick={[MockFunction]}
+            text="accept"
+            type="button"
+            variant="neutral"
+          />
         </div>
       </div>
     </div>
-  </FocusTrap>
+  </div>
 </AbstractModal>
 `;
 
 exports[`Notification Dialog shallow renders dialog with startMessage, content, and endMessage 1`] = `
 <AbstractModal
-  aria-describedby="notification-dialog-title"
-  aria-labelledby="notification-dialog-signal-word"
-  ariaLabel="Terra.notification.dialog.hazard-high"
+  ariaDescribedBy="dialogBody"
+  ariaLabel=""
+  ariaLabelledBy="header-container"
   classNameModal="notification-dialog"
   classNameOverlay={null}
-  closeOnEsc={false}
+  closeOnEsc={true}
   closeOnOutsideClick={false}
+  isCalledFromNotificationDialog={true}
   isFullscreen={false}
   isOpen={true}
   onRequestClose={[Function]}
-  role="alertdialog"
+  role="dialog"
   rootSelector="#root"
   zIndex="9000"
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": false,
-        "escapeDeactivates": false,
-        "returnFocusOnDeactivate": true,
-      }
-    }
-    paused={false}
+  <div
+    className="notification-dialog-inner-wrapper"
   >
     <div
-      className="notification-dialog-inner-wrapper"
+      className="notification-dialog-container"
+      data-terra-notification-dialog={true}
+      tabIndex="-1"
     >
       <div
-        className="notification-dialog-container"
-        data-terra-notification-dialog={true}
-        tabIndex="0"
+        className="floating-header-background hazard-high"
+      />
+      <div
+        className="header"
       >
         <div
-          className="floating-header-background hazard-high"
-        />
-        <div
-          className="header"
+          className="header-content"
         >
+          <NotificationDialogIcon
+            variant="hazard-high"
+          />
           <div
-            className="header-content"
+            className="header-container"
+            id="header-container"
           >
-            <NotificationDialogIcon
-              variant="hazard-high"
-            />
             <div
-              className="header-container"
+              className="signal-word"
+              id="notification-dialog-signal-word"
             >
-              <div
-                className="signal-word"
-                id="notification-dialog-signal-word"
-              >
-                Terra.notification.dialog.hazard-high
-              </div>
-              <div
-                className="title"
-                id="notification-dialog-title"
-              >
-                Test
-              </div>
+              Terra.notification.dialog.hazard-high
             </div>
-          </div>
-        </div>
-        <div
-          className="body"
-        >
-          <div
-            className="message"
-          >
-            This text is used to provide more details.
-          </div>
-          <div
-            className="message"
-          >
-            <div>
-              Middle content
+            <div
+              className="title"
+              id="notification-dialog-title"
+            >
+              Test
             </div>
-          </div>
-        </div>
-        <div
-          className="footer"
-        >
-          <div
-            className="actions"
-          >
-            <Button
-              data-terra-notification-dialog-button="accept"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="accept"
-              onClick={[Function]}
-              text="accept"
-              type="button"
-              variant="neutral"
-            />
-            <Button
-              data-terra-notification-dialog-button="reject"
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isIconOnly={false}
-              isReversed={false}
-              key="reject"
-              onClick={[Function]}
-              text="reject"
-              type="button"
-              variant="neutral"
-            />
           </div>
         </div>
       </div>
+      <div
+        className="body"
+        id="dialogBody"
+      >
+        <div
+          className="message"
+        >
+          This text is used to provide more details.
+        </div>
+        <div
+          className="message"
+        >
+          <div>
+            Middle content
+          </div>
+        </div>
+      </div>
+      <div
+        className="footer"
+      >
+        <div
+          className="actions"
+        >
+          <Button
+            data-terra-notification-dialog-button="accept"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="accept"
+            onClick={[Function]}
+            refCallback={[Function]}
+            tabIndex="0"
+            text="accept"
+            type="button"
+            variant="neutral"
+          />
+          <Button
+            data-terra-notification-dialog-button="reject"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            key="reject"
+            onClick={[Function]}
+            text="reject"
+            type="button"
+            variant="neutral"
+          />
+        </div>
+      </div>
     </div>
-  </FocusTrap>
+  </div>
 </AbstractModal>
 `;
 
@@ -1057,17 +993,18 @@ exports[`correctly applies the theme context className 1`] = `
       variant="hazard-high"
     >
       <AbstractModal
-        aria-describedby="notification-dialog-signal-word"
-        aria-labelledby="notification-dialog-signal-word"
-        ariaLabel="Terra.notification.dialog.hazard-high"
+        ariaDescribedBy="dialogBody"
+        ariaLabel=""
+        ariaLabelledBy="header-container"
         classNameModal="notification-dialog orion-fusion-theme"
         classNameOverlay={null}
-        closeOnEsc={false}
+        closeOnEsc={true}
         closeOnOutsideClick={false}
+        isCalledFromNotificationDialog={true}
         isFullscreen={false}
         isOpen={true}
         onRequestClose={[Function]}
-        role="alertdialog"
+        role="dialog"
         rootSelector="#root"
         zIndex="9000"
       >
@@ -1081,31 +1018,26 @@ exports[`correctly applies the theme context className 1`] = `
                   class="overlay layer-9000 orion-fusion-theme"
                 />
                 <div
-                  aria-describedby="notification-dialog-signal-word"
-                  aria-label="Terra.notification.dialog.hazard-high"
-                  aria-labelledby="notification-dialog-signal-word"
+                  aria-describedby="dialogBody"
+                  aria-label=""
+                  aria-labelledby="header-container"
                   aria-modal="true"
                   class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
-                  role="alertdialog"
-                  tabindex="0"
+                  role="dialog"
+                  tabindex="-1"
                 >
                   <div
                     class="abstract-modal-container"
                     data-terra-abstract-modal-begin="true"
                     tabindex="-1"
                   >
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
                     <div
                       class="notification-dialog-inner-wrapper"
                     >
                       <div
                         class="notification-dialog-container"
                         data-terra-notification-dialog="true"
-                        tabindex="0"
+                        tabindex="-1"
                       >
                         <div
                           class="floating-header-background hazard-high"
@@ -1125,6 +1057,7 @@ exports[`correctly applies the theme context className 1`] = `
                             </div>
                             <div
                               class="header-container"
+                              id="header-container"
                             >
                               <div
                                 class="signal-word"
@@ -1141,6 +1074,7 @@ exports[`correctly applies the theme context className 1`] = `
                         </div>
                         <div
                           class="body"
+                          id="dialogBody"
                         >
                           <div
                             class="message"
@@ -1156,8 +1090,9 @@ exports[`correctly applies the theme context className 1`] = `
                           >
                             <button
                               aria-disabled="false"
-                              class="button emphasis orion-fusion-theme"
+                              class="button emphasis is-focused orion-fusion-theme"
                               data-terra-notification-dialog-button="accept"
+                              tabindex="0"
                               type="button"
                             >
                               <span
@@ -1190,29 +1125,25 @@ exports[`correctly applies the theme context className 1`] = `
                         </div>
                       </div>
                     </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
                   </div>
                 </div>
               </div>
             }
           >
             <ForwardRef
-              aria-describedby="notification-dialog-signal-word"
-              aria-labelledby="notification-dialog-signal-word"
               aria-modal="true"
-              ariaLabel="Terra.notification.dialog.hazard-high"
+              ariaDescribedBy="dialogBody"
+              ariaLabel=""
+              ariaLabelledBy="header-container"
               classNameModal="notification-dialog orion-fusion-theme"
               classNameOverlay={null}
               closeOnOutsideClick={false}
+              isCalledFromNotificationDialog={true}
               isFullscreen={false}
               isScrollable={false}
               onKeyDown={[Function]}
               onRequestClose={[Function]}
-              role="alertdialog"
+              role="dialog"
               rootSelector="#root"
               zIndex="9000"
             >
@@ -1227,198 +1158,162 @@ exports[`correctly applies the theme context className 1`] = `
                 />
               </ModalOverlay>
               <div
-                aria-describedby="notification-dialog-signal-word"
-                aria-label="Terra.notification.dialog.hazard-high"
-                aria-labelledby="notification-dialog-signal-word"
+                aria-describedby="dialogBody"
+                aria-label=""
+                aria-labelledby="header-container"
                 aria-modal="true"
                 className="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
                 onKeyDown={[Function]}
-                role="alertdialog"
-                tabIndex="0"
+                role="dialog"
+                tabIndex="-1"
               >
                 <div
                   className="abstract-modal-container"
                   data-terra-abstract-modal-begin={true}
                   tabIndex="-1"
                 >
-                  <FormattedMessage
-                    id="Terra.AbstractModal.BeginModalDialog"
-                    values={Object {}}
-                  >
-                    <VisuallyHiddenText
-                      text="Terra.AbstractModal.BeginModalDialog"
-                    >
-                      <span
-                        className="visually-hidden-text"
-                      >
-                        Terra.AbstractModal.BeginModalDialog
-                      </span>
-                    </VisuallyHiddenText>
-                  </FormattedMessage>
-                  <FocusTrap
-                    _createFocusTrap={[Function]}
-                    active={true}
-                    focusTrapOptions={
-                      Object {
-                        "clickOutsideDeactivates": false,
-                        "escapeDeactivates": false,
-                        "returnFocusOnDeactivate": true,
-                      }
-                    }
-                    paused={false}
+                  <div
+                    className="notification-dialog-inner-wrapper"
                   >
                     <div
-                      className="notification-dialog-inner-wrapper"
+                      className="notification-dialog-container"
+                      data-terra-notification-dialog={true}
+                      tabIndex="-1"
                     >
                       <div
-                        className="notification-dialog-container"
-                        data-terra-notification-dialog={true}
-                        tabIndex="0"
+                        className="floating-header-background hazard-high"
+                      />
+                      <div
+                        className="header"
                       >
                         <div
-                          className="floating-header-background hazard-high"
-                        />
-                        <div
-                          className="header"
+                          className="header-content"
                         >
-                          <div
-                            className="header-content"
+                          <NotificationDialogIcon
+                            variant="hazard-high"
                           >
-                            <NotificationDialogIcon
-                              variant="hazard-high"
-                            >
-                              <div
-                                className="icon-container orion-fusion-theme"
-                              >
-                                <span
-                                  className="icon hazard-high-icon"
-                                />
-                              </div>
-                            </NotificationDialogIcon>
                             <div
-                              className="header-container"
+                              className="icon-container orion-fusion-theme"
                             >
-                              <div
-                                className="signal-word"
-                                id="notification-dialog-signal-word"
-                              >
-                                Terra.notification.dialog.hazard-high
-                              </div>
-                              <div
-                                className="title"
-                                id="notification-dialog-title"
+                              <span
+                                className="icon hazard-high-icon"
                               />
                             </div>
-                          </div>
-                        </div>
-                        <div
-                          className="body"
-                        >
+                          </NotificationDialogIcon>
                           <div
-                            className="message"
+                            className="header-container"
+                            id="header-container"
                           >
-                            The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim.
-                          </div>
-                        </div>
-                        <div
-                          className="footer"
-                        >
-                          <div
-                            className="actions"
-                          >
-                            <Button
-                              data-terra-notification-dialog-button="accept"
-                              isBlock={false}
-                              isCompact={false}
-                              isDisabled={false}
-                              isIconOnly={false}
-                              isReversed={false}
-                              key="accept"
-                              onClick={[Function]}
-                              text="Confirm"
-                              type="button"
-                              variant="emphasis"
+                            <div
+                              className="signal-word"
+                              id="notification-dialog-signal-word"
                             >
-                              <button
-                                aria-disabled={false}
-                                className="button emphasis orion-fusion-theme"
-                                data-terra-notification-dialog-button="accept"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                type="button"
-                              >
-                                <span
-                                  className="button-label text-only"
-                                >
-                                  <span
-                                    className=""
-                                  >
-                                    Confirm
-                                  </span>
-                                </span>
-                              </button>
-                            </Button>
-                            <Button
-                              data-terra-notification-dialog-button="reject"
-                              isBlock={false}
-                              isCompact={false}
-                              isDisabled={false}
-                              isIconOnly={false}
-                              isReversed={false}
-                              key="reject"
-                              onClick={[Function]}
-                              text="Close"
-                              type="button"
-                              variant="neutral"
-                            >
-                              <button
-                                aria-disabled={false}
-                                className="button neutral orion-fusion-theme"
-                                data-terra-notification-dialog-button="reject"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                type="button"
-                              >
-                                <span
-                                  className="button-label text-only"
-                                >
-                                  <span
-                                    className=""
-                                  >
-                                    Close
-                                  </span>
-                                </span>
-                              </button>
-                            </Button>
+                              Terra.notification.dialog.hazard-high
+                            </div>
+                            <div
+                              className="title"
+                              id="notification-dialog-title"
+                            />
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </FocusTrap>
-                  <FormattedMessage
-                    id="Terra.AbstractModal.EndModalDialog"
-                    values={Object {}}
-                  >
-                    <VisuallyHiddenText
-                      text="Terra.AbstractModal.EndModalDialog"
-                    >
-                      <span
-                        className="visually-hidden-text"
+                      <div
+                        className="body"
+                        id="dialogBody"
                       >
-                        Terra.AbstractModal.EndModalDialog
-                      </span>
-                    </VisuallyHiddenText>
-                  </FormattedMessage>
+                        <div
+                          className="message"
+                        >
+                          The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim.
+                        </div>
+                      </div>
+                      <div
+                        className="footer"
+                      >
+                        <div
+                          className="actions"
+                        >
+                          <Button
+                            data-terra-notification-dialog-button="accept"
+                            isBlock={false}
+                            isCompact={false}
+                            isDisabled={false}
+                            isIconOnly={false}
+                            isReversed={false}
+                            key="accept"
+                            onClick={[Function]}
+                            refCallback={[Function]}
+                            tabIndex="0"
+                            text="Confirm"
+                            type="button"
+                            variant="emphasis"
+                          >
+                            <button
+                              aria-disabled={false}
+                              className="button emphasis is-focused orion-fusion-theme"
+                              data-terra-notification-dialog-button="accept"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseDown={[Function]}
+                              tabIndex="0"
+                              type="button"
+                            >
+                              <span
+                                className="button-label text-only"
+                              >
+                                <span
+                                  className=""
+                                >
+                                  Confirm
+                                </span>
+                              </span>
+                            </button>
+                          </Button>
+                          <Button
+                            data-terra-notification-dialog-button="reject"
+                            isBlock={false}
+                            isCompact={false}
+                            isDisabled={false}
+                            isIconOnly={false}
+                            isReversed={false}
+                            key="reject"
+                            onClick={[Function]}
+                            text="Close"
+                            type="button"
+                            variant="neutral"
+                          >
+                            <button
+                              aria-disabled={false}
+                              className="button neutral orion-fusion-theme"
+                              data-terra-notification-dialog-button="reject"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseDown={[Function]}
+                              type="button"
+                            >
+                              <span
+                                className="button-label text-only"
+                              >
+                                <span
+                                  className=""
+                                >
+                                  Close
+                                </span>
+                              </span>
+                            </button>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </ForwardRef>

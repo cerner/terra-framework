@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import Button from 'terra-button';
 import { DisclosureManagerContext } from 'terra-disclosure-manager';
 import ModalManager from 'terra-modal-manager';
@@ -14,6 +14,11 @@ import NotificationDialog from 'terra-notification-dialog';
 
 const ModalContent = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonElement = useRef();
+
+  const setButtonNode = (node) => {
+    buttonElement.current = node;
+  };
 
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -21,6 +26,8 @@ const ModalContent = () => {
 
   const handleCloseModal = () => {
     setIsOpen(false);
+    document.querySelector('#root').removeAttribute('inert');
+    buttonElement.current.focus();
   };
 
   return (
@@ -30,6 +37,7 @@ const ModalContent = () => {
           variant="hazard-low"
           dialogTitle="Use a Title That Relates Directly to The Choices"
           startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+          onRequestClose={handleCloseModal}
           acceptAction={{
             text: 'accept',
             onClick: handleCloseModal,
@@ -42,7 +50,7 @@ const ModalContent = () => {
           emphasizedAction="none"
         />
       )}
-      <Button id="trigger-notification-dialog" text="Trigger Notification Dialog" onClick={handleOpenModal} />
+      <Button id="trigger-notification-dialog" text="Trigger Notification Dialog" onClick={handleOpenModal} refCallback={setButtonNode} />
     </>
   );
 };
