@@ -1,8 +1,10 @@
 import React from 'react';
-import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import IconTable from 'terra-icon/lib/icon/IconTable';
-import IconTreemap from 'terra-icon/lib/icon/IconTreemap';
-import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
+import {
+  IconCaretDown,
+  IconTable,
+  IconTreemap,
+  IconVisualization,
+} from 'terra-icon';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
 class AlwaysCollapsedMenuItemsDemo extends React.Component {
