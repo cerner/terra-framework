@@ -191,10 +191,13 @@ class MenuItem extends React.Component {
   }
 
   wrapOnClick(event) {
-    this.handleToggled(event);
+    event.stopPropagation();
+    if (!this.props.isDisabled) {
+      this.handleToggled(event);
 
-    if (this.props.onClick) {
-      this.props.onClick(event);
+      if (this.props.onClick) {
+        this.props.onClick(event);
+      }
     }
   }
 
@@ -268,10 +271,8 @@ class MenuItem extends React.Component {
     // This is passed down by the single select list in group item and not needed
     delete attributes.hasChevron;
 
-    if (isDisabled) {
-      delete attributes.onClick;
-    } else {
-      attributes.onClick = this.wrapOnClick;
+    attributes.onClick = this.wrapOnClick;
+    if (!isDisabled) {
       attributes.onKeyDown = this.wrapOnKeyDown(attributes.onKeyDown);
       attributes.onKeyUp = this.wrapOnKeyUp(attributes.Up);
       attributes['data-terra-menu-interactive-item'] = true;

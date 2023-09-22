@@ -5,6 +5,11 @@
 * Added
   * Added documentation for hyperlinks in `terra-collapsible-menu-view`.
   
+## 1.37.0 - (September 21, 2023)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.36.0 - (September 19, 2023)
 
 * Updated
@@ -17,6 +22,7 @@
   * Added example for `terra-tabs` to test the focus traverse with interactive element within the tab content.
   * Added `terra-brand-footer` as a dependency.
   * Added `terra-file-path` as a dependency.
+  * Added a test case for menu item click event bleed through example
 
 * Changed
   * Updated examples and tests for `terra-worklist-data-grid` to properly update row selection data.

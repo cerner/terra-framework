@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 7.8.0 - (September 21, 2023)
+
+* Changed
+  * Updated code for tab active indicator issue.
+
 ## 7.7.0 - (September 19, 2023)
 
 * Added
