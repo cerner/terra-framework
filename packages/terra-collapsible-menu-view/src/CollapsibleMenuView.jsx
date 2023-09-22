@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
-import IconEllipses from 'terra-icon/lib/icon/IconEllipses';
+import { IconEllipses } from 'terra-icon';
 import CollapsibleMenuViewItem from './CollapsibleMenuViewItem';
 import CollapsibleMenuViewItemGroup from './CollapsibleMenuViewItemGroup';
 import CollapsibleMenuViewToggle from './CollapsibleMenuViewToggle';

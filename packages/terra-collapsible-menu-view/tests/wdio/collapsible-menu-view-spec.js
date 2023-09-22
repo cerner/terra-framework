@@ -86,12 +86,12 @@ Terra.describeViewports('Unselectable Toggle', ['tiny', 'small', 'medium', 'huge
   });
 });
 
-Terra.describeViewports('Filepath Specific Props', ['tiny', 'small'], () => {
+Terra.describeViewports('Reversed and start aligned', ['tiny', 'small'], () => {
   it('should display hyperlinks and chevron right icons', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/filepath');
-    Terra.validates.element('default filepath');
+    browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/reverse-start-aligned');
+    Terra.validates.element('reverse start aligned');
     $('[data-collapsible-menu-toggle]').click();
-    Terra.validates.element('default filepath menu open', { selector: '#root', rules: ignoredA11y });
+    Terra.validates.element('reverse start aligned menu open', { selector: '#root', rules: ignoredA11y });
   });
 });
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Menu from 'terra-menu';
-import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
+import { IconChevronRight } from 'terra-icon';
 import ThemeContext from 'terra-theme-context';
 import styles from './CollapsibleMenuView.module.scss';
 
@@ -22,11 +22,11 @@ const contextTypes = {
 
 const CollapsibleMenuViewDivider = ({ useChevronRightIcon }, { isCollapsibleMenuItem }) => {
   const theme = React.useContext(ThemeContext);
-  if (useChevronRightIcon) {
-    if (isCollapsibleMenuItem) {
-      return null;
-    }
+  if (useChevronRightIcon && isCollapsibleMenuItem) {
+    return null;
+  }
 
+  if (useChevronRightIcon) {
     return (
       <div className={cx(['chevron-right', 'face-up-item', theme.className])}>
         <IconChevronRight />

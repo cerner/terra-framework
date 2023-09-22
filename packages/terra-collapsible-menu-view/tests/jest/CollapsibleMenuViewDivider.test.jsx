@@ -2,6 +2,7 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import CollapsibleMenuViewDivider from '../../src/CollapsibleMenuViewDivider';
+import { IconChevronRight } from 'terra-icon';
 
 describe('CollapsibleMenuViewDivider', () => {
   // Snapshot Tests
@@ -18,6 +19,7 @@ describe('CollapsibleMenuViewDivider', () => {
 
   it('should render a chevron right icon', () => {
     const wrapper = shallowWithIntl(<CollapsibleMenuViewDivider useChevronRightIcon />);
+    expect(wrapper.find(<IconChevronRight />)).toBeTruthy();
     expect(wrapper).toMatchSnapshot();
   });
 
