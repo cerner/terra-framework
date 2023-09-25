@@ -4,9 +4,10 @@
 
 * Added
   * Added the ability to add hyperlinks.
+  
 * Fixed
   * Fixed responsive menu icon not being vertical in the lowlight and fusion themes.
-  
+
 ## 6.79.0 - (September 21, 2023)
 
 * Changed
