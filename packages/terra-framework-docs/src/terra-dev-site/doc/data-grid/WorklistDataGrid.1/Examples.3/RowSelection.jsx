@@ -252,7 +252,7 @@ const RowSelection = () => {
         overflowColumns={cols}
         rows={rowData}
         rowHeaderIndex={rowHeaderIndex}
-        columnWidth="180px"
+        columnWidth={180}
         ariaLabel="Worklist Data Grid"
         hasSelectableRows={hasSelectableRows}
         onRowSelect={onRowSelect}
