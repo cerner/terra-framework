@@ -66,6 +66,11 @@ const propTypes = {
   columnHeaderHeight: PropTypes.string,
 
   /**
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
+   */
+  columnResizeIncrement: PropTypes.number,
+
+  /**
    * String that specifies the height for the rows in the grid. Any valid CSS value is accepted.
    */
   rowHeight: PropTypes.string,
@@ -136,6 +141,7 @@ const DataGrid = injectIntl((props) => {
     onColumnResize,
     defaultColumnWidth,
     columnHeaderHeight,
+    columnResizeIncrement,
     rowHeight,
     onColumnSelect,
     onCellSelect,
@@ -174,18 +180,22 @@ const DataGrid = injectIntl((props) => {
   const activeColumnWidth = useRef(200);
   const tableWidth = useRef(0);
 
+  // Reference variable for WorklistDataGrid table element
   const grid = useRef();
   const gridContainerRef = useRef();
 
   const handleFocus = useRef(true);
 
+  const [checkResizable, setCheckResizable] = useState(false);
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
+
+  // Aria live region message management
+  const [columnHeaderAriaLiveMessage, setColumnHeaderAriaLiveMessage] = useState(null);
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
 
   // Define ColumnContext Provider value object
-  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setCellAriaLiveMessage }), [pinnedColumnOffsets]);
-
+  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setColumnHeaderAriaLiveMessage, setCellAriaLiveMessage }), [pinnedColumnOffsets]);
   const theme = useContext(ThemeContext);
 
   // -------------------------------------
@@ -323,11 +333,12 @@ const DataGrid = injectIntl((props) => {
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
 
-  const handleColumnSelect = useCallback((columnId, cellCoordinates) => {
+  const handleColumnSelect = useCallback((columnId, cellCoordinates, isSelectable) => {
     setFocusedRow(cellCoordinates.row);
     setFocusedCol(cellCoordinates.col);
 
-    if (onColumnSelect) {
+    // Notify consumers of column header selection
+    if (isSelectable && onColumnSelect) {
       onColumnSelect(columnId);
     }
   }, [onColumnSelect]);
@@ -401,10 +412,12 @@ const DataGrid = injectIntl((props) => {
     const cellCoordinates = { row: focusedRow, col: focusedCol };
     let nextRow = cellCoordinates.row;
     let nextCol = cellCoordinates.col;
+    setCheckResizable(false);
 
     const targetElement = event.target;
 
     // Allow default behavior if the event target is an editable field
+
     if (event.keyCode !== KeyCode.KEY_TAB
         && (isTextInput(targetElement)
             || ['textarea', 'select'].indexOf(targetElement.tagName.toLowerCase()) >= 0
@@ -434,6 +447,7 @@ const DataGrid = injectIntl((props) => {
         } else {
           // Left key
           nextCol -= 1;
+          setCheckResizable(cellCoordinates.row === 0);
         }
         break;
       case KeyCode.KEY_RIGHT:
@@ -502,9 +516,30 @@ const DataGrid = injectIntl((props) => {
     activeColumnPageX.current = event.pageX;
     activeColumnWidth.current = resizeColumnWidth;
 
+    setFocusedRow(0);
+    setFocusedCol(index);
+
     // Set the active index to the selected column
     setActiveIndex(index);
   }, []);
+
+  const onResizeHandleChange = useCallback((columnIndex, increment) => {
+    const { minimumWidth, maximumWidth, width } = dataGridColumns[columnIndex];
+    const newColumnWidth = Math.min(Math.max(width + increment, minimumWidth), maximumWidth);
+
+    // Update the width for the column in the state variable
+    const newGridColumns = [...dataGridColumns];
+    newGridColumns[columnIndex].width = newColumnWidth;
+    setDataGridColumns(newGridColumns);
+
+    // Update the column and table width
+    grid.current.style.width = `${grid.current.offsetWidth + increment}px`;
+
+    // Notify consumers of the new column width
+    if (onColumnResize) {
+      onColumnResize(dataGridColumns[columnIndex].id, dataGridColumns[columnIndex].width);
+    }
+  }, [dataGridColumns, onColumnResize]);
 
   const onMouseMove = (event) => {
     if (activeIndex == null) {
@@ -540,6 +575,10 @@ const DataGrid = injectIntl((props) => {
     handleFocus.current = false;
   };
 
+  /**
+   * Establishes selection state when the WorklistDataGrid gains focus
+   * @param {*} event focus event data
+   */
   const onFocus = (event) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
@@ -575,8 +614,12 @@ const DataGrid = injectIntl((props) => {
             columns={dataGridColumns}
             headerHeight={columnHeaderHeight}
             tableHeight={tableHeight}
+            activeColumnIndex={focusedRow === 0 ? focusedCol : undefined}
+            activeColumnResizing={focusedRow === 0 && checkResizable}
+            columnResizeIncrement={columnResizeIncrement}
             onColumnSelect={handleColumnSelect}
             onResizeMouseDown={onResizeMouseDown}
+            onResizeHandleChange={onResizeHandleChange}
           />
           <tbody>
             {rows.map((row, index) => (
@@ -597,6 +640,7 @@ const DataGrid = injectIntl((props) => {
           </tbody>
         </ColumnContext.Provider>
       </table>
+      <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />
     </div>
   );
