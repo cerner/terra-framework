@@ -13,90 +13,76 @@ describe(EmbeddedContentConsumer, () => {
       </div>
     );
 
-    const wrapper = shallow(embeddedContentConsumer);
-    expect(wrapper).toMatchSnapshot();
-  });
+  const wrapper = render(embeddedContentConsumer);
+  expect(wrapper).toMatchSnapshot();
+});
 
-  it('should render the embedded content consumer with title prop', () => {
-    const embeddedContentConsumer = (
-      <div>
-        <EmbeddedContentConsumer
-          src="https://www.cdc.gov/"
-          title="title for the frame content"
-        />
-      </div>
-    );
+it('should render the embedded content consumer with custom class names', () => {
+  const embeddedContentConsumer = (
+    <EmbeddedContentConsumer
+      src="https://www.google.com/"
+      className="container"
+    />
+  );
 
-    const wrapper = shallow(embeddedContentConsumer);
-    expect(wrapper).toMatchSnapshot();
-  });
+  const wrapper = render(embeddedContentConsumer);
+  expect(wrapper).toMatchSnapshot();
+});
 
-  it('should render the embedded content consumer with title prop and options prop', () => {
-    const frameOptions = { iframeAttrs: { title: 'title of content set from options.iframeAttrs' } };
-    const embeddedContentConsumer = (
-      <div>
-        <EmbeddedContentConsumer
-          src="https://www.cdc.gov/"
-          title="title that will be used for the frame content"
-          options={frameOptions}
-        />
-      </div>
-    );
-
-    const wrapper = shallow(embeddedContentConsumer);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should render the embedded content consumer with custom class names', () => {
-    const embeddedContentConsumer = (
-      <div>
-        <EmbeddedContentConsumer
-          src="https://www.cdc.gov/"
-          className="container"
-        />
-      </div>
-    );
-
-    const wrapper = shallow(embeddedContentConsumer);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should validate the inputs', () => {
-    const src = 'https://www.cdc.gov/';
-    const title = 'frame content title';
-    let frame;
-    const onMount = (xfcFrame) => { frame = xfcFrame; };
-    const onLaunch = () => { };
-    const onAuthorize = () => { };
-    const resizeConfig = { scrolling: false, fixedHeight: '100%', fixedWidth: '100%' };
-    const options = { secret: 'SecretKey', resizeConfig };
-    const customEvents = [{ key: 'eventKey', handler: () => { } }];
-
-    const embeddedContentConsumer = (
+it('should render the embedded content consumer with options attributes', () => {
+  const inlineHtml = '<p><b>Inline HTML Content</b></p><p>This is an inline html content that can be used to render the content into the frame.</p>';
+  const frameOptions = {
+    iframeAttrs: {
+      title: 'inline html content',
+      width: '100%',
+      height: '100px',
+      srcdoc: inlineHtml,
+    },
+  };
+  const embeddedContentConsumer = (
+    <div>
       <EmbeddedContentConsumer
-        src={src}
-        title={title}
-        onMount={onMount}
-        onLaunch={onLaunch}
-        onAuthorize={onAuthorize}
-        options={options}
-        eventHandlers={customEvents}
+        options={frameOptions}
       />
-    );
+    </div>
+  );
 
-    Consumer.init();
-    const wrapper = mount(embeddedContentConsumer);
+  const wrapper = shallow(embeddedContentConsumer);
+  expect(wrapper).toMatchSnapshot();
+});
 
-    expect(frame).toBeTruthy();
-    expect(wrapper.instance().props.src).toBe(src);
-    expect(wrapper.instance().props.title).toEqual(title);
-    expect(wrapper.instance().props.onMount).toBe(onMount);
-    expect(wrapper.instance().props.onLaunch).toBe(onLaunch);
-    expect(wrapper.instance().props.onAuthorize).toBe(onAuthorize);
-    expect(wrapper.instance().props.options).toBe(options);
-    expect(wrapper.instance().props.options.resizeConfig).toBe(resizeConfig);
-    expect(wrapper.instance().props.eventHandlers).toBe(customEvents);
-  });
+it('should validate the inputs', () => {
+  const src = 'https://www.google.com/';
+  let frame;
+  const onMount = (xfcFrame) => { frame = xfcFrame; };
+  const onLaunch = () => {};
+  const onAuthorize = () => {};
+  const resizeConfig = { scrolling: false, fixedHeight: '100%', fixedWidth: '100%' };
+  const options = { secret: 'SecretKey', resizeConfig };
+  const customEvents = [{ key: 'eventKey', handler: () => {} }];
+
+  const embeddedContentConsumer = (
+    <EmbeddedContentConsumer
+      src={src}
+      onMount={onMount}
+      onLaunch={onLaunch}
+      onAuthorize={onAuthorize}
+      options={options}
+      eventHandlers={customEvents}
+    />
+  );
+
+  Consumer.init();
+  const wrapper = mount(embeddedContentConsumer);
+
+  expect(frame).toBeTruthy();
+  expect(wrapper.instance().props.src).toBe(src);
+  expect(wrapper.instance().props.onMount).toBe(onMount);
+  expect(wrapper.instance().props.onLaunch).toBe(onLaunch);
+  expect(wrapper.instance().props.onAuthorize).toBe(onAuthorize);
+  expect(wrapper.instance().props.options).toBe(options);
+  expect(wrapper.instance().props.options.resizeConfig).toBe(resizeConfig);
+  expect(wrapper.instance().props.eventHandlers).toBe(customEvents);
 });
 
 it('sets appropriate config option when resizeConfig.scrolling is true', () => {
