@@ -282,6 +282,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
       ]
     }
   >
+<<<<<<< HEAD
     <Component
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
@@ -325,6 +326,30 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 "isShiftPressed": undefined,
                 "rowId": "1",
                 "rowIndex": 1,
+=======
+    <div
+      className="data-grid-container"
+    >
+      <table
+        className="data-grid"
+        id="test-terra-data-grid"
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        role="grid"
+        tabIndex={0}
+      >
+        <Memo(ColumnHeader)
+          activeColumnResizing={false}
+          columns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "maximumWidth": 500,
+                "minimumWidth": 100,
+                "width": 200,
+>>>>>>> f0c547b77 (Copy the Jest updates)
               },
             ],
           ],
@@ -364,6 +389,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
           Object {
             "cells": Array [
               Object {
+<<<<<<< HEAD
                 "content": "Heart Rate Monitored (bpm)",
                 "isSelectable": false,
               },
@@ -473,19 +499,98 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               <tr
                 className="column-header-row"
                 height="2.5rem"
+=======
+                "displayName": "March 16",
+                "id": "Column-1",
+                "maximumWidth": 500,
+                "minimumWidth": 100,
+                "width": 200,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
+                "width": 200,
+              },
+            ]
+          }
+          headerHeight="2.5rem"
+          onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
+          onResizeMouseDown={[Function]}
+        >
+          <thead>
+            <tr
+              className="column-header-row"
+              height="2.5rem"
+            >
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={0}
+                displayName=" Vitals"
+                headerHeight="2.5rem"
+                id="Column-0"
+                isActive={false}
+                isResizeActive={false}
+                key="Column-0"
+                maximumWidth={500}
+                minimumWidth={100}
+                onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                width={200}
+>>>>>>> f0c547b77 (Copy the Jest updates)
               >
                 <InjectIntl(ColumnHeaderCell)
                   columnIndex={0}
                   displayName=" Vitals"
                   headerHeight="2.5rem"
                   id="Column-0"
+<<<<<<< HEAD
                   key="Column-0"
                   maximumWidth={300}
                   minimumWidth={60}
+=======
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isActive={false}
+                  isResizable={true}
+                  isResizeActive={false}
+                  isSelectable={true}
+                  maximumWidth={500}
+                  minimumWidth={100}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={0}
                   width={200}
                 >
                   <ColumnHeaderCell
@@ -547,6 +652,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       }
                       tabIndex={-1}
                     >
+<<<<<<< HEAD
                       <div
                         className="header-container"
                         role="button"
@@ -556,14 +662,69 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         </span>
                       </div>
                       <InjectIntl(ColumnResizeHandle)
+=======
+                      <span>
+                         Vitals
+                      </span>
+                    </div>
+                    <InjectIntl(ColumnResizeHandle)
+                      columnIndex={0}
+                      columnText=" Vitals"
+                      columnWidth={200}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
+                      onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
+                    >
+                      <ColumnResizeHandle
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         columnIndex={0}
+                        columnResizeIncrement={10}
                         columnText=" Vitals"
                         columnWidth={200}
+<<<<<<< HEAD
                         height={0}
                         maximumWidth={300}
                         minimumWidth={60}
+=======
+                        intl={
+                          Object {
+                            "defaultFormats": Object {},
+                            "defaultLocale": "en",
+                            "formatDate": [Function],
+                            "formatHTMLMessage": [Function],
+                            "formatMessage": [Function],
+                            "formatNumber": [Function],
+                            "formatPlural": [Function],
+                            "formatRelative": [Function],
+                            "formatTime": [Function],
+                            "formats": Object {},
+                            "formatters": Object {
+                              "getDateTimeFormat": [Function],
+                              "getMessageFormat": [Function],
+                              "getNumberFormat": [Function],
+                              "getPluralFormat": [Function],
+                              "getRelativeFormat": [Function],
+                            },
+                            "locale": "en",
+                            "messages": null,
+                            "now": [Function],
+                            "onError": [Function],
+                            "textComponent": "span",
+                            "timeZone": null,
+                          }
+                        }
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
+<<<<<<< HEAD
                         <ColumnResizeHandle
                           columnIndex={0}
                           columnText=" Vitals"
@@ -626,17 +787,97 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   </ColumnHeaderCell>
                 </InjectIntl(ColumnHeaderCell)>
                 <InjectIntl(ColumnHeaderCell)
+=======
+                        <div
+                          aria-hidden={true}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
+                          aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          className="resize-handle"
+                          draggable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          role="slider"
+                          tabIndex={-1}
+                        />
+                      </ColumnResizeHandle>
+                    </InjectIntl(ColumnResizeHandle)>
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={1}
+                displayName="March 16"
+                headerHeight="2.5rem"
+                id="Column-1"
+                isActive={false}
+                isResizeActive={false}
+                key="Column-1"
+                maximumWidth={500}
+                minimumWidth={100}
+                onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                width={200}
+              >
+                <ColumnHeaderCell
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   columnIndex={1}
                   displayName="March 16"
                   headerHeight="2.5rem"
                   id="Column-1"
+<<<<<<< HEAD
                   key="Column-1"
                   maximumWidth={300}
                   minimumWidth={60}
+=======
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isActive={false}
+                  isResizable={true}
+                  isResizeActive={false}
+                  isSelectable={true}
+                  maximumWidth={500}
+                  minimumWidth={100}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={0}
                   width={200}
                 >
                   <ColumnHeaderCell
@@ -698,6 +939,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       }
                       tabIndex={-1}
                     >
+<<<<<<< HEAD
                       <div
                         className="header-container"
                         role="button"
@@ -707,14 +949,69 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         </span>
                       </div>
                       <InjectIntl(ColumnResizeHandle)
+=======
+                      <span>
+                        March 16
+                      </span>
+                    </div>
+                    <InjectIntl(ColumnResizeHandle)
+                      columnIndex={1}
+                      columnText="March 16"
+                      columnWidth={200}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
+                      onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
+                    >
+                      <ColumnResizeHandle
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         columnIndex={1}
+                        columnResizeIncrement={10}
                         columnText="March 16"
                         columnWidth={200}
+<<<<<<< HEAD
                         height={0}
                         maximumWidth={300}
                         minimumWidth={60}
+=======
+                        intl={
+                          Object {
+                            "defaultFormats": Object {},
+                            "defaultLocale": "en",
+                            "formatDate": [Function],
+                            "formatHTMLMessage": [Function],
+                            "formatMessage": [Function],
+                            "formatNumber": [Function],
+                            "formatPlural": [Function],
+                            "formatRelative": [Function],
+                            "formatTime": [Function],
+                            "formats": Object {},
+                            "formatters": Object {
+                              "getDateTimeFormat": [Function],
+                              "getMessageFormat": [Function],
+                              "getNumberFormat": [Function],
+                              "getPluralFormat": [Function],
+                              "getRelativeFormat": [Function],
+                            },
+                            "locale": "en",
+                            "messages": null,
+                            "now": [Function],
+                            "onError": [Function],
+                            "textComponent": "span",
+                            "timeZone": null,
+                          }
+                        }
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
+<<<<<<< HEAD
                         <ColumnResizeHandle
                           columnIndex={1}
                           columnText="March 16"
@@ -786,20 +1083,111 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   </ColumnHeaderCell>
                 </InjectIntl(ColumnHeaderCell)>
                 <InjectIntl(ColumnHeaderCell)
+=======
+                        <div
+                          aria-hidden={true}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
+                          aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          className="resize-handle"
+                          draggable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          role="slider"
+                          tabIndex={-1}
+                        />
+                      </ColumnResizeHandle>
+                    </InjectIntl(ColumnResizeHandle)>
+                    <div
+                      className="pinned-columns-divider"
+                      style={
+                        Object {
+                          "height": "0px",
+                          "left": 199,
+                        }
+                      }
+                    />
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={2}
+                displayName="March 17"
+                headerHeight="2.5rem"
+                id="Column-2"
+                isActive={false}
+                isResizeActive={false}
+                isSelectable={false}
+                key="Column-2"
+                maximumWidth={500}
+                minimumWidth={100}
+                onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                width={200}
+              >
+                <ColumnHeaderCell
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   columnIndex={2}
                   displayName="March 17"
                   headerHeight="2.5rem"
                   id="Column-2"
+<<<<<<< HEAD
                   isSelectable={false}
                   key="Column-2"
                   maximumWidth={300}
                   minimumWidth={60}
+=======
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isActive={false}
+                  isResizable={true}
+                  isResizeActive={false}
+                  isSelectable={false}
+                  maximumWidth={500}
+                  minimumWidth={100}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={0}
                   width={200}
                 >
+<<<<<<< HEAD
                   <ColumnHeaderCell
                     columnIndex={2}
                     displayName="March 17"
@@ -807,6 +1195,16 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     headerHeight="2.5rem"
                     id="Column-2"
                     intl={
+=======
+                  <th
+                    className="column-header"
+                    key="Column-2"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    role="columnheader"
+                    scope="col"
+                    style={
+>>>>>>> f0c547b77 (Copy the Jest updates)
                       Object {
                         "defaultFormats": Object {},
                         "defaultLocale": "en",
@@ -857,6 +1255,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       }
                       tabIndex={-1}
                     >
+<<<<<<< HEAD
                       <div
                         className="header-container"
                         role="button"
@@ -866,14 +1265,69 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         </span>
                       </div>
                       <InjectIntl(ColumnResizeHandle)
+=======
+                      <span>
+                        March 17
+                      </span>
+                    </div>
+                    <InjectIntl(ColumnResizeHandle)
+                      columnIndex={2}
+                      columnText="March 17"
+                      columnWidth={200}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
+                      onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
+                    >
+                      <ColumnResizeHandle
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         columnIndex={2}
+                        columnResizeIncrement={10}
                         columnText="March 17"
                         columnWidth={200}
+<<<<<<< HEAD
                         height={0}
                         maximumWidth={300}
                         minimumWidth={60}
+=======
+                        intl={
+                          Object {
+                            "defaultFormats": Object {},
+                            "defaultLocale": "en",
+                            "formatDate": [Function],
+                            "formatHTMLMessage": [Function],
+                            "formatMessage": [Function],
+                            "formatNumber": [Function],
+                            "formatPlural": [Function],
+                            "formatRelative": [Function],
+                            "formatTime": [Function],
+                            "formats": Object {},
+                            "formatters": Object {
+                              "getDateTimeFormat": [Function],
+                              "getMessageFormat": [Function],
+                              "getNumberFormat": [Function],
+                              "getPluralFormat": [Function],
+                              "getRelativeFormat": [Function],
+                            },
+                            "locale": "en",
+                            "messages": null,
+                            "now": [Function],
+                            "onError": [Function],
+                            "textComponent": "span",
+                            "timeZone": null,
+                          }
+                        }
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
+<<<<<<< HEAD
                         <ColumnResizeHandle
                           columnIndex={2}
                           columnText="March 17"
@@ -954,6 +1408,85 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     "isMasked": true,
                   },
                 ]
+=======
+                        <div
+                          aria-hidden={true}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
+                          aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          className="resize-handle"
+                          draggable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          role="slider"
+                          tabIndex={-1}
+                        />
+                      </ColumnResizeHandle>
+                    </InjectIntl(ColumnResizeHandle)>
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+            </tr>
+          </thead>
+        </Memo(ColumnHeader)>
+        <tbody>
+          <Row
+            cells={
+              Array [
+                Object {
+                  "content": "Heart Rate Monitored (bpm)",
+                  "isSelectable": false,
+                },
+                Object {
+                  "content": "",
+                },
+                Object {
+                  "content": "66",
+                  "isMasked": true,
+                },
+              ]
+            }
+            displayedColumns={
+              Array [
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isSelectable": false,
+                },
+              ]
+            }
+            height="2.5rem"
+            id="1"
+            key="1"
+            onCellSelect={[Function]}
+            rowHeaderIndex={0}
+            rowIndex={1}
+          >
+            <tr
+              className="row"
+              onMouseEnter={null}
+              onMouseLeave={null}
+              style={
+                Object {
+                  "height": "2.5rem",
+                }
+>>>>>>> f0c547b77 (Copy the Jest updates)
               }
               displayedColumns={
                 Array [
@@ -2257,6 +2790,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
         <VisuallyHiddenText
           aria-atomic="true"
           aria-live="polite"
+<<<<<<< HEAD
           text={null}
         >
           <span
@@ -2269,6 +2803,25 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
     </Component>
   </InjectIntl(Component)>
 </ForwardRef>
+=======
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
+    </div>
+  </DataGrid>
+</InjectIntl(DataGrid)>
+>>>>>>> f0c547b77 (Copy the Jest updates)
 `;
 
 exports[`DataGrid verifies onCellSelect callback is triggered when space is pressed on a non-selectable cell 1`] = `
@@ -2553,6 +3106,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
       ]
     }
   >
+<<<<<<< HEAD
     <Component
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
@@ -2596,6 +3150,30 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 "isShiftPressed": undefined,
                 "rowId": "1",
                 "rowIndex": 1,
+=======
+    <div
+      className="data-grid-container"
+    >
+      <table
+        className="data-grid"
+        id="test-terra-data-grid"
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        role="grid"
+        tabIndex={0}
+      >
+        <Memo(ColumnHeader)
+          activeColumnResizing={false}
+          columns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "maximumWidth": 500,
+                "minimumWidth": 100,
+                "width": 200,
+>>>>>>> f0c547b77 (Copy the Jest updates)
               },
             ],
           ],
@@ -2635,6 +3213,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
           Object {
             "cells": Array [
               Object {
+<<<<<<< HEAD
                 "content": "Heart Rate Monitored (bpm)",
                 "isSelectable": false,
               },
@@ -2744,19 +3323,98 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               <tr
                 className="column-header-row"
                 height="2.5rem"
+=======
+                "displayName": "March 16",
+                "id": "Column-1",
+                "maximumWidth": 500,
+                "minimumWidth": 100,
+                "width": 200,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
+                "width": 200,
+              },
+            ]
+          }
+          headerHeight="2.5rem"
+          onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
+          onResizeMouseDown={[Function]}
+        >
+          <thead>
+            <tr
+              className="column-header-row"
+              height="2.5rem"
+            >
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={0}
+                displayName=" Vitals"
+                headerHeight="2.5rem"
+                id="Column-0"
+                isActive={false}
+                isResizeActive={false}
+                key="Column-0"
+                maximumWidth={500}
+                minimumWidth={100}
+                onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                width={200}
+>>>>>>> f0c547b77 (Copy the Jest updates)
               >
                 <InjectIntl(ColumnHeaderCell)
                   columnIndex={0}
                   displayName=" Vitals"
                   headerHeight="2.5rem"
                   id="Column-0"
+<<<<<<< HEAD
                   key="Column-0"
                   maximumWidth={300}
                   minimumWidth={60}
+=======
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isActive={false}
+                  isResizable={true}
+                  isResizeActive={false}
+                  isSelectable={true}
+                  maximumWidth={500}
+                  minimumWidth={100}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={0}
                   width={200}
                 >
                   <ColumnHeaderCell
@@ -2818,6 +3476,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       }
                       tabIndex={-1}
                     >
+<<<<<<< HEAD
                       <div
                         className="header-container"
                         role="button"
@@ -2827,14 +3486,69 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         </span>
                       </div>
                       <InjectIntl(ColumnResizeHandle)
+=======
+                      <span>
+                         Vitals
+                      </span>
+                    </div>
+                    <InjectIntl(ColumnResizeHandle)
+                      columnIndex={0}
+                      columnText=" Vitals"
+                      columnWidth={200}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
+                      onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
+                    >
+                      <ColumnResizeHandle
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         columnIndex={0}
+                        columnResizeIncrement={10}
                         columnText=" Vitals"
                         columnWidth={200}
+<<<<<<< HEAD
                         height={0}
                         maximumWidth={300}
                         minimumWidth={60}
+=======
+                        intl={
+                          Object {
+                            "defaultFormats": Object {},
+                            "defaultLocale": "en",
+                            "formatDate": [Function],
+                            "formatHTMLMessage": [Function],
+                            "formatMessage": [Function],
+                            "formatNumber": [Function],
+                            "formatPlural": [Function],
+                            "formatRelative": [Function],
+                            "formatTime": [Function],
+                            "formats": Object {},
+                            "formatters": Object {
+                              "getDateTimeFormat": [Function],
+                              "getMessageFormat": [Function],
+                              "getNumberFormat": [Function],
+                              "getPluralFormat": [Function],
+                              "getRelativeFormat": [Function],
+                            },
+                            "locale": "en",
+                            "messages": null,
+                            "now": [Function],
+                            "onError": [Function],
+                            "textComponent": "span",
+                            "timeZone": null,
+                          }
+                        }
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
+<<<<<<< HEAD
                         <ColumnResizeHandle
                           columnIndex={0}
                           columnText=" Vitals"
@@ -2897,17 +3611,97 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   </ColumnHeaderCell>
                 </InjectIntl(ColumnHeaderCell)>
                 <InjectIntl(ColumnHeaderCell)
+=======
+                        <div
+                          aria-hidden={true}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
+                          aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          className="resize-handle"
+                          draggable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          role="slider"
+                          tabIndex={-1}
+                        />
+                      </ColumnResizeHandle>
+                    </InjectIntl(ColumnResizeHandle)>
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={1}
+                displayName="March 16"
+                headerHeight="2.5rem"
+                id="Column-1"
+                isActive={false}
+                isResizeActive={false}
+                key="Column-1"
+                maximumWidth={500}
+                minimumWidth={100}
+                onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                width={200}
+              >
+                <ColumnHeaderCell
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   columnIndex={1}
                   displayName="March 16"
                   headerHeight="2.5rem"
                   id="Column-1"
+<<<<<<< HEAD
                   key="Column-1"
                   maximumWidth={300}
                   minimumWidth={60}
+=======
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isActive={false}
+                  isResizable={true}
+                  isResizeActive={false}
+                  isSelectable={true}
+                  maximumWidth={500}
+                  minimumWidth={100}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={0}
                   width={200}
                 >
                   <ColumnHeaderCell
@@ -2969,6 +3763,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       }
                       tabIndex={-1}
                     >
+<<<<<<< HEAD
                       <div
                         className="header-container"
                         role="button"
@@ -2978,14 +3773,69 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         </span>
                       </div>
                       <InjectIntl(ColumnResizeHandle)
+=======
+                      <span>
+                        March 16
+                      </span>
+                    </div>
+                    <InjectIntl(ColumnResizeHandle)
+                      columnIndex={1}
+                      columnText="March 16"
+                      columnWidth={200}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
+                      onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
+                    >
+                      <ColumnResizeHandle
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         columnIndex={1}
+                        columnResizeIncrement={10}
                         columnText="March 16"
                         columnWidth={200}
+<<<<<<< HEAD
                         height={0}
                         maximumWidth={300}
                         minimumWidth={60}
+=======
+                        intl={
+                          Object {
+                            "defaultFormats": Object {},
+                            "defaultLocale": "en",
+                            "formatDate": [Function],
+                            "formatHTMLMessage": [Function],
+                            "formatMessage": [Function],
+                            "formatNumber": [Function],
+                            "formatPlural": [Function],
+                            "formatRelative": [Function],
+                            "formatTime": [Function],
+                            "formats": Object {},
+                            "formatters": Object {
+                              "getDateTimeFormat": [Function],
+                              "getMessageFormat": [Function],
+                              "getNumberFormat": [Function],
+                              "getPluralFormat": [Function],
+                              "getRelativeFormat": [Function],
+                            },
+                            "locale": "en",
+                            "messages": null,
+                            "now": [Function],
+                            "onError": [Function],
+                            "textComponent": "span",
+                            "timeZone": null,
+                          }
+                        }
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
+<<<<<<< HEAD
                         <ColumnResizeHandle
                           columnIndex={1}
                           columnText="March 16"
@@ -3057,20 +3907,111 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   </ColumnHeaderCell>
                 </InjectIntl(ColumnHeaderCell)>
                 <InjectIntl(ColumnHeaderCell)
+=======
+                        <div
+                          aria-hidden={true}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
+                          aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          className="resize-handle"
+                          draggable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          role="slider"
+                          tabIndex={-1}
+                        />
+                      </ColumnResizeHandle>
+                    </InjectIntl(ColumnResizeHandle)>
+                    <div
+                      className="pinned-columns-divider"
+                      style={
+                        Object {
+                          "height": "0px",
+                          "left": 199,
+                        }
+                      }
+                    />
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={2}
+                displayName="March 17"
+                headerHeight="2.5rem"
+                id="Column-2"
+                isActive={false}
+                isResizeActive={false}
+                isSelectable={false}
+                key="Column-2"
+                maximumWidth={500}
+                minimumWidth={100}
+                onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                width={200}
+              >
+                <ColumnHeaderCell
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   columnIndex={2}
                   displayName="March 17"
                   headerHeight="2.5rem"
                   id="Column-2"
+<<<<<<< HEAD
                   isSelectable={false}
                   key="Column-2"
                   maximumWidth={300}
                   minimumWidth={60}
+=======
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isActive={false}
+                  isResizable={true}
+                  isResizeActive={false}
+                  isSelectable={false}
+                  maximumWidth={500}
+                  minimumWidth={100}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={0}
                   width={200}
                 >
+<<<<<<< HEAD
                   <ColumnHeaderCell
                     columnIndex={2}
                     displayName="March 17"
@@ -3078,6 +4019,16 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     headerHeight="2.5rem"
                     id="Column-2"
                     intl={
+=======
+                  <th
+                    className="column-header"
+                    key="Column-2"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    role="columnheader"
+                    scope="col"
+                    style={
+>>>>>>> f0c547b77 (Copy the Jest updates)
                       Object {
                         "defaultFormats": Object {},
                         "defaultLocale": "en",
@@ -3128,6 +4079,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       }
                       tabIndex={-1}
                     >
+<<<<<<< HEAD
                       <div
                         className="header-container"
                         role="button"
@@ -3137,14 +4089,69 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         </span>
                       </div>
                       <InjectIntl(ColumnResizeHandle)
+=======
+                      <span>
+                        March 17
+                      </span>
+                    </div>
+                    <InjectIntl(ColumnResizeHandle)
+                      columnIndex={2}
+                      columnText="March 17"
+                      columnWidth={200}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
+                      onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
+                    >
+                      <ColumnResizeHandle
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         columnIndex={2}
+                        columnResizeIncrement={10}
                         columnText="March 17"
                         columnWidth={200}
+<<<<<<< HEAD
                         height={0}
                         maximumWidth={300}
                         minimumWidth={60}
+=======
+                        intl={
+                          Object {
+                            "defaultFormats": Object {},
+                            "defaultLocale": "en",
+                            "formatDate": [Function],
+                            "formatHTMLMessage": [Function],
+                            "formatMessage": [Function],
+                            "formatNumber": [Function],
+                            "formatPlural": [Function],
+                            "formatRelative": [Function],
+                            "formatTime": [Function],
+                            "formats": Object {},
+                            "formatters": Object {
+                              "getDateTimeFormat": [Function],
+                              "getMessageFormat": [Function],
+                              "getNumberFormat": [Function],
+                              "getPluralFormat": [Function],
+                              "getRelativeFormat": [Function],
+                            },
+                            "locale": "en",
+                            "messages": null,
+                            "now": [Function],
+                            "onError": [Function],
+                            "textComponent": "span",
+                            "timeZone": null,
+                          }
+                        }
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
+<<<<<<< HEAD
                         <ColumnResizeHandle
                           columnIndex={2}
                           columnText="March 17"
@@ -3225,6 +4232,85 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     "isMasked": true,
                   },
                 ]
+=======
+                        <div
+                          aria-hidden={true}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
+                          aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          className="resize-handle"
+                          draggable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          role="slider"
+                          tabIndex={-1}
+                        />
+                      </ColumnResizeHandle>
+                    </InjectIntl(ColumnResizeHandle)>
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+            </tr>
+          </thead>
+        </Memo(ColumnHeader)>
+        <tbody>
+          <Row
+            cells={
+              Array [
+                Object {
+                  "content": "Heart Rate Monitored (bpm)",
+                  "isSelectable": false,
+                },
+                Object {
+                  "content": "",
+                },
+                Object {
+                  "content": "66",
+                  "isMasked": true,
+                },
+              ]
+            }
+            displayedColumns={
+              Array [
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isSelectable": false,
+                },
+              ]
+            }
+            height="2.5rem"
+            id="1"
+            key="1"
+            onCellSelect={[Function]}
+            rowHeaderIndex={0}
+            rowIndex={1}
+          >
+            <tr
+              className="row"
+              onMouseEnter={null}
+              onMouseLeave={null}
+              style={
+                Object {
+                  "height": "2.5rem",
+                }
+>>>>>>> f0c547b77 (Copy the Jest updates)
               }
               displayedColumns={
                 Array [
@@ -4528,6 +5614,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
         <VisuallyHiddenText
           aria-atomic="true"
           aria-live="polite"
+<<<<<<< HEAD
           text={null}
         >
           <span
@@ -4540,6 +5627,25 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
     </Component>
   </InjectIntl(Component)>
 </ForwardRef>
+=======
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
+    </div>
+  </DataGrid>
+</InjectIntl(DataGrid)>
+>>>>>>> f0c547b77 (Copy the Jest updates)
 `;
 
 exports[`DataGrid verifies row selection column header selection 1`] = `
@@ -4812,6 +5918,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
       ]
     }
   >
+<<<<<<< HEAD
     <Component
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
@@ -4848,6 +5955,24 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
       onColumnSelect={
         [MockFunction] {
           "calls": Array [
+=======
+    <div
+      className="data-grid-container"
+    >
+      <table
+        className="data-grid"
+        id="test-terra-data-grid"
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        role="grid"
+        tabIndex={0}
+      >
+        <Memo(ColumnHeader)
+          activeColumnIndex={0}
+          activeColumnResizing={false}
+          columns={
+>>>>>>> f0c547b77 (Copy the Jest updates)
             Array [
               "WorklistDataGrid-rowSelectionColumn",
             ],
@@ -4888,6 +6013,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
           Object {
             "cells": Array [
               Object {
+<<<<<<< HEAD
                 "content": "Heart Rate Monitored (bpm)",
                 "isSelectable": false,
               },
@@ -5005,20 +6131,116 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               <tr
                 className="column-header-row"
                 height="2.5rem"
+=======
+                "id": "WorklistDataGrid-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "maximumWidth": 500,
+                "minimumWidth": 100,
+                "width": 200,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "maximumWidth": 500,
+                "minimumWidth": 100,
+                "width": 200,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+                "maximumWidth": 500,
+                "minimumWidth": 100,
+                "width": 200,
+              },
+            ]
+          }
+          headerHeight="2.5rem"
+          onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
+          onResizeMouseDown={[Function]}
+        >
+          <thead>
+            <tr
+              className="column-header-row"
+              height="2.5rem"
+            >
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={0}
+                headerHeight="2.5rem"
+                id="WorklistDataGrid-rowSelectionColumn"
+                isActive={true}
+                isResizable={false}
+                isResizeActive={false}
+                isSelectable={true}
+                key="WorklistDataGrid-rowSelectionColumn"
+                maximumWidth={500}
+                minimumWidth={100}
+                onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                width={40}
+>>>>>>> f0c547b77 (Copy the Jest updates)
               >
                 <InjectIntl(ColumnHeaderCell)
                   columnIndex={0}
                   headerHeight="2.5rem"
                   id="WorklistDataGrid-rowSelectionColumn"
+<<<<<<< HEAD
+=======
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isActive={true}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={true}
+<<<<<<< HEAD
                   key="WorklistDataGrid-rowSelectionColumn"
                   maximumWidth={300}
                   minimumWidth={60}
+=======
+                  maximumWidth={500}
+                  minimumWidth={100}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={0}
                   width={40}
                 >
                   <ColumnHeaderCell
@@ -5079,6 +6301,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       }
                       tabIndex={-1}
                     >
+<<<<<<< HEAD
                       <div
                         className="header-container"
                       >
@@ -5088,17 +6311,77 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   </ColumnHeaderCell>
                 </InjectIntl(ColumnHeaderCell)>
                 <InjectIntl(ColumnHeaderCell)
+=======
+                      <span />
+                    </div>
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={1}
+                displayName=" Vitals"
+                headerHeight="2.5rem"
+                id="Column-0"
+                isActive={false}
+                isResizeActive={false}
+                key="Column-0"
+                maximumWidth={500}
+                minimumWidth={100}
+                onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                width={200}
+              >
+                <ColumnHeaderCell
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   columnIndex={1}
                   displayName=" Vitals"
                   headerHeight="2.5rem"
                   id="Column-0"
+<<<<<<< HEAD
                   key="Column-0"
                   maximumWidth={300}
                   minimumWidth={60}
+=======
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isActive={false}
+                  isResizable={true}
+                  isResizeActive={false}
+                  isSelectable={true}
+                  maximumWidth={500}
+                  minimumWidth={100}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={0}
                   width={200}
                 >
                   <ColumnHeaderCell
@@ -5160,6 +6443,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       }
                       tabIndex={-1}
                     >
+<<<<<<< HEAD
                       <div
                         className="header-container"
                         role="button"
@@ -5169,14 +6453,69 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         </span>
                       </div>
                       <InjectIntl(ColumnResizeHandle)
+=======
+                      <span>
+                         Vitals
+                      </span>
+                    </div>
+                    <InjectIntl(ColumnResizeHandle)
+                      columnIndex={1}
+                      columnText=" Vitals"
+                      columnWidth={200}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
+                      onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
+                    >
+                      <ColumnResizeHandle
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         columnIndex={1}
+                        columnResizeIncrement={10}
                         columnText=" Vitals"
                         columnWidth={200}
+<<<<<<< HEAD
                         height={0}
                         maximumWidth={300}
                         minimumWidth={60}
+=======
+                        intl={
+                          Object {
+                            "defaultFormats": Object {},
+                            "defaultLocale": "en",
+                            "formatDate": [Function],
+                            "formatHTMLMessage": [Function],
+                            "formatMessage": [Function],
+                            "formatNumber": [Function],
+                            "formatPlural": [Function],
+                            "formatRelative": [Function],
+                            "formatTime": [Function],
+                            "formats": Object {},
+                            "formatters": Object {
+                              "getDateTimeFormat": [Function],
+                              "getMessageFormat": [Function],
+                              "getNumberFormat": [Function],
+                              "getPluralFormat": [Function],
+                              "getRelativeFormat": [Function],
+                            },
+                            "locale": "en",
+                            "messages": null,
+                            "now": [Function],
+                            "onError": [Function],
+                            "textComponent": "span",
+                            "timeZone": null,
+                          }
+                        }
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
+<<<<<<< HEAD
                         <ColumnResizeHandle
                           columnIndex={1}
                           columnText=" Vitals"
@@ -5239,17 +6578,97 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   </ColumnHeaderCell>
                 </InjectIntl(ColumnHeaderCell)>
                 <InjectIntl(ColumnHeaderCell)
+=======
+                        <div
+                          aria-hidden={true}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
+                          aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          className="resize-handle"
+                          draggable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          role="slider"
+                          tabIndex={-1}
+                        />
+                      </ColumnResizeHandle>
+                    </InjectIntl(ColumnResizeHandle)>
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={2}
+                displayName="March 16"
+                headerHeight="2.5rem"
+                id="Column-1"
+                isActive={false}
+                isResizeActive={false}
+                key="Column-1"
+                maximumWidth={500}
+                minimumWidth={100}
+                onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                width={200}
+              >
+                <ColumnHeaderCell
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   columnIndex={2}
                   displayName="March 16"
                   headerHeight="2.5rem"
                   id="Column-1"
+<<<<<<< HEAD
                   key="Column-1"
                   maximumWidth={300}
                   minimumWidth={60}
+=======
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isActive={false}
+                  isResizable={true}
+                  isResizeActive={false}
+                  isSelectable={true}
+                  maximumWidth={500}
+                  minimumWidth={100}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={0}
                   width={200}
                 >
                   <ColumnHeaderCell
@@ -5311,6 +6730,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       }
                       tabIndex={-1}
                     >
+<<<<<<< HEAD
                       <div
                         className="header-container"
                         role="button"
@@ -5320,14 +6740,69 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         </span>
                       </div>
                       <InjectIntl(ColumnResizeHandle)
+=======
+                      <span>
+                        March 16
+                      </span>
+                    </div>
+                    <InjectIntl(ColumnResizeHandle)
+                      columnIndex={2}
+                      columnText="March 16"
+                      columnWidth={200}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
+                      onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
+                    >
+                      <ColumnResizeHandle
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         columnIndex={2}
+                        columnResizeIncrement={10}
                         columnText="March 16"
                         columnWidth={200}
+<<<<<<< HEAD
                         height={0}
                         maximumWidth={300}
                         minimumWidth={60}
+=======
+                        intl={
+                          Object {
+                            "defaultFormats": Object {},
+                            "defaultLocale": "en",
+                            "formatDate": [Function],
+                            "formatHTMLMessage": [Function],
+                            "formatMessage": [Function],
+                            "formatNumber": [Function],
+                            "formatPlural": [Function],
+                            "formatRelative": [Function],
+                            "formatTime": [Function],
+                            "formats": Object {},
+                            "formatters": Object {
+                              "getDateTimeFormat": [Function],
+                              "getMessageFormat": [Function],
+                              "getNumberFormat": [Function],
+                              "getPluralFormat": [Function],
+                              "getRelativeFormat": [Function],
+                            },
+                            "locale": "en",
+                            "messages": null,
+                            "now": [Function],
+                            "onError": [Function],
+                            "textComponent": "span",
+                            "timeZone": null,
+                          }
+                        }
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
                       >
+<<<<<<< HEAD
                         <ColumnResizeHandle
                           columnIndex={2}
                           columnText="March 16"
@@ -5399,20 +6874,111 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   </ColumnHeaderCell>
                 </InjectIntl(ColumnHeaderCell)>
                 <InjectIntl(ColumnHeaderCell)
+=======
+                        <div
+                          aria-hidden={true}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
+                          aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          className="resize-handle"
+                          draggable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          role="slider"
+                          tabIndex={-1}
+                        />
+                      </ColumnResizeHandle>
+                    </InjectIntl(ColumnResizeHandle)>
+                    <div
+                      className="pinned-columns-divider"
+                      style={
+                        Object {
+                          "height": "0px",
+                          "left": 199,
+                        }
+                      }
+                    />
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={3}
+                displayName="March 17"
+                headerHeight="2.5rem"
+                id="Column-2"
+                isActive={false}
+                isResizeActive={false}
+                isSelectable={false}
+                key="Column-2"
+                maximumWidth={500}
+                minimumWidth={100}
+                onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                width={200}
+              >
+                <ColumnHeaderCell
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   columnIndex={3}
                   displayName="March 17"
                   headerHeight="2.5rem"
                   id="Column-2"
+<<<<<<< HEAD
                   isSelectable={false}
                   key="Column-2"
                   maximumWidth={300}
                   minimumWidth={60}
+=======
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isActive={false}
+                  isResizable={true}
+                  isResizeActive={false}
+                  isSelectable={false}
+                  maximumWidth={500}
+                  minimumWidth={100}
+>>>>>>> f0c547b77 (Copy the Jest updates)
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
-                  tableHeight={0}
                   width={200}
                 >
+<<<<<<< HEAD
                   <ColumnHeaderCell
                     columnIndex={3}
                     displayName="March 17"
@@ -5420,6 +6986,16 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     headerHeight="2.5rem"
                     id="Column-2"
                     intl={
+=======
+                  <th
+                    className="column-header"
+                    key="Column-2"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    role="columnheader"
+                    scope="col"
+                    style={
+>>>>>>> f0c547b77 (Copy the Jest updates)
                       Object {
                         "defaultFormats": Object {},
                         "defaultLocale": "en",
@@ -5470,6 +7046,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       }
                       tabIndex={-1}
                     >
+<<<<<<< HEAD
                       <div
                         className="header-container"
                         role="button"
@@ -5479,9 +7056,29 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         </span>
                       </div>
                       <InjectIntl(ColumnResizeHandle)
+=======
+                      <span>
+                        March 17
+                      </span>
+                    </div>
+                    <InjectIntl(ColumnResizeHandle)
+                      columnIndex={3}
+                      columnText="March 17"
+                      columnWidth={200}
+                      isActive={false}
+                      maximumWidth={500}
+                      minimumWidth={100}
+                      onResizeHandleChange={[Function]}
+                      onResizeMouseDown={[Function]}
+                      onResizeMouseUp={[Function]}
+                    >
+                      <ColumnResizeHandle
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         columnIndex={3}
+                        columnResizeIncrement={10}
                         columnText="March 17"
                         columnWidth={200}
+<<<<<<< HEAD
                         height={0}
                         maximumWidth={300}
                         minimumWidth={60}
@@ -5664,6 +7261,8 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="WorklistDataGrid-rowSelectionColumn"
                         columnIndex={0}
+=======
+>>>>>>> f0c547b77 (Copy the Jest updates)
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -5691,6 +7290,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             "timeZone": null,
                           }
                         }
+<<<<<<< HEAD
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
@@ -5709,6 +7309,33 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               "left": 0,
                             }
                           }
+=======
+                        isActive={false}
+                        maximumWidth={500}
+                        minimumWidth={100}
+                        onResizeHandleChange={[Function]}
+                        onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
+                      >
+                        <div
+                          aria-hidden={true}
+                          aria-label="Terra.worklist-data-grid.resize-handle-template"
+                          aria-valuemax={500}
+                          aria-valuemin={100}
+                          aria-valuenow={200}
+                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          className="resize-handle"
+                          draggable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          role="slider"
+>>>>>>> f0c547b77 (Copy the Jest updates)
                           tabIndex={-1}
                         >
                           <FocusTrap
@@ -7462,6 +9089,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
         <VisuallyHiddenText
           aria-atomic="true"
           aria-live="polite"
+<<<<<<< HEAD
           text={null}
         >
           <span
@@ -7474,6 +9102,25 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
     </Component>
   </InjectIntl(Component)>
 </ForwardRef>
+=======
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
+    </div>
+  </DataGrid>
+</InjectIntl(DataGrid)>
+>>>>>>> f0c547b77 (Copy the Jest updates)
 `;
 
 exports[`DataGrid verifies that the grid created is consistent with the rows and overflowColumns props 1`] = `
@@ -7496,40 +9143,43 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
             0,
           ],
           "setCellAriaLiveMessage": [Function],
+          "setColumnHeaderAriaLiveMessage": [Function],
         }
       }
     >
       <Memo(ColumnHeader)
+        activeColumnIndex={0}
+        activeColumnResizing={false}
         columns={
           Array [
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
+              "maximumWidth": 500,
+              "minimumWidth": 100,
               "width": 200,
             },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
+              "maximumWidth": 500,
+              "minimumWidth": 100,
               "width": 200,
             },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
-              "maximumWidth": 300,
-              "minimumWidth": 60,
+              "maximumWidth": 500,
+              "minimumWidth": 100,
               "width": 200,
             },
           ]
         }
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
+        onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
-        tableHeight={0}
       />
       <tbody>
         <Memo(Row)
@@ -7697,6 +9347,11 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
     aria-live="polite"
     text={null}
   />
+  <VisuallyHiddenText
+    aria-atomic="true"
+    aria-live="polite"
+    text={null}
+  />
 </div>
 `;
 
@@ -7720,40 +9375,43 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
             0,
           ],
           "setCellAriaLiveMessage": [Function],
+          "setColumnHeaderAriaLiveMessage": [Function],
         }
       }
     >
       <Memo(ColumnHeader)
+        activeColumnIndex={0}
+        activeColumnResizing={false}
         columns={
           Array [
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
+              "maximumWidth": 500,
+              "minimumWidth": 100,
               "width": 200,
             },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
+              "maximumWidth": 500,
+              "minimumWidth": 100,
               "width": 200,
             },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
-              "maximumWidth": 300,
-              "minimumWidth": 60,
+              "maximumWidth": 500,
+              "minimumWidth": 100,
               "width": 200,
             },
           ]
         }
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
+        onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
-        tableHeight={0}
       />
       <tbody>
         <Memo(Row)
@@ -7916,6 +9574,11 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
       </tbody>
     </ContextProvider>
   </table>
+  <VisuallyHiddenText
+    aria-atomic="true"
+    aria-live="polite"
+    text={null}
+  />
   <VisuallyHiddenText
     aria-atomic="true"
     aria-live="polite"

@@ -13,7 +13,6 @@ describe('ColumnResizeHandle', () => {
         columnIndex={0}
         columnText="Vitals"
         columnWidth={200}
-        height={500}
         minimumWidth={60}
         maximumWidth={300}
         onResizeMouseDown={mockResizeMouseDown}
@@ -23,11 +22,10 @@ describe('ColumnResizeHandle', () => {
     // Validate resize handle component
     const resizeHandle = wrapper.find('.resize-handle');
     expect(resizeHandle).toHaveLength(1);
-    expect(resizeHandle.props()['aria-label']).toBe('Vitals');
+    expect(resizeHandle.props()['aria-label']).toBe('Terra.worklist-data-grid.resize-handle-template');
     expect(resizeHandle.props()['aria-valuenow']).toBe(200);
     expect(resizeHandle.props()['aria-valuemin']).toBe(60);
     expect(resizeHandle.props()['aria-valuemax']).toBe(300);
-    expect(resizeHandle.props().style.height).toBe('500px');
 
     // Simulate onMouseDown event
     resizeHandle.invoke('onMouseDown')(
