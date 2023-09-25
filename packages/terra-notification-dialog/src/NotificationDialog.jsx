@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
+import FocusTrap from 'focus-trap-react';
 import Button from 'terra-button';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
@@ -191,37 +192,39 @@ const NotificationDialog = (props) => {
       zIndex="9000"
       isCalledFromNotificationDialog
     >
-      <div className={cx('notification-dialog-inner-wrapper')}>
-        <div className={cx('notification-dialog-container')} tabIndex="-1" data-terra-notification-dialog>
-          <div className={cx(['floating-header-background', variant])} />
-          <div className={cx(['header'])}>
-            <div className={cx(['header-content'])}>
-              <NotificationIcon variant={variant} iconClassName={custom.iconClassName} />
-              <div id="header-container" className={cx('header-container')}>
-                <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
-                <div id="notification-dialog-title" className={cx('title')}>{dialogTitle}</div>
+      <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
+        <div className={cx('notification-dialog-inner-wrapper')}>
+          <div className={cx('notification-dialog-container')} tabIndex="-1" data-terra-notification-dialog>
+            <div className={cx(['floating-header-background', variant])} />
+            <div className={cx(['header'])}>
+              <div className={cx(['header-content'])}>
+                <NotificationIcon variant={variant} iconClassName={custom.iconClassName} />
+                <div id="header-container" className={cx('header-container')}>
+                  <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
+                  <div id="notification-dialog-title" className={cx('title')}>{dialogTitle}</div>
+                </div>
               </div>
             </div>
-          </div>
-          <div id="dialogBody" className={cx('body')}>
-            {(startMessage)
-              && <div className={cx('message')}>{(startMessage)}</div>}
-            {content
-              && <div className={cx('message')}>{content}</div>}
-            {endMessage
-              && <div className={cx('message')}>{endMessage}</div>}
-          </div>
-          <div className={cx('footer')}>
-            {actionSection(
-              acceptAction,
-              rejectAction,
-              buttonOrder,
-              emphasizedAction,
-              setNotificationDialogRef,
-            )}
+            <div id="dialogBody" className={cx('body')}>
+              {(startMessage)
+                && <div className={cx('message')}>{(startMessage)}</div>}
+              {content
+                && <div className={cx('message')}>{content}</div>}
+              {endMessage
+                && <div className={cx('message')}>{endMessage}</div>}
+            </div>
+            <div className={cx('footer')}>
+              {actionSection(
+                acceptAction,
+                rejectAction,
+                buttonOrder,
+                emphasizedAction,
+                setNotificationDialogRef,
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      </FocusTrap>
     </AbstractModal>
   );
   /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
