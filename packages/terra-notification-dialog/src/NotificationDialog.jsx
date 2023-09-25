@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
+import FocusTrap from 'focus-trap-react';
 import Button from 'terra-button';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
@@ -105,7 +106,7 @@ const defaultProps = {
   custom: {},
 };
 
-const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction, refCallback) => {
+const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction) => {
   if (!acceptAction && !rejectAction) {
     return null;
   }
@@ -113,20 +114,12 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
   const actionButtons = [];
   if (acceptAction) {
     const buttonVariant = emphasizedAction === 'accept' ? { variant: 'emphasis' } : {};
-    if (buttonOrder === 'acceptFirst' || !rejectAction) {
-      actionButtons.push(<Button {...buttonVariant} refCallback={refCallback} tabIndex="0" data-terra-notification-dialog-button="accept" key="accept" text={acceptAction.text} onClick={acceptAction.onClick} />);
-    } else {
-      actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="accept" key="accept" text={acceptAction.text} onClick={acceptAction.onClick} />);
-    }
+    actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="accept" key="accept" text={acceptAction.text} onClick={acceptAction.onClick} />);
   }
 
   if (rejectAction) {
     const buttonVariant = emphasizedAction === 'reject' ? { variant: 'emphasis' } : {};
-    if (acceptAction && buttonOrder === 'acceptFirst') {
-      actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
-    } else {
-      actionButtons.push(<Button refCallback={refCallback} tabIndex="0" {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
-    }
+    actionButtons.push(<Button {...buttonVariant} data-terra-notification-dialog-button="reject" key="reject" text={rejectAction.text} onClick={rejectAction.onClick} />);
   }
 
   return (
@@ -138,16 +131,7 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
 
 const NotificationDialog = (props) => {
   const theme = React.useContext(ThemeContext);
-  const notificationDialogRef = useRef();
-
-  const setNotificationDialogRef = (node) => {
-    notificationDialogRef.current = node;
-  };
-
-  useEffect(() => {
-    notificationDialogRef.current.focus();
-  }, []);
-
+  
   const {
     dialogTitle,
     startMessage,
@@ -191,37 +175,38 @@ const NotificationDialog = (props) => {
       zIndex="9000"
       isCalledFromNotificationDialog
     >
-      <div className={cx('notification-dialog-inner-wrapper')}>
-        <div className={cx('notification-dialog-container')} tabIndex="-1" data-terra-notification-dialog>
-          <div className={cx(['floating-header-background', variant])} />
-          <div className={cx(['header'])}>
-            <div className={cx(['header-content'])}>
-              <NotificationIcon variant={variant} iconClassName={custom.iconClassName} />
-              <div id="header-container" className={cx('header-container')}>
-                <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
-                <div id="notification-dialog-title" className={cx('title')}>{dialogTitle}</div>
+      <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
+        <div className={cx('notification-dialog-inner-wrapper')}>
+          <div className={cx('notification-dialog-container')} tabIndex="0" data-terra-notification-dialog>
+            <div className={cx(['floating-header-background', variant])} />
+            <div className={cx(['header'])}>
+              <div className={cx(['header-content'])}>
+                <NotificationIcon variant={variant} iconClassName={custom.iconClassName} />
+                <div id="header-container" className={cx('header-container')}>
+                  <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
+                  <div id="notification-dialog-title" className={cx('title')}>{dialogTitle}</div>
+                </div>
               </div>
             </div>
-          </div>
-          <div id="dialogBody" className={cx('body')}>
-            {(startMessage)
-              && <div className={cx('message')}>{(startMessage)}</div>}
-            {content
-              && <div className={cx('message')}>{content}</div>}
-            {endMessage
-              && <div className={cx('message')}>{endMessage}</div>}
-          </div>
-          <div className={cx('footer')}>
-            {actionSection(
-              acceptAction,
-              rejectAction,
-              buttonOrder,
-              emphasizedAction,
-              setNotificationDialogRef,
-            )}
+            <div id="dialogBody" className={cx('body')}>
+              {(startMessage)
+                && <div className={cx('message')}>{(startMessage)}</div>}
+              {content
+                && <div className={cx('message')}>{content}</div>}
+              {endMessage
+                && <div className={cx('message')}>{endMessage}</div>}
+            </div>
+            <div className={cx('footer')}>
+              {actionSection(
+                acceptAction,
+                rejectAction,
+                buttonOrder,
+                emphasizedAction
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      </FocusTrap>
     </AbstractModal>
   );
   /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
