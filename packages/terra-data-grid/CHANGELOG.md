@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added ability to resize columns via keyboard.
+
 ## 0.8.1 - (October 17, 2023)
 
 * Fixed
