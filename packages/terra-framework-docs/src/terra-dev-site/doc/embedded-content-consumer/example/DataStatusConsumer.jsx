@@ -1,6 +1,7 @@
 import React from 'react';
 import EmbeddedContentConsumer from 'terra-embedded-content-consumer';
 import { Consumer } from 'xfc';
+import '../providers/EmbeddedContentConsumerCommon.module.scss';
 
 Consumer.init();
 

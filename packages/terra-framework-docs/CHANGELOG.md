@@ -15,6 +15,7 @@
 ## 1.35.0 - (September 14, 2023)
 
 * Added
+  * Added an example and test for `terra-embedded-content-consumer` to enable inline html content to be set in `srcdoc` frame attribute.
   * Added aria-label prop for terra-popup to announce the close instruction.
   * Added example for `terra-tabs` to test the focus traverse with interactive element within the tab content.
   * Added `terra-brand-footer` as a dependency.
@@ -62,7 +63,7 @@
 
 * Changed
   * Updated toggle examples for `terra-collapsible-menu-view` to include selectable toggles and toggles within a collapsed menu.
-  
+
 * Added
   * Updated row selection example for `terra-worklist-data-grid` to show ability to select the row selection column header.
 

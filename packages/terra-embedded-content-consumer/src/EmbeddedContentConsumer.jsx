@@ -22,7 +22,32 @@ const propTypes = {
   onAuthorize: PropTypes.func,
   /**
    * The component can be configured with consumer frame options.
+   *
+   * Example `options` object:
+   *
+   * ```
+   * options = {{
+   *   iframeAttrs: {
+   *     id: 'iframe-id', // Sets iframe id
+   *     srcdoc: 'inline html', // Sets the inline HTML content to render within the iframe
+   *     width: '100%', // Width of the iframe
+   *     height: '400px', // Height of the iframe, must not be 100%
+   *   },
+   *   resizeConfig: {
+   *     scrolling: true, // true - enable scrolling within the frame, false - disable scrolling within the frame
+   *   },
+   * }}
+   * ```
+   *
+   * Note: when `srcdoc` is set, this will override the `src` URL.
+   * It's important to know that when this option is used,
+   * the [xfc](https://github.com/cerner/xfc) library does not manage
+   * [auto resizing](https://github.com/cerner/xfc#iframe-resizing-config)
+   * of the content of the iframe even if `resizeConfig` option is set. It's
+   * important to specify the `width` and `height` of the frame.
+   *
    * See xfc consumer configuration for details: https://github.com/cerner/xfc
+   *
    */
   options: PropTypes.object,
   /**
