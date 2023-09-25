@@ -4,7 +4,11 @@
 
 * Added
   * Added doc and test example for `collapsible-menu-view` multi-select group items.
-  * Added aria-label prop for `collapsible-menu-view` to announce group information.
+
+## 1.37.0 - (September 21, 2023)
+
+* Changed
+  * Minor dependency version bump
 
 ## 1.36.0 - (September 19, 2023)
 
