@@ -120,22 +120,22 @@ const propTypes = {
    * @private
    * An array of ISO 8601 string representation of the dates to disable in the picker. The values must be in the `YYYY-MM-DD` format.
    */
-  excludeDates: PropTypes.arrayOf(PropTypes.string),
+  excludeDates: PropTypes.arrayOf(PropTypes.object),
   /**
    * @private
    * An array of ISO 8601 string representation of the dates to enable in the picker. All Other dates will be disabled. The values must be in the `YYYY-MM-DD` format.
    */
-  includeDates: PropTypes.arrayOf(PropTypes.string),
+  includeDates: PropTypes.arrayOf(PropTypes.object),
   /**
    * @private
    * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
    */
-  maxDate: PropTypes.string,
+  maxDate: PropTypes.object,
   /**
    * @private
    * An ISO 8601 string representation of the minimum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or after `01/01/1900`
    */
-  minDate: PropTypes.string,
+  minDate: PropTypes.object,
   /**
    * A function that gets called for each date in the picker to evaluate which date should be disabled.
    * A return value of true will be enabled and false will be disabled.
