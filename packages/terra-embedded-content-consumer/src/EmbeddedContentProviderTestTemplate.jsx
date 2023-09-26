@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import '../../../initalizeXFC.js';
 import './ProviderIframe.module.scss';
 import './ProviderTestTemplate.module.scss';
 
