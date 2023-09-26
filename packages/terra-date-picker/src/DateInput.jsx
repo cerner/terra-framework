@@ -25,6 +25,7 @@ import DateUtil from './DateUtil';
 import DateInputLayout from './_DateInputLayout';
 import { getLocalizedDateForScreenReader } from './react-datepicker/date_utils';
 import styles from './DatePicker.module.scss';
+import moment from 'moment-timezone';
 
 const cx = classNames.bind(styles);
 
@@ -118,24 +119,24 @@ const propTypes = {
   value: PropTypes.string,
   /**
    * @private
-   * An array of ISO 8601 string representation of the dates to disable in the picker. The values must be in the `YYYY-MM-DD` format.
+   * An array of {@link moment} objects of the dates to disable in the picker.
    */
-  excludeDates: PropTypes.arrayOf(PropTypes.object),
+  excludeDates: PropTypes.arrayOf(PropTypes.objectOf(moment)),
   /**
    * @private
-   * An array of ISO 8601 string representation of the dates to enable in the picker. All Other dates will be disabled. The values must be in the `YYYY-MM-DD` format.
+   * An array of {@link moment} objects of the dates to enable in the picker. All Other dates will be disabled.
    */
-  includeDates: PropTypes.arrayOf(PropTypes.object),
+  includeDates: PropTypes.arrayOf(PropTypes.objectOf(moment)),
   /**
    * @private
-   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
+   * A {@link moment} object of the maximum date that can be selected.
    */
-  maxDate: PropTypes.object,
+  maxDate: PropTypes.objectOf(moment),
   /**
    * @private
-   * An ISO 8601 string representation of the minimum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or after `01/01/1900`
+   * A {@link moment} object of the minimum date that can be selected
    */
-  minDate: PropTypes.object,
+  minDate: PropTypes.objectOf(moment),
   /**
    * A function that gets called for each date in the picker to evaluate which date should be disabled.
    * A return value of true will be enabled and false will be disabled.
