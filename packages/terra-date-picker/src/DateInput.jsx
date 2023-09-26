@@ -119,24 +119,24 @@ const propTypes = {
   value: PropTypes.string,
   /**
    * @private
-   * An array of {@link moment} objects of the dates to disable in the picker.
+   * An array of {@link moment} date objects of the dates to disable in the picker.
    */
   excludeDates: PropTypes.arrayOf(PropTypes.objectOf(moment)),
   /**
    * @private
-   * An array of {@link moment} objects of the dates to enable in the picker. All Other dates will be disabled.
+   * An array of {@link moment} date objects of the dates to enable in the picker. All Other dates will be disabled.
    */
   includeDates: PropTypes.arrayOf(PropTypes.objectOf(moment)),
   /**
    * @private
-   * A {@link moment} object of the maximum date that can be selected.
+   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
    */
-  maxDate: PropTypes.objectOf(moment),
+  maxDate: PropTypes.string,
   /**
    * @private
-   * A {@link moment} object of the minimum date that can be selected
+   * An ISO 8601 string representation of the minimum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or after `01/01/1900`
    */
-  minDate: PropTypes.objectOf(moment),
+  minDate: PropTypes.string,
   /**
    * A function that gets called for each date in the picker to evaluate which date should be disabled.
    * A return value of true will be enabled and false will be disabled.
