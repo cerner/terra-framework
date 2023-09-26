@@ -7,3 +7,20 @@ exports[`should render the embedded content consumer with custom class names 1`]
   class="container"
 />
 `;
+
+exports[`should render the embedded content consumer with options attributes 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    options={
+      Object {
+        "iframeAttrs": Object {
+          "height": "100px",
+          "srcdoc": "<p><b>Inline HTML Content</b></p><p>This is an inline html content that can be used to render the content into the frame.</p>",
+          "title": "inline html content",
+          "width": "100%",
+        },
+      }
+    }
+  />
+</div>
+`;
