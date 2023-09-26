@@ -230,7 +230,7 @@ class CollapsibleMenuView extends React.Component {
     }
 
     const iconClassName = classNames(cx(
-      { 'collapsible-menu-view-icon-vertical': useHorizontalIcon },
+      { 'collapsible-menu-view-icon-vertical': !useHorizontalIcon },
       theme.className,
     ));
 
