@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.38.0 - (September 26, 2023)
+
 * Updated
   * Updated documentation for `options` prop to include `srcdoc` iframe atttribute for inline html content in iframe.
 
