@@ -229,13 +229,16 @@ class CollapsibleMenuView extends React.Component {
       }
     }
 
-    const icon = useHorizontalIcon ? <IconEllipses /> : <IconEllipses className={cx('vertical-icon')} />;
+    const iconClassName = classNames(cx(
+      'collapsible-menu-view-icon-vertical',
+      theme.className,
+    ));
 
     const menuIcon = (
       <div className={menuButtonClassName} ref={this.setMenuButton}>
         <CollapsibleMenuViewItem
           data-collapsible-menu-toggle
-          icon={icon}
+          icon={<IconEllipses className={iconClassName} />}
           subMenuItems={hiddenChildren}
           boundingRef={boundingRef}
           menuWidth={menuWidth}

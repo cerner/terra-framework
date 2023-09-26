@@ -22,7 +22,7 @@
     justify-content: flex-start;
   }
 
-  .vertical-icon {
+  .collapsible-menu-view-icon-vertical {
     transform: rotate(90deg);
   }
 
@@ -63,8 +63,7 @@
   }
 
   .chevron-right {
-    padding: 0;
-    padding-left: var(--terra-collapsible-menu-view-chevron-right-padding-left, 0.714rem);
+    padding: 0 0 0 var(--terra-collapsible-menu-view-chevron-right-padding-left, 0.714rem);
   }
 
   .is-calculating {

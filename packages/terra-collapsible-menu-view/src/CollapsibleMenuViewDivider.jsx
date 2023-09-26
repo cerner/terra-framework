@@ -20,7 +20,8 @@ const contextTypes = {
   isCollapsibleMenuItem: PropTypes.bool,
 };
 
-const CollapsibleMenuViewDivider = ({ useChevronRightIcon }, { isCollapsibleMenuItem }) => {
+const CollapsibleMenuViewDivider = (props, { isCollapsibleMenuItem }) => {
+  const { useChevronRightIcon } = props;
   const theme = React.useContext(ThemeContext);
   if (useChevronRightIcon && isCollapsibleMenuItem) {
     return null;
