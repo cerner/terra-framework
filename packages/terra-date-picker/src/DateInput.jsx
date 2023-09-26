@@ -15,6 +15,7 @@ import {
 import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import moment from 'moment-timezone';
 import { v4 as uuidv4 } from 'uuid';
 import Button from 'terra-button';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
@@ -25,7 +26,6 @@ import DateUtil from './DateUtil';
 import DateInputLayout from './_DateInputLayout';
 import { getLocalizedDateForScreenReader } from './react-datepicker/date_utils';
 import styles from './DatePicker.module.scss';
-import moment from 'moment-timezone';
 
 const cx = classNames.bind(styles);
 
