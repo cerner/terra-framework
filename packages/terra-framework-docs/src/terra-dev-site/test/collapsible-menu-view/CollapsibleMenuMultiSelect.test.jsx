@@ -1,8 +1,7 @@
 import React from 'react';
-import IconTable from 'terra-icon/lib/icon/IconTable';
-import IconFlowsheet from 'terra-icon/lib/icon/IconFlowsheet';
-import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
-import IconSend from 'terra-icon/lib/icon/IconSend';
+import {
+  IconTable, IconFlowsheet, IconVisualization, IconSend,
+} from 'terra-icon';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
 class CollapsibleMenuMultiSelect extends React.Component {
