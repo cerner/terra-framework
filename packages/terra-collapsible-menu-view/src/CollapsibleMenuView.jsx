@@ -7,10 +7,7 @@ import ThemeContext from 'terra-theme-context';
 import { injectIntl } from 'react-intl';
 import { IconEllipses } from 'terra-icon';
 import CollapsibleMenuViewItem from './CollapsibleMenuViewItem';
-import CollapsibleMenuViewItemGroup from './CollapsibleMenuViewItemGroup';
-import CollapsibleMenuViewToggle from './CollapsibleMenuViewToggle';
 import CollapsibleMenuViewDivider from './CollapsibleMenuViewDivider';
-import CollapsibleMenuViewHyperlink from './CollapsibleMenuViewHyperlink';
 import styles from './CollapsibleMenuView.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -266,12 +263,6 @@ class CollapsibleMenuView extends React.Component {
     );
   }
 }
-
-CollapsibleMenuView.Item = CollapsibleMenuViewItem;
-CollapsibleMenuView.ItemGroup = CollapsibleMenuViewItemGroup;
-CollapsibleMenuView.Toggle = CollapsibleMenuViewToggle;
-CollapsibleMenuView.Hyperlink = CollapsibleMenuViewHyperlink;
-CollapsibleMenuView.Divider = CollapsibleMenuViewDivider;
 
 CollapsibleMenuView.propTypes = propTypes;
 CollapsibleMenuView.contextType = ThemeContext;
