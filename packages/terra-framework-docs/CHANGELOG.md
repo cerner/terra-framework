@@ -5,6 +5,9 @@
 * Added
   * Added documentation for hyperlinks in `terra-collapsible-menu-view`.
   
+* Updated
+  * Updated examples for `terra-collapsible-menu-view` to use more meaningful controls and control labels.
+
 ## 1.38.0 - (September 26, 2023)
 
 * Changed
