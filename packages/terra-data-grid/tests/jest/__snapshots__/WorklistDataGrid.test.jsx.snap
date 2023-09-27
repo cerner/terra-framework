@@ -307,6 +307,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -2836,6 +2837,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -6049,6 +6051,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -9244,6 +9247,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -11773,6 +11777,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -14986,6 +14991,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -18247,6 +18253,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -21428,6 +21435,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -24661,6 +24669,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -27198,6 +27207,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -30411,6 +30421,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -33584,6 +33595,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -36757,6 +36769,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -39930,6 +39943,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -43103,6 +43117,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -46272,6 +46287,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -49441,6 +49457,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -52570,6 +52587,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -55015,6 +55033,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
   >
     <div
       className="worklist-data-grid-container"
+      id="test-terra-worklist-data-grid-worklist-data-grid-container"
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}

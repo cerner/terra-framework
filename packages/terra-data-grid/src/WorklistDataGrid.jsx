@@ -174,9 +174,9 @@ function WorklistDataGrid(props) {
   const [rowSelectionModeAriaLiveMessage, setRowSelectionModeAriaLiveMessage] = useState(null);
   const inShiftUpDownMode = useRef(false);
   const multiSelectRange = useRef({ start: null, end: null });
-  const gridFocusedWhenRowSelectionDisabled = useRef(false);
   const dataGridFuncRef = useRef();
   const gridReceivedFocus = useRef(false);
+  const gridHasFocus = document.getElementById(`${id}-worklist-data-grid-container`)?.contains(document.activeElement);
 
   // -------------------------------------
   // useEffect Hooks
@@ -199,9 +199,8 @@ function WorklistDataGrid(props) {
     if (gridReceivedFocus.current) {
       let newFocusCell = dataGridFuncRef.current.getFocusedCell();
       newFocusCell = { row: newFocusCell.row, col: Math.max(newFocusCell.col + (hasSelectableRows ? 1 : -1), 0) };
-      dataGridFuncRef.current.setFocusedRowCol(newFocusCell.row, newFocusCell.col, gridFocusedWhenRowSelectionDisabled.current);
+      dataGridFuncRef.current.setFocusedRowCol(newFocusCell.row, newFocusCell.col, gridHasFocus);
     }
-    gridFocusedWhenRowSelectionDisabled.current = false;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
 
@@ -254,9 +253,6 @@ function WorklistDataGrid(props) {
           onClearSelectedRows();
         }
       } else if (onDisableSelectableRows) {
-        // In order to set focus to the right cell after row selection is turned off, keep
-        // track of cell in grid that had focus when the call was initiated.
-        gridFocusedWhenRowSelectionDisabled.current = true;
         onDisableSelectableRows();
       }
     }
@@ -412,10 +408,11 @@ function WorklistDataGrid(props) {
   // -------------------------------------
   return (
     <div
+      id={`${id}-worklist-data-grid-container`}
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
       className={cx('worklist-data-grid-container')}
-      onFocus={onFocus}
+      onFocus={!gridReceivedFocus.current && onFocus}
     >
       <DataGrid
         id={id}
