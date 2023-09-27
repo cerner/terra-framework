@@ -140,6 +140,7 @@ const defaultProps = {
   rowHeight: '2.5rem',
   pinnedColumns: [],
   overflowColumns: [],
+  rows: [],
 };
 
 function WorklistDataGrid(props) {

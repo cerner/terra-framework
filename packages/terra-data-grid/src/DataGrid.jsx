@@ -121,6 +121,7 @@ const defaultProps = {
   rowHeight: '2.5rem',
   pinnedColumns: [],
   overflowColumns: [],
+  rows: [],
 };
 
 const DataGrid = injectIntl((props) => {
