@@ -2,11 +2,6 @@
 
 ## Unreleased
 
-* Updated
-  * Updated documentation for `options` prop to include `srcdoc` iframe atttribute for inline html content in iframe.
-* Added
-  * Added `title` prop with note regarding accessibility requirement.
-
 * Added
   * Added an example and updated documentation on how to enable embedded content to be scrolled within the iframe.
   * Added `title` prop with note regarding accessibility requirement.
