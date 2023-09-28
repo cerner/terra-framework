@@ -88,4 +88,21 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
       Terra.validates.element('consumer with srcdoc');
     });
   });
+
+  describe('scrolling', () => {
+    it('scrolls to the content', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/embedded-content-consumer/consumers/basic-consumer-with-scrolling');
+      $('iframe[id="basic-consumer-with-scrolling"]').waitForDisplayed();
+
+      const myFrame = $('iframe[id="basic-consumer-with-scrolling"]');
+      browser.switchToFrame(myFrame);
+
+      const p = $('<p>');
+      p.scrollIntoView();
+
+      browser.switchToParentFrame();
+
+      Terra.validates.element('Scroll content into view');
+    });
+  });
 });

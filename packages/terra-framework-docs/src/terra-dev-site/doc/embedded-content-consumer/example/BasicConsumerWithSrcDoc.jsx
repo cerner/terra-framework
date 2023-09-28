@@ -15,7 +15,7 @@ const BasicConsumerWithSrcDoc = () => {
           {
             id: 'iframe-inline-html', // Sets iframe id
             title: 'Basic Embedded Content Consumer using `srcdoc` inline HTML',
-            srcdoc: { inlineHtml },
+            srcdoc: inlineHtml,
             width: '100%',
             height: '200px',
           },
