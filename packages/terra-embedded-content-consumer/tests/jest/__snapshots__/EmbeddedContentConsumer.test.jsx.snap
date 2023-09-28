@@ -1,36 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sets appropriate config option when resizeConfig.scrolling is false 1`] = `
-<div>
-  <EmbeddedContentConsumer
-    options={
-      Object {
-        "resizeConfig": Object {
-          "scrolling": false,
-        },
-      }
-    }
-    src="https://www.google.com/"
-  />
-</div>
-`;
-
-exports[`sets appropriate config option when resizeConfig.scrolling is true 1`] = `
-<div>
-  <EmbeddedContentConsumer
-    options={
-      Object {
-        "resizeConfig": Object {
-          "scrolling": true,
-        },
-      }
-    }
-    src="https://www.google.com/"
-  />
-</div>
-`;
-
-exports[`should render the embedded content consumer container 1`] = `<div />`;
 exports[`EmbeddedContentConsumer should render the embedded content consumer container 1`] = `
 <div>
   <EmbeddedContentConsumer
@@ -108,5 +77,35 @@ exports[`EmbeddedContentConsumer should render the embedded content consumer wit
   >
     <div />
   </EmbeddedContentConsumer>
+</div>
+`;
+
+exports[`sets appropriate config option when resizeConfig.scrolling is false 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    options={
+      Object {
+        "resizeConfig": Object {
+          "scrolling": false,
+        },
+      }
+    }
+    src="https://www.google.com/"
+  />
+</div>
+`;
+
+exports[`sets appropriate config option when resizeConfig.scrolling is true 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    options={
+      Object {
+        "resizeConfig": Object {
+          "scrolling": true,
+        },
+      }
+    }
+    src="https://www.google.com/"
+  />
 </div>
 `;
