@@ -211,7 +211,7 @@ function WorklistDataGrid(props) {
 
       if (rowSelectionsAdded.length === 1) {
         const newRowIndex = rows.findIndex(row => row.id === rowSelectionsAdded[0]);
-        const selectedRowLabel = rows[newRowIndex].ariaLabel || newRowIndex + 1;
+        const selectedRowLabel = rows[newRowIndex].ariaLabel || newRowIndex + 2; // Accounts for header row and zero-based index
         selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.worklistDataGrid.row-selection-template' }, { row: selectedRowLabel });
       } else if (rowSelectionsAdded.length > 1) {
         selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.worklistDataGrid.multiple-rows-selected' }, { rowCount: rowSelectionsAdded.length });
@@ -219,7 +219,7 @@ function WorklistDataGrid(props) {
 
       if (rowSelectionsRemoved.length === 1) {
         const removedRowIndex = rows.findIndex(row => row.id === rowSelectionsRemoved[0]);
-        const unselectedRowLabel = rows[removedRowIndex].ariaLabel || removedRowIndex + 1;
+        const unselectedRowLabel = rows[removedRowIndex].ariaLabel || removedRowIndex + 2; // Accounts for header row and zero-based index
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.worklistDataGrid.row-selection-cleared-template' }, { row: unselectedRowLabel });
       } else if (rowSelectionsRemoved.length > 1) {
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.worklistDataGrid.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
