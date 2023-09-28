@@ -281,7 +281,8 @@ const Tab = ({
       role="tab"
       aria-disabled={isDisabled}
       className={variant === 'framework' ? paneClassNames : tabClassNames}
-      title={isClosable ? `${label}. ${tabDeleteLabel}` : label}
+      title={label}
+      aria-label={isClosable ? `${label}. ${tabDeleteLabel}` : label}
       tabIndex={isSelected ? 0 : -1}
       data-terra-tabs-show-focus-styles
     >
