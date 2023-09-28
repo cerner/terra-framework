@@ -101,6 +101,10 @@ const propTypes = {
    * String that labels the popup for screen readers.
    */
   ariaLabel: PropTypes.string,
+  /**
+   * Callback function to handle click events on the popup.
+   */
+  onClick: PropTypes.func,
 };
 
 const defaultProps = {
@@ -252,6 +256,7 @@ class Popup extends React.Component {
         isHeightAutomatic={this.props.contentHeight === 'auto'}
         isWidthAutomatic={this.props.contentWidth === 'auto'}
         isFocusedDisabled={this.props.isContentFocusDisabled}
+        onClick={this.props.onClick}
       >
         {this.props.children}
       </PopupContent>
@@ -277,6 +282,7 @@ class Popup extends React.Component {
       onRequestClose,
       targetRef,
       targetAttachment,
+      ...customProps
     } = this.props;
     /* eslint-enable no-unused-vars */
 
@@ -318,6 +324,7 @@ class Popup extends React.Component {
           onPosition={this.handleOnPosition}
           targetRef={targetRef}
           targetAttachment={tAttachment}
+          {...customProps}
         >
           {hookshotContent}
         </Hookshot>

@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-## 6.71.0 - (October 3, 2023)
+* Fixed
+  * Using a popup in a table but row receiving focus when clicking on popup.
 
 * Added
   * Added aria-label prop for terra-popup to announce the close instruction.
