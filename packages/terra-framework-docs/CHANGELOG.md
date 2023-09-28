@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added doc and test example for `collapsible-menu-view` multi-select group items.
+
 * Updated
   * Updated examples for `terra-collapsible-menu-view` to use more meaningful controls and control labels.
 

@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * Added `isMultiSelect` prop to support multiselect group items.
+  * Added aria-label prop for `collapsible-menu-view` to announce group information.
+
 ## 6.79.0 - (September 21, 2023)
 
 * Changed
