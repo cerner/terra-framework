@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added an exmaple, and updated documentation on how to enable embedded content to be scrolled within the iframe.
+  * Added an example and updated documentation on how to enable embedded content to be scrolled within the iframe.
 
 ## 3.38.0 - (September 26, 2023)
 
