@@ -4,6 +4,8 @@
 
 * Added
   * Added the ability to add hyperlinks.
+  * Added `isMultiSelect` prop to support multiselect group items.
+  * Added aria-label prop for `collapsible-menu-view` to announce group information.
   
 * Fixed
   * Fixed responsive menu icon not being vertical in the lowlight and fusion themes.
