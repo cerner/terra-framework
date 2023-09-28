@@ -49,8 +49,9 @@ const propTypes = {
   /**
    * @private
    * Reverses the order of the rendered items.
+   * This does not affect the collapsed menu view, only the items that are displayed outside of it.
    */
-  isReversed: PropTypes.bool,
+  isReversedChildrenOrder: PropTypes.bool,
 
   /**
    * @private
@@ -113,7 +114,7 @@ class CollapsibleMenuView extends React.Component {
     let calcWidth = 0;
     let menuHidden = true;
 
-    if (this.props.isReversed) {
+    if (this.props.isReversedChildrenOrder) {
       for (let i = React.Children.count(this.props.children) - 1; i >= 0; i -= 1) {
         const child = this.container.children[i];
         const childWidth = child.getBoundingClientRect().width;
@@ -193,7 +194,7 @@ class CollapsibleMenuView extends React.Component {
       alwaysCollapsedMenuItems,
       isStartAligned,
       useHorizontalIcon,
-      isReversed,
+      isReversedChildrenOrder,
       ...customProps
     } = this.props;
     const theme = this.context;
@@ -217,7 +218,7 @@ class CollapsibleMenuView extends React.Component {
     if (this.hiddenStartIndex >= 0) {
       visibleChildren = React.Children.toArray(children);
 
-      if (this.props.isReversed) {
+      if (this.props.isReversedChildrenOrder) {
         hiddenChildren = visibleChildren.splice(0, this.hiddenStartIndex + 2).concat(hiddenChildren);
       } else {
         hiddenChildren = this.collapsedMenuAlwaysShown
@@ -246,7 +247,7 @@ class CollapsibleMenuView extends React.Component {
       </div>
     );
 
-    if (isReversed) {
+    if (isReversedChildrenOrder) {
       return (
         <div {...customProps} className={collapsibleMenuViewClassName} ref={this.setContainer}>
           {menuIcon}

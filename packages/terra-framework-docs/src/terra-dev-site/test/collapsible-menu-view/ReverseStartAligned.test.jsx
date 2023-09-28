@@ -2,7 +2,7 @@ import React from 'react';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
 const ReversedStartAlignedTestDemo = () => (
-  <CollapsibleMenuView isReversed useHorizontalIcon isStartAligned>
+  <CollapsibleMenuView isReversedChildrenOrder useHorizontalIcon isStartAligned>
     <CollapsibleMenuView.Divider useChevronRightIcon key="Divider0" />
     <CollapsibleMenuView.Hyperlink
       key="link-0"
