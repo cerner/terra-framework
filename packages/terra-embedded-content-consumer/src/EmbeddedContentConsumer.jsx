@@ -69,17 +69,6 @@ class EmbeddedContentConsumer extends React.Component {
     // Merging the iframe options props
     const frameOptions = { ...this.props.options };
 
-    frameOptions.iframeAttrs = frameOptions.iframeAttrs ? frameOptions.iframeAttrs : {};
-    if (Object.keys(frameOptions.iframeAttrs)?.includes('srcdoc')
-      && !Object.keys(frameOptions.iframeAttrs)?.includes('scrolling')) {
-      Object.assign(frameOptions.iframeAttrs, { scrolling: 'yes' });
-    }
-
-    frameOptions.resizeConfig = frameOptions.resizeConfig ? frameOptions.resizeConfig : {};
-    if (!Object.keys(frameOptions.resizeConfig)?.includes('scrolling')) {
-      Object.assign(frameOptions.resizeConfig, { scrolling: true });
-    }
-
     // Mount the provided source as the application into the content wrapper.
     this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, frameOptions);
 
