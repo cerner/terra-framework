@@ -118,6 +118,10 @@ const propTypes = {
    * Parameters: 1. label of the closing tab 2. Selected pane's key 3. Event
    */
   onClosingTab: PropTypes.func,
+  /**
+   * Whether tab is vertical or horizontal orientation.
+   */
+  verticalOrientation: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -126,6 +130,7 @@ const defaultProps = {
   isDisabled: false,
   showIcon: false,
   isDraggable: false,
+  verticalOrientation: false,
 };
 
 const Tab = ({
@@ -149,16 +154,18 @@ const Tab = ({
   onClosingTab,
   intl,
   isDraggable,
+  verticalOrientation,
 }) => {
   const tabDeleteLabel = intl.formatMessage({ id: 'Terra.tabs.hint.removable' });
   const attributes = {};
   const theme = React.useContext(ThemeContext);
   const tabClassNames = cx(
     'tab',
-    { 'is-active': isSelected },
+    { 'is-active': !verticalOrientation && isSelected },
     { 'is-icon-only': isIconOnly },
     { 'is-text-only': !icon },
     { 'is-disabled': isDisabled },
+    { 'is-active-vertical': verticalOrientation && isSelected },
     theme.className,
   );
   const paneClassNames = classNames(cy(
@@ -166,7 +173,9 @@ const Tab = ({
     { 'is-disabled': isDisabled },
     { 'is-icon-only': isIconOnly },
     { 'is-text-only': !icon },
-    { 'is-active': isSelected },
+    { 'is-active': !verticalOrientation && isSelected },
+    { 'is-active-vertical': verticalOrientation && isSelected },
+    { '.is-vertical': verticalOrientation },
     theme.className,
   ));
 

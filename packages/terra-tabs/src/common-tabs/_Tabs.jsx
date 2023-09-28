@@ -267,19 +267,6 @@ class Tabs extends React.Component {
       this.hiddenStartIndex = newHideIndex;
       this.forceUpdate();
     }
-
-    if (this.props.verticalOrientation) {
-    // const tablist = document.querySelectorAll('[data-terra-drag-focus="false"]');
-      const tabButtons = document.querySelectorAll('[role="tab"]');
-      const tabContent = document.querySelector('[role="tabpanel"]');
-      console.log(tabButtons);
-      console.log(tabContent);
-    // let totalheight = 0;
-    // tabButtons.forEach((button, index) => {
-    // totalheight += button[index].getBoundingClientRect().height;
-    // });
-    // tabContent.style.height = `${totalheight}px`;
-    }
   }
 
   handleHiddenFocus() {
@@ -523,6 +510,7 @@ class Tabs extends React.Component {
             showIcon={tab.showIcon}
             onClosingTab={this.wrapOnClose()}
             isDraggable={isDraggable}
+            verticalOrientation={verticalOrientation}
           />,
         );
       } else {

@@ -125,6 +125,11 @@ const CommonTabs = ({
     theme.className,
   ),
   customProps.className);
+  const contentTabClassNames = classNames(cx(
+    'body',
+    { 'is-vertical': verticalOrientation },
+    theme.className,
+  ));
 
   const handleCommonTabsStateChange = (value, itemKey, event) => {
     onClosingTab(value, itemKey, event);
@@ -141,7 +146,7 @@ const CommonTabs = ({
       <div role="none" className={cx('tab-header')}>
         <Tabs verticalOrientation={verticalOrientation} isDraggable={isDraggable} onTabOrderChange={onTabOrderChange} variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab} onTabStateChange={handleCommonTabsStateChange} />
       </div>
-      <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
+      <div role="none" className={contentTabClassNames} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {
           let portalElement = commonTabsPortalsRef.current[child.props.itemKey]?.element;
           if (!portalElement) {
