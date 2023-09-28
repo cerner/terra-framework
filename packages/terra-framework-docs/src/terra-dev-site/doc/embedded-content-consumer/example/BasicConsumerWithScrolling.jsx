@@ -4,14 +4,14 @@ import { Consumer } from 'xfc';
 
 Consumer.init();
 
-const BasicConsumerNoScrolling = () => (
+const BasicConsumerWithScrolling = () => (
   <EmbeddedContentConsumer
     src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
     options={{
-      iframeAttrs: { title: 'Basic content example no scroll' },
-      resizeConfig: { scrolling: false },
+      iframeAttrs: { title: 'Basic content example of scrolling is enabled' },
+      resizeConfig: { scrolling: true, fixedWidth: '100%', fixedHeight: '100px' },
     }}
   />
 );
 
-export default BasicConsumerNoScrolling;
+export default BasicConsumerWithScrolling;

@@ -46,8 +46,11 @@ const propTypes = {
    * of the content of the iframe even if `resizeConfig` option is set. It's
    * important to specify the `width` and `height` of the frame.
    *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to keyboard only users that the
+   * embedded content is scrollable when it's not fully visible in the current viewport.
+   *
    * `resizeConfig.scrolling` - Indicates whether the content inside of the iframe should be scrollable or not. The default is false.
-   * When scrolling is enabled, it is possible to use keyboard navigation to scroll the content even when there is no
+   * When scrolling is set to `true`, it is possible to use keyboard navigation to scroll the content even when there is no
    * interactable element inside the content. When using `srcdoc` attribute, `scrolling` can be set to `'yes'` or `'no'` within `iframeAttrs`.
    *
    * See xfc consumer configuration for details: https://github.com/cerner/xfc
