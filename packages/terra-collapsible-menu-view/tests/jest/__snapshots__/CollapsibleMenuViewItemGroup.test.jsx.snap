@@ -1,58 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge custom props 1`] = `
-<div
-  className="Testing"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
->
-  <CollapsibleMenuViewItem
-    isIconOnly={false}
-    isReversed={false}
-    isSelected={false}
-    shouldCloseOnClick={true}
-    text="Testing"
-  />
-  <CollapsibleMenuViewItem
-    isIconOnly={false}
-    isReversed={false}
-    isSelected={false}
-    shouldCloseOnClick={true}
-    text="Testing"
-  />
-</div>
-`;
-
-exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge custom props when selectable 1`] = `
 <li
   role="none"
 >
-  <MenuItemGroup
+  <div
     className="Testing"
     intl={
       Object {
@@ -81,13 +33,12 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
         "timeZone": null,
       }
     }
-    onChange={[Function]}
+    role="group"
   >
     <CollapsibleMenuViewItem
       isIconOnly={false}
       isReversed={false}
       isSelected={false}
-      key="key1"
       shouldCloseOnClick={true}
       text="Testing"
     />
@@ -95,19 +46,19 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
       isIconOnly={false}
       isReversed={false}
       isSelected={false}
-      key="key2"
       shouldCloseOnClick={true}
       text="Testing"
     />
-  </MenuItemGroup>
+  </div>
 </li>
 `;
 
-exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a menu item group when selectable 1`] = `
+exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge custom props when selectable 1`] = `
 <li
   role="none"
 >
-  <MenuItemGroup
+  <div
+    className="Testing"
     intl={
       Object {
         "defaultFormats": Object {},
@@ -135,7 +86,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a m
         "timeZone": null,
       }
     }
-    onChange={[Function]}
+    role="group"
   >
     <CollapsibleMenuViewItem
       isIconOnly={false}
@@ -153,55 +104,114 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a m
       shouldCloseOnClick={true}
       text="Testing"
     />
-  </MenuItemGroup>
+  </div>
+</li>
+`;
+
+exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a menu item group when selectable 1`] = `
+<li
+  role="none"
+>
+  <div
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    role="group"
+  >
+    <CollapsibleMenuViewItem
+      isIconOnly={false}
+      isReversed={false}
+      isSelected={false}
+      key="key1"
+      shouldCloseOnClick={true}
+      text="Testing"
+    />
+    <CollapsibleMenuViewItem
+      isIconOnly={false}
+      isReversed={false}
+      isSelected={false}
+      key="key2"
+      shouldCloseOnClick={true}
+      text="Testing"
+    />
+  </div>
 </li>
 `;
 
 exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render menu items when selectedKeys is not set 1`] = `
-<div
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
+<li
+  role="none"
 >
-  <CollapsibleMenuViewItem
-    isIconOnly={false}
-    isReversed={false}
-    isSelected={false}
-    shouldCloseOnClick={true}
-    text="Testing"
-  />
-  <CollapsibleMenuViewItem
-    isIconOnly={false}
-    isReversed={false}
-    isSelected={false}
-    shouldCloseOnClick={true}
-    text="Testing"
-  />
-</div>
+  <div
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    role="group"
+  >
+    <CollapsibleMenuViewItem
+      isIconOnly={false}
+      isReversed={false}
+      isSelected={false}
+      shouldCloseOnClick={true}
+      text="Testing"
+    />
+    <CollapsibleMenuViewItem
+      isIconOnly={false}
+      isReversed={false}
+      isSelected={false}
+      shouldCloseOnClick={true}
+      text="Testing"
+    />
+  </div>
+</li>
 `;
 
 exports[`CollapsibleMenuViewItemGroup should merge custom props 1`] = `

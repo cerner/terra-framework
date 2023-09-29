@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+* Added
+  * Added `title` prop for consumers to set the title of the embedded content in the iframe.
+
+* Changed
+  * Deprecated `options.iframeAttrs.title` in favor of the new `title` prop.
+
+## 3.38.0 - (September 26, 2023)
+
 * Updated
   * Updated documentation for `options` prop to include `srcdoc` iframe atttribute for inline html content in iframe.
 

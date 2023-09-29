@@ -1,28 +1,19 @@
 import React from 'react';
-import IconTable from 'terra-icon/lib/icon/IconTable';
-import IconFlowsheet from 'terra-icon/lib/icon/IconFlowsheet';
-import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
+import {
+  IconCaretDown,
+  IconTable,
+  IconTreemap,
+  IconVisualization,
+} from 'terra-icon';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
 class AlwaysCollapsedMenuItemsDemo extends React.Component {
   constructor(props) {
     super(props);
     this.handleDisplayTypeChange = this.handleDisplayTypeChange.bind(this);
-    this.handleToggleOneOnChange = this.handleToggleOneOnChange.bind(this);
-    this.handleToggleTwoOnChange = this.handleToggleTwoOnChange.bind(this);
     this.state = {
-      toggle1Selection: false,
-      toggle2Selection: false,
       displayType: 'tableView',
     };
-  }
-
-  handleToggleOneOnChange(event, isSelected) {
-    this.setState({ toggle1Selection: isSelected });
-  }
-
-  handleToggleTwoOnChange(event, isSelected) {
-    this.setState({ toggle2Selection: isSelected });
   }
 
   handleDisplayTypeChange(event, selectedKey) {
@@ -33,28 +24,36 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
     return (
       <CollapsibleMenuView
         alwaysCollapsedMenuItems={[
-          <CollapsibleMenuView.Item text="Always Collapsed Button 1" key="collapsedButton1" />,
-          <CollapsibleMenuView.Item text="Always Collapsed Button 2" key="collapsedButton2" />,
-          <CollapsibleMenuView.Item text="Always Collapsed Button 3" key="collapsedButton3" />,
-          <CollapsibleMenuView.Toggle
-            text="Always Collapsed Toggle 1"
-            key="toggle1"
-            shouldCloseOnClick={false}
-            onChange={this.handleToggleOneOnChange}
-            isSelected={this.state.toggle1Selection}
-          />,
-          <CollapsibleMenuView.Toggle
-            text="Always Collapsed Toggle 2"
-            key="toggle2"
-            onChange={this.handleToggleTwoOnChange}
-            isSelected={this.state.toggle2Selection}
-          />,
+          <CollapsibleMenuView.Item text="Action 1" key="action1" />,
+          <CollapsibleMenuView.Item text="Action 2" key="action2" isDisabled />,
+          <CollapsibleMenuView.Item text="Action 3" key="action3" />,
+          <CollapsibleMenuView.Item text="Action 4" key="action4" />,
         ]}
       >
-        <CollapsibleMenuView.Item text="Collapsible Button 1" key="button1" />
-        <CollapsibleMenuView.Item text="Collapsible Button 2" key="button2" />
+        <CollapsibleMenuView.Item
+          icon={<IconCaretDown />}
+          text="Add Document"
+          key="addDocument"
+          isReversed
+          shouldCloseOnClick={false}
+          subMenuItems={[
+            <CollapsibleMenuView.Item text="Upload Document" key="uploadDocument" />,
+            <CollapsibleMenuView.Item text="Link to Document..." key="linkToDocument" />,
+          ]}
+        />
+        <CollapsibleMenuView.Item
+          icon={<IconCaretDown />}
+          text="Add"
+          key="Add"
+          isReversed
+          shouldCloseOnClick={false}
+          subMenuItems={[
+            <CollapsibleMenuView.Item text="Add Allergy" key="addAllergy" />,
+            <CollapsibleMenuView.Item text="Add Problem" key="addProblem" />,
+          ]}
+        />
         <CollapsibleMenuView.Divider key="divider1" />
-        <CollapsibleMenuView.ItemGroup key="ViewTypeSelection" selectedKeys={[this.state.displayType]} onChange={this.handleDisplayTypeChange}>
+        <CollapsibleMenuView.ItemGroup ariaLabel="View Type Single Selection" key="ViewTypeSelection" selectedKeys={[this.state.displayType]} onChange={this.handleDisplayTypeChange}>
           <CollapsibleMenuView.Item
             icon={<IconTable />}
             text="Table View"
@@ -64,20 +63,20 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
             isSelected={this.state.displayType === 'tableView'}
           />
           <CollapsibleMenuView.Item
-            icon={<IconFlowsheet />}
-            text="Expanded View"
-            key="expandedView"
+            icon={<IconVisualization />}
+            text="Chart View"
+            key="chartView"
             isIconOnly
             shouldCloseOnClick={false}
-            isSelected={this.state.displayType === 'expandedView'}
+            isSelected={this.state.displayType === 'chartView'}
           />
           <CollapsibleMenuView.Item
-            icon={<IconVisualization />}
-            text="Trending View"
-            key="trendingView"
+            icon={<IconTreemap />}
+            text="Treemap View"
+            key="treemapView"
             isIconOnly
             shouldCloseOnClick={false}
-            isSelected={this.state.displayType === 'trendingView'}
+            isSelected={this.state.displayType === 'treemapView'}
           />
         </CollapsibleMenuView.ItemGroup>
       </CollapsibleMenuView>

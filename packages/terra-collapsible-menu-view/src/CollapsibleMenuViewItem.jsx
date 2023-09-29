@@ -117,7 +117,7 @@ class CollapsibleMenuViewItem extends React.Component {
         <Menu.Item
           {...attributes}
           text={text}
-          isSelected={isSelected && isCollapsibleGroupItem}
+          isToggled={isSelected && isCollapsibleGroupItem}
           isDisabled={isDisabled}
           subMenuItems={subMenuItems}
         />

@@ -8,6 +8,13 @@ const propTypes = {
    */
   src: PropTypes.string.isRequired,
   /**
+   * The title of the content in the frame.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that the
+   * title of the frame is set to a meaningful title for the content inside the frame.
+   */
+  title: PropTypes.string, // TODO MVB - set `title` prop as required
+  /**
    * Notifies the component that the container has been mounted. Provides a reference
    * to this component to allow triggering messages on the embedded application.
    */
@@ -22,6 +29,9 @@ const propTypes = {
   onAuthorize: PropTypes.func,
   /**
    * The component can be configured with consumer frame options.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/prop/deprecated/red)
+   * Usage of `iframeAttrs: { title: 'Embedded Content Title' }` with the `options` prop to set the title is deprecated in favor of the new `title` prop.
    *
    * Example `options` object:
    *
@@ -44,7 +54,14 @@ const propTypes = {
    * the [xfc](https://github.com/cerner/xfc) library does not manage
    * [auto resizing](https://github.com/cerner/xfc#iframe-resizing-config)
    * of the content of the iframe even if `resizeConfig` option is set. It's
-   * important to specify the `width` and `height` of the frame.
+   * important to specify the `width` and `height` of the frame within `iframeAttrs`.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to keyboard only users that the
+   * embedded content is scrollable when it's not fully visible in the current viewport.
+   *
+   * `resizeConfig.scrolling` - Indicates whether the content inside of the iframe should be scrollable or not. The default is false.
+   * When scrolling is set to `true`, it is possible to use keyboard navigation to scroll the content even when there is no
+   * interactable element inside the content. When using `srcdoc` attribute, `scrolling` can be set to `'yes'` or `'no'` within `iframeAttrs`.
    *
    * See xfc consumer configuration for details: https://github.com/cerner/xfc
    *
@@ -62,8 +79,23 @@ const propTypes = {
 
 class EmbeddedContentConsumer extends React.Component {
   componentDidMount() {
+    // Merging the iframe options props
+    const frameOptions = { ...this.props.options };
+    frameOptions.iframeAttrs = frameOptions.iframeAttrs ? frameOptions.iframeAttrs : {};
+
+    // TODO MVB: remove `console.warn` message on the next major release
+    if (frameOptions.iframeAttrs.title) {
+      // eslint-disable-next-line no-console
+      console.warn('The title attribute within `iframeAttrs` object in the `options` prop is deprecated. Please start using the new `title` prop instead.');
+    }
+
+    // TODO MVB: Set `title` prop as required on the next major release
+    if (this.props.title) {
+      Object.assign(frameOptions.iframeAttrs, { title: this.props.title });
+    }
+
     // Mount the provided source as the application into the content wrapper.
-    this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, this.props.options);
+    this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, frameOptions);
 
     // Notify that the consumer frame has mounted.
     if (this.props.onMount) {
@@ -91,6 +123,7 @@ class EmbeddedContentConsumer extends React.Component {
   render() {
     const {
       src,
+      title,
       onMount,
       onLaunch,
       onAuthorize,

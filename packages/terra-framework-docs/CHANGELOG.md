@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+* Added
+  * Added documentation for hyperlinks in `terra-collapsible-menu-view`.
+  * Added doc and test example for `collapsible-menu-view` multi-select group items.
+
+* Updated
+  * Updated examples for `terra-collapsible-menu-view` to use more meaningful controls and control labels.
+  * Updated examples and tests to add support for content scrolling within the iframe.
+  * Updated examples and tests for `terra-embedded-content-consumer` to show the preferred way to set the title.
+
+## 1.38.0 - (September 26, 2023)
+
+* Changed
+  * Minor dependency version bump
+
 ## 1.37.0 - (September 21, 2023)
 
 * Changed

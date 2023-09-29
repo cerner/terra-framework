@@ -11,7 +11,8 @@ Consumer.init();
 const BasicConsumer = () => (
   <EmbeddedContentConsumer
     className={cx('iframe')}
-    options={{ iframeAttrs: { title: 'Basic Consumer' } }}
+    options={{}}
+    title="Basic Consumer"
     src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
   />
 );

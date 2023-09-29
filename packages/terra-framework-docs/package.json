@@ -1,6 +1,6 @@
 {
   "name": "@cerner/terra-framework-docs",
-  "version": "1.37.0",
+  "version": "1.38.0",
   "description": "Contains documentation for packages in the terra-framework monorepo",
   "main": "index.js",
   "publishConfig": {
@@ -47,7 +47,7 @@
     "terra-date-picker": "^4.90.0",
     "terra-date-time-picker": "^4.96.0",
     "terra-disclosure-manager": "^4.43.0",
-    "terra-embedded-content-consumer": "^3.37.0",
+    "terra-embedded-content-consumer": "^3.38.0",
     "terra-file-path": "^0.1.0",
     "terra-form-field": "^4.27.0",
     "terra-form-fieldset": "^2.74.0",
