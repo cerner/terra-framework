@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated WDIO screenshots
+
 * Added
   * Added `isMultiSelect` prop to support multiselect group items.
   * Added aria-label prop for `collapsible-menu-view` to announce group information.
@@ -84,7 +87,7 @@
 * Added
   * Added `isStartAligned` prop
   * Added new Jest test and snapshots
-  
+
 ## 6.65.0 - (March 29, 2023)
 
 * Changed
