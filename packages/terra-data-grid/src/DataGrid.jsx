@@ -367,7 +367,7 @@ function DataGrid(props) {
 
       if (index + indexOffset < focusableElements.length) {
         newFocusElement = focusableElements[index + indexOffset];
-      } else {
+      } else if (focusableElements[0].id !== id) {
         // eslint-disable-next-line prefer-destructuring
         newFocusElement = focusableElements[0];
       }
