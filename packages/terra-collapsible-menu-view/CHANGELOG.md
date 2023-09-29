@@ -2,9 +2,6 @@
 
 ## Unreleased
 
-* Changed
-  * Updated WDIO screenshots
-
 * Added
   * Added `isMultiSelect` prop to support multiselect group items.
   * Added aria-label prop for `collapsible-menu-view` to announce group information.
