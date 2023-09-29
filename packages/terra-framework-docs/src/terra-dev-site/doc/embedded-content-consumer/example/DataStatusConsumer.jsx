@@ -24,7 +24,7 @@ const appendLifeCycleStatuses = (statuses) => {
   }
 };
 
-const options = { secret: 'OAuth Secret', iframeAttrs: { title: 'Embedded application lifecycle example', id: 'data-embedded-consumer-data-status' } };
+const options = { secret: 'OAuth Secret', iframeAttrs: { id: 'data-embedded-consumer-data-status' } };
 
 const onMount = () => {
   setTimeout(() => { appendLifeCycleStatuses(['Mounted']); }, 2000);
@@ -44,6 +44,7 @@ const DataStatusConsumer = () => (
     onMount={onMount}
     onLaunch={onLaunch}
     onAuthorize={onAuthorize}
+    title="Embedded application lifecycle example"
     options={options}
   />
 );
