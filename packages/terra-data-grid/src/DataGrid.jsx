@@ -112,6 +112,12 @@ const propTypes = {
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
+
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -141,6 +147,7 @@ function DataGrid(props) {
     onRangeSelection,
     hasSelectableRows,
     rowHeaderIndex,
+    intl,
   } = props;
 
   if (pinnedColumns.length === 0) {
@@ -177,6 +184,8 @@ function DataGrid(props) {
 
   const hasReceivedFocus = useRef(false);
   const handleFocus = useRef(true);
+
+  const sortedColumn = useRef(null);
 
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
@@ -282,6 +291,24 @@ function DataGrid(props) {
       });
     }
     setPinnedColumnOffsets(offsetArray);
+
+    const currentSortedColumn = dataGridColumns.find((column) => !!column.sortIndicator);
+    if (sortedColumn.current) {
+      const previousSortedColumn = { ...sortedColumn.current };
+
+      if (previousSortedColumn.id !== currentSortedColumn.id
+      || previousSortedColumn.sortIndicator !== currentSortedColumn.sortIndicator) {
+        alert(`Trigger Sort Message ${currentSortedColumn.displayName} - ${currentSortedColumn.sortIndicator}`);
+        setCellAriaLiveMessage(intl.formatMessage({
+          id: 'Terra.table.sort-direction-changed',
+          column: currentSortedColumn.displayName,
+          sortDirection: currentSortedColumn.sortIndicator,
+        }));
+      }
+    }
+
+    sortedColumn.current = currentSortedColumn;
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataGridColumns]);
 
