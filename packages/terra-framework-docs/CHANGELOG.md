@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Added
+  * Added documentation for hyperlinks in `terra-collapsible-menu-view`.
   * Added doc and test example for `collapsible-menu-view` multi-select group items.
 
 * Updated
