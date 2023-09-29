@@ -176,11 +176,11 @@ const ColumnResizeHandle = (props) => {
   };
 
   return (
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-static-element-interactions
     <div
       ref={resizeHandleRef}
       draggable
-      role="slider"
+      role={isActive ? 'slider' : null}
       tabIndex={-1}
       aria-hidden={!isActive}
       aria-valuemin={minimumWidth}
