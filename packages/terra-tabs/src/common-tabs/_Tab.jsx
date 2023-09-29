@@ -247,7 +247,8 @@ const Tab = ({
             aria-controls={associatedPanelId}
             role="tab"
             className={variant === 'framework' ? paneClassNames : tabClassNames}
-            title={isClosable ? `${label}. ${tabDeleteLabel}` : label}
+            title={label}
+            aria-label={isClosable ? `${label}. ${tabDeleteLabel}` : label}
             aria-describedby={responseId}
             tabIndex={isSelected ? 0 : -1}
             data-terra-tabs-show-focus-styles
