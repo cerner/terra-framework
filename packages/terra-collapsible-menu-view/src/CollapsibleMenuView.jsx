@@ -55,6 +55,12 @@ const propTypes = {
 
   /**
    * @private
+   * The text for the menu icon. This is read by screenreaders.
+   */
+  iconText: PropTypes.string,
+
+  /**
+   * @private
    * Object containing intl APIs
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }),
@@ -110,24 +116,25 @@ class CollapsibleMenuView extends React.Component {
   handleResize(width) {
     const menuButtonWidth = this.menuButton.getBoundingClientRect().width;
     const availableWidth = width - menuButtonWidth;
+    const childrenArray = React.Children.toArray(this.props.children);
     let hiddenStartIndex = -1;
     let calcWidth = 0;
     let menuHidden = true;
 
     if (this.props.isReversedChildrenOrder) {
-      for (let i = React.Children.count(this.props.children) - 1; i >= 0; i -= 1) {
+      for (let i = childrenArray.length - 1; i >= 0; i -= 1) {
         const child = this.container.children[i];
         const childWidth = child.getBoundingClientRect().width;
         calcWidth += childWidth;
 
         if (calcWidth > availableWidth) {
           // If last child fits in the available space, leave it face up
-          if (!this.collapsedMenuAlwaysShown && i === this.props.children.length - 1 && calcWidth <= width) {
+          if (!this.collapsedMenuAlwaysShown && i === childrenArray.length - 1 && calcWidth <= width) {
             break;
           }
 
           // If divider is the last element to be hidden on collapse menu, leave it face up
-          if (React.Children.count(this.props.children) > 1 && this.props.children[i].type !== CollapsibleMenuViewDivider) {
+          if (childrenArray.length > 1 && childrenArray[i].type !== CollapsibleMenuViewDivider) {
             hiddenStartIndex = i + 1;
           } else {
             hiddenStartIndex = i;
@@ -138,19 +145,19 @@ class CollapsibleMenuView extends React.Component {
         }
       }
     } else {
-      for (let i = 0; i < React.Children.count(this.props.children); i += 1) {
+      for (let i = 0; i < childrenArray.length; i += 1) {
         const child = this.container.children[i];
         const childWidth = child.getBoundingClientRect().width;
         calcWidth += childWidth;
 
         if (calcWidth > availableWidth) {
           // If last child fits in the available space, leave it face up
-          if (!this.collapsedMenuAlwaysShown && i === this.props.children.length - 1 && calcWidth <= width) {
+          if (!this.collapsedMenuAlwaysShown && i === childrenArray.length - 1 && calcWidth <= width) {
             break;
           }
 
           // If divider is the last element to be hidden on collapse menu, leave it face up
-          if (React.Children.count(this.props.children) > 1 && this.props.children[i].type === CollapsibleMenuViewDivider) {
+          if (childrenArray.length > 1 && childrenArray[i].type === CollapsibleMenuViewDivider) {
             hiddenStartIndex = i - 1;
           } else {
             hiddenStartIndex = i;
@@ -195,6 +202,7 @@ class CollapsibleMenuView extends React.Component {
       isStartAligned,
       useHorizontalIcon,
       isReversedChildrenOrder,
+      iconText,
       ...customProps
     } = this.props;
     const theme = this.context;
@@ -241,7 +249,7 @@ class CollapsibleMenuView extends React.Component {
           boundingRef={boundingRef}
           menuWidth={menuWidth}
           isIconOnly
-          text={intl.formatMessage({ id: 'Terra.collapsibleMenuView.more' })}
+          text={iconText || intl.formatMessage({ id: 'Terra.collapsibleMenuView.more' })}
           variant="utility"
         />
       </div>
