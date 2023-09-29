@@ -354,6 +354,7 @@ function DataGrid(props) {
     const focusableElements = [...document.body.querySelectorAll(`${focusableElementSelector}`)].filter(
       element => !element.hasAttribute('disabled')
       && !element.getAttribute('aria-hidden')
+      && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
       && (element.id === id || !grid.current.contains(element)),
     );
 
@@ -362,7 +363,15 @@ function DataGrid(props) {
     if (index > -1) {
       // Move focus outside data grid
       const indexOffset = moveForward ? 1 : -1;
-      const newFocusElement = focusableElements[index + indexOffset];
+      let newFocusElement;
+
+      if (index + indexOffset < focusableElements.length) {
+        newFocusElement = focusableElements[index + indexOffset];
+      } else {
+        // eslint-disable-next-line prefer-destructuring
+        newFocusElement = focusableElements[0];
+      }
+
       if (newFocusElement) {
         newFocusElement.focus();
       }

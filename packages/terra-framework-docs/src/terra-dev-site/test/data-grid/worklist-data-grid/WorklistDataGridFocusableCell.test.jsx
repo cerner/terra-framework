@@ -81,6 +81,10 @@ const WorklistDataGridFocusableCell = () => {
       )}
       <button id="previous-focus-button" type="button" aria-label="Previous Element">Test Previous</button>
       {/* eslint-disable-next-line react/forbid-dom-props */}
+      <div style={{ display: 'none' }}>
+        <button id="hidden-button" type="button">Hidden</button>
+      </div>
+      {/* eslint-disable-next-line react/forbid-dom-props */}
       <div style={{ margin: '10px' }}>
         <WorklistDataGrid
           id="default-terra-worklist-data-grid-focusable-cell"

@@ -7,6 +7,7 @@
 
 * Updated
   * Updated examples for `terra-collapsible-menu-view` to use more meaningful controls and control labels.
+  * Updated focusable cell test for `terra-data-grid` to account for focusable elements in a hidden container.
 
 ## 1.38.0 - (September 26, 2023)
 
