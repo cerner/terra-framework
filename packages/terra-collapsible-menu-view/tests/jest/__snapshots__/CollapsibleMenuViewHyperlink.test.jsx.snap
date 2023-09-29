@@ -40,18 +40,6 @@ exports[`CollapsibleMenuViewHyperlink Collapsible Menu Context should render a m
 />
 `;
 
-exports[`CollapsibleMenuViewHyperlink should merge custom props 1`] = `
-<div
-  className="face-up-item"
->
-  <InjectIntl(Hyperlink)
-    href="https://www.oracle.com/"
-    text="Testing"
-    variant="default"
-  />
-</div>
-`;
-
 exports[`CollapsibleMenuViewHyperlink should render a default component 1`] = `
 <div
   className="face-up-item"

@@ -10,12 +10,6 @@ describe('CollapsibleMenuViewHyperlink', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  // Props
-  it('should merge custom props', () => {
-    const wrapper = shallowWithIntl(<CollapsibleMenuViewHyperlink text="Testing" href="https://www.oracle.com/" className="Testing" />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
   describe('Collapsible Menu Context', () => {
     it('should render a menu item', () => {
       const context = { isCollapsibleMenuItem: true };

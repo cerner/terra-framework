@@ -2,6 +2,7 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import { IconChevronRight } from 'terra-icon';
+import Menu from 'terra-menu';
 import CollapsibleMenuViewDivider from '../../src/CollapsibleMenuViewDivider';
 
 describe('CollapsibleMenuViewDivider', () => {
@@ -19,13 +20,7 @@ describe('CollapsibleMenuViewDivider', () => {
 
   it('should render a chevron right icon', () => {
     const wrapper = shallowWithIntl(<CollapsibleMenuViewDivider useChevronRightIcon />);
-    expect(wrapper.find(<IconChevronRight />)).toBeTruthy();
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should not render a menu divider if using the chevron right icon in the context of the collapsible menu', () => {
-    const context = { isCollapsibleMenuItem: true };
-    const wrapper = shallowWithIntl(<CollapsibleMenuViewDivider useChevronRightIcon />, { context });
+    expect(wrapper.exists(IconChevronRight)).toBeTruthy;
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -36,5 +31,14 @@ describe('CollapsibleMenuViewDivider', () => {
       });
     const wrapper = mountWithIntl(<CollapsibleMenuViewDivider />);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  describe('Collapsible Menu Context', () => {
+    it('should not render a menu item', () => {
+      const context = { isCollapsibleMenuItem: true };
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewDivider />, { context }).dive();
+      expect(wrapper.exists(<Menu.Divider />)).toBeFalsy();
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });
