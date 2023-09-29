@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added screen reader messages for changes in column sort direction.
+
 ## 0.6.0 - (September 14, 2023)
 
 * Breaking Changes

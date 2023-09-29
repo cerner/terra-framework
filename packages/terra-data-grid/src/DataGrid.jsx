@@ -298,12 +298,13 @@ function DataGrid(props) {
 
       if (previousSortedColumn.id !== currentSortedColumn.id
       || previousSortedColumn.sortIndicator !== currentSortedColumn.sortIndicator) {
-        alert(`Trigger Sort Message ${currentSortedColumn.displayName} - ${currentSortedColumn.sortIndicator}`);
-        setCellAriaLiveMessage(intl.formatMessage({
-          id: 'Terra.table.sort-direction-changed',
-          column: currentSortedColumn.displayName,
-          sortDirection: currentSortedColumn.sortIndicator,
-        }));
+        setCellAriaLiveMessage(intl.formatMessage(
+          { id: 'Terra.table.sort-direction-changed' },
+          {
+            column: currentSortedColumn.displayName,
+            sortDirection: currentSortedColumn.sortIndicator,
+          },
+        ));
       }
     }
 
