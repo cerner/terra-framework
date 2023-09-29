@@ -180,14 +180,14 @@ const ColumnResizeHandle = (props) => {
     <div
       ref={resizeHandleRef}
       draggable
-      role={isActive ? 'slider' : null}
+      role="slider"
       tabIndex={-1}
       aria-hidden={!isActive}
-      aria-valuemin={minimumWidth}
-      aria-valuenow={columnWidth}
-      aria-valuemax={maximumWidth}
-      aria-label={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText })}
-      aria-valuetext={intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-value-text' }, { columnWidth })}
+      aria-valuemin={isActive ? minimumWidth : null}
+      aria-valuenow={isActive ? columnWidth : null}
+      aria-valuemax={isActive ? maximumWidth : null}
+      aria-label={isActive ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText }) : null}
+      aria-valuetext={isActive ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-value-text' }, { columnWidth }) : null}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseEnter={fitToTable}
