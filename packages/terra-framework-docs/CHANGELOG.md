@@ -8,6 +8,8 @@
 * Updated
   * Updated examples for `terra-collapsible-menu-view` to use more meaningful controls and control labels.
   * Updated focusable cell test for `terra-data-grid` to account for focusable elements in a hidden container.
+  * Updated examples and tests to add support for content scrolling within the iframe.
+  * Updated examples and tests for `terra-embedded-content-consumer` to show the preferred way to set the title.
 
 ## 1.38.0 - (September 26, 2023)
 
@@ -41,7 +43,6 @@
 
 * Updated
   * Updated example for `terra-date-picker` with isInvalid prop.
-  * Updated examples and tests to add support for content scrolling within the iframe.
 
 ## 1.34.0 - (September 5, 2023)
 
