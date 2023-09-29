@@ -4,7 +4,7 @@
 
 * Fixed
   * Fixed tab focus management when next element is in a hidden container.
-  * Fixed tab focus maanagement to wrap to the first focusable element when the data grid is the last focusable element.
+  * Fixed tab focus management to wrap to the first focusable element when the data grid is the last focusable element.
   * Fixed the screen reader messages to count header row as the first row.
 
 ## 0.6.0 - (September 14, 2023)
