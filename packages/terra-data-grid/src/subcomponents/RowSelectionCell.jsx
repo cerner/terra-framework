@@ -65,7 +65,7 @@ function RowSelectionCell(props) {
   } = props;
 
   const theme = useContext(ThemeContext);
-  const rowLabel = intl.formatMessage({ id: 'Terra.dataGrid.row-index' }, { row: rowIndex });
+  const rowLabel = intl.formatMessage({ id: 'Terra.dataGrid.row-index' }, { row: rowIndex + 1 });
 
   const selectionCheckbox = (
     <input

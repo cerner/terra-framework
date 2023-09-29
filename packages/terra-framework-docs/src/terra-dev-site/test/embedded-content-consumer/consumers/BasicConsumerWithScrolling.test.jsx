@@ -11,10 +11,11 @@ Consumer.init();
 const BasicConsumerWithScrolling = () => (
   <EmbeddedContentConsumer
     className={cx('iframe')}
+    src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"
+    title="Basic Consumer with Scrolling"
     options={{
       iframeAttrs: {
         id: 'basic-consumer-with-scrolling',
-        title: 'Basic Consumer with Scrolling',
       },
       resizeConfig: {
         fixedHeight: '50px',
@@ -22,7 +23,6 @@ const BasicConsumerWithScrolling = () => (
         scrolling: true,
       },
     }}
-    src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"
   />
 );
 
