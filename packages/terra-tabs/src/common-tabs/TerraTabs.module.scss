@@ -41,6 +41,7 @@
     font-size: var(--terra-tabs-font-size, 1rem);
     font-weight: var(--terra-tabs-font-weight, normal);
     line-height: var(--terra-tabs-line-height, 1.4);
+    padding: var(--terra-tabs-padding, 0.643rem 1.071rem);
   }
 
   .tab,
@@ -58,6 +59,9 @@
     flex: 0 1 auto;
     min-width: 8.357rem;
     text-align: center;
+    &.is-vertical{
+      padding: var(--terra-tabs-padding, 1.3em 1.071rem);
+    }
     @media (max-width: 768px) {
       min-width: 5rem; /* Reduce the minimum width of the tabs */
       padding: 0.643rem 0.5rem; /* Adjust padding for smaller screens */
@@ -73,16 +77,26 @@
       flex: 0 0 auto;
       min-width: 2.571rem;
       padding: 0.643rem 1.071rem;
+      .is-vertical{
+        padding: 0;
+      }
     }
 
     &.is-text-only {
       min-width: 7.143rem;
       padding: var(--terra-tabs-text-only-padding, 0.643rem 1.071rem);
+      &.is-vertical{
+        padding: var(--terra-tabs-text-only-padding, 1.3em 1.071rem);
+      }
     }
 
     &[data-terra-tab-draggable='true'] {
       padding: var(--terra-tabs-text-only-draggable-padding, 0.643rem 0.25rem);
       text-align: start;
+      &.is-vertical{
+        padding: var(--terra-tabs-text-only-padding, 1.3em 1.071rem);
+      }
+
     }
 
     .label:nth-child(2) {

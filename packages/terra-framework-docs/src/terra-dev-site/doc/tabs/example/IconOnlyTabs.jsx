@@ -2,8 +2,6 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
-import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
-import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Tabs from 'terra-tabs';
 import TabContent from './TabContentTemplate';
 import styles from './common/TabExample.module.scss';
@@ -11,58 +9,67 @@ import styles from './common/TabExample.module.scss';
 const cx = classNames.bind(styles);
 
 const IconOnlyTabs = () => {
-  const searchTab = (
-    <Tabs.Pane label="Tab with label" key="LabelTab">
+  const labelTab = (
+    <Tabs.Pane label="Tab with label" key="tLabelTab">
       <TabContent label="Tab with label" />
     </Tabs.Pane>
   );
 
-  const briefcaseTab = (
-    <Tabs.Pane label="Briefcase" icon={<IconBriefcase />} isIconOnly key="Briefcase">
-      <TabContent label="Briefcase" />
+  const onlyiconTab = (
+    <Tabs.Pane label="Tab with icon" isIconOnly icon={<IconBriefcase />} key="tonlyIconTab">
+      <TabContent label="Tab with icon" />
     </Tabs.Pane>
   );
 
-  const bookmarkTab = (
-    <Tabs.Pane label="Bookmark" icon={<IconBookmark />} isIconOnly key="Bookmark">
-      <TabContent label="Bookmark" />
+  const iconTab = (
+    <Tabs.Pane label="Tab with icon" icon={<IconBriefcase />} key="tIconTab">
+      <TabContent label="Tab with icon" />
     </Tabs.Pane>
   );
 
-  const calendarTab = (
-    <Tabs.Pane label="Calendar" icon={<IconCalendar />} isIconOnly key="Calendar">
-      <TabContent label="Calendar" />
+  const customTab = (
+    <Tabs.Pane
+      customDisplay={(
+        <div className={cx('custom-display')}>
+          Custom display
+        </div>
+      )}
+      label="Custom display"
+      key="tCustomTab"
+    >
+      <TabContent label="Custom display" />
     </Tabs.Pane>
   );
 
-  const briefcaseTab1 = (
-    <Tabs.Pane label="Briefcase1" icon={<IconBriefcase />} isIconOnly key="Briefcase1">
-      <TabContent label="Briefcase" />
+  const longLabel = (
+    <Tabs.Pane
+      label="Longer text tab name with label for application"
+      key="tlongLabel"
+    >
+      <TabContent label="Longer text tab name with label for application" />
     </Tabs.Pane>
   );
 
-  const bookmarkTab1 = (
-    <Tabs.Pane label="Bookmark1" icon={<IconBookmark />} isIconOnly key="Bookmar1k">
-      <TabContent label="Bookmark" />
+  const lastTab = (
+    <Tabs.Pane label="Last Tab" key="tlastTab">
+      <TabContent label="Last Tab" />
     </Tabs.Pane>
   );
 
-  const calendarTab1 = (
-    <Tabs.Pane label="Calendar1" icon={<IconCalendar />} isIconOnly key="Calendar1">
-      <TabContent label="Calendar" />
-    </Tabs.Pane>
+  const disabledTab = (
+    <Tabs.Pane label="Disabled Tab" icon={<IconSearch />} isDisabled key="tDisabledTab" />
   );
 
   return (
     <div className={cx('content-container-vertical')}>
-      <Tabs fill verticalOrientation setFocusOnContent isClosable ariaLabelAddTab="Add Tab">
-        {searchTab}
-        {briefcaseTab}
-        {bookmarkTab}
-        {calendarTab}
-        {briefcaseTab1}
-        {bookmarkTab1}
-        {calendarTab1}
+      <Tabs isDraggable fill verticalOrientation setFocusOnContent ariaLabelAddTab="Add Tab">
+        {onlyiconTab}
+        {labelTab}
+        {iconTab}
+        {customTab}
+        {longLabel}
+        {lastTab}
+        {disabledTab}
       </Tabs>
     </div>
   );

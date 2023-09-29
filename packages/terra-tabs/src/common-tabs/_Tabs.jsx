@@ -577,7 +577,7 @@ class Tabs extends React.Component {
     if (isDraggable) {
       return (
         <DragDropContext onDragStart={this.handleDragStart} onDragUpdate={this.handleDragUpdate} onDragEnd={this.handleDragEnd}>
-          <Droppable className={commonTabsClassNames} droppableId="tab-list" direction="horizontal">
+          <Droppable className={commonTabsClassNames} droppableId="tab-list" direction={verticalOrientation ? 'vertical' : 'horizontal'}>
             {(provided) => (
               <div className={commonTabsContainerClassNames}>
                 <div

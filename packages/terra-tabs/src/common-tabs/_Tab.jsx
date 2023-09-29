@@ -175,7 +175,7 @@ const Tab = ({
     { 'is-text-only': !icon },
     { 'is-active': !verticalOrientation && isSelected },
     { 'is-active-vertical': verticalOrientation && isSelected },
-    { '.is-vertical': verticalOrientation },
+    { 'is-vertical': verticalOrientation },
     theme.className,
   ));
 
