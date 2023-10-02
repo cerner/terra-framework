@@ -16,6 +16,6 @@
   "Terra.worklistDataGrid.row-selection-mode-disabled": "Row Selection Mode disabled",
   "Terra.worklistDataGrid.all-rows-selected" : "All rows selected",
   "Terra.worklistDataGrid.all-rows-unselected" : "No rows selected",
-  "Terra.worklist-data-grid.resize-handle-template": "Column resize handle for {columnText}. Press Enter to use.",
+  "Terra.worklist-data-grid.resize-handle-template": "Column resize handle for {columnText}. Press Enter to use. {columnWidth} pixels",
   "Terra.worklist-data-grid.resize-handle-value-text": "{columnWidth} pixels"
 }
