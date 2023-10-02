@@ -136,8 +136,8 @@ const ColumnResizeHandle = (props) => {
       case KeyCode.KEY_SPACE:
       case KeyCode.KEY_RETURN:
         // Lock focus into component
-        resizeHandleRef.current.focus();
         setNavigationEnabled(false);
+        resizeHandleRef.current.focus();
         columnContext.setColumnHeaderAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-focus-trapped' }));
         event.stopPropagation();
         event.preventDefault();
@@ -186,8 +186,8 @@ const ColumnResizeHandle = (props) => {
       aria-valuemin={isActive ? minimumWidth : null}
       aria-valuenow={isActive ? columnWidth : null}
       aria-valuemax={isActive ? maximumWidth : null}
-      aria-label={isActive ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText }) : null}
-      aria-valuetext={isActive ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-value-text' }, { columnWidth }) : null}
+      aria-label={isActive ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText, columnWidth }) : null}
+      // aria-valuetext={isActive ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-value-text' }, { columnWidth }) : null}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseEnter={fitToTable}
