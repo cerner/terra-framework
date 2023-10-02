@@ -189,8 +189,8 @@ const ColumnResizeHandle = (props) => {
       aria-valuemin={isActive ? minimumWidth : null}
       aria-valuenow={isActive ? columnWidth : null}
       aria-valuemax={isActive ? maximumWidth : null}
-      aria-label={isActive ? `${columnResizeHandlerAnnouncement} ${columnWidthAnnouncement}` : null}
-      aria-valuetext={isActive ? columnWidthAnnouncement : null}
+      aria-label={isActive && isNavigationEnabled ? `${columnResizeHandlerAnnouncement} ${columnWidthAnnouncement}` : null}
+      aria-valuetext={isActive && !isNavigationEnabled ? columnWidthAnnouncement : null}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseEnter={fitToTable}
