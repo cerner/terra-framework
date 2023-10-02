@@ -175,6 +175,9 @@ const ColumnResizeHandle = (props) => {
     event.stopPropagation();
   };
 
+  const columnResizeHandlerAnnouncement = intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText });
+  const columnWidthAnnouncement = intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-value-text' }, { columnWidth });
+
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-static-element-interactions
     <div
@@ -186,8 +189,8 @@ const ColumnResizeHandle = (props) => {
       aria-valuemin={isActive ? minimumWidth : null}
       aria-valuenow={isActive ? columnWidth : null}
       aria-valuemax={isActive ? maximumWidth : null}
-      aria-label={isActive ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText, columnWidth }) : null}
-      // aria-valuetext={isActive ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-value-text' }, { columnWidth }) : null}
+      aria-label={isActive ? `${columnResizeHandlerAnnouncement} ${columnWidthAnnouncement}` : null}
+      aria-valuetext={isActive ? columnWidthAnnouncement : null}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseEnter={fitToTable}
