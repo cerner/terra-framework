@@ -136,17 +136,16 @@ const ColumnResizeHandle = (props) => {
       case KeyCode.KEY_SPACE:
       case KeyCode.KEY_RETURN:
         // Lock focus into component
-        setNavigationEnabled(false);
         resizeHandleRef.current.focus();
+        setNavigationEnabled(false);
         columnContext.setColumnHeaderAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-focus-trapped' }));
         event.stopPropagation();
         event.preventDefault();
         break;
       case KeyCode.KEY_ESCAPE:
         // Release focus lock
-        setNavigationEnabled(true);
-
         columnContext.setColumnHeaderAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.resume-navigation' }));
+        setNavigationEnabled(true);
         break;
       case KeyCode.KEY_RIGHT:
         if (onResizeHandleChange && !isNavigationEnabled) {
