@@ -49,8 +49,7 @@ describe('FlowsheetDataGrid', () => {
     const wrapper = shallow(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
-        rowHeaderColumn={dataFile.cols[0]}
-        overflowColumns={dataFile.cols.slice(1)}
+        columns={dataFile.cols}
         rows={dataFile.rows}
         ariaLabel="Test Flowsheet Data Grid"
       />,
@@ -59,14 +58,28 @@ describe('FlowsheetDataGrid', () => {
     const dataGrid = wrapper.find('InjectIntl(DataGrid)');
     const pinnedColumns = dataGrid.prop('pinnedColumns');
     expect(pinnedColumns).toEqual(
-      [{ ...dataFile.cols[0], isResizable: false }],
+      [
+        {
+          displayName: 'Vitals',
+          id: 'Column-0',
+          isResizable: false,
+        },
+      ],
     );
 
     const overflowColumns = dataGrid.prop('overflowColumns');
     expect(overflowColumns).toEqual(
       [
-        { ...dataFile.cols[1], isResizable: false },
-        { ...dataFile.cols[2], isResizable: false },
+        {
+          displayName: 'March 16',
+          id: 'Column-1',
+          isResizable: false,
+        },
+        {
+          displayName: 'March 17',
+          id: 'Column-2',
+          isResizable: false,
+        },
       ],
     );
 

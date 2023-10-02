@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+
 import DataGrid from './DataGrid';
 import rowShape from './proptypes/rowShape';
 import { columnShape } from './proptypes/columnShape';
@@ -31,15 +32,11 @@ const propTypes = {
   rows: PropTypes.arrayOf(rowShape),
 
   /**
-   * The column containing row headers. This column will be pinned to the leftmost side of the grid.
+   * Data for columns. Columns will be presented in the order given.
+   * The first column, pinned to the leftmost side of the grid, will contain row headers.
+   * The remaining columns will be rendered in the horizontal overflow.
    */
-  rowHeaderColumn: columnShape,
-
-  /**
-   * Data for overflow columns. Overflow columns are rendered in the Flowsheet Data Grid's horizontal overflow.
-   * Columns will be presented in the order given.
-   */
-  overflowColumns: PropTypes.arrayOf(columnShape),
+  columns: PropTypes.arrayOf(columnShape),
 
   /**
    * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
@@ -55,14 +52,26 @@ const propTypes = {
    * String that specifies the height for the rows in the grid. Any valid CSS value is accepted.
    */
   rowHeight: PropTypes.string,
+
+  /**
+   * Callback function that is called when a selectable cell is selected. Parameters:
+   * @param {string} rowId rowId
+   * @param {string} columnId columnId
+   */
+  onCellSelect: PropTypes.func,
+
+  /**
+   * Callback function that is called when all selected cells need to be unselected. Parameters: none.
+   */
+  onClearSelectedCells: PropTypes.func,
 };
 
 const defaultProps = {
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
   rowHeight: '2.5rem',
-  rowHeaderColumn: {},
-  overflowColumns: [],
+  rows: [],
+  columns: [],
 };
 
 function FlowsheetDataGrid(props) {
@@ -71,11 +80,12 @@ function FlowsheetDataGrid(props) {
     ariaLabelledBy,
     ariaLabel,
     rows,
-    rowHeaderColumn,
-    overflowColumns,
+    columns,
     defaultColumnWidth,
     columnHeaderHeight,
     rowHeight,
+    onCellSelect,
+    onClearSelectedCells,
   } = props;
 
   return (
@@ -87,10 +97,12 @@ function FlowsheetDataGrid(props) {
         rows={rows}
         rowHeight={rowHeight}
         rowHeaderIndex={0}
-        pinnedColumns={[{ ...rowHeaderColumn, isResizable: false }]}
-        overflowColumns={overflowColumns.map(column => ({ ...column, isResizable: false }))}
+        pinnedColumns={columns.length ? [{ ...columns[0], isResizable: false }] : []}
+        overflowColumns={columns.length > 1 ? columns.slice(1).map(column => ({ ...column, isResizable: false })) : []}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
+        onCellSelect={onCellSelect}
+        onClearSelectedCells={onClearSelectedCells}
       />
     </div>
   );

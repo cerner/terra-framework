@@ -40,7 +40,7 @@ const DefaultFlowsheetDataGrid = () => {
       {
         id: '4',
         cells: [
-          { content: 'ICP (mmHg)', isMasked: true },
+          { content: 'ICP (mmHg)' },
           { content: '11' },
           { content: '11' },
           { content: '12' },
@@ -63,10 +63,8 @@ const DefaultFlowsheetDataGrid = () => {
   return (
     <FlowsheetDataGrid
       id="default-terra-flowsheet-data-grid"
-      rowHeaderColumn={cols[0]}
-      overflowColumns={cols.slice(1)}
+      columns={cols}
       rows={rows}
-      columnHeaderHeight="50px"
       ariaLabel="Flowsheet Data Grid"
     />
   );
