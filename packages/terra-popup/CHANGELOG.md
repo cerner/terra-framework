@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Fixed
-  * Using a popup in a table but row receiving focus when clicking on popup.
+  * Fixed popup click events propagating to elements underneath it.
 
 * Added
   * Added aria-label prop for terra-popup to announce the close instruction.
