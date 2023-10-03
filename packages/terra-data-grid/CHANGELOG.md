@@ -5,6 +5,8 @@
 * Added
   * Added ability to resize columns via keyboard.
 
+## 0.7.0 - (October 3, 2023)
+
 * Fixed
   * Fixed the screen reader messages to count header row as the first row.
 

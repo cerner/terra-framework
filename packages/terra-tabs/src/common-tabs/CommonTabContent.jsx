@@ -68,11 +68,11 @@ const CommonTabContent = ({
 
   return (
     <div
-      className={variant === 'framework' ? undefined : cx('panel', theme.className)}
+      className={cx('panel', { 'panel-padding': variant === 'workspace' }, theme.className)}
       role="none"
     >
       <div
-        className={variant === 'framework' ? undefined : cx('panel-header')}
+        className={cx('panel-header', { 'panel-header-padding': variant === 'workspace' })}
         role="none"
         data-testid="workspace-content-heading"
       />

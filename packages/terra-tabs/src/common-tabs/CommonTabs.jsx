@@ -130,13 +130,13 @@ const CommonTabs = ({
       className={variant === 'framework' ? tabsClassNames : cx('workspace')}
       role="none"
     >
-      <div aria-hidden className={cx('body-shadow-container')}>
-        <div className={cx('body-shadow')} />
+      <div aria-hidden className={variant === 'framework' ? undefined : cx('body-shadow-container')}>
+        <div className={variant === 'framework' ? undefined : cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
         <Tabs isDraggable={isDraggable} onTabOrderChange={onTabOrderChange} variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab} onTabStateChange={handleCommonTabsStateChange} />
       </div>
-      <div role="none" className={cx('body')} ref={commonTabsContainerRef}>
+      <div role="none" className={cx('body', { 'body-padding': variant === 'workspace' })} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {
           let portalElement = commonTabsPortalsRef.current[child.props.itemKey]?.element;
           if (!portalElement) {
