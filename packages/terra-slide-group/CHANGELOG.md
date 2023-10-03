@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.33.0 - (October 3, 2023)
+
 * Fixed
   * Nested slide titles were not always getting announced by screen readers.
 

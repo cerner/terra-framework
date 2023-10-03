@@ -8,16 +8,22 @@
     flex-direction: column;
     height: 100%;
     overflow: hidden;
-    padding: 0 10px;
     position: relative;
     width: 100%;
   }
 
+  .panel-padding {
+    padding: 0 10px;
+  }
+
   .panel-header {
     flex: 0 0 auto;
+    z-index: 10;
+  }
+
+  .panel-header-padding {
     padding-bottom: var(--terra-tabs-workspace-content-panel-header-padding-bottom, 8px);
     padding-top: var(--terra-tabs-workspace-content-panel-header-padding-top, 7px);
-    z-index: 10;
   }
 
   .panel-content {

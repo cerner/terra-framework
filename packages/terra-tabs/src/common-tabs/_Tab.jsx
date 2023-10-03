@@ -172,9 +172,6 @@ const Tab = ({
 
   if (isIconOnly) {
     attributes['aria-label'] = label;
-    if (isClosable && label) {
-      attributes['aria-label'] = `${label} . ${tabDeleteLabel}`;
-    }
   }
 
   function onCloseClick(event) {
@@ -251,6 +248,7 @@ const Tab = ({
             role="tab"
             className={variant === 'framework' ? paneClassNames : tabClassNames}
             title={label}
+            aria-label={isClosable ? `${label}. ${tabDeleteLabel}` : label}
             aria-describedby={responseId}
             tabIndex={isSelected ? 0 : -1}
             data-terra-tabs-show-focus-styles
@@ -265,8 +263,6 @@ const Tab = ({
             {isClosable && (
             <div
               className={cx('tabs-remove-button')}
-              type="button"
-              aria-label={`. ${tabDeleteLabel}`}
               onClick={onCloseClick}
             >
               <IconClose />
@@ -287,6 +283,7 @@ const Tab = ({
       aria-disabled={isDisabled}
       className={variant === 'framework' ? paneClassNames : tabClassNames}
       title={label}
+      aria-label={isClosable ? `${label}. ${tabDeleteLabel}` : label}
       tabIndex={isSelected ? 0 : -1}
       data-terra-tabs-show-focus-styles
     >
@@ -295,14 +292,14 @@ const Tab = ({
         {(!customDisplay && !isIconOnly) && <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
       </div>
       {isClosable && (
-      <div
-        className={cx('tabs-remove-button')}
-        type="button"
-        aria-label={`. ${tabDeleteLabel}`}
-        onClick={onCloseClick}
-      >
-        <IconClose />
-      </div>
+      <>
+        <div
+          className={cx('tabs-remove-button')}
+          onClick={onCloseClick}
+        >
+          <IconClose />
+        </div>
+      </>
       )}
     </div>
   );

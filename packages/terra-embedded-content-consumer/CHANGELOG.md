@@ -2,8 +2,13 @@
 
 ## Unreleased
 
+## 3.39.0 - (October 3, 2023)
+
 * Added
-  * Added an example and updated documentation on how to enable embedded content to be scrolled within the iframe.
+  * Added `title` prop for consumers to set the title of the embedded content in the iframe.
+
+* Changed
+  * Deprecated `options.iframeAttrs.title` in favor of the new `title` prop.
 
 ## 3.38.0 - (September 26, 2023)
 

@@ -9,12 +9,13 @@ const BasicConsumerWithSrcDoc = () => {
 
   return (
     <EmbeddedContentConsumer
+      src=""
+      title="Basic Embedded Content Consumer using `srcdoc` inline HTML"
       options={
         {
           iframeAttrs:
           {
             id: 'iframe-inline-html', // Sets iframe id
-            title: 'Basic Embedded Content Consumer using `srcdoc` inline HTML',
             srcdoc: inlineHtml,
             width: '100%',
             height: '200px',
