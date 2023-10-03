@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -43,9 +43,9 @@ const propTypes = {
   maximumLabel: PropTypes.string,
 
   /**
-   * Function to trigger when user changes the input value. Sends parameter {Event} event.
-   */
-   onChange: PropTypes.func
+  * Function to trigger when user changes the input value. Sends parameter {Event} event.
+  */
+  onChange: PropTypes.func,
 };
 
 const defaultProps = {

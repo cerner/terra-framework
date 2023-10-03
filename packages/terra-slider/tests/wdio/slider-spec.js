@@ -38,7 +38,6 @@ Terra.describeViewports('Slider', ['medium', 'large'], () => {
       expect($('input')).toHaveValue(initialValue - 5);
 
       Terra.validates.element('lower-arrowLeft');
-
     });
 
     it('should display Slider with higher selected value on ArrowRight', () => {
@@ -82,14 +81,14 @@ Terra.describeViewports('Slider', ['medium', 'large'], () => {
 
       Terra.validates.element('higher-arrowUp');
     });
-  })
+  });
 
   describe('Custom Slider', () => {
     it('displays a slider with custom min and max labels', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slider/custom-slider');
       Terra.validates.element('custom-slider');
     });
-  })
+  });
 
   describe('Disabled Slider', () => {
     it('displays a disabled slider', () => {
@@ -117,5 +116,5 @@ Terra.describeViewports('Slider', ['medium', 'large'], () => {
 
       Terra.validates.element('no-keyboard-focus');
     });
-  })
+  });
 });
