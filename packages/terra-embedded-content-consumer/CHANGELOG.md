@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.39.0 - (October 3, 2023)
+
 * Added
   * Added `title` prop for consumers to set the title of the embedded content in the iframe.
 

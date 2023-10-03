@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.80.0 - (October 3, 2023)
+
 * Added
   * Added the ability to add hyperlinks.
   * Added `isMultiSelect` prop to support multiselect group items.

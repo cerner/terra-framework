@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 7.9.0 - (October 3, 2023)
+
 * Changed
   * Additional padding of 10px on the left and right of tab content body is removed for framework styles.
   * Box shadow container style removed for framework variant tabs.
