@@ -113,7 +113,7 @@ const ColumnResizeHandle = (props) => {
     onResizeMouseUp();
   };
 
-  const [isAriaLabel, setIsAriaLabel] = useState(true);
+  const [isAriaLabel, setIsAriaLabel] = useState(false);
   const [isAriaValueText, setIsAriaValueText] = useState(false);
 
   const fitToTable = () => {
@@ -124,6 +124,9 @@ const ColumnResizeHandle = (props) => {
     if (parentTable) {
       resizeHandleRef.current.style.height = `${parentTable.offsetHeight}px`;
     }
+
+    // Assistive technologies should announce aria-label text once focused
+    setIsAriaLabel(true);
   };
 
   const onMouseLeave = () => {
@@ -185,7 +188,7 @@ const ColumnResizeHandle = (props) => {
 
   const onBlur = () => {
     setNavigationEnabled(true);
-    setIsAriaLabel(true);
+    setIsAriaLabel(false);
   };
 
   return (
