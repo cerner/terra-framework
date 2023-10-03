@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Consumer } from '../../../../xfc/src';
+import parse from 'style-to-object';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 
-import './ProviderIframe.module.scss';
+import styles from './EmbeddedContentConsumer.module.scss';
+
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -79,10 +85,6 @@ const propTypes = {
   })),
 };
 
-const defaultProps = {
-  scrolling: true,
-};
-
 class EmbeddedContentConsumer extends React.Component {
   componentDidMount() {
     // Merging the iframe options props
@@ -100,7 +102,10 @@ class EmbeddedContentConsumer extends React.Component {
       Object.assign(frameOptions.iframeAttrs, { title: this.props.title });
     }
 
-    frameOptions.focusIndicator = { focusStyleStr: 'outline: 2px dashed blue;', blurStyleStr: 'outline: 0px;' };
+    // TODO: How to read these from the scss file? and convert to string?
+    const focusStyleStr = 'outline: 2px dashed blue;';
+    const blurStyleStr = 'outline: none;';
+    frameOptions.focusIndicator = { focusStyleStr: focusStyleStr, blurStyleStr: blurStyleStr };
 
     // Mount the provided source as the application into the content wrapper.
     this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, frameOptions);
@@ -109,6 +114,24 @@ class EmbeddedContentConsumer extends React.Component {
     if (this.props.onMount) {
       this.props.onMount(this.xfcFrame);
     }
+
+    // Cover other scenario where xfc frame style doesn't apply
+    // such as when `srcdoc` attribute is used which doesn't work
+    // within xfc's JSONRPC communication.
+    this.xfcFrame.iframe.contentWindow.addEventListener('focus', () => {
+      const styleObj = parse(focusStyleStr);
+      Object.entries(styleObj).forEach(([key, value]) => {
+        this.xfcFrame.iframe.style[key] = value;
+      });
+    }, true);
+
+    // Listen for blur event and callback function to apply the style
+    this.xfcFrame.iframe.contentWindow.addEventListener('blur', () => {
+      const styleObj = parse(blurStyleStr);
+      Object.entries(styleObj).forEach(([key, value]) => {
+        this.xfcFrame.iframe.style[key] = value;
+      });
+    }, true);
 
     // Attach the event handlers to the xfc frame.
     this.addEventListener('xfc.launched', this.props.onLaunch);
@@ -150,6 +173,5 @@ class EmbeddedContentConsumer extends React.Component {
 }
 
 EmbeddedContentConsumer.propTypes = propTypes;
-EmbeddedContentConsumer.defaultProps = defaultProps;
 
 export default EmbeddedContentConsumer;

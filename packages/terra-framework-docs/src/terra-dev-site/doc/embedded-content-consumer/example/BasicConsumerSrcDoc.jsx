@@ -6,19 +6,6 @@ Consumer.init();
 class BasicConsumerSrcDoc extends React.Component {
   constructor(props) {
     super(props);
-    this.onMount = this.onMount.bind(this);
-  }
-
-  onMount(frame) {
-    this.frame = frame;
-
-    this.frame.iframe.contentWindow.addEventListener('focus', () => {
-      this.frame.iframe.style['outline'] = "2px dashed blue";
-    }, true);
-
-    this.frame.iframe.contentWindow.addEventListener('blur', () => {
-      this.frame.iframe.style['outline'] = "0px";
-    }, true);
   }
 
   render() {
@@ -50,7 +37,6 @@ class BasicConsumerSrcDoc extends React.Component {
             scrolling: 'yes',
           },
         }}
-        onMount={this.onMount}
       />
     );
   }

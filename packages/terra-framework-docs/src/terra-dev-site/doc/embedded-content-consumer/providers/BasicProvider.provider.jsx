@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 const Provider = () => (
   <ProviderTestTemplate>
-    <div className={cx('content-wrapper')} style={{ outline: "0px" }} tabIndex="0">
+    <div className={cx('content-wrapper')} tabIndex="0" style={{ outline: "0px" }}>
       <h1>Basic Content</h1>
       <p>This example demonstrates that the embedded content consumer will display the providers web content within an iframe.</p>
     </div>

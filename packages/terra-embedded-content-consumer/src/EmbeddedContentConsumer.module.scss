@@ -1,0 +1,13 @@
+// Themes
+@import './clinical-lowlight-theme/EmbeddedContentConsumer.module';
+@import './orion-fusion-theme/EmbeddedContentConsumer.module';
+
+:local {
+  .focus-outline {
+    outline: var(--terra-embedded-content-consumer-focus-outline, 2px dashed blue);
+  }
+
+  .blur-outline {
+    outline: var(--terra-embedded-content-consumer-blur-outline, none);
+  }
+}
