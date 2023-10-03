@@ -113,10 +113,8 @@ const ColumnResizeHandle = (props) => {
     onResizeMouseUp();
   };
 
-  const columnResizeHandlerAnnouncement = intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText });
-  const columnWidthAnnouncement = intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-value-text' }, { columnWidth });
-  const [ariaLabel, setAriaLabel] = useState(columnResizeHandlerAnnouncement);
-  const [ariaValueText, setAriaValueText] = useState(null);
+  const [isAriaLabel, setIsAriaLabel] = useState(true);
+  const [isAriaValueText, setIsAriaValueText] = useState(false);
 
   const fitToTable = () => {
     // Find parent table element
@@ -144,8 +142,8 @@ const ColumnResizeHandle = (props) => {
         resizeHandleRef.current.focus();
         setNavigationEnabled(false);
         // Assistive technologies should avoid announcing aria-label while focus locked, but announce aria-valueText instead
-        setAriaLabel(null);
-        setAriaValueText(columnWidthAnnouncement);
+        setIsAriaLabel(false);
+        setIsAriaValueText(true);
         // Assistive technologies should make announcement for focus locked
         columnContext.setColumnHeaderAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-focus-trapped' }));
         event.stopPropagation();
@@ -153,7 +151,7 @@ const ColumnResizeHandle = (props) => {
         break;
       case KeyCode.KEY_ESCAPE:
         // Assistive technologies should stop announcing aria-valueText once focus unlocked
-        setAriaValueText(null);
+        setIsAriaValueText(false);
         // Release focus lock
         columnContext.setColumnHeaderAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.resume-navigation' }));
         setNavigationEnabled(true);
@@ -187,7 +185,7 @@ const ColumnResizeHandle = (props) => {
 
   const onBlur = () => {
     setNavigationEnabled(true);
-    setAriaLabel(columnResizeHandlerAnnouncement);
+    setIsAriaLabel(true);
   };
 
   return (
@@ -201,8 +199,8 @@ const ColumnResizeHandle = (props) => {
       aria-valuemin={isActive ? minimumWidth : null}
       aria-valuenow={isActive ? columnWidth : null}
       aria-valuemax={isActive ? maximumWidth : null}
-      aria-label={ariaLabel}
-      aria-valuetext={ariaValueText}
+      aria-label={isAriaLabel ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText }) : null}
+      aria-valuetext={isAriaValueText ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-value-text' }, { columnWidth }) : null}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseEnter={fitToTable}
