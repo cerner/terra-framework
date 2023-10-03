@@ -6,8 +6,8 @@
 
 :local {
   .slider {
-    display: inline-flex;
     align-items: center;
+    display: inline-flex;
     min-height: 44px;
   }
 
@@ -16,8 +16,8 @@
     font-weight: 700;
     margin-right: 7px;
     text-align: center;
-    width: 20%;
     white-space: initial;
+    width: 20%;
   }
 
   .min-label {
@@ -41,12 +41,13 @@
   .input-range {
     -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     background-color: transparent;
-    min-height: 44px;
-    min-width: 240px;
     margin-left: 7px;
     margin-right: 7px;
+    min-height: 44px;
+    min-width: 240px;
     width: 70%;
   }
+  
   .input-range:disabled {
     opacity: 30%;
   }
