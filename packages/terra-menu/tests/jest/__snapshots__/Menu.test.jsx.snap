@@ -153,9 +153,11 @@ exports[`Menu correctly applies the theme context className 1`] = `
             "vertical": 0,
           }
         }
+        headerTitle=""
         isEnabled={true}
         isOpen={true}
         onPosition={[Function]}
+        popupContentRole="dialog"
         targetAttachment={
           Object {
             "horizontal": "end",

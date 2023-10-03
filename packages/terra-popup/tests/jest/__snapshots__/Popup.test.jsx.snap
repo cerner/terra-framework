@@ -79,6 +79,7 @@ exports[`correctly applies the theme context className 1`] = `
           isEnabled={true}
           isOpen={true}
           onPosition={[Function]}
+          popupContentRole="dialog"
           targetAttachment={
             Object {
               "horizontal": "center",
