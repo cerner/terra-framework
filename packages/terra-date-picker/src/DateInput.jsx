@@ -889,7 +889,7 @@ const DatePickerInput = (props) => {
             aria-live={DateUtil.isMac() ? 'polite' : 'off'}
             text={`${invalidEntry} 
             ${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} 
-            ${format}. ${inputDate || ''}. ${intl.formatMessage({ id: 'Terra.datePicker.hotKey' })} `}
+            ${format}. ${inputDate ? `${inputDate}.` : ''} ${intl.formatMessage({ id: 'Terra.datePicker.hotKey' })} `}
           />
           <div aria-hidden="true">
             {`(${format})`}
