@@ -26,7 +26,9 @@
   .tab-container-vertical {
     display: flex;
     flex: 1 1 auto;
+    flex-direction: column;
     flex-wrap: nowrap;
+    float: left;
     height: var(--terra-tabs-workspace-tab-container-height, 33px);
     justify-content: flex-start;
     margin-bottom: var(--terra-tabs-workspace-tab-container-margin-bottom, 0);
@@ -34,8 +36,6 @@
     padding: 0;
     position: relative;
     width: fit-content;
-    float:left;
-    flex-direction : column;
 
     &:focus {
       outline: none;
@@ -52,11 +52,9 @@
   }
 
   .container-vertical {
-    // while using the Flex the style of addIcon getting align to all right to the tabs
-    -webkit-box-flex: 1 1 auto;
-    flex: 1 1 auto; // stylelint-disable value-no-vendor-prefix
-    flex-direction:row; 
+    flex: 1 1 auto;
     flex-flow: row nowrap;
+    flex-direction: row;
   }
 
   .divcontainer {
