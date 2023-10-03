@@ -113,6 +113,11 @@ const ColumnResizeHandle = (props) => {
     onResizeMouseUp();
   };
 
+  const columnResizeHandlerAnnouncement = intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText });
+  const columnWidthAnnouncement = intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-value-text' }, { columnWidth });
+  const [ariaLabel, setAriaLabel] = useState(columnResizeHandlerAnnouncement);
+  const [ariaValueText, setAriaValueText] = useState(null);
+
   const fitToTable = () => {
     // Find parent table element
     const parentTable = resizeHandleRef.current.closest('table');
@@ -138,11 +143,17 @@ const ColumnResizeHandle = (props) => {
         // Lock focus into component
         resizeHandleRef.current.focus();
         setNavigationEnabled(false);
+        // Assistive technologies should avoid announcing aria-label while focus locked, but announce aria-valueText instead
+        setAriaLabel(null);
+        setAriaValueText(columnWidthAnnouncement);
+        // Assistive technologies should make announcement for focus locked
         columnContext.setColumnHeaderAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.cell-focus-trapped' }));
         event.stopPropagation();
         event.preventDefault();
         break;
       case KeyCode.KEY_ESCAPE:
+        // Assistive technologies should stop announcing aria-valueText once focus unlocked
+        setAriaValueText(null);
         // Release focus lock
         columnContext.setColumnHeaderAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.resume-navigation' }));
         setNavigationEnabled(true);
@@ -174,8 +185,10 @@ const ColumnResizeHandle = (props) => {
     event.stopPropagation();
   };
 
-  const columnResizeHandlerAnnouncement = intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText });
-  const columnWidthAnnouncement = intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-value-text' }, { columnWidth });
+  const onBlur = () => {
+    setNavigationEnabled(true);
+    setAriaLabel(columnResizeHandlerAnnouncement);
+  };
 
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-static-element-interactions
@@ -188,8 +201,8 @@ const ColumnResizeHandle = (props) => {
       aria-valuemin={isActive ? minimumWidth : null}
       aria-valuenow={isActive ? columnWidth : null}
       aria-valuemax={isActive ? maximumWidth : null}
-      aria-label={isActive ? columnResizeHandlerAnnouncement : null}
-      aria-valuetext={isActive ? columnWidthAnnouncement : null}
+      aria-label={ariaLabel}
+      aria-valuetext={ariaValueText}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseEnter={fitToTable}
@@ -197,7 +210,7 @@ const ColumnResizeHandle = (props) => {
       onKeyDown={onKeyDown}
       onClick={onClick}
       onFocus={fitToTable}
-      onBlur={() => { setNavigationEnabled(true); }}
+      onBlur={onBlur}
       className={cx('resize-handle', theme.className)}
     />
   );
