@@ -128,6 +128,7 @@ const CommonTabs = ({
   const contentTabClassNames = classNames(cx(
     'body',
     { 'is-vertical': verticalOrientation },
+    { 'body-padding': variant === 'workspace' },
     theme.className,
   ));
 
@@ -140,8 +141,8 @@ const CommonTabs = ({
       className={variant === 'framework' ? tabsClassNames : cx('workspace')}
       role="none"
     >
-      <div aria-hidden className={cx('body-shadow-container')}>
-        <div className={cx('body-shadow')} />
+      <div aria-hidden className={variant === 'framework' ? undefined : cx('body-shadow-container')}>
+        <div className={variant === 'framework' ? undefined : cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
         <Tabs verticalOrientation={verticalOrientation} isDraggable={isDraggable} onTabOrderChange={onTabOrderChange} variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab} onTabStateChange={handleCommonTabsStateChange} />

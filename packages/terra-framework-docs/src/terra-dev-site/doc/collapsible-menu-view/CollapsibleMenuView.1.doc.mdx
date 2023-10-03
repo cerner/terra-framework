@@ -4,10 +4,12 @@ import CollapsibleMenuViewProps from 'terra-collapsible-menu-view/src/Collapsibl
 import CollapsibleMenuViewItemProps from 'terra-collapsible-menu-view/src/CollapsibleMenuViewItem?dev-site-props-table';
 import CollapsibleMenuViewItemGroupProps from 'terra-collapsible-menu-view/src/CollapsibleMenuViewItemGroup?dev-site-props-table';
 import CollapsibleMenuViewToggleProps from 'terra-collapsible-menu-view/src/CollapsibleMenuViewToggle?dev-site-props-table';
+import CollapsibleMenuViewHyperlinkProps from 'terra-collapsible-menu-view/src/CollapsibleMenuViewHyperlink?dev-site-props-table';
 
 import BasicView from './example/CollapsibleMenuViewDemo?dev-site-example';
 import AlwaysCollapsedMenuItemsDemo from './example/AlwaysCollapsedMenuItemsDemo?dev-site-example';
 import CollapsibleMenuViewStartAligned from './example/CollapsibleMenuViewStartAligned?dev-site-example';
+import CollapsibleMenuViewWithMultiSelectItems from './example/CollapsibleMenuViewWithMultiSelectItems?dev-site-example';
 
 <Badge />
 
@@ -18,6 +20,8 @@ The collapsible menu view is a mechanism that can be used in toolbar scenarios w
 CollapsibleMenuView.Item will flex between a button when displayed face-up and a Menu.Item when in a menu. An item can have an onClick action and/or contain menuItems that will be displayed in a menu when clicked (they will be displayed in a submenu if the item is rolled into the ellipsis menu)
 
 CollapsibleMenuView.Toggle will flex between a checkbox with a label when displayed face-up and a selectable Menu.Item when in a menu.
+
+CollapsibleMenuView.Hyperlink will flex between a hyperlink and a selectable Menu.Item when in a menu.
 
 CollapsibleMenuView.ItemGroup will flex between a button group when displayed face-up and a Menu.ItemGroup when rolled into the ellipsis menu. A selectable ItemGroup will have toggle style selection. An Item group that is not selectable will have its children roll into the ellipsis menu as non selectable Menu.Items.
 
@@ -63,6 +67,8 @@ import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
 <CollapsibleMenuViewStartAligned title='CollapsibleMenuView start alignment' />
 
+<CollapsibleMenuViewWithMultiSelectItems title='CollapsibleMenuView with multiselect items' />
+
 ## Collapsible Menu View props
 <CollapsibleMenuViewProps />
 
@@ -74,3 +80,6 @@ import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
 ## CollapsibleMenuView.Toggle props
 <CollapsibleMenuViewToggleProps />
+
+## CollapsibleMenuView.Hyperlink props
+<CollapsibleMenuViewHyperlinkProps />

@@ -54,8 +54,17 @@ it('should render a date picker with included dates', () => {
 });
 
 it('should render a date picker with min and max dates', () => {
-  const datePicker = shallowWithIntl(<DatePicker name="date-input" minDate="2017-04-01" maxDate="2017-04-10" />);
-  const wrapper = datePicker.dive();
+  const wrapper = shallowWithIntl(<DatePicker name="date-input" minDate="2017-04-01" maxDate="2017-04-10" />).dive();
+  const datePicker = wrapper.find('InjectIntl(DatePicker)');
+  expect(JSON.stringify(datePicker.prop('minDate'))).toEqual(JSON.stringify('2017-01-01T00:00:00.000Z'));
+  expect(JSON.stringify(datePicker.prop('maxDate'))).toEqual(JSON.stringify('2017-01-01T00:00:00.000Z'));
+  expect(JSON.stringify(datePicker.prop('excludeDates'))).toEqual(JSON.stringify(['2017-01-01T00:00:00.000Z']));
+  expect(JSON.stringify(datePicker.prop('includeDates'))).toEqual(JSON.stringify(['2017-01-01T00:00:00.000Z']));
+  const datePickerInput = datePicker.prop('customInput');
+  expect(datePickerInput.props.minDate).toEqual('2017-04-01');
+  expect(datePickerInput.props.maxDate).toEqual('2017-04-10');
+  expect(JSON.stringify(datePickerInput.props.excludeDates)).toEqual(JSON.stringify(['2017-01-01T00:00:00.000Z']));
+  expect(JSON.stringify(datePickerInput.props.includeDates)).toEqual(JSON.stringify(['2017-01-01T00:00:00.000Z']));
   expect(wrapper).toMatchSnapshot();
 });
 

@@ -1,9 +1,111 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render the embedded content consumer container 1`] = `<div />`;
+exports[`EmbeddedContentConsumer should render the embedded content consumer container 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    onMount={[Function]}
+    src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
+    title="basic provider"
+  >
+    <div />
+  </EmbeddedContentConsumer>
+</div>
+`;
 
-exports[`should render the embedded content consumer with custom class names 1`] = `
-<div
-  class="container"
-/>
+exports[`EmbeddedContentConsumer should render the embedded content consumer with custom class names 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    className="container"
+    onMount={[Function]}
+    src="https://www.cdc.gov/"
+    title="custom class name"
+  >
+    <div
+      className="container"
+    />
+  </EmbeddedContentConsumer>
+</div>
+`;
+
+exports[`EmbeddedContentConsumer should render the embedded content consumer with options attributes 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    onMount={[Function]}
+    options={
+      Object {
+        "iframeAttrs": Object {
+          "height": "100px",
+          "srcdoc": "<p><b>Inline HTML Content</b></p><p>This is an inline html content that can be used to render the content into the frame.</p>",
+          "title": "inline html content",
+          "width": "100%",
+        },
+      }
+    }
+    src=""
+    title="inline html content"
+  >
+    <div />
+  </EmbeddedContentConsumer>
+</div>
+`;
+
+exports[`EmbeddedContentConsumer should render the embedded content consumer with title prop 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    onMount={[Function]}
+    src="https://www.cdc.gov/"
+    title="title for the frame content"
+  >
+    <div />
+  </EmbeddedContentConsumer>
+</div>
+`;
+
+exports[`EmbeddedContentConsumer should render the embedded content consumer with title prop and options prop 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    onMount={[Function]}
+    options={
+      Object {
+        "iframeAttrs": Object {
+          "title": "title that will be used for the frame content",
+        },
+      }
+    }
+    src="https://www.cdc.gov/"
+    title="title that will be used for the frame content"
+  >
+    <div />
+  </EmbeddedContentConsumer>
+</div>
+`;
+
+exports[`sets appropriate config option when resizeConfig.scrolling is false 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    options={
+      Object {
+        "resizeConfig": Object {
+          "scrolling": false,
+        },
+      }
+    }
+    src="https://www.google.com/"
+  />
+</div>
+`;
+
+exports[`sets appropriate config option when resizeConfig.scrolling is true 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    options={
+      Object {
+        "resizeConfig": Object {
+          "scrolling": true,
+        },
+      }
+    }
+    src="https://www.google.com/"
+  />
+</div>
 `;

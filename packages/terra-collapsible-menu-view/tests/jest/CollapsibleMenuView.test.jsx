@@ -1,7 +1,7 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
-import CollapsibleMenuView from '../../src/CollapsibleMenuView';
+import CollapsibleMenuView from '../../src/index';
 
 describe('CollapsibleMenuView', () => {
   // Default Collapsible Menu View

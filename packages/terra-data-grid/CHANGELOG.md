@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed the screen reader messages to count header row as the first row.
+
 ## 0.6.0 - (September 14, 2023)
 
 * Breaking Changes

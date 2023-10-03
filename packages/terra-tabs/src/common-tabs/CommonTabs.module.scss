@@ -56,6 +56,10 @@
     flex: 1 1 auto;
     height: 100%;
     overflow: hidden;
+    z-index: 10;
+  }
+
+  .body-padding {
     padding-left: 10px;
     padding-right: 10px;
     z-index: 10;

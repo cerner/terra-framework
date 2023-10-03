@@ -294,7 +294,7 @@ describe('Time Input onBlur operations', () => {
     });
 
     it('tabs to the minute input and onBlur is not triggered', () => {
-      browser.keys('Tab');
+      browser.keys('ArrowRight');
       expect($('#blur-count').getText()).toEqual('0');
       expect($('#focus-count').getText()).toEqual('1');
     });
@@ -306,7 +306,7 @@ describe('Time Input onBlur operations', () => {
     });
 
     it('tabs out of the component and onBlur is triggered', () => {
-      browser.keys('Tab'); // Move focus to "p.m."
+      browser.keys('ArrowRight'); // Move focus to "p.m."
       browser.keys('Tab'); // Tab out of the component.
       expect($('#blur-count').getText()).toEqual('1');
       expect($('#focus-count').getText()).toEqual('1');

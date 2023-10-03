@@ -3,6 +3,8 @@ import { Badge } from 'terra-embedded-content-consumer/package.json?dev-site-pac
 import EmbeddedContentConsumerPropsTable from 'terra-embedded-content-consumer/src/EmbeddedContentConsumer?dev-site-props-table';
 
 import BasicConsumer from './example/BasicConsumer?dev-site-example';
+import BasicConsumerWithSrcDoc from './example/BasicConsumerWithSrcDoc?dev-site-example';
+import BasicConsumerWithScrolling from './example/BasicConsumerWithScrolling?dev-site-example';
 import CustomEventConsumer from './example/CustomEventConsumer?dev-site-example';
 import CustomEventsConsumer from './example/CustomEventsConsumer?dev-site-example';
 import DataStatusConsumer from './example/DataStatusConsumer?dev-site-example';
@@ -56,9 +58,11 @@ Consumer.init();
 
 ## Examples
 <BasicConsumer title='Basic Embedded Content Consumer' />
+<BasicConsumerWithSrcDoc title='Consumer with inline HTML content using `srcdoc`' />
+<BasicConsumerWithScrolling title='Scrollable Content' />
 <DataStatusConsumer title='Embedded Content Consumer Lifecycle Statuses' />
 <CustomEventConsumer title='Embedded Content Consumer that Listens for a Custom Event' />
 <CustomEventsConsumer title='Embedded Content Consumer with Seamless Communication' />
 
-## Embedded Content Consumer Props Table 
+## Embedded Content Consumer Props Table
 <EmbeddedContentConsumerPropsTable />

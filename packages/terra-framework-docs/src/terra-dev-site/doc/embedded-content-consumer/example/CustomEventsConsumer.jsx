@@ -1,6 +1,7 @@
 import React from 'react';
 import EmbeddedContentConsumer from 'terra-embedded-content-consumer';
 import { Consumer } from 'xfc';
+import '../providers/EmbeddedContentConsumerCommon.module.scss';
 
 Consumer.init();
 
@@ -43,7 +44,8 @@ class CustomEventsConsumer extends React.Component {
       <div id="CustomEvents">
         <EmbeddedContentConsumer
           src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"
-          options={{ iframeAttrs: { title: 'Custom events example' } }}
+          title="Custom events example"
+          options={{}}
           onMount={this.onMount}
           eventHandlers={eventHandlers}
         />
