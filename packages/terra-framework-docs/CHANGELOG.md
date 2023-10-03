@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * New Terra Slider component documentation, examples and tests.
+
 * Fixed
   * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
 

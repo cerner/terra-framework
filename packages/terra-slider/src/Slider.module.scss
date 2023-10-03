@@ -151,13 +151,11 @@
   .input-range:disabled::-ms-track {
     -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     background: linear-gradient(to right, var(--terra-slider-track-disabled-selected-range, #007cc3) 0%, var(--terra-slider-track-disabled-selected-range, #007cc3)  50%, var(--terra-slider-track-disabled-unselected-range, #d3d4d5)  50%, var(--terra-slider-track-disabled-unselected-range, #d3d4d5) 100%);
-    opacity: 30%;
   }
 
   .input-range:disabled::-ms-thumb {
     -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     background: #007cc3;
-    opacity: 30%;
   }
 
   /* For Firefox */
@@ -204,12 +202,10 @@
   .input-range:disabled::-moz-range-track {
     -moz-appearance: none; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     background: linear-gradient(to right, var(--terra-slider-track-disabled-selected-range, #007cc3) 0%, var(--terra-slider-track-disabled-selected-range, #007cc3)  50%, var(--terra-slider-track-disabled-unselected-range, #d3d4d5)  50%, var(--terra-slider-track-disabled-unselected-range, #d3d4d5) 100%);
-    opacity: 30%;
   }
 
   .input-range:disabled::-moz-range-thumb {
     -moz-appearance: none; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     background: #007cc3;
-    opacity: 30%;
   }
 }
