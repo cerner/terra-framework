@@ -170,7 +170,6 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
             >
               <div
                 aria-controls="panel-1"
-                aria-describedby="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
                 aria-disabled={false}
                 aria-selected={false}
                 className="hidden"
@@ -195,6 +194,19 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
                     id="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
                   >
                     Terra.tabs.addbutton.focus
+                  </span>
+                </VisuallyHiddenText>
+                <VisuallyHiddenText
+                  aria-hidden={true}
+                  id="terra-tab-close-response=00000000-0000-0000-0000-000000000000"
+                  text="Terra.tabs.hint.removable"
+                >
+                  <span
+                    aria-hidden={true}
+                    className="visually-hidden-text"
+                    id="terra-tab-close-response=00000000-0000-0000-0000-000000000000"
+                  >
+                    Terra.tabs.hint.removable
                   </span>
                 </VisuallyHiddenText>
                 <div
@@ -275,7 +287,6 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
             >
               <div
                 aria-controls="panel-2"
-                aria-describedby="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
                 aria-disabled={false}
                 aria-selected={false}
                 className="hidden"
@@ -300,6 +311,19 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
                     id="terra-hidden-tab-pane-response=00000000-0000-0000-0000-000000000000"
                   >
                     Terra.tabs.addbutton.focus
+                  </span>
+                </VisuallyHiddenText>
+                <VisuallyHiddenText
+                  aria-hidden={true}
+                  id="terra-tab-close-response=00000000-0000-0000-0000-000000000000"
+                  text="Terra.tabs.hint.removable"
+                >
+                  <span
+                    aria-hidden={true}
+                    className="visually-hidden-text"
+                    id="terra-tab-close-response=00000000-0000-0000-0000-000000000000"
+                  >
+                    Terra.tabs.hint.removable
                   </span>
                 </VisuallyHiddenText>
                 <div
