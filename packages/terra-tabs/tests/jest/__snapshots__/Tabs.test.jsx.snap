@@ -376,9 +376,11 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                 style="position: relative; height: 100%; width: 100%;"
               >
                 <div
+                  class="panel orion-fusion-theme"
                   role="none"
                 >
                   <div
+                    class="panel-header"
                     data-testid="workspace-content-heading"
                     role="none"
                   />
@@ -419,9 +421,11 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                   style="position: relative; height: 100%; width: 100%;"
                 >
                   <div
+                    class="panel orion-fusion-theme"
                     role="none"
                   >
                     <div
+                      class="panel-header"
                       data-testid="workspace-content-heading"
                       role="none"
                     />
@@ -457,9 +461,11 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                 variant="framework"
               >
                 <div
+                  className="panel orion-fusion-theme"
                   role="none"
                 >
                   <div
+                    className="panel-header"
                     data-testid="workspace-content-heading"
                     role="none"
                   />
@@ -578,11 +584,8 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
     >
       <div
         aria-hidden={true}
-        className="body-shadow-container"
       >
-        <div
-          className="body-shadow"
-        />
+        <div />
       </div>
       <div
         className="tab-header"
@@ -902,9 +905,11 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
             variant="framework"
           >
             <div
+              className="panel"
               role="none"
             >
               <div
+                className="panel-header"
                 data-testid="workspace-content-heading"
                 role="none"
               />
@@ -951,11 +956,8 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
 >
   <div
     aria-hidden={true}
-    className="body-shadow-container"
   >
-    <div
-      className="body-shadow"
-    />
+    <div />
   </div>
   <div
     className="tab-header"
@@ -1017,11 +1019,8 @@ exports[`Tabs should render a default component 1`] = `
 >
   <div
     aria-hidden={true}
-    className="body-shadow-container"
   >
-    <div
-      className="body-shadow"
-    />
+    <div />
   </div>
   <div
     className="tab-header"
@@ -1082,11 +1081,8 @@ exports[`Tabs should render a draggable tabs component 1`] = `
 >
   <div
     aria-hidden={true}
-    className="body-shadow-container"
   >
-    <div
-      className="body-shadow"
-    />
+    <div />
   </div>
   <div
     className="tab-header"
@@ -1148,11 +1144,8 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
 >
   <div
     aria-hidden={true}
-    className="body-shadow-container"
   >
-    <div
-      className="body-shadow"
-    />
+    <div />
   </div>
   <div
     className="tab-header"
@@ -1213,11 +1206,8 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
 >
   <div
     aria-hidden={true}
-    className="body-shadow-container"
   >
-    <div
-      className="body-shadow"
-    />
+    <div />
   </div>
   <div
     className="tab-header"
@@ -1352,11 +1342,8 @@ exports[`Tabs should render with add icon 1`] = `
     >
       <div
         aria-hidden={true}
-        className="body-shadow-container"
       >
-        <div
-          className="body-shadow"
-        />
+        <div />
       </div>
       <div
         className="tab-header"
@@ -1832,9 +1819,11 @@ exports[`Tabs should render with add icon 1`] = `
             variant="framework"
           >
             <div
+              className="panel"
               role="none"
             >
               <div
+                className="panel-header"
                 data-testid="workspace-content-heading"
                 role="none"
               />
@@ -1955,11 +1944,8 @@ exports[`Tabs should render with add icon 2`] = `
     >
       <div
         aria-hidden={true}
-        className="body-shadow-container"
       >
-        <div
-          className="body-shadow"
-        />
+        <div />
       </div>
       <div
         className="tab-header"
@@ -2435,9 +2421,11 @@ exports[`Tabs should render with add icon 2`] = `
             variant="framework"
           >
             <div
+              className="panel"
               role="none"
             >
               <div
+                className="panel-header"
                 data-testid="workspace-content-heading"
                 role="none"
               />
@@ -2558,11 +2546,8 @@ exports[`Tabs should render with close icon 1`] = `
     >
       <div
         aria-hidden={true}
-        className="body-shadow-container"
       >
-        <div
-          className="body-shadow"
-        />
+        <div />
       </div>
       <div
         className="tab-header"
@@ -2882,9 +2867,11 @@ exports[`Tabs should render with close icon 1`] = `
             variant="framework"
           >
             <div
+              className="panel"
               role="none"
             >
               <div
+                className="panel-header"
                 data-testid="workspace-content-heading"
                 role="none"
               />
@@ -3076,11 +3063,8 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
 >
   <div
     aria-hidden={true}
-    className="body-shadow-container"
   >
-    <div
-      className="body-shadow"
-    />
+    <div />
   </div>
   <div
     className="tab-header"
