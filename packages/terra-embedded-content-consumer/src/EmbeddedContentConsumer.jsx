@@ -1,14 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Consumer } from '../../../../xfc/src';
+import { Consumer } from 'xfc';
 import parse from 'style-to-object';
-import classNames from 'classnames';
-import classNamesBind from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
-
-import styles from './EmbeddedContentConsumer.module.scss';
-
-const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -105,7 +98,7 @@ class EmbeddedContentConsumer extends React.Component {
     // TODO: How to read these from the scss file? and convert to string?
     const focusStyleStr = 'outline: 2px dashed blue;';
     const blurStyleStr = 'outline: none;';
-    frameOptions.focusIndicator = { focusStyleStr: focusStyleStr, blurStyleStr: blurStyleStr };
+    frameOptions.focusIndicator = { focusStyleStr, blurStyleStr };
 
     // Mount the provided source as the application into the content wrapper.
     this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, frameOptions);

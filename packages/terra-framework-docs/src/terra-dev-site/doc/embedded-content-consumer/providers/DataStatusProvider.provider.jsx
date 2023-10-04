@@ -7,7 +7,8 @@ const cx = classNames.bind(styles);
 
 const DataStatusProvider2 = () => (
   <ProviderTestTemplate>
-    <div className={cx('content-wrapper')} tabIndex="0" style={{ outline: "0px" }}>
+    {/* eslint-disable-next-line */}
+    <div className={cx('content-wrapper')} tabIndex="0" style={{ outline: 'none' }}>
       <h1>Embedded Application Lifecycle</h1>
       <p>The embedded container consumer will go through three lifecyle stages as it loads. These statuses are communicated via `data-status` attributes on the iframe wrapper and listeners can be add to listen for the lifecyle changes of the frame.</p>
       <p>In this example the consumer listens for each lifecyle stage and adds its status value below after a small delay (to help differentiate each lifecycle stages):</p>

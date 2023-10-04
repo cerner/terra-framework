@@ -24,11 +24,12 @@
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "xfc": "file:../../../xfc"
+    "xfc": "git+https://github.com/kolkheang/xfc.git#display-frame-focus-indicator"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "style-to-object": "^0.4.2"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

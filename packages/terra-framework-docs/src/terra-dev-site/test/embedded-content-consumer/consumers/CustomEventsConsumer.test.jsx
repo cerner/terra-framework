@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import { Consumer } from '../../../../../../../../xfc/src';
+import { Consumer } from 'xfc';
 import EmbeddedContentConsumer from 'terra-embedded-content-consumer/lib/EmbeddedContentConsumer';
 import styles from './Consumer.module.scss';
 

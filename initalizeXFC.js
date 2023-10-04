@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { Provider } from '../xfc/src';
+import { Provider } from 'xfc';
 
 Provider.init({
   acls: ['*'],
