@@ -107,7 +107,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
       }
       return (
         <li role="none">
-          <div {...customProps}  aria-label={ariaLabel} role="group">
+          <div {...customProps} aria-label={ariaLabel} role="group">
             {children}
           </div>
         </li>

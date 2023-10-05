@@ -118,7 +118,7 @@ class CollapsibleMenuViewDemo extends React.Component {
         </CollapsibleMenuView.ItemGroup>
         <CollapsibleMenuView.Divider key="Divider3" />
         <CollapsibleMenuView.Item icon={<IconSend />} text="Send" key="send" isIconOnly />
-        <CollapsibleMenuView.ItemGroup key="messageActionGroup">
+        <CollapsibleMenuView.ItemGroup ariaLabel="Action Type Single Selection" key="messageActionGroup">
           <CollapsibleMenuView.Item icon={<IconPrinter />} text="Print" key="print" isIconOnly />
           <CollapsibleMenuView.Item icon={<IconBookmark />} text="Bookmark" key="bookmark" isIconOnly />
           <CollapsibleMenuView.Item icon={<IconTrash />} text="Trash" key="trash" isIconOnly />
