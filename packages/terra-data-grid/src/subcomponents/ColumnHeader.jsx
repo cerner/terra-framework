@@ -15,6 +15,10 @@ const propTypes = {
    */
   headerHeight: PropTypes.string.isRequired,
   /**
+  * Number that specifies the height of the data grid in pixels.
+  */
+  tableHeight: PropTypes.number,
+  /**
    * Column index for cell that can receive tab focus.
    */
   activeColumnIndex: PropTypes.number,
@@ -45,6 +49,7 @@ const ColumnHeader = (props) => {
   const {
     columns,
     headerHeight,
+    tableHeight,
     activeColumnIndex,
     activeColumnResizing,
     columnResizeIncrement,
@@ -67,6 +72,7 @@ const ColumnHeader = (props) => {
       headerHeight={headerHeight}
       isResizable={column.isResizable}
       isSelectable={column.isSelectable}
+      tableHeight={tableHeight}
       isActive={activeColumnIndex === columnIndex}
       isResizeActive={activeColumnIndex === columnIndex && activeColumnResizing}
       columnResizeIncrement={columnResizeIncrement}

@@ -65,6 +65,11 @@ const propTypes = {
    */
   isResizable: PropTypes.bool,
 
+   /**
+    * Height of the parent table.
+    */
+   tableHeight: PropTypes.number,
+
   /**
    * Boolean value indicating whether or not the column header is resizable.
    */
@@ -130,6 +135,7 @@ const ColumnHeaderCell = (props) => {
     isActive,
     isSelectable,
     isResizable,
+    tableHeight,
     isResizeActive,
     columnResizeIncrement,
     width,
@@ -274,6 +280,7 @@ const ColumnHeaderCell = (props) => {
         columnWidth={width}
         columnResizeIncrement={columnResizeIncrement}
         isActive={isResizeHandleActive}
+        height={tableHeight}
         minimumWidth={minimumWidth}
         maximumWidth={maximumWidth}
         onResizeMouseDown={onResizeHandleMouseDown}
