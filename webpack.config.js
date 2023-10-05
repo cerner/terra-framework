@@ -50,9 +50,6 @@ const coreConfig = (env = {}) => ({
       ],
     }),
   ],
-  devServer: {
-    allowedHosts: 'all',
-  },
 });
 
 const mergedConfig = (env, argv) => (
