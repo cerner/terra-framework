@@ -1,3 +1,16 @@
 import WorklistDataGridColumnStates from './WorklistDataGridColumnStates?dev-site-example';
 
+# Column States and Selection
+
+### Description
+This example demonstrates a [Worklist DataGrid](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about) that supports column states and selection.
+A column can be selected by clicking on the column or pressing the Spacebar on the focused column. Only columns that are selectable can be selected. A column is selectable by default.
+
+The Column can display icons representing its current state such as sort indicator and error.
+
+### Properties required
+* The **_onColumnSelect_** callback prop: When the user selects a column, this callback will be called with the columnId of the selected column.
+
+The below example also demonstrates how properties such as _isSelectable_, _hasError_ and _sortIndicator_ can be provided by the consumer to prevent selection, display error and show sort indicator icons respectively.
+
 <WorklistDataGridColumnStates title='Worklist Data Grid Column States' />

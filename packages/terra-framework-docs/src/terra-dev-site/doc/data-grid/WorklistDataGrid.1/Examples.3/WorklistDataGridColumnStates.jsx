@@ -4,18 +4,18 @@ import { WorklistDataGrid } from 'terra-data-grid';
 const gridDataJSON = {
   cols: [
     {
-      id: 'Column-0', displayName: 'Patient', sortIndicator: 'ascending', hasError: true,
+      id: 'Column-0', displayName: 'Patient', sortIndicator: 'ascending', hasError: true, // This column header will be rendered with a sort indicator and an error icon by default.
     },
     { id: 'Column-1', displayName: 'Location' },
     { id: 'Column-2', displayName: 'Illness Severity' },
     { id: 'Column-3', displayName: 'Visit' },
-    { id: 'Column-4', displayName: 'Allergy', hasError: true },
+    { id: 'Column-4', displayName: 'Allergy', hasError: true }, // Use hasError property to display an error icon in the column header
     { id: 'Column-5', displayName: 'Primary Contact' },
     { id: 'Column-6', displayName: 'Generic Order Counts' },
     { id: 'Column-7', displayName: 'Patient Age' },
     { id: 'Column-8', displayName: 'Medication History' },
     { id: 'Column-9', displayName: 'My Relationship' },
-    { id: 'Column-10', displayName: 'Not Selectable', isSelectable: false },
+    { id: 'Column-10', displayName: 'Not Selectable', isSelectable: false }, // Column header cannot be selected via click or Spacebar but can receive focus when navigating through keyboard
   ],
   rows: [
     {
@@ -53,13 +53,14 @@ const gridDataJSON = {
   ],
 };
 
-const DefaultWorklistDataGrid = () => {
+const WorklistDataGridWithColumnStates = () => {
   const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
 
   const [gridColumns, setGridColumns] = useState(cols);
   const [gridRows, setGridRows] = useState(rows);
 
+  // The onColumnSelect will sort the rows and toggle the current sort indicator.
   const onColumnSelect = (columnId) => {
     const newColumnArray = gridColumns.map((column, columnIndex) => {
       const newColumn = { ...column };
@@ -91,17 +92,17 @@ const DefaultWorklistDataGrid = () => {
 
   return (
     <WorklistDataGrid
-      id="default-terra-worklist-data-grid"
+      id="terra-worklist-data-grid-with-column-states"
       overflowColumns={gridColumns}
       rows={gridRows}
       rowHeaderIndex={rowHeaderIndex}
       rowHeight="50px"
       defaultColumnWidth={100}
       columnHeaderHeight="50px"
-      onColumnSelect={onColumnSelect}
+      onColumnSelect={onColumnSelect} // Consumer must provide this callback to the Worklist DataGrid for it to call when the user selects a column header.
       ariaLabel="Worklist Data Grid"
     />
   );
 };
 
-export default DefaultWorklistDataGrid;
+export default WorklistDataGridWithColumnStates;
