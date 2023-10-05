@@ -941,7 +941,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   type="button"
                                 >
                                   <span
-                                    className="button-label icon-only"
+                                    className="button-label-win icon-only"
                                   >
                                     <span
                                       className="icon"
@@ -1825,7 +1825,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   type="button"
                                 >
                                   <span
-                                    className="button-label icon-only"
+                                    className="button-label-win icon-only"
                                   >
                                     <span
                                       className="icon"
@@ -2819,7 +2819,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   type="button"
                                 >
                                   <span
-                                    className="button-label icon-only"
+                                    className="button-label-win icon-only"
                                   >
                                     <span
                                       className="icon"
