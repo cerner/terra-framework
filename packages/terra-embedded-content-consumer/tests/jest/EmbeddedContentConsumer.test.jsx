@@ -169,32 +169,64 @@ describe(EmbeddedContentConsumer, () => {
 
     frame.unmount();
   });
-});
 
-it('sets appropriate config option when resizeConfig.scrolling is true', () => {
-  const embeddedContentConsumer = (
-    <div>
-      <EmbeddedContentConsumer
-        src="https://www.google.com/"
-        options={{ resizeConfig: { scrolling: true } }}
-      />
-    </div>
-  );
+  describe('scrolling', () => {
+    it('sets appropriate config option when resizeConfig.scrolling is true', () => {
+      const embeddedContentConsumer = (
+        <div>
+          <EmbeddedContentConsumer
+            src="https://www.google.com/"
+            options={{ resizeConfig: { scrolling: true } }}
+          />
+        </div>
+      );
 
-  const wrapper = shallow(embeddedContentConsumer);
-  expect(wrapper).toMatchSnapshot();
-});
+      const wrapper = shallow(embeddedContentConsumer);
+      expect(wrapper).toMatchSnapshot();
+    });
 
-it('sets appropriate config option when resizeConfig.scrolling is false', () => {
-  const embeddedContentConsumer = (
-    <div>
-      <EmbeddedContentConsumer
-        src="https://www.google.com/"
-        options={{ resizeConfig: { scrolling: false } }}
-      />
-    </div>
-  );
+    it('sets appropriate config option when resizeConfig.scrolling is false', () => {
+      const embeddedContentConsumer = (
+        <div>
+          <EmbeddedContentConsumer
+            src="https://www.google.com/"
+            options={{ resizeConfig: { scrolling: false } }}
+          />
+        </div>
+      );
 
-  const wrapper = shallow(embeddedContentConsumer);
-  expect(wrapper).toMatchSnapshot();
+      const wrapper = shallow(embeddedContentConsumer);
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe('visual focus indicator', () => {
+    xit('sets the outline style when it has focus', () => {
+      const src = '/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider';
+      const title = 'frame content title';
+      let frame;
+      const onMount = (xfcFrame) => { frame = xfcFrame; };
+      const embeddedContentConsumer = (
+        <div>
+          <EmbeddedContentConsumer
+            src={src}
+            title={title}
+            options={{ iframeAttrs: { id: 'focus-example-frame' } }}
+            onMount={onMount}
+          />
+        </div>
+      );
+
+      Consumer.init();
+      const wrapper = mount(embeddedContentConsumer);
+
+      expect(wrapper).toMatchSnapshot();
+      // wrapper.find('#focus-example-frame').simulate('click');
+
+      // expect(frame).toBeTruthy();
+      // expect(frame.iframe.style).toEqual('outline: 2px dashed blue');
+
+      frame.unmount();
+    });
+  });
 });

@@ -111,7 +111,7 @@ class EmbeddedContentConsumer extends React.Component {
     // Cover other scenario where xfc frame style doesn't apply
     // such as when `srcdoc` attribute is used which doesn't work
     // within xfc's JSONRPC communication.
-    this.xfcFrame.iframe.contentWindow.addEventListener('focus', () => {
+    this.xfcFrame?.iframe?.contentWindow?.addEventListener('focus', () => {
       const styleObj = parse(focusStyleStr);
       Object.entries(styleObj).forEach(([key, value]) => {
         this.xfcFrame.iframe.style[key] = value;
@@ -119,7 +119,7 @@ class EmbeddedContentConsumer extends React.Component {
     }, true);
 
     // Listen for blur event and callback function to apply the style
-    this.xfcFrame.iframe.contentWindow.addEventListener('blur', () => {
+    this.xfcFrame?.iframe?.contentWindow?.addEventListener('blur', () => {
       const styleObj = parse(blurStyleStr);
       Object.entries(styleObj).forEach(([key, value]) => {
         this.xfcFrame.iframe.style[key] = value;

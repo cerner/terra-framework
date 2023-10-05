@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`EmbeddedContentConsumer scrolling sets appropriate config option when resizeConfig.scrolling is false 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    options={
+      Object {
+        "resizeConfig": Object {
+          "scrolling": false,
+        },
+      }
+    }
+    src="https://www.google.com/"
+  />
+</div>
+`;
+
+exports[`EmbeddedContentConsumer scrolling sets appropriate config option when resizeConfig.scrolling is true 1`] = `
+<div>
+  <EmbeddedContentConsumer
+    options={
+      Object {
+        "resizeConfig": Object {
+          "scrolling": true,
+        },
+      }
+    }
+    src="https://www.google.com/"
+  />
+</div>
+`;
+
 exports[`EmbeddedContentConsumer should render the embedded content consumer container 1`] = `
 <div>
   <EmbeddedContentConsumer
@@ -80,32 +110,20 @@ exports[`EmbeddedContentConsumer should render the embedded content consumer wit
 </div>
 `;
 
-exports[`sets appropriate config option when resizeConfig.scrolling is false 1`] = `
-<div>
-  <EmbeddedContentConsumer
-    options={
-      Object {
-        "resizeConfig": Object {
-          "scrolling": false,
-        },
-      }
+exports[`EmbeddedContentConsumer visual focus indicator sets the outline style when it has focus 1`] = `
+<EmbeddedContentConsumer
+  onMount={[Function]}
+  options={
+    Object {
+      "iframeAttrs": Object {
+        "id": "focus-example-frame",
+        "title": "frame content title",
+      },
     }
-    src="https://www.google.com/"
-  />
-</div>
-`;
-
-exports[`sets appropriate config option when resizeConfig.scrolling is true 1`] = `
-<div>
-  <EmbeddedContentConsumer
-    options={
-      Object {
-        "resizeConfig": Object {
-          "scrolling": true,
-        },
-      }
-    }
-    src="https://www.google.com/"
-  />
-</div>
+  }
+  src="https://www.cdc.gov/"
+  title="frame content title"
+>
+  <div />
+</EmbeddedContentConsumer>
 `;
