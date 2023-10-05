@@ -155,8 +155,8 @@ function DataGrid(props) {
   }
 
   // Default column size constraints
-  const defaultColumnMinimumWidth = 100;
-  const defaultColumnMaximumWidth = 500;
+  const defaultColumnMinimumWidth = 60;
+  const defaultColumnMaximumWidth = 300;
 
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
 
@@ -228,13 +228,13 @@ function DataGrid(props) {
 
     grid.current = node;
 
-    // const resizeObserver = new ResizeObserver(() => {
-    //   // Update table height state variable
-    //   setTableHeight(grid.current.offsetHeight - 1);
-    // });
+    const resizeObserver = new ResizeObserver(() => {
+      // Update table height state variable
+      setTableHeight(grid.current.offsetHeight - 1);
+    });
 
-    // // Register resize observer to detect size changes
-    // resizeObserver.observe(node);
+    // Register resize observer to detect size changes
+    resizeObserver.observe(node);
   }, []);
 
   // -------------------------------------
@@ -467,7 +467,7 @@ function DataGrid(props) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
-    setFocusedRowCol(nextRow, nextCol, true);
+    handleMoveCellFocus(cellCoordinates, { row: nextRow, col: nextCol });
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
 
@@ -535,7 +535,7 @@ function DataGrid(props) {
     // Prevent focus event updates when triggered by mouse
     handleFocus.current = false;
   };
-  
+
   /**
    * Establishes selection state when the WorklistDataGrid gains focus
    * @param {*} event focus event data

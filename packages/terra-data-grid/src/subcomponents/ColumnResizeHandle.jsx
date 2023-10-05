@@ -26,6 +26,10 @@ const propTypes = {
    */
   columnWidth: PropTypes.number.isRequired,
   /**
+    * Number that specifies the height of the resize handle in pixels.
+    */
+  height: PropTypes.number.isRequired,
+  /**
    * Numeric increment in pixels to adjust column width when resizing via the keyboard
    */
   columnResizeIncrement: PropTypes.number,
@@ -69,6 +73,7 @@ const ColumnResizeHandle = (props) => {
     columnIndex,
     columnText,
     columnWidth,
+    height,
     columnResizeIncrement,
     isActive,
     minimumWidth,
@@ -204,6 +209,7 @@ const ColumnResizeHandle = (props) => {
       aria-valuemax={isActive ? maximumWidth : null}
       aria-label={isAriaLabel ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText }) : null}
       aria-valuetext={isAriaValueText ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-value-text' }, { columnWidth }) : null}
+      style={{ height: `${height}px` }}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseEnter={fitToTable}
