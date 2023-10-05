@@ -90,7 +90,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
         });
         return (
           <li role="none">
-            <div {...customProps} role="group">
+            <div {...customProps} aria-label={ariaLabel} role="group">
               {cloneChildren}
             </div>
           </li>
@@ -107,7 +107,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
       }
       return (
         <li role="none">
-          <div {...customProps} role="group">
+          <div {...customProps}  aria-label={ariaLabel} role="group">
             {children}
           </div>
         </li>
