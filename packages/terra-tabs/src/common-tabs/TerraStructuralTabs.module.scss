@@ -100,7 +100,7 @@
       background-position: var(--terra-tabs-structural-background-position, 0 100%);
       background-repeat: no-repeat;
       background-size: var(--terra-tabs-structural-background-size, 0 2px);
-      border-color: var(--terra-tabs-structural-border-color, #c8cacb);
+      border-color: var(--terra-tabs-structural-border-color, #dedfe0);
       border-radius: var(--terra-tabs-structural-border-radius, 0);
       border-style: solid;
       border-width: var(--terra-tabs-structural-border-width, 0 1px 0 0);
@@ -112,7 +112,7 @@
       transition-timing-function: var(--terra-tabs-structural-transition-timing-function, ease);
 
       &.is-vertical {
-        background-image: var(--terra-tabs-structuraltab-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
+        background-image: var(--terra-tabs-structuraltab-background-image, linear-gradient(to bottom, #dedfe0, #dedfe0));
         background-size: var(--terra-tabs-structuraltab-background-size, 0 1px);
         border-width: var(--terra-tabs-structuraltab-border-width, 0 0 1px 0);
         min-width: 2.571rem;
@@ -147,7 +147,7 @@
         @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
           &:hover {
             background-color: var(--terra-tabs-structural-active-hover-background-color, #fff);
-            background-image: var(--terra-tabs-structural-active-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
+            background-image: var(--terra-tabs-structural-active-hover-background-image, linear-gradient(to bottom, #dedfe0, #dedfe0));
             background-size: var(--terra-tabs-structural-active-hover-background-size, 100% 2px);
             color: var(--terra-tabs-structural-active-hover-color, #000);
           }
