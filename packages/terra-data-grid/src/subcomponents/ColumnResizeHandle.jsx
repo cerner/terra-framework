@@ -122,12 +122,9 @@ const ColumnResizeHandle = (props) => {
   const [isAriaValueText, setIsAriaValueText] = useState(false);
 
   const fitToTable = () => {
-    // Find parent table element
-    const parentTable = resizeHandleRef.current.closest('table');
-
     // Update resize handle height to match parent table height
     if (parentTable) {
-      resizeHandleRef.current.style.height = `${parentTable.offsetHeight}px`;
+      resizeHandleRef.current.style.height = `${height}px`;
     }
 
     // Assistive technologies should announce aria-label text once focused
