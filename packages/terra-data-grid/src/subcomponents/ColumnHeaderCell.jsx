@@ -5,16 +5,14 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
-import '../_elementPolyfill';
 import ThemeContext from 'terra-theme-context';
-import IconUp from 'terra-icon/lib/icon/IconUp';
-import IconDown from 'terra-icon/lib/icon/IconDown';
-import IconError from 'terra-icon/lib/icon/IconError';
+import {IconUp,IconDown,IconError } from 'terra-icon';
 
 import ColumnResizeHandle from './ColumnResizeHandle';
 import { SortIndicators } from '../proptypes/columnShape';
 import ColumnContext from '../utils/ColumnContext';
 import styles from './ColumnHeaderCell.module.scss';
+import '../_elementPolyfill';
 
 const cx = classNames.bind(styles);
 
@@ -215,20 +213,6 @@ const ColumnHeaderCell = (props) => {
     }
   };
 
-  const getTableHeight = () => {
-    if (columnHeaderCellRef.current) {
-      // Find parent table element
-      const parentTable = columnHeaderCellRef.current.closest('table');
-
-      // Update resize handle height to match parent table height
-      if (parentTable) {
-        return `${parentTable.offsetHeight}px`;
-      }
-    }
-
-    return null;
-  };
-
   let sortIndicatorIcon;
   const errorIcon = hasError && <IconError a11yLabel={intl.formatMessage({ id: 'Terra.dataGrid.columnError' })} className={cx('error-icon')} />;
 
@@ -249,7 +233,7 @@ const ColumnHeaderCell = (props) => {
     ? (
       <div
         className={cx('pinned-columns-divider')}
-        style={{ height: getTableHeight(), left: dividerLeftEdge }} // eslint-disable-line react/forbid-dom-props
+        style={{ height: tableHeight, left: dividerLeftEdge }} // eslint-disable-line react/forbid-dom-props
       />
     )
     : null;
