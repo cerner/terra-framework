@@ -119,18 +119,18 @@ const RowSelection = () => {
       </div>
       <WorklistDataGrid
         id="pinned-columns-with-row-selection"
-        pinnedColumns={cols.slice(0, 3)}
-        overflowColumns={cols.slice(3)}
+        pinnedColumns={cols.slice(0, 3)} // Consumer must specify pinnedColumns prop to display columns that need to pinned (stickied).
+        overflowColumns={cols.slice(3)} // Consumer must specify overflowColumns prop to display columns that do not need to be stickied and can scroll horizontally.
         rows={rowData}
         rowHeaderIndex={rowHeaderIndex}
         defaultColumnWidth={180}
         ariaLabel="Worklist Data Grid with Pinned Columns and Row Selection"
-        hasSelectableRows={hasSelectableRows}
-        onRowSelect={onRowSelect}
-        onRowSelectAll={onRowSelectAll}
-        onClearSelectedRows={clearRowSelection}
-        onDisableSelectableRows={disableSelectableRows}
-        onEnableRowSelection={enableRowSelection}
+        hasSelectableRows={hasSelectableRows} // Prop to turn row selection mode on/off
+        onRowSelect={onRowSelect} // For row selection, consumer must provide a callback that the Worklist DataGrid will call when the user selects one or more rows.
+        onRowSelectAll={onRowSelectAll} // For row selection, consumer must provide a callback that the Worklist DataGrid will call when the user selects all rows.
+        onClearSelectedRows={clearRowSelection} // To clear selected rows, consumer must provide a callback that the Worklist DataGrid will call to clear the selection.
+        onDisableSelectableRows={disableSelectableRows} // Consumer must provide a callback that the Worklist DataGrid will call to turn off the row selection mode.
+        onEnableRowSelection={enableRowSelection} // Consumer must provide a callback that the Worklist DataGrid will call to turn on the row selection mode.
       />
     </React.Fragment>
   );

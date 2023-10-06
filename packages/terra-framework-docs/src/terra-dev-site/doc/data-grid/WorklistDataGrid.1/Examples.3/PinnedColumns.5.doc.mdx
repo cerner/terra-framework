@@ -1,3 +1,17 @@
 import PinnedColumns from './PinnedColumns?dev-site-example';
 
+# Pinned Columns
+
+### Description
+
+The [Worklist DataGrid](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about) defines two types of columns: Pinned and Overflow. The pinned columns are aligned to the left of the Worklist DataGrid and cannot be scrolled. The overflow section is aligned to the right of pinned columns and scrolls horizontally to reveal each overflow column. This example demonstrates a Worklist DataGrid that supports both pinned and overflow columns.
+
+
+### Properties required
+* The **pinnedColumns** prop is used to specify columns that need to be aligned left of the grid and stickied.
+
+* The **overflowColumns** prop is used to specify columns that do not need to be stickied and can scroll horizontally.
+
+Columns specified in both these props will rendered in the order in which they are provided.
+
 <PinnedColumns title='Worklist Data Grid with Pinned Columns' />

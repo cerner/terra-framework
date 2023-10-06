@@ -93,9 +93,9 @@ const PinnedColumns = () => {
 
   return (
     <WorklistDataGrid
-      id="default-terra-worklist-data-grid"
-      pinnedColumns={cols.slice(0, 3)}
-      overflowColumns={cols.slice(3)}
+      id="terra-worklist-data-grid-pinned-columns"
+      pinnedColumns={cols.slice(0, 3)} // Consumer must specify pinnedColumns prop to display columns that need to pinned (stickied).
+      overflowColumns={cols.slice(3)} // Consumer must specify overflowColumns prop to display columns that do not need to be stickied and can scroll horizontally.
       rows={rowData}
       rowHeaderIndex={rowHeaderIndex}
       ariaLabel="Worklist Data Grid"
