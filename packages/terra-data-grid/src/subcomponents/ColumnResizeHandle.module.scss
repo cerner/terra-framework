@@ -13,7 +13,7 @@
     top: 0;
     width: 22px;
     z-index: 1;
-    
+
     &:focus {
       border-color: var(--terra-data-grid-resize-handle-focus-border-color, rgba(34, 42, 46, 1)) !important;
       outline: 0 !important;
