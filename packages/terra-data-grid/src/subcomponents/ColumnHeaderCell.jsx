@@ -108,7 +108,7 @@ const propTypes = {
    * Function that is called when the mouse down event is triggered on the column resize handle.
    */
   onResizeMouseDown: PropTypes.func,
-  
+
   /**
    * Function that is called when the the keyboard is used to adjust the column size
    */
