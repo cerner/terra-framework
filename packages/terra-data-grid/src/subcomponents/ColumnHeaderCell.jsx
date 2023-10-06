@@ -6,7 +6,7 @@ import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import {IconUp,IconDown,IconError } from 'terra-icon';
+import { IconUp, IconDown, IconError } from 'terra-icon';
 
 import ColumnResizeHandle from './ColumnResizeHandle';
 import { SortIndicators } from '../proptypes/columnShape';
@@ -63,23 +63,26 @@ const propTypes = {
    */
   isResizable: PropTypes.bool,
 
-   /**
+  /**
     * Height of the parent table.
     */
-   tableHeight: PropTypes.number,
+  tableHeight: PropTypes.number,
 
   /**
    * Boolean value indicating whether or not the column header is resizable.
    */
   isResizeActive: PropTypes.bool,
+
   /**
    * Numeric increment in pixels to adjust column width when resizing via the keyboard
    */
   columnResizeIncrement: PropTypes.number,
+
   /**
    * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
    */
   width: PropTypes.number.isRequired,
+
   /**
    * String that specifies the column height. Any valid CSS height value accepted.
   */
@@ -100,10 +103,12 @@ const propTypes = {
    * @param {string} columnId columnId
    */
   onColumnSelect: PropTypes.func,
+
   /**
    * Function that is called when the mouse down event is triggered on the column resize handle.
    */
   onResizeMouseDown: PropTypes.func,
+  
   /**
    * Function that is called when the the keyboard is used to adjust the column size
    */

@@ -576,6 +576,7 @@ function DataGrid(props) {
           <ColumnHeader
             columns={dataGridColumns}
             headerHeight={columnHeaderHeight}
+            tableHeight={tableHeight}
             activeColumnIndex={focusedRow === 0 ? focusedCol : undefined}
             activeColumnResizing={focusedRow === 0 && checkResizable}
             columnResizeIncrement={columnResizeIncrement}

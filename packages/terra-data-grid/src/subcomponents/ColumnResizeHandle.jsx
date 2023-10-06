@@ -123,9 +123,7 @@ const ColumnResizeHandle = (props) => {
 
   const fitToTable = () => {
     // Update resize handle height to match parent table height
-    if (parentTable) {
       resizeHandleRef.current.style.height = `${height}px`;
-    }
 
     // Assistive technologies should announce aria-label text once focused
     setIsAriaLabel(true);
@@ -198,7 +196,7 @@ const ColumnResizeHandle = (props) => {
     <div
       ref={resizeHandleRef}
       draggable
-      role={isNavigationEnabled ? 'divider' : 'slider' }
+      role={isNavigationEnabled ? 'divider' : 'slider'}
       tabIndex={-1}
       aria-hidden={!isActive}
       aria-valuemin={isActive ? minimumWidth : null}
@@ -206,7 +204,7 @@ const ColumnResizeHandle = (props) => {
       aria-valuemax={isActive ? maximumWidth : null}
       aria-label={isAriaLabel ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-template' }, { columnText }) : null}
       aria-valuetext={isAriaValueText ? intl.formatMessage({ id: 'Terra.worklist-data-grid.resize-handle-value-text' }, { columnWidth }) : null}
-      style={{ height: `${height}px` }}
+      style={{ height: `${height}px` }} // eslint-disable-line react/forbid-dom-props
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseEnter={fitToTable}
