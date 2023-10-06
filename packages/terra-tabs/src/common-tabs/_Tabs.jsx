@@ -255,7 +255,7 @@ class Tabs extends React.Component {
       const tabMinWidth = parseFloat(tabStyle.getPropertyValue('min-width'));
 
       calcMinWidth += (tabMinWidth + tabMarginLeft + tabMarginRight);
-      if (calcMinWidth > availableWidth && !(i === tabCount - 1 && calcMinWidth <= width)) {
+      if (calcMinWidth > availableWidth && !(i === tabCount - 1 && calcMinWidth <= width) && !this.props.verticalOrientation) {
         newHideIndex = i;
         showMoreButton = true;
         break;

@@ -100,7 +100,7 @@
       background-position: var(--terra-tabs-structural-background-position, 0 100%);
       background-repeat: no-repeat;
       background-size: var(--terra-tabs-structural-background-size, 0 2px);
-      border-color: var(--terra-tabs-structural-border-color, #dedfe0);
+      border-color: var(--terra-tabs-structural-border-color, #c8cacb);
       border-radius: var(--terra-tabs-structural-border-radius, 0);
       border-style: solid;
       border-width: var(--terra-tabs-structural-border-width, 0 1px 0 0);
@@ -115,6 +115,7 @@
         background-image: var(--terra-tabs-structuraltab-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
         background-size: var(--terra-tabs-structuraltab-background-size, 0 1px);
         border-width: var(--terra-tabs-structuraltab-border-width, 0 0 1px 0);
+        min-width: 2.571rem;
       }
 
 
