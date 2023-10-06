@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.39.0 - (October 3, 2023)
+
 * Added
   * Added documentation for hyperlinks in `terra-collapsible-menu-view`.
   * Added doc and test example for `collapsible-menu-view` multi-select group items.

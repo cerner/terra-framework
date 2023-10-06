@@ -72,6 +72,11 @@
       &:hover {
         color: var(--terra-menu-submenu-header-buttons-hover-color, #111);
       }
+
+      &:focus {
+        outline: var(--terra-menu-back-button-focus-outline, -webkit-focus-ring-color solid 2px); // Browser default fallback. if no fallback is provided, outline does not render.
+        outline-offset: var(--terra-menu-item-focus-outline-offset, -2px);
+      }
     }
   }
 

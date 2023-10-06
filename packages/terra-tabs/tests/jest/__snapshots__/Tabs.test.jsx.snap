@@ -1748,7 +1748,7 @@ exports[`Tabs should render with add icon 1`] = `
                         type="button"
                       >
                         <span
-                          className="button-label icon-only"
+                          className="button-label-win icon-only"
                         >
                           <span
                             className="icon"
@@ -2352,7 +2352,7 @@ exports[`Tabs should render with add icon 2`] = `
                         type="button"
                       >
                         <span
-                          className="button-label icon-only"
+                          className="button-label-win icon-only"
                         >
                           <span
                             className="icon"
