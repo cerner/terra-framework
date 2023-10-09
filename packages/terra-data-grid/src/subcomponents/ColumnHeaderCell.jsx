@@ -1,8 +1,8 @@
 import React, {
-  useCallback, 
-  useContext, 
-  useEffect, 
-  useRef, 
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
   useState,
 } from 'react';
 import PropTypes from 'prop-types';
@@ -90,7 +90,7 @@ const propTypes = {
    * String that specifies the column height. Any valid CSS height value accepted.
   */
   headerHeight: PropTypes.string.isRequired,
-   
+
   /**
    * The cell's row position in the grid. This is zero based.
    */
