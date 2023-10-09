@@ -29,14 +29,13 @@
     flex-direction: column;
     flex-wrap: nowrap;
     float: left;
-    height: var(--terra-tabs-workspace-tab-container-height, 33px);
+    height: fit-content;
     justify-content: flex-start;
     margin-bottom: var(--terra-tabs-workspace-tab-container-margin-bottom, 0);
     max-width: 25%;
     padding: 0;
     position: relative;
     width: fit-content;
-    height: fit-content;
 
     &:focus {
       outline: none;
