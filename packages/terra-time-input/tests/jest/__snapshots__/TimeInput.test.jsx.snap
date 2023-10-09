@@ -564,7 +564,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         type="button"
       >
         <span
-          class="button-label text-only"
+          class="button-label-win text-only"
         >
           <span
             class=""
@@ -583,7 +583,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         type="button"
       >
         <span
-          class="button-label text-only"
+          class="button-label-win text-only"
         >
           <span
             class=""
@@ -678,7 +678,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         type="button"
       >
         <span
-          class="button-label text-only"
+          class="button-label-win text-only"
         >
           <span
             class=""
@@ -697,7 +697,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         type="button"
       >
         <span
-          class="button-label text-only"
+          class="button-label-win text-only"
         >
           <span
             class=""
@@ -792,7 +792,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         type="button"
       >
         <span
-          class="button-label text-only"
+          class="button-label-win text-only"
         >
           <span
             class=""
@@ -811,7 +811,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         type="button"
       >
         <span
-          class="button-label text-only"
+          class="button-label-win text-only"
         >
           <span
             class=""
@@ -1363,7 +1363,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       type="button"
     >
       <span
-        class="button-label text-only"
+        class="button-label-win text-only"
       >
         <span
           class=""
@@ -1382,7 +1382,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       type="button"
     >
       <span
-        class="button-label text-only"
+        class="button-label-win text-only"
       >
         <span
           class=""
@@ -1480,7 +1480,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       type="button"
     >
       <span
-        class="button-label text-only"
+        class="button-label-win text-only"
       >
         <span
           class=""
@@ -1499,7 +1499,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       type="button"
     >
       <span
-        class="button-label text-only"
+        class="button-label-win text-only"
       >
         <span
           class=""

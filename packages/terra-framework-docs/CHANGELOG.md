@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Added
+  * Added documentation for FlowsheetDataGrid in `terra-data-grid`.
   * Added additional documentation and implementation guide in adherence to the newly established documentation template for the examples of Worklist DataGrid in `terra-data-grid`.
 
 ## 1.39.0 - (October 3, 2023)

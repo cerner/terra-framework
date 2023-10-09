@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added base FlowsheetDataGrid component.
+
 * Changed
   * Updated prop descriptions for better consistency and accuracy in the `terra-data-grid` component.
 

@@ -395,7 +395,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                               type="button"
                             >
                               <span
-                                className="button-label icon-only"
+                                className="button-label-win icon-only"
                               >
                                 <span
                                   className="icon"
