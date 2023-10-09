@@ -6,6 +6,10 @@ import CollapsibleMenuView from 'terra-collapsible-menu-view';
 const propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
     /**
+     * The unique key for the link.
+     */
+    key: PropTypes.string,
+    /**
      * The content to display inside link.
      */
     text: PropTypes.string,
