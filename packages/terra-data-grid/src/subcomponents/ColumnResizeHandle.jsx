@@ -86,12 +86,13 @@ const ColumnResizeHandle = (props) => {
 
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);
-
   const columnContext = useContext(ColumnContext);
 
   // Ref variable for native resize handle element
   const resizeHandleRef = useRef();
 
+  const [isAriaLabel, setIsAriaLabel] = useState(false);
+  const [isAriaValueText, setIsAriaValueText] = useState(false);
   const [isNavigationEnabled, setNavigationEnabled] = useState(true);
 
   useEffect(() => {
@@ -117,9 +118,6 @@ const ColumnResizeHandle = (props) => {
   const onMouseUp = () => {
     onResizeMouseUp();
   };
-
-  const [isAriaLabel, setIsAriaLabel] = useState(false);
-  const [isAriaValueText, setIsAriaValueText] = useState(false);
 
   const fitToTable = () => {
     // Update resize handle height to match parent table height
