@@ -5,18 +5,51 @@ import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
 const propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string,
+    /**
+     * The content to display inside link.
+     */
     text: PropTypes.string,
+    /**
+     * Additional information to display as a native tooltip on hover.
+     */
     title: PropTypes.string,
+    /**
+     * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue)
+     * Sets the href of the link. href is required for hyperlinks and should be ignored when `onClick` callback is used.
+     */
     href: PropTypes.string,
+    /**
+     * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue)
+     * Callback function triggered when clicked. onClick is required to render hyperlink as a button.
+     * `onClick` should be ignored when `href` is provided.
+     */
     onClick: PropTypes.func,
+    /**
+     * Callback function triggered when hyperlink loses focus.
+     */
     onBlur: PropTypes.func,
+    /**
+     * Callback function triggered when hyperlink gains focus.
+     */
     onFocus: PropTypes.func,
+    /**
+     * Callback function triggered when key is pressed.
+     */
     onKeyDown: PropTypes.func,
+    /**
+     * Callback function triggered when key is released.
+     */
     onKeyUp: PropTypes.func,
+    /**
+     * @private Callback function not intended for use with this API, but if set pass it through to the element regardless.
+     */
     onMouseDown: PropTypes.func,
+    /**
+     * Sets the hyperlink variant. One of `default`, `external`, `image`, `video`, `audio`, `document`.
+     */
     variant: PropTypes.oneOf(['default', 'external', 'image', 'video', 'audio', 'document']),
   })),
+
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
