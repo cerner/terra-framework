@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added documentation for FlowsheetDataGrid in `terra-data-grid`.
+
 ## 1.39.0 - (October 3, 2023)
 
 * Added
