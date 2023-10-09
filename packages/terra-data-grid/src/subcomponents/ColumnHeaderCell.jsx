@@ -1,5 +1,9 @@
 import React, {
-  useContext, useRef, useEffect, useCallback, useState,
+  useCallback, 
+  useContext, 
+  useEffect, 
+  useRef, 
+  useState,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -12,7 +16,6 @@ import ColumnResizeHandle from './ColumnResizeHandle';
 import { SortIndicators } from '../proptypes/columnShape';
 import ColumnContext from '../utils/ColumnContext';
 import styles from './ColumnHeaderCell.module.scss';
-import '../_elementPolyfill';
 
 const cx = classNames.bind(styles);
 
@@ -87,6 +90,7 @@ const propTypes = {
    * String that specifies the column height. Any valid CSS height value accepted.
   */
   headerHeight: PropTypes.string.isRequired,
+   
   /**
    * The cell's row position in the grid. This is zero based.
    */
