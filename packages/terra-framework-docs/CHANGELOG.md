@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Updated
+  * Updated example for `terra-collapsible-menu-view` with ariaLabel prop.
+
 ## 1.39.0 - (October 3, 2023)
 
 * Added
