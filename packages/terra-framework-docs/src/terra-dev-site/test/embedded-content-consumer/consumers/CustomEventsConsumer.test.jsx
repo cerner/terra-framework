@@ -44,15 +44,19 @@ class CustomEventsConsumer extends React.Component {
     ];
 
     return (
-      <div id="CustomEvents">
-        <EmbeddedContentConsumer
-          className={cx('iframe')}
-          src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"
-          title="Custom events example"
-          options={{}}
-          onMount={this.onMount}
-          eventHandlers={eventHandlers}
-        />
+      <div className={cx('consumer-content-wrapper')}>
+        <h2>Embedded Content</h2>
+        <p>The following is an embedded content within an iframe.</p>
+        <div id="CustomEvents">
+          <EmbeddedContentConsumer
+            className={cx('iframe')}
+            src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"
+            title="Custom events example"
+            options={{}}
+            onMount={this.onMount}
+            eventHandlers={eventHandlers}
+          />
+        </div>
       </div>
     );
   }

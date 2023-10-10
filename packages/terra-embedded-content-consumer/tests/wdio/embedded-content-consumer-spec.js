@@ -105,4 +105,30 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
       Terra.validates.element('Scroll content into view');
     });
   });
+
+  describe('visual focus indicator', () => {
+    it('shows visual focus indicator on the frame when clicked', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/embedded-content-consumer/consumers/basic-consumer-with-scrolling');
+      $('iframe[id="basic-consumer-with-scrolling"]').waitForDisplayed();
+
+      const myFrame = $('iframe[id="basic-consumer-with-scrolling"]');
+      browser.switchToFrame(myFrame);
+
+      const p = $('<p>');
+      p.scrollIntoView();
+      p.click();
+
+      browser.switchToParentFrame();
+
+      Terra.validates.element('focus indicator on the frame when clicked', { selector: '#site' });
+    });
+
+    it('shows visual focus indicator on the frame when tabbing through and focus is on the frame', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/embedded-content-consumer/consumers/basic-consumer');
+      browser.keys('Tab');
+
+      Terra.validates.element('focus indicator on the frame when tabbing through', { selector: '#site' });
+    });
+
+  });
 });
