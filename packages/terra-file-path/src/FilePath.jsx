@@ -45,6 +45,12 @@ const FilePath = props => {
   const allItemsExceptLast = items.slice(0, items.length - 1);
   const lastItem = items[items.length - 1];
 
+  /*
+  * .flat() is used here instead of a react fragment on purpose.
+  * The children that get passed down to CollapsibleMenuView will not work with react fragments.
+  * They will be passed down without being spread.
+  * This results in pairs of hyperlinks and dividers being grouped together as one, breaking how width calculation is handled for resizing.
+  */
   const generateChildren = () => allItemsExceptLast.map((item) => [
     <CollapsibleMenuView.Hyperlink
       key={item.key}
