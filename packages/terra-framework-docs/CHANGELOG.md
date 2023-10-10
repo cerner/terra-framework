@@ -17,6 +17,7 @@
   * New Terra Slider component documentation, examples and tests.
   * Added test for data grid column resizing.
   * Added example for Flowsheet Data Grid containing "No Result" cells.
+  * Added an error handling test for `terra-embedded-content-consumer`.
 
 * Fixed
   * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.

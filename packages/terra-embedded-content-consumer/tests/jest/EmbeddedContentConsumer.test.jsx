@@ -1,5 +1,7 @@
 import React from 'react';
 import { Consumer } from 'xfc';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { mountWithIntl } from 'terra-enzyme-intl';
 import EmbeddedContentConsumer from '../../lib/EmbeddedContentConsumer';
 
 beforeAll(() => {
@@ -27,7 +29,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mount(embeddedContentConsumer);
+    const wrapper = mountWithIntl(embeddedContentConsumer);
     expect(wrapper).toMatchSnapshot();
 
     frame.unmount();
@@ -58,7 +60,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mount(embeddedContentConsumer);
+    const wrapper = mountWithIntl(embeddedContentConsumer);
     expect(wrapper).toMatchSnapshot();
 
     frame.unmount();
@@ -79,7 +81,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mount(embeddedContentConsumer);
+    const wrapper = mountWithIntl(embeddedContentConsumer);
     expect(wrapper).toMatchSnapshot();
 
     frame.unmount();
@@ -102,7 +104,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mount(embeddedContentConsumer);
+    const wrapper = mountWithIntl(embeddedContentConsumer);
     expect(wrapper).toMatchSnapshot();
 
     frame.unmount();
@@ -124,7 +126,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mount(embeddedContentConsumer);
+    const wrapper = mountWithIntl(embeddedContentConsumer);
     expect(wrapper).toMatchSnapshot();
 
     frame.unmount();
@@ -138,7 +140,7 @@ describe(EmbeddedContentConsumer, () => {
     const onLaunch = () => { };
     const onAuthorize = () => { };
     const resizeConfig = { scrolling: false, fixedHeight: '100%', fixedWidth: '100%' };
-    const options = { secret: 'SecretKey', resizeConfig, iframeAttrs: { title: 'deprecated title' } };
+    const options = { secret: 'SecretKey', resizeConfig, iframeAttrs: { title: 'frame content title' } };
     const customEvents = [{ key: 'eventKey', handler: () => { } }];
 
     const embeddedContentConsumer = (
@@ -154,7 +156,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mount(embeddedContentConsumer);
+    const wrapper = mountWithIntl(embeddedContentConsumer);
 
     expect(frame).toBeTruthy();
     expect(wrapper.instance().props.src).toBe(src);
@@ -168,6 +170,23 @@ describe(EmbeddedContentConsumer, () => {
     expect(wrapper.instance().props.eventHandlers).toBe(customEvents);
 
     frame.unmount();
+  });
+
+  it('should render visually hidden text before and after the embedded content consumer container', () => {
+    const frameOptions = { iframeAttrs: { title: 'title of content set from options.iframeAttrs' } };
+    const embeddedContentConsumer = (
+      <EmbeddedContentConsumer
+        src="https://www.google.com/"
+        options={frameOptions}
+      />
+    );
+
+    Consumer.init();
+    const wrapper = mountWithIntl(embeddedContentConsumer);
+
+    expect(wrapper.find('VisuallyHiddenText').at(0).prop('text')).toEqual('Terra.embeddedContentConsumer.beginEmbeddedContent');
+    expect(wrapper.find('VisuallyHiddenText').at(1).prop('text')).toEqual('Terra.embeddedContentConsumer.endEmbeddedContent');
+    expect(wrapper).toMatchSnapshot();
   });
 });
 
