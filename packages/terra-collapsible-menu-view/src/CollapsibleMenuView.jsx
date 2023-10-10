@@ -57,7 +57,7 @@ const propTypes = {
    * @private
    * The text for the menu icon. This is read by screenreaders.
    */
-  iconText: PropTypes.string,
+  menuIconText: PropTypes.string,
 
   /**
    * @private
@@ -202,7 +202,7 @@ class CollapsibleMenuView extends React.Component {
       isStartAligned,
       useHorizontalIcon,
       isReversedChildrenOrder,
-      iconText,
+      menuIconText,
       ...customProps
     } = this.props;
     const theme = this.context;
@@ -249,7 +249,7 @@ class CollapsibleMenuView extends React.Component {
           boundingRef={boundingRef}
           menuWidth={menuWidth}
           isIconOnly
-          text={iconText || intl.formatMessage({ id: 'Terra.collapsibleMenuView.more' })}
+          text={menuIconText || intl.formatMessage({ id: 'Terra.collapsibleMenuView.more' })}
           variant="utility"
         />
       </div>
