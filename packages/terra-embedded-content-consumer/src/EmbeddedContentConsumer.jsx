@@ -147,12 +147,12 @@ class EmbeddedContentConsumer extends React.Component {
     } = this.props;
 
     return (
-      <div className={cx('container')}>
+      <div className={cx('embedded-content-container')}>
         <VisuallyHiddenText
           className={cx('visually-hidden-text')}
           text={intl.formatMessage(
             { id: 'Terra.embeddedContentConsumer.beginEmbeddedContent' },
-            { name: options?.iframeAttrs?.title },
+            { name: title },
           )}
         />
         <div
@@ -164,7 +164,7 @@ class EmbeddedContentConsumer extends React.Component {
           className={cx('visually-hidden-text')}
           text={intl.formatMessage(
             { id: 'Terra.embeddedContentConsumer.endEmbeddedContent' },
-            { name: options?.iframeAttrs?.title },
+            { name: title },
           )}
         />
       </div>

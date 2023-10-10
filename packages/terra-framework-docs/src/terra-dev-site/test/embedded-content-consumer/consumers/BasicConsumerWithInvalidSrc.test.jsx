@@ -11,7 +11,7 @@ Consumer.init();
 const BasicConsumerWithInvalidSrc = () => (
   <EmbeddedContentConsumer
     className={cx('iframe')}
-    options={{ iframeAttrs: { title: 'Basic Consumer With Invalid Src' } }}
+    title="Basic Consumer With Invalid Src"
     src="https://www.google.com"
   />
 );
