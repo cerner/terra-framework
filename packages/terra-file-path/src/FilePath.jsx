@@ -28,40 +28,13 @@ const propTypes = {
      * `onClick` should be ignored when `href` is provided.
      */
     onClick: PropTypes.func,
-    /**
-     * Callback function triggered when hyperlink loses focus.
-     */
-    onBlur: PropTypes.func,
-    /**
-     * Callback function triggered when hyperlink gains focus.
-     */
-    onFocus: PropTypes.func,
-    /**
-     * Callback function triggered when key is pressed.
-     */
-    onKeyDown: PropTypes.func,
-    /**
-     * Callback function triggered when key is released.
-     */
-    onKeyUp: PropTypes.func,
-    /**
-     * @private Callback function not intended for use with this API, but if set pass it through to the element regardless.
-     */
-    onMouseDown: PropTypes.func,
-    /**
-     * Sets the hyperlink variant. One of `default`, `external`, `image`, `video`, `audio`, `document`.
-     */
-    variant: PropTypes.oneOf(['default', 'external', 'image', 'video', 'audio', 'document']),
   })),
-
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
-
-const defaultProps = {};
 
 const FilePath = props => {
   const {
@@ -78,12 +51,6 @@ const FilePath = props => {
       text={item.text}
       href={item.href}
       onClick={item.onClick}
-      onBlur={item.onBlur}
-      onFocus={item.onFocus}
-      onKeyDown={item.onKeyDown}
-      onKeyUp={item.onKeyUp}
-      onMouseDown={item.onMouseDown}
-      variant={item.variant}
     />,
     <CollapsibleMenuView.Divider useChevronRightIcon key={`divider-${item.key}`} />,
   ]).flat();
@@ -102,6 +69,5 @@ const FilePath = props => {
 };
 
 FilePath.propTypes = propTypes;
-FilePath.defaultProps = defaultProps;
 
 export default injectIntl(FilePath);

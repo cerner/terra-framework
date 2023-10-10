@@ -162,9 +162,7 @@ class CollapsibleMenuViewItem extends React.Component {
     } else if (isTextOnly) {
       item = (
         <div className={cx('face-up-item')}>
-          <p>
-            {text}
-          </p>
+          {text}
         </div>
       );
     } else {
