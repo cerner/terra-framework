@@ -3,7 +3,7 @@
 @import './orion-fusion-theme/EmbeddedContentConsumer.module';
 
 :local {
-  $focus-outline: var(--terra-embedded-content-consumer-focus-outline, 2px dashed blue);
+  $focus-outline: var(--terra-embedded-content-consumer-focus-outline, 2px dashed #000);
   .focus-outline {
     outline: $focus-outline;
   }
