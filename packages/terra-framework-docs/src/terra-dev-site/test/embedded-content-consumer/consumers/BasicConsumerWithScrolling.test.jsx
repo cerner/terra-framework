@@ -14,7 +14,7 @@ const BasicConsumerWithScrolling = () => (
     <p>The following is an embedded content within an iframe.</p>
     <EmbeddedContentConsumer
       className={cx('iframe')}
-      src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"
+      src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"
       title="Basic Consumer with Scrolling"
       options={{
         iframeAttrs: {

@@ -16,7 +16,7 @@ const BasicConsumer = () => (
       className={cx('iframe')}
       options={{ iframeAttrs: { id: 'basic-consumer-frame' } }}
       title="Basic Consumer"
-      src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
+      src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
     />
   </div>
 );
