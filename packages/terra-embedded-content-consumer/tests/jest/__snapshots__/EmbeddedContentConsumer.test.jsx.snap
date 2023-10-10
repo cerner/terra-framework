@@ -68,7 +68,7 @@ exports[`InjectIntl should render the embedded content consumer container 1`] = 
       title="basic provider"
     >
       <div
-        className="container"
+        className="embedded-content-container"
       >
         <VisuallyHiddenText
           className="visually-hidden-text"
@@ -169,7 +169,7 @@ exports[`InjectIntl should render the embedded content consumer with custom clas
       title="custom class name"
     >
       <div
-        className="container"
+        className="embedded-content-container"
       >
         <VisuallyHiddenText
           className="visually-hidden-text"
@@ -288,7 +288,7 @@ exports[`InjectIntl should render the embedded content consumer with options att
       title="inline html content"
     >
       <div
-        className="container"
+        className="embedded-content-container"
       >
         <VisuallyHiddenText
           className="visually-hidden-text"
@@ -387,7 +387,7 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
       title="title for the frame content"
     >
       <div
-        className="container"
+        className="embedded-content-container"
       >
         <VisuallyHiddenText
           className="visually-hidden-text"
@@ -500,7 +500,7 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
       title="title that will be used for the frame content"
     >
       <div
-        className="container"
+        className="embedded-content-container"
       >
         <VisuallyHiddenText
           className="visually-hidden-text"
@@ -607,7 +607,7 @@ exports[`InjectIntl should render visually hidden text before and after the embe
     src="https://www.google.com/"
   >
     <div
-      className="container"
+      className="embedded-content-container"
     >
       <VisuallyHiddenText
         className="visually-hidden-text"
