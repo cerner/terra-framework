@@ -129,6 +129,5 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
 
       Terra.validates.element('focus indicator on the frame when tabbing through', { selector: '#site' });
     });
-
   });
 });
