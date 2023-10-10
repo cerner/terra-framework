@@ -1,7 +1,7 @@
 import React from 'react';
-import DataGrid from 'terra-data-grid/lib/DataGrid';
+import { FlowsheetDataGrid } from 'terra-data-grid';
 
-const DefaultDataGrid = () => {
+const DefaultFlowsheetDataGrid = () => {
   const gridDataJSON = {
     cols: [
       { id: 'Column-0', displayName: 'Vitals', isSelectable: false },
@@ -20,7 +20,6 @@ const DefaultDataGrid = () => {
         ],
       },
       {
-        height: '150px',
         id: '2',
         cells: [
           { content: 'Temperature Oral (degC)' },
@@ -41,7 +40,7 @@ const DefaultDataGrid = () => {
       {
         id: '4',
         cells: [
-          { content: 'ICP (mmHg)', isMasked: true },
+          { content: 'ICP (mmHg)' },
           { content: '11' },
           { content: '11' },
           { content: '12' },
@@ -62,18 +61,13 @@ const DefaultDataGrid = () => {
   const { cols, rows } = gridDataJSON;
 
   return (
-    <React.Fragment>
-      <DataGrid
-        id="default-terra-data-grid"
-        overflowColumns={cols}
-        rows={rows}
-        rowHeaderIndex={0}
-        // TODO: Remove columnHeaderHeight from example
-        columnHeaderHeight="50px"
-        ariaLabel="Data Grid"
-      />
-    </React.Fragment>
+    <FlowsheetDataGrid
+      id="default-terra-flowsheet-data-grid"
+      columns={cols}
+      rows={rows}
+      ariaLabel="Flowsheet Data Grid"
+    />
   );
 };
 
-export default DefaultDataGrid;
+export default DefaultFlowsheetDataGrid;
