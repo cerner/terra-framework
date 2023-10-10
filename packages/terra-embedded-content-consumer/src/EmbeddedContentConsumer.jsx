@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Consumer } from 'xfc';
 import parse from 'style-to-object';
+import styles from './EmbeddedContentConsumer.module.scss';
 
 const propTypes = {
   /**
@@ -95,9 +96,8 @@ class EmbeddedContentConsumer extends React.Component {
       Object.assign(frameOptions.iframeAttrs, { title: this.props.title });
     }
 
-    // TODO: How to read these from the scss file? and convert to string?
-    const focusStyleStr = 'outline: 2px dashed blue;';
-    const blurStyleStr = 'outline: none;';
+    const focusStyleStr = `outline: ${styles.focusOutline}`;
+    const blurStyleStr = `outline: ${styles.blurOutline}`;
     frameOptions.focusIndicator = { focusStyleStr, blurStyleStr };
 
     // Mount the provided source as the application into the content wrapper.

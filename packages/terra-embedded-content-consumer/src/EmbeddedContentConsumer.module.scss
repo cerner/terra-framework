@@ -3,11 +3,18 @@
 @import './orion-fusion-theme/EmbeddedContentConsumer.module';
 
 :local {
+  $focus-outline: var(--terra-embedded-content-consumer-focus-outline, 2px dashed blue);
   .focus-outline {
-    outline: var(--terra-embedded-content-consumer-focus-outline, 2px dashed blue);
+    outline: $focus-outline;
   }
 
+  $blur-outline: var(--terra-embedded-content-consumer-blur-outline, none);
   .blur-outline {
-    outline: var(--terra-embedded-content-consumer-blur-outline, none);
+    outline: $blur-outline;
+  }
+
+  :export {
+    focusOutline: $focus-outline;
+    blurOutline: $blur-outline;
   }
 }

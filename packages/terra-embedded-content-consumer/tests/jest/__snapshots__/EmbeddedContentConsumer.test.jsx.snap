@@ -109,23 +109,3 @@ exports[`EmbeddedContentConsumer should render the embedded content consumer wit
   </EmbeddedContentConsumer>
 </div>
 `;
-
-exports[`EmbeddedContentConsumer visual focus indicator sets the outline style when it has focus 1`] = `
-<div>
-  <EmbeddedContentConsumer
-    onMount={[Function]}
-    options={
-      Object {
-        "iframeAttrs": Object {
-          "id": "focusExampleFrame",
-          "title": "frame content title",
-        },
-      }
-    }
-    src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
-    title="frame content title"
-  >
-    <div />
-  </EmbeddedContentConsumer>
-</div>
-`;
