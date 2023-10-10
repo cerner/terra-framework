@@ -14,7 +14,7 @@ const propTypes = {
      */
     text: PropTypes.string,
     /**
-     * Additional information to display as a native tooltip on hover.
+     * Additional information to display as a native tooltip on hover per hyperlink.
      */
     title: PropTypes.string,
     /**
@@ -55,6 +55,7 @@ const FilePath = props => {
     <CollapsibleMenuView.Hyperlink
       key={item.key}
       text={item.text}
+      title={item.title}
       href={item.href}
       onClick={item.onClick}
     />,
