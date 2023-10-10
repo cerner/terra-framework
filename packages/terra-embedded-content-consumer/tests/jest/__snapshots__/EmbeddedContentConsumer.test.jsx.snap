@@ -82,7 +82,6 @@ exports[`InjectIntl should render the embedded content consumer container 1`] = 
         </VisuallyHiddenText>
         <div
           className="embedded-content-wrapper"
-          title="basic provider"
         />
         <VisuallyHiddenText
           className="visually-hidden-text"
@@ -184,7 +183,6 @@ exports[`InjectIntl should render the embedded content consumer with custom clas
         </VisuallyHiddenText>
         <div
           className="embedded-content-wrapper"
-          title="custom class name"
         />
         <VisuallyHiddenText
           className="visually-hidden-text"
@@ -239,6 +237,7 @@ exports[`InjectIntl should render the embedded content consumer with options att
         "iframeAttrs": Object {
           "height": "100px",
           "srcdoc": "<p><b>Inline HTML Content</b></p><p>This is an inline html content that can be used to render the content into the frame.</p>",
+          "title": "inline html content",
           "width": "100%",
         },
       }
@@ -280,6 +279,7 @@ exports[`InjectIntl should render the embedded content consumer with options att
           "iframeAttrs": Object {
             "height": "100px",
             "srcdoc": "<p><b>Inline HTML Content</b></p><p>This is an inline html content that can be used to render the content into the frame.</p>",
+            "title": "inline html content",
             "width": "100%",
           },
         }
@@ -302,7 +302,6 @@ exports[`InjectIntl should render the embedded content consumer with options att
         </VisuallyHiddenText>
         <div
           className="embedded-content-wrapper"
-          title="inline html content"
         />
         <VisuallyHiddenText
           className="visually-hidden-text"
@@ -402,7 +401,6 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
         </VisuallyHiddenText>
         <div
           className="embedded-content-wrapper"
-          title="title for the frame content"
         />
         <VisuallyHiddenText
           className="visually-hidden-text"
@@ -455,7 +453,7 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
     options={
       Object {
         "iframeAttrs": Object {
-          "title": "title of content set from options.iframeAttrs",
+          "title": "title that will be used for the frame content",
         },
       }
     }
@@ -494,7 +492,7 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
       options={
         Object {
           "iframeAttrs": Object {
-            "title": "title of content set from options.iframeAttrs",
+            "title": "title that will be used for the frame content",
           },
         }
       }
@@ -516,7 +514,6 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
         </VisuallyHiddenText>
         <div
           className="embedded-content-wrapper"
-          title="title that will be used for the frame content"
         />
         <VisuallyHiddenText
           className="visually-hidden-text"
