@@ -112,27 +112,27 @@
       transition-timing-function: var(--terra-tabs-structural-transition-timing-function, ease);
 
       &.is-vertical {
-        background-image: var(--terra-tabs-structuraltab-background-image, linear-gradient(to bottom, #dedfe0, #dedfe0));
-        background-size: var(--terra-tabs-structuraltab-background-size, 0 1px);
-        border-width: var(--terra-tabs-structuraltab-border-width, 0 0 1px 0);
+        background-image: var(--terra-tabs-structural-vertical-background-image, linear-gradient(to bottom, #dedfe0, #dedfe0));
+        background-size: var(--terra-tabs-structural-vertical-background-size, 0 1px);
+        border-width: var(--terra-tabs-structural-vertical-border-width, 0 0 1px 0);
         min-width: 2.571rem;
       }
 
 
       &.is-active-vertical {
-        background-color: var(--terra-tabs-structuraltab-active-background-color, #fff);
-        background-size: var(--terra-tabs-structuraltab-active-background-size, 100% 1px);
+        background-color: var(--terra-tabs-structural-vertical-active-background-color, #fff);
+        background-size: var(--terra-tabs-structural-vertical-active-background-size, 100% 1px);
         border-bottom: 1px solid;
         border-image: linear-gradient(#006fc3, #006fc3) 0 100%;
         border-left: 2px solid;
         border-width: 0 0 1px 2px;
-        box-shadow: var(--terra-tabs-structuraltab-active-box-shadow, none);
-        color: var(--terra-tabs-structuraltab-active-color, #000);
-        font-weight: var(--terra-tabs-structuraltab-active-font-weight, normal);
+        box-shadow: var(--terra-tabs-structural-vertical-active-box-shadow, none);
+        color: var(--terra-tabs-structural-vertical-active-color, #000);
+        font-weight: var(--terra-tabs-structural-vertical-active-font-weight, normal);
         outline: none;
         overflow: hidden; //forces :before background-image to honor border-radius clipping.
         position: relative;
-        z-index: var(--terra-tabs-structuraltab-active-z-index);
+        z-index: var(--terra-tabs-structural-vertical-active-z-index);
 
         &::before {
           background-clip: content-box; // Make sure background fully extends

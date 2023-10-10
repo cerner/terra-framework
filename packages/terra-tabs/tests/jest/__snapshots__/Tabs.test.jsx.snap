@@ -1265,6 +1265,131 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
 </div>
 `;
 
+exports[`Tabs should render horizontal tab if verticalorientation is passed as null 1`] = `
+<div
+  className="structural"
+  role="none"
+>
+  <div
+    aria-hidden={true}
+  >
+    <div />
+  </div>
+  <div
+    className="tab-header"
+    role="none"
+  >
+    <InjectIntl(Tabs)
+      isDraggable={true}
+      onTabStateChange={[Function]}
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "terra-common-tabs-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "terra-common-tabs-default",
+            "isClosable": false,
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+            "showIcon": false,
+          },
+        ]
+      }
+      variant="framework"
+    />
+  </div>
+  <div
+    className="body"
+    role="none"
+  >
+    <CommonTabItem
+      associatedPanelId="terra-common-tabs-default-panel"
+      id="terra-common-tabs-default"
+      isActive={true}
+      isClosable={false}
+      isDisabled={false}
+      isIconOnly={false}
+      itemKey="default"
+      key="default/.0"
+      label="Default"
+      portalElement={null}
+      render={[Function]}
+      showIcon={false}
+      variant="framework"
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs should render vertical tab 1`] = `
+<div
+  className="structural"
+  role="none"
+>
+  <div
+    aria-hidden={true}
+  >
+    <div />
+  </div>
+  <div
+    className="tab-header"
+    role="none"
+  >
+    <InjectIntl(Tabs)
+      isDraggable={true}
+      onTabStateChange={[Function]}
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "terra-common-tabs-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "terra-common-tabs-default",
+            "isClosable": false,
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+            "showIcon": false,
+          },
+        ]
+      }
+      variant="framework"
+      verticalOrientation={true}
+    />
+  </div>
+  <div
+    className="body is-vertical"
+    role="none"
+  >
+    <CommonTabItem
+      associatedPanelId="terra-common-tabs-default-panel"
+      id="terra-common-tabs-default"
+      isActive={true}
+      isClosable={false}
+      isDisabled={false}
+      isIconOnly={false}
+      itemKey="default"
+      key="default/.0"
+      label="Default"
+      portalElement={null}
+      render={[Function]}
+      showIcon={false}
+      variant="framework"
+    />
+  </div>
+</div>
+`;
+
 exports[`Tabs should render with add icon 1`] = `
 <Tabs
   ariaLabelAddTab="Add Tab"

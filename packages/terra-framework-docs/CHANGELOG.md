@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added example for vertical orientation functionality for `terra-tabs`.
+
 ## 1.39.0 - (October 3, 2023)
 
 * Added
