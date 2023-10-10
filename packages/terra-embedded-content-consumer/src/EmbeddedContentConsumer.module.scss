@@ -3,18 +3,13 @@
 @import './orion-fusion-theme/EmbeddedContentConsumer.module';
 
 :local {
-  $focus-outline: var(--terra-embedded-content-consumer-focus-outline, 2px dashed #000);
-  .focus-outline {
-    outline: $focus-outline;
-  }
-
+  /* stylelint-disable terra/custom-property-name */
   $blur-outline: var(--terra-embedded-content-consumer-blur-outline, none);
-  .blur-outline {
-    outline: $blur-outline;
-  }
+  $focus-outline: var(--terra-embedded-content-consumer-focus-outline, 2px dashed #000);
 
   :export {
-    focusOutline: $focus-outline;
+    /* stylelint-disable property-no-unknown */
     blurOutline: $blur-outline;
+    focusOutline: $focus-outline;
   }
 }
