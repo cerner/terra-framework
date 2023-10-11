@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-## 0.8.0 - (October 11, 2023)
-
 * Added
   * Added base FlowsheetDataGrid component.
 
