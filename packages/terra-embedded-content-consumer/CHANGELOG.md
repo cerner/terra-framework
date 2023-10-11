@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added visual focus indicator (outline style) on the iframe when it has focus
+
 ## 3.39.0 - (October 3, 2023)
 
 * Added

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Updated
+  * Updated examples, and tests to show the visual focus indicator on the iframe of the embedded content
+
 ## 1.39.0 - (October 3, 2023)
 
 * Added
