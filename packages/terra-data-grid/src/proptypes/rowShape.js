@@ -16,7 +16,7 @@ const rowShape = PropTypes.shape({
    */
   isSelected: PropTypes.bool,
   /**
-   * A string identifier used to describe the row contents. This value will be used by screen readers when announcing the row (un)selection.
+   * A string identifier used to describe the row contents. This value will be used by screen readers when announcing row selection and unselection.
    */
   ariaLabel: PropTypes.string,
 });
