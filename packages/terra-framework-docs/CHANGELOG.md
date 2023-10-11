@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed issue of focus not going back to menu button after selecting an item in menu item.
+
 * Added
   * Added documentation for FlowsheetDataGrid in `terra-data-grid`.
 
