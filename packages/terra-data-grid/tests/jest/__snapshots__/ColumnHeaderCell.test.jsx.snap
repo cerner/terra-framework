@@ -6,6 +6,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
   className="column-header selectable"
   key="Column-0"
   onKeyDown={[Function]}
+  onMouseDown={null}
   role="columnheader"
   scope="col"
   style={
@@ -47,6 +48,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
   className="column-header selectable"
   key="Column-0"
   onKeyDown={[Function]}
+  onMouseDown={null}
   role="columnheader"
   scope="col"
   style={
@@ -94,6 +96,7 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
   className="column-header selectable"
   key="Column-0"
   onKeyDown={[Function]}
+  onMouseDown={null}
   role="columnheader"
   scope="col"
   style={
@@ -134,6 +137,7 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
   className="column-header selectable"
   key="Column-0"
   onKeyDown={[Function]}
+  onMouseDown={null}
   role="columnheader"
   scope="col"
   style={
@@ -271,6 +275,7 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
   className="column-header selectable"
   key="Column-0"
   onKeyDown={[Function]}
+  onMouseDown={null}
   role="columnheader"
   scope="col"
   style={
@@ -356,6 +361,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
       className="column-header selectable pinned"
       key="Column-0"
       onKeyDown={[Function]}
+      onMouseDown={null}
       role="columnheader"
       scope="col"
       style={
@@ -491,9 +497,11 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
         >
           <div
             aria-hidden={true}
-            aria-label="Terra.worklist-data-grid.resize-handle-template"
-            aria-valuenow={100}
-            aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+            aria-label={null}
+            aria-valuemax={null}
+            aria-valuemin={null}
+            aria-valuenow={null}
+            aria-valuetext={null}
             className="resize-handle"
             draggable={true}
             onBlur={[Function]}
@@ -504,7 +512,12 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             onMouseUp={[Function]}
-            role="slider"
+            role="divider"
+            style={
+              Object {
+                "height": "undefinedpx",
+              }
+            }
             tabIndex={-1}
           />
         </ColumnResizeHandle>
@@ -513,7 +526,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
         className="pinned-columns-divider"
         style={
           Object {
-            "height": null,
+            "height": undefined,
             "left": 99,
           }
         }

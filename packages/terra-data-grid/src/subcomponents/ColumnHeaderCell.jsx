@@ -257,8 +257,8 @@ const ColumnHeaderCell = (props) => {
       role="columnheader"
       scope="col"
       aria-sort={sortIndicator}
-      onMouseDown={onColumnSelect ? handleMouseDown : undefined}
-      onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
+      onMouseDown={onColumnSelect ? handleMouseDown : null}
+      onKeyDown={(isSelectable || isResizable) ? handleKeyDown : null}
       style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
     >
       <div className={cx('header-container')} role={displayName && 'button'}>
