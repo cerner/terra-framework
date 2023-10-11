@@ -300,23 +300,23 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
-                "maximumWidth": 500,
-                "minimumWidth": 100,
+                "maximumWidth": 300,
+                "minimumWidth": 60,
                 "width": 200,
               },
               Object {
                 "displayName": "March 16",
                 "id": "Column-1",
-                "maximumWidth": 500,
-                "minimumWidth": 100,
+                "maximumWidth": 300,
+                "minimumWidth": 60,
                 "width": 200,
               },
               Object {
                 "displayName": "March 17",
                 "id": "Column-2",
                 "isSelectable": false,
-                "maximumWidth": 500,
-                "minimumWidth": 100,
+                "maximumWidth": 300,
+                "minimumWidth": 60,
                 "width": 200,
               },
             ]
@@ -325,6 +325,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
           onColumnSelect={[Function]}
           onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
+          tableHeight={0}
         >
           <thead>
             <tr
@@ -339,12 +340,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 isActive={false}
                 isResizeActive={false}
                 key="Column-0"
-                maximumWidth={500}
-                minimumWidth={100}
+                maximumWidth={300}
+                minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
+                tableHeight={0}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -384,12 +386,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   isResizable={true}
                   isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={500}
-                  minimumWidth={100}
+                  maximumWidth={300}
+                  minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
+                  tableHeight={0}
                   width={200}
                 >
                   <th
@@ -420,9 +423,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       columnIndex={0}
                       columnText=" Vitals"
                       columnWidth={200}
+                      height={0}
                       isActive={false}
-                      maximumWidth={500}
-                      minimumWidth={100}
+                      maximumWidth={300}
+                      minimumWidth={60}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
                       onResizeMouseUp={[Function]}
@@ -432,6 +436,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         columnResizeIncrement={10}
                         columnText=" Vitals"
                         columnWidth={200}
+                        height={0}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -460,19 +465,19 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           }
                         }
                         isActive={false}
-                        maximumWidth={500}
-                        minimumWidth={100}
+                        maximumWidth={300}
+                        minimumWidth={60}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="Terra.worklist-data-grid.resize-handle-template"
-                          aria-valuemax={500}
-                          aria-valuemin={100}
-                          aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          aria-label={null}
+                          aria-valuemax={null}
+                          aria-valuemin={null}
+                          aria-valuenow={null}
+                          aria-valuetext={null}
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -483,7 +488,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}
                           onMouseUp={[Function]}
-                          role="slider"
+                          role="divider"
+                          style={
+                            Object {
+                              "height": "0px",
+                            }
+                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -499,12 +509,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 isActive={false}
                 isResizeActive={false}
                 key="Column-1"
-                maximumWidth={500}
-                minimumWidth={100}
+                maximumWidth={300}
+                minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
+                tableHeight={0}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -544,12 +555,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   isResizable={true}
                   isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={500}
-                  minimumWidth={100}
+                  maximumWidth={300}
+                  minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
+                  tableHeight={0}
                   width={200}
                 >
                   <th
@@ -580,9 +592,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       columnIndex={1}
                       columnText="March 16"
                       columnWidth={200}
+                      height={0}
                       isActive={false}
-                      maximumWidth={500}
-                      minimumWidth={100}
+                      maximumWidth={300}
+                      minimumWidth={60}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
                       onResizeMouseUp={[Function]}
@@ -592,6 +605,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         columnResizeIncrement={10}
                         columnText="March 16"
                         columnWidth={200}
+                        height={0}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -620,19 +634,19 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           }
                         }
                         isActive={false}
-                        maximumWidth={500}
-                        minimumWidth={100}
+                        maximumWidth={300}
+                        minimumWidth={60}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="Terra.worklist-data-grid.resize-handle-template"
-                          aria-valuemax={500}
-                          aria-valuemin={100}
-                          aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          aria-label={null}
+                          aria-valuemax={null}
+                          aria-valuemin={null}
+                          aria-valuenow={null}
+                          aria-valuetext={null}
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -643,7 +657,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}
                           onMouseUp={[Function]}
-                          role="slider"
+                          role="divider"
+                          style={
+                            Object {
+                              "height": "0px",
+                            }
+                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -652,7 +671,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       className="pinned-columns-divider"
                       style={
                         Object {
-                          "height": "0px",
+                          "height": 0,
                           "left": 199,
                         }
                       }
@@ -669,12 +688,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
-                maximumWidth={500}
-                minimumWidth={100}
+                maximumWidth={300}
+                minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
+                tableHeight={0}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -714,12 +734,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   isResizable={true}
                   isResizeActive={false}
                   isSelectable={false}
-                  maximumWidth={500}
-                  minimumWidth={100}
+                  maximumWidth={300}
+                  minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
+                  tableHeight={0}
                   width={200}
                 >
                   <th
@@ -750,9 +771,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       columnIndex={2}
                       columnText="March 17"
                       columnWidth={200}
+                      height={0}
                       isActive={false}
-                      maximumWidth={500}
-                      minimumWidth={100}
+                      maximumWidth={300}
+                      minimumWidth={60}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
                       onResizeMouseUp={[Function]}
@@ -762,6 +784,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         columnResizeIncrement={10}
                         columnText="March 17"
                         columnWidth={200}
+                        height={0}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -790,19 +813,19 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           }
                         }
                         isActive={false}
-                        maximumWidth={500}
-                        minimumWidth={100}
+                        maximumWidth={300}
+                        minimumWidth={60}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="Terra.worklist-data-grid.resize-handle-template"
-                          aria-valuemax={500}
-                          aria-valuemin={100}
-                          aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          aria-label={null}
+                          aria-valuemax={null}
+                          aria-valuemin={null}
+                          aria-valuenow={null}
+                          aria-valuetext={null}
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -813,7 +836,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}
                           onMouseUp={[Function]}
-                          role="slider"
+                          role="divider"
+                          style={
+                            Object {
+                              "height": "0px",
+                            }
+                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -2467,23 +2495,23 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
-                "maximumWidth": 500,
-                "minimumWidth": 100,
+                "maximumWidth": 300,
+                "minimumWidth": 60,
                 "width": 200,
               },
               Object {
                 "displayName": "March 16",
                 "id": "Column-1",
-                "maximumWidth": 500,
-                "minimumWidth": 100,
+                "maximumWidth": 300,
+                "minimumWidth": 60,
                 "width": 200,
               },
               Object {
                 "displayName": "March 17",
                 "id": "Column-2",
                 "isSelectable": false,
-                "maximumWidth": 500,
-                "minimumWidth": 100,
+                "maximumWidth": 300,
+                "minimumWidth": 60,
                 "width": 200,
               },
             ]
@@ -2492,6 +2520,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
           onColumnSelect={[Function]}
           onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
+          tableHeight={0}
         >
           <thead>
             <tr
@@ -2506,12 +2535,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 isActive={false}
                 isResizeActive={false}
                 key="Column-0"
-                maximumWidth={500}
-                minimumWidth={100}
+                maximumWidth={300}
+                minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
+                tableHeight={0}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -2551,12 +2581,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   isResizable={true}
                   isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={500}
-                  minimumWidth={100}
+                  maximumWidth={300}
+                  minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
+                  tableHeight={0}
                   width={200}
                 >
                   <th
@@ -2587,9 +2618,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       columnIndex={0}
                       columnText=" Vitals"
                       columnWidth={200}
+                      height={0}
                       isActive={false}
-                      maximumWidth={500}
-                      minimumWidth={100}
+                      maximumWidth={300}
+                      minimumWidth={60}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
                       onResizeMouseUp={[Function]}
@@ -2599,6 +2631,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         columnResizeIncrement={10}
                         columnText=" Vitals"
                         columnWidth={200}
+                        height={0}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2627,19 +2660,19 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           }
                         }
                         isActive={false}
-                        maximumWidth={500}
-                        minimumWidth={100}
+                        maximumWidth={300}
+                        minimumWidth={60}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="Terra.worklist-data-grid.resize-handle-template"
-                          aria-valuemax={500}
-                          aria-valuemin={100}
-                          aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          aria-label={null}
+                          aria-valuemax={null}
+                          aria-valuemin={null}
+                          aria-valuenow={null}
+                          aria-valuetext={null}
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -2650,7 +2683,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}
                           onMouseUp={[Function]}
-                          role="slider"
+                          role="divider"
+                          style={
+                            Object {
+                              "height": "0px",
+                            }
+                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -2666,12 +2704,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 isActive={false}
                 isResizeActive={false}
                 key="Column-1"
-                maximumWidth={500}
-                minimumWidth={100}
+                maximumWidth={300}
+                minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
+                tableHeight={0}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -2711,12 +2750,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   isResizable={true}
                   isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={500}
-                  minimumWidth={100}
+                  maximumWidth={300}
+                  minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
+                  tableHeight={0}
                   width={200}
                 >
                   <th
@@ -2747,9 +2787,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       columnIndex={1}
                       columnText="March 16"
                       columnWidth={200}
+                      height={0}
                       isActive={false}
-                      maximumWidth={500}
-                      minimumWidth={100}
+                      maximumWidth={300}
+                      minimumWidth={60}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
                       onResizeMouseUp={[Function]}
@@ -2759,6 +2800,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         columnResizeIncrement={10}
                         columnText="March 16"
                         columnWidth={200}
+                        height={0}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2787,19 +2829,19 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           }
                         }
                         isActive={false}
-                        maximumWidth={500}
-                        minimumWidth={100}
+                        maximumWidth={300}
+                        minimumWidth={60}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="Terra.worklist-data-grid.resize-handle-template"
-                          aria-valuemax={500}
-                          aria-valuemin={100}
-                          aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          aria-label={null}
+                          aria-valuemax={null}
+                          aria-valuemin={null}
+                          aria-valuenow={null}
+                          aria-valuetext={null}
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -2810,7 +2852,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}
                           onMouseUp={[Function]}
-                          role="slider"
+                          role="divider"
+                          style={
+                            Object {
+                              "height": "0px",
+                            }
+                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -2819,7 +2866,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       className="pinned-columns-divider"
                       style={
                         Object {
-                          "height": "0px",
+                          "height": 0,
                           "left": 199,
                         }
                       }
@@ -2836,12 +2883,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
-                maximumWidth={500}
-                minimumWidth={100}
+                maximumWidth={300}
+                minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
+                tableHeight={0}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -2881,12 +2929,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   isResizable={true}
                   isResizeActive={false}
                   isSelectable={false}
-                  maximumWidth={500}
-                  minimumWidth={100}
+                  maximumWidth={300}
+                  minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
+                  tableHeight={0}
                   width={200}
                 >
                   <th
@@ -2917,9 +2966,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       columnIndex={2}
                       columnText="March 17"
                       columnWidth={200}
+                      height={0}
                       isActive={false}
-                      maximumWidth={500}
-                      minimumWidth={100}
+                      maximumWidth={300}
+                      minimumWidth={60}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
                       onResizeMouseUp={[Function]}
@@ -2929,6 +2979,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         columnResizeIncrement={10}
                         columnText="March 17"
                         columnWidth={200}
+                        height={0}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2957,19 +3008,19 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           }
                         }
                         isActive={false}
-                        maximumWidth={500}
-                        minimumWidth={100}
+                        maximumWidth={300}
+                        minimumWidth={60}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="Terra.worklist-data-grid.resize-handle-template"
-                          aria-valuemax={500}
-                          aria-valuemin={100}
-                          aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          aria-label={null}
+                          aria-valuemax={null}
+                          aria-valuemin={null}
+                          aria-valuenow={null}
+                          aria-valuetext={null}
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -2980,7 +3031,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}
                           onMouseUp={[Function]}
-                          role="slider"
+                          role="divider"
+                          style={
+                            Object {
+                              "height": "0px",
+                            }
+                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -4624,30 +4680,30 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                 "id": "WorklistDataGrid-rowSelectionColumn",
                 "isResizable": false,
                 "isSelectable": true,
-                "maximumWidth": 500,
-                "minimumWidth": 100,
+                "maximumWidth": 300,
+                "minimumWidth": 60,
                 "width": 40,
               },
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
-                "maximumWidth": 500,
-                "minimumWidth": 100,
+                "maximumWidth": 300,
+                "minimumWidth": 60,
                 "width": 200,
               },
               Object {
                 "displayName": "March 16",
                 "id": "Column-1",
-                "maximumWidth": 500,
-                "minimumWidth": 100,
+                "maximumWidth": 300,
+                "minimumWidth": 60,
                 "width": 200,
               },
               Object {
                 "displayName": "March 17",
                 "id": "Column-2",
                 "isSelectable": false,
-                "maximumWidth": 500,
-                "minimumWidth": 100,
+                "maximumWidth": 300,
+                "minimumWidth": 60,
                 "width": 200,
               },
             ]
@@ -4656,6 +4712,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
           onColumnSelect={[Function]}
           onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
+          tableHeight={0}
         >
           <thead>
             <tr
@@ -4671,12 +4728,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                 isResizeActive={false}
                 isSelectable={true}
                 key="WorklistDataGrid-rowSelectionColumn"
-                maximumWidth={500}
-                minimumWidth={100}
+                maximumWidth={300}
+                minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
+                tableHeight={0}
                 width={40}
               >
                 <ColumnHeaderCell
@@ -4715,12 +4773,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   isResizable={false}
                   isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={500}
-                  minimumWidth={100}
+                  maximumWidth={300}
+                  minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
+                  tableHeight={0}
                   width={40}
                 >
                   <th
@@ -4755,12 +4814,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                 isActive={false}
                 isResizeActive={false}
                 key="Column-0"
-                maximumWidth={500}
-                minimumWidth={100}
+                maximumWidth={300}
+                minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
+                tableHeight={0}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -4800,12 +4860,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   isResizable={true}
                   isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={500}
-                  minimumWidth={100}
+                  maximumWidth={300}
+                  minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
+                  tableHeight={0}
                   width={200}
                 >
                   <th
@@ -4836,9 +4897,10 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       columnIndex={1}
                       columnText=" Vitals"
                       columnWidth={200}
+                      height={0}
                       isActive={false}
-                      maximumWidth={500}
-                      minimumWidth={100}
+                      maximumWidth={300}
+                      minimumWidth={60}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
                       onResizeMouseUp={[Function]}
@@ -4848,6 +4910,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         columnResizeIncrement={10}
                         columnText=" Vitals"
                         columnWidth={200}
+                        height={0}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4876,19 +4939,19 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           }
                         }
                         isActive={false}
-                        maximumWidth={500}
-                        minimumWidth={100}
+                        maximumWidth={300}
+                        minimumWidth={60}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="Terra.worklist-data-grid.resize-handle-template"
-                          aria-valuemax={500}
-                          aria-valuemin={100}
-                          aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          aria-label={null}
+                          aria-valuemax={null}
+                          aria-valuemin={null}
+                          aria-valuenow={null}
+                          aria-valuetext={null}
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -4899,7 +4962,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}
                           onMouseUp={[Function]}
-                          role="slider"
+                          role="divider"
+                          style={
+                            Object {
+                              "height": "0px",
+                            }
+                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -4915,12 +4983,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                 isActive={false}
                 isResizeActive={false}
                 key="Column-1"
-                maximumWidth={500}
-                minimumWidth={100}
+                maximumWidth={300}
+                minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
+                tableHeight={0}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -4960,12 +5029,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   isResizable={true}
                   isResizeActive={false}
                   isSelectable={true}
-                  maximumWidth={500}
-                  minimumWidth={100}
+                  maximumWidth={300}
+                  minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
+                  tableHeight={0}
                   width={200}
                 >
                   <th
@@ -4996,9 +5066,10 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       columnIndex={2}
                       columnText="March 16"
                       columnWidth={200}
+                      height={0}
                       isActive={false}
-                      maximumWidth={500}
-                      minimumWidth={100}
+                      maximumWidth={300}
+                      minimumWidth={60}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
                       onResizeMouseUp={[Function]}
@@ -5008,6 +5079,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         columnResizeIncrement={10}
                         columnText="March 16"
                         columnWidth={200}
+                        height={0}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -5036,19 +5108,19 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           }
                         }
                         isActive={false}
-                        maximumWidth={500}
-                        minimumWidth={100}
+                        maximumWidth={300}
+                        minimumWidth={60}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="Terra.worklist-data-grid.resize-handle-template"
-                          aria-valuemax={500}
-                          aria-valuemin={100}
-                          aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          aria-label={null}
+                          aria-valuemax={null}
+                          aria-valuemin={null}
+                          aria-valuenow={null}
+                          aria-valuetext={null}
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -5059,7 +5131,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}
                           onMouseUp={[Function]}
-                          role="slider"
+                          role="divider"
+                          style={
+                            Object {
+                              "height": "0px",
+                            }
+                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -5068,7 +5145,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       className="pinned-columns-divider"
                       style={
                         Object {
-                          "height": "0px",
+                          "height": 0,
                           "left": 199,
                         }
                       }
@@ -5085,12 +5162,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                 isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
-                maximumWidth={500}
-                minimumWidth={100}
+                maximumWidth={300}
+                minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
+                tableHeight={0}
                 width={200}
               >
                 <ColumnHeaderCell
@@ -5130,12 +5208,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   isResizable={true}
                   isResizeActive={false}
                   isSelectable={false}
-                  maximumWidth={500}
-                  minimumWidth={100}
+                  maximumWidth={300}
+                  minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
+                  tableHeight={0}
                   width={200}
                 >
                   <th
@@ -5166,9 +5245,10 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       columnIndex={3}
                       columnText="March 17"
                       columnWidth={200}
+                      height={0}
                       isActive={false}
-                      maximumWidth={500}
-                      minimumWidth={100}
+                      maximumWidth={300}
+                      minimumWidth={60}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
                       onResizeMouseUp={[Function]}
@@ -5178,6 +5258,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         columnResizeIncrement={10}
                         columnText="March 17"
                         columnWidth={200}
+                        height={0}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -5206,19 +5287,19 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           }
                         }
                         isActive={false}
-                        maximumWidth={500}
-                        minimumWidth={100}
+                        maximumWidth={300}
+                        minimumWidth={60}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
                       >
                         <div
                           aria-hidden={true}
-                          aria-label="Terra.worklist-data-grid.resize-handle-template"
-                          aria-valuemax={500}
-                          aria-valuemin={100}
-                          aria-valuenow={200}
-                          aria-valuetext="Terra.worklist-data-grid.resize-handle-value-text"
+                          aria-label={null}
+                          aria-valuemax={null}
+                          aria-valuemin={null}
+                          aria-valuenow={null}
+                          aria-valuetext={null}
                           className="resize-handle"
                           draggable={true}
                           onBlur={[Function]}
@@ -5229,7 +5310,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}
                           onMouseUp={[Function]}
-                          role="slider"
+                          role="divider"
+                          style={
+                            Object {
+                              "height": "0px",
+                            }
+                          }
                           tabIndex={-1}
                         />
                       </ColumnResizeHandle>
@@ -7207,23 +7293,23 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
-              "maximumWidth": 500,
-              "minimumWidth": 100,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
               "width": 200,
             },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
-              "maximumWidth": 500,
-              "minimumWidth": 100,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
               "width": 200,
             },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
-              "maximumWidth": 500,
-              "minimumWidth": 100,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
               "width": 200,
             },
           ]
@@ -7232,6 +7318,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
         onColumnSelect={[Function]}
         onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
+        tableHeight={0}
       />
       <tbody>
         <Memo(Row)
@@ -7439,23 +7526,23 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
             Object {
               "displayName": " Vitals",
               "id": "Column-0",
-              "maximumWidth": 500,
-              "minimumWidth": 100,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
               "width": 200,
             },
             Object {
               "displayName": "March 16",
               "id": "Column-1",
-              "maximumWidth": 500,
-              "minimumWidth": 100,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
               "width": 200,
             },
             Object {
               "displayName": "March 17",
               "id": "Column-2",
               "isSelectable": false,
-              "maximumWidth": 500,
-              "minimumWidth": 100,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
               "width": 200,
             },
           ]
@@ -7464,6 +7551,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
         onColumnSelect={[Function]}
         onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
+        tableHeight={0}
       />
       <tbody>
         <Memo(Row)
