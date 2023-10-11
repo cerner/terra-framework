@@ -1,8 +1,8 @@
 import { Notice } from "@cerner/terra-docs";
-import { Badge } from 'terra-grid/package.json?dev-site-package';
+import { Badge } from 'terra-data-grid/package.json?dev-site-package';
 
 import WorklistDataGridPropsTable from 'terra-data-grid/src/WorklistDataGrid?dev-site-props-table';
-import DefaultWorklistDataGrid from './Examples.3/DefaultWorklistDataGrid?dev-site-example';
+import BasicWorklistDataGrid from './Examples.3/BasicWorklistDataGrid?dev-site-example';
 
 <Badge />
 
@@ -22,15 +22,15 @@ Terra Worklist Data Grid is currently under alpha release. There may be breaking
 * [Properties](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#properties)
 
 ## Overview
-The Worklist Data Grid is an [accessible grid](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) component that allows the user to display data in a table like structure of rows and columns.
+The Worklist Data Grid is an [accessible grid](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) component that allows the user to display data in a table-like structure of rows and columns.
 Worklist Data Grids are ideal when you want to layout data in a way that allows for the user to navigate and interact with it while minimizing the need to navigate the user away from the grid.
 
 The Worklist Data Grid displays a header row and one or more rows of data.
 The component contains only one tab stop with the arrow keys used for primary navigation.
 See [keyboard interactions](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#keyboard-interactions) for all supported keys.
-Other key features of the component are listed out in the [Features](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#features) section.
+Other key features of the component are listed in the [Features](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#features) section.
 
-<DefaultWorklistDataGrid title='Default Worklist Data Grid' />
+<BasicWorklistDataGrid title='Basic Worklist Data Grid' />
 
   ### Features
 
@@ -49,23 +49,23 @@ Refer to the [examples](/components/cerner-terra-framework-docs/data-grid/workli
 The Worklist Data Grid supports the [grid pattern](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) as documented by the ARIA Authoring Practices Guide.
 
 The Worklist Data Grid:
-  * supports only one tab stop. Tabbing into the Worklist Data Grid will either go to the last visited cell, or the first cell upon initial entry.
-  While on the Worklist Data Grid, Tab or Shift+Tab will exit the Worklist Data Grid.
-  * does not maintain consumer data state. The states must be maintained by the Consumer.
-  * uses callbacks to communicate the actions taken by the user.
+  * Supports only one tab stop. When tabbing into the Worklist Data Grid, focus will either go to the last visited cell, or the first cell upon initial entry.
+  While on the Worklist Data Grid, `Tab` or `Shift+Tab` will exit the Worklist Data Grid.
+  * Does not maintain consumer data state. The state must be maintained by the consumer.
+  * Uses callbacks to communicate the actions taken by the user.
   The callbacks are provided by the consumer and therefore the implementation is consumer specific.
   It is up to the consumer to determine if and what actions should be taken.
   For example, the user may click on a selectable cell in the Worklist Data Grid which calls the _onCellSelect_ callback.
   For business reasons, the consumer may decide not to honor that cell selection and instead does nothing resulting in the the cell not getting selected in the Worklist Data Grid.
-  * supports single column sorting with the ability to specify multiple columns as sortable.
-  * does not support multi-cell selection.
-  * supports multi-row selection.
+  * Supports single column sorting with the ability to specify multiple columns as sortable.
+  * Does not support multi-cell selection.
+  * Supports multi-row selection.
 
 
 ## Examples
 |Link to Example| Description|
 |-|-|
-|[DefaultWorklistDataGrid](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/default-worklist-data-grid)|An example of the Worklist Data Grid with basic keyboard interactions.|
+|[BasicWorklistDataGrid](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/basic-worklist-data-grid)|An example of the Worklist Data Grid with basic keyboard interactions.|
 |[CellSelection](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/cell-selection)|An example demonstrating the ability to select a cell.|
 |[RowSelection](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/row-selection)|An example demonstrating row centric interactions.|
 |[WorklistDataGridColumnStates](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/worklist-data-grid-column-states)|An example demonstrating column state and interactions.|
@@ -86,8 +86,8 @@ List of keyboard interactions supported by Worklist Data Grid is similar to the 
 |Left Arrow     | Moves focus one cell to the left. If focus is on the left-most cell in the row, focus does not move.|
 |Home           | Moves focus to the first cell in the row that contains focus.|
 |End            | Moves focus to the last cell in the row that contains focus.|
-|Control + Home <br/> or <br/> Ctrl + Command + Left Arrow (Mac) | Moves focus to the first cell in the first non header row.|
-|Control + End <br/> or <br/> Ctrl + Command + Right Arrow (Mac) | Moves focus to the last cell in the last row.|
+|Control + Home (Windows) <br/> or <br/> Ctrl + Command + Left Arrow (Mac) | Moves focus to the first cell in the first non header row.|
+|Control + End (Windows) <br/> or <br/> Ctrl + Command + Right Arrow (Mac) | Moves focus to the last cell in the last row.|
 |Tab            | Moves focus out of the grid to the next focusable element in the tab sequence. If grid navigation is disabled thereby trapping focusing within a single grid cell, tab moves focus circularly amongst the focusable elements within the grid cell where focus is trapped.|
 |Shift + Tab    | Moves focus out of the grid to the previous focusable element in the tab sequence. If grid navigation is disabled thereby trapping focusing within a single grid cell, tab moves focus circularly amongst the focusable elements within the grid cell where focus is trapped.|
 |Space| Selects the focused cell when row selection mode is off or Selects the focused row when row selection mode is on.|
@@ -101,14 +101,14 @@ List of keyboard interactions supported by Worklist Data Grid is similar to the 
 ### Assistive Technology Support
 #### WAI ARIA Roles and States
 * [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
-  * **Worklist Data Grid**: When [_ariaLabel_](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#worklist-datagrid-props-table) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
-  * **Row**: When [_ariaLabel_](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#row) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) to announce interactions with the row.
+  * **Worklist Data Grid**: When the [_ariaLabel_](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#worklist-data-grid-props-table) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
+  * **Row**: When the [_ariaLabel_](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#row) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) to announce interactions with the row.
 * [aria-labelledby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
-  * **Worklist Data Grid**: When [_ariaLabelledBy_](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#worklist-datagrid-props-table) prop is specified, the screen reader will use the _aria-labelledby_ element to determine the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
+  * **Worklist Data Grid**: When the [_ariaLabelledBy_](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#worklist-data-grid-props-table) prop is specified, the screen reader will use the _aria-labelledby_ element to determine the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
 
 ## Implementation
 
-### Package install information.
+### Installation
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-data-grid`
 
@@ -131,7 +131,7 @@ This component requires the following peer dependencies be installed in your app
 <WorklistDataGridPropsTable />
 
 ### Column
-Column specifies the data to render a cell in the header row of the Worklist Data Grid.
+A column specifies the data to render a cell in the header row of the Worklist Data Grid.
 
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
@@ -146,7 +146,7 @@ Column specifies the data to render a cell in the header row of the Worklist Dat
 |**sortIndicator**|custom|optional|none|A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered. One of `ascending`, `descending`.
 
 ### Row
-Row defines the cells rendered within the row.
+A row defines the cells rendered within the row.
 
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
@@ -156,7 +156,7 @@ Row defines the cells rendered within the row.
 |**ariaLabel**|string|optional|none|A string identifier used to describe the row contents. This value will be used for accessibility when announcing the row (un)selection.|
 
 ### Cell
-Cell defines the content rendered at the intersection of a row and a column.
+A cell defines the content rendered at the intersection of a row and a column.
 
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|

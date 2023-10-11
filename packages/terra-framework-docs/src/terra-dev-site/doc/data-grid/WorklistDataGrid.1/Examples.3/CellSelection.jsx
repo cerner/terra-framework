@@ -29,10 +29,10 @@ const gridDataJSON = {
         { content: '' },
         { content: 'Quinzell, Harleen' },
         { content: '' },
-        { isMasked: true }, // Cell content will be masked
+        { isMasked: true }, // This cell's content will be masked
         { isMasked: true },
         { content: 'Admitting Physician' },
-        { content: '', isSelectable: false }, // Cell cannot be selected via click but can receive focus when navigating through keyboard
+        { content: '', isSelectable: false }, // This cell cannot be selected via click but can receive focus when navigating through keyboard
       ],
     },
     {
@@ -67,7 +67,7 @@ const CellSelection = () => {
       const rowIndex = rowData.findIndex(e => e.id === rowId);
       const columnIndex = cols.findIndex(e => e.id === columnId);
 
-      // Remove current selections as the Worklist DataGrid can have only one selected cell at any instance.
+      // Remove current selections as the Worklist Data Grid can have only one selected cell at any instance.
       const newRowData = [...rowData];
       for (let row = 0; row < rowData.length; row += 1) {
         for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
@@ -122,8 +122,8 @@ const CellSelection = () => {
       defaultColumnWidth={100}
       columnHeaderHeight="100px"
       ariaLabel="Worklist Data Grid With Cell Selection"
-      onCellSelect={onCellSelect} // For cell selection, consumer must provide a callback that the Worklist DataGrid will call when the user selects a cell.
-      onClearSelectedCells={onClearSelectedCells} // To clear selection of a cell, consumer must provide a callback that the Worklist DataGrid will call to clear the selection.
+      onCellSelect={onCellSelect} // For cell selection, a callback function must be provided so that the Worklist Data Grid can invoke it when a cell is selective.
+      onClearSelectedCells={onClearSelectedCells} // To clear the selection of a cell, a callback function must be provided so that the Worklist Data Grid can execute it to clear the selection.
     />
   );
 };

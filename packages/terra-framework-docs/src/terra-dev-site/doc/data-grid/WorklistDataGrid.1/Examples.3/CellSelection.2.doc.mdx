@@ -9,8 +9,10 @@ cell. Only cells that are selectable and not masked can be selected.
 A cell is selectable by default.
 
 ### Properties required
-* The **onCellSelect** callback prop: When the user selects a cell, this callback will be called with the rowId and ColumnId of the selected cell.
-In this example, the information is used to look up the matching cell information in the consumer data and disclose additional information for that cell. Also, the _selected_ attribute of the matching cell in the row data is toggled but a consumer may chose to do nothing when the cell is already selected. Since only one cell may be selected, any previous cell selection is cleared before a new cell is selected.
+* The **onCellSelect** callback prop: When the user selects a cell, this callback will be called with the rowId and columnId of the selected cell.
+In this example, the information is used to look up the matching cell information in the input data and disclose additional information for that cell.
+The `selected` attribute of the matching cell in the row data is toggled to be true. But an end user may choose to do nothing when the cell is already selected.
+Since only one cell may be selected, any previous cell selection is cleared before a new cell is selected.
 
 
 * The **onClearSelectedCells** callback prop: When the user presses Escape, this callback gets called. In this example, the selected attribute of any selected cell is set to false and the Worklist Data Grid is re-rendered.
