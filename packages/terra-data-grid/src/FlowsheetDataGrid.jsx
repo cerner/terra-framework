@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
+
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 import DataGrid from './DataGrid';
 import rowShape from './proptypes/rowShape';
@@ -64,6 +67,12 @@ const propTypes = {
    * Callback function that is called when all selected cells need to be unselected. Parameters: none.
    */
   onClearSelectedCells: PropTypes.func,
+
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -86,7 +95,30 @@ function FlowsheetDataGrid(props) {
     rowHeight,
     onCellSelect,
     onClearSelectedCells,
+    intl,
   } = props;
+
+  // Replace each non-header cell that contains no content with a dash indicating "No results".
+  const parsedRows = rows.map(
+    (row) => ({
+      ...row,
+      cells: row.cells.map(
+        (cell, index) => ((!cell.content && index !== 0) ? {
+          ...cell,
+          content: (
+            <>
+              <span aria-hidden>{intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-result-display' })}</span>
+              <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-result' })} />
+            </>
+          ),
+        } : cell),
+      ),
+    }),
+  );
+
+  // Make all columns not resizable.
+  const nonResizablePinnedColumns = columns.length ? [{ ...columns[0], isResizable: false }] : [];
+  const nonResizableOverflowColumns = columns.length > 1 ? columns.slice(1).map(column => ({ ...column, isResizable: false })) : [];
 
   return (
     <div className={cx('flowsheet-data-grid-container')}>
@@ -94,11 +126,11 @@ function FlowsheetDataGrid(props) {
         id={id}
         ariaLabel={ariaLabel}
         ariaLabelledBy={ariaLabelledBy}
-        rows={rows}
+        rows={parsedRows}
         rowHeight={rowHeight}
         rowHeaderIndex={0}
-        pinnedColumns={columns.length ? [{ ...columns[0], isResizable: false }] : []}
-        overflowColumns={columns.length > 1 ? columns.slice(1).map(column => ({ ...column, isResizable: false })) : []}
+        pinnedColumns={nonResizablePinnedColumns}
+        overflowColumns={nonResizableOverflowColumns}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onCellSelect={onCellSelect}
@@ -111,4 +143,4 @@ function FlowsheetDataGrid(props) {
 FlowsheetDataGrid.propTypes = propTypes;
 FlowsheetDataGrid.defaultProps = defaultProps;
 
-export default FlowsheetDataGrid;
+export default injectIntl(FlowsheetDataGrid);

@@ -14,6 +14,7 @@
 
 * Added
   * Added base FlowsheetDataGrid component.
+  * Added "No result" cells to FlowsheetDataGrid.
 
 * Changed
   * Updated prop descriptions for better consistency and accuracy in the `terra-data-grid` component.
