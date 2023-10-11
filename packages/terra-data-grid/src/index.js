@@ -1,4 +1,4 @@
 import WorklistDataGrid from './WorklistDataGrid';
+import FlowsheetDataGrid from './FlowsheetDataGrid';
 
-// eslint-disable-next-line import/prefer-default-export
-export { WorklistDataGrid };
+export { WorklistDataGrid, FlowsheetDataGrid };

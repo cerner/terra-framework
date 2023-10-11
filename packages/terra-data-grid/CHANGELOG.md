@@ -4,6 +4,7 @@
 
 * Added
   * Added ability to resize columns via keyboard.
+  * Added base FlowsheetDataGrid component.
 
 ## 0.7.0 - (October 3, 2023)
 
