@@ -22,7 +22,7 @@ const propTypes = {
   /**
    * The label to set on the tablist element.
    */
-  ariaLabel: PropTypes.string.isRequired,
+  ariaLabel: PropTypes.string,
   /**
    * The label to set on the add icon element.
    */
@@ -102,7 +102,7 @@ const propTypes = {
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
-   * Whether tab is vertical or horizontal orientation.
+   * By Default Orientation will be Horizontal and Orientation will be Vertical When verticalOrientation prop is passed.
    */
   verticalOrientation: PropTypes.bool,
 };

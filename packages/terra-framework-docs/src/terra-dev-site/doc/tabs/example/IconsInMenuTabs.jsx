@@ -14,38 +14,38 @@ const cx = classNames.bind(styles);
 
 const IconsOnlyAndInMenuTabs = () => {
   const searchTab = (
-    <Tabs.Pane label="Search" icon={<IconSearch />} showIcon key="Search">
+    <Tabs.Pane label="Search" icon={<IconSearch />} showIcon key="MenuTabSearch">
       <TabContent label="Search" />
     </Tabs.Pane>
   );
 
   const briefcaseTab = (
     // eslint-disable-next-line react/forbid-component-props
-    <Tabs.Pane label="Briefcase" icon={<IconBriefcase />} showIcon key="Briefcase">
+    <Tabs.Pane label="Briefcase" icon={<IconBriefcase />} showIcon key="MenuTabBriefcase">
       <TabContent label="Briefcase" />
     </Tabs.Pane>
   );
 
   const bookmarkTab = (
-    <Tabs.Pane label="Bookmark" icon={<IconBookmark />} showIcon key="Bookmark">
+    <Tabs.Pane label="Bookmark" icon={<IconBookmark />} showIcon key="MenuTabBookmark">
       <TabContent label="Bookmark" />
     </Tabs.Pane>
   );
 
   const calendarTab = (
-    <Tabs.Pane label="Calendar" icon={<IconCalendar />} showIcon key="Calendar">
+    <Tabs.Pane label="Calendar" icon={<IconCalendar />} showIcon key="MenuTabCalendar">
       <TabContent label="Calendar" />
     </Tabs.Pane>
   );
 
   const envelopeTab = (
-    <Tabs.Pane label="Envelope" icon={<IconEnvelope />} showIcon key="Envelope">
+    <Tabs.Pane label="Envelope" icon={<IconEnvelope />} showIcon key="MenuTabEnvelope">
       <TabContent label="Envelope" />
     </Tabs.Pane>
   );
 
   const printerTab = (
-    <Tabs.Pane label="Printer" icon={<IconPrinter />} showIcon key="Printer">
+    <Tabs.Pane label="Printer" icon={<IconPrinter />} showIcon key="MenuTabPrinter">
       <TabContent label="Printer" />
     </Tabs.Pane>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
+import IconAdd from 'terra-icon/lib/icon/IconAdd';
+import IconPerson from 'terra-icon/lib/icon/IconPerson';
 import Tabs from 'terra-tabs';
 import TabContent from './TabContentTemplate';
 import styles from './common/TabExample.module.scss';
@@ -9,20 +10,20 @@ const cx = classNames.bind(styles);
 
 const VerticalTabs = () => {
   const labelTab = (
-    <Tabs.Pane label="Tab with label" key="tLabelTab">
-      <TabContent label="Tab with label" />
+    <Tabs.Pane label="Medical Department" key="tLabelTab">
+      <TabContent label="Medical Department" />
     </Tabs.Pane>
   );
 
   const onlyiconTab = (
-    <Tabs.Pane label="Tab with icon" isIconOnly icon={<IconBriefcase />} key="tonlyIconTab">
-      <TabContent label="Tab with icon" />
+    <Tabs.Pane label="Pharmacy Deparment" isIconOnly icon={<IconAdd />} key="tonlyIconTab">
+      <TabContent label="Pharmacy Deparment" />
     </Tabs.Pane>
   );
 
   const iconTab = (
-    <Tabs.Pane label="Tab with icon" icon={<IconBriefcase />} key="tIconTab">
-      <TabContent label="Tab with icon" />
+    <Tabs.Pane label="Patient Department" icon={<IconPerson />} key="tIconTab">
+      <TabContent label="Patient Department" />
     </Tabs.Pane>
   );
 
@@ -30,34 +31,34 @@ const VerticalTabs = () => {
     <Tabs.Pane
       customDisplay={(
         <div className={cx('custom-display')}>
-          Custom display
+          Surgical Department
         </div>
       )}
-      label="Custom display"
+      label="Surgical Department"
       key="tCustomTab"
     >
-      <TabContent label="Custom display" />
+      <TabContent label="Surgical Department" />
     </Tabs.Pane>
   );
 
   const longLabel = (
     <Tabs.Pane
-      label="Longer text tab name with label for application"
+      label="Department of Hospital Administration"
       key="tlongLabel"
     >
-      <TabContent label="Longer text tab name with label for application" />
+      <TabContent label="Department of Hospital Administration" />
     </Tabs.Pane>
   );
 
   const lastTab = (
-    <Tabs.Pane label="Last Tab" key="tlastTab">
-      <TabContent label="Last Tab" />
+    <Tabs.Pane label="Academic Department" key="tlastTab">
+      <TabContent label="Academic Department" />
     </Tabs.Pane>
   );
 
   return (
     <div className={cx('content-container-vertical')}>
-      <Tabs isDraggable fill verticalOrientation setFocusOnContent ariaLabelAddTab="Add Tab">
+      <Tabs isDraggable fill verticalOrientation setFocusOnContent>
         {onlyiconTab}
         {labelTab}
         {iconTab}

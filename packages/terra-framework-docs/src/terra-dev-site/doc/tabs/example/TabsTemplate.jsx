@@ -14,14 +14,15 @@ const propTypes = {
 };
 
 const TabsTemplate = (props) => {
+  const labelKey = props.id ? props.id : 'compact';
   const labelTab = (
-    <Tabs.Pane label="Tab with label" key="LabelTab">
+    <Tabs.Pane label="Tab with label" key={`${labelKey}LabelTab`}>
       <TabContentTemplate label="Tab with label" />
     </Tabs.Pane>
   );
 
   const iconTab = (
-    <Tabs.Pane label="Tab with icon" icon={<IconBriefcase />} key="IconTab">
+    <Tabs.Pane label="Tab with icon" icon={<IconBriefcase />} key={`${labelKey}IconTab`}>
       <TabContentTemplate label="Tab with icon" />
     </Tabs.Pane>
   );
@@ -34,7 +35,7 @@ const TabsTemplate = (props) => {
         </div>
       )}
       label="Custom display"
-      key="CustomTab"
+      key={`${labelKey}CustomTab`}
     >
       <TabContentTemplate label="Custom display" />
     </Tabs.Pane>
@@ -43,24 +44,24 @@ const TabsTemplate = (props) => {
   const longLabel = (
     <Tabs.Pane
       label="Longer text tab name with label for application"
-      key="longLabel"
+      key={`${labelKey}longLabel`}
     >
       <TabContentTemplate label="Longer text tab name with label for application" />
     </Tabs.Pane>
   );
 
   const lastTab = (
-    <Tabs.Pane label="Last Tab" key="lastTab">
+    <Tabs.Pane label="Last Tab" key={`${labelKey}lastTab`}>
       <TabContentTemplate label="Last Tab" />
     </Tabs.Pane>
   );
 
   const disabledTab = (
-    <Tabs.Pane label="Disabled Tab" icon={<IconSearch />} isDisabled key="DisabledTab" />
+    <Tabs.Pane label="Disabled Tab" icon={<IconSearch />} isDisabled key={`${labelKey}DisabledTab`} />
   );
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs setFocusOnContent defaultActiveKey="LabelTab" id={props.id}>
+      <Tabs setFocusOnContent defaultActiveKey={`${labelKey}LabelTab`} id={props.id}>
         {labelTab}
         {iconTab}
         {customTab}

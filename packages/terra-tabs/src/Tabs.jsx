@@ -80,7 +80,7 @@ const propTypes = {
    */
   ariaLabelAddTab: PropTypes.string,
   /**
-   * Whether tab is vertical or horizontal orientation.
+   * By Default Orientation will be Horizontal and Orientation will be Vertical When verticalOrientation set to `true`.
    */
   verticalOrientation: PropTypes.bool,
   /**
@@ -95,6 +95,7 @@ const defaultProps = {
   isDraggable: false,
   isClosable: false,
   setFocusOnContent: false,
+  verticalOrientation: false,
 };
 
 class Tabs extends React.Component {

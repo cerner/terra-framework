@@ -119,7 +119,7 @@ const propTypes = {
    */
   onClosingTab: PropTypes.func,
   /**
-   * Whether tab is vertical or horizontal orientation.
+   * By Default Orientation will be Horizontal and Orientation will be Vertical When verticalOrientation prop is passed.
    */
   verticalOrientation: PropTypes.bool,
 };
