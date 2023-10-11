@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added documentation for FlowsheetDataGrid in `terra-data-grid`.
+
 * Updated
   * Updated examples, and tests to show the visual focus indicator on the iframe of the embedded content
 
