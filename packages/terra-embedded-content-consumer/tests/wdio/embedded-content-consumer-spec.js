@@ -12,7 +12,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     });
 
     it('Provider triggers EventA message', () => {
-      const myFrame = $('iframe[src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-event-provider"]');
+      const myFrame = $('iframe[id="custom-event-consumer-frame"]');
       browser.switchToFrame(myFrame);
 
       $('#EventA').click();
@@ -30,7 +30,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     });
 
     it('Provider triggers EventA message', () => {
-      const myFrame = $('iframe[src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"]');
+      const myFrame = $('iframe[id="custom-events-consumer-frame"]');
       browser.switchToFrame(myFrame);
 
       $('#EventA').click();
@@ -40,7 +40,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     });
 
     it('successfully replied with EventA message', () => {
-      const myFrame = $('iframe[src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"]');
+      const myFrame = $('iframe[id="custom-events-consumer-frame"]');
       browser.switchToFrame(myFrame);
 
       expect($('#embedded-content-consumer-reply')).toHaveTextContaining('eventA');
@@ -48,7 +48,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     });
 
     it('Provider triggers EventB message', () => {
-      const myFrame = $('iframe[src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"]');
+      const myFrame = $('iframe[id="custom-events-consumer-frame"]');
       browser.switchToFrame(myFrame);
 
       $('#EventB').click();
@@ -58,7 +58,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     });
 
     it('successfully replied with EventB message', () => {
-      const myFrame = $('iframe[src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"]');
+      const myFrame = $('iframe[id="custom-events-consumer-frame"]');
       browser.switchToFrame(myFrame);
 
       expect($('#embedded-content-consumer-reply')).toHaveTextContaining('eventB');
@@ -69,9 +69,9 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     it('has mounted, launched, and authorized elements', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/embedded-content-consumer/consumers/data-status-consumer');
       const timeout = browser.options.waitforTimeout + 5000;
-      $('iframe[src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/data-status-provider"]').waitForDisplayed({ timeout });
+      $('iframe[id="data-embedded-consumer-data-status"]').waitForDisplayed({ timeout });
 
-      const myFrame = $('iframe[src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/data-status-provider"]');
+      const myFrame = $('iframe[id="data-embedded-consumer-data-status"]');
       browser.switchToFrame(myFrame);
 
       expect($('#Mounted').isExisting());
