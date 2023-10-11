@@ -256,11 +256,11 @@ const RowSelection = () => {
         ariaLabel="Worklist Data Grid"
         onColumnSelect={onColumnSelect}
         hasSelectableRows={hasSelectableRows} // Prop to turn row selection mode on/off
-        onRowSelect={onRowSelect} // For row selection, consumer must provide a callback that the Worklist DataGrid will call when the user selects one or more rows.
-        onRowSelectAll={onRowSelectAll} // For row selection, consumer must provide a callback that the Worklist DataGrid will call when the user selects all rows.
-        onClearSelectedRows={clearRowSelection} // To clear selected rows, consumer must provide a callback that the Worklist DataGrid will call to clear the selection.
-        onDisableSelectableRows={disableSelectableRows} // Consumer must provide a callback that the Worklist DataGrid will call to turn off the row selection mode.
-        onEnableRowSelection={enableRowSelection} // Consumer must provide a callback that the Worklist DataGrid will call to turn on the row selection mode.
+        onRowSelect={onRowSelect} // For row selection, consumer must provide a callback that the Worklist Data Grid will call when the user selects one or more rows.
+        onRowSelectAll={onRowSelectAll} // For row selection, consumer must provide a callback that the Worklist Data Grid will call when the user selects all rows.
+        onClearSelectedRows={clearRowSelection} // To clear selected rows, consumer must provide a callback that the Worklist Data Grid will call to clear the selection.
+        onDisableSelectableRows={disableSelectableRows} // Consumer must provide a callback that the Worklist Data Grid will call to turn off the row selection mode.
+        onEnableRowSelection={enableRowSelection} // Consumer must provide a callback that the Worklist Data Grid will call to turn on the row selection mode.
       />
     </React.Fragment>
   );

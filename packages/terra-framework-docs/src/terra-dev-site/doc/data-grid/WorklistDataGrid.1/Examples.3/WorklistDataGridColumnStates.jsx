@@ -99,7 +99,7 @@ const WorklistDataGridWithColumnStates = () => {
       rowHeight="50px"
       defaultColumnWidth={100}
       columnHeaderHeight="50px"
-      onColumnSelect={onColumnSelect} // Consumer must provide this callback to the Worklist DataGrid for it to call when the user selects a column header.
+      onColumnSelect={onColumnSelect} // Consumer must provide this callback to the Worklist Data Grid for it to call when the user selects a column header.
       ariaLabel="Worklist Data Grid"
     />
   );
