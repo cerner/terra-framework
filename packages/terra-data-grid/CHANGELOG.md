@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+* Added
+  * Added base FlowsheetDataGrid component.
+
+## 0.7.0 - (October 3, 2023)
+
+* Fixed
+  * Fixed the screen reader messages to count header row as the first row.
+
 ## 0.6.0 - (September 14, 2023)
 
 * Breaking Changes

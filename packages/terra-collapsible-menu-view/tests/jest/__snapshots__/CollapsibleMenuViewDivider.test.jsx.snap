@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CollapsibleMenuViewDivider Collapsible Menu Context should not render a menu item 1`] = `
+<li
+  className="divider"
+  role="presentation"
+/>
+`;
+
 exports[`CollapsibleMenuViewDivider correctly applies the theme context className 1`] = `
 <CollapsibleMenuViewDivider
   intl={
@@ -34,6 +41,18 @@ exports[`CollapsibleMenuViewDivider correctly applies the theme context classNam
     className="divider face-up-item orion-fusion-theme"
   />
 </CollapsibleMenuViewDivider>
+`;
+
+exports[`CollapsibleMenuViewDivider should render a chevron right icon 1`] = `
+<div
+  className="chevron-right face-up-item"
+>
+  <IconChevronRight
+    data-name="Layer 1"
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</div>
 `;
 
 exports[`CollapsibleMenuViewDivider should render a default component 1`] = `

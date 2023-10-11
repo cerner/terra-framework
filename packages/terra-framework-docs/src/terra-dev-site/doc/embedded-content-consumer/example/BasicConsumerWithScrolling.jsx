@@ -7,8 +7,8 @@ Consumer.init();
 const BasicConsumerWithScrolling = () => (
   <EmbeddedContentConsumer
     src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
+    title="Basic content example of scrolling is enabled"
     options={{
-      iframeAttrs: { title: 'Basic content example of scrolling is enabled' },
       resizeConfig: { scrolling: true, fixedWidth: '100%', fixedHeight: '100px' },
     }}
   />

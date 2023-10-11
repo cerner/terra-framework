@@ -46,7 +46,7 @@ exports[`correctly applies the theme context className 1`] = `
         type="button"
       >
         <span
-          className="button-label text-only"
+          className="button-label-win text-only"
         >
           <span
             className=""
@@ -106,7 +106,7 @@ exports[`should mount an open dialogModal 1`] = `
         type="button"
       >
         <span
-          className="button-label text-only"
+          className="button-label-win text-only"
         >
           <span
             className=""
@@ -168,7 +168,7 @@ exports[`should mount an open dialogModal 320 width 1`] = `
         type="button"
       >
         <span
-          className="button-label text-only"
+          className="button-label-win text-only"
         >
           <span
             className=""
@@ -230,7 +230,7 @@ exports[`should mount an open dialogModal 960 width 1`] = `
         type="button"
       >
         <span
-          className="button-label text-only"
+          className="button-label-win text-only"
         >
           <span
             className=""
@@ -292,7 +292,7 @@ exports[`should mount an open dialogModal 1280 width 1`] = `
         type="button"
       >
         <span
-          className="button-label text-only"
+          className="button-label-win text-only"
         >
           <span
             className=""
@@ -354,7 +354,7 @@ exports[`should mount an open dialogModal 1600 width 1`] = `
         type="button"
       >
         <span
-          className="button-label text-only"
+          className="button-label-win text-only"
         >
           <span
             className=""
@@ -416,7 +416,7 @@ exports[`should mount an open dialogModal 1600 width 2`] = `
         type="button"
       >
         <span
-          className="button-label text-only"
+          className="button-label-win text-only"
         >
           <span
             className=""
@@ -478,7 +478,7 @@ exports[`should set the rootSelector 1`] = `
         type="button"
       >
         <span
-          className="button-label text-only"
+          className="button-label-win text-only"
         >
           <span
             className=""

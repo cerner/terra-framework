@@ -217,6 +217,7 @@ const HiddenTab = ({
   const addTabWithSuggestion = intl.formatMessage({ id: 'Terra.tabs.addbutton.focus' });
   const responseId = `terra-hidden-tab-pane-response=${uuidv4()}`;
   const addbuttonresponseId = `terra-hidden-tab-pane-response=${uuidv4()}`;
+  const closeResponseId = `terra-tab-close-response=${uuidv4()}`;
 
   if (isDraggable) {
     return (
@@ -245,6 +246,13 @@ const HiddenTab = ({
     );
   }
 
+  let responseDescriptionId;
+  if (showAddButton) {
+    responseDescriptionId = addbuttonresponseId;
+  } else if (isClosable) {
+    responseDescriptionId = closeResponseId;
+  }
+
   return (
     <div
       {...attributes}
@@ -253,21 +261,21 @@ const HiddenTab = ({
       role={showAddButton ? 'button' : 'tab'}
       className={hiddenClassNames}
       aria-disabled={isDisabled}
-      aria-describedby={addbuttonresponseId}
+      aria-describedby={responseDescriptionId}
     >
       <VisuallyHiddenText aria-hidden id={addbuttonresponseId} text={addTabWithSuggestion} />
+      <VisuallyHiddenText aria-hidden id={closeResponseId} text={tabDeleteLabel} />
       <div className={cx('checkbox')}>{isSelected ? <IconCheckmark /> : null}</div>
       {showIcon && icon}
       <div className={cx('label', { 'with-icon': showIcon })}>{label}</div>
       {isClosable && (
-      <button
-        className={cx('tabs-remove-button')}
-        type="button"
-        aria-label={tabDeleteLabel}
-        onClick={onCloseClick}
-      >
-        <IconClose />
-      </button>
+      // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
+        <div
+          className={cx('tabs-remove-button')}
+          onClick={onCloseClick}
+        >
+          <IconClose />
+        </div>
       )}
     </div>
   );
