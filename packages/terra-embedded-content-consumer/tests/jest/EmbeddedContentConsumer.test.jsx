@@ -173,11 +173,10 @@ describe(EmbeddedContentConsumer, () => {
   });
 
   it('should render visually hidden text before and after the embedded content consumer container', () => {
-    const frameOptions = { iframeAttrs: { title: 'title of content set from options.iframeAttrs' } };
     const embeddedContentConsumer = (
       <EmbeddedContentConsumer
         src="https://www.google.com/"
-        options={frameOptions}
+        title="frame content title"
       />
     );
 

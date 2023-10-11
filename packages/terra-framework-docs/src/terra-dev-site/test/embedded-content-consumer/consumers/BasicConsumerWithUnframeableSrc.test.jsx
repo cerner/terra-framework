@@ -8,12 +8,12 @@ const cx = classNames.bind(styles);
 
 Consumer.init();
 
-const BasicConsumerWithInvalidSrc = () => (
+const BasicConsumerWithUnframeableSrc = () => (
   <EmbeddedContentConsumer
     className={cx('iframe')}
-    title="Basic Consumer With Invalid Src"
+    title="Basic Consumer With Unframeable Src"
     src="https://www.google.com"
   />
 );
 
-export default BasicConsumerWithInvalidSrc;
+export default BasicConsumerWithUnframeableSrc;

@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 import { Consumer } from 'xfc';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 
-import styles from './ProviderIframe.module.scss';
+import styles from './EmbeddedContentConsumer.module.scss';
 
 const cx = classNames.bind(styles);
 

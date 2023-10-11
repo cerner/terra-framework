@@ -560,14 +560,8 @@ exports[`InjectIntl should render visually hidden text before and after the embe
       "timeZone": null,
     }
   }
-  options={
-    Object {
-      "iframeAttrs": Object {
-        "title": "title of content set from options.iframeAttrs",
-      },
-    }
-  }
   src="https://www.google.com/"
+  title="frame content title"
 >
   <EmbeddedContentConsumer
     intl={
@@ -597,14 +591,8 @@ exports[`InjectIntl should render visually hidden text before and after the embe
         "timeZone": null,
       }
     }
-    options={
-      Object {
-        "iframeAttrs": Object {
-          "title": "title of content set from options.iframeAttrs",
-        },
-      }
-    }
     src="https://www.google.com/"
+    title="frame content title"
   >
     <div
       className="embedded-content-container"
