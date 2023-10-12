@@ -355,6 +355,8 @@ function DataGrid(props) {
       element => !element.hasAttribute('disabled')
       && !element.getAttribute('aria-hidden')
       && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
+      && window.getComputedStyle(element).visibility !== 'hidden'
+      && element.closest('[inert]') === null
       && (element.id === id || !grid.current.contains(element)),
     );
 
