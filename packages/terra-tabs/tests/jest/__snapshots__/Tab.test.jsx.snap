@@ -26,7 +26,7 @@ exports[`Tab correctly applies the theme context className 1`] = `
   >
     <VisuallyHiddenText
       aria-hidden={true}
-      id="terra-tab-delete-pane-response-5ffd6120-9e47-4631-97ee-8e1d7615f534"
+      id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
       text="Terra.tabs.hint.removable"
     />
     <span
@@ -64,7 +64,7 @@ exports[`Tab should render a common tab as disabled when indicated 1`] = `
   >
     <VisuallyHiddenText
       aria-hidden={true}
-      id="terra-tab-delete-pane-response-e6540345-0d3b-4f3d-9cd5-5f70cb19fdb1"
+      id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
       text="Terra.tabs.hint.removable"
     />
     <span
@@ -102,7 +102,7 @@ exports[`Tab should render a common tab with custom props 1`] = `
   >
     <VisuallyHiddenText
       aria-hidden={true}
-      id="terra-tab-delete-pane-response-780d285e-9183-4c0e-a9be-74e3dea75f38"
+      id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
       text="Terra.tabs.hint.removable"
     />
     <span

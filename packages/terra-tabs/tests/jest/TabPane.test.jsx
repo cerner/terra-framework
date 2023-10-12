@@ -3,6 +3,8 @@ import React from 'react';
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import Pane from '../../src/TabPane';
 
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+
 describe('TabPane', () => {
   it('should render a default component with label', () => {
     const wrapper = shallowWithIntl(<Pane label="Default" />).dive().dive();

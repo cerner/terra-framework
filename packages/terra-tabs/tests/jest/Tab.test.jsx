@@ -3,6 +3,8 @@ import React from 'react';
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import Tab from '../../src/common-tabs/_Tab';
 
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+
 describe('Tab', () => {
   it('should render a common tab as disabled when indicated', () => {
     const wrapper = shallowWithIntl(<Tab label="Label" isDisabled variant="framework" />).dive();

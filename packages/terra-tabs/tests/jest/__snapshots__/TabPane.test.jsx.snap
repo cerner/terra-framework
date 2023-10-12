@@ -26,7 +26,7 @@ exports[`TabPane correctly applies the theme context className 1`] = `
   >
     <VisuallyHiddenText
       aria-hidden={true}
-      id="terra-tab-delete-pane-response-8daa3334-233e-4425-b381-eeab5e6b9603"
+      id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
       text="Terra.tabs.hint.removable"
     />
     <span
@@ -64,7 +64,7 @@ exports[`TabPane should render a default component with label 1`] = `
   >
     <VisuallyHiddenText
       aria-hidden={true}
-      id="terra-tab-delete-pane-response-9790a21b-3169-457d-909a-516a7d794fa0"
+      id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
       text="Terra.tabs.hint.removable"
     />
     <span
@@ -102,7 +102,7 @@ exports[`TabPane should render with a custom display when provided 1`] = `
   >
     <VisuallyHiddenText
       aria-hidden={true}
-      id="terra-tab-delete-pane-response-fab744f2-a08c-4cda-87d7-8167a2c332f4"
+      id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
       text="Terra.tabs.hint.removable"
     />
     <div>
@@ -138,7 +138,7 @@ exports[`TabPane should render with icon and label 1`] = `
   >
     <VisuallyHiddenText
       aria-hidden={true}
-      id="terra-tab-delete-pane-response-79f584a8-f221-49ed-89be-bfaefe6904c9"
+      id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
       text="Terra.tabs.hint.removable"
     />
     <div>
@@ -179,7 +179,7 @@ exports[`TabPane should render with icon only when indicated 1`] = `
   >
     <VisuallyHiddenText
       aria-hidden={true}
-      id="terra-tab-delete-pane-response-f6a764bd-c171-4207-a075-62a917cd7072"
+      id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
       text="Terra.tabs.hint.removable"
     />
     <div>
