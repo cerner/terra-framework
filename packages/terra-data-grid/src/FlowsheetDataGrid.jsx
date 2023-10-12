@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
@@ -98,27 +98,33 @@ function FlowsheetDataGrid(props) {
     intl,
   } = props;
 
-  // Replace each non-header cell that contains no content with a dash indicating "No results".
-  const parsedRows = rows.map(
-    (row) => ({
-      ...row,
-      cells: row.cells.map(
-        (cell, index) => ((!cell.content && index !== 0) ? {
-          ...cell,
-          content: (
-            <>
-              <span aria-hidden>{intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-result-display' })}</span>
-              <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-result' })} />
-            </>
-          ),
-        } : cell),
-      ),
-    }),
-  );
+  const flowsheetColumns = useMemo(() => columns.map(column => ({ ...column, isResizable: false })), [columns]);
+  const pinnedColumns = flowsheetColumns.length ? [flowsheetColumns[0]] : [];
+  const overflowColumns = flowsheetColumns.length > 1 ? flowsheetColumns.slice(1) : [];
 
-  // Make all columns not resizable.
-  const nonResizablePinnedColumns = columns.length ? [{ ...columns[0], isResizable: false }] : [];
-  const nonResizableOverflowColumns = columns.length > 1 ? columns.slice(1).map(column => ({ ...column, isResizable: false })) : [];
+  const flowsheetRows = useMemo(() => {
+    const noResultCellContent = (
+      <>
+        <span aria-hidden>{intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-result-display' })}</span>
+        <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-result' })} />
+      </>
+    );
+
+    const newRows = rows;
+    newRows.forEach((row, rowIndex) => {
+      const newCells = row.cells;
+      newCells.forEach((cell, cellIndex) => {
+        // Cell has no content and is not a row header (first column), set content to "No result".
+        if (!cell.content && cellIndex !== 0) {
+          newCells[cellIndex].content = noResultCellContent;
+        }
+      });
+
+      newRows[rowIndex].cells = newCells;
+    });
+
+    return newRows;
+  }, [intl, rows]);
 
   return (
     <div className={cx('flowsheet-data-grid-container')}>
@@ -126,11 +132,11 @@ function FlowsheetDataGrid(props) {
         id={id}
         ariaLabel={ariaLabel}
         ariaLabelledBy={ariaLabelledBy}
-        rows={parsedRows}
+        rows={flowsheetRows}
         rowHeight={rowHeight}
         rowHeaderIndex={0}
-        pinnedColumns={nonResizablePinnedColumns}
-        overflowColumns={nonResizableOverflowColumns}
+        pinnedColumns={pinnedColumns}
+        overflowColumns={overflowColumns}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onCellSelect={onCellSelect}
