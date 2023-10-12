@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.40.0 - (October 11, 2023)
+
 * Added
   * Added example for vertical orientation functionality for `terra-tabs`.
   * Added documentation for FlowsheetDataGrid in `terra-data-grid`.

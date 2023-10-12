@@ -4,6 +4,10 @@
 
 * Added
   * Added Vertical orientation functionality for `terra-tabs`.
+## 7.10.0 - (October 11, 2023)
+
+* Changed
+  * Minor dependency version bump
 
 ## 7.9.0 - (October 3, 2023)
 
