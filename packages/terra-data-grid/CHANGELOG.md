@@ -1,6 +1,15 @@
 # Changelog
 
 ## Unreleased
+* Fixed
+  * Fixed issue where WorklistDataGrid loses focus when Row Selection Mode is turned off from a Row Selection Cell.
+
+## 0.8.0 - (October 11, 2023)
+
+* Added
+  * Added base FlowsheetDataGrid component.
+
+## 0.7.0 - (October 3, 2023)
 
 * Fixed
   * Fixed tab focus management when next element is in a hidden container.

@@ -1161,7 +1161,7 @@ exports[`correctly applies the theme context className 1`] = `
                               type="button"
                             >
                               <span
-                                class="button-label text-only"
+                                class="button-label-win text-only"
                               >
                                 <span
                                   class=""
@@ -1177,7 +1177,7 @@ exports[`correctly applies the theme context className 1`] = `
                               type="button"
                             >
                               <span
-                                class="button-label text-only"
+                                class="button-label-win text-only"
                               >
                                 <span
                                   class=""
@@ -1353,7 +1353,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 type="button"
                               >
                                 <span
-                                  className="button-label text-only"
+                                  className="button-label-win text-only"
                                 >
                                   <span
                                     className=""
@@ -1390,7 +1390,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 type="button"
                               >
                                 <span
-                                  className="button-label text-only"
+                                  className="button-label-win text-only"
                                 >
                                   <span
                                     className=""

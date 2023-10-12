@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+## 7.10.0 - (October 11, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+## 7.9.0 - (October 3, 2023)
+
+* Changed
+  * Additional padding of 10px on the left and right of tab content body is removed for framework styles.
+  * Box shadow container style removed for framework variant tabs.
+  * Fixes large tab content display with scrollable view.
+
+* Fixed
+  * Fixed Axe core violations for close button added on 
+    terra-tabs on both face-up tab and hidden tab.
+  * Fixed issue in screen reader instruction for hidden tabs   where add tab instruction is announced even in absence of add button.
+
 ## 7.8.0 - (September 21, 2023)
 
 * Changed

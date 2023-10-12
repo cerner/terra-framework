@@ -362,7 +362,7 @@ exports[`correctly applies the theme context className 1`] = `
               type="button"
             >
               <span
-                className="button-label icon-only"
+                className="button-label-win icon-only"
               >
                 <span
                   className="icon"
@@ -444,7 +444,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
             type="button"
           >
             <span
-              class="button-label icon-only"
+              class="button-label-win icon-only"
             >
               <span
                 class="icon"
@@ -793,7 +793,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
                   type="button"
                 >
                   <span
-                    class="button-label icon-only"
+                    class="button-label-win icon-only"
                   >
                     <span
                       class="icon"
@@ -844,7 +844,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           type="button"
         >
           <span
-            className="button-label icon-only"
+            className="button-label-win icon-only"
           >
             <span
               className="icon"
@@ -994,7 +994,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
       type="button"
     >
       <span
-        class="button-label icon-only"
+        class="button-label-win icon-only"
       >
         <span
           class="icon"
@@ -1120,7 +1120,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
       type="button"
     >
       <span
-        class="button-label icon-only"
+        class="button-label-win icon-only"
       >
         <span
           class="icon"
@@ -1246,7 +1246,7 @@ exports[`should render a default date input 1`] = `
       type="button"
     >
       <span
-        class="button-label icon-only"
+        class="button-label-win icon-only"
       >
         <span
           class="icon"
@@ -1303,7 +1303,7 @@ exports[`should render a default date input with all props 1`] = `
             type="button"
           >
             <span
-              class="button-label icon-only"
+              class="button-label-win icon-only"
             >
               <span
                 class="icon"
@@ -1678,7 +1678,7 @@ exports[`should render a default date input with all props 1`] = `
                   type="button"
                 >
                   <span
-                    class="button-label icon-only"
+                    class="button-label-win icon-only"
                   >
                     <span
                       class="icon"
@@ -1729,7 +1729,7 @@ exports[`should render a default date input with all props 1`] = `
           type="button"
         >
           <span
-            className="button-label icon-only"
+            className="button-label-win icon-only"
           >
             <span
               className="icon"

@@ -2,9 +2,20 @@
 
 ## Unreleased
 
+## 6.81.0 - (October 11, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+## 6.80.0 - (October 3, 2023)
+
 * Added
+  * Added the ability to add hyperlinks.
   * Added `isMultiSelect` prop to support multiselect group items.
   * Added aria-label prop for `collapsible-menu-view` to announce group information.
+  
+* Fixed
+  * Fixed responsive menu icon not being vertical in the lowlight and fusion themes.
 
 ## 6.79.0 - (September 21, 2023)
 

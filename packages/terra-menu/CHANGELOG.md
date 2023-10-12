@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 6.78.1 - (October 11, 2023)
+
+* Fixed
+  * Fixed issue of focus highlight not visible on menu header back icon in Safari.
+
+## 6.78.0 - (October 3, 2023)
+
+* Changed
+  * Minor dependency version bump
+
 ## 6.77.0 - (September 21, 2023)
 
 * Added

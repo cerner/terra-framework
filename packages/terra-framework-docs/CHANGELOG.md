@@ -2,7 +2,15 @@
 
 ## Unreleased
 
+## 1.40.0 - (October 11, 2023)
+
 * Added
+  * Added documentation for FlowsheetDataGrid in `terra-data-grid`.
+
+## 1.39.0 - (October 3, 2023)
+
+* Added
+  * Added documentation for hyperlinks in `terra-collapsible-menu-view`.
   * Added doc and test example for `collapsible-menu-view` multi-select group items.
 
 * Updated

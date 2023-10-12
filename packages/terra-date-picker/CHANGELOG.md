@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 4.92.0 - (October 11, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+## 4.91.0 - (October 3, 2023)
+
+* Fixed
+  * Fixed DateInput prop types for `excludeDates`, `includeDates`, `maxDate`, `minDate`.
+
 ## 4.90.0 - (September 19, 2023)
 
 * Fixed

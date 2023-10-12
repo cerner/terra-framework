@@ -15,6 +15,7 @@ import {
 import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import moment from 'moment-timezone';
 import { v4 as uuidv4 } from 'uuid';
 import Button from 'terra-button';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
@@ -118,14 +119,14 @@ const propTypes = {
   value: PropTypes.string,
   /**
    * @private
-   * An array of ISO 8601 string representation of the dates to disable in the picker. The values must be in the `YYYY-MM-DD` format.
+   * An array of {@link moment} date objects of the dates to disable in the picker.
    */
-  excludeDates: PropTypes.arrayOf(PropTypes.string),
+  excludeDates: PropTypes.arrayOf(PropTypes.objectOf(moment)),
   /**
    * @private
-   * An array of ISO 8601 string representation of the dates to enable in the picker. All Other dates will be disabled. The values must be in the `YYYY-MM-DD` format.
+   * An array of {@link moment} date objects of the dates to enable in the picker. All Other dates will be disabled.
    */
-  includeDates: PropTypes.arrayOf(PropTypes.string),
+  includeDates: PropTypes.arrayOf(PropTypes.objectOf(moment)),
   /**
    * @private
    * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
