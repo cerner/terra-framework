@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Changed
+  * Removed additional screen reader phrase and fixed delete tab hint.
 ## 7.10.0 - (October 11, 2023)
 
 * Changed
