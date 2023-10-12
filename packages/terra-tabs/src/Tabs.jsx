@@ -164,6 +164,7 @@ class Tabs extends React.Component {
       }
       commonTabItems.push(
         <CommonTabItem
+          key={child.key}
           itemKey={child.key}
           label={child.props.label}
           icon={child.props.icon}

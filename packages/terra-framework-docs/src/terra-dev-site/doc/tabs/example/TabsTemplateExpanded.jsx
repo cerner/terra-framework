@@ -16,13 +16,13 @@ const propTypes = {
 const TabsTemplate = (props) => {
   const labelTab = (
     <Tabs.Pane label="Tab with label" key="ExpandedLabelTab">
-      <TabContentTemplate label="Tab with label" />
+      <TabContentTemplate label="Tab with label" id="ExpandedLabelTab" />
     </Tabs.Pane>
   );
 
   const iconTab = (
     <Tabs.Pane label="Tab with icon" icon={<IconBriefcase />} key="ExpandedIconTab">
-      <TabContentTemplate label="Tab with icon" />
+      <TabContentTemplate label="Tab with icon" id="ExpandedIconTabContent" />
     </Tabs.Pane>
   );
 
@@ -36,7 +36,7 @@ const TabsTemplate = (props) => {
       label="Custom display"
       key="ExpandedCustomTab"
     >
-      <TabContentTemplate label="Custom display" />
+      <TabContentTemplate id="ExpandedCustomTabContent" label="Custom display" />
     </Tabs.Pane>
   );
 
@@ -45,13 +45,13 @@ const TabsTemplate = (props) => {
       label="Longer text tab name with label for application"
       key="ExpandedlongLabel"
     >
-      <TabContentTemplate label="Longer text tab name with label for application" />
+      <TabContentTemplate id="ExpandedlongLabelContent" label="Longer text tab name with label for application" />
     </Tabs.Pane>
   );
 
   const lastTab = (
     <Tabs.Pane label="Last Tab" key="ExpandedlastTab">
-      <TabContentTemplate label="Last Tab" />
+      <TabContentTemplate id="ExpandedlastTabContent" label="Last Tab" />
     </Tabs.Pane>
   );
 
@@ -76,6 +76,6 @@ const TabsTemplate = (props) => {
 TabsTemplate.propTypes = propTypes;
 
 const TabExpanded = () => (
-  <TabsTemplate tabFill />
+  <TabsTemplate tabFill id="expanded" />
 );
 export default TabExpanded;

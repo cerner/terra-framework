@@ -9,19 +9,19 @@ const cx = classNames.bind(styles);
 
 const VerticalTab = () => {
   const labelTab = (
-    <Tabs.Pane label="Tab with label" key="tLabelTab">
+    <Tabs.Pane label="Tab with label" key="tLabelTab" id="tLabelTab">
       <TabContent label="Tab with label" />
     </Tabs.Pane>
   );
 
   const onlyiconTab = (
-    <Tabs.Pane label="Tab with icon" isIconOnly icon={<IconBriefcase />} key="tonlyIconTab">
+    <Tabs.Pane label="Tab with icon" isIconOnly icon={<IconBriefcase />} key="tonlyIconTab" id="tonlyIconTab">
       <TabContent label="Tab with icon" />
     </Tabs.Pane>
   );
 
   const iconTab = (
-    <Tabs.Pane label="Tab with icon" icon={<IconBriefcase />} key="tIconTab">
+    <Tabs.Pane label="Tab with icon" icon={<IconBriefcase />} key="tIconTab" id="tIconTab">
       <TabContent label="Tab with icon" />
     </Tabs.Pane>
   );
@@ -35,6 +35,7 @@ const VerticalTab = () => {
       )}
       label="Custom display"
       key="tCustomTab"
+      id="tCustomTab"
     >
       <TabContent label="Custom display" />
     </Tabs.Pane>
@@ -44,20 +45,21 @@ const VerticalTab = () => {
     <Tabs.Pane
       label="Longer text tab name with label for application"
       key="tlongLabel"
+      id="tlongLabel"
     >
       <TabContent label="Longer text tab name with label for application" />
     </Tabs.Pane>
   );
 
   const lastTab = (
-    <Tabs.Pane label="Last Tab" key="tlastTab">
+    <Tabs.Pane label="Last Tab" key="tlastTab" id="tlastTab">
       <TabContent label="Last Tab" />
     </Tabs.Pane>
   );
 
   return (
     <div className={cx('content-container-vertical')}>
-      <Tabs isDraggable fill verticalOrientation setFocusOnContent>
+      <Tabs isDraggable fill verticalOrientation setFocusOnContent id="verticaltab">
         {onlyiconTab}
         {labelTab}
         {iconTab}

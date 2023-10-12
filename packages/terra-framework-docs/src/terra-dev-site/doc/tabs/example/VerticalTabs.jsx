@@ -58,7 +58,7 @@ const VerticalTabs = () => {
 
   return (
     <div className={cx('content-container-vertical')}>
-      <Tabs isDraggable fill verticalOrientation setFocusOnContent>
+      <Tabs isDraggable fill verticalOrientation setFocusOnContent id="verticaltab">
         {onlyiconTab}
         {labelTab}
         {iconTab}
