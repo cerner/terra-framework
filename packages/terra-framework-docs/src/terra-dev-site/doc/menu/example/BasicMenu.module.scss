@@ -1,10 +1,14 @@
+// Themes
+@import '../../../theme/clinical-lowlight-theme/BasicMenu.module.scss';
+@import '../../../theme/orion-fusion-theme/BasicMenu.module.scss';
+
 :local {
   .menu-wrapper {
     display: inline-block;
 
     button {
       &:focus {
-        box-shadow: 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35);
+        box-shadow: var(--terra-framework-doc-menu-button-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       }
     }
   }
