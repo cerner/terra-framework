@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 const IconsOnlyAndInMenuTabs = () => {
   const searchTab = (
     <Tabs.Pane label="Search" icon={<IconSearch />} showIcon key="MenuTabSearch">
-      <TabContent label="Search" id="MenuTabSearchConten"/>
+      <TabContent label="Search" id="MenuTabSearchContent" />
     </Tabs.Pane>
   );
 
