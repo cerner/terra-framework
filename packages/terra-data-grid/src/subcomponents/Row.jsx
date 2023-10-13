@@ -99,6 +99,7 @@ function Row(props) {
     return (
       <Cell
         rowId={rowId}
+        ariaLabel={cellData.ariaLabel}
         columnId={columnId}
         rowIndex={cellRowIndex}
         columnIndex={cellColumnIndex}

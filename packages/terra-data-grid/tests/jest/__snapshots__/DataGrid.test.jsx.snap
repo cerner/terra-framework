@@ -82,6 +82,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
             "isSelectable": false,
           },
           Object {
+            "ariaLabel": "Empty",
             "content": "",
           },
           Object {
@@ -225,6 +226,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               "isSelectable": false,
             },
             Object {
+              "ariaLabel": "Empty",
               "content": "",
             },
             Object {
@@ -368,6 +370,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 "isSelectable": false,
               },
               Object {
+                "ariaLabel": "Empty",
                 "content": "",
               },
               Object {
@@ -947,6 +950,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     "isSelectable": false,
                   },
                   Object {
+                    "ariaLabel": "Empty",
                     "content": "",
                   },
                   Object {
@@ -1083,6 +1087,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
+                  ariaLabel="Empty"
                   columnId="Column-1"
                   columnIndex={1}
                   height="2.5rem"
@@ -1094,6 +1099,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   rowIndex={1}
                 >
                   <Cell
+                    ariaLabel="Empty"
                     columnId="Column-1"
                     columnIndex={1}
                     height="2.5rem"
@@ -1134,6 +1140,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     rowIndex={1}
                   >
                     <td
+                      aria-label="Empty"
                       aria-selected={false}
                       className="cell pinned selectable blank"
                       onKeyDown={[Function]}
@@ -2353,6 +2360,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
             "isSelectable": false,
           },
           Object {
+            "ariaLabel": "Empty",
             "content": "",
           },
           Object {
@@ -2496,6 +2504,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               "isSelectable": false,
             },
             Object {
+              "ariaLabel": "Empty",
               "content": "",
             },
             Object {
@@ -2639,6 +2648,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 "isSelectable": false,
               },
               Object {
+                "ariaLabel": "Empty",
                 "content": "",
               },
               Object {
@@ -3218,6 +3228,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     "isSelectable": false,
                   },
                   Object {
+                    "ariaLabel": "Empty",
                     "content": "",
                   },
                   Object {
@@ -3354,6 +3365,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
+                  ariaLabel="Empty"
                   columnId="Column-1"
                   columnIndex={1}
                   height="2.5rem"
@@ -3365,6 +3377,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   rowIndex={1}
                 >
                   <Cell
+                    ariaLabel="Empty"
                     columnId="Column-1"
                     columnIndex={1}
                     height="2.5rem"
@@ -3405,6 +3418,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     rowIndex={1}
                   >
                     <td
+                      aria-label="Empty"
                       aria-selected={false}
                       className="cell pinned selectable blank"
                       onKeyDown={[Function]}
@@ -4618,6 +4632,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
             "isSelectable": false,
           },
           Object {
+            "ariaLabel": "Empty",
             "content": "",
           },
           Object {
@@ -4755,6 +4770,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               "isSelectable": false,
             },
             Object {
+              "ariaLabel": "Empty",
               "content": "",
             },
             Object {
@@ -4892,6 +4908,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                 "isSelectable": false,
               },
               Object {
+                "ariaLabel": "Empty",
                 "content": "",
               },
               Object {
@@ -5560,6 +5577,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     "isSelectable": false,
                   },
                   Object {
+                    "ariaLabel": "Empty",
                     "content": "",
                   },
                   Object {
@@ -5842,6 +5860,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
+                  ariaLabel="Empty"
                   columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
@@ -5854,6 +5873,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   rowIndex={1}
                 >
                   <Cell
+                    ariaLabel="Empty"
                     columnId="Column-1"
                     columnIndex={2}
                     height="2.5rem"
@@ -5894,6 +5914,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     rowIndex={1}
                   >
                     <td
+                      aria-label="Empty"
                       aria-selected={false}
                       className="cell pinned selectable blank"
                       onKeyDown={[Function]}
@@ -7540,6 +7561,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                 "isSelectable": false,
               },
               Object {
+                "ariaLabel": "Empty",
                 "content": "",
               },
               Object {
@@ -7764,6 +7786,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                 "isSelectable": false,
               },
               Object {
+                "ariaLabel": "Empty",
                 "content": "",
               },
               Object {

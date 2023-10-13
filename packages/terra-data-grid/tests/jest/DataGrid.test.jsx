@@ -20,7 +20,7 @@ const dataFile = {
       id: '1',
       cells: [
         { content: 'Heart Rate Monitored (bpm)', isSelectable: false },
-        { content: '' },
+        { content: '', ariaLabel: 'Empty' },
         { content: '66', isMasked: true },
       ],
     },

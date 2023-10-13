@@ -2,6 +2,10 @@ import PropTypes from 'prop-types';
 
 const cellShape = PropTypes.shape({
   /**
+   * String that labels the cell for accessibility.
+   */
+  ariaLabel: PropTypes.string,
+  /**
    * Content that will be rendered within the Cell.
    */
   content: PropTypes.node,
