@@ -114,7 +114,7 @@ describe('FlowsheetDataGrid', () => {
       },
     ];
 
-    const dataGrid = wrapper.find('ForwardRef');
+    const dataGrid = wrapper.find('#test-terra-flowsheet-data-grid');
     expect(dataGrid.prop('id')).toEqual('test-terra-flowsheet-data-grid');
     expect(dataGrid.prop('ariaLabel')).toEqual('Test Flowsheet Data Grid');
     expect(dataGrid.prop('ariaLabelledBy')).toBeUndefined();
@@ -247,7 +247,7 @@ describe('FlowsheetDataGrid', () => {
       />,
     ).shallow();
 
-    const dataGrid = wrapper.find('ForwardRef');
+    const dataGrid = wrapper.find('#test-terra-flowsheet-data-grid');
     expect(dataGrid.prop('rows')).toEqual(expectedRows);
 
     expect(wrapper).toMatchSnapshot();
