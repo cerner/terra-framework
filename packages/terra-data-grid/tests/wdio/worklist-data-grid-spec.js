@@ -457,38 +457,38 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
   });
 
-  describe.only("column resizing", ()=>{
-    it("focuses on the column resize handle",()=>{
+  describe.only('column resizing', () => {
+    it('focuses on the column resize handle', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/default-worklist-data-grid');
       navigateToCell(0, 0);
       browser.keys(['ArrowRight']);
 
       expect($('tr.column-header-row').$('//div[2]').isFocused()).toBe(true);
       Terra.validates.element('column-resize-handle-focused', { selector: defaultSelector });
-    })
+    });
 
-    it("increases the column width with the keyboard in resize mode",()=>{
+    it('increases the column width with the keyboard in resize mode', () => {
       // disabling the 'aria-input-field-name' rule as it is dynamically removed
       // for the keyboard resize workflow and this causes an accessibility failure
-      const options = { 
+      const options = {
         selector: defaultSelector,
-        rules: { 'aria-input-field-name': { enabled: false } } 
+        rules: { 'aria-input-field-name': { enabled: false } },
       };
-      
+
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/default-worklist-data-grid');
       navigateToCell(0, 0);
       browser.keys(['ArrowRight', 'Enter', 'ArrowRight', 'ArrowRight']);
 
       expect($('tr.column-header-row').$('//th[1]').getCSSProperty('width').parsed.value).toBe(220);
       Terra.validates.element('column-resize-increase-keyboard', options);
-    })
+    });
 
-    it("decreases the column width with the keyboard in resize mode",()=>{
+    it('decreases the column width with the keyboard in resize mode', () => {
       // disabling the 'aria-input-field-name' rule as it is dynamically removed
       // for the keyboard resize workflow and this causes an accessibility failure
-      const options = { 
+      const options = {
         selector: defaultSelector,
-        rules: { 'aria-input-field-name': { enabled: false } } 
+        rules: { 'aria-input-field-name': { enabled: false } },
       };
 
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/default-worklist-data-grid');
@@ -497,6 +497,6 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
 
       expect($('tr.column-header-row').$('//th[1]').getCSSProperty('width').parsed.value).toBe(180);
       Terra.validates.element('column-resize-decrease-keyboard', options);
-    })
-  })
+    });
+  });
 });

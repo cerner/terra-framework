@@ -299,17 +299,17 @@ describe('ColumnHeaderCell', () => {
     expect(wrapper.find('.pinned')).toHaveLength(1);
     expect(wrapper).toMatchSnapshot();
   });
-  
-  it("calls a custom column select callback function on mouse down", () => {
+
+  it('calls a custom column select callback function on mouse down', () => {
     const mockOnColumnSelect = jest.fn();
     const wrapper = mountWithIntl(
       <ColumnHeaderCell
-      onColumnSelect={mockOnColumnSelect}
+        onColumnSelect={mockOnColumnSelect}
       />,
     );
     wrapper.find('.column-header').simulate('mousedown');
 
     // Validate mock function was called from simulated onMouseDown event
     expect(mockOnColumnSelect).toHaveBeenCalled();
-  })
+  });
 });
