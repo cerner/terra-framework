@@ -384,6 +384,16 @@ const DataGrid = injectIntl((props) => {
     const cellCoordinates = { row: focusedRow, col: focusedCol };
     let nextRow = cellCoordinates.row;
     let nextCol = cellCoordinates.col;
+
+    const targetElement = event.target;
+
+    // Allow default behavior if the event target is an editable field
+    if (event.keyCode !== KeyCode.KEY_TAB
+        && (['input', 'textarea', 'select'].indexOf(targetElement.tagName.toLowerCase()) >= 0
+        || (targetElement.hasAttribute('contentEditable') && targetElement.getAttribute('contentEditable') !== false))) {
+      return;
+    }
+
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_UP:

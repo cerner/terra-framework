@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Updated
+  * Updates examples for `terra-data-grid` to cover scenarios for focusable elements prevented from receiving focus.
+
 ## 1.40.0 - (October 11, 2023)
 
 * Added

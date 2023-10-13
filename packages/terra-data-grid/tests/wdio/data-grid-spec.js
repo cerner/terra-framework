@@ -231,6 +231,35 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       Terra.validates.element('focusable-textarea-cell-trap-focus', { columnResizeSelector });
       expect(browser.$$('textarea:focus')).toBeElementsArrayOfSize(1);
     });
+
+    it('validates that keyboard inputs will not move focus from an input field', () => {
+      browser.$('#input-cell').click();
+
+      browser.keys(['ArrowRight', 'ArrowLeft']);
+
+      Terra.validates.element('data-grid-focusable-input-retains-focus', { columnResizeSelector });
+      expect(browser.$('#input-cell').isFocused());
+    });
+
+    it('validates that keyboard inputs will not move focus from a textarea', () => {
+      browser.$('#textarea-cell').click();
+
+      browser.pause(250);
+
+      browser.keys(['ArrowRight', 'ArrowLeft']);
+
+      Terra.validates.element('data-grid-focusable-textarea-retains-focus', { columnResizeSelector });
+      expect(browser.$('#textarea-cell').isFocused());
+    });
+
+    it('validates that keyboard inputs will not move focus from a select element', () => {
+      browser.$('#specialties').click();
+
+      browser.keys(['ArrowRight', 'ArrowLeft']);
+
+      Terra.validates.element('data-grid-focusable-select-retains-focus', { columnResizeSelector });
+      expect(browser.$('#specialties').isFocused());
+    });
   });
 
   describe('with pinned columns', () => {
